@@ -1,0 +1,28 @@
+name: DeepSeek-V3
+slug: deepseek-v3
+lab: deepseek
+type: model
+date: 2024-12-26
+url: https://api-docs.deepseek.com/news/news1226
+links:
+  - label: V3-0324 update
+    url: https://api-docs.deepseek.com/news/news250325
+  - label: Technical Report
+    url: https://arxiv.org/abs/2412.19437v2
+  - label: Hardware Insights Paper
+    url: https://arxiv.org/abs/2505.09343
+description: >
+  Frontier MoE model. V3-0324 update released 2025-03-24.
+  Technical report and hardware architecture insights paper published alongside.
+tags:
+  - moe
+  - open-weight
+  - frontier
+model:
+  architecture: moe
+  variants:
+    - name: DeepSeek-V3
+    - name: DeepSeek-V3-0324
+      notes: Released 2025-03-24
+paper:
+  arxiv: "2412.19437"

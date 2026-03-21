@@ -1,0 +1,11 @@
+name: Xiaomi MiMo
+slug: xiaomi
+url: https://mimo.xiaomi.com
+huggingface: https://huggingface.co/XiaomiMiMo
+region: china
+type: corporate
+parent: Xiaomi
+description: Xiaomi's AI model team, producing the MiMo on-device reasoning series.
+tags:
+  - open-weight
+  - on-device

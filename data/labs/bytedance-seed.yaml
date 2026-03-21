@@ -1,0 +1,13 @@
+name: ByteDance Seed
+slug: bytedance-seed
+huggingface: https://huggingface.co/ByteDance-Seed
+region: china
+type: corporate
+parent: ByteDance
+description: ByteDance's AI research division.
+people:
+  - name: Wu Yonghui
+    role: Lead
+    formerly: Vice President at Google DeepMind
+tags:
+  - frontier

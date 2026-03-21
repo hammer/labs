@@ -1,0 +1,14 @@
+name: Tencent Hunyuan
+slug: tencent
+url: https://llm.hunyuan.tencent.com
+huggingface: https://huggingface.co/tencent
+region: china
+type: corporate
+parent: Tencent
+description: Tencent's AI model team, producing the Hunyuan series.
+relationships:
+  - lab: kuaishou
+    type: investor
+    note: Tencent owns approximately 1/6 of Kuaishou
+tags:
+  - frontier

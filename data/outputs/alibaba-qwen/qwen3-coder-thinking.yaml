@@ -1,0 +1,26 @@
+name: Qwen3-Coder and Qwen3-Thinking
+slug: qwen3-coder-thinking
+lab: alibaba-qwen
+type: model
+date: 2025-07-22
+url: https://qwen.ai/blog?id=qwen3-coder
+links:
+  - label: Qwen3-Thinking on HF
+    url: https://huggingface.co/Qwen/Qwen3-235B-A22B-Thinking-2507
+description: >
+  Qwen3-Coder-480B-A35B-Instruct coding model released alongside
+  Qwen3-235B-A22B-Thinking reasoning model.
+tags:
+  - coding
+  - reasoning
+  - moe
+model:
+  architecture: moe
+  variants:
+    - name: Qwen3-Coder-480B-A35B-Instruct
+      parameters: 480B
+      active_parameters: 35B
+    - name: Qwen3-235B-A22B-Thinking-2507
+      parameters: 235B
+      active_parameters: 22B
+      notes: Reasoning-optimized variant

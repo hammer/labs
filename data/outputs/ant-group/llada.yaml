@@ -1,0 +1,11 @@
+name: LLaDA
+slug: llada
+lab: ant-group
+type: model
+date: 2025-06-01
+url: https://www.inclusion-ai.org
+description: Diffusion language model from Inclusion AI.
+tags:
+  - diffusion
+  - architecture
+notes: Date approximate.

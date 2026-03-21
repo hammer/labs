@@ -1,0 +1,10 @@
+name: MiniCPM4
+slug: minicpm4
+lab: openbmb
+type: model
+date: 2025-06-01
+url: https://huggingface.co/openbmb
+description: On-device model from Open Lab for Big Model Base.
+tags:
+  - on-device
+notes: Date approximate.

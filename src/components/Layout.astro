@@ -1,0 +1,75 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | AI Lab Tracker</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="/" class="nav-brand">AI Lab Tracker</a>
+        <div class="nav-links">
+          <a href="/">Labs</a>
+          <a href="/timeline">Timeline</a>
+        </div>
+      </div>
+    </nav>
+    <main class="container">
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  .nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 0;
+    margin-bottom: 2rem;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--text);
+  }
+
+  .nav-brand:hover {
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+
+  .nav-links a:hover {
+    color: var(--text);
+  }
+
+  main {
+    padding-bottom: 3rem;
+  }
+</style>

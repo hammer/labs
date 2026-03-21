@@ -1,0 +1,8 @@
+name: Meituan
+slug: meituan
+huggingface: https://huggingface.co/meituan-longcat
+region: china
+type: corporate
+description: Creator of the LongCat model series focused on long-context.
+tags:
+  - open-weight

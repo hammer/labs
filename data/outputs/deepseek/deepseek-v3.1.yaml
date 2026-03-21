@@ -1,0 +1,20 @@
+name: DeepSeek-V3.1
+slug: deepseek-v3.1
+lab: deepseek
+type: model
+date: 2025-08-21
+url: https://api-docs.deepseek.com/news/news250821
+links:
+  - label: V3.1-Terminus
+    url: https://api-docs.deepseek.com/news/news250922
+description: >
+  V3.1 released 2025-08-21. V3.1-Terminus (max reasoning variant) released 2025-09-22.
+tags:
+  - moe
+  - frontier
+model:
+  architecture: moe
+  variants:
+    - name: DeepSeek-V3.1
+    - name: DeepSeek-V3.1-Terminus
+      notes: Max reasoning variant, released 2025-09-22

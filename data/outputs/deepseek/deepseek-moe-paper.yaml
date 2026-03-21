@@ -1,0 +1,12 @@
+name: "DeepSeekMoE: Towards Ultimate Expert Specialization"
+slug: deepseek-moe-paper
+lab: deepseek
+type: paper
+date: 2024-01-11
+url: https://arxiv.org/abs/2401.06066
+description: Foundational paper on expert specialization in MoE language models.
+tags:
+  - moe
+  - architecture
+paper:
+  arxiv: "2401.06066"

@@ -1,0 +1,82 @@
+---
+import Layout from '../components/Layout.astro';
+import OutputCard from '../components/OutputCard.astro';
+import FilterBar from '../components/FilterBar.astro';
+import { getAllOutputsChronological, getAllLabs } from '../data/loader.js';
+
+const outputs = getAllOutputsChronological();
+const labs = getAllLabs().map((l) => ({ slug: l.slug, name: l.name })).sort((a, b) => a.name.localeCompare(b.name));
+const types = [...new Set(outputs.map((o) => o.type))].sort();
+
+// Group by month
+const grouped = new Map<string, typeof outputs>();
+for (const output of outputs) {
+  const month = output.date.slice(0, 7); // YYYY-MM
+  if (!grouped.has(month)) grouped.set(month, []);
+  grouped.get(month)!.push(output);
+}
+
+function formatMonth(ym: string): string {
+  const [y, m] = ym.split('-');
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `${months[parseInt(m) - 1]} ${y}`;
+}
+---
+
+<Layout title="Timeline">
+  <header class="page-header">
+    <h1>Timeline</h1>
+    <p class="subtitle">{outputs.length} outputs</p>
+  </header>
+
+  <FilterBar labs={labs} types={types} />
+
+  {[...grouped.entries()].map(([month, items]) => (
+    <div class="month-group">
+      <h2 class="month-heading">{formatMonth(month)}</h2>
+      <div class="output-list">
+        {items.map((output) => {
+          const labList = Array.isArray(output.lab) ? output.lab : [output.lab];
+          return (
+            <div data-lab={labList.join(',')} data-type={output.type}>
+              <OutputCard output={output} showLab={true} />
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  ))}
+</Layout>
+
+<style>
+  .page-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .subtitle {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+
+  .month-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .month-heading {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.375rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .output-list {
+    display: grid;
+    gap: 0.75rem;
+  }
+</style>

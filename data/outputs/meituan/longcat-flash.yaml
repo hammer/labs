@@ -1,0 +1,10 @@
+name: LongCat-Flash
+slug: longcat-flash
+lab: meituan
+type: model
+date: 2025-06-01
+url: https://github.com/meituan-longcat/LongCat-Flash-Chat/blob/main/tech_report.pdf
+description: Long-context model with tech report.
+tags:
+  - long-context
+notes: Date approximate.

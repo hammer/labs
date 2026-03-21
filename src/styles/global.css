@@ -1,0 +1,47 @@
+:root {
+  --color-model: #7c3aed;
+  --color-paper: #059669;
+  --color-blog: #2563eb;
+  --color-library: #d97706;
+  --color-dataset: #dc2626;
+  --color-announcement: #6b7280;
+  --color-corporate: #1e40af;
+  --color-startup: #7c3aed;
+  --color-nonprofit: #059669;
+  --color-academic: #b45309;
+  --max-width: 960px;
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --border: #e5e7eb;
+  --text: #111827;
+  --text-muted: #6b7280;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-blog);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}

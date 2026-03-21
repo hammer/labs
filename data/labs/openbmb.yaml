@@ -1,0 +1,10 @@
+name: OpenBMB
+slug: openbmb
+huggingface: https://huggingface.co/openbmb
+region: china
+type: academic
+description: >
+  Open Lab for Big Model Base. Creator of the MiniCPM on-device model series.
+tags:
+  - open-weight
+  - on-device

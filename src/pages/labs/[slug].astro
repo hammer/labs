@@ -1,0 +1,161 @@
+---
+import Layout from '../../components/Layout.astro';
+import OutputCard from '../../components/OutputCard.astro';
+import TagList from '../../components/TagList.astro';
+import TypeBadge from '../../components/TypeBadge.astro';
+import { getAllLabs, getLabBySlug, getOutputsForLab } from '../../data/loader.js';
+
+export function getStaticPaths() {
+  return getAllLabs().map((lab) => ({ params: { slug: lab.slug } }));
+}
+
+const { slug } = Astro.params;
+const lab = getLabBySlug(slug!)!;
+const outputs = getOutputsForLab(slug!);
+---
+
+<Layout title={lab.name}>
+  <header class="page-header">
+    <div class="title-row">
+      <h1>{lab.name}</h1>
+      {lab.type && <TypeBadge type={lab.type} />}
+    </div>
+    <p class="meta">
+      {lab.region}
+      {lab.parent && <span> · Part of {lab.parent}</span>}
+    </p>
+    {lab.description && <p class="description">{lab.description}</p>}
+
+    <div class="links">
+      {lab.url && <a href={lab.url}>Website</a>}
+      {lab.huggingface && <a href={lab.huggingface}>HuggingFace</a>}
+      {lab.github && <a href={lab.github}>GitHub</a>}
+    </div>
+
+    {lab.tags && <TagList tags={lab.tags} />}
+  </header>
+
+  {lab.people && lab.people.length > 0 && (
+    <section class="section">
+      <h2>People</h2>
+      <ul class="people-list">
+        {lab.people.map((p) => (
+          <li>
+            <strong>{p.name}</strong>
+            {p.role && <span class="role"> — {p.role}</span>}
+            {p.formerly && <span class="formerly"> (formerly {p.formerly})</span>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {lab.relationships && lab.relationships.length > 0 && (
+    <section class="section">
+      <h2>Relationships</h2>
+      <ul class="rel-list">
+        {lab.relationships.map((r) => (
+          <li>
+            <a href={`/labs/${r.lab}`}>{r.lab}</a>
+            <span class="rel-type"> — {r.type}</span>
+            {r.note && <span class="rel-note"> ({r.note})</span>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <section class="section">
+    <h2>Outputs <span class="count">({outputs.length})</span></h2>
+    {outputs.length === 0 ? (
+      <p class="empty">No outputs yet.</p>
+    ) : (
+      <div class="output-list">
+        {outputs.map((output) => (
+          <OutputCard output={output} labSlug={slug} />
+        ))}
+      </div>
+    )}
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    margin-bottom: 2rem;
+  }
+
+  .title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .title-row h1 {
+    font-size: 1.5rem;
+  }
+
+  .meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .description {
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .links {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .section {
+    margin-bottom: 2rem;
+  }
+
+  .section h2 {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.375rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .count {
+    font-weight: 400;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+
+  .people-list,
+  .rel-list {
+    list-style: none;
+    padding: 0;
+    font-size: 0.875rem;
+  }
+
+  .people-list li,
+  .rel-list li {
+    padding: 0.25rem 0;
+  }
+
+  .role,
+  .formerly,
+  .rel-type,
+  .rel-note {
+    color: var(--text-muted);
+  }
+
+  .output-list {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .empty {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+</style>

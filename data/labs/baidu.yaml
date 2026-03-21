@@ -1,0 +1,10 @@
+name: Baidu
+slug: baidu
+url: https://www.baidu.com
+huggingface: https://huggingface.co/baidu
+region: china
+type: corporate
+description: Creator of the ERNIE series of models.
+tags:
+  - frontier
+  - open-weight

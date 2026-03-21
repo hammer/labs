@@ -1,0 +1,14 @@
+name: BAAI
+slug: baai
+url: https://www.baai.ac.cn
+huggingface: https://huggingface.co/BAAI
+region: china
+type: nonprofit
+description: >
+  Beijing Academy of Artificial Intelligence. Nonprofit institution
+  producing Wu Dao, Aquila models, and the FlagAI framework donated
+  to the Linux Foundation.
+tags:
+  - nonprofit
+  - open-source
+  - open-weight

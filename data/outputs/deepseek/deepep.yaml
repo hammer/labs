@@ -1,0 +1,15 @@
+name: DeepEP
+slug: deepep
+lab: deepseek
+type: library
+date: 2025-03-01
+url: https://github.com/deepseek-ai/DeepEP
+description: >
+  Efficient expert-parallel communication library that bypasses NCCL
+  for MoE communications. Used in DeepSeek models for efficient expert parallelism.
+tags:
+  - infrastructure
+  - moe
+  - open-source
+library:
+  github: https://github.com/deepseek-ai/DeepEP

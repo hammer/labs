@@ -1,0 +1,12 @@
+name: "Towards Greater Leverage: Scaling Laws for Efficient MoE"
+slug: moe-scaling-laws
+lab: ant-group
+type: paper
+date: 2025-07-23
+url: https://arxiv.org/abs/2507.17702
+description: MoE scaling laws paper exploring efficient mixture-of-experts language models.
+tags:
+  - moe
+  - scaling
+paper:
+  arxiv: "2507.17702"

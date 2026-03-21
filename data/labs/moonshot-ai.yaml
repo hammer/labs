@@ -1,0 +1,10 @@
+name: Moonshot AI
+slug: moonshot-ai
+url: https://www.moonshot.cn
+huggingface: https://huggingface.co/moonshotai
+region: china
+type: startup
+description: Creator of the Kimi series of large language models.
+tags:
+  - frontier
+  - open-weight

@@ -1,0 +1,21 @@
+name: Qwen 3.5 Small Model Series
+slug: qwen3.5-small
+lab: alibaba-qwen
+type: model
+date: 2026-03-02
+url: https://www.linkedin.com/posts/qwen_introducing-the-qwen-35-small-model-series-activity-7434222839442051073-AyOd
+description: Small dense models in the Qwen3.5 family.
+tags:
+  - open-weight
+  - small
+model:
+  architecture: dense
+  variants:
+    - name: Qwen3.5-0.8B
+      parameters: 0.8B
+    - name: Qwen3.5-2B
+      parameters: 2B
+    - name: Qwen3.5-4B
+      parameters: 4B
+    - name: Qwen3.5-9B
+      parameters: 9B

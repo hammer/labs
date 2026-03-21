@@ -1,0 +1,22 @@
+name: "GLM-5: From Vibe Coding to Agentic Engineering"
+slug: glm-5
+lab: zai
+type: model
+date: 2026-02-11
+url: https://z.ai/blog/glm-5
+links:
+  - label: Paper
+    url: https://arxiv.org/abs/2602.15763
+  - label: Sebastian Raschka analysis
+    url: https://magazine.sebastianraschka.com/i/168650848/21-glm-5
+description: 744B total params, 40B active, 256 experts.
+tags:
+  - moe
+  - agentic
+  - coding
+model:
+  architecture: moe
+  parameters: 744B
+  active_parameters: 40B
+paper:
+  arxiv: "2602.15763"

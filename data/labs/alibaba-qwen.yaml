@@ -1,0 +1,13 @@
+name: Alibaba Qwen
+slug: alibaba-qwen
+url: https://qwen.ai
+huggingface: https://huggingface.co/Qwen
+region: china
+type: corporate
+parent: Alibaba Group
+description: >
+  Alibaba's large language model team, producing the Qwen series of
+  open-weight models spanning dense and MoE architectures.
+tags:
+  - frontier
+  - open-weight

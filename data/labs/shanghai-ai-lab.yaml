@@ -1,0 +1,9 @@
+name: Shanghai AI Laboratory
+slug: shanghai-ai-lab
+huggingface: https://huggingface.co/internlm
+region: china
+type: academic
+description: Producer of the InternLM series of models.
+tags:
+  - open-weight
+  - academic

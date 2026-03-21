@@ -1,0 +1,13 @@
+name: "Ring-1T: Every Step Evolves"
+slug: ring-1t
+lab: ant-group
+type: paper
+date: 2025-10-24
+url: https://arxiv.org/abs/2510.18855
+description: Scaling reinforcement learning for trillion-scale thinking model.
+tags:
+  - reasoning
+  - reinforcement-learning
+  - scaling
+paper:
+  arxiv: "2510.18855"

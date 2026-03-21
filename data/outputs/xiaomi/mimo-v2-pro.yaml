@@ -1,0 +1,10 @@
+name: Xiaomi MiMo-V2-Pro
+slug: mimo-v2-pro
+lab: xiaomi
+type: model
+date: 2025-10-01
+url: https://mimo.xiaomi.com/mimo-v2-pro
+description: On-device reasoning model.
+tags:
+  - on-device
+  - reasoning

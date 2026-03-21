@@ -1,0 +1,27 @@
+name: DeepSeek-V3.2
+slug: deepseek-v3.2
+lab: deepseek
+type: model
+date: 2025-12-01
+url: https://api-docs.deepseek.com/news/news251201
+links:
+  - label: V3.2-Exp (2025-09-29)
+    url: https://api-docs.deepseek.com/news/news250929
+  - label: Sparse Attention Paper
+    url: https://github.com/deepseek-ai/DeepSeek-V3.2-Exp/blob/main/DeepSeek_V3_2.pdf
+description: >
+  V3.2-Exp released 2025-09-29 introducing DeepSeek Sparse Attention
+  for long-context efficiency. V3.2 and V3.2-Speciale (max reasoning)
+  released 2025-12-01.
+tags:
+  - moe
+  - frontier
+  - open-weight
+model:
+  architecture: moe
+  variants:
+    - name: DeepSeek-V3.2-Exp
+      notes: Released 2025-09-29
+    - name: DeepSeek-V3.2
+    - name: DeepSeek-V3.2-Speciale
+      notes: Max reasoning variant

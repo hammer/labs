@@ -1,0 +1,67 @@
+---
+import type { Lab } from '../schema.js';
+import TagList from './TagList.astro';
+
+interface Props {
+  lab: Lab;
+  outputCount: number;
+}
+
+const { lab, outputCount } = Astro.props;
+const excerpt = lab.description
+  ? lab.description.length > 120
+    ? lab.description.slice(0, 120).trimEnd() + '…'
+    : lab.description
+  : null;
+---
+
+<a href={`/labs/${lab.slug}`} class="card">
+  <div class="card-header">
+    <h3 class="card-title">{lab.name}</h3>
+    <span class="output-count">{outputCount} output{outputCount !== 1 ? 's' : ''}</span>
+  </div>
+  {excerpt && <p class="excerpt">{excerpt}</p>}
+  {lab.tags && <TagList tags={lab.tags} />}
+</a>
+
+<style>
+  .card {
+    display: block;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    color: var(--text);
+    transition: border-color 0.15s;
+  }
+
+  .card:hover {
+    border-color: var(--text-muted);
+    text-decoration: none;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .output-count {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .excerpt {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+</style>

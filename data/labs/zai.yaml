@@ -1,0 +1,12 @@
+name: Z.ai
+slug: zai
+url: https://z.ai
+huggingface: https://huggingface.co/zai-org
+region: china
+type: corporate
+formerly:
+  - Zhipu
+description: Creator of the GLM and ChatGLM series of models.
+tags:
+  - frontier
+  - open-weight

@@ -1,0 +1,165 @@
+---
+import Layout from '../../../components/Layout.astro';
+import TypeBadge from '../../../components/TypeBadge.astro';
+import TagList from '../../../components/TagList.astro';
+import ModelDetails from '../../../components/ModelDetails.astro';
+import { getAllOutputsChronological, getOutputBySlug, getLabBySlug } from '../../../data/loader.js';
+
+export function getStaticPaths() {
+  return getAllOutputsChronological().map((o) => ({
+    params: { lab: o._labSlug, slug: o.slug },
+  }));
+}
+
+const { lab: labSlug, slug } = Astro.params;
+const output = getOutputBySlug(labSlug!, slug!)!;
+const labs = Array.isArray(output.lab) ? output.lab : [output.lab];
+const labObjects = labs.map((s) => getLabBySlug(s)).filter(Boolean);
+---
+
+<Layout title={output.name}>
+  <header class="page-header">
+    <div class="title-row">
+      <h1>{output.name}</h1>
+      <TypeBadge type={output.type} />
+    </div>
+    <div class="meta">
+      <time>{output.date}</time>
+      <span class="lab-links">
+        {labObjects.map((lab, i) => (
+          <>
+            {i > 0 && ', '}
+            <a href={`/labs/${lab!.slug}`}>{lab!.name}</a>
+          </>
+        ))}
+      </span>
+    </div>
+  </header>
+
+  {output.description && (
+    <section class="section">
+      <p class="description">{output.description}</p>
+    </section>
+  )}
+
+  <div class="links-row">
+    <a href={output.url} class="primary-link">View source</a>
+    {output.links?.map((link) => (
+      <a href={link.url}>{link.label}</a>
+    ))}
+  </div>
+
+  {output.model && (
+    <section class="section">
+      <h2>Model Details</h2>
+      <ModelDetails model={output.model} />
+    </section>
+  )}
+
+  {output.paper && (
+    <section class="section">
+      <h2>Paper</h2>
+      <div class="paper-details">
+        {output.paper.arxiv && (
+          <p><strong>arXiv:</strong> <a href={`https://arxiv.org/abs/${output.paper.arxiv}`}>{output.paper.arxiv}</a></p>
+        )}
+        {output.paper.venue && <p><strong>Venue:</strong> {output.paper.venue}</p>}
+      </div>
+    </section>
+  )}
+
+  {output.library && (
+    <section class="section">
+      <h2>Library</h2>
+      <p><a href={output.library.github}>GitHub Repository</a></p>
+    </section>
+  )}
+
+  {output.tags && <TagList tags={output.tags} />}
+
+  {output.related && output.related.length > 0 && (
+    <section class="section">
+      <h2>Related</h2>
+      <ul class="related-list">
+        {output.related.map((r) => (
+          <li>{r}</li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {output.notes && (
+    <section class="section notes">
+      <h2>Notes</h2>
+      <p>{output.notes}</p>
+    </section>
+  )}
+</Layout>
+
+<style>
+  .page-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .title-row h1 {
+    font-size: 1.5rem;
+  }
+
+  .meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .description {
+    font-size: 0.925rem;
+    line-height: 1.7;
+  }
+
+  .links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .primary-link {
+    font-weight: 600;
+  }
+
+  .section {
+    margin-bottom: 1.5rem;
+  }
+
+  .section h2 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.375rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .paper-details p {
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .related-list {
+    font-size: 0.875rem;
+    padding-left: 1.25rem;
+  }
+
+  .notes p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+</style>

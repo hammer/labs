@@ -1,0 +1,9 @@
+name: ERNIE 4.5
+slug: ernie-4.5
+lab: baidu
+type: model
+date: 2025-06-30
+url: https://the-decoder.com/baidu-releases-open-source-model-family-ernie-4-5/
+description: ERNIE 4.5 and X1 model family released as open source.
+tags:
+  - open-weight

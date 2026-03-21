@@ -1,0 +1,12 @@
+name: Intern-S1
+slug: intern-s1
+lab: shanghai-ai-lab
+type: model
+date: 2025-06-01
+url: https://huggingface.co/internlm
+description: Multimodal scientific reasoning model.
+tags:
+  - multimodal
+  - reasoning
+  - scientific
+notes: Date approximate.

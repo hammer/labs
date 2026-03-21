@@ -1,0 +1,26 @@
+name: Qwen 3.5 Medium Model Series
+slug: qwen3.5-medium
+lab: alibaba-qwen
+type: model
+date: 2026-02-26
+url: https://x.com/Alibaba_Qwen/status/2026339351530188939
+description: Medium-sized models in the Qwen3.5 family including agentic variants.
+tags:
+  - moe
+  - agentic
+  - open-weight
+model:
+  architecture: moe
+  variants:
+    - name: Qwen3.5-35B-A3B
+      parameters: 35B
+      active_parameters: 3B
+    - name: Qwen3.5-122B-A10B
+      parameters: 122B
+      active_parameters: 10B
+      notes: Agentic
+    - name: Qwen3.5-27B
+      parameters: 27B
+      notes: Agentic, dense
+    - name: Qwen3.5-Flash
+      notes: Hosted production version optimized for latency

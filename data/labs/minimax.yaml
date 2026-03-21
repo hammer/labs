@@ -1,0 +1,10 @@
+name: MiniMax
+slug: minimax
+huggingface: https://huggingface.co/MiniMaxAI
+region: china
+type: startup
+description: >
+  AI startup producing the M1 model series. Filed for Hong Kong IPO
+  aiming for $500M+ at $4B+ valuation.
+tags:
+  - frontier

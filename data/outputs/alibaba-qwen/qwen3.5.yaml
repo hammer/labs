@@ -1,0 +1,30 @@
+name: Qwen 3.5
+slug: qwen3.5
+lab: alibaba-qwen
+type: model
+date: 2026-02-16
+url: https://qwen.ai/blog?id=qwen3.5
+links:
+  - label: Reuters
+    url: https://www.reuters.com/world/china/alibaba-unveils-new-qwen35-model-agentic-ai-era-2026-02-16/
+description: >
+  Qwen3.5-397B-A17B native VLM built on Qwen3-Next architecture.
+  201 languages and dialects supported. 150k to 250k vocabulary expansion.
+  1M context window. Official built-in tools and adaptive tool use.
+  Matches the >1T-parameter Qwen3-Max-Base.
+tags:
+  - vlm
+  - moe
+  - agentic
+  - multilingual
+  - open-weight
+model:
+  architecture: moe
+  parameters: 397B
+  active_parameters: 17B
+  context_window: 1000000
+  languages: 201
+  variants:
+    - name: Qwen3.5-397B-A17B
+      parameters: 397B
+      active_parameters: 17B

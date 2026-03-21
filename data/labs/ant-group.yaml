@@ -1,0 +1,13 @@
+name: Ant Group
+slug: ant-group
+url: https://www.inclusion-ai.org
+huggingface: https://huggingface.co/inclusionAI
+region: china
+type: corporate
+parent: Ant Group
+description: >
+  Inclusion AI division of Ant Group, producing the Ling model series
+  and contributing research on MoE scaling laws and diffusion language models.
+tags:
+  - open-weight
+  - open-source

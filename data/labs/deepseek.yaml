@@ -1,0 +1,14 @@
+name: DeepSeek
+slug: deepseek
+url: https://www.deepseek.com
+huggingface: https://huggingface.co/deepseek-ai
+region: china
+type: startup
+description: >
+  AI research lab known for efficient MoE architectures and open-weight
+  frontier models. Pioneered innovations in expert parallelism and
+  reinforcement learning for reasoning.
+tags:
+  - frontier
+  - open-weight
+  - efficiency

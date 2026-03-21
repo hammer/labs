@@ -1,0 +1,11 @@
+name: Kuaishou
+slug: kuaishou
+huggingface: https://huggingface.co/Kwaipilot
+region: china
+type: corporate
+description: Creator of the Kwaipilot coding models.
+relationships:
+  - lab: tencent
+    type: investor
+    note: Tencent owns approximately 1/6 of Kuaishou
+tags: []

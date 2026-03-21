@@ -1,0 +1,64 @@
+---
+interface Props {
+  labs: { slug: string; name: string }[];
+  types: string[];
+}
+
+const { labs, types } = Astro.props;
+---
+
+<div class="filter-bar">
+  <select id="filter-lab">
+    <option value="">All labs</option>
+    {labs.map((l) => (
+      <option value={l.slug}>{l.name}</option>
+    ))}
+  </select>
+  <select id="filter-type">
+    <option value="">All types</option>
+    {types.map((t) => (
+      <option value={t}>{t}</option>
+    ))}
+  </select>
+</div>
+
+<script>
+  const labSelect = document.getElementById('filter-lab') as HTMLSelectElement;
+  const typeSelect = document.getElementById('filter-type') as HTMLSelectElement;
+
+  function applyFilters() {
+    const lab = labSelect.value;
+    const type = typeSelect.value;
+    document.querySelectorAll<HTMLElement>('[data-lab]').forEach((el) => {
+      const labs = el.dataset.lab!.split(',');
+      const matchLab = !lab || labs.includes(lab);
+      const matchType = !type || el.dataset.type === type;
+      el.style.display = matchLab && matchType ? '' : 'none';
+    });
+    document.querySelectorAll<HTMLElement>('.month-group').forEach((group) => {
+      const cards = group.querySelectorAll<HTMLElement>('[data-lab]');
+      const anyVisible = Array.from(cards).some((c) => c.style.display !== 'none');
+      group.style.display = anyVisible ? '' : 'none';
+    });
+  }
+
+  labSelect.addEventListener('change', applyFilters);
+  typeSelect.addEventListener('change', applyFilters);
+</script>
+
+<style>
+  .filter-bar {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  select {
+    padding: 0.375rem 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    background: var(--surface);
+    color: var(--text);
+  }
+</style>

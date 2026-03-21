@@ -1,0 +1,13 @@
+name: Qwen3-Max-Thinking
+slug: qwen3-max-thinking
+lab: alibaba-qwen
+type: model
+date: 2026-01-25
+url: https://qwen.ai/blog?id=qwen3-max-thinking
+description: API-only reasoning model.
+tags:
+  - reasoning
+  - frontier
+model:
+  architecture: moe
+notes: "Parameter count unconfirmed: estimated 1T total, 22B active"

@@ -1,0 +1,23 @@
+name: "Kimi K2.5: Visual Agentic Intelligence"
+slug: kimi-k2.5
+lab: moonshot-ai
+type: model
+date: 2026-02-01
+url: https://arxiv.org/abs/2602.02276
+links:
+  - label: Codecademy Guide
+    url: https://www.codecademy.com/article/kimi-k-2-5-complete-guide-to-moonshots-ai-model
+description: >
+  Early fusion visual model built on Kimi K2 base (1T-32BA).
+  384 experts with 8 activated per token.
+tags:
+  - vlm
+  - agentic
+  - moe
+model:
+  architecture: moe
+  parameters: 1T
+  active_parameters: 32B
+  base_model: kimi-k2
+paper:
+  arxiv: "2602.02276"

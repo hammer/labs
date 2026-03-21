@@ -1,0 +1,24 @@
+---
+interface Props {
+  type: string;
+}
+
+const { type } = Astro.props;
+const colorVar = `var(--color-${type})`;
+---
+
+<span class="badge" style={`--badge-color: ${colorVar}`}>{type}</span>
+
+<style>
+  .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.15em 0.5em;
+    border-radius: 9999px;
+    color: var(--badge-color);
+    background: color-mix(in srgb, var(--badge-color) 12%, transparent);
+  }
+</style>

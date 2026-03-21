@@ -1,0 +1,132 @@
+---
+import type { Output } from '../schema.js';
+
+interface Props {
+  model: NonNullable<Output['model']>;
+}
+
+const { model } = Astro.props;
+---
+
+<div class="model-details">
+  <div class="specs">
+    {model.architecture && (
+      <div class="spec">
+        <span class="spec-label">Architecture</span>
+        <span class="spec-value">{model.architecture.toUpperCase()}</span>
+      </div>
+    )}
+    {model.parameters && (
+      <div class="spec">
+        <span class="spec-label">Parameters</span>
+        <span class="spec-value">{model.parameters}</span>
+      </div>
+    )}
+    {model.active_parameters && (
+      <div class="spec">
+        <span class="spec-label">Active params</span>
+        <span class="spec-value">{model.active_parameters}</span>
+      </div>
+    )}
+    {model.context_window && (
+      <div class="spec">
+        <span class="spec-label">Context window</span>
+        <span class="spec-value">{model.context_window.toLocaleString()}</span>
+      </div>
+    )}
+    {model.languages && (
+      <div class="spec">
+        <span class="spec-label">Languages</span>
+        <span class="spec-value">{model.languages}</span>
+      </div>
+    )}
+    {model.base_model && (
+      <div class="spec">
+        <span class="spec-label">Base model</span>
+        <span class="spec-value">{model.base_model}</span>
+      </div>
+    )}
+  </div>
+
+  {model.variants && model.variants.length > 0 && (
+    <div class="variants">
+      <h4>Variants</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Parameters</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          {model.variants.map((v) => (
+            <tr>
+              <td>{v.name}</td>
+              <td>{v.parameters ?? '—'}</td>
+              <td>{v.notes ?? '—'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+</div>
+
+<style>
+  .model-details {
+    margin-top: 0.5rem;
+  }
+
+  .specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .spec {
+    background: var(--bg);
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+  }
+
+  .spec-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+  }
+
+  .spec-value {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .variants h4 {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+
+  th {
+    text-align: left;
+    padding: 0.375rem 0.5rem;
+    border-bottom: 2px solid var(--border);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+  }
+
+  td {
+    padding: 0.375rem 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+</style>

@@ -1,0 +1,20 @@
+name: Kimi K2
+slug: kimi-k2
+lab: moonshot-ai
+type: model
+date: 2025-07-11
+url: https://arxiv.org/abs/2507.20534
+links:
+  - label: Reuters
+    url: https://www.reuters.com/business/media-telecom/chinas-moonshot-ai-releases-open-source-model-reclaim-market-position-2025-07-11/
+description: 1T-32BA MoE model with 384 experts, 8 activated per token.
+tags:
+  - moe
+  - frontier
+  - open-weight
+model:
+  architecture: moe
+  parameters: 1T
+  active_parameters: 32B
+paper:
+  arxiv: "2507.20534"

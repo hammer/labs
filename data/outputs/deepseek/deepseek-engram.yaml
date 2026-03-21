@@ -1,0 +1,18 @@
+name: "Engram: Conditional Memory via Scalable Lookup"
+slug: deepseek-engram
+lab: deepseek
+type: paper
+date: 2026-01-15
+url: https://arxiv.org/abs/2601.07372
+links:
+  - label: Video from Prompt Engineering
+    url: https://www.youtube.com/watch?v=zt1jlTPCaps
+description: >
+  A new axis of sparsity for large language models. Builds upon finding
+  from Geva et al "Transformer Feed-Forward Layers Are Key-Value Memories" (2021).
+tags:
+  - architecture
+  - sparsity
+  - research
+paper:
+  arxiv: "2601.07372"

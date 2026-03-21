@@ -1,0 +1,11 @@
+name: Aquila
+slug: aquila
+lab: baai
+type: model
+date: 2024-01-01
+url: https://github.com/FlagAI-Open/Aquila2
+description: Open-source large language model series from BAAI.
+tags:
+  - open-source
+  - open-weight
+notes: Date approximate.
