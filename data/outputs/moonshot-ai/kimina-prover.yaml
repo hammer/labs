@@ -1,17 +1,25 @@
 name: Kimina-Prover
 slug: kimina-prover
 lab: moonshot-ai
-type: model
 date: 2025-04-15
 sources:
-  - label: GitHub
-    url: https://github.com/MoonshotAI/Kimina-Prover-Preview
   - label: "Paper (arXiv)"
     url: https://arxiv.org/abs/2504.11354
+  - label: GitHub
+    url: https://github.com/MoonshotAI/Kimina-Prover-Preview
   - label: HuggingFace
     url: https://huggingface.co/AI-MO/Kimina-Prover-Preview-Distill-7B
 description: >
-  Specialized model for formal mathematical reasoning.
+  Formal reasoning model for Lean 4 theorem proving trained via RL from
+  Qwen2.5-72B. Achieves 80.7% on miniF2F with pass@8192.
 tags:
   - reasoning
   - math
+  - theorem-proving
+outputs:
+  - name: Kimina-Prover-Preview-Distill-7B
+    type: model
+  - name: Kimina-Prover Preview Paper
+    type: paper
+    paper:
+      arxiv: "2504.11354"

@@ -1,0 +1,22 @@
+name: LPLB (Linear-Programming Load Balancer)
+slug: lplb
+lab: deepseek
+type: library
+date: 2025-11-19
+sources:
+  - label: GitHub
+    url: https://github.com/deepseek-ai/LPLB
+  - label: Announcement
+    url: https://eu.36kr.com/en/p/3561552346430340
+description: >
+  Expert-parallel load balancer using linear programming to optimize MoE
+  workload distribution. Supports Cube, Hypercube, Ring, and Torus topologies.
+  Early research stage successor to EPLB.
+tags:
+  - infrastructure
+  - moe
+  - open-source
+library:
+  github: https://github.com/deepseek-ai/LPLB
+related:
+  - eplb

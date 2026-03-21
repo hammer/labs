@@ -1,24 +1,50 @@
 name: KAT-Coder
 slug: kat-coder
 lab: kuaishou
-type: model
-date: 2025-11-10
+date: 2025-10-24
 sources:
-  - label: API Docs
-    url: https://kwaipilot.ai/
-  - label: Project Page
-    url: https://kwaipilot.github.io/KAT-Coder/
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2510.18779
+  - label: Project Page
+    url: https://kwaipilot.github.io/KAT-Coder/
+  - label: API Docs
+    url: https://kwaipilot.ai/
 description: >
   72B active parameter MoE coding model using the "AutoThink" paradigm.
   Designed for agentic coding with parallel tool calls to reduce interaction
-  latency.
+  latency. 73.4 on SWE-Bench Verified.
 tags:
   - coding
   - moe
   - agentic
   - reasoning
-model:
-  architecture: moe
-  active_parameters: 72B
+outputs:
+  - name: KAT-Coder
+    type: model
+    date: 2025-11-10
+    sources:
+      - label: API Docs
+        url: https://kwaipilot.ai/
+      - label: Project Page
+        url: https://kwaipilot.github.io/KAT-Coder/
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2510.18779
+    description: >
+      72B active parameter MoE coding model using the "AutoThink" paradigm.
+      Designed for agentic coding with parallel tool calls to reduce interaction
+      latency.
+    model:
+      architecture: moe
+      active_parameters: 72B
+  - name: KAT-Coder Technical Report
+    type: paper
+    date: 2025-10-24
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2510.18779
+      - label: Project Page
+        url: https://kwaipilot.github.io/KAT-Coder/
+    description: >
+      73.4 on SWE-Bench Verified. Agentic coding model technical report.
+    paper:
+      arxiv: "2510.18779"

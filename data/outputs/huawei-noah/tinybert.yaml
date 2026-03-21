@@ -1,0 +1,31 @@
+name: TinyBERT
+slug: tinybert
+lab: huawei-noah
+date: 2019-09-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/1909.10351
+  - label: "Published: Findings of EMNLP 2020"
+    url: https://aclanthology.org/2020.findings-emnlp.372/
+  - label: GitHub
+    url: https://github.com/huawei-noah/Pretrained-Language-Model/tree/master/TinyBERT
+  - label: HuggingFace
+    url: https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D
+description: >
+  Compressed BERT model using a novel Transformer distillation method.
+  Achieves 96.8% of BERT-base performance on GLUE while being 7.5x smaller
+  and 9.4x faster. Introduces a two-stage learning framework performing
+  distillation at both pre-training and fine-tuning stages. One of the most
+  influential model compression works for NLP.
+tags:
+  - nlp
+  - efficiency
+  - knowledge-distillation
+  - open-source
+outputs:
+  - type: model
+    name: TinyBERT
+  - type: paper
+    name: "TinyBERT: Distilling BERT for Natural Language Understanding"
+    paper:
+      arxiv: "1909.10351"

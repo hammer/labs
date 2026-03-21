@@ -1,0 +1,26 @@
+name: OmniGen
+slug: omnigen
+lab: baai
+type: model
+date: 2024-10-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2409.11340
+  - label: GitHub
+    url: https://github.com/VectorSpaceLab/OmniGen
+  - label: HuggingFace
+    url: https://huggingface.co/BAAI/OmniGen-v1
+description: >
+  Unified image generation model supporting text-to-image, subject-driven
+  generation, identity-preserving generation, image editing, and
+  image-conditioned generation without additional plugins like ControlNet or
+  IP-Adapter. Comprises only a VAE and a transformer model. Accepts arbitrarily
+  interleaved text and image inputs as conditions. Effectively transfers
+  knowledge across tasks and handles unseen domains.
+tags:
+  - image-generation
+  - multimodal
+  - open-weight
+model:
+  variants:
+    - name: OmniGen-v1

@@ -1,0 +1,37 @@
+name: Deformable DETR
+slug: deformable-detr
+lab: sensetime
+date: 2020-10-08
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2010.04159
+  - label: GitHub
+    url: https://github.com/fundamentalvision/Deformable-DETR
+  - label: HuggingFace
+    url: https://huggingface.co/SenseTime/deformable-detr
+description: >
+  Landmark object detection model introducing deformable attention
+  mechanisms to the DETR framework, dramatically improving convergence
+  speed and reducing computational cost. Accepted as oral at ICLR 2021.
+  Multiple pretrained variants released on HuggingFace under the
+  SenseTime organization. Apache-2.0 licensed.
+tags:
+  - computer-vision
+  - object-detection
+  - transformer
+  - open-source
+outputs:
+  - name: Deformable DETR Model
+    type: model
+    model:
+      variants:
+        - name: deformable-detr
+        - name: deformable-detr-single-scale
+        - name: deformable-detr-single-scale-dc5
+        - name: deformable-detr-with-box-refine
+        - name: deformable-detr-with-box-refine-two-stage
+  - name: "Deformable DETR: Deformable Transformers for End-to-End Object Detection"
+    type: paper
+    paper:
+      arxiv: "2010.04159"
+      venue: ICLR 2021 (Oral)

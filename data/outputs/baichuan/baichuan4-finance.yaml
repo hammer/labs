@@ -1,0 +1,41 @@
+name: Baichuan4-Finance
+slug: baichuan4-finance
+lab: baichuan
+date: 2024-12-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.15270
+  - label: Announcement (TechNode)
+    url: https://technode.com/2024/12/24/baichuan-ai-launches-enhanced-financial-model-surpassing-gpt-4o-accuracy/
+description: >
+  Financial domain-specific model built upon Baichuan4-Turbo using continual
+  pre-training with a novel domain self-constraint training strategy. Integrates
+  over 100 billion pieces of bilingual financial knowledge, developed in
+  collaboration with Renmin University. Surpasses GPT-4o in financial task
+  accuracy after SFT and RLHF/RLAIF.
+tags:
+  - proprietary
+  - finance
+  - chinese
+outputs:
+  - name: Baichuan4-Finance Technical Report
+    type: paper
+    date: 2024-12-17
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2412.15270
+    description: >
+      Technical report describing the domain self-constraint training strategy,
+      financial data pipeline, and evaluation results against competitive
+      baselines.
+    paper:
+      arxiv: "2412.15270"
+  - name: Baichuan4-Finance (model)
+    type: model
+    date: 2024-12-23
+    sources:
+      - label: Announcement (TechNode)
+        url: https://technode.com/2024/12/24/baichuan-ai-launches-enhanced-financial-model-surpassing-gpt-4o-accuracy/
+    description: >
+      Finance-optimized proprietary model with base and chat variants for
+      financial certification questions and real-world scenario applications.

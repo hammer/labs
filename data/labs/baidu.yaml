@@ -1,6 +1,7 @@
 name: Baidu
 slug: baidu
 url: https://www.baidu.com
+wikipedia: https://en.wikipedia.org/wiki/Baidu
 huggingface: https://huggingface.co/baidu
 github: https://github.com/PaddlePaddle
 region: china

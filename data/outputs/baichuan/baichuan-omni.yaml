@@ -1,0 +1,43 @@
+name: Baichuan-Omni
+slug: baichuan-omni
+lab: baichuan
+date: 2024-10-11
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.08565
+  - label: GitHub
+    url: https://github.com/westlake-baichuan-mllm/bc-omni
+description: >
+  First open-source 7B omni-modal large language model capable of concurrently
+  processing and analyzing image, video, audio, and text modalities. Uses a
+  two-stage training schema with multimodal alignment and multitask fine-tuning.
+  Developed in collaboration with Westlake University and Zhejiang University.
+tags:
+  - open-weight
+  - multimodal
+  - audio
+  - vision
+outputs:
+  - name: Baichuan-Omni Technical Report
+    type: paper
+    date: 2024-10-11
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2410.08565
+    description: >
+      Technical report describing the omni-modal architecture, two-stage
+      multimodal training schema, and evaluation results.
+    paper:
+      arxiv: "2410.08565"
+  - name: Baichuan-Omni (model)
+    type: model
+    date: 2024-10-15
+    sources:
+      - label: GitHub
+        url: https://github.com/westlake-baichuan-mllm/bc-omni
+    description: >
+      Open-source 7B multimodal model for image, video, audio, and text
+      understanding.
+    model:
+      architecture: dense
+      parameters: 7B

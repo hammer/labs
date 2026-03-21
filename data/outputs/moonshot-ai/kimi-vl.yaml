@@ -1,21 +1,29 @@
 name: Kimi-VL
 slug: kimi-vl
 lab: moonshot-ai
-type: model
 date: 2025-04-10
 sources:
-  - label: HuggingFace
-    url: https://huggingface.co/moonshotai/Kimi-VL-A3B-Thinking
-  - label: GitHub
-    url: https://github.com/MoonshotAI/Kimi-VL
   - label: "Paper (arXiv)"
     url: https://arxiv.org/abs/2504.07491
+  - label: GitHub
+    url: https://github.com/MoonshotAI/Kimi-VL
+  - label: HuggingFace
+    url: https://huggingface.co/moonshotai/Kimi-VL-A3B-Thinking
 description: >
-  Open-source 16B parameter MoE vision-language model.
+  Open-source vision-language model with Moonlight MoE LLM (2.8B active / 16B
+  total) and 400M MoonViT encoder. Kimi-VL-Thinking achieves 64.0 on MMMU.
 tags:
   - vlm
   - moe
   - open-weight
-model:
-  architecture: moe
-  parameters: 16B
+outputs:
+  - name: Kimi-VL-A3B-Thinking
+    type: model
+    model:
+      architecture: moe
+      parameters: 16B
+      active_parameters: 2.8B
+  - name: Kimi-VL Technical Report
+    type: paper
+    paper:
+      arxiv: "2504.07491"

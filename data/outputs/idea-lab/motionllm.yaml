@@ -1,0 +1,41 @@
+name: MotionLLM
+slug: motionllm
+lab: idea-lab
+date: 2024-05-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2405.20340
+  - label: GitHub
+    url: https://github.com/IDEA-Research/MotionLLM
+description: >
+  Multi-modal human behavior understanding leveraging LLMs for both video
+  and motion (SMPL) modalities. Introduces MoVid dataset and MoVid-Bench
+  for human behavior evaluation. Achieves superior performance in caption,
+  spatial-temporal comprehension, and reasoning.
+tags:
+  - vision
+  - nlp
+  - multimodal
+  - motion
+  - open-source
+outputs:
+  - name: MotionLLM
+    type: model
+    sources:
+      - label: GitHub
+        url: https://github.com/IDEA-Research/MotionLLM
+    description: >
+      LLM-based motion understanding model for human behavior captioning,
+      comprehension, and reasoning from video and motion sequences.
+    library:
+      github: https://github.com/IDEA-Research/MotionLLM
+  - name: "MotionLLM: Understanding Human Behaviors from Human Motions and Videos"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2405.20340
+    description: >
+      Framework for joint video-motion human behavior understanding using
+      LLMs with unified training strategy and MoVid benchmark.
+    paper:
+      arxiv: "2405.20340"

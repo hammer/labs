@@ -1,0 +1,20 @@
+name: AWorld
+slug: aworld
+lab: ant-group
+type: library
+date: 2025-05-01
+sources:
+  - label: GitHub
+    url: https://github.com/inclusionAI/AWorld
+  - label: Blog Post
+    url: https://biao-gong.github.io/blog/aworld/
+description: >
+  Multi-agent framework for building, evaluating, and training general
+  multi-agent assistants. Top-ranked open-source framework on the GAIA
+  benchmark. Supports event-driven agent communication and agentic training.
+tags:
+  - agentic
+  - framework
+  - multi-agent
+library:
+  github: https://github.com/inclusionAI/AWorld

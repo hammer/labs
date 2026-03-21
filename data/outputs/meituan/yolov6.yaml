@@ -1,12 +1,11 @@
 name: YOLOv6
 slug: yolov6
 lab: meituan
-type: library
 date: 2022-06-24
 sources:
   - label: GitHub
     url: https://github.com/meituan/YOLOv6
-  - label: "Paper (arXiv)"
+  - label: Paper (arXiv)
     url: https://arxiv.org/abs/2209.02976
   - label: Documentation
     url: https://docs.ultralytics.com/models/yolov6/
@@ -17,6 +16,29 @@ tags:
   - vision
   - detection
   - open-weight
-library:
-  github: https://github.com/meituan/YOLOv6
+outputs:
+  - name: YOLOv6
+    type: library
+    sources:
+      - label: GitHub
+        url: https://github.com/meituan/YOLOv6
+      - label: Documentation
+        url: https://docs.ultralytics.com/models/yolov6/
+    description: >
+      High-performance single-stage object detector dedicated to industrial
+      applications. One of Meituan's most famous open-source contributions.
+    library:
+      github: https://github.com/meituan/YOLOv6
+  - name: "YOLOv6: Single-Stage Object Detection for Industrial Applications"
+    type: paper
+    date: 2022-09-07
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2209.02976
+      - label: GitHub
+        url: https://github.com/meituan/YOLOv6
+    description: >
+      High-performance single-stage object detector for industrial applications.
+    paper:
+      arxiv: "2209.02976"
 notes: Updated through 2024.

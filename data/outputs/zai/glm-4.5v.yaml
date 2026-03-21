@@ -1,0 +1,27 @@
+name: GLM-4.5V
+slug: glm-4.5v
+lab: zai
+type: model
+date: 2025-08-11
+sources:
+  - label: GitHub
+    url: https://github.com/zai-org/GLM-V
+  - label: HuggingFace
+    url: https://huggingface.co/zai-org/GLM-4.5V
+  - label: Announcement
+    url: https://www.marktechpost.com/2025/08/12/zhipu-ai-releases-glm-4-5v-versatile-multimodal-reasoning-with-scalable-reinforcement-learning/
+description: >
+  Open-source vision-language model (106B total, 12B active via MoE). Supports
+  64K tokens for multi-image and video inputs. SOTA on 42 public VL benchmarks
+  at its scale. MIT-licensed.
+tags:
+  - vlm
+  - multimodal
+  - moe
+  - open-weight
+  - reasoning
+model:
+  architecture: moe
+  parameters: 106B
+  active_parameters: 12B
+  context_window: 64000

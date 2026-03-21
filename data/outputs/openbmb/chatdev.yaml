@@ -1,7 +1,6 @@
-name: "ChatDev: Communicative Agents for Software Development"
+name: ChatDev
 slug: chatdev
 lab: openbmb
-type: paper
 date: 2023-07-16
 sources:
   - label: "Paper (arXiv)"
@@ -9,9 +8,22 @@ sources:
   - label: GitHub
     url: https://github.com/OpenBMB/ChatDev
 description: >
-  Multi-agent framework where agents communicate to develop software.
+  Multi-agent framework where agents communicate to develop software. ChatDev
+  2.0 (DevAll) introduces a zero-code multi-agent orchestration platform for
+  building customized multi-agent systems.
 tags:
   - agentic
   - coding
-paper:
-  arxiv: "2307.07924"
+outputs:
+  - name: "ChatDev: Communicative Agents for Software Development"
+    type: paper
+    paper:
+      arxiv: "2307.07924"
+  - name: ChatDev 2.0 (DevAll)
+    type: library
+    date: 2026-01-07
+    description: >
+      Zero-code multi-agent orchestration platform for building and executing
+      customized multi-agent systems through simple configuration.
+    library:
+      github: https://github.com/OpenBMB/ChatDev

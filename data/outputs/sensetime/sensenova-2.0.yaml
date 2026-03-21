@@ -1,0 +1,20 @@
+name: SenseNova 2.0 Upgrade
+slug: sensenova-2.0
+lab: sensetime
+type: model
+date: 2023-07-07
+sources:
+  - label: Announcement
+    url: https://www.prnewswire.com/apac/news-releases/sensetime-upgrades-the-sensenova-foundation-model-sets-revolutionizing-industries-with-rapid-iteration-301871830.html
+  - label: SenseTime News
+    url: https://www.sensetime.com/en/news-detail/51166818?categoryId=1072
+description: >
+  Comprehensive upgrade of the SenseNova foundation model family at
+  WAIC 2023. Included SenseChat 2.0 with improved dialogue capabilities
+  and SenseMirage 3.0 with 7B parameters for professional-grade image
+  generation. Demonstrated rapid iteration in language, vision, and
+  multimodal capabilities.
+tags:
+  - frontier
+  - multimodal
+  - llm

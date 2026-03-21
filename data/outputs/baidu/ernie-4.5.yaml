@@ -9,14 +9,39 @@ sources:
   - label: Blog Post
     url: https://ernie.baidu.com/blog/posts/ernie4.5/
   - label: HuggingFace
-    url: https://huggingface.co/baidu
+    url: https://huggingface.co/collections/baidu/ernie-45
+  - label: GitHub
+    url: https://github.com/PaddlePaddle/ERNIE
 description: >
-  Introduced the ERNIE-4.5-300B-A47B, a Mixture-of-Experts model with 300B
-  total parameters (47B active). Released as open source alongside ERNIE X1.
+  Family of 10 open-source multimodal MoE models ranging from 424B total
+  parameters (47B active) down to a 0.3B dense model. Uses a heterogeneous
+  modality structure supporting parameter sharing across modalities with
+  dedicated parameters per modality. Initially announced March 16, 2025;
+  fully open-sourced under Apache 2.0 on June 30, 2025. Achieves SOTA on
+  multiple text and multimodal benchmarks.
 tags:
   - moe
   - open-weight
+  - multimodal
 model:
   architecture: moe
-  parameters: 300B
-  active_parameters: 47B
+  variants:
+    - name: ERNIE-4.5-VL-424B-A47B
+      parameters: 424B
+      active_parameters: 47B
+      notes: Flagship multimodal MoE model
+    - name: ERNIE-4.5-VL-28B-A3B
+      parameters: 28B
+      active_parameters: 3B
+      notes: Lightweight multimodal MoE
+    - name: ERNIE-4.5-VL-28B-A3B-Thinking
+      parameters: 28B
+      active_parameters: 3B
+      notes: Reasoning variant with thinking mode
+    - name: ERNIE-4.5-21B-A3B
+      parameters: 21B
+      active_parameters: 3B
+      notes: Text-only MoE
+    - name: ERNIE-4.5-0.3B
+      parameters: 0.3B
+      notes: Compact dense model

@@ -1,0 +1,25 @@
+name: Seed-OSS-36B
+slug: seed-oss
+lab: bytedance-seed
+type: model
+date: 2025-08-20
+sources:
+  - label: GitHub
+    url: https://github.com/ByteDance-Seed/seed-oss
+  - label: HuggingFace
+    url: https://huggingface.co/ByteDance-Seed/Seed-OSS-36B-Instruct
+  - label: Announcement
+    url: https://venturebeat.com/technology/tiktok-parent-company-bytedance-releases-new-open-source-seed-oss-36b-model-with-512k-token-context
+description: >
+  Open-source 36B-parameter LLM with 512K context window. Achieves strong
+  performance across reasoning, agent, and general tasks despite being trained
+  on only 12T tokens. Released under Apache-2.0 license.
+tags:
+  - open-weight
+  - long-context
+  - reasoning
+  - agentic
+model:
+  architecture: dense
+  parameters: 36B
+  context_window: 512000

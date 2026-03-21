@@ -1,0 +1,25 @@
+name: HunyuanOCR
+slug: hunyuan-ocr
+lab: tencent
+type: model
+date: 2025-11-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2511.19575
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/HunyuanOCR
+  - label: HuggingFace
+    url: https://huggingface.co/tencent/HunyuanOCR
+description: >
+  Commercial-grade, lightweight (1B) end-to-end OCR expert VLM. Connects a
+  0.4B native-resolution ViT to a 0.5B Hunyuan LLM. Won first place in
+  ICDAR 2025 DIMT Challenge (Small Model Track).
+tags:
+  - vlm
+  - ocr
+  - open-weight
+model:
+  architecture: dense
+  parameters: 1B
+paper:
+  arxiv: "2511.19575"

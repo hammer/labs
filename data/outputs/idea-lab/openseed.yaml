@@ -1,0 +1,42 @@
+name: OpenSeeD
+slug: openseed
+lab: idea-lab
+date: 2023-03-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2303.08131
+  - label: GitHub
+    url: https://github.com/IDEA-Research/OpenSeeD
+description: >
+  A Simple Framework for Open-Vocabulary Segmentation and Detection. Jointly
+  learns from different segmentation and detection datasets with a pre-trained
+  text encoder for a common semantic space. Proposes decoupled decoding for
+  foreground/background and conditioned mask decoding for box-to-mask.
+tags:
+  - vision
+  - segmentation
+  - object-detection
+  - open-vocabulary
+  - open-source
+outputs:
+  - name: OpenSeeD
+    type: library
+    sources:
+      - label: GitHub
+        url: https://github.com/IDEA-Research/OpenSeeD
+    description: >
+      Official open-vocabulary segmentation and detection framework with
+      interactive segmentation capabilities.
+    library:
+      github: https://github.com/IDEA-Research/OpenSeeD
+  - name: "A Simple Framework for Open-Vocabulary Segmentation and Detection"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2303.08131
+    description: >
+      Proposes decoupled and conditioned decoding to unify segmentation and
+      detection in an open-vocabulary setting.
+    paper:
+      arxiv: "2303.08131"
+      venue: ICCV 2023

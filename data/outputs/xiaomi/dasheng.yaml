@@ -1,16 +1,55 @@
-name: "Dasheng: Scaling Masked Audio Encoder Learning"
+name: Dasheng
 slug: dasheng
 lab: xiaomi
-type: paper
 date: 2024-06-11
 sources:
-  - label: Paper (arXiv)
+  - label: Paper (arXiv, Dasheng)
     url: https://arxiv.org/abs/2406.06992
+  - label: Paper (arXiv, DashengLM)
+    url: https://arxiv.org/abs/2508.03983
+  - label: GitHub
+    url: https://github.com/xiaomi-research/dasheng-lm
 description: >
-  Original Dasheng audio encoder (1.2B params, 272K hours). Foundation for
-  MiDashengLM and DashengTokenizer.
+  Audio encoder and language model family. Original Dasheng encoder (1.2B params,
+  272K hours) evolved into DashengLM and MiDashengLM-7B for efficient audio
+  understanding supporting speech, music, and acoustics.
 tags:
   - audio
   - architecture
-paper:
-  arxiv: "2406.06992"
+  - open-weight
+outputs:
+  - name: "Dasheng: Scaling Masked Audio Encoder Learning"
+    type: paper
+    date: 2024-06-11
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2406.06992
+    description: >
+      Original Dasheng audio encoder (1.2B params, 272K hours). Foundation for
+      MiDashengLM and DashengTokenizer.
+    paper:
+      arxiv: "2406.06992"
+  - name: "Dasheng-LM: Efficient Audio Understanding with General Audio Captions"
+    type: paper
+    date: 2025-08-06
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2508.03983
+      - label: GitHub
+        url: https://github.com/xiaomi-research/dasheng-lm
+    description: >
+      Research on efficient audio understanding using general audio captions.
+    paper:
+      arxiv: "2508.03983"
+  - name: MiDashengLM-7B
+    type: model
+    date: 2025-08-06
+    sources:
+      - label: GitHub
+        url: https://github.com/xiaomi-research/dasheng-lm
+    description: >
+      Efficient audio understanding model built on the "Dasheng" encoder, supporting
+      speech, music, and acoustics.
+    model:
+      architecture: dense
+      parameters: 7B

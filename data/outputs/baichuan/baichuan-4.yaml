@@ -1,0 +1,19 @@
+name: Baichuan 4
+slug: baichuan-4
+lab: baichuan
+type: model
+date: 2024-05-22
+sources:
+  - label: Announcement (Medium)
+    url: https://braintitan.medium.com/baichuan-intelligence-releases-baichuan-4-model-and-the-first-ai-intelligent-assistant-fb2736d8d2f2
+  - label: Announcement (Yahoo Finance)
+    url: https://finance.yahoo.com/news/chinese-start-baichuan-debuts-ai-093000023.html
+description: >
+  Fourth-generation proprietary base model from Baichuan Intelligence with
+  significant improvements over the previous generation: general ability improved
+  by more than 10%, math and code capabilities improved by 14% and 9%
+  respectively. Launched alongside the Baixiaoying AI assistant. Ranked highest
+  on SuperCLUE for Chinese language capabilities.
+tags:
+  - proprietary
+  - chinese

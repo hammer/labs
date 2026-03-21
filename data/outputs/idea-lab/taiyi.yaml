@@ -1,0 +1,50 @@
+name: Taiyi
+slug: taiyi
+lab: idea-lab
+date: 2022-11-02
+sources:
+  - label: Paper (Taiyi-Diffusion-XL, arXiv)
+    url: https://arxiv.org/abs/2401.14688
+  - label: HuggingFace (Chinese SD)
+    url: https://huggingface.co/IDEA-CCNL/Taiyi-Stable-Diffusion-1B-Chinese-v0.1
+  - label: HuggingFace (XL)
+    url: https://huggingface.co/IDEA-CCNL/Taiyi-Stable-Diffusion-XL-3.5B
+description: >
+  First open-source Chinese Stable Diffusion model family. Trained on 20M
+  filtered Chinese image-text pairs from Noah-Wukong and Zero datasets.
+  Taiyi-Diffusion-XL extends to bilingual (Chinese-English) generation
+  with 3.5B parameters via continuous pre-training on SDXL.
+tags:
+  - vision
+  - generation
+  - chinese
+  - open-source
+outputs:
+  - name: Taiyi-Stable-Diffusion-1B-Chinese
+    type: model
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/IDEA-CCNL/Taiyi-Stable-Diffusion-1B-Chinese-v0.1
+    description: >
+      First open-source Chinese Stable Diffusion model trained on 20M
+      filtered Chinese image-text pairs.
+  - name: Taiyi-Diffusion-XL
+    type: model
+    date: 2024-01-26
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/IDEA-CCNL/Taiyi-Stable-Diffusion-XL-3.5B
+    description: >
+      Bilingual Chinese-English text-to-image model based on SDXL with
+      expanded vocabulary and vision-language model enhanced prompts.
+  - name: "Taiyi-Diffusion-XL: Advancing Bilingual Text-to-Image Generation with Large Vision-Language Model Support"
+    type: paper
+    date: 2024-01-26
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2401.14688
+    description: >
+      Extends CLIP and SDXL for bilingual text-to-image generation through
+      vocabulary expansion and bilingual continuous pre-training.
+    paper:
+      arxiv: "2401.14688"

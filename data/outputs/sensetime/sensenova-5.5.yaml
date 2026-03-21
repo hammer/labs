@@ -1,0 +1,25 @@
+name: SenseNova 5.5
+slug: sensenova-5.5
+lab: sensetime
+type: model
+date: 2024-07-05
+sources:
+  - label: Announcement
+    url: https://www.sensetime.com/en/news-detail/51168278?categoryId=1072
+  - label: Coverage
+    url: https://www.artificialintelligence-news.com/news/sensetime-sensenova-china-real-time-multimodal-ai-model/
+description: >
+  Unveiled at WAIC 2024 in Shanghai. 30% performance improvement over
+  SenseNova 5.0. Introduced SenseNova 5o, China's first real-time
+  multimodal model rivaling GPT-4o's streaming interaction across audio,
+  text, image, and video. Also debuted the Vimi video generation model
+  and reduced edge deployment cost to RMB 9.90 per device per year.
+tags:
+  - frontier
+  - multimodal
+  - real-time
+model:
+  variants:
+    - name: SenseNova 5.5
+    - name: SenseNova 5o
+      notes: Real-time multimodal streaming interaction model

@@ -1,0 +1,22 @@
+name: Baichuan-7B
+slug: baichuan-7b
+lab: baichuan
+type: model
+date: 2023-06-15
+sources:
+  - label: GitHub
+    url: https://github.com/baichuan-inc/Baichuan-7B
+  - label: HuggingFace
+    url: https://huggingface.co/baichuan-inc/Baichuan-7B
+description: >
+  Open-source 7-billion-parameter language model trained on 1.2 trillion tokens
+  of Chinese and English data. Released under an Apache 2.0 license, it was the
+  first model from Baichuan Intelligence and achieved competitive results on
+  Chinese benchmarks.
+tags:
+  - open-weight
+  - chinese
+  - nlp
+model:
+  architecture: dense
+  parameters: 7B

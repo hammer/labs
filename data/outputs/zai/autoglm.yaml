@@ -1,16 +1,36 @@
 name: AutoGLM
 slug: autoglm
 lab: zai
-type: model
-date: 2025-03-31
+date: 2024-10-28
 sources:
   - label: Announcement
     url: https://technode.com/2025/04/01/zhipu-ai-launches-free-ai-agent-as-chinas-tech-race-heats-up/
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2411.00820
+  - label: Project Page
+    url: https://xiao9905.github.io/AutoGLM/
 description: >
   "Computer-Use" agent capable of navigating smartphone apps and web browsers
   via natural language commands.
 tags:
   - agentic
   - coding
+outputs:
+  - name: AutoGLM
+    type: model
+    date: 2025-03-31
+    sources:
+      - label: Announcement
+        url: https://technode.com/2025/04/01/zhipu-ai-launches-free-ai-agent-as-chinas-tech-race-heats-up/
+  - name: "AutoGLM: Autonomous Foundation Agents for GUIs"
+    type: paper
+    date: 2024-10-28
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2411.00820
+      - label: Project Page
+        url: https://xiao9905.github.io/AutoGLM/
+    description: >
+      Autonomous agents for navigating smartphone apps and web browsers.
+    paper:
+      arxiv: "2411.00820"

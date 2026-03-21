@@ -1,6 +1,7 @@
 name: Kuaishou
 slug: kuaishou
 url: https://www.kuaishou.com
+wikipedia: https://en.wikipedia.org/wiki/Kuaishou
 founded: 2011-03
 huggingface: https://huggingface.co/Kwaipilot
 github: https://github.com/kuaishou-langlab

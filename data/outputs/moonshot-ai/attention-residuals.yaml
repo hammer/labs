@@ -1,7 +1,6 @@
 name: Attention Residuals
 slug: attention-residuals
 lab: moonshot-ai
-type: paper
 date: 2026-03-16
 sources:
   - label: "Paper (arXiv)"
@@ -9,7 +8,18 @@ sources:
   - label: GitHub
     url: https://github.com/MoonshotAI/Attention-Residuals
 description: >
-  Paper proposing a drop-in replacement for residual connections to improve scaling.
+  Replaces fixed residual accumulation with softmax attention over preceding
+  layers. Block AttnRes variant for scalability. A drop-in replacement for
+  residual connections to improve scaling.
 tags:
   - architecture
   - scaling
+outputs:
+  - name: Attention Residuals Paper
+    type: paper
+    paper:
+      arxiv: "2603.15031"
+  - name: Attention Residuals Code
+    type: library
+    library:
+      github: https://github.com/MoonshotAI/Attention-Residuals

@@ -1,0 +1,16 @@
+name: Baichuan 3
+slug: baichuan-3
+lab: baichuan
+type: model
+date: 2024-01-29
+sources:
+  - label: Announcement (Pandaily)
+    url: https://pandaily.com/baichuan-ai-releases-large-scale-model-baichuan-3-with-parameters-exceeding-one-trillion/
+description: >
+  Large language model with over 100 billion parameters. Claimed to surpass
+  GPT-4 in Chinese tasks on evaluations such as CMMLU, GAOKAO, and AGI-Eval.
+tags:
+  - proprietary
+  - chinese
+model:
+  architecture: dense

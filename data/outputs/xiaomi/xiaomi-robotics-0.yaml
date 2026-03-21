@@ -1,7 +1,6 @@
 name: Xiaomi-Robotics-0
 slug: xiaomi-robotics-0
 lab: xiaomi
-type: model
 date: 2026-02-12
 sources:
   - label: Paper (arXiv)
@@ -11,13 +10,33 @@ sources:
   - label: Project Page
     url: https://xiaomi-robotics-0.github.io/
 description: >
-  4.7B parameter Vision-Language-Action (VLA) model for real-time robotic execution.
+  4.7B parameter Vision-Language-Action (VLA) model for real-time robotic
+  execution. Scales VLA models for consumer GPUs.
 tags:
   - robotics
   - vlm
   - open-weight
-model:
-  architecture: dense
-  parameters: 4.7B
-paper:
-  arxiv: "2602.12684"
+outputs:
+  - name: Xiaomi-Robotics-0
+    type: model
+    date: 2026-02-12
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/XiaomiMiMo
+      - label: Project Page
+        url: https://xiaomi-robotics-0.github.io/
+    model:
+      architecture: dense
+      parameters: 4.7B
+  - name: "Xiaomi-Robotics-0: Open-Sourced VLA Model"
+    type: paper
+    date: 2026-02-13
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2602.12684
+      - label: Project Page
+        url: https://xiaomi-robotics-0.github.io/
+    description: >
+      Report on scaling Vision-Language-Action models for consumer GPUs.
+    paper:
+      arxiv: "2602.12684"

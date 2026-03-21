@@ -1,0 +1,26 @@
+name: Seed1.5-VL
+slug: seed1.5-vl
+lab: bytedance-seed
+date: 2025-05-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.07062
+  - label: GitHub
+    url: https://github.com/ByteDance-Seed/Seed1.5-VL
+  - label: HuggingFace Demo
+    url: https://huggingface.co/spaces/ByteDance-Seed/Seed1.5-VL
+description: >
+  Vision-language foundation model with a 532M vision encoder and 20B-active
+  MoE LLM. State-of-the-art on 38 of 60 public VLM benchmarks. Excels at
+  GUI control, gameplay, and visual reasoning tasks.
+tags:
+  - multimodal
+  - vision
+  - moe
+  - agentic
+model:
+  architecture: moe
+  active_parameters: 20B
+type: model
+paper:
+  arxiv: "2505.07062"

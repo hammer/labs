@@ -1,0 +1,26 @@
+name: UniAD
+slug: uniad
+lab: [sensetime, shanghai-ai-lab]
+type: paper
+date: 2023-06-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2212.10156
+  - label: GitHub
+    url: https://github.com/OpenDriveLab/UniAD
+  - label: CVPR 2023 Best Paper
+    url: https://www.sensetime.com/en/news-detail/51166787
+description: >
+  Planning-oriented end-to-end autonomous driving framework unifying
+  perception, prediction, and planning in one network. Won the CVPR 2023
+  Best Paper Award. Surpasses prior methods by 20% in tracking, 30% in
+  mapping, 38% in motion forecasting, and 28% in planning on nuScenes.
+  Uses multi-view camera only, outperforming LiDAR-based methods.
+tags:
+  - autonomous-driving
+  - end-to-end
+  - computer-vision
+  - best-paper
+paper:
+  arxiv: "2212.10156"
+  venue: CVPR 2023 (Best Paper)

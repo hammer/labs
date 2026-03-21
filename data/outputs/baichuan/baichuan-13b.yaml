@@ -1,0 +1,27 @@
+name: Baichuan-13B
+slug: baichuan-13b
+lab: baichuan
+type: model
+date: 2023-07-11
+sources:
+  - label: GitHub
+    url: https://github.com/baichuan-inc/Baichuan-13B
+  - label: HuggingFace (Base)
+    url: https://huggingface.co/baichuan-inc/Baichuan-13B-Base
+  - label: HuggingFace (Chat)
+    url: https://huggingface.co/baichuan-inc/Baichuan-13B-Chat
+description: >
+  Open-source 13-billion-parameter language model supporting Chinese and English.
+  Released under an Apache 2.0 license with both base and chat variants.
+  Achieved the best performance among models of similar size on standard Chinese
+  and English benchmarks at the time of release.
+tags:
+  - open-weight
+  - chinese
+  - nlp
+model:
+  architecture: dense
+  parameters: 13B
+  variants:
+    - name: Baichuan-13B-Base
+    - name: Baichuan-13B-Chat

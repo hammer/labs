@@ -1,8 +1,7 @@
 name: Hunyuan-DiT
 slug: hunyuan-dit
 lab: tencent
-type: model
-date: 2024-05-17
+date: 2024-05-14
 sources:
   - label: GitHub
     url: https://github.com/Tencent-Hunyuan/HunyuanDiT
@@ -16,7 +15,24 @@ tags:
   - vision
   - diffusion
   - open-weight
-model:
-  parameters: 1.5B
+outputs:
+  - name: Hunyuan-DiT
+    type: model
+    date: 2024-05-17
+    sources:
+      - label: GitHub
+        url: https://github.com/Tencent-Hunyuan/HunyuanDiT
+    model:
+      parameters: 1.5B
+  - name: "Hunyuan-DiT: Multi-Resolution Diffusion Transformer"
+    type: paper
+    date: 2024-05-14
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2405.08748
+    description: >
+      Fine-grained Chinese understanding in a multi-resolution diffusion transformer.
+    paper:
+      arxiv: "2405.08748"
 library:
   github: https://github.com/Tencent-Hunyuan/HunyuanDiT

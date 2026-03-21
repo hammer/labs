@@ -1,0 +1,26 @@
+name: BaichuanMed-OCR
+slug: baichuanmed-ocr
+lab: baichuan
+type: model
+date: 2025-04-07
+sources:
+  - label: HuggingFace (7B)
+    url: https://huggingface.co/baichuan-inc/BaichuanMed-OCR-7B
+  - label: HuggingFace (72B)
+    url: https://huggingface.co/baichuan-inc/BaichuanMed-OCR-72B
+description: >
+  Vision-language models fine-tuned from Qwen2.5-VL for medical report OCR.
+  Trained on curated medical report datasets to accurately recognize complex
+  textual content within medical report images, output structured Markdown, and
+  answer questions based on extracted content. Available in 7B and 72B variants.
+tags:
+  - open-weight
+  - medical
+  - ocr
+  - vision
+model:
+  variants:
+    - name: BaichuanMed-OCR-7B
+      parameters: 7B
+    - name: BaichuanMed-OCR-72B
+      parameters: 72B

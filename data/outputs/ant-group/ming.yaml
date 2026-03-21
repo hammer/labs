@@ -1,0 +1,48 @@
+name: Ming
+slug: ming
+lab: ant-group
+date: 2025-05-28
+sources:
+  - label: GitHub
+    url: https://github.com/inclusionAI/Ming
+  - label: HuggingFace (Ming-Lite-Omni)
+    url: https://huggingface.co/inclusionAI/Ming-Lite-Omni
+  - label: HuggingFace (Ming-Flash-Omni-2.0)
+    url: https://huggingface.co/inclusionAI/Ming-flash-omni-2.0
+  - label: Blog Post
+    url: https://inclusionai.github.io/blog/ming-omni/
+description: >
+  Ant Group's multimodal model family built on the Ling backbone. Handles
+  vision, speech, audio, and music within a single architecture.
+tags:
+  - multimodal
+  - audio
+  - open-weight
+outputs:
+  - name: Ming-Omni / Ming-Lite-Omni
+    type: model
+    date: 2025-05-28
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/inclusionAI/Ming-Lite-Omni
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2506.09344
+      - label: Blog Post
+        url: https://inclusionai.github.io/blog/ming-omni/
+    description: >
+      Native multimodal models built on the Ling backbone. Part of the Ming
+      (multimodal) series.
+    paper:
+      arxiv: "2506.09344"
+  - name: Ming-Flash-Omni-2.0
+    type: model
+    date: 2026-02-11
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/inclusionAI/Ming-flash-omni-2.0
+      - label: Announcement
+        url: https://www.aibase.com/news/25451
+    description: >
+      First industry model to unify speech, audio, and music within a single architecture.
+related:
+  - ling

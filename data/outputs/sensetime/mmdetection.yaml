@@ -1,0 +1,32 @@
+name: OpenMMLab / MMDetection
+slug: mmdetection
+lab: [sensetime, shanghai-ai-lab]
+date: 2018-10-01
+sources:
+  - label: GitHub (MMDetection)
+    url: https://github.com/open-mmlab/mmdetection
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/1906.07155
+  - label: GitHub (OpenMMLab)
+    url: https://github.com/open-mmlab
+description: >
+  OpenMMLab is the most influential open-source computer vision algorithm
+  ecosystem, co-created by SenseTime, CUHK MMLab, and Shanghai AI Lab.
+  Since October 2018, has released 30+ vision libraries with 300+
+  algorithms and 2000+ pretrained models. MMDetection, the flagship
+  detection toolbox, supports object detection, instance segmentation,
+  panoptic segmentation, and semi-supervised detection on PyTorch.
+tags:
+  - computer-vision
+  - open-source
+  - object-detection
+  - toolbox
+outputs:
+  - name: MMDetection Library
+    type: library
+    library:
+      github: https://github.com/open-mmlab/mmdetection
+  - name: "MMDetection: Open MMLab Detection Toolbox and Benchmark"
+    type: paper
+    paper:
+      arxiv: "1906.07155"

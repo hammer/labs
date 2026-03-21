@@ -1,6 +1,7 @@
 name: Alibaba Qwen
 slug: alibaba-qwen
 url: https://qwen.ai
+wikipedia: https://en.wikipedia.org/wiki/Qwen
 huggingface: https://huggingface.co/Qwen
 github: https://github.com/QwenLM
 region: china

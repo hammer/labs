@@ -1,0 +1,45 @@
+name: DreamWaltz
+slug: dreamwaltz
+lab: idea-lab
+date: 2023-05-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2305.12529
+  - label: GitHub
+    url: https://github.com/IDEA-Research/DreamWaltz
+  - label: Project Page
+    url: https://idea-research.github.io/DreamWaltz/
+description: >
+  Text-driven 3D animatable avatar generation using ControlNet and SMPL.
+  Proposes 3D-consistent occlusion-aware Score Distillation Sampling
+  for high-quality avatar creation without artifacts. Supports complex
+  avatar-avatar, avatar-object, and avatar-scene interactions.
+tags:
+  - vision
+  - 3d
+  - generation
+  - open-source
+outputs:
+  - name: DreamWaltz
+    type: library
+    sources:
+      - label: GitHub
+        url: https://github.com/IDEA-Research/DreamWaltz
+      - label: Project Page
+        url: https://idea-research.github.io/DreamWaltz/
+    description: >
+      Framework for text-driven 3D animatable avatar generation with
+      skeleton-guided score distillation.
+    library:
+      github: https://github.com/IDEA-Research/DreamWaltz
+  - name: "DreamWaltz: Make a Scene with Complex 3D Animatable Avatars"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2305.12529
+    description: >
+      Learning framework for text-driven 3D animatable avatar creation using
+      3D-consistent occlusion-aware SDS and skeleton conditioning.
+    paper:
+      arxiv: "2305.12529"
+      venue: NeurIPS 2023

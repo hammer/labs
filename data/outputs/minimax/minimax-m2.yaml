@@ -1,7 +1,6 @@
-name: MiniMax-M2
+name: MiniMax-M2 Series
 slug: minimax-m2
 lab: minimax
-type: model
 date: 2025-10-27
 sources:
   - label: Announcement
@@ -9,9 +8,60 @@ sources:
   - label: GitHub
     url: https://github.com/MiniMax-AI/MiniMax-M2
 description: >
-  "Agent-native" model designed for tool-calling and code execution, released
-  at a fraction of the price of Claude 3.5 Sonnet.
+  "Agent-native" model series designed for tool-calling and code execution,
+  evolving from M2 through M2.7 with increasing agentic capabilities
+  including multi-language programming, office productivity, and
+  autonomous agent system building.
 tags:
   - agentic
   - coding
   - efficiency
+  - frontier
+related:
+  - minimax-m1
+outputs:
+  - name: MiniMax-M2
+    type: model
+    date: 2025-10-27
+    sources:
+      - label: Announcement
+        url: https://www.minimax.io/news/minimax-m2
+      - label: GitHub
+        url: https://github.com/MiniMax-AI/MiniMax-M2
+    description: >
+      "Agent-native" model designed for tool-calling and code execution, released
+      at a fraction of the price of Claude 3.5 Sonnet.
+  - name: MiniMax-M2.1
+    type: model
+    date: 2025-12-23
+    sources:
+      - label: Announcement
+        url: https://www.minimax.io/news/minimax-m21
+      - label: HuggingFace
+        url: https://huggingface.co/MiniMaxAI/MiniMax-M2.1
+      - label: GitHub
+        url: https://github.com/MiniMax-AI/MiniMax-M2.1
+    description: >
+      Enhanced for multi-language programming (Rust, Java, Go) and complex agentic
+      scaffolding.
+  - name: MiniMax-M2.5 & M2.5-Lightning
+    type: model
+    date: 2026-02-12
+    sources:
+      - label: Announcement
+        url: https://www.minimax.io/news/minimax-m25
+      - label: HuggingFace
+        url: https://huggingface.co/MiniMaxAI/MiniMax-M2.5
+    description: >
+      Reached SOTA in office productivity (Word/Excel automation) and browse-based tasks.
+  - name: MiniMax-M2.7
+    type: model
+    date: 2026-03-18
+    sources:
+      - label: Announcement
+        url: https://www.minimax.io/news/minimax-m27-en
+      - label: API Docs
+        url: https://platform.minimax.io/docs/release-notes/models
+    description: >
+      Current flagship focused on "AI self-evolution." Serves as a "Co-worker Agent"
+      that can independently build and stabilize agent systems.

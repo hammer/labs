@@ -1,0 +1,20 @@
+name: SenseChat / SenseNova Launch
+slug: sensechat
+lab: sensetime
+type: model
+date: 2023-04-11
+sources:
+  - label: Announcement
+    url: https://www.prnewswire.com/apac/news-releases/sensetime-launches-sensenova-foundation-model-sets-and-ai-computing-systems-advancing-agi-development-301793383.html
+  - label: Coverage
+    url: https://techstartups.com/2023/04/10/chinese-ai-startup-sensetime-unveils-sensechat-a-chatbot-and-image-generator-to-take-on-chatgpt/
+description: >
+  SenseTime's debut of the SenseNova foundation model family and SenseChat
+  large language model at Tech Day 2023. SenseChat is a 100B+ parameter
+  LLM trained with Chinese-context data for multi-turn dialogue and
+  long text comprehension. Also introduced SenseMirage text-to-image
+  creation platform and SenseCore AI computing infrastructure.
+tags:
+  - llm
+  - chatbot
+  - foundation-model

@@ -1,0 +1,56 @@
+name: Grounded SAM
+slug: grounded-sam
+lab: idea-lab
+date: 2023-04-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2401.14159
+  - label: GitHub (Grounded-SAM)
+    url: https://github.com/IDEA-Research/Grounded-Segment-Anything
+  - label: GitHub (Grounded-SAM-2)
+    url: https://github.com/IDEA-Research/Grounded-SAM-2
+description: >
+  Marries Grounding DINO with Segment Anything for automated open-world
+  detection, segmentation, and generation. Achieves 48.7 mean AP on
+  SegInW zero-shot benchmark. Grounded-SAM-2 extends support to video
+  with SAM 2 and Florence-2 integration. One of the most popular
+  open-source vision pipelines with 15k+ GitHub stars.
+tags:
+  - vision
+  - segmentation
+  - object-detection
+  - open-vocabulary
+  - open-source
+outputs:
+  - name: Grounded-Segment-Anything
+    type: library
+    sources:
+      - label: GitHub
+        url: https://github.com/IDEA-Research/Grounded-Segment-Anything
+    description: >
+      Combines Grounding DINO with SAM, Stable Diffusion, and Recognize
+      Anything for automated detect-segment-generate pipelines.
+    library:
+      github: https://github.com/IDEA-Research/Grounded-Segment-Anything
+  - name: Grounded-SAM-2
+    type: library
+    date: 2024-08-07
+    sources:
+      - label: GitHub
+        url: https://github.com/IDEA-Research/Grounded-SAM-2
+    description: >
+      Extends Grounded SAM to video with SAM 2 and Florence-2 for grounding
+      and tracking anything in videos.
+    library:
+      github: https://github.com/IDEA-Research/Grounded-SAM-2
+  - name: "Grounded SAM: Assembling Open-World Models for Diverse Visual Tasks"
+    type: paper
+    date: 2024-01-25
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2401.14159
+    description: >
+      Technical report on the Grounded SAM pipeline for assembling open-world
+      vision models for diverse visual tasks.
+    paper:
+      arxiv: "2401.14159"

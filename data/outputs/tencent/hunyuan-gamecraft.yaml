@@ -1,0 +1,19 @@
+name: Hunyuan-GameCraft 1.0
+slug: hunyuan-gamecraft
+lab: tencent
+type: model
+date: 2025-08-14
+sources:
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/Hunyuan-GameCraft-1.0
+  - label: HuggingFace
+    url: https://huggingface.co/tencent/Hunyuan-GameCraft-1.0
+description: >
+  Interactive game video generation framework. Trained on 1M+ gameplay
+  recordings across 100+ AAA games. Unifies keyboard/mouse inputs into a
+  shared camera representation space for smooth interpolation.
+tags:
+  - video
+  - generation
+  - gaming
+  - open-weight

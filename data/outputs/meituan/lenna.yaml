@@ -1,17 +1,42 @@
 name: Lenna
 slug: lenna
 lab: meituan
-type: model
-date: 2023-12-28
+date: 2023-12-05
 sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2312.02433
   - label: GitHub
     url: https://github.com/Meituan-AutoML/Lenna
-  - label: "Paper (arXiv)"
-    url: https://arxiv.org/abs/2312.02433
+  - label: IEEE Xplore
+    url: https://ieeexplore.ieee.org/document/10888428/
 description: >
   "Language Enhanced Reasoning Detection Assistant" combining MLLMs with
-  object detection.
+  object detection for reasoning-based detection.
 tags:
   - vision
   - detection
   - reasoning
+outputs:
+  - name: Lenna
+    type: model
+    date: 2023-12-28
+    sources:
+      - label: GitHub
+        url: https://github.com/Meituan-AutoML/Lenna
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2312.02433
+    description: >
+      "Language Enhanced Reasoning Detection Assistant" combining MLLMs with
+      object detection.
+  - name: "Lenna: Language Enhanced Reasoning Detection Assistant"
+    type: paper
+    date: 2023-12-05
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2312.02433
+      - label: GitHub
+        url: https://github.com/Meituan-AutoML/Lenna
+      - label: IEEE Xplore
+        url: https://ieeexplore.ieee.org/document/10888428/
+    description: >
+      Paper on combining MLLMs with object detection for reasoning-based detection.

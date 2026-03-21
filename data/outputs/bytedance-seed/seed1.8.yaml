@@ -1,0 +1,22 @@
+name: Seed1.8
+slug: seed1.8
+lab: bytedance-seed
+type: model
+date: 2025-12-18
+sources:
+  - label: Announcement
+    url: https://seed.bytedance.com/en/blog/official-release-of-seed1-8-a-generalized-agentic-model
+  - label: GitHub
+    url: https://github.com/ByteDance-Seed/Seed-1.8
+  - label: Model Card (PDF)
+    url: https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/research/Seed-1.8-Modelcard.pdf
+description: >
+  Generalized agentic model with multimodal input (text + image). Industry-leading
+  GUI agent, search, and code generation capabilities across desktop, web, and
+  mobile environments.
+tags:
+  - agentic
+  - multimodal
+  - gui-agent
+related:
+  - seed1.5-vl

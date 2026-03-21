@@ -3,7 +3,7 @@ import Layout from '../../../components/Layout.astro';
 import TypeBadge from '../../../components/TypeBadge.astro';
 import TagList from '../../../components/TagList.astro';
 import ModelDetails from '../../../components/ModelDetails.astro';
-import { getAllOutputsChronological, getOutputBySlug, getLabBySlug } from '../../../data/loader.js';
+import { getAllOutputsChronological, getOutputBySlug, getLabBySlug, isGrouped, getOutputTypes } from '../../../data/loader.js';
 
 export function getStaticPaths() {
   return getAllOutputsChronological().map((o) => ({
@@ -15,13 +15,15 @@ const { lab: labSlug, slug } = Astro.params;
 const output = getOutputBySlug(labSlug!, slug!)!;
 const labs = Array.isArray(output.lab) ? output.lab : [output.lab];
 const labObjects = labs.map((s) => getLabBySlug(s)).filter(Boolean);
+const grouped = isGrouped(output);
+const types = getOutputTypes(output);
 ---
 
 <Layout title={output.name}>
   <header class="page-header">
     <div class="title-row">
       <h1>{output.name}</h1>
-      <TypeBadge type={output.type} />
+      {types.map(t => <TypeBadge type={t} />)}
     </div>
     <div class="meta">
       <time>{output.date}</time>
@@ -48,14 +50,15 @@ const labObjects = labs.map((s) => getLabBySlug(s)).filter(Boolean);
     ))}
   </div>
 
-  {output.model && (
+  {/* Simple output: show type-specific details inline */}
+  {!grouped && 'model' in output && output.model && (
     <section class="section">
       <h2>Model Details</h2>
       <ModelDetails model={output.model} />
     </section>
   )}
 
-  {output.paper && (
+  {!grouped && 'paper' in output && output.paper && (
     <section class="section">
       <h2>Paper</h2>
       <div class="paper-details">
@@ -67,18 +70,68 @@ const labObjects = labs.map((s) => getLabBySlug(s)).filter(Boolean);
     </section>
   )}
 
-  {output.library && (
+  {!grouped && 'library' in output && output.library && (
     <section class="section">
       <h2>Library</h2>
       <p><a href={output.library.github}>GitHub Repository</a></p>
     </section>
   )}
 
-  {output.dataset && (
+  {!grouped && 'dataset' in output && output.dataset && (
     <section class="section">
       <h2>Dataset</h2>
       {output.dataset.github && <p><a href={output.dataset.github}>GitHub Repository</a></p>}
       {output.dataset.url && <p><a href={output.dataset.url}>Dataset</a></p>}
+    </section>
+  )}
+
+  {/* Grouped output: show sub-outputs */}
+  {grouped && (
+    <section class="sub-outputs">
+      <h2>Outputs <span class="sub-count">{output.outputs.length}</span></h2>
+      {output.outputs.map((sub, i) => (
+        <div class="sub-output" data-index={i}>
+          <div class="sub-header">
+            <h3>{sub.name}</h3>
+            <TypeBadge type={sub.type} />
+            {sub.date && sub.date !== output.date && <time class="sub-date">{sub.date}</time>}
+          </div>
+
+          {sub.description && <p class="sub-description">{sub.description}</p>}
+
+          {sub.sources && sub.sources.length > 0 && (
+            <div class="links-row sub-links">
+              {sub.sources.map((s) => (
+                <a href={s.url}>{s.label}</a>
+              ))}
+            </div>
+          )}
+
+          {sub.model && <ModelDetails model={sub.model} />}
+
+          {sub.paper && (
+            <div class="paper-details">
+              {sub.paper.arxiv && (
+                <p><strong>arXiv:</strong> <a href={`https://arxiv.org/abs/${sub.paper.arxiv}`}>{sub.paper.arxiv}</a></p>
+              )}
+              {sub.paper.venue && <p><strong>Venue:</strong> {sub.paper.venue}</p>}
+            </div>
+          )}
+
+          {sub.library && (
+            <p><a href={sub.library.github}>GitHub Repository</a></p>
+          )}
+
+          {sub.dataset && (
+            <div>
+              {sub.dataset.github && <p><a href={sub.dataset.github}>GitHub Repository</a></p>}
+              {sub.dataset.url && <p><a href={sub.dataset.url}>Dataset</a></p>}
+            </div>
+          )}
+
+          {sub.notes && <p class="sub-notes">{sub.notes}</p>}
+        </div>
+      ))}
     </section>
   )}
 
@@ -102,6 +155,37 @@ const labObjects = labs.map((s) => getLabBySlug(s)).filter(Boolean);
     </section>
   )}
 </Layout>
+
+<script>
+  const subs = Array.from(document.querySelectorAll<HTMLElement>('.sub-output'));
+  if (subs.length > 0) {
+    let selected = -1;
+
+    function selectSub(index: number) {
+      const clamped = Math.max(0, Math.min(index, subs.length - 1));
+      subs.forEach(s => s.classList.remove('sub-selected'));
+      selected = clamped;
+      subs[selected].classList.add('sub-selected');
+      subs[selected].scrollIntoView({ block: 'nearest' });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+      if (e.key === 'j') {
+        e.preventDefault();
+        selectSub(selected + 1);
+      } else if (e.key === 'k') {
+        e.preventDefault();
+        selectSub(selected - 1);
+      } else if (e.key === 'Escape') {
+        subs.forEach(s => s.classList.remove('sub-selected'));
+        selected = -1;
+      }
+    });
+  }
+</script>
 
 <style>
   .page-header {
@@ -168,5 +252,69 @@ const labObjects = labs.map((s) => getLabBySlug(s)).filter(Boolean);
     font-size: 0.85rem;
     color: var(--text-muted);
     font-style: italic;
+  }
+
+  /* Sub-outputs */
+  .sub-outputs h2 {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.375rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sub-count {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-left: 0.25rem;
+  }
+
+  .sub-output {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    transition: outline 0.08s;
+  }
+
+  .sub-output.sub-selected {
+    outline: 2px solid rgba(37, 99, 235, 0.4);
+    outline-offset: -1px;
+    background: rgba(37, 99, 235, 0.04);
+  }
+
+  .sub-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .sub-header h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .sub-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .sub-description {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+  }
+
+  .sub-links {
+    margin-bottom: 0.5rem;
+  }
+
+  .sub-notes {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 0.4rem;
   }
 </style>

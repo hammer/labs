@@ -1,7 +1,6 @@
 name: Kwai Keye-VL
 slug: kwai-keye-vl
 lab: kuaishou
-type: model
 date: 2025-06-26
 sources:
   - label: GitHub
@@ -11,11 +10,33 @@ sources:
   - label: Announcement
     url: https://longbridge.com/en/news/246200353
 description: >
-  8B parameter multimodal foundation model specializing in short-video understanding.
+  8B parameter multimodal foundation model specializing in short-video understanding,
+  with accompanying technical report.
 tags:
   - vlm
   - video
   - open-weight
-model:
-  architecture: dense
-  parameters: 8B
+outputs:
+  - name: Kwai Keye-VL
+    type: model
+    sources:
+      - label: GitHub
+        url: https://github.com/Kwai-Keye/Keye
+      - label: HuggingFace
+        url: https://huggingface.co/Kwai-Keye/Keye-VL-8B-Preview
+      - label: Announcement
+        url: https://longbridge.com/en/news/246200353
+    description: >
+      8B parameter multimodal foundation model specializing in short-video understanding.
+    model:
+      architecture: dense
+      parameters: 8B
+  - name: Kwai Keye-VL Technical Report
+    type: paper
+    sources:
+      - label: GitHub
+        url: https://github.com/Kwai-Keye/Keye
+      - label: HuggingFace
+        url: https://huggingface.co/Kwai-Keye/Keye-VL-8B-Preview
+    description: >
+      Technical report for the Kwai Keye-VL multimodal foundation model.

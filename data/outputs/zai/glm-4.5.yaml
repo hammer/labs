@@ -1,7 +1,6 @@
-name: GLM-4.5 / 4.5 Air
+name: GLM-4.5
 slug: glm-4.5
 lab: zai
-type: model
 date: 2025-07-28
 sources:
   - label: Announcement
@@ -15,6 +14,24 @@ tags:
   - moe
   - efficiency
   - agentic
-model:
-  architecture: moe
-  parameters: 355B
+  - technical-report
+outputs:
+  - name: GLM-4.5 / 4.5 Air
+    type: model
+    date: 2025-07-28
+    sources:
+      - label: Announcement
+        url: https://www.cnbc.com/2025/07/28/chinas-latest-ai-model-claims-to-be-even-cheaper-to-use-than-deepseek.html
+    model:
+      architecture: moe
+      parameters: 355B
+  - name: "GLM-4.5: Agentic, Reasoning, and Coding (ARC) Foundation Models"
+    type: paper
+    date: 2025-08-08
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2508.06471
+    description: >
+      Technical report for the GLM-4.5 series. 355B MoE for agentic engineering.
+    paper:
+      arxiv: "2508.06471"

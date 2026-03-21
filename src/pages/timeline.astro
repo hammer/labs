@@ -1,11 +1,12 @@
 ---
 import Layout from '../components/Layout.astro';
 import TypeBadge from '../components/TypeBadge.astro';
-import { getAllOutputsChronological, getAllLabs, getLabBySlug } from '../data/loader.js';
+import { getAllOutputsChronological, getAllLabs, getLabBySlug, isGrouped, getOutputTypes } from '../data/loader.js';
 
 const outputs = getAllOutputsChronological();
 const labs = getAllLabs().map((l) => ({ slug: l.slug, name: l.name })).sort((a, b) => a.name.localeCompare(b.name));
-const types = [...new Set(outputs.map((o) => o.type))].sort();
+const allTypes = outputs.flatMap(o => getOutputTypes(o));
+const types = [...new Set(allTypes)].sort();
 ---
 
 <Layout title="Timeline">
@@ -43,18 +44,25 @@ const types = [...new Set(outputs.map((o) => o.type))].sort();
       {outputs.map((output, i) => {
         const labList = Array.isArray(output.lab) ? output.lab : [output.lab];
         const labNames = labList.map(s => getLabBySlug(s)?.name ?? s).join(', ');
+        const outputTypes = getOutputTypes(output);
+        const grouped = isGrouped(output);
         return (
           <tr
             class="tl-row"
             data-href={`/outputs/${output._labSlug}/${output.slug}`}
             data-lab={labList.join(',')}
-            data-type={output.type}
+            data-type={outputTypes.join(',')}
             data-index={i}
           >
             <td class="col-date">{output.date}</td>
-            <td class="col-name">{output.name}</td>
+            <td class="col-name">
+              {output.name}
+              {grouped && <span class="group-badge">{output.outputs.length}</span>}
+            </td>
             <td class="col-lab">{labNames}</td>
-            <td class="col-type"><TypeBadge type={output.type} /></td>
+            <td class="col-type">
+              {outputTypes.map(t => <TypeBadge type={t} />)}
+            </td>
           </tr>
         );
       })}
@@ -121,12 +129,12 @@ const types = [...new Set(outputs.map((o) => o.type))].sort();
 
     allRows.forEach(row => {
       const labs = row.dataset.lab!.split(',');
-      const rowType = row.dataset.type!;
+      const rowTypes = row.dataset.type!.split(',');
       const name = row.querySelector('.col-name')?.textContent?.toLowerCase() ?? '';
       const labName = row.querySelector('.col-lab')?.textContent?.toLowerCase() ?? '';
 
       const matchLab = !lab || labs.includes(lab);
-      const matchType = !type || rowType === type;
+      const matchType = !type || rowTypes.includes(type);
       const matchSearch = !q || name.includes(q) || labName.includes(q);
 
       row.style.display = (matchLab && matchType && matchSearch) ? '' : 'none';
@@ -395,6 +403,24 @@ const types = [...new Set(outputs.map((o) => o.type))].sort();
 
   .col-type {
     white-space: nowrap;
+    display: flex;
+    gap: 0.3rem;
+  }
+
+  .group-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 600;
+    min-width: 1.2em;
+    padding: 0 0.35em;
+    height: 1.2em;
+    border-radius: 9999px;
+    background: var(--border);
+    color: var(--text-muted);
+    margin-left: 0.35rem;
+    vertical-align: middle;
   }
 
   /* Search bar */

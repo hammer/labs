@@ -1,26 +1,41 @@
 name: DeepSeek-Coder
 slug: deepseek-coder
 lab: deepseek
-type: model
 date: 2023-11-02
 sources:
-  - label: HuggingFace
-    url: https://huggingface.co/deepseek-ai/deepseek-coder-33b-instruct
   - label: GitHub
     url: https://github.com/deepseek-ai/DeepSeek-Coder
   - label: Project Page
     url: https://deepseekcoder.github.io/
 description: >
-  Coding-specialized models (1.3B to 33B parameters) trained on 2 trillion tokens.
+  Coding-specialized models (1.3B to 33B parameters) trained on 2 trillion tokens,
+  with an accompanying technical report.
 tags:
   - coding
   - open-weight
-model:
-  architecture: dense
-  variants:
-    - name: DeepSeek-Coder-1.3B
-      parameters: 1.3B
-    - name: DeepSeek-Coder-6.7B
-      parameters: 6.7B
-    - name: DeepSeek-Coder-33B
-      parameters: 33B
+outputs:
+  - name: DeepSeek-Coder
+    type: model
+    date: 2023-11-02
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/deepseek-ai/deepseek-coder-33b-instruct
+    model:
+      architecture: dense
+      variants:
+        - name: DeepSeek-Coder-1.3B
+          parameters: 1.3B
+        - name: DeepSeek-Coder-6.7B
+          parameters: 6.7B
+        - name: DeepSeek-Coder-33B
+          parameters: 33B
+  - name: "DeepSeek-Coder: When the LLM Meets Programming"
+    type: paper
+    date: 2024-01-25
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2401.14196
+    description: >
+      Technical report on the rise of code intelligence with DeepSeek-Coder models.
+    paper:
+      arxiv: "2401.14196"

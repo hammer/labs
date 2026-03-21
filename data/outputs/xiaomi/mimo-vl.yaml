@@ -1,0 +1,40 @@
+name: MiMo-VL
+slug: mimo-vl
+lab: xiaomi
+date: 2025-06-04
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/XiaomiMiMo/MiMo-VL-7B-RL
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.03569
+  - label: GitHub
+    url: https://github.com/XiaomiMiMo/MiMo-VL
+description: >
+  Open-source vision-language model that outperformed models ten times its size
+  (like Qwen-72B) in multimodal reasoning. Includes SFT and RL variants.
+tags:
+  - vlm
+  - reasoning
+  - open-weight
+outputs:
+  - name: MiMo-VL-7B
+    type: model
+    date: 2025-06-04
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/XiaomiMiMo/MiMo-VL-7B-RL
+      - label: GitHub
+        url: https://github.com/XiaomiMiMo/MiMo-VL
+    model:
+      architecture: dense
+      parameters: 7B
+  - name: "MiMo-VL: From Pre-training to Post-training"
+    type: paper
+    date: 2025-06-04
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2506.03569
+    description: >
+      Technical report on achieving SOTA multimodal reasoning at the 7B scale.
+    paper:
+      arxiv: "2506.03569"

@@ -1,7 +1,6 @@
-name: CodeGeeX Series
+name: CodeGeeX
 slug: codegeex
 lab: zai
-type: model
 date: 2022-09-30
 sources:
   - label: GitHub
@@ -16,5 +15,24 @@ description: >
 tags:
   - coding
   - open-weight
+outputs:
+  - name: CodeGeeX Series
+    type: model
+    date: 2022-09-30
+    sources:
+      - label: GitHub
+        url: https://github.com/THUDM/CodeGeeX
+      - label: Project Page
+        url: https://keg.cs.tsinghua.edu.cn/codegeex/
+  - name: "CodeGeeX: Multilingual Code Generation"
+    type: paper
+    date: 2023-03-30
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2303.17568
+    description: >
+      Pre-trained model for code generation with multilingual benchmarking on HumanEval-X.
+    paper:
+      arxiv: "2303.17568"
 library:
   github: https://github.com/THUDM/CodeGeeX

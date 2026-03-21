@@ -1,7 +1,6 @@
 name: Kimi Linear
 slug: kimi-linear
 lab: moonshot-ai
-type: model
 date: 2025-10-30
 sources:
   - label: "Paper (arXiv)"
@@ -9,11 +8,21 @@ sources:
   - label: GitHub
     url: https://github.com/MoonshotAI/Kimi-Linear
 description: >
-  48B parameter MoE model utilizing Kimi Delta Attention (KDA) to improve
-  speed and memory efficiency.
+  Hybrid linear attention architecture (KDA + MLA). 3B active / 48B total MoE
+  model with 75% KV-cache reduction and 6x throughput at 1M context.
 tags:
   - moe
   - efficiency
-model:
-  architecture: moe
-  parameters: 48B
+  - attention
+  - architecture
+outputs:
+  - name: Kimi Linear Model
+    type: model
+    model:
+      architecture: moe
+      parameters: 48B
+      active_parameters: 3B
+  - name: "Kimi Linear: Hybrid Linear Attention Architecture"
+    type: paper
+    paper:
+      arxiv: "2510.26692"

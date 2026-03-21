@@ -1,0 +1,40 @@
+name: DN-DETR
+slug: dn-detr
+lab: idea-lab
+date: 2022-03-02
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2203.01305
+  - label: GitHub
+    url: https://github.com/IDEA-Research/DN-DETR
+description: >
+  Accelerates DETR training by introducing query denoising. Feeds noisy
+  ground-truth boxes into the decoder and trains the model to reconstruct
+  original boxes, reducing bipartite matching difficulty. Achieves comparable
+  performance to baseline with 50% training epochs.
+tags:
+  - vision
+  - object-detection
+  - open-source
+outputs:
+  - name: DN-DETR
+    type: library
+    sources:
+      - label: GitHub
+        url: https://github.com/IDEA-Research/DN-DETR
+    description: >
+      Official implementation of DN-DETR denoising training for DETR.
+      43.4 AP in 12 epochs with ResNet-50.
+    library:
+      github: https://github.com/IDEA-Research/DN-DETR
+  - name: "DN-DETR: Accelerate DETR Training by Introducing Query DeNoising"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2203.01305
+    description: >
+      Proposes denoising training to accelerate DETR convergence by reducing
+      bipartite matching instability.
+    paper:
+      arxiv: "2203.01305"
+      venue: CVPR 2022 Oral

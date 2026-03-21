@@ -1,7 +1,6 @@
 name: Hunyuan Turbo S
 slug: hunyuan-turbo-s
 lab: tencent
-type: model
 date: 2025-02-27
 sources:
   - label: Announcement
@@ -12,8 +11,30 @@ sources:
     url: https://arxiv.org/abs/2505.15431
 description: >
   "Fast-thinking" model using a Hybrid-Mamba-Transformer architecture for
-  near-instant replies with complex reasoning. Designed to rival DeepSeek-R1.
+  near-instant replies with complex reasoning. 56B activated / 560B total
+  hybrid MoE. 256K context, 16T pre-training tokens.
 tags:
   - reasoning
   - efficiency
   - mamba
+  - moe
+outputs:
+  - name: Hunyuan Turbo S
+    type: model
+    date: 2025-02-27
+    sources:
+      - label: Announcement
+        url: https://pandaily.com/tencent-hunyuans-new-generation-turbo-s-fast-thinking-model-released/
+      - label: Website
+        url: https://llm.hunyuan.tencent.com
+  - name: "Hunyuan-TurboS: Mamba-Transformer Synergy"
+    type: paper
+    date: 2025-05-21
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2505.15431
+    description: >
+      56B activated / 560B total hybrid MoE with Mamba-Transformer architecture.
+      256K context, 16T pre-training tokens.
+    paper:
+      arxiv: "2505.15431"

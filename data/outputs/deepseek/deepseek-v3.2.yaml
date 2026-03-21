@@ -1,30 +1,46 @@
 name: DeepSeek-V3.2
 slug: deepseek-v3.2
 lab: deepseek
-type: model
-date: 2025-12-01
+date: 2025-09-29
 sources:
-  - label: Announcement
-    url: https://api-docs.deepseek.com/news/news251201
   - label: V3.2-Exp Announcement (2025-09-29)
     url: https://api-docs.deepseek.com/news/news250929
-  - label: Sparse Attention Paper
-    url: https://github.com/deepseek-ai/DeepSeek-V3.2-Exp/blob/main/DeepSeek_V3_2.pdf
+  - label: V3.2 Announcement (2025-12-01)
+    url: https://api-docs.deepseek.com/news/news251201
   - label: HuggingFace
     url: https://huggingface.co/deepseek-ai/DeepSeek-V3.2
 description: >
-  V3.2-Exp released 2025-09-29 introducing DeepSeek Sparse Attention
-  for long-context efficiency. V3.2 and V3.2-Speciale (max reasoning)
-  released 2025-12-01.
+  V3.2 family introducing DeepSeek Sparse Attention for long-context efficiency.
+  V3.2-Speciale achieves gold-medal performance on IMO and IOI 2025, surpassing GPT-5.
 tags:
   - moe
   - frontier
   - open-weight
-model:
-  architecture: moe
-  variants:
-    - name: DeepSeek-V3.2-Exp
-      notes: Released 2025-09-29
-    - name: DeepSeek-V3.2
-    - name: DeepSeek-V3.2-Speciale
-      notes: Max reasoning variant
+outputs:
+  - name: DeepSeek-V3.2
+    type: model
+    date: 2025-12-01
+    sources:
+      - label: Announcement
+        url: https://api-docs.deepseek.com/news/news251201
+      - label: HuggingFace
+        url: https://huggingface.co/deepseek-ai/DeepSeek-V3.2
+    model:
+      architecture: moe
+      variants:
+        - name: DeepSeek-V3.2-Exp
+          notes: Released 2025-09-29
+        - name: DeepSeek-V3.2
+        - name: DeepSeek-V3.2-Speciale
+          notes: Max reasoning variant
+  - name: "DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models"
+    type: paper
+    date: 2025-12-02
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2512.02556
+    description: >
+      Technical report introducing DeepSeek Sparse Attention, scalable RL framework,
+      and large-scale agentic task synthesis. 685B-parameter MoE model.
+    paper:
+      arxiv: "2512.02556"

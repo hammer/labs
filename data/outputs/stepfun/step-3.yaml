@@ -1,8 +1,7 @@
 name: Step-3
 slug: step-3
 lab: stepfun
-type: model
-date: 2025-07-31
+date: 2025-07-25
 sources:
   - label: Announcement
     url: https://stepfun.ai/research/en/step3
@@ -14,13 +13,39 @@ sources:
     url: https://github.com/stepfun-ai/Step3
 description: >
   321B parameter MoE model (38B active) designed for high-efficiency
-  multimodal reasoning.
+  multimodal reasoning with cost-effective decoding.
 tags:
   - moe
   - reasoning
   - multimodal
-model:
-  architecture: moe
-  parameters: 321B
-  active_parameters: 38B
-notes: Released Jul 31, 2025.
+  - efficiency
+  - scaling
+outputs:
+  - name: Step-3
+    type: model
+    date: 2025-07-31
+    sources:
+      - label: Announcement
+        url: https://stepfun.ai/research/en/step3
+      - label: HuggingFace
+        url: https://huggingface.co/stepfun-ai/step3
+    description: >
+      321B parameter MoE model (38B active) designed for high-efficiency
+      multimodal reasoning.
+    model:
+      architecture: moe
+      parameters: 321B
+      active_parameters: 38B
+    notes: Released Jul 31, 2025.
+  - name: "Step-3: Large yet Affordable Model-System Co-design"
+    type: paper
+    date: 2025-07-25
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2507.19427
+      - label: GitHub
+        url: https://github.com/stepfun-ai/Step3
+    description: >
+      Flagship LLM paper detailing cost-effective decoding for the Step-3 MoE model.
+    paper:
+      arxiv: "2507.19427"

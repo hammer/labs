@@ -1,0 +1,58 @@
+name: Baichuan-M1
+slug: baichuan-m1
+lab: baichuan
+date: 2025-01-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.12671
+  - label: HuggingFace (Base)
+    url: https://huggingface.co/baichuan-inc/Baichuan-M1-14B-Base
+  - label: HuggingFace (Instruct)
+    url: https://huggingface.co/baichuan-inc/Baichuan-M1-14B-Instruct
+description: >
+  First open-source large language model developed from scratch for medical
+  applications. Trained on 20 trillion tokens of both general and
+  medical-specific data using a hybrid tokenizer, curriculum-based training
+  strategy with progressive data complexity, and adaptive gradient clipping.
+  The 14B Instruct variant surpasses Qwen2.5-72B-Instruct in medicine.
+  Released alongside the Baichuan-M1-preview deep thinking model.
+tags:
+  - open-weight
+  - medical
+  - chinese
+outputs:
+  - name: "Baichuan-M1: Pushing the Medical Capability of Large Language Models"
+    type: paper
+    date: 2025-02-18
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2502.12671
+    description: >
+      Technical report on the Baichuan-M1 model series, detailing the
+      from-scratch medical training approach and evaluation results.
+    paper:
+      arxiv: "2502.12671"
+  - name: Baichuan-M1-14B
+    type: model
+    date: 2025-01-24
+    sources:
+      - label: HuggingFace (Base)
+        url: https://huggingface.co/baichuan-inc/Baichuan-M1-14B-Base
+      - label: HuggingFace (Instruct)
+        url: https://huggingface.co/baichuan-inc/Baichuan-M1-14B-Instruct
+    description: >
+      14.5-billion-parameter medical-enhanced model available in Base and
+      Instruct versions.
+    model:
+      architecture: dense
+      parameters: 14.5B
+  - name: Baichuan-M1-preview
+    type: model
+    date: 2025-01-24
+    sources:
+      - label: Announcement
+        url: https://news.aibase.com/news/14985
+    description: >
+      Deep thinking model with reasoning capabilities across language, vision,
+      and search. Surpassed o1-preview on several benchmarks including
+      mathematics and coding tasks.

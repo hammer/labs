@@ -1,7 +1,6 @@
 name: InternLM2
 slug: internlm2
 lab: shanghai-ai-lab
-type: model
 date: 2024-01-23
 sources:
   - label: GitHub
@@ -17,4 +16,27 @@ tags:
   - open-weight
   - reasoning
   - math
-notes: InternLM2-Math-7B/20B released Jan 23, 2024. InternLM2-1.8B released Jan 31, 2024.
+  - technical-report
+outputs:
+  - name: InternLM2
+    type: model
+    date: 2024-01-23
+    sources:
+      - label: GitHub
+        url: https://github.com/InternLM/InternLM
+      - label: HuggingFace
+        url: https://huggingface.co/internlm/internlm2-20b
+    description: >
+      Significant upgrades in reasoning and math. Outperformed Llama-2-70B at release.
+      Includes InternLM2-Math variant.
+    notes: InternLM2-Math-7B/20B released Jan 23, 2024. InternLM2-1.8B released Jan 31, 2024.
+  - name: InternLM2 Technical Report
+    type: paper
+    date: 2024-03-26
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2403.17297
+    description: >
+      Technical report with 100+ authors detailing InternLM2 architecture and training.
+    paper:
+      arxiv: "2403.17297"

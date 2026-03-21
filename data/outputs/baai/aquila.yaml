@@ -1,7 +1,6 @@
-name: Aquila & Aquila2
+name: Aquila
 slug: aquila
 lab: baai
-type: model
 date: 2023-08-15
 sources:
   - label: GitHub
@@ -9,24 +8,82 @@ sources:
   - label: HuggingFace
     url: https://huggingface.co/BAAI/Aquila-7B
 description: >
-  First open-source LLM compliant with Chinese regulations. Aquila-7B, 33B,
-  and AquilaChat. Aquila2 improved with EfficientScale recipe (7B/34B).
-  Includes Aquila-MoE (8*16B).
+  BAAI's open-source bilingual LLM family, the first compliant with Chinese
+  regulations. Evolved from Aquila/Aquila2 text models to multimodal (Aquila-VL)
+  and medical domain (AquilaMed) variants.
 tags:
   - open-source
   - open-weight
   - chinese
-model:
-  variants:
-    - name: Aquila-7B
-      parameters: 7B
-    - name: Aquila-33B
-      parameters: 33B
-    - name: Aquila2-7B
-      parameters: 7B
-    - name: Aquila2-34B
-      parameters: 34B
-    - name: Aquila-MoE
-      notes: 8*16B MoE
-library:
-  github: https://github.com/FlagAI-Open/Aquila2
+  - multimodal
+  - medical
+outputs:
+  - name: Aquila & Aquila2
+    type: model
+    date: 2023-08-15
+    sources:
+      - label: GitHub
+        url: https://github.com/FlagAI-Open/Aquila2
+      - label: HuggingFace
+        url: https://huggingface.co/BAAI/Aquila-7B
+    description: >
+      First open-source LLM compliant with Chinese regulations. Aquila-7B, 33B,
+      and AquilaChat. Aquila2 improved with EfficientScale recipe (7B/34B).
+      Includes Aquila-MoE (8*16B).
+    model:
+      variants:
+        - name: Aquila-7B
+          parameters: 7B
+        - name: Aquila-33B
+          parameters: 33B
+        - name: Aquila2-7B
+          parameters: 7B
+        - name: Aquila2-34B
+          parameters: 34B
+        - name: Aquila-MoE
+          notes: 8*16B MoE
+  - name: "Aquila: Open Source Bilingual Language Model Technical Report"
+    type: paper
+    date: 2023-08-15
+    sources:
+      - label: GitHub
+        url: https://github.com/FlagAI-Open/Aquila2
+      - label: HuggingFace
+        url: https://huggingface.co/BAAI/Aquila-7B
+    description: >
+      Technical report for the first open-source Chinese-regulation-compliant LLM.
+  - name: Aquila-VL-2B
+    type: model
+    date: 2024-11-19
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/BAAI/Aquila-VL-2B-llava-qwen
+      - label: Paper (arXiv, Infinity-MM)
+        url: https://arxiv.org/abs/2410.18558
+    description: >
+      2B-parameter vision-language model built on LLaVA-one-vision framework
+      with Qwen2.5-1.5B-instruct as LLM and SigLIP-SO400M as vision tower.
+      Trained on the Infinity-MM dataset (~40M image-text pairs). First model
+      to earn LF AI & Data's MOF Class I "Open Science" rating. SOTA performance
+      among models of the same scale on MMBench, RealWorldQA, and ScienceQA
+      benchmarks.
+    model:
+      variants:
+        - name: Aquila-VL-2B-llava-qwen
+        - name: Aquila-VL-2B-Intermediate
+  - name: AquilaMed-RL
+    type: model
+    date: 2024-06-17
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/BAAI/AquilaMed-RL
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2406.12182
+    description: >
+      Medical domain language model built on the Aquila foundation through
+      continued pre-training, supervised fine-tuning, and reinforcement learning.
+      Capable of medical triage, medication inquiries, and general medical Q&A.
+      Demonstrates significant win rate against annotated data using GPT-4.
+      SFT and RL training data open-sourced alongside the model.
+related:
+  - infinity-mm

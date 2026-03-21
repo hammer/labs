@@ -1,0 +1,34 @@
+name: SenseMirage
+slug: sensemirage
+lab: sensetime
+type: model
+date: 2023-04-11
+sources:
+  - label: Launch Announcement
+    url: https://www.prnewswire.com/apac/news-releases/sensetime-launches-sensenova-foundation-model-sets-and-ai-computing-systems-advancing-agi-development-301793383.html
+  - label: SenseTime News
+    url: https://www.sensetime.com/en/news-detail/51166818?categoryId=1072
+description: >
+  SenseTime's text-to-image creation platform with powerful image
+  generation featuring realistic lighting, rich details, and diverse
+  styles. Supports 6K ultra-high-definition image generation. Evolved
+  from 1B to 10B parameters across versions, with SenseMirage V4
+  producing cinematic-grade imagery. SenseMirage-Turbo V4 achieves
+  10x faster inference via adversarial distillation.
+tags:
+  - image-generation
+  - generative
+  - text-to-image
+model:
+  variants:
+    - name: SenseMirage 1.0
+      parameters: "1B"
+      notes: Initial release April 2023
+    - name: SenseMirage 3.0
+      parameters: "7B"
+      notes: Upgraded at WAIC 2023
+    - name: SenseMirage V4
+      parameters: "10B"
+      notes: Cinematic-grade with mixture of text experts
+    - name: SenseMirage-Turbo V4
+      notes: 10x faster inference via adversarial distillation

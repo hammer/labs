@@ -1,19 +1,44 @@
-name: "SynLogic: Synthesizing Verifiable Reasoning Data"
+name: SynLogic
 slug: synlogic
 lab: minimax
-type: paper
 date: 2025-05-26
 sources:
-  - label: "Paper (arXiv)"
+  - label: Paper (arXiv)
     url: https://arxiv.org/abs/2505.19641
   - label: GitHub
     url: https://github.com/MiniMax-AI/SynLogic
-  - label: HuggingFace
+  - label: HuggingFace (Model)
     url: https://huggingface.co/MiniMaxAI/SynLogic-7B
+  - label: HuggingFace (Dataset)
+    url: https://huggingface.co/datasets/MiniMaxAI/SynLogic
 description: >
-  Research on generating massive-scale logical reasoning data for training.
+  Research on generating massive-scale logical reasoning data for training,
+  with publicly available verifiable reasoning trajectories.
 tags:
   - reasoning
   - training-data
   - research
 notes: Accepted at NeurIPS 2025.
+outputs:
+  - name: "SynLogic: Synthesizing Verifiable Reasoning Data"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2505.19641
+      - label: GitHub
+        url: https://github.com/MiniMax-AI/SynLogic
+      - label: HuggingFace
+        url: https://huggingface.co/MiniMaxAI/SynLogic-7B
+    description: >
+      Research on generating massive-scale logical reasoning data for training.
+    paper:
+      arxiv: "2505.19641"
+  - name: SynLogic Dataset
+    type: dataset
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/datasets/MiniMaxAI/SynLogic
+      - label: GitHub
+        url: https://github.com/MiniMax-AI/SynLogic
+    description: >
+      Publicly available set of verifiable reasoning trajectories.

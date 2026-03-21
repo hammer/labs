@@ -1,0 +1,57 @@
+name: T-Rex
+slug: t-rex
+lab: idea-lab
+date: 2023-11-22
+sources:
+  - label: Paper (T-Rex, arXiv)
+    url: https://arxiv.org/abs/2311.13596
+  - label: Paper (T-Rex2, arXiv)
+    url: https://arxiv.org/abs/2403.14610
+  - label: GitHub
+    url: https://github.com/IDEA-Research/T-Rex
+  - label: Project Page
+    url: https://trex-counting.github.io/
+description: >
+  Interactive object counting and detection via visual prompting. Users mark
+  points or boxes on reference images, then T-Rex detects all similar objects.
+  T-Rex2 synergizes text and visual prompts via contrastive learning.
+  State-of-the-art on class-agnostic counting benchmarks.
+tags:
+  - vision
+  - object-detection
+  - counting
+  - visual-prompting
+  - open-source
+outputs:
+  - name: T-Rex
+    type: model
+    sources:
+      - label: GitHub
+        url: https://github.com/IDEA-Research/T-Rex
+      - label: Project Page
+        url: https://trex-counting.github.io/
+    description: >
+      Interactive object counting model using visual prompts for detecting
+      and counting any objects with zero-shot capabilities.
+  - name: "T-Rex: Counting by Visual Prompting"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2311.13596
+    description: >
+      Formulates object counting as open-set detection with visual prompts
+      and interactive refinement.
+    paper:
+      arxiv: "2311.13596"
+  - name: "T-Rex2: Towards Generic Object Detection via Text-Visual Prompt Synergy"
+    type: paper
+    date: 2024-03-21
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2403.14610
+    description: >
+      Extends T-Rex by synergizing text and visual prompts within a single
+      model through contrastive learning for generic object detection.
+    paper:
+      arxiv: "2403.14610"
+      venue: ECCV 2024

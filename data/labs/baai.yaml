@@ -1,6 +1,7 @@
 name: BAAI
 slug: baai
 url: https://www.baai.ac.cn
+wikipedia: https://en.wikipedia.org/wiki/Beijing_Academy_of_Artificial_Intelligence
 huggingface: https://huggingface.co/BAAI
 github: https://github.com/FlagOpen
 region: china

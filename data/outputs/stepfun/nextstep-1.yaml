@@ -1,7 +1,6 @@
 name: NextStep-1
 slug: nextstep-1
 lab: stepfun
-type: model
 date: 2025-08-14
 sources:
   - label: HuggingFace
@@ -10,6 +9,8 @@ sources:
     url: https://github.com/stepfun-ai/NextStep-1
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2508.10711
+  - label: Project Page
+    url: https://stepfun.ai/research/en/nextstep1
 description: >
   14B autoregressive image generation model that rivals top diffusion systems.
   ICLR 2026 Oral. Includes NextStep-1-Edit for instruction-based image editing.
@@ -18,9 +19,32 @@ tags:
   - vision
   - autoregressive
   - open-weight
-model:
-  architecture: dense
-  parameters: 14B
-paper:
-  venue: ICLR 2026
-notes: Code and model weights released Aug 14, 2025. NextStep-1.1 released Dec 24, 2025.
+outputs:
+  - name: NextStep-1
+    type: model
+    date: 2025-08-14
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/stepfun-ai/NextStep-1-Large
+      - label: GitHub
+        url: https://github.com/stepfun-ai/NextStep-1
+    description: >
+      14B autoregressive image generation model that rivals top diffusion systems.
+      Includes NextStep-1-Edit for instruction-based image editing.
+    model:
+      architecture: dense
+      parameters: 14B
+    notes: Code and model weights released Aug 14, 2025. NextStep-1.1 released Dec 24, 2025.
+  - name: "NextStep-1: SOTA Autoregressive Image Generation with Continuous Tokens"
+    type: paper
+    date: 2025-08-14
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2508.10711
+      - label: Project Page
+        url: https://stepfun.ai/research/en/nextstep1
+    description: >
+      Breakthrough research on AR modeling for visual tasks.
+    paper:
+      venue: ICLR 2026
+    notes: arXiv submission Aug 14, 2025. ICLR 2026 Oral.

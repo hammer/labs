@@ -1,0 +1,51 @@
+name: Baichuan-Omni-1.5
+slug: baichuan-omni-1.5
+lab: baichuan
+date: 2025-01-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.15368
+  - label: GitHub
+    url: https://github.com/baichuan-inc/Baichuan-Omni-1.5
+  - label: HuggingFace
+    url: https://huggingface.co/baichuan-inc/Baichuan-Omni-1d5
+description: >
+  End-to-end trained omni-modal model supporting text, image, video, and audio
+  input with text and audio output. Built upon Qwen2.5-7B, uses a custom audio
+  tokenizer (Baichuan-Audio-Tokenizer) and a multi-stage training strategy with
+  approximately 500B high-quality tokens. Leads contemporary models including
+  GPT-4o-mini in omni-modal capabilities and achieves results comparable to
+  Qwen2-VL-72B on multimodal medical benchmarks.
+tags:
+  - open-weight
+  - multimodal
+  - audio
+  - vision
+outputs:
+  - name: Baichuan-Omni-1.5 Technical Report
+    type: paper
+    date: 2025-01-26
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2501.15368
+    description: >
+      Technical report describing the omni-modal architecture, data cleaning
+      pipeline, audio tokenizer, and multi-stage training strategy.
+    paper:
+      arxiv: "2501.15368"
+  - name: Baichuan-Omni-1.5 (model)
+    type: model
+    date: 2025-01-26
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/baichuan-inc/Baichuan-Omni-1d5
+      - label: HuggingFace (Base)
+        url: https://huggingface.co/baichuan-inc/Baichuan-Omni-1d5-Base
+      - label: GitHub
+        url: https://github.com/baichuan-inc/Baichuan-Omni-1.5
+    description: >
+      Open-source omni-modal model with text, image, video, audio input and
+      text/audio output, built on Qwen2.5-7B.
+    model:
+      architecture: dense
+      parameters: 7B

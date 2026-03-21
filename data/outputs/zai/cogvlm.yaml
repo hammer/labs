@@ -1,26 +1,62 @@
-name: CogVLM / CogVLM2
+name: CogVLM
 slug: cogvlm
 lab: zai
-type: model
 date: 2023-11-06
 sources:
   - label: GitHub
     url: https://github.com/THUDM/CogVLM
-  - label: Paper (arXiv)
+  - label: Paper (arXiv, CogVLM)
     url: https://arxiv.org/abs/2311.03079
+  - label: Paper (arXiv, CogVLM2-Video)
+    url: https://arxiv.org/abs/2408.16500
+  - label: Project Page (CogVLM2-Video)
+    url: https://cogvlm2-video.github.io/
 description: >
-  Powerful vision-language model series. CogVLM2-Video (2026) introduced
+  Powerful vision-language model series. CogVLM2-Video introduced
   multi-frame time localization for precise video understanding.
 tags:
   - vlm
   - open-weight
-model:
-  variants:
-    - name: CogVLM
-      notes: Released 2023
-    - name: CogVLM2
-      notes: Released 2024
-    - name: CogVLM2-Video
-      notes: Released 2026, multi-frame time localization
+  - video
+outputs:
+  - name: CogVLM / CogVLM2
+    type: model
+    date: 2023-11-06
+    sources:
+      - label: GitHub
+        url: https://github.com/THUDM/CogVLM
+    description: >
+      Powerful vision-language model series. CogVLM2-Video (2026) introduced
+      multi-frame time localization for precise video understanding.
+    model:
+      variants:
+        - name: CogVLM
+          notes: Released 2023
+        - name: CogVLM2
+          notes: Released 2024
+        - name: CogVLM2-Video
+          notes: Released 2026, multi-frame time localization
+  - name: "CogVLM: Visual Expert for Pretrained Language Models"
+    type: paper
+    date: 2023-11-06
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2311.03079
+    description: >
+      Foundational paper for the CogVLM vision-language model series.
+    paper:
+      arxiv: "2311.03079"
+  - name: "CogVLM2-Video: Visual Understanding with Multi-frame Time Localization"
+    type: paper
+    date: 2024-08-29
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2408.16500
+      - label: Project Page
+        url: https://cogvlm2-video.github.io/
+    description: >
+      Paper on multi-frame time localization for precise video understanding.
+    paper:
+      arxiv: "2408.16500"
 library:
   github: https://github.com/THUDM/CogVLM

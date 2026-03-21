@@ -1,0 +1,26 @@
+name: LongCat-Video
+slug: longcat-video
+lab: meituan
+type: model
+date: 2025-10-25
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/meituan-longcat/LongCat-Video
+  - label: GitHub
+    url: https://github.com/meituan-longcat/LongCat-Video
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.22200
+description: >
+  13.6B parameter foundational video generation model unifying text-to-video,
+  image-to-video, and video-continuation tasks. Uses Diffusion Transformer
+  with block sparse attention and multi-reward GRPO.
+tags:
+  - video
+  - generation
+  - diffusion
+  - open-weight
+model:
+  architecture: dense
+  parameters: 13.6B
+related:
+  - longcat-flash

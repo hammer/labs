@@ -1,0 +1,72 @@
+name: TAPTR
+slug: taptr
+lab: idea-lab
+date: 2024-03-19
+sources:
+  - label: Paper (TAPTR, arXiv)
+    url: https://arxiv.org/abs/2403.13042
+  - label: Paper (TAPTRv2, arXiv)
+    url: https://arxiv.org/abs/2407.16291
+  - label: Paper (TAPTRv3, arXiv)
+    url: https://arxiv.org/abs/2411.18671
+  - label: GitHub
+    url: https://github.com/IDEA-Research/TAPTR
+  - label: Project Page
+    url: https://taptr.github.io/
+description: >
+  Track Any Point TRansformer series converting TAP to point-level visual
+  prompt detection built on DETR. TAPTRv2 introduces attention-based
+  position update removing cost-volume dependency. TAPTRv3 adds
+  visibility-aware long-temporal attention for robust tracking in long videos.
+tags:
+  - vision
+  - tracking
+  - open-source
+outputs:
+  - name: TAPTR
+    type: library
+    sources:
+      - label: GitHub
+        url: https://github.com/IDEA-Research/TAPTR
+      - label: Project Page
+        url: https://taptr.github.io/
+    description: >
+      Official implementation of TAPTR, TAPTRv2, and TAPTRv3 for tracking
+      any point in videos using Transformer-based detection.
+    library:
+      github: https://github.com/IDEA-Research/TAPTR
+  - name: "TAPTR: Tracking Any Point with Transformers as Detection"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2403.13042
+    description: >
+      Converts tracking any point to point-level visual prompt detection
+      built on DETR architecture.
+    paper:
+      arxiv: "2403.13042"
+      venue: ECCV 2024
+  - name: "TAPTRv2: Attention-based Position Update Improves Tracking Any Point"
+    type: paper
+    date: 2024-07-23
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2407.16291
+    description: >
+      Introduces attention-based position update removing cost-volume
+      computation while achieving state-of-the-art performance.
+    paper:
+      arxiv: "2407.16291"
+      venue: NeurIPS 2024
+  - name: "TAPTRv3: Spatial and Temporal Context Foster Robust Tracking of Any Point in Long Video"
+    type: paper
+    date: 2024-11-27
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2411.18671
+    description: >
+      Proposes visibility-aware long-temporal attention and context-aware
+      cross attention for robust point tracking in long videos.
+    paper:
+      arxiv: "2411.18671"
+      venue: ICLR 2026

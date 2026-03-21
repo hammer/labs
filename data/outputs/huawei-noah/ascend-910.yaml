@@ -1,0 +1,27 @@
+name: Ascend 910 Series
+slug: ascend-910
+lab: huawei-noah
+type: announcement
+date: 2019-08-23
+sources:
+  - label: Launch Announcement
+    url: https://aibusiness.com/verticals/huawei-launches-ascend-910-its-flagship-ai-chip
+  - label: Ascend 310 Announcement (Oct 2018)
+    url: https://www.cnbc.com/2018/10/10/huawei-unveils-ai-chips-taking-aim-at-giants-like-qualcomm-and-nvidia.html
+  - label: Ascend 910C Report
+    url: https://www.tomshardware.com/tech-industry/artificial-intelligence/huawei-already-has-a-new-chip-to-rival-nvidia-ai-gpus
+  - label: Ascend Roadmap
+    url: https://www.tomshardware.com/tech-industry/artificial-intelligence/huawei-ascend-npu-roadmap-examined-company-targets-4-zettaflops-fp4-performance-by-2028-amid-manufacturing-constraints
+description: >
+  Huawei's family of AI training and inference processors. Ascend 310
+  (announced Oct 2018) targets edge inference at under 10W. Ascend 910
+  (launched Aug 2019) is the flagship AI training chip, used to train
+  PanGu models. Ascend 910B (2023) was the first post-sanctions chip
+  manufactured by SMIC at 7nm. Ascend 910C (H2 2024) uses dual-die
+  packaging for improved performance. Key infrastructure for China's
+  domestic AI ecosystem.
+tags:
+  - chips
+  - hardware
+  - infrastructure
+  - ai-accelerator

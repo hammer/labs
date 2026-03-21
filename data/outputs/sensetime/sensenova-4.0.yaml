@@ -1,0 +1,17 @@
+name: SenseNova 4.0
+slug: sensenova-4.0
+lab: sensetime
+type: model
+date: 2024-02-06
+sources:
+  - label: Announcement
+    url: https://www.prnewswire.com/apac/news-releases/sensetime-unveils-sensenova-4-0--bringing-novel-ai-experience-302054548.html
+description: >
+  Major model upgrade demonstrating advanced knowledge coverage with
+  enhanced reasoning, long text comprehension, numerical inference, code
+  generation, and multimodal interactions. SenseChat V4 performed on par
+  with GPT-4 and surpassed GPT-3.5 in overall performance. Had attracted
+  over 3,000 enterprise users by launch.
+tags:
+  - frontier
+  - multimodal

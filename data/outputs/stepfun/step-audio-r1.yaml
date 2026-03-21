@@ -1,0 +1,31 @@
+name: Step-Audio-R1
+slug: step-audio-r1
+lab: stepfun
+type: model
+date: 2025-11-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2511.15848
+  - label: GitHub
+    url: https://github.com/stepfun-ai/Step-Audio-R1
+  - label: HuggingFace
+    url: https://huggingface.co/stepfun-ai/Step-Audio-R1
+description: >
+  First audio LLM to unlock test-time compute scaling via Chain-of-Thought
+  reasoning. 33B parameters. Surpasses Gemini 2.5 Pro on audio understanding
+  benchmarks.
+tags:
+  - audio
+  - reasoning
+  - open-weight
+model:
+  architecture: dense
+  parameters: 33B
+  variants:
+    - name: Step-Audio-R1
+      notes: Released Nov 27, 2025
+    - name: Step-Audio-R1.1
+      notes: Released Jan 14, 2026. Dual-Brain Architecture for real-time spoken dialogue.
+paper:
+  arxiv: "2511.15848"
+notes: arXiv submission Nov 19, 2025. Model weights released Nov 27, 2025.

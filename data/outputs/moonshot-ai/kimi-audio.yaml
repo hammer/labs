@@ -1,17 +1,27 @@
 name: Kimi-Audio
 slug: kimi-audio
 lab: moonshot-ai
-type: model
 date: 2025-04-25
 sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2504.18425
   - label: GitHub
     url: https://github.com/MoonshotAI/Kimi-Audio
   - label: HuggingFace
     url: https://huggingface.co/moonshotai/Kimi-Audio-7B-Instruct
-  - label: "Paper (arXiv)"
-    url: https://arxiv.org/abs/2504.18425
 description: >
-  Universal audio foundation model for speech recognition and audio-to-text chat.
+  Universal audio foundation model for understanding, generation, and
+  conversation. Trained on 13M+ hours of audio data.
 tags:
   - audio
+  - speech
   - open-weight
+outputs:
+  - name: Kimi-Audio-7B-Instruct
+    type: model
+    model:
+      parameters: 7B
+  - name: Kimi-Audio Technical Report
+    type: paper
+    paper:
+      arxiv: "2504.18425"

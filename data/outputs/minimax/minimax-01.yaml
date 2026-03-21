@@ -1,0 +1,71 @@
+name: MiniMax-01
+slug: minimax-01
+lab: minimax
+date: 2025-01-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.08313
+  - label: HuggingFace
+    url: https://huggingface.co/MiniMaxAI
+  - label: GitHub
+    url: https://github.com/MiniMax-AI/MiniMax-01
+  - label: Announcement
+    url: https://www.marktechpost.com/2025/01/15/minimax-text-01-and-minimax-vl-01-released-scalable-models-with-lightning-attention-456b-parameters-4b-token-contexts-and-state-of-the-art-accuracy/
+description: >
+  456B parameter MoE model series with a 4-million-token context window, built on
+  a novel Lightning Attention architecture. Includes both text-only (Text-01) and
+  vision-language (VL-01) variants.
+tags:
+  - moe
+  - long-context
+  - open-weight
+  - architecture
+  - attention
+  - efficiency
+  - vlm
+outputs:
+  - name: MiniMax-Text-01
+    type: model
+    date: 2025-01-15
+    sources:
+      - label: Announcement
+        url: https://www.marktechpost.com/2025/01/15/minimax-text-01-and-minimax-vl-01-released-scalable-models-with-lightning-attention-456b-parameters-4b-token-contexts-and-state-of-the-art-accuracy/
+      - label: HuggingFace
+        url: https://huggingface.co/MiniMaxAI
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2501.08313
+    description: >
+      456B parameter MoE model with a 4-million-token context window.
+    model:
+      architecture: moe
+      parameters: 456B
+      context_window: 4000000
+  - name: MiniMax-VL-01
+    type: model
+    date: 2025-01-15
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/MiniMaxAI/MiniMax-VL-01
+      - label: GitHub
+        url: https://github.com/MiniMax-AI/MiniMax-01
+    description: >
+      Vision-language model using ViT-MLP-LLM framework with 303M parameter
+      ViT encoder and MiniMax-Text-01 as base LLM. Trained on 512B
+      vision-language tokens. Matches GPT-4o and Claude-3.5-Sonnet performance.
+    model:
+      architecture: moe
+      parameters: 456B
+      context_window: 4000000
+  - name: "MiniMax-01: Scaling Foundation Models with Lightning Attention"
+    type: paper
+    date: 2025-01-14
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2501.08313
+      - label: HuggingFace
+        url: https://huggingface.co/papers/2501.08313
+    description: >
+      Foundational paper for the linear-attention architecture used across
+      MiniMax models.
+    paper:
+      arxiv: "2501.08313"

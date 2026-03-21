@@ -1,0 +1,22 @@
+name: SekoTalk / Seko 2.0
+slug: sekotalk
+lab: sensetime
+type: model
+date: 2025-12-22
+sources:
+  - label: Announcement
+    url: https://www.prnewswire.com/apac/news-releases/sensetime-launches-seko-2-0-drama-series-generation-platform-302647940.html
+  - label: GitHub
+    url: https://github.com/OpenSenseNova/SekoTalk
+description: >
+  Audio-driven digital human generation model and multi-episode drama
+  generation platform. SekoTalk solves inaccurate lip-sync in complex
+  multi-language and multi-person scenarios, achieving highly precise
+  audio-visual synchronization. Industry's first solution supporting
+  lip-sync for more than two people. Seko 2.0 platform launched as a
+  multi-episode drama generation agent for short drama creators.
+tags:
+  - digital-human
+  - video-generation
+  - lip-sync
+  - generative

@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
 import { globSync } from 'glob';
 import { parse } from 'yaml';
-import { LabSchema, OutputSchema, type Lab, type Output } from '../schema.js';
+import { LabSchema, OutputSchema, isGrouped, type Lab, type Output } from '../schema.js';
 
 let _labs: Lab[] | null = null;
 let _outputs: (Output & { _labSlug: string })[] | null = null;
@@ -46,7 +46,7 @@ export function getLabsGroupedByType(): Record<string, Lab[]> {
   return groups;
 }
 
-export function getOutputsForLab(labSlug: string): Output[] {
+export function getOutputsForLab(labSlug: string): (Output & { _labSlug: string })[] {
   return loadOutputs()
     .filter((o) => {
       const labs = Array.isArray(o.lab) ? o.lab : [o.lab];
@@ -63,6 +63,17 @@ export function getOutputBySlug(labSlug: string, slug: string): Output | undefin
   return loadOutputs().find((o) => o._labSlug === labSlug && o.slug === slug);
 }
 
+/** Count outputs for a lab. Grouped entries count as 1. */
 export function getOutputCount(labSlug: string): number {
   return getOutputsForLab(labSlug).length;
 }
+
+/** Get the primary display type(s) for an output */
+export function getOutputTypes(output: Output): string[] {
+  if (isGrouped(output)) {
+    return [...new Set(output.outputs.map(o => o.type))];
+  }
+  return [output.type];
+}
+
+export { isGrouped };

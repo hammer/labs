@@ -1,0 +1,40 @@
+name: Stable-DINO
+slug: stable-dino
+lab: idea-lab
+date: 2023-04-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2304.04742
+  - label: GitHub
+    url: https://github.com/IDEA-Research/Stable-DINO
+description: >
+  Detection Transformer with Stable Matching. Addresses multi-optimization
+  path problem in DETR caused by one-to-one matching instability. Proposes
+  position-supervised loss and position-modulated cost. Achieves 50.4 AP
+  with ResNet-50 in 12 epochs and 64.8 AP on COCO test-dev with FocalNet-Huge.
+tags:
+  - vision
+  - object-detection
+  - open-source
+outputs:
+  - name: Stable-DINO
+    type: library
+    sources:
+      - label: GitHub
+        url: https://github.com/IDEA-Research/Stable-DINO
+    description: >
+      Official implementation of Stable-DINO on detrex. Requires only a few
+      lines of code change over DINO with nearly no extra computational cost.
+    library:
+      github: https://github.com/IDEA-Research/Stable-DINO
+  - name: "Detection Transformer with Stable Matching"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2304.04742
+    description: >
+      Proposes position-supervised loss and position-modulated cost for stable
+      matching in Detection Transformers.
+    paper:
+      arxiv: "2304.04742"
+      venue: ICCV 2023

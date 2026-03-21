@@ -1,0 +1,64 @@
+name: Klear
+slug: klear
+lab: kuaishou
+date: 2025-09-05
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/Kwai-Klear
+  - label: GitHub
+    url: https://github.com/Kwai-Klear/KlearReasoner
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.07629
+description: >
+  Sparse MoE LLM family from Kuaishou, including a 46B-parameter base model
+  (2.5B active) and the Klear-Reasoner variant achieving 90.5% on AIME 2024
+  via Gradient-Preserving Clipping Policy Optimization (GPPO).
+tags:
+  - moe
+  - reasoning
+  - open-weight
+  - math
+  - coding
+outputs:
+  - name: Klear-46B-A2.5B
+    type: model
+    date: 2025-09-05
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/Kwai-Klear/Klear-46B-A2.5B-Instruct
+    description: >
+      Sparse MoE LLM with 46B total parameters and 2.5B active, designed for
+      high performance and inference efficiency.
+    model:
+      architecture: moe
+      parameters: 46B
+      active_parameters: 2.5B
+  - name: "Klear-Reasoner: Advancing Reasoning Capability via GPPO"
+    type: paper
+    date: 2025-08-11
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2508.07629
+      - label: GitHub
+        url: https://github.com/Kwai-Klear/KlearReasoner
+      - label: HuggingFace
+        url: https://huggingface.co/Kwai-Klear/Klear-Reasoner-8B
+    description: >
+      Technical report on Gradient-Preserving Clipping Policy Optimization (GPPO).
+      Based on Qwen3-8B-Base, achieves 90.5% on AIME 2024 and 83.2% on AIME 2025.
+    paper:
+      arxiv: "2508.07629"
+  - name: Klear-Reasoner-8B
+    type: model
+    date: 2025-08-11
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/Kwai-Klear/Klear-Reasoner-8B
+      - label: GitHub
+        url: https://github.com/Kwai-Klear/KlearReasoner
+    description: >
+      8B reasoning model based on Qwen3-8B-Base, fine-tuned with long CoT SFT
+      and RL on math and coding tasks. 90.5% on AIME 2024, 83.2% on AIME 2025.
+    model:
+      architecture: dense
+      parameters: 8B

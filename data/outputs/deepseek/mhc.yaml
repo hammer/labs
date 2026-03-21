@@ -1,0 +1,19 @@
+name: "mHC: Manifold-Constrained Hyper-Connections"
+slug: mhc
+lab: deepseek
+type: paper
+date: 2025-12-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.24880
+description: >
+  Proposes Manifold-Constrained Hyper-Connections, projecting residual connection
+  space onto a specific manifold to restore identity mapping while maintaining
+  diverse connectivity patterns. Shows improvements on reasoning tasks with
+  only 6.7% additional training overhead. Co-authored by founder Liang Wenfeng.
+tags:
+  - architecture
+  - research
+  - efficiency
+paper:
+  arxiv: "2512.24880"

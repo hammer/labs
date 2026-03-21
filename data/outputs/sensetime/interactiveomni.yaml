@@ -1,0 +1,33 @@
+name: InteractiveOmni
+slug: interactiveomni
+lab: sensetime
+date: 2025-10-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.13747
+  - label: GitHub
+    url: https://github.com/OpenSenseNova/InteractiveOmni
+description: >
+  Unified open-source omni-modal large language model for audio-visual
+  multi-turn interaction. Ranges from 4B to 8B parameters, integrating
+  vision encoder, audio encoder, LLM, and speech decoder into a single
+  model for comprehensive understanding and generation tasks. Leads
+  the field of lightweight omni-modal models.
+tags:
+  - multimodal
+  - audio
+  - open-source
+  - omni-modal
+outputs:
+  - name: InteractiveOmni Model
+    type: model
+    model:
+      variants:
+        - name: InteractiveOmni-4B
+          parameters: "4B"
+        - name: InteractiveOmni-8B
+          parameters: "8B"
+  - name: "InteractiveOmni: A Unified Omni-modal Model for Audio-Visual Multi-turn Dialogue"
+    type: paper
+    paper:
+      arxiv: "2510.13747"

@@ -1,6 +1,7 @@
 name: DeepSeek
 slug: deepseek
 url: https://www.deepseek.com
+wikipedia: https://en.wikipedia.org/wiki/DeepSeek
 huggingface: https://huggingface.co/deepseek-ai
 github: https://github.com/deepseek-ai
 region: china

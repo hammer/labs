@@ -1,0 +1,50 @@
+name: Baichuan-M2
+slug: baichuan-m2
+lab: baichuan
+date: 2025-09-02
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.02208
+  - label: GitHub
+    url: https://github.com/baichuan-inc/Baichuan-M2-32B
+  - label: HuggingFace
+    url: https://huggingface.co/baichuan-inc/Baichuan-M2-32B
+description: >
+  Medical-enhanced reasoning model built upon Qwen2.5-32B with an innovative
+  Large Verifier System comprising a Patient Simulator and Clinical Rubrics
+  Generator. Trained through multi-stage reinforcement learning with improved
+  GRPO. Outperforms all other open-source models and most closed-source
+  counterparts on HealthBench. Licensed under Apache 2.0.
+tags:
+  - open-weight
+  - medical
+  - reasoning
+  - reinforcement-learning
+outputs:
+  - name: "Baichuan-M2: Scaling Medical Capability with Large Verifier System"
+    type: paper
+    date: 2025-09-02
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2509.02208
+    description: >
+      Technical report on the Large Verifier System, multi-stage RL training,
+      and HealthBench evaluation results.
+    paper:
+      arxiv: "2509.02208"
+  - name: Baichuan-M2-32B
+    type: model
+    date: 2025-09-02
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/baichuan-inc/Baichuan-M2-32B
+      - label: HuggingFace (GPTQ-Int4)
+        url: https://huggingface.co/baichuan-inc/Baichuan-M2-32B-GPTQ-Int4
+      - label: GitHub
+        url: https://github.com/baichuan-inc/Baichuan-M2-32B
+    description: >
+      32-billion-parameter medical reasoning model with quantized GPTQ-Int4
+      variant available.
+    model:
+      architecture: dense
+      parameters: 32B

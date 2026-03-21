@@ -1,6 +1,7 @@
 name: ByteDance
 slug: bytedance-seed
 url: https://www.volcengine.com
+wikipedia: https://en.wikipedia.org/wiki/ByteDance
 huggingface: https://huggingface.co/ByteDance-Seed
 github: https://github.com/bytedance
 region: china

@@ -1,0 +1,36 @@
+name: openPangu
+slug: openpangu
+lab: huawei-noah
+type: model
+date: 2025-06-30
+sources:
+  - label: CNBC Report
+    url: https://www.cnbc.com/2025/07/01/huawei-open-sources-more-ai-models-grows-into-chinese-ai-juggernaut.html
+  - label: Global Times Announcement
+    url: https://www.globaltimes.cn/page/202506/1337329.shtml
+  - label: HuggingFace (openPangu-Embedded-7B)
+    url: https://huggingface.co/FreedomIntelligence/openPangu-Embedded-7B
+  - label: HuggingFace (openPangu-Ultra-MoE-718B)
+    url: https://huggingface.co/FreedomIntelligence/openPangu-Ultra-MoE-718B
+description: >
+  Huawei's open-source release of the PanGu model family. Includes the
+  openPangu 7B dense model and openPangu Pro MoE 72B using a novel Mixture
+  of Grouped Experts (MoGE) architecture with 16B active parameters.
+  Trained entirely on Ascend chips. openPangu Ultra MoE 718B with 256
+  experts was announced at HDC 2025 on June 20.
+tags:
+  - open-weight
+  - large-language-model
+  - moe
+  - chinese
+model:
+  architecture: moe
+  variants:
+    - name: openPangu 7B
+      parameters: 7B
+    - name: openPangu Pro MoE 72B
+      parameters: 72B
+      notes: MoGE architecture, 16B active parameters
+    - name: openPangu Ultra MoE 718B
+      parameters: 718B
+      notes: 256 experts, announced HDC 2025

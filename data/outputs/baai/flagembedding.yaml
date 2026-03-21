@@ -1,18 +1,41 @@
-name: FlagEmbedding
+name: FlagEmbedding & C-MTEB
 slug: flagembedding
 lab: baai
-type: library
-date: 2023-08-02
+date: 2023-08-01
 sources:
   - label: GitHub
     url: https://github.com/FlagOpen/FlagEmbedding
+  - label: HuggingFace (C-MTEB)
+    url: https://huggingface.co/C-MTEB
 description: >
-  Official library for the BGE model family.
+  Official library for the BGE model family and the C-MTEB benchmark for
+  Chinese text embeddings and retrieval evaluation.
 tags:
   - embeddings
   - rag
   - framework
-library:
-  github: https://github.com/FlagOpen/FlagEmbedding
+  - benchmark
+  - chinese
+outputs:
+  - name: FlagEmbedding
+    type: library
+    date: 2023-08-02
+    sources:
+      - label: GitHub
+        url: https://github.com/FlagOpen/FlagEmbedding
+    description: >
+      Official library for the BGE model family.
+  - name: C-MTEB
+    type: dataset
+    date: 2023-08-01
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/C-MTEB
+      - label: GitHub
+        url: https://github.com/FlagOpen/FlagEmbedding
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2309.07597
+    description: >
+      Benchmark for Chinese text embeddings and retrieval.
 related:
   - bge

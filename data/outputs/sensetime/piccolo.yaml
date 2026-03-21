@@ -1,0 +1,34 @@
+name: Piccolo2 Embedding Model
+slug: piccolo2
+lab: sensetime
+date: 2024-05-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2405.06932
+  - label: GitHub
+    url: https://github.com/OpenSenseNova/piccolo-embedding
+  - label: HuggingFace
+    url: https://huggingface.co/sensenova/piccolo-large-zh-v2
+description: >
+  Chinese text embedding model from SenseTime Research achieving
+  state-of-the-art on the CMTEB benchmark across 6 tasks. Uses efficient
+  multi-task hybrid loss training, scaled-up embedding dimensions, and
+  MRL training for flexible vector dimensions.
+tags:
+  - embedding
+  - nlp
+  - chinese
+  - open-weight
+outputs:
+  - name: Piccolo2 Models
+    type: model
+    model:
+      variants:
+        - name: piccolo-large-zh-v2
+        - name: piccolo-large-zh
+          notes: Original v1 model
+        - name: piccolo-base-zh
+  - name: "Piccolo2: General Text Embedding with Multi-task Hybrid Loss Training"
+    type: paper
+    paper:
+      arxiv: "2405.06932"

@@ -1,0 +1,38 @@
+name: DAB-DETR
+slug: dab-detr
+lab: idea-lab
+date: 2022-01-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2201.12329
+  - label: GitHub
+    url: https://github.com/IDEA-Research/DAB-DETR
+description: >
+  Dynamic Anchor Boxes are Better Queries for DETR. Proposes using dynamic
+  anchor boxes as positional queries in DETR, making the queries more
+  interpretable and improving detection performance.
+tags:
+  - vision
+  - object-detection
+  - open-source
+outputs:
+  - name: DAB-DETR
+    type: library
+    sources:
+      - label: GitHub
+        url: https://github.com/IDEA-Research/DAB-DETR
+    description: >
+      Official implementation of DAB-DETR with dynamic anchor box queries.
+    library:
+      github: https://github.com/IDEA-Research/DAB-DETR
+  - name: "DAB-DETR: Dynamic Anchor Boxes are Better Queries for DETR"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2201.12329
+    description: >
+      Proposes using dynamic anchor boxes as positional queries in DETR
+      for improved interpretability and performance.
+    paper:
+      arxiv: "2201.12329"
+      venue: ICLR 2022

@@ -1,0 +1,36 @@
+name: NEO (Native VLM Architecture)
+slug: neo
+lab: sensetime
+date: 2025-12-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.14979
+  - label: GitHub
+    url: https://github.com/EvolvingLMMs-Lab/NEO
+  - label: SenseTime News
+    url: https://www.sensetime.com/en/news-detail/51170267?categoryId=1072
+description: >
+  World's first scalable native vision-language model architecture,
+  co-developed with NTU S-Lab. Abandons the traditional "visual encoder
+  + projector + LLM" paradigm, rewriting attention mechanisms, position
+  encoding, and semantic mapping from scratch. Achieves SOTA with only
+  1/10th the training data (390M image-text examples). Open-sourced in
+  2B and 9B parameter sizes.
+tags:
+  - multimodal
+  - architecture
+  - open-source
+  - computer-vision
+outputs:
+  - name: NEO Models
+    type: model
+    model:
+      variants:
+        - name: NEO-2B
+          parameters: "2B"
+        - name: NEO-9B
+          parameters: "9B"
+  - name: "From Pixels to Words: Towards Native Vision-Language Primitives at Scale"
+    type: paper
+    paper:
+      arxiv: "2510.14979"

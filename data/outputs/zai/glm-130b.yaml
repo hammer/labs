@@ -1,7 +1,6 @@
 name: GLM-130B
 slug: glm-130b
 lab: zai
-type: model
 date: 2022-08-24
 sources:
   - label: Paper (arXiv)
@@ -15,8 +14,24 @@ tags:
   - open-weight
   - multilingual
   - frontier
-model:
-  architecture: dense
-  parameters: 130B
-paper:
-  arxiv: "2210.02414"
+  - scaling
+outputs:
+  - name: GLM-130B
+    type: model
+    date: 2022-08-24
+    sources:
+      - label: GitHub
+        url: https://github.com/zai-org/GLM-130B
+    model:
+      architecture: dense
+      parameters: 130B
+  - name: "GLM-130B: An Open Bilingual Pre-trained Model"
+    type: paper
+    date: 2022-10-05
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2210.02414
+    description: >
+      Technical paper for the landmark 130B bilingual model.
+    paper:
+      arxiv: "2210.02414"

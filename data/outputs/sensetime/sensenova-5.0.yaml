@@ -1,0 +1,24 @@
+name: SenseNova 5.0
+slug: sensenova-5.0
+lab: sensetime
+type: model
+date: 2024-04-24
+sources:
+  - label: Announcement
+    url: https://www.prnewswire.com/apac/news-releases/sensetime-launches-sensenova-5-0-with-comprehensive-updates-and-the-industry-leading-cloud-to-edge-full-stack-large-model-product-matrix-302125415.html
+  - label: SenseTime News
+    url: https://www.sensetime.com/en/news-detail/51167731?categoryId=1072
+description: >
+  Major upgrade of SenseTime's flagship large model family, launched at
+  SenseTime Tech Day in Shanghai. Trained on over 10TB of tokens with
+  synthetic data, adopts Mixture of Experts architecture with ~200K
+  effective context window. Claimed to outperform GPT-4 Turbo on
+  multiple benchmarks including MMBench for multimodal evaluation.
+  Introduced the "Cloud-to-Edge" full-stack deployment matrix.
+tags:
+  - frontier
+  - multimodal
+  - moe
+model:
+  architecture: moe
+  context_window: 200000

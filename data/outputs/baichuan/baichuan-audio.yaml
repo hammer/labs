@@ -1,0 +1,54 @@
+name: Baichuan-Audio
+slug: baichuan-audio
+lab: baichuan
+date: 2025-02-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.17239
+  - label: GitHub
+    url: https://github.com/baichuan-inc/Baichuan-Audio
+  - label: HuggingFace (Base)
+    url: https://huggingface.co/baichuan-inc/Baichuan-Audio-Base
+  - label: HuggingFace (Instruct)
+    url: https://huggingface.co/baichuan-inc/Baichuan-Audio-Instruct
+description: >
+  Open-source end-to-end audio large language model integrating speech
+  understanding and generation for real-time bilingual Chinese-English dialogue.
+  Uses multi-codebook discretization at 12.5 Hz frame rate to retain both
+  semantic and acoustic information. Achieves 3.2% WER on Fleurs zh test set,
+  significantly outperforming Whisper-large-v3 (12.4%). Includes the
+  OpenAudio-Bench evaluation benchmark.
+tags:
+  - open-weight
+  - audio
+  - speech
+  - chinese
+outputs:
+  - name: "Baichuan-Audio: A Unified Framework for End-to-End Speech Interaction"
+    type: paper
+    date: 2025-02-24
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2502.17239
+    description: >
+      Technical paper describing the multi-codebook speech discretization,
+      text-guided aligned speech generation, and two-stage pre-training
+      strategy.
+    paper:
+      arxiv: "2502.17239"
+  - name: Baichuan-Audio (model)
+    type: model
+    date: 2025-02-24
+    sources:
+      - label: HuggingFace (Base)
+        url: https://huggingface.co/baichuan-inc/Baichuan-Audio-Base
+      - label: HuggingFace (Instruct)
+        url: https://huggingface.co/baichuan-inc/Baichuan-Audio-Instruct
+      - label: GitHub
+        url: https://github.com/baichuan-inc/Baichuan-Audio
+    description: >
+      Open-source end-to-end speech interaction model with Base and Instruct
+      variants for bilingual Chinese-English audio dialogue.
+    model:
+      architecture: dense
+      parameters: 10B

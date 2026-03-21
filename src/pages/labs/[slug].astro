@@ -29,6 +29,7 @@ const outputs = getOutputsForLab(slug!);
 
     <div class="links">
       {lab.url && <a href={lab.url}>Website</a>}
+      {lab.wikipedia && <a href={lab.wikipedia}>Wikipedia</a>}
       {lab.huggingface && <a href={lab.huggingface}>HuggingFace</a>}
       {lab.github && <a href={lab.github}>GitHub</a>}
     </div>

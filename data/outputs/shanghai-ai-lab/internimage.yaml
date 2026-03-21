@@ -1,8 +1,7 @@
 name: InternImage
 slug: internimage
 lab: shanghai-ai-lab
-type: model
-date: 2023-02-28
+date: 2022-11-10
 sources:
   - label: GitHub
     url: https://github.com/OpenGVLab/InternImage
@@ -10,11 +9,29 @@ sources:
     url: https://arxiv.org/abs/2211.05778
 description: >
   Vision foundation model utilizing deformable convolutions for high-performance
-  detection and segmentation.
+  detection and segmentation. CVPR 2023 Highlight.
 tags:
   - vision
   - detection
   - open-weight
-library:
-  github: https://github.com/OpenGVLab/InternImage
-notes: CVPR 2023 Highlight. Accepted Feb 28, 2023.
+outputs:
+  - name: InternImage
+    type: model
+    date: 2023-02-28
+    sources:
+      - label: GitHub
+        url: https://github.com/OpenGVLab/InternImage
+    description: >
+      Vision foundation model utilizing deformable convolutions for high-performance
+      detection and segmentation.
+    notes: CVPR 2023 Highlight. Accepted Feb 28, 2023.
+  - name: "InternImage: Exploring Large-Scale Vision Foundation Models"
+    type: paper
+    date: 2022-11-10
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2211.05778
+    description: >
+      Vision foundation model using deformable convolutions for detection and segmentation.
+    paper:
+      arxiv: "2211.05778"

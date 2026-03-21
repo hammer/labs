@@ -1,0 +1,20 @@
+name: Hunyuan-Large-Vision
+slug: hunyuan-large-vision
+lab: tencent
+type: model
+date: 2025-02-18
+sources:
+  - label: Announcement
+    url: https://the-decoder.com/tencents-hunyuan-large-vision-sets-a-new-benchmark-as-chinas-leading-multimodal-model/
+description: >
+  Multimodal understanding model built on MoE architecture (389B total, 52B
+  active). Handles images, videos, and 3D content. Ranked first among Chinese
+  image AI models on LMArena Vision Leaderboard.
+tags:
+  - vlm
+  - multimodal
+  - moe
+model:
+  architecture: moe
+  parameters: 389B
+  active_parameters: 52B

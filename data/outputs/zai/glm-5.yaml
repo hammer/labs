@@ -1,7 +1,6 @@
-name: "GLM-5: From Vibe Coding to Agentic Engineering"
+name: GLM-5
 slug: glm-5
 lab: zai
-type: model
 date: 2026-02-11
 sources:
   - label: Blog Post
@@ -12,19 +11,58 @@ sources:
     url: https://github.com/zai-org/GLM-5
   - label: HuggingFace
     url: https://huggingface.co/zai-org/GLM-5
+  - label: Announcement (Turbo)
+    url: https://venturebeat.com/technology/z-ai-debuts-faster-cheaper-glm-5-turbo-model-for-agents-and-claws-but-its
+  - label: API Docs
+    url: https://docs.z.ai
 description: >
-  Most powerful Z.ai model. 744B total params (44B active) via MoE with 256
-  experts. Hybrid Attention and Multi-Token Prediction. First frontier-scale
-  model trained entirely on 100,000 Huawei Ascend 910B chips (zero American
-  hardware).
+  Most powerful Z.ai model family. GLM-5 is 744B total params (44B active) via
+  MoE with 256 experts. Hybrid Attention and Multi-Token Prediction. First
+  frontier-scale model trained entirely on 100,000 Huawei Ascend 910B chips.
+  GLM-5-Turbo is the fast variant optimized for the OpenClaw agent ecosystem.
 tags:
   - moe
   - agentic
   - coding
   - frontier
-model:
-  architecture: moe
-  parameters: 744B
-  active_parameters: 44B
-paper:
-  arxiv: "2602.15763"
+  - efficiency
+outputs:
+  - name: "GLM-5: From Vibe Coding to Agentic Engineering"
+    type: model
+    date: 2026-02-11
+    sources:
+      - label: Blog Post
+        url: https://z.ai/blog/glm-5
+      - label: GitHub
+        url: https://github.com/zai-org/GLM-5
+      - label: HuggingFace
+        url: https://huggingface.co/zai-org/GLM-5
+    description: >
+      744B total params (44B active) via MoE with 256 experts. Hybrid Attention
+      and Multi-Token Prediction. First frontier-scale model trained entirely
+      on 100,000 Huawei Ascend 910B chips (zero American hardware).
+    model:
+      architecture: moe
+      parameters: 744B
+      active_parameters: 44B
+  - name: GLM-5 Technical Report
+    type: paper
+    date: 2026-02-11
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2602.15763
+    paper:
+      arxiv: "2602.15763"
+  - name: GLM-5-Turbo
+    type: model
+    date: 2026-03-16
+    sources:
+      - label: Announcement
+        url: https://venturebeat.com/technology/z-ai-debuts-faster-cheaper-glm-5-turbo-model-for-agents-and-claws-but-its
+      - label: API Docs
+        url: https://docs.z.ai
+    description: >
+      Specialized "fast" version optimized for the OpenClaw agent ecosystem,
+      focusing on continuous task execution and tool reliability.
+    model:
+      architecture: moe

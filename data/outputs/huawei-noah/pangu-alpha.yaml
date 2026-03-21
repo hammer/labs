@@ -1,0 +1,29 @@
+name: PanGu-alpha
+slug: pangu-alpha
+lab: huawei-noah
+date: 2021-04-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2104.12369
+  - label: GitHub
+    url: https://github.com/huawei-noah/Pretrained-Language-Model/tree/master/PanGu-%CE%B1
+description: >
+  Large-scale autoregressive pretrained Chinese language model with up to
+  200 billion parameters. Developed under MindSpore and trained on a cluster
+  of 2,048 Ascend 910 AI processors. First major Chinese-language LLM from
+  Huawei, achieving strong performance on Chinese NLP benchmarks.
+tags:
+  - nlp
+  - chinese
+  - large-language-model
+  - open-weight
+outputs:
+  - type: model
+    name: PanGu-alpha
+    model:
+      parameters: 200B
+      architecture: dense
+  - type: paper
+    name: "PanGu-alpha: Large-scale Autoregressive Pretrained Chinese Language Models with Auto-parallel Computation"
+    paper:
+      arxiv: "2104.12369"

@@ -6,13 +6,27 @@ date: 2025-03-16
 sources:
   - label: Announcement
     url: https://www.prnewswire.com/news-releases/baidu-unveils-ernie-4-5-and-reasoning-model-ernie-x1--makes-ernie-bot-free-ahead-of-schedule-302402490.html
-  - label: Blog Post
-    url: https://builtin.com/artificial-intelligence/baidu-ernie-x1-ernie-4-5
+  - label: ERNIE X1.1 Announcement
+    url: https://www.prnewswire.com/news-releases/baidu-unveils-reasoning-model-ernie-x1-1-with-upgrades-in-key-capabilities-302551170.html
 description: >
-  Specialized reasoning model utilizing a heterogeneous multimodal MoE architecture.
+  Deep-thinking reasoning model series with multimodal capabilities. ERNIE X1
+  delivers performance on par with DeepSeek-R1 at lower cost. ERNIE X1.1
+  (September 2025) improves factuality by 34.8%, instruction following by 12.5%,
+  and agentic capabilities by 9.6%, performing on par with GPT-5 and Gemini 2.5
+  Pro. Built on an iterative hybrid reinforcement learning framework atop the
+  ERNIE 4.5 multimodal foundation model.
 tags:
   - reasoning
   - moe
   - multimodal
 model:
   architecture: moe
+  variants:
+    - name: ERNIE X1
+      notes: Initial release, March 2025
+    - name: ERNIE X1 Turbo
+      notes: Faster, lower-cost variant, April 2025
+    - name: ERNIE X1.1
+      notes: Upgraded reasoning, September 2025; surpasses DeepSeek R1-0528
+related:
+  - ernie-4.5

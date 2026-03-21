@@ -1,0 +1,37 @@
+name: SPIRAL
+slug: spiral
+lab: huawei-noah
+date: 2022-01-25
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2201.10207
+  - label: "Published: ICLR 2022"
+    url: https://iclr.cc/virtual/2022/poster/6505
+  - label: GitHub
+    url: https://github.com/huawei-noah/Speech-Backbones
+  - label: HuggingFace (SPIRAL-Large)
+    url: https://huggingface.co/huawei-noah/SPIRAL-Large
+  - label: HuggingFace (SPIRAL-base)
+    url: https://huggingface.co/huawei-noah/SPIRAL-base
+description: >
+  Self-supervised Perturbation-Invariant Representation Learning for speech
+  pre-training. Learns denoising representations of perturbed data in a
+  teacher-student framework. Achieves competitive or better results than
+  wav2vec 2.0 with 80% training cost reduction for BASE and 65% for LARGE
+  models. Published at ICLR 2022.
+tags:
+  - speech
+  - self-supervised
+  - pre-training
+  - open-source
+outputs:
+  - type: model
+    name: SPIRAL
+    model:
+      variants:
+        - name: SPIRAL-base
+        - name: SPIRAL-Large
+  - type: paper
+    name: "SPIRAL: Self-supervised Perturbation-Invariant Representation Learning for Speech Pre-Training"
+    paper:
+      arxiv: "2201.10207"

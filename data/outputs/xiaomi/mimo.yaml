@@ -1,0 +1,42 @@
+name: MiMo (Reasoning)
+slug: mimo
+lab: xiaomi
+date: 2025-05-02
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/XiaomiMiMo/MiMo-7B-RL
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.07608
+  - label: Announcement
+    url: https://www.gizmochina.com/2025/05/02/xiaomi-launches-mimo-7b-its-first-open-source-llm-for-reasoning-and-coding/
+description: >
+  Reasoning-focused model achieving superior performance on AIME (math)
+  and HumanEval (coding). From pretraining to posttraining, unlocking
+  reasoning potential.
+tags:
+  - reasoning
+  - math
+  - coding
+  - open-weight
+outputs:
+  - name: MiMo-7B-RL
+    type: model
+    date: 2025-05-02
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/XiaomiMiMo/MiMo-7B-RL
+      - label: Announcement
+        url: https://www.gizmochina.com/2025/05/02/xiaomi-launches-mimo-7b-its-first-open-source-llm-for-reasoning-and-coding/
+    model:
+      architecture: dense
+      parameters: 7B
+  - name: "MiMo: Unlocking the Reasoning Potential of Language Model"
+    type: paper
+    date: 2025-05-12
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2505.07608
+    description: >
+      From pretraining to posttraining, unlocking reasoning potential.
+    paper:
+      arxiv: "2505.07608"

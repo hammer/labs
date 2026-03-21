@@ -1,0 +1,62 @@
+name: Baichuan 2
+slug: baichuan-2
+lab: baichuan
+date: 2023-09-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2309.10305
+  - label: GitHub
+    url: https://github.com/baichuan-inc/Baichuan2
+  - label: HuggingFace (7B-Base)
+    url: https://huggingface.co/baichuan-inc/Baichuan2-7B-Base
+  - label: HuggingFace (13B-Base)
+    url: https://huggingface.co/baichuan-inc/Baichuan2-13B-Base
+description: >
+  Second generation of open-source large language models with 7B and 13B
+  parameters, trained from scratch on 2.6 trillion tokens. Matches or outperforms
+  other open-source models of similar size on benchmarks including MMLU, CMMLU,
+  GSM8K, and HumanEval, with particular strength in medicine and law domains.
+tags:
+  - open-weight
+  - chinese
+  - nlp
+outputs:
+  - name: "Baichuan 2: Open Large-scale Language Models"
+    type: paper
+    date: 2023-09-19
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2309.10305
+    description: >
+      Technical report describing the training of the Baichuan 2 model series
+      on 2.6 trillion tokens with evaluations across public benchmarks.
+    paper:
+      arxiv: "2309.10305"
+  - name: Baichuan2-7B
+    type: model
+    date: 2023-09-06
+    sources:
+      - label: HuggingFace (Base)
+        url: https://huggingface.co/baichuan-inc/Baichuan2-7B-Base
+      - label: HuggingFace (Chat)
+        url: https://huggingface.co/baichuan-inc/Baichuan2-7B-Chat
+    description: >
+      7-billion-parameter variant of the Baichuan 2 series with both base
+      and chat-aligned versions.
+    model:
+      architecture: dense
+      parameters: 7B
+  - name: Baichuan2-13B
+    type: model
+    date: 2023-09-06
+    sources:
+      - label: HuggingFace (Base)
+        url: https://huggingface.co/baichuan-inc/Baichuan2-13B-Base
+      - label: HuggingFace (Chat)
+        url: https://huggingface.co/baichuan-inc/Baichuan2-13B-Chat
+    description: >
+      13-billion-parameter variant of the Baichuan 2 series with both base
+      and chat-aligned versions.
+    model:
+      architecture: dense
+      parameters: 13B

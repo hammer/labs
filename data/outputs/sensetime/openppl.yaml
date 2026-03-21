@@ -1,0 +1,24 @@
+name: OpenPPL (PPLNN)
+slug: openppl
+lab: sensetime
+type: library
+date: 2021-07-08
+sources:
+  - label: GitHub (ppl.nn)
+    url: https://github.com/OpenPPL/ppl.nn
+  - label: GitHub (OpenPPL)
+    url: https://github.com/OpenPPL
+description: >
+  High-performance deep-learning inference engine developed by SenseTime.
+  PPLNN (Primitive Library for Neural Network) supports ONNX models with
+  optimized support for OpenMMLab frameworks. Includes custom
+  high-performance operator libraries for cloud-native multi-backend
+  deployment. Development began in 2015 as SenseTime's internal PPL
+  toolkit before open-sourcing.
+tags:
+  - inference
+  - deployment
+  - open-source
+  - infrastructure
+library:
+  github: https://github.com/OpenPPL/ppl.nn

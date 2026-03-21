@@ -29,5 +29,4 @@ paper:
   arxiv: "2506.04308"
   venue: NeurIPS 2025
 related:
-  - robobrain-2.0
-  - robobrain-2.5
+  - robobrain

@@ -1,0 +1,54 @@
+name: CPM Series
+slug: cpm
+lab: openbmb
+date: 2020-12-01
+sources:
+  - label: "Paper (CPM-1)"
+    url: https://arxiv.org/abs/2012.00413
+  - label: "GitHub (CPM-1)"
+    url: https://github.com/TsinghuaAI/CPM-1-Generate
+  - label: "Paper (CPM-2)"
+    url: https://arxiv.org/abs/2106.10715
+  - label: "GitHub (CPM-2)"
+    url: https://github.com/TsinghuaAI/CPM
+  - label: "GitHub (CPM-Bee)"
+    url: https://github.com/OpenBMB/CPM-Bee
+  - label: "HuggingFace (CPM-Bee)"
+    url: https://huggingface.co/openbmb/cpm-bee-10b
+  - label: "Blog Post"
+    url: https://medium.com/@openbmb/finally-the-foundation-model-cpm-bee-is-open-sourced-now-3cf6a0017a50
+description: >
+  Foundational Chinese pretrained language model series from Tsinghua/OpenBMB,
+  evolving from the first large-scale Chinese model through MoE and
+  multilingual variants.
+tags:
+  - open-weight
+  - chinese
+  - multilingual
+  - moe
+outputs:
+  - name: CPM-1
+    type: model
+    description: >
+      One of the first large-scale Chinese pretrained language models (2.6B).
+    model:
+      architecture: dense
+      parameters: 2.6B
+    paper:
+      arxiv: "2012.00413"
+  - name: CPM-2
+    type: model
+    date: 2021-06-24
+    description: >
+      198B parameter MoE model, supported by BAAI.
+    model:
+      architecture: moe
+      parameters: 198B
+    paper:
+      arxiv: "2106.10715"
+  - name: CPM-Ant & CPM-Bee
+    type: model
+    date: 2023-05-27
+    description: >
+      Multilingual models featuring CPM-Live training protocol, showcasing
+      "live" model checkpoints during training.

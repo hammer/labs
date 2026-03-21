@@ -1,31 +1,59 @@
 name: RoboOS
 slug: roboos
 lab: baai
-type: library
 date: 2025-05-06
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2505.03673
   - label: GitHub
     url: https://github.com/FlagOpen/RoboOS
-  - label: Nature Machine Intelligence
-    url: https://www.nature.com/articles/s42256-026-01186-z
 description: >
-  First open-source embodied operating system based on a Brain-Cerebellum
-  hierarchical architecture for cross-embodiment and multi-agent collaboration.
-  Three components: (1) Embodied Cloud Model (MLLM for global perception),
-  (2) Cerebellum Skill Library (plug-and-play toolkit), (3) Real-Time Shared
-  Memory (spatiotemporal synchronization). Supports heterogeneous robots
-  including single-arm, dual-arm, humanoid, and wheeled robots. RoboOS 2.0
-  adds MCP-powered SaaS framework with RoboSkill Store. Tested in restaurants,
-  households, and supermarkets.
+  First open-source embodied operating system for cross-embodiment and
+  multi-agent robot collaboration. Uses a Brain-Cerebellum hierarchical
+  architecture. RoboOS-NeXT extends with unified memory-based framework
+  for lifelong scalable multi-robot collaboration.
 tags:
   - embodied-ai
   - robotics
   - multi-agent
   - open-source
-library:
-  github: https://github.com/FlagOpen/RoboOS
+outputs:
+  - name: RoboOS
+    type: library
+    date: 2025-05-06
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2505.03673
+      - label: GitHub
+        url: https://github.com/FlagOpen/RoboOS
+      - label: Nature Machine Intelligence
+        url: https://www.nature.com/articles/s42256-026-01186-z
+    description: >
+      First open-source embodied operating system based on a Brain-Cerebellum
+      hierarchical architecture for cross-embodiment and multi-agent collaboration.
+      Three components: (1) Embodied Cloud Model (MLLM for global perception),
+      (2) Cerebellum Skill Library (plug-and-play toolkit), (3) Real-Time Shared
+      Memory (spatiotemporal synchronization). Supports heterogeneous robots
+      including single-arm, dual-arm, humanoid, and wheeled robots. RoboOS 2.0
+      adds MCP-powered SaaS framework with RoboSkill Store. Tested in restaurants,
+      households, and supermarkets.
+  - name: RoboOS-NeXT
+    type: library
+    date: 2025-10-30
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2510.26536
+      - label: GitHub
+        url: https://github.com/FlagOpen/RoboOS
+    description: >
+      Unified memory-based framework for lifelong, scalable, and robust
+      multi-robot collaboration. Introduces Spatio-Temporal-Embodiment Memory
+      (STEM), integrating spatial scene geometry, temporal event history, and
+      embodiment profiles into a shared representation. High-level brain model
+      performs global planning by retrieving and updating STEM while low-level
+      controllers execute actions locally. Enables dynamic task allocation,
+      fault-tolerant collaboration, and consistent state synchronization.
+      Tested across restaurants, supermarkets, and households with
+      heterogeneous embodiments.
 related:
-  - robobrain-2.0
-  - roboos-next
+  - robobrain

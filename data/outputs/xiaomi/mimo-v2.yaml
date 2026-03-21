@@ -1,0 +1,86 @@
+name: MiMo-V2
+slug: mimo-v2
+lab: xiaomi
+date: 2025-12-16
+sources:
+  - label: GitHub
+    url: https://github.com/XiaomiMiMo/MiMo-V2-Flash
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.02780
+  - label: Website (Omni)
+    url: https://mimo.xiaomi.com/mimo-v2-omni
+  - label: Website (Pro)
+    url: https://mimo.xiaomi.com/mimo-v2-pro
+  - label: Website (TTS)
+    url: https://mimo.xiaomi.com/mimo-v2-tts
+  - label: Announcement
+    url: https://www.gizmochina.com/2026/03/19/xiaomi-unveils-mimo-v2-pro-its-flagship-llm-with-over-1tb-of-parameters/
+description: >
+  Second-generation MiMo model family spanning Flash (309B MoE, extreme speed),
+  Pro (1T MoE flagship for agentic workloads), Omni (native multimodal),
+  and TTS (high-fidelity speech).
+tags:
+  - moe
+  - efficiency
+  - frontier
+  - multimodal
+  - agentic
+outputs:
+  - name: MiMo-V2-Flash
+    type: model
+    date: 2025-12-16
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash
+      - label: GitHub
+        url: https://github.com/XiaomiMiMo/MiMo-V2-Flash
+    description: >
+      309B MoE model (15B active) optimized for extreme speed (150 tokens/sec)
+      and low-cost API access.
+    model:
+      architecture: moe
+      parameters: 309B
+      active_parameters: 15B
+  - name: "MiMo-V2-Flash: Unlocking Extreme Inference Efficiency"
+    type: paper
+    date: 2025-12-16
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2601.02780
+    description: >
+      Introduced the hybrid attention mechanism (Sliding Window + Global Attention).
+    paper:
+      arxiv: "2601.02780"
+  - name: MiMo-V2-Pro
+    type: model
+    date: 2026-03-18
+    sources:
+      - label: Website
+        url: https://mimo.xiaomi.com/mimo-v2-pro
+      - label: Announcement
+        url: https://www.gizmochina.com/2026/03/19/xiaomi-unveils-mimo-v2-pro-its-flagship-llm-with-over-1tb-of-parameters/
+    description: >
+      1-trillion parameter MoE flagship (42B active) designed for agentic workloads.
+      Features a 1-million-token context window. Ranks 2nd among Chinese LLMs.
+    model:
+      architecture: moe
+      parameters: 1T
+      active_parameters: 42B
+      context_window: 1000000
+  - name: MiMo-V2-Omni
+    type: model
+    date: 2026-03-18
+    sources:
+      - label: Website
+        url: https://mimo.xiaomi.com/mimo-v2-omni
+    description: >
+      Native multimodal model that can "see, hear, and act," powering Xiaomi's
+      next-gen smart devices.
+  - name: MiMo-V2-TTS
+    type: model
+    date: 2026-03-18
+    sources:
+      - label: Website
+        url: https://mimo.xiaomi.com/mimo-v2-tts
+    description: >
+      High-fidelity text-to-speech model for providing agent voices.

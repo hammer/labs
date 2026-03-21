@@ -1,0 +1,43 @@
+name: HunyuanWorld
+slug: hunyuanworld
+lab: tencent
+date: 2025-07-27
+sources:
+  - label: GitHub (World 1.0)
+    url: https://github.com/Tencent-Hunyuan/HunyuanWorld-1.0
+  - label: GitHub (HY-WorldPlay / World 1.5)
+    url: https://github.com/Tencent-Hunyuan/HY-WorldPlay
+  - label: HuggingFace (HY-WorldPlay)
+    url: https://huggingface.co/tencent/HY-WorldPlay
+description: >
+  Open-source world generation model series. World 1.0 integrates panoramic
+  visual generation and 3D reconstruction from text/image inputs. HY-World 1.5
+  (WorldPlay) adds real-time interactive streaming at 24fps with Context
+  Forcing distillation and WorldCompass RL post-training.
+tags:
+  - 3d
+  - generation
+  - world-model
+  - open-weight
+outputs:
+  - name: HunyuanWorld 1.0
+    type: model
+    date: 2025-07-27
+    sources:
+      - label: GitHub
+        url: https://github.com/Tencent-Hunyuan/HunyuanWorld-1.0
+    description: >
+      First open-source world model supporting immersive roaming, interaction,
+      and simulation from text and image inputs.
+  - name: HY-World 1.5 (WorldPlay)
+    type: model
+    date: 2025-12-17
+    sources:
+      - label: GitHub
+        url: https://github.com/Tencent-Hunyuan/HY-WorldPlay
+      - label: HuggingFace
+        url: https://huggingface.co/tencent/HY-WorldPlay
+    description: >
+      Real-time interactive world model with streaming video diffusion at
+      24fps. Introduces Context Forcing distillation and WorldCompass RL
+      post-training framework.

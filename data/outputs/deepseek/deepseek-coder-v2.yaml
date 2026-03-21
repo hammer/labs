@@ -1,11 +1,8 @@
 name: DeepSeek-Coder-V2
 slug: deepseek-coder-v2
 lab: deepseek
-type: model
 date: 2024-06-17
 sources:
-  - label: Paper (arXiv)
-    url: https://arxiv.org/abs/2406.11931
   - label: GitHub
     url: https://github.com/deepseek-ai/DeepSeek-Coder-V2
   - label: HuggingFace
@@ -17,7 +14,18 @@ tags:
   - coding
   - moe
   - open-weight
-model:
-  architecture: moe
-paper:
-  arxiv: "2406.11931"
+outputs:
+  - name: DeepSeek-Coder-V2
+    type: model
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Instruct
+    model:
+      architecture: moe
+  - name: "DeepSeek-Coder-V2: Breaking the Barrier of Closed-Source Models in Code Intelligence"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2406.11931
+    paper:
+      arxiv: "2406.11931"

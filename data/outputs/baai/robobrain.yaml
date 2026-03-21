@@ -1,7 +1,6 @@
 name: RoboBrain
 slug: robobrain
 lab: baai
-type: model
 date: 2025-02-27
 sources:
   - label: Paper (CVPR 2025)
@@ -11,16 +10,108 @@ sources:
   - label: HuggingFace
     url: https://huggingface.co/BAAI/RoboBrain
 description: >
-  Unified brain model for robotic manipulation from abstract to concrete.
-  Accepted to CVPR 2025. Serves as the foundational embodied intelligence
-  model in BAAI's WuJie series. Designed to bridge abstract task planning
-  with concrete robotic execution.
+  BAAI's embodied AI foundation model series for robotic manipulation, part of
+  the WuJie series. Evolved from RoboBrain 1.0 (CVPR 2025) through 2.0/2.5 with
+  increasingly capable spatial reasoning and temporal modeling, plus RoboBrain-Dex
+  for bimanual dexterous manipulation.
 tags:
   - embodied-ai
   - robotics
   - open-weight
-paper:
-  venue: CVPR 2025
+  - multimodal
+  - 3d-reasoning
+  - dexterous-manipulation
+outputs:
+  - name: RoboBrain
+    type: model
+    date: 2025-02-27
+    sources:
+      - label: Paper (CVPR 2025)
+        url: https://openaccess.thecvf.com/content/CVPR2025/papers/Ji_RoboBrain_A_Unified_Brain_Model_for_Robotic_Manipulation_from_Abstract_CVPR_2025_paper.pdf
+      - label: GitHub
+        url: https://github.com/FlagOpen/RoboBrain
+      - label: HuggingFace
+        url: https://huggingface.co/BAAI/RoboBrain
+    description: >
+      Unified brain model for robotic manipulation from abstract to concrete.
+      Accepted to CVPR 2025. Serves as the foundational embodied intelligence
+      model in BAAI's WuJie series. Designed to bridge abstract task planning
+      with concrete robotic execution.
+  - name: RoboBrain 2.0
+    type: model
+    date: 2025-06-06
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2507.02029
+      - label: HuggingFace (7B)
+        url: https://huggingface.co/BAAI/RoboBrain2.0-7B
+      - label: HuggingFace (32B)
+        url: https://huggingface.co/BAAI/RoboBrain2.0-32B
+      - label: Project page
+        url: https://superrobobrain.github.io/
+    description: >
+      Next-generation vision-language model unifying embodied AI for advanced
+      robotics. Announced at the 2025 BAAI Conference on June 6. Most powerful
+      open-source embodied brain model, supporting spatial understanding
+      (affordance prediction, spatial referring, trajectory forecasting) and
+      temporal decision-making (closed-loop interaction, multi-agent planning,
+      real-time scene memory). Available in 3B, 7B, and 32B parameter variants.
+      The 32B model achieves leading results on spatial and temporal benchmarks,
+      surpassing prior open-source and proprietary models.
+    model:
+      variants:
+        - name: RoboBrain2.0-3B
+          notes: Ultra-lightweight, released July 23, 2025
+        - name: RoboBrain2.0-7B
+          notes: Lightweight, released June 6, 2025
+        - name: RoboBrain2.0-32B
+          notes: Full-scale, released July 3, 2025
+  - name: RoboBrain 2.5
+    type: model
+    date: 2026-01-25
+    sources:
+      - label: GitHub
+        url: https://github.com/FlagOpen/RoboBrain2.5
+      - label: HuggingFace (8B-NV)
+        url: https://huggingface.co/BAAI/RoboBrain2.5-8B-NV
+      - label: HuggingFace (4B)
+        url: https://huggingface.co/BAAI/RoboBrain2.5-4B
+    description: >
+      Next-generation embodied AI foundation model advancing general perception,
+      spatial reasoning, and temporal modeling. Two major upgrades over 2.0:
+      (1) Precise 3D Spatial Reasoning via depth-aware coordinate prediction
+      instead of 2D pixel-relative grounding, generating complete 3D manipulation
+      traces as ordered keypoint sequences under physical constraints.
+      (2) Dense Temporal Value Estimation providing step-aware progress prediction
+      and execution state understanding, producing stable feedback signals for
+      VLA reinforcement learning. Achieves 95%+ task success rate in complex
+      fine-grained manipulations with only one demonstration.
+    model:
+      variants:
+        - name: RoboBrain2.5-8B-NV
+          notes: Trained on NVIDIA GPU cluster, released Jan 25, 2026
+        - name: RoboBrain2.5-8B-MT
+          notes: Trained on Moore-Threads GPU cluster, released Jan 25, 2026
+        - name: RoboBrain2.5-4B
+          notes: Released Mar 1, 2026
+  - name: RoboBrain-Dex
+    type: model
+    date: 2026-03-12
+    sources:
+      - label: GitHub
+        url: https://github.com/FlagOpen/RoboBrain_Dex
+      - label: HuggingFace collection
+        url: https://huggingface.co/collections/BAAI/robobrain-dex
+      - label: Blog post
+        url: https://medium.com/@baai_beijing/just-dropped-robobrain-dex-a-vla-model-for-bimanual-dexterous-manipulation-be1e598646b4
+    description: >
+      Foundation Vision-Language-Action (VLA) model for bimanual dexterous
+      manipulation. Pre-trained on multi-source egocentric data from both
+      humans (via MANUS data gloves) and robots. Captures human motion priors
+      via a motion dynamics model and unifies reasoning and acting into a
+      single framework, enabling cross-embodiment, long-horizon bimanual
+      dexterous manipulation tasks. Achieves highest average success rate
+      across six real-world dexterous manipulation tasks. Built on top of
+      RoboBrain 2.0 as base VLM.
 related:
-  - robobrain-2.0
   - roboos

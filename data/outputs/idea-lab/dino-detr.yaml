@@ -1,0 +1,39 @@
+name: DINO (DETR)
+slug: dino-detr
+lab: idea-lab
+date: 2022-03-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2203.03605
+  - label: GitHub
+    url: https://github.com/IDEA-Research/DINO
+description: >
+  DETR with Improved DeNoising Anchor Boxes for End-to-End Object Detection.
+  Uses contrastive denoising training, look-forward-twice box prediction,
+  and mixed query selection. Achieves 63.3 AP on COCO test-dev with SwinL.
+tags:
+  - vision
+  - object-detection
+  - open-source
+outputs:
+  - name: DINO (DETR)
+    type: library
+    sources:
+      - label: GitHub
+        url: https://github.com/IDEA-Research/DINO
+    description: >
+      Official implementation of DINO end-to-end object detection.
+      49.4 AP in 12 epochs and 51.3 AP in 24 epochs with ResNet-50.
+    library:
+      github: https://github.com/IDEA-Research/DINO
+  - name: "DINO: DETR with Improved DeNoising Anchor Boxes for End-to-End Object Detection"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2203.03605
+    description: >
+      Introduces contrastive denoising, look-forward-twice, and mixed query
+      selection for DETR-based detection.
+    paper:
+      arxiv: "2203.03605"
+      venue: ICLR 2023

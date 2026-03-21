@@ -1,0 +1,45 @@
+name: MotionCLR
+slug: motionclr
+lab: idea-lab
+date: 2024-10-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.18977
+  - label: GitHub
+    url: https://github.com/IDEA-Research/MotionCLR
+  - label: Project Page
+    url: https://lhchen.top/MotionCLR/
+description: >
+  Motion generation and training-free editing via understanding attention
+  mechanisms. Self-attention finds word-sequence correspondence while
+  cross-attention measures frame sequential similarity. Enables motion
+  editing via attention map manipulation including de-emphasizing,
+  replacement, and example-based generation.
+tags:
+  - vision
+  - motion
+  - generation
+  - open-source
+outputs:
+  - name: MotionCLR
+    type: library
+    sources:
+      - label: GitHub
+        url: https://github.com/IDEA-Research/MotionCLR
+      - label: Project Page
+        url: https://lhchen.top/MotionCLR/
+    description: >
+      Attention-based motion diffusion model with training-free editing
+      capabilities via attention map manipulation.
+    library:
+      github: https://github.com/IDEA-Research/MotionCLR
+  - name: "MotionCLR: Motion Generation and Training-free Editing via Understanding Attention Mechanisms"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2410.18977
+    description: >
+      Proposes attention-based motion diffusion model with clear modeling
+      of self-attention and cross-attention for motion editing.
+    paper:
+      arxiv: "2410.18977"

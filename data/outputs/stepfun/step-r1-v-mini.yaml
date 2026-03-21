@@ -1,0 +1,19 @@
+name: Step-R1-V-Mini
+slug: step-r1-v-mini
+lab: stepfun
+type: model
+date: 2025-04-15
+sources:
+  - label: API Docs
+    url: https://stepfun.ai/docs/en/step-r1-v-mini
+  - label: Website
+    url: https://www.stepfun.com
+description: >
+  Multimodal reasoning model with high-precision image perception. Trained
+  via PPO reinforcement learning with verifiable rewards in the image space.
+  Ranked first domestically on MathVision visual reasoning leaderboard.
+tags:
+  - vlm
+  - reasoning
+  - multimodal
+notes: Released approximately Apr 2025.

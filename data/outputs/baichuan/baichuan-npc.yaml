@@ -1,0 +1,16 @@
+name: Baichuan-NPC
+slug: baichuan-npc
+lab: baichuan
+type: model
+date: 2024-01-09
+sources:
+  - label: Announcement (Baike)
+    url: https://baike.baidu.com/en/item/Baichuan%20Intelligence/33639
+description: >
+  Role-playing large model designed for personalized character customization
+  in game and interactive scenarios. Provides flexible NPC dialogue capabilities
+  for developers building conversational game characters.
+tags:
+  - proprietary
+  - role-playing
+  - chinese

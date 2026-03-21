@@ -1,0 +1,23 @@
+name: Hunyuan 2.0
+slug: hunyuan-2.0
+lab: tencent
+type: model
+date: 2025-12-05
+sources:
+  - label: Announcement
+    url: https://technode.com/2025/12/08/tencent-releases-hunyuan-2-0-its-next-generation-ai-model/
+  - label: Website
+    url: https://llm.hunyuan.tencent.com
+description: >
+  Next-generation foundation model with MoE architecture (406B total, 32B active)
+  and 256K context window. Available in Think (deep reasoning, code generation)
+  and Instruct (chat, creative writing) variants.
+tags:
+  - moe
+  - frontier
+  - reasoning
+model:
+  architecture: moe
+  parameters: 406B
+  active_parameters: 32B
+  context_window: 256000

@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
 import { glob } from 'glob';
 import { parse } from 'yaml';
-import { LabSchema, OutputSchema } from './schema.js';
+import { LabSchema, OutputSchema, isGrouped } from './schema.js';
 
 async function main() {
   let errors = 0;
@@ -70,9 +70,18 @@ async function main() {
         }
       }
 
-      // Check base_model references
-      if (result.data.model?.base_model) {
+      // Check base_model references in simple outputs
+      if (!isGrouped(result.data) && result.data.model?.base_model) {
         // Defer check until all outputs are loaded
+      }
+
+      // Check base_model references in grouped sub-outputs
+      if (isGrouped(result.data)) {
+        for (const sub of result.data.outputs) {
+          if (sub.model?.base_model) {
+            // Defer check until all outputs are loaded
+          }
+        }
       }
     }
   }
@@ -88,10 +97,22 @@ async function main() {
         }
       }
     }
+    // Check base_model in simple outputs
     if (content.model?.base_model) {
       if (!outputs.has(content.model.base_model)) {
         console.error(`\u274c ${file}: base_model references unknown output "${content.model.base_model}"`);
         errors++;
+      }
+    }
+    // Check base_model in grouped sub-outputs
+    if (content.outputs) {
+      for (const sub of content.outputs) {
+        if (sub.model?.base_model) {
+          if (!outputs.has(sub.model.base_model)) {
+            console.error(`\u274c ${file}: sub-output base_model references unknown output "${sub.model.base_model}"`);
+            errors++;
+          }
+        }
       }
     }
   }

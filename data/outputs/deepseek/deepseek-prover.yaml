@@ -1,29 +1,56 @@
 name: DeepSeek-Prover
 slug: deepseek-prover
 lab: deepseek
-type: model
 date: 2024-05-23
 sources:
-  - label: Paper (arXiv) - V1
-    url: https://arxiv.org/abs/2405.14333
-  - label: Paper (arXiv) - V1.5
-    url: https://arxiv.org/abs/2408.08152
-  - label: HuggingFace
-    url: https://huggingface.co/deepseek-ai/DeepSeek-Prover-V1.5-Base
-  - label: GitHub
+  - label: GitHub (V1.5)
     url: https://github.com/deepseek-ai/DeepSeek-Prover-V1.5
+  - label: GitHub (V2)
+    url: https://github.com/deepseek-ai/DeepSeek-Prover-V2
 description: >
-  Specialized models for formal theorem proving in Lean 4. Includes V1.5
-  and V2 versions.
+  Specialized models and benchmark for formal theorem proving in Lean 4.
+  Spans V1 through V2 with the DeepSeek-ProverBench evaluation suite.
 tags:
   - math
   - reasoning
   - theorem-proving
-model:
-  variants:
-    - name: DeepSeek-Prover-V1.5
-      notes: Released 2024
-    - name: DeepSeek-Prover-V2
-      notes: Released 2025
-paper:
-  arxiv: "2408.08152"
+  - open-weight
+outputs:
+  - name: DeepSeek-Prover
+    type: model
+    date: 2024-05-23
+    sources:
+      - label: Paper (arXiv) - V1
+        url: https://arxiv.org/abs/2405.14333
+      - label: Paper (arXiv) - V1.5
+        url: https://arxiv.org/abs/2408.08152
+      - label: HuggingFace
+        url: https://huggingface.co/deepseek-ai/DeepSeek-Prover-V1.5-Base
+    model:
+      variants:
+        - name: DeepSeek-Prover-V1.5
+          notes: Released 2024
+        - name: DeepSeek-Prover-V2
+          notes: Released 2025
+    paper:
+      arxiv: "2408.08152"
+  - name: "DeepSeek-Prover-V2: Advancing Formal Mathematical Reasoning"
+    type: paper
+    date: 2025-04-30
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2504.21801
+      - label: HuggingFace
+        url: https://huggingface.co/deepseek-ai/DeepSeek-Prover-V2-671B
+    description: >
+      RL for subgoal decomposition in formal mathematical reasoning.
+    paper:
+      arxiv: "2504.21801"
+  - name: DeepSeek-ProverBench
+    type: dataset
+    date: 2025-04-30
+    sources:
+      - label: Dataset
+        url: https://huggingface.co/datasets/deepseek-ai/DeepSeek-ProverBench
+    description: >
+      Benchmark for formal mathematical proving.

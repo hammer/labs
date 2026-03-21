@@ -1,18 +1,28 @@
 name: Kimi-Dev
 slug: kimi-dev
 lab: moonshot-ai
-type: model
 date: 2025-06-01
 sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2509.23045
   - label: GitHub
     url: https://github.com/MoonshotAI/Kimi-Dev
   - label: HuggingFace
     url: https://huggingface.co/moonshotai/Kimi-Dev-72B
-  - label: "Paper (arXiv)"
-    url: https://arxiv.org/abs/2509.23045
 description: >
-  Specialized iteration for developer workflows.
+  Open-source SWE LLM achieving 60.4% on SWE-bench Verified. Uses agentless
+  training as skill prior for SWE-Agents.
 tags:
   - coding
   - agentic
-notes: Date approximate.
+outputs:
+  - name: Kimi-Dev-72B
+    type: model
+    model:
+      parameters: 72B
+  - name: Kimi-Dev Paper
+    type: paper
+    date: 2025-09-27
+    paper:
+      arxiv: "2509.23045"
+notes: Model date approximate.

@@ -1,0 +1,50 @@
+name: Seedance
+slug: seedance
+lab: bytedance-seed
+date: 2025-06-10
+sources:
+  - label: Paper (Seedance 1.0, arXiv)
+    url: https://arxiv.org/abs/2506.09113
+  - label: Product Page
+    url: https://seed.bytedance.com/en/models
+description: >
+  ByteDance's video generation model family. Seedance 1.0 ranked first on
+  Artificial Analysis leaderboards for both text-to-video and image-to-video.
+  Seedance 2.0 introduced unified audio-video joint generation.
+tags:
+  - generation
+  - video
+  - audio
+outputs:
+  - name: "Seedance 1.0: Exploring the Boundaries of Video Generation Models"
+    type: model
+    date: 2025-06-10
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2506.09113
+      - label: HuggingFace
+        url: https://huggingface.co/papers/2506.09113
+    description: >
+      Unified text-to-video and image-to-video model. Ranked first on Artificial
+      Analysis leaderboards. Generates 5-second 1080p video in 41.4 seconds on L20.
+    paper:
+      arxiv: "2506.09113"
+  - name: Seedance 1.5 Pro
+    type: model
+    date: 2025-12-15
+    sources:
+      - label: Product Page
+        url: https://seed.bytedance.com/en/models
+    description: >
+      Native audio-visual joint generation foundation model with simultaneous
+      video and audio creation.
+  - name: Seedance 2.0
+    type: model
+    date: 2026-02-07
+    sources:
+      - label: Product Page
+        url: https://seed.bytedance.com/en/models
+    description: >
+      Next-generation AI video model with unified multimodal audio-video joint
+      generation. Supports text, image, audio, and video inputs with multi-shot
+      narrative storytelling.

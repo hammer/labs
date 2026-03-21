@@ -1,0 +1,24 @@
+name: Baichuan
+slug: baichuan
+url: https://www.baichuan-ai.com
+wikipedia: https://en.wikipedia.org/wiki/Baichuan
+huggingface: https://huggingface.co/baichuan-inc
+github: https://github.com/baichuan-inc
+region: china
+founded: 2023-04
+type: startup
+description: >
+  Chinese AI startup founded by Wang Xiaochuan, former CEO of Sogou.
+  Developed the Baichuan open-weight LLM series for Chinese/English,
+  then specialized into medical AI with the Baichuan-M series.
+  Baichuan-M3 achieved leading performance on medical benchmarks.
+people:
+  - name: Wang Xiaochuan
+    role: Founder & CEO
+    formerly: CEO of Sogou
+  - name: Ru Liyun
+    role: Co-founder
+tags:
+  - open-weight
+  - medical-ai
+  - multilingual

@@ -1,0 +1,20 @@
+name: EPLB (Expert Parallelism Load Balancer)
+slug: eplb
+lab: deepseek
+type: library
+date: 2025-02-27
+sources:
+  - label: GitHub
+    url: https://github.com/deepseek-ai/EPLB
+  - label: Announcement
+    url: https://x.com/deepseek_ai/status/1894931931554558199
+description: >
+  Expert-parallel load balancer for DeepSeek-V3/R1 that uses a redundant expert
+  strategy to replicate heavy-loaded experts across GPUs for balanced inference.
+  Released as part of DeepSeek Open Source Week.
+tags:
+  - infrastructure
+  - moe
+  - open-source
+library:
+  github: https://github.com/deepseek-ai/EPLB

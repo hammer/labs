@@ -1,16 +1,80 @@
 name: LLaDA
 slug: llada
 lab: ant-group
-type: model
 date: 2025-02-14
 sources:
-  - label: Paper (arXiv)
-    url: https://arxiv.org/abs/2502.09992
-  - label: GitHub
+  - label: GitHub (LLaDA)
     url: https://github.com/ML-GSAI/LLaDA
+  - label: GitHub (LLaDA 2.X)
+    url: https://github.com/inclusionAI/LLaDA2.X
   - label: Project Page
     url: https://ml-gsai.github.io/LLaDA-demo/
-description: Diffusion language model from Inclusion AI.
+  - label: HuggingFace (LLaDA-MoE)
+    url: https://huggingface.co/inclusionAI/LLaDA-MoE-7B-A1B-Instruct
+  - label: HuggingFace (LLaDA 2.0)
+    url: https://huggingface.co/inclusionAI/LLaDA2.0-mini-preview
+description: >
+  Experimental diffusion language model family from Inclusion AI. Explores an
+  alternative to autoregressive generation, scaling from small models to 100B
+  via MoE and AR-to-diffusion conversion.
 tags:
   - diffusion
   - architecture
+  - moe
+  - scaling
+  - research
+outputs:
+  - name: LLaDA
+    type: model
+    date: 2025-02-14
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2502.09992
+      - label: GitHub
+        url: https://github.com/ML-GSAI/LLaDA
+      - label: Project Page
+        url: https://ml-gsai.github.io/LLaDA-demo/
+    description: >
+      Diffusion language model from Inclusion AI.
+    paper:
+      arxiv: "2502.09992"
+  - name: LLaDA-MoE
+    type: model
+    date: 2025-09-29
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2509.24389
+      - label: HuggingFace
+        url: https://huggingface.co/inclusionAI/LLaDA-MoE-7B-A1B-Instruct
+    description: >
+      Mixture-of-Experts variant of LLaDA, the experimental diffusion language model.
+    model:
+      architecture: moe
+  - name: LLaDA 2.0
+    type: paper
+    date: 2025-12-10
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2512.15745
+      - label: GitHub
+        url: https://github.com/inclusionAI/LLaDA2.X
+      - label: HuggingFace
+        url: https://huggingface.co/inclusionAI/LLaDA2.0-mini-preview
+    description: >
+      Scales diffusion language models to 100B by converting pretrained AR models.
+      Includes LLaDA2.0-mini (16B) and LLaDA2.0-flash (100B).
+    paper:
+      arxiv: "2512.15745"
+  - name: "LLaDA 2.1: Speeding Up Text Diffusion via Token Editing"
+    type: paper
+    date: 2026-02-13
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2602.08676
+      - label: HuggingFace
+        url: https://huggingface.co/papers/2602.08676
+    description: >
+      Introduces token-to-token editing on top of mask-to-token denoising, enabling
+      real self-correction in diffusion LLMs. Achieves 892 tokens/s on HumanEval+.
+    paper:
+      arxiv: "2602.08676"

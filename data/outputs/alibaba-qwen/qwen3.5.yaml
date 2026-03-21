@@ -1,33 +1,106 @@
-name: Qwen 3.5
+name: Qwen3.5
 slug: qwen3.5
 lab: alibaba-qwen
-type: model
 date: 2026-02-16
 sources:
   - label: Blog Post
     url: https://qwen.ai/blog?id=qwen3.5
   - label: GitHub
     url: https://github.com/QwenLM/Qwen3.5
-  - label: "Technical Report"
-    url: https://qwen.ai/research
 description: >
-  Qwen3.5-397B-A17B native VLM built on Qwen3-Next architecture.
-  201 languages and dialects supported. 150k to 250k vocabulary expansion.
-  1M context window. Official built-in tools and adaptive tool use.
-  Matches the >1T-parameter Qwen3-Max-Base.
+  Fourth generation of the Qwen model family. Qwen3.5-397B-A17B native VLM built
+  on Qwen3-Next architecture. 201 languages and dialects supported. 1M context window.
 tags:
   - vlm
   - moe
   - agentic
   - multilingual
   - open-weight
-model:
-  architecture: moe
-  parameters: 397B
-  active_parameters: 17B
-  context_window: 1000000
-  languages: 201
-  variants:
-    - name: Qwen3.5-397B-A17B
+  - reasoning
+outputs:
+  - name: Qwen3.5-397B-A17B
+    type: model
+    date: 2026-02-16
+    sources:
+      - label: Blog Post
+        url: https://qwen.ai/blog?id=qwen3.5
+      - label: GitHub
+        url: https://github.com/QwenLM/Qwen3.5
+      - label: "Technical Report"
+        url: https://qwen.ai/research
+    description: >
+      Qwen3.5-397B-A17B native VLM. 201 languages and dialects supported.
+      150k to 250k vocabulary expansion. 1M context window.
+      Matches the >1T-parameter Qwen3-Max-Base.
+    model:
+      architecture: moe
       parameters: 397B
       active_parameters: 17B
+      context_window: 1000000
+      languages: 201
+      variants:
+        - name: Qwen3.5-397B-A17B
+          parameters: 397B
+          active_parameters: 17B
+  - name: Qwen3.5-Plus
+    type: model
+    date: 2026-02-16
+    sources:
+      - label: Blog Post
+        url: https://qwen.ai/blog?id=qwen3.5
+    description: >
+      Proprietary hosted iteration of the Qwen3.5-397B-A17B model. Outperforms
+      Qwen3-Max on reasoning and coding while using less compute.
+    model:
+      architecture: moe
+  - name: Qwen3.5 Medium Model Series
+    type: model
+    date: 2026-02-26
+    sources:
+      - label: Announcement
+        url: https://x.com/Alibaba_Qwen/status/2026339351530188939
+    description: Medium-sized models in the Qwen3.5 family including agentic variants.
+    model:
+      architecture: moe
+      variants:
+        - name: Qwen3.5-35B-A3B
+          parameters: 35B
+          active_parameters: 3B
+        - name: Qwen3.5-122B-A10B
+          parameters: 122B
+          active_parameters: 10B
+          notes: Agentic
+        - name: Qwen3.5-27B
+          parameters: 27B
+          notes: Agentic, dense
+        - name: Qwen3.5-Flash
+          notes: Hosted production version optimized for latency
+  - name: Qwen3.5-Max-Preview
+    type: model
+    date: 2026-03-01
+    sources:
+      - label: Blog Post
+        url: https://qwen.ai/blog?id=qwen3.5-max-preview
+    description: >
+      Current state-of-the-art preview for the largest reasoning model.
+    model:
+      architecture: moe
+    notes: Date approximate.
+  - name: Qwen3.5 Small Model Series
+    type: model
+    date: 2026-03-02
+    sources:
+      - label: Announcement
+        url: https://www.linkedin.com/posts/qwen_introducing-the-qwen-35-small-model-series-activity-7434222839442051073-AyOd
+    description: Small dense models in the Qwen3.5 family.
+    model:
+      architecture: dense
+      variants:
+        - name: Qwen3.5-0.8B
+          parameters: 0.8B
+        - name: Qwen3.5-2B
+          parameters: 2B
+        - name: Qwen3.5-4B
+          parameters: 4B
+        - name: Qwen3.5-9B
+          parameters: 9B

@@ -1,6 +1,7 @@
 name: StepFun
 slug: stepfun
 url: https://www.stepfun.com
+wikipedia: https://en.wikipedia.org/wiki/StepFun
 huggingface: https://huggingface.co/stepfun-ai
 github: https://github.com/stepfun-ai
 region: china

@@ -1,0 +1,25 @@
+name: CANN
+slug: cann
+lab: huawei-noah
+type: library
+date: 2025-08-07
+sources:
+  - label: Open-Source Announcement
+    url: https://www.globaltimes.cn/page/202508/1340135.shtml
+  - label: TrendForce Report
+    url: https://www.trendforce.com/news/2025/08/07/news-huawei-open-sources-cann-toolkit-for-ascend-ai-gpus-taking-aim-at-nvidias-cuda/
+  - label: Huawei Connect 2025 Roadmap
+    url: https://www.artificialintelligence-news.com/news/huawei-open-source-ai-development-platform-technical-specs/
+description: >
+  Compute Architecture for Neural Networks -- Huawei's heterogeneous
+  computing architecture for Ascend AI chips, analogous to NVIDIA's CUDA.
+  After seven years of development, CANN was open-sourced in August 2025
+  as part of Huawei's Ascend ecosystem strategy. Provides compiler and
+  virtual instruction set interfaces for computing optimisation,
+  communication efficiency, and memory management across AI training
+  and deployment.
+tags:
+  - infrastructure
+  - framework
+  - chips
+  - open-source

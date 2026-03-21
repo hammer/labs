@@ -1,29 +1,55 @@
 name: DeepSeek-V3
 slug: deepseek-v3
 lab: deepseek
-type: model
 date: 2024-12-26
 sources:
   - label: Announcement
     url: https://api-docs.deepseek.com/news/news1226
   - label: V3-0324 update
     url: https://api-docs.deepseek.com/news/news250325
-  - label: Technical Report
-    url: https://arxiv.org/abs/2412.19437v2
-  - label: Hardware Insights Paper
-    url: https://arxiv.org/abs/2505.09343
 description: >
-  Frontier MoE model. V3-0324 update released 2025-03-24.
-  Technical report and hardware architecture insights paper published alongside.
+  Frontier 671B MoE model with Multi-Token Prediction and FP8 mixed-precision
+  training. V3-0324 update released 2025-03-24. Accompanied by a technical report
+  and a paper on scaling challenges.
 tags:
   - moe
   - open-weight
   - frontier
-model:
-  architecture: moe
-  variants:
-    - name: DeepSeek-V3
-    - name: DeepSeek-V3-0324
-      notes: Released 2025-03-24
-paper:
-  arxiv: "2412.19437"
+  - scaling
+outputs:
+  - name: DeepSeek-V3
+    type: model
+    date: 2024-12-26
+    sources:
+      - label: Announcement
+        url: https://api-docs.deepseek.com/news/news1226
+      - label: V3-0324 update
+        url: https://api-docs.deepseek.com/news/news250325
+    model:
+      architecture: moe
+      variants:
+        - name: DeepSeek-V3
+        - name: DeepSeek-V3-0324
+          notes: Released 2025-03-24
+  - name: DeepSeek-V3 Technical Report
+    type: paper
+    date: 2024-12-27
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2412.19437
+    description: >
+      Technical report for the landmark 671B MoE model with Multi-Token Prediction
+      and FP8 mixed-precision training.
+    paper:
+      arxiv: "2412.19437"
+  - name: "Insights into DeepSeek-V3: Scaling Challenges"
+    type: paper
+    date: 2025-05-14
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2505.09343
+    description: >
+      Paper detailing the scaling challenges encountered during DeepSeek-V3
+      development, including hardware architecture insights.
+    paper:
+      arxiv: "2505.09343"

@@ -1,0 +1,24 @@
+name: LightX2V
+slug: lightx2v
+lab: sensetime
+type: library
+date: 2025-11-01
+sources:
+  - label: GitHub
+    url: https://github.com/ModelTC/LightX2V
+  - label: SenseTime News
+    url: https://www.sensetime.com/en/news-detail/51170335?categoryId=1072
+description: >
+  Industry's first open-source inference framework enabling real-time
+  video generation. Supports text-to-video, image-to-video,
+  text-to-image, and image editing tasks. Through DiT distillation
+  acceleration, lightweight VAE, and sparse attention, generates a
+  5-second video on consumer GPUs in under 5 seconds. Over 5 million
+  downloads. Powers SenseTime's Seko 2.0 drama generation platform.
+tags:
+  - video-generation
+  - inference
+  - open-source
+  - efficiency
+library:
+  github: https://github.com/ModelTC/LightX2V

@@ -1,0 +1,50 @@
+name: Baichuan-M3
+slug: baichuan-m3
+lab: baichuan
+date: 2026-02-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.06570
+  - label: GitHub
+    url: https://github.com/baichuan-inc/Baichuan-M3-235B
+  - label: HuggingFace
+    url: https://huggingface.co/baichuan-inc/Baichuan-M3-235B
+description: >
+  235-billion-parameter open-source medical model that conducts full clinical
+  dialogue with proactive information acquisition, long-horizon reasoning, and
+  adaptive hallucination suppression. Achieves state-of-the-art results on
+  HealthBench, HealthBench-Hallu, and ScanBench, outperforming GPT-5.2 in
+  clinical inquiry, advisory, and safety. Licensed under Apache 2.0.
+  M3 Plus variant announced January 22, 2026 with hallucination rate reduced
+  to 2.6% and 70% API cost reduction.
+tags:
+  - open-weight
+  - medical
+  - reasoning
+  - moe
+outputs:
+  - name: "Baichuan-M3: Modeling Clinical Inquiry for Reliable Medical Decision-Making"
+    type: paper
+    date: 2026-02-06
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2602.06570
+    description: >
+      Technical paper describing the clinical inquiry modeling, proactive
+      information acquisition, and hallucination suppression techniques.
+    paper:
+      arxiv: "2602.06570"
+  - name: Baichuan-M3-235B
+    type: model
+    date: 2026-02-06
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/baichuan-inc/Baichuan-M3-235B
+      - label: GitHub
+        url: https://github.com/baichuan-inc/Baichuan-M3-235B
+    description: >
+      235-billion-parameter medical reasoning model with MoE architecture,
+      available in FP8 and GPTQ-INT4 quantizations.
+    model:
+      architecture: moe
+      parameters: 235B

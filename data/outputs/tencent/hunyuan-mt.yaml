@@ -1,0 +1,32 @@
+name: Hunyuan-MT
+slug: hunyuan-mt
+lab: tencent
+type: model
+date: 2025-09-01
+sources:
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/Hunyuan-MT
+  - label: HuggingFace (MT-7B)
+    url: https://huggingface.co/tencent/Hunyuan-MT-7B
+  - label: HuggingFace (MT-1.5)
+    url: https://huggingface.co/tencent/HY-MT1.5-1.8B
+  - label: Announcement
+    url: https://siliconangle.com/2025/09/01/tencent-open-sources-hunyuan-mt-translation-model-series/
+description: >
+  Open-source translation model series supporting 33 languages. Won first
+  place in 30 of 31 categories at WMT25. Includes Hunyuan-MT-7B and
+  Hunyuan-MT-Chimera-7B, with HY-MT1.5 upgrades in Dec 2025.
+tags:
+  - multilingual
+  - translation
+  - open-weight
+model:
+  architecture: dense
+  parameters: 7B
+  variants:
+    - name: Hunyuan-MT-7B
+      notes: WMT25 champion
+    - name: Hunyuan-MT-Chimera-7B
+      notes: Ensemble learning architecture
+    - name: HY-MT1.5-7B
+      notes: Released Dec 2025, adds terminology and contextual translation

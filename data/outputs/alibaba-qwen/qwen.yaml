@@ -1,0 +1,58 @@
+name: Qwen
+slug: qwen
+lab: alibaba-qwen
+date: 2023-08-03
+sources:
+  - label: GitHub
+    url: https://github.com/QwenLM/Qwen
+description: >
+  First generation of the Qwen large language model series, spanning 1.8B to 72B
+  parameters.
+tags:
+  - open-weight
+outputs:
+  - name: Qwen-7B / 14B
+    type: model
+    date: 2023-08-03
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/Qwen/Qwen-7B
+      - label: GitHub
+        url: https://github.com/QwenLM/Qwen
+    description: >
+      First official open-source LLMs under the Qwen brand.
+    model:
+      architecture: dense
+      variants:
+        - name: Qwen-7B
+          parameters: 7B
+        - name: Qwen-14B
+          parameters: 14B
+  - name: Qwen Technical Report (2023)
+    type: paper
+    date: 2023-09-28
+    sources:
+      - label: "Paper (arXiv)"
+        url: https://arxiv.org/abs/2309.16609
+    description: >
+      First deep dive into Qwen's pretraining and alignment strategies.
+    paper:
+      arxiv: "2309.16609"
+  - name: Qwen-72B / 1.8B
+    type: model
+    date: 2023-11-30
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/Qwen/Qwen-72B
+      - label: GitHub
+        url: https://github.com/QwenLM/Qwen
+    description: >
+      Expanded the range to include a massive 72B flagship and a mobile-friendly
+      1.8B model.
+    model:
+      architecture: dense
+      variants:
+        - name: Qwen-72B
+          parameters: 72B
+        - name: Qwen-1.8B
+          parameters: 1.8B

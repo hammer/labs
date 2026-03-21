@@ -1,0 +1,23 @@
+name: SenseCore AI Infrastructure
+slug: sensecore
+lab: sensetime
+type: announcement
+date: 2022-01-24
+sources:
+  - label: SenseTime News
+    url: https://www.sensetime.com/en/news-detail/51169434?categoryId=1072
+  - label: Coverage
+    url: https://www.biometricupdate.com/202201/sensetime-opens-massive-ai-data-center-aligns-with-beijings-vision
+description: >
+  SenseTime's universal AI cloud infrastructure platform integrating
+  models, deep learning platform, and computing infrastructure. The
+  Shanghai Lingang AIDC is China's first 5A-rated AI data center with
+  23,000 Petaflops of computing power. Supports training of
+  trillion-parameter multimodal models and large-scale inference.
+  Ranks top 3 in IDC China AI computing services tracking. Achieves
+  95% efficiency on 5,000-GPU heterogeneous chip clusters.
+tags:
+  - infrastructure
+  - compute
+  - cloud
+  - data-center

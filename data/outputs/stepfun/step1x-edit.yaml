@@ -1,0 +1,25 @@
+name: Step1X-Edit
+slug: step1x-edit
+lab: stepfun
+type: model
+date: 2025-04-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.17761
+  - label: GitHub
+    url: https://github.com/stepfun-ai/Step1X-Edit
+  - label: Project Page
+    url: https://step1x-edit.github.io/
+  - label: HuggingFace
+    url: https://huggingface.co/stepfun-ai/Step1X-Edit
+description: >
+  SOTA open-source instruction-based image editing model using MLLM +
+  DiT architecture. Comparable to GPT-4o and Gemini 2 Flash on editing tasks.
+tags:
+  - vision
+  - editing
+  - generation
+  - open-weight
+paper:
+  arxiv: "2504.17761"
+notes: arXiv submission Apr 24, 2025. Step1X-Edit-v1p2 (ReasonEdit) released Nov 2025.

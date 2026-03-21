@@ -1,0 +1,29 @@
+name: DiffVC
+slug: diffvc
+lab: huawei-noah
+date: 2021-09-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2109.13821
+  - label: "Published: ICLR 2022 (Oral)"
+    url: https://iclr.cc/virtual/2022/oral/6241
+  - label: GitHub
+    url: https://github.com/huawei-noah/Speech-Backbones/tree/main/DiffVC
+description: >
+  Diffusion-based voice conversion model for one-shot speaker style transfer.
+  Develops a novel SDE solver for fast maximum likelihood sampling, enabling
+  high-quality voice conversion while preserving linguistic content. Accepted
+  as an oral presentation at ICLR 2022, demonstrating superior quality
+  compared to state-of-the-art one-shot voice conversion approaches.
+tags:
+  - speech
+  - voice-conversion
+  - diffusion
+  - open-source
+outputs:
+  - type: model
+    name: DiffVC
+  - type: paper
+    name: "Diffusion-Based Voice Conversion with Fast Maximum Likelihood Sampling Scheme"
+    paper:
+      arxiv: "2109.13821"

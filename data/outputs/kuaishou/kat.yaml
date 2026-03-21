@@ -1,0 +1,47 @@
+name: KAT (Kwai-AutoThink)
+slug: kat
+lab: kuaishou
+date: 2025-07-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.08297
+  - label: HuggingFace
+    url: https://huggingface.co/Kwaipilot/KAT-V1-40B
+  - label: Project Page
+    url: https://kwaipilot.github.io/KAT-Coder/
+description: >
+  KAT (Kwai-AutoThink) series for dynamic fast/slow reasoning. Includes
+  the foundational research report and an open-source experimental coding variant.
+tags:
+  - reasoning
+  - coding
+  - open-weight
+related:
+  - kat-coder
+outputs:
+  - name: "KAT-V1: Kwai-AutoThink Technical Report"
+    type: paper
+    date: 2025-07-10
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2507.08297
+      - label: HuggingFace
+        url: https://huggingface.co/Kwaipilot/KAT-V1-40B
+    description: >
+      Technical report on the AutoThink paradigm for dynamic fast/slow reasoning.
+    paper:
+      arxiv: "2507.08297"
+  - name: KAT-Dev-72B-Exp
+    type: model
+    date: 2025-10-10
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/Kwaipilot/KAT-Dev-72B-Exp
+      - label: Project Page
+        url: https://kwaipilot.github.io/KAT-Coder/
+    description: >
+      Open-source experimental variant that topped many open-source coding
+      benchmarks (e.g., LiveCodeBench).
+    model:
+      architecture: moe
+      active_parameters: 72B

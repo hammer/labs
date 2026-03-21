@@ -1,0 +1,50 @@
+name: SenseNova-SI (Spatial Intelligence)
+slug: sensenova-si
+lab: sensetime
+date: 2025-11-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2511.13719
+  - label: GitHub
+    url: https://github.com/OpenSenseNova/SenseNova-SI
+  - label: HuggingFace Collection
+    url: https://huggingface.co/collections/sensenova/sensenova-si
+  - label: SenseTime News
+    url: https://www.sensetime.com/en/news-detail/51170269?categoryId=1072
+description: >
+  Open-source spatial intelligence model family built on multimodal
+  foundations (Qwen3-VL, InternVL3). Curated SenseNova-SI-8M dataset
+  of 8 million spatial samples. SenseNova-SI-8B outperforms GPT-5 and
+  Gemini-3-Pro on spatial benchmarks including VSI-Bench (68.7%),
+  MMSI (43.3%), MindCube (85.6%). Accepted at CVPR 2026.
+tags:
+  - spatial-intelligence
+  - open-weight
+  - computer-vision
+  - multimodal
+outputs:
+  - name: SenseNova-SI Models
+    type: model
+    model:
+      variants:
+        - name: SenseNova-SI-1.1-Qwen2.5-VL-3B
+          parameters: "3B"
+        - name: SenseNova-SI-1.1-Qwen2.5-VL-7B
+          parameters: "7B"
+        - name: SenseNova-SI-1.1-InternVL3-2B
+          parameters: "2B"
+        - name: SenseNova-SI-1.1-InternVL3-8B
+          parameters: "8B"
+        - name: SenseNova-SI-1.2-InternVL3-8B
+          parameters: "8B"
+          notes: State-of-the-art among open-source spatial models
+  - name: "Scaling Spatial Intelligence with Multimodal Foundation Models"
+    type: paper
+    paper:
+      arxiv: "2511.13719"
+      venue: CVPR 2026
+  - name: SenseNova-SI-8M Dataset
+    type: dataset
+    description: >
+      8 million diverse spatial data samples under a rigorous taxonomy
+      of spatial capabilities for training spatial intelligence models.

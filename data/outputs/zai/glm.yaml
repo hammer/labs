@@ -1,0 +1,42 @@
+name: GLM (Original)
+slug: glm
+lab: zai
+date: 2021-03-18
+sources:
+  - label: GitHub
+    url: https://github.com/THUDM/GLM
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2103.10360
+  - label: HuggingFace
+    url: https://huggingface.co/THUDM/glm-10b
+description: >
+  Foundational GLM architecture introducing the autoregressive blank-infilling
+  objective. Initial 10B general-purpose model.
+tags:
+  - open-weight
+  - architecture
+outputs:
+  - name: GLM-10B
+    type: model
+    date: 2021-03-18
+    sources:
+      - label: GitHub
+        url: https://github.com/THUDM/GLM
+      - label: HuggingFace
+        url: https://huggingface.co/THUDM/glm-10b
+    description: >
+      Initial general-purpose foundational model.
+    model:
+      architecture: dense
+      parameters: 10B
+  - name: "GLM: General Language Model Pretraining with Autoregressive Blank Infilling"
+    type: paper
+    date: 2021-03-18
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2103.10360
+    description: >
+      Foundational architecture paper introducing the autoregressive blank-infilling
+      objective.
+    paper:
+      arxiv: "2103.10360"

@@ -1,0 +1,27 @@
+name: AReaL
+slug: areal
+lab: ant-group
+type: library
+date: 2025-05-30
+sources:
+  - label: GitHub
+    url: https://github.com/inclusionAI/AReaL
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.24298
+  - label: HuggingFace
+    url: https://huggingface.co/papers/2505.24298
+description: >
+  Fully asynchronous reinforcement learning system for training large reasoning
+  and agentic models. Achieves up to 2.77x training speedup compared to
+  synchronous systems. Used to train the Ring thinking model series.
+tags:
+  - reinforcement-learning
+  - training
+  - framework
+  - efficiency
+library:
+  github: https://github.com/inclusionAI/AReaL
+paper:
+  arxiv: "2505.24298"
+related:
+  - ring

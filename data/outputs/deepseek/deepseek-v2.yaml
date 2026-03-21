@@ -1,25 +1,38 @@
 name: DeepSeek-V2
 slug: deepseek-v2
 lab: deepseek
-type: model
 date: 2024-05-07
 sources:
-  - label: Paper (arXiv)
-    url: https://arxiv.org/abs/2405.04434
   - label: GitHub
     url: https://github.com/deepseek-ai/DeepSeek-V2
   - label: HuggingFace
     url: https://huggingface.co/deepseek-ai/DeepSeek-V2
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2405.04434
 description: >
   Massive 236B MoE model (21B active) that introduced Multi-head Latent
-  Attention (MLA).
+  Attention (MLA). Accompanied by a technical report.
 tags:
   - moe
   - frontier
   - open-weight
-model:
-  architecture: moe
-  parameters: 236B
-  active_parameters: 21B
-paper:
-  arxiv: "2405.04434"
+outputs:
+  - name: DeepSeek-V2
+    type: model
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/deepseek-ai/DeepSeek-V2
+    model:
+      architecture: moe
+      parameters: 236B
+      active_parameters: 21B
+  - name: DeepSeek-V2 Technical Report
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2405.04434
+    description: >
+      Technical report detailing Multi-head Latent Attention and DeepSeekMoE
+      architecture innovations.
+    paper:
+      arxiv: "2405.04434"

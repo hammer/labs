@@ -1,0 +1,20 @@
+name: SenseNova V6.5
+slug: sensenova-v6.5
+lab: sensetime
+type: model
+date: 2025-07-27
+sources:
+  - label: SenseTime News
+    url: https://www.sensetime.com/en/news-detail/51169862?categoryId=1072
+  - label: Coverage
+    url: https://eu.36kr.com/en/p/3400894464837764
+description: >
+  Enhanced large model system launched at WAIC 2025. Text reasoning and
+  multimodal reasoning surpass Gemini 2.5 Pro and Claude 4-Sonnet.
+  Multimodal interaction performance surpasses Gemini 2.5 Flash and
+  GPT-4o. Achieves threefold improvement in cost-performance ratio over
+  V6.0, marking the leap from AI as a "Tool" to a "Partner."
+tags:
+  - frontier
+  - multimodal
+  - reasoning

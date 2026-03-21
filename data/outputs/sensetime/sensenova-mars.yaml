@@ -1,0 +1,45 @@
+name: SenseNova-MARS
+slug: sensenova-mars
+lab: sensetime
+date: 2026-01-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.24330
+  - label: GitHub
+    url: https://github.com/OpenSenseNova/SenseNova-MARS
+  - label: HuggingFace (32B)
+    url: https://huggingface.co/sensenova/SenseNova-MARS-32B
+  - label: HuggingFace (8B)
+    url: https://huggingface.co/sensenova/SenseNova-MARS-8B
+  - label: HR-MMSearch Benchmark
+    url: https://huggingface.co/datasets/sensenova/HR-MMSearch
+description: >
+  Multimodal Agentic Reasoning and Search framework. First Agentic VLM
+  integrating dynamic visual reasoning with text-image search via
+  reinforcement learning. Proposes BN-GSPO algorithm for stable
+  tool-use training. MARS-32B scores 74.3 on MMSearch and 54.4 on
+  HR-MMSearch, surpassing Gemini-3-Pro and GPT-5.2.
+tags:
+  - multimodal
+  - reasoning
+  - agentic
+  - open-weight
+  - search
+outputs:
+  - name: SenseNova-MARS Models
+    type: model
+    model:
+      variants:
+        - name: SenseNova-MARS-8B
+          parameters: "8B"
+        - name: SenseNova-MARS-32B
+          parameters: "32B"
+  - name: "SenseNova-MARS: Empowering Multimodal Agentic Reasoning and Search via Reinforcement Learning"
+    type: paper
+    paper:
+      arxiv: "2512.24330"
+  - name: HR-MMSearch Benchmark
+    type: dataset
+    description: >
+      First search-oriented benchmark with high-resolution images and
+      knowledge-intensive, search-driven questions.

@@ -1,0 +1,24 @@
+name: Huawei Noah's Ark Lab
+slug: huawei-noah
+url: https://www.noahlab.com.hk
+wikipedia: https://en.wikipedia.org/wiki/Huawei
+huggingface: https://huggingface.co/huawei-noah
+github: https://github.com/huawei-noah
+region: china
+founded: "2012"
+type: corporate
+parent: Huawei Technologies
+description: >
+  Huawei's primary AI research division. Developed the PanGu large model
+  series, MindSpore deep learning framework, and Ascend AI chips used
+  across the Chinese AI ecosystem. Open-sourced openPangu MoE models
+  and efficient architectures like GhostNet and TinyBERT.
+people:
+  - name: Tian Qi
+    role: Chief Scientist
+tags:
+  - infrastructure
+  - open-weight
+  - chips
+  - framework
+  - efficiency

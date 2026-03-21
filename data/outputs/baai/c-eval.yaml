@@ -1,7 +1,6 @@
 name: C-Eval
 slug: c-eval
 lab: baai
-type: dataset
 date: 2023-05-15
 sources:
   - label: Website
@@ -14,5 +13,27 @@ tags:
   - benchmark
   - chinese
   - evaluation
-related:
-  - c-eval-paper
+outputs:
+  - name: C-Eval Benchmark
+    type: dataset
+    date: 2023-05-15
+    sources:
+      - label: Website
+        url: https://cevalbenchmark.com
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2305.08322
+    description: >
+      Leading benchmark for evaluating Chinese LLMs across 52 disciplines.
+  - name: "C-Eval: A Multi-Level Multi-Discipline Chinese Evaluation Suite"
+    type: paper
+    date: 2023-05-15
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2305.08322
+      - label: Website
+        url: https://cevalbenchmark.com/
+    description: >
+      Paper introducing the leading benchmark for evaluating Chinese LLMs
+      across 52 disciplines.
+    paper:
+      arxiv: "2305.08322"

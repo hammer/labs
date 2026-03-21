@@ -1,17 +1,37 @@
 name: DeepSeek-LLM
 slug: deepseek-llm
 lab: deepseek
-type: model
 date: 2023-11-29
 sources:
-  - label: HuggingFace
-    url: https://huggingface.co/deepseek-ai/deepseek-llm-67b-chat
   - label: GitHub
     url: https://github.com/deepseek-ai/DeepSeek-LLM
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/deepseek-llm-67b-chat
 description: >
-  First general-purpose 67B model, outperforming Llama 2 at the time.
+  First general-purpose 67B model, outperforming Llama 2, with a technical report
+  on scaling open-source language models with a long-term vision.
 tags:
   - open-weight
-model:
-  architecture: dense
-  parameters: 67B
+  - scaling
+outputs:
+  - name: DeepSeek-LLM
+    type: model
+    date: 2023-11-29
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/deepseek-ai/deepseek-llm-67b-chat
+    description: >
+      First general-purpose 67B model, outperforming Llama 2 at the time.
+    model:
+      architecture: dense
+      parameters: 67B
+  - name: "DeepSeek LLM: Scaling Open-Source Language Models with Longtermism"
+    type: paper
+    date: 2024-01-05
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2401.02954
+    description: >
+      Technical report on scaling open-source language models with a long-term vision.
+    paper:
+      arxiv: "2401.02954"

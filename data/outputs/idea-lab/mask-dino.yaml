@@ -1,0 +1,41 @@
+name: Mask DINO
+slug: mask-dino
+lab: idea-lab
+date: 2022-06-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2206.02777
+  - label: GitHub
+    url: https://github.com/IDEA-Research/MaskDINO
+description: >
+  Unified Transformer-based framework for object detection and segmentation.
+  Extends DINO with a mask prediction branch supporting instance, panoptic,
+  and semantic segmentation. Achieves 54.7 AP on COCO instance, 59.5 PQ on
+  COCO panoptic, and 60.8 mIoU on ADE20K semantic segmentation.
+tags:
+  - vision
+  - object-detection
+  - segmentation
+  - open-source
+outputs:
+  - name: Mask DINO
+    type: library
+    sources:
+      - label: GitHub
+        url: https://github.com/IDEA-Research/MaskDINO
+    description: >
+      Official implementation of Mask DINO. Achieves best results on all three
+      segmentation tasks simultaneously.
+    library:
+      github: https://github.com/IDEA-Research/MaskDINO
+  - name: "Mask DINO: Towards A Unified Transformer-based Framework for Object Detection and Segmentation"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2206.02777
+    description: >
+      Extends DINO with a shared mask prediction branch that supports all
+      image segmentation tasks via query-based dot-product with pixel embeddings.
+    paper:
+      arxiv: "2206.02777"
+      venue: CVPR 2023

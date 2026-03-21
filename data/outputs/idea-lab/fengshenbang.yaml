@@ -1,0 +1,48 @@
+name: Fengshenbang
+slug: fengshenbang
+lab: idea-lab
+date: 2021-11-22
+sources:
+  - label: GitHub
+    url: https://github.com/IDEA-CCNL/Fengshenbang-LM
+  - label: HuggingFace
+    url: https://huggingface.co/IDEA-CCNL
+description: >
+  Open-source large model ecosystem from IDEA-CCNL covering NLU, NLG,
+  and cross-modal tasks. Includes three model families: Erlangshen (NLU,
+  largest public BERT at release, SOTA on FewCLUE/ZeroCLUE), Wenzhong
+  (NLG, GPT-2 based generation), and Taiyi (cross-modal including
+  first Chinese Stable Diffusion). All models available on HuggingFace.
+tags:
+  - nlp
+  - open-source
+  - chinese
+outputs:
+  - name: Fengshenbang-LM
+    type: library
+    sources:
+      - label: GitHub
+        url: https://github.com/IDEA-CCNL/Fengshenbang-LM
+      - label: HuggingFace
+        url: https://huggingface.co/IDEA-CCNL
+    description: >
+      Open-source framework and model zoo for Chinese AI foundation models
+      with Apache 2.0 license.
+    library:
+      github: https://github.com/IDEA-CCNL/Fengshenbang-LM
+  - name: Erlangshen
+    type: model
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/IDEA-CCNL/Erlangshen-MegatronBert-1.3B-NLI
+    description: >
+      NLU model series including BERT, RoBERTa, and MegatronBERT variants
+      up to 1.3B parameters. SOTA on FewCLUE and ZeroCLUE benchmarks.
+  - name: Wenzhong
+    type: model
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/IDEA-CCNL/Wenzhong-GPT2-3.5B
+    description: >
+      Chinese NLG model series based on GPT-2 architecture with variants
+      from 110M to 3.5B parameters.

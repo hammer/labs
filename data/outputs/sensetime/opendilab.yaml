@@ -1,0 +1,28 @@
+name: OpenDILab / DI-engine
+slug: opendilab
+lab: [sensetime, shanghai-ai-lab]
+date: 2021-07-08
+sources:
+  - label: GitHub (DI-engine)
+    url: https://github.com/opendilab/DI-engine
+  - label: GitHub (OpenDILab)
+    url: https://github.com/opendilab
+description: >
+  World's first open-source decision intelligence platform, unveiled at
+  WAIC 2021. DI-engine is the core generalized decision AI engine for
+  PyTorch and JAX, supporting DQN, Rainbow, PPO, TD3, SAC, R2D2, IMPALA,
+  multi-agent RL, imitation learning, offline RL, and model-based RL.
+  Part of the OpenXLab ecosystem alongside OpenMMLab.
+tags:
+  - reinforcement-learning
+  - decision-intelligence
+  - open-source
+outputs:
+  - name: DI-engine
+    type: library
+    library:
+      github: https://github.com/opendilab/DI-engine
+  - name: OpenDILab Platform
+    type: library
+    library:
+      github: https://github.com/opendilab

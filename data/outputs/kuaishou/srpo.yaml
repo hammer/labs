@@ -1,0 +1,20 @@
+name: "SRPO: Staged History-Resampling Policy Optimization"
+slug: srpo
+lab: kuaishou
+type: paper
+date: 2025-04-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.14286
+description: >
+  Two-stage reinforcement learning framework for LLMs that surpasses
+  DeepSeek-R1-Zero-32B on AIME24 and LiveCodeBench with only 1/10 of the
+  training steps.
+tags:
+  - reasoning
+  - reinforcement-learning
+  - efficiency
+paper:
+  arxiv: "2504.14286"
+related:
+  - kat

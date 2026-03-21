@@ -1,0 +1,40 @@
+name: detrex
+slug: detrex
+lab: idea-lab
+date: 2023-06-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2306.07265
+  - label: GitHub
+    url: https://github.com/IDEA-Research/detrex
+description: >
+  Open-source research platform for Transformer-based detection algorithms
+  built on Detectron2. Provides unified, modular codebase supporting 15+
+  mainstream DETR-based detection, segmentation, and pose estimation algorithms.
+  Boosts model performance by 0.2-1.1 AP through optimized hyperparameters.
+tags:
+  - vision
+  - object-detection
+  - tooling
+  - open-source
+outputs:
+  - name: detrex
+    type: library
+    sources:
+      - label: GitHub
+        url: https://github.com/IDEA-Research/detrex
+    description: >
+      Unified research platform for DETR-based detection with modular design
+      and strong baselines for 15+ algorithms.
+    library:
+      github: https://github.com/IDEA-Research/detrex
+  - name: "detrex: Benchmarking Detection Transformers"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2306.07265
+    description: >
+      Paper presenting the detrex benchmarking framework for DETR-based
+      detection models with comprehensive experiments.
+    paper:
+      arxiv: "2306.07265"

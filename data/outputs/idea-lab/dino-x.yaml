@@ -1,0 +1,47 @@
+name: DINO-X
+slug: dino-x
+lab: idea-lab
+date: 2024-11-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.14347
+  - label: GitHub (API)
+    url: https://github.com/IDEA-Research/DINO-X-API
+description: >
+  Unified vision model for open-world object detection and understanding.
+  Supports text, visual, and customized prompts including prompt-free
+  universal object detection. Trained on Grounding-100M dataset with 100M+
+  high-quality grounding samples. Sets new SOTA: 56.0 AP on COCO, 59.8 AP
+  on LVIS-minival, 52.4 AP on LVIS-val in zero-shot settings. Supports
+  detection, segmentation, pose estimation, and region captioning.
+tags:
+  - vision
+  - object-detection
+  - segmentation
+  - open-vocabulary
+  - grounding
+outputs:
+  - name: DINO-X
+    type: model
+    sources:
+      - label: GitHub (API)
+        url: https://github.com/IDEA-Research/DINO-X-API
+    description: >
+      World's top-performing vision model for open-world object detection.
+      Pro and Edge variants with text, visual, and customized prompt support.
+    model:
+      variants:
+        - name: DINO-X Pro
+          notes: SOTA 56.0 AP COCO, 59.8 AP LVIS-minival zero-shot
+        - name: DINO-X Edge
+          notes: Efficient variant for edge deployment
+  - name: "DINO-X: A Unified Vision Model for Open-World Object Detection and Understanding"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2411.14347
+    description: >
+      Presents DINO-X with universal object prompt and Grounding-100M dataset
+      for prompt-free open-world detection and understanding.
+    paper:
+      arxiv: "2411.14347"

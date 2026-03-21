@@ -1,0 +1,26 @@
+name: IDEA Lab
+slug: idea-lab
+url: https://www.idea.edu.cn
+huggingface: https://huggingface.co/IDEA-Research
+github: https://github.com/IDEA-Research
+region: china
+founded: "2020"
+type: nonprofit
+description: >
+  International Digital Economy Academy, a research institute in Shenzhen
+  founded by Harry Shum. Two major research tracks: computer vision
+  (Grounding DINO, DINO-X, Grounded SAM) via IDEA-Research, and NLP
+  (Fengshenbang/Ziya LLM series) via IDEA-CCNL. The CV/detection work
+  is world-class and widely adopted.
+people:
+  - name: Harry Shum
+    role: Founding Chairman
+    formerly: Executive Vice President at Microsoft
+  - name: Lei Zhang
+    role: Lead Researcher (CV)
+tags:
+  - vision
+  - open-source
+  - object-detection
+  - nlp
+  - nonprofit

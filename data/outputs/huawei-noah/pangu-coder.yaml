@@ -1,0 +1,40 @@
+name: PanGu-Coder
+slug: pangu-coder
+lab: huawei-noah
+date: 2022-07-22
+sources:
+  - label: "Paper: PanGu-Coder (arXiv)"
+    url: https://arxiv.org/abs/2207.11280
+  - label: "Paper: PanGu-Coder2 (arXiv)"
+    url: https://arxiv.org/abs/2307.14936
+  - label: GitHub
+    url: https://github.com/huawei-noah/Pretrained-Language-Model
+  - label: HuggingFace (CodeCLM-300m)
+    url: https://huggingface.co/huawei-noah/pangu-CodeCLM-300m
+description: >
+  Code generation models based on the PanGu-alpha architecture. PanGu-Coder
+  uses a two-stage CLM+MLM training strategy for text-to-code generation,
+  achieving competitive results with Codex. PanGu-Coder2 (July 2023) applies
+  RRTF (Rank Responses to align Test & Teacher Feedback) on StarCoder-15B,
+  reaching 62.20% pass@1 on HumanEval.
+tags:
+  - code-generation
+  - nlp
+  - large-language-model
+outputs:
+  - type: model
+    name: PanGu-Coder
+    model:
+      variants:
+        - name: PanGu-Coder-317M
+          parameters: 317M
+        - name: PanGu-Coder-2.6B
+          parameters: 2.6B
+  - type: paper
+    name: "PanGu-Coder: Program Synthesis with Function-Level Language Modeling"
+    paper:
+      arxiv: "2207.11280"
+  - type: paper
+    name: "PanGu-Coder2: Boosting Large Language Models for Code with Ranking Feedback"
+    paper:
+      arxiv: "2307.14936"

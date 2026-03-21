@@ -1,7 +1,6 @@
 name: DeepSeek-MoE
 slug: deepseek-moe
 lab: deepseek
-type: model
 date: 2024-01-11
 sources:
   - label: HuggingFace
@@ -10,14 +9,29 @@ sources:
     url: https://arxiv.org/abs/2401.06066
 description: >
   Pioneering 16B Mixture-of-Experts model with only 2.8B active parameters,
-  setting the stage for DeepSeek's future efficiency focus.
+  setting the stage for DeepSeek's future efficiency focus. Accompanied by a
+  foundational paper on expert specialization.
 tags:
   - moe
   - efficiency
   - open-weight
-model:
-  architecture: moe
-  parameters: 16B
-  active_parameters: 2.8B
-related:
-  - deepseek-moe-paper
+  - architecture
+outputs:
+  - name: DeepSeek-MoE
+    type: model
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/deepseek-ai/deepseek-moe-16b-chat
+    model:
+      architecture: moe
+      parameters: 16B
+      active_parameters: 2.8B
+  - name: "DeepSeekMoE: Towards Ultimate Expert Specialization"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2401.06066
+    description: >
+      Foundational paper on expert specialization in MoE language models.
+    paper:
+      arxiv: "2401.06066"

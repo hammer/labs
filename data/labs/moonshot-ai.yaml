@@ -1,6 +1,7 @@
 name: Moonshot AI
 slug: moonshot-ai
 url: https://www.moonshot.cn
+wikipedia: https://en.wikipedia.org/wiki/Moonshot_AI
 huggingface: https://huggingface.co/moonshotai
 github: https://github.com/MoonshotAI
 region: china

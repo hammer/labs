@@ -1,0 +1,60 @@
+name: Hunyuan3D
+slug: hunyuan3d
+lab: tencent
+date: 2024-11-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.02293
+  - label: GitHub (1.0)
+    url: https://github.com/Tencent-Hunyuan/Hunyuan3D-1
+  - label: GitHub (2.0)
+    url: https://github.com/Tencent-Hunyuan/Hunyuan3D-2
+  - label: HuggingFace (2.0)
+    url: https://huggingface.co/tencent/Hunyuan3D-2
+  - label: Project Page
+    url: https://hunyuan-3d.com/
+description: >
+  Unified framework for text-to-3D and image-to-3D generation, evolving from
+  1.0 through 2.0 to 2.1 with PBR material synthesis.
+tags:
+  - 3d
+  - generation
+  - open-weight
+outputs:
+  - name: "Hunyuan3D 1.0: Text-to-3D and Image-to-3D"
+    type: paper
+    date: 2024-11-04
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2411.02293
+      - label: GitHub
+        url: https://github.com/Tencent-Hunyuan/Hunyuan3D-1
+    description: >
+      Unified framework for text-to-3D and image-to-3D generation.
+    paper:
+      arxiv: "2411.02293"
+  - name: Hunyuan3D-2.0
+    type: model
+    date: 2025-01-21
+    sources:
+      - label: GitHub
+        url: https://github.com/Tencent-Hunyuan/Hunyuan3D-2
+      - label: HuggingFace
+        url: https://huggingface.co/tencent/Hunyuan3D-2
+      - label: Project Page
+        url: https://hunyuan-3d.com/
+    description: >
+      3D asset generation with high-resolution textured asset generation.
+  - name: Hunyuan3D-2.1
+    type: model
+    date: 2025-06-13
+    sources:
+      - label: GitHub
+        url: https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1
+      - label: Project Page
+        url: https://hunyuan-3d.com/
+    description: >
+      Added PBR (Physically-Based Rendering) material synthesis for cinema-grade
+      light interaction.
+library:
+  github: https://github.com/Tencent-Hunyuan/Hunyuan3D-2

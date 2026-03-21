@@ -1,6 +1,7 @@
 name: Tencent
 slug: tencent
 url: https://llm.hunyuan.tencent.com
+wikipedia: https://en.wikipedia.org/wiki/Tencent
 founded: 1998-11
 huggingface: https://huggingface.co/tencent
 github: https://github.com/Tencent

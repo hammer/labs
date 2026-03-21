@@ -1,0 +1,23 @@
+name: Qwen2.5-Omni-7B
+slug: qwen2.5-omni
+lab: alibaba-qwen
+type: model
+date: 2025-03-26
+sources:
+  - label: Blog Post
+    url: https://qwenlm.github.io/blog/qwen2.5-omni/
+  - label: HuggingFace
+    url: https://huggingface.co/Qwen/Qwen2.5-Omni-7B
+  - label: GitHub
+    url: https://github.com/QwenLM/Qwen2.5-Omni
+description: >
+  End-to-end multimodal model processing text, images, audio, and video with
+  real-time speech generation. Thinker-Talker architecture. Over 80k downloads
+  in first week on HuggingFace.
+tags:
+  - multimodal
+  - audio
+  - open-weight
+model:
+  architecture: dense
+  parameters: 7B

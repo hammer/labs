@@ -1,0 +1,30 @@
+name: Grad-TTS
+slug: grad-tts
+lab: huawei-noah
+date: 2021-05-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2105.06337
+  - label: "Published: ICML 2021"
+    url: https://proceedings.mlr.press/v139/popov21a/popov21a.pdf
+  - label: GitHub
+    url: https://github.com/huawei-noah/Speech-Backbones/tree/main/Grad-TTS
+description: >
+  Diffusion probabilistic model for text-to-speech synthesis. Uses a
+  score-based decoder to produce mel-spectrograms by gradually transforming
+  noise predicted by the encoder, aligned via Monotonic Alignment Search.
+  Enables flexible trade-off between sound quality and inference speed.
+  Competitive with state-of-the-art TTS in Mean Opinion Score. One of the
+  first applications of diffusion models to speech synthesis.
+tags:
+  - speech
+  - text-to-speech
+  - diffusion
+  - open-source
+outputs:
+  - type: model
+    name: Grad-TTS
+  - type: paper
+    name: "Grad-TTS: A Diffusion Probabilistic Model for Text-to-Speech"
+    paper:
+      arxiv: "2105.06337"

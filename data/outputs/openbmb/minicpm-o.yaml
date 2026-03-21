@@ -1,0 +1,37 @@
+name: MiniCPM-o
+slug: minicpm-o
+lab: openbmb
+date: 2025-01-14
+sources:
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM-o
+  - label: "HuggingFace (o 2.6)"
+    url: https://huggingface.co/openbmb/MiniCPM-o-2_6
+  - label: "Blog Post"
+    url: https://openbmb.vercel.app/minicpm-o-2-6-en
+  - label: "HuggingFace (o 4.5)"
+    url: https://huggingface.co/openbmb/MiniCPM-o-4_5
+  - label: "Project Page (o 4.5)"
+    url: https://openbmb.github.io/minicpm-o-4_5/
+description: >
+  Omni-modal model series capable of real-time speech-to-speech interaction
+  and multimodal live streaming. The 4.5 version matches Gemini 2.5 Flash in
+  vision, speech, and live-streaming interaction.
+tags:
+  - multimodal
+  - speech
+  - on-device
+  - agentic
+  - frontier
+outputs:
+  - name: MiniCPM-o 2.6
+    type: model
+    description: >
+      Omni-modal model capable of real-time speech-to-speech interaction and
+      multimodal live streaming.
+  - name: MiniCPM-o 4.5
+    type: model
+    date: 2026-02-03
+    description: >
+      Most advanced real-time agent, matching Gemini 2.5 Flash in vision,
+      speech, and live-streaming interaction latency and intelligence.

@@ -1,0 +1,28 @@
+name: HEBO
+slug: hebo
+lab: huawei-noah
+date: 2020-12-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2012.03826
+  - label: GitHub
+    url: https://github.com/huawei-noah/HEBO
+description: >
+  Heteroscedastic Evolutionary Bayesian Optimisation library. Won first place
+  in the NeurIPS 2020 Black-Box Optimisation Challenge. Performs non-linear
+  input and output warping with exact marginal log-likelihood optimisation.
+  Significantly outperforms existing black-box optimisers on 108 ML
+  hyperparameter tuning tasks. Supports continuous, integer, and categorical
+  parameters with constrained and multi-objective optimisation.
+tags:
+  - optimization
+  - bayesian-optimization
+  - automl
+  - open-source
+outputs:
+  - type: library
+    name: HEBO
+  - type: paper
+    name: "HEBO: Pushing The Limits of Sample-Efficient Hyperparameter Optimisation"
+    paper:
+      arxiv: "2012.03826"

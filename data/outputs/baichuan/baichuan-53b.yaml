@@ -1,0 +1,19 @@
+name: Baichuan-53B
+slug: baichuan-53b
+lab: baichuan
+type: model
+date: 2023-08-08
+sources:
+  - label: Announcement
+    url: https://www.aifun.cc/en/sites/baichuanzhineng.html
+description: >
+  53-billion-parameter proprietary model, the third large model product from
+  Baichuan Intelligence. Released alongside the launch of Baichuan's first round
+  of internal API testing. Later superseded by the Baichuan2-53B variant for
+  enterprise use.
+tags:
+  - proprietary
+  - chinese
+model:
+  architecture: dense
+  parameters: 53B

@@ -1,7 +1,6 @@
 name: OpenComplex
 slug: opencomplex
 lab: baai
-type: model
 date: 2025-03-27
 sources:
   - label: Paper (bioRxiv)
@@ -9,15 +8,47 @@ sources:
   - label: GitHub
     url: https://github.com/ocx-lab/OpenComplex
 description: >
-  Open-source platform for end-to-end prediction of biomolecular 3D
-  structures including protein, RNA, and protein-RNA complexes. Built on
-  architectures of AlphaFold2 and AlphaFold-Multimer. Part of BAAI's
-  WuJie series focused on life science AI. Provides a trainable PyTorch
-  framework for developing protein, RNA, and complex models.
+  Open-source platform for biomolecular 3D structure prediction and
+  conformational ensemble sampling. Part of BAAI's WuJie series focused on life
+  science AI. OpenComplex provides trainable protein/RNA/complex prediction;
+  OpenComplex2 extends to generative conformational ensemble sampling.
 tags:
   - biocomputing
   - protein-structure
   - open-source
+  - generative-model
+outputs:
+  - name: OpenComplex
+    type: model
+    date: 2025-03-27
+    sources:
+      - label: Paper (bioRxiv)
+        url: https://www.biorxiv.org/content/10.1101/2025.03.25.643589v1
+      - label: GitHub
+        url: https://github.com/ocx-lab/OpenComplex
+    description: >
+      Open-source platform for end-to-end prediction of biomolecular 3D
+      structures including protein, RNA, and protein-RNA complexes. Built on
+      architectures of AlphaFold2 and AlphaFold-Multimer. Part of BAAI's
+      WuJie series focused on life science AI. Provides a trainable PyTorch
+      framework for developing protein, RNA, and complex models.
+  - name: OpenComplex2 (OC2)
+    type: model
+    date: 2025-05-02
+    sources:
+      - label: Paper (bioRxiv)
+        url: https://www.biorxiv.org/content/10.1101/2025.05.01.651643v1
+      - label: GitHub
+        url: https://github.com/ocx-lab/OpenComplex2
+    description: >
+      Generative foundation model for biomolecular conformational ensemble
+      sampling. Integrates a unified graph representation with diffusion-based
+      sampling through the FloydNetwork architecture, operating across atomic,
+      residue, and motif hierarchies. Samples conformational landscapes in hours
+      instead of the weeks required by traditional molecular dynamics. Accurately
+      reproduces protein and RNA ensembles, captures functionally relevant
+      transitions (allostery, induced-fit, cryptic pockets), and scales to
+      assemblies exceeding 15,000 residues.
 related:
-  - opencomplex2
   - sable
+  - odesign

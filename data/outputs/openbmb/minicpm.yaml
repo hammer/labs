@@ -1,0 +1,60 @@
+name: MiniCPM
+slug: minicpm
+lab: openbmb
+date: 2024-02-01
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2404.06395
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM
+  - label: HuggingFace
+    url: https://huggingface.co/openbmb/MiniCPM-2B-dpo-bf16
+  - label: "HuggingFace (MoE)"
+    url: https://huggingface.co/openbmb/MiniCPM-MoE-8x2B
+  - label: "HuggingFace (3-4B)"
+    url: https://huggingface.co/openbmb/MiniCPM3-4B
+description: >
+  Series of efficient on-device language models. The 2B model outperformed
+  Llama2-13B and matched Mistral-7B despite its smaller size. Evolved through
+  MoE and MiniCPM3 variants.
+tags:
+  - on-device
+  - efficiency
+  - open-weight
+  - moe
+  - reasoning
+outputs:
+  - name: MiniCPM-1B / 2B
+    type: model
+    model:
+      architecture: dense
+      variants:
+        - name: MiniCPM-1B
+          parameters: 1B
+        - name: MiniCPM-2B
+          parameters: 2B
+  - name: "MiniCPM: Unveiling the Potential of End-Side Large Language Models"
+    type: paper
+    date: 2024-04-09
+    paper:
+      arxiv: "2404.06395"
+  - name: MiniCPM-MoE-8x2B
+    type: model
+    date: 2024-04-11
+    description: >
+      MoE version delivering 7B-class performance with significantly lower
+      active parameter costs.
+    sources:
+      - label: "Technical Report"
+        url: https://openbmb.vercel.app/minicpm-moe-en
+    model:
+      architecture: moe
+  - name: MiniCPM3-4B
+    type: model
+    date: 2024-09-05
+    description: >
+      Optimized for reasoning and RAG, matching performance of 7B-9B models
+      like Llama 3.1-8B.
+    model:
+      architecture: dense
+      parameters: 4B

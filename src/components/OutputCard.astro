@@ -1,5 +1,5 @@
 ---
-import type { Output } from '../schema.js';
+import { isGrouped, getOutputTypes, type Output } from '../schema.js';
 import TypeBadge from './TypeBadge.astro';
 
 interface Props {
@@ -16,12 +16,19 @@ const excerpt = output.description
     ? output.description.slice(0, 150).trimEnd() + '…'
     : output.description
   : null;
+const types = getOutputTypes(output);
+const grouped = isGrouped(output);
 ---
 
 <a href={`/outputs/${linkSlug}/${output.slug}`} class="card">
   <div class="card-header">
-    <h3 class="card-title">{output.name}</h3>
-    <TypeBadge type={output.type} />
+    <h3 class="card-title">
+      {output.name}
+      {grouped && <span class="group-count">{output.outputs.length}</span>}
+    </h3>
+    <div class="type-badges">
+      {types.map(t => <TypeBadge type={t} />)}
+    </div>
   </div>
   <div class="card-meta">
     <time>{output.date}</time>
@@ -57,6 +64,28 @@ const excerpt = output.description
   .card-title {
     font-size: 0.95rem;
     font-weight: 600;
+  }
+
+  .group-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 600;
+    min-width: 1.2em;
+    padding: 0 0.35em;
+    height: 1.2em;
+    border-radius: 9999px;
+    background: var(--border);
+    color: var(--text-muted);
+    margin-left: 0.3rem;
+    vertical-align: middle;
+  }
+
+  .type-badges {
+    display: flex;
+    gap: 0.3rem;
+    flex-shrink: 0;
   }
 
   .card-meta {

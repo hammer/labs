@@ -1,7 +1,6 @@
 name: Kolors
 slug: kolors
 lab: kuaishou
-type: model
 date: 2024-07-06
 sources:
   - label: GitHub
@@ -16,5 +15,23 @@ tags:
   - vision
   - diffusion
   - open-weight
-library:
-  github: https://github.com/Kwai-Kolors/Kolors
+outputs:
+  - name: Kolors
+    type: model
+    sources:
+      - label: GitHub
+        url: https://github.com/Kwai-Kolors/Kolors
+      - label: HuggingFace
+        url: https://huggingface.co/Kwai-Kolors/Kolors
+    description: >
+      Large-scale text-to-image diffusion model based on the General Language Model
+      (GLM), optimized for high-quality Chinese and English text rendering.
+  - name: "Kolors: Effective Training of Diffusion Model for Photorealistic Text-to-Image Synthesis"
+    type: paper
+    sources:
+      - label: GitHub
+        url: https://github.com/Kwai-Kolors/Kolors
+      - label: HuggingFace
+        url: https://huggingface.co/Kwai-Kolors/Kolors
+    description: >
+      Technical paper on the Kolors text-to-image diffusion model.

@@ -1,0 +1,32 @@
+name: SenseTime
+slug: sensetime
+url: https://www.sensetime.com
+wikipedia: https://en.wikipedia.org/wiki/SenseTime
+huggingface: https://huggingface.co/sensenova
+github: https://github.com/SenseTime
+region: china
+founded: 2014-10
+type: corporate
+description: >
+  Major Chinese AI company and computer vision pioneer, publicly traded in
+  Hong Kong. Develops the SenseNova large model family and SenseCore
+  supercomputing infrastructure. Co-develops InternLM and OpenGVLab with
+  Shanghai AI Laboratory. Known for foundational CV research including
+  Deformable DETR and spatial intelligence models.
+people:
+  - name: Xu Li
+    role: Co-founder & CEO
+  - name: Wang Xiaogang
+    role: Co-founder & CTO
+  - name: Lin Dahua
+    role: Co-founder & Chief Scientist
+tags:
+  - frontier
+  - multimodal
+  - vision
+  - spatial-intelligence
+  - infrastructure
+relationships:
+  - lab: shanghai-ai-lab
+    type: collaboration
+    note: Co-develops InternLM and OpenGVLab; provides SenseCore compute infrastructure

@@ -1,0 +1,75 @@
+name: Ziya LLM
+slug: ziya
+lab: idea-lab
+date: 2023-05-17
+sources:
+  - label: HuggingFace (Ziya-13B-v1)
+    url: https://huggingface.co/IDEA-CCNL/Ziya-LLaMA-13B-v1
+  - label: HuggingFace (Ziya2-13B)
+    url: https://huggingface.co/IDEA-CCNL/Ziya2-13B-Chat
+  - label: HuggingFace (Ziya-Coding-34B)
+    url: https://huggingface.co/IDEA-CCNL/Ziya-Coding-34B-v1.0
+  - label: GitHub (Fengshenbang-LM)
+    url: https://github.com/IDEA-CCNL/Fengshenbang-LM
+description: >
+  Chinese-English bilingual LLM series built on LLaMA. Three-stage training:
+  large-scale pre-training, multi-task supervised fine-tuning, and RLHF.
+  Supports translation, programming, classification, extraction, summarization,
+  and math. Ziya2-13B builds on Llama 2 with 650B additional tokens.
+  Ziya-Coding-34B achieves 75.5 HumanEval Pass@1 surpassing GPT-4.
+tags:
+  - nlp
+  - open-weight
+  - chinese
+  - coding
+outputs:
+  - name: Ziya-LLaMA-13B
+    type: model
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/IDEA-CCNL/Ziya-LLaMA-13B-v1
+    description: >
+      13B bilingual LLM based on LLaMA with optimized Chinese tokenizer
+      and three-stage training process including RLHF.
+    model:
+      parameters: "13B"
+      variants:
+        - name: Ziya-LLaMA-13B-v1
+        - name: Ziya-LLaMA-13B-v1.1
+        - name: Ziya-LLaMA-13B-Pretrain-v1
+        - name: Ziya-LLaMA-7B-Reward
+          notes: Reward model for RLHF
+  - name: Ziya2-13B
+    type: model
+    date: 2023-07-25
+    sources:
+      - label: HuggingFace (Base)
+        url: https://huggingface.co/IDEA-CCNL/Ziya2-13B-Base
+      - label: HuggingFace (Chat)
+        url: https://huggingface.co/IDEA-CCNL/Ziya2-13B-Chat
+    description: >
+      Built on Llama 2 with 650B additional Chinese-English tokens.
+      Full-parameter RLHF with high-quality human preference data.
+    model:
+      parameters: "13B"
+  - name: Ziya-Coding-34B
+    type: model
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/IDEA-CCNL/Ziya-Coding-34B-v1.0
+    description: >
+      Code generation model achieving 75.5 HumanEval Pass@1,
+      surpassing GPT-4's 67.0 score.
+    model:
+      parameters: "34B"
+  - name: Ziya-Visual
+    type: model
+    date: 2023-06-05
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/IDEA-CCNL/Ziya-Visual-14B-Chat
+    description: >
+      Multimodal vision-language model based on Ziya-LLaMA-13B with
+      visual question answering and dialogue capabilities.
+    model:
+      parameters: "14B"

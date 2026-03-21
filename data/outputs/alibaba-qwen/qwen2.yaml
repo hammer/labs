@@ -1,7 +1,6 @@
 name: Qwen2
 slug: qwen2
 lab: alibaba-qwen
-type: model
 date: 2024-06-06
 sources:
   - label: Blog Post
@@ -15,17 +14,36 @@ tags:
   - open-weight
   - multilingual
   - moe
-model:
-  variants:
-    - name: Qwen2-0.5B
-      parameters: 0.5B
-    - name: Qwen2-1.5B
-      parameters: 1.5B
-    - name: Qwen2-7B
-      parameters: 7B
-    - name: Qwen2-72B
-      parameters: 72B
-    - name: Qwen2-57B-A14B
-      parameters: 57B
-      active_parameters: 14B
-      notes: MoE variant
+outputs:
+  - name: Qwen2
+    type: model
+    date: 2024-06-06
+    sources:
+      - label: Blog Post
+        url: https://qwenlm.github.io/blog/qwen2/
+      - label: GitHub
+        url: https://github.com/QwenLM/Qwen2
+    model:
+      variants:
+        - name: Qwen2-0.5B
+          parameters: 0.5B
+        - name: Qwen2-1.5B
+          parameters: 1.5B
+        - name: Qwen2-7B
+          parameters: 7B
+        - name: Qwen2-72B
+          parameters: 72B
+        - name: Qwen2-57B-A14B
+          parameters: 57B
+          active_parameters: 14B
+          notes: MoE variant
+  - name: Qwen2 Technical Report
+    type: paper
+    date: 2024-07-15
+    sources:
+      - label: "Paper (arXiv)"
+        url: https://arxiv.org/abs/2407.10671
+    description: >
+      Focused on scaling law improvements and multilingual density.
+    paper:
+      arxiv: "2407.10671"

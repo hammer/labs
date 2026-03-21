@@ -1,0 +1,45 @@
+name: Grounding DINO
+slug: grounding-dino
+lab: idea-lab
+date: 2023-03-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2303.05499
+  - label: GitHub
+    url: https://github.com/IDEA-Research/GroundingDINO
+  - label: HuggingFace
+    url: https://huggingface.co/IDEA-Research/grounding-dino-base
+description: >
+  Open-set object detector that marries DINO with grounded pre-training.
+  Detects arbitrary objects using text prompts (category names or referring
+  expressions). Achieves 52.5 zero-shot AP on COCO without any COCO training
+  data and 63.0 AP after fine-tuning. One of the most widely adopted open-set
+  detectors in the community.
+tags:
+  - vision
+  - object-detection
+  - open-vocabulary
+  - grounding
+  - open-source
+outputs:
+  - name: Grounding DINO
+    type: model
+    sources:
+      - label: GitHub
+        url: https://github.com/IDEA-Research/GroundingDINO
+      - label: HuggingFace
+        url: https://huggingface.co/IDEA-Research/grounding-dino-base
+    description: >
+      Open-set object detection model with text-guided detection.
+      Base and large model variants available.
+  - name: "Grounding DINO: Marrying DINO with Grounded Pre-Training for Open-Set Object Detection"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2303.05499
+    description: >
+      Presents the Grounding DINO architecture combining Transformer-based
+      detection with grounded pre-training for open-set object detection.
+    paper:
+      arxiv: "2303.05499"
+      venue: ECCV 2024

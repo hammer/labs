@@ -1,0 +1,21 @@
+name: Vimi
+slug: vimi
+lab: sensetime
+type: model
+date: 2024-07-05
+sources:
+  - label: Coverage
+    url: https://www.aibase.com/news/10124
+  - label: SenseTime News
+    url: https://www.sensetime.com/en/news-detail/51168278
+description: >
+  World's first controllable character video generation model, launched
+  at WAIC 2024 alongside SenseNova 5.5. Generates character videos from
+  a single photo with precise facial and limb control. Supports multiple
+  driving methods including video, animation, audio, and text. Stably
+  produces single-shot videos up to one minute without quality
+  degradation. Consumer app "Vimi Camera" also launched.
+tags:
+  - video-generation
+  - digital-human
+  - generative

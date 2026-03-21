@@ -1,6 +1,7 @@
 name: MiniMax
 slug: minimax
 url: https://www.minimax.io
+wikipedia: https://en.wikipedia.org/wiki/MiniMax_Group
 huggingface: https://huggingface.co/MiniMaxAI
 github: https://github.com/MiniMax-AI
 region: china

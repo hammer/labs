@@ -1,10 +1,9 @@
 name: Seed-TTS
 slug: seed-tts
 lab: bytedance-seed
-type: model
 date: 2024-06-04
 sources:
-  - label: "Paper (arXiv)"
+  - label: Paper (arXiv)
     url: https://arxiv.org/abs/2406.02430
   - label: Project Page
     url: https://bytedancespeech.github.io/seedtts_tech_report/
@@ -17,5 +16,23 @@ tags:
   - speech
   - audio
   - generation
-paper:
-  arxiv: "2406.02430"
+outputs:
+  - name: Seed-TTS
+    type: model
+    sources:
+      - label: GitHub
+        url: https://github.com/BytedanceSpeech/seed-tts-eval
+      - label: Project Page
+        url: https://bytedancespeech.github.io/seedtts_tech_report/
+    description: >
+      State-of-the-art speech generation model for high-fidelity voice cloning
+      and expressive prosody.
+  - name: "Seed-TTS: A Family of High-Quality Versatile Speech Generation Models"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2406.02430
+    description: >
+      Technical paper on the Seed-TTS family of speech generation models.
+    paper:
+      arxiv: "2406.02430"

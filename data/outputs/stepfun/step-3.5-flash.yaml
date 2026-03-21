@@ -1,7 +1,6 @@
 name: Step-3.5-Flash
 slug: step-3.5-flash
 lab: stepfun
-type: model
 date: 2026-02-11
 sources:
   - label: Blog Post
@@ -14,14 +13,50 @@ sources:
     url: https://github.com/stepfun-ai/Step-3.5-Flash
 description: >
   Most advanced agentic model. 196B MoE (11B active) using MTP-3 and hybrid
-  attention. Optimized for speed (350 tok/s) with 256k context.
+  attention. Optimized for speed (350 tok/s) with 256k context. Released with
+  a 1.6M-row instruction-tuning dataset.
 tags:
   - moe
   - agentic
   - efficiency
   - open-weight
-model:
-  architecture: moe
-  parameters: 196B
-  active_parameters: 11B
-  context_window: 256000
+  - reasoning
+  - training-data
+  - instruction-tuning
+outputs:
+  - name: Step-3.5-Flash
+    type: model
+    date: 2026-02-11
+    sources:
+      - label: Blog Post
+        url: https://static.stepfun.com/blog/step-3.5-flash/
+      - label: HuggingFace
+        url: https://huggingface.co/stepfun-ai/Step-3.5-Flash
+      - label: GitHub
+        url: https://github.com/stepfun-ai/Step-3.5-Flash
+    description: >
+      Most advanced agentic model. 196B MoE (11B active) using MTP-3 and hybrid
+      attention. Optimized for speed (350 tok/s) with 256k context.
+    model:
+      architecture: moe
+      parameters: 196B
+      active_parameters: 11B
+      context_window: 256000
+  - name: "Step 3.5 Flash: Open Frontier-Level Intelligence with 11B Active Parameters"
+    type: paper
+    date: 2026-02-11
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2602.10604
+    description: >
+      Detailed the RL pipeline and MTP-3 acceleration for the Step 3.5 Flash model.
+    paper:
+      arxiv: "2602.10604"
+  - name: Step-3.5-Flash-SFT
+    type: dataset
+    date: 2026-02-11
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/datasets/stepfun-ai/Step-3.5-Flash-SFT
+    description: >
+      Massive 1.6M-row instruction-tuning dataset released to the community.

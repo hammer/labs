@@ -1,0 +1,32 @@
+name: SenseNova V6
+slug: sensenova-v6
+lab: sensetime
+type: model
+date: 2025-04-12
+sources:
+  - label: Announcement
+    url: https://www.prnewswire.com/apac/news-releases/sensetimes-sensenova-v6-chinas-most-advanced-multimodal-model-with-the-lowest-cost-in-the-industry-302426998.html
+  - label: SenseTime News
+    url: https://www.sensetime.com/en/news-detail/51169472?categoryId=1072
+description: >
+  Native MoE-based multimodal foundation model with over 600 billion
+  parameters, launched at SenseTime Tech Day. Features multimodal long
+  chain-of-thought up to 64K tokens, global memory, and reinforcement
+  learning advances. V6 Reasoner surpasses GPT-o1 and Gemini 2.0 Flash
+  Thinking on deep reasoning tasks. V6 Omni is China's first model
+  supporting in-depth 10-minute video analysis.
+tags:
+  - frontier
+  - multimodal
+  - reasoning
+  - moe
+model:
+  architecture: moe
+  parameters: "600B+"
+  variants:
+    - name: SenseNova V6
+      notes: Core multimodal foundation model
+    - name: SenseNova V6 Reasoner
+      notes: Deep reasoning variant surpassing GPT-o1
+    - name: SenseNova V6 Omni
+      notes: Lightweight full-modal interactive model with video analysis

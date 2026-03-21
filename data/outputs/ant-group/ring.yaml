@@ -1,0 +1,65 @@
+name: Ring
+slug: ring
+lab: ant-group
+date: 2025-09-29
+sources:
+  - label: GitHub
+    url: https://github.com/inclusionAI/Ling
+  - label: HuggingFace (Ring-1T)
+    url: https://huggingface.co/inclusionAI/Ring-1T
+  - label: HuggingFace (Ring-2.5-1T)
+    url: https://huggingface.co/inclusionAI/Ring-2.5-1T
+  - label: Announcement
+    url: https://www.businesswire.com/news/home/20260215551663/en/Ant-Group-Releases-Ling-2.5-1T-and-Ring-2.5-1T-Evolving-Its-Open-Source-AI-Model-Family
+description: >
+  Ant Group's reasoning-oriented (thinking) model family, built on the Ling
+  backbone with reinforcement learning. The world's first open-source
+  trillion-parameter thinking model.
+tags:
+  - reasoning
+  - moe
+  - open-weight
+  - frontier
+  - reinforcement-learning
+  - math
+outputs:
+  - name: Ring-1T-preview
+    type: model
+    date: 2025-09-29
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/inclusionAI/Ring-1T-preview
+    description: >
+      World's first open-source trillion-parameter thinking model. Preview release
+      of the Ring reasoning series.
+    model:
+      architecture: moe
+      parameters: 1T
+  - name: "Ring-1T: Every Step Evolves"
+    type: paper
+    date: 2025-10-21
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2510.18855
+      - label: HuggingFace
+        url: https://huggingface.co/inclusionAI/Ring-1T
+    description: >
+      Scaling reinforcement learning for trillion-scale thinking model.
+    paper:
+      arxiv: "2510.18855"
+  - name: Ring-2.5-1T
+    type: model
+    date: 2026-02-16
+    sources:
+      - label: Announcement
+        url: https://www.businesswire.com/news/home/20260215551663/en/Ant-Group-Releases-Ling-2.5-1T-and-Ring-2.5-1T-Evolving-Its-Open-Source-AI-Model-Family
+      - label: HuggingFace
+        url: https://huggingface.co/inclusionAI/Ring-2.5-1T
+    description: >
+      Hybrid linear-architecture reasoning model that matches gold-medal standards
+      in IMO/CMO 2025 competitions.
+    model:
+      architecture: moe
+      parameters: 1T
+related:
+  - ling

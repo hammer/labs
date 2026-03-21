@@ -1,0 +1,22 @@
+name: Smallpond
+slug: smallpond
+lab: deepseek
+type: library
+date: 2025-02-28
+sources:
+  - label: GitHub
+    url: https://github.com/deepseek-ai/smallpond
+  - label: Announcement
+    url: https://www.marktechpost.com/2025/03/02/deepseek-ai-releases-smallpond-a-lightweight-data-processing-framework-built-on-duckdb-and-3fs/
+description: >
+  Lightweight distributed data processing framework built on DuckDB and 3FS.
+  Sorted 110.5 TiB in 30 minutes at 3.66 TiB/min. Released as part of
+  DeepSeek Open Source Week.
+tags:
+  - infrastructure
+  - data-processing
+  - open-source
+library:
+  github: https://github.com/deepseek-ai/smallpond
+related:
+  - 3fs

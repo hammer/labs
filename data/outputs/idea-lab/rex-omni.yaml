@@ -1,0 +1,48 @@
+name: Rex-Omni
+slug: rex-omni
+lab: idea-lab
+date: 2025-10-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.12798
+  - label: GitHub
+    url: https://github.com/IDEA-Research/Rex-Omni
+  - label: HuggingFace
+    url: https://huggingface.co/IDEA-Research/Rex-Omni
+  - label: Project Page
+    url: https://rex-omni.github.io/
+description: >
+  3B-parameter MLLM that redefines object detection and visual perception
+  as next-token prediction. Unifies detection, OCR, pointing, keypointing,
+  and visual prompting. Trained on 22M data with GRPO-based reinforcement
+  post-training. Achieves performance comparable to or exceeding regression-based
+  models like DINO and Grounding DINO in zero-shot settings.
+tags:
+  - vision
+  - object-detection
+  - multimodal
+  - open-source
+outputs:
+  - name: Rex-Omni
+    type: model
+    sources:
+      - label: GitHub
+        url: https://github.com/IDEA-Research/Rex-Omni
+      - label: HuggingFace
+        url: https://huggingface.co/IDEA-Research/Rex-Omni
+    description: >
+      3B MLLM for unified visual perception via next point prediction.
+      Supports detection, OCR, pointing, keypointing, and visual prompting.
+    model:
+      parameters: "3B"
+  - name: "Detect Anything via Next Point Prediction"
+    type: paper
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2510.12798
+    description: >
+      Presents Rex-Omni framework that redefines visual perception tasks as
+      next-token prediction with two-stage training and GRPO post-training.
+    paper:
+      arxiv: "2510.12798"
+      venue: CVPR 2026
