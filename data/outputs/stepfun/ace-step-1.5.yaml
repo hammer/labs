@@ -2,8 +2,14 @@ name: ACE-Step-1.5
 slug: ace-step-1.5
 lab: stepfun
 type: model
-date: 2026-03-01
-url: https://huggingface.co/stepfun-ai
+date: 2026-01-28
+sources:
+  - label: GitHub
+    url: https://github.com/ace-step/ACE-Step-1.5
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.00744
+  - label: HuggingFace
+    url: https://huggingface.co/ACE-Step/ACE-Step-v1-3.5B
 description: >
   Open-source music foundation model generating full-length, high-fidelity
   songs on consumer hardware (under 4GB VRAM).
@@ -13,4 +19,4 @@ tags:
   - generation
   - open-weight
   - efficiency
-notes: Date approximate.
+notes: Released Jan 28, 2026. Co-developed with ACE Studio.

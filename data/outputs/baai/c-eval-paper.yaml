@@ -2,8 +2,12 @@ name: "C-Eval: A Multi-Level Multi-Discipline Chinese Evaluation Suite"
 slug: c-eval-paper
 lab: baai
 type: paper
-date: 2023-05-01
-url: https://arxiv.org/abs/2305.08322
+date: 2023-05-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2305.08322
+  - label: Website
+    url: https://cevalbenchmark.com/
 description: >
   Paper introducing the leading benchmark for evaluating Chinese LLMs
   across 52 disciplines.
@@ -13,4 +17,3 @@ tags:
   - evaluation
 paper:
   arxiv: "2305.08322"
-notes: Date approximate.

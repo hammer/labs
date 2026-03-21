@@ -1,0 +1,27 @@
+name: CCI 4.0
+slug: cci-4.0
+lab: baai
+type: dataset
+date: 2025-05-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.07463
+  - label: ModelScope
+    url: https://modelscope.cn/datasets/BAAI/CCI4.0-M2-Base-v1
+  - label: HuggingFace (CCI-Data)
+    url: https://huggingface.co/datasets/BAAI/CCI-Data
+description: >
+  Large-scale bilingual pretraining dataset (~35 TB) engineered for superior
+  data quality and diverse reasoning trajectories. Comprises CCI4.0-M2-Base
+  (5.2 TB curated Chinese web corpus + 22.5 TB English from Nemotron-CC +
+  diverse math, wiki, arXiv, code sources) and CCI4.0-M2-CoT (4.5B synthesized
+  chain-of-thought reasoning templates embedding diverse reasoning patterns).
+  Released alongside OpenSeek as part of the OpenSeek project stage one.
+  Successor to CCI 3.0 (Sep 2024) and earlier versions.
+tags:
+  - dataset
+  - pretraining
+  - bilingual
+  - reasoning
+related:
+  - openseek

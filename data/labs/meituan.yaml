@@ -1,6 +1,7 @@
 name: Meituan
 slug: meituan
 url: https://www.meituan.com
+founded: 2010-05
 huggingface: https://huggingface.co/meituan-longcat
 github: https://github.com/meituan
 region: china

@@ -3,7 +3,9 @@ slug: deepseek-moe-paper
 lab: deepseek
 type: paper
 date: 2024-01-11
-url: https://arxiv.org/abs/2401.06066
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2401.06066
 description: Foundational paper on expert specialization in MoE language models.
 tags:
   - moe

@@ -2,8 +2,12 @@ name: PaddlePaddle
 slug: paddlepaddle
 lab: baidu
 type: library
-date: 2016-08-01
-url: https://github.com/PaddlePaddle/Paddle
+date: 2016-09-30
+sources:
+  - label: GitHub
+    url: https://github.com/PaddlePaddle/Paddle
+  - label: Blog Post
+    url: https://www.technologyreview.com/2020/06/22/1004251/baidus-deep-learning-platform-fuels-the-rise-of-industrial-ai/
 description: >
   China's first and most widely used domestic deep learning framework.
   Core engine supporting multi-device (CPU, GPU, XPU) training and inference.
@@ -12,4 +16,4 @@ tags:
   - infrastructure
 library:
   github: https://github.com/PaddlePaddle/Paddle
-notes: Date approximate. Originally open-sourced in 2016.
+notes: Open-sourced on GitHub on September 30, 2016.

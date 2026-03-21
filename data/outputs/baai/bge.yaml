@@ -2,8 +2,12 @@ name: BGE (BAAI General Embedding)
 slug: bge
 lab: baai
 type: model
-date: 2023-08-01
-url: https://huggingface.co/BAAI/bge-large-en-v1.5
+date: 2023-08-02
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/BAAI/bge-large-en-v1.5
+  - label: GitHub
+    url: https://github.com/FlagOpen/FlagEmbedding
 description: >
   One of the world's most widely used open-source embedding models for RAG.
   Includes BGE-v1.0/v1.5, BGE-M3 (unified multilingual), and BGE-Reranker
@@ -21,4 +25,3 @@ model:
       notes: Unified multilingual, multi-functional, released 2024
     - name: BGE-Reranker
       notes: Cross-encoder for document ranking
-notes: Date approximate.

@@ -3,7 +3,11 @@ slug: oceanbase
 lab: ant-group
 type: library
 date: 2021-06-01
-url: https://github.com/oceanbase/oceanbase
+sources:
+  - label: GitHub
+    url: https://github.com/oceanbase/oceanbase
+  - label: Website
+    url: https://en.oceanbase.com/
 description: >
   Globally leading scalable distributed database. Core infrastructure for
   Ant's AI deployments.
@@ -13,4 +17,3 @@ tags:
   - distributed
 library:
   github: https://github.com/oceanbase/oceanbase
-notes: Date approximate.

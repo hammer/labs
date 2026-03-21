@@ -1,0 +1,39 @@
+name: URSA
+slug: ursa
+lab: baai
+type: model
+date: 2025-10-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.24717
+  - label: GitHub
+    url: https://github.com/baaivision/URSA
+  - label: HuggingFace
+    url: https://huggingface.co/BAAI/URSA-1.7B-IBQ1024
+  - label: Project page
+    url: https://bitterdhg.github.io/URSA_page/
+description: >
+  Uniform discrete diffusion framework with metric path for video generation
+  (ICLR 2026). Bridges the gap between discrete and continuous diffusion
+  approaches. Formulates video generation as iterative global refinement of
+  discrete spatiotemporal tokens via Linearized Metric Path and
+  Resolution-dependent Timestep Shifting. Scales efficiently to high-resolution
+  image synthesis and long-duration video generation with fewer inference
+  steps. Supports multi-task video generation with asynchronous timestep
+  scheduling in one unified model.
+tags:
+  - video-generation
+  - image-generation
+  - discrete-diffusion
+  - open-weight
+model:
+  variants:
+    - name: URSA-0.6B-IBQ1024
+      notes: Compact variant for image generation
+    - name: URSA-1.7B-IBQ1024
+      notes: Full variant
+paper:
+  arxiv: "2510.24717"
+  venue: ICLR 2026
+related:
+  - nova

@@ -2,8 +2,12 @@ name: Step-1V / 1.5V / 2V
 slug: step-vl
 lab: stepfun
 type: model
-date: 2024-01-01
-url: https://huggingface.co/stepfun-ai
+date: 2024-03-23
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/stepfun-ai
+  - label: Website
+    url: https://www.stepfun.com
 description: >
   Series of vision-language models capable of understanding images and
   complex documents.
@@ -15,4 +19,4 @@ model:
     - name: Step-1V
     - name: Step-1.5V
     - name: Step-2V
-notes: Date approximate.
+notes: Step-1V launched Mar 2024. Step-1.5V launched at WAIC Jul 2024.

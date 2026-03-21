@@ -2,8 +2,12 @@ name: ABAB 6 / 6.5
 slug: abab-6
 lab: minimax
 type: model
-date: 2024-01-01
-url: https://www.minimax.io
+date: 2024-04-17
+sources:
+  - label: Announcement
+    url: https://www.minimax.io/news/abab65-series
+  - label: Website
+    url: https://www.minimax.io
 description: >
   Transition to Mixture-of-Experts architecture, significantly boosting
   reasoning and math capabilities.
@@ -12,4 +16,4 @@ tags:
   - reasoning
 model:
   architecture: moe
-notes: Date approximate.
+notes: ABAB 6 launched January 2024; ABAB 6.5 released April 17, 2024.

@@ -2,8 +2,14 @@ name: ERNIE 5.0
 slug: ernie-5.0
 lab: baidu
 type: model
-date: 2026-01-01
-url: https://www.baidu.com
+date: 2026-01-22
+sources:
+  - label: Announcement
+    url: https://www.prnewswire.com/news-releases/baidu-unveils-ernie-5-0-and-a-series-of-ai-applications-at-baidu-world-2025--ramps-up-global-push-302614531.html
+  - label: Blog Post
+    url: https://ernie.baidu.com/blog/posts/ernie5.0/
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2602.04705
 description: >
   Most advanced model to date. 2.4 trillion total parameters with ultra-sparse
   MoE (<3% activation ratio) for extreme inference efficiency. Native
@@ -16,4 +22,4 @@ tags:
 model:
   architecture: moe
   parameters: 2.4T
-notes: Date approximate.
+notes: Previewed at Baidu World 2025 on November 13, 2025. Official release January 22, 2026.

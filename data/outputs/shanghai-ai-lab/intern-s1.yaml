@@ -3,7 +3,13 @@ slug: intern-s1
 lab: shanghai-ai-lab
 type: model
 date: 2026-02-04
-url: https://huggingface.co/internlm
+sources:
+  - label: Announcement
+    url: https://shanghaiopen.org.cn/en/blog/2026/02/16/towards-ai4s-2-0-shanghai-ai-lab-open-sources-intern-s1-pro-the-1-trillion-parameter-moe-scientific-large-model/
+  - label: HuggingFace
+    url: https://huggingface.co/internlm
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.15763
 description: >
   Landmark 1-trillion parameter MoE scientific model, activating only 22B
   parameters per inference. Designed for autonomous scientific research.

@@ -2,8 +2,12 @@ name: FlashMLA
 slug: flashmla
 lab: deepseek
 type: library
-date: 2025-02-01
-url: https://github.com/deepseek-ai/FlashMLA
+date: 2025-02-24
+sources:
+  - label: GitHub
+    url: https://github.com/deepseek-ai/FlashMLA
+  - label: Announcement
+    url: https://www.analyticsvidhya.com/blog/2025/02/deepseek-flashmla/
 description: >
   Highly optimized kernels for Multi-head Latent Attention.
 tags:
@@ -12,4 +16,3 @@ tags:
   - attention
 library:
   github: https://github.com/deepseek-ai/FlashMLA
-notes: Date approximate.

@@ -3,7 +3,11 @@ slug: kuaisearch
 lab: kuaishou
 type: dataset
 date: 2026-02-01
-url: https://github.com/kuaishou-langlab
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.11518
+  - label: GitHub
+    url: https://github.com/benchen4395/KuaiSearch
 description: >
   Large-scale e-commerce search dataset covering recall, ranking, and relevance.
 tags:

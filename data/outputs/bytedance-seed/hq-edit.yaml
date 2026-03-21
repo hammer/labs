@@ -2,12 +2,18 @@ name: HQ-Edit
 slug: hq-edit
 lab: bytedance-seed
 type: dataset
-date: 2024-04-01
-url: https://huggingface.co/ByteDance-Seed
+date: 2024-04-15
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2404.09990
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/UCSC-VLAA/HQ-Edit
+  - label: GitHub
+    url: https://github.com/UCSC-VLAA/HQ-Edit
 description: >
   High-quality dataset for instruction-based image editing.
 tags:
   - vision
   - generation
   - editing
-notes: Date approximate.
+notes: Accepted at ICLR 2025.

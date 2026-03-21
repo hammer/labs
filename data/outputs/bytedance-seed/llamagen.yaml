@@ -2,8 +2,14 @@ name: LlamaGen
 slug: llamagen
 lab: bytedance-seed
 type: model
-date: 2024-06-01
-url: https://github.com/FoundationVision/LlamaGen
+date: 2024-06-10
+sources:
+  - label: GitHub
+    url: https://github.com/FoundationVision/LlamaGen
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2406.06525
+  - label: Project Page
+    url: https://peizesun.github.io/llamagen/
 description: >
   Applying the Llama architecture to image generation.
 tags:
@@ -12,4 +18,3 @@ tags:
   - autoregressive
 library:
   github: https://github.com/FoundationVision/LlamaGen
-notes: Date approximate.

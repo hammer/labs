@@ -3,7 +3,9 @@ slug: flashinfer-paddle
 lab: baidu
 type: library
 date: 2026-01-01
-url: https://github.com/PaddlePaddle
+sources:
+  - label: GitHub
+    url: https://github.com/PaddlePaddle
 description: >
   Kernel library for high-speed LLM serving on PaddlePaddle.
 tags:

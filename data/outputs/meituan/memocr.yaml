@@ -2,11 +2,12 @@ name: MemOCR
 slug: memocr
 lab: meituan
 type: library
-date: 2026-01-01
-url: https://github.com/meituan
+date: 2026-01-29
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2601.21468
 description: >
   OCR-driven visual memory agent library.
 tags:
   - ocr
   - agentic
-notes: Date approximate.

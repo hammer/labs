@@ -2,8 +2,10 @@ name: Qwen2.5-Max
 slug: qwen2.5-max
 lab: alibaba-qwen
 type: model
-date: 2025-01-01
-url: https://qwen.ai/blog
+date: 2025-01-29
+sources:
+  - label: Blog Post
+    url: https://qwenlm.github.io/blog/qwen2.5-max/
 description: >
   Proprietary-grade MoE model served via API, competing with GPT-4o.
 tags:
@@ -11,4 +13,3 @@ tags:
   - proprietary
 model:
   architecture: moe
-notes: Date approximate.

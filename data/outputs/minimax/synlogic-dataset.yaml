@@ -2,8 +2,12 @@ name: SynLogic Dataset
 slug: synlogic-dataset
 lab: minimax
 type: dataset
-date: 2025-06-01
-url: https://huggingface.co/MiniMaxAI
+date: 2025-05-26
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/MiniMaxAI/SynLogic
+  - label: GitHub
+    url: https://github.com/MiniMax-AI/SynLogic
 description: >
   Publicly available set of verifiable reasoning trajectories.
 tags:
@@ -11,4 +15,3 @@ tags:
   - training-data
 related:
   - synlogic
-notes: Date approximate.

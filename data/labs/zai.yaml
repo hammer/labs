@@ -1,6 +1,7 @@
 name: Z.ai
 slug: zai
 url: https://z.ai
+founded: "2019"
 huggingface: https://huggingface.co/zai-org
 github: https://github.com/THUDM
 region: china

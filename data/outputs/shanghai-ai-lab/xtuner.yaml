@@ -2,8 +2,14 @@ name: XTuner
 slug: xtuner
 lab: shanghai-ai-lab
 type: library
-date: 2023-07-01
-url: https://github.com/InternLM/xtuner
+date: 2023-09-01
+sources:
+  - label: GitHub
+    url: https://github.com/InternLM/xtuner
+  - label: Announcement
+    url: https://openmmlab.medium.com/announcing-xtuner-an-efficient-finetune-toolkit-for-llm-757ddc9587c3
+  - label: Documentation
+    url: https://pypi.org/project/xtuner/
 description: >
   Lightweight fine-tuning toolkit integrating core PEFT methods like LoRA and QLoRA.
 tags:
@@ -12,4 +18,4 @@ tags:
   - framework
 library:
   github: https://github.com/InternLM/xtuner
-notes: Date approximate.
+notes: Announced Sep 1, 2023.

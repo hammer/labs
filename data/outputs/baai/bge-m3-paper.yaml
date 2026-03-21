@@ -2,8 +2,12 @@ name: "BGE-M3: Unified Multilingual and Multi-Functional Retrieval"
 slug: bge-m3-paper
 lab: baai
 type: paper
-date: 2024-02-01
-url: https://arxiv.org/abs/2402.03216
+date: 2024-02-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.03216
+  - label: HuggingFace
+    url: https://huggingface.co/BAAI/bge-m3
 description: >
   Paper on unified multilingual, multi-functional, multi-granularity embeddings.
 tags:
@@ -14,4 +18,3 @@ paper:
   arxiv: "2402.03216"
 related:
   - bge
-notes: Date approximate.

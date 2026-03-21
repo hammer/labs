@@ -2,8 +2,14 @@ name: Infinity & InfinityStar
 slug: infinity
 lab: bytedance-seed
 type: model
-date: 2025-01-01
-url: https://github.com/FoundationVision/Infinity
+date: 2024-12-05
+sources:
+  - label: GitHub
+    url: https://github.com/FoundationVision/Infinity
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2412.04431
+  - label: Project Page
+    url: https://foundationvision.github.io/infinity.project/
 description: >
   Scaling bitwise autoregressive modeling for high-resolution image and
   spacetime (video) synthesis.
@@ -13,4 +19,4 @@ tags:
   - video
 library:
   github: https://github.com/FoundationVision/Infinity
-notes: Date approximate.
+notes: Accepted as CVPR 2025 Oral.

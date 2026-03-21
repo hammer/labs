@@ -2,12 +2,16 @@ name: ERNIE 3.5
 slug: ernie-3.5
 lab: baidu
 type: model
-date: 2023-06-01
-url: https://www.baidu.com
+date: 2023-08-31
+sources:
+  - label: Announcement
+    url: https://www.prnewswire.com/news-releases/baidu-unveils-ernie-bot-the-latest-generative-ai-mastering-chinese-language-and-multi-modal-generation-301774240.html
+  - label: Blog Post
+    url: https://www.technologyreview.com/2023/03/16/1069919/baidu-ernie-bot-chatgpt-launch/
 description: >
   Integrated with ERNIE Bot (Wenxin Yiyan). At release, claimed performance
   superior to ChatGPT (GPT-3.5) and competitive with GPT-4.
 tags:
   - proprietary
   - frontier
-notes: Date approximate.
+notes: Public release date August 31, 2023. Initial invited testing began March 16, 2023.

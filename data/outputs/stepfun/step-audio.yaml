@@ -2,8 +2,14 @@ name: Step-Audio / Step-Audio2
 slug: step-audio
 lab: stepfun
 type: model
-date: 2025-06-01
-url: https://huggingface.co/stepfun-ai
+date: 2025-02-17
+sources:
+  - label: GitHub
+    url: https://github.com/stepfun-ai/Step-Audio
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.11946
+  - label: HuggingFace
+    url: https://huggingface.co/stepfun-ai
 description: >
   Multimodal audio models supporting 16.7Hz semantic tokenization and real-time
   "omni" interaction (speech-to-speech).
@@ -15,4 +21,4 @@ model:
   variants:
     - name: Step-Audio
     - name: Step-Audio2
-notes: Date approximate.
+notes: Step-Audio released Feb 17, 2025. Step-Audio 2 released Jul 23, 2025.

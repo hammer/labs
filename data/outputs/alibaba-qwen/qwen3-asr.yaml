@@ -3,7 +3,9 @@ slug: qwen3-asr
 lab: alibaba-qwen
 type: model
 date: 2026-01-29
-url: https://arxiv.org/abs/2601.21337
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2601.21337
 description: >
   Speech recognition for 52 languages. Includes forced alignment model.
   SOTA among open-source ASR.

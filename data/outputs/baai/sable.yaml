@@ -1,0 +1,26 @@
+name: Sable
+slug: sable
+lab: baai
+type: model
+date: 2025-03-18
+sources:
+  - label: Paper (Briefings in Bioinformatics)
+    url: https://academic.oup.com/bib/article/26/2/bbaf120/8101508
+  - label: GitHub
+    url: https://github.com/ocx-lab/Sable
+description: >
+  Open-source protein representation learning framework using self-supervised
+  sequence-structure collaborative learning. Features a robust structural
+  encoder with distance encoding for direct information exchange between
+  backbone atoms and relative position encoding (RPE) for rotational and
+  translational invariance. Combines atomic-level and residue-level
+  structural information. Uses masked token prediction and atom distance
+  restoration for self-supervised learning. Published in Briefings in
+  Bioinformatics.
+tags:
+  - biocomputing
+  - protein-structure
+  - representation-learning
+  - open-source
+related:
+  - opencomplex

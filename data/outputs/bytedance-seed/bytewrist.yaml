@@ -2,11 +2,14 @@ name: ByteWrist
 slug: bytewrist
 lab: bytedance-seed
 type: model
-date: 2025-06-01
-url: https://huggingface.co/ByteDance-Seed
+date: 2025-09-23
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2509.18084
+  - label: Project Page
+    url: https://bytewrist.github.io/
 description: >
   Robotic wrist design and learning framework for flexible, anthropomorphic motion.
 tags:
   - robotics
   - embodied
-notes: Date approximate.

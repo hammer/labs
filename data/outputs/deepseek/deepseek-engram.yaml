@@ -3,8 +3,9 @@ slug: deepseek-engram
 lab: deepseek
 type: paper
 date: 2026-01-12
-url: https://arxiv.org/abs/2601.07372
-links:
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.07372
   - label: Video from Prompt Engineering
     url: https://www.youtube.com/watch?v=zt1jlTPCaps
 description: >

@@ -2,8 +2,14 @@ name: Qianfan-OCR
 slug: qianfan-ocr
 lab: baidu
 type: paper
-date: 2026-03-01
-url: https://www.baidu.com
+date: 2026-03-18
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2603.13398
+  - label: HuggingFace
+    url: https://huggingface.co/baidu/Qianfan-OCR
+  - label: Blog Post
+    url: https://www.marktechpost.com/2026/03/18/baidu-qianfan-team-releases-qianfan-ocr-a-4b-parameter-unified-document-intelligence-model/
 description: >
   Technical paper on a 4B parameter vision-language model using
   Layout-as-Thought mechanisms.
@@ -12,4 +18,3 @@ tags:
   - vlm
 model:
   parameters: 4B
-notes: Date approximate.

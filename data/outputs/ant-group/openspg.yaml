@@ -3,7 +3,9 @@ slug: openspg
 lab: ant-group
 type: library
 date: 2023-09-01
-url: https://github.com/OpenSPG/openspg
+sources:
+  - label: GitHub
+    url: https://github.com/OpenSPG/openspg
 description: >
   Tools for Knowledge Graph (SPG) and Large-Scale Graph Learning.
 tags:

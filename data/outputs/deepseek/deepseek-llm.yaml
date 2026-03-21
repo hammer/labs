@@ -2,8 +2,12 @@ name: DeepSeek-LLM
 slug: deepseek-llm
 lab: deepseek
 type: model
-date: 2023-11-01
-url: https://huggingface.co/deepseek-ai/deepseek-llm-67b-chat
+date: 2023-11-29
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/deepseek-llm-67b-chat
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepSeek-LLM
 description: >
   First general-purpose 67B model, outperforming Llama 2 at the time.
 tags:
@@ -11,4 +15,3 @@ tags:
 model:
   architecture: dense
   parameters: 67B
-notes: Date approximate.

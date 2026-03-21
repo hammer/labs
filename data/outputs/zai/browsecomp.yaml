@@ -3,7 +3,9 @@ slug: browsecomp-zai
 lab: zai
 type: dataset
 date: 2025-06-01
-url: https://z.ai
+sources:
+  - label: Website
+    url: https://z.ai
 description: >
   Benchmark for evaluating an agent's ability to browse the web and synthesize
   diverse sources.

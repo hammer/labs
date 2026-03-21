@@ -2,12 +2,15 @@ name: MobileVLM
 slug: mobilevlm
 lab: xiaomi
 type: model
-date: 2024-01-01
-url: https://huggingface.co/XiaomiMiMo
+date: 2024-09-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2409.14818
+  - label: GitHub
+    url: https://github.com/XiaoMi/mobilevlm
 description: >
   Vision-language model specialized in understanding mobile UI/UX layouts.
 tags:
   - vlm
   - mobile
   - on-device
-notes: Date approximate.

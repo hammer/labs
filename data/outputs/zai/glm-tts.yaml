@@ -3,7 +3,9 @@ slug: glm-tts
 lab: zai
 type: model
 date: 2025-12-16
-url: https://arxiv.org/abs/2512.14291
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.14291
 description: >
   Text-to-speech model from the GLM family.
 tags:

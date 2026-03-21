@@ -73,3 +73,36 @@ const { title } = Astro.props;
     padding-bottom: 3rem;
   }
 </style>
+
+<script>
+  let waitingForG = false;
+  let gTimer: ReturnType<typeof setTimeout> | null = null;
+
+  document.addEventListener('keydown', (e) => {
+    if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+    if (e.key === 'g') {
+      if (!waitingForG) {
+        waitingForG = true;
+        gTimer = setTimeout(() => { waitingForG = false; }, 500);
+      }
+      return;
+    }
+
+    if (waitingForG) {
+      waitingForG = false;
+      if (gTimer) clearTimeout(gTimer);
+      if (e.key === 'h') {
+        e.preventDefault();
+        if (window.location.pathname !== '/') window.location.href = '/';
+      } else if (e.key === 't') {
+        e.preventDefault();
+        if (window.location.pathname !== '/timeline') window.location.href = '/timeline';
+      }
+    } else {
+      waitingForG = false;
+      if (gTimer) clearTimeout(gTimer);
+    }
+  });
+</script>

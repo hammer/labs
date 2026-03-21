@@ -2,8 +2,12 @@ name: Qwen-Audio Series
 slug: qwen-audio
 lab: alibaba-qwen
 type: model
-date: 2023-11-01
-url: https://huggingface.co/Qwen
+date: 2023-11-14
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2311.07919
+  - label: HuggingFace
+    url: https://huggingface.co/Qwen/Qwen-Audio
 description: >
   Audio model family. Evolution from Qwen-Audio (2023) to Qwen2-Audio-7B
   (Aug 2024) to Qwen3-ASR & ForcedAligner (Jan 2026).
@@ -21,4 +25,3 @@ model:
       notes: Released Jan 2026
     - name: Qwen3-ForcedAligner
       notes: Released Jan 2026
-notes: Date approximate.

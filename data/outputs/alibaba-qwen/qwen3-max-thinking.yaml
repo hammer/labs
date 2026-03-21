@@ -2,8 +2,10 @@ name: Qwen3-Max-Thinking
 slug: qwen3-max-thinking
 lab: alibaba-qwen
 type: model
-date: 2026-01-25
-url: https://qwen.ai/blog?id=qwen3-max-thinking
+date: 2026-01-27
+sources:
+  - label: Blog Post
+    url: https://qwen.ai/blog?id=qwen3-max-thinking
 description: API-only reasoning model.
 tags:
   - reasoning

@@ -3,7 +3,9 @@ slug: humansense-benchmark
 lab: ant-group
 type: dataset
 date: 2025-06-01
-url: https://huggingface.co/inclusionAI
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/inclusionAI
 description: >
   Evaluation set for human-centric AI and embodied intelligence.
 tags:

@@ -2,12 +2,17 @@ name: MiniMax-M2.1
 slug: minimax-m2.1
 lab: minimax
 type: model
-date: 2025-12-01
-url: https://huggingface.co/MiniMaxAI
+date: 2025-12-23
+sources:
+  - label: Announcement
+    url: https://www.minimax.io/news/minimax-m21
+  - label: HuggingFace
+    url: https://huggingface.co/MiniMaxAI/MiniMax-M2.1
+  - label: GitHub
+    url: https://github.com/MiniMax-AI/MiniMax-M2.1
 description: >
   Enhanced for multi-language programming (Rust, Java, Go) and complex agentic
   scaffolding.
 tags:
   - coding
   - agentic
-notes: Date approximate.

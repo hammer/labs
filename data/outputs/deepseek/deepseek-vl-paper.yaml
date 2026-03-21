@@ -3,7 +3,11 @@ slug: deepseek-vl-paper
 lab: deepseek
 type: paper
 date: 2024-03-08
-url: https://arxiv.org/abs/2403.05525
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2403.05525
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepSeek-VL
 description: >
   Vision-language model with dynamic tiling encoder for high-resolution images.
 tags:

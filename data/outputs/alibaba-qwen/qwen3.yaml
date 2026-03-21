@@ -2,8 +2,12 @@ name: Qwen3
 slug: qwen3
 lab: alibaba-qwen
 type: model
-date: 2025-04-01
-url: https://qwen.ai/blog
+date: 2025-04-29
+sources:
+  - label: Blog Post
+    url: https://qwenlm.github.io/blog/qwen3/
+  - label: GitHub
+    url: https://github.com/QwenLM/Qwen3
 description: >
   Introduced a massive 36-trillion token pretraining dataset. Dense: 0.6B,
   1.7B, 4B, 8B, 14B, 32B. MoE: 30B-A3B and flagship 235B-A22B.
@@ -35,4 +39,3 @@ model:
       notes: MoE flagship
 related:
   - qwen3-technical-report
-notes: Date approximate.

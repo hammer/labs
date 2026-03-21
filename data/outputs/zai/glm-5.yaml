@@ -3,12 +3,15 @@ slug: glm-5
 lab: zai
 type: model
 date: 2026-02-11
-url: https://z.ai/blog/glm-5
-links:
-  - label: Paper
+sources:
+  - label: Blog Post
+    url: https://z.ai/blog/glm-5
+  - label: Paper (arXiv)
     url: https://arxiv.org/abs/2602.15763
-  - label: Sebastian Raschka analysis
-    url: https://magazine.sebastianraschka.com/i/168650848/21-glm-5
+  - label: GitHub
+    url: https://github.com/zai-org/GLM-5
+  - label: HuggingFace
+    url: https://huggingface.co/zai-org/GLM-5
 description: >
   Most powerful Z.ai model. 744B total params (44B active) via MoE with 256
   experts. Hybrid Attention and Multi-Token Prediction. First frontier-scale

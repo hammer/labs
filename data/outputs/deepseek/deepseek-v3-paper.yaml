@@ -3,7 +3,9 @@ slug: deepseek-v3-paper
 lab: deepseek
 type: paper
 date: 2024-12-27
-url: https://arxiv.org/abs/2412.19437
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.19437
 description: >
   Technical report for the landmark 671B MoE model with Multi-Token Prediction
   and FP8 mixed-precision training.

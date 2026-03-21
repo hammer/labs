@@ -2,8 +2,10 @@ name: Seed Diffusion
 slug: seed-diffusion
 lab: bytedance-seed
 type: model
-date: 2025-07-01
-url: https://huggingface.co/ByteDance-Seed
+date: 2025-08-05
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2508.02193
 description: >
   Experimental diffusion-based language model capable of inference speeds
   exceeding 2,100 tokens/s.
@@ -11,4 +13,3 @@ tags:
   - diffusion
   - efficiency
   - research
-notes: Date approximate.

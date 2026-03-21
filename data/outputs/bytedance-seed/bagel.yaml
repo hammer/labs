@@ -2,8 +2,16 @@ name: BAGEL
 slug: bagel
 lab: bytedance-seed
 type: model
-date: 2025-06-01
-url: https://huggingface.co/ByteDance-Seed
+date: 2025-05-20
+sources:
+  - label: GitHub
+    url: https://github.com/ByteDance-Seed/Bagel
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2505.14683
+  - label: HuggingFace
+    url: https://huggingface.co/ByteDance-Seed/BAGEL-7B-MoT
+  - label: Blog Post
+    url: https://seed.bytedance.com/en/blog/seed-research-bagel-the-open-source-unified-multimodal-model-an-all-in-one-model
 description: >
   14B MoE unified multimodal model integrating vision-understanding and
   image-generation into a single framework.
@@ -15,4 +23,3 @@ tags:
 model:
   architecture: moe
   parameters: 14B
-notes: Date approximate.

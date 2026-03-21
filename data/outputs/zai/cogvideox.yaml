@@ -3,7 +3,11 @@ slug: cogvideox
 lab: zai
 type: model
 date: 2024-08-12
-url: https://arxiv.org/abs/2408.06072
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2408.06072
+  - label: GitHub
+    url: https://github.com/zai-org/CogVideo
 description: >
   Text-to-video diffusion model with expert transformer architecture.
 tags:

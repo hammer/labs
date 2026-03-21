@@ -1,6 +1,7 @@
 name: Xiaomi
 slug: xiaomi
 url: https://mimo.xiaomi.com
+founded: 2010-04
 huggingface: https://huggingface.co/XiaomiMiMo
 github: https://github.com/XiaomiMiMo
 region: china

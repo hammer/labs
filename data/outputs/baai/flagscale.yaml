@@ -1,0 +1,25 @@
+name: FlagScale
+slug: flagscale
+lab: baai
+type: library
+date: 2024-06-01
+sources:
+  - label: GitHub
+    url: https://github.com/FlagOpen/FlagScale
+description: >
+  End-to-end distributed training and inference framework for large models
+  built on open-source projects (Megatron-LM, vLLM). Supports pooled
+  training across 8+ different chip architectures, attaining 85%+ of
+  upper-bound performance in hybrid training. Provides unified runner for
+  training, inference, and serving via Hydra-based configuration. Used as
+  the training backbone for OpenSeek, RoboBrain 2.0, and other BAAI models.
+  Actively developed through 2025.
+tags:
+  - infrastructure
+  - training
+  - open-source
+  - multi-chip
+library:
+  github: https://github.com/FlagOpen/FlagScale
+related:
+  - openseek

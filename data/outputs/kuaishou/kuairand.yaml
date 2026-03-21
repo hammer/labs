@@ -2,12 +2,17 @@ name: KuaiRand
 slug: kuairand
 lab: kuaishou
 type: dataset
-date: 2026-01-01
-url: https://github.com/kuaishou-langlab
+date: 2022-08-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2208.08696
+  - label: GitHub
+    url: https://github.com/chongminggao/KuaiRand
+  - label: Website
+    url: https://kuairand.com/
 description: >
   Unbiased sequential recommendation dataset with millions of "randomly exposed"
   interactions.
 tags:
   - recommendation
   - benchmark
-notes: Date approximate.

@@ -2,12 +2,15 @@ name: Image-01
 slug: image-01
 lab: minimax
 type: model
-date: 2025-01-01
-url: https://www.minimax.io
+date: 2025-02-28
+sources:
+  - label: Announcement
+    url: https://www.minimax.io/news/image-01
+  - label: "API Docs"
+    url: https://platform.minimax.io/docs/release-notes/models
 description: >
   Text-to-image model designed for cinematic-quality visuals at extremely low cost.
 tags:
   - generation
   - vision
   - efficiency
-notes: Date approximate.

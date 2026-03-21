@@ -2,8 +2,12 @@ name: Qwen-7B / 14B
 slug: qwen-7b-14b
 lab: alibaba-qwen
 type: model
-date: 2023-08-01
-url: https://huggingface.co/Qwen/Qwen-7B
+date: 2023-08-03
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/Qwen/Qwen-7B
+  - label: GitHub
+    url: https://github.com/QwenLM/Qwen
 description: >
   First official open-source LLMs under the Qwen brand.
 tags:
@@ -15,4 +19,3 @@ model:
       parameters: 7B
     - name: Qwen-14B
       parameters: 14B
-notes: Date approximate.

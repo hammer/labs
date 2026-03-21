@@ -2,8 +2,14 @@ name: Ling-1T
 slug: ling-1t
 lab: ant-group
 type: model
-date: 2025-10-01
-url: https://huggingface.co/inclusionAI
+date: 2025-10-09
+sources:
+  - label: Announcement
+    url: https://www.businesswire.com/news/home/20251009240721/en/Ant-Group-Unveils-Ling-AI-Model-Family-and-Launches-Trillion-Parameter-Language-Model-Ling-1T
+  - label: HuggingFace
+    url: https://huggingface.co/inclusionAI/Ling-1T
+  - label: GitHub
+    url: https://github.com/inclusionAI/Ling
 description: >
   1-trillion parameter MoE flagship with ~50B active parameters. Part of the
   Ling (non-thinking/general) series.
@@ -15,4 +21,3 @@ model:
   architecture: moe
   parameters: 1T
   active_parameters: 50B
-notes: Date approximate.

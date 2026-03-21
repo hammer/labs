@@ -2,8 +2,12 @@ name: Kata Containers
 slug: kata-containers
 lab: ant-group
 type: library
-date: 2018-05-01
-url: https://github.com/kata-containers/kata-containers
+date: 2018-03-01
+sources:
+  - label: GitHub
+    url: https://github.com/kata-containers/kata-containers
+  - label: Website
+    url: https://katacontainers.io/
 description: >
   Secure container technology co-founded by Ant employees, used for isolating
   AI workloads.
@@ -13,4 +17,4 @@ tags:
   - containers
 library:
   github: https://github.com/kata-containers/kata-containers
-notes: Date approximate.
+notes: First release March 2018.

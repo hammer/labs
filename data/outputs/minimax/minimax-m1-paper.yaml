@@ -3,7 +3,11 @@ slug: minimax-m1-paper
 lab: minimax
 type: paper
 date: 2025-06-16
-url: https://arxiv.org/abs/2506.13585
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2506.13585
+  - label: HuggingFace
+    url: https://huggingface.co/papers/2506.13585
 description: >
   Technical report for the M1 hybrid-attention reasoning model (456B/45.9B active).
 tags:

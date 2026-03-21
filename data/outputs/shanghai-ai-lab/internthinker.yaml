@@ -2,8 +2,12 @@ name: InternThinker
 slug: internthinker
 lab: shanghai-ai-lab
 type: model
-date: 2025-11-01
-url: https://huggingface.co/internlm
+date: 2024-11-01
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/internlm
+  - label: Website
+    url: https://www.aibase.com/tool/34692
 description: >
   Specialized reasoning model utilizing long-term thought chains and
   self-correction, similar to OpenAI's o1 paradigm.

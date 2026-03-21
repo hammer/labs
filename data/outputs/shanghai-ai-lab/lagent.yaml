@@ -2,8 +2,12 @@ name: Lagent & AgentLego
 slug: lagent
 lab: shanghai-ai-lab
 type: library
-date: 2023-08-01
-url: https://github.com/InternLM/lagent
+date: 2023-08-22
+sources:
+  - label: GitHub
+    url: https://github.com/InternLM/lagent
+  - label: Documentation
+    url: https://pypi.org/project/lagent/
 description: >
   Frameworks for building LLM-based agents that can use external tools and APIs.
 tags:
@@ -11,4 +15,4 @@ tags:
   - framework
 library:
   github: https://github.com/InternLM/lagent
-notes: Date approximate.
+notes: PyPI v0.1.1 released Aug 22, 2023.

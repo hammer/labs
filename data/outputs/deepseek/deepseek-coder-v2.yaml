@@ -2,8 +2,14 @@ name: DeepSeek-Coder-V2
 slug: deepseek-coder-v2
 lab: deepseek
 type: model
-date: 2024-06-01
-url: https://arxiv.org/abs/2406.11931
+date: 2024-06-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.11931
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepSeek-Coder-V2
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Instruct
 description: >
   First open-source MoE code model to beat GPT-4 Turbo on coding benchmarks,
   supporting 338+ programming languages.
@@ -15,4 +21,3 @@ model:
   architecture: moe
 paper:
   arxiv: "2406.11931"
-notes: Date approximate.

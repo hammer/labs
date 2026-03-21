@@ -2,8 +2,10 @@ name: ERNIE 1.0
 slug: ernie-1.0
 lab: baidu
 type: model
-date: 2019-04-01
-url: https://arxiv.org/abs/1904.09223
+date: 2019-04-19
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/1904.09223
 description: >
   Introduced knowledge integration into language modeling, surpassing BERT
   on Chinese NLP tasks.
@@ -12,4 +14,3 @@ tags:
   - chinese
 paper:
   arxiv: "1904.09223"
-notes: Date approximate.

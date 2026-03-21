@@ -2,8 +2,14 @@ name: LLaDA 2.0
 slug: llada-2.0
 lab: ant-group
 type: paper
-date: 2025-12-20
-url: https://arxiv.org/abs/2512.15745
+date: 2025-12-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.15745
+  - label: GitHub
+    url: https://github.com/inclusionAI/LLaDA2.X
+  - label: HuggingFace
+    url: https://huggingface.co/inclusionAI/LLaDA2.0-mini-preview
 description: >
   Scales diffusion language models to 100B by converting pretrained AR models.
   Includes LLaDA2.0-mini (16B) and LLaDA2.0-flash (100B).

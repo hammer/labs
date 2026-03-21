@@ -2,8 +2,10 @@ name: qwen.cpp
 slug: qwen-cpp
 lab: alibaba-qwen
 type: library
-date: 2024-01-01
-url: https://github.com/QwenLM/qwen.cpp
+date: 2023-09-25
+sources:
+  - label: GitHub
+    url: https://github.com/QwenLM/qwen.cpp
 description: >
   C++ implementation for efficient local inference of Qwen models.
 tags:
@@ -11,4 +13,4 @@ tags:
   - efficiency
 library:
   github: https://github.com/QwenLM/qwen.cpp
-notes: Date approximate.
+notes: Repository archived on December 6, 2024.

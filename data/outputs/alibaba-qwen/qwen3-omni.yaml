@@ -3,7 +3,9 @@ slug: qwen3-omni
 lab: alibaba-qwen
 type: model
 date: 2025-09-22
-url: https://arxiv.org/abs/2509.17765
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2509.17765
 description: >
   Unified multimodal model (text, image, audio, video). Thinker-Talker MoE
   architecture. SOTA on 32/36 audio benchmarks.

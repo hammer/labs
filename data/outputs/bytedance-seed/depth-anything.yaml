@@ -2,8 +2,14 @@ name: Depth Anything
 slug: depth-anything
 lab: bytedance-seed
 type: model
-date: 2024-01-01
-url: https://github.com/DepthAnything/Depth-Anything-V2
+date: 2024-01-19
+sources:
+  - label: GitHub
+    url: https://github.com/DepthAnything/Depth-Anything-V2
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2401.10891
+  - label: Project Page
+    url: https://depth-anything.github.io/
 description: >
   Highly popular foundation model for monocular depth estimation.
 tags:
@@ -12,4 +18,3 @@ tags:
   - open-weight
 library:
   github: https://github.com/DepthAnything/Depth-Anything-V2
-notes: Date approximate.

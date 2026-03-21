@@ -2,8 +2,14 @@ name: Groma
 slug: groma
 lab: bytedance-seed
 type: model
-date: 2024-06-01
-url: https://github.com/FoundationVision/Groma
+date: 2024-04-19
+sources:
+  - label: GitHub
+    url: https://github.com/FoundationVision/Groma
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2404.13013
+  - label: Project Page
+    url: https://groma-mllm.github.io/
 description: >
   Multimodal model specialized in localized visual grounding and reasoning.
 tags:
@@ -12,4 +18,4 @@ tags:
   - grounding
 library:
   github: https://github.com/FoundationVision/Groma
-notes: Date approximate.
+notes: Published at ECCV 2024.

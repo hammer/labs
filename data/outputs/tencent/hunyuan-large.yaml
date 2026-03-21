@@ -3,7 +3,13 @@ slug: hunyuan-large
 lab: tencent
 type: model
 date: 2024-11-04
-url: https://arxiv.org/abs/2411.02265
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.02265
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/Tencent-Hunyuan-Large
+  - label: HuggingFace
+    url: https://huggingface.co/tencent/Tencent-Hunyuan-Large
 description: >
   Open-source MoE model with 52B activated parameters out of 389B total.
   256K context.

@@ -2,8 +2,12 @@ name: LongCat-Flash Technical Report
 slug: longcat-flash-report
 lab: meituan
 type: paper
-date: 2025-08-01
-url: https://github.com/meituan-longcat/LongCat-Flash-Chat/blob/main/tech_report.pdf
+date: 2025-09-01
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2509.01322
+  - label: GitHub
+    url: https://github.com/meituan-longcat/LongCat-Flash-Chat
 description: >
   Details the "Zero-computation Experts" mechanism for dynamic budget allocation.
 tags:
@@ -11,4 +15,3 @@ tags:
   - efficiency
 related:
   - longcat-flash
-notes: Date approximate.

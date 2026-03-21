@@ -3,7 +3,9 @@ slug: cogvlm-paper
 lab: zai
 type: paper
 date: 2023-11-06
-url: https://arxiv.org/abs/2311.03079
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2311.03079
 description: >
   Foundational paper for the CogVLM vision-language model series.
 tags:

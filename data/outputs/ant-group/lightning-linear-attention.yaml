@@ -2,8 +2,12 @@ name: Lightning Linear Attention
 slug: lightning-linear-attention
 lab: ant-group
 type: paper
-date: 2025-06-01
-url: https://huggingface.co/inclusionAI
+date: 2024-01-09
+sources:
+  - label: "Lightning Attention-2 Paper (arXiv)"
+    url: https://arxiv.org/abs/2401.04658
+  - label: "Efficient LM Paper (arXiv)"
+    url: https://arxiv.org/abs/2405.17381
 description: >
   Fundamental architectural research allowing the Ling series to process
   massive context windows with minimal memory overhead.
@@ -13,4 +17,3 @@ tags:
   - efficiency
 related:
   - ling-2.5-1t
-notes: Date approximate.

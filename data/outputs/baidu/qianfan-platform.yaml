@@ -2,8 +2,12 @@ name: Qianfan Platform
 slug: qianfan-platform
 lab: baidu
 type: announcement
-date: 2023-09-01
-url: https://www.baidu.com
+date: 2023-03-27
+sources:
+  - label: Announcement
+    url: https://technode.com/2023/03/28/baidu-releases-enterprise-level-large-model-platform-wenxin-qianfan/
+  - label: Blog Post
+    url: https://www.cnbc.com/2023/09/05/baidu-launches-more-ai-apps-after-ernie-chatbot-gets-public-approval.html
 description: >
   Baidu AI Cloud's one-stop model-as-a-service platform for developers to
   fine-tune and deploy ERNIE models.
@@ -11,4 +15,4 @@ tags:
   - platform
   - infrastructure
   - serving
-notes: Date approximate.
+notes: Initial launch March 27, 2023. Qianfan AppBuilder unveiled October 17, 2023.

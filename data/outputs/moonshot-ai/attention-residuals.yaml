@@ -2,11 +2,14 @@ name: Attention Residuals
 slug: attention-residuals
 lab: moonshot-ai
 type: paper
-date: 2026-03-01
-url: https://www.moonshot.cn
+date: 2026-03-16
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2603.15031
+  - label: GitHub
+    url: https://github.com/MoonshotAI/Attention-Residuals
 description: >
   Paper proposing a drop-in replacement for residual connections to improve scaling.
 tags:
   - architecture
   - scaling
-notes: Date approximate.

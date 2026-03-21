@@ -2,12 +2,15 @@ name: XRing O1
 slug: xring-o1
 lab: xiaomi
 type: announcement
-date: 2025-01-01
-url: https://www.mi.com
+date: 2025-05-22
+sources:
+  - label: Announcement
+    url: https://www.gizmochina.com/2025/05/15/xiaomi-announces-its-first-self-developed-smartphone-chip-xring-01/
+  - label: Website
+    url: https://www.mi.com/global/discover/article?id=4926
 description: >
   3nm custom AI chip designed for on-device reasoning in Xiaomi 15/16/17 series.
 tags:
   - hardware
   - on-device
   - inference
-notes: Date approximate.

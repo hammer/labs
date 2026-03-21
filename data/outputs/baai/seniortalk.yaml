@@ -1,0 +1,23 @@
+name: SeniorTalk
+slug: seniortalk
+lab: baai
+type: dataset
+date: 2025-03-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.16578
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/BAAI/SeniorTalk
+description: >
+  World's first Chinese conversational speech dataset for the very elderly
+  (aged 75-85). Contains 55.53 hours of high-quality speech from 101
+  natural conversations involving 202 participants across 16 Chinese
+  provinces, balanced for gender, region, and age. Enables ASR, speaker
+  verification, speaker diarization, and speech editing research for
+  under-represented elderly populations. Joint work with Nankai University.
+  CC BY-NC-SA 4.0 license.
+tags:
+  - dataset
+  - speech
+  - chinese
+  - accessibility

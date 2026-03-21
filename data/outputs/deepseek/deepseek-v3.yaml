@@ -3,8 +3,9 @@ slug: deepseek-v3
 lab: deepseek
 type: model
 date: 2024-12-26
-url: https://api-docs.deepseek.com/news/news1226
-links:
+sources:
+  - label: Announcement
+    url: https://api-docs.deepseek.com/news/news1226
   - label: V3-0324 update
     url: https://api-docs.deepseek.com/news/news250325
   - label: Technical Report

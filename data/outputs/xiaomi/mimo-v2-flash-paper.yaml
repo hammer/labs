@@ -2,8 +2,12 @@ name: "MiMo-V2-Flash: Unlocking Extreme Inference Efficiency"
 slug: mimo-v2-flash-paper
 lab: xiaomi
 type: paper
-date: 2025-12-01
-url: https://mimo.xiaomi.com
+date: 2025-12-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.02780
+  - label: GitHub
+    url: https://github.com/XiaomiMiMo/MiMo-V2-Flash
 description: >
   Introduced the hybrid attention mechanism (Sliding Window + Global Attention).
 tags:
@@ -12,4 +16,3 @@ tags:
   - architecture
 related:
   - mimo-v2-flash
-notes: Date approximate.

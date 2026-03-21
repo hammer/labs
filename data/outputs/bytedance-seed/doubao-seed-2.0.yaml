@@ -2,12 +2,15 @@ name: Doubao-Seed-2.0
 slug: doubao-seed-2.0
 lab: bytedance-seed
 type: model
-date: 2026-02-01
-url: https://www.volcengine.com
+date: 2026-02-14
+sources:
+  - label: Announcement
+    url: https://technode.com/2026/02/14/bytedance-releases-doubao-seed-2-0-positions-pro-model-against-gpt-5-2-and-gemini-3-pro/
+  - label: Blog Post
+    url: https://seed.bytedance.com/en/blog/seed2-0-%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83
 description: >
   Most recent general-purpose AGI model designed for complex real-world
   task execution.
 tags:
   - frontier
   - agentic
-notes: Date approximate.

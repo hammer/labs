@@ -3,7 +3,11 @@ slug: opencompass
 lab: shanghai-ai-lab
 type: library
 date: 2023-07-01
-url: https://github.com/open-compass/opencompass
+sources:
+  - label: GitHub
+    url: https://github.com/open-compass/opencompass
+  - label: Documentation
+    url: https://pypi.org/project/opencompass/
 description: >
   Industry standard for evaluating large models across thousands of dimensions.
 tags:

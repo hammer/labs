@@ -2,8 +2,12 @@ name: OmniScale
 slug: omniscale
 lab: bytedance-seed
 type: paper
-date: 2025-12-01
-url: https://huggingface.co/ByteDance-Seed
+date: 2025-08-05
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2508.02317
+  - label: GitHub
+    url: https://github.com/ByteDance-Seed/VeOmni
 description: >
   Research on scaling any-modality training recipes. Accepted at AAAI 2026.
 tags:
@@ -11,4 +15,3 @@ tags:
   - scaling
 paper:
   venue: AAAI 2026
-notes: Date approximate.

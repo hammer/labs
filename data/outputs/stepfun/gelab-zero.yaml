@@ -2,11 +2,17 @@ name: gelab-zero (STEP-GUI)
 slug: gelab-zero
 lab: stepfun
 type: library
-date: 2025-06-01
-url: https://github.com/stepfun-ai
+date: 2025-11-30
+sources:
+  - label: GitHub
+    url: https://github.com/stepfun-ai/gelab-zero
+  - label: Technical Report
+    url: https://arxiv.org/abs/2512.15431
+  - label: HuggingFace
+    url: https://huggingface.co/stepfun-ai/GELab-Zero-4B-preview
 description: >
   High-performance GUI agent for autonomous computer/phone use.
 tags:
   - agentic
   - framework
-notes: Date approximate.
+notes: Engineering infra released Nov 30, 2025. GELab-Zero-4B-preview model released Nov 2025.

@@ -2,8 +2,14 @@ name: MiniCPM-V 4.5
 slug: minicpm-v-4.5
 lab: openbmb
 type: model
-date: 2026-02-01
-url: https://huggingface.co/openbmb
+date: 2025-08-26
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/openbmb/MiniCPM-V-4_5
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM-o
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2509.18154
 description: >
   State-of-the-art for on-device vision, specializing in complex document
   parsing and high-resolution spatial reasoning.
@@ -11,4 +17,3 @@ tags:
   - vlm
   - on-device
   - ocr
-notes: Date approximate.

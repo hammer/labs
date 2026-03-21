@@ -3,10 +3,13 @@ slug: qwen3.5
 lab: alibaba-qwen
 type: model
 date: 2026-02-16
-url: https://qwen.ai/blog?id=qwen3.5
-links:
-  - label: Reuters
-    url: https://www.reuters.com/world/china/alibaba-unveils-new-qwen35-model-agentic-ai-era-2026-02-16/
+sources:
+  - label: Blog Post
+    url: https://qwen.ai/blog?id=qwen3.5
+  - label: GitHub
+    url: https://github.com/QwenLM/Qwen3.5
+  - label: "Technical Report"
+    url: https://qwen.ai/research
 description: >
   Qwen3.5-397B-A17B native VLM built on Qwen3-Next architecture.
   201 languages and dialects supported. 150k to 250k vocabulary expansion.

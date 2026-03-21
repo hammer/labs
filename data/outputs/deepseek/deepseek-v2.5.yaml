@@ -3,7 +3,11 @@ slug: deepseek-v2.5
 lab: deepseek
 type: model
 date: 2024-09-05
-url: https://api-docs.deepseek.com/news/news0905
+sources:
+  - label: Announcement
+    url: https://api-docs.deepseek.com/news/news0905
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V2.5
 description: Combination of V2-0628 and Coder-V2-0724 into a unified model.
 tags:
   - open-weight

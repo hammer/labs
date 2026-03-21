@@ -2,12 +2,17 @@ name: Ming-Flash-Omni-2.0
 slug: ming-flash-omni-2.0
 lab: ant-group
 type: model
-date: 2026-02-01
-url: https://huggingface.co/inclusionAI
+date: 2026-02-11
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/inclusionAI/Ming-flash-omni-2.0
+  - label: GitHub
+    url: https://github.com/inclusionAI/Ming
+  - label: Announcement
+    url: https://www.aibase.com/news/25451
 description: >
   First industry model to unify speech, audio, and music within a single architecture.
 tags:
   - multimodal
   - audio
   - open-weight
-notes: Date approximate.

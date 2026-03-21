@@ -2,8 +2,12 @@ name: KwaiYiiMath
 slug: kwaiyiimath
 lab: kuaishou
 type: model
-date: 2023-10-01
-url: https://huggingface.co/Kwaipilot
+date: 2023-10-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2310.07488
+  - label: HuggingFace
+    url: https://huggingface.co/Kwaipilot
 description: >
   Specialized reasoning variant fine-tuned for mathematical problem-solving.
 tags:
@@ -11,4 +15,3 @@ tags:
   - reasoning
 related:
   - kwaiyii
-notes: Date approximate.

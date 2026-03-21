@@ -2,8 +2,12 @@ name: WMRouter
 slug: wmrouter
 lab: meituan
 type: library
-date: 2018-08-01
-url: https://github.com/meituan/WMRouter
+date: 2018-08-23
+sources:
+  - label: GitHub
+    url: https://github.com/meituan/WMRouter
+  - label: "Blog Post"
+    url: https://tech.meituan.com/2018/08/23/meituan-waimai-android-open-source-routing-framework.html
 description: >
   Component-based Android routing framework.
 tags:
@@ -11,4 +15,3 @@ tags:
   - mobile
 library:
   github: https://github.com/meituan/WMRouter
-notes: Date approximate.

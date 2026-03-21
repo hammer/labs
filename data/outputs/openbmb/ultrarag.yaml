@@ -2,8 +2,10 @@ name: UltraRAG
 slug: ultrarag
 lab: openbmb
 type: library
-date: 2025-01-01
-url: https://github.com/OpenBMB/UltraRAG
+date: 2025-01-23
+sources:
+  - label: GitHub
+    url: https://github.com/OpenBMB/UltraRAG
 description: >
   Low-code framework for building complex and innovative RAG pipelines.
 tags:
@@ -11,4 +13,3 @@ tags:
   - framework
 library:
   github: https://github.com/OpenBMB/UltraRAG
-notes: Date approximate.

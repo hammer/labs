@@ -3,7 +3,11 @@ slug: ring-1t
 lab: ant-group
 type: paper
 date: 2025-10-21
-url: https://arxiv.org/abs/2510.18855
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.18855
+  - label: HuggingFace
+    url: https://huggingface.co/inclusionAI/Ring-1T
 description: Scaling reinforcement learning for trillion-scale thinking model.
 tags:
   - reasoning

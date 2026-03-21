@@ -2,12 +2,13 @@ name: Multimodal Generative Retrieval for Food Delivery
 slug: multimodal-food-retrieval
 lab: meituan
 type: paper
-date: 2026-02-01
-url: https://www.meituan.com
+date: 2025-05-25
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2505.18654
 description: >
   Research on using generative AI to improve item-matching in local services.
 tags:
   - multimodal
   - retrieval
   - delivery
-notes: Date approximate.

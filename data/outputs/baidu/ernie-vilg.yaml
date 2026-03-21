@@ -2,8 +2,10 @@ name: ERNIE-ViLG
 slug: ernie-vilg
 lab: baidu
 type: model
-date: 2021-12-01
-url: https://arxiv.org/abs/2112.15283
+date: 2021-12-31
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2112.15283
 description: >
   10B parameter text-to-image model for high-quality image generation from
   Chinese prompts.
@@ -16,4 +18,3 @@ model:
   parameters: 10B
 paper:
   arxiv: "2112.15283"
-notes: Date approximate.

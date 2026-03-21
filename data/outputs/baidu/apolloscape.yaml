@@ -2,8 +2,14 @@ name: ApolloScape
 slug: apolloscape
 lab: baidu
 type: dataset
-date: 2018-03-01
-url: https://apolloscape.auto
+date: 2018-03-16
+sources:
+  - label: Website
+    url: https://apolloscape.auto
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/1803.06184
+  - label: GitHub
+    url: https://github.com/ApolloScapeAuto/dataset-api
 description: >
   Massive dataset for autonomous driving including 3D semantic segmentation
   and trajectory prediction.
@@ -13,4 +19,3 @@ tags:
   - benchmark
 related:
   - apollo
-notes: Date approximate.

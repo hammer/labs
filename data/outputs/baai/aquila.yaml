@@ -2,8 +2,12 @@ name: Aquila & Aquila2
 slug: aquila
 lab: baai
 type: model
-date: 2023-06-01
-url: https://github.com/FlagAI-Open/Aquila2
+date: 2023-08-15
+sources:
+  - label: GitHub
+    url: https://github.com/FlagAI-Open/Aquila2
+  - label: HuggingFace
+    url: https://huggingface.co/BAAI/Aquila-7B
 description: >
   First open-source LLM compliant with Chinese regulations. Aquila-7B, 33B,
   and AquilaChat. Aquila2 improved with EfficientScale recipe (7B/34B).
@@ -26,4 +30,3 @@ model:
       notes: 8*16B MoE
 library:
   github: https://github.com/FlagAI-Open/Aquila2
-notes: Date approximate.

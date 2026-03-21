@@ -2,8 +2,12 @@ name: MiLM-6B
 slug: milm-6b
 lab: xiaomi
 type: model
-date: 2023-08-01
-url: https://huggingface.co/XiaomiMiMo
+date: 2023-08-11
+sources:
+  - label: GitHub
+    url: https://github.com/XiaoMi/MiLM-6B
+  - label: Announcement
+    url: https://www.aibase.com/news/389
 description: >
   Xiaomi's first significant LLM, ranked top in C-Eval and CMMLU at release.
 tags:
@@ -12,4 +16,3 @@ tags:
 model:
   architecture: dense
   parameters: 6B
-notes: Date approximate.

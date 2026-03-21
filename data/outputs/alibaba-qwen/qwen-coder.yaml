@@ -2,8 +2,12 @@ name: Qwen-Coder Series
 slug: qwen-coder
 lab: alibaba-qwen
 type: model
-date: 2024-09-01
-url: https://huggingface.co/Qwen
+date: 2024-09-19
+sources:
+  - label: Blog Post
+    url: https://qwenlm.github.io/blog/qwen2.5-coder/
+  - label: GitHub
+    url: https://github.com/QwenLM/Qwen2.5-Coder
 description: >
   Coding-specialized model family. From early 1.5/2.5 versions to the massive
   Qwen3-Coder-480B (July 2025).
@@ -17,4 +21,4 @@ model:
     - name: Qwen3-Coder-480B
       parameters: 480B
       notes: Released July 2025
-notes: Date approximate. See also qwen3-coder-thinking and qwen3-coder-next.
+notes: See also qwen3-coder-thinking and qwen3-coder-next.

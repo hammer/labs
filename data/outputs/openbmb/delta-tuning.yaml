@@ -2,8 +2,12 @@ name: "Delta Tuning"
 slug: delta-tuning
 lab: openbmb
 type: paper
-date: 2023-03-01
-url: https://www.nature.com/articles/s42256-023-00626-4
+date: 2023-03-02
+sources:
+  - label: "Paper"
+    url: https://www.nature.com/articles/s42256-023-00626-4
+  - label: GitHub
+    url: https://github.com/thunlp/OpenDelta
 description: >
   Foundational paper on parameter-efficient fine-tuning (PEFT), published
   in Nature 2023. Allows massive models to be updated with minimal data/compute.
@@ -13,4 +17,3 @@ tags:
   - research
 paper:
   venue: Nature 2023
-notes: Date approximate.

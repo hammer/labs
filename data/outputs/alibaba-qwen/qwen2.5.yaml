@@ -2,8 +2,12 @@ name: Qwen2.5
 slug: qwen2.5
 lab: alibaba-qwen
 type: model
-date: 2024-09-01
-url: https://qwen.ai/blog
+date: 2024-09-19
+sources:
+  - label: Blog Post
+    url: https://qwenlm.github.io/blog/qwen2.5/
+  - label: GitHub
+    url: https://github.com/qwenlm/qwen2.5
 description: >
   The "18-trillion token" series. Released sizes: 0.5B, 1.5B, 3B, 7B, 14B,
   32B, and 72B.
@@ -27,4 +31,3 @@ model:
       parameters: 32B
     - name: Qwen2.5-72B
       parameters: 72B
-notes: Date approximate.

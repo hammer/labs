@@ -3,7 +3,9 @@ slug: qwen3-tts
 lab: alibaba-qwen
 type: model
 date: 2026-01-22
-url: https://arxiv.org/abs/2601.15621
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2601.15621
 description: >
   Multilingual TTS with 3-second voice cloning. Trained on 5M+ hours, 10 languages.
 tags:

@@ -1,0 +1,26 @@
+name: ToucHD
+slug: touchd
+lab: baai
+type: dataset
+date: 2026-02-28
+sources:
+  - label: HuggingFace (Force)
+    url: https://huggingface.co/datasets/BAAI/ToucHD-Force
+  - label: HuggingFace (Sim)
+    url: https://huggingface.co/datasets/BAAI/ToucHD-Sim
+  - label: HuggingFace (Mani)
+    url: https://huggingface.co/datasets/BAAI/ToucHD-Mani
+description: >
+  Tactile Hierarchical Dynamic dataset with 2.4M+ contact samples for
+  embodied AI. ToucHD-Force collects 722,436 touch-force pairs using five
+  tactile sensors and 71 distinct indenters. Enriches higher-tier dynamic
+  tactile data for robot manipulation. Three sub-datasets cover force
+  sensing, simulation, and manipulation tasks.
+tags:
+  - dataset
+  - tactile
+  - embodied-ai
+  - robotics
+related:
+  - robobrain-dex
+  - robobrain-2.5

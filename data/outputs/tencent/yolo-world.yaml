@@ -2,8 +2,12 @@ name: YOLO-World
 slug: yolo-world
 lab: tencent
 type: paper
-date: 2024-02-01
-url: https://arxiv.org/abs/2401.17270
+date: 2024-01-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2401.17270
+  - label: GitHub
+    url: https://github.com/AILab-CVC/YOLO-World
 description: >
   Real-time open-vocabulary object detection, now a standard in computer vision.
   Accepted at CVPR 2024.
@@ -14,4 +18,3 @@ tags:
 paper:
   arxiv: "2401.17270"
   venue: CVPR 2024
-notes: Date approximate.

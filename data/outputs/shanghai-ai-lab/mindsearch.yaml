@@ -2,8 +2,12 @@ name: MindSearch
 slug: mindsearch
 lab: shanghai-ai-lab
 type: library
-date: 2024-07-01
-url: https://github.com/InternLM/MindSearch
+date: 2024-07-29
+sources:
+  - label: GitHub
+    url: https://github.com/InternLM/MindSearch
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.20183
 description: >
   Open-source multi-agent web search engine framework (similar to Perplexity).
 tags:
@@ -12,4 +16,4 @@ tags:
   - framework
 library:
   github: https://github.com/InternLM/MindSearch
-notes: Date approximate.
+notes: arXiv submission Jul 29, 2024. Accepted at ICLR 2025.

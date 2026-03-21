@@ -3,7 +3,11 @@ slug: deepseek-moe
 lab: deepseek
 type: model
 date: 2024-01-11
-url: https://huggingface.co/deepseek-ai/deepseek-moe-16b-chat
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/deepseek-moe-16b-chat
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2401.06066
 description: >
   Pioneering 16B Mixture-of-Experts model with only 2.8B active parameters,
   setting the stage for DeepSeek's future efficiency focus.

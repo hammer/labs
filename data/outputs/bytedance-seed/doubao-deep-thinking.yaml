@@ -2,10 +2,12 @@ name: Doubao-Deep-Thinking
 slug: doubao-deep-thinking
 lab: bytedance-seed
 type: model
-date: 2025-03-01
-url: https://www.volcengine.com
+date: 2025-03-28
+sources:
+  - label: Announcement
+    url: https://www.aibase.com/news/16682
 description: >
   Reasoning-focused model that surpassed OpenAI's o1-preview on the AIME benchmark.
 tags:
   - reasoning
-notes: Date approximate.
+notes: Deep Thinking feature announced March 28, 2025. Full Doubao 1.5 Deep Thinking Model available via API April 17, 2025.

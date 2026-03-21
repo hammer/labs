@@ -2,8 +2,12 @@ name: GLM-5-Turbo
 slug: glm-5-turbo
 lab: zai
 type: model
-date: 2026-03-01
-url: https://z.ai
+date: 2026-03-16
+sources:
+  - label: Announcement
+    url: https://venturebeat.com/technology/z-ai-debuts-faster-cheaper-glm-5-turbo-model-for-agents-and-claws-but-its
+  - label: API Docs
+    url: https://docs.z.ai
 description: >
   Specialized "fast" version optimized for the OpenClaw agent ecosystem,
   focusing on continuous task execution and tool reliability.
@@ -13,4 +17,3 @@ tags:
   - efficiency
 model:
   architecture: moe
-notes: Date approximate.

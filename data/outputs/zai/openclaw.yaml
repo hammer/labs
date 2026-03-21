@@ -3,7 +3,11 @@ slug: openclaw
 lab: zai
 type: library
 date: 2026-01-01
-url: https://z.ai
+sources:
+  - label: Documentation
+    url: https://docs.openclaw.ai/concepts/multi-agent
+  - label: Announcement
+    url: https://technode.com/2026/03/10/openclaw-sparks-boom-as-chinese-firms-race-into-the-ai-agent-era/
 description: >
   Open-source framework for building multi-agent swarms that operate in
   dynamic, long-horizon workflows.

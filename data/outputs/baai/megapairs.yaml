@@ -1,0 +1,26 @@
+name: MegaPairs
+slug: megapairs
+lab: baai
+type: dataset
+date: 2025-03-06
+sources:
+  - label: GitHub
+    url: https://github.com/VectorSpaceLab/MegaPairs
+  - label: Paper (ACL 2025 Oral)
+    url: https://aclanthology.org/2025.acl-long.935.pdf
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.15190
+description: >
+  Large-scale synthetic dataset of 26M+ multimodal retrieval triplets for
+  universal multimodal retrieval. Mines multi-modal triplet data from a
+  massive image-text corpus by combining multimodal representation models,
+  large multimodal models, and large language models. Powers the BGE-VL
+  embedding models. Accepted as ACL 2025 Oral. Released under MIT license
+  (annotations) and CC BY 4.0 (images from Recap-Datacomp).
+tags:
+  - dataset
+  - multimodal
+  - retrieval
+  - synthetic-data
+related:
+  - bge-vl

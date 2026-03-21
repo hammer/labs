@@ -2,12 +2,17 @@ name: EvoCUA
 slug: evocua
 lab: meituan
 type: library
-date: 2026-01-01
-url: https://github.com/meituan
+date: 2026-01-22
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2601.15876
+  - label: GitHub
+    url: https://github.com/meituan/EvoCUA
+  - label: HuggingFace
+    url: https://huggingface.co/meituan/EvoCUA-8B-20260105
 description: >
   "Evolving Computer Use Agent" — framework for training agents to navigate
   software and web interfaces.
 tags:
   - agentic
   - framework
-notes: Date approximate.

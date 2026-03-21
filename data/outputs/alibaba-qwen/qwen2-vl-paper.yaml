@@ -3,7 +3,11 @@ slug: qwen2-vl-paper
 lab: alibaba-qwen
 type: paper
 date: 2024-09-18
-url: https://arxiv.org/abs/2409.12191
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2409.12191
+  - label: Blog Post
+    url: https://qwenlm.github.io/blog/qwen2-vl/
 description: >
   Naive Dynamic Resolution for variable-resolution visual processing. 2B/8B/72B variants.
 tags:

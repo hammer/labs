@@ -3,7 +3,11 @@ slug: toolllm
 lab: openbmb
 type: paper
 date: 2023-07-31
-url: https://arxiv.org/abs/2307.16789
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2307.16789
+  - label: GitHub
+    url: https://github.com/OpenBMB/ToolBench
 description: >
   Framework enabling LLMs to use over 16,000 real-world APIs.
 tags:

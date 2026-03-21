@@ -2,8 +2,14 @@ name: Seed-X Series
 slug: seed-x
 lab: bytedance-seed
 type: model
-date: 2025-07-01
-url: https://huggingface.co/ByteDance-Seed
+date: 2025-07-22
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2507.13618
+  - label: GitHub
+    url: https://github.com/ByteDance-Seed/Seed-X-7B
+  - label: HuggingFace
+    url: https://huggingface.co/ByteDance-Seed/Seed-X-Instruct-7B
 description: >
   Open-source multilingual translation series (7B parameters) rivaling GPT-4
   in translation tasks. Includes Seed-X-Instruct, Seed-X-PPO, and Seed-X-RM.
@@ -19,4 +25,3 @@ model:
     - name: Seed-X-PPO
     - name: Seed-X-RM
       notes: Reward Model
-notes: Date approximate.

@@ -2,8 +2,12 @@ name: ReasonDet
 slug: reasondet
 lab: meituan
 type: dataset
-date: 2023-12-01
-url: https://huggingface.co/meituan-longcat
+date: 2023-12-05
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2312.02433
+  - label: GitHub
+    url: https://github.com/Meituan-AutoML/Lenna
 description: >
   Benchmark for reasoning-based object detection.
 tags:
@@ -13,4 +17,3 @@ tags:
   - reasoning
 related:
   - lenna
-notes: Date approximate.

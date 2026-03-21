@@ -2,8 +2,12 @@ name: Wu Dao 1.0
 slug: wu-dao-1.0
 lab: baai
 type: model
-date: 2021-01-01
-url: https://www.baai.ac.cn
+date: 2021-03-20
+sources:
+  - label: Announcement
+    url: https://syncedreview.com/2021/03/23/chinas-gpt-3-baai-introduces-superscale-intelligence-model-wu-dao-1-0/
+  - label: Website
+    url: https://www.baai.ac.cn/en/system
 description: >
   China's first large-scale model family. Includes Wen Yuan (2.6B language),
   Wen Lan (1B multimodal), Wen Hui (11.3B generative), and Wen Su (protein folding).
@@ -23,4 +27,3 @@ model:
       notes: Generative reasoning
     - name: Wen Su
       notes: Protein folding
-notes: Date approximate.

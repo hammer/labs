@@ -3,7 +3,9 @@ slug: glm-4-voice
 lab: zai
 type: model
 date: 2024-12-03
-url: https://arxiv.org/abs/2412.02612
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.02612
 description: >
   Intelligent and human-like end-to-end spoken chatbot.
 tags:

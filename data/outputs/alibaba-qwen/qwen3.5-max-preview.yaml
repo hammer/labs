@@ -3,7 +3,9 @@ slug: qwen3.5-max-preview
 lab: alibaba-qwen
 type: model
 date: 2026-03-01
-url: https://qwen.ai/blog
+sources:
+  - label: Blog Post
+    url: https://qwen.ai/blog?id=qwen3.5-max-preview
 description: >
   Current state-of-the-art preview for the largest reasoning model.
 tags:

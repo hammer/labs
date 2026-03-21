@@ -3,7 +3,9 @@ slug: bmtools
 lab: openbmb
 type: library
 date: 2023-04-01
-url: https://github.com/OpenBMB/BMTools
+sources:
+  - label: GitHub
+    url: https://github.com/OpenBMB/BMTools
 description: >
   Open-source framework for building tool-using agents (similar to OpenAI Plugins).
 tags:

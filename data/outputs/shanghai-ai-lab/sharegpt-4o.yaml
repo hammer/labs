@@ -2,12 +2,18 @@ name: ShareGPT-4o
 slug: sharegpt-4o
 lab: shanghai-ai-lab
 type: dataset
-date: 2024-08-01
-url: https://huggingface.co/internlm
+date: 2024-04-25
+sources:
+  - label: Project Page
+    url: https://sharegpt4o.github.io/
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/OpenGVLab/ShareGPT-4o
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2404.16821
 description: >
   Groundbreaking multimodal dataset featuring 200K images and 10K videos
   with detailed, dense captions.
 tags:
   - multimodal
   - training-data
-notes: Date approximate.
+notes: arXiv submission Apr 25, 2024.

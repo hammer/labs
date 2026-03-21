@@ -2,12 +2,15 @@ name: AutoGLM
 slug: autoglm
 lab: zai
 type: model
-date: 2025-06-01
-url: https://z.ai
+date: 2025-03-31
+sources:
+  - label: Announcement
+    url: https://technode.com/2025/04/01/zhipu-ai-launches-free-ai-agent-as-chinas-tech-race-heats-up/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.00820
 description: >
   "Computer-Use" agent capable of navigating smartphone apps and web browsers
   via natural language commands.
 tags:
   - agentic
   - coding
-notes: Date approximate.

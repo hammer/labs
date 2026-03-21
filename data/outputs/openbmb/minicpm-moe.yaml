@@ -2,8 +2,14 @@ name: MiniCPM-MoE-8x2B
 slug: minicpm-moe
 lab: openbmb
 type: model
-date: 2024-04-01
-url: https://huggingface.co/openbmb
+date: 2024-04-11
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/openbmb/MiniCPM-MoE-8x2B
+  - label: "Technical Report"
+    url: https://openbmb.vercel.app/minicpm-moe-en
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM
 description: >
   MoE version delivering 7B-class performance with significantly lower
   active parameter costs.
@@ -13,4 +19,3 @@ tags:
   - efficiency
 model:
   architecture: moe
-notes: Date approximate.

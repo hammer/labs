@@ -3,7 +3,11 @@ slug: step-deep-research
 lab: stepfun
 type: library
 date: 2025-12-23
-url: https://arxiv.org/abs/2512.20491
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.20491
+  - label: GitHub
+    url: https://github.com/stepfun-ai/StepDeepResearch
 description: >
   Deep research agent framework for autonomous multi-step research tasks.
 tags:

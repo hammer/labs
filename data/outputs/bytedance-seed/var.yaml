@@ -2,8 +2,12 @@ name: VAR (Visual Autoregressive Modeling)
 slug: var
 lab: bytedance-seed
 type: model
-date: 2024-06-01
-url: https://github.com/FoundationVision/VAR
+date: 2024-04-03
+sources:
+  - label: GitHub
+    url: https://github.com/FoundationVision/VAR
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2404.02905
 description: >
   NeurIPS 2024 Best Paper. Paradigm shift proving GPT-style autoregressive
   models could surpass diffusion (SDXL/Stable Diffusion) in image generation quality.
@@ -14,4 +18,3 @@ tags:
   - research
 library:
   github: https://github.com/FoundationVision/VAR
-notes: Date approximate.

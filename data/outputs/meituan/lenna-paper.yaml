@@ -2,8 +2,14 @@ name: "Lenna: Language Enhanced Reasoning Detection Assistant"
 slug: lenna-paper
 lab: meituan
 type: paper
-date: 2023-12-01
-url: https://huggingface.co/meituan-longcat
+date: 2023-12-05
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2312.02433
+  - label: GitHub
+    url: https://github.com/Meituan-AutoML/Lenna
+  - label: "IEEE Xplore"
+    url: https://ieeexplore.ieee.org/document/10888428/
 description: >
   Paper on combining MLLMs with object detection for reasoning-based detection.
 tags:
@@ -12,4 +18,3 @@ tags:
   - reasoning
 related:
   - lenna
-notes: Date approximate.

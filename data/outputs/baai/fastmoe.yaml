@@ -2,8 +2,12 @@ name: FastMoE
 slug: fastmoe
 lab: baai
 type: library
-date: 2021-06-01
-url: https://github.com/laekov/fastmoe
+date: 2021-03-24
+sources:
+  - label: GitHub
+    url: https://github.com/laekov/fastmoe
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2103.13262
 description: >
   First open-source system for training trillion-parameter MoE models on
   commodity hardware.
@@ -13,4 +17,3 @@ tags:
   - infrastructure
 library:
   github: https://github.com/laekov/fastmoe
-notes: Date approximate.

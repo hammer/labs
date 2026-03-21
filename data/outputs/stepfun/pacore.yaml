@@ -2,12 +2,18 @@ name: "PaCoRe: Learning to Scale Test-Time Compute"
 slug: pacore
 lab: stepfun
 type: paper
-date: 2025-06-01
-url: https://huggingface.co/stepfun-ai
+date: 2026-01-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.05593
+  - label: GitHub
+    url: https://github.com/stepfun-ai/PaCoRe
+  - label: HuggingFace
+    url: https://huggingface.co/stepfun-ai/PaCoRe-8B
 description: >
   Research on parallel coordinated reasoning to improve agentic accuracy.
 tags:
   - reasoning
   - agentic
   - research
-notes: Date approximate.
+notes: arXiv paper 2601.05593. PaCoRe-8B achieves 94.5% on HMMT 2025.

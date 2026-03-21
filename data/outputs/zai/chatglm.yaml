@@ -3,7 +3,9 @@ slug: chatglm
 lab: zai
 type: paper
 date: 2024-06-18
-url: https://arxiv.org/abs/2406.12793
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.12793
 description: ChatGLM technical paper.
 tags:
   - conversational

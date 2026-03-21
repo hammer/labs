@@ -3,10 +3,15 @@ slug: kimi-k2
 lab: moonshot-ai
 type: model
 date: 2025-07-11
-url: https://arxiv.org/abs/2507.20534
-links:
-  - label: Reuters
-    url: https://www.reuters.com/business/media-telecom/chinas-moonshot-ai-releases-open-source-model-reclaim-market-position-2025-07-11/
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2507.20534
+  - label: "Project Page"
+    url: https://moonshotai.github.io/Kimi-K2/
+  - label: GitHub
+    url: https://github.com/MoonshotAI/Kimi-K2
+  - label: HuggingFace
+    url: https://huggingface.co/moonshotai/Kimi-K2-Instruct
 description: >
   Landmark 1-trillion parameter MoE model (32B active) released as open-weight.
   384 experts with 8 activated per token. Focused on agentic intelligence and

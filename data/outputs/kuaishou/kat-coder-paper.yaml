@@ -3,7 +3,11 @@ slug: kat-coder-paper
 lab: kuaishou
 type: paper
 date: 2025-10-24
-url: https://arxiv.org/abs/2510.18779
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.18779
+  - label: Project Page
+    url: https://kwaipilot.github.io/KAT-Coder/
 description: >
   73.4 on SWE-Bench Verified. Agentic coding model technical report.
 tags:

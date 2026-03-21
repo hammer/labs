@@ -2,8 +2,12 @@ name: "Slime: Asynchronous RL for Agentic Tasks"
 slug: slime
 lab: zai
 type: paper
-date: 2026-01-01
-url: https://z.ai
+date: 2026-02-11
+sources:
+  - label: GitHub
+    url: https://github.com/THUDM/slime
+  - label: Documentation
+    url: https://thudm.github.io/slime/
 description: >
   Introduced the training method that reduced GLM-5's hallucination rate by 35%.
 tags:
@@ -12,4 +16,3 @@ tags:
   - research
 related:
   - glm-5
-notes: Date approximate.

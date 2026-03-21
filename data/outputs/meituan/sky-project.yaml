@@ -2,8 +2,10 @@ name: Meituan Sky Project
 slug: sky-project
 lab: meituan
 type: announcement
-date: 2021-01-01
-url: https://www.meituan.com
+date: 2021-07-01
+sources:
+  - label: Announcement
+    url: https://www.suasnews.com/2021/07/meituan-unveils-self-developed-drone-model-plans-for-drone-logistics-network-at-2021-world-artificial-intelligence-conference/
 description: >
   AI navigation and safety stack powering Meituan's fleet of unmanned delivery
   drones and L4-level autonomous ground robots. Completed hundreds of thousands
@@ -12,4 +14,4 @@ tags:
   - autonomous
   - delivery
   - robotics
-notes: Date approximate.
+notes: Date approximate. Drone unit established 2017; public unveiling at WAIC July 2021.

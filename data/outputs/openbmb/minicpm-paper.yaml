@@ -2,8 +2,12 @@ name: "MiniCPM: Unveiling the Potential of End-Side Large Language Models"
 slug: minicpm-paper
 lab: openbmb
 type: paper
-date: 2024-02-01
-url: https://arxiv.org/abs/2404.06395
+date: 2024-04-09
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2404.06395
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM
 description: >
   Technical report detailing the "Tiered Data Management" philosophy for
   efficient on-device models.
@@ -12,4 +16,3 @@ tags:
   - efficiency
 paper:
   arxiv: "2404.06395"
-notes: Date approximate.

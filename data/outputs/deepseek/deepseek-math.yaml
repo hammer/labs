@@ -2,8 +2,12 @@ name: "DeepSeekMath: Pushing the Limits of Mathematical Reasoning"
 slug: deepseek-math
 lab: deepseek
 type: paper
-date: 2024-02-01
-url: https://arxiv.org/abs/2402.03300
+date: 2024-02-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.03300
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepSeek-Math
 description: >
   Introduced Group Relative Policy Optimization (GRPO) for mathematical reasoning.
 tags:
@@ -12,4 +16,3 @@ tags:
   - reinforcement-learning
 paper:
   arxiv: "2402.03300"
-notes: Date approximate.

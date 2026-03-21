@@ -2,12 +2,15 @@ name: MOPD (Multi-Teacher On-Policy Distillation)
 slug: mopd
 lab: xiaomi
 type: library
-date: 2025-06-01
-url: https://huggingface.co/XiaomiMiMo
+date: 2025-12-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.02780
+  - label: GitHub
+    url: https://github.com/XiaomiMiMo/MiMo-V2-Flash
 description: >
   Library/technique for distilling intelligence from multiple teacher models
   into smaller student models.
 tags:
   - distillation
   - training
-notes: Date approximate.

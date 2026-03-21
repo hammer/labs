@@ -2,12 +2,19 @@ name: UltraChat & UltraFeedback
 slug: ultrachat
 lab: openbmb
 type: dataset
-date: 2023-06-01
-url: https://huggingface.co/openbmb
+date: 2023-04-20
+sources:
+  - label: "GitHub (UltraChat)"
+    url: https://github.com/thunlp/UltraChat
+  - label: "GitHub (UltraFeedback)"
+    url: https://github.com/OpenBMB/UltraFeedback
+  - label: "Dataset (UltraChat)"
+    url: https://huggingface.co/datasets/openbmb/UltraChat
+  - label: "Dataset (UltraFeedback)"
+    url: https://huggingface.co/datasets/openbmb/UltraFeedback
 description: >
   High-quality alignment datasets for instruction-following and RLHF.
 tags:
   - alignment
   - training-data
   - rlhf
-notes: Date approximate.

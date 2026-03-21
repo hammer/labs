@@ -3,7 +3,9 @@ slug: fire-flyer
 lab: deepseek
 type: paper
 date: 2024-08-26
-url: https://arxiv.org/abs/2408.14158
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2408.14158
 description: >
   Cost-effective software-hardware co-design for deep learning infrastructure.
 tags:

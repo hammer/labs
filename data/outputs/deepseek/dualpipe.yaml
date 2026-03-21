@@ -2,8 +2,12 @@ name: DualPipe
 slug: dualpipe
 lab: deepseek
 type: library
-date: 2025-02-01
-url: https://github.com/deepseek-ai/DualPipe
+date: 2025-02-27
+sources:
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DualPipe
+  - label: Announcement
+    url: https://dev.to/apilover/deepseek-open-source-week-day-3-dualpipe-and-eplb-17l4
 description: >
   Bidirectional pipeline parallelism algorithm for overlapping computation
   and communication.
@@ -12,4 +16,3 @@ tags:
   - parallelism
 library:
   github: https://github.com/deepseek-ai/DualPipe
-notes: Date approximate.

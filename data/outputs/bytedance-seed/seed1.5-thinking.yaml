@@ -3,7 +3,9 @@ slug: seed1.5-thinking
 lab: bytedance-seed
 type: paper
 date: 2025-04-10
-url: https://arxiv.org/abs/2504.13914
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2504.13914
 description: Reasoning model advanced through reinforcement learning.
 tags:
   - reasoning

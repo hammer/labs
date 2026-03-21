@@ -2,8 +2,12 @@ name: MixGRPO
 slug: mixgrpo
 lab: tencent
 type: paper
-date: 2026-02-01
-url: https://llm.hunyuan.tencent.com
+date: 2025-07-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.21802
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/MixGRPO
 description: >
   Research on unlocking flow-based GRPO (Group Relative Policy Optimization)
   efficiency for reasoning models.
@@ -11,4 +15,3 @@ tags:
   - reasoning
   - reinforcement-learning
   - research
-notes: Date approximate.

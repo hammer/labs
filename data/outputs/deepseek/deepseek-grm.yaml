@@ -3,7 +3,9 @@ slug: deepseek-grm
 lab: deepseek
 type: paper
 date: 2025-04-03
-url: https://arxiv.org/abs/2504.02495
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.02495
 description: >
   Generalist reward model with inference-time scaling.
 tags:

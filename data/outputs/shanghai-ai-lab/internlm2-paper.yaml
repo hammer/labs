@@ -3,7 +3,11 @@ slug: internlm2-paper
 lab: shanghai-ai-lab
 type: paper
 date: 2024-03-26
-url: https://arxiv.org/abs/2403.17297
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2403.17297
+  - label: GitHub
+    url: https://github.com/InternLM/InternLM
 description: >
   Technical report with 100+ authors detailing InternLM2 architecture and training.
 tags:

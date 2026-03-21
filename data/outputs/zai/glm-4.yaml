@@ -2,12 +2,15 @@ name: GLM-4
 slug: glm-4
 lab: zai
 type: model
-date: 2024-01-01
-url: https://z.ai
+date: 2024-01-17
+sources:
+  - label: Announcement
+    url: https://www.maginative.com/article/zhipu-ai-unveils-next-gen-foundation-model-glm-4-claims-performance-comparable-to-gpt-4/
+  - label: GitHub
+    url: https://github.com/zai-org/GLM-4
 description: >
   Major flagship upgrade featuring "All Tools" integration (web search, code
   interpreter, and vision).
 tags:
   - frontier
   - agentic
-notes: Date approximate.

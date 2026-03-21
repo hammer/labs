@@ -2,8 +2,12 @@ name: Seed-Prover
 slug: seed-prover
 lab: bytedance-seed
 type: model
-date: 2025-07-01
-url: https://huggingface.co/ByteDance-Seed
+date: 2025-07-31
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2507.23726
+  - label: GitHub
+    url: https://github.com/ByteDance-Seed/Seed-Prover
 description: >
   Specialized model for automated theorem proving and formal mathematical
   reasoning (Lean 4).
@@ -11,4 +15,4 @@ tags:
   - math
   - reasoning
   - theorem-proving
-notes: Date approximate.
+notes: Solved 5 of 6 IMO 2025 problems. Seed-Prover 1.5 released December 2025.

@@ -2,8 +2,14 @@ name: Ling-mini / Ling-Lite
 slug: ling-mini
 lab: ant-group
 type: model
-date: 2025-06-01
-url: https://huggingface.co/inclusionAI
+date: 2025-09-10
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/inclusionAI/Ling-mini-2.0
+  - label: Blog Post
+    url: https://huggingface.co/blog/RichardBian/ling-mini-2-moe-release
+  - label: GitHub
+    url: https://github.com/inclusionAI/Ling
 description: >
   Smaller Ling variants for edge and low-latency use cases. Ling-mini 2.0
   at 16B parameters.
@@ -14,4 +20,3 @@ tags:
 model:
   architecture: dense
   parameters: 16B
-notes: Date approximate.

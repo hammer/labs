@@ -2,12 +2,17 @@ name: KuaiSAR
 slug: kuaisar
 lab: kuaishou
 type: dataset
-date: 2023-06-01
-url: https://github.com/kuaishou-langlab
+date: 2023-06-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2306.07705
+  - label: Website
+    url: https://kuaisar.github.io/
+  - label: GitHub
+    url: https://github.com/KuaiSAR/KuaiSAR.github.io
 description: >
   Unified search and recommendation dataset containing genuine user behavior logs.
 tags:
   - recommendation
   - search
   - benchmark
-notes: Date approximate.

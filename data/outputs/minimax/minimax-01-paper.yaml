@@ -2,8 +2,12 @@ name: "MiniMax-01: Scaling Foundation Models with Lightning Attention"
 slug: minimax-01-paper
 lab: minimax
 type: paper
-date: 2025-01-01
-url: https://arxiv.org/abs/2501.08313
+date: 2025-01-14
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2501.08313
+  - label: HuggingFace
+    url: https://huggingface.co/papers/2501.08313
 description: >
   Foundational paper for the linear-attention architecture used across
   MiniMax models.
@@ -13,4 +17,3 @@ tags:
   - efficiency
 paper:
   arxiv: "2501.08313"
-notes: Date approximate.

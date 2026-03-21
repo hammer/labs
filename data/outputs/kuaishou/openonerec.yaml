@@ -2,12 +2,17 @@ name: OpenOneRec
 slug: openonerec
 lab: kuaishou
 type: library
-date: 2025-06-01
-url: https://github.com/kuaishou-langlab
+date: 2025-12-31
+sources:
+  - label: GitHub
+    url: https://github.com/Kuaishou-OneRec/OpenOneRec
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.24762
+  - label: HuggingFace
+    url: https://huggingface.co/OpenOneRec/OneRec-1.7B-pro
 description: >
   Open framework and benchmark for generative recommendation based on the
   Qwen3 backbone.
 tags:
   - recommendation
   - framework
-notes: Date approximate.

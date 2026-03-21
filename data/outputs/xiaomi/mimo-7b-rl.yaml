@@ -2,8 +2,14 @@ name: MiMo-7B-RL
 slug: mimo-7b-rl
 lab: xiaomi
 type: model
-date: 2025-05-01
-url: https://huggingface.co/XiaomiMiMo
+date: 2025-05-02
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/XiaomiMiMo/MiMo-7B-RL
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.07608
+  - label: Announcement
+    url: https://www.gizmochina.com/2025/05/02/xiaomi-launches-mimo-7b-its-first-open-source-llm-for-reasoning-and-coding/
 description: >
   Reasoning-focused model achieving superior performance on AIME (math)
   and HumanEval (coding).
@@ -15,4 +21,3 @@ tags:
 model:
   architecture: dense
   parameters: 7B
-notes: Date approximate.

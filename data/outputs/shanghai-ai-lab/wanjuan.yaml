@@ -2,12 +2,16 @@ name: WanJuan Corpus
 slug: wanjuan
 lab: shanghai-ai-lab
 type: dataset
-date: 2023-08-01
-url: https://huggingface.co/internlm
+date: 2023-08-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2308.10755
+  - label: GitHub
+    url: https://github.com/opendatalab
 description: >
   Massive high-quality multimodal pre-training corpus containing over 1 trillion
   tokens of English web text.
 tags:
   - training-data
   - pretraining
-notes: Date approximate.
+notes: arXiv submission Aug 21, 2023.

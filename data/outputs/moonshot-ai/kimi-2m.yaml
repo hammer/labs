@@ -3,7 +3,9 @@ slug: kimi-2m
 lab: moonshot-ai
 type: model
 date: 2024-03-01
-url: https://www.moonshot.cn
+sources:
+  - label: Announcement
+    url: https://www.moonshot.cn
 description: >
   Update to the proprietary model supporting a 2-million-character context window.
 tags:

@@ -2,8 +2,12 @@ name: DeepGEMM
 slug: deepgemm
 lab: deepseek
 type: library
-date: 2025-02-01
-url: https://github.com/deepseek-ai/DeepGEMM
+date: 2025-02-26
+sources:
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepGEMM
+  - label: Announcement
+    url: https://www.analyticsvidhya.com/blog/2025/02/deepseek-deepgemm/
 description: >
   Library for clean and efficient FP8 GEMM kernels with fine-grained scaling.
 tags:
@@ -11,4 +15,3 @@ tags:
   - kernels
 library:
   github: https://github.com/deepseek-ai/DeepGEMM
-notes: Date approximate.

@@ -2,8 +2,12 @@ name: ERNIE X1
 slug: ernie-x1
 lab: baidu
 type: model
-date: 2025-03-01
-url: https://www.baidu.com
+date: 2025-03-16
+sources:
+  - label: Announcement
+    url: https://www.prnewswire.com/news-releases/baidu-unveils-ernie-4-5-and-reasoning-model-ernie-x1--makes-ernie-bot-free-ahead-of-schedule-302402490.html
+  - label: Blog Post
+    url: https://builtin.com/artificial-intelligence/baidu-ernie-x1-ernie-4-5
 description: >
   Specialized reasoning model utilizing a heterogeneous multimodal MoE architecture.
 tags:
@@ -12,4 +16,3 @@ tags:
   - multimodal
 model:
   architecture: moe
-notes: Date approximate.

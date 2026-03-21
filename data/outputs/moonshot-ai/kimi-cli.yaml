@@ -3,7 +3,9 @@ slug: kimi-cli
 lab: moonshot-ai
 type: library
 date: 2025-06-01
-url: https://github.com/MoonshotAI/kimi-cli
+sources:
+  - label: GitHub
+    url: https://github.com/MoonshotAI/kimi-cli
 description: >
   Command-line agent designed for autonomous coding and system tasks.
 tags:

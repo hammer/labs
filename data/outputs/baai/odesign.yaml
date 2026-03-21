@@ -1,0 +1,30 @@
+name: ODesign
+slug: odesign
+lab: baai
+type: model
+date: 2025-10-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.22304
+  - label: GitHub
+    url: https://github.com/The-Institute-for-AI-Molecular-Design/ODesign
+  - label: Web app
+    url: https://odesign.lglab.ac.cn
+  - label: Project page
+    url: https://odesign1.github.io/
+description: >
+  All-atom generative world model for all-to-all biomolecular interaction
+  design. Allows scientists to specify epitopes on arbitrary targets and
+  generate diverse classes of binding partners. Supports protein-binding
+  protein design, protein-binding RNA/DNA, RNA/DNA-binding ligand design,
+  and functional motif scaffolding. Extends beyond proteins to nucleic
+  acid and small-molecule design for interaction types previously
+  inaccessible to existing tools.
+tags:
+  - biocomputing
+  - drug-design
+  - generative-model
+  - open-source
+related:
+  - opencomplex2
+  - opencomplex

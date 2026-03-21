@@ -1,0 +1,27 @@
+name: LRM-Eval / ROME
+slug: lrm-eval
+lab: baai
+type: dataset
+date: 2025-09-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.17177
+  - label: GitHub (ROME)
+    url: https://github.com/flageval-baai/ROME-evaluation
+  - label: Project page
+    url: https://flageval-baai.github.io/LRM-Eval/
+description: >
+  Contamination-free evaluation of large reasoning models (LRMs) across
+  10 text reasoning tasks and 8 visual reasoning tasks. ROME provides 281
+  image-question pairs testing visual reasoning from visual clues. One of
+  the most comprehensive LRM evaluations, benchmarking GPT-5, o3, o4-mini,
+  Gemini, Claude, DeepSeek, Qwen, etc. Identifies concerning signals of
+  misaligned thinking and answers, where the reasoning process implies
+  uncertainty but the model gives deterministic answers.
+tags:
+  - benchmark
+  - evaluation
+  - reasoning
+  - multimodal
+related:
+  - flagevalmm

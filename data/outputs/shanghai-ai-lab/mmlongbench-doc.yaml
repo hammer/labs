@@ -2,12 +2,18 @@ name: MMLongBench-Doc
 slug: mmlongbench-doc
 lab: shanghai-ai-lab
 type: dataset
-date: 2024-06-01
-url: https://huggingface.co/internlm
+date: 2024-07-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.01523
+  - label: GitHub
+    url: https://github.com/mayubo2333/MMLongBench-Doc
+  - label: Project Page
+    url: https://mayubo2333.github.io/MMLongBench-Doc/
 description: >
   Benchmark for testing long-document understanding in multimodal models.
 tags:
   - benchmark
   - long-context
   - multimodal
-notes: Date approximate.
+notes: arXiv submission Jul 1, 2024. NeurIPS 2024 Datasets and Benchmarks Track.

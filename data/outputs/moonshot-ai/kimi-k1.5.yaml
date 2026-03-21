@@ -2,8 +2,12 @@ name: Kimi k1.5
 slug: kimi-k1.5
 lab: moonshot-ai
 type: model
-date: 2025-01-01
-url: https://arxiv.org/abs/2501.12599
+date: 2025-01-20
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2501.12599
+  - label: GitHub
+    url: https://github.com/MoonshotAI/Kimi-k1.5
 description: >
   Reasoning-focused model using reinforcement learning, claimed to match
   OpenAI's o1-preview in math and coding.
@@ -12,4 +16,3 @@ tags:
   - reinforcement-learning
 paper:
   arxiv: "2501.12599"
-notes: Date approximate.

@@ -2,8 +2,12 @@ name: HunyuanImage-3.0
 slug: hunyuanimage-3.0
 lab: tencent
 type: model
-date: 2026-03-01
-url: https://llm.hunyuan.tencent.com
+date: 2025-09-28
+sources:
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/HunyuanImage-3.0
+  - label: HuggingFace
+    url: https://huggingface.co/tencent/HunyuanImage-3.0-Instruct-Distil
 description: >
   "Native Multimodal Model" for image generation, capable of instant updates
   from text, sketch, or voice.
@@ -11,4 +15,3 @@ tags:
   - generation
   - vision
   - multimodal
-notes: Date approximate.

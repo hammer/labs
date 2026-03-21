@@ -2,8 +2,14 @@ name: ERNIE 4.5
 slug: ernie-4.5
 lab: baidu
 type: model
-date: 2025-03-01
-url: https://the-decoder.com/baidu-releases-open-source-model-family-ernie-4-5/
+date: 2025-03-16
+sources:
+  - label: Announcement
+    url: https://www.prnewswire.com/news-releases/baidu-unveils-ernie-4-5-and-reasoning-model-ernie-x1--makes-ernie-bot-free-ahead-of-schedule-302402490.html
+  - label: Blog Post
+    url: https://ernie.baidu.com/blog/posts/ernie4.5/
+  - label: HuggingFace
+    url: https://huggingface.co/baidu
 description: >
   Introduced the ERNIE-4.5-300B-A47B, a Mixture-of-Experts model with 300B
   total parameters (47B active). Released as open source alongside ERNIE X1.

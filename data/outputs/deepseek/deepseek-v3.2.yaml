@@ -3,12 +3,15 @@ slug: deepseek-v3.2
 lab: deepseek
 type: model
 date: 2025-12-01
-url: https://api-docs.deepseek.com/news/news251201
-links:
-  - label: V3.2-Exp (2025-09-29)
+sources:
+  - label: Announcement
+    url: https://api-docs.deepseek.com/news/news251201
+  - label: V3.2-Exp Announcement (2025-09-29)
     url: https://api-docs.deepseek.com/news/news250929
   - label: Sparse Attention Paper
     url: https://github.com/deepseek-ai/DeepSeek-V3.2-Exp/blob/main/DeepSeek_V3_2.pdf
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V3.2
 description: >
   V3.2-Exp released 2025-09-29 introducing DeepSeek Sparse Attention
   for long-context efficiency. V3.2 and V3.2-Speciale (max reasoning)

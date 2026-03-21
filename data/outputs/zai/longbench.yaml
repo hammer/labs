@@ -2,8 +2,14 @@ name: LongBench
 slug: longbench
 lab: zai
 type: dataset
-date: 2023-08-01
-url: https://github.com/THUDM/LongBench
+date: 2023-08-29
+sources:
+  - label: GitHub
+    url: https://github.com/THUDM/LongBench
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2308.14508
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/zai-org/LongBench
 description: >
   Comprehensive benchmark for long-context understanding in LLMs.
 tags:
@@ -11,4 +17,3 @@ tags:
   - long-context
 dataset:
   github: https://github.com/THUDM/LongBench
-notes: Date approximate.

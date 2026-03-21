@@ -2,8 +2,14 @@ name: LongCat-Flash-Thinking
 slug: longcat-flash-thinking
 lab: meituan
 type: model
-date: 2025-09-01
-url: https://huggingface.co/meituan-longcat
+date: 2025-09-23
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/meituan-longcat/LongCat-Flash-Thinking
+  - label: GitHub
+    url: https://github.com/meituan-longcat/LongCat-Flash-Thinking
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2509.18883
 description: >
   Specialized reasoning model trained via large-scale Reinforcement Learning.
   Rivals proprietary systems in complex logic and STEM benchmarks.
@@ -15,4 +21,3 @@ model:
   architecture: moe
   parameters: 560B
   active_parameters: 27B
-notes: Date approximate.

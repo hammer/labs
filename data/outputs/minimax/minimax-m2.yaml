@@ -2,8 +2,12 @@ name: MiniMax-M2
 slug: minimax-m2
 lab: minimax
 type: model
-date: 2025-10-01
-url: https://huggingface.co/MiniMaxAI
+date: 2025-10-27
+sources:
+  - label: Announcement
+    url: https://www.minimax.io/news/minimax-m2
+  - label: GitHub
+    url: https://github.com/MiniMax-AI/MiniMax-M2
 description: >
   "Agent-native" model designed for tool-calling and code execution, released
   at a fraction of the price of Claude 3.5 Sonnet.
@@ -11,4 +15,3 @@ tags:
   - agentic
   - coding
   - efficiency
-notes: Date approximate.

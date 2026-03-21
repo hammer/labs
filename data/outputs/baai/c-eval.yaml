@@ -2,8 +2,12 @@ name: C-Eval
 slug: c-eval
 lab: baai
 type: dataset
-date: 2023-05-01
-url: https://cevalbenchmark.com
+date: 2023-05-15
+sources:
+  - label: Website
+    url: https://cevalbenchmark.com
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2305.08322
 description: >
   Leading benchmark for evaluating Chinese LLMs across 52 disciplines.
 tags:
@@ -12,4 +16,3 @@ tags:
   - evaluation
 related:
   - c-eval-paper
-notes: Date approximate.

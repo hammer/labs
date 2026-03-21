@@ -2,8 +2,12 @@ name: MiDashengLM-7B
 slug: midashenglm
 lab: xiaomi
 type: model
-date: 2025-06-01
-url: https://huggingface.co/XiaomiMiMo
+date: 2025-08-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.03983
+  - label: GitHub
+    url: https://github.com/xiaomi-research/dasheng-lm
 description: >
   Efficient audio understanding model built on the "Dasheng" encoder, supporting
   speech, music, and acoustics.
@@ -15,4 +19,3 @@ model:
   parameters: 7B
 paper:
   arxiv: "2508.03983"
-notes: Date approximate.

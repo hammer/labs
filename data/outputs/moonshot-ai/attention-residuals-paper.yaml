@@ -3,7 +3,11 @@ slug: attention-residuals-paper
 lab: moonshot-ai
 type: paper
 date: 2026-03-16
-url: https://arxiv.org/abs/2603.15031
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2603.15031
+  - label: GitHub
+    url: https://github.com/MoonshotAI/Attention-Residuals
 description: >
   Replaces fixed residual accumulation with softmax attention over preceding
   layers. Block AttnRes variant for scalability.

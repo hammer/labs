@@ -2,8 +2,14 @@ name: CPM-Ant & CPM-Bee
 slug: cpm-bee
 lab: openbmb
 type: model
-date: 2023-05-01
-url: https://github.com/OpenBMB/CPM-Bee
+date: 2023-05-27
+sources:
+  - label: GitHub
+    url: https://github.com/OpenBMB/CPM-Bee
+  - label: HuggingFace
+    url: https://huggingface.co/openbmb/cpm-bee-10b
+  - label: "Blog Post"
+    url: https://medium.com/@openbmb/finally-the-foundation-model-cpm-bee-is-open-sourced-now-3cf6a0017a50
 description: >
   Multilingual models featuring CPM-Live training protocol, showcasing
   "live" model checkpoints during training.
@@ -12,4 +18,3 @@ tags:
   - open-weight
 library:
   github: https://github.com/OpenBMB/CPM-Bee
-notes: Date approximate.

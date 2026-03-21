@@ -3,7 +3,9 @@ slug: logan
 lab: meituan
 type: library
 date: 2018-11-01
-url: https://github.com/Meituan-Dianping/Logan
+sources:
+  - label: GitHub
+    url: https://github.com/Meituan-Dianping/Logan
 description: >
   Lightweight mobile platform logging system.
 tags:

@@ -2,12 +2,16 @@ name: M100 Chip
 slug: m100-chip
 lab: baidu
 type: announcement
-date: 2026-01-01
-url: https://www.baidu.com
+date: 2025-11-13
+sources:
+  - label: Announcement
+    url: https://www.datacenterdynamics.com/en/news/baidu-launches-kunlun-m100-and-m300-ai-chips/
+  - label: Blog Post
+    url: https://www.eweek.com/news/baidu-ernie-5-0-release/
 description: >
   Newest inference-focused chip designed for low-power, high-throughput
   LLM deployment.
 tags:
   - hardware
   - inference
-notes: Date approximate.
+notes: Announced at Baidu World 2025 on November 13, 2025. Scheduled for production in early 2026.

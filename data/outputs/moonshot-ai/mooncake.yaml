@@ -2,8 +2,12 @@ name: "Mooncake: KVCache-centric Disaggregated Architecture for LLM Serving"
 slug: mooncake
 lab: moonshot-ai
 type: paper
-date: 2024-06-01
-url: https://arxiv.org/abs/2407.00079
+date: 2024-06-24
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2407.00079
+  - label: GitHub
+    url: https://github.com/kvcache-ai/Mooncake
 description: >
   A KVCache-centric disaggregated architecture for LLM serving.
   Won Best Paper at FAST 2025.
@@ -13,4 +17,3 @@ tags:
 paper:
   arxiv: "2407.00079"
   venue: FAST 2025
-notes: Date approximate.

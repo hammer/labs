@@ -2,8 +2,12 @@ name: InternLM-1.0
 slug: internlm-1.0
 lab: shanghai-ai-lab
 type: model
-date: 2023-07-01
-url: https://github.com/InternLM/InternLM
+date: 2023-07-06
+sources:
+  - label: GitHub
+    url: https://github.com/InternLM/InternLM
+  - label: HuggingFace
+    url: https://huggingface.co/internlm/internlm-7b
 description: >
   Debut 104B parameter foundational bilingual (Chinese/English) model.
 tags:
@@ -14,4 +18,4 @@ model:
   parameters: 104B
 library:
   github: https://github.com/InternLM/InternLM
-notes: Date approximate.
+notes: First InternLM model release.

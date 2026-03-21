@@ -2,8 +2,12 @@ name: DeepSeek-Math-V2 Dataset
 slug: deepseek-math-v2-dataset
 lab: deepseek
 type: dataset
-date: 2025-11-01
-url: https://huggingface.co/deepseek-ai
+date: 2025-11-27
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/DeepSeek-Math-V2
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepSeek-Math-V2
 description: >
   Curated sets for mathematical reasoning.
 tags:
@@ -11,4 +15,3 @@ tags:
   - reasoning
 related:
   - deepseek-math-v2
-notes: Date approximate.

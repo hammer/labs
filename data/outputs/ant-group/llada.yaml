@@ -2,10 +2,15 @@ name: LLaDA
 slug: llada
 lab: ant-group
 type: model
-date: 2025-06-01
-url: https://www.inclusion-ai.org
+date: 2025-02-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.09992
+  - label: GitHub
+    url: https://github.com/ML-GSAI/LLaDA
+  - label: Project Page
+    url: https://ml-gsai.github.io/LLaDA-demo/
 description: Diffusion language model from Inclusion AI.
 tags:
   - diffusion
   - architecture
-notes: Date approximate.

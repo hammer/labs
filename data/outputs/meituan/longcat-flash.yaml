@@ -2,8 +2,16 @@ name: LongCat-Flash-Chat
 slug: longcat-flash
 lab: meituan
 type: model
-date: 2025-08-01
-url: https://github.com/meituan-longcat/LongCat-Flash-Chat/blob/main/tech_report.pdf
+date: 2025-09-01
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/meituan-longcat/LongCat-Flash-Chat
+  - label: GitHub
+    url: https://github.com/meituan-longcat/LongCat-Flash-Chat
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2509.01322
+  - label: "Project Page"
+    url: https://www.longcatai.org/
 description: >
   560B parameter MoE model activating ~27B per token. Optimized for
   conversational agents and high-throughput industrial deployment.
@@ -15,4 +23,3 @@ model:
   architecture: moe
   parameters: 560B
   active_parameters: 27B
-notes: Date approximate.

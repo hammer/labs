@@ -3,7 +3,11 @@ slug: internimage-paper
 lab: shanghai-ai-lab
 type: paper
 date: 2022-11-10
-url: https://arxiv.org/abs/2211.05778
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2211.05778
+  - label: GitHub
+    url: https://github.com/OpenGVLab/InternImage
 description: >
   Vision foundation model using deformable convolutions for detection and segmentation.
 tags:

@@ -2,8 +2,12 @@ name: ChatGLM-6B
 slug: chatglm-6b
 lab: zai
 type: model
-date: 2023-03-01
-url: https://github.com/THUDM/ChatGLM-6B
+date: 2023-03-14
+sources:
+  - label: GitHub
+    url: https://github.com/THUDM/ChatGLM-6B
+  - label: HuggingFace
+    url: https://huggingface.co/THUDM/chatglm-6b
 description: >
   High-efficiency open-source model that sparked a wave of local LLM deployment.
 tags:
@@ -14,4 +18,3 @@ model:
   parameters: 6B
 library:
   github: https://github.com/THUDM/ChatGLM-6B
-notes: Date approximate.

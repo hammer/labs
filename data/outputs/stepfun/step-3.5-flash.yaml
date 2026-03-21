@@ -3,7 +3,15 @@ slug: step-3.5-flash
 lab: stepfun
 type: model
 date: 2026-02-11
-url: https://www.stepfun.com
+sources:
+  - label: Blog Post
+    url: https://static.stepfun.com/blog/step-3.5-flash/
+  - label: HuggingFace
+    url: https://huggingface.co/stepfun-ai/Step-3.5-Flash
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.10604
+  - label: GitHub
+    url: https://github.com/stepfun-ai/Step-3.5-Flash
 description: >
   Most advanced agentic model. 196B MoE (11B active) using MTP-3 and hybrid
   attention. Optimized for speed (350 tok/s) with 256k context.

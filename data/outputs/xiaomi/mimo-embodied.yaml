@@ -3,7 +3,11 @@ slug: mimo-embodied
 lab: xiaomi
 type: paper
 date: 2025-11-20
-url: https://arxiv.org/abs/2511.16518
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2511.16518
+  - label: HuggingFace
+    url: https://huggingface.co/XiaomiMiMo/MiMo-Embodied-7B
 description: >
   First cross-embodied foundation model integrating autonomous driving and
   embodied AI. SOTA on 17 embodied AI and 12 autonomous driving benchmarks.

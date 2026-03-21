@@ -2,11 +2,16 @@ name: KuaiRec
 slug: kuairec
 lab: kuaishou
 type: dataset
-date: 2022-01-01
-url: https://github.com/kuaishou-langlab
+date: 2022-02-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2202.10842
+  - label: GitHub
+    url: https://github.com/chongminggao/KuaiRec
+  - label: Website
+    url: https://kuairec.com/
 description: >
   Fully-observed dataset for recommender systems with near 100% density.
 tags:
   - recommendation
   - benchmark
-notes: Date approximate.

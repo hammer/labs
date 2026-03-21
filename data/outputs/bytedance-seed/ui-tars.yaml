@@ -2,8 +2,14 @@ name: UI-TARS
 slug: ui-tars
 lab: bytedance-seed
 type: library
-date: 2025-01-01
-url: https://github.com/bytedance/UI-TARS
+date: 2025-01-22
+sources:
+  - label: GitHub
+    url: https://github.com/bytedance/UI-TARS
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2501.12326
+  - label: HuggingFace
+    url: https://huggingface.co/ByteDance-Seed/UI-TARS-1.5-7B
 description: >
   Open-source multimodal AI agent stack designed to control computers and
   browsers via vision.
@@ -13,4 +19,3 @@ tags:
   - framework
 library:
   github: https://github.com/bytedance/UI-TARS
-notes: Date approximate.

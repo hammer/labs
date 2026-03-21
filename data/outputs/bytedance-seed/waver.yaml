@@ -2,12 +2,15 @@ name: Waver
 slug: waver
 lab: bytedance-seed
 type: model
-date: 2025-06-01
-url: https://huggingface.co/ByteDance-Seed
+date: 2025-08-21
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2508.15761
+  - label: GitHub
+    url: https://github.com/FoundationVision/Waver
 description: >
   Industry-level video foundation model for unified text-to-video (T2V) and
   image-to-video (I2V) generation.
 tags:
   - video
   - generation
-notes: Date approximate.

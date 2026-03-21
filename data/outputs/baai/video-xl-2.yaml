@@ -1,0 +1,23 @@
+name: Video-XL-2
+slug: video-xl-2
+lab: baai
+type: model
+date: 2025-06-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.19225
+  - label: HuggingFace
+    url: https://huggingface.co/BAAI/Video-XL-2
+description: >
+  Ultra-long video understanding model using task-aware KV sparsification.
+  Developed jointly with Shanghai Jiao Tong University. Uses SigLIP-SO400M
+  visual encoder with a Dynamic Token Synthesis module and segmented
+  prefilling strategy. Surpasses all lightweight open-source models on
+  MLVU, VideoMME, and LVBench benchmarks, with performance approaching
+  72B-scale models. Handles thousands of frames on a single 24GB GPU
+  and 10,000+ frames on 80GB GPUs.
+tags:
+  - video-understanding
+  - multimodal
+  - open-weight
+  - efficient-inference

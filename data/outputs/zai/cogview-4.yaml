@@ -2,12 +2,15 @@ name: CogView-4
 slug: cogview-4
 lab: zai
 type: model
-date: 2026-03-01
-url: https://z.ai
+date: 2025-03-04
+sources:
+  - label: GitHub
+    url: https://github.com/zai-org/CogView4
+  - label: Announcement
+    url: https://pandaily.com/cogview4-an-open-source-text-to-image-model-has-been-released-by-zhipu-ai
 description: >
   Latest text-to-image generator, capable of cinematic detail and accurate
   text rendering within images.
 tags:
   - generation
   - vision
-notes: Date approximate.

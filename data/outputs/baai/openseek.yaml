@@ -1,0 +1,36 @@
+name: OpenSeek
+slug: openseek
+lab: baai
+type: model
+date: 2025-05-06
+sources:
+  - label: GitHub
+    url: https://github.com/FlagAI-Open/OpenSeek
+  - label: HuggingFace (Small-v1)
+    url: https://huggingface.co/BAAI/OpenSeek-Small-v1
+  - label: Project site
+    url: https://openseek.baai.ac.cn/
+  - label: HuggingFace collection
+    url: https://huggingface.co/collections/BAAI/openseek
+description: >
+  Open-source initiative to unite the global community in developing
+  next-generation language models, inspired by DeepSeek. Uses DeepSeek V3
+  MoE architecture (64 experts, top-6 routing). OpenSeek-Small v1 is the
+  first-stage model with 1.4B total / 0.4B active parameters trained on
+  720B tokens. Addresses three challenges: high-quality data acquisition,
+  algorithmic innovation, and distributed training systems. Uses FlagScale
+  for distributed training.
+tags:
+  - language-model
+  - open-source
+  - open-weight
+  - moe
+model:
+  variants:
+    - name: OpenSeek-Small-v1-Baseline
+      notes: 1.4B total / 0.4B active, trained on 100B tokens
+    - name: OpenSeek-Small-v1
+      notes: 1.4B total / 0.4B active, trained on 720B tokens
+related:
+  - cci-4.0
+  - flagscale

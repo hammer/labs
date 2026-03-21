@@ -1,0 +1,28 @@
+name: Aquila-VL-2B
+slug: aquila-vl
+lab: baai
+type: model
+date: 2024-11-19
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/BAAI/Aquila-VL-2B-llava-qwen
+  - label: Paper (arXiv, Infinity-MM)
+    url: https://arxiv.org/abs/2410.18558
+description: >
+  2B-parameter vision-language model built on LLaVA-one-vision framework
+  with Qwen2.5-1.5B-instruct as LLM and SigLIP-SO400M as vision tower.
+  Trained on the Infinity-MM dataset (~40M image-text pairs). First model
+  to earn LF AI & Data's MOF Class I "Open Science" rating. SOTA performance
+  among models of the same scale on MMBench, RealWorldQA, and ScienceQA
+  benchmarks.
+tags:
+  - multimodal
+  - vision-language
+  - open-weight
+  - open-science
+model:
+  variants:
+    - name: Aquila-VL-2B-llava-qwen
+    - name: Aquila-VL-2B-Intermediate
+related:
+  - infinity-mm

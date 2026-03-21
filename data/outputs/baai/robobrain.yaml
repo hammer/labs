@@ -1,0 +1,26 @@
+name: RoboBrain
+slug: robobrain
+lab: baai
+type: model
+date: 2025-02-27
+sources:
+  - label: Paper (CVPR 2025)
+    url: https://openaccess.thecvf.com/content/CVPR2025/papers/Ji_RoboBrain_A_Unified_Brain_Model_for_Robotic_Manipulation_from_Abstract_CVPR_2025_paper.pdf
+  - label: GitHub
+    url: https://github.com/FlagOpen/RoboBrain
+  - label: HuggingFace
+    url: https://huggingface.co/BAAI/RoboBrain
+description: >
+  Unified brain model for robotic manipulation from abstract to concrete.
+  Accepted to CVPR 2025. Serves as the foundational embodied intelligence
+  model in BAAI's WuJie series. Designed to bridge abstract task planning
+  with concrete robotic execution.
+tags:
+  - embodied-ai
+  - robotics
+  - open-weight
+paper:
+  venue: CVPR 2025
+related:
+  - robobrain-2.0
+  - roboos

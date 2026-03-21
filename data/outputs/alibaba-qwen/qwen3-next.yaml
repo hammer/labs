@@ -3,9 +3,10 @@ slug: qwen3-next
 lab: alibaba-qwen
 type: model
 date: 2025-09-10
-url: https://qwen.ai/blog?id=4074cca80393150c248e508aa62983f9cb7d27cd
-links:
-  - label: Qwen-Agent library
+sources:
+  - label: Blog Post
+    url: https://qwen.ai/blog?id=4074cca80393150c248e508aa62983f9cb7d27cd
+  - label: GitHub
     url: https://github.com/QwenLM/Qwen-Agent
 description: >
   80B-A3B base model with Instruct and Thinking fine-tuned variants.

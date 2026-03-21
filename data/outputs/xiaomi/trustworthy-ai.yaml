@@ -2,11 +2,14 @@ name: Trustworthy AI White Paper
 slug: trustworthy-ai
 lab: xiaomi
 type: paper
-date: 2021-01-01
-url: https://www.mi.com
+date: 2021-05-01
+sources:
+  - label: Documentation
+    url: https://trust.mi.com/pdf/Xiaomi_Trustworthy_AI_White_Paper_2021_EN.pdf
+  - label: Website
+    url: https://trust.mi.com/compliance
 description: >
   Outlined Xiaomi's ethical AI principles: Security, Privacy, Fairness.
 tags:
   - safety
   - ethics
-notes: Date approximate.

@@ -2,8 +2,14 @@ name: "Kimi K2 Tech Report: Open Agentic Intelligence"
 slug: kimi-k2-tech-report
 lab: moonshot-ai
 type: paper
-date: 2025-07-11
-url: https://arxiv.org/abs/2507.20534
+date: 2025-07-28
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2507.20534
+  - label: "Project Page"
+    url: https://moonshotai.github.io/Kimi-K2/
+  - label: GitHub
+    url: https://github.com/MoonshotAI/Kimi-K2
 description: >
   Technical report for Kimi K2: Open Agentic Intelligence.
 tags:

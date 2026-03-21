@@ -2,8 +2,10 @@ name: "GLM: General Language Model Pretraining with Autoregressive Blank Infilli
 slug: glm-paper
 lab: zai
 type: paper
-date: 2021-01-01
-url: https://arxiv.org/abs/2103.10360
+date: 2021-03-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2103.10360
 description: >
   Foundational architecture paper introducing the autoregressive blank-infilling
   objective.
@@ -11,4 +13,3 @@ tags:
   - architecture
 paper:
   arxiv: "2103.10360"
-notes: Date approximate.

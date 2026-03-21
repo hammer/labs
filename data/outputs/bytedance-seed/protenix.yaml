@@ -3,7 +3,11 @@ slug: protenix
 lab: bytedance-seed
 type: model
 date: 2025-01-01
-url: https://github.com/bytedance/Protenix
+sources:
+  - label: GitHub
+    url: https://github.com/bytedance/Protenix
+  - label: Technical Report
+    url: https://www.biorxiv.org/content/10.64898/2026.02.05.703733v1
 description: >
   Structure-centric foundation model for biomolecules, focusing on
   protein-folding and drug discovery.
@@ -13,4 +17,4 @@ tags:
   - open-weight
 library:
   github: https://github.com/bytedance/Protenix
-notes: Date approximate.
+notes: Date approximate. Protenix-v1 released February 5, 2026.

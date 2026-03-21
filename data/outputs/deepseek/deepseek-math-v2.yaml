@@ -2,8 +2,14 @@ name: DeepSeek-Math-V2
 slug: deepseek-math-v2
 lab: deepseek
 type: model
-date: 2025-11-01
-url: https://huggingface.co/deepseek-ai
+date: 2025-11-27
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/DeepSeek-Math-V2
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepSeek-Math-V2
+  - label: Announcement
+    url: https://www.marktechpost.com/2025/11/28/deepseek-ai-releases-deepseekmath-v2-the-open-weights-maths-model-that-scored-118-120-on-putnam-2024/
 description: >
   Specialized model family for formal and informal mathematical reasoning.
 tags:
@@ -12,4 +18,3 @@ tags:
   - open-weight
 related:
   - deepseek-math
-notes: Date approximate.

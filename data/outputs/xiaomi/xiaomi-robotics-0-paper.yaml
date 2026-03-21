@@ -2,8 +2,12 @@ name: "Xiaomi-Robotics-0: Open-Sourced VLA Model"
 slug: xiaomi-robotics-0-paper
 lab: xiaomi
 type: paper
-date: 2026-02-01
-url: https://huggingface.co/XiaomiMiMo
+date: 2026-02-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.12684
+  - label: Project Page
+    url: https://xiaomi-robotics-0.github.io/
 description: >
   Report on scaling Vision-Language-Action models for consumer GPUs.
 tags:
@@ -11,4 +15,3 @@ tags:
   - vlm
 related:
   - xiaomi-robotics-0
-notes: Date approximate.

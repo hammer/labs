@@ -2,12 +2,16 @@ name: RIVER
 slug: river
 lab: shanghai-ai-lab
 type: dataset
-date: 2026-01-01
-url: https://huggingface.co/internlm
+date: 2026-03-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.03985
+  - label: GitHub
+    url: https://github.com/OpenGVLab/RIVER
 description: >
   Real-time interaction benchmark for Video LLMs.
 tags:
   - benchmark
   - video
   - vlm
-notes: Date approximate.
+notes: arXiv submission Mar 4, 2026.

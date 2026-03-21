@@ -2,8 +2,10 @@ name: "Wu Dao 2.0: A Roadmap to Cognitive Intelligence"
 slug: wu-dao-2.0-paper
 lab: baai
 type: paper
-date: 2021-05-01
-url: https://www.baai.ac.cn
+date: 2021-06-01
+sources:
+  - label: Website
+    url: https://www.baai.ac.cn/en/system
 description: >
   Roadmap paper for the Wu Dao 2.0 cognitive intelligence program.
 tags:
@@ -11,4 +13,3 @@ tags:
   - multimodal
 related:
   - wu-dao-2.0
-notes: Date approximate.

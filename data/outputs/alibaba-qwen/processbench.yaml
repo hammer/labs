@@ -2,11 +2,16 @@ name: ProcessBench
 slug: processbench
 lab: alibaba-qwen
 type: dataset
-date: 2025-06-01
-url: https://huggingface.co/Qwen
+date: 2024-12-09
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2412.06559
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/Qwen/ProcessBench
+  - label: Blog Post
+    url: https://qwenlm.github.io/blog/qwen2.5-math-prm/
 description: >
   Benchmark for evaluating the step-by-step logic of LLMs.
 tags:
   - benchmark
   - reasoning
-notes: Date approximate.

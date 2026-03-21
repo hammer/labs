@@ -2,8 +2,14 @@ name: EchoMimicV2 & V3
 slug: echomimic
 lab: ant-group
 type: paper
-date: 2025-06-01
-url: https://arxiv.org/abs/2407.08136
+date: 2024-07-11
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.08136
+  - label: GitHub
+    url: https://github.com/antgroup/echomimic
+  - label: "EchoMimicV2 Paper (arXiv)"
+    url: https://arxiv.org/abs/2411.10061
 description: >
   Papers accepted at CVPR and AAAI focused on high-fidelity human animation
   and multimodal generation.
@@ -13,4 +19,3 @@ tags:
   - animation
 paper:
   arxiv: "2407.08136"
-notes: Date approximate.

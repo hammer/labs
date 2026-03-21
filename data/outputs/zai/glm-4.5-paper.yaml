@@ -3,7 +3,9 @@ slug: glm-4.5-paper
 lab: zai
 type: paper
 date: 2025-08-08
-url: https://arxiv.org/abs/2508.06471
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.06471
 description: >
   Technical report for the GLM-4.5 series. 355B MoE for agentic engineering.
 tags:

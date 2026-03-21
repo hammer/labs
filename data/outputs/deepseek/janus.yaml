@@ -2,8 +2,14 @@ name: Janus & Janus-Pro
 slug: janus
 lab: deepseek
 type: model
-date: 2024-10-01
-url: https://huggingface.co/deepseek-ai/Janus-Pro-7B
+date: 2024-10-18
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/Janus-Pro-7B
+  - label: GitHub
+    url: https://github.com/deepseek-ai/Janus
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.13848
 description: >
   Unified autoregressive framework handling both multimodal understanding and
   visual generation (DALL-E style) in one model.
@@ -17,4 +23,3 @@ model:
       notes: Released Oct 2024
     - name: Janus-Pro
       notes: Updated through Jan 2026
-notes: Date approximate.

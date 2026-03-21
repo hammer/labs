@@ -2,8 +2,12 @@ name: "KAT-V1: Kwai-AutoThink Technical Report"
 slug: kat-v1-report
 lab: kuaishou
 type: paper
-date: 2025-10-01
-url: https://huggingface.co/Kwaipilot
+date: 2025-07-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.08297
+  - label: HuggingFace
+    url: https://huggingface.co/Kwaipilot/KAT-V1-40B
 description: >
   Technical report on the AutoThink paradigm for dynamic fast/slow reasoning.
 tags:
@@ -11,4 +15,3 @@ tags:
   - coding
 related:
   - kat-coder
-notes: Date approximate.

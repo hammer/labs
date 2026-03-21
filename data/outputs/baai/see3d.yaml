@@ -1,0 +1,26 @@
+name: See3D
+slug: see3d
+lab: baai
+type: model
+date: 2024-12-10
+sources:
+  - label: GitHub
+    url: https://github.com/baaivision/See3D
+  - label: Project page
+    url: https://vision.baai.ac.cn/see3d
+  - label: Paper (CVPR 2025 Highlight)
+    url: https://arxiv.org/abs/2412.07722
+description: >
+  Visual-conditional multi-view diffusion model trained on large-scale
+  internet videos for open-world 3D creation (CVPR 2025 Highlight, ~3%
+  acceptance rate). Introduces warping-based 3D generation without camera
+  parameters, using visual conditioning for camera-controllable and
+  geometrically consistent multi-view images. Supports text-to-3D,
+  single-view-to-3D, sparse-view-to-3D, 3D editing, and Gaussian rendering.
+  Trained on WebVi3D dataset (320M frames from 16M video clips).
+tags:
+  - 3d-generation
+  - multimodal
+  - open-weight
+paper:
+  venue: CVPR 2025 Highlight

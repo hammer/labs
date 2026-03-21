@@ -2,8 +2,12 @@ name: HunyuanVideo
 slug: hunyuanvideo
 lab: tencent
 type: model
-date: 2024-12-01
-url: https://github.com/Tencent/HunyuanVideo
+date: 2024-12-03
+sources:
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/HunyuanVideo
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.03603
 description: >
   Systematic framework for high-fidelity video generation.
 tags:
@@ -11,5 +15,4 @@ tags:
   - generation
   - open-weight
 library:
-  github: https://github.com/Tencent/HunyuanVideo
-notes: Date approximate.
+  github: https://github.com/Tencent-Hunyuan/HunyuanVideo

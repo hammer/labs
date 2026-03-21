@@ -3,7 +3,9 @@ slug: paddledetection
 lab: baidu
 type: library
 date: 2020-01-01
-url: https://github.com/PaddlePaddle/PaddleDetection
+sources:
+  - label: GitHub
+    url: https://github.com/PaddlePaddle/PaddleDetection
 description: >
   End-to-end toolkit for object detection (YOLO, Faster R-CNN).
 tags:

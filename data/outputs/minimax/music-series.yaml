@@ -2,8 +2,12 @@ name: MiniMax Music Series
 slug: music-series
 lab: minimax
 type: model
-date: 2024-06-01
-url: https://www.minimax.io
+date: 2024-08-01
+sources:
+  - label: Announcement
+    url: https://www.minimax.io/news/Music-01
+  - label: "Music 2.5 Announcement"
+    url: https://www.minimax.io/news/minimax-music-25
 description: >
   Capable of generating full 5-minute studio-grade tracks with paragraph-level
   precision control. Versions from Music 1.5 to 2.5+.
@@ -11,4 +15,4 @@ tags:
   - audio
   - music
   - generation
-notes: Date approximate.
+notes: Music-01 launched August 2024; Music 2.0 October 2025; Music 2.5 early 2026.

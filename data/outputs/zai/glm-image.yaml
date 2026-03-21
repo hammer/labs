@@ -2,12 +2,15 @@ name: GLM-Image
 slug: glm-image
 lab: zai
 type: model
-date: 2026-01-01
-url: https://z.ai
+date: 2026-01-14
+sources:
+  - label: Announcement
+    url: https://www.bloomberg.com/news/articles/2026-01-14/china-s-zhipu-unveils-new-ai-model-trained-on-huawei-s-chips
+  - label: Website
+    url: https://glm-image-model.com/
 description: >
   Multimodal model famously trained end-to-end on domestic Huawei hardware
   using the MindSpore framework.
 tags:
   - multimodal
   - generation
-notes: Date approximate.

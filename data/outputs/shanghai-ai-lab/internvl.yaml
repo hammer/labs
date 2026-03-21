@@ -2,8 +2,16 @@ name: InternVL Series
 slug: internvl
 lab: shanghai-ai-lab
 type: model
-date: 2023-12-01
-url: https://github.com/OpenGVLab/InternVL
+date: 2023-12-21
+sources:
+  - label: GitHub
+    url: https://github.com/OpenGVLab/InternVL
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2312.14238
+  - label: Project Page
+    url: https://internvl.github.io/
+  - label: HuggingFace
+    url: https://huggingface.co/OpenGVLab/InternVL
 description: >
   Pioneering open-source vision-language series rivaling GPT-4V. InternVL 3.5
   (Aug 2025) introduced native vision-language-action capabilities.
@@ -21,4 +29,4 @@ model:
       notes: Aug 2025, native VLA capabilities
 library:
   github: https://github.com/OpenGVLab/InternVL
-notes: Date approximate.
+notes: First InternVL paper submitted Dec 21, 2023.

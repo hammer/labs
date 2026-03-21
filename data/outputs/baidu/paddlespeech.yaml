@@ -3,7 +3,9 @@ slug: paddlespeech
 lab: baidu
 type: library
 date: 2021-01-01
-url: https://github.com/PaddlePaddle/PaddleSpeech
+sources:
+  - label: GitHub
+    url: https://github.com/PaddlePaddle/PaddleSpeech
 description: >
   Specialized for ASR, TTS, and speaker verification.
 tags:

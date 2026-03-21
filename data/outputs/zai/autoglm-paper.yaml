@@ -3,7 +3,11 @@ slug: autoglm-paper
 lab: zai
 type: paper
 date: 2024-10-28
-url: https://arxiv.org/abs/2411.00820
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.00820
+  - label: Project Page
+    url: https://xiao9905.github.io/AutoGLM/
 description: >
   Autonomous agents for navigating smartphone apps and web browsers.
 tags:

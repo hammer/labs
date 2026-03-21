@@ -3,7 +3,11 @@ slug: agentuniverse
 lab: ant-group
 type: library
 date: 2024-06-01
-url: https://github.com/alipay/agentUniverse
+sources:
+  - label: GitHub
+    url: https://github.com/alipay/agentUniverse
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.06985
 description: >
   Comprehensive multi-agent framework designed for industrial-scale agentic AI.
 tags:

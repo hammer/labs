@@ -2,8 +2,12 @@ name: DuReader
 slug: dureader
 lab: baidu
 type: dataset
-date: 2017-11-01
-url: https://github.com/baidu/DuReader
+date: 2017-11-14
+sources:
+  - label: GitHub
+    url: https://github.com/baidu/DuReader
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/1711.05073
 description: >
   Largest Chinese machine reading comprehension (MRC) dataset, containing
   real user queries.
@@ -13,4 +17,4 @@ tags:
   - chinese
 dataset:
   github: https://github.com/baidu/DuReader
-notes: Date approximate. Updated through 2020.
+notes: Updated through 2020.

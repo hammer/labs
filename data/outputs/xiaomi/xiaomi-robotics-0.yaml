@@ -2,8 +2,14 @@ name: Xiaomi-Robotics-0
 slug: xiaomi-robotics-0
 lab: xiaomi
 type: model
-date: 2026-02-01
-url: https://huggingface.co/XiaomiMiMo
+date: 2026-02-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.12684
+  - label: HuggingFace
+    url: https://huggingface.co/XiaomiMiMo
+  - label: Project Page
+    url: https://xiaomi-robotics-0.github.io/
 description: >
   4.7B parameter Vision-Language-Action (VLA) model for real-time robotic execution.
 tags:
@@ -15,4 +21,3 @@ model:
   parameters: 4.7B
 paper:
   arxiv: "2602.12684"
-notes: Date approximate.

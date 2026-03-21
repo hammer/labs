@@ -2,12 +2,15 @@ name: ACAVCaps
 slug: acavcaps
 lab: xiaomi
 type: dataset
-date: 2025-06-01
-url: https://huggingface.co/XiaomiMiMo
+date: 2025-08-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.03983
+  - label: GitHub
+    url: https://github.com/xiaomi-research/dasheng-lm
 description: >
   38,000-hour collection of general audio captions for training holistic
   audio-reasoning models.
 tags:
   - audio
   - training-data
-notes: Date approximate.

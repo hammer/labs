@@ -2,8 +2,12 @@ name: DeepSeek-ProverBench
 slug: deepseek-proverbench
 lab: deepseek
 type: dataset
-date: 2024-06-01
-url: https://huggingface.co/deepseek-ai
+date: 2025-04-30
+sources:
+  - label: Dataset
+    url: https://huggingface.co/datasets/deepseek-ai/DeepSeek-ProverBench
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepSeek-Prover-V2
 description: >
   Benchmark for formal mathematical proving.
 tags:
@@ -12,4 +16,3 @@ tags:
   - theorem-proving
 related:
   - deepseek-prover
-notes: Date approximate.

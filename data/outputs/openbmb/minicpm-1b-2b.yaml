@@ -3,7 +3,13 @@ slug: minicpm-1b-2b
 lab: openbmb
 type: model
 date: 2024-02-01
-url: https://github.com/OpenBMB/MiniCPM
+sources:
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM
+  - label: HuggingFace
+    url: https://huggingface.co/openbmb/MiniCPM-2B-dpo-bf16
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2404.06395
 description: >
   Series debut. The 2B model outperformed Llama2-13B and matched Mistral-7B
   despite its smaller size.
@@ -20,4 +26,3 @@ model:
       parameters: 2B
 library:
   github: https://github.com/OpenBMB/MiniCPM
-notes: Date approximate.

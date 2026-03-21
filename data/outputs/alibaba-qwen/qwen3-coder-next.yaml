@@ -3,9 +3,10 @@ slug: qwen3-coder-next
 lab: alibaba-qwen
 type: model
 date: 2026-02-03
-url: https://qwen.ai/blog?id=qwen3-coder-next
-links:
-  - label: Hugging Face
+sources:
+  - label: Blog Post
+    url: https://qwen.ai/blog?id=qwen3-coder-next
+  - label: HuggingFace
     url: https://huggingface.co/Qwen/Qwen3-Coder-Next
 description: Built on Qwen3-Next-80B-A3B-Base.
 tags:

@@ -3,7 +3,13 @@ slug: kimi-dev-paper
 lab: moonshot-ai
 type: paper
 date: 2025-09-27
-url: https://arxiv.org/abs/2509.23045
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2509.23045
+  - label: GitHub
+    url: https://github.com/MoonshotAI/Kimi-Dev
+  - label: HuggingFace
+    url: https://huggingface.co/moonshotai/Kimi-Dev-72B
 description: >
   Open-source SWE LLM achieving 60.4% on SWE-bench Verified. Agentless
   training as skill prior for SWE-Agents.

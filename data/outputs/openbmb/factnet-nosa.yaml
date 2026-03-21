@@ -2,12 +2,17 @@ name: FactNet & NOSA
 slug: factnet-nosa
 lab: openbmb
 type: dataset
-date: 2024-06-01
-url: https://huggingface.co/openbmb
+date: 2026-02-03
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2602.03417
+  - label: HuggingFace
+    url: https://huggingface.co/collections/openbmb/factnet
+  - label: Dataset
+    url: https://huggingface.co/datasets/openbmb/factnet_factstatements
 description: >
   Specialized sets for evaluating and improving model factuality and safety.
 tags:
   - benchmark
   - safety
   - factuality
-notes: Date approximate.

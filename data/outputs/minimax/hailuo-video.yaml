@@ -2,8 +2,12 @@ name: Hailuo AI (Video-01 / 2.3)
 slug: hailuo-video
 lab: minimax
 type: model
-date: 2024-09-01
-url: https://hailuoai.video
+date: 2024-08-31
+sources:
+  - label: Website
+    url: https://hailuoai.video
+  - label: Announcement
+    url: https://www.minimax.io/news/minimax-hailuo-23
 description: >
   Industry-leading video generation series. Hailuo 2.3 (Oct 2025) achieved
   breakthroughs in physical realism and facial micro-expressions.
@@ -13,7 +17,6 @@ tags:
 model:
   variants:
     - name: Video-01
-      notes: Released 2024
+      notes: Released August 2024
     - name: Hailuo 2.3
       notes: Released Oct 2025, physical realism breakthroughs
-notes: Date approximate.

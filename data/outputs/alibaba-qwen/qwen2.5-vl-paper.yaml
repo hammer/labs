@@ -3,7 +3,11 @@ slug: qwen2.5-vl-paper
 lab: alibaba-qwen
 type: paper
 date: 2025-02-19
-url: https://arxiv.org/abs/2502.13923
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2502.13923
+  - label: Blog Post
+    url: https://qwenlm.github.io/blog/qwen2.5-vl/
 description: >
   Vision-language model series with dynamic resolution processing and absolute
   time encoding.

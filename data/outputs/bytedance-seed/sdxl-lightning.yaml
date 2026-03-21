@@ -2,8 +2,12 @@ name: SDXL-Lightning
 slug: sdxl-lightning
 lab: bytedance-seed
 type: model
-date: 2024-02-01
-url: https://huggingface.co/ByteDance/SDXL-Lightning
+date: 2024-02-21
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/ByteDance/SDXL-Lightning
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2402.13929
 description: >
   Lightning-fast distillation of SDXL allowing high-quality image generation
   in 1-4 steps.
@@ -11,4 +15,3 @@ tags:
   - generation
   - vision
   - efficiency
-notes: Date approximate.

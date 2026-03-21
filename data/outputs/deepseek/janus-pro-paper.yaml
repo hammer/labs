@@ -3,7 +3,11 @@ slug: janus-pro-paper
 lab: deepseek
 type: paper
 date: 2025-01-29
-url: https://arxiv.org/abs/2501.17811
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.17811
+  - label: GitHub
+    url: https://github.com/deepseek-ai/Janus
 description: >
   Scaling multimodal understanding and generation with data and model improvements.
 tags:

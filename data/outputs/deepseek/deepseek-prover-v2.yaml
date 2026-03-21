@@ -3,7 +3,13 @@ slug: deepseek-prover-v2
 lab: deepseek
 type: paper
 date: 2025-04-30
-url: https://arxiv.org/abs/2504.21801
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.21801
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepSeek-Prover-V2
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/DeepSeek-Prover-V2-671B
 description: >
   RL for subgoal decomposition in formal mathematical reasoning.
 tags:

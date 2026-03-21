@@ -2,8 +2,14 @@ name: MiMo-V2-Flash
 slug: mimo-v2-flash
 lab: xiaomi
 type: model
-date: 2025-12-01
-url: https://mimo.xiaomi.com
+date: 2025-12-16
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash
+  - label: GitHub
+    url: https://github.com/XiaomiMiMo/MiMo-V2-Flash
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.02780
 description: >
   309B MoE model (15B active) optimized for extreme speed (150 tokens/sec)
   and low-cost API access.
@@ -16,4 +22,3 @@ model:
   active_parameters: 15B
 paper:
   arxiv: "2601.02780"
-notes: Date approximate.

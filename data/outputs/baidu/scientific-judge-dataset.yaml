@@ -2,8 +2,14 @@ name: Scientific Judge Dataset
 slug: scientific-judge-dataset
 lab: baidu
 type: dataset
-date: 2026-03-01
-url: https://www.baidu.com
+date: 2026-03-15
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2603.14473
+  - label: GitHub
+    url: https://github.com/tongjingqi/AI-Can-Learn-Scientific-Taste
+  - label: Project Page
+    url: https://tongjingqi.github.io/AI-Can-Learn-Scientific-Taste/
 description: >
   Dataset of 700,000 scientific preference signals for alignment research.
 tags:
@@ -11,4 +17,3 @@ tags:
   - reasoning
 related:
   - scientific-judge
-notes: Date approximate.

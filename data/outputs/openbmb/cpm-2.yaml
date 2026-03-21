@@ -2,8 +2,12 @@ name: CPM-2
 slug: cpm-2
 lab: openbmb
 type: model
-date: 2021-06-01
-url: https://github.com/TsinghuaAI/CPM
+date: 2021-06-24
+sources:
+  - label: GitHub
+    url: https://github.com/TsinghuaAI/CPM
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2106.10715
 description: >
   198B parameter MoE model, supported by BAAI.
 tags:
@@ -12,4 +16,3 @@ tags:
 model:
   architecture: moe
   parameters: 198B
-notes: Date approximate.

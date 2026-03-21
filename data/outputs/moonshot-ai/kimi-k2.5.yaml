@@ -3,10 +3,15 @@ slug: kimi-k2.5
 lab: moonshot-ai
 type: model
 date: 2026-02-02
-url: https://arxiv.org/abs/2602.02276
-links:
-  - label: Codecademy Guide
-    url: https://www.codecademy.com/article/kimi-k-2-5-complete-guide-to-moonshots-ai-model
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2602.02276
+  - label: HuggingFace
+    url: https://huggingface.co/moonshotai/Kimi-K2.5
+  - label: GitHub
+    url: https://github.com/MoonshotAI/Kimi-K2.5
+  - label: "Blog Post"
+    url: https://www.kimi.com/blog/kimi-k2-5
 description: >
   Most powerful open-source model from Moonshot. 1.1T MoE model featuring Agent
   Swarm technology, allowing coordination of up to 100 sub-agents in parallel.

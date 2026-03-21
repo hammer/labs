@@ -2,8 +2,12 @@ name: VeOmni
 slug: veomni
 lab: bytedance-seed
 type: library
-date: 2025-06-01
-url: https://github.com/bytedance/VeOmni
+date: 2025-09-01
+sources:
+  - label: GitHub
+    url: https://github.com/ByteDance-Seed/VeOmni
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2508.02317
 description: >
   Open-source framework for scaling any-modality foundation model training.
 tags:
@@ -11,5 +15,5 @@ tags:
   - framework
   - training
 library:
-  github: https://github.com/bytedance/VeOmni
-notes: Date approximate.
+  github: https://github.com/ByteDance-Seed/VeOmni
+notes: v0.1.0 released September 2025. Paper accepted at AAAI 2026.

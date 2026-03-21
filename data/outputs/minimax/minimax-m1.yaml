@@ -2,8 +2,14 @@ name: MiniMax-M1
 slug: minimax-m1
 lab: minimax
 type: model
-date: 2025-06-01
-url: https://huggingface.co/MiniMaxAI
+date: 2025-06-16
+sources:
+  - label: Announcement
+    url: https://www.minimax.io/news/minimaxm1
+  - label: HuggingFace
+    url: https://huggingface.co/MiniMaxAI/MiniMax-M1-80k
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2506.13585
 description: >
   World's first large-scale hybrid-attention reasoning model (456B parameters,
   45.9B active). Introduced Lightning Attention for 1M-token contexts with
@@ -18,4 +24,3 @@ model:
   parameters: 456B
   active_parameters: 45.9B
   context_window: 1000000
-notes: Date approximate.

@@ -2,12 +2,17 @@ name: VIBE & OctoCodingBench
 slug: vibe-octocodingbench
 lab: minimax
 type: dataset
-date: 2025-06-01
-url: https://huggingface.co/MiniMaxAI
+date: 2025-12-23
+sources:
+  - label: Announcement
+    url: https://www.minimax.io/news/production-grade-benchmark-for-coding-agents
+  - label: "VIBE (HuggingFace)"
+    url: https://huggingface.co/datasets/MiniMaxAI/VIBE
+  - label: "OctoCodingBench (HuggingFace)"
+    url: https://huggingface.co/datasets/MiniMaxAI/OctoCodingBench
 description: >
   Evaluation benchmarks for measuring agentic and coding performance.
 tags:
   - benchmark
   - agentic
   - coding
-notes: Date approximate.

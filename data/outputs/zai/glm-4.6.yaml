@@ -2,8 +2,12 @@ name: GLM-4.6
 slug: glm-4.6
 lab: zai
 type: model
-date: 2025-09-01
-url: https://z.ai
+date: 2025-09-30
+sources:
+  - label: Announcement
+    url: https://www.marktechpost.com/2025/09/30/zhipu-ai-releases-glm-4-6-achieving-enhancements-in-real-world-coding-long-context-processing-reasoning-searching-and-agentic-ai/
+  - label: API Docs
+    url: https://docs.z.ai
 description: >
   Released with MIT License. 355B MoE model, premier open-weight choice for
   enterprise self-hosting.
@@ -13,4 +17,3 @@ tags:
 model:
   architecture: moe
   parameters: 355B
-notes: Date approximate.

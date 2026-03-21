@@ -3,7 +3,11 @@ slug: minicpm-v-paper
 lab: openbmb
 type: paper
 date: 2024-08-03
-url: https://arxiv.org/abs/2408.01800
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2408.01800
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM-o
 description: >
   Vision-language model achieving GPT-4V level performance on mobile devices.
 tags:

@@ -1,0 +1,27 @@
+name: Infinity-Instruct
+slug: infinity-instruct
+lab: baai
+type: dataset
+date: 2025-06-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.11116
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/BAAI/Infinity-Instruct
+  - label: HuggingFace collection
+    url: https://huggingface.co/collections/BAAI/infinity-instruct
+description: >
+  Large-scale high-quality instruction dataset for language model training.
+  Comprises 7.4M foundational instructions (InfInstruct-F-7.4M) curated from
+  100M+ samples and 1.5M chat instructions (InfInstruct-G-1.5M) synthesized
+  via instruction selection, evolution, and diagnostic filtering. 7M Core
+  subset reaches 95.7% of full 7M performance with only 1.4M instructions.
+  InfInstruct-LLaMA3.1-70B outperforms GPT-4-0314 by 8.6% on instruction
+  following tasks. Updated in 2025 with instruction labeling types and
+  reward scores.
+tags:
+  - dataset
+  - instruction-tuning
+  - open-source
+related:
+  - infinity-mm

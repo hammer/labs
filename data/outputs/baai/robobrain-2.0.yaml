@@ -1,0 +1,40 @@
+name: RoboBrain 2.0
+slug: robobrain-2.0
+lab: baai
+type: model
+date: 2025-06-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.02029
+  - label: HuggingFace (7B)
+    url: https://huggingface.co/BAAI/RoboBrain2.0-7B
+  - label: HuggingFace (32B)
+    url: https://huggingface.co/BAAI/RoboBrain2.0-32B
+  - label: Project page
+    url: https://superrobobrain.github.io/
+description: >
+  Next-generation vision-language model unifying embodied AI for advanced
+  robotics. Announced at the 2025 BAAI Conference on June 6. Most powerful
+  open-source embodied brain model, supporting spatial understanding
+  (affordance prediction, spatial referring, trajectory forecasting) and
+  temporal decision-making (closed-loop interaction, multi-agent planning,
+  real-time scene memory). Available in 3B, 7B, and 32B parameter variants.
+  The 32B model achieves leading results on spatial and temporal benchmarks,
+  surpassing prior open-source and proprietary models.
+tags:
+  - embodied-ai
+  - robotics
+  - open-weight
+  - multimodal
+model:
+  variants:
+    - name: RoboBrain2.0-3B
+      notes: Ultra-lightweight, released July 23, 2025
+    - name: RoboBrain2.0-7B
+      notes: Lightweight, released June 6, 2025
+    - name: RoboBrain2.0-32B
+      notes: Full-scale, released July 3, 2025
+related:
+  - robobrain
+  - robobrain-2.5
+  - roboos

@@ -2,8 +2,12 @@ name: ByteTrack
 slug: bytetrack
 lab: bytedance-seed
 type: library
-date: 2022-01-01
-url: https://github.com/ifzhang/ByteTrack
+date: 2021-10-13
+sources:
+  - label: GitHub
+    url: https://github.com/ifzhang/ByteTrack
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2110.06864
 description: >
   Legendary multi-object tracking algorithm that remains an industry standard.
 tags:
@@ -11,4 +15,4 @@ tags:
   - tracking
 library:
   github: https://github.com/ifzhang/ByteTrack
-notes: Date approximate.
+notes: Published at ECCV 2022.

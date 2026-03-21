@@ -2,10 +2,12 @@ name: ABAB 5 / 5.5
 slug: abab-5
 lab: minimax
 type: model
-date: 2023-06-01
-url: https://www.minimax.io
+date: 2023-08-01
+sources:
+  - label: Website
+    url: https://www.minimax.io
 description: >
   Early foundational models that powered MiniMax's first consumer apps.
 tags:
   - proprietary
-notes: Date approximate.
+notes: Date approximate. ABAB large model passed China's first batch of service filings in August 2023.

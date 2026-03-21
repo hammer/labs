@@ -2,8 +2,12 @@ name: Step-1
 slug: step-1
 lab: stepfun
 type: model
-date: 2023-10-01
-url: https://www.stepfun.com
+date: 2024-03-23
+sources:
+  - label: Website
+    url: https://www.stepfun.com
+  - label: Announcement
+    url: https://pandaily.com/stepfun-releases-three-large-models-of-the-step-series/
 description: >
   Debut 130B parameter LLM that established StepFun as a top-tier contender.
 tags:
@@ -11,4 +15,4 @@ tags:
 model:
   architecture: dense
   parameters: 130B
-notes: Date approximate.
+notes: Step series launched Mar 23, 2024.

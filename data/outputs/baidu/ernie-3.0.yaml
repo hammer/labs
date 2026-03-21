@@ -2,8 +2,10 @@ name: ERNIE 3.0 & 3.0 Titan
 slug: ernie-3.0
 lab: baidu
 type: model
-date: 2021-07-01
-url: https://arxiv.org/abs/2107.02137
+date: 2021-07-05
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2107.02137
 description: >
   Baidu's first massive-scale model (260B parameters) combining structured
   knowledge graphs with unstructured text.
@@ -15,4 +17,3 @@ model:
   parameters: 260B
 paper:
   arxiv: "2107.02137"
-notes: Date approximate.

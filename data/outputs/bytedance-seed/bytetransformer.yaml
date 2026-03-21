@@ -2,8 +2,12 @@ name: ByteTransformer
 slug: bytetransformer
 lab: bytedance-seed
 type: library
-date: 2022-06-01
-url: https://github.com/bytedance/ByteTransformer
+date: 2022-10-06
+sources:
+  - label: GitHub
+    url: https://github.com/bytedance/ByteTransformer
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2210.03052
 description: >
   High-performance Transformer implementation optimized for variable-length sequences.
 tags:
@@ -11,4 +15,4 @@ tags:
   - kernels
 library:
   github: https://github.com/bytedance/ByteTransformer
-notes: Date approximate.
+notes: Published at IEEE IPDPS 2023.

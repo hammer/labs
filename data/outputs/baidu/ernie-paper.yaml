@@ -2,8 +2,10 @@ name: "ERNIE: Enhanced Representation through Knowledge Integration"
 slug: ernie-paper
 lab: baidu
 type: paper
-date: 2019-04-01
-url: https://arxiv.org/abs/1904.09223
+date: 2019-04-19
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/1904.09223
 description: >
   Foundational paper for the ERNIE series, introducing knowledge integration
   into language model pretraining.
@@ -14,4 +16,3 @@ paper:
   arxiv: "1904.09223"
 related:
   - ernie-1.0
-notes: Date approximate.

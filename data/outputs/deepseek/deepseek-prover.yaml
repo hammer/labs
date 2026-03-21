@@ -2,8 +2,16 @@ name: DeepSeek-Prover
 slug: deepseek-prover
 lab: deepseek
 type: model
-date: 2024-06-01
-url: https://arxiv.org/abs/2408.08152
+date: 2024-05-23
+sources:
+  - label: Paper (arXiv) - V1
+    url: https://arxiv.org/abs/2405.14333
+  - label: Paper (arXiv) - V1.5
+    url: https://arxiv.org/abs/2408.08152
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/DeepSeek-Prover-V1.5-Base
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepSeek-Prover-V1.5
 description: >
   Specialized models for formal theorem proving in Lean 4. Includes V1.5
   and V2 versions.
@@ -19,4 +27,3 @@ model:
       notes: Released 2025
 paper:
   arxiv: "2408.08152"
-notes: Date approximate.

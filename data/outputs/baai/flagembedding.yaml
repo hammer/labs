@@ -2,8 +2,10 @@ name: FlagEmbedding
 slug: flagembedding
 lab: baai
 type: library
-date: 2023-08-01
-url: https://github.com/FlagOpen/FlagEmbedding
+date: 2023-08-02
+sources:
+  - label: GitHub
+    url: https://github.com/FlagOpen/FlagEmbedding
 description: >
   Official library for the BGE model family.
 tags:
@@ -14,4 +16,3 @@ library:
   github: https://github.com/FlagOpen/FlagEmbedding
 related:
   - bge
-notes: Date approximate.

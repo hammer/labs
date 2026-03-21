@@ -2,8 +2,12 @@ name: Doubao-1.5-Pro
 slug: doubao-1.5-pro
 lab: bytedance-seed
 type: model
-date: 2025-01-01
-url: https://www.volcengine.com
+date: 2025-01-22
+sources:
+  - label: Announcement
+    url: https://analyticsdrift.com/bytedance-launches-an-advanced-ai-model-doubao-1-5-pro/
+  - label: Blog Post
+    url: https://www.marktechpost.com/2025/01/25/bytedance-ai-introduces-doubao-1-5-pro-language-model-with-a-deep-thinking-mode-and-matches-gpt-4o-and-claude-3-5-sonnet-benchmarks-at-50x-cheaper/
 description: >
   Sparse MoE model (20B active/140B total) with a 256k context window.
   Part of ByteDance's flagship Doubao series.
@@ -15,4 +19,3 @@ model:
   parameters: 140B
   active_parameters: 20B
   context_window: 256000
-notes: Date approximate.

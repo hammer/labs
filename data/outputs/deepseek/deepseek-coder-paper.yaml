@@ -3,7 +3,11 @@ slug: deepseek-coder-paper
 lab: deepseek
 type: paper
 date: 2024-01-25
-url: https://arxiv.org/abs/2401.14196
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2401.14196
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepSeek-Coder
 description: >
   Technical report on the rise of code intelligence with DeepSeek-Coder models.
 tags:

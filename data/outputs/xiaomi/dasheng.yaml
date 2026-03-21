@@ -3,7 +3,9 @@ slug: dasheng
 lab: xiaomi
 type: paper
 date: 2024-06-11
-url: https://arxiv.org/abs/2406.06992
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.06992
 description: >
   Original Dasheng audio encoder (1.2B params, 272K hours). Foundation for
   MiDashengLM and DashengTokenizer.

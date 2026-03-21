@@ -3,7 +3,9 @@ slug: internevo
 lab: shanghai-ai-lab
 type: library
 date: 2023-07-01
-url: https://github.com/InternLM/InternEvo
+sources:
+  - label: GitHub
+    url: https://github.com/InternLM/InternEvo
 description: >
   Training framework designed for trillion-parameter models with minimal dependencies.
 tags:

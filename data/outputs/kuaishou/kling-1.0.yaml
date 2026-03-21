@@ -2,8 +2,12 @@ name: Kling 1.0/1.5
 slug: kling-1.0
 lab: kuaishou
 type: model
-date: 2024-06-01
-url: https://www.kuaishou.com
+date: 2024-06-06
+sources:
+  - label: Announcement
+    url: https://ir.kuaishou.com/news-releases/news-release-details/kuaishou-unveils-proprietary-video-generation-model-kling
+  - label: Website
+    url: https://klingai.com/
 description: >
   Flagship video generation model capable of 2-minute videos at 1080p/30fps,
   utilizing a Diffusion Transformer (DiT) architecture.
@@ -11,4 +15,3 @@ tags:
   - video
   - generation
   - diffusion
-notes: Date approximate.

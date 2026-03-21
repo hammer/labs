@@ -2,8 +2,12 @@ name: Step-Video-T2V
 slug: step-video-t2v
 lab: stepfun
 type: model
-date: 2025-02-01
-url: https://huggingface.co/stepfun-ai
+date: 2025-02-17
+sources:
+  - label: GitHub
+    url: https://github.com/stepfun-ai/Step-Video-T2V
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.10248
 description: >
   Massive 300B parameter text-to-video model capable of generating high-fidelity
   204-frame clips.
@@ -12,4 +16,4 @@ tags:
   - generation
 model:
   parameters: 300B
-notes: Date approximate.
+notes: Code and model weights released Feb 17, 2025.

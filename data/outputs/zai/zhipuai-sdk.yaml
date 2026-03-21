@@ -3,12 +3,16 @@ slug: zhipuai-sdk
 lab: zai
 type: library
 date: 2023-06-01
-url: https://github.com/zhipuai/zhipuai-sdk-python-v4
+sources:
+  - label: GitHub
+    url: https://github.com/MetaGLM/zhipuai-sdk-python-v4
+  - label: Documentation
+    url: https://docs.z.ai
 description: >
   Official SDKs (Python/Java) for the BigModel platform.
 tags:
   - sdk
   - framework
 library:
-  github: https://github.com/zhipuai/zhipuai-sdk-python-v4
+  github: https://github.com/MetaGLM/zhipuai-sdk-python-v4
 notes: Date approximate.

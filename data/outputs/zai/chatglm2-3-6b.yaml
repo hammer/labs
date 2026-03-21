@@ -2,8 +2,12 @@ name: ChatGLM2-6B / ChatGLM3-6B
 slug: chatglm2-3-6b
 lab: zai
 type: model
-date: 2023-06-01
-url: https://github.com/THUDM/ChatGLM3
+date: 2023-06-25
+sources:
+  - label: GitHub
+    url: https://github.com/THUDM/ChatGLM3
+  - label: HuggingFace
+    url: https://huggingface.co/THUDM/chatglm3-6b
 description: >
   Iterative improvements in context length, tool use, and reasoning.
 tags:
@@ -18,4 +22,3 @@ model:
       notes: Released Oct 2023
 library:
   github: https://github.com/THUDM/ChatGLM3
-notes: Date approximate.

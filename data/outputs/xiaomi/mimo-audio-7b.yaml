@@ -3,7 +3,11 @@ slug: mimo-audio-7b
 lab: xiaomi
 type: model
 date: 2025-06-01
-url: https://huggingface.co/XiaomiMiMo
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/XiaomiMiMo
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.23808
 description: >
   Specialized model for few-shot audio understanding and environmental
   sound classification.

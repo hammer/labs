@@ -2,8 +2,12 @@ name: HyperOS 3
 slug: hyperos-3
 lab: xiaomi
 type: announcement
-date: 2025-10-01
-url: https://www.mi.com
+date: 2025-08-28
+sources:
+  - label: Announcement
+    url: https://gadgets.beebom.com/news/xiaomi-hyperos-3-release-date-confirmed
+  - label: Website
+    url: https://www.mi.com/global/event/2025/hyperos-2025/
 description: >
   First operating system with a system-level AI layer (HyperAI) integrated
   across smartphones, Xiaomi SU7/SU8 vehicles, and IoT devices.
@@ -11,4 +15,3 @@ tags:
   - on-device
   - infrastructure
   - ecosystem
-notes: Date approximate.

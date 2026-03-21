@@ -2,8 +2,12 @@ name: Miloco (Xiaomi Local Copilot)
 slug: miloco
 lab: xiaomi
 type: library
-date: 2025-06-01
-url: https://github.com/XiaomiMiMo
+date: 2025-11-14
+sources:
+  - label: GitHub
+    url: https://github.com/XiaoMi/xiaomi-miloco
+  - label: Announcement
+    url: https://xiaomiforall.com/xiaomi-miloco-smart-homes-local-ai/
 description: >
   Framework enabling LLM-powered smart home automation via local natural
   language interaction.
@@ -11,4 +15,3 @@ tags:
   - on-device
   - agentic
   - smart-home
-notes: Date approximate.

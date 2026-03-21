@@ -3,7 +3,9 @@ slug: mimo-audio-paper
 lab: xiaomi
 type: paper
 date: 2025-12-29
-url: https://arxiv.org/abs/2512.23808
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.23808
 description: >
   Audio LM pre-trained on 100M+ hours. Achieves SOTA on speech intelligence
   and audio understanding benchmarks.

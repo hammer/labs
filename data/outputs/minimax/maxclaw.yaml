@@ -2,8 +2,12 @@ name: MaxClaw
 slug: maxclaw
 lab: minimax
 type: library
-date: 2026-01-01
-url: https://www.minimax.io
+date: 2026-02-25
+sources:
+  - label: Website
+    url: https://maxclaw.ai/
+  - label: "Project Page"
+    url: https://agent.minimax.io/max-claw
 description: >
   Integrated agent interface that natively calls MiniMax's video, audio,
   and image models.
@@ -11,4 +15,3 @@ tags:
   - agentic
   - framework
   - multimodal
-notes: Date approximate.

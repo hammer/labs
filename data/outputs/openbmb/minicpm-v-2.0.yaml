@@ -2,11 +2,14 @@ name: MiniCPM-V 2.0
 slug: minicpm-v-2.0
 lab: openbmb
 type: model
-date: 2024-04-01
-url: https://huggingface.co/openbmb
+date: 2024-04-12
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/openbmb/MiniCPM-V
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM-o
 description: >
   First multimodal model capable of being deployed natively on a smartphone.
 tags:
   - vlm
   - on-device
-notes: Date approximate.

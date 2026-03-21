@@ -1,0 +1,38 @@
+name: RoboBrain 2.5
+slug: robobrain-2.5
+lab: baai
+type: model
+date: 2026-01-25
+sources:
+  - label: GitHub
+    url: https://github.com/FlagOpen/RoboBrain2.5
+  - label: HuggingFace (8B-NV)
+    url: https://huggingface.co/BAAI/RoboBrain2.5-8B-NV
+  - label: HuggingFace (4B)
+    url: https://huggingface.co/BAAI/RoboBrain2.5-4B
+description: >
+  Next-generation embodied AI foundation model advancing general perception,
+  spatial reasoning, and temporal modeling. Two major upgrades over 2.0:
+  (1) Precise 3D Spatial Reasoning via depth-aware coordinate prediction
+  instead of 2D pixel-relative grounding, generating complete 3D manipulation
+  traces as ordered keypoint sequences under physical constraints.
+  (2) Dense Temporal Value Estimation providing step-aware progress prediction
+  and execution state understanding, producing stable feedback signals for
+  VLA reinforcement learning. Achieves 95%+ task success rate in complex
+  fine-grained manipulations with only one demonstration.
+tags:
+  - embodied-ai
+  - robotics
+  - open-weight
+  - 3d-reasoning
+model:
+  variants:
+    - name: RoboBrain2.5-8B-NV
+      notes: Trained on NVIDIA GPU cluster, released Jan 25, 2026
+    - name: RoboBrain2.5-8B-MT
+      notes: Trained on Moore-Threads GPU cluster, released Jan 25, 2026
+    - name: RoboBrain2.5-4B
+      notes: Released Mar 1, 2026
+related:
+  - robobrain-2.0
+  - robobrain

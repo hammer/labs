@@ -1,51 +1,244 @@
 ---
 import Layout from '../components/Layout.astro';
-import LabCard from '../components/LabCard.astro';
-import { getLabsGroupedByType, getOutputCount, getAllLabs, getAllOutputsChronological } from '../data/loader.js';
+import TypeBadge from '../components/TypeBadge.astro';
+import { getAllLabs, getOutputCount, getAllOutputsChronological } from '../data/loader.js';
 
-const grouped = getLabsGroupedByType();
-const totalLabs = getAllLabs().length;
+const labs = getAllLabs().sort((a, b) => getOutputCount(b.slug) - getOutputCount(a.slug));
 const totalOutputs = getAllOutputsChronological().length;
-const typeOrder = ['corporate', 'startup', 'nonprofit', 'academic', 'other'];
-const typeLabels: Record<string, string> = {
-  corporate: 'Corporate',
-  startup: 'Startup',
-  nonprofit: 'Nonprofit',
-  academic: 'Academic',
-  other: 'Other',
-};
 ---
 
 <Layout title="Labs">
   <header class="page-header">
     <h1>AI Lab Tracker</h1>
-    <p class="subtitle">{totalLabs} labs, {totalOutputs} outputs</p>
+    <p class="subtitle">{labs.length} labs, {totalOutputs} outputs &middot; <button class="shortcut-hint" id="shortcut-hint">Keyboard shortcuts <kbd>?</kbd></button></p>
   </header>
 
-  {typeOrder.map((type) => {
-    const labs = grouped[type];
-    if (!labs?.length) return null;
-    return (
-      <section class="type-section">
-        <h2 class="type-heading">
-          <span class="type-label" style={`--type-color: var(--color-${type})`}>
-            {typeLabels[type] ?? type}
-          </span>
-          <span class="type-count">{labs.length}</span>
-        </h2>
-        <div class="lab-grid">
-          {labs.map((lab) => (
-            <LabCard lab={lab} outputCount={getOutputCount(lab.slug)} />
-          ))}
+  <table class="lab-table" id="lab-table">
+    <thead>
+      <tr>
+        <th class="col-name">Lab</th>
+        <th class="col-type">Type</th>
+        <th class="col-founded">Founded</th>
+        <th class="col-outputs">Outputs</th>
+      </tr>
+    </thead>
+    <tbody>
+      {labs.map((lab, i) => {
+        const count = getOutputCount(lab.slug);
+        const founded = lab.founded?.slice(0, 4) ?? '—';
+        return (
+          <tr class="lab-row" data-href={`/labs/${lab.slug}`} data-index={i}>
+            <td class="col-name">
+              <img
+                src={`/logos/${lab.slug}.png`}
+                alt=""
+                class="lab-logo"
+                width="20"
+                height="20"
+                loading="lazy"
+              />
+              <span class="lab-name">{lab.name}</span>
+            </td>
+            <td class="col-type"><TypeBadge type={lab.type ?? 'other'} /></td>
+            <td class="col-founded">{founded}</td>
+            <td class="col-outputs">{count}</td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+
+  <div class="shortcut-modal" id="shortcut-modal">
+    <div class="shortcut-backdrop" id="shortcut-backdrop"></div>
+    <div class="shortcut-dialog">
+      <h3>Keyboard shortcuts</h3>
+      <div class="shortcut-grid">
+        <div class="shortcut-group">
+          <h4>Navigation</h4>
+          <dl>
+            <div><dt><kbd>j</kbd></dt><dd>Move down</dd></div>
+            <div><dt><kbd>k</kbd></dt><dd>Move up</dd></div>
+            <div><dt><kbd>o</kbd> / <kbd>Enter</kbd></dt><dd>Open lab</dd></div>
+            <div><dt><kbd>g</kbd> then <kbd>g</kbd></dt><dd>Go to top</dd></div>
+            <div><dt><kbd>G</kbd></dt><dd>Go to bottom</dd></div>
+            <div><dt><kbd>g</kbd> then <kbd>h</kbd></dt><dd>Go home</dd></div>
+            <div><dt><kbd>g</kbd> then <kbd>t</kbd></dt><dd>Go to timeline</dd></div>
+          </dl>
         </div>
-      </section>
-    );
-  })}
+        <div class="shortcut-group">
+          <h4>Other</h4>
+          <dl>
+            <div><dt><kbd>/</kbd></dt><dd>Search</dd></div>
+            <div><dt><kbd>Esc</kbd></dt><dd>Clear / close</dd></div>
+            <div><dt><kbd>?</kbd></dt><dd>Show this help</dd></div>
+          </dl>
+        </div>
+      </div>
+      <button class="close-btn" id="close-shortcuts">&times;</button>
+    </div>
+  </div>
+
+  <div class="search-bar" id="search-bar">
+    <input type="text" id="search-input" placeholder="Search labs..." autocomplete="off" />
+  </div>
 </Layout>
+
+<script>
+  const rows = Array.from(document.querySelectorAll<HTMLTableRowElement>('.lab-row'));
+  const modal = document.getElementById('shortcut-modal')!;
+  const backdrop = document.getElementById('shortcut-backdrop')!;
+  const closeBtn = document.getElementById('close-shortcuts')!;
+  const hintBtn = document.getElementById('shortcut-hint')!;
+  const searchBar = document.getElementById('search-bar')!;
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+
+  let selected = -1;
+  let visibleRows = [...rows];
+  let waitingForG = false;
+  let gTimer: ReturnType<typeof setTimeout> | null = null;
+
+  function select(index: number) {
+    if (visibleRows.length === 0) return;
+    const clamped = Math.max(0, Math.min(index, visibleRows.length - 1));
+    rows.forEach(r => r.classList.remove('selected'));
+    selected = clamped;
+    visibleRows[selected].classList.add('selected');
+    visibleRows[selected].scrollIntoView({ block: 'nearest' });
+  }
+
+  function openSelected() {
+    if (selected >= 0 && selected < visibleRows.length) {
+      const href = visibleRows[selected].dataset.href;
+      if (href) window.location.href = href;
+    }
+  }
+
+  function toggleModal(show?: boolean) {
+    const isShown = !modal.classList.contains('hidden');
+    const shouldShow = show ?? !isShown;
+    modal.classList.toggle('hidden', !shouldShow);
+  }
+
+  function toggleSearch(show?: boolean) {
+    const isShown = searchBar.classList.contains('active');
+    const shouldShow = show ?? !isShown;
+    searchBar.classList.toggle('active', shouldShow);
+    if (shouldShow) {
+      searchInput.focus();
+    } else {
+      searchInput.value = '';
+      filterRows('');
+      searchInput.blur();
+    }
+  }
+
+  function filterRows(query: string) {
+    const q = query.toLowerCase();
+    rows.forEach(row => {
+      const name = row.querySelector('.lab-name')?.textContent?.toLowerCase() ?? '';
+      const type = row.querySelector('.col-type')?.textContent?.toLowerCase() ?? '';
+      const match = !q || name.includes(q) || type.includes(q);
+      (row as HTMLElement).style.display = match ? '' : 'none';
+    });
+    visibleRows = rows.filter(r => (r as HTMLElement).style.display !== 'none');
+    if (selected >= visibleRows.length) {
+      select(visibleRows.length - 1);
+    } else if (visibleRows.length > 0 && selected === -1) {
+      select(0);
+    }
+  }
+
+  // Click to navigate
+  rows.forEach(row => {
+    row.addEventListener('click', () => {
+      const href = row.dataset.href;
+      if (href) window.location.href = href;
+    });
+  });
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', (e) => {
+    // Ignore when typing in input
+    if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
+      if (e.key === 'Escape') {
+        toggleSearch(false);
+        e.preventDefault();
+      } else if (e.key === 'Enter') {
+        openSelected();
+        e.preventDefault();
+      }
+      return;
+    }
+
+    // Don't trigger shortcuts with modifier keys
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+    switch (e.key) {
+      case 'j':
+        e.preventDefault();
+        select(selected + 1);
+        break;
+      case 'k':
+        e.preventDefault();
+        select(selected - 1);
+        break;
+      case 'o':
+      case 'Enter':
+        e.preventDefault();
+        openSelected();
+        break;
+      case 'g':
+        if (waitingForG) {
+          e.preventDefault();
+          select(0);
+          waitingForG = false;
+          if (gTimer) clearTimeout(gTimer);
+        } else {
+          waitingForG = true;
+          gTimer = setTimeout(() => { waitingForG = false; }, 500);
+        }
+        break;
+      case 'G':
+        e.preventDefault();
+        select(visibleRows.length - 1);
+        break;
+      case '?':
+        e.preventDefault();
+        toggleModal();
+        break;
+      case '/':
+        e.preventDefault();
+        toggleSearch(true);
+        break;
+      case 'Escape':
+        e.preventDefault();
+        if (!modal.classList.contains('hidden')) {
+          toggleModal(false);
+        } else if (searchBar.classList.contains('active')) {
+          toggleSearch(false);
+        } else {
+          rows.forEach(r => r.classList.remove('selected'));
+          selected = -1;
+        }
+        break;
+    }
+  });
+
+  searchInput.addEventListener('input', () => {
+    filterRows(searchInput.value);
+  });
+
+  backdrop.addEventListener('click', () => toggleModal(false));
+  closeBtn.addEventListener('click', () => toggleModal(false));
+  hintBtn.addEventListener('click', () => toggleModal(true));
+
+  // Start with modal hidden
+  modal.classList.add('hidden');
+</script>
 
 <style>
   .page-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
   }
 
   .page-header h1 {
@@ -58,33 +251,244 @@ const typeLabels: Record<string, string> = {
     font-size: 0.875rem;
   }
 
-  .type-section {
-    margin-bottom: 2rem;
+  .shortcut-hint {
+    all: unset;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 0.8rem;
   }
 
-  .type-heading {
-    font-size: 1rem;
+  .shortcut-hint:hover {
+    color: var(--text);
+  }
+
+  .shortcut-hint kbd {
+    display: inline-block;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0 0.3em;
+    font-size: 0.75rem;
+    font-family: inherit;
+    margin-left: 0.15em;
+  }
+
+  /* Table */
+  .lab-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+
+  .lab-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  .lab-table th {
+    text-align: left;
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    padding: 0.5rem 0.75rem;
+    background: var(--bg);
+    border-bottom: 2px solid var(--border);
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  .lab-row {
+    cursor: pointer;
+    transition: background 0.08s;
+  }
+
+  .lab-row td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+
+  .lab-row:hover {
+    background: rgba(37, 99, 235, 0.04);
+  }
+
+  .lab-row.selected {
+    background: rgba(37, 99, 235, 0.08);
+    outline: 2px solid rgba(37, 99, 235, 0.3);
+    outline-offset: -2px;
+  }
+
+  .lab-row:last-child td {
+    border-bottom: none;
+  }
+
+  /* Columns */
+  .col-name {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border);
+    gap: 0.6rem;
+    font-weight: 600;
+    white-space: nowrap;
   }
 
-  .type-label {
-    color: var(--type-color);
+  .lab-logo {
+    border-radius: 4px;
+    flex-shrink: 0;
+    background: var(--surface);
   }
 
-  .type-count {
-    font-size: 0.75rem;
+  .col-type {
+    white-space: nowrap;
+  }
+
+  .col-founded,
+  .col-outputs {
+    text-align: right;
+    white-space: nowrap;
     color: var(--text-muted);
-    font-weight: 400;
+    font-variant-numeric: tabular-nums;
   }
 
-  .lab-grid {
+  th.col-founded,
+  th.col-outputs {
+    text-align: right;
+  }
+
+  /* Search bar */
+  .search-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: none;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(0,0,0,0.15);
+  }
+
+  .search-bar.active {
+    display: flex;
+  }
+
+  .search-bar input {
+    width: 100%;
+    max-width: 480px;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    outline: none;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+
+  .search-bar input:focus {
+    border-color: #2563eb;
+  }
+
+  /* Shortcuts modal */
+  .shortcut-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shortcut-modal.hidden {
+    display: none;
+  }
+
+  .shortcut-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  .shortcut-dialog {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    max-width: 480px;
+    width: 90%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  }
+
+  .shortcut-dialog h3 {
+    font-size: 1.125rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .shortcut-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 0.75rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .shortcut-group h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+  }
+
+  .shortcut-group dl {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .shortcut-group dl > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .shortcut-group dt {
+    flex-shrink: 0;
+  }
+
+  .shortcut-group dd {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: right;
+  }
+
+  .shortcut-group kbd {
+    display: inline-block;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.15em 0.45em;
+    font-size: 0.8rem;
+    font-family: inherit;
+    min-width: 1.6em;
+    text-align: center;
+    box-shadow: 0 1px 0 var(--border);
+  }
+
+  .close-btn {
+    all: unset;
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    line-height: 1;
+  }
+
+  .close-btn:hover {
+    color: var(--text);
   }
 </style>

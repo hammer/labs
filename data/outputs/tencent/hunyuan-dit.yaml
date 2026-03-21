@@ -2,8 +2,12 @@ name: Hunyuan-DiT
 slug: hunyuan-dit
 lab: tencent
 type: model
-date: 2024-05-01
-url: https://github.com/Tencent/HunyuanDiT
+date: 2024-05-17
+sources:
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/HunyuanDiT
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2405.08748
 description: >
   Powerful open-source Diffusion Transformer (1.5B) with fine-grained Chinese
   understanding. Evolved through v1.1 and v1.2.
@@ -15,5 +19,4 @@ tags:
 model:
   parameters: 1.5B
 library:
-  github: https://github.com/Tencent/HunyuanDiT
-notes: Date approximate.
+  github: https://github.com/Tencent-Hunyuan/HunyuanDiT

@@ -2,12 +2,15 @@ name: ERNIE 4.0
 slug: ernie-4.0
 lab: baidu
 type: model
-date: 2023-10-01
-url: https://www.baidu.com
+date: 2023-10-17
+sources:
+  - label: Announcement
+    url: https://www.prnewswire.com/news-releases/baidu-launches-ernie-4-0-foundation-model-leading-a-new-wave-of-ai-native-applications-301958681.html
+  - label: Blog Post
+    url: https://voicebot.ai/2023/10/20/baidu-rolls-out-ernie-4-0-generative-ai-model-rivaling-gpt-4/
 description: >
   Significantly improved reasoning, memory, and generation capabilities.
 tags:
   - proprietary
   - frontier
   - reasoning
-notes: Date approximate.

@@ -3,7 +3,11 @@ slug: mimo-v2-pro
 lab: xiaomi
 type: model
 date: 2026-03-18
-url: https://mimo.xiaomi.com/mimo-v2-pro
+sources:
+  - label: Website
+    url: https://mimo.xiaomi.com/mimo-v2-pro
+  - label: Announcement
+    url: https://www.gizmochina.com/2026/03/19/xiaomi-unveils-mimo-v2-pro-its-flagship-llm-with-over-1tb-of-parameters/
 description: >
   1-trillion parameter MoE flagship (42B active) designed for agentic workloads.
   Features a 1-million-token context window. Ranks 2nd among Chinese LLMs.

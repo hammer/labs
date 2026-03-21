@@ -3,7 +3,11 @@ slug: qwen2.5-coder-paper
 lab: alibaba-qwen
 type: paper
 date: 2024-09-18
-url: https://arxiv.org/abs/2409.12186
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2409.12186
+  - label: GitHub
+    url: https://github.com/QwenLM/Qwen2.5-Coder
 description: >
   Code-specific models (0.5B-32B) pre-trained on 5.5T tokens. SOTA on 10+ code benchmarks.
 tags:

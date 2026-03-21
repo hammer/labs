@@ -1,0 +1,33 @@
+name: RoboRefer / RefSpatial
+slug: roborefer
+lab: baai
+type: model
+date: 2025-06-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.04308
+  - label: GitHub
+    url: https://github.com/Zhoues/RoboRefer
+  - label: HuggingFace (RefSpatial-Bench)
+    url: https://huggingface.co/datasets/BAAI/RefSpatial-Bench
+  - label: NeurIPS 2025
+    url: https://neurips.cc/virtual/2025/poster/118306
+description: >
+  First 3D-aware reasoning VLM for multi-step spatial referring (NeurIPS
+  2025). Integrates a depth encoder via SFT and uses reinforcement fine-tuning
+  (RFT) with metric-sensitive process reward functions for spatial tasks.
+  Includes RefSpatial dataset (20M QA pairs, 31 spatial relations, up to
+  5-step reasoning) and RefSpatial-Bench (277 challenging samples). RFT
+  variant surpasses Gemini-2.5-Pro by 17.4% on RefSpatial-Bench. Integrable
+  with UR5, G1 humanoid, and other robots for real-world tasks.
+tags:
+  - embodied-ai
+  - spatial-reasoning
+  - robotics
+  - open-weight
+paper:
+  arxiv: "2506.04308"
+  venue: NeurIPS 2025
+related:
+  - robobrain-2.0
+  - robobrain-2.5

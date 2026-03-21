@@ -3,7 +3,11 @@ slug: ling-2.0-paper
 lab: ant-group
 type: paper
 date: 2025-10-25
-url: https://arxiv.org/abs/2510.22115
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.22115
+  - label: HuggingFace
+    url: https://huggingface.co/papers/2510.22115
 description: >
   Technical report for reasoning-oriented MoE foundation scaling from tens
   of billions to 1T parameters.

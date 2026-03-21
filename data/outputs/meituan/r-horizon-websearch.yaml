@@ -2,12 +2,16 @@ name: R-HORIZON-Websearch
 slug: r-horizon-websearch
 lab: meituan
 type: dataset
-date: 2025-06-01
-url: https://huggingface.co/meituan-longcat
+date: 2025-10-01
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/meituan-longcat/R-HORIZON-Websearch
+  - label: GitHub
+    url: https://github.com/meituan-longcat/R-HORIZON
 description: >
   Dataset for evaluating agentic web search and synthesis.
 tags:
   - benchmark
   - agentic
   - search
-notes: Date approximate.
+notes: Accepted at ICLR 2026.

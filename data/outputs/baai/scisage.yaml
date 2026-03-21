@@ -1,0 +1,24 @@
+name: SciSage / SurveyScope
+slug: scisage
+lab: baai
+type: library
+date: 2025-06-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.12689
+  - label: HuggingFace (SurveyScope benchmark)
+    url: https://huggingface.co/datasets/BAAI/SurveyScope
+description: >
+  Multi-agent framework for high-quality scientific survey generation using
+  a reflect-when-you-write paradigm. Features six specialized agents
+  (Interpreter, Organizer, Collector, Composer, Refiner, Reflector) with
+  a hierarchical Reflector that evaluates drafts at outline, section, and
+  document levels. Outperforms LLM-x-MapReduce-V2 and AutoSurvey by +1.73
+  in coherence and +32% citation F1. Includes SurveyScope benchmark of
+  46 high-impact papers (2020-2025) across 11 CS domains.
+tags:
+  - agents
+  - scientific-research
+  - open-source
+paper:
+  arxiv: "2506.12689"

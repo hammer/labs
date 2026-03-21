@@ -2,8 +2,12 @@ name: "Step-Video-T2V: A 300B Parameter Text-to-Video Model"
 slug: step-video-t2v-paper
 lab: stepfun
 type: paper
-date: 2025-02-01
-url: https://huggingface.co/stepfun-ai
+date: 2025-02-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.10248
+  - label: GitHub
+    url: https://github.com/stepfun-ai/Step-Video-T2V
 description: >
   Technical paper on the 300B parameter text-to-video architecture.
 tags:
@@ -11,4 +15,4 @@ tags:
   - generation
 related:
   - step-video-t2v
-notes: Date approximate.
+notes: arXiv paper 2502.10248.

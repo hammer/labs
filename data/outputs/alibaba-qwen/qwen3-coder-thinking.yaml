@@ -3,10 +3,13 @@ slug: qwen3-coder-thinking
 lab: alibaba-qwen
 type: model
 date: 2025-07-22
-url: https://qwen.ai/blog?id=qwen3-coder
-links:
-  - label: Qwen3-Thinking on HF
+sources:
+  - label: Blog Post
+    url: https://qwenlm.github.io/blog/qwen3-coder/
+  - label: HuggingFace
     url: https://huggingface.co/Qwen/Qwen3-235B-A22B-Thinking-2507
+  - label: GitHub
+    url: https://github.com/QwenLM/Qwen3-Coder
 description: >
   Qwen3-Coder-480B-A35B-Instruct coding model released alongside
   Qwen3-235B-A22B-Thinking reasoning model.

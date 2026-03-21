@@ -2,8 +2,12 @@ name: MiniCPM4 & 4.1
 slug: minicpm4
 lab: openbmb
 type: model
-date: 2025-06-01
-url: https://huggingface.co/openbmb
+date: 2025-06-06
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/openbmb/MiniCPM4-8B
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM
 description: >
   Introduced Hybrid Reasoning modes and achieved 5x generation speedup on
   mobile chips through sparse-attention kernels.
@@ -11,4 +15,3 @@ tags:
   - on-device
   - efficiency
   - reasoning
-notes: Date approximate.

@@ -1,0 +1,30 @@
+name: NOVA
+slug: nova
+lab: baai
+type: model
+date: 2024-12-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.14169
+  - label: GitHub
+    url: https://github.com/baaivision/NOVA
+  - label: ICLR 2025
+    url: https://openreview.net/forum?id=JE9tCwe3lp
+description: >
+  Non-quantized autoregressive video generation model (ICLR 2025).
+  Reformulates video generation as non-quantized autoregressive frame-by-frame
+  temporal prediction and spatial set-by-set prediction. Achieves VBench
+  score of 80.1 with 2.75 FPS processing speed, trained in only 342 GPU
+  days on A100-40G. Surpasses prior autoregressive video models in data
+  efficiency, inference speed, visual fidelity, and video fluency with
+  only 0.6B parameters. Also outperforms SOTA image diffusion models in
+  text-to-image generation.
+tags:
+  - video-generation
+  - autoregressive
+  - open-weight
+paper:
+  arxiv: "2412.14169"
+  venue: ICLR 2025
+related:
+  - ursa

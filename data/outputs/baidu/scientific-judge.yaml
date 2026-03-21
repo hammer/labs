@@ -2,8 +2,14 @@ name: Scientific Judge
 slug: scientific-judge
 lab: baidu
 type: paper
-date: 2026-03-01
-url: https://www.baidu.com
+date: 2026-03-15
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2603.14473
+  - label: GitHub
+    url: https://github.com/tongjingqi/AI-Can-Learn-Scientific-Taste
+  - label: Project Page
+    url: https://tongjingqi.github.io/AI-Can-Learn-Scientific-Taste/
 description: >
   Introduced Reinforcement Learning from Community Feedback (RLCF) for
   aligning AI with scientific reasoning.
@@ -11,4 +17,3 @@ tags:
   - alignment
   - reasoning
   - research
-notes: Date approximate.

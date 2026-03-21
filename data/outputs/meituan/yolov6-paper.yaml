@@ -3,7 +3,11 @@ slug: yolov6-paper
 lab: meituan
 type: paper
 date: 2022-09-07
-url: https://arxiv.org/abs/2209.02976
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2209.02976
+  - label: GitHub
+    url: https://github.com/meituan/YOLOv6
 description: >
   High-performance single-stage object detector for industrial applications.
 tags:

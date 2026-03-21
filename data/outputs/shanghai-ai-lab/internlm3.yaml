@@ -2,8 +2,14 @@ name: InternLM3
 slug: internlm3
 lab: shanghai-ai-lab
 type: model
-date: 2025-11-01
-url: https://github.com/InternLM/InternLM
+date: 2025-01-15
+sources:
+  - label: GitHub
+    url: https://github.com/InternLM/InternLM
+  - label: Blog Post
+    url: https://openmmlab.medium.com/internlm3-open-source-achieving-high-performance-models-with-4t-data-c18e94bd5c6a
+  - label: HuggingFace
+    url: https://huggingface.co/collections/internlm/internlm3
 description: >
   Most advanced general-purpose LLM, focusing on system-level reasoning
   and self-reflection.
@@ -11,4 +17,4 @@ tags:
   - open-weight
   - reasoning
   - frontier
-notes: Date approximate.
+notes: InternLM3-8B-Instruct released Jan 15, 2025.

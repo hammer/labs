@@ -2,8 +2,14 @@ name: MiniCPM-V 2.6
 slug: minicpm-v-2.6
 lab: openbmb
 type: model
-date: 2024-08-01
-url: https://huggingface.co/openbmb
+date: 2024-08-06
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/openbmb/MiniCPM-V-2_6
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM-o
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2408.01800
 description: >
   Introduced multi-image and video understanding, outperforming GPT-4V on
   major benchmarks.
@@ -11,4 +17,3 @@ tags:
   - vlm
   - video
   - on-device
-notes: Date approximate.

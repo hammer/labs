@@ -3,7 +3,13 @@ slug: kimi-dev
 lab: moonshot-ai
 type: model
 date: 2025-06-01
-url: https://www.moonshot.cn
+sources:
+  - label: GitHub
+    url: https://github.com/MoonshotAI/Kimi-Dev
+  - label: HuggingFace
+    url: https://huggingface.co/moonshotai/Kimi-Dev-72B
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2509.23045
 description: >
   Specialized iteration for developer workflows.
 tags:

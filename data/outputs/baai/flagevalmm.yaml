@@ -1,0 +1,31 @@
+name: FlagEvalMM
+slug: flagevalmm
+lab: baai
+type: library
+date: 2025-06-11
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.09081
+  - label: GitHub
+    url: https://github.com/flageval-baai/FlagEvalMM
+  - label: ACL 2025 Demo
+    url: https://aclanthology.org/2025.acl-demo.6/
+description: >
+  Flexible open-source framework for comprehensive multimodal model
+  evaluation across vision-language understanding and generation tasks
+  (VQA, text-to-image/video, image-text retrieval). Key design: decouples
+  model inference from evaluation through an independent evaluation service,
+  enabling flexible resource allocation and seamless integration of new tasks.
+  Uses vLLM and SGLang for inference acceleration. Presented at ACL 2025
+  demo track. Supports 15+ benchmarks including MMMU, MathVision, MMVET-v2.
+tags:
+  - evaluation
+  - multimodal
+  - open-source
+  - benchmark
+library:
+  github: https://github.com/flageval-baai/FlagEvalMM
+related:
+  - flagevaluation
+  - video-safetybench
+  - measurebench

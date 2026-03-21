@@ -3,7 +3,11 @@ slug: step-3-paper
 lab: stepfun
 type: paper
 date: 2025-07-25
-url: https://arxiv.org/abs/2507.19427
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.19427
+  - label: GitHub
+    url: https://github.com/stepfun-ai/Step3
 description: >
   Flagship LLM paper detailing cost-effective decoding for the Step-3 MoE model.
 tags:

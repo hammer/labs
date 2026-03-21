@@ -2,11 +2,16 @@ name: DiQAD
 slug: diqad
 lab: baidu
 type: dataset
-date: 2023-06-01
-url: https://www.baidu.com
+date: 2023-10-25
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2310.16319
+  - label: GitHub
+    url: https://github.com/yukunZhao/Dataset_Dialogue_quality_evaluation
+  - label: Announcement
+    url: https://aclanthology.org/2023.findings-emnlp.1010/
 description: >
   Benchmark for open-domain dialogue quality assessment.
 tags:
   - benchmark
   - dialogue
-notes: Date approximate.

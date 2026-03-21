@@ -1,0 +1,25 @@
+name: Infinity-MM
+slug: infinity-mm
+lab: baai
+type: dataset
+date: 2024-10-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.18558
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/BAAI/Infinity-MM
+description: >
+  Large-scale multimodal instruction dataset with 40M+ samples for training
+  vision-language models. Ensures diversity and accuracy through quality
+  filtering and deduplication. Includes a synthetic instruction generation
+  method based on a tagging system and open-source VLMs. Used to train
+  Aquila-VL-2B, achieving SOTA performance among models of the same scale.
+  Paper updated January 6, 2025.
+tags:
+  - dataset
+  - multimodal
+  - instruction-tuning
+  - open-source
+related:
+  - aquila-vl
+  - infinity-instruct

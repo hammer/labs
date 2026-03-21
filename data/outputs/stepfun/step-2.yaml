@@ -2,8 +2,12 @@ name: Step-2
 slug: step-2
 lab: stepfun
 type: model
-date: 2024-07-01
-url: https://www.stepfun.com
+date: 2024-07-04
+sources:
+  - label: Website
+    url: https://www.stepfun.com
+  - label: Announcement
+    url: https://www.marktechpost.com/2024/11/20/chinese-agi-startup-stepfun-developed-step-2-a-new-trillion-parameter-moe-architecture-model-ranking-5th-on-livebench/
 description: >
   First trillion-parameter MoE model from a Chinese startup. Ranks among
   the top globally for instruction-following and reasoning.
@@ -13,4 +17,4 @@ tags:
 model:
   architecture: moe
   parameters: 1T
-notes: Date approximate.
+notes: Preview Mar 23, 2024. Official launch at WAIC Jul 4, 2024.

@@ -2,8 +2,12 @@ name: KAT-Dev-72B-Exp
 slug: kat-dev-72b
 lab: kuaishou
 type: model
-date: 2025-10-01
-url: https://huggingface.co/Kwaipilot
+date: 2025-10-10
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/Kwaipilot/KAT-Dev-72B-Exp
+  - label: Project Page
+    url: https://kwaipilot.github.io/KAT-Coder/
 description: >
   Open-source experimental variant that topped many open-source coding
   benchmarks (e.g., LiveCodeBench).
@@ -14,4 +18,3 @@ tags:
 model:
   architecture: moe
   active_parameters: 72B
-notes: Date approximate.

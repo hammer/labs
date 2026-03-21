@@ -2,8 +2,14 @@ name: InternLM-XComposer
 slug: internlm-xcomposer
 lab: shanghai-ai-lab
 type: model
-date: 2023-10-01
-url: https://github.com/InternLM/InternLM-XComposer
+date: 2023-09-26
+sources:
+  - label: GitHub
+    url: https://github.com/InternLM/InternLM-XComposer
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2309.15112
+  - label: HuggingFace
+    url: https://huggingface.co/internlm/internlm-xcomposer-7b
 description: >
   Specialized for advanced text-image composition, generating articles with
   interleaved images. Versions 1.0, 2.0, and 2.5.
@@ -13,4 +19,4 @@ tags:
   - open-weight
 library:
   github: https://github.com/InternLM/InternLM-XComposer
-notes: Date approximate.
+notes: arXiv submission Sep 26, 2023. HuggingFace models Sep 27, 2023.

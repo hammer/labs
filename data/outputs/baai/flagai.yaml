@@ -3,8 +3,11 @@ slug: flagai
 lab: baai
 type: library
 date: 2024-01-01
-url: https://lfaidata.foundation/projects/flagai/
-links:
+sources:
+  - label: Website
+    url: https://lfaidata.foundation/projects/flagai/
+  - label: GitHub
+    url: https://github.com/FlagAI-Open/FlagAI
   - label: FlagOpen GitHub
     url: https://github.com/FlagOpen
 description: AI framework donated to the Linux Foundation.

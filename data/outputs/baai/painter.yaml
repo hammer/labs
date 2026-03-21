@@ -2,8 +2,14 @@ name: Painter
 slug: painter
 lab: baai
 type: model
-date: 2023-05-01
-url: https://github.com/baaivision/Painter
+date: 2022-12-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2212.02499
+  - label: GitHub
+    url: https://github.com/baaivision/Painter
+  - label: HuggingFace
+    url: https://huggingface.co/BAAI/Painter
 description: >
   "In-context" visual learning model that performs visual tasks without retraining.
 tags:
@@ -11,4 +17,4 @@ tags:
   - open-weight
 library:
   github: https://github.com/baaivision/Painter
-notes: Date approximate.
+notes: Accepted at CVPR 2023.

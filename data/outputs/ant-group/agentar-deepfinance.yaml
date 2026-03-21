@@ -2,12 +2,17 @@ name: Agentar-DeepFinance-100K
 slug: agentar-deepfinance
 lab: ant-group
 type: dataset
-date: 2025-06-01
-url: https://huggingface.co/inclusionAI
+date: 2025-07-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.12901
+  - label: Dataset
+    url: https://huggingface.co/datasets/antgroup/Agentar-DeepFinance-100K
+  - label: GitHub
+    url: https://github.com/antgroup/Agentar-DeepFinance-100K
 description: >
   Massive dataset for training financial reasoning agents.
 tags:
   - finance
   - agentic
   - reasoning
-notes: Date approximate.

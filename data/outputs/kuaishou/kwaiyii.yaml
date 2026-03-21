@@ -2,8 +2,12 @@ name: KwaiYii
 slug: kwaiyii
 lab: kuaishou
 type: model
-date: 2023-10-01
-url: https://huggingface.co/Kwaipilot
+date: 2023-08-18
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/Kwaipilot
+  - label: Announcement
+    url: https://technode.com/2023/08/21/kuaishou-publicly-launches-its-own-large-language-model-that-takes-on-gpt3-5/
 description: >
   General-purpose LLM series with sizes ranging up to 175B parameters.
 tags:
@@ -13,4 +17,3 @@ model:
   variants:
     - name: KwaiYii-175B
       parameters: 175B
-notes: Date approximate.

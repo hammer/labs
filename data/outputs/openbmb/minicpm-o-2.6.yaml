@@ -2,8 +2,14 @@ name: MiniCPM-o 2.6
 slug: minicpm-o-2.6
 lab: openbmb
 type: model
-date: 2025-01-01
-url: https://huggingface.co/openbmb
+date: 2025-01-14
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/openbmb/MiniCPM-o-2_6
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM-o
+  - label: "Blog Post"
+    url: https://openbmb.vercel.app/minicpm-o-2-6-en
 description: >
   "Omni-modal" model capable of real-time speech-to-speech interaction and
   multimodal live streaming.
@@ -11,4 +17,3 @@ tags:
   - multimodal
   - speech
   - on-device
-notes: Date approximate.

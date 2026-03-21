@@ -3,7 +3,9 @@ slug: hunyuanvideo-paper
 lab: tencent
 type: paper
 date: 2024-12-03
-url: https://arxiv.org/abs/2412.03603
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.03603
 description: >
   13B parameter video generation framework. Largest open-source video model.
 tags:

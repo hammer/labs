@@ -43,9 +43,8 @@ const labObjects = labs.map((s) => getLabBySlug(s)).filter(Boolean);
   )}
 
   <div class="links-row">
-    <a href={output.url} class="primary-link">View source</a>
-    {output.links?.map((link) => (
-      <a href={link.url}>{link.label}</a>
+    {output.sources.map((source, i) => (
+      <a href={source.url} class={i === 0 ? 'primary-link' : ''}>{source.label}</a>
     ))}
   </div>
 

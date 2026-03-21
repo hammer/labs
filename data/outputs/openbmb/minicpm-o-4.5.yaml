@@ -2,8 +2,14 @@ name: MiniCPM-o 4.5
 slug: minicpm-o-4.5
 lab: openbmb
 type: model
-date: 2026-03-01
-url: https://huggingface.co/openbmb
+date: 2026-02-03
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/openbmb/MiniCPM-o-4_5
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM-o
+  - label: "Project Page"
+    url: https://openbmb.github.io/minicpm-o-4_5/
 description: >
   Most advanced real-time agent, matching Gemini 2.5 Flash in vision, speech,
   and live-streaming interaction latency and intelligence.
@@ -12,4 +18,3 @@ tags:
   - agentic
   - on-device
   - frontier
-notes: Date approximate.

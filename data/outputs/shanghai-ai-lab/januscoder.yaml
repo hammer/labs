@@ -2,12 +2,18 @@ name: JanusCoder
 slug: januscoder
 lab: shanghai-ai-lab
 type: model
-date: 2026-02-01
-url: https://huggingface.co/internlm
+date: 2025-10-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.23538
+  - label: GitHub
+    url: https://github.com/InternLM/JanusCoder
+  - label: HuggingFace
+    url: https://huggingface.co/internlm/JanusCoder-8B
 description: >
   Visual-programmatic interface for code intelligence. Can "see" UI designs
   and "write" corresponding code.
 tags:
   - coding
   - vlm
-notes: Date approximate.
+notes: ICLR 2026 paper. arXiv submission Oct 27, 2025.

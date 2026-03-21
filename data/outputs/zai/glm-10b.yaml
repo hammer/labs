@@ -2,8 +2,14 @@ name: GLM-10B
 slug: glm-10b
 lab: zai
 type: model
-date: 2021-01-01
-url: https://github.com/THUDM/GLM
+date: 2021-03-18
+sources:
+  - label: GitHub
+    url: https://github.com/THUDM/GLM
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2103.10360
+  - label: HuggingFace
+    url: https://huggingface.co/THUDM/glm-10b
 description: >
   Initial general-purpose foundational model.
 tags:
@@ -11,4 +17,3 @@ tags:
 model:
   architecture: dense
   parameters: 10B
-notes: Date approximate.

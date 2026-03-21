@@ -2,8 +2,14 @@ name: DeepSeek-Coder
 slug: deepseek-coder
 lab: deepseek
 type: model
-date: 2023-11-01
-url: https://huggingface.co/deepseek-ai/deepseek-coder-33b-instruct
+date: 2023-11-02
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/deepseek-coder-33b-instruct
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepSeek-Coder
+  - label: Project Page
+    url: https://deepseekcoder.github.io/
 description: >
   Coding-specialized models (1.3B to 33B parameters) trained on 2 trillion tokens.
 tags:
@@ -18,4 +24,3 @@ model:
       parameters: 6.7B
     - name: DeepSeek-Coder-33B
       parameters: 33B
-notes: Date approximate.

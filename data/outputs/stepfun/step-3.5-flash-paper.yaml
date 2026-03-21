@@ -3,7 +3,13 @@ slug: step-3.5-flash-paper
 lab: stepfun
 type: paper
 date: 2026-02-11
-url: https://huggingface.co/stepfun-ai
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.10604
+  - label: GitHub
+    url: https://github.com/stepfun-ai/Step-3.5-Flash
+  - label: Blog Post
+    url: https://static.stepfun.com/blog/step-3.5-flash/
 description: >
   Detailed the RL pipeline and MTP-3 acceleration for the Step 3.5 Flash model.
 tags:

@@ -3,7 +3,9 @@ slug: hunyuan-turbo-s-paper
 lab: tencent
 type: paper
 date: 2025-05-21
-url: https://arxiv.org/abs/2505.15431
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.15431
 description: >
   56B activated / 560B total hybrid MoE with Mamba-Transformer architecture.
   256K context, 16T pre-training tokens.

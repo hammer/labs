@@ -2,8 +2,12 @@ name: DeepEP
 slug: deepep
 lab: deepseek
 type: library
-date: 2025-03-01
-url: https://github.com/deepseek-ai/DeepEP
+date: 2025-02-25
+sources:
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepEP
+  - label: Announcement
+    url: https://www.analyticsvidhya.com/blog/2025/02/deepseek-deepep/
 description: >
   Efficient expert-parallel communication library that bypasses NCCL
   for MoE communications. Used in DeepSeek models for efficient expert parallelism.

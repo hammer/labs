@@ -3,7 +3,11 @@ slug: kimi-researcher
 lab: moonshot-ai
 type: model
 date: 2025-06-01
-url: https://www.moonshot.cn
+sources:
+  - label: "Project Page"
+    url: https://moonshotai.github.io/Kimi-Researcher/
+  - label: GitHub
+    url: https://github.com/MoonshotAI/Kimi-Researcher
 description: >
   Specialized iteration for autonomous research.
 tags:

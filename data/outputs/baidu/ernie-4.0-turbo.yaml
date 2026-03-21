@@ -2,11 +2,14 @@ name: ERNIE 4.0 Turbo
 slug: ernie-4.0-turbo
 lab: baidu
 type: model
-date: 2024-06-01
-url: https://www.baidu.com
+date: 2024-06-28
+sources:
+  - label: Announcement
+    url: https://www.prnewswire.com/news-releases/baidu-launches-ernie-4-0-foundation-model-leading-a-new-wave-of-ai-native-applications-301958681.html
+  - label: Blog Post
+    url: https://siliconangle.com/2024/06/28/baidu-unveils-ernie-4-0-turbo-significant-upgrade-ai-chatbot/
 description: >
   Optimized version for enterprise use cases requiring higher speed and lower costs.
 tags:
   - proprietary
   - efficiency
-notes: Date approximate.

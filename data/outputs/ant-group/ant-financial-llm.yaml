@@ -2,12 +2,13 @@ name: Ant Financial LLM
 slug: ant-financial-llm
 lab: ant-group
 type: model
-date: 2023-09-01
-url: https://www.antgroup.com
+date: 2023-09-08
+sources:
+  - label: Announcement
+    url: https://www.businesswire.com/news/home/20230908406520/en/Ant-Group-Unveils-its-Financial-Large-Language-Model-and-Two-New-Applications
 description: >
   First specialized model fine-tuned for the finance industry, trained on
   over 1 trillion tokens.
 tags:
   - finance
   - proprietary
-notes: Date approximate.

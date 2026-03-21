@@ -3,7 +3,11 @@ slug: janus-paper
 lab: deepseek
 type: paper
 date: 2024-10-17
-url: https://arxiv.org/abs/2410.13848
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.13848
+  - label: GitHub
+    url: https://github.com/deepseek-ai/Janus
 description: >
   Unified autoregressive framework for multimodal understanding and visual generation.
 tags:

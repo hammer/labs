@@ -2,8 +2,12 @@ name: "Emu3: Next-Token Prediction is All You Need for Multimodal Intelligence"
 slug: emu3-paper
 lab: baai
 type: paper
-date: 2025-01-01
-url: https://arxiv.org/abs/2409.18869
+date: 2024-09-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2409.18869
+  - label: GitHub
+    url: https://github.com/baaivision/Emu3
 description: >
   Research showing native multimodal models can be trained solely via
   next-token prediction.
@@ -14,4 +18,3 @@ paper:
   arxiv: "2409.18869"
 related:
   - emu
-notes: Date approximate.

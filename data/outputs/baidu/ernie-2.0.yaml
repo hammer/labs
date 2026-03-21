@@ -2,8 +2,10 @@ name: ERNIE 2.0
 slug: ernie-2.0
 lab: baidu
 type: model
-date: 2019-07-01
-url: https://arxiv.org/abs/1907.12412
+date: 2019-07-29
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/1907.12412
 description: >
   Continual multi-task learning framework that set new SOTA records on the
   GLUE and SuperGLUE benchmarks.
@@ -12,4 +14,3 @@ tags:
   - multi-task
 paper:
   arxiv: "1907.12412"
-notes: Date approximate.

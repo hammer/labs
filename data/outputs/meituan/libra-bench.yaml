@@ -2,12 +2,15 @@ name: Libra-Bench & PIE_bench
 slug: libra-bench
 lab: meituan
 type: dataset
-date: 2025-06-01
-url: https://huggingface.co/meituan-longcat
+date: 2025-07-29
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2507.21645
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/meituan/Libra-Bench
 description: >
   Benchmarks for evaluating visual and logical reasoning.
 tags:
   - benchmark
   - reasoning
   - vision
-notes: Date approximate.

@@ -2,8 +2,12 @@ name: "Kimi k1.5 Tech Report: Scaling RL with LLMs"
 slug: kimi-k1.5-tech-report
 lab: moonshot-ai
 type: paper
-date: 2025-01-01
-url: https://arxiv.org/abs/2501.12599
+date: 2025-01-22
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2501.12599
+  - label: GitHub
+    url: https://github.com/MoonshotAI/Kimi-k1.5
 description: >
   Technical report on scaling reinforcement learning with LLMs.
 tags:
@@ -13,4 +17,3 @@ paper:
   arxiv: "2501.12599"
 related:
   - kimi-k1.5
-notes: Date approximate.

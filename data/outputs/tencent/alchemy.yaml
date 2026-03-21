@@ -2,8 +2,14 @@ name: Alchemy
 slug: alchemy
 lab: tencent
 type: dataset
-date: 2019-06-01
-url: https://github.com/Tencent
+date: 2019-06-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/1906.09427
+  - label: GitHub
+    url: https://github.com/tencent-alchemy/Alchemy
+  - label: Project Page
+    url: https://alchemy.tencent.com/
 description: >
   Quantum chemistry dataset for benchmarking AI models in molecular
   property prediction.
@@ -11,4 +17,3 @@ tags:
   - science
   - chemistry
   - benchmark
-notes: Date approximate.

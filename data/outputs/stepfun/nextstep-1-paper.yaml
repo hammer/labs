@@ -2,8 +2,14 @@ name: "NextStep-1: SOTA Autoregressive Image Generation with Continuous Tokens"
 slug: nextstep-1-paper
 lab: stepfun
 type: paper
-date: 2025-06-01
-url: https://huggingface.co/stepfun-ai
+date: 2025-08-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.10711
+  - label: Project Page
+    url: https://stepfun.ai/research/en/nextstep1
+  - label: GitHub
+    url: https://github.com/stepfun-ai/NextStep-1
 description: >
   Breakthrough research on AR modeling for visual tasks.
 tags:
@@ -14,4 +20,4 @@ paper:
   venue: ICLR 2026
 related:
   - nextstep-1
-notes: Date approximate.
+notes: arXiv submission Aug 14, 2025. ICLR 2026 Oral.

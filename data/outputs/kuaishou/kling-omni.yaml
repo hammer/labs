@@ -3,7 +3,9 @@ slug: kling-omni
 lab: kuaishou
 type: paper
 date: 2025-12-22
-url: https://arxiv.org/abs/2512.16776
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.16776
 description: >
   Unified video generation/editing framework from the Kling team.
 tags:

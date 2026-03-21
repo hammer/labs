@@ -2,8 +2,14 @@ name: Step-Audio-EditX
 slug: step-audio-editx
 lab: stepfun
 type: model
-date: 2026-01-01
-url: https://huggingface.co/stepfun-ai
+date: 2025-11-06
+sources:
+  - label: GitHub
+    url: https://github.com/stepfun-ai/Step-Audio-EditX
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2511.03601
+  - label: HuggingFace
+    url: https://huggingface.co/stepfun-ai/Step-Audio-EditX
 description: >
   3B parameter RL-based model for editing emotion, style, and paralinguistics
   in audio.
@@ -13,4 +19,4 @@ tags:
   - reinforcement-learning
 model:
   parameters: 3B
-notes: Date approximate.
+notes: Technical report Nov 6, 2025. Model weights Nov 12, 2025.

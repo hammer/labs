@@ -2,8 +2,14 @@ name: StepFun-Prover-Preview
 slug: stepfun-prover
 lab: stepfun
 type: model
-date: 2025-06-01
-url: https://huggingface.co/stepfun-ai
+date: 2025-07-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.20199
+  - label: GitHub
+    url: https://github.com/stepfun-ai/StepFun-Prover-Preview
+  - label: HuggingFace
+    url: https://huggingface.co/stepfun-ai/StepFun-Prover-Preview-32B
 description: >
   Specialized 32B model family for formal theorem proving (Lean 4), using
   tool-integrated reinforcement learning.
@@ -14,4 +20,4 @@ tags:
 model:
   architecture: dense
   parameters: 32B
-notes: Date approximate.
+notes: arXiv submission Jul 27, 2025. 70% pass@1 on miniF2F-test.

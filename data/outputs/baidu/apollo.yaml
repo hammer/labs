@@ -2,8 +2,12 @@ name: Apollo
 slug: apollo
 lab: baidu
 type: library
-date: 2017-07-01
-url: https://github.com/ApolloAuto/apollo
+date: 2017-07-05
+sources:
+  - label: GitHub
+    url: https://github.com/ApolloAuto/apollo
+  - label: Project Page
+    url: https://developer.apollo.auto/
 description: >
   World's largest open-source autonomous driving platform.
 tags:
@@ -11,4 +15,3 @@ tags:
   - infrastructure
 library:
   github: https://github.com/ApolloAuto/apollo
-notes: Date approximate.

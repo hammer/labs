@@ -2,8 +2,12 @@ name: DeerFlow
 slug: deerflow
 lab: bytedance-seed
 type: library
-date: 2026-01-01
-url: https://github.com/bytedance/DeerFlow
+date: 2025-05-07
+sources:
+  - label: GitHub
+    url: https://github.com/bytedance/deer-flow
+  - label: Blog Post
+    url: https://www.marktechpost.com/2025/05/09/bytedance-open-sources-deerflow-a-modular-multi-agent-framework-for-deep-research-automation/
 description: >
   "SuperAgent" harness that orchestrates sub-agents and tools for long-horizon
   research and coding tasks.
@@ -11,5 +15,4 @@ tags:
   - agentic
   - framework
 library:
-  github: https://github.com/bytedance/DeerFlow
-notes: Date approximate.
+  github: https://github.com/bytedance/deer-flow

@@ -1,0 +1,27 @@
+name: OpenComplex2 (OC2)
+slug: opencomplex2
+lab: baai
+type: model
+date: 2025-05-02
+sources:
+  - label: Paper (bioRxiv)
+    url: https://www.biorxiv.org/content/10.1101/2025.05.01.651643v1
+  - label: GitHub
+    url: https://github.com/ocx-lab/OpenComplex2
+description: >
+  Generative foundation model for biomolecular conformational ensemble
+  sampling. Integrates a unified graph representation with diffusion-based
+  sampling through the FloydNetwork architecture, operating across atomic,
+  residue, and motif hierarchies. Samples conformational landscapes in hours
+  instead of the weeks required by traditional molecular dynamics. Accurately
+  reproduces protein and RNA ensembles, captures functionally relevant
+  transitions (allostery, induced-fit, cryptic pockets), and scales to
+  assemblies exceeding 15,000 residues.
+tags:
+  - biocomputing
+  - protein-structure
+  - generative-model
+  - open-source
+related:
+  - opencomplex
+  - odesign

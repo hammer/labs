@@ -2,8 +2,12 @@ name: GLM-130B
 slug: glm-130b
 lab: zai
 type: model
-date: 2022-08-01
-url: https://arxiv.org/abs/2210.02414
+date: 2022-08-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2210.02414
+  - label: GitHub
+    url: https://github.com/zai-org/GLM-130B
 description: >
   Landmark bilingual (English/Chinese) model among the first in China to
   rival GPT-3.
@@ -16,4 +20,3 @@ model:
   parameters: 130B
 paper:
   arxiv: "2210.02414"
-notes: Date approximate.

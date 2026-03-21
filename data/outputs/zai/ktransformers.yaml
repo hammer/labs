@@ -3,7 +3,11 @@ slug: ktransformers
 lab: zai
 type: library
 date: 2025-06-01
-url: https://github.com/kvcache-ai/ktransformers
+sources:
+  - label: GitHub
+    url: https://github.com/kvcache-ai/ktransformers
+  - label: Documentation
+    url: https://kvcache-ai.github.io/ktransformers/
 description: >
   Collaborative library optimized for running massive MoE models (like
   GLM-4.6/5) on consumer GPUs.

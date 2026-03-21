@@ -2,8 +2,10 @@ name: Step-3.5-Flash-SFT
 slug: step-3.5-flash-sft
 lab: stepfun
 type: dataset
-date: 2026-02-01
-url: https://huggingface.co/stepfun-ai
+date: 2026-02-11
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/stepfun-ai/Step-3.5-Flash-SFT
 description: >
   Massive 1.6M-row instruction-tuning dataset released to the community.
 tags:

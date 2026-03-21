@@ -1,0 +1,23 @@
+name: OpenComplex
+slug: opencomplex
+lab: baai
+type: model
+date: 2025-03-27
+sources:
+  - label: Paper (bioRxiv)
+    url: https://www.biorxiv.org/content/10.1101/2025.03.25.643589v1
+  - label: GitHub
+    url: https://github.com/ocx-lab/OpenComplex
+description: >
+  Open-source platform for end-to-end prediction of biomolecular 3D
+  structures including protein, RNA, and protein-RNA complexes. Built on
+  architectures of AlphaFold2 and AlphaFold-Multimer. Part of BAAI's
+  WuJie series focused on life science AI. Provides a trainable PyTorch
+  framework for developing protein, RNA, and complex models.
+tags:
+  - biocomputing
+  - protein-structure
+  - open-source
+related:
+  - opencomplex2
+  - sable

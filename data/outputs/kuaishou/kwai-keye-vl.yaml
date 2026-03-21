@@ -2,8 +2,14 @@ name: Kwai Keye-VL
 slug: kwai-keye-vl
 lab: kuaishou
 type: model
-date: 2025-07-01
-url: https://huggingface.co/Kwaipilot
+date: 2025-06-26
+sources:
+  - label: GitHub
+    url: https://github.com/Kwai-Keye/Keye
+  - label: HuggingFace
+    url: https://huggingface.co/Kwai-Keye/Keye-VL-8B-Preview
+  - label: Announcement
+    url: https://longbridge.com/en/news/246200353
 description: >
   8B parameter multimodal foundation model specializing in short-video understanding.
 tags:
@@ -13,4 +19,3 @@ tags:
 model:
   architecture: dense
   parameters: 8B
-notes: Date approximate.

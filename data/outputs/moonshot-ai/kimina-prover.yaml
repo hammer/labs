@@ -2,11 +2,16 @@ name: Kimina-Prover
 slug: kimina-prover
 lab: moonshot-ai
 type: model
-date: 2025-04-01
-url: https://github.com/MoonshotAI/Kimina-Prover-Preview
+date: 2025-04-15
+sources:
+  - label: GitHub
+    url: https://github.com/MoonshotAI/Kimina-Prover-Preview
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2504.11354
+  - label: HuggingFace
+    url: https://huggingface.co/AI-MO/Kimina-Prover-Preview-Distill-7B
 description: >
   Specialized model for formal mathematical reasoning.
 tags:
   - reasoning
   - math
-notes: Date approximate.

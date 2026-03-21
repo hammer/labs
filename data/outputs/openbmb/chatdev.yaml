@@ -3,7 +3,11 @@ slug: chatdev
 lab: openbmb
 type: paper
 date: 2023-07-16
-url: https://arxiv.org/abs/2307.07924
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2307.07924
+  - label: GitHub
+    url: https://github.com/OpenBMB/ChatDev
 description: >
   Multi-agent framework where agents communicate to develop software.
 tags:

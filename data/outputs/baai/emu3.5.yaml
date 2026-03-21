@@ -1,0 +1,38 @@
+name: Emu3.5
+slug: emu3.5
+lab: baai
+type: model
+date: 2025-10-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.26583
+  - label: GitHub
+    url: https://github.com/baaivision/Emu3.5
+  - label: HuggingFace
+    url: https://huggingface.co/BAAI/Emu3.5
+  - label: HuggingFace (Image variant)
+    url: https://huggingface.co/BAAI/Emu3.5-Image
+description: >
+  Large-scale native multimodal world model that predicts the next
+  vision-language state, pre-trained end-to-end on over 10T interleaved
+  vision-language tokens from internet videos. Supports long-horizon
+  vision-language generation, any-to-image (X2I) synthesis, and text-rich
+  image creation. Includes Discrete Diffusion Adaptation (DiDA) for ~20x
+  faster per-image inference. Performance comparable to Gemini 2.5 Flash
+  Image on generation and editing tasks.
+tags:
+  - multimodal
+  - generation
+  - world-model
+  - open-weight
+model:
+  variants:
+    - name: Emu3.5
+      notes: General-purpose multimodal, interleaved image-text
+    - name: Emu3.5-Image
+      notes: Specialized for T2I/X2I tasks
+    - name: Emu3.5-VisionTokenizer
+      notes: Vision encoding component
+related:
+  - emu
+  - emu3-paper

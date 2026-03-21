@@ -2,8 +2,10 @@ name: KwaiYiiMath Technical Report
 slug: kwaiyiimath-report
 lab: kuaishou
 type: paper
-date: 2023-10-01
-url: https://huggingface.co/Kwaipilot
+date: 2023-10-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2310.07488
 description: >
   Technical report on the KwaiYiiMath mathematical reasoning model.
 tags:
@@ -11,4 +13,3 @@ tags:
   - reasoning
 related:
   - kwaiyiimath
-notes: Date approximate.

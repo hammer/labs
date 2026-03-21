@@ -2,8 +2,12 @@ name: Kimi-v1
 slug: kimi-v1
 lab: moonshot-ai
 type: model
-date: 2023-10-01
-url: https://www.moonshot.cn
+date: 2023-10-09
+sources:
+  - label: Website
+    url: https://www.moonshot.cn
+  - label: "API Docs"
+    url: https://platform.moonshot.ai/
 description: >
   First model to support 128,000 to 200,000 tokens of lossless context,
   a world-first at the time. Included moonshot-v1-8k, 32k, and 128k API
@@ -13,4 +17,4 @@ tags:
   - proprietary
 model:
   context_window: 200000
-notes: Date approximate. Included moonshot-v1-8k, 32k, and 128k API variants.
+notes: Included moonshot-v1-8k, 32k, and 128k API variants.

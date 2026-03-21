@@ -3,7 +3,11 @@ slug: hunyuan3d-1.0-paper
 lab: tencent
 type: paper
 date: 2024-11-04
-url: https://arxiv.org/abs/2411.02293
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.02293
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/Hunyuan3D-1
 description: >
   Unified framework for text-to-3D and image-to-3D generation.
 tags:

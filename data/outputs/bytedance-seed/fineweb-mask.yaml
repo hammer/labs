@@ -2,12 +2,15 @@ name: FineWeb-Mask
 slug: fineweb-mask
 lab: bytedance-seed
 type: dataset
-date: 2025-06-01
-url: https://huggingface.co/ByteDance-Seed
+date: 2025-12-31
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/DATA-MASK/FineWeb-Mask
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2512.24265
 description: >
   1.5 trillion-token "distilled" subset of common crawl data optimized
   for pre-training.
 tags:
   - training-data
   - pretraining
-notes: Date approximate.

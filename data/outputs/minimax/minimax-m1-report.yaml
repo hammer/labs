@@ -2,8 +2,12 @@ name: MiniMax-M1 Technical Report
 slug: minimax-m1-report
 lab: minimax
 type: paper
-date: 2025-06-01
-url: https://huggingface.co/MiniMaxAI
+date: 2025-06-16
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2506.13585
+  - label: HuggingFace
+    url: https://huggingface.co/MiniMaxAI
 description: >
   Detailed the CISPO algorithm for reinforcement learning and efficient
   scaling of test-time compute.
@@ -13,4 +17,3 @@ tags:
   - efficiency
 related:
   - minimax-m1
-notes: Date approximate.

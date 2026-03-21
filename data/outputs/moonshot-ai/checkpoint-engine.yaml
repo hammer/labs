@@ -2,12 +2,15 @@ name: checkpoint-engine
 slug: checkpoint-engine
 lab: moonshot-ai
 type: library
-date: 2025-06-01
-url: https://github.com/MoonshotAI/checkpoint-engine
+date: 2025-09-15
+sources:
+  - label: GitHub
+    url: https://github.com/MoonshotAI/checkpoint-engine
+  - label: "Project Page"
+    url: https://moonshotai.github.io/checkpoint-engine/
 description: >
   Middleware tool for updating model weights dynamically in inference engines.
 tags:
   - infrastructure
 library:
   github: https://github.com/MoonshotAI/checkpoint-engine
-notes: Date approximate.

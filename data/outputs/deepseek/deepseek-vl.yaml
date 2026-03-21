@@ -2,8 +2,14 @@ name: DeepSeek-VL / VL2
 slug: deepseek-vl
 lab: deepseek
 type: model
-date: 2024-03-01
-url: https://huggingface.co/deepseek-ai
+date: 2024-03-11
+sources:
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepSeek-VL
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/deepseek-vl-7b-chat
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2403.05525
 description: >
   Vision-language models utilizing a dynamic tiling encoder for high-resolution
   images. Includes VL and VL2 versions.
@@ -16,4 +22,3 @@ model:
       notes: Released 2024
     - name: DeepSeek-VL2
       notes: Updated version
-notes: Date approximate.

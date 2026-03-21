@@ -3,7 +3,9 @@ slug: qwen2.5-tech-report
 lab: alibaba-qwen
 type: paper
 date: 2024-12-19
-url: https://arxiv.org/abs/2412.15115
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2412.15115
 description: >
   Full Qwen2.5 series technical report. Pre-trained on 18T tokens.
 tags:

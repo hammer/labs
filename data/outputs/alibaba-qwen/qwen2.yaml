@@ -2,8 +2,12 @@ name: Qwen2
 slug: qwen2
 lab: alibaba-qwen
 type: model
-date: 2024-06-01
-url: https://qwen.ai/blog
+date: 2024-06-06
+sources:
+  - label: Blog Post
+    url: https://qwenlm.github.io/blog/qwen2/
+  - label: GitHub
+    url: https://github.com/QwenLM/Qwen2
 description: >
   Significantly improved multilingual capabilities. Sizes: 0.5B, 1.5B, 7B,
   72B, and the 57B-A14B MoE.
@@ -25,4 +29,3 @@ model:
       parameters: 57B
       active_parameters: 14B
       notes: MoE variant
-notes: Date approximate.

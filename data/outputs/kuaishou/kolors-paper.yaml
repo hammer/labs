@@ -2,8 +2,12 @@ name: "Kolors: Effective Training of Diffusion Model for Photorealistic Text-to-
 slug: kolors-paper
 lab: kuaishou
 type: paper
-date: 2024-05-01
-url: https://github.com/Kwai-Kolors/Kolors
+date: 2024-07-06
+sources:
+  - label: GitHub
+    url: https://github.com/Kwai-Kolors/Kolors
+  - label: HuggingFace
+    url: https://huggingface.co/Kwai-Kolors/Kolors
 description: >
   Technical paper on the Kolors text-to-image diffusion model.
 tags:
@@ -12,4 +16,3 @@ tags:
   - diffusion
 related:
   - kolors
-notes: Date approximate.

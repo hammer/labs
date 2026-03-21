@@ -3,7 +3,9 @@ slug: agentar-z-100k
 lab: zai
 type: dataset
 date: 2026-01-01
-url: https://z.ai
+sources:
+  - label: Website
+    url: https://z.ai
 description: >
   100,000 complex multi-step reasoning trajectories used to train the
   GLM-5 "Thinking" mode.

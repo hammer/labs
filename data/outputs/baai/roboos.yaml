@@ -1,0 +1,31 @@
+name: RoboOS
+slug: roboos
+lab: baai
+type: library
+date: 2025-05-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.03673
+  - label: GitHub
+    url: https://github.com/FlagOpen/RoboOS
+  - label: Nature Machine Intelligence
+    url: https://www.nature.com/articles/s42256-026-01186-z
+description: >
+  First open-source embodied operating system based on a Brain-Cerebellum
+  hierarchical architecture for cross-embodiment and multi-agent collaboration.
+  Three components: (1) Embodied Cloud Model (MLLM for global perception),
+  (2) Cerebellum Skill Library (plug-and-play toolkit), (3) Real-Time Shared
+  Memory (spatiotemporal synchronization). Supports heterogeneous robots
+  including single-arm, dual-arm, humanoid, and wheeled robots. RoboOS 2.0
+  adds MCP-powered SaaS framework with RoboSkill Store. Tested in restaurants,
+  households, and supermarkets.
+tags:
+  - embodied-ai
+  - robotics
+  - multi-agent
+  - open-source
+library:
+  github: https://github.com/FlagOpen/RoboOS
+related:
+  - robobrain-2.0
+  - roboos-next

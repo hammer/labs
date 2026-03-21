@@ -2,12 +2,15 @@ name: DATAMASK
 slug: datamask
 lab: bytedance-seed
 type: paper
-date: 2025-06-01
-url: https://huggingface.co/ByteDance-Seed
+date: 2025-12-31
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2512.24265
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/DATA-MASK/FineWeb-Mask
 description: >
   Policy gradient-based mask learning for massive-scale pre-training data selection.
 tags:
   - training
   - data
   - research
-notes: Date approximate.

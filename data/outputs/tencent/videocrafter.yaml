@@ -2,8 +2,12 @@ name: VideoCrafter
 slug: videocrafter
 lab: tencent
 type: library
-date: 2023-10-01
-url: https://github.com/AILab-CVC/VideoCrafter
+date: 2023-10-13
+sources:
+  - label: GitHub
+    url: https://github.com/AILab-CVC/VideoCrafter
+  - label: Project Page
+    url: https://ailab-cvc.github.io/videocrafter/
 description: >
   Toolbox for high-quality video diffusion models, including the widely used FreeNoise.
 tags:
@@ -12,4 +16,3 @@ tags:
   - diffusion
 library:
   github: https://github.com/AILab-CVC/VideoCrafter
-notes: Date approximate.

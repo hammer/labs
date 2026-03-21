@@ -2,8 +2,12 @@ name: Qwen-Math Series
 slug: qwen-math
 lab: alibaba-qwen
 type: model
-date: 2024-09-01
-url: https://huggingface.co/Qwen
+date: 2024-09-19
+sources:
+  - label: Blog Post
+    url: https://qwenlm.github.io/blog/qwen2.5/
+  - label: GitHub
+    url: https://github.com/QwenLM/Qwen2.5-Math
 description: >
   Math-specialized model family. Includes the Qwen2.5-Math series (1.5B, 7B, 72B)
   which introduced Tool-Integrated Reasoning (TIR).
@@ -19,4 +23,3 @@ model:
       parameters: 7B
     - name: Qwen2.5-Math-72B
       parameters: 72B
-notes: Date approximate.

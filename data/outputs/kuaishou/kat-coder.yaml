@@ -2,8 +2,14 @@ name: KAT-Coder
 slug: kat-coder
 lab: kuaishou
 type: model
-date: 2025-10-01
-url: https://huggingface.co/Kwaipilot
+date: 2025-11-10
+sources:
+  - label: API Docs
+    url: https://kwaipilot.ai/
+  - label: Project Page
+    url: https://kwaipilot.github.io/KAT-Coder/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.18779
 description: >
   72B active parameter MoE coding model using the "AutoThink" paradigm.
   Designed for agentic coding with parallel tool calls to reduce interaction
@@ -16,4 +22,3 @@ tags:
 model:
   architecture: moe
   active_parameters: 72B
-notes: Date approximate.

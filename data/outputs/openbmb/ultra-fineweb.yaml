@@ -2,11 +2,14 @@ name: Ultra-FineWeb
 slug: ultra-fineweb
 lab: openbmb
 type: dataset
-date: 2025-06-01
-url: https://huggingface.co/openbmb
+date: 2025-06-06
+sources:
+  - label: Dataset
+    url: https://huggingface.co/datasets/openbmb/Ultra-FineWeb
+  - label: "Model Card"
+    url: https://huggingface.co/openbmb/Ultra-FineWeb-classifier
 description: >
   Massive 1.3-trillion-token distilled web dataset.
 tags:
   - training-data
   - pretraining
-notes: Date approximate.

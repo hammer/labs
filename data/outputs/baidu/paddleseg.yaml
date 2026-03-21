@@ -3,7 +3,9 @@ slug: paddleseg
 lab: baidu
 type: library
 date: 2020-01-01
-url: https://github.com/PaddlePaddle/PaddleSeg
+sources:
+  - label: GitHub
+    url: https://github.com/PaddlePaddle/PaddleSeg
 description: >
   Image segmentation toolkit.
 tags:

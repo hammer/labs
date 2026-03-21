@@ -2,8 +2,12 @@ name: InternVideo / InternVideo2
 slug: internvideo
 lab: shanghai-ai-lab
 type: model
-date: 2023-06-01
-url: https://github.com/OpenGVLab/InternVideo
+date: 2022-12-06
+sources:
+  - label: GitHub
+    url: https://github.com/OpenGVLab/InternVideo
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2212.03191
 description: >
   Large-scale video foundation models. InternVideo2 won multiple champions
   in the 2024 EgoVis challenges.
@@ -12,4 +16,4 @@ tags:
   - open-weight
 library:
   github: https://github.com/OpenGVLab/InternVideo
-notes: Date approximate.
+notes: arXiv submission Dec 6, 2022. Code and models released Jan 2023.

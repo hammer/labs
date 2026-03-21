@@ -2,12 +2,18 @@ name: "SynLogic: Synthesizing Verifiable Reasoning Data"
 slug: synlogic
 lab: minimax
 type: paper
-date: 2025-06-01
-url: https://huggingface.co/MiniMaxAI
+date: 2025-05-26
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2505.19641
+  - label: GitHub
+    url: https://github.com/MiniMax-AI/SynLogic
+  - label: HuggingFace
+    url: https://huggingface.co/MiniMaxAI/SynLogic-7B
 description: >
   Research on generating massive-scale logical reasoning data for training.
 tags:
   - reasoning
   - training-data
   - research
-notes: Date approximate.
+notes: Accepted at NeurIPS 2025.

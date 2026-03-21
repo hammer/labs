@@ -2,8 +2,12 @@ name: Qwen2-Audio Paper
 slug: qwen2-audio-paper
 lab: alibaba-qwen
 type: paper
-date: 2024-07-01
-url: https://arxiv.org/abs/2407.10759
+date: 2024-07-15
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2407.10759
+  - label: GitHub
+    url: https://github.com/QwenLM/Qwen2-Audio
 description: >
   Introduced a three-stage training process for universal audio understanding.
 tags:
@@ -12,4 +16,3 @@ paper:
   arxiv: "2407.10759"
 related:
   - qwen-audio
-notes: Date approximate.

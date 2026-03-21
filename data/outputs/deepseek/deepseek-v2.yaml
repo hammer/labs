@@ -2,8 +2,14 @@ name: DeepSeek-V2
 slug: deepseek-v2
 lab: deepseek
 type: model
-date: 2024-05-01
-url: https://arxiv.org/abs/2405.04434
+date: 2024-05-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2405.04434
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepSeek-V2
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V2
 description: >
   Massive 236B MoE model (21B active) that introduced Multi-head Latent
   Attention (MLA).
@@ -17,4 +23,3 @@ model:
   active_parameters: 21B
 paper:
   arxiv: "2405.04434"
-notes: Date approximate.
