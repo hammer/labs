@@ -1,0 +1,15 @@
+name: Liger-Kernel
+slug: liger-kernel
+lab: bytedance-seed
+type: library
+date: 2024-08-01
+url: https://github.com/linkedin/Liger-Kernel
+description: >
+  Efficient Triton-based kernels for MoE model training.
+tags:
+  - infrastructure
+  - kernels
+  - moe
+library:
+  github: https://github.com/linkedin/Liger-Kernel
+notes: Date approximate.

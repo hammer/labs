@@ -1,0 +1,16 @@
+name: ApolloScape
+slug: apolloscape
+lab: baidu
+type: dataset
+date: 2018-03-01
+url: https://apolloscape.auto
+description: >
+  Massive dataset for autonomous driving including 3D semantic segmentation
+  and trajectory prediction.
+tags:
+  - autonomous-driving
+  - vision
+  - benchmark
+related:
+  - apollo
+notes: Date approximate.

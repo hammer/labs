@@ -1,0 +1,16 @@
+name: Kata Containers
+slug: kata-containers
+lab: ant-group
+type: library
+date: 2018-05-01
+url: https://github.com/kata-containers/kata-containers
+description: >
+  Secure container technology co-founded by Ant employees, used for isolating
+  AI workloads.
+tags:
+  - infrastructure
+  - security
+  - containers
+library:
+  github: https://github.com/kata-containers/kata-containers
+notes: Date approximate.

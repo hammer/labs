@@ -1,0 +1,13 @@
+name: ArtifactsBenchmark
+slug: artifacts-benchmark
+lab: tencent
+type: dataset
+date: 2025-06-01
+url: https://huggingface.co/tencent
+description: >
+  Benchmark for interactive visual artifacts and web automation tasks.
+tags:
+  - benchmark
+  - agentic
+  - vision
+notes: Date approximate.

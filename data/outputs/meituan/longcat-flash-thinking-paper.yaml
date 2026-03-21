@@ -1,0 +1,14 @@
+name: "LongCat-Flash-Thinking: Scaling RL for Open Reasoning"
+slug: longcat-flash-thinking-paper
+lab: meituan
+type: paper
+date: 2025-09-01
+url: https://huggingface.co/meituan-longcat
+description: >
+  Research on scaling reinforcement learning for open reasoning.
+tags:
+  - reasoning
+  - reinforcement-learning
+related:
+  - longcat-flash-thinking
+notes: Date approximate.

@@ -1,0 +1,13 @@
+name: MiMo-V2-TTS
+slug: mimo-v2-tts
+lab: xiaomi
+type: model
+date: 2026-01-01
+url: https://mimo.xiaomi.com
+description: >
+  High-fidelity text-to-speech model for providing agent voices.
+tags:
+  - speech
+  - audio
+  - generation
+notes: Date approximate.

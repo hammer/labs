@@ -1,0 +1,16 @@
+name: GLM-5-Turbo
+slug: glm-5-turbo
+lab: zai
+type: model
+date: 2026-03-01
+url: https://z.ai
+description: >
+  Specialized "fast" version optimized for the OpenClaw agent ecosystem,
+  focusing on continuous task execution and tool reliability.
+tags:
+  - moe
+  - agentic
+  - efficiency
+model:
+  architecture: moe
+notes: Date approximate.

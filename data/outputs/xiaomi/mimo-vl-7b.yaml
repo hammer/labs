@@ -1,0 +1,19 @@
+name: MiMo-VL-7B
+slug: mimo-vl-7b
+lab: xiaomi
+type: model
+date: 2025-06-01
+url: https://huggingface.co/XiaomiMiMo
+description: >
+  Open-source vision-language model that outperformed models ten times its size
+  (like Qwen-72B) in multimodal reasoning. Includes SFT and RL variants.
+tags:
+  - vlm
+  - reasoning
+  - open-weight
+model:
+  architecture: dense
+  parameters: 7B
+paper:
+  arxiv: "2506.03569"
+notes: Date approximate.

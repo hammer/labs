@@ -1,0 +1,15 @@
+name: ERNIE 1.0
+slug: ernie-1.0
+lab: baidu
+type: model
+date: 2019-04-01
+url: https://arxiv.org/abs/1904.09223
+description: >
+  Introduced knowledge integration into language modeling, surpassing BERT
+  on Chinese NLP tasks.
+tags:
+  - nlp
+  - chinese
+paper:
+  arxiv: "1904.09223"
+notes: Date approximate.

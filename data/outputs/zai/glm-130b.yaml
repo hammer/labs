@@ -1,0 +1,19 @@
+name: GLM-130B
+slug: glm-130b
+lab: zai
+type: model
+date: 2022-08-01
+url: https://arxiv.org/abs/2210.02414
+description: >
+  Landmark bilingual (English/Chinese) model among the first in China to
+  rival GPT-3.
+tags:
+  - open-weight
+  - multilingual
+  - frontier
+model:
+  architecture: dense
+  parameters: 130B
+paper:
+  arxiv: "2210.02414"
+notes: Date approximate.

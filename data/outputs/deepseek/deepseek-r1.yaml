@@ -2,7 +2,7 @@ name: DeepSeek-R1
 slug: deepseek-r1
 lab: deepseek
 type: model
-date: 2025-01-20
+date: 2025-01-22
 url: https://arxiv.org/abs/2501.12948
 links:
   - label: R1-Lite-Preview (2024-11-20)

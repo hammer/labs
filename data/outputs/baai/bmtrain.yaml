@@ -1,0 +1,14 @@
+name: BMTrain
+slug: bmtrain
+lab: baai
+type: library
+date: 2022-01-01
+url: https://github.com/OpenBMB/BMTrain
+description: >
+  Efficient training library for large-scale transformers.
+tags:
+  - training
+  - infrastructure
+library:
+  github: https://github.com/OpenBMB/BMTrain
+notes: Date approximate.

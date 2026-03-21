@@ -1,0 +1,14 @@
+name: Kimi 2M
+slug: kimi-2m
+lab: moonshot-ai
+type: model
+date: 2024-03-01
+url: https://www.moonshot.cn
+description: >
+  Update to the proprietary model supporting a 2-million-character context window.
+tags:
+  - long-context
+  - proprietary
+model:
+  context_window: 2000000
+notes: Date approximate.

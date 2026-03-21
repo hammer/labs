@@ -1,0 +1,12 @@
+name: Attention Residuals
+slug: attention-residuals
+lab: moonshot-ai
+type: paper
+date: 2026-03-01
+url: https://www.moonshot.cn
+description: >
+  Paper proposing a drop-in replacement for residual connections to improve scaling.
+tags:
+  - architecture
+  - scaling
+notes: Date approximate.

@@ -1,11 +1,22 @@
-name: Xiaomi MiMo
+name: Xiaomi
 slug: xiaomi
 url: https://mimo.xiaomi.com
 huggingface: https://huggingface.co/XiaomiMiMo
+github: https://github.com/XiaomiMiMo
 region: china
 type: corporate
-parent: Xiaomi
-description: Xiaomi's AI model team, producing the MiMo on-device reasoning series.
+description: >
+  Evolved from mobile-first inference and voice assistance (Xiao AI) into a
+  global leader in agentic intelligence and reasoning models. The MiMo team,
+  led by Luo Fuli (formerly DeepSeek-V2/R1), pushes boundaries in efficiency
+  and long-context processing. AI strategy tied to "Human x Car x Home" ecosystem.
+people:
+  - name: Luo Fuli
+    role: Lead
+    formerly: DeepSeek (V2/R1 series)
 tags:
   - open-weight
   - on-device
+  - reasoning
+  - agentic
+  - robotics

@@ -1,0 +1,15 @@
+name: C-MTEB
+slug: c-mteb
+lab: baai
+type: dataset
+date: 2023-08-01
+url: https://huggingface.co/BAAI
+description: >
+  Benchmark for Chinese text embeddings and retrieval.
+tags:
+  - benchmark
+  - chinese
+  - embeddings
+related:
+  - bge
+notes: Date approximate.

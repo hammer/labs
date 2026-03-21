@@ -1,0 +1,14 @@
+name: Hunyuan3D-2.1
+slug: hunyuan3d-2.1
+lab: tencent
+type: model
+date: 2025-06-01
+url: https://github.com/Tencent/Hunyuan3D-2
+description: >
+  Added PBR (Physically-Based Rendering) material synthesis for cinema-grade
+  light interaction.
+tags:
+  - 3d
+  - generation
+  - open-weight
+notes: Date approximate.

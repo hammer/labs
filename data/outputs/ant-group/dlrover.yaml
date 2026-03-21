@@ -1,0 +1,16 @@
+name: DLRover
+slug: dlrover
+lab: ant-group
+type: library
+date: 2023-06-01
+url: https://github.com/intelligent-machine-learning/dlrover
+description: >
+  Automated distributed deep learning system that optimizes resource allocation
+  for training.
+tags:
+  - infrastructure
+  - training
+  - distributed
+library:
+  github: https://github.com/intelligent-machine-learning/dlrover
+notes: Date approximate.

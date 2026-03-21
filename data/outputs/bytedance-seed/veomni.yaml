@@ -1,0 +1,15 @@
+name: VeOmni
+slug: veomni
+lab: bytedance-seed
+type: library
+date: 2025-06-01
+url: https://github.com/bytedance/VeOmni
+description: >
+  Open-source framework for scaling any-modality foundation model training.
+tags:
+  - multimodal
+  - framework
+  - training
+library:
+  github: https://github.com/bytedance/VeOmni
+notes: Date approximate.

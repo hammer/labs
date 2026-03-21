@@ -1,0 +1,14 @@
+name: DeepSeek-Math-V2 Dataset
+slug: deepseek-math-v2-dataset
+lab: deepseek
+type: dataset
+date: 2025-11-01
+url: https://huggingface.co/deepseek-ai
+description: >
+  Curated sets for mathematical reasoning.
+tags:
+  - math
+  - reasoning
+related:
+  - deepseek-math-v2
+notes: Date approximate.

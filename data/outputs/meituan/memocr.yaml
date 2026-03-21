@@ -1,0 +1,12 @@
+name: MemOCR
+slug: memocr
+lab: meituan
+type: library
+date: 2026-01-01
+url: https://github.com/meituan
+description: >
+  OCR-driven visual memory agent library.
+tags:
+  - ocr
+  - agentic
+notes: Date approximate.

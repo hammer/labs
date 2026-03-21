@@ -1,0 +1,14 @@
+name: "MiMo-VL: From Pre-training to Post-training"
+slug: mimo-vl-paper
+lab: xiaomi
+type: paper
+date: 2025-06-01
+url: https://huggingface.co/XiaomiMiMo
+description: >
+  Technical report on achieving SOTA multimodal reasoning at the 7B scale.
+tags:
+  - vlm
+  - reasoning
+related:
+  - mimo-vl-7b
+notes: Date approximate.

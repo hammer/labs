@@ -1,0 +1,14 @@
+name: ByteTrack
+slug: bytetrack
+lab: bytedance-seed
+type: library
+date: 2022-01-01
+url: https://github.com/ifzhang/ByteTrack
+description: >
+  Legendary multi-object tracking algorithm that remains an industry standard.
+tags:
+  - vision
+  - tracking
+library:
+  github: https://github.com/ifzhang/ByteTrack
+notes: Date approximate.

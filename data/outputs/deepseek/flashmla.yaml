@@ -1,0 +1,15 @@
+name: FlashMLA
+slug: flashmla
+lab: deepseek
+type: library
+date: 2025-02-01
+url: https://github.com/deepseek-ai/FlashMLA
+description: >
+  Highly optimized kernels for Multi-head Latent Attention.
+tags:
+  - infrastructure
+  - kernels
+  - attention
+library:
+  github: https://github.com/deepseek-ai/FlashMLA
+notes: Date approximate.

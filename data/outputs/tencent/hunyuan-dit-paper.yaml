@@ -1,0 +1,16 @@
+name: "Hunyuan-DiT: Multi-Resolution Diffusion Transformer"
+slug: hunyuan-dit-paper
+lab: tencent
+type: paper
+date: 2024-05-14
+url: https://arxiv.org/abs/2405.08748
+description: >
+  Fine-grained Chinese understanding in a multi-resolution diffusion transformer.
+tags:
+  - generation
+  - vision
+  - diffusion
+paper:
+  arxiv: "2405.08748"
+related:
+  - hunyuan-dit

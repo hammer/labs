@@ -1,0 +1,15 @@
+name: KAT-Coder Technical Report
+slug: kat-coder-paper
+lab: kuaishou
+type: paper
+date: 2025-10-24
+url: https://arxiv.org/abs/2510.18779
+description: >
+  73.4 on SWE-Bench Verified. Agentic coding model technical report.
+tags:
+  - coding
+  - agentic
+paper:
+  arxiv: "2510.18779"
+related:
+  - kat-coder

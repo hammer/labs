@@ -1,0 +1,15 @@
+name: LlamaGen
+slug: llamagen
+lab: bytedance-seed
+type: model
+date: 2024-06-01
+url: https://github.com/FoundationVision/LlamaGen
+description: >
+  Applying the Llama architecture to image generation.
+tags:
+  - generation
+  - vision
+  - autoregressive
+library:
+  github: https://github.com/FoundationVision/LlamaGen
+notes: Date approximate.

@@ -1,0 +1,13 @@
+name: WanJuan Corpus
+slug: wanjuan
+lab: shanghai-ai-lab
+type: dataset
+date: 2023-08-01
+url: https://huggingface.co/internlm
+description: >
+  Massive high-quality multimodal pre-training corpus containing over 1 trillion
+  tokens of English web text.
+tags:
+  - training-data
+  - pretraining
+notes: Date approximate.

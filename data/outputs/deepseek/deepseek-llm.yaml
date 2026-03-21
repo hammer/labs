@@ -1,0 +1,14 @@
+name: DeepSeek-LLM
+slug: deepseek-llm
+lab: deepseek
+type: model
+date: 2023-11-01
+url: https://huggingface.co/deepseek-ai/deepseek-llm-67b-chat
+description: >
+  First general-purpose 67B model, outperforming Llama 2 at the time.
+tags:
+  - open-weight
+model:
+  architecture: dense
+  parameters: 67B
+notes: Date approximate.

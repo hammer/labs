@@ -1,0 +1,12 @@
+name: DeepPlanning
+slug: deep-planning
+lab: alibaba-qwen
+type: dataset
+date: 2025-06-01
+url: https://huggingface.co/Qwen
+description: >
+  Benchmark for evaluating complex agentic planning.
+tags:
+  - benchmark
+  - agentic
+notes: Date approximate.

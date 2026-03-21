@@ -1,0 +1,18 @@
+name: Doubao-1.5-Pro
+slug: doubao-1.5-pro
+lab: bytedance-seed
+type: model
+date: 2025-01-01
+url: https://www.volcengine.com
+description: >
+  Sparse MoE model (20B active/140B total) with a 256k context window.
+  Part of ByteDance's flagship Doubao series.
+tags:
+  - moe
+  - long-context
+model:
+  architecture: moe
+  parameters: 140B
+  active_parameters: 20B
+  context_window: 256000
+notes: Date approximate.

@@ -2,8 +2,15 @@ name: ERNIE 4.5
 slug: ernie-4.5
 lab: baidu
 type: model
-date: 2025-06-30
+date: 2025-03-01
 url: https://the-decoder.com/baidu-releases-open-source-model-family-ernie-4-5/
-description: ERNIE 4.5 and X1 model family released as open source.
+description: >
+  Introduced the ERNIE-4.5-300B-A47B, a Mixture-of-Experts model with 300B
+  total parameters (47B active). Released as open source alongside ERNIE X1.
 tags:
+  - moe
   - open-weight
+model:
+  architecture: moe
+  parameters: 300B
+  active_parameters: 47B

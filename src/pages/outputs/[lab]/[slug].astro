@@ -75,6 +75,14 @@ const labObjects = labs.map((s) => getLabBySlug(s)).filter(Boolean);
     </section>
   )}
 
+  {output.dataset && (
+    <section class="section">
+      <h2>Dataset</h2>
+      {output.dataset.github && <p><a href={output.dataset.github}>GitHub Repository</a></p>}
+      {output.dataset.url && <p><a href={output.dataset.url}>Dataset</a></p>}
+    </section>
+  )}
+
   {output.tags && <TagList tags={output.tags} />}
 
   {output.related && output.related.length > 0 && (

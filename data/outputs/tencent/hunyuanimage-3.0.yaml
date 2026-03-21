@@ -1,0 +1,14 @@
+name: HunyuanImage-3.0
+slug: hunyuanimage-3.0
+lab: tencent
+type: model
+date: 2026-03-01
+url: https://llm.hunyuan.tencent.com
+description: >
+  "Native Multimodal Model" for image generation, capable of instant updates
+  from text, sketch, or voice.
+tags:
+  - generation
+  - vision
+  - multimodal
+notes: Date approximate.

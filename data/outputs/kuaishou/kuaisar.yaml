@@ -1,0 +1,13 @@
+name: KuaiSAR
+slug: kuaisar
+lab: kuaishou
+type: dataset
+date: 2023-06-01
+url: https://github.com/kuaishou-langlab
+description: >
+  Unified search and recommendation dataset containing genuine user behavior logs.
+tags:
+  - recommendation
+  - search
+  - benchmark
+notes: Date approximate.

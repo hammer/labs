@@ -7,11 +7,15 @@ url: https://arxiv.org/abs/2507.20534
 links:
   - label: Reuters
     url: https://www.reuters.com/business/media-telecom/chinas-moonshot-ai-releases-open-source-model-reclaim-market-position-2025-07-11/
-description: 1T-32BA MoE model with 384 experts, 8 activated per token.
+description: >
+  Landmark 1-trillion parameter MoE model (32B active) released as open-weight.
+  384 experts with 8 activated per token. Focused on agentic intelligence and
+  tool use.
 tags:
   - moe
   - frontier
   - open-weight
+  - agentic
 model:
   architecture: moe
   parameters: 1T

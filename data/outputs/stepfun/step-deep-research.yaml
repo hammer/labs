@@ -1,0 +1,13 @@
+name: Step-DeepResearch
+slug: step-deep-research
+lab: stepfun
+type: library
+date: 2025-12-23
+url: https://arxiv.org/abs/2512.20491
+description: >
+  Deep research agent framework for autonomous multi-step research tasks.
+tags:
+  - agentic
+  - research
+paper:
+  arxiv: "2512.20491"

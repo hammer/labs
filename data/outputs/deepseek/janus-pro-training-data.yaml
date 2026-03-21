@@ -1,0 +1,14 @@
+name: Janus-Pro Training Data
+slug: janus-pro-training-data
+lab: deepseek
+type: dataset
+date: 2025-01-01
+url: https://huggingface.co/deepseek-ai
+description: >
+  72M descriptive mix of real and synthetic multimodal data for Janus-Pro training.
+tags:
+  - multimodal
+  - training-data
+related:
+  - janus
+notes: Date approximate.

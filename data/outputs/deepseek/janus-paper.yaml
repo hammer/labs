@@ -1,0 +1,15 @@
+name: "Janus: Decoupling Visual Encoding for Unified Multimodal Understanding and Generation"
+slug: janus-paper
+lab: deepseek
+type: paper
+date: 2024-10-17
+url: https://arxiv.org/abs/2410.13848
+description: >
+  Unified autoregressive framework for multimodal understanding and visual generation.
+tags:
+  - multimodal
+  - generation
+paper:
+  arxiv: "2410.13848"
+related:
+  - janus

@@ -1,0 +1,14 @@
+name: OmniScale
+slug: omniscale
+lab: bytedance-seed
+type: paper
+date: 2025-12-01
+url: https://huggingface.co/ByteDance-Seed
+description: >
+  Research on scaling any-modality training recipes. Accepted at AAAI 2026.
+tags:
+  - multimodal
+  - scaling
+paper:
+  venue: AAAI 2026
+notes: Date approximate.

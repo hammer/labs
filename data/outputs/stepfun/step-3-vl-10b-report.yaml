@@ -1,0 +1,13 @@
+name: Step3-VL-10B Technical Report
+slug: step-3-vl-10b-report
+lab: stepfun
+type: paper
+date: 2026-01-01
+url: https://huggingface.co/stepfun-ai
+description: >
+  Focused on "Intrinsic Vision-Language Synergy."
+tags:
+  - vlm
+related:
+  - step-3-vl-10b
+notes: Date approximate.

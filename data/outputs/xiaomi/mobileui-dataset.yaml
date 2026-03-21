@@ -1,0 +1,15 @@
+name: MobileUI Dataset
+slug: mobileui-dataset
+lab: xiaomi
+type: dataset
+date: 2024-01-01
+url: https://huggingface.co/XiaomiMiMo
+description: >
+  Curated sets of mobile application screenshots and UI hierarchies for
+  VLM training.
+tags:
+  - vision
+  - mobile
+related:
+  - mobilevlm
+notes: Date approximate.

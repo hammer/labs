@@ -1,0 +1,15 @@
+name: CodeGeeX Series
+slug: codegeex
+lab: zai
+type: model
+date: 2022-09-01
+url: https://github.com/THUDM/CodeGeeX
+description: >
+  Dedicated series for software engineering (versions 1-4), now fully
+  integrated into AutoGLM for autonomous repository management.
+tags:
+  - coding
+  - open-weight
+library:
+  github: https://github.com/THUDM/CodeGeeX
+notes: Date approximate.

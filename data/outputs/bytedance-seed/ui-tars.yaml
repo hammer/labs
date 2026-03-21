@@ -1,0 +1,16 @@
+name: UI-TARS
+slug: ui-tars
+lab: bytedance-seed
+type: library
+date: 2025-01-01
+url: https://github.com/bytedance/UI-TARS
+description: >
+  Open-source multimodal AI agent stack designed to control computers and
+  browsers via vision.
+tags:
+  - agentic
+  - vision
+  - framework
+library:
+  github: https://github.com/bytedance/UI-TARS
+notes: Date approximate.

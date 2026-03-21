@@ -1,0 +1,16 @@
+name: InternImage
+slug: internimage
+lab: shanghai-ai-lab
+type: model
+date: 2023-03-01
+url: https://github.com/OpenGVLab/InternImage
+description: >
+  Vision foundation model utilizing deformable convolutions for high-performance
+  detection and segmentation.
+tags:
+  - vision
+  - detection
+  - open-weight
+library:
+  github: https://github.com/OpenGVLab/InternImage
+notes: Date approximate.

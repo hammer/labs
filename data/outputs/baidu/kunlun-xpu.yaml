@@ -1,0 +1,12 @@
+name: Kunlun XPU
+slug: kunlun-xpu
+lab: baidu
+type: announcement
+date: 2020-01-01
+url: https://www.baidu.com
+description: >
+  Baidu's proprietary AI chips (R200/R300/P800) optimized for PaddlePaddle.
+tags:
+  - hardware
+  - infrastructure
+notes: Date approximate.

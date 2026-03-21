@@ -1,0 +1,16 @@
+name: Step-Audio-EditX
+slug: step-audio-editx
+lab: stepfun
+type: model
+date: 2026-01-01
+url: https://huggingface.co/stepfun-ai
+description: >
+  3B parameter RL-based model for editing emotion, style, and paralinguistics
+  in audio.
+tags:
+  - audio
+  - editing
+  - reinforcement-learning
+model:
+  parameters: 3B
+notes: Date approximate.

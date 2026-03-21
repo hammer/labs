@@ -1,0 +1,13 @@
+name: Meituan-INFORMS-TSL
+slug: meituan-informs-tsl
+lab: meituan
+type: dataset
+date: 2025-06-01
+url: https://www.meituan.com
+description: >
+  Massive dataset of operational-level on-demand food delivery data for
+  global research challenges.
+tags:
+  - delivery
+  - operations
+notes: Date approximate.

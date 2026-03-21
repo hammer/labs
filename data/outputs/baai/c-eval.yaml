@@ -1,0 +1,15 @@
+name: C-Eval
+slug: c-eval
+lab: baai
+type: dataset
+date: 2023-05-01
+url: https://cevalbenchmark.com
+description: >
+  Leading benchmark for evaluating Chinese LLMs across 52 disciplines.
+tags:
+  - benchmark
+  - chinese
+  - evaluation
+related:
+  - c-eval-paper
+notes: Date approximate.

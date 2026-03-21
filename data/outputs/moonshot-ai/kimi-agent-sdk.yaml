@@ -1,0 +1,15 @@
+name: kimi-agent-sdk
+slug: kimi-agent-sdk
+lab: moonshot-ai
+type: library
+date: 2025-06-01
+url: https://github.com/MoonshotAI/kimi-agent-sdk
+description: >
+  Multi-language SDK (Python, Go, Node.js) for programmatically interacting
+  with Kimi's agentic features.
+tags:
+  - agentic
+  - sdk
+library:
+  github: https://github.com/MoonshotAI/kimi-agent-sdk
+notes: Date approximate.

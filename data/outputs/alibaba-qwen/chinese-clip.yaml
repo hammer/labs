@@ -1,0 +1,15 @@
+name: Chinese CLIP
+slug: chinese-clip
+lab: alibaba-qwen
+type: model
+date: 2022-01-01
+url: https://arxiv.org/abs/2211.01335
+description: >
+  Contrastive vision-language pretraining specifically for Chinese.
+  Predates the Qwen branding.
+tags:
+  - vlm
+  - chinese
+paper:
+  arxiv: "2211.01335"
+notes: Date approximate.

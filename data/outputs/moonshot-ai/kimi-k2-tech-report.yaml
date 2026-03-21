@@ -1,0 +1,15 @@
+name: "Kimi K2 Tech Report: Open Agentic Intelligence"
+slug: kimi-k2-tech-report
+lab: moonshot-ai
+type: paper
+date: 2025-07-11
+url: https://arxiv.org/abs/2507.20534
+description: >
+  Technical report for Kimi K2: Open Agentic Intelligence.
+tags:
+  - moe
+  - agentic
+paper:
+  arxiv: "2507.20534"
+related:
+  - kimi-k2

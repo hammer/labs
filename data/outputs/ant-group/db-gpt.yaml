@@ -1,0 +1,14 @@
+name: DB-GPT
+slug: db-gpt
+lab: ant-group
+type: library
+date: 2023-06-01
+url: https://github.com/eosphoros-ai/DB-GPT
+description: >
+  Library for interacting with databases using private large-model technology.
+tags:
+  - database
+  - framework
+library:
+  github: https://github.com/eosphoros-ai/DB-GPT
+notes: Date approximate.

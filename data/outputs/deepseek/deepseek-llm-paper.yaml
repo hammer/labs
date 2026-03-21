@@ -1,0 +1,16 @@
+name: "DeepSeek LLM: Scaling Open-Source Language Models with Longtermism"
+slug: deepseek-llm-paper
+lab: deepseek
+type: paper
+date: 2024-01-01
+url: https://arxiv.org/abs/2401.02954
+description: >
+  Technical report on scaling open-source language models with a long-term vision.
+tags:
+  - scaling
+  - technical-report
+paper:
+  arxiv: "2401.02954"
+related:
+  - deepseek-llm
+notes: Date approximate.

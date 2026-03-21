@@ -1,0 +1,12 @@
+name: Shot2Story20K
+slug: shot2story
+lab: bytedance-seed
+type: dataset
+date: 2023-12-01
+url: https://huggingface.co/ByteDance-Seed
+description: >
+  Benchmark for comprehensive multi-shot video understanding.
+tags:
+  - benchmark
+  - video
+notes: Date approximate.

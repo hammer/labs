@@ -1,0 +1,13 @@
+name: "Hunyuan3D 1.0: Text-to-3D and Image-to-3D"
+slug: hunyuan3d-1.0-paper
+lab: tencent
+type: paper
+date: 2024-11-04
+url: https://arxiv.org/abs/2411.02293
+description: >
+  Unified framework for text-to-3D and image-to-3D generation.
+tags:
+  - 3d
+  - generation
+paper:
+  arxiv: "2411.02293"

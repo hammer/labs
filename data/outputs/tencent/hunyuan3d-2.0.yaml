@@ -1,0 +1,15 @@
+name: Hunyuan3D-2.0
+slug: hunyuan3d-2.0
+lab: tencent
+type: model
+date: 2025-01-01
+url: https://github.com/Tencent/Hunyuan3D-2
+description: >
+  3D asset generation with high-resolution textured asset generation.
+tags:
+  - 3d
+  - generation
+  - open-weight
+library:
+  github: https://github.com/Tencent/Hunyuan3D-2
+notes: Date approximate.

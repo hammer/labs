@@ -1,0 +1,13 @@
+name: MS-MARCO-CN
+slug: ms-marco-cn
+lab: baidu
+type: dataset
+date: 2021-01-01
+url: https://www.baidu.com
+description: >
+  High-quality Chinese translation and localization of the popular MS-MARCO dataset.
+tags:
+  - benchmark
+  - nlp
+  - chinese
+notes: Date approximate.

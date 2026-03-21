@@ -1,0 +1,14 @@
+name: Xiao AI
+slug: xiao-ai
+lab: xiaomi
+type: announcement
+date: 2017-07-01
+url: https://www.mi.com
+description: >
+  Foundational voice assistant that served as the initial testbed for Xiaomi's
+  NLP and speech research.
+tags:
+  - speech
+  - assistant
+  - on-device
+notes: Date approximate. Active 2017-2023.

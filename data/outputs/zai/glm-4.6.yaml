@@ -1,0 +1,16 @@
+name: GLM-4.6
+slug: glm-4.6
+lab: zai
+type: model
+date: 2025-09-01
+url: https://z.ai
+description: >
+  Released with MIT License. 355B MoE model, premier open-weight choice for
+  enterprise self-hosting.
+tags:
+  - moe
+  - open-weight
+model:
+  architecture: moe
+  parameters: 355B
+notes: Date approximate.

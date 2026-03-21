@@ -1,0 +1,16 @@
+name: Kimi-Audio Technical Report
+slug: kimi-audio-paper
+lab: moonshot-ai
+type: paper
+date: 2025-04-25
+url: https://arxiv.org/abs/2504.18425
+description: >
+  Audio foundation model for understanding, generation, and conversation.
+  Trained on 13M+ hours of audio data.
+tags:
+  - audio
+  - speech
+paper:
+  arxiv: "2504.18425"
+related:
+  - kimi-audio

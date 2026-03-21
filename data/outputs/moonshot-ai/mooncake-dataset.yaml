@@ -1,0 +1,16 @@
+name: Mooncake Dataset
+slug: mooncake-dataset
+lab: moonshot-ai
+type: dataset
+date: 2024-06-01
+url: https://github.com/MoonshotAI/Mooncake
+description: >
+  Training data and code snippets corresponding to the Mooncake disaggregated
+  architecture research.
+tags:
+  - infrastructure
+dataset:
+  github: https://github.com/MoonshotAI/Mooncake
+related:
+  - mooncake
+notes: Date approximate.

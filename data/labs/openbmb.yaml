@@ -1,10 +1,39 @@
 name: OpenBMB
 slug: openbmb
+url: https://www.openbmb.cn
 huggingface: https://huggingface.co/openbmb
+github: https://github.com/OpenBMB
 region: china
+founded: "2022"
 type: academic
 description: >
-  Open Lab for Big Model Base. Creator of the MiniCPM on-device model series.
+  Open Lab for Big Model Base. Premier collaborative lab and global leader in
+  on-device and ultra-efficient LLMs. Alliance between Tsinghua THUNLP (Prof.
+  Sun Maosong, Prof. Liu Zhiyuan) and ModelBest Inc. Created to democratize
+  "Big Models" so researchers don't need supercomputers. Known for MiniCPM
+  series bringing GPT-4 level intelligence to smartphones.
+people:
+  - name: Maosong Sun
+    role: PI
+    formerly: Tsinghua THUNLP
+  - name: Zhiyuan Liu
+    role: PI
+    formerly: Tsinghua THUNLP
+  - name: Xu Han
+    role: Core Researcher
+relationships:
+  - lab: baai
+    type: collaboration
+    note: >
+      BAAI acted as super-incubator. Early CPM models were part of Wu Dao
+      program. BAAI provides compute for some open-source projects.
+  - lab: zai
+    type: collaboration
+    note: >
+      Both originate from Tsinghua but are distinct groups. Z.ai (THUDM/Tang Jie)
+      focuses on GLM. OpenBMB (THUNLP/Sun Maosong) focuses on efficiency and PEFT.
 tags:
   - open-weight
   - on-device
+  - efficiency
+  - academic

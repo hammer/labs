@@ -1,0 +1,14 @@
+name: MiniMax Speech Series
+slug: speech-series
+lab: minimax
+type: model
+date: 2024-06-01
+url: https://www.minimax.io
+description: >
+  Hyper-realistic vocal models supporting 40+ languages with instantly
+  responsive latencies (<250ms). Versions from Speech 02 to 2.8.
+tags:
+  - speech
+  - audio
+  - multilingual
+notes: Date approximate.

@@ -1,0 +1,15 @@
+name: "MiniCPM: Unveiling the Potential of End-Side Large Language Models"
+slug: minicpm-paper
+lab: openbmb
+type: paper
+date: 2024-02-01
+url: https://arxiv.org/abs/2404.06395
+description: >
+  Technical report detailing the "Tiered Data Management" philosophy for
+  efficient on-device models.
+tags:
+  - on-device
+  - efficiency
+paper:
+  arxiv: "2404.06395"
+notes: Date approximate.

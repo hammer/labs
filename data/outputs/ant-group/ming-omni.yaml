@@ -1,0 +1,13 @@
+name: Ming-Omni / Ming-Lite-Omni
+slug: ming-omni
+lab: ant-group
+type: model
+date: 2025-06-01
+url: https://huggingface.co/inclusionAI
+description: >
+  Native multimodal models built on the Ling backbone. Part of the Ming
+  (multimodal) series.
+tags:
+  - multimodal
+  - open-weight
+notes: Date approximate.

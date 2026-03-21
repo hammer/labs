@@ -1,0 +1,20 @@
+name: Hunyuan-Large
+slug: hunyuan-large
+lab: tencent
+type: model
+date: 2024-11-04
+url: https://arxiv.org/abs/2411.02265
+description: >
+  Open-source MoE model with 52B activated parameters out of 389B total.
+  256K context.
+tags:
+  - moe
+  - open-weight
+  - frontier
+model:
+  architecture: moe
+  parameters: 389B
+  active_parameters: 52B
+  context_window: 256000
+paper:
+  arxiv: "2411.02265"

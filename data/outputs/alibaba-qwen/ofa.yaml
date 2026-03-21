@@ -1,0 +1,15 @@
+name: "OFA: One For All"
+slug: ofa
+lab: alibaba-qwen
+type: model
+date: 2022-01-01
+url: https://arxiv.org/abs/2202.03052
+description: >
+  Unified sequence-to-sequence framework for multimodal tasks.
+  Predates the Qwen branding.
+tags:
+  - multimodal
+  - unified
+paper:
+  arxiv: "2202.03052"
+notes: Date approximate.

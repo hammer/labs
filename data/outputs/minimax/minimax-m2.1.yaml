@@ -1,0 +1,13 @@
+name: MiniMax-M2.1
+slug: minimax-m2.1
+lab: minimax
+type: model
+date: 2025-12-01
+url: https://huggingface.co/MiniMaxAI
+description: >
+  Enhanced for multi-language programming (Rust, Java, Go) and complex agentic
+  scaffolding.
+tags:
+  - coding
+  - agentic
+notes: Date approximate.

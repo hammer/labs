@@ -1,0 +1,16 @@
+name: Infinity & InfinityStar
+slug: infinity
+lab: bytedance-seed
+type: model
+date: 2025-01-01
+url: https://github.com/FoundationVision/Infinity
+description: >
+  Scaling bitwise autoregressive modeling for high-resolution image and
+  spacetime (video) synthesis.
+tags:
+  - generation
+  - vision
+  - video
+library:
+  github: https://github.com/FoundationVision/Infinity
+notes: Date approximate.

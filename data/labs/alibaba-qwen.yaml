@@ -2,12 +2,27 @@ name: Alibaba Qwen
 slug: alibaba-qwen
 url: https://qwen.ai
 huggingface: https://huggingface.co/Qwen
+github: https://github.com/QwenLM
 region: china
+founded: "2023"
 type: corporate
 parent: Alibaba Group
 description: >
-  Alibaba's large language model team, producing the Qwen series of
-  open-weight models spanning dense and MoE architectures.
+  One of the most prolific contributors to the open-source AI ecosystem.
+  Produces the Qwen (Tongyi Qianwen) series spanning dense and MoE architectures,
+  with specialized branches for code, math, vision, and audio. Transitioned from
+  large dense models to sophisticated MoE and native multimodal architectures.
+people:
+  - name: Junyang Lin
+    role: Tech Lead
+  - name: Jingren Zhou
+    role: Director
+  - name: Binyuan Hui
+    role: Coding Lead
+  - name: Shuai Bai
+    role: Vision Lead
 tags:
   - frontier
   - open-weight
+  - multimodal
+  - moe

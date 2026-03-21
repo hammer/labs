@@ -1,0 +1,18 @@
+name: LongCat-Flash-Prover
+slug: longcat-flash-prover
+lab: meituan
+type: model
+date: 2026-03-20
+url: https://huggingface.co/meituan-longcat
+description: >
+  560B MoE model for formal theorem proving in Lean4. Achieved 97.1% pass
+  rate on MiniF2F-Test.
+tags:
+  - math
+  - reasoning
+  - theorem-proving
+  - moe
+model:
+  architecture: moe
+  parameters: 560B
+  active_parameters: 27B

@@ -2,13 +2,27 @@ name: DeepSeek
 slug: deepseek
 url: https://www.deepseek.com
 huggingface: https://huggingface.co/deepseek-ai
+github: https://github.com/deepseek-ai
 region: china
+founded: "2023"
 type: startup
 description: >
-  AI research lab known for efficient MoE architectures and open-weight
-  frontier models. Pioneered innovations in expert parallelism and
-  reinforcement learning for reasoning.
+  Dominant force in the open-source community, known for highly efficient
+  Mixture-of-Experts architectures and reasoning-focused models. Pioneered
+  innovations in expert parallelism, Multi-head Latent Attention, and
+  reinforcement learning for reasoning. Notable for their "open-science"
+  approach, publishing detailed technical reports and open-sourcing low-level
+  training infrastructure.
+people:
+  - name: Chong Ruan
+    role: Co-founder & Research Lead
+  - name: Daya Guo
+    role: Core Researcher
+  - name: Zhenda Xie
+    role: Core Researcher
 tags:
   - frontier
   - open-weight
   - efficiency
+  - moe
+  - reasoning

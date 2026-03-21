@@ -1,0 +1,14 @@
+name: Qwen-Agent
+slug: qwen-agent
+lab: alibaba-qwen
+type: library
+date: 2024-01-01
+url: https://github.com/QwenLM/Qwen-Agent
+description: >
+  Python framework for building agents with tool-calling, RAG, and code execution.
+tags:
+  - agentic
+  - framework
+library:
+  github: https://github.com/QwenLM/Qwen-Agent
+notes: Date approximate.

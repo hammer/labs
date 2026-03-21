@@ -1,0 +1,14 @@
+name: InternLM3
+slug: internlm3
+lab: shanghai-ai-lab
+type: model
+date: 2025-11-01
+url: https://github.com/InternLM/InternLM
+description: >
+  Most advanced general-purpose LLM, focusing on system-level reasoning
+  and self-reflection.
+tags:
+  - open-weight
+  - reasoning
+  - frontier
+notes: Date approximate.

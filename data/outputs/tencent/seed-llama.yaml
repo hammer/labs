@@ -1,0 +1,16 @@
+name: SEED-LLaMA
+slug: seed-llama
+lab: tencent
+type: paper
+date: 2024-01-01
+url: https://arxiv.org/abs/2307.08041
+description: >
+  Pioneer in multimodal in-context learning, enabling models to "see" and
+  "speak" with interleaved images and text. Accepted at ICLR 2024.
+tags:
+  - multimodal
+  - research
+paper:
+  arxiv: "2307.08041"
+  venue: ICLR 2024
+notes: Date approximate.

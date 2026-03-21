@@ -1,0 +1,14 @@
+name: MaxClaw
+slug: maxclaw
+lab: minimax
+type: library
+date: 2026-01-01
+url: https://www.minimax.io
+description: >
+  Integrated agent interface that natively calls MiniMax's video, audio,
+  and image models.
+tags:
+  - agentic
+  - framework
+  - multimodal
+notes: Date approximate.

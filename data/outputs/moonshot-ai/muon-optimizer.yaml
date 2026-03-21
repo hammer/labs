@@ -1,0 +1,15 @@
+name: Muon Optimizer
+slug: muon-optimizer
+lab: moonshot-ai
+type: library
+date: 2025-02-24
+url: https://github.com/MoonshotAI/Muon
+description: >
+  Official implementation of the Muon optimizer based on matrix orthogonalization.
+tags:
+  - training
+  - optimization
+library:
+  github: https://github.com/MoonshotAI/Muon
+related:
+  - muon-scalable-training

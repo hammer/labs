@@ -1,0 +1,17 @@
+name: DeepSeek-V3 Technical Report
+slug: deepseek-v3-paper
+lab: deepseek
+type: paper
+date: 2024-12-27
+url: https://arxiv.org/abs/2412.19437
+description: >
+  Technical report for the landmark 671B MoE model with Multi-Token Prediction
+  and FP8 mixed-precision training.
+tags:
+  - moe
+  - scaling
+  - technical-report
+paper:
+  arxiv: "2412.19437"
+related:
+  - deepseek-v3

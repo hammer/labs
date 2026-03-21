@@ -1,0 +1,12 @@
+name: DiQAD
+slug: diqad
+lab: baidu
+type: dataset
+date: 2023-06-01
+url: https://www.baidu.com
+description: >
+  Benchmark for open-domain dialogue quality assessment.
+tags:
+  - benchmark
+  - dialogue
+notes: Date approximate.

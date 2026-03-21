@@ -1,0 +1,16 @@
+name: MiMo-Audio-7B
+slug: mimo-audio-7b
+lab: xiaomi
+type: model
+date: 2025-06-01
+url: https://huggingface.co/XiaomiMiMo
+description: >
+  Specialized model for few-shot audio understanding and environmental
+  sound classification.
+tags:
+  - audio
+  - open-weight
+model:
+  architecture: dense
+  parameters: 7B
+notes: Date approximate.

@@ -1,0 +1,16 @@
+name: DuReader
+slug: dureader
+lab: baidu
+type: dataset
+date: 2017-11-01
+url: https://github.com/baidu/DuReader
+description: >
+  Largest Chinese machine reading comprehension (MRC) dataset, containing
+  real user queries.
+tags:
+  - benchmark
+  - nlp
+  - chinese
+dataset:
+  github: https://github.com/baidu/DuReader
+notes: Date approximate. Updated through 2020.

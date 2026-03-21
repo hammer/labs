@@ -1,0 +1,15 @@
+name: Qwen-Code
+slug: qwen-code
+lab: alibaba-qwen
+type: library
+date: 2025-07-01
+url: https://github.com/QwenLM/Qwen-Code
+description: >
+  CLI tool for terminal-based agentic coding and codebase analysis.
+tags:
+  - coding
+  - cli
+  - agentic
+library:
+  github: https://github.com/QwenLM/Qwen-Code
+notes: Date approximate.

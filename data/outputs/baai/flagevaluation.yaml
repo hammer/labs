@@ -1,0 +1,15 @@
+name: FlagEvaluation
+slug: flagevaluation
+lab: baai
+type: library
+date: 2023-01-01
+url: https://github.com/FlagOpen/FlagEval
+description: >
+  Platform for standardized model benchmarking (including OpenSeer).
+tags:
+  - benchmark
+  - evaluation
+  - framework
+library:
+  github: https://github.com/FlagOpen/FlagEval
+notes: Date approximate.

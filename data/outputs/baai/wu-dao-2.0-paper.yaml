@@ -1,0 +1,14 @@
+name: "Wu Dao 2.0: A Roadmap to Cognitive Intelligence"
+slug: wu-dao-2.0-paper
+lab: baai
+type: paper
+date: 2021-05-01
+url: https://www.baai.ac.cn
+description: >
+  Roadmap paper for the Wu Dao 2.0 cognitive intelligence program.
+tags:
+  - scaling
+  - multimodal
+related:
+  - wu-dao-2.0
+notes: Date approximate.

@@ -1,0 +1,14 @@
+name: Kimi K2 Thinking
+slug: kimi-k2-thinking
+lab: moonshot-ai
+type: model
+date: 2025-11-01
+url: https://www.moonshot.cn
+description: >
+  Reasoning-heavy "thinking agent" capable of hundreds of sequential tool calls.
+tags:
+  - reasoning
+  - agentic
+model:
+  base_model: kimi-k2
+notes: Date approximate.

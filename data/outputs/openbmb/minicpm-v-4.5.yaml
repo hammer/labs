@@ -1,0 +1,14 @@
+name: MiniCPM-V 4.5
+slug: minicpm-v-4.5
+lab: openbmb
+type: model
+date: 2026-02-01
+url: https://huggingface.co/openbmb
+description: >
+  State-of-the-art for on-device vision, specializing in complex document
+  parsing and high-resolution spatial reasoning.
+tags:
+  - vlm
+  - on-device
+  - ocr
+notes: Date approximate.

@@ -1,0 +1,18 @@
+name: Step-Audio / Step-Audio2
+slug: step-audio
+lab: stepfun
+type: model
+date: 2025-06-01
+url: https://huggingface.co/stepfun-ai
+description: >
+  Multimodal audio models supporting 16.7Hz semantic tokenization and real-time
+  "omni" interaction (speech-to-speech).
+tags:
+  - audio
+  - speech
+  - multimodal
+model:
+  variants:
+    - name: Step-Audio
+    - name: Step-Audio2
+notes: Date approximate.

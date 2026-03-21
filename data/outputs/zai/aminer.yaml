@@ -1,0 +1,14 @@
+name: AMiner
+slug: aminer
+lab: zai
+type: library
+date: 2006-01-01
+url: https://www.aminer.org
+description: >
+  Global academic search and mining system created by Z.ai co-founder Jie Tang,
+  now a core part of the Z.ai research ecosystem.
+tags:
+  - search
+  - academic
+  - infrastructure
+notes: Date approximate.

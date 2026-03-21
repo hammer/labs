@@ -1,0 +1,15 @@
+name: LLaDA-MoE
+slug: llada-moe
+lab: ant-group
+type: model
+date: 2025-06-01
+url: https://huggingface.co/inclusionAI
+description: >
+  Mixture-of-Experts variant of LLaDA, the experimental diffusion language model.
+tags:
+  - moe
+  - diffusion
+  - research
+related:
+  - llada
+notes: Date approximate.

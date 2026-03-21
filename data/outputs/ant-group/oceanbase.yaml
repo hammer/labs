@@ -1,0 +1,16 @@
+name: OceanBase
+slug: oceanbase
+lab: ant-group
+type: library
+date: 2021-06-01
+url: https://github.com/oceanbase/oceanbase
+description: >
+  Globally leading scalable distributed database. Core infrastructure for
+  Ant's AI deployments.
+tags:
+  - infrastructure
+  - database
+  - distributed
+library:
+  github: https://github.com/oceanbase/oceanbase
+notes: Date approximate.

@@ -1,0 +1,13 @@
+name: Doubao-Seed-2.0
+slug: doubao-seed-2.0
+lab: bytedance-seed
+type: model
+date: 2026-02-01
+url: https://www.volcengine.com
+description: >
+  Most recent general-purpose AGI model designed for complex real-world
+  task execution.
+tags:
+  - frontier
+  - agentic
+notes: Date approximate.

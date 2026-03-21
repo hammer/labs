@@ -1,0 +1,14 @@
+name: Alchemy
+slug: alchemy
+lab: tencent
+type: dataset
+date: 2019-06-01
+url: https://github.com/Tencent
+description: >
+  Quantum chemistry dataset for benchmarking AI models in molecular
+  property prediction.
+tags:
+  - science
+  - chemistry
+  - benchmark
+notes: Date approximate.

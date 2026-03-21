@@ -1,0 +1,15 @@
+name: Step-Video-T2V
+slug: step-video-t2v
+lab: stepfun
+type: model
+date: 2025-02-01
+url: https://huggingface.co/stepfun-ai
+description: >
+  Massive 300B parameter text-to-video model capable of generating high-fidelity
+  204-frame clips.
+tags:
+  - video
+  - generation
+model:
+  parameters: 300B
+notes: Date approximate.

@@ -1,0 +1,19 @@
+name: ERNIE 5.0
+slug: ernie-5.0
+lab: baidu
+type: model
+date: 2026-01-01
+url: https://www.baidu.com
+description: >
+  Most advanced model to date. 2.4 trillion total parameters with ultra-sparse
+  MoE (<3% activation ratio) for extreme inference efficiency. Native
+  full-modality unified modeling (text, image, audio, video) in a single
+  autoregressive framework.
+tags:
+  - moe
+  - frontier
+  - multimodal
+model:
+  architecture: moe
+  parameters: 2.4T
+notes: Date approximate.

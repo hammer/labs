@@ -9,6 +9,7 @@ export const LabSchema = z.object({
   huggingface: z.string().url().optional(),
   github: z.string().url().optional(),
   region: z.string(),
+  founded: z.string().regex(/^\d{4}(-\d{2})?$/, 'Founded must be YYYY or YYYY-MM').optional(),
   type: z.enum(['corporate', 'startup', 'nonprofit', 'academic']).optional(),
   parent: z.string().optional(),
   formerly: z.array(z.string()).optional(),
@@ -60,6 +61,11 @@ const LibraryDetailsSchema = z.object({
   github: z.string().url(),
 });
 
+const DatasetDetailsSchema = z.object({
+  github: z.string().url().optional(),
+  url: z.string().url().optional(),
+});
+
 export const OutputSchema = z.object({
   name: z.string(),
   slug: z.string().regex(/^[a-z0-9._-]+$/, 'Slug must be lowercase alphanumeric with hyphens, dots, underscores'),
@@ -73,6 +79,7 @@ export const OutputSchema = z.object({
   model: ModelDetailsSchema.optional(),
   paper: PaperDetailsSchema.optional(),
   library: LibraryDetailsSchema.optional(),
+  dataset: DatasetDetailsSchema.optional(),
   related: z.array(z.string()).optional(),
   notes: z.string().optional(),
 });

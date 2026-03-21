@@ -1,0 +1,14 @@
+name: PaddleOCR
+slug: paddleocr
+lab: baidu
+type: library
+date: 2020-06-01
+url: https://github.com/PaddlePaddle/PaddleOCR
+description: >
+  Industry standard open-source OCR toolkit, currently at version 4.0.
+tags:
+  - ocr
+  - framework
+library:
+  github: https://github.com/PaddlePaddle/PaddleOCR
+notes: Date approximate.

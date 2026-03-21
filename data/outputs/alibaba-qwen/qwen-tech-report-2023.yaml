@@ -1,0 +1,13 @@
+name: Qwen Technical Report (2023)
+slug: qwen-tech-report-2023
+lab: alibaba-qwen
+type: paper
+date: 2023-09-01
+url: https://arxiv.org/abs/2309.16609
+description: >
+  First deep dive into Qwen's pretraining and alignment strategies.
+tags:
+  - technical-report
+paper:
+  arxiv: "2309.16609"
+notes: Date approximate.

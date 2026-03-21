@@ -1,0 +1,14 @@
+name: Kwai Keye-VL Technical Report
+slug: kwai-keye-vl-report
+lab: kuaishou
+type: paper
+date: 2025-07-01
+url: https://huggingface.co/Kwaipilot
+description: >
+  Technical report for the Kwai Keye-VL multimodal foundation model.
+tags:
+  - vlm
+  - video
+related:
+  - kwai-keye-vl
+notes: Date approximate.

@@ -1,0 +1,13 @@
+name: Ying (影)
+slug: ying
+lab: zai
+type: model
+date: 2026-03-01
+url: https://z.ai
+description: >
+  Text-to-video model generating high-fidelity six-second clips from natural
+  language or images.
+tags:
+  - video
+  - generation
+notes: Date approximate.

@@ -1,0 +1,14 @@
+name: Seed-Prover
+slug: seed-prover
+lab: bytedance-seed
+type: model
+date: 2025-07-01
+url: https://huggingface.co/ByteDance-Seed
+description: >
+  Specialized model for automated theorem proving and formal mathematical
+  reasoning (Lean 4).
+tags:
+  - math
+  - reasoning
+  - theorem-proving
+notes: Date approximate.

@@ -1,0 +1,30 @@
+name: Qwen2.5
+slug: qwen2.5
+lab: alibaba-qwen
+type: model
+date: 2024-09-01
+url: https://qwen.ai/blog
+description: >
+  The "18-trillion token" series. Released sizes: 0.5B, 1.5B, 3B, 7B, 14B,
+  32B, and 72B.
+tags:
+  - open-weight
+  - multilingual
+model:
+  architecture: dense
+  variants:
+    - name: Qwen2.5-0.5B
+      parameters: 0.5B
+    - name: Qwen2.5-1.5B
+      parameters: 1.5B
+    - name: Qwen2.5-3B
+      parameters: 3B
+    - name: Qwen2.5-7B
+      parameters: 7B
+    - name: Qwen2.5-14B
+      parameters: 14B
+    - name: Qwen2.5-32B
+      parameters: 32B
+    - name: Qwen2.5-72B
+      parameters: 72B
+notes: Date approximate.

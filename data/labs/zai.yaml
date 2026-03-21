@@ -2,11 +2,27 @@ name: Z.ai
 slug: zai
 url: https://z.ai
 huggingface: https://huggingface.co/zai-org
+github: https://github.com/THUDM
 region: china
-type: corporate
+type: startup
 formerly:
-  - Zhipu
-description: Creator of the GLM and ChatGLM series of models.
+  - Zhipu AI
+description: >
+  One of China's "AI Tigers," originating from the Knowledge Engineering Group
+  (KEG) at Tsinghua University. Rebranded internationally as Z.ai in 2025.
+  First major LLM-focused company to IPO (HKEX: 02513, Jan 8 2026). Cornerstone
+  is the GLM series using autoregressive blank-infilling objective. First
+  frontier-scale model trained entirely on Huawei Ascend chips.
+people:
+  - name: Jie Tang
+    role: Co-founder & Senior PI
+    formerly: Tsinghua University
+  - name: Yuxiao Dong
+    role: Senior Researcher
+  - name: Ming Ding
+    role: Core Researcher
 tags:
   - frontier
   - open-weight
+  - agentic
+  - moe

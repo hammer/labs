@@ -1,10 +1,20 @@
-name: Xiaomi MiMo-V2-Pro
+name: MiMo-V2-Pro
 slug: mimo-v2-pro
 lab: xiaomi
 type: model
-date: 2025-10-01
+date: 2026-03-18
 url: https://mimo.xiaomi.com/mimo-v2-pro
-description: On-device reasoning model.
+description: >
+  1-trillion parameter MoE flagship (42B active) designed for agentic workloads.
+  Features a 1-million-token context window. Ranks 2nd among Chinese LLMs.
 tags:
-  - on-device
-  - reasoning
+  - moe
+  - frontier
+  - agentic
+  - long-context
+  - open-weight
+model:
+  architecture: moe
+  parameters: 1T
+  active_parameters: 42B
+  context_window: 1000000

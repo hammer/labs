@@ -1,0 +1,19 @@
+name: Hunyuan-DiT
+slug: hunyuan-dit
+lab: tencent
+type: model
+date: 2024-05-01
+url: https://github.com/Tencent/HunyuanDiT
+description: >
+  Powerful open-source Diffusion Transformer (1.5B) with fine-grained Chinese
+  understanding. Evolved through v1.1 and v1.2.
+tags:
+  - generation
+  - vision
+  - diffusion
+  - open-weight
+model:
+  parameters: 1.5B
+library:
+  github: https://github.com/Tencent/HunyuanDiT
+notes: Date approximate.

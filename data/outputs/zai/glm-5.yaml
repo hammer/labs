@@ -9,14 +9,19 @@ links:
     url: https://arxiv.org/abs/2602.15763
   - label: Sebastian Raschka analysis
     url: https://magazine.sebastianraschka.com/i/168650848/21-glm-5
-description: 744B total params, 40B active, 256 experts.
+description: >
+  Most powerful Z.ai model. 744B total params (44B active) via MoE with 256
+  experts. Hybrid Attention and Multi-Token Prediction. First frontier-scale
+  model trained entirely on 100,000 Huawei Ascend 910B chips (zero American
+  hardware).
 tags:
   - moe
   - agentic
   - coding
+  - frontier
 model:
   architecture: moe
   parameters: 744B
-  active_parameters: 40B
+  active_parameters: 44B
 paper:
   arxiv: "2602.15763"

@@ -1,0 +1,21 @@
+name: DeepSeek-Coder
+slug: deepseek-coder
+lab: deepseek
+type: model
+date: 2023-11-01
+url: https://huggingface.co/deepseek-ai/deepseek-coder-33b-instruct
+description: >
+  Coding-specialized models (1.3B to 33B parameters) trained on 2 trillion tokens.
+tags:
+  - coding
+  - open-weight
+model:
+  architecture: dense
+  variants:
+    - name: DeepSeek-Coder-1.3B
+      parameters: 1.3B
+    - name: DeepSeek-Coder-6.7B
+      parameters: 6.7B
+    - name: DeepSeek-Coder-33B
+      parameters: 33B
+notes: Date approximate.

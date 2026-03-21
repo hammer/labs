@@ -1,0 +1,17 @@
+name: Wu Dao 2.0
+slug: wu-dao-2.0
+lab: baai
+type: model
+date: 2021-05-01
+url: https://www.baai.ac.cn
+description: >
+  Landmark 1.75 trillion parameter MoE model, at the time the largest in
+  the world, outscaling GPT-3.
+tags:
+  - moe
+  - frontier
+  - multimodal
+model:
+  architecture: moe
+  parameters: 1.75T
+notes: Date approximate.

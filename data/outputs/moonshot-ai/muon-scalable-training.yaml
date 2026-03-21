@@ -4,7 +4,9 @@ lab: moonshot-ai
 type: paper
 date: 2025-02-24
 url: https://arxiv.org/abs/2502.16982
-description: Research on Muon optimizer scalability for large language model training.
+description: >
+  Introduced the Muon optimizer based on matrix orthogonalization.
+  Research demonstrating scalability for large language model training.
 tags:
   - training
   - optimization

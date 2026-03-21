@@ -1,0 +1,17 @@
+name: "BGE-M3: Unified Multilingual and Multi-Functional Retrieval"
+slug: bge-m3-paper
+lab: baai
+type: paper
+date: 2024-02-01
+url: https://arxiv.org/abs/2402.03216
+description: >
+  Paper on unified multilingual, multi-functional, multi-granularity embeddings.
+tags:
+  - embeddings
+  - multilingual
+  - rag
+paper:
+  arxiv: "2402.03216"
+related:
+  - bge
+notes: Date approximate.

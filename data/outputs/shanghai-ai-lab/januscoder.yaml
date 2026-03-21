@@ -1,0 +1,13 @@
+name: JanusCoder
+slug: januscoder
+lab: shanghai-ai-lab
+type: model
+date: 2026-02-01
+url: https://huggingface.co/internlm
+description: >
+  Visual-programmatic interface for code intelligence. Can "see" UI designs
+  and "write" corresponding code.
+tags:
+  - coding
+  - vlm
+notes: Date approximate.

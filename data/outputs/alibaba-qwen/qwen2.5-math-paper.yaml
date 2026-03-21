@@ -1,0 +1,16 @@
+name: "Qwen2.5-Math: Toward Mathematical Expert Model via Self-Improvement"
+slug: qwen2.5-math-paper
+lab: alibaba-qwen
+type: paper
+date: 2024-09-01
+url: https://arxiv.org/abs/2409.12122
+description: >
+  Paper on building mathematical expert models via self-improvement.
+tags:
+  - math
+  - reasoning
+paper:
+  arxiv: "2409.12122"
+related:
+  - qwen-math
+notes: Date approximate.

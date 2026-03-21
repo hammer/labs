@@ -1,0 +1,13 @@
+name: walle
+slug: walle
+lab: moonshot-ai
+type: library
+date: 2025-06-01
+url: https://github.com/MoonshotAI/walle
+description: >
+  Specialized library written in Go for high-performance AI infrastructure.
+tags:
+  - infrastructure
+library:
+  github: https://github.com/MoonshotAI/walle
+notes: Date approximate.

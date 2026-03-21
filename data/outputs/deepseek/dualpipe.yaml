@@ -1,0 +1,15 @@
+name: DualPipe
+slug: dualpipe
+lab: deepseek
+type: library
+date: 2025-02-01
+url: https://github.com/deepseek-ai/DualPipe
+description: >
+  Bidirectional pipeline parallelism algorithm for overlapping computation
+  and communication.
+tags:
+  - infrastructure
+  - parallelism
+library:
+  github: https://github.com/deepseek-ai/DualPipe
+notes: Date approximate.

@@ -1,0 +1,13 @@
+name: FineWeb-Mask
+slug: fineweb-mask
+lab: bytedance-seed
+type: dataset
+date: 2025-06-01
+url: https://huggingface.co/ByteDance-Seed
+description: >
+  1.5 trillion-token "distilled" subset of common crawl data optimized
+  for pre-training.
+tags:
+  - training-data
+  - pretraining
+notes: Date approximate.

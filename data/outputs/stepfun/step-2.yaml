@@ -1,0 +1,16 @@
+name: Step-2
+slug: step-2
+lab: stepfun
+type: model
+date: 2024-07-01
+url: https://www.stepfun.com
+description: >
+  First trillion-parameter MoE model from a Chinese startup. Ranks among
+  the top globally for instruction-following and reasoning.
+tags:
+  - moe
+  - frontier
+model:
+  architecture: moe
+  parameters: 1T
+notes: Date approximate.

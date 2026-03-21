@@ -1,0 +1,15 @@
+name: QwQ-32B
+slug: qwq-32b
+lab: alibaba-qwen
+type: model
+date: 2025-03-01
+url: https://huggingface.co/Qwen/QwQ-32B
+description: >
+  Reasoning model following the chain-of-thought (CoT) paradigm.
+tags:
+  - reasoning
+  - open-weight
+model:
+  architecture: dense
+  parameters: 32B
+notes: Date approximate.

@@ -1,0 +1,19 @@
+name: Kimi-K2-Instruct-0905
+slug: kimi-k2-instruct-0905
+lab: moonshot-ai
+type: model
+date: 2025-09-05
+url: https://huggingface.co/moonshotai/Kimi-K2-Instruct
+description: >
+  Updated K2 with expanded 256k context window and improved coding performance.
+tags:
+  - moe
+  - open-weight
+  - long-context
+model:
+  architecture: moe
+  parameters: 1T
+  active_parameters: 32B
+  context_window: 256000
+  base_model: kimi-k2
+notes: Date approximate based on version suffix.

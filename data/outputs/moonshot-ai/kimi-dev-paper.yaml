@@ -1,0 +1,16 @@
+name: Kimi-Dev Paper
+slug: kimi-dev-paper
+lab: moonshot-ai
+type: paper
+date: 2025-09-27
+url: https://arxiv.org/abs/2509.23045
+description: >
+  Open-source SWE LLM achieving 60.4% on SWE-bench Verified. Agentless
+  training as skill prior for SWE-Agents.
+tags:
+  - coding
+  - agentic
+paper:
+  arxiv: "2509.23045"
+related:
+  - kimi-dev

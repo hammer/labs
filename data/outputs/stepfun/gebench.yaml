@@ -1,0 +1,12 @@
+name: GEBench
+slug: gebench
+lab: stepfun
+type: dataset
+date: 2025-06-01
+url: https://huggingface.co/stepfun-ai
+description: >
+  5-dimensional evaluation benchmark for GUI and web agents.
+tags:
+  - benchmark
+  - agentic
+notes: Date approximate.

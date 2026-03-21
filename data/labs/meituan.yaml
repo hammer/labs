@@ -1,8 +1,24 @@
 name: Meituan
 slug: meituan
+url: https://www.meituan.com
 huggingface: https://huggingface.co/meituan-longcat
+github: https://github.com/meituan
 region: china
 type: corporate
-description: Creator of the LongCat model series focused on long-context.
+description: >
+  China's leading e-commerce and delivery giant, transitioned into a frontier
+  tech powerhouse. AI research driven by the Meituan AI Lab, AutoML Team, and
+  LongCat Team. Known for the LongCat trillion-parameter MoE series and the
+  "Super Brain" dispatch system performing 2.9 billion route calculations/hour.
+  Also operates autonomous delivery drones and L4 ground robots.
+people:
+  - name: Xunliang Cai
+    role: LongCat Team Lead
+  - name: Xiaoming Wei
+    role: Core Researcher
 tags:
   - open-weight
+  - moe
+  - delivery
+  - autonomous
+  - frontier

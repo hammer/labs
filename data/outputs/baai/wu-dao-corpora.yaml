@@ -1,0 +1,12 @@
+name: Wu Dao Corpora
+slug: wu-dao-corpora
+lab: baai
+type: dataset
+date: 2021-01-01
+url: https://www.baai.ac.cn
+description: >
+  Massive 5TB high-quality Chinese/English dataset.
+tags:
+  - training-data
+  - chinese
+notes: Date approximate.

@@ -1,0 +1,12 @@
+name: Kimi-Dev
+slug: kimi-dev
+lab: moonshot-ai
+type: model
+date: 2025-06-01
+url: https://www.moonshot.cn
+description: >
+  Specialized iteration for developer workflows.
+tags:
+  - coding
+  - agentic
+notes: Date approximate.

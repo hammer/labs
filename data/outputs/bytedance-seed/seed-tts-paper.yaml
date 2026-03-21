@@ -1,0 +1,16 @@
+name: "Seed-TTS: A Family of High-Quality Versatile Speech Generation Models"
+slug: seed-tts-paper
+lab: bytedance-seed
+type: paper
+date: 2024-06-01
+url: https://arxiv.org/abs/2406.02430
+description: >
+  Technical paper on the Seed-TTS family of speech generation models.
+tags:
+  - speech
+  - generation
+paper:
+  arxiv: "2406.02430"
+related:
+  - seed-tts
+notes: Date approximate.

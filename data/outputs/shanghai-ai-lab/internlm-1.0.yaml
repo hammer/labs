@@ -1,0 +1,17 @@
+name: InternLM-1.0
+slug: internlm-1.0
+lab: shanghai-ai-lab
+type: model
+date: 2023-07-01
+url: https://github.com/InternLM/InternLM
+description: >
+  Debut 104B parameter foundational bilingual (Chinese/English) model.
+tags:
+  - open-weight
+  - multilingual
+model:
+  architecture: dense
+  parameters: 104B
+library:
+  github: https://github.com/InternLM/InternLM
+notes: Date approximate.

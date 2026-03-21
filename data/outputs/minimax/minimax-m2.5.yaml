@@ -1,0 +1,12 @@
+name: MiniMax-M2.5 & M2.5-Lightning
+slug: minimax-m2.5
+lab: minimax
+type: model
+date: 2026-02-01
+url: https://huggingface.co/MiniMaxAI
+description: >
+  Reached SOTA in office productivity (Word/Excel automation) and browse-based tasks.
+tags:
+  - agentic
+  - efficiency
+notes: Date approximate.

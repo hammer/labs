@@ -1,0 +1,15 @@
+name: "Slime: Asynchronous RL for Agentic Tasks"
+slug: slime
+lab: zai
+type: paper
+date: 2026-01-01
+url: https://z.ai
+description: >
+  Introduced the training method that reduced GLM-5's hallucination rate by 35%.
+tags:
+  - reinforcement-learning
+  - agentic
+  - research
+related:
+  - glm-5
+notes: Date approximate.

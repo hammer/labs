@@ -1,0 +1,22 @@
+name: DeepSeek-Prover
+slug: deepseek-prover
+lab: deepseek
+type: model
+date: 2024-06-01
+url: https://arxiv.org/abs/2408.08152
+description: >
+  Specialized models for formal theorem proving in Lean 4. Includes V1.5
+  and V2 versions.
+tags:
+  - math
+  - reasoning
+  - theorem-proving
+model:
+  variants:
+    - name: DeepSeek-Prover-V1.5
+      notes: Released 2024
+    - name: DeepSeek-Prover-V2
+      notes: Released 2025
+paper:
+  arxiv: "2408.08152"
+notes: Date approximate.

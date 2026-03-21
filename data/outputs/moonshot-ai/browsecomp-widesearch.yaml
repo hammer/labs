@@ -1,0 +1,13 @@
+name: BrowseComp & WideSearch
+slug: browsecomp-widesearch
+lab: moonshot-ai
+type: dataset
+date: 2025-06-01
+url: https://www.moonshot.cn
+description: >
+  Benchmarks developed to evaluate an agent's ability to browse the web and
+  synthesize information from multiple sources.
+tags:
+  - benchmark
+  - agentic
+notes: Date approximate.

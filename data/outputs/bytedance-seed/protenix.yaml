@@ -1,0 +1,16 @@
+name: Protenix
+slug: protenix
+lab: bytedance-seed
+type: model
+date: 2025-01-01
+url: https://github.com/bytedance/Protenix
+description: >
+  Structure-centric foundation model for biomolecules, focusing on
+  protein-folding and drug discovery.
+tags:
+  - science
+  - biology
+  - open-weight
+library:
+  github: https://github.com/bytedance/Protenix
+notes: Date approximate.

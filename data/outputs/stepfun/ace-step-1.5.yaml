@@ -1,0 +1,16 @@
+name: ACE-Step-1.5
+slug: ace-step-1.5
+lab: stepfun
+type: model
+date: 2026-03-01
+url: https://huggingface.co/stepfun-ai
+description: >
+  Open-source music foundation model generating full-length, high-fidelity
+  songs on consumer hardware (under 4GB VRAM).
+tags:
+  - music
+  - audio
+  - generation
+  - open-weight
+  - efficiency
+notes: Date approximate.

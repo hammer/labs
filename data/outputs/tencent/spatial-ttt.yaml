@@ -1,0 +1,13 @@
+name: Spatial-TTT
+slug: spatial-ttt
+lab: tencent
+type: paper
+date: 2026-03-01
+url: https://llm.hunyuan.tencent.com
+description: >
+  Streaming visual-based spatial intelligence utilizing Test-Time Training.
+tags:
+  - vision
+  - spatial
+  - research
+notes: Date approximate.

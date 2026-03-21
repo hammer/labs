@@ -1,0 +1,15 @@
+name: EVA-CLIP
+slug: eva-clip
+lab: baai
+type: model
+date: 2023-03-01
+url: https://github.com/baaivision/EVA
+description: >
+  State-of-the-art open-source alternative to OpenAI's CLIP.
+tags:
+  - vlm
+  - open-weight
+  - embeddings
+library:
+  github: https://github.com/baaivision/EVA
+notes: Date approximate.

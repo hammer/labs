@@ -1,0 +1,15 @@
+name: InternLM2.5
+slug: internlm2.5
+lab: shanghai-ai-lab
+type: model
+date: 2025-07-01
+url: https://github.com/InternLM/InternLM
+description: >
+  Optimized for 1-million-token context windows and agentic tool usage.
+tags:
+  - open-weight
+  - long-context
+  - agentic
+model:
+  context_window: 1000000
+notes: Date approximate.

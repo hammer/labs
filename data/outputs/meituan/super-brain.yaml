@@ -1,0 +1,14 @@
+name: Super Brain & Intelligent Dispatch
+slug: super-brain
+lab: meituan
+type: announcement
+date: 2018-01-01
+url: https://www.meituan.com
+description: >
+  AI dispatch system performing over 2.9 billion route calculations per hour,
+  ensuring average delivery times of 30 minutes.
+tags:
+  - delivery
+  - infrastructure
+  - operations
+notes: Date approximate. Established circa 2018.

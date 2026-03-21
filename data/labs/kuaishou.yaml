@@ -1,11 +1,31 @@
 name: Kuaishou
 slug: kuaishou
+url: https://www.kuaishou.com
 huggingface: https://huggingface.co/Kwaipilot
+github: https://github.com/kuaishou-langlab
 region: china
 type: corporate
-description: Creator of the Kwaipilot coding models.
+description: >
+  AI ecosystem characterized by high-performance multimodal models (video and
+  image generation) and specialized reasoning models for coding and recommendation.
+  Research decentralized across the Kwai AI Lab, Kolors Team, and Kwaipilot Team.
+  Publicly traded (HKG: 1024) with Tencent as largest institutional shareholder
+  (~17%), but independently controlled via dual-class voting structure.
+people:
+  - name: Kun Gai
+    role: Kling Team Lead
+  - name: Zizheng Zhan
+    role: Kwaipilot Team Lead
 relationships:
   - lab: tencent
     type: investor
-    note: Tencent owns approximately 1/6 of Kuaishou
-tags: []
+    note: >
+      Tencent holds ~16.5-18.5% but Kuaishou remains independent. Founders
+      retain control via dual-class voting. Tencent provides WeChat ecosystem
+      access. Competitive "frenemy" dynamic with WeChat Video Accounts.
+tags:
+  - multimodal
+  - generation
+  - video
+  - coding
+  - recommendation

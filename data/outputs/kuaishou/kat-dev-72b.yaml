@@ -1,0 +1,17 @@
+name: KAT-Dev-72B-Exp
+slug: kat-dev-72b
+lab: kuaishou
+type: model
+date: 2025-10-01
+url: https://huggingface.co/Kwaipilot
+description: >
+  Open-source experimental variant that topped many open-source coding
+  benchmarks (e.g., LiveCodeBench).
+tags:
+  - coding
+  - open-weight
+  - reasoning
+model:
+  architecture: moe
+  active_parameters: 72B
+notes: Date approximate.

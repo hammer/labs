@@ -1,0 +1,16 @@
+name: "Step-3: Large yet Affordable Model-System Co-design"
+slug: step-3-paper
+lab: stepfun
+type: paper
+date: 2025-07-25
+url: https://arxiv.org/abs/2507.19427
+description: >
+  Flagship LLM paper detailing cost-effective decoding for the Step-3 MoE model.
+tags:
+  - moe
+  - efficiency
+  - scaling
+paper:
+  arxiv: "2507.19427"
+related:
+  - step-3

@@ -1,10 +1,31 @@
 name: MiniMax
 slug: minimax
+url: https://www.minimax.io
 huggingface: https://huggingface.co/MiniMaxAI
+github: https://github.com/MiniMax-AI
 region: china
+founded: 2021-12
 type: startup
 description: >
-  AI startup producing the M1 model series. Filed for Hong Kong IPO
-  aiming for $500M+ at $4B+ valuation.
+  One of China's "AI Tigers," distinctive for its "all-modality" approach
+  (text, image, audio, video). Founded by Yan Junjie (former SenseTime VP).
+  Maintains ~380 employees despite massive valuation. Over 70% of revenue
+  from overseas via Talkie app. Known for "Every FLOP Counts" philosophy
+  and Lightning Attention architecture.
+people:
+  - name: Yan Junjie
+    role: Founder & CEO
+    formerly: SenseTime (VP)
+relationships:
+  - lab: alibaba-qwen
+    type: investor
+    note: Alibaba is largest external shareholder (~12.5%).
+  - lab: tencent
+    type: investor
+    note: Tencent is a major backer alongside HongShan (Sequoia China) and miHoYo.
 tags:
   - frontier
+  - open-weight
+  - multimodal
+  - reasoning
+  - efficiency

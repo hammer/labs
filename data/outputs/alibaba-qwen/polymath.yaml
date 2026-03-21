@@ -1,0 +1,12 @@
+name: PolyMath
+slug: polymath
+lab: alibaba-qwen
+type: dataset
+date: 2025-06-01
+url: https://huggingface.co/Qwen
+description: >
+  High-quality mathematical reasoning dataset.
+tags:
+  - math
+  - reasoning
+notes: Date approximate.

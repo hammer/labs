@@ -1,0 +1,13 @@
+name: Libra-Bench & PIE_bench
+slug: libra-bench
+lab: meituan
+type: dataset
+date: 2025-06-01
+url: https://huggingface.co/meituan-longcat
+description: >
+  Benchmarks for evaluating visual and logical reasoning.
+tags:
+  - benchmark
+  - reasoning
+  - vision
+notes: Date approximate.

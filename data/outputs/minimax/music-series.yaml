@@ -1,0 +1,14 @@
+name: MiniMax Music Series
+slug: music-series
+lab: minimax
+type: model
+date: 2024-06-01
+url: https://www.minimax.io
+description: >
+  Capable of generating full 5-minute studio-grade tracks with paragraph-level
+  precision control. Versions from Music 1.5 to 2.5+.
+tags:
+  - audio
+  - music
+  - generation
+notes: Date approximate.

@@ -2,12 +2,27 @@ name: Ant Group
 slug: ant-group
 url: https://www.inclusion-ai.org
 huggingface: https://huggingface.co/inclusionAI
+github: https://github.com/inclusionAI
 region: china
+founded: "2014"
 type: corporate
-parent: Ant Group
+formerly:
+  - Ant Financial
 description: >
-  Inclusion AI division of Ant Group, producing the Ling model series
-  and contributing research on MoE scaling laws and diffusion language models.
+  Evolved from a financial services giant into a major AI research powerhouse.
+  AI work spearheaded by the Inclusion AI team (IAI), focused on AGI through
+  open-source initiatives. Known for the Ling Family (BaiLing) with three
+  pillars: Ling (general), Ring (reasoning), and Ming (multimodal). Also a
+  top-tier CNCF and Linux Foundation contributor.
+relationships:
+  - lab: alibaba-qwen
+    type: affiliate
+    note: >
+      Ant Group is majority-owned by Alibaba Group. Maintains independent
+      AI research via the Inclusion AI team.
 tags:
   - open-weight
   - open-source
+  - moe
+  - finance
+  - infrastructure

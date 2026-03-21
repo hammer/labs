@@ -1,0 +1,17 @@
+name: "Kimi Linear: Hybrid Linear Attention Architecture"
+slug: kimi-linear-paper
+lab: moonshot-ai
+type: paper
+date: 2025-10-30
+url: https://arxiv.org/abs/2510.26692
+description: >
+  Hybrid linear attention (KDA + MLA). 3B active / 48B total MoE. 75% KV-cache
+  reduction, 6x throughput at 1M context.
+tags:
+  - attention
+  - architecture
+  - efficiency
+paper:
+  arxiv: "2510.26692"
+related:
+  - kimi-linear

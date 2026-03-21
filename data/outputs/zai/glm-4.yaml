@@ -1,0 +1,13 @@
+name: GLM-4
+slug: glm-4
+lab: zai
+type: model
+date: 2024-01-01
+url: https://z.ai
+description: >
+  Major flagship upgrade featuring "All Tools" integration (web search, code
+  interpreter, and vision).
+tags:
+  - frontier
+  - agentic
+notes: Date approximate.

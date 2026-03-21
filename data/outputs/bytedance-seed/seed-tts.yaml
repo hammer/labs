@@ -1,0 +1,16 @@
+name: Seed-TTS
+slug: seed-tts
+lab: bytedance-seed
+type: model
+date: 2024-06-01
+url: https://arxiv.org/abs/2406.02430
+description: >
+  State-of-the-art speech generation model family known for high-fidelity
+  voice cloning and expressive prosody.
+tags:
+  - speech
+  - audio
+  - generation
+paper:
+  arxiv: "2406.02430"
+notes: Date approximate.

@@ -1,0 +1,13 @@
+name: Agentar-DeepFinance-100K
+slug: agentar-deepfinance
+lab: ant-group
+type: dataset
+date: 2025-06-01
+url: https://huggingface.co/inclusionAI
+description: >
+  Massive dataset for training financial reasoning agents.
+tags:
+  - finance
+  - agentic
+  - reasoning
+notes: Date approximate.

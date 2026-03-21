@@ -1,0 +1,16 @@
+name: MiniCPM-Llama3-V 2.5
+slug: minicpm-v-2.5
+lab: openbmb
+type: model
+date: 2024-05-01
+url: https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5
+description: >
+  GPT-4V level performance in a 9B parameter package with world-class
+  OCR capabilities.
+tags:
+  - vlm
+  - on-device
+  - ocr
+model:
+  parameters: 9B
+notes: Date approximate.

@@ -1,0 +1,12 @@
+name: GLM-4V
+slug: glm-4v
+lab: zai
+type: model
+date: 2024-06-01
+url: https://z.ai
+description: >
+  Native multimodal version of the GLM-4 architecture.
+tags:
+  - vlm
+  - multimodal
+notes: Date approximate.

@@ -1,0 +1,15 @@
+name: ABAB 6 / 6.5
+slug: abab-6
+lab: minimax
+type: model
+date: 2024-01-01
+url: https://www.minimax.io
+description: >
+  Transition to Mixture-of-Experts architecture, significantly boosting
+  reasoning and math capabilities.
+tags:
+  - moe
+  - reasoning
+model:
+  architecture: moe
+notes: Date approximate.

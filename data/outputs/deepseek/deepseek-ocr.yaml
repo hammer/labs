@@ -1,0 +1,18 @@
+name: DeepSeek-OCR / OCR-2
+slug: deepseek-ocr
+lab: deepseek
+type: model
+date: 2025-10-01
+url: https://huggingface.co/deepseek-ai
+description: >
+  High-efficiency models for optical character recognition and document understanding.
+tags:
+  - ocr
+  - open-weight
+model:
+  variants:
+    - name: DeepSeek-OCR
+      notes: Released Oct 2025
+    - name: DeepSeek-OCR-2
+      notes: Released Feb 2026
+notes: Date approximate.

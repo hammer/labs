@@ -1,0 +1,13 @@
+name: RIVER
+slug: river
+lab: shanghai-ai-lab
+type: dataset
+date: 2026-01-01
+url: https://huggingface.co/internlm
+description: >
+  Real-time interaction benchmark for Video LLMs.
+tags:
+  - benchmark
+  - video
+  - vlm
+notes: Date approximate.

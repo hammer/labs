@@ -1,0 +1,15 @@
+name: TuGraph
+slug: tugraph
+lab: ant-group
+type: library
+date: 2022-09-01
+url: https://github.com/TuGraph-family/tugraph-db
+description: >
+  High-performance graph database used for risk control and fraud detection.
+tags:
+  - infrastructure
+  - database
+  - graph
+library:
+  github: https://github.com/TuGraph-family/tugraph-db
+notes: Date approximate.

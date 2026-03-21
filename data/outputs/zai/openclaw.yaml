@@ -1,0 +1,13 @@
+name: OpenClaw
+slug: openclaw
+lab: zai
+type: library
+date: 2026-01-01
+url: https://z.ai
+description: >
+  Open-source framework for building multi-agent swarms that operate in
+  dynamic, long-horizon workflows.
+tags:
+  - agentic
+  - framework
+notes: Date approximate.

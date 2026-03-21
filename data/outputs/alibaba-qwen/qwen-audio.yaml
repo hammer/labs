@@ -1,0 +1,24 @@
+name: Qwen-Audio Series
+slug: qwen-audio
+lab: alibaba-qwen
+type: model
+date: 2023-11-01
+url: https://huggingface.co/Qwen
+description: >
+  Audio model family. Evolution from Qwen-Audio (2023) to Qwen2-Audio-7B
+  (Aug 2024) to Qwen3-ASR & ForcedAligner (Jan 2026).
+tags:
+  - audio
+  - open-weight
+model:
+  variants:
+    - name: Qwen-Audio
+      notes: Released 2023
+    - name: Qwen2-Audio-7B
+      parameters: 7B
+      notes: Released Aug 2024
+    - name: Qwen3-ASR
+      notes: Released Jan 2026
+    - name: Qwen3-ForcedAligner
+      notes: Released Jan 2026
+notes: Date approximate.

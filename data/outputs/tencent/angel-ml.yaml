@@ -1,0 +1,16 @@
+name: Angel ML
+slug: angel-ml
+lab: tencent
+type: library
+date: 2016-12-01
+url: https://github.com/Angel-ML/angel
+description: >
+  Tencent's first major AI release. Distributed machine learning platform
+  based on a Parameter Server architecture. Later donated to the Linux Foundation.
+tags:
+  - infrastructure
+  - distributed
+  - framework
+library:
+  github: https://github.com/Angel-ML/angel
+notes: Date approximate.

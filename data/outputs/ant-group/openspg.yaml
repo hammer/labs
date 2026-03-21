@@ -1,0 +1,14 @@
+name: OpenSPG & OpenAGL
+slug: openspg
+lab: ant-group
+type: library
+date: 2023-09-01
+url: https://github.com/OpenSPG/openspg
+description: >
+  Tools for Knowledge Graph (SPG) and Large-Scale Graph Learning.
+tags:
+  - knowledge-graph
+  - infrastructure
+library:
+  github: https://github.com/OpenSPG/openspg
+notes: Date approximate.

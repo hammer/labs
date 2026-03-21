@@ -1,0 +1,18 @@
+name: LongCat-Flash-Omni
+slug: longcat-flash-omni
+lab: meituan
+type: model
+date: 2025-11-01
+url: https://huggingface.co/meituan-longcat
+description: >
+  Native multimodal model supporting streaming audio-visual interaction,
+  allowing for real-time "seeing and hearing" capabilities.
+tags:
+  - multimodal
+  - moe
+  - audio
+model:
+  architecture: moe
+  parameters: 560B
+  active_parameters: 27B
+notes: Date approximate.

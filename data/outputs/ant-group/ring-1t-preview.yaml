@@ -1,0 +1,18 @@
+name: Ring-1T-preview
+slug: ring-1t-preview
+lab: ant-group
+type: model
+date: 2025-09-01
+url: https://huggingface.co/inclusionAI
+description: >
+  World's first open-source trillion-parameter "thinking" model. Part of the
+  Ring (reasoning) series.
+tags:
+  - reasoning
+  - moe
+  - open-weight
+  - frontier
+model:
+  architecture: moe
+  parameters: 1T
+notes: Date approximate.

@@ -1,0 +1,14 @@
+name: DeepSeek-R1-0528
+slug: deepseek-r1-0528
+lab: deepseek
+type: model
+date: 2025-05-28
+url: https://api-docs.deepseek.com/news/news250528
+description: >
+  Significant upgrade to R1 with enhanced logic and reduced hallucinations.
+tags:
+  - reasoning
+  - reinforcement-learning
+  - open-weight
+model:
+  base_model: deepseek-r1

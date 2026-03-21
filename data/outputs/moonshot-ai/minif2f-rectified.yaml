@@ -1,0 +1,15 @@
+name: miniF2F-test (Rectified)
+slug: minif2f-rectified
+lab: moonshot-ai
+type: dataset
+date: 2025-04-01
+url: https://github.com/MoonshotAI/Kimina-Prover-Preview
+description: >
+  Cleaned and corrected version of the popular formal reasoning benchmark,
+  released alongside Kimina-Prover.
+tags:
+  - benchmark
+  - math
+related:
+  - kimina-prover
+notes: Date approximate.

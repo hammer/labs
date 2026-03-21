@@ -1,0 +1,13 @@
+name: "Towards Scalable Pre-training of Visual Tokenizers"
+slug: visual-tokenizers-paper
+lab: minimax
+type: paper
+date: 2025-06-01
+url: https://huggingface.co/MiniMaxAI
+description: >
+  Focused on the VTP (Visual Tokenizer) backbone for high-fidelity generation.
+tags:
+  - vision
+  - architecture
+  - research
+notes: Date approximate.

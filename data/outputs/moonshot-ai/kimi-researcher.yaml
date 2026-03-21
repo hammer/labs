@@ -1,0 +1,12 @@
+name: Kimi-Researcher
+slug: kimi-researcher
+lab: moonshot-ai
+type: model
+date: 2025-06-01
+url: https://www.moonshot.cn
+description: >
+  Specialized iteration for autonomous research.
+tags:
+  - agentic
+  - research
+notes: Date approximate.

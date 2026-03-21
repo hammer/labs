@@ -1,0 +1,13 @@
+name: CogView-4
+slug: cogview-4
+lab: zai
+type: model
+date: 2026-03-01
+url: https://z.ai
+description: >
+  Latest text-to-image generator, capable of cinematic detail and accurate
+  text rendering within images.
+tags:
+  - generation
+  - vision
+notes: Date approximate.

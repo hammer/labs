@@ -1,0 +1,13 @@
+name: AutoGLM
+slug: autoglm
+lab: zai
+type: model
+date: 2025-06-01
+url: https://z.ai
+description: >
+  "Computer-Use" agent capable of navigating smartphone apps and web browsers
+  via natural language commands.
+tags:
+  - agentic
+  - coding
+notes: Date approximate.

@@ -1,0 +1,16 @@
+name: KwaiYii
+slug: kwaiyii
+lab: kuaishou
+type: model
+date: 2023-10-01
+url: https://huggingface.co/Kwaipilot
+description: >
+  General-purpose LLM series with sizes ranging up to 175B parameters.
+tags:
+  - open-weight
+model:
+  architecture: dense
+  variants:
+    - name: KwaiYii-175B
+      parameters: 175B
+notes: Date approximate.

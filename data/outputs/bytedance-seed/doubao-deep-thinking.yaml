@@ -1,0 +1,11 @@
+name: Doubao-Deep-Thinking
+slug: doubao-deep-thinking
+lab: bytedance-seed
+type: model
+date: 2025-03-01
+url: https://www.volcengine.com
+description: >
+  Reasoning-focused model that surpassed OpenAI's o1-preview on the AIME benchmark.
+tags:
+  - reasoning
+notes: Date approximate.

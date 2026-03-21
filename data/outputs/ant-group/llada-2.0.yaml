@@ -1,0 +1,16 @@
+name: LLaDA 2.0
+slug: llada-2.0
+lab: ant-group
+type: paper
+date: 2025-12-20
+url: https://arxiv.org/abs/2512.15745
+description: >
+  Scales diffusion language models to 100B by converting pretrained AR models.
+  Includes LLaDA2.0-mini (16B) and LLaDA2.0-flash (100B).
+tags:
+  - diffusion
+  - scaling
+paper:
+  arxiv: "2512.15745"
+related:
+  - llada

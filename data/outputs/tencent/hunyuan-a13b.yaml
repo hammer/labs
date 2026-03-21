@@ -1,0 +1,16 @@
+name: Hunyuan-A13B
+slug: hunyuan-a13b
+lab: tencent
+type: model
+date: 2025-06-01
+url: https://huggingface.co/tencent/Hunyuan-A13B-Instruct
+description: >
+  High-efficiency open-source MoE model frequently used in benchmarks.
+tags:
+  - moe
+  - open-weight
+  - efficiency
+model:
+  architecture: moe
+  active_parameters: 13B
+notes: Date approximate.

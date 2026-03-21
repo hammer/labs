@@ -1,0 +1,14 @@
+name: "Direct-a-Video: User-Directed Camera Movement and Object Motion"
+slug: direct-a-video
+lab: kuaishou
+type: paper
+date: 2024-06-01
+url: https://www.kuaishou.com
+description: >
+  Research on user-directed camera movement and object motion. Accepted at CVPR 2024.
+tags:
+  - video
+  - generation
+paper:
+  venue: CVPR 2024
+notes: Date approximate.

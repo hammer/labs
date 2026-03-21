@@ -1,0 +1,14 @@
+name: MiniCPM-V 2.6
+slug: minicpm-v-2.6
+lab: openbmb
+type: model
+date: 2024-08-01
+url: https://huggingface.co/openbmb
+description: >
+  Introduced multi-image and video understanding, outperforming GPT-4V on
+  major benchmarks.
+tags:
+  - vlm
+  - video
+  - on-device
+notes: Date approximate.

@@ -1,0 +1,13 @@
+name: UltraChat & UltraFeedback
+slug: ultrachat
+lab: openbmb
+type: dataset
+date: 2023-06-01
+url: https://huggingface.co/openbmb
+description: >
+  High-quality alignment datasets for instruction-following and RLHF.
+tags:
+  - alignment
+  - training-data
+  - rlhf
+notes: Date approximate.

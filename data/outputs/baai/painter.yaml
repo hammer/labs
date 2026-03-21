@@ -1,0 +1,14 @@
+name: Painter
+slug: painter
+lab: baai
+type: model
+date: 2023-05-01
+url: https://github.com/baaivision/Painter
+description: >
+  "In-context" visual learning model that performs visual tasks without retraining.
+tags:
+  - vision
+  - open-weight
+library:
+  github: https://github.com/baaivision/Painter
+notes: Date approximate.

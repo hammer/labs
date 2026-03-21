@@ -1,0 +1,17 @@
+name: Ling-mini / Ling-Lite
+slug: ling-mini
+lab: ant-group
+type: model
+date: 2025-06-01
+url: https://huggingface.co/inclusionAI
+description: >
+  Smaller Ling variants for edge and low-latency use cases. Ling-mini 2.0
+  at 16B parameters.
+tags:
+  - efficiency
+  - on-device
+  - open-weight
+model:
+  architecture: dense
+  parameters: 16B
+notes: Date approximate.

@@ -1,0 +1,15 @@
+name: "InternVL: Scaling up Vision Foundation Models"
+slug: internvl-paper
+lab: shanghai-ai-lab
+type: paper
+date: 2023-12-21
+url: https://arxiv.org/abs/2312.14238
+description: >
+  Foundational paper for the InternVL vision-language series.
+tags:
+  - vlm
+  - scaling
+paper:
+  arxiv: "2312.14238"
+related:
+  - internvl

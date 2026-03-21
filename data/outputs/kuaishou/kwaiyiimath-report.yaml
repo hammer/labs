@@ -1,0 +1,14 @@
+name: KwaiYiiMath Technical Report
+slug: kwaiyiimath-report
+lab: kuaishou
+type: paper
+date: 2023-10-01
+url: https://huggingface.co/Kwaipilot
+description: >
+  Technical report on the KwaiYiiMath mathematical reasoning model.
+tags:
+  - math
+  - reasoning
+related:
+  - kwaiyiimath
+notes: Date approximate.

@@ -1,0 +1,12 @@
+name: Fin-Eval
+slug: fin-eval
+lab: ant-group
+type: dataset
+date: 2023-09-01
+url: https://huggingface.co/inclusionAI
+description: >
+  Benchmark specifically designed to evaluate LLMs in the Chinese financial domain.
+tags:
+  - benchmark
+  - finance
+notes: Date approximate.

@@ -1,0 +1,18 @@
+name: Xiaomi-Robotics-0
+slug: xiaomi-robotics-0
+lab: xiaomi
+type: model
+date: 2026-02-01
+url: https://huggingface.co/XiaomiMiMo
+description: >
+  4.7B parameter Vision-Language-Action (VLA) model for real-time robotic execution.
+tags:
+  - robotics
+  - vlm
+  - open-weight
+model:
+  architecture: dense
+  parameters: 4.7B
+paper:
+  arxiv: "2602.12684"
+notes: Date approximate.

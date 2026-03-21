@@ -1,0 +1,15 @@
+name: FlashInfer-python-paddle
+slug: flashinfer-paddle
+lab: baidu
+type: library
+date: 2026-01-01
+url: https://github.com/PaddlePaddle
+description: >
+  Kernel library for high-speed LLM serving on PaddlePaddle.
+tags:
+  - infrastructure
+  - serving
+  - kernels
+library:
+  github: https://github.com/PaddlePaddle
+notes: Date approximate.

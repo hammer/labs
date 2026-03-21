@@ -1,0 +1,15 @@
+name: "Lenna: Language Enhanced Reasoning Detection Assistant"
+slug: lenna-paper
+lab: meituan
+type: paper
+date: 2023-12-01
+url: https://huggingface.co/meituan-longcat
+description: >
+  Paper on combining MLLMs with object detection for reasoning-based detection.
+tags:
+  - vision
+  - detection
+  - reasoning
+related:
+  - lenna
+notes: Date approximate.

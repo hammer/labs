@@ -1,0 +1,27 @@
+name: Emu / Emu2 / Emu3
+slug: emu
+lab: baai
+type: model
+date: 2023-07-01
+url: https://github.com/baaivision/Emu3
+description: >
+  Large-scale vision-language models for any-to-any generation. Emu3/3.5
+  are native multimodal models trained solely via next-token prediction,
+  eliminating separate diffusion or CLIP components.
+tags:
+  - multimodal
+  - generation
+  - open-weight
+model:
+  variants:
+    - name: Emu
+      notes: Released 2023
+    - name: Emu2
+      notes: Released 2024
+    - name: Emu3
+      notes: Released 2025, next-token prediction only
+    - name: Emu3.5
+      notes: Released 2026
+library:
+  github: https://github.com/baaivision/Emu3
+notes: Date approximate.

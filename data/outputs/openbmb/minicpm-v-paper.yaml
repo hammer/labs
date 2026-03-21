@@ -1,0 +1,13 @@
+name: "MiniCPM-V: A GPT-4V Level MLLM on Your Phone"
+slug: minicpm-v-paper
+lab: openbmb
+type: paper
+date: 2024-08-03
+url: https://arxiv.org/abs/2408.01800
+description: >
+  Vision-language model achieving GPT-4V level performance on mobile devices.
+tags:
+  - vlm
+  - on-device
+paper:
+  arxiv: "2408.01800"

@@ -1,0 +1,13 @@
+name: ZoomBench
+slug: zoombench
+lab: ant-group
+type: dataset
+date: 2025-06-01
+url: https://huggingface.co/inclusionAI
+description: >
+  Perception benchmark for fine-grained multimodal understanding
+  (Zooming-without-Zooming).
+tags:
+  - benchmark
+  - multimodal
+notes: Date approximate.

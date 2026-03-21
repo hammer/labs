@@ -1,0 +1,12 @@
+name: gelab-zero (STEP-GUI)
+slug: gelab-zero
+lab: stepfun
+type: library
+date: 2025-06-01
+url: https://github.com/stepfun-ai
+description: >
+  High-performance GUI agent for autonomous computer/phone use.
+tags:
+  - agentic
+  - framework
+notes: Date approximate.

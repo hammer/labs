@@ -1,0 +1,15 @@
+name: "YOLOv6: Single-Stage Object Detection for Industrial Applications"
+slug: yolov6-paper
+lab: meituan
+type: paper
+date: 2022-09-07
+url: https://arxiv.org/abs/2209.02976
+description: >
+  High-performance single-stage object detector for industrial applications.
+tags:
+  - vision
+  - detection
+paper:
+  arxiv: "2209.02976"
+related:
+  - yolov6

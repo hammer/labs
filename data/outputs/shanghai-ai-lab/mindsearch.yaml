@@ -1,0 +1,15 @@
+name: MindSearch
+slug: mindsearch
+lab: shanghai-ai-lab
+type: library
+date: 2024-07-01
+url: https://github.com/InternLM/MindSearch
+description: >
+  Open-source multi-agent web search engine framework (similar to Perplexity).
+tags:
+  - agentic
+  - search
+  - framework
+library:
+  github: https://github.com/InternLM/MindSearch
+notes: Date approximate.

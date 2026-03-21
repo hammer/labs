@@ -1,0 +1,16 @@
+name: MACE (Mobile AI Compute Engine)
+slug: mace
+lab: xiaomi
+type: library
+date: 2018-06-01
+url: https://github.com/XiaoMi/mace
+description: >
+  Xiaomi's most famous open-source project. Deep learning inference framework
+  optimized for heterogeneous computing (CPU/GPU/DSP) on mobile devices.
+tags:
+  - inference
+  - on-device
+  - mobile
+library:
+  github: https://github.com/XiaoMi/mace
+notes: Date approximate.

@@ -1,0 +1,17 @@
+name: Kimina-Prover Preview Paper
+slug: kimina-prover-paper
+lab: moonshot-ai
+type: paper
+date: 2025-04-15
+url: https://arxiv.org/abs/2504.11354
+description: >
+  Formal reasoning model for Lean 4 theorem proving trained via RL from
+  Qwen2.5-72B. Achieves 80.7% on miniF2F with pass@8192.
+tags:
+  - math
+  - reasoning
+  - theorem-proving
+paper:
+  arxiv: "2504.11354"
+related:
+  - kimina-prover

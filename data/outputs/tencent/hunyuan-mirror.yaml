@@ -1,0 +1,14 @@
+name: Hunyuan Mirror
+slug: hunyuan-mirror
+lab: tencent
+type: paper
+date: 2025-10-01
+url: https://llm.hunyuan.tencent.com
+description: >
+  All-in-one 3D reconstruction model that processes video to 3D in a single
+  forward pass.
+tags:
+  - 3d
+  - vision
+  - research
+notes: Date approximate.

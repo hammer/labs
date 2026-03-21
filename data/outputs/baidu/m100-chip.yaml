@@ -1,0 +1,13 @@
+name: M100 Chip
+slug: m100-chip
+lab: baidu
+type: announcement
+date: 2026-01-01
+url: https://www.baidu.com
+description: >
+  Newest inference-focused chip designed for low-power, high-throughput
+  LLM deployment.
+tags:
+  - hardware
+  - inference
+notes: Date approximate.

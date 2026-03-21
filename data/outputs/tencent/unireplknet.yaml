@@ -1,0 +1,15 @@
+name: UniRepLKNet
+slug: unireplknet
+lab: tencent
+type: model
+date: 2025-01-01
+url: https://github.com/AILab-CVC/UniRepLKNet
+description: >
+  Large-kernel CNN architecture providing a state-of-the-art backbone for
+  vision tasks.
+tags:
+  - vision
+  - architecture
+library:
+  github: https://github.com/AILab-CVC/UniRepLKNet
+notes: Date approximate.

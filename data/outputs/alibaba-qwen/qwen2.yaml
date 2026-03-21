@@ -1,0 +1,28 @@
+name: Qwen2
+slug: qwen2
+lab: alibaba-qwen
+type: model
+date: 2024-06-01
+url: https://qwen.ai/blog
+description: >
+  Significantly improved multilingual capabilities. Sizes: 0.5B, 1.5B, 7B,
+  72B, and the 57B-A14B MoE.
+tags:
+  - open-weight
+  - multilingual
+  - moe
+model:
+  variants:
+    - name: Qwen2-0.5B
+      parameters: 0.5B
+    - name: Qwen2-1.5B
+      parameters: 1.5B
+    - name: Qwen2-7B
+      parameters: 7B
+    - name: Qwen2-72B
+      parameters: 72B
+    - name: Qwen2-57B-A14B
+      parameters: 57B
+      active_parameters: 14B
+      notes: MoE variant
+notes: Date approximate.

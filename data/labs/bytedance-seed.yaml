@@ -1,13 +1,22 @@
-name: ByteDance Seed
+name: ByteDance
 slug: bytedance-seed
+url: https://www.volcengine.com
 huggingface: https://huggingface.co/ByteDance-Seed
+github: https://github.com/bytedance
 region: china
+founded: "2023"
 type: corporate
-parent: ByteDance
-description: ByteDance's AI research division.
+description: >
+  ByteDance's AI ecosystem driven by two primary research powerhouses: the Seed
+  Team (LLMs, reasoning, multi-modal AGI) and the FoundationVision team
+  (next-generation visual architectures). Also includes the ByteDance AI Lab
+  and Volcengine cloud division. Responsible for the Doubao brand.
 people:
   - name: Wu Yonghui
     role: Lead
     formerly: Vice President at Google DeepMind
 tags:
   - frontier
+  - open-weight
+  - multimodal
+  - reasoning

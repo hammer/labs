@@ -1,0 +1,14 @@
+name: "Step-Video-T2V: A 300B Parameter Text-to-Video Model"
+slug: step-video-t2v-paper
+lab: stepfun
+type: paper
+date: 2025-02-01
+url: https://huggingface.co/stepfun-ai
+description: >
+  Technical paper on the 300B parameter text-to-video architecture.
+tags:
+  - video
+  - generation
+related:
+  - step-video-t2v
+notes: Date approximate.

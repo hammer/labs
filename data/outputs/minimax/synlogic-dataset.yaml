@@ -1,0 +1,14 @@
+name: SynLogic Dataset
+slug: synlogic-dataset
+lab: minimax
+type: dataset
+date: 2025-06-01
+url: https://huggingface.co/MiniMaxAI
+description: >
+  Publicly available set of verifiable reasoning trajectories.
+tags:
+  - reasoning
+  - training-data
+related:
+  - synlogic
+notes: Date approximate.

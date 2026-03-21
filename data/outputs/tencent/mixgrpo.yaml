@@ -1,0 +1,14 @@
+name: MixGRPO
+slug: mixgrpo
+lab: tencent
+type: paper
+date: 2026-02-01
+url: https://llm.hunyuan.tencent.com
+description: >
+  Research on unlocking flow-based GRPO (Group Relative Policy Optimization)
+  efficiency for reasoning models.
+tags:
+  - reasoning
+  - reinforcement-learning
+  - research
+notes: Date approximate.

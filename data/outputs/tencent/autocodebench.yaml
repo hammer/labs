@@ -1,0 +1,14 @@
+name: AutoCodeBench
+slug: autocodebench
+lab: tencent
+type: dataset
+date: 2025-06-01
+url: https://huggingface.co/tencent
+description: >
+  Large-scale benchmark for evaluating agentic coding models. Includes
+  AutoCodeInstruct with distilled answers from DeepSeek-V3.
+tags:
+  - benchmark
+  - coding
+  - agentic
+notes: Date approximate. V2 released 2026.

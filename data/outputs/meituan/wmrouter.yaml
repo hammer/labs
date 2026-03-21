@@ -1,0 +1,14 @@
+name: WMRouter
+slug: wmrouter
+lab: meituan
+type: library
+date: 2018-08-01
+url: https://github.com/meituan/WMRouter
+description: >
+  Component-based Android routing framework.
+tags:
+  - infrastructure
+  - mobile
+library:
+  github: https://github.com/meituan/WMRouter
+notes: Date approximate.

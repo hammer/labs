@@ -1,0 +1,14 @@
+name: InternLM2
+slug: internlm2
+lab: shanghai-ai-lab
+type: model
+date: 2024-01-01
+url: https://github.com/InternLM/InternLM
+description: >
+  Significant upgrades in reasoning and math. Outperformed Llama-2-70B at release.
+  Includes InternLM2-Math variant.
+tags:
+  - open-weight
+  - reasoning
+  - math
+notes: Date approximate.

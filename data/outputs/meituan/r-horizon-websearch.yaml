@@ -1,0 +1,13 @@
+name: R-HORIZON-Websearch
+slug: r-horizon-websearch
+lab: meituan
+type: dataset
+date: 2025-06-01
+url: https://huggingface.co/meituan-longcat
+description: >
+  Dataset for evaluating agentic web search and synthesis.
+tags:
+  - benchmark
+  - agentic
+  - search
+notes: Date approximate.

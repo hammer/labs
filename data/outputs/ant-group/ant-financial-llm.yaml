@@ -1,0 +1,13 @@
+name: Ant Financial LLM
+slug: ant-financial-llm
+lab: ant-group
+type: model
+date: 2023-09-01
+url: https://www.antgroup.com
+description: >
+  First specialized model fine-tuned for the finance industry, trained on
+  over 1 trillion tokens.
+tags:
+  - finance
+  - proprietary
+notes: Date approximate.

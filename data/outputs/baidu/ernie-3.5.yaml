@@ -1,0 +1,13 @@
+name: ERNIE 3.5
+slug: ernie-3.5
+lab: baidu
+type: model
+date: 2023-06-01
+url: https://www.baidu.com
+description: >
+  Integrated with ERNIE Bot (Wenxin Yiyan). At release, claimed performance
+  superior to ChatGPT (GPT-3.5) and competitive with GPT-4.
+tags:
+  - proprietary
+  - frontier
+notes: Date approximate.

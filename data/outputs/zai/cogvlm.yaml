@@ -1,0 +1,23 @@
+name: CogVLM / CogVLM2
+slug: cogvlm
+lab: zai
+type: model
+date: 2023-11-01
+url: https://github.com/THUDM/CogVLM
+description: >
+  Powerful vision-language model series. CogVLM2-Video (2026) introduced
+  multi-frame time localization for precise video understanding.
+tags:
+  - vlm
+  - open-weight
+model:
+  variants:
+    - name: CogVLM
+      notes: Released 2023
+    - name: CogVLM2
+      notes: Released 2024
+    - name: CogVLM2-Video
+      notes: Released 2026, multi-frame time localization
+library:
+  github: https://github.com/THUDM/CogVLM
+notes: Date approximate.

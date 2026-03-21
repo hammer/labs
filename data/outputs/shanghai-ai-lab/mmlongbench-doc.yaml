@@ -1,0 +1,13 @@
+name: MMLongBench-Doc
+slug: mmlongbench-doc
+lab: shanghai-ai-lab
+type: dataset
+date: 2024-06-01
+url: https://huggingface.co/internlm
+description: >
+  Benchmark for testing long-document understanding in multimodal models.
+tags:
+  - benchmark
+  - long-context
+  - multimodal
+notes: Date approximate.

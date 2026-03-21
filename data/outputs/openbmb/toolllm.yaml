@@ -1,0 +1,13 @@
+name: "ToolLLM: Facilitating LLMs to Master 16000+ APIs"
+slug: toolllm
+lab: openbmb
+type: paper
+date: 2023-07-31
+url: https://arxiv.org/abs/2307.16789
+description: >
+  Framework enabling LLMs to use over 16,000 real-world APIs.
+tags:
+  - agentic
+  - framework
+paper:
+  arxiv: "2307.16789"

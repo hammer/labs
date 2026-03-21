@@ -1,0 +1,15 @@
+name: DeepSeek-Math-V2
+slug: deepseek-math-v2
+lab: deepseek
+type: model
+date: 2025-11-01
+url: https://huggingface.co/deepseek-ai
+description: >
+  Specialized model family for formal and informal mathematical reasoning.
+tags:
+  - math
+  - reasoning
+  - open-weight
+related:
+  - deepseek-math
+notes: Date approximate.

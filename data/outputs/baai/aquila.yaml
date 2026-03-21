@@ -1,11 +1,29 @@
-name: Aquila
+name: Aquila & Aquila2
 slug: aquila
 lab: baai
 type: model
-date: 2024-01-01
+date: 2023-06-01
 url: https://github.com/FlagAI-Open/Aquila2
-description: Open-source large language model series from BAAI.
+description: >
+  First open-source LLM compliant with Chinese regulations. Aquila-7B, 33B,
+  and AquilaChat. Aquila2 improved with EfficientScale recipe (7B/34B).
+  Includes Aquila-MoE (8*16B).
 tags:
   - open-source
   - open-weight
+  - chinese
+model:
+  variants:
+    - name: Aquila-7B
+      parameters: 7B
+    - name: Aquila-33B
+      parameters: 33B
+    - name: Aquila2-7B
+      parameters: 7B
+    - name: Aquila2-34B
+      parameters: 34B
+    - name: Aquila-MoE
+      notes: 8*16B MoE
+library:
+  github: https://github.com/FlagAI-Open/Aquila2
 notes: Date approximate.

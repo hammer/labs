@@ -1,0 +1,14 @@
+name: Kling 3.0 & 3.0 Omni
+slug: kling-3.0
+lab: kuaishou
+type: model
+date: 2026-02-01
+url: https://www.kuaishou.com
+description: >
+  Most advanced Kling model, supporting native 15-second high-fidelity clips
+  and multi-shot storyboarding.
+tags:
+  - video
+  - generation
+  - frontier
+notes: Date approximate.

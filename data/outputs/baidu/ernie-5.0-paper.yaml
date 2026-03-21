@@ -1,0 +1,17 @@
+name: ERNIE 5.0 Technical Report
+slug: ernie-5.0-paper
+lab: baidu
+type: paper
+date: 2026-02-06
+url: https://arxiv.org/abs/2602.04705
+description: >
+  Trillion-parameter unified autoregressive multimodal model with elastic
+  MoE training. 437 co-authors.
+tags:
+  - moe
+  - multimodal
+  - frontier
+paper:
+  arxiv: "2602.04705"
+related:
+  - ernie-5.0

@@ -1,0 +1,18 @@
+name: MiMo-7B-RL
+slug: mimo-7b-rl
+lab: xiaomi
+type: model
+date: 2025-05-01
+url: https://huggingface.co/XiaomiMiMo
+description: >
+  Reasoning-focused model achieving superior performance on AIME (math)
+  and HumanEval (coding).
+tags:
+  - reasoning
+  - math
+  - coding
+  - open-weight
+model:
+  architecture: dense
+  parameters: 7B
+notes: Date approximate.

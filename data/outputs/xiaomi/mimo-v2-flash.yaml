@@ -1,0 +1,19 @@
+name: MiMo-V2-Flash
+slug: mimo-v2-flash
+lab: xiaomi
+type: model
+date: 2025-12-01
+url: https://mimo.xiaomi.com
+description: >
+  309B MoE model (15B active) optimized for extreme speed (150 tokens/sec)
+  and low-cost API access.
+tags:
+  - moe
+  - efficiency
+model:
+  architecture: moe
+  parameters: 309B
+  active_parameters: 15B
+paper:
+  arxiv: "2601.02780"
+notes: Date approximate.

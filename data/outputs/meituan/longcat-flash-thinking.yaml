@@ -1,0 +1,18 @@
+name: LongCat-Flash-Thinking
+slug: longcat-flash-thinking
+lab: meituan
+type: model
+date: 2025-09-01
+url: https://huggingface.co/meituan-longcat
+description: >
+  Specialized reasoning model trained via large-scale Reinforcement Learning.
+  Rivals proprietary systems in complex logic and STEM benchmarks.
+tags:
+  - reasoning
+  - moe
+  - reinforcement-learning
+model:
+  architecture: moe
+  parameters: 560B
+  active_parameters: 27B
+notes: Date approximate.

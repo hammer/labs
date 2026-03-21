@@ -1,0 +1,19 @@
+name: Step-3.5-Flash
+slug: step-3.5-flash
+lab: stepfun
+type: model
+date: 2026-02-11
+url: https://www.stepfun.com
+description: >
+  Most advanced agentic model. 196B MoE (11B active) using MTP-3 and hybrid
+  attention. Optimized for speed (350 tok/s) with 256k context.
+tags:
+  - moe
+  - agentic
+  - efficiency
+  - open-weight
+model:
+  architecture: moe
+  parameters: 196B
+  active_parameters: 11B
+  context_window: 256000

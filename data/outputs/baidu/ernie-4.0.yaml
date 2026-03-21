@@ -1,0 +1,13 @@
+name: ERNIE 4.0
+slug: ernie-4.0
+lab: baidu
+type: model
+date: 2023-10-01
+url: https://www.baidu.com
+description: >
+  Significantly improved reasoning, memory, and generation capabilities.
+tags:
+  - proprietary
+  - frontier
+  - reasoning
+notes: Date approximate.

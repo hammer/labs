@@ -1,0 +1,14 @@
+name: PaddleNLP
+slug: paddlenlp
+lab: baidu
+type: library
+date: 2021-01-01
+url: https://github.com/PaddlePaddle/PaddleNLP
+description: >
+  Library for SOTA NLP models, including ERNIEKit and PaddleFormers.
+tags:
+  - nlp
+  - framework
+library:
+  github: https://github.com/PaddlePaddle/PaddleNLP
+notes: Date approximate.

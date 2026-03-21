@@ -1,9 +1,35 @@
 name: Shanghai AI Laboratory
 slug: shanghai-ai-lab
+url: https://www.shlab.org.cn
 huggingface: https://huggingface.co/internlm
+github: https://github.com/InternLM
 region: china
+founded: "2020"
 type: academic
-description: Producer of the InternLM series of models.
+description: >
+  Centerpiece of China's "National Team" in AI. Co-founded by Shanghai
+  Municipal Government with SJTU, Fudan, and SenseTime. Functions as the
+  "industrial hub" of southern China, bridging theory and application.
+  Manages the OpenXLab ecosystem (OpenGVLab, OpenMMLab, OpenDILab).
+  SenseTime provides the SenseCore supercomputing infrastructure.
+people:
+  - name: Yu Qiao
+    role: Director
+  - name: Dahua Lin
+    role: Senior Researcher
+  - name: Jifeng Dai
+    role: InternVL Lead
+  - name: Wenhai Wang
+    role: Core Researcher
+relationships:
+  - lab: baai
+    type: collaboration
+    note: >
+      BAAI is the "academic hub" of the north, SAIL is the "industrial hub"
+      of the south. Both part of China's state-backed AI consolidation strategy.
 tags:
   - open-weight
   - academic
+  - multimodal
+  - vision
+  - frontier

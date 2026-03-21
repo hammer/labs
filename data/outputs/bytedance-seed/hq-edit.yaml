@@ -1,0 +1,13 @@
+name: HQ-Edit
+slug: hq-edit
+lab: bytedance-seed
+type: dataset
+date: 2024-04-01
+url: https://huggingface.co/ByteDance-Seed
+description: >
+  High-quality dataset for instruction-based image editing.
+tags:
+  - vision
+  - generation
+  - editing
+notes: Date approximate.

@@ -1,0 +1,15 @@
+name: Groma
+slug: groma
+lab: bytedance-seed
+type: model
+date: 2024-06-01
+url: https://github.com/FoundationVision/Groma
+description: >
+  Multimodal model specialized in localized visual grounding and reasoning.
+tags:
+  - multimodal
+  - vision
+  - grounding
+library:
+  github: https://github.com/FoundationVision/Groma
+notes: Date approximate.

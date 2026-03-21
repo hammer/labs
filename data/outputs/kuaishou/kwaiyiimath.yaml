@@ -1,0 +1,14 @@
+name: KwaiYiiMath
+slug: kwaiyiimath
+lab: kuaishou
+type: model
+date: 2023-10-01
+url: https://huggingface.co/Kwaipilot
+description: >
+  Specialized reasoning variant fine-tuned for mathematical problem-solving.
+tags:
+  - math
+  - reasoning
+related:
+  - kwaiyii
+notes: Date approximate.

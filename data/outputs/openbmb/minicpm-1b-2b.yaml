@@ -1,0 +1,23 @@
+name: MiniCPM-1B / 2B
+slug: minicpm-1b-2b
+lab: openbmb
+type: model
+date: 2024-02-01
+url: https://github.com/OpenBMB/MiniCPM
+description: >
+  Series debut. The 2B model outperformed Llama2-13B and matched Mistral-7B
+  despite its smaller size.
+tags:
+  - on-device
+  - efficiency
+  - open-weight
+model:
+  architecture: dense
+  variants:
+    - name: MiniCPM-1B
+      parameters: 1B
+    - name: MiniCPM-2B
+      parameters: 2B
+library:
+  github: https://github.com/OpenBMB/MiniCPM
+notes: Date approximate.

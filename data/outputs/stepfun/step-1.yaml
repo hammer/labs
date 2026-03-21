@@ -1,0 +1,14 @@
+name: Step-1
+slug: step-1
+lab: stepfun
+type: model
+date: 2023-10-01
+url: https://www.stepfun.com
+description: >
+  Debut 130B parameter LLM that established StepFun as a top-tier contender.
+tags:
+  - open-weight
+model:
+  architecture: dense
+  parameters: 130B
+notes: Date approximate.

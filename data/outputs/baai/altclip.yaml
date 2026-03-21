@@ -1,0 +1,13 @@
+name: AltCLIP & AltDiffusion
+slug: altclip
+lab: baai
+type: model
+date: 2022-11-01
+url: https://github.com/FlagAI-Open/FlagAI
+description: >
+  Bilingual (Chinese/English) models for multimodal representation and generation.
+tags:
+  - multimodal
+  - chinese
+  - open-weight
+notes: Date approximate.

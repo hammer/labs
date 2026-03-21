@@ -1,0 +1,12 @@
+name: Kimi-Audio
+slug: kimi-audio
+lab: moonshot-ai
+type: model
+date: 2025-04-01
+url: https://github.com/MoonshotAI/Kimi-Audio
+description: >
+  Universal audio foundation model for speech recognition and audio-to-text chat.
+tags:
+  - audio
+  - open-weight
+notes: Date approximate.

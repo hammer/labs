@@ -1,0 +1,19 @@
+name: Moonlight-3B/16B
+slug: moonlight
+lab: moonshot-ai
+type: model
+date: 2026-02-01
+url: https://huggingface.co/moonshotai
+description: >
+  Lightweight "Pareto-frontier" models trained using the Muon optimizer.
+  Available in 3B and 16B variants.
+tags:
+  - efficiency
+  - open-weight
+model:
+  variants:
+    - name: Moonlight-3B
+      parameters: 3B
+    - name: Moonlight-16B
+      parameters: 16B
+notes: Date approximate.

@@ -1,0 +1,14 @@
+name: MiniMax-M2
+slug: minimax-m2
+lab: minimax
+type: model
+date: 2025-10-01
+url: https://huggingface.co/MiniMaxAI
+description: >
+  "Agent-native" model designed for tool-calling and code execution, released
+  at a fraction of the price of Claude 3.5 Sonnet.
+tags:
+  - agentic
+  - coding
+  - efficiency
+notes: Date approximate.

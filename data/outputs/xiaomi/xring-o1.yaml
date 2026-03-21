@@ -1,0 +1,13 @@
+name: XRing O1
+slug: xring-o1
+lab: xiaomi
+type: announcement
+date: 2025-01-01
+url: https://www.mi.com
+description: >
+  3nm custom AI chip designed for on-device reasoning in Xiaomi 15/16/17 series.
+tags:
+  - hardware
+  - on-device
+  - inference
+notes: Date approximate.

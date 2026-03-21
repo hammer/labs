@@ -1,0 +1,14 @@
+name: Lenna
+slug: lenna
+lab: meituan
+type: model
+date: 2023-12-01
+url: https://huggingface.co/meituan-longcat
+description: >
+  "Language Enhanced Reasoning Detection Assistant" combining MLLMs with
+  object detection.
+tags:
+  - vision
+  - detection
+  - reasoning
+notes: Date approximate.

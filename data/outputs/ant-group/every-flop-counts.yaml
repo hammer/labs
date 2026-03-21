@@ -1,0 +1,18 @@
+name: "Every FLOP Counts: Scaling a 300B MoE LING LLM"
+slug: every-flop-counts
+lab: ant-group
+type: paper
+date: 2025-06-01
+url: https://arxiv.org/abs/2503.05139
+description: >
+  Technical details on training massive MoE models without premium H100/A100
+  clusters. Core philosophy behind Ant's efficient scaling approach.
+tags:
+  - scaling
+  - efficiency
+  - moe
+paper:
+  arxiv: "2503.05139"
+related:
+  - ling-1t
+notes: Date approximate.

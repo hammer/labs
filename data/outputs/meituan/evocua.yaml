@@ -1,0 +1,13 @@
+name: EvoCUA
+slug: evocua
+lab: meituan
+type: library
+date: 2026-01-01
+url: https://github.com/meituan
+description: >
+  "Evolving Computer Use Agent" — framework for training agents to navigate
+  software and web interfaces.
+tags:
+  - agentic
+  - framework
+notes: Date approximate.

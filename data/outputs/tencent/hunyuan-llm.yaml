@@ -1,0 +1,13 @@
+name: Hunyuan-LLM
+slug: hunyuan-llm
+lab: tencent
+type: model
+date: 2023-09-01
+url: https://llm.hunyuan.tencent.com
+description: >
+  Debut flagship with hundreds of billions of parameters, initially used for
+  internal products like Tencent Docs and Search.
+tags:
+  - proprietary
+  - frontier
+notes: Date approximate.

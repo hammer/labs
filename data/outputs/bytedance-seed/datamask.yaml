@@ -1,0 +1,13 @@
+name: DATAMASK
+slug: datamask
+lab: bytedance-seed
+type: paper
+date: 2025-06-01
+url: https://huggingface.co/ByteDance-Seed
+description: >
+  Policy gradient-based mask learning for massive-scale pre-training data selection.
+tags:
+  - training
+  - data
+  - research
+notes: Date approximate.

@@ -1,0 +1,14 @@
+name: InternLM2 Technical Report
+slug: internlm2-paper
+lab: shanghai-ai-lab
+type: paper
+date: 2024-03-26
+url: https://arxiv.org/abs/2403.17297
+description: >
+  Technical report with 100+ authors detailing InternLM2 architecture and training.
+tags:
+  - technical-report
+paper:
+  arxiv: "2403.17297"
+related:
+  - internlm2

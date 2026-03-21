@@ -1,0 +1,16 @@
+name: Kimi Linear
+slug: kimi-linear
+lab: moonshot-ai
+type: model
+date: 2025-10-01
+url: https://www.moonshot.cn
+description: >
+  48B parameter MoE model utilizing Kimi Delta Attention (KDA) to improve
+  speed and memory efficiency.
+tags:
+  - moe
+  - efficiency
+model:
+  architecture: moe
+  parameters: 48B
+notes: Date approximate.

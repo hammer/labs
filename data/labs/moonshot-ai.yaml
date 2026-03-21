@@ -2,9 +2,23 @@ name: Moonshot AI
 slug: moonshot-ai
 url: https://www.moonshot.cn
 huggingface: https://huggingface.co/moonshotai
+github: https://github.com/MoonshotAI
 region: china
+founded: 2023-03
 type: startup
-description: Creator of the Kimi series of large language models.
+description: >
+  Leader in long-context processing, reasoning agents, and open-weight models.
+  Creator of the Kimi series. Transitioned from proprietary API models to
+  trillion-parameter open-weight MoE models in 2025.
+people:
+  - name: Yang Zhilin
+    role: Founder & CEO
+    formerly: Google, Meta
+  - name: Junjie Yan
+  - name: Jianlin Su
+  - name: Flood Sung
 tags:
   - frontier
   - open-weight
+  - long-context
+  - agentic

@@ -1,0 +1,15 @@
+name: "CogVideoX: Text-to-Video Diffusion Models"
+slug: cogvideox
+lab: zai
+type: model
+date: 2024-08-12
+url: https://arxiv.org/abs/2408.06072
+description: >
+  Text-to-video diffusion model with expert transformer architecture.
+tags:
+  - video
+  - generation
+  - diffusion
+  - open-weight
+paper:
+  arxiv: "2408.06072"

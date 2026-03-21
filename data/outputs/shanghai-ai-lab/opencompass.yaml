@@ -1,0 +1,15 @@
+name: OpenCompass
+slug: opencompass
+lab: shanghai-ai-lab
+type: library
+date: 2023-07-01
+url: https://github.com/open-compass/opencompass
+description: >
+  Industry standard for evaluating large models across thousands of dimensions.
+tags:
+  - evaluation
+  - benchmark
+  - framework
+library:
+  github: https://github.com/open-compass/opencompass
+notes: Date approximate.

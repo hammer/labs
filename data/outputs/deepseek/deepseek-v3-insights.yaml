@@ -1,0 +1,16 @@
+name: "Insights into DeepSeek-V3: Scaling Challenges"
+slug: deepseek-v3-insights
+lab: deepseek
+type: paper
+date: 2025-05-01
+url: https://arxiv.org/abs/2505.09343
+description: >
+  Paper detailing the scaling challenges encountered during DeepSeek-V3 development.
+tags:
+  - scaling
+  - infrastructure
+paper:
+  arxiv: "2505.09343"
+related:
+  - deepseek-v3
+notes: Date approximate.

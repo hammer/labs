@@ -1,0 +1,12 @@
+name: CoFARS
+slug: cofars
+lab: meituan
+type: paper
+date: 2025-06-01
+url: https://www.meituan.com
+description: >
+  AI algorithm for long-sequence recommendation in delivery scenarios.
+tags:
+  - recommendation
+  - delivery
+notes: Date approximate.

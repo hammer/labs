@@ -1,14 +1,30 @@
-name: Tencent Hunyuan
+name: Tencent
 slug: tencent
 url: https://llm.hunyuan.tencent.com
 huggingface: https://huggingface.co/tencent
+github: https://github.com/Tencent
 region: china
 type: corporate
-parent: Tencent
-description: Tencent's AI model team, producing the Hunyuan series.
+description: >
+  One of the most diverse AI ecosystems in the world. Split between massive
+  industrial-scale Hunyuan family (powering search, ads, WeChat) and
+  fundamental research from Tencent AI Lab, Robotics X, and Quantum Lab.
+  Transitioned from closed-source API to leader in open-weight multimodal
+  models. Also known for "Social AI" and "Game AI" research.
+people:
+  - name: Yixiao Ge
+    role: Senior Researcher
+  - name: Ying Shan
+    role: Senior Researcher
 relationships:
   - lab: kuaishou
     type: investor
-    note: Tencent owns approximately 1/6 of Kuaishou
+    note: >
+      Tencent holds ~17-19% of Kuaishou but they are fierce rivals. WeChat
+      Video Accounts competes directly with Kuaishou. Tencent provides WeChat
+      integration as strategic support while competing via Channels.
 tags:
   - frontier
+  - open-weight
+  - multimodal
+  - generation

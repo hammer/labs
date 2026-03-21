@@ -1,0 +1,14 @@
+name: 3FS (Fire-Flyer File System)
+slug: 3fs
+lab: deepseek
+type: library
+date: 2025-02-01
+url: https://github.com/deepseek-ai/3FS
+description: >
+  High-performance distributed file system designed for AI training.
+tags:
+  - infrastructure
+  - distributed
+library:
+  github: https://github.com/deepseek-ai/3FS
+notes: Date approximate.

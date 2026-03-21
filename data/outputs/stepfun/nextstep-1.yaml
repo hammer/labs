@@ -1,0 +1,20 @@
+name: NextStep-1
+slug: nextstep-1
+lab: stepfun
+type: model
+date: 2025-06-01
+url: https://huggingface.co/stepfun-ai
+description: >
+  14B autoregressive image generation model that rivals top diffusion systems.
+  ICLR 2026 Oral. Includes NextStep-1-Edit for instruction-based image editing.
+tags:
+  - generation
+  - vision
+  - autoregressive
+  - open-weight
+model:
+  architecture: dense
+  parameters: 14B
+paper:
+  venue: ICLR 2026
+notes: Date approximate.

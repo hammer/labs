@@ -1,0 +1,14 @@
+name: LongBench
+slug: longbench
+lab: zai
+type: dataset
+date: 2023-08-01
+url: https://github.com/THUDM/LongBench
+description: >
+  Comprehensive benchmark for long-context understanding in LLMs.
+tags:
+  - benchmark
+  - long-context
+dataset:
+  github: https://github.com/THUDM/LongBench
+notes: Date approximate.

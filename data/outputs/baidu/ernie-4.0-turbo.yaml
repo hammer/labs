@@ -1,0 +1,12 @@
+name: ERNIE 4.0 Turbo
+slug: ernie-4.0-turbo
+lab: baidu
+type: model
+date: 2024-06-01
+url: https://www.baidu.com
+description: >
+  Optimized version for enterprise use cases requiring higher speed and lower costs.
+tags:
+  - proprietary
+  - efficiency
+notes: Date approximate.

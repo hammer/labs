@@ -1,0 +1,22 @@
+name: Qwen-Math Series
+slug: qwen-math
+lab: alibaba-qwen
+type: model
+date: 2024-09-01
+url: https://huggingface.co/Qwen
+description: >
+  Math-specialized model family. Includes the Qwen2.5-Math series (1.5B, 7B, 72B)
+  which introduced Tool-Integrated Reasoning (TIR).
+tags:
+  - math
+  - reasoning
+  - open-weight
+model:
+  variants:
+    - name: Qwen2.5-Math-1.5B
+      parameters: 1.5B
+    - name: Qwen2.5-Math-7B
+      parameters: 7B
+    - name: Qwen2.5-Math-72B
+      parameters: 72B
+notes: Date approximate.

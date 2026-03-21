@@ -1,0 +1,18 @@
+name: MiDashengLM-7B
+slug: midashenglm
+lab: xiaomi
+type: model
+date: 2025-06-01
+url: https://huggingface.co/XiaomiMiMo
+description: >
+  Efficient audio understanding model built on the "Dasheng" encoder, supporting
+  speech, music, and acoustics.
+tags:
+  - audio
+  - open-weight
+model:
+  architecture: dense
+  parameters: 7B
+paper:
+  arxiv: "2508.03983"
+notes: Date approximate.

@@ -1,0 +1,13 @@
+name: MiMo-V2-Omni
+slug: mimo-v2-omni
+lab: xiaomi
+type: model
+date: 2026-02-01
+url: https://mimo.xiaomi.com
+description: >
+  Native multimodal model that can "see, hear, and act," powering Xiaomi's
+  next-gen smart devices.
+tags:
+  - multimodal
+  - on-device
+notes: Date approximate.

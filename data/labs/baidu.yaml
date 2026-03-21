@@ -2,9 +2,24 @@ name: Baidu
 slug: baidu
 url: https://www.baidu.com
 huggingface: https://huggingface.co/baidu
+github: https://github.com/PaddlePaddle
 region: china
+founded: "2000"
 type: corporate
-description: Creator of the ERNIE series of models.
+description: >
+  Pioneer in Chinese AI since founding its Institute of Deep Learning (IDL)
+  in 2013. Ecosystem defined by the ERNIE (Enhanced Representation through
+  Knowledge Integration) series and the PaddlePaddle deep learning framework,
+  China's first and most widely used domestic framework. Also develops Kunlun
+  XPU AI chips and the Apollo autonomous driving platform.
+people:
+  - name: Haifeng Wang
+    role: VP & ERNIE Lead
+  - name: Yu Sun
+    role: Core Researcher
 tags:
   - frontier
   - open-weight
+  - framework
+  - hardware
+  - autonomous-driving

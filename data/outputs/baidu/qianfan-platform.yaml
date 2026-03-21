@@ -1,0 +1,14 @@
+name: Qianfan Platform
+slug: qianfan-platform
+lab: baidu
+type: announcement
+date: 2023-09-01
+url: https://www.baidu.com
+description: >
+  Baidu AI Cloud's one-stop model-as-a-service platform for developers to
+  fine-tune and deploy ERNIE models.
+tags:
+  - platform
+  - infrastructure
+  - serving
+notes: Date approximate.

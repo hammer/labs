@@ -1,0 +1,15 @@
+name: PaddlePaddle
+slug: paddlepaddle
+lab: baidu
+type: library
+date: 2016-08-01
+url: https://github.com/PaddlePaddle/Paddle
+description: >
+  China's first and most widely used domestic deep learning framework.
+  Core engine supporting multi-device (CPU, GPU, XPU) training and inference.
+tags:
+  - framework
+  - infrastructure
+library:
+  github: https://github.com/PaddlePaddle/Paddle
+notes: Date approximate. Originally open-sourced in 2016.

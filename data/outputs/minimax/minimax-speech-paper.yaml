@@ -1,0 +1,15 @@
+name: "MiniMax-Speech: Intrinsic Zero-Shot TTS"
+slug: minimax-speech-paper
+lab: minimax
+type: paper
+date: 2025-06-01
+url: https://huggingface.co/MiniMaxAI
+description: >
+  Research on learnable speaker encoders for high-fidelity voice cloning.
+tags:
+  - speech
+  - audio
+  - research
+related:
+  - speech-series
+notes: Date approximate.

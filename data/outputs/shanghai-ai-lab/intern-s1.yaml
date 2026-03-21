@@ -1,12 +1,18 @@
-name: Intern-S1
+name: Intern-S1-Pro
 slug: intern-s1
 lab: shanghai-ai-lab
 type: model
-date: 2025-06-01
+date: 2026-02-04
 url: https://huggingface.co/internlm
-description: Multimodal scientific reasoning model.
+description: >
+  Landmark 1-trillion parameter MoE scientific model, activating only 22B
+  parameters per inference. Designed for autonomous scientific research.
 tags:
-  - multimodal
+  - moe
   - reasoning
   - scientific
-notes: Date approximate.
+  - frontier
+model:
+  architecture: moe
+  parameters: 1T
+  active_parameters: 22B

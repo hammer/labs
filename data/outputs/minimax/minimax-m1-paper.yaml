@@ -1,0 +1,16 @@
+name: "MiniMax-M1: Scaling Test-Time Compute with Lightning Attention"
+slug: minimax-m1-paper
+lab: minimax
+type: paper
+date: 2025-06-16
+url: https://arxiv.org/abs/2506.13585
+description: >
+  Technical report for the M1 hybrid-attention reasoning model (456B/45.9B active).
+tags:
+  - reasoning
+  - efficiency
+  - attention
+paper:
+  arxiv: "2506.13585"
+related:
+  - minimax-m1

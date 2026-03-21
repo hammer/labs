@@ -1,0 +1,15 @@
+name: ML-Images
+slug: ml-images
+lab: tencent
+type: dataset
+date: 2018-10-01
+url: https://github.com/Tencent/tencent-ml-images
+description: >
+  Massive multi-labeled image dataset containing 18 million images and
+  11,000 categories.
+tags:
+  - vision
+  - benchmark
+dataset:
+  github: https://github.com/Tencent/tencent-ml-images
+notes: Date approximate.

@@ -1,0 +1,15 @@
+name: Qwen2-Audio Paper
+slug: qwen2-audio-paper
+lab: alibaba-qwen
+type: paper
+date: 2024-07-01
+url: https://arxiv.org/abs/2407.10759
+description: >
+  Introduced a three-stage training process for universal audio understanding.
+tags:
+  - audio
+paper:
+  arxiv: "2407.10759"
+related:
+  - qwen-audio
+notes: Date approximate.

@@ -1,0 +1,14 @@
+name: DORA System
+slug: dora-system
+lab: meituan
+type: library
+date: 2025-06-01
+url: https://www.meituan.com
+description: >
+  Industrial-grade RL infrastructure enabling stable training on tens of
+  thousands of accelerators.
+tags:
+  - infrastructure
+  - reinforcement-learning
+  - training
+notes: Date approximate.

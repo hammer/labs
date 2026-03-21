@@ -1,0 +1,14 @@
+name: kosong
+slug: kosong
+lab: moonshot-ai
+type: library
+date: 2025-06-01
+url: https://github.com/MoonshotAI/kosong
+description: >
+  LLM abstraction layer for building agent applications.
+tags:
+  - agentic
+  - framework
+library:
+  github: https://github.com/MoonshotAI/kosong
+notes: Date approximate.

@@ -1,0 +1,13 @@
+name: KuaiRand
+slug: kuairand
+lab: kuaishou
+type: dataset
+date: 2026-01-01
+url: https://github.com/kuaishou-langlab
+description: >
+  Unbiased sequential recommendation dataset with millions of "randomly exposed"
+  interactions.
+tags:
+  - recommendation
+  - benchmark
+notes: Date approximate.

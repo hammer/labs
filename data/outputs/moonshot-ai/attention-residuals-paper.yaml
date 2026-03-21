@@ -1,0 +1,16 @@
+name: Attention Residuals Paper
+slug: attention-residuals-paper
+lab: moonshot-ai
+type: paper
+date: 2026-03-16
+url: https://arxiv.org/abs/2603.15031
+description: >
+  Replaces fixed residual accumulation with softmax attention over preceding
+  layers. Block AttnRes variant for scalability.
+tags:
+  - architecture
+  - scaling
+paper:
+  arxiv: "2603.15031"
+related:
+  - attention-residuals

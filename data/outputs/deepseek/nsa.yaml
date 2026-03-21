@@ -1,0 +1,14 @@
+name: "NSA: Native Sparse Attention"
+slug: nsa
+lab: deepseek
+type: paper
+date: 2025-02-16
+url: https://arxiv.org/abs/2502.11089
+description: >
+  Hardware-aligned and natively trainable sparse attention mechanism.
+tags:
+  - attention
+  - architecture
+  - efficiency
+paper:
+  arxiv: "2502.11089"

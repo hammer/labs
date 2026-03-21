@@ -1,0 +1,13 @@
+name: InternVid
+slug: internvid
+lab: shanghai-ai-lab
+type: dataset
+date: 2023-07-01
+url: https://github.com/OpenGVLab/InternVideo
+description: >
+  Large-scale video-text dataset for multimodal generation.
+tags:
+  - video
+  - training-data
+  - multimodal
+notes: Date approximate.

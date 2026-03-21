@@ -1,0 +1,14 @@
+name: "CogVLM2-Video: Visual Understanding with Multi-frame Time Localization"
+slug: cogvlm2-video-paper
+lab: zai
+type: paper
+date: 2026-01-01
+url: https://z.ai
+description: >
+  Paper on multi-frame time localization for precise video understanding.
+tags:
+  - vlm
+  - video
+related:
+  - cogvlm
+notes: Date approximate.

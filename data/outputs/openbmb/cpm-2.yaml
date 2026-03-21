@@ -1,0 +1,15 @@
+name: CPM-2
+slug: cpm-2
+lab: openbmb
+type: model
+date: 2021-06-01
+url: https://github.com/TsinghuaAI/CPM
+description: >
+  198B parameter MoE model, supported by BAAI.
+tags:
+  - moe
+  - open-weight
+model:
+  architecture: moe
+  parameters: 198B
+notes: Date approximate.

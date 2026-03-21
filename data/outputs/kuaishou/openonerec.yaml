@@ -1,0 +1,13 @@
+name: OpenOneRec
+slug: openonerec
+lab: kuaishou
+type: library
+date: 2025-06-01
+url: https://github.com/kuaishou-langlab
+description: >
+  Open framework and benchmark for generative recommendation based on the
+  Qwen3 backbone.
+tags:
+  - recommendation
+  - framework
+notes: Date approximate.

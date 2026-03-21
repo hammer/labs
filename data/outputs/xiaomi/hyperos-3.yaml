@@ -1,0 +1,14 @@
+name: HyperOS 3
+slug: hyperos-3
+lab: xiaomi
+type: announcement
+date: 2025-10-01
+url: https://www.mi.com
+description: >
+  First operating system with a system-level AI layer (HyperAI) integrated
+  across smartphones, Xiaomi SU7/SU8 vehicles, and IoT devices.
+tags:
+  - on-device
+  - infrastructure
+  - ecosystem
+notes: Date approximate.

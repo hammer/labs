@@ -1,0 +1,15 @@
+name: CPM-Ant & CPM-Bee
+slug: cpm-bee
+lab: openbmb
+type: model
+date: 2023-05-01
+url: https://github.com/OpenBMB/CPM-Bee
+description: >
+  Multilingual models featuring CPM-Live training protocol, showcasing
+  "live" model checkpoints during training.
+tags:
+  - multilingual
+  - open-weight
+library:
+  github: https://github.com/OpenBMB/CPM-Bee
+notes: Date approximate.

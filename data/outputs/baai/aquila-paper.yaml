@@ -1,0 +1,14 @@
+name: "Aquila: Open Source Bilingual Language Model Technical Report"
+slug: aquila-paper
+lab: baai
+type: paper
+date: 2023-06-01
+url: https://www.baai.ac.cn
+description: >
+  Technical report for the first open-source Chinese-regulation-compliant LLM.
+tags:
+  - open-source
+  - multilingual
+related:
+  - aquila
+notes: Date approximate.

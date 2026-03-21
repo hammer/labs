@@ -1,0 +1,26 @@
+name: Wu Dao 1.0
+slug: wu-dao-1.0
+lab: baai
+type: model
+date: 2021-01-01
+url: https://www.baai.ac.cn
+description: >
+  China's first large-scale model family. Includes Wen Yuan (2.6B language),
+  Wen Lan (1B multimodal), Wen Hui (11.3B generative), and Wen Su (protein folding).
+tags:
+  - multimodal
+  - open-source
+model:
+  variants:
+    - name: Wen Yuan
+      parameters: 2.6B
+      notes: Chinese language model
+    - name: Wen Lan
+      parameters: 1B
+      notes: Image-text multimodal
+    - name: Wen Hui
+      parameters: 11.3B
+      notes: Generative reasoning
+    - name: Wen Su
+      notes: Protein folding
+notes: Date approximate.

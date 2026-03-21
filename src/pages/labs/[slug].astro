@@ -22,6 +22,7 @@ const outputs = getOutputsForLab(slug!);
     </div>
     <p class="meta">
       {lab.region}
+      {lab.founded && <span> · Founded {lab.founded}</span>}
       {lab.parent && <span> · Part of {lab.parent}</span>}
     </p>
     {lab.description && <p class="description">{lab.description}</p>}

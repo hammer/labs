@@ -1,0 +1,16 @@
+name: Lightning Linear Attention
+slug: lightning-linear-attention
+lab: ant-group
+type: paper
+date: 2025-06-01
+url: https://huggingface.co/inclusionAI
+description: >
+  Fundamental architectural research allowing the Ling series to process
+  massive context windows with minimal memory overhead.
+tags:
+  - architecture
+  - attention
+  - efficiency
+related:
+  - ling-2.5-1t
+notes: Date approximate.

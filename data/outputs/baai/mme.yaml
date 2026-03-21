@@ -1,0 +1,13 @@
+name: MME (Multimodal Evaluation)
+slug: mme
+lab: baai
+type: dataset
+date: 2023-06-01
+url: https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models
+description: >
+  Comprehensive benchmark for vision-language models.
+tags:
+  - benchmark
+  - multimodal
+  - evaluation
+notes: Date approximate.

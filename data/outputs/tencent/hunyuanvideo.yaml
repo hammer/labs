@@ -1,0 +1,15 @@
+name: HunyuanVideo
+slug: hunyuanvideo
+lab: tencent
+type: model
+date: 2024-12-01
+url: https://github.com/Tencent/HunyuanVideo
+description: >
+  Systematic framework for high-fidelity video generation.
+tags:
+  - video
+  - generation
+  - open-weight
+library:
+  github: https://github.com/Tencent/HunyuanVideo
+notes: Date approximate.

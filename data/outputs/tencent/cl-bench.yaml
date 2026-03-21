@@ -1,0 +1,12 @@
+name: CL-bench
+slug: cl-bench
+lab: tencent
+type: dataset
+date: 2026-02-01
+url: https://huggingface.co/tencent
+description: >
+  Benchmark for evaluating the "context learning" abilities of long-context models.
+tags:
+  - benchmark
+  - long-context
+notes: Date approximate.

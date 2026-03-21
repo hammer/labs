@@ -1,0 +1,15 @@
+name: "DeepSeekMath: Pushing the Limits of Mathematical Reasoning"
+slug: deepseek-math
+lab: deepseek
+type: paper
+date: 2024-02-01
+url: https://arxiv.org/abs/2402.03300
+description: >
+  Introduced Group Relative Policy Optimization (GRPO) for mathematical reasoning.
+tags:
+  - math
+  - reasoning
+  - reinforcement-learning
+paper:
+  arxiv: "2402.03300"
+notes: Date approximate.

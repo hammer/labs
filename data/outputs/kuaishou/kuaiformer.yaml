@@ -1,0 +1,12 @@
+name: KuaiFormer
+slug: kuaiformer
+lab: kuaishou
+type: library
+date: 2024-11-01
+url: https://github.com/kuaishou-langlab
+description: >
+  Transformer-based retrieval framework for real-time industrial content recommendation.
+tags:
+  - recommendation
+  - infrastructure
+notes: Date approximate.

@@ -1,0 +1,17 @@
+name: MiniCPM3-4B
+slug: minicpm3-4b
+lab: openbmb
+type: model
+date: 2024-09-01
+url: https://huggingface.co/openbmb
+description: >
+  Optimized for reasoning and RAG, matching performance of 7B-9B models
+  like Llama 3.1-8B.
+tags:
+  - on-device
+  - reasoning
+  - rag
+model:
+  architecture: dense
+  parameters: 4B
+notes: Date approximate.

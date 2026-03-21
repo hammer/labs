@@ -1,0 +1,14 @@
+name: "Xiaomi-Robotics-0: Open-Sourced VLA Model"
+slug: xiaomi-robotics-0-paper
+lab: xiaomi
+type: paper
+date: 2026-02-01
+url: https://huggingface.co/XiaomiMiMo
+description: >
+  Report on scaling Vision-Language-Action models for consumer GPUs.
+tags:
+  - robotics
+  - vlm
+related:
+  - xiaomi-robotics-0
+notes: Date approximate.

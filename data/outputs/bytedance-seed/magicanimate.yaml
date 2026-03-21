@@ -1,0 +1,16 @@
+name: MagicAnimate & Make Pixels Dance
+slug: magicanimate
+lab: bytedance-seed
+type: model
+date: 2023-11-01
+url: https://github.com/magic-research/magic-animate
+description: >
+  Viral diffusion-based models for human image animation and high-dynamic
+  video generation.
+tags:
+  - generation
+  - animation
+  - vision
+library:
+  github: https://github.com/magic-research/magic-animate
+notes: Date approximate.

@@ -1,0 +1,14 @@
+name: tFold
+slug: tfold
+lab: tencent
+type: model
+date: 2020-01-01
+url: https://drug.ai.tencent.com/console/en/tfold
+description: >
+  Protein structure prediction model rivaling AlphaFold in accuracy, released
+  for the life sciences community.
+tags:
+  - science
+  - biology
+  - protein-folding
+notes: Date approximate. Updated through 2025.

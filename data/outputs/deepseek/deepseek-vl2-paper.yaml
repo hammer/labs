@@ -1,0 +1,15 @@
+name: "DeepSeek-VL2: MoE Vision-Language Models"
+slug: deepseek-vl2-paper
+lab: deepseek
+type: paper
+date: 2024-12-13
+url: https://arxiv.org/abs/2412.10302
+description: >
+  MoE vision-language model for advanced multimodal understanding.
+tags:
+  - vlm
+  - moe
+paper:
+  arxiv: "2412.10302"
+related:
+  - deepseek-vl

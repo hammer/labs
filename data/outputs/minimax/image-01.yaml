@@ -1,0 +1,13 @@
+name: Image-01
+slug: image-01
+lab: minimax
+type: model
+date: 2025-01-01
+url: https://www.minimax.io
+description: >
+  Text-to-image model designed for cinematic-quality visuals at extremely low cost.
+tags:
+  - generation
+  - vision
+  - efficiency
+notes: Date approximate.

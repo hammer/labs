@@ -2,13 +2,39 @@ name: BAAI
 slug: baai
 url: https://www.baai.ac.cn
 huggingface: https://huggingface.co/BAAI
+github: https://github.com/FlagOpen
 region: china
+founded: 2018-11
 type: nonprofit
 description: >
-  Beijing Academy of Artificial Intelligence. Nonprofit institution
-  producing Wu Dao, Aquila models, and the FlagAI framework donated
-  to the Linux Foundation.
+  Beijing Academy of Artificial Intelligence. China's first non-profit AI
+  research institution, functioning as a collaborative hub bridging academic
+  research and industrial application. Founded by Baidu, ByteDance, Xiaomi,
+  Meituan, Megvii, Tsinghua, and Peking University. Famous for the Wu Dao
+  program and FlagOpen ecosystem. Operates the Jiuding computing platform
+  for domestic hardware training.
+people:
+  - name: Xinlong Wang
+    role: Core Researcher
+  - name: Shitao Xiao
+    role: BGE Lead
+relationships:
+  - lab: zai
+    type: collaboration
+    note: >
+      Close relationship with THUDM at Tsinghua. Early Wu Dao sub-models
+      (GLM, CogView) were collaborative. Z.ai spun off as commercial successor.
+  - lab: baidu
+    type: founding-member
+  - lab: bytedance-seed
+    type: founding-member
+  - lab: xiaomi
+    type: founding-member
+  - lab: meituan
+    type: founding-member
 tags:
   - nonprofit
   - open-source
   - open-weight
+  - embeddings
+  - multimodal

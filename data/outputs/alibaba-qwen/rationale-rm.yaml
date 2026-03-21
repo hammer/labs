@@ -1,0 +1,12 @@
+name: RationaleRM
+slug: rationale-rm
+lab: alibaba-qwen
+type: dataset
+date: 2025-06-01
+url: https://huggingface.co/Qwen
+description: >
+  Dataset for training reasoning reward models.
+tags:
+  - reasoning
+  - reward-model
+notes: Date approximate.

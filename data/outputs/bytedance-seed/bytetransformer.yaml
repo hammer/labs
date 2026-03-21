@@ -1,0 +1,14 @@
+name: ByteTransformer
+slug: bytetransformer
+lab: bytedance-seed
+type: library
+date: 2022-06-01
+url: https://github.com/bytedance/ByteTransformer
+description: >
+  High-performance Transformer implementation optimized for variable-length sequences.
+tags:
+  - infrastructure
+  - kernels
+library:
+  github: https://github.com/bytedance/ByteTransformer
+notes: Date approximate.

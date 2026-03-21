@@ -1,0 +1,17 @@
+name: Kolors
+slug: kolors
+lab: kuaishou
+type: model
+date: 2024-05-01
+url: https://github.com/Kwai-Kolors/Kolors
+description: >
+  Large-scale text-to-image diffusion model based on the General Language Model
+  (GLM), optimized for high-quality Chinese and English text rendering.
+tags:
+  - generation
+  - vision
+  - diffusion
+  - open-weight
+library:
+  github: https://github.com/Kwai-Kolors/Kolors
+notes: Date approximate.

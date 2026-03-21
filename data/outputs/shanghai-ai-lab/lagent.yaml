@@ -1,0 +1,14 @@
+name: Lagent & AgentLego
+slug: lagent
+lab: shanghai-ai-lab
+type: library
+date: 2023-08-01
+url: https://github.com/InternLM/lagent
+description: >
+  Frameworks for building LLM-based agents that can use external tools and APIs.
+tags:
+  - agentic
+  - framework
+library:
+  github: https://github.com/InternLM/lagent
+notes: Date approximate.

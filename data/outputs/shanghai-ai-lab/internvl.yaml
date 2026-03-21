@@ -1,0 +1,24 @@
+name: InternVL Series
+slug: internvl
+lab: shanghai-ai-lab
+type: model
+date: 2023-12-01
+url: https://github.com/OpenGVLab/InternVL
+description: >
+  Pioneering open-source vision-language series rivaling GPT-4V. InternVL 3.5
+  (Aug 2025) introduced native vision-language-action capabilities.
+tags:
+  - vlm
+  - open-weight
+  - frontier
+model:
+  variants:
+    - name: InternVL 1.0
+    - name: InternVL 1.5
+    - name: InternVL 2.0
+    - name: InternVL 2.5
+    - name: InternVL 3.5
+      notes: Aug 2025, native VLA capabilities
+library:
+  github: https://github.com/OpenGVLab/InternVL
+notes: Date approximate.

@@ -1,0 +1,17 @@
+name: Step-3-VL-10B
+slug: step-3-vl-10b
+lab: stepfun
+type: model
+date: 2026-01-01
+url: https://huggingface.co/stepfun-ai
+description: >
+  "Compact giant" outperforming models 20x its size (including GPT-4o on
+  certain benchmarks) via fully unfrozen perception-decoder training.
+tags:
+  - vlm
+  - efficiency
+  - open-weight
+model:
+  architecture: dense
+  parameters: 10B
+notes: Date approximate.

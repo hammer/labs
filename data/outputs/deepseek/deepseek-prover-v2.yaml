@@ -1,0 +1,16 @@
+name: "DeepSeek-Prover-V2: Advancing Formal Mathematical Reasoning"
+slug: deepseek-prover-v2
+lab: deepseek
+type: paper
+date: 2025-04-30
+url: https://arxiv.org/abs/2504.21801
+description: >
+  RL for subgoal decomposition in formal mathematical reasoning.
+tags:
+  - math
+  - reasoning
+  - theorem-proving
+paper:
+  arxiv: "2504.21801"
+related:
+  - deepseek-prover

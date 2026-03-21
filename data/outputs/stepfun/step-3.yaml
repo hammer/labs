@@ -1,0 +1,18 @@
+name: Step-3
+slug: step-3
+lab: stepfun
+type: model
+date: 2025-07-01
+url: https://www.stepfun.com
+description: >
+  321B parameter MoE model (38B active) designed for high-efficiency
+  multimodal reasoning.
+tags:
+  - moe
+  - reasoning
+  - multimodal
+model:
+  architecture: moe
+  parameters: 321B
+  active_parameters: 38B
+notes: Date approximate.

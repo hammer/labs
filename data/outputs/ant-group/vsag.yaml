@@ -1,0 +1,16 @@
+name: VSAG
+slug: vsag
+lab: ant-group
+type: library
+date: 2024-01-01
+url: https://github.com/alipay/vsag
+description: >
+  High-performance vector indexing library for similarity searches in RAG
+  (Retrieval-Augmented Generation).
+tags:
+  - infrastructure
+  - rag
+  - search
+library:
+  github: https://github.com/alipay/vsag
+notes: Date approximate.

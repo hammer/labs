@@ -1,0 +1,15 @@
+name: "Kling: A Diffusion-based Transformer for High-Quality Video Generation"
+slug: kling-paper
+lab: kuaishou
+type: paper
+date: 2024-06-01
+url: https://www.kuaishou.com
+description: >
+  Technical paper on the Kling video generation architecture.
+tags:
+  - video
+  - generation
+  - diffusion
+related:
+  - kling-1.0
+notes: Date approximate.

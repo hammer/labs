@@ -1,0 +1,14 @@
+name: Hunyuan Turbo S
+slug: hunyuan-turbo-s
+lab: tencent
+type: model
+date: 2026-02-01
+url: https://llm.hunyuan.tencent.com
+description: >
+  "Fast-thinking" model using a Hybrid-Mamba-Transformer architecture for
+  near-instant replies with complex reasoning. Designed to rival DeepSeek-R1.
+tags:
+  - reasoning
+  - efficiency
+  - mamba
+notes: Date approximate.

@@ -1,0 +1,14 @@
+name: GLM-10B
+slug: glm-10b
+lab: zai
+type: model
+date: 2021-01-01
+url: https://github.com/THUDM/GLM
+description: >
+  Initial general-purpose foundational model.
+tags:
+  - open-weight
+model:
+  architecture: dense
+  parameters: 10B
+notes: Date approximate.

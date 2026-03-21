@@ -1,0 +1,17 @@
+name: MiniMax-Text-01
+slug: minimax-text-01
+lab: minimax
+type: model
+date: 2025-01-01
+url: https://huggingface.co/MiniMaxAI
+description: >
+  456B parameter MoE model with a 4-million-token context window.
+tags:
+  - moe
+  - long-context
+  - open-weight
+model:
+  architecture: moe
+  parameters: 456B
+  context_window: 4000000
+notes: Date approximate.

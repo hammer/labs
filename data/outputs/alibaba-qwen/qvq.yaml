@@ -1,0 +1,13 @@
+name: QVQ
+slug: qvq
+lab: alibaba-qwen
+type: model
+date: 2025-03-01
+url: https://huggingface.co/Qwen
+description: >
+  Multimodal reasoning model following the chain-of-thought (CoT) paradigm.
+tags:
+  - reasoning
+  - vlm
+  - open-weight
+notes: Date approximate.

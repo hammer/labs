@@ -1,0 +1,14 @@
+name: BMTools
+slug: bmtools
+lab: openbmb
+type: library
+date: 2023-04-01
+url: https://github.com/OpenBMB/BMTools
+description: >
+  Open-source framework for building tool-using agents (similar to OpenAI Plugins).
+tags:
+  - agentic
+  - framework
+library:
+  github: https://github.com/OpenBMB/BMTools
+notes: Date approximate.

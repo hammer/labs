@@ -1,0 +1,13 @@
+name: TQA (Temporal Question Answering)
+slug: tqa
+lab: zai
+type: dataset
+date: 2025-06-01
+url: https://huggingface.co/zai-org
+description: >
+  Dataset of 30,000 video records for fine-tuning time-sensitive vision models.
+tags:
+  - benchmark
+  - video
+  - vlm
+notes: Date approximate.

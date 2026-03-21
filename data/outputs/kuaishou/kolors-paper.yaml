@@ -1,0 +1,15 @@
+name: "Kolors: Effective Training of Diffusion Model for Photorealistic Text-to-Image Synthesis"
+slug: kolors-paper
+lab: kuaishou
+type: paper
+date: 2024-05-01
+url: https://github.com/Kwai-Kolors/Kolors
+description: >
+  Technical paper on the Kolors text-to-image diffusion model.
+tags:
+  - vision
+  - generation
+  - diffusion
+related:
+  - kolors
+notes: Date approximate.

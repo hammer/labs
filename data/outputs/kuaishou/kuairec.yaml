@@ -1,0 +1,12 @@
+name: KuaiRec
+slug: kuairec
+lab: kuaishou
+type: dataset
+date: 2022-01-01
+url: https://github.com/kuaishou-langlab
+description: >
+  Fully-observed dataset for recommender systems with near 100% density.
+tags:
+  - recommendation
+  - benchmark
+notes: Date approximate.

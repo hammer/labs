@@ -1,0 +1,12 @@
+name: SteptronOss
+slug: steptronoss
+lab: stepfun
+type: library
+date: 2025-06-01
+url: https://github.com/stepfun-ai
+description: >
+  Lightweight, AI-native training framework for LLMs (SFT, RLVR).
+tags:
+  - training
+  - framework
+notes: Date approximate.

@@ -1,7 +1,37 @@
 name: StepFun
 slug: stepfun
+url: https://www.stepfun.com
 huggingface: https://huggingface.co/stepfun-ai
+github: https://github.com/stepfun-ai
 region: china
+founded: 2023-04
 type: startup
-description: AI startup.
-tags: []
+description: >
+  One of China's "AI Tigers," distinguished by aggressive pursuit of scaling
+  laws, leadership in multimodal foundation models, and strategic bridge between
+  Chinese software and domestic hardware. Leads the Model-Chip Alliance with
+  Huawei, Biren, Moore Threads, and Enflame. Primary AI provider for Geely's
+  Agent OS in mass-produced vehicles.
+people:
+  - name: Jiang Daxin
+    role: Founder & CEO
+    formerly: Microsoft Asia-Pacific R&D (Chief Scientist)
+  - name: Yin Qi
+    role: Chairman
+    formerly: Megvii (CEO)
+  - name: Zhang Xiangyu
+    role: Chief Scientist
+    formerly: Known for ResNet and ShuffleNet
+  - name: Gang Yu
+    role: Video & Audio Lead
+  - name: Heung-Yeung Shum
+    role: Advisor
+    formerly: Microsoft (EVP)
+tags:
+  - frontier
+  - open-weight
+  - multimodal
+  - moe
+  - reasoning
+  - video
+  - audio

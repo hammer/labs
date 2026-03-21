@@ -1,0 +1,16 @@
+name: YOLOv6
+slug: yolov6
+lab: meituan
+type: library
+date: 2022-06-01
+url: https://github.com/meituan/YOLOv6
+description: >
+  High-performance single-stage object detector dedicated to industrial
+  applications. One of Meituan's most famous open-source contributions.
+tags:
+  - vision
+  - detection
+  - open-weight
+library:
+  github: https://github.com/meituan/YOLOv6
+notes: Date approximate. Updated through 2024.

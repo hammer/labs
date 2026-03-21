@@ -1,0 +1,16 @@
+name: EchoMimicV2 & V3
+slug: echomimic
+lab: ant-group
+type: paper
+date: 2025-06-01
+url: https://arxiv.org/abs/2407.08136
+description: >
+  Papers accepted at CVPR and AAAI focused on high-fidelity human animation
+  and multimodal generation.
+tags:
+  - multimodal
+  - generation
+  - animation
+paper:
+  arxiv: "2407.08136"
+notes: Date approximate.

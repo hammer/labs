@@ -1,0 +1,14 @@
+name: Scientific Judge
+slug: scientific-judge
+lab: baidu
+type: paper
+date: 2026-03-01
+url: https://www.baidu.com
+description: >
+  Introduced Reinforcement Learning from Community Feedback (RLCF) for
+  aligning AI with scientific reasoning.
+tags:
+  - alignment
+  - reasoning
+  - research
+notes: Date approximate.

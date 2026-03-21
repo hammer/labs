@@ -1,0 +1,16 @@
+name: ReasonDet
+slug: reasondet
+lab: meituan
+type: dataset
+date: 2023-12-01
+url: https://huggingface.co/meituan-longcat
+description: >
+  Benchmark for reasoning-based object detection.
+tags:
+  - benchmark
+  - vision
+  - detection
+  - reasoning
+related:
+  - lenna
+notes: Date approximate.

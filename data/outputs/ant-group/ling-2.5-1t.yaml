@@ -1,0 +1,19 @@
+name: Ling-2.5-1T
+slug: ling-2.5-1t
+lab: ant-group
+type: model
+date: 2026-02-01
+url: https://huggingface.co/inclusionAI
+description: >
+  Latest Ling iteration featuring Lightning Linear Attention, supporting a
+  1 million token context window and optimized for agentic interaction.
+tags:
+  - moe
+  - long-context
+  - agentic
+  - open-weight
+model:
+  architecture: moe
+  parameters: 1T
+  context_window: 1000000
+notes: Date approximate.

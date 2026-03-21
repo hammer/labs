@@ -1,0 +1,16 @@
+name: CPM.cu
+slug: cpm-cu
+lab: openbmb
+type: library
+date: 2025-01-01
+url: https://github.com/OpenBMB/cpm.cu
+description: >
+  Lightweight CUDA implementation for maximum LLM inference performance on
+  edge GPUs (RTX series and Jetson).
+tags:
+  - inference
+  - on-device
+  - kernels
+library:
+  github: https://github.com/OpenBMB/cpm.cu
+notes: Date approximate.

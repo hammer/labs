@@ -1,0 +1,15 @@
+name: CPM-1
+slug: cpm-1
+lab: openbmb
+type: model
+date: 2020-11-01
+url: https://github.com/TsinghuaAI/CPM-Generate
+description: >
+  One of the first large-scale Chinese pretrained language models (2.6B).
+tags:
+  - open-weight
+  - chinese
+model:
+  architecture: dense
+  parameters: 2.6B
+notes: Date approximate.

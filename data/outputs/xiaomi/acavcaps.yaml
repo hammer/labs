@@ -1,0 +1,13 @@
+name: ACAVCaps
+slug: acavcaps
+lab: xiaomi
+type: dataset
+date: 2025-06-01
+url: https://huggingface.co/XiaomiMiMo
+description: >
+  38,000-hour collection of general audio captions for training holistic
+  audio-reasoning models.
+tags:
+  - audio
+  - training-data
+notes: Date approximate.

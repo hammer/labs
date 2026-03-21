@@ -1,0 +1,15 @@
+name: Qianfan-OCR
+slug: qianfan-ocr
+lab: baidu
+type: paper
+date: 2026-03-01
+url: https://www.baidu.com
+description: >
+  Technical paper on a 4B parameter vision-language model using
+  Layout-as-Thought mechanisms.
+tags:
+  - ocr
+  - vlm
+model:
+  parameters: 4B
+notes: Date approximate.

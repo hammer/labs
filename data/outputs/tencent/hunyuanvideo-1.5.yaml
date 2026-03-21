@@ -1,0 +1,13 @@
+name: HunyuanVideo-1.5
+slug: hunyuanvideo-1.5
+lab: tencent
+type: model
+date: 2026-02-01
+url: https://github.com/Tencent/HunyuanVideo
+description: >
+  Leading lightweight version optimized for consumer GPUs.
+tags:
+  - video
+  - generation
+  - efficiency
+notes: Date approximate.

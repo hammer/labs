@@ -1,0 +1,14 @@
+name: Tencent AI Lab Embedding Corpus
+slug: tencent-embedding-corpus
+lab: tencent
+type: dataset
+date: 2018-10-01
+url: https://ai.tencent.com/ailab/nlp/en/embedding.html
+description: >
+  One of the most widely used datasets for Chinese NLP, providing 200-dimension
+  vectors for 8 million Chinese words and phrases.
+tags:
+  - nlp
+  - chinese
+  - embeddings
+notes: Date approximate.

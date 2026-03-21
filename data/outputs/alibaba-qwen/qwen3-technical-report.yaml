@@ -2,7 +2,7 @@ name: Qwen3 Technical Report
 slug: qwen3-technical-report
 lab: alibaba-qwen
 type: paper
-date: 2025-05-19
+date: 2025-05-14
 url: https://arxiv.org/abs/2505.09388
 description: >
   Hybrid reasoning architecture. 6 dense models (0.6B, 1.7B, 4B, 8B, 14B, 32B)

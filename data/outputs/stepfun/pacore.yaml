@@ -1,0 +1,13 @@
+name: "PaCoRe: Learning to Scale Test-Time Compute"
+slug: pacore
+lab: stepfun
+type: paper
+date: 2025-06-01
+url: https://huggingface.co/stepfun-ai
+description: >
+  Research on parallel coordinated reasoning to improve agentic accuracy.
+tags:
+  - reasoning
+  - agentic
+  - research
+notes: Date approximate.

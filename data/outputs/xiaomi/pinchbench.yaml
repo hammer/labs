@@ -1,0 +1,12 @@
+name: PinchBench & ClawEval
+slug: pinchbench
+lab: xiaomi
+type: dataset
+date: 2026-01-01
+url: https://huggingface.co/XiaomiMiMo
+description: >
+  Benchmarks for evaluating multi-step agentic capabilities.
+tags:
+  - benchmark
+  - agentic
+notes: Date approximate.

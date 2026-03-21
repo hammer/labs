@@ -1,0 +1,14 @@
+name: Scientific Judge Dataset
+slug: scientific-judge-dataset
+lab: baidu
+type: dataset
+date: 2026-03-01
+url: https://www.baidu.com
+description: >
+  Dataset of 700,000 scientific preference signals for alignment research.
+tags:
+  - alignment
+  - reasoning
+related:
+  - scientific-judge
+notes: Date approximate.

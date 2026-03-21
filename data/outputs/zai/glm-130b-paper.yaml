@@ -1,0 +1,16 @@
+name: "GLM-130B: An Open Bilingual Pre-trained Model"
+slug: glm-130b-paper
+lab: zai
+type: paper
+date: 2022-08-01
+url: https://arxiv.org/abs/2210.02414
+description: >
+  Technical paper for the landmark 130B bilingual model.
+tags:
+  - scaling
+  - multilingual
+paper:
+  arxiv: "2210.02414"
+related:
+  - glm-130b
+notes: Date approximate.

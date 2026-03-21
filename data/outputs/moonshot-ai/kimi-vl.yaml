@@ -1,0 +1,16 @@
+name: Kimi-VL
+slug: kimi-vl
+lab: moonshot-ai
+type: model
+date: 2025-04-01
+url: https://huggingface.co/moonshotai/Kimi-VL-A3B-Thinking
+description: >
+  Open-source 16B parameter MoE vision-language model.
+tags:
+  - vlm
+  - moe
+  - open-weight
+model:
+  architecture: moe
+  parameters: 16B
+notes: Date approximate.

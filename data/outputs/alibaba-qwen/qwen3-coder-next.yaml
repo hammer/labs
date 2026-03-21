@@ -2,7 +2,7 @@ name: Qwen3-Coder-Next
 slug: qwen3-coder-next
 lab: alibaba-qwen
 type: model
-date: 2026-02-02
+date: 2026-02-03
 url: https://qwen.ai/blog?id=qwen3-coder-next
 links:
   - label: Hugging Face

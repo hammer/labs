@@ -1,0 +1,13 @@
+name: "ChatDev: Communicative Agents for Software Development"
+slug: chatdev
+lab: openbmb
+type: paper
+date: 2023-07-16
+url: https://arxiv.org/abs/2307.07924
+description: >
+  Multi-agent framework where agents communicate to develop software.
+tags:
+  - agentic
+  - coding
+paper:
+  arxiv: "2307.07924"

@@ -1,0 +1,12 @@
+name: Qwen3Guard
+slug: qwen3guard
+lab: alibaba-qwen
+type: model
+date: 2025-06-01
+url: https://huggingface.co/Qwen
+description: >
+  Safety-specialized guardrail model for real-time token stream moderation.
+tags:
+  - safety
+  - guardrails
+notes: Date approximate.

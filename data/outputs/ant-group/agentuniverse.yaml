@@ -1,0 +1,14 @@
+name: agentUniverse
+slug: agentuniverse
+lab: ant-group
+type: library
+date: 2024-06-01
+url: https://github.com/alipay/agentUniverse
+description: >
+  Comprehensive multi-agent framework designed for industrial-scale agentic AI.
+tags:
+  - agentic
+  - framework
+library:
+  github: https://github.com/alipay/agentUniverse
+notes: Date approximate.

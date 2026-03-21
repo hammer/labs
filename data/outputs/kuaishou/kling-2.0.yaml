@@ -1,0 +1,14 @@
+name: Kling 2.0/2.6
+slug: kling-2.0
+lab: kuaishou
+type: model
+date: 2025-01-01
+url: https://www.kuaishou.com
+description: >
+  Introduced simultaneous audio-visual generation and "Elements" for
+  character/object consistency.
+tags:
+  - video
+  - generation
+  - audio
+notes: Date approximate.

@@ -1,0 +1,14 @@
+name: "DeepSeek-VL: Towards Real-World Vision-Language Understanding"
+slug: deepseek-vl-paper
+lab: deepseek
+type: paper
+date: 2024-03-08
+url: https://arxiv.org/abs/2403.05525
+description: >
+  Vision-language model with dynamic tiling encoder for high-resolution images.
+tags:
+  - vlm
+paper:
+  arxiv: "2403.05525"
+related:
+  - deepseek-vl

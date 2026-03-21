@@ -1,0 +1,15 @@
+name: XTuner
+slug: xtuner
+lab: shanghai-ai-lab
+type: library
+date: 2023-07-01
+url: https://github.com/InternLM/xtuner
+description: >
+  Lightweight fine-tuning toolkit integrating core PEFT methods like LoRA and QLoRA.
+tags:
+  - peft
+  - training
+  - framework
+library:
+  github: https://github.com/InternLM/xtuner
+notes: Date approximate.

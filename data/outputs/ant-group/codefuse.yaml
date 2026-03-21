@@ -1,0 +1,13 @@
+name: CodeFuse
+slug: codefuse
+lab: ant-group
+type: model
+date: 2023-09-01
+url: https://github.com/codefuse-ai
+description: >
+  Specialized LLM series for the full software development lifecycle
+  (coding, testing, and DevOps).
+tags:
+  - coding
+  - open-weight
+notes: Date approximate.

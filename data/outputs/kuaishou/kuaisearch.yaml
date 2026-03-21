@@ -1,0 +1,13 @@
+name: KuaiSearch
+slug: kuaisearch
+lab: kuaishou
+type: dataset
+date: 2026-02-01
+url: https://github.com/kuaishou-langlab
+description: >
+  Large-scale e-commerce search dataset covering recall, ranking, and relevance.
+tags:
+  - search
+  - e-commerce
+  - benchmark
+notes: Date approximate.

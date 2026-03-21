@@ -1,0 +1,16 @@
+name: MiniCPM-SALA
+slug: minicpm-sala
+lab: openbmb
+type: model
+date: 2026-02-01
+url: https://huggingface.co/openbmb
+description: >
+  Landmark release using Sparse and Linear Attention for 1M-token context
+  windows on a single consumer-grade smartphone.
+tags:
+  - on-device
+  - long-context
+  - efficiency
+model:
+  context_window: 1000000
+notes: Date approximate.

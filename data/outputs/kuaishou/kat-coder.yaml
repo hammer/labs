@@ -1,0 +1,19 @@
+name: KAT-Coder
+slug: kat-coder
+lab: kuaishou
+type: model
+date: 2025-10-01
+url: https://huggingface.co/Kwaipilot
+description: >
+  72B active parameter MoE coding model using the "AutoThink" paradigm.
+  Designed for agentic coding with parallel tool calls to reduce interaction
+  latency.
+tags:
+  - coding
+  - moe
+  - agentic
+  - reasoning
+model:
+  architecture: moe
+  active_parameters: 72B
+notes: Date approximate.

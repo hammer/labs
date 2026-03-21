@@ -1,0 +1,15 @@
+name: DeepSeek-ProverBench
+slug: deepseek-proverbench
+lab: deepseek
+type: dataset
+date: 2024-06-01
+url: https://huggingface.co/deepseek-ai
+description: >
+  Benchmark for formal mathematical proving.
+tags:
+  - benchmark
+  - math
+  - theorem-proving
+related:
+  - deepseek-prover
+notes: Date approximate.

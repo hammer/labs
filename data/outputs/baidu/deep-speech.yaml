@@ -1,0 +1,14 @@
+name: Deep Speech 1 & 2
+slug: deep-speech
+lab: baidu
+type: paper
+date: 2014-12-01
+url: https://arxiv.org/abs/1412.5567
+description: >
+  Landmark papers in end-to-end deep learning for speech recognition.
+tags:
+  - speech
+  - audio
+paper:
+  arxiv: "1412.5567"
+notes: Date approximate. Deep Speech 2 followed in 2015.

@@ -1,0 +1,13 @@
+name: CF-Div2-Stepfun
+slug: cf-div2
+lab: stepfun
+type: dataset
+date: 2025-06-01
+url: https://huggingface.co/stepfun-ai
+description: >
+  Specialized evaluation set for competitive programming and math reasoning.
+tags:
+  - benchmark
+  - coding
+  - math
+notes: Date approximate.

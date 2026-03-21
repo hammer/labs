@@ -1,0 +1,17 @@
+name: Delta Tuning Toolkit
+slug: delta-tuning-toolkit
+lab: openbmb
+type: library
+date: 2022-06-01
+url: https://github.com/thunlp/OpenDelta
+description: >
+  Official implementation of PEFT research for parameter-efficient fine-tuning.
+tags:
+  - peft
+  - training
+  - framework
+library:
+  github: https://github.com/thunlp/OpenDelta
+related:
+  - delta-tuning
+notes: Date approximate.

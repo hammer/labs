@@ -1,0 +1,12 @@
+name: Seed3D 1.0
+slug: seed3d
+lab: bytedance-seed
+type: model
+date: 2025-10-01
+url: https://huggingface.co/ByteDance-Seed
+description: >
+  Foundation model for generating simulation-ready 3D assets from single images.
+tags:
+  - 3d
+  - generation
+notes: Date approximate.

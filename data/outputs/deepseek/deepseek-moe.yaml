@@ -1,0 +1,19 @@
+name: DeepSeek-MoE
+slug: deepseek-moe
+lab: deepseek
+type: model
+date: 2024-01-11
+url: https://huggingface.co/deepseek-ai/deepseek-moe-16b-chat
+description: >
+  Pioneering 16B Mixture-of-Experts model with only 2.8B active parameters,
+  setting the stage for DeepSeek's future efficiency focus.
+tags:
+  - moe
+  - efficiency
+  - open-weight
+model:
+  architecture: moe
+  parameters: 16B
+  active_parameters: 2.8B
+related:
+  - deepseek-moe-paper

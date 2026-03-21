@@ -1,0 +1,12 @@
+name: WeKnora
+slug: weknora
+lab: tencent
+type: library
+date: 2025-06-01
+url: https://github.com/Tencent
+description: >
+  LLM-powered RAG framework for deep document understanding and semantic retrieval.
+tags:
+  - rag
+  - framework
+notes: Date approximate.

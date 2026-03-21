@@ -1,0 +1,17 @@
+name: ChatGLM-6B
+slug: chatglm-6b
+lab: zai
+type: model
+date: 2023-03-01
+url: https://github.com/THUDM/ChatGLM-6B
+description: >
+  High-efficiency open-source model that sparked a wave of local LLM deployment.
+tags:
+  - open-weight
+  - efficiency
+model:
+  architecture: dense
+  parameters: 6B
+library:
+  github: https://github.com/THUDM/ChatGLM-6B
+notes: Date approximate.

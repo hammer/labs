@@ -1,0 +1,18 @@
+name: BAGEL
+slug: bagel
+lab: bytedance-seed
+type: model
+date: 2025-06-01
+url: https://huggingface.co/ByteDance-Seed
+description: >
+  14B MoE unified multimodal model integrating vision-understanding and
+  image-generation into a single framework.
+tags:
+  - multimodal
+  - moe
+  - generation
+  - open-weight
+model:
+  architecture: moe
+  parameters: 14B
+notes: Date approximate.
