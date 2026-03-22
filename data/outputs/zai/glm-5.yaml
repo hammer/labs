@@ -2,6 +2,7 @@ name: GLM-5
 slug: glm-5
 lab: zai
 date: 2026-02-11
+flagship: true
 sources:
   - label: Blog Post
     url: https://z.ai/blog/glm-5

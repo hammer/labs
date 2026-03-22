@@ -2,6 +2,7 @@ name: Kimi k1.5
 slug: kimi-k1.5
 lab: moonshot-ai
 date: 2025-01-20
+flagship: true
 sources:
   - label: "Paper (arXiv)"
     url: https://arxiv.org/abs/2501.12599

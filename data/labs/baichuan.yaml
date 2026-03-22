@@ -8,14 +8,29 @@ region: china
 founded: 2023-04
 type: startup
 description: >
-  Chinese AI startup founded by Wang Xiaochuan, former CEO of Sogou.
-  Developed the Baichuan open-weight LLM series for Chinese/English,
-  then specialized into medical AI with the Baichuan-M series.
-  Baichuan-M3 achieved leading performance on medical benchmarks.
+  <p>Baichuan Intelligence (&#30334;&#24029;&#26234;&#33021;) was founded in April 2023 by
+  <a href="https://en.wikipedia.org/wiki/Wang_Xiaochuan">Wang Xiaochuan</a>, the
+  former CEO of <a href="https://en.wikipedia.org/wiki/Sogou">Sogou</a> (acquired by
+  Tencent for $3.5B in 2021). Wang is one of the most prominent tech entrepreneurs in
+  China, having built Sogou from a search startup into a major internet platform.</p>
+
+  <p>The company raised $300M in its
+  <a href="https://www.reuters.com/technology/chinese-ai-startup-baichuan-raises-300-mln-alibaba-led-funding-round-2023-10-17/">Series A
+  from Alibaba, Tencent, and others</a> in October 2023, reaching a reported $1.8B
+  valuation. It initially produced general-purpose open-weight LLMs (Baichuan-7B
+  through Baichuan-4) optimized for Chinese and English, but made a distinctive
+  strategic pivot into <strong>medical AI</strong> starting in 2024.</p>
+
+  <p>The <strong>Baichuan-M series</strong> (M1, M2, M3) represents this medical
+  specialization, with Baichuan-M3 achieving leading performance on medical
+  benchmarks. The company positions itself as building "AI for healthcare" rather
+  than competing head-on in the crowded general-purpose LLM market. This pivot
+  leverages Wang Xiaochuan's long-standing interest in AI-powered search and
+  information retrieval applied to clinical settings.</p>
 people:
   - name: Wang Xiaochuan
     role: Founder & CEO
-    formerly: CEO of Sogou
+    formerly: Sogou (Founder & CEO)
   - name: Ru Liyun
     role: Co-founder
 tags:

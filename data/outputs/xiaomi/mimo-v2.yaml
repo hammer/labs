@@ -2,6 +2,7 @@ name: MiMo-V2
 slug: mimo-v2
 lab: xiaomi
 date: 2025-12-16
+flagship: true
 sources:
   - label: GitHub
     url: https://github.com/XiaomiMiMo/MiMo-V2-Flash

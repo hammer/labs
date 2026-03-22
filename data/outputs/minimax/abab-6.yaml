@@ -3,6 +3,7 @@ slug: abab-6
 lab: minimax
 type: model
 date: 2024-04-17
+flagship: true
 sources:
   - label: Announcement
     url: https://www.minimax.io/news/abab65-series

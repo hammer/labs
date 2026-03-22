@@ -1,77 +1,34 @@
-name: Wu Dao
+name: Wu Dao 1.0
 slug: wu-dao
 lab: baai
+type: model
 date: 2021-03-20
+flagship: true
 sources:
   - label: Announcement
     url: https://syncedreview.com/2021/03/23/chinas-gpt-3-baai-introduces-superscale-intelligence-model-wu-dao-1-0/
   - label: Website
     url: https://www.baai.ac.cn/en/system
 description: >
-  China's first large-scale model family. Wu Dao 1.0 introduced models across
-  language, multimodal, and protein domains. Wu Dao 2.0 scaled to 1.75T
-  parameters as the then-largest model in the world. Accompanied by the
-  Wu Dao Corpora (5TB dataset).
+  China's first large-scale model family. Includes Wen Yuan (2.6B language),
+  Wen Lan (1B multimodal), Wen Hui (11.3B generative), and Wen Su (protein folding).
 tags:
   - multimodal
   - open-source
-  - moe
   - frontier
-  - training-data
-outputs:
-  - name: Wu Dao 1.0
-    type: model
-    date: 2021-03-20
-    sources:
-      - label: Announcement
-        url: https://syncedreview.com/2021/03/23/chinas-gpt-3-baai-introduces-superscale-intelligence-model-wu-dao-1-0/
-      - label: Website
-        url: https://www.baai.ac.cn/en/system
-    description: >
-      China's first large-scale model family. Includes Wen Yuan (2.6B language),
-      Wen Lan (1B multimodal), Wen Hui (11.3B generative), and Wen Su (protein folding).
-    model:
-      variants:
-        - name: Wen Yuan
-          parameters: 2.6B
-          notes: Chinese language model
-        - name: Wen Lan
-          parameters: 1B
-          notes: Image-text multimodal
-        - name: Wen Hui
-          parameters: 11.3B
-          notes: Generative reasoning
-        - name: Wen Su
-          notes: Protein folding
-  - name: Wu Dao 2.0
-    type: model
-    date: 2021-06-01
-    sources:
-      - label: Announcement
-        url: http://www.china.org.cn/business/2021-06/03/content_77546375.htm
-      - label: Website
-        url: https://www.baai.ac.cn/en/system
-    description: >
-      Landmark 1.75 trillion parameter MoE model, at the time the largest in
-      the world, outscaling GPT-3.
-    model:
-      architecture: moe
-      parameters: 1.75T
-  - name: "Wu Dao 2.0: A Roadmap to Cognitive Intelligence"
-    type: paper
-    date: 2021-06-01
-    sources:
-      - label: Website
-        url: https://www.baai.ac.cn/en/system
-    description: >
-      Roadmap paper for the Wu Dao 2.0 cognitive intelligence program.
-  - name: Wu Dao Corpora
-    type: dataset
-    date: 2021-06-01
-    sources:
-      - label: Dataset
-        url: https://data.baai.ac.cn/details/WuDaoCorporaText
-      - label: Paper
-        url: https://www.sciencedirect.com/science/article/pii/S2666651021000152
-    description: >
-      Massive 5TB high-quality Chinese/English dataset.
+model:
+  variants:
+    - name: Wen Yuan
+      parameters: 2.6B
+      notes: Chinese language model
+    - name: Wen Lan
+      parameters: 1B
+      notes: Image-text multimodal
+    - name: Wen Hui
+      parameters: 11.3B
+      notes: Generative reasoning
+    - name: Wen Su
+      notes: Protein folding
+related:
+  - wu-dao-2.0
+  - wu-dao-corpora

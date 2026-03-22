@@ -2,6 +2,7 @@ name: ERNIE 5.0
 slug: ernie-5.0
 lab: baidu
 date: 2026-01-22
+flagship: true
 sources:
   - label: Announcement
     url: https://www.prnewswire.com/news-releases/baidu-unveils-ernie-5-0-and-a-series-of-ai-applications-at-baidu-world-2025--ramps-up-global-push-302614531.html

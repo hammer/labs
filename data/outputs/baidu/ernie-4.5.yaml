@@ -3,6 +3,7 @@ slug: ernie-4.5
 lab: baidu
 type: model
 date: 2025-03-16
+flagship: true
 sources:
   - label: Announcement
     url: https://www.prnewswire.com/news-releases/baidu-unveils-ernie-4-5-and-reasoning-model-ernie-x1--makes-ernie-bot-free-ahead-of-schedule-302402490.html

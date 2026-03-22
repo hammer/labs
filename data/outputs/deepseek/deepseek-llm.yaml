@@ -2,6 +2,7 @@ name: DeepSeek-LLM
 slug: deepseek-llm
 lab: deepseek
 date: 2023-11-29
+flagship: true
 sources:
   - label: GitHub
     url: https://github.com/deepseek-ai/DeepSeek-LLM

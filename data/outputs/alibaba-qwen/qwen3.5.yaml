@@ -2,6 +2,7 @@ name: Qwen3.5
 slug: qwen3.5
 lab: alibaba-qwen
 date: 2026-02-16
+flagship: true
 sources:
   - label: Blog Post
     url: https://qwen.ai/blog?id=qwen3.5

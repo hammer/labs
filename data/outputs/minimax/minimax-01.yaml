@@ -2,6 +2,7 @@ name: MiniMax-01
 slug: minimax-01
 lab: minimax
 date: 2025-01-14
+flagship: true
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2501.08313

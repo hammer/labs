@@ -4,18 +4,43 @@ url: https://www.volcengine.com
 wikipedia: https://en.wikipedia.org/wiki/ByteDance
 huggingface: https://huggingface.co/ByteDance-Seed
 github: https://github.com/bytedance
+artificialanalysis: https://artificialanalysis.ai/providers/bytedance-seed
 region: china
 founded: "2023"
 type: corporate
 description: >
-  ByteDance's AI ecosystem driven by two primary research powerhouses: the Seed
-  Team (LLMs, reasoning, multi-modal AGI) and the FoundationVision team
-  (next-generation visual architectures). Also includes the ByteDance AI Lab
-  and Volcengine cloud division. Responsible for the Doubao brand.
+  <p><a href="https://en.wikipedia.org/wiki/ByteDance">ByteDance</a>, the parent
+  company of <a href="https://en.wikipedia.org/wiki/TikTok">TikTok</a> and
+  <a href="https://en.wikipedia.org/wiki/Douyin">Douyin</a>, runs one of the
+  largest AI research operations in China. Its AI ecosystem is driven by two primary
+  research powerhouses: the <strong>Seed Team</strong> (LLMs, reasoning, multi-modal
+  AGI) and the <strong>FoundationVision Team</strong> (visual architectures including
+  <a href="https://github.com/DepthAnything">Depth Anything</a>). The Seed Team is
+  led by <a href="https://scholar.google.com/citations?user=XMVaM-IAAAAJ">Wu
+  Yonghui</a>, formerly Vice President at Google DeepMind, where he co-authored the
+  landmark <a href="https://arxiv.org/abs/1609.08144">Google Neural Machine
+  Translation</a> paper.</p>
+
+  <p>ByteDance's consumer AI products are branded under <strong>Doubao
+  (&#35910;&#21253;)</strong>, which became China's most-used AI chatbot by
+  monthly active users in 2024. The underlying models &mdash; Doubao-1.5-Pro,
+  Doubao-Seed-2.0, and SEED1.5/1.8 series &mdash; are served through the
+  <a href="https://www.volcengine.com/">Volcengine</a> cloud platform, ByteDance's
+  enterprise cloud division that also powers TikTok's infrastructure.</p>
+
+  <p>The company is notable for research in efficient training infrastructure
+  (the <a href="https://arxiv.org/abs/2402.15627">MegaScale</a> system paper),
+  <a href="https://github.com/linkedin/Liger-Kernel">Liger Kernel</a> for efficient
+  GPU triton kernels, and cutting-edge work in video/image generation including
+  <a href="https://github.com/bytedance/sdxl-lightning">SDXL Lightning</a> and
+  Seedance. ByteDance's massive compute resources from running TikTok at global
+  scale give the Seed Team significant infrastructure advantages.</p>
 people:
   - name: Wu Yonghui
-    role: Lead
-    formerly: Vice President at Google DeepMind
+    role: Seed Team Lead
+    formerly: Google DeepMind (VP)
+  - name: Zhang Liang
+    role: CEO
 tags:
   - frontier
   - open-weight

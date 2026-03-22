@@ -3,6 +3,7 @@ slug: hunyuan-large
 lab: tencent
 type: model
 date: 2024-11-04
+flagship: true
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2411.02265

@@ -4,30 +4,56 @@ url: https://www.stepfun.com
 wikipedia: https://en.wikipedia.org/wiki/StepFun
 huggingface: https://huggingface.co/stepfun-ai
 github: https://github.com/stepfun-ai
+artificialanalysis: https://artificialanalysis.ai/providers/stepfun
 region: china
 founded: 2023-04
 type: startup
 description: >
-  One of China's "AI Tigers," distinguished by aggressive pursuit of scaling
-  laws, leadership in multimodal foundation models, and strategic bridge between
-  Chinese software and domestic hardware. Leads the Model-Chip Alliance with
-  Huawei, Biren, Moore Threads, and Enflame. Primary AI provider for Geely's
-  Agent OS in mass-produced vehicles.
+  <p>StepFun is one of China's
+  "<a href="https://en.wikipedia.org/wiki/AI_companies_of_China">six AI tigers</a>,"
+  founded in April 2023 in Beijing. Distinguished by its multimodal-first approach
+  from inception, the company draws its core vision expertise from
+  <a href="https://www.megvii.com/">Megvii (Face++)</a> &mdash; Chairman Yin Qi is
+  Megvii's co-founder and CEO, and Chief Scientist Zhang Xiangyu is famous for
+  co-authoring <a href="https://arxiv.org/abs/1512.03385">ResNet</a> and
+  <a href="https://arxiv.org/abs/1707.01083">ShuffleNet</a> at Megvii Research.</p>
+
+  <p>Founder and CEO Jiang Daxin previously served as Corporate Vice President at
+  <a href="https://www.microsoft.com/">Microsoft</a>, leading Asia-Pacific internet
+  engineering. Advisor Heung-Yeung Shum is a former Executive Vice President of
+  Microsoft and former head of
+  <a href="https://www.msra.cn/">Microsoft Research Asia (MSRA)</a>, often called
+  the "Whampoa Military Academy" of Chinese AI for having trained a generation of
+  the country's top AI leaders.</p>
+
+  <p>StepFun has raised over $100M across multiple rounds from investors including
+  Tencent, Xiaomi, Lenovo Capital, and Source Code Capital, reaching an estimated
+  ~$2B valuation by mid-2024. The <strong>Step model series</strong> has iterated
+  rapidly from Step-1 through Step-3.5-Flash, spanning language, vision, video,
+  and audio modalities.</p>
+
+  <p>Strategically, StepFun leads a <strong>Model-Chip Alliance</strong> with
+  <a href="/labs/huawei-noah">Huawei</a>, Biren, Moore Threads, and Enflame to
+  validate models on domestic <a href="https://www.hiascend.com/">Ascend</a> chips,
+  addressing China's compute sovereignty challenges under US export controls. The
+  company is also the primary AI provider for
+  <a href="https://www.geely.com/">Geely Auto's</a> Agent OS in mass-produced
+  vehicles, powering multimodal in-cabin AI assistants.</p>
 people:
   - name: Jiang Daxin
     role: Founder & CEO
-    formerly: Microsoft Asia-Pacific R&D (Chief Scientist)
+    formerly: Microsoft (Corporate VP, Asia-Pacific)
   - name: Yin Qi
     role: Chairman
-    formerly: Megvii (CEO)
+    formerly: Megvii / Face++ (Co-founder & CEO)
   - name: Zhang Xiangyu
-    role: Chief Scientist
-    formerly: Known for ResNet and ShuffleNet
+    role: Co-founder & Chief Scientist
+    formerly: Megvii Research (ResNet, ShuffleNet)
   - name: Gang Yu
     role: Video & Audio Lead
   - name: Heung-Yeung Shum
     role: Advisor
-    formerly: Microsoft (EVP)
+    formerly: Microsoft (EVP); MSRA (Head)
 tags:
   - frontier
   - open-weight

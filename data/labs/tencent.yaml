@@ -5,26 +5,63 @@ wikipedia: https://en.wikipedia.org/wiki/Tencent
 founded: 1998-11
 huggingface: https://huggingface.co/tencent
 github: https://github.com/Tencent
+artificialanalysis: https://artificialanalysis.ai/providers/tencent
 region: china
 type: corporate
 description: >
-  One of the most diverse AI ecosystems in the world. Split between massive
-  industrial-scale Hunyuan family (powering search, ads, WeChat) and
-  fundamental research from Tencent AI Lab, Robotics X, and Quantum Lab.
-  Transitioned from closed-source API to leader in open-weight multimodal
-  models. Also known for "Social AI" and "Game AI" research.
+  <p><a href="https://en.wikipedia.org/wiki/Tencent">Tencent</a> (HKG: 0700) operates
+  one of the most diverse AI ecosystems in the world, backed by RMB 85.75 billion in
+  R&D spending in 2025 (a record high). Founded in 1998 by
+  <a href="https://en.wikipedia.org/wiki/Ma_Huateng">Ma Huateng (Pony Ma)</a>, the
+  company's AI efforts were historically split across
+  <a href="https://ai.tencent.com/ailab/">Tencent AI Lab</a> (founded 2016),
+  Robotics X, and Quantum Lab. In a
+  <a href="https://www.caixinglobal.com/2026-03-21/tencent-folds-ai-lab-into-hunyuan-team-in-major-ai-overhaul-102425495.html">major
+  March 2026 restructuring</a>, the AI Lab was disbanded and folded into the Hunyuan
+  team under new Chief AI Scientist <strong>Yao Shunyu</strong> (born 1997, Tsinghua
+  graduate, former OpenAI researcher and core contributor to Operator and Deep Research),
+  who reports directly to President Liu Chiping.</p>
+
+  <p>The <strong>Hunyuan</strong> model family is Tencent's flagship, evolving from
+  closed-source API to a leader in open-weight multimodal models.
+  <a href="https://github.com/Tencent-Hunyuan/HunyuanVideo">HunyuanVideo</a> (13B+
+  parameters, the largest open-source video generation model at launch, 3M+ HuggingFace
+  downloads), <a href="https://github.com/Tencent/Hunyuan3D-2">Hunyuan3D</a>, and
+  HunyuanImage 3.0 (80B MoE) represent Tencent's generation capabilities.
+  Hunyuan-Turbo-S (560B MoE) was the first ultra-large hybrid Mamba-Transformer
+  model, and Hunyuan-T1 (2025) introduced deep reasoning rivaling DeepSeek R1.</p>
+
+  <p>Beyond its own models, Tencent is a major investor in China's AI ecosystem,
+  holding significant stakes in <a href="/labs/kuaishou">Kuaishou</a> (~17%),
+  <a href="/labs/minimax">MiniMax</a>, <a href="/labs/moonshot-ai">Moonshot AI</a>,
+  <a href="/labs/baichuan">Baichuan</a>, and <a href="/labs/zai">Z.ai</a>. Tencent
+  pledged to at least double its RMB 18B AI product development spend in 2026.
+  Hunyuan 3.0 (~30B parameters) is expected April 2026, powering a new
+  <a href="https://en.wikipedia.org/wiki/WeChat">WeChat</a> AI agent.</p>
 people:
+  - name: Ma Huateng
+    role: Co-founder & CEO
+  - name: Yao Shunyu
+    role: Chief AI Scientist (since Dec 2025)
+    formerly: OpenAI (Operator, Deep Research contributor)
   - name: Yixiao Ge
-    role: Senior Researcher
+    role: Senior Researcher (ARC Lab, Hunyuan)
   - name: Ying Shan
-    role: Senior Researcher
+    role: Senior Researcher (ARC Lab)
 relationships:
   - lab: kuaishou
     type: investor
     note: >
       Tencent holds ~17-19% of Kuaishou but they are fierce rivals. WeChat
-      Video Accounts competes directly with Kuaishou. Tencent provides WeChat
-      integration as strategic support while competing via Channels.
+      Video Accounts competes directly with Kuaishou.
+  - lab: minimax
+    type: investor
+  - lab: moonshot-ai
+    type: investor
+  - lab: zai
+    type: investor
+  - lab: baichuan
+    type: investor
 tags:
   - frontier
   - open-weight

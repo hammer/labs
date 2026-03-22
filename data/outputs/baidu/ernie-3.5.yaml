@@ -3,6 +3,7 @@ slug: ernie-3.5
 lab: baidu
 type: model
 date: 2023-08-31
+flagship: true
 sources:
   - label: Announcement
     url: https://www.prnewswire.com/news-releases/baidu-unveils-ernie-bot-the-latest-generative-ai-mastering-chinese-language-and-multi-modal-generation-301774240.html

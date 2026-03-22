@@ -1,9 +1,11 @@
 ---
 import { isGrouped, getOutputTypes, type Output } from '../schema.js';
+import type { MetricsEntry } from '../schema.js';
+import { formatCompact } from '../utils.js';
 import TypeBadge from './TypeBadge.astro';
 
 interface Props {
-  output: Output;
+  output: Output & { _metrics?: MetricsEntry };
   showLab?: boolean;
   labSlug?: string;
 }
@@ -18,6 +20,8 @@ const excerpt = output.description
   : null;
 const types = getOutputTypes(output);
 const grouped = isGrouped(output);
+const m = (output as any)._metrics as MetricsEntry | undefined;
+const hasMetrics = m && (m.github_stars || m.hf_downloads || m.citations);
 ---
 
 <a href={`/outputs/${linkSlug}/${output.slug}`} class="card">
@@ -35,6 +39,13 @@ const grouped = isGrouped(output);
     {showLab && <span class="lab-name">{labs.join(', ')}</span>}
   </div>
   {excerpt && <p class="excerpt">{excerpt}</p>}
+  {hasMetrics && (
+    <div class="metrics-row">
+      {m!.github_stars && <span class="metric-badge" title="GitHub stars">&#9733; {formatCompact(m!.github_stars)}</span>}
+      {m!.hf_downloads && <span class="metric-badge" title="HuggingFace downloads">&#8595; {formatCompact(m!.hf_downloads)}</span>}
+      {m!.citations && <span class="metric-badge" title="Citations">&#128196; {formatCompact(m!.citations)}</span>}
+    </div>
+  )}
 </a>
 
 <style>
@@ -103,5 +114,25 @@ const grouped = isGrouped(output);
   .excerpt {
     font-size: 0.8rem;
     color: var(--text-muted);
+  }
+
+  .metrics-row {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .metric-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2em;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.15em 0.45em;
+    font-variant-numeric: tabular-nums;
   }
 </style>

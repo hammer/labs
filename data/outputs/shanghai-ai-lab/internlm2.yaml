@@ -2,6 +2,7 @@ name: InternLM2
 slug: internlm2
 lab: shanghai-ai-lab
 date: 2024-01-23
+flagship: true
 sources:
   - label: GitHub
     url: https://github.com/InternLM/InternLM

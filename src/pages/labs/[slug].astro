@@ -25,13 +25,14 @@ const outputs = getOutputsForLab(slug!);
       {lab.founded && <span> · Founded {lab.founded}</span>}
       {lab.parent && <span> · Part of {lab.parent}</span>}
     </p>
-    {lab.description && <p class="description">{lab.description}</p>}
+    {lab.description && <div class="description" set:html={lab.description} />}
 
     <div class="links">
       {lab.url && <a href={lab.url}>Website</a>}
       {lab.wikipedia && <a href={lab.wikipedia}>Wikipedia</a>}
       {lab.huggingface && <a href={lab.huggingface}>HuggingFace</a>}
       {lab.github && <a href={lab.github}>GitHub</a>}
+      {lab.artificialanalysis && <a href={lab.artificialanalysis}>Artificial Analysis</a>}
     </div>
 
     {lab.tags && <TagList tags={lab.tags} />}
@@ -68,13 +69,15 @@ const outputs = getOutputsForLab(slug!);
   )}
 
   <section class="section">
-    <h2>Outputs <span class="count">({outputs.length})</span></h2>
+    <h2 class="outputs-heading">Outputs <span class="count" id="output-count">({outputs.length})</span> <button class="flagship-toggle" id="flagship-toggle" aria-pressed="false">Flagship only</button></h2>
     {outputs.length === 0 ? (
       <p class="empty">No outputs yet.</p>
     ) : (
-      <div class="output-list">
+      <div class="output-list" id="output-list">
         {outputs.map((output) => (
-          <OutputCard output={output} labSlug={slug} />
+          <div class="output-item" data-flagship={output.flagship ? '1' : '0'}>
+            <OutputCard output={output} labSlug={slug} />
+          </div>
         ))}
       </div>
     )}
@@ -106,6 +109,15 @@ const outputs = getOutputsForLab(slug!);
   .description {
     margin-bottom: 0.75rem;
     font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .description p {
+    margin-bottom: 0.6rem;
+  }
+
+  .description p:last-child {
+    margin-bottom: 0;
   }
 
   .links {
@@ -151,6 +163,35 @@ const outputs = getOutputsForLab(slug!);
     color: var(--text-muted);
   }
 
+  .outputs-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .flagship-toggle {
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    background: var(--surface);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+
+  .flagship-toggle:hover {
+    border-color: var(--text-muted);
+    color: var(--text);
+  }
+
+  .flagship-toggle.active {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #fff;
+  }
+
   .output-list {
     display: grid;
     gap: 0.75rem;
@@ -161,3 +202,40 @@ const outputs = getOutputsForLab(slug!);
     font-size: 0.875rem;
   }
 </style>
+
+<script>
+  const toggle = document.getElementById('flagship-toggle')!;
+  const items = Array.from(document.querySelectorAll<HTMLElement>('.output-item'));
+  const countEl = document.getElementById('output-count')!;
+  const total = items.length;
+  let flagshipOnly = false;
+
+  function applyFilter() {
+    flagshipOnly = !flagshipOnly;
+    toggle.setAttribute('aria-pressed', String(flagshipOnly));
+    toggle.classList.toggle('active', flagshipOnly);
+
+    let visible = 0;
+    items.forEach(item => {
+      const show = !flagshipOnly || item.dataset.flagship === '1';
+      item.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+
+    countEl.textContent = visible < total
+      ? `(${visible} of ${total})`
+      : `(${total})`;
+  }
+
+  toggle.addEventListener('click', applyFilter);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+    if (e.target instanceof HTMLSelectElement) return;
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    if (e.key === 'f') {
+      e.preventDefault();
+      applyFilter();
+    }
+  });
+</script>

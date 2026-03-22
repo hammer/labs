@@ -1,0 +1,69 @@
+name: BGE-VL
+slug: bge-vl
+lab: baai
+date: 2025-03-06
+sources:
+  - label: HuggingFace (base)
+    url: https://huggingface.co/BAAI/BGE-VL-base
+  - label: HuggingFace (large)
+    url: https://huggingface.co/BAAI/BGE-VL-large
+  - label: GitHub (FlagEmbedding)
+    url: https://github.com/FlagOpen/FlagEmbedding
+  - label: BGE documentation
+    url: https://bge-model.com/bge/bge_vl.html
+description: >
+  State-of-the-art multimodal embedding models for visual search including
+  text-to-image, image-to-text, image+prompt-to-image, and text-to-image+text
+  retrieval. Achieves SOTA on 36 multimodal embedding evaluation tasks (MMEB).
+  Trained on the MegaPairs synthetic dataset (26M+ samples).
+tags:
+  - embeddings
+  - multimodal
+  - open-weight
+  - retrieval
+outputs:
+  - name: BGE-VL (Multimodal Embedding)
+    type: model
+    date: 2025-03-06
+    sources:
+      - label: HuggingFace (base)
+        url: https://huggingface.co/BAAI/BGE-VL-base
+      - label: HuggingFace (large)
+        url: https://huggingface.co/BAAI/BGE-VL-large
+      - label: GitHub (FlagEmbedding)
+        url: https://github.com/FlagOpen/FlagEmbedding
+      - label: BGE documentation
+        url: https://bge-model.com/bge/bge_vl.html
+    description: >
+      State-of-the-art multimodal embedding models for visual search.
+      BGE-VL-MLLM improves by 8.1pp over prior SOTA on the CIRCO benchmark.
+      Released under MIT license.
+    model:
+      variants:
+        - name: BGE-VL-base
+        - name: BGE-VL-large
+        - name: BGE-VL-MLLM-S1
+          notes: Trained on MegaPairs only
+        - name: BGE-VL-MLLM-S2
+          notes: Full fine-tuned variant
+        - name: BGE-VL-v1.5-zs
+          notes: Zero-shot variant
+        - name: BGE-VL-v1.5-mmeb
+          notes: MMEB fine-tuned variant
+  - name: MegaPairs
+    type: dataset
+    date: 2025-03-06
+    sources:
+      - label: GitHub
+        url: https://github.com/VectorSpaceLab/MegaPairs
+      - label: Paper (ACL 2025 Oral)
+        url: https://aclanthology.org/2025.acl-long.935.pdf
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2407.15190
+    description: >
+      Large-scale synthetic dataset of 26M+ multimodal retrieval triplets.
+      Accepted as ACL 2025 Oral. Released under MIT license.
+related:
+  - bge
+  - bge-m3
+  - flagembedding

@@ -5,15 +5,35 @@ wikipedia: https://en.wikipedia.org/wiki/Meituan
 founded: 2010-05
 huggingface: https://huggingface.co/meituan-longcat
 github: https://github.com/meituan
+artificialanalysis: https://artificialanalysis.ai/providers/longcat
 region: china
 type: corporate
 description: >
-  China's leading e-commerce and delivery giant, transitioned into a frontier
-  tech powerhouse. AI research driven by the Meituan AI Lab, AutoML Team, and
-  LongCat Team. Known for the LongCat trillion-parameter MoE series and the
-  "Super Brain" dispatch system performing 2.9 billion route calculations/hour.
-  Also operates autonomous delivery drones and L4 ground robots.
+  <p><a href="https://en.wikipedia.org/wiki/Meituan">Meituan</a> (HKG: 3690)
+  is China's largest on-demand services platform, founded in 2010 by
+  <a href="https://en.wikipedia.org/wiki/Wang_Xing">Wang Xing</a>. Originally a
+  Groupon-style deals platform, Meituan evolved into a super-app dominating food
+  delivery, hotel bookings, ride-hailing, and grocery commerce with over 690 million
+  annual transacting users. The company is publicly traded on the Hong Kong Stock
+  Exchange with a market cap exceeding $100B.</p>
+
+  <p>Meituan's AI research is driven by the <strong>Meituan AI Lab</strong>,
+  <strong>AutoML Team</strong>, and <strong>LongCat Team</strong>. The LongCat Team
+  (led by Xunliang Cai) produces the <strong>LongCat</strong> trillion-parameter MoE
+  model series, Meituan's flagship foundation model powering internal applications.
+  LongCat-Flash-Thinking represents Meituan's push into reasoning models.</p>
+
+  <p>The company's "Super Brain" intelligent dispatch system is among the world's
+  most complex real-time optimization engines, performing 2.9 billion route
+  calculations per hour to coordinate millions of delivery riders. Meituan also
+  operates <strong>autonomous delivery</strong> at scale, including
+  <a href="https://tech.meituan.com/en/2024/05/15/drones.html">delivery drones</a>
+  approved for commercial routes in Shenzhen and L4 autonomous ground robots deployed
+  across multiple cities. AI powers nearly every aspect of the platform, from
+  restaurant recommendation to dynamic pricing to quality control.</p>
 people:
+  - name: Wang Xing
+    role: Co-founder & CEO
   - name: Xunliang Cai
     role: LongCat Team Lead
   - name: Xiaoming Wei

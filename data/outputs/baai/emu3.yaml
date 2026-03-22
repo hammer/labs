@@ -1,0 +1,58 @@
+name: Emu3
+slug: emu3
+lab: baai
+date: 2024-09-27
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2409.18869
+  - label: GitHub
+    url: https://github.com/baaivision/Emu3
+description: >
+  Native multimodal model trained solely via next-token prediction,
+  demonstrating that a single architecture can match task-specific methods
+  across generation and perception. Published in the main issue of Nature —
+  the second Chinese large model team (after DeepSeek) to achieve this, and
+  China's first Nature paper on the multimodal large model route.
+tags:
+  - multimodal
+  - generation
+  - architecture
+  - open-weight
+outputs:
+  - name: "Emu3: Next-Token Prediction is All You Need"
+    type: paper
+    date: 2024-09-27
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2409.18869
+      - label: GitHub
+        url: https://github.com/baaivision/Emu3
+    description: >
+      Research showing native multimodal models can be trained solely via
+      next-token prediction.
+    paper:
+      arxiv: "2409.18869"
+  - name: "Multimodal learning with next-token prediction (Nature)"
+    type: paper
+    date: 2026-01-28
+    sources:
+      - label: Nature
+        url: https://www.nature.com/articles/s41586-025-10041-x
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2409.18869
+      - label: GitHub
+        url: https://github.com/baaivision/Emu3
+    description: >
+      Emu3 research published in the main issue of Nature, demonstrating that
+      multimodal models trained solely via next-token prediction can match
+      task-specific methods across generation and perception. Shows coherent
+      high-fidelity video generation, interleaved vision-language generation,
+      and vision-language-action modelling for robotic manipulation.
+    paper:
+      arxiv: "2409.18869"
+      venue: Nature
+related:
+  - emu
+  - emu2
+  - emu3.5

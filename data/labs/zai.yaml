@@ -5,24 +5,56 @@ wikipedia: https://en.wikipedia.org/wiki/Zhipu_AI
 founded: "2019"
 huggingface: https://huggingface.co/zai-org
 github: https://github.com/THUDM
+artificialanalysis: https://artificialanalysis.ai/providers/zhipu
 region: china
 type: startup
 formerly:
   - Zhipu AI
 description: >
-  One of China's "AI Tigers," originating from the Knowledge Engineering Group
-  (KEG) at Tsinghua University. Rebranded internationally as Z.ai in 2025.
-  First major LLM-focused company to IPO (HKEX: 02513, Jan 8 2026). Cornerstone
-  is the GLM series using autoregressive blank-infilling objective. First
-  frontier-scale model trained entirely on Huawei Ascend chips.
+  <p><a href="https://en.wikipedia.org/wiki/Zhipu_AI">Z.ai</a> (formerly Zhipu AI,
+  <a href="https://www.prnewswire.com/news-releases/zai-releases-glm-4-5--setting-new-standards-for-ai-performance-and-accessibility-while-improving-affordability-302514803.html">rebranded
+  internationally in July 2025</a>) is one of China's "AI Tigers," originating from
+  the <a href="https://keg.cs.tsinghua.edu.cn/">Knowledge Engineering Group (KEG)</a>
+  at <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>. Co-founded in
+  2019 by <a href="https://scholar.google.com/citations?user=n1zDCkQAAAAJ">Prof. Jie
+  Tang</a> and Prof. Li Juanzi, both Tsinghua CS faculty. Jie Tang is also the creator
+  of <a href="https://www.aminer.org/">AMiner</a>, one of the world's largest academic
+  search and mining systems, and vice director of <a href="/labs/baai">BAAI</a>.</p>
+
+  <p>Z.ai made history as the <strong>first major LLM-focused company to IPO</strong>,
+  <a href="https://www.cnbc.com/2026/01/09/minimax-hong-kong-ipo-ai-tigers-zhipu.html">listing
+  on the Hong Kong Stock Exchange</a> (HKEX: 02513) on January 8, 2026, raising ~$560M.
+  Pre-IPO funding totaled ~$1.5B from investors including Alibaba, Tencent,
+  <a href="https://en.wikipedia.org/wiki/Sequoia_Capital_China">HongShan</a>, Meituan,
+  and <a href="https://en.wikipedia.org/wiki/Saudi_Aramco">Saudi Prosperity7</a>.</p>
+
+  <p>The cornerstone is the <strong>GLM</strong> (General Language Model) architecture,
+  using a unique
+  <a href="https://keg.cs.tsinghua.edu.cn/jietang/publications/ACL22-Du-et-al-GLM.pdf">autoregressive
+  blank-infilling objective</a> (ACL 2022). <a href="https://github.com/THUDM/ChatGLM-6B">ChatGLM-6B</a>
+  became one of the most popular open-source Chinese LLMs (37K+ GitHub stars), running
+  on consumer GPUs with just 6GB VRAM. The series progressed through GLM-4, GLM-4.5,
+  to <strong>GLM-5</strong> (February 2026) &mdash; a 744B MoE
+  <a href="https://www.scmp.com/tech/tech-war/article/3339869/zhipu-ai-breaks-us-chip-reliance-first-major-model-trained-huawei-stack">trained
+  entirely on 100,000 Huawei Ascend 910B chips</a> with zero NVIDIA dependency, a
+  milestone for China's AI compute sovereignty.</p>
 people:
   - name: Jie Tang
     role: Co-founder & Senior PI
-    formerly: Tsinghua University
+    formerly: Tsinghua University (KEG); AMiner creator
+  - name: Li Juanzi
+    role: Co-founder
+    formerly: Tsinghua University (CS)
+  - name: Zhang Peng
+    role: CEO
+  - name: Liu Debing
+    role: Chairman
   - name: Yuxiao Dong
     role: Senior Researcher
   - name: Ming Ding
-    role: Core Researcher
+    role: Core Researcher (CogView, CogVLM)
+  - name: Aohan Zeng
+    role: Core Researcher (GLM)
 tags:
   - frontier
   - open-weight

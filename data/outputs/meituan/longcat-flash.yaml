@@ -2,6 +2,7 @@ name: LongCat-Flash
 slug: longcat-flash
 lab: meituan
 date: 2025-09-01
+flagship: true
 sources:
   - label: Project Page
     url: https://www.longcatai.org/

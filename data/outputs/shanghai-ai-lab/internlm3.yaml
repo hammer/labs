@@ -3,6 +3,7 @@ slug: internlm3
 lab: shanghai-ai-lab
 type: model
 date: 2025-01-15
+flagship: true
 sources:
   - label: GitHub
     url: https://github.com/InternLM/InternLM

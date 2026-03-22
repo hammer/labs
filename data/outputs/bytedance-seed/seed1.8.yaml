@@ -3,6 +3,7 @@ slug: seed1.8
 lab: bytedance-seed
 type: model
 date: 2025-12-18
+flagship: true
 sources:
   - label: Announcement
     url: https://seed.bytedance.com/en/blog/official-release-of-seed1-8-a-generalized-agentic-model

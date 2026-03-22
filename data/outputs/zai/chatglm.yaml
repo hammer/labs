@@ -2,6 +2,7 @@ name: ChatGLM
 slug: chatglm
 lab: zai
 date: 2023-03-14
+flagship: true
 sources:
   - label: GitHub (ChatGLM-6B)
     url: https://github.com/THUDM/ChatGLM-6B

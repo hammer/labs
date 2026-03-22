@@ -3,6 +3,7 @@ slug: baichuan-3
 lab: baichuan
 type: model
 date: 2024-01-29
+flagship: true
 sources:
   - label: Announcement (Pandaily)
     url: https://pandaily.com/baichuan-ai-releases-large-scale-model-baichuan-3-with-parameters-exceeding-one-trillion/

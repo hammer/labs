@@ -2,6 +2,7 @@ name: MiniMax-M1
 slug: minimax-m1
 lab: minimax
 date: 2025-06-16
+flagship: true
 sources:
   - label: Announcement
     url: https://www.minimax.io/news/minimaxm1

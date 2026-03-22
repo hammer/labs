@@ -1,103 +1,30 @@
-name: BGE (BAAI General Embedding)
+name: BGE Text Embeddings
 slug: bge
 lab: baai
+type: model
 date: 2023-08-02
+flagship: true
 sources:
   - label: HuggingFace
     url: https://huggingface.co/BAAI/bge-large-en-v1.5
   - label: GitHub
     url: https://github.com/FlagOpen/FlagEmbedding
 description: >
-  One of the world's most widely used open-source embedding model families for
-  RAG. Spans text embeddings (BGE v1.0/v1.5, BGE-M3 multilingual) and multimodal
-  embeddings (BGE-VL). Powered by the MegaPairs synthetic training dataset.
+  One of the world's most widely used open-source embedding models for RAG.
+  Includes BGE-v1.0 and BGE-v1.5 text embedding variants, plus BGE-Reranker
+  for high-precision document ranking.
 tags:
   - embeddings
   - rag
   - open-weight
-  - multilingual
-  - multimodal
   - retrieval
-outputs:
-  - name: BGE Text Embeddings
-    type: model
-    date: 2023-08-02
-    sources:
-      - label: HuggingFace
-        url: https://huggingface.co/BAAI/bge-large-en-v1.5
-      - label: GitHub
-        url: https://github.com/FlagOpen/FlagEmbedding
-    description: >
-      One of the world's most widely used open-source embedding models for RAG.
-      Includes BGE-v1.0/v1.5, BGE-M3 (unified multilingual), and BGE-Reranker
-      for high-precision document ranking.
-    model:
-      variants:
-        - name: BGE-v1.0
-        - name: BGE-v1.5
-        - name: BGE-M3
-          notes: Unified multilingual, multi-functional, released 2024
-        - name: BGE-Reranker
-          notes: Cross-encoder for document ranking
-  - name: "BGE-M3: Unified Multilingual and Multi-Functional Retrieval"
-    type: paper
-    date: 2024-02-05
-    sources:
-      - label: Paper (arXiv)
-        url: https://arxiv.org/abs/2402.03216
-      - label: HuggingFace
-        url: https://huggingface.co/BAAI/bge-m3
-    description: >
-      Paper on unified multilingual, multi-functional, multi-granularity embeddings.
-    paper:
-      arxiv: "2402.03216"
-  - name: BGE-VL (Multimodal Embedding)
-    type: model
-    date: 2025-03-06
-    sources:
-      - label: HuggingFace (base)
-        url: https://huggingface.co/BAAI/BGE-VL-base
-      - label: HuggingFace (large)
-        url: https://huggingface.co/BAAI/BGE-VL-large
-      - label: GitHub (FlagEmbedding)
-        url: https://github.com/FlagOpen/FlagEmbedding
-      - label: BGE documentation
-        url: https://bge-model.com/bge/bge_vl.html
-    description: >
-      State-of-the-art multimodal embedding models for visual search including
-      text-to-image, image-to-text, image+prompt-to-image, and text-to-image+text
-      retrieval. Achieves SOTA on 36 multimodal embedding evaluation tasks (MMEB)
-      in both zero-shot and supervised fine-tuning. BGE-VL-MLLM improves by 8.1pp
-      over prior SOTA on the CIRCO benchmark. Trained on the MegaPairs synthetic
-      dataset (26M+ samples). Released under MIT license.
-    model:
-      variants:
-        - name: BGE-VL-base
-        - name: BGE-VL-large
-        - name: BGE-VL-MLLM-S1
-          notes: Trained on MegaPairs only
-        - name: BGE-VL-MLLM-S2
-          notes: Full fine-tuned variant
-        - name: BGE-VL-v1.5-zs
-          notes: Zero-shot variant
-        - name: BGE-VL-v1.5-mmeb
-          notes: MMEB fine-tuned variant
-  - name: MegaPairs
-    type: dataset
-    date: 2025-03-06
-    sources:
-      - label: GitHub
-        url: https://github.com/VectorSpaceLab/MegaPairs
-      - label: Paper (ACL 2025 Oral)
-        url: https://aclanthology.org/2025.acl-long.935.pdf
-      - label: Paper (arXiv)
-        url: https://arxiv.org/abs/2407.15190
-    description: >
-      Large-scale synthetic dataset of 26M+ multimodal retrieval triplets for
-      universal multimodal retrieval. Mines multi-modal triplet data from a
-      massive image-text corpus by combining multimodal representation models,
-      large multimodal models, and large language models. Powers the BGE-VL
-      embedding models. Accepted as ACL 2025 Oral. Released under MIT license
-      (annotations) and CC BY 4.0 (images from Recap-Datacomp).
+model:
+  variants:
+    - name: BGE-v1.0
+    - name: BGE-v1.5
+    - name: BGE-Reranker
+      notes: Cross-encoder for document ranking
 related:
+  - bge-m3
+  - bge-vl
   - flagembedding

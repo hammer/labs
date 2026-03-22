@@ -4,19 +4,51 @@ url: https://www.minimax.io
 wikipedia: https://en.wikipedia.org/wiki/MiniMax_Group
 huggingface: https://huggingface.co/MiniMaxAI
 github: https://github.com/MiniMax-AI
+artificialanalysis: https://artificialanalysis.ai/providers/minimax
 region: china
 founded: 2021-12
 type: startup
 description: >
-  One of China's "AI Tigers," distinctive for its "all-modality" approach
-  (text, image, audio, video). Founded by Yan Junjie (former SenseTime VP).
-  Maintains ~380 employees despite massive valuation. Over 70% of revenue
-  from overseas via Talkie app. Known for "Every FLOP Counts" philosophy
-  and Lightning Attention architecture.
+  <p><a href="https://en.wikipedia.org/wiki/MiniMax_(company)">MiniMax</a> is one of
+  China's "AI Tigers," founded in December 2021 by a team of former
+  <a href="/labs/sensetime">SenseTime</a> employees. CEO
+  <a href="https://www.linkedin.com/in/junjie-yan-7bba9537/">Yan Junjie</a> (formerly
+  SenseTime VP of Technology), COO Yeyi Yun (formerly SenseTime strategy), co-founder
+  Zhou Yucong (Beihang University, formerly SenseTime algorithms R&D), and co-founder
+  Yang Bin (formerly Uber ATG autonomous trucks). The company maintains only ~385
+  employees with an average age of 29.</p>
+
+  <p>MiniMax <a href="https://www.cnbc.com/2026/01/09/minimax-hong-kong-ipo-ai-tigers-zhipu.html">went
+  public on the Hong Kong Stock Exchange</a> (HKEX: 0100) on January 9, 2026, raising
+  ~$620M with shares surging 109% on debut. Pre-IPO investors included
+  <a href="/labs/tencent">Tencent</a>,
+  <a href="/labs/alibaba-qwen">Alibaba</a> (~12.5% stake),
+  <a href="https://www.hongshan.com/">HongShan (Sequoia China)</a>, and
+  <a href="https://en.wikipedia.org/wiki/MiHoYo">miHoYo</a> (Genshin Impact).
+  Total pre-IPO funding was ~$1.15B.</p>
+
+  <p>MiniMax is distinctive for its "all-modality" approach and
+  "<strong>Every FLOP Counts</strong>" efficiency philosophy. Its
+  <strong>Lightning Attention</strong> architecture (7 linear + 1 softmax attention
+  layers per block) reduces complexity from quadratic to linear, enabling context
+  windows up to 4 million tokens. Over 70% of revenue comes from overseas through
+  <a href="https://www.talkie-ai.com/">Talkie</a>, an AI companion app with 236M+
+  users globally. The model series has progressed from ABAB-5 through MiniMax-M2.7,
+  and <a href="https://hailuoai.video/">Hailuo</a> video generation has produced
+  600M+ creator videos.</p>
 people:
   - name: Yan Junjie
     role: Founder & CEO
-    formerly: SenseTime (VP)
+    formerly: SenseTime (VP of Technology)
+  - name: Yeyi Yun
+    role: Co-founder & COO
+    formerly: SenseTime (strategy, fundraising)
+  - name: Zhou Yucong
+    role: Co-founder
+    formerly: SenseTime (algorithms R&D)
+  - name: Yang Bin
+    role: Co-founder
+    formerly: Uber ATG (autonomous trucks)
 relationships:
   - lab: alibaba-qwen
     type: investor

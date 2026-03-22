@@ -1,0 +1,52 @@
+name: BGE-M3
+slug: bge-m3
+lab: baai
+date: 2024-02-05
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.03216
+  - label: HuggingFace
+    url: https://huggingface.co/BAAI/bge-m3
+  - label: GitHub
+    url: https://github.com/FlagOpen/FlagEmbedding
+description: >
+  Unified multilingual, multi-functional, multi-granularity embedding model.
+  Supports 100+ languages and combines dense, sparse, and multi-vector retrieval
+  in a single model.
+tags:
+  - embeddings
+  - rag
+  - open-weight
+  - multilingual
+  - retrieval
+outputs:
+  - name: BGE-M3
+    type: model
+    date: 2024-02-05
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/BAAI/bge-m3
+      - label: GitHub
+        url: https://github.com/FlagOpen/FlagEmbedding
+    description: >
+      Unified multilingual, multi-functional embedding model.
+    model:
+      variants:
+        - name: BGE-M3
+  - name: "BGE-M3: Unified Multilingual and Multi-Functional Retrieval"
+    type: paper
+    date: 2024-02-05
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2402.03216
+      - label: HuggingFace
+        url: https://huggingface.co/BAAI/bge-m3
+    description: >
+      Paper on unified multilingual, multi-functional, multi-granularity embeddings.
+    paper:
+      arxiv: "2402.03216"
+related:
+  - bge
+  - bge-vl
+  - flagembedding

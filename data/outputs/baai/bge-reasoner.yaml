@@ -1,0 +1,27 @@
+name: BGE-Reasoner
+slug: bge-reasoner
+lab: baai
+type: model
+date: 2025-09-22
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/BAAI/bge-reasoner-embed-qwen3-8b-0923
+  - label: GitHub
+    url: https://github.com/VectorSpaceLab/agentic-search/tree/main/BGE-Reasoner
+description: >
+  Embedding model for reasoning-intensive retrieval tasks. Achieves nDCG@10
+  of 37.1 on the BRIGHT benchmark. Represents a new direction for BGE —
+  embedding models that handle complex reasoning queries such as math
+  problems requiring theorem retrieval. Built on Qwen3-8B.
+tags:
+  - embeddings
+  - reasoning
+  - open-weight
+  - retrieval
+model:
+  variants:
+    - name: BGE-Reasoner-Embed-Qwen3-8B
+related:
+  - bge
+  - bge-m3
+  - bge-code

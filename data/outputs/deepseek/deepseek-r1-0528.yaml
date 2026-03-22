@@ -3,6 +3,7 @@ slug: deepseek-r1-0528
 lab: deepseek
 type: model
 date: 2025-05-28
+flagship: true
 sources:
   - label: Announcement
     url: https://api-docs.deepseek.com/news/news250528

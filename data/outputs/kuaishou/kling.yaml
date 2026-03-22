@@ -2,6 +2,7 @@ name: Kling
 slug: kling
 lab: kuaishou
 date: 2024-06-06
+flagship: true
 sources:
   - label: Website
     url: https://klingai.com/

@@ -2,6 +2,7 @@ name: Step-3
 slug: step-3
 lab: stepfun
 date: 2025-07-25
+flagship: true
 sources:
   - label: Announcement
     url: https://stepfun.ai/research/en/step3

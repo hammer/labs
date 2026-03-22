@@ -3,6 +3,7 @@ slug: deepseek-r1
 lab: deepseek
 type: model
 date: 2025-01-22
+flagship: true
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2501.12948

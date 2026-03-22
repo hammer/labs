@@ -7,7 +7,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "validate": "tsx src/validate.ts"
+    "validate": "tsx src/validate.ts",
+    "fetch-metrics": "tsx scripts/fetch-metrics.ts"
   },
   "devDependencies": {
     "tsx": "^4.7.0",

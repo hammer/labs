@@ -1,9 +1,12 @@
-name: ToucHD
+name: AnyTouch2 / ToucHD
 slug: touchd
 lab: baai
-type: dataset
 date: 2026-02-28
 sources:
+  - label: Project Page
+    url: https://gewu-lab.github.io/AnyTouch2/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.09617
   - label: HuggingFace (Force)
     url: https://huggingface.co/datasets/BAAI/ToucHD-Force
   - label: HuggingFace (Sim)
@@ -21,5 +24,34 @@ tags:
   - tactile
   - embodied-ai
   - robotics
+outputs:
+  - name: ToucHD Dataset
+    type: dataset
+    date: 2026-02-28
+    sources:
+      - label: HuggingFace (Force)
+        url: https://huggingface.co/datasets/BAAI/ToucHD-Force
+      - label: HuggingFace (Sim)
+        url: https://huggingface.co/datasets/BAAI/ToucHD-Sim
+      - label: HuggingFace (Mani)
+        url: https://huggingface.co/datasets/BAAI/ToucHD-Mani
+    description: >
+      2.4M+ contact samples across three sub-datasets covering force sensing,
+      simulation, and manipulation tasks.
+  - name: "AnyTouch2: ToucHD Paper"
+    type: paper
+    date: 2026-02-28
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2602.09617
+      - label: Project Page
+        url: https://gewu-lab.github.io/AnyTouch2/
+    paper:
+      arxiv: "2602.09617"
+notes: >
+  BAAI-affiliated authors: Ruoxuan Feng, Pengwei Wang, Shaowei Cui,
+  Bin Fang, Guocai Yao, Di Hu. Joint work with Renmin University of China,
+  Beijing Jiaotong University, Shanghai AI Laboratory, Chinese Academy of
+  Sciences, BUPT, and Peking University.
 related:
   - robobrain

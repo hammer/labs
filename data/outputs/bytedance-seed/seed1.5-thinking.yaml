@@ -3,6 +3,7 @@ slug: seed1.5-thinking
 lab: bytedance-seed
 type: paper
 date: 2025-04-10
+flagship: true
 sources:
   - label: "Paper (arXiv)"
     url: https://arxiv.org/abs/2504.13914

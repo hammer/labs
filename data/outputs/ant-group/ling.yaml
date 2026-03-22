@@ -2,6 +2,7 @@ name: Ling
 slug: ling
 lab: ant-group
 date: 2025-03-07
+flagship: true
 sources:
   - label: GitHub
     url: https://github.com/inclusionAI/Ling

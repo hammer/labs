@@ -2,6 +2,7 @@ name: Grounding DINO
 slug: grounding-dino
 lab: idea-lab
 date: 2023-03-09
+flagship: true
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2303.05499

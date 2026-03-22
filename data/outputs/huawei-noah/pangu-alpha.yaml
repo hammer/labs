@@ -2,6 +2,7 @@ name: PanGu-alpha
 slug: pangu-alpha
 lab: huawei-noah
 date: 2021-04-26
+flagship: true
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2104.12369

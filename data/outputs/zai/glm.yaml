@@ -2,6 +2,7 @@ name: GLM (Original)
 slug: glm
 lab: zai
 date: 2021-03-18
+flagship: true
 sources:
   - label: GitHub
     url: https://github.com/THUDM/GLM

@@ -8,18 +8,47 @@ region: china
 founded: 2014-10
 type: corporate
 description: >
-  Major Chinese AI company and computer vision pioneer, publicly traded in
-  Hong Kong. Develops the SenseNova large model family and SenseCore
-  supercomputing infrastructure. Co-develops InternLM and OpenGVLab with
-  Shanghai AI Laboratory. Known for foundational CV research including
-  Deformable DETR and spatial intelligence models.
+  <p><a href="https://en.wikipedia.org/wiki/SenseTime">SenseTime</a> (HKG: 0020)
+  is a major Chinese AI company and computer vision pioneer, publicly traded on the
+  Hong Kong Stock Exchange since
+  <a href="https://en.wikipedia.org/wiki/SenseTime#Initial_public_offering">December
+  2021</a>. It was co-founded in October 2014 by
+  <a href="https://en.wikipedia.org/wiki/Tang_Xiaoou">Tang Xiaoou</a>,
+  <a href="https://en.wikipedia.org/wiki/Xu_Li_(scientist)">Xu Li</a>,
+  Wang Xiaogang, and <a href="https://scholar.google.com/citations?user=c3iwWRcAAAAJ">Lin
+  Dahua</a>. The tragic
+  <a href="https://www.reuters.com/technology/sensetime-says-founder-tang-xiaoou-died-dec-15-2023-12-16/">passing
+  of Tang Xiaoou in December 2023</a> was a profound loss for Chinese AI &mdash;
+  he was widely regarded as one of the field's most influential figures, having
+  mentored a generation of researchers at <a href="https://www.cuhk.edu.hk/">CUHK</a>
+  and his Multimedia Lab.</p>
+
+  <p>SenseTime develops the <strong>SenseNova</strong> large model family (progressing
+  from 2.0 through 5.5) and the <strong>SenseCore</strong> supercomputing
+  infrastructure, which provides GPU clusters used by multiple institutions
+  including the <a href="/labs/shanghai-ai-lab">Shanghai AI Laboratory</a>.
+  The company co-develops <a href="https://github.com/InternLM/InternLM">InternLM</a>
+  and <a href="https://github.com/OpenGVLab">OpenGVLab</a> with Shanghai AI Lab.
+  SenseTime's foundational CV research includes the widely-cited
+  <a href="https://arxiv.org/abs/2010.04159">Deformable DETR</a>,
+  <a href="https://github.com/open-mmlab/mmdetection">MMDetection</a>, and recent
+  work in spatial intelligence and autonomous driving.</p>
+
+  <p>The company was placed on the <a href="https://en.wikipedia.org/wiki/SenseTime#US_sanctions">US
+  Entity List</a> in 2019, and has faced financial challenges with its stock
+  declining significantly from its IPO price. SenseTime has restructured to focus
+  on its "1+1+X" strategy: SenseCore infrastructure + SenseNova models + vertical
+  applications in smart city, autonomous driving, and healthcare.</p>
 people:
   - name: Xu Li
-    role: Co-founder & CEO
+    role: Co-founder & Chairman
   - name: Wang Xiaogang
     role: Co-founder & CTO
   - name: Lin Dahua
     role: Co-founder & Chief Scientist
+  - name: Tang Xiaoou
+    role: Co-founder (1968-2023)
+    formerly: Professor at CUHK; Founder of CUHK Multimedia Lab
 tags:
   - frontier
   - multimodal

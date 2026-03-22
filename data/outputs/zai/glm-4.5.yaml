@@ -2,6 +2,7 @@ name: GLM-4.5
 slug: glm-4.5
 lab: zai
 date: 2025-07-28
+flagship: true
 sources:
   - label: Announcement
     url: https://www.cnbc.com/2025/07/28/chinas-latest-ai-model-claims-to-be-even-cheaper-to-use-than-deepseek.html

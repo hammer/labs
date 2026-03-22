@@ -2,6 +2,7 @@ name: DeepSeek-V2
 slug: deepseek-v2
 lab: deepseek
 date: 2024-05-07
+flagship: true
 sources:
   - label: GitHub
     url: https://github.com/deepseek-ai/DeepSeek-V2

@@ -4,20 +4,39 @@ url: https://www.baidu.com
 wikipedia: https://en.wikipedia.org/wiki/Baidu
 huggingface: https://huggingface.co/baidu
 github: https://github.com/PaddlePaddle
+artificialanalysis: https://artificialanalysis.ai/providers/baidu
 region: china
 founded: "2000"
 type: corporate
 description: >
-  Pioneer in Chinese AI since founding its Institute of Deep Learning (IDL)
-  in 2013. Ecosystem defined by the ERNIE (Enhanced Representation through
-  Knowledge Integration) series and the PaddlePaddle deep learning framework,
-  China's first and most widely used domestic framework. Also develops Kunlun
-  XPU AI chips and the Apollo autonomous driving platform.
+  <p><a href="https://en.wikipedia.org/wiki/Baidu">Baidu</a> is the pioneer of
+  Chinese AI, having established its Institute of Deep Learning (IDL) in 2013 under
+  CEO <a href="https://en.wikipedia.org/wiki/Robin_Li">Robin Li (Li Yanhong)</a>.
+  The hiring of <a href="https://en.wikipedia.org/wiki/Andrew_Ng">Andrew Ng</a> as
+  Chief Scientist (2014&ndash;2017) to lead Baidu Research in Silicon Valley
+  marked a pivotal moment for Chinese AI ambitions on the global stage.</p>
+
+  <p>Baidu's AI ecosystem is defined by two pillars. The first is the
+  <strong>ERNIE</strong> (Enhanced Representation through Knowledge Integration)
+  series, progressing from ERNIE 1.0 (2019) through ERNIE 5.0 (2025), with
+  <a href="https://yiyan.baidu.com/">ERNIE Bot (Wenxin Yiyan)</a> as the consumer
+  product. The second is <strong><a href="https://github.com/PaddlePaddle/Paddle">PaddlePaddle</a></strong>,
+  China's first and most widely deployed domestic deep learning framework,
+  with over 11 million developers and 860,000+ enterprise users.</p>
+
+  <p>Baidu also develops the <strong>Kunlun XPU</strong> AI chips (now in their
+  third generation), the <a href="https://apollo.auto/">Apollo</a> autonomous
+  driving platform (operating robotaxi services in multiple Chinese cities), and
+  the <a href="https://cloud.baidu.com/product/wenxinworkshop">Qianfan</a>
+  model-as-a-service platform on Baidu Cloud. Haifeng Wang serves as CTO,
+  overseeing the ERNIE and NLP research divisions.</p>
 people:
+  - name: Robin Li
+    role: Co-founder & CEO
   - name: Haifeng Wang
-    role: VP & ERNIE Lead
+    role: CTO & ERNIE Lead
   - name: Yu Sun
-    role: Core Researcher
+    role: Core Researcher (ERNIE)
 tags:
   - frontier
   - open-weight

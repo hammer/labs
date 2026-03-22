@@ -3,6 +3,7 @@ slug: baichuan-7b
 lab: baichuan
 type: model
 date: 2023-06-15
+flagship: true
 sources:
   - label: GitHub
     url: https://github.com/baichuan-inc/Baichuan-7B

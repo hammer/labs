@@ -3,6 +3,7 @@ slug: doubao-1.5-pro
 lab: bytedance-seed
 type: model
 date: 2025-01-22
+flagship: true
 sources:
   - label: Announcement
     url: https://analyticsdrift.com/bytedance-launches-an-advanced-ai-model-doubao-1-5-pro/

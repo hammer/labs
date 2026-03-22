@@ -4,20 +4,56 @@ url: https://www.moonshot.cn
 wikipedia: https://en.wikipedia.org/wiki/Moonshot_AI
 huggingface: https://huggingface.co/moonshotai
 github: https://github.com/MoonshotAI
+artificialanalysis: https://artificialanalysis.ai/providers/kimi
 region: china
 founded: 2023-03
 type: startup
 description: >
-  Leader in long-context processing, reasoning agents, and open-weight models.
-  Creator of the Kimi series. Transitioned from proprietary API models to
-  trillion-parameter open-weight MoE models in 2025.
+  <p><a href="https://en.wikipedia.org/wiki/Moonshot_AI">Moonshot AI</a> (named after
+  the Pink Floyd album <em>The Dark Side of the Moon</em>) is one of China's "AI Tigers"
+  and its fastest-ever decacorn, founded in March 2023 by three Tsinghua classmates.
+  CEO <a href="https://scholar.google.com/citations?user=7qXxyJkAAAAJ">Yang Zhilin</a>
+  earned his PhD at <a href="https://www.cmu.edu/">Carnegie Mellon University</a> in
+  under four years, co-authoring the highly influential
+  <a href="https://arxiv.org/abs/1901.02860">Transformer-XL</a> and
+  <a href="https://arxiv.org/abs/1906.08237">XLNet</a> papers while working with
+  <a href="https://research.google/">Google Brain</a> and
+  <a href="https://ai.meta.com/">Meta FAIR</a>.</p>
+
+  <p>Moonshot has raised over $2.7B across multiple rounds from
+  <a href="https://www.hongshan.com/">HongShan (Sequoia China)</a>, Alibaba, Tencent,
+  and others, reaching an
+  <a href="https://www.bloomberg.com/news/articles/2026-03-14/china-ai-startup-moonshot-snags-funds-at-18-billion-valuation">$18B
+  valuation in March 2026</a> &mdash; quadrupling in three months after the explosive
+  launch of Kimi K2.5. Its consumer product
+  <a href="https://kimi.moonshot.cn/">Kimi</a> pioneered long-context processing in
+  Chinese AI, supporting 2M-token inputs. In fewer than 20 days after the K2.5 release,
+  cumulative revenue exceeded the entire 2025 annual total.</p>
+
+  <p>In 2025, Moonshot shifted from proprietary to open-weight releases.
+  <strong><a href="https://arxiv.org/abs/2507.20534">Kimi-K2</a></strong> (1T MoE,
+  32B active) was called
+  "<a href="https://www.nature.com/articles/d41586-025-02275-6">another DeepSeek
+  moment</a>" by Nature. The team has also contributed influential infrastructure
+  including the <a href="https://arxiv.org/abs/2502.16982">Muon optimizer</a> (2x
+  more efficient than AdamW), <a href="https://github.com/MoonshotAI/MoBA">MoBA</a>
+  (Mixture of Block Attention), and
+  <a href="https://github.com/kvcache-ai/Mooncake">Mooncake</a> (KVCache-centric
+  serving, Best Paper at FAST 2025).</p>
 people:
   - name: Yang Zhilin
     role: Founder & CEO
-    formerly: Google, Meta
-  - name: Junjie Yan
+    formerly: CMU PhD; Google Brain; Meta FAIR; Recurrent AI
+  - name: Zhou Xinyu
+    role: Co-founder
+    formerly: Hulu; Tencent
+  - name: Wu Yuxin
+    role: Co-founder
+    formerly: Google Brain; Meta AI Research
   - name: Jianlin Su
+    role: Core Researcher
   - name: Flood Sung
+    role: Core Researcher
 tags:
   - frontier
   - open-weight

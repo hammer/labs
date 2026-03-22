@@ -10,11 +10,43 @@ type: corporate
 formerly:
   - Ant Financial
 description: >
-  Evolved from a financial services giant into a major AI research powerhouse.
-  AI work spearheaded by the Inclusion AI team (IAI), focused on AGI through
-  open-source initiatives. Known for the Ling Family (BaiLing) with three
-  pillars: Ling (general), Ring (reasoning), and Ming (multimodal). Also a
-  top-tier CNCF and Linux Foundation contributor.
+  <p><a href="https://en.wikipedia.org/wiki/Ant_Group">Ant Group</a> is the fintech
+  giant behind <a href="https://en.wikipedia.org/wiki/Alipay">Alipay</a> (1B+ users),
+  <a href="https://en.wikipedia.org/wiki/Ant_Group#History">spun off from Alibaba in
+  2011</a> and rebranded from Ant Financial in 2020. After its
+  <a href="https://en.wikipedia.org/wiki/Ant_Group#Suspended_IPO">record $37B IPO was
+  suspended</a> by Chinese regulators in November 2020, the company pivoted heavily
+  into AI research. Alibaba holds 32.65% but ties have been loosening, with Ant's
+  AI research operating independently.</p>
+
+  <p>AI is spearheaded by the <strong>Inclusion AI (IAI)</strong> team, producing the
+  <strong>Ling Family</strong> with three pillars: <strong>Ling</strong> (general LLM,
+  now at 1T parameters), <strong>Ring</strong> (reasoning &mdash; Ring-2.5-1T scored
+  Gold Medal on IMO 2025), and <strong>Ming</strong> (multimodal &mdash; Ming-Flash-Omni-2.0
+  is the first model unifying speech, audio, and music in a single architecture).
+  The team also produced <strong><a href="https://github.com/inclusionAI/LLaDA2.X">LLaDA</a></strong>,
+  the first 100B-parameter diffusion language model (an alternative to autoregressive
+  generation), achieving 2.1x faster inference.</p>
+
+  <p>Ant Group is one of the world's top contributors to
+  <a href="https://www.cncf.io/">CNCF</a> and
+  <a href="https://www.linuxfoundation.org/">Linux Foundation</a> projects, winning
+  the <a href="https://www.cncf.io/announcements/2025/04/03/cloud-native-computing-foundation-announces-ant-group-as-the-top-end-user-award-winner/">CNCF
+  Top End User Award in 2025</a>. Open-source infrastructure includes
+  <a href="https://github.com/oceanbase/oceanbase">OceanBase</a> (distributed database),
+  <a href="https://github.com/secretflow/secretflow">SecretFlow</a> (privacy-preserving
+  computing), <a href="https://github.com/codefuse-ai">CodeFuse</a> (code generation),
+  and <a href="https://github.com/kata-containers">Kata Containers</a>. The company has
+  elevated AI-powered healthcare as a core business, acquiring Haodf.com and launching
+  the AQ healthcare app (100M users within a month).</p>
+people:
+  - name: Cyril Han Xinyi
+    role: CEO (since March 2025)
+    formerly: CFO, Ant Group
+  - name: He Zhengyu
+    role: CTO & VP (AI oversight)
+  - name: Wang Xu
+    role: Open Source Lead
 relationships:
   - lab: alibaba-qwen
     type: affiliate

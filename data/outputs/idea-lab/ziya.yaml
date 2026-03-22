@@ -2,6 +2,7 @@ name: Ziya LLM
 slug: ziya
 lab: idea-lab
 date: 2023-05-17
+flagship: true
 sources:
   - label: HuggingFace (Ziya-13B-v1)
     url: https://huggingface.co/IDEA-CCNL/Ziya-LLaMA-13B-v1

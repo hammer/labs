@@ -5,15 +5,37 @@ wikipedia: https://en.wikipedia.org/wiki/Kuaishou
 founded: 2011-03
 huggingface: https://huggingface.co/Kwaipilot
 github: https://github.com/kuaishou-langlab
+artificialanalysis: https://artificialanalysis.ai/providers/kuaishou
 region: china
 type: corporate
 description: >
-  AI ecosystem characterized by high-performance multimodal models (video and
-  image generation) and specialized reasoning models for coding and recommendation.
-  Research decentralized across the Kwai AI Lab, Kolors Team, and Kwaipilot Team.
-  Publicly traded (HKG: 1024) with Tencent as largest institutional shareholder
-  (~17%), but independently controlled via dual-class voting structure.
+  <p><a href="https://en.wikipedia.org/wiki/Kuaishou">Kuaishou</a> (HKG: 1024)
+  is China's second-largest short video platform after Douyin, founded in 2011 by
+  <a href="https://en.wikipedia.org/wiki/Su_Hua">Su Hua</a> and
+  <a href="https://en.wikipedia.org/wiki/Cheng_Yixiao">Cheng Yixiao</a>.
+  The company <a href="https://en.wikipedia.org/wiki/Kuaishou#Initial_public_offering">went
+  public on the Hong Kong Stock Exchange in February 2021</a> in one of the year's
+  largest tech IPOs. <a href="/labs/tencent">Tencent</a> is the largest institutional
+  shareholder (~17%), but founders retain control via a dual-class voting structure.</p>
+
+  <p>Kuaishou's AI ecosystem is characterized by high-performance multimodal models
+  decentralized across several teams. The <strong>Kling Team</strong> (led by Kun Gai)
+  produces <a href="https://kling.kuaishou.com/">Kling</a>, a video generation model
+  that gained significant traction in 2024 as one of China's leading text-to-video
+  systems. The <strong>Kolors Team</strong> develops image generation models, and the
+  <strong>Kwaipilot Team</strong> (led by Zizheng Zhan) focuses on coding and
+  reasoning models including KAT-Coder and Klear.</p>
+
+  <p>As a platform serving over 600 million monthly active users, Kuaishou applies
+  AI extensively to recommendation, content understanding, livestream commerce, and
+  real-time video effects. The company's competitive "frenemy" dynamic with Tencent
+  &mdash; receiving WeChat ecosystem access while competing directly with WeChat
+  Video Accounts &mdash; shapes its strategic positioning.</p>
 people:
+  - name: Su Hua
+    role: Co-founder & CEO
+  - name: Cheng Yixiao
+    role: Co-founder
   - name: Kun Gai
     role: Kling Team Lead
   - name: Zizheng Zhan
@@ -23,8 +45,8 @@ relationships:
     type: investor
     note: >
       Tencent holds ~16.5-18.5% but Kuaishou remains independent. Founders
-      retain control via dual-class voting. Tencent provides WeChat ecosystem
-      access. Competitive "frenemy" dynamic with WeChat Video Accounts.
+      retain control via dual-class voting. Competitive "frenemy" dynamic with
+      WeChat Video Accounts.
 tags:
   - multimodal
   - generation

@@ -3,6 +3,7 @@ slug: hunyuan-llm
 lab: tencent
 type: model
 date: 2023-09-07
+flagship: true
 sources:
   - label: Announcement
     url: https://www.tencent.com/en-us/articles/2201685.html

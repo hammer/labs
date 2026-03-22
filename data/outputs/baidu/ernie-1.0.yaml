@@ -2,6 +2,7 @@ name: ERNIE 1.0
 slug: ernie-1.0
 lab: baidu
 date: 2019-04-19
+flagship: true
 sources:
   - label: "Paper (arXiv)"
     url: https://arxiv.org/abs/1904.09223

@@ -2,6 +2,7 @@
 import Layout from '../components/Layout.astro';
 import TypeBadge from '../components/TypeBadge.astro';
 import { getAllOutputsChronological, getAllLabs, getLabBySlug, isGrouped, getOutputTypes } from '../data/loader.js';
+import { formatCompact } from '../utils.js';
 
 const outputs = getAllOutputsChronological();
 const labs = getAllLabs().map((l) => ({ slug: l.slug, name: l.name })).sort((a, b) => a.name.localeCompare(b.name));
@@ -28,16 +29,20 @@ const types = [...new Set(allTypes)].sort();
         <option value={t}>{t}</option>
       ))}
     </select>
+    <button class="flagship-toggle" id="flagship-toggle" aria-pressed="false">Flagship only</button>
     <span class="filter-count" id="filter-count"></span>
   </div>
 
   <table class="timeline-table" id="timeline-table">
     <thead>
       <tr>
-        <th class="col-date">Date</th>
+        <th class="col-date sortable" data-sort="date">Date <span class="sort-arrow active-desc">&#9662;</span></th>
         <th class="col-name">Name</th>
         <th class="col-lab">Lab</th>
         <th class="col-type">Type</th>
+        <th class="col-metric sortable" data-sort="stars" title="GitHub stars — max across all repos referenced in the output">Stars <span class="sort-arrow"></span></th>
+        <th class="col-metric sortable" data-sort="downloads" title="HuggingFace downloads — summed across all unique models in the output">Downloads <span class="sort-arrow"></span></th>
+        <th class="col-metric sortable" data-sort="citations" title="Semantic Scholar citations — summed across all unique papers in the output">Citations <span class="sort-arrow"></span></th>
       </tr>
     </thead>
     <tbody>
@@ -46,16 +51,23 @@ const types = [...new Set(allTypes)].sort();
         const labNames = labList.map(s => getLabBySlug(s)?.name ?? s).join(', ');
         const outputTypes = getOutputTypes(output);
         const grouped = isGrouped(output);
+        const m = output._metrics;
         return (
           <tr
             class="tl-row"
             data-href={`/outputs/${output._labSlug}/${output.slug}`}
             data-lab={labList.join(',')}
             data-type={outputTypes.join(',')}
+            data-flagship={output.flagship ? '1' : '0'}
+            data-date={output.date}
+            data-stars={m?.github_stars ?? ''}
+            data-downloads={m?.hf_downloads ?? ''}
+            data-citations={m?.citations ?? ''}
             data-index={i}
           >
             <td class="col-date">{output.date}</td>
             <td class="col-name">
+              {output.flagship && <span class="flagship-star" title="Flagship release">&#9733;</span>}
               {output.name}
               {grouped && <span class="group-badge">{output.outputs.length}</span>}
             </td>
@@ -63,6 +75,9 @@ const types = [...new Set(allTypes)].sort();
             <td class="col-type">
               {outputTypes.map(t => <TypeBadge type={t} />)}
             </td>
+            <td class="col-metric">{m?.github_stars ? formatCompact(m.github_stars) : <span class="no-data">&mdash;</span>}</td>
+            <td class="col-metric">{m?.hf_downloads ? formatCompact(m.hf_downloads) : <span class="no-data">&mdash;</span>}</td>
+            <td class="col-metric">{m?.citations ? formatCompact(m.citations) : <span class="no-data">&mdash;</span>}</td>
           </tr>
         );
       })}
@@ -90,6 +105,8 @@ const types = [...new Set(allTypes)].sort();
           <h4>Other</h4>
           <dl>
             <div><dt><kbd>/</kbd></dt><dd>Search</dd></div>
+            <div><dt><kbd>f</kbd></dt><dd>Toggle flagship</dd></div>
+            <div><dt><kbd>s</kbd></dt><dd>Cycle sort</dd></div>
             <div><dt><kbd>Esc</kbd></dt><dd>Clear / close</dd></div>
             <div><dt><kbd>?</kbd></dt><dd>Show this help</dd></div>
           </dl>
@@ -105,6 +122,7 @@ const types = [...new Set(allTypes)].sort();
 </Layout>
 
 <script>
+  const tbody = document.querySelector<HTMLTableSectionElement>('#timeline-table tbody')!;
   const allRows = Array.from(document.querySelectorAll<HTMLTableRowElement>('.tl-row'));
   const modal = document.getElementById('shortcut-modal')!;
   const backdrop = document.getElementById('shortcut-backdrop')!;
@@ -114,13 +132,88 @@ const types = [...new Set(allTypes)].sort();
   const searchInput = document.getElementById('search-input') as HTMLInputElement;
   const labSelect = document.getElementById('filter-lab') as HTMLSelectElement;
   const typeSelect = document.getElementById('filter-type') as HTMLSelectElement;
+  const flagshipToggle = document.getElementById('flagship-toggle')!;
   const filterCount = document.getElementById('filter-count')!;
+  const sortHeaders = document.querySelectorAll<HTMLTableCellElement>('.sortable');
 
   let selected = -1;
   let visibleRows: HTMLTableRowElement[] = [...allRows];
   let waitingForG = false;
   let gTimer: ReturnType<typeof setTimeout> | null = null;
   let searchQuery = '';
+  let flagshipOnly = false;
+
+  // Sort state
+  type SortColumn = 'date' | 'stars' | 'downloads' | 'citations';
+  let currentSort: SortColumn = 'date';
+  let sortDesc = true;
+  const sortCycle: SortColumn[] = ['date', 'stars', 'downloads', 'citations'];
+
+  flagshipToggle.addEventListener('click', () => {
+    flagshipOnly = !flagshipOnly;
+    flagshipToggle.setAttribute('aria-pressed', String(flagshipOnly));
+    flagshipToggle.classList.toggle('active', flagshipOnly);
+    updateVisibility();
+  });
+
+  function getNumericAttr(row: HTMLTableRowElement, attr: string): number {
+    const v = row.dataset[attr];
+    return v ? Number(v) : -1;
+  }
+
+  function sortRows(column: SortColumn, desc: boolean) {
+    currentSort = column;
+    sortDesc = desc;
+
+    allRows.sort((a, b) => {
+      let va: number | string, vb: number | string;
+      if (column === 'date') {
+        va = a.dataset.date!;
+        vb = b.dataset.date!;
+        return desc ? vb.localeCompare(va as string) : (va as string).localeCompare(vb as string);
+      } else {
+        va = getNumericAttr(a, column);
+        vb = getNumericAttr(b, column);
+        // Items with no data go to bottom
+        if (va === -1 && vb === -1) return 0;
+        if (va === -1) return 1;
+        if (vb === -1) return -1;
+        return desc ? (vb as number) - (va as number) : (va as number) - (vb as number);
+      }
+    });
+
+    // Re-append in new order
+    for (const row of allRows) {
+      tbody.appendChild(row);
+    }
+
+    // Update sort arrows
+    sortHeaders.forEach(th => {
+      const arrow = th.querySelector('.sort-arrow')!;
+      const col = th.dataset.sort;
+      arrow.className = 'sort-arrow';
+      if (col === column) {
+        arrow.classList.add(desc ? 'active-desc' : 'active-asc');
+        arrow.innerHTML = desc ? '&#9662;' : '&#9652;';
+      } else {
+        arrow.textContent = '';
+      }
+    });
+
+    updateVisibility();
+  }
+
+  // Click on sortable headers
+  sortHeaders.forEach(th => {
+    th.addEventListener('click', () => {
+      const col = th.dataset.sort as SortColumn;
+      if (col === currentSort) {
+        sortRows(col, !sortDesc);
+      } else {
+        sortRows(col, true);
+      }
+    });
+  });
 
   function updateVisibility() {
     const lab = labSelect.value;
@@ -132,12 +225,14 @@ const types = [...new Set(allTypes)].sort();
       const rowTypes = row.dataset.type!.split(',');
       const name = row.querySelector('.col-name')?.textContent?.toLowerCase() ?? '';
       const labName = row.querySelector('.col-lab')?.textContent?.toLowerCase() ?? '';
+      const isFlagship = row.dataset.flagship === '1';
 
       const matchLab = !lab || labs.includes(lab);
       const matchType = !type || rowTypes.includes(type);
       const matchSearch = !q || name.includes(q) || labName.includes(q);
+      const matchFlagship = !flagshipOnly || isFlagship;
 
-      row.style.display = (matchLab && matchType && matchSearch) ? '' : 'none';
+      row.style.display = (matchLab && matchType && matchSearch && matchFlagship) ? '' : 'none';
     });
 
     visibleRows = allRows.filter(r => r.style.display !== 'none');
@@ -183,6 +278,12 @@ const types = [...new Set(allTypes)].sort();
       updateVisibility();
       searchInput.blur();
     }
+  }
+
+  function cycleSort() {
+    const idx = sortCycle.indexOf(currentSort);
+    const next = sortCycle[(idx + 1) % sortCycle.length];
+    sortRows(next, true);
   }
 
   // Click to navigate
@@ -245,6 +346,14 @@ const types = [...new Set(allTypes)].sort();
       case 'G':
         e.preventDefault();
         select(visibleRows.length - 1);
+        break;
+      case 'f':
+        e.preventDefault();
+        flagshipToggle.click();
+        break;
+      case 's':
+        e.preventDefault();
+        cycleSort();
         break;
       case '?':
         e.preventDefault();
@@ -327,6 +436,29 @@ const types = [...new Set(allTypes)].sort();
     color: var(--text);
   }
 
+  .flagship-toggle {
+    padding: 0.375rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    background: var(--surface);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+
+  .flagship-toggle:hover {
+    border-color: var(--text-muted);
+    color: var(--text);
+  }
+
+  .flagship-toggle.active {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #fff;
+  }
+
   .filter-count {
     font-size: 0.8rem;
     color: var(--text-muted);
@@ -357,6 +489,27 @@ const types = [...new Set(allTypes)].sort();
     border-bottom: 2px solid var(--border);
     white-space: nowrap;
     user-select: none;
+  }
+
+  th.sortable {
+    cursor: pointer;
+  }
+
+  th.sortable:hover {
+    color: var(--text);
+  }
+
+  .sort-arrow {
+    font-size: 0.65rem;
+    margin-left: 0.2em;
+    color: var(--text-muted);
+    opacity: 0;
+  }
+
+  .sort-arrow.active-desc,
+  .sort-arrow.active-asc {
+    opacity: 1;
+    color: #2563eb;
   }
 
   .tl-row {
@@ -407,6 +560,28 @@ const types = [...new Set(allTypes)].sort();
     gap: 0.3rem;
   }
 
+  th.col-metric {
+    text-align: right;
+  }
+
+  td.col-metric {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-muted);
+    white-space: nowrap;
+    font-size: 0.8rem;
+  }
+
+  .no-data {
+    opacity: 0.3;
+  }
+
+  .flagship-star {
+    color: #f59e0b;
+    font-size: 0.75rem;
+    margin-right: 0.25rem;
+  }
+
   .group-badge {
     display: inline-flex;
     align-items: center;
@@ -421,6 +596,14 @@ const types = [...new Set(allTypes)].sort();
     color: var(--text-muted);
     margin-left: 0.35rem;
     vertical-align: middle;
+  }
+
+  /* Hide metric columns on narrow screens */
+  @media (max-width: 768px) {
+    th.col-metric,
+    td.col-metric {
+      display: none;
+    }
   }
 
   /* Search bar */

@@ -2,6 +2,7 @@ name: Qwen
 slug: qwen
 lab: alibaba-qwen
 date: 2023-08-03
+flagship: true
 sources:
   - label: GitHub
     url: https://github.com/QwenLM/Qwen

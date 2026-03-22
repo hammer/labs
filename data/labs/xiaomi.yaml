@@ -5,17 +5,46 @@ wikipedia: https://en.wikipedia.org/wiki/Xiaomi
 founded: 2010-04
 huggingface: https://huggingface.co/XiaomiMiMo
 github: https://github.com/XiaomiMiMo
+artificialanalysis: https://artificialanalysis.ai/providers/xiaomi
 region: china
 type: corporate
 description: >
-  Evolved from mobile-first inference and voice assistance (Xiao AI) into a
-  global leader in agentic intelligence and reasoning models. The MiMo team,
-  led by Luo Fuli (formerly DeepSeek-V2/R1), pushes boundaries in efficiency
-  and long-context processing. AI strategy tied to "Human x Car x Home" ecosystem.
+  <p><a href="https://en.wikipedia.org/wiki/Xiaomi">Xiaomi</a> (HKG: 1810) is a
+  global technology company founded in 2010 by
+  <a href="https://en.wikipedia.org/wiki/Lei_Jun">Lei Jun</a>, known for smartphones,
+  IoT devices, and the
+  <a href="https://en.wikipedia.org/wiki/Xiaomi_SU7">Xiaomi SU7 electric vehicle</a>
+  (360K+ delivered in ~21 months, outselling Tesla Model 3 in China). The
+  <a href="https://en.wikipedia.org/wiki/Xiao_AI">Xiao AI</a> voice assistant (100M+
+  MAU) and <a href="https://www.mi.com/global/discover/article?id=3894">HyperOS</a>
+  cross-device operating system underpin Xiaomi's
+  "<strong>Human &times; Car &times; Home</strong>" ecosystem strategy, connecting
+  phones, vehicles, and smart home devices through AI.</p>
+
+  <p>The <strong>MiMo Team</strong> represents Xiaomi's push into frontier AI, led by
+  <strong>Luo Fuli</strong>, recruited from <a href="/labs/deepseek">DeepSeek</a>
+  (reportedly at a salary of "tens of millions of yuan") where he was a key contributor
+  to DeepSeek-V2 and DeepSeek-R1. The team of 63+ researchers has rapidly produced the
+  <strong>MiMo model series</strong>: MiMo-7B (May 2025, surpassing OpenAI o1-mini on
+  math/code), MiMo-V2-Flash (309B MoE, December 2025), and
+  <a href="https://venturebeat.com/technology/xiaomi-stuns-with-new-mimo-v2-pro-llm-nearing-gpt-5-2-opus-4-6-performance">MiMo-V2-Pro</a>
+  (1T+ parameters, March 2026). MiMo-V2-Pro was revealed to be the mysterious
+  "<a href="https://www.technology.org/2026/03/19/whos-that-ai-the-mystery-model-everyone-blamed-on-deepseek-turned-out-to-be-xiaomi/">Hunter
+  Alpha</a>" model that appeared anonymously on OpenRouter, widely misattributed to
+  DeepSeek V4.</p>
+
+  <p>Xiaomi also has an emerging robotics program including
+  <a href="https://spectrum.ieee.org/humanoid-robot-xiaomi-cyberone">CyberOne</a>
+  (humanoid) and CyberDog (quadruped), with foundation models driving embodied AI
+  across the "Human &times; Car &times; Home" ecosystem.</p>
 people:
+  - name: Lei Jun
+    role: Founder, Chairman & CEO
   - name: Luo Fuli
-    role: Lead
-    formerly: DeepSeek (V2/R1 series)
+    role: MiMo Team Lead
+    formerly: DeepSeek (DeepSeek-V2/R1 contributor)
+  - name: Bingquan Xia
+    role: Core Researcher (MiMo-7B lead author)
 tags:
   - open-weight
   - on-device

@@ -2,6 +2,7 @@ name: DeepSeek-V3.2
 slug: deepseek-v3.2
 lab: deepseek
 date: 2025-09-29
+flagship: true
 sources:
   - label: V3.2-Exp Announcement (2025-09-29)
     url: https://api-docs.deepseek.com/news/news250929

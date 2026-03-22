@@ -2,6 +2,7 @@ name: MiMo (Reasoning)
 slug: mimo
 lab: xiaomi
 date: 2025-05-02
+flagship: true
 sources:
   - label: HuggingFace
     url: https://huggingface.co/XiaomiMiMo/MiMo-7B-RL

@@ -1,0 +1,31 @@
+name: Aquila2
+slug: aquila2
+lab: baai
+type: model
+date: 2023-10-12
+flagship: true
+sources:
+  - label: GitHub
+    url: https://github.com/FlagAI-Open/Aquila2
+  - label: HuggingFace
+    url: https://huggingface.co/BAAI/Aquila2-7B
+description: >
+  Second generation of the Aquila bilingual LLM. Improved with EfficientScale
+  training recipe. Released in 7B and 34B sizes, plus an 8x16B MoE variant.
+tags:
+  - open-source
+  - open-weight
+  - chinese
+  - moe
+model:
+  variants:
+    - name: Aquila2-7B
+      parameters: 7B
+    - name: Aquila2-34B
+      parameters: 34B
+    - name: Aquila-MoE
+      notes: 8x16B MoE
+related:
+  - aquila
+  - aquila-vl
+  - aquilamed

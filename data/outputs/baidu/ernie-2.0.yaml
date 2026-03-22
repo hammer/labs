@@ -3,6 +3,7 @@ slug: ernie-2.0
 lab: baidu
 type: model
 date: 2019-07-29
+flagship: true
 sources:
   - label: "Paper (arXiv)"
     url: https://arxiv.org/abs/1907.12412

@@ -9,6 +9,7 @@ export const LabSchema = z.object({
   wikipedia: z.string().url().optional(),
   huggingface: z.string().url().optional(),
   github: z.string().url().optional(),
+  artificialanalysis: z.string().url().optional(),
   region: z.string(),
   founded: z.string().regex(/^\d{4}(-\d{2})?$/, 'Founded must be YYYY or YYYY-MM').optional(),
   type: z.enum(['corporate', 'startup', 'nonprofit', 'academic']).optional(),
@@ -93,6 +94,7 @@ const SimpleOutputSchema = z.object({
   sources: z.array(LinkSchema).min(1),
   description: z.string().optional(),
   tags: z.array(z.string()).optional(),
+  flagship: z.boolean().optional(),
   model: ModelDetailsSchema.optional(),
   paper: PaperDetailsSchema.optional(),
   library: LibraryDetailsSchema.optional(),
@@ -110,6 +112,7 @@ const GroupedOutputSchema = z.object({
   sources: z.array(LinkSchema).min(1),
   description: z.string().optional(),
   tags: z.array(z.string()).optional(),
+  flagship: z.boolean().optional(),
   outputs: z.array(SubOutputSchema).min(1),
   related: z.array(z.string()).optional(),
   notes: z.string().optional(),
@@ -122,6 +125,17 @@ export type SimpleOutput = z.infer<typeof SimpleOutputSchema>;
 export type GroupedOutput = z.infer<typeof GroupedOutputSchema>;
 export type SubOutput = z.infer<typeof SubOutputSchema>;
 export type Output = z.infer<typeof OutputSchema>;
+
+// --- Metrics ---
+
+export interface MetricsEntry {
+  github_stars?: number;
+  github_forks?: number;
+  hf_downloads?: number;
+  hf_likes?: number;
+  citations?: number;
+  fetched_at: string;
+}
 
 // Type guards and helpers
 export function isGrouped(output: Output): output is GroupedOutput {

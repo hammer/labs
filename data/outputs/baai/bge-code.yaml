@@ -1,0 +1,28 @@
+name: BGE-Code-v1
+slug: bge-code
+lab: baai
+type: model
+date: 2025-05-15
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/BAAI/bge-code-v1
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.12697
+  - label: GitHub
+    url: https://github.com/FlagOpen/FlagEmbedding
+description: >
+  Code embedding model supporting natural language queries in English and
+  Chinese plus 20 programming languages. Also maintains strong general text
+  retrieval capabilities. Built on Qwen2.
+tags:
+  - embeddings
+  - code
+  - open-weight
+  - multilingual
+model:
+  variants:
+    - name: BGE-Code-v1
+related:
+  - bge
+  - bge-m3
+  - bge-vl

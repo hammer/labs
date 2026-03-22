@@ -4,22 +4,59 @@ url: https://www.deepseek.com
 wikipedia: https://en.wikipedia.org/wiki/DeepSeek
 huggingface: https://huggingface.co/deepseek-ai
 github: https://github.com/deepseek-ai
+artificialanalysis: https://artificialanalysis.ai/providers/deepseek
 region: china
 founded: "2023"
 type: startup
 description: >
-  Dominant force in the open-source community, known for highly efficient
-  Mixture-of-Experts architectures and reasoning-focused models. Pioneered
-  innovations in expert parallelism, Multi-head Latent Attention, and
-  reinforcement learning for reasoning. Notable for their "open-science"
-  approach, publishing detailed technical reports and open-sourcing low-level
-  training infrastructure.
+  <p>DeepSeek is a dominant force in the open-source AI community, founded in 2023
+  by <a href="https://en.wikipedia.org/wiki/Liang_Wenfeng">Liang Wenfeng</a>, who
+  also founded and leads the quantitative hedge fund
+  <a href="https://www.high-flyer.cn/">High-Flyer (&#24187;&#26041;&#37327;&#21270;)</a>.
+  High-Flyer, one of China's largest quant funds managing over $8B in assets, provides
+  DeepSeek's funding and compute infrastructure. The company reportedly operates a
+  cluster of ~10,000 NVIDIA A100 GPUs acquired before US export restrictions took
+  full effect.</p>
+
+  <p>DeepSeek triggered a global sensation in January 2025 &mdash; the
+  "<a href="https://en.wikipedia.org/wiki/DeepSeek#Impact">DeepSeek moment</a>" &mdash;
+  when <strong>DeepSeek-R1</strong> demonstrated reasoning performance rivaling
+  OpenAI's o1 at a fraction of the training cost. The release briefly wiped nearly
+  $1 trillion from US tech stocks and forced a reassessment of assumptions about
+  AI scaling costs worldwide.</p>
+
+  <p>The lab has pioneered several key innovations: <strong>Multi-head Latent
+  Attention (MLA)</strong> for memory-efficient inference, the
+  <strong>DeepSeekMoE</strong> architecture with fine-grained expert segmentation,
+  <strong>FP8 mixed-precision training</strong> at scale, <strong>Multi-Token
+  Prediction</strong>, and <strong>GRPO</strong> (Group Relative Policy Optimization)
+  for reinforcement learning on reasoning tasks. DeepSeek is notable for its
+  "open-science" approach, publishing
+  <a href="https://arxiv.org/abs/2412.19437">detailed technical reports</a> and
+  open-sourcing low-level training infrastructure including
+  <a href="https://github.com/deepseek-ai/DeepGEMM">DeepGEMM</a>,
+  <a href="https://github.com/deepseek-ai/FlashMLA">FlashMLA</a>,
+  <a href="https://github.com/deepseek-ai/DeepEP">DeepEP</a>, and
+  <a href="https://github.com/deepseek-ai/3FS">3FS</a> (Fire-Flyer File System).</p>
+
+  <p>DeepSeek's research was
+  <a href="https://www.nature.com/articles/s41586-025-09011-2">published in Nature</a>
+  in 2025 and the company has become a central case study in debates over AI
+  efficiency, US-China technology competition, and the viability of open-weight
+  frontier models.</p>
 people:
+  - name: Liang Wenfeng
+    role: Founder
+    formerly: High-Flyer (Founder & CEO)
   - name: Chong Ruan
     role: Co-founder & Research Lead
   - name: Daya Guo
-    role: Core Researcher
+    role: Core Researcher (coding, reasoning)
   - name: Zhenda Xie
+    role: Core Researcher (architecture)
+  - name: Wangding Zeng
+    role: Core Researcher (infrastructure)
+  - name: Qihao Zhu
     role: Core Researcher
 tags:
   - frontier

@@ -3,6 +3,7 @@ slug: sensenova-4.0
 lab: sensetime
 type: model
 date: 2024-02-06
+flagship: true
 sources:
   - label: Announcement
     url: https://www.prnewswire.com/apac/news-releases/sensetime-unveils-sensenova-4-0--bringing-novel-ai-experience-302054548.html

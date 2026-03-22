@@ -2,6 +2,7 @@ name: MiniCPM4 & 4.1
 slug: minicpm4
 lab: openbmb
 date: 2025-06-06
+flagship: true
 sources:
   - label: "Paper (arXiv)"
     url: https://arxiv.org/abs/2506.07900

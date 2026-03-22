@@ -2,6 +2,7 @@ name: DeepSeek-MoE
 slug: deepseek-moe
 lab: deepseek
 date: 2024-01-11
+flagship: true
 sources:
   - label: HuggingFace
     url: https://huggingface.co/deepseek-ai/deepseek-moe-16b-chat

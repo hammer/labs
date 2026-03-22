@@ -3,6 +3,7 @@ slug: deepseek-v2.5
 lab: deepseek
 type: model
 date: 2024-09-05
+flagship: true
 sources:
   - label: Announcement
     url: https://api-docs.deepseek.com/news/news0905

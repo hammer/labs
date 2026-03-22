@@ -1,7 +1,7 @@
 name: "Slime: Asynchronous RL for Agentic Tasks"
 slug: slime
 lab: zai
-type: paper
+type: library
 date: 2026-02-11
 sources:
   - label: GitHub

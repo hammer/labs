@@ -1,0 +1,42 @@
+name: Wu Dao 2.0
+slug: wu-dao-2.0
+lab: baai
+date: 2021-06-01
+flagship: true
+sources:
+  - label: Announcement
+    url: http://www.china.org.cn/business/2021-06/03/content_77546375.htm
+  - label: Website
+    url: https://www.baai.ac.cn/en/system
+description: >
+  Landmark 1.75 trillion parameter MoE model, at the time the largest in
+  the world, outscaling GPT-3.
+tags:
+  - moe
+  - frontier
+outputs:
+  - name: Wu Dao 2.0
+    type: model
+    date: 2021-06-01
+    sources:
+      - label: Announcement
+        url: http://www.china.org.cn/business/2021-06/03/content_77546375.htm
+      - label: Website
+        url: https://www.baai.ac.cn/en/system
+    description: >
+      Landmark 1.75 trillion parameter MoE model, at the time the largest in
+      the world, outscaling GPT-3.
+    model:
+      architecture: moe
+      parameters: 1.75T
+  - name: "Wu Dao 2.0: A Roadmap to Cognitive Intelligence"
+    type: paper
+    date: 2021-06-01
+    sources:
+      - label: Website
+        url: https://www.baai.ac.cn/en/system
+    description: >
+      Roadmap paper for the Wu Dao 2.0 cognitive intelligence program.
+related:
+  - wu-dao
+  - wu-dao-corpora

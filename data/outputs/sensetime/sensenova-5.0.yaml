@@ -3,6 +3,7 @@ slug: sensenova-5.0
 lab: sensetime
 type: model
 date: 2024-04-24
+flagship: true
 sources:
   - label: Announcement
     url: https://www.prnewswire.com/apac/news-releases/sensetime-launches-sensenova-5-0-with-comprehensive-updates-and-the-industry-leading-cloud-to-edge-full-stack-large-model-product-matrix-302125415.html

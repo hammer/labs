@@ -3,6 +3,7 @@ slug: sensenova-2.0
 lab: sensetime
 type: model
 date: 2023-07-07
+flagship: true
 sources:
   - label: Announcement
     url: https://www.prnewswire.com/apac/news-releases/sensetime-upgrades-the-sensenova-foundation-model-sets-revolutionizing-industries-with-rapid-iteration-301871830.html

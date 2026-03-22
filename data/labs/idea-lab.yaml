@@ -7,17 +7,38 @@ region: china
 founded: "2020"
 type: nonprofit
 description: >
-  International Digital Economy Academy, a research institute in Shenzhen
-  founded by Harry Shum. Two major research tracks: computer vision
-  (Grounding DINO, DINO-X, Grounded SAM) via IDEA-Research, and NLP
-  (Fengshenbang/Ziya LLM series) via IDEA-CCNL. The CV/detection work
-  is world-class and widely adopted.
+  <p>The International Digital Economy Academy (IDEA) is a research institute in
+  <a href="https://en.wikipedia.org/wiki/Shenzhen">Shenzhen</a> founded in November
+  2020 by <a href="https://en.wikipedia.org/wiki/Harry_Shum">Harry Shum
+  (Shen Xiangyang)</a>, former Executive Vice President of
+  <a href="https://www.microsoft.com/">Microsoft</a> and a founding member of
+  <a href="https://www.msra.cn/">Microsoft Research Asia</a>. The academy is backed
+  by the Shenzhen municipal government as part of the city's push to become a global
+  AI innovation hub.</p>
+
+  <p>IDEA operates two major research tracks. <strong>IDEA-Research</strong> (computer
+  vision), led by <a href="https://scholar.google.com/citations?user=tAK5l1IAAAAJ">Lei
+  Zhang</a>, has produced world-class object detection models including
+  <a href="https://github.com/IDEA-Research/GroundingDINO">Grounding DINO</a>,
+  <a href="https://github.com/IDEA-Research/DINO">DINO-DETR</a>,
+  <a href="https://github.com/IDEA-Research/Grounded-Segment-Anything">Grounded SAM</a>,
+  and <a href="https://github.com/IDEA-Research/DINO-X">DINO-X</a>. These models
+  are among the most widely adopted open-source detection frameworks globally,
+  with Grounding DINO alone accumulating tens of thousands of GitHub stars.</p>
+
+  <p>The second track, <strong>IDEA-CCNL</strong> (NLP/cognitive computing), produced the
+  <a href="https://github.com/IDEA-CCNL/Fengshenbang-LM">Fengshenbang</a> ecosystem
+  and the <strong>Ziya</strong> series of Chinese language models. While the CV work
+  has garnered wider international recognition, the NLP division has contributed
+  important Chinese-language pretraining infrastructure and fine-tuning frameworks.</p>
 people:
   - name: Harry Shum
     role: Founding Chairman
-    formerly: Executive Vice President at Microsoft
+    formerly: Microsoft (Executive VP); MSRA (Founding Member)
   - name: Lei Zhang
-    role: Lead Researcher (CV)
+    role: Lead Researcher (Computer Vision)
+  - name: Shilong Liu
+    role: Core Researcher (Grounding DINO)
 tags:
   - vision
   - open-source

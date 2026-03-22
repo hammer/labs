@@ -3,6 +3,7 @@ slug: step-2
 lab: stepfun
 type: model
 date: 2024-07-04
+flagship: true
 sources:
   - label: Website
     url: https://www.stepfun.com

@@ -2,6 +2,7 @@ name: Baichuan 2
 slug: baichuan-2
 lab: baichuan
 date: 2023-09-06
+flagship: true
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2309.10305

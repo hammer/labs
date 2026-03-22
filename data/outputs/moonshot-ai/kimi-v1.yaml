@@ -3,6 +3,7 @@ slug: kimi-v1
 lab: moonshot-ai
 type: model
 date: 2023-10-09
+flagship: true
 sources:
   - label: Website
     url: https://www.moonshot.cn

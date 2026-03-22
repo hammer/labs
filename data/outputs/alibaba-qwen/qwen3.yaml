@@ -2,6 +2,7 @@ name: Qwen3
 slug: qwen3
 lab: alibaba-qwen
 date: 2025-04-29
+flagship: true
 sources:
   - label: Blog Post
     url: https://qwenlm.github.io/blog/qwen3/

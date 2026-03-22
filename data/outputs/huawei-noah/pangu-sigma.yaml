@@ -2,6 +2,7 @@ name: PanGu-Sigma
 slug: pangu-sigma
 lab: huawei-noah
 date: 2023-03-20
+flagship: true
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2303.10845

@@ -1,104 +1,28 @@
-name: Emu Series
+name: Emu
 slug: emu
 lab: baai
+type: model
 date: 2023-07-11
+flagship: true
 sources:
-  - label: "Emu Paper (arXiv)"
+  - label: Paper (arXiv)
     url: https://arxiv.org/abs/2307.05222
   - label: GitHub
     url: https://github.com/baaivision/Emu
   - label: HuggingFace
     url: https://huggingface.co/BAAI/Emu
 description: >
-  BAAI's multimodal generation model family. Evolved from Emu/Emu2
-  vision-language models to Emu3's native next-token-prediction architecture
-  (published in Nature) and Emu3.5's large-scale world model.
+  BAAI's first large-scale multimodal foundation model for any-to-any
+  generation. Pioneered multimodal generation at BAAI, combining vision
+  and language in a unified architecture.
 tags:
   - multimodal
   - generation
   - open-weight
-  - world-model
-  - architecture
-outputs:
-  - name: Emu / Emu2
-    type: model
-    date: 2023-07-11
-    sources:
-      - label: "Emu Paper (arXiv)"
-        url: https://arxiv.org/abs/2307.05222
-      - label: GitHub
-        url: https://github.com/baaivision/Emu
-      - label: HuggingFace
-        url: https://huggingface.co/BAAI/Emu
-    description: >
-      Large-scale vision-language models for any-to-any generation. The Emu
-      series pioneered multimodal generation at BAAI, evolving into the Emu3
-      and Emu3.5 native multimodal world models.
-    model:
-      variants:
-        - name: Emu
-          notes: Released 2023
-        - name: Emu2
-          notes: Released 2024
-  - name: "Emu3: Next-Token Prediction is All You Need for Multimodal Intelligence"
-    type: paper
-    date: 2024-09-27
-    sources:
-      - label: Paper (arXiv)
-        url: https://arxiv.org/abs/2409.18869
-      - label: GitHub
-        url: https://github.com/baaivision/Emu3
-    description: >
-      Research showing native multimodal models can be trained solely via
-      next-token prediction.
-    paper:
-      arxiv: "2409.18869"
-  - name: Emu3.5
-    type: model
-    date: 2025-10-30
-    sources:
-      - label: Paper (arXiv)
-        url: https://arxiv.org/abs/2510.26583
-      - label: GitHub
-        url: https://github.com/baaivision/Emu3.5
-      - label: HuggingFace
-        url: https://huggingface.co/BAAI/Emu3.5
-      - label: HuggingFace (Image variant)
-        url: https://huggingface.co/BAAI/Emu3.5-Image
-    description: >
-      Large-scale native multimodal world model that predicts the next
-      vision-language state, pre-trained end-to-end on over 10T interleaved
-      vision-language tokens from internet videos. Supports long-horizon
-      vision-language generation, any-to-image (X2I) synthesis, and text-rich
-      image creation. Includes Discrete Diffusion Adaptation (DiDA) for ~20x
-      faster per-image inference. Performance comparable to Gemini 2.5 Flash
-      Image on generation and editing tasks.
-    model:
-      variants:
-        - name: Emu3.5
-          notes: General-purpose multimodal, interleaved image-text
-        - name: Emu3.5-Image
-          notes: Specialized for T2I/X2I tasks
-        - name: Emu3.5-VisionTokenizer
-          notes: Vision encoding component
-  - name: "Multimodal learning with next-token prediction (Emu3 Nature paper)"
-    type: paper
-    date: 2026-01-28
-    sources:
-      - label: Nature
-        url: https://www.nature.com/articles/s41586-025-10041-x
-      - label: Paper (arXiv)
-        url: https://arxiv.org/abs/2409.18869
-      - label: GitHub
-        url: https://github.com/baaivision/Emu3
-    description: >
-      Emu3 research published in the main issue of Nature, demonstrating that
-      multimodal models trained solely via next-token prediction can match
-      task-specific methods across generation and perception. Shows coherent
-      high-fidelity video generation, interleaved vision-language generation,
-      and vision-language-action modelling for robotic manipulation. Second
-      Chinese large model team (after DeepSeek) to publish in Nature, and
-      China's first Nature paper on the multimodal large model route.
-    paper:
-      arxiv: "2409.18869"
-      venue: Nature
+model:
+  variants:
+    - name: Emu
+related:
+  - emu2
+  - emu3
+  - emu3.5

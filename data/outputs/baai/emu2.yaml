@@ -1,0 +1,28 @@
+name: Emu2
+slug: emu2
+lab: baai
+type: model
+date: 2023-12-20
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2312.13286
+  - label: GitHub
+    url: https://github.com/baaivision/Emu
+  - label: HuggingFace
+    url: https://huggingface.co/BAAI/Emu2
+description: >
+  Second-generation multimodal model from BAAI, advancing vision-language
+  generation with improved architecture and training. Supports any-to-any
+  generation across text and images.
+tags:
+  - multimodal
+  - generation
+  - open-weight
+model:
+  variants:
+    - name: Emu2
+related:
+  - emu
+  - emu3
+  - emu3.5

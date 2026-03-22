@@ -3,6 +3,7 @@ slug: doubao-seed-2.0
 lab: bytedance-seed
 type: model
 date: 2026-02-14
+flagship: true
 sources:
   - label: Announcement
     url: https://technode.com/2026/02/14/bytedance-releases-doubao-seed-2-0-positions-pro-model-against-gpt-5-2-and-gemini-3-pro/

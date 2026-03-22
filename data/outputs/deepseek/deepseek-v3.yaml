@@ -2,6 +2,7 @@ name: DeepSeek-V3
 slug: deepseek-v3
 lab: deepseek
 date: 2024-12-26
+flagship: true
 sources:
   - label: Announcement
     url: https://api-docs.deepseek.com/news/news1226

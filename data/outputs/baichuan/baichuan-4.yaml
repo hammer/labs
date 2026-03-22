@@ -3,6 +3,7 @@ slug: baichuan-4
 lab: baichuan
 type: model
 date: 2024-05-22
+flagship: true
 sources:
   - label: Announcement (Medium)
     url: https://braintitan.medium.com/baichuan-intelligence-releases-baichuan-4-model-and-the-first-ai-intelligent-assistant-fb2736d8d2f2

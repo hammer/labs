@@ -3,6 +3,7 @@ slug: qwen1.5
 lab: alibaba-qwen
 type: model
 date: 2024-02-04
+flagship: true
 sources:
   - label: Blog Post
     url: https://qwenlm.github.io/blog/qwen1.5/

@@ -2,6 +2,7 @@ name: Step-3.5-Flash
 slug: step-3.5-flash
 lab: stepfun
 date: 2026-02-11
+flagship: true
 sources:
   - label: Blog Post
     url: https://static.stepfun.com/blog/step-3.5-flash/
