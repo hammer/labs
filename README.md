@@ -2,7 +2,7 @@
 
 A comprehensive tracker of China's leading AI research labs, their flagship models, and research outputs.
 
-**Live site: https://hammer.github.io/labs**
+**Live site: https://ai-lab-tracker.netlify.app**
 
 ## Features
 
