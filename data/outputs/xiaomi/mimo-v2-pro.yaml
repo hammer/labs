@@ -1,0 +1,52 @@
+name: MiMo-V2-Pro
+slug: mimo-v2-pro
+lab: xiaomi
+type: model
+date: 2026-03-18
+flagship: true
+sources:
+  - label: Website
+    url: https://mimo.xiaomi.com/mimo-v2-pro
+  - label: Announcement (VentureBeat)
+    url: https://venturebeat.com/technology/xiaomi-stuns-with-new-mimo-v2-pro-llm-nearing-gpt-5-2-opus-4-6-performance/
+  - label: Announcement (Gizmochina)
+    url: https://www.gizmochina.com/2026/03/19/xiaomi-unveils-mimo-v2-pro-its-flagship-llm-with-over-1tb-of-parameters/
+  - label: OpenRouter (Hunter Alpha)
+    url: https://openrouter.ai/openrouter/hunter-alpha
+description: >
+  Xiaomi's 1-trillion parameter MoE flagship (42B active) designed for agentic
+  workloads with a 1-million-token context window. Before its official reveal,
+  MiMo-V2-Pro gained worldwide attention as the anonymous "Hunter Alpha" model
+  on OpenRouter, widely misattributed to DeepSeek V4.
+tags:
+  - moe
+  - frontier
+  - agentic
+model:
+  architecture: moe
+  parameters: 1T
+  active_parameters: 42B
+  context_window: 1000000
+notes: >
+  MiMo-V2-Pro first appeared anonymously as "Hunter Alpha" on OpenRouter on
+  March 11, 2026, with no developer attribution. The model quickly topped
+  leaderboards (ClawEval 61.5, approaching Claude Opus 4.6) and processed
+  1.27 million requests in its first week. It was widely speculated to be
+  DeepSeek V4 — Reuters testing found it described itself as "a Chinese AI
+  model primarily trained in Chinese" with a May 2025 data cutoff matching
+  DeepSeek's. On March 18-19, Xiaomi's MiMo team lead Luo Fuli confirmed
+  it was an "early internal test build" of MiMo-V2-Pro, designed to gather
+  unbiased developer feedback. Xiaomi's stock surged 5.8% on the reveal.
+  Coverage: Technology.org
+  (https://www.technology.org/2026/03/19/whos-that-ai-the-mystery-model-everyone-blamed-on-deepseek-turned-out-to-be-xiaomi/),
+  Taipei Times
+  (https://www.taipeitimes.com/News/feat/archives/2026/03/19/2003854074),
+  Abacus News
+  (https://www.abacusnews.com/how-xiaomi-outsmarted-the-ai-world-with-hunter-alpha/),
+  Business Today
+  (https://www.businesstoday.in/technology/news/story/mystery-behind-hunter-alpha-ai-model-revealed-know-what-it-is-and-why-everyones-talking-about-it-521430-2026-03-19/).
+related:
+  - mimo
+  - mimo-v2
+  - mimo-v2-omni
+  - mimo-v2-tts

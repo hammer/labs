@@ -1,0 +1,47 @@
+name: MiniCPM4.1
+slug: minicpm4.1
+lab: openbmb
+date: 2025-09-05
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/openbmb/MiniCPM4.1-8B
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM
+  - label: InfLLM-V2 Paper (arXiv)
+    url: https://arxiv.org/abs/2509.24663
+description: >
+  Adds InfLLM-v2 trainable sparse attention to MiniCPM4, supporting both
+  deep reasoning and non-reasoning modes. 3x decoding speedup for reasoning
+  tasks. InfLLM-v2 enables dense-sparse switchable attention for seamless
+  short-to-long context adaptation.
+tags:
+  - on-device
+  - efficiency
+  - reasoning
+  - open-weight
+  - long-context
+outputs:
+  - name: MiniCPM4.1-8B
+    type: model
+    date: 2025-09-05
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/openbmb/MiniCPM4.1-8B
+    model:
+      architecture: dense
+      parameters: 8B
+  - name: "InfLLM-V2: Dense-Sparse Switchable Attention for Seamless Short-to-Long Adaptation"
+    type: paper
+    date: 2025-09-29
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2509.24663
+    description: >
+      The trainable sparse attention mechanism powering MiniCPM4 and 4.1.
+      Each token computes relevance with less than 5% of tokens in 128K context.
+    paper:
+      arxiv: "2509.24663"
+related:
+  - minicpm4
+  - minicpm-sala

@@ -1,0 +1,21 @@
+name: "One RL to See Them All: Visual Triple Unified RL"
+slug: one-rl-to-see-them-all
+lab: minimax
+type: paper
+date: 2025-05-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.18129
+  - label: GitHub
+    url: https://github.com/MiniMax-AI/One-RL-to-See-Them-All
+description: >
+  Introduces the V-Triune system and Orsta models (7B/32B) that unify visual
+  reasoning and perception tasks via reinforcement learning. Up to +14.1
+  improvement on MEGA-Bench Core.
+tags:
+  - vision
+  - reasoning
+  - reinforcement-learning
+  - research
+paper:
+  arxiv: "2505.18129"

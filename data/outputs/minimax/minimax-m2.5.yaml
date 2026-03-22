@@ -1,0 +1,30 @@
+name: MiniMax-M2.5
+slug: minimax-m2.5
+lab: minimax
+type: model
+date: 2026-02-12
+flagship: true
+sources:
+  - label: Announcement
+    url: https://www.minimax.io/news/minimax-m25
+  - label: HuggingFace
+    url: https://huggingface.co/MiniMaxAI/MiniMax-M2.5
+  - label: GitHub
+    url: https://github.com/MiniMax-AI/MiniMax-M2.5
+description: >
+  RL-trained on 200K+ environments, achieving 100 tok/s and 80.2% on
+  SWE-Bench Verified. SOTA in office productivity (Word/Excel automation)
+  and browse-based tasks. Includes M2.5-Lightning variant for high-speed
+  inference. Open weights.
+tags:
+  - agentic
+  - coding
+  - moe
+  - open-weight
+  - frontier
+model:
+  architecture: moe
+  parameters: 229B
+related:
+  - minimax-m2.1
+  - minimax-m2.7

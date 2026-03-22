@@ -1,0 +1,39 @@
+name: MiniCPM-V 4.5
+slug: minicpm-v4.5
+lab: openbmb
+date: 2025-08-26
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.18154
+  - label: HuggingFace
+    url: https://huggingface.co/openbmb/MiniCPM-V-4_5
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM-o
+description: >
+  State-of-the-art on-device vision model specializing in complex document
+  parsing and high-resolution spatial reasoning.
+tags:
+  - vlm
+  - on-device
+  - ocr
+outputs:
+  - name: MiniCPM-V 4.5
+    type: model
+    date: 2025-08-26
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/openbmb/MiniCPM-V-4_5
+    model:
+      architecture: dense
+  - name: "MiniCPM-V 4.5: Cooking Efficient MLLMs via Architecture, Data, and Training Recipe"
+    type: paper
+    date: 2025-09-25
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2509.18154
+    paper:
+      arxiv: "2509.18154"
+related:
+  - minicpm-v
+  - minicpm-o4.5

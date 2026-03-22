@@ -7,24 +7,30 @@ sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2303.10845
 description: >
-  Trillion-parameter sparse language model (1.085T parameters) extending
-  PanGu-alpha with Random Routed Experts (RRE). Trained on 329B tokens in
-  40+ languages on 512 Ascend 910 AI accelerators using MindSpore. Achieves
-  state-of-the-art zero-shot Chinese NLP and strong fine-tuned performance
-  on dialogue, QA, translation, and code generation.
+  Trillion-parameter sparse language model (1.085T) extending PanGu-alpha
+  with Random Routed Experts (RRE). Trained on 329B tokens in 40+ languages
+  on 512 Ascend 910 accelerators.
 tags:
   - nlp
   - chinese
-  - large-language-model
   - moe
   - multilingual
 outputs:
-  - type: model
-    name: PanGu-Sigma
+  - name: PanGu-Sigma
+    type: model
+    date: 2023-03-20
     model:
       parameters: 1085B
       architecture: moe
-  - type: paper
-    name: "PanGu-Sigma: Towards Trillion Parameter Language Model with Sparse Heterogeneous Computing"
+  - name: "PanGu-Sigma: Towards Trillion Parameter Language Model with Sparse Heterogeneous Computing"
+    type: paper
+    date: 2023-03-20
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2303.10845
     paper:
       arxiv: "2303.10845"
+related:
+  - pangu-alpha
+  - pangu-ultra
+  - openpangu

@@ -1,0 +1,23 @@
+name: LongCat ZigZag Attention
+slug: longcat-zigzag
+lab: meituan
+type: paper
+date: 2025-12-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.23966
+  - label: HuggingFace
+    url: https://huggingface.co/meituan-longcat/LongCat-Flash-Thinking-ZigZag
+  - label: GitHub
+    url: https://github.com/meituan-longcat/Longcat-Flash-Thinking-ZigZag
+description: >
+  Introduces LoZA (LongCat ZigZag Attention), a sparse attention scheme
+  for efficient long-context scaling in LongCat models.
+tags:
+  - attention
+  - efficiency
+  - long-context
+paper:
+  arxiv: "2512.23966"
+related:
+  - longcat-flash-thinking

@@ -1,0 +1,34 @@
+name: LongCat-Flash-Lite
+slug: longcat-flash-lite
+lab: meituan
+date: 2026-01-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.21204
+  - label: HuggingFace
+    url: https://huggingface.co/meituan-longcat/LongCat-Flash-Lite
+description: >
+  Smaller, cost-efficient LongCat variant based on the "Scaling Embeddings
+  Outperforms Scaling Experts" research. Designed for high-throughput
+  production use cases.
+tags:
+  - moe
+  - efficiency
+  - open-weight
+outputs:
+  - name: LongCat-Flash-Lite
+    type: model
+    date: 2026-01-27
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/meituan-longcat/LongCat-Flash-Lite
+  - name: "Scaling Embeddings Outperforms Scaling Experts in Language Models"
+    type: paper
+    date: 2026-01-29
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2601.21204
+    paper:
+      arxiv: "2601.21204"
+related:
+  - longcat-flash

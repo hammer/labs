@@ -1,0 +1,50 @@
+name: LongCat-Image
+slug: longcat-image
+lab: meituan
+date: 2025-12-08
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.07584
+  - label: HuggingFace
+    url: https://huggingface.co/meituan-longcat/LongCat-Image
+  - label: GitHub
+    url: https://github.com/meituan-longcat/LongCat-Image
+description: >
+  6B parameter bilingual (Chinese-English) image generation model
+  outperforming larger open-source models. Includes editing and a 10x speedup
+  distilled Edit-Turbo variant.
+tags:
+  - generation
+  - vision
+  - open-weight
+outputs:
+  - name: LongCat-Image
+    type: model
+    date: 2025-12-08
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/meituan-longcat/LongCat-Image
+      - label: GitHub
+        url: https://github.com/meituan-longcat/LongCat-Image
+    model:
+      architecture: dense
+      parameters: 6B
+  - name: LongCat-Image Technical Report
+    type: paper
+    date: 2025-12-08
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2512.07584
+    paper:
+      arxiv: "2512.07584"
+  - name: LongCat-Image-Edit-Turbo
+    type: model
+    date: 2026-02-03
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/meituan-longcat/LongCat-Image-Edit-Turbo
+    description: >
+      10x speedup distilled editing variant.
+related:
+  - longcat-video
+  - longcat-flash

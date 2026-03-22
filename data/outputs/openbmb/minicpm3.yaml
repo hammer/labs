@@ -1,0 +1,26 @@
+name: MiniCPM3-4B
+slug: minicpm3
+lab: openbmb
+type: model
+date: 2024-09-05
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/openbmb/MiniCPM3-4B
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM
+description: >
+  4B dense model optimized for reasoning and RAG, matching performance of
+  7B-9B models like Llama 3.1-8B while being significantly smaller and
+  more efficient for on-device deployment.
+tags:
+  - on-device
+  - efficiency
+  - open-weight
+  - reasoning
+model:
+  architecture: dense
+  parameters: 4B
+related:
+  - minicpm
+  - minicpm4

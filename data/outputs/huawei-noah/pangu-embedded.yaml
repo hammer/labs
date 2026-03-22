@@ -1,0 +1,22 @@
+name: Pangu Embedded
+slug: pangu-embedded
+lab: huawei-noah
+type: paper
+date: 2025-05-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.22375
+  - label: HuggingFace
+    url: https://huggingface.co/FreedomIntelligence/openPangu-Embedded-7B
+description: >
+  7B dual-system reasoner with fast and slow thinking modes. Open-sourced
+  as part of the openPangu initiative with 1B and 7B variants.
+tags:
+  - reasoning
+  - on-device
+  - open-weight
+paper:
+  arxiv: "2505.22375"
+related:
+  - openpangu
+  - pangu-pi

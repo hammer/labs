@@ -10,10 +10,13 @@ sources:
     url: https://arxiv.org/abs/2506.13585
   - label: HuggingFace
     url: https://huggingface.co/MiniMaxAI/MiniMax-M1-80k
+  - label: GitHub
+    url: https://github.com/MiniMax-AI/MiniMax-M1
 description: >
-  World's first large-scale hybrid-attention reasoning model (456B parameters,
-  45.9B active). Introduced Lightning Attention for 1M-token contexts with
-  75% less compute than rivals.
+  World's first large-scale hybrid-attention reasoning model (456B total,
+  45.9B active). Uses Lightning Attention for 1M-token contexts with 75%
+  less compute than rivals. CISPO algorithm for RL training used only 512
+  H800 GPUs for three weeks (~$530K).
 tags:
   - moe
   - reasoning
@@ -21,45 +24,28 @@ tags:
   - open-weight
   - reinforcement-learning
   - attention
-related:
-  - minimax-01
 outputs:
   - name: MiniMax-M1
     type: model
+    date: 2025-06-16
     sources:
-      - label: Announcement
-        url: https://www.minimax.io/news/minimaxm1
       - label: HuggingFace
         url: https://huggingface.co/MiniMaxAI/MiniMax-M1-80k
-      - label: Paper (arXiv)
-        url: https://arxiv.org/abs/2506.13585
-    description: >
-      World's first large-scale hybrid-attention reasoning model (456B parameters,
-      45.9B active). Introduced Lightning Attention for 1M-token contexts with
-      75% less compute than rivals.
+      - label: GitHub
+        url: https://github.com/MiniMax-AI/MiniMax-M1
     model:
       architecture: moe
       parameters: 456B
       active_parameters: 45.9B
       context_window: 1000000
-  - name: MiniMax-M1 Technical Report
-    type: paper
-    sources:
-      - label: Paper (arXiv)
-        url: https://arxiv.org/abs/2506.13585
-      - label: HuggingFace
-        url: https://huggingface.co/MiniMaxAI
-    description: >
-      Detailed the CISPO algorithm for reinforcement learning and efficient
-      scaling of test-time compute.
   - name: "MiniMax-M1: Scaling Test-Time Compute with Lightning Attention"
     type: paper
+    date: 2025-06-16
     sources:
       - label: Paper (arXiv)
         url: https://arxiv.org/abs/2506.13585
-      - label: HuggingFace
-        url: https://huggingface.co/papers/2506.13585
-    description: >
-      Technical report for the M1 hybrid-attention reasoning model (456B/45.9B active).
     paper:
       arxiv: "2506.13585"
+related:
+  - minimax-01
+  - minimax-m2

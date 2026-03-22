@@ -1,4 +1,4 @@
-name: LongCat-Flash
+name: LongCat-Flash-Chat
 slug: longcat-flash
 lab: meituan
 date: 2025-09-01
@@ -13,14 +13,13 @@ sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2509.01322
 description: >
-  560B parameter MoE model family activating ~27B per token. Spans
-  conversational chat, multimodal omni, and formal theorem proving variants,
-  with a technical report detailing the "Zero-computation Experts" mechanism.
+  560B parameter MoE model activating ~27B per token. Meituan's foundational
+  LLM with PID-controller-based dynamic expert allocation and "Zero-computation
+  Experts" mechanism. 128K context, 100+ tokens/sec on H800.
 tags:
   - moe
   - open-weight
   - long-context
-  - multimodal
 outputs:
   - name: LongCat-Flash-Chat
     type: model
@@ -30,58 +29,23 @@ outputs:
         url: https://huggingface.co/meituan-longcat/LongCat-Flash-Chat
       - label: GitHub
         url: https://github.com/meituan-longcat/LongCat-Flash-Chat
-      - label: Paper (arXiv)
-        url: https://arxiv.org/abs/2509.01322
-      - label: Project Page
-        url: https://www.longcatai.org/
-    description: >
-      560B parameter MoE model activating ~27B per token. Optimized for
-      conversational agents and high-throughput industrial deployment.
     model:
       architecture: moe
       parameters: 560B
       active_parameters: 27B
+      context_window: 128000
   - name: LongCat-Flash Technical Report
     type: paper
     date: 2025-09-01
     sources:
       - label: Paper (arXiv)
         url: https://arxiv.org/abs/2509.01322
-      - label: GitHub
-        url: https://github.com/meituan-longcat/LongCat-Flash-Chat
     description: >
-      Details the "Zero-computation Experts" mechanism for dynamic budget allocation.
-  - name: LongCat-Flash-Omni
-    type: model
-    date: 2025-11-03
-    sources:
-      - label: Announcement
-        url: https://tech.meituan.com/2025/11/03/longcat-flash-omni.html
-      - label: HuggingFace
-        url: https://huggingface.co/meituan-longcat/LongCat-Flash-Omni
-      - label: GitHub
-        url: https://github.com/meituan-longcat/LongCat-Flash-Omni
-      - label: Project Page
-        url: https://www.longcatai.org/models/omni
-    description: >
-      Native multimodal model supporting streaming audio-visual interaction,
-      allowing for real-time "seeing and hearing" capabilities.
-    model:
-      architecture: moe
-      parameters: 560B
-      active_parameters: 27B
-  - name: LongCat-Flash-Prover
-    type: model
-    date: 2026-03-20
-    sources:
-      - label: HuggingFace
-        url: https://huggingface.co/meituan-longcat
-      - label: GitHub
-        url: https://github.com/meituan-longcat
-    description: >
-      560B MoE model for formal theorem proving in Lean4. Achieved 97.1% pass
-      rate on MiniF2F-Test.
-    model:
-      architecture: moe
-      parameters: 560B
-      active_parameters: 27B
+      Details the Zero-computation Experts mechanism and PID-controller routing.
+    paper:
+      arxiv: "2509.01322"
+related:
+  - longcat-flash-thinking
+  - longcat-flash-omni
+  - longcat-flash-lite
+  - longcat-flash-prover

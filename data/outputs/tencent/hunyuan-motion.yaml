@@ -1,0 +1,16 @@
+name: HY-Motion 1.0
+slug: hunyuan-motion
+lab: tencent
+type: paper
+date: 2025-12-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.23464
+description: >
+  Scaling flow matching models for text-to-motion generation. Enables
+  high-quality human motion synthesis from text descriptions.
+tags:
+  - motion
+  - generation
+paper:
+  arxiv: "2512.23464"

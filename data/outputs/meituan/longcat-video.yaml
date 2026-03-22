@@ -1,26 +1,52 @@
 name: LongCat-Video
 slug: longcat-video
 lab: meituan
-type: model
 date: 2025-10-25
 sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.22200
   - label: HuggingFace
     url: https://huggingface.co/meituan-longcat/LongCat-Video
   - label: GitHub
     url: https://github.com/meituan-longcat/LongCat-Video
-  - label: Paper (arXiv)
-    url: https://arxiv.org/abs/2510.22200
 description: >
   13.6B parameter foundational video generation model unifying text-to-video,
   image-to-video, and video-continuation tasks. Uses Diffusion Transformer
-  with block sparse attention and multi-reward GRPO.
+  with block sparse attention and multi-reward GRPO. Includes a Video-Avatar
+  variant for identity-consistent portrait generation.
 tags:
   - video
   - generation
   - diffusion
   - open-weight
-model:
-  architecture: dense
-  parameters: 13.6B
+outputs:
+  - name: LongCat-Video
+    type: model
+    date: 2025-10-25
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/meituan-longcat/LongCat-Video
+      - label: GitHub
+        url: https://github.com/meituan-longcat/LongCat-Video
+    model:
+      architecture: dense
+      parameters: 13.6B
+  - name: LongCat-Video Technical Report
+    type: paper
+    date: 2025-10-25
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2510.22200
+    paper:
+      arxiv: "2510.22200"
+  - name: LongCat-Video-Avatar
+    type: model
+    date: 2025-12-13
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/meituan-longcat/LongCat-Video-Avatar
+    description: >
+      Identity-consistent portrait generation variant.
 related:
   - longcat-flash
+  - longcat-image

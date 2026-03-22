@@ -42,13 +42,13 @@ const types = [...new Set(allTypes)].sort();
         <th class="col-type">Type</th>
         <th class="col-metric sortable" data-sort="stars" title="GitHub stars — max across all repos referenced in the output">Stars <span class="sort-arrow"></span></th>
         <th class="col-metric sortable" data-sort="downloads" title="HuggingFace downloads — summed across all unique models in the output">Downloads <span class="sort-arrow"></span></th>
-        <th class="col-metric sortable" data-sort="citations" title="Semantic Scholar citations — summed across all unique papers in the output">Citations <span class="sort-arrow"></span></th>
+        <th class="col-metric sortable" data-sort="citations" title="OpenAlex citations — summed across all unique papers in the output">Citations <span class="sort-arrow"></span></th>
       </tr>
     </thead>
     <tbody>
       {outputs.map((output, i) => {
         const labList = Array.isArray(output.lab) ? output.lab : [output.lab];
-        const labNames = labList.map(s => getLabBySlug(s)?.name ?? s).join(', ');
+        const labEntries = labList.map(s => ({ slug: s, name: getLabBySlug(s)?.name ?? s }));
         const outputTypes = getOutputTypes(output);
         const grouped = isGrouped(output);
         const m = output._metrics;
@@ -71,7 +71,7 @@ const types = [...new Set(allTypes)].sort();
               {output.name}
               {grouped && <span class="group-badge">{output.outputs.length}</span>}
             </td>
-            <td class="col-lab">{labNames}</td>
+            <td class="col-lab">{labEntries.map((l, j) => <>{j > 0 && ', '}<a href={`/labs/${l.slug}`} class="lab-link">{l.name}</a></>)}</td>
             <td class="col-type">
               {outputTypes.map(t => <TypeBadge type={t} />)}
             </td>
@@ -286,9 +286,10 @@ const types = [...new Set(allTypes)].sort();
     sortRows(next, true);
   }
 
-  // Click to navigate
+  // Click to navigate (but not when clicking a lab link)
   allRows.forEach(row => {
-    row.addEventListener('click', () => {
+    row.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).closest('.lab-link')) return;
       const href = row.dataset.href;
       if (href) window.location.href = href;
     });
@@ -552,6 +553,14 @@ const types = [...new Set(allTypes)].sort();
   .col-lab {
     white-space: nowrap;
     color: var(--text-muted);
+  }
+
+  .lab-link {
+    color: var(--text-muted);
+  }
+
+  .lab-link:hover {
+    color: var(--text);
   }
 
   .col-type {

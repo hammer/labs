@@ -1,0 +1,22 @@
+name: LongCat-Audio-Codec
+slug: longcat-audio-codec
+lab: meituan
+type: paper
+date: 2025-10-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.15227
+  - label: HuggingFace
+    url: https://huggingface.co/meituan-longcat/LongCat-Audio-Codec
+  - label: GitHub
+    url: https://github.com/meituan-longcat/LongCat-Audio-Codec
+description: >
+  Audio tokenizer and detokenizer designed for speech LLMs. Underpins the
+  LongCat-Flash-Omni model's audio capabilities.
+tags:
+  - audio
+  - speech
+paper:
+  arxiv: "2510.15227"
+related:
+  - longcat-flash-omni

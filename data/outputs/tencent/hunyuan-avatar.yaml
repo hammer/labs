@@ -1,0 +1,17 @@
+name: HunyuanVideo-Avatar
+slug: hunyuan-avatar
+lab: tencent
+type: paper
+date: 2025-05-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.20156
+description: >
+  Portrait animation and multi-character dialogue generation built on the
+  HunyuanVideo framework. Enables audio-driven animated portraits.
+tags:
+  - video
+  - generation
+  - avatar
+paper:
+  arxiv: "2505.20156"

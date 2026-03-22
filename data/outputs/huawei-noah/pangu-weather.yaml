@@ -1,0 +1,38 @@
+name: PanGu-Weather
+slug: pangu-weather
+lab: huawei-noah
+date: 2023-07-05
+sources:
+  - label: Paper (Nature)
+    url: https://www.nature.com/articles/s41586-023-06185-3
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2211.02556
+  - label: GitHub
+    url: https://github.com/198808xc/Pangu-Weather
+  - label: Announcement
+    url: https://www.huawei.com/en/news/2023/7/pangu-ai-model-nature-publish
+description: >
+  3D neural network for medium-range global weather forecasting, published
+  in Nature. Produces 24-hour global weather forecasts in 1.4 seconds,
+  adopted by the European Centre for Medium-Range Weather Forecasts (ECMWF).
+tags:
+  - ai-for-science
+  - weather
+outputs:
+  - name: PanGu-Weather
+    type: model
+    date: 2023-07-05
+    sources:
+      - label: GitHub
+        url: https://github.com/198808xc/Pangu-Weather
+  - name: "Accurate medium-range global weather forecasting with 3D neural networks"
+    type: paper
+    date: 2023-07-05
+    sources:
+      - label: Paper (Nature)
+        url: https://www.nature.com/articles/s41586-023-06185-3
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2211.02556
+    paper:
+      arxiv: "2211.02556"
+      venue: Nature

@@ -1,0 +1,23 @@
+name: MiniMax-M2.7
+slug: minimax-m2.7
+lab: minimax
+type: model
+date: 2026-03-18
+flagship: true
+sources:
+  - label: Announcement
+    url: https://www.minimax.io/news/minimax-m27-en
+  - label: API Docs
+    url: https://platform.minimax.io/docs/release-notes/models
+description: >
+  Current flagship "Co-worker Agent" focused on AI self-evolution. Can
+  independently build and stabilize agent systems. 56.22% on SWE-Pro.
+  Proprietary (closed weights).
+tags:
+  - agentic
+  - coding
+  - frontier
+related:
+  - minimax-m2.5
+  - minimax-m2.1
+  - minimax-m2

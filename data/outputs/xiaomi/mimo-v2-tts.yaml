@@ -1,0 +1,18 @@
+name: MiMo-V2-TTS
+slug: mimo-v2-tts
+lab: xiaomi
+type: model
+date: 2026-03-18
+sources:
+  - label: Website
+    url: https://mimo.xiaomi.com/mimo-v2-tts
+description: >
+  High-fidelity text-to-speech model for providing agent voices across
+  Xiaomi's device ecosystem.
+tags:
+  - speech
+  - tts
+related:
+  - mimo-v2
+  - mimo-v2-pro
+  - mimo-v2-omni

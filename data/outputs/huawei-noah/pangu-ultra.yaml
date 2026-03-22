@@ -1,0 +1,36 @@
+name: Pangu Ultra
+slug: pangu-ultra
+lab: huawei-noah
+date: 2025-04-10
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.07866
+  - label: GitHub
+    url: https://github.com/pangu-tech/pangu-ultra
+description: >
+  135B dense LLM trained entirely on Ascend NPUs (8,192 chips) on 13.2T
+  tokens. Demonstrates that frontier-scale dense models can be trained on
+  domestic Chinese hardware without NVIDIA GPUs.
+tags:
+  - frontier
+  - nlp
+outputs:
+  - name: Pangu Ultra 135B
+    type: model
+    date: 2025-04-10
+    model:
+      parameters: 135B
+      architecture: dense
+  - name: "Pangu Ultra: Pushing the Limits of Dense Large Language Models on Ascend NPUs"
+    type: paper
+    date: 2025-04-10
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2504.07866
+    paper:
+      arxiv: "2504.07866"
+related:
+  - pangu-sigma
+  - pangu-ultra-moe
+  - openpangu

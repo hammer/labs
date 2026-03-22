@@ -1,0 +1,51 @@
+name: Ling 2.0 / Ling-1T
+slug: ling-2.0
+lab: ant-group
+date: 2025-10-09
+flagship: true
+sources:
+  - label: Announcement
+    url: https://www.businesswire.com/news/home/20251009240721/en/Ant-Group-Unveils-Ling-AI-Model-Family-and-Launches-Trillion-Parameter-Language-Model-Ling-1T
+  - label: HuggingFace
+    url: https://huggingface.co/inclusionAI/Ling-1T
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.22115
+description: >
+  Trillion-parameter MoE flagship with ~50B active parameters. The Ling 2.0
+  technical report details reasoning-oriented MoE foundation scaling from
+  tens of billions to 1T parameters.
+tags:
+  - moe
+  - frontier
+  - open-weight
+outputs:
+  - name: Ling-1T
+    type: model
+    date: 2025-10-09
+    sources:
+      - label: Announcement
+        url: https://www.businesswire.com/news/home/20251009240721/en/Ant-Group-Unveils-Ling-AI-Model-Family-and-Launches-Trillion-Parameter-Language-Model-Ling-1T
+      - label: HuggingFace
+        url: https://huggingface.co/inclusionAI/Ling-1T
+    description: >
+      1-trillion parameter MoE flagship with ~50B active parameters.
+    model:
+      architecture: moe
+      parameters: 1T
+      active_parameters: 50B
+  - name: "Ling 2.0: Every Activation Boosted"
+    type: paper
+    date: 2025-10-25
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2510.22115
+      - label: HuggingFace
+        url: https://huggingface.co/papers/2510.22115
+    description: >
+      Technical report for reasoning-oriented MoE foundation scaling from
+      tens of billions to 1T parameters.
+    paper:
+      arxiv: "2510.22115"
+related:
+  - ling
+  - ling-2.5

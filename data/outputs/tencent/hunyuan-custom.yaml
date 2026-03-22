@@ -1,0 +1,20 @@
+name: HunyuanCustom
+slug: hunyuan-custom
+lab: tencent
+type: paper
+date: 2025-05-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.04512
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/HunyuanCustom
+description: >
+  Multimodal-driven architecture for customized video generation. Enables
+  identity-preserving, style-consistent, and subject-driven video creation
+  from reference images and text prompts.
+tags:
+  - video
+  - generation
+  - customization
+paper:
+  arxiv: "2505.04512"

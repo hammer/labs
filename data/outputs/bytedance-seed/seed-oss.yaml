@@ -3,6 +3,7 @@ slug: seed-oss
 lab: bytedance-seed
 type: model
 date: 2025-08-20
+flagship: true
 sources:
   - label: GitHub
     url: https://github.com/ByteDance-Seed/seed-oss

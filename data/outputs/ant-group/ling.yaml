@@ -6,25 +6,17 @@ flagship: true
 sources:
   - label: GitHub
     url: https://github.com/inclusionAI/Ling
-  - label: HuggingFace (Ling-1T)
-    url: https://huggingface.co/inclusionAI/Ling-1T
-  - label: HuggingFace (Ling-2.5-1T)
-    url: https://huggingface.co/inclusionAI/Ling-2.5-1T
-  - label: Announcement (Ling-1T)
-    url: https://www.businesswire.com/news/home/20251009240721/en/Ant-Group-Unveils-Ling-AI-Model-Family-and-Launches-Trillion-Parameter-Language-Model-Ling-1T
-  - label: Announcement (Ling-2.5-1T)
-    url: https://www.businesswire.com/news/home/20260215551663/en/Ant-Group-Releases-Ling-2.5-1T-and-Ring-2.5-1T-Evolving-Its-Open-Source-AI-Model-Family
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.05139
 description: >
-  Ant Group's general-purpose (non-thinking) LLM family, scaling from 16B dense
-  to 1T MoE. Built on efficient training techniques that maximize every FLOP,
-  even without premium GPU clusters.
+  Ant Group's general-purpose (non-thinking) LLM family, introduced with
+  "Every FLOP Counts" — a technical report on training massive MoE models
+  without premium H100/A100 clusters. Includes Ling-mini (16B dense) for
+  edge and low-latency use cases.
 tags:
   - moe
-  - frontier
   - open-weight
   - efficiency
-  - long-context
-  - agentic
 outputs:
   - name: "Every FLOP Counts: Scaling a 300B MoE LING LLM"
     type: paper
@@ -35,7 +27,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/papers/2503.05139
     description: >
-      Technical details on training massive MoE models without premium H100/A100
+      Technical details on training massive MoE models without premium
       clusters. Core philosophy behind Ant's efficient scaling approach.
     paper:
       arxiv: "2503.05139"
@@ -48,50 +40,10 @@ outputs:
       - label: Blog Post
         url: https://huggingface.co/blog/RichardBian/ling-mini-2-moe-release
     description: >
-      Smaller Ling variants for edge and low-latency use cases. Ling-mini 2.0
-      at 16B parameters.
+      Smaller Ling variants for edge and low-latency use cases.
     model:
       architecture: dense
       parameters: 16B
-  - name: Ling-1T
-    type: model
-    date: 2025-10-09
-    sources:
-      - label: Announcement
-        url: https://www.businesswire.com/news/home/20251009240721/en/Ant-Group-Unveils-Ling-AI-Model-Family-and-Launches-Trillion-Parameter-Language-Model-Ling-1T
-      - label: HuggingFace
-        url: https://huggingface.co/inclusionAI/Ling-1T
-    description: >
-      1-trillion parameter MoE flagship with ~50B active parameters.
-    model:
-      architecture: moe
-      parameters: 1T
-      active_parameters: 50B
-  - name: "Ling 2.0: Every Activation Boosted"
-    type: paper
-    date: 2025-10-25
-    sources:
-      - label: Paper (arXiv)
-        url: https://arxiv.org/abs/2510.22115
-      - label: HuggingFace
-        url: https://huggingface.co/papers/2510.22115
-    description: >
-      Technical report for reasoning-oriented MoE foundation scaling from tens
-      of billions to 1T parameters.
-    paper:
-      arxiv: "2510.22115"
-  - name: Ling-2.5-1T
-    type: model
-    date: 2026-02-16
-    sources:
-      - label: Announcement
-        url: https://www.businesswire.com/news/home/20260215551663/en/Ant-Group-Releases-Ling-2.5-1T-and-Ring-2.5-1T-Evolving-Its-Open-Source-AI-Model-Family
-      - label: HuggingFace
-        url: https://huggingface.co/inclusionAI/Ling-2.5-1T
-    description: >
-      Latest Ling iteration featuring Lightning Linear Attention, supporting a
-      1 million token context window and optimized for agentic interaction.
-    model:
-      architecture: moe
-      parameters: 1T
-      context_window: 1000000
+related:
+  - ling-2.0
+  - ling-2.5

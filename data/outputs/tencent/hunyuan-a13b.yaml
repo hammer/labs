@@ -1,21 +1,44 @@
 name: Hunyuan-A13B
 slug: hunyuan-a13b
 lab: tencent
-type: model
 date: 2025-06-27
 sources:
   - label: HuggingFace
     url: https://huggingface.co/tencent/Hunyuan-A13B-Instruct
   - label: GitHub
     url: https://github.com/Tencent-Hunyuan/Hunyuan-A13B
+  - label: Technical Report (PDF)
+    url: https://github.com/Tencent-Hunyuan/Hunyuan-A13B/blob/main/report/Hunyuan_A13B_Technical_Report.pdf
   - label: Announcement
     url: https://www.marktechpost.com/2025/06/28/tencent-open-sources-hunyuan-a13b-a-13b-active-parameter-moe-model-with-dual-mode-reasoning-and-256k-context/
 description: >
-  High-efficiency open-source MoE model frequently used in benchmarks.
+  High-efficiency open-source MoE model (80B total / 13B active) with dual-mode
+  reasoning and 256K context. Frequently used in benchmarks and serves as the
+  backbone for HunyuanImage 3.0.
 tags:
   - moe
   - open-weight
   - efficiency
-model:
-  architecture: moe
-  active_parameters: 13B
+outputs:
+  - name: Hunyuan-A13B
+    type: model
+    date: 2025-06-27
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/tencent/Hunyuan-A13B-Instruct
+      - label: GitHub
+        url: https://github.com/Tencent-Hunyuan/Hunyuan-A13B
+    model:
+      architecture: moe
+      parameters: 80B
+      active_parameters: 13B
+      context_window: 256000
+  - name: Hunyuan-A13B Technical Report
+    type: paper
+    date: 2025-06-27
+    sources:
+      - label: Technical Report (PDF)
+        url: https://github.com/Tencent-Hunyuan/Hunyuan-A13B/blob/main/report/Hunyuan_A13B_Technical_Report.pdf
+    description: >
+      Technical report for the 80B total / 13B active MoE model with dual-mode
+      reasoning capability.

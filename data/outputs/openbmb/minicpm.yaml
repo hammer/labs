@@ -4,29 +4,30 @@ lab: openbmb
 date: 2024-02-01
 flagship: true
 sources:
-  - label: "Paper (arXiv)"
+  - label: Paper (arXiv)
     url: https://arxiv.org/abs/2404.06395
   - label: GitHub
     url: https://github.com/OpenBMB/MiniCPM
-  - label: HuggingFace
+  - label: HuggingFace (2B)
     url: https://huggingface.co/openbmb/MiniCPM-2B-dpo-bf16
-  - label: "HuggingFace (MoE)"
+  - label: HuggingFace (MoE)
     url: https://huggingface.co/openbmb/MiniCPM-MoE-8x2B
-  - label: "HuggingFace (3-4B)"
-    url: https://huggingface.co/openbmb/MiniCPM3-4B
 description: >
-  Series of efficient on-device language models. The 2B model outperformed
-  Llama2-13B and matched Mistral-7B despite its smaller size. Evolved through
-  MoE and MiniCPM3 variants.
+  The original MiniCPM series proving that small models can rival much larger
+  ones. The 2B model outperformed Llama2-13B and matched Mistral-7B.
+  Includes an 8x2B MoE variant delivering 7B-class performance.
 tags:
   - on-device
   - efficiency
   - open-weight
   - moe
-  - reasoning
 outputs:
   - name: MiniCPM-1B / 2B
     type: model
+    date: 2024-02-01
+    sources:
+      - label: HuggingFace (2B)
+        url: https://huggingface.co/openbmb/MiniCPM-2B-dpo-bf16
     model:
       architecture: dense
       variants:
@@ -37,25 +38,25 @@ outputs:
   - name: "MiniCPM: Unveiling the Potential of End-Side Large Language Models"
     type: paper
     date: 2024-04-09
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2404.06395
     paper:
       arxiv: "2404.06395"
   - name: MiniCPM-MoE-8x2B
     type: model
     date: 2024-04-11
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/openbmb/MiniCPM-MoE-8x2B
+      - label: Technical Report
+        url: https://openbmb.vercel.app/minicpm-moe-en
     description: >
       MoE version delivering 7B-class performance with significantly lower
       active parameter costs.
-    sources:
-      - label: "Technical Report"
-        url: https://openbmb.vercel.app/minicpm-moe-en
     model:
       architecture: moe
-  - name: MiniCPM3-4B
-    type: model
-    date: 2024-09-05
-    description: >
-      Optimized for reasoning and RAG, matching performance of 7B-9B models
-      like Llama 3.1-8B.
-    model:
-      architecture: dense
-      parameters: 4B
+related:
+  - minicpm3
+  - minicpm4
+  - minicpm-v

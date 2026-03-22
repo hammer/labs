@@ -1,0 +1,41 @@
+name: Pangu Ultra MoE
+slug: pangu-ultra-moe
+lab: huawei-noah
+date: 2025-05-07
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.04519
+  - label: HuggingFace
+    url: https://huggingface.co/FreedomIntelligence/openPangu-Ultra-MoE-718B
+description: >
+  718B sparse MoE with 256 experts per layer and 39B active parameters.
+  The flagship model announced at HDC 2025, later open-sourced as part
+  of the openPangu initiative.
+tags:
+  - moe
+  - frontier
+  - open-weight
+outputs:
+  - name: Pangu Ultra MoE 718B
+    type: model
+    date: 2025-05-07
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/FreedomIntelligence/openPangu-Ultra-MoE-718B
+    model:
+      parameters: 718B
+      active_parameters: 39B
+      architecture: moe
+  - name: "Pangu Ultra MoE: A Scalable Mixture-of-Experts Framework"
+    type: paper
+    date: 2025-05-07
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2505.04519
+    paper:
+      arxiv: "2505.04519"
+related:
+  - pangu-ultra
+  - pangu-pro-moe
+  - openpangu

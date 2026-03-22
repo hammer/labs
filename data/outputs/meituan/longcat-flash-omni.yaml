@@ -1,0 +1,48 @@
+name: LongCat-Flash-Omni
+slug: longcat-flash-omni
+lab: meituan
+date: 2025-11-03
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2511.00279
+  - label: HuggingFace
+    url: https://huggingface.co/meituan-longcat/LongCat-Flash-Omni
+  - label: GitHub
+    url: https://github.com/meituan-longcat/LongCat-Flash-Omni
+  - label: Announcement
+    url: https://tech.meituan.com/2025/11/03/longcat-flash-omni.html
+description: >
+  Native omni-modal model supporting streaming audio-visual interaction.
+  560B MoE (27B active), 128K context, millisecond-level end-to-end latency,
+  8+ minutes of real-time audio-visual interaction. Benchmarks: 61.4
+  OmniBench, 78.2 VideoMME, 88.7 VoiceBench.
+tags:
+  - moe
+  - multimodal
+  - speech
+  - open-weight
+outputs:
+  - name: LongCat-Flash-Omni
+    type: model
+    date: 2025-11-03
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/meituan-longcat/LongCat-Flash-Omni
+      - label: GitHub
+        url: https://github.com/meituan-longcat/LongCat-Flash-Omni
+    model:
+      architecture: moe
+      parameters: 560B
+      active_parameters: 27B
+  - name: LongCat-Flash-Omni Technical Report
+    type: paper
+    date: 2025-10-31
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2511.00279
+    paper:
+      arxiv: "2511.00279"
+related:
+  - longcat-flash
+  - longcat-audio-codec

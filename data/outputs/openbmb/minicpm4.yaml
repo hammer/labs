@@ -1,21 +1,21 @@
-name: MiniCPM4 & 4.1
+name: MiniCPM4
 slug: minicpm4
 lab: openbmb
 date: 2025-06-06
 flagship: true
 sources:
-  - label: "Paper (arXiv)"
+  - label: Paper (arXiv)
     url: https://arxiv.org/abs/2506.07900
   - label: GitHub
     url: https://github.com/OpenBMB/MiniCPM
   - label: HuggingFace
     url: https://huggingface.co/openbmb/MiniCPM4-8B
-  - label: "HuggingFace (4.1)"
-    url: https://huggingface.co/openbmb/MiniCPM4.1-8B
 description: >
-  Ultra-efficient LLMs on end devices. Introduced Hybrid Reasoning modes and
-  achieved 3-7x generation speedup through sparse-attention kernels. MiniCPM4.1
-  adds InfLLM-v2 trainable sparse attention for long-context processing.
+  Ultra-efficient 8B LLM for end devices. Introduced Hybrid Reasoning
+  (dual-mode switching between deep reasoning and fast response) and
+  InfLLM-v2 sparse attention where each token computes relevance with less
+  than 5% of tokens, reducing attention computation by 60%. Achieves
+  3-7x generation speedup on edge chips.
 tags:
   - on-device
   - efficiency
@@ -24,19 +24,22 @@ tags:
 outputs:
   - name: MiniCPM4-8B
     type: model
-    model:
-      architecture: dense
-      parameters: 8B
-  - name: MiniCPM4.1-8B
-    type: model
-    date: 2025-09-05
-    description: >
-      Hybrid reasoning model with InfLLM-v2 trainable sparse attention,
-      supporting both deep reasoning and non-reasoning modes.
+    date: 2025-06-06
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/openbmb/MiniCPM4-8B
     model:
       architecture: dense
       parameters: 8B
   - name: "MiniCPM4: Ultra-Efficient LLMs on End Devices"
     type: paper
+    date: 2025-06-06
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2506.07900
     paper:
       arxiv: "2506.07900"
+related:
+  - minicpm4.1
+  - minicpm3
+  - minicpm-sala

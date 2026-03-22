@@ -4,24 +4,19 @@ lab: openbmb
 date: 2024-04-12
 flagship: true
 sources:
-  - label: "Paper (arXiv)"
+  - label: Paper (arXiv)
     url: https://arxiv.org/abs/2408.01800
   - label: GitHub
     url: https://github.com/OpenBMB/MiniCPM-o
-  - label: "HuggingFace (V 2.0)"
+  - label: HuggingFace (V 2.0)
     url: https://huggingface.co/openbmb/MiniCPM-V
-  - label: "HuggingFace (V 2.5)"
-    url: https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5
-  - label: "HuggingFace (V 2.6)"
+  - label: HuggingFace (V 2.6)
     url: https://huggingface.co/openbmb/MiniCPM-V-2_6
-  - label: "HuggingFace (V 4.5)"
-    url: https://huggingface.co/openbmb/MiniCPM-V-4_5
-  - label: "Paper (V 4.5)"
-    url: https://arxiv.org/abs/2509.18154
 description: >
-  Series of vision-language models achieving GPT-4V level performance on mobile
-  devices. First multimodal model capable of being deployed natively on a
-  smartphone, evolved through multiple versions.
+  Vision-language model series achieving GPT-4V level performance on mobile
+  devices. The first multimodal model deployed natively on a smartphone.
+  Progressed from V 2.0 through V 2.6 with world-class OCR and video
+  understanding.
 tags:
   - vlm
   - on-device
@@ -30,12 +25,18 @@ tags:
 outputs:
   - name: MiniCPM-V 2.0
     type: model
+    date: 2024-04-12
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/openbmb/MiniCPM-V
     description: >
-      First multimodal model capable of being deployed natively on a
-      smartphone.
+      First multimodal model deployed natively on a smartphone.
   - name: MiniCPM-Llama3-V 2.5
     type: model
     date: 2024-05-20
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5
     description: >
       GPT-4V level performance in a 9B parameter package with world-class
       OCR capabilities.
@@ -44,22 +45,21 @@ outputs:
   - name: MiniCPM-V 2.6
     type: model
     date: 2024-08-06
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/openbmb/MiniCPM-V-2_6
     description: >
       Introduced multi-image and video understanding, outperforming GPT-4V
       on major benchmarks.
   - name: "MiniCPM-V: A GPT-4V Level MLLM on Your Phone"
     type: paper
     date: 2024-08-03
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2408.01800
     paper:
       arxiv: "2408.01800"
-  - name: MiniCPM-V 4.5
-    type: model
-    date: 2025-08-26
-    description: >
-      State-of-the-art for on-device vision, specializing in complex document
-      parsing and high-resolution spatial reasoning.
-    sources:
-      - label: "Paper (arXiv)"
-        url: https://arxiv.org/abs/2509.18154
-    paper:
-      arxiv: "2509.18154"
+related:
+  - minicpm-v4.5
+  - minicpm-o
+  - minicpm

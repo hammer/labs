@@ -1,17 +1,46 @@
 name: HunyuanImage-3.0
 slug: hunyuanimage-3.0
 lab: tencent
-type: model
 date: 2025-09-28
 sources:
   - label: GitHub
     url: https://github.com/Tencent-Hunyuan/HunyuanImage-3.0
   - label: HuggingFace
     url: https://huggingface.co/tencent/HunyuanImage-3.0-Instruct-Distil
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.23951
 description: >
-  "Native Multimodal Model" for image generation, capable of instant updates
-  from text, sketch, or voice.
+  Native multimodal autoregressive model for image generation, built on the
+  Hunyuan-A13B backbone (80B+ total, 13B active). Largest open-source image
+  generative model at time of release. Capable of instant updates from text,
+  sketch, or voice.
 tags:
   - generation
   - vision
   - multimodal
+  - open-weight
+outputs:
+  - name: HunyuanImage-3.0
+    type: model
+    date: 2025-09-28
+    sources:
+      - label: GitHub
+        url: https://github.com/Tencent-Hunyuan/HunyuanImage-3.0
+      - label: HuggingFace
+        url: https://huggingface.co/tencent/HunyuanImage-3.0-Instruct-Distil
+    model:
+      architecture: moe
+      active_parameters: 13B
+  - name: HunyuanImage 3.0 Technical Report
+    type: paper
+    date: 2025-09-28
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2509.23951
+    description: >
+      Technical report for the native multimodal autoregressive image generation
+      model built on Hunyuan-A13B.
+    paper:
+      arxiv: "2509.23951"
+related:
+  - hunyuan-a13b

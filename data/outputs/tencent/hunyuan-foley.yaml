@@ -1,0 +1,17 @@
+name: HunyuanVideo-Foley
+slug: hunyuan-foley
+lab: tencent
+type: paper
+date: 2025-08-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.16930
+description: >
+  Multimodal diffusion model with representation alignment for high-fidelity
+  Foley audio generation synced to video content.
+tags:
+  - audio
+  - video
+  - generation
+paper:
+  arxiv: "2508.16930"

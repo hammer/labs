@@ -1,0 +1,47 @@
+name: LongCat-Flash-Thinking-2601
+slug: longcat-flash-thinking-2601
+lab: meituan
+date: 2026-01-23
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.16725
+  - label: HuggingFace
+    url: https://huggingface.co/meituan-longcat/LongCat-Flash-Thinking-2601
+  - label: GitHub
+    url: https://github.com/meituan-longcat/LongCat-Flash-Thinking-2601
+description: >
+  Updated 560B MoE agentic reasoning model with DORA RL framework and Heavy
+  Thinking mode. Achieves 97.1% on theorem proving benchmarks. A distinct
+  release from the September 2025 Flash-Thinking, with a new technical report.
+tags:
+  - reasoning
+  - moe
+  - reinforcement-learning
+  - agentic
+  - open-weight
+outputs:
+  - name: LongCat-Flash-Thinking-2601
+    type: model
+    date: 2026-01-23
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/meituan-longcat/LongCat-Flash-Thinking-2601
+      - label: GitHub
+        url: https://github.com/meituan-longcat/LongCat-Flash-Thinking-2601
+    model:
+      architecture: moe
+      parameters: 560B
+      active_parameters: 27B
+  - name: LongCat-Flash-Thinking-2601 Technical Report
+    type: paper
+    date: 2026-01-23
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2601.16725
+    paper:
+      arxiv: "2601.16725"
+related:
+  - longcat-flash-thinking
+  - longcat-flash
+  - longcat-flash-prover

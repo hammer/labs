@@ -1,1910 +1,2140 @@
 {
   "alibaba-qwen/chinese-clip": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 5837,
-    "github_forks": 549
+    "github_forks": 549,
+    "citations": 51
   },
   "alibaba-qwen/deep-planning": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "alibaba-qwen/m6-series": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 48
   },
   "alibaba-qwen/ofa": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 2557,
-    "github_forks": 250
+    "github_forks": 250,
+    "citations": 258
   },
   "alibaba-qwen/polymath": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 43,
-    "github_forks": 8,
-    "citations": 31
+    "github_forks": 8
   },
   "alibaba-qwen/processbench": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 1
   },
   "alibaba-qwen/qvq": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "alibaba-qwen/qwen": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "github_stars": 20791,
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 20792,
     "github_forks": 1749,
     "hf_downloads": 113238,
-    "hf_likes": 396
+    "hf_likes": 396,
+    "citations": 80
   },
   "alibaba-qwen/qwen-agent": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 15725,
     "github_forks": 1505
   },
   "alibaba-qwen/qwen-code": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "github_stars": 20902,
-    "github_forks": 1860
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 20908,
+    "github_forks": 1862
   },
   "alibaba-qwen/qwen-cpp": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 621,
     "github_forks": 61
   },
   "alibaba-qwen/qwen-image": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "github_stars": 7594,
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 7596,
     "github_forks": 463,
     "hf_downloads": 223729,
     "hf_likes": 2428
   },
   "alibaba-qwen/qwen1.5": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "alibaba-qwen/qwen2": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "github_stars": 26977,
-    "github_forks": 1939
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 26978,
+    "github_forks": 1939,
+    "citations": 43
   },
   "alibaba-qwen/qwen2-audio": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "github_stars": 2060,
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 2059,
     "github_forks": 164,
     "hf_downloads": 2341,
-    "hf_likes": 146
+    "hf_likes": 146,
+    "citations": 25
   },
   "alibaba-qwen/qwen2-vl": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 48655,
-    "hf_likes": 276
+    "hf_likes": 276,
+    "citations": 246
   },
   "alibaba-qwen/qwen2.5": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "github_stars": 26977,
-    "github_forks": 1939
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 26978,
+    "github_forks": 1939,
+    "citations": 57
   },
   "alibaba-qwen/qwen2.5-coder": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "github_stars": 16096,
-    "github_forks": 1142
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 16102,
+    "github_forks": 1142,
+    "citations": 30
   },
   "alibaba-qwen/qwen2.5-math": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 1069,
     "github_forks": 156,
-    "citations": 809
+    "citations": 10
   },
   "alibaba-qwen/qwen2.5-omni": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 3956,
     "github_forks": 323,
     "hf_downloads": 466117,
     "hf_likes": 1875
   },
   "alibaba-qwen/qwen3": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "github_stars": 26977,
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 26978,
     "github_forks": 1939,
-    "citations": 12
+    "citations": 40
   },
   "alibaba-qwen/qwen3-coder": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "github_stars": 16096,
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 16102,
     "github_forks": 1142,
     "hf_downloads": 1286088,
-    "hf_likes": 1157
+    "hf_likes": 1158
   },
   "alibaba-qwen/qwen3.5": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "github_stars": 2237,
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 2239,
     "github_forks": 118
   },
   "alibaba-qwen/qwen3guard": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 439,
-    "github_forks": 31,
-    "citations": 47
+    "github_forks": 31
   },
   "alibaba-qwen/qwq-32b": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 54928,
     "hf_likes": 2877
   },
   "alibaba-qwen/rationale-rm": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "ant-group/agentar-deepfinance": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 34,
     "github_forks": 2
   },
   "ant-group/agentuniverse": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 2160,
-    "github_forks": 369
+    "github_forks": 369,
+    "citations": 1
   },
   "ant-group/ant-financial-llm": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "ant-group/areal": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "github_stars": 4866,
-    "github_forks": 419,
-    "citations": 134
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 4868,
+    "github_forks": 420
   },
   "ant-group/aworld": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 1160,
     "github_forks": 119
   },
   "ant-group/codefuse": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "ant-group/db-gpt": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "github_stars": 18330,
-    "github_forks": 2582
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 18331,
+    "github_forks": 2583
   },
   "ant-group/dlrover": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 1641,
     "github_forks": 213
   },
   "ant-group/echomimic": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "github_stars": 4196,
-    "github_forks": 457
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 4195,
+    "github_forks": 457,
+    "citations": 2
   },
   "ant-group/fin-eval": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "ant-group/humansense-benchmark": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "ant-group/kata-containers": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "github_stars": 7637,
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 7638,
     "github_forks": 1277
   },
   "ant-group/lightning-linear-attention": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 47
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 2
   },
   "ant-group/ling": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 242,
     "github_forks": 20,
-    "hf_downloads": 14362,
-    "hf_likes": 532,
-    "citations": 17
+    "hf_downloads": 11617,
+    "hf_likes": 190,
+    "citations": 1
+  },
+  "ant-group/ling-2.0": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 2406,
+    "hf_likes": 532
+  },
+  "ant-group/ling-2.5": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 339,
+    "hf_likes": 103
   },
   "ant-group/llada": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 3685,
     "github_forks": 250,
     "hf_downloads": 1812,
     "hf_likes": 90,
-    "citations": 63
+    "citations": 4
   },
   "ant-group/ming": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 645,
     "github_forks": 53,
     "hf_downloads": 10211,
     "hf_likes": 255
   },
   "ant-group/moe-scaling-laws": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "ant-group/oceanbase": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 10030,
     "github_forks": 1884
   },
   "ant-group/openspg": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 2048,
     "github_forks": 247
   },
   "ant-group/ring": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 242,
     "github_forks": 20,
     "hf_downloads": 18806,
     "hf_likes": 267
   },
   "ant-group/secretflow": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 2636,
     "github_forks": 469
   },
   "ant-group/tugraph": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 1714,
     "github_forks": 212
   },
   "ant-group/vsag": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 459,
     "github_forks": 84
   },
   "ant-group/zoombench": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 106,
     "github_forks": 1
   },
   "baai/altclip": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 3883,
     "github_forks": 420,
     "hf_downloads": 149590,
-    "hf_likes": 31
+    "hf_likes": 31,
+    "citations": 9
   },
   "baai/aquila": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 444,
     "github_forks": 30,
-    "hf_downloads": 446,
-    "hf_likes": 61,
-    "citations": 11
+    "hf_downloads": 162,
+    "hf_likes": 18
+  },
+  "baai/aquila-vl": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 256,
+    "hf_likes": 61
+  },
+  "baai/aquila2": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 444,
+    "github_forks": 30,
+    "hf_downloads": 56,
+    "hf_likes": 6
+  },
+  "baai/aquilamed": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 28,
+    "hf_likes": 13,
+    "citations": 1
   },
   "baai/bge": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 11434,
     "github_forks": 844,
-    "hf_downloads": 22401219,
+    "hf_downloads": 6002916,
+    "hf_likes": 634
+  },
+  "baai/bge-code": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 11434,
+    "github_forks": 844,
+    "hf_downloads": 13449,
+    "hf_likes": 48
+  },
+  "baai/bge-m3": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 11434,
+    "github_forks": 844,
+    "hf_downloads": 16394974,
     "hf_likes": 2839,
-    "citations": 1134
+    "citations": 45
+  },
+  "baai/bge-reasoner": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 24,
+    "github_forks": 0,
+    "hf_downloads": 710,
+    "hf_likes": 24
+  },
+  "baai/bge-vl": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 11434,
+    "github_forks": 844,
+    "hf_downloads": 3329,
+    "hf_likes": 26
   },
   "baai/bmtrain": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 625,
     "github_forks": 85
   },
   "baai/c-eval": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 794
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 90
   },
   "baai/cci-4.0": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baai/chinese-lips": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 9,
     "github_forks": 2
   },
   "baai/ci-vid": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 29,
-    "github_forks": 0,
-    "citations": 3
+    "github_forks": 0
   },
   "baai/emu": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 1772,
+    "github_forks": 84,
+    "hf_likes": 22,
+    "citations": 29
+  },
+  "baai/emu2": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 1772,
+    "github_forks": 84,
+    "hf_downloads": 21,
+    "hf_likes": 89,
+    "citations": 7
+  },
+  "baai/emu3": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 2376,
     "github_forks": 95,
+    "citations": 4
+  },
+  "baai/emu3.5": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 1486,
+    "github_forks": 61,
     "hf_downloads": 1649,
     "hf_likes": 167
   },
   "baai/erqa-plus": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baai/eva-clip": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "github_stars": 2654,
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "github_stars": 2655,
     "github_forks": 189,
-    "citations": 805
+    "citations": 78
   },
   "baai/fastmoe": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 1845,
     "github_forks": 203,
-    "citations": 137
+    "citations": 39
   },
   "baai/flagai": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 3883,
     "github_forks": 420
   },
   "baai/flagembedding": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 11434,
-    "github_forks": 844
+    "github_forks": 844,
+    "citations": 70
   },
   "baai/flagevalmm": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 101,
-    "github_forks": 22,
-    "citations": 3
+    "github_forks": 22
   },
   "baai/flagevaluation": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 12,
     "github_forks": 2
   },
   "baai/flagscale": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 495,
     "github_forks": 148
   },
   "baai/infinity-instruct": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baai/infinity-mm": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baai/lrm-eval": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 5,
-    "github_forks": 0,
-    "citations": 1
+    "github_forks": 0
   },
   "baai/measurebench": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 6,
-    "github_forks": 0,
-    "citations": 1
+    "github_forks": 0
   },
   "baai/mme": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 17503,
-    "github_forks": 1119,
-    "citations": 1394
+    "github_forks": 1118
   },
   "baai/nova": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "github_stars": 636,
-    "github_forks": 22
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baai/odesign": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 4
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baai/omnigen": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 10,
     "hf_likes": 10,
-    "citations": 306
+    "citations": 1
   },
   "baai/opencomplex": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baai/openseek": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 1,
     "hf_likes": 18
   },
   "baai/painter": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "hf_likes": 7
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_likes": 7,
+    "citations": 10
   },
   "baai/robobrain": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 99727,
     "hf_likes": 121
   },
   "baai/roboos": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baai/roborefer": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baai/sable": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baai/scisage": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 7
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baai/see3d": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baai/seniortalk": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baai/touchd": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baai/ursa": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 4,
-    "hf_likes": 4,
-    "citations": 4
+    "hf_likes": 4
   },
   "baai/video-safetybench": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baai/video-xl-2": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 223,
     "hf_likes": 55
   },
   "baai/wu-dao": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
+  },
+  "baai/wu-dao-2.0": {
+    "fetched_at": "2026-03-22T16:35:33.036Z"
+  },
+  "baai/wu-dao-corpora": {
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baichuan/baichuan-13b": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 9563,
     "hf_likes": 632
   },
   "baichuan/baichuan-2": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 230467,
     "hf_likes": 432,
-    "citations": 957
+    "citations": 125
   },
   "baichuan/baichuan-3": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baichuan/baichuan-4": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baichuan/baichuan-53b": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baichuan/baichuan-7b": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 56801,
     "hf_likes": 842
   },
   "baichuan/baichuan-audio": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 37,
     "hf_likes": 17
   },
   "baichuan/baichuan-m1": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 828,
-    "hf_likes": 67
+    "hf_likes": 67,
+    "citations": 5
   },
   "baichuan/baichuan-m2": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 234736,
-    "hf_likes": 118
+    "hf_likes": 118,
+    "citations": 1
   },
   "baichuan/baichuan-m3": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 1003,
     "hf_likes": 83
   },
   "baichuan/baichuan-npc": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baichuan/baichuan-omni": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baichuan/baichuan-omni-1.5": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 316,
-    "hf_likes": 48,
-    "citations": 81
+    "hf_likes": 48
   },
   "baichuan/baichuan4-finance": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 9
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 1
   },
   "baichuan/baichuanmed-ocr": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 37,
     "hf_likes": 12
   },
   "baidu/apollo": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/apolloscape": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/deep-speech": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 2227
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/diqad": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/dureader": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 304
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 51
   },
   "baidu/ernie-1.0": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 767
   },
   "baidu/ernie-2.0": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 74
   },
   "baidu/ernie-3.0": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 193
   },
   "baidu/ernie-3.5": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/ernie-4.0": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/ernie-4.0-turbo": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/ernie-4.5": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/ernie-5.0": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/ernie-vilg": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 30
   },
   "baidu/ernie-x1": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/flashinfer-paddle": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/kunlun-xpu": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/m100-chip": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/ms-marco-cn": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 140
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 18
   },
   "baidu/paddledetection": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/paddlenlp": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/paddleocr": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/paddlepaddle": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/paddleseg": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/paddlespeech": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/qianfan-ocr": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 5480,
-    "hf_likes": 279
+    "hf_likes": 285
   },
   "baidu/qianfan-platform": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "baidu/scientific-judge": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "bytedance-seed/bagel": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 6647,
     "hf_likes": 1181
   },
   "bytedance-seed/bytetrack": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 105
   },
   "bytedance-seed/bytetransformer": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 65
-  },
-  "bytedance-seed/bytewrist": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 1
   },
+  "bytedance-seed/bytewrist": {
+    "fetched_at": "2026-03-22T16:35:33.036Z"
+  },
   "bytedance-seed/datamask": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "bytedance-seed/deerflow": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "bytedance-seed/depth-anything": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 1604
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 21
   },
   "bytedance-seed/doubao-1.5-pro": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "bytedance-seed/doubao-deep-thinking": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "bytedance-seed/doubao-seed-2.0": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "bytedance-seed/fineweb-mask": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "bytedance-seed/groma": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 117
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 2
   },
   "bytedance-seed/hq-edit": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 1
   },
   "bytedance-seed/infinity": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 1
   },
   "bytedance-seed/liger-kernel": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 113
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 5
   },
   "bytedance-seed/llamagen": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 627
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 5
   },
   "bytedance-seed/magicanimate": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 7
   },
   "bytedance-seed/megascale": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 24
   },
   "bytedance-seed/omniscale": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 8
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "bytedance-seed/protenix": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "bytedance-seed/sdxl-lightning": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 53400,
-    "hf_likes": 2135
+    "hf_likes": 2135,
+    "citations": 6
   },
   "bytedance-seed/seed-diffusion": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 103
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "bytedance-seed/seed-oss": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 26849,
     "hf_likes": 492
   },
   "bytedance-seed/seed-prover": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "bytedance-seed/seed-tts": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 297
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 4
   },
   "bytedance-seed/seed-x": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 1012,
-    "hf_likes": 128,
-    "citations": 16
+    "hf_likes": 128
   },
   "bytedance-seed/seed1.5-thinking": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 1
   },
   "bytedance-seed/seed1.5-vl": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "bytedance-seed/seed1.8": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "bytedance-seed/seed3d": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 5
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "bytedance-seed/seedance": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "bytedance-seed/seedream": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "bytedance-seed/shot2story": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "hf_likes": 31
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_likes": 31,
+    "citations": 3
   },
   "bytedance-seed/ui-tars": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 140833,
-    "hf_likes": 529
+    "hf_likes": 529,
+    "citations": 4
   },
   "bytedance-seed/var": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 7
   },
   "bytedance-seed/veomni": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 8
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "bytedance-seed/waver": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "deepseek/3fs": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "deepseek/deepep": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "deepseek/deepgemm": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "deepseek/deepseek-coder": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 14176,
-    "hf_likes": 566
+    "hf_likes": 566,
+    "citations": 104
   },
   "deepseek/deepseek-coder-v2": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 7414,
-    "hf_likes": 682
+    "hf_likes": 682,
+    "citations": 48
   },
   "deepseek/deepseek-engram": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "deepseek/deepseek-grm": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 194
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 1
   },
   "deepseek/deepseek-llm": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 2044,
-    "hf_likes": 204
+    "hf_likes": 204,
+    "citations": 82
   },
   "deepseek/deepseek-math": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 66
   },
   "deepseek/deepseek-math-v2": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 4911,
     "hf_likes": 685
   },
   "deepseek/deepseek-moe": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 23291,
-    "hf_likes": 155
+    "hf_likes": 155,
+    "citations": 16
   },
   "deepseek/deepseek-ocr": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 3028068,
     "hf_likes": 3187
   },
   "deepseek/deepseek-prover": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 906,
-    "hf_likes": 821
+    "hf_likes": 821,
+    "citations": 5
   },
   "deepseek/deepseek-r1": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 1631479,
-    "hf_likes": 13097,
-    "citations": 5339
+    "hf_likes": 13097
   },
   "deepseek/deepseek-r1-0528": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "deepseek/deepseek-v2": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 12788,
     "hf_likes": 333,
-    "citations": 1054
+    "citations": 97
   },
   "deepseek/deepseek-v2.5": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 7179,
     "hf_likes": 732
   },
   "deepseek/deepseek-v3": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 206
   },
   "deepseek/deepseek-v3.1": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "deepseek/deepseek-v3.2": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 291072,
-    "hf_likes": 1325
+    "hf_likes": 1325,
+    "citations": 1
   },
   "deepseek/deepseek-vl": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 12691,
     "hf_likes": 378,
-    "citations": 1227
+    "citations": 43
   },
   "deepseek/dualpipe": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "deepseek/eplb": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "deepseek/fire-flyer": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 21
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "deepseek/flashmla": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "deepseek/janus": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 53389,
     "hf_likes": 3554,
-    "citations": 923
+    "citations": 11
   },
   "deepseek/lplb": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "deepseek/mhc": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "deepseek/nsa": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 285
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 2
   },
   "deepseek/smallpond": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "huawei-noah/1bit-merging": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 4
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "huawei-noah/ascend-910": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "huawei-noah/bolt": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "huawei-noah/cann": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "huawei-noah/diffvc": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 182
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 25
   },
   "huawei-noah/dream-7b": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 218
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "huawei-noah/dynabert": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 4,
     "hf_likes": 1,
-    "citations": 371
+    "citations": 119
   },
   "huawei-noah/fedformer": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 2734
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 534
   },
   "huawei-noah/fuxictr": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 135
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 12
   },
   "huawei-noah/ghostnet": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 404
   },
   "huawei-noah/grad-tts": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 43
   },
   "huawei-noah/hebo": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 19
   },
   "huawei-noah/mindspore": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "huawei-noah/nezha": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 126
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 86
   },
   "huawei-noah/openpangu": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "hf_downloads": 147,
-    "hf_likes": 6
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "huawei-noah/pangu-alpha": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 94
   },
   "huawei-noah/pangu-coder": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 5,
     "hf_likes": 1,
-    "citations": 102
+    "citations": 36
+  },
+  "huawei-noah/pangu-embedded": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 138,
+    "hf_likes": 6
   },
   "huawei-noah/pangu-pi": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 49
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 2
+  },
+  "huawei-noah/pangu-pro-moe": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 47,
+    "hf_likes": 7
   },
   "huawei-noah/pangu-sigma": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 7
+  },
+  "huawei-noah/pangu-ultra": {
+    "fetched_at": "2026-03-22T16:35:33.036Z"
+  },
+  "huawei-noah/pangu-ultra-moe": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 9,
+    "hf_likes": 3
+  },
+  "huawei-noah/pangu-weather": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 122
   },
   "huawei-noah/samformer": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 1
   },
   "huawei-noah/spiral": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 28
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 7
   },
   "huawei-noah/tinybert": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 91834,
-    "hf_likes": 74
+    "hf_likes": 74,
+    "citations": 136
   },
   "huawei-noah/tnt": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 1010
   },
   "huawei-noah/vega": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "huawei-noah/vig": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 561
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 194
   },
   "idea-lab/dab-detr": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 1166
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 391
   },
   "idea-lab/detrex": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 15
   },
   "idea-lab/dino-detr": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 2441
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 747
   },
   "idea-lab/dino-x": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 4
   },
   "idea-lab/dn-detr": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 1055
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 54
   },
   "idea-lab/dreamwaltz": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 16
   },
   "idea-lab/dreamwaltz-g": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "idea-lab/fengshenbang": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 339,
     "hf_likes": 15
   },
   "idea-lab/grounded-sam": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 88
   },
   "idea-lab/grounding-dino": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 1423176,
     "hf_likes": 171,
-    "citations": 3716
+    "citations": 240
   },
   "idea-lab/grounding-dino-1.5": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 10
   },
   "idea-lab/mask-dino": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 19
   },
   "idea-lab/motionclr": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 14
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "idea-lab/motionllm": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 85
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 5
   },
   "idea-lab/openseed": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 2
   },
   "idea-lab/rex-omni": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 27581,
     "hf_likes": 54
   },
   "idea-lab/stable-dino": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 5
   },
   "idea-lab/t-rex": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 89
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 8
   },
   "idea-lab/t-rex-omni": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "idea-lab/taiyi": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 510,
-    "hf_likes": 441
+    "hf_likes": 441,
+    "citations": 2
   },
   "idea-lab/taptr": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 18
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "idea-lab/ziya": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 1249,
     "hf_likes": 276
   },
   "kuaishou/direct-a-video": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "kuaishou/kat": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 138,
-    "hf_likes": 157,
-    "citations": 8
+    "hf_likes": 157
   },
   "kuaishou/kat-coder": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "kuaishou/klear": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 2275,
-    "hf_likes": 81,
-    "citations": 20
+    "hf_likes": 81
   },
   "kuaishou/kling": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "kuaishou/kolors": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 594,
     "hf_likes": 853
   },
   "kuaishou/kuaiformer": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 13
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "kuaishou/kuairand": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 163
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "kuaishou/kuairec": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 212
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 8
   },
   "kuaishou/kuaisar": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "kuaishou/kuaisearch": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "kuaishou/kwai-keye-vl": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 79905,
     "hf_likes": 83
   },
   "kuaishou/kwaiyii": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "kuaishou/kwaiyiimath": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "kuaishou/liveportrait": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 5133,
-    "hf_likes": 439
+    "hf_likes": 440,
+    "citations": 9
   },
   "kuaishou/openonerec": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 147
   },
   "kuaishou/srpo": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "meituan/cofars": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "meituan/dora-system": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 9
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "meituan/evocua": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 10330,
     "hf_likes": 14
   },
   "meituan/lenna": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 33
-  },
-  "meituan/libra-bench": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 2
-  },
-  "meituan/logan": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
-  },
-  "meituan/longcat-flash": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "hf_downloads": 40827,
-    "hf_likes": 527,
-    "citations": 31
-  },
-  "meituan/longcat-flash-thinking": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "hf_downloads": 83,
-    "hf_likes": 146,
-    "citations": 9
-  },
-  "meituan/longcat-video": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "hf_downloads": 765,
-    "hf_likes": 448
-  },
-  "meituan/meituan-informs-tsl": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
-  },
-  "meituan/memocr": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 1
   },
+  "meituan/libra-bench": {
+    "fetched_at": "2026-03-22T16:35:33.036Z"
+  },
+  "meituan/logan": {
+    "fetched_at": "2026-03-22T16:35:33.036Z"
+  },
+  "meituan/longcat-audio-codec": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_likes": 41
+  },
+  "meituan/longcat-flash": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 40738,
+    "hf_likes": 527
+  },
+  "meituan/longcat-flash-lite": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 1073,
+    "hf_likes": 178
+  },
+  "meituan/longcat-flash-omni": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 89,
+    "hf_likes": 108
+  },
+  "meituan/longcat-flash-prover": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 13,
+    "hf_likes": 14
+  },
+  "meituan/longcat-flash-thinking": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 83,
+    "hf_likes": 146
+  },
+  "meituan/longcat-flash-thinking-2601": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 102,
+    "hf_likes": 108
+  },
+  "meituan/longcat-image": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 80298,
+    "hf_likes": 237
+  },
+  "meituan/longcat-video": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 1161,
+    "hf_likes": 448
+  },
+  "meituan/longcat-zigzag": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 7,
+    "hf_likes": 31
+  },
+  "meituan/meituan-informs-tsl": {
+    "fetched_at": "2026-03-22T16:35:33.036Z"
+  },
+  "meituan/memocr": {
+    "fetched_at": "2026-03-22T16:35:33.036Z"
+  },
   "meituan/multimodal-food-retrieval": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "meituan/r-horizon-websearch": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "meituan/reasondet": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 33
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 1
   },
   "meituan/sky-project": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "meituan/super-brain": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "meituan/wmrouter": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "meituan/wowservice": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "meituan/yolov6": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 1729
   },
   "minimax/abab-5": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "minimax/abab-6": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "minimax/hailuo-video": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "minimax/image-01": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "minimax/maxclaw": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "minimax/minimax-01": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 101350,
-    "hf_likes": 281
+    "hf_likes": 281,
+    "citations": 1
   },
   "minimax/minimax-m1": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 12133,
     "hf_likes": 690
   },
   "minimax/minimax-m2": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "hf_downloads": 537376,
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 123041,
+    "hf_likes": 1488
+  },
+  "minimax/minimax-m2.1": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 46769,
     "hf_likes": 1272
   },
+  "minimax/minimax-m2.5": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 490607,
+    "hf_likes": 1258
+  },
+  "minimax/minimax-m2.7": {
+    "fetched_at": "2026-03-22T16:35:33.036Z"
+  },
   "minimax/minimax-speech-paper": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "minimax/music-series": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
+  },
+  "minimax/one-rl-to-see-them-all": {
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "minimax/speech-series": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "minimax/synlogic": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 496,
-    "hf_likes": 25,
-    "citations": 26
+    "hf_likes": 25
   },
   "minimax/vibe-octocodingbench": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "minimax/visual-tokenizers-paper": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "moonshot-ai/attention-residuals": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 1
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "moonshot-ai/browsecomp-widesearch": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "moonshot-ai/checkpoint-engine": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "moonshot-ai/kimi-2m": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "moonshot-ai/kimi-agent-sdk": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "moonshot-ai/kimi-audio": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 20175,
     "hf_likes": 387
   },
   "moonshot-ai/kimi-cli": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "moonshot-ai/kimi-dev": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 2653,
     "hf_likes": 383
   },
   "moonshot-ai/kimi-k1.5": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 10
   },
   "moonshot-ai/kimi-k2": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 3757768,
     "hf_likes": 2329,
-    "citations": 180
+    "citations": 3
   },
   "moonshot-ai/kimi-linear": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "moonshot-ai/kimi-researcher": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "moonshot-ai/kimi-v1": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "moonshot-ai/kimi-vl": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 104165,
-    "hf_likes": 446
+    "hf_likes": 446,
+    "citations": 1
   },
   "moonshot-ai/kimina-prover": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 809,
     "hf_likes": 35
   },
   "moonshot-ai/kosong": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "moonshot-ai/minif2f-rectified": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "moonshot-ai/moba": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 1
   },
   "moonshot-ai/mooncake": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 12
   },
   "moonshot-ai/moonlight": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 78397,
-    "hf_likes": 109
+    "hf_likes": 109,
+    "citations": 1
   },
   "moonshot-ai/muon": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 1
   },
   "moonshot-ai/walle": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "openbmb/bmtools": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "openbmb/chatdev": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 611
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 69
   },
   "openbmb/cpm": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 186,
     "hf_likes": 172,
-    "citations": 229
+    "citations": 37
   },
   "openbmb/cpm-cu": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "openbmb/delta-tuning": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "openbmb/factnet-nosa": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "openbmb/minicpm": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "hf_downloads": 17943,
-    "hf_likes": 419,
-    "citations": 639
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 3810,
+    "hf_likes": 50,
+    "citations": 19
   },
   "openbmb/minicpm-o": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "hf_downloads": 150363,
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 114819,
     "hf_likes": 1285
   },
+  "openbmb/minicpm-o4.5": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 35544,
+    "hf_likes": 912
+  },
   "openbmb/minicpm-sala": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 1862,
     "hf_likes": 493
   },
   "openbmb/minicpm-v": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "hf_downloads": 283471,
-    "hf_likes": 1409
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 190106,
+    "hf_likes": 1409,
+    "citations": 21
+  },
+  "openbmb/minicpm-v4.5": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 93365,
+    "hf_likes": 1074
+  },
+  "openbmb/minicpm3": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 14133,
+    "hf_likes": 419
   },
   "openbmb/minicpm4": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "hf_downloads": 40246,
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 729,
+    "hf_likes": 283
+  },
+  "openbmb/minicpm4.1": {
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_downloads": 39517,
     "hf_likes": 384
   },
   "openbmb/rlaif-v": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 74,
-    "hf_likes": 11
+    "hf_likes": 11,
+    "citations": 3
   },
   "openbmb/toolllm": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 63
   },
   "openbmb/ultra-fineweb": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 25,
     "hf_likes": 39
   },
   "openbmb/ultrachat": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "openbmb/ultrarag": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "sensetime/deformable-detr": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 19720,
-    "hf_likes": 21
+    "hf_likes": 21,
+    "citations": 1866
   },
   "sensetime/interactiveomni": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "sensetime/lightx2v": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "sensetime/mmdetection": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 794
   },
   "sensetime/neo": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 1
   },
   "sensetime/opendilab": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "sensetime/opendwm": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 24
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "sensetime/openppl": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "sensetime/piccolo2": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 25,
-    "hf_likes": 68
+    "hf_likes": 68,
+    "citations": 1
   },
   "sensetime/sekotalk": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "sensetime/sensechat": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "sensetime/sensecore": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "sensetime/sensemirage": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "sensetime/sensenova-2.0": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "sensetime/sensenova-4.0": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "sensetime/sensenova-5.0": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "sensetime/sensenova-5.5": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "sensetime/sensenova-mars": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 423,
     "hf_likes": 6
   },
   "sensetime/sensenova-si": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 13
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "sensetime/sensenova-v6": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "sensetime/sensenova-v6.5": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "sensetime/uniad": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 1
   },
   "sensetime/vimi": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "shanghai-ai-lab/intern-s1": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "shanghai-ai-lab/internevo": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "shanghai-ai-lab/internimage": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 1032
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 38
   },
   "shanghai-ai-lab/internlm-1.0": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 679,
     "hf_likes": 96
   },
   "shanghai-ai-lab/internlm-xcomposer": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 7511,
     "hf_likes": 21,
-    "citations": 328
+    "citations": 31
   },
   "shanghai-ai-lab/internlm2": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 22578,
     "hf_likes": 59,
-    "citations": 358
+    "citations": 27
   },
   "shanghai-ai-lab/internlm2.5": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 41626,
     "hf_likes": 200
   },
   "shanghai-ai-lab/internlm3": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "shanghai-ai-lab/internthinker": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "shanghai-ai-lab/internvid": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 32
   },
   "shanghai-ai-lab/internvideo": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 476
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 91
   },
   "shanghai-ai-lab/internvl": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "hf_likes": 38
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_likes": 38,
+    "citations": 16
   },
   "shanghai-ai-lab/januscoder": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 33,
-    "hf_likes": 13,
-    "citations": 2
+    "hf_likes": 13
   },
   "shanghai-ai-lab/lagent": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "shanghai-ai-lab/lmdeploy": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "shanghai-ai-lab/mindsearch": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 2
   },
   "shanghai-ai-lab/mmlongbench-doc": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 1
   },
   "shanghai-ai-lab/opencompass": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "shanghai-ai-lab/river": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "shanghai-ai-lab/scalecua": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 89,
     "hf_likes": 11
   },
   "shanghai-ai-lab/sharegpt-4o": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 16
   },
   "shanghai-ai-lab/wanjuan": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 8
   },
   "shanghai-ai-lab/xtuner": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "stepfun/ace-step-1.5": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_likes": 722
   },
   "stepfun/cf-div2": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "stepfun/gebench": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "stepfun/gelab-zero": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 436,
     "hf_likes": 148
   },
   "stepfun/nextstep-1": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 37,
     "hf_likes": 97
   },
   "stepfun/pacore": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 530,
     "hf_likes": 46
   },
   "stepfun/step-1": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "stepfun/step-2": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "stepfun/step-3": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 73387,
-    "hf_likes": 166,
-    "citations": 36
+    "hf_likes": 166
   },
   "stepfun/step-3-vl-10b": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 180913,
     "hf_likes": 399
   },
   "stepfun/step-3.5-flash": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 85104,
     "hf_likes": 730
   },
   "stepfun/step-audio": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 83
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "stepfun/step-audio-editx": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 16915,
     "hf_likes": 114
   },
   "stepfun/step-audio-r1": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 33,
     "hf_likes": 142
   },
   "stepfun/step-deep-research": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "stepfun/step-r1-v-mini": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "stepfun/step-video-t2v": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 130
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "stepfun/step-vl": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "stepfun/step1x-3d": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "hf_likes": 105,
-    "citations": 48
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "hf_likes": 106
   },
   "stepfun/step1x-edit": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 62,
-    "hf_likes": 327,
-    "citations": 244
+    "hf_likes": 327
   },
   "stepfun/stepfun-prover": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 47,
     "hf_likes": 11
   },
   "stepfun/steptronoss": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/alchemy": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 64
   },
   "tencent/angel-ml": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/artifacts-benchmark": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/autocodebench": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/cl-bench": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/hunyuan-2.0": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/hunyuan-a13b": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 21409,
     "hf_likes": 616
   },
+  "tencent/hunyuan-avatar": {
+    "fetched_at": "2026-03-22T16:35:33.036Z"
+  },
+  "tencent/hunyuan-custom": {
+    "fetched_at": "2026-03-22T16:35:33.036Z"
+  },
   "tencent/hunyuan-dit": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 1
+  },
+  "tencent/hunyuan-foley": {
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/hunyuan-gamecraft": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 42,
     "hf_likes": 311
   },
   "tencent/hunyuan-large": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 977,
-    "hf_likes": 617
+    "hf_likes": 617,
+    "citations": 5
   },
   "tencent/hunyuan-large-vision": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/hunyuan-llm": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/hunyuan-mirror": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 7077,
-    "hf_likes": 270,
-    "citations": 22
+    "hf_likes": 270
+  },
+  "tencent/hunyuan-motion": {
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/hunyuan-mt": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 26319,
     "hf_likes": 586
   },
   "tencent/hunyuan-ocr": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 401272,
-    "hf_likes": 555,
-    "citations": 4
+    "hf_likes": 555
   },
   "tencent/hunyuan-t1": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/hunyuan-turbo-s": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 19
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/hunyuan3d": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 92442,
     "hf_likes": 1722,
-    "citations": 66
+    "citations": 6
   },
   "tencent/hunyuanimage-3.0": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 675,
     "hf_likes": 52
   },
   "tencent/hunyuanvideo": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 666,
-    "hf_likes": 584
+    "hf_likes": 584,
+    "citations": 6
   },
   "tencent/hunyuanworld": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 1266,
     "hf_likes": 324
   },
   "tencent/mixgrpo": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/ml-images": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/seed-llama": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 10
   },
   "tencent/spatial-ttt": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/tencent-embedding-corpus": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/tfold": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/unireplknet": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 34
   },
   "tencent/videocrafter": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/weknora": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "tencent/yolo-world": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 751
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 26
   },
   "xiaomi/acavcaps": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "xiaomi/dasheng": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "xiaomi/hyperos-3": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "xiaomi/mace": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "xiaomi/milm-6b": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "xiaomi/miloco": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "xiaomi/mimo": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 41148,
     "hf_likes": 275
   },
   "xiaomi/mimo-audio": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "xiaomi/mimo-embodied": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 166,
     "hf_likes": 62
   },
   "xiaomi/mimo-v2": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 211422,
     "hf_likes": 669
   },
+  "xiaomi/mimo-v2-omni": {
+    "fetched_at": "2026-03-22T16:35:33.036Z"
+  },
+  "xiaomi/mimo-v2-pro": {
+    "fetched_at": "2026-03-22T16:35:33.036Z"
+  },
+  "xiaomi/mimo-v2-tts": {
+    "fetched_at": "2026-03-22T16:35:33.036Z"
+  },
   "xiaomi/mimo-vl": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 1609,
     "hf_likes": 169
   },
   "xiaomi/mobileui-dataset": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 52
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "xiaomi/mobilevlm": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 52
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "xiaomi/mopd": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "xiaomi/pinchbench": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "xiaomi/trustworthy-ai": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "xiaomi/xiao-ai": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "xiaomi/xiaomi-robotics-0": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "xiaomi/xring-o1": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "zai/agentar-z-100k": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "zai/aminer": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "zai/autoglm": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 67
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "zai/browsecomp-zai": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "zai/chatglm": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 83726,
-    "hf_likes": 2875
+    "hf_likes": 2875,
+    "citations": 175
   },
   "zai/codegeex": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 501
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 47
   },
   "zai/cogvideox": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 15
   },
   "zai/cogview-4": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "zai/cogvlm": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 81
   },
   "zai/glm": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 256,
-    "hf_likes": 33
+    "hf_likes": 33,
+    "citations": 21
   },
   "zai/glm-130b": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 1248
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 294
   },
   "zai/glm-4": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "zai/glm-4-voice": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 1
   },
   "zai/glm-4.5": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 245
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 1
   },
   "zai/glm-4.5v": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 46616,
     "hf_likes": 710
   },
   "zai/glm-4.6": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "zai/glm-4.7": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "zai/glm-4v": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "zai/glm-5": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
+    "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 124960,
-    "hf_likes": 1845,
-    "citations": 12
+    "hf_likes": 1847
   },
   "zai/glm-image": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "zai/glm-tts": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "zai/ktransformers": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "zai/longbench": {
-    "fetched_at": "2026-03-22T13:06:40.192Z",
-    "citations": 1068
+    "fetched_at": "2026-03-22T16:35:33.036Z",
+    "citations": 8
   },
   "zai/openclaw": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "zai/slime": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "zai/tqa": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "zai/ying": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "zai/zhipuai-sdk": {
-    "fetched_at": "2026-03-22T13:06:40.192Z"
+    "fetched_at": "2026-03-22T16:35:33.036Z"
   }
 }

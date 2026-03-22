@@ -1,0 +1,18 @@
+name: MiMo-V2-Omni
+slug: mimo-v2-omni
+lab: xiaomi
+type: model
+date: 2026-03-18
+sources:
+  - label: Website
+    url: https://mimo.xiaomi.com/mimo-v2-omni
+description: >
+  Xiaomi's first fully omni-modal foundation model. Native multimodal
+  architecture that can "see, hear, and act," designed to power Xiaomi's
+  next-generation smart devices across the Human x Car x Home ecosystem.
+tags:
+  - multimodal
+related:
+  - mimo-v2
+  - mimo-v2-pro
+  - mimo-v2-tts

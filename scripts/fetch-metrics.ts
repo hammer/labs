@@ -163,14 +163,15 @@ async function fetchHuggingFaceModel(modelId: string): Promise<{ downloads: numb
   };
 }
 
-// ── Semantic Scholar API ──
+// ── OpenAlex API ──
 
-async function fetchSemanticScholar(arxivId: string): Promise<{ citations: number } | null> {
+async function fetchOpenAlex(arxivId: string): Promise<{ citations: number } | null> {
   const data = await fetchJSON(
-    `https://api.semanticscholar.org/graph/v1/paper/ArXiv:${arxivId}?fields=citationCount`
+    `https://api.openalex.org/works/doi:10.48550/arXiv.${arxivId}`,
+    { 'User-Agent': 'mailto:ai-lab-tracker@example.com' }
   );
-  if (!data || data.citationCount === undefined) return null;
-  return { citations: data.citationCount };
+  if (!data || data.cited_by_count === undefined) return null;
+  return { citations: data.cited_by_count };
 }
 
 // ── Main ──
@@ -263,21 +264,21 @@ async function main() {
     if (i < hfModels.length - 1) await delay(500);
   }
 
-  // Fetch Semantic Scholar citations (deduplicated)
+  // Fetch OpenAlex citations (deduplicated)
   const citationCache = new Map<string, number>();
   const arxivIds = [...allArxivIds];
-  console.log(`\nFetching Semantic Scholar citations (${arxivIds.length} papers, 3s delay)...`);
+  console.log(`\nFetching OpenAlex citations (${arxivIds.length} papers, 200ms delay)...`);
   for (let i = 0; i < arxivIds.length; i++) {
     const id = arxivIds[i];
     process.stdout.write(`  [${i + 1}/${arxivIds.length}] ${id}`);
-    const result = await fetchSemanticScholar(id);
+    const result = await fetchOpenAlex(id);
     if (result) {
       citationCache.set(id, result.citations);
       process.stdout.write(` → ${result.citations.toLocaleString()} citations\n`);
     } else {
       process.stdout.write(` → skip\n`);
     }
-    if (i < arxivIds.length - 1) await delay(3000);
+    if (i < arxivIds.length - 1) await delay(200);
   }
 
   // Aggregate metrics per output
