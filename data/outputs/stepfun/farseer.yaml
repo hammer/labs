@@ -1,0 +1,19 @@
+name: "Predictable Scale Part II: Farseer"
+slug: farseer
+lab: stepfun
+type: paper
+date: 2025-06-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.10972
+description: >
+  Refined scaling law for predicting LLM training loss across scales. Introduces a
+  loss surface function L(N,D) that reduces extrapolation error by 433% vs Chinchilla.
+  Trained ~1,000 models using ~3M GPU hours with full open-source release.
+tags:
+  - scaling-laws
+  - pretraining
+paper:
+  arxiv: "2506.10972"
+related:
+  - step-law

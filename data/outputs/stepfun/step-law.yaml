@@ -1,0 +1,19 @@
+name: "Predictable Scale Part I: Step Law"
+slug: step-law
+lab: stepfun
+type: paper
+date: 2025-03-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.04715
+description: >
+  Empirical study across 3,700+ LLMs trained on 100T tokens establishing optimal
+  hyperparameter scaling laws. Finds optimal learning rate follows a power-law with
+  model and dataset size, while optimal batch size depends mainly on dataset size.
+tags:
+  - scaling-laws
+  - pretraining
+paper:
+  arxiv: "2503.04715"
+related:
+  - farseer
