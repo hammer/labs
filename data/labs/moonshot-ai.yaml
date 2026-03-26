@@ -42,18 +42,23 @@ description: >
   serving, Best Paper at FAST 2025).</p>
 people:
   - name: Yang Zhilin
+    url: https://kimiyoung.github.io/
     role: Founder & CEO
     formerly: CMU PhD; Google Brain; Meta FAIR; Recurrent AI
   - name: Zhou Xinyu
     role: Co-founder
     formerly: Hulu; Tencent
   - name: Wu Yuxin
+    url: https://ppwwyyxx.com/
     role: Co-founder
     formerly: Google Brain; Meta AI Research
   - name: Jianlin Su
-    role: Core Researcher
+    url: https://scholar.google.com/citations?user=cdbdaksAAAAJ
+    role: Core Researcher (creator of RoPE)
   - name: Flood Sung
-    role: Core Researcher
+    url: https://floodsung.github.io/
+    role: Former RL Lead (departed 2025)
+    formerly: Founded XVI Robotics
 tags:
   - frontier
   - open-weight

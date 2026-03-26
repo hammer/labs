@@ -33,12 +33,15 @@ description: >
   important Chinese-language pretraining infrastructure and fine-tuning frameworks.</p>
 people:
   - name: Harry Shum
+    url: https://en.wikipedia.org/wiki/Harry_Shum
     role: Founding Chairman
     formerly: Microsoft (Executive VP); MSRA (Founding Member)
   - name: Lei Zhang
-    role: Lead Researcher (Computer Vision)
+    url: https://www.leizhang.org/
+    role: Chair Scientist (Computer Vision & Robotics)
   - name: Shilong Liu
-    role: Core Researcher (Grounding DINO)
+    url: http://lsl.zone/
+    role: Former Core Researcher (Grounding DINO; now at Princeton)
 tags:
   - vision
   - open-source

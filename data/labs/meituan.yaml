@@ -33,10 +33,12 @@ description: >
   restaurant recommendation to dynamic pricing to quality control.</p>
 people:
   - name: Wang Xing
+    url: https://en.wikipedia.org/wiki/Wang_Xing
     role: Co-founder & CEO
   - name: Xunliang Cai
     role: LongCat Team Lead
   - name: Xiaoming Wei
+    url: https://scholar.google.com/citations?user=ZVHoycMAAAAJ
     role: Core Researcher
 tags:
   - open-weight

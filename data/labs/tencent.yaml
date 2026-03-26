@@ -40,14 +40,18 @@ description: >
   <a href="https://en.wikipedia.org/wiki/WeChat">WeChat</a> AI agent.</p>
 people:
   - name: Ma Huateng
+    url: https://en.wikipedia.org/wiki/Ma_Huateng
     role: Co-founder & CEO
   - name: Yao Shunyu
+    url: https://ysymyth.github.io/
     role: Chief AI Scientist (since Dec 2025)
     formerly: OpenAI (Operator, Deep Research contributor)
   - name: Yixiao Ge
-    role: Senior Researcher (ARC Lab, Hunyuan)
+    url: https://geyixiao.com/
+    role: Former Senior Researcher (departed to XPENG)
   - name: Ying Shan
-    role: Senior Researcher (ARC Lab)
+    url: https://scholar.google.com/citations?user=4oXBp9UAAAAJ
+    role: Distinguished Scientist & ARC Lab Director
 relationships:
   - lab: kuaishou
     type: investor

@@ -37,17 +37,22 @@ description: >
   independence.</p>
 people:
   - name: Yu Qiao
+    url: https://scholar.google.com/citations?user=gFtI-8QAAAAJ
     role: Director
     formerly: Professor at SIAT/CAS and CUHK-Shenzhen
   - name: Dahua Lin
+    url: https://scholar.google.com/citations?user=GMzzRRUAAAAJ
     role: Senior Researcher & OpenMMLab Lead
-    formerly: Professor at CUHK
+    formerly: Professor at CUHK; SenseTime Co-founder
   - name: Jifeng Dai
+    url: https://jifengdai.org/
     role: Senior Researcher & InternVL Lead
     formerly: Known for Deformable ConvNets
   - name: Wenhai Wang
+    url: https://whai362.github.io/
     role: Core Researcher (InternImage, InternVL)
   - name: Xizhou Zhu
+    url: https://scholar.google.com/citations?user=02RXI00AAAAJ
     role: Core Researcher
     formerly: Known for deformable attention mechanisms
 relationships:

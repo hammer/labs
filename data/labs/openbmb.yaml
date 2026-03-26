@@ -38,14 +38,18 @@ description: >
   (Tsinghua THUDM/Tang Jie), which focuses on the GLM architecture.</p>
 people:
   - name: Maosong Sun
+    url: https://scholar.google.com/citations?user=zIgT0HMAAAAJ
     role: PI
     formerly: Tsinghua THUNLP
   - name: Zhiyuan Liu
+    url: https://nlp.csai.tsinghua.edu.cn/~lzy/
     role: PI
     formerly: Tsinghua THUNLP
   - name: Xu Han
+    url: https://thucsthanxu13.github.io/
     role: Core Researcher
   - name: Shengding Hu
+    url: https://shengdinghu.github.io/
     role: Core Researcher (MiniCPM)
 relationships:
   - lab: baai

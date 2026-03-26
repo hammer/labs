@@ -33,13 +33,13 @@ description: >
   Video Accounts &mdash; shapes its strategic positioning.</p>
 people:
   - name: Su Hua
-    role: Co-founder & CEO
-  - name: Cheng Yixiao
+    url: https://en.wikipedia.org/wiki/Su_Hua
     role: Co-founder
+  - name: Cheng Yixiao
+    url: https://ir.kuaishou.com/board-member/mr-cheng-yixiao-chengyixiaoxiansheng/
+    role: Co-founder, Chairman & CEO
   - name: Kun Gai
     role: Kling Team Lead
-  - name: Zizheng Zhan
-    role: Kwaipilot Team Lead
 relationships:
   - lab: tencent
     type: investor

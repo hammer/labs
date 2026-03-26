@@ -41,19 +41,28 @@ description: >
   vehicles, powering multimodal in-cabin AI assistants.</p>
 people:
   - name: Jiang Daxin
+    url: https://scholar.google.com/citations?user=N-wAHCoAAAAJ
     role: Founder & CEO
     formerly: Microsoft (Corporate VP, Asia-Pacific)
   - name: Yin Qi
     role: Chairman
     formerly: Megvii / Face++ (Co-founder & CEO)
   - name: Zhang Xiangyu
+    url: https://scholar.google.com/citations?user=yuB-cfoAAAAJ
     role: Co-founder & Chief Scientist
     formerly: Megvii Research (ResNet, ShuffleNet)
   - name: Gang Yu
+    url: https://www.skicyyu.org/
     role: Video & Audio Lead
-  - name: Heung-Yeung Shum
+  - name: Harry Shum
+    url: https://en.wikipedia.org/wiki/Harry_Shum
     role: Advisor
     formerly: Microsoft (EVP); MSRA (Head)
+news:
+  - title: "Tencent-Backed AI Startup StepFun Is Said to Plan Hong Kong IPO"
+    url: https://www.bloomberg.com/news/articles/2026-02-25/tencent-backed-ai-startup-stepfun-is-said-to-plan-hong-kong-ipo
+    source: Bloomberg
+    date: 2026-02-25
 tags:
   - frontier
   - open-weight

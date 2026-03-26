@@ -18,6 +18,7 @@ export const LabSchema = z.object({
   description: z.string().optional(),
   people: z.array(z.object({
     name: z.string(),
+    url: z.string().url().optional(),
     role: z.string().optional(),
     formerly: z.string().optional(),
   })).optional(),
@@ -26,6 +27,12 @@ export const LabSchema = z.object({
     lab: z.string(),
     type: z.string(),
     note: z.string().optional(),
+  })).optional(),
+  news: z.array(z.object({
+    title: z.string(),
+    url: z.string().url(),
+    source: z.string().optional(),
+    date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Date must be YYYY-MM-DD'),
   })).optional(),
   notes: z.string().optional(),
 });

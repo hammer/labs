@@ -46,17 +46,21 @@ description: >
   frontier models.</p>
 people:
   - name: Liang Wenfeng
+    url: https://en.wikipedia.org/wiki/Liang_Wenfeng
     role: Founder
     formerly: High-Flyer (Founder & CEO)
   - name: Chong Ruan
     role: Co-founder & Research Lead
   - name: Daya Guo
+    url: https://guoday.github.io/
     role: Core Researcher (coding, reasoning)
   - name: Zhenda Xie
+    url: https://zdaxie.github.io/
     role: Core Researcher (architecture)
   - name: Wangding Zeng
-    role: Core Researcher (infrastructure)
+    role: Core Researcher (MLA architecture)
   - name: Qihao Zhu
+    url: https://pkuzqh.github.io/
     role: Core Researcher
 tags:
   - frontier

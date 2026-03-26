@@ -38,6 +38,7 @@ description: >
   600M+ creator videos.</p>
 people:
   - name: Yan Junjie
+    url: https://en.wikipedia.org/wiki/Yan_Junjie
     role: Founder & CEO
     formerly: SenseTime (VP of Technology)
   - name: Yeyi Yun
@@ -56,6 +57,15 @@ relationships:
   - lab: tencent
     type: investor
     note: Tencent is a major backer alongside HongShan (Sequoia China) and miHoYo.
+news:
+  - title: "Zhipu and MiniMax IPO"
+    url: https://www.chinatalk.media/p/zhipu-and-minimax-ipo
+    source: ChinaTalk
+    date: 2026-01-09
+  - title: "MiniMax-M2.7, GLM-5 at 1/3 Cost"
+    url: https://www.latent.space/p/ainews-minimax-27-glm-5-at-13-cost
+    source: Latent Space
+    date: 2026-03-25
 tags:
   - frontier
   - open-weight

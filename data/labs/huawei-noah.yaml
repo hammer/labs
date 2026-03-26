@@ -33,14 +33,16 @@ description: >
   PanGu-Sigma (2023, 1T sparse model trained on Ascend 910). Research outputs also
   include widely-cited efficient architectures like
   <a href="https://arxiv.org/abs/1911.11907">GhostNet</a> and
-  <a href="https://arxiv.org/abs/1909.11942">TinyBERT</a>, and the
+  <a href="https://arxiv.org/abs/1909.10351">TinyBERT</a>, and the
   <a href="https://github.com/huawei-noah/HEBO">HEBO</a> Bayesian optimization
   library which won the NeurIPS 2020 Black-Box Optimization Challenge.</p>
 people:
   - name: Tian Qi
-    role: Chief Scientist
+    url: https://scholar.google.com/citations?user=61b6eYkAAAAJ
+    role: Former Chief Scientist (now Huawei Consumer BG)
   - name: Zhenguo Li
-    role: Principal Researcher
+    url: https://scholar.google.com/citations?user=XboZC1AAAAAJ
+    role: Director, AI Theory Lab
 tags:
   - infrastructure
   - open-weight

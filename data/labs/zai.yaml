@@ -40,9 +40,11 @@ description: >
   milestone for China's AI compute sovereignty.</p>
 people:
   - name: Jie Tang
+    url: https://en.wikipedia.org/wiki/Jie_Tang
     role: Co-founder & Senior PI
     formerly: Tsinghua University (KEG); AMiner creator
   - name: Li Juanzi
+    url: https://scholar.google.com/citations?user=SgNB-ioAAAAJ
     role: Co-founder
     formerly: Tsinghua University (CS)
   - name: Zhang Peng
@@ -50,11 +52,23 @@ people:
   - name: Liu Debing
     role: Chairman
   - name: Yuxiao Dong
+    url: https://scholar.google.com/citations?user=dZJy8_8AAAAJ
     role: Senior Researcher
   - name: Ming Ding
-    role: Core Researcher (CogView, CogVLM)
+    url: https://scholar.google.com/citations?user=Va50YzkAAAAJ
+    role: Former Core Researcher (CogView; now at ByteDance)
   - name: Aohan Zeng
+    url: https://scholar.google.com/citations?user=STftvjoAAAAJ
     role: Core Researcher (GLM)
+news:
+  - title: "Zhipu AI's Rise from Tsinghua Lab"
+    url: https://pro.pandaily.com/p/zhipu-ais-rise-from-tsinghua-lab
+    source: Pandaily
+    date: 2025-12-23
+  - title: "Zhipu and MiniMax IPO"
+    url: https://www.chinatalk.media/p/zhipu-and-minimax-ipo
+    source: ChinaTalk
+    date: 2026-01-09
 tags:
   - frontier
   - open-weight

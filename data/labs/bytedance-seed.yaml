@@ -37,10 +37,9 @@ description: >
   scale give the Seed Team significant infrastructure advantages.</p>
 people:
   - name: Wu Yonghui
+    url: https://www.linkedin.com/in/yonghui-wu-65bb7521
     role: Seed Team Lead
     formerly: Google DeepMind (VP)
-  - name: Zhang Liang
-    role: CEO
 tags:
   - frontier
   - open-weight

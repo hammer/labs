@@ -44,7 +44,7 @@ const outputs = getOutputsForLab(slug!);
       <ul class="people-list">
         {lab.people.map((p) => (
           <li>
-            <strong>{p.name}</strong>
+            {p.url ? <strong><a href={p.url}>{p.name}</a></strong> : <strong>{p.name}</strong>}
             {p.role && <span class="role"> — {p.role}</span>}
             {p.formerly && <span class="formerly"> (formerly {p.formerly})</span>}
           </li>
@@ -62,6 +62,21 @@ const outputs = getOutputsForLab(slug!);
             <a href={`/labs/${r.lab}`}>{r.lab}</a>
             <span class="rel-type"> — {r.type}</span>
             {r.note && <span class="rel-note"> ({r.note})</span>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {lab.news && lab.news.length > 0 && (
+    <section class="section">
+      <h2>News</h2>
+      <ul class="news-list">
+        {lab.news.map((n) => (
+          <li>
+            <span class="news-date">{n.date}</span>
+            <a href={n.url}>{n.title}</a>
+            {n.source && <span class="news-source"> — {n.source}</span>}
           </li>
         ))}
       </ul>
@@ -160,6 +175,25 @@ const outputs = getOutputsForLab(slug!);
   .formerly,
   .rel-type,
   .rel-note {
+    color: var(--text-muted);
+  }
+
+  .news-list {
+    list-style: none;
+    padding: 0;
+    font-size: 0.875rem;
+  }
+
+  .news-list li {
+    padding: 0.25rem 0;
+  }
+
+  .news-date {
+    color: var(--text-muted);
+    margin-right: 0.5rem;
+  }
+
+  .news-source {
     color: var(--text-muted);
   }
 

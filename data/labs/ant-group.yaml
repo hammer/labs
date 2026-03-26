@@ -40,13 +40,10 @@ description: >
   elevated AI-powered healthcare as a core business, acquiring Haodf.com and launching
   the AQ healthcare app (100M users within a month).</p>
 people:
-  - name: Cyril Han Xinyi
-    role: CEO (since March 2025)
-    formerly: CFO, Ant Group
   - name: He Zhengyu
+    url: https://www.weforum.org/people/he-zhengyu/
     role: CTO & VP (AI oversight)
-  - name: Wang Xu
-    role: Open Source Lead
+    formerly: PhD Georgia Institute of Technology
 relationships:
   - lab: alibaba-qwen
     type: affiliate

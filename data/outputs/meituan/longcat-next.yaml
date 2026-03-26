@@ -1,0 +1,35 @@
+name: LongCat-Next
+slug: longcat-next
+lab: meituan
+type: model
+date: 2026-03-25
+flagship: true
+sources:
+  - label: Project Page
+    url: https://longcat.chat/longcat-next
+  - label: GitHub
+    url: https://github.com/meituan-longcat/LongCat-Next
+  - label: HuggingFace
+    url: https://huggingface.co/meituan-longcat/LongCat-Next
+description: >
+  Native multimodal foundation model (74B MoE, ~3B active) unifying text, vision,
+  and audio understanding and generation via DiNA (Discrete Native Autoregression).
+  Introduces dNaViT for dynamic visual tokenization and achieves 28x visual
+  compression with strong text rendering. Supports image generation, TTS, voice
+  cloning, and low-latency voice conversation.
+tags:
+  - multimodal
+  - moe
+  - open-weight
+  - any-to-any
+  - audio
+  - vision
+model:
+  architecture: moe
+  parameters: 74B
+  active_parameters: 3B
+related:
+  - longcat-flash
+  - longcat-flash-lite
+  - longcat-flash-omni
+  - longcat-image

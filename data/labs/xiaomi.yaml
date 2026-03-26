@@ -39,12 +39,12 @@ description: >
   across the "Human &times; Car &times; Home" ecosystem.</p>
 people:
   - name: Lei Jun
+    url: https://en.wikipedia.org/wiki/Lei_Jun
     role: Founder, Chairman & CEO
   - name: Luo Fuli
+    url: https://scholar.google.com/citations?user=1s79Z5cAAAAJ
     role: MiMo Team Lead
     formerly: DeepSeek (DeepSeek-V2/R1 contributor)
-  - name: Bingquan Xia
-    role: Core Researcher (MiMo-7B lead author)
 tags:
   - open-weight
   - on-device
