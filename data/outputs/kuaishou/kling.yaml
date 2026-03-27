@@ -9,9 +9,8 @@ sources:
   - label: Announcement
     url: https://ir.kuaishou.com/news-releases/news-release-details/kuaishou-unveils-proprietary-video-generation-model-kling
 description: >
-  Flagship video generation model family utilizing Diffusion Transformer (DiT)
-  architecture, evolving from 1080p/30fps video generation to native multi-shot
-  storyboarding and simultaneous audio-visual generation.
+  Original video generation model utilizing Diffusion Transformer (DiT)
+  architecture, capable of 2-minute videos at 1080p/30fps.
 tags:
   - video
   - generation
@@ -39,35 +38,3 @@ outputs:
         url: https://klingai.com/
     description: >
       Technical paper on the Kling video generation architecture.
-  - name: Kling 2.0/2.6
-    type: model
-    date: 2025-04-15
-    sources:
-      - label: Announcement
-        url: https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-advances-20-era-empowering-everyone-tell-great-stories/
-      - label: Website
-        url: https://klingai.com/
-    description: >
-      Introduced simultaneous audio-visual generation and "Elements" for
-      character/object consistency.
-  - name: Kling 3.0 & 3.0 Omni
-    type: model
-    date: 2026-02-05
-    sources:
-      - label: Announcement
-        url: https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be
-      - label: Website
-        url: https://klingai.com/
-    description: >
-      Most advanced Kling model, supporting native 15-second high-fidelity clips
-      and multi-shot storyboarding.
-  - name: Kling-Omni
-    type: paper
-    date: 2025-12-22
-    sources:
-      - label: Paper (arXiv)
-        url: https://arxiv.org/abs/2512.16776
-    description: >
-      Unified video generation/editing framework from the Kling team.
-    paper:
-      arxiv: "2512.16776"

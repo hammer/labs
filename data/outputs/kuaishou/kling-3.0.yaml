@@ -1,0 +1,36 @@
+name: Kling 3.0
+slug: kling-3.0
+lab: kuaishou
+date: 2026-02-05
+flagship: true
+sources:
+  - label: Announcement
+    url: https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be
+  - label: Website
+    url: https://klingai.com/
+description: >
+  Most advanced Kling model, supporting native 15-second high-fidelity clips
+  and multi-shot storyboarding. Includes Kling-Omni unified video
+  generation/editing framework.
+tags:
+  - video
+  - generation
+  - diffusion
+  - frontier
+outputs:
+  - name: Kling 3.0 & 3.0 Omni
+    type: model
+    date: 2026-02-05
+    description: >
+      Most advanced Kling model, supporting native 15-second high-fidelity clips
+      and multi-shot storyboarding.
+  - name: Kling-Omni
+    type: paper
+    date: 2025-12-22
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2512.16776
+    description: >
+      Unified video generation/editing framework from the Kling team.
+    paper:
+      arxiv: "2512.16776"

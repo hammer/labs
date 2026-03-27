@@ -59,6 +59,11 @@ people:
     url: https://floodsung.github.io/
     role: Former RL Lead (departed 2025)
     formerly: Founded XVI Robotics
+news:
+  - title: "China's Moonshot AI Seeks Listing in Hong Kong Under Heightened Scrutiny"
+    url: https://www.wsj.com/tech/ai/chinas-moonshot-ai-seeks-listing-in-hong-kong-under-heightened-scrutiny-7a0a71ef
+    source: WSJ
+    date: 2026-03-26
 tags:
   - frontier
   - open-weight
