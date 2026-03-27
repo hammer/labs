@@ -8,6 +8,11 @@ artificialanalysis: https://artificialanalysis.ai/providers/baidu
 region: china
 founded: "2000"
 type: corporate
+valuation:
+  amount: "$45B"
+  type: market-cap
+  ticker: "NASDAQ: BIDU"
+  date: "2026-03"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Baidu">Baidu</a> is the pioneer of
   Chinese AI, having established its Institute of Deep Learning (IDL) in 2013 under

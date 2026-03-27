@@ -7,6 +7,10 @@ github: https://github.com/baichuan-inc
 region: china
 founded: 2023-04
 type: startup
+valuation:
+  amount: "$2.7B"
+  type: private
+  date: "2024-07"
 description: >
   <p>Baichuan Intelligence (&#30334;&#24029;&#26234;&#33021;) was founded in April 2023 by
   <a href="https://en.wikipedia.org/wiki/Wang_Xiaochuan">Wang Xiaochuan</a>, the

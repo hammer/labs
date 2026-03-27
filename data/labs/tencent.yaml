@@ -8,6 +8,11 @@ github: https://github.com/Tencent
 artificialanalysis: https://artificialanalysis.ai/providers/tencent
 region: china
 type: corporate
+valuation:
+  amount: "$573B"
+  type: market-cap
+  ticker: "HKG: 0700"
+  date: "2026-03"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Tencent">Tencent</a> (HKG: 0700) operates
   one of the most diverse AI ecosystems in the world, backed by RMB 85.75 billion in

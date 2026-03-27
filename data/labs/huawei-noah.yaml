@@ -8,6 +8,10 @@ region: china
 founded: "2012"
 type: corporate
 parent: Huawei Technologies
+valuation:
+  amount: "$118B"
+  type: revenue
+  date: "2024-12"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Huawei#Noah's_Ark_Lab">Noah's Ark Lab</a>
   is the primary AI research division of

@@ -8,6 +8,11 @@ region: china
 founded: "2023"
 type: corporate
 parent: Alibaba Group
+valuation:
+  amount: "$299B"
+  type: market-cap
+  ticker: "HKG: 9988 / NYSE: BABA"
+  date: "2026-03"
 description: >
   <p>The Qwen team is <a href="https://www.alibabagroup.com/">Alibaba Group's</a>
   flagship large model effort and the most prolific contributor to the open-source AI

@@ -8,6 +8,10 @@ artificialanalysis: https://artificialanalysis.ai/providers/bytedance-seed
 region: china
 founded: "2023"
 type: corporate
+valuation:
+  amount: "$550B"
+  type: private
+  date: "2026-02"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/ByteDance">ByteDance</a>, the parent
   company of <a href="https://en.wikipedia.org/wiki/TikTok">TikTok</a> and

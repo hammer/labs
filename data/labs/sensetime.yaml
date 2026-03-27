@@ -7,6 +7,11 @@ github: https://github.com/SenseTime
 region: china
 founded: 2014-10
 type: corporate
+valuation:
+  amount: "$9.6B"
+  type: market-cap
+  ticker: "HKG: 0020"
+  date: "2026-03"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/SenseTime">SenseTime</a> (HKG: 0020)
   is a major Chinese AI company and computer vision pioneer, publicly traded on the

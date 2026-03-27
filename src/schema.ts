@@ -15,6 +15,12 @@ export const LabSchema = z.object({
   type: z.enum(['corporate', 'startup', 'nonprofit', 'academic']).optional(),
   parent: z.string().optional(),
   formerly: z.array(z.string()).optional(),
+  valuation: z.object({
+    amount: z.string(),
+    type: z.enum(['market-cap', 'private', 'revenue']),
+    ticker: z.string().optional(),
+    date: z.string().regex(/^\d{4}-\d{2}$/, 'Date must be YYYY-MM'),
+  }).optional(),
   description: z.string().optional(),
   people: z.array(z.object({
     name: z.string(),

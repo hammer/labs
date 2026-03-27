@@ -9,6 +9,10 @@ founded: "2014"
 type: corporate
 formerly:
   - Ant Financial
+valuation:
+  amount: "$100B"
+  type: private
+  date: "2025-06"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Ant_Group">Ant Group</a> is the fintech
   giant behind <a href="https://en.wikipedia.org/wiki/Alipay">Alipay</a> (1B+ users),

@@ -8,6 +8,10 @@ artificialanalysis: https://artificialanalysis.ai/providers/kimi
 region: china
 founded: 2023-03
 type: startup
+valuation:
+  amount: "$18B"
+  type: private
+  date: "2026-03"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Moonshot_AI">Moonshot AI</a> (named after
   the Pink Floyd album <em>The Dark Side of the Moon</em>) is one of China's "AI Tigers"

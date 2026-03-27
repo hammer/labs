@@ -8,6 +8,11 @@ github: https://github.com/XiaomiMiMo
 artificialanalysis: https://artificialanalysis.ai/providers/xiaomi
 region: china
 type: corporate
+valuation:
+  amount: "$109B"
+  type: market-cap
+  ticker: "HKG: 1810"
+  date: "2026-03"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Xiaomi">Xiaomi</a> (HKG: 1810) is a
   global technology company founded in 2010 by

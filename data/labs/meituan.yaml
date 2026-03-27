@@ -8,6 +8,11 @@ github: https://github.com/meituan
 artificialanalysis: https://artificialanalysis.ai/providers/longcat
 region: china
 type: corporate
+valuation:
+  amount: "$68B"
+  type: market-cap
+  ticker: "HKG: 3690"
+  date: "2026-03"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Meituan">Meituan</a> (HKG: 3690)
   is China's largest on-demand services platform, founded in 2010 by

@@ -8,6 +8,11 @@ github: https://github.com/kuaishou-langlab
 artificialanalysis: https://artificialanalysis.ai/providers/kuaishou
 region: china
 type: corporate
+valuation:
+  amount: "$26B"
+  type: market-cap
+  ticker: "HKG: 1024"
+  date: "2026-03"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Kuaishou">Kuaishou</a> (HKG: 1024)
   is China's second-largest short video platform after Douyin, founded in 2011 by

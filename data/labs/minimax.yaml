@@ -8,6 +8,11 @@ artificialanalysis: https://artificialanalysis.ai/providers/minimax
 region: china
 founded: 2021-12
 type: startup
+valuation:
+  amount: "$39B"
+  type: market-cap
+  ticker: "HKG: 0100"
+  date: "2026-03"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/MiniMax_(company)">MiniMax</a> is one of
   China's "AI Tigers," founded in December 2021 by a team of former

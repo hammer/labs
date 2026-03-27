@@ -24,6 +24,12 @@ const outputs = getOutputsForLab(slug!);
       {lab.region}
       {lab.founded && <span> · Founded {lab.founded}</span>}
       {lab.parent && <span> · Part of {lab.parent}</span>}
+      {lab.valuation && (
+        <span> · {lab.valuation.type === 'market-cap' ? 'Market cap' : lab.valuation.type === 'revenue' ? 'Revenue' : 'Valuation'}: {lab.valuation.amount}
+          {lab.valuation.ticker && <span> ({lab.valuation.ticker})</span>}
+          <span class="valuation-date"> as of {lab.valuation.date}</span>
+        </span>
+      )}
     </p>
     {lab.description && <div class="description" set:html={lab.description} />}
 
@@ -145,6 +151,11 @@ const outputs = getOutputsForLab(slug!);
     font-weight: 400;
     color: var(--text-muted);
     font-size: 0.875rem;
+  }
+
+  .valuation-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
   }
 
   .people-list {
