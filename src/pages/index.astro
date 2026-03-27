@@ -16,19 +16,25 @@ const totalOutputs = getAllOutputsChronological().length;
   <table class="lab-table" id="lab-table">
     <thead>
       <tr>
-        <th class="col-name">Lab</th>
-        <th class="col-type">Type</th>
-        <th class="col-founded">Founded</th>
-        <th class="col-valuation">Valuation</th>
-        <th class="col-outputs">Outputs</th>
+        <th class="col-name sortable" data-sort="name">Lab</th>
+        <th class="col-type sortable" data-sort="type">Type</th>
+        <th class="col-founded sortable" data-sort="founded">Founded</th>
+        <th class="col-valuation sortable" data-sort="valuation">Valuation</th>
+        <th class="col-outputs sortable" data-sort="outputs">Outputs</th>
       </tr>
     </thead>
     <tbody>
       {labs.map((lab, i) => {
         const count = getOutputCount(lab.slug);
         const founded = lab.founded?.slice(0, 4) ?? '—';
+        const valAmount = lab.valuation?.amount ?? '—';
+        const valNum = lab.valuation?.amount
+          ? parseFloat(lab.valuation.amount.replace(/[$,]/g, '').replace(/T$/, '000').replace(/B$/, '').replace(/M$/, '0.001'))
+          : 0;
         return (
-          <tr class="lab-row" data-href={`/labs/${lab.slug}`} data-index={i}>
+          <tr class="lab-row" data-href={`/labs/${lab.slug}`} data-index={i}
+              data-name={lab.name} data-type={lab.type ?? 'other'}
+              data-founded={founded} data-valuation={valNum} data-outputs={count}>
             <td class="col-name">
               <img
                 src={`/logos/${lab.slug}.png`}
@@ -42,7 +48,7 @@ const totalOutputs = getAllOutputsChronological().length;
             </td>
             <td class="col-type"><TypeBadge type={lab.type ?? 'other'} /></td>
             <td class="col-founded">{founded}</td>
-            <td class="col-valuation">{lab.valuation?.amount ?? '—'}</td>
+            <td class="col-valuation">{valAmount}</td>
             <td class="col-outputs">{count}</td>
           </tr>
         );
@@ -234,6 +240,53 @@ const totalOutputs = getAllOutputsChronological().length;
   closeBtn.addEventListener('click', () => toggleModal(false));
   hintBtn.addEventListener('click', () => toggleModal(true));
 
+  // Column sorting
+  const headers = document.querySelectorAll<HTMLTableCellElement>('th.sortable');
+  const tbody = document.querySelector('.lab-table tbody')!;
+  let currentSort = '';
+  let sortAsc = true;
+
+  function parseVal(v: string): number {
+    return parseFloat(v) || 0;
+  }
+
+  function sortTable(key: string) {
+    if (currentSort === key) {
+      sortAsc = !sortAsc;
+    } else {
+      currentSort = key;
+      sortAsc = key === 'name' || key === 'type';
+    }
+
+    headers.forEach(h => {
+      h.classList.remove('sort-asc', 'sort-desc');
+      if (h.dataset.sort === key) {
+        h.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
+      }
+    });
+
+    const sorted = [...rows].sort((a, b) => {
+      const av = a.dataset[key] ?? '';
+      const bv = b.dataset[key] ?? '';
+      if (key === 'founded' || key === 'valuation' || key === 'outputs') {
+        const diff = parseVal(av) - parseVal(bv);
+        return sortAsc ? diff : -diff;
+      }
+      const cmp = av.localeCompare(bv);
+      return sortAsc ? cmp : -cmp;
+    });
+
+    sorted.forEach(row => tbody.appendChild(row));
+    visibleRows = rows.filter(r => (r as HTMLElement).style.display !== 'none');
+    selected = -1;
+  }
+
+  headers.forEach(th => {
+    th.addEventListener('click', () => {
+      sortTable(th.dataset.sort!);
+    });
+  });
+
   // Start with modal hidden
   modal.classList.add('hidden');
 </script>
@@ -300,6 +353,29 @@ const totalOutputs = getAllOutputsChronological().length;
     border-bottom: 2px solid var(--border);
     white-space: nowrap;
     user-select: none;
+  }
+
+  th.sortable {
+    cursor: pointer;
+  }
+
+  th.sortable:hover {
+    color: var(--text);
+  }
+
+  th.sortable::after {
+    content: '';
+    display: inline-block;
+    width: 0.6em;
+    margin-left: 0.3em;
+  }
+
+  th.sort-asc::after {
+    content: '\25B2';
+  }
+
+  th.sort-desc::after {
+    content: '\25BC';
   }
 
   .lab-row {
