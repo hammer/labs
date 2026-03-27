@@ -8,6 +8,10 @@ github: https://github.com/meituan
 artificialanalysis: https://artificialanalysis.ai/providers/longcat
 region: china
 type: corporate
+ipo:
+  year: 2018
+  exchange: HKEX
+  ticker: "3690"
 valuation:
   amount: "$68B"
   type: market-cap

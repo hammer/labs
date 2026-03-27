@@ -24,6 +24,7 @@ const outputs = getOutputsForLab(slug!);
       {lab.region}
       {lab.founded && <span> · Founded {lab.founded}</span>}
       {lab.parent && <span> · Part of {lab.parent}</span>}
+      {lab.ipo && <span> · IPO {lab.ipo.year} ({lab.ipo.exchange}: {lab.ipo.ticker})</span>}
       {lab.valuation && (
         <span> · {lab.valuation.type === 'market-cap' ? 'Market cap' : lab.valuation.type === 'revenue' ? 'Revenue' : 'Valuation'}: {lab.valuation.amount}
           {lab.valuation.ticker && <span> ({lab.valuation.ticker})</span>}

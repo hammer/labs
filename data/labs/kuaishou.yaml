@@ -8,6 +8,10 @@ github: https://github.com/kuaishou-langlab
 artificialanalysis: https://artificialanalysis.ai/providers/kuaishou
 region: china
 type: corporate
+ipo:
+  year: 2021
+  exchange: HKEX
+  ticker: "1024"
 valuation:
   amount: "$26B"
   type: market-cap

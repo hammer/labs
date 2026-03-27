@@ -8,6 +8,10 @@ github: https://github.com/Tencent
 artificialanalysis: https://artificialanalysis.ai/providers/tencent
 region: china
 type: corporate
+ipo:
+  year: 2004
+  exchange: HKEX
+  ticker: "0700"
 valuation:
   amount: "$573B"
   type: market-cap

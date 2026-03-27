@@ -8,6 +8,10 @@ artificialanalysis: https://artificialanalysis.ai/providers/minimax
 region: china
 founded: 2021-12
 type: startup
+ipo:
+  year: 2026
+  exchange: HKEX
+  ticker: "0100"
 valuation:
   amount: "$39B"
   type: market-cap

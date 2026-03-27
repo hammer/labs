@@ -10,6 +10,10 @@ region: china
 type: startup
 formerly:
   - Zhipu AI
+ipo:
+  year: 2026
+  exchange: HKEX
+  ticker: "02513"
 valuation:
   amount: "$31B"
   type: market-cap

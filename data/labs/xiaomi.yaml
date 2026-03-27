@@ -8,6 +8,10 @@ github: https://github.com/XiaomiMiMo
 artificialanalysis: https://artificialanalysis.ai/providers/xiaomi
 region: china
 type: corporate
+ipo:
+  year: 2018
+  exchange: HKEX
+  ticker: "1810"
 valuation:
   amount: "$109B"
   type: market-cap

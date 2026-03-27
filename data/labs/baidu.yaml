@@ -8,6 +8,10 @@ artificialanalysis: https://artificialanalysis.ai/providers/baidu
 region: china
 founded: "2000"
 type: corporate
+ipo:
+  year: 2005
+  exchange: NASDAQ
+  ticker: BIDU
 valuation:
   amount: "$45B"
   type: market-cap

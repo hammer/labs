@@ -8,6 +8,10 @@ region: china
 founded: "1999"
 type: corporate
 parent: Alibaba Group
+ipo:
+  year: 2014
+  exchange: NYSE
+  ticker: BABA
 valuation:
   amount: "$299B"
   type: market-cap
