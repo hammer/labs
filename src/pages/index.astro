@@ -19,6 +19,7 @@ const totalOutputs = getAllOutputsChronological().length;
         <th class="col-name">Lab</th>
         <th class="col-type">Type</th>
         <th class="col-founded">Founded</th>
+        <th class="col-valuation">Valuation</th>
         <th class="col-outputs">Outputs</th>
       </tr>
     </thead>
@@ -41,6 +42,7 @@ const totalOutputs = getAllOutputsChronological().length;
             </td>
             <td class="col-type"><TypeBadge type={lab.type ?? 'other'} /></td>
             <td class="col-founded">{founded}</td>
+            <td class="col-valuation">{lab.valuation?.amount ?? '—'}</td>
             <td class="col-outputs">{count}</td>
           </tr>
         );
@@ -345,6 +347,7 @@ const totalOutputs = getAllOutputsChronological().length;
   }
 
   .col-founded,
+  .col-valuation,
   .col-outputs {
     text-align: right;
     white-space: nowrap;
@@ -353,6 +356,7 @@ const totalOutputs = getAllOutputsChronological().length;
   }
 
   th.col-founded,
+  th.col-valuation,
   th.col-outputs {
     text-align: right;
   }
