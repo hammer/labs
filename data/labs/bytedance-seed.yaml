@@ -40,6 +40,9 @@ people:
     url: https://www.linkedin.com/in/yonghui-wu-65bb7521
     role: Seed Team Lead
     formerly: Google DeepMind (VP)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Yonghui_Wu1
 tags:
   - frontier
   - open-weight

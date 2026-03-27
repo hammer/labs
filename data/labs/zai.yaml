@@ -43,10 +43,16 @@ people:
     url: https://en.wikipedia.org/wiki/Jie_Tang
     role: Co-founder & Senior PI
     formerly: Tsinghua University (KEG); AMiner creator
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Jie_Tang1
   - name: Li Juanzi
     url: https://scholar.google.com/citations?user=SgNB-ioAAAAJ
     role: Co-founder
     formerly: Tsinghua University (CS)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Juanzi_Li1
   - name: Zhang Peng
     role: CEO
   - name: Liu Debing
@@ -54,12 +60,21 @@ people:
   - name: Yuxiao Dong
     url: https://scholar.google.com/citations?user=dZJy8_8AAAAJ
     role: Senior Researcher
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Yuxiao_Dong1
   - name: Ming Ding
     url: https://scholar.google.com/citations?user=Va50YzkAAAAJ
     role: Former Core Researcher (CogView; now at ByteDance)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Ming_Ding1
   - name: Aohan Zeng
     url: https://scholar.google.com/citations?user=STftvjoAAAAJ
     role: Core Researcher (GLM)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Aohan_Zeng1
 news:
   - title: "Zhipu AI's Rise from Tsinghua Lab"
     url: https://pro.pandaily.com/p/zhipu-ais-rise-from-tsinghua-lab

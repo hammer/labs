@@ -37,9 +37,15 @@ people:
     role: Co-founder & CEO
   - name: Xunliang Cai
     role: LongCat Team Lead
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Xunliang_Cai1
   - name: Xiaoming Wei
     url: https://scholar.google.com/citations?user=ZVHoycMAAAAJ
     role: Core Researcher
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Xiaoming_Wei1
 tags:
   - open-weight
   - moe

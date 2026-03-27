@@ -45,6 +45,9 @@ people:
     url: https://scholar.google.com/citations?user=1s79Z5cAAAAJ
     role: MiMo Team Lead
     formerly: DeepSeek (DeepSeek-V2/R1 contributor)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Fuli_Luo1
 tags:
   - open-weight
   - on-device

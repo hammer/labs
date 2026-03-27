@@ -36,12 +36,21 @@ people:
     url: https://en.wikipedia.org/wiki/Harry_Shum
     role: Founding Chairman
     formerly: Microsoft (Executive VP); MSRA (Founding Member)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Heung-Yeung_Shum1
   - name: Lei Zhang
     url: https://www.leizhang.org/
     role: Chair Scientist (Computer Vision & Robotics)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Lei_Zhang23
   - name: Shilong Liu
     url: http://lsl.zone/
     role: Former Core Researcher (Grounding DINO; now at Princeton)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Shilong_Liu1
 tags:
   - vision
   - open-source

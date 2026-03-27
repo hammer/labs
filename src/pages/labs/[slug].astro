@@ -45,23 +45,11 @@ const outputs = getOutputsForLab(slug!);
         {lab.people.map((p) => (
           <li>
             {p.url ? <strong><a href={p.url}>{p.name}</a></strong> : <strong>{p.name}</strong>}
+            {p.urls && p.urls.map((link) => (
+              <a href={link.url} class="person-link">{link.label}</a>
+            ))}
             {p.role && <span class="role"> — {p.role}</span>}
             {p.formerly && <span class="formerly"> (formerly {p.formerly})</span>}
-          </li>
-        ))}
-      </ul>
-    </section>
-  )}
-
-  {lab.relationships && lab.relationships.length > 0 && (
-    <section class="section">
-      <h2>Relationships</h2>
-      <ul class="rel-list">
-        {lab.relationships.map((r) => (
-          <li>
-            <a href={`/labs/${r.lab}`}>{r.lab}</a>
-            <span class="rel-type"> — {r.type}</span>
-            {r.note && <span class="rel-note"> ({r.note})</span>}
           </li>
         ))}
       </ul>
@@ -159,22 +147,24 @@ const outputs = getOutputsForLab(slug!);
     font-size: 0.875rem;
   }
 
-  .people-list,
-  .rel-list {
+  .people-list {
     list-style: none;
     padding: 0;
     font-size: 0.875rem;
   }
 
-  .people-list li,
-  .rel-list li {
+  .people-list li {
     padding: 0.25rem 0;
   }
 
+  .person-link {
+    font-size: 0.75rem;
+    margin-left: 0.35rem;
+    color: var(--text-muted);
+  }
+
   .role,
-  .formerly,
-  .rel-type,
-  .rel-note {
+  .formerly {
     color: var(--text-muted);
   }
 

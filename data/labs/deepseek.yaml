@@ -51,17 +51,32 @@ people:
     formerly: High-Flyer (Founder & CEO)
   - name: Chong Ruan
     role: Co-founder & Research Lead
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Chong_Ruan1
   - name: Daya Guo
     url: https://guoday.github.io/
     role: Core Researcher (coding, reasoning)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Daya_Guo2
   - name: Zhenda Xie
     url: https://zdaxie.github.io/
     role: Core Researcher (architecture)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Zhenda_Xie1
   - name: Wangding Zeng
     role: Core Researcher (MLA architecture)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Wangding_Zeng1
   - name: Qihao Zhu
     url: https://pkuzqh.github.io/
     role: Core Researcher
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Qihao_Zhu1
 tags:
   - frontier
   - open-weight

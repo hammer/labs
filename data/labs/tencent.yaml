@@ -46,26 +46,26 @@ people:
     url: https://ysymyth.github.io/
     role: Chief AI Scientist (since Dec 2025)
     formerly: OpenAI (Operator, Deep Research contributor)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Shunyu_Yao1
   - name: Yixiao Ge
     url: https://geyixiao.com/
     role: Former Senior Researcher (departed to XPENG)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Yixiao_Ge2
   - name: Ying Shan
     url: https://scholar.google.com/citations?user=4oXBp9UAAAAJ
     role: Distinguished Scientist & ARC Lab Director
-relationships:
-  - lab: kuaishou
-    type: investor
-    note: >
-      Tencent holds ~17-19% of Kuaishou but they are fierce rivals. WeChat
-      Video Accounts competes directly with Kuaishou.
-  - lab: minimax
-    type: investor
-  - lab: moonshot-ai
-    type: investor
-  - lab: zai
-    type: investor
-  - lab: baichuan
-    type: investor
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Ying_Shan2
+news:
+  - title: "Tencent restructures AI operations, promotes high-profile recruit to chief AI scientist"
+    url: https://www.scmp.com/tech/big-tech/article/3336811/tencent-restructures-ai-operations-promotes-high-profile-recruit-chief-ai-scientist
+    source: SCMP
+    date: 2025-12-17
 tags:
   - frontier
   - open-weight

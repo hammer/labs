@@ -40,9 +40,15 @@ people:
   - name: Tian Qi
     url: https://scholar.google.com/citations?user=61b6eYkAAAAJ
     role: Former Chief Scientist (now Huawei Consumer BG)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Qi_Tian3
   - name: Zhenguo Li
     url: https://scholar.google.com/citations?user=XboZC1AAAAAJ
     role: Director, AI Theory Lab
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Zhenguo_Li1
 tags:
   - infrastructure
   - open-weight

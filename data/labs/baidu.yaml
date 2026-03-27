@@ -37,6 +37,9 @@ people:
   - name: Haifeng Wang
     url: https://ir.baidu.com/management/haifeng-wang/
     role: CTO & ERNIE Lead
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Haifeng_Wang3
   - name: Yu Sun
     url: https://scholar.google.com/citations?user=a7drwRMAAAAJ
     role: Core Researcher (ERNIE)

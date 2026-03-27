@@ -29,19 +29,6 @@ async function main() {
     }
   }
 
-  // Check lab relationship references
-  for (const file of labFiles) {
-    const content = parse(readFileSync(file, 'utf-8'));
-    if (content.relationships) {
-      for (const rel of content.relationships) {
-        if (!labs.has(rel.lab)) {
-          console.error(`\u274c ${file}: relationship references unknown lab "${rel.lab}"`);
-          errors++;
-        }
-      }
-    }
-  }
-
   // --- Validate outputs ---
   const outputFiles = (await glob('data/outputs/**/*.yaml')).sort();
   for (const file of outputFiles) {

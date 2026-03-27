@@ -46,30 +46,51 @@ people:
     url: https://scholar.google.com/citations?user=64zxhRUAAAAJ
     role: CTO, Alibaba Cloud; Director, Tongyi Lab
     formerly: Microsoft Research (2004-2015); PhD Columbia
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Jingren_Zhou1
   - name: Hao Zhou
     role: Head of Post-Training RL (since Mar 2026)
     formerly: Google DeepMind (Sr. Staff Research Scientist; Gemini 3 contributor)
   - name: Shuai Bai
     url: https://scholar.google.com/citations?user=ylhI1JsAAAAJ
     role: Vision Lead (Qwen-VL)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Shuai_Bai1
   - name: An Yang
     url: https://scholar.google.com/citations?user=vO9FZekAAAAJ
     role: Core Researcher
     formerly: Peking University (BS, MS)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~An_Yang1
   - name: Dayiheng Liu
     url: https://liudayiheng.github.io/
     role: Pretrain Lead
     formerly: PhD Sichuan University
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Dayiheng_Liu1
   - name: Fei Huang
     url: https://scholar.google.com/citations?user=9r98PpoAAAAJ
     role: Chief Scientist, Language Technologies, DAMO
     formerly: IBM Watson; Facebook; PhD Carnegie Mellon
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Fei_Huang1
   - name: Junyang Lin
     url: https://justinlin610.github.io/
     role: Former Tech Lead (departed Mar 2026)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Junyang_Lin1
   - name: Binyuan Hui
     url: https://huybery.github.io/
     role: Former Coding Lead (departed Jan 2026 to Meta)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Binyuan_Hui1
 news:
   - title: "Alibaba Launches AI Model Task Force; Top Researcher Resigns"
     url: https://www.theinformation.com/briefings/alibaba-launches-ai-model-task-force-top-researcher-resigns

@@ -45,9 +45,15 @@ people:
     url: https://kimiyoung.github.io/
     role: Founder & CEO
     formerly: CMU PhD; Google Brain; Meta FAIR; Recurrent AI
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Zhilin_Yang2
   - name: Zhou Xinyu
     role: Co-founder
     formerly: Hulu; Tencent
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Xinyu_Zhou1
   - name: Wu Yuxin
     url: https://ppwwyyxx.com/
     role: Co-founder
@@ -55,10 +61,16 @@ people:
   - name: Jianlin Su
     url: https://scholar.google.com/citations?user=cdbdaksAAAAJ
     role: Core Researcher (creator of RoPE)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Jianlin_Su1
   - name: Flood Sung
     url: https://floodsung.github.io/
     role: Former RL Lead (departed 2025)
     formerly: Founded XVI Robotics
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Flood_Sung1
 news:
   - title: "China's Moonshot AI Seeks Listing in Hong Kong Under Heightened Scrutiny"
     url: https://www.wsj.com/tech/ai/chinas-moonshot-ai-seeks-listing-in-hong-kong-under-heightened-scrutiny-7a0a71ef

@@ -40,13 +40,9 @@ people:
     role: Co-founder, Chairman & CEO
   - name: Kun Gai
     role: Kling Team Lead
-relationships:
-  - lab: tencent
-    type: investor
-    note: >
-      Tencent holds ~16.5-18.5% but Kuaishou remains independent. Founders
-      retain control via dual-class voting. Competitive "frenemy" dynamic with
-      WeChat Video Accounts.
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Kun_Gai1
 tags:
   - multimodal
   - generation

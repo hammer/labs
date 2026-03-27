@@ -41,6 +41,9 @@ people:
     url: https://en.wikipedia.org/wiki/Yan_Junjie
     role: Founder & CEO
     formerly: SenseTime (VP of Technology)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Junjie_Yan4
   - name: Yeyi Yun
     role: Co-founder & COO
     formerly: SenseTime (strategy, fundraising)
@@ -50,13 +53,6 @@ people:
   - name: Yang Bin
     role: Co-founder
     formerly: Uber ATG (autonomous trucks)
-relationships:
-  - lab: alibaba-qwen
-    type: investor
-    note: Alibaba is largest external shareholder (~12.5%).
-  - lab: tencent
-    type: investor
-    note: Tencent is a major backer alongside HongShan (Sequoia China) and miHoYo.
 news:
   - title: "Zhipu and MiniMax IPO"
     url: https://www.chinatalk.media/p/zhipu-and-minimax-ipo

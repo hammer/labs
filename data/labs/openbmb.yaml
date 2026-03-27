@@ -41,27 +41,28 @@ people:
     url: https://scholar.google.com/citations?user=zIgT0HMAAAAJ
     role: PI
     formerly: Tsinghua THUNLP
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Maosong_Sun1
   - name: Zhiyuan Liu
     url: https://nlp.csai.tsinghua.edu.cn/~lzy/
     role: PI
     formerly: Tsinghua THUNLP
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Zhiyuan_Liu1
   - name: Xu Han
     url: https://thucsthanxu13.github.io/
     role: Core Researcher
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Xu_Han2
   - name: Shengding Hu
     url: https://shengdinghu.github.io/
     role: Core Researcher (MiniCPM)
-relationships:
-  - lab: baai
-    type: collaboration
-    note: >
-      BAAI acted as super-incubator. Early CPM models were part of Wu Dao
-      program. BAAI provides compute for some open-source projects.
-  - lab: zai
-    type: collaboration
-    note: >
-      Both originate from Tsinghua but are distinct groups. Z.ai (THUDM/Tang Jie)
-      focuses on GLM. OpenBMB (THUNLP/Sun Maosong) focuses on efficiency and PEFT.
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Shengding_Hu2
 tags:
   - open-weight
   - on-device

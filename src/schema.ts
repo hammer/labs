@@ -19,15 +19,14 @@ export const LabSchema = z.object({
   people: z.array(z.object({
     name: z.string(),
     url: z.string().url().optional(),
+    urls: z.array(z.object({
+      label: z.string(),
+      url: z.string().url(),
+    })).optional(),
     role: z.string().optional(),
     formerly: z.string().optional(),
   })).optional(),
   tags: z.array(z.string()).optional(),
-  relationships: z.array(z.object({
-    lab: z.string(),
-    type: z.string(),
-    note: z.string().optional(),
-  })).optional(),
   news: z.array(z.object({
     title: z.string(),
     url: z.string().url(),

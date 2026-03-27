@@ -46,26 +46,21 @@ people:
     url: https://scholar.google.com/citations?user=knvEK4AAAAAJ
     role: Director
     formerly: Professor, Peking University
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Tiejun_Huang1
   - name: Xinlong Wang
     url: https://www.xloong.wang/
     role: Core Researcher (Emu series)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Xinlong_Wang2
   - name: Shitao Xiao
     url: https://scholar.google.com.hk/citations?user=P2Q2wZEAAAAJ
     role: BGE Lead
-relationships:
-  - lab: zai
-    type: collaboration
-    note: >
-      Close relationship with THUDM at Tsinghua. Early Wu Dao sub-models
-      (GLM, CogView) were collaborative. Z.ai spun off as commercial successor.
-  - lab: baidu
-    type: founding-member
-  - lab: bytedance-seed
-    type: founding-member
-  - lab: xiaomi
-    type: founding-member
-  - lab: meituan
-    type: founding-member
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Shitao_Xiao1
 news:
   - title: "Zhang Hongjiang, founder of BAAI: 'AI systems should never be able to deceive humans'"
     url: https://www.ft.com/content/bec98c98-53aa-4c17-9adf-0c3729087556

@@ -46,9 +46,15 @@ people:
   - name: Wang Xiaogang
     url: https://scholar.google.com/citations?user=-B5JgjsAAAAJ
     role: Co-founder & CTO
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Xiaogang_Wang2
   - name: Lin Dahua
     url: https://scholar.google.com/citations?user=GMzzRRUAAAAJ
     role: Co-founder & Chief Scientist
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Dahua_Lin1
   - name: Tang Xiaoou
     url: https://en.wikipedia.org/wiki/Tang_Xiao%27ou
     role: Co-founder (1968-2023)
@@ -59,7 +65,3 @@ tags:
   - vision
   - spatial-intelligence
   - infrastructure
-relationships:
-  - lab: shanghai-ai-lab
-    type: collaboration
-    note: Co-develops InternLM and OpenGVLab; provides SenseCore compute infrastructure

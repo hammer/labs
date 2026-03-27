@@ -44,6 +44,9 @@ people:
     url: https://scholar.google.com/citations?user=N-wAHCoAAAAJ
     role: Founder & CEO
     formerly: Microsoft (Corporate VP, Asia-Pacific)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Daxin_Jiang2
   - name: Yin Qi
     role: Chairman
     formerly: Megvii / Face++ (Co-founder & CEO)
@@ -51,13 +54,22 @@ people:
     url: https://scholar.google.com/citations?user=yuB-cfoAAAAJ
     role: Co-founder & Chief Scientist
     formerly: Megvii Research (ResNet, ShuffleNet)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Xiangyu_Zhang1
   - name: Gang Yu
     url: https://www.skicyyu.org/
     role: Video & Audio Lead
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Gang_YU2
   - name: Harry Shum
     url: https://en.wikipedia.org/wiki/Harry_Shum
     role: Advisor
     formerly: Microsoft (EVP); MSRA (Head)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Heung-Yeung_Shum1
 news:
   - title: "Tencent-Backed AI Startup StepFun Is Said to Plan Hong Kong IPO"
     url: https://www.bloomberg.com/news/articles/2026-02-25/tencent-backed-ai-startup-stepfun-is-said-to-plan-hong-kong-ipo
