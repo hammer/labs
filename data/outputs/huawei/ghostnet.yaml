@@ -1,0 +1,42 @@
+name: GhostNet
+slug: ghostnet
+lab: huawei
+date: 2019-11-27
+sources:
+  - label: "Paper: GhostNet (CVPR 2020)"
+    url: https://arxiv.org/abs/1911.11907
+  - label: "Paper: GhostNetV2 (NeurIPS 2022)"
+    url: https://arxiv.org/abs/2211.12905
+  - label: "Paper: GhostNetV3 (arXiv 2024)"
+    url: https://arxiv.org/abs/2404.11202
+  - label: GitHub
+    url: https://github.com/huawei-noah/Efficient-AI-Backbones
+description: >
+  Family of efficient CNN architectures using cheap linear operations to
+  generate ghost feature maps. GhostNet (CVPR 2020) proposed the Ghost
+  module for efficient feature generation. GhostNetV2 (NeurIPS 2022
+  Spotlight) added hardware-friendly DFC attention for long-range
+  dependencies, achieving 75.3% top-1 on ImageNet at 167M FLOPs. GhostNetV3
+  (2024) explored training strategies for compact models, reaching 79.1%
+  top-1 at 269M FLOPs.
+tags:
+  - computer-vision
+  - efficiency
+  - mobile
+  - architecture
+  - open-source
+outputs:
+  - type: model
+    name: GhostNet
+  - type: paper
+    name: "GhostNet: More Features from Cheap Operations"
+    paper:
+      arxiv: "1911.11907"
+  - type: paper
+    name: "GhostNetV2: Enhance Cheap Operation with Long-Range Attention"
+    paper:
+      arxiv: "2211.12905"
+  - type: paper
+    name: "GhostNetV3: Exploring the Training Strategies for Compact Models"
+    paper:
+      arxiv: "2404.11202"

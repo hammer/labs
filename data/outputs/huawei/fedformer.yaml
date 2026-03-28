@@ -1,0 +1,30 @@
+name: FEDformer
+slug: fedformer
+lab: huawei
+date: 2022-01-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2201.12740
+  - label: "Published: ICML 2022"
+    url: https://proceedings.mlr.press/v162/zhou22g/zhou22g.pdf
+  - label: GitHub
+    url: https://github.com/MAZiqing/FEDformer
+description: >
+  Frequency Enhanced Decomposed Transformer for long-term time series
+  forecasting. Combines Transformer with seasonal-trend decomposition
+  and exploits sparse Fourier representations of time series via random
+  frequency component selection. Achieves linear complexity and reduces
+  prediction error by 14.8% (multivariate) and 22.6% (univariate)
+  compared to prior state-of-the-art. Published at ICML 2022.
+tags:
+  - time-series
+  - forecasting
+  - transformer
+  - open-source
+outputs:
+  - type: model
+    name: FEDformer
+  - type: paper
+    name: "FEDformer: Frequency Enhanced Decomposed Transformer for Long-term Series Forecasting"
+    paper:
+      arxiv: "2201.12740"

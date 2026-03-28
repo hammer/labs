@@ -1,0 +1,21 @@
+name: WebGLM
+slug: webglm
+lab: zai
+type: paper
+date: 2023-06-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2306.07906
+  - label: GitHub
+    url: https://github.com/THUDM/WebGLM
+description: >
+  Web-enhanced question answering system with human preferences. Combines
+  web search, LLM-based filtering, and answer generation with human
+  preference alignment. Published at KDD 2023.
+tags:
+  - qa
+  - web
+  - research
+paper:
+  arxiv: "2306.07906"
+  venue: KDD 2023

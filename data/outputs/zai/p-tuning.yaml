@@ -1,0 +1,24 @@
+name: P-Tuning
+slug: p-tuning
+lab: zai
+type: paper
+date: 2021-03-18
+sources:
+  - label: Paper v1 (arXiv)
+    url: https://arxiv.org/abs/2103.10385
+  - label: Paper v2 (arXiv)
+    url: https://arxiv.org/abs/2110.07602
+  - label: GitHub
+    url: https://github.com/THUDM/P-tuning-v2
+description: >
+  Prompt tuning methods for pre-trained language models. P-Tuning v1
+  ("GPT Understands, Too") introduced trainable continuous prompts.
+  P-Tuning v2 showed prompt tuning can match fine-tuning across scales
+  and tasks. v2 published at ACL 2022.
+tags:
+  - training
+  - efficiency
+  - research
+paper:
+  arxiv: "2110.07602"
+  venue: ACL 2022

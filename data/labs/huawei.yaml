@@ -1,0 +1,61 @@
+name: Huawei
+slug: huawei
+url: https://www.noahlab.com.hk
+wikipedia: https://en.wikipedia.org/wiki/Huawei
+huggingface: https://huggingface.co/huawei-noah
+github: https://github.com/huawei-noah
+region: china
+founded: "1987"
+type: corporate
+parent: Huawei Technologies
+valuation:
+  amount: "$118B"
+  type: revenue
+  date: "2024-12"
+description: >
+  <p><a href="https://en.wikipedia.org/wiki/Huawei#Noah's_Ark_Lab">Noah's Ark Lab</a>
+  is the primary AI research division of
+  <a href="https://en.wikipedia.org/wiki/Huawei">Huawei Technologies</a>, established
+  in 2012 as part of the Huawei 2012 Laboratories (named after the company's ethos of
+  preparing for worst-case scenarios). Headquartered in Hong Kong with offices in
+  Shenzhen, Beijing, Shanghai, Edmonton, London, and Paris, the lab conducts
+  fundamental research in NLP, computer vision, recommendation systems, and AI
+  for science.</p>
+
+  <p>US sanctions since 2019 have profoundly shaped Huawei's AI strategy, making
+  domestic compute sovereignty a critical priority. Huawei's
+  <strong><a href="https://www.hiascend.com/">Ascend</a></strong> AI chip series
+  (910, 910B, 910C) and the <strong>CANN</strong> software stack have become the
+  backbone of China's efforts to reduce dependence on NVIDIA GPUs. Many Chinese AI
+  labs &mdash; including <a href="/labs/zai">Z.ai</a>, <a href="/labs/stepfun">StepFun</a>,
+  and state-backed institutions &mdash; now train on Ascend clusters. The
+  <strong><a href="https://www.mindspore.cn/en">MindSpore</a></strong> deep learning
+  framework is Huawei's answer to TensorFlow/PyTorch.</p>
+
+  <p>The lab's model research centers on the <strong>PanGu</strong> series:
+  PanGu-Alpha (2021, 200B parameters, one of China's earliest large LLMs) and
+  PanGu-Sigma (2023, 1T sparse model trained on Ascend 910). Research outputs also
+  include widely-cited efficient architectures like
+  <a href="https://arxiv.org/abs/1911.11907">GhostNet</a> and
+  <a href="https://arxiv.org/abs/1909.10351">TinyBERT</a>, and the
+  <a href="https://github.com/huawei-noah/HEBO">HEBO</a> Bayesian optimization
+  library which won the NeurIPS 2020 Black-Box Optimization Challenge.</p>
+people:
+  - name: Tian Qi
+    url: https://scholar.google.com/citations?user=61b6eYkAAAAJ
+    role: Former Chief Scientist (now Huawei Consumer BG)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Qi_Tian3
+  - name: Zhenguo Li
+    url: https://scholar.google.com/citations?user=XboZC1AAAAAJ
+    role: Director, AI Theory Lab
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Zhenguo_Li1
+tags:
+  - infrastructure
+  - open-weight
+  - chips
+  - framework
+  - efficiency

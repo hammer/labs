@@ -11,8 +11,26 @@ sources:
   - label: HuggingFace
     url: https://huggingface.co/THUDM/glm-10b
 description: >
-  Foundational GLM architecture introducing the autoregressive blank-infilling
-  objective. Initial 10B general-purpose model.
+  <p>The GLM paper (ACL 2022) is a seminal work that unified the three major
+  pretraining paradigms &mdash; autoencoding (BERT), autoregressive (GPT), and
+  encoder-decoder (T5) &mdash; into a single flexible architecture via
+  <strong>Autoregressive Blank Infilling</strong>: masking continuous spans of text
+  and training the model to reconstruct them sequentially.</p>
+
+  <p>Core innovations include: (1) a <strong>unified objective</strong> where varying
+  the number and length of masked spans tunes the model for NLU, conditional
+  generation, or unconditional generation; (2) <strong>2D positional encoding</strong>
+  with absolute position in corrupted text and relative position within generated
+  spans; and (3) a single GLM outperforming BERT, T5, and GPT on SuperGLUE at
+  smaller parameter counts.</p>
+
+  <p>The blank infilling approach saw widespread adoption as <strong>Fill-in-the-Middle
+  (FIM)</strong> training &mdash; used by OpenAI (GPT-3.5/4 code models), Meta
+  (CodeLLaMA), BigCode (StarCoder), and DeepSeek. With ~2,200 citations by early 2026,
+  the paper launched the GLM architecture that underpins the entire ChatGLM/GLM-4/GLM-5
+  series. Its authors went on to found <a href="/labs/zai">Zhipu AI</a> (Jie Tang),
+  <a href="/labs/moonshot-ai">Moonshot AI</a> (Zhilin Yang, also known for XLNet),
+  and contribute to <a href="/labs/deepseek">DeepSeek</a> (Xuehai Pan).</p>
 tags:
   - open-weight
   - architecture

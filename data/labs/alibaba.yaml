@@ -1,0 +1,112 @@
+name: Alibaba
+slug: alibaba
+url: https://qwen.ai
+wikipedia: https://en.wikipedia.org/wiki/Qwen
+huggingface: https://huggingface.co/Qwen
+github: https://github.com/QwenLM
+region: china
+founded: "1999"
+type: corporate
+parent: Alibaba Group
+ipo:
+  year: 2014
+  exchange: NYSE
+  ticker: BABA
+valuation:
+  amount: "$299B"
+  type: market-cap
+  ticker: "HKG: 9988 / NYSE: BABA"
+  date: "2026-03"
+description: >
+  <p>The Qwen team is <a href="https://www.alibabagroup.com/">Alibaba Group's</a>
+  flagship large model effort and the most prolific contributor to the open-source AI
+  ecosystem globally, with over
+  <a href="https://www.scmp.com/tech/big-tech/article/3339568/alibabas-qwen-family-hits-700-million-downloads-lead-global-open-source-ai-adoption">1
+  billion total downloads on HuggingFace</a>. Originally developed within the
+  <a href="https://damo.alibaba.com/">DAMO Academy</a> (established 2017) under
+  the Tongyi Qianwen brand, the team evolved through predecessor projects including
+  <a href="https://arxiv.org/abs/2103.00823">M6</a> (10T sparse MoE, 2021) and
+  <a href="https://arxiv.org/abs/2202.03052">OFA</a> (ICML 2022). Models are served
+  commercially through
+  <a href="https://www.alibabacloud.com/help/en/model-studio/models">Alibaba Cloud
+  Model Studio</a>.</p>
+
+  <p>The <strong>Qwen series</strong> has progressed from Qwen (2023) through Qwen3.5
+  (February 2026) at remarkable speed, spanning dense and MoE architectures across
+  text, code, math, vision, audio, and omni modalities. Qwen3 introduced hybrid
+  thinking with seamless reasoning mode-switching; Qwen3.5 (397B-A17B) supports 201
+  languages and 1M-token context. Alibaba has committed
+  <a href="https://www.bloomberg.com/news/articles/2025-02-24/alibaba-to-spend-53-billion-on-ai-infrastructure-in-big-pivot">$53
+  billion over three years</a> (2025&ndash;2028) for AI and cloud infrastructure, the
+  largest private technology investment in Chinese history.</p>
+
+  <p>In March 2026, the team underwent a
+  <a href="https://venturebeat.com/technology/did-alibaba-just-kneecap-its-powerful-qwen-ai-team-key-figures-depart-in">significant
+  restructuring</a>: Tech Lead Junyang Lin, post-training head Bowen Yu, and coding
+  lead Binyuan Hui all departed. Alibaba responded by creating a new
+  "<a href="https://www.scmp.com/tech/big-tech/article/3346789/alibaba-reshuffles-ai-units-new-token-hub-group-led-ceo-eddie-wu">Token
+  Hub</a>" business group under CEO Eddie Wu, with CTO
+  <a href="https://scholar.google.com/citations?user=64zxhRUAAAAJ">Jingren Zhou</a>
+  (ACM Fellow, PhD Columbia, ex-Microsoft Research) taking direct oversight of Qwen
+  model development. Former Google DeepMind researcher Hao Zhou was recruited to lead
+  post-training RL.</p>
+people:
+  - name: Jingren Zhou
+    url: https://scholar.google.com/citations?user=64zxhRUAAAAJ
+    role: CTO, Alibaba Cloud; Director, Tongyi Lab
+    formerly: Microsoft Research (2004-2015); PhD Columbia
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Jingren_Zhou1
+  - name: Hao Zhou
+    role: Head of Post-Training RL (since Mar 2026)
+    formerly: Google DeepMind (Sr. Staff Research Scientist; Gemini 3 contributor)
+  - name: Shuai Bai
+    url: https://scholar.google.com/citations?user=ylhI1JsAAAAJ
+    role: Vision Lead (Qwen-VL)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Shuai_Bai1
+  - name: An Yang
+    url: https://scholar.google.com/citations?user=vO9FZekAAAAJ
+    role: Core Researcher
+    formerly: Peking University (BS, MS)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~An_Yang1
+  - name: Dayiheng Liu
+    url: https://liudayiheng.github.io/
+    role: Pretrain Lead
+    formerly: PhD Sichuan University
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Dayiheng_Liu1
+  - name: Fei Huang
+    url: https://scholar.google.com/citations?user=9r98PpoAAAAJ
+    role: Chief Scientist, Language Technologies, DAMO
+    formerly: IBM Watson; Facebook; PhD Carnegie Mellon
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Fei_Huang1
+  - name: Junyang Lin
+    url: https://justinlin610.github.io/
+    role: Former Tech Lead (departed Mar 2026)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Junyang_Lin1
+  - name: Binyuan Hui
+    url: https://huybery.github.io/
+    role: Former Coding Lead (departed Jan 2026 to Meta)
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Binyuan_Hui1
+news:
+  - title: "Alibaba Launches AI Model Task Force; Top Researcher Resigns"
+    url: https://www.theinformation.com/briefings/alibaba-launches-ai-model-task-force-top-researcher-resigns
+    source: The Information
+    date: 2026-03-25
+tags:
+  - frontier
+  - open-weight
+  - multimodal
+  - moe

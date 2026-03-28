@@ -1,0 +1,45 @@
+name: Qwen2.5-Math
+slug: qwen2.5-math
+lab: alibaba
+date: 2024-09-18
+sources:
+  - label: Blog Post
+    url: https://qwenlm.github.io/blog/qwen2.5/
+  - label: GitHub
+    url: https://github.com/QwenLM/Qwen2.5-Math
+description: >
+  Math-specialized model family. Includes the Qwen2.5-Math series (1.5B, 7B, 72B)
+  which introduced Tool-Integrated Reasoning (TIR).
+tags:
+  - math
+  - reasoning
+  - open-weight
+outputs:
+  - name: Qwen2.5-Math
+    type: model
+    date: 2024-09-19
+    sources:
+      - label: Blog Post
+        url: https://qwenlm.github.io/blog/qwen2.5/
+      - label: GitHub
+        url: https://github.com/QwenLM/Qwen2.5-Math
+    model:
+      variants:
+        - name: Qwen2.5-Math-1.5B
+          parameters: 1.5B
+        - name: Qwen2.5-Math-7B
+          parameters: 7B
+        - name: Qwen2.5-Math-72B
+          parameters: 72B
+  - name: "Qwen2.5-Math: Toward Mathematical Expert Model via Self-Improvement"
+    type: paper
+    date: 2024-09-18
+    sources:
+      - label: "Paper (arXiv)"
+        url: https://arxiv.org/abs/2409.12122
+      - label: GitHub
+        url: https://github.com/QwenLM/Qwen2.5-Math
+    description: >
+      Paper on building mathematical expert models via self-improvement.
+    paper:
+      arxiv: "2409.12122"

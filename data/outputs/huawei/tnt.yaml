@@ -1,0 +1,29 @@
+name: Transformer in Transformer (TNT)
+slug: tnt
+lab: huawei
+date: 2021-02-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2103.00112
+  - label: "Published: NeurIPS 2021"
+    url: https://proceedings.neurips.cc/paper/2021/hash/854d9fca60b4bd07f9bb215d59ef5561-Abstract.html
+  - label: GitHub
+    url: https://github.com/huawei-noah/Efficient-AI-Backbones/tree/master/tnt_pytorch
+description: >
+  Vision architecture that treats image patches as "visual sentences" and
+  further divides them into smaller patches as "visual words," enabling
+  multi-granularity attention. Achieves 81.5% top-1 accuracy on ImageNet,
+  about 1.7% higher than existing vision transformers at similar compute
+  cost. Published at NeurIPS 2021.
+tags:
+  - computer-vision
+  - vision-transformer
+  - architecture
+  - open-source
+outputs:
+  - type: model
+    name: TNT
+  - type: paper
+    name: "Transformer in Transformer"
+    paper:
+      arxiv: "2103.00112"

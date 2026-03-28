@@ -1,0 +1,23 @@
+name: MindSpore
+slug: mindspore
+lab: huawei
+type: library
+date: 2020-03-28
+sources:
+  - label: GitHub
+    url: https://github.com/mindspore-ai/mindspore
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/MindSpore
+  - label: Announcement
+    url: https://www.cio.com/article/193320/mindspore-huaweis-all-scenario-ai-computing-framework-now-open-source.html
+description: >
+  Open-source all-scenario deep learning framework developed by Huawei,
+  announced alongside Ascend 910 in August 2019 and open-sourced on March 28,
+  2020. Supports mobile, edge, and cloud scenarios with automatic
+  parallelism, source-to-source automatic differentiation, and native
+  optimization for Ascend AI processors. Licensed under Apache-2.0.
+tags:
+  - framework
+  - open-source
+  - infrastructure
+  - deep-learning

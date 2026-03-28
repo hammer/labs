@@ -49,7 +49,7 @@ people:
     role: CTO & VP (AI oversight)
     formerly: PhD Georgia Institute of Technology
 relationships:
-  - lab: alibaba-qwen
+  - lab: alibaba
     type: affiliate
     note: >
       Ant Group is majority-owned by Alibaba Group. Maintains independent

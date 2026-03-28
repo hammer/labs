@@ -1,0 +1,17 @@
+name: DeepPlanning
+slug: deep-planning
+lab: alibaba
+type: dataset
+date: 2026-01-26
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2601.18137
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/Qwen/DeepPlanning
+  - label: Documentation
+    url: https://qwenlm.github.io/Qwen-Agent/en/benchmarks/deepplanning/
+description: >
+  Benchmark for evaluating complex agentic planning.
+tags:
+  - benchmark
+  - agentic

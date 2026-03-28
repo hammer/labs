@@ -1,0 +1,17 @@
+name: ProcessBench
+slug: processbench
+lab: alibaba
+type: dataset
+date: 2024-12-09
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2412.06559
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/Qwen/ProcessBench
+  - label: Blog Post
+    url: https://qwenlm.github.io/blog/qwen2.5-math-prm/
+description: >
+  Benchmark for evaluating the step-by-step logic of LLMs.
+tags:
+  - benchmark
+  - reasoning

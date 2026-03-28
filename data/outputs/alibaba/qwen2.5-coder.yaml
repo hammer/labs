@@ -1,0 +1,46 @@
+name: Qwen2.5-Coder
+slug: qwen2.5-coder
+lab: alibaba
+date: 2024-09-18
+sources:
+  - label: Blog Post
+    url: https://qwenlm.github.io/blog/qwen2.5-coder/
+  - label: GitHub
+    url: https://github.com/QwenLM/Qwen2.5-Coder
+description: >
+  Coding-specialized model family. Code-specific models (0.5B-32B) pre-trained
+  on 5.5T tokens.
+tags:
+  - coding
+  - open-weight
+outputs:
+  - name: Qwen2.5-Coder
+    type: model
+    date: 2024-09-19
+    sources:
+      - label: Blog Post
+        url: https://qwenlm.github.io/blog/qwen2.5-coder/
+      - label: GitHub
+        url: https://github.com/QwenLM/Qwen2.5-Coder
+    description: >
+      Coding-specialized model family. From early 1.5/2.5 versions to the massive
+      Qwen3-Coder-480B (July 2025).
+    model:
+      variants:
+        - name: Qwen2.5-Coder
+          notes: Initial coding models in 1.5B, 7B, 32B sizes
+        - name: Qwen3-Coder-480B
+          parameters: 480B
+          notes: Released July 2025
+  - name: Qwen2.5-Coder Technical Report
+    type: paper
+    date: 2024-09-18
+    sources:
+      - label: "Paper (arXiv)"
+        url: https://arxiv.org/abs/2409.12186
+      - label: GitHub
+        url: https://github.com/QwenLM/Qwen2.5-Coder
+    description: >
+      Code-specific models (0.5B-32B) pre-trained on 5.5T tokens. SOTA on 10+ code benchmarks.
+    paper:
+      arxiv: "2409.12186"

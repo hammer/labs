@@ -1,36 +1,36 @@
 {
-  "alibaba-qwen/chinese-clip": {
+  "alibaba/chinese-clip": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 5837,
     "github_forks": 549,
     "citations": 51
   },
-  "alibaba-qwen/deep-planning": {
+  "alibaba/deep-planning": {
     "fetched_at": "2026-03-22T16:35:33.036Z"
   },
-  "alibaba-qwen/m6-series": {
+  "alibaba/m6-series": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 48
   },
-  "alibaba-qwen/ofa": {
+  "alibaba/ofa": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 2557,
     "github_forks": 250,
     "citations": 258
   },
-  "alibaba-qwen/polymath": {
+  "alibaba/polymath": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 43,
     "github_forks": 8
   },
-  "alibaba-qwen/processbench": {
+  "alibaba/processbench": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 1
   },
-  "alibaba-qwen/qvq": {
+  "alibaba/qvq": {
     "fetched_at": "2026-03-22T16:35:33.036Z"
   },
-  "alibaba-qwen/qwen": {
+  "alibaba/qwen": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 20792,
     "github_forks": 1749,
@@ -38,38 +38,38 @@
     "hf_likes": 396,
     "citations": 80
   },
-  "alibaba-qwen/qwen-agent": {
+  "alibaba/qwen-agent": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 15725,
     "github_forks": 1505
   },
-  "alibaba-qwen/qwen-code": {
+  "alibaba/qwen-code": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 20908,
     "github_forks": 1862
   },
-  "alibaba-qwen/qwen-cpp": {
+  "alibaba/qwen-cpp": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 621,
     "github_forks": 61
   },
-  "alibaba-qwen/qwen-image": {
+  "alibaba/qwen-image": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 7596,
     "github_forks": 463,
     "hf_downloads": 223729,
     "hf_likes": 2428
   },
-  "alibaba-qwen/qwen1.5": {
+  "alibaba/qwen1.5": {
     "fetched_at": "2026-03-22T16:35:33.036Z"
   },
-  "alibaba-qwen/qwen2": {
+  "alibaba/qwen2": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 26978,
     "github_forks": 1939,
     "citations": 43
   },
-  "alibaba-qwen/qwen2-audio": {
+  "alibaba/qwen2-audio": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 2059,
     "github_forks": 164,
@@ -77,66 +77,66 @@
     "hf_likes": 146,
     "citations": 25
   },
-  "alibaba-qwen/qwen2-vl": {
+  "alibaba/qwen2-vl": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 48655,
     "hf_likes": 276,
     "citations": 246
   },
-  "alibaba-qwen/qwen2.5": {
+  "alibaba/qwen2.5": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 26978,
     "github_forks": 1939,
     "citations": 57
   },
-  "alibaba-qwen/qwen2.5-coder": {
+  "alibaba/qwen2.5-coder": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 16102,
     "github_forks": 1142,
     "citations": 30
   },
-  "alibaba-qwen/qwen2.5-math": {
+  "alibaba/qwen2.5-math": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 1069,
     "github_forks": 156,
     "citations": 10
   },
-  "alibaba-qwen/qwen2.5-omni": {
+  "alibaba/qwen2.5-omni": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 3956,
     "github_forks": 323,
     "hf_downloads": 466117,
     "hf_likes": 1875
   },
-  "alibaba-qwen/qwen3": {
+  "alibaba/qwen3": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 26978,
     "github_forks": 1939,
     "citations": 40
   },
-  "alibaba-qwen/qwen3-coder": {
+  "alibaba/qwen3-coder": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 16102,
     "github_forks": 1142,
     "hf_downloads": 1286088,
     "hf_likes": 1158
   },
-  "alibaba-qwen/qwen3.5": {
+  "alibaba/qwen3.5": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 2239,
     "github_forks": 118
   },
-  "alibaba-qwen/qwen3guard": {
+  "alibaba/qwen3guard": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "github_stars": 439,
     "github_forks": 31
   },
-  "alibaba-qwen/qwq-32b": {
+  "alibaba/qwq-32b": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 54928,
     "hf_likes": 2877
   },
-  "alibaba-qwen/rationale-rm": {
+  "alibaba/rationale-rm": {
     "fetched_at": "2026-03-22T16:35:33.036Z"
   },
   "ant-group/agentar-deepfinance": {
@@ -950,123 +950,123 @@
   "deepseek/smallpond": {
     "fetched_at": "2026-03-22T16:35:33.036Z"
   },
-  "huawei-noah/1bit-merging": {
+  "huawei/1bit-merging": {
     "fetched_at": "2026-03-22T16:35:33.036Z"
   },
-  "huawei-noah/ascend-910": {
+  "huawei/ascend-910": {
     "fetched_at": "2026-03-22T16:35:33.036Z"
   },
-  "huawei-noah/bolt": {
+  "huawei/bolt": {
     "fetched_at": "2026-03-22T16:35:33.036Z"
   },
-  "huawei-noah/cann": {
+  "huawei/cann": {
     "fetched_at": "2026-03-22T16:35:33.036Z"
   },
-  "huawei-noah/diffvc": {
+  "huawei/diffvc": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 25
   },
-  "huawei-noah/dream-7b": {
+  "huawei/dream-7b": {
     "fetched_at": "2026-03-22T16:35:33.036Z"
   },
-  "huawei-noah/dynabert": {
+  "huawei/dynabert": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 4,
     "hf_likes": 1,
     "citations": 119
   },
-  "huawei-noah/fedformer": {
+  "huawei/fedformer": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 534
   },
-  "huawei-noah/fuxictr": {
+  "huawei/fuxictr": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 12
   },
-  "huawei-noah/ghostnet": {
+  "huawei/ghostnet": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 404
   },
-  "huawei-noah/grad-tts": {
+  "huawei/grad-tts": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 43
   },
-  "huawei-noah/hebo": {
+  "huawei/hebo": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 19
   },
-  "huawei-noah/mindspore": {
+  "huawei/mindspore": {
     "fetched_at": "2026-03-22T16:35:33.036Z"
   },
-  "huawei-noah/nezha": {
+  "huawei/nezha": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 86
   },
-  "huawei-noah/openpangu": {
+  "huawei/openpangu": {
     "fetched_at": "2026-03-22T16:35:33.036Z"
   },
-  "huawei-noah/pangu-alpha": {
+  "huawei/pangu-alpha": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 94
   },
-  "huawei-noah/pangu-coder": {
+  "huawei/pangu-coder": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 5,
     "hf_likes": 1,
     "citations": 36
   },
-  "huawei-noah/pangu-embedded": {
+  "huawei/pangu-embedded": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 138,
     "hf_likes": 6
   },
-  "huawei-noah/pangu-pi": {
+  "huawei/pangu-pi": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 2
   },
-  "huawei-noah/pangu-pro-moe": {
+  "huawei/pangu-pro-moe": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 47,
     "hf_likes": 7
   },
-  "huawei-noah/pangu-sigma": {
+  "huawei/pangu-sigma": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 7
   },
-  "huawei-noah/pangu-ultra": {
+  "huawei/pangu-ultra": {
     "fetched_at": "2026-03-22T16:35:33.036Z"
   },
-  "huawei-noah/pangu-ultra-moe": {
+  "huawei/pangu-ultra-moe": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 9,
     "hf_likes": 3
   },
-  "huawei-noah/pangu-weather": {
+  "huawei/pangu-weather": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 122
   },
-  "huawei-noah/samformer": {
+  "huawei/samformer": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 1
   },
-  "huawei-noah/spiral": {
+  "huawei/spiral": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 7
   },
-  "huawei-noah/tinybert": {
+  "huawei/tinybert": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "hf_downloads": 91834,
     "hf_likes": 74,
     "citations": 136
   },
-  "huawei-noah/tnt": {
+  "huawei/tnt": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 1010
   },
-  "huawei-noah/vega": {
+  "huawei/vega": {
     "fetched_at": "2026-03-22T16:35:33.036Z"
   },
-  "huawei-noah/vig": {
+  "huawei/vig": {
     "fetched_at": "2026-03-22T16:35:33.036Z",
     "citations": 194
   },

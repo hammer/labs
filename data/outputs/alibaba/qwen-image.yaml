@@ -1,0 +1,41 @@
+name: Qwen-Image
+slug: qwen-image
+lab: alibaba
+date: 2025-08-01
+sources:
+  - label: GitHub
+    url: https://github.com/QwenLM/Qwen-Image
+  - label: HuggingFace
+    url: https://huggingface.co/Qwen/Qwen-Image
+description: >
+  Image generation model family. Qwen-Image (20B MMDiT) excels at text rendering
+  in Chinese and English. Qwen-Image-2.0 (7B) unifies generation and editing.
+tags:
+  - image-generation
+  - open-weight
+outputs:
+  - name: Qwen-Image
+    type: model
+    date: 2025-08-01
+    sources:
+      - label: GitHub
+        url: https://github.com/QwenLM/Qwen-Image
+      - label: HuggingFace
+        url: https://huggingface.co/Qwen/Qwen-Image
+    description: >
+      20B-parameter image generation foundation model built on Multimodal Diffusion
+      Transformer (MMDiT) architecture. Exceptional text rendering accuracy for
+      complex logographic languages.
+    model:
+      parameters: 20B
+  - name: Qwen-Image-2.0
+    type: model
+    date: 2026-02-10
+    sources:
+      - label: Blog Post
+        url: https://qwen.ai/blog?id=65f766fc2dcba7905c1cb69cc4cab90e94126bf4
+    description: >
+      Next-gen 7B image model unifying text-to-image generation and image editing.
+      Native 2K resolution. Scores 88.32 on DPG-Bench, outperforming FLUX.1 (12B).
+    model:
+      parameters: 7B

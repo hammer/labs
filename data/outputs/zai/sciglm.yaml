@@ -1,0 +1,20 @@
+name: SciGLM / SciInstruct
+slug: sciglm
+lab: zai
+type: paper
+date: 2024-01-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2401.07950
+description: >
+  Self-reflective instruction annotated dataset for training scientific
+  language models. Introduces SciInstruct for math, physics, and chemistry
+  reasoning. Published at NeurIPS 2024.
+tags:
+  - science
+  - dataset
+  - reasoning
+  - research
+paper:
+  arxiv: "2401.07950"
+  venue: NeurIPS 2024

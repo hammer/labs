@@ -1,0 +1,31 @@
+name: SAMformer
+slug: samformer
+lab: huawei
+date: 2024-02-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.10198
+  - label: "Published: ICML 2024 (Oral)"
+    url: https://icml.cc/virtual/2024/oral/35563
+  - label: GitHub
+    url: https://github.com/romilbert/samformer
+description: >
+  Lightweight transformer for multivariate long-term time series forecasting
+  using sharpness-aware minimization and channel-wise attention. Identifies
+  attention as responsible for poor generalization in forecasting transformers
+  and addresses it via SAM optimization. Surpasses TSMixer by 14.33% on
+  average with 4x fewer parameters. Presented as an oral at ICML 2024 from
+  Huawei Paris Noah's Ark Lab.
+tags:
+  - time-series
+  - forecasting
+  - transformer
+  - efficiency
+  - open-source
+outputs:
+  - type: model
+    name: SAMformer
+  - type: paper
+    name: "SAMformer: Unlocking the Potential of Transformers in Time Series Forecasting with Sharpness-Aware Minimization and Channel-Wise Attention"
+    paper:
+      arxiv: "2402.10198"

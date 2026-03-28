@@ -1,6 +1,7 @@
 name: GLM-130B
 slug: glm-130b
 lab: zai
+flagship: true
 date: 2022-08-24
 sources:
   - label: Paper (arXiv)

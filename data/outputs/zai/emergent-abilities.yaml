@@ -1,0 +1,19 @@
+name: Understanding Emergent Abilities from the Loss Perspective
+slug: emergent-abilities
+lab: zai
+type: paper
+date: 2024-03-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2403.15796
+description: >
+  Theoretical analysis of emergent abilities in language models through the
+  lens of pre-training loss, providing a unified framework for understanding
+  when and why capabilities appear at scale. Published at NeurIPS 2024.
+tags:
+  - scaling
+  - theory
+  - research
+paper:
+  arxiv: "2403.15796"
+  venue: NeurIPS 2024

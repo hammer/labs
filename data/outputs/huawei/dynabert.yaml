@@ -1,0 +1,31 @@
+name: DynaBERT
+slug: dynabert
+lab: huawei
+date: 2020-04-08
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2004.04037
+  - label: "Published: NeurIPS 2020"
+    url: https://proceedings.neurips.cc/paper/2020/hash/6f5216f8d89b086c18298e043bfe48ed-Abstract.html
+  - label: GitHub
+    url: https://github.com/huawei-noah/Pretrained-Language-Model/tree/master/DynaBERT
+  - label: HuggingFace (DynaBERT_MNLI)
+    url: https://huggingface.co/huawei-noah/DynaBERT_MNLI
+description: >
+  Dynamic BERT model with adaptive width and depth, allowing flexible
+  adjustment of model size and latency at runtime. Uses knowledge distillation
+  from full-sized models to smaller sub-networks with network rewiring to
+  share important attention heads. Published at NeurIPS 2020.
+tags:
+  - nlp
+  - efficiency
+  - knowledge-distillation
+  - model-compression
+  - open-source
+outputs:
+  - type: model
+    name: DynaBERT
+  - type: paper
+    name: "DynaBERT: Dynamic BERT with Adaptive Width and Depth"
+    paper:
+      arxiv: "2004.04037"

@@ -1,0 +1,36 @@
+name: FuxiCTR / BARS
+slug: fuxictr
+lab: huawei
+date: 2020-09-12
+sources:
+  - label: "Paper: FuxiCTR (arXiv)"
+    url: https://arxiv.org/abs/2009.05794
+  - label: "Paper: BARS (arXiv)"
+    url: https://arxiv.org/abs/2205.09626
+  - label: "Published: CIKM 2021 / SIGIR 2022"
+    url: https://dl.acm.org/doi/10.1145/3459637.3482486
+  - label: GitHub
+    url: https://github.com/huawei-noah/benchmark
+  - label: FuxiCTR Library
+    url: https://github.com/reczoo/FuxiCTR
+description: >
+  Open benchmarking framework for click-through rate prediction and
+  recommender systems. FuxiCTR (CIKM 2021) ran 4,600+ experiments over
+  12,000 GPU hours to benchmark 24 CTR models. BARS (SIGIR 2022) expanded
+  to 8,000+ experiments benchmarking 70+ recommendation models on six
+  datasets, establishing standardised evaluation for the field.
+tags:
+  - recommendation
+  - benchmark
+  - open-source
+outputs:
+  - type: library
+    name: FuxiCTR
+  - type: paper
+    name: "FuxiCTR: An Open Benchmark for Click-Through Rate Prediction"
+    paper:
+      arxiv: "2009.05794"
+  - type: paper
+    name: "BARS: Towards Open Benchmarking for Recommender Systems"
+    paper:
+      arxiv: "2205.09626"

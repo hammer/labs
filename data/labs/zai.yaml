@@ -84,6 +84,14 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Aohan_Zeng1
+  - name: Zhengxiao Du
+    url: https://zxdu.xyz/
+    role: Core Researcher (GLM base model co-lead)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.co.uk/citations?user=A8x07E0AAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Zhengxiao_Du1
 news:
   - title: "Zhipu AI's Rise from Tsinghua Lab"
     url: https://pro.pandaily.com/p/zhipu-ais-rise-from-tsinghua-lab

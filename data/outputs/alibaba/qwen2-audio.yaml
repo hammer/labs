@@ -1,0 +1,46 @@
+name: Qwen2-Audio
+slug: qwen2-audio
+lab: alibaba
+date: 2023-11-14
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/Qwen/Qwen-Audio
+  - label: GitHub
+    url: https://github.com/QwenLM/Qwen2-Audio
+description: >
+  Audio model family. Evolution from Qwen-Audio (2023) to Qwen2-Audio-7B
+  (Aug 2024).
+tags:
+  - audio
+  - open-weight
+outputs:
+  - name: Qwen-Audio Series
+    type: model
+    date: 2023-11-14
+    sources:
+      - label: "Paper (arXiv)"
+        url: https://arxiv.org/abs/2311.07919
+      - label: HuggingFace
+        url: https://huggingface.co/Qwen/Qwen-Audio
+    description: >
+      Audio model family. Evolution from Qwen-Audio (2023) to Qwen2-Audio-7B
+      (Aug 2024).
+    model:
+      variants:
+        - name: Qwen-Audio
+          notes: Released 2023
+        - name: Qwen2-Audio-7B
+          parameters: 7B
+          notes: Released Aug 2024
+  - name: Qwen2-Audio Paper
+    type: paper
+    date: 2024-07-15
+    sources:
+      - label: "Paper (arXiv)"
+        url: https://arxiv.org/abs/2407.10759
+      - label: GitHub
+        url: https://github.com/QwenLM/Qwen2-Audio
+    description: >
+      Introduced a three-stage training process for universal audio understanding.
+    paper:
+      arxiv: "2407.10759"
