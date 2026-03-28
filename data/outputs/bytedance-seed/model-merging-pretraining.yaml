@@ -1,7 +1,7 @@
 name: Model Merging in Pre-training of LLMs
 slug: model-merging-pretraining
 lab: bytedance-seed
-type: research
+type: paper
 date: 2025-05-17
 sources:
   - label: "Paper (arXiv)"
