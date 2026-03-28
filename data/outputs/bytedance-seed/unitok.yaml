@@ -1,0 +1,20 @@
+name: UniTok
+slug: unitok
+lab: bytedance-seed
+type: research
+date: 2025-02-27
+sources:
+  - label: GitHub
+    url: https://github.com/FoundationVision/UniTok
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2502.20321
+description: >
+  Unified tokenizer for visual generation and understanding. Uses multi-codebook
+  quantization to scale vocabulary size and bottleneck dimension, achieving
+  0.38 rFID for reconstruction and 78.6% zero-shot ImageNet accuracy.
+  NeurIPS 2025 Spotlight.
+tags:
+  - vision
+  - tokenizer
+  - multimodal
+  - research

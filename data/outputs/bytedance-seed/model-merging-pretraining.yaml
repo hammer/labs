@@ -1,0 +1,16 @@
+name: Model Merging in Pre-training of LLMs
+slug: model-merging-pretraining
+lab: bytedance-seed
+type: research
+date: 2025-05-17
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2505.12082
+description: >
+  Research on model merging techniques during pre-training of large language
+  models, exploring how independently trained model branches can be merged
+  to improve training efficiency and final model quality.
+tags:
+  - llm
+  - training
+  - research

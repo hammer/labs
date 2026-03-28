@@ -1,0 +1,18 @@
+name: InfinityStar
+slug: infinitystar
+lab: bytedance-seed
+type: model
+date: 2025-11-06
+sources:
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2511.04675
+description: >
+  Unified spacetime autoregressive modeling framework for visual generation.
+  Extends autoregressive approaches to jointly model spatial and temporal
+  dimensions for coherent video and image generation.
+tags:
+  - generation
+  - video
+  - vision
+  - autoregressive
+  - research

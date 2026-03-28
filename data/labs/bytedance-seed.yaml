@@ -33,9 +33,8 @@ description: >
   enterprise cloud division that also powers TikTok's infrastructure.</p>
 
   <p>The company is notable for research in efficient training infrastructure
-  (the <a href="https://arxiv.org/abs/2402.15627">MegaScale</a> system paper),
-  <a href="https://github.com/linkedin/Liger-Kernel">Liger Kernel</a> for efficient
-  GPU triton kernels, and cutting-edge work in video/image generation including
+  (the <a href="https://arxiv.org/abs/2402.15627">MegaScale</a> system paper)
+  and cutting-edge work in video/image generation including
   <a href="https://github.com/bytedance/sdxl-lightning">SDXL Lightning</a> and
   Seedance. ByteDance's massive compute resources from running TikTok at global
   scale give the Seed Team significant infrastructure advantages.</p>
@@ -47,6 +46,22 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Yonghui_Wu1
+  - name: Zehuan Yuan (袁泽寰)
+    url: https://shallowyuan.github.io/
+    role: FoundationVision Team Lead
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=FqMOHnEAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Zehuan_Yuan1
+  - name: Yi Jiang
+    url: https://enjoyyi.github.io/
+    role: Research Lead, Seed
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=6dikuoYAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Yi_Jiang2
 tags:
   - frontier
   - open-weight

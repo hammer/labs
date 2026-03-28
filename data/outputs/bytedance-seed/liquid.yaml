@@ -1,0 +1,20 @@
+name: "Liquid: Scalable Multi-modal Generation"
+slug: liquid
+lab: bytedance-seed
+type: model
+date: 2024-12-05
+sources:
+  - label: GitHub
+    url: https://github.com/FoundationVision/Liquid
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2412.04332
+description: >
+  Unified multimodal generation framework that combines visual understanding
+  and image generation within a single LLM without external pretrained visual
+  tools. Demonstrates favorable scaling laws where joint visual-language
+  training degradation diminishes with model size.
+tags:
+  - generation
+  - multimodal
+  - vision
+  - research
