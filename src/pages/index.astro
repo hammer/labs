@@ -87,10 +87,6 @@ const totalOutputs = getAllOutputsChronological().length;
       <button class="close-btn" id="close-shortcuts">&times;</button>
     </div>
   </div>
-
-  <div class="search-bar" id="search-bar">
-    <input type="text" id="search-input" placeholder="Search labs..." autocomplete="off" />
-  </div>
 </Layout>
 
 <script>
@@ -99,26 +95,22 @@ const totalOutputs = getAllOutputsChronological().length;
   const backdrop = document.getElementById('shortcut-backdrop')!;
   const closeBtn = document.getElementById('close-shortcuts')!;
   const hintBtn = document.getElementById('shortcut-hint')!;
-  const searchBar = document.getElementById('search-bar')!;
-  const searchInput = document.getElementById('search-input') as HTMLInputElement;
 
   let selected = -1;
-  let visibleRows = [...rows];
   let waitingForG = false;
   let gTimer: ReturnType<typeof setTimeout> | null = null;
 
   function select(index: number) {
-    if (visibleRows.length === 0) return;
-    const clamped = Math.max(0, Math.min(index, visibleRows.length - 1));
+    const clamped = Math.max(0, Math.min(index, rows.length - 1));
     rows.forEach(r => r.classList.remove('selected'));
     selected = clamped;
-    visibleRows[selected].classList.add('selected');
-    visibleRows[selected].scrollIntoView({ block: 'nearest' });
+    rows[selected].classList.add('selected');
+    rows[selected].scrollIntoView({ block: 'nearest' });
   }
 
   function openSelected() {
-    if (selected >= 0 && selected < visibleRows.length) {
-      const href = visibleRows[selected].dataset.href;
+    if (selected >= 0 && selected < rows.length) {
+      const href = rows[selected].dataset.href;
       if (href) window.location.href = href;
     }
   }
@@ -127,35 +119,6 @@ const totalOutputs = getAllOutputsChronological().length;
     const isShown = !modal.classList.contains('hidden');
     const shouldShow = show ?? !isShown;
     modal.classList.toggle('hidden', !shouldShow);
-  }
-
-  function toggleSearch(show?: boolean) {
-    const isShown = searchBar.classList.contains('active');
-    const shouldShow = show ?? !isShown;
-    searchBar.classList.toggle('active', shouldShow);
-    if (shouldShow) {
-      searchInput.focus();
-    } else {
-      searchInput.value = '';
-      filterRows('');
-      searchInput.blur();
-    }
-  }
-
-  function filterRows(query: string) {
-    const q = query.toLowerCase();
-    rows.forEach(row => {
-      const name = row.querySelector('.lab-name')?.textContent?.toLowerCase() ?? '';
-      const type = row.querySelector('.col-type')?.textContent?.toLowerCase() ?? '';
-      const match = !q || name.includes(q) || type.includes(q);
-      (row as HTMLElement).style.display = match ? '' : 'none';
-    });
-    visibleRows = rows.filter(r => (r as HTMLElement).style.display !== 'none');
-    if (selected >= visibleRows.length) {
-      select(visibleRows.length - 1);
-    } else if (visibleRows.length > 0 && selected === -1) {
-      select(0);
-    }
   }
 
   // Click to navigate
@@ -169,16 +132,7 @@ const totalOutputs = getAllOutputsChronological().length;
   // Keyboard shortcuts
   document.addEventListener('keydown', (e) => {
     // Ignore when typing in input
-    if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
-      if (e.key === 'Escape') {
-        toggleSearch(false);
-        e.preventDefault();
-      } else if (e.key === 'Enter') {
-        openSelected();
-        e.preventDefault();
-      }
-      return;
-    }
+    if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
 
     // Don't trigger shortcuts with modifier keys
     if (e.ctrlKey || e.metaKey || e.altKey) return;
@@ -210,32 +164,22 @@ const totalOutputs = getAllOutputsChronological().length;
         break;
       case 'G':
         e.preventDefault();
-        select(visibleRows.length - 1);
+        select(rows.length - 1);
         break;
       case '?':
         e.preventDefault();
         toggleModal();
         break;
-      case '/':
-        e.preventDefault();
-        toggleSearch(true);
-        break;
       case 'Escape':
         e.preventDefault();
         if (!modal.classList.contains('hidden')) {
           toggleModal(false);
-        } else if (searchBar.classList.contains('active')) {
-          toggleSearch(false);
         } else {
           rows.forEach(r => r.classList.remove('selected'));
           selected = -1;
         }
         break;
     }
-  });
-
-  searchInput.addEventListener('input', () => {
-    filterRows(searchInput.value);
   });
 
   backdrop.addEventListener('click', () => toggleModal(false));

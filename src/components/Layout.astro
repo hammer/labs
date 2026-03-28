@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import SearchDropdown from './SearchDropdown.astro';
 
 interface Props {
   title: string;
@@ -22,6 +23,12 @@ const { title } = Astro.props;
         <div class="nav-links">
           <a href="/">Labs</a>
           <a href="/timeline">Timeline</a>
+          <div class="search-container">
+            <button id="nav-search-btn" class="nav-search-btn" title="Search (/)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+            </button>
+            <SearchDropdown />
+          </div>
         </div>
       </div>
     </nav>
@@ -31,52 +38,14 @@ const { title } = Astro.props;
   </body>
 </html>
 
-<style>
-  .nav {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    padding: 0.75rem 0;
-    margin-bottom: 2rem;
-  }
-
-  .nav-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .nav-brand {
-    font-weight: 700;
-    font-size: 1.125rem;
-    color: var(--text);
-  }
-
-  .nav-brand:hover {
-    text-decoration: none;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 1.5rem;
-  }
-
-  .nav-links a {
-    color: var(--text-muted);
-    font-size: 0.875rem;
-  }
-
-  .nav-links a:hover {
-    color: var(--text);
-  }
-
-  main {
-    padding-bottom: 3rem;
-  }
-</style>
-
 <script>
   let waitingForG = false;
   let gTimer: ReturnType<typeof setTimeout> | null = null;
+
+  const searchBtn = document.getElementById('nav-search-btn');
+  searchBtn?.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('open-global-search'));
+  });
 
   document.addEventListener('keydown', (e) => {
     if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
@@ -106,3 +75,66 @@ const { title } = Astro.props;
     }
   });
 </script>
+
+<style>
+  .nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 0;
+    margin-bottom: 2rem;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--text);
+  }
+
+  .nav-brand:hover {
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+
+  .nav-links a:hover {
+    color: var(--text);
+  }
+
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-search-btn {
+    all: unset;
+    cursor: pointer;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    transition: color 0.15s;
+  }
+
+  .nav-search-btn:hover {
+    color: var(--text);
+  }
+
+  main {
+    padding-bottom: 3rem;
+  }
+</style>

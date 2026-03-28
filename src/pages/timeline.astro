@@ -115,10 +115,6 @@ const types = [...new Set(allTypes)].sort();
       <button class="close-btn" id="close-shortcuts">&times;</button>
     </div>
   </div>
-
-  <div class="search-bar" id="search-bar">
-    <input type="text" id="search-input" placeholder="Search outputs..." autocomplete="off" />
-  </div>
 </Layout>
 
 <script>
@@ -128,8 +124,6 @@ const types = [...new Set(allTypes)].sort();
   const backdrop = document.getElementById('shortcut-backdrop')!;
   const closeBtn = document.getElementById('close-shortcuts')!;
   const hintBtn = document.getElementById('shortcut-hint')!;
-  const searchBar = document.getElementById('search-bar')!;
-  const searchInput = document.getElementById('search-input') as HTMLInputElement;
   const labSelect = document.getElementById('filter-lab') as HTMLSelectElement;
   const typeSelect = document.getElementById('filter-type') as HTMLSelectElement;
   const flagshipToggle = document.getElementById('flagship-toggle')!;
@@ -140,7 +134,6 @@ const types = [...new Set(allTypes)].sort();
   let visibleRows: HTMLTableRowElement[] = [...allRows];
   let waitingForG = false;
   let gTimer: ReturnType<typeof setTimeout> | null = null;
-  let searchQuery = '';
   let flagshipOnly = false;
 
   // Sort state
@@ -218,21 +211,17 @@ const types = [...new Set(allTypes)].sort();
   function updateVisibility() {
     const lab = labSelect.value;
     const type = typeSelect.value;
-    const q = searchQuery.toLowerCase();
 
     allRows.forEach(row => {
       const labs = row.dataset.lab!.split(',');
       const rowTypes = row.dataset.type!.split(',');
-      const name = row.querySelector('.col-name')?.textContent?.toLowerCase() ?? '';
-      const labName = row.querySelector('.col-lab')?.textContent?.toLowerCase() ?? '';
       const isFlagship = row.dataset.flagship === '1';
 
       const matchLab = !lab || labs.includes(lab);
       const matchType = !type || rowTypes.includes(type);
-      const matchSearch = !q || name.includes(q) || labName.includes(q);
       const matchFlagship = !flagshipOnly || isFlagship;
 
-      row.style.display = (matchLab && matchType && matchSearch && matchFlagship) ? '' : 'none';
+      row.style.display = (matchLab && matchType && matchFlagship) ? '' : 'none';
     });
 
     visibleRows = allRows.filter(r => r.style.display !== 'none');
@@ -266,20 +255,6 @@ const types = [...new Set(allTypes)].sort();
     modal.classList.toggle('hidden', show !== undefined ? !show : isShown);
   }
 
-  function toggleSearch(show?: boolean) {
-    const isShown = searchBar.classList.contains('active');
-    const shouldShow = show ?? !isShown;
-    searchBar.classList.toggle('active', shouldShow);
-    if (shouldShow) {
-      searchInput.focus();
-    } else {
-      searchInput.value = '';
-      searchQuery = '';
-      updateVisibility();
-      searchInput.blur();
-    }
-  }
-
   function cycleSort() {
     const idx = sortCycle.indexOf(currentSort);
     const next = sortCycle[(idx + 1) % sortCycle.length];
@@ -299,23 +274,9 @@ const types = [...new Set(allTypes)].sort();
   labSelect.addEventListener('change', updateVisibility);
   typeSelect.addEventListener('change', updateVisibility);
 
-  searchInput.addEventListener('input', () => {
-    searchQuery = searchInput.value;
-    updateVisibility();
-  });
-
   // Keyboard shortcuts
   document.addEventListener('keydown', (e) => {
-    if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
-      if (e.key === 'Escape') {
-        toggleSearch(false);
-        e.preventDefault();
-      } else if (e.key === 'Enter') {
-        openSelected();
-        e.preventDefault();
-      }
-      return;
-    }
+    if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
     if (e.target instanceof HTMLSelectElement) return;
     if (e.ctrlKey || e.metaKey || e.altKey) return;
 
@@ -360,16 +321,10 @@ const types = [...new Set(allTypes)].sort();
         e.preventDefault();
         toggleModal();
         break;
-      case '/':
-        e.preventDefault();
-        toggleSearch(true);
-        break;
       case 'Escape':
         e.preventDefault();
         if (!modal.classList.contains('hidden')) {
           toggleModal(false);
-        } else if (searchBar.classList.contains('active')) {
-          toggleSearch(false);
         } else {
           allRows.forEach(r => r.classList.remove('selected'));
           selected = -1;
