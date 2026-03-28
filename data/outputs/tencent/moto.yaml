@@ -1,0 +1,22 @@
+name: Moto
+slug: moto
+lab: tencent
+type: paper
+date: 2024-12-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.04445
+  - label: GitHub
+    url: https://github.com/TencentARC/Moto
+  - label: Project Page
+    url: https://chenyi99.github.io/moto/
+description: >
+  Latent motion tokens as a bridging language for learning robot manipulation
+  from videos. Accepted at ICCV 2025 as Oral.
+tags:
+  - robotics
+  - video
+  - research
+paper:
+  arxiv: "2412.04445"
+  venue: ICCV 2025

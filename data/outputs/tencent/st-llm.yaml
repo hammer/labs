@@ -1,0 +1,20 @@
+name: ST-LLM
+slug: st-llm
+lab: tencent
+type: paper
+date: 2024-03-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2404.00308
+  - label: GitHub
+    url: https://github.com/TencentARC/ST-LLM
+description: >
+  Large language models as effective temporal learners for video
+  understanding. Published at ECCV 2024.
+tags:
+  - video
+  - multimodal
+  - research
+paper:
+  arxiv: "2404.00308"
+  venue: ECCV 2024

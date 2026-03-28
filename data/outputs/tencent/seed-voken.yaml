@@ -1,0 +1,20 @@
+name: SEED-Voken
+slug: seed-voken
+lab: tencent
+type: paper
+date: 2024-12-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.02692
+  - label: GitHub
+    url: https://github.com/TencentARC/SEED-Voken
+description: >
+  Scalable image tokenization with index backpropagation quantization.
+  Accepted at ICCV 2025.
+tags:
+  - vision
+  - tokenizer
+  - research
+paper:
+  arxiv: "2412.02692"
+  venue: ICCV 2025

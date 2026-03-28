@@ -1,0 +1,21 @@
+name: Divot
+slug: divot
+lab: tencent
+type: model
+date: 2024-12-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.04432
+  - label: GitHub
+    url: https://github.com/TencentARC/Divot
+description: >
+  Diffusion-powered video tokenizer for comprehension and generation,
+  unifying video understanding and synthesis. Published at CVPR 2025.
+tags:
+  - video
+  - tokenizer
+  - generation
+  - research
+paper:
+  arxiv: "2412.04432"
+  venue: CVPR 2025

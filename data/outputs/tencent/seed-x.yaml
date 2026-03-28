@@ -1,0 +1,21 @@
+name: SEED-X
+slug: seed-x
+lab: tencent
+type: model
+date: 2024-04-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2404.14396
+  - label: GitHub
+    url: https://github.com/AILab-CVC/SEED-X
+description: >
+  Multimodal foundation model with unified multi-granularity comprehension
+  and generation. Extends the SEED family to handle both fine-grained visual
+  understanding and flexible image generation within a single framework.
+tags:
+  - multimodal
+  - generation
+  - vision
+  - research
+paper:
+  arxiv: "2404.14396"

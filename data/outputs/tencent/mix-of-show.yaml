@@ -1,0 +1,23 @@
+name: Mix-of-Show
+slug: mix-of-show
+lab: tencent
+type: paper
+date: 2023-05-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2305.18292
+  - label: GitHub
+    url: https://github.com/TencentARC/Mix-of-Show
+  - label: Project Page
+    url: https://showlab.github.io/Mix-of-Show/
+description: >
+  Decentralized low-rank adaptation for multi-concept customization of
+  diffusion models. Published at NeurIPS 2023.
+tags:
+  - generation
+  - diffusion
+  - customization
+  - research
+paper:
+  arxiv: "2305.18292"
+  venue: NeurIPS 2023

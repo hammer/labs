@@ -1,0 +1,19 @@
+name: Open-MAGVIT2
+slug: open-magvit2
+lab: tencent
+type: library
+date: 2024-09-05
+sources:
+  - label: GitHub
+    url: https://github.com/TencentARC/Open-MAGVIT2
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2409.04410
+description: >
+  Open-source replication and improvement of Google's MAGVIT-v2 visual
+  tokenizer, achieving state-of-the-art image reconstruction quality.
+tags:
+  - vision
+  - tokenizer
+  - generation
+library:
+  github: https://github.com/TencentARC/Open-MAGVIT2

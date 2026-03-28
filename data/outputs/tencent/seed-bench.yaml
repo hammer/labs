@@ -1,0 +1,24 @@
+name: SEED-Bench
+slug: seed-bench
+lab: tencent
+type: dataset
+date: 2023-07-30
+sources:
+  - label: Paper v1 (arXiv)
+    url: https://arxiv.org/abs/2307.16125
+  - label: Paper v2 (arXiv)
+    url: https://arxiv.org/abs/2311.17092
+  - label: GitHub
+    url: https://github.com/AILab-CVC/SEED-Bench
+  - label: Leaderboard
+    url: https://huggingface.co/spaces/AILab-CVC/SEED-Bench_Leaderboard
+description: >
+  Benchmark for evaluating multimodal large language models across multiple
+  dimensions. SEED-Bench-2 expanded to 24K multiple-choice questions covering
+  27 evaluation dimensions. Published at CVPR 2024.
+tags:
+  - benchmark
+  - multimodal
+  - evaluation
+dataset:
+  github: https://github.com/AILab-CVC/SEED-Bench

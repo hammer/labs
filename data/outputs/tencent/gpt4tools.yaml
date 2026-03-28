@@ -1,0 +1,22 @@
+name: GPT4Tools
+slug: gpt4tools
+lab: tencent
+type: paper
+date: 2023-05-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2305.18752
+  - label: GitHub
+    url: https://github.com/AILab-CVC/GPT4Tools
+  - label: Project Page
+    url: https://gpt4tools.github.io/
+description: >
+  Teaching large language models to use tools via self-instruction.
+  Published at NeurIPS 2023.
+tags:
+  - llm
+  - tool-use
+  - research
+paper:
+  arxiv: "2305.18752"
+  venue: NeurIPS 2023

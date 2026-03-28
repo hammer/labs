@@ -1,19 +1,28 @@
-name: SEED-LLaMA
+name: SEED / SEED-LLaMA
 slug: seed-llama
 lab: tencent
-type: paper
-date: 2023-07-16
+type: model
+date: 2023-10-04
 sources:
-  - label: Paper (arXiv)
+  - label: Paper v1 (arXiv)
     url: https://arxiv.org/abs/2307.08041
+  - label: Paper v2 (arXiv)
+    url: https://arxiv.org/abs/2310.01218
   - label: GitHub
     url: https://github.com/AILab-CVC/SEED
+  - label: HuggingFace
+    url: https://huggingface.co/AILab-CVC/SEED
+  - label: Project Page
+    url: https://ailab-cvc.github.io/seed
 description: >
-  Pioneer in multimodal in-context learning, enabling models to "see" and
-  "speak" with interleaved images and text. Accepted at ICLR 2024.
+  Multimodal foundation model enabling LLMs to "see" and "draw" via a
+  discrete visual tokenizer. SEED-LLaMA pioneered multimodal in-context
+  learning with interleaved images and text. Published at ICLR 2024.
 tags:
   - multimodal
+  - generation
+  - vision
   - research
 paper:
-  arxiv: "2307.08041"
+  arxiv: "2310.01218"
   venue: ICLR 2024

@@ -1,0 +1,24 @@
+name: Tune-A-Video
+slug: tune-a-video
+lab: tencent
+type: paper
+date: 2022-12-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2212.11565
+  - label: GitHub
+    url: https://github.com/showlab/Tune-A-Video
+  - label: Project Page
+    url: https://tuneavideo.github.io/
+description: >
+  One-shot tuning of image diffusion models for text-to-video generation.
+  Influential early work on adapting image diffusion for video. Published at
+  ICCV 2023.
+tags:
+  - video
+  - generation
+  - diffusion
+  - research
+paper:
+  arxiv: "2212.11565"
+  venue: ICCV 2023
