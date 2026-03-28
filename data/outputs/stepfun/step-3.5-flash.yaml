@@ -14,8 +14,11 @@ sources:
     url: https://github.com/stepfun-ai/Step-3.5-Flash
 description: >
   Most advanced agentic model. 196B MoE (11B active) using MTP-3 and hybrid
-  attention. Optimized for speed (350 tok/s) with 256k context. Released with
-  a 1.6M-row instruction-tuning dataset.
+  attention. Optimized for speed (350 tok/s) with 256k context. Step-3.5-Flash
+  leverages **StepCrawl**, a proprietary high-signal data acquisition system
+  that prioritizes information-dense documents (especially PDFs) through a
+  sophisticated URL selection layer, moving beyond standard web-scale crawls.
+  Released with a 1.6M-row instruction-tuning dataset.
 tags:
   - moe
   - agentic

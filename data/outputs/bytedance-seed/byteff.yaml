@@ -1,0 +1,24 @@
+name: ByteFF
+slug: byteff
+lab: bytedance-seed
+type: model
+date: "2024-05-15"
+sources:
+  - label: GitHub
+    url: https://github.com/bytedance/byteff
+  - label: "Paper (arXiv)"
+    url: https://arxiv.org/abs/2405.09114
+description: >
+  An Amber-compatible, data-driven force field for drug-like molecules.
+  ByteFF is trained on millions of synthetic fragment geometries using
+  an edge-augmented Graph Neural Network (GNN) to predict bonded and
+  non-bonded parameters in a single pass.
+tags:
+  - science
+  - chemistry
+  - molecular-dynamics
+model:
+  architecture: dense
+library:
+  github: https://github.com/bytedance/byteff
+notes: Date approximate.

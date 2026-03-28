@@ -1,0 +1,25 @@
+name: WanJuan 3.0 (WanJuan-SiLu)
+slug: wanjuan-3.0
+lab: shanghai-ai-lab
+type: dataset
+date: 2025-01-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.14506
+  - label: OpenDataLab
+    url: https://opendatalab.org.cn/WanJuan/3.0
+description: >
+  A comprehensive multilingual dataset focusing on "Silk Road" languages,
+  containing over 300 billion tokens. It features major language subsets for
+  Thai, Russian, Arabic, Korean, and Vietnamese to support globally-aligned
+  large models.
+tags:
+  - training-data
+  - pretraining
+  - multilingual
+paper:
+  arxiv: "2501.14506"
+related:
+  - wanjuan
+  - wanjuan-cc
+  - internlm3

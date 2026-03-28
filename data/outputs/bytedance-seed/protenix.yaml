@@ -2,19 +2,21 @@ name: Protenix
 slug: protenix
 lab: bytedance-seed
 type: model
-date: 2025-01-01
+date: "2026-02-09"
 sources:
   - label: GitHub
     url: https://github.com/bytedance/Protenix
-  - label: Technical Report
-    url: https://www.biorxiv.org/content/10.64898/2026.02.05.703733v1
+  - label: Technical Report (bioRxiv)
+    url: https://www.biorxiv.org/content/10.1101/2026.02.05.703733v1
 description: >
-  Structure-centric foundation model for biomolecules, focusing on
-  protein-folding and drug discovery.
+  An open-source, trainable reproduction of AlphaFold 3 (AF3) for biomolecular
+  structure prediction. Protenix is designed to predict the 3D structures of
+  complex systems containing proteins, DNA, RNA, small molecule ligands, and
+  ions, achieving state-of-the-art accuracy under the Apache 2.0 license.
 tags:
   - science
   - biology
   - open-weight
 library:
   github: https://github.com/bytedance/Protenix
-notes: Date approximate. Protenix-v1 released February 5, 2026.
+notes: Protenix-v1 technical report posted February 9, 2026.

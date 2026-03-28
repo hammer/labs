@@ -1,4 +1,4 @@
-name: WanJuan Corpus
+name: WanJuan 1.0 Corpus
 slug: wanjuan
 lab: shanghai-ai-lab
 type: dataset
@@ -9,9 +9,14 @@ sources:
   - label: GitHub
     url: https://github.com/opendatalab
 description: >
-  Massive high-quality multimodal pre-training corpus containing over 1 trillion
-  tokens of English web text.
+  Massive high-quality multimodal pre-training corpus containing over 2TB of
+  English and Chinese text, image-text pairs, and video.
 tags:
   - training-data
   - pretraining
+  - multimodal
 notes: arXiv submission Aug 21, 2023.
+related:
+  - wanjuan-cc
+  - wanjuan-3.0
+  - internlm-1.0

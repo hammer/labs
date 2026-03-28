@@ -1,0 +1,18 @@
+name: PXDesign
+slug: pxdesign
+lab: bytedance-seed
+type: model
+date: "2026-03-01"
+sources:
+  - label: Web Server
+    url: https://seed.bytedance.com
+description: >
+  A generative protein design suite built on top of Protenix. It uses a
+  diffusion-based model (PXDesign-d) for backbone generation and
+  ProteinMPNN for sequence assignment, filtered using Protenix confidence
+  scores.
+tags:
+  - science
+  - biology
+  - protein-design
+notes: Date approximate. Part of the Protenix ecosystem.

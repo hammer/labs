@@ -1,0 +1,22 @@
+name: Felis
+slug: felis
+lab: bytedance-seed
+type: paper
+date: "2026-03-23"
+sources:
+  - label: arXiv
+    url: https://arxiv.org/abs/2603.22274
+description: >
+  Felis is an open-source, automated, and scalable toolkit designed for high-throughput
+  Absolute Binding Free Energy (ABFE) calculations. Paired with ByteFF, Felis achieves
+  ranking performance comparable to state-of-the-art relative binding free energy (RBFE)
+  methods.
+tags:
+  - biology
+  - drug-design
+  - toolkit
+paper:
+  arxiv: "2603.22274"
+related:
+  - byteff
+  - protenix

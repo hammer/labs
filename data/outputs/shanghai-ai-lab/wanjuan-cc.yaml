@@ -1,0 +1,23 @@
+name: WanJuan 2.0 (WanJuan-CC)
+slug: wanjuan-cc
+lab: shanghai-ai-lab
+type: dataset
+date: 2024-02-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.19282
+  - label: OpenDataLab
+    url: https://opendatalab.org.cn/WanJuan/CC
+description: >
+  A 1.0T token high-quality English webtext dataset derived from Common Crawl,
+  also known as WanJuan 2.0. Specifically designed for pre-training large
+  language models with a focus on safety and high information density.
+tags:
+  - training-data
+  - pretraining
+  - english
+paper:
+  arxiv: "2402.19282"
+related:
+  - wanjuan
+  - internlm2

@@ -1,0 +1,22 @@
+name: Densing Law of LLMs
+slug: densing-law
+lab: openbmb
+type: paper
+date: 2024-12-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.04315
+description: >
+  Introduces the concept of **Capacity Density**, a metric to evaluate LLM
+  quality across different scales. The paper identifies an empirical
+  "Densing Law" where LLM capacity density doubles approximately every
+  three months, suggesting exponential gains in efficiency.
+tags:
+  - scaling-laws
+  - efficiency
+  - research
+paper:
+  arxiv: "2412.04315"
+related:
+  - minicpm
+  - cpm
