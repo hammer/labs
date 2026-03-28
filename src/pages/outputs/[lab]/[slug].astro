@@ -40,7 +40,7 @@ const types = getOutputTypes(output);
 
   {output.description && (
     <section class="section">
-      <p class="description">{output.description}</p>
+      <div class="description" set:html={output.description} />
     </section>
   )}
 
