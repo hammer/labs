@@ -4,6 +4,10 @@ lab: tencent
 type: model
 date: 2025-09-01
 sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.05209
+  - label: Paper (HY-MT1.5, arXiv)
+    url: https://arxiv.org/abs/2512.24092
   - label: GitHub
     url: https://github.com/Tencent-Hunyuan/Hunyuan-MT
   - label: HuggingFace (MT-7B)

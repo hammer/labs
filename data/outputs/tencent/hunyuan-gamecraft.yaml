@@ -4,6 +4,8 @@ lab: tencent
 type: model
 date: 2025-08-14
 sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.17201
   - label: GitHub
     url: https://github.com/Tencent-Hunyuan/Hunyuan-GameCraft-1.0
   - label: HuggingFace
@@ -17,3 +19,5 @@ tags:
   - generation
   - gaming
   - open-weight
+paper:
+  arxiv: "2506.17201"

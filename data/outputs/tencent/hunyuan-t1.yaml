@@ -8,6 +8,10 @@ sources:
     url: https://llm.hunyuan.tencent.com/#/blog/hy-t1?lang=en
   - label: GitHub
     url: https://tencent.github.io/llm.hunyuan.T1/README_EN.html
-description: Tencent's reasoning model.
+description: >
+  Tencent's deep reasoning model, built on Hunyuan-TurboS with additional
+  reinforcement learning for extended chain-of-thought reasoning.
 tags:
   - reasoning
+related:
+  - hunyuan-turbo-s
