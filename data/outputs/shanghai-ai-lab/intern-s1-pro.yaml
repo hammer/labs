@@ -2,26 +2,31 @@ name: Intern-S1-Pro
 slug: intern-s1-pro
 lab: shanghai-ai-lab
 type: model
-date: "2026-02-04"
+date: 2026-03-26
 sources:
-  - label: News
-    url: https://shanghai.gov.cn
+  - label: Announcement
+    url: https://shanghaiopen.org.cn/en/blog/2026/02/16/towards-ai4s-2-0-shanghai-ai-lab-open-sources-intern-s1-pro-the-1-trillion-parameter-moe-scientific-large-model/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.25040
   - label: HuggingFace
     url: https://huggingface.co/internlm
 description: >
-  A 1-trillion parameter scientific multimodal foundation model. 
-  Intern-S1-Pro uses a Mixture-of-Experts (MoE) architecture with 512 experts 
-  (8 active per token), achieving Olympiad-level reasoning across 100+ 
-  specialized scientific tasks. It was trained on 6 trillion tokens using a 
+  Landmark 1-trillion parameter MoE scientific model with 512 experts
+  (8 active per token, 22B active parameters). Designed for autonomous
+  scientific research, achieving Olympiad-level reasoning across 100+
+  specialized scientific tasks. Trained on 6 trillion tokens using a
   fully autonomous domestic technology stack.
 tags:
   - science
   - frontier
   - moe
+  - reasoning
   - open-weight
 model:
   architecture: moe
   parameters: 1T
+  active_parameters: 22B
 related:
+  - intern-s1
   - internlm3
   - wanjuan-3.0
