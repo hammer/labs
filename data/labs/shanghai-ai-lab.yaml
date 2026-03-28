@@ -10,17 +10,17 @@ description: >
   <p>The Shanghai Artificial Intelligence Laboratory (SHLAB) is a state-backed 
   <a href="https://www.csis.org/analysis/chinas-new-type-research-and-development-organizations">new-type research institution</a> 
   (新型研发机构) established in July 2020 by the <a href="https://english.shanghai.gov.cn/">Shanghai Municipal Government</a>. 
-  Co-founded with <a href="https://en.sjtu.edu.cn/">SJTU</a>, <a href="https://www.fudan.edu.cn/en/">Fudan University</a>, 
-  and <a href="/labs/sensetime">SenseTime</a>, it serves as a core National Laboratory anchoring China's 
-  strategic "National Team" in AI. At its launch, the lab was the centerpiece of investment deals 
-  totaling over 30 billion yuan (~$4.2B).</p>
+  With an estimated annual budget of <strong>5&ndash;8 billion yuan ($700 million&ndash;$1.1 billion)</strong>, 
+  it is heavily subsidized by the <strong>Shanghai AI Pilot Fund</strong>. The lab operates a 
+  dedicated compute cluster in the <strong>Lingang New Area</strong> housing over 
+  <strong>30,000 accelerators</strong>.</p>
 
   <p>The lab maintains a symbiotic relationship with <strong>SenseTime</strong>, leveraging its 
   SenseCore AI infrastructure for large-scale training. This collaboration produced the 
   <strong>InternLM</strong> series and <strong>InternVL</strong>, which consistently lead 
-  open-source benchmarks. SHLAB also oversees a vast open-source ecosystem through 
-  <strong>OpenXLab</strong>, encompassing <strong>OpenMMLab</strong> (vision toolboxes), 
-  <strong>OpenGVLab</strong> (foundation models), and <strong>OpenDILab</strong> (decision intelligence).</p>
+  open-source benchmarks. In February 2026, the lab demonstrated its orchestrational strength by 
+  training <strong>Intern-S1-Pro</strong>, a 1-trillion parameter scientific model, across 
+  distributed domestic nodes.</p>
 
   <p>Beyond traditional LLMs, the lab is a leader in "AI for Science" through the 
   <strong>Shanghai Academy of AI for Science (SAIS)</strong>, established with Fudan 

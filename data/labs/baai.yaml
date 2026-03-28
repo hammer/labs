@@ -18,18 +18,19 @@ description: >
   <a href="/labs/baidu">Baidu</a>, <a href="/labs/bytedance-seed">ByteDance</a>, 
   <a href="/labs/xiaomi">Xiaomi</a>, <a href="/labs/meituan">Meituan</a>, and Megvii.</p>
 
-  <p>BAAI is a primary beneficiary of Beijing's strategic investment in AI, with access 
-  to municipal and national funds (including the $8.2 billion National AI Industry 
-  Investment Fund). The academy supports approximately 300 top researchers through 
-  its <strong>Zhiyuan Scholars Plan</strong> and operates the <strong>Jiuding</strong> 
-  AI-computing platform, which provides 1,000P of capacity for high-end research.</p>
+  <p>BAAI is a primary beneficiary of Beijing's strategic investment in AI, with an 
+  estimated annual budget of <strong>3&ndash;5 billion yuan ($420&ndash;$700 million)</strong>. 
+  It has access to municipal and national funds (including the $8.2 billion National 
+  AI Industry Investment Fund) and recently launched a major initiative to build 
+  a <strong>100,000-chip domestic computing cluster</strong>. This project, powered 
+  by <strong>FlagOS 2.0</strong>, provides a unified heterogeneous computing pool of 
+  <strong>5&ndash;8 EFLOPS</strong> for the Beijing innovation hub.</p>
 
-  <p>The academy is famous for the <strong>Wu Dao program</strong>, which in 2021 produced 
-  Wu Dao 2.0 (at 1.75 trillion parameters, the world's largest model at the time). 
-  Through its <strong>FlagOpen</strong> ecosystem, BAAI provides foundational 
-  infrastructure &mdash; including the widely-used <strong>BGE</strong> embeddings 
-  and <strong>FlagScale</strong> training toolkit &mdash; to reduce entry barriers 
-  for the Chinese AI community.</p>
+  <p>The academy supports approximately 300 top researchers through 
+  its <strong>Zhiyuan Scholars Plan</strong> and operates the <strong>Jiuding</strong> 
+  AI-computing platform. The academy is famous for the <strong>Wu Dao program</strong>, 
+  which in 2021 produced Wu Dao 2.0 (at 1.75 trillion parameters, the world's largest 
+  model at the time).</p>
 people:
   - name: Zhang Hongjiang
     url: https://en.wikipedia.org/wiki/Zhang_Hongjiang

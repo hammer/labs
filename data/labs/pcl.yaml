@@ -9,17 +9,16 @@ type: academic
 description: >
   <p><strong>Pengcheng Laboratory (PCL)</strong>, established in March 2018 in Shenzhen, 
   is a state-backed <a href="https://www.csis.org/analysis/chinas-new-type-research-and-development-organizations">new-type research institution</a> 
-  (新型研发机构) and a cornerstone of China's National Laboratory system. Funded by the 
-  <strong>Guangdong Provincial Government</strong> and the <strong>Shenzhen Municipal Government</strong>, 
-  it serves as a regional hub for network communications, cybersecurity, and artificial intelligence, 
-  employing over 1,000 staff including 400+ frontier scientists.</p>
+  (新型研发机构) and a cornerstone of China's National Laboratory system. With an estimated 
+  annual budget of <strong>10&ndash;12 billion yuan ($1.4&ndash;$1.7 billion)</strong>, 
+  it serves as the hardware backbone of China's AI strategy, specifically through its leadership 
+  in the "East Data West Compute" project and the <strong>China Computing Net (C&sup2;NET)</strong>.</p>
 
   <p>The lab's research is powered by the <strong>Pengcheng Cloud Brain</strong>, a world-class 
-  AI supercomputing infrastructure. Its second generation, Cloud Brain II, was built through 
-  a multi-billion yuan investment in partnership with <strong>Huawei</strong>, utilizing 
-  Ascend AI processors and the MindSpore framework to achieve exascale (E-level) computing power. 
-  PCL is also the primary architect of the <strong>China Computing Net (C²NET)</strong>, designed 
-  to unify domestic computing resources.</p>
+  AI supercomputing infrastructure. Cloud Brain II provides 1,000 PFLOPS of compute using 
+  Huawei Ascend processors. In early 2026, the lab began scaling <strong>Cloud Brain III</strong> 
+  toward a target of <strong>16 EFLOPS</strong>, designed to be the primary training ground for 
+  10-trillion+ parameter models using entirely domestic interconnects and silicon.</p>
 
   <p>Research at PCL is characterized by large-scale collaboration, notably the <strong>PanGu</strong> 
   series co-developed with Huawei, and proprietary flagships like <strong>PengCheng-Mind</strong>. 

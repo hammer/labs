@@ -1,0 +1,27 @@
+name: Intern-S1-Pro
+slug: intern-s1-pro
+lab: shanghai-ai-lab
+type: model
+date: "2026-02-04"
+sources:
+  - label: News
+    url: https://shanghai.gov.cn
+  - label: HuggingFace
+    url: https://huggingface.co/internlm
+description: >
+  A 1-trillion parameter scientific multimodal foundation model. 
+  Intern-S1-Pro uses a Mixture-of-Experts (MoE) architecture with 512 experts 
+  (8 active per token), achieving Olympiad-level reasoning across 100+ 
+  specialized scientific tasks. It was trained on 6 trillion tokens using a 
+  fully autonomous domestic technology stack.
+tags:
+  - science
+  - frontier
+  - moe
+  - open-weight
+model:
+  architecture: moe
+  parameters: 1T
+related:
+  - internlm3
+  - wanjuan-3.0
