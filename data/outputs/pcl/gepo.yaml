@@ -1,0 +1,22 @@
+name: GEPO
+slug: gepo
+lab: pcl
+type: paper
+date: "2025-08-25"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.17850
+description: >
+  Introduces Group Expectation Policy Optimization (GEPO), an asynchronous 
+  RL algorithm robust to latency in geographically distributed computing 
+  networks. GEPO uses group expectation weighting to reduce variance in 
+  importance weights, enabling stable training of large models across 
+  heterogeneous nodes.
+tags:
+  - reinforcement-learning
+  - distributed-training
+  - research
+paper:
+  arxiv: "2508.17850"
+related:
+  - mind

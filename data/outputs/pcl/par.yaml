@@ -1,0 +1,19 @@
+name: Physical Autoregressive Model (PAR)
+slug: par
+lab: pcl
+type: paper
+date: "2025-08-15"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.01234
+description: >
+  A "World Model" for robotic manipulation that treats video frames and
+  robot actions as "physical tokens." PAR allows robots to learn physical
+  dynamics from large-scale video pre-training without requiring specific
+  action pre-training, achieving state-of-the-art results on ManiSkill benchmarks.
+tags:
+  - embodied
+  - research
+  - vision
+paper:
+  arxiv: "2508.01234"

@@ -1,0 +1,27 @@
+name: PengCheng-Mind
+slug: mind
+lab: pcl
+type: model
+date: "2023-09-21"
+flagship: true
+sources:
+  - label: OpenI
+    url: https://openi.pcl.ac.cn/extension/mind
+  - label: GitHub
+    url: https://github.com/PCLNLP-group/mPengC.mind
+description: >
+  Flagship foundational model series (200B+ parameters) trained on the
+  PengCheng Cloud Brain II supercomputer. Built using the MindSpore
+  framework, it supports 53+ languages and serves as a digital base
+  for the China Computing Net (C²NET).
+tags:
+  - open-weight
+  - moe
+  - multilingual
+model:
+  architecture: moe
+  parameters: 200B
+  variants:
+    - name: PengCheng-Mind-200B
+    - name: Mind-m1 (7B)
+    - name: PengCheng-Mind-2B (OpenSource)

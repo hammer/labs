@@ -1,6 +1,8 @@
 name: PanGu-alpha
 slug: pangu-alpha
-lab: huawei
+lab:
+  - huawei
+  - pcl
 date: 2021-04-26
 flagship: true
 sources:

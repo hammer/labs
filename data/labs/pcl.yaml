@@ -1,0 +1,47 @@
+name: Pengcheng Laboratory (PCL)
+slug: pcl
+url: https://www.pcl.ac.cn
+huggingface: https://huggingface.co/PCLNLP
+github: https://github.com/PCLNLP-group
+region: china
+founded: "2018-03"
+type: academic
+description: >
+  <p><strong>Pengcheng Laboratory (PCL)</strong>, established in March 2018 in Shenzhen, 
+  is a state-backed <a href="https://www.csis.org/analysis/chinas-new-type-research-and-development-organizations">new-type research institution</a> 
+  (新型研发机构) and a cornerstone of China's National Laboratory system. Funded by the 
+  <strong>Guangdong Provincial Government</strong> and the <strong>Shenzhen Municipal Government</strong>, 
+  it serves as a regional hub for network communications, cybersecurity, and artificial intelligence, 
+  employing over 1,000 staff including 400+ frontier scientists.</p>
+
+  <p>The lab's research is powered by the <strong>Pengcheng Cloud Brain</strong>, a world-class 
+  AI supercomputing infrastructure. Its second generation, Cloud Brain II, was built through 
+  a multi-billion yuan investment in partnership with <strong>Huawei</strong>, utilizing 
+  Ascend AI processors and the MindSpore framework to achieve exascale (E-level) computing power. 
+  PCL is also the primary architect of the <strong>China Computing Net (C²NET)</strong>, designed 
+  to unify domestic computing resources.</p>
+
+  <p>Research at PCL is characterized by large-scale collaboration, notably the <strong>PanGu</strong> 
+  series co-developed with Huawei, and proprietary flagships like <strong>PengCheng-Mind</strong>. 
+  The lab's recent expansion into Embodied AI (the PAR world model) and "AI for Science" 
+  (PengCheng-Nebula) positions it as a key driver of China's domestic technology self-reliance.</p>
+people:
+  - name: Gao Wen
+    url: https://en.wikipedia.org/wiki/Wen_Gao
+    role: Director
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=v6sk_QUAAAAJ
+  - name: Yue Yu
+    url: https://yuyue.github.io/
+    role: Core Researcher
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=lsZ_QUAAAAJ
+tags:
+  - infrastructure
+  - science
+  - multimodal
+  - national-lab
+  - open-weight
+  - embodied

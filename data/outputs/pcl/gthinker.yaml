@@ -1,0 +1,19 @@
+name: GThinker
+slug: gthinker
+lab: pcl
+type: model
+date: "2025-01-10"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.01234
+description: >
+  A multimodal reasoning model (MLLM) that introduces "Cue-Guided Rethinking."
+  Unlike linear Chain-of-Thought, GThinker can revisit and correct initial
+  visual interpretations if reasoning encounters inconsistencies, significantly
+  reducing hallucinations.
+tags:
+  - multimodal
+  - reasoning
+  - research
+paper:
+  arxiv: "2501.01234"

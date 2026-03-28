@@ -32,7 +32,9 @@ description: >
   <strong><a href="https://www.mindspore.cn/en">MindSpore</a></strong> deep learning
   framework is Huawei's answer to TensorFlow/PyTorch.</p>
 
-  <p>The lab's model research centers on the <strong>PanGu</strong> series:
+  <p>The lab's model research centers on the <strong>PanGu</strong> series, developed in 
+  collaboration with <a href="/labs/pcl">Pengcheng Laboratory</a> and trained on its 
+  Cloud Brain II supercomputer:
   PanGu-Alpha (2021, 200B parameters, one of China's earliest large LLMs) and
   PanGu-Sigma (2023, 1T sparse model trained on Ascend 910). Research outputs also
   include widely-cited efficient architectures like

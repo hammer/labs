@@ -1,0 +1,22 @@
+name: Symphony-MoE
+slug: symphony-moe
+lab: pcl
+type: paper
+date: "2025-09-23"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.18542
+description: >
+  A novel framework for merging disparate, identically-architected pre-trained
+  models (e.g., Qwen2.5-Coder and Qwen2) into a coherent Mixture-of-Experts (MoE)
+  model. Symphony-MoE uses a two-stage approach involving layer-aware fusion and
+  functional alignment to harmonize mismatched parameter spaces.
+tags:
+  - moe
+  - model-merging
+  - research
+paper:
+  arxiv: "2509.18542"
+related:
+  - mind
+  - gepo

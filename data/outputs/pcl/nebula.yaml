@@ -1,0 +1,17 @@
+name: PengCheng-Nebula
+slug: nebula
+lab: pcl
+type: announcement
+date: "2023-05-20"
+sources:
+  - label: News
+    url: https://www.pcl.ac.cn/html/935/2023-05-22/content-4945.html
+description: >
+  A science-focused foundational model and research cloud platform designed
+  for "Big Science" projects. Nebula supports multi-modal data for remote
+  sensing (GEO) and astronomy (SKA), featuring the StarSquare dataset
+  of Analysis Ready Data (ARD).
+tags:
+  - science
+  - announcement
+  - infrastructure

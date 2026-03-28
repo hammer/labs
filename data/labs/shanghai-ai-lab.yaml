@@ -7,34 +7,26 @@ region: china
 founded: "2020"
 type: academic
 description: >
-  <p>The Shanghai AI Laboratory is a centerpiece of China's "National Team" in AI.
-  Established in July 2020 by the
-  <a href="https://english.shanghai.gov.cn/">Shanghai Municipal Government</a>,
-  it was co-founded with <a href="https://en.sjtu.edu.cn/">Shanghai Jiao Tong University</a>,
-  <a href="https://www.fudan.edu.cn/en/">Fudan University</a>, and
-  <a href="https://www.sensetime.com">SenseTime</a> as a national-level research
-  institution. It sits alongside <a href="/labs/baai">BAAI</a> (Beijing) and
-  Pengcheng Lab (Shenzhen) as pillars of China's national AI infrastructure under
-  the State Council's New Generation AI strategy.</p>
+  <p>The Shanghai Artificial Intelligence Laboratory (SHLAB) is a state-backed 
+  <a href="https://www.csis.org/analysis/chinas-new-type-research-and-development-organizations">new-type research institution</a> 
+  (新型研发机构) established in July 2020 by the <a href="https://english.shanghai.gov.cn/">Shanghai Municipal Government</a>. 
+  Co-founded with <a href="https://en.sjtu.edu.cn/">SJTU</a>, <a href="https://www.fudan.edu.cn/en/">Fudan University</a>, 
+  and <a href="/labs/sensetime">SenseTime</a>, it serves as a core National Laboratory anchoring China's 
+  strategic "National Team" in AI. At its launch, the lab was the centerpiece of investment deals 
+  totaling over 30 billion yuan (~$4.2B).</p>
 
-  <p>The lab's flagship LLM line is the <strong>InternLM series</strong> (1.0 through 3),
-  fully open-source models competitive with much larger architectures. Its multimodal
-  counterpart, <strong><a href="https://github.com/OpenGVLab/InternVL">InternVL</a></strong>,
-  has consistently led open-source vision-language leaderboards. The lab manages one of
-  the most comprehensive open-source AI ecosystems in China through
-  <a href="https://openxlab.org.cn/">OpenXLab</a>, encompassing
-  <a href="https://github.com/open-mmlab">OpenMMLab</a> (computer vision toolboxes
-  including MMDetection, MMSegmentation, MMPose),
-  <a href="https://github.com/OpenGVLab">OpenGVLab</a> (vision foundation models),
-  and <a href="https://github.com/opendilab">OpenDILab</a> (decision intelligence
-  and reinforcement learning).</p>
+  <p>The lab maintains a symbiotic relationship with <strong>SenseTime</strong>, leveraging its 
+  SenseCore AI infrastructure for large-scale training. This collaboration produced the 
+  <strong>InternLM</strong> series and <strong>InternVL</strong>, which consistently lead 
+  open-source benchmarks. SHLAB also oversees a vast open-source ecosystem through 
+  <strong>OpenXLab</strong>, encompassing <strong>OpenMMLab</strong> (vision toolboxes), 
+  <strong>OpenGVLab</strong> (foundation models), and <strong>OpenDILab</strong> (decision intelligence).</p>
 
-  <p><a href="/labs/sensetime">SenseTime</a> provides substantial compute
-  infrastructure through its SenseCore AI cloud platform, including GPU clusters at
-  its Lingang AIDC in Shanghai used for InternLM pretraining. Researchers overlap
-  significantly with SenseTime's research arm, with many holding dual affiliations.
-  Government funding serves as the lab's primary backing, ensuring operational
-  independence.</p>
+  <p>Beyond traditional LLMs, the lab is a leader in "AI for Science" through the 
+  <strong>Shanghai Academy of AI for Science (SAIS)</strong>, established with Fudan 
+  University. SHLAB sits alongside <a href="/labs/baai">BAAI</a> (Beijing) and 
+  <a href="/labs/pcl">Pengcheng Lab</a> (Shenzhen) as the three regional pillars of 
+  China's national AI infrastructure under the State Council's New Generation AI strategy.</p>
 people:
   - name: Yu Qiao
     url: https://scholar.google.com/citations?user=gFtI-8QAAAAJ

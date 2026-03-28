@@ -8,35 +8,28 @@ region: china
 founded: 2018-11
 type: nonprofit
 description: >
-  <p>The Beijing Academy of Artificial Intelligence (BAAI) is China's first non-profit
-  AI research institution, established in November 2018 with backing from the
-  <a href="https://english.beijing.gov.cn/">Beijing Municipal Government</a>. Its
-  founding members include <a href="/labs/baidu">Baidu</a>,
-  <a href="/labs/bytedance-seed">ByteDance</a>, <a href="/labs/xiaomi">Xiaomi</a>,
-  <a href="/labs/meituan">Meituan</a>, Megvii,
-  <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>, and
-  <a href="https://english.pku.edu.cn/">Peking University</a>. The academy functions
-  as a collaborative hub bridging academic research and industrial application, led
-  by Director <a href="https://scholar.google.com/citations?user=hIxwnCQAAAAJ">Huang
-  Tiejun</a> (Professor at Peking University).</p>
+  <p>The Beijing Academy of Artificial Intelligence (BAAI), also known as the 
+  <strong>Zhiyuan Institute</strong>, was established in November 2018 as China's 
+  first <a href="https://en.wikipedia.org/wiki/Non-profit_organizations_in_China#Private_non-enterprise_units">private non-enterprise unit</a> 
+  (民办非企业单位) focused on AI research. While supported by the 
+  <a href="https://english.beijing.gov.cn/">Beijing Municipal Government</a> and the 
+  Haidian District, its non-profit legal structure allows it to function as a 
+  collaborative "hub" bridging academia and industry. Its founding members include 
+  <a href="/labs/baidu">Baidu</a>, <a href="/labs/bytedance-seed">ByteDance</a>, 
+  <a href="/labs/xiaomi">Xiaomi</a>, <a href="/labs/meituan">Meituan</a>, and Megvii.</p>
 
-  <p>BAAI is famous for launching the <strong>Wu Dao program</strong> in 2021, which
-  produced Wu Dao 2.0 &mdash; at 1.75 trillion parameters, the largest model in the
-  world at the time. The academy's <strong>FlagOpen</strong> open-source ecosystem
-  includes <a href="https://github.com/FlagOpen/FlagEmbedding">FlagEmbedding</a>
-  (home of the immensely popular <strong>BGE</strong> embedding models, among the
-  most downloaded on HuggingFace), <a href="https://github.com/FlagOpen/FlagScale">FlagScale</a>
-  for distributed training, and <a href="https://github.com/FlagOpen/FlagEval">FlagEval</a>
-  for evaluation. The <strong>Emu series</strong> of multimodal models culminated in
-  <a href="https://www.nature.com/articles/s41586-025-10041-x">Emu3 being published
-  in Nature</a> in January 2026.</p>
+  <p>BAAI is a primary beneficiary of Beijing's strategic investment in AI, with access 
+  to municipal and national funds (including the $8.2 billion National AI Industry 
+  Investment Fund). The academy supports approximately 300 top researchers through 
+  its <strong>Zhiyuan Scholars Plan</strong> and operates the <strong>Jiuding</strong> 
+  AI-computing platform, which provides 1,000P of capacity for high-end research.</p>
 
-  <p>BAAI operates the Jiuding computing platform optimized for domestic hardware
-  training, and houses the <strong>Aquila</strong> bilingual LLM series &mdash;
-  the first open-source LLM fully compliant with Chinese regulations. As a
-  government-backed nonprofit, BAAI's mission is to ensure China's AI sovereignty
-  and foster open research, positioning it as the "academic hub" of northern China's
-  AI ecosystem.</p>
+  <p>The academy is famous for the <strong>Wu Dao program</strong>, which in 2021 produced 
+  Wu Dao 2.0 (at 1.75 trillion parameters, the world's largest model at the time). 
+  Through its <strong>FlagOpen</strong> ecosystem, BAAI provides foundational 
+  infrastructure &mdash; including the widely-used <strong>BGE</strong> embeddings 
+  and <strong>FlagScale</strong> training toolkit &mdash; to reduce entry barriers 
+  for the Chinese AI community.</p>
 people:
   - name: Zhang Hongjiang
     url: https://en.wikipedia.org/wiki/Zhang_Hongjiang
