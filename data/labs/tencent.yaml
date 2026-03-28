@@ -24,7 +24,16 @@ description: >
   <a href="https://en.wikipedia.org/wiki/Ma_Huateng">Ma Huateng (Pony Ma)</a>, the
   company's AI efforts were historically split across
   <a href="https://ai.tencent.com/ailab/">Tencent AI Lab</a> (founded 2016),
-  Robotics X, and Quantum Lab. In a
+  <a href="https://github.com/TencentARC">ARC Lab</a> (Applied Research Center,
+  directed by <strong>Ying Shan</strong>),
+  <a href="https://open.youtu.qq.com/">Youtu Lab</a> (computer vision and OCR),
+  XR Vision Labs (3D and extended reality), Robotics X, and Quantum Lab. ARC Lab
+  became one of China's most prolific open-source research groups, releasing the
+  <a href="https://ailab-cvc.github.io/seed/">SEED</a> multimodal model family,
+  <a href="https://github.com/AILab-CVC/YOLO-World">YOLO-World</a>,
+  <a href="https://github.com/TencentARC/Open-MAGVIT2">Open-MAGVIT2</a>, and
+  <a href="https://github.com/TencentARC/LLaMA-Pro">LLaMA Pro</a> among 80+ GitHub
+  repositories. In a
   <a href="https://www.caixinglobal.com/2026-03-21/tencent-folds-ai-lab-into-hunyuan-team-in-major-ai-overhaul-102425495.html">major
   March 2026 restructuring</a>, the AI Lab was disbanded and folded into the Hunyuan
   team under new Chief AI Scientist <strong>Yao Shunyu</strong> (born 1997, Tsinghua
