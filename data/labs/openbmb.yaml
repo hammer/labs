@@ -8,34 +8,35 @@ founded: "2022"
 type: academic
 description: >
   <p>OpenBMB (Open Lab for Big Model Base) is a premier collaborative lab and global
-  leader in on-device and ultra-efficient LLMs. It is an alliance between
-  <a href="https://nlp.csai.tsinghua.edu.cn/">Tsinghua THUNLP</a> (one of the world's
-  top NLP research groups) and <strong>ModelBest Inc.</strong>, a commercial spin-off.
-  The lab was created to democratize "Big Models" so researchers without access to
-  supercomputers can participate in frontier AI research.</p>
+  leader in on-device and ultra-efficient LLMs. Unlike state-run national laboratories, 
+  OpenBMB operates on a <strong>hybrid academic-startup model</strong>, serving as the 
+  external deployment arm for <strong>Tsinghua THUNLP</strong>. Its commercial 
+  counterpart, <strong>ModelBest</strong> (Mianbi Intelligence), funnels resources into the 
+  ecosystem, including a major 2026 funding round led by <strong>China Telecom</strong> 
+  raising hundreds of millions of yuan.</p>
+
+  <p>The lab's "Edge-First" philosophy focuses on <strong>Intelligence Density</strong> 
+  rather than brute-force scaling. While larger labs race toward 10-trillion parameter 
+  models, OpenBMB's research (exemplified by the <strong>MiniCPM</strong> series) aims 
+  to package GPT-4-level multimodal performance into 8B-parameter models that run 
+  locally on smartphones and consumer-grade hardware like the NVIDIA RTX 5090. Through 
+  its partnership with China Telecom, OpenBMB also gains prioritized access to the 
+  <strong>Tianyi Cloud</strong> national computing network.</p>
+
+  <p>OpenBMB is famous for its ecosystem of efficiency-focused tools, including 
+  <strong>BMTrain</strong>, <strong>BMInf</strong>, and <strong>OpenPrompt</strong>. 
+  The lab also created <a href="https://github.com/OpenBMB/ChatDev">ChatDev</a> 
+  (multi-agent software development) and the 
+  <a href="https://github.com/OpenBMB/ToolBench">ToolLLM/ToolBench</a> framework. 
+  The lab's lineage traces back to the early CPM models co-sponsored by 
+  <a href="/labs/baai">BAAI</a> as part of the Wu Dao program.</p>
 
   <p>The two principal investigators are
   <a href="https://scholar.google.com/citations?user=zIgT0HMAAAAJ">Prof. Maosong
   Sun</a> and <a href="https://scholar.google.com/citations?user=9T8ycmEAAAAJ">Prof.
-  Zhiyuan Liu</a>, both from Tsinghua's Department of Computer Science. Their group
-  has a long lineage in Chinese NLP, from the early CPM (Chinese Pretrained Models)
-  series to today's MiniCPM family.</p>
-
-  <p>OpenBMB is best known for the <strong>MiniCPM series</strong>, which brings
-  frontier-level intelligence to smartphones and edge devices. MiniCPM-V (vision-language)
-  and MiniCPM-o (omni-modal) demonstrated that 2&ndash;4B parameter models can match
-  much larger models on practical benchmarks. <strong>MiniCPM4</strong> (2025) pushed
-  this further with a full-stack efficiency approach spanning data, training, and
-  inference. The lab also created
-  <a href="https://github.com/OpenBMB/ChatDev">ChatDev</a> (multi-agent software
-  development), <a href="https://github.com/OpenBMB/ToolBench">ToolLLM/ToolBench</a>
-  (the definitive tool-use benchmark and training framework), and
-  <a href="https://github.com/OpenBMB/BMTools">BMTools</a>.</p>
-
-  <p>OpenBMB maintains close ties with <a href="/labs/baai">BAAI</a> (the early CPM
-  models were part of the Wu Dao program, and BAAI provides compute for some
-  open-source projects) while being distinct from <a href="/labs/zai">Z.ai</a>
-  (Tsinghua THUDM/Tang Jie), which focuses on the GLM architecture.</p>
+  Zhiyuan Liu</a>, both from Tsinghua's Department of Computer Science. Their team 
+  has been instrumental in proving that massive-scale reasoning can be democratized through 
+  highly-optimized, small-but-mighty architectures.</p>
 people:
   - name: Maosong Sun
     url: https://scholar.google.com/citations?user=zIgT0HMAAAAJ

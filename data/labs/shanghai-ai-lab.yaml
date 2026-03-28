@@ -7,26 +7,29 @@ region: china
 founded: "2020"
 type: academic
 description: >
-  <p>The Shanghai Artificial Intelligence Laboratory (SHLAB) is a state-backed 
+  <p>The Shanghai Artificial Intelligence Laboratory, officially known as the 
+  <strong>Pujiang Laboratory</strong> (浦江实验室), is a state-backed 
   <a href="https://www.csis.org/analysis/chinas-new-type-research-and-development-organizations">new-type research institution</a> 
   (新型研发机构) established in July 2020 by the <a href="https://english.shanghai.gov.cn/">Shanghai Municipal Government</a>. 
-  With an estimated annual budget of <strong>5&ndash;8 billion yuan ($700 million&ndash;$1.1 billion)</strong>, 
+  The institution is most commonly referred to as <strong>PJLab</strong> in technical contexts 
+  (reflected in its domain, <code>pjlab.org.cn</code>) and <strong>SAIL</strong> in international 
+  media reports. Established in partnership with <a href="https://en.sjtu.edu.cn/">SJTU</a>, 
+  <a href="https://www.fudan.edu.cn/en/">Fudan University</a>, and <a href="/labs/sensetime">SenseTime</a>, 
+  it serves as a core National Laboratory anchoring China's strategic "National Team" in AI.</p>
+
+  <p>With an estimated annual budget of <strong>5&ndash;8 billion yuan ($700 million&ndash;$1.1 billion)</strong>, 
   it is heavily subsidized by the <strong>Shanghai AI Pilot Fund</strong>. The lab operates a 
   dedicated compute cluster in the <strong>Lingang New Area</strong> housing over 
-  <strong>30,000 accelerators</strong>.</p>
-
-  <p>The lab maintains a symbiotic relationship with <strong>SenseTime</strong>, leveraging its 
-  SenseCore AI infrastructure for large-scale training. This collaboration produced the 
-  <strong>InternLM</strong> series and <strong>InternVL</strong>, which consistently lead 
-  open-source benchmarks. In February 2026, the lab demonstrated its orchestrational strength by 
-  training <strong>Intern-S1-Pro</strong>, a 1-trillion parameter scientific model, across 
-  distributed domestic nodes.</p>
+  <strong>30,000 accelerators</strong>. The lab maintains a symbiotic relationship with 
+  <strong>SenseTime</strong>, leveraging its SenseCore AI infrastructure for large-scale training. 
+  This collaboration produced the <strong>InternLM</strong> series and <strong>InternVL</strong>, 
+  which consistently lead open-source benchmarks.</p>
 
   <p>Beyond traditional LLMs, the lab is a leader in "AI for Science" through the 
-  <strong>Shanghai Academy of AI for Science (SAIS)</strong>, established with Fudan 
-  University. SHLAB sits alongside <a href="/labs/baai">BAAI</a> (Beijing) and 
-  <a href="/labs/pcl">Pengcheng Lab</a> (Shenzhen) as the three regional pillars of 
-  China's national AI infrastructure under the State Council's New Generation AI strategy.</p>
+  <strong>Shanghai Academy of AI for Science (SAIS)</strong>. PJLab sits alongside 
+  <a href="/labs/baai">BAAI</a> (Beijing) and <a href="/labs/pcl">Pengcheng Lab</a> (Shenzhen) 
+  as the three regional pillars of China's national AI infrastructure under the State Council's 
+  New Generation AI strategy.</p>
 people:
   - name: Yu Qiao
     url: https://scholar.google.com/citations?user=gFtI-8QAAAAJ
