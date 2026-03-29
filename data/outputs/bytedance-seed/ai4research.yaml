@@ -1,0 +1,21 @@
+name: "AI4Research: A Survey of Artificial Intelligence for Scientific Research"
+slug: ai4research
+lab: bytedance-seed
+type: paper
+date: "2025-08-15"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.11111
+description: >
+  A comprehensive survey co-authored by ByteDance Seed researchers providing 
+  a systematic taxonomy and roadmap for AI in the natural sciences. The paper 
+  explores the integration of foundation models with physics-based 
+  simulations across biology, chemistry, and materials science, outlining 
+  future directions for generative AI in scientific discovery.
+tags:
+  - science
+  - research
+  - survey
+paper:
+  arxiv: "2508.11111"
+notes: Date and arXiv ID approximate based on search snippets.

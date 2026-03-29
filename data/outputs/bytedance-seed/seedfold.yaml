@@ -1,0 +1,29 @@
+name: SeedFold
+slug: seedfold
+lab: bytedance-seed
+type: paper
+date: "2025-12-30"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.24354
+  - label: Project Page
+    url: https://seedfold.github.io/
+description: >
+  A next-generation biomolecular folding model that scales up model capacity 
+  and performance beyond AlphaFold3. SeedFold introduces a width-scaling 
+  strategy for the Pairformer and a Linear Triangular Attention mechanism 
+  that reduces computational complexity from $O(n^3)$ to $O(n^2)$. Trained 
+  on a massive distillation dataset of 26.5 million samples, SeedFold 
+  outperforms AlphaFold3 on protein monomers, antibody-antigen interfaces, 
+  and protein-RNA interface predictions.
+tags:
+  - biology
+  - science
+  - structure-prediction
+  - research
+paper:
+  arxiv: "2512.24354"
+related:
+  - protenix
+  - felis
+  - byteff

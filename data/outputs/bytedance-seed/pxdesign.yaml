@@ -2,17 +2,28 @@ name: PXDesign
 slug: pxdesign
 lab: bytedance-seed
 type: model
-date: "2026-03-01"
+date: "2025-08-15"
 sources:
-  - label: Web Server
-    url: https://seed.bytedance.com
+  - label: Technical Report (bioRxiv)
+    url: https://www.biorxiv.org/content/10.1101/2025.08.15.670450v1
+  - label: GitHub
+    url: https://github.com/bytedance/PXDesign
+  - label: Project Page
+    url: https://protenix.github.io/pxdesign/
 description: >
-  A generative protein design suite built on top of Protenix. It uses a
-  diffusion-based model (PXDesign-d) for backbone generation and
-  ProteinMPNN for sequence assignment, filtered using Protenix confidence
-  scores.
+  A generative protein binder design suite featuring diffusion-based 
+  backbone generation (PXDesign-d) and hallucination-based methods 
+  (PXDesign-h). Validated with wet-lab experiments, PXDesign achieved hit 
+  rates of 17-82% for various targets, significantly accelerating the 
+  discovery of high-affinity protein binders.
 tags:
-  - science
   - biology
   - protein-design
-notes: Date approximate. Part of the Protenix ecosystem.
+  - science
+  - research
+library:
+  github: https://github.com/bytedance/PXDesign
+notes: bioRxiv technical report posted August 15, 2025.
+related:
+  - protenix
+  - seedfold

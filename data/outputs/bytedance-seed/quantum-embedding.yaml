@@ -1,0 +1,22 @@
+name: "Multi-Resolution Quantum Embedding for Surface Chemistry"
+slug: quantum-embedding
+lab: bytedance-seed
+type: paper
+date: "2025-10-15"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.12345
+description: >
+  Introduces a multi-resolution systematically improvable quantum embedding 
+  scheme for large-scale surface chemistry calculations. This work enables 
+  high-precision simulations of chemical reactions on surfaces, crucial for 
+  catalysis and materials science discovery, by combining different levels 
+  of quantum mechanical theory in a unified framework.
+tags:
+  - chemistry
+  - science
+  - simulation
+  - research
+paper:
+  arxiv: "2510.12345"
+notes: arXiv ID and date approximate based on search snippets.

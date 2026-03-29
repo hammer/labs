@@ -20,3 +20,7 @@ tags:
 library:
   github: https://github.com/bytedance/Protenix
 notes: Protenix-v1 technical report posted February 9, 2026.
+related:
+  - felis
+  - seedfold
+  - pxdesign
