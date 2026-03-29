@@ -1,0 +1,29 @@
+name: CPM-2
+slug: cpm-2
+lab:
+  - openbmb
+  - baai
+type: model
+date: "2021-06-24"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2106.10715
+  - label: GitHub
+    url: https://github.com/TsinghuaAI/CPM
+description: >
+  A large-scale cost-effective pre-trained language model series (up to 198B
+  parameters) that introduced Mixture-of-Experts (MoE) and multilingual
+  capabilities. Supported by BAAI, it achieved state-of-the-art results
+  on both Chinese and English tasks while maintaining computational efficiency.
+tags:
+  - moe
+  - multilingual
+  - research
+paper:
+  arxiv: "2106.10715"
+model:
+  architecture: moe
+  parameters: 198B
+related:
+  - cpm-1
+  - cpm-ant

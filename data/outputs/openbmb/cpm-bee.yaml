@@ -1,0 +1,26 @@
+name: CPM-Bee
+slug: cpm-bee
+lab: openbmb
+type: model
+date: "2023-05-27"
+sources:
+  - label: Blog Post
+    url: https://medium.com/@openbmb/finally-the-foundation-model-cpm-bee-is-open-sourced-now-3cf6a0017a50
+  - label: GitHub
+    url: https://github.com/OpenBMB/CPM-Bee
+  - label: Paper (WebCPM)
+    url: https://arxiv.org/abs/2305.06849
+description: >
+  A 10B parameter foundation model and the second milestone of CPM-Live. 
+  It features a unique JSON-structured input/output format for natural 
+  multi-task handling and was used as the base for WebCPM (interactive 
+  web search for QA). Fully open-source and commercially usable.
+tags:
+  - live-training
+  - structured-data
+  - open-weight
+model:
+  parameters: 10B
+related:
+  - cpm-ant
+  - minicpm

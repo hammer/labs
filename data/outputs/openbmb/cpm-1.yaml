@@ -1,0 +1,25 @@
+name: CPM-1
+slug: cpm-1
+lab: openbmb
+type: model
+date: "2020-12-01"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2012.00413
+  - label: GitHub
+    url: https://github.com/TsinghuaAI/CPM-1-Generate
+description: >
+  One of the first large-scale Generative Chinese Pre-trained Language Models.
+  With 2.6 billion parameters, it demonstrated strong performance across 
+  various Chinese NLP tasks and laid the groundwork for the CPM series.
+tags:
+  - chinese
+  - pretraining
+  - research
+paper:
+  arxiv: "2012.00413"
+model:
+  parameters: 2.6B
+related:
+  - cpm-2
+  - minicpm

@@ -1,0 +1,24 @@
+name: CogView3
+slug: cogview-3
+lab: zai
+type: model
+date: "2024-03-08"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2403.05121
+  - label: HuggingFace
+    url: https://huggingface.co/THUDM/CogView3-Plus-3B
+description: >
+  Introduces "Relay Diffusion," a strategy that breaks image generation 
+  into a low-resolution stage followed by a super-resolution process. 
+  CogView3 outperformed SDXL in human evaluations while reducing inference 
+  time. Capable of high-quality generation at resolutions up to 2048x2048.
+tags:
+  - generation
+  - vision
+  - research
+paper:
+  arxiv: "2403.05121"
+related:
+  - cogview-2
+  - cogview-4

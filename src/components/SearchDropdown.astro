@@ -23,6 +23,7 @@
     url: string;
     sub: string;
     date?: string;
+    arxiv?: string;
   }
 
   const dropdown = document.getElementById('search-dropdown')!;
@@ -73,8 +74,9 @@
     filteredData = searchData.filter(item =>
       item.name.toLowerCase().includes(query) ||
       item.slug.toLowerCase().includes(query) ||
-      item.sub.toLowerCase().includes(query)
-    ).slice(0, 8);
+      item.sub.toLowerCase().includes(query) ||
+      (item.arxiv && item.arxiv.toLowerCase().includes(query))
+    ).slice(0, 15);
 
     if (filteredData.length === 0) {
       resultsContainer.innerHTML = '<div class="search-empty">No results found</div>';
@@ -82,19 +84,24 @@
       return;
     }
 
-    resultsContainer.innerHTML = filteredData.map((item, i) => `
-      <div class="search-item ${i === selectedIndex ? 'selected' : ''}" data-index="${i}" data-url="${item.url}">
-        <div class="search-item-info">
-          <div class="search-item-name">${item.name}</div>
-          <div class="search-item-meta">
-            <span class="search-item-type">${item.type}</span>
-            <span class="search-item-sep">&middot;</span>
-            <span class="search-item-sub">${item.sub}</span>
-            ${item.date ? `<span class="search-item-sep">&middot;</span><span class="search-item-date">${item.date}</span>` : ''}
+    resultsContainer.innerHTML = filteredData.map((item, i) => {
+      const arxivDisplay = item.arxiv ? item.arxiv.split(' ').map(id => `arXiv:${id}`).join(', ') : '';
+      
+      return `
+        <div class="search-item ${i === selectedIndex ? 'selected' : ''}" data-index="${i}" data-url="${item.url}">
+          <div class="search-item-info">
+            <div class="search-item-name">${item.name}</div>
+            <div class="search-item-meta">
+              <span class="search-item-type">${item.type}</span>
+              <span class="search-item-sep">&middot;</span>
+              <span class="search-item-sub">${item.sub}</span>
+              ${arxivDisplay ? `<span class="search-item-sep">&middot;</span><span class="search-item-arxiv">${arxivDisplay}</span>` : ''}
+              ${item.date ? `<span class="search-item-sep">&middot;</span><span class="search-item-date">${item.date}</span>` : ''}
+            </div>
           </div>
         </div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
 
     if (selectedIndex >= filteredData.length) {
       selectedIndex = filteredData.length - 1;
@@ -207,7 +214,7 @@
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 10px;
-    width: 320px;
+    width: 450px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     animation: dropdown-slide-down 0.15s ease-out;

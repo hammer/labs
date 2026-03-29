@@ -10,7 +10,11 @@ sources:
     url: https://pandaily.com/cogview4-an-open-source-text-to-image-model-has-been-released-by-zhipu-ai
 description: >
   Latest text-to-image generator, capable of cinematic detail and accurate
-  text rendering within images.
+  text rendering within images. Utilizes a Diffusion Transformer (DiT) 
+  architecture.
 tags:
   - generation
   - vision
+related:
+  - cogview-3
+  - cogvideox

@@ -1,0 +1,26 @@
+name: CogView
+slug: cogview
+lab: baai
+type: model
+date: "2021-05-26"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2105.13290
+  - label: GitHub
+    url: https://github.com/THUDM/CogView
+description: >
+  The first large-scale generative model for text-to-image synthesis in the
+  general domain for Chinese. CogView is a 4-billion-parameter Transformer
+  using a VQ-VAE tokenizer. At release, it achieved state-of-the-art performance
+  on MS COCO, outperforming OpenAI's DALL-E. It laid the foundation for the
+  "Cog" series of models and demonstrated the viability of large-scale
+  autoregressive image generation.
+tags:
+  - generation
+  - vision
+  - research
+paper:
+  arxiv: "2105.13290"
+related:
+  - wu-dao-2.0
+  - cogview-2

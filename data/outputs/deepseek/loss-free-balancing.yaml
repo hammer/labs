@@ -1,0 +1,26 @@
+name: Auxiliary-Loss-Free Load Balancing Strategy
+slug: loss-free-balancing
+lab: deepseek
+type: paper
+date: "2024-08-28"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2408.15664
+description: >
+  A foundational paper for modern Mixture-of-Experts (MoE) architectures that
+  introduces the "Loss-Free Balancing" strategy. It eliminates the traditional
+  "auxiliary loss tax" by replacing the static penalty term with dynamic,
+  expert-wise biases adjusted during training. This decoupling of routing
+  decisions from gradient updates prevents interference with the primary
+  objective, enabling a higher performance ceiling and zero token dropping.
+  This strategy is a core innovation in DeepSeek-V2 and V3, allowing them to
+  achieve frontier-level efficiency and training stability.
+tags:
+  - moe
+  - efficiency
+  - research
+paper:
+  arxiv: "2408.15664"
+related:
+  - deepseek-v3
+  - deepseek-v2

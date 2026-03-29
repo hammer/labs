@@ -1,0 +1,29 @@
+name: MiniCPM-V 2.6
+slug: minicpm-v-2.6
+lab: openbmb
+type: model
+date: "2024-08-05"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2408.01800
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM-V
+description: >
+  A breakthrough 8B-parameter multimodal model (built on Qwen2-7B) that 
+  surpassed GPT-4V in single-image, multi-image, and video understanding 
+  tasks. It supports real-time inference on mobile devices and iPads, 
+  introducing advanced spatio-temporal compression for video processing 
+  and Needle-in-a-Haystack retrieval for long-context multimodal inputs.
+tags:
+  - on-device
+  - multimodal
+  - vision
+  - video
+  - open-weight
+paper:
+  arxiv: "2408.01800"
+model:
+  parameters: 8B
+related:
+  - minicpm-v-2
+  - minicpm-o

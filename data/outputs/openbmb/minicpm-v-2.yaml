@@ -1,0 +1,26 @@
+name: MiniCPM-V 2.0
+slug: minicpm-v-2
+lab: openbmb
+type: model
+date: "2024-04-11"
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/openbmb/MiniCPM-V-2
+  - label: Technical Report
+    url: https://openbmb.vercel.app/minicpm-v-2-en
+description: >
+  An efficient end-side Multimodal LLM (MLLM) combining MiniCPM-2.4B 
+  with a SigLip-400M vision encoder. It introduced high-resolution image 
+  support (up to 1.8M pixels) using adaptive tiling and was the first 
+  mobile-optimized MLLM aligned via RLHF-V to reduce hallucinations.
+tags:
+  - on-device
+  - multimodal
+  - vision
+  - open-weight
+model:
+  parameters: 2.8B
+related:
+  - minicpm
+  - minicpm-v
+  - minicpm-v-2.6

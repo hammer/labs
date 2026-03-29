@@ -1,0 +1,27 @@
+name: CogView2
+slug: cogview-2
+lab:
+  - zai
+  - baai
+type: model
+date: "2022-04-26"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2204.14217
+  - label: GitHub
+    url: https://github.com/THUDM/CogView2
+description: >
+  A hierarchical transformer-based text-to-image model (6B parameters) that 
+  introduced the Cross-modal General Language Model (CogLM) and Local 
+  Parallel Autoregressive (LoPAR) generation. CogView2 significantly 
+  improved generation speed (up to 10x faster than original CogView) and 
+  enabled high-resolution synthesis and interactive image editing.
+tags:
+  - generation
+  - vision
+  - research
+paper:
+  arxiv: "2204.14217"
+related:
+  - cogview
+  - cogview-3

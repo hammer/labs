@@ -1,0 +1,24 @@
+name: CPM-Ant
+slug: cpm-ant
+lab: openbmb
+type: model
+date: "2022-09-16"
+sources:
+  - label: Announcement
+    url: https://medium.com/@openbmb/finally-the-first-milestone-of-cpm-live-cpm-ant-is-open-sourced-now-be0606708750
+  - label: GitHub
+    url: https://github.com/OpenBMB/CPM-Live
+description: >
+  The first milestone of the **CPM-Live** project. A 10B parameter
+  Chinese-English bilingual model trained through a transparent "live broadcast"
+  process. Introduced Delta Tuning techniques to the CPM ecosystem and was 
+  designed for high efficiency on consumer hardware.
+tags:
+  - live-training
+  - bilingual
+  - efficiency
+model:
+  parameters: 10B
+related:
+  - cpm-2
+  - cpm-bee

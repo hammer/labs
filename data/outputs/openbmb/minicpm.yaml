@@ -14,8 +14,13 @@ sources:
     url: https://huggingface.co/openbmb/MiniCPM-MoE-8x2B
 description: >
   The original MiniCPM series proving that small models can rival much larger
-  ones. The 2B model outperformed Llama2-13B and matched Mistral-7B.
-  Includes an 8x2B MoE variant delivering 7B-class performance.
+  ones. This work introduced the **Warmup-Stable-Decay (WSD)** learning rate 
+  scheduler, which popularized the concept of **midtraining** (or annealing). 
+  By maintaining a high learning rate for a "stable" period and only decaying 
+  in the final 10% of training while introducing high-quality data, the 2.4B 
+  model achieved performance parity with 7B-13B models. This scheduler 
+  also enables continuous training and efficient scaling law research without 
+  pre-defined token budgets.
 tags:
   - on-device
   - efficiency
