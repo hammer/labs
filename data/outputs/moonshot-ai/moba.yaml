@@ -14,5 +14,8 @@ tags:
   - long-context
   - attention
   - architecture
+links:
+  - label: "LinkedIn: Insights from Core Developer"
+    url: https://www.linkedin.com/pulse/global-insights-self-narrative-from-core-developer-moonshot-iou3c/
 paper:
   arxiv: "2502.13189"

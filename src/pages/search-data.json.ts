@@ -10,6 +10,22 @@ export async function GET() {
     sub: l.type || 'lab'
   }));
 
+  const people: any[] = [];
+  getAllLabs().forEach(l => {
+    if (l.people) {
+      l.people.forEach(p => {
+        people.push({
+          type: 'person',
+          name: p.name,
+          slug: l.slug,
+          url: `/labs/${l.slug}`,
+          sub: l.name,
+          role: p.role
+        });
+      });
+    }
+  });
+
   const outputs = getAllOutputsChronological().map(o => {
     const arxivIds = new Set<string>();
     if (o.paper?.arxiv) arxivIds.add(o.paper.arxiv);
@@ -30,7 +46,7 @@ export async function GET() {
     };
   });
 
-  return new Response(JSON.stringify([...labs, ...outputs]), {
+  return new Response(JSON.stringify([...labs, ...people, ...outputs]), {
     headers: { 'Content-Type': 'application/json' }
   });
 }

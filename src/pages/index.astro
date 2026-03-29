@@ -131,8 +131,9 @@ const totalOutputs = getAllOutputsChronological().length;
 
   // Keyboard shortcuts
   document.addEventListener('keydown', (e) => {
-    // Ignore when typing in input
+    // Ignore when typing in input or if search is open
     if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+    if ((window as any).isSearchOpen) return;
 
     // Don't trigger shortcuts with modifier keys
     if (e.ctrlKey || e.metaKey || e.altKey) return;

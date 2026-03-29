@@ -14,6 +14,9 @@ description: >
 tags:
   - architecture
   - scaling
+links:
+  - label: "Blog (EN): Memoir on Attention Residuals"
+    url: https://datasets.osmarks.net/kexue/site/11664-Memoir-on-Attention-Residuals.html
 outputs:
   - name: Attention Residuals Paper
     type: paper

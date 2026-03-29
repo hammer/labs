@@ -278,6 +278,7 @@ const types = [...new Set(allTypes)].sort();
   document.addEventListener('keydown', (e) => {
     if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
     if (e.target instanceof HTMLSelectElement) return;
+    if ((window as any).isSearchOpen) return;
     if (e.ctrlKey || e.metaKey || e.altKey) return;
 
     switch (e.key) {

@@ -68,6 +68,10 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Jianlin_Su1
+      - label: "Blog (CN)"
+        url: https://kexue.fm
+      - label: "Blog (EN)"
+        url: https://datasets.osmarks.net/kexue/site/index.html
   - name: Flood Sung
     url: https://floodsung.github.io/
     role: Former RL Lead (departed 2025)

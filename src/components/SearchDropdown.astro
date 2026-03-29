@@ -17,13 +17,14 @@
 
 <script>
   interface SearchItem {
-    type: 'lab' | 'output';
+    type: 'lab' | 'output' | 'person';
     name: string;
     slug: string;
     url: string;
     sub: string;
     date?: string;
     arxiv?: string;
+    role?: string;
   }
 
   const dropdown = document.getElementById('search-dropdown')!;
@@ -52,12 +53,14 @@
 
     if (shouldShow) {
       dropdown.classList.remove('hidden');
+      (window as any).isSearchOpen = true;
       loadData();
       input.focus();
       input.value = '';
       renderResults();
     } else {
       dropdown.classList.add('hidden');
+      (window as any).isSearchOpen = false;
       input.blur();
     }
   }
@@ -92,9 +95,10 @@
           <div class="search-item-info">
             <div class="search-item-name">${item.name}</div>
             <div class="search-item-meta">
-              <span class="search-item-type">${item.type}</span>
+              <span class="search-item-type" data-type="${item.type}">${item.type}</span>
               <span class="search-item-sep">&middot;</span>
               <span class="search-item-sub">${item.sub}</span>
+              ${item.role ? `<span class="search-item-sep">&middot;</span><span class="search-item-role">${item.role}</span>` : ''}
               ${arxivDisplay ? `<span class="search-item-sep">&middot;</span><span class="search-item-arxiv">${arxivDisplay}</span>` : ''}
               ${item.date ? `<span class="search-item-sep">&middot;</span><span class="search-item-date">${item.date}</span>` : ''}
             </div>
@@ -151,18 +155,6 @@
       case 'ArrowUp':
         e.preventDefault();
         selectIndex(selectedIndex - 1);
-        break;
-      case 'j':
-        if (input.value === '') {
-          e.preventDefault();
-          selectIndex(selectedIndex + 1);
-        }
-        break;
-      case 'k':
-        if (input.value === '') {
-          e.preventDefault();
-          selectIndex(selectedIndex - 1);
-        }
         break;
       case 'Enter':
         e.preventDefault();
@@ -299,8 +291,12 @@
     font-weight: 700;
     font-size: 0.6rem;
     letter-spacing: 0.04em;
-    color: #2563eb;
+    color: var(--text-muted);
   }
+
+  .search-item-type[data-type="lab"] { color: #2563eb; }
+  .search-item-type[data-type="output"] { color: #7c3aed; }
+  .search-item-type[data-type="person"] { color: #ea580c; }
 
   .search-empty {
     padding: 1.5rem;
