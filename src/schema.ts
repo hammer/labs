@@ -9,6 +9,7 @@ export const LabSchema = z.object({
   wikipedia: z.string().url().optional(),
   huggingface: z.string().url().optional(),
   github: z.string().url().optional(),
+  youtube: z.string().url().optional(),
   artificialanalysis: z.string().url().optional(),
   region: z.string(),
   founded: z.string().regex(/^\d{4}(-\d{2})?$/, 'Founded must be YYYY or YYYY-MM').optional(),
@@ -117,6 +118,7 @@ const SimpleOutputSchema = z.object({
   library: LibraryDetailsSchema.optional(),
   dataset: DatasetDetailsSchema.optional(),
   related: z.array(z.string()).optional(),
+  links: z.array(LinkSchema).optional(),
   notes: z.string().optional(),
 });
 
@@ -132,6 +134,7 @@ const GroupedOutputSchema = z.object({
   flagship: z.boolean().optional(),
   outputs: z.array(SubOutputSchema).min(1),
   related: z.array(z.string()).optional(),
+  links: z.array(LinkSchema).optional(),
   notes: z.string().optional(),
 });
 

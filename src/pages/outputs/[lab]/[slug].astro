@@ -137,6 +137,19 @@ const types = getOutputTypes(output);
 
   {output.tags && <TagList tags={output.tags} />}
 
+  {output.links && output.links.length > 0 && (
+    <section class="section">
+      <h2>More Links</h2>
+      <ul class="more-links-list">
+        {output.links.map((link) => (
+          <li>
+            <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
   {output.related && output.related.length > 0 && (
     <section class="section">
       <h2>Related</h2>
@@ -243,6 +256,7 @@ const types = getOutputTypes(output);
     margin-bottom: 0.25rem;
   }
 
+  .more-links-list,
   .related-list {
     font-size: 0.875rem;
     padding-left: 1.25rem;
