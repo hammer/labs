@@ -15,6 +15,9 @@ description: >
 tags:
   - moe
   - open-weight
+links:
+  - label: "News: GLM-4.6 Challenges Frontier Models"
+    url: https://www.startuphub.ai/ai-news/ai-video/2025/glm-4-6-challenges-frontier-models-with-open-source-prowess
 model:
   architecture: moe
   parameters: 355B

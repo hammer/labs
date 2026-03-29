@@ -92,6 +92,12 @@ people:
         url: https://scholar.google.co.uk/citations?user=A8x07E0AAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Zhengxiao_Du1
+  - name: Yuxuan Zhang
+    url: https://www.linkedin.com/in/yuxuan-zhang-86a124282/
+    role: Core Researcher (CogVideoX)
+    urls:
+      - label: GitHub
+        url: https://github.com/zRzRzRzRzRzRzR
 news:
   - title: "Zhipu AI's Rise from Tsinghua Lab"
     url: https://pro.pandaily.com/p/zhipu-ais-rise-from-tsinghua-lab
