@@ -8,9 +8,28 @@ sources:
   - label: GitHub
     url: https://github.com/MoonshotAI/Attention-Residuals
 description: >
-  Replaces fixed residual accumulation with softmax attention over preceding
-  layers. Block AttnRes variant for scalability. A drop-in replacement for
-  residual connections to improve scaling.
+  <p>Authored by the Kimi Team at <strong>Moonshot AI</strong> (including 
+  <a href="/labs/moonshot-ai">Su Jianlin</a>), this paper introduces a fundamental 
+  rethink of the "residual connection" by replacing fixed accumulation with 
+  <strong>learned softmax attention</strong> over the network's depth.</p>
+
+  <p><strong>The Core Innovation:</strong> Standard Transformers sum layer outputs 
+  equally (<i>h<sub>l</sub> = h<sub>l-1</sub> + f<sub>l</sub>(h<sub>l-1</sub>)</i>). 
+  <strong>Attention Residuals (AttnRes)</strong> instead uses learned "pseudo-queries" 
+  to let each layer retrieve specific information from earlier clean signals, 
+  effectively solving the <strong>"PreNorm Dilution"</strong> problem where early 
+  signals are drowned out by later noise. The <strong>Block AttnRes</strong> 
+  variant grouping layers makes this practical for massive models.</p>
+
+  <p><strong>Significance and Impact:</strong> The paper demonstrates a 
+  <strong>1.25x compute efficiency gain</strong>, allowing models to match 
+  standard performance with 25% less training budget. Massive reasoning 
+  improvements were observed, including <strong>+7.5 points on GPQA-Diamond</strong>. 
+  Su Jianlin frames this as <strong>"Sequence-Depth Duality"</strong>: 
+  bringing the learned routing of the sequence dimension to the previously 
+  "fixed plumbing" of the depth dimension. The community has hailed it as 
+  the "final piece of the Transformer puzzle," with the official repository 
+  seeing immediate viral adoption.</p>
 tags:
   - architecture
   - scaling
