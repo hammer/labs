@@ -14,8 +14,6 @@ description: >
   COCO panoptic, and 60.8 mIoU on ADE20K semantic segmentation.
 tags:
   - vision
-  - object-detection
-  - segmentation
   - open-source
 outputs:
   - name: Mask DINO

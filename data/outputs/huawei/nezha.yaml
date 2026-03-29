@@ -16,7 +16,6 @@ description: >
   mixed precision training. Achieves state-of-the-art on Chinese NLU tasks.
 tags:
   - nlp
-  - chinese
   - pretrained-model
   - open-source
 outputs:

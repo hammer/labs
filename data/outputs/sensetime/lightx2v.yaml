@@ -16,9 +16,8 @@ description: >
   5-second video on consumer GPUs in under 5 seconds. Over 5 million
   downloads. Powers SenseTime's Seko 2.0 drama generation platform.
 tags:
-  - video-generation
-  - inference
-  - open-source
+  - generation
   - efficiency
+  - open-source
 library:
   github: https://github.com/ModelTC/LightX2V

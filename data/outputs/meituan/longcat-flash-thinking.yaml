@@ -16,7 +16,7 @@ description: >
 tags:
   - reasoning
   - moe
-  - reinforcement-learning
+  - training
   - open-weight
 outputs:
   - name: LongCat-Flash-Thinking

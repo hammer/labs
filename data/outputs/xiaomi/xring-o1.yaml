@@ -11,6 +11,6 @@ sources:
 description: >
   3nm custom AI chip designed for on-device reasoning in Xiaomi 15/16/17 series.
 tags:
-  - hardware
+  - infrastructure
   - on-device
-  - inference
+  - efficiency

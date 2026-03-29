@@ -12,7 +12,6 @@ description: >
   Legendary multi-object tracking algorithm that remains an industry standard.
 tags:
   - vision
-  - tracking
 library:
   github: https://github.com/ifzhang/ByteTrack
 notes: Published at ECCV 2022.

@@ -16,7 +16,7 @@ description: >
 tags:
   - generation
   - vision
-  - multilingual
+  - nlp
 outputs:
   - name: "Seedream 2.0: A Native Chinese-English Bilingual Image Generation Foundation Model"
     type: paper

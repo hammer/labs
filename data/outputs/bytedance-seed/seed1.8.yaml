@@ -18,6 +18,5 @@ description: >
 tags:
   - agentic
   - multimodal
-  - gui-agent
 related:
   - seed1.5-vl

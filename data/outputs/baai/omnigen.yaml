@@ -18,7 +18,7 @@ description: >
   interleaved text and image inputs as conditions. Effectively transfers
   knowledge across tasks and handles unseen domains.
 tags:
-  - image-generation
+  - generation
   - multimodal
   - open-weight
 model:

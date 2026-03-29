@@ -13,7 +13,7 @@ description: >
   web search, LLM-based filtering, and answer generation with human
   preference alignment. Published at KDD 2023.
 tags:
-  - qa
+  - evaluation
   - web
   - research
 paper:

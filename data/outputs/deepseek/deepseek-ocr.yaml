@@ -13,7 +13,7 @@ sources:
 description: >
   High-efficiency models for optical character recognition and document understanding.
 tags:
-  - ocr
+  - vision
   - open-weight
 model:
   variants:

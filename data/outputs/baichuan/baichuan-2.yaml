@@ -19,7 +19,6 @@ description: >
   GSM8K, and HumanEval, with particular strength in medicine and law domains.
 tags:
   - open-weight
-  - chinese
   - nlp
 outputs:
   - name: "Baichuan 2: Open Large-scale Language Models"

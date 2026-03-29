@@ -14,7 +14,7 @@ description: >
   aligning AI with scientific reasoning, accompanied by a dataset of 700,000
   scientific preference signals.
 tags:
-  - alignment
+  - training
   - reasoning
   - research
 outputs:

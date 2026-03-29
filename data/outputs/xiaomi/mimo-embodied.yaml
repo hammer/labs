@@ -12,8 +12,6 @@ description: >
   First cross-embodied foundation model integrating autonomous driving and
   embodied AI. SOTA on 17 embodied AI and 12 autonomous driving benchmarks.
 tags:
-  - robotics
   - embodied
-  - autonomous-driving
 paper:
   arxiv: "2511.16518"

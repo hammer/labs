@@ -13,7 +13,6 @@ description: >
   and mixed query selection. Achieves 63.3 AP on COCO test-dev with SwinL.
 tags:
   - vision
-  - object-detection
   - open-source
 outputs:
   - name: DINO (DETR)

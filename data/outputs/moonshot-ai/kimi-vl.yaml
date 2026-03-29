@@ -13,7 +13,7 @@ description: >
   Open-source vision-language model with Moonlight MoE LLM (2.8B active / 16B
   total) and 400M MoonViT encoder. Kimi-VL-Thinking achieves 64.0 on MMMU.
 tags:
-  - vlm
+  - multimodal
   - moe
   - open-weight
 outputs:

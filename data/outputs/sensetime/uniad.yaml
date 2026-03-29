@@ -17,9 +17,9 @@ description: >
   mapping, 38% in motion forecasting, and 28% in planning on nuScenes.
   Uses multi-view camera only, outperforming LiDAR-based methods.
 tags:
-  - autonomous-driving
+  - embodied
   - end-to-end
-  - computer-vision
+  - vision
   - best-paper
 paper:
   arxiv: "2212.10156"

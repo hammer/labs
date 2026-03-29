@@ -11,7 +11,7 @@ description: >
   Image generation model family. Qwen-Image (20B MMDiT) excels at text rendering
   in Chinese and English. Qwen-Image-2.0 (7B) unifies generation and editing.
 tags:
-  - image-generation
+  - generation
   - open-weight
 outputs:
   - name: Qwen-Image

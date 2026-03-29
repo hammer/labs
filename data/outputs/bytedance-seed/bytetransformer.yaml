@@ -12,7 +12,6 @@ description: >
   High-performance Transformer implementation optimized for variable-length sequences.
 tags:
   - infrastructure
-  - kernels
 library:
   github: https://github.com/bytedance/ByteTransformer
 notes: Published at IEEE IPDPS 2023.

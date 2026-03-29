@@ -11,10 +11,9 @@ description: >
   Vision-language models utilizing a dynamic tiling encoder for high-resolution
   images. Includes VL and VL2 versions with accompanying papers.
 tags:
-  - vlm
+  - multimodal
   - open-weight
   - moe
-  - multimodal
 outputs:
   - name: DeepSeek-VL
     type: model

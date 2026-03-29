@@ -15,9 +15,7 @@ description: >
   Edge is optimized for deployment at 75.2 FPS with TensorRT.
 tags:
   - vision
-  - object-detection
   - open-vocabulary
-  - grounding
 outputs:
   - name: Grounding DINO 1.5
     type: model

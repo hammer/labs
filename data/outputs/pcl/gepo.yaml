@@ -13,8 +13,8 @@ description: >
   importance weights, enabling stable training of large models across 
   heterogeneous nodes.
 tags:
-  - reinforcement-learning
-  - distributed-training
+  - training
+  - infrastructure
   - research
 paper:
   arxiv: "2508.17850"

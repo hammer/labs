@@ -9,7 +9,7 @@ sources:
 description: >
   Low-code framework for building complex and innovative RAG pipelines.
 tags:
-  - rag
+  - evaluation
   - framework
 library:
   github: https://github.com/OpenBMB/UltraRAG

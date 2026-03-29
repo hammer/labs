@@ -20,7 +20,7 @@ description: >
 tags:
   - reasoning
   - open-weight
-  - reinforcement-learning
+  - training
 model:
   variants:
     - name: DeepSeek-R1-Lite-Preview

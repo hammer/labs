@@ -12,7 +12,6 @@ description: >
   Collaborative library optimized for running massive MoE models (like
   GLM-4.6/5) on consumer GPUs.
 tags:
-  - inference
   - efficiency
   - moe
 library:

@@ -18,8 +18,7 @@ description: >
   restoration for self-supervised learning. Published in Briefings in
   Bioinformatics.
 tags:
-  - biocomputing
-  - protein-structure
+  - biology
   - representation-learning
   - open-source
 related:

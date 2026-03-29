@@ -17,7 +17,6 @@ description: >
 tags:
   - video
   - generation
-  - diffusion
   - research
 paper:
   arxiv: "2212.11565"

@@ -20,7 +20,7 @@ description: >
 tags:
   - moe
   - multimodal
-  - speech
+  - audio
   - open-weight
 outputs:
   - name: LongCat-Flash-Omni

@@ -14,8 +14,8 @@ description: >
   Teaching large language models to use tools via self-instruction.
   Published at NeurIPS 2023.
 tags:
-  - llm
-  - tool-use
+  - nlp
+  - agentic
   - research
 paper:
   arxiv: "2305.18752"

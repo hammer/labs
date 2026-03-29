@@ -14,7 +14,7 @@ description: >
   Progressive LLaMA with block expansion, enabling post-pretraining domain
   knowledge injection without catastrophic forgetting. Published at ACL 2024.
 tags:
-  - llm
+  - nlp
   - training
   - research
 paper:

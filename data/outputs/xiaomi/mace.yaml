@@ -10,7 +10,7 @@ description: >
   Xiaomi's most famous open-source project. Deep learning inference framework
   optimized for heterogeneous computing (CPU/GPU/DSP) on mobile devices.
 tags:
-  - inference
+  - efficiency
   - on-device
   - mobile
 library:

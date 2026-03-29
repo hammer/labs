@@ -12,6 +12,5 @@ description: >
   Library for clean and efficient FP8 GEMM kernels with fine-grained scaling.
 tags:
   - infrastructure
-  - kernels
 library:
   github: https://github.com/deepseek-ai/DeepGEMM

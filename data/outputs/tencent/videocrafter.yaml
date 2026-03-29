@@ -13,6 +13,5 @@ description: >
 tags:
   - video
   - generation
-  - diffusion
 library:
   github: https://github.com/AILab-CVC/VideoCrafter

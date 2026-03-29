@@ -13,9 +13,8 @@ description: >
   architecture. RoboOS-NeXT extends with unified memory-based framework
   for lifelong scalable multi-robot collaboration.
 tags:
-  - embodied-ai
-  - robotics
-  - multi-agent
+  - embodied
+  - agentic
   - open-source
 outputs:
   - name: RoboOS

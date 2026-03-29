@@ -12,6 +12,5 @@ description: >
   High-performance distributed file system designed for AI training.
 tags:
   - infrastructure
-  - distributed
 library:
   github: https://github.com/deepseek-ai/3FS

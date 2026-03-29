@@ -17,7 +17,7 @@ description: >
   on only 12T tokens. Released under Apache-2.0 license.
 tags:
   - open-weight
-  - long-context
+  - scaling
   - reasoning
   - agentic
 model:

@@ -17,7 +17,7 @@ tags:
   - embeddings
   - reasoning
   - open-weight
-  - retrieval
+  - evaluation
 model:
   variants:
     - name: BGE-Reasoner-Embed-Qwen3-8B

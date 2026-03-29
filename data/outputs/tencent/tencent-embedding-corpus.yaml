@@ -13,5 +13,4 @@ description: >
   vectors for 8 million Chinese words and phrases.
 tags:
   - nlp
-  - chinese
   - embeddings

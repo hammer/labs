@@ -20,7 +20,7 @@ description: >
   (2024) explored training strategies for compact models, reaching 79.1%
   top-1 at 269M FLOPs.
 tags:
-  - computer-vision
+  - vision
   - efficiency
   - mobile
   - architecture

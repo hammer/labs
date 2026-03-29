@@ -12,7 +12,5 @@ description: >
   Specialized model for automated theorem proving and formal mathematical
   reasoning (Lean 4).
 tags:
-  - math
   - reasoning
-  - theorem-proving
 notes: Solved 5 of 6 IMO 2025 problems. Seed-Prover 1.5 released December 2025.

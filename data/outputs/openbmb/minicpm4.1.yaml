@@ -20,7 +20,7 @@ tags:
   - efficiency
   - reasoning
   - open-weight
-  - long-context
+  - scaling
 outputs:
   - name: MiniCPM4.1-8B
     type: model

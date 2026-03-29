@@ -16,7 +16,7 @@ description: >
   deployment. Development began in 2015 as SenseTime's internal PPL
   toolkit before open-sourcing.
 tags:
-  - inference
+  - efficiency
   - deployment
   - open-source
   - infrastructure

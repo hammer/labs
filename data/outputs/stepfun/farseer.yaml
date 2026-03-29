@@ -11,8 +11,8 @@ description: >
   loss surface function L(N,D) that reduces extrapolation error by 433% vs Chinchilla.
   Trained ~1,000 models using ~3M GPU hours with full open-source release.
 tags:
-  - scaling-laws
-  - pretraining
+  - scaling
+  - training
 paper:
   arxiv: "2506.10972"
 related:

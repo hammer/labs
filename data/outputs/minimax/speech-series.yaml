@@ -12,7 +12,6 @@ description: >
   Hyper-realistic vocal models supporting 40+ languages with instantly
   responsive latencies (<250ms). Versions from Speech 02 to 2.8.
 tags:
-  - speech
   - audio
-  - multilingual
+  - nlp
 notes: Speech-02 launched April 2025. #1 on TTS Arena and Artificial Analysis Speech Arena.

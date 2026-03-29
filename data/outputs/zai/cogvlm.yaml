@@ -15,7 +15,7 @@ description: >
   Powerful vision-language model series. CogVLM2-Video introduced
   multi-frame time localization for precise video understanding.
 tags:
-  - vlm
+  - multimodal
   - open-weight
   - video
 outputs:

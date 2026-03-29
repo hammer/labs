@@ -11,10 +11,9 @@ description: >
   Foundational work on parameter-efficient fine-tuning (PEFT), published in
   Nature 2023. Allows massive models to be updated with minimal data/compute.
 tags:
-  - peft
+  - training
   - efficiency
   - research
-  - training
   - framework
 outputs:
   - name: Delta Tuning Paper

@@ -14,7 +14,7 @@ description: >
   Latent motion tokens as a bridging language for learning robot manipulation
   from videos. Accepted at ICCV 2025 as Oral.
 tags:
-  - robotics
+  - embodied
   - video
   - research
 paper:

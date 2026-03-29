@@ -15,8 +15,7 @@ description: >
   answer questions based on extracted content. Available in 7B and 72B variants.
 tags:
   - open-weight
-  - medical
-  - ocr
+  - biology
   - vision
 model:
   variants:

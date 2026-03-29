@@ -14,8 +14,8 @@ description: >
   language models with a focus on safety and high information density.
 tags:
   - training-data
-  - pretraining
-  - english
+  - training
+  - nlp
 paper:
   arxiv: "2402.19282"
 related:

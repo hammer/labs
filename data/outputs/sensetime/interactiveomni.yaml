@@ -17,7 +17,6 @@ tags:
   - multimodal
   - audio
   - open-source
-  - omni-modal
 outputs:
   - name: InteractiveOmni Model
     type: model

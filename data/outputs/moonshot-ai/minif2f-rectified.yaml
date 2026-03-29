@@ -11,6 +11,6 @@ description: >
   released alongside Kimina-Prover.
 tags:
   - benchmark
-  - math
+  - reasoning
 related:
   - kimina-prover

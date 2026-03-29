@@ -24,7 +24,7 @@ tags:
   - frontier
   - open-weight
   - agentic
-  - vlm
+  - multimodal
   - reasoning
 outputs:
   - name: Kimi K2.5

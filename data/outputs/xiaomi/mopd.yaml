@@ -12,5 +12,4 @@ description: >
   Library/technique for distilling intelligence from multiple teacher models
   into smaller student models.
 tags:
-  - distillation
   - training

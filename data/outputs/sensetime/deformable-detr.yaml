@@ -16,8 +16,7 @@ description: >
   Multiple pretrained variants released on HuggingFace under the
   SenseTime organization. Apache-2.0 licensed.
 tags:
-  - computer-vision
-  - object-detection
+  - vision
   - transformer
   - open-source
 outputs:

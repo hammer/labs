@@ -14,7 +14,7 @@ description: >
   Massive dataset for autonomous driving including 3D semantic segmentation
   and trajectory prediction.
 tags:
-  - autonomous-driving
+  - embodied
   - vision
   - benchmark
 related:

@@ -18,7 +18,7 @@ tags:
   - embeddings
   - code
   - open-weight
-  - multilingual
+  - nlp
 model:
   variants:
     - name: BGE-Code-v1

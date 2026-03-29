@@ -19,6 +19,5 @@ description: >
   ~35% combined improvement. Published at IEEE conference.
 tags:
   - dataset
-  - speech
+  - audio
   - multimodal
-  - audio-visual

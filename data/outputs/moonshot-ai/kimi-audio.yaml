@@ -14,7 +14,6 @@ description: >
   conversation. Trained on 13M+ hours of audio data.
 tags:
   - audio
-  - speech
   - open-weight
 outputs:
   - name: Kimi-Audio-7B-Instruct

@@ -11,7 +11,7 @@ description: >
   Leading benchmark for evaluating Chinese LLMs across 52 disciplines.
 tags:
   - benchmark
-  - chinese
+  - nlp
   - evaluation
 outputs:
   - name: C-Eval Benchmark

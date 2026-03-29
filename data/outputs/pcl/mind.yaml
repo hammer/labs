@@ -17,7 +17,7 @@ description: >
 tags:
   - open-weight
   - moe
-  - multilingual
+  - nlp
 model:
   architecture: moe
   parameters: 200B

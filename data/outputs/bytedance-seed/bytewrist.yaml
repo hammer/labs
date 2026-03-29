@@ -11,5 +11,4 @@ sources:
 description: >
   Robotic wrist design and learning framework for flexible, anthropomorphic motion.
 tags:
-  - robotics
   - embodied

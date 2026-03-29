@@ -20,7 +20,6 @@ description: >
   visibility-aware long-temporal attention for robust tracking in long videos.
 tags:
   - vision
-  - tracking
   - open-source
 outputs:
   - name: TAPTR

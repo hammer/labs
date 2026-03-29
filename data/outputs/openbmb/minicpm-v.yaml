@@ -18,9 +18,9 @@ description: >
   Progressed from V 2.0 through V 2.6 with world-class OCR and video
   understanding.
 tags:
-  - vlm
+  - multimodal
   - on-device
-  - ocr
+  - vision
   - video
 outputs:
   - name: MiniCPM-V 2.0

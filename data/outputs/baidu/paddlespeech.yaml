@@ -9,7 +9,6 @@ sources:
 description: >
   Specialized for ASR, TTS, and speaker verification.
 tags:
-  - speech
   - audio
 library:
   github: https://github.com/PaddlePaddle/PaddleSpeech

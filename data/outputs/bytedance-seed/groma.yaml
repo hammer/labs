@@ -15,7 +15,6 @@ description: >
 tags:
   - multimodal
   - vision
-  - grounding
 library:
   github: https://github.com/FoundationVision/Groma
 notes: Published at ECCV 2024.

@@ -13,7 +13,6 @@ description: >
   intelligence and audio understanding benchmarks.
 tags:
   - audio
-  - speech
   - open-weight
 outputs:
   - name: MiMo-Audio-7B

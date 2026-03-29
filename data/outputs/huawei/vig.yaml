@@ -16,7 +16,7 @@ description: >
   plus FFN modules for feature transformation. Supports both isotropic and
   pyramid architectures. Published at NeurIPS 2022.
 tags:
-  - computer-vision
+  - vision
   - graph-neural-network
   - architecture
   - open-source

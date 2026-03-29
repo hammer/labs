@@ -21,8 +21,7 @@ description: >
   algorithmic innovation, and distributed training systems. Uses FlagScale
   for distributed training.
 tags:
-  - language-model
-  - open-source
+  - nlp
   - open-weight
   - moe
 model:

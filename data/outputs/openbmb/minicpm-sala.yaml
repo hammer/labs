@@ -15,7 +15,7 @@ description: >
   windows on a single consumer-grade smartphone.
 tags:
   - on-device
-  - long-context
+  - scaling
   - efficiency
 model:
   context_window: 1000000

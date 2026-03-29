@@ -12,6 +12,6 @@ description: >
   Newest inference-focused chip designed for low-power, high-throughput
   LLM deployment.
 tags:
-  - hardware
-  - inference
+  - infrastructure
+  - efficiency
 notes: Announced at Baidu World 2025 on November 13, 2025. Scheduled for production in early 2026.

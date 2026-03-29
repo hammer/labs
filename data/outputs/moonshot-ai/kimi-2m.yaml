@@ -9,7 +9,7 @@ sources:
 description: >
   Update to the proprietary model supporting a 2-million-character context window.
 tags:
-  - long-context
+  - scaling
   - proprietary
 model:
   context_window: 2000000

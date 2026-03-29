@@ -21,9 +21,7 @@ description: >
   sensing, simulation, and manipulation tasks.
 tags:
   - dataset
-  - tactile
-  - embodied-ai
-  - robotics
+  - embodied
 outputs:
   - name: ToucHD Dataset
     type: dataset

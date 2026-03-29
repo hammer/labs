@@ -12,7 +12,7 @@ description: >
   Contrastive vision-language pretraining specifically for Chinese.
   Predates the Qwen branding.
 tags:
-  - vlm
-  - chinese
+  - multimodal
+  - nlp
 paper:
   arxiv: "2211.01335"

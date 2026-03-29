@@ -13,7 +13,7 @@ description: >
   Optimized for 1-million-token context windows and agentic tool usage.
 tags:
   - open-weight
-  - long-context
+  - scaling
   - agentic
 model:
   context_window: 1000000

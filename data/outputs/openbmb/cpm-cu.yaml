@@ -10,8 +10,8 @@ description: >
   Lightweight CUDA implementation for maximum LLM inference performance on
   edge GPUs (RTX series and Jetson).
 tags:
-  - inference
+  - efficiency
   - on-device
-  - kernels
+  - infrastructure
 library:
   github: https://github.com/OpenBMB/CPM.cu

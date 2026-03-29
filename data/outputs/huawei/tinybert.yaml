@@ -20,7 +20,7 @@ description: >
 tags:
   - nlp
   - efficiency
-  - knowledge-distillation
+  - training
   - open-source
 outputs:
   - type: model

@@ -13,7 +13,6 @@ description: >
   Specialized model family for formal and informal mathematical reasoning,
   with curated training datasets.
 tags:
-  - math
   - reasoning
   - open-weight
 related:

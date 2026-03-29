@@ -10,7 +10,7 @@ sources:
 description: Reasoning model advanced through reinforcement learning.
 tags:
   - reasoning
-  - reinforcement-learning
+  - training
 paper:
   arxiv: "2504.13914"
 notes: Seedance 2.0 video model also released from this lab.

@@ -18,8 +18,8 @@ description: >
   super GPT-4V trustworthiness. Core alignment technique used in MiniCPM-o.
   Accepted as CVPR 2025 Highlight.
 tags:
-  - alignment
-  - vlm
+  - training
+  - multimodal
   - research
 paper:
   arxiv: "2405.17220"

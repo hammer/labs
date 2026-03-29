@@ -20,8 +20,8 @@ description: >
   Successor to CCI 3.0 (Sep 2024) and earlier versions.
 tags:
   - dataset
-  - pretraining
-  - bilingual
+  - training
+  - nlp
   - reasoning
 related:
   - openseek

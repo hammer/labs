@@ -15,6 +15,5 @@ description: >
 tags:
   - agentic
   - framework
-  - multi-agent
 library:
   github: https://github.com/inclusionAI/AWorld

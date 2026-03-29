@@ -18,9 +18,7 @@ description: >
   detectors in the community.
 tags:
   - vision
-  - object-detection
   - open-vocabulary
-  - grounding
   - open-source
 outputs:
   - name: Grounding DINO

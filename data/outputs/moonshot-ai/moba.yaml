@@ -11,7 +11,7 @@ sources:
 description: >
   Mixture of Block Attention mechanism for efficient long-context processing.
 tags:
-  - long-context
+  - scaling
   - attention
   - architecture
 links:

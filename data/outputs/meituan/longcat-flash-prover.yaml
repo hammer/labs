@@ -16,7 +16,6 @@ description: >
 tags:
   - reasoning
   - moe
-  - theorem-proving
 model:
   architecture: moe
   parameters: 560B

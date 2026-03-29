@@ -9,7 +9,7 @@ sources:
 description: >
   Industry standard open-source OCR toolkit, currently at version 4.0.
 tags:
-  - ocr
+  - vision
   - framework
 library:
   github: https://github.com/PaddlePaddle/PaddleOCR

@@ -13,7 +13,7 @@ description: >
   "Compact giant" outperforming models 20x its size (including GPT-4o on
   certain benchmarks) via fully unfrozen perception-decoder training.
 tags:
-  - vlm
+  - multimodal
   - efficiency
   - open-weight
 outputs:

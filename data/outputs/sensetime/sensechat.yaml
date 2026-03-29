@@ -15,6 +15,6 @@ description: >
   long text comprehension. Also introduced SenseMirage text-to-image
   creation platform and SenseCore AI computing infrastructure.
 tags:
-  - llm
+  - nlp
   - chatbot
   - foundation-model

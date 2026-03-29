@@ -21,9 +21,8 @@ description: >
   variant surpasses Gemini-2.5-Pro by 17.4% on RefSpatial-Bench. Integrable
   with UR5, G1 humanoid, and other robots for real-world tasks.
 tags:
-  - embodied-ai
-  - spatial-reasoning
-  - robotics
+  - embodied
+  - reasoning
   - open-weight
 paper:
   arxiv: "2506.04308"

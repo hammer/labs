@@ -14,9 +14,7 @@ description: >
   on 512 Ascend 910 accelerators.
 tags:
   - nlp
-  - chinese
   - moe
-  - multilingual
 outputs:
   - name: PanGu-Sigma
     type: model

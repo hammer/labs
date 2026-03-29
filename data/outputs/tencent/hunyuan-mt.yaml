@@ -21,8 +21,7 @@ description: >
   place in 30 of 31 categories at WMT25. Includes Hunyuan-MT-7B and
   Hunyuan-MT-Chimera-7B, with HY-MT1.5 upgrades in Dec 2025.
 tags:
-  - multilingual
-  - translation
+  - nlp
   - open-weight
 model:
   architecture: dense

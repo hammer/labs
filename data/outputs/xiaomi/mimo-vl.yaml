@@ -13,7 +13,7 @@ description: >
   Open-source vision-language model that outperformed models ten times its size
   (like Qwen-72B) in multimodal reasoning. Includes SFT and RL variants.
 tags:
-  - vlm
+  - multimodal
   - reasoning
   - open-weight
 outputs:

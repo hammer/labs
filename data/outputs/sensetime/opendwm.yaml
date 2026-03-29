@@ -17,9 +17,8 @@ description: >
   multi-view generation, validated on nuScenes, OpenDV-2K, and Waymo.
   Accepted at CVPR 2025.
 tags:
-  - autonomous-driving
-  - world-model
-  - video-generation
+  - embodied
+  - generation
   - open-source
 outputs:
   - name: OpenDWM Platform

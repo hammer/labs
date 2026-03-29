@@ -6,8 +6,20 @@ import { formatCompact } from '../utils.js';
 
 const outputs = getAllOutputsChronological();
 const labs = getAllLabs().map((l) => ({ slug: l.slug, name: l.name })).sort((a, b) => a.name.localeCompare(b.name));
-const allTypes = outputs.flatMap(o => getOutputTypes(o));
-const types = [...new Set(allTypes)].sort();
+
+const labCounts = new Map<string, number>();
+const typeCounts = new Map<string, number>();
+const tagCounts = new Map<string, number>();
+
+outputs.forEach(o => {
+  const labList = Array.isArray(o.lab) ? o.lab : [o.lab];
+  labList.forEach(l => labCounts.set(l, (labCounts.get(l) || 0) + 1));
+  getOutputTypes(o).forEach(t => typeCounts.set(t, (typeCounts.get(t) || 0) + 1));
+  (o.tags || []).forEach(t => tagCounts.set(t, (tagCounts.get(t) || 0) + 1));
+});
+
+const types = [...typeCounts.keys()].sort();
+const tags = [...tagCounts.keys()].sort();
 ---
 
 <Layout title="Timeline">
@@ -20,13 +32,19 @@ const types = [...new Set(allTypes)].sort();
     <select id="filter-lab">
       <option value="">All labs</option>
       {labs.map((l) => (
-        <option value={l.slug}>{l.name}</option>
+        <option value={l.slug}>{l.name} ({labCounts.get(l.slug) || 0})</option>
       ))}
     </select>
     <select id="filter-type">
       <option value="">All types</option>
       {types.map((t) => (
-        <option value={t}>{t}</option>
+        <option value={t}>{t} ({typeCounts.get(t)})</option>
+      ))}
+    </select>
+    <select id="filter-tag">
+      <option value="">All tags</option>
+      {tags.map((t) => (
+        <option value={t}>{t} ({tagCounts.get(t)})</option>
       ))}
     </select>
     <button class="flagship-toggle" id="flagship-toggle" aria-pressed="false">Flagship only</button>
@@ -58,6 +76,7 @@ const types = [...new Set(allTypes)].sort();
             data-href={`/outputs/${output._labSlug}/${output.slug}`}
             data-lab={labList.join(',')}
             data-type={outputTypes.join(',')}
+            data-tags={(output.tags || []).join(',')}
             data-flagship={output.flagship ? '1' : '0'}
             data-date={output.date}
             data-stars={m?.github_stars ?? ''}
@@ -126,6 +145,7 @@ const types = [...new Set(allTypes)].sort();
   const hintBtn = document.getElementById('shortcut-hint')!;
   const labSelect = document.getElementById('filter-lab') as HTMLSelectElement;
   const typeSelect = document.getElementById('filter-type') as HTMLSelectElement;
+  const tagSelect = document.getElementById('filter-tag') as HTMLSelectElement;
   const flagshipToggle = document.getElementById('flagship-toggle')!;
   const filterCount = document.getElementById('filter-count')!;
   const sortHeaders = document.querySelectorAll<HTMLTableCellElement>('.sortable');
@@ -211,17 +231,20 @@ const types = [...new Set(allTypes)].sort();
   function updateVisibility() {
     const lab = labSelect.value;
     const type = typeSelect.value;
+    const tag = tagSelect.value;
 
     allRows.forEach(row => {
       const labs = row.dataset.lab!.split(',');
       const rowTypes = row.dataset.type!.split(',');
+      const rowTags = row.dataset.tags!.split(',');
       const isFlagship = row.dataset.flagship === '1';
 
       const matchLab = !lab || labs.includes(lab);
       const matchType = !type || rowTypes.includes(type);
+      const matchTag = !tag || rowTags.includes(tag);
       const matchFlagship = !flagshipOnly || isFlagship;
 
-      row.style.display = (matchLab && matchType && matchFlagship) ? '' : 'none';
+      row.style.display = (matchLab && matchType && matchTag && matchFlagship) ? '' : 'none';
     });
 
     visibleRows = allRows.filter(r => r.style.display !== 'none');
@@ -273,6 +296,7 @@ const types = [...new Set(allTypes)].sort();
   // Filters
   labSelect.addEventListener('change', updateVisibility);
   typeSelect.addEventListener('change', updateVisibility);
+  tagSelect.addEventListener('change', updateVisibility);
 
   // Keyboard shortcuts
   document.addEventListener('keydown', (e) => {

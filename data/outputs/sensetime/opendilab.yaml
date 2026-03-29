@@ -14,7 +14,7 @@ description: >
   multi-agent RL, imitation learning, offline RL, and model-based RL.
   Part of the OpenXLab ecosystem alongside OpenMMLab.
 tags:
-  - reinforcement-learning
+  - training
   - decision-intelligence
   - open-source
 outputs:

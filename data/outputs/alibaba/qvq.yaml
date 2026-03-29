@@ -12,5 +12,5 @@ description: >
   Multimodal reasoning model following the chain-of-thought (CoT) paradigm.
 tags:
   - reasoning
-  - vlm
+  - multimodal
   - open-weight

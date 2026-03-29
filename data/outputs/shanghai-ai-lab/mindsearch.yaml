@@ -12,7 +12,7 @@ description: >
   Open-source multi-agent web search engine framework (similar to Perplexity).
 tags:
   - agentic
-  - search
+  - evaluation
   - framework
 library:
   github: https://github.com/InternLM/MindSearch

@@ -13,7 +13,7 @@ description: >
   Debut 104B parameter foundational bilingual (Chinese/English) model.
 tags:
   - open-weight
-  - multilingual
+  - nlp
 model:
   architecture: dense
   parameters: 104B

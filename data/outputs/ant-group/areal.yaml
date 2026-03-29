@@ -15,7 +15,6 @@ description: >
   and agentic models. Achieves up to 2.77x training speedup compared to
   synchronous systems. Used to train the Ring thinking model series.
 tags:
-  - reinforcement-learning
   - training
   - framework
   - efficiency

@@ -14,7 +14,7 @@ description: >
   a world-first at the time. Included moonshot-v1-8k, 32k, and 128k API
   variants plus Vision Preview versions.
 tags:
-  - long-context
+  - scaling
   - proprietary
 model:
   context_window: 200000

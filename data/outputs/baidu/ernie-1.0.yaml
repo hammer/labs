@@ -11,7 +11,6 @@ description: >
   pretraining, surpassing BERT on Chinese NLP tasks.
 tags:
   - nlp
-  - chinese
   - knowledge-graph
 outputs:
   - name: ERNIE 1.0

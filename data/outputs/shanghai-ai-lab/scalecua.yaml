@@ -16,6 +16,6 @@ description: >
   MMBench-GUI L1-Hard and 47.4% on WebArena-Lite-v2.
 tags:
   - agentic
-  - vlm
+  - multimodal
   - open-weight
 notes: ICLR 2026 Oral. arXiv submission Sep 22, 2025.

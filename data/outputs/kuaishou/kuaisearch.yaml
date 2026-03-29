@@ -11,7 +11,7 @@ sources:
 description: >
   Large-scale e-commerce search dataset covering recall, ranking, and relevance.
 tags:
-  - search
+  - evaluation
   - e-commerce
   - benchmark
 notes: Date approximate.

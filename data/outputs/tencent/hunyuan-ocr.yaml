@@ -15,8 +15,8 @@ description: >
   0.4B native-resolution ViT to a 0.5B Hunyuan LLM. Won first place in
   ICDAR 2025 DIMT Challenge (Small Model Track).
 tags:
-  - vlm
-  - ocr
+  - multimodal
+  - vision
   - open-weight
 model:
   architecture: dense

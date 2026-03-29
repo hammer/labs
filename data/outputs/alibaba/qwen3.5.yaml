@@ -12,10 +12,10 @@ description: >
   Fourth generation of the Qwen model family. Qwen3.5-397B-A17B native VLM built
   on Qwen3-Next architecture. 201 languages and dialects supported. 1M context window.
 tags:
-  - vlm
+  - multimodal
   - moe
   - agentic
-  - multilingual
+  - nlp
   - open-weight
   - reasoning
 outputs:

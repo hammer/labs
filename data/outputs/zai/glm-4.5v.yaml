@@ -15,7 +15,6 @@ description: >
   64K tokens for multi-image and video inputs. SOTA on 42 public VL benchmarks
   at its scale. MIT-licensed.
 tags:
-  - vlm
   - multimodal
   - moe
   - open-weight

@@ -15,9 +15,8 @@ description: >
   for high-precision document ranking.
 tags:
   - embeddings
-  - rag
+  - evaluation
   - open-weight
-  - retrieval
 model:
   variants:
     - name: BGE-v1.0

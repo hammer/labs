@@ -13,9 +13,8 @@ description: >
   Second generation of the Aquila bilingual LLM. Improved with EfficientScale
   training recipe. Released in 7B and 34B sizes, plus an 8x16B MoE variant.
 tags:
-  - open-source
   - open-weight
-  - chinese
+  - nlp
   - moe
 model:
   variants:

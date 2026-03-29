@@ -10,7 +10,6 @@ description: >
   Image segmentation toolkit.
 tags:
   - vision
-  - segmentation
 library:
   github: https://github.com/PaddlePaddle/PaddleSeg
 notes: Date approximate.

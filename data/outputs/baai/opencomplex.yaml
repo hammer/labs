@@ -13,10 +13,9 @@ description: >
   science AI. OpenComplex provides trainable protein/RNA/complex prediction;
   OpenComplex2 extends to generative conformational ensemble sampling.
 tags:
-  - biocomputing
-  - protein-structure
+  - biology
   - open-source
-  - generative-model
+  - generation
 outputs:
   - name: OpenComplex
     type: model

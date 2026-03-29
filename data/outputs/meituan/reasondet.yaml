@@ -13,7 +13,6 @@ description: >
 tags:
   - benchmark
   - vision
-  - detection
   - reasoning
 related:
   - lenna

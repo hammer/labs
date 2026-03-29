@@ -17,9 +17,9 @@ description: >
   counterparts on HealthBench. Licensed under Apache 2.0.
 tags:
   - open-weight
-  - medical
+  - biology
   - reasoning
-  - reinforcement-learning
+  - training
 outputs:
   - name: "Baichuan-M2: Scaling Medical Capability with Large Verifier System"
     type: paper

@@ -14,7 +14,6 @@ description: >
   Boosts model performance by 0.2-1.1 AP through optimized hyperparameters.
 tags:
   - vision
-  - object-detection
   - tooling
   - open-source
 outputs:

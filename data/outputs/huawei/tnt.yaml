@@ -16,8 +16,7 @@ description: >
   about 1.7% higher than existing vision transformers at similar compute
   cost. Published at NeurIPS 2021.
 tags:
-  - computer-vision
-  - vision-transformer
+  - vision
   - architecture
   - open-source
 outputs:

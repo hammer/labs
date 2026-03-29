@@ -11,7 +11,7 @@ description: >
   Significant upgrade to R1 with enhanced logic and reduced hallucinations.
 tags:
   - reasoning
-  - reinforcement-learning
+  - training
   - open-weight
 model:
   base_model: deepseek-r1

@@ -14,7 +14,6 @@ description: >
   performance to baseline with 50% training epochs.
 tags:
   - vision
-  - object-detection
   - open-source
 outputs:
   - name: DN-DETR

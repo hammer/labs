@@ -20,7 +20,7 @@ description: >
 tags:
   - spatial-intelligence
   - open-weight
-  - computer-vision
+  - vision
   - multimodal
 outputs:
   - name: SenseNova-SI Models

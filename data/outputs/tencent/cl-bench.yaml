@@ -14,4 +14,4 @@ description: >
   Benchmark for evaluating the "context learning" abilities of long-context models.
 tags:
   - benchmark
-  - long-context
+  - scaling

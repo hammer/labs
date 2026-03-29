@@ -11,8 +11,8 @@ description: >
   hyperparameter scaling laws. Finds optimal learning rate follows a power-law with
   model and dataset size, while optimal batch size depends mainly on dataset size.
 tags:
-  - scaling-laws
-  - pretraining
+  - scaling
+  - training
 paper:
   arxiv: "2503.04715"
 related:

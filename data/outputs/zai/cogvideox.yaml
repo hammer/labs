@@ -13,7 +13,6 @@ description: >
 tags:
   - video
   - generation
-  - diffusion
   - open-weight
 paper:
   arxiv: "2408.06072"

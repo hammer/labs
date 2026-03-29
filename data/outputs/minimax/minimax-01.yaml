@@ -26,12 +26,12 @@ description: >
   in <a href="/outputs/meituan/optimal-batch-size-scheduling">Fast Catch-Up, Late Switching</a>.</p>
 tags:
   - moe
-  - long-context
+  - scaling
   - open-weight
   - architecture
   - attention
   - efficiency
-  - vlm
+  - multimodal
 outputs:
   - name: MiniMax-Text-01
     type: model

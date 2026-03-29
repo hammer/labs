@@ -17,7 +17,7 @@ description: >
   on both Chinese and English tasks while maintaining computational efficiency.
 tags:
   - moe
-  - multilingual
+  - nlp
   - research
 paper:
   arxiv: "2106.10715"

@@ -10,7 +10,7 @@ description: >
   Foundational voice assistant that served as the initial testbed for Xiaomi's
   NLP and speech research.
 tags:
-  - speech
-  - assistant
+  - audio
+  - agentic
   - on-device
 notes: Active 2017-2023.

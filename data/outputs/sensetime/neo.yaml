@@ -20,7 +20,7 @@ tags:
   - multimodal
   - architecture
   - open-source
-  - computer-vision
+  - vision
 outputs:
   - name: NEO Models
     type: model

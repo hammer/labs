@@ -16,7 +16,7 @@ description: >
 tags:
   - proprietary
   - finance
-  - chinese
+  - nlp
 outputs:
   - name: Baichuan4-Finance Technical Report
     type: paper

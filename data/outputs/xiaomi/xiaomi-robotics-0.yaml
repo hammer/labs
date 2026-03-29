@@ -13,8 +13,8 @@ description: >
   4.7B parameter Vision-Language-Action (VLA) model for real-time robotic
   execution. Scales VLA models for consumer GPUs.
 tags:
-  - robotics
-  - vlm
+  - embodied
+  - multimodal
   - open-weight
 outputs:
   - name: Xiaomi-Robotics-0

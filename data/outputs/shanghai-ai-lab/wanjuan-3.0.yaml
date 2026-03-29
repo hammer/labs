@@ -15,8 +15,8 @@ description: >
   large models.
 tags:
   - training-data
-  - pretraining
-  - multilingual
+  - training
+  - nlp
 paper:
   arxiv: "2501.14506"
 related:

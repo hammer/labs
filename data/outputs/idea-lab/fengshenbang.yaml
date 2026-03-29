@@ -16,7 +16,6 @@ description: >
 tags:
   - nlp
   - open-source
-  - chinese
 outputs:
   - name: Fengshenbang-LM
     type: library

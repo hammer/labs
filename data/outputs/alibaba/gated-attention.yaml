@@ -20,7 +20,7 @@ description: >
 tags:
   - architecture
   - efficiency
-  - long-context
+  - scaling
   - research
 paper:
   arxiv: "2505.06708"

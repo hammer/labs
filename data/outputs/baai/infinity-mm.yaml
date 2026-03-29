@@ -18,7 +18,7 @@ description: >
 tags:
   - dataset
   - multimodal
-  - instruction-tuning
+  - training
   - open-source
 related:
   - aquila

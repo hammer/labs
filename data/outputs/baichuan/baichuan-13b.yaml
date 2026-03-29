@@ -17,7 +17,6 @@ description: >
   and English benchmarks at the time of release.
 tags:
   - open-weight
-  - chinese
   - nlp
 model:
   architecture: dense

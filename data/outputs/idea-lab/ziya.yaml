@@ -21,7 +21,6 @@ description: >
 tags:
   - nlp
   - open-weight
-  - chinese
   - coding
 outputs:
   - name: Ziya-LLaMA-13B

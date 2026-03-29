@@ -17,8 +17,6 @@ description: >
   open-source vision pipelines with 15k+ GitHub stars.
 tags:
   - vision
-  - segmentation
-  - object-detection
   - open-vocabulary
   - open-source
 outputs:

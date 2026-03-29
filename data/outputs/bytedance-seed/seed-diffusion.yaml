@@ -10,6 +10,6 @@ description: >
   Experimental diffusion-based language model capable of inference speeds
   exceeding 2,100 tokens/s.
 tags:
-  - diffusion
+  - generation
   - efficiency
   - research

@@ -13,6 +13,5 @@ description: >
   and communication.
 tags:
   - infrastructure
-  - parallelism
 library:
   github: https://github.com/deepseek-ai/DualPipe

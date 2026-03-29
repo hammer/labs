@@ -13,7 +13,6 @@ description: >
   Accepted at CVPR 2024.
 tags:
   - vision
-  - detection
   - open-vocabulary
 paper:
   arxiv: "2401.17270"

@@ -13,7 +13,7 @@ description: >
   held-out environments like SciWorld and AlfWorld.
 tags:
   - agentic
-  - reinforcement-learning
+  - training
   - research
 paper:
   arxiv: "2501.01702"

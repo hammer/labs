@@ -14,7 +14,7 @@ description: >
   complex, real-world API interactions.
 tags:
   - benchmark
-  - tool-use
+  - agentic
   - evaluation
 dataset:
   github: https://github.com/THUDM/ComplexFuncBench

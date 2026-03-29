@@ -16,6 +16,5 @@ description: >
   produces single-shot videos up to one minute without quality
   degradation. Consumer app "Vimi Camera" also launched.
 tags:
-  - video-generation
+  - generation
   - digital-human
-  - generative

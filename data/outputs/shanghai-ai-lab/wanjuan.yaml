@@ -13,7 +13,7 @@ description: >
   English and Chinese text, image-text pairs, and video.
 tags:
   - training-data
-  - pretraining
+  - training
   - multimodal
 notes: arXiv submission Aug 21, 2023.
 related:

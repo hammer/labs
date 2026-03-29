@@ -13,7 +13,6 @@ description: >
   interpretable and improving detection performance.
 tags:
   - vision
-  - object-detection
   - open-source
 outputs:
   - name: DAB-DETR

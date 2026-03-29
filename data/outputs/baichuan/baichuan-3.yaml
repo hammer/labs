@@ -12,6 +12,6 @@ description: >
   GPT-4 in Chinese tasks on evaluations such as CMMLU, GAOKAO, and AGI-Eval.
 tags:
   - proprietary
-  - chinese
+  - nlp
 model:
   architecture: dense

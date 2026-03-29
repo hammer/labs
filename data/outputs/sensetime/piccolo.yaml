@@ -17,7 +17,6 @@ description: >
 tags:
   - embedding
   - nlp
-  - chinese
   - open-weight
 outputs:
   - name: Piccolo2 Models

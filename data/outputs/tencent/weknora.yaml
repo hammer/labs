@@ -9,6 +9,6 @@ sources:
 description: >
   LLM-powered RAG framework for deep document understanding and semantic retrieval.
 tags:
-  - rag
+  - evaluation
   - framework
 notes: Date approximate.

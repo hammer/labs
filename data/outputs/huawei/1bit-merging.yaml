@@ -14,9 +14,8 @@ description: >
   domain-specific fine-tuned models.
 tags:
   - model-merging
-  - quantization
   - efficiency
-  - large-language-model
+  - nlp
 outputs:
   - type: paper
     name: "1bit-Merging: Dynamic Quantized Merging for Large Language Models"

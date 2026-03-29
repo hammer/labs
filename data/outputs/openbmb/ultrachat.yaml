@@ -15,6 +15,5 @@ sources:
 description: >
   High-quality alignment datasets for instruction-following and RLHF.
 tags:
-  - alignment
+  - training
   - training-data
-  - rlhf

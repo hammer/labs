@@ -13,7 +13,7 @@ description: >
   enterprise use.
 tags:
   - proprietary
-  - chinese
+  - nlp
 model:
   architecture: dense
   parameters: 53B

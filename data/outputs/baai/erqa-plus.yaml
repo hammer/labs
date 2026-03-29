@@ -17,8 +17,7 @@ description: >
 tags:
   - benchmark
   - evaluation
-  - embodied-ai
-  - robotics
+  - embodied
 related:
   - robobrain
   - flagevalmm

@@ -15,7 +15,6 @@ description: >
   trained on 2,048 Ascend 910 processors using MindSpore.
 tags:
   - nlp
-  - chinese
   - open-weight
 outputs:
   - name: PanGu-alpha

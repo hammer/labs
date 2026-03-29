@@ -15,7 +15,7 @@ description: >
   designed for high efficiency on consumer hardware.
 tags:
   - live-training
-  - bilingual
+  - nlp
   - efficiency
 model:
   parameters: 10B

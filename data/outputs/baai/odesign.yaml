@@ -21,9 +21,8 @@ description: >
   acid and small-molecule design for interaction types previously
   inaccessible to existing tools.
 tags:
-  - biocomputing
-  - drug-design
-  - generative-model
+  - biology
+  - generation
   - open-source
 related:
   - opencomplex

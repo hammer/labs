@@ -21,7 +21,7 @@ description: >
   reward scores.
 tags:
   - dataset
-  - instruction-tuning
+  - training
   - open-source
 related:
   - infinity-mm

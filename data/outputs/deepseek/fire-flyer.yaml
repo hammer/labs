@@ -10,7 +10,6 @@ description: >
   Cost-effective software-hardware co-design for deep learning infrastructure.
 tags:
   - infrastructure
-  - hardware
 paper:
   arxiv: "2408.14158"
 related:

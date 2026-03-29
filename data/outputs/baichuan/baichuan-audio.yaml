@@ -21,8 +21,7 @@ description: >
 tags:
   - open-weight
   - audio
-  - speech
-  - chinese
+  - nlp
 outputs:
   - name: "Baichuan-Audio: A Unified Framework for End-to-End Speech Interaction"
     type: paper

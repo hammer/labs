@@ -11,8 +11,7 @@ sources:
 description: >
   High-performance toolkit for compressing, deploying, and serving LLMs at scale.
 tags:
-  - inference
-  - serving
+  - efficiency
   - framework
 library:
   github: https://github.com/InternLM/lmdeploy

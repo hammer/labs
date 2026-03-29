@@ -16,10 +16,7 @@ description: >
   detection, segmentation, pose estimation, and region captioning.
 tags:
   - vision
-  - object-detection
-  - segmentation
   - open-vocabulary
-  - grounding
 outputs:
   - name: DINO-X
     type: model

@@ -14,9 +14,8 @@ description: >
   Open-source multilingual translation series (7B parameters) rivaling GPT-4
   in translation tasks. Includes Seed-X-Instruct, Seed-X-PPO, and Seed-X-RM.
 tags:
-  - multilingual
+  - nlp
   - open-weight
-  - translation
 model:
   architecture: dense
   parameters: 7B

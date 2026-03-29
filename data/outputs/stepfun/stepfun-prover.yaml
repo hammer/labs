@@ -14,9 +14,7 @@ description: >
   Specialized 32B model family for formal theorem proving (Lean 4), using
   tool-integrated reinforcement learning.
 tags:
-  - math
   - reasoning
-  - theorem-proving
 model:
   architecture: dense
   parameters: 32B

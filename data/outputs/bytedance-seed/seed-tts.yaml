@@ -13,7 +13,6 @@ description: >
   State-of-the-art speech generation model family known for high-fidelity
   voice cloning and expressive prosody.
 tags:
-  - speech
   - audio
   - generation
 outputs:

@@ -12,7 +12,7 @@ description: >
   authors demonstrate how to accurately predict the performance and 
   optimal training configurations for models up to 33B parameters.
 tags:
-  - scaling-laws
+  - scaling
   - research
 paper:
   arxiv: "2403.06563"

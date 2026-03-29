@@ -15,7 +15,6 @@ description: >
   "omni" interaction (speech-to-speech).
 tags:
   - audio
-  - speech
   - multimodal
 model:
   variants:

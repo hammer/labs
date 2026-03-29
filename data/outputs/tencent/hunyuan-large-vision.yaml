@@ -11,7 +11,6 @@ description: >
   active). Handles images, videos, and 3D content. Ranked first among Chinese
   image AI models on LMArena Vision Leaderboard.
 tags:
-  - vlm
   - multimodal
   - moe
 model:

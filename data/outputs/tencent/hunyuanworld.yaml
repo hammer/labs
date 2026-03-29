@@ -19,7 +19,7 @@ description: >
 tags:
   - 3d
   - generation
-  - world-model
+  - embodied
   - open-weight
 outputs:
   - name: HunyuanWorld 1.0

@@ -11,7 +11,7 @@ sources:
 description: >
   World's largest open-source autonomous driving platform.
 tags:
-  - autonomous-driving
+  - embodied
   - infrastructure
 library:
   github: https://github.com/ApolloAuto/apollo

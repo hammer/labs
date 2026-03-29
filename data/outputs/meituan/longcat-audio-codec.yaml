@@ -15,7 +15,6 @@ description: >
   LongCat-Flash-Omni model's audio capabilities.
 tags:
   - audio
-  - speech
 paper:
   arxiv: "2510.15227"
 related:

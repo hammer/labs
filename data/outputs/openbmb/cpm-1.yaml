@@ -13,8 +13,8 @@ description: >
   With 2.6 billion parameters, it demonstrated strong performance across 
   various Chinese NLP tasks and laid the groundwork for the CPM series.
 tags:
-  - chinese
-  - pretraining
+  - nlp
+  - training
   - research
 paper:
   arxiv: "2012.00413"

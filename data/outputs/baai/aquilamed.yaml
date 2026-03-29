@@ -15,7 +15,7 @@ description: >
   Demonstrates significant win rate against annotated data using GPT-4.
   SFT and RL training data open-sourced alongside the model.
 tags:
-  - medical
+  - biology
   - open-weight
 related:
   - aquila

@@ -14,7 +14,6 @@ description: >
   with ResNet-50 in 12 epochs and 64.8 AP on COCO test-dev with FocalNet-Huge.
 tags:
   - vision
-  - object-detection
   - open-source
 outputs:
   - name: Stable-DINO

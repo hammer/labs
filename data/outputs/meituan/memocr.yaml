@@ -9,5 +9,5 @@ sources:
 description: >
   OCR-driven visual memory agent library.
 tags:
-  - ocr
+  - vision
   - agentic

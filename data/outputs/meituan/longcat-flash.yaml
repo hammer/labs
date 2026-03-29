@@ -19,7 +19,7 @@ description: >
 tags:
   - moe
   - open-weight
-  - long-context
+  - scaling
 outputs:
   - name: LongCat-Flash-Chat
     type: model

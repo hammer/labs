@@ -12,7 +12,7 @@ description: >
   Won Best Paper at FAST 2025.
 tags:
   - infrastructure
-  - serving
+  - efficiency
 outputs:
   - name: "Mooncake: KVCache-centric Disaggregated Architecture"
     type: paper

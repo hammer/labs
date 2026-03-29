@@ -9,7 +9,6 @@ sources:
 description: >
   Text-to-speech model from the GLM family.
 tags:
-  - speech
   - audio
   - generation
 paper:

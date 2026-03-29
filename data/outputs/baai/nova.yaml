@@ -20,7 +20,7 @@ description: >
   only 0.6B parameters. Also outperforms SOTA image diffusion models in
   text-to-image generation.
 tags:
-  - video-generation
+  - generation
   - autoregressive
   - open-weight
 paper:

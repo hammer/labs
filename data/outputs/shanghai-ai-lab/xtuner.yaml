@@ -13,7 +13,6 @@ sources:
 description: >
   Lightweight fine-tuning toolkit integrating core PEFT methods like LoRA and QLoRA.
 tags:
-  - peft
   - training
   - framework
 library:

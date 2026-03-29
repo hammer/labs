@@ -14,7 +14,6 @@ description: >
 tags:
   - infrastructure
   - security
-  - containers
 library:
   github: https://github.com/kata-containers/kata-containers
 notes: First release March 2018.

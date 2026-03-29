@@ -12,7 +12,7 @@ description: >
   Xiaomi's first significant LLM, ranked top in C-Eval and CMMLU at release.
 tags:
   - open-weight
-  - chinese
+  - nlp
 model:
   architecture: dense
   parameters: 6B

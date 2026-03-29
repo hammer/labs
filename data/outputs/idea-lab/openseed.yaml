@@ -14,8 +14,6 @@ description: >
   foreground/background and conditioned mask decoding for box-to-mask.
 tags:
   - vision
-  - segmentation
-  - object-detection
   - open-vocabulary
   - open-source
 outputs:

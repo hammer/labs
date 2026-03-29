@@ -22,7 +22,7 @@ tags:
   - reasoning
   - efficiency
   - open-weight
-  - reinforcement-learning
+  - training
   - attention
 outputs:
   - name: MiniMax-M1

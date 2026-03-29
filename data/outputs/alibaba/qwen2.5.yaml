@@ -13,7 +13,7 @@ description: >
   32B, and 72B, plus a proprietary MoE model (Qwen2.5-Max).
 tags:
   - open-weight
-  - multilingual
+  - nlp
   - moe
 outputs:
   - name: Qwen2.5

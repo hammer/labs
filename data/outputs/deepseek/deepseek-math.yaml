@@ -11,9 +11,8 @@ description: >
   Introduced Group Relative Policy Optimization (GRPO) for mathematical reasoning.
   The foundational model and paper for DeepSeek's math capabilities.
 tags:
-  - math
   - reasoning
-  - reinforcement-learning
+  - training
 outputs:
   - name: DeepSeek-Math
     type: model

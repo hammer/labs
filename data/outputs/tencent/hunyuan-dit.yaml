@@ -13,7 +13,6 @@ description: >
 tags:
   - generation
   - vision
-  - diffusion
   - open-weight
 outputs:
   - name: Hunyuan-DiT

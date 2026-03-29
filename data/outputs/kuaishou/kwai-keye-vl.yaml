@@ -13,7 +13,7 @@ description: >
   8B parameter multimodal foundation model specializing in short-video understanding,
   with accompanying technical report.
 tags:
-  - vlm
+  - multimodal
   - video
   - open-weight
 outputs:

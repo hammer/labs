@@ -14,7 +14,6 @@ description: >
 tags:
   - benchmark
   - nlp
-  - chinese
 dataset:
   github: https://github.com/baidu/DuReader
 notes: Updated through 2020.

@@ -10,8 +10,7 @@ description: >
   Kernel library for high-speed LLM serving on PaddlePaddle.
 tags:
   - infrastructure
-  - serving
-  - kernels
+  - efficiency
 library:
   github: https://github.com/PaddlePaddle
 notes: Date approximate.

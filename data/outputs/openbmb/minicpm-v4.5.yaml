@@ -14,9 +14,9 @@ description: >
   State-of-the-art on-device vision model specializing in complex document
   parsing and high-resolution spatial reasoning.
 tags:
-  - vlm
+  - multimodal
   - on-device
-  - ocr
+  - vision
 outputs:
   - name: MiniCPM-V 4.5
     type: model

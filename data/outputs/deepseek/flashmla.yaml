@@ -12,7 +12,6 @@ description: >
   Highly optimized kernels for Multi-head Latent Attention.
 tags:
   - infrastructure
-  - kernels
   - attention
 library:
   github: https://github.com/deepseek-ai/FlashMLA

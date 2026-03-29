@@ -13,7 +13,6 @@ description: >
   via PPO reinforcement learning with verifiable rewards in the image space.
   Ranked first domestically on MathVision visual reasoning leaderboard.
 tags:
-  - vlm
-  - reasoning
   - multimodal
+  - reasoning
 notes: Released approximately Apr 2025.

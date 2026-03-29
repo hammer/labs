@@ -14,6 +14,6 @@ description: >
   Benchmark for testing long-document understanding in multimodal models.
 tags:
   - benchmark
-  - long-context
+  - scaling
   - multimodal
 notes: arXiv submission Jul 1, 2024. NeurIPS 2024 Datasets and Benchmarks Track.

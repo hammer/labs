@@ -10,8 +10,7 @@ description: >
   High-fidelity text-to-speech model for providing agent voices across
   Xiaomi's device ecosystem.
 tags:
-  - speech
-  - tts
+  - audio
 related:
   - mimo-v2
   - mimo-v2-pro

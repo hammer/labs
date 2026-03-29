@@ -20,7 +20,7 @@ tags:
   - embeddings
   - multimodal
   - open-weight
-  - retrieval
+  - evaluation
 outputs:
   - name: BGE-VL (Multimodal Embedding)
     type: model

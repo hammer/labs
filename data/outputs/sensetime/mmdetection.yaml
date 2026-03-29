@@ -17,9 +17,8 @@ description: >
   detection toolbox, supports object detection, instance segmentation,
   panoptic segmentation, and semi-supervised detection on PyTorch.
 tags:
-  - computer-vision
+  - vision
   - open-source
-  - object-detection
   - toolbox
 outputs:
   - name: MMDetection Library

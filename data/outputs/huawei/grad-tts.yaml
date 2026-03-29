@@ -17,9 +17,8 @@ description: >
   Competitive with state-of-the-art TTS in Mean Opinion Score. One of the
   first applications of diffusion models to speech synthesis.
 tags:
-  - speech
-  - text-to-speech
-  - diffusion
+  - audio
+  - generation
   - open-source
 outputs:
   - type: model

@@ -13,7 +13,6 @@ description: >
   based on a Parameter Server architecture. Later donated to the Linux Foundation.
 tags:
   - infrastructure
-  - distributed
   - framework
 library:
   github: https://github.com/Angel-ML/angel

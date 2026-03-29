@@ -20,8 +20,8 @@ description: >
   Matches or exceeds similarly-sized AR models on general, math, and coding
   tasks. Outperforms DeepSeek V3 (671B) on structured planning tasks.
 tags:
-  - large-language-model
-  - diffusion
+  - nlp
+  - generation
   - reasoning
   - open-weight
 model:

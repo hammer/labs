@@ -15,7 +15,6 @@ description: >
 tags:
   - agentic
   - deployment
-  - multi-agent
 paper:
   arxiv: "2510.13291"
 related:

@@ -18,7 +18,7 @@ description: >
   alternative to autoregressive generation, scaling from small models to 100B
   via MoE and AR-to-diffusion conversion.
 tags:
-  - diffusion
+  - generation
   - architecture
   - moe
   - scaling

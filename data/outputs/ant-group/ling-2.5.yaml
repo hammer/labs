@@ -16,7 +16,7 @@ tags:
   - moe
   - frontier
   - open-weight
-  - long-context
+  - scaling
   - agentic
 model:
   architecture: moe

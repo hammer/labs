@@ -11,7 +11,7 @@ sources:
 description: >
   Introduced the training method that reduced GLM-5's hallucination rate by 35%.
 tags:
-  - reinforcement-learning
+  - training
   - agentic
   - research
 related:

@@ -15,7 +15,6 @@ description: >
   video generation.
 tags:
   - generation
-  - animation
   - vision
 library:
   github: https://github.com/magic-research/magic-animate

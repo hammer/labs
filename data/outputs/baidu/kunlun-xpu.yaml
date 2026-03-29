@@ -11,6 +11,5 @@ sources:
 description: >
   Baidu's proprietary AI chips (R200/R300/P800) optimized for PaddlePaddle.
 tags:
-  - hardware
   - infrastructure
 notes: Kunlun chip first announced July 2018; Kunlun 1 entered mass production early 2020.

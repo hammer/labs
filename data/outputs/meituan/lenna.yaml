@@ -14,7 +14,6 @@ description: >
   object detection for reasoning-based detection.
 tags:
   - vision
-  - detection
   - reasoning
 outputs:
   - name: Lenna

@@ -16,9 +16,8 @@ description: >
   as an oral presentation at ICLR 2022, demonstrating superior quality
   compared to state-of-the-art one-shot voice conversion approaches.
 tags:
-  - speech
-  - voice-conversion
-  - diffusion
+  - audio
+  - generation
   - open-source
 outputs:
   - type: model

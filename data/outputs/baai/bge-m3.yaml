@@ -16,10 +16,9 @@ description: >
   in a single model.
 tags:
   - embeddings
-  - rag
+  - evaluation
   - open-weight
-  - multilingual
-  - retrieval
+  - nlp
 outputs:
   - name: BGE-M3
     type: model

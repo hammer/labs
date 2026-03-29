@@ -14,7 +14,7 @@ description: >
   Technical paper on a 4B parameter vision-language model using
   Layout-as-Thought mechanisms.
 tags:
-  - ocr
-  - vlm
+  - vision
+  - multimodal
 model:
   parameters: 4B

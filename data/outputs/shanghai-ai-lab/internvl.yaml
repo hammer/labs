@@ -15,7 +15,7 @@ description: >
   Pioneering open-source vision-language series rivaling GPT-4V. InternVL 3.5
   (Aug 2025) introduced native vision-language-action capabilities.
 tags:
-  - vlm
+  - multimodal
   - open-weight
   - frontier
   - scaling

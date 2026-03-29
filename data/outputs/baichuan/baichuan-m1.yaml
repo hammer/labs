@@ -18,8 +18,8 @@ description: >
   Released alongside the Baichuan-M1-preview deep thinking model.
 tags:
   - open-weight
-  - medical
-  - chinese
+  - biology
+  - nlp
 outputs:
   - name: "Baichuan-M1: Pushing the Medical Capability of Large Language Models"
     type: paper

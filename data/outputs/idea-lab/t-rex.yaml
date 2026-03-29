@@ -18,9 +18,7 @@ description: >
   State-of-the-art on class-agnostic counting benchmarks.
 tags:
   - vision
-  - object-detection
   - counting
-  - visual-prompting
   - open-source
 outputs:
   - name: T-Rex

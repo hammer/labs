@@ -12,7 +12,7 @@ description: >
   "Densing Law" where LLM capacity density doubles approximately every
   three months, suggesting exponential gains in efficiency.
 tags:
-  - scaling-laws
+  - scaling
   - efficiency
   - research
 paper:

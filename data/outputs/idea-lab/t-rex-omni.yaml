@@ -16,8 +16,6 @@ description: >
   long-tailed scenarios.
 tags:
   - vision
-  - object-detection
-  - visual-prompting
 outputs:
   - name: T-Rex-Omni
     type: model

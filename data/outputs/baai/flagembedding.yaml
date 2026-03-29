@@ -12,10 +12,10 @@ description: >
   Chinese text embeddings and retrieval evaluation.
 tags:
   - embeddings
-  - rag
+  - evaluation
   - framework
   - benchmark
-  - chinese
+  - nlp
 outputs:
   - name: FlagEmbedding
     type: library

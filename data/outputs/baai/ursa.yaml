@@ -22,9 +22,7 @@ description: >
   steps. Supports multi-task video generation with asynchronous timestep
   scheduling in one unified model.
 tags:
-  - video-generation
-  - image-generation
-  - discrete-diffusion
+  - generation
   - open-weight
 model:
   variants:

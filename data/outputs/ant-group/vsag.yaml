@@ -11,8 +11,7 @@ description: >
   (Retrieval-Augmented Generation).
 tags:
   - infrastructure
-  - rag
-  - search
+  - evaluation
 library:
   github: https://github.com/antgroup/vsag
 notes: Date approximate.

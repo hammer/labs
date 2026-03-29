@@ -10,7 +10,6 @@ description: >
   End-to-end toolkit for object detection (YOLO, Faster R-CNN).
 tags:
   - vision
-  - detection
 library:
   github: https://github.com/PaddlePaddle/PaddleDetection
 notes: Date approximate.

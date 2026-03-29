@@ -9,7 +9,6 @@ sources:
 description: >
   C++ implementation for efficient local inference of Qwen models.
 tags:
-  - inference
   - efficiency
 library:
   github: https://github.com/QwenLM/qwen.cpp

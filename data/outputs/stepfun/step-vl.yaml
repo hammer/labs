@@ -12,7 +12,7 @@ description: >
   Series of vision-language models capable of understanding images and
   complex documents.
 tags:
-  - vlm
+  - multimodal
   - open-weight
 model:
   variants:

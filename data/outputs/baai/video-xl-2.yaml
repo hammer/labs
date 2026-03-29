@@ -17,7 +17,7 @@ description: >
   72B-scale models. Handles thousands of frames on a single 24GB GPU
   and 10,000+ frames on 80GB GPUs.
 tags:
-  - video-understanding
+  - video
   - multimodal
   - open-weight
-  - efficient-inference
+  - efficiency

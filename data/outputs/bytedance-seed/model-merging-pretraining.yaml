@@ -11,6 +11,6 @@ description: >
   models, exploring how independently trained model branches can be merged
   to improve training efficiency and final model quality.
 tags:
-  - llm
+  - nlp
   - training
   - research

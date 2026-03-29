@@ -11,9 +11,7 @@ description: >
   Specialized models and benchmark for formal theorem proving in Lean 4.
   Spans V1 through V2 with the DeepSeek-ProverBench evaluation suite.
 tags:
-  - math
   - reasoning
-  - theorem-proving
   - open-weight
 outputs:
   - name: DeepSeek-Prover

@@ -13,9 +13,8 @@ description: >
   regulations. Released in 7B and 33B sizes with AquilaChat instruction-tuned
   variants.
 tags:
-  - open-source
   - open-weight
-  - chinese
+  - nlp
 outputs:
   - name: Aquila
     type: model

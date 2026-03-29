@@ -13,7 +13,7 @@ description: >
   training and switching to large batches late stage is optimal, 
   substantially reducing data consumption without sacrificing performance.
 tags:
-  - scaling-laws
+  - scaling
   - efficiency
   - research
 paper:

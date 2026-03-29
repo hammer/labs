@@ -15,7 +15,6 @@ description: >
 tags:
   - video
   - generation
-  - diffusion
   - frontier
 outputs:
   - name: Kling 3.0 & 3.0 Omni

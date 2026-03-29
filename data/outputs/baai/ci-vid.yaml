@@ -20,7 +20,7 @@ description: >
   video data totals ~6 TB.
 tags:
   - dataset
-  - video-generation
+  - generation
   - multimodal
 related:
   - ursa

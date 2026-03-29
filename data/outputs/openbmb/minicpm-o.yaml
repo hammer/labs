@@ -20,7 +20,7 @@ description: >
   to achieve GPT-4o level across vision, speech, and streaming.
 tags:
   - multimodal
-  - speech
+  - audio
   - on-device
   - agentic
 model:

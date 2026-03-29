@@ -11,7 +11,7 @@ sources:
 description: >
   State-of-the-art open-source alternative to OpenAI's CLIP.
 tags:
-  - vlm
+  - multimodal
   - open-weight
   - embeddings
 library:

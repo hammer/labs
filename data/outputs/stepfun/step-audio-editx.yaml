@@ -16,7 +16,7 @@ description: >
 tags:
   - audio
   - editing
-  - reinforcement-learning
+  - training
 model:
   parameters: 3B
 notes: Technical report Nov 6, 2025. Model weights Nov 12, 2025.

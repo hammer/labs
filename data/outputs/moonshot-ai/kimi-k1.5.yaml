@@ -14,7 +14,7 @@ description: >
   RL with LLMs.
 tags:
   - reasoning
-  - reinforcement-learning
+  - training
 outputs:
   - name: Kimi k1.5 Model
     type: model

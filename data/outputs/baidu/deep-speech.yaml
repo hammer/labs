@@ -9,7 +9,6 @@ sources:
 description: >
   Landmark papers in end-to-end deep learning for speech recognition.
 tags:
-  - speech
   - audio
 paper:
   arxiv: "1412.5567"

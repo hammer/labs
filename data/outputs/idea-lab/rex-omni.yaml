@@ -19,7 +19,6 @@ description: >
   models like DINO and Grounding DINO in zero-shot settings.
 tags:
   - vision
-  - object-detection
   - multimodal
   - open-source
 outputs:

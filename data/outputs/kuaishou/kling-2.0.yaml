@@ -14,7 +14,6 @@ description: >
 tags:
   - video
   - generation
-  - diffusion
   - frontier
 outputs:
   - name: Kling 2.0/2.6

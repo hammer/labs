@@ -15,12 +15,10 @@ description: >
   increasingly capable spatial reasoning and temporal modeling, plus RoboBrain-Dex
   for bimanual dexterous manipulation.
 tags:
-  - embodied-ai
-  - robotics
+  - embodied
   - open-weight
   - multimodal
   - 3d-reasoning
-  - dexterous-manipulation
 outputs:
   - name: RoboBrain
     type: model

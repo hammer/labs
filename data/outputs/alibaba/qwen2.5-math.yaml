@@ -11,7 +11,6 @@ description: >
   Math-specialized model family. Includes the Qwen2.5-Math series (1.5B, 7B, 72B)
   which introduced Tool-Integrated Reasoning (TIR).
 tags:
-  - math
   - reasoning
   - open-weight
 outputs:

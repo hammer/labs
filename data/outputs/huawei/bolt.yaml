@@ -16,8 +16,7 @@ description: >
   with Caffe, ONNX, TFLite, and TensorFlow model conversion. Widely
   deployed across Huawei product lines.
 tags:
-  - inference
-  - mobile
   - efficiency
+  - mobile
   - deployment
   - open-source

@@ -16,7 +16,6 @@ description: >
 tags:
   - open-weight
   - reasoning
-  - math
   - technical-report
 outputs:
   - name: InternLM2

@@ -14,7 +14,7 @@ description: >
   Part of ByteDance's flagship Doubao series.
 tags:
   - moe
-  - long-context
+  - scaling
 model:
   architecture: moe
   parameters: 140B

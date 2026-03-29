@@ -17,7 +17,6 @@ description: >
 tags:
   - video
   - generation
-  - diffusion
   - open-weight
 outputs:
   - name: LongCat-Video

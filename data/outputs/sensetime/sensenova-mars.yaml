@@ -24,7 +24,7 @@ tags:
   - reasoning
   - agentic
   - open-weight
-  - search
+  - evaluation
 outputs:
   - name: SenseNova-MARS Models
     type: model

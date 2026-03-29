@@ -25,7 +25,7 @@ tags:
   - multimodal
   - generation
   - open-weight
-  - world-model
+  - embodied
 model:
   variants:
     - name: Emu3.5

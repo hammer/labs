@@ -11,6 +11,6 @@ sources:
 description: >
   Vision-language model specialized in understanding mobile UI/UX layouts.
 tags:
-  - vlm
+  - multimodal
   - mobile
   - on-device

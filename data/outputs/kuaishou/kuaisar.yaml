@@ -14,5 +14,5 @@ description: >
   Unified search and recommendation dataset containing genuine user behavior logs.
 tags:
   - recommendation
-  - search
+  - evaluation
   - benchmark

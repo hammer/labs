@@ -12,7 +12,7 @@ description: >
   training steps.
 tags:
   - reasoning
-  - reinforcement-learning
+  - training
   - efficiency
 paper:
   arxiv: "2504.14286"

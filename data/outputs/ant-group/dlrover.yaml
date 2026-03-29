@@ -14,7 +14,6 @@ description: >
 tags:
   - infrastructure
   - training
-  - distributed
 library:
   github: https://github.com/intelligent-machine-learning/dlrover
 notes: Date approximate.

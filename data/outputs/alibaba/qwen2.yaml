@@ -13,7 +13,7 @@ description: >
   72B, and the 57B-A14B MoE.
 tags:
   - open-weight
-  - multilingual
+  - nlp
   - moe
 outputs:
   - name: Qwen2

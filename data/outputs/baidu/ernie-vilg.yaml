@@ -12,7 +12,7 @@ description: >
 tags:
   - generation
   - multimodal
-  - chinese
+  - nlp
 model:
   architecture: dense
   parameters: 10B

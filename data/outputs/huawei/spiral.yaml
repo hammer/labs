@@ -20,9 +20,9 @@ description: >
   wav2vec 2.0 with 80% training cost reduction for BASE and 65% for LARGE
   models. Published at ICLR 2022.
 tags:
-  - speech
+  - audio
   - self-supervised
-  - pre-training
+  - training
   - open-source
 outputs:
   - type: model
