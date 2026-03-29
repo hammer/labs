@@ -1,0 +1,61 @@
+name: AgentCPM Series
+slug: agentcpm
+lab: openbmb
+date: "2025-06-01"
+sources:
+  - label: GitHub
+    url: https://github.com/OpenBMB/AgentCPM
+  - label: Website
+    url: https://agent.openbmb.org
+description: >
+  A series of high-performance, "edge-scale" agents (4B-8B) designed for 
+  long-horizon reasoning, deep research, and mobile GUI automation. AgentCPM 
+  demonstrated that compact models can rival much larger systems in complex 
+  agentic tasks through advanced reinforcement learning and search strategies.
+tags:
+  - agentic
+  - on-device
+  - efficiency
+  - research
+outputs:
+  - name: "AgentCPM-GUI: Reinforcement Fine-Tuning for Mobile Agents"
+    type: paper
+    date: "2025-06-01"
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2506.01391
+    description: >
+      Introduces mobile-use agents aligned via reinforcement fine-tuning (GRPO), 
+      optimizing for low-latency execution on mobile GUIs.
+    paper:
+      arxiv: "2506.01391"
+  - name: "AgentCPM-Explore: Long-Horizon Deep Exploration"
+    type: paper
+    date: "2026-02-06"
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2602.06485
+      - label: HuggingFace
+        url: https://huggingface.co/openbmb/AgentCPM-Explore
+    description: >
+      A 4B-scale agent capable of 100+ rounds of interaction, achieving 
+      frontier-level deep search performance by matching Claude-4.5-Sonnet 
+      on specific benchmarks.
+    paper:
+      arxiv: "2602.06485"
+  - name: "AgentCPM-Report: Open-Ended Deep Research"
+    type: paper
+    date: "2026-02-06"
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2602.06540
+      - label: HuggingFace
+        url: https://huggingface.co/openbmb/AgentCPM-Report
+    description: >
+      Introduces the "Writing As Reasoning Policy" (WARP) for autonomous 
+      long-form report generation, interleaving drafting and deep retrieval.
+    paper:
+      arxiv: "2602.06540"
+related:
+  - minicpm
+  - ultrarag
