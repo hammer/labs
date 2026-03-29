@@ -13,9 +13,16 @@ sources:
   - label: Announcement
     url: https://www.marktechpost.com/2025/01/15/minimax-text-01-and-minimax-vl-01-released-scalable-models-with-lightning-attention-456b-parameters-4b-token-contexts-and-state-of-the-art-accuracy/
 description: >
-  456B parameter MoE model series with a 4-million-token context window, built on
-  a novel Lightning Attention architecture. Includes both text-only (Text-01) and
-  vision-language (VL-01) variants.
+  A 456B parameter MoE model series featuring a 4-million-token context window
+  and the **Lightning Attention** architecture. This work is highly 
+  influential for its **Batch Size Scaling (BSS)** strategy, which optimizes 
+  training by aligning the batch size with the **Critical Batch Size (CBS)** 
+  derived from a power-law relationship with training loss. By starting small 
+  (16M tokens) and scaling to 128M tokens in discrete steps, MiniMax-01 
+  maximizes Model FLOPs Utilization (MFU) and training stability. This 
+  "fast catch-up" approach has become a 2026 industry standard, adopted by 
+  models like **Arcee Trinity Large** and mathematically validated in 
+  *Fast Catch-Up, Late Switching* (arXiv:2602.14208).
 tags:
   - moe
   - long-context
@@ -70,3 +77,7 @@ outputs:
       MiniMax models.
     paper:
       arxiv: "2501.08313"
+related:
+  - minimax-m2
+  - minimax-m2.5
+  - optimal-batch-size-scheduling

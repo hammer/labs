@@ -1,0 +1,21 @@
+name: AgentRefine
+slug: agentrefine
+lab: meituan
+type: paper
+date: "2025-01-03"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.01702
+description: >
+  An agent synthesis framework that enables models to learn from observations 
+  within trajectories to autonomously correct errors. Accepted to ICLR 2025, 
+  AgentRefine significantly improves agent generalization across diverse, 
+  held-out environments like SciWorld and AlfWorld.
+tags:
+  - agentic
+  - reinforcement-learning
+  - research
+paper:
+  arxiv: "2501.01702"
+related:
+  - wowservice

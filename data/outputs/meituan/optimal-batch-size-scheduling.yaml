@@ -1,0 +1,23 @@
+name: "Optimal Batch Size Scheduling via Functional Scaling Laws"
+slug: optimal-batch-size-scheduling
+lab: meituan
+type: paper
+date: "2026-02-15"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.14208
+description: >
+  Introduces a principled framework for Batch Size Scheduling (BSS) based on 
+  functional scaling laws. The paper uncovers the "fast catch-up" effect, 
+  showing that for hard tasks, maintaining small batch sizes for most of 
+  training and switching to large batches late stage is optimal, 
+  substantially reducing data consumption without sacrificing performance.
+tags:
+  - scaling-laws
+  - efficiency
+  - research
+paper:
+  arxiv: "2602.14208"
+related:
+  - longcat-next
+  - scaling-laws-part1

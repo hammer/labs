@@ -1,0 +1,20 @@
+name: "Unraveling the Mystery of Scaling Laws: Part I"
+slug: scaling-laws-part1
+lab: meituan
+type: paper
+date: "2024-03-11"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2403.06563
+description: >
+  A transparent, step-by-step guide to estimating the constant terms in 
+  scaling law formulas. By training small models (1M-60M parameters), the 
+  authors demonstrate how to accurately predict the performance and 
+  optimal training configurations for models up to 33B parameters.
+tags:
+  - scaling-laws
+  - research
+paper:
+  arxiv: "2403.06563"
+related:
+  - optimal-batch-size-scheduling

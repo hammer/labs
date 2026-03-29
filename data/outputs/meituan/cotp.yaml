@@ -1,0 +1,22 @@
+name: "Expanding Reasoning Potential (CoTP)"
+slug: cotp
+lab: meituan
+type: paper
+date: "2025-09-25"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.21124
+description: >
+  Introduces CoTP, a framework that selects high-value Chain-of-Thought (CoT) 
+  data by abstracting atomic reasoning patterns. Using only 10B tokens of 
+  CoTP data, the researchers improved an 85B MoE model by 9.58% on AIME 
+  benchmarks, demonstrating highly efficient reasoning enhancement during 
+  mid-training.
+tags:
+  - reasoning
+  - scaling
+  - research
+paper:
+  arxiv: "2509.21124"
+related:
+  - longcat-flash-thinking
