@@ -13,16 +13,17 @@ sources:
   - label: Announcement
     url: https://www.marktechpost.com/2025/01/15/minimax-text-01-and-minimax-vl-01-released-scalable-models-with-lightning-attention-456b-parameters-4b-token-contexts-and-state-of-the-art-accuracy/
 description: >
-  A 456B parameter MoE model series featuring a 4-million-token context window
-  and the **Lightning Attention** architecture. This work is highly 
-  influential for its **Batch Size Scaling (BSS)** strategy, which optimizes 
-  training by aligning the batch size with the **Critical Batch Size (CBS)** 
-  derived from a power-law relationship with training loss. By starting small 
-  (16M tokens) and scaling to 128M tokens in discrete steps, MiniMax-01 
-  maximizes Model FLOPs Utilization (MFU) and training stability. This 
-  "fast catch-up" approach has become a 2026 industry standard, adopted by 
-  models like **Arcee Trinity Large** and mathematically validated in 
-  *Fast Catch-Up, Late Switching* (arXiv:2602.14208).
+  <p>A 456B parameter MoE model series featuring a 4-million-token context window 
+  and the <strong>Lightning Attention</strong> architecture. This work is highly 
+  influential for its <strong>Batch Size Scaling (BSS)</strong> strategy, which 
+  optimizes training by aligning the batch size with the <strong>Critical Batch Size 
+  (CBS)</strong> derived from a power-law relationship with training loss. By starting 
+  small (16M tokens) and scaling to 128M tokens in discrete steps, MiniMax-01 
+  maximizes Model FLOPs Utilization (MFU) and training stability.</p>
+
+  <p>This "fast catch-up" approach has become a 2026 industry standard, adopted by 
+  models like <strong>Arcee Trinity Large</strong> and mathematically validated 
+  in <a href="/outputs/meituan/optimal-batch-size-scheduling">Fast Catch-Up, Late Switching</a>.</p>
 tags:
   - moe
   - long-context
