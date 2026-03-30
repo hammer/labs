@@ -1,50 +1,37 @@
-name: InternVL Series
+name: "InternVL: Scaling up Vision Foundation Models"
 slug: internvl
 lab: shanghai-ai-lab
+type: model
 date: 2023-12-21
+flagship: true
 sources:
-  - label: GitHub
-    url: https://github.com/OpenGVLab/InternVL
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2312.14238
+  - label: GitHub
+    url: https://github.com/OpenGVLab/InternVL
   - label: Project Page
     url: https://internvl.github.io/
   - label: HuggingFace
     url: https://huggingface.co/OpenGVLab/InternVL
 description: >
-  Pioneering open-source vision-language series rivaling GPT-4V. InternVL 3.5
-  (Aug 2025) introduced native vision-language-action capabilities.
+  Foundational vision-language model that scaled ViT to 6B parameters
+  (InternViT-6B) and aligned it with an LLM using web-scale image-text
+  data. Achieved SOTA on 32 visual-linguistic benchmarks. Published at
+  CVPR 2024 as Oral.
 tags:
   - multimodal
   - open-weight
-  - frontier
-  - scaling
-outputs:
-  - name: InternVL Series
-    type: model
-    sources:
-      - label: GitHub
-        url: https://github.com/OpenGVLab/InternVL
-      - label: HuggingFace
-        url: https://huggingface.co/OpenGVLab/InternVL
-    model:
-      variants:
-        - name: InternVL 1.0
-        - name: InternVL 1.5
-        - name: InternVL 2.0
-        - name: InternVL 2.5
-        - name: InternVL 3.5
-          notes: Aug 2025, native VLA capabilities
-    notes: First InternVL paper submitted Dec 21, 2023.
-  - name: "InternVL: Scaling up Vision Foundation Models"
-    type: paper
-    date: 2023-12-21
-    sources:
-      - label: Paper (arXiv)
-        url: https://arxiv.org/abs/2312.14238
-      - label: Project Page
-        url: https://internvl.github.io/
-    description: >
-      Foundational paper for the InternVL vision-language series.
-    paper:
-      arxiv: "2312.14238"
+  - vision
+  - research
+model:
+  architecture: dense
+  parameters: 6B
+paper:
+  arxiv: "2312.14238"
+  venue: CVPR 2024
+related:
+  - internvl-1.5
+  - internvl-2.0
+  - internvl-2.5
+  - internvl-3
+  - internvl-3.5

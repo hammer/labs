@@ -1,0 +1,43 @@
+name: InternVL 3.5
+slug: internvl-3.5
+lab: shanghai-ai-lab
+type: model
+date: 2025-08-25
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.18265
+  - label: GitHub
+    url: https://github.com/OpenGVLab/InternVL
+  - label: HuggingFace
+    url: https://huggingface.co/collections/OpenGVLab/internvl35
+description: >
+  Advances open-source multimodal models in versatility, reasoning, and
+  efficiency. Introduces Cascade Reinforcement Learning (offline + online
+  RL), Visual Resolution Router for dynamic token adjustment, and
+  Decoupled Vision-Language Deployment. Up to 16% performance gain and
+  4x inference speedup over InternVL3. Includes native vision-language-action
+  capabilities.
+tags:
+  - multimodal
+  - open-weight
+  - vision
+  - frontier
+  - reasoning
+  - moe
+model:
+  architecture: moe
+  variants:
+    - name: InternVL3_5-1B
+      parameters: 1B
+    - name: InternVL3_5-8B
+      parameters: 8B
+    - name: InternVL3_5-38B
+      parameters: 38B
+    - name: InternVL3_5-241B-A28B
+      parameters: 241B
+      active_parameters: 28B
+      notes: MoE architecture
+paper:
+  arxiv: "2508.18265"
+related:
+  - internvl-3

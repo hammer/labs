@@ -1,0 +1,39 @@
+name: InternVL3
+slug: internvl-3
+lab: shanghai-ai-lab
+type: model
+date: 2025-04-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.10479
+  - label: GitHub
+    url: https://github.com/OpenGVLab/InternVL
+  - label: HuggingFace
+    url: https://huggingface.co/collections/OpenGVLab/internvl3
+description: >
+  Introduces native joint multimodal pre-training, variable visual position
+  encoding, mixed preference optimization, and test-time scaling.
+  InternVL3-78B achieves 72.2 on MMMU, competitive with GPT-4o and
+  Claude 3.5 Sonnet.
+tags:
+  - multimodal
+  - open-weight
+  - vision
+  - frontier
+  - reasoning
+model:
+  architecture: dense
+  variants:
+    - name: InternVL3-1B
+      parameters: 1B
+    - name: InternVL3-8B
+      parameters: 8B
+    - name: InternVL3-38B
+      parameters: 38B
+    - name: InternVL3-78B
+      parameters: 78B
+paper:
+  arxiv: "2504.10479"
+related:
+  - internvl-2.5
+  - internvl-3.5

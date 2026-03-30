@@ -1,0 +1,35 @@
+name: InternVL 2.0
+slug: internvl-2.0
+lab: shanghai-ai-lab
+type: model
+date: 2024-07-02
+sources:
+  - label: Blog Post
+    url: https://internvl.github.io/blog/2024-07-02-InternVL-2.0/
+  - label: GitHub
+    url: https://github.com/OpenGVLab/InternVL
+  - label: HuggingFace
+    url: https://huggingface.co/OpenGVLab/InternVL2-8B
+description: >
+  First version to offer a full family of models from edge to frontier
+  (1B, 2B, 4B, 8B, 26B, 40B, 76B, 108B). No standalone paper; technical
+  details were later documented in the InternVL 2.5 paper.
+tags:
+  - multimodal
+  - open-weight
+  - vision
+  - scaling
+model:
+  architecture: dense
+  variants:
+    - name: InternVL2-1B
+      parameters: 1B
+    - name: InternVL2-8B
+      parameters: 8B
+    - name: InternVL2-26B
+      parameters: 26B
+    - name: InternVL2-108B
+      parameters: 108B
+related:
+  - internvl-1.5
+  - internvl-2.5

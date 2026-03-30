@@ -1,0 +1,29 @@
+name: InternVL 1.5
+slug: internvl-1.5
+lab: shanghai-ai-lab
+type: model
+date: 2024-04-25
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2404.16821
+  - label: GitHub
+    url: https://github.com/OpenGVLab/InternVL
+  - label: HuggingFace
+    url: https://huggingface.co/OpenGVLab/InternVL-Chat-V1-5
+description: >
+  Introduced dynamic high-resolution processing (up to 4K via 1-40 tiles
+  of 448x448), continuous learning for InternViT-6B, and high-quality
+  bilingual training data. SOTA on 8 of 18 benchmarks, closing the gap
+  to GPT-4V.
+tags:
+  - multimodal
+  - open-weight
+  - vision
+model:
+  architecture: dense
+  parameters: 26B
+paper:
+  arxiv: "2404.16821"
+related:
+  - internvl
+  - internvl-2.0
