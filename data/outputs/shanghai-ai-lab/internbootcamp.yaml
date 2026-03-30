@@ -1,0 +1,27 @@
+name: InternBootcamp
+slug: internbootcamp
+lab: shanghai-ai-lab
+type: library
+date: 2025-08-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.08636
+  - label: GitHub
+    url: https://github.com/InternLM/InternBootcamp
+description: >
+  Open-source framework of 1,000+ domain-diverse verifiable task
+  environments for LLM reasoning research. Covers 8 domains including
+  algorithms, cryptography, science, logical reasoning, and puzzles.
+  Demonstrates "Task Scaling" — that broadening the variety of
+  verifiable reasoning tasks during RL training significantly enhances
+  both performance and efficiency. A 32B model trained with
+  InternBootcamp achieved SOTA on Bootcamp-EVAL.
+tags:
+  - reasoning
+  - reinforcement-learning
+  - evaluation
+  - open-source
+library:
+  github: https://github.com/InternLM/InternBootcamp
+related:
+  - intern-s1
