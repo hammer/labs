@@ -1,0 +1,23 @@
+name: POLAR
+slug: polar
+lab: shanghai-ai-lab
+type: paper
+date: 2025-07-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.05197
+  - label: GitHub
+    url: https://github.com/InternLM/POLAR
+description: >
+  Policy Discriminative Learning (POLAR) — a pre-training approach that
+  frames reward modeling as distinguishing between different policies.
+  Achieves significant improvements in preference accuracy across tasks
+  with predictable compute-performance scaling laws.
+tags:
+  - reinforcement-learning
+  - reasoning
+  - research
+paper:
+  arxiv: "2507.05197"
+library:
+  github: https://github.com/InternLM/POLAR
