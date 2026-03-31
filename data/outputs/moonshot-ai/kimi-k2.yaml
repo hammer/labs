@@ -14,9 +14,10 @@ sources:
     url: https://huggingface.co/moonshotai/Kimi-K2-Instruct
 description: >
   Landmark 1-trillion parameter MoE model family (32B active) released as
-  open-weight. 384 experts with 8 activated per token. Focused on agentic
-  intelligence and tool use. Evolved through Thinking and Instruct-0905
-  variants.
+  open-weight. 384 experts with 8 activated per token. Pre-trained on 15.5T
+  tokens on H800 GPUs using the MuonClip optimizer, with context extended
+  from 4K to 128K via YaRN. Focused on agentic intelligence and tool use.
+  Evolved through Thinking and Instruct-0905 variants.
 tags:
   - moe
   - frontier
