@@ -9,6 +9,8 @@ sources:
     url: https://www.minimax.io/news/minimax-m27-en
   - label: API Docs
     url: https://platform.minimax.io/docs/release-notes/models
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/articles/minimax-m2-7-everything-you-need-to-know
 description: >
   Current flagship "Co-worker Agent" focused on AI self-evolution. Can
   independently build and stabilize agent systems. 56.22% on SWE-Pro.

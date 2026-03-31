@@ -115,6 +115,10 @@ news:
     url: https://www.bloomberg.com/news/articles/2026-03-31/zhipu-s-losses-climb-60-after-chinese-ai-rivalry-worsens
     source: Bloomberg
     date: 2026-03-31
+  - title: "Zhipu AI Breaks US Chip Reliance With First Major Model Trained on Huawei Stack"
+    url: https://www.scmp.com/tech/tech-war/article/3339869/zhipu-ai-breaks-us-chip-reliance-first-major-model-trained-huawei-stack
+    source: SCMP
+    date: 2025-10-14
 tags:
   - frontier
   - open-weight

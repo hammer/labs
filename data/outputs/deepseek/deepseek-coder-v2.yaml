@@ -8,8 +8,20 @@ sources:
   - label: HuggingFace
     url: https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Instruct
 description: >
-  First open-source MoE code model to beat GPT-4 Turbo on coding benchmarks,
-  supporting 338+ programming languages.
+  <p>First open-source MoE code model to beat GPT-4 Turbo on coding benchmarks.
+  The 236B model (21B active) achieved 90.2% on HumanEval, 12.7% on SWE-Bench
+  (first open-source model above 10%), and 75.7% on MATH. A 16B variant (2.4B
+  active) was also released, both supporting 128K context.</p>
+
+  <p>A landmark in training data scale: the model was continued-pretrained on
+  <strong>10.2 trillion tokens</strong> (6T new + 4.2T from DeepSeek-V2), with
+  60% source code, 10% math, and 30% natural language. The code corpus alone
+  comprised 1,170B tokens spanning <strong>338 programming languages</strong>
+  &mdash; 821B from GitHub repos, 185B from code-related text (issues, markdown),
+  70B from CommonCrawl code pages, and 94B high-quality source code collected via
+  iterative seed-corpus expansion. The math corpus doubled DeepSeekMath to 221B
+  tokens. Data curation used a fastText classifier with iterative domain discovery
+  across CommonCrawl, running three rounds to surface code and math web pages.</p>
 tags:
   - coding
   - moe

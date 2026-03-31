@@ -16,6 +16,8 @@ sources:
     url: https://venturebeat.com/technology/z-ai-debuts-faster-cheaper-glm-5-turbo-model-for-agents-and-claws-but-its
   - label: API Docs
     url: https://docs.z.ai
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/articles/glm-5-everything-you-need-to-know
 description: >
   Most powerful Z.ai model family. GLM-5 is 744B total params (44B active) via
   MoE with 256 experts. Hybrid Attention and Multi-Token Prediction. First
