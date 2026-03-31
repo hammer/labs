@@ -1,0 +1,23 @@
+name: TMA-Adaptive FP8 Grouped GEMM
+slug: tma-adaptive-fp8
+lab: shanghai-ai-lab
+type: paper
+date: 2025-08-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.16584
+  - label: GitHub
+    url: https://github.com/sukoncon/TMA-Adaptive-FP8-Grouped-GEMM
+description: >
+  Eliminates padding requirements in FP8 grouped GEMM on NVIDIA Hopper
+  GPUs using a TMA descriptor pool approach. Achieves 1.7-20.4% speedup
+  with up to 23.8% memory reduction compared to padded implementations,
+  improving efficiency for MoE training and inference.
+tags:
+  - infrastructure
+  - efficiency
+  - research
+paper:
+  arxiv: "2508.16584"
+library:
+  github: https://github.com/sukoncon/TMA-Adaptive-FP8-Grouped-GEMM
