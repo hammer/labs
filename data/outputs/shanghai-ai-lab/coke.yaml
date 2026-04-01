@@ -1,0 +1,33 @@
+name: "CoKE: Context as the Key to Biomolecular Understanding"
+slug: coke
+lab: shanghai-ai-lab
+type: paper
+date: 2025-10-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.23127
+  - label: GitHub
+    url: https://github.com/opendatalab-raiser/CoKE
+description: >
+  <p>Identifies a fundamental <strong>tokenization dilemma</strong> in Scientific
+  LLMs processing biomolecular sequences: sequence-as-language (e.g., NatureLM,
+  Intern-S1) atomizes sequences into disconnected tokens that destroy functional
+  motifs, while sequence-as-modality approaches (e.g., Evolla) lose fine-grained
+  information through Q-Former alignment bottlenecks &mdash; even failing to
+  preserve sensitivity to single point mutations.</p>
+
+  <p>Proposes a <strong>context-driven paradigm (CoKE)</strong>: instead of feeding
+  raw sequences to LLMs, run established bioinformatics tools (InterProScan,
+  BLASTp, ProTrek) to produce structured textual descriptions of protein domains,
+  functions, and annotations. Context-only input consistently outperforms raw
+  sequences across every model tested &mdash; specialized Sci-LLMs and general-purpose
+  models alike. Gemini 2.5 Pro with context-only (87.2%) outperforms every
+  specialized Sci-LLM, and adding raw sequences actually degrades performance.
+  Reframes the field: LLMs should reason over structured biological knowledge
+  extracted by traditional tools, not learn biology from raw syntax.</p>
+tags:
+  - science
+  - reasoning
+  - research
+paper:
+  arxiv: "2510.23127"
