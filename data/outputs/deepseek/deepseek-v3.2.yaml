@@ -10,6 +10,8 @@ sources:
     url: https://api-docs.deepseek.com/news/news251201
   - label: HuggingFace
     url: https://huggingface.co/deepseek-ai/DeepSeek-V3.2
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/deepseek-v3-2
 description: >
   V3.2 family introducing DeepSeek Sparse Attention for long-context efficiency.
   V3.2-Speciale achieves gold-medal performance on IMO and IOI 2025, surpassing GPT-5.

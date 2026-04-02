@@ -9,6 +9,8 @@ sources:
     url: https://www.stepfun.com
   - label: Announcement
     url: https://www.marktechpost.com/2024/11/20/chinese-agi-startup-stepfun-developed-step-2-a-new-trillion-parameter-moe-architecture-model-ranking-5th-on-livebench/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/step-2-16k
 description: >
   First trillion-parameter MoE model from a Chinese startup. Ranks among
   the top globally for instruction-following and reasoning.

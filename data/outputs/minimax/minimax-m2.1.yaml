@@ -11,6 +11,8 @@ sources:
     url: https://huggingface.co/MiniMaxAI/MiniMax-M2.1
   - label: GitHub
     url: https://github.com/MiniMax-AI/MiniMax-M2.1
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/minimax-m2-1
 description: >
   Enhanced for multi-language programming (Rust, Java, Go) and complex
   agentic scaffolding. Open weights (229B total).

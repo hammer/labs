@@ -8,6 +8,8 @@ sources:
     url: https://qwenlm.github.io/blog/qwen2.5/
   - label: GitHub
     url: https://github.com/qwenlm/qwen2.5
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/qwen2-5-72b-instruct
 description: >
   The "18-trillion token" series. Released sizes: 0.5B, 1.5B, 3B, 7B, 14B,
   32B, and 72B, plus a proprietary MoE model (Qwen2.5-Max).

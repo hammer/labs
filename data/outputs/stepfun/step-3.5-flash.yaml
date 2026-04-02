@@ -12,6 +12,8 @@ sources:
     url: https://arxiv.org/abs/2602.10604
   - label: GitHub
     url: https://github.com/stepfun-ai/Step-3.5-Flash
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/step-3-5-flash
 description: >
   Most advanced agentic model. 196B MoE (11B active) using MTP-3 and hybrid
   attention. Optimized for speed (350 tok/s) with 256k context. Step-3.5-Flash

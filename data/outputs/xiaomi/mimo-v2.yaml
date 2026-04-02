@@ -10,6 +10,8 @@ sources:
     url: https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2601.02780
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/mimo-v2-0206
 description: >
   309B MoE model (15B active) optimized for extreme inference speed (150
   tokens/sec) and low-cost API access. Introduces a hybrid attention

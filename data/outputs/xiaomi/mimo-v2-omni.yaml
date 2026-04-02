@@ -6,6 +6,8 @@ date: 2026-03-18
 sources:
   - label: Website
     url: https://mimo.xiaomi.com/mimo-v2-omni
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/mimo-v2-omni
 description: >
   Xiaomi's first fully omni-modal foundation model. Native multimodal
   architecture that can "see, hear, and act," designed to power Xiaomi's

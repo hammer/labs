@@ -8,6 +8,8 @@ sources:
     url: https://qwen.ai/blog?id=qwen3.5
   - label: GitHub
     url: https://github.com/QwenLM/Qwen3.5
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/qwen3-5-397b-a17b
 description: >
   Fourth generation of the Qwen model family. Qwen3.5-397B-A17B native VLM built
   on Qwen3-Next architecture. 201 languages and dialects supported. 1M context window.

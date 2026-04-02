@@ -7,6 +7,8 @@ sources:
     url: https://arxiv.org/abs/2601.21204
   - label: HuggingFace
     url: https://huggingface.co/meituan-longcat/LongCat-Flash-Lite
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/longcat-flash-lite
 description: >
   Smaller, cost-efficient LongCat variant based on the "Scaling Embeddings
   Outperforms Scaling Experts" research. Designed for high-throughput

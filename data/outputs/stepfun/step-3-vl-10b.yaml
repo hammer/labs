@@ -9,6 +9,8 @@ sources:
     url: https://github.com/stepfun-ai/Step3-VL-10B
   - label: Technical Report
     url: https://arxiv.org/abs/2601.09668
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/step3-vl-10b
 description: >
   "Compact giant" outperforming models 20x its size (including GPT-4o on
   certain benchmarks) via fully unfrozen perception-decoder training.

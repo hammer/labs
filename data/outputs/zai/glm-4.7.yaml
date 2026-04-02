@@ -9,6 +9,8 @@ sources:
     url: https://www.businesswire.com/news/home/20251223393714/en/Z.ai-Open-Sources-GLM-4.7-a-New-Generation-Large-Language-Model-Built-for-Real-Development-Workflows
   - label: API Docs
     url: https://docs.z.ai
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/glm-4-7
 description: >
   Optimized for long-horizon planning and reducing hallucination.
 tags:

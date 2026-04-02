@@ -9,6 +9,8 @@ sources:
     url: https://api-docs.deepseek.com/news/news250821
   - label: V3.1-Terminus Announcement
     url: https://api-docs.deepseek.com/news/news250922
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/deepseek-v3-1
 description: >
   V3.1 released 2025-08-21. V3.1-Terminus (max reasoning variant) released 2025-09-22.
 tags:

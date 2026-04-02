@@ -7,6 +7,8 @@ sources:
     url: https://qwenlm.github.io/blog/qwen3-coder/
   - label: GitHub
     url: https://github.com/QwenLM/Qwen3-Coder
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/qwen3-coder-30b-a3b-instruct
 description: >
   Third-generation coding-specialized model family including Qwen3-Coder-480B
   and Qwen3-Coder-Next.

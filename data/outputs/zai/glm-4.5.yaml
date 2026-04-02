@@ -8,6 +8,8 @@ sources:
     url: https://www.cnbc.com/2025/07/28/chinas-latest-ai-model-claims-to-be-even-cheaper-to-use-than-deepseek.html
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2508.06471
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/glm-4-5
 description: >
   First "Z.ai" branded release. 355B Mixture-of-Experts model designed for
   Agentic Engineering. Claimed to be cheaper to use than DeepSeek.

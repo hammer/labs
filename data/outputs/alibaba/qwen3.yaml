@@ -8,6 +8,8 @@ sources:
     url: https://qwenlm.github.io/blog/qwen3/
   - label: GitHub
     url: https://github.com/QwenLM/Qwen3
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct-reasoning
 description: >
   Third generation of the Qwen model family. Introduced a massive 36-trillion
   token pretraining dataset. Includes dense, MoE, multimodal, speech, and

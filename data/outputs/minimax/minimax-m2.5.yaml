@@ -11,6 +11,8 @@ sources:
     url: https://huggingface.co/MiniMaxAI/MiniMax-M2.5
   - label: GitHub
     url: https://github.com/MiniMax-AI/MiniMax-M2.5
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/minimax-m2-5
 description: >
   RL-trained on 200K+ environments, achieving 100 tok/s and 80.2% on
   SWE-Bench Verified. SOTA in office productivity (Word/Excel automation)

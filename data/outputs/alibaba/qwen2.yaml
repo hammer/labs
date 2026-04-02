@@ -8,6 +8,8 @@ sources:
     url: https://qwenlm.github.io/blog/qwen2/
   - label: GitHub
     url: https://github.com/QwenLM/Qwen2
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/qwen2-72b-instruct
 description: >
   Significantly improved multilingual capabilities. Sizes: 0.5B, 1.5B, 7B,
   72B, and the 57B-A14B MoE.

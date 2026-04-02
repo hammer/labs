@@ -7,6 +7,8 @@ sources:
     url: https://qwenlm.github.io/blog/qwen2.5-coder/
   - label: GitHub
     url: https://github.com/QwenLM/Qwen2.5-Coder
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/qwen2-5-coder-32b-instruct
 description: >
   Coding-specialized model family. Code-specific models (0.5B-32B) pre-trained
   on 5.5T tokens.

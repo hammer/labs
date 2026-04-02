@@ -8,6 +8,8 @@ sources:
     url: https://api-docs.deepseek.com/news/news1226
   - label: V3-0324 update
     url: https://api-docs.deepseek.com/news/news250325
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/deepseek-v3
 description: >
   Frontier 671B MoE model with Multi-Token Prediction and FP8 mixed-precision
   training. V3-0324 update released 2025-03-24. Accompanied by a technical report

@@ -13,6 +13,8 @@ sources:
     url: https://api-docs.deepseek.com/news/news250528
   - label: HuggingFace
     url: https://huggingface.co/deepseek-ai/DeepSeek-R1
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/deepseek-r1
 description: >
   Incentivizing reasoning capability in LLMs via reinforcement learning.
   R1-Lite-Preview released 2024-11-20. Full R1 paper 2025-01-20.

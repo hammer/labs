@@ -10,6 +10,8 @@ sources:
     url: https://huggingface.co/deepseek-ai/DeepSeek-V2
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2405.04434
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/deepseek-v2
 description: >
   Massive 236B MoE model (21B active) that introduced Multi-head Latent
   Attention (MLA). Accompanied by a technical report.

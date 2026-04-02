@@ -7,6 +7,8 @@ sources:
     url: https://github.com/deepseek-ai/DeepSeek-Coder-V2
   - label: HuggingFace
     url: https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Instruct
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/deepseek-coder-v2
 description: >
   <p>First open-source MoE code model to beat GPT-4 Turbo on coding benchmarks.
   The 236B model (21B active) achieved 90.2% on HumanEval, 12.7% on SWE-Bench
