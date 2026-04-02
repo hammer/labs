@@ -1,0 +1,34 @@
+name: Mistral Small 4
+slug: mistral-small-4
+lab: mistral
+type: model
+date: 2026-03-16
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/mistralai/Mistral-Small-4-119B-2603
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/mistral-small-4-non-reasoning
+  - label: OpenRouter
+    url: https://openrouter.ai/mistralai/mistral-small
+description: >
+  <p>119B total / 6.5B active MoE (128 experts, top-4 routing). First
+  Mistral model to unify instruct, reasoning, multimodal, and agentic
+  coding in one architecture. 256K context. 3x throughput vs Mistral
+  Small 3 with 40% latency reduction. Configurable reasoning effort.</p>
+
+  <p>AA Intelligence Index: 19 (non-reasoning, #6/38). Apache 2.0.</p>
+tags:
+  - moe
+  - open-weight
+  - reasoning
+  - multimodal
+  - agentic
+model:
+  architecture: moe
+  parameters: 119B
+  active_parameters: 6.5B
+  context_window: 256000
+  intelligence_index: 19
+related:
+  - mistral-large-3

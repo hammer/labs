@@ -1,0 +1,22 @@
+name: Voxtral
+slug: voxtral
+lab: mistral
+type: model
+date: 2025-07-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.13264
+  - label: HuggingFace (Mini)
+    url: https://huggingface.co/mistralai/Voxtral-Mini-3B-2507
+  - label: HuggingFace (TTS)
+    url: https://huggingface.co/mistralai/Voxtral-4B-TTS-2603
+description: >
+  Speech model family. Voxtral Mini (3B) and Small (24B) handle
+  long-form audio understanding (30-40 minutes). Voxtral TTS (4B)
+  adds zero-shot voice cloning. Natively multilingual. Apache 2.0.
+tags:
+  - audio
+  - multimodal
+  - open-weight
+paper:
+  arxiv: "2507.13264"

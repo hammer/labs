@@ -1,0 +1,34 @@
+name: Mixtral 8x7B
+slug: mixtral-8x7b
+lab: mistral
+type: model
+date: 2023-12-11
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2401.04088
+  - label: HuggingFace
+    url: https://huggingface.co/mistralai/Mixtral-8x7B-v0.1
+description: >
+  <p>Popularized Sparse Mixture-of-Experts for open-weight models. 46.7B
+  total / 12.9B active per token, with 8 experts per layer and top-2
+  routing. 32K context.</p>
+
+  <p>Outperformed or matched Llama 2 70B and GPT-3.5 on all benchmarks.
+  MMLU: 70.6%. Vastly superior on math, code, and multilingual tasks.
+  Apache 2.0. Demonstrated that MoE could deliver frontier-class quality
+  at a fraction of the inference cost.</p>
+tags:
+  - moe
+  - open-weight
+  - frontier
+model:
+  architecture: moe
+  parameters: 46.7B
+  active_parameters: 12.9B
+  context_window: 32000
+paper:
+  arxiv: "2401.04088"
+related:
+  - mistral-7b
+  - mixtral-8x22b

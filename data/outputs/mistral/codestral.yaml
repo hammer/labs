@@ -1,0 +1,23 @@
+name: Codestral
+slug: codestral
+lab: mistral
+type: model
+date: 2024-05-29
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/mistralai/Codestral-22B-v0.1
+description: >
+  22B code-specialized model supporting 80+ programming languages with
+  fill-in-the-middle (FIM). 32K context. Strong on RepoBench long-range
+  code generation.
+tags:
+  - coding
+  - open-weight
+model:
+  architecture: dense
+  parameters: 22B
+  context_window: 32000
+related:
+  - codestral-mamba
+  - devstral

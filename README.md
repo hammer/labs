@@ -6,13 +6,15 @@ A data-driven tracker of Asia's AI research ecosystem: labs, models, papers, and
 
 ## Overview
 
-Tracks **26 AI labs** and **680+ research outputs** across the Asian AI landscape, from trillion-parameter frontier models to influential open-source libraries. Each lab has a profile page with description, key people, news, and a chronological list of outputs. Each output page links to papers, code, HuggingFace models, and external benchmarks.
+Tracks **27 AI labs** and **700+ research outputs** across the global AI landscape, from trillion-parameter frontier models to influential open-source libraries. Each lab has a profile page with description, key people, news, and a chronological list of outputs. Each output page links to papers, code, HuggingFace models, and external benchmarks.
 
 The home page provides a sortable table with columns for region (country flag), lab type, founding year, IPO status, valuation, largest model scale (by parameter count), top intelligence score ([Artificial Analysis Index](https://artificialanalysis.ai/)), and total output count.
 
 ## Labs Tracked
 
 **China (22):** Alibaba, Ant Group, BAAI, Baichuan, Baidu, ByteDance Seed, DeepSeek, Huawei, IDEA Lab, Inspur, Kuaishou, Meituan, MiniMax, Moonshot AI, OpenBMB, PCL, SenseTime, Shanghai AI Lab, StepFun, Tencent, Xiaomi, Z.ai
+
+**France (1):** Mistral
 
 **Korea (4):** LG, Naver, SK Telecom, Upstage
 

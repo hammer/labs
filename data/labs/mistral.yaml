@@ -1,0 +1,109 @@
+name: Mistral
+slug: mistral
+url: https://mistral.ai
+wikipedia: https://en.wikipedia.org/wiki/Mistral_AI
+huggingface: https://huggingface.co/mistralai
+github: https://github.com/mistralai
+artificialanalysis: https://artificialanalysis.ai/providers/mistral
+openrouter: https://openrouter.ai/mistralai
+region: france
+founded: "2023"
+type: startup
+valuation:
+  amount: "$14B"
+  type: private
+  date: "2025-09"
+description: >
+  <p><a href="https://en.wikipedia.org/wiki/Mistral_AI">Mistral AI</a> is a
+  French AI company founded in April 2023 by three
+  <a href="https://en.wikipedia.org/wiki/%C3%89cole_Polytechnique">Ecole
+  Polytechnique</a> alumni: <strong>Arthur Mensch</strong> (CEO, ex-Google
+  DeepMind), <strong>Guillaume Lample</strong> (Chief Scientist, ex-Meta FAIR),
+  and <strong>Timothee Lacroix</strong> (CTO, ex-Meta FAIR, contributed to
+  LLaMA). With $3B+ raised across five equity rounds (seed through Series C)
+  and valued at ~$14B, Mistral is Europe's leading AI lab. Revenue surged from
+  ~$20M ARR in January 2025 to ~$400M ARR by January 2026.</p>
+
+  <p>Mistral pioneered efficient open-weight models:
+  <a href="https://arxiv.org/abs/2310.06825">Mistral 7B</a> (Sep 2023)
+  introduced Sliding Window Attention and beat Llama 2 13B;
+  <a href="https://arxiv.org/abs/2401.04088">Mixtral 8x7B</a> (Dec 2023)
+  popularized Sparse MoE for open models; Mixtral 8x22B scaled to 141B/39B
+  active. The current flagship
+  <strong>Mistral Large 3</strong> (Dec 2025, 675B/41B active MoE, Apache 2.0)
+  competes with frontier models across reasoning, coding, and multilingual
+  tasks. <strong>Mistral Small 4</strong> (Mar 2026, 119B/6.5B active MoE)
+  unifies instruct, reasoning, multimodal, and agentic coding in one model.</p>
+
+  <p>Beyond LLMs, Mistral has built a full product ecosystem:
+  <strong><a href="https://chat.mistral.ai">Le Chat</a></strong> (consumer AI
+  assistant), <strong>Codestral</strong> (code-specialized models including the
+  Mamba2-based Codestral Mamba),
+  <strong><a href="https://arxiv.org/abs/2410.07073">Pixtral</a></strong>
+  (vision-language models), <strong>Voxtral</strong> (speech understanding and
+  TTS), <strong><a href="https://arxiv.org/abs/2506.10910">Magistral</a></strong>
+  (pure RL reasoning), <strong>Mistral Saba</strong> (Arabic/South Asian
+  languages), and <strong>Devstral</strong> (agentic coding, 72.2% SWE-Bench
+  Verified). Mistral is building a 13,800 GB300 GPU data center near Paris
+  ($830M debt financing, Mar 2026) and holds defense and enterprise contracts
+  including with the French military and CMA CGM.</p>
+people:
+  - name: Arthur Mensch
+    url: https://en.wikipedia.org/wiki/Arthur_Mensch
+    role: Co-founder & CEO
+    formerly: Google DeepMind (Paris); PhD ENS
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=F8riAN8AAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Arthur_Mensch1
+  - name: Guillaume Lample
+    role: Co-founder & Chief Scientist
+    formerly: Meta FAIR; PhD Carnegie Mellon / UPMC
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=H7sVDmIAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Guillaume_Lample1
+  - name: Timothee Lacroix
+    role: Co-founder & CTO
+    formerly: Meta FAIR (LLaMA contributor); PhD Ecole des Ponts
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=tZGS6dIAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Timothee_Lacroix1
+  - name: Albert Q. Jiang
+    role: Research Scientist (Reasoning, lead author Mistral 7B & Mixtral)
+    formerly: University of Cambridge (PhD)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Fe_RBHMAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Albert_Q._Jiang1
+  - name: Devendra Singh Chaplot
+    role: Former Founding Team (departed ~2025; now at xAI)
+    formerly: Meta FAIR; Carnegie Mellon (PhD)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=1MSpdmQAAAAJ
+news:
+  - title: "Mistral AI Raises $830M in Debt to Set Up a Data Center Near Paris"
+    url: https://techcrunch.com/2026/03/30/mistral-ai-raises-830m-in-debt-to-set-up-a-data-center-near-paris/
+    source: TechCrunch
+    date: 2026-03-30
+  - title: "Mistral AI Surges Revenue 20-Fold to Over $400 Million ARR"
+    url: https://mlq.ai/news/mistral-ai-surges-revenue-20-fold-to-over-400-million-arr-amid-europes-ai-push/
+    source: MLQ
+    date: 2026-01-27
+  - title: "Mistral AI Raises EUR 2B at EUR 12B Valuation"
+    url: https://mistral.ai/news/mistral-ai-raises-1-7-b-to-accelerate-technological-progress-with-ai
+    source: Mistral AI
+    date: 2025-09-01
+tags:
+  - frontier
+  - open-weight
+  - moe
+  - multimodal
+  - reasoning
+  - coding

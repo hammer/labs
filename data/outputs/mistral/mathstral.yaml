@@ -1,0 +1,18 @@
+name: Mathstral 7B
+slug: mathstral
+lab: mistral
+type: model
+date: 2024-07-01
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/mistralai/Mathstral-7B-v0.1
+description: >
+  7B math-specialized model based on Mistral 7B. MATH: 56.6% (single
+  pass), 68.37% (majority voting), 74.59% (with reward model among 64
+  candidates). Apache 2.0.
+tags:
+  - reasoning
+  - open-weight
+model:
+  architecture: dense
+  parameters: 7B

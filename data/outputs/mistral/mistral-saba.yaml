@@ -1,0 +1,19 @@
+name: Mistral Saba
+slug: mistral-saba
+lab: mistral
+type: model
+date: 2025-02-17
+sources:
+  - label: OpenRouter
+    url: https://openrouter.ai/mistralai/mistral-saba
+description: >
+  24B regional language model specialized for Arabic and South Asian
+  languages (including Tamil and other South Indian languages). More
+  accurate than models 5x its size for regional language tasks. First
+  regional model from Mistral.
+tags:
+  - multilingual
+model:
+  architecture: dense
+  parameters: 24B
+  context_window: 32000

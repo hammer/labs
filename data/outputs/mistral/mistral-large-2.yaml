@@ -1,0 +1,22 @@
+name: Mistral Large 2
+slug: mistral-large-2
+lab: mistral
+type: model
+date: 2024-07-24
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/mistralai/Mistral-Large-Instruct-2407
+description: >
+  123B dense model with 128K context. Performs on par with GPT-4o,
+  Claude 3 Opus, and Llama 3 405B. MMLU: 84.0%. Supports 80+
+  programming languages and dozens of natural languages.
+tags:
+  - open-weight
+  - frontier
+model:
+  architecture: dense
+  parameters: 123B
+  context_window: 128000
+related:
+  - mistral-large-3

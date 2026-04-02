@@ -1,0 +1,30 @@
+name: Magistral
+slug: magistral
+lab: mistral
+type: model
+date: 2025-06-12
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.10910
+  - label: HuggingFace (Small)
+    url: https://huggingface.co/mistralai/Magistral-Small-2506
+  - label: OpenRouter
+    url: https://openrouter.ai/mistralai/magistral-medium
+description: >
+  <p>Reasoning model family trained with <strong>pure reinforcement
+  learning</strong> — no distillation from external reasoning models.
+  ~50% boost in AIME-24 (pass@1) over the Mistral Medium 3 base
+  checkpoint.</p>
+
+  <p>RL on text maintains multimodal understanding, instruction
+  following, and function calling. Magistral Small (24B, Apache 2.0)
+  and Magistral Medium (proprietary).</p>
+tags:
+  - reasoning
+  - open-weight
+model:
+  architecture: dense
+  intelligence_index: 27
+paper:
+  arxiv: "2506.10910"

@@ -1,0 +1,24 @@
+name: Mixtral 8x22B
+slug: mixtral-8x22b
+lab: mistral
+type: model
+date: 2024-04-17
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/mistralai/Mixtral-8x22B-v0.1
+description: >
+  Scaled MoE architecture to 141B total / 39B active per token (8
+  experts, top-2 routing). 64K context. MMLU: 77.3%. Outperforms
+  Command R+ and Llama 2 70B. Apache 2.0.
+tags:
+  - moe
+  - open-weight
+  - frontier
+model:
+  architecture: moe
+  parameters: 141B
+  active_parameters: 39B
+  context_window: 64000
+related:
+  - mixtral-8x7b

@@ -1,0 +1,43 @@
+name: Devstral
+slug: devstral
+lab: mistral
+date: 2025-05-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.25193
+  - label: OpenRouter
+    url: https://openrouter.ai/mistralai/devstral-small
+description: >
+  Agentic coding model family. Devstral 2 (123B, Dec 2025) achieves
+  72.2% SWE-Bench Verified. Devstral Small 2 (24B) achieves 68.0%.
+  Runs on single RTX 4090. Collaboration with All Hands AI.
+tags:
+  - coding
+  - agentic
+  - open-weight
+outputs:
+  - name: Devstral (24B)
+    type: model
+    date: 2025-05-21
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2509.25193
+    model:
+      architecture: dense
+      parameters: 24B
+      context_window: 128000
+    paper:
+      arxiv: "2509.25193"
+  - name: Devstral 2 (123B)
+    type: model
+    date: 2025-12-09
+    sources:
+      - label: OpenRouter
+        url: https://openrouter.ai/mistralai/devstral
+    description: >
+      72.2% SWE-Bench Verified. 256K context.
+    model:
+      architecture: dense
+      parameters: 123B
+      context_window: 256000
+      intelligence_index: 22

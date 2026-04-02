@@ -1,0 +1,22 @@
+name: Codestral Mamba
+slug: codestral-mamba
+lab: mistral
+type: model
+date: 2024-07-16
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/mistralai/Mamba-Codestral-7B-v0.1
+description: >
+  7.3B code model using Mamba2 state-space architecture (NOT a
+  transformer). Linear-time inference with theoretically unlimited
+  context (tested to 256K tokens). Co-developed with Mamba's original
+  authors. Apache 2.0.
+tags:
+  - coding
+  - open-weight
+  - architecture
+model:
+  architecture: dense
+  parameters: 7.3B
+related:
+  - codestral

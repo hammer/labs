@@ -1,0 +1,34 @@
+name: Mistral Large 3
+slug: mistral-large-3
+lab: mistral
+type: model
+date: 2025-12-02
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/mistral-large-3
+  - label: OpenRouter
+    url: https://openrouter.ai/mistralai/mistral-large
+description: >
+  <p>Mistral's largest model. 675B total / 41B active MoE with granular
+  mixture-of-experts architecture, plus 2.5B vision encoder for native
+  multimodal. 256K context. Trained on 3,000 H200 GPUs.</p>
+
+  <p>MMLU-Pro: 73.11%, MATH-500: 93.60%. Competitive with frontier
+  models across reasoning, coding, and multilingual tasks. Apache 2.0.</p>
+tags:
+  - moe
+  - open-weight
+  - frontier
+  - multimodal
+model:
+  architecture: moe
+  parameters: 675B
+  active_parameters: 41B
+  context_window: 256000
+  intelligence_index: 23
+related:
+  - mistral-large-2
+  - mistral-small-4

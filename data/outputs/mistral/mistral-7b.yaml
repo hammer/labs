@@ -1,0 +1,34 @@
+name: Mistral 7B
+slug: mistral-7b
+lab: mistral
+type: model
+date: 2023-09-27
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2310.06825
+  - label: HuggingFace
+    url: https://huggingface.co/mistralai/Mistral-7B-v0.1
+  - label: GitHub
+    url: https://github.com/mistralai/mistral-inference
+description: >
+  <p>Mistral's debut model and a landmark in efficient open-weight LLMs.
+  7.3B dense parameters with two key innovations: <strong>Grouped-Query
+  Attention (GQA)</strong> for faster inference and <strong>Sliding Window
+  Attention (SWA)</strong> for efficient long-context handling. 32K context.</p>
+
+  <p>Outperformed Llama 2 13B on all benchmarks and Llama 1 34B on
+  reasoning, math, and code. MMLU: 60.1%, HellaSwag: 84.0%. Apache 2.0.
+  Spawned an enormous ecosystem of fine-tunes and derivatives across the
+  open-source community.</p>
+tags:
+  - open-weight
+  - efficiency
+model:
+  architecture: dense
+  parameters: 7.3B
+  context_window: 32000
+paper:
+  arxiv: "2310.06825"
+related:
+  - mixtral-8x7b

@@ -1,0 +1,19 @@
+name: Mistral NeMo
+slug: mistral-nemo
+lab: mistral
+type: model
+date: 2024-07-18
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/mistralai/Mistral-Nemo-Base-2407
+  - label: OpenRouter
+    url: https://openrouter.ai/mistralai/mistral-nemo
+description: >
+  12B dense model built in collaboration with NVIDIA. 128K context.
+  MMLU: 68.0%. Outperforms Gemma 2 9B and Llama 3 8B. Apache 2.0.
+tags:
+  - open-weight
+model:
+  architecture: dense
+  parameters: 12B
+  context_window: 128000

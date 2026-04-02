@@ -1,0 +1,35 @@
+name: Ministral 3
+slug: ministral-3
+lab: mistral
+type: model
+date: 2025-12-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.08584
+  - label: HuggingFace (3B)
+    url: https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512
+  - label: HuggingFace (8B)
+    url: https://huggingface.co/mistralai/Ministral-3-8B-Instruct-2512
+  - label: OpenRouter (3B)
+    url: https://openrouter.ai/mistralai/ministral-3-3b
+  - label: OpenRouter (8B)
+    url: https://openrouter.ai/mistralai/ministral-3-8b
+description: >
+  Edge-optimized model family (3B, 8B, 14B) created via Cascade
+  Distillation from Mistral Medium 3.1. 3 variants each (base,
+  instruct, reasoning) = 9 models. 256K context. Image understanding.
+  14B closely matches Mistral Small 3.1 while 40%+ smaller. Apache 2.0.
+tags:
+  - efficiency
+  - open-weight
+model:
+  architecture: dense
+  variants:
+    - name: Ministral 3 3B
+      parameters: 3B
+    - name: Ministral 3 8B
+      parameters: 8B
+    - name: Ministral 3 14B
+      parameters: 14B
+paper:
+  arxiv: "2601.08584"
