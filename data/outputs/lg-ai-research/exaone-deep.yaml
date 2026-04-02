@@ -1,0 +1,25 @@
+name: EXAONE Deep
+slug: exaone-deep
+lab: lg-ai-research
+type: model
+date: 2025-03-17
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.12524
+  - label: HuggingFace
+    url: https://huggingface.co/LGAI-EXAONE/EXAONE-Deep-32B
+description: >
+  Reasoning-enhanced language model series. Available in 2.4B, 7.8B,
+  and 32B sizes.
+tags:
+  - reasoning
+  - open-weight
+model:
+  architecture: dense
+  parameters: 32B
+paper:
+  arxiv: "2503.12524"
+related:
+  - exaone-3.5
+  - exaone-4.0

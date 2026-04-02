@@ -1,0 +1,18 @@
+name: EXAONEPath 1.0
+slug: exaone-path
+lab: lg-ai-research
+type: paper
+date: 2024-08-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2408.00380
+description: >
+  Patch-level foundation model for computational pathology.
+tags:
+  - science
+  - vision
+  - research
+paper:
+  arxiv: "2408.00380"
+related:
+  - exaone-path-2

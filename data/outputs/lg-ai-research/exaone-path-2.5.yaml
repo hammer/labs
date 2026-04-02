@@ -1,0 +1,21 @@
+name: EXAONE Path 2.5
+slug: exaone-path-2.5
+lab: lg-ai-research
+type: paper
+date: 2025-12-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.14019
+description: >
+  Multi-omics pathology foundation model integrating whole slide images
+  with genomic, epigenetic, and transcriptomic data via multimodal SigLIP
+  loss and Fragment-aware RoPE. Outperforms larger models like Microsoft
+  GigaPath in cancer detection despite being ~50M parameters.
+tags:
+  - science
+  - vision
+  - research
+paper:
+  arxiv: "2512.14019"
+related:
+  - exaone-path-2

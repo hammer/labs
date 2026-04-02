@@ -5,6 +5,16 @@ import { getAllLabs, getOutputCount, getAllOutputsChronological, getLargestModel
 
 const labs = getAllLabs().sort((a, b) => getOutputCount(b.slug) - getOutputCount(a.slug));
 const totalOutputs = getAllOutputsChronological().length;
+
+const regionFlags: Record<string, string> = {
+  china: '\u{1F1E8}\u{1F1F3}',
+  korea: '\u{1F1F0}\u{1F1F7}',
+  japan: '\u{1F1EF}\u{1F1F5}',
+  usa: '\u{1F1FA}\u{1F1F8}',
+  uk: '\u{1F1EC}\u{1F1E7}',
+  france: '\u{1F1EB}\u{1F1F7}',
+  india: '\u{1F1EE}\u{1F1F3}',
+};
 ---
 
 <Layout title="Labs">
@@ -17,6 +27,7 @@ const totalOutputs = getAllOutputsChronological().length;
     <thead>
       <tr>
         <th class="col-name sortable" data-sort="name">Lab</th>
+        <th class="col-region sortable" data-sort="region">Region</th>
         <th class="col-type sortable" data-sort="type">Type</th>
         <th class="col-founded sortable" data-sort="founded">Founded</th>
         <th class="col-ipo sortable" data-sort="ipo">IPO</th>
@@ -38,20 +49,23 @@ const totalOutputs = getAllOutputsChronological().length;
         const intel = getTopIntelligence(lab.slug);
         return (
           <tr class="lab-row" data-href={`/labs/${lab.slug}`} data-index={i}
-              data-name={lab.name} data-type={lab.type ?? 'other'}
+              data-name={lab.name} data-region={lab.region} data-type={lab.type ?? 'other'}
               data-founded={founded} data-ipo={lab.ipo?.year ?? 0} data-valuation={valNum}
               data-largest={largest?.paramsB ?? 0} data-intelligence={intel?.score ?? 0} data-outputs={count}>
             <td class="col-name">
-              <img
-                src={`/logos/${lab.slug}.png`}
-                alt=""
-                class="lab-logo"
-                width="20"
-                height="20"
-                loading="lazy"
-              />
-              <span class="lab-name">{lab.name}</span>
+              <span class="lab-name-inner">
+                <img
+                  src={`/logos/${lab.slug}.png`}
+                  alt=""
+                  class="lab-logo"
+                  width="20"
+                  height="20"
+                  loading="lazy"
+                />
+                <span class="lab-name">{lab.name}</span>
+              </span>
             </td>
+            <td class="col-region">{regionFlags[lab.region] ?? lab.region}</td>
             <td class="col-type"><TypeBadge type={lab.type ?? 'other'} /></td>
             <td class="col-founded">{founded}</td>
             <td class="col-ipo">{lab.ipo?.year ?? '—'}</td>
@@ -221,7 +235,7 @@ const totalOutputs = getAllOutputsChronological().length;
       sortAsc = !sortAsc;
     } else {
       currentSort = key;
-      sortAsc = key === 'name' || key === 'type';
+      sortAsc = key === 'name' || key === 'type' || key === 'region';
     }
 
     headers.forEach(h => {
@@ -371,17 +385,29 @@ const totalOutputs = getAllOutputsChronological().length;
 
   /* Columns */
   .col-name {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
     font-weight: 600;
     white-space: nowrap;
+  }
+
+  .lab-name-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
   }
 
   .lab-logo {
     border-radius: 4px;
     flex-shrink: 0;
     background: var(--surface);
+  }
+
+  .col-region {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  th.col-region {
+    text-align: center;
   }
 
   .col-type {

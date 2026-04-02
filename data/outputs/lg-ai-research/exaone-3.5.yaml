@@ -1,0 +1,31 @@
+name: EXAONE 3.5
+slug: exaone-3.5
+lab: lg-ai-research
+type: model
+date: 2024-12-06
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.04862
+  - label: HuggingFace
+    url: https://huggingface.co/LGAI-EXAONE/EXAONE-3.5-32B-Instruct
+description: >
+  Series of LLMs for real-world use cases in 2.4B, 7.8B, and 32B sizes.
+tags:
+  - open-weight
+  - multilingual
+model:
+  architecture: dense
+  parameters: 32B
+  variants:
+    - name: EXAONE-3.5-2.4B
+      parameters: 2.4B
+    - name: EXAONE-3.5-7.8B
+      parameters: 7.8B
+    - name: EXAONE-3.5-32B
+      parameters: 32B
+paper:
+  arxiv: "2412.04862"
+related:
+  - exaone-3.0
+  - exaone-deep

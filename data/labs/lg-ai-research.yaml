@@ -1,0 +1,80 @@
+name: LG
+slug: lg-ai-research
+url: https://www.lgresearch.ai/
+wikipedia: https://en.wikipedia.org/wiki/LG
+huggingface: https://huggingface.co/LGAI-EXAONE
+github: https://github.com/LG-AI-EXAONE
+region: korea
+founded: "2020"
+type: corporate
+parent: LG Group
+ipo:
+  year: 2002
+  exchange: KRX
+  ticker: "003550"
+valuation:
+  amount: "$11B"
+  type: market-cap
+  ticker: "KRX: 003550"
+  date: "2026-03"
+description: >
+  <p><strong>LG AI Research</strong> is the centralized AI hub of the
+  <a href="https://en.wikipedia.org/wiki/LG">LG Group</a>, established in
+  December 2020 to drive digital transformation across the conglomerate's
+  electronics, chemicals, energy, and telecommunications divisions. Led by
+  Chief Scientist <a href="https://scholar.google.com/citations?user=fmSHtE8AAAAJ">Honglak
+  Lee</a> (former Google Brain researcher, University of Michigan professor),
+  the lab focuses on <strong>"Expert AI"</strong> &mdash; models designed for
+  high-stakes industrial, scientific, and professional tasks rather than
+  general-purpose chat.</p>
+
+  <p>The lab's primary output is the <strong>EXAONE</strong> (Expert AI for Everyone)
+  model family, which evolved from a 300B multimodal model (2021) through
+  open-weight releases (EXAONE 3.0, 7.8B, 2024) to hybrid-attention architectures
+  (EXAONE 4.0, 2025) and the current MoE flagship
+  <strong><a href="https://arxiv.org/abs/2601.01739">K-EXAONE</a></strong> (236B
+  total / 23B active, with Multi-Token Prediction for 1.5x faster generation).
+  EXAONE 4.0 32B achieved the highest Artificial Analysis Intelligence Index score
+  of any 32B model.</p>
+
+  <p>Beyond language models, LG AI Research has produced notable work in
+  <strong>materials science</strong>
+  (<a href="https://arxiv.org/abs/2510.23371">GATE</a>, screening billions of
+  candidate molecules for data center cooling fluids),
+  <strong>computational pathology</strong>
+  (<a href="https://arxiv.org/abs/2512.14019">EXAONE Path 2.5</a>, multi-omics
+  alignment for cancer detection), and <strong>financial AI</strong> (EXAONE
+  Business Intelligence with LSEG, powering an AI-driven ETF on NYSE). The lab
+  is organized into specialized units: Superintelligence, Materials Intelligence,
+  Physical Intelligence, and Bio Intelligence.</p>
+people:
+  - name: Honglak Lee
+    url: https://web.eecs.umich.edu/~honglak/
+    role: Chief Scientist & EVP
+    formerly: Google Brain; Professor, University of Michigan
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=fmSHtE8AAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Honglak_Lee2
+  - name: Woo-Hyung Lim
+    role: Head of LG AI Research
+  - name: Moontae Lee
+    url: https://moontae.github.io/
+    role: Head, Superintelligence Lab
+    formerly: Cornell (PhD), Stanford (MS), Microsoft Research
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=BMvYy9cAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Moontae_Lee1
+  - name: Sehui Han
+    role: Head, Materials Intelligence Lab
+  - name: Seunghwan Kim
+    url: https://sites.google.com/view/seunghwankim
+    role: Head, Physical Intelligence Lab
+tags:
+  - open-weight
+  - enterprise
+  - multimodal
+  - science

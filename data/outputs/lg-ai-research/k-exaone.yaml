@@ -1,0 +1,29 @@
+name: K-EXAONE
+slug: k-exaone
+lab: lg-ai-research
+type: model
+date: 2026-01-05
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.01739
+  - label: HuggingFace
+    url: https://huggingface.co/LGAI-EXAONE
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/k-exaone
+description: >
+  MoE flagship with 236B total / 23B active parameters. Uses Multi-Token
+  Prediction (MTP) for 1.5x faster generation through self-drafting.
+tags:
+  - moe
+  - open-weight
+  - efficiency
+model:
+  architecture: moe
+  parameters: 236B
+  active_parameters: 23B
+  intelligence_index: 32
+paper:
+  arxiv: "2601.01739"
+related:
+  - exaone-4.0

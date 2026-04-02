@@ -1,0 +1,17 @@
+name: QPlanner
+slug: qplanner
+lab: lg-ai-research
+type: paper
+date: 2024-07-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.01158
+description: >
+  7B language model that generates customized query outlines for
+  Retrieval-Augmented Generation (RAG), helping models provide more
+  tailored long-form responses.
+tags:
+  - nlp
+  - research
+paper:
+  arxiv: "2407.01158"

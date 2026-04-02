@@ -1,0 +1,22 @@
+name: EXAONE 2.0
+slug: exaone-2.0
+lab: lg-ai-research
+type: model
+date: 2023-07-19
+flagship: true
+sources:
+  - label: Announcement
+    url: https://www.lgresearch.ai/news/view?seq=336
+description: >
+  Multimodal bilingual model focused on professional knowledge, trained
+  on 45M+ expert documents (patents, papers, chemical formulas) and
+  350M+ image-text pairs. Achieved 25% faster inference, 70% less
+  memory, and 78% cost reduction over EXAONE 1.0.
+tags:
+  - multimodal
+  - enterprise
+model:
+  architecture: dense
+related:
+  - exaone-1.0
+  - exaone-3.0

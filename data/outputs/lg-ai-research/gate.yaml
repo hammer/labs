@@ -1,0 +1,20 @@
+name: GATE
+slug: gate
+lab: lg-ai-research
+type: paper
+date: 2025-10-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.23371
+description: >
+  Geometrically Aligned Transfer Encoder for generalizable materials
+  discovery. Jointly learns 34 physicochemical properties in a shared
+  geometric space. Used to screen billions of candidate molecules for
+  immersion cooling fluids, identifying 90,000+ promising candidates
+  with experimental validation outperforming commercial coolants.
+tags:
+  - science
+  - materials
+  - research
+paper:
+  arxiv: "2510.23371"

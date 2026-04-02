@@ -1,18 +1,20 @@
 # AI Lab Tracker
 
-A data-driven tracker of China's AI research ecosystem: labs, models, papers, and benchmarks.
+A data-driven tracker of Asia's AI research ecosystem: labs, models, papers, and benchmarks.
 
 **Live site: [ai-lab-tracker.netlify.app](https://ai-lab-tracker.netlify.app)**
 
 ## Overview
 
-Tracks **22 AI labs** and **600+ research outputs** across the Chinese AI landscape, from trillion-parameter frontier models to influential open-source libraries. Each lab has a profile page with description, key people, news, and a chronological list of outputs. Each output page links to papers, code, HuggingFace models, and external benchmarks.
+Tracks **23 AI labs** and **600+ research outputs** across the Asian AI landscape, from trillion-parameter frontier models to influential open-source libraries. Each lab has a profile page with description, key people, news, and a chronological list of outputs. Each output page links to papers, code, HuggingFace models, and external benchmarks.
 
 The home page provides a sortable table with columns for lab type, founding year, IPO status, valuation, largest model scale (by parameter count), top intelligence score ([Artificial Analysis Index](https://artificialanalysis.ai/)), and total output count.
 
 ## Labs Tracked
 
-Alibaba, Ant Group, BAAI, Baichuan, Baidu, ByteDance Seed, DeepSeek, Huawei, IDEA Lab, Inspur, Kuaishou, Meituan, MiniMax, Moonshot AI, OpenBMB, PCL, SenseTime, Shanghai AI Lab, StepFun, Tencent, Xiaomi, Z.ai
+**China:** Alibaba, Ant Group, BAAI, Baichuan, Baidu, ByteDance Seed, DeepSeek, Huawei, IDEA Lab, Inspur, Kuaishou, Meituan, MiniMax, Moonshot AI, OpenBMB, PCL, SenseTime, Shanghai AI Lab, StepFun, Tencent, Xiaomi, Z.ai
+
+**Korea:** LG AI Research
 
 ## Features
 

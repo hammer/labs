@@ -1,0 +1,21 @@
+name: EXAONE 1.0
+slug: exaone-1.0
+lab: lg-ai-research
+type: model
+date: 2021-12-01
+flagship: true
+sources:
+  - label: Announcement
+    url: https://www.lgresearch.ai/news/view?seq=190
+description: >
+  Korea's first bilingual (Korean/English) multimodal generative AI model
+  at 300B parameters. Developed in collaboration with Google Cloud. Marked
+  LG's entry into the global hyperscale AI race.
+tags:
+  - multimodal
+  - frontier
+model:
+  architecture: dense
+  parameters: 300B
+related:
+  - exaone-2.0

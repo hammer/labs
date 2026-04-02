@@ -1,0 +1,36 @@
+name: EXAONE 4.0
+slug: exaone-4.0
+lab: lg-ai-research
+type: model
+date: 2025-07-14
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.11407
+  - label: HuggingFace
+    url: https://huggingface.co/LGAI-EXAONE/EXAONE-4.0-32B
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/exaone-4-0-32b
+description: >
+  Unified LLM integrating non-reasoning and reasoning modes via Hybrid
+  Attention (sliding-window + global), reducing memory usage by 70%.
+  The 32B variant achieved the highest Artificial Analysis Intelligence
+  Index score of any 32B-class model.
+tags:
+  - open-weight
+  - reasoning
+  - efficiency
+model:
+  architecture: dense
+  parameters: 32B
+  intelligence_index: 12
+  variants:
+    - name: EXAONE-4.0-1.2B
+      parameters: 1.2B
+    - name: EXAONE-4.0-32B
+      parameters: 32B
+paper:
+  arxiv: "2507.11407"
+related:
+  - exaone-deep
+  - k-exaone

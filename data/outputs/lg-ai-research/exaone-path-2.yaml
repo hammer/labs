@@ -1,0 +1,19 @@
+name: EXAONE Path 2.0
+slug: exaone-path-2
+lab: lg-ai-research
+type: paper
+date: 2025-07-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.06639
+description: >
+  End-to-end supervised pathology foundation model.
+tags:
+  - science
+  - vision
+  - research
+paper:
+  arxiv: "2507.06639"
+related:
+  - exaone-path
+  - exaone-path-2.5

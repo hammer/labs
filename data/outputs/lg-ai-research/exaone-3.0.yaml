@@ -1,0 +1,26 @@
+name: EXAONE 3.0
+slug: exaone-3.0
+lab: lg-ai-research
+type: model
+date: 2024-08-07
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2408.03541
+  - label: GitHub
+    url: https://github.com/LG-AI-EXAONE/EXAONE-3.0-7.8B-Instruct
+  - label: HuggingFace
+    url: https://huggingface.co/LGAI-EXAONE/EXAONE-3.0-7.8B-Instruct
+description: >
+  First open-weight EXAONE release. 7.8B instruction-tuned model with
+  industry-leading bilingual (Korean/English) proficiency.
+tags:
+  - open-weight
+  - multilingual
+model:
+  architecture: dense
+  parameters: 7.8B
+paper:
+  arxiv: "2408.03541"
+related:
+  - exaone-3.5
