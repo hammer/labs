@@ -1,0 +1,27 @@
+name: TFLOP
+slug: tflop
+lab: upstage
+type: paper
+date: 2024-01-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.11800
+  - label: GitHub
+    url: https://github.com/UpstageAI/TFLOP
+  - label: Dataset (HuggingFace)
+    url: https://huggingface.co/datasets/upstage/TFLOP-dataset
+description: >
+  Table Structure Recognition Framework with Layout Pointer mechanism.
+  Reformulates text region prediction into a direct pointing problem,
+  eliminating the need for bounding-box detection and post-processing
+  matching. SOTA on PubTabNet, FinTabNet, and SynthTabNet. Published
+  at IJCAI 2024.
+tags:
+  - document-ai
+  - vision
+  - research
+paper:
+  arxiv: "2501.11800"
+  venue: IJCAI 2024
+library:
+  github: https://github.com/UpstageAI/TFLOP

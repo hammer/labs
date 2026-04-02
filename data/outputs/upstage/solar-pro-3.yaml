@@ -2,22 +2,31 @@ name: Solar Pro 3
 slug: solar-pro-3
 lab: upstage
 type: model
-date: 2026-03-24
+date: 2026-01-26
 flagship: true
 sources:
-  - label: Website
-    url: https://www.upstage.ai
+  - label: Blog Post
+    url: https://www.upstage.ai/blog/en/solar-pro-3-0127
+  - label: API Docs
+    url: https://console.upstage.ai/docs/models/solar-pro-3
+  - label: OpenRouter
+    url: https://openrouter.ai/upstage/solar-pro-3:free
 description: >
-  Current proprietary flagship, a 102B agent-specialized model for
-  complex multi-step tool use and reasoning. 2x improvement over Pro 2
-  on agentic benchmarks (tau-squared-Bench Telecom, Terminal Bench).
-  High proficiency on AIME '26 and GPQA-Diamond.
+  Current proprietary flagship. 102B total / 12B active MoE with 128K
+  context, optimized for Korean with English and Japanese support.
+  IFBench: 55.78 (52% improvement over Pro 2), Arena Hard v2: 62.5
+  (30% improvement). Supports function calling, parallel tool use, and
+  reasoning mode. Same throughput and cost as Pro 2.
 tags:
   - enterprise
   - agentic
   - reasoning
+  - moe
 model:
+  architecture: moe
   parameters: 102B
+  active_parameters: 12B
+  context_window: 128000
 related:
   - solar-pro-2
   - solar-open-100b

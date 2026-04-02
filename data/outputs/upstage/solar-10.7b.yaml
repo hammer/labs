@@ -12,10 +12,17 @@ sources:
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/solar-mini
 description: >
-  Introduced Depth Up-Scaling (DUS), a method to scale LLMs via
-  depthwise scaling and continued pretraining. The 10.7B model
-  outperformed Mixtral-8x7B-Instruct despite being much smaller.
-  Apache 2.0 license.
+  <p>Introduced <strong>Depth Up-Scaling (DUS)</strong>: take a 32-layer
+  Mistral 7B, duplicate it, remove the final 8 layers from one copy and the
+  first 8 from the other, concatenate into a 48-layer model, then continue
+  pretraining. This yields a 10.7B-parameter model (4096 hidden dim, 32
+  attention heads, 8 KV heads via GQA) that outperformed Mixtral 8x7B-Instruct
+  (47B), Qwen 72B, Llama 2 70B, and Falcon 180B on the H6 benchmark
+  (74.20 avg).</p>
+
+  <p>Alignment used <a href="/outputs/upstage/sdpo">sDPO</a> (stepwise DPO)
+  with easy-to-hard data ordering. MMLU: 66.21, GSM8K: 64.75, TruthfulQA:
+  71.43, ARC: 71.08, HellaSwag: 88.16. Apache 2.0 license.</p>
 tags:
   - open-weight
   - efficiency
@@ -27,4 +34,5 @@ model:
 paper:
   arxiv: "2312.15166"
 related:
+  - sdpo
   - solar-open-100b

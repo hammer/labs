@@ -5,15 +5,29 @@ type: model
 date: 2025-07-01
 flagship: true
 sources:
+  - label: Blog Post
+    url: https://www.upstage.ai/blog/en/solar-pro-2-launch
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/solar-pro-2
 description: >
-  Proprietary frontier-class model for production environments, focusing
-  on instruction following and reasoning. Ranked #30 on Artificial
-  Analysis Intelligence Index among non-reasoning models.
+  <p>31B-parameter proprietary model with 64K context, built by scaling
+  up Solar Pro (22B, itself depth-up-scaled from Phi-3-medium 14B). Two
+  operating modes: <strong>Chat</strong> (fast, fluent) and
+  <strong>Reasoning</strong> (multi-step CoT for math, code, logic).
+  Designed to fit on a single GPU.</p>
+
+  <p>AA Intelligence Index: 14 (non-reasoning, #30 of 117). Matches or
+  exceeds GPT-4o, DeepSeek R1, and Qwen 3 on several benchmarks despite
+  being less than half their size. Leads all models on Korean benchmarks
+  (Ko-MMLU, Hae-Rae, Ko-IFEval).</p>
 tags:
   - enterprise
+  - reasoning
+  - efficiency
 model:
+  architecture: dense
+  parameters: 31B
+  context_window: 64000
   intelligence_index: 14
 related:
   - solar-10.7b

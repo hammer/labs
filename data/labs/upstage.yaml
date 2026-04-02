@@ -7,6 +7,10 @@ github: https://github.com/UpstageAI
 region: korea
 founded: "2020"
 type: startup
+valuation:
+  amount: "$800M"
+  type: private
+  date: "2025-08"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Upstage_(company)">Upstage</a> is a
   South Korean AI company founded in October 2020 by veterans of Naver's Clova AI
@@ -34,14 +38,31 @@ description: >
   text filtering) reflects a focus on the full training data pipeline.</p>
 people:
   - name: Sung Kim
+    url: https://seng.hkust.edu.hk/about/people/faculty/sung-hun-kim
     role: CEO & Co-founder
-    formerly: HKUST (Professor); Naver Clova (Head)
+    formerly: HKUST (Professor); Naver Clova (Founding Head); PhD UC Santa Cruz
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=JE_m2UgAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Sunghun_Kim1
+      - label: GitHub
+        url: https://github.com/hunkim
   - name: Hwalsuk Lee
     role: CTO & Co-founder
-    formerly: Naver Clova (OCR/Visual AI Lead)
+    formerly: Naver Clova (OCR/Visual AI Lead); KAIST
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=7Mm5seAAAAAJ
   - name: Lucy Park
-    role: US CEO/CSO & Co-founder
-    formerly: Naver Clova (NLP Lead)
+    url: https://www.lucypark.kr/
+    role: US CEO/CPO & Co-founder
+    formerly: Naver Clova (NLP/MT Lead); PhD Seoul National University
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=QI-GC4MAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Lucy_Park1
   - name: Sanghoon Kim
     role: Lead Researcher (Solar, DUS)
 tags:

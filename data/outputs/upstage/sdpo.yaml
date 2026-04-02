@@ -7,12 +7,21 @@ sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2403.19270
 description: >
-  Stepwise DPO — divides preference datasets and uses them incrementally
-  rather than all at once, enabling more precisely aligned reference
-  models during training. Models trained with sDPO outperform even
-  larger LLMs.
+  <p><strong>Stepwise DPO</strong>: partitions preference data into T ordered
+  chunks and performs DPO T times sequentially, using each step's output as the
+  reference model for the next. An easy-to-hard ordering (sorted by reward
+  accuracy) progressively tightens the optimization bound, creating a natural
+  curriculum.</p>
+
+  <p>On SOLAR 10.7B, sDPO achieved H4: 74.31 (vs 72.67 for standard DPO),
+  outperforming Mixtral 8x7B-Instruct (73.40) and SOLAR-0-70B (72.93).
+  EQ Bench improved by +7.81 points. The method requires no additional data
+  and is a drop-in replacement for standard DPO.</p>
 tags:
   - training
+  - alignment
   - research
 paper:
   arxiv: "2403.19270"
+related:
+  - solar-10.7b
