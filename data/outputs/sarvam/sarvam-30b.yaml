@@ -1,0 +1,27 @@
+name: Sarvam-30B
+slug: sarvam-30b
+lab: sarvam
+type: model
+date: 2026-03-06
+flagship: true
+sources:
+  - label: Blog Post
+    url: https://www.sarvam.ai/blogs/sarvam-30b-105b
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/sarvam-30b
+description: >
+  30B total / 2.4B active MoE (top-6 routing, GQA). 32K context.
+  Trained from scratch for Indic languages. AA Intelligence: 12.
+  Apache 2.0.
+tags:
+  - moe
+  - open-weight
+  - multilingual
+model:
+  architecture: moe
+  parameters: 30B
+  active_parameters: 2.4B
+  context_window: 32000
+  intelligence_index: 12
+related:
+  - sarvam-105b

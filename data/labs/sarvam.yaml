@@ -1,0 +1,50 @@
+name: Sarvam
+slug: sarvam
+url: https://www.sarvam.ai
+wikipedia: https://en.wikipedia.org/wiki/Sarvam_AI
+huggingface: https://huggingface.co/sarvamai
+github: https://github.com/sarvamai
+artificialanalysis: https://artificialanalysis.ai/models/sarvam-105b
+openrouter: https://openrouter.ai/sarvamai
+region: india
+founded: "2023"
+type: startup
+valuation:
+  amount: "$1.5B"
+  type: private
+  date: "2026-04"
+description: >
+  <p><a href="https://en.wikipedia.org/wiki/Sarvam_AI">Sarvam AI</a> is India's
+  leading sovereign AI lab, founded in August 2023 by
+  <strong>Pratyush Kumar</strong> (CEO, PhD ETH Zurich, co-founded
+  <a href="https://ai4bharat.iitm.ac.in/">AI4Bharat</a>) and
+  <strong>Vivek Raghavan</strong> (PhD Carnegie Mellon, ex-Aadhaar architect).
+  ~$41M Series A from Lightspeed and Khosla Ventures; reportedly raising
+  $300-350M Series B at ~$1.5B valuation with NVIDIA as investor. Inaugural
+  member of the <strong>NVIDIA Nemotron Coalition</strong> (GTC 2026).</p>
+
+  <p>Trains on 4,096 H100s via India's IndiaAI Mission. Flagship
+  <strong>Sarvam-105B</strong> (Mar 2026, 105B/10.3B active MoE, 128 experts,
+  128K context, MLA-style attention) and <strong>Sarvam-30B</strong> are trained
+  from scratch for India's 22 scheduled languages. AA Intelligence: 18 (105B).
+  Full-stack approach spans text, speech (Saaras), vision/OCR, translation
+  (with AI4Bharat), and hardware (Kaze smart glasses). Apache 2.0.</p>
+people:
+  - name: Pratyush Kumar
+    role: CEO & Co-founder
+    formerly: ETH Zurich (PhD); IIT Madras; Microsoft Research; AI4Bharat (Co-founder)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=4pr87jAAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Pratyush_Kumar1
+  - name: Vivek Raghavan
+    role: Co-founder
+    formerly: Carnegie Mellon (PhD); UIDAI/Aadhaar (Biometric Architect); AI4Bharat
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=6V3VYxcAAAAJ
+tags:
+  - open-weight
+  - multilingual
+  - moe

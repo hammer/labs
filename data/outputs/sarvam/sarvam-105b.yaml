@@ -1,0 +1,31 @@
+name: Sarvam-105B
+slug: sarvam-105b
+lab: sarvam
+type: model
+date: 2026-03-06
+flagship: true
+sources:
+  - label: Blog Post
+    url: https://www.sarvam.ai/blogs/sarvam-30b-105b
+  - label: HuggingFace
+    url: https://huggingface.co/sarvamai/sarvam-105b
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/sarvam-105b
+description: >
+  105B total / 10.3B active MoE (128 experts, top-8 routing) with
+  MLA-style attention (decoupled QK head dimensions) and YaRN scaling.
+  128K context. Trained from scratch on NVIDIA H100s (IndiaAI Mission)
+  for India's 22 scheduled languages + English. Asynchronous GRPO for
+  RL training. AA Intelligence: 18. Apache 2.0.
+tags:
+  - moe
+  - open-weight
+  - multilingual
+model:
+  architecture: moe
+  parameters: 105B
+  active_parameters: 10.3B
+  context_window: 128000
+  intelligence_index: 18
+related:
+  - sarvam-30b
