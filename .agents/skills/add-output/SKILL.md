@@ -128,6 +128,15 @@ Mark `flagship: true` only for models representing a **step change**:
 
 Do NOT mark as flagship: minor updates, size variants, specialized fine-tunes, deprecated models.
 
+### Attribution — Verify the Lab Actually Created It
+
+Before creating an output, confirm the lab **actually developed** the research. Common mistakes:
+- A lab **uses** a tool/framework but didn't create it (e.g., OpenClaw is not a Z.ai product even though Z.ai models are optimized for it)
+- A lab **fine-tuned** another lab's base model — attribute to the fine-tuner, not the base model creator
+- A lab **contributed to** a paper but isn't the primary institution — check author affiliations
+
+If unsure, check the GitHub repo owner, the first/corresponding author affiliations, and the HuggingFace model org.
+
 ### Derivative Models
 
 Some models are derived from another lab's base model (e.g., Llama-Nemotron from Meta's Llama, A.X 4.0 from Alibaba's Qwen). For these:
