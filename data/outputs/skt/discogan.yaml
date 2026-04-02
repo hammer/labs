@@ -1,0 +1,20 @@
+name: DiscoGAN
+slug: discogan
+lab: skt
+type: paper
+date: 2017-03-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/1703.05192
+  - label: GitHub
+    url: https://github.com/SKTBrain/DiscoGAN
+description: >
+  GAN for learning cross-domain relations without paired examples.
+  Published at ICML 2017. 780+ GitHub stars.
+tags:
+  - generation
+  - vision
+  - research
+paper:
+  arxiv: "1703.05192"
+  venue: ICML 2017

@@ -1,0 +1,39 @@
+name: A.X K1
+slug: ax-k1
+lab: skt
+type: model
+date: 2025-12-27
+flagship: true
+sources:
+  - label: Announcement (SKT Newsroom)
+    url: https://news.sktelecom.com/en/2533
+  - label: Announcement (PR Newswire)
+    url: https://www.prnewswire.com/news-releases/sk-telecom-unveils-ax-k1-koreas-first-500b-scale-hyperscale-ai-model-302649835.html
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.09200
+  - label: GitHub
+    url: https://github.com/SKT-AI/A.X-K1
+  - label: HuggingFace
+    url: https://huggingface.co/skt/A.X-K1
+description: >
+  Korea's first 500B-scale model. 519B total / 33B active MoE with
+  192+1 experts. Uses Multi-Latent Attention and Think-Fusion for
+  hybrid reasoning/direct modes. Trained on ~10T tokens. KMMLU: 80.2,
+  AIME25: 89.8. Developed by 8-member SKT-led consortium with Korean
+  government funding as part of the "National Representative AI" project.
+  Apache-2.0.
+tags:
+  - moe
+  - open-weight
+  - frontier
+  - reasoning
+  - multilingual
+model:
+  architecture: moe
+  parameters: 519B
+  active_parameters: 33B
+  context_window: 131000
+paper:
+  arxiv: "2601.09200"
+related:
+  - ax-4.0

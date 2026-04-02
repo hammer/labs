@@ -1,0 +1,16 @@
+name: KoGPT2
+slug: kogpt2
+lab: skt
+type: model
+date: 2020-01-01
+sources:
+  - label: GitHub
+    url: https://github.com/SKT-AI/KoGPT2
+description: >
+  Korean-optimized GPT-2. Among the first high-performance generative
+  models for Korean, released to foster a local developer ecosystem.
+tags:
+  - open-weight
+  - multilingual
+library:
+  github: https://github.com/SKT-AI/KoGPT2

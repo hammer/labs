@@ -1,0 +1,51 @@
+name: SK Telecom
+slug: skt
+url: https://www.sktelecom.com/index_en.html
+wikipedia: https://en.wikipedia.org/wiki/SK_Telecom
+huggingface: https://huggingface.co/skt
+github: https://github.com/SKT-AI
+region: korea
+founded: "1984"
+type: corporate
+parent: SK Group
+ipo:
+  year: 1989
+  exchange: KRX
+  ticker: "017670"
+valuation:
+  amount: "$11B"
+  type: market-cap
+  ticker: "KRX: 017670"
+  date: "2026-03"
+description: >
+  <p><a href="https://en.wikipedia.org/wiki/SK_Telecom">SK Telecom</a> (KRX: 017670),
+  South Korea's largest mobile carrier, has evolved from a telco into a self-described
+  "Global AI Company" under CEO Ryu Young-sang's <strong>AI Pyramid Strategy</strong>
+  (AI Infrastructure, AI Transformation, AI Service). Its AI research traces back to
+  the <strong>T-Brain</strong> lab (2017), which produced foundational Korean NLP models
+  &mdash; <a href="https://github.com/SKTBrain/KoBERT">KoBERT</a> (2019),
+  <a href="https://github.com/SKT-AI/KoGPT2">KoGPT2</a>, and
+  <a href="https://github.com/SKT-AI/KoBART">KoBART</a> &mdash; that became standard
+  benchmarks for the Korean open-source AI community.</p>
+
+  <p>The current research is organized under the <strong>A.X</strong> (AI Transformation)
+  brand. A.X 3.1 (35B, trained in-house on the TITAN supercomputer) and A.X 4.0 (72B,
+  built on Qwen2.5) target enterprise Korean AI, while A.X 4.0-VL-Light adds vision
+  capabilities. The flagship <strong><a href="https://arxiv.org/abs/2601.09200">A.X
+  K1</a></strong> (Dec 2025, 519B MoE / 33B active, 192+1 experts) is Korea's first
+  500B-scale model, developed by an 8-member SKT-led consortium with Korean government
+  funding. It uses Multi-Latent Attention and a <strong>Think-Fusion</strong>
+  architecture for hybrid reasoning/direct modes, achieving 80.2 KMMLU and 89.8
+  AIME25.</p>
+people:
+  - name: Ryu Young-sang
+    role: CEO
+  - name: Kim Tae-yoon
+    role: Head, Foundation Model Division
+  - name: Kim Ji-won
+    role: Head, AI Model Lab
+tags:
+  - open-weight
+  - multilingual
+  - enterprise
+  - moe

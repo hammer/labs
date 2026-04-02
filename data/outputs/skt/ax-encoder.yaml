@@ -1,0 +1,16 @@
+name: A.X Encoder
+slug: ax-encoder
+lab: skt
+type: model
+date: 2025-06-01
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/skt/A.X-Encoder-base
+description: >
+  ModernBERT-based Korean encoder model (100M) with Flash Attention
+  and 16K context. Used for data curation during A.X LLM training.
+  Apache-2.0.
+tags:
+  - open-weight
+  - multilingual
+  - embeddings

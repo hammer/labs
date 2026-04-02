@@ -1,0 +1,17 @@
+name: KoBART
+slug: kobart
+lab: skt
+type: model
+date: 2021-01-01
+sources:
+  - label: GitHub
+    url: https://github.com/SKT-AI/KoBART
+  - label: HuggingFace
+    url: https://huggingface.co/skt/kobart-base-v1
+description: >
+  Korean BART encoder-decoder model trained on 40GB+ Korean text.
+tags:
+  - open-weight
+  - multilingual
+library:
+  github: https://github.com/SKT-AI/KoBART

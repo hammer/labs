@@ -6,19 +6,19 @@ A data-driven tracker of Asia's AI research ecosystem: labs, models, papers, and
 
 ## Overview
 
-Tracks **23 AI labs** and **600+ research outputs** across the Asian AI landscape, from trillion-parameter frontier models to influential open-source libraries. Each lab has a profile page with description, key people, news, and a chronological list of outputs. Each output page links to papers, code, HuggingFace models, and external benchmarks.
+Tracks **24 AI labs** and **650+ research outputs** across the Asian AI landscape, from trillion-parameter frontier models to influential open-source libraries. Each lab has a profile page with description, key people, news, and a chronological list of outputs. Each output page links to papers, code, HuggingFace models, and external benchmarks.
 
-The home page provides a sortable table with columns for lab type, founding year, IPO status, valuation, largest model scale (by parameter count), top intelligence score ([Artificial Analysis Index](https://artificialanalysis.ai/)), and total output count.
+The home page provides a sortable table with columns for region (country flag), lab type, founding year, IPO status, valuation, largest model scale (by parameter count), top intelligence score ([Artificial Analysis Index](https://artificialanalysis.ai/)), and total output count.
 
 ## Labs Tracked
 
-**China:** Alibaba, Ant Group, BAAI, Baichuan, Baidu, ByteDance Seed, DeepSeek, Huawei, IDEA Lab, Inspur, Kuaishou, Meituan, MiniMax, Moonshot AI, OpenBMB, PCL, SenseTime, Shanghai AI Lab, StepFun, Tencent, Xiaomi, Z.ai
+**China (22):** Alibaba, Ant Group, BAAI, Baichuan, Baidu, ByteDance Seed, DeepSeek, Huawei, IDEA Lab, Inspur, Kuaishou, Meituan, MiniMax, Moonshot AI, OpenBMB, PCL, SenseTime, Shanghai AI Lab, StepFun, Tencent, Xiaomi, Z.ai
 
-**Korea:** LG AI Research
+**Korea (2):** LG, SK Telecom
 
 ## Features
 
-- **Sortable home page** with scale, intelligence, valuation, and output columns
+- **Sortable home page** with region, scale, intelligence, valuation, and output columns
 - **Lab profiles** with HTML descriptions, people (with Scholar/OpenReview links), and news
 - **Output pages** with structured model details (architecture, parameters, active parameters, intelligence index), paper metadata (arXiv, venue), and related outputs
 - **Timeline** view of all outputs in reverse chronological order
@@ -43,8 +43,8 @@ Built with [Astro](https://astro.build/) (static output), [Zod](https://zod.dev/
 
 ```
 data/
-  labs/*.yaml           # Lab profiles (21 files)
-  outputs/{lab}/*.yaml  # Research outputs (~600 files, one dir per lab)
+  labs/*.yaml           # Lab profiles (24 files)
+  outputs/{lab}/*.yaml  # Research outputs (~650 files, one dir per lab)
   metrics.json          # Impact metrics cache (auto-generated)
 src/
   schema.ts             # Zod schemas for Lab and Output types
@@ -55,7 +55,7 @@ src/
 
 ### Lab Schema
 
-Each lab YAML includes: name, slug, URL, region, founded date, type (corporate/startup/nonprofit/academic), valuation, HTML description, people (with roles and profile links), news items, and tags.
+Each lab YAML includes: name, slug, URL, region (china/korea), founded date, type (corporate/startup/nonprofit/academic), valuation, HTML description, people (with roles and profile links), news items, and tags.
 
 ### Output Schema
 

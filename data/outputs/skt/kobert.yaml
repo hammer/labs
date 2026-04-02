@@ -1,0 +1,18 @@
+name: KoBERT
+slug: kobert
+lab: skt
+type: model
+date: 2019-06-01
+sources:
+  - label: GitHub
+    url: https://github.com/SKTBrain/KoBERT
+  - label: HuggingFace
+    url: https://huggingface.co/skt/kobert-base-v1
+description: >
+  Korea's first deep-learning Korean BERT model. Became a standard
+  benchmark for the Korean NLP community. Over 1.4K GitHub stars.
+tags:
+  - open-weight
+  - multilingual
+library:
+  github: https://github.com/SKTBrain/KoBERT

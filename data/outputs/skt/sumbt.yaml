@@ -1,0 +1,20 @@
+name: SUMBT
+slug: sumbt
+lab: skt
+type: paper
+date: 2019-07-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/1907.07421
+  - label: GitHub
+    url: https://github.com/SKTBrain/SUMBT
+description: >
+  Slot-Utterance Matching for Universal and Scalable Belief Tracking.
+  Achieved SOTA on WOZ 2.0 and MultiWOZ dialog state tracking benchmarks.
+  Published at ACL 2019.
+tags:
+  - nlp
+  - research
+paper:
+  arxiv: "1907.07421"
+  venue: ACL 2019

@@ -1,0 +1,33 @@
+name: A.X 4.0
+slug: ax-4.0
+lab: skt
+type: model
+date: 2025-07-03
+flagship: true
+sources:
+  - label: GitHub
+    url: https://github.com/SKT-AI/A.X-4.0
+  - label: HuggingFace
+    url: https://huggingface.co/skt/A.X-4.0
+description: >
+  Built on Qwen2.5, fine-tuned for Korean. 72B standard and 7B Light
+  variants. KMMLU: 78.32 (beats GPT-4o's 72.51). 131K context.
+  A.X 4.0-VL-Light adds vision capabilities with 41% fewer tokens
+  than Qwen2.5-VL for Korean.
+tags:
+  - open-weight
+  - multilingual
+  - multimodal
+model:
+  architecture: dense
+  parameters: 72B
+  variants:
+    - name: A.X-4.0
+      parameters: 72B
+    - name: A.X-4.0-Light
+      parameters: 7B
+    - name: A.X-4.0-VL-Light
+      parameters: 8B
+      notes: Vision-language variant
+related:
+  - ax-k1

@@ -1,0 +1,20 @@
+name: A.X 3.1
+slug: ax-3.1
+lab: skt
+type: model
+date: 2025-07-24
+sources:
+  - label: GitHub
+    url: https://github.com/SKT-AI/A.X-3
+  - label: HuggingFace
+    url: https://huggingface.co/skt/A.X-3.1
+description: >
+  Built entirely in-house (not based on Qwen). 34B parameters, 48 layers,
+  trained on 2.1T tokens on SKT's TITAN supercomputer. Also available as
+  A.X-3.1-Light (7B). Apache-2.0 license.
+tags:
+  - open-weight
+  - multilingual
+model:
+  architecture: dense
+  parameters: 34B
