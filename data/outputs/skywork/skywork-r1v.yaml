@@ -1,0 +1,37 @@
+name: Skywork R1V Series
+slug: skywork-r1v
+lab: skywork
+type: model
+date: 2025-04-08
+flagship: true
+sources:
+  - label: Paper R1V (arXiv)
+    url: https://arxiv.org/abs/2504.05599
+  - label: Paper R1V2 (arXiv)
+    url: https://arxiv.org/abs/2504.16656
+  - label: Paper R1V3 (arXiv)
+    url: https://arxiv.org/abs/2507.06167
+  - label: Paper R1V4 (arXiv)
+    url: https://arxiv.org/abs/2512.02395
+  - label: HuggingFace
+    url: https://huggingface.co/Skywork/Skywork-R1V3-38B
+description: >
+  <p>Pioneering series of <strong>open multimodal reasoning models</strong>
+  with visual chain-of-thought. R1V (38B, Apr 2025) introduced multimodal
+  CoT via iterative SFT + GRPO. R1V2 added hybrid RL (MPO + GRPO).
+  R1V3 achieved MMMU 76.0% (rivaling closed-source VLMs). R1V4 (30B/3B
+  active) introduced agentic multimodal intelligence with interleaved
+  visual reasoning + web search, surpassing Gemini 2.5 Flash on
+  11/11 metrics.</p>
+tags:
+  - reasoning
+  - multimodal
+  - vision
+  - open-weight
+model:
+  architecture: dense
+  parameters: 38B
+paper:
+  arxiv: "2504.05599"
+related:
+  - skywork-or1

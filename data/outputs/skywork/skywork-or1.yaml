@@ -1,0 +1,33 @@
+name: Skywork Open Reasoner 1
+slug: skywork-or1
+lab: skywork
+type: model
+date: 2025-05-28
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.22312
+  - label: GitHub
+    url: https://github.com/SkyworkAI/Skywork-OR1
+description: >
+  <p>Open reasoning models (7B and 32B) trained via RL on
+  DeepSeek-R1-Distill base with long chain-of-thought. Fully open:
+  weights, training code, and datasets.</p>
+
+  <p>OR1-32B: AIME24 82.2, AIME25 73.3, LiveCodeBench 63.0 —
+  outperforms DeepSeek-R1 and Qwen3-32B on math benchmarks.
+  OR1-7B: AIME24 70.2, AIME25 54.6.</p>
+tags:
+  - reasoning
+  - open-weight
+  - open-source
+model:
+  architecture: dense
+  parameters: 32B
+  variants:
+    - name: Skywork-OR1-7B
+      parameters: 7B
+    - name: Skywork-OR1-32B
+      parameters: 32B
+paper:
+  arxiv: "2505.22312"

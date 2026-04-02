@@ -1,0 +1,72 @@
+name: Skywork
+slug: skywork
+url: https://skywork.ai/
+huggingface: https://huggingface.co/Skywork
+github: https://github.com/SkyworkAI
+region: singapore
+founded: "2021"
+type: corporate
+parent: Kunlun Tech
+valuation:
+  amount: "$2B"
+  type: private
+  date: "2025-03"
+description: >
+  <p><strong>Skywork AI PTE. LTD.</strong> (UEN 202124460H) is incorporated in
+  Singapore (July 2021), headquartered at 2 Science Park Drive. It originated
+  from the merger of <a href="https://en.wikipedia.org/wiki/Zhou_Yahui">Kunlun
+  Tech's</a> (SZSE: 300418) subsidiary Star Group with
+  <strong>Singularity AI</strong> (acquired for $160M). While Kunlun Tech is a
+  Chinese-listed company, Skywork AI operates as a Singapore entity with deep
+  local ties: research head <strong>Yan Shuicheng</strong> (AAAI/ACM/IEEE Fellow,
+  105K+ citations) was recruited from Singapore's Sea Group, and the lab
+  maintains partnerships with NUS and NTU through Singapore's EDB talent
+  program. Co-CEO <strong>Zhou Yahui</strong> is Kunlun's founder. Valued at
+  ~$2B (Mar 2025), with CNY 200M capital injection from Kunlun in Aug 2025.</p>
+
+  <p>Skywork's frontier LLM research began with
+  <a href="https://arxiv.org/abs/2310.19341">Skywork-13B</a> (Oct 2023, 3.2T
+  tokens) and <a href="https://arxiv.org/abs/2406.06563">Skywork-MoE</a>
+  (146B, upcycled from 13B). The lab then pivoted to post-training innovation:
+  <a href="https://arxiv.org/abs/2410.18451">Skywork-Reward</a> topped
+  RewardBench with only 80K preference pairs, and the <strong>R1V</strong>
+  series (R1V through R1V4) pioneered open multimodal reasoning with visual
+  chain-of-thought. <a href="https://arxiv.org/abs/2505.22312">Skywork-OR1</a>
+  (32B) outperforms DeepSeek-R1 and Qwen3-32B on math benchmarks.</p>
+
+  <p>Skywork is also prolific in video generation
+  (<strong>SkyReels</strong> series, <strong>Matrix-Game</strong> world models)
+  and multimodal image composition (<strong>UniPic</strong>). Their Skywork
+  Super Agents platform scored #1 on the GAIA benchmark (82.42), beating
+  OpenAI Deep Research.</p>
+people:
+  - name: Yan Shuicheng
+    role: Co-CEO
+    formerly: Sea Group (Chief Scientist); AAAI/ACM/IEEE Fellow; PhD Peking University
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=DNuiPHwAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Shuicheng_Yan2
+  - name: Zhou Yahui
+    url: https://en.wikipedia.org/wiki/Zhou_Yahui
+    role: Co-CEO; Founder, Kunlun Tech
+  - name: Tianwen Wei
+    url: https://sites.google.com/site/tianwen2014wei/
+    role: Lead Researcher, LLM Pre-training
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=LFKgOl8AAAAJ
+  - name: Chris Yuhao Liu
+    url: https://chrisliu298.ai/
+    role: Researcher (Reward Models, Alignment)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=N6Lr4FcAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Chris_Yuhao_Liu1
+tags:
+  - open-weight
+  - reasoning
+  - multimodal
+  - generation

@@ -1,0 +1,26 @@
+name: Skywork-13B
+slug: skywork-13b
+lab: skywork
+type: model
+date: 2023-10-30
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2310.19341
+  - label: HuggingFace
+    url: https://huggingface.co/Skywork/Skywork-13B-Base
+description: >
+  Bilingual (Chinese/English) foundation model pre-trained on 3.2
+  trillion tokens. Released with SkyPile, a 150B-token open Chinese
+  web corpus. Variants: Base, Chat, Math, MM.
+tags:
+  - open-weight
+  - multilingual
+model:
+  architecture: dense
+  parameters: 13B
+  context_window: 4096
+paper:
+  arxiv: "2310.19341"
+related:
+  - skywork-moe

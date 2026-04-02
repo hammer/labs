@@ -1,0 +1,19 @@
+name: Skywork-Math
+slug: skywork-math
+lab: skywork
+type: paper
+date: 2024-07-11
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.08348
+description: >
+  Data scaling laws for mathematical reasoning. Shows that scaling
+  synthetic math data (Skywork-MathQA, 2.5M instances) enables a 7B
+  model to surpass early GPT-4 on MATH (51.2%). Systematic study of
+  how math performance scales with SFT data quantity and quality.
+tags:
+  - reasoning
+  - scaling
+  - research
+paper:
+  arxiv: "2407.08348"

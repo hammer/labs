@@ -1,0 +1,43 @@
+name: Skywork-Reward
+slug: skywork-reward
+lab: skywork
+date: 2024-10-24
+flagship: true
+sources:
+  - label: Paper V1 (arXiv)
+    url: https://arxiv.org/abs/2410.18451
+  - label: Paper V2 (arXiv)
+    url: https://arxiv.org/abs/2507.01352
+  - label: HuggingFace (Gemma-27B)
+    url: https://huggingface.co/Skywork/Skywork-Reward-Gemma-2-27B
+description: >
+  Reward model series that topped RewardBench with only 80K curated
+  preference pairs. V2 (Jul 2025, ICLR 2026) scales to 8 models
+  (0.6B-8B) trained on SynPref-40M (26M curated pairs), achieving
+  SOTA across 7 reward model benchmarks. CC BY 4.0.
+tags:
+  - alignment
+  - open-weight
+  - research
+outputs:
+  - name: Skywork-Reward V1
+    type: model
+    date: 2024-10-24
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2410.18451
+    description: >
+      #1 on RewardBench with 80K preference pairs. Gemma-27B and Llama-8B variants.
+    paper:
+      arxiv: "2410.18451"
+  - name: Skywork-Reward V2
+    type: model
+    date: 2025-07-02
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2507.01352
+    description: >
+      8 models (0.6B-8B), SynPref-40M dataset, SOTA on 7 benchmarks. ICLR 2026.
+    paper:
+      arxiv: "2507.01352"
+      venue: ICLR 2026

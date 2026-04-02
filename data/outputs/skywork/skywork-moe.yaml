@@ -1,0 +1,25 @@
+name: Skywork-MoE
+slug: skywork-moe
+lab: skywork
+type: model
+date: 2024-06-03
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.06563
+description: >
+  146B MoE (16 experts) upcycled from Skywork-13B dense checkpoints.
+  Deep dive into MoE training techniques including dense-to-MoE
+  initialization strategies. One of the first papers to systematically
+  study upcycling for MoE.
+tags:
+  - moe
+  - open-weight
+  - research
+model:
+  architecture: moe
+  parameters: 146B
+paper:
+  arxiv: "2406.06563"
+related:
+  - skywork-13b
