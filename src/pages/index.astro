@@ -26,6 +26,7 @@ const regionFlags: Record<string, string> = {
   <table class="lab-table" id="lab-table">
     <thead>
       <tr>
+        <th class="col-rank">#</th>
         <th class="col-name sortable" data-sort="name">Lab</th>
         <th class="col-region sortable" data-sort="region">Region</th>
         <th class="col-type sortable" data-sort="type">Type</th>
@@ -42,9 +43,14 @@ const regionFlags: Record<string, string> = {
         const count = getOutputCount(lab.slug);
         const founded = lab.founded?.slice(0, 4) ?? '—';
         const valAmount = lab.valuation?.amount ?? '—';
-        const valNum = lab.valuation?.amount
-          ? parseFloat(lab.valuation.amount.replace(/[$,]/g, '').replace(/T$/, '000').replace(/B$/, '').replace(/M$/, '0.001'))
-          : 0;
+        const valNum = (() => {
+          const s = lab.valuation?.amount;
+          if (!s) return 0;
+          const n = parseFloat(s.replace(/[$,]/g, ''));
+          if (s.endsWith('T')) return n * 1000;
+          if (s.endsWith('M')) return n / 1000;
+          return n;
+        })();
         const largest = getLargestModel(lab.slug);
         const intel = getTopIntelligence(lab.slug);
         return (
@@ -52,6 +58,7 @@ const regionFlags: Record<string, string> = {
               data-name={lab.name} data-region={lab.region} data-type={lab.type ?? 'other'}
               data-founded={founded} data-ipo={lab.ipo?.year ?? 0} data-valuation={valNum}
               data-largest={largest?.paramsB ?? 0} data-intelligence={intel?.score ?? 0} data-outputs={count}>
+            <td class="col-rank"></td>
             <td class="col-name">
               <span class="lab-name-inner">
                 <img
@@ -256,7 +263,11 @@ const regionFlags: Record<string, string> = {
       return sortAsc ? cmp : -cmp;
     });
 
-    sorted.forEach(row => tbody.appendChild(row));
+    sorted.forEach((row, i) => {
+      tbody.appendChild(row);
+      const rankCell = row.querySelector('.col-rank');
+      if (rankCell) rankCell.textContent = String(i + 1);
+    });
     visibleRows = rows.filter(r => (r as HTMLElement).style.display !== 'none');
     selected = -1;
   }
@@ -265,6 +276,12 @@ const regionFlags: Record<string, string> = {
     th.addEventListener('click', () => {
       sortTable(th.dataset.sort!);
     });
+  });
+
+  // Initialize rank numbers
+  rows.forEach((row, i) => {
+    const rankCell = row.querySelector('.col-rank');
+    if (rankCell) rankCell.textContent = String(i + 1);
   });
 
   // Start with modal hidden
@@ -384,6 +401,17 @@ const regionFlags: Record<string, string> = {
   }
 
   /* Columns */
+  .col-rank,
+  th.col-rank {
+    text-align: right;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+    font-size: 0.75rem;
+    padding-right: 0.25rem;
+    white-space: nowrap;
+    width: 1%;
+  }
+
   .col-name {
     font-weight: 600;
     white-space: nowrap;
