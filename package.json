@@ -6,15 +6,19 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "npm run build && wrangler dev",
     "validate": "tsx src/validate.ts",
-    "fetch-metrics": "tsx scripts/fetch-metrics.ts"
+    "fetch-metrics": "tsx scripts/fetch-metrics.ts",
+    "deploy": "npm run build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "devDependencies": {
     "tsx": "^4.7.0",
-    "typescript": "^5.3.0"
+    "typescript": "^5.3.0",
+    "wrangler": "^4.80.0"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "12",
     "astro": "^5.18.1",
     "glob": "^10.3.0",
     "yaml": "^2.3.0",
