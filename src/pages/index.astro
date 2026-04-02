@@ -1,7 +1,7 @@
 ---
 import Layout from '../components/Layout.astro';
 import TypeBadge from '../components/TypeBadge.astro';
-import { getAllLabs, getOutputCount, getAllOutputsChronological } from '../data/loader.js';
+import { getAllLabs, getOutputCount, getAllOutputsChronological, getLargestModel } from '../data/loader.js';
 
 const labs = getAllLabs().sort((a, b) => getOutputCount(b.slug) - getOutputCount(a.slug));
 const totalOutputs = getAllOutputsChronological().length;
@@ -21,6 +21,7 @@ const totalOutputs = getAllOutputsChronological().length;
         <th class="col-founded sortable" data-sort="founded">Founded</th>
         <th class="col-ipo sortable" data-sort="ipo">IPO</th>
         <th class="col-valuation sortable" data-sort="valuation">Valuation</th>
+        <th class="col-largest sortable" data-sort="largest">Largest Model</th>
         <th class="col-outputs sortable" data-sort="outputs">Outputs</th>
       </tr>
     </thead>
@@ -32,10 +33,12 @@ const totalOutputs = getAllOutputsChronological().length;
         const valNum = lab.valuation?.amount
           ? parseFloat(lab.valuation.amount.replace(/[$,]/g, '').replace(/T$/, '000').replace(/B$/, '').replace(/M$/, '0.001'))
           : 0;
+        const largest = getLargestModel(lab.slug);
         return (
           <tr class="lab-row" data-href={`/labs/${lab.slug}`} data-index={i}
               data-name={lab.name} data-type={lab.type ?? 'other'}
-              data-founded={founded} data-ipo={lab.ipo?.year ?? 0} data-valuation={valNum} data-outputs={count}>
+              data-founded={founded} data-ipo={lab.ipo?.year ?? 0} data-valuation={valNum}
+              data-largest={largest?.paramsB ?? 0} data-outputs={count}>
             <td class="col-name">
               <img
                 src={`/logos/${lab.slug}.png`}
@@ -51,6 +54,7 @@ const totalOutputs = getAllOutputsChronological().length;
             <td class="col-founded">{founded}</td>
             <td class="col-ipo">{lab.ipo?.year ?? '—'}</td>
             <td class="col-valuation">{valAmount}</td>
+            <td class="col-largest">{largest?.params ?? '—'}</td>
             <td class="col-outputs">{count}</td>
           </tr>
         );
@@ -215,7 +219,7 @@ const totalOutputs = getAllOutputsChronological().length;
     const sorted = [...rows].sort((a, b) => {
       const av = a.dataset[key] ?? '';
       const bv = b.dataset[key] ?? '';
-      if (key === 'founded' || key === 'ipo' || key === 'valuation' || key === 'outputs') {
+      if (key === 'founded' || key === 'ipo' || key === 'valuation' || key === 'largest' || key === 'outputs') {
         const diff = parseVal(av) - parseVal(bv);
         return sortAsc ? diff : -diff;
       }
@@ -372,6 +376,7 @@ const totalOutputs = getAllOutputsChronological().length;
   .col-founded,
   .col-ipo,
   .col-valuation,
+  .col-largest,
   .col-outputs {
     text-align: right;
     white-space: nowrap;
@@ -382,6 +387,7 @@ const totalOutputs = getAllOutputsChronological().length;
   th.col-founded,
   th.col-ipo,
   th.col-valuation,
+  th.col-largest,
   th.col-outputs {
     text-align: right;
   }

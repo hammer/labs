@@ -24,6 +24,7 @@ tags:
 model:
   architecture: moe
   parameters: 671B
+  active_parameters: 37B
   variants:
     - name: DeepSeek-R1-Lite-Preview
       notes: Released 2024-11-20

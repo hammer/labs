@@ -93,4 +93,51 @@ export function getOutputTypes(output: Output): string[] {
   return [output.type];
 }
 
+/** Parse a parameter string like "671B", "1T", "1T+" into billions */
+function parseParamsToBillions(s?: string): number {
+  if (!s) return 0;
+  const cleaned = s.replace(/[+,]/g, '').trim();
+  const tMatch = cleaned.match(/^([\d.]+)\s*T$/i);
+  if (tMatch) return parseFloat(tMatch[1]) * 1000;
+  const bMatch = cleaned.match(/^([\d.]+)\s*B$/i);
+  if (bMatch) return parseFloat(bMatch[1]);
+  const mMatch = cleaned.match(/^([\d.]+)\s*M$/i);
+  if (mMatch) return parseFloat(mMatch[1]) / 1000;
+  return 0;
+}
+
+/** Get the largest model (by total params) for a lab. Returns { name, params, paramsB } */
+export function getLargestModel(labSlug: string): { name: string; params: string; paramsB: number } | null {
+  const outputs = getOutputsForLab(labSlug);
+  let best: { name: string; params: string; paramsB: number } | null = null;
+
+  function check(name: string, params?: string) {
+    const b = parseParamsToBillions(params);
+    if (b > 0 && (!best || b > best.paramsB)) {
+      best = { name, params: params!, paramsB: b };
+    }
+  }
+
+  for (const output of outputs) {
+    if (isGrouped(output)) {
+      for (const sub of output.outputs) {
+        if (sub.model) {
+          check(sub.name, sub.model.parameters);
+          for (const v of sub.model.variants ?? []) {
+            check(v.name, v.parameters);
+          }
+        }
+      }
+    } else {
+      if (output.model) {
+        check(output.name, output.model.parameters);
+        for (const v of output.model.variants ?? []) {
+          check(v.name, v.parameters);
+        }
+      }
+    }
+  }
+  return best;
+}
+
 export { isGrouped };

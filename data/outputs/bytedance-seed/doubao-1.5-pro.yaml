@@ -10,13 +10,14 @@ sources:
   - label: Blog Post
     url: https://www.marktechpost.com/2025/01/25/bytedance-ai-introduces-doubao-1-5-pro-language-model-with-a-deep-thinking-mode-and-matches-gpt-4o-and-claude-3-5-sonnet-benchmarks-at-50x-cheaper/
 description: >
-  Sparse MoE model (20B active/140B total) with a 256k context window.
-  Part of ByteDance's flagship Doubao series.
+  Sparse MoE model (200B total, 20B active, 256 experts with 8 active
+  per token) with a 256k context window. Part of ByteDance's flagship
+  Doubao series.
 tags:
   - moe
   - scaling
 model:
   architecture: moe
-  parameters: 140B
+  parameters: 200B
   active_parameters: 20B
   context_window: 256000

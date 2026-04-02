@@ -69,9 +69,11 @@ outputs:
       - label: Announcement
         url: https://qwen.ai/blog?id=87dc93fc8a590dc718c77e1f6e84c07b474f6c5a
     description: >
-      First open-weight trillion-parameter scale model from Qwen.
+      Alibaba's largest model at over 1 trillion parameters. Closed-source
+      MoE architecture served via Alibaba Cloud Model Studio.
     model:
       architecture: moe
+      parameters: 1T+
   - name: Qwen3-Next
     type: model
     date: 2025-09-10

@@ -16,4 +16,5 @@ tags:
 model:
   architecture: moe
   parameters: 671B
+  active_parameters: 37B
   base_model: deepseek-r1
