@@ -106,33 +106,37 @@ function parseParamsToBillions(s?: string): number {
   return 0;
 }
 
-/** Get the largest model (by total params) for a lab. Returns { name, params, paramsB } */
-export function getLargestModel(labSlug: string): { name: string; params: string; paramsB: number } | null {
+/** Get the largest model (by total params) for a lab. Returns { name, params, paramsB, slug, labSlug } */
+export function getLargestModel(labSlug: string): { name: string; params: string; paramsB: number; slug: string; labSlug: string } | null {
   const outputs = getOutputsForLab(labSlug);
-  let best: { name: string; params: string; paramsB: number } | null = null;
+  let best: { name: string; params: string; paramsB: number; slug: string; labSlug: string } | null = null;
 
-  function check(name: string, params?: string) {
+  function check(displayName: string, params: string | undefined, outputSlug: string, outLabSlug: string) {
     const b = parseParamsToBillions(params);
     if (b > 0 && (!best || b > best.paramsB)) {
-      best = { name, params: params!, paramsB: b };
+      best = { name: displayName, params: params!, paramsB: b, slug: outputSlug, labSlug: outLabSlug };
     }
   }
 
   for (const output of outputs) {
+    const oSlug = output.slug;
+    const oLab = (output as OutputWithMeta)._labSlug;
+    // Use the top-level output name as the display name for all children
+    const baseName = output.name.replace(/:.*$/, '').replace(/\s*\(.*$/, '').trim();
     if (isGrouped(output)) {
       for (const sub of output.outputs) {
         if (sub.model) {
-          check(sub.name, sub.model.parameters);
+          check(baseName, sub.model.parameters, oSlug, oLab);
           for (const v of sub.model.variants ?? []) {
-            check(v.name, v.parameters);
+            check(baseName, v.parameters, oSlug, oLab);
           }
         }
       }
     } else {
       if (output.model) {
-        check(output.name, output.model.parameters);
+        check(baseName, output.model.parameters, oSlug, oLab);
         for (const v of output.model.variants ?? []) {
-          check(v.name, v.parameters);
+          check(baseName, v.parameters, oSlug, oLab);
         }
       }
     }

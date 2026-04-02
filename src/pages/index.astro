@@ -54,7 +54,13 @@ const totalOutputs = getAllOutputsChronological().length;
             <td class="col-founded">{founded}</td>
             <td class="col-ipo">{lab.ipo?.year ?? '—'}</td>
             <td class="col-valuation">{valAmount}</td>
-            <td class="col-largest">{largest?.params ?? '—'}</td>
+            <td class="col-largest">
+              {largest ? (
+                <a href={`/outputs/${largest.labSlug}/${largest.slug}`} class="largest-link" onclick="event.stopPropagation()">
+                  {largest.params} <span class="largest-name">({largest.name})</span>
+                </a>
+              ) : '—'}
+            </td>
             <td class="col-outputs">{count}</td>
           </tr>
         );
@@ -390,6 +396,21 @@ const totalOutputs = getAllOutputsChronological().length;
   th.col-largest,
   th.col-outputs {
     text-align: right;
+  }
+
+  .largest-link {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+
+  .largest-link:hover {
+    color: var(--text);
+    text-decoration: underline;
+  }
+
+  .largest-name {
+    font-size: 0.8em;
+    opacity: 0.7;
   }
 
   /* Search bar */
