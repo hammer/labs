@@ -1,0 +1,48 @@
+name: Arcee
+slug: arcee
+url: https://www.arcee.ai
+huggingface: https://huggingface.co/arcee-ai
+github: https://github.com/arcee-ai
+openrouter: https://openrouter.ai/arcee-ai
+region: usa
+founded: "2023"
+type: startup
+valuation:
+  amount: "$240M"
+  type: private
+  date: "2025-03"
+description: >
+  <p><a href="https://www.arcee.ai">Arcee AI</a> is a San Francisco startup
+  founded in 2023 by <strong>Mark McQuade</strong> (CEO), <strong>Brian
+  Benedict</strong> (CRO), and <strong>Jacob Solawetz</strong> (CTO) &mdash;
+  McQuade and Benedict are former early Hugging Face employees. $29.5M raised
+  from Emergence Capital, Prosperity7, M12 (Microsoft), Samsung Next. Targeting
+  $1B+ in a 2026 raise.</p>
+
+  <p>Arcee represents a rare independent US open-source frontier effort.
+  The <strong>Trinity</strong> family (Jan 2026) was pretrained from scratch:
+  <a href="https://arxiv.org/abs/2602.17004">Trinity Large</a> (398B/13B active
+  MoE, 256 experts, 17T tokens, 2,048 B300 GPUs in 33 days, ~$20M) achieves
+  MMLU 87.2 and reached #1 most-used open model in the US on OpenRouter.
+  Architecture uses DeepSeekMoE-style fine-grained routing, interleaved
+  local/global attention, and the Muon optimizer with zero loss spikes.
+  Trinity-Large-Thinking adds reasoning with tau2-Airline 88.0% and
+  AIME25 96.3%. All Apache 2.0.</p>
+
+  <p>Also produced <strong><a href="https://github.com/arcee-ai/mergekit">MergeKit</a></strong>,
+  the most widely-used open-source model merging toolkit, and DistillKit
+  for knowledge distillation.</p>
+people:
+  - name: Mark McQuade
+    role: CEO & Co-founder
+    formerly: Hugging Face (early employee)
+  - name: Jacob Solawetz
+    role: CTO & Co-founder
+  - name: Charles Goddard
+    role: Chief of Frontier Research
+    formerly: NASA; Apple; Creator of MergeKit
+tags:
+  - open-weight
+  - moe
+  - frontier
+  - efficiency

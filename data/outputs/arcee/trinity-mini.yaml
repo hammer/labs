@@ -1,0 +1,37 @@
+name: Trinity Mini / Nano
+slug: trinity-mini
+lab: arcee
+type: model
+date: 2026-01-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.17004
+  - label: HuggingFace (Mini)
+    url: https://huggingface.co/arcee-ai/Trinity-Mini
+  - label: OpenRouter (Mini)
+    url: https://openrouter.ai/arcee-ai/trinity-mini
+description: >
+  Smaller Trinity variants sharing the same architecture. Mini: 26B/3B
+  active (128 experts, top-8, 131K context). Nano: 6B/1B active (128
+  experts, 128K context). Both trained on 10T tokens using 512 H200
+  GPUs. Apache 2.0.
+tags:
+  - moe
+  - open-weight
+  - efficiency
+model:
+  architecture: moe
+  parameters: 26B
+  active_parameters: 3B
+  context_window: 131000
+  variants:
+    - name: Trinity Mini
+      parameters: 26B
+      active_parameters: 3B
+    - name: Trinity Nano
+      parameters: 6B
+      active_parameters: 1B
+paper:
+  arxiv: "2602.17004"
+related:
+  - trinity-large

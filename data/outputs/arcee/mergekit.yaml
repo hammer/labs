@@ -1,0 +1,21 @@
+name: MergeKit
+slug: mergekit
+lab: arcee
+type: library
+date: 2024-03-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2403.13257
+  - label: GitHub
+    url: https://github.com/arcee-ai/mergekit
+description: >
+  Most widely-used open-source model merging toolkit. Supports SLERP,
+  TIES, DARE, linear, and other merge methods. Created by Charles
+  Goddard (now Arcee's Chief of Frontier Research).
+tags:
+  - open-source
+  - training
+paper:
+  arxiv: "2403.13257"
+library:
+  github: https://github.com/arcee-ai/mergekit

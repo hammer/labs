@@ -1,0 +1,43 @@
+name: Trinity Large
+slug: trinity-large
+lab: arcee
+type: model
+date: 2026-01-28
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.17004
+  - label: HuggingFace
+    url: https://huggingface.co/arcee-ai/Trinity-Large-Preview
+  - label: OpenRouter
+    url: https://openrouter.ai/arcee-ai/trinity-large-thinking
+description: >
+  <p>398B total / 13B active MoE (256 routed + 1 shared expert, top-4
+  routing, 1.56% activation ratio). 60 transformer + 6 dense layers,
+  3072 model dim, 48 query heads, 8 KV heads. Interleaved local (4096
+  window) and global attention with gated attention and depth-scaled
+  sandwich norm. Sigmoid routing with SMEBU load balancing.</p>
+
+  <p>Trained on <strong>17T tokens</strong> in 3 phases using
+  <strong>2,048 NVIDIA B300 GPUs in ~33 days</strong> (~$20M total for
+  all Trinity models). Muon optimizer, zero loss spikes. 512K native
+  context (tested to 1M). Data curated by DatologyAI (8T+ synthetic).</p>
+
+  <p>MMLU: 87.2 (instruct), MMLU-Pro: 75.3, GPQA-Diamond: 63.3.
+  Trinity-Large-Thinking: tau2-Airline 88.0%, AIME25 96.3%, SWE-Bench
+  63.2%, PinchBench 91.9% (#2 globally). #1 most-used open model in
+  the US on OpenRouter. Apache 2.0.</p>
+tags:
+  - moe
+  - open-weight
+  - frontier
+  - reasoning
+model:
+  architecture: moe
+  parameters: 398B
+  active_parameters: 13B
+  context_window: 512000
+paper:
+  arxiv: "2602.17004"
+related:
+  - trinity-mini
