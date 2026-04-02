@@ -7,11 +7,17 @@ flagship: true
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2406.06563
+  - label: HuggingFace
+    url: https://huggingface.co/Skywork/Skywork-MoE-Base
+  - label: GitHub
+    url: https://github.com/SkyworkAI/Skywork-MoE
 description: >
-  146B MoE (16 experts) upcycled from Skywork-13B dense checkpoints.
-  Deep dive into MoE training techniques including dense-to-MoE
-  initialization strategies. One of the first papers to systematically
-  study upcycling for MoE.
+  146B total / 22B active MoE (16 experts, 2 active per token),
+  upcycled from Skywork-13B dense checkpoints. Released as the
+  open-source "medium" variant of TianGong 3.0; a 400B "large"
+  variant was trained but remains proprietary. Deep dive into MoE
+  training techniques including dense-to-MoE initialization strategies.
+  Inference cost reduced ~3x vs comparable dense model.
 tags:
   - moe
   - open-weight
@@ -19,6 +25,7 @@ tags:
 model:
   architecture: moe
   parameters: 146B
+  active_parameters: 22B
 paper:
   arxiv: "2406.06563"
 related:
