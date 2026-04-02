@@ -11,6 +11,7 @@ export const LabSchema = z.object({
   github: z.string().url().optional(),
   youtube: z.string().url().optional(),
   artificialanalysis: z.string().url().optional(),
+  openrouter: z.string().url().optional(),
   region: z.string(),
   founded: z.string().regex(/^\d{4}(-\d{2})?$/, 'Founded must be YYYY or YYYY-MM').optional(),
   type: z.enum(['corporate', 'startup', 'nonprofit', 'academic']).optional(),

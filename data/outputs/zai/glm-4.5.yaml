@@ -10,6 +10,8 @@ sources:
     url: https://arxiv.org/abs/2508.06471
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/glm-4-5
+  - label: OpenRouter
+    url: https://openrouter.ai/z-ai/glm-4.5
 description: >
   First "Z.ai" branded release. 355B Mixture-of-Experts model designed for
   Agentic Engineering. Claimed to be cheaper to use than DeepSeek.

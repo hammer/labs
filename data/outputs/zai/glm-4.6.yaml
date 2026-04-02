@@ -11,6 +11,8 @@ sources:
     url: https://docs.z.ai
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/glm-4-6
+  - label: OpenRouter
+    url: https://openrouter.ai/z-ai/glm-4.6
 description: >
   Released with MIT License. 355B MoE model, premier open-weight choice for
   enterprise self-hosting.

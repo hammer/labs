@@ -1,0 +1,43 @@
+name: GLM-5V-Turbo
+slug: glm-5v-turbo
+lab: zai
+type: model
+date: 2026-04-01
+flagship: true
+sources:
+  - label: Announcement (MarkTechPost)
+    url: https://www.marktechpost.com/2026/04/01/z-ai-launches-glm-5v-turbo-a-native-multimodal-vision-coding-model-optimized-for-openclaw-and-high-capacity-agentic-engineering-workflows-everywhere/
+  - label: Announcement (WinBuzzer)
+    url: https://winbuzzer.com/2026/04/02/zai-launches-glm-5v-turbo-multimodal-vision-model-xcxwbn/
+  - label: API Docs
+    url: https://docs.z.ai/guides/vlm/glm-5v-turbo
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/glm-5v-turbo
+  - label: OpenRouter
+    url: https://openrouter.ai/z-ai/glm-5v-turbo
+description: >
+  <p>Z.ai's first <strong>native multimodal agent foundation model</strong>,
+  built for vision-based coding and agentic workflows. Natively processes
+  images, videos, design drafts, and complex document layouts as primary
+  training data. 744B MoE with 40B active parameters per token, trained
+  on 28.5T tokens. 200K context window, 131K max output.</p>
+
+  <p>Optimized for the <strong>perceive &rarr; plan &rarr; execute</strong>
+  loop in autonomous environments. Deeply integrated with OpenClaw and
+  Claude Code workflows. Outperforms Claude Opus 4.5 on agentic browsing
+  (BrowseComp) while trailing by 3.1 points on SWE-bench coding.
+  AA Intelligence Index: 43 (reasoning).</p>
+tags:
+  - multimodal
+  - agentic
+  - vision
+  - coding
+  - moe
+model:
+  architecture: moe
+  parameters: 744B
+  active_parameters: 40B
+  context_window: 202752
+  intelligence_index: 43
+related:
+  - glm-5

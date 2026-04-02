@@ -9,6 +9,8 @@ sources:
     url: https://www.maginative.com/article/zhipu-ai-unveils-next-gen-foundation-model-glm-4-claims-performance-comparable-to-gpt-4/
   - label: GitHub
     url: https://github.com/zai-org/GLM-4
+  - label: OpenRouter
+    url: https://openrouter.ai/z-ai/glm-4-32b-0414
 description: >
   Major flagship upgrade featuring "All Tools" integration (web search, code
   interpreter, and vision).
