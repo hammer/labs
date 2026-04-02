@@ -20,7 +20,7 @@ outputs:
     type: model
     date: 2023-03-20
     model:
-      parameters: 1085B
+      parameters: 1.1T
       architecture: moe
   - name: "PanGu-Sigma: Towards Trillion Parameter Language Model with Sparse Heterogeneous Computing"
     type: paper
