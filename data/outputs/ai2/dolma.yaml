@@ -1,0 +1,28 @@
+name: Dolma
+slug: dolma
+lab: ai2
+type: dataset
+date: 2024-01-31
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.00159
+  - label: GitHub
+    url: https://github.com/allenai/dolma
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/allenai/dolma
+description: >
+  Largest fully open pretraining corpus at release: ~3T tokens from
+  Common Crawl (2,180B), GitHub code (342B), Reddit (80B), Semantic
+  Scholar/peS2o (57B), Gutenberg + Wikipedia (~9B). Includes the Dolma
+  Toolkit for reproducible data curation. Evolved through Dolma 1.7
+  (OLMo 2) and Dolma 3 (OLMo 3, ~9.3T token pool with olmOCR). ODC-BY.
+tags:
+  - data
+  - open-source
+paper:
+  arxiv: "2402.00159"
+dataset:
+  github: https://github.com/allenai/dolma
+related:
+  - olmo

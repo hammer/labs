@@ -1,0 +1,32 @@
+name: Tülu 3
+slug: tulu-3
+lab: ai2
+type: model
+date: 2024-11-22
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.15124
+  - label: GitHub
+    url: https://github.com/allenai/open-instruct
+  - label: HuggingFace (8B)
+    url: https://huggingface.co/allenai/Llama-3.1-Tulu-3-8B
+description: >
+  <p>Post-training framework introducing <strong>RLVR (Reinforcement
+  Learning with Verifiable Rewards)</strong>. Applied to Llama 3.1 at
+  8B, 70B, and 405B. Surpasses instruct versions of Llama 3.1, Qwen 2.5,
+  Mistral, and closed models GPT-4o-mini and Claude 3.5-Haiku.</p>
+
+  <p>At release, no model in LMSYS ChatBot Arena top-50 had published
+  post-training data. Tülu 3 releases all datasets, training code, and
+  recipes. Comprehensive decontamination of open datasets. Apache 2.0.</p>
+tags:
+  - open-source
+  - training
+  - alignment
+  - research
+paper:
+  arxiv: "2411.15124"
+related:
+  - olmo-2
+  - olmo-3

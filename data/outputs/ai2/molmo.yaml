@@ -1,0 +1,31 @@
+name: Molmo
+slug: molmo
+lab: ai2
+type: model
+date: 2024-09-25
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2409.17146
+  - label: GitHub
+    url: https://github.com/allenai/molmo
+  - label: HuggingFace
+    url: https://huggingface.co/allenai/Molmo-72B-0924
+description: >
+  Open multimodal VLM family with fully open training data (PixMo).
+  Pioneered image pointing capabilities. Trained in two stages: dense
+  captioning pre-training + supervised fine-tuning for QA, document
+  reading, and pointing. Closes the gap between open and proprietary
+  multimodal systems. Published at CVPR 2025.
+tags:
+  - multimodal
+  - vision
+  - open-source
+  - open-weight
+model:
+  architecture: dense
+paper:
+  arxiv: "2409.17146"
+  venue: CVPR 2025
+related:
+  - molmo-2

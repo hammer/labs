@@ -1,0 +1,23 @@
+name: OLMix
+slug: olmix
+lab: ai2
+type: paper
+date: 2026-02-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.12237
+description: >
+  Framework for data mixing across the full LM development lifecycle.
+  Solves the "evolving domain problem" where domains are added, removed,
+  or revised over time. Mixture reuse matches full recomputation with
+  74% less compute and improves 11.6% over no-mixing baselines. Used
+  in OLMo 3 pre-training.
+tags:
+  - data
+  - training
+  - research
+paper:
+  arxiv: "2602.12237"
+related:
+  - olmo-3
+  - weborganizer

@@ -1,0 +1,50 @@
+name: OLMo 3
+slug: olmo-3
+lab: ai2
+type: model
+date: 2025-11-20
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.13961
+  - label: HuggingFace (32B Think)
+    url: https://huggingface.co/allenai/Olmo-3-32B-Think
+  - label: HuggingFace (3.1 Think)
+    url: https://huggingface.co/allenai/Olmo-3.1-32B-Think
+  - label: Artificial Analysis (3.1 Think)
+    url: https://artificialanalysis.ai/models/olmo-3-1-32b-think
+  - label: OpenRouter (3.1 Think)
+    url: https://openrouter.ai/allenai/olmo-3.1-32b-think
+description: >
+  <p>7B and 32B dense Transformers with <strong>65K native context</strong>
+  (up from 4K). 3-stage training: main pretraining (~95%), mid-training
+  (100-200B tokens of code/math/QA/thinking), and long-context extension.
+  Trained on <strong>Dolma 3</strong> (~9.3T token pool including
+  olmOCR-processed science PDFs). 5.5-5.9T tokens used.</p>
+
+  <p>32B Think: MATH 96.1, AIME 2024 76.8, AIME 2025 72.5,
+  HumanEvalPlus 91.4, MMLU 85.4. OLMo 3.1 (Dec 2025) extends RL
+  training (+3 weeks RLVR): AIME 2025 78.1, IFEval 93.8. AA
+  Intelligence: 14 (3.1 Think). Strongest fully open thinking model
+  at release. Apache 2.0.</p>
+tags:
+  - open-source
+  - open-weight
+  - reasoning
+  - frontier
+model:
+  architecture: dense
+  parameters: 32B
+  context_window: 65536
+  intelligence_index: 14
+  variants:
+    - name: OLMo 3 7B
+      parameters: 7B
+    - name: OLMo 3 32B
+      parameters: 32B
+paper:
+  arxiv: "2512.13961"
+related:
+  - olmo-2
+  - olmo-hybrid
+  - tulu-3

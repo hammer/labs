@@ -1,0 +1,41 @@
+name: FlexOlmo
+slug: flexolmo
+lab: ai2
+type: model
+date: 2025-07-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.07024
+  - label: GitHub
+    url: https://github.com/allenai/FlexOlmo
+  - label: HuggingFace
+    url: https://huggingface.co/allenai/FlexOlmo-7x7B-1T
+  - label: Blog Post
+    url: https://allenai.org/blog/flexolmo
+description: >
+  <p>New paradigm for LLM training via <strong>data collaboration</strong>.
+  Data owners independently train MoE expert modules on their private
+  data, then contribute experts to a shared model — without sharing
+  raw data. Data can be activated or deactivated at any time, enabling
+  opt-out based on licensing or permissions.</p>
+
+  <p>FlexOlmo-7x7B-1T: 33B total MoE combining independently trained
+  experts on public-mix, news, math, code, academic, creative writing,
+  and Reddit data. 41% average relative improvement from combining
+  experts. Apache 2.0.</p>
+tags:
+  - moe
+  - open-source
+  - open-weight
+  - data
+  - research
+model:
+  architecture: moe
+  parameters: 33B
+paper:
+  arxiv: "2507.07024"
+library:
+  github: https://github.com/allenai/FlexOlmo
+related:
+  - olmo-3
+  - olmoe

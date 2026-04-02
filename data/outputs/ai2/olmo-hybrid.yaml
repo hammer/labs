@@ -1,0 +1,32 @@
+name: OLMo Hybrid
+slug: olmo-hybrid
+lab: ai2
+type: model
+date: 2026-03-01
+flagship: true
+sources:
+  - label: Blog Post
+    url: https://allenai.org/blog/olmohybrid
+  - label: HuggingFace
+    url: https://huggingface.co/allenai/Olmo-Hybrid-7B
+description: >
+  <p>First fully open hybrid Transformer + linear RNN model at scale.
+  <strong>Gated DeltaNet + Transformer attention at 3:1 ratio</strong>
+  (3 DeltaNet layers per 1 attention layer). 7B parameters, trained on
+  6T tokens (OLMo 3 data mix) using 512 GPUs (H100s migrated to HGX
+  B200s mid-training).</p>
+
+  <p>Reaches OLMo 3 7B quality in <strong>35% fewer tokens</strong>
+  (Common Crawl loss) and matches MMLU in 49% fewer tokens. 75% better
+  inference throughput and memory on long contexts. Demonstrates hybrid
+  models are more expressive than either architecture alone. Apache 2.0.</p>
+tags:
+  - open-source
+  - open-weight
+  - architecture
+  - efficiency
+model:
+  architecture: dense
+  parameters: 7B
+related:
+  - olmo-3

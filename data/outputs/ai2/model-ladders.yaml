@@ -1,0 +1,22 @@
+name: Language Model Ladders
+slug: model-ladders
+lab: ai2
+type: paper
+date: 2024-12-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.04403
+description: >
+  Develops task-specific scaling laws using small "ladder" models
+  (costing 1% of target compute) to predict large model performance
+  within 2 percentage points. Two-step prediction: model/data size to
+  task loss, then task loss to task performance. Validated on OLMo 2
+  7B and 13B.
+tags:
+  - scaling
+  - research
+paper:
+  arxiv: "2412.04403"
+related:
+  - olmo-2
+  - datadecide

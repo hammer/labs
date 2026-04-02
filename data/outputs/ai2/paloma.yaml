@@ -1,0 +1,19 @@
+name: Paloma
+slug: paloma
+lab: ai2
+type: dataset
+date: 2023-12-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2312.10523
+description: >
+  Perplexity-based benchmark measuring language model fit across 585
+  textual domains from 18 sources, rather than assuming perplexity on
+  one distribution generalizes. Includes 6 controlled 1B baselines and
+  standardizes evaluation via bits-per-byte and variance-aware domain
+  sampling.
+tags:
+  - evaluation
+  - research
+paper:
+  arxiv: "2312.10523"

@@ -1,0 +1,47 @@
+name: Molmo 2
+slug: molmo-2
+lab: ai2
+type: model
+date: 2025-12-16
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.10611
+  - label: GitHub
+    url: https://github.com/allenai/molmo2
+  - label: Blog Post
+    url: https://allenai.org/blog/molmo2
+  - label: OpenRouter
+    url: https://openrouter.ai/allenai/molmo-2-8b-20260109
+description: >
+  <p>Open VLM family expanding Molmo's image strengths to
+  <strong>video and multi-image understanding</strong>. 4B (Qwen 3),
+  8B (Qwen 3), and 7B-O (OLMo backbone, fully open end-to-end).
+  7 new video datasets + 2 multi-image datasets collected without
+  closed VLMs.</p>
+
+  <p>SOTA open model for video tracking, leapfrogging Gemini 3 Pro.
+  8B surpassed prior 72B Molmo on image QA. Capabilities: video QA,
+  video counting, video tracking, and point-driven grounding across
+  single image, multi-image, and video.</p>
+tags:
+  - multimodal
+  - vision
+  - video
+  - open-source
+  - open-weight
+model:
+  architecture: dense
+  variants:
+    - name: Molmo 2 4B
+      parameters: 4B
+    - name: Molmo 2 8B
+      parameters: 8B
+    - name: Molmo 2-O 7B
+      parameters: 7B
+      notes: OLMo backbone, fully open
+paper:
+  arxiv: "2601.10611"
+related:
+  - molmo
+  - olmo-3

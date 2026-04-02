@@ -1,0 +1,23 @@
+name: DataDecide
+slug: datadecide
+lab: ai2
+type: paper
+date: 2025-04-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.11393
+description: >
+  Most extensive open suite of controlled pretraining experiments over
+  data and scale: 25 corpora (Dolma, DCLM, RefinedWeb, C4, FineWeb),
+  sizes up to 1B, 3 random seeds. Rankings at 150M predict best data
+  at 1B ~80% of the time. Likelihood proxies make benchmarks >80%
+  predictable at target scale with 0.01% of the compute.
+tags:
+  - data
+  - scaling
+  - research
+paper:
+  arxiv: "2504.11393"
+related:
+  - model-ladders
+  - dolma

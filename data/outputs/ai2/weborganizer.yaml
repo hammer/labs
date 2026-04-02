@@ -1,0 +1,22 @@
+name: WebOrganizer
+slug: weborganizer
+lab: ai2
+type: paper
+date: 2025-02-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.10341
+description: >
+  Framework for constructing meaningful domain taxonomies over web
+  corpora. Introduces topic and format taxonomies (24 categories each),
+  distilling Llama-3.1-405B classifiers into efficient 140M models.
+  Enables principled data curation by flexibly up/down-sampling domains
+  for pre-training.
+tags:
+  - data
+  - research
+paper:
+  arxiv: "2502.10341"
+related:
+  - dolma
+  - olmix

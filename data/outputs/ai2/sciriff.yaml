@@ -1,0 +1,20 @@
+name: SciRIFF
+slug: sciriff
+lab: ai2
+type: dataset
+date: 2024-06-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.07835
+description: >
+  137K instruction-following demonstrations across 54 scientific
+  literature tasks (extraction, summarization, QA, claim verification,
+  classification). SciTulu models improve over baselines by 28.1% at
+  7B and 6.5% at 70B on scientific tasks while maintaining general
+  instruction-following.
+tags:
+  - data
+  - science
+  - research
+paper:
+  arxiv: "2406.07835"

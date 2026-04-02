@@ -1,0 +1,36 @@
+name: OLMo
+slug: olmo
+lab: ai2
+type: model
+date: 2024-02-01
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.00838
+  - label: GitHub
+    url: https://github.com/allenai/OLMo
+  - label: HuggingFace
+    url: https://huggingface.co/allenai/OLMo-7B
+description: >
+  <p>First competitive LLM to release <strong>everything</strong>: weights,
+  training data (Dolma), training code, logs, and 500+ intermediate
+  checkpoints. 1B and 7B dense Transformers (32 layers, 4096 hidden,
+  SwiGLU, RoPE). Trained on 2-2.46T tokens on Dolma using 256 AMD
+  MI250X GPUs (LUMI) + 27 NVIDIA A100 nodes. Apache 2.0. ACL 2024.</p>
+
+  <p>Established the paradigm of fully reproducible open-source LLM
+  research that defined all subsequent OLMo releases.</p>
+tags:
+  - open-source
+  - open-weight
+  - research
+model:
+  architecture: dense
+  parameters: 7B
+  context_window: 2048
+paper:
+  arxiv: "2402.00838"
+  venue: ACL 2024
+related:
+  - olmo-2
+  - dolma
