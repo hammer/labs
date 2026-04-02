@@ -1,0 +1,125 @@
+---
+import Layout from '../../components/Layout.astro';
+---
+
+<Layout title="DeepSeek Before V4: English Summary">
+  <article class="article">
+    <h1>DeepSeek Before V4: Culture, Organization, and Liang Wenfeng's Unique Goals</h1>
+
+    <p class="meta">
+      <strong>Original:</strong> <a href="https://mp.weixin.qq.com/s/bYZrKp48Y7EpsU8_vd6TcQ">V4 发布前的 DeepSeek：特质、组织和梁文锋的独特目标</a> (WeChat/晚点LatePost, ~March 2026)
+    </p>
+    <p class="meta">
+      <strong>Summary by AI Lab Tracker.</strong> This is a condensed English summary of the major claims in the original Chinese article.
+    </p>
+
+    <hr />
+
+    <h2>Key Departures</h2>
+    <p>Several core DeepSeek members left between late 2025 and early 2026:</p>
+    <ul>
+      <li><strong>Wang Bingxuan</strong> &mdash; core author of DeepSeek LLM (the first-generation model), hired away by Tencent's Yao Shunyu in late 2025.</li>
+      <li><strong>Wei Haoran</strong> &mdash; core author of the DeepSeek-OCR series, departed around Chinese New Year. Likely joining a major tech company.</li>
+      <li><strong>Guo Daya</strong> &mdash; core author of DeepSeek-R1, recently departed. Likely joining a major tech company.</li>
+      <li><strong>Ruan Chong</strong> &mdash; a member since the Huanfang (High-Flyer) era, core contributor to Janus-Pro and other multimodal work. Left in early 2025 and joined autonomous driving startup DeepRoute.ai in January 2026.</li>
+    </ul>
+    <p>Despite these departures, the article emphasizes that more people chose to stay. There has been no group-level attrition.</p>
+
+    <h2>V4 Status</h2>
+    <p>As of writing (~March 2026), DeepSeek V4 has <strong>not yet been officially released</strong>. A small-parameter version was given to open-source framework communities around January 2026 for adaptation work. The optimistic timeline was a mid-February release (around Chinese New Year), but the article reports V4 may launch in <strong>April 2026</strong>.</p>
+
+    <h2>Compensation and Valuation Challenges</h2>
+    <p>DeepSeek has never raised external funding and has no established company valuation. As competitors like MiniMax and Zhipu (Z.ai) go public with rising stock prices, and Moonshot AI (Kimi) and StepFun prepare IPOs, DeepSeek employees are questioning the value of their equity/option agreements. Liang Wenfeng has recently begun working to establish a company valuation and provide more certainty to team members.</p>
+    <p>When Liang did briefly meet investors in 2023, he proposed an unusual term: a return cap for investors, similar to OpenAI's arrangement with Microsoft. No institution invested.</p>
+
+    <h2>The "No Overtime" Culture</h2>
+    <p>DeepSeek is described as <strong>the only core AI lab globally that does not overwork</strong>. While engineers at Google, OpenAI, xAI, and ByteDance work 70&ndash;80 hours per week:</p>
+    <ul>
+      <li>Most DeepSeek employees leave the office between 6&ndash;7 PM on weekdays.</li>
+      <li>There is no clock-in system and no morning attendance tracking.</li>
+      <li>There are no explicit performance reviews or deadlines (DDLs).</li>
+      <li>Liang Wenfeng believes a person can produce high-quality output for at most 6&ndash;8 hours per day, and that fatigued decision-making wastes precious GPU resources.</li>
+    </ul>
+    <p>The company provides free after-work benefits like sports courses and gym/venue reimbursements.</p>
+
+    <h2>Organization: Flat, Cross-functional, ~200 People</h2>
+    <ul>
+      <li>DeepSeek has <strong>no second-in-command</strong>. In the research team, there are only two levels: Liang Wenfeng and everyone else.</li>
+      <li>The research team is ~100+ people, functioning like a large academic lab. Researchers (mostly born around 2000) call 1985-born Liang "Boss Liang" (梁老板), though his role is closer to an academic advisor.</li>
+      <li>Three main groups &mdash; <strong>base model architecture</strong> (a few dozen people), <strong>infrastructure</strong> (a few dozen), and <strong>data</strong> (a few dozen) &mdash; work in tight, cross-functional collaboration with blurred team boundaries.</li>
+      <li>Liang personally attends every team's meetings. Most weekly meetings are open to members from other teams.</li>
+      <li>The total organization has grown past the size of Huanfang (High-Flyer), making it the largest organization Liang has ever managed.</li>
+    </ul>
+
+    <h2>Hiring Profile</h2>
+    <p>Before 2025, DeepSeek almost never hired experienced professionals, preferring new graduates and converting interns. Analysis of 172 researchers who contributed to three generations of models (LLM, V2, V3/R1) showed: over 70% held only bachelor's or master's degrees, and over 70% were under 30 years old.</p>
+
+    <h2>Research Focus Since R1</h2>
+    <p>Rather than capitalizing on V3/R1's viral success with flashy releases, DeepSeek continued along three lines:</p>
+    <ol>
+      <li><strong>Efficiency optimization</strong> &mdash; squeezing maximum intelligence per unit of GPU compute. This includes the open-source week infrastructure releases (inference kernels, communication libraries, matrix multiplication libraries, data processing frameworks), NSA (Native Sparse Attention), DSA (Dynamic Sparse Attention), and even replacing CUDA/Triton with the Peking University-developed TileLang at the operator level.</li>
+      <li><strong>Architecture innovations</strong> &mdash; mHC (Manifold-Constrained Hyper-Connections) for training stability, and Engram for building long-term memory outside the model. mHC is widely expected to be used in V4.</li>
+      <li><strong>"Non-mainstream" explorations</strong> &mdash; DeepSeek-OCR (converting text to images before feeding to the model), continuous learning, autonomous learning, and consultations with neuroscience/brain science advisors to explore mechanisms closer to the human brain.</li>
+    </ol>
+
+    <h2>What DeepSeek Is NOT Doing</h2>
+    <ul>
+      <li><strong>Not investing heavily in multimodal generation</strong> &mdash; Liang believes it is not on the main path to intelligence.</li>
+      <li><strong>Not aggressively pursuing Agent products</strong> &mdash; though V3.2 strengthened agent capabilities, DeepSeek's iteration frequency has been lower than competitors. Since early 2025, Zhipu updated 5 versions, MiniMax 4 versions, and Kimi 3 versions focused on Agent/coding. DeepSeek-V3.2 ranks only #12 in OpenRouter's OpenClaw token consumption.</li>
+      <li><strong>Not building consumer products beyond a basic chatbot</strong> &mdash; though the article notes DeepSeek has recently begun hiring for Agent product roles, specifically seeking people familiar with Claude Code, OpenClaw, and Manus.</li>
+    </ul>
+
+    <h2>Liang Wenfeng's Unique AGI Goals</h2>
+    <p>Beyond pursuing intelligence ceiling, Liang prioritizes two things most labs do not:</p>
+    <ol>
+      <li><strong>Building on domestic (Chinese) chip ecosystems</strong> &mdash; adapting models for domestic GPUs, using Chinese-originated open-source tools (TileLang over Triton), and designing data formats for next-generation domestic chips.</li>
+      <li><strong>"Original innovation"</strong> &mdash; pursuing directions that big companies or other startups won't try: the Janus unified multimodal series, the Prover formal verification series, OCR research, continuous learning, and brain-inspired approaches.</li>
+    </ol>
+
+    <h2>Outlook</h2>
+    <p>The article concludes that V4, when released, will likely be the strongest open-source model but will not be overwhelmingly dominant, as "strong" has become increasingly context-dependent across different use cases. DeepSeek faces the tension between Liang's emphasis on original exploration and the industry's pressure to simply "stay the strongest."</p>
+    <p>A person close to DeepSeek says: "Those who stay still have some idealism." Another observer notes: "Only when more companies like DeepSeek appear will Chinese technology have a chance to go from 'replication' to leading."</p>
+  </article>
+</Layout>
+
+<style>
+  .article {
+    max-width: 720px;
+    line-height: 1.7;
+  }
+
+  .article h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .article h2 {
+    font-size: 1.15rem;
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .meta {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+  }
+
+  .article hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 1.5rem 0;
+  }
+
+  .article ul, .article ol {
+    padding-left: 1.25rem;
+  }
+
+  .article li {
+    margin-bottom: 0.4rem;
+  }
+
+  .article p {
+    margin-bottom: 0.75rem;
+  }
+</style>

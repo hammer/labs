@@ -41,7 +41,7 @@ export const LabSchema = z.object({
   tags: z.array(z.string()).optional(),
   news: z.array(z.object({
     title: z.string(),
-    url: z.string().url(),
+    url: z.string(),
     source: z.string().optional(),
     date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Date must be YYYY-MM-DD'),
   })).optional(),

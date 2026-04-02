@@ -54,13 +54,13 @@ people:
     role: Founder
     formerly: High-Flyer (Founder & CEO)
   - name: Chong Ruan
-    role: Co-founder & Research Lead
+    role: Co-founder (departed early 2025; joined DeepRoute.ai Jan 2026)
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Chong_Ruan1
   - name: Daya Guo
     url: https://guoday.github.io/
-    role: Core Researcher (coding, reasoning)
+    role: Former Core Researcher (R1 core author; departed early 2026)
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Daya_Guo2
@@ -81,6 +81,15 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Qihao_Zhu1
+news:
+  - title: "DeepSeek Before V4: Culture, Organization, and Liang Wenfeng's Unique Goals (English summary)"
+    url: /articles/deepseek-before-v4-summary
+    source: LatePost (晚点)
+    date: 2026-03-28
+  - title: "DeepSeek's Latest Job Postings Highlight Pivot to Agentic AI"
+    url: https://www.bloomberg.com/news/articles/2026-03-24/deepseek-s-latest-job-postings-highlight-pivot-to-agentic-ai
+    source: Bloomberg
+    date: 2026-03-24
 tags:
   - frontier
   - open-weight
