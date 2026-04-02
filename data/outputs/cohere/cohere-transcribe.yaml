@@ -8,6 +8,8 @@ sources:
     url: https://techcrunch.com/2026/03/26/cohere-launches-an-open-source-voice-model-specifically-for-transcription/
   - label: HuggingFace
     url: https://huggingface.co/CohereLabs/cohere-transcribe-03-2026
+  - label: Blog Post (HuggingFace)
+    url: https://huggingface.co/blog/CohereLabs/cohere-transcribe-03-2026-release
 description: >
   2B-parameter open-source ASR model. Topped the HuggingFace Open ASR
   Leaderboard with 5.42 average WER. Supports 14 languages. Apache 2.0.
