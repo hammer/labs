@@ -1,0 +1,51 @@
+name: Nemotron 3 Nano
+slug: nemotron-3-nano
+lab: nvidia
+type: model
+date: 2025-12-15
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.20856
+  - label: HuggingFace (30B)
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
+  - label: HuggingFace (4B)
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/nvidia-nemotron-3-nano-30b-a3b-reasoning
+  - label: OpenRouter
+    url: https://openrouter.ai/nvidia/nemotron-3-nano-30b-a3b
+description: >
+  <p>First Nemotron 3 generation models. Hybrid <strong>LatentMoE +
+  Mamba-2 + Attention</strong> architecture. The 30B-A3B variant has
+  23 Mamba-2 layers + 23 MoE layers (128 routed + 1 shared expert,
+  6 active) + 6 GQA attention layers. 30B total / 3.5B active.
+  Trained on <strong>25T tokens</strong>. 1M context window.</p>
+
+  <p>AIME25: 89.1 (no tools) / 99.2 (with tools), GPQA: 75.0 (tools),
+  LiveCodeBench: 68.3, MMLU-Pro: 78.3, RULER@1M: 86.3. The 4B variant
+  (compressed from 9B via structured pruning) fits on 8GB Jetson Orin
+  Nano for edge deployment. MATH-500: 95.4 in reasoning mode.</p>
+tags:
+  - moe
+  - open-weight
+  - reasoning
+  - efficiency
+model:
+  architecture: moe
+  parameters: 30B
+  active_parameters: 3.5B
+  context_window: 1000000
+  intelligence_index: 24
+  variants:
+    - name: Nemotron 3 Nano 30B-A3B
+      parameters: 30B
+      active_parameters: 3.5B
+    - name: Nemotron 3 Nano 4B
+      parameters: 4B
+      notes: Edge deployment, 262K context
+paper:
+  arxiv: "2512.20856"
+related:
+  - nemotron-3-super
+  - nemotron-h

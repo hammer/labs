@@ -1,0 +1,26 @@
+name: Megatron-LM
+slug: megatron-lm
+lab: nvidia
+type: library
+date: 2019-09-17
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/1909.08053
+  - label: Paper (PTD-P, arXiv)
+    url: https://arxiv.org/abs/2104.04473
+  - label: GitHub
+    url: https://github.com/NVIDIA/Megatron-LM
+description: >
+  NVIDIA's distributed training framework implementing tensor, pipeline,
+  and data parallelism (PTD-P). Achieves 52% peak device throughput on
+  1000s of GPUs. Underpins virtually all large-scale model training —
+  used by NVIDIA, many Chinese labs, and other organizations worldwide.
+tags:
+  - infrastructure
+  - open-source
+  - training
+paper:
+  arxiv: "1909.08053"
+library:
+  github: https://github.com/NVIDIA/Megatron-LM

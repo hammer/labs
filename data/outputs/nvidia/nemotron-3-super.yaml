@@ -1,0 +1,42 @@
+name: Nemotron 3 Super
+slug: nemotron-3-super
+lab: nvidia
+type: model
+date: 2026-03-11
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.20856
+  - label: HuggingFace
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/nvidia-nemotron-3-super-120b-a12b
+  - label: OpenRouter
+    url: https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b
+description: >
+  <p>NVIDIA's current flagship. 120B total / 12B active per token using
+  <strong>LatentMoE + Mamba-2 + Attention</strong> hybrid architecture
+  with Multi-Token Prediction. Trained in NVFP4 precision. 1M context
+  window. 5x throughput over previous generation.</p>
+
+  <p>AA Intelligence Index: <strong>36</strong> (#2 in class, 293 t/s —
+  fastest among top models). AIME25: 90.21, HMMT Feb25: 93.67, GPQA:
+  79.23/82.70 (tools), MMLU-Pro: 83.73, SWE-Bench: 60.47 (OpenHands),
+  RULER@1M: 91.75. Open weights with complete training data (10T+
+  tokens) and recipes released.</p>
+tags:
+  - moe
+  - open-weight
+  - frontier
+  - reasoning
+model:
+  architecture: moe
+  parameters: 120B
+  active_parameters: 12B
+  context_window: 1000000
+  intelligence_index: 36
+paper:
+  arxiv: "2512.20856"
+related:
+  - nemotron-3-nano
+  - llama-nemotron

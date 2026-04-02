@@ -1,0 +1,25 @@
+name: Minitron
+slug: minitron
+lab: nvidia
+type: paper
+date: 2024-08-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2408.11796
+  - label: GitHub
+    url: https://github.com/NVlabs/Minitron
+description: >
+  Model compression technique combining depth pruning, width pruning,
+  and distillation. Compressed Llama 3.1 8B to 4B and Mistral NeMo 12B
+  to 8B with 1.2-2.7x speedup and minimal quality loss. Later evolved
+  into MiniPuzzle (used in Nemotron-H 47B). Accepted at ICLR 2025.
+tags:
+  - efficiency
+  - research
+paper:
+  arxiv: "2408.11796"
+  venue: ICLR 2025
+library:
+  github: https://github.com/NVlabs/Minitron
+related:
+  - nemotron-h

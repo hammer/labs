@@ -1,0 +1,50 @@
+name: Nemotron Nano V2
+slug: nemotron-nano-v2
+lab: nvidia
+type: model
+date: 2025-08-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.14444
+  - label: Paper (VL, arXiv)
+    url: https://arxiv.org/abs/2511.03929
+  - label: HuggingFace (12B)
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/nvidia-nemotron-nano-9b-v2
+  - label: OpenRouter (9B)
+    url: https://openrouter.ai/nvidia/nemotron-nano-9b-v2
+  - label: OpenRouter (12B VL)
+    url: https://openrouter.ai/nvidia/nemotron-nano-12b-v2-vl
+description: >
+  <p>Hybrid Mamba-Transformer reasoning models (12B and 9B compressed
+  via Minitron). Trained on 20T tokens in FP8. On par with Qwen3-8B on
+  reasoning with up to 6x higher inference throughput. 128K context,
+  fits on single A10G 22GB in BF16.</p>
+
+  <p>Nemotron Nano V2 VL adds vision encoder for document understanding,
+  long video comprehension, and reasoning. 35% higher throughput than
+  predecessor on multi-page document tasks.</p>
+tags:
+  - open-weight
+  - efficiency
+  - multimodal
+  - reasoning
+model:
+  architecture: dense
+  parameters: 12B
+  context_window: 128000
+  variants:
+    - name: Nemotron Nano 12B V2
+      parameters: 12B
+    - name: Nemotron Nano 9B V2
+      parameters: 9B
+      notes: Compressed via Minitron
+    - name: Nemotron Nano 12B V2 VL
+      parameters: 12B
+      notes: Vision-language variant
+paper:
+  arxiv: "2508.14444"
+related:
+  - nemotron-h
+  - nemotron-3-nano

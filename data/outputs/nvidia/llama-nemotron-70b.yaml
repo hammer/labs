@@ -1,0 +1,36 @@
+name: Llama-3.1-Nemotron-70B
+slug: llama-nemotron-70b
+lab: nvidia
+type: model
+date: 2024-10-02
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.01257
+  - label: HuggingFace (Instruct)
+    url: https://huggingface.co/nvidia/Llama-3.1-Nemotron-70B-Instruct
+  - label: HuggingFace (Reward)
+    url: https://huggingface.co/nvidia/Llama-3.1-Nemotron-70B-Reward
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/llama-3-1-nemotron-instruct-70b
+  - label: OpenRouter
+    url: https://openrouter.ai/nvidia/llama-3.1-nemotron-70b-instruct
+description: >
+  <p>Fine-tune of Meta Llama 3.1 70B via RLHF (REINFORCE) with the
+  HelpSteer2 preference dataset. At release, ranked #1 on Arena Hard
+  (85.0), AlpacaEval 2 LC (57.6), MT-Bench (8.98), and Chatbot Arena
+  Elo (1267).</p>
+
+  <p>Accompanied by Llama-3.1-Nemotron-70B-Reward, which ranked #1 on
+  RewardBench at release. 128K context.</p>
+tags:
+  - open-weight
+  - reasoning
+model:
+  architecture: dense
+  parameters: 70B
+  context_window: 128000
+paper:
+  arxiv: "2410.01257"
+related:
+  - llama-nemotron

@@ -1,0 +1,30 @@
+name: Nemotron-4 340B
+slug: nemotron-4-340b
+lab: nvidia
+type: model
+date: 2024-06-17
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.11704
+  - label: HuggingFace
+    url: https://huggingface.co/nvidia/Nemotron-4-340B-Instruct
+description: >
+  <p>340B dense Transformer with GQA, RoPE, and squared ReLU. Trained on
+  9T tokens (8T pre-training + 1T continued). MMLU: 81.1, HumanEval: 57.3,
+  Arena Hard: 54.2.</p>
+
+  <p>Notable for alignment: <strong>&gt;98% of alignment data is
+  synthetically generated</strong>. Fits on single DGX H100 (8xGPU)
+  in FP8.</p>
+tags:
+  - open-weight
+  - frontier
+model:
+  architecture: dense
+  parameters: 340B
+  context_window: 4096
+paper:
+  arxiv: "2406.11704"
+related:
+  - llama-nemotron

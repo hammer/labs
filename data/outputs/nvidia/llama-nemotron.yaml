@@ -1,0 +1,54 @@
+name: Llama-Nemotron (Nano/Super/Ultra)
+slug: llama-nemotron
+lab: nvidia
+type: model
+date: 2025-03-18
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.00949
+  - label: HuggingFace (Ultra 253B)
+    url: https://huggingface.co/nvidia/Llama-3_1-Nemotron-Ultra-253B-v1
+  - label: HuggingFace (Super 49B)
+    url: https://huggingface.co/nvidia/Llama-3.3-Nemotron-Super-49B-v1
+  - label: Artificial Analysis (Ultra)
+    url: https://artificialanalysis.ai/models/llama-3-1-nemotron-ultra-253b-v1-reasoning
+  - label: Artificial Analysis (Super)
+    url: https://artificialanalysis.ai/models/llama-3-3-nemotron-super-49b
+  - label: OpenRouter (Ultra)
+    url: https://openrouter.ai/nvidia/llama-3.1-nemotron-ultra-253b-v1
+  - label: OpenRouter (Super)
+    url: https://openrouter.ai/nvidia/llama-3.3-nemotron-super-49b-v1.5
+description: >
+  <p>Family of reasoning models derived from Meta Llama via Neural
+  Architecture Search (NAS): <strong>Ultra</strong> (253B, from Llama 3.1
+  405B with skip attention, variable FFN, FFN fusion),
+  <strong>Super</strong> (49B, from Llama 3.3 70B), and
+  <strong>Nano</strong> (8B). First open models with
+  <strong>dynamic reasoning toggle</strong> (on/off at inference).</p>
+
+  <p>Ultra reasoning ON: MATH-500 97.0, GPQA 76.0, AIME25 72.5,
+  LiveCodeBench 66.3. Outperforms DeepSeek-R1 on GPQA at less than half
+  the parameters. Super fits on single H100-80GB. v1.5 adds RPO, RLVR,
+  and iterative DPO for enhanced agentic capabilities.</p>
+tags:
+  - open-weight
+  - reasoning
+  - frontier
+model:
+  architecture: dense
+  parameters: 253B
+  context_window: 128000
+  intelligence_index: 15
+  variants:
+    - name: Llama-3.1-Nemotron-Ultra-253B
+      parameters: 253B
+    - name: Llama-3.3-Nemotron-Super-49B
+      parameters: 49B
+    - name: Llama-3.1-Nemotron-Nano-8B
+      parameters: 8B
+paper:
+  arxiv: "2505.00949"
+related:
+  - llama-nemotron-70b
+  - nemotron-3-super

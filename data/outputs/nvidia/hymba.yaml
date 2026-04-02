@@ -1,0 +1,25 @@
+name: Hymba
+slug: hymba
+lab: nvidia
+type: paper
+date: 2024-11-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.13676
+  - label: HuggingFace
+    url: https://huggingface.co/nvidia/Hymba-1.5B-Base
+description: >
+  Hybrid-head architecture running attention heads and SSM heads in
+  parallel within the same layer, plus learnable meta tokens and
+  cross-layer KV sharing. Hymba-1.5B outperforms Llama-3.2-3B by
+  1.32% on commonsense reasoning with 11x smaller cache and 3.49x
+  faster inference. Architectural precursor to the Nemotron 3
+  hybrid approach.
+tags:
+  - architecture
+  - efficiency
+  - research
+paper:
+  arxiv: "2411.13676"
+related:
+  - nemotron-h

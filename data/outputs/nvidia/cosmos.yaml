@@ -1,0 +1,21 @@
+name: Cosmos
+slug: cosmos
+lab: nvidia
+type: model
+date: 2025-01-07
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.03575
+description: >
+  World foundation model platform for physical AI. Cosmos-Predict2.5
+  uses flow-based architecture for Text2World/Image2World/Video2World
+  at 2B and 14B scales. Trained on 200M curated video clips with
+  RL-based post-training. One of NVIDIA's six frontier model families
+  alongside Nemotron, GR00T, Alpamayo, BioNeMo, and Earth-2.
+tags:
+  - generation
+  - video
+  - open-weight
+paper:
+  arxiv: "2501.03575"

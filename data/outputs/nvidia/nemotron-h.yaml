@@ -1,0 +1,41 @@
+name: Nemotron-H
+slug: nemotron-h
+lab: nvidia
+type: model
+date: 2025-04-04
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.03624
+  - label: HuggingFace (56B)
+    url: https://huggingface.co/nvidia/Nemotron-H-56B-Base-8K
+  - label: HuggingFace (8B)
+    url: https://huggingface.co/nvidia/Nemotron-H-8B-Base-8K
+description: >
+  <p>Hybrid Mamba-Transformer architecture: 56B model has 54 Mamba-2
+  layers + 54 MLP layers + 10 self-attention layers (118 total), 8192
+  hidden dim, 64 query heads, 8 KV heads. <strong>Largest public FP8
+  pre-training: 56B model trained on 20T tokens in FP8.</strong></p>
+
+  <p>Up to 3x faster inference than comparable Transformers (vs Qwen-2.5-72B,
+  Llama-3.1-70B). 47B variant (compressed via MiniPuzzle) is 20% faster
+  than 56B with minimal quality loss. MMLU: 84.21, ARC-C: 94.97.</p>
+tags:
+  - open-weight
+  - architecture
+  - efficiency
+model:
+  architecture: dense
+  parameters: 56B
+  variants:
+    - name: Nemotron-H-8B
+      parameters: 8B
+    - name: Nemotron-H-47B
+      parameters: 47B
+      notes: Compressed via MiniPuzzle
+    - name: Nemotron-H-56B
+      parameters: 56B
+paper:
+  arxiv: "2504.03624"
+related:
+  - nemotron-3-nano
