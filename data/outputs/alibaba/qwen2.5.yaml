@@ -28,6 +28,7 @@ outputs:
         url: https://github.com/qwenlm/qwen2.5
     model:
       architecture: dense
+      intelligence_index: 16
       variants:
         - name: Qwen2.5-0.5B
           parameters: 0.5B

@@ -144,4 +144,34 @@ export function getLargestModel(labSlug: string): { name: string; params: string
   return best;
 }
 
+/** Get the highest intelligence_index score across all outputs for a lab */
+export function getTopIntelligence(labSlug: string): { score: number; name: string; slug: string; labSlug: string } | null {
+  const outputs = getOutputsForLab(labSlug);
+  let best: { score: number; name: string; slug: string; labSlug: string } | null = null;
+
+  function check(score: number | undefined, displayName: string, outputSlug: string, outLabSlug: string) {
+    if (score && (!best || score > best.score)) {
+      best = { score, name: displayName, slug: outputSlug, labSlug: outLabSlug };
+    }
+  }
+
+  for (const output of outputs) {
+    const oSlug = output.slug;
+    const oLab = (output as OutputWithMeta)._labSlug;
+    const baseName = output.name.replace(/:.*$/, '').replace(/\s*\(.*$/, '').trim();
+    if (isGrouped(output)) {
+      for (const sub of output.outputs) {
+        if (sub.model) {
+          check(sub.model.intelligence_index, baseName, oSlug, oLab);
+        }
+      }
+    } else {
+      if (output.model) {
+        check(output.model.intelligence_index, baseName, oSlug, oLab);
+      }
+    }
+  }
+  return best;
+}
+
 export { isGrouped };

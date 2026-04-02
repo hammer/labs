@@ -33,6 +33,7 @@ outputs:
       architecture: moe
       parameters: 1T
       active_parameters: 32B
+      intelligence_index: 26
   - name: "Kimi K2 Tech Report: Open Agentic Intelligence"
     type: paper
     date: 2025-07-28

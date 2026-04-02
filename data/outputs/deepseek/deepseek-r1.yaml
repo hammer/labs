@@ -25,6 +25,7 @@ tags:
   - training
 model:
   architecture: moe
+  intelligence_index: 27
   parameters: 671B
   active_parameters: 37B
   variants:

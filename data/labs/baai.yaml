@@ -26,11 +26,30 @@ description: >
   by <strong>FlagOS 2.0</strong>, provides a unified heterogeneous computing pool of 
   <strong>5&ndash;8 EFLOPS</strong> for the Beijing innovation hub.</p>
 
-  <p>The academy supports approximately 300 top researchers through 
-  its <strong>Zhiyuan Scholars Plan</strong> and operates the <strong>Jiuding</strong> 
-  AI-computing platform. The academy is famous for the <strong>Wu Dao program</strong>, 
-  which in 2021 produced Wu Dao 2.0 (at 1.75 trillion parameters, the world's largest 
-  model at the time).</p>
+  <p>The academy supports approximately 300 top researchers through its
+  <strong>Zhiyuan Scholars Plan</strong> and operates the <strong>Jiuding</strong>
+  AI-computing platform. BAAI made global headlines in 2021 with the
+  <strong>Wu Dao 2.0</strong> program (1.75T parameters, the world's largest model
+  at the time), but the model was significantly undertrained relative to its size
+  &mdash; 10x GPT-3's parameters on a fraction of the data. Following the 2022
+  "Chinchilla" scaling laws, BAAI deliberately pivoted away from the
+  trillion-parameter arms race. Wu Dao 3.0 (July 2023) introduced the
+  <strong>Aquila</strong> series (7B&ndash;70B) instead of a 2T successor,
+  prioritizing deployability: as a nonprofit research academy, BAAI's mission is to
+  provide foundations the broader Chinese AI ecosystem can actually run on standard
+  hardware, not models requiring massive GPU clusters few can afford.</p>
+
+  <p>BAAI redirected its research energy into high-impact specialized directions:
+  <strong><a href="https://github.com/FlagOpen/FlagEmbedding">BGE</a></strong>
+  embeddings (among the most downloaded models on HuggingFace globally),
+  <strong>Emu3</strong> (unified multimodal next-token prediction),
+  <strong><a href="https://github.com/FlagOpen/FlagEval">FlagEval</a></strong>
+  benchmarks, the <strong><a href="https://github.com/FlagOpen">FlagOpen</a></strong>
+  open-source ecosystem, and the
+  <strong><a href="/outputs/baai/robobrain">RoboBrain</a></strong> embodied AI
+  series. The strategy proved prescient: while others chased scale, BAAI's compact
+  models and tooling became foundational infrastructure across the Chinese AI
+  industry.</p>
 people:
   - name: Zhang Hongjiang
     url: https://en.wikipedia.org/wiki/Zhang_Hongjiang

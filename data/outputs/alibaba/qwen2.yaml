@@ -27,6 +27,7 @@ outputs:
       - label: GitHub
         url: https://github.com/QwenLM/Qwen2
     model:
+      intelligence_index: 12
       variants:
         - name: Qwen2-0.5B
           parameters: 0.5B

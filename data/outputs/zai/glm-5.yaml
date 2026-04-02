@@ -50,6 +50,7 @@ outputs:
       architecture: moe
       parameters: 744B
       active_parameters: 44B
+      intelligence_index: 50
   - name: GLM-5 Technical Report
     type: paper
     date: 2026-02-11

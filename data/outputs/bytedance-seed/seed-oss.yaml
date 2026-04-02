@@ -11,6 +11,8 @@ sources:
     url: https://huggingface.co/ByteDance-Seed/Seed-OSS-36B-Instruct
   - label: Announcement
     url: https://venturebeat.com/technology/tiktok-parent-company-bytedance-releases-new-open-source-seed-oss-36b-model-with-512k-token-context
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/seed-oss-36b-instruct
 description: >
   Open-source 36B-parameter LLM with 512K context window. Achieves strong
   performance across reasoning, agent, and general tasks despite being trained
@@ -24,3 +26,4 @@ model:
   architecture: dense
   parameters: 36B
   context_window: 512000
+  intelligence_index: 25

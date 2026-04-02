@@ -26,6 +26,7 @@ tags:
   - frontier
 model:
   architecture: moe
+  intelligence_index: 42
   parameters: 229B
 related:
   - minimax-m2.1

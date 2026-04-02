@@ -28,6 +28,7 @@ outputs:
       Coding-specialized model family. From early 1.5/2.5 versions to the massive
       Qwen3-Coder-480B (July 2025).
     model:
+      intelligence_index: 13
       variants:
         - name: Qwen2.5-Coder
           notes: Initial coding models in 1.5B, 7B, 32B sizes

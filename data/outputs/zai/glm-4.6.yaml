@@ -22,4 +22,5 @@ links:
     url: https://www.startuphub.ai/ai-news/ai-video/2025/glm-4-6-challenges-frontier-models-with-open-source-prowess
 model:
   architecture: moe
+  intelligence_index: 30
   parameters: 355B

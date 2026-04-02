@@ -23,6 +23,7 @@ tags:
   - open-weight
 model:
   architecture: moe
+  intelligence_index: 39
   parameters: 229B
 related:
   - minimax-m2

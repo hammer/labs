@@ -12,6 +12,8 @@ description: >
   Xiaomi's first fully omni-modal foundation model. Native multimodal
   architecture that can "see, hear, and act," designed to power Xiaomi's
   next-generation smart devices across the Human x Car x Home ecosystem.
+model:
+  intelligence_index: 43
 tags:
   - multimodal
 related:

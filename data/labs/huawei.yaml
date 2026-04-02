@@ -32,12 +32,23 @@ description: >
   <strong><a href="https://www.mindspore.cn/en">MindSpore</a></strong> deep learning
   framework is Huawei's answer to TensorFlow/PyTorch.</p>
 
-  <p>The lab's model research centers on the <strong>PanGu</strong> series, developed in 
-  collaboration with <a href="/labs/pcl">Pengcheng Laboratory</a> and trained on its 
-  Cloud Brain II supercomputer:
-  PanGu-Alpha (2021, 200B parameters, one of China's earliest large LLMs) and
-  PanGu-Sigma (2023, 1T sparse model trained on Ascend 910). Research outputs also
-  include widely-cited efficient architectures like
+  <p>The lab's model research centers on the <strong>PanGu</strong> series, developed in
+  collaboration with <a href="/labs/pcl">Pengcheng Laboratory</a> and trained on its
+  Cloud Brain II supercomputer. PanGu-Alpha (2021, 200B) was one of China's earliest
+  large LLMs, and PanGu-Sigma (2023, 1T sparse MoE on Ascend 910) marked a
+  trillion-parameter milestone &mdash; but also the end of Huawei's bid to compete
+  in the general-purpose chatbot race. After 2023, Huawei pivoted decisively to
+  <strong>"AI for Industry"</strong> with a tiered "5+N+X" architecture: five L0
+  foundation models (NLP, CV, multimodal, prediction, scientific computing),
+  industry-specific L1 models (finance, mining, meteorology), and scenario-specific
+  L2 models. PanGu 5.5 (June 2025, 718B MoE with 256 experts) introduced deep
+  reasoning for industrial R&D while achieving 8x better inference efficiency than
+  PanGu-Sigma. <a href="https://www.nature.com/articles/s41586-023-06185-3">PanGu-Weather</a>
+  became the first AI model to outperform traditional numerical weather prediction
+  (published in <em>Nature</em>), validating Huawei's thesis that specialized models
+  can achieve global impact without being a chatbot.</p>
+
+  <p>Other widely-cited research outputs include efficient architectures like
   <a href="https://arxiv.org/abs/1911.11907">GhostNet</a> and
   <a href="https://arxiv.org/abs/1909.10351">TinyBERT</a>, and the
   <a href="https://github.com/huawei-noah/HEBO">HEBO</a> Bayesian optimization

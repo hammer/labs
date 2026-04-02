@@ -13,6 +13,8 @@ sources:
     url: https://huggingface.co/collections/baidu/ernie-45
   - label: GitHub
     url: https://github.com/PaddlePaddle/ERNIE
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/ernie-4-5-300b-a47b
 description: >
   Family of 10 open-source multimodal MoE models ranging from 424B total
   parameters (47B active) down to a 0.3B dense model. Uses a heterogeneous
@@ -26,6 +28,7 @@ tags:
   - multimodal
 model:
   architecture: moe
+  intelligence_index: 15
   variants:
     - name: ERNIE-4.5-VL-424B-A47B
       parameters: 424B

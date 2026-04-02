@@ -41,6 +41,7 @@ outputs:
       active_parameters: 17B
       context_window: 1000000
       languages: 201
+      intelligence_index: 45
       variants:
         - name: Qwen3.5-397B-A17B
           parameters: 397B

@@ -19,3 +19,4 @@ tags:
   - agentic
 model:
   architecture: moe
+  intelligence_index: 42

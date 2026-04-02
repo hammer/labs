@@ -28,6 +28,7 @@ tags:
   - agentic
 model:
   architecture: moe
+  intelligence_index: 49
   parameters: 1T
   active_parameters: 42B
   context_window: 1000000

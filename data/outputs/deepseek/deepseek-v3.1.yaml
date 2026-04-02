@@ -18,6 +18,7 @@ tags:
   - frontier
 model:
   architecture: moe
+  intelligence_index: 28
   variants:
     - name: DeepSeek-V3.1
     - name: DeepSeek-V3.1-Terminus

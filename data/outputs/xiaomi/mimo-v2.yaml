@@ -37,6 +37,7 @@ outputs:
       architecture: moe
       parameters: 309B
       active_parameters: 15B
+      intelligence_index: 41
   - name: "MiMo-V2-Flash: Unlocking Extreme Inference Efficiency"
     type: paper
     date: 2026-01-06

@@ -28,6 +28,7 @@ outputs:
     model:
       architecture: moe
       parameters: 355B
+      intelligence_index: 26
   - name: "GLM-4.5: Agentic, Reasoning, and Coding (ARC) Foundation Models"
     type: paper
     date: 2025-08-08

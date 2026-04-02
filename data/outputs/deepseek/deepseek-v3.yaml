@@ -32,6 +32,7 @@ outputs:
       architecture: moe
       parameters: 671B
       active_parameters: 37B
+      intelligence_index: 16
       variants:
         - name: DeepSeek-V3
         - name: DeepSeek-V3-0324

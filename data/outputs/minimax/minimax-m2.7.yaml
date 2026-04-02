@@ -17,6 +17,8 @@ description: >
   Current flagship "Co-worker Agent" focused on AI self-evolution. Can
   independently build and stabilize agent systems. 56.22% on SWE-Pro.
   Proprietary (closed weights).
+model:
+  intelligence_index: 50
 tags:
   - agentic
   - coding

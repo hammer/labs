@@ -24,6 +24,9 @@ outputs:
     sources:
       - label: HuggingFace
         url: https://huggingface.co/meituan-longcat/LongCat-Flash-Lite
+    model:
+      architecture: moe
+      intelligence_index: 24
   - name: "Scaling Embeddings Outperforms Scaling Experts in Language Models"
     type: paper
     date: 2026-01-29

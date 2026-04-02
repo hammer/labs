@@ -68,6 +68,7 @@ const ModelDetailsSchema = z.object({
   active_parameters: z.string().optional(),
   context_window: z.number().optional(),
   languages: z.number().optional(),
+  intelligence_index: z.number().optional(),
   base_model: z.string().optional(),
   variants: z.array(ModelVariantSchema).optional(),
 });

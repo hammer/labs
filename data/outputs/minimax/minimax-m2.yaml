@@ -24,6 +24,7 @@ tags:
   - open-weight
 model:
   architecture: moe
+  intelligence_index: 36
   parameters: 230B
   active_parameters: 10B
 related:

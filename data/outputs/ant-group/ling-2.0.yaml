@@ -10,6 +10,8 @@ sources:
     url: https://huggingface.co/inclusionAI/Ling-1T
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2510.22115
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/ling-flash-2-0
 description: >
   Trillion-parameter MoE flagship with ~50B active parameters. The Ling 2.0
   technical report details reasoning-oriented MoE foundation scaling from
@@ -33,6 +35,7 @@ outputs:
       architecture: moe
       parameters: 1T
       active_parameters: 50B
+      intelligence_index: 16
   - name: "Ling 2.0: Every Activation Boosted"
     type: paper
     date: 2025-10-25

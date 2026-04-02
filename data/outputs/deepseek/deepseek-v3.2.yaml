@@ -32,6 +32,7 @@ outputs:
       architecture: moe
       parameters: 685B
       active_parameters: 37B
+      intelligence_index: 32
       variants:
         - name: DeepSeek-V3.2-Exp
           notes: Released 2025-09-29

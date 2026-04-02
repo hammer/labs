@@ -10,6 +10,8 @@ sources:
     url: https://ernie.baidu.com/blog/posts/ernie5.0/
   - label: "Paper (arXiv)"
     url: https://arxiv.org/abs/2602.04705
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/ernie-5-0-thinking-preview
 description: >
   Most advanced ERNIE model to date. 2.4 trillion total parameters with
   ultra-sparse MoE (<3% activation ratio) for extreme inference efficiency.
@@ -36,6 +38,7 @@ outputs:
     model:
       architecture: moe
       parameters: 2.4T
+      intelligence_index: 29
     notes: Previewed at Baidu World 2025 on November 13, 2025. Official release January 22, 2026.
   - name: ERNIE 5.0 Technical Report
     type: paper
