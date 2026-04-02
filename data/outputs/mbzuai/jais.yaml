@@ -1,0 +1,38 @@
+name: JAIS
+slug: jais
+lab: mbzuai
+type: model
+date: 2023-08-30
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2308.16149
+  - label: HuggingFace
+    url: https://huggingface.co/inceptionai/jais-13b
+description: >
+  <p>World's leading Arabic-centric open LLM, developed by the JAIS
+  consortium (G42/Inception + MBZUAI + Cerebras). 13B GPT-3 decoder
+  with ALiBi positions and SwiGLU. Trained on 395B tokens (116B Arabic
+  + 279B English). Best open-source Arabic model at launch.</p>
+
+  <p>Later scaled to 30B (1.63T tokens) and 70B (adapted from Llama 2
+  with 370B Arabic tokens — largest Arabic dataset for an LLM at the
+  time). Named after Jebel Jais, the UAE's highest mountain.</p>
+tags:
+  - open-weight
+  - multilingual
+model:
+  architecture: dense
+  parameters: 70B
+  variants:
+    - name: JAIS-13B
+      parameters: 13B
+    - name: JAIS-30B
+      parameters: 30B
+    - name: JAIS-70B
+      parameters: 70B
+      notes: Adapted from Llama 2
+paper:
+  arxiv: "2308.16149"
+related:
+  - jais-2

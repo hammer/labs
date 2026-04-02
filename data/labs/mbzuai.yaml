@@ -1,0 +1,59 @@
+name: MBZUAI
+slug: mbzuai
+url: https://mbzuai.ac.ae
+wikipedia: https://en.wikipedia.org/wiki/Mohamed_bin_Zayed_University_of_Artificial_Intelligence
+huggingface: https://huggingface.co/MBZUAI
+github: https://github.com/MBZUAI
+region: uae
+founded: "2019"
+type: academic
+description: >
+  <p>The <a href="https://en.wikipedia.org/wiki/Mohamed_bin_Zayed_University_of_Artificial_Intelligence">Mohamed
+  bin Zayed University of Artificial Intelligence</a> (MBZUAI) is the world's
+  first graduate university dedicated entirely to AI, established in 2019 by
+  Abu Dhabi government decree. Led by President
+  <strong><a href="https://scholar.google.com/citations?user=5pKTRxEAAAAJ">Eric
+  Xing</a></strong> (92K citations, formerly Carnegie Mellon). 84 faculty,
+  200+ researchers in Masdar City.</p>
+
+  <p>MBZUAI is the academic partner in the <strong>JAIS</strong> consortium
+  (with <a href="https://www.g42.ai">G42</a>/Inception and Cerebras), producing
+  the world's leading Arabic LLM:
+  <a href="https://arxiv.org/abs/2308.16149">JAIS 13B</a> (2023, 395B tokens),
+  JAIS 30B (1.63T tokens), JAIS 70B (adapted from Llama 2), and
+  <strong>JAIS 2</strong> (Dec 2025, 8B/70B, 2.6T tokens, trained on Cerebras
+  CS-2). Through the <strong>Institute of Foundation Models (IFM)</strong> and
+  <a href="https://www.llm360.ai">LLM360</a>, MBZUAI also produces
+  <strong>K2-V2</strong> (70B, strongest fully open model in its class).</p>
+
+  <p>JAIS models are published under the
+  <a href="https://huggingface.co/inceptionai">inceptionai</a> HuggingFace
+  org (G42 subsidiary). The consortium includes academic partners from
+  Carnegie Mellon, Ecole Polytechnique, NYU Abu Dhabi, and Edinburgh.</p>
+people:
+  - name: Eric Xing
+    role: President
+    formerly: Carnegie Mellon (Professor)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=5pKTRxEAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Eric_Xing1
+  - name: Preslav Nakov
+    role: Chair, NLP Department
+    formerly: Qatar Computing Research (HBKU)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=DfXsKZ4AAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Preslav_Nakov2
+  - name: Timothy Baldwin
+    role: Provost
+    formerly: University of Melbourne (Laureate Professor)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=wjBD1dkAAAAJ
+tags:
+  - academic
+  - open-weight
+  - multilingual

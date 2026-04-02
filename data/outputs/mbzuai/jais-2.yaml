@@ -1,0 +1,38 @@
+name: JAIS 2
+slug: jais-2
+lab: mbzuai
+type: model
+date: 2025-12-09
+flagship: true
+sources:
+  - label: Announcement (MBZUAI)
+    url: https://mbzuai.ac.ae/news/inception-cerebras-and-mbzuai-release-jais-2-the-next-generation-of-the-worlds-leading-arabic-open-weight-llm/
+  - label: Cerebras Blog
+    url: https://www.cerebras.ai/blog/jais2
+  - label: HuggingFace (70B Chat)
+    url: https://huggingface.co/inceptionai/Jais-2-70B-Chat
+description: >
+  <p>Second generation JAIS. 8B and 70B trained from scratch (not
+  adapted) on <strong>2.6T tokens</strong> of Arabic, English, and code
+  using Cerebras CS-2 on Condor Galaxy clusters. Custom Arabic-centric
+  vocabulary (150K tokens), RoPE, Squared-ReLU, muP. Post-trained via
+  SFT (20M+ instruction pairs) → DPO → GRPO.</p>
+
+  <p>AraGen-12-24 overall: 70.71% (outperforms Qwen2.5-72B and
+  Llama-3.3-70B on Arabic generative tasks). ~2,000 tokens/sec on
+  Cerebras hardware.</p>
+tags:
+  - open-weight
+  - multilingual
+  - frontier
+model:
+  architecture: dense
+  parameters: 70B
+  context_window: 8192
+  variants:
+    - name: JAIS-2-8B
+      parameters: 8B
+    - name: JAIS-2-70B
+      parameters: 70B
+related:
+  - jais

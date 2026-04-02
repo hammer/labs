@@ -1,0 +1,27 @@
+name: K2-V2 (LLM360)
+slug: k2-v2
+lab: mbzuai
+type: model
+date: 2025-12-06
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.06201
+  - label: HuggingFace
+    url: https://huggingface.co/LLM360/K2-V2-Instruct
+  - label: Technical Report
+    url: https://www.llm360.ai/reports/K2_V2_report.pdf
+description: >
+  70B "360-Open" model from MBZUAI's Institute of Foundation Models
+  via the LLM360 initiative. Full release of data, weights, all
+  training checkpoints, and methodology. Rivals Qwen2.5-72B and
+  approaches Qwen3-235B. Includes K2 Think reasoning variant.
+tags:
+  - open-source
+  - open-weight
+  - frontier
+model:
+  architecture: dense
+  parameters: 70B
+paper:
+  arxiv: "2512.06201"
