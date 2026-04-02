@@ -146,19 +146,24 @@ mkdir -p data/outputs/{slug}
 
 See `/add-output` for detailed format. Key decisions:
 
+### User-Directed Filtering
+
+If the user specifies a focus (e.g., "focus on Nemotron, only include others if truly significant"), respect that. Prolific labs like NVIDIA or Google may have 50+ outputs but only 10-15 that matter for frontier AI tracking. Ask yourself: "Would someone tracking frontier LLMs/VLMs/reasoning models care about this output?"
+
 ### What Gets Its Own Output Page
 
 **Create an output for:**
-- Each major model family or version (Mistral 7B, Mixtral 8x7B, Mistral Large 2, Mistral Large 3)
-- Each distinct product line (Codestral, Pixtral, Voxtral, Magistral)
-- Papers with arxiv IDs
-- Widely-used open-source tools/libraries
+- Each major model family or version (Nemotron-4 340B, Nemotron-H, Nemotron 3 Super)
+- Each distinct product line (Codestral, Pixtral, Cosmos)
+- Papers with arxiv IDs that introduce significant innovations
+- Widely-used open-source tools/libraries (Megatron-LM, NeMo)
 
 **Do NOT create separate outputs for:**
 - Point releases within the same version (v0.1, v0.2, v0.3 of the same model)
 - Size variants of the same version (use `model.variants` instead)
 - Instruct/Chat fine-tunes of a base model (note in the base model's description)
 - Deprecated models superseded by a direct successor
+- Announced but unreleased models (no output until weights or API are available)
 
 ### Flagship Criteria
 
@@ -205,8 +210,8 @@ Restart dev server: `pkill -f "astro dev"; npm run dev`
 - [ ] Deep research completed with parallel agents
 - [ ] Logo verified as PNG and resized to 200x200
 - [ ] Lab YAML with all fields, 2-3 paragraph HTML description
-- [ ] People with Scholar/OpenReview links
-- [ ] News items for major recent events
+- [ ] People with Scholar/OpenReview links (3-7 people)
+- [ ] **News items added** (funding rounds, major launches, partnerships — don't skip this)
 - [ ] Outputs created for major models/papers (not every minor variant)
 - [ ] `flagship: true` only for genuine milestones
 - [ ] Structured model fields (architecture, parameters, context_window) where confirmed

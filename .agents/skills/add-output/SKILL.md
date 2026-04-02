@@ -127,6 +127,20 @@ Mark `flagship: true` only for models representing a **step change**:
 
 Do NOT mark as flagship: minor updates, size variants, specialized fine-tunes, deprecated models.
 
+### Derivative Models
+
+Some models are derived from another lab's base model (e.g., Llama-Nemotron from Meta's Llama, A.X 4.0 from Alibaba's Qwen). For these:
+- Set `lab:` to the lab that fine-tuned/adapted the model, not the base model creator
+- Note the base model in the description (e.g., "derived from Llama 3.1 405B via NAS")
+- Do not set `model.base_model` to a cross-lab slug (it's for within-lab references)
+
+### Shared Papers
+
+When one arxiv paper covers multiple distinct models that deserve separate output pages (e.g., Nemotron 3 Nano and Super share arxiv 2512.20856):
+- Create separate output files for each model
+- Both can reference the same arxiv paper in their `sources` and `paper.arxiv`
+- Each output's description should focus on its specific model, not the full paper
+
 ## 3. Description Writing
 
 Write descriptions a researcher would find useful. Use HTML for multi-paragraph descriptions.
