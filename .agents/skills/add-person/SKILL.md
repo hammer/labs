@@ -59,10 +59,17 @@ people:
 - Include notable prior affiliations that establish credibility
 
 ### `urls`
-- **Google Scholar:** Always include if available (most important academic link)
+- **Google Scholar:** Always include if available (most important academic link). Note citation count in the research phase to help prioritize who to include (e.g., 60K+ citations = top-tier researcher)
 - **OpenReview:** Include for ML researchers (establishes conference reviewing history)
 - **GitHub:** Include for engineers/developers with significant open-source work
+- **Wikipedia:** Include for founders/CEOs who have Wikipedia pages
 - Only include links you have verified are correct for THIS person (common names can lead to wrong profiles)
+
+### Who to Include
+- **Always include:** Founders, CEO, CTO, Chief Scientist
+- **Include if significant:** Team leads, lead authors on flagship model papers, researchers with very high citation counts (10K+)
+- **Skip:** Junior researchers, interns, people with only one co-authored paper
+- Aim for 3-7 people per lab. Quality over quantity.
 
 ## 4. Ordering
 
