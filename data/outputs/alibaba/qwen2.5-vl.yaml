@@ -1,0 +1,21 @@
+name: Qwen2.5-VL
+slug: qwen2.5-vl
+lab: alibaba
+type: model
+date: 2025-02-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.13923
+  - label: Blog Post
+    url: https://qwenlm.github.io/blog/qwen2.5-vl/
+description: >
+  Vision-language model with dynamic resolution processing and absolute
+  time encoding.
+tags:
+  - multimodal
+  - open-weight
+  - vision
+paper:
+  arxiv: "2502.13923"
+related:
+  - qwen2-vl

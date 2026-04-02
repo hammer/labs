@@ -28,6 +28,7 @@ outputs:
         url: https://huggingface.co/deepseek-ai/DeepSeek-V3.2
     model:
       architecture: moe
+      parameters: 685B
       variants:
         - name: DeepSeek-V3.2-Exp
           notes: Released 2025-09-29

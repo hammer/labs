@@ -1,0 +1,61 @@
+name: Hunyuan3D 2.0
+slug: hunyuan3d-2
+lab: tencent
+date: 2025-01-21
+sources:
+  - label: Paper (2.0, arXiv)
+    url: https://arxiv.org/abs/2501.12202
+  - label: Paper (2.1, arXiv)
+    url: https://arxiv.org/abs/2506.15442
+  - label: Paper (2.5, arXiv)
+    url: https://arxiv.org/abs/2506.16504
+  - label: GitHub (2.0)
+    url: https://github.com/Tencent-Hunyuan/Hunyuan3D-2
+  - label: GitHub (2.1)
+    url: https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1
+  - label: HuggingFace
+    url: https://huggingface.co/tencent/Hunyuan3D-2
+description: >
+  Scaling diffusion models for high-resolution textured 3D asset generation.
+  2.1 added PBR material synthesis for cinema-grade light interaction.
+  2.5 achieved 15% improved geometry and 20% better textures. Over 3M
+  HuggingFace downloads.
+tags:
+  - 3d
+  - generation
+  - open-weight
+outputs:
+  - name: Hunyuan3D 2.0
+    type: model
+    date: 2025-01-21
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2501.12202
+      - label: GitHub
+        url: https://github.com/Tencent-Hunyuan/Hunyuan3D-2
+    paper:
+      arxiv: "2501.12202"
+  - name: Hunyuan3D 2.1
+    type: paper
+    date: 2025-06-18
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2506.15442
+      - label: GitHub
+        url: https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1
+    description: >
+      Added PBR material synthesis for cinema-grade light interaction.
+    paper:
+      arxiv: "2506.15442"
+  - name: Hunyuan3D 2.5
+    type: paper
+    date: 2025-06-23
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2506.16504
+    description: >
+      15% improved geometry, 20% better textures vs 2.0.
+    paper:
+      arxiv: "2506.16504"
+related:
+  - hunyuan3d

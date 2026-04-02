@@ -1,0 +1,21 @@
+name: CogVLM2
+slug: cogvlm2
+lab: zai
+type: model
+date: 2024-08-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2408.16500
+  - label: Project Page
+    url: https://cogvlm2-video.github.io/
+description: >
+  Next-generation vision-language model. CogVLM2-Video introduced
+  multi-frame time localization for precise video understanding.
+tags:
+  - multimodal
+  - open-weight
+  - video
+paper:
+  arxiv: "2408.16500"
+related:
+  - cogvlm

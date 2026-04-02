@@ -1,0 +1,27 @@
+name: DeepSeek-Prover-V2
+slug: deepseek-prover-v2
+lab: deepseek
+type: model
+date: 2025-04-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.21801
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepSeek-Prover-V2
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/DeepSeek-Prover-V2-671B
+  - label: DeepSeek-ProverBench
+    url: https://huggingface.co/datasets/deepseek-ai/DeepSeek-ProverBench
+description: >
+  RL for subgoal decomposition in formal mathematical reasoning.
+  Includes the DeepSeek-ProverBench evaluation suite.
+tags:
+  - reasoning
+  - open-weight
+model:
+  architecture: moe
+  parameters: 671B
+paper:
+  arxiv: "2504.21801"
+related:
+  - deepseek-prover

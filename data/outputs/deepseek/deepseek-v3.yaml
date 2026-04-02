@@ -28,6 +28,7 @@ outputs:
         url: https://api-docs.deepseek.com/news/news250325
     model:
       architecture: moe
+      parameters: 671B
       variants:
         - name: DeepSeek-V3
         - name: DeepSeek-V3-0324

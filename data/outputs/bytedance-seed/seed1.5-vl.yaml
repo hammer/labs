@@ -20,6 +20,7 @@ tags:
   - agentic
 model:
   architecture: moe
+  parameters: 200B
   active_parameters: 20B
 type: model
 paper:

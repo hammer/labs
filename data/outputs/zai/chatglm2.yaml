@@ -1,0 +1,27 @@
+name: ChatGLM2 / ChatGLM3
+slug: chatglm2
+lab: zai
+type: model
+date: 2023-06-25
+sources:
+  - label: GitHub
+    url: https://github.com/THUDM/ChatGLM3
+  - label: HuggingFace
+    url: https://huggingface.co/THUDM/chatglm3-6b
+description: >
+  Iterative improvements over ChatGLM-6B in context length, tool use,
+  and reasoning. ChatGLM2 released June 2023, ChatGLM3 released Oct 2023.
+tags:
+  - open-weight
+  - efficiency
+  - conversational
+model:
+  architecture: dense
+  parameters: 6B
+  variants:
+    - name: ChatGLM2-6B
+      notes: Released June 2023
+    - name: ChatGLM3-6B
+      notes: Released Oct 2023
+related:
+  - chatglm

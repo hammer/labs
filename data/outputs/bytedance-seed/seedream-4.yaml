@@ -1,0 +1,22 @@
+name: Seedream 4.0
+slug: seedream-4
+lab: bytedance-seed
+type: model
+date: 2025-09-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.20427
+  - label: HuggingFace
+    url: https://huggingface.co/papers/2509.20427
+  - label: Product Page
+    url: https://seed.bytedance.com/en/seedream4_5
+description: >
+  Unified framework for text-to-image, image editing, and multi-image
+  composition. Ranked first on both T2I and image-editing leaderboards.
+tags:
+  - generation
+  - vision
+paper:
+  arxiv: "2509.20427"
+related:
+  - seedream

@@ -27,6 +27,10 @@ outputs:
         url: https://pandaily.com/tencent-hunyuans-new-generation-turbo-s-fast-thinking-model-released/
       - label: Website
         url: https://llm.hunyuan.tencent.com
+    model:
+      architecture: moe
+      parameters: 560B
+      active_parameters: 56B
   - name: "Hunyuan-TurboS: Mamba-Transformer Synergy"
     type: paper
     date: 2025-05-21

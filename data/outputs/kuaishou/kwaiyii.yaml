@@ -14,6 +14,7 @@ tags:
   - open-weight
 model:
   architecture: dense
+  parameters: 175B
   variants:
     - name: KwaiYii-175B
       parameters: 175B

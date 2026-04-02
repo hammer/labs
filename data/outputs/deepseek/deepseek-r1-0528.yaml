@@ -14,4 +14,6 @@ tags:
   - training
   - open-weight
 model:
+  architecture: moe
+  parameters: 671B
   base_model: deepseek-r1

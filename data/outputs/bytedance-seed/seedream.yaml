@@ -1,46 +1,20 @@
-name: Seedream
+name: Seedream 2.0
 slug: seedream
 lab: bytedance-seed
+type: paper
 date: 2025-03-10
 sources:
-  - label: Paper (Seedream 2.0, arXiv)
+  - label: Paper (arXiv)
     url: https://arxiv.org/abs/2503.07703
-  - label: Paper (Seedream 4.0, arXiv)
-    url: https://arxiv.org/abs/2509.20427
-  - label: Product Page
-    url: https://seed.bytedance.com/en/seedream4_5
+  - label: HuggingFace
+    url: https://huggingface.co/papers/2503.07703
 description: >
-  ByteDance's image generation model family. Seedream 2.0 introduced native
-  bilingual Chinese-English generation. Seedream 4.0 unified text-to-image
-  synthesis, image editing, and multi-image composition.
+  Native bilingual Chinese-English image generation model with integrated
+  LLM text encoder and character-level text rendering.
 tags:
   - generation
   - vision
-  - nlp
-outputs:
-  - name: "Seedream 2.0: A Native Chinese-English Bilingual Image Generation Foundation Model"
-    type: paper
-    date: 2025-03-10
-    sources:
-      - label: Paper (arXiv)
-        url: https://arxiv.org/abs/2503.07703
-      - label: HuggingFace
-        url: https://huggingface.co/papers/2503.07703
-    description: >
-      Native bilingual Chinese-English image generation model with integrated
-      LLM text encoder and character-level text rendering.
-    paper:
-      arxiv: "2503.07703"
-  - name: "Seedream 4.0: Toward Next-generation Multimodal Image Generation"
-    type: paper
-    date: 2025-09-18
-    sources:
-      - label: Paper (arXiv)
-        url: https://arxiv.org/abs/2509.20427
-      - label: HuggingFace
-        url: https://huggingface.co/papers/2509.20427
-    description: >
-      Unified framework for text-to-image, image editing, and multi-image
-      composition. Ranked first on both T2I and image-editing leaderboards.
-    paper:
-      arxiv: "2509.20427"
+paper:
+  arxiv: "2503.07703"
+related:
+  - seedream-4

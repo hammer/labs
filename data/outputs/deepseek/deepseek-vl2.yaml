@@ -1,0 +1,22 @@
+name: DeepSeek-VL2
+slug: deepseek-vl2
+lab: deepseek
+type: model
+date: 2024-12-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.10302
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepSeek-VL2
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/deepseek-vl2
+description: >
+  MoE vision-language model for advanced multimodal understanding.
+tags:
+  - multimodal
+  - open-weight
+  - moe
+paper:
+  arxiv: "2412.10302"
+related:
+  - deepseek-vl

@@ -1,51 +1,26 @@
 name: HunyuanVideo
 slug: hunyuanvideo
 lab: tencent
+type: model
 date: 2024-12-03
 sources:
-  - label: GitHub
-    url: https://github.com/Tencent-Hunyuan/HunyuanVideo
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2412.03603
-  - label: GitHub (1.5)
-    url: https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5
-  - label: HuggingFace (1.5)
-    url: https://huggingface.co/tencent/HunyuanVideo-1.5
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/HunyuanVideo
 description: >
-  Systematic framework for high-fidelity video generation. 13B parameter
-  open-source video model with v1.5 optimized for consumer GPUs.
+  13B parameter systematic framework for high-fidelity video generation.
+  Largest open-source video model at launch, with 3M+ HuggingFace downloads.
 tags:
   - video
   - generation
   - open-weight
-outputs:
-  - name: HunyuanVideo
-    type: model
-    date: 2024-12-03
-    sources:
-      - label: GitHub
-        url: https://github.com/Tencent-Hunyuan/HunyuanVideo
-  - name: "HunyuanVideo: Systematic Framework for Video Generation"
-    type: paper
-    date: 2024-12-03
-    sources:
-      - label: Paper (arXiv)
-        url: https://arxiv.org/abs/2412.03603
-    description: >
-      13B parameter video generation framework. Largest open-source video model.
-    paper:
-      arxiv: "2412.03603"
-  - name: HunyuanVideo-1.5
-    type: model
-    date: 2025-11-20
-    sources:
-      - label: GitHub
-        url: https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5
-      - label: HuggingFace
-        url: https://huggingface.co/tencent/HunyuanVideo-1.5
-      - label: Technical Report
-        url: https://arxiv.org/abs/2511.18870
-    description: >
-      Leading lightweight version optimized for consumer GPUs.
+model:
+  architecture: dense
+  parameters: 13B
+paper:
+  arxiv: "2412.03603"
 library:
   github: https://github.com/Tencent-Hunyuan/HunyuanVideo
+related:
+  - hunyuanvideo-1.5

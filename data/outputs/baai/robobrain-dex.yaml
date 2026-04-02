@@ -1,0 +1,23 @@
+name: RoboBrain-Dex
+slug: robobrain-dex
+lab: baai
+type: model
+date: 2026-03-12
+sources:
+  - label: GitHub
+    url: https://github.com/FlagOpen/RoboBrain_Dex
+  - label: HuggingFace
+    url: https://huggingface.co/collections/BAAI/robobrain-dex
+  - label: Blog post
+    url: https://medium.com/@baai_beijing/just-dropped-robobrain-dex-a-vla-model-for-bimanual-dexterous-manipulation-be1e598646b4
+description: >
+  Foundation VLA model for bimanual dexterous manipulation. Pre-trained
+  on multi-source egocentric data from humans (via MANUS data gloves)
+  and robots. Achieves highest average success rate across six real-world
+  dexterous manipulation tasks. Built on RoboBrain 2.0 as base VLM.
+tags:
+  - embodied
+  - open-weight
+related:
+  - robobrain-2
+  - roboos

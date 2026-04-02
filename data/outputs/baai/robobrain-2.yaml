@@ -1,0 +1,64 @@
+name: RoboBrain 2.0
+slug: robobrain-2
+lab: baai
+date: 2025-06-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.02029
+  - label: HuggingFace (7B)
+    url: https://huggingface.co/BAAI/RoboBrain2.0-7B
+  - label: HuggingFace (32B)
+    url: https://huggingface.co/BAAI/RoboBrain2.0-32B
+  - label: Project page
+    url: https://superrobobrain.github.io/
+  - label: GitHub (2.5)
+    url: https://github.com/FlagOpen/RoboBrain2.5
+  - label: HuggingFace (2.5-8B)
+    url: https://huggingface.co/BAAI/RoboBrain2.5-8B-NV
+description: >
+  Next-generation embodied AI VLM supporting spatial understanding and
+  temporal decision-making. RoboBrain 2.5 adds precise 3D spatial
+  reasoning and dense temporal value estimation, achieving 95%+ task
+  success rate with one demonstration.
+tags:
+  - embodied
+  - open-weight
+  - multimodal
+  - 3d-reasoning
+outputs:
+  - name: RoboBrain 2.0
+    type: model
+    date: 2025-06-06
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2507.02029
+      - label: Project page
+        url: https://superrobobrain.github.io/
+    description: >
+      Most powerful open-source embodied brain model. 3B, 7B, and 32B variants.
+    model:
+      variants:
+        - name: RoboBrain2.0-3B
+        - name: RoboBrain2.0-7B
+        - name: RoboBrain2.0-32B
+  - name: RoboBrain 2.5
+    type: model
+    date: 2026-01-25
+    sources:
+      - label: GitHub
+        url: https://github.com/FlagOpen/RoboBrain2.5
+      - label: HuggingFace
+        url: https://huggingface.co/BAAI/RoboBrain2.5-8B-NV
+    description: >
+      Precise 3D spatial reasoning and dense temporal value estimation.
+      95%+ task success rate with one demonstration.
+    model:
+      variants:
+        - name: RoboBrain2.5-8B-NV
+          notes: NVIDIA GPU cluster
+        - name: RoboBrain2.5-8B-MT
+          notes: Moore-Threads GPU cluster
+        - name: RoboBrain2.5-4B
+related:
+  - robobrain
+  - robobrain-dex

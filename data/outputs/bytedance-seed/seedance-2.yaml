@@ -1,0 +1,19 @@
+name: Seedance 2.0
+slug: seedance-2
+lab: bytedance-seed
+type: model
+date: 2026-02-07
+sources:
+  - label: Product Page
+    url: https://seed.bytedance.com/en/models
+description: >
+  Next-generation AI video model with unified multimodal audio-video
+  joint generation. Supports text, image, audio, and video inputs with
+  multi-shot narrative storytelling. Seedance 1.5 Pro (Dec 2025)
+  introduced native audio-visual joint generation.
+tags:
+  - generation
+  - video
+  - audio
+related:
+  - seedance

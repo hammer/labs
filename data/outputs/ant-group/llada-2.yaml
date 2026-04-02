@@ -1,0 +1,49 @@
+name: LLaDA 2
+slug: llada-2
+lab: ant-group
+date: 2025-12-10
+sources:
+  - label: Paper (2.0, arXiv)
+    url: https://arxiv.org/abs/2512.15745
+  - label: Paper (2.1, arXiv)
+    url: https://arxiv.org/abs/2602.08676
+  - label: GitHub
+    url: https://github.com/inclusionAI/LLaDA2.X
+  - label: HuggingFace
+    url: https://huggingface.co/inclusionAI/LLaDA2.0-mini-preview
+description: >
+  Scales diffusion language models to 100B by converting pretrained AR
+  models. LLaDA 2.1 introduces token-to-token editing for real
+  self-correction, achieving 892 tokens/s on HumanEval+.
+tags:
+  - generation
+  - architecture
+  - moe
+  - scaling
+  - research
+outputs:
+  - name: LLaDA 2.0
+    type: model
+    date: 2025-12-10
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2512.15745
+      - label: HuggingFace
+        url: https://huggingface.co/inclusionAI/LLaDA2.0-mini-preview
+    description: >
+      Scales diffusion language models to 100B by converting pretrained AR models.
+    paper:
+      arxiv: "2512.15745"
+  - name: LLaDA 2.1
+    type: paper
+    date: 2026-02-13
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2602.08676
+    description: >
+      Introduces token-to-token editing on top of mask-to-token denoising.
+      Achieves 892 tokens/s on HumanEval+.
+    paper:
+      arxiv: "2602.08676"
+related:
+  - llada

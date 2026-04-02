@@ -1,0 +1,20 @@
+name: Qwen-VL
+slug: qwen-vl
+lab: alibaba
+type: model
+date: 2023-08-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2308.12966
+  - label: HuggingFace
+    url: https://huggingface.co/Qwen/Qwen-VL
+description: >
+  First-generation vision-language model in the Qwen family.
+tags:
+  - multimodal
+  - open-weight
+  - vision
+paper:
+  arxiv: "2308.12966"
+related:
+  - qwen2-vl

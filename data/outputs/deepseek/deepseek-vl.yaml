@@ -1,53 +1,22 @@
 name: DeepSeek-VL
 slug: deepseek-vl
 lab: deepseek
+type: model
 date: 2024-03-08
 sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2403.05525
   - label: GitHub
     url: https://github.com/deepseek-ai/DeepSeek-VL
-  - label: GitHub (VL2)
-    url: https://github.com/deepseek-ai/DeepSeek-VL2
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/deepseek-vl-7b-chat
 description: >
-  Vision-language models utilizing a dynamic tiling encoder for high-resolution
-  images. Includes VL and VL2 versions with accompanying papers.
+  Vision-language model with dynamic tiling encoder for high-resolution
+  image understanding.
 tags:
   - multimodal
   - open-weight
-  - moe
-outputs:
-  - name: DeepSeek-VL
-    type: model
-    date: 2024-03-11
-    sources:
-      - label: HuggingFace
-        url: https://huggingface.co/deepseek-ai/deepseek-vl-7b-chat
-      - label: GitHub
-        url: https://github.com/deepseek-ai/DeepSeek-VL
-    model:
-      variants:
-        - name: DeepSeek-VL
-          notes: Released 2024
-        - name: DeepSeek-VL2
-          notes: Updated MoE version
-  - name: "DeepSeek-VL: Towards Real-World Vision-Language Understanding"
-    type: paper
-    date: 2024-03-08
-    sources:
-      - label: Paper (arXiv)
-        url: https://arxiv.org/abs/2403.05525
-    description: >
-      Vision-language model with dynamic tiling encoder for high-resolution images.
-    paper:
-      arxiv: "2403.05525"
-  - name: "DeepSeek-VL2: MoE Vision-Language Models"
-    type: paper
-    date: 2024-12-13
-    sources:
-      - label: Paper (arXiv)
-        url: https://arxiv.org/abs/2412.10302
-      - label: HuggingFace
-        url: https://huggingface.co/deepseek-ai/deepseek-vl2
-    description: >
-      MoE vision-language model for advanced multimodal understanding.
-    paper:
-      arxiv: "2412.10302"
+paper:
+  arxiv: "2403.05525"
+related:
+  - deepseek-vl2
