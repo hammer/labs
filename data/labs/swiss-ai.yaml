@@ -1,0 +1,57 @@
+name: Swiss AI
+slug: swiss-ai
+url: https://www.swiss-ai.org/
+wikipedia: https://en.wikipedia.org/wiki/Apertus_(LLM)
+huggingface: https://huggingface.co/swiss-ai
+github: https://github.com/swiss-ai
+region: switzerland
+founded: "2023"
+type: academic
+description: >
+  <p>The <strong>Swiss National AI Institute (SNAI)</strong> is a partnership
+  between <a href="https://en.wikipedia.org/wiki/ETH_Zurich">ETH Zurich</a>'s
+  AI Center and <a href="https://en.wikipedia.org/wiki/EPFL">EPFL</a>'s AI
+  Center, launched in December 2023 with 10+ million GPU hours on the
+  <a href="https://en.wikipedia.org/wiki/Alps_(supercomputer)">CSCS Alps
+  supercomputer</a> (270 petaflops, 10,752 H100 GPUs) and CHF 20M from
+  the ETH Board. Over 70 AI professors and 800+ researchers across 10+
+  Swiss institutions. Strategic partner: Swisscom. Alliance with Stanford
+  HAI.</p>
+
+  <p>The flagship <strong><a href="https://arxiv.org/abs/2509.14233">Apertus</a></strong>
+  (Sep 2025, 8B/70B) is trained on <strong>15 trillion tokens</strong> across
+  <strong>1,811 languages</strong> (~40% non-English) using 4,096 GH200 GPUs
+  on Alps. Uses xIELU activation, AdEMAMix optimizer, and the Goldfish
+  objective to suppress verbatim memorization. Designed for EU AI Act
+  compliance: trained exclusively on openly available data with retroactive
+  robots.txt respect. 65K context. Apache 2.0. 101+ authors.</p>
+
+  <p>SNAI also produces domain-specific derivatives including
+  <strong>Meditron</strong> (medical LLM, testing at Lausanne University
+  Hospital) and multilingual research for underserved languages including
+  Swiss German and Romansh.</p>
+people:
+  - name: Antoine Bosselut
+    role: Co-Lead, Swiss AI Initiative; Assistant Professor, EPFL
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=XD9hkJwAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Antoine_Bosselut1
+  - name: Imanol Schlag
+    role: Technical Lead, LLM Project; Research Scientist, ETH AI Center
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=nFQJEskAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Imanol_Schlag3
+  - name: Martin Jaggi
+    role: Steering Committee; Associate Professor, EPFL
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=r1TJBr8AAAAJ
+tags:
+  - academic
+  - open-source
+  - open-weight
+  - multilingual

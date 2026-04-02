@@ -1,0 +1,51 @@
+name: Apertus
+slug: apertus
+lab: swiss-ai
+type: model
+date: 2025-09-02
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.14233
+  - label: Project Page
+    url: https://www.swiss-ai.org/apertus
+  - label: HuggingFace (70B)
+    url: https://huggingface.co/swiss-ai/Apertus-70B-2509
+  - label: HuggingFace (8B Instruct)
+    url: https://huggingface.co/swiss-ai/Apertus-8B-Instruct-2509
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/apertus-8b-instruct
+description: >
+  <p>Switzerland's sovereign multilingual LLM. 8B and 70B dense
+  Transformers trained on <strong>15 trillion tokens across 1,811
+  languages</strong> (~40% non-English) using <strong>4,096 NVIDIA
+  GH200 GPUs</strong> on the CSCS Alps supercomputer (10M+ GPU hours).
+  65K context. 101+ authors.</p>
+
+  <p>Novel contributions: <strong>xIELU</strong> activation function,
+  <strong>AdEMAMix</strong> optimizer, <strong>Goldfish objective</strong>
+  for suppressing verbatim memorization. Trained exclusively on openly
+  available data with retroactive robots.txt compliance &mdash; claims
+  first EU AI Act-compliant large model. Post-trained via SFT + QRPO
+  alignment. Apache 2.0.</p>
+
+  <p>70B competitive with Llama 3.1-70B on average across multilingual
+  benchmarks (67.5% vs 67.3%). AA Intelligence: 6 (8B). Significantly
+  behind frontier models on English-only benchmarks, but strongest
+  fully open model for extreme multilingual breadth.</p>
+tags:
+  - open-source
+  - open-weight
+  - multilingual
+model:
+  architecture: dense
+  parameters: 70B
+  context_window: 65536
+  intelligence_index: 6
+  variants:
+    - name: Apertus-8B
+      parameters: 8B
+    - name: Apertus-70B
+      parameters: 70B
+paper:
+  arxiv: "2509.14233"
