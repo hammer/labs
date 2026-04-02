@@ -1,0 +1,40 @@
+name: HyperCLOVA X SEED Think
+slug: hcx-seed-think
+lab: naver
+type: model
+date: 2026-01-03
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.03286
+  - label: HuggingFace (32B)
+    url: https://huggingface.co/naver-hyperclovax/HyperCLOVAX-SEED-Think-32B
+  - label: HuggingFace (14B)
+    url: https://huggingface.co/naver-hyperclovax/HyperCLOVAX-SEED-Think-14B
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/hyperclova-x-seed-think-32b
+description: >
+  Vision-language reasoning model with chain-of-thought and agentic
+  capabilities. 32B parameters, 128K context. Supports text, image,
+  and video input. AA Intelligence Index: 24 (#16 of 108). Open weights
+  with commercial license. Also available as 14B variant.
+tags:
+  - reasoning
+  - multimodal
+  - open-weight
+  - agentic
+model:
+  architecture: dense
+  parameters: 32B
+  context_window: 128000
+  intelligence_index: 24
+  variants:
+    - name: HyperCLOVAX-SEED-Think-14B
+      parameters: 14B
+    - name: HyperCLOVAX-SEED-Think-32B
+      parameters: 32B
+paper:
+  arxiv: "2601.03286"
+related:
+  - hcx-think
+  - hcx-seed-omni

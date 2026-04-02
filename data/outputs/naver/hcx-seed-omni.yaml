@@ -1,0 +1,27 @@
+name: HyperCLOVA X SEED Omni
+slug: hcx-seed-omni
+lab: naver
+type: model
+date: 2026-01-05
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.01792
+  - label: HuggingFace
+    url: https://huggingface.co/naver-hyperclovax/HyperCLOVAX-SEED-Omni-8B
+description: >
+  First any-to-any omnimodal model in the HyperCLOVA X family. Supports
+  text, audio, and vision as both inputs and outputs via unified
+  next-token prediction over interleaved multimodal sequences. 8B
+  parameters. Open weight.
+tags:
+  - multimodal
+  - audio
+  - open-weight
+model:
+  architecture: dense
+  parameters: 8B
+paper:
+  arxiv: "2601.01792"
+related:
+  - hcx-seed-think

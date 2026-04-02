@@ -1,0 +1,19 @@
+name: StarGAN
+slug: stargan
+lab: naver
+type: paper
+date: 2017-11-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/1711.09020
+description: >
+  Unified GAN for multi-domain image-to-image translation, eliminating
+  the need for separate models per domain pair. From Clova AI Research.
+  Published at CVPR 2018.
+tags:
+  - generation
+  - vision
+  - research
+paper:
+  arxiv: "1711.09020"
+  venue: CVPR 2018

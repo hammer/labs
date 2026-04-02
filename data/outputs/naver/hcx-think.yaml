@@ -1,0 +1,34 @@
+name: HyperCLOVA X THINK
+slug: hcx-think
+lab: naver
+type: model
+date: 2025-06-27
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.22403
+description: >
+  <p>First reasoning-focused LLM in the HyperCLOVA X family. Exact
+  parameter count not disclosed (analysts estimate ~32B based on SEED
+  distillation). Pre-trained on <strong>~6 trillion Korean/English
+  tokens</strong> using Peri-LN Transformer with muP scaling for
+  consistent hyperparameter transfer across scales.</p>
+
+  <p>3-stage curriculum expanding to 128K context. Post-trained with
+  SFT + RLVR. Vision variant uses SigLIP-2 encoder (512x512 per grid)
+  with LLaVA-1.5-HD framework and C-Abstractor connector, supporting
+  up to 1.57M tokens. Matches or exceeds GPT-4.1 on KCSAT STEM.
+  Competitive on KMMLU, CSAT, KoBALT-700, HAERAE-1.0, KoBigBench.</p>
+tags:
+  - reasoning
+  - multilingual
+  - open-weight
+  - multimodal
+model:
+  architecture: dense
+  context_window: 128000
+paper:
+  arxiv: "2506.22403"
+related:
+  - hyperclovax
+  - hcx-seed-think

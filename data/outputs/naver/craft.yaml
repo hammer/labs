@@ -1,0 +1,24 @@
+name: CRAFT
+slug: craft
+lab: naver
+type: paper
+date: 2019-04-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/1904.01941
+  - label: GitHub
+    url: https://github.com/clovaai/CRAFT-pytorch
+description: >
+  Character Region Awareness for Text Detection. Scene text detection
+  using character-level region awareness, excelling at curved and
+  irregularly-shaped text. From Clova AI Research. Published at
+  CVPR 2019.
+tags:
+  - vision
+  - document-ai
+  - research
+paper:
+  arxiv: "1904.01941"
+  venue: CVPR 2019
+library:
+  github: https://github.com/clovaai/CRAFT-pytorch

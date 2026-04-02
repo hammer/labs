@@ -1,0 +1,24 @@
+name: MASt3R
+slug: mast3r
+lab: naver
+type: paper
+date: 2024-06-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.09756
+  - label: GitHub
+    url: https://github.com/naver/mast3r
+description: >
+  Extends DUSt3R with dense local features and matching loss. Beats
+  prior SOTA by 30% in VCRE AUC on Map-free localization. 2.8K+
+  GitHub stars. From NAVER Labs Europe.
+tags:
+  - vision
+  - 3d
+  - research
+paper:
+  arxiv: "2406.09756"
+library:
+  github: https://github.com/naver/mast3r
+related:
+  - dust3r

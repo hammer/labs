@@ -1,0 +1,19 @@
+name: SPLADE
+slug: splade
+lab: naver
+type: paper
+date: 2021-07-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2107.05720
+description: >
+  Sparse Lexical and Expansion Model for first-stage ranking. Combines
+  advantages of dense embeddings with inverted index efficiency using
+  explicit sparsity regularization. Influential sparse neural retrieval
+  model. From NAVER Labs Europe.
+tags:
+  - retrieval
+  - nlp
+  - research
+paper:
+  arxiv: "2107.05720"

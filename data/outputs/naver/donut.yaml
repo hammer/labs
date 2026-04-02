@@ -1,0 +1,24 @@
+name: Donut
+slug: donut
+lab: naver
+type: paper
+date: 2021-11-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2111.15664
+  - label: GitHub
+    url: https://github.com/clovaai/donut
+description: >
+  OCR-free Document Understanding Transformer. End-to-end model for
+  visual document understanding that eliminates OCR dependency, error
+  propagation, and computational overhead. Includes SynthDoG synthetic
+  data generator. From Clova AI Research. Published at ECCV 2022.
+tags:
+  - document-ai
+  - vision
+  - research
+paper:
+  arxiv: "2111.15664"
+  venue: ECCV 2022
+library:
+  github: https://github.com/clovaai/donut

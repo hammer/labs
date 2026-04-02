@@ -1,0 +1,72 @@
+name: Naver
+slug: naver
+url: https://naverlabs.com/en/research
+wikipedia: https://en.wikipedia.org/wiki/Naver_Corporation
+huggingface: https://huggingface.co/naver-hyperclovax
+github: https://github.com/naver-ai
+region: korea
+founded: "1999"
+type: corporate
+ipo:
+  year: 2002
+  exchange: KRX
+  ticker: "035420"
+valuation:
+  amount: "$19B"
+  type: market-cap
+  ticker: "KRX: 035420"
+  date: "2026-04"
+description: >
+  <p><a href="https://en.wikipedia.org/wiki/Naver_Corporation">Naver</a> (KRX:
+  035420), South Korea's leading internet conglomerate, is a global pioneer in
+  "Sovereign AI" through its research arms: <strong>NAVER AI Lab</strong> (Seoul),
+  <strong><a href="https://europe.naverlabs.com/">NAVER Labs Europe</a></strong>
+  (Grenoble), and <strong>NAVER Cloud</strong>. R&D spending hit a record
+  2.22 trillion KRW (~$1.67B) in 2025 (18.5% of revenue), and the company
+  completed South Korea's largest AI cluster with 4,000 NVIDIA B200 GPUs in
+  January 2026.</p>
+
+  <p>The flagship <strong>HyperCLOVA X</strong> model family evolved from the
+  original <a href="https://arxiv.org/abs/2109.04650">HyperCLOVA</a> (2021, 82B)
+  through the <a href="https://arxiv.org/abs/2404.01954">HyperCLOVA X technical
+  report</a> (2024) to the current open-weight
+  <strong><a href="https://arxiv.org/abs/2601.03286">SEED Think</a></strong> (32B,
+  Dec 2025) reasoning VLM and
+  <strong><a href="https://arxiv.org/abs/2601.01792">SEED Omni</a></strong> (8B)
+  any-to-any multimodal model. HyperCLOVA X THINK (June 2025) was pre-trained
+  on ~6T Korean/English tokens with Peri-LN Transformer and muP scaling.</p>
+
+  <p>NAVER Labs Europe has produced landmark 3D vision work:
+  <strong><a href="https://github.com/naver/dust3r">DUSt3R</a></strong> (CVPR 2024,
+  7K+ GitHub stars) reformulated 3D reconstruction as pointmap regression, and
+  <strong><a href="https://github.com/naver/mast3r">MASt3R</a></strong> extended it
+  with dense matching. The former Clova AI lab (now integrated into NAVER AI Lab)
+  produced widely-used tools including
+  <a href="https://arxiv.org/abs/2111.15664">Donut</a> (OCR-free document
+  understanding, ECCV 2022),
+  <a href="https://arxiv.org/abs/1904.01941">CRAFT</a> (text detection, CVPR 2019),
+  <a href="https://arxiv.org/abs/1711.09020">StarGAN</a> (CVPR 2018), and
+  <a href="https://arxiv.org/abs/2107.05720">SPLADE</a> sparse retrieval.</p>
+people:
+  - name: Jung-Woo Ha
+    url: https://sites.google.com/site/hjw9096/
+    role: Former Head, NAVER AI Lab (now Presidential Office AI advisor)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=eGj3ay4AAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Jung-Woo_Ha1
+  - name: Sangdoo Yun
+    url: https://sangdooyun.github.io/
+    role: Research Director, NAVER AI Lab
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=o0qtjzYAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Sangdoo_Yun1
+tags:
+  - open-weight
+  - multilingual
+  - multimodal
+  - vision
+  - retrieval

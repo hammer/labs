@@ -1,0 +1,30 @@
+name: HyperCLOVA
+slug: hyperclova
+lab: naver
+type: model
+date: 2021-09-10
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2109.04650
+description: >
+  Korean GPT-3 variant trained on 560B tokens. The arxiv paper covers the
+  82B model; press reports indicate a 204B variant was also trained but
+  not published. One of the earliest large-scale Korean language models.
+tags:
+  - multilingual
+  - frontier
+model:
+  architecture: dense
+  parameters: 204B
+  variants:
+    - name: HyperCLOVA-82B
+      parameters: 82B
+      notes: Covered in arxiv paper
+    - name: HyperCLOVA-204B
+      parameters: 204B
+      notes: Reported in press; not published as paper
+paper:
+  arxiv: "2109.04650"
+related:
+  - hyperclovax

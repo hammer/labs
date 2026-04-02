@@ -1,0 +1,24 @@
+name: HyperCLOVA X
+slug: hyperclovax
+lab: naver
+type: model
+date: 2024-04-02
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2404.01954
+description: >
+  Foundation model family optimized for Korean language and culture with
+  competitive bilingual capabilities. Reported as 204B+ parameters (exact
+  count not officially disclosed). Technical report covers reasoning,
+  knowledge, commonsense, factuality, coding, math, and cross-lingual
+  abilities. Positions HyperCLOVA X as a template for sovereign LLMs.
+tags:
+  - multilingual
+  - frontier
+paper:
+  arxiv: "2404.01954"
+related:
+  - hyperclova
+  - hcx-think
+  - hcx-seed-think

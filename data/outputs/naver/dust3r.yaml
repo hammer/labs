@@ -1,0 +1,28 @@
+name: DUSt3R
+slug: dust3r
+lab: naver
+type: paper
+date: 2023-12-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2312.14132
+  - label: GitHub
+    url: https://github.com/naver/dust3r
+description: >
+  Landmark paper from NAVER Labs Europe reformulating 3D reconstruction
+  as pointmap regression. Recovers 3D models, depth, correspondences,
+  and camera parameters from uncalibrated image pairs using a
+  Transformer. No prior camera calibration needed. SOTA on monocular
+  depth, multi-view reconstruction, and pose estimation. 7K+ GitHub
+  stars. Published at CVPR 2024.
+tags:
+  - vision
+  - 3d
+  - research
+paper:
+  arxiv: "2312.14132"
+  venue: CVPR 2024
+library:
+  github: https://github.com/naver/dust3r
+related:
+  - mast3r
