@@ -1,0 +1,38 @@
+name: Aya Expanse
+slug: aya-expanse
+lab: cohere
+type: model
+date: 2024-12-06
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.04261
+  - label: HuggingFace (8B)
+    url: https://huggingface.co/CohereLabs/aya-expanse-8b
+  - label: HuggingFace (32B)
+    url: https://huggingface.co/CohereLabs/aya-expanse-32b
+  - label: Artificial Analysis (8B)
+    url: https://artificialanalysis.ai/models/aya-expanse-8b
+description: >
+  Multilingual frontier at 8B and 32B. Parallel Attention+FFN layers,
+  SwiGLU, RoPE. 128K context, 23 languages. 32B beats Llama 3.1 70B
+  (54% Arena-Hard-Auto win-rate). Combines multilingual data arbitrage,
+  preference training across languages, and safety alignment.
+  CC-BY-NC-4.0.
+tags:
+  - open-weight
+  - multilingual
+model:
+  architecture: dense
+  parameters: 32B
+  context_window: 128000
+  variants:
+    - name: Aya Expanse 8B
+      parameters: 8B
+    - name: Aya Expanse 32B
+      parameters: 32B
+paper:
+  arxiv: "2412.04261"
+related:
+  - aya-101
+  - aya-vision

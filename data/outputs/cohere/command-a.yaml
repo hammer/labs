@@ -1,0 +1,40 @@
+name: Command A
+slug: command-a
+lab: cohere
+type: model
+date: 2025-03-01
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.00698
+  - label: HuggingFace
+    url: https://huggingface.co/CohereLabs/c4ai-command-a-03-2025
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/command-a
+  - label: OpenRouter
+    url: https://openrouter.ai/cohere/command-a
+description: >
+  <p>Cohere's current flagship. 111B dense Transformer with a novel
+  <strong>hybrid attention</strong>: 3 sliding-window attention layers
+  (4096 window) + 1 global attention layer without positional embeddings,
+  using RoPE. 256K context, 23 languages. Uses <strong>model merging</strong>
+  rather than MoE to achieve expert-level breadth.</p>
+
+  <p>150% higher throughput vs Command R+ 08-2024. Runs on 2 GPUs
+  (A100/H100). Trained via decentralized training and self-refinement
+  algorithms. AA Intelligence Index: 13. CC-BY-NC. Command A Vision
+  (Jul 2025) adds SigLIP2 vision encoder.</p>
+tags:
+  - open-weight
+  - enterprise
+  - multilingual
+  - frontier
+model:
+  architecture: dense
+  parameters: 111B
+  context_window: 256000
+  intelligence_index: 13
+paper:
+  arxiv: "2504.00698"
+related:
+  - command-r

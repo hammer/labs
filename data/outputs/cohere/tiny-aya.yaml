@@ -1,0 +1,25 @@
+name: Tiny Aya
+slug: tiny-aya
+lab: cohere
+type: model
+date: 2026-02-17
+sources:
+  - label: HuggingFace (Water)
+    url: https://huggingface.co/CohereLabs/tiny-aya-water
+  - label: HuggingFace (Fire)
+    url: https://huggingface.co/CohereLabs/tiny-aya-fire
+description: >
+  3.35B-parameter edge-deployable multilingual model in 5 regional
+  variants: Base, Global, Earth (Africa/West Asia), Fire (South Asia),
+  Water (Asia-Pacific/Europe). Supports 70 languages. Beats Gemma3-4B
+  in 46/61 languages on WMT24++ translation. African languages on
+  GlobalMGSM: 39.2% vs Gemma3-4B 17.6%.
+tags:
+  - multilingual
+  - efficiency
+  - open-weight
+model:
+  architecture: dense
+  parameters: 3.35B
+related:
+  - aya-expanse

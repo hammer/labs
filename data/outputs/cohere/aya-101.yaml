@@ -1,0 +1,35 @@
+name: Aya 101
+slug: aya-101
+lab: cohere
+type: model
+date: 2024-02-01
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.07827
+  - label: Dataset Paper (arXiv)
+    url: https://arxiv.org/abs/2402.06619
+  - label: HuggingFace
+    url: https://huggingface.co/CohereLabs/aya-101
+description: >
+  <p>Landmark multilingual model covering <strong>101 languages</strong>
+  (50+ previously underserved), built through a global collaboration of
+  3,000+ researchers from 119 countries. 13B parameters, fine-tuned on
+  mT5. Published at ACL 2024.</p>
+
+  <p>Accompanied by the Aya Dataset: 204K human-annotated instruction
+  pairs and 513M augmented instances across 114 languages. Apache 2.0.
+  Pioneered the open, community-driven approach to multilingual AI
+  that defined Cohere Labs' identity.</p>
+tags:
+  - open-weight
+  - multilingual
+  - research
+model:
+  architecture: dense
+  parameters: 13B
+paper:
+  arxiv: "2402.07827"
+  venue: ACL 2024
+related:
+  - aya-expanse

@@ -1,0 +1,19 @@
+name: "Consent in Crisis: The Rapid Decline of the AI Data Commons"
+slug: consent-in-crisis
+lab: cohere
+type: paper
+date: 2024-07-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.14933
+description: >
+  DataProvenance audit revealing the rapid decline of AI training data
+  availability as websites restrict crawling. Influential AI governance
+  research from Sara Hooker's Cohere For AI team. Published at
+  NeurIPS 2024.
+tags:
+  - data
+  - research
+paper:
+  arxiv: "2407.14933"
+  venue: NeurIPS 2024
