@@ -1,0 +1,16 @@
+name: Document Parse
+slug: document-parse
+lab: upstage
+type: library
+date: 2025-01-01
+sources:
+  - label: Website
+    url: https://www.upstage.ai/document-parse
+  - label: DP-Bench (HuggingFace)
+    url: https://huggingface.co/datasets/upstage/dp-bench
+description: >
+  High-performance document processing engine. SOTA on DP-Bench with
+  94.16 TEDS-S score for table structure recognition.
+tags:
+  - enterprise
+  - document-ai

@@ -1,0 +1,23 @@
+name: Dataverse
+slug: dataverse
+lab: upstage
+type: library
+date: 2024-03-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2403.19340
+  - label: GitHub
+    url: https://github.com/UpstageAI/dataverse
+description: >
+  Open-source ETL pipeline for LLM data processing with a block-based
+  interface. Supports multi-source ingestion, Spark-based distributed
+  processing, and privacy-aware filtering. Accepted to NAACL 2025 Demo.
+tags:
+  - data
+  - open-source
+  - research
+paper:
+  arxiv: "2403.19340"
+  venue: NAACL 2025
+library:
+  github: https://github.com/UpstageAI/dataverse

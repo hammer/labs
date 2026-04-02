@@ -1,0 +1,20 @@
+name: Solar Pro 2
+slug: solar-pro-2
+lab: upstage
+type: model
+date: 2025-07-01
+flagship: true
+sources:
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/solar-pro-2
+description: >
+  Proprietary frontier-class model for production environments, focusing
+  on instruction following and reasoning. Ranked #30 on Artificial
+  Analysis Intelligence Index among non-reasoning models.
+tags:
+  - enterprise
+model:
+  intelligence_index: 14
+related:
+  - solar-10.7b
+  - solar-pro-3

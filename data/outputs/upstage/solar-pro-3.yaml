@@ -1,0 +1,23 @@
+name: Solar Pro 3
+slug: solar-pro-3
+lab: upstage
+type: model
+date: 2026-03-24
+flagship: true
+sources:
+  - label: Website
+    url: https://www.upstage.ai
+description: >
+  Current proprietary flagship, a 102B agent-specialized model for
+  complex multi-step tool use and reasoning. 2x improvement over Pro 2
+  on agentic benchmarks (tau-squared-Bench Telecom, Terminal Bench).
+  High proficiency on AIME '26 and GPQA-Diamond.
+tags:
+  - enterprise
+  - agentic
+  - reasoning
+model:
+  parameters: 102B
+related:
+  - solar-pro-2
+  - solar-open-100b

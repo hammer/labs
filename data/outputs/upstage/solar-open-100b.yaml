@@ -1,0 +1,31 @@
+name: Solar Open 100B
+slug: solar-open-100b
+lab: upstage
+type: model
+date: 2026-01-11
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.07022
+  - label: HuggingFace
+    url: https://huggingface.co/upstage/Solar-Open-100B
+description: >
+  102B-parameter bilingual (English/Korean) MoE model with 12B active
+  parameters per token. Trained on 20 trillion tokens including 4.5T
+  synthesized tokens for underserved languages. Introduces SnapPO
+  (Snapshot Sampling for Policy Optimization), a cyclic off-policy RL
+  framework that decouples data generation, reward computation, and
+  training for scalable alignment.
+tags:
+  - moe
+  - open-weight
+  - multilingual
+model:
+  architecture: moe
+  parameters: 102B
+  active_parameters: 12B
+paper:
+  arxiv: "2601.07022"
+related:
+  - solar-10.7b
+  - solar-pro-3

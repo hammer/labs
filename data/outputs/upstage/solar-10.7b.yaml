@@ -1,0 +1,30 @@
+name: SOLAR 10.7B
+slug: solar-10.7b
+lab: upstage
+type: model
+date: 2023-12-23
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2312.15166
+  - label: HuggingFace
+    url: https://huggingface.co/upstage/SOLAR-10.7B-Instruct-v1.0
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/solar-mini
+description: >
+  Introduced Depth Up-Scaling (DUS), a method to scale LLMs via
+  depthwise scaling and continued pretraining. The 10.7B model
+  outperformed Mixtral-8x7B-Instruct despite being much smaller.
+  Apache 2.0 license.
+tags:
+  - open-weight
+  - efficiency
+  - research
+model:
+  architecture: dense
+  parameters: 10.7B
+  intelligence_index: 12
+paper:
+  arxiv: "2312.15166"
+related:
+  - solar-open-100b

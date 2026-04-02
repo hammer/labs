@@ -1,0 +1,51 @@
+name: Upstage
+slug: upstage
+url: https://www.upstage.ai
+wikipedia: https://en.wikipedia.org/wiki/Upstage_(company)
+huggingface: https://huggingface.co/upstage
+github: https://github.com/UpstageAI
+region: korea
+founded: "2020"
+type: startup
+description: >
+  <p><a href="https://en.wikipedia.org/wiki/Upstage_(company)">Upstage</a> is a
+  South Korean AI company founded in October 2020 by veterans of Naver's Clova AI
+  team: <strong>Sung Kim</strong> (CEO, former HKUST professor and Clova head),
+  <strong>Hwalsuk Lee</strong> (CTO, former Clova OCR/visual AI lead), and
+  <strong>Lucy Park</strong> (US CEO/CSO, former Clova NLP lead). Backed by $163M
+  in funding from SoftBank Ventures Asia, SK Networks, KT Corporation, and others,
+  Upstage is valued at approximately 1 trillion KRW (~$750M&ndash;$1B).</p>
+
+  <p>The lab's research centers on the <strong>Solar</strong> model family, built
+  around the <strong>Depth Up-Scaling (DUS)</strong> methodology &mdash; scaling
+  model depth by duplicating and trimming layers from a base model with continued
+  pre-training. <a href="https://arxiv.org/abs/2312.15166">Solar 10.7B</a> (Dec
+  2023) was the breakthrough, outperforming models twice its size on the HuggingFace
+  Open LLM Leaderboard. <a href="https://arxiv.org/abs/2601.07022">Solar Open
+  100B</a> (Jan 2026, 102B MoE / 12B active, 20T tokens) introduced
+  <strong>SnapPO</strong>, a cyclic off-policy RL framework for scalable alignment.
+  The current proprietary flagship <strong>Solar Pro 3</strong> (Mar 2026, 102B)
+  specializes in multi-step agentic tool use.</p>
+
+  <p>Beyond language models, Upstage's <strong>Document Parse</strong> engine holds
+  SOTA on DP-Bench (94.16 TEDS-S for table structure recognition), and their
+  data-centric research (<a href="https://arxiv.org/abs/2403.19340">Dataverse</a>
+  ETL pipeline, <a href="https://arxiv.org/abs/2409.09613">KenLM ensembles</a> for
+  text filtering) reflects a focus on the full training data pipeline.</p>
+people:
+  - name: Sung Kim
+    role: CEO & Co-founder
+    formerly: HKUST (Professor); Naver Clova (Head)
+  - name: Hwalsuk Lee
+    role: CTO & Co-founder
+    formerly: Naver Clova (OCR/Visual AI Lead)
+  - name: Lucy Park
+    role: US CEO/CSO & Co-founder
+    formerly: Naver Clova (NLP Lead)
+  - name: Sanghoon Kim
+    role: Lead Researcher (Solar, DUS)
+tags:
+  - open-weight
+  - enterprise
+  - efficiency
+  - agentic
