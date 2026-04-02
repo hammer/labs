@@ -33,7 +33,7 @@ If an arxiv paper exists, **read the HTML version** (`arxiv.org/html/{id}v1`) an
 
 **Prior innovations used** — established techniques the model builds on:
 - Attention: GQA, MLA, FlashAttention, sparse attention (NSA/DSA)
-- Architecture: MoE, state space models (Mamba), GatedDeltaNets, Hyper-Connections
+- Architecture: MoE, model merging, state space models (Mamba), GatedDeltaNets, Hyper-Connections
 - Training: WSD/midtraining, muP scaling, DUS, FIM
 - RL: GRPO, DPO, RLHF, RLVR, process reward models
 - Efficiency: FP8 quantization, speculative decoding, knowledge distillation
@@ -151,6 +151,7 @@ Write descriptions a researcher would find useful. Use HTML for multi-paragraph 
 3. Prior techniques used (with terminology)
 4. Training details (tokens, hardware, curriculum)
 5. Benchmark results with specific numbers and comparisons
+6. License (Apache 2.0, CC-BY-NC, proprietary — this matters for adoption)
 
 **For models without papers:** Cover what's known from blog posts/API docs. Note what's undisclosed.
 
@@ -187,6 +188,7 @@ npm run build   # Verify page count increased and no errors
 - [ ] OpenRouter link added if available
 - [ ] Description covers architecture, innovations, training, benchmarks with numbers
 - [ ] Novel contributions and prior techniques identified
+- [ ] License noted in description (Apache 2.0, CC-BY-NC, proprietary)
 - [ ] Flagship only for genuine step changes
 - [ ] Sources ordered: announcement, paper, GitHub, HF, AA, OpenRouter
 - [ ] Related outputs linked

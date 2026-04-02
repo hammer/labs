@@ -66,8 +66,9 @@ people:
 - Only include links you have verified are correct for THIS person (common names can lead to wrong profiles)
 
 ### Who to Include
-- **Always include:** Founders, CEO, CTO, Chief Scientist
+- **Always include:** Founders, CEO, CTO, Chief Scientist — even if they have no academic profile. A co-founder with no Google Scholar still gets a people entry (just omit the `urls` section).
 - **Include if significant:** Team leads, lead authors on flagship model papers, researchers with very high citation counts (10K+)
+- **Include departed leaders if they shaped the lab:** e.g., Sara Hooker founded Cohere Labs before departing — her entry tells the lab's story
 - **Skip:** Junior researchers, interns, people with only one co-authored paper
 - Aim for 3-7 people per lab. Quality over quantity.
 
