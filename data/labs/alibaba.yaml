@@ -100,6 +100,13 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Binyuan_Hui1
+  - name: Yongbin Li
+    url: https://yongbin-li.github.io/
+    role: Principal Research Scientist, Tongyi Lab (Tongyi Lingma coding copilot)
+    formerly: PhD Tsinghua University
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=xF5VrokAAAAJ
 news:
   - title: "Alibaba Launches AI Model Task Force; Top Researcher Resigns"
     url: https://www.theinformation.com/briefings/alibaba-launches-ai-model-task-force-top-researcher-resigns

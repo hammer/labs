@@ -1,0 +1,36 @@
+name: Think-Anywhere
+slug: think-anywhere
+lab: alibaba
+type: paper
+date: 2026-03-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.29957
+  - label: GitHub
+    url: https://github.com/jiangxxxue/Think-Anywhere
+description: >
+  <p>Introduces <strong>Think-Anywhere</strong>, enabling LLMs to invoke
+  reasoning blocks at arbitrary token positions during code generation, rather
+  than only before implementation begins. Unlike "upfront thinking" (reasoning
+  before code) or fixed interleaving (reasoning at each step), Think-Anywhere
+  adaptively allocates computational resources based on the immediate complexity
+  of the code being generated.</p>
+
+  <p>Uses a two-stage training pipeline: cold-start SFT on ~5,000 samples
+  constructed via Gemini 2.5 Flash, followed by reinforcement learning with
+  verifiable rewards (RLVR) using GRPO with hierarchical rewards measuring
+  both reasoning structure adherence and code correctness. Introduces
+  semantic-aware trigger token initialization combining conceptual meaning
+  with structural delimiter roles.</p>
+
+  <p>Results on Qwen3-Coder-30B-A3B: LeetCode 69.4% (+18.8pp over base),
+  HumanEval 91.5% (+3.1pp), MBPP 82.9% (+12.2pp), LiveCodeBench 37.2%
+  (+2.9pp). Also transfers to mathematical reasoning: AIME 2024 17.3%
+  (vs 5.3% baseline). Joint work between Peking University and Alibaba
+  Tongyi Lab.</p>
+tags:
+  - coding
+  - reasoning
+  - research
+paper:
+  arxiv: "2603.29957"
