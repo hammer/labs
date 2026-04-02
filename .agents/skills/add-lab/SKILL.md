@@ -137,6 +137,7 @@ const regionFlags: Record<string, string> = {
 - Link to arxiv papers, GitHub repos, and other lab pages (`<a href="/labs/deepseek">`)
 - Include concrete numbers: parameter counts, training tokens, benchmark scores, funding
 - Tell a story — what makes this lab distinctive?
+- **Complex corporate structures:** If a lab's region might surprise readers (e.g., Singapore entity with Chinese parent, or a multinational with labs in multiple countries), proactively explain the legal structure and why the lab is classified in its region. Include incorporation details, where the research team is based, and local institutional ties.
 
 ## 4. Create Outputs
 
@@ -157,6 +158,7 @@ If the user specifies a focus (e.g., "focus on Nemotron, only include others if 
 - Each distinct product line (Codestral, Pixtral, Cosmos)
 - Papers with arxiv IDs that introduce significant innovations
 - Widely-used open-source tools/libraries (Megatron-LM, NeMo)
+- **Training infrastructure and data research** — don't overlook papers on data curation (Dolma, WebOrganizer), scaling laws (Model Ladders, DataDecide), data mixing (OLMix), post-training methods (Tülu/RLVR), evaluation (OLMES, Paloma), and reward modeling (Skywork-Reward). These are often as influential as the models themselves.
 
 **Do NOT create separate outputs for:**
 - Point releases within the same version (v0.1, v0.2, v0.3 of the same model)
