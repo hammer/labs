@@ -1,0 +1,47 @@
+name: Inspur
+slug: inspur
+url: https://yuanlab.ai/
+wikipedia: https://en.wikipedia.org/wiki/Inspur
+huggingface: https://huggingface.co/YuanLabAI
+github: https://github.com/Yuan-lab-LLM
+region: china
+founded: "2000"
+type: corporate
+ipo:
+  year: 2000
+  exchange: SZSE
+  ticker: "000977"
+valuation:
+  amount: "$12B"
+  type: market-cap
+  ticker: "SZ: 000977"
+  date: "2026-04"
+description: >
+  <p><strong>YuanLab AI</strong> is the AI research division of
+  <a href="https://en.wikipedia.org/wiki/Inspur">Inspur</a> (SZ: 000977), one of
+  the world's largest server manufacturers. Originally the Inspur AI Research
+  Institute, it rebranded as YuanLab around 2024&ndash;2025 to reflect its shift
+  toward open-source enterprise-grade foundation models. Unlike VC-backed startups,
+  YuanLab is funded directly by Inspur's corporate capital and has a "home field
+  advantage" in hardware optimization from building the servers many other AI
+  companies train on.</p>
+
+  <p>The <strong>Yuan</strong> model series traces a clear arc from massive dense
+  models to efficient MoE. Yuan 1.0 (2021, 245B dense) was the world's largest
+  single-language Chinese model at launch. Yuan 2.0 (2023) introduced Localized
+  Filtering-based Attention (LFA) across 2B&ndash;102B sizes. Yuan 2.0-M32 (2024)
+  marked the MoE pivot with an Attention Router achieving 3.8% accuracy gains over
+  classical expert routing. The current flagship
+  <strong>Yuan 3.0 Ultra</strong> (March 2026, 1.01T total / 68.8B active) was
+  pruned from 1.5T parameters using <strong>Layer-Adaptive Expert Pruning
+  (LAEP)</strong>, improving training efficiency by 49% and inference speed by 33%.
+  Yuan 3.0 Flash (Dec 2025, 40B MoE) introduced the Reflection Inhibition Reward
+  Mechanism (RIRM) to prevent overthinking, cutting inference costs by ~50%.</p>
+people:
+  - name: Shaohua Wu (Shawn Wu)
+    role: Lead Researcher
+tags:
+  - open-weight
+  - moe
+  - enterprise
+  - infrastructure

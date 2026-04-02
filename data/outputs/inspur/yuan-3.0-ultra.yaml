@@ -1,0 +1,34 @@
+name: Yuan 3.0 Ultra
+slug: yuan-3.0-ultra
+lab: inspur
+type: model
+date: 2026-01-20
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.14327
+  - label: GitHub
+    url: https://github.com/Yuan-lab-LLM/Yuan3.0-Ultra
+  - label: HuggingFace
+    url: https://huggingface.co/YuanLabAI/Yuan3.0-Ultra
+description: >
+  Trillion-parameter enterprise MoE flagship (1.01T total / 68.8B
+  active). Originally 1.5T parameters, pruned using Layer-Adaptive
+  Expert Pruning (LAEP) which improved training efficiency by 49% and
+  inference speed by 33%. Achieves 93.1% MATH-500, 91.4% HumanEval,
+  87.8% MMLU. Leads in enterprise RAG, complex table understanding,
+  and 64K context processing.
+tags:
+  - moe
+  - open-weight
+  - multimodal
+  - enterprise
+  - frontier
+model:
+  architecture: moe
+  parameters: 1T
+  active_parameters: 68.8B
+paper:
+  arxiv: "2601.14327"
+related:
+  - yuan-3.0-flash

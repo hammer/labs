@@ -1,0 +1,19 @@
+name: Yuan Embedding
+slug: yuan-embedding
+lab: inspur
+type: model
+date: 2024-06-01
+sources:
+  - label: HuggingFace (1.0)
+    url: https://huggingface.co/IEITYuan/Yuan-embedding-1.0
+  - label: HuggingFace (2.0-zh)
+    url: https://huggingface.co/IEITYuan/Yuan-embedding-2.0-zh
+  - label: HuggingFace (2.0-en)
+    url: https://huggingface.co/IEITYuan/Yuan-embedding-2.0-en
+description: >
+  Embedding model series for retrieval and RAG. Yuan-embedding 1.0 (0.3B)
+  for Chinese, Yuan-embedding 2.0 in Chinese (0.3B) and English (0.6B)
+  variants.
+tags:
+  - embeddings
+  - open-weight

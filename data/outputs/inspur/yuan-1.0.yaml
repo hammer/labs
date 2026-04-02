@@ -1,0 +1,24 @@
+name: Yuan 1.0
+slug: yuan-1.0
+lab: inspur
+type: model
+date: 2021-10-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2110.04725
+  - label: GitHub
+    url: https://github.com/Shawn-Inspur/Yuan-1.0
+description: >
+  At launch, the world's largest single-language (Chinese) model at 245B
+  parameters (dense). Trained on 5TB of high-quality Chinese text. Passed
+  a Turing Test variant where humans could not distinguish its news
+  articles and poems from human-written content.
+tags:
+  - open-weight
+  - frontier
+  - scaling
+model:
+  architecture: dense
+  parameters: 245B
+paper:
+  arxiv: "2110.04725"

@@ -1,0 +1,31 @@
+name: Yuan 2.0-M32
+slug: yuan-2.0-m32
+lab: inspur
+type: model
+date: 2024-05-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2405.17976
+  - label: GitHub
+    url: https://github.com/IEIT-Yuan/Yuan2.0-M32
+  - label: HuggingFace
+    url: https://huggingface.co/IEITYuan/Yuan2-M32-hf
+description: >
+  MoE model with 32 experts (2 active), 40B total / 3.7B active
+  parameters. Introduced "Attention Router" for expert selection,
+  achieving 3.8% accuracy improvement over classical routers. Surpassed
+  Llama3-70B on MATH and ARC-Challenge while requiring 1/19th the compute.
+  Trained on 2T tokens.
+tags:
+  - moe
+  - open-weight
+  - efficiency
+model:
+  architecture: moe
+  parameters: 40B
+  active_parameters: 3.7B
+paper:
+  arxiv: "2405.17976"
+related:
+  - yuan-2.0
+  - yuan-3.0-flash

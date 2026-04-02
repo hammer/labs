@@ -1,0 +1,33 @@
+name: Yuan 3.0 Flash
+slug: yuan-3.0-flash
+lab: inspur
+type: model
+date: 2026-01-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.01718
+  - label: GitHub
+    url: https://github.com/Yuan-lab-LLM/Yuan3.0
+  - label: HuggingFace
+    url: https://huggingface.co/YuanLabAI/Yuan3.0-Flash
+description: >
+  Open-source multimodal MoE LLM (40B total / 3.7B active) for
+  enterprise applications. Introduced Reflection-aware Adaptive Policy
+  Optimization (RAPO) and Reflection Inhibition Reward Mechanism (RIRM)
+  to prevent overthinking, cutting inference costs by ~50%. Designed for
+  "intelligence too cheap to meter."
+tags:
+  - moe
+  - open-weight
+  - multimodal
+  - enterprise
+  - efficiency
+model:
+  architecture: moe
+  parameters: 40B
+  active_parameters: 3.7B
+paper:
+  arxiv: "2601.01718"
+related:
+  - yuan-3.0-ultra
+  - yuan-2.0-m32

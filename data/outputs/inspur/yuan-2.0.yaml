@@ -1,0 +1,34 @@
+name: Yuan 2.0
+slug: yuan-2.0
+lab: inspur
+type: model
+date: 2023-11-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2311.15786
+  - label: GitHub
+    url: https://github.com/IEIT-Yuan/Yuan-2.0
+  - label: HuggingFace
+    url: https://huggingface.co/IEITYuan
+description: >
+  LLM series (2.1B, 51B, 102.6B) introducing Localized Filtering-based
+  Attention (LFA) to incorporate local dependency priors. Strong
+  capabilities in code generation, math, and Chinese reasoning. The 102B
+  version was highly regarded for long-form Chinese text and specialized
+  reasoning in legal and financial sectors.
+tags:
+  - open-weight
+model:
+  architecture: dense
+  parameters: 102B
+  variants:
+    - name: Yuan2-2B
+      parameters: 2.1B
+    - name: Yuan2-51B
+      parameters: 51B
+    - name: Yuan2-102B
+      parameters: 102.6B
+paper:
+  arxiv: "2311.15786"
+related:
+  - yuan-2.0-m32
