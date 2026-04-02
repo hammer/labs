@@ -1,0 +1,36 @@
+name: Falcon-H1R
+slug: falcon-h1r
+lab: tii
+type: model
+date: 2026-01-05
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.02346
+  - label: HuggingFace
+    url: https://huggingface.co/tiiuae/Falcon-H1R-7B
+  - label: GitHub
+    url: https://github.com/tiiuae/falcon-h1r
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/falcon-h1r-7b
+description: >
+  <p>7B hybrid reasoning model (Transformer + Mamba-2 parallel heads).
+  Trained via SFT on 3.1M samples + GRPO RL. 256K context, up to
+  48K response tokens. Introduces <strong>DeepConf@512</strong>
+  test-time scaling: AIME25 reaches 96.7% with 38% fewer tokens.</p>
+
+  <p>AIME24: 88.1%, AIME25: 83.1%, MATH500: 97.4%, LiveCodeBench-v6:
+  68.6%, GPQA-Diamond: 61.3%. AA Intelligence Index: 16. CC BY 4.0.</p>
+tags:
+  - open-weight
+  - reasoning
+  - architecture
+model:
+  architecture: dense
+  parameters: 7B
+  context_window: 256000
+  intelligence_index: 16
+paper:
+  arxiv: "2601.02346"
+related:
+  - falcon-h1

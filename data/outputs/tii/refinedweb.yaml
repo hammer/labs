@@ -1,0 +1,25 @@
+name: RefinedWeb
+slug: refinedweb
+lab: tii
+type: dataset
+date: 2023-06-01
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2306.01116
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/tiiuae/falcon-refinedweb
+description: >
+  ~5 trillion token open web corpus from CommonCrawl demonstrating that
+  properly filtered web data alone can outperform curated corpora. 600B
+  token public extract released under ODC-By 1.0. Training data for all
+  Falcon models.
+tags:
+  - data
+  - open-source
+paper:
+  arxiv: "2306.01116"
+dataset:
+  url: https://huggingface.co/datasets/tiiuae/falcon-refinedweb
+related:
+  - falcon

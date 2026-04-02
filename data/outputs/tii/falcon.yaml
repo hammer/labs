@@ -1,0 +1,39 @@
+name: Falcon (7B / 40B / 180B)
+slug: falcon
+lab: tii
+type: model
+date: 2023-11-28
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2311.16867
+  - label: HuggingFace (180B)
+    url: https://huggingface.co/tiiuae/falcon-180B
+description: >
+  <p>Original Falcon series. Dense causal Transformers with multi-query
+  attention, RoPE, FlashAttention. Trained primarily on
+  <a href="https://arxiv.org/abs/2306.01116">RefinedWeb</a> (5T token
+  open web corpus). Falcon-180B (3,500B tokens, 4,096 A100s) was the
+  largest open-weight model at launch.</p>
+
+  <p>Falcon-7B: 1,500B tokens, 384 A100s. Falcon-40B: 1,000B tokens.
+  All Apache 2.0 (180B under TII License).</p>
+tags:
+  - open-weight
+  - frontier
+model:
+  architecture: dense
+  parameters: 180B
+  context_window: 2048
+  variants:
+    - name: Falcon-7B
+      parameters: 7B
+    - name: Falcon-40B
+      parameters: 40B
+    - name: Falcon-180B
+      parameters: 180B
+paper:
+  arxiv: "2311.16867"
+related:
+  - falcon-2
+  - refinedweb

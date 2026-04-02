@@ -6,7 +6,7 @@ A data-driven tracker of Asia's AI research ecosystem: labs, models, papers, and
 
 ## Overview
 
-Tracks **31 AI labs** and **740+ research outputs** across the global AI landscape, from trillion-parameter frontier models to influential open-source libraries. Each lab has a profile page with description, key people, news, and a chronological list of outputs. Each output page links to papers, code, HuggingFace models, and external benchmarks.
+Tracks **32 AI labs** and **750+ research outputs** across the global AI landscape, from trillion-parameter frontier models to influential open-source libraries. Each lab has a profile page with description, key people, news, and a chronological list of outputs. Each output page links to papers, code, HuggingFace models, and external benchmarks.
 
 The home page provides a sortable table with columns for region (country flag), lab type, founding year, IPO status, valuation, largest model scale (by parameter count), top intelligence score ([Artificial Analysis Index](https://artificialanalysis.ai/)), and total output count.
 
@@ -21,6 +21,8 @@ The home page provides a sortable table with columns for region (country flag), 
 **Korea (4):** LG, Naver, SK Telecom, Upstage
 
 **Singapore (1):** Skywork
+
+**UAE (1):** TII
 
 **USA (2):** Ai2, NVIDIA
 

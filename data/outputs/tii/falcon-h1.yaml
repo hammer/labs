@@ -1,0 +1,48 @@
+name: Falcon-H1
+slug: falcon-h1
+lab: tii
+type: model
+date: 2025-05-21
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.22448
+  - label: HuggingFace
+    url: https://huggingface.co/tiiuae/Falcon-H1-7B-Instruct
+  - label: GitHub
+    url: https://github.com/tiiuae/Falcon-H1
+description: >
+  <p>Hybrid-head architecture: Transformer attention and Mamba-2 SSM
+  heads run <strong>in parallel</strong> (concatenated), not
+  interleaved. 0.5B to 34B, 18 languages, 256K context. Up to 4x
+  input throughput and 8x output throughput vs same-size Transformers.</p>
+
+  <p>H1-34B matches 70B-class models (Qwen3-32B, Llama3.3-70B).
+  H1-1.5B-Deep rivals 7B-10B models. CC BY 4.0.</p>
+tags:
+  - open-weight
+  - architecture
+  - efficiency
+  - frontier
+model:
+  architecture: dense
+  parameters: 34B
+  context_window: 256000
+  variants:
+    - name: Falcon-H1-0.5B
+      parameters: 0.5B
+    - name: Falcon-H1-1.5B
+      parameters: 1.5B
+    - name: Falcon-H1-1.5B-Deep
+      parameters: 1.5B
+    - name: Falcon-H1-3B
+      parameters: 3B
+    - name: Falcon-H1-7B
+      parameters: 7B
+    - name: Falcon-H1-34B
+      parameters: 34B
+paper:
+  arxiv: "2507.22448"
+related:
+  - falcon-mamba
+  - falcon-h1r

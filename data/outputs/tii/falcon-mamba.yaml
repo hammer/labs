@@ -1,0 +1,27 @@
+name: Falcon Mamba
+slug: falcon-mamba
+lab: tii
+type: model
+date: 2024-10-07
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.05355
+  - label: HuggingFace
+    url: https://huggingface.co/tiiuae/falcon-mamba-7b
+description: >
+  First competitive pure-Mamba (attention-free) 7B LLM. 64 layers,
+  4096 hidden dim, trained on 5.8T tokens using 256 H100s. Progressive
+  context (2K→8K training), constant-memory inference at 130K+ tokens.
+  Demonstrates SSMs can match Transformer quality at the 7B scale.
+tags:
+  - open-weight
+  - architecture
+model:
+  architecture: dense
+  parameters: 7.27B
+  context_window: 8192
+paper:
+  arxiv: "2410.05355"
+related:
+  - falcon-h1

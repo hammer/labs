@@ -1,0 +1,57 @@
+name: TII
+slug: tii
+url: https://falconllm.tii.ae/
+wikipedia: https://en.wikipedia.org/wiki/Technology_Innovation_Institute
+huggingface: https://huggingface.co/tiiuae
+github: https://github.com/tiiuae
+region: uae
+founded: "2020"
+type: nonprofit
+description: >
+  <p>The <a href="https://en.wikipedia.org/wiki/Technology_Innovation_Institute">Technology
+  Innovation Institute</a> (TII) is the applied research pillar of the Abu Dhabi
+  government's Advanced Technology Research Council (ATRC), established in 2020.
+  Led by CEO <strong>Dr. Najwa Aaraj</strong> (PhD Princeton) with AI research
+  directed by <strong>Prof. Merouane Debbah</strong> (96K+ citations, H-index 98)
+  and <strong>Dr. Hakim Hacid</strong>. Over 45M total Falcon downloads.</p>
+
+  <p>The <strong>Falcon</strong> series evolved from dense Transformers
+  (<a href="https://arxiv.org/abs/2311.16867">Falcon 7B/40B/180B</a>, 2023,
+  trained on <a href="https://arxiv.org/abs/2306.01116">RefinedWeb</a>) through
+  Falcon 2 (11B, 5.5T tokens) and Falcon 3 (Dec 2024, up to 10B, 14T tokens)
+  to the current hybrid architecture:
+  <strong><a href="https://arxiv.org/abs/2507.22448">Falcon-H1</a></strong>
+  (May 2025, parallel Transformer + Mamba-2 heads, 0.5B&ndash;34B, 256K context)
+  and <strong><a href="https://arxiv.org/abs/2601.02346">Falcon-H1R</a></strong>
+  (Jan 2026, 7B reasoning, AIME25 83.1%, AA Intelligence 16). H1-34B matches
+  70B-class models with up to 8x output throughput improvement.</p>
+
+  <p>TII also produced the first competitive pure-Mamba LLM
+  (<a href="https://arxiv.org/abs/2410.05355">Falcon Mamba 7B</a>, 5.8T tokens,
+  constant-memory inference at 130K+) and
+  <a href="https://arxiv.org/abs/2603.27365">Falcon Perception</a> (multimodal
+  vision, 600M params matching Meta SAM3). All Falcon models are open-weight.</p>
+people:
+  - name: Merouane Debbah
+    role: Chief Researcher, AI Cross-Center Unit
+    formerly: Professor, CentraleSupélec / Khalifa University
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=HU5I0X4AAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Merouane_Abdelkader_DEBBAH1
+  - name: Hakim Hacid
+    role: Chief Researcher, AI and Digital Science Research Center
+    formerly: Bell Labs; Zayed University
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=62FX_zEAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Hakim_Hacid2
+  - name: Ebtesam Almazrouei
+    role: Former Acting Chief AI Researcher (now CEO of AIE3)
+tags:
+  - open-weight
+  - frontier
+  - architecture
+  - multilingual

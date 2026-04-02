@@ -1,0 +1,27 @@
+name: Falcon 2
+slug: falcon-2
+lab: tii
+type: model
+date: 2024-07-20
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.14885
+  - label: HuggingFace
+    url: https://huggingface.co/tiiuae/falcon-11B
+description: >
+  11B dense Transformer trained on 5.5T tokens in 4 stages with
+  progressive context extension (2K→8K). 11 languages. VLM variant
+  adds CLIP ViT-L/14 vision encoder. MMLU: 58.4, HellaSwag: 82.9.
+tags:
+  - open-weight
+  - multilingual
+model:
+  architecture: dense
+  parameters: 11B
+  context_window: 8192
+paper:
+  arxiv: "2407.14885"
+related:
+  - falcon
+  - falcon-3

@@ -1,0 +1,37 @@
+name: Falcon 3
+slug: falcon-3
+lab: tii
+type: model
+date: 2024-12-01
+flagship: true
+sources:
+  - label: Blog Post
+    url: https://huggingface.co/blog/falcon3
+  - label: HuggingFace
+    url: https://huggingface.co/collections/tiiuae/falcon3
+description: >
+  Family of 1B, 3B, 7B, 10B dense Transformers plus Mamba-7B SSM
+  variant. 7B trained from scratch on 14T tokens (1,024 H100s). 10B
+  created via depth upscaling + 2T additional tokens. 1B/3B via pruning
+  + distillation. MMLU: 73.1 (10B). #1 on HuggingFace Open LLM
+  Leaderboard at launch for size class.
+tags:
+  - open-weight
+model:
+  architecture: dense
+  parameters: 10B
+  variants:
+    - name: Falcon3-1B
+      parameters: 1B
+    - name: Falcon3-3B
+      parameters: 3B
+    - name: Falcon3-7B
+      parameters: 7B
+    - name: Falcon3-10B
+      parameters: 10B
+    - name: Falcon3-Mamba-7B
+      parameters: 7B
+      notes: Pure Mamba SSM
+related:
+  - falcon-2
+  - falcon-mamba
