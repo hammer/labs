@@ -63,6 +63,22 @@ For **every** model output, check:
 - **HuggingFace blog:** Check for technical blog posts at `huggingface.co/blog/[org]/[post-slug]`. These often contain detailed benchmarks, architecture explanations, and usage guides not found in the model card. Search `site:huggingface.co/blog [model name]`.
 - **GitHub:** Find code repo
 
+### For Closed Models with Technical Reports
+
+Some frontier models (GPT-4, Claude, Gemini) are closed-source but have published technical reports:
+- Use `type: paper` (not `type: model`) since there are no downloadable weights
+- Still include AA Intelligence Index and OpenRouter links if the model is accessible via API
+- Focus the description on what the technical report reveals: architecture choices, training scale, benchmark results, novel techniques
+- Note what is NOT disclosed (e.g., "parameter count undisclosed", "training data composition not published")
+
+### For Foundational Technique Papers
+
+Papers that introduced techniques now used industry-wide (e.g., "Attention Is All You Need", CLIP, InstructGPT/RLHF, Chain-of-Thought, DPO):
+- Use `type: paper`
+- The description should emphasize the technique's **lasting impact**, not just the original results
+- Note which current models use the technique (e.g., "Transformers now underpin virtually all LLMs")
+- Include citation count if exceptionally high (10K+) to signal importance
+
 ### For Papers, Libraries, Datasets
 
 - Fetch the arxiv page for title, authors, date, description

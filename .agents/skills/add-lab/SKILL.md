@@ -168,17 +168,70 @@ See `/add-output` for detailed format. Key decisions:
 
 If the user specifies a focus (e.g., "focus on Nemotron, only include others if truly significant"), respect that. Prolific labs like NVIDIA or Google may have 50+ outputs but only 10-15 that matter for frontier AI tracking. Ask yourself: "Would someone tracking frontier LLMs/VLMs/reasoning models care about this output?"
 
+### Closed-Source / Frontier Labs (Google, OpenAI, Anthropic, Meta, xAI)
+
+Some of the most important labs primarily release closed models. For these labs:
+
+**Models to include:**
+- Models with published **technical reports** (GPT-4, Claude 3, Gemini, PaLM) — even without open weights, the paper is the output
+- **Open-weight releases** from otherwise closed labs (Gemma from Google, Llama from Meta) — these are especially important
+- Models with Artificial Analysis scores — even closed models can be tracked by their AA Intelligence Index
+
+**Foundational research papers — the most important outputs.** These labs often produced the techniques that ALL other labs now use. Search deeply for papers that introduced or popularized:
+
+*Architecture:*
+- Attention mechanisms: self-attention, multi-head attention, Transformer ("Attention Is All You Need"), grouped-query attention (GQA), multi-query attention (MQA), multi-head latent attention (MLA), sliding window attention, Flash Attention, ring attention, linear attention
+- Mixture of Experts: Switch Transformer, GShard, fine-grained MoE
+- State space models: S4, Mamba, Mamba-2
+- Hybrid architectures: Transformer+SSM combinations
+- Position encodings: RoPE, ALiBi, NTK-aware scaling, YaRN
+
+*Tokenization & pre-training:*
+- BPE, SentencePiece, Unigram tokenization
+- Pre-training objectives: causal LM, masked LM, span corruption, fill-in-the-middle (FIM), blank infilling
+- Scaling laws: Kaplan et al., Chinchilla
+
+*Training methods:*
+- Optimizers: Adam, AdamW, Lion, Muon, AdEMAMix
+- Learning rate schedules: cosine decay, WSD (warmup-stable-decay), cooldown
+- Mixed precision: FP16, BF16, FP8, NVFP4
+- Distributed training: tensor/pipeline/data parallelism, FSDP, ZeRO, Megatron-LM
+- Curriculum learning, staged training, mid-training, depth up-scaling
+
+*Post-training & alignment:*
+- RLHF (InstructGPT), PPO for LLMs, Constitutional AI
+- DPO, GRPO, RLVR, sDPO, process reward models
+- Safety training, red-teaming methodologies
+
+*Reasoning & agents:*
+- Chain-of-Thought prompting, tree of thought
+- O1-style reasoning / thinking tokens / test-time compute scaling
+- Tool use, function calling, ReAct, code execution as reasoning
+
+*Multimodality:*
+- CLIP (image-text alignment), ViT (Vision Transformer)
+- Visual instruction tuning (LLaVA)
+- Speech: Whisper, speech-text interleaving
+- Diffusion models for generation
+
+*Interpretability & evaluation:*
+- Mechanistic interpretability, circuits, sparse autoencoders
+- Benchmarks that became industry standards (MMLU, HumanEval, SWE-Bench, Chatbot Arena)
+
+**When adding these labs, prioritize papers by lasting impact** — a technique paper cited 10,000+ times that changed how everyone trains models is more important than a closed model that was SOTA for 3 months.
+
 ### What Gets Its Own Output Page
 
-**Search the lab's FULL history**, not just current frontier models. Outputs from earlier eras often define the lab's identity and influence (e.g., Kakao's KoGPT and COYO-700M dataset, PFN's Chainer framework and Optuna, Ai2's Dolma corpus). Check the lab's GitHub and HuggingFace for older repos with high star counts.
+**Search the lab's FULL history**, not just current frontier models. Outputs from earlier eras often define the lab's identity and influence (e.g., Google's Transformer paper, OpenAI's CLIP, Kakao's KoGPT, PFN's Chainer). Check the lab's GitHub and HuggingFace for older repos with high star counts.
 
 **Create an output for:**
 - Each major model family or version (Nemotron-4 340B, Nemotron-H, Nemotron 3 Super)
 - Each distinct product line (Codestral, Pixtral, Cosmos)
 - The lab's **first significant model** (establishes their entry into the field)
-- Papers with arxiv IDs that introduce significant innovations
-- Widely-used open-source tools/libraries (Megatron-LM, Optuna, Chainer)
-- **Significant datasets** (COYO-700M, Dolma, RefinedWeb, Darwin-CC)
+- **Foundational technique papers** that introduced methods now used industry-wide
+- Widely-used open-source tools/libraries (Megatron-LM, Optuna, Chainer, vLLM)
+- **Significant datasets** (COYO-700M, Dolma, RefinedWeb, Darwin-CC, The Pile)
+- **Benchmarks** that became industry standards (MMLU, HumanEval, SWE-Bench)
 - **Training infrastructure and data research** — data curation, scaling laws, data mixing, post-training methods, evaluation frameworks, reward modeling
 
 **Do NOT create separate outputs for:**
@@ -187,6 +240,7 @@ If the user specifies a focus (e.g., "focus on Nemotron, only include others if 
 - Instruct/Chat fine-tunes of a base model (note in the base model's description)
 - Deprecated models superseded by a direct successor
 - Announced but unreleased models (no output until weights or API are available)
+- Closed models with no technical report or paper (nothing to document)
 
 ### Flagship Criteria
 
