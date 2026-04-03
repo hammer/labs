@@ -18,6 +18,6 @@ tags:
   - open-weight
 model:
   architecture: dense
-  parameters: 353B
+  base_model: glm-4.6
 paper:
   arxiv: "2602.02619"

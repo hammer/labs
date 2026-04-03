@@ -20,14 +20,13 @@ tags:
   - multimodal
 model:
   architecture: dense
-  parameters: 72B
+  base_model: qwen2.5
   variants:
     - name: A.X-4.0
-      parameters: 72B
+      notes: 72B, based on Qwen2.5
     - name: A.X-4.0-Light
-      parameters: 7B
+      notes: 7B, based on Qwen2.5
     - name: A.X-4.0-VL-Light
-      parameters: 8B
-      notes: Vision-language variant
+      notes: 8B, vision-language variant
 related:
   - ax-k1

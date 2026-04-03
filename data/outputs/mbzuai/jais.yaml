@@ -23,15 +23,15 @@ tags:
   - multilingual
 model:
   architecture: dense
-  parameters: 70B
+  parameters: 30B
   variants:
     - name: JAIS-13B
       parameters: 13B
     - name: JAIS-30B
       parameters: 30B
+      notes: Trained from scratch
     - name: JAIS-70B
-      parameters: 70B
-      notes: Adapted from Llama 2
+      notes: Adapted from Llama 2 (not trained from scratch)
 paper:
   arxiv: "2308.16149"
 related:

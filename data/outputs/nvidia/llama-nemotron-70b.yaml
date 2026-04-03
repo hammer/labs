@@ -28,7 +28,7 @@ tags:
   - reasoning
 model:
   architecture: dense
-  parameters: 70B
+  base_model: llama-3.1
   context_window: 128000
 paper:
   arxiv: "2410.01257"

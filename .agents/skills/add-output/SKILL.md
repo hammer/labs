@@ -137,12 +137,37 @@ Before creating an output, confirm the lab **actually developed** the research. 
 
 If unsure, check the GitHub repo owner, the first/corresponding author affiliations, and the HuggingFace model org.
 
-### Derivative Models
+### Derivative Models — From Scratch vs Fine-Tune
 
-Some models are derived from another lab's base model (e.g., Llama-Nemotron from Meta's Llama, A.X 4.0 from Alibaba's Qwen). For these:
-- Set `lab:` to the lab that fine-tuned/adapted the model, not the base model creator
-- Note the base model in the description (e.g., "derived from Llama 3.1 405B via NAS")
-- Do not set `model.base_model` to a cross-lab slug (it's for within-lab references)
+This distinction is **critical** because the home page "Scale" column shows the largest model each lab trained from scratch. Derivative models must NOT have `model.parameters` set — use `model.base_model` instead.
+
+**How to tell if a model is trained from scratch:**
+- Paper says "pre-trained from scratch" or describes full pretraining pipeline
+- Training tokens are in the trillions (not hundreds of billions of continued training)
+- Architecture is novel or custom (not "based on Llama/Qwen/Mistral")
+- No mention of a base model or "adapted from" or "fine-tuned from" or "mid-trained on"
+
+**How to tell if a model is derivative:**
+- Description says "based on", "built on", "adapted from", "fine-tuned from", "mid-trained on"
+- Model name includes another lab's model (e.g., "Llama-Nemotron", "A.X 4.0" based on Qwen)
+- Training is continued pretraining, SFT, DPO, RLHF on an existing base
+- Training tokens are small relative to the model size (e.g., 73B tokens for a 72B model)
+
+**For derivative models:**
+- Set `lab:` to the lab that fine-tuned/adapted, not the base model creator
+- Set `model.base_model:` to identify the base (e.g., `base_model: qwen2.5`, `base_model: llama-3.1`)
+- Do NOT set `model.parameters` — this prevents them from appearing in the Scale column
+- Note the base model and parameter count in the `description` text instead
+- Note the base in `model.variants[].notes` (e.g., "72B, mid-trained on Qwen2.5")
+
+**Examples:**
+- daVinci-Dev-72B → derivative (Qwen2.5 base, mid-training) → `base_model: qwen2.5`, no `parameters`
+- daVinci-Agency-353B → derivative (GLM-4.6 fine-tune) → `base_model: glm-4.6`, no `parameters`
+- daVinci-LLM-3B → from scratch (8T tokens, full pretraining) → `parameters: 3B` ✅
+- Llama-Nemotron-Ultra-253B → derivative (Llama 3.1 405B via NAS) → `base_model: llama-3.1`, no `parameters`
+- Nemotron-4-340B → from scratch (9T tokens) → `parameters: 340B` ✅
+- A.X K1 (519B) → from scratch (10T tokens, consortium) → `parameters: 519B` ✅
+- A.X 4.0 (72B) → derivative (Qwen2.5) → `base_model: qwen2.5`, no `parameters`
 
 ### Shared Papers
 
@@ -193,7 +218,8 @@ npm run build   # Verify page count increased and no errors
 ## 6. Checklist
 
 - [ ] Technical report read (HTML version) if available; blog post checked if not
-- [ ] Structured model fields: architecture, parameters, active_parameters, context_window
+- [ ] **From scratch vs derivative determined** — only set `model.parameters` for from-scratch models; use `model.base_model` for derivatives
+- [ ] Structured model fields: architecture, parameters (if from scratch), active_parameters, context_window
 - [ ] Intelligence index from AA (fetched, not guessed)
 - [ ] OpenRouter link added if available
 - [ ] Description covers architecture, innovations, training, benchmarks with numbers

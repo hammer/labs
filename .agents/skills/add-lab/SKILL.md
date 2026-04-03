@@ -184,6 +184,10 @@ Some models are API-only with no published parameter counts:
 - Still include `model.intelligence_index` if AA has scored the model
 - Still include OpenRouter links
 
+### From Scratch vs Derivative — Critical for Scale Column
+
+The home page "Scale" column shows the largest model each lab **trained from scratch**. Only set `model.parameters` on models the lab pretrained themselves. For models fine-tuned/adapted from another lab's base (e.g., Qwen, Llama, Mistral), use `model.base_model` instead and omit `parameters`. See `/add-output` for detailed guidance and examples.
+
 ## 5. Add OpenRouter Links
 
 Fetch the provider page (e.g., `openrouter.ai/mistralai`) and map models to outputs.

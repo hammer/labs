@@ -20,11 +20,11 @@ tags:
   - open-weight
 model:
   architecture: dense
-  parameters: 72B
+  base_model: qwen2.5
   variants:
     - name: daVinci-Dev-32B
-      parameters: 32B
+      notes: 32B, mid-trained on Qwen2.5
     - name: daVinci-Dev-72B
-      parameters: 72B
+      notes: 72B, mid-trained on Qwen2.5
 paper:
   arxiv: "2601.18418"
