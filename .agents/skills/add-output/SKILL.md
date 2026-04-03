@@ -57,7 +57,7 @@ Many models (especially proprietary ones) are announced via blog posts without a
 ### External Links
 
 For **every** model output, check:
-- **Artificial Analysis:** Search `site:artificialanalysis.ai [model name]`. Fetch the page and extract the Intelligence Index score.
+- **Artificial Analysis:** Search `site:artificialanalysis.ai [model name]`. Fetch the page and extract the Intelligence Index score. **Check for reasoning/adaptive variants** — many models have multiple AA entries (e.g., `model-name`, `model-name-reasoning`, `model-name-adaptive`). Use the **highest score** and link to that variant's page.
 - **OpenRouter:** Search `site:openrouter.ai [model name]`. Add the canonical model URL (without date suffix).
 - **HuggingFace model page:** Find model weights (e.g., `huggingface.co/org/model`)
 - **HuggingFace blog:** Check for technical blog posts at `huggingface.co/blog/[org]/[post-slug]`. These often contain detailed benchmarks, architecture explanations, and usage guides not found in the model card. Search `site:huggingface.co/blog [model name]`.

@@ -103,12 +103,21 @@ Schemas are defined in `src/schema.ts`. Always validate after editing YAML: `npm
 - **Paper details:** arxiv ID, venue
 - **Grouped outputs:** use `outputs` array instead of `type` for model families with sub-entries (e.g., model + paper for same release)
 
+### Artificial Analysis Intelligence Index
+
+The `intelligence_index` field should reflect the **highest available score** for that model on Artificial Analysis. Many models have multiple AA entries (e.g., base, reasoning, adaptive reasoning, max effort). Always check for reasoning/thinking variants — they often score significantly higher:
+
+- `claude-opus-4-6` (46) vs `claude-opus-4-6-adaptive` (53) — use 53
+- `deepseek-v3-2` (32) vs `deepseek-v3-2-reasoning` (42) — use 42
+
+**How to verify:** Fetch the AA model page and check for variant tabs or related model links. The AA URL in `sources` should point to the highest-scoring variant's page.
+
 ### Canonical Identifiers
 When adding new outputs, prioritize collecting:
 - **arXiv:** Paper IDs (e.g., `2412.19437`)
 - **HuggingFace:** Model/Dataset IDs
 - **GitHub:** `owner/repo`
-- **Artificial Analysis:** Model page URLs (`/models/...`)
+- **Artificial Analysis:** Model page URLs (`/models/...`) — link to the highest-scoring variant
 - **OpenRouter:** Model page URLs (`/provider/model`)
 
 ## Key Conventions
