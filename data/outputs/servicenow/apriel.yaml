@@ -1,0 +1,33 @@
+name: Apriel
+slug: apriel
+lab: servicenow
+type: model
+date: 2025-04-15
+flagship: true
+sources:
+  - label: GitHub
+    url: https://github.com/ServiceNow/apriel
+  - label: HuggingFace
+    url: https://huggingface.co/ServiceNow-AI/Apriel-5B-Base
+description: >
+  <p>ServiceNow's enterprise SLM family. <strong>Apriel-5B</strong>: 4.8B parameters
+  trained on 4.5T tokens. Outperforms OLMo-2-7B and Mistral-Nemo-12B despite being
+  smaller.</p>
+
+  <p><strong>Apriel-Nemotron-15B-Thinker</strong> (August 2025, with NVIDIA): 15B
+  reasoning model that matches o1-mini and QwQ-32B at half the memory. Apache 2.0.</p>
+tags:
+  - open-weight
+  - reasoning
+  - agents
+model:
+  architecture: dense
+  parameters: 4.8B
+  variants:
+    - name: Apriel-5B
+      parameters: 4.8B
+    - name: Apriel-Nemotron-15B-Thinker
+      parameters: 15B
+      notes: Reasoning model with NVIDIA
+related:
+  - starcoder

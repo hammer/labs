@@ -1,0 +1,30 @@
+name: StarCoder
+slug: starcoder
+lab: servicenow
+type: model
+date: 2023-05-04
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2305.06161
+  - label: HuggingFace
+    url: https://huggingface.co/bigcode/starcoder
+description: >
+  <p><strong>15.5B parameter</strong> code LLM trained on 80+ programming languages
+  from The Stack (1T tokens). 8K token context with fill-in-the-middle. Part of the
+  <strong>BigCode</strong> collaboration between ServiceNow and HuggingFace.</p>
+
+  <p>StarCoder outperformed existing open code models and matched Codex on HumanEval.
+  StarCoder2 (February 2024, 3B/7B/15B, 3.3&ndash;4.3T tokens) extended the series
+  with NVIDIA, outperforming CodeLlama-34B. OpenRAIL-M License.</p>
+tags:
+  - coding
+  - open-weight
+model:
+  architecture: dense
+  parameters: 15.5B
+  context_window: 8192
+paper:
+  arxiv: "2305.06161"
+related:
+  - apriel

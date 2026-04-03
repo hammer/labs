@@ -6,7 +6,7 @@ A data-driven tracker of the global AI research ecosystem: labs, models, papers,
 
 ## Overview
 
-Tracks **40 AI labs** and **750+ research outputs** across the global AI landscape, from trillion-parameter frontier models to influential open-source libraries. Each lab has a profile page with description, key people, news, and a chronological list of outputs. Each output page links to papers, code, HuggingFace models, and external benchmarks.
+Tracks **51 AI labs** and **830+ research outputs** across the global AI landscape, from trillion-parameter frontier models to influential open-source libraries. Each lab has a profile page with description, key people, news, and a chronological list of outputs. Each output page links to papers, code, HuggingFace models, and external benchmarks.
 
 The home page provides a sortable table with columns for region (country flag), lab type, founding year, IPO status, valuation, largest model scale (by parameter count), top intelligence score ([Artificial Analysis Index](https://artificialanalysis.ai/)), and total output count.
 
@@ -30,7 +30,7 @@ The home page provides a sortable table with columns for region (country flag), 
 
 **UAE (2):** MBZUAI, TII
 
-**USA (3):** Ai2, Arcee, NVIDIA
+**USA (14):** Ai2, Amazon, Anthropic, Apple, Arcee, Google, IBM, Meta, Microsoft, NVIDIA, OpenAI, Salesforce, ServiceNow, xAI
 
 ## Features
 

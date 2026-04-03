@@ -1,0 +1,28 @@
+name: BLIP-2
+slug: blip-2
+lab: salesforce
+type: model
+date: 2023-01-30
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2301.12597
+  - label: HuggingFace
+    url: https://huggingface.co/Salesforce/blip2-opt-2.7b
+description: >
+  <p>"Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large
+  Language Models." Introduces <strong>Q-Former</strong>, a lightweight Transformer
+  that bridges frozen image encoders and LLMs. Achieves SOTA on visual QA, captioning,
+  and image-text retrieval.</p>
+
+  <p>BLIP-2 demonstrated efficient vision-language pre-training by leveraging frozen
+  pre-trained models rather than end-to-end training. ICML 2023. Extended by xGen-MM
+  (BLIP-3). By Li, Li, Savarese, and Hoi.</p>
+tags:
+  - vision
+  - multimodal
+  - foundational
+  - open-source
+paper:
+  arxiv: "2301.12597"
+  venue: ICML 2023

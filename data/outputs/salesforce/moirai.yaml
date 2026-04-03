@@ -1,0 +1,31 @@
+name: Moirai
+slug: moirai
+lab: salesforce
+type: model
+date: 2024-02-07
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.02592
+  - label: GitHub
+    url: https://github.com/SalesforceAIResearch/uni2ts
+  - label: HuggingFace
+    url: https://huggingface.co/Salesforce/moirai-1.0-R-large
+description: >
+  <p>Time series foundation model. 14M, 91M, and 311M parameter variants trained on
+  the LOTSA dataset (27B observations from 9 domains). Uses <strong>any-variate attention
+  </strong> and multiple input/output projections for universal forecasting.</p>
+
+  <p><strong>#1 on GIFT-Eval leaderboard</strong> for time series forecasting. ICML 2024.
+  Moirai 2.0 (2025) switched to decoder-only architecture. By Woo, Liu, Kumar et al.
+  Apache 2.0.</p>
+tags:
+  - scientific
+  - open-source
+  - open-weight
+model:
+  architecture: dense
+  parameters: 311M
+paper:
+  arxiv: "2402.02592"
+  venue: ICML 2024

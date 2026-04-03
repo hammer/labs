@@ -1,0 +1,39 @@
+name: Granite Code
+slug: granite-code
+lab: ibm
+type: model
+date: 2024-05-07
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2405.04324
+  - label: GitHub
+    url: https://github.com/ibm-granite/granite-code-models
+  - label: HuggingFace
+    url: https://huggingface.co/ibm-granite
+description: >
+  <p>Family of code LLMs: 3B, 8B, 20B, and <strong>34B parameters</strong>.
+  Trained on <strong>3.5&ndash;4.5T tokens</strong> across 116 programming languages.
+  Supports code generation, bug fixing, code explanation, and documentation.</p>
+
+  <p>Granite Code 34B was competitive with CodeLlama-34B and StarCoder-15B on code
+  benchmarks at release. Apache 2.0.</p>
+tags:
+  - coding
+  - open-weight
+model:
+  architecture: dense
+  parameters: 34B
+  variants:
+    - name: Granite Code 3B
+      parameters: 3B
+    - name: Granite Code 8B
+      parameters: 8B
+    - name: Granite Code 20B
+      parameters: 20B
+    - name: Granite Code 34B
+      parameters: 34B
+paper:
+  arxiv: "2405.04324"
+related:
+  - granite-4.0

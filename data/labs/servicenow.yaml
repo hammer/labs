@@ -1,0 +1,53 @@
+name: ServiceNow
+slug: servicenow
+url: https://www.servicenow.com/research/
+wikipedia: https://en.wikipedia.org/wiki/ServiceNow
+huggingface: https://huggingface.co/ServiceNow-AI
+github: https://github.com/ServiceNow
+region: usa
+founded: "2003"
+type: corporate
+ipo:
+  exchange: NYSE
+  ticker: NOW
+  year: 2012
+valuation:
+  amount: "$110B"
+  type: market-cap
+  date: "2026-04"
+description: >
+  <p>ServiceNow AI Research, part of the Advanced Technology Group, focuses on
+  enterprise AI agents and efficient language models. The team originated from
+  <strong>Element AI</strong> (acquired 2020), Montreal's pioneering AI startup
+  co-founded by Yoshua Bengio. Key researchers include
+  <a href="https://scholar.google.com/citations?user=LR6aJcEAAAAJ">Alexandre Drouin</a>
+  and Christopher Pal (Polytechnique Montreal, Mila founding faculty).</p>
+
+  <p>ServiceNow co-created <strong><a href="https://arxiv.org/abs/2305.06161">StarCoder</a></strong>
+  (2023, 15.5B) and <strong>StarCoder2</strong> (2024, up to 15B) through the BigCode
+  collaboration with HuggingFace. The <strong>Apriel</strong> model family (2025) is
+  ServiceNow's own SLM line: Apriel-5B (4.8B, 4.5T tokens) and
+  <strong>Apriel-Nemotron-15B-Thinker</strong> (reasoning model with NVIDIA, matches
+  o1-mini at half the memory). Apache 2.0.</p>
+people:
+  - name: Christopher Pal
+    role: Distinguished Scientist
+    formerly: Polytechnique Montreal (Professor); Mila (founding faculty)
+  - name: Alexandre Drouin
+    role: Principal Research Scientist, Head of Frontier AI Research
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.ca/citations?user=LR6aJcEAAAAJ
+news:
+  - title: "Apriel-Nemotron-15B Reasoning Model with NVIDIA"
+    url: https://www.servicenow.com/blogs/2025/apriel-model-family-frontier-reasoning
+    source: ServiceNow
+    date: 2025-05-15
+  - title: "Apriel-5B: ServiceNow's First Open SLM"
+    url: https://www.servicenow.com/blogs/2025/apriel-5b-small-enterprise-language-model
+    source: ServiceNow
+    date: 2025-04-15
+tags:
+  - open-weight
+  - coding
+  - agents

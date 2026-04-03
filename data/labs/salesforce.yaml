@@ -1,0 +1,66 @@
+name: Salesforce
+slug: salesforce
+url: https://www.salesforceairesearch.com/
+wikipedia: https://en.wikipedia.org/wiki/Salesforce
+huggingface: https://huggingface.co/Salesforce
+github: https://github.com/SalesforceAIResearch
+region: usa
+founded: "1999"
+type: corporate
+ipo:
+  exchange: NYSE
+  ticker: CRM
+  year: 2004
+valuation:
+  amount: "$175B"
+  type: market-cap
+  date: "2026-04"
+description: >
+  <p>Salesforce AI Research, led by Chief Scientist
+  <a href="https://scholar.google.com/citations?user=ImpbxLsAAAAJ">Silvio Savarese</a>
+  (formerly Stanford CS), produces open research spanning vision-language,
+  code generation, time series, and protein engineering. The lab's work feeds into
+  Salesforce's <strong>Agentforce</strong> enterprise AI platform ($1.4B ARR,
+  12K customers).</p>
+
+  <p>Key research includes <strong><a href="https://arxiv.org/abs/2301.12597">BLIP-2</a></strong>
+  (2023, vision-language bootstrapping, ICML 2023),
+  <strong><a href="https://arxiv.org/abs/2203.13474">CodeGen</a></strong> (2022, code
+  generation up to 16B), <strong><a href="https://arxiv.org/abs/2402.02592">Moirai</a></strong>
+  (2024, time series foundation model, #1 on GIFT-Eval, ICML 2024), and
+  <strong><a href="https://arxiv.org/abs/2004.03497">ProGen</a></strong> (protein generation,
+  Nature Biotechnology 2023). The <a href="https://github.com/salesforce/LAVIS">LAVIS</a>
+  library (11K stars) provides a unified framework for vision-language research.</p>
+people:
+  - name: Silvio Savarese
+    role: EVP & Chief Scientist
+    formerly: Stanford CS (Associate Professor); PhD Caltech
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=ImpbxLsAAAAJ
+  - name: Junnan Li
+    role: Research Director
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=MuUhwi0AAAAJ
+  - name: Caiming Xiong
+    role: Former SVP, AI Research (departed early 2026)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=vaSdahkAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Caiming_Xiong1
+news:
+  - title: "Agentforce Platform Launched for Enterprise AI Agents"
+    url: https://www.salesforce.com/news/press-releases/2024/10/29/agentforce-general-availability-announcement/
+    source: Salesforce
+    date: 2024-10-29
+  - title: "Silvio Savarese Named to TIME 100 Most Influential in AI"
+    url: https://www.salesforce.com/news/stories/salesforce-research-ai-story/
+    source: Salesforce
+    date: 2024-09-05
+tags:
+  - open-weight
+  - vision
+  - scientific
+  - coding

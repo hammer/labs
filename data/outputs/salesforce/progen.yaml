@@ -1,0 +1,28 @@
+name: ProGen
+slug: progen
+lab: salesforce
+type: model
+date: 2020-03-13
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2004.03497
+  - label: GitHub
+    url: https://github.com/salesforce/progen
+description: >
+  <p>Protein language model. <strong>1.2B parameter</strong> autoregressive Transformer
+  trained on 280M protein sequences conditioned on taxonomic and functional annotations.
+  Generates functional protein sequences from natural language-like controls.</p>
+
+  <p>Published in <strong>Nature Biotechnology</strong> (2023). Generated artificial
+  proteins that were experimentally validated as functional. One of the earliest examples
+  of large language models applied to protein engineering. By Madani, Krause et al.</p>
+tags:
+  - scientific
+  - open-source
+model:
+  architecture: dense
+  parameters: 1.2B
+paper:
+  arxiv: "2004.03497"
+  venue: Nature Biotechnology 2023

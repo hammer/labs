@@ -1,0 +1,38 @@
+name: CodeGen
+slug: codegen
+lab: salesforce
+type: model
+date: 2022-03-25
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2203.13474
+  - label: GitHub
+    url: https://github.com/salesforce/CodeGen
+  - label: HuggingFace
+    url: https://huggingface.co/Salesforce/codegen-16B-mono
+description: >
+  <p>Family of autoregressive code generation models from 350M to <strong>16.1B
+  parameters</strong>. Trained with multi-step paradigm: natural language &rarr;
+  multilingual code &rarr; monolingual (Python) specialization.</p>
+
+  <p>Competitive with OpenAI Codex at release. Introduced the MTPB (Multi-Turn
+  Programming Benchmark). ICLR 2023. By Nijkamp, Pang, Hayashi et al. Apache 2.0.</p>
+tags:
+  - coding
+  - open-weight
+model:
+  architecture: dense
+  parameters: 16.1B
+  variants:
+    - name: CodeGen-350M
+      parameters: 350M
+    - name: CodeGen-2B
+      parameters: 2B
+    - name: CodeGen-6B
+      parameters: 6B
+    - name: CodeGen-16B
+      parameters: 16.1B
+paper:
+  arxiv: "2203.13474"
+  venue: ICLR 2023

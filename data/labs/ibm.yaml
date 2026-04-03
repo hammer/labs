@@ -1,0 +1,64 @@
+name: IBM
+slug: ibm
+url: https://research.ibm.com/
+wikipedia: https://en.wikipedia.org/wiki/IBM
+huggingface: https://huggingface.co/ibm-granite
+github: https://github.com/ibm-granite
+openrouter: https://openrouter.ai/ibm-granite
+region: usa
+founded: "1911"
+type: corporate
+ipo:
+  exchange: NYSE
+  ticker: IBM
+  year: 1915
+valuation:
+  amount: "$235B"
+  type: market-cap
+  date: "2026-04"
+description: >
+  <p><strong>IBM Research</strong>, founded in 1945, is one of the oldest and largest
+  industrial research labs with 3,000+ researchers. Five Nobel Prizes, six Turing Awards.
+  Current director Jay Gambetta (appointed October 2025, succeeding
+  Dario Gil who became US DOE Under Secretary for Science).</p>
+
+  <p>IBM's current AI focus is the <strong>Granite</strong> model family, purpose-built
+  for enterprise with <strong>ISO 42001 certification</strong> and transparent data
+  governance. <strong>Granite 4.0</strong> (October 2025) uses a novel
+  <strong>hybrid Mamba-2/Transformer + MoE architecture</strong> achieving 70% less
+  memory and 2x inference speed. The H-Small variant (32B/9B active) reaches AA index 23.
+  <strong>Granite Code</strong> (2024) provides open coding models in 116 languages.</p>
+
+  <p>Chief Scientist <a href="https://scholar.google.com/citations?user=77QlzIwAAAAJ">Ruchir
+  Puri</a> (IBM Fellow, 50+ patents) leads research direction. All Granite models are
+  Apache 2.0.</p>
+people:
+  - name: Ruchir Puri
+    role: Chief Scientist, IBM Research; IBM Fellow
+    formerly: CTO & Chief Architect, IBM Watson; Adjunct Professor, Columbia
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=77QlzIwAAAAJ
+  - name: Jay Gambetta
+    role: Director, IBM Research (from Oct 2025); IBM Fellow
+    formerly: VP, IBM Quantum
+  - name: Dario Gil
+    role: Former SVP & Director, IBM Research (departed Oct 2025)
+    formerly: Now US DOE Under Secretary for Science
+news:
+  - title: "Granite 4.0: Hybrid Mamba Architecture, First ISO 42001 Certified Open Models"
+    url: https://www.ibm.com/new/announcements/ibm-granite-4-0-hyper-efficient-high-performance-hybrid-models
+    source: IBM
+    date: 2025-10-15
+  - title: "IBM Research Names Jay Gambetta as Director; Dario Gil to DOE"
+    url: https://newsroom.ibm.com/blog-ibm-names-new-director-of-ibm-research
+    source: IBM
+    date: 2025-10-01
+  - title: "Granite 3.2: Multimodal Vision and Chain-of-Thought Reasoning"
+    url: https://newsroom.ibm.com/2025-02-26-ibm-expands-granite-model-family
+    source: IBM
+    date: 2025-02-26
+tags:
+  - open-weight
+  - enterprise
+  - coding
