@@ -1,0 +1,33 @@
+name: AToken
+slug: atoken
+lab: apple
+type: paper
+date: 2025-09-17
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.14476
+  - label: GitHub
+    url: https://github.com/apple/ml-atoken
+  - label: Apple ML Research
+    url: https://machinelearning.apple.com/research/atoken
+description: >
+  <p>"A Unified Tokenizer for Vision." The first unified visual tokenizer achieving both
+  <strong>high-fidelity reconstruction and semantic understanding</strong> across images,
+  videos, and 3D assets. Encodes diverse visual inputs into a shared 4D latent space
+  using a pure Transformer with 4D rotary position embeddings.</p>
+
+  <p>Introduces an adversarial-free training objective combining perceptual and Gram
+  matrix losses. Achieves 0.21 rFID with 82.2% ImageNet accuracy for images, 3.01 rFVD
+  for videos, and 28.28 PSNR for 3D. CVPR 2026. By Lu, Song, Xu, Ahn, Wang, Chen,
+  Dehghan, and Yang.</p>
+tags:
+  - vision
+  - multimodal
+  - open-source
+paper:
+  arxiv: "2509.14476"
+  venue: CVPR 2026
+related:
+  - flextok
+  - aimv2

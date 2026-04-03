@@ -1,0 +1,27 @@
+name: Scaling Laws for Optimal Data Mixtures
+slug: scaling-laws-data-mixtures
+lab: apple
+type: paper
+date: 2025-07-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.09404
+  - label: Apple ML Research
+    url: https://machinelearning.apple.com/research/optimal-data-mixtures
+description: >
+  <p>Systematic method using scaling laws to determine the <strong>optimal data mixture
+  for any target domain</strong>, replacing trial-and-error approaches. Predicts model
+  loss as a function of model size, training tokens, and domain weights.</p>
+
+  <p>Validated across LLM, native multimodal model, and large vision model pre-training.
+  Parameters estimated from small-scale runs extrapolate to larger scales and unseen
+  domain weights. NeurIPS 2025. By Shukor, Bethune, Busbridge, Grangier, Fini,
+  El-Nouby, and Ablin.</p>
+tags:
+  - research
+  - foundational
+paper:
+  arxiv: "2507.09404"
+  venue: NeurIPS 2025
+related:
+  - scaling-laws-multimodal

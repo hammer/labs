@@ -1,0 +1,32 @@
+name: FlexTok
+slug: flextok
+lab: apple
+type: paper
+date: 2025-02-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.13967
+  - label: GitHub
+    url: https://github.com/apple/ml-flextok
+  - label: Apple ML Research
+    url: https://machinelearning.apple.com/research/flex-tok-resampling
+description: >
+  <p>"Resampling Images into 1D Token Sequences of Flexible Length." Projects 2D images
+  into <strong>variable-length, ordered 1D token sequences</strong> (1 to 256 tokens for
+  a 256&times;256 image). Uses a rectified flow decoder and nested dropout for
+  hierarchical, semantic compression.</p>
+
+  <p>Achieves FID&lt;2 across 8 to 128 tokens on ImageNet, outperforming TiTok and
+  matching SOTA with far fewer tokens. Shows that in autoregressive generation, the
+  number of tokens needed depends on image complexity. ICML 2025. By Bachmann,
+  Allardice, Dehghan et al.</p>
+tags:
+  - vision
+  - research
+  - open-source
+paper:
+  arxiv: "2502.13967"
+  venue: ICML 2025
+related:
+  - atoken
+  - aimv2

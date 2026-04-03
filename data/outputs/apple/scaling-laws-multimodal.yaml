@@ -1,0 +1,28 @@
+name: Scaling Laws for Native Multimodal Models
+slug: scaling-laws-multimodal
+lab: apple
+type: paper
+date: 2025-04-10
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.07951
+  - label: Apple ML Research
+    url: https://machinelearning.apple.com/research/scaling-laws-native-multimodal-models
+description: >
+  <p>Extensive scaling laws study spanning <strong>457 trained models</strong> examining
+  native multimodal models (NMMs) trained from scratch on all modalities. Finds no
+  inherent advantage to late-fusion over early-fusion architectures &mdash; early-fusion
+  performs better at lower parameter counts, is more efficient to train, and easier
+  to deploy.</p>
+
+  <p>Shows that incorporating Mixture of Experts allows models to learn modality-specific
+  weights, significantly benefiting multimodal performance. ICCV 2025 Oral. By Shukor,
+  Fini, Turrisi da Costa, Cord, Susskind, and El-Nouby.</p>
+tags:
+  - multimodal
+  - research
+  - foundational
+paper:
+  arxiv: "2504.07951"
+  venue: ICCV 2025

@@ -31,9 +31,21 @@ description: >
   <strong><a href="https://arxiv.org/abs/2404.14619">OpenELM</a></strong>, fully open
   efficient language models.</p>
 
-  <p><a href="https://scholar.google.com/citations?user=Vs-MdPcAAAAJ">Samy Bengio</a>
-  (103K+ citations, brother of Yoshua Bengio) leads ML research. Amar Subramanya
-  (formerly Microsoft VP AI, 16 years at Google) was named VP of AI in December 2025.</p>
+  <p>Apple's scaling science program spans three complementary groups:
+  <a href="https://scholar.google.com/citations?user=wcX-UW4AAAAJ">Afshin Dehghan</a>
+  leads vision tokenization research
+  (<a href="https://arxiv.org/abs/2509.14476">AToken</a>,
+  <a href="https://arxiv.org/abs/2502.13967">FlexTok</a>),
+  <a href="https://scholar.google.com/citations?user=Sv2TGqsAAAAJ">Josh Susskind</a>
+  (Distinguished Engineer) leads multimodal architectures and scaling laws
+  (<a href="https://arxiv.org/abs/2504.07951">NMM Scaling Laws</a>,
+  <a href="https://arxiv.org/abs/2411.14402">AIMv2</a>), and
+  <a href="https://pierreablin.com/">Pierre Ablin</a> leads training optimization
+  (<a href="https://arxiv.org/abs/2409.03137">AdEMAMix</a>,
+  <a href="https://arxiv.org/abs/2507.09404">data mixture scaling laws</a>).
+  <a href="https://scholar.google.com/citations?user=Vs-MdPcAAAAJ">Samy Bengio</a>
+  (103K+ citations) leads ML research overall, with Amar Subramanya named VP of AI
+  in December 2025.</p>
 people:
   - name: Samy Bengio
     role: Senior Director, AI & ML Research
@@ -43,6 +55,31 @@ people:
         url: https://scholar.google.com/citations?user=Vs-MdPcAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Samy_Bengio1
+  - name: Josh Susskind
+    role: Distinguished Engineer
+    formerly: Emotient (Co-founder); PhD University of Toronto; Postdoc UC San Diego
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Sv2TGqsAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Joshua_M._Susskind1
+  - name: Afshin Dehghan
+    role: Senior AI/ML Manager, Multimodal Intelligence (MINT)
+    formerly: PhD University of Central Florida
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=wcX-UW4AAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Afshin_Dehghan5
+  - name: Pierre Ablin
+    url: https://pierreablin.com/
+    role: ML Research Scientist (Paris)
+    formerly: CNRS (Université Paris-Dauphine); ENS (Postdoc with Gabriel Peyré)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=1ZsunaYAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Pierre_Ablin2
   - name: Amar Subramanya
     role: VP of AI (joined Dec 2025)
     formerly: Microsoft (CVP AI); Google (16 years, Gemini assistant)

@@ -1,0 +1,32 @@
+name: AIMv2
+slug: aimv2
+lab: apple
+type: paper
+date: 2024-11-21
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.14402
+  - label: GitHub
+    url: https://github.com/apple/ml-aim
+  - label: Apple ML Research
+    url: https://machinelearning.apple.com/research/multimodal-autoregressive
+description: >
+  <p>"Multimodal Autoregressive Pre-training of Large Vision Encoders." Pairs a vision
+  encoder with a multimodal decoder that generates both raw image patches and text tokens.
+  AIMv2-3B achieves <strong>89.5% on ImageNet-1k</strong> with frozen trunk.</p>
+
+  <p>Consistently outperforms CLIP and SigLIP in multimodal understanding while scaling
+  more efficiently &mdash; outperforming SOTA with fewer training samples. CVPR 2025
+  Highlight. By Fini, Shukor, Li, Susskind, El-Nouby et al. Apache 2.0.</p>
+tags:
+  - vision
+  - multimodal
+  - open-source
+  - foundational
+paper:
+  arxiv: "2411.14402"
+  venue: CVPR 2025
+related:
+  - flextok
+  - atoken

@@ -1,0 +1,27 @@
+name: AdEMAMix Optimizer
+slug: ademamix
+lab: apple
+type: paper
+date: 2024-09-05
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2409.03137
+  - label: Apple ML Research
+    url: https://machinelearning.apple.com/research/ademamix-optimizer
+description: >
+  <p>"The AdEMAMix Optimizer: Better, Faster, Older." A modification of Adam using a
+  <strong>mixture of two exponential moving averages</strong> to exploit older gradients
+  that Adam discards. Demonstrates that gradients remain useful for tens of thousands
+  of steps.</p>
+
+  <p>A 1.3B AdEMAMix LLM trained on 101B tokens matches an AdamW model trained on
+  <strong>197B tokens (+95% more data)</strong>, demonstrating substantial training
+  efficiency gains from better optimization alone. ICLR 2025. By Pagliardini, Ablin,
+  and Grangier.</p>
+tags:
+  - foundational
+  - research
+paper:
+  arxiv: "2409.03137"
+  venue: ICLR 2025
