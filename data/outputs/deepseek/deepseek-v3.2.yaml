@@ -11,7 +11,7 @@ sources:
   - label: HuggingFace
     url: https://huggingface.co/deepseek-ai/DeepSeek-V3.2
   - label: Artificial Analysis
-    url: https://artificialanalysis.ai/models/deepseek-v3-2
+    url: https://artificialanalysis.ai/models/deepseek-v3-2-reasoning
 description: >
   V3.2 family introducing DeepSeek Sparse Attention for long-context efficiency.
   V3.2-Speciale achieves gold-medal performance on IMO and IOI 2025, surpassing GPT-5.
@@ -32,7 +32,7 @@ outputs:
       architecture: moe
       parameters: 685B
       active_parameters: 37B
-      intelligence_index: 32
+      intelligence_index: 42
       variants:
         - name: DeepSeek-V3.2-Exp
           notes: Released 2025-09-29
