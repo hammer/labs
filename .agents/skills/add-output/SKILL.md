@@ -255,7 +255,16 @@ Write descriptions a researcher would find useful. Use HTML for multi-paragraph 
 npm run build   # Verify page count increased and no errors
 ```
 
-## 6. Checklist
+## 6. Exclusion Criteria
+
+Before creating an output, verify it belongs. Do **not** create outputs for:
+- **Business-specific applications** — delivery logistics, recommendation systems, e-commerce search, customer service tools, mobile infrastructure
+- **Narrow benchmarks/datasets** — unless they became industry standards (MMLU, HumanEval, SWE-Bench)
+- **Low-impact minor papers** — <500 GitHub stars and no notable citations, unless science-related or first-in-series
+
+**When in doubt, check GitHub stars.** Outputs with 1K+ stars have demonstrated community adoption. First-in-series outputs (the original in a model lineage) and science-related outputs (biology, chemistry, physics, materials, protein design) get more leeway.
+
+## 7. Checklist
 
 - [ ] Technical report read (HTML version) if available; blog post checked if not
 - [ ] **From scratch vs derivative determined** — only set `model.parameters` for from-scratch models; use `model.base_model` for derivatives

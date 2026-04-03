@@ -176,6 +176,11 @@ Our core interests (see AGENTS.md "Research Focus"):
 
 Ask: "Does this output advance the frontier of intelligence, enable scientific discovery, or introduce a technique that changed how models are built?"
 
+**Exclude from the start:**
+- Business-specific applications (delivery logistics, recommendation systems, e-commerce search, customer service, mobile infra)
+- Narrow benchmarks/datasets that didn't become industry standards
+- Minor papers with low community adoption (<500 GitHub stars, no notable citations) unless science-related or first-in-series
+
 ### Closed-Source / Frontier Labs (Google, OpenAI, Anthropic, Meta, xAI)
 
 Some of the most important labs primarily release closed models. For these labs:

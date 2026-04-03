@@ -28,6 +28,19 @@ We are primarily interested in tracking:
 
 When selecting outputs for a lab, prioritize work that falls into these categories. Do not exhaustively catalog every paper — focus on what matters for understanding the frontier.
 
+### What to Exclude
+
+Do **not** add outputs that are:
+- **Business-specific applications** — delivery logistics, recommendation systems, e-commerce search, customer service tools, mobile infrastructure
+- **Narrow benchmarks/datasets** — unless they became industry standards (MMLU, HumanEval, SWE-Bench are fine; a niche lip-reading dataset is not)
+- **Low-impact minor outputs** — small papers with <500 GitHub stars and no notable citations, unless they are science-related or first-in-series
+
+**Retention criteria** (when auditing existing outputs):
+- **High GitHub stars** (1K+) — signals community adoption
+- **First-in-series** — the original in a model lineage (e.g., CogView 1 before CogView 2/3/4, CPM-1 before MiniCPM)
+- **Science-related** — biology, chemistry, physics, materials science, weather, protein design
+- **Core to lab identity** — the DETR family is IDEA Lab's identity; the CPM series is OpenBMB's identity
+
 ## Development
 
 ```bash
