@@ -1,0 +1,25 @@
+name: Grouped Query Attention (GQA)
+slug: gqa
+lab: google
+type: paper
+date: 2023-05-22
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2305.13245
+description: >
+  <p>Introduced <strong>grouped-query attention</strong> as a middle ground between
+  multi-head and multi-query attention, with a recipe for uptraining existing checkpoints
+  using only 5% of original pre-training compute.</p>
+
+  <p>GQA was <strong>rapidly adopted by Llama 2, Mistral, and most subsequent frontier
+  models</strong> as the default attention mechanism, offering near multi-head quality
+  at multi-query speed. EMNLP 2023. By Ainslie, Lee-Thorp, de Jong et al.</p>
+tags:
+  - foundational
+  - efficiency
+paper:
+  arxiv: "2305.13245"
+  venue: EMNLP 2023
+related:
+  - transformer

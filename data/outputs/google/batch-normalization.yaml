@@ -1,0 +1,23 @@
+name: Batch Normalization
+slug: batch-normalization
+lab: google
+type: paper
+date: 2015-02-11
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/1502.03167
+description: >
+  <p>"Batch Normalization: Accelerating Deep Network Training by Reducing Internal
+  Covariate Shift." Normalizes layer inputs during training, enabling much higher
+  learning rates and reducing sensitivity to initialization. Achieves same accuracy
+  with <strong>14x fewer training steps</strong>.</p>
+
+  <p>Became a <strong>standard component in virtually all deep neural networks</strong>.
+  One of the most-cited papers in deep learning (~50K+ citations). ICML 2015.
+  By Ioffe and Szegedy.</p>
+tags:
+  - foundational
+paper:
+  arxiv: "1502.03167"
+  venue: ICML 2015

@@ -1,0 +1,27 @@
+name: AlphaEvolve
+slug: alphaevolve
+lab: google
+type: paper
+date: 2025-05-14
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.13131
+  - label: Announcement
+    url: https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/
+description: >
+  <p>Gemini-powered evolutionary coding agent for scientific and algorithmic discovery.
+  Found the <strong>first improvement to Strassen's matrix multiplication in 56
+  years</strong> (4&times;4 complex matrices in 48 multiplications).</p>
+
+  <p>Also optimized Google data center scheduling, chip design, and LLM training
+  kernels. Represents a new paradigm of <strong>AI-driven algorithm discovery</strong>
+  where LLMs generate and evolve code solutions. By Novikov et al. (DeepMind).</p>
+tags:
+  - scientific
+  - coding
+  - agents
+paper:
+  arxiv: "2506.13131"
+related:
+  - alphadev

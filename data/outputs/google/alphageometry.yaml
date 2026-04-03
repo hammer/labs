@@ -1,0 +1,24 @@
+name: AlphaGeometry
+slug: alphageometry
+lab: google
+type: paper
+date: 2024-01-17
+flagship: true
+sources:
+  - label: Paper (Nature)
+    url: https://www.nature.com/articles/s41586-023-06747-5
+description: >
+  <p>"Solving Olympiad Geometry without Human Demonstrations." Neuro-symbolic system
+  that solves IMO geometry problems at <strong>near-gold-medal level</strong> (25 of
+  30 problems). A language model guides a symbolic deduction engine, trained on 100
+  million synthetic theorems without human demonstrations.</p>
+
+  <p>Nature 2024. AlphaGeometry 2 (2025) further improved performance. By Trinh, Wu,
+  Le, He, and Luong (DeepMind).</p>
+tags:
+  - scientific
+  - reasoning
+paper:
+  venue: Nature 2024
+related:
+  - alphaproof

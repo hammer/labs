@@ -1,0 +1,22 @@
+name: Distilling the Knowledge in a Neural Network
+slug: knowledge-distillation
+lab: google
+type: paper
+date: 2015-03-09
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/1503.02531
+description: >
+  <p>Introduced <strong>knowledge distillation</strong>: compressing a large "teacher"
+  model into a smaller "student" by training on the teacher's soft probability
+  distributions rather than hard labels. The softened outputs transfer dark knowledge
+  about inter-class similarities.</p>
+
+  <p>Now a <strong>universal technique</strong> used across frontier labs for model
+  compression, efficient deployment, and training smaller models (GPT-4o mini, Gemma,
+  DeepSeek). By Hinton, Vinyals, and Dean.</p>
+tags:
+  - foundational
+paper:
+  arxiv: "1503.02531"

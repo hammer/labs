@@ -1,0 +1,26 @@
+name: JAX
+slug: jax
+lab: google
+type: library
+date: 2018-12-01
+flagship: true
+sources:
+  - label: GitHub
+    url: https://github.com/jax-ml/jax
+description: >
+  <p>Composable transformations of Python+NumPy programs: automatic differentiation,
+  vectorization, and JIT compilation to GPU/TPU via XLA. <strong>35K+ GitHub
+  stars</strong>.</p>
+
+  <p>JAX became the <strong>framework of choice for DeepMind and Google research</strong>,
+  powering the training of Gemini, AlphaFold, GraphCast, and most DeepMind scientific
+  models. Its functional style enables clean composition of parallelism, batching, and
+  differentiation. Apache 2.0.</p>
+tags:
+  - open-source
+  - infrastructure
+  - foundational
+library:
+  github: https://github.com/jax-ml/jax
+related:
+  - tensorflow

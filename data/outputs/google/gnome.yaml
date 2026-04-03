@@ -1,0 +1,26 @@
+name: GNoME (Materials Discovery)
+slug: gnome
+lab: google
+type: paper
+date: 2023-11-29
+sources:
+  - label: Paper (Nature)
+    url: https://www.nature.com/articles/s41586-023-06735-9
+  - label: GitHub
+    url: https://github.com/google-deepmind/materials_discovery
+description: >
+  <p>"Scaling Deep Learning for Materials Discovery." Graph neural network that discovered
+  <strong>2.2 million new crystal structures</strong>, including 381,000 novel stable
+  materials. 80% prediction accuracy (up from 50%). 736 structures experimentally
+  validated in labs worldwide.</p>
+
+  <p>Expanded known stable materials from ~48,000 to ~421,000 &mdash; equivalent to
+  nearly 800 years of conventional discovery. Nature 2023. By Merchant, Batzner,
+  Schoenholz et al. (DeepMind). Open-source.</p>
+tags:
+  - scientific
+  - open-source
+paper:
+  venue: Nature 2023
+related:
+  - alphafold-2

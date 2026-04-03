@@ -1,0 +1,24 @@
+name: DQN (Deep Q-Network)
+slug: dqn
+lab: google
+type: paper
+date: 2015-02-26
+flagship: true
+sources:
+  - label: Paper (Nature)
+    url: https://www.nature.com/articles/nature14236
+description: >
+  <p>"Human-Level Control through Deep Reinforcement Learning." First deep learning agent
+  to learn control policies directly from raw pixels via RL. Surpassed human performance
+  on many Atari 2600 games using the same architecture and hyperparameters.</p>
+
+  <p>The paper that <strong>put DeepMind on the map</strong> and catalyzed the deep
+  reinforcement learning field. Introduced experience replay and target networks for
+  stable training. Nature 2015. By Mnih, Kavukcuoglu, Silver et al.</p>
+tags:
+  - reinforcement-learning
+  - foundational
+paper:
+  venue: Nature 2015
+related:
+  - alphago

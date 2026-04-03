@@ -1,0 +1,22 @@
+name: AlphaCode
+slug: alphacode
+lab: google
+type: paper
+date: 2022-02-08
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2203.07814
+description: >
+  <p>"Competition-Level Code Generation with AlphaCode." First AI to perform at a
+  competitive level in programming contests. Achieved <strong>top 54.3% on
+  Codeforces</strong> (5,000+ participants) by generating millions of programs, then
+  filtering and clustering to 10 submissions.</p>
+
+  <p>Published in Science 2022. By Li et al. (DeepMind).</p>
+tags:
+  - coding
+  - foundational
+paper:
+  arxiv: "2203.07814"
+  venue: Science 2022

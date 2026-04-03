@@ -1,0 +1,28 @@
+name: TensorFlow
+slug: tensorflow
+lab: google
+type: library
+date: 2015-11-09
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/1605.08695
+  - label: GitHub
+    url: https://github.com/tensorflow/tensorflow
+description: >
+  <p>Open-source ML framework using dataflow graph computation, supporting CPUs, GPUs,
+  and TPUs. <strong>189K+ GitHub stars</strong>. Dominated deep learning research and
+  production for years before PyTorch's rise.</p>
+
+  <p>TensorFlow and its ecosystem (TensorFlow Lite, TF Serving, TensorBoard, Keras)
+  underpinned massive amounts of ML research and production systems worldwide. OSDI 2016.
+  By Abadi, Barham, Chen, Dean et al. Apache 2.0.</p>
+tags:
+  - open-source
+  - infrastructure
+  - foundational
+library:
+  github: https://github.com/tensorflow/tensorflow
+paper:
+  arxiv: "1605.08695"
+  venue: OSDI 2016

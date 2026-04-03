@@ -1,0 +1,23 @@
+name: GenCast
+slug: gencast
+lab: google
+type: paper
+date: 2024-12-04
+sources:
+  - label: Paper (Nature)
+    url: https://www.nature.com/articles/s41586-024-08252-9
+description: >
+  <p>Probabilistic weather forecasting using diffusion models at 0.25&deg; resolution.
+  Outperformed ECMWF ENS on <strong>97.2% of targets</strong> (99.8% at &gt;36h lead
+  times). Generates ensemble of 50+ predictions per forecast for uncertainty
+  quantification.</p>
+
+  <p>Generates 15-day global forecasts in 8 minutes. Successor to GraphCast, adding
+  probabilistic predictions critical for extreme weather and renewable energy planning.
+  Nature 2024. By Price, Sanchez-Gonzalez et al. (DeepMind).</p>
+tags:
+  - scientific
+paper:
+  venue: Nature 2024
+related:
+  - graphcast

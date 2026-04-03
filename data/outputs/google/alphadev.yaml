@@ -1,0 +1,21 @@
+name: AlphaDev
+slug: alphadev
+lab: google
+type: paper
+date: 2023-06-07
+sources:
+  - label: Paper (Nature)
+    url: https://www.nature.com/articles/s41586-023-06004-9
+description: >
+  <p>"Faster Sorting Algorithms Discovered Using Deep Reinforcement Learning." Used
+  deep RL to discover novel sorting algorithms at the assembly instruction level.
+  Achieved <strong>70% speedup</strong> for short sequences.</p>
+
+  <p>The discovered algorithms were integrated into the <strong>LLVM C++ standard
+  library</strong> &mdash; the first AI-discovered algorithm to enter a major standard
+  library. Nature 2023. By Mankowitz, Michi et al. (DeepMind).</p>
+tags:
+  - reinforcement-learning
+  - scientific
+paper:
+  venue: Nature 2023

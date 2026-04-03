@@ -1,0 +1,23 @@
+name: Speculative Decoding
+slug: speculative-decoding
+lab: google
+type: paper
+date: 2022-11-30
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2211.17192
+description: >
+  <p>"Fast Inference from Transformers via Speculative Decoding." Uses a small draft
+  model to propose tokens verified in parallel by the large model, achieving
+  <strong>2&ndash;3x speedup with mathematically identical outputs</strong>.</p>
+
+  <p>Now a <strong>standard inference optimization</strong> used by virtually every LLM
+  serving system (vLLM, TGI, TensorRT-LLM). ICML 2023. By Leviathan, Kalman, and
+  Matias.</p>
+tags:
+  - foundational
+  - efficiency
+paper:
+  arxiv: "2211.17192"
+  venue: ICML 2023

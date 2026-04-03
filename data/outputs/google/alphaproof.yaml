@@ -1,0 +1,25 @@
+name: AlphaProof
+slug: alphaproof
+lab: google
+type: paper
+date: 2025-11-12
+flagship: true
+sources:
+  - label: Paper (Nature)
+    url: https://www.nature.com/articles/s41586-025-09833-y
+description: >
+  <p>"Olympiad-Level Formal Mathematical Reasoning with Reinforcement Learning."
+  AlphaZero-inspired agent that learns to prove mathematical statements in Lean.
+  Solved <strong>3 of 5 non-geometry problems at IMO 2024</strong>, including the
+  hardest problem (P6). Guarantees 100% correctness via formal verification.</p>
+
+  <p>Combined with AlphaGeometry 2, achieved a score equivalent to a
+  <strong>silver medal at IMO 2024</strong>. Nature 2025. By Hubert, Mehta, Sartran
+  et al. (DeepMind).</p>
+tags:
+  - scientific
+  - reasoning
+paper:
+  venue: Nature 2025
+related:
+  - alphageometry
