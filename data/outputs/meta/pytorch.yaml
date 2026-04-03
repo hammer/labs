@@ -1,0 +1,26 @@
+name: PyTorch
+slug: pytorch
+lab: meta
+type: library
+date: 2017-01-18
+flagship: true
+sources:
+  - label: GitHub
+    url: https://github.com/pytorch/pytorch
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/1912.01703
+description: >
+  <p>Open-source deep learning framework featuring dynamic computation graphs (eager
+  mode) and a Python-first design. <strong>87K+ GitHub stars</strong>. Transferred to
+  the Linux Foundation (PyTorch Foundation) in September 2022.</p>
+
+  <p>PyTorch became the <strong>dominant framework for AI research and production</strong>,
+  used by virtually every frontier lab. Its eager execution model, autograd system, and
+  ecosystem (TorchVision, TorchAudio, TorchServe) made it the standard for model
+  development. BSD License.</p>
+tags:
+  - open-source
+  - infrastructure
+  - foundational
+library:
+  github: https://github.com/pytorch/pytorch

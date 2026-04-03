@@ -1,0 +1,28 @@
+name: OPT (Open Pre-trained Transformer)
+slug: opt
+lab: meta
+type: model
+date: 2022-05-02
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2205.01068
+description: >
+  <p>Suite of decoder-only Transformers from 125M to <strong>175B parameters</strong>,
+  fully open-sourced including pre-trained weights, code, and logbooks. OPT-175B
+  matched GPT-3 performance at 1/7th the carbon footprint.</p>
+
+  <p>OPT was the <strong>first fully open GPT-3-scale model</strong>, enabling researchers
+  outside major labs to study and build on frontier-scale models. Released model weights,
+  training code, and detailed training logbooks documenting failures and decisions.
+  By Zhang, Roller, Goyal et al.</p>
+tags:
+  - open-weight
+  - open-source
+model:
+  architecture: dense
+  parameters: 175B
+paper:
+  arxiv: "2205.01068"
+related:
+  - llama-1

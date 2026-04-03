@@ -1,0 +1,43 @@
+name: Llama 3.1
+slug: llama-3.1
+lab: meta
+type: model
+date: 2024-07-23
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.21783
+  - label: HuggingFace
+    url: https://huggingface.co/meta-llama/Llama-3.1-405B
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/llama-3-1-instruct-405b
+  - label: OpenRouter
+    url: https://openrouter.ai/meta-llama/llama-3.1-405b-instruct
+description: >
+  <p><strong>405B parameter dense Transformer</strong> &mdash; the largest open-weight
+  model at release. 128K vocab, 128K context, trained on <strong>15.6T tokens</strong>
+  on 16K H100 GPUs. 8B and 70B variants also released.</p>
+
+  <p>Llama 3.1 405B was <strong>competitive with GPT-4</strong> on many benchmarks,
+  demonstrating that open models had reached frontier quality. AA Intelligence Index: 17.
+  Llama 3 Community License. By the Llama Team.</p>
+tags:
+  - frontier
+  - open-weight
+model:
+  architecture: dense
+  parameters: 405B
+  intelligence_index: 17
+  context_window: 128000
+  variants:
+    - name: Llama 3.1 8B
+      parameters: 8B
+    - name: Llama 3.1 70B
+      parameters: 70B
+    - name: Llama 3.1 405B
+      parameters: 405B
+paper:
+  arxiv: "2407.21783"
+related:
+  - llama-2
+  - llama-4

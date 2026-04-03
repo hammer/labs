@@ -1,0 +1,95 @@
+name: Meta
+slug: meta
+url: https://ai.meta.com
+wikipedia: https://en.wikipedia.org/wiki/Meta_AI
+huggingface: https://huggingface.co/meta-llama
+github: https://github.com/facebookresearch
+openrouter: https://openrouter.ai/meta-llama
+region: usa
+founded: "2004"
+type: corporate
+ipo:
+  exchange: NASDAQ
+  ticker: META
+  year: 2012
+valuation:
+  amount: "$1.6T"
+  type: market-cap
+  date: "2026-04"
+description: >
+  <p>Meta's AI research division, <strong>FAIR</strong> (Fundamental AI Research), was
+  founded in 2013 by <a href="https://en.wikipedia.org/wiki/Yann_LeCun">Yann LeCun</a>
+  (2018 Turing Award). In June 2025, Meta formed <strong>Meta Superintelligence Labs
+  (MSL)</strong> combining FAIR, foundation models, and applied research, co-led by
+  <a href="https://en.wikipedia.org/wiki/Alexandr_Wang">Alexandr Wang</a> (Chief AI
+  Officer, former Scale AI CEO) and
+  <a href="https://en.wikipedia.org/wiki/Nat_Friedman">Nat Friedman</a> (former GitHub CEO).
+  LeCun departed in November 2025 to found AMI Labs.</p>
+
+  <p>Meta's <strong>Llama</strong> series became the most influential open-weight model
+  family: LLaMA 1 (2023) proved open models could match proprietary ones, Llama 2 was
+  the first commercially licensable open LLM, and <strong>Llama 3.1 405B</strong> (2024)
+  was the largest open model at release. <strong>Llama 4</strong> (2025) introduced MoE
+  architecture with Scout (109B/17B active, 10M context) and Maverick (400B/17B active).
+  Cumulative Llama downloads exceeded 1.2B by April 2025.</p>
+
+  <p>Beyond Llama, Meta created <strong><a href="https://pytorch.org">PyTorch</a></strong>
+  (the dominant deep learning framework, now under the Linux Foundation), foundational
+  vision models <strong><a href="https://arxiv.org/abs/2104.14294">DINO</a></strong> and
+  <strong><a href="https://arxiv.org/abs/2304.02643">Segment Anything (SAM)</a></strong>,
+  and <strong><a href="https://arxiv.org/abs/2205.01068">OPT-175B</a></strong> (the first
+  fully open GPT-3-scale model).</p>
+people:
+  - name: Mark Zuckerberg
+    url: https://en.wikipedia.org/wiki/Mark_Zuckerberg
+    role: CEO
+  - name: Yann LeCun
+    url: https://en.wikipedia.org/wiki/Yann_LeCun
+    role: Former Chief AI Scientist (departed Nov 2025; now CEO of AMI Labs)
+    formerly: NYU (Silver Professor); 2018 Turing Award
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=WLN3QrAAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Yann_LeCun1
+  - name: Alexandr Wang
+    url: https://en.wikipedia.org/wiki/Alexandr_Wang
+    role: Chief AI Officer, co-leads MSL (joined June 2025)
+    formerly: Scale AI (Founder & CEO)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=fnmoYqQAAAAJ
+  - name: Rob Fergus
+    url: https://en.wikipedia.org/wiki/Rob_Fergus
+    role: Director, FAIR (returned May 2025)
+    formerly: Google DeepMind; NYU (Professor); FAIR co-founder (2013)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=GgQ9GEkAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Rob_Fergus1
+  - name: Ahmad Al-Dahle
+    role: VP, Head of GenAI
+    formerly: Apple (16 years)
+news:
+  - title: "Meta Superintelligence Labs Created; Wang Named Chief AI Officer"
+    url: https://www.cnbc.com/2025/06/30/mark-zuckerberg-creating-meta-superintelligence-labs-read-the-memo.html
+    source: CNBC
+    date: 2025-06-30
+  - title: "Llama 4 Scout and Maverick Released (First MoE, Multimodal)"
+    url: https://ai.meta.com/blog/llama-4-multimodal-intelligence/
+    source: Meta AI
+    date: 2025-04-05
+  - title: "Yann LeCun Departs Meta to Found AMI Labs"
+    url: https://www.cnbc.com/2025/11/19/meta-chief-ai-scientist-yann-lecun-is-leaving-the-company-.html
+    source: CNBC
+    date: 2025-11-19
+  - title: "First LlamaCon Developer Conference"
+    url: https://ai.meta.com/blog/llamacon-llama-news/
+    source: Meta AI
+    date: 2025-04-29
+tags:
+  - frontier
+  - open-weight
+  - foundational
+  - multimodal

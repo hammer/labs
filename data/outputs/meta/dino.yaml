@@ -1,0 +1,25 @@
+name: DINO
+slug: dino
+lab: meta
+type: paper
+date: 2021-04-29
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2104.14294
+description: >
+  <p>"Emerging Properties in Self-Supervised Vision Transformers." Self-distillation
+  with <strong>no labels</strong>: a student network learns from a momentum-updated
+  teacher. ViT-Base achieves 80.1% ImageNet top-1 without any labeled data.</p>
+
+  <p>DINO showed that self-supervised ViTs develop explicit information about semantic
+  segmentation in their attention maps. The approach was extended in
+  <strong>DINOv2</strong> (2023) to produce all-purpose visual features from 142M curated
+  images. ICCV 2021. By Caron, Touvron, Misra et al.</p>
+tags:
+  - vision
+  - foundational
+  - open-source
+paper:
+  arxiv: "2104.14294"
+  venue: ICCV 2021

@@ -1,0 +1,27 @@
+name: Segment Anything (SAM)
+slug: sam
+lab: meta
+type: model
+date: 2023-04-05
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2304.02643
+  - label: GitHub
+    url: https://github.com/facebookresearch/segment-anything
+description: >
+  <p>Foundation model for image segmentation. Trained on <strong>SA-1B</strong>, the
+  largest segmentation dataset ever (1B+ masks on 11M images). Uses a promptable
+  architecture: given points, boxes, or text, SAM generates high-quality segmentation
+  masks in real-time.</p>
+
+  <p>SAM established the <strong>"foundation model" paradigm for vision tasks</strong>,
+  analogous to what GPT achieved for language. Extended by SAM 2 (2024) for video with
+  streaming memory. ICCV 2023. 42K+ GitHub stars. By Kirillov et al. Apache 2.0.</p>
+tags:
+  - vision
+  - foundational
+  - open-source
+paper:
+  arxiv: "2304.02643"
+  venue: ICCV 2023

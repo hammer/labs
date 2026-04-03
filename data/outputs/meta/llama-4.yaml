@@ -1,0 +1,44 @@
+name: Llama 4
+slug: llama-4
+lab: meta
+type: model
+date: 2025-04-05
+flagship: true
+sources:
+  - label: Announcement
+    url: https://ai.meta.com/blog/llama-4-multimodal-intelligence/
+  - label: Artificial Analysis (Maverick)
+    url: https://artificialanalysis.ai/models/llama-4-maverick
+  - label: OpenRouter
+    url: https://openrouter.ai/meta-llama/llama-4-maverick
+description: >
+  <p>First <strong>MoE Llama</strong>. Scout: 109B total / 17B active (16 experts),
+  <strong>10M token context</strong>. Maverick: 400B total / 17B active (128 experts),
+  1M context. Both natively multimodal (text + image). Trained with early-fusion
+  architecture.</p>
+
+  <p>Llama 4 was also the first multimodal Llama with built-in vision capabilities.
+  Behemoth (~2T/288B active) was announced but delayed. AA Intelligence Index: 18
+  (Maverick), 14 (Scout). Llama 4 Community License.</p>
+tags:
+  - frontier
+  - open-weight
+  - multimodal
+  - moe
+model:
+  architecture: moe
+  parameters: 400B
+  active_parameters: 17B
+  intelligence_index: 18
+  context_window: 1000000
+  variants:
+    - name: Llama 4 Scout
+      parameters: 109B
+      active_parameters: 17B
+      notes: 16 experts, 10M context
+    - name: Llama 4 Maverick
+      parameters: 400B
+      active_parameters: 17B
+      notes: 128 experts, 1M context
+related:
+  - llama-3.1

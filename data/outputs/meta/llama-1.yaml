@@ -1,0 +1,39 @@
+name: LLaMA
+slug: llama-1
+lab: meta
+type: model
+date: 2023-02-27
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2302.13971
+description: >
+  <p>"LLaMA: Open and Efficient Foundation Language Models." Dense Transformers from 7B
+  to <strong>65B parameters</strong> trained on publicly available data only. LLaMA-65B
+  competitive with Chinchilla-70B and PaLM-540B; LLaMA-13B outperformed GPT-3 (175B)
+  on most benchmarks.</p>
+
+  <p>LLaMA proved that <strong>smaller models trained on more data</strong> (following
+  Chinchilla scaling laws) could match much larger models, catalyzing an explosion of
+  open-source fine-tuning (Alpaca, Vicuna, etc.) and establishing Meta as the leader
+  of the open-weight movement. By Touvron et al.</p>
+tags:
+  - open-weight
+  - foundational
+model:
+  architecture: dense
+  parameters: 65B
+  variants:
+    - name: LLaMA 7B
+      parameters: 7B
+    - name: LLaMA 13B
+      parameters: 13B
+    - name: LLaMA 33B
+      parameters: 33B
+    - name: LLaMA 65B
+      parameters: 65B
+paper:
+  arxiv: "2302.13971"
+related:
+  - opt
+  - llama-2
