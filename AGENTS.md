@@ -22,7 +22,12 @@ We are primarily interested in tracking:
 - Sci-LLMs that augment general LLMs with domain-specific tokenizers, modalities, knowledge, reasoning, or agentic capabilities
 - Materials science, drug discovery, weather/climate, protein structure, genomics
 
-**Foundational technique papers** — research that introduced or popularized methods now standard across frontier labs (attention mechanisms, training methods, post-training approaches, scaling laws, etc.)
+**Foundational technique papers** — research that introduced or popularized methods now standard across frontier labs:
+- Architecture: attention mechanisms, MoE routing, vision tokenization, multimodal fusion
+- Training: optimizers (Adam, AdEMAMix), scaling laws, data mixture optimization, curriculum learning
+- Post-training: RLHF, DPO, GRPO, process reward models
+- Efficiency: quantization, distillation, parameter-efficient fine-tuning (LoRA)
+- Scaling science: compute-optimal training, scaling laws for specific domains (multimodal, forgetting, data mixtures)
 
 **Training infrastructure** — frameworks, datasets, evaluation suites, and data curation methods that enable frontier model development.
 

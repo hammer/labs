@@ -32,10 +32,11 @@ Use this prompt template, adapting for the specific lab:
 - Artificial Analysis provider page: search `site:artificialanalysis.ai [lab name]`
 - OpenRouter provider page: search `site:openrouter.ai [lab name]`
 
-**Research Outputs (search all three):**
+**Research Outputs (search all four):**
 - arxiv: `site:arxiv.org [lab name]` and search for specific model names
 - HuggingFace: `site:huggingface.co [lab org name]`
 - GitHub: check repos in their org(s)
+- **Lab research page:** Many labs publish research pages that list papers not easily found via arxiv keyword search (e.g., `machinelearning.apple.com/research`, `research.ibm.com`, `www.amazon.science`). Check these for technique papers at top venues (ICLR, ICML, NeurIPS, CVPR, ICCV) — they are easy to miss but often more impactful than model releases.
 
 **For each model found:** total/active parameters, architecture (dense/MoE), context window, training tokens, benchmark scores, AA intelligence score, OpenRouter availability
 
@@ -175,6 +176,8 @@ Our core interests (see AGENTS.md "Research Focus"):
 - **Training infrastructure** (frameworks, datasets, evaluation, data curation)
 
 Ask: "Does this output advance the frontier of intelligence, enable scientific discovery, or introduce a technique that changed how models are built?"
+
+**Don't overlook scaling science and technique papers.** Labs like Apple, Google, and Microsoft produce highly influential papers on scaling laws, optimizers, tokenization, and training methodology that are published at top venues (ICLR, ICML, NeurIPS, CVPR) but are easy to miss because they aren't "model releases." These are often more impactful than any single model — e.g., AdEMAMix (Apple, ICLR 2025) is an optimizer adopted across the field, and Scaling Laws for Native Multimodal Models (Apple, ICCV 2025 Oral) studied 457 models. Search the lab's research page and Google Scholar profiles of key researchers, not just arxiv keyword searches for model names.
 
 **Exclude from the start:**
 - Business-specific applications (delivery logistics, recommendation systems, e-commerce search, customer service, mobile infra)
