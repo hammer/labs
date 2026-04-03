@@ -1,0 +1,30 @@
+name: Training a Helpful and Harmless Assistant (HH-RLHF)
+slug: hh-rlhf
+lab: anthropic
+type: paper
+date: 2022-04-12
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2204.05862
+  - label: HuggingFace (Dataset)
+    url: https://huggingface.co/datasets/Anthropic/hh-rlhf
+description: >
+  <p>"Training a Helpful and Harmless Assistant with Reinforcement Learning from Human
+  Feedback" &mdash; Anthropic's foundational alignment paper. Studied the tension between
+  helpfulness and harmlessness in RLHF, showing that larger models are both more helpful
+  AND easier to make harmless through alignment training.</p>
+
+  <p>Released the <strong>HH-RLHF dataset</strong> (~170K human preference comparisons),
+  one of the most widely-used alignment datasets. Demonstrated that RLHF can make models
+  less toxic without sacrificing capability when done at scale. By Bai, Jones, Ndousse
+  et al.</p>
+tags:
+  - alignment
+  - safety
+  - foundational
+  - data
+paper:
+  arxiv: "2204.05862"
+related:
+  - constitutional-ai

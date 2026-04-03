@@ -1,0 +1,23 @@
+name: Claude Code
+slug: claude-code
+lab: anthropic
+type: library
+date: 2025-02-24
+flagship: true
+sources:
+  - label: GitHub
+    url: https://github.com/anthropics/claude-code
+description: >
+  <p>Agentic coding tool that operates as a CLI, desktop app, web app, and IDE extension.
+  Understands full codebases, runs commands, edits files, and manages git workflows.
+  Supports hooks, MCP servers, and custom agent skills.</p>
+
+  <p>Reached <strong>$1B ARR</strong> by November 2025, growing to $2.5B+ by March 2026
+  &mdash; one of the fastest-growing software products ever. Launched as research preview
+  alongside Claude 3.7 Sonnet, GA with Claude 4.</p>
+tags:
+  - coding
+  - agents
+  - open-source
+library:
+  github: https://github.com/anthropics/claude-code

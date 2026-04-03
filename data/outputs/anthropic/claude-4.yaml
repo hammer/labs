@@ -1,0 +1,40 @@
+name: Claude 4
+slug: claude-4
+lab: anthropic
+type: model
+date: 2025-05-22
+flagship: true
+sources:
+  - label: Announcement
+    url: https://www.anthropic.com/news/claude-4
+  - label: Artificial Analysis (Opus)
+    url: https://artificialanalysis.ai/models/claude-4-opus
+  - label: Artificial Analysis (Sonnet)
+    url: https://artificialanalysis.ai/models/claude-4-sonnet
+  - label: OpenRouter (Opus)
+    url: https://openrouter.ai/anthropic/claude-4-opus
+description: >
+  <p>Major generation leap with Opus and Sonnet variants. Claude 4 Sonnet introduced
+  <strong>1M token context</strong>. Both models achieved record SWE-bench Verified
+  scores: Opus 72.5%, Sonnet 72.7%. Architecture undisclosed.</p>
+
+  <p>Claude 4 was widely regarded as the <strong>best coding model</strong> at launch,
+  with particular strength in agentic tasks, extended reasoning, and instruction following.
+  Launched alongside Claude Code GA and the Claude Agent SDK. AA Intelligence Index:
+  33 (Opus), 33 (Sonnet). Proprietary.</p>
+tags:
+  - frontier
+  - coding
+  - reasoning
+  - agents
+model:
+  context_window: 1000000
+  intelligence_index: 33
+  variants:
+    - name: Claude 4 Opus
+      notes: 200K context
+    - name: Claude 4 Sonnet
+      notes: 1M context
+related:
+  - claude-3.5-sonnet
+  - claude-4.5-opus

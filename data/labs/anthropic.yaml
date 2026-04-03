@@ -1,0 +1,117 @@
+name: Anthropic
+slug: anthropic
+url: https://www.anthropic.com
+wikipedia: https://en.wikipedia.org/wiki/Anthropic
+huggingface: https://huggingface.co/Anthropic
+github: https://github.com/anthropics
+artificialanalysis: https://artificialanalysis.ai/providers/anthropic
+openrouter: https://openrouter.ai/anthropic
+region: usa
+founded: "2021"
+type: startup
+valuation:
+  amount: "$380B"
+  type: private
+  date: "2026-02"
+description: >
+  <p>Anthropic is an AI safety company founded in 2021 by
+  <a href="https://en.wikipedia.org/wiki/Dario_Amodei">Dario Amodei</a> and
+  <a href="https://en.wikipedia.org/wiki/Daniela_Amodei">Daniela Amodei</a>,
+  along with several former OpenAI researchers including Tom Brown (GPT-3 first author),
+  Jared Kaplan (scaling laws co-author), Sam McCandlish, and
+  <a href="https://en.wikipedia.org/wiki/Chris_Olah">Chris Olah</a>. Organized as a
+  Public Benefit Corporation focused on AI safety research. Raised <strong>$30B in
+  February 2026</strong> at a $380B valuation, with Amazon ($8B total), Google, and
+  others as key investors. Revenue reached ~$19B ARR by March 2026.</p>
+
+  <p>The <strong>Claude</strong> model family has rapidly advanced from Claude 1 (2023)
+  to <strong>Claude Opus 4.6</strong> (2026, AA index 46, 1M context), consistently
+  ranking among the top frontier models. Claude 4 Opus set SWE-bench records (72.5%),
+  and Claude 4.5 Opus was the first model to exceed 80% on SWE-bench Verified.
+  <strong><a href="https://github.com/anthropics/claude-code">Claude Code</a></strong>,
+  an agentic coding CLI launched in 2025, reached $2.5B+ ARR by March 2026.</p>
+
+  <p>Anthropic's research contributions are foundational:
+  <strong><a href="https://arxiv.org/abs/2212.08073">Constitutional AI</a></strong>
+  (2022) introduced RLAIF with explicit principles, replacing human preference labeling
+  with AI self-critique.
+  <strong><a href="https://transformer-circuits.pub/2024/scaling-monosemanticity/">Scaling
+  Monosemanticity</a></strong> (2024) used sparse autoencoders to extract interpretable
+  features from Claude 3 Sonnet at production scale. The company also created the
+  <strong><a href="https://github.com/modelcontextprotocol">Model Context Protocol
+  (MCP)</a></strong>, an open standard for LLM-tool integration adopted by OpenAI,
+  Google, and others.</p>
+people:
+  - name: Dario Amodei
+    url: https://en.wikipedia.org/wiki/Dario_Amodei
+    role: CEO & Co-founder
+    formerly: OpenAI (VP of Research); PhD Princeton
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=6-e-ZBEAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Dario_Amodei1
+  - name: Daniela Amodei
+    url: https://en.wikipedia.org/wiki/Daniela_Amodei
+    role: President & Co-founder
+    formerly: OpenAI (VP of Safety & Policy); Stripe
+  - name: Chris Olah
+    url: https://colah.github.io/
+    role: Co-founder, Head of Interpretability
+    formerly: Google Brain; OpenAI; co-founded Distill.pub
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=6dskOSUAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Christopher_Olah1
+  - name: Tom Brown
+    role: Co-founder & Chief Compute Officer
+    formerly: OpenAI (GPT-3 first author); Google DeepMind
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=RLvsC94AAAAJ
+  - name: Jared Kaplan
+    url: https://en.wikipedia.org/wiki/Jared_Kaplan
+    role: Co-founder & Chief Science Officer
+    formerly: Johns Hopkins University (Associate Professor, Physics); OpenAI
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=KNr3vb4AAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Jared_Kaplan1
+  - name: Sam McCandlish
+    role: Co-founder & CTO
+    formerly: OpenAI; PhD Stanford (Theoretical Physics)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=gHp0pu4AAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Sam_McCandlish1
+news:
+  - title: "Anthropic Raises $30B Series G at $380B Valuation"
+    url: https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation
+    source: Anthropic
+    date: 2026-02-12
+  - title: "Anthropic Sues Trump Admin Over Pentagon AI Blacklist"
+    url: https://www.cnbc.com/2026/03/09/anthropic-trump-claude-ai-supply-chain-risk.html
+    source: CNBC
+    date: 2026-03-09
+  - title: "Claude Opus 4.6 Released with 1M Context"
+    url: https://www.anthropic.com/news/claude-opus-4-6
+    source: Anthropic
+    date: 2026-02-05
+  - title: "Anthropic Acquires Bun, Claude Code Hits $1B ARR"
+    url: https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone
+    source: Anthropic
+    date: 2025-12-02
+  - title: "Anthropic to Expand Google Cloud TPU Use to 1M+ TPUs"
+    url: https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services
+    source: Anthropic
+    date: 2025-10-23
+tags:
+  - frontier
+  - safety
+  - interpretability
+  - reasoning
+  - coding
+  - agents

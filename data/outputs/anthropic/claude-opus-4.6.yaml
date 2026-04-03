@@ -1,0 +1,34 @@
+name: Claude Opus 4.6
+slug: claude-opus-4.6
+lab: anthropic
+type: model
+date: 2026-02-05
+flagship: true
+sources:
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/claude-opus-4-6
+  - label: OpenRouter
+    url: https://openrouter.ai/anthropic/claude-opus-4-6
+description: >
+  <p>Current flagship. <strong>1M token context</strong>. Ranked #1 among 65
+  non-reasoning models on Artificial Analysis. Also released as Claude Sonnet 4.6
+  (February 17, 2026, AA index 44, 1M context). Architecture and parameters
+  undisclosed.</p>
+
+  <p>AA Intelligence Index: <strong>46</strong>. Powers Claude Code, the agentic
+  coding tool with $2.5B+ ARR. Proprietary.</p>
+tags:
+  - frontier
+  - coding
+  - reasoning
+  - agents
+model:
+  context_window: 1000000
+  intelligence_index: 46
+  variants:
+    - name: Claude Opus 4.6
+      notes: 1M context, AA index 46
+    - name: Claude Sonnet 4.6
+      notes: 1M context, AA index 44
+related:
+  - claude-4.5-opus

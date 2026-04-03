@@ -1,0 +1,38 @@
+name: Claude 4.5 Opus
+slug: claude-4.5-opus
+lab: anthropic
+type: model
+date: 2025-11-24
+flagship: true
+sources:
+  - label: Announcement
+    url: https://www.anthropic.com/news/claude-opus-4-5
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/claude-opus-4-5
+  - label: OpenRouter
+    url: https://openrouter.ai/anthropic/claude-4.5-opus
+description: >
+  <p>First model to exceed <strong>80% on SWE-bench Verified</strong>. 200K token
+  context. Also released as Claude 4.5 Sonnet (September 2025, 1M context, AA 37) and
+  Claude 4.5 Haiku (October 2025, AA 31). Architecture undisclosed.</p>
+
+  <p>AA Intelligence Index: <strong>43</strong>. Claude 4.5 Opus was the highest-ranked
+  non-reasoning model at the time of release, with particular strength in coding, writing,
+  and multi-step agentic tasks. Proprietary.</p>
+tags:
+  - frontier
+  - coding
+  - reasoning
+model:
+  context_window: 200000
+  intelligence_index: 43
+  variants:
+    - name: Claude 4.5 Sonnet
+      notes: 1M context, AA index 37
+    - name: Claude 4.5 Haiku
+      notes: 200K context, AA index 31
+    - name: Claude 4.5 Opus
+      notes: 200K context, AA index 43
+related:
+  - claude-4
+  - claude-opus-4.6

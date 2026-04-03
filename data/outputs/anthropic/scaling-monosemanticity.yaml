@@ -1,0 +1,25 @@
+name: Scaling Monosemanticity
+slug: scaling-monosemanticity
+lab: anthropic
+type: paper
+date: 2024-05-21
+flagship: true
+sources:
+  - label: Paper
+    url: https://transformer-circuits.pub/2024/scaling-monosemanticity/
+description: >
+  <p>"Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet"
+  &mdash; applied <strong>sparse autoencoders at production scale</strong> to extract
+  millions of interpretable features from a frontier language model. Found features
+  corresponding to specific concepts (Golden Gate Bridge, code errors, deception) that
+  are multilingual, multimodal, and abstract.</p>
+
+  <p>Demonstrated that mechanistic interpretability can scale to production models,
+  not just toy systems. Features could be <strong>clamped to steer model behavior</strong>
+  (the "Golden Gate Claude" experiment). A major milestone in understanding what large
+  language models learn internally. By Templeton, Conerly, Marcus et al. on the
+  Anthropic interpretability team led by Chris Olah.</p>
+tags:
+  - interpretability
+  - safety
+  - foundational

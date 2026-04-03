@@ -1,0 +1,24 @@
+name: Model Context Protocol (MCP)
+slug: mcp
+lab: anthropic
+type: library
+date: 2024-11-25
+sources:
+  - label: GitHub
+    url: https://github.com/modelcontextprotocol
+  - label: Announcement
+    url: https://www.anthropic.com/news/model-context-protocol
+description: >
+  <p>Open protocol standardizing how AI models connect to external data sources
+  and tools. Provides a universal interface for context integration, replacing
+  fragmented custom connectors with a <strong>single standard adopted
+  industry-wide</strong>.</p>
+
+  <p>MCP was adopted by OpenAI, Google, and dozens of other providers, becoming the
+  de facto standard for LLM-tool integration. MIT License.</p>
+tags:
+  - open-source
+  - agents
+  - infrastructure
+library:
+  github: https://github.com/modelcontextprotocol

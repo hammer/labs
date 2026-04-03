@@ -1,0 +1,32 @@
+name: Claude 3.5 Sonnet
+slug: claude-3.5-sonnet
+lab: anthropic
+type: model
+date: 2024-06-20
+flagship: true
+sources:
+  - label: Announcement
+    url: https://www.anthropic.com/news/claude-3-5-sonnet
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/claude-35-sonnet
+  - label: OpenRouter
+    url: https://openrouter.ai/anthropic/claude-3.5-sonnet
+description: >
+  <p>Mid-tier model that <strong>surpassed Opus 3 on most benchmarks</strong> at
+  Sonnet pricing &mdash; a breakthrough demonstrating that smaller, more efficient models
+  could match or exceed larger predecessors. 200K token context. Updated in October 2024
+  with improved coding (64.0% SWE-bench Verified).</p>
+
+  <p>Claude 3.5 Sonnet became the <strong>most widely-used Claude model</strong> and one
+  of the most popular API models globally, combining frontier intelligence with fast
+  inference and low cost. Also introduced Computer Use (beta) for GUI interaction.
+  AA Intelligence Index: 16 (October update). Proprietary.</p>
+tags:
+  - frontier
+  - coding
+model:
+  context_window: 200000
+  intelligence_index: 16
+related:
+  - claude-3
+  - claude-4

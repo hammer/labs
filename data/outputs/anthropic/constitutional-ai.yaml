@@ -1,0 +1,29 @@
+name: Constitutional AI
+slug: constitutional-ai
+lab: anthropic
+type: paper
+date: 2022-12-15
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2212.08073
+description: >
+  <p>"Constitutional AI: Harmlessness from AI Feedback" &mdash; introduced
+  <strong>RLAIF (RL from AI Feedback)</strong> using a set of explicit principles
+  (a "constitution") to guide model self-critique and revision. The model critiques
+  its own harmful outputs, revises them, then trains a preference model on the
+  AI-generated comparisons rather than human labels.</p>
+
+  <p>Constitutional AI demonstrated that alignment can be achieved with
+  <strong>far fewer human preference labels</strong> while producing models that
+  are both more helpful and more harmless. The approach became core to Anthropic's
+  training pipeline and influenced the broader move toward scalable oversight and
+  RLAIF across the industry. By Bai, Kadavath, Kundu et al.</p>
+tags:
+  - alignment
+  - safety
+  - foundational
+paper:
+  arxiv: "2212.08073"
+related:
+  - hh-rlhf
