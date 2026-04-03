@@ -1,0 +1,60 @@
+name: AI21 Labs
+slug: ai21
+url: https://www.ai21.com
+wikipedia: https://en.wikipedia.org/wiki/AI21_Labs
+huggingface: https://huggingface.co/ai21labs
+github: https://github.com/AI21Labs
+openrouter: https://openrouter.ai/ai21
+region: israel
+founded: "2017"
+type: startup
+valuation:
+  amount: "$1.4B"
+  type: private
+  date: "2023-08"
+description: >
+  <p>AI21 Labs was founded in 2017 in Tel Aviv by
+  <a href="https://en.wikipedia.org/wiki/Yoav_Shoham">Yoav Shoham</a> (Stanford AI
+  professor emeritus, ACM-AAAI Allen Newell Award),
+  <a href="https://en.wikipedia.org/wiki/Amnon_Shashua">Amnon Shashua</a> (Mobileye
+  CEO, Hebrew University professor), and Ori Goshen. Raised ~$283M at a $1.4B
+  valuation. NVIDIA was in advanced acquisition talks ($2&ndash;3B) as of late 2025.</p>
+
+  <p>AI21 trained the <strong>Jurassic</strong> series (2021, 178B dense) and then
+  introduced the <strong><a href="https://arxiv.org/abs/2403.19887">Jamba</a></strong>
+  architecture (2024) &mdash; the first production-grade <strong>SSM-Transformer-MoE
+  hybrid</strong> combining Mamba state-space layers with Transformer attention and
+  mixture-of-experts routing. Jamba 1.7 Large (398B total / 94B active, 256K context)
+  is the current flagship. The hybrid architecture achieves 2.5x faster inference than
+  equivalent dense Transformers while fitting on a single 80GB GPU.</p>
+people:
+  - name: Yoav Shoham
+    url: https://en.wikipedia.org/wiki/Yoav_Shoham
+    role: Co-CEO & Co-Founder
+    formerly: Stanford University (Professor Emeritus, CS)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=fV5P_6MAAAAJ
+  - name: Amnon Shashua
+    url: https://en.wikipedia.org/wiki/Amnon_Shashua
+    role: Chairman & Co-Founder
+    formerly: Mobileye (CEO); Hebrew University (Professor)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=dwi5wvYAAAAJ
+  - name: Ori Goshen
+    role: Co-CEO & Co-Founder
+news:
+  - title: "NVIDIA in Advanced Talks to Acquire AI21 Labs for $2-3B"
+    url: https://www.calcalistech.com/ctechnews/article/rk11oo1g00g
+    source: Calcalist
+    date: 2025-12-15
+  - title: "Jamba: First Production-Grade SSM-Transformer Hybrid Released"
+    url: https://arxiv.org/abs/2403.19887
+    source: AI21 Labs
+    date: 2024-03-28
+tags:
+  - frontier
+  - open-weight
+  - foundational
+  - moe

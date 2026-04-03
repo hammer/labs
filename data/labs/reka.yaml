@@ -1,0 +1,56 @@
+name: Reka
+slug: reka
+url: https://reka.ai
+huggingface: https://huggingface.co/RekaAI
+github: https://github.com/reka-ai
+openrouter: https://openrouter.ai/rekaai
+region: usa
+founded: "2022"
+type: startup
+valuation:
+  amount: "$1B"
+  type: private
+  date: "2025-07"
+description: >
+  <p>Reka was founded in 2022 by former DeepMind and Meta FAIR researchers:
+  <a href="https://dyogatama.github.io/">Dani Yogatama</a> (CEO, 27K citations),
+  Cyprien de Masson d'Autume (CTO), Qi Liu, and Mikel Artetxe. Co-founder
+  <a href="https://www.yitay.net/">Yi Tay</a> (62K citations) departed in late 2024
+  to return to Google DeepMind. Raised $168M including a $110M Series B (July 2025)
+  at a $1B valuation from NVIDIA, DST Global, and Snowflake. ~50 employees.</p>
+
+  <p>Reka trains <strong>natively multimodal models from scratch</strong> (text, images,
+  video, audio) across four size tiers: Spark (1B), Edge (7B), Flash (21B), and Core
+  (67B). <strong>Reka Flash 3</strong> (March 2025, 21B) is open-weight under Apache 2.0.
+  The lab focuses on multimodal understanding and generation with a small, research-focused
+  team of ex-DeepMind scientists.</p>
+people:
+  - name: Dani Yogatama
+    url: https://dyogatama.github.io/
+    role: CEO & Co-Founder
+    formerly: Google DeepMind (Senior Staff Research Scientist); PhD CMU
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=IBlMTLwAAAAJ
+  - name: Cyprien de Masson d'Autume
+    role: CTO & Co-Founder
+    formerly: Google DeepMind
+  - name: Yi Tay
+    url: https://www.yitay.net/
+    role: Co-Founder (departed late 2024; now at Google DeepMind)
+    formerly: Google Brain
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=VBclY_cAAAAJ
+news:
+  - title: "Reka Raises $110M Series B at $1B Valuation"
+    url: https://reka.ai
+    source: Reka
+    date: 2025-07-22
+  - title: "Reka Flash 3 Released (Open-Weight, 21B)"
+    url: https://reka.ai
+    source: Reka
+    date: 2025-03-10
+tags:
+  - multimodal
+  - open-weight

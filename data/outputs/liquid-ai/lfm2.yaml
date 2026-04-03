@@ -1,0 +1,47 @@
+name: LFM2 (Liquid Foundation Models 2)
+slug: lfm2
+lab: liquid-ai
+type: model
+date: 2025-11-28
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2511.23404
+  - label: HuggingFace
+    url: https://huggingface.co/LiquidAI
+  - label: OpenRouter
+    url: https://openrouter.ai/liquid/lfm2-24b-a2b
+description: >
+  <p>Efficient foundation models using a hybrid backbone combining <strong>gated short
+  convolutions with grouped query attention</strong>. 350M to 24B parameters (MoE,
+  2.3B active). Optimized for edge and on-device deployment.</p>
+
+  <p>LFM2-24B achieves 239 tok/s (#3 speed ranking on AA). Also includes vision-language
+  (LFM2.5-VL), speech, and pharmaceutical variants (with Insilico Medicine). AA
+  Intelligence Index: <strong>10</strong> (24B). Apache 2.0.</p>
+tags:
+  - open-weight
+  - on-device
+  - moe
+model:
+  architecture: moe
+  parameters: 24B
+  active_parameters: 2.3B
+  intelligence_index: 10
+  variants:
+    - name: LFM2-350M
+      parameters: 350M
+    - name: LFM2-1.2B
+      parameters: 1.2B
+    - name: LFM2-2.6B
+      parameters: 2.6B
+    - name: LFM2-8B-A1B
+      parameters: 8.3B
+      active_parameters: 1B
+    - name: LFM2-24B-A2B
+      parameters: 23.8B
+      active_parameters: 2.3B
+paper:
+  arxiv: "2511.23404"
+related:
+  - liquid-time-constant-networks

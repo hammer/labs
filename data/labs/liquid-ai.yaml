@@ -1,0 +1,65 @@
+name: Liquid AI
+slug: liquid-ai
+url: https://www.liquid.ai
+huggingface: https://huggingface.co/LiquidAI
+github: https://github.com/Liquid4All
+openrouter: https://openrouter.ai/liquid
+region: usa
+founded: "2023"
+type: startup
+valuation:
+  amount: "$2.4B"
+  type: private
+  date: "2024-12"
+description: >
+  <p>MIT CSAIL spinoff founded in December 2023 by
+  <a href="https://www.raminhasani.com/">Ramin Hasani</a>,
+  <a href="https://en.wikipedia.org/wiki/Daniela_Rus">Daniela Rus</a> (MIT CSAIL
+  director, MacArthur Fellow), Alexander Amini, and Mathias Lechner. Raised $297M
+  ($250M Series A led by AMD) at a ~$2.4B valuation.</p>
+
+  <p>Liquid AI builds on <strong><a href="https://arxiv.org/abs/2006.04439">liquid
+  neural networks</a></strong> (AAAI 2021) &mdash; continuous-time recurrent networks
+  rooted in dynamical systems and signal processing, distinct from standard Transformers.
+  The <strong>LFM2</strong> family (2025) uses a hybrid backbone combining gated short
+  convolutions with grouped query attention, optimized for edge deployment. Models range
+  from 350M to 24B (MoE, 2B active) with vision-language and speech variants.
+  Apache 2.0.</p>
+people:
+  - name: Ramin Hasani
+    url: https://www.raminhasani.com/
+    role: CEO & Co-Founder
+    formerly: MIT CSAIL (Research Affiliate); PhD TU Wien
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=YarJF3QAAAAJ
+  - name: Daniela Rus
+    url: https://en.wikipedia.org/wiki/Daniela_Rus
+    role: Co-Founder
+    formerly: MIT CSAIL (Director); MacArthur Fellow; PhD Cornell
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=910z20QAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Daniela_Rus1
+  - name: Alexander Amini
+    role: Chief Science Officer & Co-Founder
+    formerly: MIT (PhD, MS, BS in CS)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=EWB-8-oAAAAJ
+  - name: Mathias Lechner
+    role: CTO & Co-Founder
+    formerly: IST Austria (PhD)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=fIupeSAAAAAJ
+news:
+  - title: "Liquid AI Raises $250M Series A Led by AMD"
+    url: https://www.liquid.ai
+    source: Liquid AI
+    date: 2024-12-13
+tags:
+  - foundational
+  - open-weight
+  - on-device

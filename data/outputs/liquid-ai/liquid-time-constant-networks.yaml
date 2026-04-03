@@ -1,0 +1,26 @@
+name: Liquid Time-constant Networks
+slug: liquid-time-constant-networks
+lab: liquid-ai
+type: paper
+date: 2020-06-08
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2006.04439
+description: >
+  <p>Introduced <strong>liquid neural networks</strong> &mdash; continuous-time recurrent
+  networks with time-constants that vary as a function of the hidden state and input.
+  The dynamics adapt to the input, enabling compact, interpretable models for
+  time-series tasks.</p>
+
+  <p>The foundational paper for Liquid AI's architecture. Demonstrated stronger
+  performance on time-series forecasting with far fewer parameters than LSTMs and
+  standard RNNs. AAAI 2021. By Hasani, Lechner, Amini, Rus, and Grosu.</p>
+tags:
+  - foundational
+  - research
+paper:
+  arxiv: "2006.04439"
+  venue: AAAI 2021
+related:
+  - lfm2

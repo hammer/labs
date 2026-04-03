@@ -1,0 +1,36 @@
+name: Mercury (Diffusion LLM)
+slug: mercury
+lab: inception-labs
+type: model
+date: 2025-06-17
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.17298
+  - label: Artificial Analysis (Mercury 2)
+    url: https://artificialanalysis.ai/models/mercury-2
+  - label: OpenRouter
+    url: https://openrouter.ai/inception/mercury-2
+description: >
+  <p>"Mercury: Ultra-Fast Language Models Based on Diffusion." Introduces
+  <strong>diffusion-based LLMs (dLLMs)</strong> that forecast multiple tokens
+  simultaneously via iterative denoising, rather than sequential autoregressive
+  generation. Mercury Coder Mini achieves <strong>1,109 tokens/sec</strong> on H100.</p>
+
+  <p>Mercury 2 (February 2026) adds reasoning capability with AA Intelligence Index
+  <strong>33</strong> at ~929 tok/s &mdash; roughly 10x faster than comparable
+  autoregressive models at similar quality. A genuinely novel architecture paradigm.
+  By Khanna, Kharbanda, Li, Ermon, Grover, Kuleshov et al.</p>
+tags:
+  - foundational
+  - reasoning
+  - efficiency
+model:
+  intelligence_index: 33
+  context_window: 128000
+  variants:
+    - name: Mercury Coder
+    - name: Mercury 2
+      notes: Reasoning, AA index 33, 929 tok/s
+paper:
+  arxiv: "2506.17298"

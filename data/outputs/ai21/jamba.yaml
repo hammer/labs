@@ -1,0 +1,47 @@
+name: Jamba
+slug: jamba
+lab: ai21
+type: model
+date: 2024-03-28
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2403.19887
+  - label: HuggingFace
+    url: https://huggingface.co/ai21labs/AI21-Jamba-1.5-Large
+  - label: OpenRouter
+    url: https://openrouter.ai/ai21/jamba-1.7-large
+description: >
+  <p>First production-grade <strong>SSM-Transformer-MoE hybrid</strong> architecture.
+  Interleaves Mamba state-space layers with Transformer attention layers, combined with
+  mixture-of-experts routing. 256K token context. Fits on a single 80GB GPU despite
+  its scale.</p>
+
+  <p>The hybrid architecture achieves 2.5x faster inference than equivalent dense
+  Transformers. Jamba 1.7 Large (398B total / 94B active) is the current variant.
+  AA Intelligence Index: <strong>11</strong>. The Jamba architecture is a genuine
+  contribution to the field &mdash; demonstrating that SSMs and attention are
+  complementary, not competing. Apache 2.0 (Jamba v0.1). By Lieber, Lenz, Shoham et al.</p>
+tags:
+  - foundational
+  - open-weight
+  - moe
+model:
+  architecture: moe
+  parameters: 398B
+  active_parameters: 94B
+  context_window: 256000
+  intelligence_index: 11
+  variants:
+    - name: Jamba v0.1
+      parameters: 52B
+      active_parameters: 12B
+      notes: Original release, Apache 2.0
+    - name: Jamba 1.5 Mini
+      parameters: 52B
+      active_parameters: 12B
+    - name: Jamba 1.7 Large
+      parameters: 398B
+      active_parameters: 94B
+paper:
+  arxiv: "2403.19887"

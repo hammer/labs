@@ -1,0 +1,66 @@
+name: Inception Labs
+slug: inception-labs
+url: https://www.inceptionlabs.ai
+github: https://github.com/inception-labs
+openrouter: https://openrouter.ai/inception
+region: usa
+founded: "2024"
+type: startup
+valuation:
+  amount: "$241M"
+  type: private
+  date: "2025-11"
+description: >
+  <p>Inception Labs was founded in 2024 by
+  <a href="https://cs.stanford.edu/~ermon/">Stefano Ermon</a> (Stanford, co-inventor
+  of diffusion models for images, DDIM, and DPO),
+  <a href="https://aditya-grover.github.io/">Aditya Grover</a> (UCLA, IJCAI Computers
+  and Thought Award), and
+  <a href="https://www.cs.cornell.edu/~kuleshov/">Volodymyr Kuleshov</a> (Cornell Tech).
+  Raised $56M in seed funding from Menlo Ventures, with angel investors including
+  Andrew Ng and Andrej Karpathy.</p>
+
+  <p>The lab introduced <strong>diffusion-based LLMs (dLLMs)</strong> &mdash; a
+  fundamentally different generation paradigm where tokens are produced in parallel
+  via iterative denoising rather than one-at-a-time autoregressive generation.
+  <strong><a href="https://arxiv.org/abs/2506.17298">Mercury</a></strong> models
+  achieve ~1,000 tokens/sec on H100, roughly <strong>10x faster</strong> than
+  comparable autoregressive models. Mercury 2 (February 2026) reaches AA index 33
+  with reasoning capability.</p>
+people:
+  - name: Stefano Ermon
+    url: https://cs.stanford.edu/~ermon/
+    role: CEO & Co-Founder
+    formerly: Stanford University (Associate Professor); PhD Cornell
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=ogXTOZ4AAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Stefano_Ermon1
+  - name: Aditya Grover
+    url: https://aditya-grover.github.io/
+    role: CTO & Co-Founder
+    formerly: UCLA (Assistant Professor); PhD Stanford
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=oOhnPUgAAAAJ
+  - name: Volodymyr Kuleshov
+    url: https://www.cs.cornell.edu/~kuleshov/
+    role: Chief Scientist & Co-Founder
+    formerly: Cornell Tech (Assistant Professor); PhD Stanford
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=RY_t8XAAAAAJ
+news:
+  - title: "Mercury 2 Released: Diffusion LLM with AA Index 33 at 1000 tok/s"
+    url: https://www.inceptionlabs.ai
+    source: Inception Labs
+    date: 2026-02-17
+  - title: "Inception Labs Raises $56M Seed from Menlo, Andrew Ng, Karpathy"
+    url: https://www.inceptionlabs.ai
+    source: Inception Labs
+    date: 2025-11-01
+tags:
+  - frontier
+  - foundational
+  - reasoning

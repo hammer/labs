@@ -1,0 +1,42 @@
+name: Reka Core, Flash, and Edge
+slug: reka-core
+lab: reka
+type: model
+date: 2024-04-18
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2404.12387
+  - label: HuggingFace (Flash 3)
+    url: https://huggingface.co/RekaAI/reka-flash-3
+  - label: OpenRouter
+    url: https://openrouter.ai/rekaai/reka-flash-3
+description: >
+  <p>Series of natively multimodal models processing text, images, video, and audio.
+  <strong>Core</strong> (67B), <strong>Flash</strong> (21B), and <strong>Edge</strong>
+  (7B) trained from scratch by a team of ~50 ex-DeepMind researchers. Reka Flash 3
+  (March 2025) is the latest open-weight variant.</p>
+
+  <p>Core approaches frontier models on human evaluations while Flash achieves SOTA
+  for its compute class. AA Intelligence Index: <strong>10</strong> (Flash 3, 21B).
+  Apache 2.0 (Flash 3). By the Reka Team.</p>
+tags:
+  - multimodal
+  - open-weight
+model:
+  architecture: dense
+  parameters: 67B
+  intelligence_index: 10
+  context_window: 128000
+  variants:
+    - name: Reka Core
+      parameters: 67B
+    - name: Reka Flash
+      parameters: 21B
+    - name: Reka Flash 3
+      parameters: 21B
+      notes: Open-weight, Apache 2.0
+    - name: Reka Edge
+      parameters: 7B
+paper:
+  arxiv: "2404.12387"
