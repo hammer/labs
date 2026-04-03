@@ -2,9 +2,31 @@
 
 ## Project Overview
 
-**Lab Index** is a static site tracking Asian AI research labs, their models, and research outputs. Built with Astro, TypeScript, and Zod-validated YAML data. Deployed on Netlify.
+**Lab Index** is a static site tracking global AI research labs, their models, and research outputs. Built with Astro, TypeScript, and Zod-validated YAML data. Deployed on Cloudflare Pages.
 
-**Live site:** https://ai-lab-tracker.netlify.app/
+**Live site:** https://labindex.ai/
+
+## Research Focus
+
+We are primarily interested in tracking:
+
+**Frontier foundation models** — large-scale models that push the state of the art in:
+- Language understanding and generation
+- Reasoning and chain-of-thought (including "thinking" / test-time compute scaling)
+- Coding and software engineering (SWE-Bench, HumanEval, agentic coding)
+- Multi-turn agentic work (tool use, function calling, long-horizon planning)
+- Multimodal capabilities (vision, audio, video understanding and generation)
+
+**Scientific foundation models** — large-scale models for scientific domains with:
+- Evidence of transfer learning across tasks/domains
+- Sci-LLMs that augment general LLMs with domain-specific tokenizers, modalities, knowledge, reasoning, or agentic capabilities
+- Materials science, drug discovery, weather/climate, protein structure, genomics
+
+**Foundational technique papers** — research that introduced or popularized methods now standard across frontier labs (attention mechanisms, training methods, post-training approaches, scaling laws, etc.)
+
+**Training infrastructure** — frameworks, datasets, evaluation suites, and data curation methods that enable frontier model development.
+
+When selecting outputs for a lab, prioritize work that falls into these categories. Do not exhaustively catalog every paper — focus on what matters for understanding the frontier.
 
 ## Development
 

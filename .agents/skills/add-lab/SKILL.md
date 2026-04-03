@@ -166,7 +166,15 @@ See `/add-output` for detailed format. Key decisions:
 
 ### User-Directed Filtering
 
-If the user specifies a focus (e.g., "focus on Nemotron, only include others if truly significant"), respect that. Prolific labs like NVIDIA or Google may have 50+ outputs but only 10-15 that matter for frontier AI tracking. Ask yourself: "Would someone tracking frontier LLMs/VLMs/reasoning models care about this output?"
+If the user specifies a focus (e.g., "focus on Nemotron, only include others if truly significant"), respect that. Prolific labs like NVIDIA or Google may have 50+ outputs but only 10-15 that matter for our tracking focus.
+
+Our core interests (see AGENTS.md "Research Focus"):
+- **Frontier foundation models** great at language, reasoning, coding, multi-turn agentic work, and multimodality
+- **Scientific foundation models** of large scale with evidence of transfer learning, and Sci-LLMs augmenting LLMs with scientific tokenizers, modalities, knowledge, reasoning, and agentic uses
+- **Foundational technique papers** that introduced methods now standard across labs
+- **Training infrastructure** (frameworks, datasets, evaluation, data curation)
+
+Ask: "Does this output advance the frontier of intelligence, enable scientific discovery, or introduce a technique that changed how models are built?"
 
 ### Closed-Source / Frontier Labs (Google, OpenAI, Anthropic, Meta, xAI)
 

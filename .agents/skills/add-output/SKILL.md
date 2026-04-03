@@ -85,6 +85,14 @@ Papers that introduced techniques now used industry-wide (e.g., "Attention Is Al
 - For libraries: find GitHub stars count, key features
 - For datasets: find size, composition, intended use
 
+### For Scientific Foundation Models
+
+We track scientific models that demonstrate frontier-level capabilities in scientific domains:
+- **Large-scale scientific foundation models** with evidence of transfer learning across tasks (e.g., protein structure, materials discovery, weather prediction, genomics)
+- **Sci-LLMs** that augment general LLMs with domain-specific tokenizers (e.g., SMILES for chemistry, amino acid sequences), additional modalities (molecular graphs, crystal structures, genomic sequences), specialized scientific knowledge, scientific reasoning chains, or agentic scientific workflows
+- Note the scientific domain, any specialized tokenization/encoding, training data sources (PubMed, patents, experimental data), and whether the model demonstrates transfer to new tasks
+- Examples: PanGu-Weather (Huawei), Matlantis/PFP (PFN), EXAONE Path (LG), BioNeMo (NVIDIA), AlphaFold (DeepMind)
+
 ## 2. Create Output YAML
 
 Create `data/outputs/{lab-slug}/{output-slug}.yaml`:
