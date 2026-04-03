@@ -1,0 +1,23 @@
+name: SkillRouter
+slug: skillrouter
+lab: alibaba
+type: paper
+date: 2026-03-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.22455
+description: >
+  <p>Addresses skill routing for LLM agents at scale (10K+ skills).
+  Key finding: hiding the skill body causes a 31&ndash;44 percentage
+  point drop in routing accuracy, proving complete skill implementations
+  matter for selection decisions.</p>
+
+  <p>SkillRouter is a 1.2B retrieve-and-rerank system achieving 74.0%
+  top-1 accuracy while running 5.8x faster and using 13x fewer
+  parameters than comparable approaches. Improved routing translates
+  to better task success rates across four coding agents.</p>
+tags:
+  - agentic
+  - research
+paper:
+  arxiv: "2603.22455"
