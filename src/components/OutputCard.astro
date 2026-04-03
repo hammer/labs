@@ -13,10 +13,13 @@ interface Props {
 const { output, showLab = false, labSlug } = Astro.props;
 const labs = Array.isArray(output.lab) ? output.lab : [output.lab];
 const linkSlug = labSlug ?? (output as any)._labSlug ?? labs[0];
-const excerpt = output.description
-  ? output.description.length > 150
-    ? output.description.slice(0, 150).trimEnd() + '…'
-    : output.description
+const plainDesc = output.description
+  ? output.description.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
+  : null;
+const excerpt = plainDesc
+  ? plainDesc.length > 150
+    ? plainDesc.slice(0, 150).trimEnd() + '…'
+    : plainDesc
   : null;
 const types = getOutputTypes(output);
 const grouped = isGrouped(output);
