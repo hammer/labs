@@ -1,0 +1,26 @@
+name: VQ-VAE
+slug: vq-vae
+lab: google
+type: paper
+date: 2017-11-02
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/1711.00937
+description: >
+  <p>"Neural Discrete Representation Learning." Introduced <strong>Vector Quantised
+  Variational AutoEncoder (VQ-VAE)</strong>, which learns discrete latent representations
+  via vector quantization. Solves the posterior collapse problem of standard VAEs by
+  using a codebook of learned embeddings.</p>
+
+  <p>VQ-VAE became <strong>foundational infrastructure for generative AI</strong>: DALL-E's
+  dVAE, audio codecs (SoundStream, EnCodec), video tokenization, and discrete visual
+  representations all build on this work. The follow-up VQ-VAE-2 (2019) demonstrated
+  high-fidelity image generation competitive with GANs. NeurIPS 2017. By van den Oord,
+  Vinyals, and Kavukcuoglu (DeepMind).</p>
+tags:
+  - foundational
+  - vision
+paper:
+  arxiv: "1711.00937"
+  venue: NeurIPS 2017
