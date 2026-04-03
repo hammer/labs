@@ -1,0 +1,92 @@
+name: xAI
+slug: xai
+url: https://x.ai
+wikipedia: https://en.wikipedia.org/wiki/XAI_(company)
+huggingface: https://huggingface.co/xai-org
+github: https://github.com/xai-org
+artificialanalysis: https://artificialanalysis.ai/providers/xai
+openrouter: https://openrouter.ai/x-ai
+region: usa
+founded: "2023"
+type: startup
+valuation:
+  amount: "$250B"
+  type: private
+  date: "2026-02"
+description: >
+  <p>xAI was founded in March 2023 by
+  <a href="https://en.wikipedia.org/wiki/Elon_Musk">Elon Musk</a> and 11 AI researchers
+  from DeepMind, OpenAI, Google, and Microsoft Research. In February 2026, SpaceX
+  acquired xAI at a combined <strong>$1.25T valuation</strong>. The company raised over
+  $47B across multiple rounds, with investors including NVIDIA, Fidelity, Qatar Investment
+  Authority, and MGX.</p>
+
+  <p>xAI's <strong>Grok</strong> model family progressed rapidly from Grok-1
+  (314B MoE, <a href="https://github.com/xai-org/grok-1">open-sourced</a> with 51K stars)
+  to <strong>Grok-4.20</strong> (2026, multi-agent system, AA index 48, 2M context).
+  Grok-3 (February 2025) was trained on <strong>200K GPUs</strong> at the Colossus
+  supercomputer in Memphis with 10x more compute than its predecessor. Grok-4 (July 2025)
+  introduced native tool-calling and extended reasoning with an AA index of 42.</p>
+
+  <p>The <strong>Colossus</strong> supercomputer in Memphis, Tennessee was built in 122
+  days and houses 150K H100 + 50K H200 + 30K GB200 GPUs (~250MW). A second facility
+  (Colossus 2) adds 110K GB200 GPUs toward a 1M GPU target. All co-founders except
+  Musk have since departed, including
+  <a href="https://scholar.google.com/citations?user=_N2COeAAAAAJ">Igor Babuschkin</a>
+  (DeepMind AlphaStar/AlphaCode) and
+  <a href="https://scholar.google.com/citations?user=ymzxRhAAAAAJ">Jimmy Ba</a>
+  (Adam optimizer, Layer Normalization co-author).</p>
+people:
+  - name: Elon Musk
+    url: https://en.wikipedia.org/wiki/Elon_Musk
+    role: CEO & Founder
+    formerly: OpenAI (Co-founder, departed 2018); Tesla; SpaceX
+  - name: Igor Babuschkin
+    role: Co-founder & Former Chief Engineer (departed Aug 2025)
+    formerly: Google DeepMind (AlphaStar, AlphaCode); OpenAI
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=_N2COeAAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Igor_Babuschkin1
+  - name: Jimmy Ba
+    role: Co-founder (departed Feb 2026)
+    formerly: University of Toronto (Associate Professor); Vector Institute
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=ymzxRhAAAAAJ
+  - name: Greg Yang
+    url: https://thegregyang.com/
+    role: Co-founder (departed Jan 2026)
+    formerly: Microsoft Research (Tensor Programs / muP)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Xz4RAJkAAAAJ
+  - name: Dan Hendrycks
+    role: Safety Adviser
+    formerly: Director, Center for AI Safety
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=czyretsAAAAJ
+news:
+  - title: "SpaceX Acquires xAI at $1.25T Combined Valuation"
+    url: https://fortune.com/2026/02/02/elon-musk-spacex-xai-ipo-trillion/
+    source: Fortune
+    date: 2026-02-02
+  - title: "xAI Raises $20B Series E at $230B Valuation"
+    url: https://www.cnbc.com/2026/01/06/elon-musk-xai-raises-20-billion-from-nvidia-cisco-investors.html
+    source: CNBC
+    date: 2026-01-06
+  - title: "Grok-4 Released with Native Tool Use and Reasoning"
+    url: https://x.ai/news/grok-4
+    source: xAI
+    date: 2025-07-09
+  - title: "Grok-3 Launched, Trained on 200K GPU Colossus Cluster"
+    url: https://x.ai/news/grok-3
+    source: xAI
+    date: 2025-02-17
+tags:
+  - frontier
+  - reasoning
+  - multimodal
+  - agents

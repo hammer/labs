@@ -1,0 +1,30 @@
+name: Grok-1
+slug: grok-1
+lab: xai
+type: model
+date: 2024-03-17
+flagship: true
+sources:
+  - label: GitHub
+    url: https://github.com/xai-org/grok-1
+  - label: HuggingFace
+    url: https://huggingface.co/xai-org/grok-1
+description: >
+  <p><strong>314B parameter MoE</strong> (8 experts, 2 active per token, ~78B active).
+  64 Transformer layers, 48 query attention heads, 8 KV heads (Grouped Query Attention).
+  8,192 token context. Open-sourced under Apache 2.0 on March 17, 2024.</p>
+
+  <p>First Grok model and one of the largest open-weight models at the time of release.
+  GitHub repo reached <strong>51.5K stars</strong>. Originally released November 2023
+  on the X platform, open-sourced four months later.</p>
+tags:
+  - open-weight
+  - open-source
+  - moe
+model:
+  architecture: moe
+  parameters: 314B
+  active_parameters: 78B
+  context_window: 8192
+related:
+  - grok-3

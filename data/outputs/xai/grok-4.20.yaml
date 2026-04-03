@@ -1,0 +1,29 @@
+name: Grok-4.20
+slug: grok-4.20
+lab: xai
+type: model
+date: 2026-02-17
+flagship: true
+sources:
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/grok-4-20
+  - label: OpenRouter
+    url: https://openrouter.ai/x-ai/grok-4.20-beta
+description: >
+  <p>Multi-agent system with 4 specialized agents: Grok (coordinator), Harper (research),
+  Benjamin (math/code), and Lucas (creative). ~3T MoE backbone.
+  <strong>2M token context</strong>. 250.9 tok/s output speed (#1 ranking).</p>
+
+  <p>Current xAI flagship. Also released as Multi-Agent Beta (March 2026).
+  AA Intelligence Index: <strong>48</strong> (reasoning enabled). Proprietary.</p>
+tags:
+  - frontier
+  - reasoning
+  - agents
+  - moe
+model:
+  architecture: moe
+  context_window: 2000000
+  intelligence_index: 48
+related:
+  - grok-4

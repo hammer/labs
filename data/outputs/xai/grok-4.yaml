@@ -1,0 +1,37 @@
+name: Grok-4
+slug: grok-4
+lab: xai
+type: model
+date: 2025-07-09
+flagship: true
+sources:
+  - label: Announcement
+    url: https://x.ai/news/grok-4
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/grok-4
+  - label: OpenRouter
+    url: https://openrouter.ai/x-ai/grok-4
+description: >
+  <p>MoE architecture with sparse + dilated attention. 256K token context. Trained with
+  <strong>100x more compute than Grok-2</strong> and 10x more RL compute than Grok-3.
+  Native tool-calling, real-time search, and extended reasoning.</p>
+
+  <p>Grok-4 Fast variant offers 2M context at $0.20/$0.50 per million tokens (AA index 35).
+  AA Intelligence Index: <strong>42</strong>. Proprietary.</p>
+tags:
+  - frontier
+  - reasoning
+  - agents
+  - moe
+model:
+  architecture: moe
+  context_window: 256000
+  intelligence_index: 42
+  variants:
+    - name: Grok-4
+      notes: 256K context
+    - name: Grok-4 Fast
+      notes: 2M context, AA index 35
+related:
+  - grok-3
+  - grok-4.20

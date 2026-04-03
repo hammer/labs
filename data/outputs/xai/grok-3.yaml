@@ -1,0 +1,36 @@
+name: Grok-3
+slug: grok-3
+lab: xai
+type: model
+date: 2025-02-17
+flagship: true
+sources:
+  - label: Announcement
+    url: https://x.ai/news/grok-3
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/grok-3
+  - label: OpenRouter
+    url: https://openrouter.ai/x-ai/grok-3
+description: >
+  <p>Trained on <strong>200K GPUs</strong> at the Colossus supercomputer with 10x more
+  compute than Grok-2 and <strong>12.8T training tokens</strong>. MoE architecture,
+  estimated ~3T parameters. Up to 1M token context via API. Features Think mode
+  (extended reasoning) and DeepSearch (agentic web research).</p>
+
+  <p>Grok-3 mini Reasoning achieved AA index 32. AA Intelligence Index: <strong>25</strong>.
+  Proprietary.</p>
+tags:
+  - frontier
+  - reasoning
+  - moe
+model:
+  architecture: moe
+  context_window: 1000000
+  intelligence_index: 25
+  variants:
+    - name: Grok-3
+    - name: Grok-3 mini
+      notes: Reasoning variant, AA index 32
+related:
+  - grok-1
+  - grok-4
