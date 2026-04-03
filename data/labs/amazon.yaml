@@ -1,0 +1,73 @@
+name: Amazon
+slug: amazon
+url: https://www.amazon.science
+wikipedia: https://en.wikipedia.org/wiki/Amazon_(company)
+huggingface: https://huggingface.co/amazon
+github: https://github.com/amazon-science
+openrouter: https://openrouter.ai/amazon
+region: usa
+founded: "1994"
+type: corporate
+ipo:
+  exchange: NASDAQ
+  ticker: AMZN
+  year: 1997
+valuation:
+  amount: "$2.25T"
+  type: market-cap
+  date: "2026-04"
+description: >
+  <p>Amazon's AI efforts span AWS AI services, the AGI division (formed 2023), and
+  an $8B strategic investment in <a href="/labs/anthropic">Anthropic</a>. The AGI org
+  was originally led by <strong>Rohit Prasad</strong> (former Alexa AI head), then
+  reorganized under <strong>Peter DeSantis</strong> in December 2025, unifying AI,
+  custom silicon (Trainium/Inferentia), and quantum computing.</p>
+
+  <p>The <strong>Nova</strong> model family launched at AWS re:Invent 2024 with multimodal
+  Pro, Lite, and Micro tiers, followed by <strong>Nova Premier</strong> (April 2025, 1M
+  context, AA index 19). Nova 2 (December 2025) added reasoning capabilities and Nova Act
+  for browser-agent automation. Amazon also builds custom AI chips: <strong>Trainium2</strong>
+  (500K+ deployed) and Trainium3 (3nm, late 2025).</p>
+
+  <p><a href="https://en.wikipedia.org/wiki/Pieter_Abbeel">Pieter Abbeel</a> (UC Berkeley,
+  ACM Prize in Computing) joined in August 2024 via the Covariant acquisition to lead
+  frontier model research. Proprietary.</p>
+people:
+  - name: Pieter Abbeel
+    url: https://en.wikipedia.org/wiki/Pieter_Abbeel
+    role: VP & Distinguished Scientist (joined Aug 2024)
+    formerly: UC Berkeley (Professor); Covariant (Co-founder); PhD Stanford (Andrew Ng)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=vtwH6GkAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Pieter_Abbeel2
+  - name: Peter DeSantis
+    role: SVP, AGI/Silicon/Quantum (from Dec 2025)
+    formerly: Amazon (27 years; led EC2 launch, Annapurna Labs acquisition)
+  - name: Rohit Prasad
+    role: Former SVP & Head Scientist, AGI (departed Dec 2025)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=aPO7PVMAAAAJ
+news:
+  - title: "Peter DeSantis to Lead Unified AGI Org; Rohit Prasad Departing"
+    url: https://www.cnbc.com/2025/12/17/amazon-ai-chief-prasad-leaving-peter-desantis-agi-group.html
+    source: CNBC
+    date: 2025-12-17
+  - title: "Nova 2 Model Family and Nova Act GA at re:Invent 2025"
+    url: https://techcrunch.com/2025/12/02/aws-launches-new-nova-ai-models-and-a-service-that-gives-customers-more-control/
+    source: TechCrunch
+    date: 2025-12-02
+  - title: "Nova Premier Launched as Amazon's Most Capable AI Model"
+    url: https://techcrunch.com/2025/04/30/amazon-launches-nova-premier-its-largest-ai-model-yet/
+    source: TechCrunch
+    date: 2025-04-30
+  - title: "Amazon Doubles Anthropic Investment to $8 Billion"
+    url: https://www.cnbc.com/2024/11/22/amazon-to-invest-another-4-billion-in-anthropic-openais-biggest-rival.html
+    source: CNBC
+    date: 2024-11-22
+tags:
+  - frontier
+  - multimodal
+  - agents

@@ -1,0 +1,28 @@
+name: Phi-1 ("Textbooks Are All You Need")
+slug: phi-1
+lab: microsoft
+type: model
+date: 2023-06-20
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2306.11644
+description: >
+  <p>"Textbooks Are All You Need." <strong>1.3B parameter</strong> code-focused model
+  trained on high-quality "textbook-like" synthetic data. Achieved <strong>50.6% on
+  HumanEval</strong> despite being orders of magnitude smaller than competitors.</p>
+
+  <p>Phi-1 demonstrated that <strong>data quality matters more than data quantity</strong>
+  for small models, launching the Phi series and influencing the industry's approach to
+  synthetic data curation. By Gunasekar, Zhang, Anber et al. MIT License.</p>
+tags:
+  - open-weight
+  - coding
+  - foundational
+model:
+  architecture: dense
+  parameters: 1.3B
+paper:
+  arxiv: "2306.11644"
+related:
+  - phi-4

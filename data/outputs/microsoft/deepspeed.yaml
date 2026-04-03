@@ -1,0 +1,24 @@
+name: DeepSpeed
+slug: deepspeed
+lab: microsoft
+type: library
+date: 2020-02-13
+flagship: true
+sources:
+  - label: GitHub
+    url: https://github.com/microsoft/DeepSpeed
+description: >
+  <p>Distributed training and inference library. Introduced <strong>ZeRO</strong>
+  (Zero Redundancy Optimizer) for memory-efficient data parallelism, 3D parallelism
+  (data + tensor + pipeline), and inference optimizations. <strong>42K+ GitHub
+  stars</strong>.</p>
+
+  <p>DeepSpeed was used to train BLOOM-176B, Megatron-Turing NLG 530B, and many other
+  frontier models. Its ZeRO optimizer enabled training models that otherwise wouldn't fit
+  in GPU memory. MIT License.</p>
+tags:
+  - open-source
+  - infrastructure
+  - foundational
+library:
+  github: https://github.com/microsoft/DeepSpeed

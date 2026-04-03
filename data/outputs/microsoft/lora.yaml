@@ -1,0 +1,25 @@
+name: LoRA (Low-Rank Adaptation)
+slug: lora
+lab: microsoft
+type: paper
+date: 2021-06-17
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2106.09685
+description: >
+  <p>"LoRA: Low-Rank Adaptation of Large Language Models." Freezes pre-trained weights
+  and injects <strong>trainable low-rank decomposition matrices</strong> into each
+  Transformer layer, reducing trainable parameters by 10,000x and GPU memory by 3x
+  compared to full fine-tuning with no inference latency penalty.</p>
+
+  <p>LoRA became the <strong>dominant parameter-efficient fine-tuning method</strong>,
+  used by virtually every open-source model community (Alpaca-LoRA, QLoRA, etc.) and
+  enabling fine-tuning of frontier models on consumer hardware. ICLR 2022. By Hu, Shen,
+  Wallis et al. at Microsoft Research.</p>
+tags:
+  - foundational
+  - open-source
+paper:
+  arxiv: "2106.09685"
+  venue: ICLR 2022

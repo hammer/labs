@@ -1,0 +1,26 @@
+name: BitNet
+slug: bitnet
+lab: microsoft
+type: paper
+date: 2023-10-17
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2310.11453
+  - label: BitNet b1.58 (arXiv)
+    url: https://arxiv.org/abs/2402.17764
+description: >
+  <p>"BitNet: Scaling 1-Bit Transformers for Large Language Models." Replaces linear
+  layers with <strong>BitLinear</strong> using binary {-1, +1} weights. The follow-up
+  <strong>BitNet b1.58</strong> (February 2024, "The Era of 1-bit LLMs") uses ternary
+  {-1, 0, 1} weights, matching full-precision Transformer performance while dramatically
+  reducing memory and compute.</p>
+
+  <p>BitNet opened a new research direction in <strong>extreme quantization from
+  scratch</strong> (training in low precision rather than post-training quantization).
+  By Wang, Ma, Dong et al. at MSR Asia.</p>
+tags:
+  - foundational
+  - efficiency
+paper:
+  arxiv: "2310.11453"

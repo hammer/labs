@@ -1,0 +1,78 @@
+name: Microsoft
+slug: microsoft
+url: https://www.microsoft.com/en-us/research/
+wikipedia: https://en.wikipedia.org/wiki/Microsoft
+huggingface: https://huggingface.co/microsoft
+github: https://github.com/microsoft
+openrouter: https://openrouter.ai/microsoft
+region: usa
+founded: "1975"
+type: corporate
+ipo:
+  exchange: NASDAQ
+  ticker: MSFT
+  year: 1986
+valuation:
+  amount: "$3T"
+  type: market-cap
+  date: "2026-04"
+description: >
+  <p><strong>Microsoft Research (MSR)</strong>, founded in 1991, is one of the world's
+  largest industrial research labs with 1,000+ researchers across Redmond, Cambridge,
+  Beijing, Bangalore, NYC, and Montreal. Microsoft is also OpenAI's largest investor
+  (~27% equity) and integrates OpenAI models into Copilot products.</p>
+
+  <p>Microsoft's own model research focuses on <strong>small language models</strong>:
+  the <strong>Phi series</strong> demonstrated that carefully curated synthetic data can
+  make small models (1.3B&ndash;14B) competitive with models 10&ndash;100x larger.
+  <a href="https://arxiv.org/abs/2306.11644">Phi-1</a> (2023, "Textbooks Are All You Need")
+  launched the series, and <a href="https://arxiv.org/abs/2412.08905">Phi-4</a> (2024, 14B)
+  surpasses its teacher model on STEM benchmarks.</p>
+
+  <p>MSR produced several foundational techniques:
+  <strong><a href="https://arxiv.org/abs/2106.09685">LoRA</a></strong> (Low-Rank
+  Adaptation, 2021) became the dominant parameter-efficient fine-tuning method,
+  <strong><a href="https://arxiv.org/abs/2310.11453">BitNet</a></strong> (2023)
+  pioneered 1-bit Transformers, and
+  <strong><a href="https://github.com/microsoft/DeepSpeed">DeepSpeed</a></strong>
+  (42K stars) is critical distributed training infrastructure used to train BLOOM-176B
+  and other frontier models.</p>
+people:
+  - name: Eric Horvitz
+    role: Chief Scientific Officer & Technical Fellow
+    formerly: AAAI President; Stanford MD + PhD
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=V4OPEAgAAAAJ
+  - name: Sébastien Bubeck
+    role: Former VP GenAI (departed to OpenAI Oct 2024)
+    formerly: Led Phi series; ENS Cachan + Lille PhD
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=V2Y1L4sAAAAJ
+  - name: Furu Wei
+    role: VP & Chief Scientist, MSR Asia (GenAI Group)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=G-V1VpwAAAAJ
+  - name: Peter Lee
+    role: President, Microsoft Research
+    formerly: CMU CS Dept Chair; DARPA
+news:
+  - title: "Phi-4 Reasoning Models Released with Chain-of-Thought"
+    url: https://huggingface.co/microsoft/phi-4-reasoning-plus
+    source: Microsoft
+    date: 2025-04-30
+  - title: "Phi-4 Released: 14B SLM Specializing in Complex Reasoning"
+    url: https://arxiv.org/abs/2412.08905
+    source: Microsoft Research
+    date: 2024-12-12
+  - title: "Microsoft Extends Multibillion-Dollar OpenAI Partnership"
+    url: https://blogs.microsoft.com/blog/2023/01/23/microsoftandopenaiextendpartnership/
+    source: Microsoft
+    date: 2023-01-23
+tags:
+  - frontier
+  - open-weight
+  - infrastructure
+  - reasoning

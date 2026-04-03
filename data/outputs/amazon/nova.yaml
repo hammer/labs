@@ -1,0 +1,36 @@
+name: Amazon Nova
+slug: nova
+lab: amazon
+type: model
+date: 2024-12-03
+flagship: true
+sources:
+  - label: Announcement
+    url: https://techcrunch.com/2024/12/03/amazon-announces-nova-a-new-family-of-multimodal-ai-models/
+  - label: Technical Report
+    url: https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card
+  - label: Artificial Analysis (Pro)
+    url: https://artificialanalysis.ai/models/nova-pro
+description: >
+  <p>Family of foundation models launched at AWS re:Invent 2024. <strong>Nova Pro</strong>
+  (multimodal, 300K context), Nova Lite (multimodal, 300K, low cost), Nova Micro
+  (text-only, 128K, fastest). Also includes Nova Canvas (image generation) and Nova
+  Reel (video generation).</p>
+
+  <p>AA Intelligence Index: <strong>13</strong> (Pro). Proprietary, available via
+  Amazon Bedrock.</p>
+tags:
+  - frontier
+  - multimodal
+model:
+  context_window: 300000
+  intelligence_index: 13
+  variants:
+    - name: Nova Pro
+      notes: Multimodal, 300K context
+    - name: Nova Lite
+      notes: Multimodal, 300K context, low cost
+    - name: Nova Micro
+      notes: Text-only, 128K context
+related:
+  - nova-premier

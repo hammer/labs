@@ -1,0 +1,23 @@
+name: MLX
+slug: mlx
+lab: apple
+type: library
+date: 2023-12-05
+flagship: true
+sources:
+  - label: GitHub
+    url: https://github.com/ml-explore/mlx
+description: >
+  <p>Array framework for machine learning on Apple Silicon. NumPy-like API with lazy
+  computation, dynamic graph construction, and <strong>unified memory</strong> (arrays
+  live in shared CPU/GPU memory). C++, Python, and Swift bindings.</p>
+
+  <p><strong>25K+ GitHub stars</strong>. 3x faster than llama.cpp on Apple hardware for
+  some workloads. Enables efficient local LLM inference on MacBooks and has become the
+  standard framework for running open models on Apple hardware. MIT License.</p>
+tags:
+  - open-source
+  - infrastructure
+  - on-device
+library:
+  github: https://github.com/ml-explore/mlx

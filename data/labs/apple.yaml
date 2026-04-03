@@ -1,0 +1,69 @@
+name: Apple
+slug: apple
+url: https://machinelearning.apple.com
+wikipedia: https://en.wikipedia.org/wiki/Apple_Inc.
+huggingface: https://huggingface.co/apple
+github: https://github.com/apple
+region: usa
+founded: "1976"
+type: corporate
+ipo:
+  exchange: NASDAQ
+  ticker: AAPL
+  year: 1980
+valuation:
+  amount: "$3.76T"
+  type: market-cap
+  date: "2026-04"
+description: >
+  <p>Apple's AI strategy centers on <strong>on-device + Private Cloud Compute</strong>
+  rather than API-served models. <strong>Apple Intelligence</strong>, announced at WWDC
+  2024, integrates foundation models across iPhone, iPad, and Mac for writing tools,
+  image generation, Siri enhancements, and cross-app actions.</p>
+
+  <p>The <strong>Apple Foundation Models (AFM)</strong> include a ~3B on-device model and
+  larger server models, using a proprietary mixture-of-experts architecture. Apple published
+  technical reports in <a href="https://arxiv.org/abs/2407.21075">2024</a> and
+  <a href="https://arxiv.org/abs/2507.13575">2025</a> detailing the architecture,
+  training, and safety measures. The company also contributes open research:
+  <strong><a href="https://github.com/ml-explore/mlx">MLX</a></strong> (25K stars), a
+  NumPy-like ML framework optimized for Apple Silicon, and
+  <strong><a href="https://arxiv.org/abs/2404.14619">OpenELM</a></strong>, fully open
+  efficient language models.</p>
+
+  <p><a href="https://scholar.google.com/citations?user=Vs-MdPcAAAAJ">Samy Bengio</a>
+  (103K+ citations, brother of Yoshua Bengio) leads ML research. Amar Subramanya
+  (formerly Microsoft VP AI, 16 years at Google) was named VP of AI in December 2025.</p>
+people:
+  - name: Samy Bengio
+    role: Senior Director, AI & ML Research
+    formerly: Google (2007-2021)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Vs-MdPcAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Samy_Bengio1
+  - name: Amar Subramanya
+    role: VP of AI (joined Dec 2025)
+    formerly: Microsoft (CVP AI); Google (16 years, Gemini assistant)
+  - name: John Giannandrea
+    url: https://en.wikipedia.org/wiki/John_Giannandrea
+    role: Former SVP ML & AI Strategy (retiring spring 2026)
+    formerly: Google (SVP Search & AI)
+news:
+  - title: "Apple Intelligence Foundation Models Tech Report 2025"
+    url: https://machinelearning.apple.com/research/apple-foundation-models-tech-report-2025
+    source: Apple
+    date: 2025-07-17
+  - title: "John Giannandrea to Retire; Amar Subramanya Named VP of AI"
+    url: https://www.apple.com/newsroom/2025/12/john-giannandrea-to-retire-from-apple/
+    source: Apple
+    date: 2025-12-01
+  - title: "Apple Intelligence Introduced at WWDC 2024"
+    url: https://www.apple.com/newsroom/2024/06/introducing-apple-intelligence-for-iphone-ipad-and-mac/
+    source: Apple
+    date: 2024-06-10
+tags:
+  - on-device
+  - multimodal
+  - open-weight

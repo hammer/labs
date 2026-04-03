@@ -1,0 +1,38 @@
+name: Phi-4
+slug: phi-4
+lab: microsoft
+type: model
+date: 2024-12-12
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.08905
+  - label: HuggingFace
+    url: https://huggingface.co/microsoft/phi-4
+description: >
+  <p><strong>14B parameter</strong> dense Transformer with emphasis on synthetic data
+  for complex reasoning. Surpasses its teacher model on STEM benchmarks. Also released
+  as Phi-4 Mini (3.8B, 128K context) and Phi-4 Reasoning (chain-of-thought, April 2025).</p>
+
+  <p>Phi-4 Reasoning Plus achieved 78% on AIME 2025, beating QwQ-32B despite being less
+  than half the size. AA Intelligence Index: <strong>10</strong>. MIT License.</p>
+tags:
+  - open-weight
+  - reasoning
+model:
+  architecture: dense
+  parameters: 14B
+  intelligence_index: 10
+  variants:
+    - name: Phi-4
+      parameters: 14B
+    - name: Phi-4 Mini
+      parameters: 3.8B
+      notes: 128K context
+    - name: Phi-4 Reasoning
+      parameters: 14B
+      notes: Chain-of-thought, April 2025
+paper:
+  arxiv: "2412.08905"
+related:
+  - phi-1

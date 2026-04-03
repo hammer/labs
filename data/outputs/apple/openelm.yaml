@@ -1,0 +1,34 @@
+name: OpenELM
+slug: openelm
+lab: apple
+type: model
+date: 2024-04-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2404.14619
+  - label: HuggingFace
+    url: https://huggingface.co/apple/OpenELM
+description: >
+  <p>Open Efficient Language Models. 270M to 3B parameter dense Transformers with
+  <strong>layer-wise scaling</strong> (varying width per layer for parameter
+  efficiency). Fully open: training code, data, weights, and evaluation.</p>
+
+  <p>Apple's first open-weight language models. Trained on publicly available data.
+  ICML 2024 workshop. Apache 2.0.</p>
+tags:
+  - open-weight
+  - open-source
+model:
+  architecture: dense
+  parameters: 3B
+  variants:
+    - name: OpenELM 270M
+      parameters: 270M
+    - name: OpenELM 450M
+      parameters: 450M
+    - name: OpenELM 1.1B
+      parameters: 1.1B
+    - name: OpenELM 3B
+      parameters: 3B
+paper:
+  arxiv: "2404.14619"

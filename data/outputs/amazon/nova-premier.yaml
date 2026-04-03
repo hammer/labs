@@ -1,0 +1,25 @@
+name: Amazon Nova Premier
+slug: nova-premier
+lab: amazon
+type: model
+date: 2025-04-30
+flagship: true
+sources:
+  - label: Technical Report
+    url: https://www.amazon.science/publications/amazon-nova-premier-technical-report-and-model-card
+  - label: OpenRouter
+    url: https://openrouter.ai/amazon/nova-premier-v1
+description: >
+  <p>Amazon's most capable model and distillation teacher. <strong>1M token context</strong>.
+  Processes text, images, and video. Also serves as teacher model for training smaller
+  Nova variants.</p>
+
+  <p>AA Intelligence Index: <strong>19</strong>. Proprietary, available via Amazon Bedrock.</p>
+tags:
+  - frontier
+  - multimodal
+model:
+  context_window: 1000000
+  intelligence_index: 19
+related:
+  - nova

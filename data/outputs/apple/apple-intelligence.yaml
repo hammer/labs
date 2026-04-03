@@ -1,0 +1,27 @@
+name: Apple Foundation Models (AFM)
+slug: apple-intelligence
+lab: apple
+type: paper
+date: 2024-07-29
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.21075
+  - label: Tech Report 2025 (arXiv)
+    url: https://arxiv.org/abs/2507.13575
+description: >
+  <p>Technical report detailing the foundation models powering Apple Intelligence.
+  ~3B on-device model and larger server models running on Apple's Private Cloud Compute.
+  Uses a proprietary <strong>mixture-of-experts architecture</strong>. Trained with
+  adapter-based fine-tuning for specific tasks (summarization, proofreading, Siri).</p>
+
+  <p>The 2025 update added multilingual support (16 languages), multimodal capabilities,
+  and improved tool use and reasoning. Distinctive for its <strong>on-device + private
+  cloud split</strong>, processing data locally where possible and using dedicated Apple
+  Silicon servers when not. Proprietary.</p>
+tags:
+  - on-device
+  - multimodal
+  - moe
+paper:
+  arxiv: "2407.21075"
