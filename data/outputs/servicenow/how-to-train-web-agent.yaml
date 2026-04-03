@@ -1,0 +1,27 @@
+name: How to Train Your LLM Web Agent
+slug: how-to-train-web-agent
+lab: servicenow
+type: paper
+date: 2025-07-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.04103
+description: >
+  <p>Empirical investigation into optimal compute distribution for web-agent
+  post-training. Combines supervised fine-tuning of Llama 3.1 8B with a Llama 3.3 70B
+  teacher, followed by on-policy reinforcement learning. Tested <strong>1,370
+  hyperparameter configurations</strong> with statistical bootstrapping to identify
+  effective settings.</p>
+
+  <p>The combined SFT + RL strategy consistently outperforms either approach alone on
+  web-agent benchmarks while requiring substantially less compute than pure SFT,
+  achieving parity with proprietary systems. By Vattikonda, Ravichandran, Penaloza,
+  Drouin, Caccia et al.</p>
+tags:
+  - agents
+  - reinforcement-learning
+  - research
+paper:
+  arxiv: "2507.04103"
+related:
+  - apriel
