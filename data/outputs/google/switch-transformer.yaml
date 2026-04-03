@@ -1,0 +1,26 @@
+name: Switch Transformer
+slug: switch-transformer
+lab: google
+type: paper
+date: 2021-01-11
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2101.03961
+description: >
+  <p>Simplified Mixture-of-Experts routing for Transformers. Routes each token to a
+  <strong>single expert</strong> (vs multiple in earlier MoE work), achieving 7x
+  pre-training speedup over T5 with the same compute. First to train large MoE models
+  in bfloat16. Scaled to <strong>1.6T parameters</strong>.</p>
+
+  <p>Switch Transformer made MoE practical at scale and is foundational to modern
+  sparse architectures used by Mixtral, DeepSeek, Gemini, and others. JMLR 2022.
+  By Fedus, Zoph, and Shazeer.</p>
+tags:
+  - foundational
+  - moe
+paper:
+  arxiv: "2101.03961"
+  venue: JMLR 2022
+related:
+  - transformer

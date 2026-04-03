@@ -1,0 +1,27 @@
+name: Chinchilla (Compute-Optimal Training)
+slug: chinchilla
+lab: google
+type: paper
+date: 2022-03-29
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2203.15556
+description: >
+  <p>"Training Compute-Optimal Large Language Models." Found that existing LLMs were
+  significantly <strong>undertrained</strong>: for compute-optimal training, model size
+  and training tokens should scale equally. Chinchilla (70B, 1.4T tokens) outperformed
+  Gopher (280B, 300B tokens) on MMLU (67.5% vs 60%).</p>
+
+  <p>The Chinchilla scaling laws <strong>reshaped training decisions industry-wide</strong>,
+  shifting labs from building the largest possible models to training smaller models on
+  far more data. Directly influenced Llama, Mistral, and other efficient model families.
+  NeurIPS 2022. By Hoffmann et al. (DeepMind).</p>
+tags:
+  - foundational
+  - research
+paper:
+  arxiv: "2203.15556"
+  venue: NeurIPS 2022
+related:
+  - palm

@@ -1,0 +1,28 @@
+name: Attention Is All You Need (Transformer)
+slug: transformer
+lab: google
+type: paper
+date: 2017-06-12
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/1706.03762
+description: >
+  <p>The paper that introduced the <strong>Transformer architecture</strong>, dispensing
+  with recurrence and convolutions entirely in favor of self-attention mechanisms.
+  Multi-head attention allows the model to attend to information from different
+  representation subspaces at different positions simultaneously.</p>
+
+  <p>The Transformer is the <strong>single most influential architecture in modern AI</strong>.
+  Every frontier language model (GPT, Claude, Gemini, Llama, DeepSeek), every vision
+  transformer, and every multimodal model is built on this foundation. One of the most-cited
+  papers in computer science history (~140K+ citations). NeurIPS 2017. By Vaswani, Shazeer,
+  Parmar, Uszkoreit, Jones, Gomez, Kaiser, and Polosukhin.</p>
+tags:
+  - foundational
+paper:
+  arxiv: "1706.03762"
+  venue: NeurIPS 2017
+related:
+  - bert
+  - vit

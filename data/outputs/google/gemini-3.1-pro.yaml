@@ -1,0 +1,31 @@
+name: Gemini 3.1 Pro
+slug: gemini-3.1-pro
+lab: google
+type: model
+date: 2026-02-19
+flagship: true
+sources:
+  - label: Announcement
+    url: https://deepmind.google/models/model-cards/gemini-3-1-pro/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gemini-3-1-pro-preview
+  - label: OpenRouter
+    url: https://openrouter.ai/google/gemini-3.1-pro-preview-20260219
+description: >
+  <p>Current flagship. 1M input, 65K output context. 2x+ reasoning boost over Gemini 3 Pro.
+  "Medium" thinking parameter for latency/depth tradeoff. Leads 6 of 10 AA Intelligence
+  Index evaluations at less than half the cost of frontier peers.</p>
+
+  <p><strong>Tied #1 on Artificial Analysis</strong> with GPT-5.4 at Intelligence Index
+  <strong>57</strong>. #1 on 12 of 18 AA benchmarks. Proprietary.</p>
+tags:
+  - frontier
+  - reasoning
+  - multimodal
+  - coding
+model:
+  architecture: moe
+  context_window: 1000000
+  intelligence_index: 57
+related:
+  - gemini-2.5-pro

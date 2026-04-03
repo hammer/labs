@@ -1,0 +1,33 @@
+name: Gemma
+slug: gemma
+lab: google
+type: model
+date: 2024-02-21
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2403.08295
+  - label: HuggingFace
+    url: https://huggingface.co/google/gemma-7b
+description: >
+  <p>Google's first <strong>open-weight models</strong>, built on Gemini research.
+  2B and 7B dense Transformers. Outperformed similarly sized open models on 11 of 18
+  text-based tasks.</p>
+
+  <p>Gemma established Google's commitment to open-weight releases alongside its
+  proprietary Gemini line. Apache 2.0. By the Gemma Team.</p>
+tags:
+  - open-weight
+  - open-source
+model:
+  architecture: dense
+  parameters: 7B
+  variants:
+    - name: Gemma 2B
+      parameters: 2B
+    - name: Gemma 7B
+      parameters: 7B
+paper:
+  arxiv: "2403.08295"
+related:
+  - gemma-3

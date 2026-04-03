@@ -1,0 +1,26 @@
+name: FLAN (Instruction Tuning)
+slug: flan
+lab: google
+type: paper
+date: 2021-09-03
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2109.01652
+description: >
+  <p>"Finetuned Language Models Are Zero-Shot Learners." Instruction-tuned a 137B
+  parameter model on 60+ NLP tasks described via natural language instructions. FLAN
+  surpassed <strong>zero-shot GPT-3 (175B) on 20 of 25 tasks</strong> despite being
+  smaller.</p>
+
+  <p>Pioneered <strong>instruction tuning</strong>, demonstrating that fine-tuning on
+  a diverse set of tasks with instructions dramatically improves zero-shot generalization.
+  Now a standard technique across all frontier labs. ICLR 2022. By Wei, Bosma, Zhao
+  et al.</p>
+tags:
+  - foundational
+paper:
+  arxiv: "2109.01652"
+  venue: ICLR 2022
+related:
+  - chain-of-thought

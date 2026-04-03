@@ -1,0 +1,24 @@
+name: GraphCast
+slug: graphcast
+lab: google
+type: paper
+date: 2023-12-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2212.12794
+  - label: GitHub
+    url: https://github.com/google-deepmind/graphcast
+description: >
+  <p>ML-based weather forecasting using graph neural networks. 10-day forecasts at
+  0.25° resolution in <strong>under 1 minute on a single TPU v4</strong>. Outperformed
+  ECMWF HRES (the gold standard) on 90% of 1,380 verification targets.</p>
+
+  <p>Better tropical cyclone, atmospheric river, and extreme temperature prediction
+  than traditional numerical weather models. Science 2023. By Lam et al. (DeepMind).
+  Open-source.</p>
+tags:
+  - scientific
+  - open-source
+paper:
+  arxiv: "2212.12794"
+  venue: Science 2023

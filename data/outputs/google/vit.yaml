@@ -1,0 +1,29 @@
+name: Vision Transformer (ViT)
+slug: vit
+lab: google
+type: paper
+date: 2020-10-22
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2010.11929
+  - label: GitHub
+    url: https://github.com/google-research/vision_transformer
+description: >
+  <p>"An Image is Worth 16x16 Words." Applied a pure Transformer directly to sequences
+  of image patches for classification, with <strong>no convolutional layers</strong>.
+  Achieved 88.55% on ImageNet when pre-trained on large datasets.</p>
+
+  <p>ViT proved that CNNs are not necessary for state-of-the-art vision, opening the
+  door to unified architectures for text and images. Foundational for all modern vision
+  models including CLIP, DALL-E, Stable Diffusion, and multimodal LLMs. ICLR 2021.
+  ~30K+ citations. By Dosovitskiy et al. Apache 2.0.</p>
+tags:
+  - foundational
+  - vision
+  - open-source
+paper:
+  arxiv: "2010.11929"
+  venue: ICLR 2021
+related:
+  - transformer

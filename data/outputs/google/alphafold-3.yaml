@@ -1,0 +1,23 @@
+name: AlphaFold 3
+slug: alphafold-3
+lab: google
+type: paper
+date: 2024-05-08
+sources:
+  - label: Paper (Nature)
+    url: https://www.nature.com/articles/s41586-024-07487-w
+description: >
+  <p>Diffusion-based architecture predicting joint structures of proteins with DNA, RNA,
+  small molecules, and ions. <strong>50%+ improvement</strong> over existing methods for
+  protein-molecule interactions. Extends AlphaFold from protein-only to the full
+  biomolecular landscape.</p>
+
+  <p>Code and weights released for academic use (November 2024, publicly February 2025).
+  Nature 2024. By Abramson et al. (DeepMind / Isomorphic Labs).</p>
+tags:
+  - scientific
+  - open-source
+paper:
+  venue: Nature 2024
+related:
+  - alphafold-2

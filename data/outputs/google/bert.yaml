@@ -1,0 +1,31 @@
+name: BERT
+slug: bert
+lab: google
+type: paper
+date: 2018-10-11
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/1810.04805
+  - label: HuggingFace
+    url: https://huggingface.co/google-bert
+description: >
+  <p><strong>Bidirectional Encoder Representations from Transformers.</strong> Pre-trained
+  deep bidirectional representations by jointly conditioning on both left and right context
+  in all layers via masked language modeling. 110M (Base) and 340M (Large) parameters.</p>
+
+  <p>BERT revolutionized NLP, pushing GLUE to 80.5% (+7.7 pts) and SQuAD to 93.2 F1.
+  Spawned an entire generation of models (RoBERTa, ALBERT, DeBERTa, XLNet) and became the
+  dominant approach for search, classification, and NER. NAACL 2019. ~100K+ citations.
+  By Devlin, Chang, Lee, and Toutanova. Apache 2.0.</p>
+tags:
+  - foundational
+  - open-source
+model:
+  architecture: dense
+  parameters: 340M
+paper:
+  arxiv: "1810.04805"
+  venue: NAACL 2019
+related:
+  - transformer

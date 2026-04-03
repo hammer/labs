@@ -1,0 +1,26 @@
+name: Chain-of-Thought Prompting
+slug: chain-of-thought
+lab: google
+type: paper
+date: 2022-01-28
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2201.11903
+description: >
+  <p>Showed that providing <strong>chain-of-thought reasoning demonstrations</strong>
+  in prompts dramatically improves LLM performance on arithmetic, commonsense, and
+  symbolic reasoning. With PaLM 540B, achieved SOTA on GSM8K math benchmarks.</p>
+
+  <p>Chain-of-thought prompting is the <strong>direct intellectual ancestor of reasoning
+  models</strong> (o1, o3, R1, QwQ). The insight that models reason better when they
+  "think step by step" inspired test-time compute scaling and thinking tokens. NeurIPS 2022.
+  14K+ citations. By Wei, Wang, Schuurmans et al.</p>
+tags:
+  - foundational
+  - reasoning
+paper:
+  arxiv: "2201.11903"
+  venue: NeurIPS 2022
+related:
+  - flan

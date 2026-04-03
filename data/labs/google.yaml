@@ -1,0 +1,112 @@
+name: Google
+slug: google
+url: https://deepmind.google
+wikipedia: https://en.wikipedia.org/wiki/Google_DeepMind
+huggingface: https://huggingface.co/google
+github: https://github.com/google-deepmind
+artificialanalysis: https://artificialanalysis.ai/providers/google
+openrouter: https://openrouter.ai/google
+region: usa
+founded: "1998"
+type: corporate
+ipo:
+  exchange: NASDAQ
+  ticker: GOOGL
+  year: 2004
+valuation:
+  amount: "$3.56T"
+  type: market-cap
+  date: "2026-04"
+description: >
+  <p>Google's AI research spans two decades of foundational contributions. <strong>Google
+  Brain</strong> (founded 2011 by Jeff Dean, Andrew Ng, Greg Corrado) and
+  <strong><a href="https://en.wikipedia.org/wiki/Google_DeepMind">DeepMind</a></strong>
+  (founded 2010 in London by <a href="https://en.wikipedia.org/wiki/Demis_Hassabis">Demis
+  Hassabis</a>, acquired 2014 for ~$650M) merged in April 2023 into <strong>Google
+  DeepMind</strong>. Alphabet (parent since 2015) has a market cap of ~$3.56T.</p>
+
+  <p>Google researchers authored many of the most important papers in modern AI:
+  <strong><a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a></strong>
+  (2017, the Transformer), <strong><a href="https://arxiv.org/abs/1810.04805">BERT</a></strong>
+  (2018), <strong><a href="https://arxiv.org/abs/2010.11929">Vision Transformer</a></strong>
+  (2020), <strong><a href="https://arxiv.org/abs/2201.11903">Chain-of-Thought</a></strong>
+  (2022), and <strong><a href="https://arxiv.org/abs/2203.15556">Chinchilla</a></strong>
+  (2022). The <strong>Gemini</strong> model family advanced from 1.0 (2023) to
+  <strong>Gemini 3.1 Pro</strong> (2026, AA index 57, tied #1). The open-weight
+  <strong>Gemma</strong> series (2024&ndash;) provides Apache 2.0 models up to 27B.</p>
+
+  <p>DeepMind's scientific breakthroughs include <strong>AlphaGo</strong> (defeated world Go
+  champion, 2016), <strong><a href="https://www.nature.com/articles/s41586-021-03819-2">AlphaFold
+  2</a></strong> (solved protein structure prediction, predicted 200M+ structures, won the
+  <strong>2024 Nobel Prize in Chemistry</strong> for Hassabis and John Jumper), and
+  <strong>GraphCast</strong> (ML weather forecasting outperforming ECMWF).
+  <a href="https://en.wikipedia.org/wiki/Noam_Shazeer">Noam Shazeer</a>, Transformer
+  co-author, returned from Character.AI in August 2024 to co-lead Gemini development.</p>
+people:
+  - name: Demis Hassabis
+    url: https://en.wikipedia.org/wiki/Demis_Hassabis
+    role: CEO, Google DeepMind; 2024 Nobel Prize in Chemistry
+    formerly: DeepMind (Co-founder); PhD UCL
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=dYpPMQEAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Demis_Hassabis1
+  - name: Jeff Dean
+    url: https://en.wikipedia.org/wiki/Jeff_Dean
+    role: Chief Scientist, Google DeepMind & Google Research
+    formerly: Google (joined 1999, employee #30); DEC; PhD University of Washington
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=NMS69lQAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Jeff_Dean1
+  - name: Noam Shazeer
+    url: https://en.wikipedia.org/wiki/Noam_Shazeer
+    role: VP Engineering, Gemini Co-lead (returned Aug 2024)
+    formerly: Character.AI (Co-founder & CEO); Google (2000-2021)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=wsGvgA8AAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Noam_Shazeer1
+  - name: Oriol Vinyals
+    role: VP of Research, Gemini Co-lead
+    formerly: Google Brain; PhD UC Berkeley
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=NkzyCvUAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Oriol_Vinyals1
+  - name: Koray Kavukcuoglu
+    role: CTO & Chief AI Architect (SVP)
+    formerly: NEC Labs; PhD NYU (Yann LeCun)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=sGFyDIUAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Koray_Kavukcuoglu1
+news:
+  - title: "Gemma 4 Open Models Released"
+    url: https://blog.google/technology/developers-tools/gemma-4/
+    source: Google
+    date: 2026-04-02
+  - title: "Gemini 3.1 Pro Released, Ties #1 on AA Intelligence Index"
+    url: https://deepmind.google/models/model-cards/gemini-3-1-pro/
+    source: Google DeepMind
+    date: 2026-02-19
+  - title: "Alphabet Hits $4T Market Cap"
+    url: https://www.cnbc.com/2026/01/12/alphabet-4-trillion-market-cap.html
+    source: CNBC
+    date: 2026-01-12
+  - title: "Demis Hassabis & John Jumper Awarded Nobel Prize in Chemistry"
+    url: https://deepmind.google/discover/blog/demis-hassabis-john-jumper-awarded-nobel-prize-in-chemistry/
+    source: Google DeepMind
+    date: 2024-10-09
+tags:
+  - frontier
+  - foundational
+  - scientific
+  - reasoning
+  - multimodal
+  - open-weight

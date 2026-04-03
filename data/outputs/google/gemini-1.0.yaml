@@ -1,0 +1,33 @@
+name: Gemini 1.0
+slug: gemini-1.0
+lab: google
+type: model
+date: 2023-12-06
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2312.11805
+  - label: Announcement
+    url: https://blog.google/technology/ai/google-gemini-ai/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gemini-1-0-ultra
+description: >
+  <p>First Gemini family: Ultra, Pro, and Nano tiers. <strong>Natively multimodal</strong>
+  (text, image, audio, video). 32K token context. Ultra was the first model to surpass
+  human-expert performance on MMLU (90.0%). Nano variants (1.8B, 3.25B) designed for
+  on-device deployment.</p>
+
+  <p>Gemini 1.0 Ultra achieved SOTA on 30 of 32 academic benchmarks. Architecture
+  details undisclosed (parameter count not published). AA Intelligence Index: 10 (Ultra).
+  Proprietary.</p>
+tags:
+  - frontier
+  - multimodal
+model:
+  context_window: 32000
+  intelligence_index: 10
+paper:
+  arxiv: "2312.11805"
+related:
+  - palm
+  - gemini-1.5-pro

@@ -1,0 +1,30 @@
+name: AlphaFold 2
+slug: alphafold-2
+lab: google
+type: paper
+date: 2021-07-15
+flagship: true
+sources:
+  - label: Paper (Nature)
+    url: https://www.nature.com/articles/s41586-021-03819-2
+  - label: Announcement
+    url: https://deepmind.google/science/alphafold/
+description: >
+  <p>Solved protein structure prediction at <strong>atomic accuracy</strong>. Won CASP14
+  with a median GDT score of 92.4 (next best: 73). Predicted structures for
+  <strong>200M+ proteins</strong> (essentially all known proteins), made freely
+  available via the AlphaFold Protein Structure Database.</p>
+
+  <p>AlphaFold 2 is arguably the <strong>greatest scientific achievement of deep
+  learning</strong>. Named Nature's "Method of the Year 2021." Won the
+  <strong>2024 Nobel Prize in Chemistry</strong> for Demis Hassabis and John Jumper.
+  ~43,000 citations. By Jumper, Evans et al. (DeepMind). Open-source code and weights.</p>
+tags:
+  - scientific
+  - foundational
+  - open-source
+paper:
+  venue: Nature 2021
+related:
+  - alphago
+  - alphafold-3

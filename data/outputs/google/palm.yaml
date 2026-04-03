@@ -1,0 +1,29 @@
+name: PaLM
+slug: palm
+lab: google
+type: model
+date: 2022-04-05
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2204.02311
+description: >
+  <p>Pathways Language Model. <strong>540B parameter dense Transformer</strong> trained
+  on 6,144 TPU v4 chips using the Pathways system. 780B training tokens across
+  multiple languages and code.</p>
+
+  <p>PaLM was the first model to outperform average human performance on BIG-Bench and
+  demonstrated breakthrough multi-step reasoning. It established Google as a frontier
+  lab competitor and served as the foundation for PaLM 2 and early Bard. By Chowdhery
+  et al. Proprietary.</p>
+tags:
+  - frontier
+  - reasoning
+model:
+  architecture: dense
+  parameters: 540B
+paper:
+  arxiv: "2204.02311"
+related:
+  - chinchilla
+  - gemini-1.0

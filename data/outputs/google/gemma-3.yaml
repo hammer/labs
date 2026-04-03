@@ -1,0 +1,41 @@
+name: Gemma 3
+slug: gemma-3
+lab: google
+type: model
+date: 2025-03-12
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.19786
+  - label: HuggingFace
+    url: https://huggingface.co/google/gemma-3-27b-it
+  - label: OpenRouter
+    url: https://openrouter.ai/google/gemma-3-27b-it
+description: >
+  <p>First <strong>multimodal Gemma</strong> (vision + text). 128K token context (4B+).
+  140+ languages. Distilled training from larger Gemini models. Gemma-3-4B competitive
+  with Gemma-2-27B; Gemma-3-27B comparable to Gemini 1.5 Pro.</p>
+
+  <p>Sizes: 270M, 1B, 4B, 12B, 27B. The 27B variant became one of the most popular
+  open models for fine-tuning and deployment. Apache 2.0.</p>
+tags:
+  - open-weight
+  - open-source
+  - multimodal
+model:
+  architecture: dense
+  parameters: 27B
+  context_window: 128000
+  variants:
+    - name: Gemma 3 1B
+      parameters: 1B
+    - name: Gemma 3 4B
+      parameters: 4B
+    - name: Gemma 3 12B
+      parameters: 12B
+    - name: Gemma 3 27B
+      parameters: 27B
+paper:
+  arxiv: "2503.19786"
+related:
+  - gemma

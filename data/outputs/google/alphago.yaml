@@ -1,0 +1,29 @@
+name: AlphaGo
+slug: alphago
+lab: google
+type: paper
+date: 2016-01-27
+flagship: true
+sources:
+  - label: Paper (Nature)
+    url: https://www.nature.com/articles/nature16961
+  - label: Announcement
+    url: https://deepmind.google/research/alphago/
+description: >
+  <p>First AI to defeat a human professional Go player. Combined deep neural networks
+  with Monte Carlo tree search. Defeated European champion Fan Hui 5-0 (October 2015),
+  then world champion <strong>Lee Sedol 4-1</strong> in March 2016, watched by 200M+
+  viewers.</p>
+
+  <p>AlphaGo was a <strong>watershed moment for AI</strong>, demonstrating that deep
+  learning could master a game long considered intractable for computers. Its successor
+  AlphaZero (2017) generalized to chess and shogi without human knowledge. Nature 2016.
+  By Silver, Huang et al. (DeepMind).</p>
+tags:
+  - foundational
+  - scientific
+  - reinforcement-learning
+paper:
+  venue: Nature 2016
+related:
+  - alphafold-2
