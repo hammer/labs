@@ -41,6 +41,11 @@ people:
   - name: Charles Goddard
     role: Chief of Frontier Research
     formerly: NASA; Apple; Creator of MergeKit
+news:
+  - title: "Arcee's New Open-Source Trinity Large Thinking Is the Rare Powerful U.S.-Made Model"
+    url: https://venturebeat.com/technology/arcees-new-open-source-trinity-large-thinking-is-the-rare-powerful-u-s-made
+    source: VentureBeat
+    date: 2026-04-02
 tags:
   - open-weight
   - moe
