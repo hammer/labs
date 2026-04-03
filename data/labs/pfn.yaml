@@ -1,0 +1,51 @@
+name: PFN
+slug: pfn
+url: https://www.preferred.jp/en
+wikipedia: https://en.wikipedia.org/wiki/Preferred_Networks
+huggingface: https://huggingface.co/pfnet
+github: https://github.com/pfnet-research
+region: japan
+founded: "2014"
+type: startup
+description: >
+  <p><a href="https://en.wikipedia.org/wiki/Preferred_Networks">Preferred
+  Networks</a> (PFN) is Japan's leading AI company, founded in 2014 by
+  <strong>Toru Nishikawa</strong> (Chairman) and
+  <strong><a href="https://scholar.google.com/citations?user=14n6Z6IAAAAJ">Daisuke
+  Okanohara</a></strong> (CEO). Valued at 300B+ yen (~$2B+) with strategic
+  investors Toyota, FANUC, NTT, and SBI Group. Pioneered
+  <a href="https://github.com/optuna/optuna">Optuna</a> (10K+ stars) and the
+  Chainer framework (precursor to define-by-run paradigm). Develops the
+  <strong>MN-Core</strong> custom AI chip (topped Green500 3x).</p>
+
+  <p>The <strong>PLaMo</strong> model family, developed under Japan's GENIAC
+  national program, progressed from PLaMo-13B (2023, Apache 2.0) through
+  <a href="https://arxiv.org/abs/2410.07563">PLaMo-100B</a> (Oct 2024, 2T
+  tokens, NEDO-funded, beats GPT-4 on Japanese benchmarks) to the hybrid
+  <strong><a href="https://arxiv.org/abs/2509.04897">PLaMo 2</a></strong>
+  (Sep 2025, Mamba2 + Sliding Window Attention, up to 31B/6T tokens). PLaMo
+  2.1-8B matches PLaMo-100B quality at 7x less compute. PLaMo 3 (joint with
+  NICT/SAKURA Internet) adds reasoning capabilities. PLaMo Translate was
+  adopted by Japan's Digital Agency for government use.</p>
+
+  <p>PFN also operates <strong>Matlantis</strong> (universal atomistic
+  simulator, 96 elements, 20M x faster than DFT, 90+ corporate users) and
+  the <strong>PFCP</strong> cloud platform powered by MN-Core chips via a
+  joint venture with Mitsubishi Corp and IIJ.</p>
+people:
+  - name: Daisuke Okanohara
+    role: Co-founder & CEO
+    formerly: University of Tokyo (PhD CS)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=14n6Z6IAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Daisuke_Okanohara1
+  - name: Toru Nishikawa
+    role: Co-founder & Chairman
+    formerly: University of Tokyo (MSc)
+tags:
+  - open-weight
+  - multilingual
+  - infrastructure
+  - enterprise

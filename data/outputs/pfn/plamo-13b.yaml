@@ -1,0 +1,23 @@
+name: PLaMo-13B
+slug: plamo-13b
+lab: pfn
+type: model
+date: 2023-09-28
+sources:
+  - label: Blog Post
+    url: https://tech.preferred.jp/en/blog/llm-plamo/
+  - label: HuggingFace
+    url: https://huggingface.co/pfnet/plamo-13b
+description: >
+  PFN's first LLM. 13B dense LLaMA-based Transformer trained on 1.5T
+  tokens (1.32T English, 0.18T Japanese). 4K context. Apache 2.0.
+  Established PFN's LLM capabilities and launched the PLaMo series.
+tags:
+  - open-weight
+  - multilingual
+model:
+  architecture: dense
+  parameters: 13B
+  context_window: 4096
+related:
+  - plamo-100b

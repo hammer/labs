@@ -1,0 +1,61 @@
+name: Kakao
+slug: kakao
+url: https://www.kakaocorp.com/?lang=en
+wikipedia: https://en.wikipedia.org/wiki/Kakao
+huggingface: https://huggingface.co/kakaocorp
+github: https://github.com/kakao
+region: korea
+founded: "1995"
+type: corporate
+ipo:
+  year: 2017
+  exchange: KRX
+  ticker: "035720"
+valuation:
+  amount: "$14B"
+  type: market-cap
+  ticker: "KRX: 035720"
+  date: "2026-04"
+description: >
+  <p><a href="https://en.wikipedia.org/wiki/Kakao">Kakao</a> (KRX: 035720) is
+  South Korea's leading internet conglomerate, operator of
+  <strong>KakaoTalk</strong> (Korea's dominant messaging app). Its AI research
+  arm evolved from <strong>Kakao Brain</strong> (est. 2017, produced KoGPT and
+  Karlo) which was merged back into Kakao Corp in May 2024, forming the
+  internal <strong>Kanana</strong> AI organization.</p>
+
+  <p>The <strong><a href="https://arxiv.org/abs/2502.18934">Kanana</a></strong>
+  model family (EMNLP 2025 Oral) progressed rapidly: Kanana 1.0 (Feb 2025,
+  2B&ndash;32B dense, 3T tokens) introduced depth up-scaling and distillation;
+  Kanana 1.5 (May 2025) added the first MoE variant (15.7B/3B active) with
+  128K YaRN context; <strong>Kanana-2</strong> (Dec 2025, 30B/3B active MoE,
+  128 experts, MLA attention, 6 languages) achieves MT-Bench 8.42, MATH 86.26,
+  and AIME 2024 78.3 in thinking mode &mdash; comparable to Qwen3-30B-A3B.
+  <strong>Kanana-o</strong> is Korea's first unified multimodal model
+  (text+voice+image), proprietary.</p>
+
+  <p>Kakao pursues a dual strategy: own Kanana models plus partnerships with
+  <strong>OpenAI</strong> (ChatGPT in KakaoTalk, 8M users) and
+  <strong>Google</strong> (on-device AI, TPU infrastructure). Sold Daum portal
+  to <a href="/labs/upstage">Upstage</a> in Jan 2026 to focus on AI.</p>
+people:
+  - name: Chung Shin-a
+    role: CEO, Kakao Corp
+  - name: Kim Byeong-hak
+    role: Head, Kanana AI
+  - name: Yunju Bak
+    role: Pre-training Lead (Kanana paper lead author)
+news:
+  - title: "Kakao Open-Sources Kanana-2 Model Optimized for Agentic AI"
+    url: https://www.koreatimes.co.kr/business/tech-science/20251219/kakao-open-sources-kanana-2-model-optimized-for-agentic-ai
+    source: Korea Times
+    date: 2025-12-19
+  - title: "OpenAI and Kakao to Jointly Develop AI Products for South Korea"
+    url: https://www.cnbc.com/2025/02/04/openai-kakao-to-jointly-develop-ai-products-for-south-korea.html
+    source: CNBC
+    date: 2025-02-04
+tags:
+  - open-weight
+  - moe
+  - multilingual
+  - enterprise

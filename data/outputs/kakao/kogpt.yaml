@@ -1,0 +1,23 @@
+name: KoGPT
+slug: kogpt
+lab: kakao
+type: model
+date: 2021-11-01
+sources:
+  - label: GitHub
+    url: https://github.com/kakaobrain/kogpt
+  - label: HuggingFace
+    url: https://huggingface.co/kakaobrain/kogpt
+description: >
+  Kakao Brain's first LLM. 6.2B parameters, 28 layers, 4096 hidden dim,
+  16 attention heads, RoPE. Trained on 200B tokens of Korean text. 2048
+  context. One of the earliest large Korean language models.
+tags:
+  - open-weight
+  - multilingual
+model:
+  architecture: dense
+  parameters: 6.2B
+  context_window: 2048
+related:
+  - kanana

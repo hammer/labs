@@ -1,0 +1,47 @@
+name: PLaMo 2
+slug: plamo-2
+lab: pfn
+type: model
+date: 2025-09-08
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.04897
+  - label: HuggingFace (8B)
+    url: https://huggingface.co/pfnet/plamo-2-8b
+  - label: HuggingFace (1B)
+    url: https://huggingface.co/pfnet/plamo-2-1b
+description: >
+  <p>Hybrid <strong>Mamba2 + Sliding Window Attention</strong>
+  architecture. PLaMo 2.0-31B (2T tokens), PLaMo 2-8B (6T tokens,
+  ~45% English / ~30% Japanese / ~15% code), PLaMo 2-1B. Weight reusing
+  and structural pruning: PLaMo 2.1-8B (pruned from 31B + 500B token
+  retrain with knowledge distillation) matches PLaMo-100B quality at
+  <strong>7x less compute</strong> (55 vs 372 exaFLOPs).</p>
+
+  <p>32K context via continual pretraining with full attention + RoPE
+  (theta=1M). PLaMo Community License (commercial up to 1B yen
+  revenue).</p>
+tags:
+  - open-weight
+  - multilingual
+  - architecture
+  - efficiency
+model:
+  architecture: dense
+  parameters: 31B
+  context_window: 32000
+  variants:
+    - name: PLaMo 2-1B
+      parameters: 1B
+    - name: PLaMo 2-8B
+      parameters: 8B
+    - name: PLaMo 2.0-31B
+      parameters: 31B
+    - name: PLaMo 2.1-8B
+      parameters: 8B
+      notes: Pruned from 31B, matches PLaMo-100B
+paper:
+  arxiv: "2509.04897"
+related:
+  - plamo-100b

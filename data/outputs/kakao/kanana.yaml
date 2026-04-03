@@ -1,0 +1,39 @@
+name: Kanana
+slug: kanana
+lab: kakao
+type: model
+date: 2025-02-26
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.18934
+  - label: GitHub
+    url: https://github.com/kakao/kanana
+  - label: HuggingFace (Flag 32.5B)
+    url: https://huggingface.co/kakaocorp/kanana-flag-32.5b-base
+description: >
+  <p>Compute-efficient bilingual (Korean/English) LLMs. Dense
+  Transformers at 2.1B (Nano), 9.8B (Essence), and 32.5B (Flag),
+  all trained on <strong>3T tokens</strong> in two stages. Uses
+  depth up-scaling, pruning, and distillation. EMNLP 2025 Oral.</p>
+
+  <p>Flag 32.5B base: MMLU 77.68, KMMLU 62.10, HumanEval 51.22.
+  CC-BY-NC-4.0 (Nano), custom license (others).</p>
+tags:
+  - open-weight
+  - multilingual
+model:
+  architecture: dense
+  parameters: 32.5B
+  variants:
+    - name: Kanana Nano
+      parameters: 2.1B
+    - name: Kanana Essence
+      parameters: 9.8B
+    - name: Kanana Flag
+      parameters: 32.5B
+paper:
+  arxiv: "2502.18934"
+  venue: EMNLP 2025
+related:
+  - kanana-2

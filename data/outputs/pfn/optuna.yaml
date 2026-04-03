@@ -1,0 +1,22 @@
+name: Optuna
+slug: optuna
+lab: pfn
+type: library
+date: 2019-07-25
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/1907.10902
+  - label: GitHub
+    url: https://github.com/optuna/optuna
+description: >
+  Open-source hyperparameter optimization framework. 10K+ GitHub stars,
+  1.43M+ monthly downloads, used in 16K+ applications. Define-by-run
+  API, efficient sampling (TPE, CMA-ES), pruning of unpromising trials.
+tags:
+  - open-source
+  - training
+library:
+  github: https://github.com/optuna/optuna
+paper:
+  arxiv: "1907.10902"

@@ -1,0 +1,22 @@
+name: COYO-700M
+slug: coyo-700m
+lab: kakao
+type: dataset
+date: 2022-08-01
+sources:
+  - label: GitHub
+    url: https://github.com/kakaobrain/coyo-dataset
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/kakaobrain/coyo-700m
+description: >
+  747M image-text pair dataset from CommonCrawl (Oct 2020 - Aug 2021).
+  Filtered from 10B raw pairs. Validated by training ALIGN, unCLIP,
+  and ViT from scratch on COYO, achieving competitive performance with
+  original papers. Used to train Karlo (Kakao's DALL-E 2 variant).
+  CC-BY-4.0.
+tags:
+  - data
+  - open-source
+  - vision
+dataset:
+  github: https://github.com/kakaobrain/coyo-dataset

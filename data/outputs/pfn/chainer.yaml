@@ -1,0 +1,23 @@
+name: Chainer
+slug: chainer
+lab: pfn
+type: library
+date: 2019-08-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/1908.00213
+  - label: Wikipedia
+    url: https://en.wikipedia.org/wiki/Chainer
+description: >
+  Deep learning framework that pioneered the "define-by-run" dynamic
+  computation graph paradigm in 2015, before PyTorch adopted the same
+  approach. Included CuPy (NumPy-like GPU arrays), ChainerMN
+  (distributed training), and ChainerCV. Development ended Dec 2019
+  when PFN migrated to PyTorch. KDD 2019.
+tags:
+  - open-source
+  - training
+  - infrastructure
+paper:
+  arxiv: "1908.00213"
+  venue: KDD 2019

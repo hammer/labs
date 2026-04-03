@@ -1,0 +1,21 @@
+name: PFP / Matlantis
+slug: pfp-matlantis
+lab: pfn
+type: model
+date: 2021-06-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2106.14583
+  - label: Nature Communications
+    url: https://www.nature.com/articles/s41467-022-30687-9
+description: >
+  PreFerred Potential (PFP) — universal neural network interatomic
+  potential covering 96 elements, delivering DFT-level accuracy up to
+  20M x faster. Powers the Matlantis SaaS platform used by 90+
+  companies for materials discovery (batteries, catalysts,
+  semiconductors). PFP v8 uses r2SCAN functional.
+tags:
+  - science
+  - materials
+paper:
+  arxiv: "2106.14583"

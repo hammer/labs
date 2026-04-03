@@ -1,0 +1,30 @@
+name: PLaMo-100B
+slug: plamo-100b
+lab: pfn
+type: model
+date: 2024-10-09
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.07563
+  - label: HuggingFace
+    url: https://huggingface.co/pfnet/plamo-100b
+description: >
+  <p>100B dense Transformer with QK Normalization and Z-Loss for
+  training stability. Trained on <strong>2T tokens</strong> (1.3T
+  English, 0.7T Japanese) in two phases on NVIDIA H100 GPUs with FP8.
+  Funded under Japan's GENIAC/NEDO program.</p>
+
+  <p>Beats GPT-4 on Japanese benchmarks: Jaster 0-shot avg 0.738
+  (vs GPT-4 0.722), 4-shot avg 0.775 (vs 0.772). Japanese MT-Bench:
+  7.78.</p>
+tags:
+  - open-weight
+  - multilingual
+model:
+  architecture: dense
+  parameters: 100B
+paper:
+  arxiv: "2410.07563"
+related:
+  - plamo-2

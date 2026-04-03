@@ -1,0 +1,33 @@
+name: Kanana-2
+slug: kanana-2
+lab: kakao
+type: model
+date: 2025-12-19
+flagship: true
+sources:
+  - label: HuggingFace (Instruct)
+    url: https://huggingface.co/kakaocorp/kanana-2-30b-a3b-instruct
+  - label: HuggingFace (Thinking)
+    url: https://huggingface.co/kakaocorp/kanana-2-30b-a3b-thinking
+description: >
+  <p>30B total / 3B active MoE with <strong>MLA (Multi-head Latent
+  Attention)</strong>, 128 experts (6 selected + 2 shared), 48 layers,
+  128K vocab. 6 languages (ko/en/ja/zh/th/vi). 32K native context,
+  128K with YaRN. Custom tokenizer with 30%+ Korean efficiency gain.</p>
+
+  <p>Instruct: MT-Bench 8.42, MMLU 80.80, MATH 86.26, HumanEval+ 79.88.
+  Thinking: MMLU-Pro 75.3, GPQA-Diamond 61.3, AIME 2024 78.3.
+  Multi-turn tool-calling 3x improved over Kanana-1.5-32.5B.
+  Comparable to Qwen3-30B-A3B. CC-BY-NC-4.0.</p>
+tags:
+  - moe
+  - open-weight
+  - multilingual
+  - reasoning
+model:
+  architecture: moe
+  parameters: 30B
+  active_parameters: 3B
+  context_window: 32000
+related:
+  - kanana
