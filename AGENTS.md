@@ -155,7 +155,7 @@ Detailed step-by-step instructions for common tasks are available as agent skill
 
 ## Important Notes
 
-- Do not push to GitHub or deploy to Netlify without explicit user approval
+- **NEVER push to GitHub or deploy to Cloudflare Pages without explicit user approval.** Always ask first — even if the user just asked you to "commit", that does not mean push. Wait for a clear "push", "deploy", or "push and deploy" instruction.
 - When adding a new lab, also create its output directory, logo, and update README.md
 - When splitting grouped outputs, preserve all existing data (sources, descriptions, model details)
 - Verify builds pass (`npm run build`) before committing
