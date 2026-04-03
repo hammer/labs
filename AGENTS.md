@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**AI Lab Tracker** is a static site tracking Asian AI research labs, their models, and research outputs. Built with Astro, TypeScript, and Zod-validated YAML data. Deployed on Netlify.
+**Lab Index** is a static site tracking Asian AI research labs, their models, and research outputs. Built with Astro, TypeScript, and Zod-validated YAML data. Deployed on Netlify.
 
 **Live site:** https://ai-lab-tracker.netlify.app/
 
@@ -18,11 +18,14 @@ npm run fetch-metrics    # Fetch GitHub/HF/citation metrics
 
 ## Deployment
 
-- Hosted on **Netlify** (project: `ai-lab-tracker`)
-- To link: `netlify link --name ai-lab-tracker`
-- To deploy: `npx netlify deploy --prod --dir=dist`
+**Primary: Cloudflare Pages** (project: `labindex`, domain: `labindex.ai`)
+- To deploy: `npx wrangler pages deploy dist --project-name labindex`
 - Build command: `npm run build`
 - Always run `npm run build` before deploying to catch errors early
+- First-time setup: `npx wrangler login` then `npx wrangler pages project create labindex --production-branch main`
+
+**Legacy: Netlify** (project: `ai-lab-tracker`, domain: `ai-lab-tracker.netlify.app`)
+- To deploy: `npx netlify deploy --prod --dir=dist`
 
 ## Data Structure
 

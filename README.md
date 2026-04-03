@@ -1,8 +1,8 @@
-# AI Lab Tracker
+# Lab Index
 
-A data-driven tracker of Asia's AI research ecosystem: labs, models, papers, and benchmarks.
+A data-driven tracker of the global AI research ecosystem: labs, models, papers, and benchmarks.
 
-**Live site: [ai-lab-tracker.netlify.app](https://ai-lab-tracker.netlify.app)**
+**Live site: [labindex.ai](https://labindex.ai)**
 
 ## Overview
 
