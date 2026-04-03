@@ -1,0 +1,34 @@
+name: DALL-E
+slug: dall-e
+lab: openai
+type: model
+date: 2021-01-05
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2102.12092
+  - label: Announcement
+    url: https://openai.com/index/dall-e/
+description: >
+  <p>"Zero-Shot Text-to-Image Generation" &mdash; a <strong>12B parameter</strong>
+  autoregressive Transformer that generates images from text descriptions. Uses a
+  discrete variational autoencoder (dVAE) to compress images into 32&times;32 grids
+  of visual tokens, then models text and image tokens jointly.</p>
+
+  <p>DALL-E pioneered <strong>text-to-image generation</strong> at scale, demonstrating
+  that Transformers could generate coherent, creative images from natural language prompts
+  &mdash; from "an armchair in the shape of an avocado" to photorealistic scenes. ICML 2021.
+  By Ramesh, Pavlov, Goh, Gray et al. Proprietary.</p>
+tags:
+  - vision
+  - foundational
+  - multimodal
+model:
+  architecture: dense
+  parameters: 12B
+paper:
+  arxiv: "2102.12092"
+  venue: ICML 2021
+related:
+  - clip
+  - dall-e-3

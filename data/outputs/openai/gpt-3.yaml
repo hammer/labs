@@ -1,0 +1,33 @@
+name: GPT-3
+slug: gpt-3
+lab: openai
+type: model
+date: 2020-06-11
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2005.14165
+description: >
+  <p>"Language Models are Few-Shot Learners" &mdash; <strong>175B parameter</strong> dense
+  Transformer (96 layers, 12288 hidden, 96 heads) trained on 300B tokens from a filtered
+  CommonCrawl mix. 2048 token context. Demonstrated that scaling alone enables
+  <strong>in-context few-shot learning</strong> without gradient updates.</p>
+
+  <p>GPT-3 was a landmark: it showed that a single model could perform translation, question
+  answering, and code generation via prompting alone. NeurIPS 2020. One of the most-cited
+  AI papers ever (~30K+ citations). Powered the initial ChatGPT and API products. By Brown,
+  Mann, Ryder, Subbiah et al. Proprietary.</p>
+tags:
+  - frontier
+  - foundational
+model:
+  architecture: dense
+  parameters: 175B
+  context_window: 2048
+paper:
+  arxiv: "2005.14165"
+  venue: NeurIPS 2020
+related:
+  - gpt-2
+  - gpt-4
+  - scaling-laws

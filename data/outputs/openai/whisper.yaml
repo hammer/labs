@@ -1,0 +1,45 @@
+name: Whisper
+slug: whisper
+lab: openai
+type: model
+date: 2022-09-21
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2212.04356
+  - label: GitHub
+    url: https://github.com/openai/whisper
+  - label: HuggingFace
+    url: https://huggingface.co/openai/whisper-large-v3
+description: >
+  <p>"Robust Speech Recognition via Large-Scale Weak Supervision" &mdash; an
+  encoder-decoder Transformer trained on <strong>680,000 hours</strong> of multilingual
+  audio data collected from the web. The largest variant (large-v3) has <strong>1.55B
+  parameters</strong>. Supports transcription and translation across 99 languages.</p>
+
+  <p>Whisper demonstrated that scaling weakly supervised pre-training on diverse audio
+  data approaches human-level robustness without domain-specific fine-tuning. Became
+  the <strong>most widely-used open-source speech recognition model</strong>, integrated
+  into thousands of applications. ICML 2023. By Radford, Kim, Xu et al. MIT License.</p>
+tags:
+  - open-source
+  - open-weight
+  - speech
+  - foundational
+model:
+  architecture: dense
+  parameters: 1.55B
+  variants:
+    - name: Whisper Tiny
+      parameters: 39M
+    - name: Whisper Base
+      parameters: 74M
+    - name: Whisper Small
+      parameters: 244M
+    - name: Whisper Medium
+      parameters: 769M
+    - name: Whisper Large-v3
+      parameters: 1.55B
+paper:
+  arxiv: "2212.04356"
+  venue: ICML 2023

@@ -1,0 +1,24 @@
+name: Triton
+slug: triton
+lab: openai
+type: library
+date: 2021-07-28
+sources:
+  - label: GitHub
+    url: https://github.com/triton-lang/triton
+description: >
+  <p>Open-source GPU programming language and compiler for writing high-performance
+  neural network kernels. Python-like syntax that compiles to optimized GPU code,
+  <strong>3-6x simpler than CUDA</strong> while achieving comparable performance.
+  19K+ GitHub stars.</p>
+
+  <p>Triton lowered the barrier to writing custom GPU kernels from CUDA expertise to
+  Python familiarity. Used extensively in PyTorch, FlashAttention, and throughout the
+  ML infrastructure stack. Key enabler of the custom kernel ecosystem for efficient
+  LLM inference and training. MIT License.</p>
+tags:
+  - open-source
+  - infrastructure
+  - foundational
+library:
+  github: https://github.com/triton-lang/triton

@@ -1,0 +1,32 @@
+name: Codex
+slug: codex
+lab: openai
+type: model
+date: 2021-08-10
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2107.03374
+  - label: GitHub (HumanEval)
+    url: https://github.com/openai/human-eval
+description: >
+  <p>"Evaluating Large Language Models Trained on Code" &mdash; GPT-3 fine-tuned on
+  publicly available code from GitHub. The largest variant, <strong>Codex-12B</strong>,
+  solves 28.8% of HumanEval problems (72.3% with 100 samples). Introduced the
+  <strong>HumanEval benchmark</strong> (164 hand-written Python programming problems)
+  that became an industry standard for code evaluation.</p>
+
+  <p>Codex powered <strong>GitHub Copilot</strong>, the first widely-adopted AI coding
+  assistant, transforming how millions of developers write code. The HumanEval benchmark
+  it introduced is still used by virtually every coding model. By Chen, Tworek et al.
+  Proprietary.</p>
+tags:
+  - coding
+  - foundational
+model:
+  architecture: dense
+  parameters: 12B
+paper:
+  arxiv: "2107.03374"
+related:
+  - gpt-3

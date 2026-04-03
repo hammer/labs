@@ -1,0 +1,26 @@
+name: Proximal Policy Optimization (PPO)
+slug: ppo
+lab: openai
+type: paper
+date: 2017-07-20
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/1707.06347
+description: >
+  <p>Introduced <strong>Proximal Policy Optimization</strong>, a family of policy gradient
+  methods that alternate between sampling data through interaction with the environment and
+  optimizing a "surrogate" objective function using stochastic gradient ascent. PPO uses a
+  clipped surrogate objective that prevents destructively large policy updates while
+  remaining simple to implement.</p>
+
+  <p>PPO became the <strong>default reinforcement learning algorithm for RLHF</strong> in
+  language model alignment, used in InstructGPT, ChatGPT, and virtually every major aligned
+  LLM. One of the most widely-adopted RL algorithms ever created, with applications spanning
+  robotics, game playing, and LLM post-training. By Schulman, Wolski, Dhariwal, Radford, and Klimov.</p>
+tags:
+  - reinforcement-learning
+  - alignment
+  - foundational
+paper:
+  arxiv: "1707.06347"

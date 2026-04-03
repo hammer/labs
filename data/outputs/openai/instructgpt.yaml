@@ -1,0 +1,33 @@
+name: InstructGPT (RLHF)
+slug: instructgpt
+lab: openai
+type: paper
+date: 2022-03-04
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2203.02155
+  - label: Announcement
+    url: https://openai.com/index/instruction-following/
+description: >
+  <p>"Training language models to follow instructions with human feedback" &mdash;
+  introduced the <strong>three-stage RLHF pipeline</strong> that became industry standard:
+  (1) supervised fine-tuning (SFT) on human demonstrations, (2) training a reward model
+  on human preference comparisons, (3) optimizing the policy with PPO against the reward
+  model. Applied to GPT-3 (1.3B and 175B variants).</p>
+
+  <p>InstructGPT showed that a 1.3B model aligned with RLHF could be <strong>preferred
+  over an unaligned 175B model</strong>, demonstrating that alignment is not just about
+  scale. This pipeline &mdash; SFT &rarr; RM &rarr; PPO &mdash; was the direct precursor
+  to ChatGPT and is now used by virtually every aligned LLM worldwide. NeurIPS 2022.
+  By Ouyang, Wu et al.</p>
+tags:
+  - alignment
+  - reinforcement-learning
+  - foundational
+paper:
+  arxiv: "2203.02155"
+  venue: NeurIPS 2022
+related:
+  - ppo
+  - gpt-3

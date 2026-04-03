@@ -1,0 +1,33 @@
+name: GPT-4o
+slug: gpt-4o
+lab: openai
+type: model
+date: 2024-05-13
+flagship: true
+sources:
+  - label: Announcement
+    url: https://openai.com/index/hello-gpt-4o/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gpt-4o
+  - label: OpenRouter
+    url: https://openrouter.ai/openai/gpt-4o
+description: >
+  <p>GPT-4o ("omni") &mdash; OpenAI's first natively <strong>multimodal model</strong>,
+  processing text, audio, image, and video inputs and generating text and audio outputs
+  within a single end-to-end architecture. 128K token context. Parameters undisclosed.</p>
+
+  <p>GPT-4o matched GPT-4 Turbo on text intelligence while being <strong>2x faster and
+  50% cheaper</strong>. Its native audio capabilities enabled real-time voice conversation
+  with emotional expression and multilingual support. Also released as GPT-4o mini
+  (July 2024), a cost-optimized variant. AA Intelligence Index: 17. Proprietary.</p>
+tags:
+  - frontier
+  - multimodal
+  - speech
+model:
+  context_window: 128000
+  intelligence_index: 17
+related:
+  - gpt-4
+  - o1
+  - gpt-5

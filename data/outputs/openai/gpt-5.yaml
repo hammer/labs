@@ -1,0 +1,39 @@
+name: GPT-5
+slug: gpt-5
+lab: openai
+type: model
+date: 2025-08-07
+flagship: true
+sources:
+  - label: Announcement
+    url: https://openai.com/index/introducing-gpt-5/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gpt-5
+  - label: OpenRouter
+    url: https://openrouter.ai/openai/gpt-5
+description: >
+  <p>Multi-component system combining a fast model, reasoning model, and router into a
+  single interface. <strong>400K token context</strong>. Replaced GPT-4o, o3, o4-mini,
+  and GPT-4.1 as the default ChatGPT model. Architecture undisclosed.</p>
+
+  <p>GPT-5 unified fast inference and deep reasoning in one model, with variants spanning
+  from nano (lightweight) to thinking-pro (maximum reasoning). AA Intelligence Index: 45.
+  Proprietary.</p>
+tags:
+  - frontier
+  - reasoning
+  - multimodal
+model:
+  context_window: 400000
+  intelligence_index: 45
+  variants:
+    - name: GPT-5 Main
+      notes: Fast, high-throughput
+    - name: GPT-5 Thinking
+      notes: Reasoning mode
+    - name: GPT-5 Thinking Pro
+      notes: Maximum reasoning accuracy
+related:
+  - gpt-4o
+  - o3
+  - gpt-5.4

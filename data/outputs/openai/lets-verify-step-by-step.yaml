@@ -1,0 +1,30 @@
+name: Let's Verify Step by Step
+slug: lets-verify-step-by-step
+lab: openai
+type: paper
+date: 2023-05-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2305.20050
+  - label: GitHub (PRM800K)
+    url: https://github.com/openai/prm800k
+description: >
+  <p>Demonstrated that <strong>process reward models</strong> (PRMs) that evaluate each
+  step of a reasoning chain significantly outperform outcome reward models (ORMs) that
+  only evaluate the final answer. Released <strong>PRM800K</strong>, a dataset of 800K
+  step-level human feedback labels on mathematical reasoning.</p>
+
+  <p>Process supervision achieved 78.2% on MATH (vs 72.4% for outcome supervision) using
+  best-of-N sampling with GPT-4. This work was a <strong>key precursor to the o1 and o3
+  reasoning models</strong>, establishing that rewarding correct reasoning steps &mdash;
+  not just correct answers &mdash; is critical for reliable mathematical reasoning.
+  By Lightman, Kosaraju, Burda et al.</p>
+tags:
+  - reasoning
+  - alignment
+  - foundational
+paper:
+  arxiv: "2305.20050"
+related:
+  - instructgpt
+  - o1

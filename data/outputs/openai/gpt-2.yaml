@@ -1,0 +1,46 @@
+name: GPT-2
+slug: gpt-2
+lab: openai
+type: model
+date: 2019-02-14
+flagship: true
+sources:
+  - label: Paper (PDF)
+    url: https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf
+  - label: Announcement
+    url: https://openai.com/index/better-language-models/
+  - label: GitHub
+    url: https://github.com/openai/gpt-2
+  - label: HuggingFace
+    url: https://huggingface.co/openai-community/gpt2
+description: >
+  <p>"Language Models are Unsupervised Multitask Learners" &mdash; <strong>1.5B parameter</strong>
+  decoder-only Transformer (48 layers, 1600 hidden, 25 heads) trained on WebText (40GB from
+  Reddit links with 3+ karma). 1024 token context. Released in stages due to concerns about
+  misuse &mdash; the first major AI safety-motivated staged release.</p>
+
+  <p>Demonstrated that sufficiently large language models perform downstream tasks in a
+  <strong>zero-shot setting without explicit fine-tuning</strong>, achieving SOTA on several
+  benchmarks. GPT-2 became a foundational building block for the open-source community and
+  remains one of the most-used models on HuggingFace. By Radford, Wu, Child, Luan, Amodei,
+  and Sutskever. MIT License.</p>
+tags:
+  - open-source
+  - open-weight
+  - foundational
+model:
+  architecture: dense
+  parameters: 1.5B
+  context_window: 1024
+  variants:
+    - name: GPT-2 Small
+      parameters: 124M
+    - name: GPT-2 Medium
+      parameters: 355M
+    - name: GPT-2 Large
+      parameters: 774M
+    - name: GPT-2 XL
+      parameters: 1.5B
+related:
+  - gpt-1
+  - gpt-3

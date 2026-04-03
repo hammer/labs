@@ -1,0 +1,30 @@
+name: GPT-1
+slug: gpt-1
+lab: openai
+type: model
+date: 2018-06-11
+flagship: true
+sources:
+  - label: Paper (PDF)
+    url: https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf
+  - label: Announcement
+    url: https://openai.com/index/language-unsupervised/
+description: >
+  <p>"Improving Language Understanding by Generative Pre-Training" &mdash; the paper that
+  launched the GPT series. A <strong>117M parameter</strong> decoder-only Transformer
+  (12 layers, 768 hidden, 12 heads) pre-trained on BookCorpus with a causal language
+  modeling objective, then fine-tuned for downstream tasks. 512 token context.</p>
+
+  <p>Demonstrated that <strong>generative pre-training followed by discriminative
+  fine-tuning</strong> could achieve strong results across diverse NLP tasks, establishing
+  the paradigm that would scale to GPT-2, GPT-3, and beyond. By Radford, Narasimhan,
+  Salimans, and Sutskever.</p>
+tags:
+  - open-source
+  - foundational
+model:
+  architecture: dense
+  parameters: 117M
+  context_window: 512
+related:
+  - gpt-2

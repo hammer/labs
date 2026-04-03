@@ -1,0 +1,38 @@
+name: o3
+slug: o3
+lab: openai
+type: model
+date: 2025-04-16
+flagship: true
+sources:
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/o3
+  - label: OpenRouter
+    url: https://openrouter.ai/openai/o3
+description: >
+  <p>Second-generation reasoning model, advancing o1's test-time compute scaling.
+  200K token context. Released alongside <strong>o4-mini</strong>, a smaller reasoning
+  variant. o3-mini launched earlier (January 2025) as a cost-efficient option with
+  selectable reasoning effort (low/medium/high).</p>
+
+  <p>o3 achieved <strong>96.7% on AIME 2024</strong> and scored 87.7% on GPQA-Diamond.
+  o3-pro (June 2025) used parallel test-time compute for the highest reasoning accuracy.
+  AA Intelligence Index: 38 (o3), 26 (o3-mini), 33 (o4-mini), 41 (o3-pro). Proprietary.</p>
+tags:
+  - frontier
+  - reasoning
+model:
+  context_window: 200000
+  intelligence_index: 41
+  variants:
+    - name: o3-mini
+      notes: Cost-efficient, January 2025
+    - name: o3
+      notes: Full model, April 2025
+    - name: o4-mini
+      notes: Smaller reasoning variant, April 2025
+    - name: o3-pro
+      notes: Parallel test-time compute, June 2025
+related:
+  - o1
+  - gpt-5

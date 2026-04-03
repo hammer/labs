@@ -1,0 +1,28 @@
+name: Scaling Laws for Neural Language Models
+slug: scaling-laws
+lab: openai
+type: paper
+date: 2020-01-23
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2001.08361
+description: >
+  <p>Established <strong>power-law scaling relationships</strong> between language model
+  performance and three key factors: model size (N), dataset size (D), and compute budget (C).
+  Showed that performance improves predictably as a smooth power law, with model size being
+  the most important factor for a fixed compute budget.</p>
+
+  <p>This paper became the intellectual foundation for the <strong>"scaling hypothesis"</strong>
+  that drove billions in compute investment across the industry. Its conclusions &mdash; that
+  larger models are more sample-efficient and that optimal allocation favors model size over
+  data &mdash; directly shaped GPT-3 and GPT-4 training decisions. Later refined by
+  DeepMind's Chinchilla scaling laws. By Kaplan, McCandlish, Henighan, Brown, Chess, Child,
+  Gray, Radford, Wu, and Amodei.</p>
+tags:
+  - foundational
+  - research
+paper:
+  arxiv: "2001.08361"
+related:
+  - gpt-3

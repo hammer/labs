@@ -1,0 +1,26 @@
+name: OpenAI Gym
+slug: gym
+lab: openai
+type: library
+date: 2016-04-27
+sources:
+  - label: GitHub
+    url: https://github.com/openai/gym
+  - label: Announcement
+    url: https://openai.com/index/openai-gym-beta/
+description: >
+  <p>Toolkit for developing and comparing reinforcement learning algorithms. Provides a
+  standard API for RL environments (CartPole, Atari, MuJoCo, etc.) that became the
+  <strong>universal interface for RL research</strong>. 37K+ GitHub stars.</p>
+
+  <p>Gym standardized how RL agents interact with environments, enabling reproducible
+  benchmarking across the field. Now maintained by the Farama Foundation as
+  <a href="https://github.com/Farama-Foundation/Gymnasium">Gymnasium</a>. MIT License.</p>
+tags:
+  - open-source
+  - reinforcement-learning
+  - foundational
+library:
+  github: https://github.com/openai/gym
+related:
+  - ppo

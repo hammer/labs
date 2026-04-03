@@ -1,0 +1,23 @@
+name: DALL-E 3
+slug: dall-e-3
+lab: openai
+type: model
+date: 2023-10-01
+sources:
+  - label: Paper (PDF)
+    url: https://cdn.openai.com/papers/dall-e-3.pdf
+description: >
+  <p>"Improving Image Generation with Better Captions" &mdash; the third generation of
+  DALL-E, integrated natively into ChatGPT. Key innovation is a <strong>captioning
+  model</strong> that generates detailed, accurate descriptions of training images,
+  dramatically improving text-image alignment.</p>
+
+  <p>DALL-E 3 generates images that closely follow complex, detailed prompts without
+  requiring prompt engineering. Users interact through natural conversation in ChatGPT
+  rather than crafting specialized prompts. By Betker et al. Proprietary.</p>
+tags:
+  - vision
+  - multimodal
+related:
+  - dall-e
+  - clip

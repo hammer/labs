@@ -1,0 +1,41 @@
+name: o1
+slug: o1
+lab: openai
+type: model
+date: 2024-09-12
+flagship: true
+sources:
+  - label: Announcement
+    url: https://openai.com/index/learning-to-reason-with-llms/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/o1
+  - label: OpenRouter
+    url: https://openrouter.ai/openai/o1
+description: >
+  <p>OpenAI's first <strong>reasoning model</strong>, trained with reinforcement learning
+  to perform extended chain-of-thought reasoning before answering. Uses hidden "thinking
+  tokens" to explore multiple approaches, verify steps, and self-correct &mdash; pioneering
+  <strong>test-time compute scaling</strong> where inference cost trades for accuracy.</p>
+
+  <p>o1 achieved breakthrough results on reasoning benchmarks: <strong>83.3% on
+  AIME 2024</strong> (vs 13.4% for GPT-4o), ranked in the 89th percentile on Codeforces,
+  and exceeded human PhD-level accuracy on GPQA-Diamond (78%). 200K context (full o1,
+  December 2024). Also released as o1-mini for cost-efficient reasoning. AA Intelligence
+  Index: 31. Proprietary.</p>
+tags:
+  - frontier
+  - reasoning
+model:
+  context_window: 200000
+  intelligence_index: 31
+  variants:
+    - name: o1-preview
+      notes: Initial preview, September 2024
+    - name: o1-mini
+      notes: Cost-efficient reasoning variant
+    - name: o1
+      notes: Full release, December 2024
+related:
+  - lets-verify-step-by-step
+  - gpt-4o
+  - o3

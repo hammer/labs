@@ -1,0 +1,24 @@
+name: Sora
+slug: sora
+lab: openai
+type: model
+date: 2024-02-15
+flagship: true
+sources:
+  - label: Technical Report
+    url: https://openai.com/index/video-generation-models-as-world-simulators/
+description: >
+  <p>Text-to-video generation model using a <strong>diffusion transformer</strong>
+  operating on spacetime patches. Generates up to 1080p video, up to 20 seconds long,
+  from text descriptions or images. Treats videos as collections of 3D spacetime patches,
+  enabling variable duration, resolution, and aspect ratio.</p>
+
+  <p>Sora demonstrated that the scaling paradigm of transformers extends to video
+  generation, producing coherent scenes with complex motion, multiple characters, and
+  consistent 3D geometry. Previewed February 2024, launched publicly as Sora Turbo in
+  December 2024. Succeeded by Sora 2 (September 2025) with synchronized dialogue.
+  Proprietary.</p>
+tags:
+  - vision
+  - multimodal
+  - video

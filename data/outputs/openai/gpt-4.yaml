@@ -1,0 +1,37 @@
+name: GPT-4
+slug: gpt-4
+lab: openai
+type: model
+date: 2023-03-14
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2303.08774
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gpt-4
+  - label: OpenRouter
+    url: https://openrouter.ai/openai/gpt-4
+description: >
+  <p>GPT-4 technical report. Architecture details undisclosed by OpenAI (parameter count,
+  training data, and hardware not published). 8K token context at launch, extended to
+  <strong>128K</strong> with GPT-4 Turbo (November 2023). Multimodal: accepts both text
+  and image inputs.</p>
+
+  <p>At launch, GPT-4 set new SOTA on virtually every benchmark: scored in the
+  <strong>90th percentile on the bar exam</strong>, 86.4% on MMLU (5-shot), and
+  demonstrated strong coding (67% HumanEval). Represented a significant leap over GPT-3.5
+  in reasoning, factuality, and instruction following. AA Intelligence Index: 13.
+  Proprietary.</p>
+tags:
+  - frontier
+  - multimodal
+  - reasoning
+model:
+  architecture: dense
+  context_window: 128000
+  intelligence_index: 13
+paper:
+  arxiv: "2303.08774"
+related:
+  - gpt-3
+  - gpt-4o

@@ -1,0 +1,35 @@
+name: CLIP
+slug: clip
+lab: openai
+type: paper
+date: 2021-02-26
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2103.00020
+  - label: Announcement
+    url: https://openai.com/index/clip/
+  - label: GitHub
+    url: https://github.com/openai/CLIP
+description: >
+  <p>"Learning Transferable Visual Models From Natural Language Supervision" &mdash;
+  <strong>Contrastive Language-Image Pre-training (CLIP)</strong> trained on 400M
+  image-text pairs from the internet. Uses a dual-encoder architecture (ViT or ResNet
+  for images, Transformer for text) with a contrastive objective to align visual and
+  textual representations in a shared embedding space.</p>
+
+  <p>CLIP became <strong>foundational infrastructure for the entire text-to-image
+  generation ecosystem</strong>: DALL-E 2, Stable Diffusion, Midjourney, and most
+  image generation models use CLIP embeddings. Enabled zero-shot image classification
+  competitive with supervised models. ~30K+ citations. ICML 2021. By Radford, Kim,
+  Hallacy, Ramesh et al. MIT License.</p>
+tags:
+  - open-source
+  - vision
+  - foundational
+  - multimodal
+paper:
+  arxiv: "2103.00020"
+  venue: ICML 2021
+related:
+  - dall-e
