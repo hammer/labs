@@ -282,6 +282,9 @@ const regionFlags: Record<string, string> = {
     });
   });
 
+  // Default sort: intelligence descending
+  sortTable('intelligence');
+
   // Initialize rank numbers
   rows.forEach((row, i) => {
     const rankCell = row.querySelector('.col-rank');
