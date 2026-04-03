@@ -81,6 +81,23 @@ convert -size 200x200 xc:'#brand-color' -gravity center -pointsize 28 -fill whit
 
 Create `data/labs/{slug}.yaml`. Reference similar labs (e.g., `mistral.yaml` for European startups, `deepseek.yaml` for Chinese startups, `lg-ai-research.yaml` for Korean corporates).
 
+### Lab Naming
+
+Use the **highest-level corporate owner** as the lab name, not the AI division or model family:
+- "Kakao" not "Kakao Brain" or "Kanana"
+- "NVIDIA" not "NVIDIA Research" or "Nemotron"
+- "Naver" not "NAVER AI Lab" or "HyperCLOVA"
+
+For well-known abbreviations, use the short form: "PFN" not "Preferred Networks", "BAAI" not "Beijing Academy of Artificial Intelligence".
+
+If the lab has been **reorganized** (e.g., Kakao Brain merged into Kakao Corp → Kanana formed), explain this history in the description — it helps readers understand the continuity of research.
+
+### Multiple GitHub/HuggingFace Orgs
+
+Many labs have legacy orgs from before reorganization. The lab YAML only has one `github:` and one `huggingface:` field — use the **current/primary** org. Mention legacy orgs in the description or link them from individual output source lists:
+- Kakao: primary `kakaocorp` on HF, legacy `kakaobrain` on HF/GitHub
+- PFN: primary `pfnet` on HF, also `pfnet-research` on GitHub
+
 ```yaml
 name: Lab Name
 slug: lab-slug
@@ -153,12 +170,16 @@ If the user specifies a focus (e.g., "focus on Nemotron, only include others if 
 
 ### What Gets Its Own Output Page
 
+**Search the lab's FULL history**, not just current frontier models. Outputs from earlier eras often define the lab's identity and influence (e.g., Kakao's KoGPT and COYO-700M dataset, PFN's Chainer framework and Optuna, Ai2's Dolma corpus). Check the lab's GitHub and HuggingFace for older repos with high star counts.
+
 **Create an output for:**
 - Each major model family or version (Nemotron-4 340B, Nemotron-H, Nemotron 3 Super)
 - Each distinct product line (Codestral, Pixtral, Cosmos)
+- The lab's **first significant model** (establishes their entry into the field)
 - Papers with arxiv IDs that introduce significant innovations
-- Widely-used open-source tools/libraries (Megatron-LM, NeMo)
-- **Training infrastructure and data research** — don't overlook papers on data curation (Dolma, WebOrganizer), scaling laws (Model Ladders, DataDecide), data mixing (OLMix), post-training methods (Tülu/RLVR), evaluation (OLMES, Paloma), and reward modeling (Skywork-Reward). These are often as influential as the models themselves.
+- Widely-used open-source tools/libraries (Megatron-LM, Optuna, Chainer)
+- **Significant datasets** (COYO-700M, Dolma, RefinedWeb, Darwin-CC)
+- **Training infrastructure and data research** — data curation, scaling laws, data mixing, post-training methods, evaluation frameworks, reward modeling
 
 **Do NOT create separate outputs for:**
 - Point releases within the same version (v0.1, v0.2, v0.3 of the same model)
