@@ -1,0 +1,29 @@
+name: LIMO
+slug: limo
+lab: sii
+type: paper
+date: 2025-02-05
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.03387
+  - label: HuggingFace
+    url: https://huggingface.co/GAIR/LIMO
+description: >
+  <p>"Less Is More for Reasoning." Demonstrates that <strong>817
+  curated samples</strong> can match models trained on 100x more data.
+  AIME24: 63.3% (vs 6.5% prior SFT), MATH500: 95.6% (vs 59.2%),
+  45.8% absolute out-of-distribution improvement. Published at
+  COLM 2025.</p>
+
+  <p>LIMR (Feb 2025) extended to RL scaling: 1,389 samples beat the
+  full 8,523-sample dataset. LIMI (Sep 2025) applied to agency:
+  78 samples achieved 73.5% on agency benchmarks with 128x data
+  reduction.</p>
+tags:
+  - reasoning
+  - data
+  - research
+paper:
+  arxiv: "2502.03387"
+  venue: COLM 2025

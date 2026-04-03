@@ -1,0 +1,23 @@
+name: daVinci-Agency
+slug: davinci-agency
+lab: sii
+type: model
+date: 2026-02-02
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.02619
+  - label: HuggingFace
+    url: https://huggingface.co/GAIR/daVinci-Agency
+description: >
+  353B agentic model (fine-tuned GLM-4.6) achieving 47% relative gain
+  on Toolathlon from only 239 training samples. 148% improvement vs
+  model trained on 66K samples. Trajectories average 85K tokens and
+  116 tool calls.
+tags:
+  - agentic
+  - open-weight
+model:
+  architecture: dense
+  parameters: 353B
+paper:
+  arxiv: "2602.02619"

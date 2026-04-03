@@ -1,0 +1,30 @@
+name: daVinci-Dev
+slug: davinci-dev
+lab: sii
+type: model
+date: 2026-01-26
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.18418
+  - label: HuggingFace
+    url: https://huggingface.co/GAIR/daVinci-Dev-72B
+description: >
+  Agent-native mid-training for software engineering. 32B and 72B
+  (Qwen2.5 base). SWE-Bench Verified: 32B 56.1%, 72B 58.5% —
+  surpasses Kimi-Dev using less than half the mid-training tokens
+  (73.1B total). OpenSWE-72B reaches 66.0% (SOTA among SFT methods).
+tags:
+  - coding
+  - agentic
+  - open-weight
+model:
+  architecture: dense
+  parameters: 72B
+  variants:
+    - name: daVinci-Dev-32B
+      parameters: 32B
+    - name: daVinci-Dev-72B
+      parameters: 72B
+paper:
+  arxiv: "2601.18418"

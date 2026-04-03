@@ -1,0 +1,28 @@
+name: ASI-Evolve
+slug: asi-evolve
+lab: sii
+type: paper
+date: 2026-03-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.29640
+  - label: GitHub
+    url: https://github.com/GAIR-NLP/ASI-Evolve
+description: >
+  <p>"AI Accelerates AI." Agentic framework exploring whether AI can
+  advance its own development through a learn-design-experiment-analyze
+  cycle combining evolutionary methods with accumulated human knowledge.</p>
+
+  <p>Demonstrated across three domains: neural architecture design
+  (105 attention architectures surpassing recent benchmarks), data
+  curation (+18 points on MMLU), and RL algorithm design (outperforming
+  existing approaches on math). Subsumes the earlier
+  <a href="https://arxiv.org/abs/2507.18074">ASI-Arch</a> work.</p>
+tags:
+  - architecture
+  - research
+paper:
+  arxiv: "2603.29640"
+related:
+  - asi-arch
+  - davinci-llm

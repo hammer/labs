@@ -1,0 +1,20 @@
+name: ASI-Arch
+slug: asi-arch
+lab: sii
+type: paper
+date: 2025-07-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.18074
+  - label: GitHub
+    url: https://github.com/GAIR-NLP/ASI-Evolve
+description: >
+  "AlphaGo Moment for Model Architecture Discovery." 1,773 autonomous
+  experiments over 20,000 GPU hours discovered 106 novel SOTA linear
+  attention architectures. Top model (PathGateFusionNet) outperforms
+  Mamba2 and Gated DeltaNet.
+tags:
+  - architecture
+  - research
+paper:
+  arxiv: "2507.18074"

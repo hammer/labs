@@ -1,0 +1,69 @@
+name: SII
+slug: sii
+url: https://www.sii.edu.cn/
+huggingface: https://huggingface.co/sii-research
+github: https://github.com/sii-research
+region: china
+founded: "2024"
+type: academic
+description: >
+  <p>The <strong>Shanghai Innovation Institute (SII)</strong> (est. September
+  2024) is a high-level innovation hub bridging academic research and industrial
+  application, founded on the premise that "AI belongs to young people."
+  Received ~500M yuan (~$70M) in donations with 50+ industry partners.
+  President: <strong>Song Haitao</strong> (also at SJTU). Its primary AI
+  research arm is the <strong><a href="https://plms.ai/">GAIR Lab</a></strong>
+  (Generative AI Research, <a href="https://github.com/GAIR-NLP">GitHub</a>,
+  <a href="https://huggingface.co/GAIR">HuggingFace</a>), deeply integrated
+  with <a href="https://en.wikipedia.org/wiki/Shanghai_Jiao_Tong_University">Shanghai
+  Jiao Tong University</a>, with frequent collaborations with
+  <a href="/labs/ant-group">Ant Group</a>/InclusionAI and Sand.ai.</p>
+
+  <p>SII's research labs practice <strong>"radical openness"</strong> &mdash;
+  releasing not just weights but full training trajectories (logs, intermediate
+  checkpoints, data mixtures). The <strong>daVinci</strong> series spans
+  pretraining science
+  (<a href="https://arxiv.org/abs/2603.27164">daVinci-LLM-3B</a>, 8T tokens,
+  matches OLMo-3 7B at half the parameters), software engineering
+  (<a href="https://arxiv.org/abs/2601.18418">daVinci-Dev</a> 32B/72B, 58.5%
+  SWE-Bench), agentic AI
+  (<a href="https://arxiv.org/abs/2602.02619">daVinci-Agency</a>, 353B, 47%
+  gain from only 239 samples), and multimodal
+  (<a href="https://arxiv.org/abs/2603.21986">daVinci-MagiHuman</a>, 15B
+  single-stream video+audio with Sand.ai).</p>
+
+  <p>The <strong>LIMO</strong> ("Less Is More") line demonstrated that 817
+  curated samples can match 100x more data (AIME24 63.3%, COLM 2025).
+  <strong>Data Darwinism</strong> established a systematic L0&ndash;L9 taxonomy
+  for data curation producing the Darwin-CC corpus (504B tokens, 1B+
+  HuggingFace downloads). <a href="https://arxiv.org/abs/2603.29640">ASI-Evolve</a>
+  explores whether AI can accelerate its own development, discovering
+  105 novel attention architectures surpassing recent benchmarks.</p>
+people:
+  - name: Song Haitao
+    role: President, SII
+  - name: Pengfei Liu
+    url: http://pfliu.com/
+    role: Director, GAIR Lab; Associate Professor, SJTU
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=oIz_CYEAAAAJ
+  - name: Ethan Chern
+    url: https://ethanc111.github.io/
+    role: Lead Researcher (daVinci, LIMO)
+    formerly: CMU (MS, Language Technologies)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=zmit6DkAAAAJ
+news:
+  - title: "Shanghai launches innovation institute to bridge AI research and industry"
+    url: https://english.shanghai.gov.cn/en-IndustrialInnovation-Scitechcenter/20250916/4d6fd38abb7a4ebeaadda4aeac20da8b.html
+    source: Shanghai Municipal Government
+    date: 2025-09-16
+tags:
+  - academic
+  - open-source
+  - open-weight
+  - data
+  - reasoning
+  - agentic

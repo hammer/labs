@@ -1,0 +1,29 @@
+name: OpenSWE / daVinci-Env
+slug: openswe
+lab: sii
+type: dataset
+date: 2026-03-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.13023
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/GAIR/OpenSWE
+description: >
+  <p>Large-scale open SWE environment synthesis. 45,320 executable
+  Docker environments spanning 12.8K repos + ~13,000 curated
+  trajectories, built via multi-agent pipeline on a 64-node cluster
+  (~$1.47M total cost: $891K environments + $576K trajectories).</p>
+
+  <p>Models trained on OpenSWE: OpenSWE-32B (62.4% SWE-Bench Verified),
+  OpenSWE-72B (66.0%) &mdash; SOTA among SFT methods. Also shows
+  gains on math and science benchmarks.</p>
+tags:
+  - coding
+  - data
+  - open-source
+paper:
+  arxiv: "2603.13023"
+dataset:
+  github: https://github.com/GAIR-NLP/OpenSWE
+related:
+  - davinci-dev

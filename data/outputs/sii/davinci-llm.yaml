@@ -1,0 +1,33 @@
+name: daVinci-LLM
+slug: davinci-llm
+lab: sii
+type: model
+date: 2026-03-28
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.27164
+  - label: GitHub
+    url: https://github.com/GAIR-NLP/daVinci-LLM
+description: >
+  <p>"The Science of Pretraining." 3B model trained on <strong>8T
+  tokens</strong> with 200+ controlled ablations. Scores 51.72 overall,
+  matching OLMo-3 7B at half the parameters. MATH: 62.80 vs OLMo-3's
+  39.60.</p>
+
+  <p>Introduces the <strong>Data Darwinism</strong> framework for
+  systematic data processing (L0-L9 taxonomy) and a two-stage adaptive
+  curriculum. Full training trajectory released (logs, checkpoints,
+  data mixtures).</p>
+tags:
+  - open-source
+  - open-weight
+  - data
+  - research
+model:
+  architecture: dense
+  parameters: 3B
+paper:
+  arxiv: "2603.27164"
+related:
+  - darwin-data

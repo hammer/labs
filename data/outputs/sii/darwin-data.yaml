@@ -1,0 +1,31 @@
+name: Data Darwinism / Darwin Corpora
+slug: darwin-data
+lab: sii
+type: dataset
+date: 2026-02-08
+flagship: true
+sources:
+  - label: Paper Part I (arXiv)
+    url: https://arxiv.org/abs/2602.07824
+  - label: Paper Part II (arXiv)
+    url: https://arxiv.org/abs/2603.14420
+  - label: HuggingFace (Darwin-CC)
+    url: https://huggingface.co/datasets/GAIR/Darwin-CC
+description: >
+  <p>Systematic data curation framework with L0-L9 quality taxonomy.
+  <strong>Darwin-Science</strong>: 900B-token scientific corpus
+  (+5.60/+8.40 on domain tasks). <strong>Darwin-CC</strong>: 504B
+  tokens from 672B across 8 categories, 30 iterations per category.
+  Surpasses DCLM, Ultra-FineWeb, and FineWeb-Edu.</p>
+
+  <p>Darwin-CC: 1.02B HuggingFace downloads, 3K+ likes.</p>
+tags:
+  - data
+  - open-source
+  - research
+paper:
+  arxiv: "2602.07824"
+dataset:
+  github: https://github.com/GAIR-NLP/daVinci-LLM
+related:
+  - davinci-llm
