@@ -169,6 +169,22 @@ This distinction is **critical** because the home page "Scale" column shows the 
 - A.X K1 (519B) → from scratch (10T tokens, consortium) → `parameters: 519B` ✅
 - A.X 4.0 (72B) → derivative (Qwen2.5) → `base_model: qwen2.5`, no `parameters`
 
+### Multi-Lab Outputs
+
+Some research is a joint effort between multiple labs (e.g., PanGu-Weather by Huawei + PCL, JAIS by MBZUAI + G42/Inception + Cerebras). For these:
+
+```yaml
+lab:
+  - huawei    # first lab listed = file directory
+  - pcl
+```
+
+- Set `lab:` to an array of lab slugs
+- Store the file in the **first lab's** output directory (e.g., `data/outputs/huawei/pangu-weather.yaml`)
+- Pages are automatically generated for ALL lab slugs — the output is accessible at `/outputs/huawei/pangu-weather` AND `/outputs/pcl/pangu-weather`
+- The output appears on both labs' pages via `getOutputsForLab()`
+- List the primary/lead lab first in the array
+
 ### Shared Papers
 
 When one arxiv paper covers multiple distinct models that deserve separate output pages (e.g., Nemotron 3 Nano and Super share arxiv 2512.20856):

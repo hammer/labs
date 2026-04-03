@@ -12,7 +12,7 @@ interface Props {
 
 const { output, showLab = false, labSlug } = Astro.props;
 const labs = Array.isArray(output.lab) ? output.lab : [output.lab];
-const linkSlug = labSlug ?? labs[0];
+const linkSlug = labSlug ?? (output as any)._labSlug ?? labs[0];
 const excerpt = output.description
   ? output.description.length > 150
     ? output.description.slice(0, 150).trimEnd() + '…'

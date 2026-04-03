@@ -6,9 +6,19 @@ import ModelDetails from '../../../components/ModelDetails.astro';
 import { getAllOutputsChronological, getOutputBySlug, getLabBySlug, isGrouped, getOutputTypes } from '../../../data/loader.js';
 
 export function getStaticPaths() {
-  return getAllOutputsChronological().map((o) => ({
-    params: { lab: o._labSlug, slug: o.slug },
-  }));
+  const paths: { params: { lab: string; slug: string } }[] = [];
+  for (const o of getAllOutputsChronological()) {
+    // Always generate the canonical page (file directory)
+    paths.push({ params: { lab: o._labSlug, slug: o.slug } });
+    // For multi-lab outputs, also generate pages for each additional lab
+    const labs = Array.isArray(o.lab) ? o.lab : [o.lab];
+    for (const labSlug of labs) {
+      if (labSlug !== o._labSlug) {
+        paths.push({ params: { lab: labSlug, slug: o.slug } });
+      }
+    }
+  }
+  return paths;
 }
 
 const { lab: labSlug, slug } = Astro.params;

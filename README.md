@@ -73,4 +73,6 @@ Each lab YAML includes: name, slug, URL, region (china/korea), founded date, typ
 
 ### Output Schema
 
-Each output YAML includes: name, slug, lab reference, type (model/paper/library/dataset/blog/announcement), date, sources (labeled links), description, tags, and optional structured data for models (`architecture`, `parameters`, `active_parameters`, `intelligence_index`, `context_window`, `variants`), papers (`arxiv`, `venue`), and libraries (`github`). Grouped outputs contain an `outputs` array of sub-entries for model families with multiple releases.
+Each output YAML includes: name, slug, lab reference, type (model/paper/library/dataset/blog/announcement), date, sources (labeled links), description, tags, and optional structured data for models (`architecture`, `parameters`, `active_parameters`, `intelligence_index`, `context_window`, `base_model`, `variants`), papers (`arxiv`, `venue`), and libraries (`github`). Grouped outputs contain an `outputs` array of sub-entries for model families with multiple releases.
+
+**Multi-lab outputs:** The `lab` field can be a string or array of strings (e.g., `lab: [huawei, pcl]`). The file lives in one directory (first lab listed), but pages are generated for all lab slugs so the output is accessible from any participating lab's URL path. **Derivative models:** Use `model.base_model` instead of `model.parameters` for models fine-tuned from another lab's base — only `parameters` appears in the home page Scale column.

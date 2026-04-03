@@ -77,7 +77,15 @@ export function getAllOutputsChronological(): OutputWithMeta[] {
 }
 
 export function getOutputBySlug(labSlug: string, slug: string): OutputWithMeta | undefined {
-  return loadOutputs().find((o) => o._labSlug === labSlug && o.slug === slug);
+  // First try canonical (file directory) match
+  const canonical = loadOutputs().find((o) => o._labSlug === labSlug && o.slug === slug);
+  if (canonical) return canonical;
+  // For multi-lab outputs, also match by any lab in the lab array
+  return loadOutputs().find((o) => {
+    if (o.slug !== slug) return false;
+    const labs = Array.isArray(o.lab) ? o.lab : [o.lab];
+    return labs.includes(labSlug);
+  });
 }
 
 /** Count outputs for a lab. Grouped entries count as 1. */
