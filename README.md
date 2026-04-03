@@ -51,7 +51,7 @@ npm run validate       # Validate all YAML against Zod schemas
 npm run fetch-metrics  # Fetch GitHub/HF/citation metrics
 ```
 
-Built with [Astro](https://astro.build/) (static output), [Zod](https://zod.dev/) for schema validation, and deployed on [Netlify](https://www.netlify.com/).
+Built with [Astro](https://astro.build/) (static output), [Zod](https://zod.dev/) for schema validation, and deployed on [Cloudflare Pages](https://pages.cloudflare.com/).
 
 ## Data Structure
 

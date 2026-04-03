@@ -18,14 +18,12 @@ npm run fetch-metrics    # Fetch GitHub/HF/citation metrics
 
 ## Deployment
 
-**Primary: Cloudflare Pages** (project: `labindex`, domain: `labindex.ai`)
+Hosted on **Cloudflare Pages** (project: `labindex`, domain: `labindex.ai`)
 - To deploy: `npx wrangler pages deploy dist --project-name labindex`
 - Build command: `npm run build`
 - Always run `npm run build` before deploying to catch errors early
 - First-time setup: `npx wrangler login` then `npx wrangler pages project create labindex --production-branch main`
-
-**Legacy: Netlify** (project: `ai-lab-tracker`, domain: `ai-lab-tracker.netlify.app`)
-- To deploy: `npx netlify deploy --prod --dir=dist`
+- Static output only — do NOT add `@astrojs/cloudflare` adapter (that's for SSR)
 
 ## Data Structure
 
