@@ -1,0 +1,63 @@
+name: NII
+slug: nii
+url: https://llm-jp.nii.ac.jp/en/
+wikipedia: https://en.wikipedia.org/wiki/National_Institute_of_Informatics
+huggingface: https://huggingface.co/llm-jp
+github: https://github.com/llm-jp
+region: japan
+founded: "2000"
+type: academic
+description: >
+  <p>The <a href="https://en.wikipedia.org/wiki/National_Institute_of_Informatics">National
+  Institute of Informatics</a> (NII) is a Japanese inter-university research
+  institute under ROIS/MEXT, led by Director General
+  <strong><a href="https://scholar.google.com/citations?user=gpKS5P0AAAAJ">Sadao
+  Kurohashi</a></strong> (ACL Fellow 2025, Kyoto University professor). NII
+  operates Japan's academic backbone (SINET) and the CiNii scholarly database.</p>
+
+  <p>The <strong><a href="https://llm-jp.nii.ac.jp/en/">LLM-jp</a></strong>
+  project (est. 2023) is Japan's largest open collaborative LLM effort:
+  2,600+ participants from 60+ universities and 200+ companies. Funded through
+  GENIAC/NEDO with compute from Google Cloud Japan and SAKURA Internet.
+  The flagship <strong>LLM-jp-3-172B</strong> (Dec 2024, 2.1T tokens, 50%
+  Japanese/50% English+code) was the largest fully open Japanese model at
+  release, beating GPT-4 on Japanese MT-Bench. <strong>LLM-jp-4</strong>
+  (Mar 2026) introduced MoE (32B/3.8B active, 128 experts, 65K context,
+  11.7T tokens) and "thinking" variants.</p>
+
+  <p>LLM-jp is unique for releasing the <strong>full stack</strong>: weights,
+  training corpus (<a href="https://arxiv.org/abs/2404.17733">llm-jp-corpus</a>,
+  the largest Japanese web corpus), specialized tokenizer (Unigram byte-fallback),
+  fine-tuning recipes, and safety benchmarks (AnswerCarefully). The project is
+  organized into working groups covering corpus construction, safety, multimodal,
+  and real-world robotics interaction.</p>
+people:
+  - name: Sadao Kurohashi
+    role: Director General, NII; LLM-jp founder
+    formerly: Kyoto University (Professor); ACL Fellow 2025
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=gpKS5P0AAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Sadao_Kurohashi1
+  - name: Daisuke Kawahara
+    role: Corpus Building WG Leader
+    formerly: Waseda University (Professor)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Cfp1XmUAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Daisuke_Kawahara1
+  - name: Keisuke Sakaguchi
+    role: Corpus Building WG Leader
+    formerly: Ai2 (2018-2022); Tohoku University
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=6CRBF-MAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Keisuke_Sakaguchi2
+tags:
+  - academic
+  - open-source
+  - open-weight
+  - multilingual

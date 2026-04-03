@@ -9,6 +9,13 @@ let _labs: Lab[] | null = null;
 let _outputs: OutputWithMeta[] | null = null;
 let _metrics: Record<string, MetricsEntry> | null = null;
 
+// In dev mode, don't cache — re-read YAML on every request so changes
+// are picked up without restarting the dev server
+const isDev = import.meta.env?.DEV ?? false;
+function clearCacheIfDev() {
+  if (isDev) { _labs = null; _outputs = null; _metrics = null; }
+}
+
 function loadLabs(): Lab[] {
   if (_labs) return _labs;
   const files = globSync('data/labs/*.yaml').sort();
@@ -46,6 +53,7 @@ function loadOutputs(): OutputWithMeta[] {
 }
 
 export function getAllLabs(): Lab[] {
+  clearCacheIfDev();
   return loadLabs();
 }
 
@@ -73,6 +81,7 @@ export function getOutputsForLab(labSlug: string): OutputWithMeta[] {
 }
 
 export function getAllOutputsChronological(): OutputWithMeta[] {
+  clearCacheIfDev();
   return [...loadOutputs()].sort((a, b) => b.date.localeCompare(a.date));
 }
 

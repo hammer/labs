@@ -1,0 +1,31 @@
+name: LLM-jp (v1/v2)
+slug: llm-jp
+lab: nii
+type: model
+date: 2024-07-04
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.03963
+  - label: HuggingFace
+    url: https://huggingface.co/llm-jp
+  - label: GitHub
+    url: https://github.com/llm-jp
+description: >
+  <p>Main project paper for LLM-jp: a cross-organizational initiative
+  for fully open Japanese LLMs. 81 authors. Covers the design of the
+  v1.0 and v2.0 13B models, the llm-jp-corpus, tokenizer, and
+  fine-tuning methodology. 2,600+ participants from 60+ universities
+  and 200+ companies.</p>
+tags:
+  - open-source
+  - open-weight
+  - multilingual
+  - research
+model:
+  architecture: dense
+  parameters: 13B
+paper:
+  arxiv: "2407.03963"
+related:
+  - llm-jp-3

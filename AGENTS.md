@@ -16,6 +16,8 @@ npm run build            # Build static site (Astro SSG)
 npm run fetch-metrics    # Fetch GitHub/HF/citation metrics
 ```
 
+**YAML changes are live without restart.** In dev mode, the data loader clears its cache on every page render, so editing YAML files and refreshing the browser shows changes immediately. No need to restart the dev server for data changes. Restarts are only needed for `.astro` template or `.ts` code changes (Vite handles those via HMR automatically).
+
 ## Deployment
 
 Hosted on **Cloudflare Pages** (project: `labindex`, domain: `labindex.ai`)

@@ -230,7 +230,7 @@ Fetch the provider page (e.g., `openrouter.ai/mistralai`) and map models to outp
 npm run build        # Verify page count increased and no errors
 ```
 
-Restart dev server: `pkill -f "astro dev"; npm run dev`
+YAML changes are picked up on browser refresh without restarting the dev server. Only restart if you changed `.astro` templates or `.ts` code.
 
 ## 8. Checklist
 

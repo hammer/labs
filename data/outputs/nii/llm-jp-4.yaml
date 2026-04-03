@@ -1,0 +1,39 @@
+name: LLM-jp-4
+slug: llm-jp-4
+lab: nii
+type: model
+date: 2026-03-01
+flagship: true
+sources:
+  - label: HuggingFace (32B MoE)
+    url: https://huggingface.co/llm-jp/llm-jp-4-32b-a3b-base
+  - label: HuggingFace (8B)
+    url: https://huggingface.co/llm-jp/llm-jp-4-8b-base
+description: >
+  <p>Latest generation with MoE and "thinking" variants. 32B/3.8B
+  active MoE (128 routed experts, top-8, 32 layers, 2560 hidden, 40
+  heads). 65K context. Trained on <strong>11.7T tokens</strong> with
+  llm-jp-tokenizer v4.0. Apache 2.0.</p>
+
+  <p>Also includes dense 8B (9B params) with base and thinking
+  variants. MT-Bench JA: 7.57-7.82, MT-Bench EN: 7.70-7.86.
+  Evaluated using GPT-5.4 as judge.</p>
+tags:
+  - moe
+  - open-source
+  - open-weight
+  - reasoning
+  - multilingual
+model:
+  architecture: moe
+  parameters: 32B
+  active_parameters: 3.8B
+  context_window: 65536
+  variants:
+    - name: llm-jp-4-8B
+      parameters: 8B
+    - name: llm-jp-4-32B-A3B
+      parameters: 32B
+      active_parameters: 3.8B
+related:
+  - llm-jp-3

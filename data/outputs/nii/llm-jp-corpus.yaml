@@ -1,0 +1,25 @@
+name: llm-jp-corpus
+slug: llm-jp-corpus
+lab: nii
+type: dataset
+date: 2024-04-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2404.17733
+  - label: GitHub
+    url: https://github.com/llm-jp/llm-jp-corpus
+description: >
+  Largest Japanese web training corpus. 312.1B characters / 173M pages
+  from Common Crawl, Wikipedia, and archived technical papers (Kaken).
+  Includes specialized filtering for Japanese text quality. Evolved
+  through v1-v4 across LLM-jp generations.
+tags:
+  - data
+  - open-source
+  - multilingual
+paper:
+  arxiv: "2404.17733"
+dataset:
+  github: https://github.com/llm-jp/llm-jp-corpus
+related:
+  - llm-jp

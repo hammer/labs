@@ -1,0 +1,36 @@
+name: LLM-jp-3 (172B)
+slug: llm-jp-3
+lab: nii
+type: model
+date: 2024-12-24
+flagship: true
+sources:
+  - label: HuggingFace (172B)
+    url: https://huggingface.co/llm-jp/llm-jp-3-172b-instruct3
+  - label: Announcement
+    url: https://www.nii.ac.jp/en/news/release/2024/1224.html
+  - label: NVIDIA Blog (Training)
+    url: https://developer.nvidia.com/blog/developing-a-172b-llm-with-strong-japanese-capabilities-using-nvidia-megatron-lm/
+description: >
+  <p>172B dense Transformer (96 layers, 12288 hidden, 96 heads).
+  Trained on <strong>2.1T tokens</strong> (50% Japanese, 50%
+  English+code) on llm-jp-corpus v3 using Megatron-LM. Compute from
+  Google Cloud Japan and SAKURA Internet. Post-trained with SFT + DPO.</p>
+
+  <p>Japanese MT-Bench avg 7.57 (writing 9.20, humanities 9.56).
+  Largest fully open Japanese model at release. Also includes 3.1
+  variants: 13B mid-trained (2.5T tokens, MT-Bench JA 7.37) and
+  8x13B MoE (73B total, 32K context). Apache 2.0 for smaller
+  variants; custom license for 172B.</p>
+tags:
+  - open-weight
+  - multilingual
+  - frontier
+model:
+  architecture: dense
+  parameters: 172B
+  context_window: 4096
+related:
+  - llm-jp
+  - llm-jp-4
+  - llm-jp-corpus
