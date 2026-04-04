@@ -1,0 +1,25 @@
+name: Simple Self-Distillation for Code Generation
+slug: simple-self-distillation
+lab: apple
+type: paper
+date: 2026-04-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.01193
+description: >
+  <p>"Embarrassingly Simple Self-Distillation Improves Code Generation." Shows that an
+  LLM can improve at code generation using <strong>only its own raw outputs</strong>,
+  without a verifier, teacher model, or reinforcement learning. Sample solutions from
+  the model, then fine-tune on those samples with standard SFT.</p>
+
+  <p>SSD improves Qwen3-30B-Instruct from 42.4% to <strong>55.3% pass@1 on LiveCodeBench
+  v6</strong>, with gains concentrating on harder problems. Generalizes across Qwen and
+  Llama models at 4B, 8B, and 30B scale. The method resolves a precision-exploration
+  conflict in LLM decoding, reshaping token distributions in a context-dependent way.
+  By Zhang, Bai, Zheng, Jaitly, Collobert, and Zhang.</p>
+tags:
+  - coding
+  - research
+  - foundational
+paper:
+  arxiv: "2604.01193"
