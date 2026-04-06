@@ -1,0 +1,24 @@
+name: SWE-HERO
+slug: swe-hero
+lab: nvidia
+type: paper
+date: 2026-04-02
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.01496
+description: >
+  <p>"From SWE-ZERO to SWE-HERO: Execution-free to Execution-based Fine-tuning for
+  Software Engineering Agents." Two-stage SFT approach: (1) large-scale execution-free
+  trajectories, (2) targeted refinement with execution feedback. SWE-HERO-32B achieves
+  <strong>62.2% on SWE-bench Verified</strong>.</p>
+
+  <p>Released 300K first-stage and 13K second-stage trajectories distilled from a larger
+  model. Despite training exclusively on Python, demonstrates <strong>cross-language
+  generalization</strong> at 44.1% on multilingual benchmarks. By Ludwig, Ahmad,
+  Majumdar, and Ginsburg.</p>
+tags:
+  - coding
+  - agents
+  - research
+paper:
+  arxiv: "2604.01496"
