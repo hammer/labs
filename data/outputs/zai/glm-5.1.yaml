@@ -1,0 +1,35 @@
+name: GLM-5.1
+slug: glm-5.1
+lab: zai
+type: model
+date: 2026-04-07
+flagship: true
+sources:
+  - label: Blog Post
+    url: https://z.ai/blog/glm-5.1
+  - label: HuggingFace
+    url: https://huggingface.co/zai-org/GLM-5.1
+  - label: GitHub
+    url: https://github.com/zai-org/GLM-5.1
+  - label: API Docs
+    url: https://docs.z.ai/guides/llm/glm-5.1
+description: >
+  <p><strong>754B parameter MoE</strong> built for <strong>long-horizon agentic
+  engineering</strong>. Designed to sustain optimization over hundreds of rounds and
+  thousands of tool calls without losing coherence. MIT License.</p>
+
+  <p>Achieves <strong>SOTA 58.4% on SWE-Bench Pro</strong>, plus 42.7% on NL2Repo,
+  63.5% on Terminal-Bench 2.0, 68.7% on CyberGym, and 68.0% on BrowseComp. Improved
+  judgment on ambiguous problems and iterative reasoning revision compared to GLM-5.
+  Available via SGLang, vLLM, xLLM, Transformers, and KTransformers.</p>
+tags:
+  - moe
+  - agentic
+  - coding
+  - frontier
+  - open-weight
+model:
+  architecture: moe
+  parameters: 754B
+related:
+  - glm-5
