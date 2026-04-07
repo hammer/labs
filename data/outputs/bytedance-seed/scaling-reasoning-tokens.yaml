@@ -1,0 +1,23 @@
+name: Scaling Reasoning Tokens via RL and Parallel Thinking
+slug: scaling-reasoning-tokens
+lab: bytedance-seed
+type: paper
+date: 2026-04-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.01302
+description: >
+  <p>"Evidence From Competitive Programming." Empirically demonstrates a
+  <strong>log-linear relationship</strong> between accuracy and the number of reasoning
+  tokens generated during test-time compute scaling, validated on competitive programming
+  benchmarks.</p>
+
+  <p>Combines reinforcement learning with parallel thinking to push the reasoning
+  frontier. By Zhang, Guo, Ren, Chen, Ding, Xin, and Xiao (ByteDance Seed + Princeton,
+  UC Berkeley, Stanford).</p>
+tags:
+  - reasoning
+  - reinforcement-learning
+  - research
+paper:
+  arxiv: "2604.01302"

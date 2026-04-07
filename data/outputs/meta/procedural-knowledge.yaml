@@ -1,0 +1,21 @@
+name: Procedural Knowledge at Scale Improves Reasoning
+slug: procedural-knowledge
+lab: meta
+type: paper
+date: 2026-04-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.01348
+description: >
+  <p>Introduces a <strong>Reasoning Memory RAG framework</strong> that retrieves
+  procedural knowledge (how-to steps and reasoning patterns) at scale to improve LLM
+  reasoning. Demonstrates that retrieved procedures act as scaffolding for multi-step
+  reasoning tasks.</p>
+
+  <p>By Wu, Sachan, Yih, and Chen (Meta FAIR + UCLA). Wen-tau Yih is a senior researcher
+  at Meta FAIR known for foundational work on retrieval-augmented generation.</p>
+tags:
+  - reasoning
+  - research
+paper:
+  arxiv: "2604.01348"

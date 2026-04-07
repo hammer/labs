@@ -1,0 +1,23 @@
+name: Speech LLMs as Contextual Reasoning Transcribers
+slug: cot-asr
+lab: microsoft
+type: paper
+date: 2026-04-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.00610
+description: >
+  <p>Introduces <strong>Chain-of-Thought ASR (CoT-ASR)</strong>, enabling LLMs to
+  analyze speech input and generate contextual reasoning before performing transcription.
+  Uses a <strong>CTC-guided Modality Adapter</strong> to bridge the gap between speech
+  and text representations.</p>
+
+  <p>Achieves a <strong>relative 8.7% reduction in WER</strong> and 16.9% reduction in
+  entity error rate (EER) compared to standard LLM-based ASR. By Deng, Fan, Ren, Wang,
+  and Li at Microsoft Core AI.</p>
+tags:
+  - speech
+  - reasoning
+  - research
+paper:
+  arxiv: "2604.00610"
