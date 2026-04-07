@@ -10,7 +10,7 @@ sources:
   - label: HuggingFace
     url: https://huggingface.co/zai-org/GLM-5.1
   - label: GitHub
-    url: https://github.com/zai-org/GLM-5.1
+    url: https://github.com/zai-org/GLM-5
   - label: API Docs
     url: https://docs.z.ai/guides/llm/glm-5.1
 description: >
