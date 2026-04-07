@@ -1,0 +1,48 @@
+name: Gemma 4
+slug: gemma-4
+lab: google
+type: model
+date: 2026-04-02
+flagship: true
+sources:
+  - label: Announcement
+    url: https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/
+  - label: HuggingFace
+    url: https://huggingface.co/collections/google/gemma-4
+  - label: Apple ML Research
+    url: https://deepmind.google/models/gemma/gemma-4/
+description: >
+  <p>Four-variant family released under <strong>Apache 2.0</strong> (a notable license
+  upgrade from prior Gemma releases). Includes a 31B dense flagship, 26B-A4B MoE
+  (4B active), and edge variants E4B and E2B. <strong>256K token context</strong>
+  for the larger models. Multimodal: text, image, video, audio.</p>
+
+  <p>Architecture features alternating attention, dual RoPE, Per-Layer Embeddings (PLE),
+  and shared KV cache. Gemma 4 31B achieves <strong>85.2% MMLU Pro, 89.2% AIME 2026,
+  80.0% LiveCodeBench v6</strong>, and Codeforces Elo 2,150. Ranked #3 open model on
+  Arena AI text leaderboard. Crossed 2M downloads shortly after release.</p>
+tags:
+  - open-weight
+  - open-source
+  - multimodal
+  - moe
+model:
+  architecture: dense
+  parameters: 31B
+  context_window: 256000
+  variants:
+    - name: Gemma 4 31B
+      parameters: 31B
+      notes: Dense flagship, 256K context
+    - name: Gemma 4 26B-A4B
+      parameters: 26B
+      active_parameters: 4B
+      notes: MoE, 256K context
+    - name: Gemma 4 E4B
+      parameters: 8B
+      notes: Effective 4.5B, 128K context
+    - name: Gemma 4 E2B
+      parameters: 5.1B
+      notes: Effective 2.3B, 128K context
+related:
+  - gemma-3

@@ -41,6 +41,9 @@ model:
     - name: LFM2-24B-A2B
       parameters: 23.8B
       active_parameters: 2.3B
+    - name: LFM2.5-350M
+      parameters: 350M
+      notes: Released April 2026, trained on 28T tokens with RL, <500MB footprint
 paper:
   arxiv: "2511.23404"
 related:

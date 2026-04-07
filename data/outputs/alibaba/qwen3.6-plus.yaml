@@ -1,0 +1,26 @@
+name: Qwen 3.6-Plus
+slug: qwen3.6-plus
+lab: alibaba
+type: model
+date: 2026-04-02
+flagship: true
+sources:
+  - label: Announcement (Caixin)
+    url: https://www.caixinglobal.com/2026-04-02/alibaba-releases-qwen-36-plus-ai-model-with-enhanced-coding-capabilities-102430395.html
+description: >
+  <p>Enterprise-focused frontier model with <strong>1M token context</strong>
+  (up to 65,536 output tokens). Always-on chain-of-thought reasoning and native
+  function calling. Optimized for agentic coding and multimodal code generation.</p>
+
+  <p>Matches <strong>Claude Opus 4.5 on SWE-bench and Terminal-Bench 2.0</strong>.
+  Compatible with Claude Code, Cline, and OpenClaw out of the box. Pricing: 2 yuan
+  (~$0.29) per M input tokens, 12 yuan per M output tokens. Proprietary.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+  - agents
+model:
+  context_window: 1000000
+related:
+  - qwen3.5

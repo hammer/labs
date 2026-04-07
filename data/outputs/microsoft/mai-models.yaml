@@ -1,0 +1,36 @@
+name: MAI Foundation Models
+slug: mai-models
+lab: microsoft
+type: model
+date: 2026-04-02
+flagship: true
+sources:
+  - label: Announcement
+    url: https://microsoft.ai/news/today-were-announcing-3-new-world-class-mai-models-available-in-foundry/
+  - label: MAI-Transcribe-1
+    url: https://microsoft.ai/news/state-of-the-art-speech-recognition-with-mai-transcribe-1/
+description: >
+  <p>Microsoft's first major foundation model push, releasing <strong>three MAI
+  models</strong> in Azure Foundry &mdash; a direct shot at OpenAI and Google
+  dependencies. <strong>MAI-Transcribe-1</strong> (speech-to-text, 25 languages)
+  ranks #1 by FLEURS in 11 core languages, beating Whisper-large-v3 and Gemini 3.1
+  Flash-Lite. <strong>MAI-Voice-1</strong> (text-to-speech) generates 60 seconds of
+  audio in under 1 second on a single GPU. <strong>MAI-Image-2</strong> (text-to-image)
+  debuted #3 on Arena.ai's image leaderboard.</p>
+
+  <p>Marks Microsoft's transition from pure OpenAI dependency to building its own
+  frontier multimodal models internally under VP GenAI Mustafa Suleyman's MAI division.
+  Proprietary, available via Azure Foundry.</p>
+tags:
+  - frontier
+  - multimodal
+  - speech
+  - vision
+model:
+  variants:
+    - name: MAI-Transcribe-1
+      notes: Speech-to-text, 25 languages, beats Whisper-large-v3
+    - name: MAI-Voice-1
+      notes: TTS, 60s audio in <1s on single GPU
+    - name: MAI-Image-2
+      notes: Text-to-image, #3 on Arena.ai
