@@ -32,11 +32,12 @@ Use this prompt template, adapting for the specific lab:
 - Artificial Analysis provider page: search `site:artificialanalysis.ai [lab name]`
 - OpenRouter provider page: search `site:openrouter.ai [lab name]`
 
-**Research Outputs (search all four):**
+**Research Outputs (search all five):**
 - arxiv: `site:arxiv.org [lab name]` and search for specific model names
 - HuggingFace: `site:huggingface.co [lab org name]`
 - GitHub: check repos in their org(s)
 - **Lab research page:** Many labs publish research pages that list papers not easily found via arxiv keyword search (e.g., `machinelearning.apple.com/research`, `research.ibm.com`, `www.amazon.science`). Check these for technique papers at top venues (ICLR, ICML, NeurIPS, CVPR, ICCV) — they are easy to miss but often more impactful than model releases.
+- **SSRN:** Some labs (especially those doing economics, policy, or interdisciplinary AI research) publish on SSRN (`papers.ssrn.com`) rather than arxiv. Search `site:papers.ssrn.com [lab name]`. Note that SSRN blocks automated fetching via Cloudflare — you may need to ask the user to share the paper title/authors.
 
 **For each model found:** total/active parameters, architecture (dense/MoE), context window, training tokens, benchmark scores, AA intelligence score, OpenRouter availability
 

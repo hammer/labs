@@ -1,0 +1,16 @@
+name: AI Agent Traps
+slug: ai-agent-traps
+lab: google
+type: paper
+date: 2026-04-06
+sources:
+  - label: Paper (SSRN)
+    url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6372438
+description: >
+  <p>Position paper from Google DeepMind examining failure modes and risks of
+  AI agents operating in real-world environments. By Matija Franklin, Nenad
+  Tomašev, Julian Jacobs, Joel Z. Leibo, and Simon Osindero (all DeepMind).</p>
+tags:
+  - agents
+  - safety
+  - research
