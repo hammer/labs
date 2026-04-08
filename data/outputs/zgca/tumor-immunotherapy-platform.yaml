@@ -1,0 +1,25 @@
+name: AI-Driven Agentic Design Platform for Tumor Immunotherapy Drugs
+slug: tumor-immunotherapy-platform
+lab: zgca
+type: announcement
+date: 2025-06-15
+flagship: true
+sources:
+  - label: Announcement (ZGCA)
+    url: https://www.bjzgca.edu.cn/en/detail/s1g6856bd5b6r3zexwqaayobgbz9e6dt
+description: >
+  <p>Joint ZGCA + ZGCI flagship announcement: an <strong>agentic AI platform that
+  autonomously identifies optimal drug design objectives and generates candidate
+  molecules</strong> for tumor immunotherapy. Integrates biomedical knowledge with
+  generative AI in an end-to-end workflow.</p>
+
+  <p>The platform's lead candidate, <strong>Z212</strong> &mdash; entirely AI-generated
+  &mdash; achieved <strong>83.7% tumor growth inhibition (TGI)</strong> in MC38
+  humanized mouse efficacy models, significantly outperforming PD-1/PD-L1 comparisons.
+  Z212 has advanced to <strong>Preclinical Candidate (PCC) stage</strong>. The full
+  workflow from sequence to validation was compressed from years to <strong>6
+  months</strong>, demonstrating dramatic acceleration of drug discovery timelines via
+  AI agents.</p>
+tags:
+  - scientific
+  - agents

@@ -1,0 +1,20 @@
+name: MegaDFT
+slug: megadft
+lab: zgca
+type: paper
+date: 2025-08-01
+sources:
+  - label: ZGCI Research
+    url: https://www.zgci.ac.cn/en/
+description: >
+  <p>Scientific computing system that scales <strong>Kohn-Sham Density Functional
+  Theory (DFT) to 100,000 atoms</strong>. DFT is the workhorse method of computational
+  chemistry and materials science, but its O(N³) scaling traditionally limits
+  practical calculations to systems of a few hundred atoms.</p>
+
+  <p>By combining algorithmic innovation with GPU acceleration, MegaDFT enables
+  first-principles simulations of biomolecules and nanomaterials at unprecedented
+  scale, opening new avenues for drug discovery and materials design.</p>
+tags:
+  - scientific
+  - research

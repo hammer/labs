@@ -1,0 +1,20 @@
+name: RLinf
+slug: rlinf
+lab: zgca
+type: library
+date: 2025-09-01
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/ZGCA
+description: >
+  <p>Open-source <strong>reinforcement learning framework for embodied intelligence</strong>
+  post-training. Designed to enable RL fine-tuning of foundation models for embodied
+  AI tasks at scale.</p>
+
+  <p>Part of ZGCI's Embodied Intelligence research direction, complementing their
+  TwinBrainVLA and BayesianVLA Vision-Language-Action research lines.</p>
+tags:
+  - reinforcement-learning
+  - agents
+  - open-source
+  - infrastructure

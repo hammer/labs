@@ -1,0 +1,24 @@
+name: MorphoBench
+slug: morphobench
+lab: zgca
+type: paper
+date: 2025-10-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.14265
+  - label: GitHub
+    url: https://github.com/OpenDCAI/MorphoBench
+description: >
+  <p>Adaptive difficulty reasoning benchmark with <strong>1,300+ test questions</strong>.
+  Validated against advanced reasoning models including <strong>o3 and GPT-5</strong>.
+  Designed to dynamically adjust question difficulty to expose reasoning capability
+  gaps that fixed benchmarks miss.</p>
+
+  <p>Open-sourced via OpenDCAI organization, one of the first major benchmark
+  contributions from ZGCA.</p>
+tags:
+  - reasoning
+  - benchmark
+  - open-source
+paper:
+  arxiv: "2510.14265"

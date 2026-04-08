@@ -1,0 +1,115 @@
+name: Zhongguancun Academy
+slug: zgca
+url: https://www.bza.edu.cn/en/
+huggingface: https://huggingface.co/ZGCA
+region: china
+founded: "2024"
+type: nonprofit
+description: >
+  <p><strong>Zhongguancun Academy (ZGCA, 中关村学院)</strong> and the
+  <strong>Zhongguancun Institute of Artificial Intelligence (ZGCI)</strong> form a
+  Beijing-government-backed AI research consortium operating under a "one body, two
+  institutes" model. ZGCA was founded September 13, 2024 as a joint Ministry of Education
+  + Beijing Municipality higher education institution. ZGCI was founded October 28, 2024
+  under the Beijing Municipal Science & Technology Commission as a national-level applied
+  research institute.</p>
+
+  <p>Leadership has been described as "Microsoft Research Asia AI4Science 2.0" &mdash;
+  the institution recruited an extraordinary concentration of ex-MSR talent. President
+  <a href="https://en.wikipedia.org/wiki/Tie-Yan_Liu">Liu Tieyan (Tie-Yan Liu)</a>
+  (97K+ citations, IEEE/ACM/AAIA Fellow) was Distinguished Scientist at MSR AI4Science
+  and previously Assistant Managing Director at MSR Asia. Vice President
+  <a href="https://taoqin.github.io/">Tao Qin</a> (41K+ citations, 2025 ACM Fellow) led
+  MSR AI for Science Asia. Executive VP <a href="http://faculty.bicmr.pku.edu.cn/~dongbin/">Bin
+  Dong</a> is concurrently Boya Distinguished Professor at Peking University.
+  ZGCI President <strong>Bin Shao</strong> founded MSR's Computational Biology and
+  Scientific Computing Research Groups. Deputy Director
+  <a href="https://zhengsx.github.io/">Shuxin Zheng</a> headed Microsoft Scientific
+  Foundation Models.</p>
+
+  <p>The institution's flagship achievement is the <strong>AI-Driven Agentic Design
+  Platform for Tumor Immunotherapy Drugs</strong>: candidate <strong>Z212</strong>
+  (entirely AI-generated) achieved 83.7% tumor growth inhibition in mouse models and
+  advanced to Preclinical Candidate stage, compressing the design pipeline from years
+  to 6 months. Other research includes <strong>MorphoBench</strong> (adaptive reasoning
+  benchmark), <strong>MegaDFT</strong> (Kohn-Sham DFT scaled to 100K atoms),
+  <strong>RLinf</strong> (open-source RL for embodied AI), and an
+  <strong>ICML 2025 SeePhys Challenge win</strong> beating Gemini 2.5 and o3.
+  Partnerships include 31 universities (Tsinghua, Harbin Institute of Technology), CASIA
+  joint PhD programs, and a co-funded AI 0-1 Original Innovation Fund with
+  <a href="/labs/baai">BAAI</a>.</p>
+people:
+  - name: Liu Tieyan (Tie-Yan Liu)
+    url: https://en.wikipedia.org/wiki/Tie-Yan_Liu
+    role: President of ZGCA / Chairman of ZGCI
+    formerly: Microsoft Research (Distinguished Scientist, MSR AI4Science; Asst Managing Director, MSR Asia); IEEE Fellow (2017); ACM Fellow (2021); AAIA Fellow; Tsinghua EE PhD
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Nh832fgAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Tie-Yan_Liu1
+  - name: Bin Shao
+    url: https://www.binshao.info/
+    role: President of ZGCI
+    formerly: Microsoft Research (Senior Principal Research Manager, AI for Science; founder of Computational Biology and Scientific Computing Research Groups; created Microsoft Graph Engine); PhD Fudan University
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=h9L4CgIAAAAJ
+  - name: Tao Qin
+    url: https://taoqin.github.io/
+    role: Vice President of ZGCA (AI4Science Division)
+    formerly: Microsoft Research (Partner Research Manager, MSR AI for Science Asia); 2025 ACM Fellow; PhD Tsinghua EE
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Bl4SRU0AAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Tao_Qin1
+  - name: Bin Dong
+    url: http://faculty.bicmr.pku.edu.cn/~dongbin/
+    role: Executive Vice President of ZGCA
+    formerly: Peking University (Boya Distinguished Professor, BICMR); UCSD; Arizona; PhD UCLA; ICM 2022 Sectional Lecture; New Cornerstone Investigator
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=zLXcC90AAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Bin_Dong1
+  - name: Shuxin Zheng
+    url: https://zhengsx.github.io/
+    role: Deputy Director of ZGCI / Head of Large Model Division
+    formerly: Microsoft Research (Principal Researcher, Head of Microsoft Scientific Foundation Models); PhD USTC (MSRA Joint PhD Program); Graphormer first-author
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=rPhGUw0AAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Shuxin_Zheng1
+  - name: Haiguang Liu
+    role: Chief Scientist
+    formerly: Microsoft Research (AI for Science); Beijing Computational Science Research Center (tenured); LBNL; PhD UC Davis
+  - name: Chenglin Liu
+    url: https://people.ucas.edu.cn/~liuchenglin?language=en
+    role: Vice President of ZGCA
+    formerly: Vice President, Institute of Automation, Chinese Academy of Sciences; IEEE/IAPR/CAA/CAAI Fellow
+  - name: Guoliang Li
+    url: https://dbgroup.cs.tsinghua.edu.cn/ligl/
+    role: Vice President of ZGCA
+    formerly: Tsinghua University (Professor, Associate Dean of CS); ACM Fellow; IEEE Fellow
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Pi89P8kAAAAJ
+news:
+  - title: "Tao Qin Elected 2025 ACM Fellow"
+    url: https://www.acm.org/media-center/2026/january/fellows-2025
+    source: ACM
+    date: 2026-01-15
+  - title: "ZGCA & ZGCI Unveil AI-Driven Tumor Immunotherapy Drug Design Platform"
+    url: https://www.bjzgca.edu.cn/en/detail/s1g6856bd5b6r3zexwqaayobgbz9e6dt
+    source: Zhongguancun Academy
+    date: 2025-06-15
+  - title: "Zhongguancun Institute of Artificial Intelligence Established"
+    url: https://www.zgci.ac.cn/en/
+    source: ZGCI
+    date: 2024-10-28
+tags:
+  - scientific
+  - research
+  - nonprofit

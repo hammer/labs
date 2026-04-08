@@ -1,0 +1,21 @@
+name: TwinBrainVLA
+slug: twinbrain-vla
+lab: zgca
+type: paper
+date: 2025-09-01
+sources:
+  - label: HuggingFace Papers (ZGCA org)
+    url: https://huggingface.co/ZGCA
+description: >
+  <p>"Unleashing the Potential of Generalist VLMs for Embodied Tasks via Asymmetric
+  Mixture-of-Transformers." Introduces an <strong>asymmetric Mixture-of-Transformers
+  architecture</strong> for Vision-Language-Action (VLA) models that enables generalist
+  vision-language models to perform embodied tasks effectively.</p>
+
+  <p>Part of ZGCI's embodied intelligence research direction, alongside BayesianVLA
+  and the RLinf training framework.</p>
+tags:
+  - vision
+  - multimodal
+  - agents
+  - research
