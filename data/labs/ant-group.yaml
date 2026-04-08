@@ -48,6 +48,11 @@ people:
     url: https://www.weforum.org/people/he-zhengyu/
     role: CTO & VP (AI oversight)
     formerly: PhD Georgia Institute of Technology
+news:
+  - title: "Interview: Ant Group's Open Model Ambitions"
+    url: https://www.interconnects.ai/p/inside-a-chinese-frontier-lab-inclusion
+    source: Interconnects
+    date: 2025-11-12
 relationships:
   - lab: alibaba
     type: affiliate
