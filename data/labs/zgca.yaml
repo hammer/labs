@@ -35,9 +35,22 @@ description: >
   benchmark), <strong>MegaDFT</strong> (Kohn-Sham DFT scaled to 100K atoms),
   <strong>RLinf</strong> (open-source RL for embodied AI), and an
   <strong>ICML 2025 SeePhys Challenge win</strong> beating Gemini 2.5 and o3.
-  Partnerships include 31 universities (Tsinghua, Harbin Institute of Technology), CASIA
-  joint PhD programs, and a co-funded AI 0-1 Original Innovation Fund with
-  <a href="/labs/baai">BAAI</a>.</p>
+  Partnerships include 31 universities (Tsinghua, Harbin Institute of Technology) and
+  CASIA joint PhD programs.</p>
+
+  <p>ZGCA and ZGCI share a campus at <strong>Haidian Dayue Information Technology
+  Park</strong> (No. 17 Daniufang Second Ring Road, Haidian District, Beijing).
+  Together with <a href="/labs/baai">BAAI</a> (founded 2018, headquartered ~15 km
+  southeast in Wudaokou near Tsinghua), they form a complementary triad in Beijing's
+  Haidian District AI ecosystem: <strong>BAAI</strong> focuses on foundational
+  infrastructure (BGE embeddings, FlagOS computing stack, Aquila/Tele-FLM LLMs, the
+  WuJie multimodal/embodied series), while <strong>ZGCA</strong> drives talent
+  cultivation and AI-for-Science research and <strong>ZGCI</strong> drives applied
+  industrial research (drug discovery, embodied AI, robotics). The two institutions
+  operate independently &mdash; no documented co-authored papers or interlocking
+  leadership &mdash; but compete and collaborate within the same ecosystem of
+  partners (Tsinghua, PKU, Infinigence AI) and present at the annual
+  <a href="https://www.zgcforum.com.cn/en/">Zhongguancun Forum</a>.</p>
 people:
   - name: Liu Tieyan (Tie-Yan Liu)
     url: https://en.wikipedia.org/wiki/Tie-Yan_Liu

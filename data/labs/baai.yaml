@@ -42,22 +42,43 @@ description: >
   <p>BAAI redirected its research energy into high-impact specialized directions:
   <strong><a href="https://github.com/FlagOpen/FlagEmbedding">BGE</a></strong>
   embeddings (among the most downloaded models on HuggingFace globally),
-  <strong>Emu3</strong> (unified multimodal next-token prediction),
+  <strong>Emu3</strong> (unified multimodal next-token prediction, published in
+  <a href="https://www.nature.com/articles/s41586-025-10041-x">Nature 2025</a>),
   <strong><a href="https://github.com/FlagOpen/FlagEval">FlagEval</a></strong>
   benchmarks, the <strong><a href="https://github.com/FlagOpen">FlagOpen</a></strong>
   open-source ecosystem, and the
   <strong><a href="/outputs/baai/robobrain">RoboBrain</a></strong> embodied AI
-  series. The strategy proved prescient: while others chased scale, BAAI's compact
-  models and tooling became foundational infrastructure across the Chinese AI
-  industry.</p>
+  series. Under <strong>Wang Zhongyuan</strong> (President since February 2024,
+  formerly VP of Tech at Kuaishou), BAAI announced the <strong>WuJie (悟界)</strong>
+  series in June 2025 &mdash; a pivot toward "physical AGI" comprising Emu3
+  (multimodal world model), Brain&mu; (neuroscience), RoboBrain 2.0 (embodied),
+  and OpenComplex2 (life sciences). BAAI was added to the U.S. Commerce Entity List
+  in March 2025.</p>
+
+  <p>BAAI is one of three pillars of Beijing's Haidian District AI ecosystem,
+  alongside the newer <a href="/labs/zgca">Zhongguancun Academy (ZGCA) and
+  Zhongguancun Institute of AI (ZGCI)</a> (both founded 2024 by ex-Microsoft
+  Research AI4Science leadership). BAAI is headquartered at Zhiyuan Mansion
+  (智源大厦) on Chengfu Road in Wudaokou, ~15&nbsp;km southeast of ZGCA/ZGCI's
+  Haidian Dayue IT Park campus. The three institutions operate as complementary,
+  not formally linked entities: BAAI provides foundational infrastructure (BGE,
+  FlagOS, Aquila), ZGCA cultivates AI talent and AI-for-Science research, and
+  ZGCI focuses on industrial applications (drug discovery, embodied AI). BAAI
+  separately maintains an <strong>AI 0-1 Original Innovation Fund</strong> with
+  Zhongguancun Development Group (ZGC Group, the Beijing state-owned holding
+  company &mdash; a different entity from ZGCA). All three regularly present at
+  the annual <a href="https://www.zgcforum.com.cn/en/">Zhongguancun Forum</a>.</p>
 people:
   - name: Zhang Hongjiang
     url: https://en.wikipedia.org/wiki/Zhang_Hongjiang
     role: Founder & Chairman
     formerly: Microsoft Research Asia (co-founder); Kingsoft CEO
+  - name: Wang Zhongyuan
+    role: President / Director (since Feb 2024)
+    formerly: Kuaishou (VP of Tech); Meituan; Facebook; Microsoft Research Asia; Renmin University BS CS
   - name: Huang Tiejun
     url: https://scholar.google.com/citations?user=knvEK4AAAAAJ
-    role: Director
+    role: Board Chairman (former Director, 2018-2024)
     formerly: Professor, Peking University
     urls:
       - label: OpenReview
