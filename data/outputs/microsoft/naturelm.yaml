@@ -1,0 +1,44 @@
+name: Nature Language Model (NatureLM)
+slug: naturelm
+lab: microsoft
+type: model
+date: 2025-02-11
+flagship: true
+sources:
+  - label: Project Page
+    url: https://naturelm.github.io/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.07527
+  - label: GitHub
+    url: https://github.com/microsoft/SFM
+description: >
+  <p>Sequence-based <strong>science foundation model</strong> from Microsoft Research
+  AI for Science that unifies <strong>small molecules, materials, proteins, DNA, and
+  RNA</strong> for text-driven scientific discovery. Available in 1B, 8B, and
+  <strong>46.7B (8&times;7B MoE)</strong> sizes.</p>
+
+  <p>Trained on <strong>hundreds of billions of curated tokens</strong> from biology,
+  chemistry, and materials science. Enables cross-domain integration tasks combining
+  knowledge across modalities. Top performance on many scientific tasks, matching
+  specialist models, with applications in drug discovery, protein design, material
+  engineering, and RNA design. By Xia, Jin, Xie, and 75+ co-authors at Microsoft
+  Research AI for Science.</p>
+tags:
+  - scientific
+  - moe
+  - foundational
+model:
+  architecture: moe
+  parameters: 46.7B
+  active_parameters: 13B
+  variants:
+    - name: NatureLM 1B
+      parameters: 1B
+    - name: NatureLM 8B
+      parameters: 8B
+    - name: NatureLM 8x7B
+      parameters: 46.7B
+      active_parameters: 13B
+      notes: Mixture of Experts
+paper:
+  arxiv: "2502.07527"
