@@ -1,0 +1,26 @@
+name: BioT5+
+slug: biot5-plus
+lab: microsoft
+type: paper
+date: 2024-02-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.17810
+description: >
+  <p>"Towards Generalized Biological Understanding with IUPAC Integration and Multi-task
+  Tuning." Builds on BioT5 by incorporating <strong>IUPAC nomenclature</strong>,
+  extensive biomedical data from bioRxiv and PubChem, multi-task instruction tuning,
+  and improved numerical tokenization. Bridges molecular representations with textual
+  descriptions for comprehensive biological entity understanding.</p>
+
+  <p>Evaluated on <strong>3 problem types (classification, regression, generation),
+  15 task types, and 21 benchmark datasets</strong>, achieving SOTA on most. Targets
+  drug discovery and bioinformatics applications. By Pei, Wu, Gao, Liang, Fang, Zhu,
+  Xie, Qin, and Yan from Microsoft Research AI for Science Asia.</p>
+tags:
+  - scientific
+  - research
+paper:
+  arxiv: "2402.17810"
+related:
+  - naturelm
