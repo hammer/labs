@@ -58,13 +58,15 @@ people:
   - name: Peter Lee
     role: President, Microsoft Research
     formerly: CMU CS Dept Chair; DARPA
-  - name: Tao Qin
-    url: https://taoqin.github.io/
-    role: Former Partner Research Manager, MSR AI for Science Asia (now VP, Zhongguangcun Academy)
-    formerly: Tsinghua University (PhD); USTC (Adjunct Professor)
+  - name: Liu Tieyan (Tie-Yan Liu)
+    url: https://en.wikipedia.org/wiki/Tie-Yan_Liu
+    role: Former Distinguished Scientist, MSR AI4Science (now President of Zhongguancun Academy)
+    formerly: MSR Asia (Asst Managing Director); Tsinghua EE PhD; IEEE Fellow (2017); ACM Fellow (2021)
     urls:
       - label: Google Scholar
-        url: https://scholar.google.com/citations?user=Bl4SRU0AAAAJ
+        url: https://scholar.google.com/citations?user=Nh832fgAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Tie-Yan_Liu1
 news:
   - title: "Phi-4 Reasoning Models Released with Chain-of-Thought"
     url: https://huggingface.co/microsoft/phi-4-reasoning-plus
