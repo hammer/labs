@@ -14,7 +14,7 @@ The home page provides a sortable table with columns for region (country flag), 
 
 **Canada (1):** Cohere
 
-**China (24):** Alibaba, Ant Group, BAAI, Baichuan, Baidu, ByteDance Seed, DeepSeek, Huawei, IDEA Lab, Inspur, Kuaishou, Meituan, MiniMax, Moonshot AI, OpenBMB, PCL, SenseTime, Shanghai AI Lab, SII, StepFun, Tencent, Xiaomi, Z.ai, Zhongguancun Academy
+**China (24):** Alibaba, Ant Group, BAAI, Baichuan, Baidu, ByteDance Seed, DeepSeek, Huawei, IDEA Lab, Inspur, Kuaishou, Meituan, MiniMax, Moonshot AI, OpenBMB, PCL, SenseTime, Shanghai AI Lab, SII, StepFun, Tencent, Xiaomi, Z.ai, ZGCA
 
 **France (1):** Mistral
 
