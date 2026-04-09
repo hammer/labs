@@ -13,6 +13,8 @@ sources:
     url: https://github.com/zai-org/GLM-5
   - label: API Docs
     url: https://docs.z.ai/guides/llm/glm-5.1
+  - label: YouTube
+    url: https://www.youtube.com/watch?v=T-eBZIMc_sY
 description: >
   <p><strong>754B parameter MoE</strong> built for <strong>long-horizon agentic
   engineering</strong>. Designed to sustain optimization over hundreds of rounds and
