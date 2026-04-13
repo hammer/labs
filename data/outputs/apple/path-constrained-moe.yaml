@@ -1,0 +1,25 @@
+name: Path-Constrained Mixture-of-Experts
+slug: path-constrained-moe
+lab: apple
+type: paper
+date: 2026-03-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.18297
+description: >
+  <p>Introduces a novel perspective on sparse MoE by examining <strong>expert
+  paths</strong> &mdash; the sequence of expert selections tokens make across layers.
+  Observes that tokens naturally cluster into a small set of paths aligned with
+  linguistic function, despite a theoretically exponential path space.</p>
+
+  <p>Constrains the effective path space through <strong>parameter sharing across
+  consecutive layer blocks</strong>, producing more concentrated path clusters, better
+  cross-layer consistency, and greater routing robustness &mdash; without auxiliary
+  losses. Tested at 0.9B and 16B scale with consistent improvements on perplexity
+  and downstream tasks. By Gu, Likhomanenko, Thilak, Ramapuram, and Jaitly.</p>
+tags:
+  - moe
+  - foundational
+  - research
+paper:
+  arxiv: "2603.18297"
