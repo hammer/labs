@@ -1,0 +1,23 @@
+name: "Nexus: Common Minima for Better Generalization"
+slug: nexus
+lab: bytedance-seed
+type: paper
+date: 2026-04-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.09258
+description: >
+  <p>"Same Pretraining Loss, Better Downstream Generalization via Common Minima."
+  Proposes that the geometric closeness of task-specific minima during pretraining is
+  intrinsically linked to downstream generalization. Introduces <strong>Nexus</strong>,
+  an optimizer that encourages alignment of minima by maximizing gradient similarity.</p>
+
+  <p>At 3B scale, achieves comparable pretraining loss while reducing out-of-distribution
+  loss by 0.012 and improving reasoning accuracy by up to <strong>15% on GSM8K</strong>.
+  Challenges the assumption that pretraining loss alone indicates model quality. By Chen,
+  Zhang, Li, Dong, Shen, and Zhu (ByteDance Seed + Tsinghua).</p>
+tags:
+  - foundational
+  - research
+paper:
+  arxiv: "2604.09258"
