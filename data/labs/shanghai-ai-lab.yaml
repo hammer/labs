@@ -9,7 +9,7 @@ type: academic
 description: >
   <p>The Shanghai Artificial Intelligence Laboratory, officially known as the 
   <strong>Pujiang Laboratory</strong> (浦江实验室), is a state-backed 
-  <a href="https://www.csis.org/analysis/chinas-new-type-research-and-development-organizations">new-type research institution</a> 
+  <strong>new-type research institution</strong> 
   (新型研发机构) established in July 2020 by the <a href="https://english.shanghai.gov.cn/">Shanghai Municipal Government</a>. 
   The institution is most commonly referred to as <strong>PJLab</strong> in technical contexts 
   (reflected in its domain, <code>pjlab.org.cn</code>) and <strong>SAIL</strong> in international 
