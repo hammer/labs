@@ -1,0 +1,30 @@
+name: "Reasoning with Latent Thoughts: On the Power of Looped Transformers"
+slug: looped-transformers
+lab: google
+type: paper
+date: 2025-02-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.17416
+description: >
+  <p>Demonstrates that <strong>looped Transformers</strong> &mdash; where a k-layer model
+  is looped L times &mdash; can nearly match a kL-layer non-looped model on reasoning
+  tasks while using far fewer parameters. A 12-layer model looped twice (12&otimes;2)
+  outperforms a 24-layer 1B baseline on math word problems (<strong>34.3% vs 29.3%</strong>)
+  and reasoning primitives (<strong>51.2% vs 47.5%</strong>), despite higher perplexity
+  (7.90 vs 7.40).</p>
+
+  <p>Provides theoretical foundations showing looped models implicitly generate intermediate
+  reasoning steps analogous to chain-of-thought: a model with m loops can simulate m steps
+  of CoT reasoning. On synthetic tasks, single-layer models looped to target depth achieve
+  near-perfect accuracy (99.6% on 32-operand addition, 99.5% on 32-hop induction). Accuracy
+  scales logarithmically with effective depth, with looped models showing <strong>1.19&times;
+  higher scaling coefficient</strong> than equivalently deep non-looped models. Published at
+  ICLR 2025.</p>
+tags:
+  - architecture
+  - reasoning
+  - efficiency
+paper:
+  arxiv: "2502.17416"
+  venue: ICLR 2025
