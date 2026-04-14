@@ -1,0 +1,28 @@
+name: Parallel Loop Transformer
+slug: parallel-loop-transformer
+lab: bytedance-seed
+type: paper
+date: 2025-10-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.24824
+description: >
+  <p>Proposes <strong>Parallel Loop Transformer (PLT)</strong>, which eliminates the
+  sequential bottleneck of looped Transformers by computing different loops for different
+  tokens simultaneously within a single pass. Introduces three key techniques:
+  <strong>Cross-Loop Parallelism</strong> (CLP) for parallel loop execution,
+  <strong>KV-cache sharing</strong> from the first loop to prevent memory expansion, and
+  <strong>Gated Sliding-Window Attention</strong> (G-SWA) to balance global and local
+  context.</p>
+
+  <p>Validated on ByteDance's internal Seed-MoE models (680M/13B and 2.5B/60B) and
+  open-source dense/MoE settings. PLT-2 on a 1.7B/40B MoE reaches <strong>77.3 MMLU</strong>
+  and <strong>80.5 CEval</strong>, matching a 2.5B/60B baseline at ~30% lower latency.
+  PLT-2 reduces inference latency by <strong>47%</strong> versus vanilla looped Transformers
+  with only 1.4% KV-cache overhead. Enables efficient test-time computation scaling
+  without the parameter or latency cost of deeper models.</p>
+tags:
+  - efficiency
+  - architecture
+paper:
+  arxiv: "2510.24824"
