@@ -1,0 +1,43 @@
+name: Harrier
+slug: harrier
+lab: microsoft
+type: model
+date: 2026-04-07
+flagship: true
+sources:
+  - label: Announcement
+    url: https://blogs.bing.com/search/April-2026/Microsoft-Open-Sources-Industry-Leading-Embedding-Model
+  - label: HuggingFace (27B)
+    url: https://huggingface.co/microsoft/harrier-oss-v1-27b
+  - label: HuggingFace (0.6B)
+    url: https://huggingface.co/microsoft/harrier-oss-v1-0.6b
+  - label: HuggingFace (270M)
+    url: https://huggingface.co/microsoft/harrier-oss-v1-270m
+description: >
+  <p>Open-source <strong>multilingual text embedding</strong> model family optimized for
+  agentic AI systems. Decoder-only architecture with last-token pooling and L2
+  normalization. Trained via contrastive learning on large-scale multilingual data with
+  knowledge distillation from larger embedding models. Supports <strong>94 languages</strong>
+  with 32K token context.</p>
+
+  <p>The 27B variant achieves <strong>#1 on MTEB-v2</strong> (74.3), the industry-standard
+  multilingual embedding benchmark. Designed as a foundational layer for memory, ranking,
+  and orchestration in agent-based systems &mdash; enabling cross-source retrieval,
+  persistent memory over extended interactions, and dynamic context updates across
+  multi-step tasks. MIT License.</p>
+tags:
+  - open-weight
+  - embedding
+  - multilingual
+model:
+  architecture: dense
+  variants:
+    - name: Harrier 27B
+      parameters: 27B
+      notes: "MTEB-v2: 74.3, 5376-dim embeddings"
+    - name: Harrier 0.6B
+      parameters: 0.6B
+      notes: "MTEB-v2: 69.0, 1024-dim embeddings"
+    - name: Harrier 270M
+      parameters: 270M
+      notes: "MTEB-v2: 66.5, 640-dim embeddings"
