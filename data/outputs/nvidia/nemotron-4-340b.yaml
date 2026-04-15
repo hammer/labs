@@ -24,6 +24,7 @@ model:
   architecture: dense
   parameters: 340B
   context_window: 4096
+  training_tokens: 9T
 paper:
   arxiv: "2406.11704"
 related:

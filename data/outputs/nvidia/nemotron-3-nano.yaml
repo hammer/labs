@@ -37,6 +37,7 @@ model:
   active_parameters: 3.5B
   context_window: 1000000
   intelligence_index: 24
+  training_tokens: 25T
   variants:
     - name: Nemotron 3 Nano 30B-A3B
       parameters: 30B

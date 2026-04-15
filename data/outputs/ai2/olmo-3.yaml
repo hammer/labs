@@ -37,6 +37,7 @@ model:
   parameters: 32B
   context_window: 65536
   intelligence_index: 14
+  training_tokens: 5.9T
   variants:
     - name: OLMo 3 7B
       parameters: 7B

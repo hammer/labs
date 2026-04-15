@@ -22,6 +22,7 @@ outputs:
     model:
       parameters: 1.1T
       architecture: moe
+      training_tokens: 329B
   - name: "PanGu-Sigma: Towards Trillion Parameter Language Model with Sparse Heterogeneous Computing"
     type: paper
     date: 2023-03-20

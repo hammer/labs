@@ -31,6 +31,7 @@ model:
   parameters: 6.9B
   active_parameters: 1.3B
   context_window: 4096
+  training_tokens: 5.13T
 paper:
   arxiv: "2409.02060"
 related:

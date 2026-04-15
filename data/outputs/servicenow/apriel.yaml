@@ -23,6 +23,7 @@ tags:
 model:
   architecture: dense
   parameters: 4.8B
+  training_tokens: 4.5T
   variants:
     - name: Apriel-5B
       parameters: 4.8B

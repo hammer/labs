@@ -130,6 +130,7 @@ model:
   active_parameters: 41B       # MoE only
   context_window: 256000
   intelligence_index: 23       # from Artificial Analysis
+  training_tokens: 15T         # total pretraining tokens from tech report (e.g., 15T, 500B)
   variants:                    # size variants released together
     - name: Model-7B
       parameters: 7B
@@ -269,7 +270,7 @@ Before creating an output, verify it belongs. Do **not** create outputs for:
 
 - [ ] Technical report read (HTML version) if available; blog post checked if not
 - [ ] **From scratch vs derivative determined** — only set `model.parameters` for from-scratch models; use `model.base_model` for derivatives
-- [ ] Structured model fields: architecture, parameters (if from scratch), active_parameters, context_window
+- [ ] Structured model fields: architecture, parameters (if from scratch), active_parameters, context_window, training_tokens (if disclosed)
 - [ ] Intelligence index from AA (fetched, not guessed)
 - [ ] OpenRouter link added if available
 - [ ] Description covers architecture, innovations, training, benchmarks with numbers

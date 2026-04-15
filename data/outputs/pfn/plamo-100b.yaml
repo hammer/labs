@@ -24,6 +24,7 @@ tags:
 model:
   architecture: dense
   parameters: 100B
+  training_tokens: 2T
 paper:
   arxiv: "2410.07563"
 related:

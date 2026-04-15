@@ -27,3 +27,4 @@ model:
   parameters: 36B
   context_window: 512000
   intelligence_index: 25
+  training_tokens: 12T

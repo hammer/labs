@@ -27,6 +27,7 @@ model:
   parameters: 70B
   intelligence_index: 8
   context_window: 4096
+  training_tokens: 2T
   variants:
     - name: Llama 2 7B
       parameters: 7B

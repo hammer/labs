@@ -31,6 +31,7 @@ outputs:
       parameters: 389B
       active_parameters: 52B
       context_window: 256000
+      training_tokens: 7T
   - name: "Hunyuan-Large: An Open-Source MoE Model with 52 Billion Activated Parameters"
     type: paper
     date: 2024-11-04

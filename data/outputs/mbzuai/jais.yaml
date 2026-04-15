@@ -24,6 +24,7 @@ tags:
 model:
   architecture: dense
   parameters: 30B
+  training_tokens: 1.63T
   variants:
     - name: JAIS-13B
       parameters: 13B

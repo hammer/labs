@@ -104,7 +104,8 @@ Schemas are defined in `src/schema.ts`. Always validate after editing YAML: `npm
 - **Date:** `YYYY-MM-DD` format
 - **Type:** `model`, `paper`, `blog`, `library`, `dataset`, `announcement`
 - **Sources:** array of `{label, url}` objects
-- **Model details:** architecture (`dense`/`moe`), parameters, active_parameters, intelligence_index, context_window, variants
+- **Model details:** architecture (`dense`/`moe`), parameters, active_parameters, intelligence_index, context_window, training_tokens, variants
+- **Training tokens:** string like `"28.5T"`, `"15T"`, `"500B"` — the total pretraining token count from the technical report. Capture this whenever a tech report discloses it.
 - **Paper details:** arxiv ID, venue
 - **Grouped outputs:** use `outputs` array instead of `type` for model families with sub-entries (e.g., model + paper for same release)
 

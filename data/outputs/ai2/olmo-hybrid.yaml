@@ -28,5 +28,6 @@ tags:
 model:
   architecture: dense
   parameters: 7B
+  training_tokens: 6T
 related:
   - olmo-3

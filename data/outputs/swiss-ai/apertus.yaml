@@ -42,6 +42,7 @@ model:
   parameters: 70B
   context_window: 65536
   intelligence_index: 6
+  training_tokens: 15T
   variants:
     - name: Apertus-8B
       parameters: 8B

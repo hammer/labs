@@ -17,6 +17,7 @@ tags:
 model:
   architecture: dense
   parameters: 204B
+  training_tokens: 560B
   variants:
     - name: HyperCLOVA-82B
       parameters: 82B

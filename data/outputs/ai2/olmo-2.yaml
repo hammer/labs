@@ -29,6 +29,7 @@ model:
   architecture: dense
   parameters: 32B
   context_window: 4096
+  training_tokens: 6T
   variants:
     - name: OLMo 2 7B
       parameters: 7B

@@ -29,6 +29,7 @@ model:
   architecture: dense
   parameters: 70B
   context_window: 8192
+  training_tokens: 2.6T
   variants:
     - name: JAIS-2-8B
       parameters: 8B

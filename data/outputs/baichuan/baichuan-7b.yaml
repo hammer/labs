@@ -20,3 +20,4 @@ tags:
 model:
   architecture: dense
   parameters: 7B
+  training_tokens: 1.2T

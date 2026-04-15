@@ -46,6 +46,7 @@ outputs:
     model:
       architecture: dense
       parameters: 7B
+      training_tokens: 2.6T
   - name: Baichuan2-13B
     type: model
     date: 2023-09-06
@@ -60,3 +61,4 @@ outputs:
     model:
       architecture: dense
       parameters: 13B
+      training_tokens: 2.6T

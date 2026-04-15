@@ -27,6 +27,7 @@ tags:
 model:
   architecture: dense
   parameters: 56B
+  training_tokens: 20T
   variants:
     - name: Nemotron-H-8B
       parameters: 8B

@@ -70,6 +70,7 @@ const ModelDetailsSchema = z.object({
   context_window: z.number().optional(),
   languages: z.number().optional(),
   intelligence_index: z.number().optional(),
+  training_tokens: z.string().optional(),
   base_model: z.string().optional(),
   variants: z.array(ModelVariantSchema).optional(),
 });

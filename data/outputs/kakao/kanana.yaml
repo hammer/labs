@@ -25,6 +25,7 @@ tags:
 model:
   architecture: dense
   parameters: 32.5B
+  training_tokens: 3T
   variants:
     - name: Kanana Nano
       parameters: 2.1B

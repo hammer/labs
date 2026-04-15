@@ -28,6 +28,7 @@ model:
   architecture: dense
   parameters: 7B
   context_window: 2048
+  training_tokens: 2.46T
 paper:
   arxiv: "2402.00838"
   venue: ACL 2024

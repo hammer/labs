@@ -31,6 +31,7 @@ model:
   architecture: dense
   parameters: 31B
   context_window: 32000
+  training_tokens: 2T
   variants:
     - name: PLaMo 2-1B
       parameters: 1B

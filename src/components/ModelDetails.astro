@@ -34,6 +34,12 @@ const { model } = Astro.props;
         <span class="spec-value">{model.context_window.toLocaleString()}</span>
       </div>
     )}
+    {model.training_tokens && (
+      <div class="spec">
+        <span class="spec-label">Training tokens</span>
+        <span class="spec-value">{model.training_tokens}</span>
+      </div>
+    )}
     {model.languages && (
       <div class="spec">
         <span class="spec-label">Languages</span>

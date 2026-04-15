@@ -38,6 +38,7 @@ outputs:
       parameters: 309B
       active_parameters: 15B
       intelligence_index: 41
+      training_tokens: 27T
   - name: "MiMo-V2-Flash: Unlocking Extreme Inference Efficiency"
     type: paper
     date: 2026-01-06

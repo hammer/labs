@@ -29,6 +29,7 @@ model:
   parameters: 32B
   active_parameters: 3.8B
   context_window: 65536
+  training_tokens: 11.7T
   variants:
     - name: llm-jp-4-8B
       parameters: 8B

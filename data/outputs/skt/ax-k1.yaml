@@ -33,6 +33,7 @@ model:
   parameters: 519B
   active_parameters: 33B
   context_window: 131000
+  training_tokens: 10T
 paper:
   arxiv: "2601.09200"
 related:

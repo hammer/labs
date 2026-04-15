@@ -24,6 +24,7 @@ tags:
 model:
   architecture: dense
   parameters: 34B
+  training_tokens: 4.5T
   variants:
     - name: Granite Code 3B
       parameters: 3B

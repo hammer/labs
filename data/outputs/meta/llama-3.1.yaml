@@ -29,6 +29,7 @@ model:
   parameters: 405B
   intelligence_index: 17
   context_window: 128000
+  training_tokens: 15.6T
   variants:
     - name: Llama 3.1 8B
       parameters: 8B

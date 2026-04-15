@@ -25,6 +25,7 @@ model:
   architecture: dense
   parameters: 180B
   context_window: 2048
+  training_tokens: 3.5T
   variants:
     - name: Falcon-7B
       parameters: 7B

@@ -29,6 +29,7 @@ outputs:
     model:
       architecture: dense
       intelligence_index: 16
+      training_tokens: 18T
       variants:
         - name: Qwen2.5-0.5B
           parameters: 0.5B

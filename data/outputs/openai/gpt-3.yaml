@@ -24,6 +24,7 @@ model:
   architecture: dense
   parameters: 175B
   context_window: 2048
+  training_tokens: 300B
 paper:
   arxiv: "2005.14165"
   venue: NeurIPS 2020
