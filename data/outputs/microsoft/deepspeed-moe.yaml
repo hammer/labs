@@ -1,0 +1,33 @@
+name: DeepSpeed-MoE
+slug: deepspeed-moe
+lab: microsoft
+type: paper
+date: 2022-01-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2201.05596
+  - label: GitHub
+    url: https://github.com/microsoft/DeepSpeed
+description: >
+  <p>End-to-end MoE training and inference system that addressed the two main barriers to
+  Mixture-of-Experts adoption: massive model size and high inference latency. Introduces
+  the <strong>Pyramid-Residual MoE</strong> (PR-MoE) architecture and Mixture-of-Students
+  distillation, reducing MoE model size by <strong>up to 3.7&times;</strong> while
+  preserving quality.</p>
+
+  <p>The DeepSpeed-MoE inference engine combines expert, tensor, and data parallelism with
+  optimized communication and kernels to deliver <strong>7.3&times; better latency and
+  cost</strong> over prior MoE inference solutions, and <strong>4.5&times; faster /
+  9&times; cheaper inference</strong> than quality-equivalent dense models. Demonstrated
+  5&times; training cost reduction for autoregressive LMs versus dense baselines. ICML 2022.
+  By Rajbhandari, Li, Yao, Zhang, Aminabadi, Awan, Rasley, He.</p>
+tags:
+  - foundational
+  - infrastructure
+  - moe
+  - efficiency
+paper:
+  arxiv: "2201.05596"
+  venue: ICML 2022
+related:
+  - deepspeed

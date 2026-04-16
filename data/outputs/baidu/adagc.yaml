@@ -1,0 +1,27 @@
+name: "AdaGC: Improving Training Stability for Large Language Model Pretraining"
+slug: adagc
+lab: baidu
+type: paper
+date: 2025-02-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.11034
+description: >
+  <p>Proposes <strong>AdaGC</strong>, an adaptive per-tensor gradient clipping method that
+  bounds each tensor's gradient norm relative to an exponential moving average of its own
+  historical clipped values. Unlike global gradient clipping (GlobalGC), AdaGC is
+  optimizer-agnostic (validated with Muon and Lion), adds negligible memory overhead, and
+  reduces communication cost under hybrid-parallel distributed training.</p>
+
+  <p>Addresses loss spikes arising from data outliers, hardware/transient faults, numerical
+  precision, and hyperparameter settings &mdash; recurring failure modes during frontier
+  LLM pretraining. Evaluated on <strong>Llama-2 7B</strong>, <strong>Mixtral 8&times;1B</strong>,
+  and <strong>ERNIE 10B-A1.4B</strong>: eliminates training spikes entirely across all three
+  models while improving downstream accuracy by <strong>1.32%, 1.27%, and 2.48%</strong>
+  respectively over GlobalGC. A practical, drop-in replacement for the global-norm clipping
+  used in most LLM training stacks.</p>
+tags:
+  - foundational
+  - efficiency
+paper:
+  arxiv: "2502.11034"
