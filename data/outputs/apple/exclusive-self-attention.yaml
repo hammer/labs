@@ -1,0 +1,39 @@
+name: Exclusive Self Attention
+slug: exclusive-self-attention
+lab: apple
+type: paper
+date: 2026-03-10
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.09078
+  - label: Apple ML Research
+    url: https://machinelearning.apple.com/research/exclusive-self-attention
+  - label: "Explainer video: \"We've Been Doing Attention Wrong (2-Line Fix)\" (Jia-Bin Huang)"
+    url: https://www.youtube.com/watch?v=2eZKT4H9_iQ
+description: >
+  <p>Identifies a previously unreported <strong>"attention similarity bias"</strong>:
+  in standard self-attention, the output vector <em>y<sub>i</sub></em> has very high
+  cosine similarity with the token's own value vector <em>v<sub>i</sub></em>, suggesting
+  that self-attention spends substantial capacity modeling a pointwise feature transform
+  rather than mixing context.</p>
+
+  <p>Proposes <strong>Exclusive Self Attention (XSA)</strong>, a two-line modification
+  that projects out the self-value component:
+  <em>z<sub>i</sub> = y<sub>i</sub> &minus; (y<sub>i</sub><sup>T</sup>v<sub>i</sub>)
+  v<sub>i</sub> / &Vert;v<sub>i</sub>&Vert;<sup>2</sup></em>. Constrains attention to
+  capture only information orthogonal to the token's own value, so the residual stream
+  (not attention) handles the self position.</p>
+
+  <p>Tested at <strong>0.7B / 1.4B / 2.7B</strong> on FineWeb-100BT (100B tokens, 2048
+  context, AdamW + cosine, 200K iterations). XSA consistently outperforms standard SA
+  across all sizes, with the <strong>largest gains at 2.7B (+1.36 avg across 8
+  downstream tasks</strong>: ARC-Easy, BoolQ, HellaSwag, LAMBADA, OpenBookQA, PIQA,
+  SocialIQA, WinoGrande) and increasingly larger gains as sequence length grows to 16K.
+  Minimal compute and memory overhead. By Shuangfei Zhai (Apple).</p>
+tags:
+  - foundational
+  - architecture
+  - attention
+paper:
+  arxiv: "2603.09078"
