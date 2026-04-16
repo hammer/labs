@@ -178,6 +178,7 @@ This distinction is **critical** because the home page "Scale" column shows the 
 - Model name includes another lab's model (e.g., "Llama-Nemotron", "A.X 4.0" based on Qwen)
 - Training is continued pretraining, SFT, DPO, RLHF on an existing base
 - Training tokens are small relative to the model size (e.g., 73B tokens for a 72B model)
+- **Sparse upcycling** — an MoE built by duplicating a dense model's FFNs into experts and continuing training (e.g., Sarashina2-8x70B from Sarashina2-70B). The MoE's reported total parameters are not "from scratch" — set `base_model:` to the dense source and omit `parameters`. Put the total-parameter count in the description so readers still see it.
 
 **For derivative models:**
 - Set `lab:` to the lab that fine-tuned/adapted, not the base model creator
@@ -194,6 +195,7 @@ This distinction is **critical** because the home page "Scale" column shows the 
 - Nemotron-4-340B → from scratch (9T tokens) → `parameters: 340B` ✅
 - A.X K1 (519B) → from scratch (10T tokens, consortium) → `parameters: 519B` ✅
 - A.X 4.0 (72B) → derivative (Qwen2.5) → `base_model: qwen2.5`, no `parameters`
+- Sarashina2-8x70B (~465B MoE) → derivative via sparse upcycling from Sarashina2-70B → `base_model: sarashina2`, no `parameters`
 
 ### Multi-Lab Outputs
 

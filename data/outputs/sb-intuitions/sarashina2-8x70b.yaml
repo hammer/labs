@@ -1,0 +1,39 @@
+name: Sarashina2-8x70B
+slug: sarashina2-8x70b
+lab: sb-intuitions
+type: model
+date: 2024-11-08
+flagship: true
+sources:
+  - label: Press Release
+    url: https://www.sbintuitions.co.jp/news/press/20241108_01/
+  - label: HuggingFace
+    url: https://huggingface.co/sbintuitions/sarashina2-8x70b
+  - label: Upcycling Paper (arXiv)
+    url: https://arxiv.org/abs/2502.03009
+description: >
+  <p>~<strong>465B-total-parameter Mixture-of-Experts</strong> Japanese LLM, built by
+  <strong>sparse upcycling</strong> (<a href="https://arxiv.org/abs/2212.05055">Komatsuzaki
+  et al., 2022</a>) from <a href="/outputs/sb-intuitions/sarashina2">Sarashina2-70B</a>:
+  8 experts of 70B parameters each. First publicly available 400B-class Japanese LLM,
+  framed as a contribution to Japanese academia and industry. Requires 16&times; H100 or
+  A100-80GB GPUs for BF16 inference. Released under the Sarashina Model NonCommercial
+  License.</p>
+
+  <p>Scaling decisions were informed by SB Intuitions' concurrent scaling-laws work on
+  upcycling (<a href="/outputs/sb-intuitions/scaling-laws-upcycling-moe">Liew et al.,
+  ICML 2025</a>), which identifies the regime in which converting a dense LLM into an
+  MoE remains compute-efficient and where it saturates. Base model only &mdash; not
+  instruction-tuned.</p>
+tags:
+  - open-weight
+  - moe
+  - multilingual
+  - japanese
+  - frontier
+model:
+  architecture: moe
+  base_model: sarashina2
+related:
+  - sarashina2
+  - scaling-laws-upcycling-moe

@@ -1,0 +1,29 @@
+name: "Spike No More: Stabilizing the Pre-training of Large Language Models"
+slug: spike-no-more
+lab: sb-intuitions
+type: paper
+date: 2023-12-28
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2312.16903
+description: >
+  <p>Analyzes <strong>loss spikes</strong> during LLM pre-training &mdash; the sudden,
+  training-destabilizing jumps that have plagued frontier-scale training runs &mdash;
+  through spectral analysis of the Jacobian of each Transformer sub-layer. Identifies
+  two architectural conditions that suffice to prevent spikes:
+  <strong>small sub-layers</strong> (bounded sub-layer output magnitude) and
+  <strong>large shortcut</strong> (sufficient residual-stream passthrough).</p>
+
+  <p>Empirically validated across a range of pretraining setups: models that satisfy
+  both conditions train stably without spikes, while violating either is predictive of
+  spike occurrence. Companion to industry gradient-clipping approaches such as
+  <a href="/outputs/baidu/adagc">AdaGC</a>, but targeting the architectural side of
+  stability rather than the optimization side. COLM 2025. By Sho Takase, Shun Kiyono,
+  Sosuke Kobayashi (SB Intuitions), and Jun Suzuki (Tohoku).</p>
+tags:
+  - foundational
+  - training-stability
+paper:
+  arxiv: "2312.16903"
+  venue: COLM 2025

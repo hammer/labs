@@ -1,0 +1,34 @@
+name: Scaling Laws for Upcycling Mixture-of-Experts Language Models
+slug: scaling-laws-upcycling-moe
+lab: sb-intuitions
+type: paper
+date: 2025-02-05
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.03009
+  - label: GitHub
+    url: https://github.com/sbintuitions/sparse-upcycling-scaling-laws
+  - label: OpenReview
+    url: https://openreview.net/forum?id=ZBBo19jldX
+description: >
+  <p>Derives empirical <strong>scaling laws for sparse upcycling</strong> &mdash; the
+  practice of converting a pretrained dense LLM into a Mixture-of-Experts model by
+  duplicating the FFNs into experts and continuing training. Identifies a
+  <strong>novel interaction term between the dense-pretraining token budget and the
+  upcycled continued-training budget</strong> that limits how much additional quality can
+  be recovered by upcycling at large compute budgets. In the high-compute regime, the
+  benefit of upcycling saturates relative to training a comparable MoE from scratch.</p>
+
+  <p>Directly motivates and informs <a href="/outputs/sb-intuitions/sarashina2-8x70b">Sarashina2-8x70B</a>,
+  which is itself a sparse-upcycled MoE derived from Sarashina2-70B. ICML 2025. By Seng
+  Pei Liew, Takuya Kato, and Sho Takase (SB Intuitions). Code and fitted laws released.</p>
+tags:
+  - foundational
+  - scaling
+  - moe
+paper:
+  arxiv: "2502.03009"
+  venue: ICML 2025
+related:
+  - sarashina2-8x70b

@@ -1,0 +1,49 @@
+name: Sarashina2
+slug: sarashina2
+lab: sb-intuitions
+type: model
+date: 2024-08-21
+flagship: true
+sources:
+  - label: HuggingFace (70B)
+    url: https://huggingface.co/sbintuitions/sarashina2-70b
+  - label: HuggingFace (13B)
+    url: https://huggingface.co/sbintuitions/sarashina2-13b
+  - label: HuggingFace (7B)
+    url: https://huggingface.co/sbintuitions/sarashina2-7b
+  - label: Tech Blog (Japanese)
+    url: https://www.sbintuitions.co.jp/blog/entry/2024/08/21/144254
+description: >
+  <p>SB Intuitions' first frontier Japanese LLM series and the foundation of all later
+  Sarashina releases. 7B, 13B, and <strong>70B</strong> dense Llama-2-style Transformers
+  with RoPE, SwiGLU, and a <strong>102,400-token SentencePiece unigram vocabulary</strong>
+  (no Japanese pre-tokenization). The 70B has 80 layers, 8192 hidden dim, 64 attention
+  heads. All variants trained from scratch on <strong>2.1T tokens</strong>: ~1T Japanese
+  (Common Crawl cleaned with CCNet and HojiChar) plus English from SlimPajama-627B (books3
+  removed for copyright). Released August 2024 under the MIT license.</p>
+
+  <p>Sarashina2-70B is competitive with the top Japanese LLMs on the Swallow leaderboard
+  and excels on Japan-specific QA such as the abc-multiple-choice and AI King quiz sets.
+  Shown to be token-efficient for Japanese text relative to other LLMs. The series is
+  base-only (no instruction tuning) and directly served as the base for Sarashina2-8x70B
+  (sparse-upcycled MoE) as well as later instruction-tuned releases.</p>
+tags:
+  - open-weight
+  - multilingual
+  - japanese
+model:
+  architecture: dense
+  parameters: 70B
+  context_window: 4096
+  training_tokens: 2.1T
+  variants:
+    - name: Sarashina2-7B
+      parameters: 7B
+    - name: Sarashina2-13B
+      parameters: 13B
+    - name: Sarashina2-70B
+      parameters: 70B
+related:
+  - sarashina2-8x70b
+  - sarashina2.2
+  - large-vocabulary

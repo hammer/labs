@@ -32,12 +32,24 @@ Use this prompt template, adapting for the specific lab:
 - Artificial Analysis provider page: search `site:artificialanalysis.ai [lab name]`
 - OpenRouter provider page: search `site:openrouter.ai [lab name]`
 
-**Research Outputs (search all five):**
+**Research Outputs (search all six):**
 - arxiv: `site:arxiv.org [lab name]` and search for specific model names
 - HuggingFace: `site:huggingface.co [lab org name]`
 - GitHub: check repos in their org(s)
 - **Lab research page:** Many labs publish research pages that list papers not easily found via arxiv keyword search (e.g., `machinelearning.apple.com/research`, `research.ibm.com`, `www.amazon.science`). Check these for technique papers at top venues (ICLR, ICML, NeurIPS, CVPR, ICCV) — they are easy to miss but often more impactful than model releases.
+- **Lab's own publications index:** Most labs maintain a blog-category or publications page listing their accepted papers (e.g., `sbintuitions.co.jp/blog/archive/category/Publications`). Always check this — keyword search on arxiv often misses papers with titles that don't mention the lab.
 - **SSRN:** Some labs (especially those doing economics, policy, or interdisciplinary AI research) publish on SSRN (`papers.ssrn.com`) rather than arxiv. Search `site:papers.ssrn.com [lab name]`. Note that SSRN blocks automated fetching via Cloudflare — you may need to ask the user to share the paper title/authors.
+
+### Verify Affiliation at the PDF Level — Not Just Author Names
+
+Keyword search will return papers written by people who *were* at the lab or who never were. Before claiming a paper belongs to a lab, **open the arXiv HTML or PDF and read the affiliation block on page 1.** Verify the author has an `@lab-domain` email or the lab is listed next to their name.
+
+Common traps:
+- **Researchers move between labs.** A scholar's recent paper may list their *new* employer, not the lab you're researching. Conversely, papers finished at a lab can appear months after the author has left — the work was done at the lab, so it still counts.
+- **Student collaborations.** Papers with a university student as first author and lab researchers as co-authors often have the student's university as the primary affiliation and the lab as a secondary one. These still count as lab papers *if* the lab is listed. A purely student-authored paper with no lab co-authors does not.
+- **Common names.** "Sho Tanaka" at Lab X is not necessarily the same "Sho Tanaka" at Lab Y. Check the Scholar/OpenReview profile before merging.
+
+When a key researcher has left the lab, record it on the `people` entry as `role: Former Researcher (dates; now at Lab Y)` — this is more useful than omitting them, because their past work still defines the lab's output.
 
 **For each model found:** total/active parameters, architecture (dense/MoE), context window, training tokens, benchmark scores, AA intelligence score, OpenRouter availability
 
@@ -67,6 +79,16 @@ Common names to try: `mistral`, `deepseek`, `upstage`, `zhipu`. Check the [LobeH
 3. Construct: `https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/SK_Telecom_Logo.svg/500px-SK_Telecom_Logo.svg.png`
 4. Try `/wikipedia/commons/` first, then `/wikipedia/en/`
 5. Do NOT add a User-Agent header
+
+**Fallback: HuggingFace org avatar.** Labs that have an HF org nearly always set their logo as the avatar, and the avatar is already 200x200. Fetch the avatar URL from the HF API:
+
+```bash
+AVATAR_URL=$(curl -s "https://huggingface.co/api/organizations/{hf-org-slug}/overview" | jq -r .avatarUrl)
+curl -sL "$AVATAR_URL" -o /tmp/avatar.img
+convert /tmp/avatar.img -resize 200x200 -gravity center -background white -extent 200x200 public/logos/{slug}.png
+```
+
+The HF avatar is often served as WebP regardless of file extension, so `convert` is required to normalize to PNG. Use this when LobeHub and Wikimedia don't have the lab (common for recently-founded subsidiaries and non-English labs).
 
 **Always verify and resize:**
 ```bash

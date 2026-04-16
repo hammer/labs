@@ -1,0 +1,34 @@
+name: ModernBERT-Ja
+slug: modernbert-ja
+lab: sb-intuitions
+type: model
+date: 2025-02-01
+sources:
+  - label: HuggingFace (310M)
+    url: https://huggingface.co/sbintuitions/modernbert-ja-310m
+  - label: HuggingFace (130M)
+    url: https://huggingface.co/sbintuitions/modernbert-ja-130m
+  - label: HuggingFace (30M)
+    url: https://huggingface.co/sbintuitions/modernbert-ja-30m
+description: >
+  <p>Japanese adaptation of the <a href="https://arxiv.org/abs/2412.13663">ModernBERT</a>
+  encoder (Warner et al., 2024) in three sizes: <strong>30M</strong>, <strong>130M</strong>,
+  and <strong>310M</strong>. Released February&ndash;May 2025 under the MIT license.
+  The 30M variant is SB Intuitions' most-downloaded model by a wide margin
+  (<strong>24K+ monthly downloads</strong> on HuggingFace), reflecting demand for efficient
+  Japanese encoder models in retrieval, classification, and embedding use cases where a
+  small encoder is preferred over a decoder LLM.</p>
+tags:
+  - open-weight
+  - japanese
+  - encoder
+model:
+  architecture: dense
+  parameters: 310M
+  variants:
+    - name: ModernBERT-Ja-30M
+      parameters: 30M
+    - name: ModernBERT-Ja-130M
+      parameters: 130M
+    - name: ModernBERT-Ja-310M
+      parameters: 310M

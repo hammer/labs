@@ -1,0 +1,30 @@
+name: Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning
+slug: wso-scheduler
+lab: sb-intuitions
+type: paper
+date: 2026-03-17
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.16127
+description: >
+  <p>Proposes <strong>Warmup-Stable-Only (WSO)</strong>: a pretraining learning-rate
+  schedule that holds the learning rate constant after warmup, with <strong>no decay
+  phase</strong>. Although WSO shows slightly worse pretraining loss than cosine-decay
+  or warmup-stable-decay schedules, models pretrained with WSO <strong>consistently
+  outperform decay-based schedules after supervised fine-tuning</strong> at 1B and 8B
+  scale. Loss-landscape analysis shows decay schedules converge to sharper minima while
+  WSO preserves flatter minima that generalize better under downstream adaptation.</p>
+
+  <p>Provides a clean, actionable recommendation for labs that release base checkpoints
+  intended to be fine-tuned by downstream users: skip the decay. Pairs with the optimizer
+  and clipping line of work (<a href="/outputs/apple/ademamix">AdEMAMix</a>, <a
+  href="/outputs/baidu/adagc">AdaGC</a>). ICLR 2026. By Kazuki Yano (Tohoku), Shun
+  Kiyono, Sosuke Kobayashi, Sho Takase (SB Intuitions), and Jun Suzuki (Tohoku).</p>
+tags:
+  - foundational
+  - training-stability
+  - optimizer
+paper:
+  arxiv: "2603.16127"
+  venue: ICLR 2026

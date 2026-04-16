@@ -1,0 +1,28 @@
+name: Large Vocabulary Size Improves Large Language Models
+slug: large-vocabulary
+lab: sb-intuitions
+type: paper
+date: 2024-06-24
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.16508
+description: >
+  <p>Empirical scaling study showing that <strong>larger subword vocabularies reliably
+  improve LLM quality</strong> at fixed parameter budgets &mdash; a finding that ran
+  counter to the then-prevailing preference for small vocabularies. Also introduces a
+  practical method for <strong>swapping vocabularies during continual pretraining</strong>,
+  allowing a model trained on one language mix to be adapted to a new target-language
+  vocabulary without restarting from scratch. This recipe is of particular importance
+  for non-English LLM efforts and directly informed Sarashina's own 102K-token
+  Japanese-SentencePiece vocabulary.</p>
+
+  <p>ACL Findings 2025. By Sho Takase, Ryokan Ri, Shun Kiyono, and Takuya Kato
+  (all SB Intuitions).</p>
+tags:
+  - foundational
+  - scaling
+  - tokenization
+paper:
+  arxiv: "2406.16508"
+  venue: ACL Findings 2025

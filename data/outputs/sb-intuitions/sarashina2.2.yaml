@@ -1,0 +1,71 @@
+name: Sarashina2.2
+slug: sarashina2.2
+lab: sb-intuitions
+date: 2025-03-01
+flagship: true
+sources:
+  - label: HuggingFace (3B-Instruct)
+    url: https://huggingface.co/sbintuitions/sarashina2.2-3b-instruct-v0.1
+  - label: HuggingFace (Vision)
+    url: https://huggingface.co/sbintuitions/sarashina2.2-vision-3b
+  - label: HuggingFace (OCR)
+    url: https://huggingface.co/sbintuitions/sarashina2.2-ocr
+description: >
+  <p>Compute-efficient Sarashina iteration focused on small, high-quality Japanese
+  models. Dense Llama-style Transformers at <strong>0.5B / 1B / 3B</strong> with both
+  base and instruction-tuned variants. MIT licensed. Sarashina2.2-3B-Instruct scores
+  <strong>3.75 on Elyza-tasks-100</strong> (vs 2.99 for Qwen2.5-3B-Instruct),
+  <strong>6.51 on Japanese MT-Bench</strong>, and 7.71 on English MT-Bench,
+  demonstrating that a small Japanese-specialized model can outperform larger
+  Japanese-capable models on Japanese tasks.</p>
+
+  <p>The 2.2 generation was extended into multimodal variants:
+  <strong>Sarashina2.2-Vision-3B</strong> (image&rarr;text, November 2025) and
+  <strong>Sarashina2.2-OCR</strong> (4B, ~March 2026, Japanese-document OCR).</p>
+tags:
+  - open-weight
+  - japanese
+  - multimodal
+outputs:
+  - name: Sarashina2.2 (0.5B / 1B / 3B)
+    type: model
+    date: 2025-03-01
+    sources:
+      - label: HuggingFace (3B-Instruct)
+        url: https://huggingface.co/sbintuitions/sarashina2.2-3b-instruct-v0.1
+    description: >
+      Small Japanese LLM family with base + instruct variants at 0.5B, 1B, 3B. MIT.
+    model:
+      architecture: dense
+      parameters: 3B
+      variants:
+        - name: Sarashina2.2-0.5B
+          parameters: 0.5B
+        - name: Sarashina2.2-1B
+          parameters: 1B
+        - name: Sarashina2.2-3B
+          parameters: 3B
+  - name: Sarashina2.2-Vision-3B
+    type: model
+    date: 2025-11-27
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/sbintuitions/sarashina2.2-vision-3b
+    description: >
+      Vision-language variant of Sarashina2.2-3B. MIT.
+    model:
+      architecture: dense
+      parameters: 3B
+  - name: Sarashina2.2-OCR
+    type: model
+    date: 2026-03-31
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/sbintuitions/sarashina2.2-ocr
+    description: >
+      4B OCR-specialized variant of the Sarashina2.2 family for Japanese documents.
+    model:
+      architecture: dense
+      parameters: 4B
+related:
+  - sarashina2

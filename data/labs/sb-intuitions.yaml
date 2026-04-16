@@ -1,0 +1,107 @@
+name: SB Intuitions
+slug: sb-intuitions
+url: https://www.sbintuitions.co.jp/en/
+huggingface: https://huggingface.co/sbintuitions
+region: japan
+founded: "2023-08"
+type: corporate
+parent: SoftBank Corp.
+description: >
+  <p><strong>SB Intuitions</strong> is <a
+  href="https://en.wikipedia.org/wiki/SoftBank_Corp.">SoftBank Corp.</a>'s
+  wholly-owned subsidiary for Japanese-specialized large language models, launched in
+  August 2023 and framed publicly as "an OpenAI for Japan." President &amp; CEO
+  <strong>Hironobu Tamba</strong> concurrently runs SoftBank's Data Platform Strategy
+  Division. The company operates the <strong>Sarashina Lab</strong> research division
+  and has grown to <strong>150+ employees</strong>, actively recruiting AI researchers
+  from Japan and abroad.</p>
+
+  <p>The flagship <strong>Sarashina</strong> model family progressed from the
+  <strong>Sarashina2</strong> dense series (7B/13B/<strong>70B</strong>, trained
+  from scratch on 2.1T tokens, MIT license, August 2024) to
+  <strong>Sarashina2-8x70B</strong>, a ~465B-total MoE built via sparse upcycling and
+  released for academic and industrial research (November 2024). The smaller, more
+  compute-efficient <strong>Sarashina2.2</strong> family (0.5B/1B/3B, March 2025) added
+  instruction-tuning with strong Japanese scores &mdash; the 3B-Instruct beats
+  Qwen2.5-3B-Instruct on Elyza-tasks-100 (3.75 vs 2.99). Multimodal variants followed
+  (<strong>Sarashina2.2-Vision-3B</strong>, <strong>Sarashina2.2-OCR</strong>) along
+  with embedding and encoder models (<strong>Sarashina-Embedding-v2-1B</strong>,
+  <strong>ModernBERT-Ja</strong>). The commercial <strong>Sarashina mini</strong> API
+  (70B) launched November 28, 2025 for SoftBank enterprise customers.</p>
+
+  <p>Sarashina Lab has produced a strong cluster of foundational training-stability
+  and scaling papers at top venues: <strong><a
+  href="/outputs/sb-intuitions/spike-no-more">Spike No More</a></strong> (COLM 2025,
+  architectural stability), <strong><a href="/outputs/sb-intuitions/large-vocabulary">Large
+  Vocabulary Size Improves LLMs</a></strong> (ACL Findings 2025), <strong><a
+  href="/outputs/sb-intuitions/scaling-laws-upcycling-moe">Scaling Laws for Upcycling
+  MoE</a></strong> (ICML 2025 &mdash; the basis for Sarashina2-8x70B itself), and
+  <strong><a href="/outputs/sb-intuitions/wso-scheduler">Pre-training LLM without
+  Learning Rate Decay</a></strong> (ICLR 2026). Training compute runs on SoftBank's
+  NVIDIA Blackwell-based <strong>DGX SuperPOD</strong>, announced in 2025 as the
+  world's largest Blackwell cluster for LLM development.</p>
+people:
+  - name: Hironobu Tamba
+    role: President & CEO
+    formerly: VP, SoftBank Corp. (Data Platform Strategy Division)
+    urls:
+      - label: LinkedIn
+        url: https://www.linkedin.com/in/hironobutamba/
+  - name: Ryokan Ri
+    role: Senior Research Engineer
+    formerly: LINE Corp (NLP Research Engineer); University of Tokyo (PhD, advisor Yoshimasa Tsuruoka)
+    urls:
+      - label: Personal Site
+        url: https://ryokan0123.github.io/
+      - label: Google Scholar
+        url: https://scholar.google.co.jp/citations?user=z9is5FAAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Ryokan_Ri1
+  - name: Takuya Kato
+    role: Research Engineer
+  - name: Seng Pei Liew
+    role: Research Scientist
+  - name: Pride Kavumba
+    role: Researcher (joined 2024/25)
+  - name: Sho Takase
+    role: Former Research Scientist (Jul 2024 – Jul 2025; now at CyberAgent)
+    formerly: LINE Corp (Senior Researcher); Tokyo Institute of Technology; Tohoku University (PhD)
+    urls:
+      - label: Personal Site
+        url: https://takase.github.io/
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=2dvzFDYAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Sho_Takase2
+  - name: Shun Kiyono
+    role: Former Researcher (2022 – Jan 2026; now at Cohere)
+    formerly: LINE Corp; Tohoku University (PhD)
+    urls:
+      - label: Personal Site
+        url: https://butsugiri.github.io/
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=LS3EdOoAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Shun_Kiyono1
+news:
+  - title: "SoftBank launches an OpenAI for Japan: SB Intuitions, building LLMs and generative AI in Japanese"
+    url: https://techcrunch.com/2023/08/04/softbank-launches-an-openai-for-japan-sb-intuitions-building-llms-and-generative-ai-in-japanese/
+    source: TechCrunch
+    date: 2023-08-04
+  - title: SB Intuitions releases 460B-parameter Japanese LLM Sarashina2-8x70B for academia and industry
+    url: https://www.sbintuitions.co.jp/news/press/20241108_01/
+    source: SB Intuitions
+    date: 2024-11-08
+  - title: "SoftBank Corp. to Build the World's Largest AI Computing Infrastructure Using NVIDIA DGX SuperPOD with NVIDIA Blackwell GPUs"
+    url: https://www.sbintuitions.co.jp/en/news/press/20250724_01/
+    source: SB Intuitions
+    date: 2025-07-24
+  - title: "SoftBank and SB Intuitions launch Sarashina API for enterprise access to Japanese LLM"
+    url: https://www.softbank.jp/en/corp/news/press/sbkk/2025/20251105_01/
+    source: SoftBank
+    date: 2025-11-05
+tags:
+  - frontier
+  - multilingual
+  - japanese
+  - moe
