@@ -1,0 +1,68 @@
+name: Ouro
+slug: ouro
+lab: bytedance-seed
+type: model
+date: 2025-10-29
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.25741
+  - label: Project Page
+    url: https://ouro-llm.github.io
+  - label: HuggingFace (2.6B)
+    url: https://huggingface.co/ByteDance/Ouro-2.6B
+  - label: HuggingFace (1.4B)
+    url: https://huggingface.co/ByteDance/Ouro-1.4B
+  - label: HuggingFace (2.6B-Thinking)
+    url: https://huggingface.co/ByteDance/Ouro-2.6B-Thinking
+  - label: HuggingFace (1.4B-Thinking)
+    url: https://huggingface.co/ByteDance/Ouro-1.4B-Thinking
+description: >
+  <p>Named after the recursive <em>Ouroboros</em>, Ouro is an open-source family of
+  <strong>Looped Language Models</strong> (LoopLM) that embed reasoning <em>during
+  pretraining</em> rather than as a post-training stage. Dense decoder-only
+  Transformers (RoPE, SwiGLU, sandwich norm) with <strong>recurrent parameter sharing
+  across 4 loop steps</strong> and an entropy-regularized objective for learned
+  per-token depth allocation. Released at 1.4B (24 layers) and 2.6B (48 layers), both
+  pretrained on <strong>7.7T tokens</strong>. Thinking variants are released
+  alongside base weights.</p>
+
+  <p>Delivers <strong>2&ndash;3&times; parameter efficiency</strong> over standard
+  Transformers of equivalent quality: Ouro-1.4B matches 4B baselines (GSM8K 78.92 vs
+  72.86 for Qwen3-4B) and Ouro-2.6B outperforms 8B baselines on math (MATH500 90.85 vs
+  62.30 for Qwen3-8B), with 1.4B/2.6B matching 12B standard LMs across several
+  benchmarks. Ablations attribute the gains to <strong>superior knowledge manipulation
+  rather than increased capacity</strong>, and show LoopLM reasoning traces align with
+  final outputs more tightly than explicit chain-of-thought.</p>
+
+  <p>Completes a trio of 2025 looped-Transformer work alongside <a
+  href="/outputs/google/looped-transformers">Google's "Reasoning with Latent Thoughts"</a>
+  (theoretical, ICLR 2025) and <a
+  href="/outputs/bytedance-seed/parallel-loop-transformer">ByteDance Seed's Parallel
+  Loop Transformer</a> (inference-efficiency, Oct 2025). Collaboration between
+  ByteDance Seed and researchers at UC Santa Cruz, Princeton, Mila / U. Montreal (incl.
+  Yoshua Bengio), Peking University, CMU, and UPenn. CC-BY-SA 4.0.</p>
+tags:
+  - open-weight
+  - architecture
+  - reasoning
+  - efficiency
+model:
+  architecture: dense
+  parameters: 2.6B
+  training_tokens: 7.7T
+  variants:
+    - name: Ouro-1.4B
+      parameters: 1.4B
+      notes: 24 layers, 4 loops
+    - name: Ouro-2.6B
+      parameters: 2.6B
+      notes: 48 layers, 4 loops
+    - name: Ouro-1.4B-Thinking
+      parameters: 1.4B
+    - name: Ouro-2.6B-Thinking
+      parameters: 2.6B
+paper:
+  arxiv: "2510.25741"
+related:
+  - parallel-loop-transformer
