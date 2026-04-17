@@ -161,6 +161,22 @@ tags:
   - relevant-tags
 ```
 
+### Gathering News Items
+
+Every lab should have 2-5 news items covering major milestones (launches, funding, partnerships). Search these sources in priority order:
+
+1. **Lab's own blog/newsroom** — check first, most authoritative
+2. **Bloomberg / TechCrunch / CNBC / The Information** — Tier 1 general sources
+3. **Regional sources by lab location:**
+   - China: **SCMP**, **ChinaTalk**, **Caixin**, **LatePost (晚点)**, **36Kr**, **Pandaily**
+   - Japan: **Nikkei Asia**, lab press releases
+   - Korea: **Korea Times**, **Nikkei Asia**
+   - Israel: **Calcalist**
+   - US/Europe: **VentureBeat**, **GeekWire**, **Wired**, **Ars Technica**, **The Verge**
+4. **AI-specialist sources:** **Latent Space**, **Interconnects** — for technical context
+
+See AGENTS.md "Priority News Sources" for the full tiered list.
+
 ### New Region Check
 
 If this is the first lab from a new country, add the country's flag emoji to the `regionFlags` map in `src/pages/index.astro`:

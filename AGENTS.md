@@ -98,6 +98,35 @@ Schemas are defined in `src/schema.ts`. Always validate after editing YAML: `npm
 - **News URLs:** can be absolute URLs or relative paths (e.g., `/articles/...`)
 - **Key fields:** url, wikipedia, huggingface, github, artificialanalysis, openrouter, description (HTML in YAML `>` blocks), people, news, tags
 
+### Priority News Sources
+
+When searching for news about labs, prioritize these sources in order. Tier 1 sources should be checked for every lab; lower tiers are region- or topic-specific.
+
+**Tier 1 — Check weekly (highest signal):**
+- **Lab's own blog/newsroom** — always first and most authoritative for model launches and papers
+- **Bloomberg** — funding rounds, valuations, strategic pivots, China AI corporate moves
+- **TechCrunch** — startup fundraising and product launches
+- **CNBC** — major corporate AI milestones (earnings, infrastructure)
+- **The Information** — paywalled exclusives on internal strategy, unreported fundraising, team departures
+
+**Tier 2 — Check biweekly (strong regional/specialist signal):**
+- **ChinaTalk** — deep analytical pieces on Chinese labs
+- **SCMP (South China Morning Post)** — broadest English-language Chinese tech/AI coverage
+- **VentureBeat** — enterprise AI launches and open-weight model coverage
+- **Caixin** — Chinese business/tech investigative journalism (English edition)
+- **LatePost (晚点)** — Chinese-language investigative tech; frequently breaks stories about lab internals
+- **Reuters** — global corporate AI news, IP/trade disputes, regulation
+- **36Kr (36氪)** — premier Chinese startup news; breaks funding rounds before Bloomberg
+
+**Tier 3 — Check when relevant (region/event-triggered):**
+- **Nikkei Asia** — best for Japan/Korea lab coverage (PFN, NII, SB Intuitions, Naver)
+- **Korea Times** — Korean lab news (Kakao, Naver, SKT, LG, Upstage)
+- **GeekWire** — Pacific Northwest focus (AI2, Amazon)
+- **Calcalist** — Israeli tech (AI21 Labs)
+- **Pandaily** — China AI in English
+- **Wired / Ars Technica / The Verge** — longer-form AI analysis and major launch coverage
+- **Latent Space / Interconnects** — AI community deep-dives, technical context behind model launches
+
 ### Output Schema
 - **Required:** name, slug, lab, date, sources (min 1)
 - **Slug:** lowercase alphanumeric with hyphens, dots, underscores
