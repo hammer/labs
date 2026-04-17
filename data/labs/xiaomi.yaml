@@ -57,6 +57,11 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Fuli_Luo1
+news:
+  - title: "Xiaomi Reveals MiMo-V2-Pro (1T Parameters), Approaching GPT-5.2 / Opus 4.6 Performance"
+    url: https://venturebeat.com/technology/xiaomi-stuns-with-new-mimo-v2-pro-llm-nearing-gpt-5-2-opus-4-6-performance
+    source: VentureBeat
+    date: 2026-04-03
 tags:
   - open-weight
   - on-device

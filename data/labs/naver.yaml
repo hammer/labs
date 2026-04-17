@@ -64,6 +64,11 @@ people:
         url: https://scholar.google.com/citations?user=o0qtjzYAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Sangdoo_Yun1
+news:
+  - title: "Naver Shuts Down Clova X Chatbot; Pivots to Vertical AI Integrated into Search, Shopping, Finance"
+    url: https://en.sedaily.com/finance/2026/04/09/naver-shuts-down-clova-x-accelerates-ai-service-integration
+    source: Seoul Economic Daily
+    date: 2026-04-09
 tags:
   - open-weight
   - multilingual

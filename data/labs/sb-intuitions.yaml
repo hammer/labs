@@ -84,6 +84,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Shun_Kiyono1
 news:
+  - title: "SoftBank/NEC/Honda/Sony Form JV for Trillion-Parameter Physical AI Model; $6.3B Government Backing"
+    url: https://asia.nikkei.com/business/technology/artificial-intelligence/japan-s-softbank-launches-unit-to-develop-homegrown-ai
+    source: Nikkei Asia
+    date: 2026-04-12
   - title: "SoftBank launches an OpenAI for Japan: SB Intuitions, building LLMs and generative AI in Japanese"
     url: https://techcrunch.com/2023/08/04/softbank-launches-an-openai-for-japan-sb-intuitions-building-llms-and-generative-ai-in-japanese/
     source: TechCrunch

@@ -91,6 +91,11 @@ people:
         url: https://scholar.google.com/citations?user=sljtWIUAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Linxi_Fan1
+news:
+  - title: "NVIDIA Acquires SchedMD (Slurm Workload Manager); Draws Regulatory Scrutiny"
+    url: https://www.reuters.com/technology/nvidia-acquires-schedmd-slurm-2026-04-06/
+    source: Reuters
+    date: 2026-04-06
 tags:
   - frontier
   - open-weight

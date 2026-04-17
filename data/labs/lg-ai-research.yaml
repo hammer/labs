@@ -73,6 +73,11 @@ people:
   - name: Seunghwan Kim
     url: https://sites.google.com/view/seunghwankim
     role: Head, Physical Intelligence Lab
+news:
+  - title: "EXAONE 4.5 Released — LG's First Open-Weight Vision-Language Model"
+    url: https://www.koreaherald.com/article/10714004
+    source: Korea Herald
+    date: 2026-04-09
 tags:
   - open-weight
   - enterprise

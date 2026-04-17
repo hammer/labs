@@ -88,6 +88,22 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Sam_McCandlish1
 news:
+  - title: "Claude Opus 4.7 Released"
+    url: https://www.anthropic.com/news/claude-opus-4-7
+    source: Anthropic
+    date: 2026-04-16
+  - title: "Revenue Run Rate Hits $30B; VCs Offer Up to $800B Valuation"
+    url: https://www.axios.com/2026/04/15/anthropic-revenue-run-rate-growth
+    source: Axios
+    date: 2026-04-15
+  - title: "Claude Mythos Withheld from Public Release; Project Glasswing Cybersecurity Consortium Launched with Apple and Google"
+    url: https://www.wired.com/story/anthropic-claude-mythos-project-glasswing/
+    source: WIRED
+    date: 2026-04-07
+  - title: "Multi-GW Compute Partnership Expansion with Google Cloud and Broadcom"
+    url: https://www.anthropic.com/news/google-broadcom-compute-expansion
+    source: Anthropic
+    date: 2026-04-06
   - title: "Anthropic Raises $30B Series G at $380B Valuation"
     url: https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation
     source: Anthropic

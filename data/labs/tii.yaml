@@ -50,6 +50,11 @@ people:
         url: https://openreview.net/profile?id=~Hakim_Hacid2
   - name: Ebtesam Almazrouei
     role: Former Acting Chief AI Researcher (now CEO of AIE3)
+news:
+  - title: "TII Launches Falcon Perception — 600M-Parameter Open Multimodal Model for Grounding and Segmentation"
+    url: https://www.tii.ae/news/tii-launches-falcon-perception-new-multimodal-ai-model-helps-machines-see-and-understand-world
+    source: TII
+    date: 2026-04-03
 tags:
   - open-weight
   - frontier

@@ -65,6 +65,11 @@ people:
         url: https://openreview.net/profile?id=~Lucy_Park1
   - name: Sanghoon Kim
     role: Lead Researcher (Solar, DUS)
+news:
+  - title: "Upstage Becomes Korea's First Generative AI Unicorn with $126M Series C"
+    url: https://en.sedaily.com/technology/2026/04/15/upstage-becomes-first-korean-ai-service-startup-to-reach
+    source: Seoul Economic Daily
+    date: 2026-04-15
 tags:
   - open-weight
   - enterprise

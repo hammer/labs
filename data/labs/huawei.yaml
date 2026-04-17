@@ -66,6 +66,11 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Zhenguo_Li1
+news:
+  - title: "Ascend 950PR AI Chip in Production; 750K Units Planned for 2026; Alibaba, ByteDance, Tencent Place Massive Orders"
+    url: https://www.trendforce.com/news/2026/04/07/news-decoding-deepseek-v4-how-huaweis-ascend-950-pr-is-powering-chinas-push-to-break-cuda-dependence/
+    source: TrendForce
+    date: 2026-04-07
 tags:
   - infrastructure
   - open-weight

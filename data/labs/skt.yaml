@@ -44,6 +44,11 @@ people:
     role: Head, Foundation Model Division
   - name: Kim Ji-won
     role: Head, AI Model Lab
+news:
+  - title: "SK Telecom Partners with Rebellions and Arm for Sovereign AI Inference Infrastructure"
+    url: https://rebellions.ai/newsroom/rebellions-collaborates-with-sk-telecom-and-arm-targeting-sovereign-ai-and-telecom-infrastructure/
+    source: Rebellions
+    date: 2026-04-10
 tags:
   - open-weight
   - multilingual

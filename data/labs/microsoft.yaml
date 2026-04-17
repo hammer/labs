@@ -68,6 +68,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Tie-Yan_Liu1
 news:
+  - title: "Microsoft Announces $10B Japan AI Infrastructure Investment (2026-2029)"
+    url: https://www.wsj.com/tech/ai/microsoft-japan-ai-investment-10-billion-2026/
+    source: WSJ
+    date: 2026-04-03
   - title: "Phi-4 Reasoning Models Released with Chain-of-Thought"
     url: https://huggingface.co/microsoft/phi-4-reasoning-plus
     source: Microsoft

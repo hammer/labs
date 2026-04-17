@@ -82,6 +82,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Qihao_Zhu1
 news:
+  - title: "DeepSeek V4 Imminent — 1T-Parameter MoE to Run Solely on Huawei Ascend 950PR Chips"
+    url: https://dataconomy.com/2026/04/16/deepseek-v4-ai-model-to-debut-using-only-huawei-chips/
+    source: Dataconomy
+    date: 2026-04-16
   - title: "DeepSeek Before V4: Culture, Organization, and Liang Wenfeng's Unique Goals (English summary)"
     url: /articles/deepseek-before-v4-summary
     source: LatePost (晚点)

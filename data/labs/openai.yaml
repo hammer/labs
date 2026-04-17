@@ -99,6 +99,14 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~John_Schulman1
 news:
+  - title: "GPT-Rosalind Launched for Life Sciences Drug Discovery"
+    url: https://openai.com/index/gpt-rosalind/
+    source: OpenAI
+    date: 2026-04-16
+  - title: "OpenAI Touts Amazon Alliance, Says Microsoft Has 'Limited Our Ability' to Reach Enterprise"
+    url: https://www.cnbc.com/2026/04/13/openai-amazon-microsoft-enterprise-memo.html
+    source: CNBC
+    date: 2026-04-13
   - title: "OpenAI Closes $122B Round at $852B Valuation"
     url: https://openai.com/index/accelerating-the-next-phase-ai/
     source: OpenAI
