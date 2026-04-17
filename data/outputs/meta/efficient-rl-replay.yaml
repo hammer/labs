@@ -1,0 +1,27 @@
+name: Efficient RL Training for LLMs with Experience Replay
+slug: efficient-rl-replay
+lab: meta
+type: paper
+date: 2026-04-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.08706
+description: >
+  <p>Challenges the prevailing assumption that fresh, on-policy data is necessary for
+  effective LLM reinforcement learning. Systematically studies <strong>replay
+  buffers</strong> for LLM post-training (RLHF, GRPO, RLVR), formalizing the design
+  space as a tradeoff between staleness-induced variance, sample diversity, and
+  generation cost.</p>
+
+  <p>Demonstrates that well-designed replay buffers can <strong>drastically reduce
+  inference compute</strong> without degrading final model performance or policy
+  entropy &mdash; strict on-policy sampling is suboptimal when rollout generation is
+  the computational bottleneck. A practical drop-in improvement for any lab's RL
+  post-training pipeline. By Charles Arnal, Vivien Cabannes, Taco Cohen, Julia Kempe,
+  and Remi Munos (FAIR at Meta + NYU Courant).</p>
+tags:
+  - foundational
+  - alignment
+  - efficiency
+paper:
+  arxiv: "2604.08706"

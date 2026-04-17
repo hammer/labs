@@ -1,0 +1,27 @@
+name: "Lightning OPD: Efficient Post-Training for Large Reasoning Models"
+slug: lightning-opd
+lab: nvidia
+type: paper
+date: 2026-04-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.13010
+description: >
+  <p>Proposes <strong>offline on-policy distillation (OPD)</strong> that eliminates the
+  need for live teacher inference during LLM post-training. Identifies the
+  <strong>"teacher consistency" condition</strong>: using different teacher models for
+  SFT and OPD introduces irreducible gradient bias that cannot be corrected by
+  precomputing alone. The fix is simple &mdash; use the same teacher for both stages
+  &mdash; but the failure mode was previously undiagnosed.</p>
+
+  <p>Lightning OPD precomputes teacher log-probabilities over training data, achieving
+  <strong>4&times; speedup</strong> over standard OPD. Trains Qwen3-8B-Base to
+  <strong>69.9% on AIME 2024 in 30 GPU hours</strong>. Substantially lowers the
+  compute barrier for academic-scale reasoning-model post-training. By Yecheng Wu,
+  Song Han, and Han Cai (NVIDIA).</p>
+tags:
+  - foundational
+  - reasoning
+  - efficiency
+paper:
+  arxiv: "2604.13010"

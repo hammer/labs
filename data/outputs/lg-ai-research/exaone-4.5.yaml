@@ -1,0 +1,32 @@
+name: EXAONE 4.5
+slug: exaone-4.5
+lab: lg-ai-research
+type: model
+date: 2026-04-09
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.08644
+description: >
+  <p>LG AI Research's <strong>first open-weight vision-language model</strong>. Integrates
+  a 1.2B vision encoder with the <a href="/outputs/lg-ai-research/exaone-4.0">EXAONE
+  4.0</a> 32B LLM via native multimodal pretraining. Supports <strong>256K token
+  context</strong> for long-document and enterprise-scale deployments. Trained with
+  emphasis on document-centric corpora aligned with LG's industrial applications.</p>
+
+  <p>Outperforms state-of-the-art models of similar scale on <strong>document
+  understanding</strong> and <strong>Korean contextual reasoning</strong>.
+  Achieves 77.3 average across STEM benchmarks, 81.4 on LiveCodeBench v6, 62.2 on
+  ChartQA Pro. Open weights released.</p>
+tags:
+  - open-weight
+  - multimodal
+  - vision
+model:
+  architecture: dense
+  parameters: 33B
+  context_window: 256000
+paper:
+  arxiv: "2604.08644"
+related:
+  - exaone-4.0

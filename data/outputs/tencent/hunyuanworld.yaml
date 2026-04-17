@@ -47,3 +47,21 @@ outputs:
       Real-time interactive world model with streaming video diffusion at
       24fps. Introduces Context Forcing distillation and WorldCompass RL
       post-training framework.
+  - name: HY-World 2.0
+    type: model
+    date: 2026-04-15
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2604.14268
+      - label: GitHub
+        url: https://github.com/Tencent-Hunyuan/HY-World-2.0
+    description: >
+      Multi-modal world model that reconstructs, generates, and simulates 3D worlds
+      from text, images, or video. Produces editable 3D Gaussian Splatting scenes
+      directly usable in Unreal/Unity/Blender. Four-stage pipeline: HY-Pano 2.0
+      (panorama generation), WorldStereo 2.0 (keyframe view generation), WorldMirror
+      2.0 (feed-forward 3D prediction), and WorldLens (engine-agnostic rendering with
+      IBL lighting). Performance comparable to closed-source Marble. Open weights
+      and code.
+    paper:
+      arxiv: "2604.14268"

@@ -1,0 +1,28 @@
+name: HiFloat4 Format for LLM Pre-training on Ascend NPUs
+slug: hifloat4
+lab: huawei
+type: paper
+date: 2026-04-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.08826
+description: >
+  <p>Systematic study of <strong>4-bit floating-point (FP4) training</strong> for LLMs on
+  Huawei's next-generation <strong>Ascend NPUs</strong>. Compares two FP4 formats:
+  <strong>HiFloat4</strong> (Huawei's hierarchical scaling format) and <strong>MXFP4</strong>
+  (Microscaling). Tests both dense models (PanGu, LLaMA-style architectures) and MoE models
+  with FP4 linear and expert GEMMs.</p>
+
+  <p>Develops stabilization techniques that keep training loss within <strong>1% relative
+  error</strong> of full-precision baselines while delivering <strong>4&times; throughput
+  and memory efficiency gains</strong>. Represents the Ascend ecosystem's answer to
+  NVIDIA's NVFP4, closing the gap on ultra-low-precision training infrastructure for
+  frontier-scale LLMs on non-NVIDIA hardware.</p>
+tags:
+  - infrastructure
+  - efficiency
+  - training-stability
+paper:
+  arxiv: "2604.08826"
+related:
+  - pangu-sigma

@@ -4,16 +4,29 @@ lab: bytedance-seed
 type: model
 date: 2026-02-07
 sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.14148
   - label: Product Page
     url: https://seed.bytedance.com/en/models
 description: >
-  Next-generation AI video model with unified multimodal audio-video
-  joint generation. Supports text, image, audio, and video inputs with
-  multi-shot narrative storytelling. Seedance 1.5 Pro (Dec 2025)
-  introduced native audio-visual joint generation.
+  <p>Native multimodal <strong>audio-video joint generation</strong> model accepting four
+  input modalities (text, image, audio, video) and producing 4&ndash;15 second clips at
+  480p and 720p with synchronized audio. Supports <strong>multi-reference composition</strong>:
+  up to 3 video clips, 9 images, and 3 audio clips in a single generation, enabling
+  multi-shot narrative storytelling. Also released as a <strong>Fast variant</strong> for
+  low-latency scenarios.</p>
+
+  <p>Uses a unified large-scale architecture for joint audio-visual generation. Expert
+  evaluations show performance on par with leading video generation models, with
+  substantial improvements across all key sub-dimensions. Seedance 1.5 Pro (Dec 2025)
+  introduced native audio-visual joint generation; 2.0 generalizes this to full
+  multi-modal multi-reference control.</p>
 tags:
   - generation
   - video
   - audio
+  - multimodal
+paper:
+  arxiv: "2604.14148"
 related:
   - seedance

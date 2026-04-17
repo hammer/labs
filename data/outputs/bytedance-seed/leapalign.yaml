@@ -1,0 +1,26 @@
+name: "LeapAlign: Post-Training Flow Matching Models at Any Generation Step"
+slug: leapalign
+lab: bytedance-seed
+type: paper
+date: 2026-04-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.15311
+description: >
+  <p>Post-training method for aligning <strong>flow matching</strong> generative models
+  with human preferences at <strong>any generation step count</strong>. Compresses long
+  ODE trajectories into two-step shortcuts via strategic leaps, enabling direct gradient
+  propagation from reward signals to early generation steps &mdash; a bottleneck for
+  existing methods like GRPO that only optimize final outputs.</p>
+
+  <p>Randomized timestep selection stabilizes updates across the full generation schedule.
+  Weighted training favors trajectories most consistent with full-length generation paths.
+  Outperforms GRPO and other direct-gradient baselines on the Flux model. CVPR 2026.
+  By Zhanhao Liang, Tao Yang, Jie Wu, Chengjian Feng (ByteDance Seed), and Liang
+  Zheng (ANU).</p>
+tags:
+  - foundational
+  - generation
+paper:
+  arxiv: "2604.15311"
+  venue: CVPR 2026
