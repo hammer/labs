@@ -86,6 +86,31 @@ Papers that introduced techniques now used industry-wide (e.g., "Attention Is Al
 - For libraries: find GitHub stars count, key features
 - For datasets: find size, composition, intended use
 
+### For Evaluations and Benchmarks
+
+Use `type: eval` for benchmarks, evaluation suites, and leaderboards that became industry standards or are used in major composite indices (AA Intelligence Index, Epoch Capabilities Index). Examples: GPQA, IFBench, SuperGPQA, HumanEval, RULER, BBEH, SWE-Bench, Belebele.
+
+**What qualifies as an `eval` output (vs. a `dataset` or `paper`):**
+- The primary contribution is a **benchmark task set + scoring methodology**, not a dataset for training or a technique paper
+- It has an **active leaderboard** or is referenced in model releases/launches as a performance metric
+- It is used in a **major composite index** (AA Intelligence Index, Epoch ECI) or has become a de facto standard that most labs report scores on
+- Examples of `eval`: GPQA, HumanEval, SWE-Bench, MMLU, RULER, GDPval, IFBench
+- Examples that are NOT `eval` (use `dataset`): Dolma (training corpus), COYO-700M (training data), FineWeb (training data)
+
+**When searching for evals from a lab, check:**
+1. The lab's research publications page for benchmark papers
+2. The [AA Intelligence Index methodology](https://artificialanalysis.ai/methodology/intelligence-benchmarking) — 10 evals, check if any are from the lab
+3. The [Epoch Capabilities Index](https://epoch.ai/benchmarks/eci) — ~42 benchmarks, check if any are from the lab
+4. Model cards from other labs — if they report scores on a benchmark from this lab, it's likely significant
+
+**Key fields for eval outputs:**
+- `type: eval`
+- Include the leaderboard URL in sources if one exists
+- Note in the description: which composite indices use it, current top scores, and saturation status
+- Tag with `benchmark` and `evaluation`
+
+**Saturation awareness:** Many evals become saturated as models improve. Note saturation status in the description (e.g., "frontier models now score 94%+, approaching the theoretical ceiling"). Saturated evals are still worth tracking as historical outputs (they shaped the field) but should not be marked `flagship` unless they were a genuine step change when created.
+
 ### For Scientific Foundation Models
 
 We track scientific models that demonstrate frontier-level capabilities in scientific domains:

@@ -286,7 +286,7 @@ Some of the most important labs primarily release closed models. For these labs:
 - **Foundational technique papers** that introduced methods now used industry-wide
 - Widely-used open-source tools/libraries (Megatron-LM, Optuna, Chainer, vLLM)
 - **Significant datasets** (COYO-700M, Dolma, RefinedWeb, Darwin-CC, The Pile)
-- **Benchmarks** that became industry standards (MMLU, HumanEval, SWE-Bench)
+- **Evaluations/benchmarks** (`type: eval`) that became industry standards or are used in the [AA Intelligence Index](https://artificialanalysis.ai/methodology/intelligence-benchmarking) (10 evals) or [Epoch Capabilities Index](https://epoch.ai/benchmarks/eci) (~42 benchmarks). Examples: HumanEval (OpenAI), GPQA (Anthropic+NYU), RULER (NVIDIA), IFBench (AI2), BBEH (Google DeepMind), Belebele (Meta), GDPval (OpenAI). Check both composite indices to see if any of the lab's benchmarks are included.
 - **Training infrastructure and data research** — data curation, scaling laws, data mixing, post-training methods, evaluation frameworks, reward modeling
 
 **Do NOT create separate outputs for:**
