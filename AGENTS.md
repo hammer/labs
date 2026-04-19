@@ -131,7 +131,8 @@ When searching for news about labs, prioritize these sources in order. Tier 1 so
 - **Required:** name, slug, lab, date, sources (min 1)
 - **Slug:** lowercase alphanumeric with hyphens, dots, underscores
 - **Date:** `YYYY-MM-DD` format
-- **Type:** `model`, `paper`, `blog`, `library`, `dataset`, `announcement`
+- **Type:** `model`, `paper`, `blog`, `library`, `dataset`, `eval`, `announcement`
+- **Eval type:** Use `eval` for benchmarks, evaluation suites, and leaderboards that became industry standards or are used in major composite indices (AA Intelligence Index, Epoch ECI). Examples: GPQA, IFBench, SuperGPQA, SWE-Bench. Routine narrow benchmarks that didn't achieve broad adoption should not be added.
 - **Sources:** array of `{label, url}` objects
 - **Model details:** architecture (`dense`/`moe`), parameters, active_parameters, intelligence_index, context_window, training_tokens, variants
 - **Training tokens:** string like `"28.5T"`, `"15T"`, `"500B"` — the total pretraining token count from the technical report. Capture this whenever a tech report discloses it.

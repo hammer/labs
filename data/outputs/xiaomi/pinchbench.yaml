@@ -1,7 +1,7 @@
 name: PinchBench & ClawEval
 slug: pinchbench
 lab: xiaomi
-type: dataset
+type: eval
 date: 2026-01-01
 sources:
   - label: HuggingFace

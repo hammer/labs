@@ -1,7 +1,7 @@
 name: SEED-Bench
 slug: seed-bench
 lab: tencent
-type: dataset
+type: eval
 date: 2023-07-30
 sources:
   - label: Paper v1 (arXiv)

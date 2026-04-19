@@ -1,0 +1,32 @@
+name: GDPval
+slug: gdpval
+lab: openai
+type: eval
+date: 2025-10-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.04374
+  - label: HuggingFace (Gold Subset)
+    url: https://huggingface.co/datasets/openai/gdpval
+  - label: Artificial Analysis Leaderboard (GDPval-AA)
+    url: https://artificialanalysis.ai/evaluations/gdpval-aa
+description: >
+  <p><strong>1,320 real-world professional tasks across 44 occupations</strong> in
+  the 9 largest US GDP-contributing industries (real estate, government, manufacturing,
+  healthcare, finance, etc.). Tasks produce actual deliverables: legal briefs, financial
+  analyses, presentations, spreadsheets. Created by industry professionals averaging
+  14 years of experience. Scored via blind pairwise comparison against human expert
+  baselines. 220-task gold subset open-sourced.</p>
+
+  <p>Carries the <strong>highest weight (16.7%) in the AA Intelligence Index
+  v4.0</strong> (via GDPval-AA, Artificial Analysis' independent re-evaluation using
+  their Stirrup agentic harness). Represents a shift toward measuring economic value
+  of AI capability rather than academic task performance. Inter-rater reliability is
+  a known weakness (~66-71% agreement). By Patwardhan, Dias, Proehl et al.
+  (OpenAI).</p>
+tags:
+  - benchmark
+  - evaluation
+  - agentic
+paper:
+  arxiv: "2510.04374"

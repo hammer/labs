@@ -1,0 +1,32 @@
+name: HumanEval
+slug: humaneval
+lab: openai
+type: eval
+date: 2021-07-07
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2107.03374
+  - label: GitHub
+    url: https://github.com/openai/human-eval
+description: >
+  <p><strong>164 hand-written Python programming problems</strong> with function
+  signatures, docstrings, and unit tests. Each problem tests language comprehension,
+  algorithms, and simple mathematics. Introduced the <strong>pass@k metric</strong>
+  (functional correctness of k generated samples) that became the standard for code
+  generation evaluation. Released alongside the Codex model paper.</p>
+
+  <p>The <strong>foundational code generation benchmark</strong> &mdash; virtually every
+  LLM and code model since 2021 reports HumanEval scores. Now <strong>saturated</strong>
+  (frontier models >95%) and largely superseded by harder benchmarks (SWE-Bench,
+  LiveCodeBench, Terminal-Bench) for frontier differentiation, but remains the
+  reference point for the field. By Chen, Tworek et al. (OpenAI).</p>
+tags:
+  - benchmark
+  - evaluation
+  - coding
+  - foundational
+paper:
+  arxiv: "2107.03374"
+related:
+  - codex

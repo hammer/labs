@@ -1,0 +1,34 @@
+name: IFBench
+slug: ifbench
+lab: ai2
+type: eval
+date: 2025-07-03
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.02833
+  - label: GitHub
+    url: https://github.com/allenai/IFBench
+  - label: Artificial Analysis Leaderboard
+    url: https://artificialanalysis.ai/evaluations/ifbench
+description: >
+  <p><strong>58 diverse, programmatically verifiable output constraints</strong> for
+  evaluating instruction-following generalization. Core finding: models strongly overfit
+  to the 25 constraints in the older IFEval benchmark and fail on unseen constraint types.
+  IFBench introduces constraints across 7 categories (count, ratio, words, sentence,
+  format, custom, copy) combined with WildChat prompts to produce <strong>294 evaluation
+  tasks</strong>. All constraints verified automatically by code.</p>
+
+  <p>Also demonstrates that <strong>RLVR (reinforcement learning with verifiable
+  rewards)</strong> substantially improves constraint compliance. Includes 29
+  hand-annotated training constraints with verification functions and RLVR prompts.
+  Used in the <strong>Artificial Analysis Intelligence Index v4.0</strong> (6.25% weight
+  in the General category). NeurIPS 2025 Datasets &amp; Benchmarks. By Pyatkin, Malik,
+  Graf, Ivison, Huang, Dasigi, Lambert, and Hajishirzi (Ai2).</p>
+tags:
+  - benchmark
+  - evaluation
+  - alignment
+paper:
+  arxiv: "2507.02833"
+  venue: NeurIPS 2025

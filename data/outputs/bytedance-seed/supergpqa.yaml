@@ -1,7 +1,7 @@
 name: "SuperGPQA: Scaling LLM Evaluation across 285 Graduate Disciplines"
 slug: supergpqa
 lab: bytedance-seed
-type: dataset
+type: eval
 date: 2025-02-20
 flagship: true
 sources:

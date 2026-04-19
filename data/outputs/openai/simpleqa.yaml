@@ -1,0 +1,26 @@
+name: SimpleQA
+slug: simpleqa
+lab: openai
+type: eval
+date: 2024-11-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.04368
+  - label: Epoch ECI Leaderboard
+    url: https://epoch.ai/benchmarks/eci
+description: >
+  <p><strong>4,326 short-form factuality questions</strong> adversarially collected
+  against GPT-4 to measure factual recall and calibration. Questions are designed
+  to have single, unambiguous, verifiable answers. Tests whether models know what
+  they know &mdash; rewarding calibrated abstention over confident hallucination.</p>
+
+  <p>Used in the <strong>Epoch Capabilities Index</strong> (as SimpleQA Verified).
+  Complements Artificial Analysis' AA-Omniscience (which tests similar capabilities
+  at larger scale with 6,000 questions). Still discriminative for frontier models.
+  By OpenAI.</p>
+tags:
+  - benchmark
+  - evaluation
+  - factuality
+paper:
+  arxiv: "2411.04368"

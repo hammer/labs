@@ -1,0 +1,28 @@
+name: MLE-bench
+slug: mle-bench
+lab: openai
+type: eval
+date: 2024-10-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.07095
+  - label: GitHub
+    url: https://github.com/openai/mle-bench
+description: >
+  <p><strong>75 ML engineering competitions from Kaggle</strong> testing whether AI
+  agents can train models, prepare datasets, and run experiments autonomously. Each
+  task is a real Kaggle competition with a defined metric and test set. Agents operate
+  in sandboxed environments with code execution and file I/O. Scored by Kaggle medal
+  thresholds (bronze/silver/gold).</p>
+
+  <p>o1-preview with AIDE scaffolding achieves bronze in 16.9% of competitions.
+  ICLR 2025. A key benchmark for measuring the ML research automation capability
+  that labs are racing toward. By Chan, Fishman, Korinek et al. (OpenAI).</p>
+tags:
+  - benchmark
+  - evaluation
+  - coding
+  - agentic
+paper:
+  arxiv: "2410.07095"
+  venue: ICLR 2025

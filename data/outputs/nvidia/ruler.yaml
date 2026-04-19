@@ -1,0 +1,26 @@
+name: "RULER: What's the Real Context Size of Your LLM?"
+slug: ruler
+lab: nvidia
+type: eval
+date: 2024-04-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2404.06654
+description: >
+  <p>Long-context evaluation framework with <strong>13 tasks</strong> across 4
+  categories: retrieval (single/multi-key needle-in-a-haystack), multi-hop
+  composition, aggregation (counting, frequency), and question answering. Tests
+  genuine context utilization at lengths from 4K to 1M+ tokens, going well beyond
+  simplistic needle-in-a-haystack tests.</p>
+
+  <p>Revealed that many models claiming 128K+ context windows <strong>degrade
+  significantly</strong> on real tasks at those lengths. Became the <strong>de facto
+  standard for long-context evaluation</strong> &mdash; used by model developers
+  (Anthropic, Meta, NVIDIA) to report context-window capabilities. RULER@128K and
+  RULER@1M scores appear on major model cards. By Hsieh et al. (NVIDIA Research).</p>
+tags:
+  - benchmark
+  - evaluation
+  - long-context
+paper:
+  arxiv: "2404.06654"

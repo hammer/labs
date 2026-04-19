@@ -89,7 +89,7 @@ const DatasetDetailsSchema = z.object({
   url: z.string().url().optional(),
 });
 
-const outputTypes = ['model', 'paper', 'blog', 'library', 'dataset', 'announcement'] as const;
+const outputTypes = ['model', 'paper', 'blog', 'library', 'dataset', 'eval', 'announcement'] as const;
 
 // A sub-output within a grouped entry
 const SubOutputSchema = z.object({

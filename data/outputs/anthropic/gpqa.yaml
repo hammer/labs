@@ -1,0 +1,37 @@
+name: "GPQA: Graduate-Level Google-Proof Q&A"
+slug: gpqa
+lab:
+  - anthropic
+  - ai2
+type: eval
+date: 2023-11-20
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2311.12022
+  - label: GitHub
+    url: https://github.com/idavidrein/gpqa
+  - label: Artificial Analysis Leaderboard
+    url: https://artificialanalysis.ai/evaluations/gpqa-diamond
+description: >
+  <p><strong>198 "Google-Proof" graduate-level science questions</strong> (the Diamond
+  subset) in biology, physics, and chemistry. Designed so that even skilled non-experts
+  with unlimited internet access cannot answer them (34% non-expert vs. 65% PhD expert
+  vs. 25% random baseline). Created to enable scalable oversight experiments &mdash;
+  studying how humans can supervise AI that may surpass human expertise.</p>
+
+  <p>One of the most widely adopted science evals of the 2024-2025 era. Used in both the
+  <strong>AA Intelligence Index v4.0</strong> (6.25% weight) and the <strong>Epoch
+  Capabilities Index</strong>. Top models now at <strong>94.3%</strong>, exceeding PhD
+  experts by 24pp. <a href="https://epoch.ai/gradient-updates/gpqa-diamond-whats-left/">Epoch
+  AI analysis</a> estimates the theoretical ceiling at ~95% due to ~5-10% invalid
+  questions, meaning the benchmark is effectively saturated for frontier differentiation.
+  COLM 2024. By Rein, Hou, Stickland, Petty, Pang, Dirani, Michael, and Bowman
+  (NYU + Anthropic).</p>
+tags:
+  - benchmark
+  - evaluation
+  - science
+paper:
+  arxiv: "2311.12022"
+  venue: COLM 2024

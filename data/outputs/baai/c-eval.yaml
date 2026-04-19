@@ -15,7 +15,7 @@ tags:
   - evaluation
 outputs:
   - name: C-Eval Benchmark
-    type: dataset
+    type: eval
     date: 2023-05-15
     sources:
       - label: Website

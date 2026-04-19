@@ -1,0 +1,29 @@
+name: "BIG-Bench Extra Hard (BBEH)"
+slug: bbeh
+lab: google
+type: eval
+date: 2025-02-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.19187
+description: >
+  <p>Successor to <strong>BIG-Bench Hard (BBH)</strong>, replacing its 23 saturated
+  tasks with much harder variants designed to resist frontier model capabilities.
+  Harmonic mean accuracy: <strong>9.8% (best general model)</strong>, 44.8% (best
+  reasoning model) &mdash; vs. BBH where frontier models scored >90%. Tasks span
+  logical deduction, causal reasoning, spatial understanding, and multi-step
+  inference.</p>
+
+  <p>Rapidly adopted as the BBH successor in eval suites. ACL 2025. By Google
+  DeepMind. The original <a href="https://arxiv.org/abs/2206.04615">BIG-Bench</a>
+  (2022, 204 tasks, 444 authors from 132 institutions) was one of the most
+  influential multi-task evaluation efforts; BBEH preserves its spirit while
+  restoring discriminative power.</p>
+tags:
+  - benchmark
+  - evaluation
+  - reasoning
+  - foundational
+paper:
+  arxiv: "2502.19187"
+  venue: ACL 2025

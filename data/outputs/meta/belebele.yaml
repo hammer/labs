@@ -1,0 +1,27 @@
+name: Belebele
+slug: belebele
+lab: meta
+type: eval
+date: 2023-08-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2308.16884
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/facebook/belebele
+description: >
+  <p>The <strong>largest parallel multilingual NLU benchmark</strong>: 900 reading
+  comprehension questions translated into <strong>122 language variants</strong>
+  (spanning high-, medium-, and low-resource languages across all continents).
+  Multiple-choice format with 4 options. Every question appears identically across
+  all languages, enabling direct cross-lingual comparison.</p>
+
+  <p>Revealed massive performance gaps between high-resource and low-resource
+  languages even for frontier multilingual models. Still discriminative for
+  multilingual evaluation. ACL 2024. By Bandarkar, Liang et al. (Meta FAIR).</p>
+tags:
+  - benchmark
+  - evaluation
+  - multilingual
+paper:
+  arxiv: "2308.16884"
+  venue: ACL 2024
