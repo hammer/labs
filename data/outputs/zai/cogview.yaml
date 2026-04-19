@@ -1,6 +1,8 @@
 name: CogView
 slug: cogview
-lab: zai
+lab:
+  - zai
+  - baai
 type: model
 date: "2021-05-26"
 sources:
