@@ -1,0 +1,43 @@
+name: Trinity Large Thinking
+slug: trinity-large-thinking
+lab: arcee
+type: model
+date: 2026-04-02
+flagship: true
+sources:
+  - label: Blog Post
+    url: https://www.arcee.ai/blog/trinity-large-thinking
+  - label: HuggingFace
+    url: https://huggingface.co/arcee-ai/Trinity-Large-Thinking
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/trinity-large-thinking
+  - label: OpenRouter
+    url: https://openrouter.ai/arcee-ai/trinity-large-thinking
+  - label: VentureBeat
+    url: https://venturebeat.com/technology/arcees-new-open-source-trinity-large-thinking-is-the-rare-powerful-u-s-made
+description: >
+  <p>Reasoning-optimized variant of <a href="/outputs/arcee/trinity-large">Trinity
+  Large</a> (398B / 13B active MoE) with extended chain-of-thought thinking before
+  responding. Post-trained for <strong>long-horizon agentic tasks</strong>: multi-turn
+  tool calling, sustained context coherence, clean instruction following, and stable
+  behavior across long-running agent loops. Apache 2.0.</p>
+
+  <p>AA Intelligence Index: <strong>32</strong> (above median of 27 for open-weight
+  models of similar size). <strong>132 tok/s</strong> output speed, 0.91s time-to-first-token.
+  tau2-Airline: 88.0%, <strong>AIME25: 96.3%</strong>, SWE-Bench: 63.2%, PinchBench: 91.9%
+  (#2 globally). <strong>#1 most-used open model in the US on OpenRouter.</strong>
+  Available from Arcee AI and Parasail (FP8).</p>
+tags:
+  - moe
+  - open-weight
+  - frontier
+  - reasoning
+  - agentic
+model:
+  architecture: moe
+  base_model: trinity-large
+  context_window: 512000
+  intelligence_index: 32
+related:
+  - trinity-large
+  - trinity-mini

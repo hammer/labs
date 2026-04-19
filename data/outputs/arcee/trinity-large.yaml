@@ -23,10 +23,10 @@ description: >
   all Trinity models). Muon optimizer, zero loss spikes. 512K native
   context (tested to 1M). Data curated by DatologyAI (8T+ synthetic).</p>
 
-  <p>MMLU: 87.2 (instruct), MMLU-Pro: 75.3, GPQA-Diamond: 63.3.
-  Trinity-Large-Thinking: tau2-Airline 88.0%, AIME25 96.3%, SWE-Bench
-  63.2%, PinchBench 91.9% (#2 globally). #1 most-used open model in
-  the US on OpenRouter. Apache 2.0.</p>
+  <p>MMLU: 87.2 (instruct), MMLU-Pro: 75.3, GPQA-Diamond: 63.3. The
+  reasoning variant <a href="/outputs/arcee/trinity-large-thinking">Trinity-Large-Thinking</a>
+  (April 2026, AA Intelligence Index 32) became the #1 most-used open model in the US
+  on OpenRouter. Apache 2.0.</p>
 tags:
   - moe
   - open-weight
@@ -41,4 +41,5 @@ model:
 paper:
   arxiv: "2602.17004"
 related:
+  - trinity-large-thinking
   - trinity-mini
