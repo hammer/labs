@@ -1,0 +1,41 @@
+name: Muse Spark
+slug: muse-spark
+lab: meta
+type: model
+date: 2026-04-08
+flagship: true
+sources:
+  - label: Blog Post
+    url: https://ai.meta.com/blog/introducing-muse-spark-msl/
+  - label: TechCrunch
+    url: https://techcrunch.com/2026/04/08/meta-debuts-the-muse-spark-model-in-a-ground-up-overhaul-of-its-ai/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/muse-spark
+  - label: Artificial Analysis (article)
+    url: https://artificialanalysis.ai/articles/muse-spark-everything-you-need-to-know
+description: >
+  <p>First model from <strong>Meta Superintelligence Labs</strong> (led by Alexandr Wang)
+  and the start of the <strong>Muse model family</strong> &mdash; a complete departure
+  from the Llama lineage, rebuilt from scratch over a nine-month sprint (internally
+  codenamed "Avocado"). Natively multimodal: processes text, images, and audio in a
+  single architecture with built-in tool use, visual chain-of-thought reasoning, and
+  multi-agent orchestration. 260K token context. Parameter count undisclosed.</p>
+
+  <p>AA Intelligence Index: <strong>52</strong> &mdash; <strong>#4 globally</strong>
+  behind GPT-5.4 (57), Gemini 3.1 Pro (57), and Claude Opus 4.6 (53). Reaches Llama 4
+  Maverick's capabilities with <strong>10&times; less compute</strong> and used just
+  58M output tokens to complete the full AA evaluation (vs 120M for GPT-5.4, 157M for
+  Opus 4.6). Strongest on healthcare (<strong>HealthBench Hard: 42.8</strong>, beating
+  GPT-5.4's 40.1) and chart comprehension (<strong>CharXiv: 86.4</strong>, #1 overall).
+  Humanity's Last Exam: 58%, FrontierScience Research: 38% (Contemplating mode).</p>
+
+  <p><strong>Not open-weight</strong> &mdash; Meta's first proprietary model, available
+  only via meta.ai, the Meta AI app, and a private API preview. Marks Meta's strategic
+  pivot toward a closed commercial track alongside the open Llama family.</p>
+tags:
+  - frontier
+  - multimodal
+  - reasoning
+model:
+  context_window: 260000
+  intelligence_index: 52
