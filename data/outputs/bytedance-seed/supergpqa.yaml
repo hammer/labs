@@ -1,0 +1,37 @@
+name: "SuperGPQA: Scaling LLM Evaluation across 285 Graduate Disciplines"
+slug: supergpqa
+lab: bytedance-seed
+type: dataset
+date: 2025-02-20
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.14739
+  - label: Project Page
+    url: https://supergpqa.github.io/
+  - label: GitHub
+    url: https://github.com/SuperGPQA/SuperGPQA
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/m-a-p/SuperGPQA
+  - label: ByteDance Seed Blog
+    url: https://seed.bytedance.com/en/blog/doubao-seed-team-launched-supergpqa-an-open-source-benchmark-test-set-covering-285-disciplines
+description: >
+  <p>The most comprehensive graduate-level knowledge reasoning benchmark, spanning
+  <strong>285 disciplines</strong> (13 major, 72 fields, 285 subfields) with
+  <strong>26,529 questions</strong> &mdash; a 130&times; scale-up over GPQA Diamond's
+  198 questions in 3 domains. For the first time includes long-tail disciplines such as
+  agriculture, light industry, and service science alongside mainstream STEM. Average of
+  <strong>9.67 answer options</strong> per question (vs. 4 in GPQA), making random
+  guessing far harder (~10% vs. 25%).</p>
+
+  <p>Uses a <strong>Human-LLM collaborative filtering mechanism</strong> to eliminate
+  trivial or ambiguous questions through iterative refinement. DeepSeek-R1 leads at
+  <strong>61.82%</strong>, indicating substantial headroom remains. Developed by the
+  Doubao (Seed) team at ByteDance in collaboration with the M-A-P open-source
+  community.</p>
+tags:
+  - benchmark
+  - evaluation
+  - open-source
+dataset:
+  github: https://github.com/SuperGPQA/SuperGPQA
