@@ -88,6 +88,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=1MSpdmQAAAAJ
 news:
+  - title: "How France's Mistral Built a $14 Billion AI Empire by Not Being American"
+    url: https://www.forbes.com/sites/iainmartin/2026/04/16/how-frances-mistral-built-a-14-billion-ai-empire-by-not-being-american/
+    source: Forbes
+    date: 2026-04-16
   - title: "Mistral AI Raises $830M in Debt to Set Up a Data Center Near Paris"
     url: https://techcrunch.com/2026/03/30/mistral-ai-raises-830m-in-debt-to-set-up-a-data-center-near-paris/
     source: TechCrunch
