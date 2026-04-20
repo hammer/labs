@@ -97,12 +97,12 @@ news:
     source: Axios
     date: 2026-04-15
   - title: "Claude Mythos Withheld from Public Release; Project Glasswing Cybersecurity Consortium Launched with Apple and Google"
-    url: https://www.wired.com/story/anthropic-claude-mythos-project-glasswing/
-    source: WIRED
+    url: https://fortune.com/2026/04/07/anthropic-claude-mythos-model-project-glasswing-cybersecurity/
+    source: Fortune
     date: 2026-04-07
   - title: "Multi-GW Compute Partnership Expansion with Google Cloud and Broadcom"
-    url: https://www.anthropic.com/news/google-broadcom-compute-expansion
-    source: Anthropic
+    url: https://techcrunch.com/2026/04/07/anthropic-compute-deal-google-broadcom-tpus/
+    source: TechCrunch
     date: 2026-04-06
   - title: "Anthropic Raises $30B Series G at $380B Valuation"
     url: https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation

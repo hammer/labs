@@ -88,12 +88,12 @@ people:
         url: https://openreview.net/profile?id=~Koray_Kavukcuoglu1
 news:
   - title: "Gemini Robotics-ER 1.6 Launched; Boston Dynamics Partnership for Industrial AI"
-    url: https://deepmind.google/discover/blog/gemini-robotics-er/
-    source: Google DeepMind
+    url: https://bostondynamics.com/blog/aivi-learning-now-powered-google-gemini-robotics/
+    source: Boston Dynamics
     date: 2026-04-14
   - title: "Gemma 4 Open Models Released"
-    url: https://blog.google/technology/developers-tools/gemma-4/
-    source: Google
+    url: https://developers.googleblog.com/bring-state-of-the-art-agentic-skills-to-the-edge-with-gemma-4/
+    source: Google Developers Blog
     date: 2026-04-02
   - title: "Gemini 3.1 Pro Released, Ties #1 on AA Intelligence Index"
     url: https://deepmind.google/models/model-cards/gemini-3-1-pro/
