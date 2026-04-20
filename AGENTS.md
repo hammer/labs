@@ -35,6 +35,15 @@ We are primarily interested in tracking:
 
 When selecting outputs for a lab, prioritize work that falls into these categories. Do not exhaustively catalog every paper — focus on what matters for understanding the frontier.
 
+### Periodic Arxiv Sweeps
+
+When scanning for new papers from tracked labs, **do not limit searches to a narrow date window.** Papers can take weeks to surface in search results, and important work is easily missed if you only check "this week." Instead:
+
+1. **Search by lab, not by date.** For each prolific lab (ByteDance Seed, Google, Meta, OpenAI, Alibaba, DeepSeek, etc.), search `site:arxiv.org [lab name] 2604` (current month prefix) AND the previous month (`2603`).
+2. **Check lab research pages and GitHub orgs directly.** Many significant papers are posted without prominent lab names in the title — they're only discoverable via the lab's own publications page, HuggingFace org, or GitHub repos (e.g., `github.com/bytedance`, `github.com/hustvl` for ByteDance Seed collaborations).
+3. **Search by researcher name for prolific labs.** Key authors at labs like ByteDance Seed, DeepSeek, and Google often publish under university co-affiliations (internships, joint work). Search for known researchers individually (e.g., `arxiv.org author:Lianghui_Zhu`).
+4. **Cover at least 4-6 weeks back** from the current date to catch papers that were posted between sweeps.
+
 ### What to Exclude
 
 Do **not** add outputs that are:

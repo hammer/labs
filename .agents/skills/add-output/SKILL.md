@@ -1,11 +1,20 @@
 ---
 name: add-output
-description: Add a new research output (model, paper, library, dataset) to a lab's output directory
+description: Add a new research output (model, paper, library, dataset, eval) to a lab's output directory
 ---
 
 # Add a New Research Output
 
 ## 1. Research
+
+### Finding Papers from a Lab
+
+Many significant papers are missed because they appear under university co-affiliations, intern programs, or collaborative GitHub orgs rather than the lab's primary name. To avoid this:
+
+- **Check the lab's GitHub org AND known collaborative orgs.** Example: ByteDance Seed papers often appear under `hustvl` (HUST Vision Lab), `FoundationVision`, or intern personal repos — not just `bytedance`.
+- **Search by key researcher names**, not just lab name. Prolific authors at major labs (e.g., Xinggang Wang for ByteDance/HUST collabs, Sho Takase for SB Intuitions) publish under university affiliations.
+- **Read the arXiv HTML first page** to verify affiliations before attributing a paper. The abstract page often omits affiliations — the HTML version (`arxiv.org/html/{id}v1`) shows them.
+- **Cover 4-6 weeks back** when doing periodic sweeps, not just the current week. Papers take time to surface in search results.
 
 ### For Models with Technical Reports
 

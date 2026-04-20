@@ -1,0 +1,30 @@
+name: "Mixture-of-Depths Attention (MoDA)"
+slug: moda
+lab: bytedance-seed
+type: paper
+date: 2026-03-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.15619
+  - label: GitHub
+    url: https://github.com/hustvl/MoDA
+description: >
+  <p>Novel attention mechanism where <strong>each attention head can attend to both
+  sequence KV pairs at the current layer and depth KV pairs from preceding
+  layers</strong>, addressing signal degradation in deep Transformers. Introduces a
+  hardware-efficient algorithm that achieves <strong>97.3% of FlashAttention-2's
+  efficiency</strong> at 64K sequence length by resolving memory access pattern
+  challenges inherent in cross-depth attention.</p>
+
+  <p>At 1.5B scale: <strong>0.2 perplexity reduction</strong> across benchmarks and
+  <strong>2.11% average gain on downstream tasks</strong> with only 3.7% additional
+  compute overhead. Shows that MoDA works better with post-norm than pre-norm
+  architectures. Joint work with Huazhong University of Science &amp; Technology
+  (HUST). By Zhu, Fang, Liao, Wang, Cheng, Huang et al. (ByteDance Seed + HUST).</p>
+tags:
+  - architecture
+  - attention
+  - foundational
+  - efficiency
+paper:
+  arxiv: "2603.15619"
