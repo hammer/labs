@@ -1,0 +1,30 @@
+name: "Prefill-as-a-Service: Cross-Datacenter KVCache for Next-Generation Models"
+slug: prfaas
+lab: moonshot-ai
+type: paper
+date: 2026-04-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.15039
+description: >
+  <p>Proposes <strong>PrfaaS (Prefill-as-a-Service)</strong>, an LLM serving
+  architecture that selectively offloads long-context prefill to standalone,
+  compute-dense prefill clusters and transfers the compressed KVCache over standard
+  Ethernet to local decode clusters. Enables <strong>independent scaling of prefill
+  and decode across geographically distributed datacenters</strong> &mdash; removing
+  the tight coupling that current disaggregated serving systems require.</p>
+
+  <p>Key insight: hybrid-attention models (sliding window + global attention) produce
+  much smaller KVCaches that fit within cross-datacenter bandwidth constraints.
+  Combines bandwidth-aware scheduling with cache-aware request placement. Achieves
+  <strong>54% higher throughput</strong> vs. homogeneous baselines on a 1T-parameter
+  model. Extends Moonshot's line of KVCache-centric serving research that began with
+  <a href="/outputs/moonshot-ai/mooncake">Mooncake</a> (FAST 2025 Best Paper).
+  By Qin, He, Wang, Li, Xu (Moonshot AI) and Wu, Zheng, Zhang (Tsinghua).</p>
+tags:
+  - infrastructure
+  - efficiency
+paper:
+  arxiv: "2604.15039"
+related:
+  - mooncake
