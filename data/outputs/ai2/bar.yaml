@@ -1,0 +1,35 @@
+name: "BAR: Branch-Adapt-Route"
+slug: bar
+lab: ai2
+type: paper
+date: 2026-04-20
+sources:
+  - label: Blog Post
+    url: https://allenai.org/blog/bar
+  - label: Tech Report
+    url: https://allenai.org/papers/bar
+  - label: GitHub
+    url: https://github.com/allenai/FlexOlmo/blob/jacobm-flex-post-train/scripts/BAR/bar_scripts.md
+  - label: HuggingFace
+    url: https://huggingface.co/collections/allenai/branch-adapt-route
+description: >
+  <p>Modular post-training recipe that trains <strong>independent domain experts
+  separately</strong> then merges them into a Mixture-of-Experts model. Each expert is a
+  two-expert MoE with one frozen "anchor" (preserving base weights) and one trainable
+  expert, using a progressive unfreezing schedule across mid-training, SFT, and RLVR
+  stages. After training, diverged shared parameters are averaged across experts (with
+  minimal loss), and a lightweight router is trained on 5% of SFT data.</p>
+
+  <p>Key benefit: individual experts can be <strong>upgraded or replaced without
+  retraining the full model</strong>. Achieves <strong>49.1 average across 19
+  benchmarks</strong> (7 categories), outperforming monolithic post-training baselines
+  (47.8) with +7.8 on math and +4.7 on code. Full retraining ceiling is 50.5. Built on
+  <a href="https://arxiv.org/abs/2502.13613">FlexOlmo</a>. By Morrison, Adhikesaven,
+  Bhagia, Zaharia, Smith, and Min (Ai2).</p>
+tags:
+  - foundational
+  - moe
+  - post-training
+  - efficiency
+related:
+  - olmo-3
