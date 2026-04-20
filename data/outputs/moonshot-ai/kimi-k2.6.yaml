@@ -1,0 +1,38 @@
+name: Kimi K2.6
+slug: kimi-k2.6
+lab: moonshot-ai
+type: model
+date: 2026-04-20
+flagship: true
+sources:
+  - label: Blog Post
+    url: https://www.kimi.com/blog/kimi-k2-6
+  - label: OpenRouter
+    url: https://openrouter.ai/moonshotai/kimi-k2.6
+description: >
+  <p>Moonshot AI's latest frontier model, building on the Kimi K2 family's
+  <strong>1T-total / 32B-active MoE architecture</strong> with 262K token context.
+  Optimized for <strong>long-horizon agentic coding</strong>: demonstrated sustained
+  execution across 4,000+ tool calls over 12+ hours with iterative self-improvement.
+  Coordinates <strong>300 sub-agent swarms</strong> executing 4,000 coordinated steps
+  simultaneously for parallel document analysis and multi-format output.</p>
+
+  <p><strong>SWE-Bench Pro: 58.6%</strong>, Terminal-Bench 2.0: 66.7%, LiveCodeBench
+  v6: 89.6%, MathVision w/ Python: 93.2%, DeepSearchQA: 92.5 F1. Supports proactive
+  24/7 agent operation via OpenClaw and Hermes. Available via Kimi.com, Kimi App,
+  API (platform.kimi.ai), and Kimi Code CLI.</p>
+tags:
+  - frontier
+  - moe
+  - agentic
+  - coding
+  - reasoning
+model:
+  architecture: moe
+  parameters: 1T
+  active_parameters: 32B
+  context_window: 262144
+  base_model: kimi-k2
+related:
+  - kimi-k2
+  - kimi-k2.5
