@@ -111,6 +111,7 @@ Use `type: eval` for benchmarks, evaluation suites, and leaderboards that became
 2. The [AA Intelligence Index methodology](https://artificialanalysis.ai/methodology/intelligence-benchmarking) — 10 evals, check if any are from the lab
 3. The [Epoch Capabilities Index](https://epoch.ai/benchmarks/eci) — ~42 benchmarks, check if any are from the lab
 4. Model cards from other labs — if they report scores on a benchmark from this lab, it's likely significant
+5. **Search independently for reasoning process / long-CoT benchmarks** — these often come from academic multi-lab collaborations (not a single tracked lab) and are easily missed. Search: `site:arxiv.org "chain of thought" benchmark evaluation 2604`, `site:arxiv.org long reasoning evaluation 2604`, `site:arxiv.org reasoning steps benchmark 2604`. Key benchmarks in this space: ProcessBench (step-level error detection), LongCoT (arXiv:2604.14140, extended reasoning chain quality), GSM-Symbolic (reasoning robustness to symbolic variation), PRMBench (process reward model quality).
 
 **Key fields for eval outputs:**
 - `type: eval`
