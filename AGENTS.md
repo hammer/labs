@@ -31,7 +31,7 @@ We are primarily interested in tracking:
 
 **Training infrastructure** — frameworks, datasets, evaluation suites, and data curation methods that enable frontier model development.
 
-**Industry-standard evaluations** (`type: eval`) — benchmarks that became widely adopted for measuring AI capabilities. Use `eval` type for benchmarks used in major composite indices ([AA Intelligence Index](https://artificialanalysis.ai/methodology/intelligence-benchmarking), [Epoch Capabilities Index](https://epoch.ai/benchmarks/eci)) or that most labs report scores on. Examples: GPQA (Anthropic+NYU), HumanEval (OpenAI), RULER (NVIDIA), IFBench (AI2), BBEH (Google), SuperGPQA (ByteDance Seed), Belebele (Meta). Do not add narrow/niche benchmarks that didn't achieve broad adoption.
+**Industry-standard evaluations** (`type: eval`) — benchmarks that became widely adopted for measuring AI capabilities. Use `eval` type for benchmarks used in major composite indices ([AA Intelligence Index](https://artificialanalysis.ai/methodology/intelligence-benchmarking), [Epoch Capabilities Index](https://epoch.ai/benchmarks/eci)) or that most labs report scores on. Examples: GPQA (Anthropic+NYU), HumanEval (OpenAI), RULER (NVIDIA), IFBench (AI2), BBEH (Google), SuperGPQA (ByteDance Seed), Belebele (Meta). Also include **reasoning process benchmarks** that evaluate extended chain-of-thought quality and step-level correctness, not just final answers (e.g., ProcessBench, LongCoT, PRMBench). Do not add narrow/niche benchmarks that didn't achieve broad adoption.
 
 When selecting outputs for a lab, prioritize work that falls into these categories. Do not exhaustively catalog every paper — focus on what matters for understanding the frontier.
 
@@ -43,6 +43,7 @@ When scanning for new papers from tracked labs, **do not limit searches to a nar
 2. **Check lab research pages and GitHub orgs directly.** Many significant papers are posted without prominent lab names in the title — they're only discoverable via the lab's own publications page, HuggingFace org, or GitHub repos (e.g., `github.com/bytedance`, `github.com/hustvl` for ByteDance Seed collaborations).
 3. **Search by researcher name for prolific labs.** Key authors at labs like ByteDance Seed, DeepSeek, and Google often publish under university co-affiliations (internships, joint work). Search for known researchers individually (e.g., `arxiv.org author:Lianghui_Zhu`).
 4. **Cover at least 4-6 weeks back** from the current date to catch papers that were posted between sweeps.
+5. **Search for new evaluation benchmarks independently** — evals often come from multi-institutional collaborations not tied to a single tracked lab and are easily missed by lab-centric sweeps. Run dedicated searches each sweep cycle: `site:arxiv.org benchmark evaluation LLM 2604`, `site:arxiv.org reasoning evaluation benchmark 2604`, `site:arxiv.org "chain of thought" evaluation benchmark 2604`, `site:arxiv.org long reasoning benchmark 2604`. Pay special attention to benchmarks that stress-test **extended reasoning chains** (long CoT), **reasoning process quality** (step-level correctness), and **test-time compute scaling** — these tend to be important for tracking thinking models (o-series, DeepSeek R1, QwQ) and are often from academic groups rather than labs.
 
 ### What to Exclude
 
