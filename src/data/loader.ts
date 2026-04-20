@@ -5,6 +5,20 @@ import { LabSchema, OutputSchema, isGrouped, type Lab, type Output, type Metrics
 
 export type OutputWithMeta = Output & { _labSlug: string; _metrics?: MetricsEntry };
 
+export interface NewsItem {
+  _kind: 'news';
+  _labSlug: string;
+  title: string;
+  url: string;
+  source?: string;
+  date: string;
+  labName: string;
+}
+
+export type TimelineItem =
+  | (OutputWithMeta & { _kind: 'output' })
+  | NewsItem;
+
 let _labs: Lab[] | null = null;
 let _outputs: OutputWithMeta[] | null = null;
 let _metrics: Record<string, MetricsEntry> | null = null;
@@ -189,6 +203,48 @@ export function getTopIntelligence(labSlug: string): { score: number; name: stri
     }
   }
   return best;
+}
+
+export function getAllNewsChronological(): NewsItem[] {
+  clearCacheIfDev();
+  const labs = loadLabs();
+  const items: NewsItem[] = [];
+  for (const lab of labs) {
+    if (!lab.news) continue;
+    for (const n of lab.news) {
+      items.push({
+        _kind: 'news',
+        _labSlug: lab.slug,
+        title: n.title,
+        url: n.url,
+        source: n.source,
+        date: n.date,
+        labName: lab.name,
+      });
+    }
+  }
+  return items.sort((a, b) => b.date.localeCompare(a.date));
+}
+
+export function getAllTimelineItems(): TimelineItem[] {
+  clearCacheIfDev();
+  const outputs: TimelineItem[] = [...loadOutputs()]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .map(o => ({ ...o, _kind: 'output' as const }));
+  const news = getAllNewsChronological();
+  // Merge two sorted-descending arrays in O(n+m)
+  const merged: TimelineItem[] = [];
+  let i = 0, j = 0;
+  while (i < outputs.length && j < news.length) {
+    if (outputs[i].date >= news[j].date) {
+      merged.push(outputs[i++]);
+    } else {
+      merged.push(news[j++]);
+    }
+  }
+  while (i < outputs.length) merged.push(outputs[i++]);
+  while (j < news.length) merged.push(news[j++]);
+  return merged;
 }
 
 export { isGrouped };

@@ -1,22 +1,30 @@
 ---
 import Layout from '../components/Layout.astro';
 import TypeBadge from '../components/TypeBadge.astro';
-import { getAllOutputsChronological, getAllLabs, getLabBySlug, isGrouped, getOutputTypes } from '../data/loader.js';
+import { getAllTimelineItems, getAllLabs, getLabBySlug, isGrouped, getOutputTypes } from '../data/loader.js';
+import type { NewsItem } from '../data/loader.js';
 import { formatCompact } from '../utils.js';
 
-const outputs = getAllOutputsChronological();
+const items = getAllTimelineItems();
+const outputCount = items.filter(i => i._kind === 'output').length;
+const newsCount = items.filter(i => i._kind === 'news').length;
 const labs = getAllLabs().map((l) => ({ slug: l.slug, name: l.name })).sort((a, b) => a.name.localeCompare(b.name));
 
 const labCounts = new Map<string, number>();
 const typeCounts = new Map<string, number>();
 const tagCounts = new Map<string, number>();
 
-outputs.forEach(o => {
-  const labList = Array.isArray(o.lab) ? o.lab : [o.lab];
-  labList.forEach(l => labCounts.set(l, (labCounts.get(l) || 0) + 1));
-  getOutputTypes(o).forEach(t => typeCounts.set(t, (typeCounts.get(t) || 0) + 1));
-  (o.tags || []).forEach(t => tagCounts.set(t, (tagCounts.get(t) || 0) + 1));
+items.forEach(item => {
+  if (item._kind === 'output') {
+    const labList = Array.isArray(item.lab) ? item.lab : [item.lab];
+    labList.forEach(l => labCounts.set(l, (labCounts.get(l) || 0) + 1));
+    getOutputTypes(item).forEach(t => typeCounts.set(t, (typeCounts.get(t) || 0) + 1));
+    (item.tags || []).forEach(t => tagCounts.set(t, (tagCounts.get(t) || 0) + 1));
+  } else {
+    labCounts.set(item._labSlug, (labCounts.get(item._labSlug) || 0) + 1);
+  }
 });
+typeCounts.set('news', newsCount);
 
 const types = [...typeCounts.keys()].sort();
 const tags = [...tagCounts.keys()].sort();
@@ -25,10 +33,15 @@ const tags = [...tagCounts.keys()].sort();
 <Layout title="Timeline">
   <header class="page-header">
     <h1>Timeline</h1>
-    <p class="subtitle">{outputs.length} outputs &middot; <button class="shortcut-hint" id="shortcut-hint">Keyboard shortcuts <kbd>?</kbd></button></p>
+    <p class="subtitle">{outputCount} outputs, {newsCount} news &middot; <button class="shortcut-hint" id="shortcut-hint">Keyboard shortcuts <kbd>?</kbd></button></p>
   </header>
 
   <div class="filter-bar">
+    <div class="view-toggle" id="view-toggle">
+      <button class="view-btn active" data-view="all">All</button>
+      <button class="view-btn" data-view="outputs">Outputs</button>
+      <button class="view-btn" data-view="news">News</button>
+    </div>
     <select id="filter-lab">
       <option value="">All labs</option>
       {labs.map((l) => (
@@ -64,31 +77,64 @@ const tags = [...tagCounts.keys()].sort();
       </tr>
     </thead>
     <tbody>
-      {outputs.map((output, i) => {
-        const labList = Array.isArray(output.lab) ? output.lab : [output.lab];
+      {items.map((item, i) => {
+        if (item._kind === 'news') {
+          const news = item as NewsItem;
+          return (
+            <tr
+              class="tl-row tl-news"
+              data-href={news.url}
+              data-external="1"
+              data-lab={news._labSlug}
+              data-type="news"
+              data-tags=""
+              data-flagship="0"
+              data-date={news.date}
+              data-stars=""
+              data-downloads=""
+              data-citations=""
+              data-kind="news"
+              data-index={i}
+            >
+              <td class="col-date">{news.date}</td>
+              <td class="col-name">
+                <a href={news.url} class="news-link" target="_blank" rel="noopener">{news.title}</a>
+                {news.source && <span class="news-source">{news.source}</span>}
+              </td>
+              <td class="col-lab"><a href={`/labs/${news._labSlug}`} class="lab-link">{news.labName}</a></td>
+              <td class="col-type"><TypeBadge type="news" /></td>
+              <td class="col-metric"><span class="no-data">&mdash;</span></td>
+              <td class="col-metric"><span class="no-data">&mdash;</span></td>
+              <td class="col-metric"><span class="no-data">&mdash;</span></td>
+            </tr>
+          );
+        }
+
+        const labList = Array.isArray(item.lab) ? item.lab : [item.lab];
         const labEntries = labList.map(s => ({ slug: s, name: getLabBySlug(s)?.name ?? s }));
-        const outputTypes = getOutputTypes(output);
-        const grouped = isGrouped(output);
-        const m = output._metrics;
+        const outputTypes = getOutputTypes(item);
+        const grouped = isGrouped(item);
+        const m = item._metrics;
         return (
           <tr
             class="tl-row"
-            data-href={`/outputs/${output._labSlug}/${output.slug}`}
+            data-href={`/outputs/${item._labSlug}/${item.slug}`}
             data-lab={labList.join(',')}
             data-type={outputTypes.join(',')}
-            data-tags={(output.tags || []).join(',')}
-            data-flagship={output.flagship ? '1' : '0'}
-            data-date={output.date}
+            data-tags={(item.tags || []).join(',')}
+            data-flagship={item.flagship ? '1' : '0'}
+            data-date={item.date}
             data-stars={m?.github_stars ?? ''}
             data-downloads={m?.hf_downloads ?? ''}
             data-citations={m?.citations ?? ''}
+            data-kind="output"
             data-index={i}
           >
-            <td class="col-date">{output.date}</td>
+            <td class="col-date">{item.date}</td>
             <td class="col-name">
-              {output.flagship && <span class="flagship-star" title="Flagship release">&#9733;</span>}
-              {output.name}
-              {grouped && <span class="group-badge">{output.outputs.length}</span>}
+              {item.flagship && <span class="flagship-star" title="Flagship release">&#9733;</span>}
+              {item.name}
+              {grouped && <span class="group-badge">{item.outputs.length}</span>}
             </td>
             <td class="col-lab">{labEntries.map((l, j) => <>{j > 0 && ', '}<a href={`/labs/${l.slug}`} class="lab-link">{l.name}</a></>)}</td>
             <td class="col-type">
@@ -113,7 +159,7 @@ const tags = [...tagCounts.keys()].sort();
           <dl>
             <div><dt><kbd>j</kbd></dt><dd>Move down</dd></div>
             <div><dt><kbd>k</kbd></dt><dd>Move up</dd></div>
-            <div><dt><kbd>o</kbd> / <kbd>Enter</kbd></dt><dd>Open output</dd></div>
+            <div><dt><kbd>o</kbd> / <kbd>Enter</kbd></dt><dd>Open item</dd></div>
             <div><dt><kbd>g</kbd> then <kbd>g</kbd></dt><dd>Go to top</dd></div>
             <div><dt><kbd>G</kbd></dt><dd>Go to bottom</dd></div>
             <div><dt><kbd>g</kbd> then <kbd>h</kbd></dt><dd>Go home</dd></div>
@@ -124,6 +170,7 @@ const tags = [...tagCounts.keys()].sort();
           <h4>Other</h4>
           <dl>
             <div><dt><kbd>/</kbd></dt><dd>Search</dd></div>
+            <div><dt><kbd>v</kbd></dt><dd>Cycle view</dd></div>
             <div><dt><kbd>f</kbd></dt><dd>Toggle flagship</dd></div>
             <div><dt><kbd>s</kbd></dt><dd>Cycle sort</dd></div>
             <div><dt><kbd>Esc</kbd></dt><dd>Clear / close</dd></div>
@@ -149,12 +196,14 @@ const tags = [...tagCounts.keys()].sort();
   const flagshipToggle = document.getElementById('flagship-toggle')!;
   const filterCount = document.getElementById('filter-count')!;
   const sortHeaders = document.querySelectorAll<HTMLTableCellElement>('.sortable');
+  const viewBtns = document.querySelectorAll<HTMLButtonElement>('.view-btn');
 
   let selected = -1;
   let visibleRows: HTMLTableRowElement[] = [...allRows];
   let waitingForG = false;
   let gTimer: ReturnType<typeof setTimeout> | null = null;
   let flagshipOnly = false;
+  let currentView: 'all' | 'outputs' | 'news' = 'all';
 
   // Sort state
   type SortColumn = 'date' | 'stars' | 'downloads' | 'citations';
@@ -162,11 +211,39 @@ const tags = [...tagCounts.keys()].sort();
   let sortDesc = true;
   const sortCycle: SortColumn[] = ['date', 'stars', 'downloads', 'citations'];
 
+  // View toggle
+  viewBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentView = btn.dataset.view as typeof currentView;
+      viewBtns.forEach(b => b.classList.toggle('active', b === btn));
+      const newsOnly = currentView === 'news';
+      typeSelect.disabled = newsOnly;
+      tagSelect.disabled = newsOnly;
+      flagshipToggle.toggleAttribute('disabled', newsOnly);
+      if (newsOnly) {
+        typeSelect.value = '';
+        tagSelect.value = '';
+        if (flagshipOnly) flagshipToggle.click();
+      }
+      updateVisibility();
+      syncToURL();
+    });
+  });
+
+  function cycleView() {
+    const views: typeof currentView[] = ['all', 'outputs', 'news'];
+    const idx = views.indexOf(currentView);
+    const next = views[(idx + 1) % views.length];
+    const btn = document.querySelector<HTMLButtonElement>(`.view-btn[data-view="${next}"]`);
+    if (btn) btn.click();
+  }
+
   flagshipToggle.addEventListener('click', () => {
     flagshipOnly = !flagshipOnly;
     flagshipToggle.setAttribute('aria-pressed', String(flagshipOnly));
     flagshipToggle.classList.toggle('active', flagshipOnly);
     updateVisibility();
+    syncToURL();
   });
 
   function getNumericAttr(row: HTMLTableRowElement, attr: string): number {
@@ -187,7 +264,6 @@ const tags = [...tagCounts.keys()].sort();
       } else {
         va = getNumericAttr(a, column);
         vb = getNumericAttr(b, column);
-        // Items with no data go to bottom
         if (va === -1 && vb === -1) return 0;
         if (va === -1) return 1;
         if (vb === -1) return -1;
@@ -195,12 +271,10 @@ const tags = [...tagCounts.keys()].sort();
       }
     });
 
-    // Re-append in new order
     for (const row of allRows) {
       tbody.appendChild(row);
     }
 
-    // Update sort arrows
     sortHeaders.forEach(th => {
       const arrow = th.querySelector('.sort-arrow')!;
       const col = th.dataset.sort;
@@ -214,9 +288,9 @@ const tags = [...tagCounts.keys()].sort();
     });
 
     updateVisibility();
+    syncToURL();
   }
 
-  // Click on sortable headers
   sortHeaders.forEach(th => {
     th.addEventListener('click', () => {
       const col = th.dataset.sort as SortColumn;
@@ -234,6 +308,12 @@ const tags = [...tagCounts.keys()].sort();
     const tag = tagSelect.value;
 
     allRows.forEach(row => {
+      const kind = row.dataset.kind;
+
+      // View filter
+      if (currentView === 'outputs' && kind !== 'output') { row.style.display = 'none'; return; }
+      if (currentView === 'news' && kind !== 'news') { row.style.display = 'none'; return; }
+
       const labs = row.dataset.lab!.split(',');
       const rowTypes = row.dataset.type!.split(',');
       const rowTags = row.dataset.tags!.split(',');
@@ -268,8 +348,14 @@ const tags = [...tagCounts.keys()].sort();
 
   function openSelected() {
     if (selected >= 0 && selected < visibleRows.length) {
-      const href = visibleRows[selected].dataset.href;
-      if (href) window.location.href = href;
+      const row = visibleRows[selected];
+      const href = row.dataset.href;
+      if (!href) return;
+      if (row.dataset.external === '1') {
+        window.open(href, '_blank', 'noopener');
+      } else {
+        window.location.href = href;
+      }
     }
   }
 
@@ -278,25 +364,74 @@ const tags = [...tagCounts.keys()].sort();
     modal.classList.toggle('hidden', show !== undefined ? !show : isShown);
   }
 
-  function cycleSort() {
+  function cycleSortShortcut() {
     const idx = sortCycle.indexOf(currentSort);
     const next = sortCycle[(idx + 1) % sortCycle.length];
     sortRows(next, true);
   }
 
-  // Click to navigate (but not when clicking a lab link)
+  // Click to navigate
   allRows.forEach(row => {
     row.addEventListener('click', (e) => {
       if ((e.target as HTMLElement).closest('.lab-link')) return;
+      if ((e.target as HTMLElement).closest('.news-link')) return;
       const href = row.dataset.href;
-      if (href) window.location.href = href;
+      if (!href) return;
+      if (row.dataset.external === '1') {
+        window.open(href, '_blank', 'noopener');
+      } else {
+        window.location.href = href;
+      }
     });
   });
 
   // Filters
-  labSelect.addEventListener('change', updateVisibility);
-  typeSelect.addEventListener('change', updateVisibility);
-  tagSelect.addEventListener('change', updateVisibility);
+  labSelect.addEventListener('change', () => { updateVisibility(); syncToURL(); });
+  typeSelect.addEventListener('change', () => { updateVisibility(); syncToURL(); });
+  tagSelect.addEventListener('change', () => { updateVisibility(); syncToURL(); });
+
+  // URL query param sync
+  function syncToURL() {
+    const params = new URLSearchParams();
+    if (currentView !== 'all') params.set('view', currentView);
+    if (labSelect.value) params.set('lab', labSelect.value);
+    if (typeSelect.value) params.set('type', typeSelect.value);
+    if (tagSelect.value) params.set('tag', tagSelect.value);
+    if (flagshipOnly) params.set('flagship', '1');
+    if (currentSort !== 'date') params.set('sort', currentSort);
+    if (!sortDesc) params.set('asc', '1');
+    const qs = params.toString();
+    history.replaceState(null, '', qs ? `?${qs}` : window.location.pathname);
+  }
+
+  function restoreFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    const view = params.get('view');
+    if (view === 'outputs' || view === 'news') {
+      currentView = view;
+      viewBtns.forEach(b => b.classList.toggle('active', b.dataset.view === view));
+      if (view === 'news') {
+        typeSelect.disabled = true;
+        tagSelect.disabled = true;
+        flagshipToggle.toggleAttribute('disabled', true);
+      }
+    }
+    if (params.get('lab')) labSelect.value = params.get('lab')!;
+    if (params.get('type')) typeSelect.value = params.get('type')!;
+    if (params.get('tag')) tagSelect.value = params.get('tag')!;
+    if (params.get('flagship') === '1') {
+      flagshipOnly = true;
+      flagshipToggle.setAttribute('aria-pressed', 'true');
+      flagshipToggle.classList.add('active');
+    }
+    const sort = params.get('sort') as SortColumn | null;
+    if (sort && sortCycle.includes(sort)) {
+      sortRows(sort, params.get('asc') !== '1');
+    }
+    updateVisibility();
+  }
+
+  restoreFromURL();
 
   // Keyboard shortcuts
   document.addEventListener('keydown', (e) => {
@@ -334,13 +469,17 @@ const tags = [...tagCounts.keys()].sort();
         e.preventDefault();
         select(visibleRows.length - 1);
         break;
+      case 'v':
+        e.preventDefault();
+        cycleView();
+        break;
       case 'f':
         e.preventDefault();
         flagshipToggle.click();
         break;
       case 's':
         e.preventDefault();
-        cycleSort();
+        cycleSortShortcut();
         break;
       case '?':
         e.preventDefault();
@@ -406,6 +545,7 @@ const tags = [...tagCounts.keys()].sort();
     align-items: center;
     gap: 0.75rem;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
   }
 
   .filter-bar select {
@@ -415,6 +555,43 @@ const tags = [...tagCounts.keys()].sort();
     font-size: 0.85rem;
     background: var(--surface);
     color: var(--text);
+  }
+
+  .filter-bar select:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  /* View toggle */
+  .view-toggle {
+    display: inline-flex;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .view-btn {
+    padding: 0.375rem 0.75rem;
+    border: none;
+    background: var(--surface);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+
+  .view-btn:not(:last-child) {
+    border-right: 1px solid var(--border);
+  }
+
+  .view-btn:hover {
+    color: var(--text);
+  }
+
+  .view-btn.active {
+    background: #2563eb;
+    color: #fff;
   }
 
   .flagship-toggle {
@@ -438,6 +615,11 @@ const tags = [...tagCounts.keys()].sort();
     background: #2563eb;
     border-color: #2563eb;
     color: #fff;
+  }
+
+  .flagship-toggle:disabled {
+    opacity: 0.4;
+    pointer-events: none;
   }
 
   .filter-count {
@@ -518,6 +700,36 @@ const tags = [...tagCounts.keys()].sort();
     border-bottom: none;
   }
 
+  /* News rows */
+  .tl-news {
+    background: color-mix(in srgb, var(--color-news) 3%, transparent);
+  }
+
+  .tl-news:hover {
+    background: color-mix(in srgb, var(--color-news) 7%, transparent);
+  }
+
+  .tl-news.selected {
+    background: color-mix(in srgb, var(--color-news) 12%, transparent);
+    outline-color: var(--color-news);
+  }
+
+  .news-link {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .news-link:hover {
+    color: var(--color-news);
+  }
+
+  .news-source {
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+
   /* Columns */
   .col-date {
     white-space: nowrap;
@@ -593,40 +805,6 @@ const tags = [...tagCounts.keys()].sort();
     td.col-metric {
       display: none;
     }
-  }
-
-  /* Search bar */
-  .search-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    display: none;
-    justify-content: center;
-    padding: 1rem;
-    background: rgba(0,0,0,0.15);
-  }
-
-  .search-bar.active {
-    display: flex;
-  }
-
-  .search-bar input {
-    width: 100%;
-    max-width: 480px;
-    padding: 0.6rem 1rem;
-    font-size: 1rem;
-    border: 2px solid var(--border);
-    border-radius: 8px;
-    background: var(--surface);
-    color: var(--text);
-    outline: none;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-  }
-
-  .search-bar input:focus {
-    border-color: #2563eb;
   }
 
   /* Shortcuts modal */
