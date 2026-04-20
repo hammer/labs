@@ -62,6 +62,20 @@ people:
         url: https://scholar.google.com/citations?user=6dikuoYAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Yi_Jiang2
+  - name: Daya Guo
+    url: https://guoday.github.io/
+    role: Large Model Research Lead, Seed (joined April 2026)
+    formerly: DeepSeek (first author of R1, proposed GRPO); Sun Yat-sen University (PhD)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=2P4zZ3IAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Daya_Guo2
+news:
+  - title: "ByteDance Recruits DeepSeek R1 Lead Author Daya Guo for Seed Agent Team"
+    url: https://www.scmp.com/tech/big-tech/article/3350521/bytedance-tencent-step-ai-talent-battle-amid-reported-departure-deepseek-researcher
+    source: SCMP
+    date: 2026-04-16
 tags:
   - frontier
   - open-weight

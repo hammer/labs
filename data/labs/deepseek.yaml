@@ -60,10 +60,26 @@ people:
         url: https://openreview.net/profile?id=~Chong_Ruan1
   - name: Daya Guo
     url: https://guoday.github.io/
-    role: Former Core Researcher (R1 core author; departed early 2026)
+    role: Former Core Researcher (first author of R1, proposed GRPO; joined ByteDance Seed April 2026)
+    formerly: Sun Yat-sen University (PhD)
     urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=2P4zZ3IAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Daya_Guo2
+  - name: Xiao Bi
+    role: Core Researcher (DeepSeek LLM, V2, V3, R1, DeepSeek-Math)
+    urls:
+      - label: Semantic Scholar
+        url: https://www.semanticscholar.org/author/2278217964
+  - name: Deli Chen
+    role: Core Researcher (R1 reasoning)
+    formerly: Tencent WeChat AI (2021-2023); Peking University (MS)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=8YpGRDcAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Deli_Chen1
   - name: Zhenda Xie
     url: https://zdaxie.github.io/
     role: Core Researcher (architecture)
@@ -82,6 +98,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Qihao_Zhu1
 news:
+  - title: "DeepSeek R1 Lead Author Daya Guo Joins ByteDance Seed Amid Intensifying AI Talent War"
+    url: https://www.scmp.com/tech/big-tech/article/3350521/bytedance-tencent-step-ai-talent-battle-amid-reported-departure-deepseek-researcher
+    source: SCMP
+    date: 2026-04-16
   - title: "DeepSeek V4 Imminent — 1T-Parameter MoE to Run Solely on Huawei Ascend 950PR Chips"
     url: https://dataconomy.com/2026/04/16/deepseek-v4-ai-model-to-debut-using-only-huawei-chips/
     source: Dataconomy
