@@ -755,10 +755,16 @@ const tags = [...tagCounts.keys()].sort();
     color: var(--text);
   }
 
-  .col-type {
+  td.col-type {
     white-space: nowrap;
-    display: flex;
-    gap: 0.3rem;
+  }
+
+  td.col-type > :global(*) {
+    margin-right: 0.3rem;
+  }
+
+  td.col-type > :global(*:last-child) {
+    margin-right: 0;
   }
 
   th.col-metric {
