@@ -1,0 +1,42 @@
+name: MedGemma 1.5
+slug: medgemma-1.5
+lab: google
+type: model
+date: 2026-04-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.05081
+  - label: Google Research Blog
+    url: https://research.google/blog/next-generation-medical-image-interpretation-with-medgemma-15-and-medical-speech-to-text-with-medasr/
+  - label: HuggingFace
+    url: https://huggingface.co/google/medgemma-1.5-4b-it
+  - label: GitHub
+    url: https://github.com/Google-Health/medgemma
+  - label: Model Card
+    url: https://developers.google.com/health-ai-developer-foundations/medgemma/model-card
+description: >
+  <p><strong>4B-parameter medical multimodal model</strong> built on Gemma 3,
+  trained for medical text and image comprehension. MedGemma 1.5 expands to
+  high-dimensional medical imaging: <strong>CT/MRI volumes</strong> (3D),
+  <strong>whole-slide histopathology</strong>, <strong>anatomical bounding-box
+  localization</strong> on radiographs, and <strong>multi-timepoint chest X-ray
+  analysis</strong> with prior image context. Also improves clinical document
+  understanding (lab reports, EHRs).</p>
+
+  <p>Over MedGemma 1.0: <strong>+11% 3D MRI classification</strong>,
+  <strong>+47% macro F1 on whole-slide pathology</strong>, +35% chest X-ray
+  localization IoU, +22% EHR QA accuracy, +18% lab report extraction F1.
+  Part of Google's <a
+  href="https://developers.google.com/health-ai-developer-foundations">Health
+  AI Developer Foundations</a>. Open weights on HuggingFace (terms of use
+  required).</p>
+tags:
+  - science
+  - medical
+  - multimodal
+  - open-weight
+model:
+  architecture: dense
+  parameters: 4B
+paper:
+  arxiv: "2604.05081"
