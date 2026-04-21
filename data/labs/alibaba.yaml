@@ -108,6 +108,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=xF5VrokAAAAJ
 news:
+  - title: "Qwen3.6-Max-Preview: Alibaba's Most Powerful Model, #1 on Six Coding Benchmarks (AA Intelligence Index 52)"
+    url: https://qwen.ai/blog?id=qwen3.6-max-preview
+    source: Qwen
+    date: 2026-04-20
   - title: "Alibaba Token Hub Created: 5 AI Units Consolidated Under CEO Eddie Wu; RMB 380B ($53B) 3-Year Commitment"
     url: https://www.scmp.com/tech/big-tech/article/3346789/alibaba-reshuffles-ai-units-new-token-hub-group-led-ceo-eddie-wu
     source: SCMP
