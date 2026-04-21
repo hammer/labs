@@ -1,0 +1,33 @@
+name: TxT360
+slug: txt360
+lab: mbzuai
+type: dataset
+date: 2024-10-01
+sources:
+  - label: Blog Post
+    url: https://www.llm360.ai/news/txt360-blogpost.html
+  - label: GitHub
+    url: https://github.com/LLM360/TxT360
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/LLM360/TxT360
+  - label: Interactive Explorer
+    url: https://huggingface.co/spaces/LLM360/TxT360
+description: >
+  <p>First pretraining corpus to <strong>globally deduplicate 99 Common Crawl
+  snapshots</strong> together with 14 high-quality data sources (FreeLaw, PG-19,
+  etc.), producing <strong>~5T tokens</strong> of deduplicated text. An upsampling
+  recipe creates a <strong>15T+ token training corpus</strong> that outperforms
+  FineWeb 15T on several key metrics. The filtered variant
+  <strong>TxT360-BestOfWeb</strong> applies the ProX document filter model +
+  format scoring to retain ~22% of the highest-quality pages.</p>
+
+  <p>Part of the <a href="https://www.llm360.ai/">LLM360</a> open-source initiative
+  (MBZUAI + Petuum) focused on fully transparent LLM development. Used to train
+  the K2 model family. By Tang, Ranjan, Pangarkar, Liang, Wang, Ma, Liu, and
+  Xing (MBZUAI / LLM360).</p>
+tags:
+  - data
+  - open-source
+  - infrastructure
+dataset:
+  github: https://github.com/LLM360/TxT360

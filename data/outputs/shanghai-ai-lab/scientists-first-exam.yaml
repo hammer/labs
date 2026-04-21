@@ -1,0 +1,29 @@
+name: "Scientists' First Exam"
+slug: scientists-first-exam
+lab: shanghai-ai-lab
+type: eval
+date: 2025-06-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.10521
+description: >
+  <p>Multimodal benchmark probing <strong>scientific cognitive abilities</strong>
+  across three levels: scientific signal <strong>perception</strong>, scientific
+  attribute <strong>understanding</strong>, and scientific comparative
+  <strong>reasoning</strong>. Comprises <strong>830 expert-verified VQA pairs</strong>
+  spanning 66 multimodal tasks across 5 high-value disciplines: astronomy,
+  chemistry, earth science, life science, and materials science.</p>
+
+  <p>Questions are constructed from native disciplinary data formats (molecular
+  structures, spectra, radar charts) with an average of 2.3 scientific images per
+  question (up to 18). Bilingual prompts (English/Chinese). GPT-o3 achieves only
+  <strong>34.08%</strong> and InternVL-3 only <strong>26.52%</strong>, highlighting
+  a large gap between current MLLMs and scientific reasoning requirements.
+  By the ADLab team at Shanghai AI Laboratory.</p>
+tags:
+  - benchmark
+  - evaluation
+  - science
+  - multimodal
+paper:
+  arxiv: "2506.10521"

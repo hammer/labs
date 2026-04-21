@@ -1,0 +1,31 @@
+name: RedStone
+slug: redstone
+lab: microsoft
+type: dataset
+date: 2024-12-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.03398
+  - label: GitHub
+    url: https://github.com/microsoft/RedStone
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/microsoft/RedStone
+description: >
+  <p>Scalable pipeline for curating LLM pretraining data from Common Crawl.
+  Produces <strong>~3.17 trillion tokens</strong> across four data types:
+  general web text, code, math, and QA. Pipeline has three modules:
+  <strong>Collection</strong> (extraction and deduplication), <strong>Filtering</strong>
+  (quality classifiers and heuristic rules), and <strong>Extraction</strong>
+  (domain-specific parsers for code, math, and QA content from web pages).</p>
+
+  <p>Open-sourced with full reproduction scripts. All datasets verified in scale
+  and quality as comparable to Microsoft's internal pretraining data. By Chang, Cui,
+  Dong, Huang, Wei et al. (Microsoft Research).</p>
+tags:
+  - data
+  - open-source
+  - infrastructure
+dataset:
+  github: https://github.com/microsoft/RedStone
+paper:
+  arxiv: "2412.03398"
