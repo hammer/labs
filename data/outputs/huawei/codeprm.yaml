@@ -1,0 +1,28 @@
+name: "CodePRM: Execution Feedback-enhanced Process Reward Model for Code Generation"
+slug: codeprm
+lab: huawei
+type: paper
+date: 2025-07-01
+sources:
+  - label: Paper (ACL Anthology)
+    url: https://aclanthology.org/2025.findings-acl.428/
+  - label: PDF
+    url: https://aclanthology.org/2025.findings-acl.428.pdf
+description: >
+  <p>Proposes <strong>CodePRM</strong>, a process reward model that uses
+  <strong>code execution feedback</strong> to score individual reasoning steps
+  during code generation. Collects thought traces where each step is labeled with
+  derived code pass rates and code snippets, then trains a PRM to take both the
+  reasoning process and execution feedback as input.</p>
+
+  <p>Introduces the <strong>Generate-Verify-Refine (GVR)</strong> inference pipeline
+  where CodePRM serves as a process verifier that dynamically identifies and corrects
+  errors in the reasoning chain during code search. Outperforms strong baselines on
+  code generation benchmarks. ACL 2025 Findings. By Li, Dai, Li, Zhang, Wang, Tang,
+  Yu (SJTU + Huawei Noah's Ark Lab).</p>
+tags:
+  - coding
+  - reasoning
+  - reinforcement-learning
+paper:
+  venue: ACL 2025 Findings

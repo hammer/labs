@@ -91,6 +91,8 @@ Papers that introduced techniques now used industry-wide (e.g., "Attention Is Al
 ### For Papers, Libraries, Datasets
 
 - Fetch the arxiv page for title, authors, date, description
+- **ACL Anthology papers:** Some papers are published only on ACL Anthology (`aclanthology.org`) without a corresponding arxiv preprint, especially for ACL, EMNLP, NAACL, COLING, and their Findings tracks. Search `site:aclanthology.org [paper title]` or `site:aclanthology.org [author name]`. Use the ACL Anthology URL as the source link and set `paper.venue` (e.g., `ACL 2025 Findings`) without `paper.arxiv`.
+- **Other venue-only papers:** Check proceedings sites for NeurIPS (`proceedings.neurips.cc`), ICML (`proceedings.mlr.press`), ICLR (`openreview.net`), and CVPR/ICCV (`openaccess.thecvf.com`). Some papers appear at venues without ever being posted to arxiv.
 - **SSRN papers:** Some labs publish on SSRN (`papers.ssrn.com`) instead of arxiv, especially for economics/policy/interdisciplinary AI research. SSRN blocks automated fetching via Cloudflare — if you encounter this, ask the user to share the paper title/authors directly. Use the SSRN abstract URL as the source link, and `paper:` (with no arxiv ID) for the structured field.
 - For libraries: find GitHub stars count, key features
 - For datasets: find size, composition, intended use
