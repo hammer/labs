@@ -1,0 +1,31 @@
+name: "ReTool: Reinforcement Learning for Strategic Tool Use in LLMs"
+slug: retool
+lab: bytedance-seed
+type: paper
+date: 2025-04-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.11536
+  - label: Project Page
+    url: https://retool-rl.github.io/
+description: >
+  <p>RL framework for teaching LLMs <strong>strategic tool use</strong> by dynamically
+  interleaving real-time code execution within natural language reasoning. Uses
+  outcome-driven reinforcement learning (no supervised tool-use examples needed) with
+  a cold-start phase using synthetic code-augmented reasoning traces.</p>
+
+  <p>ReTool-32B achieves <strong>67% on AIME 2024</strong> (400 training steps),
+  reaching <strong>72.5% in extended settings</strong> &mdash; exceeding OpenAI o1-preview
+  by 27.9%. Dramatically outperforms text-only RL (40%, 1080 steps), showing that
+  code execution as a tool enables both faster convergence and higher ceilings.
+  Exhibits emergent self-correcting code generation. Built on VeRL training framework.
+  By Feng, Huang, Qu, Zhang, Qin, Zhong, Jiang, Chi, Zhong (ByteDance Seed).</p>
+tags:
+  - foundational
+  - reasoning
+  - reinforcement-learning
+  - coding
+paper:
+  arxiv: "2504.11536"
+related:
+  - ouro
