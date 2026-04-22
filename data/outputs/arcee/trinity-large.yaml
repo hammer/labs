@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2602.17004
+  - label: Dataset Paper (arXiv)
+    url: https://arxiv.org/abs/2602.15210
   - label: HuggingFace
     url: https://huggingface.co/arcee-ai/Trinity-Large-Preview
   - label: OpenRouter
