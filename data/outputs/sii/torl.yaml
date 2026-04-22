@@ -1,0 +1,31 @@
+name: "ToRL: Scaling Tool-Integrated RL"
+slug: torl
+lab: sii
+type: paper
+date: 2025-03-30
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.23383
+  - label: GitHub
+    url: https://github.com/GAIR-NLP/ToRL
+description: >
+  <p>Framework for training LLMs to <strong>autonomously discover tool-use strategies
+  via reinforcement learning</strong> rather than supervised fine-tuning. Models learn
+  when and how to invoke computational tools (code execution, calculators) purely through
+  reward-driven optimization, with no explicit instruction on tool-use patterns.</p>
+
+  <p>Demonstrates <strong>emergent behaviors</strong>: strategic tool invocation,
+  self-regulation of ineffective code, and adaptive switching between computational
+  and analytical reasoning &mdash; all arising organically from RL training. ToRL-7B
+  achieves <strong>43.3% on AIME 2024</strong>, outperforming RL without tools by
+  14% and the best existing Tool-Integrated Reasoning model by 17%. Open-sourced
+  with implementation, datasets, and models. By Xuefeng Li, Haoyang Zou, Pengfei Liu
+  (SJTU + SII GAIR).</p>
+tags:
+  - foundational
+  - reasoning
+  - reinforcement-learning
+  - coding
+paper:
+  arxiv: "2503.23383"
