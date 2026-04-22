@@ -1,0 +1,31 @@
+name: "The Illusion of Thinking"
+slug: illusion-of-thinking
+lab: apple
+type: paper
+date: 2025-06-07
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.06941
+description: >
+  <p>Systematic study of <strong>Large Reasoning Models (LRMs)</strong> using
+  controllable puzzle environments with tunable complexity. Reveals that LRMs face
+  <strong>complete accuracy collapse beyond certain complexity thresholds</strong>
+  and exhibit a counterintuitive pattern: reasoning effort initially increases with
+  problem difficulty, then <strong>declines</strong> despite available compute budget
+  &mdash; the model "gives up" before exhausting its thinking tokens.</p>
+
+  <p>Identifies three performance regimes: (1) standard models suffice at low
+  complexity, (2) LRMs show clear advantage at medium complexity, (3) <strong>both
+  collapse at high complexity</strong> with no meaningful gap. Finds that LRMs
+  struggle with exact computation and show inconsistent reasoning across scales,
+  suggesting current chain-of-thought reasoning is more brittle than benchmark
+  scores imply. NeurIPS 2025. By Shojaee, Mirzadeh, Alizadeh, Horton, Bengio,
+  and Farajtabar (Apple).</p>
+tags:
+  - foundational
+  - reasoning
+  - research
+paper:
+  arxiv: "2506.06941"
+  venue: NeurIPS 2025
