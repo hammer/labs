@@ -1,0 +1,36 @@
+name: "ToRA: Tool-Integrated Reasoning Agent"
+slug: tora
+lab: microsoft
+type: paper
+date: 2023-09-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2309.17452
+  - label: Project Page
+    url: https://microsoft.github.io/ToRA/
+  - label: GitHub
+    url: https://github.com/microsoft/ToRA
+  - label: HuggingFace
+    url: https://huggingface.co/llm-agents
+description: >
+  <p>Introduces <strong>tool-integrated reasoning agents</strong> that interleave
+  natural language reasoning with program-based tool use (computation libraries,
+  symbolic solvers) for mathematical problem solving. The agent decides when to
+  write code, execute it, and interpret results within a single reasoning chain
+  &mdash; an early and influential demonstration of the "reasoning + code execution"
+  paradigm that later became standard in frontier models.</p>
+
+  <p>Created <strong>ToRA-Corpus</strong>: 16K interactive tool-use trajectories
+  via diverse self-sampling with GPT-4 correction. Models at 7B/13B/34B/70B
+  (LLaMA-2 and CodeLLaMA bases) achieve <strong>13-19% absolute improvements</strong>
+  across 10 math datasets. ToRA-Code-34B reaches <strong>50.8% on MATH</strong>
+  (vs. GPT-4 CoT 42.5%) and ToRA-70B reaches 84.3% on GSM8k. ICLR 2024.
+  By Gou, Shao, Gong, Shen, Yang, Huang, Duan, Chen (Tsinghua + Microsoft).</p>
+tags:
+  - foundational
+  - reasoning
+  - coding
+  - math
+paper:
+  arxiv: "2309.17452"
+  venue: ICLR 2024
