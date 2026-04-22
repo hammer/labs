@@ -67,6 +67,15 @@ people:
         url: https://scholar.google.com/citations?user=Nh832fgAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Tie-Yan_Liu1
+  - name: Weizhu Chen
+    url: https://www.microsoft.com/en-us/research/people/wzchen/
+    role: Technical Fellow & Corporate VP, Microsoft GenAI
+    formerly: Creator of LoRA, DeBERTa; leads Phi model series
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=DTFhb5YAAAAJ
+      - label: LinkedIn
+        url: https://www.linkedin.com/in/weizhu-chen-620b2330/
 news:
   - title: "Microsoft Announces $10B Japan AI Infrastructure Investment (2026-2029)"
     url: https://www.wsj.com/tech/ai/microsoft-japan-ai-investment-10-billion-2026/

@@ -91,6 +91,22 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Wangding_Zeng1
+  - name: Zhihong Shao
+    url: https://zhihongshao.github.io/
+    role: Core Researcher (R1, V2, DeepSeek-Math, DeepSeek-Prover, Math-Shepherd)
+    formerly: Tsinghua University (PhD, advisor Minlie Huang); Microsoft Research Asia (intern, ToRA)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=K2YTOJAAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Zhihong_Shao1
+  - name: Zhibin Gou
+    url: https://zubingou.github.io/
+    role: Core Researcher (R1 math reasoning, GRPO clipping strategy)
+    formerly: Tsinghua University (MSc, advisor Yujiu Yang); Microsoft Research Asia (intern, ToRA)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=E4FyLPoAAAAJ
   - name: Qihao Zhu
     url: https://pkuzqh.github.io/
     role: Core Researcher
