@@ -1,0 +1,36 @@
+name: MathCoder
+slug: mathcoder
+lab: shanghai-ai-lab
+type: paper
+date: 2023-10-05
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2310.03731
+  - label: Project Page
+    url: https://microsoft.github.io/ToRA/
+  - label: GitHub
+    url: https://github.com/mathllm/MathCoder
+  - label: HuggingFace
+    url: https://huggingface.co/MathLLMs/MathCoder-CL-7B
+description: >
+  <p>Introduces <strong>code-integrated mathematical reasoning</strong> where each
+  solution interleaves natural language, code, and execution results. Created
+  <strong>MathCodeInstruct</strong>, a dataset of novel math problems with code-based
+  solutions generated via a customized LLM pipeline. Models fine-tuned at 7B/13B/34B/70B
+  on LLaMA-2 and CodeLLaMA bases.</p>
+
+  <p>MathCoder-CL-34B achieves <strong>45.2% on MATH</strong> and <strong>83.9% on
+  GSM8k</strong>, surpassing ChatGPT-3.5, PaLM-2, and outperforming GPT-4 on
+  competition-level problems. An early influential demonstration of the "reasoning +
+  code execution" paradigm alongside <a href="/outputs/microsoft/tora">ToRA</a>.
+  ICLR 2024. By Wang, Ren, Zhou, Lu, Luo, Shi, Zhang, Song, Zhan, Li (Shanghai AI
+  Lab + CUHK MMLab + CityU + Nanjing U).</p>
+tags:
+  - foundational
+  - reasoning
+  - coding
+  - math
+paper:
+  arxiv: "2310.03731"
+  venue: ICLR 2024

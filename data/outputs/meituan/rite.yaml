@@ -1,0 +1,30 @@
+name: "RITE: Reinforcement Learning for Tool-Integrated Interleaved Thinking"
+slug: rite
+lab: meituan
+type: paper
+date: 2025-10-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.11184
+description: >
+  <p>Proposes <strong>RITE</strong>, a reinforcement learning framework for training
+  LLM agents that interleave reasoning with tool use across diverse domains. Enforces
+  continuous <strong>Plan-Action-Reflection</strong> cycles that ground reasoning in
+  intermediate tool outputs and enable self-correction during complex tasks &mdash;
+  addressing the limitation that standard paradigms treat tool usage as linear or
+  isolated events.</p>
+
+  <p>Introduces <strong>Dr. GRPO</strong> (token-level loss aggregation with importance
+  sampling) to address reward sparsity and credit assignment in long tool-use
+  trajectories, plus a dual-component reward system with dynamic curriculum via online
+  rollout filtering. Demonstrates cross-domain generalization: agents trained on
+  mathematical tasks transfer to coding, science, and other reasoning domains. By
+  Chen, Yang, Xiao, Zhou, Zhang, Xi, Shi, Wang, Wang (Meituan + Zhejiang University
+  + AI2 + CityU Hong Kong).</p>
+tags:
+  - foundational
+  - reasoning
+  - agentic
+  - reinforcement-learning
+paper:
+  arxiv: "2510.11184"
