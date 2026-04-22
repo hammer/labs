@@ -1,0 +1,29 @@
+name: "Revisit Self-Debugging with Self-Generated Tests for Code Generation"
+slug: self-debugging
+lab: meituan
+type: paper
+date: 2025-01-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.12793
+description: >
+  <p>Studies how LLMs can use <strong>self-generated tests to debug their own code</strong>,
+  comparing two paradigms: <strong>post-execution self-debugging</strong> (generate code,
+  run tests, fix) and <strong>in-execution self-debugging</strong> (use intermediate
+  execution states to guide correction). Finds that post-execution debugging actually
+  <strong>hurts performance on basic problems</strong> due to test generation bias
+  (models generate unreliable tests ~56-59% of the time), but in-execution debugging
+  mitigates this by grounding corrections in actual runtime state.</p>
+
+  <p>Evaluated on GPT-4o, Claude-3.5-Sonnet, Llama-3-70B, and Qwen2.5-Coder-7B
+  across HumanEval, MBPP, and LiveCodeBench. In-execution debugging yields consistent
+  gains (+1.2% HumanEval, +1.4% MBPP on GPT-4o) while post-execution debugging
+  often degrades. Practical finding: self-debugging only reliably helps on
+  competitive-level problems, not basic ones. By Chen, Tao, Zhang, Zhou, Gu, He,
+  Zhang, Cai, Zhao, Jin (Meituan + Peking University + Beijing Institute of
+  Technology).</p>
+tags:
+  - coding
+  - research
+paper:
+  arxiv: "2501.12793"
