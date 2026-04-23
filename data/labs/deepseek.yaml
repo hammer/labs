@@ -9,9 +9,9 @@ region: china
 founded: "2023"
 type: startup
 valuation:
-  amount: "$3.4B"
+  amount: "$20B+"
   type: private
-  date: "2025-03"
+  date: "2026-04"
 description: >
   <p>DeepSeek is a dominant force in the open-source AI community, founded in 2023
   by <a href="https://en.wikipedia.org/wiki/Liang_Wenfeng">Liang Wenfeng</a>, who
@@ -114,6 +114,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Qihao_Zhu1
 news:
+  - title: "Tencent and Alibaba in Talks to Invest in DeepSeek at $20B+ Valuation — First External Funding"
+    url: https://www.bloomberg.com/news/articles/2026-04-22/deepseek-in-talks-to-raise-at-20-billion-value-the-information
+    source: Bloomberg
+    date: 2026-04-22
   - title: "DeepSeek R1 Lead Author Daya Guo Joins ByteDance Seed Amid Intensifying AI Talent War"
     url: https://www.scmp.com/tech/big-tech/article/3350521/bytedance-tencent-step-ai-talent-battle-amid-reported-departure-deepseek-researcher
     source: SCMP

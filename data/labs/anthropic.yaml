@@ -88,6 +88,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Sam_McCandlish1
 news:
+  - title: "Amazon Invests $5B More (Total $13B); Anthropic Commits $100B+ AWS Spend Over 10 Years, Secures Up to 5GW Compute"
+    url: https://www.anthropic.com/news/anthropic-amazon-compute
+    source: Anthropic
+    date: 2026-04-20
   - title: "Claude Opus 4.7 Released"
     url: https://www.anthropic.com/news/claude-opus-4-7
     source: Anthropic

@@ -87,6 +87,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Koray_Kavukcuoglu1
 news:
+  - title: "Cloud Next '26: TPU 8t/8i Announced, Deep Research Max Agents, Chrome Auto Browse, Thinking Machines Lab Multi-Billion Deal"
+    url: https://9to5google.com/2026/04/22/google-workspace-intelligence/
+    source: 9to5Google
+    date: 2026-04-22
   - title: "Gemini Robotics-ER 1.6 Launched; Boston Dynamics Partnership for Industrial AI"
     url: https://bostondynamics.com/blog/aivi-learning-now-powered-google-gemini-robotics/
     source: Boston Dynamics
