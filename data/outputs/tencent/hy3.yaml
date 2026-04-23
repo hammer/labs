@@ -1,0 +1,40 @@
+name: Hy3 Preview
+slug: hy3
+lab: tencent
+type: model
+date: 2026-04-23
+flagship: true
+sources:
+  - label: Announcement (SCMP)
+    url: https://www.scmp.com/tech/big-tech/article/3351101/tencent-unveils-first-flagship-ai-model-former-openai-researcher-helm
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/Hy3-preview
+  - label: HuggingFace
+    url: https://huggingface.co/tencent/Hy3-preview
+description: >
+  <p>First flagship model built under Chief AI Scientist <strong>Yao Shunyu</strong>
+  (former OpenAI researcher, core contributor to Operator and Deep Research).
+  <strong>295B total / 21B active MoE</strong> (192 experts, top-8, 80 layers,
+  GQA with 64 query + 8 KV heads) with 1 MTP layer (3.8B params) for speculative
+  decoding. 256K context. Developed in under three months following Tencent's March
+  2026 AI restructuring that merged AI Lab into the Hunyuan team.</p>
+
+  <p>SWE-bench Verified: <strong>74.4</strong>, Terminal-Bench 2.0: 54.4, GPQA
+  Diamond: 87.2. Base model: MMLU 87.42, GSM8K 95.37, SuperGPQA 51.60,
+  LiveCodeBench-v6 34.86 (strongest in class on several). Deployed in Tencent's
+  <strong>Yuanbao</strong> consumer app and <strong>CodeBuddy</strong> coding
+  assistant. Designed to leverage WeChat's 1B+ users for contextual understanding.
+  Open weights under Tencent Hy Community License.</p>
+tags:
+  - moe
+  - open-weight
+  - frontier
+  - coding
+  - agentic
+model:
+  architecture: moe
+  parameters: 295B
+  active_parameters: 21B
+  context_window: 256000
+related:
+  - hunyuan-2.0
