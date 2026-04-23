@@ -40,10 +40,19 @@ When selecting outputs for a lab, prioritize work that falls into these categori
 When scanning for new papers from tracked labs, **do not limit searches to a narrow date window.** Papers can take weeks to surface in search results, and important work is easily missed if you only check "this week." Instead:
 
 1. **Search by lab, not by date.** For each prolific lab (ByteDance Seed, Google, Meta, OpenAI, Alibaba, DeepSeek, etc.), search `site:arxiv.org [lab name] 2604` (current month prefix) AND the previous month (`2603`).
-2. **Check lab research pages and GitHub orgs directly.** Many significant papers are posted without prominent lab names in the title — they're only discoverable via the lab's own publications page, HuggingFace org, or GitHub repos (e.g., `github.com/bytedance`, `github.com/hustvl` for ByteDance Seed collaborations).
-3. **Search by researcher name for prolific labs.** Key authors at labs like ByteDance Seed, DeepSeek, and Google often publish under university co-affiliations (internships, joint work). Search for known researchers individually (e.g., `arxiv.org author:Lianghui_Zhu`).
-4. **Cover at least 4-6 weeks back** from the current date to catch papers that were posted between sweeps.
-5. **Search for new evaluation benchmarks independently** — evals often come from multi-institutional collaborations not tied to a single tracked lab and are easily missed by lab-centric sweeps. Run dedicated searches each sweep cycle: `site:arxiv.org benchmark evaluation LLM 2604`, `site:arxiv.org reasoning evaluation benchmark 2604`, `site:arxiv.org "chain of thought" evaluation benchmark 2604`, `site:arxiv.org long reasoning benchmark 2604`. Pay special attention to benchmarks that stress-test **extended reasoning chains** (long CoT), **reasoning process quality** (step-level correctness), and **test-time compute scaling** — these tend to be important for tracking thinking models (o-series, DeepSeek R1, QwQ) and are often from academic groups rather than labs.
+2. **Search by known internal team names.** Large companies publish under internal team names that don't contain the parent company name. Known mappings:
+   - **Alibaba**: Qwen, Tongyi, DAMO Academy, Accio Team, Ant Group (separate lab)
+   - **ByteDance Seed**: FoundationVision, HUST Vision Lab (`hustvl`), Seedance Team
+   - **Google**: DeepMind, Google Research, Google Brain (legacy), Gemma Team, Gemini Team
+   - **Meta**: FAIR, GenAI, Superintelligence Labs (MSL)
+   - **Tencent**: Hunyuan, ARC Lab, AI Lab (now merged), PCG
+   - **Microsoft**: MSR Asia, MSR Redmond, Phi Team, GenAI
+   - **Huawei**: Noah's Ark Lab, MindSpore
+   When sweeping, search for these team names too, not just the parent company.
+3. **Check lab research pages and GitHub orgs directly.** Many significant papers are posted without prominent lab names in the title — they're only discoverable via the lab's own publications page, HuggingFace org, or GitHub repos (e.g., `github.com/bytedance`, `github.com/hustvl` for ByteDance Seed collaborations, `Accio-Lab.github.io` for Alibaba's Accio team).
+4. **Search by researcher name for prolific labs.** Key authors at labs like ByteDance Seed, DeepSeek, and Google often publish under university co-affiliations (internships, joint work). Search for known researchers individually (e.g., `arxiv.org author:Lianghui_Zhu`).
+5. **Cover at least 4-6 weeks back** from the current date to catch papers that were posted between sweeps.
+6. **Search for new evaluation benchmarks independently** — evals often come from multi-institutional collaborations not tied to a single tracked lab and are easily missed by lab-centric sweeps. Run dedicated searches each sweep cycle: `site:arxiv.org benchmark evaluation LLM 2604`, `site:arxiv.org reasoning evaluation benchmark 2604`, `site:arxiv.org "chain of thought" evaluation benchmark 2604`, `site:arxiv.org long reasoning benchmark 2604`. Pay special attention to benchmarks that stress-test **extended reasoning chains** (long CoT), **reasoning process quality** (step-level correctness), and **test-time compute scaling** — these tend to be important for tracking thinking models (o-series, DeepSeek R1, QwQ) and are often from academic groups rather than labs.
 
 ### What to Exclude
 
