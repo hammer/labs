@@ -36,8 +36,12 @@ description: >
   (the <a href="https://arxiv.org/abs/2402.15627">MegaScale</a> system paper)
   and cutting-edge work in video/image generation including
   <a href="https://github.com/bytedance/sdxl-lightning">SDXL Lightning</a> and
-  Seedance. ByteDance's massive compute resources from running TikTok at global
-  scale give the Seed Team significant infrastructure advantages.</p>
+  Seedance. Papers frequently appear under university co-affiliations
+  (especially HUST Vision Lab / <code>hustvl</code> for interns) and internal
+  team names (<strong>Seedance Team</strong>, <strong>Team HY-World</strong>)
+  rather than "ByteDance" in the title. ByteDance's massive compute resources
+  from running TikTok at global scale give the Seed Team significant
+  infrastructure advantages.</p>
 people:
   - name: Wu Yonghui
     url: https://www.linkedin.com/in/yonghui-wu-65bb7521

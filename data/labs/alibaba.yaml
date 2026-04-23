@@ -49,7 +49,9 @@ description: >
   <a href="https://scholar.google.com/citations?user=64zxhRUAAAAJ">Jingren Zhou</a>
   (ACM Fellow, PhD Columbia, ex-Microsoft Research) taking direct oversight of Qwen
   model development. Former Google DeepMind researcher Hao Zhou was recruited to lead
-  post-training RL.</p>
+  post-training RL. Research also comes from internal teams publishing independently:
+  <strong>Accio Team</strong> (agentic multimodal), <strong>Tongyi Lab</strong>, and
+  DAMO Academy divisions.</p>
 people:
   - name: Jingren Zhou
     url: https://scholar.google.com/citations?user=64zxhRUAAAAJ
