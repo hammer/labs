@@ -1,0 +1,41 @@
+name: LLaDA 2.0-Uni
+slug: llada-2.0-uni
+lab: ant-group
+type: model
+date: 2026-04-22
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.20796
+  - label: HuggingFace
+    url: https://huggingface.co/inclusionAI/LLaDA2.0-Uni
+  - label: GitHub
+    url: https://github.com/inclusionAI/LLaDA2-Uni
+description: >
+  <p><strong>Unified discrete diffusion language model</strong> that natively combines
+  multimodal understanding and generation in a single architecture. <strong>16B MoE</strong>
+  with only ~1B parameters activated per token. Three core components:
+  <strong>SigLIP-VQ</strong> discrete semantic tokenizer (visual inputs &rarr; discrete
+  tokens), <strong>dLLM-MoE backbone</strong> using block-level masked diffusion with
+  Mask Token Prediction, and a <strong>diffusion decoder</strong> with 8-step distilled
+  inference for high-fidelity 1024&times;1024 generation.</p>
+
+  <p>Capabilities span text-to-image generation, VQA, image editing, document
+  understanding, and interleaved generation with reasoning. Includes
+  <strong>SPRINT</strong> acceleration (KV cache reuse + adaptive unmasking) for
+  efficient inference. Matches specialized VLMs on multimodal understanding while
+  delivering strong image generation and editing. Apache 2.0. By Inclusion AI
+  (Ant Group AGI Research Center).</p>
+tags:
+  - multimodal
+  - generation
+  - vision
+  - open-weight
+  - moe
+model:
+  architecture: moe
+  parameters: 16B
+paper:
+  arxiv: "2604.20796"
+related:
+  - llada
