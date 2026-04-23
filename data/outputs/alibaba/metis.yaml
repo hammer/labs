@@ -1,0 +1,30 @@
+name: "Metis: Cultivating Meta-Cognitive Tool Use in Agentic Multimodal Models"
+slug: metis
+lab: alibaba
+type: paper
+date: 2026-04-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.08545
+  - label: Project Page
+    url: https://Accio-Lab.github.io/Metis
+description: >
+  <p>Addresses when agentic multimodal models should use external tools versus
+  relying on internal knowledge. Proposes <strong>HDPO (Hybrid Decoupled Policy
+  Optimization)</strong>, which separates accuracy optimization from tool efficiency
+  into independent channels &mdash; avoiding the single weighted-objective tradeoff
+  that makes agents either tool-dependent or tool-avoidant.</p>
+
+  <p>Uses a <strong>curriculum learning</strong> progression: agents first master task
+  resolution, then develop self-reliance. The resulting <strong>Metis</strong> model
+  reduces tool invocations by <strong>orders of magnitude</strong> while simultaneously
+  improving reasoning accuracy. A practical contribution for making agentic systems
+  cheaper and faster by eliminating unnecessary tool calls. By the Accio Team at
+  Alibaba Group + HUST.</p>
+tags:
+  - agentic
+  - multimodal
+  - efficiency
+  - alignment
+paper:
+  arxiv: "2604.08545"
