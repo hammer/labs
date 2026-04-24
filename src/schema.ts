@@ -31,6 +31,7 @@ export const LabSchema = z.object({
   description: z.string().optional(),
   people: z.array(z.object({
     name: z.string(),
+    slug: z.string().regex(/^[a-z0-9-]+$/).optional(),
     url: z.string().url().optional(),
     urls: z.array(z.object({
       label: z.string(),
@@ -38,6 +39,7 @@ export const LabSchema = z.object({
     })).optional(),
     role: z.string().optional(),
     formerly: z.string().optional(),
+    description: z.string().optional(),
   })).optional(),
   tags: z.array(z.string()).optional(),
   news: z.array(z.object({

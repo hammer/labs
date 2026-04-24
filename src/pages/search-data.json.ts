@@ -1,4 +1,4 @@
-import { getAllLabs, getAllOutputsChronological } from '../data/loader.js';
+import { getAllLabs, getAllOutputsChronological, getAllPeople } from '../data/loader.js';
 import { isGrouped } from '../schema.js';
 
 export async function GET() {
@@ -10,21 +10,14 @@ export async function GET() {
     sub: l.type || 'lab'
   }));
 
-  const people: any[] = [];
-  getAllLabs().forEach(l => {
-    if (l.people) {
-      l.people.forEach(p => {
-        people.push({
-          type: 'person',
-          name: p.name,
-          slug: l.slug,
-          url: `/labs/${l.slug}`,
-          sub: l.name,
-          role: p.role
-        });
-      });
-    }
-  });
+  const people = getAllPeople().map(p => ({
+    type: 'person',
+    name: p.name,
+    slug: p.slug,
+    url: `/people/${p.slug}`,
+    sub: p.affiliations.filter(a => a.current).map(a => a.labName).join(', ') || p.affiliations[0]?.labName || '',
+    role: p.affiliations.find(a => a.current)?.role || p.affiliations[0]?.role || ''
+  }));
 
   const outputs = getAllOutputsChronological().map(o => {
     const arxivIds = new Set<string>();

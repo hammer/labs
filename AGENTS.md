@@ -98,7 +98,7 @@ data/
 src/
   schema.ts             # Zod schemas for Lab and Output types
   data/loader.ts        # Data loading, caching, and query functions
-  pages/                # Astro pages (index, timeline, lab, output, articles)
+  pages/                # Astro pages (index, timeline, lab, output, people, articles)
   components/           # Reusable Astro components
 public/
   logos/{slug}.png       # Lab logos (named after lab slug, 200x200)
@@ -118,6 +118,16 @@ Schemas are defined in `src/schema.ts`. Always validate after editing YAML: `npm
 - **News dates:** `YYYY-MM-DD` format
 - **News URLs:** can be absolute URLs or relative paths (e.g., `/articles/...`)
 - **Key fields:** url, wikipedia, huggingface, github, artificialanalysis, openrouter, description (HTML in YAML `>` blocks), people, news, tags
+- **People fields:** name (required), slug (optional, auto-derived from name), url, urls (labeled links array), role, formerly, description (optional HTML bio for person page)
+- **People slugs:** auto-derived from name ("Daya Guo" → `daya-guo`). Set explicitly only for disambiguation (e.g., two "Wei Zhang"s).
+- **Cross-lab people:** Same person in multiple labs is merged by slug on the person page. Use same name spelling across labs.
+
+### Person Pages
+- Generated automatically from `people` arrays across all lab YAML files
+- URL: `/people/[slug]` (flat namespace, not nested under labs)
+- Cross-lab merging: entries with matching slugs are combined into one page showing all affiliations
+- Related outputs: auto-linked by searching output descriptions for the person's name
+- News mentions: auto-linked by searching news titles for the person's name
 
 ### Priority News Sources
 

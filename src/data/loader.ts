@@ -247,4 +247,129 @@ export function getAllTimelineItems(): TimelineItem[] {
   return merged;
 }
 
+// --- Person pages ---
+
+export interface PersonAffiliation {
+  labSlug: string;
+  labName: string;
+  role?: string;
+  formerly?: string;
+  current: boolean;
+}
+
+export interface PersonWithLabs {
+  slug: string;
+  name: string;
+  description?: string;
+  url?: string;
+  urls?: { label: string; url: string }[];
+  affiliations: PersonAffiliation[];
+}
+
+export function slugifyName(name: string): string {
+  return name
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // strip accents
+    .replace(/\s*\(.*?\)\s*/g, '') // remove parenthetical (e.g., Chinese chars)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+export function getAllPeople(): PersonWithLabs[] {
+  clearCacheIfDev();
+  const labs = loadLabs();
+  const bySlug = new Map<string, PersonWithLabs>();
+
+  for (const lab of labs) {
+    if (!lab.people) continue;
+    for (const p of lab.people) {
+      const slug = p.slug || slugifyName(p.name);
+      const isCurrent = !p.role || !/(former|departed|now at)/i.test(p.role);
+
+      const existing = bySlug.get(slug);
+      if (existing) {
+        // Merge: add this lab's affiliation
+        existing.affiliations.push({
+          labSlug: lab.slug,
+          labName: lab.name,
+          role: p.role,
+          formerly: p.formerly,
+          current: isCurrent,
+        });
+        // Prefer richer data
+        if (!existing.url && p.url) existing.url = p.url;
+        if (!existing.description && p.description) existing.description = p.description;
+        if (p.urls) {
+          const existingLabels = new Set((existing.urls || []).map(u => u.label));
+          for (const u of p.urls) {
+            if (!existingLabels.has(u.label)) {
+              existing.urls = existing.urls || [];
+              existing.urls.push(u);
+            }
+          }
+        }
+      } else {
+        bySlug.set(slug, {
+          slug,
+          name: p.name,
+          description: p.description,
+          url: p.url,
+          urls: p.urls ? [...p.urls] : undefined,
+          affiliations: [{
+            labSlug: lab.slug,
+            labName: lab.name,
+            role: p.role,
+            formerly: p.formerly,
+            current: isCurrent,
+          }],
+        });
+      }
+    }
+  }
+
+  return [...bySlug.values()].sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export function getPersonBySlug(slug: string): PersonWithLabs | undefined {
+  return getAllPeople().find(p => p.slug === slug);
+}
+
+export function getOutputsForPerson(personName: string): OutputWithMeta[] {
+  // Extract the core name parts for matching (no parenthetical characters)
+  const coreName = personName.replace(/\s*\(.*?\)\s*/g, '').trim();
+  const parts = coreName.split(/\s+/);
+  if (parts.length < 2) return [];
+
+  return loadOutputs().filter(o => {
+    const desc = o.description || '';
+    // Require full name match (both parts) to avoid false positives with short names
+    return desc.includes(coreName);
+  }).sort((a, b) => b.date.localeCompare(a.date)).slice(0, 20);
+}
+
+export function getNewsForPerson(personName: string): NewsItem[] {
+  const coreName = personName.replace(/\s*\(.*?\)\s*/g, '').trim();
+  const parts = coreName.split(/\s+/);
+  if (parts.length < 2) return [];
+
+  const results: NewsItem[] = [];
+  for (const lab of loadLabs()) {
+    if (!lab.news) continue;
+    for (const n of lab.news) {
+      if (n.title.includes(coreName)) {
+        results.push({
+          _kind: 'news',
+          _labSlug: lab.slug,
+          title: n.title,
+          url: n.url,
+          source: n.source,
+          date: n.date,
+          labName: lab.name,
+        });
+      }
+    }
+  }
+  return results.sort((a, b) => b.date.localeCompare(a.date)).slice(0, 10);
+}
+
 export { isGrouped };

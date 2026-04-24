@@ -3,7 +3,7 @@ import Layout from '../../components/Layout.astro';
 import OutputCard from '../../components/OutputCard.astro';
 import TagList from '../../components/TagList.astro';
 import TypeBadge from '../../components/TypeBadge.astro';
-import { getAllLabs, getLabBySlug, getOutputsForLab } from '../../data/loader.js';
+import { getAllLabs, getLabBySlug, getOutputsForLab, slugifyName } from '../../data/loader.js';
 import { isGrouped, getOutputTypes } from '../../schema.js';
 
 export function getStaticPaths() {
@@ -65,7 +65,7 @@ const tags = [...tagCounts.keys()].sort();
       <ul class="people-list">
         {lab.people.map((p) => (
           <li>
-            {p.url ? <strong><a href={p.url}>{p.name}</a></strong> : <strong>{p.name}</strong>}
+            <strong><a href={`/people/${p.slug || slugifyName(p.name)}`}>{p.name}</a></strong>
             {p.urls && p.urls.map((link) => (
               <a href={link.url} class="person-link">{link.label}</a>
             ))}

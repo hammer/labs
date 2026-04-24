@@ -1,0 +1,324 @@
+---
+import Layout from '../../components/Layout.astro';
+import TypeBadge from '../../components/TypeBadge.astro';
+import { getAllPeople, getPersonBySlug, getOutputsForPerson, getNewsForPerson, getOutputTypes } from '../../data/loader.js';
+
+export function getStaticPaths() {
+  return getAllPeople().map(p => ({ params: { slug: p.slug } }));
+}
+
+const { slug } = Astro.params;
+const person = getPersonBySlug(slug!)!;
+const relatedOutputs = getOutputsForPerson(person.name);
+const newsMentions = getNewsForPerson(person.name);
+const currentAffiliations = person.affiliations.filter(a => a.current);
+const formerAffiliations = person.affiliations.filter(a => !a.current);
+---
+
+<Layout title={person.name}>
+  <article class="person-page">
+    <header class="person-header">
+      <h1>{person.name}</h1>
+      {currentAffiliations.length > 0 && (
+        <p class="person-subtitle">
+          {currentAffiliations.map((a, i) => (
+            <>
+              {i > 0 && ' · '}
+              {a.role && <span class="person-role">{a.role}</span>}
+              {a.role && ' — '}
+              <a href={`/labs/${a.labSlug}`}>{a.labName}</a>
+            </>
+          ))}
+        </p>
+      )}
+    </header>
+
+    {(person.url || (person.urls && person.urls.length > 0)) && (
+      <div class="profile-links">
+        {person.url && <a href={person.url} class="profile-link" target="_blank" rel="noopener">Website</a>}
+        {person.urls && person.urls.map(link => (
+          <a href={link.url} class="profile-link" target="_blank" rel="noopener">{link.label}</a>
+        ))}
+      </div>
+    )}
+
+    {person.description && (
+      <section class="section">
+        <div class="bio" set:html={person.description} />
+      </section>
+    )}
+
+    <section class="section">
+      <h2>Affiliations</h2>
+      <ul class="affiliations-list">
+        {currentAffiliations.map(a => (
+          <li class="affiliation current">
+            <span class="aff-indicator current" title="Current">●</span>
+            <div>
+              <strong><a href={`/labs/${a.labSlug}`}>{a.labName}</a></strong>
+              {a.role && <span class="aff-role"> — {a.role}</span>}
+              {a.formerly && <div class="aff-formerly">Formerly: {a.formerly}</div>}
+            </div>
+          </li>
+        ))}
+        {formerAffiliations.map(a => (
+          <li class="affiliation former">
+            <span class="aff-indicator former" title="Former">○</span>
+            <div>
+              <strong><a href={`/labs/${a.labSlug}`}>{a.labName}</a></strong>
+              {a.role && <span class="aff-role"> — {a.role}</span>}
+              {a.formerly && <div class="aff-formerly">Formerly: {a.formerly}</div>}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    {relatedOutputs.length > 0 && (
+      <section class="section">
+        <h2>Related Outputs</h2>
+        <table class="related-table">
+          <tbody>
+            {relatedOutputs.map(o => {
+              const types = getOutputTypes(o);
+              return (
+                <tr class="related-row" data-href={`/outputs/${o._labSlug}/${o.slug}`}>
+                  <td class="rel-date">{o.date}</td>
+                  <td class="rel-name"><a href={`/outputs/${o._labSlug}/${o.slug}`}>{o.name}</a></td>
+                  <td class="rel-type">{types.map(t => <TypeBadge type={t} />)}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </section>
+    )}
+
+    {newsMentions.length > 0 && (
+      <section class="section">
+        <h2>News Mentions</h2>
+        <ul class="news-list">
+          {newsMentions.map(n => (
+            <li>
+              <span class="news-date">{n.date}</span>
+              <a href={n.url} target="_blank" rel="noopener">{n.title}</a>
+              {n.source && <span class="news-source">{n.source}</span>}
+              <span class="news-lab"> — <a href={`/labs/${n._labSlug}`}>{n.labName}</a></span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </article>
+</Layout>
+
+<script>
+  // Click-to-navigate for related output rows
+  document.querySelectorAll<HTMLTableRowElement>('.related-row').forEach(row => {
+    row.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).closest('a')) return;
+      const href = row.dataset.href;
+      if (href) window.location.href = href;
+    });
+  });
+</script>
+
+<style>
+  .person-page {
+    max-width: 720px;
+  }
+
+  .person-header {
+    margin-bottom: 1rem;
+  }
+
+  .person-header h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .person-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+  }
+
+  .person-subtitle a {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .person-role {
+    color: var(--text);
+  }
+
+  /* Profile links */
+  .profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .profile-link {
+    display: inline-block;
+    padding: 0.3rem 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+
+  .profile-link:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+  }
+
+  /* Bio */
+  .bio {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .bio :global(p) {
+    margin-bottom: 0.75rem;
+  }
+
+  .bio :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  /* Sections */
+  .section {
+    margin-bottom: 2rem;
+  }
+
+  .section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Affiliations */
+  .affiliations-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .affiliation {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .aff-indicator {
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+  }
+
+  .aff-indicator.current {
+    color: #059669;
+  }
+
+  .aff-indicator.former {
+    color: var(--text-muted);
+  }
+
+  .aff-role {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .aff-formerly {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+  }
+
+  /* Related outputs table */
+  .related-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+
+  .related-row {
+    cursor: pointer;
+    transition: background 0.08s;
+  }
+
+  .related-row:hover {
+    background: rgba(37, 99, 235, 0.04);
+  }
+
+  .related-row td {
+    padding: 0.375rem 0.5rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+
+  .rel-date {
+    white-space: nowrap;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+    width: 7rem;
+  }
+
+  .rel-name a {
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .rel-name a:hover {
+    color: #2563eb;
+  }
+
+  .rel-type {
+    white-space: nowrap;
+  }
+
+  /* News mentions */
+  .news-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .news-list li {
+    line-height: 1.4;
+  }
+
+  .news-date {
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+    margin-right: 0.5rem;
+  }
+
+  .news-source {
+    margin-left: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .news-lab {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .news-lab a {
+    color: var(--text-muted);
+  }
+
+  .news-lab a:hover {
+    color: var(--text);
+  }
+</style>

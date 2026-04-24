@@ -27,9 +27,12 @@ Edit `data/labs/{slug}.yaml` and add to the `people` array:
 ```yaml
 people:
   - name: Full Name
+    slug: optional-explicit-slug    # Only if name collision. Usually omit.
     url: https://personal-website.com/        # Personal/academic page
     role: Current Role Title
     formerly: Previous Company (Role); PhD University
+    description: >                  # Optional HTML bio for person page
+      <p>Rich biography...</p>
     urls:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=XXXXXXXXX
@@ -72,7 +75,46 @@ people:
 - **Skip:** Junior researchers, interns, people with only one co-authored paper
 - Aim for 3-7 people per lab. Quality over quantity.
 
-## 4. Ordering
+## 4. Person Page Slugs
+
+Every person entry generates a page at `/people/[slug]`. Slugs are auto-derived from names by lowercasing and hyphenating (e.g., "Daya Guo" → `daya-guo`).
+
+**When to set an explicit `slug`:**
+- **Name collisions:** If two different people would generate the same slug (e.g., two "Wei Zhang"s at different labs), set explicit slugs like `wei-zhang-deepseek` and `wei-zhang-baai`
+- **Non-Latin name disambiguation:** If transliteration produces ambiguous slugs, use the most common published romanization
+- **Do NOT set slug for normal cases** — let auto-derivation handle it
+
+## 5. Person Descriptions (Rich Bios)
+
+The optional `description` field adds an HTML bio rendered on the person page. Not every person needs one — prioritize:
+
+1. Lab founders and chief scientists
+2. Researchers whose career trajectory spans multiple tracked labs
+3. People from Chinese academic labs (BAAI, Shanghai AI Lab, PCL, SII, OpenBMB) whose work is less well-documented in English
+4. Creators of foundational techniques (LoRA, GRPO, MLA, etc.)
+
+**Format:**
+```yaml
+  - name: Pengfei Liu
+    description: >
+      <p>First paragraph: current role, what they lead, key numbers.</p>
+      <p>Second paragraph: career trajectory with dates and key stops.</p>
+      <p>Third paragraph: most important research contributions.</p>
+```
+
+**Style:** Third person, HTML in YAML `>` blocks, link to outputs (`<a href="/outputs/sii/torl">ToRL</a>`) and labs (`<a href="/labs/deepseek">DeepSeek</a>`). Include native name characters. Use concrete numbers (citations, scores).
+
+## 6. Cross-Lab People
+
+When someone moves between tracked labs, they should appear in BOTH labs' `people` sections with consistent data:
+
+- **Use the same name spelling** (slugs auto-derive from names, so matching names = matching slugs)
+- **Origin lab:** Mark as "Former [Role] (departed [date]; now at [Lab])"
+- **Destination lab:** Include full current role and `formerly` with prior lab
+
+The person page automatically merges both entries, showing the full career trajectory.
+
+## 7. Ordering
 
 Add new people in a logical order within the `people` array:
 1. CEO / Founder / Head of lab
@@ -81,14 +123,14 @@ Add new people in a logical order within the `people` array:
 4. Core researchers
 5. Former members (at the end)
 
-## 5. Updating Existing People
+## 8. Updating Existing People
 
 - **Departures:** Change `role` to "Former [Role] (departed [date/destination])" — do not remove the person
 - **Role changes:** Update `role` and add previous role to `formerly`
 - **Adding links:** If a person exists but is missing Scholar/OpenReview links, search and add them
 - **Correcting info:** Verify against primary sources (personal website, LinkedIn) before changing
 
-## 6. Validate
+## 9. Validate
 
 ```bash
 npm run build   # Verify no schema errors
