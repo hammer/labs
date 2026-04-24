@@ -92,14 +92,27 @@ Hosted on **Cloudflare Pages** (project: `labindex`, domain: `labindex.ai`)
 
 ```
 data/
-  labs/*.yaml           # Lab profiles (one per lab)
-  outputs/{lab}/*.yaml  # Research outputs (one dir per lab slug)
+  labs/*.yaml           # Lab profiles (57 labs) with people, news, descriptions
+  outputs/{lab}/*.yaml  # Research outputs (~870 files, one dir per lab slug)
   metrics.json          # Impact metrics cache (auto-generated)
 src/
-  schema.ts             # Zod schemas for Lab and Output types
-  data/loader.ts        # Data loading, caching, and query functions
-  pages/                # Astro pages (index, timeline, lab, output, people, articles)
-  components/           # Reusable Astro components
+  schema.ts             # Zod schemas for Lab, Output, and type-specific details
+  data/loader.ts        # Data loading, caching, people/news/timeline functions
+  pages/
+    index.astro         # Home page (sortable lab table)
+    timeline.astro      # Timeline (outputs + news, filterable, keyboard nav)
+    labs/[slug].astro    # Lab profiles
+    outputs/[lab]/[slug].astro  # Output pages with type-specific components
+    people/[slug].astro  # Person pages (auto-generated from lab people data)
+    search-data.json.ts  # Global search index
+  components/
+    ModelDetails.astro   # Model specs grid, benchmark scores, variants table
+    PaperDetails.astro   # Venue, citations, author→people page linking
+    EvalDetails.astro    # Benchmark info, top scores table, composite index badges
+    DatasetDetails.astro # Size, format, license, languages
+    LibraryDetails.astro # Stars, language, framework, pip package
+    TypeBadge.astro      # Colored type badge (model/paper/eval/etc.)
+    Layout.astro         # Shared page wrapper with nav and search
 public/
   logos/{slug}.png       # Lab logos (named after lab slug, 200x200)
 ```
@@ -163,12 +176,39 @@ When searching for news about labs, prioritize these sources in order. Tier 1 so
 - **Slug:** lowercase alphanumeric with hyphens, dots, underscores
 - **Date:** `YYYY-MM-DD` format
 - **Type:** `model`, `paper`, `blog`, `library`, `dataset`, `eval`, `announcement`
-- **Eval type:** Use `eval` for benchmarks, evaluation suites, and leaderboards that became industry standards or are used in major composite indices (AA Intelligence Index, Epoch ECI). Examples: GPQA, IFBench, SuperGPQA, SWE-Bench. Routine narrow benchmarks that didn't achieve broad adoption should not be added.
 - **Sources:** array of `{label, url}` objects
-- **Model details:** architecture (`dense`/`moe`), parameters, active_parameters, intelligence_index, context_window, training_tokens, variants
-- **Training tokens:** string like `"28.5T"`, `"15T"`, `"500B"` — the total pretraining token count from the technical report. Capture this whenever a tech report discloses it.
-- **Paper details:** arxiv ID, venue
 - **Grouped outputs:** use `outputs` array instead of `type` for model families with sub-entries (e.g., model + paper for same release)
+
+### Type-Specific Structured Fields
+
+Each output type has dedicated structured fields rendered by a type-specific component. All fields are optional — populate what's available.
+
+**Model details** (`model:`):
+- Core: `architecture` (dense/moe), `parameters`, `active_parameters`, `context_window`, `training_tokens`, `intelligence_index`, `base_model`, `variants[]`
+- MoE: `num_experts`, `top_k`
+- Training: `training_hardware`, `training_cost`, `training_time`, `optimizer`
+- Meta: `license`
+- Performance: `benchmark_scores[]` — array of `{benchmark, score, mode}` for structured display
+
+**Paper details** (`paper:`):
+- Core: `arxiv`, `venue`
+- Enhanced: `authors[]` (names auto-linked to person pages), `code_url`, `pdf_url`, `huggingface_url`, `presentation` (oral/spotlight/poster/best-paper), `year`
+
+**Eval details** (`eval:`):
+- Scale: `num_tasks`, `num_questions`, `domains[]`
+- Method: `scoring_method`, `human_baseline`, `random_baseline`
+- Status: `saturation`, `used_in[]` (composite indices), `leaderboard_url`
+- Results: `top_scores[]` — array of `{model, score, date}`
+
+**Dataset details** (`dataset:`):
+- Core: `github`, `url`, `huggingface_url`
+- Enhanced: `size`, `format`, `languages[]`, `license`
+
+**Library details** (`library:`):
+- Core: `github` (required)
+- Enhanced: `language`, `framework`, `license`, `pip_package`
+
+**Eval type guidance:** Use `eval` for benchmarks used in major composite indices ([AA Intelligence Index](https://artificialanalysis.ai/methodology/intelligence-benchmarking), [Epoch ECI](https://epoch.ai/benchmarks/eci)) or that most labs report scores on. Do not add narrow/niche benchmarks.
 
 ### Artificial Analysis Intelligence Index
 

@@ -165,9 +165,22 @@ model:
   architecture: moe            # dense or moe
   parameters: 675B
   active_parameters: 41B       # MoE only
+  num_experts: 256             # MoE: total expert count
+  top_k: 8                     # MoE: experts active per token
   context_window: 256000
   intelligence_index: 23       # from Artificial Analysis
-  training_tokens: 15T         # total pretraining tokens from tech report (e.g., 15T, 500B)
+  training_tokens: 15T         # total pretraining tokens (e.g., 15T, 500B)
+  training_hardware: "16K H100" # hardware used for training
+  training_cost: "$5.6M"       # estimated total training cost
+  training_time: "33 days"     # wall-clock training duration
+  optimizer: Muon              # optimizer used (AdamW, Muon, GRPO, etc.)
+  license: MIT                 # MIT, Apache 2.0, Proprietary, etc.
+  benchmark_scores:            # structured benchmark results
+    - benchmark: MMLU
+      score: "90.1%"
+      mode: 5-shot
+    - benchmark: SWE-bench Verified
+      score: "80.6%"
   variants:                    # size variants released together
     - name: Model-7B
       parameters: 7B
@@ -176,8 +189,37 @@ model:
 paper:
   arxiv: "XXXX.XXXXX"
   venue: NeurIPS 2024
+  authors:                     # auto-linked to /people/[slug] if we track them
+    - First Author
+    - Second Author
+  code_url: https://github.com/org/repo
+  presentation: oral           # oral | spotlight | poster | best-paper
+eval:
+  num_questions: 26529
+  domains:
+    - biology
+    - physics
+    - chemistry
+  scoring_method: pass@1
+  used_in:
+    - AA Intelligence Index v4.0
+    - Epoch ECI
+  saturation: "Not saturated (62% top score)"
+  top_scores:
+    - model: DeepSeek-R1
+      score: "61.82%"
+  leaderboard_url: https://example.com/leaderboard
+dataset:
+  github: https://github.com/org/repo
+  huggingface_url: https://huggingface.co/datasets/org/dataset
+  size: "3.17T tokens"
+  license: Apache 2.0
 library:
   github: https://github.com/org/repo
+  language: Python
+  framework: PyTorch
+  license: MIT
+  pip_package: deepspeed
 related:
   - other-output-slug
 ```
