@@ -42,6 +42,8 @@ people:
         url: https://scholar.google.com/citations?user=vtwH6GkAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Pieter_Abbeel2
+    description: >
+      <p>BS/MS from KU Leuven; PhD from Stanford (2008, Andrew Ng&rsquo;s first PhD student). Professor of AI and Robotics at UC Berkeley, founded Berkeley Robot Learning Lab. Co-founded Gradescope (acq. Turnitin 2018) and Covariant (robotics AI). Joined Amazon August 2024; heads LLM efforts within AGI org (December 2025). ACM Prize in Computing (2021). His students co-founded OpenAI (John Schulman), Perplexity, Physical Intelligence, and others.</p>
   - name: Peter DeSantis
     role: SVP, AGI/Silicon/Quantum (from Dec 2025)
     formerly: Amazon (27 years; led EC2 launch, Annapurna Labs acquisition)

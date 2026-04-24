@@ -48,6 +48,8 @@ people:
         url: https://openreview.net/profile?id=~Sunghun_Kim1
       - label: GitHub
         url: https://github.com/hunkim
+    description: >
+      <p>Also publishes as Sunghun Kim. BS from Daegu University; PhD in CS from UC Santa Cruz. Professor at HKUST since 2009 (currently on leave). Founding Head of <strong>NAVER Clova AI</strong> (2017&ndash;2020). Co-founded Upstage in October 2020. Four Best Paper Awards and two Ten-Year Most Influential Paper Awards.</p>
   - name: Hwalsuk Lee
     role: CTO & Co-founder
     formerly: Naver Clova (OCR/Visual AI Lead); KAIST

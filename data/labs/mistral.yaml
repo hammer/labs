@@ -57,6 +57,8 @@ people:
         url: https://scholar.google.com/citations?user=F8riAN8AAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Arthur_Mensch1
+    description: >
+      <p>Ecole Polytechnique (2011), Telecom Paris, ENS. PhD in ML applied to fMRI. Google DeepMind Paris (2020&ndash;2023), working on large language models and retrieval-augmented architectures. Co-founded Mistral AI in May 2023. Named to TIME100 AI (2024). Knight of the National Order of Merit (2025).</p>
   - name: Guillaume Lample
     role: Co-founder & Chief Scientist
     formerly: Meta FAIR; PhD Carnegie Mellon / UPMC
@@ -65,6 +67,8 @@ people:
         url: https://scholar.google.com/citations?user=H7sVDmIAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Guillaume_Lample1
+    description: >
+      <p>Ecole Polytechnique, Carnegie Mellon, and Pierre &amp; Marie Curie University. Research Scientist at Meta FAIR, where he pioneered <strong>unsupervised machine translation</strong> and co-authored XLM-RoBERTa (cross-lingual pretraining for 100 languages). Co-founded Mistral AI in April 2023 as Chief Scientist.</p>
   - name: Timothee Lacroix
     role: Co-founder & CTO
     formerly: Meta FAIR (LLaMA contributor); PhD Ecole des Ponts

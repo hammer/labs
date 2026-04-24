@@ -49,6 +49,8 @@ people:
     url: https://en.wikipedia.org/wiki/Sam_Altman
     role: CEO & Co-founder
     formerly: Y Combinator (President); Loopt (Founder)
+    description: >
+      <p>Attended Stanford University (CS), dropped out after two years. Co-founded Loopt at age 19 (acquired for $43.4M). President of Y Combinator (2014&ndash;2019, chosen by Paul Graham), overseeing investments in Airbnb, DoorDash, Reddit, Instacart, and Twitch. Co-founded OpenAI in December 2015; became CEO in 2019.</p>
   - name: Jakub Pachocki
     url: https://en.wikipedia.org/wiki/Jakub_Pachocki
     role: Chief Scientist
@@ -73,6 +75,8 @@ people:
         url: https://scholar.google.com/citations?user=RLDbLcUAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Noam_Brown1
+    description: >
+      <p>PhD in CS from Carnegie Mellon University (under Tuomas Sandholm). Co-created <strong>Libratus</strong> (2017) and <strong>Pluribus</strong> (2019), superhuman poker AIs that defeated top professionals (Pluribus on the cover of <em>Science</em>). At Meta FAIR, co-developed CICERO (human-level Diplomacy AI). At OpenAI, leads reasoning research behind the <strong>o1/o3 series</strong>. MIT TR 35 Under 35.</p>
   - name: Alec Radford
     role: Former Core Researcher (GPT, CLIP, Whisper author; departed Dec 2024)
     urls:
@@ -89,6 +93,8 @@ people:
         url: https://scholar.google.com/citations?user=x04W_mMAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Ilya_Sutskever1
+    description: >
+      <p>BS (2005), MS (2007), PhD (2013) in CS from University of Toronto, supervised by <a href="https://en.wikipedia.org/wiki/Geoffrey_Hinton">Geoffrey Hinton</a>. Co-built <strong>AlexNet</strong> (2012) with Hinton and Krizhevsky, igniting the modern deep learning revolution. Google Brain (2013); created sequence-to-sequence learning. Co-founded OpenAI (2015), served as Chief Scientist. Founded <strong>Safe Superintelligence Inc. (SSI)</strong> in June 2024.</p>
   - name: John Schulman
     url: http://joschu.net/
     role: Co-founder (departed Aug 2024; now at Thinking Machines Lab)

@@ -39,6 +39,8 @@ people:
         url: https://scholar.google.com/citations?user=5pKTRxEAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Eric_Xing1
+    description: >
+      <p>BS in Physics from Tsinghua; PhD in Molecular Biology from Rutgers; PhD in CS from UC Berkeley (2004). CMU professor (2004+); created the SAILING Lab; co-founded <strong>Petuum Inc.</strong> (2016, $93M from SoftBank). Appointed <strong>President of MBZUAI</strong> in January 2021. Co-founded GenBio AI (2024). AAAI Fellow (2016), IEEE Fellow (2019).</p>
   - name: Preslav Nakov
     role: Chair, NLP Department
     formerly: Qatar Computing Research (HBKU)

@@ -52,6 +52,8 @@ people:
   - name: Xu Li
     url: https://en.wikipedia.org/wiki/Xu_Li_(computer_scientist)
     role: Co-founder & Chairman
+    description: >
+      <p>BS/MS from SJTU; PhD from CUHK (2010) in computer vision. Postdoc at CUHK; researcher at Lenovo; visiting researcher at Microsoft Research. Co-founded <a href="/labs/sensetime">SenseTime</a> in 2014. Fortune 40 Under 40 (#7, 2018). Published 50+ papers; adjunct professor at SJTU.</p>
   - name: Wang Xiaogang
     url: https://scholar.google.com/citations?user=-B5JgjsAAAAJ
     role: Co-founder & CTO

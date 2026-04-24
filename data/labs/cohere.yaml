@@ -53,6 +53,8 @@ people:
         url: https://scholar.google.com/citations?user=2oq9614AAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Aidan_N._Gomez1
+    description: >
+      <p>BS in CS and Mathematics from the University of Toronto; PhD from Oxford (paused to start Cohere). As a 20-year-old intern at Google Brain in 2017, was one of the eight co-authors of <strong>"Attention Is All You Need"</strong> &mdash; the paper that introduced the Transformer architecture underpinning all modern LLMs. Co-founded Cohere in 2019. TIME100 AI (2023).</p>
   - name: Nick Frosst
     url: https://en.wikipedia.org/wiki/Nick_Frosst
     role: Co-founder
@@ -71,6 +73,8 @@ people:
         url: https://scholar.google.com/citations?user=CEt6_mMAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Joelle_Pineau1
+    description: >
+      <p>BASc from U. Waterloo; PhD in Robotics from CMU. Professor at McGill University (Reasoning and Learning Lab). Global VP of Fundamental AI Research at Meta FAIR, helping guide early Llama development. Championed reproducibility in ML &mdash; introduced the NeurIPS reproducibility checklist (2019). Royal Society of Canada Fellow (2023). Joined Cohere as Chief AI Officer in August 2025.</p>
   - name: Phil Blunsom
     role: Chief Scientist (since Apr 2022)
     formerly: DeepMind (Principal Researcher); Oxford (Professor)
@@ -79,6 +83,8 @@ people:
         url: https://scholar.google.com/citations?user=eJwbbXEAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Phil_Blunsom1
+    description: >
+      <p>PhD from U. of Edinburgh. Professor at University of Oxford (CS dept). Co-founded DeepMind&rsquo;s NLP group. Joined Cohere as Chief Scientist in April 2022.</p>
   - name: Sara Hooker
     url: https://en.wikipedia.org/wiki/Sara_Hooker
     role: Former Head of Cohere Labs (departed 2025; co-founded Adaption Labs)

@@ -40,6 +40,8 @@ people:
         url: https://scholar.google.com/citations?user=gpKS5P0AAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Sadao_Kurohashi1
+    description: >
+      <p>PhD in Electrical Engineering from Kyoto University (1994). Long-tenured professor at Kyoto University&rsquo;s Graduate School of Informatics, specializing in NLP and knowledge infrastructure. Director-General of NII. In April 2024, established <strong>NII&rsquo;s LLM Research Center (LLMC)</strong> &mdash; the institutional home of the <strong>LLM-jp</strong> project, Japan&rsquo;s flagship open-source LLM initiative. IBM Faculty Award (2009).</p>
   - name: Daisuke Kawahara
     role: Corpus Building WG Leader
     formerly: Waseda University (Professor)

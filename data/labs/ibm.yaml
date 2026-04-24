@@ -39,6 +39,8 @@ people:
     urls:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=77QlzIwAAAAJ
+    description: >
+      <p>MS from IIT Kanpur; PhD from U. Calgary (1994). Entire career at IBM. CTO and Chief Architect of Watson (2016&ndash;2019). Currently Chief Scientist of IBM Research, IBM Fellow, and VP. Led development of the open-source <strong>Granite</strong> code models. 50+ US patents, 100+ publications. IEEE Fellow, IBM Master Inventor.</p>
   - name: Jay Gambetta
     role: Director, IBM Research (from Oct 2025); IBM Fellow
     formerly: VP, IBM Quantum

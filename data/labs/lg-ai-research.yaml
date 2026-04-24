@@ -57,6 +57,8 @@ people:
         url: https://scholar.google.com/citations?user=fmSHtE8AAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Honglak_Lee2
+    description: >
+      <p>BS in Physics and CS from Seoul National University; MS in Applied Physics + MS in CS from Stanford; PhD in CS from Stanford (2010, under Andrew Ng). Professor at U. Michigan (2010+). Google Brain (2016&ndash;2020). Joined LG AI Research December 2020 as Chief Scientist; promoted to EVP. Top 10 global AI scholars by citation impact.</p>
   - name: Woo-Hyung Lim
     role: Head of LG AI Research
   - name: Moontae Lee

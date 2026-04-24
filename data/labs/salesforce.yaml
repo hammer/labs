@@ -38,6 +38,8 @@ people:
     urls:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=ImpbxLsAAAAJ
+    description: >
+      <p>Undergrad from U. of Naples Federico II; PhD in EE from Caltech (2005). Professor at U. Michigan (2008&ndash;2013), then Stanford (inaugural Mindtree Faculty Scholar, directed SAIL-Toyota Center). Joined Salesforce in 2021 as Chief Scientist; led Einstein GPT, CodeGen, and Agentforce. TIME 100 Most Influential in AI (2024). UN International Scientific Panel on AI (2026).</p>
   - name: Junnan Li
     role: Research Director
     urls:

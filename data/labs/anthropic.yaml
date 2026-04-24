@@ -51,10 +51,14 @@ people:
         url: https://scholar.google.com/citations?user=6-e-ZBEAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Dario_Amodei1
+    description: >
+      <p>BS in Physics from Stanford; PhD in Biophysics from Princeton (Hertz Fellow, studying neural electrophysiology). VP of Research at OpenAI, leading GPT-2 and GPT-3 development. Co-founded Anthropic in 2021 with his sister <a href="/people/daniela-amodei">Daniela</a>, building the Claude model family with an emphasis on AI safety and Constitutional AI.</p>
   - name: Daniela Amodei
     url: https://en.wikipedia.org/wiki/Daniela_Amodei
     role: President & Co-founder
     formerly: OpenAI (VP of Safety & Policy); Stripe
+    description: >
+      <p>BA in English Literature from UC Santa Cruz. Started in politics, then joined Stripe as an early employee (2013). VP of Safety &amp; Policy at OpenAI (2018), overseeing teams during GPT-2&rsquo;s development. Co-founded Anthropic in 2021 with her brother <a href="/people/dario-amodei">Dario</a>. Named to TIME100 AI (2023).</p>
   - name: Chris Olah
     url: https://colah.github.io/
     role: Co-founder, Head of Interpretability
@@ -64,6 +68,8 @@ people:
         url: https://scholar.google.com/citations?user=6dskOSUAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Christopher_Olah1
+    description: >
+      <p>Self-taught researcher with no formal degree. Thiel Fellow (2010), dropped out of University of Toronto. Created the influential blog <a href="https://colah.github.io">colah.github.io</a> (2012). Google Brain (2014, co-created DeepDream), then OpenAI interpretability lead. Co-founded <a href="https://distill.pub/">Distill.pub</a>. At Anthropic, leads mechanistic interpretability &mdash; mapping internal features inside large language models.</p>
   - name: Tom Brown
     role: Co-founder & Chief Compute Officer
     formerly: OpenAI (GPT-3 first author); Google DeepMind
@@ -79,6 +85,8 @@ people:
         url: https://scholar.google.com/citations?user=KNr3vb4AAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Jared_Kaplan1
+    description: >
+      <p>BS in Physics and Mathematics from Stanford; PhD in Physics from Harvard (thesis on holography, advised by Nima Arkani-Hamed). Associate Professor of Physics at Johns Hopkins (2012+). Joined OpenAI in 2019 and co-authored the landmark <strong>"Scaling Laws for Neural Language Models"</strong> (2020), empirically demonstrating that LLM performance improves predictably with scale. Co-founded Anthropic in 2021.</p>
   - name: Sam McCandlish
     role: Co-founder & CTO
     formerly: OpenAI; PhD Stanford (Theoretical Physics)
@@ -87,6 +95,8 @@ people:
         url: https://scholar.google.com/citations?user=gHp0pu4AAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Sam_McCandlish1
+    description: >
+      <p>PhD in Physics from Johns Hopkins University (advised by Jared Kaplan). Researcher at OpenAI. Co-authored the scaling laws paper with Kaplan. Co-founded Anthropic in 2021, serving as CTO.</p>
 news:
   - title: "Amazon Invests $5B More (Total $13B); Anthropic Commits $100B+ AWS Spend Over 10 Years, Secures Up to 5GW Compute"
     url: https://www.anthropic.com/news/anthropic-amazon-compute

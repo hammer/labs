@@ -52,6 +52,8 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Zhilin_Yang2
+    description: >
+      <p>Born 1992. BS from Tsinghua; PhD from CMU under Ruslan Salakhutdinov and William Cohen. Co-authored <strong>Transformer-XL</strong> and <strong>XLNet</strong>. Interned at Google Brain and Meta. Led development of the Wu Dao LLM at BAAI (2021). Co-founded Moonshot AI in March 2023 with Tsinghua alumni who were his bandmates in "Splay" (a rock band named after the splay tree). Launched Kimi, the first assistant supporting 200K Chinese characters.</p>
   - name: Zhou Xinyu
     role: Co-founder
     formerly: Hulu; Tencent
@@ -72,6 +74,8 @@ people:
         url: https://kexue.fm
       - label: "Blog (EN)"
         url: https://datasets.osmarks.net/kexue/site/index.html
+    description: >
+      <p>Born 1993 in rural Guangdong. BS in Mathematics from South China Normal University; MS from Sun Yat-sen University (2016&ndash;2019). Has written his influential blog <strong>"Scientific Spaces" (kexue.fm)</strong> since age 15 (2008). Invented <strong>Rotary Position Embedding (RoPE)</strong>, adopted by virtually every major LLM (LLaMA, Mistral, Qwen, Gemma). <strong>13,500+ citations</strong>, mostly from this single foundational contribution.</p>
   - name: Flood Sung
     url: https://floodsung.github.io/
     role: Former RL Lead (departed 2025)

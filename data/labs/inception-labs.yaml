@@ -37,6 +37,8 @@ people:
         url: https://scholar.google.com/citations?user=ogXTOZ4AAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Stefano_Ermon1
+    description: >
+      <p>BA/MA from U. of Padova; PhD from Cornell. Associate Professor at Stanford. One of the <strong>original inventors of diffusion models</strong> &mdash; the technique behind Midjourney, DALL-E, and Sora. Co-founded Inception Labs to build Mercury, a diffusion-based LLM matching frontier quality at up to 10&times; speed. $50M seed from Microsoft, NVIDIA, Databricks, Snowflake.</p>
   - name: Aditya Grover
     url: https://aditya-grover.github.io/
     role: CTO & Co-Founder

@@ -43,12 +43,16 @@ people:
   - name: Robin Li
     url: https://en.wikipedia.org/wiki/Robin_Li
     role: Co-founder & CEO
+    description: >
+      <p>BS in Information Science from Peking University; MS in CS from University at Buffalo. Created the <strong>RankDex</strong> algorithm (1996) for search ranking &mdash; predating and cited by Google&rsquo;s PageRank patent. Worked at Dow Jones and Infoseek. Co-founded Baidu in January 2000, building it into China&rsquo;s dominant search engine (80%+ market share). NASDAQ IPO (2005). Net worth ~$5.5B.</p>
   - name: Haifeng Wang
     url: https://ir.baidu.com/management/haifeng-wang/
     role: CTO & ERNIE Lead
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Haifeng_Wang3
+    description: >
+      <p>BS/MS/PhD from Harbin Institute of Technology. Joined Baidu in 2010; CTO since May 2019. Heads Baidu AI Group and Baidu Research. Led <strong>ERNIE</strong> development (ERNIE Bot reached 430M users). <strong>ACL President</strong> (2013), founding chair of Asia-Pacific ACL chapter (2018). ACL Fellow, IEEE Fellow, CAAI Fellow.</p>
   - name: Yu Sun
     url: https://scholar.google.com/citations?user=a7drwRMAAAAJ
     role: Core Researcher (ERNIE)

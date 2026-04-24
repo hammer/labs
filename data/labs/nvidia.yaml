@@ -91,6 +91,8 @@ people:
         url: https://scholar.google.com/citations?user=sljtWIUAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Linxi_Fan1
+    description: >
+      <p>BS from Columbia (Valedictorian); PhD from Stanford (2016&ndash;2021, advised by Fei-Fei Li). OpenAI&rsquo;s very first intern; co-developed OpenAI Universe. At NVIDIA, co-founded the <strong>GEAR Lab</strong> (Generalist Embodied Agent Research) and co-leads <strong>Project GR00T</strong> (humanoid robotics). MineDojo won NeurIPS 2022 Outstanding Paper Award. Focuses on Foundation Agents across physical and virtual worlds.</p>
 news:
   - title: "NVIDIA Acquires SchedMD (Slurm Workload Manager); Draws Regulatory Scrutiny"
     url: https://techcrunch.com/2025/12/15/nvidia-bulks-up-open-source-offerings-with-an-acquisition-and-new-open-ai-models/

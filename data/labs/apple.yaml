@@ -55,6 +55,8 @@ people:
         url: https://scholar.google.com/citations?user=Vs-MdPcAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Samy_Bengio1
+    description: >
+      <p>BSc/MSc/PhD in CS from Universit&eacute; de Montr&eacute;al. (Brother of Turing Award winner Yoshua Bengio &mdash; they are siblings, not the same person.) Co-developed the <strong>Torch</strong> ML library at IDIAP/EPFL. Google Research Distinguished Scientist and Google Brain lead (2007&ndash;2021). Joined Apple as Senior Director of AI/ML Research. General Chair of NeurIPS 2018. ~250 publications.</p>
   - name: Josh Susskind
     role: Distinguished Engineer
     formerly: Emotient (Co-founder); PhD University of Toronto; Postdoc UC San Diego

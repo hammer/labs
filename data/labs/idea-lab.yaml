@@ -39,6 +39,8 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Heung-Yeung_Shum1
+    description: >
+      <p>BS from Southeast University; MPhil from University of Hong Kong; PhD in Robotics from CMU (1996, advised by Raj Reddy). Founding member of <strong>Microsoft Research Asia</strong> (1998); EVP of Microsoft AI &amp; Research Group (overseeing Bing, Cortana, MSR). Founded <strong>IDEA</strong> in Shenzhen (2020). IEEE Fellow (2006), ACM Fellow (2007), US NAE foreign associate (2017). HKUST Council Chairman (2023).</p>
   - name: Lei Zhang
     url: https://www.leizhang.org/
     role: Chair Scientist (Computer Vision & Robotics)

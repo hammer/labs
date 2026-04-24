@@ -53,6 +53,8 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Junjie_Yan4
+    description: >
+      <p>Born 1989. BS in Mathematics from Southeast University; PhD from the Institute of Automation, Chinese Academy of Sciences (2015); postdoc at Tsinghua. Spent 6+ years at <a href="/labs/sensetime">SenseTime</a> as VP and Vice-Head of the Research Institute. Founded MiniMax in 2021, inspired by OpenAI&rsquo;s Dota 2 bots. IPO&rsquo;d on HKEX January 2026. Second AI startup founder to meet Premier Li Qiang (after Liang Wenfeng).</p>
   - name: Yeyi Yun
     role: Co-founder & COO
     formerly: SenseTime (strategy, fundraising)

@@ -51,6 +51,8 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Daxin_Jiang2
+    description: >
+      <p>PhD in CS from University at Buffalo. 16-year Microsoft veteran, rising to Global VP and Chief Scientist of the Software Technology Center Asia. Led Bing Search, Cortana, Azure Cognitive Services, and NLP for Microsoft 365. Founded StepFun in Shanghai in 2023. First Chinese company to release a trillion-parameter model. Focus on multimodal from the start.</p>
   - name: Yin Qi
     role: Chairman
     formerly: Megvii / Face++ (Co-founder & CEO)

@@ -40,6 +40,8 @@ people:
         url: https://scholar.google.com/citations?user=HU5I0X4AAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Merouane_Abdelkader_DEBBAH1
+    description: >
+      <p>BSc/MSc/PhD in EE from ENS Paris-Saclay. Full professor at CentraleSupelec at age 31 (2007). Director of Huawei&rsquo;s Mathematical and Algorithmic Sciences Lab in Paris. Now Chief Researcher at TII, leading the <strong>Falcon</strong> LLM family. 30+ patents, 250+ journal papers, <strong>47,000+ citations</strong>. Clarivate Highly Cited Researcher (2018&ndash;2021).</p>
   - name: Hakim Hacid
     role: Chief Researcher, AI and Digital Science Research Center
     formerly: Bell Labs; Zayed University
