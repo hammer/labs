@@ -81,6 +81,8 @@ people:
         url: https://openreview.net/profile?id=~Juanzi_Li1
   - name: Zhang Peng
     role: CEO
+    description: >
+      <p>CEO of Z.ai / Zhipu AI. Manages commercial operations and API services. Led the company through its HKEX IPO in January 2026.</p>
   - name: Liu Debing
     role: Chairman
   - name: Yuxiao Dong
@@ -89,9 +91,11 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Yuxiao_Dong1
+    description: >
+      <p>Senior Researcher at Z.ai. Core contributor to AMiner and academic graph mining research with <a href="/people/jie-tang">Jie Tang</a> at Tsinghua KEG. Co-authored papers on graph neural networks and academic network analysis.</p>
   - name: Ming Ding
-    url: https://scholar.google.com/citations?user=Va50YzkAAAAJ
-    role: Former Core Researcher (CogView; now at ByteDance)
+    role: Former Principal Researcher (CogView/CogVideo lead author; joined ByteDance Seed 2024)
+    formerly: Tsinghua University (PhD 2018-2023, advisor Jie Tang)
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Ming_Ding1

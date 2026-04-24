@@ -96,6 +96,8 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Ying_Shan2
+    description: >
+      <p>Distinguished Scientist and Director of <strong>ARC Lab</strong> (Applied Research Center) at Tencent. Leads one of China&rsquo;s most prolific open-source research groups, releasing the SEED multimodal family, YOLO-World, Open-MAGVIT2, and 80+ GitHub repos. Before the March 2026 restructuring, ARC Lab operated as a semi-independent research arm.</p>
 news:
   - title: "Tencent restructures AI operations, promotes high-profile recruit to chief AI scientist"
     url: https://www.scmp.com/tech/big-tech/article/3336811/tencent-restructures-ai-operations-promotes-high-profile-recruit-chief-ai-scientist

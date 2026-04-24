@@ -89,6 +89,20 @@ people:
         url: https://scholar.google.com/citations?user=gCG4cPYAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Daya_Guo2
+  - name: Ming Ding
+    role: Principal Researcher (code generation, joined 2024)
+    formerly: Z.ai / Zhipu AI (Principal Researcher, CogView lead author); Tsinghua University (PhD 2018-2023, advisor Jie Tang)
+    description: >
+      <p>Lead author of the <strong><a href="/outputs/zai/cogview">CogView</a></strong>
+      series (NeurIPS 2021/2022) and co-author of CogVideo (ICLR 2023) at Tsinghua
+      KEG lab. PhD under <a href="/people/jie-tang">Jie Tang</a>. Moved from Z.ai
+      to ByteDance Seed in 2024, shifting focus from image generation to code
+      generation. <strong>~15,400 citations</strong>.</p>
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Va50YzkAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Ming_Ding1
 news:
   - title: "ByteDance Recruits DeepSeek R1 Lead Author Daya Guo for Seed Agent Team"
     url: https://www.scmp.com/tech/big-tech/article/3350521/bytedance-tencent-step-ai-talent-battle-amid-reported-departure-deepseek-researcher

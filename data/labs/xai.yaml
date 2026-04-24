@@ -41,6 +41,8 @@ people:
     url: https://en.wikipedia.org/wiki/Elon_Musk
     role: CEO & Founder
     formerly: OpenAI (Co-founder, departed 2018); Tesla; SpaceX
+    description: >
+      <p>CEO and founder of xAI (July 2023). Also CEO of Tesla, SpaceX, and formerly Twitter/X. Co-founded OpenAI in 2015 (departed 2018). xAI&rsquo;s Colossus cluster in Memphis (200K GPUs) is one of the largest AI training facilities. SpaceX acquired xAI in February 2026 at $1.25T combined valuation.</p>
   - name: Igor Babuschkin
     role: Co-founder & Former Chief Engineer (departed Aug 2025)
     formerly: Google DeepMind (AlphaStar, AlphaCode); OpenAI

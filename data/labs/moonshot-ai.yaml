@@ -60,6 +60,8 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Xinyu_Zhou1
+    description: >
+      <p>Co-founder of Moonshot AI. Tsinghua alumnus and former bandmate of <a href="/people/yang-zhilin">Yang Zhilin</a> in "Splay." Core architect of the Kimi chatbot platform.</p>
   - name: Wu Yuxin
     url: https://ppwwyyxx.com/
     role: Co-founder

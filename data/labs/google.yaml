@@ -52,6 +52,8 @@ people:
         url: https://scholar.google.com/citations?user=dYpPMQEAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Demis_Hassabis1
+    description: >
+      <p>CEO of <strong>Google DeepMind</strong>. Co-founded <a href="https://en.wikipedia.org/wiki/DeepMind">DeepMind</a> in 2010 (acquired by Google for ~$650M in 2014). Led breakthroughs including <strong>AlphaGo</strong> (defeated world Go champion, 2016), <strong>AlphaFold 2</strong> (solved protein structure prediction, predicted 200M+ structures), and the Gemini model family. Won the <strong>2024 Nobel Prize in Chemistry</strong> (with John Jumper) for protein structure prediction. PhD in Cognitive Neuroscience from UCL. Child chess prodigy and former game designer (Theme Park).</p>
   - name: Jeff Dean
     url: https://en.wikipedia.org/wiki/Jeff_Dean
     role: Chief Scientist, Google DeepMind & Google Research
@@ -61,6 +63,8 @@ people:
         url: https://scholar.google.com/citations?user=NMS69lQAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Jeff_Dean1
+    description: >
+      <p>Chief Scientist of Google DeepMind &amp; Google Research. Joined Google in 1999 (employee ~#30). Co-authored foundational Google infrastructure (MapReduce, BigTable, Spanner) and led Google Brain (founded 2011). Co-authored <strong>Word2Vec</strong> (2013) and the <strong>Transformer</strong> paper (2017). One of the most cited computer scientists alive. Member of the US National Academy of Engineering and National Academy of Sciences. ACM Prize in Computing (2012).</p>
   - name: Noam Shazeer
     url: https://en.wikipedia.org/wiki/Noam_Shazeer
     role: VP Engineering, Gemini Co-lead (returned Aug 2024)

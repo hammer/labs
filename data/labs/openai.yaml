@@ -66,6 +66,8 @@ people:
         url: https://scholar.google.com/citations?user=5fU-QMwAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Mark_Chen1
+    description: >
+      <p>Chief Research Officer at OpenAI. Led Codex development and the team that built GPT-4. Previously worked on reinforcement learning and robotics at OpenAI.</p>
   - name: Noam Brown
     url: https://noambrown.github.io/
     role: VP of Research (reasoning, o-series)

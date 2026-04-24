@@ -101,12 +101,16 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Fei_Huang1
+    description: >
+      <p>Chief Scientist of Language Technologies at DAMO Academy. Leads Alibaba&rsquo;s NLP and machine translation research. Previously at IBM T.J. Watson Research Center.</p>
   - name: Junyang Lin
     url: https://justinlin610.github.io/
     role: Former Tech Lead (departed Mar 2026)
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Junyang_Lin1
+    description: >
+      <p>Former Tech Lead of the Qwen team (departed March 2026). Led the development of Qwen 1.0 through Qwen3.5. His departure, along with Binyuan Hui and Bowen Yu, triggered Alibaba&rsquo;s restructuring into the Token Hub business group under CEO Eddie Wu.</p>
   - name: Binyuan Hui
     url: https://huybery.github.io/
     role: Former Coding Lead (departed Jan 2026 to Meta)

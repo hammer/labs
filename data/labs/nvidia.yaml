@@ -58,6 +58,8 @@ people:
         url: https://scholar.google.com/citations?user=YZHj-Y4AAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Bill_Dally1
+    description: >
+      <p>Chief Scientist &amp; SVP of Research at NVIDIA since 2009. Stanford CS professor (1986&ndash;2009), where he pioneered the architectures that made modern GPU computing possible. Invented systolic arrays and contributed to parallel computing, network-on-chip, and domain-specific accelerators. ~65,000 citations. Member of the US National Academies of Engineering and Sciences. IEEE/ACM Fellow.</p>
   - name: Bryan Catanzaro
     role: VP, Applied Deep Learning Research (Megatron-LM, Nemotron)
     formerly: Baidu; UC Berkeley (PhD)

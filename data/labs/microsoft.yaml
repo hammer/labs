@@ -44,6 +44,8 @@ people:
     urls:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=V4OPEAgAAAAJ
+    description: >
+      <p>Chief Scientific Officer and Technical Fellow at Microsoft. PhD from Stanford (1990, under Daphne Koller). Has led Microsoft Research in various capacities since 1993. Pioneer in AI reasoning under uncertainty, with foundational work on Bayesian inference in clinical decision systems. President of AAAI (2007). Member of US National Academies of Engineering, Science, and Medicine. Named AI&rsquo;s Person of the Year (2024) by TIME.</p>
   - name: Sébastien Bubeck
     role: Former VP GenAI (departed to OpenAI Oct 2024)
     formerly: Led Phi series; ENS Cachan + Lille PhD
@@ -55,6 +57,8 @@ people:
     urls:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=G-V1VpwAAAAJ
+    description: >
+      <p>VP &amp; Chief Scientist of MSR Asia GenAI Group. Leads research on large language models and pre-training at Microsoft Research Asia. Key contributor to DeBERTa, LayoutLM, and the foundations behind the Phi model series.</p>
   - name: Peter Lee
     role: President, Microsoft Research
     formerly: CMU CS Dept Chair; DARPA

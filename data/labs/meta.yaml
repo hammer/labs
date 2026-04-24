@@ -52,6 +52,8 @@ people:
         url: https://scholar.google.com/citations?user=WLN3QrAAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Yann_LeCun1
+    description: >
+      <p>Former Chief AI Scientist at Meta (departed November 2025; now CEO of AMI Labs). <strong>2018 Turing Award</strong> (with Bengio and Hinton) for deep learning. Silver Professor at NYU. Invented <strong>convolutional neural networks</strong> (LeNet) and backpropagation for CNNs. Built and led <strong>FAIR</strong> (2013&ndash;2025) into one of the world&rsquo;s premier AI research labs. ~250,000 citations.</p>
   - name: Alexandr Wang
     url: https://en.wikipedia.org/wiki/Alexandr_Wang
     role: Chief AI Officer, co-leads MSL (joined June 2025)

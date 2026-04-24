@@ -40,6 +40,8 @@ people:
       <p>Born 1978. IOI gold medalist (1996). BS/MS/PhD + EMBA from Tsinghua. Built ChinaRen.com as a student. Founded <strong>Sogou Search</strong> (2004) and invented the Sogou Input Method (2006, China&rsquo;s most popular). CEO of Sogou until 2021. Founded Baichuan in April 2023; raised $300M from Alibaba and Tencent within six months. TIME 100 Most Influential in AI (2024).</p>
   - name: Ru Liyun
     role: Co-founder
+    description: >
+      <p>Co-founder of Baichuan. Previously at Sogou under <a href="/people/wang-xiaochuan">Wang Xiaochuan</a>.</p>
 tags:
   - open-weight
   - medical-ai

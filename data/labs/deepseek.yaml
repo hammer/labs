@@ -88,6 +88,8 @@ people:
     urls:
       - label: Semantic Scholar
         url: https://www.semanticscholar.org/author/2278217964
+    description: >
+      <p>Core Researcher at DeepSeek and primary author across the major model releases: DeepSeek LLM, V2, V3, R1, and DeepSeek-Math. One of the longest-tenured members of the technical team.</p>
   - name: Deli Chen
     role: Core Researcher (R1 reasoning)
     formerly: Tencent WeChat AI (2021-2023); Peking University (MS)
@@ -96,6 +98,8 @@ people:
         url: https://scholar.google.com/citations?user=8YpGRDcAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Deli_Chen1
+    description: >
+      <p>Core Researcher at DeepSeek focused on R1 reasoning capabilities. Previously at Tencent WeChat AI (2021&ndash;2023). MS from Peking University (2018&ndash;2021). ~17,000 citations.</p>
   - name: Zhenda Xie
     role: Core Researcher (architecture)
     urls:
