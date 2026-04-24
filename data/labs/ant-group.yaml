@@ -44,10 +44,73 @@ description: >
   elevated AI-powered healthcare as a core business, acquiring Haodf.com and launching
   the AQ healthcare app (100M users within a month).</p>
 people:
-  - name: He Zhengyu
+  - name: He Zhengyu (何征宇)
     url: https://www.weforum.org/people/he-zhengyu/
-    role: CTO & VP (AI oversight)
-    formerly: PhD Georgia Institute of Technology
+    role: CTO & VP (AI oversight); InclusionAI operates under CTO's office
+    formerly: PhD Georgia Institute of Technology (GPU Max-flow algorithms)
+    description: >
+      <p>CTO of Ant Group. InclusionAI operates as an internal initiative directly
+      driven by the CTO's office. Appears on papers across all product lines (Ling,
+      Ming-Omni, Ming-Flash-Omni, Ming-UniAudio), indicating executive oversight
+      of the full AI research portfolio. Background spans systems and security
+      (HyperEnclave, USENIX ATC 2022) before pivoting to AI.</p>
+  - name: Zhenzhong Lan (兰振中)
+    url: https://en.westlake.edu.cn/faculty/zhenzhong-lan.html
+    role: Director, AGI Research Center; Tenured Associate Professor, Westlake University
+    formerly: Google (Research Scientist, 2018-2020, created ALBERT); PhD Carnegie Mellon University (2017); BS Sun Yat-sen University (2010)
+    description: >
+      <p>Dual role as <strong>Director of Ant Group's AGI Research Center</strong>
+      and tenured Associate Professor at Westlake University. Created
+      <strong>ALBERT</strong> at Google (10,000+ citations, deployed in Google News
+      and Google Assistant). Corresponding author on the
+      <a href="/outputs/ant-group/llada">LLaDA</a> diffusion language model series.
+      ~15,000 citations. MIT "Top 35 Innovators Under 35" Asia-Pacific (2021).</p>
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=wVl5wWcAAAAJ
+  - name: Jun Zhou (周俊)
+    role: Senior Research Leader (cross-cutting; appears on all major product lines)
+    description: >
+      <p>Appears on virtually every major Ant Group AI paper — Ling, Ling-1T,
+      Ling-Coder, Ming-UniVision, Ming-Lite-Uni, Ming-Omni, Ming-Flash-Omni,
+      Ming-UniAudio, and LLaDA 1.0. His presence across all product lines suggests
+      a VP-level or head-of-research-division role.</p>
+  - name: Ziqi Liu
+    role: Research Lead, Ling Language Model
+    formerly: PhD Shanghai Jiao Tong University; ~8 years at Ant Group
+    description: >
+      <p>Research Lead on the <strong>Ling</strong> language model family. Appears on
+      Ling LLM, Ling-1T, Ling scaling laws, and cuLA linear attention papers.
+      Long-tenured at Ant Group (~8 years).</p>
+  - name: Tiwei Bie
+    role: Lead, LLaDA (industry side)
+    description: >
+      <p>First author on LLaDA 2.0, LLaDA 2.0-Uni, and LLaDA 2.1. Leads the Ant
+      Group side of the LLaDA diffusion language model project.</p>
+  - name: Qingpei Guo
+    role: Technical Lead, Ming Multimodal
+    description: >
+      <p>Appears across all Ming papers: Ming-UniVision, Ming-Lite-Uni, Ming-Omni,
+      Ming-Flash-Omni, Ming-UniAudio. Submitting author on Ming-Flash-Omni
+      (arXiv 2510.24821). 17+ publications in multimodal ML.</p>
+  - name: Richard Bian (卞思康)
+    url: https://www.linkedin.com/in/richardbian/
+    role: Product & Growth Lead, Ant Ling & InclusionAI
+    formerly: Microsoft; Square; 11 years software engineering in US; Executive MBA UC Berkeley Haas (2018-2021)
+    description: >
+      <p>Leads product and growth for Ant Ling &amp; InclusionAI. Previously led
+      AntOSS (open source) for 4+ years, building it from one person to an
+      8-person team. Spearheaded the "Model as Product" team (~7-8 people).
+      Based in Burlingame, California. Program Committee for Open Source Summit
+      North America 2025.</p>
+  - name: Yi Wu
+    role: AReaL RL Team (academic lead); Assistant Professor, Tsinghua IIIS
+    formerly: OpenAI (researcher); PhD UC Berkeley (advised by Stuart Russell)
+    description: >
+      <p>Leads the academic side of the <strong>AReaL</strong> (Ant Reinforcement
+      Learning) team, a joint Tsinghua IIIS + Ant Group effort for RL
+      infrastructure. Former OpenAI researcher. PhD from UC Berkeley under
+      Stuart Russell.</p>
 news:
   - title: "Interview: Ant Group's Open Model Ambitions"
     url: https://www.interconnects.ai/p/inside-a-chinese-frontier-lab-inclusion

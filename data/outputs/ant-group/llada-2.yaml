@@ -2,6 +2,7 @@ name: LLaDA 2
 slug: llada-2
 lab: ant-group
 date: 2025-12-10
+flagship: true
 sources:
   - label: Paper (2.0, arXiv)
     url: https://arxiv.org/abs/2512.15745
