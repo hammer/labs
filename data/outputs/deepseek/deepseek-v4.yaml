@@ -12,6 +12,8 @@ sources:
     url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash
   - label: HuggingFace Collection
     url: https://huggingface.co/collections/deepseek-ai/deepseek-v4
+  - label: Analysis (Simon Willison)
+    url: https://simonwillison.net/2026/Apr/24/deepseek-v4/
 description: >
   <p>DeepSeek's most powerful model family and the <strong>first frontier-scale model
   trained entirely on Huawei Ascend 950PR chips</strong> &mdash; zero NVIDIA/CUDA
