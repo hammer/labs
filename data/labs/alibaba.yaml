@@ -53,11 +53,22 @@ description: >
   <strong>Accio Team</strong> (agentic multimodal), <strong>Tongyi Lab</strong>, and
   DAMO Academy divisions.</p>
 people:
-  - name: Jingren Zhou
-    url: https://scholar.google.com/citations?user=64zxhRUAAAAJ
-    role: CTO, Alibaba Cloud; Director, Tongyi Lab
-    formerly: Microsoft Research (2004-2015); PhD Columbia
+  - name: Jingren Zhou (周靖人)
+    role: CTO, Alibaba Cloud Intelligence; leads Qwen development
+    formerly: Microsoft Research (Research Partner, 2004-2015); PhD Columbia (2004); BS USTC School of the Gifted Young (1999)
+    description: >
+      <p>Alibaba CTO overseeing the <strong>Qwen (Tongyi Qianwen)</strong> large
+      model family and the Wan video models. Assumed direct control of Qwen team
+      in March 2026 after the departure of Tech Lead Junyang Lin. Sits on the
+      Foundation Model Task Force with CEO Eddie Wu. Joined Alibaba in 2015 after
+      11 years as Research Partner at Microsoft Research.</p>
+
+      <p>Entered the <strong>School of the Gifted Young at USTC</strong> in 1994.
+      PhD from Columbia University (2004). <strong>~37,000 citations</strong>.
+      <strong>ACM Fellow</strong> (2024). IEEE Fellow (2019).</p>
     urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=64zxhRUAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Jingren_Zhou1
   - name: Hao Zhou

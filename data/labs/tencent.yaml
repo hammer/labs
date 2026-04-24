@@ -60,11 +60,28 @@ people:
   - name: Ma Huateng
     url: https://en.wikipedia.org/wiki/Ma_Huateng
     role: Co-founder & CEO
-  - name: Yao Shunyu
+  - name: Yao Shunyu (姚顺雨)
     url: https://ysymyth.github.io/
-    role: Chief AI Scientist (since Dec 2025)
-    formerly: OpenAI (Operator, Deep Research contributor)
+    role: Chief AI Scientist & Head of AI Infrastructure (since Dec 2025); reports to President Martin Lau
+    formerly: OpenAI (Research Scientist, 2024; core contributor to Operator & Deep Research); PhD Princeton (2019-2024, advisor Karthik Narasimhan); Yao Class, Tsinghua (2015-2019)
+    description: >
+      <p>Born 1997. <strong>Youngest chief scientist at a major Chinese Big Tech
+      company.</strong> Created <strong>ReAct</strong> (2022, foundational framework
+      for reasoning-and-action in LLM agents), <strong>Tree of Thoughts</strong>
+      (2023, multi-path deliberate problem solving), and co-created
+      <strong><a href="/outputs/openai/swe-bench">SWE-bench</a></strong> (ICLR 2024
+      Oral). At OpenAI, was a core contributor to
+      <strong>Operator</strong> (Computer-Using Agent) and <strong>Deep Research</strong>.</p>
+
+      <p>Joined Tencent December 2025. Led a full rebuild of pretraining and RL stacks
+      starting February 2026, producing <strong><a href="/outputs/tencent/hy3">Hy3-Preview</a></strong>
+      (295B/21B MoE) in under 3 months from cold start. Ranked 3rd in science
+      in Anhui Province for the 2015 college entrance exam. Yao Class at Tsinghua
+      (elite CS program founded by Turing Award winner Andrew Yao). PhD from Princeton.
+      <strong>~25,000 citations</strong>. MIT TR "35 Under 35" China (2024).</p>
     urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=qJBXk9cAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Shunyu_Yao1
   - name: Yixiao Ge

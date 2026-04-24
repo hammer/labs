@@ -39,20 +39,51 @@ description: >
   has been instrumental in proving that massive-scale reasoning can be democratized through 
   highly-optimized, small-but-mighty architectures.</p>
 people:
-  - name: Maosong Sun
-    url: https://scholar.google.com/citations?user=zIgT0HMAAAAJ
-    role: PI
-    formerly: Tsinghua THUNLP
+  - name: Maosong Sun (孙茂松)
+    role: Senior PI; Professor, Tsinghua University
+    formerly: Head of Dept, CS, Tsinghua (2007-2010); Executive VP, Tsinghua AI Institute; PhD City University of Hong Kong (2004); BS/MS Tsinghua (1986/1988)
+    description: >
+      <p>Director of <strong>THUNLP</strong> (Tsinghua Natural Language Processing
+      Laboratory), the earliest and most influential NLP research unit in China.
+      Professor at Tsinghua since the late 1980s. Led the development of "Jiuge" (九歌),
+      the AI poetry writing system (2015). Student of Huang Changning (黄昌宁), considered
+      the pioneer of NLP in China.</p>
+
+      <p><strong>~70,800 citations</strong>. <strong>ACL Fellow</strong> (2022 &mdash;
+      the only Chinese scholar selected that year), Foreign Member of Academia Europaea
+      (2020), CAAI Fellow (2021). His THUNLP lab, together with
+      <a href="/people/zhiyuan-liu">Zhiyuan Liu</a>'s ModelBest Inc., forms the
+      foundation of the OpenBMB ecosystem and the CPM/MiniCPM model families.</p>
     urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=zIgT0HMAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Maosong_Sun1
-  - name: Zhiyuan Liu
+  - name: Zhiyuan Liu (刘知远)
     url: https://nlp.csai.tsinghua.edu.cn/~lzy/
-    role: PI
-    formerly: Tsinghua THUNLP
+    role: PI; Full Professor, Tsinghua University (2025); Co-founder & Chief Scientist, ModelBest Inc.
+    formerly: PhD Tsinghua (2011, advisor Maosong Sun); Associate Professor Tsinghua (2018-2025)
+    description: >
+      <p>Co-leads <strong>THUNLP</strong> with <a href="/people/maosong-sun">Maosong
+      Sun</a> and co-founded <strong>ModelBest Inc. (面壁智能)</strong> in August 2022
+      &mdash; the commercial entity behind the <strong>MiniCPM</strong> series. MiniCPM
+      demonstrated that 2-4B parameter models can match much larger models on device,
+      with MiniCPM-o achieving "Gemini 2.5 Flash level" multimodal live streaming on
+      phones. Also led earlier CPM-1 and CPM-2 large-scale pre-trained model development
+      for the WuDao collaboration with BAAI.</p>
+
+      <p><strong>~84,900 citations</strong>. Key contributions in knowledge graph
+      representation learning (TransE follow-ups), graph neural networks, and open-source
+      NLP toolkits (THULAC, OpenKE, OpenNE &mdash; 10K+ GitHub stars combined). MIT
+      Technology Review Innovators Under 35 China (2018). Promoted to full professor at
+      Tsinghua in 2025. All degrees from Tsinghua (BS 2006, PhD 2011).</p>
     urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=dT0v5u0AAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Zhiyuan_Liu1
+      - label: GitHub
+        url: https://github.com/zibuyu
   - name: Xu Han
     url: https://thucsthanxu13.github.io/
     role: Core Researcher

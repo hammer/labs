@@ -43,11 +43,25 @@ description: >
   from running TikTok at global scale give the Seed Team significant
   infrastructure advantages.</p>
 people:
-  - name: Wu Yonghui
+  - name: Wu Yonghui (吴永辉)
     url: https://www.linkedin.com/in/yonghui-wu-65bb7521
-    role: Seed Team Lead
-    formerly: Google DeepMind (VP)
+    role: Head of Seed Basic Research (since Feb 2025); reports to CEO Liang Rubo
+    formerly: Google (17 years, 2008-2025); Google Fellow (2023); Research VP, Google DeepMind; PhD UC Riverside (2008); MS Statistics UC Riverside; BS Nanjing University
+    description: >
+      <p>Spent <strong>17 years at Google</strong> (2008&ndash;2025), rising from
+      software engineer to <strong>Google Fellow</strong> (September 2023, equivalent
+      to VP on the engineering track) and Research VP at Google DeepMind. First author
+      of the landmark <strong><a href="https://arxiv.org/abs/1609.08144">GNMT paper</a></strong>
+      (2016, "Google's Neural Machine Translation System," 7,000+ citations) that
+      transformed machine translation. Participated in early Gemini development.</p>
+
+      <p>Joined ByteDance in February 2025 as Head of Seed Basic Research, managing
+      ~1,500 personnel across foundational models, multimodal systems, and
+      infrastructure. Based in San Jose. Highest technical decision-maker for the
+      Seedance video generation model series. <strong>~35,000 citations</strong>.</p>
     urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=NA00bOoAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Yonghui_Wu1
   - name: Zehuan Yuan (袁泽寰)

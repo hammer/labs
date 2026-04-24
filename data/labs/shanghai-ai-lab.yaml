@@ -31,20 +31,54 @@ description: >
   as the three regional pillars of China's national AI infrastructure under the State Council's 
   New Generation AI strategy.</p>
 people:
-  - name: Yu Qiao
-    url: https://scholar.google.com/citations?user=gFtI-8QAAAAJ
-    role: Director
-    formerly: Professor at SIAT/CAS and CUHK-Shenzhen
+  - name: Yu Qiao (乔宇)
+    role: Director, Shanghai AI Laboratory
+    formerly: Professor & Director, SIAT/CAS; Postdoc, CUHK MMLab (2006-2007); PhD University of Electro-Communications Tokyo; BE/ME Chongqing University
+    description: >
+      <p>Director of <strong>Shanghai AI Laboratory</strong> (est. July 2020), the
+      state-backed research institution that produces the <strong>InternLM</strong>
+      (LLM), <strong>InternVL</strong> (VLM), and <strong>InternImage</strong>
+      (vision foundation model) families. Previously Professor and Director at
+      the Shenzhen Institutes of Advanced Technology (SIAT), Chinese Academy of
+      Sciences, where he founded the SIAT MMLab as a satellite of CUHK's
+      Multimedia Laboratory.</p>
+
+      <p>Research spans computer vision, pattern recognition, and large multimodal
+      models. <strong>~131,000 citations</strong>. Youth Science and Technology
+      Innovation Leader (Ministry of Science and Technology). Lu Jiaxi Young
+      Researcher Award (CAS, 2012). PhD from the University of
+      Electro-Communications, Tokyo.</p>
     urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=gFtI-8QAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Yu_Qiao1
-  - name: Dahua Lin
-    url: https://scholar.google.com/citations?user=GMzzRRUAAAAJ
-    role: Senior Researcher & OpenMMLab Lead
-    formerly: Professor at CUHK; SenseTime Co-founder
+  - name: Dahua Lin (林达华)
+    url: http://dahua.site/
+    role: Senior Researcher & OpenMMLab Director
+    formerly: Co-founder, SenseTime (2014); Associate Professor, CUHK; PhD MIT (2012); MPhil CUHK (2006); BEng USTC (2004)
+    description: >
+      <p>Creator and Director of <strong><a href="https://github.com/open-mmlab">OpenMMLab</a></strong>,
+      arguably the most prolific open-source computer vision ecosystem in the
+      world: 54 repos, 30+ vision libraries, 300+ algorithms, 2,000+ pretrained
+      models. <strong>MMDetection</strong> alone has 32.6K GitHub stars. Co-founded
+      <strong><a href="https://en.wikipedia.org/wiki/SenseTime">SenseTime</a></strong>
+      in October 2014 with Xiaoou Tang and Xiaogang Wang (SenseTime listed on
+      HKEX December 2021). Also directs the Interdisciplinary Institute of AI
+      at CUHK.</p>
+
+      <p>PhD from <strong>MIT</strong> (2012), MPhil from CUHK (Best Master Thesis
+      Award), BEng from USTC. <strong>~85,000&ndash;90,000 citations</strong>.
+      Best Student Paper at NeurIPS 2010. Supervised CUHK teams winning ImageNet
+      2016, ActivityNet 2016-2017, COCO 2018-2019. 120+ papers at CVPR, ICCV,
+      ECCV, ICML, NeurIPS.</p>
     urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=GMzzRRUAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Dahua_Lin1
+      - label: CUHK Faculty
+        url: https://www.ie.cuhk.edu.hk/faculty/lin-dahua/
   - name: Jifeng Dai
     url: https://jifengdai.org/
     role: Senior Researcher & InternVL Lead

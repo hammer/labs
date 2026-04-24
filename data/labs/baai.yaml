@@ -69,13 +69,51 @@ description: >
   company &mdash; a different entity from ZGCA). All three regularly present at
   the annual <a href="https://www.zgcforum.com.cn/en/">Zhongguancun Forum</a>.</p>
 people:
-  - name: Zhang Hongjiang
+  - name: Zhang Hongjiang (张宏江)
     url: https://en.wikipedia.org/wiki/Zhang_Hongjiang
     role: Founder & Chairman
-    formerly: Microsoft Research Asia (co-founder); Kingsoft CEO
-  - name: Wang Zhongyuan
+    formerly: Microsoft Research Asia (co-founder, Asst Managing Director); Kingsoft (CEO 2011-2016); Microsoft Distinguished Scientist (2010)
+    description: >
+      <p><strong>Founding chairman of BAAI</strong> (est. November 2018) and one of
+      the architects of China's AI research ecosystem. Co-founded
+      <a href="https://en.wikipedia.org/wiki/Microsoft_Research_Asia">Microsoft Research
+      Asia</a> in 1998 and rose to Assistant Managing Director, building MSRA into the
+      most influential industrial research lab in Asia. Left Microsoft after 12+ years
+      to serve as CEO of <a href="https://en.wikipedia.org/wiki/Kingsoft">Kingsoft</a>
+      (2011&ndash;2016), then became a venture partner at Source Code Capital before
+      founding BAAI.</p>
+
+      <p>PhD in Electrical Engineering from the Technical University of Denmark (1991),
+      BS from Zhengzhou University (1982). Research in multimedia computing, video/image
+      analysis, and content-based retrieval &mdash; <strong>~76,700 citations, h-index
+      132</strong>, 62 US patents. IEEE Fellow (2004), ACM Fellow (2007), elected to
+      the <strong>US National Academy of Engineering</strong> as International Member
+      (2022). Editor-in-Chief of IEEE Transactions on Multimedia (2004&ndash;2007).</p>
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=u6wmNbQAAAAJ
+      - label: Wikipedia
+        url: https://en.wikipedia.org/wiki/Zhang_Hongjiang
+  - name: Wang Zhongyuan (王仲远)
     role: President / Director (since Feb 2024)
-    formerly: Kuaishou (VP of Tech); Meituan; Facebook; Microsoft Research Asia; Renmin University BS CS
+    formerly: Kuaishou (VP of Tech, 2020-2024); Meituan (Sr Director, Search & NLP); Facebook (Research Scientist); Microsoft Research Asia; PhD Renmin University
+    description: >
+      <p>Appointed BAAI Director in February 2024, succeeding Huang Tiejun. Previously
+      Technical VP at <strong>Kuaishou</strong> (overseeing 5 departments), Senior Director
+      at <strong>Meituan</strong> (built Meituan Brain, the world's largest food/entertainment
+      knowledge graph), and Research Scientist at <strong>Facebook</strong> (built one of
+      Facebook's most important NLP production services for entity linking). Started at
+      <strong>Microsoft Research Asia</strong>, ranked #1 among all candidates in his
+      intake interviews.</p>
+
+      <p>All degrees from Renmin University of China (BS/MS/PhD in CS). At BAAI, led
+      the release of the <strong>Emu3</strong> native multimodal world model and the
+      <strong>WuJie (无界)</strong> series of foundation models. Declared "Embodied AI" as
+      BAAI's pivotal 2025 theme. <strong>~11,300 citations</strong>. ICDE 2015 Best Paper
+      Award. MIT Technology Review Innovators Under 35 (2018).</p>
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=4XVJrRAAAAAJ
   - name: Huang Tiejun
     url: https://scholar.google.com/citations?user=knvEK4AAAAAJ
     role: Board Chairman (former Director, 2018-2024)

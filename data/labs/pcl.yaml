@@ -25,12 +25,29 @@ description: >
   The lab's recent expansion into Embodied AI (the PAR world model) and "AI for Science" 
   (PengCheng-Nebula) positions it as a key driver of China's domestic technology self-reliance.</p>
 people:
-  - name: Gao Wen
+  - name: Gao Wen (高文)
     url: https://en.wikipedia.org/wiki/Wen_Gao
-    role: Director
+    role: Founding Director, Pengcheng Laboratory
+    formerly: VP, National Natural Science Foundation of China (2013-2018); President, CCF (2016-2020); Boya Chair Professor, Peking University; PhD HIT (1988) + PhD U. Tokyo (1991)
+    description: >
+      <p><strong>Chinese Academy of Engineering Academician</strong> (the highest
+      engineering honor in China), IEEE Fellow, and ACM Fellow. Founded
+      <strong>Pengcheng Laboratory</strong> in 2018 and built the
+      <strong>Pengcheng Cloud Brain</strong> supercomputing infrastructure (Cloud
+      Brain II: 1,000 PFLOPS on Huawei Ascend; Cloud Brain III targeting 16
+      EFLOPS). Boya Chair Professor at Peking University.</p>
+
+      <p>Pioneered audio-video coding standards in China: founded the <strong>AVS
+      (Audio Video Standard)</strong> workgroup in 2002, chairs AVS and IEEE 1857.
+      Two PhDs: Harbin Institute of Technology (1988) and University of Tokyo (1991).
+      <strong>~75,700 citations</strong>, 1,100+ papers. Wu Wenjun AI Highest
+      Achievement Award (2023), National Technology Innovation Award First Class
+      (2020), IEEE Innovation in Societal Infrastructure Award (2025).</p>
     urls:
       - label: Google Scholar
-        url: https://scholar.google.com/citations?user=v6sk_QUAAAAJ
+        url: https://scholar.google.com/citations?user=u9aw5o8AAAAJ
+      - label: Wikipedia
+        url: https://en.wikipedia.org/wiki/Wen_Gao
   - name: Yue Yu
     url: https://yuyue.github.io/
     role: Core Researcher

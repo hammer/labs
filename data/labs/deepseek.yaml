@@ -49,10 +49,26 @@ description: >
   efficiency, US-China technology competition, and the viability of open-weight
   frontier models.</p>
 people:
-  - name: Liang Wenfeng
+  - name: Liang Wenfeng (梁文锋)
     url: https://en.wikipedia.org/wiki/Liang_Wenfeng
     role: Founder
-    formerly: High-Flyer (Founder & CEO)
+    formerly: High-Flyer (Co-founder & CEO, one of China's top quant funds); MEng Zhejiang University (2010); BEng Zhejiang University (2007)
+    description: >
+      <p>Founded DeepSeek in May 2023 to pursue AGI "with curiosity." Also
+      co-founded and runs <a href="https://en.wikipedia.org/wiki/High-Flyer_(company)">High-Flyer</a>,
+      one of China's largest quantitative hedge funds (AUM peaked at ~100B yuan /
+      $13.9B). High-Flyer owns 99% of DeepSeek and provides all funding &mdash;
+      no external VC. Acquired 10,000 NVIDIA A100 GPUs before US export
+      restrictions took full effect. Released DeepSeek-R1 (671B) in January 2025
+      for $5.6M training cost, triggering $1T+ in US stock market losses and
+      forcing Chinese competitors to cut API prices by 95%+.</p>
+
+      <p>Born 1985 in Guangdong. Left high school early as top scorer in Zhanjiang
+      region. BEng/MEng from Zhejiang University. Declined a co-founding invitation
+      from DJI's Wang Tao during university. Runs DeepSeek with a bottom-up,
+      no-KPI culture: <em>"Innovation requires minimal intervention. It needs space
+      to experiment and the freedom to make mistakes."</em> Time 100 Most
+      Influential People in AI (2025). Net worth ~$11B (Nov 2025).</p>
   - name: Chong Ruan
     role: Co-founder (departed early 2025; joined DeepRoute.ai Jan 2026)
     urls:
@@ -91,13 +107,26 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Wangding_Zeng1
-  - name: Zhihong Shao
+  - name: Zhihong Shao (邵智宏)
     url: https://zhihongshao.github.io/
     role: Core Researcher (R1, V2, DeepSeek-Math, DeepSeek-Prover, Math-Shepherd)
-    formerly: Tsinghua University (PhD, advisor Minlie Huang); Microsoft Research Asia (intern, ToRA)
+    formerly: Tsinghua University (PhD 2019-2024, advisor Minlie Huang); BS Beihang University; MSRA intern (ToRA)
+    description: >
+      <p>Research Scientist at DeepSeek focused on LLM reasoning and self-improving
+      systems. Core contributor to <strong>DeepSeek-R1</strong> (published in Nature
+      2025), lead/first author of <strong>DeepSeekMath</strong> (pushing mathematical
+      reasoning limits in open models), and co-author of DeepSeek-Prover (theorem
+      proving), Math-Shepherd (step-by-step verification without human annotations,
+      ACL 2024), and <a href="/outputs/microsoft/tora">ToRA</a> (ICLR 2024, tool-integrated
+      reasoning, interned at MSRA).</p>
+
+      <p>PhD from Tsinghua University (2019&ndash;2024, advisor
+      <a href="https://coai.cs.tsinghua.edu.cn/hml">Minlie Huang</a>). BS from
+      Beihang University (multiple national scholarships, math competition awards).
+      <strong>MIT Technology Review "35 Under 35"</strong> (2024). NeurIPS Area Chair.</p>
     urls:
       - label: Google Scholar
-        url: https://scholar.google.com/citations?user=K2YTOJAAAAAJ
+        url: https://scholar.google.com/citations?user=PZy4HEIAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Zhihong_Shao1
   - name: Zhibin Gou
