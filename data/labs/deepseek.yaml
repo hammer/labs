@@ -114,6 +114,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Qihao_Zhu1
 news:
+  - title: "DeepSeek-V4 Released: 1.6T/49B MoE, First Frontier Model Trained Entirely on Huawei Ascend 950PR, MIT License"
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
+    source: DeepSeek
+    date: 2026-04-24
   - title: "Tencent and Alibaba in Talks to Invest in DeepSeek at $20B+ Valuation — First External Funding"
     url: https://www.bloomberg.com/news/articles/2026-04-22/deepseek-in-talks-to-raise-at-20-billion-value-the-information
     source: Bloomberg

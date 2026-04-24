@@ -1,0 +1,80 @@
+name: DeepSeek-V4
+slug: deepseek-v4
+lab: deepseek
+date: 2026-04-24
+flagship: true
+sources:
+  - label: Technical Report (PDF)
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf
+  - label: HuggingFace (V4-Pro)
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
+  - label: HuggingFace (V4-Flash)
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash
+  - label: HuggingFace Collection
+    url: https://huggingface.co/collections/deepseek-ai/deepseek-v4
+description: >
+  <p>DeepSeek's most powerful model family and the <strong>first frontier-scale model
+  trained entirely on Huawei Ascend 950PR chips</strong> &mdash; zero NVIDIA/CUDA
+  dependency anywhere in the stack. Two variants: <strong>V4-Pro</strong> (1.6T total /
+  49B active MoE) and <strong>V4-Flash</strong> (284B total / 13B active MoE). Both
+  support <strong>1M token context</strong>. Pre-trained on <strong>32T+ tokens</strong>
+  with FP8 mixed precision (Pro) and FP4+FP8 (post-training).</p>
+
+  <p>Key architectural innovations: <strong>Hybrid Attention</strong> combining
+  Compressed Sparse Attention (CSA) + Heavily Compressed Attention (HCA), requiring
+  only <strong>27% of inference FLOPs and 10% of KV cache</strong> vs. V3.2.
+  <strong>Manifold-Constrained Hyper-Connections (mHC)</strong> for stable deep signal
+  propagation. <strong>Muon optimizer</strong> for training stability. Three reasoning
+  modes: Non-think, Think High, and Think Max (384K+ context optimal).</p>
+
+  <p>V4-Pro-Max benchmarks: LiveCodeBench <strong>93.5%</strong> (#1),
+  Codeforces Rating <strong>3206</strong> (vs. GPT-5.4: 3168), IMOAnswerBench
+  <strong>89.8%</strong> (vs. Opus 4.6 Max: 75.3%), SWE-bench Verified
+  <strong>80.6%</strong>. Base model: MMLU 90.1%, C-Eval 93.1%, GSM8K 92.6%.
+  Post-training uses two-stage pipeline: domain-specific expert cultivation (SFT +
+  GRPO) then unified on-policy distillation. MIT License.</p>
+tags:
+  - frontier
+  - moe
+  - open-weight
+  - reasoning
+  - coding
+  - efficiency
+outputs:
+  - name: DeepSeek-V4-Pro
+    type: model
+    date: 2026-04-24
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
+    model:
+      architecture: moe
+      parameters: 1.6T
+      active_parameters: 49B
+      context_window: 1000000
+      training_tokens: 33T
+  - name: DeepSeek-V4-Flash
+    type: model
+    date: 2026-04-24
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash
+    model:
+      architecture: moe
+      parameters: 284B
+      active_parameters: 13B
+      context_window: 1000000
+      training_tokens: 32T
+  - name: "DeepSeek-V4 Technical Report"
+    type: paper
+    date: 2026-04-24
+    sources:
+      - label: Technical Report (PDF)
+        url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf
+    description: >
+      "Towards Highly Efficient Million-Token Context Intelligence." Details CSA+HCA
+      hybrid attention, mHC residual connections, Muon optimizer, and two-stage
+      post-training pipeline.
+related:
+  - deepseek-v3.2
+  - deepseek-r1
