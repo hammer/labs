@@ -24,7 +24,7 @@ description: >
   Dong</a> is concurrently Boya Distinguished Professor at Peking University.
   ZGCI President <strong>Bin Shao</strong> founded MSR's Computational Biology and
   Scientific Computing Research Groups. Deputy Director
-  <a href="https://zhengsx.github.io/">Shuxin Zheng</a> headed Microsoft Scientific
+  <strong>Shuxin Zheng</strong> headed Microsoft Scientific
   Foundation Models.</p>
 
   <p>The institution's flagship achievement is the <strong>AI-Driven Agentic Design
@@ -87,7 +87,6 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Bin_Dong1
   - name: Shuxin Zheng
-    url: https://zhengsx.github.io/
     role: Deputy Director of ZGCI / Head of Large Model Division
     formerly: Microsoft Research (Principal Researcher, Head of Microsoft Scientific Foundation Models); PhD USTC (MSRA Joint PhD Program); Graphormer first-author
     urls:

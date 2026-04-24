@@ -80,7 +80,7 @@ people:
     formerly: Sun Yat-sen University (PhD)
     urls:
       - label: Google Scholar
-        url: https://scholar.google.com/citations?user=2P4zZ3IAAAAJ
+        url: https://scholar.google.com/citations?user=gCG4cPYAAAAJ
       - label: OpenReview
         url: https://openreview.net/profile?id=~Daya_Guo2
   - name: Xiao Bi
@@ -97,7 +97,6 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Deli_Chen1
   - name: Zhenda Xie
-    url: https://zdaxie.github.io/
     role: Core Researcher (architecture)
     urls:
       - label: OpenReview
@@ -135,7 +134,7 @@ people:
     formerly: Tsinghua University (MSc, advisor Yujiu Yang); Microsoft Research Asia (intern, ToRA)
     urls:
       - label: Google Scholar
-        url: https://scholar.google.com/citations?user=E4FyLPoAAAAJ
+        url: https://scholar.google.com/citations?user=jTMOma8AAAAJ
   - name: Qihao Zhu
     url: https://pkuzqh.github.io/
     role: Core Researcher
