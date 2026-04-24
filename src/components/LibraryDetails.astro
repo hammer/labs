@@ -1,0 +1,104 @@
+---
+import type { Output, MetricsEntry } from '../schema.js';
+import { formatCompact } from '../utils.js';
+
+interface Props {
+  library: NonNullable<Output['library']>;
+  metrics?: MetricsEntry;
+}
+
+const { library, metrics } = Astro.props;
+---
+
+<div class="library-details">
+  <div class="specs">
+    {metrics?.github_stars && (
+      <div class="spec">
+        <span class="spec-label">Stars</span>
+        <span class="spec-value">{formatCompact(metrics.github_stars)}</span>
+      </div>
+    )}
+    {library.language && (
+      <div class="spec">
+        <span class="spec-label">Language</span>
+        <span class="spec-value">{library.language}</span>
+      </div>
+    )}
+    {library.framework && (
+      <div class="spec">
+        <span class="spec-label">Framework</span>
+        <span class="spec-value">{library.framework}</span>
+      </div>
+    )}
+    {library.license && (
+      <div class="spec">
+        <span class="spec-label">License</span>
+        <span class="spec-value">{library.license}</span>
+      </div>
+    )}
+    {library.pip_package && (
+      <div class="spec">
+        <span class="spec-label">Install</span>
+        <span class="spec-value"><code>pip install {library.pip_package}</code></span>
+      </div>
+    )}
+  </div>
+
+  <div class="library-links">
+    <a href={library.github} class="library-link" target="_blank" rel="noopener">GitHub Repository →</a>
+  </div>
+</div>
+
+<style>
+  .library-details {
+    margin-top: 0.5rem;
+  }
+
+  .specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .spec {
+    background: var(--bg);
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+  }
+
+  .spec-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+  }
+
+  .spec-value {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .spec-value code {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.8rem;
+    background: var(--surface);
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+  }
+
+  .library-links {
+    margin-top: 0.5rem;
+  }
+
+  .library-link {
+    font-size: 0.85rem;
+    color: var(--color-library);
+  }
+
+  .library-link:hover {
+    text-decoration: underline;
+  }
+</style>

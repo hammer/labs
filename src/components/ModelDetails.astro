@@ -1,11 +1,12 @@
 ---
-import type { Output } from '../schema.js';
+import type { Output, MetricsEntry } from '../schema.js';
 
 interface Props {
   model: NonNullable<Output['model']>;
+  metrics?: MetricsEntry;
 }
 
-const { model } = Astro.props;
+const { model, metrics } = Astro.props;
 ---
 
 <div class="model-details">
@@ -28,6 +29,12 @@ const { model } = Astro.props;
         <span class="spec-value">{model.active_parameters}</span>
       </div>
     )}
+    {model.num_experts && (
+      <div class="spec">
+        <span class="spec-label">Experts</span>
+        <span class="spec-value">{model.num_experts}{model.top_k ? ` (top-${model.top_k})` : ''}</span>
+      </div>
+    )}
     {model.context_window && (
       <div class="spec">
         <span class="spec-label">Context window</span>
@@ -38,6 +45,42 @@ const { model } = Astro.props;
       <div class="spec">
         <span class="spec-label">Training tokens</span>
         <span class="spec-value">{model.training_tokens}</span>
+      </div>
+    )}
+    {model.intelligence_index && (
+      <div class="spec">
+        <span class="spec-label">AA Intelligence</span>
+        <span class="spec-value">{model.intelligence_index}</span>
+      </div>
+    )}
+    {model.training_hardware && (
+      <div class="spec">
+        <span class="spec-label">Training hardware</span>
+        <span class="spec-value">{model.training_hardware}</span>
+      </div>
+    )}
+    {model.training_cost && (
+      <div class="spec">
+        <span class="spec-label">Training cost</span>
+        <span class="spec-value">{model.training_cost}</span>
+      </div>
+    )}
+    {model.training_time && (
+      <div class="spec">
+        <span class="spec-label">Training time</span>
+        <span class="spec-value">{model.training_time}</span>
+      </div>
+    )}
+    {model.optimizer && (
+      <div class="spec">
+        <span class="spec-label">Optimizer</span>
+        <span class="spec-value">{model.optimizer}</span>
+      </div>
+    )}
+    {model.license && (
+      <div class="spec">
+        <span class="spec-label">License</span>
+        <span class="spec-value">{model.license}</span>
       </div>
     )}
     {model.languages && (
@@ -53,6 +96,30 @@ const { model } = Astro.props;
       </div>
     )}
   </div>
+
+  {model.benchmark_scores && model.benchmark_scores.length > 0 && (
+    <div class="benchmarks">
+      <h4>Benchmark Scores</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Benchmark</th>
+            <th>Score</th>
+            <th>Mode</th>
+          </tr>
+        </thead>
+        <tbody>
+          {model.benchmark_scores.map((b) => (
+            <tr>
+              <td>{b.benchmark}</td>
+              <td class="score">{b.score}</td>
+              <td class="mode">{b.mode ?? '—'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
 
   {model.variants && model.variants.length > 0 && (
     <div class="variants">
@@ -110,9 +177,14 @@ const { model } = Astro.props;
     font-size: 0.9rem;
   }
 
+  .benchmarks h4,
   .variants h4 {
     font-size: 0.85rem;
     margin-bottom: 0.5rem;
+  }
+
+  .benchmarks {
+    margin-bottom: 1rem;
   }
 
   table {
@@ -134,5 +206,15 @@ const { model } = Astro.props;
   td {
     padding: 0.375rem 0.5rem;
     border-bottom: 1px solid var(--border);
+  }
+
+  td.score {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  td.mode {
+    color: var(--text-muted);
+    font-size: 0.8rem;
   }
 </style>

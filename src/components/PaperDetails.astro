@@ -1,0 +1,167 @@
+---
+import type { Output, MetricsEntry } from '../schema.js';
+import { getAllPeople, slugifyName } from '../data/loader.js';
+
+interface Props {
+  paper: NonNullable<Output['paper']>;
+  metrics?: MetricsEntry;
+}
+
+const { paper, metrics } = Astro.props;
+
+// Match authors to people pages
+const allPeople = getAllPeople();
+const peopleBySlug = new Map(allPeople.map(p => [p.slug, p]));
+
+function linkAuthor(name: string) {
+  const slug = slugifyName(name);
+  return peopleBySlug.has(slug) ? { name, slug, linked: true } : { name, slug: null, linked: false };
+}
+
+const linkedAuthors = paper.authors?.map(linkAuthor) ?? [];
+---
+
+<div class="paper-details">
+  <div class="specs">
+    {paper.venue && (
+      <div class="spec">
+        <span class="spec-label">Venue</span>
+        <span class="spec-value">{paper.venue}</span>
+      </div>
+    )}
+    {paper.presentation && (
+      <div class="spec">
+        <span class="spec-label">Presentation</span>
+        <span class="spec-value presentation-badge" data-type={paper.presentation}>{paper.presentation}</span>
+      </div>
+    )}
+    {metrics?.citations && (
+      <div class="spec">
+        <span class="spec-label">Citations</span>
+        <span class="spec-value">{metrics.citations.toLocaleString()}</span>
+      </div>
+    )}
+  </div>
+
+  {(paper.arxiv || paper.pdf_url || paper.code_url || paper.huggingface_url) && (
+    <div class="paper-links">
+      {paper.arxiv && <a href={`https://arxiv.org/abs/${paper.arxiv}`} class="paper-link" target="_blank" rel="noopener">arXiv</a>}
+      {paper.arxiv && <a href={`https://arxiv.org/html/${paper.arxiv}`} class="paper-link" target="_blank" rel="noopener">HTML</a>}
+      {paper.pdf_url && <a href={paper.pdf_url} class="paper-link" target="_blank" rel="noopener">PDF</a>}
+      {paper.code_url && <a href={paper.code_url} class="paper-link" target="_blank" rel="noopener">Code</a>}
+      {paper.huggingface_url && <a href={paper.huggingface_url} class="paper-link" target="_blank" rel="noopener">HuggingFace</a>}
+    </div>
+  )}
+
+  {linkedAuthors.length > 0 && (
+    <div class="authors">
+      <span class="authors-label">Authors:</span>
+      {linkedAuthors.map((a, i) => (
+        <>
+          {i > 0 && <span class="author-sep"> · </span>}
+          {a.linked
+            ? <a href={`/people/${a.slug}`} class="author-link">{a.name}</a>
+            : <span class="author-name">{a.name}</span>
+          }
+        </>
+      ))}
+    </div>
+  )}
+</div>
+
+<style>
+  .paper-details {
+    margin-top: 0.5rem;
+  }
+
+  .specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .spec {
+    background: var(--bg);
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+  }
+
+  .spec-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+  }
+
+  .spec-value {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .presentation-badge[data-type="oral"],
+  .presentation-badge[data-type="best-paper"] {
+    color: #059669;
+  }
+
+  .presentation-badge[data-type="spotlight"] {
+    color: #2563eb;
+  }
+
+  .paper-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .paper-link {
+    display: inline-block;
+    padding: 0.3rem 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+
+  .paper-link:hover {
+    border-color: var(--color-paper);
+    color: var(--color-paper);
+  }
+
+  .authors {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .authors-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin-right: 0.4rem;
+  }
+
+  .author-link {
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: var(--border);
+  }
+
+  .author-link:hover {
+    text-decoration-color: var(--color-paper);
+    color: var(--color-paper);
+  }
+
+  .author-name {
+    color: var(--text-muted);
+  }
+
+  .author-sep {
+    color: var(--text-muted);
+  }
+</style>

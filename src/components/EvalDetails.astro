@@ -1,0 +1,222 @@
+---
+import type { Output } from '../schema.js';
+
+interface Props {
+  eval: NonNullable<Output['eval']>;
+}
+
+const { eval: evalData } = Astro.props;
+---
+
+<div class="eval-details">
+  <div class="specs">
+    {evalData.num_questions && (
+      <div class="spec">
+        <span class="spec-label">Questions</span>
+        <span class="spec-value">{evalData.num_questions.toLocaleString()}</span>
+      </div>
+    )}
+    {evalData.num_tasks && (
+      <div class="spec">
+        <span class="spec-label">Tasks</span>
+        <span class="spec-value">{evalData.num_tasks.toLocaleString()}</span>
+      </div>
+    )}
+    {evalData.domains && (
+      <div class="spec">
+        <span class="spec-label">Domains</span>
+        <span class="spec-value">{evalData.domains.length}</span>
+      </div>
+    )}
+    {evalData.scoring_method && (
+      <div class="spec">
+        <span class="spec-label">Scoring</span>
+        <span class="spec-value">{evalData.scoring_method}</span>
+      </div>
+    )}
+    {evalData.human_baseline && (
+      <div class="spec">
+        <span class="spec-label">Human baseline</span>
+        <span class="spec-value">{evalData.human_baseline}</span>
+      </div>
+    )}
+    {evalData.random_baseline && (
+      <div class="spec">
+        <span class="spec-label">Random baseline</span>
+        <span class="spec-value">{evalData.random_baseline}</span>
+      </div>
+    )}
+    {evalData.saturation && (
+      <div class="spec">
+        <span class="spec-label">Saturation</span>
+        <span class="spec-value">{evalData.saturation}</span>
+      </div>
+    )}
+  </div>
+
+  {evalData.used_in && evalData.used_in.length > 0 && (
+    <div class="used-in">
+      <span class="used-in-label">Used in:</span>
+      {evalData.used_in.map(idx => (
+        <span class="index-badge">{idx}</span>
+      ))}
+    </div>
+  )}
+
+  {evalData.domains && evalData.domains.length > 0 && (
+    <div class="domain-list">
+      <span class="domain-label">Domains:</span>
+      {evalData.domains.map((d, i) => (
+        <>{i > 0 && ', '}{d}</>
+      ))}
+    </div>
+  )}
+
+  {evalData.top_scores && evalData.top_scores.length > 0 && (
+    <div class="top-scores">
+      <h4>Top Scores</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Score</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {evalData.top_scores.map((s) => (
+            <tr>
+              <td>{s.model}</td>
+              <td class="score">{s.score}</td>
+              <td class="date">{s.date ?? '—'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+
+  {evalData.leaderboard_url && (
+    <div class="leaderboard-link">
+      <a href={evalData.leaderboard_url} target="_blank" rel="noopener">View Leaderboard →</a>
+    </div>
+  )}
+</div>
+
+<style>
+  .eval-details {
+    margin-top: 0.5rem;
+  }
+
+  .specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .spec {
+    background: var(--bg);
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+  }
+
+  .spec-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+  }
+
+  .spec-value {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .used-in {
+    margin-bottom: 0.75rem;
+  }
+
+  .used-in-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin-right: 0.4rem;
+  }
+
+  .index-badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    background: color-mix(in srgb, var(--color-eval) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-eval) 30%, transparent);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-eval);
+    margin-right: 0.35rem;
+  }
+
+  .domain-list {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .domain-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-right: 0.4rem;
+  }
+
+  .top-scores h4 {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+
+  th {
+    text-align: left;
+    padding: 0.375rem 0.5rem;
+    border-bottom: 2px solid var(--border);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+  }
+
+  td {
+    padding: 0.375rem 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  td.score {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  td.date {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+  }
+
+  .leaderboard-link {
+    margin-top: 0.75rem;
+  }
+
+  .leaderboard-link a {
+    font-size: 0.85rem;
+    color: var(--color-eval);
+  }
+
+  .leaderboard-link a:hover {
+    text-decoration: underline;
+  }
+</style>

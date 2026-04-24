@@ -3,6 +3,10 @@ import Layout from '../../../components/Layout.astro';
 import TypeBadge from '../../../components/TypeBadge.astro';
 import TagList from '../../../components/TagList.astro';
 import ModelDetails from '../../../components/ModelDetails.astro';
+import PaperDetails from '../../../components/PaperDetails.astro';
+import EvalDetails from '../../../components/EvalDetails.astro';
+import DatasetDetails from '../../../components/DatasetDetails.astro';
+import LibraryDetails from '../../../components/LibraryDetails.astro';
 import { getAllOutputsChronological, getOutputBySlug, getLabBySlug, isGrouped, getOutputTypes } from '../../../data/loader.js';
 
 export function getStaticPaths() {
@@ -60,38 +64,39 @@ const types = getOutputTypes(output);
     ))}
   </div>
 
-  {/* Simple output: show type-specific details inline */}
+  {/* Simple output: type-specific detail components */}
   {!grouped && 'model' in output && output.model && (
     <section class="section">
       <h2>Model Details</h2>
-      <ModelDetails model={output.model} />
+      <ModelDetails model={output.model} metrics={output._metrics} />
     </section>
   )}
 
   {!grouped && 'paper' in output && output.paper && (
     <section class="section">
       <h2>Paper</h2>
-      <div class="paper-details">
-        {output.paper.arxiv && (
-          <p><strong>arXiv:</strong> <a href={`https://arxiv.org/abs/${output.paper.arxiv}`}>{output.paper.arxiv}</a></p>
-        )}
-        {output.paper.venue && <p><strong>Venue:</strong> {output.paper.venue}</p>}
-      </div>
+      <PaperDetails paper={output.paper} metrics={output._metrics} />
+    </section>
+  )}
+
+  {!grouped && 'eval' in output && output.eval && (
+    <section class="section">
+      <h2>Evaluation Details</h2>
+      <EvalDetails eval={output.eval} />
     </section>
   )}
 
   {!grouped && 'library' in output && output.library && (
     <section class="section">
       <h2>Library</h2>
-      <p><a href={output.library.github}>GitHub Repository</a></p>
+      <LibraryDetails library={output.library} metrics={output._metrics} />
     </section>
   )}
 
   {!grouped && 'dataset' in output && output.dataset && (
     <section class="section">
       <h2>Dataset</h2>
-      {output.dataset.github && <p><a href={output.dataset.github}>GitHub Repository</a></p>}
-      {output.dataset.url && <p><a href={output.dataset.url}>Dataset</a></p>}
+      <DatasetDetails dataset={output.dataset} metrics={output._metrics} />
     </section>
   )}
 
@@ -117,27 +122,11 @@ const types = getOutputTypes(output);
             </div>
           )}
 
-          {sub.model && <ModelDetails model={sub.model} />}
-
-          {sub.paper && (
-            <div class="paper-details">
-              {sub.paper.arxiv && (
-                <p><strong>arXiv:</strong> <a href={`https://arxiv.org/abs/${sub.paper.arxiv}`}>{sub.paper.arxiv}</a></p>
-              )}
-              {sub.paper.venue && <p><strong>Venue:</strong> {sub.paper.venue}</p>}
-            </div>
-          )}
-
-          {sub.library && (
-            <p><a href={sub.library.github}>GitHub Repository</a></p>
-          )}
-
-          {sub.dataset && (
-            <div>
-              {sub.dataset.github && <p><a href={sub.dataset.github}>GitHub Repository</a></p>}
-              {sub.dataset.url && <p><a href={sub.dataset.url}>Dataset</a></p>}
-            </div>
-          )}
+          {sub.model && <ModelDetails model={sub.model} metrics={output._metrics} />}
+          {sub.paper && <PaperDetails paper={sub.paper} metrics={output._metrics} />}
+          {sub.eval && <EvalDetails eval={sub.eval} />}
+          {sub.library && <LibraryDetails library={sub.library} metrics={output._metrics} />}
+          {sub.dataset && <DatasetDetails dataset={sub.dataset} metrics={output._metrics} />}
 
           {sub.notes && <p class="sub-notes">{sub.notes}</p>}
         </div>

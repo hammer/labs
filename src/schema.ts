@@ -58,6 +58,12 @@ const LinkSchema = z.object({
   url: z.string().url(),
 });
 
+const BenchmarkScoreSchema = z.object({
+  benchmark: z.string(),
+  score: z.string(),
+  mode: z.string().optional(),
+});
+
 const ModelVariantSchema = z.object({
   name: z.string(),
   parameters: z.string().optional(),
@@ -75,20 +81,64 @@ const ModelDetailsSchema = z.object({
   training_tokens: z.string().optional(),
   base_model: z.string().optional(),
   variants: z.array(ModelVariantSchema).optional(),
+  // Enhanced fields
+  training_hardware: z.string().optional(),
+  training_cost: z.string().optional(),
+  training_time: z.string().optional(),
+  optimizer: z.string().optional(),
+  license: z.string().optional(),
+  num_experts: z.number().optional(),
+  top_k: z.number().optional(),
+  benchmark_scores: z.array(BenchmarkScoreSchema).optional(),
 });
 
 const PaperDetailsSchema = z.object({
   arxiv: z.string().optional(),
   venue: z.string().optional(),
+  // Enhanced fields
+  authors: z.array(z.string()).optional(),
+  pdf_url: z.string().url().optional(),
+  code_url: z.string().url().optional(),
+  huggingface_url: z.string().url().optional(),
+  presentation: z.enum(['oral', 'spotlight', 'poster', 'best-paper']).optional(),
+  year: z.number().optional(),
+});
+
+const EvalDetailsSchema = z.object({
+  num_tasks: z.number().optional(),
+  num_questions: z.number().optional(),
+  domains: z.array(z.string()).optional(),
+  scoring_method: z.string().optional(),
+  used_in: z.array(z.string()).optional(),
+  leaderboard_url: z.string().url().optional(),
+  saturation: z.string().optional(),
+  top_scores: z.array(z.object({
+    model: z.string(),
+    score: z.string(),
+    date: z.string().optional(),
+  })).optional(),
+  human_baseline: z.string().optional(),
+  random_baseline: z.string().optional(),
 });
 
 const LibraryDetailsSchema = z.object({
   github: z.string().url(),
+  // Enhanced fields
+  language: z.string().optional(),
+  framework: z.string().optional(),
+  license: z.string().optional(),
+  pip_package: z.string().optional(),
 });
 
 const DatasetDetailsSchema = z.object({
   github: z.string().url().optional(),
   url: z.string().url().optional(),
+  // Enhanced fields
+  size: z.string().optional(),
+  format: z.string().optional(),
+  languages: z.array(z.string()).optional(),
+  license: z.string().optional(),
+  huggingface_url: z.string().url().optional(),
 });
 
 const outputTypes = ['model', 'paper', 'blog', 'library', 'dataset', 'eval', 'announcement'] as const;
@@ -102,6 +152,7 @@ const SubOutputSchema = z.object({
   description: z.string().optional(),
   model: ModelDetailsSchema.optional(),
   paper: PaperDetailsSchema.optional(),
+  eval: EvalDetailsSchema.optional(),
   library: LibraryDetailsSchema.optional(),
   dataset: DatasetDetailsSchema.optional(),
   notes: z.string().optional(),
@@ -120,6 +171,7 @@ const SimpleOutputSchema = z.object({
   flagship: z.boolean().optional(),
   model: ModelDetailsSchema.optional(),
   paper: PaperDetailsSchema.optional(),
+  eval: EvalDetailsSchema.optional(),
   library: LibraryDetailsSchema.optional(),
   dataset: DatasetDetailsSchema.optional(),
   related: z.array(z.string()).optional(),
