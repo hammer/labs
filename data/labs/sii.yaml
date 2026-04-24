@@ -7,17 +7,24 @@ region: china
 founded: "2024"
 type: academic
 description: >
-  <p>The <strong>Shanghai Innovation Institute (SII)</strong> (est. September
-  2024) is a high-level innovation hub bridging academic research and industrial
-  application, founded on the premise that "AI belongs to young people."
-  Received ~500M yuan (~$70M) in donations with 50+ industry partners.
-  President: <strong>Song Haitao</strong> (also at SJTU). Its primary AI
-  research arm is the <strong><a href="https://plms.ai/">GAIR Lab</a></strong>
-  (Generative AI Research, <a href="https://github.com/GAIR-NLP">GitHub</a>,
-  <a href="https://huggingface.co/GAIR">HuggingFace</a>), deeply integrated
-  with <a href="https://en.wikipedia.org/wiki/Shanghai_Jiao_Tong_University">Shanghai
-  Jiao Tong University</a>, with frequent collaborations with
-  <a href="/labs/ant-group">Ant Group</a>/InclusionAI and Sand.ai.</p>
+  <p>The <strong>Shanghai Innovation Institute (SII)</strong> (上海创智学院,
+  est. September 2024) is a high-level innovation hub bridging academic research
+  and industrial application, founded on the premise that "AI belongs to young
+  people." Received ~500M yuan (~$70M) in donations with 50+ industry partners.
+  Leadership: Executive VP <strong>Ding Xiaodong</strong> (丁晓东, formerly
+  President of the University of Shanghai for Science and Technology), with VPs
+  Wu Libo (Fudan), Qiao Yu, and Lu Cewu (SJTU). Its primary AI research arm is
+  the <strong><a href="https://plms.ai/">GAIR Lab</a></strong> (Generative AI
+  Research, <a href="https://github.com/GAIR-NLP">GitHub</a>,
+  <a href="https://huggingface.co/GAIR">HuggingFace</a>), directed by
+  <strong><a href="http://pfliu.com/">Pengfei Liu</a></strong> (Associate
+  Professor, SJTU). Deeply integrated with
+  <a href="https://en.wikipedia.org/wiki/Shanghai_Jiao_Tong_University">Shanghai
+  Jiao Tong University</a> and the related
+  <a href="https://sairi.com.cn/">SAIRI</a> (Shanghai AI Research Institute,
+  est. 2019, led by Song Haitao), with frequent collaborations with
+  <a href="/labs/ant-group">Ant Group</a>/InclusionAI, Sand.ai, and
+  <a href="https://huggingface.co/fnlp">Fudan NLP (OpenMOSS)</a>.</p>
 
   <p>SII's research labs practice <strong>"radical openness"</strong> &mdash;
   releasing not just weights but full training trajectories (logs, intermediate
@@ -40,14 +47,17 @@ description: >
   explores whether AI can accelerate its own development, discovering
   105 novel attention architectures surpassing recent benchmarks.</p>
 people:
-  - name: Song Haitao
-    role: President, SII
   - name: Pengfei Liu
     url: http://pfliu.com/
-    role: Director, GAIR Lab; Associate Professor, SJTU
+    role: Director, GAIR Lab; Associate Professor, SJTU (Qingyuan Research Institute + Zhiyuan College)
+    formerly: Carnegie Mellon University (Postdoc 2019-2023, with Graham Neubig); Fudan University (PhD 2014-2019, advisors Xipeng Qiu & Xuanjing Huang); MILA (visiting)
     urls:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=oIz_CYEAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Pengfei_Liu1
+      - label: SJTU Faculty
+        url: https://en.zhiyuan.sjtu.edu.cn/en/faculty/928/detail
   - name: Ethan Chern
     url: https://ethanc111.github.io/
     role: Lead Researcher (daVinci, LIMO)
@@ -55,6 +65,12 @@ people:
     urls:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=zmit6DkAAAAJ
+  - name: Song Haitao
+    role: President, SAIRI (Shanghai AI Research Institute); Vice Dean, SJTU AI Research Institute
+    formerly: CAICT (Chief Economist); State Nuclear Power Technology Corp; SJTU (PhD 2021, BS 2008)
+    urls:
+      - label: SAIRI
+        url: https://sairi.com.cn/
 news:
   - title: "Shanghai launches innovation institute to bridge AI research and industry"
     url: https://english.shanghai.gov.cn/en-IndustrialInnovation-Scitechcenter/20250916/4d6fd38abb7a4ebeaadda4aeac20da8b.html
