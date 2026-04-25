@@ -1,0 +1,54 @@
+name: "Nemotron-CLIMB: Clustering-based Iterative Data Mixture Bootstrapping"
+slug: nemotron-climb
+lab: nvidia
+date: 2025-04-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.13161
+  - label: Project Page
+    url: https://research.nvidia.com/labs/lpr/climb/
+description: >
+  <p>Automated framework for discovering optimal pretraining data mixtures through
+  <strong>semantic clustering and iterative optimization</strong>. Uses a proxy model
+  to evaluate candidate mixtures, clusters data into 20 semantic groups, then searches
+  for the ideal combination through iterative refinement &mdash; replacing manual
+  data curation with a principled optimization loop.</p>
+
+  <p>A 1B model trained on the optimized mixture (400B tokens) surpasses
+  <strong>Llama-3.2-1B by 2.0%</strong>; domain-specific optimization yields
+  5% gains over random sampling. Releases two datasets: <strong>Nemotron-ClimbLab</strong>
+  (1.2T tokens, 20 semantic clusters for research) and <strong>Nemotron-ClimbMix</strong>
+  (400B tokens, optimized mixture for efficient pretraining). NeurIPS 2025.</p>
+tags:
+  - data
+  - infrastructure
+  - scaling
+  - foundational
+outputs:
+  - name: Nemotron-CLIMB Paper
+    type: paper
+    date: 2025-04-17
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2504.13161
+    paper:
+      arxiv: "2504.13161"
+      venue: NeurIPS 2025
+  - name: Nemotron-ClimbLab (1.2T tokens)
+    type: dataset
+    date: 2025-04-17
+    description: >
+      1.2 trillion token filtered corpus organized into 20 semantic clusters
+      for data mixture research.
+    dataset:
+      size: "1.2T tokens"
+      format: text
+  - name: Nemotron-ClimbMix (400B tokens)
+    type: dataset
+    date: 2025-04-17
+    description: >
+      400 billion token curated mixture optimized for efficient pretraining.
+      Outperforms Llama-3.2-1B training data at equivalent token budgets.
+    dataset:
+      size: "400B tokens"
+      format: text
