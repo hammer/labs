@@ -1,0 +1,26 @@
+name: "Topic Over Source: The Key to Effective Data Mixing for LLM Pre-training"
+slug: topic-over-source
+lab: shanghai-ai-lab
+type: paper
+date: 2025-02-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.16802
+description: >
+  <p>Proposes <strong>topic-based data partitioning</strong> as a replacement for
+  the standard source-based approach to pretraining data mixing. Uses unsupervised
+  clustering, LLM-based summarization, and supervised classifier training to generate
+  detailed topic labels for data organization. First comprehensive comparison across
+  multiple mixing strategies (RegMix, DoReMi, temperature-based sampling).</p>
+
+  <p>Theoretical and empirical analysis shows topic-based mixing achieves
+  <strong>significantly lower validation loss</strong> compared to source-based
+  approaches, with consistent downstream improvements. Releases code, annotated
+  datasets, and topic classification models. By Peng, Zhuang, Qiu, Ma, Yu, Zhu,
+  and <a href="https://conghui.github.io/">Conghui He</a> (Shanghai AI Laboratory).</p>
+tags:
+  - data
+  - scaling
+  - foundational
+paper:
+  arxiv: "2502.16802"
