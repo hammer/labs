@@ -1,0 +1,31 @@
+name: "CorpusQA: A 10 Million Token Benchmark for Corpus-Level Analysis and Reasoning"
+slug: corpusqa
+lab: alibaba
+type: eval
+date: 2026-01-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.14952
+description: >
+  <p><strong>10-million-token benchmark</strong> for corpus-level analysis and
+  reasoning — answers require global integration, comparison, and statistical
+  aggregation across dispersed evidence, not retrieval of a few relevant chunks.
+  Uses a novel data synthesis framework that decouples reasoning from textual
+  representation, with <strong>programmatically guaranteed ground-truth
+  answers</strong> eliminating human annotation bias.</p>
+
+  <p>Key finding: state-of-the-art long-context LLMs show <strong>degrading
+  performance as input length increases</strong>, and standard RAG systems
+  <strong>collapse entirely</strong> on corpus-level tasks. Memory-augmented
+  agentic architectures offer more robust alternatives. The framework also
+  demonstrates utility beyond evaluation through fine-tuning improvements.
+  By Lu, Li, Shi, Shen, Yan, and Huang (Tongyi Lab, Alibaba Group).</p>
+tags:
+  - benchmark
+  - evaluation
+  - long-context
+eval:
+  scoring_method: programmatic verification
+  saturation: "Far from saturated — LLMs degrade as input length grows to 10M tokens"
+paper:
+  arxiv: "2601.14952"
