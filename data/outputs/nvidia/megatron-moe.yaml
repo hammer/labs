@@ -1,0 +1,31 @@
+name: "Scalable Training of MoE Models with Megatron Core"
+slug: megatron-moe
+lab: nvidia
+type: paper
+date: 2026-03-08
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.07685
+description: >
+  <p>88-page technical report on scaling <strong>Mixture-of-Experts training</strong>
+  from billions to trillions of parameters across thousands of GPUs. Covers the full
+  system stack: memory (recomputation, offloading), communication (optimized MoE
+  dispatchers, overlapping), computation (Grouped GEMM, kernel fusions, CUDA Graphs),
+  and <strong>Parallel Folding</strong> for flexible multi-dimensional parallelism.
+  Includes low-precision training support for <strong>FP8 and NVFP4</strong> formats
+  and efficient long-context training.</p>
+
+  <p>Benchmarks on latest hardware: <strong>DeepSeek-V3-685B at 1,233 TFLOPS/GPU
+  (GB300)</strong> and 1,048 TFLOPS/GPU (GB200); Qwen3-235B at 974 TFLOPS/GPU
+  (GB300). Practical guidance for the MoE training challenges that arise from
+  sparsity allowing total parameters to grow much faster than per-token compute.
+  By Yan, Bai, Yao, Liu et al. (NVIDIA, 45 authors).</p>
+tags:
+  - infrastructure
+  - moe
+  - efficiency
+  - training-stability
+paper:
+  arxiv: "2603.07685"
+related:
+  - nemotron-3-super
