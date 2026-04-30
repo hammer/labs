@@ -1,0 +1,76 @@
+name: Granite 4.1
+slug: granite-4.1
+lab: ibm
+type: model
+date: 2026-04-29
+flagship: true
+sources:
+  - label: Blog Post
+    url: https://research.ibm.com/blog/granite-4-1-ai-foundation-models
+  - label: Technical Blog
+    url: https://huggingface.co/blog/ibm-granite/granite-4-1
+  - label: HuggingFace (8B)
+    url: https://huggingface.co/ibm-granite/granite-4.1-8b
+  - label: HuggingFace (30B)
+    url: https://huggingface.co/ibm-granite/granite-4.1-30b
+  - label: HuggingFace (3B)
+    url: https://huggingface.co/ibm-granite/granite-4.1-3b
+  - label: HuggingFace (Vision 4B)
+    url: https://huggingface.co/ibm-granite/granite-vision-4.1-4b
+description: >
+  <p>IBM's latest foundation model family: <strong>3B, 8B, and 30B</strong> dense
+  decoder-only Transformers (GQA, RoPE, SwiGLU, RMSNorm) trained on <strong>~15T
+  tokens</strong> with multi-stage pretraining and long-context extension to
+  <strong>512K tokens</strong>. Post-trained with SFT on ~4.1M curated samples and
+  RL via on-policy GRPO with DAPO loss. Granite 4.1 8B-Instruct matches or outperforms
+  the previous <strong>Granite 4.0 32B MoE</strong> despite being a simpler dense
+  model &mdash; demonstrating that training quality can substitute for scale.</p>
+
+  <p>Also includes <strong>Granite Speech 4.1</strong> (ASR + translation),
+  <strong>Granite Vision 4.1</strong> (table/chart extraction), <strong>Granite
+  Guardian</strong> (harm detection), and embedding models. 8B benchmarks: MMLU 73.84,
+  BBH 80.51, GSM8K 92.49, HumanEval 85.37, MBPP 87.30, ArenaHard 68.98. All models
+  under <strong>Apache 2.0</strong>.</p>
+tags:
+  - open-weight
+  - enterprise
+model:
+  architecture: dense
+  parameters: 30B
+  context_window: 512000
+  training_tokens: 15T
+  license: Apache 2.0
+  variants:
+    - name: Granite 4.1 3B
+      parameters: 3B
+    - name: Granite 4.1 8B
+      parameters: 8B
+    - name: Granite 4.1 30B
+      parameters: 30B
+    - name: Granite Vision 4.1 4B
+      parameters: 4B
+      notes: Vision model for table/chart extraction
+    - name: Granite Speech 4.1 2B
+      parameters: 2B
+      notes: ASR with translation
+  benchmark_scores:
+    - benchmark: MMLU
+      score: "73.84"
+      mode: 5-shot (8B)
+    - benchmark: BBH
+      score: "80.51"
+      mode: 3-shot CoT (8B)
+    - benchmark: GSM8K
+      score: "92.49"
+      mode: 8-shot (8B)
+    - benchmark: HumanEval
+      score: "85.37"
+      mode: pass@1 (8B)
+    - benchmark: MBPP
+      score: "87.30"
+      mode: pass@1 (8B)
+    - benchmark: ArenaHard
+      score: "68.98"
+      mode: 8B
+related:
+  - granite-4.0

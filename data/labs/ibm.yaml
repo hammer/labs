@@ -48,6 +48,10 @@ people:
     role: Former SVP & Director, IBM Research (departed Oct 2025)
     formerly: Now US DOE Under Secretary for Science
 news:
+  - title: "Granite 4.1 Released: 3B/8B/30B Dense Models, 512K Context, 8B Matches Prior 32B MoE"
+    url: https://research.ibm.com/blog/granite-4-1-ai-foundation-models
+    source: IBM Research
+    date: 2026-04-29
   - title: "Granite 4.0: Hybrid Mamba Architecture, First ISO 42001 Certified Open Models"
     url: https://www.ibm.com/new/announcements/ibm-granite-4-0-hyper-efficient-high-performance-hybrid-models
     source: IBM
