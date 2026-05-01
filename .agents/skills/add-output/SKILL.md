@@ -317,6 +317,8 @@ Write descriptions a researcher would find useful. Use HTML for multi-paragraph 
 
 **Style:** `<strong>` for key terms, `<a href>` for links. Concrete numbers always — never "achieves strong performance."
 
+**Link to people pages:** When mentioning a researcher by name in a description, **always check if we have a person page** for them (search `data/labs/` for the name). If we do, link to their page: `<a href="/people/yao-shunyu">Yao Shunyu</a>`. This connects the research to the person and helps readers navigate. Common candidates: lab founders, chief scientists, first authors of flagship papers, and people who moved between labs.
+
 ## 4. Grouping Rules
 
 **Group into one file** (using `outputs` array) when:

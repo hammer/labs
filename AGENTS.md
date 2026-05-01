@@ -233,6 +233,7 @@ When adding new outputs, prioritize collecting:
 - Lab descriptions use HTML in YAML `>` blocks (`<p>`, `<strong>`, `<a>`, `&mdash;`)
 - Output descriptions can be plain text (single paragraph) or HTML (multiple paragraphs)
 - Output descriptions render via `set:html`
+- **Always link to people pages** when mentioning a researcher by name in descriptions. Check if we track them (search `data/labs/` for the name), and if so, link: `<a href="/people/yao-shunyu">Yao Shunyu</a>`. This connects outputs to people and improves navigation.
 
 ### Model Parameters
 - Use structured `model.parameters` and `model.active_parameters` fields (e.g., `671B`, `37B`, `1T`)

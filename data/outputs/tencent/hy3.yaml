@@ -12,8 +12,9 @@ sources:
   - label: HuggingFace
     url: https://huggingface.co/tencent/Hy3-preview
 description: >
-  <p>First flagship model built under Chief AI Scientist <strong>Yao Shunyu</strong>
-  (former OpenAI researcher, core contributor to Operator and Deep Research).
+  <p>First flagship model built under Chief AI Scientist <strong><a
+  href="/people/yao-shunyu">Yao Shunyu</a></strong> (former OpenAI researcher,
+  core contributor to Operator and Deep Research).
   <strong>295B total / 21B active MoE</strong> (192 experts, top-8, 80 layers,
   GQA with 64 query + 8 KV heads) with 1 MTP layer (3.8B params) for speculative
   decoding. 256K context. Developed in under three months following Tencent's March
