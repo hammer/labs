@@ -55,6 +55,7 @@ outputs:
       active_parameters: 49B
       context_window: 1000000
       training_tokens: 33T
+      intelligence_index: 52
   - name: DeepSeek-V4-Flash
     type: model
     date: 2026-04-24

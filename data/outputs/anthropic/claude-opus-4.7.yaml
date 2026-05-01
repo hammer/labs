@@ -1,0 +1,35 @@
+name: Claude Opus 4.7
+slug: claude-opus-4.7
+lab: anthropic
+type: model
+date: 2026-04-16
+flagship: true
+sources:
+  - label: Announcement
+    url: https://www.anthropic.com/news/claude-opus-4-7
+  - label: Model Page
+    url: https://www.anthropic.com/claude/opus
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/claude-opus-4-7
+description: >
+  <p>Anthropic's latest flagship. AA Intelligence Index: <strong>57</strong>
+  (max reasoning effort), tied with Gemini 3.1 Pro and GPT-5.4. First Claude
+  model with <strong>high-resolution image support</strong> (2576px / 3.75MP).
+  New tokenizer for improved performance. Handles complex, long-running tasks
+  with rigor and consistency, pays precise attention to instructions, and
+  devises ways to verify its own outputs.</p>
+
+  <p>Notable improvement over Opus 4.6 in advanced software engineering,
+  especially on the hardest tasks. Released alongside
+  <a href="/outputs/anthropic/claude-mythos">Claude Mythos</a> (withheld from
+  public release for cybersecurity safety). Same pricing as Opus 4.6: $5/M
+  input, $25/M output. Available across Claude products, API, Amazon Bedrock,
+  Google Cloud Vertex AI, and Microsoft Foundry.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+model:
+  intelligence_index: 57
+related:
+  - claude-opus-4.6

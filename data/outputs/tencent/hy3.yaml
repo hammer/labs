@@ -36,5 +36,6 @@ model:
   parameters: 295B
   active_parameters: 21B
   context_window: 256000
+  intelligence_index: 42
 related:
   - hunyuan-2.0

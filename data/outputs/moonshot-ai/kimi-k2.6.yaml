@@ -32,6 +32,7 @@ model:
   parameters: 1T
   active_parameters: 32B
   context_window: 262144
+  intelligence_index: 54
   base_model: kimi-k2
 related:
   - kimi-k2

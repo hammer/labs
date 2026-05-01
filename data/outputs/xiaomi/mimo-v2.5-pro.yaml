@@ -1,0 +1,40 @@
+name: MiMo-V2.5-Pro
+slug: mimo-v2.5-pro
+lab: xiaomi
+type: model
+date: 2026-04-28
+flagship: true
+sources:
+  - label: Product Page
+    url: https://mimo.xiaomi.com/mimo-v2-5-pro/
+  - label: HuggingFace
+    url: https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/mimo-v2-5-pro
+description: >
+  <p><strong>1.02T total / 42B active MoE</strong> with hybrid attention
+  (sliding window + global at 6:1 ratio, 128-token window) and Multi-Token
+  Prediction. 1M-token context. AA Intelligence Index: <strong>54</strong>.
+  Developed under <a href="/people/luo-fuli">Luo Fuli</a> (former DeepSeek core
+  member). Open-sourced under MIT license, compatible with 5 domestic Chinese
+  chip platforms from day one.</p>
+
+  <p>ClawEval: 63.8% using ~40-60% fewer tokens than Opus 4.6, Gemini 3.1 Pro,
+  and GPT-5.4. GDPval-AA ELO: 1581 (surpassing Kimi K2.6 and GLM-5.1). KV-cache
+  reduced ~7x via learnable attention pool bias. By Xiaomi MiMo team.</p>
+tags:
+  - moe
+  - open-weight
+  - frontier
+  - agentic
+  - efficiency
+model:
+  architecture: moe
+  parameters: 1.02T
+  active_parameters: 42B
+  context_window: 1000000
+  intelligence_index: 54
+  license: MIT
+related:
+  - mimo-v2-pro
+  - mimo-v2

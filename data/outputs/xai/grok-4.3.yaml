@@ -1,0 +1,27 @@
+name: Grok 4.3
+slug: grok-4.3
+lab: xai
+type: model
+date: 2026-04-17
+flagship: true
+sources:
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/articles/xai-launches-grok-4-3-with-improved-agentic-performance-and-lower-pricing
+description: >
+  <p>xAI's latest model. AA Intelligence Index: <strong>53</strong>. Largest
+  improvement on GDPval-AA (ELO 1500, +321 over Grok 4.20). Can generate
+  downloadable PDFs, spreadsheets, and PowerPoint decks directly from
+  conversation. Launched alongside Text-to-Speech and Speech-to-Text APIs
+  (25+ languages, multichannel audio, word-level speaker ID).</p>
+
+  <p>37.5% lower input and 58.3% lower output token prices vs. previous
+  generation. Currently restricted to SuperGrok Heavy subscribers ($300/month),
+  full rollout estimated mid-to-late May 2026. Proprietary.</p>
+tags:
+  - frontier
+  - reasoning
+  - agentic
+model:
+  intelligence_index: 53
+related:
+  - grok-4.20
