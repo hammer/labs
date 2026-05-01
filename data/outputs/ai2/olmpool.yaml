@@ -1,0 +1,28 @@
+name: "OlmPool: Cracks in the Foundation"
+slug: olmpool
+lab: ai2
+type: paper
+date: 2026-04-30
+sources:
+  - label: GitHub
+    url: https://github.com/allenai/olmpool
+  - label: HuggingFace
+    url: https://huggingface.co/collections/allenai/olmpool
+description: >
+  <p>Studies how <strong>seemingly minor architectural choices impact long-context
+  extension</strong> in language models. Provides a pool of 7&ndash;8B parameter
+  models trained to 150B tokens (140B pretraining + 10B context extension) with
+  varying architectural configurations, enabling controlled experiments on which
+  design decisions matter for extending context windows.</p>
+
+  <p>Part of Ai2's tradition of fully open research infrastructure &mdash;
+  all model checkpoints released in both OLMo-core and HuggingFace formats.
+  Apache 2.0.</p>
+tags:
+  - open-source
+  - research
+  - long-context
+  - architecture
+related:
+  - olmo-3
+  - olmo-hybrid
