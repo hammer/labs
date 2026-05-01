@@ -34,9 +34,9 @@ outputs:
     date: 2026-02-02
     model:
       architecture: moe
-      parameters: 1.1T
       active_parameters: 32B
       intelligence_index: 47
+      base_model: kimi-k2
   - name: "Kimi K2.5: Visual Agentic Intelligence"
     type: paper
     date: 2026-02-02
