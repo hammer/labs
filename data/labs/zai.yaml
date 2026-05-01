@@ -16,10 +16,10 @@ ipo:
   exchange: HKEX
   ticker: "02513"
 valuation:
-  amount: "$31B"
+  amount: "$40B"
   type: market-cap
   ticker: "HKG: 02513"
-  date: "2026-03"
+  date: "2026-05"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Zhipu_AI">Z.ai</a> (formerly Zhipu AI,
   <a href="https://www.prnewswire.com/news-releases/zai-releases-glm-4-5--setting-new-standards-for-ai-performance-and-accessibility-while-improving-affordability-302514803.html">rebranded

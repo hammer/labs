@@ -13,10 +13,10 @@ ipo:
   exchange: KRX
   ticker: "003550"
 valuation:
-  amount: "$11B"
+  amount: "$15.5B"
   type: market-cap
   ticker: "KRX: 003550"
-  date: "2026-03"
+  date: "2026-05"
 description: >
   <p><strong>LG AI Research</strong> is the centralized AI hub of the
   <a href="https://en.wikipedia.org/wiki/LG">LG Group</a>, established in

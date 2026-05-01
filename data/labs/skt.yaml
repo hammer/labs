@@ -13,10 +13,10 @@ ipo:
   exchange: KRX
   ticker: "017670"
 valuation:
-  amount: "$11B"
+  amount: "$14.5B"
   type: market-cap
   ticker: "KRX: 017670"
-  date: "2026-03"
+  date: "2026-05"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/SK_Telecom">SK Telecom</a> (KRX: 017670),
   South Korea's largest mobile carrier, has evolved from a telco into a self-described
