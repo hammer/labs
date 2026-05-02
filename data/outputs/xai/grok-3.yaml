@@ -27,6 +27,13 @@ model:
   architecture: moe
   context_window: 1000000
   intelligence_index: 25
+  parameters_estimated:
+    value: "2.1T"
+    source: https://arxiv.org/abs/2604.24827
+    source_label: "IKP factual-capacity estimate (Li 2026)"
+    method: ikp-factual-capacity
+    posted: "2026-04-27"
+    notes: "90% PI [715B–6.3T]"
   variants:
     - name: Grok-3
     - name: Grok-3 mini

@@ -26,6 +26,13 @@ model:
   architecture: moe
   context_window: 1000000
   intelligence_index: 35
+  parameters_estimated:
+    value: "1.2T"
+    source: https://arxiv.org/abs/2604.24827
+    source_label: "IKP factual-capacity estimate (Li 2026)"
+    method: ikp-factual-capacity
+    posted: "2026-04-27"
+    notes: "90% PI [387B–3.4T]"
 related:
   - gemini-1.5-pro
   - gemini-3.1-pro

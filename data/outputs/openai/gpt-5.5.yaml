@@ -30,6 +30,13 @@ tags:
 model:
   context_window: 1000000
   intelligence_index: 60
+  parameters_estimated:
+    value: "9.7T"
+    source: https://arxiv.org/abs/2604.24827
+    source_label: "IKP factual-capacity estimate (Li 2026)"
+    method: ikp-factual-capacity
+    posted: "2026-04-27"
+    notes: "90% PI [3.2T–28.7T]"
   benchmark_scores:
     - benchmark: Terminal-Bench 2.0
       score: "82.7%"

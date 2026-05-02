@@ -77,6 +77,13 @@ outputs:
     model:
       architecture: moe
       parameters: 1T+
+      parameters_estimated:
+        value: "685B"
+        source: https://arxiv.org/abs/2604.24827
+        source_label: "IKP factual-capacity estimate (Li 2026)"
+        method: ikp-factual-capacity
+        posted: "2026-04-27"
+        notes: "Effective knowledge capacity; 90% PI [229B–2.0T]. Lower than vendor-disclosed 1T+, consistent with sparse-MoE active-param effects."
   - name: Qwen3-Next
     type: model
     date: 2025-09-10

@@ -27,9 +27,23 @@ tags:
 model:
   context_window: 1000000
   intelligence_index: 57
+  parameters_estimated:
+    value: "1.0T"
+    source: https://arxiv.org/abs/2604.24827
+    source_label: "IKP factual-capacity estimate (Li 2026)"
+    method: ikp-factual-capacity
+    posted: "2026-04-27"
+    notes: "90% PI [348B–3.1T]"
   variants:
     - name: GPT-5.4 Thinking
     - name: GPT-5.4 Pro
+      parameters_estimated:
+        value: "2.2T"
+        source: https://arxiv.org/abs/2604.24827
+        source_label: "IKP factual-capacity estimate (Li 2026)"
+        method: ikp-factual-capacity
+        posted: "2026-04-27"
+        notes: "90% PI [736B–6.5T]"
     - name: GPT-5.4 Mini
       notes: 400K context, AA index 48
     - name: GPT-5.4 Nano

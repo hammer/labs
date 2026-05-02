@@ -28,6 +28,13 @@ tags:
 model:
   context_window: 200000
   intelligence_index: 31
+  parameters_estimated:
+    value: "3.5T"
+    source: https://arxiv.org/abs/2604.24827
+    source_label: "IKP factual-capacity estimate (Li 2026)"
+    method: ikp-factual-capacity
+    posted: "2026-04-27"
+    notes: "90% PI [1.2T–10.3T]"
   variants:
     - name: o1-preview
       notes: Initial preview, September 2024

@@ -31,5 +31,12 @@ tags:
   - coding
 model:
   intelligence_index: 57
+  parameters_estimated:
+    value: "4.0T"
+    source: https://arxiv.org/abs/2604.24827
+    source_label: "IKP factual-capacity estimate (Li 2026)"
+    method: ikp-factual-capacity
+    posted: "2026-04-27"
+    notes: "90% PI [1.4T–12.0T]"
 related:
   - claude-opus-4.6

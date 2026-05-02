@@ -26,11 +26,25 @@ tags:
 model:
   context_window: 200000
   intelligence_index: 43
+  parameters_estimated:
+    value: "3.4T"
+    source: https://arxiv.org/abs/2604.24827
+    source_label: "IKP factual-capacity estimate (Li 2026)"
+    method: ikp-factual-capacity
+    posted: "2026-04-27"
+    notes: "Paper: Claude Opus 4.5 · 90% PI [1.1T–10.0T]"
   variants:
     - name: Claude 4.5 Sonnet
       notes: 1M context, AA index 37
     - name: Claude 4.5 Haiku
       notes: 200K context, AA index 31
+      parameters_estimated:
+        value: "65B"
+        source: https://arxiv.org/abs/2604.24827
+        source_label: "IKP factual-capacity estimate (Li 2026)"
+        method: ikp-factual-capacity
+        posted: "2026-04-27"
+        notes: "Paper: Claude Haiku 4.5 · 90% PI [22B–194B]"
     - name: Claude 4.5 Opus
       notes: 200K context, AA index 43
 related:

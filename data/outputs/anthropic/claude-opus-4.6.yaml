@@ -25,10 +25,24 @@ tags:
 model:
   context_window: 1000000
   intelligence_index: 53
+  parameters_estimated:
+    value: "5.3T"
+    source: https://arxiv.org/abs/2604.24827
+    source_label: "IKP factual-capacity estimate (Li 2026)"
+    method: ikp-factual-capacity
+    posted: "2026-04-27"
+    notes: "90% PI [1.8T–15.6T]"
   variants:
     - name: Claude Opus 4.6
       notes: 1M context, AA index 53 (adaptive reasoning)
     - name: Claude Sonnet 4.6
       notes: 1M context, AA index 44
+      parameters_estimated:
+        value: "1.7T"
+        source: https://arxiv.org/abs/2604.24827
+        source_label: "IKP factual-capacity estimate (Li 2026)"
+        method: ikp-factual-capacity
+        posted: "2026-04-27"
+        notes: "90% PI [579B–5.1T]"
 related:
   - claude-4.5-opus

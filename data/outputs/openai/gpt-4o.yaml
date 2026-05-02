@@ -27,6 +27,13 @@ tags:
 model:
   context_window: 128000
   intelligence_index: 17
+  parameters_estimated:
+    value: "720B"
+    source: https://arxiv.org/abs/2604.24827
+    source_label: "IKP factual-capacity estimate (Li 2026)"
+    method: ikp-factual-capacity
+    posted: "2026-04-27"
+    notes: "90% PI [241B–2.1T]"
 related:
   - gpt-4
   - o1

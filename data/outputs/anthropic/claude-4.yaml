@@ -33,6 +33,13 @@ model:
   variants:
     - name: Claude 4 Opus
       notes: 200K context
+      parameters_estimated:
+        value: "1.4T"
+        source: https://arxiv.org/abs/2604.24827
+        source_label: "IKP factual-capacity estimate (Li 2026)"
+        method: ikp-factual-capacity
+        posted: "2026-04-27"
+        notes: "Paper: Claude Opus 4 · 90% PI [478B–4.2T]"
     - name: Claude 4 Sonnet
       notes: 1M context
 related:

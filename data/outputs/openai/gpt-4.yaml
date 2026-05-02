@@ -30,6 +30,13 @@ model:
   architecture: dense
   context_window: 128000
   intelligence_index: 13
+  parameters_estimated:
+    value: "666B"
+    source: https://arxiv.org/abs/2604.24827
+    source_label: "IKP factual-capacity estimate (Li 2026)"
+    method: ikp-factual-capacity
+    posted: "2026-04-27"
+    notes: "90% PI [223B–2.0T]"
 paper:
   arxiv: "2303.08774"
 related:

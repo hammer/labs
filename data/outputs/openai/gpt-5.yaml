@@ -26,6 +26,13 @@ tags:
 model:
   context_window: 400000
   intelligence_index: 45
+  parameters_estimated:
+    value: "4.1T"
+    source: https://arxiv.org/abs/2604.24827
+    source_label: "IKP factual-capacity estimate (Li 2026)"
+    method: ikp-factual-capacity
+    posted: "2026-04-27"
+    notes: "90% PI [1.4T–12.1T]"
   variants:
     - name: GPT-5 Main
       notes: Fast, high-throughput
@@ -33,6 +40,13 @@ model:
       notes: Reasoning mode
     - name: GPT-5 Thinking Pro
       notes: Maximum reasoning accuracy
+      parameters_estimated:
+        value: "4.1T"
+        source: https://arxiv.org/abs/2604.24827
+        source_label: "IKP factual-capacity estimate (Li 2026)"
+        method: ikp-factual-capacity
+        posted: "2026-04-27"
+        notes: "Paper: GPT-5 Pro · 90% PI [1.4T–12.2T]"
 related:
   - gpt-4o
   - o3

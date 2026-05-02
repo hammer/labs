@@ -27,6 +27,13 @@ model:
   architecture: moe
   context_window: 256000
   intelligence_index: 42
+  parameters_estimated:
+    value: "3.2T"
+    source: https://arxiv.org/abs/2604.24827
+    source_label: "IKP factual-capacity estimate (Li 2026)"
+    method: ikp-factual-capacity
+    posted: "2026-04-27"
+    notes: "90% PI [1.1T–9.4T]"
   variants:
     - name: Grok-4
       notes: 256K context
