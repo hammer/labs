@@ -66,16 +66,16 @@ people:
       - label: LinkedIn
         url: https://cn.linkedin.com/in/bowen-zhou-436b5a18
   - name: Yu Qiao (乔宇)
-    role: Director, Shanghai AI Laboratory
+    role: Lead Scientist, Shanghai AI Laboratory
     formerly: Professor & Director, SIAT/CAS; Postdoc, CUHK MMLab (2006-2007); PhD University of Electro-Communications Tokyo; BE/ME Chongqing University
     description: >
-      <p>Director of <strong>Shanghai AI Laboratory</strong> (est. July 2020), the
-      state-backed research institution that produces the <strong>InternLM</strong>
-      (LLM), <strong>InternVL</strong> (VLM), and <strong>InternImage</strong>
-      (vision foundation model) families. Previously Professor and Director at
-      the Shenzhen Institutes of Advanced Technology (SIAT), Chinese Academy of
-      Sciences, where he founded the SIAT MMLab as a satellite of CUHK's
-      Multimedia Laboratory.</p>
+      <p>Lead Scientist at <strong>Shanghai AI Laboratory</strong> (est. July
+      2020), the state-backed research institution that produces the
+      <strong>InternLM</strong> (LLM), <strong>InternVL</strong> (VLM), and
+      <strong>InternImage</strong> (vision foundation model) families.
+      Previously Professor and Director at the Shenzhen Institutes of Advanced
+      Technology (SIAT), Chinese Academy of Sciences, where he founded the
+      SIAT MMLab as a satellite of CUHK's Multimedia Laboratory.</p>
 
       <p>Research spans computer vision, pattern recognition, and large multimodal
       models. <strong>~131,000 citations</strong>. Youth Science and Technology
