@@ -56,45 +56,46 @@ const typeOptions = [...typeCounts.entries()]
   </header>
 
   <div class="filter-bar" id="filter-bar">
-    <button class="filter-btn" id="filter-btn" type="button" aria-haspopup="dialog" aria-expanded="false">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
-      <span>Filter</span>
-      <kbd>f</kbd>
-    </button>
+    <div class="filter-btn-wrap">
+      <button class="filter-btn" id="filter-btn" type="button" aria-haspopup="dialog" aria-expanded="false">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+        <span>Filter</span>
+        <kbd>f</kbd>
+      </button>
+      <div class="filter-palette hidden" id="filter-palette" role="dialog" aria-label="Filter">
+        <div class="palette-stage" id="palette-stage-dim">
+          <div class="palette-input-wrap">
+            <input
+              type="text"
+              id="palette-input"
+              placeholder="Filter by…"
+              autocomplete="off"
+              aria-label="Search filter dimensions"
+            />
+          </div>
+          <ul class="palette-list" id="palette-dim-list" role="listbox"></ul>
+        </div>
+        <div class="palette-stage hidden" id="palette-stage-value">
+          <div class="palette-value-header">
+            <button class="palette-back" id="palette-back" type="button" aria-label="Back">&larr;</button>
+            <span class="palette-value-title" id="palette-value-title"></span>
+          </div>
+          <div class="palette-value-body" id="palette-value-body"></div>
+          <div class="palette-value-footer">
+            <button class="palette-apply" id="palette-apply" type="button">Apply</button>
+            <button class="palette-clear-one" id="palette-clear-one" type="button">Clear</button>
+          </div>
+        </div>
+        <div class="palette-footer">
+          <span class="palette-shortcut"><strong>&uarr;&darr;</strong> navigate</span>
+          <span class="palette-shortcut"><strong>&crarr;</strong> select</span>
+          <span class="palette-shortcut"><strong>Esc</strong> back / close</span>
+        </div>
+      </div>
+    </div>
     <div class="filter-chips" id="filter-chips" aria-live="polite"></div>
     <button class="filter-clear hidden" id="filter-clear" type="button">Clear all</button>
     <span class="filter-count" id="filter-count" aria-live="polite"></span>
-  </div>
-
-  <div class="filter-palette hidden" id="filter-palette" role="dialog" aria-label="Filter">
-    <div class="palette-stage" id="palette-stage-dim">
-      <div class="palette-input-wrap">
-        <input
-          type="text"
-          id="palette-input"
-          placeholder="Filter by…"
-          autocomplete="off"
-          aria-label="Search filter dimensions"
-        />
-      </div>
-      <ul class="palette-list" id="palette-dim-list" role="listbox"></ul>
-    </div>
-    <div class="palette-stage hidden" id="palette-stage-value">
-      <div class="palette-value-header">
-        <button class="palette-back" id="palette-back" type="button" aria-label="Back">&larr;</button>
-        <span class="palette-value-title" id="palette-value-title"></span>
-      </div>
-      <div class="palette-value-body" id="palette-value-body"></div>
-      <div class="palette-value-footer">
-        <button class="palette-apply" id="palette-apply" type="button">Apply</button>
-        <button class="palette-clear-one" id="palette-clear-one" type="button">Clear</button>
-      </div>
-    </div>
-    <div class="palette-footer">
-      <span class="palette-shortcut"><strong>&uarr;&darr;</strong> navigate</span>
-      <span class="palette-shortcut"><strong>&crarr;</strong> select</span>
-      <span class="palette-shortcut"><strong>Esc</strong> back / close</span>
-    </div>
   </div>
 
   <table class="lab-table" id="lab-table">
@@ -1222,6 +1223,11 @@ const typeOptions = [...typeCounts.entries()]
     margin-bottom: 0.875rem;
     flex-wrap: wrap;
     position: relative;
+  }
+
+  .filter-btn-wrap {
+    position: relative;
+    display: inline-flex;
   }
 
   .filter-btn {
