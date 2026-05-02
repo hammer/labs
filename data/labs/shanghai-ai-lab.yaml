@@ -133,6 +133,11 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Xizhou_Zhu1
+news:
+  - title: "Profile: Shanghai AI Lab: Driving both AI safety and development"
+    url: https://merics.org/en/comment/profile-shanghai-ai-lab-driving-both-ai-safety-and-development
+    source: MERICS
+    date: 2024-12-13
 tags:
   - open-weight
   - academic
