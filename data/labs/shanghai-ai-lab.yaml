@@ -31,6 +31,40 @@ description: >
   as the three regional pillars of China's national AI infrastructure under the State Council's 
   New Generation AI strategy.</p>
 people:
+  - name: Zhou Bowen (周伯文)
+    url: https://web.ee.tsinghua.edu.cn/zhoubowen/en/index.htm
+    role: Director & Chief Scientist, Shanghai AI Laboratory
+    formerly: SVP & President of JD Cloud & AI, JD.com; Chief Scientist, IBM Watson Group; Director, IBM AI Foundations Labs; IBM Distinguished Engineer; PhD University of Colorado Boulder; MS Chinese Academy of Sciences; BS USTC
+    description: >
+      <p>Director and Chief Scientist of Shanghai AI Laboratory, taking the
+      helm in 2024 following the death of founding director and SenseTime
+      co-founder
+      <a href="https://en.wikipedia.org/wiki/Tang_Xiao%27ou">Tang Xiao'ou</a>.
+      Concurrently <strong>Huiyan Chair Professor</strong> and tenured
+      Professor in the Department of Electronic Engineering at
+      <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>
+      (since May 2022).</p>
+
+      <p>Spent 2003&ndash;2017 at <strong>IBM</strong>, rising to
+      <strong>Chief Scientist of the Watson Group</strong> and Director of
+      AI Foundations Labs, with the rank of IBM Distinguished Engineer.
+      Then joined <strong>JD.com</strong> as Senior Vice President, Chair
+      of the Technology Committee, and President of JD Cloud &amp; AI,
+      leading the company's AI research and product strategy. Founded the
+      AI start-up <strong>Frontis</strong> after JD.</p>
+
+      <p>Has emerged as one of the most internationally prominent state-lab
+      directors in China, combining AGI advocacy with a vocal stance on
+      safety and governance for frontier model development. PhD from the
+      University of Colorado, Boulder; MS from the Chinese Academy of
+      Sciences; BS from USTC.</p>
+    urls:
+      - label: Tsinghua Faculty
+        url: https://web.ee.tsinghua.edu.cn/zhoubowen/en/index.htm
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=h3Nsz6YAAAAJ
+      - label: LinkedIn
+        url: https://cn.linkedin.com/in/bowen-zhou-436b5a18
   - name: Yu Qiao (乔宇)
     role: Director, Shanghai AI Laboratory
     formerly: Professor & Director, SIAT/CAS; Postdoc, CUHK MMLab (2006-2007); PhD University of Electro-Communications Tokyo; BE/ME Chongqing University
