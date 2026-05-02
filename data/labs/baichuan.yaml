@@ -6,7 +6,7 @@ huggingface: https://huggingface.co/baichuan-inc
 github: https://github.com/baichuan-inc
 region: china
 founded: 2023-04
-type: startup
+type: private
 valuation:
   amount: "$2.7B"
   type: private

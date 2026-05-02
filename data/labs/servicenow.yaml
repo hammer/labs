@@ -6,7 +6,7 @@ huggingface: https://huggingface.co/ServiceNow-AI
 github: https://github.com/ServiceNow
 region: usa
 founded: "2003"
-type: corporate
+type: public
 ipo:
   exchange: NYSE
   ticker: NOW

@@ -14,7 +14,7 @@ export const LabSchema = z.object({
   openrouter: z.string().url().optional(),
   region: z.string(),
   founded: z.string().regex(/^\d{4}(-\d{2})?$/, 'Founded must be YYYY or YYYY-MM').optional(),
-  type: z.enum(['corporate', 'startup', 'nonprofit', 'academic']).optional(),
+  type: z.enum(['public', 'private', 'nonprofit', 'academic']).optional(),
   parent: z.string().optional(),
   formerly: z.array(z.string()).optional(),
   ipo: z.object({

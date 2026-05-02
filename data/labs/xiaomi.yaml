@@ -7,7 +7,7 @@ huggingface: https://huggingface.co/XiaomiMiMo
 github: https://github.com/XiaomiMiMo
 artificialanalysis: https://artificialanalysis.ai/providers/xiaomi
 region: china
-type: corporate
+type: public
 ipo:
   year: 2018
   exchange: HKEX

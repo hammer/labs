@@ -6,7 +6,7 @@ huggingface: https://huggingface.co/apple
 github: https://github.com/apple
 region: usa
 founded: "1976"
-type: corporate
+type: public
 ipo:
   exchange: NASDAQ
   ticker: AAPL

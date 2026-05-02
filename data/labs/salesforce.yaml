@@ -6,7 +6,7 @@ huggingface: https://huggingface.co/Salesforce
 github: https://github.com/SalesforceAIResearch
 region: usa
 founded: "1999"
-type: corporate
+type: public
 ipo:
   exchange: NYSE
   ticker: CRM

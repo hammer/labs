@@ -6,7 +6,7 @@ huggingface: https://huggingface.co/kakaocorp
 github: https://github.com/kakao
 region: korea
 founded: "1995"
-type: corporate
+type: public
 ipo:
   year: 2017
   exchange: KRX
