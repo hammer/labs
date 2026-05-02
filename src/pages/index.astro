@@ -20,6 +20,33 @@ const regionFlags: Record<string, string> = {
   switzerland: '\u{1F1E8}\u{1F1ED}',
   israel: '\u{1F1EE}\u{1F1F1}',
 };
+
+const regionTitles: Record<string, string> = {
+  china: 'China', korea: 'South Korea', japan: 'Japan', usa: 'USA', uk: 'UK',
+  france: 'France', india: 'India', canada: 'Canada', singapore: 'Singapore',
+  uae: 'UAE', switzerland: 'Switzerland', israel: 'Israel',
+};
+
+const regionCounts = new Map<string, number>();
+const typeCounts = new Map<string, number>();
+labs.forEach((l) => {
+  regionCounts.set(l.region, (regionCounts.get(l.region) ?? 0) + 1);
+  const t = l.type ?? 'other';
+  typeCounts.set(t, (typeCounts.get(t) ?? 0) + 1);
+});
+
+const regionOptions = [...regionCounts.entries()]
+  .sort((a, b) => b[1] - a[1])
+  .map(([slug, count]) => ({
+    slug,
+    label: regionTitles[slug] ?? slug,
+    flag: regionFlags[slug] ?? '',
+    count,
+  }));
+
+const typeOptions = [...typeCounts.entries()]
+  .sort((a, b) => b[1] - a[1])
+  .map(([slug, count]) => ({ slug, label: slug, count }));
 ---
 
 <Layout title="Labs">
@@ -27,6 +54,48 @@ const regionFlags: Record<string, string> = {
     <h1>Lab Index</h1>
     <p class="subtitle">{labs.length} labs, {totalOutputs} outputs &middot; <button class="shortcut-hint" id="shortcut-hint">Keyboard shortcuts <kbd>?</kbd></button></p>
   </header>
+
+  <div class="filter-bar" id="filter-bar">
+    <button class="filter-btn" id="filter-btn" type="button" aria-haspopup="dialog" aria-expanded="false">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+      <span>Filter</span>
+      <kbd>f</kbd>
+    </button>
+    <div class="filter-chips" id="filter-chips" aria-live="polite"></div>
+    <button class="filter-clear hidden" id="filter-clear" type="button">Clear all</button>
+    <span class="filter-count" id="filter-count" aria-live="polite"></span>
+  </div>
+
+  <div class="filter-palette hidden" id="filter-palette" role="dialog" aria-label="Filter">
+    <div class="palette-stage" id="palette-stage-dim">
+      <div class="palette-input-wrap">
+        <input
+          type="text"
+          id="palette-input"
+          placeholder="Filter by…"
+          autocomplete="off"
+          aria-label="Search filter dimensions"
+        />
+      </div>
+      <ul class="palette-list" id="palette-dim-list" role="listbox"></ul>
+    </div>
+    <div class="palette-stage hidden" id="palette-stage-value">
+      <div class="palette-value-header">
+        <button class="palette-back" id="palette-back" type="button" aria-label="Back">&larr;</button>
+        <span class="palette-value-title" id="palette-value-title"></span>
+      </div>
+      <div class="palette-value-body" id="palette-value-body"></div>
+      <div class="palette-value-footer">
+        <button class="palette-apply" id="palette-apply" type="button">Apply</button>
+        <button class="palette-clear-one" id="palette-clear-one" type="button">Clear</button>
+      </div>
+    </div>
+    <div class="palette-footer">
+      <span class="palette-shortcut"><strong>&uarr;&darr;</strong> navigate</span>
+      <span class="palette-shortcut"><strong>&crarr;</strong> select</span>
+      <span class="palette-shortcut"><strong>Esc</strong> back / close</span>
+    </div>
+  </div>
 
   <table class="lab-table" id="lab-table">
     <thead>
@@ -124,6 +193,7 @@ const regionFlags: Record<string, string> = {
           <h4>Other</h4>
           <dl>
             <div><dt><kbd>/</kbd></dt><dd>Search</dd></div>
+            <div><dt><kbd>f</kbd></dt><dd>Filter</dd></div>
             <div><dt><kbd>Esc</kbd></dt><dd>Clear / close</dd></div>
             <div><dt><kbd>?</kbd></dt><dd>Show this help</dd></div>
           </dl>
@@ -132,30 +202,515 @@ const regionFlags: Record<string, string> = {
       <button class="close-btn" id="close-shortcuts">&times;</button>
     </div>
   </div>
+
+  <script id="filter-config" type="application/json" set:html={JSON.stringify({ regions: regionOptions, types: typeOptions })}></script>
 </Layout>
 
 <script>
-  const rows = Array.from(document.querySelectorAll<HTMLTableRowElement>('.lab-row'));
+  // ----- Types -----
+  type FilterKey = 'region' | 'type' | 'founded' | 'ipo' | 'valuation' | 'scale' | 'intelligence' | 'outputs';
+  type RangeKey = 'founded' | 'valuation' | 'scale' | 'intelligence' | 'outputs';
+  type MultiKey = 'region' | 'type';
+  type DimKind = 'multi' | 'range' | 'tristate';
+  type TristateValue = 'any' | 'public' | 'private';
+
+  interface MultiOption { slug: string; label: string; flag?: string; count: number; }
+  interface FilterConfig { regions: MultiOption[]; types: MultiOption[]; }
+
+  interface DimensionDef {
+    key: FilterKey;
+    label: string;
+    kind: DimKind;
+    options?: MultiOption[];
+    unit?: string;
+    format: (n: number) => string;
+    rowAttr: string; // dataset key used on rows
+    excludeMissing: boolean; // when filtering, exclude rows whose attr is 0/missing
+  }
+
+  interface FilterState {
+    region: Set<string>;
+    type: Set<string>;
+    founded: { min: number | null; max: number | null };
+    ipo: TristateValue;
+    valuation: { min: number | null; max: number | null };
+    scale: { min: number | null; max: number | null };
+    intelligence: { min: number | null; max: number | null };
+    outputs: { min: number | null; max: number | null };
+  }
+
+  // ----- Config -----
+  const filterConfig: FilterConfig = JSON.parse(
+    document.getElementById('filter-config')!.textContent!
+  );
+
+  const dimensions: DimensionDef[] = [
+    { key: 'region', label: 'Region', kind: 'multi', options: filterConfig.regions, format: String, rowAttr: 'region', excludeMissing: false },
+    { key: 'type', label: 'Type', kind: 'multi', options: filterConfig.types, format: String, rowAttr: 'type', excludeMissing: false },
+    { key: 'founded', label: 'Founded', kind: 'range', format: (n) => String(n), rowAttr: 'founded', excludeMissing: true },
+    { key: 'ipo', label: 'IPO', kind: 'tristate', format: String, rowAttr: 'ipo', excludeMissing: false },
+    { key: 'valuation', label: 'Valuation', kind: 'range', unit: '$B', format: (n) => `$${n}B`, rowAttr: 'valuation', excludeMissing: true },
+    { key: 'scale', label: 'Scale', kind: 'range', unit: 'B params', format: (n) => `${n}B`, rowAttr: 'largest', excludeMissing: true },
+    { key: 'intelligence', label: 'Intelligence', kind: 'range', format: (n) => String(n), rowAttr: 'intelligence', excludeMissing: true },
+    { key: 'outputs', label: 'Outputs', kind: 'range', format: (n) => String(n), rowAttr: 'outputs', excludeMissing: false },
+  ];
+
+  const filters: FilterState = {
+    region: new Set(),
+    type: new Set(),
+    founded: { min: null, max: null },
+    ipo: 'any',
+    valuation: { min: null, max: null },
+    scale: { min: null, max: null },
+    intelligence: { min: null, max: null },
+    outputs: { min: null, max: null },
+  };
+
+  // ----- DOM refs -----
+  const allRows = Array.from(document.querySelectorAll<HTMLTableRowElement>('.lab-row'));
   const modal = document.getElementById('shortcut-modal')!;
   const backdrop = document.getElementById('shortcut-backdrop')!;
   const closeBtn = document.getElementById('close-shortcuts')!;
   const hintBtn = document.getElementById('shortcut-hint')!;
+  const tbody = document.querySelector('.lab-table tbody')!;
+  const headers = document.querySelectorAll<HTMLTableCellElement>('th.sortable');
 
+  const filterBtn = document.getElementById('filter-btn')!;
+  const filterChips = document.getElementById('filter-chips')!;
+  const filterClear = document.getElementById('filter-clear')!;
+  const filterCount = document.getElementById('filter-count')!;
+  const palette = document.getElementById('filter-palette')!;
+  const stageDim = document.getElementById('palette-stage-dim')!;
+  const stageValue = document.getElementById('palette-stage-value')!;
+  const paletteInput = document.getElementById('palette-input') as HTMLInputElement;
+  const paletteList = document.getElementById('palette-dim-list')!;
+  const paletteValueTitle = document.getElementById('palette-value-title')!;
+  const paletteValueBody = document.getElementById('palette-value-body')!;
+  const paletteBack = document.getElementById('palette-back')!;
+  const paletteApply = document.getElementById('palette-apply')!;
+  const paletteClearOne = document.getElementById('palette-clear-one')!;
+
+  // ----- State -----
+  let visibleRows: HTMLTableRowElement[] = [...allRows];
   let selected = -1;
   let waitingForG = false;
   let gTimer: ReturnType<typeof setTimeout> | null = null;
+  let paletteOpen = false;
+  let paletteStage: 'dim' | 'value' = 'dim';
+  let paletteSelectedDim: FilterKey | null = null;
+  let paletteListIndex = 0;
 
+  // ----- Helpers -----
+  function escapeHtml(s: string): string {
+    return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]!));
+  }
+
+  function isMultiActive(key: MultiKey): boolean {
+    return filters[key].size > 0;
+  }
+
+  function isRangeActive(key: RangeKey): boolean {
+    return filters[key].min !== null || filters[key].max !== null;
+  }
+
+  function isFilterActive(key: FilterKey): boolean {
+    if (key === 'region' || key === 'type') return isMultiActive(key);
+    if (key === 'ipo') return filters.ipo !== 'any';
+    return isRangeActive(key as RangeKey);
+  }
+
+  function activeCount(): number {
+    return dimensions.filter(d => isFilterActive(d.key)).length;
+  }
+
+  function dimByKey(key: FilterKey): DimensionDef {
+    return dimensions.find(d => d.key === key)!;
+  }
+
+  // ----- Apply filters to rows -----
+  function applyFilters() {
+    allRows.forEach(row => {
+      const d = row.dataset;
+      let ok = true;
+
+      if (ok && filters.region.size && !filters.region.has(d.region!)) ok = false;
+      if (ok && filters.type.size && !filters.type.has(d.type!)) ok = false;
+
+      if (ok && isRangeActive('founded')) {
+        const v = parseInt(d.founded || '0', 10);
+        if (v === 0) ok = false;
+        else {
+          if (filters.founded.min !== null && v < filters.founded.min) ok = false;
+          if (ok && filters.founded.max !== null && v > filters.founded.max) ok = false;
+        }
+      }
+
+      if (ok && filters.ipo !== 'any') {
+        const ipo = parseInt(d.ipo || '0', 10);
+        if (filters.ipo === 'public' && ipo === 0) ok = false;
+        if (filters.ipo === 'private' && ipo > 0) ok = false;
+      }
+
+      const numericRanges: { key: RangeKey; attr: string }[] = [
+        { key: 'valuation', attr: 'valuation' },
+        { key: 'scale', attr: 'largest' },
+        { key: 'intelligence', attr: 'intelligence' },
+        { key: 'outputs', attr: 'outputs' },
+      ];
+      for (const { key, attr } of numericRanges) {
+        if (!ok || !isRangeActive(key)) continue;
+        const raw = d[attr] || '0';
+        const v = parseFloat(raw);
+        const dim = dimByKey(key);
+        if (v === 0 && dim.excludeMissing) { ok = false; break; }
+        const r = filters[key];
+        if (r.min !== null && v < r.min) { ok = false; break; }
+        if (r.max !== null && v > r.max) { ok = false; break; }
+      }
+
+      row.style.display = ok ? '' : 'none';
+    });
+
+    visibleRows = Array.from(tbody.querySelectorAll<HTMLTableRowElement>('.lab-row'))
+      .filter(r => r.style.display !== 'none');
+    rerankVisibleRows();
+
+    filterCount.textContent = visibleRows.length < allRows.length
+      ? `${visibleRows.length} of ${allRows.length} labs`
+      : '';
+
+    filterClear.classList.toggle('hidden', activeCount() === 0);
+
+    // Clamp selection to visible rows
+    allRows.forEach(r => r.classList.remove('selected'));
+    if (selected >= visibleRows.length) selected = visibleRows.length - 1;
+    if (selected >= 0 && visibleRows[selected]) {
+      visibleRows[selected].classList.add('selected');
+    } else {
+      selected = -1;
+    }
+
+    updateChips();
+    syncToURL();
+  }
+
+  function rerankVisibleRows() {
+    let rank = 1;
+    for (const child of Array.from(tbody.children)) {
+      const row = child as HTMLTableRowElement;
+      const cell = row.querySelector('.col-rank');
+      if (!cell) continue;
+      cell.textContent = row.style.display === 'none' ? '' : String(rank++);
+    }
+  }
+
+  // ----- Chips -----
+  function formatChipValue(d: DimensionDef): string {
+    if (d.kind === 'multi') {
+      const sel = filters[d.key as MultiKey];
+      if (!sel.size) return '';
+      const opts = d.options!;
+      return [...sel].map(s => {
+        const opt = opts.find(o => o.slug === s);
+        if (!opt) return s;
+        return opt.flag ? `${opt.flag} ${opt.label}` : opt.label;
+      }).join(', ');
+    }
+    if (d.kind === 'tristate') {
+      if (filters.ipo === 'any') return '';
+      return filters.ipo === 'public' ? 'Public' : 'Private';
+    }
+    const r = filters[d.key as RangeKey];
+    if (r.min !== null && r.max !== null) return `${d.format(r.min)}–${d.format(r.max)}`;
+    if (r.min !== null) return `≥${d.format(r.min)}`;
+    if (r.max !== null) return `≤${d.format(r.max)}`;
+    return '';
+  }
+
+  function updateChips() {
+    const active = dimensions.filter(d => isFilterActive(d.key));
+    filterChips.innerHTML = active.map(d => {
+      const value = formatChipValue(d);
+      return `<span class="filter-chip-wrap">
+        <button class="filter-chip" data-dim="${d.key}" type="button" title="Edit ${escapeHtml(d.label)} filter">
+          <span class="chip-key">${escapeHtml(d.label)}:</span>
+          <span class="chip-val">${escapeHtml(value)}</span>
+        </button>
+        <button class="chip-x" data-dim="${d.key}" type="button" aria-label="Remove ${escapeHtml(d.label)} filter">&times;</button>
+      </span>`;
+    }).join('');
+    filterChips.querySelectorAll<HTMLElement>('.filter-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const key = chip.dataset.dim as FilterKey;
+        if (!paletteOpen) openPalette();
+        showValueStage(dimByKey(key));
+      });
+    });
+    filterChips.querySelectorAll<HTMLElement>('.chip-x').forEach(x => {
+      x.addEventListener('click', (e) => {
+        e.stopPropagation();
+        clearOne(x.dataset.dim as FilterKey);
+        applyFilters();
+      });
+    });
+  }
+
+  function clearOne(key: FilterKey) {
+    if (key === 'region' || key === 'type') filters[key].clear();
+    else if (key === 'ipo') filters.ipo = 'any';
+    else filters[key as RangeKey] = { min: null, max: null };
+  }
+
+  function clearAll() {
+    filters.region.clear();
+    filters.type.clear();
+    filters.ipo = 'any';
+    (['founded', 'valuation', 'scale', 'intelligence', 'outputs'] as RangeKey[]).forEach(k => {
+      filters[k] = { min: null, max: null };
+    });
+  }
+
+  filterClear.addEventListener('click', () => {
+    clearAll();
+    applyFilters();
+  });
+
+  // ----- Palette -----
+  function openPalette() {
+    paletteOpen = true;
+    palette.classList.remove('hidden');
+    filterBtn.setAttribute('aria-expanded', 'true');
+    showDimStage();
+  }
+
+  function closePalette() {
+    paletteOpen = false;
+    palette.classList.add('hidden');
+    filterBtn.setAttribute('aria-expanded', 'false');
+    paletteSelectedDim = null;
+    // If a palette element is still focused, blur it so page shortcuts work again
+    const active = document.activeElement as HTMLElement | null;
+    if (active && palette.contains(active)) active.blur();
+  }
+
+  function showDimStage() {
+    paletteStage = 'dim';
+    paletteSelectedDim = null;
+    stageDim.classList.remove('hidden');
+    stageValue.classList.add('hidden');
+    paletteListIndex = 0;
+    paletteInput.value = '';
+    renderDimList();
+    paletteInput.focus();
+  }
+
+  function showValueStage(dim: DimensionDef) {
+    paletteStage = 'value';
+    paletteSelectedDim = dim.key;
+    stageDim.classList.add('hidden');
+    stageValue.classList.remove('hidden');
+    paletteValueTitle.textContent = dim.label;
+    renderValuePanel(dim);
+  }
+
+  function filteredDims(): DimensionDef[] {
+    const q = paletteInput.value.toLowerCase().trim();
+    if (!q) return dimensions;
+    return dimensions.filter(d => d.label.toLowerCase().includes(q) || d.key.includes(q));
+  }
+
+  function renderDimList() {
+    const dims = filteredDims();
+    if (paletteListIndex >= dims.length) paletteListIndex = Math.max(0, dims.length - 1);
+    if (dims.length === 0) {
+      paletteList.innerHTML = '<li class="palette-empty">No matching dimensions</li>';
+      return;
+    }
+    paletteList.innerHTML = dims.map((d, i) => {
+      const active = isFilterActive(d.key);
+      const summary = active ? formatChipValue(d) : '';
+      return `<li class="palette-item ${i === paletteListIndex ? 'selected' : ''}" data-dim="${d.key}" data-index="${i}" role="option">
+        <span class="palette-item-label">${escapeHtml(d.label)}</span>
+        ${active ? `<span class="palette-item-summary">${escapeHtml(summary)}</span>` : ''}
+        <span class="palette-item-arrow">&rsaquo;</span>
+      </li>`;
+    }).join('');
+    paletteList.querySelectorAll<HTMLElement>('.palette-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const key = item.dataset.dim as FilterKey;
+        showValueStage(dimByKey(key));
+      });
+      item.addEventListener('mousemove', () => {
+        const idx = parseInt(item.dataset.index!, 10);
+        if (paletteListIndex !== idx) {
+          paletteListIndex = idx;
+          updateDimSelection();
+        }
+      });
+    });
+  }
+
+  function updateDimSelection() {
+    paletteList.querySelectorAll<HTMLElement>('.palette-item').forEach((item, i) => {
+      item.classList.toggle('selected', i === paletteListIndex);
+      if (i === paletteListIndex) item.scrollIntoView({ block: 'nearest' });
+    });
+  }
+
+  function renderValuePanel(dim: DimensionDef) {
+    if (dim.kind === 'multi') {
+      const opts = dim.options!;
+      const sel = filters[dim.key as MultiKey];
+      paletteValueBody.innerHTML = `<div class="value-multi" role="group">
+        ${opts.map(o => `
+          <label class="value-multi-row">
+            <input type="checkbox" data-slug="${escapeHtml(o.slug)}" ${sel.has(o.slug) ? 'checked' : ''} />
+            ${o.flag ? `<span class="value-flag">${o.flag}</span>` : ''}
+            <span class="value-label">${escapeHtml(o.label)}</span>
+            <span class="value-count">${o.count}</span>
+          </label>
+        `).join('')}
+      </div>`;
+      paletteValueBody.querySelectorAll<HTMLInputElement>('input[type=checkbox]').forEach(cb => {
+        cb.addEventListener('change', () => {
+          const slug = cb.dataset.slug!;
+          if (cb.checked) sel.add(slug);
+          else sel.delete(slug);
+        });
+      });
+      const firstCb = paletteValueBody.querySelector<HTMLInputElement>('input[type=checkbox]');
+      firstCb?.focus();
+    } else if (dim.kind === 'range') {
+      const r = filters[dim.key as RangeKey];
+      paletteValueBody.innerHTML = `<div class="value-range">
+        <input type="number" class="value-num" id="value-min" placeholder="Min" value="${r.min ?? ''}" step="any" />
+        <span class="value-dash">–</span>
+        <input type="number" class="value-num" id="value-max" placeholder="Max" value="${r.max ?? ''}" step="any" />
+        ${dim.unit ? `<span class="value-unit">${escapeHtml(dim.unit)}</span>` : ''}
+      </div>`;
+      const minIn = document.getElementById('value-min') as HTMLInputElement;
+      const maxIn = document.getElementById('value-max') as HTMLInputElement;
+      const update = () => {
+        r.min = minIn.value === '' ? null : parseFloat(minIn.value);
+        r.max = maxIn.value === '' ? null : parseFloat(maxIn.value);
+        if (r.min !== null && Number.isNaN(r.min)) r.min = null;
+        if (r.max !== null && Number.isNaN(r.max)) r.max = null;
+      };
+      minIn.addEventListener('input', update);
+      maxIn.addEventListener('input', update);
+      const enterToApply = (e: KeyboardEvent) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          applyAndReturn();
+        }
+      };
+      minIn.addEventListener('keydown', enterToApply);
+      maxIn.addEventListener('keydown', enterToApply);
+      minIn.focus();
+      minIn.select();
+    } else if (dim.kind === 'tristate') {
+      paletteValueBody.innerHTML = `<div class="value-tristate" role="radiogroup">
+        ${(['any', 'public', 'private'] as const).map(v => `
+          <button class="value-tri-btn ${filters.ipo === v ? 'active' : ''}" data-val="${v}" type="button">
+            ${v.charAt(0).toUpperCase() + v.slice(1)}
+          </button>
+        `).join('')}
+      </div>`;
+      paletteValueBody.querySelectorAll<HTMLButtonElement>('.value-tri-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          filters.ipo = btn.dataset.val as TristateValue;
+          paletteValueBody.querySelectorAll<HTMLButtonElement>('.value-tri-btn').forEach(b => {
+            b.classList.toggle('active', b === btn);
+          });
+        });
+      });
+      paletteValueBody.querySelector<HTMLButtonElement>('.value-tri-btn.active')?.focus();
+    }
+  }
+
+  function applyAndReturn() {
+    applyFilters();
+    showDimStage();
+  }
+
+  paletteBack.addEventListener('click', () => showDimStage());
+  paletteApply.addEventListener('click', () => applyAndReturn());
+  paletteClearOne.addEventListener('click', () => {
+    if (paletteSelectedDim) {
+      clearOne(paletteSelectedDim);
+      renderValuePanel(dimByKey(paletteSelectedDim));
+    }
+  });
+
+  filterBtn.addEventListener('click', () => {
+    if (paletteOpen) closePalette();
+    else openPalette();
+  });
+
+  // Click outside to close palette
+  document.addEventListener('click', (e) => {
+    if (!paletteOpen) return;
+    const target = e.target as HTMLElement;
+    if (palette.contains(target)) return;
+    if (filterBtn.contains(target)) return;
+    if (filterChips.contains(target)) return;
+    closePalette();
+  });
+
+  // Palette keyboard handling on the dim search input
+  paletteInput.addEventListener('input', () => {
+    paletteListIndex = 0;
+    renderDimList();
+  });
+
+  paletteInput.addEventListener('keydown', (e) => {
+    const dims = filteredDims();
+    switch (e.key) {
+      case 'ArrowDown':
+        e.preventDefault();
+        if (dims.length === 0) return;
+        paletteListIndex = (paletteListIndex + 1) % dims.length;
+        updateDimSelection();
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        if (dims.length === 0) return;
+        paletteListIndex = (paletteListIndex - 1 + dims.length) % dims.length;
+        updateDimSelection();
+        break;
+      case 'Enter':
+        e.preventDefault();
+        if (dims.length === 0) return;
+        showValueStage(dims[paletteListIndex]);
+        break;
+      case 'Escape':
+        e.preventDefault();
+        closePalette();
+        break;
+    }
+  });
+
+  // Esc on the value stage returns to dim stage
+  stageValue.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      showDimStage();
+    }
+  });
+
+  // ----- Selection / navigation -----
   function select(index: number) {
-    const clamped = Math.max(0, Math.min(index, rows.length - 1));
-    rows.forEach(r => r.classList.remove('selected'));
+    if (visibleRows.length === 0) return;
+    const clamped = Math.max(0, Math.min(index, visibleRows.length - 1));
+    allRows.forEach(r => r.classList.remove('selected'));
     selected = clamped;
-    rows[selected].classList.add('selected');
-    rows[selected].scrollIntoView({ block: 'nearest' });
+    visibleRows[selected].classList.add('selected');
+    visibleRows[selected].scrollIntoView({ block: 'nearest' });
   }
 
   function openSelected() {
-    if (selected >= 0 && selected < rows.length) {
-      const href = rows[selected].dataset.href;
+    if (selected >= 0 && selected < visibleRows.length) {
+      const href = visibleRows[selected].dataset.href;
       if (href) window.location.href = href;
     }
   }
@@ -166,21 +721,19 @@ const regionFlags: Record<string, string> = {
     modal.classList.toggle('hidden', !shouldShow);
   }
 
-  // Click to navigate
-  rows.forEach(row => {
+  // Click rows to navigate
+  allRows.forEach(row => {
     row.addEventListener('click', () => {
       const href = row.dataset.href;
       if (href) window.location.href = href;
     });
   });
 
-  // Keyboard shortcuts
+  // Page-level keyboard shortcuts
   document.addEventListener('keydown', (e) => {
-    // Ignore when typing in input or if search is open
     if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
     if ((window as any).isSearchOpen) return;
-
-    // Don't trigger shortcuts with modifier keys
+    if (paletteOpen) return; // palette has its own handlers
     if (e.ctrlKey || e.metaKey || e.altKey) return;
 
     switch (e.key) {
@@ -210,7 +763,11 @@ const regionFlags: Record<string, string> = {
         break;
       case 'G':
         e.preventDefault();
-        select(rows.length - 1);
+        select(visibleRows.length - 1);
+        break;
+      case 'f':
+        e.preventDefault();
+        openPalette();
         break;
       case '?':
         e.preventDefault();
@@ -221,7 +778,7 @@ const regionFlags: Record<string, string> = {
         if (!modal.classList.contains('hidden')) {
           toggleModal(false);
         } else {
-          rows.forEach(r => r.classList.remove('selected'));
+          allRows.forEach(r => r.classList.remove('selected'));
           selected = -1;
         }
         break;
@@ -232,9 +789,7 @@ const regionFlags: Record<string, string> = {
   closeBtn.addEventListener('click', () => toggleModal(false));
   hintBtn.addEventListener('click', () => toggleModal(true));
 
-  // Column sorting
-  const headers = document.querySelectorAll<HTMLTableCellElement>('th.sortable');
-  const tbody = document.querySelector('.lab-table tbody')!;
+  // ----- Sorting -----
   let currentSort = '';
   let sortAsc = true;
 
@@ -257,7 +812,7 @@ const regionFlags: Record<string, string> = {
       }
     });
 
-    const sorted = [...rows].sort((a, b) => {
+    const sorted = [...allRows].sort((a, b) => {
       const av = a.dataset[key] ?? '';
       const bv = b.dataset[key] ?? '';
       if (key === 'founded' || key === 'ipo' || key === 'valuation' || key === 'largest' || key === 'intelligence' || key === 'outputs') {
@@ -268,31 +823,74 @@ const regionFlags: Record<string, string> = {
       return sortAsc ? cmp : -cmp;
     });
 
-    sorted.forEach((row, i) => {
-      tbody.appendChild(row);
-      const rankCell = row.querySelector('.col-rank');
-      if (rankCell) rankCell.textContent = String(i + 1);
-    });
-    visibleRows = rows.filter(r => (r as HTMLElement).style.display !== 'none');
+    sorted.forEach((row) => tbody.appendChild(row));
+    rerankVisibleRows();
     selected = -1;
+    allRows.forEach(r => r.classList.remove('selected'));
   }
 
   headers.forEach(th => {
-    th.addEventListener('click', () => {
-      sortTable(th.dataset.sort!);
-    });
+    th.addEventListener('click', () => sortTable(th.dataset.sort!));
   });
 
-  // Default sort: intelligence descending
-  sortTable('intelligence');
+  // ----- URL sync -----
+  function rangeToString(r: { min: number | null; max: number | null }): string {
+    const lo = r.min !== null ? String(r.min) : '';
+    const hi = r.max !== null ? String(r.max) : '';
+    return `${lo}-${hi}`;
+  }
 
-  // Initialize rank numbers
-  rows.forEach((row, i) => {
-    const rankCell = row.querySelector('.col-rank');
-    if (rankCell) rankCell.textContent = String(i + 1);
-  });
+  function parseRange(s: string): { min: number | null; max: number | null } {
+    const m = s.match(/^(-?[\d.]*)-(-?[\d.]*)$/);
+    if (!m) return { min: null, max: null };
+    const minOk = m[1] !== '' && !Number.isNaN(parseFloat(m[1]));
+    const maxOk = m[2] !== '' && !Number.isNaN(parseFloat(m[2]));
+    return {
+      min: minOk ? parseFloat(m[1]) : null,
+      max: maxOk ? parseFloat(m[2]) : null,
+    };
+  }
 
-  // Start with modal hidden
+  function syncToURL() {
+    const params = new URLSearchParams();
+    if (filters.region.size) params.set('region', [...filters.region].join(','));
+    if (filters.type.size) params.set('type', [...filters.type].join(','));
+    if (isRangeActive('founded')) params.set('founded', rangeToString(filters.founded));
+    if (filters.ipo !== 'any') params.set('ipo', filters.ipo);
+    if (isRangeActive('valuation')) params.set('valuation', rangeToString(filters.valuation));
+    if (isRangeActive('scale')) params.set('scale', rangeToString(filters.scale));
+    if (isRangeActive('intelligence')) params.set('intelligence', rangeToString(filters.intelligence));
+    if (isRangeActive('outputs')) params.set('outputs', rangeToString(filters.outputs));
+    const qs = params.toString();
+    history.replaceState(null, '', qs ? `?${qs}` : window.location.pathname);
+  }
+
+  function restoreFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    const validRegions = new Set(filterConfig.regions.map(o => o.slug));
+    const validTypes = new Set(filterConfig.types.map(o => o.slug));
+    const region = params.get('region');
+    if (region) region.split(',').forEach(s => { if (validRegions.has(s)) filters.region.add(s); });
+    const type = params.get('type');
+    if (type) type.split(',').forEach(s => { if (validTypes.has(s)) filters.type.add(s); });
+    const founded = params.get('founded');
+    if (founded) filters.founded = parseRange(founded);
+    const ipo = params.get('ipo');
+    if (ipo === 'public' || ipo === 'private') filters.ipo = ipo;
+    const valuation = params.get('valuation');
+    if (valuation) filters.valuation = parseRange(valuation);
+    const scale = params.get('scale');
+    if (scale) filters.scale = parseRange(scale);
+    const intelligence = params.get('intelligence');
+    if (intelligence) filters.intelligence = parseRange(intelligence);
+    const outputs = params.get('outputs');
+    if (outputs) filters.outputs = parseRange(outputs);
+  }
+
+  // ----- Boot -----
+  sortTable('intelligence'); // default sort: intelligence desc
+  restoreFromURL();
+  applyFilters();
   modal.classList.add('hidden');
 </script>
 
@@ -614,5 +1212,426 @@ const regionFlags: Record<string, string> = {
 
   .close-btn:hover {
     color: var(--text);
+  }
+
+  /* Filter bar */
+  .filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.875rem;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--text-muted);
+    font-size: 0.825rem;
+    cursor: pointer;
+    transition: all 0.12s;
+  }
+
+  .filter-btn:hover {
+    border-color: var(--text-muted);
+    color: var(--text);
+  }
+
+  .filter-btn[aria-expanded="true"] {
+    border-color: #2563eb;
+    color: #2563eb;
+  }
+
+  .filter-btn kbd {
+    display: inline-block;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0 0.3em;
+    font-size: 0.7rem;
+    font-family: inherit;
+    color: var(--text-muted);
+  }
+
+  .filter-chips {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-chip-wrap {
+    display: inline-flex;
+    align-items: stretch;
+    border: 1px solid color-mix(in srgb, #2563eb 35%, var(--border));
+    border-radius: 999px;
+    overflow: hidden;
+    background: color-mix(in srgb, #2563eb 8%, var(--surface));
+  }
+
+  .filter-chip {
+    all: unset;
+    cursor: pointer;
+    padding: 0.2rem 0.55rem 0.2rem 0.65rem;
+    font-size: 0.78rem;
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    line-height: 1.4;
+  }
+
+  .filter-chip:hover {
+    background: color-mix(in srgb, #2563eb 14%, transparent);
+  }
+
+  .chip-key {
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .chip-val {
+    font-weight: 600;
+  }
+
+  .chip-x {
+    all: unset;
+    cursor: pointer;
+    padding: 0 0.5rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    border-left: 1px solid color-mix(in srgb, #2563eb 25%, var(--border));
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+  }
+
+  .chip-x:hover {
+    background: color-mix(in srgb, #dc2626 14%, transparent);
+    color: #dc2626;
+  }
+
+  .filter-clear {
+    all: unset;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    border-radius: 4px;
+  }
+
+  .filter-clear:hover {
+    color: var(--text);
+    background: var(--surface);
+  }
+
+  .filter-clear.hidden {
+    display: none;
+  }
+
+  .filter-count {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-left: auto;
+  }
+
+  /* Filter palette */
+  .filter-palette {
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    left: 0;
+    z-index: 150;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    width: 360px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+    animation: palette-slide-down 0.12s ease-out;
+  }
+
+  @keyframes palette-slide-down {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .filter-palette.hidden {
+    display: none;
+  }
+
+  .palette-stage.hidden {
+    display: none;
+  }
+
+  .palette-input-wrap {
+    padding: 0.6rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+
+  .palette-input-wrap input {
+    width: 100%;
+    padding: 0.4rem 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.875rem;
+    font-family: inherit;
+    outline: none;
+  }
+
+  .palette-input-wrap input:focus {
+    border-color: #2563eb;
+  }
+
+  .palette-list {
+    list-style: none;
+    margin: 0;
+    padding: 0.3rem;
+    max-height: 320px;
+    overflow-y: auto;
+  }
+
+  .palette-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text);
+  }
+
+  .palette-item.selected {
+    background: rgba(37, 99, 235, 0.12);
+    outline: 1px solid rgba(37, 99, 235, 0.4);
+  }
+
+  .palette-item-label {
+    flex-shrink: 0;
+  }
+
+  .palette-item-summary {
+    flex: 1;
+    text-align: right;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .palette-item-arrow {
+    color: var(--text-muted);
+    margin-left: auto;
+    padding-left: 0.3rem;
+  }
+
+  .palette-item-summary + .palette-item-arrow {
+    margin-left: 0.3rem;
+  }
+
+  .palette-empty {
+    list-style: none;
+    padding: 1rem 0.6rem;
+    color: var(--text-muted);
+    font-size: 0.825rem;
+    text-align: center;
+  }
+
+  /* Value stage */
+  .palette-value-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.7rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+
+  .palette-back {
+    all: unset;
+    cursor: pointer;
+    color: var(--text-muted);
+    padding: 0 0.3rem;
+    font-size: 1rem;
+  }
+
+  .palette-back:hover {
+    color: var(--text);
+  }
+
+  .palette-value-title {
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  .palette-value-body {
+    padding: 0.6rem;
+    max-height: 320px;
+    overflow-y: auto;
+  }
+
+  .value-multi {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .value-multi-row {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.35rem 0.45rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+
+  .value-multi-row:hover {
+    background: rgba(37, 99, 235, 0.06);
+  }
+
+  .value-multi-row input[type=checkbox] {
+    accent-color: #2563eb;
+    cursor: pointer;
+  }
+
+  .value-flag {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .value-label {
+    flex: 1;
+  }
+
+  .value-count {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .value-range {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .value-num {
+    width: 5.5rem;
+    padding: 0.35rem 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: var(--surface);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.85rem;
+    outline: none;
+  }
+
+  .value-num:focus {
+    border-color: #2563eb;
+  }
+
+  .value-dash {
+    color: var(--text-muted);
+  }
+
+  .value-unit {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+  }
+
+  .value-tristate {
+    display: inline-flex;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .value-tri-btn {
+    all: unset;
+    cursor: pointer;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background: var(--surface);
+  }
+
+  .value-tri-btn:not(:last-child) {
+    border-right: 1px solid var(--border);
+  }
+
+  .value-tri-btn:hover {
+    color: var(--text);
+  }
+
+  .value-tri-btn.active {
+    background: #2563eb;
+    color: #fff;
+  }
+
+  .palette-value-footer {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.55rem 0.7rem;
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+  }
+
+  .palette-apply,
+  .palette-clear-one {
+    all: unset;
+    cursor: pointer;
+    padding: 0.35rem 0.85rem;
+    border-radius: 5px;
+    font-size: 0.825rem;
+  }
+
+  .palette-apply {
+    background: #2563eb;
+    color: #fff;
+  }
+
+  .palette-apply:hover {
+    background: #1d4ed8;
+  }
+
+  .palette-clear-one {
+    color: var(--text-muted);
+  }
+
+  .palette-clear-one:hover {
+    color: var(--text);
+    background: var(--surface);
+  }
+
+  .palette-footer {
+    display: flex;
+    gap: 1rem;
+    padding: 0.45rem 0.7rem;
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+  }
+
+  .palette-shortcut strong {
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 0 0.2rem;
+    border-radius: 3px;
+    font-family: monospace;
+    margin-right: 0.2rem;
   }
 </style>
