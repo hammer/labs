@@ -137,37 +137,81 @@ function parseParamsToBillions(s?: string): number {
   return 0;
 }
 
-/** Get the largest model (by total params) for a lab. Returns { name, params, paramsB, slug, labSlug } */
-export function getLargestModel(labSlug: string): { name: string; params: string; paramsB: number; slug: string; labSlug: string } | null {
-  const outputs = getOutputsForLab(labSlug);
-  let best: { name: string; params: string; paramsB: number; slug: string; labSlug: string } | null = null;
+interface ParamsEstimateMeta {
+  source: string;
+  source_label?: string;
+  method?: string;
+  posted?: string;
+  notes?: string;
+}
 
-  function check(displayName: string, params: string | undefined, outputSlug: string, outLabSlug: string) {
+interface LargestModel {
+  name: string;
+  params: string;
+  paramsB: number;
+  slug: string;
+  labSlug: string;
+  estimated: boolean;
+  estimate?: ParamsEstimateMeta;
+}
+
+/** Get the largest model for a lab — picks max(reported, estimated) per variant, then max across all. */
+export function getLargestModel(labSlug: string): LargestModel | null {
+  const outputs = getOutputsForLab(labSlug);
+  let best: LargestModel | null = null;
+
+  function check(
+    displayName: string,
+    params: string | undefined,
+    paramsEst: { value: string; source: string; source_label?: string; method?: string; posted?: string; notes?: string } | undefined,
+    outputSlug: string,
+    outLabSlug: string,
+  ) {
     const b = parseParamsToBillions(params);
-    if (b > 0 && (!best || b > best.paramsB)) {
-      best = { name: displayName, params: params!, paramsB: b, slug: outputSlug, labSlug: outLabSlug };
+    const bEst = parseParamsToBillions(paramsEst?.value);
+    let chosen: { paramsStr: string; paramsB: number; estimated: boolean } | null = null;
+    if (b >= bEst && b > 0) {
+      chosen = { paramsStr: params!, paramsB: b, estimated: false };
+    } else if (bEst > 0) {
+      chosen = { paramsStr: paramsEst!.value, paramsB: bEst, estimated: true };
     }
+    if (!chosen) return;
+    if (best && chosen.paramsB <= best.paramsB) return;
+    best = {
+      name: displayName,
+      params: chosen.paramsStr,
+      paramsB: chosen.paramsB,
+      slug: outputSlug,
+      labSlug: outLabSlug,
+      estimated: chosen.estimated,
+      estimate: chosen.estimated ? {
+        source: paramsEst!.source,
+        source_label: paramsEst!.source_label,
+        method: paramsEst!.method,
+        posted: paramsEst!.posted,
+        notes: paramsEst!.notes,
+      } : undefined,
+    };
   }
 
   for (const output of outputs) {
     const oSlug = output.slug;
     const oLab = (output as OutputWithMeta)._labSlug;
-    // Use the top-level output name as the display name for all children
     const baseName = output.name.replace(/:.*$/, '').replace(/\s*\(.*$/, '').trim();
     if (isGrouped(output)) {
       for (const sub of output.outputs) {
         if (sub.model) {
-          check(baseName, sub.model.parameters, oSlug, oLab);
+          check(baseName, sub.model.parameters, sub.model.parameters_estimated, oSlug, oLab);
           for (const v of sub.model.variants ?? []) {
-            check(baseName, v.parameters, oSlug, oLab);
+            check(baseName, v.parameters, v.parameters_estimated, oSlug, oLab);
           }
         }
       }
     } else {
       if (output.model) {
-        check(baseName, output.model.parameters, oSlug, oLab);
+        check(baseName, output.model.parameters, output.model.parameters_estimated, oSlug, oLab);
         for (const v of output.model.variants ?? []) {
-          check(baseName, v.parameters, oSlug, oLab);
+          check(baseName, v.parameters, v.parameters_estimated, oSlug, oLab);
         }
       }
     }

@@ -155,7 +155,14 @@ const typeOptions = [...typeCounts.entries()]
             <td class="col-largest">
               {largest ? (
                 <a href={`/outputs/${largest.labSlug}/${largest.slug}`} class="col-link" onclick="event.stopPropagation()">
-                  {largest.params}
+                  {largest.estimated && (
+                    <span
+                      class="param-est-marker"
+                      title={`Estimated value, not vendor-disclosed.\nSource: ${largest.estimate?.source_label ?? largest.estimate?.source ?? 'unknown'}${largest.estimate?.method ? `\nMethod: ${largest.estimate.method}` : ''}`}
+                      onclick="event.preventDefault(); event.stopPropagation(); if (this.dataset.url) window.open(this.dataset.url, '_blank', 'noopener');"
+                      data-url={largest.estimate?.source}
+                    >~</span>
+                  )}{largest.params}
                 </a>
               ) : '—'}
             </td>
@@ -1078,6 +1085,19 @@ const typeOptions = [...typeCounts.entries()]
   .col-link:hover {
     color: var(--text);
     text-decoration: underline;
+  }
+
+  .param-est-marker {
+    color: #d97706;
+    font-weight: 600;
+    margin-right: 0.05em;
+    cursor: help;
+    border-bottom: 1px dotted currentColor;
+    line-height: 1;
+  }
+
+  .param-est-marker:hover {
+    color: #b45309;
   }
 
   /* Search bar */

@@ -64,9 +64,19 @@ const BenchmarkScoreSchema = z.object({
   mode: z.string().optional(),
 });
 
+const ParametersEstimatedSchema = z.object({
+  value: z.string(),
+  source: z.string().url(),
+  source_label: z.string().optional(),
+  method: z.string().optional(),
+  posted: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Date must be YYYY-MM-DD').optional(),
+  notes: z.string().optional(),
+});
+
 const ModelVariantSchema = z.object({
   name: z.string(),
   parameters: z.string().optional(),
+  parameters_estimated: ParametersEstimatedSchema.optional(),
   active_parameters: z.string().optional(),
   notes: z.string().optional(),
 });
@@ -74,6 +84,7 @@ const ModelVariantSchema = z.object({
 const ModelDetailsSchema = z.object({
   architecture: z.enum(['dense', 'moe']).optional(),
   parameters: z.string().optional(),
+  parameters_estimated: ParametersEstimatedSchema.optional(),
   active_parameters: z.string().optional(),
   context_window: z.number().optional(),
   languages: z.number().optional(),

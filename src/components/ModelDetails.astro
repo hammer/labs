@@ -23,6 +23,21 @@ const { model, metrics } = Astro.props;
         <span class="spec-value">{model.parameters}</span>
       </div>
     )}
+    {model.parameters_estimated && (
+      <div class="spec spec-est">
+        <span class="spec-label">
+          Parameters (est.)
+          <a
+            href={model.parameters_estimated.source}
+            target="_blank"
+            rel="noopener"
+            class="param-est-marker"
+            title={`Estimated value, not vendor-disclosed.\nSource: ${model.parameters_estimated.source_label ?? model.parameters_estimated.source}${model.parameters_estimated.method ? `\nMethod: ${model.parameters_estimated.method}` : ''}`}
+          >~</a>
+        </span>
+        <span class="spec-value">{model.parameters_estimated.value}</span>
+      </div>
+    )}
     {model.active_parameters && (
       <div class="spec">
         <span class="spec-label">Active params</span>
@@ -136,7 +151,31 @@ const { model, metrics } = Astro.props;
           {model.variants.map((v) => (
             <tr>
               <td>{v.name}</td>
-              <td>{v.parameters ?? '—'}</td>
+              <td>
+                {v.parameters ?? (v.parameters_estimated ? (
+                  <>
+                    <a
+                      href={v.parameters_estimated.source}
+                      target="_blank"
+                      rel="noopener"
+                      class="param-est-marker"
+                      title={`Estimated value, not vendor-disclosed.\nSource: ${v.parameters_estimated.source_label ?? v.parameters_estimated.source}${v.parameters_estimated.method ? `\nMethod: ${v.parameters_estimated.method}` : ''}`}
+                    >~</a>
+                    {v.parameters_estimated.value}
+                  </>
+                ) : '—')}
+                {v.parameters && v.parameters_estimated && (
+                  <span class="variant-est">
+                    {' '}/ <a
+                      href={v.parameters_estimated.source}
+                      target="_blank"
+                      rel="noopener"
+                      class="param-est-marker"
+                      title={`Estimated value, not vendor-disclosed.\nSource: ${v.parameters_estimated.source_label ?? v.parameters_estimated.source}${v.parameters_estimated.method ? `\nMethod: ${v.parameters_estimated.method}` : ''}`}
+                    >~</a>{v.parameters_estimated.value}
+                  </span>
+                )}
+              </td>
               <td>{v.notes ?? '—'}</td>
             </tr>
           ))}
@@ -216,5 +255,30 @@ const { model, metrics } = Astro.props;
   td.mode {
     color: var(--text-muted);
     font-size: 0.8rem;
+  }
+
+  .param-est-marker {
+    color: #d97706;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px dotted currentColor;
+    cursor: help;
+    line-height: 1;
+  }
+
+  .param-est-marker:hover {
+    color: #b45309;
+    text-decoration: none;
+  }
+
+  .spec-est .spec-label {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+  }
+
+  .variant-est {
+    color: var(--text-muted);
+    font-size: 0.85em;
   }
 </style>
