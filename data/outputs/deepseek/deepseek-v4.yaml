@@ -14,6 +14,8 @@ sources:
     url: https://huggingface.co/collections/deepseek-ai/deepseek-v4
   - label: Analysis (Simon Willison)
     url: https://simonwillison.net/2026/Apr/24/deepseek-v4/
+  - label: NIST CAISI Evaluation
+    url: https://www.nist.gov/news-events/news/2026/05/caisi-evaluation-deepseek-v4-pro
 description: >
   <p>DeepSeek's most powerful model family and the <strong>first frontier-scale model
   trained entirely on Huawei Ascend 950PR chips</strong> &mdash; zero NVIDIA/CUDA
