@@ -1,0 +1,431 @@
+---
+import Layout from '../components/Layout.astro';
+import { getChangelog, type ChangeEvent } from '../data/changelog.js';
+
+const events = getChangelog({ since: '13 months ago' });
+
+// Today (UTC) for grouping the "recent" window.
+const todayUtc = new Date().toISOString().slice(0, 10);
+function daysBetween(a: string, b: string): number {
+  const [ay, am, ad] = a.split('-').map(Number);
+  const [by, bm, bd] = b.split('-').map(Number);
+  const aTs = Date.UTC(ay, am - 1, ad);
+  const bTs = Date.UTC(by, bm - 1, bd);
+  return Math.round((aTs - bTs) / 86400000);
+}
+
+const RECENT_DAYS = 30;
+
+interface DayBucket { date: string; events: ChangeEvent[]; }
+interface MonthBucket { ym: string; label: string; events: ChangeEvent[]; }
+
+const recentDayBuckets: DayBucket[] = [];
+const olderMonthBuckets: MonthBucket[] = [];
+const dayMap = new Map<string, ChangeEvent[]>();
+const monthMap = new Map<string, ChangeEvent[]>();
+
+for (const e of events) {
+  const ageDays = daysBetween(todayUtc, e.date);
+  if (ageDays <= RECENT_DAYS) {
+    if (!dayMap.has(e.date)) dayMap.set(e.date, []);
+    dayMap.get(e.date)!.push(e);
+  } else {
+    const ym = e.date.slice(0, 7);
+    if (!monthMap.has(ym)) monthMap.set(ym, []);
+    monthMap.get(ym)!.push(e);
+  }
+}
+
+[...dayMap.entries()].sort((a, b) => b[0].localeCompare(a[0])).forEach(([date, evs]) => {
+  recentDayBuckets.push({ date, events: evs });
+});
+[...monthMap.entries()].sort((a, b) => b[0].localeCompare(a[0])).forEach(([ym, evs]) => {
+  const [y, m] = ym.split('-').map(Number);
+  const label = new Date(Date.UTC(y, m - 1, 1)).toLocaleString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+  olderMonthBuckets.push({ ym, label, events: evs });
+});
+
+function formatDayLabel(d: string): string {
+  const [y, m, day] = d.split('-').map(Number);
+  return new Date(Date.UTC(y, m - 1, day)).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+}
+
+function dotKind(kind: ChangeEvent['kind']): string {
+  switch (kind) {
+    case 'added': return 'kind-added';
+    case 'changed': return 'kind-changed';
+    case 'removed': return 'kind-removed';
+    case 'renamed': return 'kind-renamed';
+    case 'schema': return 'kind-schema';
+    case 'bulk': return 'kind-added';
+  }
+}
+
+function kindLabel(kind: ChangeEvent['kind']): string {
+  switch (kind) {
+    case 'added': return 'Added';
+    case 'changed': return 'Changed';
+    case 'removed': return 'Removed';
+    case 'renamed': return 'Renamed';
+    case 'schema': return 'Schema';
+    case 'bulk': return 'Bulk';
+  }
+}
+
+const recentTotal = recentDayBuckets.reduce((s, b) => s + b.events.length, 0);
+const olderTotal = olderMonthBuckets.reduce((s, b) => s + b.events.length, 0);
+---
+
+<Layout title="What's New">
+  <header class="page-header">
+    <h1>What's New</h1>
+    <p class="subtitle">
+      {recentTotal} change{recentTotal === 1 ? '' : 's'} in the last {RECENT_DAYS} days · {events.length} total in window
+    </p>
+  </header>
+
+  {recentDayBuckets.length === 0 && (
+    <p class="empty">No substantive changes in the last {RECENT_DAYS} days.</p>
+  )}
+
+  <div class="feed">
+    {recentDayBuckets.map(bucket => (
+      <section class="day-section">
+        <h2 class="day-header">{formatDayLabel(bucket.date)}</h2>
+        <ul class="event-list">
+          {bucket.events.map(ev => (
+            <li class="event">
+              <span class={`kind-dot ${dotKind(ev.kind)}`} aria-hidden="true"></span>
+              <span class={`kind-label ${dotKind(ev.kind)}`}>{kindLabel(ev.kind)}</span>
+              <span class="event-body">
+                {ev.href ? (
+                  <a href={ev.href} class="event-subject">{ev.subject}</a>
+                ) : (
+                  <span class="event-subject">{ev.subject}</span>
+                )}
+                {ev.kind === 'schema' && ev.schemaCount && (
+                  <span class="event-meta">· {ev.schemaCount} {ev.schemaCount === 1 ? 'entity' : 'entities'} touched</span>
+                )}
+                {ev.kind === 'bulk' && ev.bulkItems && (
+                  <details class="bulk-details">
+                    <summary>{ev.bulkItems.length} items</summary>
+                    <ul>
+                      {ev.bulkItems.map(item => <li>{item}</li>)}
+                    </ul>
+                  </details>
+                )}
+                {ev.fields && ev.fields.length > 0 && (
+                  <ul class="field-list">
+                    {ev.fields.slice(0, 3).map(f => (
+                      <li class="field">
+                        <code class="field-path">{f.path.replace(/^model\./, '').replace(/\.model\./g, '.')}</code>
+                        <span class={`field-op op-${f.op}`}>{f.op}</span>
+                        {f.op === 'changed' && f.before != null && f.after != null && (
+                          <span class="field-vals"><span class="v-before">{f.before}</span> → <span class="v-after">{f.after}</span></span>
+                        )}
+                        {f.op === 'added' && f.after != null && (
+                          <span class="field-vals"><span class="v-after">{f.after}</span></span>
+                        )}
+                        {f.op === 'removed' && f.before != null && (
+                          <span class="field-vals"><span class="v-before">{f.before}</span></span>
+                        )}
+                      </li>
+                    ))}
+                    {ev.fields.length > 3 && (
+                      <li class="field-more">+{ev.fields.length - 3} more {ev.fields.length - 3 === 1 ? 'field' : 'fields'}</li>
+                    )}
+                  </ul>
+                )}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+
+  {olderMonthBuckets.length > 0 && (
+    <div class="older-section">
+      <h2 class="older-header">Older months</h2>
+      {olderMonthBuckets.map(bucket => (
+        <details class="month-details">
+          <summary>{bucket.label} <span class="month-count">{bucket.events.length}</span></summary>
+          <ul class="event-list">
+            {bucket.events.map(ev => (
+              <li class="event">
+                <span class={`kind-dot ${dotKind(ev.kind)}`} aria-hidden="true"></span>
+                <span class={`kind-label ${dotKind(ev.kind)}`}>{kindLabel(ev.kind)}</span>
+                <span class="event-body">
+                  <span class="event-date-inline">{formatDayLabel(ev.date)}</span>
+                  {ev.href ? (
+                    <a href={ev.href} class="event-subject">{ev.subject}</a>
+                  ) : (
+                    <span class="event-subject">{ev.subject}</span>
+                  )}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </details>
+      ))}
+      <p class="older-note">{olderTotal} change{olderTotal === 1 ? '' : 's'} hidden in older months above</p>
+    </div>
+  )}
+</Layout>
+
+<style>
+  .page-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .subtitle {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+
+  .empty {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .feed {
+    margin-bottom: 2rem;
+  }
+
+  .day-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .day-header {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .event-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .event {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    gap: 0.5rem;
+    align-items: baseline;
+    padding: 0.4rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+  }
+
+  .event:hover {
+    background: rgba(37, 99, 235, 0.04);
+  }
+
+  .kind-dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    display: inline-block;
+    align-self: center;
+  }
+
+  .kind-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    min-width: 4.5rem;
+  }
+
+  .kind-added .kind-dot,
+  .kind-added.kind-label { color: #059669; }
+  .kind-added .kind-dot { background: #059669; }
+
+  .kind-changed .kind-dot,
+  .kind-changed.kind-label { color: #2563eb; }
+  .kind-changed .kind-dot { background: #2563eb; }
+
+  .kind-removed .kind-dot,
+  .kind-removed.kind-label { color: #dc2626; }
+  .kind-removed .kind-dot { background: #dc2626; }
+
+  .kind-renamed .kind-dot,
+  .kind-renamed.kind-label { color: #d97706; }
+  .kind-renamed .kind-dot { background: #d97706; }
+
+  .kind-schema .kind-dot,
+  .kind-schema.kind-label { color: #7c3aed; }
+  .kind-schema .kind-dot { background: #7c3aed; }
+
+  .event-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+  }
+
+  .event-subject {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  a.event-subject {
+    text-decoration: none;
+  }
+
+  a.event-subject:hover {
+    text-decoration: underline;
+  }
+
+  .event-meta {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-left: 0.4rem;
+  }
+
+  .event-date-inline {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    margin-right: 0.5rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .field-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .field {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: baseline;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  .field-path {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.78rem;
+    color: var(--text);
+    background: var(--surface);
+    padding: 0 0.3rem;
+    border-radius: 3px;
+  }
+
+  .field-op {
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+  }
+
+  .op-added { color: #059669; }
+  .op-changed { color: #2563eb; }
+  .op-removed { color: #dc2626; }
+
+  .field-vals {
+    color: var(--text);
+  }
+
+  .v-before {
+    color: var(--text-muted);
+    text-decoration: line-through;
+  }
+
+  .v-after {
+    color: var(--text);
+  }
+
+  .field-more {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-style: italic;
+  }
+
+  .bulk-details {
+    margin-top: 0.25rem;
+  }
+
+  .bulk-details summary {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+
+  .bulk-details ul {
+    margin: 0.4rem 0 0 1rem;
+    padding: 0;
+    list-style: disc;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+  }
+
+  .older-section {
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .older-header {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .month-details {
+    margin-bottom: 0.5rem;
+    padding: 0.4rem 0.5rem;
+    border-radius: 6px;
+  }
+
+  .month-details:hover {
+    background: rgba(37, 99, 235, 0.03);
+  }
+
+  .month-details summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    user-select: none;
+  }
+
+  .month-details[open] summary {
+    margin-bottom: 0.6rem;
+  }
+
+  .month-count {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 0.8rem;
+    margin-left: 0.4rem;
+  }
+
+  .older-note {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+</style>
