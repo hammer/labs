@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "npm run build && wrangler dev",
     "validate": "tsx src/validate.ts",
+    "test:filter": "node tests/filter-smoke.mjs",
     "fetch-metrics": "tsx scripts/fetch-metrics.ts",
     "deploy": "npm run build && wrangler deploy",
     "cf-typegen": "wrangler types"

@@ -1,64 +1,578 @@
 ---
+import type { FilterDimension } from '../lib/filters/types';
+
 interface Props {
-  labs: { slug: string; name: string }[];
-  types: string[];
+  mode: 'palette' | 'inline';
+  dimensions: FilterDimension[];
+  hotkey?: string;
+  // ID for the rootEl (so the page can grab it back to listen for events).
+  id?: string;
 }
 
-const { labs, types } = Astro.props;
+const { mode, dimensions, hotkey = 'f', id = 'filter-bar' } = Astro.props;
+const configJson = JSON.stringify({ mode, hotkey, dimensions });
 ---
 
-<div class="filter-bar">
-  <select id="filter-lab">
-    <option value="">All labs</option>
-    {labs.map((l) => (
-      <option value={l.slug}>{l.name}</option>
-    ))}
-  </select>
-  <select id="filter-type">
-    <option value="">All types</option>
-    {types.map((t) => (
-      <option value={t}>{t}</option>
-    ))}
-  </select>
+<div class="filter-bar" id={id} data-mode={mode}>
+  {mode === 'palette' && (
+    <div class="dim-wrap palette-wrap">
+      <button class="palette-btn" type="button" aria-haspopup="dialog" aria-expanded="false">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+        </svg>
+        <span>Filter</span>
+        <kbd>{hotkey}</kbd>
+      </button>
+      <div class="palette-panel hidden" role="dialog" aria-label="Filter">
+        <div class="stage stage-dim">
+          <div class="palette-input-wrap">
+            <input type="text" class="palette-input" placeholder="Filter by…" autocomplete="off" aria-label="Search filter dimensions" />
+          </div>
+          <ul class="dim-list" role="listbox"></ul>
+        </div>
+        <div class="stage stage-value hidden">
+          <div class="stage-value-header">
+            <button type="button" class="stage-back" aria-label="Back">&larr;</button>
+            <span class="stage-value-title"></span>
+          </div>
+          <div class="stage-value-body"></div>
+        </div>
+        <div class="palette-footer">
+          <span class="palette-shortcut"><strong>&uarr;&darr;</strong> nav</span>
+          <span class="palette-shortcut"><strong>&crarr;</strong> select</span>
+          <span class="palette-shortcut"><strong>Esc</strong> back/close</span>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {mode === 'inline' && dimensions.map(d => (
+    <div class="dim-wrap" data-dim-key={d.key}>
+      <button class="dim-btn" type="button" aria-haspopup="dialog" aria-expanded="false">
+        <span class="dim-dot" aria-hidden="true"></span>
+        <span class="dim-label">{d.label}</span>
+        <span class="dim-summary"></span>
+      </button>
+      <div class="dim-panel hidden" role="dialog" aria-label={d.label}></div>
+    </div>
+  ))}
+
+  {mode === 'palette' && (
+    <div class="filter-chips" aria-live="polite"></div>
+  )}
+
+  <button class="clear-all hidden" type="button">Clear all</button>
+  <span class="filter-count" aria-live="polite"></span>
+  <span class="filter-live sr-only" aria-live="polite"></span>
 </div>
 
+<script id={`${id}-config`} type="application/json" set:html={configJson}></script>
+
 <script>
-  const labSelect = document.getElementById('filter-lab') as HTMLSelectElement;
-  const typeSelect = document.getElementById('filter-type') as HTMLSelectElement;
+  import { initFilterBar } from '../lib/filters/runtime';
+  import type { FilterDimension } from '../lib/filters/types';
 
-  function applyFilters() {
-    const lab = labSelect.value;
-    const type = typeSelect.value;
-    document.querySelectorAll<HTMLElement>('[data-lab]').forEach((el) => {
-      const labs = el.dataset.lab!.split(',');
-      const matchLab = !lab || labs.includes(lab);
-      const matchType = !type || el.dataset.type === type;
-      el.style.display = matchLab && matchType ? '' : 'none';
+  document.querySelectorAll<HTMLElement>('.filter-bar').forEach(rootEl => {
+    if ((rootEl as any).__filterBarInited) return;
+    (rootEl as any).__filterBarInited = true;
+    const cfgEl = document.getElementById(`${rootEl.id}-config`);
+    if (!cfgEl?.textContent) return;
+    const cfg = JSON.parse(cfgEl.textContent) as {
+      mode: 'palette' | 'inline';
+      hotkey?: string;
+      dimensions: FilterDimension[];
+    };
+    initFilterBar({
+      mode: cfg.mode,
+      rootEl,
+      dimensions: cfg.dimensions,
+      hotkey: cfg.hotkey,
     });
-    document.querySelectorAll<HTMLElement>('.month-group').forEach((group) => {
-      const cards = group.querySelectorAll<HTMLElement>('[data-lab]');
-      const anyVisible = Array.from(cards).some((c) => c.style.display !== 'none');
-      group.style.display = anyVisible ? '' : 'none';
-    });
-  }
-
-  labSelect.addEventListener('change', applyFilters);
-  typeSelect.addEventListener('change', applyFilters);
+  });
 </script>
 
-<style>
+<style is:global>
+  /* ─── Layout ───────────────────────────────────────────────────────── */
   .filter-bar {
     display: flex;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.875rem;
+    position: relative;  /* belt-and-suspenders for any future absolute children at this level */
   }
 
-  select {
-    padding: 0.375rem 0.5rem;
+  /* CRITICAL: every floating panel anchors to its dim-wrap.
+     Without this, position:absolute on the panel falls through to the viewport. */
+  .filter-bar .dim-wrap {
+    position: relative;
+    display: inline-flex;
+  }
+
+  .filter-bar .dim-btn,
+  .filter-bar .palette-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--text-muted);
+    font-size: 0.825rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.12s, color 0.12s;
+  }
+  .filter-bar .dim-btn:hover,
+  .filter-bar .palette-btn:hover {
+    border-color: var(--text-muted);
+    color: var(--text);
+  }
+  .filter-bar .dim-btn.active {
+    border-color: #2563eb;
+    color: #2563eb;
+  }
+  .filter-bar .dim-btn[aria-expanded="true"],
+  .filter-bar .palette-btn[aria-expanded="true"] {
+    border-color: #2563eb;
+    color: #2563eb;
+  }
+
+  .filter-bar .dim-dot {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: #2563eb;
+    opacity: 0;
+    transition: opacity 0.12s;
+  }
+
+  .filter-bar .dim-btn.active .dim-dot { opacity: 1; }
+
+  .filter-bar .dim-summary:not(:empty)::before {
+    content: '· ';
+    color: var(--text-muted);
+  }
+  .filter-bar .dim-summary {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .filter-bar .palette-btn kbd {
+    display: inline-block;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0 0.3em;
+    font-size: 0.7rem;
+    font-family: inherit;
+    color: var(--text-muted);
+  }
+
+  .filter-bar .filter-chips {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .filter-chip-wrap {
+    display: inline-flex;
+    align-items: stretch;
+    border: 1px solid color-mix(in srgb, #2563eb 35%, var(--border));
+    border-radius: 999px;
+    overflow: hidden;
+    background: color-mix(in srgb, #2563eb 8%, var(--surface));
+  }
+  .filter-chip {
+    all: unset;
+    cursor: pointer;
+    padding: 0.2rem 0.55rem 0.2rem 0.65rem;
+    font-size: 0.78rem;
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .filter-chip:hover { background: color-mix(in srgb, #2563eb 14%, transparent); }
+  .filter-chip .chip-key { color: var(--text-muted); font-weight: 500; }
+  .filter-chip .chip-val { font-weight: 600; }
+  .chip-x {
+    all: unset;
+    cursor: pointer;
+    padding: 0 0.5rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    border-left: 1px solid color-mix(in srgb, #2563eb 25%, var(--border));
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+  }
+  .chip-x:hover { background: color-mix(in srgb, #dc2626 14%, transparent); color: #dc2626; }
+
+  .filter-bar .clear-all {
+    all: unset;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    border-radius: 4px;
+  }
+  .filter-bar .clear-all:hover { color: var(--text); background: var(--surface); }
+  .filter-bar .clear-all.hidden { display: none; }
+
+  .filter-bar .filter-count {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-left: auto;
+  }
+
+  .filter-bar .sr-only {
+    position: absolute;
+    width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+  }
+
+  /* ─── Floating panels (desktop) ─────────────────────────────────────── */
+
+  /* Default placement: anchored to the dim-wrap directly above. */
+  .filter-bar .dim-panel,
+  .filter-bar .palette-panel {
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    left: 0;
+    z-index: 150;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+    width: 320px;
+    max-height: min(60vh, 520px);
+    display: flex;
+    flex-direction: column;
+    animation: fb-slide 0.12s ease-out;
+  }
+  .filter-bar .palette-panel { width: 360px; }
+
+  @keyframes fb-slide {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .filter-bar .dim-panel.hidden,
+  .filter-bar .palette-panel.hidden,
+  .filter-bar .stage.hidden { display: none; }
+
+  /* Auto-flip horizontal: panel right-aligns to the trigger. */
+  .filter-bar .dim-panel.flip-x,
+  .filter-bar .palette-panel.flip-x {
+    left: auto;
+    right: 0;
+  }
+
+  /* Auto-flip vertical: panel opens upward. */
+  .filter-bar .dim-panel.flip-y,
+  .filter-bar .palette-panel.flip-y {
+    top: auto;
+    bottom: calc(100% + 0.4rem);
+  }
+
+  /* ─── Palette panel internals ───────────────────────────────────────── */
+
+  .palette-input-wrap {
+    padding: 0.6rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .palette-input-wrap input {
+    width: 100%;
+    padding: 0.4rem 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.875rem;
+    font-family: inherit;
+    outline: none;
+  }
+  .palette-input-wrap input:focus { border-color: #2563eb; }
+
+  .dim-list {
+    list-style: none;
+    margin: 0;
+    padding: 0.3rem;
+    overflow-y: auto;
+    flex: 1 1 auto;
+  }
+  .dim-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text);
+  }
+  .dim-item.selected {
+    background: rgba(37, 99, 235, 0.12);
+    outline: 1px solid rgba(37, 99, 235, 0.4);
+  }
+  .dim-item-label { flex-shrink: 0; }
+  .dim-item-summary {
+    flex: 1;
+    text-align: right;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dim-item-arrow { color: var(--text-muted); }
+  .dim-item-empty {
+    list-style: none;
+    padding: 1rem 0.6rem;
+    color: var(--text-muted);
+    font-size: 0.825rem;
+    text-align: center;
+  }
+
+  .stage-value-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.7rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .stage-back, .value-stage-close {
+    all: unset;
+    cursor: pointer;
+    color: var(--text-muted);
+    padding: 0 0.3rem;
+    font-size: 1rem;
+  }
+  .stage-back:hover, .value-stage-close:hover { color: var(--text); }
+  .stage-value-title, .value-stage-title { font-weight: 600; font-size: 0.875rem; }
+
+  .stage-value-body { flex: 1 1 auto; overflow: auto; }
+
+  .palette-footer {
+    display: flex;
+    gap: 1rem;
+    padding: 0.45rem 0.7rem;
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+  }
+  .palette-shortcut strong {
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 0 0.2rem;
+    border-radius: 3px;
+    font-family: monospace;
+    margin-right: 0.2rem;
+  }
+
+  /* ─── Inline panels: shared body styles ─────────────────────────────── */
+
+  .filter-bar .dim-panel { padding: 0; }
+  .value-stage-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.5rem 0.7rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .value-stage-close { font-size: 1.1rem; }
+
+  /* ─── Multi-select panel ────────────────────────────────────────────── */
+
+  .value-multi {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow: hidden;
+  }
+  .value-typeahead {
+    margin: 0.55rem 0.6rem 0;
+    padding: 0.35rem 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.85rem;
+    font-family: inherit;
+    outline: none;
+  }
+  .value-typeahead:focus { border-color: #2563eb; }
+
+  .value-multi-toolbar {
+    display: flex;
+    gap: 0.3rem;
+    padding: 0.4rem 0.6rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .vmt-btn {
+    all: unset;
+    cursor: pointer;
+    padding: 0.2rem 0.55rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: var(--bg);
+  }
+  .vmt-btn:hover { color: var(--text); border-color: var(--text-muted); }
+
+  .value-multi-list {
+    list-style: none;
+    margin: 0;
+    padding: 0.3rem;
+    overflow-y: auto;
+    flex: 1 1 auto;
+    outline: none;
+  }
+  .value-multi-row {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 0.45rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    gap: 0.55rem;
+  }
+  .value-multi-row:hover,
+  .value-multi-row.focused { background: rgba(37, 99, 235, 0.06); }
+  .value-multi-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    cursor: pointer;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .value-multi-label input[type=checkbox] { accent-color: #2563eb; cursor: pointer; }
+  .value-flag { font-size: 1rem; line-height: 1; }
+  .value-label-text { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .value-count { color: var(--text-muted); font-size: 0.75rem; font-variant-numeric: tabular-nums; }
+  .value-only {
+    all: unset;
+    cursor: pointer;
+    padding: 0 0.35rem;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    opacity: 0.6;
+    transition: opacity 0.1s, color 0.1s;
+  }
+  .value-only:hover, .value-multi-row:hover .value-only, .value-multi-row.focused .value-only {
+    opacity: 1;
+    color: #2563eb;
+  }
+
+  /* ─── Range panel ───────────────────────────────────────────────────── */
+
+  .value-range {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    padding: 0.6rem;
+  }
+  .value-range input {
+    width: 5.5rem;
+    padding: 0.35rem 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: var(--surface);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.85rem;
+    outline: none;
+  }
+  .value-range input:focus { border-color: #2563eb; }
+  .value-range-dash { color: var(--text-muted); }
+  .value-range-unit { color: var(--text-muted); font-size: 0.78rem; }
+  .value-range-apply,
+  .value-range-clear {
+    all: unset;
+    cursor: pointer;
+    padding: 0.35rem 0.85rem;
+    border-radius: 5px;
+    font-size: 0.825rem;
+  }
+  .value-range-apply { background: #2563eb; color: #fff; }
+  .value-range-apply:hover { background: #1d4ed8; }
+  .value-range-clear { color: var(--text-muted); }
+  .value-range-clear:hover { color: var(--text); background: var(--surface); }
+
+  /* ─── Tristate / single panels ─────────────────────────────────────── */
+
+  .value-tristate, .value-single {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    padding: 0.6rem;
+  }
+  .vt-btn, .vs-btn {
+    all: unset;
+    cursor: pointer;
+    padding: 0.35rem 0.85rem;
     border: 1px solid var(--border);
     border-radius: 6px;
     font-size: 0.85rem;
+    color: var(--text-muted);
     background: var(--surface);
-    color: var(--text);
+  }
+  .vt-btn:hover, .vs-btn:hover { color: var(--text); border-color: var(--text-muted); }
+  .vt-btn.active, .vs-btn.active {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #fff;
+  }
+
+  /* ─── Mobile sheet (<600px) ─────────────────────────────────────────── */
+
+  .filter-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 149;
+    display: none;
+  }
+  .filter-backdrop:not(.hidden) { display: block; }
+
+  @media (max-width: 600px) {
+    .filter-bar .dim-panel:not(.hidden),
+    .filter-bar .palette-panel:not(.hidden) {
+      position: fixed;
+      inset: auto 0 0 0;
+      top: auto;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: auto;
+      border-radius: 12px 12px 0 0;
+      max-height: 80vh;
+      box-shadow: 0 -10px 28px rgba(0, 0, 0, 0.18);
+      animation: fb-sheet-up 0.18s ease-out;
+    }
+    @keyframes fb-sheet-up {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+    /* Reset auto-flip on mobile (irrelevant for full-width sheet). */
+    .filter-bar .dim-panel.flip-x,
+    .filter-bar .palette-panel.flip-x { left: 0; right: 0; }
+    .filter-bar .dim-panel.flip-y,
+    .filter-bar .palette-panel.flip-y { top: auto; bottom: 0; }
   }
 </style>
