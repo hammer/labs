@@ -5,54 +5,114 @@ type: model
 date: 2026-04-29
 flagship: true
 sources:
-  - label: Blog Post
+  - label: IBM Research Blog
     url: https://research.ibm.com/blog/granite-4-1-ai-foundation-models
-  - label: Technical Blog
+  - label: HuggingFace Blog (How They're Built)
     url: https://huggingface.co/blog/ibm-granite/granite-4-1
-  - label: HuggingFace (8B)
-    url: https://huggingface.co/ibm-granite/granite-4.1-8b
-  - label: HuggingFace (30B)
+  - label: IBM Granite Docs
+    url: https://www.ibm.com/granite/docs/models/granite4-1
+  - label: IBM Granite Page
+    url: https://www.ibm.com/granite
+  - label: HuggingFace Collection
+    url: https://huggingface.co/collections/ibm-granite/granite-41-language-models
+  - label: HuggingFace Org
+    url: https://huggingface.co/ibm-granite
+  - label: GitHub Org
+    url: https://github.com/ibm-granite
+  - label: HuggingFace (30B Instruct)
     url: https://huggingface.co/ibm-granite/granite-4.1-30b
-  - label: HuggingFace (3B)
+  - label: HuggingFace (30B Base)
+    url: https://huggingface.co/ibm-granite/granite-4.1-30b-base
+  - label: HuggingFace (8B Instruct)
+    url: https://huggingface.co/ibm-granite/granite-4.1-8b
+  - label: HuggingFace (8B FP8)
+    url: https://huggingface.co/ibm-granite/granite-4.1-8b-fp8
+  - label: HuggingFace (3B Instruct)
     url: https://huggingface.co/ibm-granite/granite-4.1-3b
   - label: HuggingFace (Vision 4B)
     url: https://huggingface.co/ibm-granite/granite-vision-4.1-4b
+  - label: HuggingFace (Guardian 8B)
+    url: https://huggingface.co/ibm-granite/granite-guardian-4.1-8b
+  - label: HuggingFace (Speech 2B NAR)
+    url: https://huggingface.co/ibm-granite/granite-speech-4.1-2b-nar
+  - label: GitHub (Vision Models)
+    url: https://github.com/ibm-granite/granite-vision-models
+  - label: GitHub (Speech Models)
+    url: https://github.com/ibm-granite/granite-speech-models
+  - label: GitHub (Guardian)
+    url: https://github.com/ibm-granite/granite-guardian
+  - label: AA (30B)
+    url: https://artificialanalysis.ai/models/granite-4-1-30b
+  - label: AA (8B)
+    url: https://artificialanalysis.ai/models/granite-4-1-8b
+  - label: AA (3B)
+    url: https://artificialanalysis.ai/models/granite-4-1-3b
 description: >
-  <p>IBM's latest foundation model family: <strong>3B, 8B, and 30B</strong> dense
-  decoder-only Transformers (GQA, RoPE, SwiGLU, RMSNorm) trained on <strong>~15T
-  tokens</strong> with multi-stage pretraining and long-context extension to
-  <strong>512K tokens</strong>. Post-trained with SFT on ~4.1M curated samples and
-  RL via on-policy GRPO with DAPO loss. Granite 4.1 8B-Instruct matches or outperforms
-  the previous <strong>Granite 4.0 32B MoE</strong> despite being a simpler dense
-  model &mdash; demonstrating that training quality can substitute for scale.</p>
+  <p>IBM's most expansive Granite release: <strong>Language</strong> (3B/8B/30B
+  base + instruct), <strong>Vision</strong> (4B LoRA on top of 3B for
+  document/table/chart extraction), <strong>Speech</strong> (2B family for
+  multilingual ASR + translation), <strong>Guardian</strong> (8B fine-tuned on
+  the Granite 4.1 8B base for harm detection), and <strong>Embedding</strong>
+  (Multilingual R2, two sizes, 200+ languages). All under
+  <strong>Apache 2.0</strong>.</p>
 
-  <p>Also includes <strong>Granite Speech 4.1</strong> (ASR + translation),
-  <strong>Granite Vision 4.1</strong> (table/chart extraction), <strong>Granite
-  Guardian</strong> (harm detection), and embedding models. 8B benchmarks: MMLU 73.84,
-  BBH 80.51, GSM8K 92.49, HumanEval 85.37, MBPP 87.30, ArenaHard 68.98. All models
-  under <strong>Apache 2.0</strong>.</p>
+  <p>The language models are dense decoder-only Transformers (GQA, RoPE, SwiGLU,
+  RMSNorm) trained on <strong>~15T tokens</strong> with multi-stage pretraining;
+  8B and 30B extend to <strong>512K context</strong> via staged extension with
+  model merging (3B caps at 128K). Post-trained with SFT on ~4.1M curated samples
+  and on-policy GRPO with DAPO loss. Granite 4.1 8B-Instruct matches or
+  outperforms the previous Granite 4.0 32B MoE despite being a simpler dense
+  model &mdash; training quality substituting for scale.</p>
+
+  <p><strong>AA Intelligence Index: 15 (30B), 12 (8B), 9 (3B)</strong> &mdash;
+  all three are above-median for open-weight non-reasoning models of similar
+  size, and notably token-efficient relative to peers. Granite Speech 4.1 2B
+  reports a 5.33% word-error rate (top of the OpenASR leaderboard). 8B vendor
+  benchmarks: MMLU 73.84, BBH 80.51, GSM8K 92.49, HumanEval 85.37, MBPP 87.30,
+  ArenaHard 68.98.</p>
 tags:
   - open-weight
   - enterprise
+  - multimodal
 model:
   architecture: dense
   parameters: 30B
   context_window: 512000
+  intelligence_index: 15
   training_tokens: 15T
   license: Apache 2.0
   variants:
-    - name: Granite 4.1 3B
-      parameters: 3B
-    - name: Granite 4.1 8B
-      parameters: 8B
-    - name: Granite 4.1 30B
+    - name: Granite 4.1 30B Instruct
       parameters: 30B
+      notes: AA Intelligence Index 15 — highest in family
+    - name: Granite 4.1 30B Base
+      parameters: 30B
+    - name: Granite 4.1 8B Instruct
+      parameters: 8B
+      notes: AA Intelligence Index 12
+    - name: Granite 4.1 8B FP8
+      parameters: 8B
+      notes: FP8-quantized variant of 8B Instruct
+    - name: Granite 4.1 3B Instruct
+      parameters: 3B
+      notes: AA Intelligence Index 9 · 128K context
     - name: Granite Vision 4.1 4B
       parameters: 4B
-      notes: Vision model for table/chart extraction
+      notes: LoRA on Granite 4.1 3B; document/table/chart extraction
+    - name: Granite Guardian 4.1 8B
+      parameters: 8B
+      notes: Fine-tuned on Granite 4.1 8B base; harm detection
     - name: Granite Speech 4.1 2B
       parameters: 2B
-      notes: ASR with translation
+      notes: Multilingual ASR + translation; 5.33% WER
+    - name: Granite Speech 4.1 2B Plus
+      parameters: 2B
+      notes: Higher-throughput speech variant
+    - name: Granite Speech 4.1 2B NAR
+      parameters: 2B
+      notes: Non-autoregressive speech variant
+    - name: Granite Embedding Multilingual R2
+      notes: Bi-encoder + reranker for RAG; two sizes (97M and larger); 200+ languages
   benchmark_scores:
     - benchmark: MMLU
       score: "73.84"
