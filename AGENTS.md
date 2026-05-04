@@ -212,12 +212,35 @@ Each output type has dedicated structured fields rendered by a type-specific com
 
 ### Artificial Analysis Intelligence Index
 
-The `intelligence_index` field should reflect the **highest available score** for that model on Artificial Analysis. Many models have multiple AA entries (e.g., base, reasoning, adaptive reasoning, max effort). Always check for reasoning/thinking variants — they often score significantly higher:
+The `intelligence_index` field records a model's score on Artificial Analysis's composite Intelligence Index. **Always also set the sibling `intelligence_index_version` field** so future sweeps can spot stale values.
+
+```yaml
+model:
+  intelligence_index: 53
+  intelligence_index_version: "AA v4.0"
+```
+
+**Pick the right score within a single model's family.** Many models have multiple AA entries representing modes (base, reasoning, adaptive, max effort). Use the **highest mode score**, link the AA source to that mode's page:
 
 - `claude-opus-4-6` (46) vs `claude-opus-4-6-adaptive` (53) — use 53
 - `deepseek-v3-2` (32) vs `deepseek-v3-2-reasoning` (42) — use 42
 
-**How to verify:** Fetch the AA model page and check for variant tabs or related model links. The AA URL in `sources` should point to the highest-scoring variant's page.
+**Pick the right model when an entry covers a family.** When a YAML file represents a multi-model family (e.g., `o3.yaml` containing o3-mini, o3, o4-mini, o3-pro), the top-level `intelligence_index` should match the model named by the file slug and the AA URL in `sources` — not blindly the highest variant. Higher variants belong in the description and the `variants` list. Otherwise users cross-checking against AA see a number that doesn't match the linked page (a real source of confusion).
+
+Rule of thumb: the top-level number, the file slug, and the primary AA URL should always describe the same thing.
+
+**The version trap.** AA periodically recalibrates the composite. Each major version change can drop scores 10+ points as new evals are mixed in. AA v4.0 (composite of GDPval-AA, τ²-Bench Telecom, Terminal-Bench Hard, SciCode, AA-LCR, AA-Omniscience, IFBench, Humanity's Last Exam, GPQA Diamond, CritPt) shipped late 2025 and silently invalidated many older scores — Granite 4.0 H-Small went 23 → 11 across that migration, for example. Treat any pre-v4 score as needing re-verification.
+
+**Audit pattern.** When AA bumps to a new index version:
+
+1. Re-fetch per-model pages for at least every lab's top-intel entry
+2. Update changed scores; bump `intelligence_index_version` to the new value
+3. Entries still tagged with the old version are the work-list
+
+**Useful URLs:**
+- Per-model: `https://artificialanalysis.ai/models/<slug>`
+- Provider: `https://artificialanalysis.ai/providers/<provider>`
+- Leaderboard: `https://artificialanalysis.ai/leaderboards/models` — best for surveying many models at once
 
 ### Canonical Identifiers
 When adding new outputs, prioritize collecting:
@@ -239,6 +262,23 @@ When adding new outputs, prioritize collecting:
 - Use structured `model.parameters` and `model.active_parameters` fields (e.g., `671B`, `37B`, `1T`)
 - The home page derives "Scale" and "Intelligence" columns from these structured fields
 - Always include `architecture: dense` or `architecture: moe` when known
+
+#### Estimated parameters (third-party, non-vendor-disclosed)
+
+Some closed proprietary models have parameter-count estimates from third-party methodologies (currently the IKP paper, [arXiv:2604.24827](https://arxiv.org/abs/2604.24827), which back-calibrates from factual recall on 89 open-weight models). **Never overwrite vendor-disclosed `parameters` with these estimates.** Use the separate `parameters_estimated` field with structured provenance:
+
+```yaml
+model:
+  parameters_estimated:
+    value: "9.7T"
+    source: https://arxiv.org/abs/2604.24827
+    source_label: "IKP factual-capacity estimate (Li 2026)"
+    method: ikp-factual-capacity
+    posted: "2026-04-27"
+    notes: "90% PI [3.2T–28.7T]"
+```
+
+The home page Scale column shows `max(parameters, parameters_estimated.value)` with a small `~` marker when the estimate wins. The schema is in `src/schema.ts` (`ParametersEstimatedSchema`). The same shape generalises to any future "third-party estimate of a thing the vendor didn't disclose" — keep the authoritative field clean and put estimates in a sibling field with the source recorded.
 
 ### Logos
 - Store in `public/logos/{slug}.png` at 200x200 pixels

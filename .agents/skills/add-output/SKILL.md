@@ -66,7 +66,8 @@ Many models (especially proprietary ones) are announced via blog posts without a
 ### External Links
 
 For **every** model output, check:
-- **Artificial Analysis:** Search `site:artificialanalysis.ai [model name]`. Fetch the page and extract the Intelligence Index score. **Check for reasoning/adaptive variants** — many models have multiple AA entries (e.g., `model-name`, `model-name-reasoning`, `model-name-adaptive`). Use the **highest score** and link to that variant's page.
+- **Artificial Analysis:** Search `site:artificialanalysis.ai [model name]`. Fetch the page and extract the Intelligence Index score. **Check for reasoning/adaptive variants** — many models have multiple AA entries (e.g., `model-name`, `model-name-reasoning`, `model-name-adaptive`). Use the **highest score** for the same model and link to that variant's page. **Always also record the index version** in the sibling `intelligence_index_version` field (currently `"AA v4.0"`). AA periodically recalibrates — without the version tag we can't tell stale scores from current ones on the next sweep. (Granite 4.0 H-Small dropped 23 → 11 across the v4 migration — that's the failure mode.)
+  - When the YAML represents a multi-model family (e.g. `o3.yaml` covering o3-mini, o3, o4-mini, o3-pro), the top-level `intelligence_index` should match the score for the model named by the file slug and linked from `sources` — not blindly the highest variant. Higher variants go in the description and `variants` list.
 - **OpenRouter:** Search `site:openrouter.ai [model name]`. Add the canonical model URL (without date suffix).
 - **HuggingFace model page:** Find model weights (e.g., `huggingface.co/org/model`)
 - **HuggingFace blog:** Check for technical blog posts at `huggingface.co/blog/[org]/[post-slug]`. These often contain detailed benchmarks, architecture explanations, and usage guides not found in the model card. Search `site:huggingface.co/blog [model name]`.
@@ -169,6 +170,14 @@ model:
   top_k: 8                     # MoE: experts active per token
   context_window: 256000
   intelligence_index: 23       # from Artificial Analysis
+  intelligence_index_version: "AA v4.0"   # always record the AA index version
+  parameters_estimated:        # OPTIONAL — only for closed models with third-party estimates (e.g., IKP paper)
+    value: "1.6T"
+    source: https://arxiv.org/abs/2604.24827
+    source_label: "IKP factual-capacity estimate (Li 2026)"
+    method: ikp-factual-capacity
+    posted: "2026-04-27"
+    notes: "90% PI [500B–4.5T]"
   training_tokens: 15T         # total pretraining tokens (e.g., 15T, 500B)
   training_hardware: "16K H100" # hardware used for training
   training_cost: "$5.6M"       # estimated total training cost
@@ -354,7 +363,7 @@ Before creating an output, verify it belongs. Do **not** create outputs for:
 - [ ] Technical report read (HTML version) if available; blog post checked if not
 - [ ] **From scratch vs derivative determined** — only set `model.parameters` for from-scratch models; use `model.base_model` for derivatives
 - [ ] Structured model fields: architecture, parameters (if from scratch), active_parameters, context_window, training_tokens (if disclosed)
-- [ ] Intelligence index from AA (fetched, not guessed)
+- [ ] Intelligence index from AA (fetched, not guessed) **with `intelligence_index_version` set to the current AA index version**
 - [ ] OpenRouter link added if available
 - [ ] Description covers architecture, innovations, training, benchmarks with numbers
 - [ ] Novel contributions and prior techniques identified
