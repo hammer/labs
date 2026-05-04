@@ -19,8 +19,10 @@ description: >
   active. H-Tiny: 7B / 1B active. Micro: 3B dense. Nano: 350M&ndash;1.5B (runs in
   browser). First open models with <strong>ISO 42001 certification</strong>.</p>
 
-  <p>AA Intelligence Index: <strong>23</strong> (H-Small), 16 (Micro), 14 (H-1B Nano).
-  Apache 2.0.</p>
+  <p>AA Intelligence Index v4.0: <strong>11</strong> (H-Small), 8 (Micro),
+  8 (H 1B Nano). Apache 2.0. Earlier scores reported on AA's pre-v4 index
+  (e.g. 23 for H-Small) were recalibrated downward when v4.0 launched its
+  ten-evaluation composite in late 2025.</p>
 tags:
   - open-weight
   - moe
@@ -29,19 +31,20 @@ model:
   architecture: moe
   parameters: 32B
   active_parameters: 9B
-  intelligence_index: 23
+  intelligence_index: 11
   variants:
     - name: Granite 4.0 H-Small
       parameters: 32B
       active_parameters: 9B
+      notes: AA Intelligence Index 11 (v4.0)
     - name: Granite 4.0 H-Tiny
       parameters: 7B
       active_parameters: 1B
     - name: Granite 4.0 Micro
       parameters: 3B
-      notes: Dense architecture
-    - name: Granite 4.0 Nano
+      notes: Dense; AA Intelligence Index 8 (v4.0)
+    - name: Granite 4.0 H 1B Nano
       parameters: 1.5B
-      notes: Browser/on-device
+      notes: Browser/on-device; AA Intelligence Index 8 (v4.0)
 related:
   - granite-code
