@@ -1,0 +1,45 @@
+name: Mistral Medium 3.5
+slug: mistral-medium-3.5
+lab: mistral
+type: model
+date: 2026-04-29
+flagship: true
+sources:
+  - label: Announcement
+    url: https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5
+  - label: Model Card
+    url: https://docs.mistral.ai/models/model-cards/mistral-medium-3-5-26-04
+  - label: HuggingFace
+    url: https://huggingface.co/mistralai/Mistral-Medium-3.5-128B
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/mistral-medium-3-5
+description: >
+  <p>Mistral's first <strong>merged flagship</strong>: 128B dense, single
+  set of weights folding instruction following, reasoning, and coding into
+  one model. Replaces the prior Magistral / Devstral 2 split. 256K context.
+  Configurable reasoning-effort setting. Trained-from-scratch vision encoder
+  handling variable image sizes and aspect ratios. Released April 29, 2026
+  under a modified MIT license, open weights, runs on 4 GPUs.</p>
+
+  <p><strong>AA Intelligence Index: 39</strong> &mdash; Mistral's highest
+  to date and well above the open-weight median of 15. <strong>77.6% on
+  SWE-Bench Verified</strong>. Powers the <strong>Vibe remote agents</strong>
+  (async cloud coding from CLI or Le Chat) and Le Chat's new Work mode.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+  - multimodal
+  - open-weight
+model:
+  architecture: dense
+  parameters: 128B
+  context_window: 256000
+  intelligence_index: 39
+  benchmark_scores:
+    - benchmark: SWE-Bench Verified
+      score: "77.6%"
+related:
+  - mistral-large-3
+  - magistral
+  - devstral

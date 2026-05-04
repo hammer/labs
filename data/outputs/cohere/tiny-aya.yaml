@@ -21,5 +21,6 @@ tags:
 model:
   architecture: dense
   parameters: 3.35B
+  intelligence_index: 5
 related:
   - aya-expanse

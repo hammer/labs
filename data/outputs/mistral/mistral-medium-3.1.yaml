@@ -1,0 +1,23 @@
+name: Mistral Medium 3.1
+slug: mistral-medium-3.1
+lab: mistral
+type: model
+date: 2025-08-12
+sources:
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/mistral-medium-3-1
+description: >
+  <p>Non-reasoning multimodal mid-tier model. 128K context. Text and image
+  inputs, text output. AA Intelligence Index <strong>21</strong>. Cascade
+  Distillation source for the Ministral 3 family. Proprietary; weights not
+  released. Superseded by <a href="/outputs/mistral/mistral-medium-3.5">Mistral
+  Medium 3.5</a> in April 2026, which folded reasoning and coding into one
+  merged model.</p>
+tags:
+  - multimodal
+model:
+  context_window: 128000
+  intelligence_index: 21
+related:
+  - mistral-medium-3.5
+  - ministral-3
