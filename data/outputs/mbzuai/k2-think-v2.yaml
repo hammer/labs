@@ -38,6 +38,7 @@ model:
   parameters: 70B
   context_window: 262144
   intelligence_index: 24
+  intelligence_index_version: "AA v4.0"
   license: Apache-2.0
 related:
   - k2-v2

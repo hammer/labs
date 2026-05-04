@@ -38,6 +38,7 @@ model:
   base_model: trinity-large
   context_window: 512000
   intelligence_index: 32
+  intelligence_index_version: "AA v4.0"
 related:
   - trinity-large
   - trinity-mini

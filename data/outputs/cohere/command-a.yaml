@@ -34,6 +34,7 @@ model:
   parameters: 111B
   context_window: 256000
   intelligence_index: 13
+  intelligence_index_version: "AA v4.0"
 paper:
   arxiv: "2504.00698"
 related:

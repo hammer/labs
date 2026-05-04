@@ -33,6 +33,7 @@ model:
   active_parameters: 32B
   context_window: 262144
   intelligence_index: 54
+  intelligence_index_version: "AA v4.0"
   base_model: kimi-k2
 related:
   - kimi-k2

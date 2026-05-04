@@ -26,5 +26,6 @@ tags:
 model:
   architecture: dense
   intelligence_index: 27
+  intelligence_index_version: "AA v4.0"
 paper:
   arxiv: "2506.10910"

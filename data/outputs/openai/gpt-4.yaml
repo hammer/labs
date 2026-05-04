@@ -30,6 +30,7 @@ model:
   architecture: dense
   context_window: 128000
   intelligence_index: 13
+  intelligence_index_version: "AA v4.0"
   parameters_estimated:
     value: "666B"
     source: https://arxiv.org/abs/2604.24827

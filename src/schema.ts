@@ -89,6 +89,11 @@ const ModelDetailsSchema = z.object({
   context_window: z.number().optional(),
   languages: z.number().optional(),
   intelligence_index: z.number().optional(),
+  // The version of Artificial Analysis's Intelligence Index this score
+  // corresponds to. AA recalibrates the composite periodically; recording
+  // the version makes it easy to spot stale entries on the next sweep.
+  // Use the canonical AA notation, e.g. "AA v4.0".
+  intelligence_index_version: z.string().optional(),
   training_tokens: z.string().optional(),
   base_model: z.string().optional(),
   variants: z.array(ModelVariantSchema).optional(),

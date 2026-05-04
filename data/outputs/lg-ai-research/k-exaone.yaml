@@ -23,6 +23,7 @@ model:
   parameters: 236B
   active_parameters: 23B
   intelligence_index: 32
+  intelligence_index_version: "AA v4.0"
 paper:
   arxiv: "2601.01739"
 related:

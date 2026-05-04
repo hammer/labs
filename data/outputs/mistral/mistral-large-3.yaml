@@ -29,6 +29,7 @@ model:
   active_parameters: 41B
   context_window: 256000
   intelligence_index: 23
+  intelligence_index_version: "AA v4.0"
 related:
   - mistral-large-2
   - mistral-small-4

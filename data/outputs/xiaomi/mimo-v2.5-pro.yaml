@@ -34,6 +34,7 @@ model:
   active_parameters: 42B
   context_window: 1000000
   intelligence_index: 54
+  intelligence_index_version: "AA v4.0"
   license: MIT
 related:
   - mimo-v2-pro

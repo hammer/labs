@@ -27,5 +27,6 @@ model:
   architecture: moe
   context_window: 1000000
   intelligence_index: 57
+  intelligence_index_version: "AA v4.0"
 related:
   - gemini-2.5-pro

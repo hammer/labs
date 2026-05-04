@@ -49,6 +49,7 @@ outputs:
       active_parameters: 11B
       context_window: 256000
       intelligence_index: 38
+      intelligence_index_version: "AA v4.0"
   - name: "Step 3.5 Flash: Open Frontier-Level Intelligence with 11B Active Parameters"
     type: paper
     date: 2026-02-11

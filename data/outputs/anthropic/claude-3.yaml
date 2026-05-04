@@ -26,6 +26,7 @@ tags:
 model:
   context_window: 200000
   intelligence_index: 18
+  intelligence_index_version: "AA v4.0"
   variants:
     - name: Claude 3 Opus
     - name: Claude 3 Sonnet

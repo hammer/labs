@@ -36,6 +36,7 @@ model:
   parameters: 128B
   context_window: 256000
   intelligence_index: 39
+  intelligence_index_version: "AA v4.0"
   benchmark_scores:
     - benchmark: SWE-Bench Verified
       score: "77.6%"

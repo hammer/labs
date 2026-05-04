@@ -17,13 +17,14 @@ description: >
 
   <p>o3 achieved <strong>96.7% on AIME 2024</strong> and scored 87.7% on GPQA-Diamond.
   o3-pro (June 2025) used parallel test-time compute for the highest reasoning accuracy.
-  AA Intelligence Index: 38 (o3), 26 (o3-mini), 33 (o4-mini), 41 (o3-pro). Proprietary.</p>
+  AA Intelligence Index v4.0: 38 (o3), 26 (o3-mini), 33 (o4-mini), 41 (o3-pro). Proprietary.</p>
 tags:
   - frontier
   - reasoning
 model:
   context_window: 200000
-  intelligence_index: 41
+  intelligence_index: 38
+  intelligence_index_version: "AA v4.0"
   parameters_estimated:
     value: "3.0T"
     source: https://arxiv.org/abs/2604.24827

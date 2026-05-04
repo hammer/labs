@@ -49,6 +49,7 @@ model:
   parameters: 70B
   context_window: 65536
   intelligence_index: 8
+  intelligence_index_version: "AA v4.0"
   training_tokens: 15T
   license: Apache-2.0
   variants:

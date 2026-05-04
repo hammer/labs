@@ -31,6 +31,7 @@ tags:
   - coding
 model:
   intelligence_index: 57
+  intelligence_index_version: "AA v4.0"
   parameters_estimated:
     value: "4.0T"
     source: https://arxiv.org/abs/2604.24827

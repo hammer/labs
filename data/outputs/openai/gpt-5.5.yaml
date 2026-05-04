@@ -30,6 +30,7 @@ tags:
 model:
   context_window: 1000000
   intelligence_index: 60
+  intelligence_index_version: "AA v4.0"
   parameters_estimated:
     value: "9.7T"
     source: https://arxiv.org/abs/2604.24827

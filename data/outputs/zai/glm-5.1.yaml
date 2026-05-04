@@ -34,5 +34,6 @@ model:
   architecture: moe
   parameters: 754B
   intelligence_index: 51
+  intelligence_index_version: "AA v4.0"
 related:
   - glm-5

@@ -23,5 +23,6 @@ tags:
   - agentic
 model:
   intelligence_index: 53
+  intelligence_index_version: "AA v4.0"
 related:
   - grok-4.20

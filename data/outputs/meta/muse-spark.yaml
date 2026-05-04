@@ -39,3 +39,4 @@ tags:
 model:
   context_window: 260000
   intelligence_index: 52
+  intelligence_index_version: "AA v4.0"

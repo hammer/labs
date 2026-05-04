@@ -41,3 +41,4 @@ outputs:
       parameters: 123B
       context_window: 256000
       intelligence_index: 22
+      intelligence_index_version: "AA v4.0"

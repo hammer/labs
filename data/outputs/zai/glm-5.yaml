@@ -53,6 +53,7 @@ outputs:
       parameters: 744B
       active_parameters: 44B
       intelligence_index: 50
+      intelligence_index_version: "AA v4.0"
       training_tokens: 28.5T
   - name: GLM-5 Technical Report
     type: paper

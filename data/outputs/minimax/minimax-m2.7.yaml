@@ -19,6 +19,7 @@ description: >
   Proprietary (closed weights).
 model:
   intelligence_index: 50
+  intelligence_index_version: "AA v4.0"
 tags:
   - agentic
   - coding

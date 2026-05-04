@@ -30,6 +30,7 @@ model:
   parameters: 400B
   active_parameters: 17B
   intelligence_index: 18
+  intelligence_index_version: "AA v4.0"
   context_window: 1000000
   variants:
     - name: Llama 4 Scout

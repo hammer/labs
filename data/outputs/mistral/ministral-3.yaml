@@ -25,6 +25,7 @@ tags:
 model:
   architecture: dense
   intelligence_index: 16
+  intelligence_index_version: "AA v4.0"
   variants:
     - name: Ministral 3 3B
       parameters: 3B

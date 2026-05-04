@@ -25,6 +25,7 @@ tags:
 model:
   context_window: 1000000
   intelligence_index: 53
+  intelligence_index_version: "AA v4.0"
   parameters_estimated:
     value: "5.3T"
     source: https://arxiv.org/abs/2604.24827

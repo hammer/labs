@@ -27,6 +27,7 @@ tags:
   - efficiency
 model:
   intelligence_index: 33
+  intelligence_index_version: "AA v4.0"
   context_window: 128000
   variants:
     - name: Mercury Coder
