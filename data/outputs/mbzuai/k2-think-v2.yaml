@@ -1,0 +1,43 @@
+name: K2 Think V2
+slug: k2-think-v2
+lab: mbzuai
+type: model
+date: 2026-01-27
+flagship: true
+sources:
+  - label: Announcement
+    url: https://mbzuai.ac.ae/news/k2-think-v2-a-fully-sovereign-reasoning-model/
+  - label: Project Page
+    url: https://www.k2think.ai/k2think
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/k2-think-v2
+  - label: HuggingFace
+    url: https://huggingface.co/LLM360/K2-Think-V2
+description: >
+  <p>70B dense general-reasoning model from <a href="/labs/mbzuai">MBZUAI's
+  Institute of Foundation Models</a>, post-trained from
+  <a href="/outputs/mbzuai/k2-v2">K2-V2 Instruct</a> via two-stage RLVR
+  (Reinforcement Learning with Verifiable Rewards) on the improved Guru
+  dataset. Released January 27, 2026 as the UAE's fully sovereign reasoning
+  system &mdash; pre-training, post-training, weights, and reasoning data
+  all open under Apache 2.0.</p>
+
+  <p>AA Intelligence Index <strong>24</strong> (well above the 15 median
+  for similar-size open-weight models) at a 262K-token context window.
+  Improves on K2-V2 by 4 points on the Intelligence Index, with hallucination
+  rate dropping from 89% to 52% and long-context reasoning from 33% to 53%.
+  Tied for first place with K2-V2 and Olmo 3 on Artificial Analysis's
+  Openness Index.</p>
+tags:
+  - open-source
+  - open-weight
+  - reasoning
+  - frontier
+model:
+  architecture: dense
+  parameters: 70B
+  context_window: 262144
+  intelligence_index: 24
+  license: Apache-2.0
+related:
+  - k2-v2
