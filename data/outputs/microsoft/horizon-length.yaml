@@ -1,0 +1,33 @@
+name: Horizon Length in LLM Agent Training
+slug: horizon-length
+lab: microsoft
+type: paper
+date: 2026-05-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.02572
+description: >
+  <p>"On Training Large Language Models for Long-Horizon Tasks: An Empirical
+  Study of Horizon Length." Studies how task horizon length affects RL training
+  of LLM agents using controlled tasks where the same decision rules and
+  reasoning structure are evaluated at varying action-sequence lengths.</p>
+
+  <p>Headline finding: longer horizons cause severe training instability and
+  catastrophic collapse, while <strong>horizon reduction via macro actions</strong>
+  recovers stability and dramatically improves success rates. Introduces
+  <strong>horizon generalization</strong> — models trained at shorter horizons
+  transfer to longer-horizon variants at inference time, while artificially
+  re-extending horizons during training causes eventual collapse.</p>
+
+  <p>Primary model: <strong>Qwen3-1.7B</strong>; validated on 4B and on frontier
+  closed models including GPT-5-mini and Gemini-3-Flash. Tasks: Sudoku (9×9 with
+  variable empty cells as horizon knob), Rush Hour, WebShop. ICML 2026.
+  Microsoft Research Asia (Liang Wang, Nan Yang, Xingxing Zhang,
+  <a href="/people/furu-wei">Furu Wei</a>) with Yonsei University (Sunghwan Kim,
+  Junhee Cho, Beong-woo Kwak, Taeyoon Kwon, Jinyoung Yeo).</p>
+tags:
+  - reasoning
+  - agents
+paper:
+  arxiv: "2605.02572"
+  venue: ICML 2026
