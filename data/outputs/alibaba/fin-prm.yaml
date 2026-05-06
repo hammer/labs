@@ -1,0 +1,36 @@
+name: "Fin-PRM: Process Reward Model for Financial Reasoning"
+slug: fin-prm
+lab: alibaba
+type: paper
+date: 2025-08-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.15202
+  - label: GitHub
+    url: https://github.com/aliyun/qwen-dianjin
+description: >
+  <p>"Fin-PRM: A Domain-Specialized Process Reward Model for Financial
+  Reasoning in Large Language Models." A process reward model purpose-built
+  for financial-domain reasoning that combines step-level and trajectory-level
+  reward signals into a unified ranking framework, applicable across offline
+  SFT data selection, test-time best-of-N inference, and GRPO reinforcement
+  learning reward shaping.</p>
+
+  <p>Built on <strong>Qwen2.5-7B-Instruct</strong> by Alibaba Cloud's
+  <strong>Qwen DianJin Team</strong> with Soochow University and Osaka
+  University. Trained on 3,000 step-by-step reasoning trajectories drawn
+  from CFLUE (Chinese Financial Language Understanding Evaluation).
+  Headline results: <strong>58.2%</strong>
+  on the CFLUE test set with Fin-PRM-curated SFT data; best-of-16 inference
+  beats majority voting by <strong>+5.1%</strong> on CFLUE; GRPO with
+  Fin-PRM as the reward yields <strong>70.5% on CFLUE</strong> and
+  <strong>62.8% on FinQA</strong>. Accepted to IJCAI 2026.</p>
+tags:
+  - reasoning
+  - research
+paper:
+  arxiv: "2508.15202"
+  venue: IJCAI 2026
+  code_url: https://github.com/aliyun/qwen-dianjin
+related:
+  - qwen2.5
