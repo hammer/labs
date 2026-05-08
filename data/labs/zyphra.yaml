@@ -1,0 +1,69 @@
+name: Zyphra
+slug: zyphra
+url: https://www.zyphra.com
+huggingface: https://huggingface.co/Zyphra
+github: https://github.com/Zyphra
+region: usa
+founded: "2021"
+type: private
+valuation:
+  amount: "$1B"
+  type: private
+  date: "2025-10"
+description: >
+  <p>Zyphra is a San Francisco- and London-based open AI lab founded in 2021,
+  building <strong>hybrid SSM/Transformer foundation models</strong> co-designed
+  with non-NVIDIA accelerators. Reached a <strong>$1B Series A valuation in
+  October 2025</strong> with backing from AMD Ventures, Intel Capital, IBM,
+  Bison Ventures, Future Ventures, and others (~$110M total raised).</p>
+
+  <p>Architectural identity centers on the
+  <strong><a href="/outputs/zyphra/zamba2">Zamba</a></strong> family &mdash;
+  hybrid Mamba2 + shared-attention models in the 1.2B&ndash;7.4B parameter range,
+  designed for low-latency on-device inference with KV-cache footprints up to 6x
+  smaller than pure Transformers. The reasoning successor
+  <strong><a href="/outputs/zyphra/zaya1">ZAYA1-8B</a></strong> (May 2026) is an
+  8B/700M-active MoE trained <em>end-to-end on a full-stack AMD platform</em>
+  (MI300 GPUs), reportedly matching DeepSeek-R1-0528 on math/coding at well under
+  1B active. It is one of the most public foundation-scale demonstrations on
+  AMD silicon to date.</p>
+
+  <p>Zyphra also publishes open training infrastructure
+  (<strong><a href="/outputs/zyphra/zyda-2">Zyda-2</a></strong>, a 5T-token
+  pretraining dataset built with NVIDIA NeMo Curator) and is extending its
+  hybrid-architecture toolkit into scientific domains via
+  <strong><a href="/outputs/zyphra/zuna">ZUNA</a></strong>, an EEG foundation model
+  trained on 208 harmonized datasets.</p>
+
+  <p><em>Note: as of May 2026, Zyphra is not tracked by Artificial Analysis &mdash;
+  benchmark numbers on this page are self-reported from the technical reports.</em></p>
+people:
+  - name: Krithik Puthalath
+    url: https://www.linkedin.com/in/krithikputhalath
+    role: CEO & Chairman, Co-founder
+  - name: Beren Millidge
+    url: https://www.beren.io/aboutme/
+    role: Chief Scientist, Co-founder
+    formerly: Apollo Research; Conjecture (Head of Research); Oxford postdoc; Edinburgh PhD
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=3GGkFTkAAAAJ
+    description: >
+      <p>Edinburgh PhD on active inference and predictive processing under
+      <a href="https://en.wikipedia.org/wiki/Karl_J._Friston">Karl Friston</a>
+      (dissertation nominated for SICSA Best Dissertation in Scotland).
+      Postdoc at Oxford with Rafal Bogacz on predictive coding and biologically
+      plausible learning, before co-founding Apollo Research and then Zyphra.</p>
+  - name: Tomás Figliolia
+    role: Co-founder
+  - name: Danny Martinelli
+    role: Co-founder
+  - name: Quentin Anthony
+    role: Core Researcher (training systems)
+    formerly: EleutherAI
+tags:
+  - frontier
+  - open-weight
+  - hybrid-ssm
+  - amd
+  - on-device

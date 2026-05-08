@@ -1,0 +1,48 @@
+name: ZAYA1-8B
+slug: zaya1
+lab: zyphra
+type: model
+date: 2026-05-06
+flagship: true
+sources:
+  - label: ZAYA1-8B Technical Report (arXiv)
+    url: https://arxiv.org/abs/2605.05365
+  - label: Training Foundation Models on a Full-Stack AMD Platform (arXiv)
+    url: https://arxiv.org/abs/2511.17127
+  - label: VentureBeat coverage
+    url: https://venturebeat.com/technology/meet-zaya1-8b-a-super-efficient-open-reasoning-model-trained-on-amd-instinct-mi300-gpus
+  - label: IBM &times; AMD &times; Zyphra partnership
+    url: https://newsroom.ibm.com/2025-10-01-ibm-and-amd-collaborate-with-zyphra-on-next-generation-ai-infrastructure
+description: >
+  <p>Zyphra's reasoning successor to Zamba2: an <strong>8B-total / 700M-active MoE</strong>
+  trained <em>end-to-end on a full-stack AMD platform</em> &mdash; pretrain, midtrain,
+  and SFT all on AMD Instinct MI300 GPUs with AMD networking and software. To Zyphra's
+  knowledge this is the largest publicly released foundation model trained entirely on
+  AMD silicon, and the companion paper documents the systems-level co-design.</p>
+
+  <p>Reported benchmarks (with their <em>Markovian RSA</em> test-time compute method):
+  <strong>91.9% AIME'25</strong>, <strong>89.6% HMMT'25</strong>. Zyphra claims it
+  matches or exceeds DeepSeek-R1-0528 on math and coding despite having under 1B
+  active parameters. <em>Not currently scored on Artificial Analysis &mdash;
+  numbers above are self-reported from the technical report.</em></p>
+tags:
+  - reasoning
+  - open-weight
+  - moe
+  - amd
+model:
+  architecture: moe
+  parameters: 8B
+  active_parameters: 700M
+  training_hardware: AMD Instinct MI300
+  benchmark_scores:
+    - benchmark: AIME 2025
+      score: "91.9%"
+      mode: with Markovian RSA
+    - benchmark: HMMT 2025
+      score: "89.6%"
+      mode: with Markovian RSA
+paper:
+  arxiv: "2605.05365"
+related:
+  - zamba2

@@ -1,0 +1,38 @@
+name: ZR1-1.5B
+slug: zr1
+lab: zyphra
+type: model
+date: 2025-04-15
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/Zyphra/ZR1-1.5B
+  - label: Zyphra blog
+    url: https://www.zyphra.com/post/zr1
+description: >
+  <p>Compact reasoning model post-trained from
+  <a href="https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B">DeepSeek-R1-Distill-Qwen-1.5B</a>
+  using <strong>PRIME (Process Reinforcement through IMplicit rEwards)</strong>
+  with token-level RLOO on ~400k math + ~25k code samples (NuminaMath-CoT, APPS,
+  CodeContests, TACO, Codeforces). Generation length ramped 12k &rarr; 24k tokens
+  over training.</p>
+
+  <p>Self-reported numbers: 88.34% MATH-500, 37.91% GPQA-Diamond, ~40% LeetCode
+  &mdash; >50% improvement over the R1-Distill base at the same parameter count.
+  An applied study in token-efficient reasoning at small scale. <em>Not currently
+  scored on Artificial Analysis.</em></p>
+tags:
+  - reasoning
+  - open-weight
+model:
+  architecture: dense
+  parameters: 1.5B
+  base_model: deepseek-r1
+  benchmark_scores:
+    - benchmark: MATH-500
+      score: "88.34%"
+    - benchmark: GPQA Diamond
+      score: "37.91%"
+    - benchmark: LeetCode
+      score: "40%"
+related:
+  - zamba2

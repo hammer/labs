@@ -1,0 +1,31 @@
+name: Zyda-2
+slug: zyda-2
+lab: zyphra
+type: dataset
+date: 2024-10-15
+sources:
+  - label: HuggingFace dataset
+    url: https://huggingface.co/datasets/Zyphra/Zyda-2
+  - label: NVIDIA technical blog
+    url: https://www.zyphra.com/post/building-zyda-2
+description: >
+  <p>Open <strong>5-trillion-token</strong> pretraining dataset built with
+  <a href="https://github.com/NVIDIA/NeMo-Curator">NVIDIA NeMo Curator</a>.
+  Combines and re-curates several leading open corpora (FineWeb-Edu, DCLM, Dolma)
+  with cross-source deduplication and quality filtering. Used by Zyphra to train
+  Zamba2 and ZAYA1, and openly released for the broader community.</p>
+
+  <p>One of the few open pretraining corpora at the multi-trillion-token scale,
+  alongside FineWeb / DCLM / RedPajama. ~25k HuggingFace downloads as of
+  May 2026.</p>
+tags:
+  - training-data
+  - training
+  - nlp
+dataset:
+  size: 5T tokens
+  format: text
+  huggingface_url: https://huggingface.co/datasets/Zyphra/Zyda-2
+related:
+  - zamba2
+  - zaya1

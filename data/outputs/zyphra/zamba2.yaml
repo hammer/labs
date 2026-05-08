@@ -1,0 +1,56 @@
+name: Zamba2 (Hybrid SSM/Transformer Suite)
+slug: zamba2
+lab: zyphra
+type: model
+date: 2024-11-22
+flagship: true
+sources:
+  - label: Zamba2 Technical Report (arXiv)
+    url: https://arxiv.org/abs/2411.15242
+  - label: Zamba paper (arXiv)
+    url: https://arxiv.org/abs/2405.16712
+  - label: HuggingFace
+    url: https://huggingface.co/Zyphra/Zamba2-7B
+  - label: GitHub
+    url: https://github.com/Zyphra/Zamba2
+description: >
+  <p>Zyphra's flagship architectural family. <strong>Zamba</strong> (May 2024)
+  introduced a compact 7B hybrid combining a <strong>Mamba SSM backbone</strong>
+  with a <em>single shared attention module</em>, capturing most of the benefit of
+  attention at minimal parameter cost. <strong>Zamba2</strong> (November 2024)
+  extends this to a 1.2B / 2.7B / 7.4B suite trained on up to 3T tokens, with
+  several improvements: Mamba1 &rarr; Mamba2 backbone, two alternating shared
+  attention blocks (instead of one) with LoRA projectors for depth specialization,
+  and rotary position embeddings.</p>
+
+  <p>Because attention is shared, Zamba2 stores KV caches only at the (~1:6)
+  attention positions &mdash; <strong>~6x smaller KV footprint</strong> than a
+  pure Transformer of similar quality, with correspondingly lower inference
+  latency and memory cost. Open weights (Apache 2.0). <em>Note: not currently
+  scored on Artificial Analysis; benchmark claims are self-reported.</em></p>
+tags:
+  - foundational
+  - open-weight
+  - hybrid-ssm
+  - efficiency
+model:
+  architecture: dense
+  parameters: 7.4B
+  training_tokens: 3T
+  license: Apache 2.0
+  variants:
+    - name: Zamba-7B
+      parameters: 7B
+      notes: Original 2024 release; single shared attention block; Mamba1 backbone
+    - name: Zamba2-1.2B
+      parameters: 1.2B
+    - name: Zamba2-2.7B
+      parameters: 2.7B
+    - name: Zamba2-7B
+      parameters: 7.4B
+      notes: Mamba2 backbone, two alternating shared attention blocks with LoRA, RoPE
+paper:
+  arxiv: "2411.15242"
+related:
+  - zaya1
+  - zr1
