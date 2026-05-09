@@ -32,7 +32,7 @@ outputs:
       13B bilingual LLM based on LLaMA with optimized Chinese tokenizer
       and three-stage training process including RLHF.
     model:
-      base_model: llama
+      base_model: llama-1
       variants:
         - name: Ziya-LLaMA-13B-v1
         - name: Ziya-LLaMA-13B-v1.1
@@ -51,7 +51,7 @@ outputs:
       Built on Llama 2 with 650B additional Chinese-English tokens.
       Full-parameter RLHF with high-quality human preference data.
     model:
-      base_model: llama
+      base_model: llama-2
   - name: Ziya-Coding-34B
     type: model
     sources:
@@ -72,4 +72,4 @@ outputs:
       Multimodal vision-language model based on Ziya-LLaMA-13B with
       visual question answering and dialogue capabilities.
     model:
-      base_model: llama
+      base_model: llama-1

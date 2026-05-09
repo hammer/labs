@@ -1,0 +1,41 @@
+name: Video-SafetyBench
+slug: video-safetybench
+lab: baai
+type: eval
+date: 2025-05-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.11842
+  - label: GitHub
+    url: https://github.com/flageval-baai/Video-SafetyBench
+  - label: HuggingFace dataset
+    url: https://huggingface.co/datasets/BAAI/Video-SafetyBench
+  - label: OpenReview
+    url: https://openreview.net/forum?id=nEvQ95xgaR
+description: >
+  <p>First comprehensive safety benchmark for video LVLMs. <strong>2,264
+  video-text pairs</strong> covering 13 unsafe categories and 48 fine-grained
+  subcategories, each pairing a synthesized ~10s video with either a harmful or
+  a benign query. Introduces <strong>RJScore (RiskJudgeScore)</strong>, an
+  LLM-based metric that uses token-level logit distributions to capture judge
+  confidence and align with human safety judgments.</p>
+
+  <p>Joint work between <a href="/labs/baai">BAAI FlagEval</a> and Beijing
+  University of Posts and Telecommunications. Accepted to NeurIPS 2025
+  Datasets &amp; Benchmarks track.</p>
+tags:
+  - evaluation
+  - benchmark
+  - safety
+  - multimodal
+eval:
+  num_questions: 2264
+  domains:
+    - video safety
+    - video-text multimodal
+  scoring_method: RJScore (LLM-judge logit distributions)
+paper:
+  arxiv: "2505.11842"
+  venue: NeurIPS 2025 D&B
+related:
+  - flagevalmm

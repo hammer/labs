@@ -1,5 +1,5 @@
-name: NOVA
-slug: nova
+name: NOVA (Non-quantized Video Autoregressive)
+slug: nova-video
 lab: baai
 type: model
 date: 2024-12-18

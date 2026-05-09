@@ -1,0 +1,35 @@
+name: RLAIF-V
+slug: rlaif-v
+lab: openbmb
+type: paper
+date: 2024-05-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2405.17220
+  - label: GitHub
+    url: https://github.com/RLHF-V/RLAIF-V
+  - label: HuggingFace (RLAIF-V-12B)
+    url: https://huggingface.co/openbmb/RLAIF-V-12B
+  - label: HuggingFace dataset
+    url: https://huggingface.co/datasets/openbmb/RLAIF-V-Dataset
+description: >
+  <p>"RLAIF-V: Open-Source AI Feedback Leads to Super GPT-4V Trustworthiness."
+  Aligns multimodal LLMs through fully open-source AI feedback, combining
+  high-quality preference data generation with self-feedback inference-time
+  scaling. <strong>RLAIF-V-7B reduces object hallucination by 80.7%</strong>
+  and overall hallucination by 33.7%; <strong>RLAIF-V-12B</strong> achieves
+  trustworthiness above GPT-4V via self-alignment.</p>
+
+  <p>Cited as the alignment recipe behind
+  <a href="/outputs/openbmb/minicpm-o">MiniCPM-o</a>'s safety profile. CVPR 2025
+  highlight. Joint work with Tsinghua (NLP Lab), Shanghai Qi Zhi Institute,
+  HIT, Alibaba Taobao &amp; Tmall, PCL, and NUS.</p>
+tags:
+  - alignment
+  - multimodal
+  - foundational
+paper:
+  arxiv: "2405.17220"
+  venue: CVPR 2025 (highlight)
+related:
+  - minicpm-o

@@ -1,0 +1,44 @@
+name: Code Llama
+slug: code-llama
+lab: meta
+type: model
+date: 2023-08-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2308.12950
+  - label: HuggingFace
+    url: https://huggingface.co/codellama
+  - label: Announcement
+    url: https://ai.meta.com/blog/code-llama-large-language-model-coding/
+description: >
+  <p>"Code Llama: Open Foundation Models for Code." Meta's first major
+  code-specialized open-weight family, built on Llama 2 with continued
+  pretraining on a code-heavy corpus and long-context fine-tuning to 100K
+  tokens. Available at <strong>7B, 13B, 34B, and 70B</strong> sizes, with
+  base, Python-specialized, and Instruct variants.</p>
+
+  <p>Foundational for the open-coding-model lineage. Adopted as the base for
+  many downstream code models (DeepSeek-Coder ancestry, Phind-CodeLlama, the
+  Ziya-Coding-34B fine-tune, etc.) and one of the first open models to credibly
+  approach GPT-4 on HumanEval at the 34B scale.</p>
+tags:
+  - open-weight
+  - coding
+  - foundational
+model:
+  architecture: dense
+  parameters: 70B
+  base_model: llama-2
+  variants:
+    - name: Code Llama 7B
+      parameters: 7B
+    - name: Code Llama 13B
+      parameters: 13B
+    - name: Code Llama 34B
+      parameters: 34B
+    - name: Code Llama 70B
+      parameters: 70B
+paper:
+  arxiv: "2308.12950"
+related:
+  - llama-2

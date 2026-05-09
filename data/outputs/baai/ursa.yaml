@@ -1,0 +1,22 @@
+name: URSA (Uniform Discrete Diffusion)
+slug: ursa
+lab: baai
+type: model
+date: 2025-10-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.24717
+description: >
+  <p>"Uniform Discrete Diffusion with Metric Path for Video Generation." BAAI
+  Vision's successor to <a href="/outputs/baai/nova-video">NOVA</a>, replacing
+  non-quantized autoregression with uniform discrete diffusion guided by a
+  learned metric path. Continues BAAI's bet on non-vector-quantized video
+  generation as an alternative to standard latent diffusion.</p>
+tags:
+  - generation
+  - diffusion
+  - open-weight
+paper:
+  arxiv: "2510.24717"
+related:
+  - nova-video
