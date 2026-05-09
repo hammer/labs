@@ -1,0 +1,32 @@
+name: Amazon Nova Sonic
+slug: nova-sonic
+lab: amazon
+type: model
+date: 2025-04-08
+sources:
+  - label: Technical Report
+    url: https://www.amazon.science/publications/amazon-nova-sonic-technical-report-and-model-card
+  - label: Technical Report (PDF)
+    url: https://assets.amazon.science/86/bb/4316d28940bd9a719abb28f45aaf/amazon-nova-sonic-technical-report-and-model-card-6-12.pdf
+  - label: AWS announcement
+    url: https://aws.amazon.com/blogs/aws/introducing-amazon-nova-sonic-human-like-voice-conversations-for-generative-ai-applications/
+description: >
+  <p>Speech-to-speech foundation model that <strong>unifies speech and text
+  processing in a single architecture</strong>, designed streaming-first for
+  low-latency conversational applications with natural turn-taking and barge-in
+  handling. Adapts generated speech to acoustic context (tone, style) and the
+  spoken content of the user's input.</p>
+
+  <p>Evaluated on multilingual ASR (FLEURS across 102 languages, MLS across 8
+  languages) in addition to standard speech-generation benchmarks. The Nova 2
+  Sonic successor (December 2025) extends to polyglot voices supporting
+  English / French / Spanish / German / Italian / Portuguese / Hindi within a
+  single conversation, with asynchronous tool calling. Initial report April 8,
+  2025; updated June 12, 2025. Available via Amazon Bedrock.</p>
+tags:
+  - speech
+  - multimodal
+  - frontier
+related:
+  - nova-2
+  - nova

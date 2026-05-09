@@ -3,34 +3,66 @@ slug: nova
 lab: amazon
 type: model
 date: 2024-12-03
-flagship: true
+flagship: false
 sources:
   - label: Announcement
     url: https://techcrunch.com/2024/12/03/amazon-announces-nova-a-new-family-of-multimodal-ai-models/
   - label: Technical Report
     url: https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2506.12103
   - label: Artificial Analysis (Pro)
     url: https://artificialanalysis.ai/models/nova-pro
 description: >
-  <p>Family of foundation models launched at AWS re:Invent 2024. <strong>Nova Pro</strong>
-  (multimodal, 300K context), Nova Lite (multimodal, 300K, low cost), Nova Micro
-  (text-only, 128K, fastest). Also includes Nova Canvas (image generation) and Nova
-  Reel (video generation).</p>
+  <p>Initial Nova family launched at AWS re:Invent 2024. <strong>Nova Pro</strong>
+  (multimodal, 300K context), <strong>Nova Lite</strong> (multimodal, 300K, low cost),
+  <strong>Nova Micro</strong> (text-only, 128K, fastest). Also includes Nova Canvas
+  (image generation) and Nova Reel (video generation). Superseded as the AGI org's
+  flagship by <a href="/outputs/amazon/nova-premier">Nova Premier</a> (April 2025)
+  and then <a href="/outputs/amazon/nova-2">Nova 2</a> (December 2025).</p>
 
-  <p>AA Intelligence Index: <strong>13</strong> (Pro). Proprietary, available via
-  Amazon Bedrock.</p>
+  <p>AA Intelligence Index v4.0: <strong>13</strong> (Pro), <strong>10</strong>
+  (Micro). AA's Nova Pro page now points users to Nova 2 Pro Preview as the
+  current recommended replacement. Proprietary, available via Amazon Bedrock.</p>
+
+  <p><em>Parameter counts below are third-party estimates by Alan D. Thompson
+  (LifeArchitect.ai) &mdash; Amazon does not publish official parameter counts
+  for the Nova family.</em></p>
 tags:
   - frontier
   - multimodal
 model:
   context_window: 300000
   intelligence_index: 13
+  intelligence_index_version: "AA v4.0"
+  parameters_estimated:
+    value: "90B"
+    source: https://lifearchitect.ai/olympus/
+    source_label: "LifeArchitect.ai (Alan D. Thompson)"
+    method: third-party-benchmark-inference
+    notes: "Estimate for Nova Pro (top variant). Trained on ~10T tokens per the same source."
   variants:
     - name: Nova Pro
-      notes: Multimodal, 300K context
+      notes: Multimodal, 300K context; AA v4.0 = 13
+      parameters_estimated:
+        value: "90B"
+        source: https://lifearchitect.ai/olympus/
+        source_label: "LifeArchitect.ai (Alan D. Thompson)"
+        method: third-party-benchmark-inference
     - name: Nova Lite
       notes: Multimodal, 300K context, low cost
+      parameters_estimated:
+        value: "20B"
+        source: https://lifearchitect.ai/olympus/
+        source_label: "LifeArchitect.ai (Alan D. Thompson)"
+        method: third-party-benchmark-inference
     - name: Nova Micro
-      notes: Text-only, 128K context
+      notes: Text-only, 128K context; AA v4.0 = 10
+      parameters_estimated:
+        value: "11B"
+        source: https://lifearchitect.ai/olympus/
+        source_label: "LifeArchitect.ai (Alan D. Thompson)"
+        method: third-party-benchmark-inference
 related:
   - nova-premier
+  - nova-2

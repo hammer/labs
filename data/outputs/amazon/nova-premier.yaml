@@ -9,17 +9,36 @@ sources:
     url: https://www.amazon.science/publications/amazon-nova-premier-technical-report-and-model-card
   - label: OpenRouter
     url: https://openrouter.ai/amazon/nova-premier-v1
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/nova-premier
 description: >
-  <p>Amazon's most capable model and distillation teacher. <strong>1M token context</strong>.
-  Processes text, images, and video. Also serves as teacher model for training smaller
-  Nova variants.</p>
+  <p>Top of the Nova 1 family and distillation teacher for the smaller Nova variants.
+  <strong>1M token context</strong>; processes text, images, and video. Held the
+  AGI org's flagship slot from launch (April 2025) until
+  <a href="/outputs/amazon/nova-2">Nova 2</a> superseded it at re:Invent 2025
+  (December 2). Still active on Bedrock.</p>
 
-  <p>AA Intelligence Index: <strong>19</strong>. Proprietary, available via Amazon Bedrock.</p>
+  <p>AA Intelligence Index v4.0: <strong>19</strong>.</p>
+
+  <p><em>Parameter count is a third-party estimate &mdash; Amazon has never
+  disclosed the size. The 470B figure originates in a June 2024
+  <a href="https://fortune.com/2024/06/06/amazon-llm-2-trillion-parameters-olympus-arrika-rohit-prasad-ai/">Fortune
+  report</a> on the in-progress "Olympus" model that became Nova Premier, and is
+  cited as such by <a href="https://lifearchitect.ai/olympus/">LifeArchitect.ai</a>.</em></p>
 tags:
   - frontier
   - multimodal
 model:
   context_window: 1000000
   intelligence_index: 19
+  intelligence_index_version: "AA v4.0"
+  parameters_estimated:
+    value: "470B"
+    source: https://lifearchitect.ai/olympus/
+    source_label: "LifeArchitect.ai citing Fortune (June 2024)"
+    method: vendor-leak-via-press
+    posted: "2024-06-06"
+    notes: "Originally a Fortune report on the in-progress 'Olympus' model that became Nova Premier; trained on ~20T tokens per the same source."
 related:
   - nova
+  - nova-2

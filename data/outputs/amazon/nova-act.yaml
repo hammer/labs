@@ -1,0 +1,38 @@
+name: Amazon Nova Act
+slug: nova-act
+lab: amazon
+type: model
+date: 2025-03-31
+sources:
+  - label: Launch announcement
+    url: https://labs.amazon.science/blog/nova-act
+  - label: TechCrunch coverage
+    url: https://techcrunch.com/2025/03/31/amazon-unveils-nova-act-an-ai-agent-that-uses-a-web-browser/
+  - label: Nova Act SDK on GitHub
+    url: https://github.com/aws/nova-act
+  - label: AWS GA announcement (re:Invent 2025)
+    url: https://aws.amazon.com/blogs/machine-learning/amazon-nova-act-sdk-preview-path-to-production-for-browser-automation-agents/
+description: >
+  <p>Browser-control agent &mdash; the first public product from Amazon's AGI lab
+  under <a href="/people/pieter-abbeel">Pieter Abbeel</a> and David Luan
+  (ex-Adept). Released March 31, 2025 as a research preview, then re-released
+  at re:Invent 2025 as a GA service backed by a <strong>custom-trained Nova 2
+  Lite</strong> specialized for browser control. Reports
+  <strong>90%+ task reliability at scale</strong> with automatic containerization
+  and deployment to AWS AgentCore Runtime.</p>
+
+  <p>On <strong>ScreenSpot Web Text</strong> (UI element grounding), Nova Act
+  scored <strong>94%</strong> at launch, ahead of OpenAI's CUA (88%) and
+  Anthropic's Claude 3.7 Sonnet (90%). The SDK provides an action API for
+  composing browser tasks and a live browser view for execution logging.
+  Available via Amazon Bedrock and AgentCore.</p>
+tags:
+  - agents
+  - browser-agent
+  - frontier
+model:
+  benchmark_scores:
+    - benchmark: ScreenSpot Web Text
+      score: "94%"
+related:
+  - nova-2

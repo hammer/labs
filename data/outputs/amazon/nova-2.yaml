@@ -1,0 +1,69 @@
+name: Amazon Nova 2
+slug: nova-2
+lab: amazon
+type: model
+date: 2025-12-02
+flagship: true
+sources:
+  - label: Technical Report
+    url: https://www.amazon.science/publications/amazon-nova-2-multimodal-reasoning-and-generation-models
+  - label: Technical Report (PDF)
+    url: https://cdn.amazon.science/c5/3d/84514a224666b5be6de4b43ef4aa/nova-2-0-technical-report2.pdf
+  - label: Artificial Analysis (Nova 2.0 Pro)
+    url: https://artificialanalysis.ai/models/nova-2-0-pro
+  - label: TechCrunch coverage
+    url: https://techcrunch.com/2025/12/02/aws-launches-new-nova-ai-models-and-a-service-that-gives-customers-more-control/
+description: >
+  <p>Generational successor to the Nova 1 family, launched at AWS re:Invent 2025
+  (December 2). Adds <strong>extended thinking with three configurable budgets</strong>
+  (low / medium / high), a <strong>1M-token context window</strong> across the
+  reasoning tiers, and built-in web grounding plus a code interpreter. Authored
+  by the Amazon AGI org under <a href="/people/peter-desantis">Peter DeSantis</a>
+  (heading the unified AGI/Silicon/Quantum group from December 2025).</p>
+
+  <p>The family covers four models. <strong>Nova 2 Pro</strong> (preview only) is
+  the most capable reasoner. <strong>Nova 2 Lite</strong> is the cost-tier reasoner
+  at the same context length. <strong>Nova 2 Omni</strong> is a unified multimodal
+  reasoner that accepts text, images, video, and audio as input and produces both
+  text and image outputs &mdash; the first Nova entry with native image generation
+  inside a reasoning loop. <strong><a href="/outputs/amazon/nova-sonic">Nova 2
+  Sonic</a></strong> is the speech-to-speech model (its own page).</p>
+
+  <p>Top AA Intelligence Index v4.0 score in the family is <strong>36</strong>
+  (Nova 2 Pro Preview, medium thinking) &mdash; a meaningful jump over the
+  Nova Premier predecessor (19). Proprietary, available via Amazon Bedrock.</p>
+tags:
+  - frontier
+  - multimodal
+  - reasoning
+  - agents
+model:
+  context_window: 1000000
+  intelligence_index: 36
+  intelligence_index_version: "AA v4.0"
+  variants:
+    - name: Nova 2 Pro Preview (medium thinking)
+      notes: AA Intelligence Index 36 (top of family); 1M context; reasoning + web grounding + code interpreter
+    - name: Nova 2 Pro Preview (low thinking)
+      notes: AA Intelligence Index 32
+    - name: Nova 2 Pro Preview (non-reasoning)
+      notes: AA Intelligence Index 23; 256K context for non-reasoning mode
+    - name: Nova 2 Lite (high thinking)
+      notes: AA Intelligence Index 35; 1M context; cost-tier reasoner
+    - name: Nova 2 Lite (medium thinking)
+      notes: AA Intelligence Index 30
+    - name: Nova 2 Lite (low thinking)
+      notes: AA Intelligence Index 25
+    - name: Nova 2 Lite (non-reasoning)
+      notes: AA Intelligence Index 18
+    - name: Nova 2 Omni (medium thinking)
+      notes: AA Intelligence Index 28; native multimodal in/out (text+image+video+audio &rarr; text+image)
+    - name: Nova 2 Omni (low thinking)
+      notes: AA Intelligence Index 23
+    - name: Nova 2 Omni (non-reasoning)
+      notes: AA Intelligence Index 17
+related:
+  - nova-premier
+  - nova-sonic
+  - nova-act
+  - nova

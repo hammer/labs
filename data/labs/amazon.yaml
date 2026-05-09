@@ -65,6 +65,18 @@ news:
     url: https://techcrunch.com/2025/04/30/amazon-launches-nova-premier-its-largest-ai-model-yet/
     source: TechCrunch
     date: 2025-04-30
+  - title: "Nova Sonic Speech-to-Speech Model Launched on Bedrock"
+    url: https://aws.amazon.com/blogs/aws/introducing-amazon-nova-sonic-human-like-voice-conversations-for-generative-ai-applications/
+    source: AWS
+    date: 2025-04-08
+  - title: "Amazon Unveils Nova Act, an AI Agent That Controls a Web Browser"
+    url: https://techcrunch.com/2025/03/31/amazon-unveils-nova-act-an-ai-agent-that-uses-a-web-browser/
+    source: TechCrunch
+    date: 2025-03-31
+  - title: "AWS Trainium2 Chips Generally Available; Trainium3 Previewed"
+    url: https://techcrunch.com/2024/12/03/aws-trainium2-chips-for-building-llms-are-now-generally-available-with-trainium3-coming-in-late-2025/
+    source: TechCrunch
+    date: 2024-12-03
   - title: "Amazon Doubles Anthropic Investment to $8 Billion"
     url: https://www.cnbc.com/2024/11/22/amazon-to-invest-another-4-billion-in-anthropic-openais-biggest-rival.html
     source: CNBC
