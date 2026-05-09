@@ -1,0 +1,61 @@
+name: Sapiens2
+slug: sapiens-2
+lab: meta
+type: model
+date: 2026-04-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.21681
+  - label: HuggingFace collection
+    url: https://huggingface.co/collections/facebook/sapiens2
+description: >
+  <p>Transformer-based human-centric vision foundation family from Meta.
+  <strong>0.1B&ndash;5B parameters</strong>, native 1K resolution with
+  hierarchical 4K-capable variants and windowed attention for extended spatial
+  reasoning. Trained on <strong>1 billion curated human images</strong> via
+  masked image reconstruction combined with self-distilled contrastive learning;
+  4K models pretrain at 2K output resolution.</p>
+
+  <p>Five downstream task heads released open: <strong>pretrain</strong>
+  (feature extractor), <strong>pose</strong> (keypoint detection),
+  <strong>seg</strong> (body-part segmentation), <strong>normal</strong>
+  (surface-normal estimation), and <strong>pointmap</strong>
+  (depth/geometry &mdash; albedo discussed in the paper but not in the public
+  collection). Reported gains over Sapiens v1: <strong>+4 mAP pose</strong>,
+  <strong>+24.3 mIoU body-part segmentation</strong>,
+  <strong>&minus;45.6% normal angular error</strong>. ICLR 2026.</p>
+
+  <p>By Khirodkar, Wen, Martinez, Dong, Zhaoen, and Saito (Meta Reality Labs).</p>
+tags:
+  - vision
+  - open-weight
+  - foundational
+  - human-centric
+model:
+  architecture: dense
+  parameters: 5B
+  variants:
+    - name: Sapiens2 0.1B (pretrain only)
+      parameters: 0.1B
+    - name: Sapiens2 0.4B
+      parameters: 0.4B
+      notes: Pretrain + pose + seg + normal + pointmap heads
+    - name: Sapiens2 0.8B
+      parameters: 0.8B
+      notes: Pretrain + pose + seg + normal + pointmap heads
+    - name: Sapiens2 1B
+      parameters: 1B
+      notes: Pretrain + pose + seg + normal + pointmap heads
+    - name: Sapiens2 5B
+      parameters: 5B
+      notes: Pretrain + pose + seg + normal + pointmap heads; 4K-capable hierarchical variant
+paper:
+  arxiv: "2604.21681"
+  venue: ICLR 2026
+  authors:
+    - Rawal Khirodkar
+    - He Wen
+    - Julieta Martinez
+    - Yuan Dong
+    - Su Zhaoen
+    - Shunsuke Saito
