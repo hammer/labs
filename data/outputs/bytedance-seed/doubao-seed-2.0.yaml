@@ -9,9 +9,50 @@ sources:
     url: https://technode.com/2026/02/14/bytedance-releases-doubao-seed-2-0-positions-pro-model-against-gpt-5-2-and-gemini-3-pro/
   - label: Blog Post
     url: https://seed.bytedance.com/en/blog/seed2-0-%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83
+  - label: Caixin Global coverage
+    url: https://www.caixinglobal.com/2026-02-15/bytedance-unveils-doubao-20-ai-model-to-tackle-complex-tasks-102414865.html
 description: >
-  Most recent general-purpose AGI model designed for complex real-world
-  task execution.
+  <p>ByteDance's frontier general-purpose family, announced February 14, 2026.
+  Architecture is "systematically optimized" for long-chain reasoning and
+  agentic workflows &mdash; multi-step retrieval, summarization, analysis,
+  tool calling, and report generation. Successor to
+  <a href="/outputs/bytedance-seed/seed-1.6">Seed-1.6</a> and
+  <a href="/outputs/bytedance-seed/seed1.8">Seed1.8</a>.</p>
+
+  <p>Four-tier release covering production needs from frontier reasoning down
+  to high-throughput batch:</p>
+
+  <ul>
+    <li><strong>Pro</strong>: frontier reasoning. Self-reported <strong>AIME 2025
+    98.3%</strong>, Codeforces 3020, VideoMME 89.5. Priced ~$0.47 / $2.37 per
+    1M input/output tokens &mdash; ~3.7x cheaper than GPT-5.2 on input.</li>
+    <li><strong>Lite</strong>: balanced production tier. SWE-Bench Verified 73.5
+    self-reported.</li>
+    <li><strong>Mini</strong>: high-throughput batch (cheapest, fastest).</li>
+    <li><strong>Code</strong>: SWE-focused; supersedes the November 2025
+    <a href="/outputs/bytedance-seed/doubao-seed-code">Doubao Seed Code</a>
+    branding.</li>
+  </ul>
+
+  <p><em>Not yet scored on Artificial Analysis as of May 2026; benchmark numbers
+  above are self-reported. The currently AA-tracked sibling
+  <a href="/outputs/bytedance-seed/doubao-seed-code">Doubao Seed Code</a>
+  scores AA v4.0 = 34.</em></p>
 tags:
   - frontier
   - agentic
+  - reasoning
+model:
+  variants:
+    - name: Doubao-Seed-2.0 Pro
+      notes: Frontier reasoning; self-reported AIME 2025 98.3%, Codeforces 3020, VideoMME 89.5
+    - name: Doubao-Seed-2.0 Lite
+      notes: Balanced production; SWE-Bench Verified 73.5 self-reported
+    - name: Doubao-Seed-2.0 Mini
+      notes: High-throughput batch
+    - name: Doubao-Seed-2.0 Code
+      notes: Coding tier (supersedes Nov 2025 Doubao Seed Code branding)
+related:
+  - doubao-seed-code
+  - seed-1.6
+  - seed1.8

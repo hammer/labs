@@ -108,6 +108,30 @@ news:
     url: https://www.scmp.com/tech/big-tech/article/3350521/bytedance-tencent-step-ai-talent-battle-amid-reported-departure-deepseek-researcher
     source: SCMP
     date: 2026-04-16
+  - title: "Doubao-Seed-2.0 Family Launched (Pro / Lite / Mini / Code)"
+    url: https://technode.com/2026/02/14/bytedance-releases-doubao-seed-2-0-positions-pro-model-against-gpt-5-2-and-gemini-3-pro/
+    source: TechNode
+    date: 2026-02-14
+  - title: "Seed1.8 Released as a Generalized Agentic Model"
+    url: https://seed.bytedance.com/en/blog/official-release-of-seed1-8-a-generalized-agentic-model
+    source: ByteDance Seed
+    date: 2025-12-18
+  - title: "Doubao Seed Code (Reasoning Coder) Hits AA Intelligence Index 34"
+    url: https://artificialanalysis.ai/models/doubao-seed-code
+    source: Artificial Analysis
+    date: 2025-11-15
+  - title: "Seed-OSS-36B Released as Apache-2.0 Open-Weight Model"
+    url: https://venturebeat.com/technology/tiktok-parent-company-bytedance-releases-new-open-source-seed-oss-36b-model-with-512k-token-context
+    source: VentureBeat
+    date: 2025-08-20
+  - title: "Seed-1.6 Introduces Adaptive Chain-of-Thought (AdaCoT)"
+    url: https://seed.bytedance.com/en/blog/introduction-to-techniques-used-in-seed1-6
+    source: ByteDance Seed
+    date: 2025-06-12
+  - title: "Wu Yonghui Joins ByteDance as Head of Seed Basic Research"
+    url: https://www.scmp.com/tech/big-tech/article/3350521/bytedance-tencent-step-ai-talent-battle-amid-reported-departure-deepseek-researcher
+    source: SCMP
+    date: 2025-02-12
 tags:
   - frontier
   - open-weight

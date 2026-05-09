@@ -3,7 +3,7 @@ slug: seed-oss
 lab: bytedance-seed
 type: model
 date: 2025-08-20
-flagship: true
+flagship: false
 sources:
   - label: GitHub
     url: https://github.com/ByteDance-Seed/seed-oss
@@ -16,7 +16,10 @@ sources:
 description: >
   Open-source 36B-parameter LLM with 512K context window. Achieves strong
   performance across reasoning, agent, and general tasks despite being trained
-  on only 12T tokens. Released under Apache-2.0 license.
+  on only 12T tokens. Released under Apache-2.0 license. AA Intelligence Index
+  v4.0: 25 &mdash; not the lab's top score
+  (<a href="/outputs/bytedance-seed/doubao-seed-code">Doubao Seed Code</a> at 34
+  is higher), but the strongest open-weight ByteDance LLM as of May 2026.
 tags:
   - open-weight
   - scaling
@@ -27,4 +30,9 @@ model:
   parameters: 36B
   context_window: 512000
   intelligence_index: 25
+  intelligence_index_version: "AA v4.0"
   training_tokens: 12T
+  license: Apache 2.0
+related:
+  - doubao-seed-code
+  - seed-coder

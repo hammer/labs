@@ -11,14 +11,14 @@ sources:
     url: https://github.com/ByteDance-Seed/Seed-1.8
   - label: Model Card (PDF)
     url: https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/research/Seed-1.8-Modelcard.pdf
-  - label: Artificial Analysis
-    url: https://artificialanalysis.ai/models/doubao-seed-1-8
 description: >
   Generalized agentic model with multimodal input (text + image). Industry-leading
   GUI agent, search, and code generation capabilities across desktop, web, and
-  mobile environments.
+  mobile environments. Not currently scored on Artificial Analysis.
 tags:
   - agentic
   - multimodal
 related:
   - seed1.5-vl
+  - seed-1.6
+  - doubao-seed-2.0

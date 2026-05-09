@@ -1,0 +1,47 @@
+name: Seed-Coder-8B
+slug: seed-coder
+lab: bytedance-seed
+type: model
+date: 2025-05-08
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.03524
+  - label: GitHub
+    url: https://github.com/ByteDance-Seed/Seed-Coder
+  - label: HuggingFace collection
+    url: https://huggingface.co/collections/ByteDance-Seed/seed-coder-680de32c15ead6555c75b0e4
+description: >
+  <p>Open-source 8B code-LLM family (previously branded "Doubao-Coder"). Three
+  released variants: <strong>Base</strong> (32K), <strong>Instruct</strong> (32K),
+  and <strong>Reasoning</strong> (64K, RL-trained). The technical contribution is
+  <em>"LLMs can effectively curate code training data by themselves"</em> &mdash;
+  a model-centric data-curation pipeline that beats rule-based filters and
+  produces SOTA results among 8B open-source code models on generation,
+  completion, editing, reasoning, and SWE tasks.</p>
+
+  <p>Successor in branding (and pretraining recipe) to the closed
+  <a href="/outputs/bytedance-seed/doubao-seed-code">Doubao Seed Code</a>
+  flagship. MIT license.</p>
+tags:
+  - open-weight
+  - coding
+  - reasoning
+model:
+  architecture: dense
+  parameters: 8B
+  context_window: 65536
+  license: MIT
+  variants:
+    - name: Seed-Coder-8B-Base
+      parameters: 8B
+      notes: 32K context
+    - name: Seed-Coder-8B-Instruct
+      parameters: 8B
+      notes: 32K context
+    - name: Seed-Coder-8B-Reasoning
+      parameters: 8B
+      notes: 64K context, RL-trained
+paper:
+  arxiv: "2506.03524"
+related:
+  - doubao-seed-code

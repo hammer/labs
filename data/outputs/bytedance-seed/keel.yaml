@@ -1,0 +1,28 @@
+name: "Keel: Post-LayerNorm Is Back"
+slug: keel
+lab: bytedance-seed
+type: paper
+date: 2026-01-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.19895
+  - label: HuggingFace paper page
+    url: https://huggingface.co/papers/2601.19895
+description: >
+  <p>"Post-LayerNorm Is Back: Stable, ExpressivE, and Deep." Revisits Post-LN
+  Transformers &mdash; previously abandoned in favor of Pre-LN due to training
+  instability at scale &mdash; and attributes the failure mode specifically to
+  the ResNet-style residual path. <strong>Keel</strong> replaces the residual
+  path with a <em>Highway-style connection</em> that preserves gradient flow
+  from top to bottom layers, eliminating signal vanishing.</p>
+
+  <p>Enables stable Post-LN training at <strong>>1000 layers</strong> without
+  specialized initialization or optimization tricks, recovering Post-LN's
+  expressivity advantage. Foundational architecture work for very-deep
+  Transformers. By Chen Chen and Lai Wei (ByteDance Seed).</p>
+tags:
+  - foundational
+  - architecture
+  - scaling
+paper:
+  arxiv: "2601.19895"

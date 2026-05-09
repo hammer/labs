@@ -1,0 +1,41 @@
+name: Seed-1.6 (AdaCoT)
+slug: seed-1.6
+lab: bytedance-seed
+type: model
+date: 2025-06-12
+sources:
+  - label: Seed-1.6 product page
+    url: https://seed.bytedance.com/en/seed1_6
+  - label: "Blog: Techniques used in Seed1.6"
+    url: https://seed.bytedance.com/en/blog/introduction-to-techniques-used-in-seed1-6
+description: >
+  <p>General-purpose multimodal model series introducing
+  <strong>Adaptive Chain-of-Thought (AdaCoT)</strong> &mdash; a reward-shaped RL
+  recipe that teaches the model to <em>decide</em> whether to think before
+  answering, instead of always thinking (like a reasoning model) or never
+  thinking (like a base chat model). Three published variants:</p>
+
+  <ul>
+    <li><strong>Seed-1.6 (AdaCoT)</strong>: model auto-decides per-prompt; matches
+    Full-CoT effectiveness while compressing CoT length significantly</li>
+    <li><strong>Seed-1.6-Thinking</strong>: always thinks; reasoning-mode peer of
+    Seed1.5-Thinking with VLM capabilities</li>
+    <li><strong>Seed-1.6-FullCoT / NoCoT</strong>: ablations used to measure the
+    AdaCoT trade-off; FullCoT triggers thinking ~90&ndash;100% of the time on
+    AIME / BeyondAIME and matches Thinking-mode quality</li>
+  </ul>
+
+  <p>256K context, multimodal (text + image), GUI-interaction-trained. Served
+  via the Volcengine API. Not currently scored on Artificial Analysis.</p>
+tags:
+  - frontier
+  - reasoning
+  - multimodal
+  - agentic
+model:
+  context_window: 256000
+related:
+  - seed1.5-thinking
+  - seed1.5-vl
+  - seed1.8
+  - doubao-seed-2.0

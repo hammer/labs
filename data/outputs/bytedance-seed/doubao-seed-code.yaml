@@ -1,0 +1,35 @@
+name: Doubao Seed Code
+slug: doubao-seed-code
+lab: bytedance-seed
+type: model
+date: 2025-11-15
+flagship: true
+sources:
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/doubao-seed-code
+  - label: ByteDance Seed announcement
+    url: https://seed.bytedance.com/en/models
+description: >
+  <p>ByteDance's frontier coding-focused reasoning model, released November 2025.
+  Reasoning model with extended chain-of-thought; multimodal text+image input,
+  text output; <strong>256K context window</strong>. Free tier on the Volcengine
+  API.</p>
+
+  <p><strong>AA Intelligence Index v4.0: 34</strong> &mdash; the highest-scoring
+  ByteDance model on Artificial Analysis as of May 2026, well above
+  <a href="/outputs/bytedance-seed/seed-oss">Seed-OSS-36B</a> (25). Successor to
+  the open-source <a href="/outputs/bytedance-seed/seed-coder">Seed-Coder-8B</a>
+  family. Proprietary &mdash; ByteDance Seed has not disclosed parameter count or
+  architecture details.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+  - agentic
+model:
+  context_window: 256000
+  intelligence_index: 34
+  intelligence_index_version: "AA v4.0"
+related:
+  - seed-coder
+  - doubao-seed-2.0
