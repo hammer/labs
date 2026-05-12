@@ -83,6 +83,7 @@ When searching for news about a lab, check sources in this order. Prefer higher-
 10. **LatePost (晚点)** — Chinese investigative tech (often breaks stories first)
 11. **Reuters** — global AI corporate news, regulation
 12. **36Kr (36氪)** — premier Chinese startup news
+13. **QbitAI (量子位)** — leading Chinese AI news aggregator at [qbitai.com](https://www.qbitai.com/); dense daily coverage of Chinese-lab model releases, funding, and papers. Aggregator — cross-check upstream before citing. Translate via `src/pages/articles/` (see step 3) when adding as a news entry.
 
 **Tier 3 — Region or event-triggered:**
 13. **Nikkei Asia** — Japan/Korea lab coverage

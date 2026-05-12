@@ -161,6 +161,7 @@ When searching for news about labs, prioritize these sources in order. Tier 1 so
 - **LatePost (晚点)** — Chinese-language investigative tech; frequently breaks stories about lab internals
 - **Reuters** — global corporate AI news, IP/trade disputes, regulation
 - **36Kr (36氪)** — premier Chinese startup news; breaks funding rounds before Bloomberg
+- **QbitAI (量子位)** — leading Chinese-language AI news aggregator at [qbitai.com](https://www.qbitai.com/); dense daily coverage of model releases, funding, and papers across Chinese labs. Aggregator rather than primary source, so cross-check claims with the upstream announcement before citing. Translate to English via the `src/pages/articles/` pattern when adding as a news entry.
 
 **Tier 3 — Check when relevant (region/event-triggered):**
 - **Nikkei Asia** — best for Japan/Korea lab coverage (PFN, NII, SB Intuitions, Naver)
