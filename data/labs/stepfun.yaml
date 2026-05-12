@@ -77,6 +77,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Heung-Yeung_Shum1
 news:
+  - title: "Step-Audio-R1.1 (Realtime) Tops Big Bench Audio at 96.4%, Surpassing Grok Voice Agent"
+    url: https://x.com/ArtificialAnlys/status/2012006066339581958
+    source: Artificial Analysis
+    date: 2026-05-09
   - title: "StepFun Unwinding Offshore Structure to Pave Way for HK IPO at Up to $10B"
     url: https://finance.yahoo.com/markets/stocks/articles/chinese-ai-startup-stepfun-unwind-065550401.html
     source: Reuters

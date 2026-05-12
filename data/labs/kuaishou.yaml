@@ -52,6 +52,11 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Kun_Gai1
+news:
+  - title: "Kuaishou Plans to Spin Off Kling AI Video Unit at \\$20B Valuation; Tencent in Talks for \\$2B Pre-IPO Round"
+    url: https://www.theinformation.com/articles/chinas-kuaishou-plans-spin-kling-ai-video-unit-20-billion-valuation
+    source: The Information
+    date: 2026-05-12
 tags:
   - multimodal
   - generation

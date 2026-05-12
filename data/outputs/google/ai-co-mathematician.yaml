@@ -1,0 +1,45 @@
+name: AI Co-Mathematician
+slug: ai-co-mathematician
+lab: google
+type: paper
+date: 2026-05-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.06651
+  - label: DeepMind blog (Gemini Deep Think for math/science)
+    url: https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/
+description: >
+  <p>"AI Co-Mathematician: Accelerating Mathematicians with Agentic AI."
+  Agentic-AI workbench from Google DeepMind that lets working mathematicians
+  interleave AI agents into ideation, literature search, computational
+  exploration, theorem proving, and theory building &mdash; backed by an
+  asynchronous, stateful workspace coordinated by a top-level project
+  coordinator across parallel research workstreams.</p>
+
+  <p>Sets a new SOTA of <strong>48% on FrontierMath Tier 4</strong>, the
+  Epoch AI benchmark of 50 research-level problems designed to surpass Tier 3
+  in difficulty. In a documented use case, Oxford's Marc Lackenby used the
+  system to resolve <strong>Problem 21.10 from the Kourovka Notebook</strong>
+  in group theory after a reviewer agent flagged a flaw in the first proof
+  attempt.</p>
+
+  <p>By Daniel Zheng, Ingrid von Glehn, Yori Zwols, Lars Buesing,
+  Martin Wattenberg, Alex Davies, Pushmeet Kohli, and collaborators
+  (Google DeepMind).</p>
+tags:
+  - reasoning
+  - agentic
+  - science
+paper:
+  arxiv: "2605.06651"
+  authors:
+    - Daniel Zheng
+    - Ingrid von Glehn
+    - Yori Zwols
+    - Lars Buesing
+    - Martin Wattenberg
+    - Alex Davies
+    - Pushmeet Kohli
+related:
+  - alphaproof
+  - alphaevolve

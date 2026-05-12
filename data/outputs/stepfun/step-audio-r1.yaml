@@ -26,6 +26,8 @@ model:
       notes: Released Nov 27, 2025
     - name: Step-Audio-R1.1
       notes: Released Jan 14, 2026. Dual-Brain Architecture for real-time spoken dialogue.
+    - name: Step-Audio-R1.1 (Realtime)
+      notes: "Top-ranked speech-to-speech model on AA's Big Bench Audio (96.4%, May 2026), ahead of xAI's Grok Voice Agent."
 paper:
   arxiv: "2511.15848"
 notes: arXiv submission Nov 19, 2025. Model weights released Nov 27, 2025.
