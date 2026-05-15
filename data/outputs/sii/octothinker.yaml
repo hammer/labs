@@ -1,0 +1,51 @@
+name: OctoThinker
+slug: octothinker
+lab: sii
+type: paper
+date: 2025-06-25
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.20512
+  - label: GitHub
+    url: https://github.com/GAIR-NLP/OctoThinker
+  - label: HuggingFace org
+    url: https://huggingface.co/OctoThinker
+description: >
+  <p>"OctoThinker: Mid-training Incentivizes Reinforcement Learning Scaling."
+  Studies why Llama-family base models historically respond worse to RL
+  post-training than Qwen-family bases, and shows the gap can be closed with
+  the right <strong>mid-training recipe</strong> &mdash; the slice of
+  pretraining between the base run and SFT/RL. Two findings drive the result:
+  (1) high-quality mathematical corpora boost both base eval and RL gains; and
+  (2) a <em>Stable-then-Decay</em> schedule (200B constant-rate tokens followed
+  by 20B decay-phase tokens) is the most effective curriculum.</p>
+
+  <p>Releases the <strong>MegaMath-Web-Pro-Max</strong> corpus (70B+ tokens of
+  curated math) and the <strong>OctoThinker</strong> open-weight family at
+  1B / 3B / 8B sizes (Long and Hybrid variants, Base and Zero each) built on
+  Llama-3.2 bases. From <a href="https://plms.ai/">GAIR Lab</a> at SII /
+  <a href="/labs/sii">Shanghai Innovation Institute</a>, by Zengzhi Wang,
+  Fan Zhou, Xuefeng Li, and <a href="http://pfliu.com/">Pengfei Liu</a>.</p>
+tags:
+  - reasoning
+  - training
+  - open-weight
+  - foundational
+model:
+  variants:
+    - name: OctoThinker-1B-Long-Base / Long-Zero / Hybrid-Base / Hybrid-Zero
+      parameters: 1B
+      notes: Built on meta-llama/Llama-3.2-1B
+    - name: OctoThinker-3B-Long-Base / Long-Zero / Hybrid-Base / Hybrid-Zero
+      parameters: 3B
+      notes: Built on meta-llama/Llama-3.2-3B
+    - name: OctoThinker-8B-Long-Base / Hybrid-Base
+      parameters: 8B
+      notes: 8B parameter variants for the recipe
+paper:
+  arxiv: "2506.20512"
+  authors:
+    - Zengzhi Wang
+    - Fan Zhou
+    - Xuefeng Li
+    - Pengfei Liu
