@@ -1,0 +1,37 @@
+name: "TWN: Think When Needed"
+slug: twn
+lab: alibaba
+type: paper
+date: 2026-05-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.14448
+  - label: Paper (HTML)
+    url: https://arxiv.org/html/2605.14448
+description: >
+  <p>"Think When Needed: Adaptive Reasoning-Driven Multimodal Embeddings with a
+  Dual-LoRA Architecture." Proposes a <strong>dual-LoRA</strong> setup that
+  attaches a reasoning adapter and an embedding adapter to a shared frozen
+  backbone, with gradients <em>detached at the interface</em> to avoid the
+  reasoning/embedding conflict that joint multi-task training usually introduces.
+  A self-supervised routing gate then decides per-input whether to spend
+  chain-of-thought tokens before producing the embedding.</p>
+
+  <p>Adds only <strong>3&ndash;5% parameters</strong> over the backbone and uses
+  up to <strong>50% fewer reasoning tokens</strong> than always-generating mode.
+  Reports SOTA on the 78-task <strong>MMEB-V2</strong> multimodal-embedding
+  benchmark. By Longxiang Zhang, Weilong Dai, Guanghao Zhang, Hao Jiang, and
+  Pipei Huang (Alibaba Group).</p>
+tags:
+  - multimodal
+  - reasoning
+  - embeddings
+  - efficiency
+paper:
+  arxiv: "2605.14448"
+  authors:
+    - Longxiang Zhang
+    - Weilong Dai
+    - Guanghao Zhang
+    - Hao Jiang
+    - Pipei Huang
