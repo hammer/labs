@@ -28,6 +28,8 @@ model:
   parameters: 32B
   context_window: 128000
   intelligence_index: 24
+  openness_index: 30.6
+  openness_index_version: "AA Openness Index v1.0"
   variants:
     - name: HyperCLOVAX-SEED-Think-14B
       parameters: 14B

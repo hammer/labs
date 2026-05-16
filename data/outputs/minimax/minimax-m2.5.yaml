@@ -27,6 +27,8 @@ tags:
 model:
   architecture: moe
   intelligence_index: 42
+  openness_index: 27.8
+  openness_index_version: "AA Openness Index v1.0"
   parameters: 229B
 related:
   - minimax-m2.1

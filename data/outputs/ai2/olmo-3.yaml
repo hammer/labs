@@ -37,6 +37,8 @@ model:
   parameters: 32B
   context_window: 65536
   intelligence_index: 14
+  openness_index: 88.9
+  openness_index_version: "AA Openness Index v1.0"
   training_tokens: 5.9T
   variants:
     - name: OLMo 3 7B

@@ -20,6 +20,8 @@ description: >
 model:
   intelligence_index: 50
   intelligence_index_version: "AA v4.0"
+  openness_index: 22.2
+  openness_index_version: "AA Openness Index v1.0"
 tags:
   - agentic
   - coding

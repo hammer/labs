@@ -24,6 +24,8 @@ model:
   active_parameters: 23B
   intelligence_index: 32
   intelligence_index_version: "AA v4.0"
+  openness_index: 27.8
+  openness_index_version: "AA Openness Index v1.0"
 paper:
   arxiv: "2601.01739"
 related:

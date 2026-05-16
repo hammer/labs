@@ -36,6 +36,8 @@ outputs:
       parameters: 1T
       active_parameters: 50B
       intelligence_index: 16
+      openness_index: 44.4
+      openness_index_version: "AA Openness Index v1.0"
   - name: "Ling 2.0: Every Activation Boosted"
     type: paper
     date: 2025-10-25

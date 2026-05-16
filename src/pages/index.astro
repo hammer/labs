@@ -69,6 +69,8 @@ const dimensions: FilterDimension[] = [
     excludeMissing: true, format: (n) => `${n}B` },
   { key: 'intelligence', label: 'Intelligence', kind: 'range', rowAttr: 'intelligence',
     excludeMissing: true, format: (n) => String(n) },
+  { key: 'openness', label: 'Openness', kind: 'range', rowAttr: 'openness',
+    excludeMissing: true, format: (n) => `${n.toFixed(0)}/100` },
   { key: 'outputs', label: 'Outputs', kind: 'range', rowAttr: 'outputs',
     format: (n) => String(n) },
 ];
@@ -94,6 +96,7 @@ const dimensions: FilterDimension[] = [
         <th class="col-valuation sortable" data-sort="valuation">Valuation</th>
         <th class="col-largest sortable" data-sort="largest">Scale</th>
         <th class="col-intelligence sortable" data-sort="intelligence">Intelligence</th>
+        <th class="col-openness sortable" data-sort="openness">Openness</th>
         <th class="col-outputs sortable" data-sort="outputs">Outputs</th>
       </tr>
     </thead>
@@ -118,7 +121,8 @@ const dimensions: FilterDimension[] = [
               data-name={lab.name} data-region={lab.region} data-type={lab.type ?? 'other'}
               data-founded={founded} data-ipo={lab.ipo?.year ?? 0} data-ipo-status={ipoStatus}
               data-valuation={valNum}
-              data-largest={largest?.paramsB ?? 0} data-intelligence={intel?.score ?? 0} data-outputs={count}>
+              data-largest={largest?.paramsB ?? 0} data-intelligence={intel?.score ?? 0}
+              data-openness={intel?.openness ?? 0} data-outputs={count}>
             <td class="col-rank"></td>
             <td class="col-name">
               <span class="lab-name-inner">
@@ -157,6 +161,13 @@ const dimensions: FilterDimension[] = [
                 <a href={`/outputs/${intel.labSlug}/${intel.slug}`} class="col-link" onclick="event.stopPropagation()">
                   {intel.score}
                 </a>
+              ) : '—'}
+            </td>
+            <td class="col-openness">
+              {intel?.openness !== undefined ? (
+                <span title={`${intel.opennessVersion ?? 'AA Openness Index'}; ${intel.openness.toFixed(2)}/100 (highest-AAII labindex model that AA has scored on AAOI)`}>
+                  {intel.openness.toFixed(0)}
+                </span>
               ) : '—'}
             </td>
             <td class="col-outputs">{count}</td>
@@ -377,7 +388,7 @@ const dimensions: FilterDimension[] = [
     const sorted = [...allRows].sort((a, b) => {
       const av = a.dataset[key] ?? '';
       const bv = b.dataset[key] ?? '';
-      if (key === 'founded' || key === 'ipo' || key === 'valuation' || key === 'largest' || key === 'intelligence' || key === 'outputs') {
+      if (key === 'founded' || key === 'ipo' || key === 'valuation' || key === 'largest' || key === 'intelligence' || key === 'openness' || key === 'outputs') {
         const diff = parseVal(av) - parseVal(bv);
         return sortAsc ? diff : -diff;
       }
@@ -561,6 +572,7 @@ const dimensions: FilterDimension[] = [
   .col-valuation,
   .col-largest,
   .col-intelligence,
+  .col-openness,
   .col-outputs {
     text-align: right;
     white-space: nowrap;
@@ -573,6 +585,7 @@ const dimensions: FilterDimension[] = [
   th.col-valuation,
   th.col-largest,
   th.col-intelligence,
+  th.col-openness,
   th.col-outputs {
     text-align: right;
   }

@@ -27,6 +27,8 @@ outputs:
     model:
       architecture: moe
       intelligence_index: 24
+      openness_index: 44.4
+      openness_index_version: "AA Openness Index v1.0"
   - name: "Scaling Embeddings Outperforms Scaling Experts in Language Models"
     type: paper
     date: 2026-01-29

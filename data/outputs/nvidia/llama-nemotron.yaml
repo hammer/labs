@@ -40,6 +40,8 @@ model:
   base_model: llama-3.1
   context_window: 128000
   intelligence_index: 15
+  openness_index: 52.8
+  openness_index_version: "AA Openness Index v1.0"
   variants:
     - name: Llama-3.1-Nemotron-Ultra-253B
       notes: 253B, derived from Llama 3.1 405B via NAS

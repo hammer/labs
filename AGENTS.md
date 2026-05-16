@@ -243,6 +243,22 @@ Rule of thumb: the top-level number, the file slug, and the primary AA URL shoul
 - Provider: `https://artificialanalysis.ai/providers/<provider>`
 - Leaderboard: `https://artificialanalysis.ai/leaderboards/models` — best for surveying many models at once
 
+### Artificial Analysis Openness Index
+
+The `openness_index` field records a model's score on [AA's Openness Index](https://artificialanalysis.ai/evaluations/artificial-analysis-openness-index), a composite of model availability (weights access + commercial license) and transparency (pre/post training data, methodology, code). Score is 0–100, always a multiple of 1/18 ≈ 5.56 — we store the value rounded to one decimal. Always set the sibling `openness_index_version` (currently `"AA Openness Index v1.0"`).
+
+```yaml
+model:
+  openness_index: 44.4
+  openness_index_version: "AA Openness Index v1.0"
+```
+
+**Per-checkpoint rule.** AA scores AAOI on individual checkpoints; the value here MUST come from the same AA model entry whose `intelligence_index` we recorded — *not* the family's max openness. E.g., if `intelligence_index` is the score for `qwen3-vl-32b-reasoning`, then `openness_index` is AAOI's number for `qwen3-vl-32b-reasoning` too (50), not the higher value some other Qwen3 variant has.
+
+**Coverage gap.** AAOI v1.0 covers ~234 models; AAII covers 357+. Many of labindex's current-checkpoint entries (`claude-opus-4-7`, `gpt-5-5`, `gemini-3-1-pro-preview`, `nova-2-0-pro`) aren't in AAOI yet — AAOI tracks older snapshots. Leave `openness_index` unset in that case; the home page Openness column falls back to the highest-AAII labindex model that *does* have an AAOI (see `getTopIntelligence` in `src/data/loader.ts`).
+
+**Backfill workflow.** Run `npm run fetch-aa-openness` (or `npm run fetch-aa-openness -- --dry-run`). The script pulls AA's openness leaderboard via its React Server Component endpoint (one request, full 234-record dataset), matches each labindex output's AA URL slug, and writes the score+version into the YAML. It also lists slugs that have an AA URL but no AAOI entry — those are the manual-attention cases.
+
 ### Canonical Identifiers
 When adding new outputs, prioritize collecting:
 - **arXiv:** Paper IDs (e.g., `2412.19437`)

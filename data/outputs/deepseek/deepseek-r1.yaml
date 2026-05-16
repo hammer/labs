@@ -26,6 +26,8 @@ tags:
 model:
   architecture: moe
   intelligence_index: 27
+  openness_index: 50
+  openness_index_version: "AA Openness Index v1.0"
   parameters: 671B
   active_parameters: 37B
   variants:

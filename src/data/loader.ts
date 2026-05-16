@@ -219,14 +219,44 @@ export function getLargestModel(labSlug: string): LargestModel | null {
   return best;
 }
 
-/** Get the highest intelligence_index score across all outputs for a lab */
-export function getTopIntelligence(labSlug: string): { score: number; name: string; slug: string; labSlug: string } | null {
-  const outputs = getOutputsForLab(labSlug);
-  let best: { score: number; name: string; slug: string; labSlug: string } | null = null;
+interface TopIntelligence {
+  score: number;
+  name: string;
+  slug: string;
+  labSlug: string;
+  openness?: number;
+  opennessVersion?: string;
+}
 
-  function check(score: number | undefined, displayName: string, outputSlug: string, outLabSlug: string) {
-    if (score && (!best || score > best.score)) {
-      best = { score, name: displayName, slug: outputSlug, labSlug: outLabSlug };
+/**
+ * Get the highest intelligence_index score across all outputs for a lab.
+ * The result also surfaces an openness reading: per the rule in AGENTS.md,
+ * we pick the highest-AAII model that also has an openness_index set
+ * ("Option C" — see issue #42). AA's openness coverage drifts behind the
+ * latest AAII checkpoints, so always preferring the absolute top-AAII would
+ * leave the openness slot empty for many labs.
+ */
+export function getTopIntelligence(labSlug: string): TopIntelligence | null {
+  const outputs = getOutputsForLab(labSlug);
+  let topAaii: TopIntelligence | null = null;
+  let topWithOpenness: TopIntelligence | null = null;
+
+  function check(
+    score: number | undefined,
+    openness: number | undefined,
+    opennessVersion: string | undefined,
+    displayName: string,
+    outputSlug: string,
+    outLabSlug: string,
+  ) {
+    if (!score) return;
+    const entry: TopIntelligence = {
+      score, name: displayName, slug: outputSlug, labSlug: outLabSlug,
+      openness, opennessVersion,
+    };
+    if (!topAaii || score > topAaii.score) topAaii = entry;
+    if (openness !== undefined && (!topWithOpenness || score > topWithOpenness.score)) {
+      topWithOpenness = entry;
     }
   }
 
@@ -237,16 +267,25 @@ export function getTopIntelligence(labSlug: string): { score: number; name: stri
     if (isGrouped(output)) {
       for (const sub of output.outputs) {
         if (sub.model) {
-          check(sub.model.intelligence_index, baseName, oSlug, oLab);
+          check(sub.model.intelligence_index, sub.model.openness_index, sub.model.openness_index_version, baseName, oSlug, oLab);
         }
       }
     } else {
       if (output.model) {
-        check(output.model.intelligence_index, baseName, oSlug, oLab);
+        check(output.model.intelligence_index, output.model.openness_index, output.model.openness_index_version, baseName, oSlug, oLab);
       }
     }
   }
-  return best;
+
+  // The intelligence slot is anchored on the absolute top-AAII model;
+  // the openness slot pulls from whichever AAII-scored model happens to
+  // also have an AAOI value (may or may not be the same row).
+  if (!topAaii) return null;
+  return {
+    ...topAaii,
+    openness: topWithOpenness?.openness,
+    opennessVersion: topWithOpenness?.opennessVersion,
+  };
 }
 
 export function getAllNewsChronological(): NewsItem[] {

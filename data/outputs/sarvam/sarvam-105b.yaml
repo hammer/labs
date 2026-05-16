@@ -27,5 +27,7 @@ model:
   active_parameters: 10.3B
   context_window: 128000
   intelligence_index: 18
+  openness_index: 38.9
+  openness_index_version: "AA Openness Index v1.0"
 related:
   - sarvam-30b

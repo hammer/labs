@@ -34,6 +34,8 @@ outputs:
       parameters: 1T
       active_parameters: 32B
       intelligence_index: 26
+      openness_index: 44.4
+      openness_index_version: "AA Openness Index v1.0"
   - name: "Kimi K2 Tech Report: Open Agentic Intelligence"
     type: paper
     date: 2025-07-28

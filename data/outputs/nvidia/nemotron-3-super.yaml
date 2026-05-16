@@ -38,6 +38,8 @@ model:
   context_window: 1000000
   intelligence_index: 36
   intelligence_index_version: "AA v4.0"
+  openness_index: 83.3
+  openness_index_version: "AA Openness Index v1.0"
 paper:
   arxiv: "2512.20856"
 related:

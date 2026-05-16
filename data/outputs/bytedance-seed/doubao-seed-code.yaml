@@ -30,6 +30,8 @@ model:
   context_window: 256000
   intelligence_index: 34
   intelligence_index_version: "AA v4.0"
+  openness_index: 11.1
+  openness_index_version: "AA Openness Index v1.0"
 related:
   - seed-coder
   - doubao-seed-2.0

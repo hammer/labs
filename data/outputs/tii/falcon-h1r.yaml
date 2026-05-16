@@ -30,6 +30,8 @@ model:
   parameters: 7B
   context_window: 256000
   intelligence_index: 16
+  openness_index: 44.4
+  openness_index_version: "AA Openness Index v1.0"
 paper:
   arxiv: "2601.02346"
 related:

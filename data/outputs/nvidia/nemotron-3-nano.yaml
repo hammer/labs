@@ -37,6 +37,8 @@ model:
   active_parameters: 3.5B
   context_window: 1000000
   intelligence_index: 24
+  openness_index: 83.3
+  openness_index_version: "AA Openness Index v1.0"
   training_tokens: 25T
   variants:
     - name: Nemotron 3 Nano 30B-A3B

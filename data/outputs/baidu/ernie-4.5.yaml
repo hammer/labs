@@ -29,6 +29,8 @@ tags:
 model:
   architecture: moe
   intelligence_index: 15
+  openness_index: 55.6
+  openness_index_version: "AA Openness Index v1.0"
   variants:
     - name: ERNIE-4.5-VL-424B-A47B
       parameters: 424B

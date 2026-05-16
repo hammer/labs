@@ -31,6 +31,8 @@ model:
   context_window: 512000
   intelligence_index: 25
   intelligence_index_version: "AA v4.0"
+  openness_index: 44.4
+  openness_index_version: "AA Openness Index v1.0"
   training_tokens: 12T
   license: Apache 2.0
 related:

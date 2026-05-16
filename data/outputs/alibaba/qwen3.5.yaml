@@ -43,6 +43,8 @@ outputs:
       languages: 201
       intelligence_index: 45
       intelligence_index_version: "AA v4.0"
+      openness_index: 38.9
+      openness_index_version: "AA Openness Index v1.0"
       variants:
         - name: Qwen3.5-397B-A17B
           parameters: 397B

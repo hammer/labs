@@ -19,6 +19,8 @@ model:
   context_window: 128000
   intelligence_index: 21
   intelligence_index_version: "AA v4.0"
+  openness_index: 11.1
+  openness_index_version: "AA Openness Index v1.0"
 related:
   - mistral-medium-3.5
   - ministral-3

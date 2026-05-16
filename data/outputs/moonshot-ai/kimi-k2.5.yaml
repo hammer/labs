@@ -36,6 +36,8 @@ outputs:
       architecture: moe
       active_parameters: 32B
       intelligence_index: 47
+      openness_index: 33.3
+      openness_index_version: "AA Openness Index v1.0"
       base_model: kimi-k2
   - name: "Kimi K2.5: Visual Agentic Intelligence"
     type: paper

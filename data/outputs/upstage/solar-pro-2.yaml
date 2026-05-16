@@ -29,6 +29,8 @@ model:
   parameters: 31B
   context_window: 64000
   intelligence_index: 14
+  openness_index: 11.1
+  openness_index_version: "AA Openness Index v1.0"
 related:
   - solar-10.7b
   - solar-pro-3

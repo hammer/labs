@@ -33,6 +33,8 @@ outputs:
     model:
       architecture: moe
       intelligence_index: 20
+      openness_index: 44.4
+      openness_index_version: "AA Openness Index v1.0"
       variants:
         - name: Qwen3-Coder-480B-A35B-Instruct
           parameters: 480B

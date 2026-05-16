@@ -24,6 +24,8 @@ model:
   architecture: dense
   parameters: 32B
   intelligence_index: 12
+  openness_index: 27.8
+  openness_index_version: "AA Openness Index v1.0"
   variants:
     - name: EXAONE-4.0-1.2B
       parameters: 1.2B

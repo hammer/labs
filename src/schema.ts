@@ -94,6 +94,12 @@ const ModelDetailsSchema = z.object({
   // the version makes it easy to spot stale entries on the next sweep.
   // Use the canonical AA notation, e.g. "AA v4.0".
   intelligence_index_version: z.string().optional(),
+  // AA's Openness Index — composite of model availability (weights + commercial
+  // license) and transparency (data, methodology, code). Score is 0-100, always
+  // a multiple of 1/18 ≈ 5.56. Per-checkpoint: the value here MUST come from the
+  // same AA model entry whose intelligence_index we recorded, not the family max.
+  openness_index: z.number().optional(),
+  openness_index_version: z.string().optional(),
   training_tokens: z.string().optional(),
   base_model: z.string().optional(),
   variants: z.array(ModelVariantSchema).optional(),

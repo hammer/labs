@@ -33,6 +33,8 @@ model:
   active_parameters: 9B
   intelligence_index: 11
   intelligence_index_version: "AA v4.0"
+  openness_index: 55.6
+  openness_index_version: "AA Openness Index v1.0"
   variants:
     - name: Granite 4.0 H-Small
       parameters: 32B

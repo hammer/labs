@@ -35,6 +35,8 @@ model:
   context_window: 256000
   intelligence_index: 13
   intelligence_index_version: "AA v4.0"
+  openness_index: 33.3
+  openness_index_version: "AA Openness Index v1.0"
 paper:
   arxiv: "2504.00698"
 related:
