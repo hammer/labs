@@ -16,6 +16,8 @@ sources:
     url: https://simonwillison.net/2026/Apr/24/deepseek-v4/
   - label: NIST CAISI Evaluation
     url: https://www.nist.gov/news-events/news/2026/05/caisi-evaluation-deepseek-v4-pro
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/deepseek-v4-pro
 description: >
   <p>DeepSeek's most powerful model family and the <strong>first frontier-scale model
   trained entirely on Huawei Ascend 950PR chips</strong> &mdash; zero NVIDIA/CUDA
@@ -58,6 +60,8 @@ outputs:
       context_window: 1000000
       training_tokens: 33T
       intelligence_index: 52
+      openness_index: 50
+      openness_index_version: "AA Openness Index v1.0"
   - name: DeepSeek-V4-Flash
     type: model
     date: 2026-04-24

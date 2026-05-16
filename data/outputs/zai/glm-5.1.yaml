@@ -15,6 +15,8 @@ sources:
     url: https://docs.z.ai/guides/llm/glm-5.1
   - label: YouTube
     url: https://www.youtube.com/watch?v=T-eBZIMc_sY
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/glm-5-1
 description: >
   <p><strong>754B parameter MoE</strong> built for <strong>long-horizon agentic
   engineering</strong>. Designed to sustain optimization over hundreds of rounds and
@@ -35,5 +37,7 @@ model:
   parameters: 754B
   intelligence_index: 51
   intelligence_index_version: "AA v4.0"
+  openness_index: 44.4
+  openness_index_version: "AA Openness Index v1.0"
 related:
   - glm-5

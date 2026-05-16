@@ -7,6 +7,8 @@ sources:
     url: https://arxiv.org/abs/2509.25193
   - label: OpenRouter
     url: https://openrouter.ai/mistralai/devstral-small
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/devstral-2
 description: >
   Agentic coding model family. Devstral 2 (123B, Dec 2025) achieves
   72.2% SWE-Bench Verified. Devstral Small 2 (24B) achieves 68.0%.

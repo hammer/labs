@@ -73,6 +73,23 @@ async function main() {
     }
   }
 
+  // Warn on intelligence_index without an AA model URL in sources — the
+  // fetch-aa-openness backfill can't find the entry without it, and per
+  // AGENTS.md it should always be linked.
+  const warnings: string[] = [];
+  function hasAaUrl(sources: Array<{ url?: string }> | undefined): boolean {
+    return !!sources?.some(s => typeof s.url === 'string' && s.url.includes('artificialanalysis.ai/models/'));
+  }
+  for (const file of outputFiles) {
+    const content = parse(readFileSync(file, 'utf-8'));
+    const hasIntel =
+      content.model?.intelligence_index !== undefined ||
+      (Array.isArray(content.outputs) && content.outputs.some((o: { model?: { intelligence_index?: number } }) => o.model?.intelligence_index !== undefined));
+    if (hasIntel && !hasAaUrl(content.sources)) {
+      warnings.push(`${file}: has intelligence_index but no artificialanalysis.ai source URL`);
+    }
+  }
+
   // Check cross-references (related, base_model)
   for (const file of outputFiles) {
     const content = parse(readFileSync(file, 'utf-8'));
@@ -106,6 +123,10 @@ async function main() {
 
   // --- Summary ---
   console.log(`\n${labs.size} labs, ${outputs.size} outputs validated`);
+  if (warnings.length > 0) {
+    console.warn(`\u26a0\ufe0f  ${warnings.length} warning(s):`);
+    for (const w of warnings) console.warn(`   ${w}`);
+  }
   if (errors > 0) {
     console.error(`\u274c ${errors} error(s) found`);
     process.exit(1);

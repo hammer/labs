@@ -9,6 +9,8 @@ sources:
     url: https://arxiv.org/abs/2412.08905
   - label: HuggingFace
     url: https://huggingface.co/microsoft/phi-4
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/phi-4
 description: >
   <p><strong>14B parameter</strong> dense Transformer with emphasis on synthetic data
   for complex reasoning. Surpasses its teacher model on STEM benchmarks. Also released
@@ -23,6 +25,8 @@ model:
   architecture: dense
   parameters: 14B
   intelligence_index: 10
+  openness_index: 50
+  openness_index_version: "AA Openness Index v1.0"
   variants:
     - name: Phi-4
       parameters: 14B

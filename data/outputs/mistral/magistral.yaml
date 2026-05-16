@@ -11,6 +11,8 @@ sources:
     url: https://huggingface.co/mistralai/Magistral-Small-2506
   - label: OpenRouter
     url: https://openrouter.ai/mistralai/magistral-medium
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/magistral-small-2509
 description: >
   <p>Reasoning model family trained with <strong>pure reinforcement
   learning</strong> — no distillation from external reasoning models.
@@ -27,5 +29,7 @@ model:
   architecture: dense
   intelligence_index: 27
   intelligence_index_version: "AA v4.0"
+  openness_index: 50
+  openness_index_version: "AA Openness Index v1.0"
 paper:
   arxiv: "2506.10910"

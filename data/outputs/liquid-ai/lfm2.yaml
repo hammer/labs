@@ -11,6 +11,8 @@ sources:
     url: https://huggingface.co/LiquidAI
   - label: OpenRouter
     url: https://openrouter.ai/liquid/lfm2-24b-a2b
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/lfm2-24b-a2b
 description: >
   <p>Efficient foundation models using a hybrid backbone combining <strong>gated short
   convolutions with grouped query attention</strong>. 350M to 24B parameters (MoE,
@@ -28,6 +30,8 @@ model:
   parameters: 24B
   active_parameters: 2.3B
   intelligence_index: 10
+  openness_index: 27.8
+  openness_index_version: "AA Openness Index v1.0"
   variants:
     - name: LFM2-350M
       parameters: 350M

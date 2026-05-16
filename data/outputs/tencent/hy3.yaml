@@ -11,6 +11,8 @@ sources:
     url: https://github.com/Tencent-Hunyuan/Hy3-preview
   - label: HuggingFace
     url: https://huggingface.co/tencent/Hy3-preview
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/hy3
 description: >
   <p>First flagship model built under Chief AI Scientist <strong><a
   href="/people/yao-shunyu">Yao Shunyu</a></strong> (former OpenAI researcher,
@@ -39,5 +41,7 @@ model:
   context_window: 256000
   intelligence_index: 42
   intelligence_index_version: "AA v4.0"
+  openness_index: 33.3
+  openness_index_version: "AA Openness Index v1.0"
 related:
   - hunyuan-2.0

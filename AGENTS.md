@@ -221,6 +221,16 @@ model:
   intelligence_index_version: "AA v4.0"
 ```
 
+**Whenever you set `intelligence_index`, also add the matching AA model page to `sources`.** This is the canonical link to the AA-scored variant and the only handle the `fetch-aa-openness` script uses to map our outputs to AA's slugs — without it, the AAOI backfill silently skips the entry. Format:
+
+```yaml
+sources:
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/<aa-slug>
+```
+
+Use the slug that AA's URL actually serves. AA's slug often differs from ours: labindex `hy3` → AA `hy3`; labindex `ministral-3` → AA `ministral-3-3b`; labindex `jamba` → AA `jamba-1-7-large`. HEAD the URL before committing.
+
 **Pick the right score within a single model's family.** Many models have multiple AA entries representing modes (base, reasoning, adaptive, max effort). Use the **highest mode score**, link the AA source to that mode's page:
 
 - `claude-opus-4-6` (46) vs `claude-opus-4-6-adaptive` (53) — use 53

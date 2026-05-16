@@ -11,6 +11,8 @@ sources:
     url: https://huggingface.co/RekaAI/reka-flash-3
   - label: OpenRouter
     url: https://openrouter.ai/rekaai/reka-flash-3
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/reka-flash-3
 description: >
   <p>Series of natively multimodal models processing text, images, video, and audio.
   <strong>Core</strong> (67B), <strong>Flash</strong> (21B), and <strong>Edge</strong>
@@ -27,6 +29,8 @@ model:
   architecture: dense
   parameters: 67B
   intelligence_index: 10
+  openness_index: 38.9
+  openness_index_version: "AA Openness Index v1.0"
   context_window: 128000
   variants:
     - name: Reka Core

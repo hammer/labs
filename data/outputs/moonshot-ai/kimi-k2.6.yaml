@@ -9,6 +9,8 @@ sources:
     url: https://www.kimi.com/blog/kimi-k2-6
   - label: OpenRouter
     url: https://openrouter.ai/moonshotai/kimi-k2.6
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/kimi-k2-6
 description: >
   <p>Moonshot AI's latest frontier model, building on the Kimi K2 family's
   <strong>1T-total / 32B-active MoE architecture</strong> with 262K token context.
@@ -34,6 +36,8 @@ model:
   context_window: 262144
   intelligence_index: 54
   intelligence_index_version: "AA v4.0"
+  openness_index: 33.3
+  openness_index_version: "AA Openness Index v1.0"
   base_model: kimi-k2
 related:
   - kimi-k2

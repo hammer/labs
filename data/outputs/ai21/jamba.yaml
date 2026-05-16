@@ -11,6 +11,8 @@ sources:
     url: https://huggingface.co/ai21labs/AI21-Jamba-1.5-Large
   - label: OpenRouter
     url: https://openrouter.ai/ai21/jamba-1.7-large
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/jamba-1-7-large
 description: >
   <p>First production-grade <strong>SSM-Transformer-MoE hybrid</strong> architecture.
   Interleaves Mamba state-space layers with Transformer attention layers, combined with
@@ -32,6 +34,8 @@ model:
   active_parameters: 94B
   context_window: 256000
   intelligence_index: 11
+  openness_index: 22.2
+  openness_index_version: "AA Openness Index v1.0"
   variants:
     - name: Jamba v0.1
       parameters: 52B
