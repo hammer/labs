@@ -146,6 +146,14 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Qihao_Zhu1
 news:
+  - title: "DeepSeek First External Funding Round Reportedly Near Close at $45–50B Valuation, Led by China's 'Big Fund III'"
+    url: https://www.scmp.com/tech/tech-trends/article/3352945/deepseek-soon-close-first-external-fundraising-us50b-valuation-sources
+    source: SCMP
+    date: 2026-05-11
+  - title: "DeepSeek in Talks for First-Ever Outside Round at $45B; Tencent + Big Fund III in Lead Group"
+    url: https://techcrunch.com/2026/05/06/deepseek-could-hit-45b-valuation-from-its-first-investment-round/
+    source: TechCrunch
+    date: 2026-05-06
   - title: "DeepSeek-V4 Released: 1.6T/49B MoE, First Frontier Model Trained Entirely on Huawei Ascend 950PR, MIT License"
     url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
     source: DeepSeek

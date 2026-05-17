@@ -1,0 +1,33 @@
+name: Cola DLM
+slug: cola-dlm
+lab: bytedance-seed
+type: paper
+date: 2026-05-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.06548
+  - label: Project page
+    url: https://hongcanguo.github.io/Cola-DLM/
+  - label: HuggingFace
+    url: https://huggingface.co/ByteDance-Seed/Cola-DLM
+description: >
+  <p>"Continuous Latent Diffusion Language Model." A hierarchical latent
+  diffusion LM that replaces token-level autoregression with continuous-latent
+  prior transport: a <strong>Text-VAE</strong> encodes tokens into continuous
+  latents, then a <strong>block-causal DiT prior under flow matching</strong>
+  generates new latents that the VAE decodes back to text. ~2B params; scales
+  to ~2000 EFLOPs of pretraining.</p>
+
+  <p>Another diffusion-LM bet from a frontier lab, complementing
+  <a href="/outputs/bytedance-seed/seed-diffusion">Seed Diffusion</a>'s
+  discrete-state approach with a continuous-latent formulation. Open code +
+  weights + checkpoints.</p>
+tags:
+  - foundational
+  - diffusion
+  - open-weight
+  - research
+paper:
+  arxiv: "2605.06548"
+related:
+  - seed-diffusion

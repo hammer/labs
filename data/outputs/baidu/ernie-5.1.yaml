@@ -1,0 +1,41 @@
+name: ERNIE 5.1
+slug: ernie-5.1
+lab: baidu
+type: model
+date: 2026-05-09
+flagship: true
+sources:
+  - label: ERNIE blog
+    url: https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/
+  - label: CnTechPost coverage
+    url: https://cntechpost.com/2026/05/09/baidu-releases-ernie-5-1-pre-training-cost-at-only-6-industry-peers/
+description: >
+  <p>Successor to <a href="/outputs/baidu/ernie-5.0">ERNIE 5.0</a>, launched at
+  Baidu Create 2026. <strong>Derived from ERNIE 5.0 via elastic sub-network
+  extraction</strong> &mdash; total params ~1/3 of 5.0, active params ~1/2 &mdash;
+  with a disaggregated fully-asynchronous RL infrastructure and a four-stage
+  post-training pipeline including Multi-Teacher On-Policy Distillation. Baidu
+  claims pre-training cost is <strong>~6% of comparable industry peers</strong>.</p>
+
+  <p>Self-reported benchmarks: <strong>AIME26 99.6</strong> (with tool use),
+  <strong>LMArena Arena Search 1223</strong> (#4 globally, #1 among Chinese
+  models), surpasses DeepSeek-V4-Pro on τ³-bench and SpreadsheetBench-Verified,
+  approaches closed-source frontier on GPQA Diamond and MMLU-Pro. Not yet scored
+  on Artificial Analysis.</p>
+tags:
+  - frontier
+  - reasoning
+  - moe
+  - agentic
+model:
+  architecture: moe
+  benchmark_scores:
+    - benchmark: AIME 2026
+      score: "99.6"
+      mode: with tool use
+    - benchmark: LMArena Arena Search
+      score: "1223"
+      mode: "#4 global, #1 Chinese"
+related:
+  - ernie-5.0
+  - ernie-x1

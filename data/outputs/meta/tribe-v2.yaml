@@ -1,0 +1,41 @@
+name: TRIBE v2 (Brain Activity Foundation Model)
+slug: tribe-v2
+lab: meta
+type: paper
+date: 2026-05-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.04326
+  - label: Meta FAIR research page
+    url: https://ai.meta.com/research/publications/a-foundation-model-of-vision-audition-and-language-for-in-silico-neuroscience/
+description: >
+  <p>"A foundation model of vision, audition, and language for in-silico
+  neuroscience." Tri-modal (video + audio + text) <strong>brain-encoding
+  foundation model</strong> that predicts high-resolution fMRI responses for
+  novel stimuli, tasks, and subjects. Trained on <strong>1,000+ hours of fMRI
+  across 720 subjects</strong>; reports several-fold accuracy improvements over
+  linear encoding baselines.</p>
+
+  <p>Recovers established findings from classic visual and neuro-linguistic
+  experiments and reveals fine-grained topography of multisensory integration
+  &mdash; positioning AI as a unifying framework for brain organization. Another
+  scientific FM in the same vein as Meta's
+  <a href="/outputs/meta/sapiens-2">Sapiens2</a> human-vision family. By
+  d'Ascoli, Rapin, Benchetrit, Brooks, Begany, Raugel, Banville, and
+  Jean-Rémi King (Meta FAIR).</p>
+tags:
+  - science
+  - multimodal
+  - foundational
+  - research
+paper:
+  arxiv: "2605.04326"
+  authors:
+    - Stéphane d'Ascoli
+    - Jérémy Rapin
+    - Yohann Benchetrit
+    - Teon Brooks
+    - Katelyn Begany
+    - Joséphine Raugel
+    - Hubert Banville
+    - Jean-Rémi King

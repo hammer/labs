@@ -107,6 +107,14 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~John_Schulman1
 news:
+  - title: "Realtime Voice API GA + gpt-realtime-2 Family (3 New Audio Models)"
+    url: https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/
+    source: OpenAI
+    date: 2026-05-14
+  - title: "GPT-5.5 Instant Becomes Default ChatGPT Model; 52.5% Fewer Hallucinated Claims vs 5.3 Instant"
+    url: https://openai.com/index/gpt-5-5-instant/
+    source: OpenAI
+    date: 2026-05-05
   - title: "GPT-Rosalind Launched for Life Sciences Drug Discovery"
     url: https://openai.com/index/gpt-rosalind/
     source: OpenAI

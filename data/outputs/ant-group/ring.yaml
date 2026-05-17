@@ -60,5 +60,27 @@ outputs:
     model:
       architecture: moe
       parameters: 1T
+  - name: Ring-2.6-1T
+    type: model
+    date: 2026-05-08
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/inclusionAI/Ring-2.6-1T
+      - label: Developer docs
+        url: https://developer.ant-ling.com/en/docs/models/ring/
+    description: >
+      Trillion-param MoE reasoning model (~63B active) with adaptive
+      <strong>high</strong> / <strong>xhigh</strong> reasoning effort. 128K → 256K
+      context (YaRN). Introduces <strong>Async RL + IcePop</strong> training:
+      asynchronous policy-sampling/parameter-update decoupling for stable
+      trillion-scale RL. Self-reported AIME26 95.83, PinchBench 87.60 (claims
+      it beats GPT-5.4 xHigh and Gemini-3.1-Pro high), GPQA Diamond 88.27,
+      ARC-AGI-V2 66.18. MIT licensed.
+    model:
+      architecture: moe
+      parameters: 1T
+      active_parameters: 63B
+      context_window: 262144
+      license: MIT
 related:
   - ling

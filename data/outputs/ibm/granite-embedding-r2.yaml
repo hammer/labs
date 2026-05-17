@@ -1,0 +1,26 @@
+name: Granite Embedding Multilingual R2
+slug: granite-embedding-r2
+lab: ibm
+type: paper
+date: 2026-05-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.13521
+description: >
+  <p>"Granite Embedding Multilingual R2 Models." Two
+  <strong>ModernBERT-based</strong> encoder embedding models &mdash; 311M (full)
+  and 97M (compact) parameters &mdash; supporting <strong>200+ languages</strong>
+  and a <strong>32K context window</strong> (64x the R1 generation). Reports
+  SOTA on multilingual retrieval and code retrieval benchmarks.</p>
+
+  <p>Refresh of IBM Granite's embedding tier targeting enterprise multilingual
+  retrieval. The 32K context jump from R1 makes the family viable as a
+  long-document embedding backbone alongside the Granite 4.x generative line.</p>
+tags:
+  - embeddings
+  - open-weight
+  - multilingual
+paper:
+  arxiv: "2605.13521"
+related:
+  - granite-4.1

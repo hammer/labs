@@ -45,6 +45,10 @@ people:
   - name: Kim Ji-won
     role: Head, AI Model Lab
 news:
+  - title: "SKT × Korean Defense Ministry Sign MOU on Applying Sovereign AI Foundation Model to Defense"
+    url: https://news.sktelecom.com/en/3048
+    source: SK Telecom
+    date: 2026-05-14
   - title: "SK Telecom Partners with Rebellions and Arm for Sovereign AI Inference Infrastructure"
     url: https://rebellions.ai/newsroom/rebellions-collaborates-with-sk-telecom-and-arm-targeting-sovereign-ai-and-telecom-infrastructure/
     source: Rebellions

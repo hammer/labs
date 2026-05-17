@@ -85,6 +85,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Luca_Soldaini1
 news:
+  - title: "OMAI Compute Cluster Goes Live — $152M NSF + Blackwell-Ultra Infrastructure for Open Science AI"
+    url: https://allenai.org/blog/omai-compute-now-live
+    source: Ai2
+    date: 2026-05-07
   - title: "Ai2 CEO Ali Farhadi Steps Down; Microsoft Hires Key Researchers"
     url: https://www.geekwire.com/2026/allen-institute-for-ai-ceo-ali-farhadi-steps-down-as-nonprofit-navigates-shifting-ai-landscape/
     source: GeekWire

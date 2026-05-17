@@ -46,6 +46,10 @@ people:
   - name: Yunju Bak
     role: Pre-training Lead (Kanana paper lead author)
 news:
+  - title: "Kakao Announces Kanana 2.5 — 150B Agent-Focused LLM at Q1 Earnings Call"
+    url: https://www.koreaherald.com/article/10732925
+    source: Korea Herald
+    date: 2026-05-07
   - title: "Kakao Open-Sources Kanana-2 Model Optimized for Agentic AI"
     url: https://www.koreatimes.co.kr/business/tech-science/20251219/kakao-open-sources-kanana-2-model-optimized-for-agentic-ai
     source: Korea Times

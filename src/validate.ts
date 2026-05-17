@@ -78,7 +78,7 @@ async function main() {
   // AGENTS.md it should always be linked.
   const warnings: string[] = [];
   function hasAaUrl(sources: Array<{ url?: string }> | undefined): boolean {
-    return !!sources?.some(s => typeof s.url === 'string' && s.url.includes('artificialanalysis.ai/models/'));
+    return !!sources?.some(s => typeof s.url === 'string' && s.url.includes('artificialanalysis.ai'));
   }
   for (const file of outputFiles) {
     const content = parse(readFileSync(file, 'utf-8'));
