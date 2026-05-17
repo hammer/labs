@@ -82,11 +82,22 @@ npm run fetch-metrics    # Fetch GitHub/HF/citation metrics
 ## Deployment
 
 Hosted on **Cloudflare Pages** (project: `labindex`, domain: `labindex.ai`)
-- To deploy: `npx wrangler pages deploy dist --project-name labindex`
-- Build command: `npm run build`
-- Always run `npm run build` before deploying to catch errors early
+
+**Recipe for ship-content-changes** (build must happen *after* commit so the `/whats-new` page sees the new commit in `git log`):
+
+```
+npm run validate
+git add -A && git commit -m "..."
+git push origin <branch>:main
+npm run build                        # build AFTER commit
+npx wrangler pages deploy dist --project-name labindex --branch main
+```
+
+**Why the order matters.** `src/data/changelog.ts` shells out to `git log` at build time to populate the `/whats-new` page. If you build *before* committing, the new commit is invisible to the build and the deployed `/whats-new` page misses the latest day. The site looks live and current on the home page but the change feed lies — a silent failure mode.
+
 - First-time setup: `npx wrangler login` then `npx wrangler pages project create labindex --production-branch main`
 - Static output only — do NOT add `@astrojs/cloudflare` adapter (that's for SSR)
+- Always pass `--branch main` to the deploy so the production alias (labindex.ai) is updated, not just a preview alias.
 
 ## Data Structure
 
