@@ -1,0 +1,80 @@
+name: Command A+
+slug: command-a-plus
+lab: cohere
+type: model
+date: 2026-05-20
+flagship: true
+sources:
+  - label: Announcement (Cohere blog)
+    url: https://cohere.com/blog/command-a-plus
+  - label: HuggingFace (BF16)
+    url: https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16
+  - label: HuggingFace (FP8)
+    url: https://huggingface.co/CohereLabs/command-a-plus-05-2026-fp8
+  - label: HuggingFace (W4A4)
+    url: https://huggingface.co/CohereLabs/command-a-plus-05-2026-w4a4
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/command-a-plus
+  - label: VentureBeat coverage
+    url: https://venturebeat.com/technology/cohere-cracks-lossless-quantization-and-native-citations-with-first-full-apache-2-0-licensed-open-model-command-a
+description: >
+  <p>Cohere's first <strong>fully Apache-2.0-licensed open model</strong> (the
+  prior <a href="/outputs/cohere/command-a">Command A</a> was CC-BY-NC).
+  <strong>218B total / 25B active MoE</strong> with vision-language input,
+  128K context (64K output), 48 languages (up from 23), agentic tool use, and
+  native citation generation via embedded grounding-span tags that link every
+  factual claim to its source document.</p>
+
+  <p>Two infrastructure stories sit alongside the model. First, the W4A4
+  variant runs on <strong>one NVIDIA B200 or two H100s</strong> at negligible
+  quality loss from BF16 &mdash; Cohere only quantizes the MoE experts to
+  4-bit while keeping attention pathways at full precision, recovered via
+  <em>quantization-aware distillation</em> (a KL-divergence distill from the
+  BF16 teacher). Second, the model is positioned for <em>sovereign critical
+  infrastructure</em> deployment, the first artifact under the combined
+  Cohere &times; <a href="https://aleph-alpha.com/">Aleph Alpha</a> banner
+  following their April 2026 merger.</p>
+
+  <p>Self-reported benchmarks: <strong>τ²-Bench Telecom 85%</strong> (up from
+  37% on Command A Reasoning), <strong>Terminal-Bench Hard 25%</strong> (up
+  from 3%), agentic QA +20% over Command A Reasoning, MMMU 75.1, MMMU-Pro 63,
+  MathVista 80.6. <strong>AA Intelligence Index v4.0: 37</strong>
+  (#29/87 models). 270 tok/s output speed.</p>
+tags:
+  - frontier
+  - open-weight
+  - moe
+  - multimodal
+  - reasoning
+  - agentic
+  - enterprise
+  - multilingual
+model:
+  architecture: moe
+  parameters: 218B
+  active_parameters: 25B
+  context_window: 128000
+  intelligence_index: 37
+  intelligence_index_version: "AA v4.0"
+  license: Apache 2.0
+  languages: 48
+  variants:
+    - name: command-a-plus-05-2026-bf16
+      notes: 16-bit; runs on 4× B200 or 8× H100
+    - name: command-a-plus-05-2026-fp8
+      notes: 8-bit; runs on 2× B200 or 4× H100
+    - name: command-a-plus-05-2026-w4a4
+      notes: 4-bit (recommended); runs on 1× B200 or 2× H100; produced via Quantization-Aware Distillation from BF16 teacher
+  benchmark_scores:
+    - benchmark: τ²-Bench Telecom
+      score: "85%"
+    - benchmark: Terminal-Bench Hard
+      score: "25%"
+    - benchmark: MMMU
+      score: "75.1"
+    - benchmark: MMMU-Pro
+      score: "63"
+    - benchmark: MathVista
+      score: "80.6"
+related:
+  - command-a

@@ -95,6 +95,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Sara_Hooker1
 news:
+  - title: "Cohere Releases Command A+ — First Full Apache-2.0 Open Model with Lossless 4-bit Quantization and Native Citations"
+    url: https://venturebeat.com/technology/cohere-cracks-lossless-quantization-and-native-citations-with-first-full-apache-2-0-licensed-open-model-command-a
+    source: VentureBeat
+    date: 2026-05-20
   - title: "Cohere Completes Merger with Germany's Aleph Alpha, Creating Transatlantic AI Champion"
     url: https://www.ft.com/content/4492c0d6-855b-4164-9ae5-f4d855a95f1e
     source: Financial Times
