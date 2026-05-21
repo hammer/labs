@@ -1,0 +1,43 @@
+name: Qwen3.7-Max-Preview
+slug: qwen3.7
+lab: alibaba
+type: model
+date: 2026-05-20
+flagship: true
+sources:
+  - label: Qwen blog
+    url: https://qwen.ai/blog?id=qwen3.7
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/qwen3-7-max
+  - label: VentureBeat (LMArena debut)
+    url: https://www.indexbox.io/blog/alibaba-unveils-qwen37-preview-ai-models-ranking-top-among-chinese-labs/
+description: >
+  <p>Alibaba's new flagship reasoning model, unveiled at the 2026 Alibaba Cloud
+  Summit on May 20 after debuting anonymously on LM Arena around May 14.
+  Proprietary, preview-only, API access via Alibaba Cloud; no open weights as
+  of release. <strong>1M token context</strong> with always-on extended-thinking
+  reasoning. Successor to <a href="/outputs/alibaba/qwen3.6-plus">Qwen3.6-Plus</a>
+  in the closed-flagship slot.</p>
+
+  <p><strong>AA Intelligence Index v4.0: 57</strong> (#7 of 150 models, #1
+  among Chinese labs as of May 2026; up 5 points from Qwen3.6-Max-Preview's 52).
+  LM Arena text Elo ~<strong>1475</strong> (#13 overall), top-10 on math and
+  coding subleaderboards. Pricing: $2.50 per 1M input / $7.50 per 1M output
+  tokens. Verbose by design &mdash; 97M output tokens to score the AA index
+  vs a 36M-token median, consistent with the lab's pitch of long-horizon
+  agentic execution (claims up to 35-hour autonomous runs and 1000+ tool
+  calls per task).</p>
+
+  <p>No technical report or arXiv ID at launch.</p>
+tags:
+  - frontier
+  - reasoning
+  - agentic
+model:
+  context_window: 1000000
+  intelligence_index: 57
+  intelligence_index_version: "AA v4.0"
+related:
+  - qwen3.6-plus
+  - qwen3.6-open
+  - qwen3.5
