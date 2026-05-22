@@ -1,0 +1,59 @@
+name: WebWorld
+slug: webworld
+lab: alibaba
+type: model
+date: 2026-02-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.14721
+  - label: GitHub
+    url: https://github.com/QwenLM/WebWorld
+  - label: HuggingFace collection
+    url: https://huggingface.co/Qwen/WebWorld-32B
+  - label: Dataset
+    url: https://huggingface.co/datasets/Qwen/WebWorldData
+description: >
+  <p>Open <strong>web world model</strong> for training and evaluating browser
+  agents: predicts next-page state given the current state and a candidate
+  action. Three sizes (8B / 14B / 32B) fine-tuned on Qwen3 bases over
+  <strong>1M+ real-world web interaction trajectories</strong>, supporting
+  five state representations (A11y Tree, HTML, XML, Markdown, natural
+  language). Supports long-horizon (30+ step) trajectory simulation with
+  CoT-activated transition prediction.</p>
+
+  <p>Intrinsic (WebWorld-Bench): Factuality 71.0, Web Turing 45.6. When used
+  for agent training, downstream gains: <strong>+9.9% on MiniWob++</strong>,
+  <strong>+10.9% on WebArena</strong>. Cross-domain generalization to GUI
+  desktop (+0.383), code (+0.249), and game environments (+0.220) &mdash; the
+  world model abstraction transfers beyond browser tasks. Apache 2.0.</p>
+
+  <p>Model weights re-released on HuggingFace May 8, 2026.</p>
+tags:
+  - agentic
+  - browser-agent
+  - open-weight
+  - foundational
+model:
+  architecture: dense
+  parameters: 32B
+  license: Apache 2.0
+  base_model: qwen3
+  variants:
+    - name: WebWorld-8B
+      parameters: 8B
+      notes: Fast simulation tier; built on Qwen3-8B
+    - name: WebWorld-14B
+      parameters: 14B
+      notes: Built on Qwen3-14B
+    - name: WebWorld-32B
+      parameters: 32B
+      notes: Highest fidelity; built on Qwen3-32B
+  benchmark_scores:
+    - benchmark: WebWorld-Bench Factuality
+      score: "71.0"
+    - benchmark: WebWorld-Bench Web Turing
+      score: "45.6"
+paper:
+  arxiv: "2602.14721"
+related:
+  - qwen3
