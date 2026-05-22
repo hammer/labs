@@ -1,0 +1,29 @@
+name: Antigravity 2.0
+slug: antigravity
+lab: google
+type: model
+date: 2026-05-19
+sources:
+  - label: TechCrunch coverage
+    url: https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/
+  - label: Google developers blog (CLI transition)
+    url: https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/
+  - label: MarkTechPost coverage
+    url: https://www.marktechpost.com/2026/05/19/google-launches-antigravity-2-0-at-i-o-2026-a-standalone-agent-first-platform-with-cli-sdk-managed-execution-and-enterprise-support/
+description: >
+  <p>Standalone agent-first platform announced at I/O 2026 (May 19), backed by
+  <a href="/outputs/google/gemini-3.5-flash">Gemini 3.5 Flash</a>. Comprises a
+  desktop app, a Go-based <strong>Antigravity CLI</strong> (replacing the
+  deprecated Gemini CLI), an <strong>Antigravity SDK</strong>, and a
+  <strong>Managed Agents API</strong> that provisions a remote Linux
+  environment per call. The enterprise tier ships as the Gemini Enterprise
+  Agent Platform.</p>
+
+  <p>Google's direct counter to Claude Code / Codex / Cursor / xAI's Grok Build.
+  The forced Gemini CLI &rarr; Antigravity CLI migration makes this a meaningful
+  forcing function across Google's developer ecosystem.</p>
+tags:
+  - agents
+  - frontier
+related:
+  - gemini-3.5-flash

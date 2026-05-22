@@ -14,22 +14,45 @@ sources:
     url: https://huggingface.co/tencent/Hunyuan-MT-7B
   - label: HuggingFace (MT-1.5)
     url: https://huggingface.co/tencent/HY-MT1.5-1.8B
-  - label: Announcement
+  - label: HuggingFace (Hy-MT2-1.8B)
+    url: https://huggingface.co/tencent/Hy-MT2-1.8B
+  - label: GitHub (Hy-MT2)
+    url: https://github.com/Tencent-Hunyuan/Hy-MT2
+  - label: Announcement (original)
     url: https://siliconangle.com/2025/09/01/tencent-open-sources-hunyuan-mt-translation-model-series/
 description: >
-  Open-source translation model series supporting 33 languages. Won first
-  place in 30 of 31 categories at WMT25. Includes Hunyuan-MT-7B and
-  Hunyuan-MT-Chimera-7B, with HY-MT1.5 upgrades in Dec 2025.
+  <p>Open-source translation model series supporting 33 languages. Hunyuan-MT-7B
+  won first place in 30 of 31 categories at WMT25. <strong>Hy-MT2</strong>
+  (May 21, 2026) extends the family with 1.8B / 7B / 30B-A3B variants &mdash;
+  the 7B and 30B-A3B reportedly outperform <a href="/outputs/deepseek/deepseek-v4">DeepSeek-V4-Pro</a>
+  and <a href="/outputs/moonshot-ai/kimi-k2.6">Kimi K2.6</a> on translation,
+  while the 1.8B quantizes to 440MB at 1.25-bit. Ships with <strong>IFMTBench</strong>,
+  a companion instruction-following translation benchmark.</p>
 tags:
   - nlp
   - open-weight
+  - efficiency
 model:
   architecture: dense
-  parameters: 7B
+  parameters: 30B
+  active_parameters: 3B
   variants:
     - name: Hunyuan-MT-7B
-      notes: WMT25 champion
+      parameters: 7B
+      notes: WMT25 champion (Sep 2025)
     - name: Hunyuan-MT-Chimera-7B
+      parameters: 7B
       notes: Ensemble learning architecture
     - name: HY-MT1.5-7B
+      parameters: 7B
       notes: Released Dec 2025, adds terminology and contextual translation
+    - name: Hy-MT2-1.8B
+      parameters: 1.8B
+      notes: Released May 21 2026; 1.25-bit quantization fits in 440MB
+    - name: Hy-MT2-7B
+      parameters: 7B
+      notes: Released May 21 2026; self-reported beats DeepSeek-V4-Pro and Kimi K2.6 on translation
+    - name: Hy-MT2-30B-A3B
+      parameters: 30B
+      active_parameters: 3B
+      notes: Released May 21 2026; MoE variant

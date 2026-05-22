@@ -98,6 +98,14 @@ people:
     description: >
       <p>PhD in Physics from Johns Hopkins University (advised by Jared Kaplan). Researcher at OpenAI. Co-authored the scaling laws paper with Kaplan. Co-founded Anthropic in 2021, serving as CTO.</p>
 news:
+  - title: "Anthropic Hires Andrej Karpathy to Pre-training Team; Will Lead Sub-team Using Claude to Accelerate Pretraining Research"
+    url: https://www.cnbc.com/2026/05/19/anthropic-hires-openai-cofounder-andrej-karpathy-former-tesla-ai-lead.html
+    source: CNBC
+    date: 2026-05-19
+  - title: "Hitachi Deploys Claude to ~290,000 Employees; Embeds in Lumada 3.0 / HMAX for Critical Infrastructure"
+    url: https://www.hitachi.com/en/press/articles/2026/05/0519b/
+    source: Hitachi
+    date: 2026-05-19
   - title: "Amazon Invests $5B More (Total $13B); Anthropic Commits $100B+ AWS Spend Over 10 Years, Secures Up to 5GW Compute"
     url: https://www.anthropic.com/news/anthropic-amazon-compute
     source: Anthropic

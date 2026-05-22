@@ -99,6 +99,14 @@ people:
     description: >
       <p>Distinguished Scientist and Director of <strong>ARC Lab</strong> (Applied Research Center) at Tencent. Leads one of China&rsquo;s most prolific open-source research groups, releasing the SEED multimodal family, YOLO-World, Open-MAGVIT2, and 80+ GitHub repos. Before the March 2026 restructuring, ARC Lab operated as a semi-independent research arm.</p>
 news:
+  - title: "Hunyuan Model Matrix Refresh: TurboS, T1, T1-Vision, and Hunyuan Voice (Top-8 Chatbot Arena, +50% T1-Vision Speed)"
+    url: https://kr-asia.com/tencent-doubles-down-on-agentic-ai-with-latest-hunyuan-updates
+    source: KrASIA
+    date: 2026-05-21
+  - title: "Tencent Open-Sources Hy-MT2 Translation Family (1.8B / 7B / 30B-A3B) + IFMTBench"
+    url: https://github.com/Tencent-Hunyuan/Hy-MT2
+    source: Tencent Hunyuan
+    date: 2026-05-21
   - title: "Tencent restructures AI operations, promotes high-profile recruit to chief AI scientist"
     url: https://www.scmp.com/tech/big-tech/article/3336811/tencent-restructures-ai-operations-promotes-high-profile-recruit-chief-ai-scientist
     source: SCMP

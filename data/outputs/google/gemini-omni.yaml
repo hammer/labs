@@ -1,0 +1,31 @@
+name: Gemini Omni
+slug: gemini-omni
+lab: google
+type: model
+date: 2026-05-19
+sources:
+  - label: Google blog
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/
+  - label: TechCrunch coverage
+    url: https://techcrunch.com/2026/05/19/googles-gemini-omni-turns-images-audio-and-text-into-video-and-thats-just-the-start/
+description: >
+  <p>New Gemini model family launched at I/O 2026: <strong>image + audio + video
+  + text in &rarr; video out</strong>. Distinct from the LLM-tier
+  <a href="/outputs/google/gemini-3.5-flash">Gemini 3.5 Flash</a> &mdash;
+  positioned as a "create anything from any input" world-simulating generator
+  with grounding in real-world physics.</p>
+
+  <p>Initial release is <strong>Gemini Omni Flash</strong>: 10-second video
+  cap, SynthID-watermarked. Available globally to Gemini app subscribers
+  (AI Plus / Pro / Ultra) and Google Flow; free tier via YouTube Shorts and
+  YouTube Create. Direct competitive answer to Sora / Veo separation.</p>
+tags:
+  - generation
+  - multimodal
+  - video
+model:
+  variants:
+    - name: Gemini Omni Flash
+      notes: First public release; 10s cap; SynthID-watermarked; in Gemini app + YouTube Shorts/Create
+related:
+  - gemini-3.5-flash
