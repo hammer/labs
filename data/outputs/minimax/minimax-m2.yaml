@@ -13,6 +13,8 @@ sources:
     url: https://huggingface.co/MiniMaxAI/MiniMax-M2
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/minimax-m2
+  - label: Series Technical Report (arXiv)
+    url: https://arxiv.org/abs/2605.26494
 description: >
   First "agent-native" model from MiniMax (230B total, 10B active MoE).
   Designed for tool-calling and code execution, released at a fraction of

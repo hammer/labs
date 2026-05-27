@@ -1,0 +1,40 @@
+name: "The MiniMax-M2 Series: Technical Report"
+slug: minimax-m2-series-report
+lab: minimax
+type: paper
+date: 2026-05-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.26494
+description: >
+  <p>"Mini Activations Unleashing Max Real-World Intelligence." Comprehensive
+  technical report covering the full <strong>M2 / M2.1 / M2.5 / M2.7
+  series</strong> &mdash; an agent-native MoE family at
+  <strong>229.9B total / 9.8B active</strong>. Three load-bearing contributions
+  documented end-to-end:</p>
+
+  <ul>
+    <li><strong>Agent-driven data pipelines</strong> producing agentic coding
+    and cowork trajectories at scale</li>
+    <li><strong>Forge</strong>, a reinforcement-learning system built specifically
+    for long-horizon agentic tasks</li>
+    <li><strong>Self-evolution</strong> at the M2.7 checkpoint &mdash; the model
+    autonomously debugs and improves prior outputs in a closed loop</li>
+  </ul>
+
+  <p>Reports frontier-level results across agentic coding, deep search,
+  office-task, and reasoning benchmarks. 35 pages, 10 figures, 4 tables, with
+  ~205 listed contributors. The canonical reference for the whole M2 line.</p>
+tags:
+  - foundational
+  - agentic
+  - reasoning
+  - moe
+  - training
+paper:
+  arxiv: "2605.26494"
+related:
+  - minimax-m2
+  - minimax-m2.1
+  - minimax-m2.5
+  - minimax-m2.7
