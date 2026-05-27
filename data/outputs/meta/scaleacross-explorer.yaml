@@ -1,0 +1,55 @@
+name: ScaleAcross Explorer
+slug: scaleacross-explorer
+lab: meta
+type: paper
+date: 2026-05-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.24326
+  - label: Paper (HTML)
+    url: https://arxiv.org/html/2605.24326
+description: >
+  <p>"ScaleAcross Explorer: Exploring Communication Optimization for Scale-Across
+  AI Model Training." Systems paper from Meta's SysML research org tackling
+  <strong>multi-datacenter training</strong> &mdash; distributing a single LLM
+  run across "a few data centers housing hundreds of thousands of GPUs," each
+  with its own intra/inter-DC network characteristics.</p>
+
+  <p>Co-optimizes three design axes &mdash; <strong>parallelism placement</strong>,
+  <strong>parallelism scheduling</strong>, and <strong>network layer
+  technologies</strong> &mdash; via a single optimizer that considers their
+  interactions instead of tuning each in isolation. Reports up to
+  <strong>64.62% training speedup over Meta's production configuration</strong>
+  and 37.59% over the strongest published baseline in testbed experiments and
+  simulations. Drawn from Meta's production experience training Llama at
+  multi-DC scale.</p>
+
+  <p>28 pages, 27 figures. By Minghao Li, Alicia Golden, Samuel Hsia,
+  Michael Kuchnik, Adi Gangidi, Xu Zhang, Ashmitha Jeevaraj Shetty,
+  Zachary DeVito, Weiwei Chu, Dong He, Haoci Zhang, Yuchen Hao, Ruoming Pang,
+  James Hongyi Zeng, Ying Zhang, Minlan Yu, and Carole-Jean Wu (Meta + Harvard).</p>
+tags:
+  - infrastructure
+  - training
+  - foundational
+  - research
+paper:
+  arxiv: "2605.24326"
+  authors:
+    - Minghao Li
+    - Alicia Golden
+    - Samuel Hsia
+    - Michael Kuchnik
+    - Adi Gangidi
+    - Xu Zhang
+    - Ashmitha Jeevaraj Shetty
+    - Zachary DeVito
+    - Weiwei Chu
+    - Dong He
+    - Haoci Zhang
+    - Yuchen Hao
+    - Ruoming Pang
+    - James Hongyi Zeng
+    - Ying Zhang
+    - Minlan Yu
+    - Carole-Jean Wu
