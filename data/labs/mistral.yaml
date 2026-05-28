@@ -92,6 +92,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=1MSpdmQAAAAJ
 news:
+  - title: "Mistral Chases AI Superintelligence to Counter U.S. Dominance"
+    url: https://www.wsj.com/tech/ai/mistral-chases-ai-superintelligence-to-counter-u-s-dominance-b2a44fa1
+    source: WSJ
+    date: 2026-05-28
   - title: "How France's Mistral Built a $14 Billion AI Empire by Not Being American"
     url: https://www.forbes.com/sites/iainmartin/2026/04/16/how-frances-mistral-built-a-14-billion-ai-empire-by-not-being-american/
     source: Forbes
