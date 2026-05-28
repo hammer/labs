@@ -104,6 +104,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Ming_Ding1
 news:
+  - title: "ByteDance Developing Custom CPU Chips to Support AI Rollout; Pursuing Both Arm and RISC-V Tracks"
+    url: https://www.reuters.com/world/china/bytedance-developing-custom-cpu-chips-support-ai-rollout-sources-say-2026-05-28/
+    source: Reuters
+    date: 2026-05-28
   - title: "ByteDance Recruits DeepSeek R1 Lead Author Daya Guo for Seed Agent Team"
     url: https://www.scmp.com/tech/big-tech/article/3350521/bytedance-tencent-step-ai-talent-battle-amid-reported-departure-deepseek-researcher
     source: SCMP
