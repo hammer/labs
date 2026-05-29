@@ -1,0 +1,50 @@
+name: Ultra-FineWeb-L3
+slug: ultra-fineweb-l3
+lab: openbmb
+type: dataset
+date: 2026-05-28
+sources:
+  - label: Dataset (HuggingFace)
+    url: https://huggingface.co/datasets/openbmb/Ultra-FineWeb-L3
+  - label: Ultra-FineWeb paper (arXiv, L2 methodology)
+    url: https://arxiv.org/abs/2505.05427
+description: >
+  <p>L3 <strong>refinement</strong> of <a href="/outputs/openbmb/ultra-fineweb">Ultra-FineWeb</a>
+  &mdash; the same L2-curated text rewritten into more learnable training samples
+  with explicit reasoning signals. <strong>400B+ English and 200B+ Chinese tokens</strong>
+  total, organized into two synthesis tracks.</p>
+
+  <ul>
+    <li><strong>Q&A Synthetic</strong> (245B English / 118B Chinese): each web
+    document is rewritten as "original + multiple Q&A pairs" with self-contained
+    questions over core concepts, factual details, and logical relations. The
+    original text is prepended during training so the synthetic Q&A acts as an
+    explicit knowledge-organization signal rather than a replacement.</li>
+    <li><strong>Multi-Style Synthetic</strong> (164B English / 82B Chinese):
+    single-source content rewritten into <em>encyclopedia</em> (modular, concise,
+    objective), <em>textbook</em> ("definition &rarr; theorem &rarr; proof &rarr;
+    example"), <em>blog</em> (conversational with analogies), and
+    <em>abstract</em> (core-argument extraction) styles for broader expression
+    coverage at the same factual base.</li>
+  </ul>
+
+  <p>The Chinese portion is reportedly the <strong>largest open-source Chinese
+  pre-training synthetic dataset</strong> to date. Apache 2.0. Sits at the L3
+  layer of OpenBMB's UltraData L0&ndash;L4 tiered framework, refining the L2
+  selection from
+  <a href="/outputs/openbmb/ultra-fineweb">Ultra-FineWeb</a> (June 2025).</p>
+tags:
+  - training-data
+  - training
+  - multilingual
+  - open-weight
+dataset:
+  size: 400B+ English + 200B+ Chinese tokens (synthetic refinement)
+  format: text
+  languages:
+    - English
+    - Chinese
+  license: Apache 2.0
+  huggingface_url: https://huggingface.co/datasets/openbmb/Ultra-FineWeb-L3
+related:
+  - ultra-fineweb

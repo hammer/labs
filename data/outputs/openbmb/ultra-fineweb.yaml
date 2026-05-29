@@ -1,4 +1,4 @@
-name: Ultra-FineWeb (L2 + L3)
+name: Ultra-FineWeb
 slug: ultra-fineweb
 lab: openbmb
 type: dataset
@@ -6,47 +6,35 @@ date: 2025-06-06
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2505.05427
-  - label: Ultra-FineWeb (L2 base dataset)
+  - label: Dataset
     url: https://huggingface.co/datasets/openbmb/Ultra-FineWeb
-  - label: Ultra-FineWeb-L3 (refined dataset)
-    url: https://huggingface.co/datasets/openbmb/Ultra-FineWeb-L3
-  - label: Ultra-FineWeb classifier
+  - label: Classifier
     url: https://huggingface.co/openbmb/Ultra-FineWeb-classifier
 description: >
-  <p>OpenBMB's flagship open pretraining dataset family, built on the
-  <strong>UltraData L0–L4 tiered framework</strong> for moving raw web data
-  through progressively more useful curation layers.</p>
+  <p>OpenBMB's <strong>L2-selected</strong> open pretraining dataset and the
+  filtering pipeline behind it. ~<strong>1.3T tokens</strong> &mdash; 1T English
+  and 120B Chinese &mdash; distilled from FineWeb and Chinese FineWeb. Apache 2.0.</p>
 
-  <p><strong>Ultra-FineWeb (L2, June 2025):</strong> ~<strong>1.3T-token</strong>
-  selection from FineWeb and Chinese FineWeb &mdash; 1T English + 120B Chinese.
-  Introduces a lightweight fastText classifier and an "efficient verification
-  strategy" that lets the team rapidly estimate the training impact of a
-  candidate filter at minimal compute. Apache 2.0.</p>
+  <p>The companion paper "Ultra-FineWeb: Efficient Data Filtering and Verification
+  for High-Quality LLM Training Data" introduces an <strong>efficient verification
+  strategy</strong> that estimates a candidate filter's downstream training impact
+  at minimal compute, plus a lightweight <strong>fastText classifier</strong> that
+  reproduces the resulting selection at scale. LLMs trained on Ultra-FineWeb show
+  significant gains over their FineWeb baselines across multiple benchmarks.</p>
 
-  <p><strong>Ultra-FineWeb-L3 (May 28, 2026):</strong> further <em>refinement</em>
-  of L2 into more learnable training samples &mdash; <strong>400B+ English and
-  200B+ Chinese tokens</strong> across two synthesis tasks:</p>
-
-  <ul>
-    <li><strong>Q&A Synthetic</strong>: declarative web text rewritten as
-    "original + multiple Q&A pairs" with self-contained questions over core
-    concepts, facts, and logical relations (245B English / 118B Chinese).</li>
-    <li><strong>Multi-Style Synthetic</strong>: single-source content rewritten
-    into encyclopedia, textbook, blog, and abstract styles for richer
-    expression coverage (164B English / 82B Chinese).</li>
-  </ul>
-
-  <p>The Chinese portion is reportedly the <strong>largest open-source Chinese
-  pre-training synthetic dataset</strong> to date. Apache 2.0. By Yudong Wang,
-  Zixuan Fu, Jie Cai, Peijun Tang, Hongya Lyu, Yewei Fang, Zhi Zheng, Jie Zhou,
-  Guoyang Zeng, Chaojun Xiao, Xu Han, and Zhiyuan Liu.</p>
+  <p>Sits at the L2 layer of OpenBMB's broader
+  <strong>UltraData L0&ndash;L4 tiered framework</strong>, with
+  <a href="/outputs/openbmb/ultra-fineweb-l3">Ultra-FineWeb-L3</a> (May 2026)
+  refining this corpus into synthetic Q&A pairs and multi-style rewrites. By
+  Yudong Wang, Zixuan Fu, Jie Cai, Peijun Tang, Hongya Lyu, Yewei Fang, Zhi Zheng,
+  Jie Zhou, Guoyang Zeng, Chaojun Xiao, Xu Han, and Zhiyuan Liu.</p>
 tags:
   - training-data
   - training
   - multilingual
   - open-weight
 dataset:
-  size: 1.3T (L2) + 600B+ refined (L3)
+  size: 1.3T tokens (1T English + 120B Chinese)
   format: text
   languages:
     - English
@@ -68,3 +56,5 @@ paper:
     - Chaojun Xiao
     - Xu Han
     - Zhiyuan Liu
+related:
+  - ultra-fineweb-l3
