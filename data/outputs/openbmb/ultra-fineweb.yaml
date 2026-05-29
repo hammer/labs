@@ -1,15 +1,70 @@
-name: Ultra-FineWeb
+name: Ultra-FineWeb (L2 + L3)
 slug: ultra-fineweb
 lab: openbmb
 type: dataset
 date: 2025-06-06
 sources:
-  - label: Dataset
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.05427
+  - label: Ultra-FineWeb (L2 base dataset)
     url: https://huggingface.co/datasets/openbmb/Ultra-FineWeb
-  - label: "Model Card"
+  - label: Ultra-FineWeb-L3 (refined dataset)
+    url: https://huggingface.co/datasets/openbmb/Ultra-FineWeb-L3
+  - label: Ultra-FineWeb classifier
     url: https://huggingface.co/openbmb/Ultra-FineWeb-classifier
 description: >
-  Massive 1.3-trillion-token distilled web dataset.
+  <p>OpenBMB's flagship open pretraining dataset family, built on the
+  <strong>UltraData L0–L4 tiered framework</strong> for moving raw web data
+  through progressively more useful curation layers.</p>
+
+  <p><strong>Ultra-FineWeb (L2, June 2025):</strong> ~<strong>1.3T-token</strong>
+  selection from FineWeb and Chinese FineWeb &mdash; 1T English + 120B Chinese.
+  Introduces a lightweight fastText classifier and an "efficient verification
+  strategy" that lets the team rapidly estimate the training impact of a
+  candidate filter at minimal compute. Apache 2.0.</p>
+
+  <p><strong>Ultra-FineWeb-L3 (May 28, 2026):</strong> further <em>refinement</em>
+  of L2 into more learnable training samples &mdash; <strong>400B+ English and
+  200B+ Chinese tokens</strong> across two synthesis tasks:</p>
+
+  <ul>
+    <li><strong>Q&A Synthetic</strong>: declarative web text rewritten as
+    "original + multiple Q&A pairs" with self-contained questions over core
+    concepts, facts, and logical relations (245B English / 118B Chinese).</li>
+    <li><strong>Multi-Style Synthetic</strong>: single-source content rewritten
+    into encyclopedia, textbook, blog, and abstract styles for richer
+    expression coverage (164B English / 82B Chinese).</li>
+  </ul>
+
+  <p>The Chinese portion is reportedly the <strong>largest open-source Chinese
+  pre-training synthetic dataset</strong> to date. Apache 2.0. By Yudong Wang,
+  Zixuan Fu, Jie Cai, Peijun Tang, Hongya Lyu, Yewei Fang, Zhi Zheng, Jie Zhou,
+  Guoyang Zeng, Chaojun Xiao, Xu Han, and Zhiyuan Liu.</p>
 tags:
   - training-data
   - training
+  - multilingual
+  - open-weight
+dataset:
+  size: 1.3T (L2) + 600B+ refined (L3)
+  format: text
+  languages:
+    - English
+    - Chinese
+  license: Apache 2.0
+  huggingface_url: https://huggingface.co/datasets/openbmb/Ultra-FineWeb
+paper:
+  arxiv: "2505.05427"
+  authors:
+    - Yudong Wang
+    - Zixuan Fu
+    - Jie Cai
+    - Peijun Tang
+    - Hongya Lyu
+    - Yewei Fang
+    - Zhi Zheng
+    - Jie Zhou
+    - Guoyang Zeng
+    - Chaojun Xiao
+    - Xu Han
+    - Zhiyuan Liu
