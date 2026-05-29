@@ -73,6 +73,7 @@ For **every** model output, check:
 - **OpenRouter:** Search `site:openrouter.ai [model name]`. Add the canonical model URL (without date suffix).
 - **HuggingFace model page:** Find model weights (e.g., `huggingface.co/org/model`)
 - **HuggingFace blog:** Check for technical blog posts at `huggingface.co/blog/[org]/[post-slug]`. These often contain detailed benchmarks, architecture explanations, and usage guides not found in the model card. Search `site:huggingface.co/blog [model name]`.
+- **HuggingFace org recent-uploads check** (sweep helper): when sweeping a lab for new releases, hit the HF API directly rather than relying on the model card UI — many releases ship HF-only with no announcement: `curl -sL 'https://huggingface.co/api/models?author=<org>&sort=lastModified&direction=-1&limit=30'` and the parallel `?author=<org>` query against `/api/datasets`. Datasets in particular tend to land this way (Ultra-FineWeb-L3, Zyda-2, FineWeb-Edu). If a freshly uploaded artifact looks load-bearing — a base model, a sizeable dataset, a versioned successor — treat it as a candidate even without a paper/blog.
 - **GitHub:** Find code repo
 
 ### For Closed Models with Technical Reports
