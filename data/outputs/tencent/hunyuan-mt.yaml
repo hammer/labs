@@ -8,6 +8,8 @@ sources:
     url: https://arxiv.org/abs/2509.05209
   - label: Paper (HY-MT1.5, arXiv)
     url: https://arxiv.org/abs/2512.24092
+  - label: Paper (Hy-MT2, arXiv)
+    url: https://arxiv.org/abs/2605.22064
   - label: GitHub
     url: https://github.com/Tencent-Hunyuan/Hunyuan-MT
   - label: HuggingFace (MT-7B)

@@ -1,0 +1,27 @@
+name: Granite Guardian 4.1
+slug: granite-guardian-4.1
+lab: ibm
+type: model
+date: 2026-05-26
+sources:
+  - label: HuggingFace (GGUF)
+    url: https://huggingface.co/ibm-granite/granite-guardian-4.1-8b-GGUF
+description: >
+  <p>IBM's safety/policy classifier line refreshed to Granite 4.1. New
+  <strong>hybrid thinking mode</strong> &mdash; \<think\> and \<score\> tags
+  can be toggled per request &mdash; lets the same model output a raw flag,
+  a calibrated score, or a reasoning trace depending on the deployment
+  context.</p>
+
+  <p>8B variant fine-tuned from <a href="/outputs/ibm/granite-4.1">Granite-4.1-8B</a>.
+  GGUF quants (Q2_K through BF16) ship for local/edge inference. Apache 2.0.</p>
+tags:
+  - safety
+  - open-weight
+  - enterprise
+model:
+  parameters: 8B
+  license: Apache 2.0
+  base_model: granite-4.1
+related:
+  - granite-4.1

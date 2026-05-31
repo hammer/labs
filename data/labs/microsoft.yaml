@@ -81,6 +81,10 @@ people:
       - label: LinkedIn
         url: https://www.linkedin.com/in/weizhu-chen-620b2330/
 news:
+  - title: "Microsoft to Unveil Homegrown Coding Model + Image / Reasoning / Speech / Transcription Suite at Build 2026"
+    url: https://www.theinformation.com/articles/microsofts-new-coding-model-poised-to-take-on-cursor-anthropic
+    source: The Information
+    date: 2026-05-28
   - title: "Microsoft Announces $10B Japan AI Infrastructure Investment (2026-2029)"
     url: https://www.wsj.com/tech/ai/microsoft-japan-ai-investment-10-billion-2026/
     source: WSJ

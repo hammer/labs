@@ -1,0 +1,39 @@
+name: Step-3.7-Flash
+slug: step-3.7-flash
+lab: stepfun
+type: model
+date: 2026-05-28
+flagship: true
+sources:
+  - label: StepFun blog
+    url: https://static.stepfun.com/blog/step-3.7-flash/
+  - label: HuggingFace
+    url: https://huggingface.co/stepfun-ai/Step-3.7-Flash
+  - label: OpenRouter
+    url: https://openrouter.ai/stepfun/step-3.7-flash-20260528
+description: >
+  <p>StepFun's new flagship open-weight reasoning VLM. <strong>198B total / ~11B
+  active sparse MoE</strong> with <strong>256K context</strong>, tunable
+  reasoning tiers, and ~400 tok/s output. Apache 2.0 across BF16 / FP8 / NVFP4
+  / GGUF precision variants on HuggingFace.</p>
+
+  <p>Self-reported benchmarks: <strong>SimpleVQA 79.2</strong>,
+  <strong>ClawEval-1.1 67.1</strong>, <strong>SWE-Bench Pro 56.3</strong> (#2),
+  competitive with Gemini 3 Flash on multiple temporal tracks. Successor in
+  the closed-flagship slot to <a href="/outputs/stepfun/step-3.5-flash">Step-3.5-Flash</a>
+  and the open Step-3 line.</p>
+tags:
+  - frontier
+  - reasoning
+  - multimodal
+  - moe
+  - open-weight
+model:
+  architecture: moe
+  parameters: 198B
+  active_parameters: 11B
+  context_window: 262144
+  license: Apache 2.0
+related:
+  - step-3.5-flash
+  - step-3

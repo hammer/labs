@@ -1,0 +1,39 @@
+name: Intern-S2-Preview
+slug: intern-s2-preview
+lab: shanghai-ai-lab
+type: model
+date: 2026-05-22
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/internlm/Intern-S2-Preview
+  - label: Chat demo
+    url: https://chat.intern-ai.org.cn/
+description: >
+  <p>Next-generation flagship for Shanghai AI Lab's scientific multimodal
+  foundation-model line. <strong>~35&ndash;36B total / ~3B active hybrid-attention
+  MoE</strong> with <strong>262K context</strong>, continued-pretrained from
+  Qwen3.5 with domain extensions for materials, biology, time-series, and
+  crystal-structure generation.</p>
+
+  <p>Reported benchmarks: <strong>SWE-bench Resolved 64</strong>,
+  <strong>MMLU-Pro 88</strong>, <strong>MathArena HMMT Feb 2026 87.31</strong> &mdash;
+  competitive with the much larger
+  <a href="/outputs/shanghai-ai-lab/intern-s1-pro">Intern-S1-Pro</a> at a
+  fraction of the active-parameter count.</p>
+tags:
+  - frontier
+  - science
+  - multimodal
+  - moe
+  - open-weight
+  - reasoning
+model:
+  architecture: moe
+  parameters: 35B
+  active_parameters: 3B
+  context_window: 262144
+  base_model: qwen3
+related:
+  - intern-s1-pro
+  - intern-s1

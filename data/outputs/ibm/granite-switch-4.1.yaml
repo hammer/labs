@@ -1,0 +1,41 @@
+name: Granite Switch 4.1
+slug: granite-switch-4.1
+lab: ibm
+type: model
+date: 2026-05-24
+sources:
+  - label: HuggingFace (30B Preview)
+    url: https://huggingface.co/ibm-granite/granite-switch-4.1-30b-preview
+  - label: HuggingFace (8B Preview)
+    url: https://huggingface.co/ibm-granite/granite-switch-4.1-8b-preview
+  - label: GitHub
+    url: https://github.com/generative-computing/granite-switch
+description: >
+  <p>Architectural experiment from IBM: a single Granite 4.1 base checkpoint
+  embeds <strong>12 independently-trained activated-LoRA adapters</strong>
+  (RAG, safety, explainability, etc.) that the model dynamically selects at
+  inference time via control tokens. IBM calls the pattern <em>"coarse-grained
+  expert switching"</em> &mdash; avoids both the N-copies-per-task overhead and
+  the joint-training compromises of standard MoE adapter merging.</p>
+
+  <p>Three sizes (3B / 8B / 30B Preview) all built on Granite 4.1 base with
+  128K context. Apache 2.0. Discovered via HF org probe &mdash; no
+  announcement blog at release.</p>
+tags:
+  - foundational
+  - open-weight
+  - enterprise
+model:
+  parameters: 30B
+  context_window: 131072
+  license: Apache 2.0
+  base_model: granite-4.1
+  variants:
+    - name: granite-switch-4.1-3b-preview
+      parameters: 3B
+    - name: granite-switch-4.1-8b-preview
+      parameters: 8B
+    - name: granite-switch-4.1-30b-preview
+      parameters: 30B
+related:
+  - granite-4.1

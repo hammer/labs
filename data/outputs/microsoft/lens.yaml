@@ -1,0 +1,39 @@
+name: Lens
+slug: lens
+lab: microsoft
+type: model
+date: 2026-05-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.21573
+  - label: HuggingFace
+    url: https://huggingface.co/microsoft/Lens
+  - label: GitHub
+    url: https://github.com/microsoft/Lens
+description: >
+  <p>Open <strong>3.8B foundational text-to-image diffusion model</strong> from
+  Microsoft. Reports competitive-with-or-better quality than FLUX and Stable
+  Diffusion 3 at <strong>~19.3% of Z-Image's training compute</strong>; the
+  <strong>Lens-Turbo</strong> variant generates 1024² images in 0.84 s.</p>
+
+  <p>Three checkpoints released: base, Lens-Base, and Lens-Turbo. Microsoft's
+  first open competitive frontier-class T2I model. Surfaced as a quiet HF org
+  upload on May 22 alongside the arxiv submission &mdash; representative of
+  exactly the release path the new HF-probe sweep step is designed to catch.</p>
+tags:
+  - generation
+  - vision
+  - open-weight
+  - efficiency
+model:
+  parameters: 3.8B
+  variants:
+    - name: Lens
+      parameters: 3.8B
+    - name: Lens-Base
+      parameters: 3.8B
+    - name: Lens-Turbo
+      parameters: 3.8B
+      notes: Distilled fast variant; 1024² generation in 0.84 s
+paper:
+  arxiv: "2605.21573"

@@ -40,3 +40,23 @@ outputs:
         url: https://huggingface.co/Kwai-Keye/Keye-VL-8B-Preview
     description: >
       Technical report for the Kwai Keye-VL multimodal foundation model.
+  - name: Keye-VL-2.0-30B-A3B
+    type: model
+    date: 2026-05-29
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/Kwai-Keye/Keye-VL-2.0-30B-A3B
+      - label: GitHub
+        url: https://github.com/Kwai-Keye/Keye
+    description: >
+      <p>Major flagship upgrade announced May 25, weights uploaded May 29.
+      31B MoE multimodal with <strong>DeepSeek Sparse Attention</strong> (DSA),
+      256K context, and a built-in Search / Tool / Code agent. First production
+      multimodal model using DSA. <strong>LongVideoBench 74.1</strong>
+      &mdash; beats Qwen3.5-35B and Qwen3-VL-235B on long-video temporal
+      benchmarks.</p>
+    model:
+      architecture: moe
+      parameters: 31B
+      active_parameters: 3B
+      context_window: 262144

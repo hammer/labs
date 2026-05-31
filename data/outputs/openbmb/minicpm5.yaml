@@ -1,0 +1,28 @@
+name: MiniCPM5-1B
+slug: minicpm5
+lab: openbmb
+type: model
+date: 2026-05-25
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/openbmb/MiniCPM5-1B
+description: >
+  <p>First release of the <strong>MiniCPM5</strong> series &mdash; jumps past
+  MiniCPM4 with a 1.08B dense Llama-architecture model featuring 128K context
+  and hybrid thinking mode. Self-reported 1B-class open-source SOTA on agent
+  tool-use, code, and hard reasoning vs <a href="/outputs/liquid-ai/lfm2">LFM2.5-1.2B</a>
+  and Qwen3-0.6B / Qwen3.5-0.8B.</p>
+
+  <p>Shipped with SFT, MLX, and GGUF variants for on-device deployment.</p>
+tags:
+  - on-device
+  - open-weight
+  - reasoning
+  - agentic
+model:
+  architecture: dense
+  parameters: 1.08B
+  context_window: 131072
+related:
+  - minicpm
+  - minicpm3

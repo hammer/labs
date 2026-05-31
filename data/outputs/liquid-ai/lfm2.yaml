@@ -48,6 +48,10 @@ model:
     - name: LFM2.5-350M
       parameters: 350M
       notes: Released April 2026, trained on 28T tokens with RL, <500MB footprint
+    - name: LFM2.5-8B-A1B
+      parameters: 8.3B
+      active_parameters: 1.5B
+      notes: "Released May 28 2026; hybrid MoE on-device flagship, 128K context, reasoning-only with explicit CoT, scaled to 38T training tokens. IFEval +12.4, AIME25 +22.5 vs LFM2-8B-A1B. GGUF/MLX/ONNX variants shipped."
 paper:
   arxiv: "2511.23404"
 related:

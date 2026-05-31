@@ -1,0 +1,39 @@
+name: BitCPM-CANN
+slug: bitcpm-cann
+lab: openbmb
+type: model
+date: 2026-05-23
+sources:
+  - label: HuggingFace (8B)
+    url: https://huggingface.co/openbmb/BitCPM-CANN-8B
+  - label: Technical doc (PDF)
+    url: https://github.com/OpenBMB/MiniCPM/blob/main/docs/BitCPM_CANN.pdf
+description: >
+  <p>First publicly reported <strong>1.58-bit ternary quantization-aware
+  training at 8B scale on Huawei Ascend NPU (CANN stack)</strong>. Four sizes
+  released: 0.5B, 1B, 3B, 8B. The 8B variant retains <strong>95.7% of FP
+  accuracy</strong>, achieves <strong>~6&times; memory reduction</strong>, and
+  imposes only ~5% throughput overhead vs full-precision training.</p>
+
+  <p>Significant domestic-chip co-design milestone &mdash; demonstrates a fully
+  China-domestic training stack for bitnet-class models, paralleling
+  <a href="/labs/bytedance-seed">ByteDance</a>'s recently disclosed custom-CPU
+  effort and DeepSeek-V4-Pro's Ascend 950PR pre-training. By the MiniCPM team.</p>
+tags:
+  - efficiency
+  - open-weight
+  - training
+  - foundational
+model:
+  parameters: 8B
+  variants:
+    - name: BitCPM-CANN-0.5B
+      parameters: 0.5B
+    - name: BitCPM-CANN-1B
+      parameters: 1B
+    - name: BitCPM-CANN-3B
+      parameters: 3B
+    - name: BitCPM-CANN-8B
+      parameters: 8B
+related:
+  - minicpm

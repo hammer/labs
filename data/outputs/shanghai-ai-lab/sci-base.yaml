@@ -1,0 +1,28 @@
+name: Sci-Base
+slug: sci-base
+lab: shanghai-ai-lab
+type: dataset
+date: 2026-05-27
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/opendatalab/Sci-Base
+description: >
+  <p>Open scientific pretraining corpus from OpenDataLab (Shanghai AI Lab
+  ecosystem). <strong>25M+ scientific documents / 600B+ tokens / 3.87 TB</strong>
+  across 10 disciplines, parsed end-to-end with MinerU. Knowledge cutoff
+  March 2026. CC-BY 4.0.</p>
+
+  <p>Comparable in scale to FineWeb-class general corpora but science-restricted
+  &mdash; positioned as a foundation-scale dataset for training science-FM and
+  research-assistant models. Companion ships SA-RxnDiagram-15k (reaction
+  diagrams) and SA-Prot-annot (protein annotations).</p>
+tags:
+  - training-data
+  - training
+  - science
+  - open-weight
+dataset:
+  size: 600B+ tokens / 3.87 TB / 25M+ documents
+  format: text
+  license: CC-BY 4.0
+  huggingface_url: https://huggingface.co/datasets/opendatalab/Sci-Base

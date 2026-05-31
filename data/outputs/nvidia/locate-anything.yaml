@@ -1,0 +1,29 @@
+name: LocateAnything-3B
+slug: locate-anything
+lab: nvidia
+type: model
+date: 2026-05-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.27365
+  - label: HuggingFace
+    url: https://huggingface.co/nvidia/LocateAnything-3B
+  - label: Project page
+    url: https://research.nvidia.com/labs/lpr/locate-anything/
+description: >
+  <p>3B vision-language grounding model from NVIDIA's LPR group. Introduces
+  <strong>Parallel Box Decoding</strong> &mdash; a non-autoregressive box-output
+  head that improves throughput <strong>~2.5&times;</strong> over standard VLM
+  detection while handling object detection, phrase grounding, GUI element
+  grounding, and OCR in a single model.</p>
+
+  <p>Trained on <strong>12M images / 785M boxes</strong>. Open weights; project
+  page includes demos and benchmarks.</p>
+tags:
+  - multimodal
+  - vision
+  - open-weight
+model:
+  parameters: 3B
+paper:
+  arxiv: "2605.27365"

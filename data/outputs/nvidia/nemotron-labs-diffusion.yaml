@@ -1,0 +1,38 @@
+name: Nemotron-Labs Diffusion
+slug: nemotron-labs-diffusion
+lab: nvidia
+type: model
+date: 2026-05-23
+sources:
+  - label: HuggingFace Blog
+    url: https://huggingface.co/blog/nvidia/nemotron-labs-diffusion
+  - label: HuggingFace (14B)
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Diffusion-14B
+  - label: NVIDIA Research publication
+    url: https://research.nvidia.com/publication/2026-05_nemotron-labs-diffusion-tri-mode-language-model-unifying-autoregressive
+description: >
+  <p>NVIDIA Labs <strong>tri-mode LLM</strong> family: at each step the model
+  can run as <em>autoregressive</em>, <em>diffusion</em>, or
+  <em>self-speculation</em>, with a learned controller picking the regime.
+  Reports <strong>2.6&ndash;6.4&times; throughput</strong> over AR baselines
+  while matching or beating Qwen3 accuracy on standard benchmarks.</p>
+
+  <p>Three sizes (3B / 8B / 14B), each with Base, Instruct, and VL variants;
+  eight model uploads total on May 23. Released under the Nemotron Open
+  Model License.</p>
+tags:
+  - foundational
+  - diffusion
+  - open-weight
+  - efficiency
+model:
+  parameters: 14B
+  variants:
+    - name: Nemotron-Labs-Diffusion-3B (Base/Instruct/VL)
+      parameters: 3B
+    - name: Nemotron-Labs-Diffusion-8B (Base/Instruct/VL)
+      parameters: 8B
+    - name: Nemotron-Labs-Diffusion-14B (Base/Instruct)
+      parameters: 14B
+related:
+  - nemotron-3-nano
