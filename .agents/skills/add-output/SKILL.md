@@ -63,6 +63,19 @@ Many models (especially proprietary ones) are announced via blog posts without a
 - Do NOT guess parameters — only include `model.parameters` if confirmed by a primary source
 - Still check AA and OpenRouter for available data
 
+### Verify model facts against the primary source before writing the `model:` block
+
+Every claim in the `model:` block needs to be traceable to a primary source — the lab's own repo readme, model card, paper abstract, technical report, or HuggingFace model card. **Never write `architecture`, `parameters`, `active_parameters`, or `variants` from a search-engine snippet or your prior knowledge alone — verify against the lab's canonical source and quote it in your reasoning.**
+
+The minimum checklist before committing a `model:` block:
+
+1. **Architecture (dense vs MoE).** Open the lab's repo readme or model card and look for explicit phrasing. "Mixture of Experts," "MoE," "router," or "experts per token" → MoE. "Dense Transformer," "based on Transformer architecture" with no expert language → dense. If the source is ambiguous, don't write a value — leave `architecture` unset and note the ambiguity in the description.
+2. **Variant list.** Run `curl -sL 'https://huggingface.co/api/models?author=<org>&limit=50'` against the lab's HF org and confirm each variant you list actually exists. If the variant is not on HF, the description must point at the alternative distribution (OpenI, application gate, internal-only, etc.).
+3. **Parameter counts and training tokens.** Quote the lab's number, not a press synthesis. Press summaries routinely round, mislabel "active params" as "total params," or repeat speculative figures (e.g. LifeArchitect estimates) that need the `parameters_estimated` provenance object rather than a flat `parameters` field.
+4. **At least one of the sources URLs must be the canonical primary repo.** The lab's GitHub readme, OpenI repo, HuggingFace model card, or the arxiv paper PDF — not a search-result aggregator, a stale "extension" or "blog redirect" URL, or a generic provider listing.
+
+Real failure this prevents: **PengCheng-Mind** was filed as `architecture: moe, parameters: 200B` with variants `Mind-m1 (7B)` and `PengCheng-Mind-2B (OpenSource)`. The OpenI repo header literally states "201-billion-parameter autoregressive language model based on **Transformer architecture**" (dense, not MoE); the only HF artifacts are `mPengC.mind_npu` and `mPengC.mind_gpu` (both the multilingual 7B); Mind-m1 and the 2B variant have no public evidence anywhere. A single check of the OpenI repo header + a single `?author=PCLNLP` API probe would have prevented all three errors.
+
 ### External Links
 
 For **every** model output, check:
