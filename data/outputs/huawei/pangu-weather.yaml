@@ -1,8 +1,6 @@
 name: PanGu-Weather
 slug: pangu-weather
-lab:
-  - huawei
-  - pcl
+lab: huawei
 date: 2023-07-05
 sources:
   - label: Paper (Nature)
