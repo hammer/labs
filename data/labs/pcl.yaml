@@ -20,10 +20,16 @@ description: >
   toward a target of <strong>16 EFLOPS</strong>, designed to be the primary training ground for 
   10-trillion+ parameter models using entirely domestic interconnects and silicon.</p>
 
-  <p>Research at PCL is characterized by large-scale collaboration, notably the <strong>PanGu</strong> 
-  series co-developed with Huawei, and proprietary flagships like <strong>PengCheng-Mind</strong>. 
-  The lab's recent expansion into Embodied AI (the PAR world model) and "AI for Science" 
-  (PengCheng-Nebula) positions it as a key driver of China's domestic technology self-reliance.</p>
+  <p>Research at PCL centers on its proprietary flagship <strong>PengCheng-Mind</strong>
+  (a 7B + 200B dense Transformer line, trained on Ascend 910 / Cloud Brain II)
+  and extensions into Embodied AI (the <strong>PAR</strong> world model) and
+  "AI for Science" (<strong>PengCheng-Nebula</strong>). PCL also provided
+  compute and infrastructure support for Huawei's
+  <a href="/outputs/huawei/pangu-alpha">PanGu-&alpha;</a> (2021) &mdash;
+  acknowledged in the paper alongside Peking University CS &mdash; though
+  subsequent PanGu generations (including PanGu-&Sigma;) list Huawei-only
+  authorship. The lab positions itself as a driver of China's domestic
+  technology self-reliance.</p>
 people:
   - name: Gao Wen (高文)
     url: https://en.wikipedia.org/wiki/Wen_Gao

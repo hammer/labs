@@ -33,12 +33,15 @@ description: >
 
   <p>The only PCL-Mind variant with downloadable HF weights is the multilingual
   <strong>mPengC.mind</strong> (7B), built via multilingual incremental
-  learning on the Chinese-focused base. The lab's frontier-MoE work is
-  separate &mdash; the <a href="/outputs/pcl/symphony-moe">Symphony-MoE</a>
-  paper from 2025 is a model-merging methodology study, and the only 100B+
-  MoE PCL has co-trained is
-  <a href="/outputs/huawei/pangu-sigma">PanGu-&Sigma;</a> (1T MoE, jointly
-  with Huawei), tracked under Huawei.</p>
+  learning on the Chinese-focused base. The lab's only published MoE artifact
+  is the <a href="/outputs/pcl/symphony-moe">Symphony-MoE</a> paper from 2025,
+  a model-merging methodology study at the 7B base scale. There is no
+  public evidence of PCL training MoEs from scratch at 100B+ parameters.
+  (The widely-cited "PCL contribution" to the Huawei PanGu line is limited
+  to an acknowledgements-section credit to "Peng Cheng Laboratory" on
+  <strong>PanGu-α</strong> (2021); the follow-on
+  <a href="/outputs/huawei/pangu-sigma">PanGu-&Sigma;</a> paper lists
+  Huawei-only affiliations with no PCL mention anywhere in its text.)</p>
 tags:
   - open-weight
   - nlp
