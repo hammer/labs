@@ -1,0 +1,32 @@
+name: CPM-1
+slug: cpm-1
+lab: baai
+type: model
+date: "2020-12-01"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2012.00413
+  - label: GitHub
+    url: https://github.com/TsinghuaAI/CPM-1-Generate
+description: >
+  <p>One of the first large-scale Generative Chinese Pre-trained Language Models.
+  2.6B parameters; demonstrated strong performance across Chinese NLP tasks and
+  laid the groundwork for the CPM series.</p>
+
+  <p>By Zhengyan Zhang, Xu Han, Hao Zhou et al. of the
+  <strong>Department of Computer Science and Technology, Tsinghua University
+  &amp; BAAI</strong>. The CPM lineage is later stewarded externally by
+  <a href="/labs/openbmb">OpenBMB</a>, which inherits Tsinghua THUNLP's
+  open-source releases &mdash; including the descendant
+  <a href="/outputs/openbmb/minicpm">MiniCPM</a> family.</p>
+tags:
+  - nlp
+  - training
+  - research
+paper:
+  arxiv: "2012.00413"
+model:
+  parameters: 2.6B
+related:
+  - cpm-2
+  - minicpm
