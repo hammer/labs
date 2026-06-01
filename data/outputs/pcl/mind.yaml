@@ -16,32 +16,22 @@ sources:
   - label: WWW 2025 paper (Peng Cheng Cloud Brain and Mind Series)
     url: https://dl.acm.org/doi/10.1145/3696410.3714543
 description: >
-  <p><strong>PCL's flagship Chinese-focused autoregressive language model
-  series.</strong> Per the OpenI repo header, PengCheng.Mind 200B is a
-  <em>"201-billion-parameter autoregressive language model based on Transformer
-  architecture"</em> (基于Transformer架构的2010亿参数自回归式语言模型) &mdash; a
-  <strong>dense Transformer</strong>, <em>not</em> a Mixture-of-Experts model.
-  Two variants total: <strong>7B and 200B, both dense</strong>. Trained on
-  ~<strong>1.5T tokens</strong>, fully on China's Computing Network using the
+  <p>PCL's flagship Chinese-focused autoregressive language model series &mdash;
+  a <strong>201B-parameter dense Transformer</strong> alongside a 7B sibling,
+  trained end-to-end on China's Computing Network using the
   <strong>MindSpore</strong> framework over <strong>Huawei Ascend 910</strong>
-  silicon (Cloud Brain II).</p>
+  silicon (Cloud Brain II). Both variants emphasize Chinese core capabilities
+  while supporting English and additional languages, with the released
+  checkpoint trained on ~<strong>1.5T tokens</strong>.</p>
 
-  <p>The 200B checkpoint is sharded into 3,456 model shards for distributed
-  training/inference on Ascend; even fine-tuning requires 144 Ascend-910 cards.
-  Weights are <strong>not</strong> published on HuggingFace &mdash; access goes
-  through an application form on OpenI.</p>
+  <p>The 200B checkpoint is sharded into <strong>3,456 model shards</strong>
+  for distributed training and inference on Ascend; fine-tuning requires
+  144 Ascend-910 cards. Weights are distributed via OpenI through an
+  application gate, not on HuggingFace.</p>
 
-  <p>The only PCL-Mind variant with downloadable HF weights is the multilingual
-  <strong>mPengC.mind</strong> (7B), built via multilingual incremental
-  learning on the Chinese-focused base. The lab's only published MoE artifact
-  is the <a href="/outputs/pcl/symphony-moe">Symphony-MoE</a> paper from 2025,
-  a model-merging methodology study at the 7B base scale. There is no
-  public evidence of PCL training MoEs from scratch at 100B+ parameters.
-  (The widely-cited "PCL contribution" to the Huawei PanGu line is limited
-  to an acknowledgements-section credit to "Peng Cheng Laboratory" on
-  <strong>PanGu-α</strong> (2021); the follow-on
-  <a href="/outputs/huawei/pangu-sigma">PanGu-&Sigma;</a> paper lists
-  Huawei-only affiliations with no PCL mention anywhere in its text.)</p>
+  <p>A separate multilingual variant, <strong>mPengC.mind (7B)</strong>,
+  applies multilingual incremental learning on top of the 7B base and is
+  released openly on HuggingFace in both NPU and GPU builds.</p>
 tags:
   - open-weight
   - nlp
@@ -54,13 +44,12 @@ model:
   variants:
     - name: PengCheng-Mind-200B
       parameters: 200B
-      notes: Dense Transformer; not on HF — application-gated on OpenI; 3,456 shards
+      notes: Distributed via OpenI application gate; 3,456 model shards
     - name: PengCheng-Mind-7B
       parameters: 7B
-      notes: Dense Transformer base
     - name: mPengC.mind (multilingual 7B)
       parameters: 7B
-      notes: Multilingual incremental-learning variant on the 7B base; weights public on HF (NPU + GPU builds)
+      notes: Multilingual incremental-learning variant on the 7B base; HF NPU + GPU builds
 related:
   - nebula
   - symphony-moe
