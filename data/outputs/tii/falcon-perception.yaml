@@ -1,0 +1,94 @@
+name: Falcon Perception
+slug: falcon-perception
+lab: tii
+type: model
+date: 2026-03-28
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.27365
+  - label: HuggingFace blog
+    url: https://huggingface.co/blog/tiiuae/falcon-perception
+  - label: HuggingFace (Falcon Perception)
+    url: https://huggingface.co/tiiuae/Falcon-Perception
+  - label: HuggingFace (Falcon Perception 300M)
+    url: https://huggingface.co/tiiuae/Falcon-Perception-300M
+  - label: HuggingFace (Falcon OCR)
+    url: https://huggingface.co/tiiuae/Falcon-OCR
+  - label: GitHub
+    url: https://github.com/tiiuae/Falcon-Perception
+  - label: Playground
+    url: https://vision.falcon.aidrc.tii.ae
+description: >
+  <p><strong>Early-fusion dense Transformer</strong> for open-vocabulary
+  grounding and segmentation from natural-language prompts. Processes image
+  patches and text tokens in a <em>shared parameter space from the first layer</em>
+  with a hybrid attention mask (bidirectional over image tokens, causal over
+  text/task tokens) and a "Chain-of-Perception" autoregressive interface
+  &mdash; each detected instance emits
+  <code>&lt;coord&gt; &rarr; &lt;size&gt; &rarr; &lt;seg&gt;</code>, with
+  coordinates encoded via Fourier features and segmentation produced from a
+  dot-product against upsampled image features.</p>
+
+  <p>Two open-weight checkpoints: <strong>Falcon Perception (0.6B)</strong>
+  for full grounding + segmentation, and <strong>Falcon OCR (0.3B)</strong>
+  specialised for document layout + OCR. Trained on 54M images with 195M
+  positive expressions and 488M hard negatives in three stages, using
+  multi-teacher distillation from DINOv3 + SigLIP2 and ensemble consensus
+  validation (SAM 3 + Qwen3-VL-30B + Moondream3) &mdash; <strong>700 GPU-hours
+  total</strong>.</p>
+
+  <p>Benchmark headline: <strong>SA-Co 68.0 Macro-F<sub>1</sub></strong>
+  (vs SAM 3's 62.3); on the new <strong>PBench</strong> diagnostic the lead
+  widens with prompt complexity &mdash; +13.4 on OCR-guided, +21.9 on spatial,
+  +15.8 on relations, +14.2 on dense scenes. Falcon OCR reports
+  <strong>olmOCR 80.3</strong> and <strong>OmniDocBench 88.6</strong>; full
+  layout+OCR throughput is 2.9 images/s on H100.</p>
+
+  <p>Companion release: <strong>PBench</strong>, a capability-stratified
+  diagnostic benchmark (L0&ndash;L4 + dense). Docker / vLLM server / MLX
+  (Apple Silicon) shipped alongside. CC-BY 4.0.</p>
+tags:
+  - frontier
+  - multimodal
+  - vision
+  - open-weight
+  - foundational
+model:
+  architecture: dense
+  parameters: 0.6B
+  variants:
+    - name: Falcon Perception
+      parameters: 0.6B
+      notes: Full grounding + segmentation; SA-Co 68.0 Macro-F1 (#1 vs SAM 3)
+    - name: Falcon Perception 300M
+      parameters: 300M
+      notes: Detection-only (bounding boxes); no segmentation head
+    - name: Falcon OCR
+      parameters: 0.3B
+      notes: Document layout + OCR; olmOCR 80.3, OmniDocBench 88.6
+  benchmark_scores:
+    - benchmark: SA-Co Macro-F1
+      score: "68.0"
+    - benchmark: PBench L2 OCR-guided
+      score: "38.0"
+    - benchmark: PBench L3 spatial
+      score: "53.5"
+    - benchmark: PBench Dense (100s instances)
+      score: "72.6"
+    - benchmark: olmOCR (Falcon OCR)
+      score: "80.3"
+    - benchmark: OmniDocBench (Falcon OCR)
+      score: "88.6"
+paper:
+  arxiv: "2603.27365"
+  authors:
+    - Aviraj Bevli
+    - Sofian Chaybouti
+    - Yasser Dahou
+    - Hakim Hacid
+    - Ngoc Dung Huynh
+    - Phuc H. Le Khac
+    - Sanath Narayan
+    - Wamiq Reyaz Para
+    - Ankit Singh

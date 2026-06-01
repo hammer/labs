@@ -64,6 +64,21 @@ Do NOT add news for:
 - Minor product updates
 - Social media posts
 
+### News + output: when the news references a research artifact, file BOTH
+
+A press release announcing a model, dataset, or library is *also* a flag that an output entry should exist. Filing only the news leaves the canonical artifact untracked (no `intelligence_index`, no `openness_index`, no listing on the lab's outputs surface). Real misses caught by this rule:
+
+- **TII Falcon Perception** — news entry filed April 1 from the TII launch post; the companion arXiv 2603.27365 paper, HuggingFace models (Falcon-Perception, Falcon-Perception-300M, Falcon-OCR), and PBench benchmark sat untracked for ~2 months because we never ran the output-probe path on the same announcement.
+
+Whenever the news headline contains words like *"launches,"* *"releases,"* *"unveils,"* *"announces,"* or names a specific model / paper / dataset, run the same external-link probes the `add-output` skill specifies:
+
+1. Search arXiv for a companion paper from the same lab within **±14 days** of the news date.
+2. Hit the lab's HuggingFace org via `curl -sL 'https://huggingface.co/api/models?author=<org>&sort=lastModified&direction=-1&limit=30'` (plus the parallel `/api/datasets` query) and look for uploads matching the announcement.
+3. Check the lab's GitHub for a companion repo (often named after the model).
+4. Check the lab's own blog and HuggingFace blog for a technical post with benchmarks.
+
+If any of those turn up an artifact, add an output entry per `.agents/skills/add-output/SKILL.md` in the same pass. The news entry stays as-is (it's the human-context wrapper); the output is the structured artifact record that lets the rest of the index work (intelligence_index, openness_index, benchmarks, model details, AAII/AAOI fetch scripts, etc.).
+
 ## 5. Finding News — Priority Sources
 
 When searching for news about a lab, check sources in this order. Prefer higher-tier sources when multiple outlets cover the same story.
