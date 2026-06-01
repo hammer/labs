@@ -5,23 +5,59 @@ type: model
 date: "2023-09-21"
 flagship: true
 sources:
-  - label: OpenI
-    url: https://openi.pcl.ac.cn/extension/mind
-  - label: GitHub
+  - label: OpenI repo (PengCheng.Mind 200B + 7B)
+    url: https://openi.pcl.ac.cn/PengChengMind/PengCheng.Mind
+  - label: GitHub (mPengC.mind — multilingual 7B)
     url: https://github.com/PCLNLP-group/mPengC.mind
+  - label: HuggingFace (mPengC.mind_gpu)
+    url: https://huggingface.co/PCLNLP/mPengC.mind_gpu
+  - label: HuggingFace (mPengC.mind_npu)
+    url: https://huggingface.co/PCLNLP/mPengC.mind_npu
+  - label: WWW 2025 paper (Peng Cheng Cloud Brain and Mind Series)
+    url: https://dl.acm.org/doi/10.1145/3696410.3714543
 description: >
-  Flagship foundational model series (200B+ parameters) trained on the
-  PengCheng Cloud Brain II supercomputer. Built using the MindSpore
-  framework, it supports 53+ languages and serves as a digital base
-  for the China Computing Net (C²NET).
+  <p><strong>PCL's flagship Chinese-focused autoregressive language model
+  series.</strong> Per the OpenI repo header, PengCheng.Mind 200B is a
+  <em>"201-billion-parameter autoregressive language model based on Transformer
+  architecture"</em> (基于Transformer架构的2010亿参数自回归式语言模型) &mdash; a
+  <strong>dense Transformer</strong>, <em>not</em> a Mixture-of-Experts model.
+  Two variants total: <strong>7B and 200B, both dense</strong>. Trained on
+  ~<strong>1.5T tokens</strong>, fully on China's Computing Network using the
+  <strong>MindSpore</strong> framework over <strong>Huawei Ascend 910</strong>
+  silicon (Cloud Brain II).</p>
+
+  <p>The 200B checkpoint is sharded into 3,456 model shards for distributed
+  training/inference on Ascend; even fine-tuning requires 144 Ascend-910 cards.
+  Weights are <strong>not</strong> published on HuggingFace &mdash; access goes
+  through an application form on OpenI.</p>
+
+  <p>The only PCL-Mind variant with downloadable HF weights is the multilingual
+  <strong>mPengC.mind</strong> (7B), built via multilingual incremental
+  learning on the Chinese-focused base. The lab's frontier-MoE work is
+  separate &mdash; the <a href="/outputs/pcl/symphony-moe">Symphony-MoE</a>
+  paper from 2025 is a model-merging methodology study, and the only 100B+
+  MoE PCL has co-trained is
+  <a href="/outputs/huawei/pangu-sigma">PanGu-&Sigma;</a> (1T MoE, jointly
+  with Huawei), tracked under Huawei.</p>
 tags:
   - open-weight
-  - moe
   - nlp
+  - multilingual
 model:
-  architecture: moe
+  architecture: dense
   parameters: 200B
+  training_tokens: 1.5T
+  training_hardware: Ascend 910 (Cloud Brain II)
   variants:
     - name: PengCheng-Mind-200B
-    - name: Mind-m1 (7B)
-    - name: PengCheng-Mind-2B (OpenSource)
+      parameters: 200B
+      notes: Dense Transformer; not on HF — application-gated on OpenI; 3,456 shards
+    - name: PengCheng-Mind-7B
+      parameters: 7B
+      notes: Dense Transformer base
+    - name: mPengC.mind (multilingual 7B)
+      parameters: 7B
+      notes: Multilingual incremental-learning variant on the 7B base; weights public on HF (NPU + GPU builds)
+related:
+  - nebula
+  - symphony-moe
