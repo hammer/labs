@@ -1,0 +1,47 @@
+name: "Autonomous Agentic Data Engineering"
+slug: agentic-data-engineering
+lab: tencent
+type: paper
+date: 2026-05-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.30407
+description: >
+  <p>"Exploring Autonomous Agentic Data Engineering for Model Specialization."
+  Formalizes a new task &mdash; letting an LLM agent <em>autonomously execute
+  the entire end-to-end data-curation loop</em> for fine-tuning a student model
+  on a target domain. The agent plans the curriculum, generates training data,
+  runs the SFT step, observes the student's downstream performance, and
+  iteratively refines the data mixture without any human-designed workflow.</p>
+
+  <p>Evaluation uses Llama-3.1-8B-Instruct as the student and Qwen3-30B-A3B as
+  the teacher across Science, Code, and Finance domains, with seven frontier
+  LLMs (GPT-5.2, Qwen3-Max, DeepSeek-R1, DeepSeek-V3.1, Gemini-2.5 Pro,
+  Claude-4 Sonnet, and others) compared as the data-engineering agent.
+  <strong>GPT-5.2 yields a 57.29% average relative gain</strong> over the base
+  student in the multi-iteration closed-loop setting &mdash; the strongest of
+  the agents tested.</p>
+
+  <p>Joint work by <strong>Zhejiang University and Tencent Platform &amp;
+  Content Group (PCG)</strong>. Code release at
+  github.com/zjunlp. CC BY-NC-SA 4.0.</p>
+tags:
+  - agentic
+  - training
+  - research
+paper:
+  arxiv: "2605.30407"
+  authors:
+    - Yujie Luo
+    - Xiangyuan Ru
+    - Jingsheng Zheng
+    - Jingjing Wang
+    - Yuqi Zhu
+    - Jintian Zhang
+    - Runnan Fang
+    - Kewei Xu
+    - Ye Liu
+    - Zheng Wei
+    - Jiang Bian
+    - Zang Li
+    - Shumin Deng
