@@ -7,20 +7,36 @@ flagship: true
 sources:
   - label: HuggingFace
     url: https://huggingface.co/internlm/Intern-S2-Preview
+  - label: GitHub
+    url: https://github.com/InternLM/Intern-S1
   - label: Chat demo
     url: https://chat.intern-ai.org.cn/
 description: >
-  <p>Next-generation flagship for Shanghai AI Lab's scientific multimodal
-  foundation-model line. <strong>~35&ndash;36B total / ~3B active hybrid-attention
-  MoE</strong> with <strong>262K context</strong>, continued-pretrained from
-  Qwen3.5 with domain extensions for materials, biology, time-series, and
-  crystal-structure generation.</p>
+  <p>Efficient scientific multimodal foundation model from InternLM, continued
+  pretrained from <a href="/outputs/alibaba/qwen3.5">Qwen3.5</a>. Per the
+  HuggingFace model card: <strong>36B parameters (35B + utilities)</strong>,
+  positioned as comparable to the trillion-scale
+  <a href="/outputs/shanghai-ai-lab/intern-s1-pro">Intern-S1-Pro</a> on core
+  scientific tasks while using a fraction of the parameter budget.</p>
 
-  <p>Reported benchmarks: <strong>SWE-bench Resolved 64</strong>,
-  <strong>MMLU-Pro 88</strong>, <strong>MathArena HMMT Feb 2026 87.31</strong> &mdash;
-  competitive with the much larger
-  <a href="/outputs/shanghai-ai-lab/intern-s1-pro">Intern-S1-Pro</a> at a
-  fraction of the active-parameter count.</p>
+  <p><strong>Architecture</strong> (from the model's <code>config.json</code>):
+  the text backbone is a Qwen3.5-MoE variant with 256 experts and a hybrid
+  attention stack &mdash; <strong>30 linear-attention layers and 10
+  full-attention layers</strong> at a 3:1 ratio (every fourth layer is
+  full-attention), 2048 hidden dim, GQA with 16 query / 2 KV heads. Vision
+  module is a 27-layer ViT-style encoder (1152 → 2048 hidden, patch 16).
+  Native max position embedding is 262,144 tokens; the model card caps
+  recommended inference at <strong>128K tokens for text reasoning / 64K for
+  multimodal</strong>. Default thinking-mode is on.</p>
+
+  <p>Reported benchmarks (HF model card): <strong>SWE-bench Resolved 64</strong>,
+  <strong>MMLU-Pro 88</strong>, <strong>MathArena HMMT Feb 2026 87.31</strong>,
+  HLE 21.94, MMMU-Pro Vision 76.88, WildClawBench 39.2. First open-source
+  model reported to do material crystal-structure generation. Apache 2.0.</p>
+
+  <p>Released as a "Preview" weights drop on May 22, 2026; no companion
+  technical report on arXiv as of June 2026 &mdash; the Intern-S2 paper is
+  presumably forthcoming alongside the non-preview release.</p>
 tags:
   - frontier
   - science
@@ -30,10 +46,24 @@ tags:
   - reasoning
 model:
   architecture: moe
-  parameters: 35B
-  active_parameters: 3B
-  context_window: 262144
-  base_model: qwen3
+  parameters: 36B
+  context_window: 131072
+  base_model: qwen3.5
+  license: Apache 2.0
+  num_experts: 256
+  benchmark_scores:
+    - benchmark: SWE-bench Resolved
+      score: "64"
+    - benchmark: MMLU-Pro
+      score: "88"
+    - benchmark: MathArena HMMT Feb 2026
+      score: "87.31"
+    - benchmark: HLE
+      score: "21.94"
+    - benchmark: MMMU-Pro Vision
+      score: "76.88"
+    - benchmark: WildClawBench
+      score: "39.2"
 related:
   - intern-s1-pro
   - intern-s1
