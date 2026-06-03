@@ -284,7 +284,12 @@ export function initFilterBar(config: InitConfig): InitResult {
     }
     dimPickerIndex = 0;
     renderDimList();
-    paletteInput?.focus();
+    // Skip auto-focus on mobile: iOS Safari scrolls the page to bring a
+    // focused input into view *before* the just-revealed bottom-sheet has
+    // finished laying out. That scroll then trips the scroll-close handler
+    // and the panel closes the same tick it opened — symptom the user sees
+    // as "page scrolls down but nothing pops up."
+    if (!isMobile()) paletteInput?.focus();
   }
 
   function showValueStage(d: FilterDimension): void {
@@ -306,18 +311,29 @@ export function initFilterBar(config: InitConfig): InitResult {
 
   let autoCloseAttached = false;
   let initialScrollY = 0;
+  let scrollAttached = false;
   function attachAutoClose(): void {
     if (autoCloseAttached) return;
     autoCloseAttached = true;
     initialScrollY = window.scrollY;
-    document.addEventListener('scroll', onDocScroll, { passive: true, capture: true });
+    // Scroll-close is a desktop-only affordance. On mobile the panel is a
+    // fixed bottom sheet with its own backdrop for outside-tap dismiss, and
+    // attaching scroll-close there means the iOS keyboard-driven scroll
+    // closes the panel as soon as the user focuses any input inside it.
+    if (!isMobile()) {
+      scrollAttached = true;
+      document.addEventListener('scroll', onDocScroll, { passive: true, capture: true });
+    }
     document.addEventListener('click', onDocClick, true);
     window.addEventListener('resize', onResize);
   }
   function detachAutoClose(): void {
     if (!autoCloseAttached) return;
     autoCloseAttached = false;
-    document.removeEventListener('scroll', onDocScroll, { capture: true } as any);
+    if (scrollAttached) {
+      document.removeEventListener('scroll', onDocScroll, { capture: true } as any);
+      scrollAttached = false;
+    }
     document.removeEventListener('click', onDocClick, true);
     window.removeEventListener('resize', onResize);
   }
