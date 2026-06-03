@@ -1,0 +1,69 @@
+name: MAI-Thinking-1
+slug: mai-thinking-1
+lab: microsoft
+type: model
+date: 2026-06-02
+flagship: true
+sources:
+  - label: Technical report (PDF)
+    url: https://microsoft.ai/wp-content/uploads/2026/06/main_20260602_2.pdf
+  - label: Model page
+    url: https://microsoft.ai/models/mai-thinking-1/
+  - label: Announcement
+    url: https://microsoft.ai/news/introducing-mai-thinking-1/
+  - label: Launch post (hill-climbing machine)
+    url: https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/
+description: >
+  <p><strong>Microsoft's first in-house frontier reasoning model</strong>,
+  launched at Build 2026 (June 2). Per the technical report, a
+  <strong>35B-active / 1T-total parameter sparse MoE</strong> with
+  <strong>8 of 512 experts activated per token</strong> in a compressed latent
+  space &mdash; a decoder-only Transformer interleaving high-sparsity MoE
+  layers with small dense FFNs, and global with local attention in a 5:1 ratio
+  (Gemma 3-style). 256K context window. The base architecture is internally
+  named <strong>MAI-Base-1</strong>; MAI-Thinking-1 is its reasoning-trained
+  variant.</p>
+
+  <p><strong>Trained from scratch on 30T tokens</strong> of "clean,
+  enterprise-grade" web, GitHub code, books, academic papers, news,
+  multilingual, and domain-specific data &mdash; <em>without distillation
+  from any third-party model</em>, the marquee distinction the launch post
+  emphasizes. Pipeline: pre-training → STEM/math/code-heavy mid-training →
+  reinforcement-learning "climb." Tokenizer is OpenAI's o200k_base (200K
+  vocab) for in-house workflow compatibility.</p>
+
+  <p><strong>Benchmarks</strong> (per tech report): SWE-Bench Pro
+  <strong>52.8%</strong>, AIME 2025 <strong>97.0%</strong>, AIME 2026
+  <strong>94.5%</strong>, LiveCodeBench v6 <strong>87.7%</strong>. Microsoft
+  positions it as "competitive with Claude Sonnet 4.6 across a wide range of
+  benchmarks." A blind human-preference eval over 1,276 tasks reportedly
+  preferred MAI-Thinking-1 to Sonnet 4.6.</p>
+
+  <p><strong>Status:</strong> private preview on Microsoft Foundry, with
+  Foundry / OpenRouter / Fireworks / Baseten as planned distribution channels;
+  public preview on MAI Playground "coming soon." No HuggingFace upload at
+  release (HF org probe returns 401 for the slug). License: proprietary,
+  product-tied ("Various product and service terms where the model is
+  deployed").</p>
+tags:
+  - frontier
+  - reasoning
+  - moe
+  - agentic
+model:
+  architecture: moe
+  parameters: 1T
+  active_parameters: 35B
+  context_window: 262144
+  training_tokens: 30T
+  num_experts: 512
+  top_k: 8
+  benchmark_scores:
+    - benchmark: AIME 2025
+      score: "97.0%"
+    - benchmark: AIME 2026
+      score: "94.5%"
+    - benchmark: SWE-Bench Pro
+      score: "52.8%"
+    - benchmark: LiveCodeBench v6
+      score: "87.7%"

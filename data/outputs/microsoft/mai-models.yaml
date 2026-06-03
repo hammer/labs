@@ -1,26 +1,42 @@
-name: MAI Foundation Models
+name: MAI Multimodal Stack (Transcribe / Voice / Image)
 slug: mai-models
 lab: microsoft
 type: model
 date: 2026-04-02
 flagship: true
 sources:
-  - label: Announcement
+  - label: April 2026 announcement (v1 / v1 / v2)
     url: https://microsoft.ai/news/today-were-announcing-3-new-world-class-mai-models-available-in-foundry/
-  - label: MAI-Transcribe-1
+  - label: June 2026 announcement (Build 2026, v1.5 / v2 / v2.5)
+    url: https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/
+  - label: MAI-Transcribe-1 deep dive
     url: https://microsoft.ai/news/state-of-the-art-speech-recognition-with-mai-transcribe-1/
 description: >
   <p>Microsoft's first major foundation model push, releasing <strong>three MAI
-  models</strong> in Azure Foundry &mdash; a direct shot at OpenAI and Google
-  dependencies. <strong>MAI-Transcribe-1</strong> (speech-to-text, 25 languages)
-  ranks #1 by FLEURS in 11 core languages, beating Whisper-large-v3 and Gemini 3.1
-  Flash-Lite. <strong>MAI-Voice-1</strong> (text-to-speech) generates 60 seconds of
-  audio in under 1 second on a single GPU. <strong>MAI-Image-2</strong> (text-to-image)
-  debuted #3 on Arena.ai's image leaderboard.</p>
+  models</strong> in Azure Foundry in April 2026 &mdash; a direct shot at OpenAI
+  and Google dependencies &mdash; then refreshing the whole stack at Build 2026
+  (June 2) alongside the new <a href="/outputs/microsoft/mai-thinking-1">MAI-Thinking-1</a>
+  reasoning model and <a href="/outputs/microsoft/mai-code-1-flash">MAI-Code-1-Flash</a>
+  coding model.</p>
 
-  <p>Marks Microsoft's transition from pure OpenAI dependency to building its own
-  frontier multimodal models internally under VP GenAI Mustafa Suleyman's MAI division.
-  Proprietary, available via Azure Foundry.</p>
+  <p><strong>Original April release:</strong> MAI-Transcribe-1 (STT, 25 languages,
+  #1 by FLEURS in 11 core languages, beating Whisper-large-v3 and Gemini 3.1
+  Flash-Lite); MAI-Voice-1 (TTS, 60 s of audio in &lt;1 s on a single GPU);
+  MAI-Image-2 (T2I, debuted #3 on Arena.ai).</p>
+
+  <p><strong>Build 2026 refresh:</strong> <strong>MAI-Transcribe-1.5</strong>
+  expands to 43 languages and retains its #1 FLEURS spot (adds content biasing,
+  $0.36/hour); <strong>MAI-Voice-2</strong> brings voice cloning and voice
+  prompting to 15+ languages ($22/M characters), with a faster
+  <strong>MAI-Voice-2-Flash</strong> coming soon; <strong>MAI-Image-2.5</strong>
+  adds image-to-image editing and re-debuts at #3 on Arena.ai for image
+  families ($1.75/M input tokens, $33/M image output), with a more efficient
+  <strong>MAI-Image-2.5-Flash</strong> shipped same day.</p>
+
+  <p>Marks Microsoft's transition from pure OpenAI dependency to building its
+  own frontier multimodal stack under VP GenAI <strong>Mustafa Suleyman</strong>'s
+  MAI division. Proprietary, available via Microsoft Foundry plus the
+  June 2026 distribution expansion to OpenRouter, Fireworks, and Baseten.</p>
 tags:
   - frontier
   - multimodal
@@ -29,8 +45,21 @@ tags:
 model:
   variants:
     - name: MAI-Transcribe-1
-      notes: Speech-to-text, 25 languages, beats Whisper-large-v3
+      notes: Apr 2026; STT, 25 languages, #1 FLEURS in 11 core langs
     - name: MAI-Voice-1
-      notes: TTS, 60s audio in <1s on single GPU
+      notes: Apr 2026; TTS, 60 s of audio in <1 s on single GPU
     - name: MAI-Image-2
-      notes: Text-to-image, #3 on Arena.ai
+      notes: Apr 2026; T2I, #3 on Arena.ai
+    - name: MAI-Transcribe-1.5
+      notes: Jun 2026; STT, 43 languages, content biasing, retains #1 FLEURS, $0.36/hr
+    - name: MAI-Voice-2
+      notes: Jun 2026; TTS, 15+ languages, voice cloning + voice prompting, $22/M chars
+    - name: MAI-Voice-2-Flash
+      notes: Jun 2026 announce, coming soon; efficient TTS variant
+    - name: MAI-Image-2.5
+      notes: Jun 2026; T2I + image editing, #3 on Arena.ai, $1.75/M in / $33/M image out
+    - name: MAI-Image-2.5-Flash
+      notes: Jun 2026; efficient T2I variant
+related:
+  - mai-thinking-1
+  - mai-code-1-flash

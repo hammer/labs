@@ -81,6 +81,10 @@ people:
       - label: LinkedIn
         url: https://www.linkedin.com/in/weizhu-chen-620b2330/
 news:
+  - title: "Build 2026: Seven MAI Models Launched — MAI-Thinking-1 (1T/35B Reasoning), MAI-Code-1-Flash, Multimodal Stack Refresh"
+    url: https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/
+    source: Microsoft AI
+    date: 2026-06-02
   - title: "Microsoft to Unveil Homegrown Coding Model + Image / Reasoning / Speech / Transcription Suite at Build 2026"
     url: https://www.theinformation.com/articles/microsofts-new-coding-model-poised-to-take-on-cursor-anthropic
     source: The Information

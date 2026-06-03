@@ -1,0 +1,60 @@
+name: MAI-Code-1-Flash
+slug: mai-code-1-flash
+lab: microsoft
+type: model
+date: 2026-06-02
+sources:
+  - label: Model card (PDF)
+    url: https://microsoft.ai/pdf/MAI-Code-1-Flash-Model-Card.PDF
+  - label: Model page
+    url: https://microsoft.ai/models/mai-code-1-flash/
+  - label: Launch post
+    url: https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/
+description: >
+  <p>Microsoft's <strong>Copilot-native agentic coding model</strong>, derived
+  from <a href="/outputs/microsoft/mai-thinking-1">MAI-Thinking-1</a>'s base
+  and tuned specifically for the GitHub Copilot harness. Per the official
+  model card: <strong>137B parameters, sparse MoE Transformer</strong>, 256K
+  context, trained March&ndash;May 2026 with a December 2025 data cut-off.
+  Marketed as a 5B-class model in user-facing positioning, suggesting ~5B
+  active per token (active count not explicitly disclosed in the model card).
+  English-only.</p>
+
+  <p>Trained inside Copilot's production harness rather than benchmarked
+  externally and deployed in &mdash; Microsoft frames this as a reliability
+  advantage for agentic workflows. Pipeline: starts from MAI-Thinking-1
+  checkpoint &rarr; SFT on ~2M synthetic agentic tasks &rarr; RL across
+  150,000+ environments. Features <em>adaptive solution-length control</em>
+  (stays concise on easy tasks, spends more reasoning budget on hard ones).</p>
+
+  <p><strong>Benchmarks</strong> (per model card): <strong>SWE-Bench Verified
+  71.6%</strong> (vs Claude Haiku 4.5's 66.6%), <strong>SWE-Bench Pro
+  51.2%</strong> (vs 35.2%), <strong>SWE-Bench Multilingual 65.5%</strong>,
+  <strong>Terminal-Bench 2 54.8%</strong>. Launch post claims up to
+  <strong>60% fewer tokens</strong> on hard coding tasks.</p>
+
+  <p><strong>Status:</strong> rolling out to all GitHub Copilot tiers (Free,
+  Pro, Pro+, Max) in VS Code from June 2, 2026; CLI / Foundry / OpenRouter /
+  Fireworks / Baseten access listed as future. Pricing "to be finalized."
+  Proprietary, deployment-tied license. Not on HuggingFace as of release.</p>
+tags:
+  - frontier
+  - coding
+  - agentic
+  - moe
+model:
+  architecture: moe
+  parameters: 137B
+  context_window: 262144
+  base_model: mai-thinking-1
+  benchmark_scores:
+    - benchmark: SWE-Bench Verified
+      score: "71.6%"
+    - benchmark: SWE-Bench Pro
+      score: "51.2%"
+    - benchmark: SWE-Bench Multilingual
+      score: "65.5%"
+    - benchmark: Terminal-Bench 2
+      score: "54.8%"
+related:
+  - mai-thinking-1
