@@ -27,7 +27,7 @@ function log(name, ok, detail = '') {
     hasFilterBar: !!document.querySelector('.filter-bar .palette-btn'),
     paletteHidden: document.querySelector('.palette-panel').classList.contains('hidden'),
   }));
-  log('home: clean load', t.rows === 57 && t.visible === 57 && t.hasFilterBar && t.paletteHidden, JSON.stringify(t));
+  log('home: clean load', t.rows === 58 && t.visible === 58 && t.hasFilterBar && t.paletteHidden, JSON.stringify(t));
   await page.close();
 }
 
@@ -40,7 +40,7 @@ function log(name, ok, detail = '') {
     chips: document.querySelectorAll('.filter-chip').length,
     countText: document.querySelector('.filter-count').textContent,
   }));
-  log('home: ?region=china&intelligence=30-', t.visible === 8 && t.chips === 2, JSON.stringify(t));
+  log('home: ?region=china&intelligence=30-', t.visible === 9 && t.chips === 2, JSON.stringify(t));
   await page.close();
 }
 
@@ -167,7 +167,7 @@ function log(name, ok, detail = '') {
     visible: Array.from(document.querySelectorAll('.lab-row')).filter(r => r.style.display !== 'none').length,
     url: window.location.search,
   }));
-  log('home: Clear all', t.chips === 0 && t.visible === 57 && t.url === '', JSON.stringify(t));
+  log('home: Clear all', t.chips === 0 && t.visible === 58 && t.url === '', JSON.stringify(t));
   await page.close();
 }
 
@@ -250,6 +250,92 @@ function log(name, ok, detail = '') {
   });
   const ok = pos.x === 0 && pos.right === pos.vw && pos.backdropVisible;
   log('mobile: palette becomes full-width sheet + backdrop', ok, JSON.stringify(pos));
+  await page.close();
+}
+
+// ── Mobile: does NOT auto-focus the search input ─────────────────────
+// iOS Safari scrolls the page to bring a focused input into view *before*
+// the just-revealed bottom-sheet finishes laying out. That scroll then
+// trips the scroll-close handler and the panel closes the same tick it
+// opened. Fix: skip auto-focus on mobile so the soft keyboard doesn't
+// pop up, and the page doesn't scroll.
+{
+  const page = await newPage({ width: 375, height: 667 });
+  await page.goto('http://localhost:4321/', { waitUntil: 'networkidle' });
+  await page.click('.palette-btn');
+  await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
+  const t = await page.evaluate(() => ({
+    focusedTag: document.activeElement?.tagName,
+    focusedClass: document.activeElement?.className,
+    panelOpen: !document.querySelector('.palette-panel').classList.contains('hidden'),
+  }));
+  const ok = t.focusedTag !== 'INPUT' && !String(t.focusedClass).includes('palette-input') && t.panelOpen;
+  log('mobile: palette open without auto-focusing the search input', ok, JSON.stringify(t));
+  await page.close();
+}
+
+// ── Mobile: programmatic scroll does NOT close the palette ───────────
+// Simulates iOS Safari auto-scrolling the page when the soft keyboard
+// would appear. On mobile, scroll-close should be disabled — the
+// backdrop handles outside-tap dismiss instead.
+{
+  const page = await newPage({ width: 375, height: 667 });
+  await page.goto('http://localhost:4321/', { waitUntil: 'networkidle' });
+  await page.click('.palette-btn');
+  await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
+  // Simulate a 200px scroll like an iOS keyboard-driven scroll would do
+  await page.evaluate(() => {
+    document.documentElement.style.height = '4000px';
+    window.scrollTo({ top: 200, behavior: 'instant' });
+    window.dispatchEvent(new Event('scroll'));
+    document.dispatchEvent(new Event('scroll', { bubbles: true }));
+  });
+  await page.waitForTimeout(150);
+  const t = await page.evaluate(() => ({
+    panelOpen: !document.querySelector('.palette-panel').classList.contains('hidden'),
+    backdropVisible: !document.querySelector('.filter-backdrop').classList.contains('hidden'),
+  }));
+  const ok = t.panelOpen && t.backdropVisible;
+  log('mobile: 200px scroll does NOT close palette (no scroll-close on mobile)', ok, JSON.stringify(t));
+  await page.close();
+}
+
+// ── Mobile: backdrop tap closes palette ──────────────────────────────
+{
+  const page = await newPage({ width: 375, height: 667 });
+  await page.goto('http://localhost:4321/', { waitUntil: 'networkidle' });
+  await page.click('.palette-btn');
+  await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
+  await page.click('.filter-backdrop');
+  await page.waitForTimeout(100);
+  const t = await page.evaluate(() => ({
+    panelOpen: !document.querySelector('.palette-panel').classList.contains('hidden'),
+    backdropVisible: !document.querySelector('.filter-backdrop').classList.contains('hidden'),
+  }));
+  const ok = !t.panelOpen && !t.backdropVisible;
+  log('mobile: backdrop tap closes palette', ok, JSON.stringify(t));
+  await page.close();
+}
+
+// ── Mobile: panel sits within viewport after open ────────────────────
+// Anti-regression for the "page scrolls down but nothing pops up" report.
+{
+  const page = await newPage({ width: 375, height: 667 });
+  await page.goto('http://localhost:4321/', { waitUntil: 'networkidle' });
+  await page.click('.palette-btn');
+  await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
+  await page.waitForTimeout(250);  // let any iOS-style scroll-into-view race fire
+  const t = await page.evaluate(() => {
+    const r = document.querySelector('.palette-panel').getBoundingClientRect();
+    return {
+      panelOpen: !document.querySelector('.palette-panel').classList.contains('hidden'),
+      panelTop: Math.round(r.top), panelBottom: Math.round(r.bottom),
+      vh: window.innerHeight, scrollY: Math.round(window.scrollY),
+    };
+  });
+  // Panel must still be open, bottom at viewport bottom, top within viewport.
+  const ok = t.panelOpen && t.panelTop >= 0 && t.panelTop < t.vh && t.panelBottom === t.vh && t.scrollY === 0;
+  log('mobile: panel within viewport + no page scroll after open', ok, JSON.stringify(t));
   await page.close();
 }
 
