@@ -1,62 +1,107 @@
 name: Nemotron 3 Ultra
 slug: nemotron-3-ultra
 lab: nvidia
-type: announcement
-date: 2026-06-01
+type: model
+date: 2026-06-04
 flagship: true
 sources:
+  - label: Nemotron 3 Ultra blog
+    url: https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/
+  - label: Nemotron 3 Ultra Technical Report (PDF)
+    url: https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf
+  - label: HuggingFace collection
+    url: https://huggingface.co/collections/nvidia/nvidia-nemotron-v3
   - label: Nemotron 3 family white paper (arXiv)
     url: https://arxiv.org/abs/2512.20856
   - label: Artificial Analysis launch coverage
     url: https://artificialanalysis.ai/articles/nvidia-nemotron-3-ultra-launch-announced
   - label: NVIDIA newsroom (Dec 2025 family debut)
     url: https://nvidianews.nvidia.com/news/nvidia-debuts-nemotron-3-family-of-open-models
-  - label: NVIDIA Research (Nemotron 3 page)
-    url: https://research.nvidia.com/labs/nemotron/Nemotron-3/
   - label: GitHub (NeMo / Nemotron)
     url: https://github.com/NVIDIA-NeMo/Nemotron
 description: >
-  <p>The largest member of the <a href="https://arxiv.org/abs/2512.20856">Nemotron
-  3 family</a> (Nano / Super / Ultra), announced by Jensen Huang at Computex
-  Taipei (June 1, 2026) and scheduled to ship on HuggingFace
-  <strong>June 4, 2026</strong>. Per Artificial Analysis's launch coverage,
-  Ultra is <strong>~550B total parameters with ~55B active per token</strong>
-  (~90% sparsity); NVIDIA's December 2025 family debut press release had
-  earlier stated "about 500 billion parameters and up to 50 billion active per
-  token," so the published number tightened between announcement and launch.</p>
+  <p>The largest model in the Nemotron 3 family (Nano / Super / Ultra),
+  shipped on HuggingFace <strong>June 4, 2026</strong> after a Computex
+  Taipei pre-announcement by Jensen Huang on June 1. <strong>550B total
+  parameters with 55B active per token</strong> (~90% sparsity), trained
+  on <strong>20T text tokens</strong> in <strong>NVFP4</strong> on
+  Blackwell.</p>
 
-  <p><strong>Architecture</strong> (per the Nemotron 3 white paper):
-  hybrid <strong>Mamba&ndash;Transformer Mixture-of-Experts</strong> with
-  <strong>LatentMoE</strong> (a hardware-aware expert design that improves
-  accuracy without sacrificing throughput), <strong>MTP layers</strong> for
-  faster long-form generation, and <strong>NVFP4 training</strong> on
-  Blackwell. Post-trained via multi-environment reinforcement learning with
-  granular reasoning-budget control. Context window <strong>up to 1M
-  tokens</strong>.</p>
+  <p><strong>Architecture:</strong> hybrid <strong>Mamba-2 / Attention
+  Mixture-of-Experts</strong> with <strong>LatentMoE</strong> (hardware-aware
+  expert design with a 2,048-dim latent compression), <strong>108 total
+  layers</strong>, <strong>512 experts per layer activated top-22</strong>,
+  64 query / 2 KV heads (GQA), and <strong>Multi-Token Prediction (MTP)</strong>
+  with 2 shared-weight heads for native speculative decoding. Context window
+  <strong>1M tokens</strong> after a long-context extension phase. Post-trained
+  with SFT + multi-environment RLVR + <strong>Multi-teacher On-Policy Distillation
+  (MOPD)</strong>, with explicit reasoning-budget control.</p>
 
-  <p><strong>Headline benchmark:</strong> <strong>AA Intelligence Index v4.0
-  = 48</strong>, served at <strong>300+ tokens/second</strong>. AA frames it
-  as the leading US open-weights model on its composite at launch.</p>
+  <p><strong>Throughput:</strong> 5.9× / 4.8× / 1.6× higher inference throughput
+  than GLM-5.1-754B-A40B, Kimi-K2.6-1T-A32B, and Qwen-3.5-397B-17B respectively
+  on the 8K-input / 64K-output setting, at on-par accuracy across agentic and
+  reasoning benchmarks. AA frames Ultra as the leading US open-weights model
+  on its composite at launch.</p>
 
-  <p><strong>Status as of today:</strong> announced, white paper out, model
-  weights not yet uploaded to HuggingFace (the
-  <code>nvidia/NVIDIA-Nemotron-3-Ultra-*</code> repo slugs return 401 as of
-  June 2); no per-model AA page is live yet either. NVIDIA's announced
-  distribution targets are HuggingFace, ModelScope, OpenRouter, and
-  build.nvidia.com.</p>
+  <p><strong>Headline benchmarks (BF16, post-trained):</strong> MMLU-Pro 86.8,
+  GPQA (no tools) 87.0, LiveCodeBench v6 89.0, SWE-Bench Verified 71.9,
+  Terminal-Bench 2.1 56.4, RULER @ 1M 94.7, AA Intelligence Index v4.0
+  <strong>= 48</strong> served at 300+ tokens/s.</p>
+
+  <p><strong>Released as four checkpoints</strong> under the Linux Foundation
+  <strong>OpenMDW-1.1</strong> license: <code>Base-BF16</code> (pretrained-only),
+  <code>BF16</code> (post-trained), <code>NVFP4</code> (quantized for faster
+  inference), and <code>GenRM</code> (the generative reward model used during
+  RL). Distribution targets: HuggingFace, ModelScope, OpenRouter, and
+  build.nvidia.com. The same release ships the Nemotron-Pretraining-Code-v3
+  (173B tokens), Nemotron-Pretraining-Legal-v1,
+  Nemotron-Pretraining-Specialized-v1.2, and Nemotron-Posttraining-v3 datasets,
+  plus the Nemotron-RL-* training blends.</p>
 tags:
   - frontier
   - open-weight
   - moe
   - reasoning
   - agentic
+  - hybrid-architecture
 model:
   architecture: moe
   parameters: 550B
   active_parameters: 55B
   context_window: 1000000
+  license: OpenMDW-1.1
   intelligence_index: 48
   intelligence_index_version: "AA v4.0"
+  variants:
+    - name: Nemotron 3 Ultra 550B-A55B BF16
+      parameters: 550B
+      active_parameters: 55B
+      notes: Post-trained flagship; BF16 weights
+    - name: Nemotron 3 Ultra 550B-A55B NVFP4
+      parameters: 550B
+      active_parameters: 55B
+      notes: NVFP4-quantized for higher inference throughput on Blackwell
+    - name: Nemotron 3 Ultra 550B-A55B Base BF16
+      parameters: 550B
+      active_parameters: 55B
+      notes: Pretrained-only base checkpoint
+    - name: Nemotron 3 Ultra 550B-A55B GenRM
+      parameters: 550B
+      active_parameters: 55B
+      notes: Generative reward model used during RL post-training
+  benchmark_scores:
+    - benchmark: MMLU-Pro
+      score: "86.8"
+    - benchmark: GPQA (no tools)
+      score: "87.0"
+    - benchmark: LiveCodeBench v6
+      score: "89.0"
+    - benchmark: SWE-Bench Verified
+      score: "71.9"
+    - benchmark: Terminal-Bench 2.1
+      score: "56.4"
+    - benchmark: RULER @ 1M
+      score: "94.7"
 paper:
   arxiv: "2512.20856"
 related:
