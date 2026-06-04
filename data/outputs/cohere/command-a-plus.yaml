@@ -56,6 +56,8 @@ model:
   context_window: 128000
   intelligence_index: 37
   intelligence_index_version: "AA v4.0"
+  openness_index: 38.9
+  openness_index_version: "AA Openness Index v1.0"
   license: Apache 2.0
   languages: 48
   variants:
