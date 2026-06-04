@@ -11,6 +11,8 @@ sources:
     url: https://huggingface.co/collections/google/gemma-4
   - label: Apple ML Research
     url: https://deepmind.google/models/gemma/gemma-4/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gemma-4-31b
 description: >
   <p>Four-variant family released under <strong>Apache 2.0</strong> (a notable license
   upgrade from prior Gemma releases). Includes a 31B dense flagship, 26B-A4B MoE
@@ -30,19 +32,23 @@ model:
   architecture: dense
   parameters: 31B
   context_window: 256000
+  intelligence_index: 39
+  intelligence_index_version: "AA v4.0"
+  openness_index: 38.9
+  openness_index_version: "AA Openness Index v1.0"
   variants:
     - name: Gemma 4 31B
       parameters: 31B
-      notes: Dense flagship, 256K context
+      notes: Dense flagship, 256K context; AA Intelligence Index v4.0 = 39
     - name: Gemma 4 26B-A4B
       parameters: 26B
       active_parameters: 4B
-      notes: MoE, 256K context
+      notes: MoE, 256K context; AA Intelligence Index v4.0 = 31
     - name: Gemma 4 E4B
       parameters: 8B
-      notes: Effective 4.5B, 128K context
+      notes: Effective 4.5B, 128K context; AA Intelligence Index v4.0 = 19
     - name: Gemma 4 E2B
       parameters: 5.1B
-      notes: Effective 2.3B, 128K context
+      notes: Effective 2.3B, 128K context; AA Intelligence Index v4.0 = 15
 related:
   - gemma-3
