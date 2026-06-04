@@ -14,7 +14,8 @@ description: >
   Smaller Trinity variants sharing the same architecture. Mini: 26B/3B
   active (128 experts, top-8, 131K context). Nano: 6B/1B active (128
   experts, 128K context). Both trained on 10T tokens using 512 H200
-  GPUs. Apache 2.0.
+  GPUs. Relicensed to OpenMDW-1.1 (Linux Foundation) on
+  2026-05-29, from Apache 2.0.
 tags:
   - moe
   - open-weight

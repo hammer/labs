@@ -20,7 +20,8 @@ description: >
   Large</a> (398B / 13B active MoE) with extended chain-of-thought thinking before
   responding. Post-trained for <strong>long-horizon agentic tasks</strong>: multi-turn
   tool calling, sustained context coherence, clean instruction following, and stable
-  behavior across long-running agent loops. Apache 2.0.</p>
+  behavior across long-running agent loops. Relicensed to
+  <strong>OpenMDW-1.1</strong> (Linux Foundation) on 2026-05-29, from Apache 2.0.</p>
 
   <p>AA Intelligence Index: <strong>32</strong> (above median of 27 for open-weight
   models of similar size). <strong>132 tok/s</strong> output speed, 0.91s time-to-first-token.

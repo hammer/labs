@@ -28,7 +28,8 @@ description: >
   <p>MMLU: 87.2 (instruct), MMLU-Pro: 75.3, GPQA-Diamond: 63.3. The
   reasoning variant <a href="/outputs/arcee/trinity-large-thinking">Trinity-Large-Thinking</a>
   (April 2026, AA Intelligence Index 32) became the #1 most-used open model in the US
-  on OpenRouter. Apache 2.0.</p>
+  on OpenRouter. Relicensed to <strong>OpenMDW-1.1</strong>
+  (Linux Foundation) on 2026-05-29, from Apache 2.0.</p>
 tags:
   - moe
   - open-weight

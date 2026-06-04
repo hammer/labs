@@ -27,7 +27,8 @@ description: >
   Architecture uses DeepSeekMoE-style fine-grained routing, interleaved
   local/global attention, and the Muon optimizer with zero loss spikes.
   Trinity-Large-Thinking adds reasoning with tau2-Airline 88.0% and
-  AIME25 96.3%. All Apache 2.0.</p>
+  AIME25 96.3%. Relicensed to <strong>OpenMDW-1.1</strong>
+  (Linux Foundation) in May 2026, from Apache 2.0.</p>
 
   <p>Also produced <strong><a href="https://github.com/arcee-ai/mergekit">MergeKit</a></strong>,
   the most widely-used open-source model merging toolkit, and DistillKit
@@ -42,6 +43,10 @@ people:
     role: Chief of Frontier Research
     formerly: NASA; Apple; Creator of MergeKit
 news:
+  - title: "Trinity Is Moving to OpenMDW-1.1"
+    url: https://www.arcee.ai/blog/trinity-is-moving-to-openmdw-1-1
+    source: Arcee AI Blog
+    date: 2026-05-29
   - title: "Arcee's New Open-Source Trinity Large Thinking Is the Rare Powerful U.S.-Made Model"
     url: https://venturebeat.com/technology/arcees-new-open-source-trinity-large-thinking-is-the-rare-powerful-u-s-made
     source: VentureBeat
