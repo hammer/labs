@@ -27,6 +27,8 @@ model:
   architecture: moe
   context_window: 1000000
   intelligence_index: 16
+  openness_index: 5.6
+  openness_index_version: "AA Openness Index v1.0 (family inference)"
 paper:
   arxiv: "2403.05530"
 related:

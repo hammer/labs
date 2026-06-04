@@ -36,6 +36,8 @@ model:
   context_window: 1000000
   intelligence_index: 55
   intelligence_index_version: "AA v4.0"
+  openness_index: 5.6
+  openness_index_version: "AA Openness Index v1.0 (family inference)"
   benchmark_scores:
     - benchmark: Terminal-Bench 2.1
       score: "76.2%"

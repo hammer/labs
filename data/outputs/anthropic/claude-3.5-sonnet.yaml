@@ -27,6 +27,8 @@ tags:
 model:
   context_window: 200000
   intelligence_index: 16
+  openness_index: 11.1
+  openness_index_version: "AA Openness Index v1.0 (family inference)"
 related:
   - claude-3
   - claude-4

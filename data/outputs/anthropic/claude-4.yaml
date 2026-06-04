@@ -30,6 +30,8 @@ tags:
 model:
   context_window: 1000000
   intelligence_index: 33
+  openness_index: 11.1
+  openness_index_version: "AA Openness Index v1.0 (family inference)"
   variants:
     - name: Claude 4 Opus
       notes: 200K context

@@ -41,6 +41,8 @@ model:
   context_window: 1000000
   intelligence_index: 36
   intelligence_index_version: "AA v4.0"
+  openness_index: 11.1
+  openness_index_version: "AA Openness Index v1.0 (family inference)"
   variants:
     - name: Nova 2 Pro Preview (medium thinking)
       notes: AA Intelligence Index 36 (top of family); 1M context; reasoning + web grounding + code interpreter

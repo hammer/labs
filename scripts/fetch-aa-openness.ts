@@ -95,7 +95,8 @@ async function main() {
   let updated = 0;
   let unchanged = 0;
   let noAaUrl = 0;
-  let noAaoiMatch = 0;
+  let noAaoiMatchUnset = 0;     // version-drift, openness genuinely unset
+  let noAaoiMatchInferred = 0;  // version-drift, family-inference fallback applied
   const missing: Array<{ file: string; slug: string }> = [];
 
   for (const file of yamls) {
@@ -107,7 +108,18 @@ async function main() {
     const aaSlug = m[1];
 
     const aaoi = aaoiMap.get(aaSlug);
-    if (aaoi === undefined) { noAaoiMatch++; missing.push({ file, slug: aaSlug }); continue; }
+    if (aaoi === undefined) {
+      // No direct AAOI match for this slug. Distinguish entries that have a
+      // family-inferred value (audit-trail-tagged with "(family inference)")
+      // from entries that are genuinely unset and need manual attention.
+      if (/openness_index_version:\s*"[^"]*\(family inference\)"/m.test(content)) {
+        noAaoiMatchInferred++;
+      } else {
+        noAaoiMatchUnset++;
+        missing.push({ file, slug: aaSlug });
+      }
+      continue;
+    }
 
     const next = applyOpennessToYaml(content, aaoi);
     if (next === content) { unchanged++; continue; }
@@ -121,10 +133,11 @@ async function main() {
   console.log(`  Updated:        ${updated}${dryRun ? ' (dry-run — no writes)' : ''}`);
   console.log(`  Unchanged:      ${unchanged}`);
   console.log(`  No AA URL:      ${noAaUrl}`);
-  console.log(`  AA URL present, slug not in AAOI v1.0: ${noAaoiMatch}`);
-  if (noAaoiMatch > 0) {
+  console.log(`  Slug not in AAOI v1.0, family-inferred fallback applied: ${noAaoiMatchInferred}`);
+  console.log(`  Slug not in AAOI v1.0, openness unset (needs attention): ${noAaoiMatchUnset}`);
+  if (noAaoiMatchUnset > 0) {
     console.log('');
-    console.log('Slugs that need manual attention (in AAII URL but not in AAOI):');
+    console.log('Entries that need manual attention (AAII URL present but openness unset):');
     for (const m of missing.slice(0, 30)) console.log(`  ${m.slug.padEnd(40)}  ${m.file}`);
     if (missing.length > 30) console.log(`  ... and ${missing.length - 30} more`);
   }

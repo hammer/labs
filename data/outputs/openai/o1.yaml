@@ -29,6 +29,8 @@ model:
   context_window: 200000
   intelligence_index: 31
   intelligence_index_version: "AA v4.0"
+  openness_index: 5.6
+  openness_index_version: "AA Openness Index v1.0 (family inference)"
   parameters_estimated:
     value: "3.5T"
     source: https://arxiv.org/abs/2604.24827

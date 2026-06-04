@@ -26,6 +26,8 @@ tags:
 model:
   context_window: 32000
   intelligence_index: 10
+  openness_index: 5.6
+  openness_index_version: "AA Openness Index v1.0 (family inference)"
 paper:
   arxiv: "2312.11805"
 related:

@@ -277,7 +277,21 @@ model:
 
 **Per-checkpoint rule.** AA scores AAOI on individual checkpoints; the value here MUST come from the same AA model entry whose `intelligence_index` we recorded — *not* the family's max openness. E.g., if `intelligence_index` is the score for `qwen3-vl-32b-reasoning`, then `openness_index` is AAOI's number for `qwen3-vl-32b-reasoning` too (50), not the higher value some other Qwen3 variant has.
 
-**Coverage gap.** AAOI v1.0 covers ~234 models; AAII covers 357+. Many of labindex's current-checkpoint entries (`claude-opus-4-7`, `gpt-5-5`, `gemini-3-1-pro-preview`, `nova-2-0-pro`) aren't in AAOI yet — AAOI tracks older snapshots. Leave `openness_index` unset in that case; the home page Openness column falls back to the highest-AAII labindex model that *does* have an AAOI (see `getTopIntelligence` in `src/data/loader.ts`).
+**Family-inference fallback** for the version-drift backlog. The per-checkpoint rule is the strict ideal, but the AAOI rubric is fundamentally *lab-level* (weights access, commercial license, training-data disclosure, methodology disclosure, code license) — a new closed-frontier checkpoint from a lab whose openness profile hasn't moved gets the same AAOI as every other variant. When AA has scored ≥3 sibling checkpoints from a family at a **uniform** AAOI value, you may apply that value to an unscored sibling with two markers so the inference is audit-trail-visible:
+
+```yaml
+model:
+  openness_index: 5.6
+  openness_index_version: "AA Openness Index v1.0 (family inference)"  # ← parenthetical tags the inference
+```
+
+Plus one line in the description noting the inference, e.g.: *"Openness Index inferred from family profile — AA has scored N sibling Gemini checkpoints at uniform 5.6 as of YYYY-MM-DD; this checkpoint not yet directly scored."*
+
+Eligible families (as of the last sweep): Anthropic (all 11.1), Amazon Nova (all 11.1), Google Gemini reasoning-tier (all 5.6), OpenAI closed-GPT reasoning-tier (all 5.6). Open-weight families (DeepSeek, Qwen3, Llama, Mistral, Gemma) routinely have AAOI spread across variants and are **NOT** eligible — those entries stay openness-unset until AA scores them directly.
+
+When AA later scores the checkpoint, `fetch-aa-openness` will overwrite the inferred value with the directly-scored one and the version tag returns to the un-parenthetical form. Grep for `(family inference)` to find inferred values needing re-verification.
+
+**Coverage gap.** AAOI v1.0 covers ~234 models; AAII covers 357+. Many of labindex's current-checkpoint entries (`claude-opus-4-7`, `gpt-5-5`, `gemini-3-1-pro-preview`, `nova-2-0-pro`) aren't in AAOI yet — AAOI tracks older snapshots. Leave `openness_index` unset in that case (or apply the family-inference fallback above when eligible); the home page Openness column falls back to the highest-AAII labindex model that *does* have an AAOI (see `getTopIntelligence` in `src/data/loader.ts`).
 
 **Backfill workflow.** Run `npm run fetch-aa-openness` (or `npm run fetch-aa-openness -- --dry-run`). The script pulls AA's openness leaderboard via its React Server Component endpoint (one request, full 234-record dataset), matches each labindex output's AA URL slug, and writes the score+version into the YAML. It also lists slugs that have an AA URL but no AAOI entry — those are the manual-attention cases.
 
