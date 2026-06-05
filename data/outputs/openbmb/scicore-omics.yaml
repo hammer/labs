@@ -1,0 +1,33 @@
+name: SciCore-Omics
+slug: scicore-omics
+lab: openbmb
+type: model
+date: 2026-06-04
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/openbmb/SciCore-Omics
+  - label: GitHub
+    url: https://github.com/OpenBMB/Scicore-Omics
+  - label: Demo Space
+    url: https://huggingface.co/spaces/Alkaidxxy/SciCore-Omics
+description: >
+  <p>Tri-modal foundation model unifying <strong>histology imaging,
+  spatial transcriptomics, and biological language</strong> for spatial
+  biology and pathology-related reasoning. <strong>8B parameters</strong>,
+  with a histology image encoder, a gene-aware transcriptomic branch
+  (NicheFormer + Gene Q-Former + Gene Projector), and a language-model
+  backbone tying the modalities together.</p>
+
+  <p>Targets image-only reasoning, gene-only reasoning, joint image+gene
+  reasoning, and natural-language biomedical interpretation in a single
+  model. Apache 2.0; companion manuscript marked "in preparation"
+  (Xiao et al., 2026).</p>
+tags:
+  - foundation-model
+  - science
+  - multimodal
+  - open-weight
+  - open-source
+model:
+  parameters: 8B
+  license: Apache 2.0

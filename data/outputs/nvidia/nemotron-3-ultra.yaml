@@ -53,10 +53,21 @@ description: >
   <code>BF16</code> (post-trained), <code>NVFP4</code> (quantized for faster
   inference), and <code>GenRM</code> (the generative reward model used during
   RL). Distribution targets: HuggingFace, ModelScope, OpenRouter, and
-  build.nvidia.com. The same release ships the Nemotron-Pretraining-Code-v3
-  (173B tokens), Nemotron-Pretraining-Legal-v1,
-  Nemotron-Pretraining-Specialized-v1.2, and Nemotron-Posttraining-v3 datasets,
-  plus the Nemotron-RL-* training blends.</p>
+  build.nvidia.com.</p>
+
+  <p><strong>Companion datasets shipped on HuggingFace 2026-06-04/05:</strong>
+  <code>Nemotron-Pretraining-Code-v3</code> (173B tokens of fresh code with
+  Sept-2025 cutoff), <code>Nemotron-Pretraining-Legal-v1</code>,
+  <code>Nemotron-Pretraining-Specialized-v1.2</code> (factual recall +
+  moral scenarios), <code>Nemotron-Posttraining-v3</code>,
+  <code>Nemotron-SFT-SWE-v3</code>, <code>Nemotron-RL-Ultra-Training-Blends</code>,
+  <code>Nemotron-RL-Science-v1</code>,
+  <code>Nemotron-RL-Multichallenge-v1</code>,
+  <code>Nemotron-RL-CFBench-v1</code>,
+  <code>Nemotron-RL-SysBench-v1</code>,
+  <code>Nemotron-RL-InverseIFEval-v1</code>,
+  <code>Nemotron-RL-Instruction-Following-Structured-Outputs-v2</code>, plus
+  Nemotron-Personas-Vietnam and Nemotron-Personas-El-Salvador.</p>
 tags:
   - frontier
   - open-weight

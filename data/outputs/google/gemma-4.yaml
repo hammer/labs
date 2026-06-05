@@ -23,6 +23,12 @@ description: >
   and shared KV cache. Gemma 4 31B achieves <strong>85.2% MMLU Pro, 89.2% AIME 2026,
   80.0% LiveCodeBench v6</strong>, and Codeforces Elo 2,150. Ranked #3 open model on
   Arena AI text leaderboard. Crossed 2M downloads shortly after release.</p>
+
+  <p><strong>June 5, 2026:</strong> deployment-ready
+  <strong>QAT (Quantization-Aware Training) 4-bit checkpoints</strong>
+  shipped across the family on HuggingFace &mdash; including GGUF +
+  unquantized + CT variants for E2B, E4B, 12B, 26B-A4B, and 31B
+  (~20 repos total).</p>
 tags:
   - open-weight
   - open-source

@@ -18,6 +18,11 @@ description: >
   Small 3 with 40% latency reduction. Configurable reasoning effort.</p>
 
   <p>AA Intelligence Index: 19 (non-reasoning, #6/38). Apache 2.0.</p>
+
+  <p><strong>May 31 2026:</strong> NVIDIA-collaboration
+  <strong>NVFP4 quantized variant</strong> shipped on HuggingFace
+  (<code>Mistral-Small-4-119B-2603-NVFP4</code>) for faster Blackwell
+  inference at near-BF16 quality.</p>
 tags:
   - moe
   - open-weight

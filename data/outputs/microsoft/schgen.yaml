@@ -1,0 +1,36 @@
+name: SchGen
+slug: schgen
+lab: microsoft
+type: model
+date: 2026-05-29
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/microsoft/SchGen
+  - label: HuggingFace (training dataset)
+    url: https://huggingface.co/datasets/microsoft/SchGen_dataset
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.30345
+description: >
+  <p>20B-parameter LLM for <strong>PCB schematic generation from
+  natural-language requests</strong>. Built on GPT-OSS-20B and fine-tuned
+  on ~8K paired user-request / schematic-code samples synthesized via
+  GPT drafting + human correction. Takes a circuit description as input
+  (e.g., <em>"a 1.8V regulated supply from VIN using an AP2112K LDO"</em>)
+  and outputs Python code that renders into KiCad schematics.</p>
+
+  <p>Evaluated on Valid Circuits (executability), Spatial Violation
+  (symbol/wire overlap), and Netlist Accuracy (connectivity vs ground
+  truth) &mdash; outperforms frontier LLM baselines on schematic generation.
+  13,312-token context. MIT license. Companion paper Luo, Ma, Zhang, Qiu
+  (<a href="https://arxiv.org/abs/2605.30345">arXiv 2605.30345</a>).</p>
+tags:
+  - foundation-model
+  - hardware
+  - open-weight
+  - code-generation
+model:
+  parameters: 20B
+  context_window: 13312
+  license: MIT
+paper:
+  arxiv: "2605.30345"

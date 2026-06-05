@@ -1,0 +1,37 @@
+name: ChartNet
+slug: chartnet
+lab: ibm
+type: dataset
+date: 2026-06-03
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/ibm-granite/ChartNet
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.27064
+description: >
+  <p>Million-scale multimodal dataset for chart understanding from IBM
+  Granite. <strong>4.2M synthetic chart samples</strong>
+  (~1 TB total, 2.5M under the permissive subset) plus 94K human-verified
+  charts and 2K human-verified eval samples. Each sample bundles five
+  tightly aligned elements: plotting code, rendered image, underlying
+  data table, natural-language summary, and QA pairs with chain-of-thought
+  reasoning.</p>
+
+  <p>Covers <strong>24 chart types</strong> across 6 plotting libraries
+  (matplotlib, seaborn, plotly, Dask, Polars, etc.) and supports four
+  downstream tasks: chart-to-code, chart-to-CSV, chart-to-text, and
+  grounded chart QA. <strong>Used to train the Granite Vision 4 series</strong>
+  (<a href="/outputs/ibm/granite-4.0">Granite-4.0-3B-Vision</a>,
+  Granite-Vision-4.1-4B). CVPR 2026.</p>
+
+  <p>The April 2026 <code>core_permissive</code> subset (2.5M rows) is
+  available under CDLA-Permissive-2.0; the original subsets remain
+  research/evaluation-only due to upstream Mistral Research License
+  contamination. June 3, 2026 release added <code>grounded_qa</code>
+  and completed the <code>reasoning</code> subset.</p>
+tags:
+  - dataset
+  - multimodal
+  - vision-language
+paper:
+  arxiv: "2603.27064"

@@ -1,0 +1,29 @@
+name: BioMysteryBench
+slug: biomysterybench
+lab: anthropic
+type: eval
+date: 2026-06-04
+sources:
+  - label: HuggingFace (full set)
+    url: https://huggingface.co/datasets/Anthropic/BioMysteryBench-full
+  - label: HuggingFace (preview set)
+    url: https://huggingface.co/datasets/Anthropic/BioMysteryBench-preview
+description: >
+  <p>Bioinformatics research benchmark from Anthropic with
+  <strong>99 problems</strong> drawn as anonymized derivatives of
+  public-archive submissions. Each entry has a question, an answer rubric,
+  allowed-domain markers, and a human-solvability flag, intended to evaluate
+  models on real bioinformatics reasoning tasks rather than static QA.</p>
+
+  <p>Problem statements, rubrics, and task formulation are released under
+  CC BY 4.0; the bundled data archives (~159 GB) remain subject to their
+  source repositories' policies. Evaluation-only use is permitted; training
+  or distilling models against the benchmark is explicitly prohibited.
+  Released alongside Anthropic's Frontier Safety work on dual-use biology.</p>
+tags:
+  - eval
+  - benchmark
+  - science
+  - safety
+related:
+  - constitutional-ai

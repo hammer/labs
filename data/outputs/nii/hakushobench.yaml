@@ -1,0 +1,34 @@
+name: HakushoBench
+slug: hakushobench
+lab: nii
+type: eval
+date: 2026-05-31
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/llm-jp/HakushoBench
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.01132
+  - label: GitHub (eval harness)
+    url: https://github.com/llm-jp/simple-evals-mm
+description: >
+  <p>Japanese chart-and-table VQA benchmark built from <strong>33 governmental
+  white papers (hakusho)</strong>, designed to assess deep, holistic chart
+  understanding rather than local-cue lookups. <strong>2,053 manually
+  validated VQA pairs</strong> over 2,053 images spanning 10+ image types
+  (bar/line/pie charts, tables, dashboards, infographics) drawn from
+  security, economics, and society domains.</p>
+
+  <p>From the LLM-jp consortium via NII. Authors: Sugiura, Kurita, Oda,
+  Okazaki. Apache 2.0 (text); images covered by Article 30-4 of the
+  Japanese Copyright Act. Baseline results show a substantial gap between
+  Gemini 3 Pro (top proprietary) and Qwen3-VL-8B (top open-weight) on
+  chart and table understanding.</p>
+tags:
+  - eval
+  - benchmark
+  - multimodal
+  - japanese
+paper:
+  arxiv: "2606.01132"
+related:
+  - llm-jp

@@ -52,6 +52,12 @@ model:
       parameters: 8.3B
       active_parameters: 1.5B
       notes: "Released May 28 2026; hybrid MoE on-device flagship, 128K context, reasoning-only with explicit CoT, scaled to 38T training tokens. IFEval +12.4, AIME25 +22.5 vs LFM2-8B-A1B. GGUF/MLX/ONNX variants shipped."
+    - name: LFM2.5-1.2B-JP / Audio-1.5B-JP
+      parameters: 1.2B
+      notes: Japanese-language variants released June 4 2026 (text + audio).
+    - name: LFM2.5-VL-Extract (450M / 1.6B)
+      parameters: 1.6B
+      notes: Vision-language Extract variants for OCR / structured document extraction, released June 4 2026 (450M and 1.6B sizes, GGUF available).
 paper:
   arxiv: "2511.23404"
 related:

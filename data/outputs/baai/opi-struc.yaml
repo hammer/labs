@@ -1,0 +1,37 @@
+name: OPI-Struc (STELLA)
+slug: opi-struc
+lab: baai
+type: dataset
+date: 2026-06-04
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/BAAI/OPI-Struc
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.03800
+  - label: GitHub (STELLA)
+    url: https://github.com/ocx-lab/STELLA
+description: >
+  <p>Open Protein Instructions for Structures &mdash; the structure-conditioned
+  companion to BAAI's earlier sequence-only OPI dataset. Built for training
+  multimodal LLMs that ground protein-functional reasoning in both sequence
+  and 3D structure, with each sample formatted as a multi-turn conversation
+  containing a <code>&lt;structure&gt;</code> token where the protein structure
+  embedding is inserted.</p>
+
+  <p><strong>351,183 training samples and 40,993 test samples</strong>
+  (~599 GB) drawn from UniProtKB/Swiss-Prot + AlphaFold DB (function tasks)
+  and the Enzyme Commission dataset + RCSB PDB (enzyme tasks). Two task
+  families: Functional Description Prediction (free-text + multiple choice)
+  and Enzyme-catalyzed Reaction Prediction.</p>
+
+  <p>Released as the data backbone for <strong>STELLA</strong>
+  (<a href="https://arxiv.org/abs/2506.03800">arXiv 2506.03800</a>, ACL 2026
+  Findings) &mdash; a multimodal LLM for protein functional annotation via
+  unified sequence-structure encoding. CC BY-NC 4.0.</p>
+tags:
+  - dataset
+  - science
+  - protein
+  - multimodal
+paper:
+  arxiv: "2506.03800"

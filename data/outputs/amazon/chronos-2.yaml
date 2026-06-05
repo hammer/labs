@@ -1,0 +1,41 @@
+name: Chronos-2
+slug: chronos-2
+lab: amazon
+type: model
+date: 2026-06-05
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/amazon/chronos-2
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.15821
+  - label: Amazon Science blog
+    url: https://www.amazon.science/blog/introducing-chronos-2-from-univariate-to-universal-forecasting
+  - label: GitHub
+    url: https://github.com/amazon-science/chronos-forecasting
+description: >
+  <p>Zero-shot time-series foundation model from Amazon Science.
+  <strong>120M parameters</strong>, T5-style <strong>encoder-only</strong>
+  with a group-attention mechanism. Unlike its predecessors, Chronos-2 unifies
+  <strong>univariate, multivariate, and covariate-informed</strong> forecasting
+  in one model and produces multi-step quantile forecasts.</p>
+
+  <p>State-of-the-art zero-shot accuracy among public models on
+  <strong>fev-bench</strong>, <strong>GIFT-Eval</strong>, and the
+  <strong>Chronos Benchmark II</strong>. Max context 8,192; max prediction
+  1,024 steps. Over 300 series-per-second on a single A10G. Apache 2.0.
+  Crossed 13M downloads within days of the HuggingFace push (highest-volume
+  time-series FM on the platform).</p>
+tags:
+  - foundation-model
+  - time-series
+  - open-weight
+  - zero-shot
+  - efficiency
+model:
+  architecture: dense
+  parameters: 120M
+  context_window: 8192
+  license: Apache 2.0
+paper:
+  arxiv: "2510.15821"

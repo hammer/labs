@@ -1,0 +1,32 @@
+name: Universal Audio Tokenizer
+slug: universal-audio-tokenizer
+lab: tencent
+type: model
+date: 2026-05-29
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/tencent/Universal_Audio_Tokenizer
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.31521
+  - label: GitHub
+    url: https://github.com/Tencent/Universal_Audio_Tokenizer
+description: >
+  <p>Compact single-codebook audio tokenizer unifying general audio perception
+  and linguistic alignment for downstream Audio-LLMs. <strong>WhisperVQ
+  encoder + flow-based decoder + HiFi-T vocoder</strong>, paired with a
+  <strong>Semantic-Acoustic Equilibrium</strong> mechanism that adaptively
+  injects fine-grained acoustic detail from shallow encoder layers into the
+  deep semantic stream.</p>
+
+  <p><strong>25 Hz frame rate, 8,192 codebook, 325 bps</strong>. Designed
+  to be a unified audio I/O interface for Audio-LLMs: speech reconstruction
+  + TTS synthesis + general audio-event discrimination (speech, sound,
+  music) in one tokenizer. Companion paper introduces UniAudio-Token
+  built on a Qwen2.5 LLM backbone.</p>
+tags:
+  - audio
+  - speech
+  - tokenizer
+  - foundation-model
+paper:
+  arxiv: "2605.31521"

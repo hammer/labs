@@ -1,0 +1,44 @@
+name: Nemotron 3.5 Content Safety
+slug: nemotron-3.5-content-safety
+lab: nvidia
+type: model
+date: 2026-06-04
+sources:
+  - label: HuggingFace blog
+    url: https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety
+  - label: HuggingFace (model)
+    url: https://huggingface.co/nvidia/Nemotron-3.5-Content-Safety
+  - label: HuggingFace (dataset)
+    url: https://huggingface.co/datasets/nvidia/Nemotron-3.5-Content-Safety-Dataset
+  - label: HuggingFace (predecessor)
+    url: https://huggingface.co/nvidia/Nemotron-3-Content-Safety
+description: >
+  <p>4B-parameter content-safety classifier built on Google Gemma 3 4B IT
+  (LoRA fine-tuned). <strong>Multimodal</strong>: takes a user prompt, an
+  optional image, and an optional assistant response as a single context
+  window and produces a coherent safety verdict. <strong>Multilingual</strong>:
+  12 explicitly trained languages plus ~140 via zero-shot.</p>
+
+  <p>Two novel capabilities over the March 2026 Nemotron 3 Content Safety
+  predecessor: <strong>custom policy enforcement</strong> (accepts a policy
+  spec alongside the input) and an optional <strong>THINK mode</strong>
+  emitting step-by-step reasoning before the verdict. Same latency profile
+  as the predecessor in default mode; 3&times; lower end-to-end latency
+  than alternative multimodal safety models.</p>
+
+  <p>Headline scores: <strong>96.5% Multilingual Aegis</strong> classification
+  accuracy (12 languages), 88.8% on RTP-LX, 92.7% combined average, ~85% on
+  multimodal benchmarks. NVIDIA Open Model License (research + commercial).
+  Companion datasets: Nemotron-3.5-Content-Safety-Dataset (primary; 99% real
+  photographs, not synthetic), Nemotron-Safety-Guard-Dataset-v3,
+  Nemotron-VLM-Dataset-v2, CantTalkAboutThis-Topic-Control-Dataset.</p>
+tags:
+  - safety
+  - moderation
+  - multimodal
+  - open-weight
+model:
+  parameters: 4B
+  license: NVIDIA Open Model License
+related:
+  - nemotron-3-ultra

@@ -1,0 +1,26 @@
+name: OfficeComprehensionBenchmark
+slug: office-comprehension-benchmark
+lab: microsoft
+type: eval
+date: 2026-06-03
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/microsoft/OfficeComprehensionBenchmark
+  - label: GitHub
+    url: https://github.com/microsoft/OfficeComprehensionBench
+description: >
+  <p>Benchmark for document comprehension and grounded reasoning over
+  <strong>Microsoft Office files</strong> (Word, Excel, PowerPoint). Two
+  evaluation tracks: <strong>File Fidelity Q&amp;A</strong> (922 queries over
+  244 files testing structural/visual perception of text, tables, charts,
+  formulas, and embedded objects) and <strong>Domain Q&amp;A</strong>
+  (120 queries with 8,450 atomic assertions over 124 files spanning
+  12 industries, testing expert-level reasoning on real business documents).</p>
+
+  <p>1,319 rows / ~3 GB. CDLA-Permissive-2.0 for OCB-authored content;
+  upstream source files retain their original licenses. Shaik et al. (2026).</p>
+tags:
+  - eval
+  - benchmark
+  - multimodal
+  - documents

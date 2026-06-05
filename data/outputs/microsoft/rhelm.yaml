@@ -1,0 +1,29 @@
+name: RHELM
+slug: rhelm
+lab: microsoft
+type: eval
+date: 2026-06-03
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/microsoft/RHELM
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.31086
+  - label: GitHub (eval harness)
+    url: https://github.com/Hanzhang-lang/RHELM_Benchmark
+description: >
+  <p>Benchmark for <strong>realistic, heterogeneous, and evolving long-horizon
+  memory</strong> in AI assistants. Unlike static-dialogue memory benchmarks,
+  RHELM provides synthetic multi-source memory streams &mdash; 629 conversation
+  sessions, 625 emails, and 1,053 attachments (Markdown/HTML) &mdash;
+  organized around 10 character personas with temporally evolving context.</p>
+
+  <p><strong>1,305 QA pairs</strong> requiring multi-hop reasoning, temporal
+  synthesis, and hallucination detection over heterogeneous memory sources.
+  CC BY 4.0.</p>
+tags:
+  - eval
+  - benchmark
+  - long-context
+  - agentic
+paper:
+  arxiv: "2605.31086"
