@@ -1,0 +1,35 @@
+name: MARS (Make vAriance Reduction Shine)
+slug: mars-optimizer
+lab: bytedance-seed
+type: paper
+date: 2024-11-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.10438
+  - label: GitHub
+    url: https://github.com/AGI-Arena/MARS
+description: >
+  <p>Unified optimization framework that brings variance reduction back into
+  contention for large-model training, where AdamW has dominated for a
+  decade. <strong>MARS</strong> reconciles preconditioned gradient methods
+  with variance reduction via a <strong>scaled stochastic recursive momentum</strong>
+  technique, and instantiates the framework as three concrete optimizers
+  built on AdamW, Lion, and Shampoo updates respectively.</p>
+
+  <p>Variance reduction (SAG, SVRG, STORM) has historically failed to
+  outperform AdamW in deep learning. The authors argue this is partly
+  because techniques like batch normalization and dropout &mdash; which
+  break the finite-sum structure variance reduction needs &mdash; are now
+  rarely used in modern LLM training, reopening the door. On GPT-2
+  pretraining, MARS consistently outperforms AdamW by a large margin.</p>
+
+  <p>Collaboration between UCLA (Quanquan Gu's group) and ByteDance Seed
+  (San Jose + Beijing); work led by Huizhuo Yuan and Yifeng Liu during
+  Liu's ByteDance internship. <strong>ICML 2025 (PMLR 267)</strong>;
+  latest v4 published 2025-09-04.</p>
+tags:
+  - optimization
+  - training
+  - research
+paper:
+  arxiv: "2411.10438"
