@@ -1,0 +1,52 @@
+name: North Mini Code
+slug: north-mini-code
+lab: cohere
+type: model
+date: 2026-06-09
+sources:
+  - label: Announcement (HF blog)
+    url: https://huggingface.co/blog/CohereLabs/introducing-north-mini-code
+  - label: Cohere blog
+    url: https://cohere.com/blog/north-mini-code
+  - label: HuggingFace
+    url: https://huggingface.co/CohereLabs/North-Mini-Code-1.0
+  - label: HuggingFace (FP8)
+    url: https://huggingface.co/CohereLabs/North-Mini-Code-1.0-fp8
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/north-mini-code
+description: >
+  <p><strong>Cohere's first developer-focused model and the first in its new
+  North family</strong> — an open-weights (Apache 2.0) <strong>30B-A3B
+  MoE</strong> built for agentic software engineering and terminal tasks.
+  256K context, 64K max output. Attention interleaves sliding-window (RoPE)
+  with global no-positional-embedding layers in a 3:1 ratio; the MoE block
+  routes top-8 of 128 SwiGLU experts through a sigmoid router, with a single
+  dense layer before the sparse stack.</p>
+
+  <p>Post-trained with two-stage cascaded SFT followed by agentic RLVR
+  targeting software engineering and terminal tasks, deliberately trained
+  across multiple agent scaffolds (positioned as a foundation for coding
+  agents like OpenCode) rather than tuned to one harness. Cohere reports
+  <strong>33.4 on AA's Coding Index</strong>, ahead of similar-size
+  open models (Qwen3.5 35B-A3B, Gemma 4 26B-A4B, Devstral Small 2) and
+  some far larger ones (Nemotron 3 Super 120B-A12B, Devstral 2 123B).
+  AA Intelligence Index v4.0: <strong>28</strong>. Benchmarked on SWE-Bench
+  Verified/Pro, Terminal-Bench v2/Hard, SciCode, and LiveCodeBench v6.
+  "North" extends the name of Cohere's
+  <a href="https://cohere.com/north">enterprise agent platform</a> to a
+  model family.</p>
+tags:
+  - coding
+  - agentic
+  - open-weight
+  - moe
+model:
+  architecture: moe
+  parameters: 30B
+  active_parameters: 3B
+  num_experts: 128
+  top_k: 8
+  context_window: 262144
+  intelligence_index: 28
+  intelligence_index_version: "AA v4.0"
+  license: Apache 2.0
