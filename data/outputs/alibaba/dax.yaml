@@ -1,0 +1,42 @@
+name: DaX (大象)
+slug: dax
+lab: alibaba
+type: paper
+date: 2026-06-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.06983
+  - label: Project page / benchmark
+    url: https://alibaba-damo-academy.github.io/DaX/benchboard/
+description: >
+  <p>Pathology vision foundation model from <strong>DAMO Academy</strong>
+  (Alibaba Group), CAS Institute of Automation, and Hupan Lab.
+  <strong>ViT-L backbone</strong> (plus a ViT-B "DaX-Base" sibling for
+  scaling analysis), initialized from <strong>natural-image DINOv3</strong>
+  weights and adapted to whole-slide histopathology via a two-stage
+  DINOv3-style self-supervised framework.</p>
+
+  <p>Pathology-specific design choices: continuous magnification training
+  (multi-resolution patches at 2.5×, 5×, 10×, 20× anchors),
+  cross-scale tissue views, orientation-agnostic + acquisition-robust
+  augmentation, multi-input-size training, and <strong>Gram-anchored dense
+  consistency</strong> for stable token-level representations across scales.
+  The aim is to connect local cellular morphology with global tissue
+  architecture in one model.</p>
+
+  <p>Alongside the model, the paper introduces a <strong>WSI-level
+  benchmark of 161 clinically meaningful tasks</strong> spanning
+  <strong>44 public datasets, 28,182 patients, 34,394 slides</strong>,
+  across four clinical domains (diagnostic pathology, biomarker/molecular
+  profiling, tissue/specimen context, prognosis) and nine task categories.
+  All models evaluated under a fixed patient-level cross-validation
+  protocol with fold-level statistical ranking. DaX achieves the highest
+  mean performance and consistently top task-level ranking across the
+  full benchmark.</p>
+tags:
+  - foundation-model
+  - science
+  - medical-imaging
+  - vision
+paper:
+  arxiv: "2606.06983"
