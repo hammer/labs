@@ -76,7 +76,11 @@ npm run dev              # Dev server at localhost:4321
 npm run validate         # Validate all YAML against Zod schemas
 npm run build            # Build static site (Astro SSG)
 npm run fetch-metrics    # Fetch GitHub/HF/citation metrics
+npm run test:filter      # Filter UI smoke tests (needs dev server running)
+npm run test:mobile      # Responsive/mobile smoke tests (needs dev server running)
 ```
+
+**Run both smoke suites before shipping any UI change.** `test:mobile` asserts zero horizontal overflow on every key page type (home, timeline, lab, output, whats-new) at seven widths plus landscape, and guards desktop regressions (sticky table header, scroll-to-close). Both suites use structural assertions where possible, but `test:filter` pins some data counts that shift when labs are added — if it fails on counts after a data commit, update the expected numbers, don't suppress the test.
 
 **YAML changes are live without restart.** In dev mode, the data loader clears its cache on every page render, so editing YAML files and refreshing the browser shows changes immediately. No need to restart the dev server for data changes. Restarts are only needed for `.astro` template or `.ts` code changes (Vite handles those via HMR automatically).
 
@@ -99,6 +103,15 @@ npx wrangler pages deploy dist --project-name labindex --branch main
 - First-time setup: `npx wrangler login` then `npx wrangler pages project create labindex --production-branch main`
 - Static output only — do NOT add `@astrojs/cloudflare` adapter (that's for SSR)
 - Always pass `--branch main` to the deploy so the production alias (labindex.ai) is updated, not just a preview alias.
+
+**Troubleshooting `Invalid access token [code: 9109]`.** Auth normally comes from a `CLOUDFLARE_API_TOKEN` exported in the shell profile, and the env var **takes precedence over `wrangler login` OAuth credentials** — so re-running `wrangler login` does not help while a stale token is exported. Diagnose the token directly:
+
+```bash
+curl -s -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+  https://api.cloudflare.com/client/v4/user/tokens/verify
+```
+
+If that returns `Invalid API Token`, the token was rotated/revoked — mint a new one at https://dash.cloudflare.com/profile/api-tokens (needs Cloudflare Pages:Edit) and update the export. This has happened more than once.
 
 ## Data Structure
 
@@ -350,7 +363,23 @@ The home page Scale column shows `max(parameters, parameters_estimated.value)` w
 - **TypeScript** for all scripts and components
 - **Zod** schemas for data validation
 - Maintain consistency with existing component patterns in `src/components/`
-- Home page table columns are sortable — new data fields should include `data-*` attributes and sort logic in the `<script>` block of `src/pages/index.astro`
+- Home page table columns are sortable — new data fields should include `data-*` attributes and sort logic in the `<script>` block of `src/pages/index.astro`, AND must be assigned to a responsive trim tier (see below) — the width budgets are measured and tight, so an untiered new column reintroduces horizontal scroll on phones. Re-run `npm run test:mobile` after adding one.
+
+## Responsive & Mobile UI Conventions
+
+Established in the issue #17 mobile overhaul. The deeper rationale and the traps that motivated each rule are in [DESIGN_NOTES.md](./DESIGN_NOTES.md).
+
+- **600px is the site-wide phone breakpoint.** It matches `isMobile()` in `src/lib/filters/position.ts` and the FilterBar bottom-sheet media query. Write new phone-tier media queries at 600px; do not introduce nearby breakpoints (640px was explicitly rejected). The home table additionally trims columns at 1104/880/720px (and drops the rank column inside the 600px phone tier); the timeline hides metric columns at 768px.
+- **Tables stay tables; responsiveness is CSS-only.** All table interactivity (sorting, filtering, rank renumbering, selection) reads row `data-*` attributes — never visible cell content. That invariant is what makes `display: none` column tiers and the stacked timeline rows safe. Don't break it.
+- **Never wrap a sticky-header table in `overflow-x: auto`.** Any non-visible overflow ancestor becomes the sticky element's scroll container and the header silently stops pinning at every width, including desktop. Guarded by a `test:mobile` desktop check. (Non-sticky inner tables, e.g. variants/benchmarks, do use scroll wrappers.)
+- **Every keyboard shortcut's function must be reachable on touch** — by native tap where that suffices (row taps cover j/k/o/Enter; nav links cover the g-chords), by visible UI where the shortcut's surface disappears on phones (the timeline sort `<select>` covers `s` since the metric headers are hidden — all sort entry points sync through `sortRows()`, keep it the single sync point; the back-to-top button covers `gg`). Keyboard-only *chrome* (kbd badges, shortcut legends, the `?` hint) gets the global `.kbd-only` class, hidden on touch via `global.css`.
+- **Text inputs get `font-size: 16px` under `@media (pointer: coarse)`.** iOS Safari auto-zooms on focusing any input below 16px, keyed on computed font-size — width-based queries miss landscape phones.
+- **No autofocus on mobile panel-open.** Focusing an input pops the soft keyboard over the bottom sheet (and triggers the iOS zoom). Gate focus calls behind `!isMobile()` — see the existing pattern in `src/lib/filters/runtime.ts`.
+- **Bottom sheets**: `max-height: 80dvh` (with `vh` fallback), `padding-bottom: max(env(safe-area-inset-bottom), …)` — `env()` only works because `viewport-fit=cover` is set in `Layout.astro`'s viewport meta. Body scroll-lock uses the `fb-sheet-open` class whose `overflow: hidden` lives *inside* the ≤600px media query, so desktop scroll-to-close keeps working.
+- **Long unbroken tokens need `overflow-wrap: anywhere`; multi-item rows need `flex-wrap`.** Raw URLs, model/dataset IDs, and HF repo names set a container's min-content width and reintroduce phone overflow. Any new component rendering prose, notes, or value strings gets `overflow-wrap: anywhere` on those containers; title/header/link rows holding multiple items get `flex-wrap: wrap`.
+- **Small controls get enlarged hit areas inside `@media (pointer: coarse)`** (see `.chip-x` in `FilterBar.astro`, the nav search button in `Layout.astro`). Caveat: a control at the container's right edge must not gain right padding that paints past the viewport.
+- **Global key handlers must check `e.target`.** A document- or panel-level keydown handler that runs single-letter shortcuts without excluding input targets makes those letters untypeable (the filter typeahead once swallowed `a`/`n`/`i` — "anthropic" couldn't be typed).
+- **Measure, don't estimate.** When planning layout changes, compute real widths in headless Chromium (Playwright is a devDependency) instead of arithmetic from the CSS — estimated column budgets were wrong twice during the mobile overhaul. `tests/mobile-smoke.mjs` shows the measurement pattern.
 
 ## Skills
 
@@ -362,6 +391,7 @@ Detailed step-by-step instructions for common tasks are available as agent skill
 | **add-output** | [`.agents/skills/add-output/SKILL.md`](.agents/skills/add-output/SKILL.md) | Adding a research output (model, paper, library, dataset) to an existing lab |
 | **add-person** | [`.agents/skills/add-person/SKILL.md`](.agents/skills/add-person/SKILL.md) | Adding a researcher or leader to a lab's people section |
 | **add-news** | [`.agents/skills/add-news/SKILL.md`](.agents/skills/add-news/SKILL.md) | Adding a news article to a lab's news section |
+| **ui-change** | [`.agents/skills/ui-change/SKILL.md`](.agents/skills/ui-change/SKILL.md) | Changing layout, components, or styles — conventions, measurement-first planning, and the verification loop |
 
 ## Important Notes
 
