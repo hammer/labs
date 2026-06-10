@@ -56,23 +56,21 @@ labs.forEach(l => { l.ipo ? ipoCounts.public++ : ipoCounts.private++; });
 const dimensions: FilterDimension[] = [
   { key: 'region', label: 'Region', kind: 'multi', rowAttr: 'region', options: regionOptions },
   { key: 'type', label: 'Type', kind: 'multi', rowAttr: 'type', options: typeOptions },
-  { key: 'founded', label: 'Founded', kind: 'range', rowAttr: 'founded', excludeMissing: true,
-    format: (n) => String(n) },
+  { key: 'founded', label: 'Founded', kind: 'range', rowAttr: 'founded', excludeMissing: true },
   { key: 'ipo', label: 'IPO', kind: 'single', rowAttr: 'ipoStatus',
     options: [
       { slug: 'public', label: 'Public', count: ipoCounts.public },
       { slug: 'private', label: 'Private', count: ipoCounts.private },
     ] },
   { key: 'valuation', label: 'Valuation', kind: 'range', rowAttr: 'valuation', unit: '$B',
-    excludeMissing: true, format: (n) => `$${n}B` },
+    excludeMissing: true, format: 'usdB' },
   { key: 'scale', label: 'Scale', kind: 'range', rowAttr: 'largest', unit: 'B params',
-    excludeMissing: true, format: (n) => `${n}B` },
+    excludeMissing: true, format: 'paramsB' },
   { key: 'intelligence', label: 'Intelligence', kind: 'range', rowAttr: 'intelligence',
-    excludeMissing: true, format: (n) => String(n) },
+    excludeMissing: true },
   { key: 'openness', label: 'Openness', kind: 'range', rowAttr: 'openness',
-    excludeMissing: true, format: (n) => `${n.toFixed(0)}/100` },
-  { key: 'outputs', label: 'Outputs', kind: 'range', rowAttr: 'outputs',
-    format: (n) => String(n) },
+    excludeMissing: true, format: 'score100' },
+  { key: 'outputs', label: 'Outputs', kind: 'range', rowAttr: 'outputs' },
 ];
 ---
 
@@ -240,6 +238,15 @@ const dimensions: FilterDimension[] = [
     lastFilterState = (e as CustomEvent<FilterChangeDetail>).detail.state;
     applyFilters();
   });
+  // Pull the initial state if the FilterBar initialized before this script
+  // evaluated (module fetch order can put us past its deferred dispatch).
+  {
+    const api = (filterBarEl as any).__filterBarApi;
+    if (api) {
+      lastFilterState = api.getState();
+      applyFilters();
+    }
+  }
 
   function applyFilters() {
     allRows.forEach(row => {

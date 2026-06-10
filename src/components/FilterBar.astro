@@ -83,7 +83,12 @@ const configJson = JSON.stringify({ mode, hotkey, dimensions });
       hotkey?: string;
       dimensions: FilterDimension[];
     };
-    initFilterBar({
+    // Expose the API on the root element so page scripts can PULL the
+    // initial state if they evaluate after init (module fetch order in dev
+    // can delay a page script past the deferred initial dispatch). Pages
+    // that attach their listener first get the setTimeout(0) event instead;
+    // the handshake covers both orders.
+    (rootEl as any).__filterBarApi = initFilterBar({
       mode: cfg.mode,
       rootEl,
       dimensions: cfg.dimensions,
@@ -108,6 +113,11 @@ const configJson = JSON.stringify({ mode, hotkey, dimensions });
   .filter-bar .dim-wrap {
     position: relative;
     display: inline-flex;
+  }
+
+  /* Scoped (visibleWhen) dims in inline mode hide their whole button. */
+  .filter-bar .dim-wrap.hidden {
+    display: none;
   }
 
   .filter-bar .dim-btn,
@@ -523,6 +533,12 @@ const configJson = JSON.stringify({ mode, hotkey, dimensions });
   .value-range-apply:hover { background: #1d4ed8; }
   .value-range-clear { color: var(--text-muted); }
   .value-range-clear:hover { color: var(--text); background: var(--surface); }
+
+  .value-hint {
+    padding: 0.35rem 0.7rem 0.5rem;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
 
   /* ─── Tristate / single panels ─────────────────────────────────────── */
 

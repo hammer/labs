@@ -2,6 +2,7 @@ import { readFileSync, existsSync } from 'fs';
 import { globSync } from 'glob';
 import { parse } from 'yaml';
 import { LabSchema, OutputSchema, isGrouped, type Lab, type Output, type MetricsEntry } from '../schema.js';
+import { parseScaleToBillions, parseScaleToTrillions } from '../lib/scale.js';
 
 export type OutputWithMeta = Output & { _labSlug: string; _metrics?: MetricsEntry };
 
@@ -124,17 +125,86 @@ export function getOutputTypes(output: Output): string[] {
   return [output.type];
 }
 
-/** Parse a parameter string like "671B", "1T", "1T+" into billions */
-function parseParamsToBillions(s?: string): number {
-  if (!s) return 0;
-  const cleaned = s.replace(/[+,]/g, '').trim();
-  const tMatch = cleaned.match(/^([\d.]+)\s*T$/i);
-  if (tMatch) return parseFloat(tMatch[1]) * 1000;
-  const bMatch = cleaned.match(/^([\d.]+)\s*B$/i);
-  if (bMatch) return parseFloat(bMatch[1]);
-  const mMatch = cleaned.match(/^([\d.]+)\s*M$/i);
-  if (mMatch) return parseFloat(mMatch[1]) / 1000;
-  return 0;
+const parseParamsToBillions = parseScaleToBillions;
+
+// ─── Type-specific facets for filter/sort row attributes ────────────────
+
+export interface ModelFacets {
+  /** Comma-joined union of architectures across all model units, e.g. "dense,moe". */
+  arch: string;
+  /** Max parameters in billions across units, variants, and estimates. 0 = none. */
+  paramsB: number;
+  /** Where the max came from: '' = a unit's reported top-level value. */
+  paramsSrc: '' | 'variant' | 'estimate';
+  /** Max active parameters in billions across units and variants. */
+  aparamsB: number;
+  aparamsSrc: '' | 'variant';
+  /** Max training tokens in trillions across units. */
+  tokensT: number;
+  /** Max context window across units. */
+  ctx: number;
+  /** Max intelligence_index across units — AA v4-tagged scores only (older
+   * unversioned scores predate the v4 recalibration and aren't comparable). */
+  intel: number;
+  /** Max openness_index across units (all values are AAOI v1.0). */
+  openness: number;
+}
+
+/**
+ * Containment semantics for timeline filtering/sorting: "this release
+ * contains a model with X". Categorical facets union across all model units
+ * in the file; numeric facets take the file-wide max across units, variants,
+ * and third-party estimates (same semantics as getLargestModel / the home
+ * Scale facet). Display surfaces mark variant/estimate-derived values so the
+ * top-level-anchoring convention isn't violated silently.
+ */
+export function getModelFacets(output: Output): ModelFacets | null {
+  const blocks = isGrouped(output)
+    ? output.outputs.filter(o => o.model).map(o => o.model!)
+    : output.model ? [output.model] : [];
+  if (blocks.length === 0) return null;
+
+  const archSet = new Set<string>();
+  let paramsB = 0;
+  let paramsSrc: ModelFacets['paramsSrc'] = '';
+  let aparamsB = 0;
+  let aparamsSrc: ModelFacets['aparamsSrc'] = '';
+  let tokensT = 0;
+  let ctx = 0;
+  let intel = 0;
+  let openness = 0;
+
+  function considerParams(value: string | undefined, src: ModelFacets['paramsSrc']) {
+    const b = parseScaleToBillions(value);
+    if (b > paramsB) { paramsB = b; paramsSrc = src; }
+  }
+  function considerAparams(value: string | undefined, src: ModelFacets['aparamsSrc']) {
+    const b = parseScaleToBillions(value);
+    if (b > aparamsB) { aparamsB = b; aparamsSrc = src; }
+  }
+
+  for (const m of blocks) {
+    if (m.architecture) archSet.add(m.architecture);
+    considerParams(m.parameters, '');
+    considerParams(m.parameters_estimated?.value, 'estimate');
+    considerAparams(m.active_parameters, '');
+    for (const v of m.variants ?? []) {
+      considerParams(v.parameters, 'variant');
+      considerParams(v.parameters_estimated?.value, 'estimate');
+      considerAparams(v.active_parameters, 'variant');
+    }
+    tokensT = Math.max(tokensT, parseScaleToTrillions(m.training_tokens));
+    ctx = Math.max(ctx, m.context_window ?? 0);
+    if ((m.intelligence_index_version ?? '').startsWith('AA v4')) {
+      intel = Math.max(intel, m.intelligence_index ?? 0);
+    }
+    openness = Math.max(openness, m.openness_index ?? 0);
+  }
+
+  return {
+    arch: [...archSet].sort().join(','),
+    paramsB, paramsSrc, aparamsB, aparamsSrc, tokensT, ctx, intel, openness,
+  };
 }
 
 interface ParamsEstimateMeta {

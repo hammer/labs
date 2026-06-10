@@ -122,8 +122,6 @@ const PaperDetailsSchema = z.object({
   pdf_url: z.string().url().optional(),
   code_url: z.string().url().optional(),
   huggingface_url: z.string().url().optional(),
-  presentation: z.enum(['oral', 'spotlight', 'poster', 'best-paper']).optional(),
-  year: z.number().optional(),
 });
 
 const EvalDetailsSchema = z.object({

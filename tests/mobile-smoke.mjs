@@ -105,8 +105,11 @@ for (const width of [375, 620]) {
 {
   const page = await newPage({ width: 1280, height: 800 });
   await page.goto(`${BASE}/timeline`, { waitUntil: 'networkidle' });
-  await page.click('.dim-wrap[data-dim-key="lab"] .dim-btn');
-  await page.waitForSelector('.dim-wrap[data-dim-key="lab"] .dim-panel:not(.hidden)');
+  await page.keyboard.press('f');
+  await page.waitForSelector('.palette-panel:not(.hidden)');
+  await page.keyboard.type('lab');
+  await page.keyboard.press('Enter');
+  await page.waitForSelector('.value-typeahead');
   await page.fill('.value-typeahead', '');
   await page.type('.value-typeahead', 'anthropic');
   const t = await page.evaluate(() => ({
@@ -146,6 +149,74 @@ for (const width of [375, 620]) {
   await page.goto(`${BASE}/timeline?sort=citations`, { waitUntil: 'networkidle' });
   const synced = await page.evaluate(() => document.querySelector('#sort-select').value);
   log('sort select syncs from ?sort=citations', synced === 'citations', synced);
+  await page.close();
+}
+
+// ── View bar: sort select must not clip the view-toggle buttons ───────
+// The always-visible select shares one flex row with the view toggle at
+// zero slack; clipping happens inside overflow:hidden, so document
+// scrollWidth checks can never catch it — assert containment directly.
+for (const width of [360, 375]) {
+  const page = await newPage({ width, height: 740 });
+  await page.goto(`${BASE}/timeline`, { waitUntil: 'networkidle' });
+  const t = await page.evaluate(() => {
+    const toggle = document.querySelector('.view-toggle');
+    const tr = toggle.getBoundingClientRect();
+    const btns = Array.from(document.querySelectorAll('.view-btn'));
+    const lastBtn = btns[btns.length - 1].getBoundingClientRect();
+    const ctl = document.querySelector('#sort-control');
+    return {
+      toggleClipped: toggle.scrollWidth > toggle.clientWidth + 1,
+      lastBtnInside: lastBtn.right <= tr.right + 1,
+      sortVisible: getComputedStyle(ctl).display !== 'none',
+    };
+  });
+  const ok = !t.toggleClipped && t.lastBtnInside && t.sortVisible;
+  log(`view bar: sort select does not clip view toggle @ ${width}px`, ok, JSON.stringify(t));
+  await page.close();
+}
+
+// ── Attribute column active: no overflow in the 1081–1240px band ──────
+// Above the 1080px relaxation tier the 7-column table is already near
+// min-content; the attribute column must trigger the relaxations itself.
+for (const width of [1100, 1200]) {
+  const page = await newPage({ width, height: 800 });
+  await page.goto(`${BASE}/timeline?type=model&sort=params`, { waitUntil: 'networkidle' });
+  await page.waitForFunction(() =>
+    document.getElementById('timeline-table').dataset.attrKey === 'params');
+  const t = await overflowAt(page);
+  log(`no h-overflow timeline attr-sorted @ ${width}px`, t.scrollW <= t.innerW, JSON.stringify(t));
+  await page.close();
+}
+
+// ── Attribute value visible in the stacked meta line @ 375px ──────────
+{
+  const page = await newPage({ width: 375, height: 667 });
+  await page.goto(`${BASE}/timeline?type=model&sort=params`, { waitUntil: 'networkidle' });
+  await page.waitForFunction(() =>
+    document.getElementById('timeline-table').dataset.attrKey === 'params');
+  const t = await page.evaluate(() => {
+    const row = Array.from(document.querySelectorAll('.tl-row'))
+      .find(r => r.style.display !== 'none' && r.dataset.params);
+    const cell = row?.querySelector('td.col-attr');
+    return {
+      shown: cell && getComputedStyle(cell).display !== 'none',
+      text: cell?.textContent ?? '',
+    };
+  });
+  log('attr value visible in stacked row while attr-sorted @ 375px',
+    !!t.shown && t.text.length > 0, JSON.stringify(t));
+  await page.close();
+}
+
+// ── Scoped filter state: no overflow with filters + attr sort active ──
+{
+  const viewport = { width: 360, height: 740 };
+  const page = await newPage(viewport);
+  await page.goto(`${BASE}/timeline?type=model&arch=moe&sort=aparams`, { waitUntil: 'networkidle' });
+  await page.waitForTimeout(200);
+  const t = await overflowAt(page);
+  log('no h-overflow timeline scoped-filtered @ 360px', t.scrollW <= t.innerW, JSON.stringify(t));
   await page.close();
 }
 

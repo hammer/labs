@@ -185,35 +185,176 @@ function log(name, ok, detail = '') {
   await page.close();
 }
 
-// ── Timeline: clean load + buttons render ────────────────────────────
+// ── Timeline: clean load, palette mode, scoped dims hidden ───────────
 {
   const page = await newPage();
   await page.goto('http://localhost:4321/timeline', { waitUntil: 'networkidle' });
+  await page.keyboard.press('f');
+  await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
   const t = await page.evaluate(() => ({
-    btns: Array.from(document.querySelectorAll('.dim-btn')).map(b => b.querySelector('.dim-label').textContent),
     rows: document.querySelectorAll('.tl-row').length,
+    dims: Array.from(document.querySelectorAll('.dim-item .dim-item-label')).map(e => e.textContent),
+    attrColHidden: getComputedStyle(document.querySelector('th.col-attr')).display === 'none',
   }));
-  log('timeline: 4 dim buttons render', t.btns.length === 4 && t.rows > 800, JSON.stringify(t));
+  const ok = t.rows > 800 && t.dims.length === 4 && t.attrColHidden;
+  log('timeline: palette lists 4 dims, scoped dims hidden, attr column hidden', ok, JSON.stringify({ ...t, dims: t.dims.length }));
   await page.close();
 }
 
-// ── Timeline: panel anchored below button (Type) ────────────────────
+// ── Timeline: type=model reveals scoped dims in the palette ──────────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/timeline', { waitUntil: 'networkidle' });
-  await page.click('.dim-wrap[data-dim-key=type] .dim-btn');
-  await page.waitForFunction(() => !document.querySelector('.dim-wrap[data-dim-key=type] .dim-panel').classList.contains('hidden'));
-  const pos = await page.evaluate(() => {
-    const btn = document.querySelector('.dim-wrap[data-dim-key=type] .dim-btn').getBoundingClientRect();
-    const panel = document.querySelector('.dim-wrap[data-dim-key=type] .dim-panel').getBoundingClientRect();
+  await page.goto('http://localhost:4321/timeline?type=model', { waitUntil: 'networkidle' });
+  await page.keyboard.press('f');
+  await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
+  const t = await page.evaluate(() => ({
+    dims: Array.from(document.querySelectorAll('.dim-item .dim-item-label')).map(e => e.textContent),
+  }));
+  const ok = t.dims.length === 11 && t.dims.includes('Architecture') && t.dims.includes('Active params');
+  log('timeline: type=model reveals scoped dims', ok, JSON.stringify(t.dims));
+  await page.close();
+}
+
+// ── Timeline: ?type=model&arch=moe round-trip ────────────────────────
+{
+  const page = await newPage();
+  await page.goto('http://localhost:4321/timeline?type=model&arch=moe', { waitUntil: 'networkidle' });
+  await page.waitForTimeout(150);
+  const t = await page.evaluate(() => {
+    const visible = Array.from(document.querySelectorAll('.tl-row')).filter(r => r.style.display !== 'none');
     return {
-      panelX: Math.round(panel.x), btnX: Math.round(btn.x),
-      panelTop: Math.round(panel.y), btnBottom: Math.round(btn.bottom),
-      vw: window.innerWidth, panelRight: Math.round(panel.right),
+      visible: visible.length,
+      allMoe: visible.every(r => (r.dataset.arch || '').split(',').includes('moe')),
+      url: window.location.search,
+      chips: document.querySelectorAll('.filter-chip').length,
     };
   });
-  const ok = pos.panelX === pos.btnX && pos.panelTop > pos.btnBottom && pos.panelRight <= pos.vw;
-  log('timeline: Type panel anchored below button', ok, JSON.stringify(pos));
+  const ok = t.visible > 0 && t.allMoe && t.url.includes('arch=moe') && t.chips === 2;
+  log('timeline: ?type=model&arch=moe filters to MoE rows', ok, JSON.stringify(t));
+  await page.close();
+}
+
+// ── Timeline: bare ?arch=moe is suspended (never filters invisibly) ──
+{
+  const page = await newPage();
+  await page.goto('http://localhost:4321/timeline?arch=moe', { waitUntil: 'networkidle' });
+  await page.waitForTimeout(150);
+  const t = await page.evaluate(() => ({
+    total: document.querySelectorAll('.tl-row').length,
+    visible: Array.from(document.querySelectorAll('.tl-row')).filter(r => r.style.display !== 'none').length,
+    chips: document.querySelectorAll('.filter-chip').length,
+  }));
+  const ok = t.visible === t.total && t.chips === 0;
+  log('timeline: bare ?arch=moe does not filter (suspended out of scope)', ok, JSON.stringify(t));
+  await page.close();
+}
+
+// ── Timeline: scoped state suspends on type-widen, restores on re-narrow ──
+{
+  const page = await newPage();
+  await page.goto('http://localhost:4321/timeline?type=model&arch=moe', { waitUntil: 'networkidle' });
+  await page.waitForTimeout(150);
+  const narrowed = await page.evaluate(() =>
+    Array.from(document.querySelectorAll('.tl-row')).filter(r => r.style.display !== 'none').length);
+  // Widen the type filter: model + paper → arch goes out of scope.
+  await page.keyboard.press('f');
+  await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
+  await page.keyboard.type('type');
+  await page.keyboard.press('Enter');
+  await page.waitForSelector('.value-multi-list');
+  await page.click('.value-multi-row[data-slug=paper] input[type=checkbox]');
+  await page.waitForTimeout(150);
+  const widened = await page.evaluate(() => ({
+    visible: Array.from(document.querySelectorAll('.tl-row')).filter(r => r.style.display !== 'none').length,
+    archInUrl: window.location.search.includes('arch='),
+  }));
+  // Re-narrow to model only → arch=moe springs back.
+  await page.click('.value-multi-row[data-slug=paper] input[type=checkbox]');
+  await page.waitForTimeout(150);
+  const restored = await page.evaluate(() => ({
+    visible: Array.from(document.querySelectorAll('.tl-row')).filter(r => r.style.display !== 'none').length,
+    archInUrl: window.location.search.includes('arch=moe'),
+  }));
+  const ok = !widened.archInUrl && widened.visible > narrowed
+    && restored.archInUrl && restored.visible === narrowed;
+  log('timeline: scoped filter suspends on widen, restores on re-narrow', ok,
+    JSON.stringify({ narrowed, widened, restored }));
+  await page.close();
+}
+
+// ── Timeline: model sort via select fills the attribute column ───────
+{
+  const page = await newPage();
+  await page.goto('http://localhost:4321/timeline?type=model', { waitUntil: 'networkidle' });
+  await page.selectOption('#sort-select', 'aparams');
+  await page.waitForTimeout(150);
+  const t = await page.evaluate(() => {
+    const ranked = Array.from(document.querySelectorAll('.tl-row'))
+      .filter(r => r.style.display !== 'none' && r.dataset.aparams)
+      .slice(0, 3)
+      .map(r => Number(r.dataset.aparams));
+    const th = document.querySelector('th.col-attr');
+    const firstCell = Array.from(document.querySelectorAll('.tl-row'))
+      .find(r => r.style.display !== 'none' && r.dataset.aparams)
+      ?.querySelector('td.col-attr');
+    return {
+      ranked,
+      desc: ranked.every((v, i) => i === 0 || ranked[i - 1] >= v),
+      thVisible: getComputedStyle(th).display !== 'none',
+      thLabel: th.querySelector('.attr-label').textContent,
+      arrowActive: th.querySelector('.sort-arrow').classList.contains('active-desc'),
+      cellText: firstCell?.textContent ?? '',
+      attrKey: document.getElementById('timeline-table').dataset.attrKey,
+    };
+  });
+  const ok = t.ranked.length === 3 && t.desc && t.thVisible && t.thLabel === 'Active'
+    && t.arrowActive && t.cellText.includes('B') && t.attrKey === 'aparams';
+  log('timeline: sort by active params fills attribute column', ok, JSON.stringify(t));
+
+  // Header click toggles to ascending — direction must be reachable.
+  await page.click('th.col-attr');
+  await page.waitForTimeout(150);
+  const asc = await page.evaluate(() => {
+    const ranked = Array.from(document.querySelectorAll('.tl-row'))
+      .filter(r => r.style.display !== 'none' && r.dataset.aparams)
+      .slice(0, 3)
+      .map(r => Number(r.dataset.aparams));
+    return { ranked, asc: ranked.every((v, i) => i === 0 || ranked[i - 1] <= v), url: window.location.search };
+  });
+  log('timeline: attr column header click flips to ascending', asc.asc && asc.url.includes('asc=1'), JSON.stringify(asc));
+  await page.close();
+}
+
+// ── Timeline: filter change preserves ?sort (non-destructive URL sync) ──
+{
+  const page = await newPage();
+  await page.goto('http://localhost:4321/timeline?type=model&sort=aparams', { waitUntil: 'networkidle' });
+  await page.waitForTimeout(150);
+  await page.keyboard.press('f');
+  await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
+  await page.keyboard.type('arch');
+  await page.keyboard.press('Enter');
+  await page.waitForSelector('.value-multi-list');
+  await page.click('.value-multi-row[data-slug=moe] input[type=checkbox]');
+  await page.waitForTimeout(150);
+  const t = await page.evaluate(() => window.location.search);
+  const ok = t.includes('sort=aparams') && t.includes('arch=moe') && t.includes('type=model');
+  log('timeline: toggling a filter preserves ?sort in the URL', ok, t);
+  await page.close();
+}
+
+// ── Timeline: range panel shows the coverage hint ─────────────────────
+{
+  const page = await newPage();
+  await page.goto('http://localhost:4321/timeline?type=model', { waitUntil: 'networkidle' });
+  await page.keyboard.press('f');
+  await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
+  await page.keyboard.type('training');
+  await page.keyboard.press('Enter');
+  await page.waitForSelector('.value-range');
+  const hint = await page.evaluate(() => document.querySelector('.value-hint')?.textContent ?? '');
+  const ok = /Data: \d+ of \d+ model rows/.test(hint);
+  log('timeline: tokens range panel shows coverage hint', ok, hint);
   await page.close();
 }
 

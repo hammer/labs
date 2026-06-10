@@ -2,6 +2,7 @@ import { readFileSync } from 'fs';
 import { glob } from 'glob';
 import { parse } from 'yaml';
 import { LabSchema, OutputSchema, isGrouped } from './schema.js';
+import { isUnparseableScale } from './lib/scale.js';
 
 async function main() {
   let errors = 0;
@@ -87,6 +88,40 @@ async function main() {
       (Array.isArray(content.outputs) && content.outputs.some((o: { model?: { intelligence_index?: number } }) => o.model?.intelligence_index !== undefined));
     if (hasIntel && !hasAaUrl(content.sources)) {
       warnings.push(`${file}: has intelligence_index but no artificialanalysis.ai source URL`);
+    }
+
+    // Asymmetric block/type check: a model: block on a non-model unit is
+    // schema leakage (the unit invisibly escapes every model facet).
+    // Companion paper:/library:/dataset: blocks on model units are the
+    // established convention and intentionally not flagged.
+    type Unit = { type?: string; model?: Record<string, unknown>; eval?: Record<string, unknown> };
+    const units: Unit[] = Array.isArray(content.outputs) ? content.outputs : [content];
+    for (const unit of units) {
+      if (unit.model && unit.type !== 'model') {
+        warnings.push(`${file}: model: block on a type:${unit.type} unit — model facets won't see it`);
+      }
+      if (unit.eval && unit.type !== 'eval') {
+        warnings.push(`${file}: eval: block on a type:${unit.type} unit`);
+      }
+    }
+
+    // Scale strings must stay machine-parseable — they feed the sortable
+    // numeric row attributes on the timeline.
+    type ScaleCarrier = { parameters?: string; active_parameters?: string; training_tokens?: string };
+    const scaleCarriers: Array<[string, ScaleCarrier]> = [];
+    for (const unit of units) {
+      if (unit.model) {
+        scaleCarriers.push(['model', unit.model as ScaleCarrier]);
+        const variants = (unit.model as { variants?: ScaleCarrier[] }).variants ?? [];
+        variants.forEach((v, i) => scaleCarriers.push([`model.variants[${i}]`, v]));
+      }
+    }
+    for (const [where, c] of scaleCarriers) {
+      for (const field of ['parameters', 'active_parameters', 'training_tokens'] as const) {
+        if (isUnparseableScale(c[field])) {
+          warnings.push(`${file}: ${where}.${field} "${c[field]}" doesn't parse as a scale value (expected e.g. "671B", "1.5T")`);
+        }
+      }
     }
   }
 

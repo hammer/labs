@@ -2,8 +2,8 @@
 import Layout from '../components/Layout.astro';
 import TypeBadge from '../components/TypeBadge.astro';
 import FilterBar from '../components/FilterBar.astro';
-import { getAllTimelineItems, getAllLabs, getLabBySlug, isGrouped, getOutputTypes } from '../data/loader.js';
-import type { NewsItem } from '../data/loader.js';
+import { getAllTimelineItems, getAllLabs, getLabBySlug, isGrouped, getOutputTypes, getModelFacets } from '../data/loader.js';
+import type { NewsItem, ModelFacets } from '../data/loader.js';
 import { formatCompact } from '../utils.js';
 import type { FilterDimension } from '../lib/filters/types.js';
 
@@ -15,13 +15,35 @@ const labs = getAllLabs().map((l) => ({ slug: l.slug, name: l.name })).sort((a, 
 const labCounts = new Map<string, number>();
 const typeCounts = new Map<string, number>();
 const tagCounts = new Map<string, number>();
+const facetsByItem = new Map<unknown, ModelFacets | null>();
+
+// Model-facet coverage, counted over rows whose types include 'model' —
+// shown as hints in the scoped filter panels so sparse facets (a tokens
+// filter reaches ~9% of model rows) are a visible tradeoff, not a surprise.
+let modelRowCount = 0;
+const facetCoverage = { arch: 0, params: 0, aparams: 0, tokens: 0, ctx: 0, intel: 0, openness: 0 };
 
 items.forEach(item => {
   if (item._kind === 'output') {
     const labList = Array.isArray(item.lab) ? item.lab : [item.lab];
     labList.forEach(l => labCounts.set(l, (labCounts.get(l) || 0) + 1));
-    getOutputTypes(item).forEach(t => typeCounts.set(t, (typeCounts.get(t) || 0) + 1));
+    const itemTypes = getOutputTypes(item);
+    itemTypes.forEach(t => typeCounts.set(t, (typeCounts.get(t) || 0) + 1));
     (item.tags || []).forEach(t => tagCounts.set(t, (tagCounts.get(t) || 0) + 1));
+    const facets = getModelFacets(item);
+    facetsByItem.set(item, facets);
+    if (itemTypes.includes('model')) {
+      modelRowCount++;
+      if (facets) {
+        if (facets.arch) facetCoverage.arch++;
+        if (facets.paramsB > 0) facetCoverage.params++;
+        if (facets.aparamsB > 0) facetCoverage.aparams++;
+        if (facets.tokensT > 0) facetCoverage.tokens++;
+        if (facets.ctx > 0) facetCoverage.ctx++;
+        if (facets.intel > 0) facetCoverage.intel++;
+        if (facets.openness > 0) facetCoverage.openness++;
+      }
+    }
   } else {
     labCounts.set(item._labSlug, (labCounts.get(item._labSlug) || 0) + 1);
   }
@@ -30,6 +52,15 @@ typeCounts.set('news', newsCount);
 
 const types = [...typeCounts.keys()].sort();
 const tags = [...tagCounts.keys()].sort();
+
+const archCounts = { dense: 0, moe: 0 };
+for (const f of facetsByItem.values()) {
+  if (f?.arch.includes('dense')) archCounts.dense++;
+  if (f?.arch.includes('moe')) archCounts.moe++;
+}
+
+const hint = (n: number) => `Data: ${n} of ${modelRowCount} model rows`;
+const modelScope = { dim: 'type', values: ['model'] };
 
 const dimensions: FilterDimension[] = [
   {
@@ -59,6 +90,47 @@ const dimensions: FilterDimension[] = [
     rowAttr: 'tags',
     options: tags.map(t => ({ slug: t, label: t, count: tagCounts.get(t) ?? 0 })),
   },
+  // Model-scoped dimensions — visible only while Type is narrowed to model.
+  // Containment semantics: a row matches if the release contains a model
+  // with the value (union/max across grouped sub-outputs and variants).
+  {
+    key: 'arch', label: 'Architecture', kind: 'multi', rowAttr: 'arch',
+    visibleWhen: modelScope, hint: hint(facetCoverage.arch),
+    options: [
+      { slug: 'dense', label: 'Dense', count: archCounts.dense },
+      { slug: 'moe', label: 'MoE (sparse)', count: archCounts.moe },
+    ],
+  },
+  {
+    key: 'params', label: 'Parameters', kind: 'range', rowAttr: 'params',
+    unit: 'B params', format: 'paramsB', excludeMissing: true,
+    visibleWhen: modelScope, hint: hint(facetCoverage.params),
+  },
+  {
+    key: 'aparams', label: 'Active params', kind: 'range', rowAttr: 'aparams',
+    unit: 'B params', format: 'paramsB', excludeMissing: true,
+    visibleWhen: modelScope, hint: hint(facetCoverage.aparams),
+  },
+  {
+    key: 'tokens', label: 'Training tokens', kind: 'range', rowAttr: 'tokens',
+    unit: 'T tokens', format: 'tokensT', excludeMissing: true,
+    visibleWhen: modelScope, hint: hint(facetCoverage.tokens),
+  },
+  {
+    key: 'ctx', label: 'Context window', kind: 'range', rowAttr: 'ctx',
+    unit: 'tokens', format: 'compact', excludeMissing: true,
+    visibleWhen: modelScope, hint: hint(facetCoverage.ctx),
+  },
+  {
+    key: 'intel', label: 'Intelligence', kind: 'range', rowAttr: 'intel',
+    excludeMissing: true, visibleWhen: modelScope,
+    hint: `${hint(facetCoverage.intel)} (AA v4-verified scores only)`,
+  },
+  {
+    key: 'openness', label: 'Openness', kind: 'range', rowAttr: 'openness',
+    format: 'score100', excludeMissing: true,
+    visibleWhen: modelScope, hint: hint(facetCoverage.openness),
+  },
 ];
 ---
 
@@ -77,15 +149,25 @@ const dimensions: FilterDimension[] = [
     <label class="sort-control" id="sort-control">
       <span class="sort-control-label">Sort</span>
       <select id="sort-select" aria-label="Sort by">
-        <option value="date">Date</option>
-        <option value="stars">Stars</option>
-        <option value="downloads">Downloads</option>
-        <option value="citations">Citations</option>
+        <optgroup label="General">
+          <option value="date">Date</option>
+          <option value="stars">Stars</option>
+          <option value="downloads">Downloads</option>
+          <option value="citations">Citations</option>
+        </optgroup>
+        <optgroup label="Model">
+          <option value="params">Params</option>
+          <option value="aparams">Active</option>
+          <option value="tokens">Tokens</option>
+          <option value="ctx">Context</option>
+          <option value="intel">Intel</option>
+          <option value="openness">Open</option>
+        </optgroup>
       </select>
     </label>
   </div>
 
-  <FilterBar mode="inline" dimensions={dimensions} hotkey="f" id="filter-bar" />
+  <FilterBar mode="palette" dimensions={dimensions} hotkey="f" id="filter-bar" />
 
   <table class="timeline-table" id="timeline-table">
     <thead>
@@ -94,6 +176,7 @@ const dimensions: FilterDimension[] = [
         <th class="col-name">Name</th>
         <th class="col-lab">Lab</th>
         <th class="col-type">Type</th>
+        <th class="col-attr sortable" data-sort="" title="Model attribute — shown while a model-specific sort or filter is active. ~ marks third-party estimates; (max) marks values from a family's largest variant."><span class="attr-label"></span> <span class="sort-arrow"></span></th>
         <th class="col-metric sortable" data-sort="stars" data-metric="stars" title="GitHub stars — max across all repos referenced in the output">Stars <span class="sort-arrow"></span></th>
         <th class="col-metric sortable" data-sort="downloads" data-metric="downloads" title="HuggingFace downloads — summed across all unique models in the output">Downloads <span class="sort-arrow"></span></th>
         <th class="col-metric sortable" data-sort="citations" data-metric="citations" title="OpenAlex citations — summed across all unique papers in the output">Citations <span class="sort-arrow"></span></th>
@@ -126,6 +209,7 @@ const dimensions: FilterDimension[] = [
               </td>
               <td class="col-lab"><a href={`/labs/${news._labSlug}`} class="lab-link">{news.labName}</a></td>
               <td class="col-type"><TypeBadge type="news" /></td>
+              <td class="col-attr"></td>
               <td class="col-metric" data-metric="stars"><span class="no-data">&mdash;</span></td>
               <td class="col-metric" data-metric="downloads"><span class="no-data">&mdash;</span></td>
               <td class="col-metric" data-metric="citations"><span class="no-data">&mdash;</span></td>
@@ -138,6 +222,7 @@ const dimensions: FilterDimension[] = [
         const outputTypes = getOutputTypes(item);
         const grouped = isGrouped(item);
         const m = item._metrics;
+        const f = facetsByItem.get(item);
         return (
           <tr
             class="tl-row"
@@ -150,6 +235,15 @@ const dimensions: FilterDimension[] = [
             data-stars={m?.github_stars ?? ''}
             data-downloads={m?.hf_downloads ?? ''}
             data-citations={m?.citations ?? ''}
+            data-arch={f?.arch || undefined}
+            data-params={f && f.paramsB > 0 ? f.paramsB : undefined}
+            data-params-src={f?.paramsSrc || undefined}
+            data-aparams={f && f.aparamsB > 0 ? f.aparamsB : undefined}
+            data-aparams-src={f?.aparamsSrc || undefined}
+            data-tokens={f && f.tokensT > 0 ? f.tokensT : undefined}
+            data-ctx={f && f.ctx > 0 ? f.ctx : undefined}
+            data-intel={f && f.intel > 0 ? f.intel : undefined}
+            data-openness={f && f.openness > 0 ? f.openness : undefined}
             data-kind="output"
             data-index={i}
           >
@@ -163,6 +257,7 @@ const dimensions: FilterDimension[] = [
             <td class="col-type">
               {outputTypes.map(t => <TypeBadge type={t} />)}
             </td>
+            <td class="col-attr"></td>
             <td class="col-metric" data-metric="stars">{m?.github_stars ? formatCompact(m.github_stars) : <span class="no-data">&mdash;</span>}</td>
             <td class="col-metric" data-metric="downloads">{m?.hf_downloads ? formatCompact(m.hf_downloads) : <span class="no-data">&mdash;</span>}</td>
             <td class="col-metric" data-metric="citations">{m?.citations ? formatCompact(m.citations) : <span class="no-data">&mdash;</span>}</td>
@@ -209,8 +304,9 @@ const dimensions: FilterDimension[] = [
 </Layout>
 
 <script>
-  import type { FilterChangeDetail } from '../lib/filters/types';
-  import { rowMatches } from '../lib/filters/state';
+  import type { FilterChangeDetail, FormatToken } from '../lib/filters/types';
+  import { rowMatches, isActive } from '../lib/filters/state';
+  import { formatValue } from '../lib/filters/runtime';
   import type { FilterDimension } from '../lib/filters/types';
 
   const tbody = document.querySelector<HTMLTableSectionElement>('#timeline-table tbody')!;
@@ -240,10 +336,74 @@ const dimensions: FilterDimension[] = [
   let lastFilterState: Parameters<typeof rowMatches>[1] = {};
 
   // Sort state
-  type SortColumn = 'date' | 'stars' | 'downloads' | 'citations';
+  type SortColumn = 'date' | 'stars' | 'downloads' | 'citations'
+    | 'params' | 'aparams' | 'tokens' | 'ctx' | 'intel' | 'openness';
   let currentSort: SortColumn = 'date';
   let sortDesc = true;
+  // The s-key cycles only the general sorts; model-specific sorts are
+  // reached via the select, the URL, or the attribute column's header.
   const sortCycle: SortColumn[] = ['date', 'stars', 'downloads', 'citations'];
+  const validSortKeys: SortColumn[] = [
+    'date', 'stars', 'downloads', 'citations',
+    'params', 'aparams', 'tokens', 'ctx', 'intel', 'openness',
+  ];
+
+  // ─── Model attribute column ──────────────────────────────────────────
+  // One dynamic column shows the model attribute being sorted or filtered
+  // by, filled from row data-* attributes (cell text is written FROM the
+  // attrs — the data-attr invariant holds in the read direction).
+  interface AttrMeta { label: string; format: FormatToken; srcAttr?: string; sortable: boolean }
+  const ATTR_META: Record<string, AttrMeta> = {
+    params: { label: 'Params', format: 'paramsB', srcAttr: 'paramsSrc', sortable: true },
+    aparams: { label: 'Active', format: 'paramsB', srcAttr: 'aparamsSrc', sortable: true },
+    tokens: { label: 'Tokens', format: 'tokensT', sortable: true },
+    ctx: { label: 'Context', format: 'compact', sortable: true },
+    intel: { label: 'Intel', format: 'plain', sortable: true },
+    openness: { label: 'Open', format: 'score100', sortable: true },
+    arch: { label: 'Arch', format: 'plain', sortable: false },
+  };
+  const scopedDimKeys = dimensions.filter(d => d.visibleWhen).map(d => d.key);
+  const attrTh = document.querySelector<HTMLTableCellElement>('th.col-attr')!;
+  const attrLabelEl = attrTh.querySelector<HTMLElement>('.attr-label')!;
+  const attrCells = new Map<HTMLTableRowElement, HTMLTableCellElement>(
+    allRows.map(r => [r, r.querySelector<HTMLTableCellElement>('td.col-attr')!]),
+  );
+  // The most recently touched active scoped filter — what the attribute
+  // column falls back to when the sort itself isn't model-specific.
+  let attrFilterKey: string | null = null;
+
+  function currentAttrKey(): string | null {
+    if (ATTR_META[currentSort]) return currentSort;
+    return attrFilterKey;
+  }
+
+  function refreshAttrColumn() {
+    const key = currentAttrKey();
+    if (!key) {
+      delete table.dataset.attrKey;
+      attrTh.dataset.sort = '';
+      return;
+    }
+    const meta = ATTR_META[key]!;
+    table.dataset.attrKey = key;
+    attrLabelEl.textContent = meta.label;
+    attrTh.dataset.sort = meta.sortable ? key : '';
+    for (const row of allRows) {
+      const td = attrCells.get(row)!;
+      const raw = row.dataset[key];
+      if (!raw) {
+        td.innerHTML = '<span class="no-data">&mdash;</span>';
+        continue;
+      }
+      let text = meta.format === 'plain' && Number.isNaN(Number(raw))
+        ? raw
+        : formatValue(meta.format, Number(raw));
+      const src = meta.srcAttr ? row.dataset[meta.srcAttr] : undefined;
+      if (src === 'estimate') text = `~${text}`;
+      else if (src === 'variant') text = `${text} (max)`;
+      td.textContent = text;
+    }
+  }
 
   // ─── View toggle ─────────────────────────────────────────────────────
 
@@ -266,11 +426,30 @@ const dimensions: FilterDimension[] = [
 
   // ─── Filter integration ──────────────────────────────────────────────
 
+  function onFilterState(state: FilterChangeDetail['state'], dirtyKeys: string[]) {
+    lastFilterState = state;
+    // Track the last-touched active scoped filter for the attribute column.
+    const touched = dirtyKeys.filter(
+      k => scopedDimKeys.includes(k) && state[k] && isActive(state[k]!),
+    );
+    if (touched.length > 0) attrFilterKey = touched[touched.length - 1]!;
+    if (attrFilterKey && !(state[attrFilterKey] && isActive(state[attrFilterKey]!))) {
+      attrFilterKey = scopedDimKeys.find(k => state[k] && isActive(state[k]!)) ?? null;
+    }
+    refreshAttrColumn();
+    updateVisibility();
+  }
+
   filterBarEl.addEventListener('filters:changed', (e) => {
     const detail = (e as CustomEvent<FilterChangeDetail>).detail;
-    lastFilterState = detail.state;
-    updateVisibility();
+    onFilterState(detail.state, detail.dirtyKeys);
   });
+  // Pull the initial state if the FilterBar initialized before this script
+  // evaluated (module fetch order can put us past its deferred dispatch).
+  {
+    const api = (filterBarEl as any).__filterBarApi;
+    if (api) onFilterState(api.getState(), Object.keys(api.getState()));
+  }
 
   // ─── Sort ────────────────────────────────────────────────────────────
 
@@ -303,6 +482,12 @@ const dimensions: FilterDimension[] = [
       tbody.appendChild(row);
     }
 
+    // Before the arrow pass: the attr column's data-sort is written by
+    // refreshAttrColumn, and the arrow loop matches headers on data-sort —
+    // run it first or the attr header shows no direction indicator on its
+    // first activation (select / URL restore).
+    refreshAttrColumn();
+
     sortHeaders.forEach(th => {
       const arrow = th.querySelector('.sort-arrow')!;
       const col = th.dataset.sort;
@@ -315,8 +500,8 @@ const dimensions: FilterDimension[] = [
       }
     });
 
-    // Single sync point for the mobile sort select and the stacked-row
-    // metric display: header clicks, the 's' shortcut, URL restore, and
+    // Single sync point for the sort select and the stacked-row metric /
+    // attribute display: header clicks, the 's' shortcut, URL restore, and
     // the select itself all funnel through here.
     sortSelect.value = column;
     if (column === 'date') delete table.dataset.activeSort;
@@ -327,12 +512,14 @@ const dimensions: FilterDimension[] = [
   }
 
   sortSelect.addEventListener('change', () => {
-    sortRows(sortSelect.value as SortColumn, true);
+    const v = sortSelect.value as SortColumn;
+    if (validSortKeys.includes(v)) sortRows(v, true);
   });
 
   sortHeaders.forEach(th => {
     th.addEventListener('click', () => {
       const col = th.dataset.sort as SortColumn;
+      if (!col) return; // attribute column header while showing a non-sortable attr
       if (col === currentSort) {
         sortRows(col, !sortDesc);
       } else {
@@ -362,9 +549,17 @@ const dimensions: FilterDimension[] = [
     });
 
     visibleRows = allRows.filter(r => r.style.display !== 'none');
-    filterCountEl.textContent = visibleRows.length < allRows.length
+    let countText = visibleRows.length < allRows.length
       ? `${visibleRows.length} of ${allRows.length}`
       : '';
+    // Sparse-sort feedback: say how many visible rows actually carry the
+    // sorted attribute (the rest keep stable order at the bottom).
+    if (ATTR_META[currentSort]) {
+      const ranked = visibleRows.filter(r => r.dataset[currentSort]).length;
+      const note = `${ranked} ranked by ${ATTR_META[currentSort]!.label.toLowerCase()}`;
+      countText = countText ? `${countText} · ${note}` : note;
+    }
+    filterCountEl.textContent = countText;
 
     if (selected >= visibleRows.length) {
       select(visibleRows.length - 1);
@@ -437,7 +632,7 @@ const dimensions: FilterDimension[] = [
       viewBtns.forEach(b => b.classList.toggle('active', b.dataset.view === view));
     }
     const sort = params.get('sort') as SortColumn | null;
-    if (sort && sortCycle.includes(sort)) {
+    if (sort && validSortKeys.includes(sort)) {
       sortRows(sort, params.get('asc') !== '1');
     }
   }
@@ -576,10 +771,14 @@ const dimensions: FilterDimension[] = [
     gap: 0.5rem;
   }
 
-  /* Mobile sort control — the touch alternative to the 's' shortcut and
-     the metric column headers, which are hidden below 768px. */
+  /* Sort control — always visible: it is the only entry point for the
+     model-specific sorts (their column doesn't exist until sorted by), the
+     touch alternative to the 's' shortcut, and the stand-in for the metric
+     column headers hidden below 768px. Labels are deliberately short — at
+     360px the view bar has zero slack and a wide select silently clips the
+     view-toggle buttons (overflow:hidden, invisible to scrollWidth checks). */
   .sort-control {
-    display: none;
+    display: inline-flex;
     align-items: center;
     gap: 0.4rem;
     font-size: 0.8rem;
@@ -596,9 +795,16 @@ const dimensions: FilterDimension[] = [
     padding: 0.3rem 0.4rem;
   }
 
-  @media (max-width: 768px) {
-    .sort-control {
-      display: inline-flex;
+  /* iOS zooms on focus of any control under 16px computed font-size. */
+  @media (pointer: coarse) {
+    .sort-control select {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .view-bar {
+      flex-wrap: wrap;
     }
   }
   .view-toggle {
@@ -781,6 +987,42 @@ const dimensions: FilterDimension[] = [
     font-size: 0.8rem;
   }
 
+  /* Model attribute column — hidden until a model-specific sort or filter
+     is active (table[data-attr-key] set by the page script); header label
+     and cell text are filled client-side from row data-* attributes. */
+  th.col-attr,
+  td.col-attr {
+    display: none;
+  }
+
+  .timeline-table[data-attr-key] th.col-attr {
+    display: table-cell;
+    text-align: right;
+  }
+
+  .timeline-table[data-attr-key] td.col-attr {
+    display: table-cell;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-muted);
+    white-space: nowrap;
+    font-size: 0.8rem;
+  }
+
+  /* With the extra column active the table's min-content exceeds the
+     viewport in the 1081–1240px band; apply the rigid-column relaxations
+     (normally gated at 1080px below) whenever the column is shown. */
+  .timeline-table[data-attr-key] .col-date {
+    width: auto;
+  }
+  .timeline-table[data-attr-key] .col-lab,
+  .timeline-table[data-attr-key] td.col-type {
+    white-space: normal;
+  }
+  .timeline-table[data-attr-key] td.col-name {
+    overflow-wrap: anywhere;
+  }
+
   .no-data {
     opacity: 0.3;
   }
@@ -871,6 +1113,18 @@ const dimensions: FilterDimension[] = [
        rules below re-show just the sorted one. */
     .tl-row td.col-metric {
       display: none;
+    }
+
+    /* Same three-step cascade for the model attribute cell: the generic
+       `.tl-row td` rule would reveal it, so re-hide by default and let the
+       active attribute join the meta line like the metrics do. */
+    .tl-row td.col-attr {
+      display: none;
+    }
+
+    .timeline-table[data-attr-key] .tl-row td.col-attr {
+      display: inline;
+      font-size: 0.75rem;
     }
 
     .tl-row td.col-name {

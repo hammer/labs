@@ -145,8 +145,7 @@ const dimensions: FilterDimension[] = [
       document.getElementById('lab-filter-bar-config')!.textContent!,
     ).dimensions;
 
-    filterBarEl.addEventListener('filters:changed', (e) => {
-      const state = (e as CustomEvent<FilterChangeDetail>).detail.state;
+    const applyState = (state: FilterChangeDetail['state']) => {
       let visible = 0;
       items.forEach(item => {
         const ok = rowMatches(item.dataset as Record<string, string | undefined>, state, dimensions);
@@ -154,7 +153,15 @@ const dimensions: FilterDimension[] = [
         if (ok) visible++;
       });
       countEl.textContent = visible < total ? `(${visible} of ${total})` : `(${total})`;
+    };
+
+    filterBarEl.addEventListener('filters:changed', (e) => {
+      applyState((e as CustomEvent<FilterChangeDetail>).detail.state);
     });
+    // Pull the initial state if the FilterBar initialized before this script
+    // evaluated (module fetch order can put us past its deferred dispatch).
+    const api = (filterBarEl as any).__filterBarApi;
+    if (api) applyState(api.getState());
   }
 </script>
 

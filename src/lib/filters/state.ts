@@ -30,6 +30,38 @@ function freshDimState(d: FilterDimension): DimState {
   }
 }
 
+// ─── Scoped visibility ─────────────────────────────────────────────────
+// A dimension with visibleWhen is only in scope while the controlling
+// dimension is narrowed to exactly one selected value from its list.
+
+function selectedValues(s: DimState | undefined): string[] {
+  if (!s) return [];
+  if (s.kind === 'multi') return [...s.values];
+  if (s.kind === 'single') return s.value !== null ? [s.value] : [];
+  return [];
+}
+
+export function isDimVisible(d: FilterDimension, state: FilterState): boolean {
+  if (!d.visibleWhen) return true;
+  const sel = selectedValues(state[d.visibleWhen.dim]);
+  return sel.length === 1 && d.visibleWhen.values.includes(sel[0]!);
+}
+
+// The state that actually matches rows, serializes to the URL, and is
+// broadcast to pages: out-of-scope dims are replaced with a fresh (inactive)
+// state. The raw state keeps their values so re-narrowing the controlling
+// dimension restores them (suspend, don't destroy). Pure — applied at parse
+// time and inside emitChange, never via event listeners (synchronous nested
+// dispatch would deliver stale state).
+export function effectiveState(state: FilterState, dims: FilterDimension[]): FilterState {
+  const out: FilterState = {};
+  for (const d of dims) {
+    const s = state[d.key] ?? freshDimState(d);
+    out[d.key] = isDimVisible(d, state) ? s : freshDimState(d);
+  }
+  return out;
+}
+
 export function isActive(s: DimState): boolean {
   switch (s.kind) {
     case 'multi':

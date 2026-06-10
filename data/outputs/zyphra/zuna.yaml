@@ -29,6 +29,5 @@ tags:
   - open-weight
 model:
   parameters: 380M
-  training_tokens: ~2M channel-hours (208 datasets)
 paper:
   arxiv: "2602.18478"

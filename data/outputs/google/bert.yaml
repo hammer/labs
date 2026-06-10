@@ -1,7 +1,7 @@
 name: BERT
 slug: bert
 lab: google
-type: paper
+type: model
 date: 2018-10-11
 flagship: true
 sources:

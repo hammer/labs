@@ -218,7 +218,11 @@ Each output type has dedicated structured fields rendered by a type-specific com
 
 **Paper details** (`paper:`):
 - Core: `arxiv`, `venue`
-- Enhanced: `authors[]` (names auto-linked to person pages), `code_url`, `pdf_url`, `huggingface_url`, `presentation` (oral/spotlight/poster/best-paper), `year`
+- Enhanced: `authors[]` (names auto-linked to person pages), `code_url`, `pdf_url`, `huggingface_url`
+
+**Block/type convention:** companion `paper:`/`library:`/`dataset:` blocks on a `type: model` unit are the established pattern (a model release with its paper). The reverse — a `model:` block on a non-model unit — is schema leakage: the entry invisibly escapes every model facet on the timeline. `npm run validate` warns on it; fix by flipping the type (a release that ships weights is a model) or splitting into a grouped output.
+
+**Scale strings must stay machine-parseable.** `parameters`, `active_parameters`, and `training_tokens` feed sortable numeric attributes on the timeline via `src/lib/scale.ts` (accepted: `"671B"`, `"1.5T"`, `"350M"`, with optional `~`/`+`). `npm run validate` warns on values that don't parse — don't put prose in these fields (it belongs in the description).
 
 **Eval details** (`eval:`):
 - Scale: `num_tasks`, `num_questions`, `domains[]`
@@ -235,6 +239,17 @@ Each output type has dedicated structured fields rendered by a type-specific com
 - Enhanced: `language`, `framework`, `license`, `pip_package`
 
 **Eval type guidance:** Use `eval` for benchmarks used in major composite indices ([AA Intelligence Index](https://artificialanalysis.ai/methodology/intelligence-benchmarking), [Epoch ECI](https://epoch.ai/benchmarks/eci)) or that most labs report scores on. Do not add narrow/niche benchmarks.
+
+### Timeline Type-Scoped Filters & Sorts
+
+The timeline (palette-mode FilterBar) exposes model-specific facets — Architecture (dense/MoE), Parameters, Active params, Training tokens, Context window, Intelligence, Openness — that appear only while the Type filter is narrowed to exactly `model` (`visibleWhen` on `FilterDimension`, generic in `src/lib/filters/`). Conventions that keep this honest:
+
+- **Containment semantics.** Row attributes answer "does this release *contain* a model with X": `data-arch` is the union across all model units in the file; numeric attrs are the file-wide max across units, variants, and `parameters_estimated` (`getModelFacets` in `src/data/loader.ts`). Display marks derived values: `~` = third-party estimate, `(max)` = largest family variant — so a displayed number that matches no top-level field is self-explaining (the top-level-anchoring rule is about *displayed* values; filtering deliberately uses containment).
+- **Suspend, don't destroy.** When the Type filter widens, scoped filter state is suspended — excluded from matching, chips, and the URL, but restored when the scope returns. A bare `?arch=moe` URL never filters invisibly; it activates if Type is later narrowed to model. Implemented as pure state normalization (`effectiveState` in `src/lib/filters/state.ts`), never via event listeners.
+- **One dynamic attribute column** (`th.col-attr`) shows the model attribute being sorted or filtered by, filled client-side from row `data-*` attrs; its header is a real sortable `<th>` (the only path to ascending for these sorts). New sort keys go in `validSortKeys` (URL/select) — `sortCycle` (the `s` key) stays at the four general sorts.
+- **Intelligence facet is AA v4-only.** `data-intel` carries only `intelligence_index` values whose version starts with `AA v4` — unversioned pre-recalibration scores are not comparable and are excluded (they're the re-verification work-list).
+- **Sort select labels stay short.** The view bar has zero slack at 360px; a wide `<select>` clips the view-toggle buttons inside `overflow: hidden`, invisible to scrollWidth checks (guarded by a `test:mobile` clip assertion).
+- **Page scripts pull initial filter state** via `filterBarEl.__filterBarApi.getState()` after attaching their `filters:changed` listener — module fetch order can delay a page script past the FilterBar's deferred initial dispatch; the handshake covers both orders.
 
 ### Artificial Analysis Intelligence Index
 

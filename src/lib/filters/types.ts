@@ -3,6 +3,11 @@
 
 export type DimKind = 'multi' | 'range' | 'tristate' | 'single';
 
+// Serializable format token for range values. Dimension config crosses the
+// SSR→client boundary as JSON (FilterBar.astro), so this must be plain data,
+// not a function. Resolved by formatValue() in runtime.ts.
+export type FormatToken = 'plain' | 'paramsB' | 'tokensT' | 'usdB' | 'score100' | 'compact';
+
 export interface MultiOption {
   slug: string;
   label: string;
@@ -18,12 +23,25 @@ export interface FilterDimension {
   options?: MultiOption[];
   // For 'range' kinds
   unit?: string;
-  format?: (n: number) => string;
-  // When true and kind is 'range', rows whose attr is 0 / missing are excluded
-  // by an active filter. When false, missing-data rows pass any range.
+  format?: FormatToken;
+  // When true and kind is 'range', rows whose attr is 0 are additionally
+  // excluded by an active filter. Note: rows whose attr is missing/empty
+  // always fail an active range filter (parseFloat('') is NaN), regardless
+  // of this flag — emit missing numerics as '' (or omit the attribute).
   excludeMissing?: boolean;
-  // The data-* attribute on rows that holds this dimension's value.
+  // The row.dataset key holding this dimension's value — camelCase, e.g.
+  // rowAttr 'ipoStatus' reads data-ipo-status. Multi-word kebab keys would
+  // silently never match.
   rowAttr: string;
+  // Scoped visibility: this dimension only appears (and only filters) while
+  // the named dimension is narrowed to exactly one selected value contained
+  // in `values`. While out of scope the dimension's state is suspended —
+  // kept in memory for restore, but excluded from row matching, chips, and
+  // the URL. Plain data; survives the JSON config boundary.
+  visibleWhen?: { dim: string; values: string[] };
+  // Optional coverage hint shown in the dimension's value panel,
+  // e.g. "47 of 550 model rows have data".
+  hint?: string;
 }
 
 export type RangeValue = { min: number | null; max: number | null };

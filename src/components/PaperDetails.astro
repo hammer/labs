@@ -29,12 +29,6 @@ const linkedAuthors = paper.authors?.map(linkAuthor) ?? [];
         <span class="spec-value">{paper.venue}</span>
       </div>
     )}
-    {paper.presentation && (
-      <div class="spec">
-        <span class="spec-label">Presentation</span>
-        <span class="spec-value presentation-badge" data-type={paper.presentation}>{paper.presentation}</span>
-      </div>
-    )}
     {metrics?.citations && (
       <div class="spec">
         <span class="spec-label">Citations</span>
@@ -100,15 +94,6 @@ const linkedAuthors = paper.authors?.map(linkAuthor) ?? [];
     font-weight: 600;
     font-size: 0.9rem;
     overflow-wrap: anywhere;
-  }
-
-  .presentation-badge[data-type="oral"],
-  .presentation-badge[data-type="best-paper"] {
-    color: #059669;
-  }
-
-  .presentation-badge[data-type="spotlight"] {
-    color: #2563eb;
   }
 
   .paper-links {

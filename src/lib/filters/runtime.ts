@@ -10,6 +10,7 @@ import type {
   TristateValue,
   FilterChangeDetail,
   MultiOption,
+  FormatToken,
 } from './types.js';
 import {
   emptyState,
@@ -27,6 +28,8 @@ import {
   serialize,
   parse,
   diffStates,
+  isDimVisible,
+  effectiveState,
 } from './state.js';
 import { placePanel, isMobile } from './position.js';
 
@@ -104,19 +107,37 @@ export function initFilterBar(config: InitConfig): InitResult {
     if (live) live.textContent = msg;
   }
 
+  function eff(s: FilterState = state): FilterState {
+    return effectiveState(s, dimensions);
+  }
+
   function emitChange(prev: FilterState): void {
-    const dirty = diffStates(prev, state);
-    if (dirty.length === 0) return;
-    syncUrl();
+    if (diffStates(prev, state).length === 0) return;
+    // Out-of-scope dims are suspended, not destroyed: matching, chips, and
+    // the URL all flow from the effective state, while the raw state keeps
+    // their values for restore when the scope returns.
+    const prevEff = effectiveState(prev, dimensions);
+    const nextEff = eff();
+    if (openDimKey) {
+      const openDim = dimByKey(openDimKey);
+      if (openDim && !isDimVisible(openDim, state)) closeOpenPanel();
+    }
+    syncUrl(nextEff);
     rerender();
+    const dirty = diffStates(prevEff, nextEff);
+    if (dirty.length === 0) return;
     rootEl.dispatchEvent(new CustomEvent<FilterChangeDetail>('filters:changed', {
-      detail: { state: deepClone(state), dirtyKeys: dirty },
+      detail: { state: deepClone(nextEff), dirtyKeys: dirty },
       bubbles: true,
     }));
   }
 
-  function syncUrl(): void {
-    const params = serialize(state, dimensions);
+  function syncUrl(effState: FilterState): void {
+    // Non-destructive: only this instance's dimension keys are rewritten;
+    // foreign params (e.g. the timeline's ?view/?sort/?asc) are preserved.
+    const params = new URLSearchParams(window.location.search);
+    for (const d of dimensions) params.delete(d.key);
+    serialize(effState, dimensions).forEach((v, k) => params.set(k, v));
     const qs = params.toString();
     const target = qs ? `?${qs}` : window.location.pathname;
     history.replaceState(null, '', target);
@@ -150,7 +171,7 @@ export function initFilterBar(config: InitConfig): InitResult {
       return s.value === 'yes' ? 'Yes' : 'No';
     }
     if (s.kind === 'range') {
-      const fmt = d.format ?? ((n: number) => String(n));
+      const fmt = (n: number) => formatValue(d.format, n);
       const r = s.value;
       if (r.min !== null && r.max !== null) return `${fmt(r.min)}–${fmt(r.max)}`;
       if (r.min !== null) return `≥${fmt(r.min)}`;
@@ -172,13 +193,15 @@ export function initFilterBar(config: InitConfig): InitResult {
   }
 
   function rerenderInlineButtons(): void {
+    const effState = eff();
     for (const d of dimensions) {
       const wrap = dimWrapByKey(d.key);
       if (!wrap) continue;
+      wrap.classList.toggle('hidden', !isDimVisible(d, state));
       const btn = wrap.querySelector<HTMLButtonElement>('.dim-btn');
       const summaryEl = wrap.querySelector<HTMLElement>('.dim-summary');
       const dotEl = wrap.querySelector<HTMLElement>('.dim-dot');
-      const s = state[d.key]!;
+      const s = effState[d.key]!;
       const active = isActive(s);
       btn?.classList.toggle('active', active);
       btn?.setAttribute('aria-expanded', String(openDimKey === d.key));
@@ -189,9 +212,10 @@ export function initFilterBar(config: InitConfig): InitResult {
 
   function rerenderPaletteChips(): void {
     if (!chips) return;
-    const active = dimensions.filter(d => isActive(state[d.key]!));
+    const effState = eff();
+    const active = dimensions.filter(d => isActive(effState[d.key]!));
     chips.innerHTML = active.map(d => {
-      const text = summarizeDim(d, state[d.key]!);
+      const text = summarizeDim(d, effState[d.key]!);
       return `
         <span class="filter-chip-wrap">
           <button type="button" class="filter-chip" data-dim-key="${escapeAttr(d.key)}" title="Edit ${escapeAttr(d.label)}">
@@ -221,7 +245,9 @@ export function initFilterBar(config: InitConfig): InitResult {
 
   function rerenderClearAll(): void {
     if (!clearAllBtn) return;
-    clearAllBtn.classList.toggle('hidden', activeCount(state) === 0);
+    // Effective state, like every other surface — suspended out-of-scope
+    // dims must not summon a Clear-all button with nothing visible to clear.
+    clearAllBtn.classList.toggle('hidden', activeCount(eff()) === 0);
   }
 
   // ─── Open / close panels ─────────────────────────────────────────────
@@ -386,9 +412,10 @@ export function initFilterBar(config: InitConfig): InitResult {
   // ─── Render: dim list (palette only) ─────────────────────────────────
 
   function filteredDims(): FilterDimension[] {
+    const visible = dimensions.filter(d => isDimVisible(d, state));
     const q = paletteInput?.value.toLowerCase().trim() ?? '';
-    if (!q) return dimensions;
-    return dimensions.filter(d =>
+    if (!q) return visible;
+    return visible.filter(d =>
       d.label.toLowerCase().includes(q) || d.key.toLowerCase().includes(q),
     );
   }
@@ -472,6 +499,7 @@ export function initFilterBar(config: InitConfig): InitResult {
         <ul class="value-multi-list" role="listbox" aria-multiselectable="true">
           ${opts.map((o, i) => renderMultiRow(o, d, i)).join('')}
         </ul>
+        ${d.hint ? `<div class="value-hint">${escapeHtml(d.hint)}</div>` : ''}
       </div>`;
 
     const typeahead = host.querySelector<HTMLInputElement>('.value-typeahead');
@@ -660,7 +688,8 @@ export function initFilterBar(config: InitConfig): InitResult {
         ${d.unit ? `<span class="value-range-unit">${escapeHtml(d.unit)}</span>` : ''}
         <button type="button" class="value-range-apply">Apply</button>
         <button type="button" class="value-range-clear">Clear</button>
-      </div>`;
+      </div>
+      ${d.hint ? `<div class="value-hint">${escapeHtml(d.hint)}</div>` : ''}`;
     const minIn = host.querySelector<HTMLInputElement>('.value-range-min')!;
     const maxIn = host.querySelector<HTMLInputElement>('.value-range-max')!;
     const apply = () => {
@@ -891,8 +920,9 @@ export function initFilterBar(config: InitConfig): InitResult {
   // microtasks between modules, so a microtask here can still beat the
   // page-level handler attachment. setTimeout(0) defers to a clean tick.
   setTimeout(() => {
+    const effState = eff();
     rootEl.dispatchEvent(new CustomEvent<FilterChangeDetail>('filters:changed', {
-      detail: { state: deepClone(state), dirtyKeys: Object.keys(state) },
+      detail: { state: deepClone(effState), dirtyKeys: Object.keys(effState) },
       bubbles: true,
     }));
   }, 0);
@@ -904,9 +934,40 @@ export function initFilterBar(config: InitConfig): InitResult {
       cleanups.forEach(fn => fn());
     },
     getState(): FilterState {
-      return deepClone(state);
+      return deepClone(eff());
     },
   };
+}
+
+// ─── Range value formatting ───────────────────────────────────────────
+// Dimension config crosses the SSR→client JSON boundary, so formats are
+// tokens (types.ts FormatToken), resolved here. Shared by dim summaries,
+// chips, and page-level consumers (e.g. the timeline's attribute column).
+
+function trimNum(n: number): string {
+  return String(Number(n.toFixed(2)));
+}
+
+export function formatValue(token: FormatToken | undefined, n: number): string {
+  switch (token) {
+    case 'paramsB':
+      if (n >= 1000) return `${trimNum(n / 1000)}T`;
+      if (n > 0 && n < 1) return `${trimNum(n * 1000)}M`;
+      return `${trimNum(n)}B`;
+    case 'tokensT':
+      if (n > 0 && n < 1) return `${trimNum(n * 1000)}B`;
+      return `${trimNum(n)}T`;
+    case 'usdB':
+      return `$${trimNum(n)}B`;
+    case 'score100':
+      return `${Math.round(n)}/100`;
+    case 'compact':
+      if (n >= 1_000_000) return `${trimNum(n / 1_000_000)}M`;
+      if (n >= 1_000) return `${trimNum(n / 1_000)}K`;
+      return trimNum(n);
+    default:
+      return String(n);
+  }
 }
 
 // ─── Tiny safety helpers (we can't depend on browser libs at type-check time) ─

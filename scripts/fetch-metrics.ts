@@ -1,12 +1,17 @@
 /**
  * Fetch impact metrics for all outputs.
  *
- * Queries GitHub API, HuggingFace API, and Semantic Scholar API
+ * Queries GitHub API, HuggingFace API, and OpenAlex API
  * to gather stars, downloads, and citation counts.
  *
  * Usage:
- *   npm run fetch-metrics
- *   GITHUB_TOKEN=ghp_xxx npm run fetch-metrics   # higher rate limit
+ *   GITHUB_TOKEN=$(gh auth token) npm run fetch-metrics
+ *   npm run fetch-metrics -- --prune    # also drop keys for outputs that no longer exist
+ *
+ * Unauthenticated GitHub allows only 60 requests/HOUR — always set
+ * GITHUB_TOKEN for a full run. Entries whose fetches fail (rate limit,
+ * network) are merged field-by-field into the existing data and keep their
+ * old fetched_at, so the next run retries them instead of caching emptiness.
  */
 
 import { readFileSync, writeFileSync, existsSync } from 'fs';
@@ -121,57 +126,68 @@ async function delay(ms: number): Promise<void> {
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
-async function fetchJSON(url: string, headers?: Record<string, string>): Promise<any | null> {
+// A 404 is a definitive answer (the artifact is gone) and counts as a
+// successful fetch; rate limits and network errors are failures that must
+// not be cached as "no data".
+type FetchResult = { ok: true; data: any | null } | { ok: false };
+
+async function fetchJSON(url: string, headers?: Record<string, string>): Promise<FetchResult> {
   try {
     const res = await fetch(url, { headers });
-    if (res.status === 404) return null;
+    if (res.status === 404) return { ok: true, data: null };
     if (res.status === 403 || res.status === 429) {
       console.warn(`  Rate limited: ${url}`);
-      return null;
+      return { ok: false };
     }
     if (!res.ok) {
       console.warn(`  HTTP ${res.status}: ${url}`);
-      return null;
+      return { ok: false };
     }
-    return await res.json();
+    return { ok: true, data: await res.json() };
   } catch (err: any) {
     console.warn(`  Fetch error: ${url} - ${err.message}`);
-    return null;
+    return { ok: false };
   }
 }
 
 // ── GitHub API ──
 
-async function fetchGitHubRepo(repo: string): Promise<{ stars: number; forks: number } | null> {
+async function fetchGitHubRepo(repo: string): Promise<{ ok: boolean; value: { stars: number; forks: number } | null }> {
   const headers: Record<string, string> = {
     Accept: 'application/vnd.github+json',
   };
   if (GITHUB_TOKEN) headers.Authorization = `Bearer ${GITHUB_TOKEN}`;
-  const data = await fetchJSON(`https://api.github.com/repos/${repo}`, headers);
-  if (!data || data.stargazers_count === undefined) return null;
-  return { stars: data.stargazers_count, forks: data.forks_count ?? 0 };
+  const r = await fetchJSON(`https://api.github.com/repos/${repo}`, headers);
+  if (!r.ok) return { ok: false, value: null };
+  if (!r.data || r.data.stargazers_count === undefined) return { ok: true, value: null };
+  return { ok: true, value: { stars: r.data.stargazers_count, forks: r.data.forks_count ?? 0 } };
 }
 
 // ── HuggingFace API ──
 
-async function fetchHuggingFaceModel(modelId: string): Promise<{ downloads: number; likes: number } | null> {
-  const data = await fetchJSON(`https://huggingface.co/api/models/${modelId}`);
-  if (!data) return null;
+async function fetchHuggingFaceModel(modelId: string): Promise<{ ok: boolean; value: { downloads: number; likes: number } | null }> {
+  const r = await fetchJSON(`https://huggingface.co/api/models/${modelId}`);
+  if (!r.ok) return { ok: false, value: null };
+  if (!r.data) return { ok: true, value: null };
   return {
-    downloads: data.downloads ?? data.downloadsAllTime ?? 0,
-    likes: data.likes ?? 0,
+    ok: true,
+    value: {
+      downloads: r.data.downloads ?? r.data.downloadsAllTime ?? 0,
+      likes: r.data.likes ?? 0,
+    },
   };
 }
 
 // ── OpenAlex API ──
 
-async function fetchOpenAlex(arxivId: string): Promise<{ citations: number } | null> {
-  const data = await fetchJSON(
+async function fetchOpenAlex(arxivId: string): Promise<{ ok: boolean; value: { citations: number } | null }> {
+  const r = await fetchJSON(
     `https://api.openalex.org/works/doi:10.48550/arXiv.${arxivId}`,
     { 'User-Agent': 'mailto:ai-lab-tracker@example.com' }
   );
-  if (!data || data.cited_by_count === undefined) return null;
-  return { citations: data.cited_by_count };
+  if (!r.ok) return { ok: false, value: null };
+  if (!r.data || r.data.cited_by_count === undefined) return { ok: true, value: null };
+  return { ok: true, value: { citations: r.data.cited_by_count } };
 }
 
 // ── Main ──
@@ -229,20 +245,28 @@ async function main() {
 
   console.log(`Unique identifiers: ${allGitHubRepos.size} GitHub repos, ${allHfModels.size} HF models, ${allArxivIds.size} ArXiv papers`);
 
-  // Fetch GitHub metrics (deduplicated)
+  // Fetch GitHub metrics (deduplicated). Failed identifiers (rate limit,
+  // network) are tracked so their outputs keep existing data and retry next
+  // run instead of caching emptiness for 24h.
   const githubCache = new Map<string, { stars: number; forks: number }>();
+  const failedIds = new Set<string>();
   const ghRepos = [...allGitHubRepos];
-  const ghDelay = GITHUB_TOKEN ? 200 : 1200; // ~50/min authed, ~50/min unauthed
+  const ghDelay = GITHUB_TOKEN ? 200 : 1200;
+  if (!GITHUB_TOKEN && ghRepos.length > 50) {
+    console.warn(`\n⚠️  No GITHUB_TOKEN and ${ghRepos.length} repos to fetch — unauthenticated GitHub`);
+    console.warn('   allows 60 requests/HOUR; most fetches will fail. Set GITHUB_TOKEN=$(gh auth token).');
+  }
   console.log(`\nFetching GitHub stars (${ghRepos.length} repos, ${ghDelay}ms delay)...`);
   for (let i = 0; i < ghRepos.length; i++) {
     const repo = ghRepos[i];
     process.stdout.write(`  [${i + 1}/${ghRepos.length}] ${repo}`);
     const result = await fetchGitHubRepo(repo);
-    if (result) {
-      githubCache.set(repo, result);
-      process.stdout.write(` → ${result.stars.toLocaleString()} stars\n`);
+    if (!result.ok) failedIds.add(`gh:${repo}`);
+    if (result.value) {
+      githubCache.set(repo, result.value);
+      process.stdout.write(` → ${result.value.stars.toLocaleString()} stars\n`);
     } else {
-      process.stdout.write(` → skip\n`);
+      process.stdout.write(result.ok ? ` → gone\n` : ` → failed\n`);
     }
     if (i < ghRepos.length - 1) await delay(ghDelay);
   }
@@ -255,11 +279,12 @@ async function main() {
     const model = hfModels[i];
     process.stdout.write(`  [${i + 1}/${hfModels.length}] ${model}`);
     const result = await fetchHuggingFaceModel(model);
-    if (result) {
-      hfCache.set(model, result);
-      process.stdout.write(` → ${result.downloads.toLocaleString()} downloads\n`);
+    if (!result.ok) failedIds.add(`hf:${model}`);
+    if (result.value) {
+      hfCache.set(model, result.value);
+      process.stdout.write(` → ${result.value.downloads.toLocaleString()} downloads\n`);
     } else {
-      process.stdout.write(` → skip\n`);
+      process.stdout.write(result.ok ? ` → gone\n` : ` → failed\n`);
     }
     if (i < hfModels.length - 1) await delay(500);
   }
@@ -272,11 +297,12 @@ async function main() {
     const id = arxivIds[i];
     process.stdout.write(`  [${i + 1}/${arxivIds.length}] ${id}`);
     const result = await fetchOpenAlex(id);
-    if (result) {
-      citationCache.set(id, result.citations);
-      process.stdout.write(` → ${result.citations.toLocaleString()} citations\n`);
+    if (!result.ok) failedIds.add(`ax:${id}`);
+    if (result.value) {
+      citationCache.set(id, result.value.citations);
+      process.stdout.write(` → ${result.value.citations.toLocaleString()} citations\n`);
     } else {
-      process.stdout.write(` → skip\n`);
+      process.stdout.write(result.ok ? ` → gone\n` : ` → failed\n`);
     }
     if (i < arxivIds.length - 1) await delay(200);
   }
@@ -284,9 +310,15 @@ async function main() {
   // Aggregate metrics per output
   const metrics: MetricsMap = { ...existing };
   const timestamp = now.toISOString();
+  let incomplete = 0;
 
   for (const key of keysToFetch) {
     const ids = outputIds.get(key)!;
+    const complete =
+      ![...ids.githubRepos].some(r => failedIds.has(`gh:${r}`)) &&
+      ![...ids.hfModels].some(m => failedIds.has(`hf:${m}`)) &&
+      ![...ids.arxivIds].some(a => failedIds.has(`ax:${a}`));
+
     const entry: MetricsEntry = { fetched_at: timestamp };
 
     // GitHub: take the repo with most stars
@@ -325,13 +357,39 @@ async function main() {
     }
     if (totalCitations > 0) entry.citations = totalCitations;
 
-    metrics[key] = entry;
+    if (complete) {
+      metrics[key] = entry;
+    } else {
+      // Merge-preserve: keep every existing field unless this run produced a
+      // value for it, and keep the old fetched_at so the next run retries.
+      incomplete++;
+      const prev = existing[key];
+      const merged: MetricsEntry = { ...(prev ?? {}), fetched_at: prev?.fetched_at ?? '1970-01-01T00:00:00.000Z' };
+      if (entry.github_stars !== undefined) { merged.github_stars = entry.github_stars; merged.github_forks = entry.github_forks; }
+      if (entry.hf_downloads !== undefined) merged.hf_downloads = entry.hf_downloads;
+      if (entry.hf_likes !== undefined) merged.hf_likes = entry.hf_likes;
+      if (entry.citations !== undefined) merged.citations = entry.citations;
+      metrics[key] = merged;
+    }
+  }
+
+  // Prune keys whose output files no longer exist (renamed/moved labs).
+  let pruned = 0;
+  if (process.argv.includes('--prune')) {
+    for (const key of Object.keys(metrics)) {
+      if (!outputIds.has(key)) {
+        delete metrics[key];
+        pruned++;
+      }
+    }
   }
 
   // Write results
   const sorted = Object.fromEntries(Object.entries(metrics).sort(([a], [b]) => a.localeCompare(b)));
   writeFileSync(metricsPath, JSON.stringify(sorted, null, 2) + '\n');
   console.log(`\nWrote ${Object.keys(sorted).length} entries to ${metricsPath}`);
+  if (incomplete > 0) console.log(`${incomplete} entries had failed fetches — merged with existing data, will retry next run`);
+  if (pruned > 0) console.log(`Pruned ${pruned} orphaned keys`);
 }
 
 main().catch((err) => {
