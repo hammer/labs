@@ -10,8 +10,8 @@ import type {
   TristateValue,
   FilterChangeDetail,
   MultiOption,
-  FormatToken,
 } from './types.js';
+import { formatValue } from './format.js';
 import {
   emptyState,
   isActive,
@@ -939,36 +939,7 @@ export function initFilterBar(config: InitConfig): InitResult {
   };
 }
 
-// ─── Range value formatting ───────────────────────────────────────────
-// Dimension config crosses the SSR→client JSON boundary, so formats are
-// tokens (types.ts FormatToken), resolved here. Shared by dim summaries,
-// chips, and page-level consumers (e.g. the timeline's attribute column).
-
-function trimNum(n: number): string {
-  return String(Number(n.toFixed(2)));
-}
-
-export function formatValue(token: FormatToken | undefined, n: number): string {
-  switch (token) {
-    case 'paramsB':
-      if (n >= 1000) return `${trimNum(n / 1000)}T`;
-      if (n > 0 && n < 1) return `${trimNum(n * 1000)}M`;
-      return `${trimNum(n)}B`;
-    case 'tokensT':
-      if (n > 0 && n < 1) return `${trimNum(n * 1000)}B`;
-      return `${trimNum(n)}T`;
-    case 'usdB':
-      return `$${trimNum(n)}B`;
-    case 'score100':
-      return `${Math.round(n)}/100`;
-    case 'compact':
-      if (n >= 1_000_000) return `${trimNum(n / 1_000_000)}M`;
-      if (n >= 1_000) return `${trimNum(n / 1_000)}K`;
-      return trimNum(n);
-    default:
-      return String(n);
-  }
-}
+export { formatValue };
 
 // ─── Tiny safety helpers (we can't depend on browser libs at type-check time) ─
 

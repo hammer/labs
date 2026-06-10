@@ -185,7 +185,7 @@ function log(name, ok, detail = '') {
   await page.close();
 }
 
-// ── Timeline: clean load, palette mode, scoped dims hidden ───────────
+// ── Timeline: clean load — general colset, scoped dims hidden ────────
 {
   const page = await newPage();
   await page.goto('http://localhost:4321/timeline', { waitUntil: 'networkidle' });
@@ -194,10 +194,14 @@ function log(name, ok, detail = '') {
   const t = await page.evaluate(() => ({
     rows: document.querySelectorAll('.tl-row').length,
     dims: Array.from(document.querySelectorAll('.dim-item .dim-item-label')).map(e => e.textContent),
-    attrColHidden: getComputedStyle(document.querySelector('th.col-attr')).display === 'none',
+    colset: document.getElementById('timeline-table').dataset.colset,
+    starsShown: getComputedStyle(document.querySelector('th.col-stars')).display !== 'none',
+    paramsHidden: getComputedStyle(document.querySelector('th.col-params')).display === 'none',
+    sortSelectHidden: getComputedStyle(document.getElementById('sort-control')).display === 'none',
   }));
-  const ok = t.rows > 800 && t.dims.length === 4 && t.attrColHidden;
-  log('timeline: palette lists 4 dims, scoped dims hidden, attr column hidden', ok, JSON.stringify({ ...t, dims: t.dims.length }));
+  const ok = t.rows > 800 && t.dims.length === 4 && t.colset === 'general'
+    && t.starsShown && t.paramsHidden && t.sortSelectHidden;
+  log('timeline: general colset by default, sort select desktop-hidden', ok, JSON.stringify({ ...t, dims: t.dims.length }));
   await page.close();
 }
 
@@ -282,37 +286,44 @@ function log(name, ok, detail = '') {
   await page.close();
 }
 
-// ── Timeline: model sort via select fills the attribute column ───────
+// ── Timeline: type=model swaps the column set ────────────────────────
 {
   const page = await newPage();
   await page.goto('http://localhost:4321/timeline?type=model', { waitUntil: 'networkidle' });
-  await page.selectOption('#sort-select', 'aparams');
-  await page.waitForTimeout(150);
+  await page.waitForFunction(() => document.getElementById('timeline-table').dataset.colset === 'model');
   const t = await page.evaluate(() => {
+    const shown = k => getComputedStyle(document.querySelector(`th.col-${k}`)).display !== 'none';
+    const firstCell = Array.from(document.querySelectorAll('.tl-row'))
+      .find(r => r.style.display !== 'none' && r.dataset.params)
+      ?.querySelector('td.col-params');
+    return {
+      modelCols: ['params', 'aparams', 'tokens', 'ctx', 'intel', 'openness'].every(shown),
+      generalColsHidden: ['stars', 'downloads', 'citations'].every(k => !shown(k)),
+      cellText: firstCell?.textContent ?? '',
+    };
+  });
+  const ok = t.modelCols && t.generalColsHidden && /[MBT]/.test(t.cellText);
+  log('timeline: type=model shows model columns, hides general metrics', ok, JSON.stringify(t));
+
+  // Header click sorts (desc first), second click flips to ascending.
+  await page.click('th.col-aparams');
+  await page.waitForTimeout(150);
+  const desc = await page.evaluate(() => {
     const ranked = Array.from(document.querySelectorAll('.tl-row'))
       .filter(r => r.style.display !== 'none' && r.dataset.aparams)
       .slice(0, 3)
       .map(r => Number(r.dataset.aparams));
-    const th = document.querySelector('th.col-attr');
-    const firstCell = Array.from(document.querySelectorAll('.tl-row'))
-      .find(r => r.style.display !== 'none' && r.dataset.aparams)
-      ?.querySelector('td.col-attr');
+    const th = document.querySelector('th.col-aparams');
     return {
       ranked,
       desc: ranked.every((v, i) => i === 0 || ranked[i - 1] >= v),
-      thVisible: getComputedStyle(th).display !== 'none',
-      thLabel: th.querySelector('.attr-label').textContent,
       arrowActive: th.querySelector('.sort-arrow').classList.contains('active-desc'),
-      cellText: firstCell?.textContent ?? '',
-      attrKey: document.getElementById('timeline-table').dataset.attrKey,
+      url: window.location.search,
     };
   });
-  const ok = t.ranked.length === 3 && t.desc && t.thVisible && t.thLabel === 'Active'
-    && t.arrowActive && t.cellText.includes('B') && t.attrKey === 'aparams';
-  log('timeline: sort by active params fills attribute column', ok, JSON.stringify(t));
+  log('timeline: header click sorts by active params desc', desc.desc && desc.arrowActive && desc.url.includes('sort=aparams'), JSON.stringify(desc));
 
-  // Header click toggles to ascending — direction must be reachable.
-  await page.click('th.col-attr');
+  await page.click('th.col-aparams');
   await page.waitForTimeout(150);
   const asc = await page.evaluate(() => {
     const ranked = Array.from(document.querySelectorAll('.tl-row'))
@@ -321,7 +332,83 @@ function log(name, ok, detail = '') {
       .map(r => Number(r.dataset.aparams));
     return { ranked, asc: ranked.every((v, i) => i === 0 || ranked[i - 1] <= v), url: window.location.search };
   });
-  log('timeline: attr column header click flips to ascending', asc.asc && asc.url.includes('asc=1'), JSON.stringify(asc));
+  log('timeline: second header click flips to ascending', asc.asc && asc.url.includes('asc=1'), JSON.stringify(asc));
+  await page.close();
+}
+
+// ── Timeline: eval colset + header sort ──────────────────────────────
+{
+  const page = await newPage();
+  await page.goto('http://localhost:4321/timeline?type=eval', { waitUntil: 'networkidle' });
+  await page.waitForFunction(() => document.getElementById('timeline-table').dataset.colset === 'eval');
+  await page.click('th.col-questions');
+  await page.waitForTimeout(150);
+  const t = await page.evaluate(() => {
+    const shown = k => getComputedStyle(document.querySelector(`th.col-${k}`)).display !== 'none';
+    const ranked = Array.from(document.querySelectorAll('.tl-row'))
+      .filter(r => r.style.display !== 'none' && r.dataset.questions)
+      .slice(0, 3)
+      .map(r => Number(r.dataset.questions));
+    return {
+      cols: ['questions', 'tasks', 'citations'].every(shown),
+      paramsHidden: !shown('params'),
+      ranked,
+      desc: ranked.every((v, i) => i === 0 || ranked[i - 1] >= v),
+    };
+  });
+  const ok = t.cols && t.paramsHidden && t.ranked.length === 3 && t.desc;
+  log('timeline: eval colset shows questions/tasks/citations, header-sortable', ok, JSON.stringify(t));
+  await page.close();
+}
+
+// ── Timeline: out-of-set ?sort= URLs fall back to date ───────────────
+// Old-format links like ?sort=params (no type) must not stick as a sort
+// on an invisible column. ?type=model&sort=params must still restore.
+{
+  const page = await newPage();
+  await page.goto('http://localhost:4321/timeline?sort=params', { waitUntil: 'networkidle' });
+  await page.waitForTimeout(250);
+  const bare = await page.evaluate(() => ({
+    activeSort: document.getElementById('timeline-table').dataset.activeSort ?? '(date)',
+    firstDates: Array.from(document.querySelectorAll('.tl-row')).slice(0, 2).map(r => r.dataset.date),
+  }));
+  await page.goto('http://localhost:4321/timeline?type=model&sort=params', { waitUntil: 'networkidle' });
+  await page.waitForTimeout(250);
+  const scoped = await page.evaluate(() => ({
+    activeSort: document.getElementById('timeline-table').dataset.activeSort,
+    selectValue: document.getElementById('sort-select').value,
+  }));
+  const ok = bare.activeSort === '(date)' && bare.firstDates[0] >= bare.firstDates[1]
+    && scoped.activeSort === 'params' && scoped.selectValue === 'params';
+  log('timeline: out-of-set ?sort falls back to date, in-set restores', ok, JSON.stringify({ bare, scoped }));
+  await page.close();
+}
+
+// ── Timeline: widening type reverts an out-of-set sort to date ───────
+{
+  const page = await newPage();
+  await page.goto('http://localhost:4321/timeline?type=model&sort=params', { waitUntil: 'networkidle' });
+  await page.waitForFunction(() => document.getElementById('timeline-table').dataset.colset === 'model');
+  const before = await page.evaluate(() => window.location.search);
+  // Widen the type filter: model + paper → colset falls back to general.
+  await page.keyboard.press('f');
+  await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
+  await page.keyboard.type('type');
+  await page.keyboard.press('Enter');
+  await page.waitForSelector('.value-multi-list');
+  await page.click('.value-multi-row[data-slug=paper] input[type=checkbox]');
+  await page.waitForTimeout(150);
+  const t = await page.evaluate(() => ({
+    colset: document.getElementById('timeline-table').dataset.colset,
+    url: window.location.search,
+    firstDates: Array.from(document.querySelectorAll('.tl-row'))
+      .filter(r => r.style.display !== 'none')
+      .slice(0, 2)
+      .map(r => r.dataset.date),
+  }));
+  const ok = before.includes('sort=params') && t.colset === 'general'
+    && !t.url.includes('sort=') && t.firstDates[0] >= t.firstDates[1];
+  log('timeline: widening type reverts model sort to date', ok, JSON.stringify({ before, ...t }));
   await page.close();
 }
 

@@ -141,7 +141,7 @@ for (const width of [375, 620]) {
 
   // Active-metric value is visible in the stacked meta line.
   const metricShown = await page.evaluate(() => {
-    const cell = document.querySelector('.tl-row td[data-metric="stars"]');
+    const cell = document.querySelector('.tl-row td.col-stars');
     return cell && getComputedStyle(cell).display !== 'none';
   });
   log('active metric visible while metric-sorted @ 375px', !!metricShown);
@@ -176,35 +176,35 @@ for (const width of [360, 375]) {
   await page.close();
 }
 
-// ── Attribute column active: no overflow in the 1081–1240px band ──────
+// ── Model column set active: no overflow in the 1081–1240px band ──────
 // Above the 1080px relaxation tier the 7-column table is already near
-// min-content; the attribute column must trigger the relaxations itself.
+// min-content; the 6-column model set must trigger the relaxations itself.
 for (const width of [1100, 1200]) {
   const page = await newPage({ width, height: 800 });
   await page.goto(`${BASE}/timeline?type=model&sort=params`, { waitUntil: 'networkidle' });
   await page.waitForFunction(() =>
-    document.getElementById('timeline-table').dataset.attrKey === 'params');
+    document.getElementById('timeline-table').dataset.colset === 'model');
   const t = await overflowAt(page);
-  log(`no h-overflow timeline attr-sorted @ ${width}px`, t.scrollW <= t.innerW, JSON.stringify(t));
+  log(`no h-overflow timeline model colset @ ${width}px`, t.scrollW <= t.innerW, JSON.stringify(t));
   await page.close();
 }
 
-// ── Attribute value visible in the stacked meta line @ 375px ──────────
+// ── Sorted model value visible in the stacked meta line @ 375px ───────
 {
   const page = await newPage({ width: 375, height: 667 });
   await page.goto(`${BASE}/timeline?type=model&sort=params`, { waitUntil: 'networkidle' });
   await page.waitForFunction(() =>
-    document.getElementById('timeline-table').dataset.attrKey === 'params');
+    document.getElementById('timeline-table').dataset.colset === 'model');
   const t = await page.evaluate(() => {
     const row = Array.from(document.querySelectorAll('.tl-row'))
       .find(r => r.style.display !== 'none' && r.dataset.params);
-    const cell = row?.querySelector('td.col-attr');
+    const cell = row?.querySelector('td.col-params');
     return {
       shown: cell && getComputedStyle(cell).display !== 'none',
       text: cell?.textContent ?? '',
     };
   });
-  log('attr value visible in stacked row while attr-sorted @ 375px',
+  log('sorted model value visible in stacked row @ 375px',
     !!t.shown && t.text.length > 0, JSON.stringify(t));
   await page.close();
 }

@@ -207,6 +207,28 @@ export function getModelFacets(output: Output): ModelFacets | null {
   };
 }
 
+export interface EvalFacets {
+  /** Max num_questions across eval units. 0 = unknown. */
+  questions: number;
+  /** Max num_tasks across eval units. 0 = unknown. */
+  tasks: number;
+}
+
+/** Containment semantics, same as getModelFacets — max across eval units. */
+export function getEvalFacets(output: Output): EvalFacets | null {
+  const blocks = isGrouped(output)
+    ? output.outputs.filter(o => o.eval).map(o => o.eval!)
+    : output.eval ? [output.eval] : [];
+  if (blocks.length === 0) return null;
+  let questions = 0;
+  let tasks = 0;
+  for (const e of blocks) {
+    questions = Math.max(questions, e.num_questions ?? 0);
+    tasks = Math.max(tasks, e.num_tasks ?? 0);
+  }
+  return { questions, tasks };
+}
+
 interface ParamsEstimateMeta {
   source: string;
   source_label?: string;
