@@ -26,3 +26,17 @@ tags:
 paper:
   arxiv: "2410.07095"
   venue: ICLR 2025
+eval:
+  num_tasks: 75
+  domains:
+    - natural language processing
+    - computer vision
+    - signal processing
+    - tabular
+    - audio classification
+    - forecasting
+  scoring_method: Kaggle medal thresholds vs. human private leaderboards; headline metric is % of
+    attempts awarded any medal (bronze or above)
+  leaderboard_url: https://github.com/openai/mle-bench
+  human_baseline: Per-competition human baselines from Kaggle private leaderboards; agents earn medals
+    as if competing against the human field (no single aggregate %)

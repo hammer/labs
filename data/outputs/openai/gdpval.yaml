@@ -30,3 +30,21 @@ tags:
   - agentic
 paper:
   arxiv: "2510.04374"
+eval:
+  num_tasks: 1320
+  domains:
+    - real estate
+    - manufacturing
+    - professional/scientific/technical services
+    - government
+    - healthcare
+    - finance & insurance
+    - retail trade
+    - wholesale trade
+    - information
+  scoring_method: blinded expert pairwise comparisons vs. human expert deliverables (win/tie rate) on
+    the 220-task open-sourced gold subset; experimental automated grader (66% agreement with expert
+    graders, vs. 71% human inter-rater agreement)
+  used_in:
+    - AA Intelligence Index v4.0
+  leaderboard_url: https://artificialanalysis.ai/evaluations/gdpval-aa

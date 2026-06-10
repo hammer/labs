@@ -35,3 +35,22 @@ tags:
 paper:
   arxiv: "2311.12022"
   venue: COLM 2024
+eval:
+  num_questions: 198
+  domains:
+    - biology
+    - physics
+    - chemistry
+  scoring_method: multiple-choice accuracy (4 options per question, pass@1)
+  used_in:
+    - AA Intelligence Index v4.0
+    - Epoch Capabilities Index
+  leaderboard_url: https://artificialanalysis.ai/evaluations/gpqa-diamond
+  saturation: "Near saturation: top models score 93-94% on Diamond (AA, June 2026: Gemini 3.1 Pro
+    Preview 94.1%, GPT-5.5 xhigh 93.5%), well above the 81.3% Diamond expert-validator accuracy;
+    Epoch AI estimates ~8% of questions may be invalid ('at least 90% of the benchmark is valid')
+    but concludes GPQA Diamond 'has a bit more juice left' — full saturation 'only a matter of
+    time'"
+  human_baseline: 65% (PhD experts in-domain; 74% discounting clear retrospective mistakes); 34%
+    (skilled non-experts with unrestricted web access); 81.3% expert accuracy on the Diamond subset
+  random_baseline: 25% (4-way multiple choice)

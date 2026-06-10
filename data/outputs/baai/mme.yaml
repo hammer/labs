@@ -14,3 +14,19 @@ tags:
   - benchmark
   - multimodal
   - evaluation
+eval:
+  num_tasks: 14
+  num_questions: 2374
+  domains:
+    - coarse-grained object perception (existence, count, position, color)
+    - fine-grained recognition (movie posters, celebrities, scenes, landmarks, artworks)
+    - OCR
+    - commonsense reasoning
+    - numerical calculation
+    - text translation
+    - code reasoning
+  scoring_method: Paired binary yes/no questions (two per image); subtask score = accuracy + accuracy+
+    (accuracy+ counts an image only if both its questions are answered correctly), max 200 per
+    subtask; full scores are 2000 for perception and 800 for cognition
+  leaderboard_url: https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models/tree/Evaluation
+  random_baseline: 50% accuracy / 25% accuracy+ (paired yes/no questions per image)

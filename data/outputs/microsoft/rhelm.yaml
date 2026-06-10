@@ -27,3 +27,12 @@ tags:
   - agentic
 paper:
   arxiv: "2605.31086"
+eval:
+  num_tasks: 7
+  num_questions: 1305
+  domains:
+    - dialogue history QA
+    - external source QA
+    - hybrid context QA
+  scoring_method: LLM-as-judge graded accuracy (%)
+  leaderboard_url: https://github.com/microsoft/RHELM

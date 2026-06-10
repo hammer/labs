@@ -17,3 +17,16 @@ tags:
   - scaling
 dataset:
   github: https://github.com/THUDM/LongBench
+eval:
+  num_tasks: 21
+  num_questions: 4750
+  domains:
+    - single-document QA
+    - multi-document QA
+    - summarization
+    - few-shot learning
+    - synthetic tasks
+    - code completion
+  scoring_method: "Automatic task-specific metrics: F1 (most QA tasks and TriviaQA few-shot), ROUGE-L
+    (summarization tasks plus DuReader and SAMSum), classification accuracy (TREC/LSHT and synthetic
+    retrieval/counting tasks), edit similarity (code completion)"

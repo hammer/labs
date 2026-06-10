@@ -27,3 +27,24 @@ tags:
 paper:
   arxiv: "2502.19187"
   venue: ACL 2025
+eval:
+  num_tasks: 23
+  num_questions: 4520
+  domains:
+    - temporal reasoning
+    - spatial and geometric reasoning
+    - commonsense
+    - humor understanding
+    - causal reasoning
+    - world entities and events
+    - deductive logic
+    - linguistic reasoning
+    - counting and filtering
+    - data structures and algorithms
+    - arithmetic
+  scoring_method: exact-match accuracy on extracted final answer ("The answer is:" prefix), aggregated
+    across the 23 tasks by adjusted harmonic mean (micro average for BBEH Mini)
+  leaderboard_url: https://github.com/google-deepmind/bbeh/blob/main/leaderboard.md
+  random_baseline: 2.4% on the primary metric (adjusted harmonic mean over per-task random baselines,
+    paper Table 2); 8.4% as micro average over all examples (Table 4). Per-task random baselines
+    range 0-38% since tasks mix multiple-choice and free-form answers.

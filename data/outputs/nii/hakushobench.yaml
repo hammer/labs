@@ -32,3 +32,16 @@ paper:
   arxiv: "2606.01132"
 related:
   - llm-jp
+eval:
+  num_questions: 2053
+  domains:
+    - security
+    - economy
+    - society
+    - infrastructure
+    - energy & environment
+    - diplomacy
+  scoring_method: free-form short-answer accuracy, LLM-judged (GPT-5.1, gpt-5.1-2025-11-13, scores
+    each output correct/incorrect; no multiple-choice or yes/no questions)
+  saturation: "Gemini 3 Pro scores 93.5%; authors note 'limited headroom to discriminate among
+    frontier models' (but GPT-5.1: 67.9%, best open-weight Qwen3-VL 8B: 58.6%)"

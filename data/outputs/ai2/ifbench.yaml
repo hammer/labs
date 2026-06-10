@@ -16,8 +16,9 @@ description: >
   evaluating instruction-following generalization. Core finding: models strongly overfit
   to the 25 constraints in the older IFEval benchmark and fail on unseen constraint types.
   IFBench introduces constraints across 7 categories (count, ratio, words, sentence,
-  format, custom, copy) combined with WildChat prompts to produce <strong>294 evaluation
-  tasks</strong>. All constraints verified automatically by code.</p>
+  format, custom, copy) combined with WildChat prompts to produce <strong>300 evaluation
+  prompts</strong> (Artificial Analysis runs a 294-prompt subset in its harness). All
+  constraints verified automatically by code.</p>
 
   <p>Also demonstrates that <strong>RLVR (reinforcement learning with verifiable
   rewards)</strong> substantially improves constraint compliance. Includes 29
@@ -32,3 +33,13 @@ tags:
 paper:
   arxiv: "2507.02833"
   venue: NeurIPS 2025
+eval:
+  num_tasks: 58
+  num_questions: 300
+  domains:
+    - instruction following
+  scoring_method: programmatic constraint verification functions; prompt-level strict and loose
+    accuracy (paper reports prompt-level loose accuracy, temperature 0)
+  used_in:
+    - AA Intelligence Index v4.0
+  leaderboard_url: https://github.com/allenai/IFBench

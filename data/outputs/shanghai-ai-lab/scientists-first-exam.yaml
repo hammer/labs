@@ -27,3 +27,15 @@ tags:
   - multimodal
 paper:
   arxiv: "2506.10521"
+eval:
+  num_tasks: 66
+  num_questions: 830
+  domains:
+    - astronomy
+    - chemistry
+    - earth science
+    - life science
+    - materials science
+  scoring_method: LLM-as-a-Judge (GPT-4o-2024-11-20) plus BERTScore; execution success rate and IoU
+    for the Earth-science remote sensing perception task
+  leaderboard_url: https://prismax.opencompass.org.cn/leaderboard

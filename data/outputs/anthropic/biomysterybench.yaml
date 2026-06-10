@@ -27,3 +27,14 @@ tags:
   - safety
 related:
   - constitutional-ai
+eval:
+  num_questions: 99
+  domains:
+    - DNA/RNA sequencing
+    - proteomics
+    - metabolomics
+  scoring_method: Final-answer accuracy against objective ground-truth answers (rubric-graded on the
+    final answer only, method-agnostic); accuracy averaged over 5 trials per problem
+  human_baseline: 76 of 99 problems are 'human-solvable' (answered correctly by at least one of up to
+    5 domain experts working from scratch); the remaining 23 are 'human-difficult' (unsolved by any
+    expert), after 4 malformed questions were removed during QC

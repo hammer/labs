@@ -35,3 +35,22 @@ tags:
   - open-source
 dataset:
   github: https://github.com/SuperGPQA/SuperGPQA
+eval:
+  num_tasks: 285
+  num_questions: 26529
+  domains:
+    - engineering
+    - science
+    - medicine
+    - agronomy
+    - economics
+    - education
+    - history
+    - law
+    - literature and arts
+    - management
+    - military science
+    - philosophy
+    - sociology
+  scoring_method: multiple-choice accuracy (avg. 9.67 answer options per question)
+  leaderboard_url: https://supergpqa.github.io/

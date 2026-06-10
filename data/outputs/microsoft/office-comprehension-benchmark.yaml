@@ -24,3 +24,21 @@ tags:
   - benchmark
   - multimodal
   - documents
+eval:
+  num_tasks: 2
+  num_questions: 1042
+  domains:
+    - finance
+    - accounting
+    - waste management & environmental services
+    - healthcare & social assistance
+    - information
+    - manufacturing
+    - government
+    - educational services
+    - wholesale/retail trade
+    - corporate governance
+    - energy
+    - supply chain
+  scoring_method: LLM-as-judge against weighted atomic assertion rubrics (single Azure OpenAI judge or
+    GPT+Gemini+Claude majority vote)

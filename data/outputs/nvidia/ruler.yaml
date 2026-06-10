@@ -24,3 +24,16 @@ tags:
   - long-context
 paper:
   arxiv: "2404.06654"
+eval:
+  num_tasks: 13
+  domains:
+    - retrieval
+    - multi-hop tracing
+    - aggregation
+    - question answering
+  scoring_method: recall-based accuracy (string match checking presence of the target output in the
+    model's response)
+  leaderboard_url: https://github.com/NVIDIA/RULER
+  saturation: "Effectively saturated at the standard 4K-128K configuration: top models in the official
+    README results table average ~96% (Jamba-1.5-Large 96.0 avg / 95.1 at 128K; Gemini-1.5 Pro 95.8
+    avg), and the repo has moved on to a RULERv2 pipeline"

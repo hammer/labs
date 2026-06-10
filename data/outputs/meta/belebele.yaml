@@ -25,3 +25,13 @@ tags:
 paper:
   arxiv: "2308.16884"
   venue: ACL 2024
+eval:
+  num_tasks: 122
+  num_questions: 109800
+  domains:
+    - news (Wikinews)
+    - children's educational content (Wikijunior)
+    - travel (WikiVoyage)
+  scoring_method: 4-way multiple-choice accuracy (1 correct of 4 options)
+  human_baseline: 97.6% (4 paper authors, blind test on ~30 English MCQs each; 95% CI [93.1, 99.5])
+  random_baseline: 25% (4-way MC)

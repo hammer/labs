@@ -22,3 +22,11 @@ tags:
   - evaluation
 dataset:
   github: https://github.com/AILab-CVC/SEED-Bench
+eval:
+  num_tasks: 12
+  num_questions: 19242
+  domains:
+    - image comprehension
+    - video comprehension
+  scoring_method: multiple-choice accuracy (4 options; likelihood-based answer ranking, no human or GPT judging)
+  leaderboard_url: https://huggingface.co/spaces/AILab-CVC/SEED-Bench_Leaderboard

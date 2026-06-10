@@ -24,3 +24,21 @@ tags:
   - factuality
 paper:
   arxiv: "2411.04368"
+eval:
+  num_questions: 4326
+  domains:
+    - science & technology
+    - politics
+    - art
+    - geography
+    - sports
+    - music
+    - TV shows
+    - history
+    - video games
+    - other
+  scoring_method: "LLM-graded short answers: prompted ChatGPT classifier grades each response correct
+    / incorrect / not attempted; headline metrics are overall % correct and F-score (harmonic mean
+    of overall correct and correct-given-attempted)"
+  human_baseline: 94.4% (third human AI trainer on a 1,000-question quality-check sample, per ChatGPT
+    grader; authors estimate ~3% inherent dataset error rate)

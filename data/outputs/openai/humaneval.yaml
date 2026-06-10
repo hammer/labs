@@ -30,3 +30,15 @@ paper:
   arxiv: "2107.03374"
 related:
   - codex
+eval:
+  num_questions: 164
+  domains:
+    - Python programming
+    - language comprehension
+    - reasoning
+    - algorithms
+    - simple mathematics
+  scoring_method: pass@k functional correctness via unit tests (avg 7.7 tests per problem)
+  saturation: "Saturated: OpenAI simple-evals reports 99.3% (o4-mini-high), 94.5% (GPT-4.1), 90.2%
+    (GPT-4o); 92.0% for Claude 3.5 Sonnet (listed in simple-evals under 'Other Models (Reported)',
+    sourced from Anthropic's announcement)"
