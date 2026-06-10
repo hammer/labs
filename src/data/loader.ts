@@ -322,9 +322,11 @@ interface TopIntelligence {
 
 /**
  * Get the highest intelligence_index score across all outputs for a lab.
- * The result also surfaces an openness reading: per the rule in AGENTS.md,
- * we pick the highest-AAII model that also has an openness_index set
- * ("Option C" — see issue #42). AA's openness coverage drifts behind the
+ * Only AA v4-tagged scores count — same rule as the timeline's Intelligence
+ * facet (getModelFacets): pre-v4 scores predate the recalibration and aren't
+ * comparable. The result also surfaces an openness reading: per the rule in
+ * AGENTS.md, we pick the highest-AAII model that also has an openness_index
+ * set ("Option C" — see issue #42). AA's openness coverage drifts behind the
  * latest AAII checkpoints, so always preferring the absolute top-AAII would
  * leave the openness slot empty for many labs.
  */
@@ -335,6 +337,7 @@ export function getTopIntelligence(labSlug: string): TopIntelligence | null {
 
   function check(
     score: number | undefined,
+    version: string | undefined,
     openness: number | undefined,
     opennessVersion: string | undefined,
     displayName: string,
@@ -342,6 +345,7 @@ export function getTopIntelligence(labSlug: string): TopIntelligence | null {
     outLabSlug: string,
   ) {
     if (!score) return;
+    if (!(version ?? '').startsWith('AA v4')) return;
     const entry: TopIntelligence = {
       score, name: displayName, slug: outputSlug, labSlug: outLabSlug,
       openness, opennessVersion,
@@ -359,12 +363,12 @@ export function getTopIntelligence(labSlug: string): TopIntelligence | null {
     if (isGrouped(output)) {
       for (const sub of output.outputs) {
         if (sub.model) {
-          check(sub.model.intelligence_index, sub.model.openness_index, sub.model.openness_index_version, baseName, oSlug, oLab);
+          check(sub.model.intelligence_index, sub.model.intelligence_index_version, sub.model.openness_index, sub.model.openness_index_version, baseName, oSlug, oLab);
         }
       }
     } else {
       if (output.model) {
-        check(output.model.intelligence_index, output.model.openness_index, output.model.openness_index_version, baseName, oSlug, oLab);
+        check(output.model.intelligence_index, output.model.intelligence_index_version, output.model.openness_index, output.model.openness_index_version, baseName, oSlug, oLab);
       }
     }
   }
