@@ -29,6 +29,7 @@ outputs:
     model:
       architecture: dense
       intelligence_index: 16
+      intelligence_index_version: "AA v4.0"
       training_tokens: 18T
       variants:
         - name: Qwen2.5-0.5B

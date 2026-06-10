@@ -10,7 +10,7 @@ sources:
   - label: Technical Report (PDF)
     url: https://cdn.amazon.science/c5/3d/84514a224666b5be6de4b43ef4aa/nova-2-0-technical-report2.pdf
   - label: Artificial Analysis (Nova 2.0 Pro)
-    url: https://artificialanalysis.ai/models/nova-2-0-pro
+    url: https://artificialanalysis.ai/models/nova-2-0-pro-reasoning-medium
   - label: TechCrunch coverage
     url: https://techcrunch.com/2025/12/02/aws-launches-new-nova-ai-models-and-a-service-that-gives-customers-more-control/
 description: >

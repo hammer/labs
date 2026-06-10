@@ -33,6 +33,7 @@ outputs:
       parameters: 671B
       active_parameters: 37B
       intelligence_index: 16
+      intelligence_index_version: "AA v4.0"
       variants:
         - name: DeepSeek-V3
         - name: DeepSeek-V3-0324

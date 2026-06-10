@@ -19,6 +19,7 @@ tags:
 model:
   architecture: moe
   intelligence_index: 28
+  intelligence_index_version: "AA v4.0"
   variants:
     - name: DeepSeek-V3.1
     - name: DeepSeek-V3.1-Terminus

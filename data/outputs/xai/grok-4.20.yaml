@@ -24,7 +24,7 @@ tags:
 model:
   architecture: moe
   context_window: 2000000
-  intelligence_index: 48
+  intelligence_index: 49
   intelligence_index_version: "AA v4.0"
 related:
   - grok-4

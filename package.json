@@ -12,6 +12,7 @@
     "test:mobile": "node tests/mobile-smoke.mjs",
     "fetch-metrics": "tsx scripts/fetch-metrics.ts",
     "fetch-aa-openness": "tsx scripts/fetch-aa-openness.ts",
+    "fetch-aa-intelligence": "tsx scripts/fetch-aa-intelligence.ts",
     "deploy": "npm run build && wrangler deploy",
     "cf-typegen": "wrangler types"
   },

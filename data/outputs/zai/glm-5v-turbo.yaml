@@ -39,6 +39,7 @@ model:
   active_parameters: 40B
   context_window: 202752
   intelligence_index: 43
+  intelligence_index_version: "AA v4.0"
   training_tokens: 28.5T
 related:
   - glm-5

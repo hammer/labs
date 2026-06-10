@@ -285,9 +285,10 @@ Rule of thumb: the top-level number, the file slug, and the primary AA URL shoul
 
 **Audit pattern.** When AA bumps to a new index version:
 
-1. Re-fetch per-model pages for at least every lab's top-intel entry
-2. Update changed scores; bump `intelligence_index_version` to the new value
-3. Entries still tagged with the old version are the work-list
+1. Run `npm run fetch-aa-intelligence` (or `-- --dry-run` first). It pulls all ~500 scored records from AA's models-leaderboard RSC payload in one request, matches each output's AA URL slug, and rewrites `intelligence_index` + `intelligence_index_version` in place. It never *adds* scores — anchoring a new entry to the right variant/mode is a curation decision.
+2. The script's "slug not on leaderboard" list is the manual work-list: renamed slugs (AA renamed `glm-4-5` → `glm-4.5`), models retired from the index, or files whose AA URL is missing/an `/articles/` link. Resolve each, then re-run.
+3. Models AA no longer scores keep their number with an explicit tag: `"pre-v4 (not in current AA index; unverifiable as of YYYY-MM-DD)"` for never-v4-verified scores (excluded from the timeline Intelligence facet), or `"AA v4.0 (delisted from AA leaderboard as of YYYY-MM-DD)"` for v4-verified scores AA later dropped (still v4-comparable, stays in the facet).
+4. **Large score drops from the sync are usually anchoring bugs, not rescores.** When AA splits a model into mode/variant slugs, a URL pointing at the non-reasoning or small-variant page silently downgrades the score. Check the family's full slug list before accepting a big drop — the fix is usually correcting the URL to the highest-*mode* page (same model), while size *variants* stay in the variants list per the anchoring rule.
 
 **Useful URLs:**
 - Per-model: `https://artificialanalysis.ai/models/<slug>`

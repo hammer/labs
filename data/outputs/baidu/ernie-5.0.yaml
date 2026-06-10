@@ -39,6 +39,7 @@ outputs:
       architecture: moe
       parameters: 2.4T
       intelligence_index: 29
+      intelligence_index_version: "AA v4.0"
     notes: Previewed at Baidu World 2025 on November 13, 2025. Official release January 22, 2026.
   - name: ERNIE 5.0 Technical Report
     type: paper

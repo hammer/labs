@@ -37,6 +37,7 @@ model:
   parameters: 32B
   context_window: 65536
   intelligence_index: 14
+  intelligence_index_version: "pre-v4 (not in current AA index; unverifiable as of 2026-06-10)"
   openness_index: 88.9
   openness_index_version: "AA Openness Index v1.0"
   training_tokens: 5.9T

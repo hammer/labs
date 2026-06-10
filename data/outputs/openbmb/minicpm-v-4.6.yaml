@@ -7,6 +7,8 @@ sources:
   - label: HuggingFace
     url: https://huggingface.co/openbmb/MiniCPM-V-4.6
   - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/minicpm-v4-6-1-3b
+  - label: Artificial Analysis article
     url: https://artificialanalysis.ai/articles/openbmb-launches-minicpm-v-4-6-1-3b-instruct
 description: >
   <p>1.3B-parameter on-device vision-language model with <strong>262K context

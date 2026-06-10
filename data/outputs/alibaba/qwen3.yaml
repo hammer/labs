@@ -33,6 +33,7 @@ outputs:
       Dense: 0.6B, 1.7B, 4B, 8B, 14B, 32B. MoE: 30B-A3B and flagship 235B-A22B.
     model:
       intelligence_index: 20
+      intelligence_index_version: "AA v4.0"
       variants:
         - name: Qwen3-0.6B
           parameters: 0.6B

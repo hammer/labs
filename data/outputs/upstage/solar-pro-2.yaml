@@ -29,6 +29,7 @@ model:
   parameters: 31B
   context_window: 64000
   intelligence_index: 14
+  intelligence_index_version: "AA v4.0"
   openness_index: 11.1
   openness_index_version: "AA Openness Index v1.0"
 related:

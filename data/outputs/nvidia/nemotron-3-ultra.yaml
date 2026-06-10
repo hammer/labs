@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Nemotron 3 Ultra blog
     url: https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/nvidia-nemotron-3-ultra-550b-a55b
   - label: Nemotron 3 Ultra Technical Report (PDF)
     url: https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf
   - label: HuggingFace collection

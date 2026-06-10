@@ -37,6 +37,7 @@ outputs:
     model:
       architecture: moe
       intelligence_index: 11
+      intelligence_index_version: "AA v4.0"
   - name: "DeepSeek-Coder-V2: Breaking the Barrier of Closed-Source Models in Code Intelligence"
     type: paper
     sources:

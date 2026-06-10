@@ -25,6 +25,7 @@ model:
   architecture: dense
   parameters: 14B
   intelligence_index: 10
+  intelligence_index_version: "AA v4.0"
   openness_index: 50
   openness_index_version: "AA Openness Index v1.0"
   variants:

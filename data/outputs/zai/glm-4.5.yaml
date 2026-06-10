@@ -9,7 +9,7 @@ sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2508.06471
   - label: Artificial Analysis
-    url: https://artificialanalysis.ai/models/glm-4-5
+    url: https://artificialanalysis.ai/models/glm-4.5
   - label: OpenRouter
     url: https://openrouter.ai/z-ai/glm-4.5
 description: >
@@ -31,6 +31,7 @@ outputs:
       architecture: moe
       parameters: 355B
       intelligence_index: 26
+      intelligence_index_version: "AA v4.0"
   - name: "GLM-4.5: Agentic, Reasoning, and Coding (ARC) Foundation Models"
     type: paper
     date: 2025-08-08

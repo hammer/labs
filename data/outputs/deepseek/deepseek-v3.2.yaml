@@ -33,6 +33,7 @@ outputs:
       parameters: 685B
       active_parameters: 37B
       intelligence_index: 42
+      intelligence_index_version: "AA v4.0"
       variants:
         - name: DeepSeek-V3.2-Exp
           notes: Released 2025-09-29

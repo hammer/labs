@@ -38,7 +38,7 @@ model:
   parameters: 70B
   context_window: 262144
   intelligence_index: 24
-  intelligence_index_version: "AA v4.0"
+  intelligence_index_version: "AA v4.0 (delisted from AA leaderboard as of 2026-06-10)"
   openness_index: 88.9
   openness_index_version: "AA Openness Index v1.0"
   license: Apache-2.0
