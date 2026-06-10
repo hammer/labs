@@ -65,7 +65,7 @@ const dimensions: FilterDimension[] = [
 <Layout title="Timeline">
   <header class="page-header">
     <h1>Timeline</h1>
-    <p class="subtitle">{outputCount} outputs, {newsCount} news &middot; <button class="shortcut-hint" id="shortcut-hint">Keyboard shortcuts <kbd>?</kbd></button></p>
+    <p class="subtitle">{outputCount} outputs, {newsCount} news<span class="kbd-only"> &middot; <button class="shortcut-hint" id="shortcut-hint">Keyboard shortcuts <kbd>?</kbd></button></span></p>
   </header>
 
   <div class="view-bar">
@@ -74,6 +74,15 @@ const dimensions: FilterDimension[] = [
       <button class="view-btn" data-view="outputs">Outputs</button>
       <button class="view-btn" data-view="news">News</button>
     </div>
+    <label class="sort-control" id="sort-control">
+      <span class="sort-control-label">Sort</span>
+      <select id="sort-select" aria-label="Sort by">
+        <option value="date">Date</option>
+        <option value="stars">Stars</option>
+        <option value="downloads">Downloads</option>
+        <option value="citations">Citations</option>
+      </select>
+    </label>
   </div>
 
   <FilterBar mode="inline" dimensions={dimensions} hotkey="f" id="filter-bar" />
@@ -85,9 +94,9 @@ const dimensions: FilterDimension[] = [
         <th class="col-name">Name</th>
         <th class="col-lab">Lab</th>
         <th class="col-type">Type</th>
-        <th class="col-metric sortable" data-sort="stars" title="GitHub stars — max across all repos referenced in the output">Stars <span class="sort-arrow"></span></th>
-        <th class="col-metric sortable" data-sort="downloads" title="HuggingFace downloads — summed across all unique models in the output">Downloads <span class="sort-arrow"></span></th>
-        <th class="col-metric sortable" data-sort="citations" title="OpenAlex citations — summed across all unique papers in the output">Citations <span class="sort-arrow"></span></th>
+        <th class="col-metric sortable" data-sort="stars" data-metric="stars" title="GitHub stars — max across all repos referenced in the output">Stars <span class="sort-arrow"></span></th>
+        <th class="col-metric sortable" data-sort="downloads" data-metric="downloads" title="HuggingFace downloads — summed across all unique models in the output">Downloads <span class="sort-arrow"></span></th>
+        <th class="col-metric sortable" data-sort="citations" data-metric="citations" title="OpenAlex citations — summed across all unique papers in the output">Citations <span class="sort-arrow"></span></th>
       </tr>
     </thead>
     <tbody>
@@ -117,9 +126,9 @@ const dimensions: FilterDimension[] = [
               </td>
               <td class="col-lab"><a href={`/labs/${news._labSlug}`} class="lab-link">{news.labName}</a></td>
               <td class="col-type"><TypeBadge type="news" /></td>
-              <td class="col-metric"><span class="no-data">&mdash;</span></td>
-              <td class="col-metric"><span class="no-data">&mdash;</span></td>
-              <td class="col-metric"><span class="no-data">&mdash;</span></td>
+              <td class="col-metric" data-metric="stars"><span class="no-data">&mdash;</span></td>
+              <td class="col-metric" data-metric="downloads"><span class="no-data">&mdash;</span></td>
+              <td class="col-metric" data-metric="citations"><span class="no-data">&mdash;</span></td>
             </tr>
           );
         }
@@ -154,14 +163,16 @@ const dimensions: FilterDimension[] = [
             <td class="col-type">
               {outputTypes.map(t => <TypeBadge type={t} />)}
             </td>
-            <td class="col-metric">{m?.github_stars ? formatCompact(m.github_stars) : <span class="no-data">&mdash;</span>}</td>
-            <td class="col-metric">{m?.hf_downloads ? formatCompact(m.hf_downloads) : <span class="no-data">&mdash;</span>}</td>
-            <td class="col-metric">{m?.citations ? formatCompact(m.citations) : <span class="no-data">&mdash;</span>}</td>
+            <td class="col-metric" data-metric="stars">{m?.github_stars ? formatCompact(m.github_stars) : <span class="no-data">&mdash;</span>}</td>
+            <td class="col-metric" data-metric="downloads">{m?.hf_downloads ? formatCompact(m.hf_downloads) : <span class="no-data">&mdash;</span>}</td>
+            <td class="col-metric" data-metric="citations">{m?.citations ? formatCompact(m.citations) : <span class="no-data">&mdash;</span>}</td>
           </tr>
         );
       })}
     </tbody>
   </table>
+
+  <button class="back-to-top hidden" id="back-to-top" aria-label="Back to top">&uarr;</button>
 
   <div class="shortcut-modal hidden" id="shortcut-modal">
     <div class="shortcut-backdrop" id="shortcut-backdrop"></div>
@@ -210,6 +221,9 @@ const dimensions: FilterDimension[] = [
   const hintBtn = document.getElementById('shortcut-hint')!;
   const sortHeaders = document.querySelectorAll<HTMLTableCellElement>('.sortable');
   const viewBtns = document.querySelectorAll<HTMLButtonElement>('.view-btn');
+  const sortSelect = document.getElementById('sort-select') as HTMLSelectElement;
+  const table = document.getElementById('timeline-table')!;
+  const backToTop = document.getElementById('back-to-top')!;
   const filterBarEl = document.getElementById('filter-bar')!;
   const filterCountEl = filterBarEl.querySelector<HTMLElement>('.filter-count')!;
 
@@ -301,9 +315,20 @@ const dimensions: FilterDimension[] = [
       }
     });
 
+    // Single sync point for the mobile sort select and the stacked-row
+    // metric display: header clicks, the 's' shortcut, URL restore, and
+    // the select itself all funnel through here.
+    sortSelect.value = column;
+    if (column === 'date') delete table.dataset.activeSort;
+    else table.dataset.activeSort = column;
+
     updateVisibility();
     syncViewToURL();
   }
+
+  sortSelect.addEventListener('change', () => {
+    sortRows(sortSelect.value as SortColumn, true);
+  });
 
   sortHeaders.forEach(th => {
     th.addEventListener('click', () => {
@@ -489,6 +514,20 @@ const dimensions: FilterDimension[] = [
   backdrop.addEventListener('click', () => toggleModal(false));
   closeBtn.addEventListener('click', () => toggleModal(false));
   hintBtn.addEventListener('click', () => toggleModal(true));
+
+  // ─── Back to top (touch alternative to g g on a very long page) ──────
+
+  let btopVisible = false;
+  window.addEventListener('scroll', () => {
+    const show = window.scrollY > window.innerHeight * 2;
+    if (show !== btopVisible) {
+      btopVisible = show;
+      backToTop.classList.toggle('hidden', !show);
+    }
+  }, { passive: true });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 </script>
 
 <style>
@@ -531,6 +570,36 @@ const dimensions: FilterDimension[] = [
   /* View toggle (sibling of FilterBar, owns its own row) */
   .view-bar {
     margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  /* Mobile sort control — the touch alternative to the 's' shortcut and
+     the metric column headers, which are hidden below 768px. */
+  .sort-control {
+    display: none;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .sort-control select {
+    font-family: inherit;
+    font-size: 0.85rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.3rem 0.4rem;
+  }
+
+  @media (max-width: 768px) {
+    .sort-control {
+      display: inline-flex;
+    }
   }
   .view-toggle {
     display: inline-flex;
@@ -738,10 +807,124 @@ const dimensions: FilterDimension[] = [
     vertical-align: middle;
   }
 
-  /* Hide metric columns on narrow screens */
+  /* Let rigid columns compress before the container does: the fixed 7rem
+     date column and nowrap lab/type cells push min-content past the
+     viewport on anything below ~1094px. */
+  @media (max-width: 1080px) {
+    .col-date {
+      width: auto;
+    }
+    .col-lab,
+    td.col-type {
+      white-space: normal;
+    }
+    /* Long unbreakable model names set the column's min-content;
+       let them break rather than the page. */
+    td.col-name {
+      overflow-wrap: anywhere;
+    }
+  }
+
+  /* Hide metric columns on narrow screens — except the one being sorted
+     by, so the list never visibly reorders on data the user can't see. */
   @media (max-width: 768px) {
     th.col-metric,
     td.col-metric {
+      display: none;
+    }
+    .timeline-table[data-active-sort="stars"] th[data-metric="stars"],
+    .timeline-table[data-active-sort="stars"] td[data-metric="stars"],
+    .timeline-table[data-active-sort="downloads"] th[data-metric="downloads"],
+    .timeline-table[data-active-sort="downloads"] td[data-metric="downloads"],
+    .timeline-table[data-active-sort="citations"] th[data-metric="citations"],
+    .timeline-table[data-active-sort="citations"] td[data-metric="citations"] {
+      display: table-cell;
+    }
+  }
+
+  /* Phones: the timeline is a feed — stack each row instead of trimming.
+     Cells become flex items; sorting/filtering still drive row order and
+     visibility through data-* attributes, untouched by this. */
+  @media (max-width: 600px) {
+    .timeline-table thead {
+      display: none;
+    }
+
+    .tl-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      column-gap: 0.6rem;
+      row-gap: 0.1rem;
+      padding: 0.55rem 0.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tl-row td {
+      display: inline;
+      padding: 0;
+      border-bottom: none;
+    }
+
+    /* Metric cells stay hidden in stacked mode (the `.tl-row td` rule
+       above would otherwise out-cascade the 768px hide); the active-sort
+       rules below re-show just the sorted one. */
+    .tl-row td.col-metric {
+      display: none;
+    }
+
+    .tl-row td.col-name {
+      display: block;
+      width: 100%;
+      order: -1;
+    }
+
+    .tl-row .col-date,
+    .tl-row .col-lab,
+    .tl-row td.col-type {
+      font-size: 0.75rem;
+    }
+
+    /* Active-metric value joins the meta line in stacked mode. */
+    .timeline-table[data-active-sort="stars"] td[data-metric="stars"],
+    .timeline-table[data-active-sort="downloads"] td[data-metric="downloads"],
+    .timeline-table[data-active-sort="citations"] td[data-metric="citations"] {
+      display: inline;
+      font-size: 0.75rem;
+    }
+
+    .tl-row:last-child {
+      border-bottom: none;
+    }
+  }
+
+  /* Back to top — touch alternative to the g g shortcut on a ~1000-row
+     page; phones only. */
+  .back-to-top {
+    display: none;
+  }
+
+  @media (max-width: 600px) {
+    .back-to-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      right: 1rem;
+      bottom: max(1rem, env(safe-area-inset-bottom));
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      cursor: pointer;
+      z-index: 90;
+    }
+
+    .back-to-top.hidden {
       display: none;
     }
   }
@@ -845,5 +1028,13 @@ const dimensions: FilterDimension[] = [
 
   .close-btn:hover {
     color: var(--text);
+  }
+
+  @media (pointer: coarse) {
+    .close-btn {
+      padding: 0.6rem;
+      top: 0.5rem;
+      right: 0.7rem;
+    }
   }
 </style>

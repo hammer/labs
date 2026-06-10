@@ -196,7 +196,8 @@ const dimensions: FilterDimension[] = [
 
   .links {
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
     margin-bottom: 0.75rem;
     font-size: 0.85rem;
   }
@@ -237,6 +238,14 @@ const dimensions: FilterDimension[] = [
     font-size: 0.75rem;
     margin-left: 0.35rem;
     color: var(--text-muted);
+  }
+
+  @media (pointer: coarse) {
+    .person-link {
+      display: inline-block;
+      padding: 0.35rem 0.4rem;
+      margin-left: 0.1rem;
+    }
   }
 
   .role,

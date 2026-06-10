@@ -13,7 +13,7 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>{title} | Lab Index</title>
   </head>
   <body>
@@ -25,7 +25,7 @@ const { title } = Astro.props;
           <a href="/timeline">Timeline</a>
           <a href="/whats-new">What's New</a>
           <div class="search-container">
-            <button id="nav-search-btn" class="nav-search-btn" title="Search (/)">
+            <button id="nav-search-btn" class="nav-search-btn" title="Search (/)" aria-label="Search">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
             </button>
             <SearchDropdown />
@@ -110,6 +110,7 @@ const { title } = Astro.props;
   .nav-links a {
     color: var(--text-muted);
     font-size: 0.875rem;
+    white-space: nowrap;
   }
 
   .nav-links a:hover {
@@ -129,6 +130,12 @@ const { title } = Astro.props;
     display: flex;
     align-items: center;
     transition: color 0.15s;
+    /* The only touch path to search on the whole site — give it a real
+       hit area (~44px incl. padding) without changing the nav's visuals.
+       No right padding: the button sits at the container edge and a
+       padded box there paints past the viewport. */
+    padding: 0.875rem 0 0.875rem 0.875rem;
+    margin: -0.875rem 0 -0.875rem -0.875rem;
   }
 
   .nav-search-btn:hover {
@@ -137,5 +144,37 @@ const { title } = Astro.props;
 
   main {
     padding-bottom: 3rem;
+  }
+
+  /* Phones: keep nav (and the search trigger inside it) reachable mid-page;
+     '/' has no touch equivalent and pages like the timeline are very tall. */
+  @media (max-width: 600px) {
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav-links {
+      gap: 0.75rem;
+    }
+    .nav-brand {
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .nav-links {
+      gap: 0.5rem;
+    }
+    .nav-links a {
+      font-size: 0.8rem;
+    }
+    .nav-brand {
+      font-size: 0.95rem;
+    }
   }
 </style>

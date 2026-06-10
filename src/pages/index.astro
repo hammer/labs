@@ -79,7 +79,7 @@ const dimensions: FilterDimension[] = [
 <Layout title="Labs">
   <header class="page-header">
     <h1>Lab Index</h1>
-    <p class="subtitle">{labs.length} labs, {totalOutputs} outputs &middot; <button class="shortcut-hint" id="shortcut-hint">Keyboard shortcuts <kbd>?</kbd></button></p>
+    <p class="subtitle">{labs.length} labs, {totalOutputs} outputs<span class="kbd-only"> &middot; <button class="shortcut-hint" id="shortcut-hint">Keyboard shortcuts <kbd>?</kbd></button></span></p>
   </header>
 
   <FilterBar mode="palette" dimensions={dimensions} hotkey="f" id="filter-bar" />
@@ -95,9 +95,9 @@ const dimensions: FilterDimension[] = [
         <th class="col-ipo sortable" data-sort="ipo">IPO</th>
         <th class="col-valuation sortable" data-sort="valuation">Valuation</th>
         <th class="col-largest sortable" data-sort="largest">Scale</th>
-        <th class="col-intelligence sortable" data-sort="intelligence">Intelligence</th>
+        <th class="col-intelligence sortable" data-sort="intelligence"><span class="th-full">Intelligence</span><span class="th-short">Intel</span></th>
         <th class="col-openness sortable" data-sort="openness">Openness</th>
-        <th class="col-outputs sortable" data-sort="outputs">Outputs</th>
+        <th class="col-outputs sortable" data-sort="outputs"><span class="th-full">Outputs</span><span class="th-short">Out</span></th>
       </tr>
     </thead>
     <tbody>
@@ -135,6 +135,7 @@ const dimensions: FilterDimension[] = [
                   loading="lazy"
                 />
                 <span class="lab-name">{lab.name}</span>
+                <span class="lab-flag" aria-hidden="true">{regionFlags[lab.region] ?? ''}</span>
               </span>
             </td>
             <td class="col-region">{regionFlags[lab.region] ?? lab.region}</td>
@@ -554,6 +555,17 @@ const dimensions: FilterDimension[] = [
     background: var(--surface);
   }
 
+  /* Inline region flag inside the Lab cell — only shown on phones,
+     where the Region column is hidden. */
+  .lab-flag {
+    display: none;
+  }
+
+  /* Short header labels swap in on phones. */
+  .th-short {
+    display: none;
+  }
+
   .col-region {
     text-align: center;
     font-size: 1.1rem;
@@ -611,6 +623,95 @@ const dimensions: FilterDimension[] = [
 
   .param-est-marker:hover {
     color: #b45309;
+  }
+
+  /* On touch the marker's hover tooltip is unreachable and its inline
+     window.open hijacks taps aimed at the Scale link — let taps fall
+     through to the parent link instead. (Output-page markers are real
+     provenance anchors and stay tappable; this rule is home-table only.) */
+  @media (pointer: coarse) {
+    .lab-table .param-est-marker {
+      pointer-events: none;
+    }
+  }
+
+  /* ─── Responsive column tiers ─────────────────────────────────────────
+     The full 11-column table is ~1072px wide (min-content), so it overflows
+     every viewport below ~1104px. Columns trim progressively; sorting and
+     filtering read row data-* attributes, so hiding cells is CSS-only.
+     Hidden columns remain filterable via the filter palette. */
+
+  @media (max-width: 1104px) {
+    th.col-founded, td.col-founded,
+    th.col-ipo, td.col-ipo,
+    th.col-valuation, td.col-valuation {
+      display: none;
+    }
+  }
+
+  @media (max-width: 880px) {
+    th.col-region, td.col-region,
+    th.col-type, td.col-type {
+      display: none;
+    }
+  }
+
+  @media (max-width: 720px) {
+    th.col-openness, td.col-openness {
+      display: none;
+    }
+
+    .lab-table th,
+    .lab-row td {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    /* Reserve sort-arrow space only on the active column. */
+    th.sortable::after {
+      width: 0;
+      margin-left: 0;
+    }
+    th.sort-asc::after,
+    th.sort-desc::after {
+      width: 0.6em;
+      margin-left: 0.3em;
+    }
+  }
+
+  /* Phones: Lab+flag / Scale / Intel / Out. The rank column goes too —
+     row order already communicates rank, and the 28px buys the fit. */
+  @media (max-width: 600px) {
+    th.col-rank, td.col-rank {
+      display: none;
+    }
+
+    .lab-table th,
+    .lab-row td {
+      padding: 0.5rem 0.35rem;
+    }
+
+    .lab-name {
+      max-width: 104px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .lab-flag {
+      display: inline;
+      font-size: 0.8rem;
+    }
+
+    .lab-name-inner {
+      gap: 0.4rem;
+    }
+
+    .th-full {
+      display: none;
+    }
+    .th-short {
+      display: inline;
+    }
   }
 
   /* Shortcuts modal */
@@ -712,5 +813,13 @@ const dimensions: FilterDimension[] = [
 
   .close-btn:hover {
     color: var(--text);
+  }
+
+  @media (pointer: coarse) {
+    .close-btn {
+      padding: 0.6rem;
+      top: 0.5rem;
+      right: 0.7rem;
+    }
   }
 </style>

@@ -206,6 +206,7 @@ const types = getOutputTypes(output);
 
   .title-row {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     gap: 0.75rem;
     margin-bottom: 0.25rem;
@@ -219,12 +220,14 @@ const types = getOutputTypes(output);
     font-size: 0.85rem;
     color: var(--text-muted);
     display: flex;
+    flex-wrap: wrap;
     gap: 0.75rem;
   }
 
   .description {
     font-size: 0.925rem;
     line-height: 1.7;
+    overflow-wrap: anywhere;
   }
 
   .links-row {
@@ -265,6 +268,8 @@ const types = getOutputTypes(output);
     font-size: 0.85rem;
     color: var(--text-muted);
     font-style: italic;
+    /* Notes often carry long raw URLs — break them rather than the page. */
+    overflow-wrap: anywhere;
   }
 
   /* Sub-outputs */
@@ -299,6 +304,7 @@ const types = getOutputTypes(output);
 
   .sub-header {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     gap: 0.6rem;
     margin-bottom: 0.4rem;
@@ -318,6 +324,7 @@ const types = getOutputTypes(output);
     font-size: 0.85rem;
     color: var(--text-muted);
     margin-bottom: 0.4rem;
+    overflow-wrap: anywhere;
   }
 
   .sub-links {
@@ -329,5 +336,6 @@ const types = getOutputTypes(output);
     color: var(--text-muted);
     font-style: italic;
     margin-top: 0.4rem;
+    overflow-wrap: anywhere;
   }
 </style>

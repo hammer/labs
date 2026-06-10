@@ -22,7 +22,7 @@ const configJson = JSON.stringify({ mode, hotkey, dimensions });
           <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
         </svg>
         <span>Filter</span>
-        <kbd>{hotkey}</kbd>
+        <kbd class="kbd-only">{hotkey}</kbd>
       </button>
       <div class="palette-panel hidden" role="dialog" aria-label="Filter">
         <div class="stage stage-dim">
@@ -38,7 +38,7 @@ const configJson = JSON.stringify({ mode, hotkey, dimensions });
           </div>
           <div class="stage-value-body"></div>
         </div>
-        <div class="palette-footer">
+        <div class="palette-footer kbd-only">
           <span class="palette-shortcut"><strong>&uarr;&darr;</strong> nav</span>
           <span class="palette-shortcut"><strong>&crarr;</strong> select</span>
           <span class="palette-shortcut"><strong>Esc</strong> back/close</span>
@@ -158,6 +158,10 @@ const configJson = JSON.stringify({ mode, hotkey, dimensions });
   .filter-bar .dim-summary {
     color: var(--text);
     font-weight: 500;
+    max-width: min(50vw, 12rem);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .filter-bar .palette-btn kbd {
@@ -197,7 +201,13 @@ const configJson = JSON.stringify({ mode, hotkey, dimensions });
   }
   .filter-chip:hover { background: color-mix(in srgb, #2563eb 14%, transparent); }
   .filter-chip .chip-key { color: var(--text-muted); font-weight: 500; }
-  .filter-chip .chip-val { font-weight: 600; }
+  .filter-chip .chip-val {
+    font-weight: 600;
+    max-width: min(60vw, 14rem);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .chip-x {
     all: unset;
     cursor: pointer;
@@ -562,8 +572,12 @@ const configJson = JSON.stringify({ mode, hotkey, dimensions });
       width: auto;
       border-radius: 12px 12px 0 0;
       max-height: 80vh;
+      max-height: 80dvh;
       box-shadow: 0 -10px 28px rgba(0, 0, 0, 0.18);
       animation: fb-sheet-up 0.18s ease-out;
+      /* Keep the bottom row clear of the iOS home-indicator gesture area
+         (env() needs viewport-fit=cover on the viewport meta). */
+      padding-bottom: max(env(safe-area-inset-bottom), 0px);
     }
     @keyframes fb-sheet-up {
       from { transform: translateY(100%); }
@@ -574,5 +588,60 @@ const configJson = JSON.stringify({ mode, hotkey, dimensions });
     .filter-bar .palette-panel.flip-x { left: 0; right: 0; }
     .filter-bar .dim-panel.flip-y,
     .filter-bar .palette-panel.flip-y { top: auto; bottom: 0; }
+
+    /* Don't chain sheet-internal overscroll into the page behind it. */
+    .filter-bar .value-multi-list,
+    .filter-bar .dim-list,
+    .filter-bar .stage-value-body {
+      overscroll-behavior: contain;
+    }
+
+    /* Roomier touch targets inside the sheet. */
+    .filter-bar .value-multi-row {
+      padding: 0.55rem 0.45rem;
+    }
+    .filter-bar .value-multi-label input[type=checkbox] {
+      width: 1.15rem;
+      height: 1.15rem;
+    }
+    .filter-bar .value-only {
+      opacity: 1;
+      padding: 0.4rem 0.35rem;
+    }
+    .filter-bar .dim-item {
+      padding: 0.65rem 0.6rem;
+    }
+    .filter-bar .vt-btn,
+    .filter-bar .vs-btn,
+    .filter-bar .vmt-btn {
+      padding: 0.5rem 0.85rem;
+    }
+
+    /* Lock the page behind the open sheet (class managed by runtime.ts;
+       scoped here so desktop scroll-to-close is untouched). */
+    body.fb-sheet-open {
+      overflow: hidden;
+    }
+  }
+
+  /* Bigger hit areas for the genuinely tiny controls on touch screens. */
+  @media (pointer: coarse) {
+    .chip-x {
+      padding: 0 0.65rem;
+    }
+    .stage-back,
+    .value-stage-close {
+      padding: 0.5rem 0.6rem;
+    }
+  }
+
+  /* iOS zooms on focus of any input under 16px; keyed on computed
+     font-size, so width queries miss landscape phones. */
+  @media (pointer: coarse) {
+    .filter-bar .palette-input-wrap input,
+    .filter-bar .value-typeahead,
+    .filter-bar .value-range input {
+      font-size: 16px;
+    }
   }
 </style>

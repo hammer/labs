@@ -8,7 +8,7 @@
     />
   </div>
   <div id="search-results" class="search-results"></div>
-  <div class="search-footer">
+  <div class="search-footer kbd-only">
     <span class="search-shortcut"><strong>&uarr;&darr;</strong> to navigate</span>
     <span class="search-shortcut"><strong>&crarr;</strong> to open</span>
     <span class="search-shortcut"><strong>Esc</strong> to close</span>
@@ -42,6 +42,8 @@
       const resp = await fetch('/search-data.json');
       searchData = await resp.json();
       isLoaded = true;
+      // Re-render in case the user typed before the data arrived.
+      renderResults();
     } catch (e) {
       console.error('Failed to load search data', e);
     }
@@ -206,7 +208,9 @@
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 10px;
-    width: 450px;
+    /* Right-anchored 1rem from the viewport edge; on phones this spans
+       1rem-to-1rem instead of overflowing past the left edge. */
+    width: min(450px, calc(100vw - 2rem));
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     animation: dropdown-slide-down 0.15s ease-out;
@@ -243,7 +247,9 @@
   }
 
   .search-results {
-    max-height: 320px;
+    /* The dvh term only guards small-landscape viewports; dvh does NOT
+       shrink for the on-screen keyboard on iOS or Android. */
+    max-height: min(320px, calc(100dvh - 11rem));
     overflow-y: auto;
     padding: 0.4rem;
   }
@@ -282,6 +288,7 @@
     font-size: 0.7rem;
     color: var(--text-muted);
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 0.3rem;
   }
@@ -322,5 +329,13 @@
     padding: 0 0.2rem;
     border-radius: 3px;
     font-family: monospace;
+  }
+
+  /* iOS Safari auto-zooms the page when focusing any input under 16px;
+     keyed on computed font-size, so width queries don't cover landscape. */
+  @media (pointer: coarse) {
+    .search-input-container input {
+      font-size: 16px;
+    }
   }
 </style>

@@ -47,3 +47,12 @@ a:hover {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+/* Keyboard-shortcut chrome (hints, kbd badges, shortcut legends) is
+   meaningless on touch-only devices — hide it there. Known tradeoff:
+   iPads with hardware keyboards also match and lose the hints. */
+@media (hover: none) and (pointer: coarse) {
+  .kbd-only {
+    display: none !important;
+  }
+}

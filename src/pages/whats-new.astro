@@ -282,6 +282,7 @@ const olderTotal = olderMonthBuckets.reduce((s, b) => s + b.events.length, 0);
   .event-subject {
     color: var(--text);
     font-weight: 500;
+    overflow-wrap: anywhere;
   }
 
   a.event-subject {
@@ -330,6 +331,7 @@ const olderTotal = olderMonthBuckets.reduce((s, b) => s + b.events.length, 0);
     background: var(--surface);
     padding: 0 0.3rem;
     border-radius: 3px;
+    overflow-wrap: anywhere;
   }
 
   .field-op {
@@ -345,6 +347,8 @@ const olderTotal = olderMonthBuckets.reduce((s, b) => s + b.events.length, 0);
 
   .field-vals {
     color: var(--text);
+    /* Diff values can be long unbroken tokens (URLs, model IDs). */
+    overflow-wrap: anywhere;
   }
 
   .v-before {
@@ -370,6 +374,7 @@ const olderTotal = olderMonthBuckets.reduce((s, b) => s + b.events.length, 0);
     color: var(--text-muted);
     font-size: 0.8rem;
     cursor: pointer;
+    padding: 0.3rem 0;
   }
 
   .bulk-details ul {
@@ -409,6 +414,7 @@ const olderTotal = olderMonthBuckets.reduce((s, b) => s + b.events.length, 0);
     font-weight: 600;
     font-size: 0.9rem;
     user-select: none;
+    padding: 0.3rem 0;
   }
 
   .month-details[open] summary {

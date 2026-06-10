@@ -241,7 +241,10 @@ export function initFilterBar(config: InitConfig): InitResult {
     } else {
       placePanel(panel);
     }
-    focusFirstInValuePanel(panel, dim);
+    // No autofocus on mobile: it pops the soft keyboard over the sheet
+    // (and iOS zooms). Same rationale as showDimStage.
+    if (!isMobile()) focusFirstInValuePanel(panel, dim);
+    document.body.classList.add('fb-sheet-open');
     attachAutoClose();
   }
 
@@ -259,6 +262,7 @@ export function initFilterBar(config: InitConfig): InitResult {
       paletteBtn?.setAttribute('aria-expanded', 'false');
     }
     mobileBackdrop?.classList.add('hidden');
+    document.body.classList.remove('fb-sheet-open');
     detachAutoClose();
   }
 
@@ -272,6 +276,7 @@ export function initFilterBar(config: InitConfig): InitResult {
     } else {
       placePanel(palettePanel);
     }
+    document.body.classList.add('fb-sheet-open');
     attachAutoClose();
   }
 
@@ -300,7 +305,7 @@ export function initFilterBar(config: InitConfig): InitResult {
       if (stageValueTitle) stageValueTitle.textContent = d.label;
       if (stageValueBody) {
         renderValuePanelInto(stageValueBody, d, /*topLevel*/ true);
-        focusFirstInValuePanel(stageValueBody, d);
+        if (!isMobile()) focusFirstInValuePanel(stageValueBody, d);
       }
     } else {
       openInlinePanel(d.key);
@@ -360,10 +365,15 @@ export function initFilterBar(config: InitConfig): InitResult {
     closeOpenPanel();
   }
   function onResize(): void {
+    const anyOpen = !!openDimKey
+      || !!(palettePanel && !palettePanel.classList.contains('hidden'));
     if (isMobile()) {
-      // Mobile sheet: nothing to reposition.
+      // Mobile sheet: nothing to reposition, but a resize may have crossed
+      // the breakpoint (rotation) — make sure the backdrop matches.
+      if (anyOpen) mobileBackdrop?.classList.remove('hidden');
       return;
     }
+    mobileBackdrop?.classList.add('hidden');
     if (openDimKey) {
       const panel = dimPanelByKey(openDimKey);
       if (panel && !panel.classList.contains('hidden')) placePanel(panel);
@@ -573,6 +583,12 @@ export function initFilterBar(config: InitConfig): InitResult {
     const rows = listEl.querySelectorAll<HTMLLIElement>('.value-multi-row');
     if (rows.length === 0) return;
 
+    // Single-letter shortcuts (and space) must not fire while the user is
+    // typing in the typeahead — otherwise 'anthropic' runs All at the 'a',
+    // Invert at the 'i', and spaces toggle rows instead of typing.
+    // Arrows/Enter/Escape stay live from the input: they're the nav flow.
+    const typing = e.target instanceof HTMLInputElement && e.target.type === 'text';
+
     const focusRow = (i: number) => {
       multiRowIndex = Math.max(0, Math.min(i, rows.length - 1));
       rows.forEach((row, idx) => row.classList.toggle('focused', idx === multiRowIndex));
@@ -589,25 +605,34 @@ export function initFilterBar(config: InitConfig): InitResult {
         focusRow(multiRowIndex < 0 ? rows.length - 1 : multiRowIndex - 1);
         return;
       case ' ':
+        if (typing) return;
+        if (multiRowIndex < 0) return;
+        e.preventDefault();
+        rows[multiRowIndex]?.querySelector<HTMLInputElement>('input[type=checkbox]')?.click();
+        return;
       case 'Enter':
         if (multiRowIndex < 0) return;
         e.preventDefault();
         rows[multiRowIndex]?.querySelector<HTMLInputElement>('input[type=checkbox]')?.click();
         return;
       case 'o':
+        if (typing) return;
         if (multiRowIndex < 0) return;
         e.preventDefault();
         rows[multiRowIndex]?.querySelector<HTMLElement>('.value-only')?.click();
         return;
       case 'a':
+        if (typing) return;
         e.preventDefault();
         runMultiToolbarOp('all', d);
         return;
       case 'n':
+        if (typing) return;
         e.preventDefault();
         runMultiToolbarOp('none', d);
         return;
       case 'i':
+        if (typing) return;
         e.preventDefault();
         runMultiToolbarOp('invert', d);
         return;
@@ -673,8 +698,10 @@ export function initFilterBar(config: InitConfig): InitResult {
       });
     });
     host.querySelector<HTMLButtonElement>('.value-stage-close')?.addEventListener('click', closeOpenPanel);
-    minIn.focus();
-    minIn.select();
+    if (!isMobile()) {
+      minIn.focus();
+      minIn.select();
+    }
   }
 
   function renderTristatePanel(host: HTMLElement, d: FilterDimension, isTopLevel: boolean): void {
@@ -872,6 +899,7 @@ export function initFilterBar(config: InitConfig): InitResult {
 
   return {
     destroy(): void {
+      document.body.classList.remove('fb-sheet-open');
       detachAutoClose();
       cleanups.forEach(fn => fn());
     },

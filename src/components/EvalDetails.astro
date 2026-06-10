@@ -75,6 +75,7 @@ const { eval: evalData } = Astro.props;
   {evalData.top_scores && evalData.top_scores.length > 0 && (
     <div class="top-scores">
       <h4>Top Scores</h4>
+      <div class="table-scroll">
       <table>
         <thead>
           <tr>
@@ -93,6 +94,7 @@ const { eval: evalData } = Astro.props;
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   )}
 
@@ -110,7 +112,7 @@ const { eval: evalData } = Astro.props;
 
   .specs {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 0.5rem;
     margin-bottom: 1rem;
   }
@@ -119,6 +121,7 @@ const { eval: evalData } = Astro.props;
     background: var(--bg);
     padding: 0.5rem 0.75rem;
     border-radius: 6px;
+    min-width: 0;
   }
 
   .spec-label {
@@ -132,6 +135,7 @@ const { eval: evalData } = Astro.props;
   .spec-value {
     font-weight: 600;
     font-size: 0.9rem;
+    overflow-wrap: anywhere;
   }
 
   .used-in {
@@ -174,6 +178,11 @@ const { eval: evalData } = Astro.props;
   .top-scores h4 {
     font-size: 0.85rem;
     margin-bottom: 0.5rem;
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   table {

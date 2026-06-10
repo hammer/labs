@@ -175,6 +175,12 @@ const formerAffiliations = person.affiliations.filter(a => !a.current);
     color: #2563eb;
   }
 
+  @media (pointer: coarse) {
+    .profile-link {
+      padding: 0.5rem 0.75rem;
+    }
+  }
+
   /* Bio */
   .bio {
     font-size: 0.95rem;
@@ -267,7 +273,6 @@ const formerAffiliations = person.affiliations.filter(a => !a.current);
     white-space: nowrap;
     color: var(--text-muted);
     font-variant-numeric: tabular-nums;
-    width: 7rem;
   }
 
   .rel-name a {
@@ -280,7 +285,7 @@ const formerAffiliations = person.affiliations.filter(a => !a.current);
   }
 
   .rel-type {
-    white-space: nowrap;
+    white-space: normal;
   }
 
   /* News mentions */

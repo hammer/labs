@@ -9,6 +9,7 @@
     "preview": "npm run build && wrangler dev",
     "validate": "tsx src/validate.ts",
     "test:filter": "node tests/filter-smoke.mjs",
+    "test:mobile": "node tests/mobile-smoke.mjs",
     "fetch-metrics": "tsx scripts/fetch-metrics.ts",
     "fetch-aa-openness": "tsx scripts/fetch-aa-openness.ts",
     "deploy": "npm run build && wrangler deploy",

@@ -76,7 +76,7 @@ const linkedAuthors = paper.authors?.map(linkAuthor) ?? [];
 
   .specs {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 0.5rem;
     margin-bottom: 1rem;
   }
@@ -85,6 +85,7 @@ const linkedAuthors = paper.authors?.map(linkAuthor) ?? [];
     background: var(--bg);
     padding: 0.5rem 0.75rem;
     border-radius: 6px;
+    min-width: 0;
   }
 
   .spec-label {
@@ -98,6 +99,7 @@ const linkedAuthors = paper.authors?.map(linkAuthor) ?? [];
   .spec-value {
     font-weight: 600;
     font-size: 0.9rem;
+    overflow-wrap: anywhere;
   }
 
   .presentation-badge[data-type="oral"],
