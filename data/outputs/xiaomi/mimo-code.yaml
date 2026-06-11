@@ -1,0 +1,42 @@
+name: MiMoCode
+slug: mimo-code
+lab: xiaomi
+type: library
+date: 2026-06-10
+sources:
+  - label: GitHub
+    url: https://github.com/XiaomiMiMo/MiMo-Code
+  - label: Website
+    url: https://mimo.xiaomi.com/mimocode
+description: >
+  <p><strong>Open-source terminal AI coding agent with cross-session
+  memory</strong> — Xiaomi's entry into the coding-agent CLI space, built as
+  a fork of <a href="https://github.com/anomalyco/opencode">OpenCode</a>
+  (MIT, TypeScript; <code>npm install -g @mimo-ai/cli</code>). Its
+  differentiator is a persistent memory system over SQLite FTS5: project
+  memory, automatically-maintained session checkpoints, scratch notes, and
+  per-task progress logs are re-injected on resume under a token budget,
+  with context rebuilt from checkpoints when the window fills.</p>
+
+  <p>Also adds a subagent system with parallel/background execution, a
+  <code>/goal</code> stop condition judged by an independent model (to
+  prevent premature "optimistic stops" during autonomous work), a compose
+  mode for specs-driven workflows (planning/TDD/review/verification skills),
+  voice input via TenVAD + MiMo ASR, and self-improvement commands &mdash;
+  <code>/dream</code> distills session traces into project memory,
+  <code>/distill</code> packages repeated workflows into reusable skills.
+  Ships with "MiMo Auto," a free-for-limited-time zero-configuration model
+  channel, alongside Xiaomi MiMo platform OAuth and any OpenAI-compatible
+  provider; can import Claude Code credentials. ~4.3K GitHub stars within
+  a day of release.</p>
+tags:
+  - coding
+  - cli
+  - agentic
+library:
+  github: https://github.com/XiaomiMiMo/MiMo-Code
+  language: TypeScript
+  license: MIT
+related:
+  - mimo-v2.5-pro
+  - mimo-v2-pro
