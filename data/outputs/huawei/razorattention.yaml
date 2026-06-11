@@ -1,0 +1,35 @@
+name: "RazorAttention: KV Cache Compression Through Retrieval Heads"
+slug: razorattention
+lab: huawei
+type: paper
+date: "2024-07-22"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.15891
+  - label: OpenReview (ICLR 2025)
+    url: https://openreview.net/forum?id=tkiZQlL04w
+description: >
+  <p><strong>Training-free KV cache compression</strong> built on the
+  observation that most attention heads only attend locally while a few
+  <strong>retrieval heads</strong> attend across the full input. RazorAttention
+  keeps a full KV cache only for the retrieval heads and drops remote tokens
+  in all other heads, adding a <strong>"compensation token"</strong> that
+  recovers information from the discarded tokens &mdash; unlike token-eviction
+  methods, no token's information is irreversibly erased. Cuts KV cache size
+  by <strong>over 70%</strong> with no noticeable performance impact, is
+  FlashAttention-compatible, and plugs in without retraining the model.
+  ICLR 2025.</p>
+
+  <p>An early articulation of the retrieval-heads view of attention sparsity
+  that later transfer-to-sparse work builds on &mdash; Alibaba/NJU's
+  <a href="/outputs/alibaba/full-attention-strikes-back">RTPurbo</a> (2026)
+  cites it for the head-level sparsity observation. All seven authors at
+  Huawei Technologies.</p>
+tags:
+  - efficiency
+  - research
+paper:
+  arxiv: "2407.15891"
+  venue: ICLR 2025
+related:
+  - full-attention-strikes-back
