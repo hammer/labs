@@ -1,0 +1,38 @@
+name: "Full Attention Strikes Back (RTPurbo)"
+slug: full-attention-strikes-back
+lab: alibaba
+type: paper
+date: "2026-05-16"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.16928
+description: >
+  <p>Shows that full-attention LLMs are <strong>already intrinsically
+  sparse</strong> and can be converted into highly sparse models with only
+  a few hundred training steps &mdash; sidestepping the usual trade-off
+  between native sparse pretraining (expensive) and heuristic token
+  eviction (lossy). Three observations drive the <strong>RTPurbo</strong>
+  recipe: only a small subset of attention heads truly needs full
+  long-context processing; long-range retrieval is governed by a
+  low-dimensional subspace, so relevant tokens can be retrieved with a
+  <strong>16-dimensional indexer</strong>; and the useful token budget is
+  query-dependent, favoring dynamic top-p over fixed top-k selection.
+  RTPurbo keeps the full KV cache only for retrieval heads (~15%) and adds
+  a lightweight token indexer for the rest.</p>
+
+  <p>Near-lossless accuracy on long-context and reasoning benchmarks with
+  up to <strong>9.36&times; prefill speedup at 1M context</strong> and
+  ~2.01&times; decode speedup, demonstrated by sparsifying Qwen3-Coder-30B-A3B
+  and Qwen3-30B-A3B-Think. A post-hoc alternative to natively-sparse designs
+  like DeepSeek Sparse Attention and Kimi Delta Attention. Joint work by
+  <strong>Alibaba Group and Nanjing University</strong> (first author an NJU
+  intern at Alibaba; project lead Hanlin Tang, Alibaba).</p>
+tags:
+  - architecture
+  - efficiency
+  - research
+paper:
+  arxiv: "2605.16928"
+related:
+  - qwen3
+  - qwen3-coder
