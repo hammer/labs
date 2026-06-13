@@ -1,0 +1,38 @@
+name: "WAXAL: African Language Speech Corpus"
+slug: waxal
+lab: google
+type: dataset
+date: "2026-02-02"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.02734
+  - label: HuggingFace (dataset)
+    url: https://huggingface.co/datasets/google/WaxalNLP
+description: >
+  <p>One of the largest openly-licensed speech corpora for
+  <strong>Sub-Saharan African languages</strong> — ~1,250 hours of
+  transcribed natural ASR speech plus ~235 hours of single-speaker TTS
+  recordings across <strong>24 languages</strong> (Hausa, Yoruba, Igbo,
+  Swahili, Amharic, Twi, Luganda, Lingala, and more) spoken by 100M+
+  people. Built with four African academic/community partners and framed
+  as inclusive speech-tech and digital-preservation infrastructure; a large
+  Google effort (authors include Jeff Dean, Yossi Matias, Moustapha Cissé,
+  Avinatan Hassidim). Surfaced in the weekly sweep as a prior-month gap.</p>
+tags:
+  - dataset
+  - speech
+  - multilingual
+  - open-source
+dataset:
+  huggingface_url: https://huggingface.co/datasets/google/WaxalNLP
+  size: "~1,485 hours (1,250h ASR + 235h TTS)"
+  license: CC-BY-4.0
+  languages:
+    - Hausa
+    - Yoruba
+    - Igbo
+    - Swahili
+    - Amharic
+    - Twi
+    - Luganda
+    - Lingala

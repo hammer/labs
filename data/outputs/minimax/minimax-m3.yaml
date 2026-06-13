@@ -1,0 +1,61 @@
+name: MiniMax-M3
+slug: minimax-m3
+lab: minimax
+type: model
+date: 2026-06-01
+flagship: true
+sources:
+  - label: Announcement (MiniMax blog)
+    url: https://www.minimax.io/blog/minimax-m3
+  - label: HuggingFace
+    url: https://huggingface.co/MiniMaxAI/MiniMax-M3
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2606.13392
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/minimax-m3
+description: >
+  <p>MiniMax's <strong>natively multimodal frontier MoE</strong> (text + image
+  + video → text): ~428B total / ~23B active, 128 experts (top-4 + 1 shared,
+  60 layers with the first 3 dense), <strong>1M-token context</strong>, dual
+  thinking / non-thinking modes. Its headline contribution is
+  <strong><a href="/outputs/minimax/minimax-sparse-attention">MiniMax Sparse
+  Attention (MSA)</a></strong> — a learned blockwise sparse attention over GQA
+  that cuts per-token attention compute ~28× at 1M context, giving M3 a
+  reported ~9× prefill / ~15× decode speedup over M2 at 1M context.</p>
+
+  <p>MiniMax Community License (commercial use needs attribution; written
+  authorization above $20M/yr revenue). Self-reported agentic/coding
+  benchmarks: SWE-Bench Pro 59.0, Terminal-Bench 2.1 66.0, SWE-fficiency 34.8,
+  KernelBench Hard 28.8, MCP-Atlas 74.2. Artificial Analysis lists it on the
+  <strong>Agentic Index at 59.1</strong> but has not assigned an Intelligence
+  Index score, so <code>intelligence_index</code> is left unset.</p>
+tags:
+  - frontier
+  - open-weight
+  - moe
+  - multimodal
+  - agentic
+  - coding
+  - reasoning
+model:
+  architecture: moe
+  parameters: 428B
+  active_parameters: 23B
+  num_experts: 128
+  top_k: 4
+  context_window: 1048576
+  license: MiniMax Community License
+  benchmark_scores:
+    - benchmark: SWE-Bench Pro
+      score: "59.0"
+    - benchmark: Terminal-Bench 2.1
+      score: "66.0"
+    - benchmark: SWE-fficiency
+      score: "34.8"
+    - benchmark: KernelBench Hard
+      score: "28.8"
+    - benchmark: MCP-Atlas
+      score: "74.2"
+related:
+  - minimax-m2.7
+  - minimax-sparse-attention

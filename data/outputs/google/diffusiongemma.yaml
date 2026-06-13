@@ -1,0 +1,58 @@
+name: DiffusionGemma
+slug: diffusiongemma
+lab: google
+type: model
+date: 2026-06-09
+flagship: true
+sources:
+  - label: Announcement (Google blog)
+    url: https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/
+  - label: HuggingFace
+    url: https://huggingface.co/google/diffusiongemma-26B-A4B-it
+  - label: Docs
+    url: https://ai.google.dev/gemma/docs/diffusiongemma
+description: >
+  <p>An open-weights <strong>discrete-diffusion language model</strong> built
+  on the Gemma 4 26B-A4B MoE base (25.2B total / 3.8B active, 128 experts +
+  1 shared, top-8; 256K context; ~550M vision encoder for image/video input).
+  Instead of left-to-right token generation, DiffusionGemma <strong>iteratively
+  denoises blocks ("canvases") of tokens in parallel</strong>: an
+  autoregressive encoder caches prompt context while a bidirectional decoder
+  refines the generation canvas, with an Entropy-Bounded Denoising + Adaptive
+  Stopping sampler (≤48 steps). Google reports 15–20 tokens per forward pass
+  and >1,100 tok/s per user at low batch on H100/FP8.</p>
+
+  <p>Apache-2.0. The diffusion variant trades some quality for speed vs the
+  autoregressive <a href="/outputs/google/gemma-4">Gemma 4</a> sibling
+  (e.g. AIME 2026 69.1 vs 88.3, GPQA Diamond 73.2 vs 82.3). Self-reported:
+  MMLU-Pro 77.6, AIME 2026 69.1, LiveCodeBench v6 69.1, GPQA Diamond 73.2,
+  τ²-Bench 56.2, MMMU-Pro 54.3. Not yet on the AA Intelligence Index.</p>
+tags:
+  - open-weight
+  - moe
+  - multimodal
+  - architecture
+  - research
+model:
+  architecture: moe
+  parameters: 25.2B
+  active_parameters: 3.8B
+  num_experts: 128
+  top_k: 8
+  context_window: 262144
+  license: Apache 2.0
+  benchmark_scores:
+    - benchmark: MMLU-Pro
+      score: "77.6"
+    - benchmark: AIME 2026
+      score: "69.1"
+    - benchmark: LiveCodeBench v6
+      score: "69.1"
+    - benchmark: GPQA Diamond
+      score: "73.2"
+    - benchmark: τ²-Bench
+      score: "56.2"
+    - benchmark: MMMU-Pro
+      score: "54.3"
+related:
+  - gemma-4

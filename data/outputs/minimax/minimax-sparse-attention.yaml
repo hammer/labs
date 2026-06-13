@@ -1,0 +1,29 @@
+name: "MiniMax Sparse Attention (MSA)"
+slug: minimax-sparse-attention
+lab: minimax
+type: paper
+date: "2026-06-11"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.13392
+description: >
+  <p>The attention architecture behind
+  <a href="/outputs/minimax/minimax-m3">MiniMax-M3</a>. <strong>MSA</strong> is
+  a learned blockwise sparse attention built on GQA: a lightweight
+  <em>Index Branch</em> scores KV blocks and selects a per-GQA-group top-k
+  subset, then a <em>Main Branch</em> runs exact block-sparse attention over
+  only the selected blocks, with a co-designed GPU kernel (exp-free top-k,
+  KV-outer sparse attention).</p>
+
+  <p>On a 109B multimodal model the paper reports MSA matching dense GQA quality
+  while cutting per-token attention compute <strong>~28.4×</strong> at 1M
+  context, with <strong>14.2× prefill / 7.6× decode</strong> wall-clock speedups
+  on H800 — the efficiency basis for shipping a 1M-context production model.</p>
+tags:
+  - architecture
+  - efficiency
+  - research
+paper:
+  arxiv: "2606.13392"
+related:
+  - minimax-m3

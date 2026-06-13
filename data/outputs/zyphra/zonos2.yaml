@@ -1,0 +1,34 @@
+name: Zonos2 (ZONOS2)
+slug: zonos2
+lab: zyphra
+type: model
+date: 2026-06-11
+sources:
+  - label: Zyphra (project page)
+    url: https://www.zyphra.com/our-work/zonos2
+  - label: HuggingFace
+    url: https://huggingface.co/Zyphra/ZONOS2
+description: >
+  <p>Zyphra's open-weight multilingual <strong>text-to-speech</strong> model
+  and successor to Zonos — an <strong>MoE backbone</strong> (16 experts,
+  top-1 routing; 28 layers, GQA) generating DAC audio tokens from UTF-8 byte
+  input, with ECAPA-TDNN speaker embeddings for zero-shot voice cloning.
+  Trained on <strong>6M+ hours</strong> of multilingual speech; Apache-2.0,
+  with a Mini-SGLang-based inference server for low-latency synthesis.</p>
+
+  <p>Three-tier language coverage: Tier 1 English / Mandarin / Japanese,
+  Tier 2 adds Korean, Russian, Italian, Portuguese, French, Spanish,
+  Vietnamese, German, Hebrew, Dutch, and Tier 3 a further ~23 languages.
+  Extends Zyphra's foundation-model line beyond language and EEG into
+  speech generation.</p>
+tags:
+  - speech
+  - audio
+  - open-weight
+  - moe
+  - multilingual
+model:
+  architecture: moe
+  num_experts: 16
+  top_k: 1
+  license: Apache 2.0

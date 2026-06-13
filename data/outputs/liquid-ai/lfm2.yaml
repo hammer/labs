@@ -52,7 +52,7 @@ model:
     - name: LFM2.5-8B-A1B
       parameters: 8.3B
       active_parameters: 1.5B
-      notes: "Released May 28 2026; hybrid MoE on-device flagship, 128K context, reasoning-only with explicit CoT, scaled to 38T training tokens. IFEval +12.4, AIME25 +22.5 vs LFM2-8B-A1B. GGUF/MLX/ONNX variants shipped."
+      notes: "Released May 28 2026; hybrid MoE on-device flagship, 128K context, reasoning-only with explicit CoT, scaled to 38T training tokens. IFEval +12.4, AIME25 +22.5 vs LFM2-8B-A1B. AA Intelligence Index 14 (AA v4.0) — above LFM2-24B-A2B's 10. GGUF/MLX/ONNX variants shipped."
     - name: LFM2.5-1.2B-JP / Audio-1.5B-JP
       parameters: 1.2B
       notes: Japanese-language variants released June 4 2026 (text + audio).

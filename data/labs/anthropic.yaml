@@ -98,6 +98,10 @@ people:
     description: >
       <p>PhD in Physics from Johns Hopkins University (advised by Jared Kaplan). Researcher at OpenAI. Co-authored the scaling laws paper with Kaplan. Co-founded Anthropic in 2021, serving as CTO.</p>
 news:
+  - title: "Anthropic Confidentially Files for IPO at ~$965B Valuation, First Among AI Labs"
+    url: https://fortune.com/2026/06/01/anthropic-confidentially-files-ipo-965-billion-valuation/
+    source: Fortune
+    date: 2026-06-01
   - title: "Anthropic Hires Andrej Karpathy to Pre-training Team; Will Lead Sub-team Using Claude to Accelerate Pretraining Research"
     url: https://www.cnbc.com/2026/05/19/anthropic-hires-openai-cofounder-andrej-karpathy-former-tesla-ai-lead.html
     source: CNBC
