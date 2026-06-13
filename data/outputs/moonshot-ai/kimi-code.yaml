@@ -1,0 +1,37 @@
+name: Kimi Code CLI
+slug: kimi-code
+lab: moonshot-ai
+type: library
+date: 2026-06-12
+sources:
+  - label: GitHub
+    url: https://github.com/MoonshotAI/kimi-code
+  - label: Documentation
+    url: https://moonshotai.github.io/kimi-code/en/
+  - label: Kimi Code
+    url: https://www.kimi.com/code
+description: >
+  <p>Moonshot's next-generation terminal AI coding agent and the headline
+  harness for the <a href="/outputs/moonshot-ai/kimi-k2.7-code">Kimi
+  K2.7-Code</a> launch — all of the model's coding/agentic benchmarks are
+  run through it. TypeScript, MIT-licensed, installed via a one-line script
+  or Homebrew (no Node.js required). Reads and edits code, runs shell
+  commands, searches files, and fetches web pages, choosing the next step
+  from feedback; works out of the box with Kimi models and any
+  OpenAI-compatible provider.</p>
+
+  <p>The <strong>successor to <a href="/outputs/moonshot-ai/kimi-cli">Kimi
+  CLI</a></strong> (which is being wound down — installing Kimi Code CLI
+  auto-migrates existing config and sessions). Repo created 2026-05-22;
+  promoted to the official CLI alongside the K2.7-Code release.</p>
+tags:
+  - agentic
+  - coding
+  - cli
+library:
+  github: https://github.com/MoonshotAI/kimi-code
+  language: TypeScript
+  license: MIT
+related:
+  - kimi-k2.7-code
+  - kimi-cli

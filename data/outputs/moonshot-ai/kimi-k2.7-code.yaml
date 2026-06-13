@@ -1,0 +1,65 @@
+name: Kimi K2.7-Code
+slug: kimi-k2.7-code
+lab: moonshot-ai
+type: model
+date: 2026-06-12
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/moonshotai/Kimi-K2.7-Code
+  - label: Kimi Code
+    url: https://www.kimi.com/code
+  - label: Moonshot platform (API)
+    url: https://platform.moonshot.ai
+description: >
+  <p><strong>Coding-focused agentic model built on
+  <a href="/outputs/moonshot-ai/kimi-k2.6">Kimi K2.6</a></strong> — same
+  1T-total / 32B-active MoE architecture (384 experts, 8 selected + 1 shared,
+  61 layers, MLA attention, SwiGLU), 256K context, with a 400M
+  <strong>MoonViT vision encoder</strong> for image (and experimental video)
+  input. Targets real-world long-horizon software engineering: stronger
+  end-to-end task completion across complex workflows while cutting
+  thinking-token usage by <strong>~30% vs K2.6</strong>. Forces thinking
+  mode on. Modified-MIT license; ships with native INT4 quantization (same
+  method as Kimi K2-Thinking) and runs on vLLM, SGLang, and KTransformers,
+  with an OpenAI/Anthropic-compatible API on the Moonshot platform.</p>
+
+  <p>Self-reported benchmarks (thinking mode, via Kimi Code CLI), vs K2.6:
+  Kimi Code Bench v2 <strong>62.0</strong> (50.9), Program Bench
+  <strong>53.6</strong> (48.3), MLS-Bench-Lite 35.1 (26.7), Kimi Claw 24/7
+  Bench 46.9 (42.9), MCP-Atlas 76.0 (69.4), MCPMark-Verified 81.1 (72.8) —
+  trailing GPT-5.5 and Claude Opus 4.8 on most but closing the gap. Not yet
+  scored on the AA Intelligence Index.</p>
+tags:
+  - frontier
+  - open-weight
+  - moe
+  - coding
+  - agentic
+  - reasoning
+  - multimodal
+model:
+  architecture: moe
+  parameters: 1T
+  active_parameters: 32B
+  num_experts: 384
+  top_k: 8
+  context_window: 262144
+  base_model: kimi-k2.6
+  license: Modified MIT
+  benchmark_scores:
+    - benchmark: Kimi Code Bench v2
+      score: "62.0"
+    - benchmark: Program Bench
+      score: "53.6"
+    - benchmark: MLS-Bench-Lite
+      score: "35.1"
+    - benchmark: Kimi Claw 24/7 Bench
+      score: "46.9"
+    - benchmark: MCP-Atlas
+      score: "76.0"
+    - benchmark: MCPMark-Verified
+      score: "81.1"
+related:
+  - kimi-k2.6
+  - kimi-code

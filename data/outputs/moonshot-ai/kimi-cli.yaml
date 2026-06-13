@@ -7,11 +7,17 @@ sources:
   - label: GitHub
     url: https://github.com/MoonshotAI/kimi-cli
 description: >
-  Command-line agent designed for autonomous coding and system tasks.
+  Command-line agent designed for autonomous coding and system tasks
+  (Python, PyPI <code>kimi-cli</code>). Being wound down in favor of its
+  successor <a href="/outputs/moonshot-ai/kimi-code">Kimi Code CLI</a>, which
+  auto-migrates existing config and sessions; docs and installs remain
+  available.
 tags:
   - agentic
   - coding
   - cli
 library:
   github: https://github.com/MoonshotAI/kimi-cli
+related:
+  - kimi-code
 notes: Date approximate.
