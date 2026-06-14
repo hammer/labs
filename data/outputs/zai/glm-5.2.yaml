@@ -1,0 +1,46 @@
+name: GLM-5.2
+slug: glm-5.2
+lab: zai
+type: model
+date: 2026-06-13
+flagship: true
+sources:
+  - label: API Docs (Z.ai devpack)
+    url: https://docs.z.ai/devpack/latest-model
+  - label: GitHub
+    url: https://github.com/zai-org/GLM-5
+  - label: Announcement coverage (AI Weekly)
+    url: https://aiweekly.co/node/2946
+description: >
+  <p>Zhipu / <a href="/labs/zai">Z.ai</a>'s latest <strong>coding-first
+  agentic model</strong>, the successor to
+  <a href="/outputs/zai/glm-5.1">GLM-5.1</a>. Launched 2026-06-13 across all
+  GLM Coding Plan tiers (Lite / Pro / Max / Team) with a <strong>1M-token
+  context window</strong> and up to 131,072 output tokens — sized for
+  PR-scale diffs and long plan-then-execute agentic traces. Exposes two
+  thinking-effort presets, <strong>High</strong> and <strong>Max</strong>,
+  with Zhipu recommending Max as the default for coding; positioned for
+  deeper reasoning and more stable long-horizon task performance than
+  GLM-5.1.</p>
+
+  <p>Rolled out coding-plan-first: the standalone API, the Z.ai chatbot, and
+  the <strong>MIT-licensed open weights are slated for the following week</strong>.
+  Zhipu published <strong>no benchmarks and no architecture/parameter details
+  at launch</strong>, so those fields are intentionally left unset here pending
+  the technical materials and the weight/AA release; this entry will be
+  enriched once the open weights and scores land.</p>
+tags:
+  - coding
+  - agentic
+  - frontier
+model:
+  context_window: 1000000
+  license: MIT (open weights pending)
+related:
+  - glm-5.1
+  - glm-5
+notes: >
+  API/coding-plan release 2026-06-13; MIT open weights, standalone API, and
+  benchmarks expected ~week of 2026-06-21. Architecture, parameter count, and
+  AA Intelligence Index undisclosed at launch — do not infer; backfill when
+  the weights/technical report drop.
