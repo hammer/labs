@@ -1,0 +1,71 @@
+name: Nex-N2
+slug: nex-n2
+lab: nex-agi
+type: model
+date: 2026-06-09
+flagship: true
+sources:
+  - label: Announcement (HF model card)
+    url: https://huggingface.co/nex-agi/Nex-N2-Pro
+  - label: GitHub
+    url: https://github.com/nex-agi/Nex-N2
+  - label: HuggingFace (mini)
+    url: https://huggingface.co/nex-agi/Nex-N2-mini
+  - label: OpenRouter
+    url: https://openrouter.ai/nex-agi/Nex-N2-Pro
+description: >
+  <p><a href="/labs/nex-agi">Nex-AGI</a>'s open-weight agentic model family,
+  <strong>post-trained on the Qwen3.5 MoE series</strong> for first-tier coding
+  and long-horizon agentic work. Two Apache-2.0 variants: <strong>Nex-N2-Pro</strong>
+  (built on Qwen3.5-397B-A17B — 397B total / 17B active) and
+  <strong>Nex-N2-mini</strong> (built on Qwen3.5-35B-A3B-Base — 35B / 3B active),
+  both multimodal (image/video input).</p>
+
+  <p>Its core is an <strong>"Agentic Thinking"</strong> framework that unifies
+  reasoning, tool use, and environment execution into one closed loop:
+  <em>Adaptive Thinking</em> (the model decides when and how deeply to think) and
+  <em>Coherent Thinking</em> (one reasoning paradigm transferred across general
+  and agentic tasks). Trained via Nex-AGI's own
+  <a href="/outputs/nex-agi/nexrl">NexRL</a> stack and the environment-scaling
+  recipe from <a href="/outputs/nex-agi/nex-n1">Nex-N1</a>. Self-reported
+  Nex-N2-Pro: Terminal-Bench 2.1 75.3, SWE-Bench Verified 80.8, SWE-Bench Pro
+  58.8, GDPval 1585, TAU3 71.1 — pacing GPT-5.5 / Opus 4.7 on coding and
+  long-horizon tasks. Not yet on the AA Intelligence Index.</p>
+tags:
+  - frontier
+  - open-weight
+  - moe
+  - coding
+  - agentic
+  - reasoning
+  - multimodal
+model:
+  architecture: moe
+  parameters: 397B
+  active_parameters: 17B
+  base_model: qwen3.5
+  license: Apache 2.0
+  benchmark_scores:
+    - benchmark: Terminal-Bench 2.1
+      score: "75.3"
+    - benchmark: SWE-Bench Verified
+      score: "80.8"
+    - benchmark: SWE-Bench Pro
+      score: "58.8"
+    - benchmark: GDPval
+      score: "1585"
+    - benchmark: TAU3
+      score: "71.1"
+  variants:
+    - name: Nex-N2-Pro
+      parameters: 397B
+      active_parameters: 17B
+      notes: Built on Qwen3.5-397B-A17B; flagship
+    - name: Nex-N2-mini
+      parameters: 35B
+      active_parameters: 3B
+      notes: Built on Qwen3.5-35B-A3B-Base
+related:
+  - nex-n1
+  - qwen3.5
+  - nexrl

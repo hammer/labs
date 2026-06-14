@@ -27,7 +27,7 @@ function log(name, ok, detail = '') {
     hasFilterBar: !!document.querySelector('.filter-bar .palette-btn'),
     paletteHidden: document.querySelector('.palette-panel').classList.contains('hidden'),
   }));
-  log('home: clean load', t.rows === 58 && t.visible === 58 && t.hasFilterBar && t.paletteHidden, JSON.stringify(t));
+  log('home: clean load', t.rows === 59 && t.visible === 59 && t.hasFilterBar && t.paletteHidden, JSON.stringify(t));
   await page.close();
 }
 
@@ -91,7 +91,7 @@ function log(name, ok, detail = '') {
     url: window.location.search,
     visible: Array.from(document.querySelectorAll('.lab-row')).filter(r => r.style.display !== 'none').length,
   }));
-  log('home: select region=china', t.url === '?region=china' && t.visible === 24, JSON.stringify(t));
+  log('home: select region=china', t.url === '?region=china' && t.visible === 25, JSON.stringify(t));
   await page.close();
 }
 
@@ -167,7 +167,7 @@ function log(name, ok, detail = '') {
     visible: Array.from(document.querySelectorAll('.lab-row')).filter(r => r.style.display !== 'none').length,
     url: window.location.search,
   }));
-  log('home: Clear all', t.chips === 0 && t.visible === 58 && t.url === '', JSON.stringify(t));
+  log('home: Clear all', t.chips === 0 && t.visible === 59 && t.url === '', JSON.stringify(t));
   await page.close();
 }
 

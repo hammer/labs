@@ -1,0 +1,32 @@
+name: Nex-AGI
+slug: nex-agi
+url: https://nex-agi.com
+huggingface: https://huggingface.co/nex-agi
+github: https://github.com/nex-agi
+region: china
+founded: "2025-11"
+type: academic
+description: >
+  <p><strong>Nex-AGI</strong> (Nex, "Nexus of Agentic Intelligence") is an
+  <strong>open-source alliance initiated by the
+  <a href="/labs/sii">Shanghai Innovation Institute (SII)</a></strong>
+  (launched late 2025) to build a "sustainable, agency-driven, closed-loop,
+  open-source ecosystem" for AI agents. Alliance members include SII alongside
+  Shanghai Qiji Zhifeng, Mosi Intelligence, KuafuAI, and a network of
+  entrepreneurial partners. Distinct from SII's GAIR Lab / daVinci pretraining
+  line, Nex's identity is <strong>agentic post-training and infrastructure</strong>
+  &mdash; full-stack across models, data, agent frameworks, and serving.</p>
+
+  <p>Its products span the whole stack: the <strong>Nex-N1 / Nex-N2</strong>
+  open-weight agentic model families (post-trained on open bases such as
+  Qwen3.5, DeepSeek-V3.1, and Qwen3); training infrastructure
+  (<strong>NexRL</strong>, an ultra-loosely-coupled post-training framework;
+  <strong>NexGAP</strong>, an agentic data pipeline); and agent frameworks
+  (<strong>NexAU</strong> for building tool-using agent hierarchies,
+  <strong>NexA4A</strong> meta-agent generation, and <strong>NexDR</strong>
+  deep research). Models ship under Apache 2.0 on HuggingFace, ModelScope,
+  and OpenRouter.</p>
+tags:
+  - agentic
+  - open-source
+  - alliance

@@ -1,0 +1,25 @@
+name: NexRL
+slug: nexrl
+lab: nex-agi
+type: library
+date: 2026-05-13
+sources:
+  - label: GitHub
+    url: https://github.com/nex-agi/NexRL
+description: >
+  <a href="/labs/nex-agi">Nex-AGI</a>'s <strong>ultra-loosely-coupled LLM
+  post-training framework</strong> — the RL/agentic post-training stack behind
+  the <a href="/outputs/nex-agi/nex-n2">Nex-N2</a> models. Decouples the
+  components of large-scale agentic reinforcement learning (rollout,
+  environment interaction, training) so they can scale and be swapped
+  independently.
+tags:
+  - training
+  - infrastructure
+  - reinforcement-learning
+  - agentic
+library:
+  github: https://github.com/nex-agi/NexRL
+related:
+  - nex-n2
+  - nex-n1

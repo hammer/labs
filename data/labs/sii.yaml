@@ -24,7 +24,9 @@ description: >
   <a href="https://sairi.com.cn/">SAIRI</a> (Shanghai AI Research Institute,
   est. 2019, led by Song Haitao), with frequent collaborations with
   <a href="/labs/ant-group">Ant Group</a>/InclusionAI, Sand.ai, and
-  <a href="https://huggingface.co/fnlp">Fudan NLP (OpenMOSS)</a>.</p>
+  <a href="https://huggingface.co/fnlp">Fudan NLP (OpenMOSS)</a>. SII also
+  initiated the open-source agentic alliance
+  <a href="/labs/nex-agi">Nex-AGI</a> (Nex-N1/N2 models, NexRL/NexAU).</p>
 
   <p>SII's research labs practice <strong>"radical openness"</strong> &mdash;
   releasing not just weights but full training trajectories (logs, intermediate

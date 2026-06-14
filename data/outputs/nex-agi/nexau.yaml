@@ -1,0 +1,25 @@
+name: NexAU (Agent Universe)
+slug: nexau
+lab: nex-agi
+type: library
+date: 2026-06-11
+sources:
+  - label: GitHub
+    url: https://github.com/nex-agi/NexAU
+description: >
+  <a href="/labs/nex-agi">Nex-AGI</a>'s <strong>general-purpose agent
+  framework</strong> for building tool-using intelligent agents — "AU" for
+  Agent Universe. Supports composing complex agent hierarchies from simple
+  configurations; it is the "Complexity" axis of the
+  <a href="/outputs/nex-agi/nex-n1">Nex-N1</a> environment-construction
+  method and the framework other Nex agents (NexDR deep research, NexHTML,
+  NexA4A meta-agent) are built on.
+tags:
+  - agentic
+  - framework
+  - infrastructure
+library:
+  github: https://github.com/nex-agi/NexAU
+related:
+  - nex-n1
+  - nex-n2

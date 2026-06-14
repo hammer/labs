@@ -1,0 +1,37 @@
+name: "Nex-N1: Agentic Models via Large-Scale Environment Construction"
+slug: nex-n1
+lab: nex-agi
+type: paper
+date: "2025-12-04"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.04987
+  - label: GitHub
+    url: https://github.com/nex-agi/Nex-N1
+description: >
+  <p>The founding work of the <a href="/labs/nex-agi">Nex-AGI</a> ecosystem:
+  a method to <strong>systematically scale the diversity and complexity of
+  interactive environments</strong> for training autonomous agents — shifting
+  agent learning from static imitation to incentive-driven decision making.
+  Scaling is addressed along three orthogonal axes:
+  <strong>Complexity</strong> via <a href="/outputs/nex-agi/nexau">NexAU</a>
+  (a flexible framework for building agent hierarchies from simple configs),
+  <strong>Diversity</strong> via NexA4A (auto-generating diverse agent
+  hierarchies from natural language to cover open-ended domains), and
+  <strong>Fidelity</strong> via NexGAP (a high-quality agentic data pipeline).</p>
+
+  <p>The resulting Nex-N1 agentic models are delivered as post-trains on open
+  bases (DeepSeek-V3.1, Qwen3, internlm3), establishing the
+  environment-construction + agentic-RL recipe later carried into
+  <a href="/outputs/nex-agi/nex-n2">Nex-N2</a>.</p>
+tags:
+  - agentic
+  - training
+  - research
+  - reinforcement-learning
+paper:
+  arxiv: "2512.04987"
+related:
+  - nex-n2
+  - nexau
+  - nexrl
