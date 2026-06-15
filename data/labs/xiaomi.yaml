@@ -58,6 +58,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Fuli_Luo1
 news:
+  - title: "Xiaomi MiMo-V2.5-Pro-UltraSpeed Breaks 1000 Tokens/s on a 1T-Parameter Model (with TileRT)"
+    url: https://mimo.xiaomi.com/blog/mimo-tilert-1000tps
+    source: Xiaomi MiMo
+    date: 2026-06-08
   - title: "Xiaomi Reveals MiMo-V2-Pro (1T Parameters), Approaching GPT-5.2 / Opus 4.6 Performance"
     url: https://venturebeat.com/technology/xiaomi-stuns-with-new-mimo-v2-pro-llm-nearing-gpt-5-2-opus-4-6-performance
     source: VentureBeat

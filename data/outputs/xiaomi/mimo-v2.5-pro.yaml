@@ -11,6 +11,8 @@ sources:
     url: https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/mimo-v2-5-pro
+  - label: UltraSpeed blog (1000 TPS)
+    url: https://mimo.xiaomi.com/blog/mimo-tilert-1000tps
 description: >
   <p><strong>1.02T total / 42B active MoE</strong> with hybrid attention
   (sliding window + global at 6:1 ratio, 128-token window) and Multi-Token
@@ -22,6 +24,14 @@ description: >
   <p>ClawEval: 63.8% using ~40-60% fewer tokens than Opus 4.6, Gemini 3.1 Pro,
   and GPT-5.4. GDPval-AA ELO: 1581 (surpassing Kimi K2.6 and GLM-5.1). KV-cache
   reduced ~7x via learnable attention pool bias. By Xiaomi MiMo team.</p>
+
+  <p><strong>MiMo-V2.5-Pro-UltraSpeed</strong> (June 2026): the same 1T model
+  served at <strong>&gt;1000 tokens/s decode</strong> (up to ~1200 tps) — a
+  first at trillion-parameter scale — via a collaboration with the
+  <strong>TileRT</strong> inference runtime. Offered as an API-only,
+  application-based limited-time trial (Jun 9&ndash;23 2026, ~3&times; price /
+  ~10&times; speed); no separate weights. Positioned to unlock parallel
+  Best-of-N / tree-search reasoning within the same wall-clock budget.</p>
 tags:
   - moe
   - open-weight
