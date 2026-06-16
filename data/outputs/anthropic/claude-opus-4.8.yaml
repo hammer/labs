@@ -1,0 +1,40 @@
+name: Claude Opus 4.8
+slug: claude-opus-4.8
+lab: anthropic
+type: model
+date: 2026-05-28
+flagship: true
+sources:
+  - label: Announcement
+    url: https://www.anthropic.com/news/claude-opus-4-8
+  - label: Model Page
+    url: https://www.anthropic.com/claude/opus
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/claude-opus-4-8
+description: >
+  <p>Anthropic's flagship Opus upgrade, just 41 days after
+  <a href="/outputs/anthropic/claude-opus-4.7">Opus 4.7</a> — a "modest but
+  tangible" improvement. AA Intelligence Index v4.1: <strong>56</strong>.
+  Headline gains are in <strong>honesty</strong> (more likely to acknowledge
+  when it lacks information, less likely to make unsupported claims) and
+  <strong>code reliability</strong> (~4× less likely than 4.7 to let flaws in
+  its generated code go unremarked). API name <code>claude-opus-4-8</code>.</p>
+
+  <p>Shipped with a <strong>"dynamic workflow"</strong> capability (Claude
+  orchestrating multiple subagents at once), a user-facing <strong>effort
+  control</strong> (how much reasoning to spend per response), and a
+  <strong>fast mode</strong> (~2.5× speed, ~3× cheaper). Available via
+  claude.ai, Claude Code, the API, Amazon Bedrock, Google Cloud Vertex AI,
+  and Microsoft Foundry.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+model:
+  intelligence_index: 56
+  intelligence_index_version: "AA v4.1"
+  openness_index: 11.1
+  openness_index_version: "AA Openness Index v1.0 (family inference)"
+related:
+  - claude-opus-4.7
+  - claude-fable-5

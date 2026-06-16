@@ -12,7 +12,10 @@ sources:
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/claude-opus-4-7
 description: >
-  <p>Anthropic's latest flagship. AA Intelligence Index: <strong>54</strong>
+  <p>Anthropic's flagship as of April 2026 (since succeeded by
+  <a href="/outputs/anthropic/claude-opus-4.8">Opus 4.8</a> and
+  <a href="/outputs/anthropic/claude-fable-5">Fable 5</a>). AA Intelligence
+  Index: <strong>54</strong>
   (max reasoning effort), ahead of GPT-5.4 and Gemini 3.1 Pro. First Claude
   model with <strong>high-resolution image support</strong> (2576px / 3.75MP).
   New tokenizer for improved performance. Handles complex, long-running tasks

@@ -1,0 +1,39 @@
+name: Claude Fable 5
+slug: claude-fable-5
+lab: anthropic
+type: model
+date: 2026-06-09
+flagship: true
+sources:
+  - label: Announcement (Claude Fable 5 and Mythos 5)
+    url: https://www.anthropic.com/news/claude-fable-5-mythos-5
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/claude-fable-5
+description: >
+  <p>The first <strong>publicly released model in Anthropic's Mythos class</strong>
+  — a locked-down, broadly-available counterpart to the more capable, restricted
+  <strong>Claude Mythos 5</strong> released alongside it. AA Intelligence Index
+  v4.1: <strong>60</strong> — the <strong>#1 model on AA's index</strong>, ahead
+  of <a href="/outputs/anthropic/claude-opus-4.8">Opus 4.8</a> (56) and
+  GPT-5.5 (55). State-of-the-art on nearly all tested capability benchmarks
+  (software engineering, knowledge work, vision, scientific research), scoring
+  10%+ above Opus 4.8 on some.</p>
+
+  <p>Public release is gated by <strong>domain safeguards</strong>: on high-risk
+  queries (e.g. cybersecurity, biology) it blocks and <strong>falls back to
+  Opus 4.8</strong> for a safe answer. Priced at <strong>$10/M input,
+  $50/M output</strong> (same as Mythos 5; less than half of the earlier Mythos
+  Preview, but well above standard Opus). Notably, a US government export
+  directive temporarily forced it offline within days of launch. API name
+  <code>claude-fable-5</code>.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+model:
+  intelligence_index: 60
+  intelligence_index_version: "AA v4.1"
+  openness_index: 11.1
+  openness_index_version: "AA Openness Index v1.0 (family inference)"
+related:
+  - claude-opus-4.8
