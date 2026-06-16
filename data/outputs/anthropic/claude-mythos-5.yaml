@@ -1,0 +1,42 @@
+name: Claude Mythos 5
+slug: claude-mythos-5
+lab: anthropic
+type: model
+date: 2026-06-09
+flagship: true
+sources:
+  - label: Announcement (Claude Fable 5 and Mythos 5)
+    url: https://www.anthropic.com/news/claude-fable-5-mythos-5
+  - label: Coverage (The Decoder)
+    url: https://the-decoder.com/anthropic-releases-claude-fable-5-and-mythos-5-with-major-gains-in-coding-and-science/
+description: >
+  <p>Anthropic's <strong>most capable model</strong> — the Mythos-class tier
+  above Opus, and the same underlying model as
+  <a href="/outputs/anthropic/claude-fable-5">Claude Fable 5</a> (AA Intelligence
+  Index v4.1 = 60) but <strong>with safeguards lifted in some domains</strong>
+  (cybersecurity entirely, vs Fable 5's fallback to Opus 4.8). Released
+  2026-06-09 alongside Fable 5. Not independently scored on Artificial Analysis
+  — access is too restricted for evaluation — so <code>intelligence_index</code>
+  is left unset; capability is that of Fable 5 plus the unblocked domains.</p>
+
+  <p><strong>Highly restricted availability:</strong> initially only
+  <em>Project Glasswing</em> cybersecurity partners and critical-infrastructure
+  providers, with a planned biology trusted-access program for a small number
+  of life-science researchers and a broader cybersecurity program under
+  development in consultation with the US government — not generally available.
+  Anthropic highlights <strong>scientific</strong> gains: protein design
+  (~10× faster drug design), molecular-biology hypothesis generation (preferred
+  ~80% over Opus-class models), and genomics models that outperform published
+  <em>Science</em>-journal results with ~100× fewer parameters. $10/M input,
+  $50/M output (same as Fable 5).</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+  - science
+model:
+  openness_index: 11.1
+  openness_index_version: "AA Openness Index v1.0 (family inference)"
+related:
+  - claude-fable-5
+  - claude-opus-4.8
