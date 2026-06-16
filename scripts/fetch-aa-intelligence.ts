@@ -49,6 +49,13 @@ async function fetchAaiiDataset(): Promise<Map<string, number>> {
     const ii = r.match(/"intelligenceIndex":([\d.]+)/)?.[1];
     if (slug && ii && !map.has(slug)) map.set(slug, parseFloat(ii));
   }
+  // CAP WARNING: this leaderboard payload is paginated — it carries only the
+  // top ~500 models. Low-ranked models AA *does* score (e.g. olmo-3-1-32b-think
+  // = 8) are simply absent here, so a "not on leaderboard" slug does NOT mean
+  // "unscored." The per-model page DOES show the composite but stores it in a
+  // snake_case schema with no `intelligence_index` key (it's computed
+  // client-side), so it can't be scraped the same way — verify those by eye
+  // on https://artificialanalysis.ai/models/<slug> (the "X (estimated)" figure).
   if (map.size < 300) throw new Error(`Parsed only ${map.size} scored records — sentinel likely drifted, refusing to write`);
   return map;
 }
@@ -112,7 +119,9 @@ async function main() {
   console.log('Summary:');
   console.log(`  Updated:   ${updated}${dryRun ? ' (dry-run — no writes)' : ''}`);
   console.log(`  Unchanged: ${unchanged}`);
-  console.log(`  Slug not on AA leaderboard (renamed or retired — manual attention): ${missing.length}`);
+  console.log(`  Slug not in top-~500 leaderboard payload — VERIFY each by eye at`);
+  console.log(`  artificialanalysis.ai/models/<slug> (may be a low-ranked but still-scored`);
+  console.log(`  model, a renamed slug, or genuinely unscored): ${missing.length}`);
   for (const x of missing) console.log(`    ${x.slug.padEnd(40)}  ${x.file}`);
 }
 
