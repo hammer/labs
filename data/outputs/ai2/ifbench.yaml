@@ -23,8 +23,9 @@ description: >
   <p>Also demonstrates that <strong>RLVR (reinforcement learning with verifiable
   rewards)</strong> substantially improves constraint compliance. Includes 29
   hand-annotated training constraints with verification functions and RLVR prompts.
-  Used in the <strong>Artificial Analysis Intelligence Index v4.0</strong> (6.25% weight
-  in the General category). NeurIPS 2025 Datasets &amp; Benchmarks. By Pyatkin, Malik,
+  Was a component of the <strong>Artificial Analysis Intelligence Index v4.0</strong>
+  (6.25% weight in the General category) but was <strong>removed in v4.1</strong>
+  (AA continues to run it on new model releases). NeurIPS 2025 Datasets &amp; Benchmarks. By Pyatkin, Malik,
   Graf, Ivison, Huang, Dasigi, Lambert, and Hajishirzi (Ai2).</p>
 tags:
   - benchmark
@@ -41,5 +42,5 @@ eval:
   scoring_method: programmatic constraint verification functions; prompt-level strict and loose
     accuracy (paper reports prompt-level loose accuracy, temperature 0)
   used_in:
-    - AA Intelligence Index v4.0
+    - AA Intelligence Index v4.0 (removed in v4.1)
   leaderboard_url: https://github.com/allenai/IFBench

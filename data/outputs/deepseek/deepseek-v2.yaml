@@ -27,8 +27,8 @@ outputs:
         url: https://huggingface.co/deepseek-ai/DeepSeek-V2
     model:
       architecture: moe
-      intelligence_index: 9
-      intelligence_index_version: "AA v4.0"
+      intelligence_index: 4
+      intelligence_index_version: "AA v4.1"
       parameters: 236B
       active_parameters: 21B
   - name: DeepSeek-V2 Technical Report

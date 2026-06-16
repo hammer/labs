@@ -23,8 +23,8 @@ tags:
 model:
   architecture: dense
   parameters: 32B
-  intelligence_index: 12
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 6
+  intelligence_index_version: "AA v4.1"
   openness_index: 27.8
   openness_index_version: "AA Openness Index v1.0"
   variants:

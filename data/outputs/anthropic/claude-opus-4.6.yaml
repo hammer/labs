@@ -12,10 +12,10 @@ sources:
 description: >
   <p>Current flagship. <strong>1M token context</strong>. Ranked #1 among 65
   non-reasoning models on Artificial Analysis. Also released as Claude Sonnet 4.6
-  (February 17, 2026, AA index 44, 1M context). Architecture and parameters
+  (February 17, 2026, AA index 47, 1M context). Architecture and parameters
   undisclosed.</p>
 
-  <p>AA Intelligence Index: <strong>53</strong> (adaptive reasoning, max effort).
+  <p>AA Intelligence Index: <strong>44</strong> (adaptive reasoning, max effort).
   Powers Claude Code, the agentic coding tool with $2.5B+ ARR. Proprietary.</p>
 tags:
   - frontier
@@ -24,8 +24,8 @@ tags:
   - agents
 model:
   context_window: 1000000
-  intelligence_index: 53
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 44
+  intelligence_index_version: "AA v4.1"
   openness_index: 11.1
   openness_index_version: "AA Openness Index v1.0 (family inference)"
   parameters_estimated:
@@ -37,9 +37,9 @@ model:
     notes: "90% PI [1.8T–15.6T]"
   variants:
     - name: Claude Opus 4.6
-      notes: 1M context, AA index 53 (adaptive reasoning)
+      notes: 1M context, AA index 44 (adaptive reasoning)
     - name: Claude Sonnet 4.6
-      notes: 1M context, AA index 44
+      notes: 1M context, AA index 47
       parameters_estimated:
         value: "1.7T"
         source: https://arxiv.org/abs/2604.24827

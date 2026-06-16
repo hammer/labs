@@ -38,23 +38,23 @@ model:
   architecture: dense
   parameters: 31B
   context_window: 256000
-  intelligence_index: 39
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 29
+  intelligence_index_version: "AA v4.1"
   openness_index: 38.9
   openness_index_version: "AA Openness Index v1.0"
   variants:
     - name: Gemma 4 31B
       parameters: 31B
-      notes: Dense flagship, 256K context; AA Intelligence Index v4.0 = 39
+      notes: Dense flagship, 256K context; AA Intelligence Index v4.1 = 29
     - name: Gemma 4 26B-A4B
       parameters: 26B
       active_parameters: 4B
-      notes: MoE, 256K context; AA Intelligence Index v4.0 = 31
+      notes: MoE, 256K context; AA Intelligence Index v4.1 = 26
     - name: Gemma 4 E4B
       parameters: 8B
-      notes: Effective 4.5B, 128K context; AA Intelligence Index v4.0 = 19
+      notes: Effective 4.5B, 128K context; AA Intelligence Index v4.1 = 12
     - name: Gemma 4 E2B
       parameters: 5.1B
-      notes: Effective 2.3B, 128K context; AA Intelligence Index v4.0 = 15
+      notes: Effective 2.3B, 128K context; AA Intelligence Index v4.1 = 9
 related:
   - gemma-3

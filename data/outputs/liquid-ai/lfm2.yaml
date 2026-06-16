@@ -20,7 +20,7 @@ description: >
 
   <p>LFM2-24B achieves 239 tok/s (#3 speed ranking on AA). Also includes vision-language
   (LFM2.5-VL), speech, and pharmaceutical variants (with Insilico Medicine). AA
-  Intelligence Index: <strong>10</strong> (24B). Apache 2.0.</p>
+  Intelligence Index: <strong>5</strong> (24B). Apache 2.0.</p>
 tags:
   - open-weight
   - on-device
@@ -29,8 +29,8 @@ model:
   architecture: moe
   parameters: 24B
   active_parameters: 2.3B
-  intelligence_index: 10
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 5
+  intelligence_index_version: "AA v4.1"
   openness_index: 27.8
   openness_index_version: "AA Openness Index v1.0"
   variants:
@@ -52,7 +52,7 @@ model:
     - name: LFM2.5-8B-A1B
       parameters: 8.3B
       active_parameters: 1.5B
-      notes: "Released May 28 2026; hybrid MoE on-device flagship, 128K context, reasoning-only with explicit CoT, scaled to 38T training tokens. IFEval +12.4, AIME25 +22.5 vs LFM2-8B-A1B. AA Intelligence Index 14 (AA v4.0) — above LFM2-24B-A2B's 10. GGUF/MLX/ONNX variants shipped."
+      notes: "Released May 28 2026; hybrid MoE on-device flagship, 128K context, reasoning-only with explicit CoT, scaled to 38T training tokens. IFEval +12.4, AIME25 +22.5 vs LFM2-8B-A1B. AA Intelligence Index 8 (AA v4.1) — above LFM2-24B-A2B's 5. GGUF/MLX/ONNX variants shipped."
     - name: LFM2.5-1.2B-JP / Audio-1.5B-JP
       parameters: 1.2B
       notes: Japanese-language variants released June 4 2026 (text + audio).

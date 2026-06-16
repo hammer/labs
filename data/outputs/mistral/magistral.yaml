@@ -29,15 +29,15 @@ model:
   architecture: dense
   # Anchored to Magistral Small 1.2 (the AA URL in sources) — the open-weight
   # checkpoint AAOI scored; Medium's higher AAII lives in variants.
-  intelligence_index: 18
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 12
+  intelligence_index_version: "AA v4.1"
   openness_index: 50
   openness_index_version: "AA Openness Index v1.0"
   variants:
     - name: Magistral Small 1.2
       parameters: 24B
-      notes: Apache 2.0 open weights; AA Intelligence Index 18, AAOI 50
+      notes: Apache 2.0 open weights; AA Intelligence Index 12, AAOI 50
     - name: Magistral Medium 1.2
-      notes: Proprietary; AA Intelligence Index 27, AAOI 27.8
+      notes: Proprietary; AA Intelligence Index 20, AAOI 27.8
 paper:
   arxiv: "2506.10910"

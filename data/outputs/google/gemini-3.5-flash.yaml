@@ -22,7 +22,7 @@ description: >
   at ~4x the output speed of peer frontier models. Self-reported benchmarks
   include Terminal-Bench 2.1 76.2%, GDPval-AA 1656 Elo, MCP Atlas 83.6%.</p>
 
-  <p><strong>AA Intelligence Index v4.0: 55</strong> (#8 of 151). 190.2 tok/s
+  <p><strong>AA Intelligence Index v4.1: 50</strong>. 190.2 tok/s
   output speed (#3 overall). Pricing $1.50 / $9.00 per 1M input/output. First-token
   latency is notably high (22.5s vs 2.6s median) &mdash; the speed advantage is in
   steady-state generation rather than time-to-first-token. Gemini 3.5 Pro
@@ -34,8 +34,8 @@ tags:
   - agentic
 model:
   context_window: 1000000
-  intelligence_index: 55
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 50
+  intelligence_index_version: "AA v4.1"
   openness_index: 5.6
   openness_index_version: "AA Openness Index v1.0 (family inference)"
   benchmark_scores:

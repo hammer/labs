@@ -8,7 +8,7 @@ sources:
     url: https://artificialanalysis.ai/models/mistral-medium-3-1
 description: >
   <p>Non-reasoning multimodal mid-tier model. 128K context. Text and image
-  inputs, text output. AA Intelligence Index <strong>21</strong>. Cascade
+  inputs, text output. AA Intelligence Index <strong>15</strong>. Cascade
   Distillation source for the Ministral 3 family. Proprietary; weights not
   released. Superseded by <a href="/outputs/mistral/mistral-medium-3.5">Mistral
   Medium 3.5</a> in April 2026, which folded reasoning and coding into one
@@ -17,8 +17,8 @@ tags:
   - multimodal
 model:
   context_window: 128000
-  intelligence_index: 21
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 15
+  intelligence_index_version: "AA v4.1"
   openness_index: 11.1
   openness_index_version: "AA Openness Index v1.0"
 related:

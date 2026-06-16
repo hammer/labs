@@ -258,8 +258,8 @@ The `intelligence_index` field records a model's score on Artificial Analysis's 
 
 ```yaml
 model:
-  intelligence_index: 53
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 44
+  intelligence_index_version: "AA v4.1"   # current AA Intelligence Index version (June 2026)
 ```
 
 **Whenever you set `intelligence_index`, also add the matching AA model page to `sources`.** This is the canonical link to the AA-scored variant and the only handle the `fetch-aa-openness` script uses to map our outputs to AA's slugs — without it, the AAOI backfill silently skips the entry. Format:
@@ -281,7 +281,7 @@ Use the slug that AA's URL actually serves. AA's slug often differs from ours: l
 
 Rule of thumb: the top-level number, the file slug, and the primary AA URL should always describe the same thing.
 
-**The version trap.** AA periodically recalibrates the composite. Each major version change can drop scores 10+ points as new evals are mixed in. AA v4.0 (composite of GDPval-AA, τ²-Bench Telecom, Terminal-Bench Hard, SciCode, AA-LCR, AA-Omniscience, IFBench, Humanity's Last Exam, GPQA Diamond, CritPt) shipped late 2025 and silently invalidated many older scores — Granite 4.0 H-Small went 23 → 11 across that migration, for example. Treat any pre-v4 score as needing re-verification.
+**The version trap.** AA periodically recalibrates the composite. Each version change can drop scores 10+ points as evals are swapped/updated. AA v4.0 (composite of GDPval-AA, τ²-Bench Telecom, Terminal-Bench Hard, SciCode, AA-LCR, AA-Omniscience, IFBench, Humanity's Last Exam, GPQA Diamond, CritPt) shipped late 2025 and silently invalidated many older scores — Granite 4.0 H-Small went 23 → 11 across that migration. **v4.1 (current, June 2026)** updated GDPval-AA→V2, τ²-Banking→τ³-Banking, and Terminal-Bench Hard→v2.1, recalibrating everything downward again (e.g. Kimi-K2.6 54 → 43, Grok-4.20 49 → 37). Treat any score tagged below the current version as needing re-verification; refresh the whole set with `npm run fetch-aa-intelligence` (bump its `AAII_VERSION` constant first).
 
 **Audit pattern.** When AA bumps to a new index version:
 

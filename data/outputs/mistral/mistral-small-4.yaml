@@ -17,7 +17,7 @@ description: >
   coding in one architecture. 256K context. 3x throughput vs Mistral
   Small 3 with 40% latency reduction. Configurable reasoning effort.</p>
 
-  <p>AA Intelligence Index: 19 (non-reasoning, #6/38). Apache 2.0.</p>
+  <p>AA Intelligence Index: 12 (non-reasoning). Apache 2.0.</p>
 
   <p><strong>May 31 2026:</strong> NVIDIA-collaboration
   <strong>NVFP4 quantized variant</strong> shipped on HuggingFace
@@ -34,8 +34,8 @@ model:
   parameters: 119B
   active_parameters: 6.5B
   context_window: 256000
-  intelligence_index: 19
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 12
+  intelligence_index_version: "AA v4.1"
   openness_index: 38.9
   openness_index_version: "AA Openness Index v1.0"
 related:

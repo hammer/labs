@@ -17,7 +17,7 @@ description: >
   estimated ~3T parameters. Up to 1M token context via API. Features Think mode
   (extended reasoning) and DeepSearch (agentic web research).</p>
 
-  <p>Grok-3 mini Reasoning achieved AA index 32. AA Intelligence Index: <strong>25</strong>.
+  <p>Grok-3 mini Reasoning achieved AA index 23. AA Intelligence Index: <strong>18</strong>.
   Proprietary.</p>
 tags:
   - frontier
@@ -26,8 +26,8 @@ tags:
 model:
   architecture: moe
   context_window: 1000000
-  intelligence_index: 25
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 18
+  intelligence_index_version: "AA v4.1"
   parameters_estimated:
     value: "2.1T"
     source: https://arxiv.org/abs/2604.24827
@@ -38,7 +38,7 @@ model:
   variants:
     - name: Grok-3
     - name: Grok-3 mini
-      notes: Reasoning variant, AA index 32
+      notes: Reasoning variant, AA index 23
 related:
   - grok-1
   - grok-4

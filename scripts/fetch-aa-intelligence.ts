@@ -27,7 +27,7 @@ import { readFileSync, writeFileSync } from 'fs';
 import { globSync } from 'glob';
 
 const LEADERBOARD_URL = 'https://artificialanalysis.ai/leaderboards/models';
-const AAII_VERSION = 'AA v4.0';
+const AAII_VERSION = 'AA v4.1';
 const dryRun = process.argv.includes('--dry-run');
 
 // ── Fetch the RSC payload ────────────────────────────────────────────────

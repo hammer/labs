@@ -30,8 +30,8 @@ tags:
 model:
   architecture: dense
   parameters: 10.7B
-  intelligence_index: 12
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 6
+  intelligence_index_version: "AA v4.1"
 paper:
   arxiv: "2312.15166"
 related:

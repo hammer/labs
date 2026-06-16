@@ -35,8 +35,8 @@ outputs:
       architecture: moe
       parameters: 1T
       active_parameters: 50B
-      intelligence_index: 16
-      intelligence_index_version: "AA v4.0"
+      intelligence_index: 10
+      intelligence_index_version: "AA v4.1"
       openness_index: 44.4
       openness_index_version: "AA Openness Index v1.0"
   - name: "Ling 2.0: Every Activation Boosted"

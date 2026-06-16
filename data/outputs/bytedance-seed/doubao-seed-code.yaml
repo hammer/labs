@@ -15,9 +15,9 @@ description: >
   text output; <strong>256K context window</strong>. Free tier on the Volcengine
   API.</p>
 
-  <p><strong>AA Intelligence Index v4.0: 34</strong> &mdash; the highest-scoring
+  <p><strong>AA Intelligence Index v4.1: 26</strong> &mdash; the highest-scoring
   ByteDance model on Artificial Analysis as of May 2026, well above
-  <a href="/outputs/bytedance-seed/seed-oss">Seed-OSS-36B</a> (25). Successor to
+  <a href="/outputs/bytedance-seed/seed-oss">Seed-OSS-36B</a> (18). Successor to
   the open-source <a href="/outputs/bytedance-seed/seed-coder">Seed-Coder-8B</a>
   family. Proprietary &mdash; ByteDance Seed has not disclosed parameter count or
   architecture details.</p>
@@ -28,8 +28,8 @@ tags:
   - agentic
 model:
   context_window: 256000
-  intelligence_index: 34
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 26
+  intelligence_index_version: "AA v4.1"
   openness_index: 11.1
   openness_index_version: "AA Openness Index v1.0"
 related:

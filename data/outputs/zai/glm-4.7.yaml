@@ -21,7 +21,7 @@ tags:
   - agentic
 model:
   architecture: moe
-  intelligence_index: 42
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 34
+  intelligence_index_version: "AA v4.1"
   openness_index: 44.4
   openness_index_version: "AA Openness Index v1.0"

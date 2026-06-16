@@ -17,15 +17,15 @@ description: >
   as Phi-4 Mini (3.8B, 128K context) and Phi-4 Reasoning (chain-of-thought, April 2025).</p>
 
   <p>Phi-4 Reasoning Plus achieved 78% on AIME 2025, beating QwQ-32B despite being less
-  than half the size. AA Intelligence Index: <strong>10</strong>. MIT License.</p>
+  than half the size. AA Intelligence Index: <strong>5</strong>. MIT License.</p>
 tags:
   - open-weight
   - reasoning
 model:
   architecture: dense
   parameters: 14B
-  intelligence_index: 10
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 5
+  intelligence_index_version: "AA v4.1"
   openness_index: 50
   openness_index_version: "AA Openness Index v1.0"
   variants:

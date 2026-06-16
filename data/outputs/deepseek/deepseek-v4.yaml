@@ -59,8 +59,8 @@ outputs:
       active_parameters: 49B
       context_window: 1000000
       training_tokens: 33T
-      intelligence_index: 52
-      intelligence_index_version: "AA v4.0"
+      intelligence_index: 44
+      intelligence_index_version: "AA v4.1"
       openness_index: 50
       openness_index_version: "AA Openness Index v1.0"
   - name: DeepSeek-V4-Flash

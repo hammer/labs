@@ -16,7 +16,7 @@ description: >
   <strong>Reasoning</strong> (multi-step CoT for math, code, logic).
   Designed to fit on a single GPU.</p>
 
-  <p>AA Intelligence Index: 14 (non-reasoning, #30 of 117). Matches or
+  <p>AA Intelligence Index: 8 (non-reasoning). Matches or
   exceeds GPT-4o, DeepSeek R1, and Qwen 3 on several benchmarks despite
   being less than half their size. Leads all models on Korean benchmarks
   (Ko-MMLU, Hae-Rae, Ko-IFEval).</p>
@@ -28,8 +28,8 @@ model:
   architecture: dense
   parameters: 31B
   context_window: 64000
-  intelligence_index: 14
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 8
+  intelligence_index_version: "AA v4.1"
   openness_index: 11.1
   openness_index_version: "AA Openness Index v1.0"
 related:

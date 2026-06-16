@@ -64,7 +64,7 @@ description: >
   outperforms the previous Granite 4.0 32B MoE despite being a simpler dense
   model &mdash; training quality substituting for scale.</p>
 
-  <p><strong>AA Intelligence Index: 15 (30B), 12 (8B), 9 (3B)</strong> &mdash;
+  <p><strong>AA Intelligence Index: 9 (30B), 7 (8B), 3 (3B)</strong> &mdash;
   all three are above-median for open-weight non-reasoning models of similar
   size, and notably token-efficient relative to peers. Granite Speech 4.1 2B
   reports a 5.33% word-error rate (top of the OpenASR leaderboard). 8B vendor
@@ -78,8 +78,8 @@ model:
   architecture: dense
   parameters: 30B
   context_window: 512000
-  intelligence_index: 15
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 9
+  intelligence_index_version: "AA v4.1"
   openness_index: 61.1
   openness_index_version: "AA Openness Index v1.0"
   training_tokens: 15T
@@ -87,18 +87,18 @@ model:
   variants:
     - name: Granite 4.1 30B Instruct
       parameters: 30B
-      notes: AA Intelligence Index 15 — highest in family
+      notes: AA Intelligence Index 9 — highest in family
     - name: Granite 4.1 30B Base
       parameters: 30B
     - name: Granite 4.1 8B Instruct
       parameters: 8B
-      notes: AA Intelligence Index 12
+      notes: AA Intelligence Index 7
     - name: Granite 4.1 8B FP8
       parameters: 8B
       notes: FP8-quantized variant of 8B Instruct
     - name: Granite 4.1 3B Instruct
       parameters: 3B
-      notes: AA Intelligence Index 9 · 128K context
+      notes: AA Intelligence Index 3 · 128K context
     - name: Granite Vision 4.1 4B
       parameters: 4B
       notes: LoRA on Granite 4.1 3B; document/table/chart extraction

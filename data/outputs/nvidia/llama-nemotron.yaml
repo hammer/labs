@@ -39,8 +39,8 @@ model:
   architecture: dense
   base_model: llama-3.1
   context_window: 128000
-  intelligence_index: 15
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 9
+  intelligence_index_version: "AA v4.1"
   openness_index: 52.8
   openness_index_version: "AA Openness Index v1.0"
   variants:

@@ -20,7 +20,7 @@ description: >
   test-time scaling: AIME25 reaches 96.7% with 38% fewer tokens.</p>
 
   <p>AIME24: 88.1%, AIME25: 83.1%, MATH500: 97.4%, LiveCodeBench-v6:
-  68.6%, GPQA-Diamond: 61.3%. AA Intelligence Index: 16. CC BY 4.0.</p>
+  68.6%, GPQA-Diamond: 61.3%. AA Intelligence Index: 10. CC BY 4.0.</p>
 tags:
   - open-weight
   - reasoning
@@ -29,8 +29,8 @@ model:
   architecture: dense
   parameters: 7B
   context_window: 256000
-  intelligence_index: 16
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 10
+  intelligence_index_version: "AA v4.1"
   openness_index: 44.4
   openness_index_version: "AA Openness Index v1.0"
 paper:

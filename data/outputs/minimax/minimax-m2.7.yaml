@@ -20,8 +20,8 @@ description: >
   independently build and stabilize agent systems. 56.22% on SWE-Pro.
   Proprietary (closed weights).
 model:
-  intelligence_index: 50
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 38
+  intelligence_index_version: "AA v4.1"
   openness_index: 22.2
   openness_index_version: "AA Openness Index v1.0"
 tags:

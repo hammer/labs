@@ -27,8 +27,8 @@ tags:
   - reasoning
 model:
   context_window: 200000
-  intelligence_index: 31
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 23
+  intelligence_index_version: "AA v4.1"
   openness_index: 5.6
   openness_index_version: "AA Openness Index v1.0 (family inference)"
   parameters_estimated:

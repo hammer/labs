@@ -29,9 +29,9 @@ description: >
   inside a reasoning loop. <strong><a href="/outputs/amazon/nova-sonic">Nova 2
   Sonic</a></strong> is the speech-to-speech model (its own page).</p>
 
-  <p>Top AA Intelligence Index v4.0 score in the family is <strong>36</strong>
+  <p>Top AA Intelligence Index v4.1 score in the family is <strong>22</strong>
   (Nova 2 Pro Preview, medium thinking) &mdash; a meaningful jump over the
-  Nova Premier predecessor (19). Proprietary, available via Amazon Bedrock.</p>
+  Nova Premier predecessor (13). Proprietary, available via Amazon Bedrock.</p>
 tags:
   - frontier
   - multimodal
@@ -39,31 +39,31 @@ tags:
   - agents
 model:
   context_window: 1000000
-  intelligence_index: 36
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 22
+  intelligence_index_version: "AA v4.1"
   openness_index: 11.1
   openness_index_version: "AA Openness Index v1.0 (family inference)"
   variants:
     - name: Nova 2 Pro Preview (medium thinking)
-      notes: AA Intelligence Index 36 (top of family); 1M context; reasoning + web grounding + code interpreter
+      notes: AA Intelligence Index 22 (top of family); 1M context; reasoning + web grounding + code interpreter
     - name: Nova 2 Pro Preview (low thinking)
-      notes: AA Intelligence Index 32
+      notes: AA Intelligence Index 20
     - name: Nova 2 Pro Preview (non-reasoning)
-      notes: AA Intelligence Index 23; 256K context for non-reasoning mode
+      notes: AA Intelligence Index 16; 256K context for non-reasoning mode
     - name: Nova 2 Lite (high thinking)
-      notes: AA Intelligence Index 35; 1M context; cost-tier reasoner
+      notes: AA Intelligence Index 21; 1M context; cost-tier reasoner
     - name: Nova 2 Lite (medium thinking)
-      notes: AA Intelligence Index 30
+      notes: AA Intelligence Index 19
     - name: Nova 2 Lite (low thinking)
-      notes: AA Intelligence Index 25
-    - name: Nova 2 Lite (non-reasoning)
       notes: AA Intelligence Index 18
+    - name: Nova 2 Lite (non-reasoning)
+      notes: AA Intelligence Index 12
     - name: Nova 2 Omni (medium thinking)
-      notes: AA Intelligence Index 28; native multimodal in/out (text+image+video+audio &rarr; text+image)
+      notes: AA Intelligence Index 21; native multimodal in/out (text+image+video+audio &rarr; text+image)
     - name: Nova 2 Omni (low thinking)
-      notes: AA Intelligence Index 23
-    - name: Nova 2 Omni (non-reasoning)
       notes: AA Intelligence Index 17
+    - name: Nova 2 Omni (non-reasoning)
+      notes: AA Intelligence Index 11
 related:
   - nova-premier
   - nova-sonic

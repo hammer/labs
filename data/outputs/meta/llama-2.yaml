@@ -18,15 +18,15 @@ description: >
 
   <p>Llama 2 was the first open-weight model with a permissive commercial license,
   enabling enterprise adoption at scale. The 70B chat model was competitive with
-  early GPT-3.5. AA Intelligence Index: 8 (70B). By Touvron et al.</p>
+  early GPT-3.5. AA Intelligence Index: 3 (70B). By Touvron et al.</p>
 tags:
   - open-weight
   - frontier
 model:
   architecture: dense
   parameters: 70B
-  intelligence_index: 8
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 3
+  intelligence_index_version: "AA v4.1"
   context_window: 4096
   training_tokens: 2T
   variants:

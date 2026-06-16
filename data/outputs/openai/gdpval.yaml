@@ -18,8 +18,8 @@ description: >
   14 years of experience. Scored via blind pairwise comparison against human expert
   baselines. 220-task gold subset open-sourced.</p>
 
-  <p>Carries the <strong>highest weight (16.7%) in the AA Intelligence Index
-  v4.0</strong> (via GDPval-AA, Artificial Analysis' independent re-evaluation using
+  <p>Carries the <strong>highest weight (20%) in the AA Intelligence Index
+  v4.1</strong> (via GDPval-AA v2, Artificial Analysis' independent re-evaluation using
   their Stirrup agentic harness). Represents a shift toward measuring economic value
   of AI capability rather than academic task performance. Inter-rater reliability is
   a known weakness (~66-71% agreement). By Patwardhan, Dias, Proehl et al.
@@ -46,5 +46,5 @@ eval:
     the 220-task open-sourced gold subset; experimental automated grader (66% agreement with expert
     graders, vs. 71% human inter-rater agreement)
   used_in:
-    - AA Intelligence Index v4.0
+    - AA Intelligence Index v4.1 (as GDPval-AA v2)
   leaderboard_url: https://artificialanalysis.ai/evaluations/gdpval-aa

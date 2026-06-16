@@ -26,8 +26,8 @@ tags:
   - open-weight
 model:
   architecture: moe
-  intelligence_index: 36
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 28
+  intelligence_index_version: "AA v4.1"
   openness_index: 27.8
   openness_index_version: "AA Openness Index v1.0"
   parameters: 230B

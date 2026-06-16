@@ -16,7 +16,7 @@ sources:
 description: >
   Vision-language reasoning model with chain-of-thought and agentic
   capabilities. 32B parameters, 128K context. Supports text, image,
-  and video input. AA Intelligence Index: 24 (#16 of 108). Open weights
+  and video input. AA Intelligence Index: 24. Open weights
   with commercial license. Also available as 14B variant.
 tags:
   - reasoning

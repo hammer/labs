@@ -21,7 +21,7 @@ description: >
   with Multi-Token Prediction. Trained in NVFP4 precision. 1M context
   window. 5x throughput over previous generation.</p>
 
-  <p>AA Intelligence Index: <strong>36</strong> (#2 in class, 293 t/s —
+  <p>AA Intelligence Index: <strong>25</strong> (293 t/s —
   fastest among top models). AIME25: 90.21, HMMT Feb25: 93.67, GPQA:
   79.23/82.70 (tools), MMLU-Pro: 83.73, SWE-Bench: 60.47 (OpenHands),
   RULER@1M: 91.75. Open weights with complete training data (10T+
@@ -36,8 +36,8 @@ model:
   parameters: 120B
   active_parameters: 12B
   context_window: 1000000
-  intelligence_index: 36
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 25
+  intelligence_index_version: "AA v4.1"
   openness_index: 83.3
   openness_index_version: "AA Openness Index v1.0"
 paper:

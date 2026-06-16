@@ -36,8 +36,8 @@ outputs:
         url: https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Instruct
     model:
       architecture: moe
-      intelligence_index: 11
-      intelligence_index_version: "AA v4.0"
+      intelligence_index: 5
+      intelligence_index_version: "AA v4.1"
   - name: "DeepSeek-Coder-V2: Breaking the Barrier of Closed-Source Models in Code Intelligence"
     type: paper
     sources:

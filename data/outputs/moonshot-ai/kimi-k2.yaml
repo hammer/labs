@@ -33,8 +33,8 @@ outputs:
       architecture: moe
       parameters: 1T
       active_parameters: 32B
-      intelligence_index: 26
-      intelligence_index_version: "AA v4.0"
+      intelligence_index: 19
+      intelligence_index_version: "AA v4.1"
       openness_index: 44.4
       openness_index_version: "AA Openness Index v1.0"
   - name: "Kimi K2 Tech Report: Open Agentic Intelligence"

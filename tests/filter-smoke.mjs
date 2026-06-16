@@ -40,7 +40,7 @@ function log(name, ok, detail = '') {
     chips: document.querySelectorAll('.filter-chip').length,
     countText: document.querySelector('.filter-count').textContent,
   }));
-  log('home: ?region=china&intelligence=30-', t.visible === 9 && t.chips === 2, JSON.stringify(t));
+  log('home: ?region=china&intelligence=30-', t.visible === 7 && t.chips === 2, JSON.stringify(t));
   await page.close();
 }
 

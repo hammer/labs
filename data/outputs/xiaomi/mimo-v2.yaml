@@ -37,8 +37,8 @@ outputs:
       architecture: moe
       parameters: 309B
       active_parameters: 15B
-      intelligence_index: 41
-      intelligence_index_version: "AA v4.0"
+      intelligence_index: 33
+      intelligence_index_version: "AA v4.1"
       training_tokens: 27T
   - name: "MiMo-V2-Flash: Unlocking Extreme Inference Efficiency"
     type: paper

@@ -25,8 +25,8 @@ tags:
   - training
 model:
   architecture: moe
-  intelligence_index: 27
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 20
+  intelligence_index_version: "AA v4.1"
   openness_index: 50
   openness_index_version: "AA Openness Index v1.0"
   parameters: 671B

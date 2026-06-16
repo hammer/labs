@@ -18,15 +18,15 @@ description: >
   on-device deployment.</p>
 
   <p>Gemini 1.0 Ultra achieved SOTA on 30 of 32 academic benchmarks. Architecture
-  details undisclosed (parameter count not published). AA Intelligence Index: 10 (Ultra).
+  details undisclosed (parameter count not published). AA Intelligence Index: 5 (Ultra).
   Proprietary.</p>
 tags:
   - frontier
   - multimodal
 model:
   context_window: 32000
-  intelligence_index: 10
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 5
+  intelligence_index_version: "AA v4.1"
   openness_index: 5.6
   openness_index_version: "AA Openness Index v1.0 (family inference)"
 paper:

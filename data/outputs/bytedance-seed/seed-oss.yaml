@@ -17,8 +17,8 @@ description: >
   Open-source 36B-parameter LLM with 512K context window. Achieves strong
   performance across reasoning, agent, and general tasks despite being trained
   on only 12T tokens. Released under Apache-2.0 license. AA Intelligence Index
-  v4.0: 25 &mdash; not the lab's top score
-  (<a href="/outputs/bytedance-seed/doubao-seed-code">Doubao Seed Code</a> at 34
+  v4.1: 18 &mdash; not the lab's top score
+  (<a href="/outputs/bytedance-seed/doubao-seed-code">Doubao Seed Code</a> at 26
   is higher), but the strongest open-weight ByteDance LLM as of May 2026.
 tags:
   - open-weight
@@ -29,8 +29,8 @@ model:
   architecture: dense
   parameters: 36B
   context_window: 512000
-  intelligence_index: 25
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 18
+  intelligence_index_version: "AA v4.1"
   openness_index: 44.4
   openness_index_version: "AA Openness Index v1.0"
   training_tokens: 12T

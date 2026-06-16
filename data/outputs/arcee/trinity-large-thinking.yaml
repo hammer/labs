@@ -23,7 +23,7 @@ description: >
   behavior across long-running agent loops. Relicensed to
   <strong>OpenMDW-1.1</strong> (Linux Foundation) on 2026-05-29, from Apache 2.0.</p>
 
-  <p>AA Intelligence Index: <strong>32</strong> (above median of 27 for open-weight
+  <p>AA Intelligence Index: <strong>24</strong> (above the open-weight median for
   models of similar size). <strong>132 tok/s</strong> output speed, 0.91s time-to-first-token.
   tau2-Airline: 88.0%, <strong>AIME25: 96.3%</strong>, SWE-Bench: 63.2%, PinchBench: 91.9%
   (#2 globally). <strong>#1 most-used open model in the US on OpenRouter.</strong>
@@ -38,8 +38,8 @@ model:
   architecture: moe
   base_model: trinity-large
   context_window: 512000
-  intelligence_index: 32
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 24
+  intelligence_index_version: "AA v4.1"
   openness_index: 44.4
   openness_index_version: "AA Openness Index v1.0"
 related:

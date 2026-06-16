@@ -35,8 +35,8 @@ tags:
 model:
   architecture: moe
   parameters: 754B
-  intelligence_index: 51
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 40
+  intelligence_index_version: "AA v4.1"
   openness_index: 44.4
   openness_index_version: "AA Openness Index v1.0"
 related:

@@ -26,17 +26,17 @@ tags:
   - open-weight
 model:
   architecture: dense
-  intelligence_index: 11
-  intelligence_index_version: "AA v4.0"
+  intelligence_index: 6
+  intelligence_index_version: "AA v4.1"
   variants:
     - name: Ministral 3 3B
       parameters: 3B
-      notes: AA Intelligence Index 11
+      notes: AA Intelligence Index 6
     - name: Ministral 3 8B
       parameters: 8B
-      notes: AA Intelligence Index 15
+      notes: AA Intelligence Index 9
     - name: Ministral 3 14B
       parameters: 14B
-      notes: AA Intelligence Index 16 (highest variant)
+      notes: AA Intelligence Index 10 (highest variant)
 paper:
   arxiv: "2601.08584"
