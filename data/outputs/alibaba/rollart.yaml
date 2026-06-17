@@ -1,0 +1,39 @@
+name: "RollArt: Disaggregated Multi-Task Agentic RL Training at Scale"
+slug: rollart
+lab: alibaba
+type: paper
+date: "2025-12-27"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.22560
+  - label: GitHub (ROLL)
+    url: https://github.com/alibaba/ROLL
+description: >
+  <p>A training-infrastructure system for <strong>multi-task agentic
+  reinforcement learning on disaggregated hardware</strong>. Agentic RL
+  workloads mix compute-bound prefill, bandwidth-bound decode, CPU-heavy
+  environment execution, and bursty reward evaluation; RollArt maps each
+  pipeline stage to <strong>best-fit hardware</strong> — prefill-heavy tasks to
+  compute-optimized GPUs, decode-heavy to bandwidth-optimized GPUs, and
+  environments to CPU clusters — instead of colocating everything or decoupling
+  coarsely.</p>
+
+  <p>It decouples rollout at the <strong>trajectory level</strong> so
+  generation, environment interaction, and reward scoring proceed independently
+  (a slow or failed environment never blocks the others), offloads stateless
+  reward computation to serverless infrastructure, and overlaps rollout with
+  training via <strong>staleness-bounded asynchronous weight sync</strong>.
+  Reports <strong>1.31–2.05× training-time reduction</strong> over prior RL
+  systems, and was validated training a hundreds-of-billions-parameter MoE for
+  Alibaba's <strong>Qoder</strong> coding product on a >3,000-GPU cluster. Built
+  on Alibaba's open <a href="https://github.com/alibaba/ROLL">ROLL</a>
+  framework. By Alibaba Group / Tongyi Lab with HKUST.</p>
+tags:
+  - training
+  - infrastructure
+  - reinforcement-learning
+  - agentic
+  - research
+paper:
+  arxiv: "2512.22560"
+  code_url: https://github.com/alibaba/ROLL
