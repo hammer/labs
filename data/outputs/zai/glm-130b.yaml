@@ -8,6 +8,8 @@ sources:
     url: https://arxiv.org/abs/2210.02414
   - label: GitHub
     url: https://github.com/zai-org/GLM-130B
+  - label: Blog (Tsinghua KEG)
+    url: https://keg.cs.tsinghua.edu.cn/glm-130b/posts/glm-130b/
 description: >
   Landmark bilingual (English/Chinese) model among the first in China to
   rival GPT-3.
