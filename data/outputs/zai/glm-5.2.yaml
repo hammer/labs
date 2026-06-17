@@ -5,42 +5,70 @@ type: model
 date: 2026-06-13
 flagship: true
 sources:
-  - label: API Docs (Z.ai devpack)
-    url: https://docs.z.ai/devpack/latest-model
+  - label: Announcement (Z.ai blog)
+    url: https://z.ai/blog/glm-5.2
+  - label: HuggingFace
+    url: https://huggingface.co/zai-org/GLM-5.2
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/glm-5-2
+  - label: GLM-5 Technical Report (arXiv)
+    url: https://arxiv.org/abs/2602.15763
+  - label: API Docs (Z.ai)
+    url: https://docs.z.ai/guides/llm/glm-5.2
   - label: GitHub
     url: https://github.com/zai-org/GLM-5
-  - label: Announcement coverage (AI Weekly)
-    url: https://aiweekly.co/node/2946
 description: >
-  <p>Zhipu / <a href="/labs/zai">Z.ai</a>'s latest <strong>coding-first
-  agentic model</strong>, the successor to
-  <a href="/outputs/zai/glm-5.1">GLM-5.1</a>. Launched 2026-06-13 across all
-  GLM Coding Plan tiers (Lite / Pro / Max / Team) with a <strong>1M-token
-  context window</strong> and up to 131,072 output tokens — sized for
-  PR-scale diffs and long plan-then-execute agentic traces. Exposes two
-  thinking-effort presets, <strong>High</strong> and <strong>Max</strong>,
-  with Zhipu recommending Max as the default for coding; positioned for
-  deeper reasoning and more stable long-horizon task performance than
-  GLM-5.1.</p>
+  <p>Zhipu / <a href="/labs/zai">Z.ai</a>'s flagship <strong>coding-first
+  agentic model</strong> and successor to
+  <a href="/outputs/zai/glm-5.1">GLM-5.1</a> — a <strong>~753B MoE with
+  DeepSeek Sparse Attention (DSA)</strong> and the <strong>highest-scoring
+  open model on the AA Intelligence Index v4.1 (51, #1 of 92)</strong>.
+  Launched 2026-06-13 on the GLM Coding Plan tiers; full <strong>MIT open
+  weights</strong>, standalone API, and benchmarks followed 2026-06-16. First
+  GLM with a "solid" <strong>1M-token context</strong> (131,072 max output),
+  with High/Max thinking-effort presets (Max recommended for coding).</p>
 
-  <p>Rolled out coding-plan-first: the standalone API, the Z.ai chatbot, and
-  the <strong>MIT-licensed open weights are slated for the following week</strong>.
-  Zhipu published <strong>no benchmarks and no architecture/parameter details
-  at launch</strong>, so those fields are intentionally left unset here pending
-  the technical materials and the weight/AA release; this entry will be
-  enriched once the open weights and scores land.</p>
+  <p>Architecture: introduces
+  <strong><a href="/outputs/zai/indexshare">IndexShare</a></strong>
+  (<a href="https://arxiv.org/abs/2603.12201">arXiv 2603.12201</a>) — reusing
+  one lightweight sparse-attention indexer across every four layers to cut
+  per-token FLOPs <strong>2.9× at 1M context</strong> — plus an improved MTP
+  layer that lifts speculative-decoding acceptance length up to 20%.
+  Self-reported benchmarks: AIME 2026 99.2, GPQA-Diamond 91.2, IMOAnswerBench
+  91.0, SWE-bench Pro 62.1, Terminal-Bench 2.1 82.7 (best harness), DeepSWE
+  46.2, FrontierSWE 74.4 — a large jump over GLM-5.1 and competitive with
+  Claude Opus 4.8 / GPT-5.5 / Gemini 3.1 Pro at far lower cost. Pure MIT
+  license, no regional limits.</p>
 tags:
+  - moe
+  - open-weight
+  - frontier
   - coding
   - agentic
-  - frontier
+  - reasoning
 model:
+  architecture: moe
+  parameters: 753B
   context_window: 1000000
-  license: MIT (open weights pending)
+  intelligence_index: 51
+  intelligence_index_version: "AA v4.1"
+  license: MIT
+  benchmark_scores:
+    - benchmark: AIME 2026
+      score: "99.2"
+    - benchmark: GPQA-Diamond
+      score: "91.2"
+    - benchmark: IMOAnswerBench
+      score: "91.0"
+    - benchmark: SWE-bench Pro
+      score: "62.1"
+    - benchmark: Terminal-Bench 2.1
+      score: "82.7"
+    - benchmark: DeepSWE
+      score: "46.2"
+    - benchmark: FrontierSWE
+      score: "74.4"
 related:
   - glm-5.1
   - glm-5
-notes: >
-  API/coding-plan release 2026-06-13; MIT open weights, standalone API, and
-  benchmarks expected ~week of 2026-06-21. Architecture, parameter count, and
-  AA Intelligence Index undisclosed at launch — do not infer; backfill when
-  the weights/technical report drop.
+  - indexshare

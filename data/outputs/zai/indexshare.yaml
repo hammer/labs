@@ -1,0 +1,42 @@
+name: "IndexShare (IndexCache): Cross-Layer Index Reuse for Sparse Attention"
+slug: indexshare
+lab: zai
+type: paper
+date: "2026-03-12"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.12201
+description: >
+  <p>The sparse-attention efficiency technique behind
+  <a href="/outputs/zai/glm-5.2">GLM-5.2</a> (productized there as
+  <strong>IndexShare</strong>; the paper calls it IndexCache). DeepSeek Sparse
+  Attention (DSA) uses a lightweight "lightning indexer" to select the top-k
+  relevant tokens per query, reducing core attention from O(L²) to O(Lk) — but
+  the indexer itself stays O(L²) and reruns at every layer, even though its
+  top-k selections are highly similar across consecutive layers.</p>
+
+  <p>IndexCache exploits that cross-layer redundancy by partitioning layers
+  into a few <em>Full</em> layers that run their own indexer and a majority of
+  <em>Shared</em> layers that reuse the nearest Full layer's top-k indices. In
+  GLM-5.2 this reuses one indexer across every four sparse-attention layers,
+  cutting per-token FLOPs <strong>2.9× at 1M-token context</strong> with
+  negligible quality loss. By Tsinghua University and
+  <a href="/labs/zai">Z.ai</a>.</p>
+tags:
+  - architecture
+  - efficiency
+  - research
+paper:
+  arxiv: "2603.12201"
+  authors:
+    - Yushi Bai
+    - Qian Dong
+    - Ting Jiang
+    - Xin Lv
+    - Zhengxiao Du
+    - Aohan Zeng
+    - Jie Tang
+    - Juanzi Li
+related:
+  - glm-5.2
+  - glm-5
