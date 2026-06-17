@@ -51,16 +51,18 @@ description: >
 people:
   - name: Jie Tang (唐杰)
     url: https://keg.cs.tsinghua.edu.cn/jietang/
-    role: Co-founder & Senior PI
-    formerly: Tsinghua University (WeBank Chair Professor, KEG lab director); PhD Tsinghua (2006); MS/BS Yanshan University
+    role: Co-founder & Chief Scientist (also Chair Professor & Foundation Model Research Center director, Tsinghua)
+    formerly: PhD Tsinghua (2006); MS/BS Yanshan University
     description: >
       <p>Co-founded Zhipu AI in June 2019 with Li Juanzi, spinning it out of
       Tsinghua's <strong>Knowledge Engineering Group (KEG)</strong>. Created
       <strong><a href="https://www.aminer.org/">AMiner</a></strong> in 2006,
       an academic search engine serving 210,000+ organizations across 220
       countries. Co-led China's WuDao 1.0 and WuDao 2.0 (1.75T parameter)
-      models in 2021 with BAAI. Co-authored GLM-130B (ICLR 2023) and oversaw
-      the CogView/CogVideo series. Company IPO'd on HKEX January 8, 2026.
+      models in 2021 with BAAI. Senior author of the original
+      <a href="/outputs/zai/glm">GLM</a> paper (ACL 2022) and GLM-130B (ICLR
+      2023), and oversaw the CogView/CogVideo series. Company IPO'd on HKEX
+      January 8, 2026.
       Forbes net worth: $1.9B (March 2026).</p>
 
       <p><strong>~73,000 citations</strong>. IEEE Fellow (2021), ACM Fellow
@@ -107,7 +109,14 @@ people:
         url: https://openreview.net/profile?id=~Aohan_Zeng1
   - name: Zhengxiao Du
     url: https://zxdu.xyz/
-    role: Core Researcher (GLM base model co-lead)
+    role: Tech Lead, GLM base models (ChatGLM pre-training)
+    formerly: Tsinghua University (PhD 2025, advisor Jie Tang)
+    description: >
+      <p>Co-first-author of the GLM paper (ACL 2022) and a core
+      <a href="/labs/zai">Z.ai</a> researcher since 2023, where he co-leads the
+      <strong>GLM base-model / ChatGLM pre-training</strong> team (an author of
+      the GLM-5 technical report, 2026). Completed his Tsinghua PhD under
+      <a href="/people/jie-tang">Jie Tang</a> in 2025.</p>
     urls:
       - label: Google Scholar
         url: https://scholar.google.co.uk/citations?user=A8x07E0AAAAJ
@@ -119,6 +128,53 @@ people:
     urls:
       - label: GitHub
         url: https://github.com/zRzRzRzRzRzRzR
+  - name: Xiao Liu
+    url: https://github.com/Xiao9905
+    role: Tech Lead, AutoGLM (foundation agents)
+    formerly: Tsinghua University (PhD candidate, KEG, advisor Jie Tang)
+    description: >
+      <p>Co-author of the GLM paper (ACL 2022) and a core
+      <a href="/labs/zai">Z.ai</a> researcher, where he leads the
+      <strong>AutoGLM</strong> foundation-agents line (AutoGLM 2.0, a universal
+      mobile-phone agent, launched August 2025). Lead author of
+      <strong>P-tuning</strong> / P-tuning v2, WebGLM, AgentBench, and AutoGLM,
+      and a contributor across the GLM-130B / ChatGLM / GLM-4 series. Completing
+      his Tsinghua PhD under <a href="/people/jie-tang">Jie Tang</a>.</p>
+  - name: Jiezhong Qiu
+    url: http://xptree.github.io/
+    role: GLM (2022) co-author; now at Zhejiang Lab
+    formerly: Tsinghua University (BS/PhD, KEG, advisor Jie Tang)
+    description: >
+      <p>Co-author of the GLM paper (ACL 2022). A Tsinghua KEG PhD known for
+      network/graph representation learning (NetMF, NetSMF, GCC), he is now a
+      Researcher at <strong>Zhejiang Lab</strong> (Hangzhou; Zhejiang
+      University&ndash;Zhejiang Lab "Hundred Talents" program) working on
+      <strong>AI for science</strong> &mdash; protein design and inverse folding
+      (including work in <em>Nature Computational Science</em>, 2026). He also
+      collaborates on <a href="/labs/moonshot-ai">Moonshot AI</a>'s Kimi models
+      (MoBA, Kimi-VL, Kimi Linear).</p>
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=3rlMzwYAAAAJ
+      - label: GitHub
+        url: https://github.com/xptree
+  - name: Yujie Qian
+    url: https://people.csail.mit.edu/yujieq/
+    role: GLM (2022) co-author; now at Thinking Machines Lab
+    formerly: MIT CSAIL (PhD 2023, advisor Regina Barzilay); Voyage AI (founding research scientist)
+    description: >
+      <p>Co-first-author of the GLM paper (ACL 2022) &mdash; the only author from
+      outside the Tsinghua/Zhipu circle, then a PhD student at <strong>MIT
+      CSAIL</strong> under Regina Barzilay (PhD 2023), where his thesis spanned
+      NLP and molecular ML (MolScribe, RxnScribe). He was a founding research
+      scientist at <strong>Voyage AI</strong> (embeddings/RAG, acquired by
+      MongoDB) and is now a <strong>Member of Technical Staff at Thinking
+      Machines Lab</strong>, Mira Murati's startup in San Francisco.</p>
+    urls:
+      - label: LinkedIn
+        url: https://www.linkedin.com/in/thomasq0809/
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=93a-9kkAAAAJ
 news:
   - title: "Z.ai GLM-5.2 Tops the AA Intelligence Index as the Highest-Scoring Open Model (51); MIT Open Weights Released"
     url: https://cryptobriefing.com/z-ai-glm-5-2-intelligence-index-leader/

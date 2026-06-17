@@ -47,15 +47,15 @@ description: >
   <a href="https://github.com/kvcache-ai/Mooncake">Mooncake</a> (KVCache-centric
   serving, Best Paper at FAST 2025).</p>
 people:
-  - name: Yang Zhilin
+  - name: Zhilin Yang
     url: https://kimiyoung.github.io/
-    role: Founder & CEO
-    formerly: CMU PhD; Google Brain; Meta FAIR; Recurrent AI
+    role: Co-founder & CEO
+    formerly: CMU PhD; Google Brain; Meta (intern); Recurrent AI (co-founder)
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Zhilin_Yang2
     description: >
-      <p>Born 1992. BS from Tsinghua; PhD from CMU under Ruslan Salakhutdinov and William Cohen. Co-authored <strong>Transformer-XL</strong> and <strong>XLNet</strong>. Interned at Google Brain and Meta. Led development of the Wu Dao LLM at BAAI (2021). Co-founded Moonshot AI in March 2023 with Tsinghua alumni who were his bandmates in "Splay" (a rock band named after the splay tree). Launched Kimi, the first assistant supporting 200K Chinese characters.</p>
+      <p>Born 1992. BS from Tsinghua; PhD from CMU under Ruslan Salakhutdinov and William Cohen. Co-authored the original <a href="/outputs/zai/glm">GLM</a> paper (ACL 2022), <strong>Transformer-XL</strong>, and <strong>XLNet</strong>. Interned at Google Brain and Meta. Led development of the Wu Dao LLM at BAAI (2021). Co-founded Moonshot AI in March 2023 with Tsinghua alumni who were his bandmates in "Splay" (a rock band named after the splay tree). Launched Kimi, the first assistant supporting 200K Chinese characters.</p>
   - name: Zhou Xinyu
     role: Co-founder
     formerly: Hulu; Tencent

@@ -93,11 +93,14 @@ people:
     role: Principal Researcher (code generation, joined 2024)
     formerly: Z.ai / Zhipu AI (Principal Researcher, CogView lead author); Tsinghua University (PhD 2018-2023, advisor Jie Tang)
     description: >
-      <p>Lead author of the <strong><a href="/outputs/zai/cogview">CogView</a></strong>
-      series (NeurIPS 2021/2022) and co-author of CogVideo (ICLR 2023) at Tsinghua
-      KEG lab. PhD under <a href="/people/jie-tang">Jie Tang</a>. Moved from Z.ai
-      to ByteDance Seed in 2024, shifting focus from image generation to code
-      generation. <strong>~15,400 citations</strong>.</p>
+      <p>Co-author of the original <a href="/outputs/zai/glm">GLM</a> paper
+      (ACL 2022) and lead author of the
+      <strong><a href="/outputs/zai/cogview">CogView</a></strong> series
+      (NeurIPS 2021/2022) and CogVideo (ICLR 2023) at Tsinghua KEG. PhD under
+      <a href="/people/jie-tang">Jie Tang</a>. Moved from Z.ai to ByteDance Seed
+      in 2024, shifting from image generation to multimodal foundation models
+      (a co-author of the Seed1.5-VL technical report, 2025).
+      <strong>~15,400 citations</strong>.</p>
     urls:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=Va50YzkAAAAJ

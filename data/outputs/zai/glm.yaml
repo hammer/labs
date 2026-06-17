@@ -28,9 +28,17 @@ description: >
   (FIM)</strong> training &mdash; used by OpenAI (GPT-3.5/4 code models), Meta
   (CodeLLaMA), BigCode (StarCoder), and DeepSeek. With ~2,200 citations by early 2026,
   the paper launched the GLM architecture that underpins the entire ChatGLM/GLM-4/GLM-5
-  series. Its authors went on to found <a href="/labs/zai">Zhipu AI</a> (Jie Tang),
-  <a href="/labs/moonshot-ai">Moonshot AI</a> (Zhilin Yang, also known for XLNet),
-  and contribute to <a href="/labs/deepseek">DeepSeek</a> (Xuehai Pan).</p>
+  series. Its seven authors now span much of the AI frontier:
+  <a href="/people/jie-tang">Jie Tang</a> (co-founder &amp; chief scientist of
+  <a href="/labs/zai">Z.ai</a>, which IPO'd in January 2026), with
+  <a href="/people/zhengxiao-du">Zhengxiao Du</a> and
+  <a href="/people/xiao-liu">Xiao Liu</a> still leading GLM / AutoGLM there;
+  <a href="/people/zhilin-yang">Zhilin Yang</a> founded
+  <a href="/labs/moonshot-ai">Moonshot AI</a> (Kimi);
+  <a href="/people/ming-ding">Ming Ding</a> moved to
+  <a href="/labs/bytedance-seed">ByteDance Seed</a>;
+  <a href="/people/yujie-qian">Yujie Qian</a> is now at Thinking Machines Lab; and
+  <a href="/people/jiezhong-qiu">Jiezhong Qiu</a> is at Zhejiang Lab (AI for science).</p>
 tags:
   - open-weight
   - architecture
@@ -59,3 +67,11 @@ outputs:
       objective.
     paper:
       arxiv: "2103.10360"
+      authors:
+        - Zhengxiao Du
+        - Yujie Qian
+        - Xiao Liu
+        - Ming Ding
+        - Jiezhong Qiu
+        - Zhilin Yang
+        - Jie Tang
