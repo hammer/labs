@@ -1,0 +1,41 @@
+name: "TTRL: Test-Time Reinforcement Learning"
+slug: ttrl
+lab: shanghai-ai-lab
+type: paper
+date: "2025-04-22"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.16084
+  - label: GitHub
+    url: https://github.com/PRIME-RL/TTRL
+description: >
+  <p>A method for <strong>reinforcement learning on unlabeled data</strong> —
+  training LLM reasoning at test time with no ground-truth rewards. The core
+  insight: common <em>test-time-scaling</em> practices, especially
+  <strong>majority voting (maj@n)</strong>, yield surprisingly effective reward
+  estimates that can drive RL, letting a model <strong>self-evolve</strong> from
+  its pretrained priors on the very (unlabeled) test data it faces.</p>
+
+  <p>TTRL boosts <strong>Qwen-2.5-Math-7B pass@1 by ~211% on AIME 2024 using
+  only unlabeled test data</strong>, with consistent gains across tasks and
+  models; remarkably, although supervised only by the maj@n signal, it
+  approaches the performance of models trained directly on ground-truth labels.
+  NeurIPS 2025. By <strong>Tsinghua University and
+  <a href="/labs/shanghai-ai-lab">Shanghai AI Lab</a></strong> (equal-contribution
+  leads Kaiyan Zhang and Ganqu Cui; senior author Bowen Zhou); code released as
+  PRIME-RL/TTRL.</p>
+tags:
+  - reinforcement-learning
+  - post-training
+  - reasoning
+  - research
+paper:
+  arxiv: "2504.16084"
+  venue: NeurIPS 2025
+  code_url: https://github.com/PRIME-RL/TTRL
+  authors:
+    - Yuxin Zuo
+    - Kaiyan Zhang
+    - Ganqu Cui
+    - Ning Ding
+    - Bowen Zhou
