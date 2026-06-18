@@ -1,0 +1,52 @@
+name: "SimpleRL-Zoo: Investigating and Taming Zero RL for Open Base Models"
+slug: simplerl-zoo
+lab:
+  - bytedance-seed
+  - meituan
+type: paper
+date: "2025-03-24"
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.18892
+  - label: GitHub
+    url: https://github.com/hkust-nlp/simpleRL-reason
+description: >
+  <p>A systematic study of <strong>"zero RL training"</strong> — applying
+  rule-based-reward reinforcement learning directly to <em>base</em> models
+  (the DeepSeek-R1 paradigm) — across <strong>10 diverse open base models</strong>
+  rather than just the well-trodden Qwen2.5 series. Spans Llama-3.1-8B,
+  Mistral-7B/24B, DeepSeek-Math-7B, Qwen2.5-Math-7B, and all Qwen2.5 sizes
+  (0.5B–32B), motivated by the finding that Qwen2.5 bases already exhibit
+  unusually strong instruction-following and self-reflection, so reproductions
+  built only on them may not generalize.</p>
+
+  <p>Key design levers: <strong>adjusting the format reward</strong> and
+  <strong>controlling query difficulty</strong>, which yield substantial
+  reasoning-accuracy and response-length gains across most settings. By
+  monitoring training dynamics, the authors show that longer responses do
+  <em>not</em> always coincide with emergent cognitive behaviors like
+  verification (the "aha moment") — and report the first observation of an
+  "aha moment" in small <em>non-Qwen</em> models. Code, models, and analysis
+  tools are open-sourced. COLM 2025.</p>
+
+  <p>Led by <strong>HKUST</strong> (Junxian He's NLP group; co-first authors
+  Weihao Zeng and Yuzhen Huang; repo <code>hkust-nlp/simpleRL-reason</code>),
+  in collaboration with <a href="/labs/bytedance-seed">ByteDance</a> / TikTok
+  (Qian Liu, Zejun Ma) and <a href="/labs/meituan">Meituan</a> (Keqing He).</p>
+tags:
+  - reinforcement-learning
+  - post-training
+  - reasoning
+  - research
+paper:
+  arxiv: "2503.18892"
+  venue: COLM 2025
+  code_url: https://github.com/hkust-nlp/simpleRL-reason
+  authors:
+    - Weihao Zeng
+    - Yuzhen Huang
+    - Qian Liu
+    - Wei Liu
+    - Keqing He
+    - Zejun Ma
+    - Junxian He
