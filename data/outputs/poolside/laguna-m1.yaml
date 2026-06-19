@@ -1,0 +1,63 @@
+name: Laguna M.1
+slug: laguna-m1
+lab: poolside
+type: model
+date: 2026-04-28
+flagship: true
+sources:
+  - label: Introducing Laguna XS.2 and M.1 (Poolside blog)
+    url: https://poolside.ai/blog/introducing-laguna-xs2-m1
+  - label: Laguna M.1 / XS.2 Technical Report (PDF)
+    url: https://poolside.ai/assets/laguna/laguna-m1-xs2-technical-report.pdf
+  - label: Hugging Face (Laguna-M.1)
+    url: https://huggingface.co/poolside/Laguna-M.1
+description: >
+  <p>Poolside's flagship agentic-coding model: a <strong>225.8B-total /
+  23.4B-active Mixture-of-Experts</strong> transformer (256 experts, top-8 plus
+  one shared expert; first layer dense; pre-norm RMSNorm) with a
+  <strong>256K-token context</strong>. Trained from scratch in-house on
+  <strong>&gt;30T tokens using 6,144 NVIDIA H200 GPUs</strong> with the Muon
+  (Moonlight-variant) optimizer, then post-trained via mid-training, SFT, and an
+  asynchronous <strong>online-RL stack using a CISPO objective</strong> on
+  verifiable software-engineering rewards (the team compared CISPO against GRPO
+  and GSPO and chose it).</p>
+
+  <p>Originally launched April 2026 as an API-only model, Laguna M.1 was
+  <strong>released as open weights under Apache 2.0 in June 2026</strong> &mdash;
+  both base and post-trained checkpoints, plus FP8 and NVFP4 quantizations, on
+  Hugging Face &mdash; as Poolside made open releases its default. Serves on vLLM
+  and SGLang; full BF16 inference requires multi-GPU memory.</p>
+
+  <p>Reported benchmarks (technical report, May 2026): <strong>SWE-bench Verified
+  74.6</strong>, SWE-bench Multilingual 73.3, SWE-bench Pro 49.2, Terminal-Bench
+  2.0 56.9 &mdash; frontier-tier on agentic coding, ahead of the
+  Devstral&nbsp;2, GLM-4.7, DeepSeek-V4-Flash, Qwen3.5, and Claude Sonnet 4.6
+  comparators in the report's SWE-bench Verified figure. <em>Not currently scored
+  on Artificial Analysis &mdash; numbers above are self-reported.</em></p>
+tags:
+  - open-weight
+  - coding
+  - agentic
+  - moe
+model:
+  architecture: moe
+  parameters: 225.8B
+  active_parameters: 23.4B
+  context_window: 262144
+  training_tokens: 30T
+  training_hardware: 6,144 NVIDIA H200
+  optimizer: Muon (Moonlight variant)
+  license: Apache 2.0
+  num_experts: 256
+  top_k: 8
+  benchmark_scores:
+    - benchmark: SWE-bench Verified
+      score: "74.6"
+    - benchmark: SWE-bench Multilingual
+      score: "73.3"
+    - benchmark: SWE-bench Pro
+      score: "49.2"
+    - benchmark: Terminal-Bench 2.0
+      score: "56.9"
+related:
+  - laguna-xs2

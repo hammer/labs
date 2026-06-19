@@ -1,0 +1,77 @@
+name: Poolside
+slug: poolside
+url: https://poolside.ai
+huggingface: https://huggingface.co/poolside
+region: usa
+founded: "2023"
+type: private
+valuation:
+  amount: "$3B"
+  type: private
+  date: "2024-10"
+description: >
+  <p><a href="https://poolside.ai">Poolside</a> is a San Francisco- and
+  Paris-based lab founded in early 2023 by <strong>Jason Warner</strong> (CEO,
+  former CTO of <a href="https://github.com">GitHub</a>) and <strong>Eiso
+  Kant</strong> (CTO). Unlike the general-purpose foundation-model labs in the
+  index, Poolside is a <strong>pure-play agentic-coding lab</strong>: it trains
+  models from scratch for software engineering and deploys them inside customer
+  environments (largely Global 2000 enterprises and public-sector agencies),
+  served through its own "pool" agent harness.</p>
+
+  <p>Its <a href="/outputs/poolside/laguna-m1">Laguna</a> models are
+  Mixture-of-Experts transformers trained entirely in-house on a proprietary
+  "Titan" stack &mdash; <strong>&gt;30T tokens on up to 6,144 NVIDIA H200
+  GPUs</strong>, with a "Model Factory" pipeline (the AutoMixer data-mixture
+  optimizer, Muon optimization, and an asynchronous online-RL system using a
+  CISPO objective on verifiable coding rewards). In June 2026 Poolside made
+  <strong>open weights its default</strong>: both the 33B/3B
+  <a href="/outputs/poolside/laguna-xs2">Laguna XS.2</a> (April 2026) and the
+  225B/23B flagship <a href="/outputs/poolside/laguna-m1">Laguna M.1</a> are now
+  released under <strong>Apache 2.0</strong> on Hugging Face, with base and
+  post-trained checkpoints.</p>
+
+  <p>The technical execution arrives against serious company-level headwinds. In
+  early April 2026 Poolside's planned <strong>~$2B Series C at a ~$14B
+  valuation</strong> &mdash; anchored by a reported up-to-$1B NVIDIA commitment
+  &mdash; <a href="https://www.datacenterdynamics.com/en/news/poolside-seeks-partners-for-data-center-in-texas-after-coreweave-deal-falls-apart/">collapsed</a>
+  after <a href="https://en.wikipedia.org/wiki/CoreWeave">CoreWeave</a> walked
+  away from its 15-year anchor lease for <strong>Project Horizon</strong>, a
+  planned 2&nbsp;GW Texas data center, when Poolside missed timelines on the
+  first cluster. The Financial Times reported investor concerns that Poolside
+  "could not credibly train models that compete with Anthropic, OpenAI, and
+  Google DeepMind at the frontier." The last realized valuation is the
+  <strong>$3B Series B (October 2024)</strong>.</p>
+
+  <p><em>Note: as of June 2026, Poolside is not tracked by Artificial Analysis
+  &mdash; benchmark numbers on these pages are self-reported from the Laguna
+  technical report.</em></p>
+people:
+  - name: Jason Warner
+    role: Co-founder & CEO
+    formerly: GitHub (CTO); Heroku; Canonical; Redpoint Ventures (Managing Director)
+  - name: Eiso Kant
+    role: Co-founder & CTO
+    formerly: source{d} (co-founder & CEO); Athenian (co-founder)
+tags:
+  - open-weight
+  - coding
+  - agentic
+  - moe
+news:
+  - title: "Laguna M.1 Released as Open Weights (Apache 2.0); Base and Post-Trained Checkpoints on Hugging Face"
+    url: https://huggingface.co/poolside
+    source: Hugging Face
+    date: 2026-06-18
+  - title: "Poolside Launches Laguna XS.2 (Open, Apache 2.0) and Laguna M.1 Agentic Coding Models"
+    url: https://poolside.ai/blog/introducing-laguna-xs2-m1
+    source: Poolside
+    date: 2026-04-28
+  - title: "Poolside's $2B Series C Collapses; CoreWeave Exits 2GW Texas Data Center (Project Horizon)"
+    url: https://www.datacenterdynamics.com/en/news/poolside-seeks-partners-for-data-center-in-texas-after-coreweave-deal-falls-apart/
+    source: DataCenterDynamics
+    date: 2026-04-02
+  - title: "Poolside Raises $500M Series B at ~$3B Valuation, Led by Bain Capital Ventures"
+    url: https://news.crunchbase.com/ai/coding-startup-poolside-raises-massive-series-b-bain
+    source: Crunchbase News
+    date: 2024-10-02

@@ -1,0 +1,59 @@
+name: Laguna XS.2
+slug: laguna-xs2
+lab: poolside
+type: model
+date: 2026-04-28
+sources:
+  - label: Introducing Laguna XS.2 and M.1 (Poolside blog)
+    url: https://poolside.ai/blog/introducing-laguna-xs2-m1
+  - label: Laguna M.1 / XS.2 Technical Report (PDF)
+    url: https://poolside.ai/assets/laguna/laguna-m1-xs2-technical-report.pdf
+  - label: Hugging Face (Laguna-XS.2)
+    url: https://huggingface.co/poolside/Laguna-XS.2
+description: >
+  <p>Poolside's compact agentic-coding model and its <strong>first open-weight
+  release</strong> (Apache 2.0, April 2026): a <strong>33.4B-total /
+  3.0B-active Mixture-of-Experts</strong> transformer sharing M.1's expert
+  layout (256 experts, top-8 + shared), but adding <strong>interleaved
+  sliding-window and global attention at a 3:1 ratio</strong> and grouped-query
+  attention (8 KV heads) for a small KV-cache footprint &mdash; it runs on a
+  <strong>single GPU</strong>. Trained from scratch on &gt;30T tokens using 2,048
+  NVIDIA H200 GPUs, sharing the M.1 "Model Factory" recipe (AutoMixer data
+  mixtures, Muon optimization, CISPO online RL). FP8, NVFP4, and INT4
+  quantizations are published for low-VRAM deployment.</p>
+
+  <p>Reported benchmarks (technical report, May 2026): <strong>SWE-bench Verified
+  69.9</strong>, SWE-bench Multilingual 67.2, SWE-bench Pro 35.7, Terminal-Bench
+  2.0 42.9 &mdash; leading its open weight class (Devstral Small 2, Gemma 4 31B,
+  Qwen3.5/3.6 35B-A3B) on SWE-bench Verified in the report's figures. One of the
+  strongest open-weight launches of 2026 by adoption, climbing to ~219k Hugging
+  Face downloads. <em>Not currently scored on Artificial Analysis &mdash; numbers
+  above are self-reported.</em></p>
+tags:
+  - open-weight
+  - coding
+  - agentic
+  - moe
+  - efficiency
+model:
+  architecture: moe
+  parameters: 33.4B
+  active_parameters: 3B
+  context_window: 262144
+  training_tokens: 30T
+  training_hardware: 2,048 NVIDIA H200
+  optimizer: Muon (Moonlight variant)
+  license: Apache 2.0
+  num_experts: 256
+  top_k: 8
+  benchmark_scores:
+    - benchmark: SWE-bench Verified
+      score: "69.9"
+    - benchmark: SWE-bench Multilingual
+      score: "67.2"
+    - benchmark: SWE-bench Pro
+      score: "35.7"
+    - benchmark: Terminal-Bench 2.0
+      score: "42.9"
+related:
+  - laguna-m1
