@@ -1,0 +1,63 @@
+name: "CUBE: A Standard for Unifying Agent Benchmarks"
+slug: cube
+lab: servicenow
+type: paper
+date: 2026-03-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.15798
+  - label: GitHub (reference implementation)
+    url: https://github.com/The-AI-Alliance/cube-standard
+description: >
+  <p>A proposed standard for tackling <strong>agent-benchmark fragmentation</strong>:
+  CUBE is described as "a universal protocol standard built on
+  <strong>MCP and Gym</strong> that allows benchmarks to be wrapped once and used
+  everywhere." It separates <strong>task, benchmark, package, and registry</strong>
+  concerns into distinct API layers, so a benchmark can be integrated a single time
+  and then run across any compliant evaluation platform without bespoke glue code.</p>
+
+  <p>A 10-page position paper with an open-source reference implementation
+  (<a href="https://github.com/The-AI-Alliance/cube-standard">The-AI-Alliance/cube-standard</a>).
+  Led by <strong>ServiceNow AI Research</strong> (first author Alexandre Lacoste,
+  with Nicolas Gontier, Massimo Caccia, Alexandre Drouin and colleagues), the
+  authorship spans the <a href="https://thealliance.ai/">AI Alliance</a> &mdash;
+  <a href="/labs/ibm">IBM Research</a> (Leshem Choshen, Asaf Yehudai, Michal
+  Shmueli-Scheuer, Elron Bandel), Mila / McGill (Siva Reddy, Xing Han Lù), CMU
+  (Graham Neubig), UC Berkeley (Dawn Song), HKU (Tao Yu), and Ohio State (Yu Su),
+  alongside startups Silverstream.ai and Jetty.</p>
+tags:
+  - agents
+  - benchmark
+  - evaluation
+  - infrastructure
+  - research
+paper:
+  arxiv: "2603.15798"
+  code_url: https://github.com/The-AI-Alliance/cube-standard
+  authors:
+    - Alexandre Lacoste
+    - Nicolas Gontier
+    - Oleh Shliazhko
+    - Aman Jaiswal
+    - Kusha Sareen
+    - Shailesh Nanisetty
+    - Joan Cabezas
+    - Manuel Del Verme
+    - Omar G. Younis
+    - Simone Baratta
+    - Matteo Avalle
+    - Imene Kerboua
+    - Xing Han Lù
+    - Elron Bandel
+    - Michal Shmueli-Scheuer
+    - Asaf Yehudai
+    - Leshem Choshen
+    - Jonathan Lebensold
+    - Sean Hughes
+    - Massimo Caccia
+    - Alexandre Drouin
+    - Siva Reddy
+    - Tao Yu
+    - Yu Su
+    - Graham Neubig
+    - Dawn Song
