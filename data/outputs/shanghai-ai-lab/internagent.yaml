@@ -1,0 +1,41 @@
+name: InternAgent-1.5
+slug: internagent
+lab: shanghai-ai-lab
+type: paper
+date: 2026-02-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.08990
+  - label: GitHub
+    url: https://github.com/InternScience/InternAgent
+description: >
+  <p>A <strong>unified agentic framework for end-to-end, long-horizon autonomous
+  scientific discovery</strong> — the rebrand and successor of
+  <strong>NovelSeek</strong> ("NovelSeek has been renamed to InternAgent"). Built
+  on three coordinated subsystems for <strong>generation, verification, and
+  evolution</strong>, supported by deep research, solution optimization, and a
+  <strong>persistent long-horizon memory</strong> that records experiment
+  outcomes across sessions so the agent avoids previously failed directions and
+  builds on successful ones.</p>
+
+  <p>It targets two task families: <strong>algorithm discovery</strong> —
+  autonomously designing competitive methods for core machine-learning problems —
+  and <strong>empirical discovery</strong> — executing complete computational and
+  wet-lab experiments to produce findings across <strong>Physical, Biology, Earth,
+  and Life Science</strong> domains. The technical report reports leading
+  performance on scientific-reasoning benchmarks including <strong>GAIA, HLE,
+  GPQA, and FrontierScience</strong>.</p>
+
+  <p>A 57-author technical report from the <strong>InternScience Team</strong> at
+  <a href="/labs/shanghai-ai-lab">Shanghai AI Laboratory</a> (senior authors
+  include Lei Bai, Bo Zhang, Bowen Zhou, and Dahua Lin); open-sourced at
+  <a href="https://github.com/InternScience/InternAgent">InternScience/InternAgent</a>
+  (~1.3k stars).</p>
+tags:
+  - agents
+  - scientific
+  - reasoning
+  - research
+paper:
+  arxiv: "2602.08990"
+  code_url: https://github.com/InternScience/InternAgent
