@@ -1,0 +1,41 @@
+name: "Distributional Clarity: The Hidden Driver of RL-Friendliness in Large Language Models"
+slug: distributional-clarity
+lab: baidu
+type: paper
+date: 2026-01-11
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.06911
+description: >
+  <p>An analysis of why some model families benefit dramatically from
+  reinforcement learning while others barely move. The authors identify
+  <strong>"distributional clarity"</strong> as the hidden structural property
+  governing <strong>RL-friendliness</strong>: RL-responsive models exhibit
+  <strong>intra-class compactness and inter-class separation</strong> in the
+  probabilities they assign to correct vs. incorrect responses. They quantify
+  this geometry with the <strong>Silhouette Coefficient</strong> and introduce a
+  <strong>Silhouette-Aware Reweighting</strong> training strategy that improves
+  on it directly.</p>
+
+  <p>The reweighting yields gains of up to <strong>5.9 points on AIME24</strong>,
+  turning otherwise RL-resistant models into ones that respond to RL. A
+  collaboration between <a href="/labs/baidu">Baidu</a> (Mingzhu Cai, Huang He,
+  Bingjin Chen, Siqi Bao, Hua Wu, and CTO Haifeng Wang) and Tsinghua University's
+  Shenzhen International Graduate School (lead author Shaoning Sun, with Yujiu
+  Yang).</p>
+tags:
+  - reinforcement-learning
+  - post-training
+  - reasoning
+  - research
+paper:
+  arxiv: "2601.06911"
+  authors:
+    - Shaoning Sun
+    - Mingzhu Cai
+    - Huang He
+    - Bingjin Chen
+    - Siqi Bao
+    - Yujiu Yang
+    - Hua Wu
+    - Haifeng Wang
