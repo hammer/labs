@@ -1,0 +1,44 @@
+name: "AudioCALM: Continuous Autoregressive Language Modeling for Universal Audio Generation"
+slug: audiocalm
+lab: alibaba
+type: paper
+date: 2026-06-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.23080
+  - label: Project page
+    url: https://AudioCALM-Project.github.io
+description: >
+  <p>A <strong>universal audio-generation framework</strong> that unifies
+  <strong>speech, sound, and music</strong> in a single model by extending
+  autoregressive next-token prediction from discrete tokens to
+  <strong>continuous audio latents</strong>: a thin <strong>flow-matching
+  head</strong> replaces the softmax to predict rectified-flow velocities at each
+  position, and a <strong>block-causal AR-Flow attention</strong> pattern enables
+  arbitrary-length output. An <strong>Asymmetric Mixture-of-Modality-Experts
+  (A-MoME)</strong> design handles the text&ndash;audio alignment asymmetry
+  between speech and sound/music tasks.</p>
+
+  <p>Built on a <strong>Qwen3-1.7B</strong> backbone, trained for 300k steps on
+  8&times; A800 GPUs. It ranks first or second on every evaluated metric across
+  all three modalities &mdash; LibriTTS speech (WER 0.020, SIM 0.668), AudioCaps
+  sound (FAD 1.95), and Song-Describer music (FAD 2.02). By the
+  <strong>Tongyi Fun Team</strong> at <a href="/labs/alibaba">Alibaba</a>
+  (corresponding author Qian Chen, with Wen Wang, Bin Ma, Xiangang Li) in
+  collaboration with HKUST (lead author Huadai Liu, and Wei Xue).</p>
+tags:
+  - audio
+  - speech
+  - music
+  - generation
+  - research
+paper:
+  arxiv: "2606.23080"
+  authors:
+    - Huadai Liu
+    - Kaicheng Luo
+    - Wen Wang
+    - Qian Chen
+    - Bin Ma
+    - Xiangang Li
+    - Wei Xue
