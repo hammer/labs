@@ -1,5 +1,5 @@
-name: xAI
-slug: xai
+name: SpaceX
+slug: spacex
 url: https://x.ai
 wikipedia: https://en.wikipedia.org/wiki/XAI_(company)
 huggingface: https://huggingface.co/xai-org
@@ -7,9 +7,10 @@ github: https://github.com/xai-org
 artificialanalysis: https://artificialanalysis.ai/providers/xai
 openrouter: https://openrouter.ai/x-ai
 region: usa
-founded: "2023"
+founded: "2002"
 type: public
-parent: SpaceX
+formerly:
+  - xAI
 ipo:
   year: 2026
   exchange: Nasdaq
@@ -17,32 +18,32 @@ ipo:
 valuation:
   amount: "$2.05T"
   type: market-cap
-  ticker: "NASDAQ: SPCX"
   date: "2026-06"
 description: >
-  <p>xAI was founded in 2023 by
-  <a href="https://en.wikipedia.org/wiki/Elon_Musk">Elon Musk</a> and 11 AI
-  researchers from DeepMind, OpenAI, Google, and Microsoft Research. In
-  <strong>February 2026, SpaceX acquired xAI</strong> in an all-stock merger that
-  valued the combined company at <strong>~$1.25T</strong> (xAI itself marked at
-  ~$250B); xAI became a wholly-owned subsidiary and is now reported as SpaceX's
-  <strong>AI segment</strong> (Grok, X, and AI compute) &mdash; informally dubbed
-  &ldquo;SpaceXAI,&rdquo; though it still operates under the xAI brand. On
+  <p><a href="https://en.wikipedia.org/wiki/SpaceX">SpaceX</a>, Elon Musk's
+  space-launch company (founded 2002), became a major AI lab through its 2026
+  acquisition of <strong>xAI</strong>. xAI &mdash; Musk's AI startup, founded in
+  2023 by Musk and 11 researchers from DeepMind, OpenAI, Google, and Microsoft
+  Research &mdash; was absorbed in an all-stock merger in
+  <strong>February 2026</strong> that valued the combined company at
+  <strong>~$1.25T</strong> (xAI itself marked at ~$250B); it is now SpaceX's
+  wholly-owned <strong>AI division</strong> (Grok, X, and AI compute), informally
+  dubbed &ldquo;SpaceXAI&rdquo; though it still ships under the xAI brand. On
   <strong>June 12, 2026, SpaceX went public on Nasdaq (ticker SPCX)</strong> in
   the largest IPO in history by capital raised (~$75B; priced at $135/share for
   an implied ~$1.77T valuation); the stock has since climbed to a market
-  capitalization of <strong>~$2.05T</strong>, so xAI now sits inside a publicly
-  traded company. Elon Musk remains CEO; <strong>Michael Nicolls</strong>
-  (former SpaceX Starlink engineering VP) was named xAI president in April 2026.</p>
+  capitalization of <strong>~$2.05T</strong>. Elon Musk is CEO;
+  <strong>Michael Nicolls</strong> (former SpaceX Starlink engineering VP) was
+  named xAI president in April 2026.</p>
 
-  <p>xAI's <strong>Grok</strong> family progressed rapidly from Grok-1
+  <p>The <strong>Grok</strong> family progressed rapidly from Grok-1
   (314B MoE, <a href="https://github.com/xai-org/grok-1">open-sourced</a> with 51K
   stars) to <strong>Grok 4.3</strong> (April 2026; 1M-token context; Artificial
   Analysis Intelligence Index <strong>38</strong> &mdash; &ldquo;high&rdquo;
   variant, on AA's recalibrated v4.1).
   Grok-3 (February 2025) was trained on <strong>200K GPUs</strong> at the Colossus
   supercomputer; Grok-4 (July 2025) added native tool-calling and extended
-  reasoning. In May 2026 xAI shipped <strong>Grok Build</strong>, an agentic
+  reasoning. In May 2026 the team shipped <strong>Grok Build</strong>, an agentic
   coding CLI (with a dedicated coding model), competing with Claude Code and
   Codex.</p>
 
@@ -55,9 +56,9 @@ description: >
   (~$1.25B/month), Google (~$920M/month), and, announced June 2026,
   <strong>Reflection AI</strong> &mdash; an open-model lab that will reportedly pay
   <strong>up to ~$6.3B through 2029</strong> for Nvidia GB300 capacity in Colossus
-  2. The NAACP has sued xAI under the Clean Air Act over gas turbines in Southaven,
-  Mississippi that power its Colossus expansion; in June 2026 the DOJ moved to
-  intervene and dismiss the suit on national-security grounds.</p>
+  2. The NAACP has sued SpaceX/xAI under the Clean Air Act over gas turbines in
+  Southaven, Mississippi that power its Colossus expansion; in June 2026 the DOJ
+  moved to intervene and dismiss the suit on national-security grounds.</p>
 
   <p>Days after the IPO, in <strong>June 2026 SpaceX agreed to acquire the AI
   coding company Cursor (Anysphere) for $60B</strong> in an all-stock deal &mdash;
@@ -76,15 +77,15 @@ people:
   - name: Elon Musk
     url: https://en.wikipedia.org/wiki/Elon_Musk
     role: CEO & Founder
-    formerly: OpenAI (Co-founder, departed 2018); Tesla; SpaceX
+    formerly: OpenAI (co-founder, departed 2018)
     description: >
-      <p>Co-founder and CEO of xAI (2023). Also CEO of Tesla and SpaceX, and owner
-      of X. Co-founded OpenAI in 2015 (departed 2018). SpaceX acquired xAI in
-      February 2026 (~$1.25T combined valuation) and went public in June 2026
-      (Nasdaq: SPCX, ~$2.05T market cap). xAI&rsquo;s Colossus cluster in Memphis
-      is one of the largest AI training facilities in the world.</p>
+      <p>Founder and CEO of SpaceX (2002), Tesla, and xAI (2023); owner of X.
+      Co-founded OpenAI in 2015 (departed 2018). SpaceX acquired xAI in February
+      2026 (~$1.25T combined valuation) and went public in June 2026 (Nasdaq:
+      SPCX, ~$2.05T market cap). Its Colossus cluster in Memphis is one of the
+      largest AI training facilities in the world.</p>
   - name: Michael Nicolls
-    role: President (since April 2026)
+    role: President, xAI (since April 2026)
     formerly: SpaceX (VP, Starlink Engineering); LeoLabs (Co-founder & CTO)
   - name: Igor Babuschkin
     role: Co-founder & Former Chief Engineer (departed Aug 2025)
