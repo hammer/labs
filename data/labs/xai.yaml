@@ -8,44 +8,87 @@ artificialanalysis: https://artificialanalysis.ai/providers/xai
 openrouter: https://openrouter.ai/x-ai
 region: usa
 founded: "2023"
-type: private
+type: public
+parent: SpaceX
+ipo:
+  year: 2026
+  exchange: Nasdaq
+  ticker: SPCX
 valuation:
-  amount: "$250B"
-  type: private
-  date: "2026-02"
+  amount: "$2.05T"
+  type: market-cap
+  ticker: "NASDAQ: SPCX"
+  date: "2026-06"
 description: >
-  <p>xAI was founded in March 2023 by
-  <a href="https://en.wikipedia.org/wiki/Elon_Musk">Elon Musk</a> and 11 AI researchers
-  from DeepMind, OpenAI, Google, and Microsoft Research. In February 2026, SpaceX
-  acquired xAI at a combined <strong>$1.25T valuation</strong>. The company raised over
-  $47B across multiple rounds, with investors including NVIDIA, Fidelity, Qatar Investment
-  Authority, and MGX.</p>
+  <p>xAI was founded in 2023 by
+  <a href="https://en.wikipedia.org/wiki/Elon_Musk">Elon Musk</a> and 11 AI
+  researchers from DeepMind, OpenAI, Google, and Microsoft Research. In
+  <strong>February 2026, SpaceX acquired xAI</strong> in an all-stock merger that
+  valued the combined company at <strong>~$1.25T</strong> (xAI itself marked at
+  ~$250B); xAI became a wholly-owned subsidiary and is now reported as SpaceX's
+  <strong>AI segment</strong> (Grok, X, and AI compute) &mdash; informally dubbed
+  &ldquo;SpaceXAI,&rdquo; though it still operates under the xAI brand. On
+  <strong>June 12, 2026, SpaceX went public on Nasdaq (ticker SPCX)</strong> in
+  the largest IPO in history by capital raised (~$75B; priced at $135/share for
+  an implied ~$1.77T valuation); the stock has since climbed to a market
+  capitalization of <strong>~$2.05T</strong>, so xAI now sits inside a publicly
+  traded company. Elon Musk remains CEO; <strong>Michael Nicolls</strong>
+  (former SpaceX Starlink engineering VP) was named xAI president in April 2026.</p>
 
-  <p>xAI's <strong>Grok</strong> model family progressed rapidly from Grok-1
-  (314B MoE, <a href="https://github.com/xai-org/grok-1">open-sourced</a> with 51K stars)
-  to <strong>Grok-4.20</strong> (2026, multi-agent system, AA index 48, 2M context).
+  <p>xAI's <strong>Grok</strong> family progressed rapidly from Grok-1
+  (314B MoE, <a href="https://github.com/xai-org/grok-1">open-sourced</a> with 51K
+  stars) to <strong>Grok 4.3</strong> (April 2026; 1M-token context; Artificial
+  Analysis Intelligence Index <strong>38</strong> &mdash; &ldquo;high&rdquo;
+  variant, on AA's recalibrated v4.1).
   Grok-3 (February 2025) was trained on <strong>200K GPUs</strong> at the Colossus
-  supercomputer in Memphis with 10x more compute than its predecessor. Grok-4 (July 2025)
-  introduced native tool-calling and extended reasoning with an AA index of 42.</p>
+  supercomputer; Grok-4 (July 2025) added native tool-calling and extended
+  reasoning. In May 2026 xAI shipped <strong>Grok Build</strong>, an agentic
+  coding CLI (with a dedicated coding model), competing with Claude Code and
+  Codex.</p>
 
-  <p>The <strong>Colossus</strong> supercomputer in Memphis, Tennessee was built in 122
-  days and houses 150K H100 + 50K H200 + 30K GB200 GPUs (~250MW). A second facility
-  (Colossus 2) adds 110K GB200 GPUs toward a 1M GPU target. All co-founders except
-  Musk have since departed, including
-  <a href="https://scholar.google.com/citations?user=_N2COeAAAAAJ">Igor Babuschkin</a>
-  (DeepMind AlphaStar/AlphaCode) and
+  <p>The original <strong>Colossus</strong> supercomputer in Memphis, Tennessee
+  houses ~230K GPUs (150K H100 + 50K H200 + 30K GB200, ~250MW), with a second
+  site, <strong>Colossus 2</strong>, scaling toward a <strong>1M-GPU target</strong>
+  (xAI claims gigawatt-scale power, though independent satellite analysis by Epoch
+  AI suggests cooling capacity is closer to ~350MW). SpaceX increasingly <strong>monetizes Colossus capacity to
+  third parties</strong>: reported multi-year compute agreements include Anthropic
+  (~$1.25B/month), Google (~$920M/month), and, announced June 2026,
+  <strong>Reflection AI</strong> &mdash; an open-model lab that will reportedly pay
+  <strong>up to ~$6.3B through 2029</strong> for Nvidia GB300 capacity in Colossus
+  2. The NAACP has sued xAI under the Clean Air Act over gas turbines in Southaven,
+  Mississippi that power its Colossus expansion; in June 2026 the DOJ moved to
+  intervene and dismiss the suit on national-security grounds.</p>
+
+  <p>Days after the IPO, in <strong>June 2026 SpaceX agreed to acquire the AI
+  coding company Cursor (Anysphere) for $60B</strong> in an all-stock deal &mdash;
+  <strong>pending regulatory approval, with an expected Q3 2026 close</strong>
+  &mdash; to be folded under the xAI division (Cursor was last independently valued
+  at $29.3B in November 2025). The company has seen heavy attrition: all of xAI's
+  original co-founders have now departed &mdash;
+  <a href="https://scholar.google.com/citations?user=_N2COeAAAAAJ">Igor
+  Babuschkin</a> (DeepMind AlphaStar) left in August 2025 to start Babuschkin
+  Ventures, and
   <a href="https://scholar.google.com/citations?user=ymzxRhAAAAAJ">Jimmy Ba</a>
-  (Adam optimizer, Layer Normalization co-author).</p>
+  (Adam optimizer, Layer Normalization co-author) in February 2026 &mdash; and
+  since the SpaceX deal 50+ staff have left for rivals such as Meta and Thinking
+  Machines Lab.</p>
 people:
   - name: Elon Musk
     url: https://en.wikipedia.org/wiki/Elon_Musk
     role: CEO & Founder
     formerly: OpenAI (Co-founder, departed 2018); Tesla; SpaceX
     description: >
-      <p>CEO and founder of xAI (July 2023). Also CEO of Tesla, SpaceX, and formerly Twitter/X. Co-founded OpenAI in 2015 (departed 2018). xAI&rsquo;s Colossus cluster in Memphis (200K GPUs) is one of the largest AI training facilities. SpaceX acquired xAI in February 2026 at $1.25T combined valuation.</p>
+      <p>Co-founder and CEO of xAI (2023). Also CEO of Tesla and SpaceX, and owner
+      of X. Co-founded OpenAI in 2015 (departed 2018). SpaceX acquired xAI in
+      February 2026 (~$1.25T combined valuation) and went public in June 2026
+      (Nasdaq: SPCX, ~$2.05T market cap). xAI&rsquo;s Colossus cluster in Memphis
+      is one of the largest AI training facilities in the world.</p>
+  - name: Michael Nicolls
+    role: President (since April 2026)
+    formerly: SpaceX (VP, Starlink Engineering); LeoLabs (Co-founder & CTO)
   - name: Igor Babuschkin
     role: Co-founder & Former Chief Engineer (departed Aug 2025)
-    formerly: Google DeepMind (AlphaStar, AlphaCode); OpenAI
+    formerly: Google DeepMind (AlphaStar); OpenAI; now Babuschkin Ventures
     urls:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=_N2COeAAAAAJ
@@ -71,6 +114,18 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=czyretsAAAAJ
 news:
+  - title: "SpaceX Inks Compute Deal with Reflection AI for Colossus 2 (Up to ~$6.3B Through 2029)"
+    url: https://techcrunch.com/2026/06/22/spacex-inks-compute-deal-with-reflection-ai-an-open-source-ai-lab/
+    source: TechCrunch
+    date: 2026-06-22
+  - title: "SpaceX Agrees to Acquire Cursor for $60B All-Stock, Days After IPO (Pending Regulatory Approval)"
+    url: https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/
+    source: TechCrunch
+    date: 2026-06-16
+  - title: "SpaceX Prices Largest IPO Ever at $135/Share; Trades on Nasdaq as SPCX"
+    url: https://techcrunch.com/2026/06/11/spacex-officially-prices-shares-at-135-in-the-largest-ipo-ever/
+    source: TechCrunch
+    date: 2026-06-11
   - title: "Grok Build Launches — Agentic Coding CLI Competing with Claude Code, Codex, and Antigravity"
     url: https://www.engadget.com/2173482/xai-coding-agent-grok-build/
     source: Engadget
@@ -79,6 +134,10 @@ news:
     url: https://techcrunch.com/2026/05/14/elon-musks-spacexai-has-been-bleeding-staff-since-its-merger/
     source: TechCrunch
     date: 2026-05-14
+  - title: "xAI Launches Grok 4.3 with Improved Agentic Performance and Lower Pricing"
+    url: https://artificialanalysis.ai/articles/xai-launches-grok-4-3-with-improved-agentic-performance-and-lower-pricing
+    source: Artificial Analysis
+    date: 2026-04-30
   - title: "SpaceX Strikes Deal for Right to Acquire Cursor for $60B"
     url: https://www.bloomberg.com/news/articles/2026-04-21/spacex-says-has-agreement-to-acquire-cursor-for-60-billion
     source: Bloomberg
@@ -112,3 +171,4 @@ tags:
   - reasoning
   - multimodal
   - agents
+  - coding
