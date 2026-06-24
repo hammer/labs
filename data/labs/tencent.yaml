@@ -13,10 +13,10 @@ ipo:
   exchange: HKEX
   ticker: "0700"
 valuation:
-  amount: "$573B"
+  amount: "$477B"
   type: market-cap
   ticker: "HKG: 0700"
-  date: "2026-03"
+  date: "2026-06"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Tencent">Tencent</a> (HKG: 0700) operates
   one of the most diverse AI ecosystems in the world, backed by RMB 85.75 billion in

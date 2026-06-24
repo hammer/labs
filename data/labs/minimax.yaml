@@ -13,10 +13,10 @@ ipo:
   exchange: HKEX
   ticker: "0100"
 valuation:
-  amount: "$39B"
+  amount: "$21B"
   type: market-cap
   ticker: "HKG: 0100"
-  date: "2026-03"
+  date: "2026-06"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/MiniMax_(company)">MiniMax</a> is one of
   China's "AI Tigers," founded in December 2021 by a team of former

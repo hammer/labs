@@ -13,10 +13,10 @@ ipo:
   exchange: NASDAQ
   ticker: NVDA
 valuation:
-  amount: "$5.1T"
+  amount: "$4.85T"
   type: market-cap
   ticker: "NASDAQ: NVDA"
-  date: "2026-05"
+  date: "2026-06"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Nvidia">NVIDIA</a> (NASDAQ: NVDA),
   the world's most valuable company at ~$4.3T, dominates AI compute through its

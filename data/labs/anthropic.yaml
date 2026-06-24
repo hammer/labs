@@ -10,9 +10,9 @@ region: usa
 founded: "2021"
 type: private
 valuation:
-  amount: "$380B"
+  amount: "$965B"
   type: private
-  date: "2026-02"
+  date: "2026-05"
 description: >
   <p>Anthropic is an AI safety company founded in 2021 by
   <a href="https://en.wikipedia.org/wiki/Dario_Amodei">Dario Amodei</a> and
@@ -20,9 +20,11 @@ description: >
   along with several former OpenAI researchers including Tom Brown (GPT-3 first author),
   Jared Kaplan (scaling laws co-author), Sam McCandlish, and
   <a href="https://en.wikipedia.org/wiki/Chris_Olah">Chris Olah</a>. Organized as a
-  Public Benefit Corporation focused on AI safety research. Raised <strong>$30B in
-  February 2026</strong> at a $380B valuation, with Amazon ($8B total), Google, and
-  others as key investors. Revenue reached ~$19B ARR by March 2026.</p>
+  Public Benefit Corporation focused on AI safety research. Raised a
+  <strong>$65B Series H in May 2026</strong> at a <strong>$965B post-money
+  valuation</strong> (led by Altimeter, Dragoneer, Greenoaks, and Sequoia), up
+  from a $30B Series G at $380B in February 2026; Amazon ($8B total) and Google
+  remain key strategic investors. Revenue reached ~$19B ARR by March 2026.</p>
 
   <p>The <strong>Claude</strong> model family has rapidly advanced from Claude 1 (2023)
   to <strong>Claude Opus 4.6</strong> (2026, AA index 46, 1M context), consistently

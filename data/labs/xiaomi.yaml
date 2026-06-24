@@ -13,10 +13,10 @@ ipo:
   exchange: HKEX
   ticker: "1810"
 valuation:
-  amount: "$109B"
+  amount: "$74B"
   type: market-cap
   ticker: "HKG: 1810"
-  date: "2026-03"
+  date: "2026-06"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Xiaomi">Xiaomi</a> (HKG: 1810) is a
   global technology company founded in 2010 by

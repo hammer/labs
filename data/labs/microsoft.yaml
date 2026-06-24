@@ -13,9 +13,9 @@ ipo:
   ticker: MSFT
   year: 1986
 valuation:
-  amount: "$3T"
+  amount: "$2.78T"
   type: market-cap
-  date: "2026-04"
+  date: "2026-06"
 description: >
   <p><strong>Microsoft Research (MSR)</strong>, founded in 1991, is one of the world's
   largest industrial research labs with 1,000+ researchers across Redmond, Cambridge,

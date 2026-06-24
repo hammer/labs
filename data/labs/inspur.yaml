@@ -12,10 +12,10 @@ ipo:
   exchange: SZSE
   ticker: "000977"
 valuation:
-  amount: "$12B"
+  amount: "$14B"
   type: market-cap
   ticker: "SZ: 000977"
-  date: "2026-04"
+  date: "2026-06"
 description: >
   <p><strong>YuanLab AI</strong> is the AI research division of
   <a href="https://en.wikipedia.org/wiki/Inspur">Inspur</a> (SZ: 000977), one of
