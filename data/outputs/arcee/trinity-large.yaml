@@ -5,6 +5,8 @@ type: model
 date: 2026-01-28
 flagship: true
 sources:
+  - label: Blog (Arcee)
+    url: https://www.arcee.ai/blog/trinity-large
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2602.17004
   - label: Dataset Paper (arXiv)
