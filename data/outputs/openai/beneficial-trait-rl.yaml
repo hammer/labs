@@ -1,0 +1,43 @@
+name: "Reinforcement Learning Towards Broadly and Persistently Beneficial Models"
+slug: beneficial-trait-rl
+lab: openai
+type: paper
+date: 2026-06-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.24014
+description: >
+  <p>An OpenAI alignment study asking whether <strong>RL on beneficial behavior
+  in realistic domains</strong> generalizes alignment <em>beyond</em> the training
+  distribution. The authors build a dataset of realistic situations designed to
+  measure and train <strong>beneficial traits</strong> &mdash; truthfulness,
+  fairness, risk awareness, and corrigibility &mdash; across varied domains
+  including <strong>health, science, and education</strong>, then train models
+  with RL on it and evaluate against <strong>50+ independent alignment
+  benchmarks</strong>.</p>
+
+  <p>Versus a compute-matched baseline, beneficial-trait RL improves performance
+  on <strong>over 80% of out-of-distribution benchmarks</strong>. The key finding
+  is <strong>broad OOD alignment transfer</strong>: an intervention confined to a
+  single domain (health) yields broad improvements on non-health evaluations,
+  including <strong>reduced reward hacking, deception, and general
+  misalignment</strong>. Models also show greater <strong>persistence</strong>
+  &mdash; more resistance to adversarial prompting and harmful fine-tuning &mdash;
+  suggesting that reinforcing beneficial behavior in realistic domains can produce
+  models more robustly aligned with human flourishing.</p>
+tags:
+  - alignment
+  - safety
+  - reinforcement-learning
+  - research
+paper:
+  arxiv: "2606.24014"
+  authors:
+    - Akshay V. Jagadeesh
+    - Rahul K. Arora
+    - Khaled Saab
+    - Ali Malik
+    - Mikhail Trofimov
+    - Foivos Tsimpourlas
+    - Johannes Heidecke
+    - Karan Singhal
