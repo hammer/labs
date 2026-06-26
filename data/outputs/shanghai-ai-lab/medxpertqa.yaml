@@ -1,0 +1,70 @@
+name: MedXpertQA
+slug: medxpertqa
+lab: shanghai-ai-lab
+type: eval
+date: 2025-01-30
+sources:
+  - label: Project page
+    url: https://medxpertqa.github.io/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.18362
+  - label: GitHub
+    url: https://github.com/TsinghuaC3I/MedXpertQA
+  - label: Dataset (HuggingFace)
+    url: https://huggingface.co/datasets/TsinghuaC3I/MedXpertQA
+description: >
+  <p>A challenging benchmark for <strong>expert-level medical reasoning and
+  understanding</strong>: <strong>4,460 questions spanning 17 specialties and 11
+  body systems</strong>, sourced from professional medical exams and filtered to
+  stress difficulty and reduce data leakage. It has two subsets &mdash;
+  <strong>Text</strong> (text-only) and <strong>MM</strong> (multimodal, with
+  clinical images) &mdash; and two question types, <strong>Reasoning</strong>
+  (diagnostic/clinical reasoning) and <strong>Understanding</strong> (medical
+  knowledge).</p>
+
+  <p>Frontier models still find it hard: on the multimodal subset OpenAI's
+  <strong>o1 reaches only 56.3%</strong> (GPT-4o 42.8%), and on the text subset
+  reasoning models such as <strong>DeepSeek-R1 (37.8%)</strong> and o3-mini
+  (37.3%) lead but remain far from saturation &mdash; making it a useful probe for
+  medical reasoning in thinking models. Integrated into the
+  <strong>OpenCompass</strong> evaluation framework. ICML 2025; MIT-licensed. By
+  the <strong>Tsinghua C3I</strong> group (lead authors Yuxin Zuo, Shang Qu) and
+  <a href="/labs/shanghai-ai-lab">Shanghai AI Laboratory</a> (senior author
+  Bowen Zhou).</p>
+tags:
+  - benchmark
+  - evaluation
+  - reasoning
+  - multimodal
+  - medical
+paper:
+  arxiv: "2501.18362"
+  venue: ICML 2025
+  code_url: https://github.com/TsinghuaC3I/MedXpertQA
+  huggingface_url: https://huggingface.co/datasets/TsinghuaC3I/MedXpertQA
+  authors:
+    - Yuxin Zuo
+    - Shang Qu
+    - Yifei Li
+    - Zhangren Chen
+    - Xuekai Zhu
+    - Ermo Hua
+    - Kaiyan Zhang
+    - Ning Ding
+    - Bowen Zhou
+eval:
+  num_questions: 4460
+  scoring_method: Multiple-choice accuracy across the Text and Multimodal (MM) subsets and the Reasoning / Understanding question types
+  used_in:
+    - OpenCompass
+  leaderboard_url: https://medxpertqa.github.io/
+  top_scores:
+    - model: o1 (multimodal subset)
+      score: "56.3%"
+      date: "2024-12"
+    - model: DeepSeek-R1 (text subset)
+      score: "37.8%"
+      date: "2025-01"
+    - model: o3-mini (text subset)
+      score: "37.3%"
+      date: "2025-01"
