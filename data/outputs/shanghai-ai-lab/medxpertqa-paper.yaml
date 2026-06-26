@@ -1,0 +1,52 @@
+name: "MedXpertQA: Benchmarking Expert-Level Medical Reasoning and Understanding"
+slug: medxpertqa-paper
+lab: shanghai-ai-lab
+type: paper
+date: 2025-01-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.18362
+  - label: GitHub
+    url: https://github.com/TsinghuaC3I/MedXpertQA
+  - label: Dataset (HuggingFace)
+    url: https://huggingface.co/datasets/TsinghuaC3I/MedXpertQA
+description: >
+  <p>The paper introducing <a href="/outputs/shanghai-ai-lab/medxpertqa">MedXpertQA</a>,
+  a benchmark motivated by the observation that existing medical benchmarks have
+  <strong>insufficient difficulty and clinical relevance</strong> and suffer from
+  <strong>data leakage</strong>. The authors collect expert-level questions across
+  17 specialties and 11 body systems, then apply <strong>rigorous filtering and
+  augmentation</strong> &mdash; including expert review and difficulty/diversity
+  controls &mdash; to mitigate leakage and raise the difficulty bar, and add a
+  <strong>multimodal (MM)</strong> subset with clinical images plus
+  <strong>Reasoning</strong> and <strong>Understanding</strong> question types.</p>
+
+  <p>Evaluating leading models reveals a large gap to expert-level performance,
+  positioning MedXpertQA as a probe for medical reasoning in frontier and
+  reasoning models. <strong>ICML 2025</strong>; MIT-licensed and integrated into
+  OpenCompass. By the <strong>Tsinghua C3I</strong> group (lead authors Yuxin Zuo,
+  Shang Qu) and <a href="/labs/shanghai-ai-lab">Shanghai AI Laboratory</a> (senior
+  author Bowen Zhou).</p>
+tags:
+  - benchmark
+  - evaluation
+  - reasoning
+  - medical
+  - research
+paper:
+  arxiv: "2501.18362"
+  venue: ICML 2025
+  code_url: https://github.com/TsinghuaC3I/MedXpertQA
+  huggingface_url: https://huggingface.co/datasets/TsinghuaC3I/MedXpertQA
+  authors:
+    - Yuxin Zuo
+    - Shang Qu
+    - Yifei Li
+    - Zhangren Chen
+    - Xuekai Zhu
+    - Ermo Hua
+    - Kaiyan Zhang
+    - Ning Ding
+    - Bowen Zhou
+related:
+  - medxpertqa

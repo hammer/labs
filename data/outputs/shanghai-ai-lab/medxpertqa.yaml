@@ -68,3 +68,5 @@ eval:
     - model: o3-mini (text subset)
       score: "37.3%"
       date: "2025-01"
+related:
+  - medxpertqa-paper
