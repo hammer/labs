@@ -78,6 +78,10 @@ news:
     url: https://www.zyphra.com/post/zaya1-74b-preview
     source: Zyphra
     date: 2026-05-07
+  - title: "Zyphra Launches Zyphra Cloud & Zyphra Inference — Serverless Inference for Open Models, AMD-First"
+    url: https://www.zyphra.com/our-work/zyphra-and-amd-partner-to-power-zyphra-cloud-on-amd-instinct-mi355x-gpus
+    source: Zyphra
+    date: 2026-05-04
 tags:
   - frontier
   - open-weight
