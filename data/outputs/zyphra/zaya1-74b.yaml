@@ -1,0 +1,41 @@
+name: ZAYA1-74B-Preview
+slug: zaya1-74b
+lab: zyphra
+type: model
+date: 2026-05-07
+sources:
+  - label: Blog (Zyphra)
+    url: https://www.zyphra.com/post/zaya1-74b-preview
+  - label: HuggingFace
+    url: https://huggingface.co/Zyphra/ZAYA1-74B-preview
+description: >
+  <p>The large-scale successor to
+  <a href="/outputs/zyphra/zaya1">ZAYA1-8B</a>: a <strong>74B-total /
+  4B-active Mixture-of-Experts</strong> model trained <em>end-to-end on AMD</em>
+  (MI300X GPUs with 192GB VRAM, Pensando Pollara interconnect), making it one of
+  the largest open foundation models pretrained entirely on AMD silicon. Uses
+  Zyphra's <strong>CCA attention</strong> variant with interleaved 4K
+  sliding-window and global attention layers.</p>
+
+  <p>Pretrained on <strong>~15T tokens</strong> across two phases, then three
+  midtraining phases (~1T tokens each) progressively extending context to
+  <strong>256K</strong>. Released as a <strong>pre-RL reasoning-base
+  checkpoint</strong> &mdash; it has <em>not</em> undergone instruction/chat
+  tuning or RL post-training, and is positioned as a research artifact for
+  studying high-quality pretraining at scale. Open weights (Apache 2.0).
+  <em>Not currently scored on Artificial Analysis.</em></p>
+tags:
+  - moe
+  - open-weight
+  - reasoning
+  - amd
+model:
+  architecture: moe
+  parameters: 74B
+  active_parameters: 4B
+  context_window: 262144
+  training_tokens: 15T
+  training_hardware: AMD Instinct MI300X
+  license: Apache 2.0
+related:
+  - zaya1

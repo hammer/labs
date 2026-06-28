@@ -1,0 +1,44 @@
+name: Zamba2-VL (Vision-Language)
+slug: zamba2-vl
+lab: zyphra
+type: model
+date: 2026-06-02
+sources:
+  - label: Blog (Zyphra)
+    url: https://www.zyphra.com/post/zamba2-vl
+  - label: HuggingFace
+    url: https://huggingface.co/Zyphra/Zamba2-VL-7B
+description: >
+  <p>Vision-language extension of the <a href="/outputs/zyphra/zamba2">Zamba2</a>
+  hybrid-SSM family, in <strong>1.2B, 2.7B, and 7B</strong> sizes. A
+  <strong>Mamba2 state-space backbone</strong> interleaved with a few shared
+  transformer blocks is paired with the <strong>Qwen2.5-VL Vision
+  Transformer</strong> (chosen for 2D rotary embeddings and native
+  dynamic-resolution processing) via a two-layer MLP adapter. Open weights
+  (Apache 2.0).</p>
+
+  <p>The hybrid backbone is the point: Zamba2-VL reaches competitive VLM scores
+  at roughly an <strong>order-of-magnitude lower time-to-first-token</strong> than
+  the closest Transformer baseline (most pronounced on 32K-token prefills). It is
+  especially strong on visual counting (the 1.2B variant scores 62.5 on
+  PixMoCount, nearly double comparable Transformer baselines) and on document and
+  chart understanding. <em>Not currently scored on Artificial Analysis.</em></p>
+tags:
+  - multimodal
+  - vision
+  - hybrid-ssm
+  - open-weight
+  - efficiency
+model:
+  architecture: dense
+  parameters: 7B
+  license: Apache 2.0
+  variants:
+    - name: Zamba2-VL-1.2B
+      parameters: 1.2B
+    - name: Zamba2-VL-2.7B
+      parameters: 2.7B
+    - name: Zamba2-VL-7B
+      parameters: 7B
+related:
+  - zamba2

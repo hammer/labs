@@ -26,7 +26,11 @@ description: >
   8B/700M-active MoE trained <em>end-to-end on a full-stack AMD platform</em>
   (MI300 GPUs), reportedly matching DeepSeek-R1-0528 on math/coding at well under
   1B active. It is one of the most public foundation-scale demonstrations on
-  AMD silicon to date.</p>
+  AMD silicon to date &mdash; since scaled to a
+  <strong><a href="/outputs/zyphra/zaya1-74b">74B/4B-active preview</a></strong>
+  (also trained end-to-end on AMD). The hybrid line has also been extended to
+  vision-language via <strong><a href="/outputs/zyphra/zamba2-vl">Zamba2-VL</a></strong>
+  (1.2B&ndash;7B).</p>
 
   <p>Zyphra also publishes open training infrastructure
   (<strong><a href="/outputs/zyphra/zyda-2">Zyda-2</a></strong>, a 5T-token
@@ -35,7 +39,7 @@ description: >
   <strong><a href="/outputs/zyphra/zuna">ZUNA</a></strong>, an EEG foundation model
   trained on 208 harmonized datasets.</p>
 
-  <p><em>Note: as of May 2026, Zyphra is not tracked by Artificial Analysis &mdash;
+  <p><em>Note: as of June 2026, Zyphra is still not tracked by Artificial Analysis &mdash;
   benchmark numbers on this page are self-reported from the technical reports.</em></p>
 people:
   - name: Krithik Puthalath
@@ -61,6 +65,19 @@ people:
   - name: Quentin Anthony
     role: Core Researcher (training systems)
     formerly: EleutherAI
+news:
+  - title: "Zamba2-VL Released: Hybrid SSM Vision-Language Models (1.2B / 2.7B / 7B)"
+    url: https://www.zyphra.com/post/zamba2-vl
+    source: Zyphra
+    date: 2026-06-02
+  - title: "Zyphra Announces 15 MW of AMD Instinct MI355X GPU Capacity for Zyphra Cloud"
+    url: https://memeburn.com/zyphra-partners-with-amd-to-launch-an-open-ai-platform-powered-by-a-15mw-mi355x-gpu-cluster/
+    source: Memeburn
+    date: 2026-05-11
+  - title: "ZAYA1-74B-Preview: Scaling Pretraining on AMD (74B/4B MoE)"
+    url: https://www.zyphra.com/post/zaya1-74b-preview
+    source: Zyphra
+    date: 2026-05-07
 tags:
   - frontier
   - open-weight
