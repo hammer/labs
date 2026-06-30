@@ -1,0 +1,49 @@
+name: LongCat-2.0
+slug: longcat-2.0
+lab: meituan
+type: model
+date: 2026-06-30
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/meituan-longcat/LongCat-2.0
+  - label: Blog (LongCat)
+    url: https://longcat.chat/blog/longcat-2.0
+  - label: Reuters coverage
+    url: https://www.reuters.com/world/china/chinas-meituan-says-new-ai-model-trained-domestic-chips-2026-06-30/
+  - label: SCMP coverage
+    url: https://www.scmp.com/tech/tech-trends/article/3358854/china-debuts-biggest-ai-model-trained-local-chips-meituan-releases-longcat-20
+description: >
+  <p>Meituan's new flagship: a <strong>1.6-trillion-parameter MoE</strong>
+  activating <strong>~48B per token</strong>, with a dedicated
+  <strong>LongCat Sparse Attention</strong> mechanism and a <strong>1M-token
+  context</strong> (trained on hundreds of billions of tokens of 1M-context
+  data). Built for <strong>coding and agentic, long-horizon tasks</strong>;
+  open-sourced under <strong>MIT</strong> (weights "coming soon" at launch).</p>
+
+  <p>The headline is the hardware: LongCat-2.0 was <strong>both pre-trained and
+  served entirely on a ~50,000-chip cluster of domestic Chinese "AI ASIC
+  superpods"</strong> &mdash; no NVIDIA. Meituan did not name the chipmaker but
+  said it used the <strong>Huawei Collective Communication Library (HCCL)</strong>
+  to improve training stability (analysts point to Huawei Ascend or Cambricon).
+  This makes it China's largest model <em>pre-trained</em> (not merely run) on
+  domestic silicon &mdash; a step beyond DeepSeek-V4-pro, which used home-grown
+  chips only for inference. Released June 30, 2026; Meituan describes its
+  performance as comparable to Google's Gemini 3.1 Pro.
+  <em>Not yet scored by Artificial Analysis.</em></p>
+tags:
+  - moe
+  - open-weight
+  - frontier
+  - coding
+  - agentic
+model:
+  architecture: moe
+  parameters: 1.6T
+  active_parameters: 48B
+  context_window: 1000000
+  license: MIT
+  training_hardware: ~50,000 domestic AI ASIC chips (vendor undisclosed; Huawei HCCL)
+related:
+  - longcat-flash
+  - longcat-next
