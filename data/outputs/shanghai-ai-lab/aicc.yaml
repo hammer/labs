@@ -1,0 +1,47 @@
+name: "AICC: A 7.3T AI-Ready Corpus Built by a Model-Based HTML Parser"
+slug: aicc
+lab: shanghai-ai-lab
+type: dataset
+date: 2025-11-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2511.16397
+  - label: Dataset (HuggingFace)
+    url: https://huggingface.co/datasets/opendatalab/AICC
+  - label: GitHub (MinerU-HTML)
+    url: https://github.com/opendatalab/MinerU-HTML
+  - label: Website (OpenDataLab)
+    url: https://opendatalab.com/ai-ready/AICC
+description: >
+  <p>A rethink of web-corpus construction that treats <strong>HTML-to-text
+  extraction</strong> &mdash; usually a fixed preprocessing step &mdash; as a
+  learned task. The paper releases three artifacts: <strong>MinerU-HTML</strong>,
+  an SLM-powered main-content extractor (a <strong>0.6B model</strong> that
+  reformulates extraction as sequence labeling with state-machine-guided
+  generation, emitting clean Markdown that preserves code, formulas, and tables);
+  <strong>MainWebBench</strong>, a benchmark of <strong>7,887 annotated pages</strong>
+  on which MinerU-HTML reaches <strong>81.8% ROUGE-N F1 vs Trafilatura's
+  63.6%</strong>; and <strong>AICC</strong>, a <strong>7.3-trillion-token
+  AI-ready corpus</strong> extracted from Common Crawl with it.</p>
+
+  <p>In matched-filtering pretraining experiments, models trained on AICC (62B
+  tokens) reach 50.8% average accuracy across 13 benchmarks, <strong>+1.08pp over
+  the Trafilatura-extracted TfCC</strong> baseline &mdash; evidence that better
+  HTML parsing, not just filtering and dedup, improves downstream models. Built
+  by <a href="/labs/shanghai-ai-lab">Shanghai AI Laboratory</a> / OpenDataLab
+  (Conghui He, Dahua Lin).</p>
+tags:
+  - training-data
+  - training
+  - benchmark
+  - nlp
+dataset:
+  github: https://github.com/opendatalab/MinerU-HTML
+  huggingface_url: https://huggingface.co/datasets/opendatalab/AICC
+  url: https://opendatalab.com/ai-ready/AICC
+  size: 7.3T tokens
+  format: Markdown
+paper:
+  arxiv: "2511.16397"
+related:
+  - wanjuan-cc
