@@ -1,0 +1,31 @@
+name: FireRedTTS
+slug: fireredtts
+lab: xiaohongshu
+type: model
+date: 2024-09-05
+sources:
+  - label: GitHub
+    url: https://github.com/FireRedTeam/FireRedTTS
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2409.03283
+  - label: FireRedTTS2 (arXiv)
+    url: https://arxiv.org/abs/2509.02020
+description: >
+  <p>LLM-empowered foundation text-to-speech system and the FireRed
+  team's first open release, launched well before the dots family.
+  FireRedTTS2 (September 2025, <a
+  href="https://arxiv.org/abs/2509.02020">arXiv:2509.02020</a>) extended
+  the line to long-form streaming TTS for multi-speaker dialogue
+  generation. The TTS stack underpins FireRedChat, the team's
+  self-hosted full-duplex voice interaction system.</p>
+tags:
+  - speech
+  - tts
+  - open-weight
+model:
+  license: Apache 2.0
+paper:
+  arxiv: "2409.03283"
+related:
+  - fireredasr
+  - dots.tts

@@ -1,0 +1,34 @@
+name: dots.vlm1
+slug: dots.vlm1
+lab: xiaohongshu
+type: model
+date: 2025-08-05
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/rednote-hilab/dots.vlm1.inst
+  - label: GitHub
+    url: https://github.com/rednote-hilab/dots.vlm1
+description: >
+  <p>hi lab's first vision-language model: a 1.2B-parameter
+  <strong>NaViT vision encoder trained entirely from scratch</strong>
+  (dynamic resolution, joint visual + text supervision) paired with a
+  DeepSeek-V3 MoE language model. Near-SOTA open-source multimodal
+  performance at release &mdash; MMMU 80.1, MathVision 69.6, DocVQA 96.5.
+  MIT-licensed.</p>
+tags:
+  - multimodal
+  - vision
+  - open-weight
+model:
+  base_model: deepseek-v3
+  license: MIT
+  benchmark_scores:
+    - benchmark: MMMU
+      score: "80.1"
+    - benchmark: MathVision
+      score: "69.6"
+    - benchmark: DocVQA
+      score: "96.5"
+related:
+  - dots.llm1
+  - dots.ocr

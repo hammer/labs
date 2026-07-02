@@ -1,0 +1,37 @@
+name: FireRedASR
+slug: fireredasr
+lab: xiaohongshu
+type: model
+date: 2025-01-24
+sources:
+  - label: GitHub
+    url: https://github.com/FireRedTeam/FireRedASR
+  - label: HuggingFace
+    url: https://huggingface.co/FireRedTeam/FireRedASR-LLM-L
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.14350
+description: >
+  <p>Open-source industrial-grade Mandarin speech recognition from
+  Xiaohongshu's FireRed team, in two flavors: FireRedASR-AED-L (1.1B,
+  attention-based encoder-decoder, efficiency-focused) and
+  FireRedASR-LLM-L (8.3B, Encoder-Adapter-LLM framework), achieving SOTA
+  on public Mandarin benchmarks at release, with support for Chinese
+  dialects and English. Succeeded by FireRedASR2 (February 2026), an
+  all-in-one ASR/VAD/LID/punctuation system. Apache-2.0 licensed.</p>
+tags:
+  - speech
+  - asr
+  - open-weight
+model:
+  license: Apache 2.0
+  variants:
+    - name: FireRedASR-AED-L
+      parameters: 1.1B
+      notes: attention-based encoder-decoder
+    - name: FireRedASR-LLM-L
+      parameters: 8.3B
+      notes: Encoder-Adapter-LLM framework
+paper:
+  arxiv: "2501.14350"
+related:
+  - fireredtts

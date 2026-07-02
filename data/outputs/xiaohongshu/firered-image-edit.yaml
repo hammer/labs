@@ -1,0 +1,29 @@
+name: FireRed-Image-Edit
+slug: firered-image-edit
+lab: xiaohongshu
+type: model
+date: 2026-02-12
+sources:
+  - label: GitHub
+    url: https://github.com/FireRedTeam/FireRed-Image-Edit
+  - label: HuggingFace
+    url: https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.1
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.13344
+description: >
+  <p>Image-editing foundation model from the FireRed team claiming
+  open-source SOTA editing quality, released with a technical report, a
+  LoRA zoo, a Lightning distilled variant, and the REDEdit-Bench
+  evaluation dataset. Version 1.1 followed in March 2026 with strong
+  community uptake (1.3K GitHub stars, 340+ HuggingFace likes within
+  weeks). Apache-2.0 licensed.</p>
+tags:
+  - image
+  - generation
+  - open-weight
+model:
+  license: Apache 2.0
+paper:
+  arxiv: "2602.13344"
+related:
+  - firered-openstoryline

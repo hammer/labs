@@ -1,0 +1,21 @@
+name: FireRed-OpenStoryline
+slug: firered-openstoryline
+lab: xiaohongshu
+type: library
+date: 2026-02-07
+sources:
+  - label: GitHub
+    url: https://github.com/FireRedTeam/FireRed-OpenStoryline
+description: >
+  <p>Open-source AI video-editing agent that transforms manual editing
+  workflows into agentic ones &mdash; the FireRed team's most-starred
+  repository (3K+ stars within months). Sits on top of the team's speech
+  and vision model stack.</p>
+tags:
+  - video
+  - agent
+  - library
+library:
+  github: https://github.com/FireRedTeam/FireRed-OpenStoryline
+related:
+  - firered-image-edit

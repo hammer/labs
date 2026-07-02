@@ -1,0 +1,31 @@
+name: dots.ocr
+slug: dots.ocr
+lab: xiaohongshu
+type: model
+date: 2025-07-30
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/rednote-hilab/dots.ocr
+  - label: GitHub
+    url: https://github.com/rednote-hilab/dots.ocr
+  - label: Demo
+    url: https://dotsocr.xiaohongshu.com/
+description: >
+  <p>Compact 3B vision-language model that parses document layout, text,
+  tables, and formulas in ~100 languages within a single model &mdash; a
+  breakout open-source hit for hi lab, with ~9K GitHub stars, 1.3K+
+  HuggingFace likes, and 275K+ downloads. Built on a 1.7B LLM with a
+  vision encoder, MIT-licensed and adopted into serving frameworks like
+  SGLang. Succeeded by <a href="/outputs/xiaohongshu/dots.mocr">dots.mocr</a>
+  in March 2026.</p>
+tags:
+  - ocr
+  - vision
+  - open-weight
+model:
+  architecture: dense
+  parameters: 3B
+  license: MIT
+related:
+  - dots.mocr
+  - dots.vlm1

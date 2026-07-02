@@ -1,0 +1,33 @@
+name: "Smooth Scaling Laws Hide Stepwise Token Learning"
+slug: stepwise-token-learning
+lab: xiaohongshu
+type: paper
+date: 2026-06-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.29858
+description: >
+  <p>Scaling-science paper from Dots Studio (the team behind
+  <a href="/outputs/xiaohongshu/dots.llm1">dots.llm1</a>, led by
+  <a href="/people/debing-zhang">Debing Zhang</a>) showing that the smooth
+  power-law form of language-model loss curves emerges from a spectrum of
+  discrete, sigmoid-shaped token-level learning events. Validated across
+  110+ pretraining runs (290M&ndash;6B MoE models, up to 300B tokens,
+  1,178 A100 GPU-days), the learning-time spectrum quantitatively predicts
+  validation loss across training steps, data scale, and model scale.
+  Practical payoff: reshaping the training distribution by token
+  learnability yields an 11% faster validation-loss reduction.</p>
+tags:
+  - scaling
+  - research
+paper:
+  arxiv: "2606.29858"
+  authors:
+    - Pingjie Wang
+    - Zechen Hu
+    - Peiru Yang
+    - Fu Guo
+    - Debing Zhang
+  year: 2026
+related:
+  - dots.llm1

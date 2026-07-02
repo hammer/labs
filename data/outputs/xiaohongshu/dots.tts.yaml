@@ -1,0 +1,50 @@
+name: dots.tts
+slug: dots.tts
+lab: xiaohongshu
+date: 2026-06-04
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/rednote-hilab/dots.tts-soar
+  - label: GitHub
+    url: https://github.com/rednote-hilab/dots.tts
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.07080
+description: >
+  <p>2B-parameter continuous autoregressive text-to-speech foundation
+  model that models speech in a continuous latent space (autoregressive +
+  flow-matching), with zero-shot voice cloning. Released as a base model
+  plus the post-trained "soar" variant, Apache-2.0 licensed, with a
+  technical report.</p>
+tags:
+  - speech
+  - tts
+  - open-weight
+outputs:
+  - name: dots.tts
+    type: model
+    date: 2026-06-04
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/rednote-hilab/dots.tts-soar
+      - label: GitHub
+        url: https://github.com/rednote-hilab/dots.tts
+    model:
+      architecture: dense
+      parameters: 2B
+      license: Apache 2.0
+      variants:
+        - name: dots.tts-base
+          parameters: 2B
+        - name: dots.tts-soar
+          parameters: 2B
+          notes: post-trained
+  - name: dots.tts Technical Report
+    type: paper
+    date: 2026-06-05
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2606.07080
+    paper:
+      arxiv: "2606.07080"
+related:
+  - fireredtts

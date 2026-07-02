@@ -1,0 +1,55 @@
+name: dots.llm1
+slug: dots.llm1
+lab: xiaohongshu
+date: 2025-06-06
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/rednote-hilab/dots.llm1.inst
+  - label: GitHub
+    url: https://github.com/rednote-hilab/dots.llm1
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.05767
+description: >
+  <p>Xiaohongshu hi lab's first open-weight LLM: a 142B-parameter MoE
+  activating 14B per token, pretrained from scratch on 11.2T high-quality
+  tokens with <strong>no synthetic data</strong>. Achieves performance
+  comparable to Qwen2.5-72B, with strong Chinese-language results the
+  company claimed surpassed Qwen2.5-72B-Instruct and DeepSeek-V3 on
+  Chinese comprehension. MIT-licensed, with unusual openness: intermediate
+  checkpoints released every 1T training tokens, enabling training-dynamics
+  research on a production-scale run.</p>
+tags:
+  - moe
+  - open-weight
+  - llm
+outputs:
+  - name: dots.llm1
+    type: model
+    date: 2025-06-06
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/rednote-hilab/dots.llm1.inst
+      - label: GitHub
+        url: https://github.com/rednote-hilab/dots.llm1
+    model:
+      architecture: moe
+      parameters: 142B
+      active_parameters: 14B
+      context_window: 32768
+      training_tokens: 11.2T
+      license: MIT
+  - name: dots.llm1 Technical Report
+    type: paper
+    date: 2025-06-06
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2506.05767
+    description: >
+      Details the MoE architecture, the 11.2T-token non-synthetic data
+      pipeline, and the efficient training infrastructure.
+    paper:
+      arxiv: "2506.05767"
+related:
+  - dots.vlm1
+  - stepwise-token-learning

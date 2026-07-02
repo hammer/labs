@@ -1,0 +1,30 @@
+name: dots.mocr
+slug: dots.mocr
+lab: xiaohongshu
+type: model
+date: 2026-03-19
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/rednote-hilab/dots.mocr
+  - label: GitHub
+    url: https://github.com/rednote-hilab/dots.mocr
+  - label: Demo
+    url: https://dotsocr.xiaohongshu.com/
+description: >
+  <p>Multimodal OCR successor to
+  <a href="/outputs/xiaohongshu/dots.ocr">dots.ocr</a> &mdash; "parse
+  anything from documents" &mdash; keeping the compact 3B footprint while
+  extending coverage beyond layout/text/table/formula parsing. Includes a
+  dots.mocr-svg variant for vector-graphic output. One of the
+  most-downloaded document-parsing models on HuggingFace (579K+ downloads
+  within months of release). MIT-licensed.</p>
+tags:
+  - ocr
+  - vision
+  - open-weight
+model:
+  architecture: dense
+  parameters: 3B
+  license: MIT
+related:
+  - dots.ocr

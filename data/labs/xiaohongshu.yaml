@@ -1,0 +1,90 @@
+name: Xiaohongshu
+slug: xiaohongshu
+url: https://www.xiaohongshu.com
+wikipedia: https://en.wikipedia.org/wiki/Xiaohongshu
+huggingface: https://huggingface.co/rednote-hilab
+github: https://github.com/rednote-hilab
+region: china
+founded: "2013"
+type: private
+valuation:
+  amount: "$31B"
+  type: private
+  date: "2025-09"
+description: >
+  <p><a href="https://en.wikipedia.org/wiki/Xiaohongshu">Xiaohongshu</a>
+  (known internationally as <strong>RedNote</strong>) is China's premier
+  lifestyle and social-commerce platform, founded in Shanghai in 2013 by
+  Miranda Qu and Charlwin Mao. The platform serves 300M+ monthly active
+  users and generated ~$4.8B revenue in 2024. Backed by Tencent, Alibaba,
+  HSG, Hillhouse, and GSR Ventures, its valuation climbed from
+  <a href="https://www.bloomberg.com/news/articles/2025-06-04/chinese-social-media-app-xiaohongshu-s-26-billion-valuation-bolsters-gsr-fund">$26B
+  (June 2025)</a> to $31B in September 2025 secondaries, and the company is
+  <a href="https://www.thestandard.com.hk/finance/article/334909/Xiaohongshu-plans-for-Hong-Kong-IPO-by-year-end-targets-US70b-valuation-WSJ-reports">preparing
+  a Hong Kong IPO targeting a valuation above $70B</a> with Goldman Sachs
+  and CICC advising.</p>
+
+  <p>Xiaohongshu's LLM effort is led by <strong>Debing Zhang</strong>
+  (ex-<a href="/labs/kuaishou">Kuaishou</a>), who has run an independent
+  large-model team since March 2023 &mdash; first building the internal
+  <strong>Zhuji</strong> foundation model behind the Diandian assistant,
+  then the open-weight <strong>dots</strong> family from the
+  <strong>Humane Intelligence Lab (hi lab)</strong>:
+  <a href="/outputs/xiaohongshu/dots.llm1">dots.llm1</a> (June 2025, a
+  from-scratch 142B MoE pretrained on 11.2T non-synthetic tokens),
+  <a href="/outputs/xiaohongshu/dots.vlm1">dots.vlm1</a> (August 2025, a
+  from-scratch 1.2B NaViT vision encoder on a DeepSeek-V3 base), the
+  breakout document parser <a href="/outputs/xiaohongshu/dots.ocr">dots.ocr</a>,
+  and <a href="/outputs/xiaohongshu/dots.tts">dots.tts</a>. On April 30,
+  2026, hi lab was <a href="https://kr-asia.com/four-years-after-chatgpt-xiaohongshus-ai-restraint-gives-way-to-urgency">elevated
+  into <strong>Dots</strong>, a first-level AI department</a> spanning model
+  R&amp;D, infrastructure, engineering, and product, reporting to president
+  Ding Ling &mdash; and the team now publishes scaling-science research
+  under the "Dots Studio" affiliation.</p>
+
+  <p>A second research identity, the <strong>FireRed team</strong>
+  (<a href="https://fireredteam.github.io/">Super Intelligence team</a>:
+  Audio Lab, Vision Lab, and Foundation Lab; HF org
+  <a href="https://huggingface.co/FireRedTeam">FireRedTeam</a>), ships
+  industrial-grade speech and vision models &mdash; FireRedASR,
+  FireRedTTS, and the FireRed-Image-Edit foundation model. Xiaohongshu's
+  open releases have unusually strong community adoption for a
+  consumer-platform lab: dots.ocr and its successor dots.mocr have
+  ~850K combined HuggingFace downloads, though no Xiaohongshu model is
+  yet tracked by Artificial Analysis or served on OpenRouter.</p>
+people:
+  - name: Debing Zhang
+    role: Head of large models, Dots (formerly hi lab)
+    formerly: Kuaishou (head of multimodal intelligent creation); PhD Zhejiang University
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=4nL1cDEAAAAJ
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Debing_Zhang1
+      - label: LinkedIn
+        url: https://www.linkedin.com/in/%E5%BE%B7%E5%85%B5-%E5%BC%A0-a6451aa9/
+  - name: Ding Ling
+    role: President; oversees the Dots AI department
+    formerly: Boston Consulting Group; Citi; MBA Stanford GSB
+news:
+  - title: "Chinese social media app Xiaohongshu's $26 billion valuation bolsters GSR fund"
+    url: https://www.bloomberg.com/news/articles/2025-06-04/chinese-social-media-app-xiaohongshu-s-26-billion-valuation-bolsters-gsr-fund
+    source: Bloomberg
+    date: 2025-06-04
+  - title: "RedNote joins AI race with its own open-source model that it says bests Alibaba, DeepSeek"
+    url: https://www.scmp.com/tech/big-tech/article/3313612/rednote-joins-ai-race-its-own-open-source-model-it-says-bests-alibaba-deepseek
+    source: SCMP
+    date: 2025-06-09
+  - title: "Four years after ChatGPT, Xiaohongshu's AI restraint gives way to urgency"
+    url: https://kr-asia.com/four-years-after-chatgpt-xiaohongshus-ai-restraint-gives-way-to-urgency
+    source: KrASIA
+    date: 2026-05-19
+  - title: "Xiaohongshu plans for Hong Kong IPO by year-end, targets US$70b valuation"
+    url: https://www.thestandard.com.hk/finance/article/334909/Xiaohongshu-plans-for-Hong-Kong-IPO-by-year-end-targets-US70b-valuation-WSJ-reports
+    source: The Standard (via WSJ)
+    date: 2026-06-17
+tags:
+  - open-weight
+  - multimodal
+  - speech
+  - moe
