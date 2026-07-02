@@ -1,0 +1,47 @@
+name: "PRISM: Demystifying Retention and Interaction in Mid-Training"
+slug: prism
+lab: ibm
+type: paper
+date: 2026-03-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.17074
+  - label: IBM Research blog
+    url: https://research.ibm.com/blog/mid-training-for-better-ai-reasoning
+  - label: Project page
+    url: https://bharat-runwal.github.io/PRISM/
+description: >
+  <p>A large controlled empirical study of <strong>mid-training</strong> design
+  choices for LLMs &mdash; the phase between pretraining and RL post-training.
+  PRISM runs experiments across <strong>seven base models spanning four families</strong>
+  (<a href="/outputs/ibm/granite-4.1">Granite</a>, LLaMA, Mistral, Nemotron-H),
+  two architecture types (dense Transformer and attention&ndash;Mamba hybrid), and
+  scales from <strong>3B to 24B</strong>, decomposing the decisions into their
+  principal axes: data composition, timing, domain interaction, benchmark
+  selection, RL compatibility, and scaling.</p>
+
+  <p>Key findings: mid-training on only <strong>~27B high-quality tokens</strong>
+  yields consistent gains of <strong>+15 to +40 on math</strong>, +5&ndash;12 on
+  code, and +6&ndash;13 on science while preserving general performance; the full
+  <strong>PRISM&rarr;RL pipeline lifts the six-benchmark reasoning macro-average
+  from under 12 to 29&ndash;42 (a 3&ndash;4&times; improvement)</strong>, whereas
+  RL applied directly to most base models stays weak (AIME near zero). Crucially,
+  <strong>data composition matters most at mid-training, not RL</strong> &mdash;
+  including science data during mid-training unlocks +17 to +28 GPQA-Diamond gains
+  under RL, while changing the RL mix moves results by &lt;2 points. Mechanistically,
+  mid-training <strong>densely restructures &gt;90% of weights</strong> while RL
+  makes sparse, front-loaded refinements to ~5%. By
+  <a href="/labs/ibm">IBM Research</a> and the MIT-IBM Watson AI Lab (senior
+  author Rameswar Panda).</p>
+tags:
+  - post-training
+  - reinforcement-learning
+  - reasoning
+  - research
+paper:
+  arxiv: "2603.17074"
+  authors:
+    - Bharat Runwal
+    - Ashish Agrawal
+    - Anurag Roy
+    - Rameswar Panda
