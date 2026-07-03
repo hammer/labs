@@ -77,6 +77,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Heung-Yeung_Shum1
 news:
+  - title: "StepFun Seeks US$12 Billion Valuation in Hong Kong IPO After ~$2.5B Pre-IPO Round"
+    url: https://www.digitimes.com/news/a20260609VL212/china-ai-startup-ipo-financing-deepseek-technology.html
+    source: DigiTimes
+    date: 2026-06-09
   - title: "Step-Audio-R1.1 (Realtime) Tops Big Bench Audio at 96.4%, Surpassing Grok Voice Agent"
     url: https://x.com/ArtificialAnlys/status/2012006066339581958
     source: Artificial Analysis

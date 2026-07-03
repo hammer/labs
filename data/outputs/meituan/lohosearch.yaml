@@ -1,0 +1,24 @@
+name: LoHoSearch
+slug: lohosearch
+lab: meituan
+type: eval
+date: 2026-06-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.12837
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/meituan-longcat/LoHoSearch
+description: >
+  <p>"Benchmarking Long-Horizon Search Agents Beyond the Human Difficulty
+  Ceiling": 544 human-verified questions (plus ~2K synthetic training items)
+  generated from a 7M-entity Wikipedia knowledge graph, positioned as a
+  successor to the saturating BrowseComp. The best frontier model at release
+  (GPT-5.5) scores only 34.7%. MIT license.</p>
+tags:
+  - eval
+  - agents
+  - search
+eval:
+  num_questions: 544
+related:
+  - r-horizon-websearch

@@ -1,0 +1,22 @@
+name: "Norm-Agnostic Residual Networks (NAG)"
+slug: nag-adaptive-depth
+lab: zyphra
+type: paper
+date: 2026-06-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.16112
+description: >
+  <p>"Scaling Adaptive Depth with Norm-Agnostic Residual Networks": splits
+  the residual stream into norm and direction components to build an
+  interpretable Mixture-of-Depths, matching baseline quality while skipping
+  20&ndash;25% of layer compute. Architecture-efficiency research in the
+  vein of Zyphra's hybrid-model identity.</p>
+tags:
+  - architecture
+  - efficiency
+  - research
+paper:
+  arxiv: "2606.16112"
+related:
+  - plasticity-loss

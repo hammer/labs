@@ -48,6 +48,10 @@ people:
     role: Former SVP & Director, IBM Research (departed Oct 2025)
     formerly: Now US DOE Under Secretary for Science
 news:
+  - title: "IBM Debuts World's First Sub-1nm (0.7nm) Chip: 3D Nanostack, ~100B Transistors, Up to 70% Better Efficiency vs 2nm"
+    url: https://newsroom.ibm.com/2026-06-25-ibm-debuts-worlds-first-sub-1-nanometer-chip-technology
+    source: IBM
+    date: 2026-06-25
   - title: "Granite 4.1 Released: 3B/8B/30B Dense Models, 512K Context, 8B Matches Prior 32B MoE"
     url: https://research.ibm.com/blog/granite-4-1-ai-foundation-models
     source: IBM Research

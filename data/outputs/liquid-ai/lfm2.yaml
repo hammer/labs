@@ -59,6 +59,12 @@ model:
     - name: LFM2.5-VL-Extract (450M / 1.6B)
       parameters: 1.6B
       notes: Vision-language Extract variants for OCR / structured document extraction, released June 4 2026 (450M and 1.6B sizes, GGUF available).
+    - name: LFM2.5-230M
+      parameters: 230M
+      notes: "Released June 24 2026; Liquid's most compact model yet — hybrid 8 double-gated LIV-conv + 6 GQA blocks, 32K context, 19T tokens, distilled from LFM2.5-350M. IFEval 71.71. LFM Open License v1.0. ~30K downloads in first week."
+    - name: LFM2.5-Embedding-350M / ColBERT-350M
+      parameters: 350M
+      notes: "First retrieval members of the family (announced June 18 2026): bidirectional-mask 350M retrievers on LFM2.5-350M-Base, 11 languages; NanoBEIR NDCG@10 0.605 / 0.577."
 paper:
   arxiv: "2511.23404"
 related:

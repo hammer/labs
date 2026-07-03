@@ -1,0 +1,37 @@
+name: V-SPLADE
+slug: v-splade
+lab: naver
+type: model
+date: 2026-07-01
+sources:
+  - label: HuggingFace (quality)
+    url: https://huggingface.co/naver/v-splade-quality
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.30917
+  - label: GitHub
+    url: https://github.com/naver/v-splade
+description: >
+  <p>"Inference-Free Multimodal Learned Sparse Retrieval for Production-Scale
+  Visual Document Search" from NAVER, SNU, and Naver Labs Europe: a 0.25B
+  sparse retriever for visual documents on a ModernVBERT backbone where
+  queries are resolved by learned bag-of-words lookup with <strong>no neural
+  query encoding at serving time</strong> (inverted index, no GPU). Documents
+  are embedded directly from pixels, reported 20x+ faster than OCR pipelines.
+  Two checkpoints: v-splade-quality (avg NDCG@5 60.1 across six visual-doc
+  benchmarks, +13.8pp over same-scale dense baseline) and v-splade-efficient
+  (56.4); more than 2x R@5 over a same-backbone dense retriever on an
+  18.7M-page production corpus. Apache-2.0.</p>
+tags:
+  - retrieval
+  - vision
+  - open-weight
+model:
+  parameters: 0.25B
+  license: Apache 2.0
+  variants:
+    - name: v-splade-quality
+      parameters: 0.25B
+    - name: v-splade-efficient
+      parameters: 0.25B
+paper:
+  arxiv: "2605.30917"

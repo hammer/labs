@@ -95,6 +95,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Sara_Hooker1
 news:
+  - title: "Bell, Cohere, Hypertec and BUZZ HPC Sign ~$220M Canadian Sovereign-AI Compute Deal (2,304 Grace Blackwell GPUs)"
+    url: https://www.newswire.ca/news-releases/bell-ai-fabric-cohere-hypertec-and-buzz-hpc-announce-landmark-deal-to-advance-sovereign-ai-in-canada-804262049.html
+    source: Newswire (Bell/Cohere PR)
+    date: 2026-06-18
   - title: "Cohere Releases North Mini Code — Its First Developer-Focused Model, a 30B-A3B Apache-2.0 Agentic Coder"
     url: https://huggingface.co/blog/CohereLabs/introducing-north-mini-code
     source: Cohere

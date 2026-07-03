@@ -91,6 +91,14 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Koray_Kavukcuoglu1
 news:
+  - title: "Computer Use Becomes a Native Tool in Gemini 3.5 Flash, Spanning Browser, Mobile, and Desktop"
+    url: https://blog.google/products/gemini/introducing-computer-use-gemini-3-5-flash/
+    source: Google
+    date: 2026-06-24
+  - title: "DeepMind Talent Exodus: Gemini Co-Lead Noam Shazeer Joins OpenAI; Nobel Laureate John Jumper Joins Anthropic Days Later"
+    url: https://fortune.com/2026/06/23/google-deepmind-ai-researcher-departures-raise-doubts-about-ability-to-win-the-ai-race-shazeer-jumper-eye-on-ai/
+    source: Fortune
+    date: 2026-06-18
   - title: "DeepMind CEO Demis Hassabis: Humanity Has 'a Few Years' to Prepare for AGI; 'Foothills of the Singularity'"
     url: https://www.axios.com/2026/05/26/deepmind-ceo-demis-hassabis
     source: Axios

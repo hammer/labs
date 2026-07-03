@@ -134,6 +134,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Shitao_Xiao1
 news:
+  - title: "BAAI Conference Unveils 'Wujie' World-Model Suite: Physis-v0.1, RoboBrain Orca, Brainμ 1.0 Neuroscience FM, OpenComplex2.5 (Announced, Artifacts Pending)"
+    url: https://hub.baai.ac.cn/view/55509
+    source: BAAI
+    date: 2026-06-12
   - title: "Zhang Hongjiang, founder of BAAI: 'AI systems should never be able to deceive humans'"
     url: https://www.ft.com/content/bec98c98-53aa-4c17-9adf-0c3729087556
     source: Financial Times

@@ -1,0 +1,31 @@
+name: Unlimited-OCR
+slug: unlimited-ocr
+lab: baidu
+type: model
+date: 2026-06-19
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/baidu/Unlimited-OCR
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.23050
+description: >
+  <p>Baidu's one-shot long-horizon document parsing model, positioned to
+  "push DeepSeek-OCR one step further": a compact DeepSeek-OCR-derived MoE
+  decoder (12 layers, 64 routed + 2 shared experts, 6 active per token, 32K
+  context) behind a 2048-dim vision encoder. MIT-licensed; total parameter
+  count not stated on the card (~3B-class). The breakout OCR release of
+  June 2026 &mdash; 885K HuggingFace downloads and 1,600+ likes within two
+  weeks. Distinct lineage from <a href="/outputs/baidu/qianfan-ocr">Qianfan-OCR</a>
+  (a 4B "Layout-as-Thought" VLM from March 2026).</p>
+tags:
+  - ocr
+  - vision
+  - moe
+  - open-weight
+model:
+  architecture: moe
+  license: MIT
+paper:
+  arxiv: "2606.23050"
+related:
+  - qianfan-ocr

@@ -16,7 +16,7 @@ ipo:
   exchange: HKEX
   ticker: "02513"
 valuation:
-  amount: "$123B"
+  amount: "$128B"
   type: market-cap
   ticker: "HKG: 02513"
   date: "2026-06"
@@ -176,6 +176,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=93a-9kkAAAAJ
 news:
+  - title: "Zhipu AI Market Cap Tops HK$1 Trillion (~US$128B) as GLM-5.2 Sends Shares Soaring"
+    url: https://www.scmp.com/tech/article/3357858/zhipu-ai-market-cap-tops-hk1-trillion-shares-glm-52-developer-soar
+    source: SCMP
+    date: 2026-06-22
   - title: "Z.ai GLM-5.2 Tops the AA Intelligence Index as the Highest-Scoring Open Model (51); MIT Open Weights Released"
     url: https://cryptobriefing.com/z-ai-glm-5-2-intelligence-index-leader/
     source: Crypto Briefing

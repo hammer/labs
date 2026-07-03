@@ -1,0 +1,24 @@
+name: "τ₀-World Model"
+slug: tau-0-wm
+lab: sii
+type: model
+date: 2026-05-31
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/sii-research/tau-0-wm
+  - label: GitHub
+    url: https://github.com/sii-research/tau-0-wm
+  - label: Report (AGIBOT)
+    url: https://finch-static.agibot.com/VAM/blog/tau_0_wm.pdf
+description: >
+  <p>Unified video-action world model for robotic manipulation from SII
+  and AGIBOT: builds on Wan2.2-TI2V-5B with a dual-arm end-effector action
+  space, jointly predicting future video and actions. Weights shipped May
+  31; post-training and inference code followed June 26. The report ships
+  as a PDF via AGIBOT rather than arXiv; parameter count is not stated on
+  the card.</p>
+tags:
+  - robotics
+  - world-model
+  - open-weight
+model: {}

@@ -1,0 +1,24 @@
+name: olmo-eval
+slug: olmo-eval
+lab: ai2
+type: library
+date: 2026-06-12
+sources:
+  - label: GitHub
+    url: https://github.com/allenai/olmo-eval
+description: >
+  <p>Ai2's evaluation workbench extending OLMES: modular task/suite/harness
+  abstractions, sandboxed tool-use evaluation routing, and first-class
+  support for agentic and multi-turn evals. Apache-2.0. The eval
+  infrastructure behind the OLMo and Tmax lines.</p>
+tags:
+  - eval
+  - infrastructure
+  - library
+library:
+  github: https://github.com/allenai/olmo-eval
+  language: Python
+  license: Apache 2.0
+related:
+  - olmo-3
+  - tmax

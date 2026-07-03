@@ -1,0 +1,25 @@
+name: "The Culture Funnel / CultureMarkers"
+slug: culture-funnel
+lab: cohere
+type: paper
+date: 2026-06-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.13808
+  - label: HuggingFace (dataset)
+    url: https://huggingface.co/datasets/CohereLabs/CultureMarkers
+description: >
+  <p>Cohere Labs study showing that explicit cultural signals decline
+  sharply through post-training pipelines &mdash; the "cultural data
+  funnel" &mdash; with implications for multilingual and multicultural
+  model behavior. Ships with <strong>CultureMarkers</strong>, a 5.6M-sample
+  culturally-tagged dataset. Continues the Aya line's multilingual-equity
+  research agenda.</p>
+tags:
+  - multilingual
+  - research
+  - dataset
+paper:
+  arxiv: "2606.13808"
+related:
+  - aya-101

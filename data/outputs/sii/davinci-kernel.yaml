@@ -1,0 +1,53 @@
+name: daVinci-kernel
+slug: davinci-kernel
+lab: sii
+date: 2026-06-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.16497
+  - label: GitHub
+    url: https://github.com/GAIR-NLP/daVinci-kernel
+  - label: HuggingFace (14B-RL)
+    url: https://huggingface.co/SII-GAIR-NLP/daVinci-kernel-14B-RL
+description: >
+  <p>RL framework from SII's GAIR lab for GPU kernel optimization:
+  co-trains Skill Selection, Policy, and Skill Summary agents on a single
+  backbone, admitting new skills into the library only after
+  execution-verified speedups. daVinci-kernel-14B reaches 37.2% / 70.6% /
+  32.2% on KernelBench Levels 1/2/3 under the Fast&#8321; threshold,
+  outperforming Dr.Kernel-14B by up to 46% on Level 3. Ships 8B/14B SFT
+  and RL checkpoints plus the SFT dataset. Extends SII's daVinci line into
+  systems-level code optimization.</p>
+tags:
+  - coding
+  - rl
+  - infrastructure
+  - open-weight
+outputs:
+  - name: daVinci-kernel models
+    type: model
+    date: 2026-06-16
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/SII-GAIR-NLP/daVinci-kernel-14B-RL
+    model:
+      variants:
+        - name: daVinci-kernel-8B-SFT
+          parameters: 8B
+        - name: daVinci-kernel-8B-RL
+          parameters: 8B
+        - name: daVinci-kernel-14B-SFT
+          parameters: 14B
+        - name: daVinci-kernel-14B-RL
+          parameters: 14B
+  - name: daVinci-kernel Paper
+    type: paper
+    date: 2026-06-15
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2606.16497
+    paper:
+      arxiv: "2606.16497"
+related:
+  - davinci-llm
+  - davinci-dev

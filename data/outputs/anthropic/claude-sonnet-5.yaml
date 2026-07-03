@@ -1,0 +1,32 @@
+name: Claude Sonnet 5
+slug: claude-sonnet-5
+lab: anthropic
+type: model
+date: 2026-06-30
+sources:
+  - label: Announcement
+    url: https://www.anthropic.com/news/claude-sonnet-5
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/claude-sonnet-5
+description: >
+  <p>Anthropic's "most agentic Sonnet model yet" (API: `claude-sonnet-5`):
+  plans, uses tools like browsers and terminals, and runs autonomously,
+  approaching Opus-class quality at mid-tier cost. 1M-token context with
+  adaptive reasoning; ships with a new tokenizer that yields roughly
+  1.0&ndash;1.35x more tokens for the same input than prior Claude models.
+  Introductory pricing $2/$10 per million input/output tokens through
+  August 31, 2026, then $3/$15. Default model for Free and Pro plans.
+  AA Intelligence Index 53 (v4.1, adaptive reasoning at max effort) &mdash;
+  #5 overall at release.</p>
+tags:
+  - frontier
+  - proprietary
+  - agents
+  - reasoning
+model:
+  context_window: 1000000
+  intelligence_index: 53
+  intelligence_index_version: "AA v4.1"
+related:
+  - claude-fable-5
+  - claude-opus-4.8

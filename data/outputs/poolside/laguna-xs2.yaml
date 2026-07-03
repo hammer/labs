@@ -29,6 +29,13 @@ description: >
   strongest open-weight launches of 2026 by adoption, climbing to ~219k Hugging
   Face downloads. <em>Not currently scored on Artificial Analysis &mdash; numbers
   above are self-reported.</em></p>
+
+  <p><strong>XS 2.1</strong> (weights June 20, 2026; blog July 2) is a point
+  release on the same architecture: SWE-bench Verified 70.9 and Multilingual
+  63.1, shipped with DFlash speculative-decoding drafts and FP8/NVFP4/INT4
+  quantizations &mdash; and a license change from Apache 2.0 to
+  <strong>OpenMDW-1.1</strong>, following the same relicensing move as Arcee's
+  Trinity family.</p>
 tags:
   - open-weight
   - coding

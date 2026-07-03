@@ -1,0 +1,51 @@
+name: Ling-2.6
+slug: ling-2.6
+lab: ant-group
+date: 2026-04-23
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/inclusionAI/Ling-2.6-1T
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.15079
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/ling-2-6-1t
+description: >
+  <p>Ant Group's trillion-parameter non-thinking flagship (backfilled;
+  weights April 23, technical report June 13). Hybrid Multi-head Latent
+  Attention + linear attention at 1T scale, MIT-licensed. The joint
+  <strong>Ling &amp; Ring 2.6</strong> technical report ("Efficient and
+  Instant Agentic Intelligence at Trillion-Parameter Scale") covers both
+  this model and the reasoning sibling
+  <a href="/outputs/ant-group/ring">Ring-2.6</a>: "fast thinking" trained
+  via a Contextual Process Redundancy Suppression reward, plus async RL
+  with IcePop for trillion-parameter RL stability.</p>
+tags:
+  - moe
+  - open-weight
+  - frontier
+outputs:
+  - name: Ling-2.6-1T
+    type: model
+    date: 2026-04-23
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/inclusionAI/Ling-2.6-1T
+      - label: Artificial Analysis
+        url: https://artificialanalysis.ai/models/ling-2-6-1t
+    model:
+      parameters: 1T
+      architecture: moe
+      license: MIT
+      intelligence_index: 26
+      intelligence_index_version: "AA v4.1"
+  - name: "Ling & Ring 2.6 Technical Report"
+    type: paper
+    date: 2026-06-13
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2606.15079
+    paper:
+      arxiv: "2606.15079"
+related:
+  - ling-2.5
+  - ring

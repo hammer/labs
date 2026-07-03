@@ -1,0 +1,36 @@
+name: OlmoEarth
+slug: olmoearth
+lab: ai2
+type: model
+date: 2026-06-24
+sources:
+  - label: Website
+    url: https://olmoearth.allenai.org/
+  - label: HuggingFace (v1.2 Base)
+    url: https://huggingface.co/allenai/OlmoEarth-v1_2-Base
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.20804
+description: >
+  <p>Ai2's open earth-observation foundation model line (entry filed at
+  the v1.2 refresh; the line was previously untracked). Trained on
+  Sentinel-1/2 and Landsat imagery in Nano/Tiny/Small/Base sizes (Base is
+  a 114M ViT-Base; Small is new in v1.2). The v1.2 paper is an efficiency
+  study: 3.0x fewer training GPU-hours and 2.9x fewer MACs at sustained
+  benchmark performance. Released under the OlmoEarth Artifact License.
+  On-thesis scientific FM for climate, agriculture, and disaster
+  monitoring.</p>
+tags:
+  - science
+  - earth-observation
+  - open-weight
+model:
+  parameters: 114M
+  license: OlmoEarth Artifact License
+  variants:
+    - name: OlmoEarth-v1_2-Nano
+    - name: OlmoEarth-v1_2-Tiny
+    - name: OlmoEarth-v1_2-Small
+    - name: OlmoEarth-v1_2-Base
+      parameters: 114M
+paper:
+  arxiv: "2605.20804"

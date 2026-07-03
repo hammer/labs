@@ -1,0 +1,34 @@
+name: MolmoMotion
+slug: molmomotion
+lab: ai2
+type: model
+date: 2026-06-15
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/allenai/MolmoMotion-4B-H3-F30
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.18558
+  - label: Blog
+    url: https://allenai.org/blog/molmo-motion
+description: >
+  <p>"Forecasting Point Trajectories in 3D with Language Instruction": a
+  4.85B Molmo2-architecture VLM that predicts 3D point trajectories from
+  RGB video plus natural-language instructions, transferring directly to
+  robot pick-and-place. Two released variants (H3-F30, H1-F32) plus the
+  1.16M-video molmo-motion-1m training set and the PointMotionBench
+  evaluation. Apache-2.0. Extends the Molmo line from perception into
+  motion forecasting for robotics.</p>
+tags:
+  - robotics
+  - vision
+  - open-weight
+model:
+  parameters: 4.85B
+  license: Apache 2.0
+  variants:
+    - name: MolmoMotion-4B-H3-F30
+    - name: MolmoMotion-4B-H1-F32
+paper:
+  arxiv: "2606.18558"
+related:
+  - molmo-2

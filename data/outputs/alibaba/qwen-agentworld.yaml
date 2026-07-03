@@ -1,0 +1,70 @@
+name: Qwen-AgentWorld
+slug: qwen-agentworld
+lab: alibaba
+date: 2026-06-22
+flagship: false
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/Qwen/Qwen-AgentWorld-35B-A3B
+  - label: GitHub
+    url: https://github.com/QwenLM/Qwen-AgentWorld
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.24597
+  - label: Blog
+    url: https://qwen.ai/blog?id=qwen-agentworld
+description: >
+  <p>Qwen's first "native language world model" for agents: given an agent
+  action, it predicts the next environment state across seven agent domains
+  (MCP tools, search, terminal, software engineering, Android, web, OS). Per
+  the model card, environment modeling is the training objective from the
+  continued-pretraining stage onward, followed by SFT and RL (GSPO). The
+  released checkpoint is 35B total / 3B active MoE (hybrid Gated DeltaNet +
+  gated attention, 256 experts with 8 routed + 1 shared) with 262K context,
+  Apache-2.0, built on Qwen3.5-35B-A3B-Base; the report also evaluates an
+  unreleased 397B-A17B sibling that tops the benchmark. 45K downloads in its
+  first ten days.</p>
+tags:
+  - agents
+  - world-model
+  - moe
+  - open-weight
+outputs:
+  - name: Qwen-AgentWorld-35B-A3B
+    type: model
+    date: 2026-06-22
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/Qwen/Qwen-AgentWorld-35B-A3B
+    model:
+      architecture: moe
+      parameters: 35B
+      active_parameters: 3B
+      context_window: 262144
+      num_experts: 256
+      top_k: 8
+      base_model: qwen3.5
+      license: Apache 2.0
+  - name: Qwen-AgentWorld Technical Report
+    type: paper
+    date: 2026-06-22
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2606.24597
+    paper:
+      arxiv: "2606.24597"
+  - name: AgentWorldBench
+    type: dataset
+    date: 2026-06-22
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/datasets/Qwen/AgentWorldBench
+    description: >
+      Companion benchmark: 2,170 samples across the seven domains, built from
+      real frontier-model trajectories on Tool Decathlon, Terminal-Bench, and
+      OSWorld-Verified paired with ground-truth environment observations;
+      scores Format/Factuality/Consistency/Realism/Quality. Apache-2.0.
+    dataset:
+      huggingface_url: https://huggingface.co/datasets/Qwen/AgentWorldBench
+      license: Apache 2.0
+related:
+  - qwen3.5

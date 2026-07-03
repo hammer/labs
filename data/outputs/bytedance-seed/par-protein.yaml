@@ -1,0 +1,34 @@
+name: PAR (Protein Autoregressive)
+slug: par-protein
+lab: bytedance-seed
+type: model
+date: 2026-07-03
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/ByteDance-Seed/PAR
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.04883
+description: >
+  <p>Multi-scale autoregressive model for protein backbone generation:
+  coarse-to-fine next-scale prediction with a flow decoder, enabling
+  zero-shot motif scaffolding. ICML 2026 Spotlight (paper February 2026);
+  the 60M/200M/400M checkpoints were released July 3. Apache-2.0. Continues
+  ByteDance Seed's protein-design line alongside Protenix and PXDesign.</p>
+tags:
+  - science
+  - protein
+  - open-weight
+model:
+  license: Apache 2.0
+  variants:
+    - name: PAR-60M
+      parameters: 60M
+    - name: PAR-200M
+      parameters: 200M
+    - name: PAR-400M
+      parameters: 400M
+paper:
+  arxiv: "2602.04883"
+related:
+  - protenix
+  - pxdesign

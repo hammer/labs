@@ -9,7 +9,7 @@ region: china
 founded: "2023"
 type: private
 valuation:
-  amount: "$50B"
+  amount: "$56B"
   type: private
   date: "2026-06"
 description: >
@@ -146,6 +146,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Qihao_Zhu1
 news:
+  - title: "DeepSeek Closes First External Round: ¥51B (~$7.4B) at ~¥400B (~$56B) — Largest AI Raise in China's History; Liang Retains Control"
+    url: https://www.caixinglobal.com/2026-06-27/deepseek-plans-major-hiring-spree-after-74-billion-funding-round-102458157.html
+    source: Caixin
+    date: 2026-06-16
   - title: "Liang Wenfeng Commits to AGI Mission Over Near-term Commercialization as ¥70B (~$10B) Round Advances"
     url: https://www.bloomberg.com/news/articles/2026-05-22/deepseek-founder-declares-agi-goal-as-10-billion-round-advances
     source: Bloomberg

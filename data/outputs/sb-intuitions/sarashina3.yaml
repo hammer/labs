@@ -1,0 +1,36 @@
+name: Sarashina3
+slug: sarashina3
+lab: sb-intuitions
+type: model
+date: 2026-06-30
+flagship: true
+sources:
+  - label: Announcement (SoftBank)
+    url: https://www.softbank.jp/business/news/2026/0630-01
+  - label: Tech Blog
+    url: https://www.sbintuitions.co.jp/blog/entry/2026/06/30/100000
+description: >
+  <p>SB Intuitions' third-generation flagship series, launched via
+  SoftBank's sovereign cloud "Cloud PF Type A" (Oracle Alloy on domestic
+  data centers): five models &mdash; mini (standard), nano, guard (safety
+  classifier), embedding, and rerank. Pretrained from scratch on "30T
+  tokens of large-scale, high-quality data" with curriculum learning;
+  post-training uses multi-stage asynchronous RL plus OPSD (on-policy
+  self-distillation). Evaluated against Qwen3 4B/30B/235B, GPT-4.1, and
+  GPT-5.4 mini on eight benchmarks including ELYZA-tasks-100, AIME 2025,
+  IFBench, BFCL v3, and &tau;&sup2;-bench Telecom. API-only; parameter
+  counts undisclosed.</p>
+tags:
+  - japanese
+  - proprietary
+  - sovereign
+model:
+  training_tokens: 30T
+  variants:
+    - name: Sarashina3 mini
+    - name: Sarashina3 nano
+    - name: Sarashina3 guard
+    - name: Sarashina3 embedding
+    - name: Sarashina3 rerank
+related:
+  - sarashina2

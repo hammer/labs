@@ -1,0 +1,23 @@
+name: CS2-10k
+slug: cs2-10k
+lab: reka
+type: dataset
+date: 2026-06-24
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/RekaAI/CS2-10k
+description: >
+  <p>"Large-Scale Egocentric Counter-Strike 2 Dataset" for training
+  interactive world models: 600K+ round videos totaling 10K+ hours of
+  720p/48fps gameplay from 587 professional match demos, with per-frame
+  player input and 3D annotations &mdash; 63.5TB, CC-BY-NC-4.0. 56K
+  downloads in its first week. Signals Reka's pivot toward world-model
+  research.</p>
+tags:
+  - dataset
+  - world-model
+  - video
+dataset:
+  huggingface_url: https://huggingface.co/datasets/RekaAI/CS2-10k
+  size: 63.5TB (600K+ videos, 10K+ hours)
+  license: CC-BY-NC-4.0

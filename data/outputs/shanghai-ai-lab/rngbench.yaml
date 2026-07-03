@@ -1,0 +1,30 @@
+name: RNGBench
+slug: rngbench
+lab: shanghai-ai-lab
+type: eval
+date: 2026-06-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.19338
+  - label: GitHub
+    url: https://github.com/InternLM/RNGBench
+  - label: HuggingFace (trajectories)
+    url: https://huggingface.co/datasets/internlm/RNGBench-Game-Trajectories
+description: >
+  <p>"Beyond the Current Observation: Evaluating Multimodal Large Language
+  Models in Controllable Non-Markov Games" &mdash; a closed-loop
+  "remember-to-act" evaluation using Reconstructive Non-Markov Games
+  (Matching Pairs and 3D Maze, with a duel protocol), where episodes grow
+  to ~128K tokens and ~350 images. Best frontier results at release: 62.3%
+  on 10x10 Matching Pairs (GPT-5.4) and 50% on the 13x13 maze
+  (Gemini-3.1-Pro). Joint Fudan / Shanghai Innovation Institute / Shanghai
+  AI Laboratory / ZJU / CUHK work (affiliations verified; authors include
+  Haodong Duan, Dahua Lin, Jiaqi Wang). Ships SFT trajectories
+  (rule-based-optimal plus Kimi-K2.5 and Qwen3.5-397B rollouts, MIT).</p>
+tags:
+  - eval
+  - multimodal
+  - agents
+  - memory
+paper:
+  arxiv: "2606.19338"

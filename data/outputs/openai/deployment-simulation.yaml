@@ -1,0 +1,20 @@
+name: Deployment Simulation
+slug: deployment-simulation
+lab: openai
+type: paper
+date: 2026-06-16
+sources:
+  - label: Announcement
+    url: https://openai.com/index/deployment-simulation/
+description: >
+  <p>Pre-deployment safety methodology: replay ~1.3M de-identified real
+  conversations against a candidate model to predict its deployed behavior
+  rates before release. OpenAI reports a median multiplicative error of
+  1.5x across 20 pre-registered behaviors, and that simulation reduces
+  eval-awareness confounds from 99.72% (on standard evals) to 5.12% &mdash;
+  a direct attack on the "models behave differently when they know they're
+  being tested" problem.</p>
+tags:
+  - safety
+  - evaluation
+  - research

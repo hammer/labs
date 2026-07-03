@@ -1,0 +1,27 @@
+name: InnoSpark 3.0
+slug: innospark-3.0
+lab: sii
+type: model
+date: 2026-06-30
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/sii-research/InnoSpark3.0-9B-260630
+description: >
+  <p>Education-domain LLM series developed jointly by SII and East China
+  Normal University; 3.0 is the first multimodal generation, an
+  "education-enhanced 9B model developed from Qwen3.5-9B"
+  (image-text-to-text, 262K context) trained with SFT plus multi-stage RL.
+  Apache-2.0. Card-reported gains over the base include EduBench 87.4 (vs
+  84.8) and Pedagogy Benchmark Multilingual 84.8 (vs 68.7); the larger
+  reasoning deltas (AIME25/26 93.3 vs 50) are self-reported and likely
+  compare thinking-mode output against the raw base &mdash; no technical
+  report yet.</p>
+tags:
+  - education
+  - domain-specific
+  - open-weight
+model:
+  parameters: 9B
+  context_window: 262144
+  base_model: qwen3.5
+  license: Apache 2.0

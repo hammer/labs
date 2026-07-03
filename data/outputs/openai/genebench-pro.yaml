@@ -1,0 +1,24 @@
+name: GeneBench-Pro
+slug: genebench-pro
+lab: openai
+type: eval
+date: 2026-06-30
+sources:
+  - label: Announcement
+    url: https://openai.com/index/introducing-genebench-pro/
+description: >
+  <p>OpenAI benchmark of 129 research-level computational-biology problems.
+  Because tasks are built from synthetic data generated from fully-known
+  causal structure, grading is deterministic &mdash; no rubric judges. At
+  release GPT-5.6 Sol Pro scores 31.5%; the best non-OpenAI model (Claude
+  Opus 4.8) scores 16.0%. Ten questions released to HuggingFace and 50
+  shared with Artificial Analysis for independent scoring.</p>
+tags:
+  - eval
+  - science
+  - biology
+eval:
+  num_questions: 129
+related:
+  - gpt-5.6
+  - lifescibench

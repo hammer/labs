@@ -1,0 +1,26 @@
+name: PLaMo 3.0 Prime
+slug: plamo-3.0-prime
+lab: pfn
+type: model
+date: 2026-06-22
+sources:
+  - label: Announcement
+    url: https://www.preferred.jp/ja/news/pr20260622/
+  - label: Tech Blog
+    url: https://tech.preferred.jp/ja/blog/plamo-3-0-prime-release/
+description: >
+  <p>General availability of PFN's commercial flagship, in Reasoning
+  (extended-RL "enhanced inference") and fast Non-reasoning variants.
+  Context extended 64K&rarr;256K via YaRN plus continued pretraining; RL
+  post-training roughly doubled versus the June 9 beta, with NICT safety
+  data. PFN claims competitiveness with GPT-5.4 Mini, Claude Haiku 4.5, and
+  Qwen3.6-27B on Japanese instruction-following and coding across 15
+  benchmarks (acknowledging weaker web-search, long-context, and math).
+  API and on-prem, plus Bedrock Marketplace and Snowflake; no open weights;
+  parameters and architecture undisclosed.</p>
+tags:
+  - japanese
+  - proprietary
+  - reasoning
+model:
+  context_window: 256000

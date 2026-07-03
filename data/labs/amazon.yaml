@@ -53,6 +53,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=aPO7PVMAAAAJ
 news:
+  - title: "Amazon in Talks to Sell Trainium3 Chips Directly to External Data Centers, Breaking AWS-Only Distribution"
+    url: https://finance.yahoo.com/technology/ai/articles/amazon-explores-external-trainium-chip-101801747.html
+    source: Bloomberg (via Yahoo)
+    date: 2026-06-18
   - title: "Peter DeSantis to Lead Unified AGI Org; Rohit Prasad Departing"
     url: https://www.cnbc.com/2025/12/17/amazon-ai-chief-prasad-leaving-peter-desantis-agi-group.html
     source: CNBC

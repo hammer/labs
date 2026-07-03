@@ -1,0 +1,27 @@
+name: Doubao-Seed-2.1
+slug: doubao-seed-2.1
+lab: bytedance-seed
+type: model
+date: 2026-06-23
+sources:
+  - label: Coverage (Pandaily)
+    url: https://pandaily.com/bytedance-doubao-2-1-seedance-2-5-jun2026
+  - label: Coverage (Dataconomy)
+    url: https://dataconomy.com/2026/06/24/bytedance-launches-doubao-2-1-pro-language-model/
+description: >
+  <p>ByteDance's flagship refresh, announced at the 2026 Volcano Engine Force
+  Conference in Pro and Turbo tiers. ByteDance positions Pro as crossing a
+  "production-grade" threshold across code delivery, long-horizon agent
+  tasks, multimodal understanding, and enterprise stability, claiming wins
+  over Claude Opus 4.6 on several coding/agent/multimodal benchmarks at
+  roughly 80% lower total cost of ownership (6&yen;/30&yen; per million
+  input/output tokens; Turbo at half). Closed, API-only via Volcano Engine;
+  parameters undisclosed. The Doubao family was reported serving 180T+
+  tokens/day at announcement; Seedance 2.5 was teased for July.</p>
+tags:
+  - frontier
+  - proprietary
+  - agents
+model: {}
+related:
+  - doubao-seed-2.0

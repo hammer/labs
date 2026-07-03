@@ -1,0 +1,22 @@
+name: Baichuan-M4
+slug: baichuan-m4
+lab: baichuan
+type: paper
+date: 2026-06-08
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.08982
+description: >
+  <p>"A Clinical-Grade Medical Agent System for Continuous Care" &mdash; the
+  fourth generation of Baichuan's medical line. Introduces Baichuan-Harness
+  (a unified RL training/deployment runtime), continuous-care RL with a
+  span-level SPAR++ reward, reasoning-path compression, curriculum training,
+  and a clinical multimodal tool layer. No open weights at publication.</p>
+tags:
+  - medical
+  - agents
+  - rl
+paper:
+  arxiv: "2606.08982"
+related:
+  - baichuan-m3

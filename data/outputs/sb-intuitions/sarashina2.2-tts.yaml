@@ -1,0 +1,53 @@
+name: Sarashina2.2-TTS
+slug: sarashina2.2-tts
+lab: sb-intuitions
+date: 2026-06-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.25369
+  - label: HuggingFace (TTS)
+    url: https://huggingface.co/sbintuitions/sarashina2.2-tts
+  - label: HuggingFace (kana-whisper)
+    url: https://huggingface.co/sbintuitions/kana-whisper
+  - label: GitHub
+    url: https://github.com/sbintuitions/sarashina2.2-tts
+description: >
+  <p>Japanese LLM-TTS system and evaluation suite: a 0.8B model built on
+  sarashina2.2-0.5b-instruct with CosyVoice/HiFT-GAN vocoding, trained on
+  ~361K hours of Japanese and English speech with targeted augmentation
+  covering all 2,136 Joyo kanji (weights shipped April 2026; paper June
+  2026). The paper introduces the <strong>Joyo Kanji Yomi Benchmark</strong>
+  (2,136 kanji / 4,378 readings) and the Kana-CER metric measured with the
+  newly released <strong>kana-whisper</strong> ASR (a 0.8B whisper-large-v3-turbo
+  finetune to katakana, MIT) &mdash; attacking kanji-reading correctness,
+  Japanese TTS's hardest failure mode.</p>
+tags:
+  - speech
+  - tts
+  - japanese
+  - open-weight
+outputs:
+  - name: sarashina2.2-tts
+    type: model
+    date: 2026-04-27
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/sbintuitions/sarashina2.2-tts
+    model:
+      parameters: 0.8B
+  - name: Sarashina2.2-TTS Technical Report
+    type: paper
+    date: 2026-06-24
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2606.25369
+    paper:
+      arxiv: "2606.25369"
+  - name: Joyo Kanji Yomi Benchmark
+    type: dataset
+    date: 2026-06-24
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/datasets/sbintuitions/joyo-kanji-yomi-benchmark
+    dataset:
+      huggingface_url: https://huggingface.co/datasets/sbintuitions/joyo-kanji-yomi-benchmark

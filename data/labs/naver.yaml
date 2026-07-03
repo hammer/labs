@@ -65,6 +65,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Sangdoo_Yun1
 news:
+  - title: "Korea's ~₩1,350T (~$880B) AI/Chips Investment Drive: Naver Among Companies Committing ₩550T in AI Data Centers"
+    url: https://www.cnbc.com/2026/06/29/samsung-sk-hynix-reported-1point3-reported-trillion-spending-plans.html
+    source: CNBC
+    date: 2026-06-29
   - title: "Naver Shuts Down Clova X Chatbot; Pivots to Vertical AI Integrated into Search, Shopping, Finance"
     url: https://en.sedaily.com/finance/2026/04/09/naver-shuts-down-clova-x-accelerates-ai-service-integration
     source: Seoul Economic Daily

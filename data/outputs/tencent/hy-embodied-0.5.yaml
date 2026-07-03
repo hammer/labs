@@ -1,0 +1,27 @@
+name: Hy-Embodied-0.5-VLA
+slug: hy-embodied-0.5
+lab: tencent
+type: model
+date: 2026-06-11
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/tencent/Hy-Embodied-0.5-VLA-UMI
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/Hy-Embodied-0.5-VLA
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.14409
+description: >
+  <p>Tencent's first Hunyuan vision-language-action model, from Tencent
+  Robotics X and the Hunyuan team: a VLA and robot-learning stack for
+  bimanual imitation learning, released with UMI-pretrained and
+  RoboTwin-finetuned checkpoints plus the accompanying dataset. Apache-2.0.
+  Marks Hunyuan's expansion from language/image/video/3D into embodied AI.</p>
+tags:
+  - robotics
+  - embodied
+  - vla
+  - open-weight
+model:
+  license: Apache 2.0
+paper:
+  arxiv: "2606.14409"

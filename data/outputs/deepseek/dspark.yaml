@@ -1,0 +1,75 @@
+name: DSpark / DeepSpec
+slug: dspark
+lab: deepseek
+date: 2026-06-26
+sources:
+  - label: GitHub (DeepSpec)
+    url: https://github.com/deepseek-ai/DeepSpec
+  - label: Paper (PDF)
+    url: https://github.com/deepseek-ai/DeepSpec/blob/main/DSpark_paper.pdf
+  - label: HuggingFace (V4-Pro-DSpark)
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-DSpark
+  - label: HuggingFace (V4-Flash-DSpark)
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-DSpark
+description: >
+  <p><strong>DSpark</strong> ("Confidence-Scheduled Speculative Decoding with
+  Semi-Autoregressive Generation") is DeepSeek's production speculative-decoding
+  framework: a semi-autoregressive draft architecture (parallel backbone plus a
+  lightweight sequential module that mitigates the "suffix decay" of parallel
+  drafters) combined with confidence-scheduled verification that dynamically
+  truncates draft length per request. In offline evaluation it beats EAGLE-3 by
+  ~27&ndash;31% and DFlash (arXiv 2602.06036) by ~16&ndash;18% macro-average
+  accepted length on Qwen3-4B/8B/14B; deployed on live DeepSeek-V4 traffic it
+  raises per-user generation speed 57&ndash;85% over the prior MTP-1 baseline
+  at matched aggregate throughput. The paper ships as a PDF in the repo (not on
+  arXiv), following the V3-era pattern.</p>
+
+  <p><strong>DeepSpec</strong> is the accompanying MIT-licensed full-stack
+  codebase for training and evaluating draft models (data prep, training,
+  evaluation), implementing DSpark alongside DFlash and EAGLE-3 baselines.
+  DeepSeek also re-uploaded <a href="/outputs/deepseek/deepseek-v4">DeepSeek-V4</a>
+  Pro and Flash as "-DSpark" checkpoints &mdash; identical weights with the draft
+  module attached &mdash; plus a 12-checkpoint draft-model zoo covering Qwen3 and
+  Gemma 4 targets. Ecosystem adoption was immediate: Red Hat trained a GLM-5.2
+  DSpark speculator within a week of release.</p>
+tags:
+  - efficiency
+  - inference
+  - open-weight
+  - infrastructure
+outputs:
+  - name: "DSpark: Confidence-Scheduled Speculative Decoding with Semi-Autoregressive Generation"
+    type: paper
+    date: 2026-06-26
+    sources:
+      - label: Paper (PDF)
+        url: https://github.com/deepseek-ai/DeepSpec/blob/main/DSpark_paper.pdf
+    description: >
+      Introduces the DSpark drafter and confidence-scheduled verification for
+      high-concurrency serving. DeepSeek-AI + Peking University; not posted to
+      arXiv.
+    paper:
+      authors:
+        - Xin Cheng
+        - Xingkai Yu
+        - Chenze Shao
+        - Jiashi Li
+        - Yunfan Xiong
+        - Wenfeng Liang
+      year: 2026
+  - name: DeepSpec
+    type: library
+    date: 2026-06-26
+    sources:
+      - label: GitHub
+        url: https://github.com/deepseek-ai/DeepSpec
+    description: >
+      Full-stack codebase for training and evaluating speculative-decoding
+      draft models: target-cache data generation, training, and a benchmark
+      suite. Implements DSpark plus DFlash and EAGLE-3 baselines. MIT license.
+    library:
+      github: https://github.com/deepseek-ai/DeepSpec
+      language: Python
+      license: MIT
+related:
+  - deepseek-v4

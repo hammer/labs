@@ -1,0 +1,23 @@
+name: SkillOpt
+slug: skillopt
+lab: microsoft
+type: paper
+date: 2026-06-30
+sources:
+  - label: Blog
+    url: https://www.microsoft.com/en-us/research/blog/skillopt/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.23904
+description: >
+  <p>MSR technique that treats a markdown "skill document" as the trainable
+  parameter for frozen LLM agents: the skill file is iteratively optimized
+  against task feedback while the model weights stay fixed. Reports
+  best-or-tied results in 52 of 52 evaluation cells across 6 agent
+  benchmarks &mdash; a data point for the "optimize the context, not the
+  weights" school of agent post-training. Paper May 2026; blog June 30.</p>
+tags:
+  - agents
+  - post-training
+  - research
+paper:
+  arxiv: "2605.23904"

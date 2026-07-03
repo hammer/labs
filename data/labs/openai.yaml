@@ -107,6 +107,18 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~John_Schulman1
 news:
+  - title: "OpenAI Proposes Giving US Government a ~5% Equity Stake (~$42.6B) via an Alaska-Permanent-Fund-Style Vehicle"
+    url: https://www.cnbc.com/2026/07/02/openai-proposes-us-government-own-5percent-stake-to-address-political-blowback.html
+    source: CNBC
+    date: 2026-07-02
+  - title: "GPT-5.6 Sol/Terra/Luna Launch Restricted to ~20 US-Government-Approved Partners Under June 2 Executive Order"
+    url: https://www.axios.com/2026/06/26/openai-gpt-sol-terra-luna-trump
+    source: Axios
+    date: 2026-06-26
+  - title: "OpenAI and Broadcom Unveil Jalapeño, OpenAI's First Custom Inference Chip — Designed to Tape-Out in ~9 Months Using OpenAI's Own Models"
+    url: https://openai.com/index/openai-broadcom-jalapeno-inference-chip/
+    source: OpenAI
+    date: 2026-06-24
   - title: "OpenAI Confidentially Files for IPO (Last Valued at $852B), One Week After Anthropic"
     url: https://techcrunch.com/2026/06/08/following-anthropic-openai-files-confidentially-for-ipo/
     source: TechCrunch

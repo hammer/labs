@@ -1,0 +1,37 @@
+name: GPT-5.6 (Sol / Terra / Luna)
+slug: gpt-5.6
+lab: openai
+type: model
+date: 2026-06-26
+flagship: true
+sources:
+  - label: Announcement
+    url: https://openai.com/index/previewing-gpt-5-6-sol/
+  - label: Coverage (VentureBeat)
+    url: https://venturebeat.com/technology/openai-unveils-gpt-5-6-sol-terra-and-luna-models-but-only-accessible-to-limited-preview-partners-for-now-per-us-gov
+  - label: Coverage (Axios)
+    url: https://www.axios.com/2026/06/26/openai-gpt-sol-terra-luna-trump
+description: >
+  <p>OpenAI's next-generation flagship series, launched June 26 in a
+  restricted preview: <strong>Sol</strong> (strongest, with improved agentic
+  performance in coding, biology, cybersecurity, and long-running tasks;
+  $5/$30 per M tokens), <strong>Terra</strong> (GPT-5.5-competitive at 2x
+  lower cost; $2.50/$15), and <strong>Luna</strong> (fastest/cheapest;
+  $1/$6). Adds a "max" reasoning tier and an "ultra mode" that spawns
+  subagents. Unprecedented rollout: initially limited to ~20
+  US-government-approved partner organizations following President Trump's
+  June 2 executive order on federal benchmarking of new frontier models,
+  with general availability promised "in coming weeks." Parameters
+  undisclosed; no Artificial Analysis score yet (restricted access).</p>
+tags:
+  - frontier
+  - proprietary
+  - reasoning
+  - agents
+model:
+  variants:
+    - name: GPT-5.6 Sol
+    - name: GPT-5.6 Terra
+    - name: GPT-5.6 Luna
+related:
+  - genebench-pro

@@ -44,6 +44,11 @@ people:
   - name: Toru Nishikawa
     role: Co-founder & Chairman
     formerly: University of Tokyo (MSc)
+news:
+  - title: "Japan Picks Noetra (SoftBank/NEC/Sony/Honda) + AIST for National Physical-AI Foundation Model; PFN Seconding ~15 Engineers"
+    url: https://www.japantimes.co.jp/business/2026/06/30/companies/physical-ai-meti-aid-model/
+    source: Japan Times
+    date: 2026-06-30
 tags:
   - open-weight
   - multilingual

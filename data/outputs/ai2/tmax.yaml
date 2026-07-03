@@ -1,0 +1,63 @@
+name: Tmax
+slug: tmax
+lab: ai2
+date: 2026-06-17
+sources:
+  - label: HuggingFace (tmax-9b)
+    url: https://huggingface.co/allenai/tmax-9b
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.23321
+  - label: GitHub
+    url: https://github.com/hamishivi/tmax
+description: >
+  <p>Ai2's terminal-agent model family &mdash; "a simple recipe for
+  terminal agents" billed as the strongest open RL recipe for terminal
+  agents to date. Sizes 2B/4B/9B/27B fine-tuned from Qwen 3.5 (2&ndash;9B)
+  and Qwen 3.6 27B with vision heads removed, trained with DPPO (Divergence
+  Proximal Policy Optimization). tmax-9b scores 27.2 and tmax-27b 42.7 on
+  Terminal-Bench 2.0. Radically open: Apache-2.0 weights plus the full SFT
+  data (TMax-15K, tmax-sft) and <strong>all RL rollouts and logprobs
+  published</strong> &mdash; per-stage ablation models included.</p>
+tags:
+  - agents
+  - rl
+  - open-weight
+  - coding
+outputs:
+  - name: Tmax models
+    type: model
+    date: 2026-06-17
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/allenai/tmax-9b
+    model:
+      license: Apache 2.0
+      variants:
+        - name: tmax-2b
+          parameters: 2B
+        - name: tmax-4b
+          parameters: 4B
+        - name: tmax-9b
+          parameters: 9B
+        - name: tmax-27b
+          parameters: 27B
+  - name: "Tmax: A Simple Recipe for Terminal Agents"
+    type: paper
+    date: 2026-06-22
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2606.23321
+    paper:
+      arxiv: "2606.23321"
+  - name: TMax-15K / tmax-sft datasets
+    type: dataset
+    date: 2026-06-17
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/datasets/allenai/TMax-15K
+    dataset:
+      huggingface_url: https://huggingface.co/datasets/allenai/TMax-15K
+      license: Apache 2.0
+related:
+  - olmo-3
+  - tulu-3

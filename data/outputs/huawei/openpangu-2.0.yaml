@@ -1,0 +1,37 @@
+name: openPangu 2.0
+slug: openpangu-2.0
+lab: huawei
+type: model
+date: 2026-06-30
+sources:
+  - label: GitCode (Flash inference)
+    url: https://gitcode.com/ascend-tribe/openPangu-2.0-Infer
+description: >
+  <p>Second-generation openPangu family, announced at Huawei Developer
+  Conference 2026 (June 12) with weights arriving June 30: two MoE models,
+  both with 512K context, trained and served on Ascend 910C-class hardware
+  &mdash; <strong>Pro</strong> (505B total / 18B active) and
+  <strong>Flash</strong> (92B total / 6B active, ~2x single-card throughput
+  claim). Notably open for Huawei: from June 30 the team began progressively
+  open-sourcing seven components including pre-training and post-training
+  code and custom training operators. Flash weights (BF16) are on GitCode;
+  Pro weight availability and the license name were not yet confirmed at
+  sweep time.</p>
+tags:
+  - moe
+  - open-weight
+  - ascend
+model:
+  architecture: moe
+  parameters: 505B
+  active_parameters: 18B
+  context_window: 512000
+  variants:
+    - name: openPangu-2.0-Pro
+      parameters: 505B
+      active_parameters: 18B
+    - name: openPangu-2.0-Flash
+      parameters: 92B
+      active_parameters: 6B
+related:
+  - openpangu

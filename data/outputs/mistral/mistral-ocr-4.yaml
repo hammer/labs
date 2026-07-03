@@ -1,0 +1,20 @@
+name: Mistral OCR 4
+slug: mistral-ocr-4
+lab: mistral
+type: model
+date: 2026-06-23
+sources:
+  - label: Announcement
+    url: https://mistral.ai/news/ocr-4/
+description: >
+  <p>Mistral's document-intelligence OCR model: 170 languages, typed-block
+  classification, per-word confidence scores, and markdown output.
+  Vendor-reported benchmarks: 85.20 on OlmOCRBench and 93.07 on
+  OmniDocBench. Priced at $4 per 1,000 pages via API, SageMaker, and Azure
+  Foundry, with an on-prem container option. Proprietary &mdash; no open
+  weights, parameters undisclosed.</p>
+tags:
+  - ocr
+  - vision
+  - proprietary
+model: {}

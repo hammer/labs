@@ -1,0 +1,23 @@
+name: "Anatomy of Post-Training"
+slug: anatomy-of-post-training
+lab: anthropic
+type: paper
+date: 2026-06-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.12360
+description: >
+  <p>Interpretability-guided post-training from Anthropic: identifies
+  latent concepts that separate preferred from dispreferred generations,
+  unifies feature-level and data-level interventions as forms of reward
+  shaping, and uses the framework to diagnose spurious training signals
+  such as sycophancy. Connects the interpretability agenda directly to
+  post-training practice.</p>
+tags:
+  - interpretability
+  - post-training
+  - research
+paper:
+  arxiv: "2606.12360"
+related:
+  - scaling-monosemanticity

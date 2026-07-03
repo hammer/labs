@@ -1,0 +1,33 @@
+name: SingGuard
+slug: sing-guard
+lab: ant-group
+type: model
+date: 2026-06-22
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/inclusionAI/Sing-Guard-0.8b
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.22873
+description: >
+  <p>Ant Group's first guardrail model family (0.8B/2B/4B/8B):
+  policy-adaptive multimodal guard models that treat the active safety
+  policy as a runtime input rather than baking policies into weights, with
+  fast/slow dynamic reasoning. Built on Qwen3-VL, Apache-2.0. Ant's
+  analogue to Qwen3Guard; early traction is modest.</p>
+tags:
+  - safety
+  - guardrails
+  - open-weight
+model:
+  license: Apache 2.0
+  variants:
+    - name: Sing-Guard-0.8b
+      parameters: 0.8B
+    - name: Sing-Guard-2b
+      parameters: 2B
+    - name: Sing-Guard-4b
+      parameters: 4B
+    - name: Sing-Guard-8b
+      parameters: 8B
+paper:
+  arxiv: "2606.22873"

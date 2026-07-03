@@ -1,0 +1,26 @@
+name: TabFM
+slug: tabfm
+lab: google
+type: model
+date: 2026-06-29
+sources:
+  - label: HuggingFace (PyTorch)
+    url: https://huggingface.co/google/tabfm-1.0.0-pytorch
+  - label: GitHub
+    url: https://github.com/google-research/tabfm
+  - label: Blog
+    url: https://research.google/blog/introducing-tabfm/
+description: >
+  <p>Google's tabular foundation model: zero-shot prediction on unseen
+  tables via in-context learning, trained "entirely on hundreds of millions
+  of synthetic datasets" generated from structural causal models &mdash; no
+  real-world data. Alternating row/column-attention encoder feeding a
+  24-block causal ICL transformer; parameter count unstated. Beats tuned
+  gradient-boosted trees on TabArena. Weights under the TabFM
+  Non-Commercial License v1.0; code Apache-2.0. Extends the TabPFN line of
+  prior-fitted tabular models to Google scale.</p>
+tags:
+  - tabular
+  - science
+  - foundation-model
+model: {}

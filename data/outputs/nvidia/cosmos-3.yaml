@@ -1,0 +1,59 @@
+name: Cosmos 3
+slug: cosmos-3
+lab: nvidia
+date: 2026-06-01
+flagship: true
+sources:
+  - label: Announcement
+    url: https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.02800
+  - label: HuggingFace (DROID dataset)
+    url: https://huggingface.co/datasets/nvidia/Cosmos3-DROID
+description: >
+  <p>NVIDIA's physical-AI flagship, billed as the "world's first fully open
+  omnimodel": a unified Mixture-of-Transformers combining autoregressive
+  and diffusion generation across text, image, video, audio, and action,
+  trained on ~20T multimodal tokens. Ships in Super and Nano variants with
+  a "Cosmos Coalition" of robotics and simulation partners. Launched at GTC
+  Taipei June 1 (backfilled); the technical report was revised through late
+  June. The companion <strong>Cosmos3-DROID</strong> release repackages the
+  DROID robot corpus in LeRobotDataset v3.0 format &mdash; 71,907 episodes /
+  22M frames / 707GB under OpenMDW-1.1.</p>
+tags:
+  - world-model
+  - robotics
+  - multimodal
+  - open-weight
+outputs:
+  - name: Cosmos 3
+    type: model
+    date: 2026-06-01
+    sources:
+      - label: Announcement
+        url: https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3
+    model:
+      architecture: moe
+      variants:
+        - name: Cosmos 3 Super
+        - name: Cosmos 3 Nano
+  - name: Cosmos 3 Technical Report
+    type: paper
+    date: 2026-06-02
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2606.02800
+    paper:
+      arxiv: "2606.02800"
+  - name: Cosmos3-DROID
+    type: dataset
+    date: 2026-06-25
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/datasets/nvidia/Cosmos3-DROID
+    dataset:
+      huggingface_url: https://huggingface.co/datasets/nvidia/Cosmos3-DROID
+      size: 707GB (71,907 episodes / 22M frames)
+      license: OpenMDW-1.1
+related:
+  - cosmos

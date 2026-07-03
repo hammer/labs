@@ -4,6 +4,8 @@ lab: deepseek
 date: 2026-04-24
 flagship: true
 sources:
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2606.19348
   - label: Technical Report (PDF)
     url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf
   - label: HuggingFace (V4-Pro)
@@ -79,12 +81,17 @@ outputs:
     type: paper
     date: 2026-04-24
     sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2606.19348
       - label: Technical Report (PDF)
         url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf
     description: >
       "Towards Highly Efficient Million-Token Context Intelligence." Details CSA+HCA
       hybrid attention, mHC residual connections, Muon optimizer, and two-stage
       post-training pipeline.
+    paper:
+      arxiv: "2606.19348"
 related:
   - deepseek-v3.2
   - deepseek-r1
+  - dspark

@@ -1,0 +1,25 @@
+name: MA-ProofBench
+slug: ma-proofbench
+lab: openbmb
+type: eval
+date: 2026-06-11
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.13782
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/openbmb/MA-ProofBench
+  - label: GitHub
+    url: https://github.com/OpenBMB/MA-ProofBench
+description: >
+  <p>The first formal benchmark for theorem proving in mathematical
+  analysis: 200 Lean 4 + Mathlib problems in two tiers (100 undergraduate,
+  100 PhD-qualifying) across 6 topics and 27 subcategories, from
+  Tsinghua/OpenBMB authors. Extends formal-methods evaluation beyond
+  competition math (miniF2F, PutnamBench) into the analysis curriculum
+  where current provers are weakest.</p>
+tags:
+  - eval
+  - math
+  - formal-methods
+eval:
+  num_questions: 200

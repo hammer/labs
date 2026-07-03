@@ -1,0 +1,22 @@
+name: "Can Scale Save Us From Plasticity Loss in LLMs?"
+slug: plasticity-loss
+lab: zyphra
+type: paper
+date: 2026-06-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.24752
+description: >
+  <p>Zyphra study of plasticity loss &mdash; the declining ability of
+  networks to learn from new data over the course of training &mdash;
+  showing it appears even in stationary pretraining (not just continual
+  learning), and that scaling parameters has diminishing returns as a
+  remedy. Relevant to continual-pretraining and long-run training-dynamics
+  research.</p>
+tags:
+  - scaling
+  - research
+paper:
+  arxiv: "2606.24752"
+related:
+  - nag-adaptive-depth

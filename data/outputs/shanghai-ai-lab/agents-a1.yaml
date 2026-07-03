@@ -1,0 +1,40 @@
+name: Agents-A1
+slug: agents-a1
+lab: shanghai-ai-lab
+type: model
+date: 2026-06-26
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/InternScience/Agents-A1
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.30616
+  - label: GitHub
+    url: https://github.com/InternScience/Agents-A1
+  - label: Project Page
+    url: https://internscience.github.io/Agents-A1/
+description: >
+  <p>"Scaling the Horizon, Not the Parameters: Reaching Trillion-Parameter
+  Performance with a 35B Agent" &mdash; InternScience's agentic VLM: a
+  35B-A3B MoE (hybrid linear/full attention, image-text-to-text,
+  Apache-2.0) trained on trajectories averaging ~45K tokens via a
+  three-stage recipe: full-domain SFT, domain-level teacher training, then
+  multi-teacher multi-domain on-policy distillation with
+  heterogeneity-aware optimization. Card-reported results claim SOTA or
+  best-in-class against GPT-5.5, DeepSeek-V4-Pro, and Kimi-K2.6 on agentic
+  and science benchmarks &mdash; GAIA 96.0, BrowseComp 75.5, HLE-with-tools
+  47.6, IFBench 80.6, SciCode 44.3. Strong first-week traction (194 HF
+  likes). Base-model lineage is not stated on the card.</p>
+tags:
+  - agents
+  - moe
+  - open-weight
+  - science
+model:
+  architecture: moe
+  parameters: 35B
+  active_parameters: 3B
+  license: Apache 2.0
+paper:
+  arxiv: "2606.30616"
+related:
+  - internagent

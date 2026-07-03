@@ -1,0 +1,24 @@
+name: LifeSciBench
+slug: lifescibench
+lab: openai
+type: eval
+date: 2026-06-17
+sources:
+  - label: Announcement
+    url: https://openai.com/index/introducing-life-sci-bench/
+description: >
+  <p>OpenAI benchmark of 750 life-science research tasks authored by 173
+  PhD scientists, graded against 19,020 rubric criteria across 7 workflow
+  types (literature synthesis, experimental design, data analysis,
+  artifact interpretation, and more). The best model at release scores
+  36.1%, with artifact interpretation the largest bottleneck &mdash;
+  OpenAI's counterpart to the science-workflow evals emerging across
+  frontier labs.</p>
+tags:
+  - eval
+  - science
+  - biology
+eval:
+  num_questions: 750
+related:
+  - genebench-pro

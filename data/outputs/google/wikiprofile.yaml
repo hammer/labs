@@ -1,0 +1,24 @@
+name: "WikiProfile / Recall Is the Bottleneck"
+slug: wikiprofile
+lab: google
+type: paper
+date: 2026-06-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.14080
+  - label: HuggingFace (dataset)
+    url: https://huggingface.co/datasets/google/WikiProfile
+description: >
+  <p>"Recall Is the Bottleneck for Parametric Factuality" (v2 June 19) with
+  its companion dataset WikiProfile: 2,150 Wikipedia facts, each probed
+  under 10 phrasings (21,500 instances, CC-BY-SA-4.0). Core finding: models
+  encode 95&ndash;98% of tested facts somewhere in their parameters, but
+  recall &mdash; retrieving the fact under a given phrasing &mdash; is the
+  bottleneck for factuality, reframing how hallucination should be
+  attacked.</p>
+tags:
+  - factuality
+  - research
+  - dataset
+paper:
+  arxiv: "2602.14080"

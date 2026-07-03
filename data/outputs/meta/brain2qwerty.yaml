@@ -1,0 +1,20 @@
+name: Brain2Qwerty
+slug: brain2qwerty
+lab: meta
+type: paper
+date: 2026-06-29
+sources:
+  - label: Blog
+    url: https://ai.meta.com/blog/brain2qwerty-brain-ai-human-communication/
+description: >
+  <p>Meta FAIR's non-invasive brain-to-text line (v2 announced June 2026;
+  v1 published in Nature Neuroscience): decodes typed sentences from MEG
+  brain recordings by fine-tuning LLMs on neural data. v2 reaches 61%
+  average word accuracy (78% best participant) versus ~8% for prior
+  non-invasive approaches, trained on ~22K sentences from 9 participants.
+  Full v1+v2 training code released. A milestone for non-invasive
+  brain-computer interfaces and on-thesis neuroscience FM work.</p>
+tags:
+  - science
+  - neuroscience
+  - bci

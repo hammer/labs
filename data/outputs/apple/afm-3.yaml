@@ -1,0 +1,38 @@
+name: Apple Foundation Models 3 (AFM 3)
+slug: afm-3
+lab: apple
+type: model
+date: 2026-06-08
+flagship: true
+sources:
+  - label: Announcement
+    url: https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models
+description: >
+  <p>Apple's third-generation foundation model family, announced at WWDC
+  2026 and developed "in collaboration with Google": <strong>AFM 3
+  Core</strong> (3B dense, on-device), <strong>AFM 3 Core Advanced</strong>
+  (20B sparse activating 1&ndash;4B parameters at a time via
+  Instruction-Following Pruning, storing full weights in flash rather than
+  RAM), <strong>AFM 3 Cloud</strong> (speed-optimized server model),
+  <strong>ADM 3 Cloud</strong> (image generation/editing), and
+  <strong>AFM 3 Cloud Pro</strong> &mdash; the most capable tier, for which
+  Apple "worked with Google and NVIDIA to extend Private Cloud Compute to
+  NVIDIA GPUs in Google Cloud." Powers the rebuilt Siri. Full technical
+  report promised for later in summer 2026; parameters for the cloud
+  models undisclosed.</p>
+tags:
+  - on-device
+  - multimodal
+  - proprietary
+model:
+  variants:
+    - name: AFM 3 Core
+      parameters: 3B
+    - name: AFM 3 Core Advanced
+      parameters: 20B
+      active_parameters: 1-4B
+    - name: AFM 3 Cloud
+    - name: ADM 3 Cloud (image)
+    - name: AFM 3 Cloud Pro
+related:
+  - apple-intelligence

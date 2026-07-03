@@ -1,0 +1,29 @@
+name: EdgeBench
+slug: edgebench
+lab: bytedance-seed
+type: eval
+date: 2026-06-24
+sources:
+  - label: GitHub
+    url: https://github.com/ByteDance-Seed/EdgeBench
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/ByteDance-Seed/EdgeBench
+  - label: Report (PDF)
+    url: https://edge-bench.org/paper.pdf
+description: >
+  <p>Benchmark of 134 day-long real-world agent tasks (51 publicly released)
+  measuring how much agents improve by learning from their environment over
+  12&ndash;72-hour horizons. From ~38,000 hours of runs the team reports that
+  performance follows a log-sigmoid scaling law in interaction time (mean
+  R&sup2;=0.998) and that frontier models' "learning speed from environments
+  roughly doubles every three months" &mdash; an environment-interaction
+  analogue of the METR long-horizon results. CC-BY-4.0; the report ships as
+  a site PDF, not on arXiv.</p>
+tags:
+  - eval
+  - agents
+  - scaling
+eval:
+  num_tasks: 134
+related:
+  - doubao-seed-2.1

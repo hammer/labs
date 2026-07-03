@@ -1,0 +1,53 @@
+name: Qwen-Robot
+slug: qwen-robot
+lab: alibaba
+date: 2026-06-16
+sources:
+  - label: RobotNav (arXiv)
+    url: https://arxiv.org/abs/2606.18112
+  - label: RobotManip (arXiv)
+    url: https://arxiv.org/abs/2606.17846
+  - label: RobotWorld (arXiv)
+    url: https://arxiv.org/abs/2606.17030
+description: >
+  <p>Qwen's entry into robotics: three simultaneous technical reports, with
+  weights explicitly not released. <strong>RobotNav</strong> is a navigation
+  foundation model with a parameterized inference-time observation interface,
+  trained on 15.6M samples with favorable 2B&rarr;8B scaling and zero-shot
+  real-robot transfer. <strong>RobotManip</strong> is a vision-language-action
+  model built on Qwen-VL over a ~38,100-hour pretraining corpus including
+  human-to-robot data synthesis across 15 robot platforms.
+  <strong>RobotWorld</strong> is a language-conditioned video world model
+  unifying manipulation, driving, and navigation.</p>
+tags:
+  - robotics
+  - embodied
+  - vla
+outputs:
+  - name: Qwen-RobotNav Technical Report
+    type: paper
+    date: 2026-06-16
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2606.18112
+    paper:
+      arxiv: "2606.18112"
+  - name: Qwen-RobotManip Technical Report
+    type: paper
+    date: 2026-06-16
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2606.17846
+    paper:
+      arxiv: "2606.17846"
+  - name: Qwen-RobotWorld Technical Report
+    type: paper
+    date: 2026-06-16
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2606.17030
+    paper:
+      arxiv: "2606.17030"
+related:
+  - qwen-agentworld
+  - qwen2.5-vl

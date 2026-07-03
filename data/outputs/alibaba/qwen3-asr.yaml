@@ -1,0 +1,31 @@
+name: Qwen3-ASR
+slug: qwen3-asr
+lab: alibaba
+type: model
+date: 2026-01-28
+sources:
+  - label: HuggingFace (1.7B)
+    url: https://huggingface.co/Qwen/Qwen3-ASR-1.7B-hf
+  - label: HuggingFace (0.6B)
+    url: https://huggingface.co/Qwen/Qwen3-ASR-0.6B-hf
+description: >
+  <p>Qwen's open speech-recognition line (backfilled from January 2026;
+  Transformers-native "-hf" ports shipped June 26): 0.6B and 1.7B models
+  built on the Qwen3-Omni stack, covering 30 languages plus 22 Chinese
+  dialects with unified streaming and offline decoding. Shipped alongside
+  Qwen3-ForcedAligner-0.6B, a non-autoregressive timestamping model.
+  Apache-2.0; over 1.3M cumulative downloads by mid-2026.</p>
+tags:
+  - speech
+  - asr
+  - open-weight
+model:
+  license: Apache 2.0
+  variants:
+    - name: Qwen3-ASR-0.6B
+      parameters: 0.6B
+    - name: Qwen3-ASR-1.7B
+      parameters: 1.7B
+related:
+  - qwen2-audio
+  - qwen2.5-omni
