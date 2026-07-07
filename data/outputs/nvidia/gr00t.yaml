@@ -1,0 +1,38 @@
+name: Isaac GR00T
+slug: gr00t
+lab: nvidia
+type: model
+date: 2025-03-18
+sources:
+  - label: Announcement (N1)
+    url: https://nvidianews.nvidia.com/news/nvidia-isaac-gr00t-n1-open-humanoid-robot-foundation-model-simulation-frameworks
+  - label: GitHub
+    url: https://github.com/NVIDIA/Isaac-GR00T
+  - label: HuggingFace Blog (N1.7)
+    url: https://huggingface.co/blog/nvidia/gr00t-n1-7
+description: >
+  <p>NVIDIA's humanoid-robot foundation model line, announced at GTC 2025 as
+  "the world's first open humanoid robot foundation model." The current
+  <strong>GR00T N1.7</strong> (early access mid-2026, Apache-2.0) is an open
+  reasoning vision-language-action model with a new VLM backbone
+  (Cosmos-Reason2-2B / Qwen3-VL), trained on bimanual, semi-humanoid, and
+  humanoid data plus 20K hours of EgoScale human video &mdash; improving
+  generalization and language-following over N1.6. A commercial surgical
+  variant (GR00T-H-N1.7) shipped June 2026, and LIBERO fine-tuned
+  checkpoints followed in July. Anchors NVIDIA's physical-AI stack alongside
+  <a href="/outputs/nvidia/cosmos-3">Cosmos 3</a>.</p>
+tags:
+  - robotics
+  - vla
+  - open-weight
+  - embodied
+model:
+  license: Apache 2.0
+  variants:
+    - name: GR00T N1
+    - name: GR00T N1.6
+    - name: GR00T N1.7
+    - name: GR00T-H-N1.7 (surgical)
+related:
+  - cosmos-3
+  - cosmos

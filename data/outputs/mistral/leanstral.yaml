@@ -1,0 +1,37 @@
+name: Leanstral 1.5
+slug: leanstral
+lab: mistral
+type: model
+date: 2026-07-02
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/mistralai/Leanstral-1.5-119B-A6B
+  - label: Model Card (Mistral Docs)
+    url: https://docs.mistral.ai/models/model-cards/leanstral-1-5
+description: >
+  <p>Mistral's open-weight Lean 4 proof-engineering model: a 119B MoE
+  activating 6.5B per token (128 experts, top-4) with 256K context,
+  Apache-2.0. Works like a developer in a raw filesystem &mdash; edits
+  files, runs bash, and queries the Lean language server for goals and
+  type information &mdash; persisting through multiple rounds of context
+  compaction on long-horizon proof tasks. Results: saturates miniF2F,
+  solves 587/672 PutnamBench problems, and sets SOTA on FATE-H (87%) and
+  FATE-X (34%). Mistral says it has already surfaced previously unknown
+  bugs in open-source code via formal verification. Free in beta via the
+  Labs API (`labs-leanstral-1-5`) and Mistral Vibe.</p>
+tags:
+  - formal-methods
+  - math
+  - moe
+  - open-weight
+model:
+  architecture: moe
+  parameters: 119B
+  active_parameters: 6.5B
+  context_window: 256000
+  num_experts: 128
+  top_k: 4
+  license: Apache 2.0
+related:
+  - mathstral
+  - magistral

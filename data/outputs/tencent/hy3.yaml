@@ -1,4 +1,4 @@
-name: Hy3 Preview
+name: Hy3
 slug: hy3
 lab: tencent
 type: model
@@ -7,10 +7,12 @@ flagship: true
 sources:
   - label: Announcement (SCMP)
     url: https://www.scmp.com/tech/big-tech/article/3351101/tencent-unveils-first-flagship-ai-model-former-openai-researcher-helm
+  - label: HuggingFace
+    url: https://huggingface.co/tencent/Hy3
   - label: GitHub
     url: https://github.com/Tencent-Hunyuan/Hy3-preview
-  - label: HuggingFace
-    url: https://huggingface.co/tencent/Hy3-preview
+  - label: OpenRouter
+    url: https://openrouter.ai/tencent/hy3
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/hy3
 description: >
@@ -27,7 +29,19 @@ description: >
   LiveCodeBench-v6 34.86 (strongest in class on several). Deployed in Tencent's
   <strong>Yuanbao</strong> consumer app and <strong>CodeBuddy</strong> coding
   assistant. Designed to leverage WeChat's 1B+ users for contextual understanding.
-  Open weights under Tencent Hy Community License.</p>
+  Preview weights shipped under the Tencent Hy
+  Community License.</p>
+
+  <p><strong>Official Hy3 launched July 6, 2026</strong> (weights July 2),
+  relicensed to <strong>Apache-2.0</strong>: same architecture, post-training
+  scaled up with feedback from 50+ internal products. GA card reports
+  SWE-bench Verified <strong>78</strong> (from 74.4), GPQA Diamond 90.4 (from
+  87.2), hallucination rate cut 12.5%&rarr;5.4%, and a 90% task-completion
+  rate across Tencent's agent deployments. Integrated into WorkBuddy,
+  CodeBuddy, Yuanbao, QQ Browser and ~50 more products; priced at
+  &yen;1/&yen;4 per M tokens on Tencent Cloud with a two-week free tier on
+  OpenRouter. AA score (34) still reflects the April preview pending
+  re-evaluation.</p>
 tags:
   - moe
   - open-weight

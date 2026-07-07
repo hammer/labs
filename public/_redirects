@@ -1,4 +1,7 @@
-# Lab rename: xAI -> SpaceX (slug xai -> spacex), 2026-06
-/labs/xai            /labs/spacex/             301
-/labs/xai/           /labs/spacex/             301
-/outputs/xai/*       /outputs/spacex/:splat    301
+# Lab rename: xAI -> SpaceX (2026-06) -> SpaceXAI (2026-07)
+/labs/xai            /labs/spacexai/             301
+/labs/xai/           /labs/spacexai/             301
+/outputs/xai/*       /outputs/spacexai/:splat    301
+/labs/spacex         /labs/spacexai/             301
+/labs/spacex/        /labs/spacexai/             301
+/outputs/spacex/*    /outputs/spacexai/:splat    301

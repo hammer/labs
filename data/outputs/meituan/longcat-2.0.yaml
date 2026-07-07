@@ -30,7 +30,9 @@ description: >
   domestic silicon &mdash; a step beyond DeepSeek-V4-pro, which used home-grown
   chips only for inference. Released June 30, 2026; Meituan describes its
   performance as comparable to Google's Gemini 3.1 Pro.
-  <em>Not yet scored by Artificial Analysis.</em></p>
+  <em>Not yet scored by Artificial Analysis.</em>
+  Open weights landed on HuggingFace July 5, 2026 (BF16, with FP8 and INT8
+  quantizations), making the MIT release concrete.</p>
 tags:
   - moe
   - open-weight

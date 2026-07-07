@@ -1,5 +1,5 @@
-name: SpaceX
-slug: spacex
+name: SpaceXAI
+slug: spacexai
 url: https://x.ai
 wikipedia: https://en.wikipedia.org/wiki/XAI_(company)
 huggingface: https://huggingface.co/xai-org
@@ -11,6 +11,7 @@ founded: "2002"
 type: public
 formerly:
   - xAI
+  - SpaceX
 ipo:
   year: 2026
   exchange: Nasdaq
@@ -27,8 +28,10 @@ description: >
   Research &mdash; was absorbed in an all-stock merger in
   <strong>February 2026</strong> that valued the combined company at
   <strong>~$1.25T</strong> (xAI itself marked at ~$250B); it is now SpaceX's
-  wholly-owned <strong>AI division</strong> (Grok, X, and AI compute), informally
-  dubbed &ldquo;SpaceXAI&rdquo; though it still ships under the xAI brand. On
+  wholly-owned <strong>AI division</strong> (Grok, X, and AI compute). On
+  <strong>July 6, 2026</strong> the rebrand completed: the xAI name was retired
+  and the AI business now ships as <strong>SpaceXAI</strong>, with a new logo
+  folding the SpaceX swoosh-X into &ldquo;AI&rdquo;. On
   <strong>June 12, 2026, SpaceX went public on Nasdaq (ticker SPCX)</strong> in
   the largest IPO in history by capital raised (~$75B; priced at $135/share for
   an implied ~$1.77T valuation); the stock has since climbed to a market
@@ -115,6 +118,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=czyretsAAAAJ
 news:
+  - title: "xAI Rebrand to SpaceXAI Complete: New Logo Unveiled as xAI Fully Merges Into SpaceX"
+    url: https://finance.yahoo.com/technology/ai/articles/xai-makes-rebrand-spacexai-complete-215010760.html
+    source: Yahoo Finance
+    date: 2026-07-06
   - title: "SpaceX Inks Compute Deal with Reflection AI for Colossus 2 (Up to ~$6.3B Through 2029)"
     url: https://techcrunch.com/2026/06/22/spacex-inks-compute-deal-with-reflection-ai-an-open-source-ai-lab/
     source: TechCrunch
