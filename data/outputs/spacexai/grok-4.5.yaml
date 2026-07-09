@@ -1,0 +1,41 @@
+name: Grok 4.5
+slug: grok-4.5
+lab: spacexai
+type: model
+date: 2026-07-08
+flagship: true
+sources:
+  - label: Coverage (TechCrunch)
+    url: https://techcrunch.com/2026/07/08/spacexai-releases-grok-4-5-which-elon-describes-as-an-opus-class-model/
+  - label: Coverage (Axios)
+    url: https://www.axios.com/2026/07/08/spacexai-grok-new-model
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/grok-4-5
+  - label: OpenRouter
+    url: https://openrouter.ai/x-ai/grok-4.5
+description: >
+  <p>SpaceXAI's first model since the IPO, the Cursor acquisition, and the
+  July rebrand &mdash; and its first <strong>built with Cursor</strong>.
+  Pitched by Musk as "an Opus-class model, but faster, more token-efficient
+  and lower cost," aimed at coding and agentic knowledge work: it builds
+  complex Excel models with live web research and produces diagrams and
+  slide content, with finance and legal capabilities co-developed with
+  Cursor. Reportedly the first model shipped on the ground-up "V9"
+  foundation stack, with V9-based variants planned on a monthly cadence.
+  500K context; $2/$6 per million input/output tokens ($0.50 cache hits).
+  Available in Grok Build, Cursor (all plans), and the SpaceXAI console;
+  not yet available in the EU. Proprietary. AA Intelligence Index
+  <strong>54</strong> (v4.1, "high" reasoning) &mdash; #4 overall at
+  release, up from Grok 4.3's 38.</p>
+tags:
+  - frontier
+  - proprietary
+  - coding
+  - agents
+  - reasoning
+model:
+  context_window: 500000
+  intelligence_index: 54
+  intelligence_index_version: "AA v4.1"
+related:
+  - grok-4.3
