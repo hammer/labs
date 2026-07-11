@@ -1,0 +1,41 @@
+name: "SAO: Single-Rollout Asynchronous Optimization"
+slug: sao
+lab: zai
+type: paper
+date: 2026-07-08
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.07508
+description: >
+  <p>"Single-Rollout Asynchronous Optimization for Agentic Reinforcement
+  Learning" &mdash; the RL recipe behind
+  <a href="/outputs/zai/glm-5.2">GLM-5.2</a> (750B-A40B). From Tsinghua
+  authors working at Z.AI, with <a href="/people/jie-tang">Jie Tang</a> and
+  <a href="/people/yuxiao-dong">Yuxiao Dong</a> as senior authors. SAO
+  replaces group-wise sampling (the GRPO pattern) with a single rollout per
+  prompt for asynchronous pipelines, stabilized by three mechanisms: direct
+  double-sided importance sampling with strict token-level clipping that
+  masks divergent updates entirely, single-rollout sampling to cut
+  off-policy drift on agentic tasks, and enhanced value-model training
+  (faster value than policy updates, frozen attention during value
+  training, skip-observation GAE for multi-turn trajectories). Reported
+  gains over GRPO baselines include AIME2025 97.3% (vs. 85.0% SFT) and
+  SWE-bench Verified 29.8% (vs. 23%), plus online adaptation under dynamic
+  reward shifts. Notable as a rare disclosure of the production RL method
+  behind a frontier open-weight model.</p>
+tags:
+  - rl
+  - post-training
+  - agents
+  - research
+paper:
+  arxiv: "2607.07508"
+  authors:
+    - Zhenyu Hou
+    - Yujiang Li
+    - Jie Tang
+    - Yuxiao Dong
+  year: 2026
+related:
+  - glm-5.2
+  - slime
