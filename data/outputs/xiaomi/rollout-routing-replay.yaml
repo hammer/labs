@@ -1,0 +1,46 @@
+name: "Rollout Routing Replay (R3)"
+slug: rollout-routing-replay
+lab: xiaomi
+type: paper
+date: 2025-10-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.11370
+description: >
+  <p>"Stabilizing MoE Reinforcement Learning by Aligning Training and
+  Inference Routers" &mdash; from LLM-Core Xiaomi (with Peking University;
+  senior author <a href="/people/luo-fuli">Luo Fuli</a>). Identifies a root
+  cause of RL instability specific to mixture-of-experts models: the rollout
+  engine and the trainer route tokens to different experts, so the
+  recomputed policy probabilities diverge from the true generation
+  distribution and the importance ratio explodes. <strong>R3</strong>
+  records the inference engine's routing distributions and replays them
+  during training, cutting training-inference KL divergence from
+  1.5&times;10<sup>-3</sup> to 7.5&times;10<sup>-4</sup> (near dense-model
+  parity), preventing training collapse in every tested configuration, and
+  beating truncated importance sampling by up to +5.6 on math RL and +6.8
+  Pass@1 on SWE-bench multi-turn tasks (Qwen3-30B-A3B).</p>
+
+  <p>Rapidly became a standard tool for open MoE RL: the Marin project's
+  MarinSkyRL stack adopted R3 (paired with truncated importance sampling)
+  as a core ingredient for RL on 30B&ndash;80B MoEs, and it anchors the
+  router-alignment line of work that MoE post-training pipelines now build
+  on.</p>
+tags:
+  - rl
+  - moe
+  - post-training
+  - research
+paper:
+  arxiv: "2510.11370"
+  authors:
+    - Wenhan Ma
+    - Hailin Zhang
+    - Liang Zhao
+    - Yifan Song
+    - Yudong Wang
+    - Zhifang Sui
+    - Fuli Luo
+  year: 2025
+related:
+  - mimo
