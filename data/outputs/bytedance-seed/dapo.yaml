@@ -1,0 +1,60 @@
+name: DAPO
+slug: dapo
+lab: bytedance-seed
+date: 2025-03-17
+sources:
+  - label: Project Page
+    url: https://dapo-sia.github.io/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.14476
+  - label: GitHub
+    url: https://github.com/BytedTsinghua-SIA/DAPO
+  - label: HuggingFace (DAPO-Math-17k)
+    url: https://huggingface.co/datasets/BytedTsinghua-SIA/DAPO-Math-17k
+description: >
+  <p><strong>Decoupled Clip and Dynamic sAmpling Policy Optimization</strong>
+  &mdash; an open-source LLM reinforcement-learning system at scale, from
+  the SIA-Lab (the joint lab of ByteDance Seed and Tsinghua AIR, with HKU).
+  DAPO hardens GRPO-style RLVR with four techniques: <em>Clip-Higher</em>
+  (raising the upper importance-ratio clip to prevent entropy collapse),
+  <em>dynamic sampling</em> (filtering prompt groups with all-correct or
+  all-wrong rollouts, which carry no gradient signal), token-level policy
+  gradient loss for long chain-of-thought, and overlong reward shaping.
+  Result: 50 points on AIME 2024 with Qwen2.5-32B, beating
+  DeepSeek-R1-Zero-Qwen-32B with 50% fewer training steps.</p>
+
+  <p>Fully open &mdash; algorithm, verl-based training code, and the
+  curated <strong>DAPO-Math-17k</strong> dataset (17K competition problems
+  with integer-normalized answers for unambiguous verification) &mdash;
+  and one of the most-adopted post-training recipes of 2025&ndash;26: the
+  DAPO loss and dataset are standard options across open RL stacks (e.g.,
+  the Marin project's RL framework and its Delphi reasoning-RL study).</p>
+tags:
+  - rl
+  - post-training
+  - reasoning
+  - open-weight
+outputs:
+  - name: "DAPO: An Open-Source LLM Reinforcement Learning System at Scale"
+    type: paper
+    date: 2025-03-17
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2503.14476
+    paper:
+      arxiv: "2503.14476"
+  - name: DAPO-Math-17k
+    type: dataset
+    date: 2025-03-17
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/datasets/BytedTsinghua-SIA/DAPO-Math-17k
+    description: >
+      ~17K curated competition math problems with answers normalized to
+      integers for reliable verifiable-reward RL. Widely reused as a
+      standard RLVR training set.
+    dataset:
+      huggingface_url: https://huggingface.co/datasets/BytedTsinghua-SIA/DAPO-Math-17k
+related:
+  - simplerl-zoo
+  - seed1.5-thinking
