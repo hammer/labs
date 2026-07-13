@@ -5,11 +5,13 @@ type: model
 date: 2026-04-02
 flagship: true
 sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.02770
   - label: Announcement
     url: https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/
   - label: HuggingFace
     url: https://huggingface.co/collections/google/gemma-4
-  - label: Apple ML Research
+  - label: DeepMind
     url: https://deepmind.google/models/gemma/gemma-4/
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/gemma-4-31b
@@ -23,6 +25,14 @@ description: >
   and shared KV cache. Gemma 4 31B achieves <strong>85.2% MMLU Pro, 89.2% AIME 2026,
   80.0% LiveCodeBench v6</strong>, and Codeforces Elo 2,150. Ranked #3 open model on
   Arena AI text leaderboard. Crossed 2M downloads shortly after release.</p>
+
+  <p>The <strong>Gemma 4 Technical Report</strong> (arXiv, July 2, 2026;
+  300+ authors) details the family: dense and MoE architectures from 2.3B
+  to 31B, improved vision and audio encoders at every size, the unified
+  <strong>encoder-free architecture</strong> of the
+  <a href="/outputs/google/gemma-4-12b">12B variant</a> (raw audio and
+  image patches in, no separate encoders), and a thinking mode generating
+  reasoning traces before responding.</p>
 
   <p><strong>June 5, 2026:</strong> deployment-ready
   <strong>QAT (Quantization-Aware Training) 4-bit checkpoints</strong>
@@ -56,5 +66,8 @@ model:
     - name: Gemma 4 E2B
       parameters: 5.1B
       notes: Effective 2.3B, 128K context; AA Intelligence Index v4.1 = 9
+paper:
+  arxiv: "2607.02770"
 related:
   - gemma-3
+  - gemma-4-12b
