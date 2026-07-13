@@ -56,6 +56,15 @@ When scanning for new papers from tracked labs, **do not limit searches to a nar
 5. **Cover at least 4-6 weeks back** from the current date to catch papers that were posted between sweeps.
 6. **Search for new evaluation benchmarks independently** — evals often come from multi-institutional collaborations not tied to a single tracked lab and are easily missed by lab-centric sweeps. Run dedicated searches each sweep cycle: `site:arxiv.org benchmark evaluation LLM 2604`, `site:arxiv.org reasoning evaluation benchmark 2604`, `site:arxiv.org "chain of thought" evaluation benchmark 2604`, `site:arxiv.org long reasoning benchmark 2604`. Pay special attention to benchmarks that stress-test **extended reasoning chains** (long CoT), **reasoning process quality** (step-level correctness), and **test-time compute scaling** — these tend to be important for tracking thinking models (o-series, DeepSeek R1, QwQ) and are often from academic groups rather than labs. Don't limit the sweep to *general* reasoning evals — also search **domain-specific** expert benchmarks in **medicine, law, finance, science, and agentic/tool-use**, which are frequently authored by a tracked lab's academic collaboration and slip through lab-name searches (e.g. **MedXpertQA**, a medical-reasoning eval from PJLab/Tsinghua, ICML 2025, missed for months). Add searches like `site:arxiv.org medical benchmark LLM 2604`, `site:arxiv.org "expert-level" benchmark 2604`, and scan the **ICML/NeurIPS/ICLR Datasets & Benchmarks** accept lists. When a benchmark lists a tracked lab among its affiliations, file it under that lab — and consider filing **both** an `eval` and a companion `paper` output (MedXpertQA is tracked as both).
 
+7. **Backfill late-arriving technical reports for already-tracked models.** Tech reports routinely trail model releases — Gemma 4's TR hit arXiv (2607.02770) **three months** after the weights shipped; DeepSeek-V4's launch-day repo-PDF gained an arXiv ID (2606.19348) two months on. New-artifact searches never resurface these because the *model* isn't news. Each sweep, generate the work-list mechanically:
+
+   ```bash
+   grep -L "arxiv" data/outputs/*/*.yaml | xargs grep -l "flagship: true"
+   ```
+
+   For each hit, search `site:arxiv.org "<model name>" technical report` and re-check the model's HF/GitHub README for a newly added citation block. When a report appears, attach it to the **existing** entry — arXiv URL in `sources` plus a `paper:` block (or a paper sub-output on grouped entries) — never a new output. Entries citing repo-only PDF reports (the DeepSeek pattern) stay on this work-list until an arXiv posting is confirmed or ruled out.
+
+
 ### What to Exclude
 
 Do **not** add outputs that are:

@@ -62,6 +62,7 @@ Many models (especially proprietary ones) are announced via blog posts without a
 - Note "undisclosed" in description for unknown parameter counts
 - Do NOT guess parameters — only include `model.parameters` if confirmed by a primary source
 - Still check AA and OpenRouter for available data
+- **Recheck later — tech reports trail releases.** Vendors often ship weights/API first and post the technical report weeks-to-months later (Gemma 4: weights April 2, TR July 2, arXiv 2607.02770; DeepSeek-V4: repo-PDF at launch, arXiv ID two months on). A model filed without a paper joins the sweep-time backfill work-list (AGENTS.md, Periodic Arxiv Sweeps step 7). When the TR appears, attach it to the existing entry (`sources` + `paper:` block) rather than filing a new output.
 
 ### Verify model facts against the primary source before writing the `model:` block
 
