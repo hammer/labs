@@ -1,0 +1,50 @@
+name: "From Reasoning Traces to Reusable Modules"
+slug: reasoning-modules
+lab: mbzuai
+type: paper
+date: 2026-06-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.18089
+description: >
+  <p>"Understanding Compositional Generalization in Language Model
+  Reasoning" &mdash; a theory of <em>why</em> the standard SFT&rarr;RL
+  post-training pipeline produces reasoning that generalizes. The authors
+  (an MBZUAI&ndash;CMU collaboration including
+  <a href="/people/eric-xing">Eric Xing</a>, Kun Zhang, Ruslan
+  Salakhutdinov, and Zhengzhong Liu; supported by the MBZUAI-WIS Joint
+  Program) propose a hierarchical latent selection model in which
+  <strong>SFT supplies the raw module materials in compositional traces,
+  and RL decomposes those traces to identify latent atomic modules and
+  recombine them</strong> &mdash; proving identifiability conditions for
+  the latent module structure and when identified modules recombine
+  correctly out of distribution. Controlled experiments confirm that RL
+  extracts reusable skills from compound traces, that compositional
+  exposure during RL is essential, and that the optimal recipe has SFT
+  covering all atomic modules while RL targets novel compositions beyond
+  the SFT support &mdash; a theoretical grounding for the
+  "SFT elicits, RL lifts" pattern observed empirically across frontier
+  post-training pipelines.</p>
+tags:
+  - reasoning
+  - post-training
+  - theory
+  - research
+paper:
+  arxiv: "2606.18089"
+  authors:
+    - Lingjing Kong
+    - Xin Liu
+    - Guangyi Chen
+    - Martin Q. Ma
+    - Xiangchen Song
+    - Yuekai Sun
+    - Mikhail Yurochkin
+    - Taylor W. Killian
+    - Ruslan Salakhutdinov
+    - Kun Zhang
+    - Eric P. Xing
+    - Zhengzhong Liu
+  year: 2026
+related:
+  - k2-think-v2
