@@ -1,0 +1,28 @@
+name: HAT
+slug: hat
+lab: apple
+type: dataset
+date: 2026-07-08
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/apple/hat
+  - label: GitHub
+    url: https://github.com/apple/ml-hat
+  - label: Paper (ACL 2026)
+    url: https://aclanthology.org/2026.acl-long.721/
+description: >
+  <p><strong>Hallucination Annotation for Translation</strong> &mdash; the
+  first large-scale machine-translation hallucination benchmark: 350,959
+  span-level, professionally annotated samples across 38 language pairs.
+  ACL 2026 main-conference long paper (no arXiv preprint). CC-BY-NC-ND-4.0.</p>
+tags:
+  - dataset
+  - translation
+  - hallucination
+  - eval
+dataset:
+  huggingface_url: https://huggingface.co/datasets/apple/hat
+  size: 350,959 annotated samples, 38 language pairs
+  license: CC-BY-NC-ND-4.0
+paper:
+  venue: ACL 2026

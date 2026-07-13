@@ -1,0 +1,25 @@
+name: GPT-Live-1
+slug: gpt-live
+lab: openai
+type: model
+date: 2026-07-08
+sources:
+  - label: System Card
+    url: https://deploymentsafety.openai.com/gpt-live
+  - label: Announcement
+    url: https://openai.com/index/introducing-gpt-live/
+description: >
+  <p>OpenAI's full-duplex voice models (GPT-Live-1 and GPT-Live-1 mini):
+  simultaneous listening and speaking &mdash; the model can be interrupted
+  mid-sentence and can interject &mdash; with live translation, rolling
+  out globally in ChatGPT. Complex queries delegate to GPT-5.5 behind the
+  scenes. Proprietary; system card published July 8. The developer-facing
+  siblings (gpt-realtime-2.1 / -2.1-mini) shipped July 6 with reasoning
+  and tool use at the mini tier and ~25% lower p95 latency.</p>
+tags:
+  - speech
+  - voice
+  - proprietary
+model: {}
+related:
+  - gpt-5.6

@@ -74,6 +74,10 @@ people:
     role: VP, Head of GenAI
     formerly: Apple (16 years)
 news:
+  - title: "Meta's 'Iris' MTIA Chip Enters Production in September (Broadcom Co-Design, TSMC), Aiming to Double Compute"
+    url: https://www.cnbc.com/2026/07/09/meta-to-put-ai-chip-into-production-in-september-report.html
+    source: CNBC/Reuters
+    date: 2026-07-09
   - title: "Meta Hires Virtue AI Founders Bo Li, Dawn Song, and Sanmi Koyejo Into Superintelligence Labs and FAIR"
     url: https://www.axios.com/2026/06/25/meta-hires-virtue-ai-founders-security
     source: Axios

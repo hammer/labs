@@ -1,0 +1,33 @@
+name: HiLS-Attention
+slug: hils-attention
+lab: tencent
+type: model
+date: 2026-07-09
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/tencent/HiLS-Attention-7B
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.02980
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/HiLS-Attention
+description: >
+  <p>"Hierarchical Sparse Attention Done Right: Toward Infinite Context
+  Modeling" &mdash; Hunyuan attention research with an open 7B
+  demonstrator. HiLS learns chunk selection end-to-end under the language
+  modeling loss (rather than heuristic block scoring), claiming over 4x
+  train-length extrapolation (RULER held at 128K from short-context
+  training). Notably built by continued-pretraining 50B tokens on
+  <strong>Ai2's OLMo-3-7B</strong> &mdash; a Chinese frontier lab
+  publishing attention research on an American open base. Apache-2.0.</p>
+tags:
+  - architecture
+  - attention
+  - long-context
+  - open-weight
+model:
+  base_model: olmo-3
+  license: Apache 2.0
+paper:
+  arxiv: "2607.02980"
+related:
+  - hunyuan-2.0

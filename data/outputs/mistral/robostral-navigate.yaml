@@ -1,0 +1,20 @@
+name: Robostral Navigate
+slug: robostral-navigate
+lab: mistral
+type: model
+date: 2026-07-08
+sources:
+  - label: Announcement
+    url: https://mistral.ai/news/robostral-navigate/
+description: >
+  <p>The first model in Mistral's new <strong>Robostral</strong> line and
+  its opening move in physical AI: an 8B vision-language model for robot
+  navigation from a single RGB camera, RL-trained in simulation, reporting
+  79.4% on R2R-CE val-seen. Enterprise API only &mdash; no open weights or
+  paper, a departure from Mistral's open-weight norm.</p>
+tags:
+  - robotics
+  - navigation
+  - proprietary
+model:
+  parameters: 8B

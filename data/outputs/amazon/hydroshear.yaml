@@ -1,0 +1,23 @@
+name: HydroShear
+slug: hydroshear
+lab: amazon
+type: paper
+date: 2026-07-10
+sources:
+  - label: Blog
+    url: https://www.amazon.science/blog/amazon-and-university-of-michigan-give-robots-a-sense-of-touch
+  - label: Project Page
+    url: https://hydroshear.github.io/
+description: >
+  <p>Physics-based tactile simulation from Amazon and the University of
+  Michigan (RSS 2026), with open-source code: simulates the shear and
+  normal-force response of soft tactile sensors accurately enough that
+  sim-trained manipulation policies reach 93% real-world success versus
+  34&ndash;61% for prior baselines &mdash; a sim-to-real result for the
+  sense robots have historically lacked.</p>
+tags:
+  - robotics
+  - simulation
+  - science
+paper:
+  venue: RSS 2026

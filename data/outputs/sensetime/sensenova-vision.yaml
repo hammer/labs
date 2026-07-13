@@ -1,0 +1,41 @@
+name: SenseNova-Vision
+slug: sensenova-vision
+lab: sensetime
+date: 2026-06-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.06560
+  - label: HuggingFace (7B-MoT)
+    url: https://huggingface.co/sensenova/SenseNova-Vision-7B-MoT
+  - label: HuggingFace (benchmark)
+    url: https://huggingface.co/datasets/sensenova/SenseNova-Vision-Benchmark
+description: >
+  <p>"Vision as Unified Multimodal Generation" (authors include Zhongang
+  Cai, Lei Yang, and Dahua Lin): recasts dense vision tasks &mdash;
+  detection, segmentation, depth, pose &mdash; as native interleaved
+  text+image generation rather than task-specific heads. Ships
+  SenseNova-Vision-7B-MoT (weights June 29, CC-BY-NC-4.0), a 50M-sample
+  training corpus, and an evaluation suite repackaging 52 standard vision
+  benchmarks. SenseTime's entry in the unified-vision-generation wave.</p>
+tags:
+  - vision
+  - multimodal
+  - unified-generation
+outputs:
+  - name: SenseNova-Vision-7B-MoT
+    type: model
+    date: 2026-06-29
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/sensenova/SenseNova-Vision-7B-MoT
+    model:
+      parameters: 7B
+      license: CC-BY-NC-4.0
+  - name: "Vision as Unified Multimodal Generation"
+    type: paper
+    date: 2026-07-07
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2607.06560
+    paper:
+      arxiv: "2607.06560"

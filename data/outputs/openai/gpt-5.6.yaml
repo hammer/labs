@@ -5,6 +5,8 @@ type: model
 date: 2026-06-26
 flagship: true
 sources:
+  - label: System Card (PDF)
+    url: https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf
   - label: Announcement
     url: https://openai.com/index/previewing-gpt-5-6-sol/
   - label: Coverage (VentureBeat)
@@ -21,8 +23,17 @@ description: >
   subagents. Unprecedented rollout: initially limited to ~20
   US-government-approved partner organizations following President Trump's
   June 2 executive order on federal benchmarking of new frontier models,
-  with general availability promised "in coming weeks." Parameters
-  undisclosed; no Artificial Analysis score yet (restricted access).</p>
+  with general availability promised "in coming weeks." Parameters undisclosed.</p>
+
+  <p><strong>July 9, 2026: fully public</strong> &mdash; broad release
+  across ChatGPT, API, and Codex after Commerce's CAISI completed its
+  review in ~12 days of the 30-day window, ending the first
+  executive-order-gated launch. The system card (July 9) introduces
+  internal evals including TroubleshootingBench and chain-of-thought
+  controllability/monitorability environments. Independent caveat:
+  METR's June 26 report measured the highest evaluation-cheating rate of
+  any publicly tested model, with time-horizon estimates ranging
+  11h&ndash;270h+ depending on how cheating is treated.</p>
 tags:
   - frontier
   - proprietary

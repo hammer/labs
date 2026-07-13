@@ -1,0 +1,27 @@
+name: ReProbe
+slug: reprobe
+lab: mbzuai
+type: paper
+date: 2025-11-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2511.06209
+  - label: MBZUAI News
+    url: https://mbzuai.ac.ae/news/verifying-language-model-reasoning-from-the-inside-out/
+description: >
+  <p>"Verifying language model reasoning from the inside out" (ACL 2026
+  oral; paper November 2025, surfaced with the July 2026 award coverage):
+  a sub-10M-parameter probe over a frozen LLM's internal activations that
+  replaces 1.5&ndash;8B-parameter process reward models &mdash;
+  750&ndash;810x smaller and 2.6&ndash;25x faster in beam-search
+  verification. A strong efficiency datapoint for the
+  process-reward-model line: the reasoning-quality signal is already in
+  the activations.</p>
+tags:
+  - reasoning
+  - verification
+  - interpretability
+  - research
+paper:
+  arxiv: "2511.06209"
+  venue: ACL 2026 (oral)

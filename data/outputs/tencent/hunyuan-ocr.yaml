@@ -4,6 +4,8 @@ lab: tencent
 type: model
 date: 2025-11-24
 sources:
+  - label: HunyuanOCR-1.5 (arXiv)
+    url: https://arxiv.org/abs/2607.04884
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2511.19575
   - label: GitHub
@@ -14,6 +16,11 @@ description: >
   Commercial-grade, lightweight (1B) end-to-end OCR expert VLM. Connects a
   0.4B native-resolution ViT to a 0.5B Hunyuan LLM. Won first place in
   ICDAR 2025 DIMT Challenge (Small Model Track).
+  <p><strong>HunyuanOCR-1.5</strong> (paper July 6, 2026, arXiv 2607.04884)
+  succeeds this model with a reported ~6.4x decoding speedup, ancient-script
+  and chart-parsing support, and broader multilingual coverage; weights not
+  yet released at paper time.</p>
+
 tags:
   - multimodal
   - vision

@@ -1,0 +1,22 @@
+name: MSTS-Japanese
+slug: msts-japanese
+lab: nii
+type: dataset
+date: 2026-07-07
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/llm-jp/msts-japanese
+description: >
+  <p>Japanese localization of the Multimodal Safety Test Suite (MSTS) for
+  vision-language models &mdash; safety prompts where the harm emerges
+  only from the image+text combination. Translates 330 of the 400
+  original cases and augments 82 with Japan-local images and reference
+  answers. Gated for safety research (answer-carefully terms); ANLP 2026
+  paper. Part of llm-jp's safety-evaluation line.</p>
+tags:
+  - dataset
+  - safety
+  - multimodal
+  - japanese
+dataset:
+  huggingface_url: https://huggingface.co/datasets/llm-jp/msts-japanese

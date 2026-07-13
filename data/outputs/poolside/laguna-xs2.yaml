@@ -4,6 +4,8 @@ lab: poolside
 type: model
 date: 2026-04-28
 sources:
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2605.27605
   - label: Introducing Laguna XS.2 and M.1 (Poolside blog)
     url: https://poolside.ai/blog/introducing-laguna-xs2-m1
   - label: Laguna M.1 / XS.2 Technical Report (PDF)

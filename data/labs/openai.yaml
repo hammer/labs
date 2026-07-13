@@ -107,6 +107,14 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~John_Schulman1
 news:
+  - title: "OpenAI Safety Head Johannes Heidecke Departs Amid Safety-Org Reshuffle; Mia Glaese Becomes VP Research and Safety"
+    url: https://www.bloomberg.com/news/articles/2026-07-11/openai-safety-head-heidecke-to-leave-firm-after-reshuffle-wired
+    source: Bloomberg
+    date: 2026-07-11
+  - title: "Fidji Simo Steps Down from OpenAI No. 2 Role, Moving to Part-Time Advisor"
+    url: https://techcrunch.com/2026/07/09/fidji-simo-steps-down-from-openais-no-2-role/
+    source: TechCrunch
+    date: 2026-07-09
   - title: "OpenAI Proposes Giving US Government a ~5% Equity Stake (~$42.6B) via an Alaska-Permanent-Fund-Style Vehicle"
     url: https://www.cnbc.com/2026/07/02/openai-proposes-us-government-own-5percent-stake-to-address-political-blowback.html
     source: CNBC

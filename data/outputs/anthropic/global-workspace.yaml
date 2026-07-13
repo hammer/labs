@@ -1,0 +1,21 @@
+name: "A Global Workspace in Language Models"
+slug: global-workspace
+lab: anthropic
+type: paper
+date: 2026-07-06
+sources:
+  - label: Research Post
+    url: https://www.anthropic.com/research/global-workspace
+description: >
+  <p>Anthropic interpretability research identifying a global-workspace-like
+  structure in language models &mdash; a shared representational bottleneck
+  through which specialized circuits exchange information, probed via the
+  new "J-lens" method, with an interactive Neuronpedia demo. Continues the
+  circuits/monosemanticity line toward system-level organization, and
+  carries obvious weight for the global-workspace theory of consciousness
+  debate the title invokes.</p>
+tags:
+  - interpretability
+  - research
+related:
+  - scaling-monosemanticity

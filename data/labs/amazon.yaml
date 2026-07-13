@@ -53,6 +53,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=aPO7PVMAAAAJ
 news:
+  - title: "Amazon Launches $25B Bond Sale to Fund AI Infrastructure; Says No More 2026 Debt"
+    url: https://www.cnbc.com/2026/07/07/amazon-bond-sale-ai-debt.html
+    source: CNBC
+    date: 2026-07-07
   - title: "Amazon in Talks to Sell Trainium3 Chips Directly to External Data Centers, Breaking AWS-Only Distribution"
     url: https://finance.yahoo.com/technology/ai/articles/amazon-explores-external-trainium-chip-101801747.html
     source: Bloomberg (via Yahoo)

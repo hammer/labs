@@ -1,0 +1,27 @@
+name: LegalWorld
+slug: legalworld
+lab: sii
+type: paper
+date: 2026-07-10
+sources:
+  - label: GitHub
+    url: https://github.com/sii-research/Legal-world
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.18728
+  - label: Project Page
+    url: http://www.fudan-disc.com/legalworld/
+description: >
+  <p>A life-cycle interactive environment for legal agents (with Fudan
+  DISC): simulates Chinese civil litigation across five causally connected
+  stages, grounded in ~75K real judgments, with memory infrastructure and
+  skill libraries; evaluation involved 200+ legal professionals. Notable
+  as domain-expert agentic-environment work &mdash; the legal analogue of
+  the medical and coding environment lines &mdash; and as RL-environment
+  inventory for legal-domain agents.</p>
+tags:
+  - agents
+  - legal
+  - environment
+  - eval
+paper:
+  arxiv: "2606.18728"

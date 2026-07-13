@@ -1,0 +1,24 @@
+name: Muse Image & Muse Video
+slug: muse-image
+lab: meta
+type: model
+date: 2026-07-07
+sources:
+  - label: Announcement
+    url: https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/
+description: >
+  <p>The first image-generation model from Meta Superintelligence Labs,
+  with a video sibling in preview: agentic generation with tool use during
+  synthesis, and a "Content Seal" provenance watermark. At launch, Arena
+  #2 in text-to-image and #3 in text-to-video. Proprietary; parameters and
+  training details undisclosed. Note: the companion Instagram
+  photo-editing feature was pulled within days after user backlash, but
+  the models themselves remain deployed.</p>
+tags:
+  - image
+  - video
+  - generation
+  - proprietary
+model: {}
+related:
+  - muse-spark

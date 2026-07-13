@@ -1,0 +1,26 @@
+name: Aurora
+slug: aurora
+lab: microsoft
+type: model
+date: 2026-07-09
+sources:
+  - label: Blog (Aurora 1.5)
+    url: https://www.microsoft.com/en-us/research/blog/aurora-1-5-extending-open-foundation-models-for-weather-and-earth-system-applications/
+  - label: GitHub
+    url: https://github.com/microsoft/aurora
+description: >
+  <p>Microsoft's open foundation model for weather and Earth-system
+  prediction (entry filed at the 1.5 release; the line dates to the 2024
+  Nature paper). Aurora 1.5 adds 22 new variables, hourly resolution, and
+  ensemble forecasting, and reports beating ECMWF's ENS ensemble on 88.9%
+  of targets at days 1&ndash;10 &mdash; an open model outperforming the
+  operational gold standard across most of the medium range. On-thesis
+  scientific foundation model alongside GraphCast/GenCast and
+  NVIDIA's Earth-2 line.</p>
+tags:
+  - science
+  - weather
+  - open-weight
+model: {}
+related:
+  - naturelm

@@ -1,0 +1,26 @@
+name: Afri-MCQA
+slug: afri-mcqa
+lab: mbzuai
+type: eval
+date: 2026-01-08
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.05699
+  - label: MBZUAI News
+    url: https://mbzuai.ac.ae/news/why-models-cant-answer-if-the-question-is-about-africa-in-an-african-language/
+description: >
+  <p>The first multimodal (text + speech + visual) cultural
+  question-answering benchmark for African languages &mdash; ACL 2026
+  Social Impact Award. The v1 paper covers ~7.5K QA pairs across 15
+  languages (since expanded to ~8K/16 per MBZUAI's coverage); models that
+  answer correctly in English routinely fail the same cultural questions
+  asked in African languages, quantifying a compounding
+  language-and-culture gap.</p>
+tags:
+  - eval
+  - multilingual
+  - multimodal
+  - culture
+paper:
+  arxiv: "2601.05699"
+  venue: ACL 2026 (Social Impact Award)

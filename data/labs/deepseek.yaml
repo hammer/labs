@@ -146,6 +146,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Qihao_Zhu1
 news:
+  - title: "DeepSeek Developing Its Own Inference AI Chip to Cut Nvidia/Huawei Reliance"
+    url: https://www.bloomberg.com/news/articles/2026-07-07/chinese-ai-startup-deepseek-developing-own-ai-chip-reuters-says
+    source: Reuters (via Bloomberg)
+    date: 2026-07-07
   - title: "DeepSeek Closes First External Round: ¥51B (~$7.4B) at ~¥400B (~$56B) — Largest AI Raise in China's History; Liang Retains Control"
     url: https://www.caixinglobal.com/2026-06-27/deepseek-plans-major-hiring-spree-after-74-billion-funding-round-102458157.html
     source: Caixin

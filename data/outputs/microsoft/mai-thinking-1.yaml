@@ -5,6 +5,8 @@ type: model
 date: 2026-06-02
 flagship: true
 sources:
+  - label: Technical Report (PDF)
+    url: https://microsoft.ai/pdf/mai-thinking-1.pdf
   - label: Technical report (PDF)
     url: https://microsoft.ai/wp-content/uploads/2026/06/main_20260602_2.pdf
   - label: Model page

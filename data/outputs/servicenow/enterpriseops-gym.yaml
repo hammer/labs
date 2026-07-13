@@ -1,0 +1,28 @@
+name: EnterpriseOps-Gym
+slug: enterpriseops-gym
+lab: servicenow
+type: eval
+date: 2026-03-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.13594
+  - label: Artificial Analysis leaderboard
+    url: https://artificialanalysis.ai/articles/announcing-enterpriseops-gym-aa
+description: >
+  <p>ServiceNow's benchmark of stateful, multi-step enterprise-operations
+  environments where actions can be irreversible and success requires
+  policy adherence, not just task completion (backfilled from March 2026).
+  Gained independent adoption in July 2026 when Artificial Analysis
+  launched EnterpriseOps-Gym-AA, running frontier models on it as a
+  standing leaderboard &mdash; the industry-adoption signal that qualifies
+  it for tracking.</p>
+tags:
+  - eval
+  - agents
+  - enterprise
+eval:
+  leaderboard_url: https://artificialanalysis.ai/articles/announcing-enterpriseops-gym-aa
+paper:
+  arxiv: "2603.13594"
+related:
+  - cube

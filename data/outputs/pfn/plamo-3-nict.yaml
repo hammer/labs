@@ -1,0 +1,35 @@
+name: PLaMo 3 NICT (120B + 31B)
+slug: plamo-3-nict
+lab: pfn
+type: model
+date: 2026-07-09
+sources:
+  - label: Tech Blog
+    url: https://tech.preferred.jp/ja/blog/plamo_3_120b_distillation_cpt/
+  - label: HuggingFace (31B base)
+    url: https://huggingface.co/pfnet/plamo-3-nict-2604-31b-base
+description: >
+  <p>PFN's largest disclosed pretraining run, with NICT: a
+  <strong>120B-parameter</strong> base (weight-reuse initialization from
+  PLaMo 3 31B, 3T tokens, ~10^24.3 FLOPs) scoring pfgen-bench 0.83 /
+  JMMLU 0.77 &mdash; and a distilled, publicly released
+  <strong>31B</strong> (1.5T tokens, 256K-context continued pretraining).
+  The 120B weights are not public; the open 31B carries its distilled
+  capability. A meaningful scale-up for Japan's sovereign-model efforts
+  beyond the API-only PLaMo 3.0 Prime line.</p>
+tags:
+  - japanese
+  - open-weight
+  - sovereign
+model:
+  parameters: 120B
+  training_tokens: 3T
+  variants:
+    - name: plamo-3-nict-2604-120b-base
+      parameters: 120B
+      notes: weights not public
+    - name: plamo-3-nict-2604-31b-base
+      parameters: 31B
+      notes: distilled, open weights, 256K-context CPT
+related:
+  - plamo-3.0-prime

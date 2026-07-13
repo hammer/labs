@@ -1,0 +1,31 @@
+name: UltraX
+slug: ultrax
+lab: openbmb
+type: paper
+date: 2026-07-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.08646
+  - label: GitHub
+    url: https://github.com/OpenBMB/UltraX
+  - label: HuggingFace
+    url: https://huggingface.co/openbmb/UltraX-0.6B-Preview
+description: >
+  <p>"Refining Pre-Training Data at Scale with Adaptive Programmatic
+  Editing": instead of filtering or rephrasing, a lightweight refinement
+  model predicts structured edit operations (insert/delete/modify) that
+  are executed deterministically on pretraining text &mdash; cheaper than
+  full synthetic rewriting, more surgical than filtering. Reports the best
+  average across five corpora at 1B scale with over 2% gains on fewer
+  tokens. Full code, model (UltraX-0.6B-Preview), and data released
+  (Apache-2.0 with a no-unchanged-redistribution clause). Continues the
+  Ultra-FineWeb data-refinement lineage.</p>
+tags:
+  - data
+  - pretraining
+  - research
+  - open-weight
+paper:
+  arxiv: "2607.08646"
+related:
+  - ultra-fineweb

@@ -1,0 +1,55 @@
+name: SingGuard-NSFA
+slug: singguard-nsfa
+lab: ant-group
+date: 2026-07-10
+sources:
+  - label: HuggingFace (9B)
+    url: https://huggingface.co/inclusionAI/SingGuard-NSFA-9B
+  - label: HuggingFace (benchmarks)
+    url: https://huggingface.co/datasets/inclusionAI/NSFA_Benchmarks
+description: >
+  <p><strong>NSFA = "Not-Secure-For-Agents"</strong> &mdash; Ant Group's
+  guardrail family for agent operational security, a different axis from
+  the content-safety <a href="/outputs/ant-group/sing-guard">SingGuard</a>
+  line: a CIA-triad taxonomy of 185 agentic risk variants (prompt
+  injection, data exfiltration, unsafe tool actions), served in dual mode
+  &mdash; a generative audit model and a ~50ms classifier &mdash; with
+  claimed &gt;94% F1. Four text models (0.8B/2B/4B/9B on Qwen3.5,
+  Apache-2.0) plus the NSFA_Benchmarks suite (~97K samples across 133
+  languages). Technical report not yet published ("arXiv link coming
+  soon").</p>
+tags:
+  - safety
+  - guardrails
+  - agents
+  - open-weight
+outputs:
+  - name: SingGuard-NSFA models
+    type: model
+    date: 2026-07-10
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/inclusionAI/SingGuard-NSFA-9B
+    model:
+      base_model: qwen3.5
+      license: Apache 2.0
+      variants:
+        - name: SingGuard-NSFA-0.8B
+          parameters: 0.8B
+        - name: SingGuard-NSFA-2B
+          parameters: 2B
+        - name: SingGuard-NSFA-4B
+          parameters: 4B
+        - name: SingGuard-NSFA-9B
+          parameters: 9B
+  - name: NSFA_Benchmarks
+    type: dataset
+    date: 2026-07-13
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/datasets/inclusionAI/NSFA_Benchmarks
+    dataset:
+      huggingface_url: https://huggingface.co/datasets/inclusionAI/NSFA_Benchmarks
+      size: ~97K samples, 133 languages
+related:
+  - sing-guard

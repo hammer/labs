@@ -21,7 +21,12 @@ tags:
   - domain-specific
   - open-weight
 model:
-  parameters: 9B
   context_window: 262144
   base_model: qwen3.5
   license: Apache 2.0
+  variants:
+    - name: InnoSpark3.0-9B (260630)
+      parameters: 9B
+    - name: InnoSpark3.0-35B (260709)
+      parameters: 35B
+      notes: "MoE scale-up released July 9, 2026; card reports mixed wins vs Qwen3.6-35B-A3B (MMMU-Pro 81.0, IF-Eval 92.2); base model undeclared on the card."

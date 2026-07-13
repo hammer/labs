@@ -1,0 +1,31 @@
+name: Granite-SWASH
+slug: granite-swash
+lab: ibm
+type: model
+date: 2026-07-07
+sources:
+  - label: HuggingFace (2B)
+    url: https://huggingface.co/ibm-granite/granite-swash-2b
+  - label: HuggingFace (3B-a600M)
+    url: https://huggingface.co/ibm-granite/granite-swash-3b-a600m
+description: >
+  <p>A quiet "granite-next" architecture preview: SWASH =
+  <strong>Sliding-Window-Attention + Sinks Hybrid</strong>, shipped as a
+  2B dense and a 3B-a600M MoE under Apache-2.0 with no blog post. The
+  cards position these as previews of the upcoming Granite series
+  architecture &mdash; worth tracking as the first public signal of where
+  Granite 5 is heading.</p>
+tags:
+  - architecture
+  - open-weight
+  - efficiency
+model:
+  license: Apache 2.0
+  variants:
+    - name: granite-swash-2b
+      parameters: 2B
+    - name: granite-swash-3b-a600m
+      parameters: 3B
+      active_parameters: 600M
+related:
+  - granite-4.1

@@ -125,6 +125,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=xF5VrokAAAAJ
 news:
+  - title: "Alibaba Bans Employee Use of Anthropic Tools From July 10, Citing 'Back-Door Security Risks' After Claude Code Watermarking Discovery"
+    url: https://www.cnbc.com/2026/07/06/alibaba-anthropic-ai-ban-claude-china.html
+    source: CNBC
+    date: 2026-07-06
   - title: "Anthropic Accuses Alibaba of Largest-Known Distillation Attack: 28.8M Claude Exchanges via ~25,000 Fake Accounts"
     url: https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html
     source: CNBC

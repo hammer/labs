@@ -1,0 +1,41 @@
+name: RynnWorld
+slug: rynnworld
+lab: alibaba
+date: 2026-07-07
+sources:
+  - label: RynnWorld-4D (arXiv)
+    url: https://arxiv.org/abs/2607.06559
+  - label: RynnWorld-Teleop (arXiv)
+    url: https://arxiv.org/abs/2607.06558
+description: >
+  <p>DAMO Academy's embodied world models, released as a pair (both
+  HF-trending at launch). <strong>RynnWorld-4D</strong> predicts future
+  RGB, depth, and optical flow from a single RGB-D frame plus a language
+  instruction, and demonstrates a 4D-conditioned manipulation policy on
+  top. <strong>RynnWorld-Teleop</strong> is an action-conditioned world
+  model for digital teleoperation &mdash; simulating robot responses to
+  operator input without hardware in the loop. Part of DAMO's broader
+  Rynn robotics line (RynnVLA, RynnEC).</p>
+tags:
+  - robotics
+  - world-model
+  - embodied
+outputs:
+  - name: "RynnWorld-4D"
+    type: paper
+    date: 2026-07-07
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2607.06559
+    paper:
+      arxiv: "2607.06559"
+  - name: "RynnWorld-Teleop"
+    type: paper
+    date: 2026-07-08
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2607.06558
+    paper:
+      arxiv: "2607.06558"
+related:
+  - qwen-robot

@@ -81,6 +81,10 @@ people:
       - label: LinkedIn
         url: https://www.linkedin.com/in/weizhu-chen-620b2330/
 news:
+  - title: "365 Copilot Begins Routing Excel/Outlook Prompts to In-House MAI Models — First Production-Scale MAI Use"
+    url: https://winbuzzer.com/2026/07/09/microsoft-reportedly-shifts-ai-workloads-to-mai-models-xcxwbn/
+    source: Bloomberg (via Winbuzzer)
+    date: 2026-07-07
   - title: "Build 2026: Seven MAI Models Launched — MAI-Thinking-1 (1T/35B Reasoning), MAI-Code-1-Flash, Multimodal Stack Refresh"
     url: https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/
     source: Microsoft AI

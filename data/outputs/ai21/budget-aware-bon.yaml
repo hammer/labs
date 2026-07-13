@@ -1,0 +1,21 @@
+name: "Budget-Aware Best-of-N for SWE Agents"
+slug: budget-aware-bon
+lab: ai21
+type: paper
+date: 2026-07-07
+sources:
+  - label: Blog
+    url: https://www.ai21.com/blog/improving-best-of-n-with-budget-aware-execution-for-swe-agents/
+description: >
+  <p>AI21 research on making best-of-N sampling affordable for software
+  agents: predictive "Resolve-Now / Resolve-Later" classifiers drive
+  cascading execution (up to 44% compute reduction at matched resolve
+  rate) and parallel execution with mid-air termination (up to 25%
+  speedup), evaluated on a 123-issue SWE-rebench slice. Blog-only &mdash;
+  no paper or code released.</p>
+tags:
+  - agents
+  - efficiency
+  - research
+related:
+  - jamba

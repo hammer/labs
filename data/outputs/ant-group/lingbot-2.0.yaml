@@ -1,0 +1,70 @@
+name: LingBot 2.0
+slug: lingbot-2.0
+lab: ant-group
+date: 2026-07-07
+sources:
+  - label: HuggingFace (robbyant org)
+    url: https://huggingface.co/robbyant
+  - label: LingBot-Video paper (arXiv)
+    url: https://arxiv.org/abs/2607.07675
+  - label: Coverage (SCMP)
+    url: https://www.scmp.com/tech/big-tech/article/3359747/glass-crashes-slashed-ant-group-embodied-ai-unit-claims-breakthrough-robot-sensing
+description: >
+  <p>A coordinated embodied-AI stack release from Ant Group's Robbyant
+  unit (HF org <code>robbyant</code>), July 6&ndash;8: four model lines
+  covering the perception&rarr;world-model&rarr;action pipeline.
+  <strong>LingBot-Vision</strong>: self-supervised ViT family to ~1B with
+  masked-boundary-modeling for dense spatial perception (Apache-2.0;
+  report pending). <strong>LingBot-World 2.0 "Infinity"</strong>: a 14B
+  causal interactive world model at 720p/60fps with unbounded horizon
+  (CC-BY-NC-SA). <strong>LingBot-Video</strong>: embodied video-generation
+  FMs (MoE 30B-A3B + 1.3B dense) with a published paper, "Scaling
+  Mixture-of-Experts Video Pretraining for Embodied Intelligence."
+  <strong>LingBot-VLA 2.0</strong>: a 6B vision-language-action model.
+  Several component reports are still "coming soon" &mdash; only the
+  Video paper is on arXiv at filing time.</p>
+tags:
+  - robotics
+  - embodied
+  - world-model
+  - open-weight
+outputs:
+  - name: LingBot-Vision
+    type: model
+    date: 2026-07-06
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/robbyant/lingbot-vision-vit-giant
+    model:
+      license: Apache 2.0
+  - name: LingBot-World 2.0
+    type: model
+    date: 2026-07-08
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/robbyant/lingbot-world-v2-14b-causal-fast
+    model:
+      parameters: 14B
+      license: CC-BY-NC-SA
+  - name: LingBot-Video
+    type: model
+    date: 2026-07-08
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/robbyant/lingbot-video-moe-30b-a3b
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2607.07675
+    model:
+      architecture: moe
+      parameters: 30B
+      active_parameters: 3B
+    paper:
+      arxiv: "2607.07675"
+  - name: LingBot-VLA 2.0
+    type: model
+    date: 2026-07-07
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/robbyant/lingbot-vla-v2-6b
+    model:
+      parameters: 6B

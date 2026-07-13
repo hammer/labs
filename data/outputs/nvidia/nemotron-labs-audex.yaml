@@ -1,0 +1,42 @@
+name: Nemotron-Labs-Audex
+slug: nemotron-labs-audex
+lab: nvidia
+type: model
+date: 2026-07-06
+sources:
+  - label: HuggingFace (30B-A3B)
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Audex-30B-A3B
+  - label: HuggingFace (2B)
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Audex-2B
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.05196
+description: >
+  <p>"Unified Audio Intelligence Without Regressing on Text Intelligence"
+  &mdash; a unified audio-text LLM that both understands and generates
+  audio/speech (ASR, speech translation, TTS, general text-to-audio,
+  speech-to-speech) in one decoder, with the headline claim that text
+  reasoning does not regress. The 30B-A3B flagship is a hybrid
+  Mamba-Transformer MoE on the Nemotron-Cascade-2 base (~3B active, 1M
+  context, SFT+RL); the 2B is a dense SFT-only variant. Trained on 157.4B
+  audio + 320.5B text tokens; uses external codecs (XCodec) rather than
+  its own. NVIDIA OneWay Noncommercial License. Uploaded quietly July 6
+  with the arXiv report as the only announcement.</p>
+tags:
+  - speech
+  - audio
+  - multimodal
+  - open-weight
+model:
+  license: NVIDIA OneWay Noncommercial
+  variants:
+    - name: Nemotron-Labs-Audex-2B
+      parameters: 2B
+      notes: dense, SFT-only
+    - name: Nemotron-Labs-Audex-30B-A3B
+      parameters: 30B
+      active_parameters: 3B
+      notes: hybrid Mamba-Transformer MoE, 1M context, SFT+RL
+paper:
+  arxiv: "2607.05196"
+related:
+  - nemotron-labs-diffusion

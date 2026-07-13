@@ -32,6 +32,11 @@ description: >
   <p><strong>Not open-weight</strong> &mdash; Meta's first proprietary model, available
   only via meta.ai, the Meta AI app, and a private API preview. Marks Meta's strategic
   pivot toward a closed commercial track alongside the open Llama family.</p>
+  <p><strong>Muse Spark 1.1</strong> (July 9, 2026) upgraded the line with
+  multimodal reasoning, 1M-token context, and parallel subagent
+  orchestration &mdash; and debuted the <strong>Meta Model API</strong>,
+  Meta's first paid model API ($1.25/$4.25 per million tokens).</p>
+
 tags:
   - frontier
   - multimodal
