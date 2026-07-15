@@ -1,0 +1,32 @@
+name: "Ring-Zero: Scaling Zero RL to a Trillion Parameters"
+slug: ring-zero
+lab: ant-group
+type: paper
+date: 2026-07-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.12395
+description: >
+  <p>With Renmin University's Gaoling School (plus Tsinghua and Zhejiang):
+  zero RL &mdash; RLVR directly from a pretrained base model, no SFT or
+  human-annotated CoT &mdash; scaled to Ling-2.5-1T-Base (1T total / 63B
+  active MoE) and Ling-2.5-flash-Base (104B / 7.4B). A four-phase pipeline
+  (clipped importance sampling, training-inference ratio correction,
+  mixed-precision control, self-distillation) tames readability and token
+  redundancy at scale. Findings: 1T scale markedly improves sample
+  efficiency and performance ceilings; training follows a discovery phase
+  then a sharpening phase; and advanced behaviors emerge spontaneously
+  &mdash; self-verification, parallel reasoning, structured formatting,
+  anthropomorphism, and "context anxiety". Evaluated on seven competition
+  math benchmarks against frontier models. Paper-only release.</p>
+tags:
+  - reasoning
+  - rl
+  - post-training
+  - scaling
+  - research
+paper:
+  arxiv: "2607.12395"
+related:
+  - ling-2.5
+  - ring
