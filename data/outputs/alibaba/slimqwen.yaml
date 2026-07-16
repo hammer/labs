@@ -1,0 +1,32 @@
+name: "SlimQwen: Pruning and Distillation in Large MoE Pre-training"
+slug: slimqwen
+lab:
+  - alibaba
+  - mbzuai
+type: paper
+date: 2026-05-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.08738
+description: >
+  <p>Qwen Team with MBZUAI (and KAUST): a systematic study of structured
+  pruning and knowledge distillation for MoE models at pretraining scale.
+  Findings: pruning a pretrained MoE beats training the target architecture
+  from scratch at matched token budgets across depth, width, and expert
+  compression; one-shot expert-compression methods converge to similar
+  performance after large-scale continual pretraining (motivating a
+  partial-preservation expert-merging strategy); KD combined with the LM
+  loss beats KD alone, with a new multi-token-prediction distillation
+  objective adding consistent gains; and progressive pruning schedules
+  outperform one-shot compression. Demonstrated by compressing
+  Qwen3-Next-80B-A3B to a competitive 23B-A2B model. Paper-only release.</p>
+tags:
+  - moe
+  - pruning
+  - distillation
+  - pretraining
+  - research
+paper:
+  arxiv: "2605.08738"
+related:
+  - qwen3.5
