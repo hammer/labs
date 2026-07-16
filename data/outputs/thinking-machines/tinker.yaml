@@ -1,0 +1,30 @@
+name: Tinker
+slug: tinker
+lab: thinking-machines
+type: library
+date: 2025-10-01
+sources:
+  - label: Product Page
+    url: https://thinkingmachines.ai/tinker/
+  - label: GitHub (tinker)
+    url: https://github.com/thinking-machines-lab/tinker
+  - label: GitHub (tinker-cookbook)
+    url: https://github.com/thinking-machines-lab/tinker-cookbook
+description: >
+  <p>The lab's first product: a managed fine-tuning API that exposes
+  low-level training primitives (forward_backward, optim_step, sample)
+  over open-weight models, so researchers write their own training loops
+  &mdash; SFT, RL, whatever &mdash; while Thinking Machines runs the
+  distributed infrastructure. LoRA-based, with portable weights users can
+  download. The open-source <strong>tinker-cookbook</strong> (3.7K+ stars)
+  ships reference post-training recipes. Inkling launched fine-tunable on
+  Tinker day one &mdash; the product half of the lab's open-weights +
+  customization thesis.</p>
+tags:
+  - post-training
+  - infrastructure
+  - product
+library:
+  github: https://github.com/thinking-machines-lab/tinker
+related:
+  - inkling

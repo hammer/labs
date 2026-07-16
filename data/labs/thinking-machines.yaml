@@ -1,0 +1,102 @@
+name: Thinking Machines
+slug: thinking-machines
+url: https://thinkingmachines.ai
+wikipedia: https://en.wikipedia.org/wiki/Thinking_Machines_Lab
+huggingface: https://huggingface.co/thinkingmachines
+github: https://github.com/thinking-machines-lab
+artificialanalysis: https://artificialanalysis.ai/providers/thinking-machines
+region: usa
+founded: "2025-02"
+type: private
+valuation:
+  amount: "$12B"
+  type: private
+  date: "2025-07"
+description: >
+  <p><a href="https://en.wikipedia.org/wiki/Thinking_Machines_Lab">Thinking
+  Machines Lab</a> was founded in February 2025 by <strong>Mira
+  Murati</strong> (OpenAI's former CTO) with co-founders including
+  <strong>John Schulman</strong> (co-creator of RLHF and PPO) and roughly
+  two dozen OpenAI alumni. Its <a
+  href="https://techcrunch.com/2025/07/15/mira-muratis-thinking-machines-lab-is-worth-12b-in-seed-round/">$2B
+  seed round at a $12B valuation</a> (July 2025; NVIDIA, Accel, ServiceNow,
+  Cisco, AMD, Jane Street) was the largest in history. A follow-on raise at
+  $50&ndash;60B collapsed by January 2026 amid a wave of departures back to
+  OpenAI &mdash; co-founders Barret Zoph and Luke Metz among them &mdash;
+  after which PyTorch creator <strong>Soumith Chintala</strong> took over
+  as CTO. The ~150-person lab retains multibillion-dollar compute
+  commitments from NVIDIA and Google.</p>
+
+  <p>The lab's thesis is <strong>open weights plus customization</strong>,
+  against one-size-fits-all frontier APIs. Its first product,
+  <strong><a href="https://thinkingmachines.ai/tinker/">Tinker</a></strong>
+  (October 2025), is a managed fine-tuning API that exposes low-level
+  training loops over open-weight models. The flagship
+  <strong><a href="/outputs/thinking-machines/inkling">Inkling</a></strong>
+  (July 15, 2026) is a from-scratch 975B-parameter (41B active) natively
+  multimodal MoE pretrained on 45T tokens of text, images, audio, and
+  video, released under Apache 2.0 &mdash; <a
+  href="https://artificialanalysis.ai/articles/thinking-machines-has-released-inkling-the-new-leading-u-s-open-weights-model">the
+  leading U.S. open-weights model on the AA Intelligence Index</a> at
+  release, with a controllable thinking-effort dial that reaches peer
+  scores at roughly a third of the tokens.</p>
+
+  <p>Its <strong>Connectionism</strong> research blog punches above its
+  weight: posts on <a
+  href="https://thinkingmachines.ai/blog/">defeating nondeterminism in LLM
+  inference, LoRA fine-tuning dynamics, on-policy distillation, and modular
+  manifolds</a> have been unusually influential for a lab this young, and
+  the accompanying batch-invariant-ops code drew 1K+ GitHub stars.</p>
+people:
+  - name: Mira Murati
+    role: Founder & CEO
+    formerly: OpenAI (CTO)
+    urls:
+      - label: Wikipedia
+        url: https://en.wikipedia.org/wiki/Mira_Murati
+  - name: John Schulman
+    role: Co-Founder & Chief Scientist
+    formerly: OpenAI (co-founder); Anthropic
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=itSa94cAAAAJ
+      - label: Personal Site
+        url: http://joschu.net/
+  - name: Soumith Chintala
+    role: CTO (since January 2026)
+    formerly: Meta AI (PyTorch creator)
+    urls:
+      - label: Personal Site
+        url: https://soumith.ch/
+  - name: Lilian Weng
+    url: https://lilianweng.github.io/
+    role: Co-Founder (research)
+    formerly: OpenAI (Head of Safety Systems)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=dCa-pW8AAAAJ
+  - name: Barret Zoph
+    role: Former Co-Founder & CTO (2025-2026; returned to OpenAI)
+    formerly: OpenAI (VP of Research)
+news:
+  - title: "Thinking Machines Amps Up Its Bet Against One-Size-Fits-All AI With Its First Open Model, Inkling"
+    url: https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/
+    source: TechCrunch
+    date: 2026-07-15
+  - title: "Thinking Machines Suffers Wave of Defections as Co-Founders Zoph and Metz Return to OpenAI; Soumith Chintala Named CTO"
+    url: https://fortune.com/2026/01/16/mira-murati-thinking-machines-staff-defections-openai-zoph-metz-schoenholz/
+    source: Fortune
+    date: 2026-01-16
+  - title: "Murati's Thinking Machines in Funding Talks at $50 Billion Value"
+    url: https://www.bloomberg.com/news/articles/2025-11-13/murati-s-thinking-machines-in-funding-talks-at-50-billion-value
+    source: Bloomberg
+    date: 2025-11-13
+  - title: "Mira Murati's Thinking Machines Lab Is Worth $12B in Seed Round"
+    url: https://techcrunch.com/2025/07/15/mira-muratis-thinking-machines-lab-is-worth-12b-in-seed-round/
+    source: TechCrunch
+    date: 2025-07-15
+tags:
+  - open-weight
+  - multimodal
+  - frontier
+  - post-training

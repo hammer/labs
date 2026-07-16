@@ -1,0 +1,27 @@
+name: Connectionism (research blog)
+slug: connectionism
+lab: thinking-machines
+type: blog
+date: 2025-09-10
+sources:
+  - label: Blog
+    url: https://thinkingmachines.ai/blog/
+  - label: GitHub (batch_invariant_ops)
+    url: https://github.com/thinking-machines-lab/batch_invariant_ops
+description: >
+  <p>The lab's research blog, unusually load-bearing for its reputation
+  before any model shipped. Notable posts: <strong>Defeating
+  Nondeterminism in LLM Inference</strong> (September 2025, with the
+  1K+-star batch_invariant_ops release, tracing nondeterminism to
+  batch-variant kernels), <strong>LoRA Without Regret</strong> (when LoRA
+  matches full fine-tuning), <strong>On-Policy Distillation</strong>, and
+  <strong>Modular Manifolds</strong> (optimizer geometry). The posts read
+  as the methodological groundwork for Tinker and Inkling's post-training
+  stack.</p>
+tags:
+  - research
+  - post-training
+  - infrastructure
+related:
+  - tinker
+  - inkling

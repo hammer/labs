@@ -1,0 +1,79 @@
+name: Inkling
+slug: inkling
+lab: thinking-machines
+type: model
+date: 2026-07-15
+flagship: true
+sources:
+  - label: Announcement
+    url: https://thinkingmachines.ai/news/introducing-inkling/
+  - label: HuggingFace
+    url: https://huggingface.co/thinkingmachines/Inkling
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/inkling
+  - label: Coverage (TechCrunch)
+    url: https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/
+description: >
+  <p>Thinking Machines' first model, trained from scratch: a natively
+  multimodal MoE Transformer &mdash; 975B total / 41B active parameters,
+  256 routed experts per MoE layer (6 active plus shared experts),
+  sliding-window and global attention interleaved 5:1 &mdash; pretrained
+  on <strong>45T tokens of text, images, audio, and video</strong> with no
+  separate encoders (images as 40&times;40 pixel patches, audio as dMel
+  spectrograms). 1M context. Post-training: SFT bootstrapped from
+  open-weights models (including Kimi K2.5) followed by 30M+ RL rollouts,
+  with a <strong>controllable thinking-effort dial</strong> that reaches
+  peer scores at roughly a third of the tokens (AA measures ~25K output
+  tokens per Intelligence Index task vs 37&ndash;43K for peers). AA
+  Intelligence Index <strong>41</strong> (v4.1, measured at xhigh effort)
+  &mdash; the leading U.S. open-weights model at release, ahead of
+  Nemotron 3 Ultra (38). Apache 2.0; fine-tunable on Tinker day one;
+  served by Together, Fireworks, Modal, Databricks, and Baseten. The
+  companion <strong>Inkling-Small</strong> (276B/12B) shares the
+  post-training stack. Announcement-post only so far &mdash; no technical
+  report yet.</p>
+tags:
+  - frontier
+  - open-weight
+  - moe
+  - multimodal
+  - reasoning
+model:
+  architecture: moe
+  parameters: "975B"
+  active_parameters: "41B"
+  context_window: 1000000
+  training_tokens: "45T"
+  intelligence_index: 41
+  intelligence_index_version: "AA v4.1"
+  license: Apache 2.0
+  num_experts: 256
+  top_k: 6
+  variants:
+    - name: Inkling
+      parameters: "975B"
+      active_parameters: "41B"
+    - name: Inkling-Small
+      parameters: "276B"
+      active_parameters: "12B"
+      notes: Same post-training stack; on Tinker, not yet on HuggingFace
+    - name: Inkling-NVFP4
+      notes: NVFP4-quantized checkpoint on HuggingFace
+  benchmark_scores:
+    - benchmark: HLE (with tools)
+      score: "46.0"
+      mode: effort 0.99
+    - benchmark: AIME
+      score: "97.1"
+      mode: effort 0.99
+    - benchmark: GPQA Diamond
+      score: "87.2"
+      mode: effort 0.99
+    - benchmark: SWE-Bench
+      score: "77.6"
+      mode: effort 0.99
+    - benchmark: Terminal-Bench
+      score: "63.8"
+      mode: effort 0.99
+related:
+  - tinker

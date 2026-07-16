@@ -6,7 +6,7 @@
 
 ## What This Is
 
-Lab Index tracks **61 AI labs** across **11 countries**, their **990+ research outputs** (models, papers, evals, datasets, libraries), and **230+ key researchers** — from trillion-parameter frontier models to foundational technique papers that changed how everyone trains.
+Lab Index tracks **62 AI labs** across **11 countries**, their **1,070+ research outputs** (models, papers, evals, datasets, libraries), and **230+ key researchers** — from trillion-parameter frontier models to foundational technique papers that changed how everyone trains.
 
 Every lab has a profile with description, key people, news, and a chronological output list. Every output has structured metadata appropriate to its type: model specs and benchmark scores, paper venues and linked authors, eval leaderboards, dataset sizes. Every person has a page showing their career trajectory across labs, profile links, and related work.
 
