@@ -1,0 +1,36 @@
+name: Muse Spark 1.1
+slug: muse-spark-1.1
+lab: meta
+type: model
+date: 2026-07-09
+flagship: true
+sources:
+  - label: Blog Post
+    url: https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/muse-spark-1-1
+  - label: Coverage (TechCrunch)
+    url: https://techcrunch.com/2026/07/09/meta-enters-the-crowded-ai-coding-battle-with-muse-spark-1-1/
+description: >
+  <p>The first upgrade to Meta Superintelligence Labs'
+  <a href="/outputs/meta/muse-spark">Muse Spark</a> line: multimodal
+  reasoning with major gains in tool use, computer use, and coding;
+  <strong>1M-token context</strong> (up from 260K); and parallel subagent
+  orchestration. AA Intelligence Index <strong>51</strong> (v4.1, xhigh)
+  &mdash; #18 overall, an 8-point jump over the original Spark's 43,
+  drawing even with GPT-5.4. Launched alongside the <strong>Meta Model
+  API</strong>, Meta's first paid model API ($1.25/$4.25 per MTok, $0.15
+  cache hits), and Thinking mode in the Meta AI app. Proprietary, like
+  the rest of the Muse line.</p>
+tags:
+  - frontier
+  - multimodal
+  - reasoning
+  - agents
+  - proprietary
+model:
+  context_window: 1000000
+  intelligence_index: 51
+  intelligence_index_version: "AA v4.1"
+related:
+  - muse-spark
