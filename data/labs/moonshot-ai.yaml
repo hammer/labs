@@ -88,6 +88,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Flood_Sung1
 news:
+  - title: "Moonshot's Kimi K3 Expected to Close the Gap with Anthropic's Opus 4.8; Fresh Capital at $31.5B Valuation"
+    url: https://techcrunch.com/2026/07/16/moonshots-upcoming-kimi-3-is-expected-to-close-the-gap-with-anthropics-opus-4-8/
+    source: TechCrunch
+    date: 2026-07-16
   - title: "Moonshot Launches Kimi Work: Local Desktop Agent with 300-Sub-Agent Swarm on Kimi K2.6"
     url: https://www.marktechpost.com/2026/06/12/moonshot-ai-launches-kimi-work-a-local-desktop-agent-reportedly-running-on-kimi-k2-6-with-a-300-sub-agent-agent-swarm/
     source: MarkTechPost

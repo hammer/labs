@@ -1,0 +1,50 @@
+name: Kimi K3
+slug: kimi-k3
+lab: moonshot-ai
+type: model
+date: 2026-07-16
+flagship: true
+sources:
+  - label: Blog Post
+    url: https://www.kimi.com/blog/kimi-k3
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/kimi-k3
+  - label: OpenRouter
+    url: https://openrouter.ai/moonshotai/kimi-k3
+  - label: Coverage (TechCrunch)
+    url: https://techcrunch.com/2026/07/16/moonshots-upcoming-kimi-3-is-expected-to-close-the-gap-with-anthropics-opus-4-8/
+description: >
+  <p>Moonshot's next-generation flagship: a <strong>2.8T-parameter Stable
+  LatentMoE</strong> (16 of 896 experts active) built on Kimi Delta
+  Attention (from <a href="/outputs/moonshot-ai/kimi-linear">Kimi
+  Linear</a>) and <a
+  href="/outputs/moonshot-ai/attention-residuals">Attention
+  Residuals</a>, with Gated MLA, <strong>native vision</strong>, and a
+  1M-token context window &mdash; the architectural leap the K2 line
+  (1T/32B) built toward. Runs at max thinking effort by default with low-
+  and high-effort modes. AA Intelligence Index <strong>57</strong> (v4.1)
+  &mdash; #4 overall at release, the highest-scoring Chinese model and
+  above Grok 4.5 (54), though AA flags verbosity (~2&times; median output
+  tokens) and slow serving. Moonshot positions it as trailing only Claude
+  Fable 5 and GPT-5.6 Sol. $0.30/$3/$15 per MTok (cache-hit/miss/output);
+  live on Kimi.com, Kimi Work, Kimi Code, and the API at launch, with
+  <strong>full weights committed by July 27, 2026</strong> &mdash;
+  proprietary until then.</p>
+tags:
+  - frontier
+  - moe
+  - reasoning
+  - agentic
+  - multimodal
+model:
+  architecture: moe
+  parameters: "2.8T"
+  context_window: 1000000
+  num_experts: 896
+  top_k: 16
+  intelligence_index: 57
+  intelligence_index_version: "AA v4.1"
+related:
+  - kimi-k2.6
+  - kimi-linear
+  - attention-residuals
