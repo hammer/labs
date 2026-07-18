@@ -1,0 +1,23 @@
+name: AnyGPT
+slug: anygpt
+lab: fudan
+type: model
+date: 2024-02-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.12226
+  - label: GitHub
+    url: https://github.com/OpenMOSS/AnyGPT
+description: >
+  <p>Unified <strong>any-to-any multimodal LLM</strong> handling text,
+  speech, image, and music via discrete sequence modeling &mdash; all
+  modalities tokenized into a shared vocabulary, trained without
+  architecture changes to the base LLM. A widely-cited early omni-modal
+  LLM (ACL 2024) from <a href="/people/xipeng-qiu">Xipeng Qiu</a> and
+  <a href="/people/tao-gui">Tao Gui</a>'s Fudan/OpenMOSS groups.</p>
+tags:
+  - multimodal
+  - open-weight
+paper:
+  arxiv: "2402.12226"
+  venue: ACL 2024

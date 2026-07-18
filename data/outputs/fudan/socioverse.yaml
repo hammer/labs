@@ -1,0 +1,25 @@
+name: SocioVerse
+slug: socioverse
+lab: fudan
+type: library
+date: 2025-04-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.10157
+  - label: GitHub
+    url: https://github.com/FudanDISC/SocioVerse
+description: >
+  <p>Social-simulation "world model" backed by a pool of <strong>10
+  million real users</strong>, aligning LLM-agent populations to
+  real-world survey and behavioral distributions for large-scale social
+  simulation (200+&#9733;). From FudanDISC
+  (<a href="/people/zhongyu-wei">Zhongyu Wei</a>), the group's anchor
+  social-agent artifact.</p>
+tags:
+  - agents
+  - simulation
+  - research
+library:
+  github: https://github.com/FudanDISC/SocioVerse
+paper:
+  arxiv: "2504.10157"

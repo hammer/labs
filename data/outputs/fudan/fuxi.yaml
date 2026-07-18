@@ -1,0 +1,39 @@
+name: FuXi (weather & ocean FMs)
+slug: fuxi
+lab: fudan
+type: model
+date: 2024-09-11
+sources:
+  - label: FuXi-2.0 Paper (arXiv)
+    url: https://arxiv.org/abs/2409.07188
+  - label: FuXi-Ocean Paper (arXiv)
+    url: https://arxiv.org/abs/2506.03210
+  - label: FuXi-ENS Paper (arXiv)
+    url: https://arxiv.org/abs/2405.05925
+description: >
+  <p>Family of ML weather/ocean forecasting foundation models from the
+  Fudan AI Innovation &amp; Incubation Institute (Hao Li group).
+  <strong>FuXi-2.0</strong> couples atmosphere and ocean surface for
+  practical medium-range forecasting, beating ECMWF HRES on key
+  variables including wind power. <strong>FuXi-Ocean</strong> (2025) is
+  the first data-driven global ocean forecast at eddy-resolving
+  1/12&deg; resolution, sub-daily, down to 1500m depth, with a
+  Mixture-of-Time module. <strong>FuXi-ENS</strong> (Science Advances
+  2025) is a VAE-based ML ensemble that beats the ECMWF ensemble's CRPS
+  on <strong>98.1%</strong> of variable/lead-time combinations &mdash;
+  with strong adoption in the AI-weather community.</p>
+tags:
+  - weather
+  - climate
+  - scientific-fm
+  - research
+model:
+  variants:
+    - name: FuXi-2.0
+      notes: Atmosphere + ocean-surface coupled medium-range model (arXiv:2409.07188)
+    - name: FuXi-Ocean
+      notes: First eddy-resolving 1/12° global ocean forecast model (arXiv:2506.03210)
+    - name: FuXi-ENS
+      notes: VAE-based ensemble weather model, Science Advances 2025 (arXiv:2405.05925)
+paper:
+  arxiv: "2409.07188"

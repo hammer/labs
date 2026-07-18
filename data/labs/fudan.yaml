@@ -1,0 +1,75 @@
+name: Fudan University
+slug: fudan
+url: https://www.fudan.edu.cn/en/
+wikipedia: https://en.wikipedia.org/wiki/Fudan_University
+huggingface: https://huggingface.co/OpenMOSS-Team
+github: https://github.com/OpenMOSS
+region: china
+founded: "1905"
+type: academic
+description: >
+  <p>Fudan built China's most storied open-LLM lineage &mdash; and then
+  watched it migrate. <a href="/people/xipeng-qiu">Xipeng Qiu</a>'s
+  <strong>OpenMOSS</strong> group (the MOSS lineage, SpeechGPT, the
+  interpretability program) is now hosted at the Shanghai Innovation
+  Institute as "OpenMOSS (SII)" (openmoss@sii.edu.cn) and tied to the
+  MOSI.AI startup: MOSS-Speech and the 2026 omni-modal MOSS ecosystem
+  (MOSS-TTS, MOSS-Audio, MOSS-VL, MOVA) ship SII/MOSI-branded and are
+  tracked under <a href="/labs/sii">SII</a> &mdash; this entry
+  deliberately excludes them.</p>
+
+  <p>What ships under Fudan branding is still substantial. The pre-SII
+  speech line is the anchor:
+  <a href="/outputs/fudan/speechgpt-2">SpeechGPT-2.0-preview</a>
+  (real-time end-to-end spoken dialogue, &lt;200ms latency),
+  <a href="/outputs/fudan/moss-ttsd">MOSS-TTSD</a> dialogue TTS, and
+  <a href="/outputs/fudan/anygpt">AnyGPT</a>, an early any-to-any
+  omni-modal LLM &mdash; all descendants of
+  <a href="/outputs/fudan/moss">MOSS</a>, one of China's first public
+  ChatGPT-style models (Feb 2023). OpenMOSS's interpretability program
+  (<a href="/outputs/fudan/llama-scope">Llama Scope</a>, 256 open SAEs
+  on Llama-3.1-8B) began here before its follow-ons added SII
+  affiliations.</p>
+
+  <p>Beyond OpenMOSS: FudanNLP (<a href="/people/xuanjing-huang">Xuanjing
+  Huang</a>, <a href="/people/tao-gui">Tao Gui</a>) drives agent-RL
+  infrastructure (AgentGym-RL, with ByteDance) and the LLMEval
+  evaluation line; FudanDISC (<a href="/people/zhongyu-wei">Zhongyu
+  Wei</a>) leads LLM social simulation (SocioVerse) and medical LLMs
+  (DISC-MedLLM); <a href="/people/yanghua-xiao">Yanghua Xiao</a>'s
+  KnowledgeWorks anchors knowledge-graph/knowledgeable-FM research; and
+  the Fudan AI Innovation &amp; Incubation Institute (Hao Li group)
+  pretrains the <a href="/outputs/fudan/fuxi">FuXi</a> weather/ocean
+  forecasting FMs that beat ECMWF operational baselines.</p>
+people:
+  - name: Xipeng Qiu
+    role: Professor, CS; leads OpenMOSS (MOSS lineage, SpeechGPT, interpretability) — recent output ships SII/MOSI-branded
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Pq4Yp_kAAAAJ
+  - name: Xuanjing Huang
+    role: Professor, CS; long-time NLP lead (FudanNLP) — foundation models, agents, alignment, evaluation
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=RGsMgZA4H78C
+  - name: Tao Gui
+    role: Fudan NLP; agent-RL and evaluation (AgentGym-RL, AnyGPT, LLMEval)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=BrOLQdwAAAAJ
+  - name: Yanghua Xiao
+    role: Professor, CS; Director, KnowledgeWorks (KW@FUDAN) — knowledge-graph / knowledgeable-foundation-model research
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=odFW4FoAAAAJ
+  - name: Zhongyu Wei
+    role: Associate Professor, School of Data Science; FudanDISC social-agent / LLM social-simulation lead
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=AjLDxxgAAAAJ
+tags:
+  - academic
+  - speech
+  - multimodal
+  - interpretability
+  - research

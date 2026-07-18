@@ -1,0 +1,20 @@
+name: MOSS
+slug: moss
+lab: fudan
+type: model
+date: 2023-02-20
+sources:
+  - label: GitHub
+    url: https://github.com/OpenMOSS/MOSS
+description: >
+  <p>One of the first publicly released Chinese ChatGPT-style
+  conversational LLMs (February 2023), a <strong>16B</strong> open-source
+  tool-augmented model from <a href="/people/xipeng-qiu">Xipeng Qiu</a>'s
+  Fudan group (11.9K&#9733;) &mdash; the legacy anchor of the lineage
+  that became OpenMOSS and later migrated to
+  <a href="/labs/sii">SII</a>/MOSI.AI.</p>
+tags:
+  - foundational
+  - open-weight
+model:
+  parameters: "16B"

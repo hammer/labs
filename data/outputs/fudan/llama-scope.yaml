@@ -1,0 +1,24 @@
+name: Llama Scope
+slug: llama-scope
+lab: fudan
+type: paper
+date: 2024-10-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.20526
+  - label: GitHub
+    url: https://github.com/OpenMOSS/Language-Model-SAEs
+description: >
+  <p><strong>256 open sparse autoencoders</strong> trained on every
+  layer and sublayer of Llama-3.1-8B &mdash; the anchor of OpenMOSS's
+  mechanistic-interpretability program
+  (<a href="/people/xipeng-qiu">Xipeng Qiu</a>), shipped with the
+  Language-Model-SAEs framework. Extended by Lorsa (low-rank sparse
+  attention, arXiv:2504.20938, ICLR 2026) and the crosscoder study of
+  concept evolution across pretraining (arXiv:2509.17196, ICLR 2026),
+  both of which add SII affiliations as the group migrated.</p>
+tags:
+  - interpretability
+  - research
+paper:
+  arxiv: "2410.20526"

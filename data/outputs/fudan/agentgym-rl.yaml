@@ -1,0 +1,21 @@
+name: AgentGym-RL
+slug: agentgym-rl
+lab: fudan
+type: paper
+date: 2025-09-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.08755
+description: >
+  <p>Framework for training LLM agents for <strong>long-horizon
+  multi-turn decision-making</strong> via reinforcement learning across
+  diverse environments, introducing the ScalingInter-RL recipe that
+  progressively scales agent-environment interaction during training.
+  From Fudan NLP (<a href="/people/tao-gui">Tao Gui</a>, Zhiheng Xi)
+  with ByteDance.</p>
+tags:
+  - agents
+  - reinforcement-learning
+  - infrastructure
+paper:
+  arxiv: "2509.08755"

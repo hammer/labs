@@ -1,0 +1,25 @@
+name: SpeechGPT-2.0-preview
+slug: speechgpt-2
+lab: fudan
+type: model
+date: 2025-01-15
+flagship: true
+sources:
+  - label: GitHub
+    url: https://github.com/OpenMOSS/SpeechGPT-2.0-preview
+  - label: HuggingFace
+    url: https://huggingface.co/OpenMOSS-Team/SpeechGPT-2.0-preview-7B
+description: >
+  <p>GPT-4o-level <strong>real-time end-to-end spoken-dialogue LLM</strong>
+  with &lt;200ms latency, focused on Chinese speech &mdash; the flagship
+  continuation of the SpeechGPT lineage from
+  <a href="/people/xipeng-qiu">Xipeng Qiu</a>'s OpenMOSS group, released
+  pre-SII under Fudan/open-moss.com branding. Models expressive
+  human-like conversation (interruptions, style, emotion) directly in
+  the speech domain rather than cascading ASR&rarr;LLM&rarr;TTS.</p>
+tags:
+  - speech
+  - multimodal
+  - open-weight
+model:
+  parameters: "7B"

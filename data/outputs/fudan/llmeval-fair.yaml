@@ -1,0 +1,30 @@
+name: LLMEval-Fair
+slug: llmeval-fair
+lab: fudan
+type: eval
+date: 2025-08-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.05452
+description: >
+  <p><strong>200K+ generative QA</strong> items across 13 disciplines
+  for robust and fair LLM evaluation (ACL 2026) &mdash; the latest in
+  FudanNLP's LLMEval line (<a href="/people/xuanjing-huang">Xuanjing
+  Huang</a>), which also includes LLMEval-Med (EMNLP 2025,
+  arXiv:2506.04078), maintained with a live leaderboard.</p>
+tags:
+  - benchmark
+  - evaluation
+  - research
+eval:
+  num_questions: 200000
+  domains:
+    - science
+    - engineering
+    - medicine
+    - law
+    - humanities
+  scoring_method: generative QA graded for robust/fair evaluation
+paper:
+  arxiv: "2508.05452"
+  venue: ACL 2026

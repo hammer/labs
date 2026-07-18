@@ -1,0 +1,24 @@
+name: MOSS-TTSD
+slug: moss-ttsd
+lab: fudan
+type: model
+date: 2025-06-15
+sources:
+  - label: GitHub
+    url: https://github.com/OpenMOSS/MOSS-TTSD
+  - label: HuggingFace
+    url: https://huggingface.co/fnlp/MOSS-TTSD-v0.5
+description: >
+  <p>Expressive multi-speaker <strong>spoken-dialogue TTS</strong>
+  (v0/v0.5), Qwen3-based, with zero-shot two-speaker voice cloning and
+  generation up to 960 seconds &mdash; released "by Fudan University
+  @Open_MOSS" from <a href="/people/xipeng-qiu">Xipeng Qiu</a>'s group.
+  The later MOSS-TTS family (2026, 800K+ HF downloads) migrated to
+  OpenMOSS (SII)/MOSI.AI and is tracked under
+  <a href="/labs/sii">SII</a>.</p>
+tags:
+  - speech
+  - tts
+  - open-weight
+model:
+  base_model: qwen3

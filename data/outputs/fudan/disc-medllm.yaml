@@ -1,0 +1,24 @@
+name: DISC-MedLLM
+slug: disc-medllm
+lab: fudan
+type: model
+date: 2023-08-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2308.14346
+  - label: GitHub
+    url: https://github.com/FudanDISC/DISC-MedLLM
+description: >
+  <p>Chinese <strong>medical-consultation LLM</strong> built on
+  Baichuan-13B and trained on the DISC-Med-SFT dataset (470K+
+  examples derived from medical knowledge graphs and real
+  consultations) &mdash; the medical-LLM anchor of FudanDISC
+  (<a href="/people/zhongyu-wei">Zhongyu Wei</a>).</p>
+tags:
+  - medical
+  - scientific-fm
+  - open-weight
+model:
+  parameters: "13B"
+paper:
+  arxiv: "2308.14346"
