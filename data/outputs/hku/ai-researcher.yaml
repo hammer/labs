@@ -1,0 +1,20 @@
+name: AI-Researcher
+slug: ai-researcher
+lab: hku
+type: library
+date: 2025-05-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.18705
+  - label: GitHub
+    url: https://github.com/HKUDS/AI-Researcher
+description: >
+  <p>HKUDS's autonomous scientific-discovery agent (NeurIPS 2025;
+  5.6K+&#9733;): takes a research idea through literature, implementation,
+  experiments, and paper writing end to end. A high-adoption entry in the
+  2025 wave of research-automation agents.</p>
+tags:
+  - agents
+  - research
+library:
+  github: https://github.com/HKUDS/AI-Researcher

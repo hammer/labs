@@ -1,0 +1,20 @@
+name: AutoAgent
+slug: autoagent
+lab: hku
+type: library
+date: 2025-02-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.05957
+  - label: GitHub
+    url: https://github.com/HKUDS/AutoAgent
+description: >
+  <p>HKUDS's zero-code, fully-automated framework for building and
+  deploying LLM agents in natural language (9.5K+&#9733;) &mdash; one of
+  the most-adopted academic agent frameworks. Part of Chao Huang's HKUDS
+  line alongside LightRAG and AI-Researcher.</p>
+tags:
+  - agents
+  - infrastructure
+library:
+  github: https://github.com/HKUDS/AutoAgent
