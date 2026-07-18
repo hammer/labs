@@ -1,0 +1,21 @@
+name: VideoMimic
+slug: videomimic
+lab: berkeley
+type: paper
+date: 2025-05-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.03729
+  - label: Project Page
+    url: https://videomimic.net
+description: >
+  <p>CoRL 2025 <strong>Best Student Paper</strong> (Kanazawa's group):
+  a real-to-sim-to-real pipeline where humanoids learn context-aware
+  skills &mdash; climbing stairs, sitting in chairs &mdash; from casual
+  smartphone video, no motion capture. A data-source breakthrough for
+  humanoid control.</p>
+tags:
+  - robotics
+  - research
+paper:
+  arxiv: "2505.03729"
