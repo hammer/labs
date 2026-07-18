@@ -1,0 +1,20 @@
+name: A Sober Look at Progress in LM Reasoning
+slug: sober-look-reasoning
+lab: tuebingen
+type: paper
+date: 2025-04-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.07086
+description: >
+  <p>COLM 2025, from the Bethge/evaluation-science line: much of the
+  reported gain from RL fine-tuning for reasoning evaporates under
+  standardized, seed- and decoding-controlled evaluation. A widely-cited
+  rigor check that reshaped how RL-for-reasoning claims are reported
+  &mdash; sibling to the cluster's other benchmark-science work.</p>
+tags:
+  - eval
+  - reasoning
+  - research
+paper:
+  arxiv: "2504.07086"
