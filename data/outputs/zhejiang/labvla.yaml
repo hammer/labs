@@ -1,0 +1,25 @@
+name: LabVLA
+slug: labvla
+lab: zhejiang
+type: model
+date: 2026-06-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.13578
+  - label: HuggingFace
+    url: https://huggingface.co/zjunlp/LabVLA-5B-Base
+description: >
+  <p>ZJUNLP's "first VLA for scientific laboratories": a Qwen3-VL-4B
+  backbone with a DiT flow-matching action expert, trained to operate
+  laboratory apparatus &mdash; an on-thesis scientific/embodied FM.
+  Released amid a broad 2026 expansion of the lab's Ocean domain-FM line
+  (OceanGPT-omni, OceanCLIP, and the 7.8K-download OceanInstruction
+  corpus).</p>
+tags:
+  - science
+  - robotics
+  - open-weight
+paper:
+  arxiv: "2606.13578"
+related:
+  - oceangpt
