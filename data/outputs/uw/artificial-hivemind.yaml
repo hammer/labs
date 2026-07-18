@@ -1,0 +1,21 @@
+name: Artificial Hivemind
+slug: artificial-hivemind
+lab: uw
+type: paper
+date: 2025-10-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.22954
+description: >
+  <p>"The Open-Ended Homogeneity of Language Models" &mdash; NeurIPS 2025
+  <strong>Best Paper (Datasets &amp; Benchmarks)</strong>. Introduces the
+  Infinity-Chat dataset and shows models collapse to homogeneous outputs
+  on open-ended prompts, even across different model families &mdash; a
+  diversity/mode-collapse problem directly relevant to eval design and
+  synthetic-data pipelines. UW-led (Jiang, Tsvetkov) with CMU, Stanford,
+  and AI2.</p>
+tags:
+  - eval
+  - research
+paper:
+  arxiv: "2510.22954"
