@@ -1,0 +1,75 @@
+name: Toronto & Vector Institute
+slug: toronto
+url: https://web.cs.toronto.edu
+wikipedia: https://en.wikipedia.org/wiki/University_of_Toronto
+huggingface: https://huggingface.co/vector-institute
+github: https://github.com/VectorInstitute
+region: canada
+founded: "1827"
+type: academic
+description: >
+  <p>The <strong><a href="https://en.wikipedia.org/wiki/University_of_Toronto">University
+  of Toronto</a></strong> (founded 1827) and the co-located
+  <strong><a href="https://vectorinstitute.ai">Vector Institute</a></strong>
+  (founded 2017) form Canada's densest deep-learning cluster. Vector was
+  co-founded in 2017 by <a href="/people/geoffrey-hinton">Geoffrey Hinton</a>
+  &mdash; University Professor Emeritus at Toronto, 2018 Turing Award laureate,
+  and 2024 <strong>Nobel Prize in Physics</strong> winner &mdash; who remains
+  the institute's chief scientific advisor. The same faculty publish under both
+  the university and Vector labels, so the cluster is the community's own unit
+  of attribution.</p>
+
+  <p>Flagship lines: <a href="/people/bo-wang">Bo Wang</a>'s medical and omics
+  foundation-model stack (<a href="/outputs/toronto/scgpt">scGPT</a>, the Nature
+  Methods 2024 single-cell FM; <a href="/outputs/toronto/medsam2">MedSAM2</a>;
+  <a href="/outputs/toronto/echojepa">EchoJEPA</a>;
+  <a href="/outputs/toronto/orthrus">Orthrus</a>;
+  <a href="/outputs/toronto/bioreason">BioReason</a>);
+  <a href="/people/alan-aspuru-guzik">Alán Aspuru-Guzik</a>'s Matter Lab
+  self-driving-labs and generative chemistry
+  (<a href="/outputs/toronto/el-agente-q">El Agente Q</a>,
+  <a href="/outputs/toronto/quetzal">Quetzal</a>); and
+  <a href="/people/colin-raffel">Colin Raffel</a>'s open-data and
+  model-merging agenda (<a href="/outputs/toronto/common-pile">The Common
+  Pile</a>, the <a href="/outputs/toronto/model-merging-eval">model-merging
+  benchmark</a>).</p>
+
+  <p>Industry gravity runs two ways: <a href="/labs/cohere">Cohere</a> spun out
+  of Toronto, and Vector co-founder <a href="/people/sanja-fidler">Sanja
+  Fidler</a> splits her time between UofT and NVIDIA &mdash; her NVIDIA-branded
+  research is tracked under <a href="/labs/nvidia">NVIDIA</a>, and this entry
+  keeps university-shipped artifacts only.</p>
+people:
+  - name: Bo Wang
+    role: Associate Professor, UofT (CS + Lab Medicine); Canada CIFAR AI Chair; Vector faculty; UHN AI lead
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=37FDILIAAAAJ
+  - name: Alán Aspuru-Guzik
+    role: Professor, Chemistry & CS, UofT (Matter Lab); Acceleration Consortium; Vector faculty
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Ag_6KEgAAAAJ
+  - name: Colin Raffel
+    role: Associate Professor, UofT; Vector faculty; also Hugging Face
+    formerly: UNC Chapel Hill
+    urls:
+      - label: Website
+        url: https://colinraffel.com/
+  - name: Geoffrey Hinton
+    role: University Professor Emeritus, UofT; Co-Founder & Chief Scientific Advisor, Vector Institute
+    formerly: Google (until May 2023)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=JicYPdAAAAAJ
+  - name: Sanja Fidler
+    role: Associate Professor, UofT; Vector co-founder
+    formerly: VP AI Research, NVIDIA
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=CUlqK5EAAAAJ
+tags:
+  - academic
+  - research
+  - science
+  - open-weight

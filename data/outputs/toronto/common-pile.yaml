@@ -1,0 +1,47 @@
+name: The Common Pile
+slug: common-pile
+lab: toronto
+date: 2025-06-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.05209
+  - label: GitHub
+    url: https://github.com/r-three/common-pile
+description: >
+  <p><a href="/people/colin-raffel">Colin Raffel</a> / r-three open-data
+  effort &mdash; an EleutherAI + Hugging Face + University of Toronto
+  collaboration releasing a large openly-licensed corpus and the LLMs trained
+  on it.</p>
+tags:
+  - dataset
+  - open-weight
+  - research
+outputs:
+  - name: The Common Pile v0.1
+    type: dataset
+    date: 2025-06-05
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2506.05209
+      - label: GitHub
+        url: https://github.com/r-three/common-pile
+    description: >
+      <p>An 8TB corpus of openly-licensed and public-domain text, curated to
+      train competitive LLMs without copyrighted data.</p>
+    dataset:
+      size: "8TB"
+      huggingface_url: https://huggingface.co/datasets/common-pile/comma_v0.1_training_dataset
+      license: Openly licensed / public domain
+  - name: Comma v0.1
+    type: model
+    date: 2025-06-05
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2506.05209
+    description: >
+      <p>7B LLMs trained solely on The Common Pile, competitive with
+      Llama-1/Llama-2-era models trained on unlicensed web data.</p>
+    model:
+      architecture: dense
+      parameters: "7B"
+      license: Apache 2.0

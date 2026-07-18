@@ -1,0 +1,23 @@
+name: Orthrus
+slug: orthrus
+lab: toronto
+type: model
+date: 2024-10-10
+sources:
+  - label: bioRxiv
+    url: https://www.biorxiv.org/content/10.1101/2024.10.10.617658
+  - label: Nature Methods (2026)
+    url: https://doi.org/10.1038/s41592-026-03064-3
+  - label: GitHub
+    url: https://github.com/bowang-lab/Orthrus
+description: >
+  <p>A Mamba mature-RNA foundation model from <a href="/people/bo-wang">Bo
+  Wang</a>'s lab, contrastively pretrained on 45M+ transcripts and reaching
+  SOTA on mRNA property-prediction tasks (Nature Methods 2026).</p>
+tags:
+  - science
+  - biology
+  - open-weight
+  - research
+related:
+  - scgpt

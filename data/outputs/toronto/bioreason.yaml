@@ -1,0 +1,25 @@
+name: BioReason
+slug: bioreason
+lab: toronto
+type: model
+date: 2025-05-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.23579
+  - label: GitHub
+    url: https://github.com/bowang-lab/BioReason
+description: >
+  <p>From <a href="/people/bo-wang">Bo Wang</a>'s lab, BioReason couples a DNA
+  foundation model to an LLM for multi-step genomic reasoning, lifting KEGG
+  pathway-reasoning accuracy from 86% to 98%. High community traction (398&#9733;),
+  with a BioReason-Pro protein follow-up. NeurIPS 2025.</p>
+tags:
+  - science
+  - biology
+  - reasoning
+  - open-weight
+paper:
+  arxiv: "2505.23579"
+  venue: NeurIPS 2025
+related:
+  - scgpt

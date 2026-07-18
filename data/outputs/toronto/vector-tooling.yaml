@@ -1,0 +1,44 @@
+name: AtomGen & vector-inference
+slug: vector-tooling
+lab: toronto
+date: 2024-06-01
+sources:
+  - label: GitHub (AtomGen)
+    url: https://github.com/VectorInstitute/atomgen
+  - label: GitHub (vector-inference)
+    url: https://github.com/VectorInstitute/vector-inference
+description: >
+  <p>Open foundation-model tooling from the Vector Institute engineering
+  team &mdash; an atomistic-materials FM and its widely reused HPC serving
+  stack.</p>
+tags:
+  - science
+  - materials
+  - infrastructure
+  - open-weight
+outputs:
+  - name: AtomGen / Atomformer
+    type: model
+    date: 2024-06-01
+    sources:
+      - label: GitHub
+        url: https://github.com/VectorInstitute/atomgen
+      - label: HuggingFace
+        url: https://huggingface.co/vector-institute/atomformer-base
+    description: >
+      <p>An encoder-transformer atomistic-materials foundation model trained
+      on the aggregated S2EF-15M dataset (OC20/22, MPtrj, SPICE).</p>
+    model:
+      architecture: dense
+  - name: vector-inference
+    type: library
+    date: 2024-06-01
+    sources:
+      - label: GitHub
+        url: https://github.com/VectorInstitute/vector-inference
+    description: >
+      <p>Efficient LLM inference and serving on Slurm HPC clusters; 106&#9733;
+      and actively maintained.</p>
+    library:
+      github: https://github.com/VectorInstitute/vector-inference
+      language: Python

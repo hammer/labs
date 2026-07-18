@@ -1,0 +1,20 @@
+name: EchoJEPA
+slug: echojepa
+lab: toronto
+type: model
+date: 2026-02-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.02603
+description: >
+  <p>A JEPA latent-predictive echocardiography foundation model from
+  <a href="/people/bo-wang">Bo Wang</a>'s lab (UofT/UHN), pretrained on 18M
+  echocardiograms across 300K patients; its zero-shot predictions beat
+  fine-tuned baselines.</p>
+tags:
+  - science
+  - health
+  - multimodal
+  - research
+paper:
+  arxiv: "2602.02603"

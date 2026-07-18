@@ -1,0 +1,21 @@
+name: El Agente Q
+slug: el-agente-q
+lab: toronto
+type: paper
+date: 2025-05-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.02484
+description: >
+  <p>An autonomous LLM multi-agent system for quantum-chemistry workflows,
+  achieving &gt;87% task success &mdash; a flagship self-driving-lab agent from
+  <a href="/people/alan-aspuru-guzik">Alán Aspuru-Guzik</a>'s Matter Lab.
+  Published in Matter (2025).</p>
+tags:
+  - agents
+  - science
+  - chemistry
+  - research
+paper:
+  arxiv: "2505.02484"
+  venue: Matter 2025

@@ -1,0 +1,21 @@
+name: MedSAM2
+slug: medsam2
+lab: toronto
+type: model
+date: 2025-04-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.03600
+  - label: GitHub
+    url: https://github.com/bowang-lab/MedSAM2
+description: >
+  <p>A promptable SAM2-based foundation model for 3D medical images and video
+  from <a href="/people/bo-wang">Bo Wang</a>'s lab, trained on 455K 3D masks.
+  Very high adoption &mdash; the MedSAM lineage totals 4,351&#9733;.</p>
+tags:
+  - science
+  - health
+  - multimodal
+  - open-weight
+paper:
+  arxiv: "2504.03600"

@@ -1,0 +1,21 @@
+name: Realistic Evaluation of Model Merging
+slug: model-merging-eval
+lab: toronto
+type: paper
+date: 2024-09-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2409.18314
+description: >
+  <p>"Realistic Evaluation of Model Merging for Compositional Generalization"
+  &mdash; a fair benchmark of 8 merging methods across 3 modalities, and
+  foundational model-merging-technique work from
+  <a href="/people/colin-raffel">Colin Raffel</a>'s r-three lab. Widely cited
+  in the merging literature. ICLR 2025.</p>
+tags:
+  - research
+  - technique
+  - evaluation
+paper:
+  arxiv: "2409.18314"
+  venue: ICLR 2025

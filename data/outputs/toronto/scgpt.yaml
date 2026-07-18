@@ -1,0 +1,48 @@
+name: scGPT
+slug: scgpt
+lab: toronto
+date: 2024-02-26
+flagship: true
+sources:
+  - label: Nature Methods
+    url: https://doi.org/10.1038/s41592-024-02201-0
+  - label: GitHub
+    url: https://github.com/bowang-lab/scGPT
+description: >
+  <p><a href="/people/bo-wang">Bo Wang</a>'s lab single-cell multi-omics
+  foundation-model line &mdash; the anchor scGPT transformer and its
+  spatial-omics successor.</p>
+tags:
+  - science
+  - biology
+  - open-weight
+  - research
+outputs:
+  - name: scGPT
+    type: model
+    date: 2024-02-26
+    sources:
+      - label: Nature Methods
+        url: https://doi.org/10.1038/s41592-024-02201-0
+      - label: GitHub
+        url: https://github.com/bowang-lab/scGPT
+    description: >
+      <p>A generative single-cell transformer pretrained on 33M cells
+      (Nature Methods 2024); the most-cited single-cell foundation model
+      and the reference baseline for the field.</p>
+    model:
+      architecture: dense
+      license: MIT (code)
+  - name: scGPT-spatial
+    type: model
+    date: 2025-02-05
+    sources:
+      - label: bioRxiv
+        url: https://www.biorxiv.org/content/10.1101/2025.02.05.636714
+    description: >
+      <p>A continual-pretrained spatial-omics FM with an MoE protocol-aware
+      decoder, trained on SpatialHuman30M (30M spatial profiles); the direct
+      successor to scGPT.</p>
+related:
+  - orthrus
+  - bioreason

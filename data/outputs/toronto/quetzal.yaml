@@ -1,0 +1,22 @@
+name: Quetzal
+slug: quetzal
+lab: toronto
+type: model
+date: 2025-05-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.13791
+description: >
+  <p>"Scalable Autoregressive 3D Molecule Generation" &mdash; tokenizer-free,
+  atom-by-atom autoregressive 3D molecule generation combining a causal
+  transformer with a diffusion-MLP for atom positions, from
+  <a href="/people/alan-aspuru-guzik">Alán Aspuru-Guzik</a>'s group.</p>
+tags:
+  - science
+  - chemistry
+  - generative
+  - research
+paper:
+  arxiv: "2505.13791"
+related:
+  - el-agente-q
