@@ -1,0 +1,23 @@
+name: Code2Video
+slug: code2video
+lab: nus
+type: library
+date: 2025-10-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.01174
+  - label: GitHub
+    url: https://github.com/showlab/Code2Video
+description: >
+  <p>Show Lab's code-centric agentic pipeline for generating educational
+  videos (ICML 2026; 1.9K&#9733;): an agent writes executable code that
+  renders precise, pedagogical animations rather than sampling pixels
+  &mdash; a controllable alternative to video-diffusion for a whole
+  content class.</p>
+tags:
+  - agents
+  - video
+library:
+  github: https://github.com/showlab/Code2Video
+paper:
+  arxiv: "2510.01174"
