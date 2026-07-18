@@ -1,0 +1,20 @@
+name: YOLOE
+slug: yoloe
+lab: tsinghua
+type: model
+date: 2025-03-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.07465
+  - label: GitHub
+    url: https://github.com/THU-MIG/yoloe
+description: >
+  <p>"Real-Time Seeing Anything" (ICCV 2025; 2.2K&#9733;): open-vocabulary
+  real-time detection and segmentation from THU-MIG, the in-window
+  successor to the YOLOv10 line &mdash; open-vocab capability at YOLO
+  latency, widely used in production perception.</p>
+tags:
+  - vision
+  - open-weight
+paper:
+  arxiv: "2503.07465"

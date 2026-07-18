@@ -1,0 +1,22 @@
+name: TurboDiffusion
+slug: turbodiffusion
+lab: tsinghua
+type: library
+date: 2025-12-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.16093
+description: >
+  <p>TSAIL's 100&ndash;200&times; acceleration for video diffusion
+  (3.6K&#9733; in seven months) &mdash; extends the lab's
+  <a href="/outputs/tsinghua/sageattention">SageAttention</a> efficiency
+  line into end-to-end fast video generation, widely adopted in
+  open video-gen stacks.</p>
+tags:
+  - efficiency
+  - video
+  - infrastructure
+paper:
+  arxiv: "2512.16093"
+related:
+  - sageattention
