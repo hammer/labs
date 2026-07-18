@@ -1,0 +1,34 @@
+name: Nicheformer
+slug: nicheformer
+lab: tum
+type: model
+date: 2025-10-30
+flagship: true
+sources:
+  - label: Paper (Nature Methods)
+    url: https://www.nature.com/articles/s41592-025-02814-z
+  - label: Preprint (bioRxiv)
+    url: https://www.biorxiv.org/content/10.1101/2024.04.15.589472
+  - label: HuggingFace
+    url: https://huggingface.co/theislab/Nicheformer
+description: >
+  <p>Nicheformer is a transformer <strong>foundation model for single-cell and
+  spatial omics</strong> from Fabian Theis's lab &mdash; the flagship scientific FM
+  of the TUM/Helmholtz single-cell program (<em>joint&rarr;Helmholtz Munich
+  ICB</em>). It is pretrained on <strong>SpatialCorpus-110M</strong>, a curated
+  corpus of ~110 million cells (57M dissociated + 53M spatially resolved) spanning
+  73 tissues across human and mouse.</p>
+
+  <p>By jointly modeling dissociated single-cell data and targeted spatial
+  transcriptomics, Nicheformer transfers spatial context to dissociated data and
+  excels at downstream spatial tasks &mdash; notably niche/spatial-composition and
+  spatial-label prediction &mdash; under both linear-probing and fine-tuning.
+  Published in <strong>Nature Methods</strong> (2025, vol. 22, pp. 2525&ndash;2538);
+  weights are released on HuggingFace under <code>theislab/Nicheformer</code>.</p>
+tags:
+  - science
+  - biology
+  - foundation-model
+  - research
+model:
+  architecture: dense

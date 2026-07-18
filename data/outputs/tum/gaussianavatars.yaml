@@ -1,0 +1,25 @@
+name: GaussianAvatars
+slug: gaussianavatars
+lab: tum
+type: paper
+date: 2024-06-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2312.02069
+  - label: Project page
+    url: https://shenhanqian.github.io/gaussian-avatars
+description: >
+  <p>GaussianAvatars builds <strong>photorealistic, fully controllable head
+  avatars</strong> by rigging <strong>3D Gaussians</strong> to a parametric face
+  mesh (FLAME), so expression, pose and viewpoint can be animated with high
+  fidelity from monocular video. From Matthias Nie&szlig;ner's lab;
+  <strong>CVPR 2024 Highlight</strong> (preprint Dec 2023). The follow-up GASP
+  (arXiv:2412.07739) adds synthetic priors for head-avatar generation.</p>
+tags:
+  - vision
+  - 3d
+  - generation
+  - research
+paper:
+  arxiv: "2312.02069"
+  venue: CVPR 2024 (Highlight)

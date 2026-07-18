@@ -1,0 +1,24 @@
+name: Soft Prompt Threats
+slug: soft-prompt-threats
+lab: tum
+type: paper
+date: 2024-02-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.09063
+  - label: GitHub
+    url: https://github.com/SoftPromptThreats/soft_prompt_threats
+description: >
+  <p>"Soft Prompt Threats: Attacking Safety Alignment and Unlearning in Open-Source
+  LLMs through the Embedding Space." Shows that <strong>continuous embedding-space
+  attacks</strong> break safety alignment and machine-unlearning far more
+  efficiently than discrete jailbreak prompts, exposing a threat surface unique to
+  open-weight models. From Stephan G&uuml;nnemann's DAML group; NeurIPS 2024. Widely
+  adopted in the open-model red-teaming literature.</p>
+tags:
+  - safety
+  - security
+  - research
+paper:
+  arxiv: "2402.09063"
+  venue: NeurIPS 2024

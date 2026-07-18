@@ -1,0 +1,26 @@
+name: MeshGPT
+slug: meshgpt
+lab: tum
+type: paper
+date: 2024-06-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2311.15475
+  - label: Project page
+    url: https://nihalsid.github.io/mesh-gpt/
+description: >
+  <p>MeshGPT generates <strong>compact, artist-style triangle meshes</strong>
+  directly &mdash; a decoder-only transformer that autoregressively predicts mesh
+  tokens from a learned geometric vocabulary, producing sharp, coherent surfaces
+  instead of dense over-triangulated output. From Matthias Nie&szlig;ner's Visual
+  Computing &amp; AI Lab; <strong>CVPR 2024</strong> (preprint Nov 2023). A
+  foundational entry in the group's 3D-generative line that seeds the SpAItial
+  "spatial foundation models" thesis.</p>
+tags:
+  - vision
+  - 3d
+  - generation
+  - research
+paper:
+  arxiv: "2311.15475"
+  venue: CVPR 2024

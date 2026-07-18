@@ -1,0 +1,26 @@
+name: DataComp-LM (DCLM)
+slug: datacomp-lm
+lab: tum
+type: dataset
+date: 2024-06-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.11794
+  - label: Project page
+    url: https://www.datacomp.ai/dclm/
+description: >
+  <p>DataComp-LM is a <strong>data-centric benchmark for LLM pretraining</strong>:
+  a standardized <strong>240T-token</strong> CommonCrawl pool with fixed training
+  recipes, so filtering and curation strategies can be compared head-to-head. Its
+  <strong>DCLM-Baseline</strong> set became a heavily adopted open pretraining
+  corpus. <em>Note: a large multi-institution collaboration led by
+  UW/Apple/TTIC</em> &mdash; TUM appears as a peripheral co-author affiliation, not
+  a central contributor; filed here to record the association. NeurIPS 2024
+  Datasets &amp; Benchmarks.</p>
+tags:
+  - dataset
+  - training-data
+  - research
+dataset:
+  url: https://www.datacomp.ai/dclm/
+  size: 240T tokens (pool)

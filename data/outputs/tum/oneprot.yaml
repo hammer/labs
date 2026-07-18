@@ -1,0 +1,26 @@
+name: OneProt
+slug: oneprot
+lab: tum
+type: paper
+date: 2024-11-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.04863
+description: >
+  <p>OneProt is a <strong>multimodal protein foundation model</strong> that aligns
+  protein <strong>sequence, structure, binding-site and text</strong> modalities in
+  a shared latent space via an ImageBind-style alignment (a frozen sequence encoder
+  anchoring the other modalities). It supports retrieval and cross-modal transfer
+  across protein representations without retraining per task.</p>
+
+  <p>From the Theis group's Helmholtz AI "PROFOUND" effort
+  (<em>joint&rarr;Helmholtz Munich</em>); published in <strong>PLOS Computational
+  Biology</strong> (2025).</p>
+tags:
+  - science
+  - biology
+  - multimodal
+  - research
+paper:
+  arxiv: "2411.04863"
+  venue: PLOS Computational Biology 2025

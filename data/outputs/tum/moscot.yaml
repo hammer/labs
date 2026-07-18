@@ -1,0 +1,27 @@
+name: moscot
+slug: moscot
+lab: tum
+type: library
+date: 2025-02-27
+sources:
+  - label: Paper (Nature)
+    url: https://www.nature.com/articles/s41586-024-08453-2
+  - label: GitHub
+    url: https://github.com/theislab/moscot
+description: >
+  <p>moscot (multi-omics single-cell optimal transport) is an
+  <strong>optimal-transport framework</strong> for mapping cells through time and
+  space, scaling OT to <strong>millions of cells</strong> with multimodal support.
+  As a headline demonstration it reconstructed a <strong>1.7M-cell mouse-embryo
+  developmental trajectory across 20 timepoints</strong>.</p>
+
+  <p>From Fabian Theis's group (<em>joint&rarr;Helmholtz Munich + Hebrew University
+  (Nitzan) + Apple ML Research</em>); published in <strong>Nature</strong> (2025).</p>
+tags:
+  - science
+  - biology
+  - framework
+  - research
+library:
+  github: https://github.com/theislab/moscot
+  language: Python

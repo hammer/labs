@@ -1,0 +1,25 @@
+name: CellFlow
+slug: cellflow
+lab: tum
+type: paper
+date: 2025-04-11
+sources:
+  - label: Preprint (bioRxiv)
+    url: https://www.biorxiv.org/content/10.1101/2025.04.11.648220
+  - label: GitHub
+    url: https://github.com/theislab/CellFlow
+description: >
+  <p>CellFlow is a <strong>flow-matching generative model of single-cell
+  phenotypes</strong> under perturbation &mdash; cytokine, drug and gene-knockout
+  conditions &mdash; that predicts cell-state distributions for <em>unseen</em>
+  conditions and combinations. It reframes perturbation response as conditional
+  generation rather than point prediction.</p>
+
+  <p>From the Theis group (<em>joint&rarr;Helmholtz Munich + Genentech (Regev) +
+  ETH/Basel (Treutlein/Camp)</em>). Note: distinct from the similarly named
+  "CellFlux" (arXiv:2502.09775), which is unrelated work by different authors.</p>
+tags:
+  - science
+  - biology
+  - generation
+  - research

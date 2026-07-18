@@ -1,0 +1,26 @@
+name: ScanNet++ (v2)
+slug: scannetpp
+lab: tum
+type: dataset
+date: 2024-12-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2308.11417
+  - label: Dataset / benchmark
+    url: https://kaldir.vc.in.tum.de/scannetpp/
+description: >
+  <p>ScanNet++ is a <strong>high-fidelity 3D indoor-scene dataset</strong> pairing
+  sub-millimeter laser scans with high-resolution DSLR and commodity iPhone RGB-D
+  captures, enabling joint benchmarks for novel-view synthesis and 3D semantic
+  understanding. The <strong>v2 release (Dec 2024)</strong> expands to
+  <strong>1,000+ scenes</strong> and adds 360&deg; panoramic and iPhone-NVS
+  benchmarks (2025). From Matthias Nie&szlig;ner's lab; a widely used evaluation
+  standard for 3D reconstruction and Gaussian-splatting methods.</p>
+tags:
+  - vision
+  - 3d
+  - dataset
+  - research
+dataset:
+  url: https://kaldir.vc.in.tum.de/scannetpp/
+  format: 3D scenes (laser scan + DSLR + iPhone RGB-D)

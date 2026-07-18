@@ -1,0 +1,26 @@
+name: scTab
+slug: sctab
+lab: tum
+type: paper
+date: 2024-08-04
+sources:
+  - label: Paper (Nature Communications)
+    url: https://www.nature.com/articles/s41467-024-51059-5
+  - label: GitHub
+    url: https://github.com/theislab/scTab
+description: >
+  <p>scTab scales <strong>cross-tissue cell-type annotation</strong> to
+  <strong>22.2 million cells</strong>, showing that accurate pan-tissue annotation
+  requires <em>nonlinear</em> models and that performance keeps improving with both
+  dataset and model size &mdash; a scaling result for single-cell classification.
+  It uses a tabular data-augmentation scheme over a large scRNA-seq corpus.</p>
+
+  <p>From Fabian Theis's group (<em>joint&rarr;Helmholtz Munich</em>); published in
+  <strong>Nature Communications</strong> (2024).</p>
+tags:
+  - science
+  - biology
+  - scaling
+  - research
+paper:
+  venue: Nature Communications 2024

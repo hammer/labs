@@ -1,0 +1,71 @@
+name: TU Munich
+slug: tum
+url: https://www.tum.de/en/
+wikipedia: https://en.wikipedia.org/wiki/Technical_University_of_Munich
+huggingface: https://huggingface.co/theislab
+github: https://github.com/theislab
+region: germany
+founded: "1868"
+type: academic
+description: >
+  <p>The <strong>Technical University of Munich (TUM)</strong> anchors one of
+  Europe's densest AI clusters, tightly braided with <strong>Helmholtz Munich</strong>
+  and the Munich Center for Machine Learning (MCML). The single-cell and
+  computational-biology line runs through Fabian Theis's <a
+  href="https://github.com/theislab">theislab</a>, which is dual-affiliated with
+  Helmholtz Munich's Institute of Computational Biology &mdash; most of that
+  output is co-owned, and we flag it <em>joint&rarr;Helmholtz Munich</em> in the
+  entries below rather than splitting the group.</p>
+
+  <p>Flagship work: Theis's scientific foundation models for cells and proteins
+  &mdash; <a href="/outputs/tum/nicheformer">Nicheformer</a> (a single-cell +
+  spatial FM pretrained on 110M cells, Nature Methods 2025),
+  <a href="/outputs/tum/oneprot">OneProt</a>, <a href="/outputs/tum/sctab">scTab</a>,
+  <a href="/outputs/tum/cellflow">CellFlow</a> and the
+  <a href="/outputs/tum/moscot">moscot</a> optimal-transport framework;
+  Matthias Nie&szlig;ner's 3D-generative and reconstruction stack
+  (<a href="/outputs/tum/meshgpt">MeshGPT</a>,
+  <a href="/outputs/tum/gaussianavatars">GaussianAvatars</a>,
+  <a href="/outputs/tum/scannetpp">ScanNet++</a>); Daniel Cremers's computer-vision
+  group; and Stephan G&uuml;nnemann's reliable/robust-ML and LLM-safety agenda
+  (<a href="/outputs/tum/soft-prompt-threats">Soft Prompt Threats</a>).</p>
+
+  <p>Industry gravity is heavy: Nie&szlig;ner is on leave founding
+  <strong>SpAItial</strong> ($13M seed, 2025, "spatial foundation models")
+  after co-founding Synthesia, and TUM appears as a peripheral co-author on the
+  <a href="/outputs/tum/datacomp-lm">DataComp-LM</a> data benchmark led by
+  UW/Apple/TTIC.</p>
+people:
+  - name: Fabian J. Theis
+    role: Director, Helmholtz Munich ICB; Chair of Mathematical Modeling of Biological Systems, TUM; MCML
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=sqWpn2AAAAAJ
+  - name: Daniel Cremers
+    role: Chair of Computer Vision & AI, TUM; Director, MCML
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=cXQciMEAAAAJ
+  - name: Matthias Nießner
+    role: Professor, Visual Computing & AI Lab, TUM
+    formerly: On leave founding SpAItial (2025, $13M seed); co-founder, Synthesia
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=eUtEs6YAAAAJ
+  - name: Stephan Günnemann
+    role: Professor, Data Analytics & ML (DAML), TUM; Director, MCML
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=npqoAWwAAAAJ
+  - name: Zeynep Akata
+    role: Liesel-Beckmann Distinguished Professor (Interpretable & Reliable ML), TUM; Director, Institute for Explainable ML, Helmholtz Munich
+    formerly: University of Tübingen (until 2024)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=jQl9RtkAAAAJ
+tags:
+  - academic
+  - research
+  - science
+  - biology
+  - vision
