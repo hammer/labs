@@ -1,0 +1,24 @@
+name: Behavior-SD
+slug: behavior-sd
+lab: snu
+type: dataset
+date: 2025-04-29
+sources:
+  - label: Paper (ACL Anthology)
+    url: https://aclanthology.org/2025.naacl-long.484/
+description: >
+  <p>NAACL 2025 <strong>Senior Area Chair Award</strong> (Speech/SLU):
+  108K full-duplex spoken dialogues (2,164 hours) with per-utterance
+  annotation of conversational behaviors &mdash; backchannels,
+  interruptions, filler words &mdash; plus <strong>BeDLM</strong>, a
+  behavior-conditioned full-duplex dialogue LM trained on it. From
+  <a href="/people/gunhee-kim">Gunhee Kim</a>'s Vision &amp; Learning
+  Lab; a rare large-scale resource for naturalistic speech-to-speech
+  modeling.</p>
+tags:
+  - speech
+  - data
+dataset:
+  size: "108K dialogues (2,164 h)"
+paper:
+  venue: NAACL 2025 (SAC Award)

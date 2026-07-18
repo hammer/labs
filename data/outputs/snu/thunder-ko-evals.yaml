@@ -1,0 +1,25 @@
+name: SNU Korean Eval Suite
+slug: thunder-ko-evals
+lab: snu
+type: eval
+date: 2024-12-07
+sources:
+  - label: HuggingFace (SNU_Ko-GSM8K)
+    url: https://huggingface.co/datasets/thunder-research-group/SNU_Ko-GSM8K
+  - label: HuggingFace (Thunder Research Group)
+    url: https://huggingface.co/thunder-research-group
+description: >
+  <p>Localized Korean benchmark set from the Thunder Research Group:
+  SNU_Ko-GSM8K, Ko-IFEval, Ko-ARC, Ko-EQ-Bench, Ko-WinoGrande,
+  Ko-LAMBADA, and Ko-MuSR &mdash; careful Korean localizations of
+  standard reasoning/instruction benchmarks rather than raw
+  translations &mdash; plus the Thunder-NUBench / Thunder-KoNUBench
+  negation-understanding benchmarks (the Korean one evaluated across
+  47 LLMs). Built to evaluate <a
+  href="/outputs/snu/thunder-llm">Thunder-LLM</a> and other Korean
+  models, released 2024-12 through 2025.</p>
+tags:
+  - evaluation
+  - multilingual
+related:
+  - thunder-llm

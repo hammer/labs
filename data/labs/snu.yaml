@@ -1,0 +1,74 @@
+name: SNU
+slug: snu
+url: https://en.snu.ac.kr
+wikipedia: https://en.wikipedia.org/wiki/Seoul_National_University
+huggingface: https://huggingface.co/thunder-research-group
+github: https://github.com/mcrl
+region: korea
+founded: "1946"
+type: academic
+description: >
+  <p><strong>Seoul National University</strong> is Korea's top national
+  university; its AI effort spans Computer Science &amp; Engineering, ECE,
+  the Interdisciplinary Program in AI (directed by TPAMI
+  editor-in-chief Kyoung Mu Lee), the AI Institute (AIIS), and the
+  Graduate School of Data Science (dean Jaejin Lee). Legacy NLP
+  encoders (KR-BERT, KR-SBERT, ~1M+ downloads) and the KoBALT-700
+  linguistics benchmark ship under the
+  <a href="https://huggingface.co/snunlp">snunlp</a> org.</p>
+
+  <p>The flagship is Jaejin Lee's <strong>Thunder Research Group</strong>
+  (GitHub org <a href="https://github.com/mcrl">mcrl</a>): a fully
+  documented, low-budget sovereign-AI-style Korean LLM pipeline &mdash;
+  <a href="/outputs/snu/thunder-llm">Thunder-LLM</a> (Llama 3.1 8B
+  adapted with ~3TB of Korean-heavy continual pretraining), the
+  <a href="/outputs/snu/thunder-tok">Thunder-Tok</a> tokenizer (~44%
+  fewer tokens than Llama's on Korean),
+  <a href="/outputs/snu/sedd">SEDD</a> GPU deduplication, the
+  <a href="/outputs/snu/thunder-ko-evals">SNU_Ko-*</a> localized eval
+  suite, and <a href="/outputs/snu/thunder-deid">Thunder-DeID</a> for
+  Korean legal text.</p>
+
+  <p>Around it: Hyun Oh Song's MLLab efficiency line
+  (<a href="/outputs/snu/kvzip">KVzip</a>, NeurIPS 2025 Oral;
+  <a href="/outputs/snu/guidedquant">GuidedQuant</a>, ICML 2025),
+  Gunhee Kim's <a href="/outputs/snu/behavior-sd">Behavior-SD</a>
+  full-duplex dialogue corpus (NAACL 2025 SAC Award), and the systems
+  legacy of <a href="/outputs/snu/orca">Orca</a> &mdash; the OSDI 2022
+  continuous-batching paper beneath every modern LLM serving stack,
+  whose author Byung-Gon Chun now runs FriendliAI. Industry edges are
+  tracked at those labs: the SNUH KMed.ai medical LLM is
+  <a href="/labs/naver">Naver</a>-built, Gunhee Kim contributes to
+  <a href="/labs/skt">SKT</a>'s A.X K1, Byoung-Tak Zhang's robot-FM
+  work ships via his spin-out Tommoro Robotics.</p>
+people:
+  - name: Kyoung Mu Lee
+    role: Professor, ECE (CVLab); Director, Interdisciplinary Program in AI; Editor-in-Chief, IEEE TPAMI
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=xnOKRZ4AAAAJ
+  - name: Byung-Gon Chun
+    role: Professor, CSE (on leave); Founder & CEO, FriendliAI
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=hwnskpoAAAAJ
+  - name: Gunhee Kim
+    role: Professor, CSE (Vision & Learning Lab); Founder & CEO, RippleAI
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=CiSdOV0AAAAJ
+  - name: Byoung-Tak Zhang
+    role: POSCO Chair Professor, CSE; AI Institute (AIIS); CEO, Tommoro Robotics; chairs national K-Humanoid Alliance
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=sYTUOu8AAAAJ
+  - name: Jaejin Lee
+    role: Professor, CSE; Dean, Graduate School of Data Science; leads Thunder Research Group
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=6JaKru0AAAAJ
+tags:
+  - academic
+  - research
+  - efficiency
+  - multilingual

@@ -1,0 +1,26 @@
+name: KVzip
+slug: kvzip
+lab: snu
+type: paper
+date: 2025-05-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.23416
+  - label: GitHub
+    url: https://github.com/snu-mllab/KVzip
+description: >
+  <p>NeurIPS 2025 <strong>Oral</strong>: query-agnostic KV-cache
+  compression &mdash; scores each KV pair by its usefulness for
+  <em>reconstructing the context</em> rather than for answering a
+  specific query, so one compressed cache serves arbitrary future
+  queries and cache reuse. Achieves 3&ndash;4x cache reduction with
+  negligible quality loss across QA, retrieval, reasoning, and code
+  tasks. From Hyun Oh Song's MLLab (snu-mllab).</p>
+tags:
+  - efficiency
+  - inference
+paper:
+  arxiv: "2505.23416"
+  venue: NeurIPS 2025 (Oral)
+related:
+  - guidedquant

@@ -1,0 +1,25 @@
+name: GuidedQuant
+slug: guidedquant
+lab: snu
+type: paper
+date: 2025-05-11
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.07004
+  - label: GitHub
+    url: https://github.com/snu-mllab/GuidedQuant
+description: >
+  <p>ICML 2025: post-training LLM quantization that injects
+  <strong>end-loss gradient information</strong> into the layer-wise
+  quantization objective, improving weight-only scalar, weight-only
+  vector, and weight-and-activation quantization at 2&ndash;4 bits.
+  From Hyun Oh Song's MLLab, with the Q-Palette follow-up
+  (fractional-bit quantizers, NeurIPS 2025) extending the line.</p>
+tags:
+  - efficiency
+  - quantization
+paper:
+  arxiv: "2505.07004"
+  venue: ICML 2025
+related:
+  - kvzip

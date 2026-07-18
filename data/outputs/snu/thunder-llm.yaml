@@ -1,0 +1,39 @@
+name: Thunder-LLM
+slug: thunder-llm
+lab: snu
+type: model
+date: 2025-06-18
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.21595
+  - label: HuggingFace (Llama-Thunder-LLM-8B)
+    url: https://huggingface.co/thunder-research-group/Llama-Thunder-LLM-8B
+  - label: GitHub (Thunder-LLM-Toolkit)
+    url: https://github.com/mcrl/Thunder-LLM-Toolkit
+description: >
+  <p><a href="/people/jaejin-lee">Jaejin Lee</a>'s Thunder Research
+  Group's Korean-English bilingual LLM: Llama 3.1 8B adapted via ~3TB
+  of continual pretraining plus post-training, with the
+  <strong>entire low-budget end-to-end pipeline</strong> &mdash; data
+  collection, deduplication, the <a
+  href="/outputs/snu/thunder-tok">Thunder-Tok</a> tokenizer, training,
+  and evaluation &mdash; documented in the paper and released
+  (weights CC-BY-NC-SA-4.0, toolkit under GitHub org mcrl). Averages
+  65.0 across nine Korean benchmarks vs 48.7 for the Llama 3.1 8B
+  base while preserving English scores &mdash; a sovereign-AI-style
+  recipe executed on an academic budget, evaluated on the group's own
+  <a href="/outputs/snu/thunder-ko-evals">SNU_Ko-*</a> suite. An
+  instruction-tuned Thunder-LLM-Ins variant accompanies it.</p>
+tags:
+  - multilingual
+  - open-weight
+model:
+  base_model: llama-3.1
+  license: CC BY-NC-SA 4.0
+paper:
+  arxiv: "2506.21595"
+related:
+  - thunder-tok
+  - thunder-ko-evals
+  - sedd

@@ -1,0 +1,23 @@
+name: Orca (continuous batching)
+slug: orca
+lab: snu
+type: paper
+date: 2022-07-11
+sources:
+  - label: Paper (OSDI 2022)
+    url: https://www.usenix.org/conference/osdi22/presentation/yu
+description: >
+  <p>The serving system that introduced <strong>iteration-level
+  scheduling</strong> &mdash; now known as continuous batching &mdash;
+  plus selective batching for transformer inference (Gyeong-In Yu et
+  al., <a href="/people/byung-gon-chun">Byung-Gon Chun</a>'s group;
+  36.9x throughput over FasterTransformer at equal latency). The
+  foundational technique beneath vLLM, TGI, TensorRT-LLM, and
+  effectively every modern LLM serving stack. Legacy anchor: Chun now
+  builds serving infrastructure full-time at FriendliAI, with his SNU
+  professorship on leave.</p>
+tags:
+  - inference
+  - infrastructure
+paper:
+  venue: OSDI 2022

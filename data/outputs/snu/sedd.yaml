@@ -1,0 +1,24 @@
+name: SEDD (GPU deduplication)
+slug: sedd
+lab: snu
+type: paper
+date: 2025-01-02
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.01046
+description: >
+  <p>GPU-accelerated MinHash-LSH dataset deduplication (originally
+  released as <strong>FED</strong>): up to 58.3x faster than
+  SlimPajama's CPU pipeline and 8.6x faster than NVIDIA NeMo
+  Curator's GPU implementation, deduplicating 1.2T tokens in 5.1
+  hours on 16 GPUs. The data-curation infrastructure underneath the
+  Thunder group's <a href="/outputs/snu/thunder-llm">Thunder-LLM</a>
+  pipeline, released for reuse.</p>
+tags:
+  - data
+  - infrastructure
+  - efficiency
+paper:
+  arxiv: "2501.01046"
+related:
+  - thunder-llm

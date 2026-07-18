@@ -1,0 +1,27 @@
+name: Thunder-DeID
+slug: thunder-deid
+lab: snu
+type: dataset
+date: 2025-06-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.15266
+  - label: HuggingFace (Thunder Research Group)
+    url: https://huggingface.co/thunder-research-group
+description: >
+  <p>EMNLP 2025 Findings: the first Korean legal de-identification
+  dataset &mdash; ~27K annotated entities across 595 fine-grained
+  types over court judgments &mdash; paired with SNU_Thunder-DeID
+  encoder models (340M/750M/1.5B) that set state of the art on
+  court-judgment de-identification. Part of the Thunder group's
+  Korean data stack around <a
+  href="/outputs/snu/thunder-llm">Thunder-LLM</a>.</p>
+tags:
+  - data
+  - multilingual
+dataset:
+  size: "~27K entities, 595 types"
+paper:
+  arxiv: "2506.15266"
+related:
+  - thunder-llm

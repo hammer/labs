@@ -1,0 +1,28 @@
+name: Thunder-Tok
+slug: thunder-tok
+lab: snu
+type: paper
+date: 2025-06-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.15138
+  - label: HuggingFace (Thunder Research Group)
+    url: https://huggingface.co/thunder-research-group
+description: >
+  <p>Linguistics-aware Korean tokenizer: builds a large seed
+  vocabulary from corpus substrings, filters structurally invalid
+  candidates (broken Unicode bytes, word-boundary violations), and
+  prunes toward frequent whole-word units aligned with Korean
+  morphology &mdash; cutting token counts ~44% vs the Llama tokenizer
+  at comparable downstream performance, which translates directly into
+  faster, cheaper inference. Used inside <a
+  href="/outputs/snu/thunder-llm">Thunder-LLM</a>; the arXiv paper now
+  carries the title "Less Is More: Reducing Token Counts Without
+  Compromising Performance".</p>
+tags:
+  - tokenization
+  - multilingual
+paper:
+  arxiv: "2506.15138"
+related:
+  - thunder-llm
