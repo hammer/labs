@@ -1,0 +1,33 @@
+name: EuroLLM
+slug: eurollm
+lab: edinburgh
+type: model
+date: 2025-06-04
+sources:
+  - label: EuroLLM-9B Paper (arXiv)
+    url: https://arxiv.org/abs/2506.04079
+  - label: EuroLLM-22B Paper (arXiv)
+    url: https://arxiv.org/abs/2602.05879
+description: >
+  <p>From-scratch open multilingual LLM covering all 24 EU official
+  languages plus more. <strong>EuroLLM-9B</strong> (2025-06) was the
+  strongest open European-made LLM at its size at release;
+  <strong>EuroLLM-22B</strong> (2026-02) scales the recipe to 35
+  languages with strong reasoning, instruction-following, and
+  translation. <strong>Joint effort led by Unbabel / IST Lisbon</strong>
+  &mdash; Edinburgh is a co-development partner, not the owner; filed
+  here as Edinburgh's share of a Lisbon-led collaboration.</p>
+tags:
+  - multilingual
+  - open-weight
+  - research
+model:
+  architecture: dense
+  parameters: 9B
+  variants:
+    - name: EuroLLM-9B
+      parameters: 9B
+    - name: EuroLLM-22B
+      parameters: 22B
+paper:
+  arxiv: "2506.04079"

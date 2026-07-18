@@ -1,0 +1,25 @@
+name: SCOPE
+slug: scope
+lab: edinburgh
+type: paper
+date: 2026-05-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.31433
+  - label: GitHub
+    url: https://github.com/EdinburghNLP/SCOPE
+description: >
+  <p>"SCOPE: Self-Play via Co-Evolving Policies for Open-Ended Tasks"
+  &mdash; data-free self-play in which a <strong>Challenger</strong>
+  generates document-grounded tasks, a <strong>Solver</strong> answers
+  them via multi-turn retrieval, and a frozen self-judge grades the
+  exchange; sits at the open-endedness + RL intersection. Clean
+  Edinburgh work (Kwan, Gema, Leang, Minervini), with code and models
+  released via EdinburghNLP.</p>
+tags:
+  - research
+  - reasoning
+  - reinforcement-learning
+paper:
+  arxiv: "2605.31433"
+  code_url: https://github.com/EdinburghNLP/SCOPE

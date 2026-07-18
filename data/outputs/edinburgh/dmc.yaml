@@ -1,0 +1,30 @@
+name: Dynamic Memory Compression
+slug: dmc
+lab:
+  - edinburgh
+  - nvidia
+type: paper
+date: 2024-07-21
+sources:
+  - label: DMC Paper (arXiv)
+    url: https://arxiv.org/abs/2403.09636
+  - label: DMS Paper (arXiv)
+    url: https://arxiv.org/abs/2506.05345
+description: >
+  <p>Dynamic Memory Compression (ICML 2024): learned per-head adaptive
+  KV-cache compression that retrofits existing LLMs for up to
+  <strong>~4x inference throughput</strong>. Highly adopted &mdash; it
+  seeded NVIDIA's KV-compression line. Its direct successor, DMS
+  ("Inference-Time Hyper-Scaling with KV Cache Compression", 2025-06),
+  reaches <strong>8x KV compression with ~1K training steps</strong> and
+  beats training-free sparse attention, enabling more generated tokens
+  per fixed compute budget. <strong>Joint Edinburgh (Nawrot, <a
+  href="/people/edoardo-m-ponti">Ponti</a>) + NVIDIA</strong>.</p>
+tags:
+  - efficiency
+  - research
+paper:
+  arxiv: "2403.09636"
+  venue: ICML 2024
+related:
+  - sparse-frontier

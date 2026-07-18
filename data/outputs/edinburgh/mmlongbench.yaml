@@ -1,0 +1,27 @@
+name: MMLongBench
+slug: mmlongbench
+lab: edinburgh
+type: eval
+date: 2025-05-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.10610
+  - label: GitHub
+    url: https://github.com/EdinburghNLP/MMLongBench
+description: >
+  <p>Long-context vision-language benchmark (NeurIPS 2025 spotlight;
+  repo EdinburghNLP/MMLongBench): <strong>13,331 examples</strong>
+  across 5 task categories at 8K&ndash;128K context lengths, with 46
+  models evaluated at release. An adopted benchmark for long-context
+  VLM evaluation, from Pasquale Minervini's group with external
+  coauthors; Edinburgh-hosted.</p>
+tags:
+  - eval
+  - multimodal
+  - evaluation
+eval:
+  num_questions: 13331
+  domains:
+    - long-context
+    - vision-language
+  scoring_method: task accuracy

@@ -1,0 +1,75 @@
+name: University of Edinburgh
+slug: edinburgh
+url: https://www.ed.ac.uk
+wikipedia: https://en.wikipedia.org/wiki/University_of_Edinburgh
+huggingface: https://huggingface.co/HPLT
+github: https://github.com/EdinburghNLP
+region: uk
+founded: "1583"
+type: academic
+description: >
+  <p>Edinburgh's frontier-AI output centers on the <strong>ILCC /
+  EdinburghNLP</strong> cluster in the School of Informatics. The flagship
+  line is <strong><a href="/outputs/edinburgh/hplt">HPLT</a></strong> &mdash;
+  the multi-national High Performance Language Technologies consortium
+  (Edinburgh a key partner with Oslo, CUNI, Turku, and Helsinki) whose
+  open multilingual pretraining corpora scaled from ~7.6T whitespace
+  tokens across 193 languages (v2, ACL 2025) to <strong>~30T tokens
+  across 198 languages</strong> (HPLT 3.0, CC0, distilled from 7.2PB of
+  Internet Archive and Common Crawl). Edinburgh is also a partner
+  (Lisbon/Unbabel-led) on <a
+  href="/outputs/edinburgh/eurollm">EuroLLM</a>, the from-scratch
+  open European LLM covering all 24 EU official languages.</p>
+
+  <p>The second signature is <a href="/people/edoardo-m-ponti">Edoardo
+  Ponti</a> and Piotr Nawrot's <strong>inference-efficiency
+  program</strong>, run jointly with NVIDIA: <a
+  href="/outputs/edinburgh/dmc">Dynamic Memory Compression</a> (ICML
+  2024, up to ~4x LLM inference throughput via learned KV-cache
+  compression), its DMS successor, and <a
+  href="/outputs/edinburgh/sparse-frontier">The Sparse Frontier</a>, the
+  largest empirical study of training-free sparse attention. Around it
+  sit <a href="/people/mirella-lapata">Mirella Lapata</a>'s long-context
+  summarization line (<a
+  href="/outputs/edinburgh/moviesum">MovieSum</a>, discourse-driven
+  planning) and Pasquale Minervini's group with <a
+  href="/outputs/edinburgh/mmlongbench">MMLongBench</a> (NeurIPS 2025
+  spotlight) and the <a href="/outputs/edinburgh/scope">SCOPE</a>
+  self-play open-endedness work.</p>
+
+  <p>Attribution discipline: the HPLT corpora are consortium artifacts
+  and EuroLLM is Lisbon-led with Edinburgh as partner &mdash; Edinburgh
+  is credited as a key contributor, not sole owner. The in-window
+  picture is honest about gaps: multilingual data infrastructure, MT,
+  and inference efficiency are strong; there is no in-window
+  Edinburgh-owned scientific foundation model.</p>
+people:
+  - name: Mirella Lapata
+    role: Professor, ILCC
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=j67B9Q4AAAAJ
+  - name: Edoardo M. Ponti
+    role: Assistant Professor, ILCC; Visiting Professor, NVIDIA
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=tklL2q0AAAAJ
+  - name: Alexandra Birch
+    role: Associate Professor, Informatics (machine translation, multilingual LLMs, evaluation)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=gZOV9kMAAAAJ
+  - name: Ivan Titov
+    role: Professor of NLP & ML, ILCC; dual appointment University of Amsterdam (ILLC)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=FKUc3vsAAAAJ
+  - name: Amos Storkey
+    role: Professor of Machine Learning & AI; BayesWatch group
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=3Rlc8EAAAAAJ
+tags:
+  - academic
+  - research
+  - multilingual

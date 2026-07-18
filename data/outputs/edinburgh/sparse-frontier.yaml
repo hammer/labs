@@ -1,0 +1,27 @@
+name: The Sparse Frontier
+slug: sparse-frontier
+lab: edinburgh
+type: paper
+date: 2025-04-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.17768
+  - label: GitHub
+    url: https://github.com/PiotrNawrot/sparse-frontier
+description: >
+  <p>"The Sparse Frontier: Sparse Attention Trade-offs in Transformer
+  LLMs" &mdash; the largest empirical study of training-free sparse
+  attention (<strong>6 methods, contexts up to 128K</strong>), showing
+  that large-sparse models beat small-dense ones on the compute Pareto
+  frontier. Adopted as an evaluation framework by follow-on work.
+  Edinburgh-led (Nawrot, <a
+  href="/people/edoardo-m-ponti">Ponti</a>) with Cohere and Meta
+  coauthors.</p>
+tags:
+  - efficiency
+  - research
+paper:
+  arxiv: "2504.17768"
+  code_url: https://github.com/PiotrNawrot/sparse-frontier
+related:
+  - dmc

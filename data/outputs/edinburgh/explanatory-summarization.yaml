@@ -1,0 +1,21 @@
+name: Explanatory Summarization with Discourse-Driven Planning
+slug: explanatory-summarization
+lab: edinburgh
+type: paper
+date: 2025-04-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.19339
+description: >
+  <p>Plan-then-generate summarization that uses discourse structure to
+  plan explanatory summaries &mdash; the in-window continuation of <a
+  href="/people/mirella-lapata">Mirella Lapata</a>'s long-context
+  summarization line. <strong>Joint Edinburgh (Lapata) + Saarland
+  (Liu, Demberg)</strong>.</p>
+tags:
+  - research
+  - nlp
+paper:
+  arxiv: "2504.19339"
+related:
+  - moviesum

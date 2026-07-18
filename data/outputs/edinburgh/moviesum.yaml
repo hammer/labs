@@ -1,0 +1,25 @@
+name: MovieSum
+slug: moviesum
+lab: edinburgh
+type: dataset
+date: 2024-08-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2408.06281
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/rohitsaxena/MovieSum
+description: >
+  <p>Long-context summarization dataset (Findings of ACL 2024):
+  <strong>2,200 movie screenplays</strong> (~29K words each) paired
+  with Wikipedia plot summaries &mdash; twice the size of prior
+  screenplay datasets. Clean Edinburgh work (Saxena, Keller, ILCC),
+  in <a href="/people/mirella-lapata">Lapata</a>'s ILCC long-context
+  summarization orbit.</p>
+tags:
+  - dataset
+  - nlp
+  - research
+dataset:
+  size: "2,200 screenplays"
+  format: text
+  huggingface_url: https://huggingface.co/datasets/rohitsaxena/MovieSum

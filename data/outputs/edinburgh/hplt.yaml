@@ -1,0 +1,76 @@
+name: HPLT
+slug: hplt
+lab: edinburgh
+date: 2025-11-03
+flagship: true
+sources:
+  - label: HPLT 3.0 Paper (arXiv)
+    url: https://arxiv.org/abs/2511.01066
+  - label: HuggingFace
+    url: https://huggingface.co/HPLT
+description: >
+  <p>The flagship open multilingual pretraining corpus family from the
+  multi-national <strong>HPLT consortium</strong> (Edinburgh a key
+  partner, with Oslo, CUNI, Turku, Helsinki, and others &mdash; a
+  multi-institution artifact, not solely Edinburgh's). HPLT v2 (ACL
+  2025) shipped ~7.6T whitespace tokens over 21B documents in 193
+  languages plus 380M parallel sentence pairs across 51 languages.
+  <strong>HPLT 3.0</strong> (LREC 2026) scales to <strong>~30T
+  whitespace tokens</strong> (&asymp;13.5T Gemma-3 subword tokens,
+  &asymp;40T characters &mdash; the counts differ by tokenizer, not by
+  data), ~11.5B documents in 198 languages, distilled from 7.2PB of
+  Internet Archive and Common Crawl (2012&ndash;2024) and released
+  CC0 with monolingual and parallel data, a 9-language evaluation
+  suite, and 57 encoder-decoder models. DocHPLT adds a
+  document-aligned parallel corpus over ~50 language pairs.</p>
+tags:
+  - dataset
+  - multilingual
+  - training-data
+outputs:
+  - name: HPLT v2
+    type: dataset
+    date: 2025-03-13
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2503.10267
+    description: >
+      <p>~7.6T whitespace tokens / 21B documents across 193 languages
+      (deduplicated 21TB + cleaned 15TB variants) plus 380M parallel
+      sentence pairs over 51 languages; ACL 2025 long paper.</p>
+    dataset:
+      size: "~7.6T tokens"
+      license: various
+  - name: HPLT 3.0
+    type: dataset
+    date: 2025-11-03
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2511.01066
+      - label: HuggingFace
+        url: https://huggingface.co/HPLT/HPLT3.0
+    description: >
+      <p>~30T whitespace tokens (~13.5T Gemma-3 subword; 40T
+      characters), ~11.5B documents, 198 languages, distilled from
+      7.2PB of Internet Archive and Common Crawl (2012&ndash;2024),
+      released CC0. Ships monolingual and parallel data, a 9-language
+      eval suite, and 57 encoder-decoder models; LREC 2026.</p>
+    dataset:
+      size: "~30T tokens"
+      license: CC0
+      huggingface_url: https://huggingface.co/HPLT/HPLT3.0
+  - name: DocHPLT
+    type: dataset
+    date: 2025-08-18
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2508.13079
+      - label: HuggingFace
+        url: https://huggingface.co/HPLT/DocHPLT
+    description: >
+      <p>Document-aligned parallel corpus covering ~50 language pairs
+      with hundreds of millions of aligned document pairs with quality
+      scores, released CC0.</p>
+    dataset:
+      license: CC0
+      huggingface_url: https://huggingface.co/HPLT/DocHPLT
