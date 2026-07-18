@@ -1,0 +1,19 @@
+name: TwinMarket
+slug: twinmarket
+lab: cuhk
+type: library
+date: 2025-02-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.01506
+description: >
+  <p>A scalable LLM multi-agent framework simulating financial markets
+  (NeurIPS 2025; ICLR 2025 Financial-AI workshop Best Paper): thousands
+  of trader agents produce emergent market phenomena &mdash; bubbles,
+  herding, fat-tailed returns &mdash; from individual behavior. A
+  reference for socio-economic multi-agent simulation.</p>
+tags:
+  - agents
+  - research
+paper:
+  arxiv: "2502.01506"
