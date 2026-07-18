@@ -1,0 +1,38 @@
+name: TinyDeepSeek
+slug: tinydeepseek
+lab: cuhk
+type: model
+date: 2025-03-11
+sources:
+  - label: GitHub
+    url: https://github.com/FreedomIntelligence/TinyDeepSeek
+  - label: HuggingFace
+    url: https://huggingface.co/FreedomIntelligence/TinyDeepSeek-3.3B-base
+description: >
+  <p><strong>From-scratch reproduction of the full DeepSeek-R1
+  pipeline</strong> at small scale &mdash; pretraining, SFT, and RL &mdash;
+  replicating the DeepSeek architecture stack: Multi-head Latent Attention
+  (MLA), auxiliary-loss-free load balancing, and Multi-Token Prediction.
+  Ships 0.5B and 3.3B base models with intermediate checkpoints, training
+  code, and data recipes, all Apache 2.0.</p>
+
+  <p>Tracked as a rarity rather than for adoption: a genuine
+  <strong>university from-scratch pretrain</strong> of a modern
+  DeepSeek-style stack, from
+  <a href="/people/benyou-wang">Benyou Wang</a>'s FreedomIntelligence
+  group (<strong>CUHK-Shenzhen</strong>). No arXiv paper yet
+  (paper-backfill work-list).</p>
+tags:
+  - open-weight
+  - training
+  - research
+model:
+  parameters: "3.3B"
+  license: Apache 2.0
+  variants:
+    - name: TinyDeepSeek-0.5B-base
+      parameters: 0.5B
+    - name: TinyDeepSeek-3.3B-base
+      parameters: 3.3B
+related:
+  - huatuogpt-o1

@@ -1,0 +1,38 @@
+name: MATH-Vision (MATH-V)
+slug: math-vision
+lab: cuhk
+type: eval
+date: 2024-02-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.14804
+  - label: Website
+    url: https://mathllm.github.io/mathvision/
+  - label: GitHub
+    url: https://github.com/mathllm/MATH-V
+description: >
+  <p><strong>Standard multimodal math-reasoning benchmark</strong>
+  (NeurIPS 2024): 3,040 competition-sourced mathematical problems with
+  visual contexts, spanning 16 mathematical disciplines across 5
+  difficulty levels &mdash; built to fix the subject/diversity limits of
+  MathVista. It exposed a wide gap between LMMs and humans at release and
+  became a fixture in frontier VLM model cards (Gemini, Qwen-VL, InternVL
+  releases all report MATH-V).</p>
+
+  <p>Pre-window arXiv date, listed for in-window adoption; from
+  <a href="/people/hongsheng-li">Hongsheng Li</a>'s MMLab-CUHK / MathLLM
+  group.</p>
+tags:
+  - benchmark
+  - evaluation
+  - math
+  - multimodal
+eval:
+  num_questions: 3040
+  scoring_method: answer accuracy
+  leaderboard_url: https://mathllm.github.io/mathvision/
+paper:
+  arxiv: "2402.14804"
+  venue: NeurIPS 2024
+related:
+  - mathcoder2

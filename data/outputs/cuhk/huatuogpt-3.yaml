@@ -1,0 +1,39 @@
+name: HuatuoGPT-3
+slug: huatuogpt-3
+lab: cuhk
+type: model
+date: 2026-03-20
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/FreedomIntelligence/HuatuoGPT-3-32B
+  - label: HuggingFace (8B)
+    url: https://huggingface.co/FreedomIntelligence/HuatuoGPT-3-8B
+description: >
+  <p>Third-generation medical LLM from
+  <a href="/people/benyou-wang">Benyou Wang</a>'s FreedomIntelligence
+  group (<strong>CUHK-Shenzhen</strong>): <strong>RL-only domain
+  adaptation directly from base models</strong> via off-policy seeding
+  ("SeedRL"), skipping the SFT stage that
+  <a href="/outputs/cuhk/huatuogpt-o1">HuatuoGPT-o1</a> still used.
+  Released as 8B and 32B checkpoints plus a 7B variant on a Pangu base
+  (HuatuoGPT-3-7B-Pangu).</p>
+
+  <p>HuggingFace-first release &mdash; the technical report was still
+  "coming soon" as of mid-2026; details beyond the model cards remain
+  undisclosed, and the entry joins the paper-backfill work-list.
+  Derivatives of open bases, not from-scratch pretrains.</p>
+tags:
+  - medical
+  - reasoning
+  - post-training
+  - open-weight
+model:
+  variants:
+    - name: HuatuoGPT-3-8B
+      notes: RL-only adaptation of an open 8B base
+    - name: HuatuoGPT-3-32B
+      notes: RL-only adaptation of an open 32B base
+    - name: HuatuoGPT-3-7B-Pangu
+      notes: variant on an openPangu base
+related:
+  - huatuogpt-o1

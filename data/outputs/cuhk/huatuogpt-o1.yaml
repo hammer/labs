@@ -1,0 +1,48 @@
+name: HuatuoGPT-o1
+slug: huatuogpt-o1
+lab: cuhk
+type: model
+date: 2024-12-25
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.18925
+  - label: GitHub
+    url: https://github.com/FreedomIntelligence/HuatuoGPT-o1
+  - label: HuggingFace
+    url: https://huggingface.co/FreedomIntelligence/HuatuoGPT-o1-72B
+description: >
+  <p>The <strong>first open "medical o1"</strong> &mdash; complex
+  reasoning for medicine via a two-stage recipe: construct verifiable
+  medical problems from exam questions, learn complex reasoning trajectories
+  through a medical verifier, then RL against verifier rewards. With only
+  40K verifiable problems it outperformed general and prior medical
+  baselines, and the verifiable-medical-problems + verifier-RL recipe
+  became the heavily cited template for domain reasoning models.</p>
+
+  <p>From <a href="/people/benyou-wang">Benyou Wang</a>'s
+  FreedomIntelligence group (<strong>CUHK-Shenzhen</strong>). Models are
+  RL-tuned open bases (Llama-3.1 8B/70B and Qwen2.5 7B/72B), not
+  from-scratch pretrains. The line continues in
+  <a href="/outputs/cuhk/huatuogpt-3">HuatuoGPT-3</a>.</p>
+tags:
+  - medical
+  - reasoning
+  - post-training
+  - open-weight
+model:
+  base_model: llama-3.1
+  variants:
+    - name: HuatuoGPT-o1-8B
+      notes: RL-tuned from Llama-3.1-8B
+    - name: HuatuoGPT-o1-70B
+      notes: RL-tuned from Llama-3.1-70B
+    - name: HuatuoGPT-o1-7B
+      notes: RL-tuned from Qwen2.5-7B
+    - name: HuatuoGPT-o1-72B
+      notes: RL-tuned from Qwen2.5-72B
+paper:
+  arxiv: "2412.18925"
+related:
+  - huatuogpt-3
+  - shizhengpt

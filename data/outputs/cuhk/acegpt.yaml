@@ -1,0 +1,42 @@
+name: AceGPT & Native Alignment
+slug: acegpt
+lab: cuhk
+type: model
+date: 2024-12-04
+sources:
+  - label: Native Alignment Paper (arXiv)
+    url: https://arxiv.org/abs/2412.03253
+  - label: GitHub
+    url: https://github.com/FreedomIntelligence/AceGPT
+  - label: HuggingFace
+    url: https://huggingface.co/FreedomIntelligence/AceGPT-v2-70B-Chat
+description: >
+  <p>The leading open <strong>Arabic LLM line</strong> from
+  <a href="/people/benyou-wang">Benyou Wang</a>'s FreedomIntelligence
+  group (<strong>CUHK-Shenzhen</strong>) with KAUST/SRIBD partners.
+  AceGPT (2023, arXiv 2309.12053) localized Llama-2 for Arabic via
+  continued pretraining, SFT, and RLAIF with a cultural-sensitivity
+  reward. The anchor here is <strong>Native Alignment</strong> (NeurIPS
+  2024, arXiv 2412.03253): moving alignment into pretraining itself
+  &mdash; "alignment at pre-training" rather than post-hoc &mdash;
+  powering the AceGPT-v2 generation.</p>
+
+  <p>All variants (7B&ndash;70B across v1/v1.5/v2) are derivatives of
+  Llama/Qwen bases, not from-scratch pretrains.</p>
+tags:
+  - multilingual
+  - nlp
+  - open-weight
+  - training
+model:
+  base_model: llama-2
+  variants:
+    - name: AceGPT-7B / 13B
+      notes: v1, localized from Llama-2
+    - name: AceGPT-v1.5-7B / 13B
+      notes: expanded Arabic vocabulary
+    - name: AceGPT-v2-70B-Chat
+      notes: native-alignment generation
+paper:
+  arxiv: "2412.03253"
+  venue: NeurIPS 2024

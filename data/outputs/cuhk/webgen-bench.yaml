@@ -1,0 +1,35 @@
+name: WebGen-Bench
+slug: webgen-bench
+lab: cuhk
+type: eval
+date: 2025-05-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.03733
+  - label: GitHub
+    url: https://github.com/mnluzimu/WebGen-Bench
+description: >
+  <p><strong>Website-generation-from-scratch benchmark for coding
+  agents</strong>: 101 natural-language instructions for building
+  interactive, functional websites, graded by 647 UI-agent-executed test
+  cases &mdash; the agent actually operates the generated site rather than
+  string-matching its code. Frontier agents scored well under half of
+  tests passed at release, and the benchmark spawned the WebGen-Agent
+  follow-up line.</p>
+
+  <p>From Zimu Lu and <a href="/people/hongsheng-li">Hongsheng Li</a>
+  (MMLab-CUHK), sibling to the group's
+  <a href="/outputs/cuhk/mathcoder2">MathCoder2</a> math line.</p>
+tags:
+  - benchmark
+  - evaluation
+  - coding
+  - agentic
+eval:
+  num_tasks: 101
+  num_questions: 647
+  scoring_method: UI-agent-executed test cases
+paper:
+  arxiv: "2505.03733"
+related:
+  - mathcoder2

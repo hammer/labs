@@ -1,0 +1,73 @@
+name: CUHK
+slug: cuhk
+url: https://www.cuhk.edu.hk
+wikipedia: https://en.wikipedia.org/wiki/Chinese_University_of_Hong_Kong
+huggingface: https://huggingface.co/FreedomIntelligence
+github: https://github.com/CUHK-ARISE
+region: hongkong
+founded: "1963"
+type: academic
+description: >
+  <p><strong>The Chinese University of Hong Kong</strong> (est. 1963, Sha
+  Tin). This entry deliberately groups CUHK with
+  <strong>CUHK-Shenzhen</strong>, its 2014-founded, legally distinct sister
+  campus &mdash; because the highest-velocity artifact producer in the CUHK
+  orbit is CUHK-Shenzhen's <strong>FreedomIntelligence</strong> group
+  (Benyou Wang, School of Data Science): the
+  <a href="/outputs/cuhk/huatuogpt-o1">HuatuoGPT-o1/-3</a> medical-reasoning
+  line, the <a href="/outputs/cuhk/tinydeepseek">TinyDeepSeek</a>
+  from-scratch DeepSeek-R1 reproduction, the
+  <a href="/outputs/cuhk/shizhengpt">ShizhenGPT</a> TCM foundation model,
+  the <a href="/outputs/cuhk/acegpt">AceGPT</a> Arabic series, and the
+  TwinMarket financial-agent simulator. Shenzhen-campus outputs are flagged
+  (CUHK-SZ) in their descriptions.</p>
+
+  <p>On the Hong Kong campus, Hongsheng Li's <strong>MMLab-CUHK</strong> is
+  the most productive LLM+multimodal group:
+  <a href="/outputs/cuhk/mathcoder2">MathCoder2/MathCode-Pile</a> (widely
+  reused 19.2B-token math pretraining corpus), the
+  <a href="/outputs/cuhk/math-vision">MATH-Vision</a> benchmark, and
+  <a href="/outputs/cuhk/webgen-bench">WebGen-Bench</a>; CameraCtrl II is
+  heavy ByteDance co-development. Michael Lyu's <strong>ARISE</strong> lab
+  runs the software-engineering evaluation line (SWE-Chain, CodeCrash),
+  and Pheng-Ann Heng leads medical-imaging and surgical AI (Surg-&Sigma;
+  ecosystem with Qi Dou and NVIDIA).</p>
+
+  <p>Attribution flags matter here more than anywhere: Dahua Lin's
+  large-model output (InternLM, OpenMMLab, Lumina) runs through
+  <a href="/labs/shanghai-ai-lab">Shanghai AI Lab</a> and files there;
+  Jiaya Jia moved to <a href="/labs/hkust">HKUST</a>, taking the dvlab line
+  with him; and Huawei openPangu checkpoints hosted on the
+  FreedomIntelligence HuggingFace org file under
+  <a href="/labs/huawei">Huawei</a>.</p>
+people:
+  - name: Hongsheng Li
+    role: Professor, EE; MMLab-CUHK & CPII (MathCoder, WebGen-Bench, CameraCtrl II)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=BN2Ze-QAAAAJ
+  - name: Dahua Lin
+    role: Professor, IE; MMLab co-lineage — large-model output ships via Shanghai AI Lab
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=GMzzRRUAAAAJ
+  - name: Pheng-Ann Heng
+    role: Chair Professor, CSE; medical imaging & surgical AI; Institute of Medical Intelligence and XR
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=OFdytjoAAAAJ
+  - name: Michael R. Lyu
+    role: Chair Professor, CSE; ARISE lab (SWE-Chain, CodeCrash)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=uQnBgK0AAAAJ
+  - name: Benyou Wang
+    role: Associate Professor, CUHK-Shenzhen SDS; leads FreedomIntelligence (HuatuoGPT, TinyDeepSeek, AceGPT)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Jk4vJU8AAAAJ
+tags:
+  - academic
+  - research
+  - medical
+  - reasoning

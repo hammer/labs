@@ -1,0 +1,42 @@
+name: MathCoder2 / MathCode-Pile
+slug: mathcoder2
+lab: cuhk
+type: model
+date: 2024-10-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.08196
+  - label: GitHub
+    url: https://github.com/mathllm/MathCoder2
+  - label: HuggingFace
+    url: https://huggingface.co/MathGenie/MathCoder2-Llama-3-8B
+description: >
+  <p><strong>MathCode-Pile</strong>: a 19.2B-token mathematical
+  continued-pretraining corpus built by pairing math web/textbook/synthetic
+  data with <em>model-translated mathematical code</em> &mdash; LaTeX
+  expressions extracted and re-expressed as executable code with reasoning
+  steps &mdash; plus the MathCoder2 model family continued-pretrained on
+  it. The corpus became one of the widely reused open math pretraining
+  datasets (ICLR 2025).</p>
+
+  <p>From <a href="/people/hongsheng-li">Hongsheng Li</a>'s MMLab-CUHK /
+  MathLLM group. The models are
+  continued-pretrains of open bases (Llama-3, DeepSeekMath, Mistral,
+  Code-Llama), not from-scratch. Successors: MathCoder-VL (ACL 2025).
+  The original 2023 MathCoder is filed under
+  <a href="/outputs/shanghai-ai-lab/mathcoder">Shanghai AI Lab</a>
+  per its lead affiliation.</p>
+tags:
+  - math
+  - reasoning
+  - training-data
+  - open-weight
+dataset:
+  github: https://github.com/mathllm/MathCoder2
+  size: "19.2B tokens"
+paper:
+  arxiv: "2410.08196"
+  venue: ICLR 2025
+related:
+  - mathcoder
+  - math-vision

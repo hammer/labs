@@ -1,0 +1,39 @@
+name: ShizhenGPT
+slug: shizhengpt
+lab: cuhk
+type: model
+date: 2025-08-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.14706
+  - label: GitHub
+    url: https://github.com/FreedomIntelligence/ShizhenGPT
+  - label: HuggingFace
+    url: https://huggingface.co/FreedomIntelligence/ShizhenGPT-32B-VL
+description: >
+  <p>The <strong>first multimodal foundation model for Traditional Chinese
+  Medicine</strong>: pretrained on 100GB of TCM text plus 200GB of
+  multimodal data spanning images, audio, and physiological signals
+  &mdash; supporting TCM's signal-heavy diagnostics (tongue/face images,
+  pulse, sound). Released as 7B (LLM/VL/Omni) and 32B (LLM/VL) variants
+  built on open bases.</p>
+
+  <p>A domain scientific FM with transfer evidence across TCM tasks, from
+  <a href="/people/benyou-wang">Benyou Wang</a>'s FreedomIntelligence
+  group (<strong>CUHK-Shenzhen</strong>) &mdash; the TCM sibling of the
+  <a href="/outputs/cuhk/huatuogpt-o1">HuatuoGPT</a> medical line.</p>
+tags:
+  - medical
+  - science
+  - multimodal
+  - open-weight
+model:
+  variants:
+    - name: ShizhenGPT-7B (LLM / VL / Omni)
+      notes: continued-pretrained on open 7B bases
+    - name: ShizhenGPT-32B (LLM / VL)
+      notes: continued-pretrained on open 32B bases
+paper:
+  arxiv: "2508.14706"
+related:
+  - huatuogpt-o1
