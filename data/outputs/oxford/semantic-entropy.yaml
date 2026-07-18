@@ -1,0 +1,29 @@
+name: Semantic Entropy Hallucination Detection
+slug: semantic-entropy
+lab: oxford
+type: paper
+date: 2024-06-19
+flagship: true
+sources:
+  - label: Nature
+    url: https://www.nature.com/articles/s41586-024-07421-0
+  - label: Semantic Entropy Probes (arXiv)
+    url: https://arxiv.org/abs/2406.15927
+description: >
+  <p>"Detecting hallucinations in large language models using semantic
+  entropy" (Nature 630, 625&ndash;630, June 2024; Farquhar, Kossen, Kuhn,
+  <a href="/people/yarin-gal">Gal</a>, OATML) &mdash; the reference method
+  for uncertainty-based LLM hallucination detection: cluster sampled answers
+  by meaning, then measure entropy over semantic clusters rather than token
+  strings. The companion Semantic Entropy Probes (arXiv 2406.15927) make the
+  method cheap enough for deployment via linear probes on hidden states, and
+  the SEP repo has been maintained into 2026 &mdash; the in-window follow-on
+  program that keeps this line active.</p>
+tags:
+  - research
+  - safety
+  - nlp
+paper:
+  arxiv: "2406.15927"
+related:
+  - model-collapse

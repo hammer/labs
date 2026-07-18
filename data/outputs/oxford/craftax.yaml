@@ -1,0 +1,27 @@
+name: Craftax
+slug: craftax
+lab: oxford
+type: paper
+date: 2024-02-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.16801
+  - label: GitHub
+    url: https://github.com/MichaelTMatthews/Craftax
+description: >
+  <p>Craftax (ICML 2024 <strong>Spotlight</strong>): a fast, JAX-based
+  open-ended RL benchmark combining Crafter and NetHack mechanics, widely
+  adopted in open-endedness research (~423 stars, still pushed as of June
+  2026). From <a href="/people/jakob-foerster">Foerster</a>'s FLAIR; the
+  paper slightly predates the tracking window but its adoption is
+  in-window.</p>
+tags:
+  - research
+  - reinforcement-learning
+  - benchmark
+paper:
+  arxiv: "2402.16801"
+  venue: ICML 2024 (Spotlight)
+related:
+  - jaxmarl
+  - kinetix

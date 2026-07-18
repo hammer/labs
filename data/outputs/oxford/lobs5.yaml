@@ -1,0 +1,23 @@
+name: LOBS5 / LOB-Bench
+slug: lobs5
+lab: oxford
+type: model
+date: 2025-02-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.09172
+description: >
+  <p>FLAIR's generative limit-order-book "quant FM" line (ICML 2025): LOBS5
+  models message-level order-flow generatively, and LOB-Bench is the first
+  rigorous benchmark for evaluating generative finance models. Repos remain
+  active into 2026. A scientific-FM thrust from <a
+  href="/people/jakob-foerster">Foerster</a>'s FLAIROx; parameters
+  undisclosed.</p>
+tags:
+  - science
+  - research
+model:
+  architecture: dense
+paper:
+  arxiv: "2502.09172"
+  venue: ICML 2025

@@ -1,0 +1,23 @@
+name: BOLD (British Open-ended Learning and Discovery Lab)
+slug: bold
+lab: oxford
+type: announcement
+date: 2026-06-22
+sources:
+  - label: Announcement
+    url: https://www.ox.ac.uk/news/2026-06-22-oxford-to-host-new-uk-ai-research-lab
+description: >
+  <p>UKRI/EPSRC national AI research lab hosted at Oxford (with UCL and
+  Imperial), directed by <a href="/people/jakob-foerster">Jakob
+  Foerster</a>. Research pillars: new learning algorithms, human-centred AI,
+  and embodied systems. FLAIR winds down into BOLD, institutionalizing
+  Oxford's open-endedness program at national scale. Note on funding: the
+  &pound;60M/6-year UKRI programme covers <em>two</em> national labs
+  (~&pound;8M initial each) &mdash; the other, hosted at UCL, is the
+  open-source-AI-focused SOFAIR &mdash; so the full &pound;60M is not
+  Oxford's.</p>
+tags:
+  - research
+  - agents
+related:
+  - sofair

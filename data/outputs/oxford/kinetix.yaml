@@ -1,0 +1,25 @@
+name: Kinetix
+slug: kinetix
+lab: oxford
+type: paper
+date: 2024-10-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.23208
+description: >
+  <p>Kinetix (ICLR 2025 <strong>Oral</strong>): an open-ended space of 2D
+  physics-based control tasks for training general agents &mdash; the
+  flagship FLAIR open-endedness result. Agents pretrained across
+  procedurally generated Kinetix levels transfer zero-shot to unseen
+  handmade tasks, demonstrating open-ended task spaces as a route to general
+  control. From <a href="/people/jakob-foerster">Foerster</a>'s FLAIROx.</p>
+tags:
+  - research
+  - reinforcement-learning
+  - agents
+paper:
+  arxiv: "2410.23208"
+  venue: ICLR 2025 (Oral)
+related:
+  - jaxmarl
+  - craftax

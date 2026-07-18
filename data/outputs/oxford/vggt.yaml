@@ -1,0 +1,29 @@
+name: VGGT
+slug: vggt
+lab:
+  - oxford
+  - meta
+type: model
+date: 2025-03-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.11651
+  - label: GitHub
+    url: https://github.com/facebookresearch/vggt
+description: >
+  <p>VGGT (Visual Geometry Grounded Transformer), CVPR 2025 <strong>Best
+  Paper</strong>: a feed-forward transformer that infers cameras, depth,
+  point maps, and point tracks from images in a single pass &mdash; the
+  de-facto 3D vision foundation model (~14k stars on facebookresearch/vggt).
+  A joint effort between Oxford's Visual Geometry Group (Vedaldi,
+  Rupprecht) and Meta AI, with the code shipped under Meta's
+  facebookresearch org.</p>
+tags:
+  - vision
+  - foundational
+  - research
+model:
+  architecture: dense
+paper:
+  arxiv: "2503.11651"
+  venue: CVPR 2025 (Best Paper)

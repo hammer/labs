@@ -1,0 +1,76 @@
+name: University of Oxford
+slug: oxford
+url: https://www.ox.ac.uk
+wikipedia: https://en.wikipedia.org/wiki/University_of_Oxford
+github: https://github.com/FLAIROx
+region: uk
+founded: "1096"
+type: academic
+description: >
+  <p>Oxford's AI footprint runs through four clusters: <a
+  href="/people/jakob-foerster">Jakob Foerster</a>'s <strong>FLAIR</strong>
+  (Foundations of Learning and AI Research, GitHub org FLAIROx) &mdash; the
+  JAX open-endedness and multi-agent RL shop behind <a
+  href="/outputs/oxford/jaxmarl">JaxMARL</a>, <a
+  href="/outputs/oxford/craftax">Craftax</a>, and <a
+  href="/outputs/oxford/kinetix">Kinetix</a> (ICLR 2025 Oral); <a
+  href="/people/yarin-gal">Yarin Gal</a>'s <strong>OATML</strong>
+  (github.com/OATML), whose Bayesian deep learning program produced the two
+  Nature 2024 results that define Oxford's recent impact &mdash; <a
+  href="/outputs/oxford/semantic-entropy">semantic-entropy hallucination
+  detection</a> and <a href="/outputs/oxford/model-collapse">model
+  collapse</a>; <a href="/people/philip-torr">Philip Torr</a>'s vision group,
+  now pivoted to agent safety and machine unlearning; and <a
+  href="/people/andrew-zisserman">Zisserman</a> and Vedaldi's
+  <strong>VGG</strong> (Visual Geometry Group), whose <a
+  href="/outputs/oxford/vggt">VGGT</a> took CVPR 2025 Best Paper as a joint
+  effort with Meta AI. <a href="/people/michael-bronstein">Michael
+  Bronstein</a> anchors geometric deep learning as DeepMind Professor of
+  AI.</p>
+
+  <p>The 2026 headline is <strong>BOLD</strong> &mdash; the British
+  Open-ended Learning and Discovery Lab, a UKRI/EPSRC national AI research
+  lab <a href="/outputs/oxford/bold">hosted at Oxford</a> (with UCL and
+  Imperial), directed by Foerster, with pillars in new learning algorithms,
+  human-centred AI, and embodied systems. FLAIR winds down into it,
+  institutionalizing the open-endedness agenda at national scale.</p>
+
+  <p>The honest picture: Oxford trains no frontier foundation model of its
+  own and has no HuggingFace org presence &mdash; its currency is joint
+  vision FMs (VGGT with Meta), Nature-tier technique papers, and the JAX
+  open-endedness infrastructure the MARL community runs on. Industry
+  entanglement is the norm: Zisserman is part-time Google DeepMind, Foerster
+  splits time with Meta FAIR, and Gal concurrently directs research at the UK
+  AI Security Institute.</p>
+people:
+  - name: Andrew Zisserman
+    role: Royal Society Research Professor, Engineering; founder of VGG
+    formerly: Part-time Google DeepMind (since 2014, ongoing)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=UZ5wscMAAAAJ
+  - name: Philip Torr
+    role: Professor, Engineering; Torr Vision Group; Oxford Martin AI Governance Initiative
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=kPxa2w0AAAAJ
+  - name: Yarin Gal
+    role: Professor of Machine Learning, CS; leads OATML; Director of Research, UK AI Security Institute
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=SIayDoQAAAAJ
+  - name: Michael Bronstein
+    role: DeepMind Professor of AI, CS; also Scientific Director, AITHYRA (Vienna)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=UU3N6-UAAAAJ
+  - name: Jakob Foerster
+    role: Associate Professor, Engineering; Founding Director of BOLD; ~50% Meta FAIR
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=6z4lQzMAAAAJ
+tags:
+  - academic
+  - research
+  - vision
+  - safety

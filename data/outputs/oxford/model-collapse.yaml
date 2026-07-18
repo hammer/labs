@@ -1,0 +1,25 @@
+name: Model Collapse
+slug: model-collapse
+lab: oxford
+type: paper
+date: 2024-07-24
+sources:
+  - label: Nature
+    url: https://www.nature.com/articles/s41586-024-07566-y
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2305.17493
+description: >
+  <p>"AI models collapse when trained on recursively generated data" (Nature
+  631, 755&ndash;759, July 2024; preprint arXiv 2305.17493) &mdash; shows
+  that recursive training on synthetic data causes irreversible collapse of
+  distribution tails, degrading models generation over generation. The
+  canonical citation in the synthetic-data debate. Oxford-led (<a
+  href="/people/yarin-gal">Yarin Gal</a> senior author; Shumailov
+  then-Oxford), joint with Cambridge, Imperial, Toronto, and Edinburgh.</p>
+tags:
+  - research
+  - training-data
+paper:
+  arxiv: "2305.17493"
+related:
+  - semantic-entropy

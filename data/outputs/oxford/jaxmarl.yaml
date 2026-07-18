@@ -1,0 +1,30 @@
+name: JaxMARL
+slug: jaxmarl
+lab: oxford
+type: library
+date: 2023-11-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2311.10090
+  - label: GitHub
+    url: https://github.com/FLAIROx/JaxMARL
+description: >
+  <p>GPU-native multi-agent RL environments and algorithms in JAX from <a
+  href="/people/jakob-foerster">Foerster</a>'s FLAIR (FLAIROx) &mdash;
+  standard MARL tooling (~835 stars), published at NeurIPS 2024 Datasets
+  &amp; Benchmarks and actively developed through 2026. End-to-end
+  JIT-compiled environments make multi-agent experiments orders of magnitude
+  faster than CPU-bound predecessors.</p>
+tags:
+  - infrastructure
+  - reinforcement-learning
+  - research
+library:
+  github: https://github.com/FLAIROx/JaxMARL
+  language: Python
+  framework: JAX
+paper:
+  arxiv: "2311.10090"
+related:
+  - craftax
+  - kinetix
