@@ -1,0 +1,33 @@
+name: SaProt
+slug: saprot
+lab: westlake
+type: model
+date: 2024-05-07
+flagship: true
+sources:
+  - label: GitHub
+    url: https://github.com/westlake-repl/SaProt
+  - label: OpenReview (ICLR 2024)
+    url: https://openreview.net/forum?id=6MRm3G4NiU
+  - label: HuggingFace
+    url: https://huggingface.co/westlake-repl
+description: >
+  <p><a href="/people/fajie-yuan">Fajie Yuan</a>'s AI4Protein lab's
+  anchor protein language model: a <strong>structure-aware PLM</strong>
+  that combines the amino-acid sequence with a Foldseek 3Di
+  "structural alphabet" over ~40M sequences/structures (ICLR 2024
+  spotlight, top-5%). SaProt ranked <strong>#1 on ProteinGym</strong>,
+  with 100k+ HuggingFace downloads on the 650M checkpoint, and was
+  extended in 2025 by SaProt_1.3B_AFDB_OMG_NCBI &mdash; the seed of the
+  lab's broader protein-FM stack (ProTrek, SaprotHub, Evolla).</p>
+tags:
+  - scientific-fm
+  - protein
+  - open-weight
+model:
+  architecture: dense
+  variants:
+    - name: SaProt-650M
+      parameters: "650M"
+    - name: SaProt-1.3B
+      parameters: "1.3B"

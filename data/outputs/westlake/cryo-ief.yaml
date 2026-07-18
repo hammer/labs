@@ -1,0 +1,21 @@
+name: Cryo-IEF
+slug: cryo-ief
+lab: westlake
+type: model
+date: 2025-06-01
+sources:
+  - label: GitHub
+    url: https://github.com/westlake-repl/Cryo-IEF
+  - label: Nature Methods (PubMed)
+    url: https://pubmed.ncbi.nlm.nih.gov/41310054/
+description: >
+  <p>A <strong>foundation model for cryo-EM image processing</strong>
+  (particle curation and analysis), published in <em>Nature Methods</em>
+  2025. Cryo-IEF extends <a href="/people/fajie-yuan">Fajie Yuan</a>'s
+  lab beyond sequence modeling into <strong>structural-biology
+  imaging</strong> FMs, with a follow-up preprint (CryoDECO) continuing
+  the line.</p>
+tags:
+  - scientific-fm
+  - cryo-em
+  - research

@@ -1,0 +1,78 @@
+name: Westlake University
+slug: westlake
+url: https://www.westlake.edu.cn/
+wikipedia: https://en.wikipedia.org/wiki/Westlake_University
+huggingface: https://huggingface.co/westlake-repl
+github: https://github.com/westlake-repl
+region: china
+founded: "2018"
+type: academic
+description: >
+  <p>Westlake is a young (est. 2018) private research university in
+  Hangzhou that punches far above its size in one specific arena:
+  <strong>scientific foundation models</strong>. Where most of the
+  Chinese academic index is anchored by language and reasoning work,
+  Westlake's center of gravity is protein and physical-science FMs, and
+  its output map is best read lab by lab.</p>
+
+  <p><a href="/people/fajie-yuan">Fajie Yuan</a>'s protein-FM lab
+  (<a href="https://github.com/westlake-repl">westlake-repl</a> /
+  "AI4Protein") is the anchor. It built
+  <a href="/outputs/westlake/saprot"><strong>SaProt</strong></a>, the
+  structure-aware PLM ranked #1 on ProteinGym, and a full stack around
+  it &mdash; the <a href="/outputs/westlake/protrek">ProTrek</a>
+  trimodal retriever, the <a href="/outputs/westlake/saprothub">SaprotHub</a>
+  collaboration platform (<em>Nature Biotechnology</em>), the 80B-scale
+  <a href="/outputs/westlake/evolla">Evolla</a> protein-chat model, the
+  text-to-protein designer <a href="/outputs/westlake/pinal">Pinal</a>,
+  the <a href="/outputs/westlake/cryo-ief">Cryo-IEF</a> cryo-EM FM, plus
+  the ESM-Ezy and DOMINO design/discovery lines.</p>
+
+  <p><a href="/people/stan-z-li">Stan Z. Li</a>'s AI Lab works on
+  protein/molecule representation learning and geometric deep learning,
+  and authored the <a href="/outputs/westlake/pfmbench">PFMBench</a>
+  protein-FM benchmark. <a href="/people/yue-zhang">Yue Zhang</a>'s
+  <strong>WestlakeNLP</strong> covers LLM reasoning, agents and
+  evaluation &mdash; the RL-reasoning method
+  <a href="/outputs/westlake/luffy">LUFFY</a> and the SuperGPQA
+  benchmark (co-authored with ByteDance Seed / M-A-P and tracked under
+  <a href="/labs/bytedance-seed">ByteDance Seed</a>).
+  <a href="/people/tailin-wu">Tailin Wu</a>'s AI for Scientific
+  Simulation &amp; Discovery Lab builds generative
+  (diffusion/flow-matching) models for physics
+  (<a href="/outputs/westlake/m2pde">M2PDE</a>, RealPDEBench), and
+  <a href="/people/donglin-wang">Donglin Wang</a>'s Machine Intelligence
+  Lab (MiLAB) works on robot learning and embodied FMs
+  (<a href="/outputs/westlake/openhelix">OpenHelix</a>).</p>
+people:
+  - name: Fajie Yuan
+    role: Assistant Professor, AI Division; PI of the protein-FM lab (westlake-repl / AI4Protein)
+    formerly: Tencent AI
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=yOiBwasAAAAJ
+  - name: Yue Zhang
+    role: Full Professor & Associate Dean, School of Engineering; leads WestlakeNLP; ACL Fellow
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=6hA7WmUAAAAJ
+  - name: Stan Z. Li
+    role: Chair Professor of AI; leads the AI Lab (AI for Life Science)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Y-nyLGIAAAAJ
+  - name: Tailin Wu
+    role: Assistant Professor, Dept. of AI; Director, AI for Scientific Simulation & Discovery Lab
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=axv_UT0AAAAJ
+  - name: Donglin Wang
+    role: Associate Professor; Founder & Director, Machine Intelligence Lab (MiLAB)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=-fo6wdwAAAAJ
+tags:
+  - academic
+  - scientific-fm
+  - protein
+  - research

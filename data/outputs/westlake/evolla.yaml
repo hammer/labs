@@ -1,0 +1,30 @@
+name: Evolla
+slug: evolla
+lab: westlake
+type: model
+date: 2025-01-06
+sources:
+  - label: GitHub
+    url: https://github.com/westlake-repl/Evolla
+  - label: bioRxiv
+    url: https://doi.org/10.1101/2025.01.05.630192
+  - label: HuggingFace
+    url: https://huggingface.co/westlake-repl
+description: >
+  <p>An <strong>80B-scale multimodal protein-language generative/chat
+  model</strong> from <a href="/people/fajie-yuan">Fajie Yuan</a>'s lab,
+  pairing a PLM encoder with an LLM decoder via a compression-alignment
+  module. Trained on <strong>546M protein-QA pairs (~150B tokens)</strong>
+  with RAG and DPO, and evaluated with a purpose-built IRS framework.
+  Evolla was merged into HuggingFace Transformers (July 2025), and the
+  released <strong>Evolla-10B</strong> checkpoint has ~81K HuggingFace
+  downloads &mdash; strong real-world adoption for a science FM.</p>
+tags:
+  - scientific-fm
+  - protein
+  - multimodal
+  - open-weight
+model:
+  variants:
+    - name: Evolla-10B
+      parameters: "10B"

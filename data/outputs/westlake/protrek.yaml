@@ -1,0 +1,23 @@
+name: ProTrek
+slug: protrek
+lab: westlake
+type: model
+date: 2024-05-01
+sources:
+  - label: GitHub
+    url: https://github.com/westlake-repl/ProTrek
+  - label: HuggingFace
+    url: https://huggingface.co/westlake-repl
+description: >
+  <p>A <strong>trimodal protein language model</strong> from
+  <a href="/people/fajie-yuan">Fajie Yuan</a>'s lab that aligns protein
+  sequence, structure and function via contrastive learning (bioRxiv
+  2024; accepted <em>Nature Biotechnology</em> 2025). Its search server
+  holds precomputed embeddings for <strong>5B+ proteins</strong>,
+  powering large-scale protein/text retrieval, and was expanded in 2025
+  with OMG/MGnify (3B sequences) and NCBI (700M) coverage &mdash; a
+  companion retriever to the SaProt PLM.</p>
+tags:
+  - scientific-fm
+  - protein
+  - open-weight

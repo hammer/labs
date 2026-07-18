@@ -1,0 +1,22 @@
+name: "LUFFY: Learning to Reason under Off-Policy Guidance"
+slug: luffy
+lab: westlake
+type: paper
+date: 2025-04-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.14945
+description: >
+  <p>An RL-for-reasoning method from <a href="/people/yue-zhang">Yue
+  Zhang</a>'s WestlakeNLP that mixes <strong>off-policy expert
+  traces</strong> into RLVR, letting a model learn reasoning behaviors
+  beyond what its own base policy can reach. A heavily-cited (~240)
+  foundational RL-reasoning technique. (Yue Zhang also co-authored the
+  <strong>SuperGPQA</strong> knowledge/reasoning benchmark, tracked
+  under <a href="/labs/bytedance-seed">ByteDance Seed</a>.)</p>
+tags:
+  - reasoning
+  - reinforcement-learning
+  - research
+paper:
+  arxiv: "2504.14945"

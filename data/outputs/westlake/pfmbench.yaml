@@ -1,0 +1,26 @@
+name: "PFMBench: Protein Foundation Model Benchmark"
+slug: pfmbench
+lab: westlake
+type: eval
+date: 2025-06-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.14796
+description: >
+  <p>The first broad, standardized evaluation of <strong>protein
+  foundation models</strong>: <strong>17 models across 38 tasks</strong>
+  spanning 8 areas of protein science, with a task-correlation analysis
+  that maps which capabilities transfer. From
+  <a href="/people/stan-z-li">Stan Z. Li</a>'s AI Lab (Zhangyang Gao,
+  Cheng Tan, Stan Z. Li), it gives the protein-FM field a common
+  yardstick analogous to what MMLU/GPQA provide for language models.</p>
+tags:
+  - benchmark
+  - evaluation
+  - protein
+  - scientific-fm
+eval:
+  num_tasks: 38
+  scoring_method: per-task metrics aggregated across 8 areas of protein science
+paper:
+  arxiv: "2506.14796"

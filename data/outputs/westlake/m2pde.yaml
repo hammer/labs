@@ -1,0 +1,21 @@
+name: M2PDE / RealPDEBench
+slug: m2pde
+lab: westlake
+type: paper
+date: 2025-05-01
+sources:
+  - label: Lab (Tailin Wu)
+    url: https://tailin.org/
+description: >
+  <p><strong>M2PDE</strong> &mdash; compositional generative
+  multiphysics simulation (ICML 2025) &mdash; and its companion
+  <strong>RealPDEBench</strong> real-world PDE benchmark (ICLR 2026
+  oral), from <a href="/people/tailin-wu">Tailin Wu</a>'s AI for
+  Scientific Simulation &amp; Discovery Lab. The line applies
+  diffusion/flow-matching generative models to physical-science
+  simulation and inverse design, a distinct scientific-FM thread
+  alongside Westlake's protein work.</p>
+tags:
+  - scientific-fm
+  - simulation
+  - research

@@ -1,0 +1,25 @@
+name: SaprotHub
+slug: saprothub
+lab: westlake
+type: library
+date: 2024-10-25
+sources:
+  - label: Nature Biotechnology
+    url: https://www.nature.com/articles/s41587-025-02859-7
+  - label: GitHub
+    url: https://github.com/westlake-repl/SaprotHub
+description: >
+  <p>"Democratizing protein language model training, sharing and
+  collaboration" (<em>Nature Biotechnology</em> 2025). SaprotHub lets
+  bench biologists <strong>train and share PLM adapters without
+  coding</strong>, turning SaProt into reusable, community-contributed
+  building blocks. Co-authored with Sergey Ovchinnikov (OpenFold), it is
+  the transfer/adoption infrastructure layer of
+  <a href="/people/fajie-yuan">Fajie Yuan</a>'s protein-FM stack.</p>
+tags:
+  - scientific-fm
+  - protein
+  - infrastructure
+  - open-source
+library:
+  github: https://github.com/westlake-repl/SaprotHub

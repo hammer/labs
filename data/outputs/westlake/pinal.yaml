@@ -1,0 +1,25 @@
+name: Pinal / Denovo-Pinal
+slug: pinal
+lab: westlake
+type: model
+date: 2024-08-01
+sources:
+  - label: GitHub
+    url: https://github.com/westlake-repl/Denovo-Pinal
+  - label: bioRxiv
+    url: https://doi.org/10.1101/2024.08.01.606258
+description: >
+  <p><strong>Text-to-protein de novo design</strong> from
+  <a href="/people/fajie-yuan">Fajie Yuan</a>'s lab: a
+  <strong>16B-parameter</strong> model trained on 1.7B protein-text
+  pairs that generates novel proteins from a natural-language
+  specification via a two-stage (language&rarr;structure&rarr;sequence)
+  process, beating ProteinDT, Chroma and ESM3. Featured in
+  <em>Nature News</em>; a flagship generative science FM in the lab's
+  protein-design line.</p>
+tags:
+  - scientific-fm
+  - protein
+  - open-weight
+model:
+  parameters: "16B"

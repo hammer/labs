@@ -1,0 +1,24 @@
+name: OpenHelix
+slug: openhelix
+lab: westlake
+type: model
+date: 2025-05-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.03912
+  - label: GitHub
+    url: https://github.com/OpenHelix-Team/OpenHelix
+description: >
+  <p>An open-source <strong>dual-system Vision-Language-Action
+  model</strong> for robot manipulation from
+  <a href="/people/donglin-wang">Donglin Wang</a>'s Machine Intelligence
+  Lab (MiLAB), released with a survey/empirical analysis of dual-system
+  VLA design. OpenHelix is <strong>SOTA among dual-system VLAs on CALVIN
+  ABC-D</strong>, extending the lab's embodied-FM line (QUAR-VLA).</p>
+tags:
+  - robotics
+  - vla
+  - embodied
+  - open-weight
+paper:
+  arxiv: "2505.03912"
