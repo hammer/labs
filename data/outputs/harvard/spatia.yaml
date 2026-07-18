@@ -1,0 +1,20 @@
+name: SPATIA
+slug: spatia
+lab: harvard
+type: model
+date: 2026-07-07
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/mims-harvard/SPATIA
+description: >
+  <p>Zitnik lab's spatial-transcriptomics multimodal foundation model
+  (ICML 2026): fuses tissue-image morphology with transcriptomic tokens
+  via cross-attention and adds flow-matching cell-image generation, with
+  transfer across spatial-omics tasks. Extends Harvard's scientific-FM
+  bench (ATOMICA, ProCyon, TxAgent) into spatial biology; released with
+  the SPATIA-MIST dataset. Sibling 2026 release: ATHENA-R1, a biomedical
+  reasoning model.</p>
+tags:
+  - science
+  - multimodal
+  - open-weight
