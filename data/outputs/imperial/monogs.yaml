@@ -1,0 +1,27 @@
+name: Gaussian Splatting SLAM (MonoGS)
+slug: monogs
+lab: imperial
+type: library
+date: 2024-06-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2312.06741
+  - label: GitHub
+    url: https://github.com/muskie82/MonoGS
+description: >
+  <p>Co-launched the Gaussian-splatting-SLAM subfield (CVPR 2024
+  Highlight + <strong>Best Demo Award</strong>; 2.1K&#9733;, ~620
+  citations): the first monocular live SLAM formulated directly on 3D
+  Gaussians. Dated by the award venue; the arXiv preprint (Dec 2023)
+  slightly predates our window. Distinct from GS-SLAM (Yan et al.) and
+  CMU's SplaTAM.</p>
+tags:
+  - vision
+  - robotics
+  - research
+library:
+  github: https://github.com/muskie82/MonoGS
+paper:
+  arxiv: "2312.06741"
+related:
+  - mast3r-slam

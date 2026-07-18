@@ -1,0 +1,27 @@
+name: MASt3R-SLAM
+slug: mast3r-slam
+lab: imperial
+type: library
+date: 2024-12-16
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.12392
+  - label: GitHub
+    url: https://github.com/rmurai0610/MASt3R-SLAM
+description: >
+  <p>The first real-time dense SLAM system built on 3D-reconstruction
+  foundation priors (CVPR 2025; 3.1K&#9733;, ~240 citations) &mdash; the
+  Dyson Robotics Lab's marquee artifact of the foundation-prior era,
+  with a clear follow-on ecosystem. The prior itself (MASt3R) is
+  Naver's; Imperial's contribution is the real-time SLAM system on top.
+  The lineage continues with 4DTAM (CVPR 2025, first full 4D SLAM via
+  dynamic surface Gaussians) and KV-Tracker.</p>
+tags:
+  - vision
+  - robotics
+  - research
+library:
+  github: https://github.com/rmurai0610/MASt3R-SLAM
+paper:
+  arxiv: "2412.12392"

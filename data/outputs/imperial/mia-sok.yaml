@@ -1,0 +1,23 @@
+name: "SoK: Membership Inference Attacks on LLMs"
+slug: mia-sok
+lab: imperial
+type: paper
+date: 2025-04-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.17975
+description: >
+  <p>"...are Rushing Nowhere (and How to Fix It)" &mdash; IEEE SaTML
+  2025 <strong>Best Paper</strong> (AISP + Marek Rei): shows post-hoc
+  membership-inference and contamination evaluations are confounded by
+  distribution shift, and proposes randomized-test protocols. Core
+  evaluation science for anyone auditing training-data contamination;
+  dated by the award venue.</p>
+tags:
+  - eval
+  - safety
+  - research
+paper:
+  arxiv: "2406.17975"
+related:
+  - copyright-traps

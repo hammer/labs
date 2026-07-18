@@ -1,0 +1,24 @@
+name: The Mosaic Memory of LLMs
+slug: mosaic-memory
+lab: imperial
+type: paper
+date: 2024-05-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2405.15523
+description: >
+  <p>LLMs memorize through fuzzy near-duplicates, not just verbatim
+  copies (AISP; Nature Communications 2026) &mdash; with stated
+  implications for benchmark contamination: canary-based and
+  exact-match decontamination undercount what models actually retain.
+  Completes the lab's memorization triad with Copyright Traps and the
+  MIA SoK.</p>
+tags:
+  - eval
+  - safety
+  - research
+paper:
+  arxiv: "2405.15523"
+related:
+  - copyright-traps
+  - mia-sok

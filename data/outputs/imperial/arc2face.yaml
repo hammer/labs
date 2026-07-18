@@ -1,0 +1,24 @@
+name: Arc2Face
+slug: arc2face
+lab: imperial
+type: model
+date: 2024-09-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2403.11641
+  - label: GitHub
+    url: https://github.com/foivospar/Arc2Face
+description: >
+  <p>ID-consistent human-face foundation model from Zafeiriou's group
+  (ECCV 2024 <strong>Oral</strong>; 800&#9733;, weights on HF): a Stable
+  Diffusion backbone retrained on WebFace42M to generate from ArcFace
+  identity embeddings, with an active downstream ecosystem (Arc2Avatar,
+  blendshape variants). Derivative backbone, so no parameters recorded;
+  dated by venue (arXiv March 2024). Zafeiriou splits time with
+  Google.</p>
+tags:
+  - vision
+  - image-generation
+  - open-weight
+paper:
+  arxiv: "2403.11641"

@@ -1,0 +1,24 @@
+name: KV-Tracker
+slug: kv-tracker
+lab: imperial
+type: paper
+date: 2025-12-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.22581
+  - label: GitHub
+    url: https://github.com/Marwan99/kv_tracker
+description: >
+  <p>~30 FPS transformer pose tracking that caches &pi;&sup3;'s KV pairs
+  as the scene representation (CVPR 2026 <strong>Best Demo
+  Award</strong> &mdash; the Dyson lab's second consecutive). Companion
+  CVPR 2026 Oral: 4D Primitive-M&acirc;ch&eacute; (2512.16564). Too new
+  for adoption claims; filed as the lineage's current tip.</p>
+tags:
+  - vision
+  - robotics
+  - research
+paper:
+  arxiv: "2512.22581"
+related:
+  - mast3r-slam

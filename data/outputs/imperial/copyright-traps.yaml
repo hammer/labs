@@ -1,0 +1,20 @@
+name: Copyright Traps for LLMs
+slug: copyright-traps
+lab: imperial
+type: paper
+date: 2024-07-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.09363
+description: >
+  <p>The canonical trap-sequence methodology for detecting use of
+  copyrighted content in LLM training data (ICML 2024, AISP/de
+  Montjoye with CentraleSup&eacute;lec) &mdash; inject unique sequences,
+  then test membership post-hoc. Policy-relevant and the opening move of
+  the lab's memorization-audit line. Dated by venue.</p>
+tags:
+  - safety
+  - eval
+  - research
+paper:
+  arxiv: "2402.09363"

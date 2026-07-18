@@ -1,0 +1,86 @@
+name: Imperial
+slug: imperial
+url: https://ix.imperial.ac.uk/
+wikipedia: https://en.wikipedia.org/wiki/Imperial_College_London
+huggingface: https://huggingface.co/imperial-cpg
+github: https://github.com/ImperialCollegeLondon
+region: uk
+founded: "1907"
+type: academic
+description: >
+  <p>Imperial College London's AI surface runs through the
+  <strong>I-X initiative</strong> (2021, White City, ~200+ researchers),
+  Andrew Davison's <strong>Dyson Robotics Lab</strong> (2014), and the
+  <strong>AI Security &amp; Privacy Lab</strong> (formerly the
+  Computational Privacy Group). The Dyson lab is the defining academic
+  spatial-AI group of the Gaussian-splatting and foundation-prior eras:
+  MonoSLAM begat <a href="/outputs/imperial/monogs">MonoGS</a> (CVPR 2024
+  Highlight + Best Demo) and <a
+  href="/outputs/imperial/mast3r-slam">MASt3R-SLAM</a> (CVPR 2025,
+  3.1K&#9733;), with KV-Tracker taking a second consecutive CVPR Best
+  Demo in 2026. Zafeiriou's group shipped the
+  <a href="/outputs/imperial/arc2face">Arc2Face</a> face foundation
+  model (ECCV 2024 Oral).</p>
+
+  <p>The AISP line makes Imperial arguably <em>the</em> academic
+  reference group for <strong>memorization and contamination-eval
+  validity</strong>: Copyright Traps (ICML 2024), the membership-
+  inference SoK (SaTML 2025 <strong>Best Paper</strong>), and Mosaic
+  Memory (Nature Communications 2026) &mdash; directly load-bearing for
+  how the field audits training data.</p>
+
+  <p>2025-26 brought a hard institutional pivot toward frontier
+  training, all still watch-stage: <strong>Nightingale AI</strong>
+  (Faisal's sovereign health "foundation world model," ~1M GPU-hours on
+  Isambard-AI, UK Sovereign AI Unit backing), the <strong>Thomson
+  Reuters&ndash;Imperial Frontier AI Research Lab</strong> (Dec 2025;
+  publicly targeting a competitive frontier LLM for summer 2026), and an
+  AMD sovereign-AI collaboration (June 2026). None has shipped weights or
+  a paper yet. The bench has thinned upward &mdash; Bronstein to Oxford,
+  Deisenroth to UCL, Rueckert to TUM, Shanahan emeritus at DeepMind
+  &mdash; but the spin-out engine is real (Polaron won the first &pound;1M
+  Manchester Prize; Monolith AI was acquired by CoreWeave in 2025).</p>
+people:
+  - name: Andrew Davison
+    role: Professor of Robot Vision, FRS; Director, Dyson Robotics Lab
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=A0ae1agAAAAJ
+  - name: Yves-Alexandre de Montjoye
+    role: Professor; Head, AI Security & Privacy Lab
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=LVJtdoEAAAAJ
+  - name: Stefanos Zafeiriou
+    role: Professor, Dept of Computing; AR Perception Lead, Google (split)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=QKOH5iYAAAAJ
+  - name: Aldo Faisal
+    role: Professor of AI & Neuroscience; leads Nightingale AI; Chair, University of Bayreuth (split)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=WjHjbrwAAAAJ
+  - name: Alessandra Russo
+    role: Head of Dept of Computing; Co-Director, Thomson Reuters-Imperial Frontier AI Research Lab
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=_6zceo4AAAAJ
+news:
+  - title: "AMD and Imperial to Collaborate on AI-Enabled Scientific Discovery and Sovereign AI"
+    url: https://www.imperial.ac.uk/news/articles/2026/amd-and-imperial-to-collaborate-on-ai-enabled-scientific-discovery-and-sovereign-ai/
+    source: Imperial College London
+    date: 2026-06-08
+  - title: "Thomson Reuters and Imperial Announce Frontier AI Research Lab, Targeting a Competitive Frontier LLM"
+    url: https://www.imperial.ac.uk/news/articles/engineering/computing/2025/thomson-reuters-and-imperial-college-london-announce-new-frontier-ai-lab-/
+    source: Imperial College London
+    date: 2025-12-02
+  - title: "Aeronautics Spinout Monolith AI Acquired by CoreWeave"
+    url: https://www.imperial.ac.uk/news/270334/aeronautics-spinout-monolith-ai-acquired-us/
+    source: Imperial College London
+    date: 2025-10-23
+tags:
+  - academic
+  - robotics
+  - safety
+  - research

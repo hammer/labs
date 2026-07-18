@@ -1,0 +1,20 @@
+name: Reverse Engineering Human Preferences with RL
+slug: reverse-engineering-preferences
+lab: imperial
+type: paper
+date: 2025-05-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.15795
+description: >
+  <p>Marek Rei's LAMA lab with Cohere (NeurIPS 2025
+  <strong>Spotlight</strong>): RL-trains generators directly against
+  LLM-as-judge preferences, breaking judge-based evaluation pipelines
+  &mdash; an adversarial complement to the AISP eval-validity line, and
+  a caution for every leaderboard that relies on model judges.</p>
+tags:
+  - eval
+  - post-training
+  - research
+paper:
+  arxiv: "2505.15795"
