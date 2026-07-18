@@ -1,0 +1,24 @@
+name: daVinci-MagiHuman
+slug: davinci-magihuman
+lab: sii
+type: model
+date: 2026-03-25
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.21986
+  - label: HuggingFace
+    url: https://huggingface.co/GAIR/daVinci-MagiHuman
+description: >
+  <p>A single-stream audio-video generative foundation model for
+  image-to-video human generation (SII-GAIR with Sand.ai; 333 HF likes).
+  The generative-media entry in the daVinci cluster, alongside the filed
+  daVinci-Dev/OpenSWE/Agency/kernel lines &mdash; Pengfei Liu's GAIR lab
+  under SII branding.</p>
+tags:
+  - video
+  - multimodal
+  - open-weight
+paper:
+  arxiv: "2603.21986"
+related:
+  - davinci-dev
