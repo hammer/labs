@@ -1,0 +1,68 @@
+name: Stanford
+slug: stanford
+url: https://ai.stanford.edu
+wikipedia: https://en.wikipedia.org/wiki/Stanford_University
+huggingface: https://huggingface.co/stanford-crfm
+github: https://github.com/stanford-crfm
+region: usa
+founded: "1885"
+type: academic
+description: >
+  <p>Stanford's AI surface spans <strong>SAIL</strong>, the
+  <strong>HAI</strong> institute, and the <strong>Center for Research on
+  Foundation Models (CRFM)</strong> &mdash; the university lab that comes
+  closest to running a frontier-style training operation. CRFM's
+  <strong><a href="/outputs/stanford/marin">Marin</a></strong> "open lab"
+  pretrains fully-open models from scratch in JAX on TPUs (Marin 8B, and
+  Marin 32B &mdash; the largest fully-open-process university model,
+  beating OLMo 2 32B), with every experiment landing as a public PR on
+  the Levanter training stack, plus the Delphi open scaling suite.</p>
+
+  <p>The systems and methods lines are equally load-bearing: Chris
+  R&eacute;'s Hazy Research (FlashAttention lineage) now ships the
+  ThunderKittens/HipKittens kernel DSLs; Hashimoto and Liang's groups
+  produced <a href="/outputs/stanford/s1">s1 test-time scaling</a>,
+  Alpaca before it, and the pretraining-science pair on optimizers and
+  data efficiency; Stanford NLP maintains
+  <a href="/outputs/stanford/dspy">DSPy</a> (36K&#9733;); OVAL's STORM
+  agent has 30K&#9733;; and the MIMI group builds medical imaging FMs
+  (Merlin, Nature 2026). HELM remains the reference holistic eval.</p>
+
+  <p>The spin-out boundary is the entry's defining attribution problem:
+  Liang and R&eacute; co-founded Together AI, Fei-Fei Li runs World Labs,
+  Finn co-founded Physical Intelligence, and Chatbot Arena (joint with
+  Berkeley) incorporated as LMArena &mdash; company output stays with the
+  companies; Stanford keeps the original dated releases.</p>
+people:
+  - name: Percy Liang
+    role: Associate Professor, CS; Director, CRFM; leads the Marin open lab
+    formerly: Co-Founder, Together AI
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=pouyVyUAAAAJ
+  - name: Christopher Ré
+    role: Professor, CS; Hazy Research
+    formerly: Co-Founder, Together AI, SambaNova, Snorkel AI
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=DnnCWN0AAAAJ
+  - name: Tatsunori Hashimoto
+    role: Assistant Professor, CS
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=5ygiTwsAAAAJ
+  - name: Fei-Fei Li
+    role: Professor; Co-Director, HAI; Co-Founder & CEO, World Labs
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=rDfyQnIAAAAJ
+  - name: Chelsea Finn
+    role: Associate Professor, CS; IRIS Lab; Co-Founder, Physical Intelligence
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=vfPE6hgAAAAJ
+tags:
+  - academic
+  - open-weight
+  - infrastructure
+  - research

@@ -1,0 +1,23 @@
+name: Delphi Open Scaling Suite
+slug: delphi-scaling-suite
+lab: stanford
+type: model
+date: 2026-05-15
+sources:
+  - label: Blog Post
+    url: https://openathena.ai/blog/delphi/
+  - label: HuggingFace
+    url: https://huggingface.co/marin-community
+description: >
+  <p>A modernized Pythia from the Marin lab: checkpoints spanning
+  9&times;10<sup>18</sup> to 10<sup>23</sup> FLOPs under a single recipe,
+  with a parametric scaling law fit on 7 IsoFLOP optima that predicted
+  the top run's loss (25B params / 600B tokens) within 0.2% &mdash;
+  extrapolating 300&times; past the fit. The reference open
+  scaling-science resource of 2026.</p>
+tags:
+  - scaling
+  - open-weight
+  - research
+related:
+  - marin

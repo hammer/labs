@@ -1,0 +1,22 @@
+name: Merlin
+slug: merlin
+lab: stanford
+type: model
+date: 2024-06-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.06512
+  - label: GitHub
+    url: https://github.com/StanfordMIMI/Merlin
+description: >
+  <p>A 3D CT vision-language foundation model from Stanford MIMI
+  (Chaudhari lab), pretrained on paired EHR and radiology reports, with
+  zero-shot and transfer evidence on phenotype prediction and retrieval
+  (Nature 2026). Sibling: MedVAE generalizable medical-image
+  autoencoders (MIDL 2025). The medical-FM face of the entry.</p>
+tags:
+  - science
+  - multimodal
+  - open-weight
+paper:
+  arxiv: "2406.06512"

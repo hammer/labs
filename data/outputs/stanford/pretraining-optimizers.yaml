@@ -1,0 +1,24 @@
+name: Fantastic Pretraining Optimizers
+slug: pretraining-optimizers
+lab: stanford
+type: paper
+date: 2025-09-02
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.02046
+description: >
+  <p>"Fantastic Pretraining Optimizers and Where to Find Them" (Wen,
+  Hall, Ma, Liang): a controlled re-evaluation of 11 optimizers (Adam,
+  Muon, Soap, ...) run inside the Marin lab, deflating many claimed
+  speedups to &lt;1.4&times; at scale. Companion: "Pre-training under
+  infinite compute" (2509.14786) &mdash; 5.2&times; data-efficiency from
+  regularization + ensembling when compute is abundant. The
+  pretraining-science pair of 2025.</p>
+tags:
+  - pretraining
+  - scaling
+  - research
+paper:
+  arxiv: "2509.02046"
+related:
+  - marin

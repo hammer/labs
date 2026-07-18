@@ -1,0 +1,24 @@
+name: ThunderKittens
+slug: thunderkittens
+lab: stanford
+type: library
+date: 2024-10-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.20399
+  - label: GitHub
+    url: https://github.com/HazyResearch/ThunderKittens
+description: >
+  <p>Hazy Research's tile-primitive embedded DSL for writing fast AI
+  kernels (3.5K&#9733;), matching or beating SOTA attention and
+  linear-attention kernels with far less code; TK 2.0 (2026) and
+  HipKittens (AMD CDNA port, 2025) extend the family, and the Megakernels
+  line ("no bubbles" single-kernel inference) applies the same philosophy
+  to serving. The successor systems agenda to FlashAttention.</p>
+tags:
+  - infrastructure
+  - efficiency
+library:
+  github: https://github.com/HazyResearch/ThunderKittens
+paper:
+  arxiv: "2410.20399"

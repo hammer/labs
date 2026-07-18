@@ -1,0 +1,24 @@
+name: DSPy
+slug: dspy
+lab: stanford
+type: library
+date: 2024-10-01
+sources:
+  - label: GitHub
+    url: https://github.com/stanfordnlp/dspy
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2310.03714
+description: >
+  <p>Stanford NLP's "programming, not prompting" framework
+  (36K&#9733;) &mdash; declarative LM pipelines with automatic prompt/
+  weight optimization; the dominant open LM-pipeline toolkit. Originated
+  by Omar Khattab (2023); flagship development continued through the
+  window. Sibling interpretability stack: pyvene/pyreft (ReFT) and
+  AxBench, which showed simple steering baselines beat SAEs.</p>
+tags:
+  - agents
+  - infrastructure
+library:
+  github: https://github.com/stanfordnlp/dspy
+paper:
+  arxiv: "2310.03714"

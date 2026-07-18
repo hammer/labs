@@ -1,0 +1,23 @@
+name: "s1: Simple Test-Time Scaling"
+slug: s1
+lab: stanford
+type: paper
+date: 2025-01-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.19393
+  - label: GitHub
+    url: https://github.com/simplescaling/s1
+description: >
+  <p>A 1,000-example SFT set (s1K) plus "budget forcing" &mdash;
+  appending "Wait" to extend thinking &mdash; lifts Qwen2.5-32B to
+  o1-preview-level math (6.6K&#9733;). With Muennighoff, Hashimoto,
+  Liang, and Fei-Fei Li; launched the open test-time-scaling wave of
+  2025 alongside the lab's earlier "Large Language Monkeys" repeated-
+  sampling result.</p>
+tags:
+  - reasoning
+  - post-training
+  - research
+paper:
+  arxiv: "2501.19393"

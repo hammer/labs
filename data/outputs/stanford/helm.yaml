@@ -1,0 +1,23 @@
+name: HELM
+slug: helm
+lab: stanford
+type: eval
+date: 2024-10-09
+sources:
+  - label: GitHub
+    url: https://github.com/stanford-crfm/helm
+  - label: VHELM Paper (arXiv)
+    url: https://arxiv.org/abs/2410.07112
+  - label: MedHELM Paper (arXiv)
+    url: https://arxiv.org/abs/2505.23802
+description: >
+  <p>CRFM's Holistic Evaluation of Language Models (2.8K&#9733;) &mdash;
+  the reference transparent multi-metric eval framework. In-window
+  expansions: VHELM for vision-language (2024) and MedHELM's 121
+  clinician-validated medical tasks (2025). Entered maintenance mode in
+  June 2026; dated by the VHELM expansion.</p>
+tags:
+  - eval
+  - research
+paper:
+  arxiv: "2410.07112"

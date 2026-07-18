@@ -1,0 +1,22 @@
+name: STORM / Co-STORM
+slug: storm
+lab: stanford
+type: library
+date: 2024-08-28
+sources:
+  - label: GitHub
+    url: https://github.com/stanford-oval/storm
+  - label: Co-STORM Paper (arXiv)
+    url: https://arxiv.org/abs/2408.15232
+description: >
+  <p>Monica Lam's OVAL lab agent that researches a topic and writes
+  Wikipedia-style reports with citations (30K&#9733; &mdash; among the
+  most-adopted academic agent systems); Co-STORM (EMNLP 2024) adds
+  collaborative human-agent discourse. Dated by the Co-STORM release.</p>
+tags:
+  - agents
+  - research
+library:
+  github: https://github.com/stanford-oval/storm
+paper:
+  arxiv: "2408.15232"

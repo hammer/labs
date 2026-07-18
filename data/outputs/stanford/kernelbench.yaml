@@ -1,0 +1,22 @@
+name: KernelBench
+slug: kernelbench
+lab: stanford
+type: eval
+date: 2025-02-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.10517
+  - label: GitHub
+    url: https://github.com/ScalingIntelligence/KernelBench
+description: >
+  <p>"Can LLMs write efficient GPU kernels?" (Mirhoseini's Scaling
+  Intelligence lab, 1.1K&#9733;): Torch-to-CUDA transpilation tasks that
+  became the standard benchmark for kernel-generation agents, with a
+  Tinker RL integration. Siblings: Tokasaurus throughput-inference
+  engine, TRACE capability-targeted agentic training (2026).</p>
+tags:
+  - eval
+  - coding
+  - infrastructure
+paper:
+  arxiv: "2502.10517"

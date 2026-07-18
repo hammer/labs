@@ -1,0 +1,34 @@
+name: Marin
+slug: marin
+lab: stanford
+type: model
+date: 2025-05-19
+flagship: true
+sources:
+  - label: GitHub
+    url: https://github.com/marin-community/marin
+  - label: HuggingFace (8B)
+    url: https://huggingface.co/marin-community/marin-8b-base
+  - label: HuggingFace (32B)
+    url: https://huggingface.co/marin-community/marin-32b-base
+description: >
+  <p>Stanford CRFM's "open lab": fully-open models (weights, data, code,
+  tokenizer; Apache-2.0) pretrained <strong>from scratch</strong> in JAX
+  on TPUs via the Levanter trainer, with every experiment conducted as a
+  public GitHub PR. Marin 8B (May 2025) was the first fully-open-process
+  8B of its kind; <strong>Marin 32B Base</strong> (Dec 2025) beats OLMo 2
+  32B Base on 14 of 19 standard benchmarks &mdash; the largest
+  fully-open-process university-trained model to date.</p>
+tags:
+  - open-weight
+  - pretraining
+  - infrastructure
+model:
+  architecture: dense
+  parameters: "32B"
+  license: Apache 2.0
+  variants:
+    - name: Marin 8B
+      parameters: "8B"
+    - name: Marin 32B
+      parameters: "32B"
