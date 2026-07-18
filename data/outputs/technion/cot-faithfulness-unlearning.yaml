@@ -1,0 +1,23 @@
+name: Measuring CoT Faithfulness by Unlearning Reasoning Steps
+slug: cot-faithfulness-unlearning
+lab: technion
+type: paper
+date: 2025-02-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.14829
+description: >
+  <p>"Measuring Chain of Thought Faithfulness by Unlearning Reasoning Steps"
+  (EMNLP 2025 <strong>Outstanding Paper</strong>): introduces the FUR
+  (Faithfulness by Unlearning Reasoning steps) metric, which erases individual
+  reasoning steps from a model's parameters to test whether a chain of thought
+  is <em>parametrically</em> faithful &mdash; i.e., whether the model actually
+  relies on the steps it verbalizes. Technion-led by
+  <a href="/people/yonatan-belinkov">Yonatan Belinkov</a>.</p>
+tags:
+  - research
+  - interpretability
+  - reasoning
+paper:
+  arxiv: "2502.14829"
+  venue: EMNLP 2025 (Outstanding Paper)

@@ -1,0 +1,19 @@
+name: Arithmetic Without Algorithms
+slug: arithmetic-heuristics
+lab: technion
+type: paper
+date: 2024-10-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.21272
+description: >
+  <p>"Arithmetic Without Algorithms: Language Models Solve Math with a Bag of
+  Heuristics": an influential mechanistic-interpretability result showing that
+  an LLM's arithmetic circuit is not a learned algorithm but a sparse set of
+  heuristic neurons that each fire on particular operand patterns. By
+  <a href="/people/yonatan-belinkov">Yonatan Belinkov</a> with Northeastern.</p>
+tags:
+  - research
+  - interpretability
+paper:
+  arxiv: "2410.21272"

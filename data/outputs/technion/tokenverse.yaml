@@ -1,0 +1,26 @@
+name: TokenVerse
+slug: tokenverse
+lab: technion
+type: paper
+date: 2025-01-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.12224
+description: >
+  <p>"TokenVerse: Versatile Multi-concept Personalization in Token Modulation
+  Space" (SIGGRAPH 2025 <strong>Best Paper</strong>): disentangles distinct
+  concepts &mdash; objects, materials, lighting, poses &mdash; in a
+  DiT's per-token modulation space from single images, then recombines them
+  for controllable generation. A Google DeepMind / Weizmann Institute
+  collaboration with <a href="/people/tomer-michaeli">Tomer Michaeli</a>'s
+  group.</p>
+tags:
+  - research
+  - generative
+  - vision
+  - multimodal
+paper:
+  arxiv: "2501.12224"
+  venue: SIGGRAPH 2025 (Best Paper)
+related:
+  - edit-friendly-ddpm

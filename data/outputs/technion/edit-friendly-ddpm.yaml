@@ -1,0 +1,33 @@
+name: Edit-Friendly DDPM
+slug: edit-friendly-ddpm
+lab: technion
+type: paper
+date: 2023-04-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2304.06140
+  - label: FlowEdit (arXiv)
+    url: https://arxiv.org/abs/2412.08629
+description: >
+  <p>"An Edit Friendly DDPM Noise Space: Inversion and Manipulations"
+  (CVPR 2024): the foundational edit-friendly DDPM inversion that anchors
+  <a href="/people/tomer-michaeli">Tomer Michaeli</a>'s 2024&ndash;26
+  image-editing series. The seed predates our tracking window but anchors the
+  line, and it has been heavily adopted as a base for diffusion-editing
+  methods.</p>
+
+  <p>In-window continuations: <strong>FlowEdit</strong> (ICCV 2025 Oral;
+  inversion-free, optimization-free, model-agnostic flow editing,
+  <a href="https://arxiv.org/abs/2412.08629">arXiv 2412.08629</a>, widely
+  reimplemented in ComfyUI) and <strong>SAEdit</strong>
+  (<a href="https://arxiv.org/abs/2510.05081">arXiv 2510.05081</a>;
+  sparse-autoencoder token-level control for continuous image editing).</p>
+tags:
+  - research
+  - generative
+  - vision
+paper:
+  arxiv: "2304.06140"
+  venue: CVPR 2024
+related:
+  - tokenverse

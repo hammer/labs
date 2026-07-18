@@ -1,0 +1,26 @@
+name: FP4 All the Way
+slug: fp4-all-the-way
+lab: technion
+type: paper
+date: 2025-05-25
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.19115
+description: >
+  <p>"FP4 All the Way: Fully Quantized Training of LLMs" (NeurIPS 2025
+  <strong>Spotlight</strong>): the first end-to-end FP4 (NVFP4) training of a
+  7B LLM that matches BF16, run on 256 Gaudi2 accelerators. It pushes the
+  low-precision-training frontier from FP8 to 4-bit weights, activations, and
+  gradients throughout the forward and backward passes. Joint with Intel,
+  university-led by <a href="/people/daniel-soudry">Daniel Soudry</a>.</p>
+tags:
+  - research
+  - efficiency
+  - quantization
+  - technique
+paper:
+  arxiv: "2505.19115"
+  venue: NeurIPS 2025 (Spotlight)
+related:
+  - fp8-trillion-token

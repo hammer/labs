@@ -1,0 +1,69 @@
+name: Technion
+slug: technion
+url: https://www.technion.ac.il/en/
+wikipedia: https://en.wikipedia.org/wiki/Technion_%E2%80%93_Israel_Institute_of_Technology
+huggingface: https://huggingface.co/MLSpeech
+github: https://github.com/technion-cs-nlp
+region: israel
+founded: "1912"
+type: academic
+description: >
+  <p>The <strong>Technion &mdash; Israel Institute of Technology</strong>
+  (founded 1912) is Israel's oldest university and one of its leading centers
+  for AI research, with a deep bench spanning low-precision training,
+  generative vision, and NLP interpretability.</p>
+
+  <p>Flagship lines: <a href="/people/daniel-soudry">Daniel Soudry</a>'s
+  low-precision training work &mdash;
+  <a href="/outputs/technion/fp8-trillion-token">Scaling FP8 Training to
+  Trillion-Token LLMs</a> (ICLR 2025 Spotlight) and
+  <a href="/outputs/technion/fp4-all-the-way">FP4 All the Way</a> (NeurIPS
+  2025 Spotlight), both joint with Intel but university-led;
+  <a href="/people/tomer-michaeli">Tomer Michaeli</a>'s diffusion-editing
+  line (<a href="/outputs/technion/edit-friendly-ddpm">Edit-Friendly DDPM</a>
+  inversion, FlowEdit, and <a href="/outputs/technion/tokenverse">TokenVerse</a>
+  &mdash; SIGGRAPH 2025 Best Paper, a Google DeepMind / Weizmann collaboration);
+  and <a href="/people/yonatan-belinkov">Yonatan Belinkov</a>'s
+  interpretability line
+  (<a href="/outputs/technion/cot-faithfulness-unlearning">CoT-faithfulness via
+  unlearning</a> &mdash; EMNLP 2025 Outstanding Paper; hallucination
+  representations; arithmetic-as-heuristics circuits).</p>
+
+  <p>Industry ties are strong (Intel, Google DeepMind), and
+  <a href="/people/joseph-keshet">Joseph Keshet</a>'s MLSpeech lab leads
+  speech forced-alignment. <a href="/people/shie-mannor">Shie Mannor</a> also
+  researches at NVIDIA, so his NVIDIA-branded output is attributed to NVIDIA
+  &mdash; this entry keeps university-shipped work only.</p>
+people:
+  - name: Daniel Soudry
+    role: Associate Professor, EE (optimization / low-precision training)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=AEBWEm8AAAAJ
+  - name: Yonatan Belinkov
+    role: Associate Professor, Taub CS (NLP interpretability)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=K-6ujU4AAAAJ
+  - name: Tomer Michaeli
+    role: Professor, ECE (computer vision / diffusion)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=n2EbR2cAAAAJ
+  - name: Shie Mannor
+    role: Professor, EE (reinforcement learning)
+    formerly: Researcher, NVIDIA
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=q1HlbIUAAAAJ
+  - name: Joseph Keshet
+    role: Professor, ECE; Director, Speech, Language & Deep Learning Lab (MLSpeech)
+    formerly: Bar-Ilan University (until 2022)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=GoWgJ1AAAAAJ
+tags:
+  - academic
+  - research
+  - efficiency
+  - interpretability

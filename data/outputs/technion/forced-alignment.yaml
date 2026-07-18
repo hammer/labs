@@ -1,0 +1,44 @@
+name: MWA & FALCON (Speech Forced Alignment)
+slug: forced-alignment
+lab: technion
+date: 2026-06-01
+sources:
+  - label: MWA (arXiv)
+    url: https://arxiv.org/abs/2606.10675
+  - label: FALCON (arXiv)
+    url: https://arxiv.org/abs/2606.25460
+description: >
+  <p>The speech forced-alignment line from
+  <a href="/people/joseph-keshet">Joseph Keshet</a>'s MLSpeech lab &mdash; two
+  2026 aligners that surpass the long-standing Montreal Forced Aligner
+  (MFA).</p>
+tags:
+  - speech
+  - research
+  - open-weight
+outputs:
+  - name: MWA (Multilingual Word-Level Forced Alignment)
+    type: model
+    date: 2026-06-01
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2606.10675
+    description: >
+      <p>A SOTA word-level forced aligner (Interspeech 2026) that beats MFA on
+      TIMIT and Buckeye and generalizes to the 1000+ languages of MMS; HF
+      weights are adopted (~600+ downloads).</p>
+    paper:
+      arxiv: "2606.10675"
+      venue: Interspeech 2026
+  - name: FALCON
+    type: paper
+    date: 2026-06-01
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2606.25460
+    description: >
+      <p>"FALCON: Fully Differentiable Neural Forced Alignment via Soft Dynamic
+      Programming" &mdash; a differentiable soft-DP phoneme aligner that is
+      end-to-end trainable and surpasses MFA across alignment thresholds.</p>
+    paper:
+      arxiv: "2606.25460"

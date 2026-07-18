@@ -1,0 +1,25 @@
+name: Scaling FP8 Training to Trillion-Token LLMs
+slug: fp8-trillion-token
+lab: technion
+type: paper
+date: 2024-09-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2409.12517
+description: >
+  <p>"Scaling FP8 Training to Trillion-Token LLMs" (ICLR 2025
+  <strong>Spotlight</strong>): the first FP8 training run at trillion-token
+  scale, exposing late-training instabilities &mdash; SwiGLU-induced outlier
+  amplification &mdash; that are invisible in the short runs prior FP8 work
+  relied on. Joint with Intel but university-led by
+  <a href="/people/daniel-soudry">Daniel Soudry</a>.</p>
+tags:
+  - research
+  - efficiency
+  - quantization
+  - technique
+paper:
+  arxiv: "2409.12517"
+  venue: ICLR 2025 (Spotlight)
+related:
+  - fp4-all-the-way

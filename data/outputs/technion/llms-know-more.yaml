@@ -1,0 +1,24 @@
+name: LLMs Know More Than They Show
+slug: llms-know-more
+lab: technion
+type: paper
+date: 2024-10-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.02707
+  - label: GitHub
+    url: https://github.com/technion-cs-nlp/LLMsKnow
+description: >
+  <p>"LLMs Know More Than They Show: On the Intrinsic Representation of LLM
+  Hallucinations" (ICLR 2025): the truthfulness signal inside an LLM is
+  concentrated in specific tokens, and exploiting this enables sharply better
+  error detection than reading the model's surface outputs. Widely adopted
+  (the LLMsKnow repo, ~95&#9733;). By
+  <a href="/people/yonatan-belinkov">Yonatan Belinkov</a>'s group, with some
+  co-authors at Google/Apple.</p>
+tags:
+  - research
+  - interpretability
+paper:
+  arxiv: "2410.02707"
+  venue: ICLR 2025
