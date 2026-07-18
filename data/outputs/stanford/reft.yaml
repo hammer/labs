@@ -1,0 +1,25 @@
+name: ReFT / pyreft
+slug: reft
+lab: stanford
+type: library
+date: 2024-05-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2404.03592
+  - label: GitHub
+    url: https://github.com/stanfordnlp/pyreft
+description: >
+  <p>Representation Finetuning from Stanford NLP (Potts/Wu): intervene on
+  a small set of hidden representations instead of updating weights,
+  matching LoRA at a fraction of the parameters (pyreft 1.5K&#9733;). The
+  companion AxBench later showed such steering can beat sparse
+  autoencoders &mdash; a load-bearing result for the interpretability-vs-
+  control debate.</p>
+tags:
+  - post-training
+  - research
+  - infrastructure
+library:
+  github: https://github.com/stanfordnlp/pyreft
+paper:
+  arxiv: "2404.03592"

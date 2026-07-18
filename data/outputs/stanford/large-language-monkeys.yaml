@@ -1,0 +1,20 @@
+name: Large Language Monkeys
+slug: large-language-monkeys
+lab: stanford
+type: paper
+date: 2024-07-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.21787
+description: >
+  <p>The repeated-sampling scaling result from Scaling Intelligence Lab:
+  coverage (fraction of problems solved by at least one of k samples)
+  grows log-linearly with k across models and tasks &mdash; a foundational
+  piece of the inference-time-scaling literature, cited throughout the
+  2025 reasoning wave. With Oxford/DeepMind co-authors.</p>
+tags:
+  - reasoning
+  - scaling
+  - research
+paper:
+  arxiv: "2407.21787"
