@@ -1,0 +1,73 @@
+name: ETH Zürich
+slug: eth-zurich
+url: https://ethz.ch/en.html
+wikipedia: https://en.wikipedia.org/wiki/ETH_Zurich
+huggingface: https://huggingface.co/ethz-spylab
+github: https://github.com/eth-sri
+region: switzerland
+founded: "1855"
+type: academic
+description: >
+  <p><strong>ETH Zürich</strong> is one of the two pillars (with
+  <a href="/labs/epfl">EPFL</a>) of the Swiss National AI Institute. This entry
+  deliberately <strong>excludes</strong> that SNAI work: the Apertus models, the
+  INCLUDE multilingual benchmark, and the SNAI robot-learning forks are tracked
+  under <a href="/labs/swiss-ai">Swiss AI</a>, and SNAI leads (Jaggi, Schlag,
+  Hoefler's Apertus-branded systems work) live there. What remains here is ETH's
+  independent, non-SNAI research &mdash; primarily LLM/agent security, verified
+  code and math evaluation, LM theory, post-training, and robot learning.</p>
+
+  <p>Flagship work: Florian Tramèr's SPY Lab defined the LLM-security agenda &mdash;
+  <a href="/outputs/eth-zurich/stealing-part-of-a-production-llm">Stealing Part of
+  a Production Language Model</a> (ICML 2024 Best Paper),
+  <a href="/outputs/eth-zurich/agentdojo">AgentDojo</a> (the de-facto
+  prompt-injection benchmark), <a href="/outputs/eth-zurich/camel">CaMeL</a>, and
+  <a href="/outputs/eth-zurich/online-deanonymization">large-scale LLM
+  deanonymization</a>. Martin Vechev's SRI Lab ships the
+  <a href="/outputs/eth-zurich/lmql">LMQL</a> query language,
+  <a href="/outputs/eth-zurich/matharena">MathArena</a>, and the
+  <a href="/outputs/eth-zurich/open-proof-corpus">Open Proof Corpus</a>; Andreas
+  Krause's LAS group drives LLM post-training
+  (<a href="/outputs/eth-zurich/sdpo-self-distillation">SDPO</a>); and Marco
+  Hutter's Robotic Systems Lab produces the
+  <a href="/outputs/eth-zurich/rsl-rl">rsl_rl</a> library and its
+  <a href="/outputs/eth-zurich/ame-legged-locomotion">Science Robotics</a>
+  legged-locomotion line.</p>
+
+  <p>Commercialization runs deep: Vechev is a serial founder (DeepCode&rarr;Snyk,
+  LatticeFlow, LogicStar AI), his students' Invariant Labs was acquired by Snyk
+  (2025), and Hutter co-founded ANYbotics and leads the Zurich office of the
+  Robotics and AI Institute.</p>
+people:
+  - name: Florian Tramèr
+    role: Assistant Professor, SPY Lab (Secure & Private AI)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=ijH0-a8AAAAJ
+  - name: Martin Vechev
+    role: Full Professor, SRI Lab; Founder & Scientific Director, INSAIT (Sofia)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=aZ1Rh50AAAAJ
+  - name: Andreas Krause
+    role: Professor, Learning & Adaptive Systems (LAS); Chair, ETH AI Center
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=eDHv58AAAAAJ
+  - name: Marco Hutter
+    role: Full Professor, Robotic Systems Lab
+    formerly: Co-founder, ANYbotics; Zurich office, Robotics and AI Institute (RAI)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=DO3quJYAAAAJ
+  - name: Ryan Cotterell
+    role: Assistant Professor, Rycolab (Computational Linguistics)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=DexOqtoAAAAJ
+tags:
+  - academic
+  - research
+  - safety
+  - security
+  - robotics

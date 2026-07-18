@@ -1,0 +1,25 @@
+name: rsl_rl
+slug: rsl-rl
+lab: eth-zurich
+type: library
+date: 2024-07-01
+sources:
+  - label: GitHub
+    url: https://github.com/leggedrobotics/rsl_rl
+description: >
+  <p>rsl_rl is a fast, GPU-native <strong>reinforcement-learning training
+  library</strong> (PPO and friends) from Marco Hutter's Robotic Systems Lab. It is
+  the <strong>default RL trainer of NVIDIA's Isaac Lab</strong> ecosystem, giving it
+  massive downstream adoption across sim-to-real legged- and manipulation-robot
+  research (~2.8K&#9733;). No single canonical paper &mdash; a GitHub-verified
+  framework underpinning the group's ANYmal locomotion work.</p>
+tags:
+  - library
+  - robotics
+  - reinforcement-learning
+  - infrastructure
+library:
+  github: https://github.com/leggedrobotics/rsl_rl
+  language: Python
+  framework: PyTorch
+  pip_package: rsl-rl-lib

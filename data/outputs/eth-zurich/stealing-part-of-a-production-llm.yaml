@@ -1,0 +1,26 @@
+name: Stealing Part of a Production Language Model
+slug: stealing-part-of-a-production-llm
+lab: eth-zurich
+type: paper
+date: 2024-03-11
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2403.06634
+description: >
+  <p>The first practical <strong>model-extraction attack against deployed
+  black-box LLMs</strong>: by querying the production API, the authors recover the
+  <strong>embedding-projection (final-layer) weights and hidden dimension</strong>
+  of OpenAI and Google PaLM models for a few hundred to a few thousand dollars.
+  A landmark security result &mdash; <strong>ICML 2024 Best Paper</strong>.</p>
+
+  <p>From Florian Tramèr's SPY Lab (<em>joint&rarr;Google DeepMind</em>, with Carlini
+  et al.; Tramèr and Paleka on the ETH side). Prompted API providers to change how
+  logit/logprob endpoints are exposed.</p>
+tags:
+  - security
+  - safety
+  - research
+paper:
+  arxiv: "2403.06634"
+  venue: ICML 2024 (Best Paper)

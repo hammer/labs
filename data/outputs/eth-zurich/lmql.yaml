@@ -1,0 +1,33 @@
+name: LMQL
+slug: lmql
+lab: eth-zurich
+type: library
+date: 2023-06-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2212.06094
+  - label: GitHub
+    url: https://github.com/eth-sri/lmql
+description: >
+  <p>LMQL (Language Model Query Language) introduced <strong>"Language Model
+  Programming"</strong> &mdash; a superset of Python for weaving prompts, control
+  flow and <strong>output constraints</strong> together, compiling to an efficient
+  inference procedure that minimizes model calls. A foundational entry in the
+  constrained-decoding / structured-generation ecosystem
+  (~4.2K&#9733;). From Martin Vechev's SRI Lab (Beurer-Kellner, Fischer, Vechev);
+  <strong>PLDI 2023</strong>. Its authors went on to found Invariant Labs (acquired
+  by Snyk, 2025) and the lab's later AgentDojo/CaMeL agent-security line.</p>
+tags:
+  - library
+  - infrastructure
+  - nlp
+  - research
+library:
+  github: https://github.com/eth-sri/lmql
+  language: Python
+  pip_package: lmql
+paper:
+  arxiv: "2212.06094"
+  venue: PLDI 2023
+related:
+  - agentdojo

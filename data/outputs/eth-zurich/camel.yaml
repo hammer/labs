@@ -1,0 +1,28 @@
+name: CaMeL
+slug: camel
+lab: eth-zurich
+type: paper
+date: 2025-03-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.18813
+description: >
+  <p>CaMeL ("Defeating Prompt Injections by Design") is a
+  <strong>capability-based, system-level defense</strong> against prompt injection:
+  it wraps the LLM in a protective layer that tracks data provenance and enforces
+  explicit control- and data-flow policies, so untrusted content cannot trigger
+  unauthorized actions. First approach to solve <strong>most of AgentDojo by
+  construction</strong> rather than by patching the model.</p>
+
+  <p><em>joint&rarr;Google DeepMind</em> (DeepMind-led, ETH first author); IEEE SaTML
+  2026.</p>
+tags:
+  - security
+  - safety
+  - agentic
+  - research
+paper:
+  arxiv: "2503.18813"
+  venue: IEEE SaTML 2026
+related:
+  - agentdojo

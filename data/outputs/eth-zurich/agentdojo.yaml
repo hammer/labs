@@ -1,0 +1,30 @@
+name: AgentDojo
+slug: agentdojo
+lab: eth-zurich
+type: eval
+date: 2024-06-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.13352
+  - label: GitHub
+    url: https://github.com/ethz-spylab/agentdojo
+description: >
+  <p>AgentDojo is the <strong>de-facto standard benchmark for prompt-injection and
+  agent security</strong>: a dynamic environment of realistic tool-using tasks
+  paired with adversarial injection attacks, measuring both utility and robustness.
+  From Tramèr's SPY Lab; <strong>NeurIPS 2024 Datasets &amp; Benchmarks</strong> and
+  a SafeBench first prize. Adopted into UK AISI's <code>inspect_evals</code>, used
+  in US/UK AISI joint testing, and the substrate for Google's CaMeL defense.
+  Co-authors later founded Invariant Labs (acquired by Snyk, 2025).</p>
+tags:
+  - eval
+  - benchmark
+  - security
+  - agentic
+  - safety
+eval:
+  domains:
+    - prompt injection
+    - agent security
+    - tool use
+  leaderboard_url: https://agentdojo.spylab.ai/

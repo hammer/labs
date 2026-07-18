@@ -1,0 +1,21 @@
+name: Large-scale Online Deanonymization with LLMs
+slug: online-deanonymization
+lab: eth-zurich
+type: paper
+date: 2026-02-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.16800
+description: >
+  <p>Shows that <strong>LLMs can deanonymize online accounts at scale</strong> &mdash;
+  linking pseudonymous posts back to identities by inferring authorship and personal
+  attributes from writing &mdash; a major practical privacy result quantifying the
+  erosion of online anonymity as models improve. From Florian Tramèr's SPY Lab;
+  <strong>USENIX Security 2026</strong>.</p>
+tags:
+  - security
+  - safety
+  - research
+paper:
+  arxiv: "2602.16800"
+  venue: USENIX Security 2026

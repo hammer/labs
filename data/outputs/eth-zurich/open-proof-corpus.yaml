@@ -1,0 +1,22 @@
+name: The Open Proof Corpus
+slug: open-proof-corpus
+lab: eth-zurich
+type: dataset
+date: 2025-06-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.21621
+description: >
+  <p>The Open Proof Corpus is the <strong>largest public dataset of human-graded
+  LLM-generated mathematical proofs</strong> &mdash; over <strong>5,000 proofs</strong>
+  with expert human evaluations &mdash; built to study how well models produce
+  rigorous, correct proofs (not just final answers) and to train/benchmark automated
+  proof graders. From Vechev's SRI Lab (<em>joint&rarr;INSAIT; ETH SRI leads</em>),
+  a companion to the MathArena effort.</p>
+tags:
+  - dataset
+  - reasoning
+  - evaluation
+  - research
+related:
+  - matharena

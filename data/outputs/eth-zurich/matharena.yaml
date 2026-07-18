@@ -1,0 +1,34 @@
+name: MathArena
+slug: matharena
+lab: eth-zurich
+type: eval
+date: 2025-05-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.23281
+  - label: "Proof or Bluff? (USAMO 2025)"
+    url: https://arxiv.org/abs/2503.21934
+  - label: Platform
+    url: https://matharena.ai/
+description: >
+  <p>MathArena is an <strong>uncontaminated, live evaluation of LLMs on recent
+  competition mathematics</strong> (AIME, HMMT, USAMO, IMO and more): because it
+  scores models on contests held <em>after</em> their training cutoff, it resists
+  benchmark contamination and has become a standard reference in frontier-model math
+  claims. The companion "Proof or Bluff? Evaluating LLMs on 2025 USAMO"
+  (arXiv:2503.21934) grades full <em>proofs</em>, exposing large gaps between
+  final-answer accuracy and rigorous reasoning.</p>
+
+  <p>From Martin Vechev's SRI Lab (<em>minor joint&rarr;INSAIT</em>); NeurIPS 2025
+  Datasets &amp; Benchmarks.</p>
+tags:
+  - eval
+  - benchmark
+  - reasoning
+  - research
+eval:
+  domains:
+    - competition mathematics
+    - proof evaluation
+  saturation: low (rotates to fresh, post-cutoff contests)
+  leaderboard_url: https://matharena.ai/

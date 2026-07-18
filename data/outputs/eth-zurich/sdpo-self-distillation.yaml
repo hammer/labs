@@ -1,0 +1,23 @@
+name: SDPO (Self-Distillation)
+slug: sdpo-self-distillation
+lab: eth-zurich
+type: paper
+date: 2026-01-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.20802
+description: >
+  <p>SDPO ("Reinforcement Learning via Self-Distillation") turns <strong>rich
+  textual feedback into a dense self-distillation training signal</strong> for RLVR,
+  rather than relying only on sparse scalar rewards. It matches state-of-the-art
+  reasoning performance with roughly <strong>4&times; fewer generations</strong>,
+  making verifiable-reward post-training substantially more sample-efficient. From
+  Andreas Krause's LAS group (H&uuml;botter/Guestrin/Krause); rapid adoption
+  (~1K&#9733; within months).</p>
+tags:
+  - post-training
+  - reinforcement-learning
+  - reasoning
+  - research
+paper:
+  arxiv: "2601.20802"

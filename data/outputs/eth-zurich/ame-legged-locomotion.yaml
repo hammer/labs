@@ -1,0 +1,27 @@
+name: Attention-Based Map Encoding (AME)
+slug: ame-legged-locomotion
+lab: eth-zurich
+type: paper
+date: 2025-06-11
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.09588
+  - label: Science Robotics
+    url: https://www.science.org/doi/10.1126/scirobotics.ads6192
+description: >
+  <p>"Attention-Based Map Encoding for Learning Generalized Legged Locomotion": an
+  end-to-end RL controller with a <strong>terrain-attention</strong> map encoder that
+  unifies agile locomotion across <strong>quadruped (ANYmal) and humanoid</strong>
+  robots over challenging, generalized terrain. From Marco Hutter's Robotic Systems
+  Lab, continuing the ANYmal RL-locomotion lineage;
+  <strong>Science Robotics 2025</strong>.</p>
+tags:
+  - robotics
+  - embodied
+  - reinforcement-learning
+  - research
+paper:
+  arxiv: "2506.09588"
+  venue: Science Robotics 2025
+related:
+  - rsl-rl
