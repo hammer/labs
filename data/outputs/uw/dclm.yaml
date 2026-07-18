@@ -1,0 +1,32 @@
+name: DataComp-LM (DCLM-7B)
+slug: dclm
+lab: uw
+type: model
+date: 2024-06-17
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.11794
+  - label: GitHub
+    url: https://github.com/mlfoundations/dclm
+description: >
+  <p>The open-data benchmark that set the standard for language-model
+  pretraining data (NeurIPS 2024). DataComp-LM provides a 240T-token
+  CommonCrawl testbed plus the DCLM-Baseline curation recipe;
+  <strong>DCLM-7B</strong>, trained <strong>from scratch</strong> on the
+  baseline data, reached 64% MMLU &mdash; the best open-data LM of its
+  cohort &mdash; and drove wide adoption (mlfoundations/dclm, 1.4K&#9733;).
+  Led by Ludwig Schmidt's mlfoundations group while at UW (Schmidt moved
+  to Stanford/Anthropic in November 2024); the first-submission predates
+  the tracking window by a month but the conference and adoption land
+  in-window, and it is the core UW open-data artifact.</p>
+tags:
+  - open-weight
+  - training-data
+  - pretraining
+  - foundational
+model:
+  architecture: dense
+  parameters: "7B"
+paper:
+  arxiv: "2406.11794"

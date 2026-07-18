@@ -1,0 +1,72 @@
+name: University of Washington
+slug: uw
+url: https://www.cs.washington.edu
+wikipedia: https://en.wikipedia.org/wiki/University_of_Washington
+huggingface: https://huggingface.co/mlfoundations
+github: https://github.com/mlfoundations
+region: usa
+founded: "1861"
+type: academic
+description: >
+  <p>The University of Washington's <strong>Paul G. Allen School of
+  Computer Science &amp; Engineering</strong> is one of the field's most
+  productive open-model and open-data groups, working closely with the
+  co-located <strong>Allen Institute for AI (AI2)</strong> &mdash; a
+  relationship so tight that much flagship output (OLMo, Tulu, Molmo,
+  OpenScholar) ships under Ai2 branding and is tracked there, not here.
+  UW's own defining contribution is <strong>open data at scale</strong>:
+  Ludwig Schmidt's mlfoundations group produced
+  <a href="/outputs/uw/dclm">DataComp-LM</a>, whose from-scratch DCLM-7B
+  and 240T-token CommonCrawl testbed set the open-data standard, alongside
+  <a href="/outputs/uw/mint-1t">MINT-1T</a> and
+  <a href="/outputs/uw/magpie">Magpie</a>.</p>
+
+  <p>Systems and tokenization run deep: Zihao
+  Ye's <a href="/outputs/uw/flashinfer">FlashInfer</a> (MLSys 2025
+  Best Paper) now powers vLLM, SGLang, TensorRT-LLM and TGI;
+  <a href="/outputs/uw/superbpe">SuperBPE</a> and
+  <a href="/outputs/uw/infini-gram">infini-gram</a> reshape tokenization
+  and n-gram retrieval; and Aditya
+  Kusupati's <a href="/outputs/uw/mrl">Matryoshka Representation
+  Learning</a> became the industry standard for variable-dimension
+  embeddings. <a href="/people/ranjay-krishna">Ranjay Krishna</a>'s RAIVN
+  lab drives the vision line (<a href="/outputs/uw/trajvit">TrajViT</a>,
+  Generate Any Scene, Superposed Decoding).</p>
+
+  <p>Industry and AI2 affiliations are pervasive: Hajishirzi, Smith and
+  Krishna hold senior AI2 roles, Zettlemoyer splits with Meta, Farhadi is
+  AI2's CEO, and Schmidt left for Stanford/Anthropic in November 2024
+  &mdash; so 2024 mlfoundations datasets are UW-era while later output
+  (e.g. Gelato) attributes to Stanford. The entry keeps only UW-branded
+  artifacts.</p>
+people:
+  - name: Hannaneh Hajishirzi
+    role: Professor, Allen School; Senior Director of NLP, AI2
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=LOV6_WIAAAAJ
+  - name: Luke Zettlemoyer
+    role: Professor, Allen School; Research Scientist, Meta AI
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=UjpbO6IAAAAJ
+  - name: Noah A. Smith
+    role: Professor, Allen School; Senior Director of NLP Research, AI2
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=TjdFs3EAAAAJ
+  - name: Ranjay Krishna
+    role: Assistant Professor, Allen School (RAIVN Lab); Research Lead, AI2 (PRIOR)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=IcqahyAAAAAJ
+  - name: Ali Farhadi
+    role: Professor, Allen School; CEO, AI2
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=jeOFRDsAAAAJ
+tags:
+  - academic
+  - open-weight
+  - training-data
+  - research

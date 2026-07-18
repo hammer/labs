@@ -1,0 +1,23 @@
+name: Matryoshka Representation Learning
+slug: mrl
+lab: uw
+type: paper
+date: 2022-05-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2205.13147
+description: >
+  <p>Nested, variable-dimension embeddings that pack coarse-to-fine
+  information into prefixes of a single vector, so one model serves many
+  embedding sizes without retraining. Led by Aditya Kusupati in UW's RAIVN
+  lab (with Google). Though authored before the tracking window, MRL became
+  the <em>industry standard</em> for adaptive embeddings squarely in-window
+  &mdash; OpenAI's text-embedding-3 and most 2024&ndash;2026 embedding
+  providers adopted Matryoshka-style truncatable dimensions.</p>
+tags:
+  - embeddings
+  - foundational
+  - efficiency
+  - research
+paper:
+  arxiv: "2205.13147"

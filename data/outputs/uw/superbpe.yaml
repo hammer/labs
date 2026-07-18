@@ -1,0 +1,22 @@
+name: SuperBPE
+slug: superbpe
+lab: uw
+type: paper
+date: 2025-03-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.13423
+description: >
+  <p>A "superword" tokenizer that lets BPE merge across whitespace,
+  producing tokens that span multiple words (COLM 2025). SuperBPE improves
+  average performance by 4.0% across 30 tasks (+8.2% MMLU) while using 27%
+  less inference compute at fixed model size. Clean UW attribution
+  &mdash; Alisa Liu, Jonathan Hayase, Sewoong Oh,
+  <a href="/people/noah-a-smith">Noah A. Smith</a>, and Yejin Choi.</p>
+tags:
+  - efficiency
+  - nlp
+  - architecture
+  - research
+paper:
+  arxiv: "2503.13423"

@@ -1,0 +1,25 @@
+name: Magpie
+slug: magpie
+lab: uw
+type: dataset
+date: 2024-06-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.08464
+  - label: GitHub
+    url: https://github.com/magpie-align/magpie
+description: >
+  <p>A self-synthesis method for alignment data that prompts an aligned
+  LLM "with nothing" &mdash; feeding only the chat template's pre-query
+  tokens &mdash; to make the model emit both instruction and response
+  (ICLR 2025). The resulting datasets are widely reused for SFT
+  (magpie-align/magpie, ~873&#9733;). UW-led (Zhangchen Xu et al.).</p>
+tags:
+  - dataset
+  - post-training
+  - nlp
+  - data
+paper:
+  arxiv: "2406.08464"
+dataset:
+  github: https://github.com/magpie-align/magpie

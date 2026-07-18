@@ -1,0 +1,26 @@
+name: MINT-1T
+slug: mint-1t
+lab: uw
+type: dataset
+date: 2024-06-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.11271
+  - label: GitHub
+    url: https://github.com/mlfoundations/MINT-1T
+description: >
+  <p>The first 1T-token multimodal <em>interleaved</em> dataset &mdash;
+  3.4B images together with text drawn from HTML, PDFs, and arXiv &mdash;
+  roughly 10&times; the scale of prior open interleaved corpora (NeurIPS
+  2024). UW-led (Anas Awadalla, mlfoundations) with Salesforce, Stanford,
+  UT Austin, and Berkeley collaborators; a core resource for training
+  open multimodal models.</p>
+tags:
+  - dataset
+  - multimodal
+  - training-data
+  - data
+paper:
+  arxiv: "2406.11271"
+dataset:
+  github: https://github.com/mlfoundations/MINT-1T

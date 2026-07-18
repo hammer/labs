@@ -1,0 +1,26 @@
+name: FlashInfer
+slug: flashinfer
+lab: uw
+type: library
+date: 2025-01-02
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.01005
+  - label: GitHub
+    url: https://github.com/flashinfer-ai/flashinfer
+description: >
+  <p>A customizable JIT attention-kernel engine (MLSys 2025 Best Paper)
+  that now powers the major LLM serving stacks &mdash; vLLM, SGLang,
+  TensorRT-LLM, TGI, and MLC-LLM (~6K&#9733;, NVIDIA-backed). Led by Zihao
+  Ye in UW's Allen School, a UW + NVIDIA + CMU collaboration; the engine
+  generates and dispatches specialized attention kernels for varied
+  batching, prefix-sharing, and quantization regimes at serving time.</p>
+tags:
+  - efficiency
+  - infrastructure
+  - attention
+  - open-source
+library:
+  github: https://github.com/flashinfer-ai/flashinfer
+paper:
+  arxiv: "2501.01005"

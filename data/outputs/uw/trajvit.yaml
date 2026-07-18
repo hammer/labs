@@ -1,0 +1,22 @@
+name: TrajViT
+slug: trajvit
+lab: uw
+type: paper
+date: 2025-05-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.23617
+description: >
+  <p>"One Trajectory, One Token": a grounded video-tokenization method
+  from <a href="/people/ranjay-krishna">Ranjay Krishna</a>'s RAIVN lab
+  (ICCV 2025) that represents video as panoptic sub-object trajectories.
+  TrajViT uses ~10&times; fewer tokens than space-time patch tokenizers
+  while improving average VideoQA accuracy by 5.2% across six benchmarks
+  and cutting inference FLOPs by 18&times;.</p>
+tags:
+  - vision
+  - video
+  - efficiency
+  - research
+paper:
+  arxiv: "2505.23617"

@@ -1,0 +1,27 @@
+name: infini-gram
+slug: infini-gram
+lab: uw
+type: library
+date: 2024-01-30
+sources:
+  - label: infini-gram (arXiv)
+    url: https://arxiv.org/abs/2401.17377
+  - label: infini-gram mini (arXiv)
+    url: https://arxiv.org/abs/2506.12229
+description: >
+  <p>An unbounded n-gram engine over trillion-token corpora that answers
+  arbitrary-length n-gram queries in ~20ms via a suffix-array index (COLM
+  2024). It exposes a public API and package with real adoption for
+  interpolated decoding, training-data analysis, and contamination checks;
+  <strong>infini-gram mini</strong> (2025) extends the engine. UW-branded
+  (Jiacheng Liu, Sewon Min, Zettlemoyer, Choi, Hajishirzi) even where it
+  indexes AI2 corpora.</p>
+tags:
+  - infrastructure
+  - nlp
+  - data
+  - research
+paper:
+  arxiv: "2401.17377"
+library:
+  github: https://github.com/liujch1998/infini-gram
