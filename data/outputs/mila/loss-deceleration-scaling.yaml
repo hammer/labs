@@ -1,0 +1,25 @@
+name: Loss Deceleration & Zero-Sum Learning
+slug: loss-deceleration-scaling
+lab: mila
+type: paper
+date: 2025-06-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.05447
+description: >
+  <p><strong>"Loss Deceleration &amp; Zero-Sum Learning"</strong> gives a
+  mechanistic account of why scaling-law loss curves bend &mdash; loss
+  improvement decelerates when learning on some examples comes at the expense of
+  others (zero-sum learning) &mdash; from
+  <a href="/people/irina-rish">Irina Rish</a>'s lab. A companion result,
+  <strong>"Beyond Cosine Decay: an Infinite Learning-Rate Schedule for continual
+  pre-training"</strong> (<a href="https://arxiv.org/abs/2503.02844">arXiv
+  2503.02844</a>, CoLLAs 2025), introduces a learning-rate schedule that enables
+  stable continual pretraining of foundation models.</p>
+tags:
+  - research
+  - scaling
+  - technique
+paper:
+  arxiv: "2506.05447"
+  venue: ACL 2025

@@ -1,0 +1,25 @@
+name: VinePPO
+slug: vineppo
+lab: mila
+type: paper
+date: 2024-10-02
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.01679
+  - label: GitHub
+    url: https://github.com/McGill-NLP/VinePPO
+description: >
+  <p><strong>VinePPO</strong> introduces Monte-Carlo credit assignment that
+  fixes value-network failure in PPO for LLM reasoning, computing unbiased
+  per-step value estimates by rolling out from intermediate states rather than
+  training a separate critic. A widely-cited RL-post-training method from
+  McGill-NLP / Mila (<a href="/people/aaron-courville">Aaron Courville</a>,
+  Nicolas Le Roux, Siva Reddy) that improves both sample efficiency and final
+  accuracy on math-reasoning benchmarks over standard PPO.</p>
+tags:
+  - research
+  - reasoning
+  - post-training
+  - technique
+paper:
+  arxiv: "2410.01679"

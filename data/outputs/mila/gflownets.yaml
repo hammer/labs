@@ -1,0 +1,31 @@
+name: GFlowNets
+slug: gflownets
+lab: mila
+type: paper
+date: 2024-10-02
+sources:
+  - label: Adaptive Teachers (arXiv)
+    url: https://arxiv.org/abs/2410.01432
+  - label: Original GFlowNet (arXiv)
+    url: https://arxiv.org/abs/2106.04399
+description: >
+  <p><strong>GFlowNets</strong> (Generative Flow Networks) originated at Mila
+  (<a href="/people/yoshua-bengio">Yoshua Bengio</a> et al., 2021, "Flow Network
+  based Generative Models",
+  <a href="https://arxiv.org/abs/2106.04399">arXiv 2106.04399</a>) as a
+  foundational technique for learning to sample diverse, high-reward candidates
+  in proportion to a reward &mdash; now used across drug, molecule, and
+  materials discovery.</p>
+
+  <p>The in-window continuation <strong>"Adaptive Teachers for Amortized
+  Samplers"</strong> (NeurIPS 2024) uses teacher-guided off-policy training to
+  improve GFlowNet exploration (Emmanuel Bengio, Nikolay Malkin, Yoshua
+  Bengio).</p>
+tags:
+  - research
+  - technique
+  - generative
+  - science
+paper:
+  arxiv: "2410.01432"
+  venue: NeurIPS 2024

@@ -1,0 +1,25 @@
+name: CADmium
+slug: cadmium
+lab: mila
+type: model
+date: 2025-07-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.09792
+description: >
+  <p><strong>CADmium</strong> fine-tunes code-LLMs (1.5B&ndash;14B) for
+  <strong>text-to-CAD sequential design</strong>, generating editable parametric
+  CAD construction sequences from natural-language descriptions. It ships with a
+  170k-model annotated dataset pairing CAD programs with rich captions. A
+  first-in-series domain foundation model from Mila that treats CAD as a program
+  synthesis problem. (Derivative &mdash; the models are fine-tuned from existing
+  code LLMs, so no from-scratch parameter count is claimed here.)</p>
+tags:
+  - science
+  - code
+  - dataset
+  - open-weight
+paper:
+  arxiv: "2507.09792"
+dataset:
+  size: "170k models"

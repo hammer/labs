@@ -1,0 +1,81 @@
+name: Mila
+slug: mila
+url: https://mila.quebec
+wikipedia: https://en.wikipedia.org/wiki/Mila_(research_institute)
+huggingface: https://huggingface.co/mila-iqia
+github: https://github.com/mila-iqia
+region: canada
+founded: "1993"
+type: academic
+description: >
+  <p><strong><a href="https://mila.quebec">Mila</a></strong> (the Quebec AI
+  Institute) is one of the world's largest academic deep-learning communities,
+  with 1,000+ researchers centered on the Université de Montréal and
+  Polytechnique Montréal. It was founded by
+  <a href="/people/yoshua-bengio">Yoshua Bengio</a> (Turing Award), who in
+  June 2025 moved to a founder/scientific-advisor role and launched the
+  <strong>LawZero</strong> AI-safety nonprofit (tracked separately);
+  <a href="/people/hugo-larochelle">Hugo Larochelle</a>, previously head of
+  Google DeepMind's Montreal lab, was named Scientific Director in September
+  2025.</p>
+
+  <p>Mila's flagship foundation-model output centers on
+  <a href="/people/sarath-chandar">Sarath Chandar</a>'s lab:
+  <a href="/outputs/mila/amplify">AMPLIFY</a> (protein language model),
+  <a href="/outputs/mila/neobert">NeoBERT</a>,
+  <a href="/outputs/mila/novomolgen">NovoMolGen</a>, and
+  <a href="/outputs/mila/cadmium">CADmium</a>. Complementary lines include
+  <a href="/people/aaron-courville">Aaron Courville</a>'s RL post-training work
+  (<a href="/outputs/mila/vineppo">VinePPO</a>),
+  <a href="/people/irina-rish">Irina Rish</a>'s scaling-dynamics research, and
+  <a href="/outputs/mila/gflownets">GFlowNets</a> &mdash; Generative Flow
+  Networks, a foundational technique that originated at Mila (Bengio, 2021).</p>
+
+  <p>Bengio also chairs the
+  <a href="/outputs/mila/international-ai-safety-report">International AI Safety
+  Report</a>, whose expert-panel role is retained for Mila and is distinct from
+  his LawZero nonprofit. The CAD $250M <strong>LaSalle Sovereign AI Research
+  Hub</strong> (with 5C and Hypertec) adds up to 3 MW of Canadian sovereign
+  GPU capacity.</p>
+people:
+  - name: Yoshua Bengio
+    role: Founder & Scientific Advisor, Mila (Université de Montréal); Chair, International AI Safety Report
+    formerly: Founder, LawZero (2025)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=kukA0LcAAAAJ
+  - name: Sarath Chandar
+    role: Associate Professor, Polytechnique Montréal / Mila; Canada CIFAR AI Chair
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=yxWtZLAAAAAJ
+  - name: Aaron Courville
+    role: Professor, Université de Montréal / Mila
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=km6CP8cAAAAJ
+  - name: Irina Rish
+    role: Professor, Université de Montréal / Mila; CERC-AAI Chair
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Avse5gIAAAAJ
+  - name: Hugo Larochelle
+    role: Scientific Director, Mila (since Sept 2025)
+    formerly: Head, Google DeepMind Montreal
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=U89FHq4AAAAJ
+news:
+  - title: "Hugo Larochelle named Mila Scientific Director"
+    url: https://mila.quebec/en/news
+    source: Mila
+    date: 2025-09-02
+  - title: "Mila unveils CAD $250M LaSalle Sovereign AI Research Hub"
+    url: https://mila.quebec/en/news
+    source: Mila
+    date: 2025-09-01
+tags:
+  - academic
+  - research
+  - science
+  - safety

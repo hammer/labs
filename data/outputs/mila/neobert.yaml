@@ -1,0 +1,25 @@
+name: NeoBERT
+slug: neobert
+lab: mila
+type: model
+date: 2025-02-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.19587
+  - label: HuggingFace
+    url: https://huggingface.co/chandar-lab/NeoBERT
+description: >
+  <p>A 250M-parameter next-generation <strong>bidirectional encoder</strong>
+  pretrained from scratch, reaching state of the art on MTEB versus ModernBERT
+  and RoBERTa. Heavily adopted (~39k HuggingFace downloads, 197 likes), from
+  <a href="/people/sarath-chandar">Sarath Chandar</a>'s lab. A first-in-series
+  modern-encoder release modernizing the BERT recipe with contemporary
+  architecture, data, and training length. Released under MIT.</p>
+tags:
+  - research
+  - technique
+  - open-weight
+model:
+  architecture: dense
+  parameters: "250M"
+  license: MIT

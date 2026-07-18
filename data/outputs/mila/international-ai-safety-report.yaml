@@ -1,0 +1,50 @@
+name: International AI Safety Report
+slug: international-ai-safety-report
+lab: mila
+date: 2025-01-29
+sources:
+  - label: Website
+    url: https://internationalaisafetyreport.org
+  - label: 2025 Report (arXiv)
+    url: https://arxiv.org/abs/2501.17805
+description: >
+  <p>The <strong>International AI Safety Report</strong> is the
+  <a href="/people/yoshua-bengio">Yoshua Bengio</a>-chaired International
+  Scientific Report on the Safety of Advanced AI, mandated by the countries at
+  the UK's AI Safety Summit. Its expert-panel chair role is retained for Mila
+  and is distinct from Bengio's <strong>LawZero</strong> nonprofit.</p>
+tags:
+  - safety
+  - policy
+  - research
+outputs:
+  - name: International AI Safety Report 2025
+    type: paper
+    date: 2025-01-29
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2501.17805
+      - label: Website
+        url: https://internationalaisafetyreport.org
+    description: >
+      <p>The inaugural edition, synthesizing the evidence base on advanced-AI
+      capabilities and risks from 96 experts across 30 countries. Two 2025
+      interim updates followed
+      (<a href="https://arxiv.org/abs/2510.13653">arXiv 2510.13653</a> and
+      <a href="https://arxiv.org/abs/2511.19863">arXiv 2511.19863</a>).</p>
+    paper:
+      arxiv: "2501.17805"
+  - name: International AI Safety Report 2026
+    type: paper
+    date: 2026-02-01
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2602.21012
+      - label: Website
+        url: https://internationalaisafetyreport.org
+    description: >
+      <p>The second edition, expanding to 100+ experts across 30+ countries,
+      updating the evidence base on general-purpose AI capabilities, systemic
+      risks, and technical mitigations.</p>
+    paper:
+      arxiv: "2602.21012"

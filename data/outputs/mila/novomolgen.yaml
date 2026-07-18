@@ -1,0 +1,25 @@
+name: NovoMolGen
+slug: novomolgen
+lab: mila
+type: model
+date: 2025-08-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.13408
+description: >
+  <p>A <strong>molecular-generation foundation-model family</strong> pretrained
+  from scratch on 1.5B molecules, achieving state of the art on both de-novo and
+  goal-directed generation. Released as multiple HuggingFace checkpoints, from
+  <a href="/people/sarath-chandar">Sarath Chandar</a>'s lab. NovoMolGen studies
+  how molecular-language-model pretraining scales and transfers to downstream
+  drug-discovery objectives. (Per-checkpoint parameter counts are not
+  individually disclosed.)</p>
+tags:
+  - science
+  - chemistry
+  - generative
+  - open-weight
+paper:
+  arxiv: "2508.13408"
+related:
+  - amplify

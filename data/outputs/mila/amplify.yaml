@@ -1,0 +1,42 @@
+name: AMPLIFY
+slug: amplify
+lab: mila
+type: model
+date: 2024-09-23
+flagship: true
+sources:
+  - label: Paper (bioRxiv)
+    url: https://www.biorxiv.org/content/10.1101/2024.09.23.614603
+  - label: HuggingFace
+    url: https://huggingface.co/chandar-lab/AMPLIFY_350M
+  - label: GitHub
+    url: https://github.com/chandar-lab/AMPLIFY
+description: >
+  <p>An efficient ESM-2-class <strong>protein language model</strong> (120M
+  and 350M parameters) pretrained from scratch, from
+  <a href="/people/sarath-chandar">Sarath Chandar</a>'s lab as an Amgen&ndash;Mila
+  collaboration. AMPLIFY is shipped as a pretrained architecture in NVIDIA
+  BioNeMo and has ~9k HuggingFace downloads, making it one of Mila's most
+  adopted scientific foundation models.</p>
+
+  <p>The structure-aligned sibling <strong>SaAMPLIFY / SaESM2</strong>
+  (<a href="https://arxiv.org/abs/2505.16896">arXiv 2505.16896</a>) aligns the
+  sequence-only pLM to protein-GNN structure via contrastive and
+  structural-token tasks, adding +12.7% ESM-2 contact-prediction accuracy.
+  Released under Apache 2.0.</p>
+tags:
+  - science
+  - biology
+  - protein
+  - open-weight
+model:
+  architecture: dense
+  parameters: "350M"
+  license: Apache 2.0
+  variants:
+    - name: AMPLIFY-120M
+      parameters: "120M"
+    - name: AMPLIFY-350M
+      parameters: "350M"
+related:
+  - novomolgen
