@@ -1,0 +1,28 @@
+name: Cambrian-1
+slug: cambrian
+lab: nyu
+type: model
+date: 2024-06-24
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.16860
+  - label: GitHub
+    url: https://github.com/cambrian-mllm/cambrian
+description: >
+  <p><a href="/people/saining-xie">Saining Xie</a>'s vision-centric open
+  multimodal LLM family (8B/13B/34B), released with the Cambrian-10M
+  instruction dataset and the CV-Bench vision-centric benchmark (NeurIPS
+  2024 oral, ~2.0K&#9733;). Cambrian-1 rebalanced multimodal LLM design
+  around visual grounding rather than language priors and anchors NYU's
+  most consequential vision-LLM line, continued in
+  <a href="/outputs/nyu/cambrian-s">Cambrian-S</a> and Cambrian-P. The
+  multimodal models are instruction-tuned on open LLM backbones rather
+  than pretrained from scratch.</p>
+tags:
+  - multimodal
+  - vision
+  - open-weight
+  - foundational
+paper:
+  arxiv: "2406.16860"

@@ -1,0 +1,22 @@
+name: Solaris
+slug: solaris
+lab: nyu
+type: model
+date: 2026-02-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.22208
+description: >
+  <p>The first multiplayer video world model, built on Minecraft by NYU.
+  Solaris introduces SolarisEngine (12.64M synchronized multi-view
+  frames), shared spatial-temporal attention across players, and
+  Checkpointed Self Forcing for stable long-rollout generation, with a
+  full JAX release. It extends world-model research from single-agent to
+  synchronized multi-agent shared environments.</p>
+tags:
+  - generation
+  - video
+  - open-source
+  - research
+paper:
+  arxiv: "2602.22208"

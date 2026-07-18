@@ -1,0 +1,23 @@
+name: REPA — Representation Alignment
+slug: repa
+lab: nyu
+type: paper
+date: 2024-10-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.06940
+description: >
+  <p>Representation Alignment regularizes diffusion-transformer hidden
+  states toward features from a pretrained visual encoder (e.g. DINOv2),
+  giving a 17.5&times; SiT training speedup and FID 1.42 on ImageNet
+  (ICLR 2025 oral). KAIST-led with <a href="/people/saining-xie">Saining
+  Xie</a> as senior author; heavily adopted and extended (REPA-E, U-REPA,
+  VA-VAE, JanusFlow, HunyuanVideo-Foley). Precursor to NYU's
+  <a href="/outputs/nyu/rae">RAE</a> line.</p>
+tags:
+  - generation
+  - vision
+  - foundational
+  - research
+paper:
+  arxiv: "2410.06940"

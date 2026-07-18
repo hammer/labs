@@ -1,0 +1,23 @@
+name: VSI-Bench
+slug: vsi-bench
+lab: nyu
+type: eval
+date: 2024-12-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.14171
+description: >
+  <p>"Thinking in Space": a video visual-spatial-intelligence benchmark
+  (5K+ QA) from NYU with Stanford (Fei-Fei Li) and Yale. VSI-Bench probes
+  whether video MLLMs can build and reason over spatial mental models
+  &mdash; distances, sizes, layouts, and egocentric perspective &mdash;
+  and seeded the spatial-supersensing agenda behind
+  <a href="/outputs/nyu/cambrian-s">Cambrian-S</a>. It is now widely used
+  to evaluate video MLLMs.</p>
+tags:
+  - eval
+  - multimodal
+  - video
+  - benchmark
+paper:
+  arxiv: "2412.14171"

@@ -1,0 +1,74 @@
+name: NYU
+slug: nyu
+url: https://cs.nyu.edu
+wikipedia: https://en.wikipedia.org/wiki/New_York_University
+huggingface: https://huggingface.co/nyu-visionx
+github: https://github.com/cambrian-mllm
+region: usa
+founded: "1831"
+type: academic
+description: >
+  <p>New York University's AI research centers on the <strong>Courant
+  Institute</strong> and the <strong>Center for Data Science (CDS)</strong>.
+  The most consequential group of the window is
+  <a href="/people/saining-xie">Saining Xie</a>'s vision-LLM lab, whose
+  <a href="/outputs/nyu/cambrian">Cambrian-1</a> vision-centric multimodal
+  family and its successors (<a href="/outputs/nyu/cambrian-s">Cambrian-S</a>,
+  Cambrian-P) drive the spatial-supersensing agenda alongside the
+  <a href="/outputs/nyu/vsi-bench">VSI-Bench</a> video spatial-intelligence
+  benchmark. The same group produced the diffusion-representation line
+  &mdash; <a href="/outputs/nyu/repa">REPA</a> (ICLR 2025 oral),
+  <a href="/outputs/nyu/rae">RAE</a>, and Scale-RAE &mdash; that reshaped
+  how diffusion transformers use pretrained visual encoders.</p>
+
+  <p>Breadth is a hallmark: <a href="/outputs/nyu/solaris">Solaris</a> is
+  the first multiplayer video world model; Eugene Vinitsky's Emerge Lab
+  ships the 1M-FPS <a href="/outputs/nyu/gpudrive">GPUDrive</a> multi-agent
+  driving simulator; and the Pinto/Shafiullah robotics group's
+  <a href="/outputs/nyu/robot-utility-models">Robot Utility Models</a> are
+  zero-shot-deployable general robot policies.
+  <a href="/people/yann-lecun">Yann LeCun</a> remains an NYU professor and
+  <a href="/people/kyunghyun-cho">Kyunghyun Cho</a> and
+  <a href="/people/he-he">He He</a> anchor the NLP/ML foundations side.</p>
+
+  <p>Industry mobility is intense at the top: LeCun left Meta in November
+  2025 and co-founded AMI Labs (announced 2026-03, $1.03B seed), with Xie
+  as co-founder and Chief Science Officer &mdash; AMI Labs output is
+  tracked as a separate lab, not NYU. Cho holds a joint role at Prescient
+  Design (Genentech), where his bio-FM work ships. The entry keeps only
+  NYU-branded artifacts, so the JEPA line, MetaMorph, and Web-SSL
+  (Meta-branded) are excluded despite NYU co-authors.</p>
+people:
+  - name: Yann LeCun
+    role: Silver Professor, Courant/CDS; Turing Award laureate
+    formerly: Chief AI Scientist, Meta (until 2025); Co-Founder, AMI Labs (2026)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=WLN3QrAAAAAJ
+  - name: Kyunghyun Cho
+    role: Professor, Courant/CDS
+    formerly: Senior Director of Frontier Research, Prescient Design (Genentech)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=0RAmmIAAAAAJ
+  - name: Saining Xie
+    role: Associate Professor, Courant; led Cambrian/REPA/RAE/VSI line
+    formerly: Co-Founder & Chief Science Officer, AMI Labs (2026); prior Google DeepMind
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Y2GtJkAAAAAJ
+  - name: He He
+    role: Associate Professor, Courant/CDS; LLM reasoning, truthfulness, safety
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=K-isjagAAAAJ
+  - name: Eugene Vinitsky
+    role: Assistant Professor, NYU Tandon; Emerge Lab (multi-agent RL)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=6dr5fLEAAAAJ
+tags:
+  - academic
+  - multimodal
+  - vision
+  - research

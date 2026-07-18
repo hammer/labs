@@ -1,0 +1,25 @@
+name: GPUDrive
+slug: gpudrive
+lab: nyu
+type: library
+date: 2024-08-02
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2408.01584
+  - label: GitHub
+    url: https://github.com/Emerge-Lab/gpudrive
+description: >
+  <p>A 1M-FPS GPU-accelerated multi-agent driving simulator built on the
+  Madrona engine, from Eugene Vinitsky's Emerge Lab (ICLR 2025,
+  ~600&#9733;). GPUDrive makes large-scale multi-agent reinforcement
+  learning for driving tractable on a single GPU; it continued as
+  PufferDrive (2025) with a self-play robustness follow-up (2026).</p>
+tags:
+  - infrastructure
+  - reinforcement-learning
+  - embodied
+  - open-source
+library:
+  github: https://github.com/Emerge-Lab/gpudrive
+paper:
+  arxiv: "2408.01584"

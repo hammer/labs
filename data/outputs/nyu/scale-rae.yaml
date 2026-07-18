@@ -1,0 +1,22 @@
+name: Scale-RAE
+slug: scale-rae
+lab: nyu
+type: model
+date: 2026-01-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.16208
+description: >
+  <p>Scales the <a href="/outputs/nyu/rae">RAE</a> recipe to text-to-image
+  diffusion transformers from <a href="/people/saining-xie">Saining
+  Xie</a>'s group, pairing Qwen 1.5B/7B language backbones with 2.4B/9.8B
+  DiTs on top of frozen representation encoders. Weights and the
+  scale-rae-data corpus (~10K downloads) are released on HuggingFace. The
+  models are built on open backbones rather than pretrained from scratch.</p>
+tags:
+  - generation
+  - multimodal
+  - open-weight
+  - research
+paper:
+  arxiv: "2601.16208"

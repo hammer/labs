@@ -1,0 +1,22 @@
+name: Robot Utility Models
+slug: robot-utility-models
+lab: nyu
+type: model
+date: 2024-09-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2409.05865
+description: >
+  <p>Zero-shot-deployable general robot policies from NYU's Pinto/
+  Shafiullah robotics group (with Hello Robot and Meta). Robot Utility
+  Models achieve ~90% success in 25 novel environments with no
+  per-environment fine-tuning, demonstrating that carefully collected
+  multi-environment demonstration data yields robot policies that
+  generalize out of the box.</p>
+tags:
+  - embodied
+  - robotics
+  - research
+  - open-weight
+paper:
+  arxiv: "2409.05865"

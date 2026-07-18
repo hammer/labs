@@ -1,0 +1,25 @@
+name: Cambrian-S
+slug: cambrian-s
+lab: nyu
+type: model
+date: 2025-11-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2511.04670
+description: >
+  <p>A spatially-grounded video MLLM family (0.5B&ndash;7B) from
+  <a href="/people/saining-xie">Saining Xie</a>'s group with Stanford,
+  adding predictive-sensing memory for long video understanding. Released
+  with the VSI-590K training data and the VSI-SUPER stress test; weights
+  and data are on HuggingFace (Cambrian-S-3M, ~13K downloads).
+  <a href="/people/yann-lecun">Yann LeCun</a> is a co-author at his NYU
+  exit. Successor to <a href="/outputs/nyu/cambrian">Cambrian-1</a> on the
+  <a href="/outputs/nyu/vsi-bench">VSI-Bench</a> spatial-intelligence
+  agenda.</p>
+tags:
+  - multimodal
+  - video
+  - open-weight
+  - research
+paper:
+  arxiv: "2511.04670"

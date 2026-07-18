@@ -1,0 +1,23 @@
+name: RAE — Representation Autoencoders
+slug: rae
+lab: nyu
+type: paper
+date: 2025-10-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.11690
+description: >
+  <p>Representation Autoencoders from <a href="/people/saining-xie">Saining
+  Xie</a>'s group replace the VAE latents in diffusion transformers with
+  frozen pretrained representation encoders paired with lightweight
+  decoders. The result is a semantically structured latent space that
+  trains faster and generates better than VAE-based DiTs, extending the
+  <a href="/outputs/nyu/repa">REPA</a> representation-alignment line and
+  scaled up in Scale-RAE.</p>
+tags:
+  - generation
+  - vision
+  - architecture
+  - research
+paper:
+  arxiv: "2510.11690"
