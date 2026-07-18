@@ -1,6 +1,8 @@
 name: LLM-jp-4
 slug: llm-jp-4
-lab: nii
+lab:
+  - nii
+  - ucl
 type: model
 date: 2026-03-01
 flagship: true
@@ -17,7 +19,9 @@ description: >
 
   <p>Also includes dense 8B (9B params) with base and thinking
   variants. MT-Bench JA: 7.57-7.82, MT-Bench EN: 7.70-7.86.
-  Evaluated using GPT-5.4 as judge.</p>
+  Evaluated using GPT-5.4 as judge. Built by the NII LLM Research
+  Center, which UCL's <a href="/people/pontus-stenetorp">Pontus
+  Stenetorp</a> co-leads &mdash; joint NII/UCL attribution.</p>
 tags:
   - moe
   - open-source
