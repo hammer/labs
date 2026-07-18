@@ -1,0 +1,22 @@
+name: ProCyon
+slug: procyon
+lab: harvard
+type: model
+date: 2024-12-10
+sources:
+  - label: Paper (bioRxiv)
+    url: https://www.biorxiv.org/content/10.1101/2024.12.10.627665
+  - label: GitHub
+    url: https://github.com/mims-harvard/ProCyon
+description: >
+  <p>An 11B multimodal protein-phenotype foundation model from
+  <a href="/people/marinka-zitnik">Marinka Zitnik</a>'s lab, combining
+  sequence, structure, and language and trained on ProCyon-Instruct (33M
+  instructions). ProCyon retrieves proteins by drug mechanism-of-action or
+  disease context and generates phenotype descriptions for
+  uncharacterized proteins.</p>
+tags:
+  - science
+  - biology
+  - multimodal
+  - research

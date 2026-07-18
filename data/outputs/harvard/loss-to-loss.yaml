@@ -1,0 +1,22 @@
+name: Loss-to-Loss Prediction
+slug: loss-to-loss
+lab: harvard
+type: paper
+date: 2024-11-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.12925
+description: >
+  <p>A scaling-laws result from the <strong>Kempner Institute</strong>
+  (Brandfonbrener, Vyas, Malach, and <a href="/people/sham-kakade">Sham
+  Kakade</a>): a shifted power law predicts loss <em>across</em> different
+  pretraining datasets and from pretraining loss to downstream-task loss,
+  extrapolating to roughly 20&times; the FLOP budget used to fit it. Code
+  is released as KempnerInstitute/loss-to-loss-olmo.</p>
+tags:
+  - scaling
+  - foundational
+  - pretraining
+  - research
+paper:
+  arxiv: "2411.12925"

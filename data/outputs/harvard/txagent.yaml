@@ -1,0 +1,29 @@
+name: TxAgent & ToolUniverse
+slug: txagent
+lab: harvard
+type: library
+date: 2025-03-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.10970
+  - label: GitHub (ToolUniverse)
+    url: https://github.com/mims-harvard/ToolUniverse
+description: >
+  <p>A therapeutic-reasoning agent and its tool layer from
+  <a href="/people/marinka-zitnik">Marinka Zitnik</a>'s Zitnik Lab.
+  <strong>ToolUniverse</strong> exposes 211+ biomedical tools through a
+  unified interface (~1,573&#9733;), and <strong>TxAgent</strong>
+  (~643&#9733;) uses them for multi-step drug-interaction and
+  contraindication reasoning, beating GPT-4o on open-ended drug reasoning.
+  Attribution note: the TxAgent-T1 policy model is a fine-tuned Meta
+  Llama-3.1-8B, but the ToolUniverse framework itself is Harvard-original
+  and heavily adopted.</p>
+tags:
+  - agents
+  - science
+  - biology
+  - open-source
+library:
+  github: https://github.com/mims-harvard/ToolUniverse
+paper:
+  arxiv: "2503.10970"

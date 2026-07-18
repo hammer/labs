@@ -1,0 +1,74 @@
+name: Harvard
+slug: harvard
+url: https://www.harvard.edu
+wikipedia: https://en.wikipedia.org/wiki/Harvard_University
+huggingface: https://huggingface.co/MahmoodLab
+github: https://github.com/mahmoodlab
+region: usa
+founded: "1636"
+type: academic
+description: >
+  <p>Harvard is comparatively thin on frontier <em>language</em> models
+  but exceptionally strong on <strong>scientific foundation models</strong>,
+  concentrated in two hubs spanning Harvard Medical School and its
+  hospitals. The <strong>Mahmood Lab</strong> (HMS / Brigham &amp;
+  Women's / Broad) runs the field's dominant computational-pathology FM
+  program &mdash; <a href="/outputs/harvard/titan">TITAN</a>,
+  <a href="/outputs/harvard/threads">THREADS</a>,
+  <a href="/outputs/harvard/kronos">KRONOS</a>, and the widely-adopted
+  <a href="/outputs/harvard/uni-conch">UNI/CONCH</a> encoders (hundreds of
+  thousands of HuggingFace downloads combined). The <strong>Zitnik Lab</strong>
+  (HMS-DBMI, mims-harvard) builds therapeutic and molecular FMs and agents:
+  <a href="/outputs/harvard/txagent">TxAgent + ToolUniverse</a>,
+  <a href="/outputs/harvard/atomica">ATOMICA</a>, and
+  <a href="/outputs/harvard/procyon">ProCyon</a>.</p>
+
+  <p>The <strong>Kempner Institute</strong> (co-directed by
+  <a href="/people/sham-kakade">Sham Kakade</a>, with
+  <a href="/people/cengiz-pehlevan">Cengiz Pehlevan</a> and
+  <a href="/people/boaz-barak">Boaz Barak</a>) supplies the ML-theory,
+  scaling-law, and training-infrastructure work &mdash;
+  <a href="/outputs/harvard/loss-to-loss">Loss-to-Loss Prediction</a>,
+  Archetypal SAE interpretability, and the KempnerForge training stack.
+  Supporting infrastructure like the <a href="/outputs/harvard/hest-trident">HEST /
+  TRIDENT</a> pathology toolkits underpins benchmarking across the
+  pathology-FM field.</p>
+
+  <p>Industry entanglement is lighter than at peer labs but present:
+  Kakade is also an Amazon Scholar and Barak splits time with OpenAI on
+  alignment and safety. The clinical FMs stay firmly Harvard/Mass General
+  Brigham; note that the TxAgent policy model is a fine-tuned Llama-3.1-8B
+  while ToolUniverse itself is Harvard-original.</p>
+people:
+  - name: Sham Kakade
+    role: Rampell Professor of CS &amp; Statistics; Co-Director, Kempner Institute
+    formerly: Amazon Scholar (ongoing)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=wb-DKCIAAAAJ
+  - name: Cengiz Pehlevan
+    role: Associate Professor of Applied Math (SEAS); Kempner Institute faculty
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=veDLTPEAAAAJ
+  - name: Boaz Barak
+    role: Gordon McKay Professor of CS (SEAS); Kempner faculty
+    formerly: OpenAI (partial leave, alignment/safety)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=I0fbJ6cAAAAJ
+  - name: Faisal Mahmood
+    role: Associate Professor, HMS / Brigham &amp; Women's / Broad; leads Mahmood Lab
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=9MsdbKoAAAAJ
+  - name: Marinka Zitnik
+    role: Associate Professor, HMS-DBMI (mims-harvard); Kempner associate faculty
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=YtUDgPIAAAAJ
+tags:
+  - academic
+  - science
+  - biology
+  - research

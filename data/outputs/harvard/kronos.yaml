@@ -1,0 +1,25 @@
+name: KRONOS
+slug: kronos
+lab: harvard
+type: model
+date: 2025-06-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.03373
+  - label: GitHub
+    url: https://github.com/mahmoodlab/KRONOS
+description: >
+  <p>A panel-agnostic foundation model for multiplex spatial proteomics
+  from the <a href="/people/faisal-mahmood">Mahmood Lab</a>: a ViT with
+  marker-identity embeddings, self-supervised on 47M single-marker patches
+  spanning 175 markers. KRONOS reaches SOTA on cell phenotyping,
+  treatment-response prediction, and retrieval across 11 cohorts, and is
+  the first FM to make multiplex-proteomics analysis segmentation-free.
+  Pretrained from scratch by Harvard.</p>
+tags:
+  - science
+  - biology
+  - vision
+  - open-weight
+paper:
+  arxiv: "2506.03373"

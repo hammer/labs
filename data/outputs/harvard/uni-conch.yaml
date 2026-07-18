@@ -1,0 +1,23 @@
+name: UNI2-h & CONCH v1.5
+slug: uni-conch
+lab: harvard
+type: model
+date: 2025-01-15
+sources:
+  - label: UNI2-h (HuggingFace)
+    url: https://huggingface.co/MahmoodLab/UNI2-h
+  - label: CONCH (HuggingFace)
+    url: https://huggingface.co/MahmoodLab/CONCH
+description: >
+  <p>The <a href="/people/faisal-mahmood">Mahmood Lab</a>'s updated
+  tile-level pathology encoders: <strong>UNI2-h</strong> (a DINOv2 vision
+  FM) and <strong>CONCH v1.5</strong> (a vision-language model). These are
+  the field's most-adopted pathology encoders &mdash; UNI2-h ~162K, the
+  original UNI ~73K, and CONCH ~83K HuggingFace downloads. The original
+  UNI/CONCH appeared in Nature Medicine 2024; these are the in-window
+  refreshes. Pretrained from scratch on pathology images by Harvard.</p>
+tags:
+  - science
+  - biology
+  - vision
+  - open-weight

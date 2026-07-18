@@ -1,0 +1,23 @@
+name: THREADS
+slug: threads
+lab: harvard
+type: model
+date: 2025-01-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.16652
+description: >
+  <p>A molecular-driven slide foundation model from the
+  <a href="/people/faisal-mahmood">Mahmood Lab</a> (Nature Cancer 2026),
+  pretrained on 47,171 H&amp;E-stained sections paired with genomic and
+  transcriptomic profiles. THREADS reaches SOTA on more than 50
+  oncologic-pathology tasks with far less pretraining data than prior
+  slide FMs and is especially strong on hard tasks such as treatment-
+  response prediction. Pretrained from scratch by Harvard.</p>
+tags:
+  - science
+  - biology
+  - multimodal
+  - research
+paper:
+  arxiv: "2501.16652"

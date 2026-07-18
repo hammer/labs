@@ -1,0 +1,27 @@
+name: TITAN
+slug: titan
+lab: harvard
+type: model
+date: 2024-11-29
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.19666
+  - label: HuggingFace
+    url: https://huggingface.co/MahmoodLab/TITAN
+description: >
+  <p>A multimodal whole-slide foundation model for computational
+  pathology from the <a href="/people/faisal-mahmood">Mahmood Lab</a>
+  (Nature Medicine 2025), pretrained with visual self-supervision and
+  vision-language alignment on 335K whole-slide images. TITAN produces
+  slide-level representations for zero/few-shot classification, retrieval,
+  and pathology report generation, and is one of the field's most-adopted
+  slide FMs (~150K HuggingFace downloads). Pretrained from scratch on
+  pathology data by Harvard/Mass General Brigham.</p>
+tags:
+  - science
+  - biology
+  - multimodal
+  - open-weight
+paper:
+  arxiv: "2411.19666"

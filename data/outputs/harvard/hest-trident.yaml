@@ -1,0 +1,28 @@
+name: HEST-1k & TRIDENT
+slug: hest-trident
+lab: harvard
+type: dataset
+date: 2024-06-25
+sources:
+  - label: HEST (GitHub)
+    url: https://github.com/mahmoodlab/HEST
+  - label: TRIDENT (GitHub)
+    url: https://github.com/mahmoodlab/TRIDENT
+description: >
+  <p>Benchmarking infrastructure underpinning the pathology-FM field from
+  the <a href="/people/faisal-mahmood">Mahmood Lab</a>.
+  <strong>HEST-1k</strong> (NeurIPS 2024, ~422&#9733;) pairs histology
+  with spatial transcriptomics for histology&harr;expression benchmarking,
+  and <strong>TRIDENT</strong> (~602&#9733;, actively maintained) is a
+  large-scale whole-slide-image processing toolkit; the companion
+  Patho-Bench (~152&#9733;) standardizes pathology-FM evaluation. Widely
+  used data and tooling for models like
+  <a href="/outputs/harvard/titan">TITAN</a> and
+  <a href="/outputs/harvard/uni-conch">UNI/CONCH</a>.</p>
+tags:
+  - dataset
+  - science
+  - biology
+  - infrastructure
+dataset:
+  github: https://github.com/mahmoodlab/HEST

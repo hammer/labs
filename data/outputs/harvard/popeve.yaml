@@ -1,0 +1,22 @@
+name: popEVE
+slug: popeve
+lab: harvard
+type: model
+date: 2025-11-01
+sources:
+  - label: GitHub
+    url: https://github.com/debbiemarkslab/popEVE
+  - label: Nature Genetics
+    url: https://www.nature.com/articles/s41588-025-02086-5
+description: >
+  <p>A proteome-wide deep generative model that ranks variant
+  deleteriousness by combining evolutionary sequence data with human
+  population data, from the Marks Lab (of the EVE/Tranception lineage;
+  Nature Genetics, Nov 2025). popEVE achieves SOTA rare-disease variant
+  prioritization and nominated 123 novel candidate genes in a
+  developmental-disorder cohort.</p>
+tags:
+  - science
+  - biology
+  - research
+  - open-weight

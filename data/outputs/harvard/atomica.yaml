@@ -1,0 +1,22 @@
+name: ATOMICA
+slug: atomica
+lab: harvard
+type: model
+date: 2025-04-02
+sources:
+  - label: Paper (bioRxiv)
+    url: https://www.biorxiv.org/content/10.1101/2025.04.02.646906
+  - label: GitHub
+    url: https://github.com/mims-harvard/ATOMICA
+description: >
+  <p>A universal representation foundation model for intermolecular
+  interactions from <a href="/people/marinka-zitnik">Marinka Zitnik</a>'s
+  lab, covering proteins, nucleic acids, small molecules, and ions.
+  ATOMICA is trained by self-supervised denoising on ~2.04M molecular
+  complexes and learns compositional, atomic-resolution embeddings that
+  transfer across molecular classes. Pretrained from scratch by Harvard.</p>
+tags:
+  - science
+  - biology
+  - research
+  - open-weight
