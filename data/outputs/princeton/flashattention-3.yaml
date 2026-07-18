@@ -1,0 +1,23 @@
+name: FlashAttention-3
+slug: flashattention-3
+lab: princeton
+type: paper
+date: 2024-07-11
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.08608
+description: >
+  <p><a href="/people/tri-dao">Tri Dao</a>'s Hopper-native attention
+  kernel: 1.5&ndash;2&times; faster than FlashAttention-2 with FP8 support,
+  now universally adopted across training and inference stacks. Developed
+  with Colfax, NVIDIA, Together AI, and Meta collaborators &mdash; flag
+  the industrial co-branding &mdash; but the FlashAttention line is Dao's
+  Princeton-anchored efficient-kernels agenda, continued in GTA/GLA
+  attention and the SonicMoE training kernels.</p>
+tags:
+  - efficiency
+  - attention
+  - infrastructure
+  - foundational
+paper:
+  arxiv: "2407.08608"

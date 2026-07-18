@@ -1,0 +1,25 @@
+name: HELMET
+slug: helmet
+lab: princeton
+type: eval
+date: 2024-10-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.02694
+  - label: GitHub
+    url: https://github.com/princeton-nlp/HELMET
+description: >
+  <p>An application-centric long-context evaluation suite from
+  <a href="/people/danqi-chen">Danqi Chen</a>'s princeton-nlp group
+  (ICLR 2025, with Intel): HELMET moves beyond synthetic needle-in-a-
+  haystack tests to diverse, realistic long-context tasks with reliable,
+  model-comparable scoring. It has been adopted in major model reports
+  including Llama-4 and Jamba. Companion to the group's ProLong
+  long-context training work.</p>
+tags:
+  - eval
+  - benchmark
+  - nlp
+  - research
+paper:
+  arxiv: "2410.02694"

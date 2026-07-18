@@ -1,0 +1,22 @@
+name: GTA & GLA — Hardware-Efficient Attention
+slug: gta-gla
+lab: princeton
+type: paper
+date: 2025-05-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.21487
+description: >
+  <p><a href="/people/tri-dao">Tri Dao</a>'s Grouped-Tied Attention (GTA)
+  and Grouped-Latent Attention (GLA) for fast decoding (ICML 2025): both
+  roughly halve the KV cache versus GQA and run up to 2&times; faster than
+  FlashMLA, targeting the memory bottleneck in long-context and
+  high-throughput serving. Part of the same Princeton efficient-kernels
+  line as <a href="/outputs/princeton/flashattention-3">FlashAttention-3</a>.</p>
+tags:
+  - efficiency
+  - attention
+  - architecture
+  - research
+paper:
+  arxiv: "2505.21487"

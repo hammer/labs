@@ -1,0 +1,72 @@
+name: Princeton
+slug: princeton
+url: https://www.cs.princeton.edu
+wikipedia: https://en.wikipedia.org/wiki/Princeton_University
+huggingface: https://huggingface.co/princeton-nlp
+github: https://github.com/princeton-nlp
+region: usa
+founded: "1746"
+type: academic
+description: >
+  <p>Princeton's AI research runs through the Department of Computer
+  Science and the <strong>Princeton Language and Intelligence (PLI)</strong>
+  institute, and its defining contribution of the window is the
+  <strong>coding-agent evaluation stack</strong>: the Narasimhan/Yang/
+  Jimenez/Press group's <a href="/outputs/princeton/swe-bench">SWE-bench</a>
+  family (Verified, Multimodal, Multilingual) became the industry's
+  standard frontier-model coding metric, and its
+  <a href="/outputs/princeton/swe-agent">SWE-agent</a> agent-computer
+  interface plus <a href="/outputs/princeton/swe-smith">SWE-smith</a>
+  synthetic-task pipeline anchor the open coding-agent ecosystem.</p>
+
+  <p>Beyond agents, Princeton runs several of the field's marquee lines:
+  <a href="/people/tri-dao">Tri Dao</a>'s efficient-kernels agenda
+  (<a href="/outputs/princeton/flashattention-3">FlashAttention-3</a>,
+  Mamba-2 with CMU's <a href="/people/albert-gu">Albert Gu</a>, GTA/GLA
+  attention); <a href="/people/danqi-chen">Danqi Chen</a>'s princeton-nlp
+  post-training and long-context science (<a href="/outputs/princeton/simpo">SimPO</a>,
+  <a href="/outputs/princeton/helmet">HELMET</a>, ProLong, RLMT);
+  <a href="/people/chi-jin">Chi Jin</a>'s open theorem-proving SOTA
+  (<a href="/outputs/princeton/goedel-prover">Goedel-Prover</a>); and
+  <a href="/people/arvind-narayanan">Arvind Narayanan</a>'s agent-eval
+  rigor agenda (<a href="/outputs/princeton/hal">HAL</a> and "AI Agents
+  That Matter").</p>
+
+  <p>Industry entanglement is heavy but the entry keeps only
+  university-shipped artifacts: Tri Dao is concurrently Chief Scientist at
+  Together AI (co-branded on most kernel work), Narasimhan led research at
+  Sierra AI before returning full-time in 2025 (Sierra's &tau;-bench is
+  excluded), and SWE-bench Verified was a joint release with OpenAI while
+  the dataset lives under Princeton's SWE-bench org.</p>
+people:
+  - name: Danqi Chen
+    role: Associate Professor, CS; Associate Director, PLI; leads princeton-nlp
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=sVR8ktkAAAAJ
+  - name: Tri Dao
+    role: Assistant Professor, CS; Chief Scientist, Together AI
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=NQRw0bQAAAAJ
+  - name: Karthik Narasimhan
+    role: Associate Professor, CS; Associate Director, PLI; SWE-bench/SWE-agent PI
+    formerly: Head of Research, Sierra AI (2023–2025)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=euc0GX4AAAAJ
+  - name: Arvind Narayanan
+    role: Professor, CS; Director, Center for Information Technology Policy (CITP)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=0Bi5CMgAAAAJ
+  - name: Chi Jin
+    role: Associate Professor, ECE; Goedel-Prover PI
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=GINhGvwAAAAJ
+tags:
+  - academic
+  - agents
+  - efficiency
+  - research

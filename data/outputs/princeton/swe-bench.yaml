@@ -1,0 +1,39 @@
+name: SWE-bench (Verified / Multimodal / Multilingual)
+slug: swe-bench
+lab: princeton
+type: eval
+date: 2024-08-13
+flagship: true
+sources:
+  - label: SWE-bench Multimodal (arXiv)
+    url: https://arxiv.org/abs/2410.03859
+  - label: SWE-bench Verified (HuggingFace)
+    url: https://huggingface.co/datasets/SWE-bench/SWE-bench_Verified
+  - label: SWE-bench Multilingual (HuggingFace)
+    url: https://huggingface.co/datasets/SWE-bench/SWE-bench_Multilingual
+description: >
+  <p>The de-facto standard coding-agent evaluation family from
+  <a href="/people/karthik-narasimhan">Karthik Narasimhan</a>'s group.
+  <strong>SWE-bench Verified</strong> (Aug 2024), a human-validated
+  500-task subset released jointly with OpenAI, became <em>the</em>
+  industry frontier-model coding metric (74K+ HuggingFace downloads);
+  <strong>SWE-bench Multimodal</strong> (ICLR 2025) extends the task to
+  visual/JS bug-fixing; and <strong>SWE-bench Multilingual</strong> (2025)
+  adds 300 tasks across 9 languages and 42 repos (113K+ downloads, the
+  most of any dataset in the org). The datasets live under Princeton's
+  SWE-bench org; Verified is an OpenAI co-branded release. The original
+  SWE-bench (2023) is the pre-window anchor of the line; external
+  spin-offs SWE-bench-Live (Microsoft), SWE-bench Pro (Scale AI), and
+  Multi-SWE-bench (ByteDance) build on it but are not Princeton output.</p>
+tags:
+  - eval
+  - coding
+  - agents
+  - benchmark
+paper:
+  arxiv: "2410.03859"
+eval:
+  num_tasks: 500
+  domains:
+    - software-engineering
+    - coding

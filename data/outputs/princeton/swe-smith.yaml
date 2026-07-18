@@ -1,0 +1,29 @@
+name: SWE-smith
+slug: swe-smith
+lab: princeton
+type: dataset
+date: 2025-04-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.21798
+  - label: GitHub
+    url: https://github.com/SWE-agent/SWE-smith
+description: >
+  <p>A synthetic SWE-task generation pipeline (50K+ instances) that
+  trained <strong>SWE-agent-LM-32B</strong>, the best open-weights SWE
+  agent at release, on <a href="/outputs/princeton/swe-bench">SWE-bench</a>
+  tasks. NeurIPS 2025 Datasets &amp; Benchmarks Spotlight; later expanded
+  beyond Python to Go, Java, JavaScript, Rust, C++, and TypeScript.
+  Produced by Princeton (with Stanford collaborators) as part of the
+  <a href="/outputs/princeton/swe-agent">SWE-agent</a> ecosystem. The
+  trained model is fine-tuned from an open base, not pretrained from
+  scratch.</p>
+tags:
+  - dataset
+  - coding
+  - agents
+  - post-training
+paper:
+  arxiv: "2504.21798"
+dataset:
+  github: https://github.com/SWE-agent/SWE-smith

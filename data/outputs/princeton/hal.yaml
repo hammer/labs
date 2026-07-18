@@ -1,0 +1,26 @@
+name: HAL — Holistic Agent Leaderboard
+slug: hal
+lab: princeton
+type: eval
+date: 2025-10-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.11977
+  - label: Leaderboard
+    url: https://hal.cs.princeton.edu
+description: >
+  <p>A standardized, cost-aware agent-evaluation harness and leaderboard
+  from <a href="/people/arvind-narayanan">Arvind Narayanan</a>'s CITP and
+  PLI groups (ICLR 2026), with the harness live since mid-2024. HAL is the
+  "missing infrastructure" for agent evals: it runs agents across
+  benchmarks under controlled, contamination-aware, cost-controlled
+  conditions. It follows the group's influential critique
+  <strong>"AI Agents That Matter"</strong> (2024), which established
+  cost-controlled, reproducible agent-evaluation norms.</p>
+tags:
+  - eval
+  - agents
+  - benchmark
+  - research
+paper:
+  arxiv: "2510.11977"

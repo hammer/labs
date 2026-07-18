@@ -1,0 +1,24 @@
+name: SimPO
+slug: simpo
+lab: princeton
+type: paper
+date: 2024-05-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2405.14734
+  - label: GitHub
+    url: https://github.com/princeton-nlp/SimPO
+description: >
+  <p>A reference-free preference-optimization method from
+  <a href="/people/danqi-chen">Danqi Chen</a>'s princeton-nlp group
+  (NeurIPS 2024, with UVA): SimPO uses the average log-probability of a
+  sequence as the implicit reward, dropping DPO's reference model
+  entirely. It became a widely adopted DPO alternative (956&#9733;) used
+  across many open post-training recipes.</p>
+tags:
+  - post-training
+  - alignment
+  - nlp
+  - research
+paper:
+  arxiv: "2405.14734"

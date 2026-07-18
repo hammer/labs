@@ -1,0 +1,31 @@
+name: Goedel-Prover
+slug: goedel-prover
+lab: princeton
+type: model
+date: 2025-02-11
+sources:
+  - label: Goedel-Prover (arXiv)
+    url: https://arxiv.org/abs/2502.07640
+  - label: Goedel-Prover-V2 (arXiv)
+    url: https://arxiv.org/abs/2508.03613
+  - label: Goedel-Code-Prover-8B (arXiv)
+    url: https://arxiv.org/abs/2603.19329
+description: >
+  <p><a href="/people/chi-jin">Chi Jin</a>'s open-source Lean 4
+  theorem-proving line, the SOTA open prover at each release.
+  <strong>Goedel-Prover</strong> (Feb 2025) reached 57.6% on miniF2F;
+  <strong>Goedel-Prover-V2</strong> (Aug 2025) hit 90.4% miniF2F at 32B in
+  self-correction mode &mdash; beating DeepSeek-Prover-V2-671B &mdash;
+  with an 8B matching 671B-class performance, plus a Goedel-Formalizer-V2;
+  and <strong>Goedel-Code-Prover-8B</strong> (Mar 2026) applies
+  hierarchical proof search to Lean 4 code verification (62.0% vs 21.8%
+  for DeepSeek-Prover-V2-671B on Verina/Clever/AlgoVeri). Princeton-led,
+  with heavy NVIDIA/Meta/Tsinghua/Stanford collaboration on V2. Models are
+  post-trained from open bases, not pretrained from scratch.</p>
+tags:
+  - reasoning
+  - science
+  - open-weight
+  - research
+paper:
+  arxiv: "2502.07640"

@@ -1,0 +1,32 @@
+name: SWE-agent
+slug: swe-agent
+lab: princeton
+type: library
+date: 2024-05-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2405.15793
+  - label: GitHub
+    url: https://github.com/SWE-agent/SWE-agent
+  - label: mini-swe-agent (GitHub)
+    url: https://github.com/SWE-agent/mini-swe-agent
+description: >
+  <p>Princeton's agent-computer-interface framework for autonomous
+  software engineering (19.8K&#9733;), with continuous releases through
+  2026. The line includes <strong>mini-swe-agent</strong>, a radically
+  minimal ~100-line agent scoring roughly 65% on
+  <a href="/outputs/princeton/swe-bench">SWE-bench Verified</a> and widely
+  used as a baseline harness (5.9K&#9733;), and <strong>SWE-ReX</strong>,
+  the sandboxed, massively parallel code-execution runtime that backs
+  SWE-agent and <a href="/outputs/princeton/swe-smith">SWE-smith</a>
+  evaluations. Developed by Press, Yang, Jimenez et al. in
+  <a href="/people/karthik-narasimhan">Karthik Narasimhan</a>'s group.</p>
+tags:
+  - agents
+  - coding
+  - infrastructure
+  - open-source
+library:
+  github: https://github.com/SWE-agent/SWE-agent
+paper:
+  arxiv: "2405.15793"
