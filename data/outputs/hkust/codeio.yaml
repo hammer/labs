@@ -1,0 +1,36 @@
+name: CodeI/O
+slug: codeio
+lab: hkust
+type: dataset
+date: 2025-02-11
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.07316
+  - label: GitHub
+    url: https://github.com/hkust-nlp/CodeIO
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/hkust-nlp/CodeIO-PyEdu-Reasoning
+description: >
+  <p><strong>Condensing reasoning patterns via code input/output
+  prediction</strong> (ICML 2025 Oral): transforms real code into a
+  natural-language CoT task &mdash; predict inputs/outputs given code and
+  test cases &mdash; exposing models to universal reasoning primitives
+  (logic-flow planning, state-space search, decision-tree traversal) while
+  decoupling reasoning from code syntax. Consistently improves symbolic,
+  scientific, logic, math, and commonsense reasoning; adopted as a
+  pretraining/mid-training signal in later reasoning recipes.</p>
+
+  <p>Joint <strong>HKUST / <a href="/labs/deepseek">DeepSeek-AI</a></strong>
+  work with an HKUST student lead from
+  <a href="/people/junxian-he">Junxian He</a>'s group.</p>
+tags:
+  - reasoning
+  - training-data
+  - dataset
+dataset:
+  github: https://github.com/hkust-nlp/CodeIO
+  huggingface_url: https://huggingface.co/datasets/hkust-nlp/CodeIO-PyEdu-Reasoning
+paper:
+  arxiv: "2502.07316"
+  venue: ICML 2025
+  presentation: oral

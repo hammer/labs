@@ -1,0 +1,35 @@
+name: C-Eval
+slug: c-eval
+lab: hkust
+type: eval
+date: 2023-05-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2305.08322
+  - label: GitHub
+    url: https://github.com/hkust-nlp/ceval
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/ceval/ceval-exam
+description: >
+  <p>The <strong>de-facto standard Chinese foundation-model evaluation
+  suite</strong> (NeurIPS 2023, legacy anchor): 13,948 multiple-choice
+  questions spanning 52 disciplines across four difficulty levels (middle
+  school to professional), plus the C-Eval Hard reasoning subset. At
+  release only GPT-4 cleared 60% average accuracy; for the following two
+  years virtually every Chinese LLM release reported C-Eval scores, and
+  frontier models have since saturated it (90%+).</p>
+
+  <p>Joint HKUST/SJTU work (with Tsinghua and Edinburgh co-authors);
+  maintained under <a href="/people/junxian-he">Junxian He</a>'s hkust-nlp
+  (1.9K&#9733;).</p>
+tags:
+  - benchmark
+  - evaluation
+  - multilingual
+eval:
+  num_questions: 13948
+  scoring_method: multiple-choice accuracy
+  saturation: "Saturated for frontier models (90%+ since ~2024)"
+paper:
+  arxiv: "2305.08322"
+  venue: NeurIPS 2023

@@ -1,0 +1,32 @@
+name: HKGAI-V1
+slug: hkgai-v1
+lab: hkust
+type: model
+date: 2025-07-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.11502
+  - label: HKGAI
+    url: https://hkgai.org
+description: >
+  <p>Hong Kong's <strong>"regional sovereign LLM"</strong>: built on the
+  DeepSeek architecture via multifaceted full-parameter fine-tuning,
+  aligned to the region's trilingual (Cantonese/Mandarin/English)
+  environment and "one country, two systems" socio-legal context, with an
+  integrated RAG system and a governance-embedded safety framework. Runs
+  on Ascend hardware. <strong>HKGAI-V3</strong> (June 2026) extends the
+  series with a production agent stack.</p>
+
+  <p>Attribution note: HKGAI is an <strong>InnoHK research center hosted
+  and led by HKUST</strong> (director: Provost Yike Guo) within a
+  government-backed consortium &mdash; a joint HKUST/HKGAI effort, not a
+  sole-university artifact, and a derivative of
+  <a href="/labs/deepseek">DeepSeek</a> bases rather than a from-scratch
+  pretrain. The <code>hkgai</code> HuggingFace org lists no public
+  models.</p>
+tags:
+  - nlp
+  - multilingual
+  - post-training
+paper:
+  arxiv: "2507.11502"

@@ -1,0 +1,44 @@
+name: Toolathlon (The Tool Decathlon)
+slug: toolathlon
+lab: hkust
+type: eval
+date: 2025-10-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.25726
+  - label: GitHub
+    url: https://github.com/hkust-nlp/Toolathlon
+  - label: Website
+    url: https://toolathlon.xyz
+description: >
+  <p><strong>Execution-based benchmark for long-horizon tool use</strong>
+  (ICLR 2026): language agents operate 32 real software applications and
+  604 tools &mdash; from Google Calendar and Notion to WooCommerce,
+  Kubernetes, and BigQuery &mdash; mostly via curated Model Context
+  Protocol servers, with realistic environment state and reliable
+  execution-based checking over 108 tasks averaging ~20 turns. At release
+  the best model (Claude-4.5-Sonnet) reached only 38.6%, the top
+  open-weights model (DeepSeek-V3.2-Exp) 20.1% &mdash; and it saw fast
+  adoption as the long-horizon tool-use eval.</p>
+
+  <p>HKUST-led (<a href="/people/junxian-he">Junxian He</a>'s hkust-nlp)
+  with All Hands AI, CMU, and Duke collaborators.</p>
+tags:
+  - benchmark
+  - evaluation
+  - agentic
+eval:
+  num_tasks: 108
+  scoring_method: execution-based
+  top_scores:
+    - model: Claude-4.5-Sonnet
+      score: "38.6%"
+      date: 2025-10-29
+    - model: DeepSeek-V3.2-Exp
+      score: "20.1%"
+      date: 2025-10-29
+paper:
+  arxiv: "2510.25726"
+  venue: ICLR 2026
+related:
+  - simplerl

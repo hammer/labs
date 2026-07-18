@@ -1,0 +1,74 @@
+name: HKUST
+slug: hkust
+url: https://hkust.edu.hk
+wikipedia: https://en.wikipedia.org/wiki/Hong_Kong_University_of_Science_and_Technology
+huggingface: https://huggingface.co/hkust-nlp
+github: https://github.com/hkust-nlp
+region: hongkong
+founded: "1991"
+type: academic
+description: >
+  <p>The <strong>Hong Kong University of Science and Technology</strong>
+  (est. 1991, Clear Water Bay) is anchored in this index by
+  <strong>hkust-nlp</strong>, Junxian He's group and a central node of open
+  RL-for-reasoning research:
+  <a href="/outputs/hkust/simplerl">SimpleRL</a> was the first
+  widely-replicated open reproduction of R1-style "zero RL" on small base
+  models, followed by the <a href="/outputs/hkust/toolathlon">Toolathlon</a>
+  agent benchmark (ICLR 2026), the
+  <a href="/outputs/hkust/kernelgym">KernelGYM/Dr.Kernel</a> GPU-kernel RL
+  environment (ICML 2026), WebExplorer, and the legacy
+  <a href="/outputs/hkust/c-eval">C-Eval</a> Chinese evaluation standard.
+  <a href="/outputs/hkust/codeio">CodeI/O</a> (ICML 2025 Oral) was
+  co-developed with DeepSeek.</p>
+
+  <p>Beyond hkust-nlp: Tong Zhang's OptimalScale group built the
+  <a href="/outputs/hkust/lmflow">LMFlow</a> finetuning toolkit
+  (8.5K&#9733;, NAACL 2024 demo best paper; Zhang has since moved to
+  UIUC), and Jiaya Jia's lab arrived from CUHK around 2023&ndash;24
+  (GitHub org renamed <code>dvlab-research</code> &rarr;
+  <code>JIA-Lab-research</code>), continuing the Mini-Gemini line into
+  <a href="/outputs/hkust/mgm-omni">MGM-Omni</a>, DreamOmni2, and the
+  VisionThink/Seg-Zero RL visual-reasoning series. Yangqiu Song's KnowComp
+  builds knowledge infrastructure (AutoSchemaKG, MMLongBench).</p>
+
+  <p>HKUST also hosts and leads <strong>HKGAI</strong>, the
+  government-backed InnoHK consortium directed by Provost Yike Guo behind
+  the <a href="/outputs/hkust/hkgai-v1">HKGAI-V1&ndash;V3</a> "regional
+  sovereign LLM" series &mdash; full-parameter localization post-training
+  of DeepSeek bases running on Ascend hardware; it is a consortium effort,
+  not a sole-university artifact. Personnel note: Sung Kim is on leave as
+  CEO of Upstage.</p>
+people:
+  - name: Junxian He
+    role: Assistant Professor, CSE; leads hkust-nlp (SimpleRL, Toolathlon, Dr.Kernel, C-Eval)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=BIFGeoUAAAAJ
+  - name: Jiaya Jia
+    role: Chair Professor, CSE; Jia Lab (Mini-Gemini/MGM-Omni, LISA, DreamOmni)
+    formerly: Professor, CUHK (moved ~2023-24); founder, SmartMore
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=XPAkzTEAAAAJ
+  - name: Qifeng Chen
+    role: Associate Professor, CSE; video and visual generation; HKGAI involvement
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=lLMX9hcAAAAJ
+  - name: Yangqiu Song
+    role: Professor, CSE; leads KnowComp (AutoSchemaKG, MMLongBench)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=MdQZ-q8AAAAJ
+  - name: Yike Guo
+    role: Provost & Chair Professor; Director, HKGAI (InnoHK sovereign-LLM program)
+    formerly: Professor, Imperial College London
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=-0q6cIYAAAAJ
+tags:
+  - academic
+  - research
+  - reasoning
+  - post-training

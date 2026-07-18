@@ -1,0 +1,36 @@
+name: LMFlow
+slug: lmflow
+lab: hkust
+type: library
+date: 2023-06-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2306.12420
+  - label: GitHub
+    url: https://github.com/OptimalScale/LMFlow
+description: >
+  <p><strong>Extensible toolkit for finetuning and inference of large
+  foundation models</strong> (8.5K&#9733;, NAACL 2024 demo track best
+  paper), launched in the post-ChatGPT wave of 2023 and maintained through
+  2026: full/LoRA finetuning, RLHF, custom optimizers, and efficient
+  inference in one framework. The same OptimalScale group produced LISA
+  (layerwise importance sampling, arXiv 2403.17919), a memory-efficient
+  finetuning method.</p>
+
+  <p>Built by Tong Zhang's group at HKUST; legacy anchor for the
+  university's training-infrastructure line. Personnel note: Tong Zhang
+  has since moved to UIUC.</p>
+tags:
+  - infrastructure
+  - open-source
+  - training
+  - framework
+library:
+  github: https://github.com/OptimalScale/LMFlow
+  language: Python
+  framework: PyTorch
+  license: Apache 2.0
+paper:
+  arxiv: "2306.12420"
+  venue: NAACL 2024
+  presentation: best-paper

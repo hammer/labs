@@ -1,0 +1,42 @@
+name: KernelGYM & Dr.Kernel
+slug: kernelgym
+lab: hkust
+type: model
+date: 2026-02-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.05885
+  - label: GitHub
+    url: https://github.com/hkust-nlp/KernelGYM
+  - label: HuggingFace
+    url: https://huggingface.co/hkust-nlp/drkernel-14b
+description: >
+  <p><strong>RL for GPU kernel generation done right</strong> (ICML 2026):
+  KernelGYM is a distributed RL environment for Triton kernel generation
+  with robust multi-turn feedback, and the paper introduces
+  <strong>TRLOO</strong>, an unbiased turn-level advantage estimator for
+  multi-turn RL. The resulting <strong>Dr.Kernel-14B</strong> (RL-tuned
+  from Qwen3-14B-Base; an 8B sibling from Qwen3-8B) beats
+  Claude-4.5-Sonnet and GPT-5 on KernelBench Level-2 speedup metrics.</p>
+
+  <p>Sole HKUST work from <a href="/people/junxian-he">Junxian He</a>'s
+  hkust-nlp &mdash; the systems-flavored continuation of the lab's
+  <a href="/outputs/hkust/simplerl">SimpleRL</a> zero-RL line into
+  verifiable, performance-rewarded coding environments.</p>
+tags:
+  - coding
+  - post-training
+  - open-weight
+  - infrastructure
+model:
+  base_model: qwen3
+  variants:
+    - name: drkernel-14b
+      notes: RL-tuned from Qwen3-14B-Base
+    - name: drkernel-8b
+      notes: RL-tuned from Qwen3-8B (with cold-start variant)
+paper:
+  arxiv: "2602.05885"
+  venue: ICML 2026
+related:
+  - simplerl

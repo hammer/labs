@@ -1,0 +1,32 @@
+name: MGM-Omni
+slug: mgm-omni
+lab: hkust
+type: model
+date: 2025-09-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.25131
+  - label: GitHub
+    url: https://github.com/dvlab-research/MGM-Omni
+  - label: HuggingFace
+    url: https://huggingface.co/wcy1122/MGM-Omni-7B
+description: >
+  <p><strong>Open omni-modal LLM with personalized, long-horizon
+  speech</strong>: an "omni-centric" training pipeline scaling speech
+  understanding and generation on top of the Mini-Gemini lineage
+  (arXiv 2403.18814, the lab's 2024 first-in-series multimodal model),
+  targeting long-form and voice-cloned speech interaction alongside
+  image/video understanding.</p>
+
+  <p>From Jiaya Jia's lab &mdash; the group moved CUHK&rarr;HKUST around
+  2023&ndash;24 (GitHub org renamed <code>dvlab-research</code> &rarr;
+  <code>JIA-Lab-research</code>), so authorship is mixed CUHK/HKUST; filed
+  under HKUST per the group's current home. Siblings in the same lab:
+  DreamOmni2 instruction-based image editing (2K&#9733;) and the
+  VisionThink/Seg-Zero RL visual-reasoning line (NeurIPS 2025).</p>
+tags:
+  - multimodal
+  - audio
+  - open-weight
+paper:
+  arxiv: "2509.25131"

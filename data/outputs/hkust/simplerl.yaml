@@ -1,0 +1,46 @@
+name: SimpleRL / SimpleRL-Zoo
+slug: simplerl
+lab: hkust
+type: model
+date: 2025-03-24
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.18892
+  - label: GitHub
+    url: https://github.com/hkust-nlp/simpleRL-reason
+  - label: HuggingFace
+    url: https://huggingface.co/hkust-nlp
+description: >
+  <p>The <strong>first widely-replicated open reproduction of R1-style
+  "zero RL"</strong> &mdash; RL with verifiable rewards directly on base
+  models, no SFT cold start. The repo went live in January 2025, weeks
+  after DeepSeek-R1, showing long chain-of-thought and self-verification
+  emerging on a 7B base with only 8K MATH examples;
+  <strong>SimpleRL-Zoo</strong> (the paper) then systematized zero RL
+  across 10 base-model series (Qwen2.5 0.5B&ndash;32B, Llama-3.1-8B,
+  DeepSeek/Mistral bases), releasing all checkpoints
+  (3.9K&#9733;).</p>
+
+  <p>A heavily cited reference for the RL-for-reasoning wave and the
+  anchor of <a href="/people/junxian-he">Junxian He</a>'s hkust-nlp RL
+  line (with <a href="/outputs/hkust/kernelgym">Dr.Kernel</a>, B-STaR, and
+  Laser). Trained with <a href="/outputs/hku/verl">veRL</a>-based
+  infrastructure; all models are RL-tuned open bases, not from-scratch
+  pretrains.</p>
+tags:
+  - reasoning
+  - post-training
+  - open-weight
+  - research
+model:
+  base_model: qwen2.5
+  variants:
+    - name: Qwen-2.5-7B-SimpleRL-Zoo
+      notes: zero-RL on Qwen2.5-7B base
+    - name: Qwen-2.5-Math-7B-SimpleRL-Zero
+      notes: the original January 2025 release
+    - name: Llama-3.1-8B-SimpleRL-Zoo
+      notes: zero-RL on Llama-3.1-8B base
+paper:
+  arxiv: "2503.18892"
