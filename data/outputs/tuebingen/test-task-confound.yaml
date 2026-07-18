@@ -1,0 +1,21 @@
+name: Training on the Test Task Confounds Evaluation
+slug: test-task-confound
+lab: tuebingen
+type: paper
+date: 2024-07-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.07890
+description: >
+  <p>Moritz Hardt's benchmark-science anchor (ICLR 2025): apparent
+  benchmark gains and "emergent" capabilities often reflect tuning on the
+  test task rather than capability differences &mdash; comparing models
+  after equalizing test-task exposure erases much of the claimed progress.
+  Companion work ("Limits to Scalable Evaluation at the Frontier", ICLR
+  2025 Oral) shows LLM-as-judge debiasing cannot beat doubling human
+  labels once the judge is no better than the evaluatee.</p>
+tags:
+  - eval
+  - research
+paper:
+  arxiv: "2407.07890"

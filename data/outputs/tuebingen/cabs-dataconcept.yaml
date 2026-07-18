@@ -1,0 +1,22 @@
+name: CABS + DataConcept-128M
+slug: cabs-dataconcept
+lab: tuebingen
+type: dataset
+date: 2025-11-25
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2511.20643
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/bethgelab/dataconcept_128M
+description: >
+  <p>Concept-Aware Batch Sampling (CVPR 2026, Bethge lab with Ludwig
+  Schmidt and LAION co-authors): DataConcept-128M provides 128M
+  concept-annotated image-text pairs, and CABS curates batches by concept
+  on the fly during CLIP/SigLIP training &mdash; moving vision-language
+  data curation from static filtering to training-time policy.</p>
+tags:
+  - data
+  - multimodal
+  - research
+paper:
+  arxiv: "2511.20643"

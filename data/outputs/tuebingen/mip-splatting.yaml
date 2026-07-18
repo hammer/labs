@@ -1,0 +1,21 @@
+name: Mip-Splatting
+slug: mip-splatting
+lab: tuebingen
+type: paper
+date: 2024-06-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2311.16493
+  - label: GitHub
+    url: https://github.com/autonomousvision/mip-splatting
+description: >
+  <p>Alias-free 3D Gaussian splatting from Geiger's Autonomous Vision
+  group &mdash; <strong>CVPR 2024 Best Student Paper</strong> (~1,450
+  stars), now a standard component in splatting stacks. Part of the
+  group's geometry line with 2D Gaussian Splatting (SIGGRAPH 2024) and
+  Gaussian Opacity Fields (SIGGRAPH Asia 2024).</p>
+tags:
+  - vision
+  - research
+paper:
+  arxiv: "2311.16493"

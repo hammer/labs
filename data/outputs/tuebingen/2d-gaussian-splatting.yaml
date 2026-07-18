@@ -1,0 +1,22 @@
+name: 2D Gaussian Splatting
+slug: 2d-gaussian-splatting
+lab: tuebingen
+type: paper
+date: 2024-03-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2403.17888
+  - label: GitHub
+    url: https://github.com/hbb1/2d-gaussian-splatting
+description: >
+  <p>Surfel-based "2DGS" (SIGGRAPH 2024) collapses 3D Gaussians to
+  oriented 2D disks for geometrically accurate radiance fields &mdash;
+  heavily adopted across surface-reconstruction pipelines and a
+  cornerstone of the Autonomous Vision group's splatting-geometry line.</p>
+tags:
+  - vision
+  - research
+paper:
+  arxiv: "2403.17888"
+related:
+  - mip-splatting

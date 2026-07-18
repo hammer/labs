@@ -1,0 +1,22 @@
+name: Great Models Think Alike
+slug: great-models-think-alike
+lab: tuebingen
+type: paper
+date: 2025-02-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.04313
+  - label: HuggingFace
+    url: https://huggingface.co/spaces/bethgelab/lm-similarity
+description: >
+  <p>Bethge and Geiping (ICML 2025): the CAPA probabilistic similarity
+  metric shows model mistakes grow more correlated as capability rises
+  &mdash; undermining LLM-as-judge and weak-to-strong oversight, which
+  assume errors are independent. A load-bearing result for AI-oversight
+  research and a pillar of the cluster's evaluation-science line.</p>
+tags:
+  - eval
+  - safety
+  - research
+paper:
+  arxiv: "2502.04313"

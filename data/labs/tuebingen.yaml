@@ -1,0 +1,72 @@
+name: Tübingen
+slug: tuebingen
+url: https://tuebingen.ai
+wikipedia: https://en.wikipedia.org/wiki/University_of_T%C3%BCbingen
+huggingface: https://huggingface.co/bethgelab
+github: https://github.com/bethgelab
+region: germany
+founded: "1477"
+type: academic
+description: >
+  <p>The <strong>Tübingen cluster</strong> groups the University of Tübingen
+  with its co-located institutes on the Cyber Valley AI campus: the
+  <strong><a href="https://tuebingen.ai">Tübingen AI Center</a></strong>
+  (BMBF national AI competence center, ~€20M/yr permanent funding,
+  300+ researchers; co-directed by Bethge, Schölkopf, and Hennig), the
+  <strong><a href="https://institute-tue.ellis.eu">ELLIS Institute
+  Tübingen</a></strong> (Europe's first ELLIS institute, 2023, €100M
+  Hector endowment; scientific director Schölkopf; Hector Fellows include
+  Jonas Geiping and Wieland Brendel), and the <strong>Max Planck Institute
+  for Intelligent Systems</strong> (~400 staff; Empirical Inference,
+  Perceiving Systems, and Social Foundations departments). The same
+  researchers publish under two to four of these labels &mdash; the cluster
+  is the community's own unit of attribution.</p>
+
+  <p>Flagship lines: <a href="/outputs/tuebingen/huginn">Huginn-3.5B</a>
+  (depth-recurrent latent-reasoning LM pretrained from scratch on 800B
+  tokens on ORNL Frontier, with UMD), Geiger's autonomous-vision and
+  Gaussian-splatting stack (<a href="/outputs/tuebingen/navsim">NAVSIM</a>,
+  Mip-Splatting &mdash; CVPR 2024 Best Student Paper, 2DGS), Schölkopf and
+  Macke's simulation-based-inference line (<a
+  href="/outputs/tuebingen/dingo-bns">DINGO-BNS</a>, Nature 2025), and the
+  Hardt/Bethge <strong>benchmark-science</strong> agenda (training-on-the-
+  test-task, LLM-judge limits, model-similarity oversight risks).</p>
+
+  <p>Industry gravity is strong and two-way: Amazon runs a Tübingen lab
+  (Schölkopf part-time), Epic Games absorbed Meshcapade (Black), and 2026
+  brought <strong>KE:SAI</strong> &mdash; a Kyutai &times; ELLIS Tübingen
+  non-profit physical-AI lab with Geiger as CEO &mdash; whose future output
+  is tracked separately.</p>
+people:
+  - name: Bernhard Schölkopf
+    role: Director, MPI-IS Empirical Inference; Scientific Director, ELLIS Institute Tübingen
+    formerly: Amazon Distinguished Scholar (part-time, ongoing)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=DZ-fHPgAAAAJ
+  - name: Andreas Geiger
+    role: Professor, University of Tübingen (Autonomous Vision); CEO, KE:SAI (2026)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=SrVnrPcAAAAJ
+  - name: Matthias Bethge
+    role: Professor, University of Tübingen; Co-Director, Tübingen AI Center
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=0z0fNxUAAAAJ
+  - name: Philipp Hennig
+    role: Chair for Methods of ML, University of Tübingen; Co-Director, Tübingen AI Center
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=UeG5w08AAAAJ
+  - name: Michael Black
+    role: Emeritus Director (from April 2026), MPI-IS Perceiving Systems
+    formerly: Meshcapade (Chief Scientist, until Epic Games acquisition Feb 2026); now VP Digital Human Research, Epic Games
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=6NjbexEAAAAJ
+tags:
+  - academic
+  - research
+  - vision
+  - safety

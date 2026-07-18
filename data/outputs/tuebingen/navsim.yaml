@@ -1,0 +1,25 @@
+name: NAVSIM
+slug: navsim
+lab: tuebingen
+type: eval
+date: 2024-06-21
+sources:
+  - label: Paper v1 (arXiv)
+    url: https://arxiv.org/abs/2406.15349
+  - label: Paper v2 (arXiv)
+    url: https://arxiv.org/abs/2506.04218
+  - label: GitHub
+    url: https://github.com/autonomousvision/navsim
+description: >
+  <p>Andreas Geiger's data-driven, non-reactive autonomous-vehicle
+  simulation benchmark (NeurIPS 2024) &mdash; the basis of the CVPR
+  Autonomous Grand Challenge (143 teams in 2024). NAVSIM v2
+  ("Pseudo-Simulation for Autonomous Driving", CoRL 2025) adds two-stage
+  pseudo-simulation that correlates strongly with closed-loop evaluation
+  and anchored the CVPR 2025 challenge.</p>
+tags:
+  - eval
+  - autonomous-driving
+  - vision
+paper:
+  arxiv: "2406.15349"

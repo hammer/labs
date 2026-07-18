@@ -1,0 +1,21 @@
+name: DINGO-BNS
+slug: dingo-bns
+lab: tuebingen
+type: paper
+date: 2025-03-05
+sources:
+  - label: Nature
+    url: https://www.nature.com/articles/s41586-025-08574-3
+  - label: GitHub (sbi ecosystem)
+    url: https://github.com/dingo-gw/dingo
+description: >
+  <p>"Real-time inference for binary neutron star mergers using machine
+  learning" (Nature 639, 2025): neural posterior estimation from the
+  Schölkopf and Macke groups characterizes neutron-star mergers in about
+  one second instead of an hour, fast enough to work with live LIGO data
+  &mdash; a flagship result for simulation-based inference as a scientific
+  method, built on the group's <a
+  href="https://github.com/sbi-dev/sbi">sbi</a> toolkit line.</p>
+tags:
+  - science
+  - research

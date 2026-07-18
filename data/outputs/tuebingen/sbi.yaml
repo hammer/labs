@@ -1,0 +1,21 @@
+name: sbi
+slug: sbi
+lab: tuebingen
+type: library
+date: 2024-07-15
+sources:
+  - label: GitHub
+    url: https://github.com/sbi-dev/sbi
+description: >
+  <p>The reference simulation-based-inference toolkit from Jakob Macke's
+  lab (~850&#9733;, actively developed): amortized Bayesian inference for
+  scientific simulators, underpinning DINGO and the lab's TabPFN-transfer
+  line (NPE-PFN, PFN summary networks) that repurposes tabular foundation
+  models as pretrained density estimators.</p>
+tags:
+  - science
+  - infrastructure
+library:
+  github: https://github.com/sbi-dev/sbi
+related:
+  - dingo-bns

@@ -1,0 +1,31 @@
+name: Huginn-3.5B
+slug: huginn
+lab: tuebingen
+type: model
+date: 2025-02-07
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.05171
+  - label: GitHub
+    url: https://github.com/seal-rg/recurrent-pretraining
+  - label: HuggingFace
+    url: https://huggingface.co/tomg-group-umd/huginn-0125
+description: >
+  <p>"Scaling up Test-Time Compute with Latent Reasoning: A Recurrent
+  Depth Approach" (NeurIPS 2025): a 3.5B depth-recurrent language model
+  pretrained from scratch on 800B tokens on ORNL Frontier that scales
+  reasoning by unrolling a recurrent block at inference &mdash; latent
+  test-time compute with no chain-of-thought tokens. Joint work by Jonas
+  Geiping (ELLIS Tübingen / MPI-IS / Tübingen AI Center) with Tom
+  Goldstein's UMD group; weights are hosted under UMD's HF org.</p>
+tags:
+  - reasoning
+  - research
+  - open-weight
+model:
+  architecture: dense
+  parameters: "3.5B"
+  training_tokens: "800B"
+paper:
+  arxiv: "2502.05171"
