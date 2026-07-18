@@ -1,0 +1,23 @@
+name: Knowledge Circuits
+slug: knowledge-circuits
+lab: zhejiang
+type: paper
+date: 2024-05-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2405.17969
+  - label: GitHub
+    url: https://github.com/zjunlp/KnowledgeCircuits
+description: >
+  <p>A mechanistic-interpretability method that isolates the
+  computational subgraphs ("knowledge circuits") which store and express
+  factual knowledge inside pretrained transformers (NeurIPS 2024) &mdash;
+  a foundational technique underpinning newer knowledge-editing work.
+  From ZJUNLP (<a href="/people/ningyu-zhang">Ningyu Zhang</a>).</p>
+tags:
+  - interpretability
+  - knowledge
+  - research
+paper:
+  arxiv: "2405.17969"
+  venue: NeurIPS 2024

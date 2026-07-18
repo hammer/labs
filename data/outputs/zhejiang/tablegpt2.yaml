@@ -1,0 +1,32 @@
+name: TableGPT2
+slug: tablegpt2
+lab: zhejiang
+type: model
+date: 2024-11-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.02059
+  - label: GitHub
+    url: https://github.com/tablegpt/tablegpt-agent
+description: >
+  <p>7B/72B multimodal <strong>table-native</strong> LLM with a
+  dedicated table encoder alongside the language backbone, built on
+  Qwen2.5 bases. Extended by TableGPT-R1 (RL for tabular reasoning,
+  Dec 2025) and the tablegpt-agent framework. Authored by Zhejiang
+  University's Institute of Computing Innovation (Junbo Zhao et al.)
+  &mdash; a ZJU-driven model, not an Alibaba release.</p>
+tags:
+  - tabular
+  - open-weight
+  - research
+model:
+  architecture: dense
+  parameters: "72B"
+  base_model: qwen2.5
+  variants:
+    - name: TableGPT2-7B
+      parameters: "7B"
+    - name: TableGPT2-72B
+      parameters: "72B"
+paper:
+  arxiv: "2411.02059"

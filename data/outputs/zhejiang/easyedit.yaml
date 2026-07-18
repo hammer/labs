@@ -1,0 +1,32 @@
+name: EasyEdit
+slug: easyedit
+lab: zhejiang
+type: library
+date: 2024-01-02
+flagship: true
+sources:
+  - label: GitHub
+    url: https://github.com/zjunlp/EasyEdit
+  - label: EasyEdit Paper (arXiv)
+    url: https://arxiv.org/abs/2401.01286
+  - label: EasyEdit2 Paper (arXiv)
+    url: https://arxiv.org/abs/2504.15133
+description: >
+  <p>The de-facto knowledge-editing framework for LLMs (~2.9K&#9733;,
+  ACL 2024): ships the KnowEdit benchmark and implementations of most
+  editing methods (ROME, MEMIT, and successors), making it the standard
+  harness for the field. <strong>EasyEdit2</strong> (2025) extends the
+  line into test-time behavior steering &mdash; safety, sentiment,
+  persona &mdash; via activation steering vectors instead of weight
+  edits. From ZJUNLP, led by
+  <a href="/people/ningyu-zhang">Ningyu Zhang</a> and
+  <a href="/people/huajun-chen">Huajun Chen</a>.</p>
+tags:
+  - knowledge-editing
+  - infrastructure
+  - open-source
+library:
+  github: https://github.com/zjunlp/EasyEdit
+paper:
+  arxiv: "2401.01286"
+  venue: ACL 2024

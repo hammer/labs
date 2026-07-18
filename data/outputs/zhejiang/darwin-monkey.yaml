@@ -1,0 +1,21 @@
+name: Darwin Monkey
+slug: darwin-monkey
+lab: zhejiang
+type: announcement
+date: 2025-09-01
+sources:
+  - label: ZJU News
+    url: https://www.zju.edu.cn/english/2025/0910/c19573a3079424/page.htm
+description: >
+  <p>"Darwin Monkey" (Wukong) &mdash; the world's largest brain-inspired
+  neuromorphic computer: over <strong>2 billion spiking neurons</strong>
+  and <strong>1 trillion synapses</strong> across 960 Darwin-3 chips at
+  ~2000W, reaching macaque-brain scale. The system ran a DeepSeek model
+  for reasoning and generation tasks. Built by
+  <a href="/people/gang-pan">Gang Pan</a>'s State Key Lab of
+  Brain-Machine Intelligence (Zhejiang Lab collaborated on fabrication;
+  ZJU drives the project).</p>
+tags:
+  - neuromorphic
+  - hardware
+  - research

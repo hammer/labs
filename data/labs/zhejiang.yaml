@@ -1,0 +1,76 @@
+name: Zhejiang University
+slug: zhejiang
+url: https://www.zju.edu.cn/english/
+wikipedia: https://en.wikipedia.org/wiki/Zhejiang_University
+huggingface: https://huggingface.co/zjunlp
+github: https://github.com/zjunlp
+region: china
+founded: "1897"
+type: academic
+description: >
+  <p>Zhejiang University's AI output spans an unusually wide institutional
+  map. <a href="/people/huajun-chen">Huajun Chen</a>'s
+  <strong>ZJUNLP</strong> + OpenKG group is the knowledge and
+  AI-for-science anchor: the de-facto knowledge-editing framework
+  <a href="/outputs/zhejiang/easyedit">EasyEdit</a>, the
+  <a href="/outputs/zhejiang/oceangpt">OceanGPT</a> ocean-science LLM,
+  the <a href="/outputs/zhejiang/instructcell">InstructCell</a>
+  single-cell copilot, and the
+  <a href="/outputs/zhejiang/knowledge-circuits">Knowledge Circuits</a> /
+  <a href="/outputs/zhejiang/lightthinker">LightThinker</a>/LightMem
+  interpretability-and-efficiency line, much of it driven by
+  <a href="/people/ningyu-zhang">Ningyu Zhang</a>.</p>
+
+  <p><a href="/people/xiaowei-zhou">Xiaowei Zhou</a>'s
+  <strong>zju3dv</strong> (State Key Lab of CAD&amp;CG) owns the 3D/4D
+  reconstruction line &mdash; <a href="/outputs/zhejiang/4k4d">4K4D</a>,
+  FreeTimeGS, Street Gaussians &mdash; a heavily reused base for
+  volumetric video and driving-scene reconstruction. The State Key Lab
+  of Brain-Machine Intelligence (<a href="/people/gang-pan">Gang
+  Pan</a>) builds the Darwin neuromorphic chip line, culminating in the
+  <a href="/outputs/zhejiang/darwin-monkey">Darwin Monkey</a>
+  macaque-scale neuromorphic computer; the Institute of Computing
+  Innovation ships the table-native
+  <a href="/outputs/zhejiang/tablegpt2">TableGPT2</a>; and
+  <a href="/people/chunhua-shen">Chunhua Shen</a> anchors vision
+  foundation models (detection, segmentation, depth/pose).</p>
+
+  <p>Attribution notes: DeepSeek recruits heavily from ZJU &mdash;
+  founder Liang Wenfeng holds BEng+MEng degrees from Zhejiang &mdash;
+  but DeepSeek models are <em>not</em> ZJU artifacts; only ZJU's
+  DeepSeek-R1-Safe safety post-training (with Huawei, end-to-end on
+  Ascend chips) is university work. Portrait-animation models
+  occasionally co-listing ZJU authors (EchoMimic, EMO) are
+  Alibaba/Ant-led and excluded here.</p>
+people:
+  - name: Huajun Chen
+    role: Professor, College of Computer Science; leads ZJUNLP + OpenKG
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=T6om-m4AAAAJ
+  - name: Ningyu Zhang
+    role: Associate Professor, ZJUNLP; knowledge-editing pioneer (EasyEdit, Knowledge Circuits)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=xQDOPvsAAAAJ
+  - name: Xiaowei Zhou
+    role: Professor, State Key Lab of CAD&CG; head of zju3dv
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=E1vVpg4AAAAJ
+  - name: Gang Pan
+    role: Professor and Director, State Key Lab of Brain-Machine Intelligence; Darwin chip line
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=NWqnXNEAAAAJ
+  - name: Chunhua Shen
+    role: Chair Professor; vision foundation models (detection, segmentation, depth/pose)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Ljk2BvIAAAAJ
+tags:
+  - academic
+  - knowledge
+  - scientific-fm
+  - 3d
+  - research

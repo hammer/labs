@@ -1,0 +1,29 @@
+name: OceanGPT
+slug: oceangpt
+lab: zhejiang
+type: model
+date: 2024-05-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2310.02031
+  - label: GitHub
+    url: https://github.com/zjunlp/OceanGPT
+  - label: HuggingFace
+    url: https://huggingface.co/zjunlp
+description: >
+  <p>OceanGPT (沧渊) &mdash; the first ocean-science LLM (ACL 2024),
+  built with the <strong>DoInstruct</strong> multi-agent instruction
+  pipeline and evaluated on the companion OceanBench. Extended through
+  2025&ndash;2026 with OceanGPT-o (multimodal: sonar, science imagery,
+  marine biology), OceanGPT-coder, and 4B / 30B-A3B checkpoints trained
+  on the OceanPile corpus. A scientific foundation model with real
+  domain transfer, from ZJUNLP
+  (<a href="/people/huajun-chen">Huajun Chen</a>,
+  <a href="/people/ningyu-zhang">Ningyu Zhang</a>).</p>
+tags:
+  - scientific-fm
+  - ocean
+  - open-weight
+paper:
+  arxiv: "2310.02031"
+  venue: ACL 2024

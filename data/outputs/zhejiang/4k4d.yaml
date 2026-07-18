@@ -1,0 +1,28 @@
+name: 4K4D
+slug: 4k4d
+lab: zhejiang
+type: model
+date: 2024-06-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2310.11448
+  - label: GitHub
+    url: https://github.com/zju3dv/4K4D
+  - label: FreeTimeGS Paper (arXiv)
+    url: https://arxiv.org/abs/2506.05348
+description: >
+  <p>Real-time 4D view synthesis at 4K resolution (CVPR 2024) &mdash;
+  the widely-cited seed (~1.8K&#9733;) of the zju3dv volumetric-video
+  line from <a href="/people/xiaowei-zhou">Xiaowei Zhou</a>'s group at
+  the State Key Lab of CAD&amp;CG. Successor
+  <strong>FreeTimeGS</strong> (CVPR 2025) places free 4D Gaussian
+  primitives at any time and place for real-time dynamic-scene
+  reconstruction; siblings Street Gaussians and StreetCrafter carry the
+  approach into driving-scene reconstruction.</p>
+tags:
+  - 3d
+  - reconstruction
+  - open-source
+paper:
+  arxiv: "2310.11448"
+  venue: CVPR 2024

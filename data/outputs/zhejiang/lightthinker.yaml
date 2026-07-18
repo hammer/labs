@@ -1,0 +1,26 @@
+name: LightThinker
+slug: lightthinker
+lab: zhejiang
+type: paper
+date: 2025-02-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.15589
+  - label: GitHub
+    url: https://github.com/zjunlp/LightThinker
+  - label: LightMem Paper (arXiv)
+    url: https://arxiv.org/abs/2510.18866
+description: >
+  <p>Compresses chain-of-thought into learned <strong>gist tokens</strong>
+  to cut reasoning cost (EMNLP 2025), with 2026 LightThinker-Plus
+  checkpoints (Qwen3-30B-A3B, Llama) released on HuggingFace. Sibling
+  <strong>LightMem</strong> (ICLR 2026, ~1K&#9733;) brings lightweight
+  memory-augmented generation to LLM agents. From ZJUNLP
+  (<a href="/people/ningyu-zhang">Ningyu Zhang</a>).</p>
+tags:
+  - reasoning
+  - efficiency
+  - research
+paper:
+  arxiv: "2502.15589"
+  venue: EMNLP 2025

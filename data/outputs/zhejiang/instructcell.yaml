@@ -1,0 +1,24 @@
+name: InstructCell
+slug: instructcell
+lab: zhejiang
+type: model
+date: 2025-01-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.08187
+  - label: GitHub
+    url: https://github.com/zjunlp/InstructCell
+description: >
+  <p>A multimodal single-cell AI "copilot" that pairs natural language
+  with scRNA-seq data for cell-type annotation, conditional cell
+  generation, and drug-response prediction &mdash; a scientific
+  foundation model with cross-task transfer across single-cell
+  analyses. From ZJUNLP
+  (<a href="/people/ningyu-zhang">Ningyu Zhang</a>,
+  <a href="/people/huajun-chen">Huajun Chen</a>).</p>
+tags:
+  - scientific-fm
+  - biology
+  - open-weight
+paper:
+  arxiv: "2501.08187"
