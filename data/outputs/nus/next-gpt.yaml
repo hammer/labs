@@ -1,0 +1,35 @@
+name: NExT-GPT
+slug: next-gpt
+lab: nus
+type: model
+date: 2023-09-11
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2309.05519
+  - label: GitHub
+    url: https://github.com/NExT-GPT/NExT-GPT
+  - label: Website
+    url: https://next-gpt.github.io
+description: >
+  <p><strong>Any-to-any multimodal LLM</strong> (legacy anchor, 2023): one
+  of the first open systems accepting and producing arbitrary combinations
+  of text, image, video, and audio, by connecting an LLM core with
+  multimodal adaptors and diffusion decoders &mdash; trained with only ~1%
+  of parameters updated via modality-switching instruction tuning
+  (3.6K&#9733;).</p>
+
+  <p>Pre-dates this index's main window but is the load-bearing precedent
+  for the NExT++ lab's multimodal-generalist agenda
+  (<a href="/people/tat-seng-chua">Tat-Seng Chua</a>, Hao Fei) that leads
+  to <a href="/outputs/nus/general-bench">General-Level &amp;
+  General-Bench</a> and Vitron. Built on open LLM/diffusion components,
+  not a from-scratch pretrain.</p>
+tags:
+  - multimodal
+  - generation
+  - open-weight
+  - foundational
+paper:
+  arxiv: "2309.05519"
+related:
+  - general-bench

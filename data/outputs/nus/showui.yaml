@@ -1,0 +1,38 @@
+name: ShowUI
+slug: showui
+lab: nus
+type: model
+date: 2024-11-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.17465
+  - label: GitHub
+    url: https://github.com/showlab/ShowUI
+  - label: HuggingFace
+    url: https://huggingface.co/showlab/ShowUI-2B
+description: >
+  <p><strong>End-to-end vision-language-action model for GUI agents</strong>
+  (CVPR 2025): a 2B model (built on Qwen2-VL-2B-Instruct) with
+  UI-guided visual-token selection to cut redundant screenshot tokens and
+  interleaved vision-language-action streaming for navigation &mdash;
+  ShowUI-2B is ShowLab's most-downloaded HuggingFace model and a common
+  base for open computer-use experiments (1.9K&#9733;).</p>
+
+  <p>Joint ShowLab / Microsoft work, NUS-led. The line continues with
+  <strong>ShowUI-&pi;</strong> (CVPR 2026), a flow-based generative policy
+  for continuous GUI manipulation, and ShowUI-Aloha (2026), a human-taught
+  desktop computer-use agent.</p>
+tags:
+  - agentic
+  - multimodal
+  - open-weight
+model:
+  base_model: qwen2-vl
+  variants:
+    - name: ShowUI-2B
+      notes: built on Qwen2-VL-2B-Instruct
+paper:
+  arxiv: "2411.17465"
+  venue: CVPR 2025
+related:
+  - worldgui

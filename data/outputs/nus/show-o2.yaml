@@ -1,0 +1,42 @@
+name: Show-o2
+slug: show-o2
+lab: nus
+type: model
+date: 2025-06-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.15564
+  - label: GitHub
+    url: https://github.com/showlab/Show-o
+  - label: HuggingFace
+    url: https://huggingface.co/showlab/show-o2-7B
+description: >
+  <p><strong>Improved native unified multimodal models</strong> (NeurIPS
+  2025): autoregressive modeling for text plus flow matching for visual
+  generation, operating on a 3D-causal-VAE latent space with dual-path
+  spatial(-temporal) fusion &mdash; extending unified understanding and
+  generation to both images and video. Released as 1.5B and 7B
+  checkpoints (with video-understanding variants) under ShowLab's
+  HuggingFace org.</p>
+
+  <p>Joint ShowLab (<a href="/people/mike-zheng-shou">Mike Zheng
+  Shou</a>) / <a href="/labs/bytedance-seed">ByteDance</a> work, NUS-led
+  &mdash; the scaled successor of
+  <a href="/outputs/nus/show-o">Show-o</a>.</p>
+tags:
+  - multimodal
+  - generation
+  - video
+  - open-weight
+model:
+  parameters: "7B"
+  variants:
+    - name: show-o2-1.5B
+      parameters: 1.5B
+    - name: show-o2-7B
+      parameters: 7B
+paper:
+  arxiv: "2506.15564"
+  venue: NeurIPS 2025
+related:
+  - show-o

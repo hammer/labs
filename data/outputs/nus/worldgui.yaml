@@ -1,0 +1,33 @@
+name: WorldGUI & GUI-Thinker
+slug: worldgui
+lab: nus
+type: eval
+date: 2025-02-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.08047
+  - label: GitHub
+    url: https://github.com/showlab/WorldGUI
+description: >
+  <p><strong>Dynamic GUI benchmark testing agents from any starting
+  point</strong>: unlike static-screenshot suites, WorldGUI initializes
+  each desktop task with varied real initial states to probe how agents
+  handle post-action dynamics and unexpected UI conditions, across
+  widely-used desktop and web applications. Ships with
+  <strong>GUI-Thinker</strong>, a self-reflective computer-use agent
+  framework that critiques and revises its own actions before and after
+  execution.</p>
+
+  <p>From <a href="/people/mike-zheng-shou">Mike Zheng Shou</a>'s ShowLab
+  &mdash; the evaluation companion to the
+  <a href="/outputs/nus/showui">ShowUI</a> GUI-agent model line.</p>
+tags:
+  - benchmark
+  - evaluation
+  - agentic
+eval:
+  scoring_method: execution-based
+paper:
+  arxiv: "2502.08047"
+related:
+  - showui

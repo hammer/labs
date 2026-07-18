@@ -1,0 +1,69 @@
+name: NUS
+slug: nus
+url: https://nus.edu.sg
+wikipedia: https://en.wikipedia.org/wiki/National_University_of_Singapore
+huggingface: https://huggingface.co/showlab
+github: https://github.com/showlab
+region: singapore
+founded: "1905"
+type: academic
+description: >
+  <p>The <strong>National University of Singapore</strong> (est. 1905) is
+  anchored in this index by <strong>ShowLab</strong>, Mike Zheng Shou's
+  group and NUS's highest-output frontier-multimodal lab: the
+  <a href="/outputs/nus/show-o">Show-o</a> /
+  <a href="/outputs/nus/show-o2">Show-o2</a> native unified multimodal
+  models (ICLR 2025 / NeurIPS 2025, with ByteDance), the
+  <a href="/outputs/nus/showui">ShowUI</a> GUI-agent family (CVPR 2025,
+  with Microsoft; extended by ShowUI-&pi; at CVPR 2026), the
+  <a href="/outputs/nus/livecc">LiveCC</a> streaming video LLM, and the
+  <a href="/outputs/nus/paper2video">Paper2Video</a> /
+  Code2Video agentic video-generation frameworks.</p>
+
+  <p>Tat-Seng Chua's <strong>NExT++</strong> lab drives the
+  multimodal-generalist agenda &mdash;
+  <a href="/outputs/nus/next-gpt">NExT-GPT</a> (the 2023 any-to-any
+  multimodal LLM) and <a href="/outputs/nus/general-bench">General-Level
+  &amp; General-Bench</a> (ICML 2025 Oral) &mdash; while Bryan Hooi's group
+  spans LLM calibration and safety (ConfTuner, NeurIPS 2025), agent
+  continual learning (Just-In-Time RL, ICML 2026 Spotlight), MLR-Bench,
+  and the UniGraph/UniGraph2 graph foundation models.</p>
+
+  <p>Attribution boundaries: <strong>SEA-LION</strong> belongs to AI
+  Singapore, a national programme hosted at NUS rather than an NUS faculty
+  lab (placement tracked separately); Yang You's Colossal-AI and Open-Sora
+  ship under his company HPC-AI Tech, not NUS; and Sea AI Lab is Sea Ltd,
+  unrelated to the university despite the name.</p>
+people:
+  - name: Mike Zheng Shou
+    role: Associate Professor; Director, ShowLab (Show-o, ShowUI, LiveCC)
+    formerly: Research Scientist, Facebook AI
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=h1-3lSoAAAAJ
+  - name: Yang You
+    role: Presidential Young Professor; distributed/large-batch training (LAMB); founder/CEO, HPC-AI Tech (Colossal-AI ships there, not NUS)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=jF4dPZwAAAAJ
+  - name: Tat-Seng Chua
+    role: KITHCT Chair Professor; NExT++ lab (NExT-GPT, General-Bench, Vitron)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=3kz6GDEAAAAJ
+  - name: Bryan Hooi
+    role: Assistant Professor, School of Computing & IDS; LLM safety/reasoning and graph foundation models
+    formerly: PhD, CMU
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=ErEL3bgAAAAJ
+  - name: Min-Yen Kan
+    role: Associate Professor; WING lab (NLP evaluation, scholarly-document processing)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=aNVcd3EAAAAJ
+tags:
+  - academic
+  - research
+  - multimodal
+  - agentic

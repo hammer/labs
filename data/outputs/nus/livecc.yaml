@@ -1,0 +1,32 @@
+name: LiveCC
+slug: livecc
+lab: nus
+type: model
+date: 2025-04-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.16030
+  - label: GitHub
+    url: https://github.com/showlab/livecc
+  - label: HuggingFace
+    url: https://huggingface.co/chenjoya/LiveCC-7B-Instruct
+description: >
+  <p><strong>Streaming video LLM trained on ASR transcripts at
+  scale</strong> (CVPR 2025): a novel streaming training approach densely
+  interleaves ASR words with video frames, teaching temporally aligned,
+  real-time video commentary. Ships the Live-CC-5M pretraining and
+  Live-WhisperX-526K SFT datasets plus 7B models &mdash; the 7B set SOTA
+  for real-time commentary among open models at release and stayed
+  competitive on standard video QA.</p>
+
+  <p>From <a href="/people/mike-zheng-shou">Mike Zheng Shou</a>'s ShowLab.
+  Models are built on Qwen2-VL backbones, not from-scratch pretrains.</p>
+tags:
+  - video
+  - multimodal
+  - open-weight
+model:
+  base_model: qwen2-vl
+paper:
+  arxiv: "2504.16030"
+  venue: CVPR 2025

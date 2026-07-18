@@ -1,0 +1,37 @@
+name: Show-o
+slug: show-o
+lab: nus
+type: model
+date: 2024-08-22
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2408.12528
+  - label: GitHub
+    url: https://github.com/showlab/Show-o
+  - label: HuggingFace
+    url: https://huggingface.co/showlab/show-o
+description: >
+  <p><strong>One single transformer unifying multimodal understanding and
+  generation</strong> (ICLR 2025): Show-o mixes autoregressive text
+  modeling with discrete-diffusion image generation in one model &mdash;
+  one of the first credible academic demonstrations of the native unified
+  multimodal architecture that frontier labs later pursued. 2.0K&#9733;,
+  first in the Show-o series.</p>
+
+  <p>From <a href="/people/mike-zheng-shou">Mike Zheng Shou</a>'s ShowLab
+  at NUS, joint with <a href="/labs/bytedance-seed">ByteDance</a>,
+  NUS-led. The initial model builds on a small pretrained LM backbone
+  (Phi-1.5 class) with a unified discrete tokenizer; the successor
+  <a href="/outputs/nus/show-o2">Show-o2</a> scales the recipe
+  natively.</p>
+tags:
+  - multimodal
+  - generation
+  - open-weight
+  - foundational
+paper:
+  arxiv: "2408.12528"
+  venue: ICLR 2025
+related:
+  - show-o2

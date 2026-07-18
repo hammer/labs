@@ -1,0 +1,33 @@
+name: Paper2Video
+slug: paper2video
+lab: nus
+type: library
+date: 2025-10-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.05096
+  - label: GitHub
+    url: https://github.com/showlab/Paper2Video
+description: >
+  <p><strong>PaperTalker</strong>: a multi-agent framework that generates
+  complete academic presentation videos from a paper &mdash; slides,
+  subtitles, cursor grounding, TTS speech, and a talking head &mdash; with
+  tree-search visual refinement for layout, plus a benchmark of 101 papers
+  paired with author-made presentations and tailored metrics (Meta
+  Similarity, PresentArena, PresentQuiz, IP Memory). 2.3K&#9733; within
+  months.</p>
+
+  <p>From <a href="/people/mike-zheng-shou">Mike Zheng Shou</a>'s ShowLab;
+  sibling of <strong>Code2Video</strong> (ICML 2026, 1.9K&#9733;), the
+  lab's code-centric agentic paradigm for educational video
+  generation.</p>
+tags:
+  - agentic
+  - generation
+  - video
+  - open-source
+library:
+  github: https://github.com/showlab/Paper2Video
+  language: Python
+paper:
+  arxiv: "2510.05096"

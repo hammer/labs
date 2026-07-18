@@ -1,0 +1,36 @@
+name: General-Level & General-Bench
+slug: general-bench
+lab: nus
+type: eval
+date: 2025-05-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.04620
+  - label: HuggingFace
+    url: https://huggingface.co/General-Level
+description: >
+  <p><strong>A capability taxonomy and mega-benchmark for multimodal
+  generalists</strong> (ICML 2025 Oral): General-Level defines a 5-level
+  scale for MLLM generality &mdash; scoring whether understanding and
+  generation, across modalities, reinforce each other (with "synergy" as
+  the core criterion) &mdash; and General-Bench operationalizes it with
+  700+ tasks across comprehension, generation, and modality-spanning
+  skills, one of the broadest multimodal eval suites assembled.</p>
+
+  <p>Led by NUS NExT++ (Hao Fei,
+  <a href="/people/tat-seng-chua">Tat-Seng Chua</a>) with a large
+  multi-institution author list &mdash; the evaluation counterpart of the
+  lab's <a href="/outputs/nus/next-gpt">NExT-GPT</a>/Vitron
+  generalist-model agenda.</p>
+tags:
+  - benchmark
+  - evaluation
+  - multimodal
+eval:
+  num_tasks: 700
+paper:
+  arxiv: "2505.04620"
+  venue: ICML 2025
+  presentation: oral
+related:
+  - next-gpt
