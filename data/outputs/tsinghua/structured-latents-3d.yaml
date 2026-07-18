@@ -1,0 +1,19 @@
+name: Native Structured Latents for 3D Generation
+slug: structured-latents-3d
+lab: tsinghua
+type: paper
+date: 2025-12-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.14692
+description: >
+  <p>CVPR 2026 <strong>Best Student Paper</strong> (Xiang, Zhao, with
+  Microsoft Research and USTC): compact structured latents (SLAT) for
+  native 3D generation, the successor to the TRELLIS line &mdash; the top
+  student honor at the year's largest vision venue.</p>
+tags:
+  - vision
+  - image-generation
+  - research
+paper:
+  arxiv: "2512.14692"

@@ -1,0 +1,21 @@
+name: OPD (Rethinking On-Policy Distillation)
+slug: opd
+lab: tsinghua
+type: paper
+date: 2026-04-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.13016
+  - label: GitHub
+    url: https://github.com/thunlp/OPD
+description: >
+  <p>THUNLP's on-policy distillation recipe (~815&#9733; in three months;
+  adopted by MiniCPM5-1B): rethinks how a student learns from a teacher
+  on its own rollouts, improving small-model distillation. Academic
+  THUNLP work &mdash; filed under the university, distinct from the
+  OpenBMB-branded MiniCPM line it feeds.</p>
+tags:
+  - post-training
+  - research
+paper:
+  arxiv: "2604.13016"
