@@ -6,7 +6,7 @@
 
 ## What This Is
 
-Lab Index tracks **103 AI labs and universities** across **15 regions**, their **1,400+ research outputs** (models, papers, evals, datasets, libraries), and **440+ key researchers** — from trillion-parameter frontier models to foundational technique papers that changed how everyone trains. The 40 university entries (added July 2026) group each university with its co-located research institutes and follow strict attribution rules against the industrial labs.
+Lab Index tracks **103 AI labs and universities** across **15 regions**, their **1,400+ research outputs** (models, papers, evals, datasets, libraries), and **440+ key researchers** — from trillion-parameter frontier models to foundational technique papers that changed how everyone trains. The 41 university entries (added July 2026) group each university with its co-located research institutes and follow strict attribution rules against the industrial labs.
 
 Every lab has a profile with description, key people, news, and a chronological output list. Every output has structured metadata appropriate to its type: model specs and benchmark scores, paper venues and linked authors, eval leaderboards, dataset sizes. Every person has a page showing their career trajectory across labs, profile links, and related work.
 
