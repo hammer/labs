@@ -1,0 +1,25 @@
+name: Binoculars
+slug: binoculars
+lab: umd
+type: library
+date: 2024-01-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2401.12070
+  - label: GitHub
+    url: https://github.com/ahans30/Binoculars
+description: >
+  <p>Zero-shot LLM-text detection (ICML 2024) by contrasting the
+  perplexity of two related models (an "observer" and a "performer"):
+  over 90% detection of machine text at a 0.01% false-positive rate with
+  no training data from the target model. The standard open detector
+  baseline, from Tom Goldstein's group with Abhimanyu Hans &mdash;
+  pre-window preprint whose publication and adoption fall in window.</p>
+tags:
+  - safety
+  - evaluation
+  - open-source
+library:
+  github: https://github.com/ahans30/Binoculars
+paper:
+  arxiv: "2401.12070"

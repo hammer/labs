@@ -1,0 +1,20 @@
+name: GenARM
+slug: genarm
+lab: umd
+type: paper
+date: 2024-10-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.08193
+description: >
+  <p>Test-time alignment via an <strong>autoregressive reward model</strong>
+  (ICLR 2025): token-level rewards guide frozen-LLM decoding without any
+  policy retraining, supporting weak-to-strong guidance (a small reward
+  model steering a much larger base) and multi-objective trade-offs at
+  inference time. From Furong Huang's group.</p>
+tags:
+  - training
+  - safety
+  - research
+paper:
+  arxiv: "2410.08193"

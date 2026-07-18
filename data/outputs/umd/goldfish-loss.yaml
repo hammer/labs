@@ -1,0 +1,25 @@
+name: Goldfish Loss
+slug: goldfish-loss
+lab: umd
+type: paper
+date: 2024-06-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.10209
+  - label: GitHub
+    url: https://github.com/ahans30/goldfish-loss
+description: >
+  <p>"Be Like a Goldfish, Don't Memorize!" (NeurIPS 2024): a
+  memorization-mitigating pretraining loss that pseudo-randomly drops a
+  subset of tokens from the loss computation, preventing verbatim
+  reproduction of training sequences with negligible impact on downstream
+  benchmarks. Edge-of-window work from Tom Goldstein's group on
+  copyright- and privacy-safer LLM pretraining.</p>
+tags:
+  - pretraining
+  - safety
+  - research
+paper:
+  arxiv: "2406.10209"
+related:
+  - binoculars

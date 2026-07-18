@@ -1,0 +1,24 @@
+name: DynaGuard
+slug: dynaguard
+lab: umd
+type: model
+date: 2025-09-02
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.02563
+  - label: HuggingFace
+    url: https://huggingface.co/tomg-group-umd/DynaGuard-8B
+description: >
+  <p>Dynamic guardian models (1.7B/4B/8B) that enforce
+  <strong>user-defined natural-language policies</strong> instead of a
+  fixed harm taxonomy, with optional chain-of-thought rationales and a
+  fast no-rationale mode; beats GPT-4o-mini on policy-compliance
+  benchmarks and ships with the DynaBench training/eval set. Tom
+  Goldstein's group jointly with Capital One &mdash; note the industry
+  co-attribution.</p>
+tags:
+  - safety
+  - open-weight
+  - evaluation
+paper:
+  arxiv: "2509.02563"

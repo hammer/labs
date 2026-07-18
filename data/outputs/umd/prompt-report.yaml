@@ -1,0 +1,21 @@
+name: The Prompt Report
+slug: prompt-report
+lab: umd
+type: paper
+date: 2024-06-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.06608
+description: >
+  <p>A systematic survey of prompt engineering: a taxonomy of
+  <strong>58 text prompting techniques</strong> (plus multimodal
+  extensions), standardized vocabulary, and a meta-analysis of what
+  actually works &mdash; the massively read practitioner reference for
+  prompting. UMD-led (Sander Schulhoff with Philip Resnik) with a large
+  community author list spanning Learn Prompting, OpenAI, and others
+  &mdash; note the community co-authorship.</p>
+tags:
+  - research
+  - nlp
+paper:
+  arxiv: "2406.06608"

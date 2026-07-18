@@ -1,0 +1,22 @@
+name: "MCQA critique: A) Forced B) Flawed C) Fixable D) All of the Above"
+slug: mcqa-evaluation
+lab: umd
+type: paper
+date: 2025-02-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.14127
+description: >
+  <p>"Which of These Best Describes Multiple Choice Evaluation with
+  LLMs?" (ACL 2025): Balepur, Rudinger, and Boyd-Graber import
+  educational-testing theory to argue the MCQA format itself &mdash;
+  forced choice, answer leakage, no generation &mdash; systematically
+  mismeasures LLM ability, and propose constructed-response and
+  rubric-based fixes. A seed paper of the benchmark-science /
+  philosophy-of-evaluation thread.</p>
+tags:
+  - evaluation
+  - benchmark
+  - research
+paper:
+  arxiv: "2502.14127"

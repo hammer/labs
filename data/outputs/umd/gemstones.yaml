@@ -1,0 +1,32 @@
+name: Gemstones
+slug: gemstones
+lab: umd
+type: model
+date: 2025-02-07
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.06857
+  - label: HuggingFace
+    url: https://huggingface.co/tomg-group-umd
+description: >
+  <p>"A Model Suite for Multi-Faceted Scaling Laws" (NeurIPS 2025):
+  <strong>4,000+ open checkpoints</strong> from 22 transformers spanning
+  50M&ndash;2B parameters, pretrained from scratch across varied
+  width/depth ratios, learning rates, and cooldown schedules &mdash; the
+  most comprehensive open suite for studying how scaling-law fits depend
+  on design choices, showing prescriptions shift markedly with
+  architecture and hyperparameters. Tom Goldstein's group
+  (tomg-group-umd); UMD's own flagship suite alongside the multi-lab
+  Huginn, which is tracked under T&uuml;bingen.</p>
+tags:
+  - scaling
+  - pretraining
+  - open-weight
+model:
+  architecture: dense
+  parameters: "2B"
+paper:
+  arxiv: "2502.06857"
+related:
+  - huginn

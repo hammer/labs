@@ -1,0 +1,66 @@
+name: University of Maryland
+slug: umd
+url: https://www.cs.umd.edu
+wikipedia: https://en.wikipedia.org/wiki/University_of_Maryland,_College_Park
+huggingface: https://huggingface.co/tomg-group-umd
+github: https://github.com/tomg-group-umd
+region: usa
+founded: "1856"
+type: academic
+description: >
+  <p>The University of Maryland's foundation-model output is dominated by
+  Tom Goldstein's group (tomg-group-umd), director of the UMD Center for
+  Machine Learning: the depth-recurrent latent-reasoning model
+  <a href="/outputs/tuebingen/huginn">Huginn-3.5B</a> (co-led with Jonas
+  Geiping's ELLIS/MPI T&uuml;bingen group and LLNL &mdash; a genuinely
+  multi-lab pretrain), the
+  <a href="/outputs/umd/gemstones">Gemstones</a> suite of 4,000+ open
+  checkpoints for multi-faceted scaling-law research, the
+  <a href="/outputs/umd/dynaguard">DynaGuard</a> dynamic guardian models
+  (with Capital One), the standard open LLM-text detector
+  <a href="/outputs/umd/binoculars">Binoculars</a>, and the
+  memorization-mitigating <a href="/outputs/umd/goldfish-loss">goldfish
+  loss</a>.</p>
+
+  <p>Beyond Goldstein: Furong Huang works on trustworthy agents and
+  test-time alignment (<a href="/outputs/umd/genarm">GenARM</a>, ICLR
+  2025); Soheil Feizi's line probes the robustness limits of AI-text
+  detection and watermarking; Jordan Boyd-Graber's QA group seeded the
+  benchmark-science critique of
+  <a href="/outputs/umd/mcqa-evaluation">multiple-choice evaluation</a>
+  (ACL 2025); and Schulhoff's UMD-led
+  <a href="/outputs/umd/prompt-report">Prompt Report</a> became the
+  standard practitioner taxonomy of prompting. Hal Daum&eacute; III
+  directs the NSF TRAILS institute on trustworthy AI.</p>
+people:
+  - name: Tom Goldstein
+    role: Volpi-Cupal Professor; Director, UMD Center for Machine Learning — Huginn, Gemstones, DynaGuard, Binoculars
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=KmSuVtgAAAAJ
+  - name: Furong Huang
+    role: Associate Professor — trustworthy agents / RL, test-time alignment (GenARM)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=13yyuCcAAAAJ
+  - name: Soheil Feizi
+    role: Professor — robustness of AI-text detection, watermarking, attribution
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=lptAmrMAAAAJ
+  - name: Jordan Boyd-Graber
+    role: Professor (CS/UMIACS/iSchool) — QA and benchmark-critique line
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=BT4XTP4AAAAJ
+  - name: Hal Daumé III
+    role: Professor; Director, NSF TRAILS Institute
+    formerly: Microsoft Research NYC (long affiliation; Scholar now lists UMD only)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=PbEw81gAAAAJ
+tags:
+  - academic
+  - research
+  - safety
+  - scaling
