@@ -1,0 +1,21 @@
+name: FlowEdit
+slug: flowedit
+lab: technion
+type: paper
+date: 2024-12-11
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.08629
+  - label: GitHub
+    url: https://github.com/fallenshock/FlowEdit
+description: >
+  <p>Michaeli-group image editing (ICCV 2025 Oral): inversion-free,
+  model-agnostic text-based editing for flow models (FLUX, SD3), building
+  an optimal editing path directly between source and target
+  distributions. Widely reimplemented, including in ComfyUI &mdash; part
+  of the lab's Edit-Friendly DDPM editing line.</p>
+tags:
+  - image-generation
+  - research
+paper:
+  arxiv: "2412.08629"
