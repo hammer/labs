@@ -1,0 +1,33 @@
+name: LAPA
+slug: lapa
+lab: kaist
+type: model
+date: 2024-10-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.11758
+  - label: GitHub
+    url: https://github.com/LatentActionPretraining/LAPA
+  - label: HuggingFace (LAPA-7B-openx)
+    url: https://huggingface.co/latent-action-pretraining/LAPA-7B-openx
+description: >
+  <p>Latent Action Pretraining from Videos (ICLR 2025): the first
+  unsupervised method for pretraining vision-language-action models
+  from <strong>action-less video</strong> &mdash; a VQ-VAE learns
+  discrete latent actions between frames, a VLM (7B backbone) is
+  pretrained to predict them, then a small robot dataset grounds them
+  in real actions, with ~30x better pretraining efficiency than
+  conventional VLA pretraining. Won the CoRL 2024 LangRob workshop
+  Best Paper, and the latent-action idea was adopted in NVIDIA
+  <a href="/outputs/nvidia/gr00t">GR00T N1</a>. KAIST LK Lab lead
+  (<a href="/people/minjoon-seo">Minjoon Seo</a>) with Microsoft
+  Research, NVIDIA, and UW.</p>
+tags:
+  - robotics
+  - multimodal
+  - open-weight
+paper:
+  arxiv: "2410.11758"
+  venue: ICLR 2025
+related:
+  - gr00t

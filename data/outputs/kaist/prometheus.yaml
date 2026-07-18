@@ -1,0 +1,37 @@
+name: Prometheus / Prometheus 2
+slug: prometheus
+lab: kaist
+type: model
+date: 2024-05-02
+flagship: true
+sources:
+  - label: Prometheus 2 Paper (arXiv)
+    url: https://arxiv.org/abs/2405.01535
+  - label: Prometheus Paper (arXiv)
+    url: https://arxiv.org/abs/2310.08491
+  - label: HuggingFace (prometheus-7b-v2.0)
+    url: https://huggingface.co/prometheus-eval/prometheus-7b-v2.0
+  - label: GitHub
+    url: https://github.com/prometheus-eval/prometheus-eval
+description: >
+  <p>The LK Lab's (<a href="/people/minjoon-seo">Minjoon Seo</a>) open
+  <strong>evaluator LMs</strong>. Prometheus (2023, Llama-2-Chat-13B
+  fine-tune on the Feedback Collection) was the first open judge to
+  approach GPT-4-level fine-grained evaluation; Prometheus 2 (2024,
+  built on <a href="/outputs/mistral/mistral-7b">Mistral-7B</a> with a
+  Mixtral-8x7B variant via weight merging) unified direct assessment
+  and pairwise ranking and remains the most-used open evaluator model
+  (~26K monthly downloads of the 7B in mid-2026). Anchors the
+  prometheus-eval org's live 2026 evaluator-agent push (K-BrowseComp
+  Korean deep-research benchmark, peer-review benches).</p>
+tags:
+  - evaluation
+  - open-weight
+model:
+  base_model: mistral-7b
+  license: Apache 2.0
+paper:
+  arxiv: "2405.01535"
+related:
+  - flask
+  - biggen-bench

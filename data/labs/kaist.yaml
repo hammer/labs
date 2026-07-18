@@ -1,0 +1,79 @@
+name: KAIST
+slug: kaist
+url: https://www.kaist.ac.kr/en/
+wikipedia: https://en.wikipedia.org/wiki/KAIST
+huggingface: https://huggingface.co/kaist-ai
+github: https://github.com/prometheus-eval
+region: korea
+founded: "1971"
+type: academic
+description: >
+  <p><strong>KAIST</strong> is Korea's flagship science and technology
+  university and its deepest academic AI bench, centered on the
+  <strong>Kim Jaechul Graduate School of AI</strong> (founded 2019) and
+  the School of Computing: Minjoon Seo's LK Lab, Sung Ju Hwang's MLAI
+  Lab, Jaegul Choo's DAVIAN Lab, Edward Choi's medical-AI group, and
+  Alice Oh's MARS AI Research Center. The kaist-ai HuggingFace org is
+  largely dormant &mdash; the flagship weights ship under the
+  <a href="https://huggingface.co/prometheus-eval">prometheus-eval</a>
+  org.</p>
+
+  <p>The signature line is <strong>evaluator LMs</strong>:
+  <a href="/outputs/kaist/flask">FLASK</a>'s skill-level evaluation led
+  to <a href="/outputs/kaist/prometheus">Prometheus and Prometheus
+  2</a> &mdash; still the most-used open evaluator models &mdash; and
+  culminated in <a href="/outputs/kaist/biggen-bench">BiGGen Bench</a>
+  (with <a href="/labs/lg-ai-research">LG AI Research</a>), one of
+  NAACL 2025's Best Papers, with a live 2026 evaluator-agent push
+  (K-BrowseComp, peer-review benches) continuing under prometheus-eval.
+  Transfer stories run deep: <a href="/outputs/kaist/lapa">LAPA</a>'s
+  latent-action pretraining was adopted in NVIDIA GR00T N1, and
+  <a href="/outputs/kaist/spatiotemporal-skip-guidance">STG</a> was
+  upstreamed into HuggingFace Diffusers, LTX-Video, and ComfyUI.</p>
+
+  <p>Beyond that: <a
+  href="/outputs/kaist/mixture-of-recursions">Mixture-of-Recursions</a>
+  (NeurIPS 2025, with Google DeepMind and Mila) reset the
+  efficiency Pareto frontier; <a
+  href="/outputs/kaist/paper2code">Paper2Code</a> (~4.8K&#9733;) turns
+  ML papers into working repos; and Edward Choi's EHR-FM line runs from
+  <a href="/outputs/kaist/asclepius">Asclepius</a> through LabTOP (CHIL
+  2025 Best Paper) and the CXReasonBench / PatientSim NeurIPS 2025 D&amp;B
+  Spotlights. A KAIST-led consortium (HITS, Merck, AttoLab) was selected
+  in 2025-10 for Korea's AI-Specialized FM program to build the "K-Fold"
+  protein-complex foundation model &mdash; a watch item with no artifact
+  yet. Startup gravity is strong: Seo founded Config (robot-data
+  infrastructure) and Hwang founded DeepAuto.ai, whose productized
+  artifacts are excluded here.</p>
+people:
+  - name: Minjoon Seo
+    role: Associate Professor, Kim Jaechul Graduate School of AI (LK Lab); Founder & CEO, Config (robot-data infrastructure, 2025)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=zYze5fIAAAAJ
+  - name: Alice Oh
+    role: Professor, School of Computing; Director, MARS AI Research Center; NeurIPS 2023 General Chair
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=B88-xMEAAAAJ
+  - name: Edward Choi
+    role: Associate Professor, Kim Jaechul Graduate School of AI (medical AI / EHR foundation models)
+    formerly: Google (2018-2020)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=GUlGIPkAAAAJ
+  - name: Sung Ju Hwang
+    role: Endowed Chair Professor, GSAI & School of Computing (MLAI Lab); Founder & CEO, DeepAuto.ai
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=RP4Qx3QAAAAJ
+  - name: Jaegul Choo
+    role: Endowed Chair Professor, GSAI (DAVIAN Lab)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=GHJYsLEAAAAJ
+tags:
+  - academic
+  - research
+  - evaluation
+  - medical

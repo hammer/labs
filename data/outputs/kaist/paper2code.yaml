@@ -1,0 +1,27 @@
+name: Paper2Code
+slug: paper2code
+lab: kaist
+type: library
+date: 2025-04-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.17192
+  - label: GitHub
+    url: https://github.com/going-doer/Paper2Code
+description: >
+  <p>PaperCoder: a multi-agent LLM pipeline (planning &rarr; analysis
+  &rarr; generation) that turns machine-learning papers into working
+  code repositories, evaluated on Paper2Code and PaperBench with
+  strong author-rated faithfulness. ~4.8K&#9733; &mdash; one of the
+  most-adopted academic agent systems of 2025. From <a
+  href="/people/sung-ju-hwang">Sung Ju Hwang</a>'s MLAI lab with
+  DeepAuto.ai; filed here as academic output (DeepAuto's productized
+  artifacts, e.g. InfiniteHiP serving, are excluded per the spin-out
+  rule).</p>
+tags:
+  - agents
+  - code
+library:
+  github: https://github.com/going-doer/Paper2Code
+paper:
+  arxiv: "2504.17192"

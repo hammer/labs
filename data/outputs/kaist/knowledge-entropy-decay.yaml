@@ -1,0 +1,23 @@
+name: Knowledge Entropy Decay
+slug: knowledge-entropy-decay
+lab: kaist
+type: paper
+date: 2024-10-02
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.01380
+description: >
+  <p>ICLR 2025 <strong>Oral</strong>: defines "knowledge entropy"
+  &mdash; how broadly a model integrates its parametric memory sources
+  &mdash; and shows it decays monotonically during pretraining,
+  mechanistically explaining why late-stage models acquire new
+  knowledge poorly and forget more; resuscitating inactive memory
+  vectors restores acquisition. Pretraining science from the LK Lab
+  (<a href="/people/minjoon-seo">Minjoon Seo</a>) that informs
+  continual-pretraining and mid-training recipes.</p>
+tags:
+  - pretraining
+  - interpretability
+paper:
+  arxiv: "2410.01380"
+  venue: ICLR 2025 (Oral)

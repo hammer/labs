@@ -1,0 +1,25 @@
+name: Asclepius
+slug: asclepius
+lab: kaist
+type: model
+date: 2023-09-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2309.00237
+  - label: GitHub
+    url: https://github.com/starmpcc/Asclepius
+description: >
+  <p>The first publicly shareable clinical LLM (<a
+  href="/people/edward-choi">Edward Choi</a>'s lab): trains on
+  <strong>synthetic clinical notes</strong> generated from public PMC
+  case reports, sidestepping the privacy restrictions that keep
+  real-EHR models unshareable, and released Llama-family 7B/13B
+  checkpoints that match models trained on real notes. Anchor of the
+  lab's medical-FM line that continued to LabTOP (CHIL 2025 Best
+  Paper, generative lab-test-outcome prediction on EHR) and the
+  CXReasonBench and PatientSim NeurIPS 2025 D&amp;B Spotlights.</p>
+tags:
+  - medical
+  - open-weight
+paper:
+  arxiv: "2309.00237"

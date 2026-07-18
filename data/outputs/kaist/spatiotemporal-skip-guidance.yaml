@@ -1,0 +1,24 @@
+name: Spatiotemporal Skip Guidance
+slug: spatiotemporal-skip-guidance
+lab: kaist
+type: paper
+date: 2024-11-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.18664
+  - label: GitHub
+    url: https://github.com/junhahyung/STGuidance
+description: >
+  <p>STG (CVPR 2025): training-free guidance for video diffusion
+  transformers &mdash; self-perturbs the model by skipping
+  spatiotemporal layers to create an implicit weak model, avoiding
+  CFG's over-saturation while boosting fidelity and dynamics. Real
+  adoption: upstreamed into HuggingFace Diffusers, Lightricks
+  LTX-Video, and ComfyUI. From <a
+  href="/people/jaegul-choo">Jaegul Choo</a>'s DAVIAN Lab.</p>
+tags:
+  - video
+  - diffusion
+paper:
+  arxiv: "2411.18664"
+  venue: CVPR 2025

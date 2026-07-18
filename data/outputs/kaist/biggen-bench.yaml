@@ -1,0 +1,32 @@
+name: BiGGen Bench
+slug: biggen-bench
+lab: kaist
+type: eval
+date: 2024-06-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.05761
+  - label: HuggingFace Dataset
+    url: https://huggingface.co/datasets/prometheus-eval/BiGGen-Bench
+  - label: GitHub
+    url: https://github.com/prometheus-eval/prometheus-eval
+description: >
+  <p>Principled LM-as-judge benchmark: 77 tasks with
+  <strong>instance-specific evaluation criteria</strong> rather than
+  coarse task-level rubrics, spanning nine capabilities. Won a
+  <strong>NAACL 2025 Best Paper Award</strong> (one of two among ~2,000
+  submissions, confirmed on the official awards page) &mdash; the
+  capstone of the <a href="/outputs/kaist/flask">FLASK</a> /
+  <a href="/outputs/kaist/prometheus">Prometheus</a> evaluator line.
+  Joint work between the LK Lab (<a href="/people/minjoon-seo">Minjoon
+  Seo</a>) and <a href="/labs/lg-ai-research">LG AI Research</a>.</p>
+tags:
+  - evaluation
+eval:
+  num_tasks: 77
+paper:
+  arxiv: "2406.05761"
+  venue: NAACL 2025 (Best Paper)
+related:
+  - prometheus
+  - flask

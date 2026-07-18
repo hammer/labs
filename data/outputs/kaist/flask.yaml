@@ -1,0 +1,27 @@
+name: FLASK
+slug: flask
+lab: kaist
+type: paper
+date: 2023-07-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2307.10928
+  - label: GitHub
+    url: https://github.com/kaistAI/FLASK
+description: >
+  <p>Fine-grained Language model evaluation based on Alignment SKill
+  sets (ICLR 2024): decomposes instruction-following evaluation into
+  12 instance-specific skills instead of a single holistic score,
+  showing skill-level scoring improves both human&ndash;model and
+  model&ndash;model evaluator agreement. The methodological start of
+  the LK Lab evaluator line that produced
+  <a href="/outputs/kaist/prometheus">Prometheus</a> and
+  <a href="/outputs/kaist/biggen-bench">BiGGen Bench</a>.</p>
+tags:
+  - evaluation
+paper:
+  arxiv: "2307.10928"
+  venue: ICLR 2024
+related:
+  - prometheus
+  - biggen-bench

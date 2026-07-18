@@ -1,0 +1,26 @@
+name: Mixture-of-Recursions
+slug: mixture-of-recursions
+lab: kaist
+type: paper
+date: 2025-07-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.10524
+  - label: GitHub
+    url: https://github.com/raymin0223/mixture_of_recursions
+description: >
+  <p>NeurIPS 2025: a recursive transformer that shares one stack of
+  layers across recursion steps while lightweight routers assign each
+  <strong>token its own recursion depth</strong> &mdash; unifying
+  parameter sharing with adaptive token-level compute and caching only
+  active tokens' KV pairs. Sets a new efficiency Pareto frontier
+  (lower perplexity / better few-shot accuracy at equal training
+  FLOPs, higher throughput) across 135M&ndash;1.7B scales. Joint KAIST
+  AI (first author Sangmin Bae) + Google DeepMind + Mila;
+  577&#9733; repo.</p>
+tags:
+  - architecture
+  - efficiency
+paper:
+  arxiv: "2507.10524"
+  venue: NeurIPS 2025
