@@ -1,0 +1,20 @@
+name: SonicMoE
+slug: sonicmoe
+lab: princeton
+type: library
+date: 2025-12-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.14080
+description: >
+  <p>IO- and tile-aware kernels for Mixture-of-Experts training and
+  inference (ICLR 2026; 731&#9733;), delivering ~1.86&times; throughput
+  by rethinking the memory movement in MoE layers &mdash; systems work
+  aimed squarely at the architecture now dominant across frontier
+  models.</p>
+tags:
+  - infrastructure
+  - efficiency
+  - moe
+paper:
+  arxiv: "2512.14080"

@@ -1,0 +1,27 @@
+name: ProLong
+slug: prolong
+lab: princeton
+type: model
+date: 2024-10-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.02660
+  - label: GitHub
+    url: https://github.com/princeton-nlp/ProLong
+description: >
+  <p>"How to Train Long-Context Language Models (Effectively)" from Danqi
+  Chen's group: a principled data/recipe ablation yielding
+  ProLong-8B-512K, state-of-the-art long-context performance at the 10B
+  scale. The training-side companion to the filed
+  <a href="/outputs/princeton/helmet">HELMET</a> long-context
+  evaluation.</p>
+tags:
+  - open-weight
+  - pretraining
+  - research
+model:
+  base_model: llama-3.1
+paper:
+  arxiv: "2410.02660"
+related:
+  - helmet

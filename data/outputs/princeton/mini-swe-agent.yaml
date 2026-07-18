@@ -1,0 +1,23 @@
+name: mini-swe-agent
+slug: mini-swe-agent
+lab: princeton
+type: library
+date: 2025-07-01
+sources:
+  - label: GitHub
+    url: https://github.com/SWE-agent/mini-swe-agent
+description: >
+  <p>A deliberately minimal (~100-line) coding agent from the SWE-agent
+  team that still reaches ~65% on SWE-bench Verified (5.9K+&#9733;) &mdash;
+  it has become the standard lightweight baseline harness researchers
+  reach for, and a teaching reference for how little scaffolding a strong
+  model actually needs. Companion to the filed SWE-agent/SWE-smith line,
+  with SWE-ReX as the parallel execution runtime underneath.</p>
+tags:
+  - agents
+  - coding
+  - infrastructure
+library:
+  github: https://github.com/SWE-agent/mini-swe-agent
+related:
+  - swe-agent
