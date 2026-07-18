@@ -1,0 +1,20 @@
+name: ARPO (Agentic Reinforced Policy Optimization)
+slug: arpo
+lab: ruc
+type: paper
+date: 2025-07-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.19849
+description: >
+  <p>RUC's entropy-based adaptive-rollout RL for tool-using agents (ICLR
+  2026; 1.1K&#9733;, with Kuaishou): allocate more exploration where the
+  policy is uncertain, improving multi-turn agentic RL &mdash; heavily
+  adopted in follow-on agent-training work. Part of RUC's deep-research /
+  agent line (Search-o1, WebThinker, DeepAgent).</p>
+tags:
+  - post-training
+  - agents
+  - research
+paper:
+  arxiv: "2507.19849"
