@@ -1,0 +1,19 @@
+name: CyberGym
+slug: cybergym
+lab: berkeley
+type: eval
+date: 2025-06-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.02548
+description: >
+  <p>Song-group benchmark: can agents reproduce and discover exploits
+  across 1,507 real-world vulnerabilities from 188 OSS projects? Became
+  a reference eval for offensive-cyber capability tracking in
+  frontier-model safety assessments.</p>
+tags:
+  - eval
+  - safety
+  - agents
+paper:
+  arxiv: "2506.02548"

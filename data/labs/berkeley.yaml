@@ -1,0 +1,64 @@
+name: UC Berkeley
+slug: berkeley
+url: https://bair.berkeley.edu
+wikipedia: https://en.wikipedia.org/wiki/University_of_California,_Berkeley
+huggingface: https://huggingface.co/lmsys
+github: https://github.com/lm-sys
+region: usa
+founded: "1868"
+type: academic
+description: >
+  <p>Berkeley's frontier-AI footprint runs through <strong>BAIR</strong>,
+  Ion Stoica's <strong>Sky Computing Lab</strong> (with its NovaSky and
+  Agentica teams), and Dawn Song's <strong>RDI</strong>. No other
+  university has shipped more of the industry's shared plumbing: vLLM and
+  SGLang began here, Chatbot Arena (with Stanford, as LMSYS) became the
+  default human-preference eval before incorporating as LMArena, and the
+  <a href="/outputs/berkeley/bfcl">Function-Calling Leaderboard</a> and
+  <a href="/outputs/berkeley/livecodebench">LiveCodeBench</a> are cited in
+  essentially every 2025-26 model card.</p>
+
+  <p>The 2025-26 signature is <strong>open RL for reasoning and
+  agents</strong>: Sky-T1-32B (o1-class for &lt;$450), the Agentica line
+  (DeepScaleR &rarr; DeepCoder &rarr; DeepSWE, with Together AI), and the
+  <a href="/outputs/berkeley/skyrl">SkyRL</a> library; Song's group
+  counters with the sharpest agentic-safety evals (CyberGym, Agents'
+  Last Exam). Levine and Abbeel's robotics groups (HIL-SERL, Octo,
+  OpenVLA co-lead) anchor the embodied side.</p>
+
+  <p>Attribution discipline matters most here: the university keeps
+  original dated releases only &mdash; the living vLLM/SGLang projects,
+  LMArena, Physical Intelligence, Nexusflow, and Anyscale/Databricks
+  output belong to their companies.</p>
+people:
+  - name: Ion Stoica
+    role: Professor, EECS; Director, Sky Computing Lab
+    formerly: Co-Founder, Databricks, Anyscale; LMArena spun from his lab
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=vN-is70AAAAJ
+  - name: Sergey Levine
+    role: Professor, EECS; RAIL Lab; Co-Founder, Physical Intelligence
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=8R35rCwAAAAJ
+  - name: Dawn Song
+    role: Professor, EECS; Faculty Director, Berkeley RDI
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=84WzBlYAAAAJ
+  - name: Pieter Abbeel
+    role: Professor, EECS; BAIR Co-Director; also Amazon Frontier AI & Robotics
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=vtwH6GkAAAAJ
+  - name: Matei Zaharia
+    role: Associate Professor, EECS; Co-Founder & CTO, Databricks
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=I1EvjZsAAAAJ
+tags:
+  - academic
+  - infrastructure
+  - agents
+  - research

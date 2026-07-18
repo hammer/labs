@@ -1,0 +1,19 @@
+name: Berkeley Function-Calling Leaderboard
+slug: bfcl
+lab: berkeley
+type: eval
+date: 2024-09-15
+sources:
+  - label: GitHub (Gorilla)
+    url: https://github.com/ShishirPatil/gorilla
+  - label: Paper (ICML 2025)
+    url: https://proceedings.mlr.press/v267/patil25a.html
+description: >
+  <p>The de-facto standard tool-use/function-calling eval (Gorilla team:
+  Patil, Stoica, Gonzalez) &mdash; AST-based checking, cited in OpenAI,
+  Google, Anthropic, and Qwen model cards; V3 added multi-turn (2024-09),
+  V4 agentic settings (2025). The Gorilla ecosystem (RAFT
+  retrieval-aware finetuning, GoEx safe-execution runtime) feeds it.</p>
+tags:
+  - eval
+  - agents

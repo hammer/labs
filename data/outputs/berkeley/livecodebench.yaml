@@ -1,0 +1,21 @@
+name: LiveCodeBench
+slug: livecodebench
+lab: berkeley
+type: eval
+date: 2024-08-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2403.07974
+  - label: GitHub
+    url: https://github.com/LiveCodeBench/LiveCodeBench
+description: >
+  <p>Contamination-free, continuously refreshed code-reasoning benchmark
+  (Jain, Sen, Stoica; ICLR 2025, with MIT/Cornell) &mdash; the rolling
+  v5/v6 releases are a standard headline eval in essentially every
+  2025-26 reasoning-model launch. Dated mid-window for the rolling
+  release cadence.</p>
+tags:
+  - eval
+  - coding
+paper:
+  arxiv: "2403.07974"

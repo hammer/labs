@@ -1,0 +1,25 @@
+name: SkyRL
+slug: skyrl
+lab: berkeley
+type: library
+date: 2025-05-06
+sources:
+  - label: GitHub
+    url: https://github.com/NovaSky-AI/SkyRL
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2511.16108
+description: >
+  <p>Modular full-stack RL library for LLM agents from the NovaSky team
+  (co-developed with Anyscale): trained SkyRL-SQL-7B, SkyRL-Agent-8B,
+  and SA-SWE-32B (39.4% SWE-bench Verified at over 2&times; lower
+  training cost); the v0.1 "tx" engine adds a Tinker-compatible local RL
+  backend. One of the three reference open agent-RL stacks alongside
+  veRL and rLLM.</p>
+tags:
+  - post-training
+  - infrastructure
+  - agents
+library:
+  github: https://github.com/NovaSky-AI/SkyRL
+paper:
+  arxiv: "2511.16108"

@@ -1,0 +1,26 @@
+name: Sky-T1 / SkyThought
+slug: sky-t1
+lab: berkeley
+type: model
+date: 2025-01-10
+flagship: true
+sources:
+  - label: GitHub
+    url: https://github.com/NovaSky-AI/SkyThought
+  - label: HuggingFace
+    url: https://huggingface.co/NovaSky-AI/Sky-T1-32B-Preview
+description: >
+  <p>The NovaSky team's o1-preview-class 32B reasoning model trained for
+  under $450 (19h on 8&times;H100, 17K distilled QwQ traces on a
+  Qwen2.5-32B base) &mdash; the first fully reproducible open reasoning
+  recipe with data, code, and weights (3.4K&#9733;). Follow-ups
+  Sky-T1-32B-Flash (anti-overthinking) and the Sky-T1-7B RL series
+  extended the line and seeded the 2025 open reasoning-RL wave.</p>
+tags:
+  - reasoning
+  - post-training
+  - open-weight
+model:
+  base_model: qwen3
+paper:
+  arxiv: "2501.19393"

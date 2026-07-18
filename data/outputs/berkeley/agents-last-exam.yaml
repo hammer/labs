@@ -1,0 +1,21 @@
+name: Agents' Last Exam
+slug: agents-last-exam
+lab: berkeley
+type: eval
+date: 2026-06-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.05405
+  - label: GitHub
+    url: https://github.com/rdi-berkeley/agents-last-exam
+description: >
+  <p>Dawn Song's RDI benchmark of 1,500+ long-horizon, economically
+  valuable real-work tasks across 55 sub-industries (goal: 5,000). The
+  best frontier agent configuration passes 26% overall and 2.6% of the
+  hardest tier &mdash; the HLE-style headroom benchmark for agents,
+  built with MIT/Harvard/Stanford and industry contributors.</p>
+tags:
+  - eval
+  - agents
+paper:
+  arxiv: "2606.05405"

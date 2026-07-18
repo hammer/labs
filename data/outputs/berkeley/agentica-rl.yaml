@@ -1,0 +1,28 @@
+name: Agentica RL Line (DeepScaleR / DeepCoder / DeepSWE)
+slug: agentica-rl
+lab: berkeley
+type: model
+date: 2025-02-10
+sources:
+  - label: HuggingFace (DeepScaleR)
+    url: https://huggingface.co/agentica-org/DeepScaleR-1.5B-Preview
+  - label: HuggingFace (DeepSWE)
+    url: https://huggingface.co/agentica-org/DeepSWE-Preview
+  - label: GitHub (rLLM)
+    url: https://github.com/agentica-project/rllm
+description: >
+  <p>The Sky Computing Lab's Agentica team scaled pure RL down and up:
+  <strong>DeepScaleR-1.5B</strong> (Feb 2025) surpassed o1-preview on
+  AIME via iterative-context GRPO; <strong>DeepCoder-14B</strong> (Apr
+  2025) hit o3-mini-level coding; <strong>DeepSWE</strong> (Jul 2025,
+  Qwen3-32B) reached then-SOTA open-weight 59% on SWE-bench Verified with
+  test-time scaling. Fully open recipes and datasets via the rLLM
+  framework; joint with Together AI (compute/marketing) — partial
+  company co-attribution.</p>
+tags:
+  - reasoning
+  - coding
+  - post-training
+  - open-weight
+model:
+  base_model: qwen3

@@ -1,0 +1,21 @@
+name: SWE-Gym
+slug: swe-gym
+lab: berkeley
+type: dataset
+date: 2024-12-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.21139
+  - label: GitHub
+    url: https://github.com/SWE-Gym/SWE-Gym
+description: >
+  <p>The first training environment of 2,438 real-repository Python
+  software-engineering tasks with verifiers (Jiayi Pan, Alane Suhr; ICML
+  2025, with UIUC/CMU/Apple) &mdash; the training substrate behind
+  OpenHands and NovaSky agent models.</p>
+tags:
+  - dataset
+  - agents
+  - coding
+paper:
+  arxiv: "2412.21139"

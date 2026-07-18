@@ -1,0 +1,25 @@
+name: vLLM (original release)
+slug: vllm-original
+lab: berkeley
+type: paper
+date: 2023-09-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2309.06180
+  - label: GitHub
+    url: https://github.com/vllm-project/vllm
+description: >
+  <p>PagedAttention and the original vLLM serving engine (SOSP 2023,
+  Kwon/Li/Zhuang/Sheng/Zheng/Stoica) &mdash; the paper that defined
+  modern LLM serving. Pre-window legacy anchor, pinned per our
+  attribution rule: the living vLLM project (86K&#9733;, PyTorch
+  Foundation, 2,000+ contributors, Inferact commercialization) is not
+  university output; Berkeley keeps this original dated artifact. SGLang
+  (2312.07104) has the same shape: original Berkeley/Stanford artifact,
+  community-project evolution.</p>
+tags:
+  - infrastructure
+  - efficiency
+  - research
+paper:
+  arxiv: "2309.06180"

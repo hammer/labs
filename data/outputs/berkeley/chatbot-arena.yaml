@@ -1,0 +1,28 @@
+name: Chatbot Arena
+slug: chatbot-arena
+lab:
+  - berkeley
+  - stanford
+type: eval
+date: 2024-08-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2403.04132
+  - label: GitHub (FastChat)
+    url: https://github.com/lm-sys/FastChat
+description: >
+  <p>The LMSYS crowdsourced pairwise leaderboard (ICML 2024) that became
+  the industry's default human-preference evaluation &mdash; a joint
+  Berkeley/Stanford effort (Zheng, Sheng, Stoica, Gonzalez et al.).
+  In-window artifacts include VisionArena (CVPR 2025), Search Arena
+  (ICLR 2026), RouteLLM, and Prompt-to-Leaderboard routing (#1 on the
+  Arena via routing). The operation incorporated as LMArena in April
+  2025 ($100M seed; "Arena" rebrand and $150M Series A at $1.7B, Jan
+  2026) &mdash; post-incorporation output belongs to the company; the
+  universities keep the original artifacts. Dated mid-window for the
+  joint-era corpus.</p>
+tags:
+  - eval
+  - research
+paper:
+  arxiv: "2403.04132"
