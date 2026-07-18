@@ -1,0 +1,27 @@
+name: OpenVLA
+slug: openvla
+lab:
+  - stanford
+  - berkeley
+type: model
+date: 2024-06-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.09246
+  - label: GitHub
+    url: https://github.com/openvla/openvla
+description: >
+  <p>The 7B open vision-language-action model (CoRL 2024, 6.6K&#9733;)
+  that outperformed RT-2-X and became the most-forked open VLA of
+  2024-25 &mdash; Stanford-led with Berkeley co-leads (Levine, Pertsch)
+  plus TRI and Google DeepMind co-authors, trained on 970K Open
+  X-Embodiment trajectories. Its successor line (&pi;0 / openpi) ships
+  under Physical Intelligence and is excluded per the spin-out rule.</p>
+tags:
+  - robotics
+  - multimodal
+  - open-weight
+model:
+  parameters: "7B"
+paper:
+  arxiv: "2406.09246"
