@@ -1,0 +1,42 @@
+name: LLaVA-OneVision-1.5
+slug: llava-onevision-1.5
+lab: ntu
+type: model
+date: 2025-09-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.23661
+  - label: GitHub
+    url: https://github.com/EvolvingLMMs-Lab/LLaVA-OneVision-1.5
+  - label: HuggingFace
+    url: https://huggingface.co/lmms-lab/LLaVA-OneVision-1.5-8B-Instruct
+description: >
+  <p><strong>Fully open, budget-honest LMM training</strong>: the complete
+  framework &mdash; 85M-sample pretraining and 22M-sample instruction
+  datasets, training code, and logs &mdash; for building competitive
+  multimodal models for roughly <strong>$16K of compute</strong>. The 8B
+  model beats Qwen2.5-VL-7B on 18 of 27 benchmarks. Released as 4B and 8B
+  instruct checkpoints with all intermediate stages.</p>
+
+  <p>Joint LMMs-Lab/NTU (<a href="/people/ziwei-liu">Ziwei Liu</a>, Bo
+  Li) and DeepGlint et al. co-development &mdash; a democratization
+  statement in a line that began as
+  <a href="/outputs/ntu/llava-onevision">LLaVA-OneVision</a> with
+  ByteDance. Model backbones initialize from open LLM/ViT components
+  rather than a fully from-scratch pretrain.</p>
+tags:
+  - multimodal
+  - open-weight
+  - training
+  - open-source
+model:
+  variants:
+    - name: LLaVA-OneVision-1.5-4B-Instruct
+      notes: fully open data + training recipe
+    - name: LLaVA-OneVision-1.5-8B-Instruct
+      notes: beats Qwen2.5-VL-7B on 18/27 benchmarks
+paper:
+  arxiv: "2509.23661"
+related:
+  - llava-onevision
+  - llava-onevision-2

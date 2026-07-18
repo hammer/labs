@@ -1,0 +1,40 @@
+name: LMMs-Eval
+slug: lmms-eval
+lab: ntu
+type: library
+date: 2024-07-17
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.12772
+  - label: GitHub
+    url: https://github.com/EvolvingLMMs-Lab/lmms-eval
+description: >
+  <p>The <strong>de-facto standard evaluation harness for large multimodal
+  models</strong> (4.3K&#9733;): one-for-all benchmarking across text,
+  image, video, and audio tasks &mdash; dozens of benchmarks behind a
+  unified lm-evaluation-harness-style interface, plus the LiveBench-style
+  contamination-aware track introduced in the paper. Most open LMM
+  releases (LLaVA line, InternVL, Qwen-VL ecosystem) report numbers
+  produced by it.</p>
+
+  <p>Maintained by <strong>LMMs-Lab</strong>, the open research community
+  anchored by NTU (<a href="/people/ziwei-liu">Ziwei Liu</a>, Bo Li) but
+  formally independent &mdash; attribution here is per-item, and this
+  harness is the community's infrastructural core, alongside the
+  <a href="/outputs/ntu/llava-onevision">LLaVA-OneVision</a> model
+  line and the lmms-engine training stack.</p>
+tags:
+  - evaluation
+  - infrastructure
+  - multimodal
+  - open-source
+library:
+  github: https://github.com/EvolvingLMMs-Lab/lmms-eval
+  language: Python
+  pip_package: lmms-eval
+paper:
+  arxiv: "2407.12772"
+related:
+  - llava-onevision
+  - videommmu

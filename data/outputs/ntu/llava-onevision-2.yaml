@@ -1,0 +1,39 @@
+name: LLaVA-OneVision-2
+slug: llava-onevision-2
+lab: ntu
+type: model
+date: 2026-05-25
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.25979
+  - label: GitHub
+    url: https://github.com/EvolvingLMMs-Lab/lmms-engine
+  - label: HuggingFace
+    url: https://huggingface.co/lmms-lab
+description: >
+  <p><strong>"Towards next-generation perceptual intelligence"</strong>:
+  a fully open 8B LMM unifying image, long-video, and spatial
+  understanding, with the entire pipeline released &mdash; data recipes,
+  encoders, training logs, and the lean <code>lmms-engine</code> unified
+  multimodal training stack that now backs LMMs-Lab releases.</p>
+
+  <p>NTU-led LMMs-Lab release (<a href="/people/ziwei-liu">Ziwei
+  Liu</a>, Bo Li), continuing the open-everything trajectory of
+  <a href="/outputs/ntu/llava-onevision-1.5">LLaVA-OneVision-1.5</a>;
+  sibling efforts include OpenMMReasoner (CVPR 2026, transparent SFT+RL
+  multimodal-reasoning recipe) and the LongVT "thinking with long videos"
+  line.</p>
+tags:
+  - multimodal
+  - video
+  - open-weight
+  - open-source
+model:
+  variants:
+    - name: LLaVA-OneVision-2-8B
+      notes: fully open pipeline (data, encoders, logs)
+paper:
+  arxiv: "2605.25979"
+related:
+  - llava-onevision
+  - llava-onevision-1.5

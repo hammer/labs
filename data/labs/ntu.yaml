@@ -1,0 +1,74 @@
+name: NTU
+slug: ntu
+url: https://www.ntu.edu.sg
+wikipedia: https://en.wikipedia.org/wiki/Nanyang_Technological_University
+huggingface: https://huggingface.co/lmms-lab
+github: https://github.com/EvolvingLMMs-Lab
+region: singapore
+founded: "1991"
+type: academic
+description: >
+  <p><strong>Nanyang Technological University</strong> (est. 1991) is the
+  academic engine behind much of the open large-multimodal-model
+  ecosystem, driven almost entirely by Ziwei Liu (MMLab@NTU, CCDS) and the
+  <strong>LMMs-Lab</strong> community he anchors with Bo Li. An
+  organizational note matters: LMMs-Lab
+  (<code>EvolvingLMMs-Lab</code> on GitHub, <code>lmms-lab</code> on
+  HuggingFace) is formally an <em>independent open research community</em>,
+  not an NTU unit &mdash; NTU researchers anchor it, so attribution here is
+  per-item; the MMLab-NTU GitHub org itself is empty.</p>
+
+  <p>Flagship lines: <a href="/outputs/ntu/lmms-eval">LMMs-Eval</a>, the
+  de-facto standard multimodal evaluation harness (4.3K&#9733;); the
+  <a href="/outputs/ntu/llava-onevision">LLaVA-OneVision</a> family
+  co-developed with ByteDance (0.5B&ndash;72B, 220K+ monthly downloads on
+  the 7B), evolving into the fully open
+  <a href="/outputs/ntu/llava-onevision-1.5">LLaVA-OneVision-1.5</a>
+  ($16K training budget) and
+  <a href="/outputs/ntu/llava-onevision-2">LLaVA-OneVision-2</a>; the
+  <a href="/outputs/ntu/egolife">EgoLife/EgoGPT</a> egocentric assistant
+  project (CVPR 2025); the
+  <a href="/outputs/ntu/videommmu">Video-MMMU</a> benchmark; and the
+  legacy <a href="/outputs/ntu/otter-lmm">Otter</a> that started the
+  lineage in 2023 (slug <code>otter-lmm</code> &mdash; the bare slug
+  belongs to Cambridge's Otter weather model).</p>
+
+  <p>Chen Change Loy's <strong>S-Lab</strong> runs restoration and
+  generation (SeedVR/SeedVR2 with ByteDance Seed;
+  <a href="/outputs/ntu/light-x">Light-X</a> 4D video rendering at ICLR
+  2026), and Bo An ships LLM-agent infrastructure (AgentOrchestra, with
+  Skywork). Attribution flags: the Vchitect video-generation stack sits
+  under <a href="/labs/shanghai-ai-lab">Shanghai AI Lab</a>, and
+  ByteDance-led joint work (MMSearch-R1, SeedVR) files with
+  <a href="/labs/bytedance-seed">ByteDance Seed</a> first.</p>
+people:
+  - name: Ziwei Liu
+    role: Professor (Provost's Chair in AI), CCDS; leads MMLab@NTU and anchors LMMs-Lab
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=lc45xlcAAAAJ
+  - name: Chen Change Loy
+    role: President's Chair Professor; leads S-Lab (SeedVR line); CVPR 2026 Program Co-Chair
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=559LF80AAAAJ
+  - name: Bo An
+    role: President's Chair Professor, CCDS; multi-agent RL and LLM-agent infrastructure (AgentOrchestra)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=PEEpuNwAAAAJ
+  - name: Shijian Lu
+    role: Associate Professor; vision-language and 3D scene understanding
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=uYmK-A0AAAAJ
+  - name: Erik Cambria
+    role: Professor; SenticNet and affective computing
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=ilSYpW0AAAAJ
+tags:
+  - academic
+  - research
+  - multimodal
+  - vision

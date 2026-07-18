@@ -1,0 +1,46 @@
+name: LLaVA-OneVision
+slug: llava-onevision
+lab: ntu
+type: model
+date: 2024-08-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2408.03326
+  - label: GitHub
+    url: https://github.com/LLaVA-VL/LLaVA-NeXT
+  - label: HuggingFace
+    url: https://huggingface.co/lmms-lab/llava-onevision-qwen2-7b-ov
+description: >
+  <p>The <strong>first open LMM family to transfer across single-image,
+  multi-image, and video</strong> from one recipe: 0.5B/7B/72B models on
+  Qwen2 LLM backbones with SigLIP vision and AnyRes, trained on the fully
+  released OneVision data mixture. The 7B checkpoint still sees
+  ~225K monthly HuggingFace downloads &mdash; among the most-used open
+  multimodal models ever shipped from academia.</p>
+
+  <p><strong>Joint NTU LMMs-Lab / <a href="/labs/bytedance-seed">
+  ByteDance</a> co-development</strong>, not sole NTU. Direct spawns from
+  the same collaboration: LLaVA-Video (synthetic video-instruction data +
+  7B/72B models) and LLaVA-Critic (the first open multimodal judge/reward
+  LMM, with the LLaVA-Critic-R1 follow-up). Succeeded by the fully open
+  <a href="/outputs/ntu/llava-onevision-1.5">LLaVA-OneVision-1.5</a>.</p>
+tags:
+  - multimodal
+  - vision
+  - video
+  - open-weight
+model:
+  base_model: qwen2
+  variants:
+    - name: llava-onevision-qwen2-0.5b-ov
+      notes: Qwen2-0.5B backbone
+    - name: llava-onevision-qwen2-7b-ov
+      notes: Qwen2-7B backbone, ~225K monthly downloads
+    - name: llava-onevision-qwen2-72b-ov
+      notes: Qwen2-72B backbone
+paper:
+  arxiv: "2408.03326"
+related:
+  - llava-onevision-1.5
+  - llava-onevision-2
+  - lmms-eval

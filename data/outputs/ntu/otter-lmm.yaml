@@ -1,0 +1,32 @@
+name: Otter (LMM)
+slug: otter-lmm
+lab: ntu
+type: model
+date: 2023-05-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2305.03726
+  - label: GitHub
+    url: https://github.com/EvolvingLMMs-Lab/Otter
+description: >
+  <p><strong>Multimodal in-context instruction tuning</strong> (legacy
+  anchor, 2023): Otter fine-tuned OpenFlamingo on
+  <strong>MIMIC-IT</strong>, a 2.8M-sample multimodal instruction dataset
+  with in-context examples, delivering one of the earliest open
+  instruction-tuned LMMs with in-context learning (3.4K&#9733;).</p>
+
+  <p>Included as the <strong>first-in-series artifact of the LMMs-Lab
+  lineage</strong>: the Otter/MIMIC-IT team (Bo Li, Yuanhan Zhang,
+  <a href="/people/ziwei-liu">Ziwei Liu</a> at NTU) went on to build
+  <a href="/outputs/ntu/lmms-eval">LMMs-Eval</a> and the
+  <a href="/outputs/ntu/llava-onevision">LLaVA-OneVision</a> family.
+  Built on OpenFlamingo, not a from-scratch pretrain.</p>
+tags:
+  - multimodal
+  - open-weight
+  - research
+paper:
+  arxiv: "2305.03726"
+related:
+  - lmms-eval
+  - llava-onevision

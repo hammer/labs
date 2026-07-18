@@ -1,0 +1,44 @@
+name: EgoLife & EgoGPT
+slug: egolife
+lab: ntu
+type: model
+date: 2025-03-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.03803
+  - label: Website
+    url: https://egolife-ai.github.io
+  - label: GitHub
+    url: https://github.com/EvolvingLMMs-Lab/EgoLife
+  - label: HuggingFace
+    url: https://huggingface.co/lmms-lab/EgoGPT-7b-EgoIT-EgoLife
+description: >
+  <p><strong>Toward an egocentric life assistant</strong> (CVPR 2025): six
+  participants lived together for a week wearing AI glasses, producing the
+  <strong>EgoLife dataset</strong> &mdash; 300 hours of egocentric,
+  interpersonal, multiview, multimodal daily-life recordings with intensive
+  annotation &mdash; plus the EgoLifeQA long-context QA suite. The
+  companion <strong>EgoGPT-7B</strong> is an omni-modal model tuned for
+  egocentric video/audio understanding, with EgoRAG for
+  ultra-long-context memory and retrieval.</p>
+
+  <p>NTU-led (<a href="/people/ziwei-liu">Ziwei Liu</a>) through the
+  LMMs-Lab community. EgoGPT builds on open LMM backbones, not a
+  from-scratch pretrain; the line continues in later EgoLife releases.</p>
+tags:
+  - multimodal
+  - video
+  - dataset
+  - open-weight
+model:
+  variants:
+    - name: EgoGPT-7b-EgoIT-EgoLife
+      notes: omni-modal egocentric model on an open 7B backbone
+dataset:
+  huggingface_url: https://huggingface.co/datasets/lmms-lab/EgoLife
+  size: "300 hours"
+paper:
+  arxiv: "2503.03803"
+  venue: CVPR 2025
+related:
+  - lmms-eval

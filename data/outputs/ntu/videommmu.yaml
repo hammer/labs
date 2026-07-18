@@ -1,0 +1,43 @@
+name: Video-MMMU
+slug: videommmu
+lab: ntu
+type: eval
+date: 2025-01-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.13826
+  - label: Website
+    url: https://videommmu.github.io
+  - label: GitHub
+    url: https://github.com/EvolvingLMMs-Lab/VideoMMMU
+description: >
+  <p><strong>Measures knowledge acquisition from professional
+  videos</strong>: 300 expert-level videos and 900 human-annotated
+  questions across six disciplines, structured along three cognitive
+  stages &mdash; Perception, Comprehension, Adaptation &mdash; with a
+  &Delta;knowledge metric quantifying how much a model improves after
+  "watching" the video. Revealed steep performance decline as cognitive
+  demand rises and a wide human-model gap; adopted into frontier VLM
+  evaluation suites (reported by Gemini and Qwen-VL releases).</p>
+
+  <p>LMMs-Lab / NTU (<a href="/people/ziwei-liu">Ziwei Liu</a>'s
+  orbit), evaluated via <a href="/outputs/ntu/lmms-eval">LMMs-Eval</a>.</p>
+tags:
+  - benchmark
+  - evaluation
+  - video
+  - multimodal
+eval:
+  num_questions: 900
+  domains:
+    - art
+    - business
+    - science
+    - medicine
+    - humanities
+    - engineering
+  leaderboard_url: https://videommmu.github.io
+paper:
+  arxiv: "2501.13826"
+related:
+  - lmms-eval

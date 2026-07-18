@@ -1,0 +1,31 @@
+name: Light-X
+slug: light-x
+lab: ntu
+type: model
+date: 2025-12-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.05115
+  - label: GitHub
+    url: https://github.com/TQTQliu/Light-X
+description: >
+  <p><strong>Generative 4D video rendering with joint camera and
+  illumination control</strong> (ICLR 2026): re-renders monocular video
+  along novel camera trajectories while relighting the scene, unifying
+  trajectory control and illumination editing in one video-generation
+  model &mdash; a step toward controllable neural rendering of dynamic
+  real-world scenes.</p>
+
+  <p>Joint HUST / NTU (S-Lab, <a href="/people/ziwei-liu">Ziwei Liu</a>) /
+  Tsinghua-AIR / BAAI / CUHK-Shenzhen work with NTU as co-lead &mdash;
+  representative of S-Lab's generation-and-restoration line alongside the
+  ByteDance-branded SeedVR/SeedVR2 (filed with
+  <a href="/labs/bytedance-seed">ByteDance Seed</a> per attribution
+  rules).</p>
+tags:
+  - video
+  - generation
+  - vision
+paper:
+  arxiv: "2512.05115"
+  venue: ICLR 2026
