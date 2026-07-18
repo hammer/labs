@@ -1,0 +1,19 @@
+name: Superposition Yields Robust Neural Scaling
+slug: superposition-scaling
+lab: mit
+type: paper
+date: 2025-05-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.10465
+description: >
+  <p>NeurIPS 2025 Best Paper <strong>runner-up</strong> (Liu, Liu, Gore):
+  a mechanistic account of why loss follows power-law neural scaling laws,
+  tracing it to representational superposition &mdash; validated from toy
+  models up to LLMs. A load-bearing interpretability result for the
+  scaling-laws literature.</p>
+tags:
+  - scaling
+  - research
+paper:
+  arxiv: "2505.10465"
