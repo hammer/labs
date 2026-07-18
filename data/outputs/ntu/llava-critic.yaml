@@ -1,0 +1,22 @@
+name: LLaVA-Critic
+slug: llava-critic
+lab: ntu
+type: model
+date: 2024-10-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.02712
+description: >
+  <p>The first open large multimodal model built as a general evaluator /
+  reward model, from NTU's LMMs-Lab with ByteDance &mdash; it judges other
+  vision-language models' outputs and provides reward signals for
+  preference optimization, and seeded a follow-on line (LLaVA-Critic-R1).
+  Complements the filed LMMs-Eval harness and LLaVA-OneVision line.</p>
+tags:
+  - multimodal
+  - eval
+  - open-weight
+paper:
+  arxiv: "2410.02712"
+related:
+  - lmms-eval
