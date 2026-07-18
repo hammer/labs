@@ -1,0 +1,37 @@
+name: DiffuGPT / DiffuLLaMA
+slug: diffullama
+lab: hku
+type: paper
+date: 2024-10-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.17891
+  - label: GitHub
+    url: https://github.com/HKUNLP/DiffuLLaMA
+  - label: HuggingFace
+    url: https://huggingface.co/diffusionfamily
+description: >
+  <p><strong>The AR&rarr;diffusion adaptation recipe</strong> (ICLR 2025):
+  shows autoregressive checkpoints (GPT-2, LLaMA-2 7B) can be continually
+  adapted into discrete diffusion language models with modest compute
+  (under 200B tokens), by connecting the two objectives rather than
+  pretraining diffusion models from scratch. DiffuGPT and DiffuLLaMA
+  scaled diffusion LMs to 7B at a time when open diffusion LLMs barely
+  existed.</p>
+
+  <p>The direct methodological seed of hkunlp's Dream family
+  (<a href="/outputs/huawei/dream-7b">Dream 7B</a>,
+  <a href="/outputs/hku/dream-coder">Dream-Coder/DreamOn</a>). hkunlp-led
+  (<a href="/people/lingpeng-kong">Lingpeng Kong</a>'s group) with
+  multi-institution co-authors.</p>
+tags:
+  - diffusion
+  - foundational
+  - research
+  - training
+paper:
+  arxiv: "2410.17891"
+  venue: ICLR 2025
+related:
+  - dream-coder
+  - dream-7b

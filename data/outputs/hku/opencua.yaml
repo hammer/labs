@@ -1,0 +1,43 @@
+name: OpenCUA
+slug: opencua
+lab: hku
+type: model
+date: 2025-08-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2508.09123
+  - label: GitHub
+    url: https://github.com/xlang-ai/OpenCUA
+  - label: HuggingFace
+    url: https://huggingface.co/xlangai/OpenCUA-32B
+description: >
+  <p>Open foundation stack for <strong>computer-use agents</strong>
+  (NeurIPS 2025 Spotlight): the AgentNet dataset, annotation tool, and
+  benchmark plus the OpenCUA-7B/32B/72B model family &mdash; the strongest
+  open computer-use models on OSWorld-Verified at release. Post-trained on
+  open VLM backbones (not pretrained from scratch), with
+  chain-of-thought-style reflective reasoning over
+  screenshot-action trajectories.</p>
+
+  <p><strong>Joint XLANG Lab (HKU) / <a href="/labs/moonshot-ai">Moonshot
+  AI</a> co-development</strong>, HKU-led; ships under the
+  <code>xlangai</code> HuggingFace org. Companion to the lab's
+  <a href="/outputs/hku/osworld">OSWorld</a> evaluation line.</p>
+tags:
+  - agentic
+  - multimodal
+  - open-weight
+model:
+  variants:
+    - name: OpenCUA-7B
+      notes: post-trained on an open 7B VLM backbone
+    - name: OpenCUA-32B
+      notes: post-trained on an open 32B VLM backbone
+    - name: OpenCUA-72B
+      notes: post-trained on an open 72B VLM backbone
+paper:
+  arxiv: "2508.09123"
+  venue: NeurIPS 2025
+  presentation: spotlight
+related:
+  - osworld

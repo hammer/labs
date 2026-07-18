@@ -1,0 +1,41 @@
+name: Instructor
+slug: instructor
+lab: hku
+type: model
+date: 2022-12-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2212.09741
+  - label: GitHub
+    url: https://github.com/xlang-ai/instructor-embedding
+  - label: HuggingFace
+    url: https://huggingface.co/hkunlp/instructor-xl
+description: >
+  <p><strong>Instruction-finetuned text embeddings</strong> (ACL 2023
+  Findings, legacy anchor): one embedder that produces task- and
+  domain-aware vectors from a natural-language instruction, trained on 330
+  diverse tasks. At release it set state of the art on 70 embedding
+  benchmarks with an order of magnitude fewer parameters than prior
+  SOTA.</p>
+
+  <p>Included as the load-bearing precedent for hkunlp/XLANG's retrieval
+  line: instructor models still see roughly 180K monthly HuggingFace
+  downloads years later, and the instruction-following-embedder idea is
+  now standard across commercial embedding APIs. Built on GTR (T5-based)
+  initializations, not pretrained from scratch.</p>
+tags:
+  - nlp
+  - retrieval
+  - open-weight
+model:
+  variants:
+    - name: instructor-base
+      notes: GTR-base initialization
+    - name: instructor-large
+      notes: GTR-large initialization
+    - name: instructor-xl
+      notes: GTR-XL initialization
+paper:
+  arxiv: "2212.09741"
+related:
+  - bright

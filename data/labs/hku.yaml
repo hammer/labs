@@ -1,0 +1,76 @@
+name: HKU
+slug: hku
+url: https://www.hku.hk
+wikipedia: https://en.wikipedia.org/wiki/University_of_Hong_Kong
+huggingface: https://huggingface.co/hkunlp
+github: https://github.com/xlang-ai
+region: hongkong
+founded: "1911"
+type: academic
+description: >
+  <p>The <strong>University of Hong Kong</strong> (est. 1911) hosts the
+  densest cluster of frontier-AI groups of any Hong Kong university, all
+  inside its CS department: the <strong>XLANG Lab</strong> (Tao Yu) &mdash;
+  the academic center of gravity for computer-use agents &mdash; the
+  <strong>HKU NLP Group</strong> (hkunlp, Lingpeng Kong), the
+  <strong>Data Intelligence Lab</strong> (HKUDS, Chao Huang), MMLab@HKU
+  (Ping Luo), and Xihui Liu's video-generation/world-model group. Work
+  ships across several orgs: <code>xlang-ai</code>/<code>xlangai</code>,
+  <code>hkunlp</code>, <code>HKUDS</code>, and <code>Dream-org</code>.</p>
+
+  <p>Two lines define the lab. XLANG's
+  <a href="/outputs/hku/osworld">OSWorld &rarr; OSWorld 2.0</a> is the
+  de-facto industry benchmark for computer-use agents (cited in Anthropic
+  and OpenAI computer-use announcements), extended by
+  <a href="/outputs/hku/opencua">OpenCUA</a> (with Moonshot, NeurIPS 2025
+  Spotlight) and <a href="/outputs/hku/spider-2">Spider 2.0</a> (ICLR 2025
+  Oral). Kong's hkunlp runs the most credible academic diffusion-LLM
+  program worldwide: the <strong>Dream</strong> family &mdash; the base
+  <a href="/outputs/huawei/dream-7b">Dream 7B</a> is filed under Huawei as
+  an HKU-led joint with Noah's Ark Lab, with the HKU-led
+  <a href="/outputs/hku/dream-coder">Dream-Coder/DreamOn</a> line and the
+  seeding <a href="/outputs/hku/diffullama">DiffuLLaMA</a> recipe here
+  &mdash; plus the <a href="/outputs/hku/polaris">Polaris</a> RL recipe and
+  the <a href="/outputs/hku/verl">veRL/HybridFlow</a> framework
+  (22.5K&#9733;) co-developed with ByteDance Seed.</p>
+
+  <p>HKUDS has the highest-adoption OSS portfolio of any HKU lab
+  (<a href="/outputs/hku/lightrag">LightRAG</a> 37.8K&#9733;, RAG-Anything
+  22.3K&#9733;, AutoAgent 9.5K&#9733;). Industry entanglement is heavy and
+  needs per-artifact attribution: recurring ByteDance Seed, Moonshot, and
+  Huawei Noah's Ark co-development, and Ping Luo is Deputy Director of the
+  HKU&ndash;Shanghai AI Lab joint lab &mdash; much of his output ships
+  under SAIL branding.</p>
+people:
+  - name: Tao Yu
+    role: Assistant Professor, CS; leads XLANG Lab (OSWorld, OpenCUA, Spider 2.0)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=5_Fn5CIAAAAJ
+  - name: Lingpeng Kong
+    role: Associate Professor, CS; hkunlp co-lead (Dream diffusion-LLM family, Polaris)
+    formerly: Research Scientist, Google DeepMind
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=f1hBi5wAAAAJ
+  - name: Chao Huang
+    role: Assistant Professor, CS; leads Data Intelligence Lab (HKUDS — LightRAG, RAG-Anything)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Zkv9FqwAAAAJ
+  - name: Ping Luo
+    role: Associate Professor, CS; MMLab@HKU; Deputy Director, HKU–Shanghai AI Lab joint lab
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=aXdjxb4AAAAJ
+  - name: Xihui Liu
+    role: Assistant Professor, EEE/IDS; video generation and world models
+    formerly: Postdoc, UC Berkeley
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=4YL23GMAAAAJ
+tags:
+  - academic
+  - research
+  - agentic
+  - nlp

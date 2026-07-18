@@ -1,0 +1,36 @@
+name: BRIGHT
+slug: bright
+lab: hku
+type: eval
+date: 2024-07-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.12883
+  - label: Website
+    url: https://brightbenchmark.github.io
+  - label: GitHub
+    url: https://github.com/xlang-ai/BRIGHT
+description: >
+  <p>The first <strong>reasoning-intensive retrieval benchmark</strong>
+  (ICLR 2025): 1,384 real-world queries across diverse domains (economics,
+  psychology, mathematics, coding) where relevant documents cannot be
+  found by surface-form matching &mdash; the top MTEB embedder at the time
+  (SFR-Embedding-Mistral, 59.0 nDCG@10 on MTEB) dropped to 18.0 nDCG@10.
+  Now a standard hard-set in embedding and retriever evaluations, and the
+  reference eval for the "reasoning retriever" model class.</p>
+
+  <p>XLANG Lab + multi-institution collaboration, HKU-led. Companion to
+  hkunlp's legacy <a href="/outputs/hku/instructor">Instructor</a>
+  embedding line.</p>
+tags:
+  - benchmark
+  - evaluation
+  - retrieval
+eval:
+  num_questions: 1384
+  scoring_method: nDCG@10
+paper:
+  arxiv: "2407.12883"
+  venue: ICLR 2025
+related:
+  - instructor

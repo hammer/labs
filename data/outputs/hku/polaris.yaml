@@ -1,0 +1,37 @@
+name: Polaris
+slug: polaris
+lab: hku
+type: model
+date: 2025-06-07
+sources:
+  - label: GitHub
+    url: https://github.com/ChenxinAn-fdu/POLARIS
+  - label: HuggingFace
+    url: https://huggingface.co/POLARIS-Project
+description: >
+  <p>An open <strong>RL post-training recipe for advanced reasoning</strong>
+  from <a href="/people/lingpeng-kong">Lingpeng Kong</a>'s hkunlp (lead:
+  Chenxin An), built around calibrated data difficulty, staged
+  temperature/length scheduling, and multi-stage RL on Qwen3 bases. The
+  Polaris-4B-Preview headline result &mdash; a 4B model rivaling much
+  larger commercial reasoners on AIME-class math &mdash; made it a
+  reference recipe for scaling RL on small open models.</p>
+
+  <p><strong>Polaris V2</strong> (March 2026) scales the recipe to
+  Qwen3-235B-A22B alongside refreshed Qwen3-4B checkpoints. Released as
+  blog + checkpoints; no arXiv paper yet. Joint work with
+  <a href="/labs/bytedance-seed">ByteDance Seed</a> and Fudan
+  collaborators, HKU-led.</p>
+tags:
+  - reasoning
+  - post-training
+  - open-weight
+model:
+  base_model: qwen3
+  variants:
+    - name: Polaris-4B-Preview
+      notes: RL post-trained from Qwen3-4B
+    - name: Polaris-7B-Preview
+      notes: RL post-trained from a 7B base
+    - name: Polaris-V2-Qwen3-235B-A22B
+      notes: V2 recipe on Qwen3-235B-A22B (2026-03)

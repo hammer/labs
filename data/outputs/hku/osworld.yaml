@@ -1,0 +1,43 @@
+name: OSWorld
+slug: osworld
+lab: hku
+type: eval
+date: 2024-04-11
+flagship: true
+sources:
+  - label: OSWorld Paper (arXiv)
+    url: https://arxiv.org/abs/2404.07972
+  - label: OSWorld 2.0 Paper (arXiv)
+    url: https://arxiv.org/abs/2606.29537
+  - label: GitHub
+    url: https://github.com/xlang-ai/OSWorld
+  - label: Website
+    url: https://os-world.github.io
+description: >
+  <p>The de-facto industry benchmark for <strong>computer-use agents</strong>
+  (NeurIPS 2024), from Tao Yu's XLANG Lab: a scalable real-computer
+  environment (Ubuntu/Windows/macOS) with 369 execution-verified tasks
+  spanning real web and desktop apps. At launch humans solved 72.4% vs.
+  12.2% for the best agent; it became the metric quoted in Anthropic and
+  OpenAI computer-use announcements, later hardened as
+  <strong>OSWorld-Verified</strong>.</p>
+
+  <p><strong>OSWorld 2.0</strong> (June 2026, arXiv 2606.29537) raises the
+  ceiling to 108 long-horizon real-world workflows averaging ~318 tool
+  calls per task. Companions from the same lab: OSWorld-G grounding
+  benchmark + CUA-Gym RLVR training pipeline (NeurIPS 2025 Spotlight).
+  HKU-led multi-institution effort.</p>
+tags:
+  - benchmark
+  - evaluation
+  - agentic
+eval:
+  num_tasks: 369
+  scoring_method: execution-based
+  leaderboard_url: https://os-world.github.io
+paper:
+  arxiv: "2404.07972"
+  venue: NeurIPS 2024
+related:
+  - opencua
+  - spider-2

@@ -1,0 +1,40 @@
+name: Spider 2.0
+slug: spider-2
+lab: hku
+type: eval
+date: 2024-11-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.07763
+  - label: GitHub
+    url: https://github.com/xlang-ai/Spider2
+  - label: Website
+    url: https://spider2-sql.github.io
+description: >
+  <p><strong>Enterprise text-to-SQL workflow benchmark</strong> (ICLR 2025
+  Oral) from the XLANG Lab: 632 real-world problems derived from
+  enterprise database use cases &mdash; databases with 1,000+ columns on
+  BigQuery/Snowflake, multiple SQL dialects, and solutions often exceeding
+  100 lines across metadata search, dialect docs, and project codebases.
+  At release, an o1-preview-based code agent solved only 21.3% of tasks,
+  versus 91.2% on predecessor Spider 1.0 and 73.0% on BIRD &mdash; making
+  it a standard eval for agentic coding and data-engineering ability.</p>
+
+  <p>Successor to Spider (2018), the field's canonical academic
+  text-to-SQL benchmark, both led by
+  <a href="/people/tao-yu">Tao Yu</a>.</p>
+tags:
+  - benchmark
+  - evaluation
+  - coding
+  - agentic
+eval:
+  num_tasks: 632
+  scoring_method: execution-based
+  leaderboard_url: https://spider2-sql.github.io
+paper:
+  arxiv: "2411.07763"
+  venue: ICLR 2025
+  presentation: oral
+related:
+  - osworld
