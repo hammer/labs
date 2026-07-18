@@ -1,0 +1,30 @@
+name: NeoBabel
+slug: neobabel
+lab: uva
+type: model
+date: 2025-07-08
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.06137
+  - label: GitHub
+    url: https://github.com/mmderakhshani/NeoBabel
+description: >
+  <p><strong>NeoBabel: A Multilingual Open Tower for Visual
+  Generation</strong> &mdash; an open multilingual text-to-image
+  foundation model covering six languages, built with large-scale
+  multilingual pretraining plus high-resolution instruction tuning.
+  Reaches 0.75 m-GenEval, state of the art at 2&ndash;4x smaller than
+  competing models, with a full open release of code, checkpoints, and a
+  124M multilingual text-image pair dataset. Led by UvA's Video &amp;
+  Image Sense Lab (Derakhshani first author, <a
+  href="/people/cees-g-m-snoek">Snoek</a> senior); one Cohere Labs
+  coauthor &mdash; academic-branded, so it counts as UvA.</p>
+tags:
+  - multilingual
+  - vision
+  - generation
+model:
+  architecture: dense
+paper:
+  arxiv: "2507.06137"

@@ -1,0 +1,22 @@
+name: DreMa
+slug: drema
+lab: uva
+type: paper
+date: 2024-12-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.14957
+description: >
+  <p><strong>DreMa: Dream to Manipulate &mdash; Compositional World
+  Models for Robot Imitation</strong> (ICLR 2025) &mdash; world models
+  as learnable digital twins combining Gaussian splatting with physics
+  simulation, enabling one-shot policy learning demonstrated on a real
+  Franka Panda. Flagship of <a
+  href="/people/efstratios-gavves">Gavves</a>' "Physical AI" program;
+  UvA-led (Zadaianchuk, Gavves) with U. Padova.</p>
+tags:
+  - embodied
+  - research
+paper:
+  arxiv: "2412.14957"
+  venue: ICLR 2025

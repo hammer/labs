@@ -1,0 +1,74 @@
+name: University of Amsterdam
+slug: uva
+url: https://www.uva.nl
+wikipedia: https://en.wikipedia.org/wiki/University_of_Amsterdam
+github: https://github.com/AMLab-Amsterdam
+region: netherlands
+founded: "1632"
+type: academic
+description: >
+  <p>The University of Amsterdam's AI footprint runs through <a
+  href="/people/max-welling">Max Welling</a>'s <strong>AMLab</strong>
+  &mdash; a founding home of Bayesian and geometric deep learning, whose
+  Clifford-equivariance line (Clifford Group Equivariant Networks &rarr;
+  <a href="/outputs/uva/clifford-steerable">Clifford-Steerable CNNs</a>)
+  and physical-systems transformers (<a
+  href="/outputs/uva/erwin">Erwin</a>, ICML 2025) target PDE and
+  molecular simulation at scale. Welling co-founded materials-discovery
+  startup <strong>CuspAI</strong> in 2024 and is primarily engaged there;
+  he retains his UvA chair, and CuspAI-branded output is tracked
+  separately, not under UvA.</p>
+
+  <p>The vision side is anchored by <a href="/people/cees-g-m-snoek">Cees
+  Snoek</a>'s Video &amp; Image Sense Lab and HAVA-Lab (ELLIS Amsterdam),
+  which shipped <a href="/outputs/uva/neobabel">NeoBabel</a> &mdash; an
+  open multilingual text-to-image foundation model with a 124M-pair
+  multilingual dataset &mdash; and <a
+  href="/outputs/uva/tulip">TULIP</a>, the token-length-upgraded CLIP.
+  <a href="/people/efstratios-gavves">Efstratios Gavves</a>' Physical AI
+  program (QUVA/POP-AART) drives world models as learnable digital twins
+  (<a href="/outputs/uva/drema">DreMa</a>, ICLR 2025) and physical-reasoning
+  benchmarks, while <a href="/people/erik-j-bekkers">Erik Bekkers</a> is
+  the geometric-DL hub: the PONITA weight-sharing framework underpins <a
+  href="/outputs/uva/equivariant-neural-fields">Equivariant Neural
+  Fields</a> and its seismic Eikonal follow-up.</p>
+
+  <p><a href="/people/maarten-de-rijke">Maarten de Rijke</a>'s IRLab
+  rounds out the picture with an ERC generative information-retrieval
+  program and co-organization of the NIST <a
+  href="/outputs/uva/trec-ikat">TREC iKAT</a> track for personalized
+  conversational search. Legacy org repos (AMLab-Amsterdam,
+  <a href="https://github.com/QUVA-Lab">QUVA-Lab</a>) are largely
+  historical &mdash; active code now ships via personal repos
+  (maxxxzdn/erwin, ivonajdenkoska/tulip, mmderakhshani/NeoBabel).</p>
+people:
+  - name: Max Welling
+    role: Professor of Machine Learning; AMLab founder
+    formerly: Co-Founder, CuspAI (2024, primarily engaged there; retains UvA chair)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=8200InoAAAAJ
+  - name: Cees G. M. Snoek
+    role: Full Professor; heads Video & Image Sense Lab + HAVA-Lab (ELLIS Amsterdam)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=0uKdbscAAAAJ
+  - name: Efstratios Gavves
+    role: Professor of Physical AI; QUVA/POP-AART director; Co-Founder, Ellogon.AI
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=QqfCvsgAAAAJ
+  - name: Erik J. Bekkers
+    role: Associate Professor, AMLab
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=yeWrfR4AAAAJ
+  - name: Maarten de Rijke
+    role: Distinguished University Professor of AI & IR; IRLab lead; founding director of ICAI
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=AVDkgFIAAAAJ
+tags:
+  - academic
+  - research
+  - science

@@ -1,0 +1,26 @@
+name: TULIP
+slug: tulip
+lab: uva
+type: model
+date: 2024-10-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.10034
+  - label: GitHub
+    url: https://github.com/ivonajdenkoska/tulip
+description: >
+  <p><strong>TULIP: Token-length Upgraded CLIP</strong> (ICLR 2025)
+  &mdash; breaks CLIP's 77-token caption limit via relative positional
+  encodings plus distillation, with released checkpoints; adopted by the
+  open image-generation community for long-caption retrieval and
+  generation. All-UvA author list (Najdenkoska, Derakhshani, Asano, van
+  Noord, Worring, <a href="/people/cees-g-m-snoek">Snoek</a>); Asano has
+  since left UvA.</p>
+tags:
+  - vision
+  - research
+model:
+  architecture: dense
+paper:
+  arxiv: "2410.10034"
+  venue: ICLR 2025

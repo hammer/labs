@@ -1,0 +1,25 @@
+name: Equivariant Neural Fields
+slug: equivariant-neural-fields
+lab: uva
+type: paper
+date: 2024-06-09
+sources:
+  - label: Paper (arXiv, ENF)
+    url: https://arxiv.org/abs/2406.05753
+  - label: Paper (arXiv, Equivariant Eikonal)
+    url: https://arxiv.org/abs/2505.16035
+description: >
+  <p><strong>Equivariant Neural Fields</strong> (ICLR 2025) &mdash;
+  geometry-grounded conditional neural fields built on <a
+  href="/people/erik-j-bekkers">Bekkers</a>' PONITA weight-sharing
+  framework (PONITA itself ICLR 2024). The <strong>Equivariant Eikonal
+  Networks</strong> follow-up (2025-05, preprint-stage) does grid-free
+  seismic travel-time prediction that generalizes across velocity
+  models. AMLab UvA (Wessels, Knigge, Vadgama, <a
+  href="/people/efstratios-gavves">Gavves</a>, Bekkers).</p>
+tags:
+  - science
+  - research
+paper:
+  arxiv: "2406.05753"
+  venue: ICLR 2025

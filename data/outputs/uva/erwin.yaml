@@ -1,0 +1,30 @@
+name: Erwin
+slug: erwin
+lab: uva
+type: paper
+date: 2025-02-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.17019
+  - label: GitHub
+    url: https://github.com/maxxxzdn/erwin
+description: >
+  <p><strong>Erwin: A Tree-based Hierarchical Transformer for
+  Large-scale Physical Systems</strong> (ICML 2025) &mdash; ball-tree
+  partitioning gives linear-time attention on large physical systems
+  spanning cosmology, molecular dynamics, and particle fluids. AMLab
+  UvA-led (Zhdanov, van de Meent); <a
+  href="/people/max-welling">Welling</a> coauthors with a CuspAI dual
+  affiliation, but the paper is AMLab/UvA-branded and counts as UvA.
+  Adoption signals: an independent follow-up with natively trainable
+  sparse attention and author-line integrations with DeepSeek NSA and
+  Transolver at the ICML 2025 long-context-FM workshop.</p>
+tags:
+  - science
+  - architecture
+  - research
+paper:
+  arxiv: "2502.17019"
+  venue: ICML 2025
+related:
+  - clifford-steerable

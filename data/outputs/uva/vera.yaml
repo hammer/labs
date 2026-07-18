@@ -1,0 +1,23 @@
+name: VeRA
+slug: vera
+lab: uva
+type: paper
+date: 2024-05-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2310.11454
+description: >
+  <p><strong>VeRA: Vector-based Random Matrix Adaptation</strong> (ICLR
+  2024) &mdash; a parameter-efficient fine-tuning method that
+  drastically cuts trainable parameters versus LoRA by sharing frozen
+  random matrices across layers and training only small scaling
+  vectors; adopted into HuggingFace PEFT. QUVA Lab, UvA. The arXiv
+  preprint predates the tracking window, but VeRA is retained as a
+  foundational, widely-adopted PEFT technique.</p>
+tags:
+  - efficiency
+  - foundational
+  - research
+paper:
+  arxiv: "2310.11454"
+  venue: ICLR 2024

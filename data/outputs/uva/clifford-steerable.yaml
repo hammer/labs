@@ -1,0 +1,25 @@
+name: Clifford-Steerable CNNs
+slug: clifford-steerable
+lab: uva
+type: paper
+date: 2024-07-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.14730
+description: >
+  <p><strong>Clifford-Steerable CNNs</strong> (ICML 2024) &mdash;
+  equivariant CNNs on multivector fields for relativistic and fluid PDE
+  data, continuing UvA's Clifford Group Equivariant Networks line and
+  sitting upstream of <a href="/outputs/uva/erwin">Erwin</a>. UvA-led
+  (Zhdanov, Ruhe, Forré) with JKU coauthors; extended in the equivariant
+  PDE-surrogate literature. The Microsoft-branded sibling "Clifford
+  Neural Layers for PDE Modeling" is excluded and attributed to
+  Microsoft.</p>
+tags:
+  - science
+  - research
+paper:
+  arxiv: "2402.14730"
+  venue: ICML 2024
+related:
+  - erwin

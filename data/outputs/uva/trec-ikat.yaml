@@ -1,0 +1,26 @@
+name: TREC iKAT
+slug: trec-ikat
+lab: uva
+type: eval
+date: 2024-11-01
+sources:
+  - label: TREC iKAT
+    url: https://www.trecikat.com/
+description: >
+  <p><strong>TREC iKAT 2024 &amp; 2025</strong> &mdash; the NIST TREC
+  track for personalized conversational search agents, conditioning on
+  personas and personal text knowledge bases (PTKB). Adoption comes via
+  multi-year participating teams and dataset reuse in conversational IR
+  research. Co-organized by UvA IRLab (Aliannejadi) with Edinburgh and
+  Strathclyde; UvA is the core coordinator. It surrounds <a
+  href="/people/maarten-de-rijke">de Rijke</a>'s generative-IR methods
+  line (SIGIR 2025).</p>
+tags:
+  - eval
+  - evaluation
+  - agents
+eval:
+  domains:
+    - conversational-search
+    - information-retrieval
+  scoring_method: relevance/personalization
