@@ -1,0 +1,68 @@
+name: CMU
+slug: cmu
+url: https://www.cs.cmu.edu
+wikipedia: https://en.wikipedia.org/wiki/Carnegie_Mellon_University
+huggingface: https://huggingface.co/neulab
+github: https://github.com/neulab
+region: usa
+founded: "1900"
+type: academic
+description: >
+  <p>Carnegie Mellon's School of Computer Science &mdash; the Machine
+  Learning Department (headed by Zico Kolter), the Language Technologies
+  Institute, and the Robotics Institute, with the FLAME Center supplying
+  dedicated foundation-model compute &mdash; is arguably the deepest
+  academic bench in AI. Its architecture line is the field's main
+  post-Transformer thread: Albert Gu's
+  <a href="/outputs/cmu/mamba-2">Mamba-2</a> (with Princeton's Tri Dao)
+  underpins today's hybrid SSM production models, and
+  <a href="/outputs/cmu/h-net">H-Net</a> (2025) opens the tokenizer-free
+  frontier.</p>
+
+  <p>Neubig's LTI groups built the reference open coding-agent stack
+  (<a href="/outputs/cmu/openhands">OpenHands</a>, 60K&#9733;, plus
+  WebArena and TheAgentCompany agent evals); Watanabe's WAVLab pretrains
+  the open Whisper-style <a href="/outputs/cmu/owsm">OWSM</a> speech FMs
+  and the OWLS scaling suite; Tianqi Chen's Catalyst group ships
+  deployment infrastructure adopted industry-wide (MLC-LLM, XGrammar in
+  vLLM/SGLang/TensorRT-LLM); and Kolter's safety line spans GCG &mdash;
+  the foundational jailbreak &mdash; to safety pretraining and
+  antidistillation sampling.</p>
+
+  <p>Industry pull is constant: Neubig co-founded All Hands AI
+  (OpenHands Inc), Gu co-founded Cartesia, Chen went to NVIDIA via
+  OctoAI, Kolter chairs OpenAI's safety committee, and Salakhutdinov
+  round-tripped through Meta &mdash; the entry keeps university-shipped
+  artifacts only.</p>
+people:
+  - name: Graham Neubig
+    role: Professor, LTI; Co-Founder & Chief Scientist, OpenHands Inc (All Hands AI)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=wlosgkoAAAAJ
+  - name: Zico Kolter
+    role: Professor & Head, Machine Learning Department; OpenAI board member
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=UXh1I6UAAAAJ
+  - name: Albert Gu
+    role: Assistant Professor, MLD; Co-Founder & Chief Scientist, Cartesia
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=DVCHv1kAAAAJ
+  - name: Tianqi Chen
+    role: Associate Professor, CSD/MLD; Catalyst group
+    formerly: OctoAI CTO (acquired by NVIDIA, 2024)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=7nlvOMQAAAAJ
+  - name: Shinji Watanabe
+    role: Professor, LTI; WAVLab / ESPnet
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=U5xRA6QAAAAJ
+tags:
+  - academic
+  - architecture
+  - agents
+  - research

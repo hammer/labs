@@ -1,0 +1,28 @@
+name: Mamba-2
+slug: mamba-2
+lab:
+  - cmu
+  - princeton
+type: paper
+date: 2024-05-31
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2405.21060
+  - label: GitHub
+    url: https://github.com/state-spaces/mamba
+description: >
+  <p>"Transformers are SSMs" (ICML 2024): Albert Gu (CMU) and Tri Dao
+  (Princeton) unify attention and state-space models via structured
+  state-space duality &mdash; the theoretical and practical basis of the
+  hybrid SSM blocks now inside production models from Nemotron-H to the
+  Kimi/Ant linear-attention lines (state-spaces repo: 18.6K&#9733;).
+  Filed jointly by author affiliation per our project-org rule; the
+  original Mamba (2312.00752, Dec 2023) is the pre-window anchor of the
+  same line, and MOHAWK (2024) distills Transformers into SSMs.</p>
+tags:
+  - architecture
+  - research
+  - open-weight
+paper:
+  arxiv: "2405.21060"

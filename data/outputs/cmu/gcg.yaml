@@ -1,0 +1,22 @@
+name: GCG (Universal Adversarial Attacks)
+slug: gcg
+lab: cmu
+type: paper
+date: 2023-07-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2307.15043
+  - label: GitHub
+    url: https://github.com/llm-attacks/llm-attacks
+description: >
+  <p>"Universal and Transferable Adversarial Attacks on Aligned Language
+  Models" (Zou, Fredrikson, Kolter, with CAIS) &mdash; the foundational
+  automated jailbreak, still the baseline attack in every safety eval.
+  Pre-window legacy anchor for Kolter's safety line, which continued
+  in-window with Safety Pretraining (2025) and Antidistillation
+  Sampling (2025).</p>
+tags:
+  - safety
+  - research
+paper:
+  arxiv: "2307.15043"

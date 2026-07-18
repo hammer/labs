@@ -1,0 +1,23 @@
+name: XGrammar
+slug: xgrammar
+lab: cmu
+type: library
+date: 2024-11-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.15100
+  - label: GitHub
+    url: https://github.com/mlc-ai/xgrammar
+description: >
+  <p>Structured-generation engine (Dong, Chen) adopted as the
+  constrained-decoding backend in vLLM, SGLang, and TensorRT-LLM;
+  XGrammar-2 (2026) extends to dynamic agentic workloads. Sibling
+  Catalyst infrastructure: MLC-LLM universal deployment (23K&#9733;)
+  and the PithTrain compact MoE trainer on FLAME compute.</p>
+tags:
+  - infrastructure
+  - efficiency
+library:
+  github: https://github.com/mlc-ai/xgrammar
+paper:
+  arxiv: "2411.15100"

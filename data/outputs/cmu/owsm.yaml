@@ -1,0 +1,27 @@
+name: OWSM / OWLS
+slug: owsm
+lab: cmu
+type: model
+date: 2025-06-02
+sources:
+  - label: OWSM v4 Paper (arXiv)
+    url: https://arxiv.org/abs/2506.00338
+  - label: OWLS Paper (arXiv)
+    url: https://arxiv.org/abs/2502.10373
+  - label: GitHub (ESPnet)
+    url: https://github.com/espnet/espnet
+description: >
+  <p>WAVLab's Open Whisper-style Speech Models: fully open speech
+  foundation models pretrained from scratch on public data (v4, 2025,
+  with scaled and cleaned corpora), plus <strong>OWLS</strong> &mdash; a
+  0.25B&ndash;18B suite establishing scaling laws for multilingual
+  speech recognition and translation. The open reference line for
+  speech-FM science, shipped through ESPnet.</p>
+tags:
+  - speech
+  - open-weight
+  - scaling
+model:
+  parameters: "18B"
+paper:
+  arxiv: "2506.00338"

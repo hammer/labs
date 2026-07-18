@@ -1,0 +1,21 @@
+name: H-Net
+slug: h-net
+lab: cmu
+type: model
+date: 2025-07-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.07955
+description: >
+  <p>Dynamic Chunking for End-to-End Hierarchical Sequence Modeling
+  (Hwang, Gu; with Cartesia): a tokenizer-free byte-level LM whose
+  chunking is learned inside the architecture &mdash; the major
+  architecture bet after Mamba, attacking tokenization as the last
+  hand-engineered stage of the pipeline.</p>
+tags:
+  - architecture
+  - research
+paper:
+  arxiv: "2507.07955"
+related:
+  - mamba-2

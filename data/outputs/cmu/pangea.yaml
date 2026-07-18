@@ -1,0 +1,19 @@
+name: Pangea
+slug: pangea
+lab: cmu
+type: model
+date: 2024-10-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.16153
+description: >
+  <p>Fully open multilingual multimodal LLM covering 39 languages (Xiang
+  Yue, Neubig), released with the 6M-example PangeaIns instruction set
+  and PangeaBench &mdash; the open reference point for multilingual
+  multimodality ahead of the frontier labs' own releases.</p>
+tags:
+  - multimodal
+  - multilingual
+  - open-weight
+paper:
+  arxiv: "2410.16153"

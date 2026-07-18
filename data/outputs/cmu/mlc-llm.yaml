@@ -1,0 +1,21 @@
+name: MLC-LLM / WebLLM
+slug: mlc-llm
+lab: cmu
+type: library
+date: 2024-09-01
+sources:
+  - label: GitHub (MLC-LLM)
+    url: https://github.com/mlc-ai/mlc-llm
+  - label: GitHub (WebLLM)
+    url: https://github.com/mlc-ai/web-llm
+description: >
+  <p>Tianqi Chen's universal LLM compilation and deployment engine
+  (23K&#9733;; WebLLM brings inference to the browser at 18K&#9733;) —
+  ML-compilation as the path to running open models on any hardware.
+  Pre-window origin (2023) with active development through 2026; dated
+  mid-window.</p>
+tags:
+  - infrastructure
+  - efficiency
+library:
+  github: https://github.com/mlc-ai/mlc-llm

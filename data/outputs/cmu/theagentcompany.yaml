@@ -1,0 +1,19 @@
+name: TheAgentCompany
+slug: theagentcompany
+lab: cmu
+type: eval
+date: 2024-12-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.14161
+description: >
+  <p>Benchmarks LLM agents on consequential real-world work tasks inside
+  a simulated software company (Frank Xu, Neubig) &mdash; a widely cited
+  reality check on agent readiness, complementing the group's canonical
+  WebArena/VisualWebArena line and the 1.3M-trajectory Agent Data
+  Protocol corpus (2025).</p>
+tags:
+  - eval
+  - agents
+paper:
+  arxiv: "2412.14161"

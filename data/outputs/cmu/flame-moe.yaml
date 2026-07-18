@@ -1,0 +1,20 @@
+name: FLAME-MoE
+slug: flame-moe
+lab: cmu
+type: model
+date: 2025-05-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.20225
+description: >
+  <p>A transparent end-to-end MoE research platform from the FLAME
+  Center (Kang, Xiong): seven fully open mixture-of-experts language
+  models with complete training artifacts, built as the community's
+  controlled substrate for MoE science — CMU's in-house answer to the
+  fully-open-pretraining wave.</p>
+tags:
+  - moe
+  - open-weight
+  - pretraining
+paper:
+  arxiv: "2505.20225"

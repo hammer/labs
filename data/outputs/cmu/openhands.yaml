@@ -1,0 +1,25 @@
+name: OpenHands
+slug: openhands
+lab: cmu
+type: library
+date: 2024-07-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.16741
+  - label: GitHub
+    url: https://github.com/All-Hands-AI/OpenHands
+description: >
+  <p>Born OpenDevin: the reference open platform for AI
+  software-developer agents (60K+&#9733;), led by Neubig's group with
+  UIUC collaborators. Pinned to the pre-spinout artifact per our rule
+  &mdash; post-spinout releases (OpenHands-LM-32B, CLI/Cloud) belong to
+  OpenHands Inc (All Hands AI). Companion CMU agent evals: WebArena
+  (canonical web-agent benchmark) and TheAgentCompany.</p>
+tags:
+  - agents
+  - coding
+  - infrastructure
+library:
+  github: https://github.com/All-Hands-AI/OpenHands
+paper:
+  arxiv: "2407.16741"
