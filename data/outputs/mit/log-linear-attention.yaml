@@ -1,0 +1,22 @@
+name: Log-Linear Attention
+slug: log-linear-attention
+lab: mit
+type: paper
+date: 2025-06-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.04761
+description: >
+  <p>Han Guo, Songlin Yang, Tri Dao, and Yoon Kim (ICLR 2026): generalizes
+  linear attention and SSMs to a logarithmically-growing state &mdash;
+  between O(1) recurrent and O(n) full attention &mdash; with
+  hardware-efficient chunked kernels. The strongest MIT
+  architecture result of the window and the theoretical spine of the
+  flash-linear-attention line.</p>
+tags:
+  - architecture
+  - research
+paper:
+  arxiv: "2506.04761"
+related:
+  - flash-linear-attention

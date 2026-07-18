@@ -1,0 +1,24 @@
+name: StreamingVLM
+slug: streaming-vlm
+lab: mit
+type: model
+date: 2025-10-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.09608
+  - label: GitHub
+    url: https://github.com/mit-han-lab/streaming-vlm
+  - label: HuggingFace
+    url: https://huggingface.co/mit-han-lab/StreamingVLM
+description: >
+  <p>Real-time vision-language understanding of effectively infinite
+  video streams: attention sinks plus a short-vision/long-text KV window
+  give ~8 FPS on a single H100 while beating GPT-4o-mini on the
+  accompanying long-video benchmark &mdash; the StreamingLLM idea carried
+  into multimodality.</p>
+tags:
+  - multimodal
+  - efficiency
+  - open-weight
+paper:
+  arxiv: "2510.09608"

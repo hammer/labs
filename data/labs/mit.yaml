@@ -1,0 +1,67 @@
+name: MIT
+slug: mit
+url: https://www.csail.mit.edu
+wikipedia: https://en.wikipedia.org/wiki/Massachusetts_Institute_of_Technology
+huggingface: https://huggingface.co/mit-han-lab
+github: https://github.com/mit-han-lab
+region: usa
+founded: "1861"
+type: academic
+description: >
+  <p>MIT's AI research concentrates in <strong>CSAIL</strong> under the
+  Schwarzman College of Computing umbrella, with the MIT-IBM Watson AI Lab
+  and the Media Lab alongside. Its signature contribution to the frontier
+  is not from-scratch pretraining but the <strong>efficiency layer
+  everyone else trains and serves on</strong>: Song Han's HAN Lab produced
+  AWQ (MLSys 2024 Best Paper &mdash; still the default 4-bit path in vLLM
+  and TensorRT-LLM), StreamingLLM's attention sinks, the QServe/LServe
+  serving stack, and SVDQuant 4-bit diffusion inference.</p>
+
+  <p>A second load-bearing line is <strong>linear attention</strong>:
+  Yoon Kim's group (with PhD student Songlin Yang) drives DeltaNet, Gated
+  DeltaNet, and Log-Linear Attention (ICLR 2026), maintained in the
+  de-facto reference kernel library <a
+  href="/outputs/mit/flash-linear-attention">flash-linear-attention</a>
+  &mdash; the substrate for much of the industry's hybrid-architecture
+  experimentation. Jacob Andreas's LINGO group contributes LM-reasoning
+  work (<a href="/outputs/mit/discipl">DisCIPL</a> self-steering models),
+  and Pulkit Agrawal's Improbable AI lab anchors robot learning.</p>
+
+  <p>Industry entanglement is structural: Han is also an NVIDIA
+  Distinguished Scientist (Jet-Nemotron ships as NVIDIA), the Nunchaku
+  engine is spinning out, and MIT-IBM work feeds the separately-tracked
+  IBM entry. Liquid AI is an independent spinout, not MIT output.</p>
+people:
+  - name: Song Han
+    role: Associate Professor, EECS; Director, MIT HAN Lab
+    formerly: NVIDIA Distinguished Scientist (concurrent)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=E0iCaa4AAAAJ
+  - name: Yoon Kim
+    role: Associate Professor, EECS/CSAIL
+    formerly: IBM Research (2020-21)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=n_ts4eYAAAAJ
+  - name: Jacob Andreas
+    role: Associate Professor, EECS/CSAIL (LINGO group)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=dnZ8udEAAAAJ
+  - name: Pulkit Agrawal
+    role: Associate Professor, EECS/CSAIL; Director, Improbable AI Lab; Co-Founder, Eka Robotics
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=UpZmJI0AAAAJ
+  - name: Antonio Torralba
+    role: Professor, EECS/CSAIL
+    formerly: Inaugural head, MIT-IBM Watson AI Lab
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=8cxDHS4AAAAJ
+tags:
+  - academic
+  - efficiency
+  - infrastructure
+  - research

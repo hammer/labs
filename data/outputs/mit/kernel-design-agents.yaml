@@ -1,0 +1,22 @@
+name: Kernel Design Agents + KernelWiki
+slug: kernel-design-agents
+lab: mit
+type: library
+date: 2026-03-15
+sources:
+  - label: GitHub (KDA)
+    url: https://github.com/mit-han-lab/kernel-design-agents
+  - label: GitHub (KernelWiki)
+    url: https://github.com/mit-han-lab/KernelWiki
+description: >
+  <p>Agentic GPU-kernel optimization harness (~754&#9733;) plus a
+  Blackwell/Hopper kernel knowledge base packaged as a Claude Code skill
+  (~309&#9733;) &mdash; took 1st (MoE), 2nd (DSA), and 3rd (GDN) at the
+  MLSys 2026 FlashInfer full-agent track. The HAN Lab betting that kernel
+  engineering itself becomes an agent workload.</p>
+tags:
+  - agents
+  - infrastructure
+  - efficiency
+library:
+  github: https://github.com/mit-han-lab/kernel-design-agents

@@ -1,0 +1,30 @@
+name: flash-linear-attention
+slug: flash-linear-attention
+lab: mit
+type: library
+date: 2024-12-01
+flagship: true
+sources:
+  - label: GitHub
+    url: https://github.com/fla-org/flash-linear-attention
+  - label: DeltaNet Paper (arXiv)
+    url: https://arxiv.org/abs/2406.06484
+description: >
+  <p>The de-facto reference Triton kernel library for emerging
+  linear-attention and SSM architectures (GLA, DeltaNet, Mamba-2, RWKV,
+  Gated DeltaNet; ~5.4K&#9733;), led by Songlin Yang (MIT, advised by Yoon
+  Kim) with a multi-institution maintainer community, plus the companion
+  <code>flame</code> training framework. The underlying DeltaNet paper
+  ("Parallelizing Linear Transformers with the Delta Rule over Sequence
+  Length", NeurIPS 2024) made delta-rule linear attention trainable at
+  scale &mdash; the family now appears inside several production hybrid
+  LLMs. Date marks the ecosystem's consolidation; DeltaNet paper June
+  2024.</p>
+tags:
+  - architecture
+  - infrastructure
+  - research
+library:
+  github: https://github.com/fla-org/flash-linear-attention
+paper:
+  arxiv: "2406.06484"

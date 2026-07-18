@@ -1,0 +1,22 @@
+name: SVDQuant + Nunchaku
+slug: svdquant
+lab: mit
+type: paper
+date: 2024-11-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.05007
+  - label: GitHub (Nunchaku)
+    url: https://github.com/nunchaku-ai/nunchaku
+description: >
+  <p>4-bit weights <em>and</em> activations for diffusion transformers
+  (ICLR 2025 Spotlight) by absorbing outliers into a low-rank branch,
+  with the Nunchaku inference engine (~3.9K&#9733;) shipping INT4/FP4
+  FLUX and SANA checkpoints. Nunchaku has since migrated to its own org
+  &mdash; a spin-out in progress.</p>
+tags:
+  - efficiency
+  - image-generation
+  - research
+paper:
+  arxiv: "2411.05007"

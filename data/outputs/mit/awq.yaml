@@ -1,0 +1,25 @@
+name: AWQ
+slug: awq
+lab: mit
+type: paper
+date: 2024-05-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2306.00978
+  - label: GitHub
+    url: https://github.com/mit-han-lab/llm-awq
+description: >
+  <p>Activation-aware Weight Quantization (<strong>MLSys 2024 Best
+  Paper</strong>, ~3.6K&#9733;): protect the ~1% of salient weights
+  identified by activation statistics and 4-bit quantize the rest. Still
+  the default 4-bit path in vLLM, HF Transformers, and TensorRT-LLM
+  through 2026 &mdash; the canonical artifact of the HAN Lab quantization
+  line (preprint June 2023; dated by its award venue). Successors QServe
+  (W4A8KV4) and LServe carry the line into serving-system co-design
+  (MLSys 2025).</p>
+tags:
+  - efficiency
+  - infrastructure
+  - research
+paper:
+  arxiv: "2306.00978"

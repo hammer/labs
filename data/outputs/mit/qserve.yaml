@@ -1,0 +1,25 @@
+name: QServe / LServe (OmniServe)
+slug: qserve
+lab: mit
+type: library
+date: 2025-02-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2405.04532
+  - label: GitHub
+    url: https://github.com/mit-han-lab/omniserve
+description: >
+  <p>W4A8KV4 quantization co-designed with the serving system (MLSys
+  2025, ~849&#9733;); LServe adds unified sparse attention for long
+  context. The systems continuation of the AWQ line, alongside the lab's
+  long-context attention work (DuoAttention ICLR 2025, XAttention ICML
+  2025, Radial Attention NeurIPS 2025).</p>
+tags:
+  - efficiency
+  - infrastructure
+library:
+  github: https://github.com/mit-han-lab/omniserve
+paper:
+  arxiv: "2405.04532"
+related:
+  - awq

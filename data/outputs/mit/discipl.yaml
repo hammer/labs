@@ -1,0 +1,21 @@
+name: DisCIPL (Self-Steering LMs)
+slug: discipl
+lab: mit
+type: paper
+date: 2025-04-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.07081
+  - label: GitHub
+    url: https://github.com/gabegrand/self-steering
+description: >
+  <p>Jacob Andreas's group with Tenenbaum and Mansinghka (COLM 2025): a
+  Planner LM writes a task-specific probabilistic inference program
+  executed by parallel Follower LMs &mdash; small followers match GPT-4o
+  and o1 on constrained generation. Inference-as-program-synthesis as an
+  alternative to monolithic scaling.</p>
+tags:
+  - reasoning
+  - research
+paper:
+  arxiv: "2504.07081"
