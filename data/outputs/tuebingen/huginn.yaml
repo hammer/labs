@@ -1,6 +1,8 @@
 name: Huginn-3.5B
 slug: huginn
-lab: tuebingen
+lab:
+  - tuebingen
+  - umd
 type: model
 date: 2025-02-07
 flagship: true

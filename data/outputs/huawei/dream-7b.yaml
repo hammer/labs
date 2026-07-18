@@ -1,6 +1,8 @@
 name: Dream 7B
 slug: dream-7b
-lab: huawei
+lab:
+  - hku
+  - huawei
 type: model
 date: 2025-04-08
 sources:
