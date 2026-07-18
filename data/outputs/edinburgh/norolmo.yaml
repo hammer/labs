@@ -1,0 +1,22 @@
+name: NorOLMo-13B
+slug: norolmo
+lab: edinburgh
+type: model
+date: 2026-07-03
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/HPLT/NorOLMo-13B
+description: >
+  <p>A 13B Nordic language model (Norwegian bokmål/nynorsk plus Sámi)
+  continued from OLMo-2-13B on HPLT 3.0 + OLMo-mix + FinePDFs/FineMath/
+  MegaMath, from the Edinburgh-anchored HPLT consortium. Complements the
+  <a href="/outputs/edinburgh/hplt">HPLT</a> corpus line with a concrete
+  large multilingual model; also released alongside a new gpt-bert 4.0
+  multilingual encoder generation and OpenLID-v3.</p>
+tags:
+  - open-weight
+  - multilingual
+model:
+  base_model: olmo-2
+related:
+  - hplt
