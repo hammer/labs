@@ -1,0 +1,19 @@
+name: AgentSociety
+slug: agentsociety
+lab: tsinghua
+type: library
+date: 2025-02-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.08691
+description: >
+  <p>FIB-LAB's large-scale LLM-agent social simulation platform
+  (1.1K&#9733;, ~180 citations) &mdash; thousands of agents with
+  realistic urban environments for studying collective behavior;
+  companion to the lab's AgentSquare modular agent search (ICLR 2025)
+  and UrbanDiT urban spatio-temporal FM.</p>
+tags:
+  - agents
+  - research
+paper:
+  arxiv: "2502.08691"

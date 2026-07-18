@@ -1,0 +1,69 @@
+name: Tsinghua
+slug: tsinghua
+url: https://www.tsinghua.edu.cn/en/
+wikipedia: https://en.wikipedia.org/wiki/Tsinghua_University
+huggingface: https://huggingface.co/thu-ml
+github: https://github.com/thu-ml
+region: china
+founded: "1911"
+type: academic
+description: >
+  <p>Tsinghua is the most consequential university in Chinese AI &mdash;
+  and the most entangled. Much of its famous output ships through
+  organizations we track separately, and this entry deliberately excludes
+  it: <strong>THUDM/KEG</strong> model artifacts (GLM lineage) file under
+  <a href="/labs/zai">Z.ai</a>, OpenBMB-branded THUNLP work (MiniCPM,
+  Densing Law) under <a href="/labs/openbmb">OpenBMB</a>, the Bowen Zhou
+  C3I/PRIME line (TTRL, MedXpertQA) under
+  <a href="/labs/shanghai-ai-lab">Shanghai AI Lab</a>, Mooncake under
+  <a href="/labs/moonshot-ai">Moonshot</a>, and Vidu under the ShengShu
+  spinout.</p>
+
+  <p>What remains under university branding is still first-rate. Gao
+  Huang's <strong>LeapLab</strong> wrote the defining "limits of RLVR"
+  paper (NeurIPS 2025 best-paper runner-up) and Absolute Zero self-play
+  RLVR; Jun Zhu's <strong>TSAIL</strong> ships the
+  <a href="/outputs/tsinghua/rdt">RDT robot foundation models</a> and the
+  SageAttention/TurboDiffusion efficiency line that de-facto powers
+  open video-generation inference; <strong>AIR</strong> (Ya-Qin Zhang)
+  anchors biomedical and driving FMs; <strong>THUML</strong> pretrains
+  the Sundial/Timer-XL time-series FMs (ICML 2025 Oral); MADSys built
+  KTransformers; and Minlie Huang's CoAI leads the safety toolchain.</p>
+
+  <p>The institute map matters for attribution: LeapLab, TSAIL/thu-ml,
+  AIR, IIIS (Andrew Yao), CoAI/thu-coai, FIB-LAB, MADSys, THUML, THU-MIG,
+  and NICS-EFC publish under university orgs; 17 pre-existing outputs in
+  this index already carry Tsinghua co-affiliations via the excluded
+  channels.</p>
+people:
+  - name: Gao Huang
+    role: Associate Professor, Dept. of Automation; LeapLab
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=-P9LwcgAAAAJ
+  - name: Jun Zhu
+    role: Professor, CS; TSAIL; Chief Scientist, ShengShu (Vidu — excluded here)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=axsP38wAAAAJ
+  - name: Ya-Qin Zhang
+    role: Founding Dean & Chair Professor, AIR
+    formerly: President, Baidu
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=mDOMfxIAAAAJ
+  - name: Minlie Huang
+    role: Professor, CS; CoAI; Deputy Director, Tsinghua Foundation Model Center
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=P1jPSzMAAAAJ
+  - name: Yang Liu
+    role: Professor, CS; Vice Dean, AIR
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=lVhoKNcAAAAJ
+tags:
+  - academic
+  - robotics
+  - efficiency
+  - research

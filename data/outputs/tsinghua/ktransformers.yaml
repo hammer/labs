@@ -1,0 +1,21 @@
+name: KTransformers
+slug: ktransformers
+lab: tsinghua
+type: library
+date: 2024-08-01
+sources:
+  - label: GitHub
+    url: https://github.com/kvcache-ai/ktransformers
+description: >
+  <p>MADSys's CPU/GPU heterogeneous MoE inference framework
+  (17.7K&#9733;, SOSP 2025; joint with Approaching.AI): made
+  DeepSeek-R1 671B runnable on a single 24GB GPU and is now integrated
+  into SGLang &mdash; the reference system for extreme-offloading
+  inference. (The same lab's Mooncake serving stack files under Moonshot
+  per our attribution rules.)</p>
+tags:
+  - infrastructure
+  - efficiency
+  - moe
+library:
+  github: https://github.com/kvcache-ai/ktransformers

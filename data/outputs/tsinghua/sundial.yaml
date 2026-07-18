@@ -1,0 +1,22 @@
+name: Sundial / Timer-XL
+slug: sundial
+lab: tsinghua
+type: model
+date: 2025-02-02
+sources:
+  - label: Sundial Paper (arXiv)
+    url: https://arxiv.org/abs/2502.00816
+  - label: Timer-XL Paper (arXiv)
+    url: https://arxiv.org/abs/2410.04803
+description: >
+  <p>THUML's generative time-series foundation models (Mingsheng Long,
+  School of Software): Sundial (ICML 2025 <strong>Oral</strong>) is
+  pretrained on 1T time points with SOTA zero-shot forecasting and
+  weather/energy transfer; Timer-XL (ICLR 2025) handles long-context
+  series. A textbook scientific-FM line with clear transfer evidence.</p>
+tags:
+  - science
+  - open-weight
+  - research
+paper:
+  arxiv: "2502.00816"

@@ -1,0 +1,21 @@
+name: Motus
+slug: motus
+lab: tsinghua
+type: model
+date: 2025-12-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.13030
+description: >
+  <p>TSAIL's unified latent-action world model spanning video prediction
+  and robotics (1.2K&#9733; in its first month) &mdash; the lab's bid to
+  merge its diffusion-video and robot-FM lines into a single
+  action-conditioned world model.</p>
+tags:
+  - world-model
+  - robotics
+  - research
+paper:
+  arxiv: "2512.13030"
+related:
+  - rdt

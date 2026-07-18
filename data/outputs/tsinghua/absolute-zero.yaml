@@ -1,0 +1,22 @@
+name: Absolute Zero Reasoner
+slug: absolute-zero
+lab: tsinghua
+type: paper
+date: 2025-05-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.03335
+description: >
+  <p>Self-play RLVR with zero external data (LeapLab, 1.9K&#9733;): the
+  model proposes its own tasks, solves them, and verifies with a code
+  executor &mdash; SOTA code and math for its class and the cleanest
+  demonstration of the propose-solve-verify loop that later
+  self-improvement systems build on.</p>
+tags:
+  - reasoning
+  - post-training
+  - research
+paper:
+  arxiv: "2505.03335"
+related:
+  - rlvr-limits

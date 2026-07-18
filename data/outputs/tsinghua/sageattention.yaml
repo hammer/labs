@@ -1,0 +1,27 @@
+name: SageAttention
+slug: sageattention
+lab: tsinghua
+type: library
+date: 2024-10-03
+sources:
+  - label: Paper v1 (arXiv)
+    url: https://arxiv.org/abs/2410.02367
+  - label: Paper v3 (arXiv)
+    url: https://arxiv.org/abs/2505.11594
+  - label: GitHub
+    url: https://github.com/thu-ml/SageAttention
+description: >
+  <p>TSAIL's plug-and-play quantized attention (INT8 &rarr; FP4 across
+  v1/2/3; 3.5K&#9733;), 2&ndash;5&times; faster than FlashAttention and
+  the de-facto standard in open video-generation inference (ComfyUI,
+  HunyuanVideo, Wan, CogVideoX). The line continues with SpargeAttention
+  (ICML 2025) and TurboDiffusion's 100&ndash;200&times; video-diffusion
+  acceleration (3.6K&#9733; in 7 months).</p>
+tags:
+  - efficiency
+  - infrastructure
+  - video
+library:
+  github: https://github.com/thu-ml/SageAttention
+paper:
+  arxiv: "2410.02367"

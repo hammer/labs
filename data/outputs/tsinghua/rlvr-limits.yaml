@@ -1,0 +1,21 @@
+name: Does RL Really Incentivize Reasoning Beyond the Base Model?
+slug: rlvr-limits
+lab: tsinghua
+type: paper
+date: 2025-04-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.13837
+description: >
+  <p>LeapLab's defining "limits of RLVR" result (NeurIPS 2025 best-paper
+  runner-up, ~900 citations): pass@k analysis shows RLVR mostly sharpens
+  distributions over capabilities already present in the base model
+  rather than creating new reasoning capacity &mdash; the paper every
+  subsequent RL-for-reasoning study has to answer. With Shanghai AI Lab
+  co-authors; Tsinghua-led.</p>
+tags:
+  - reasoning
+  - post-training
+  - research
+paper:
+  arxiv: "2504.13837"

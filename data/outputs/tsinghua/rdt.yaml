@@ -1,0 +1,26 @@
+name: RDT (Robotics Diffusion Transformer)
+slug: rdt
+lab: tsinghua
+type: model
+date: 2024-10-10
+flagship: true
+sources:
+  - label: RDT-1B Paper (arXiv)
+    url: https://arxiv.org/abs/2410.07864
+  - label: RDT2 Paper (arXiv)
+    url: https://arxiv.org/abs/2602.03310
+description: >
+  <p>TSAIL's 1.2B diffusion foundation model for bimanual manipulation
+  (ICLR 2025), pretrained on 46 datasets and 1M+ episodes &mdash; the
+  most-adopted open robot FM from academia (~750 citations).
+  <strong>RDT2</strong> (Feb 2026) scales on UMI data toward zero-shot
+  cross-embodiment manipulation (~13K monthly HF downloads). Sibling:
+  Motus, the lab's unified latent-action world model (Dec 2025).</p>
+tags:
+  - robotics
+  - open-weight
+model:
+  architecture: dense
+  parameters: "1.2B"
+paper:
+  arxiv: "2410.07864"

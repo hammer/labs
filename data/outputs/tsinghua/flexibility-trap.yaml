@@ -1,0 +1,24 @@
+name: The Flexibility Trap (JustGRPO)
+slug: flexibility-trap
+lab: tsinghua
+type: paper
+date: 2026-01-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.15165
+description: >
+  <p>ICML 2026 <strong>Outstanding Paper</strong> (LeapLab with THUNLP
+  and Alibaba co-authors): a minimalist GRPO recipe for diffusion LLMs
+  showing that the flexibility of arbitrary-order decoding is a trap for
+  RL &mdash; and that a deliberately simple recipe recovers it. The
+  reasoning-RL line's third landmark after RLVR-limits and Absolute
+  Zero.</p>
+tags:
+  - reasoning
+  - post-training
+  - research
+paper:
+  arxiv: "2601.15165"
+related:
+  - rlvr-limits
+  - absolute-zero
