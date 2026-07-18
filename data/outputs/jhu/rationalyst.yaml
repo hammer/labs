@@ -1,0 +1,24 @@
+name: RATIONALYST
+slug: rationalyst
+lab: jhu
+type: paper
+date: 2024-10-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.01044
+  - label: GitHub
+    url: https://github.com/JHU-CLSP/Rationalyst
+description: >
+  <p>Process-supervision for reasoning via pretraining: mines
+  <strong>79K implicit rationales</strong> from unlabeled web text and
+  the Pile, then trains a model that supervises another LLM's
+  chain-of-thought step by step at inference. Improves accuracy by an
+  average ~3.9% across seven reasoning benchmarks (math, commonsense,
+  scientific, logical), including GSM8K and MATH. JHU (Jiang, Khashabi,
+  Van Durme et al.).</p>
+tags:
+  - reasoning
+  - training
+  - research
+paper:
+  arxiv: "2410.01044"

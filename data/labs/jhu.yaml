@@ -1,0 +1,74 @@
+name: Johns Hopkins
+slug: jhu
+url: https://www.clsp.jhu.edu
+wikipedia: https://en.wikipedia.org/wiki/Johns_Hopkins_University
+huggingface: https://huggingface.co/jhu-clsp
+github: https://github.com/JHU-CLSP
+region: usa
+founded: "1876"
+type: academic
+description: >
+  <p>Johns Hopkins' Center for Language and Speech Processing (CLSP) and
+  the affiliated Human Language Technology Center of Excellence (HLTCOE)
+  form one of the oldest NLP/speech institutions &mdash; Koehn's
+  statistical-MT and Khudanpur's Kaldi lineages, plus the annual JSALT
+  workshops. Its current foundation-model engine is Benjamin Van Durme's
+  group, with PhD student Orion Weller as first author across the line:
+  <a href="/outputs/jhu/mmbert">mmBERT</a> (multilingual ModernBERT-style
+  encoders, 3T tokens / 1,833 languages, ~468K monthly downloads), the
+  <a href="/outputs/jhu/ettin">Ettin</a> paired encoder/decoder suite
+  (17M&ndash;1B), <a href="/outputs/jhu/rank1">Rank1</a> &mdash; the first
+  test-time-compute reranker &mdash; and the instruction-trained retriever
+  <a href="/outputs/jhu/promptriever">Promptriever</a>.</p>
+
+  <p>Two more threads are on-thesis: Daniel Khashabi's reasoning and
+  evaluation line (<a href="/outputs/jhu/rationalyst">RATIONALYST</a>
+  process-supervision pretraining,
+  <a href="/outputs/jhu/dated-data">Dated Data</a> on effective knowledge
+  cutoffs), and the CCVL medical-vision group (Zongwei Zhou, Alan Yuille)
+  building the <a href="/outputs/jhu/abdomenatlas">AbdomenAtlas</a>
+  dataset + SuPreM pretrained suite and the
+  <a href="/outputs/jhu/touchstone">Touchstone</a> multi-center
+  segmentation benchmark. HLTCOE adds steady CLIR/retrieval infrastructure
+  (ColBERT-X, Rank-K, TREC RAG validators).</p>
+
+  <p>Attribution notes: Van Durme's Scholar affiliation is literally
+  "Johns Hopkins University / Microsoft" (confirmed split); DOLOMITES is
+  Google DeepMind's, not JHU's; no frontier-scale CLSP speech artifact
+  shipped in the window &mdash; Koehn's MT effort runs largely through
+  Meta collaborations.</p>
+people:
+  - name: Benjamin Van Durme
+    role: Professor, CLSP / HLTCOE — senior author of the mmBERT / Ettin / Rank1 / Promptriever line
+    formerly: Microsoft (concurrent split, per Scholar affiliation)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=wIujAJoAAAAJ
+  - name: Philipp Koehn
+    role: Professor, CLSP — machine translation (Moses; statistical MT to LLM-MT)
+    formerly: Meta AI (past affiliation; no current flag verified)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=OsIZgIYAAAAJ
+  - name: Sanjeev Khudanpur
+    role: Professor, CLSP — speech; Kaldi lineage; JSALT organizer
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=K-BdgNwAAAAJ
+  - name: Daniel Khashabi
+    role: Assistant Professor — RATIONALYST, evaluation / feedback-friction line
+    formerly: Allen Institute for AI (AI2)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=pK2kQvgAAAAJ
+  - name: Mark Dredze
+    role: Professor — health/social NLP; co-leads JHU AI-X Foundry direction
+    formerly: Bloomberg LP (historic part-time affiliation, not currently verified)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=7jNkTbYAAAAJ
+tags:
+  - academic
+  - nlp
+  - multilingual
+  - research

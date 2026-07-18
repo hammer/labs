@@ -1,0 +1,25 @@
+name: Rank1
+slug: rank1
+lab: jhu
+type: model
+date: 2025-02-25
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.18418
+  - label: HuggingFace
+    url: https://huggingface.co/jhu-clsp/rank1-7b
+description: >
+  <p>The first <strong>test-time-compute ("reasoning") reranker</strong>
+  (COLM 2025): generates an explicit reasoning chain before judging
+  document relevance, trained on a released dataset of 600K+ R1 reasoning
+  traces from MS MARCO queries. rank1-7b sits around 75K HF downloads;
+  HLTCOE's Rank-K (arXiv:2505.14432) extends the idea to listwise
+  reranking. JHU (Weller, Yang, Lawrie, Van Durme).</p>
+tags:
+  - reasoning
+  - nlp
+  - open-weight
+paper:
+  arxiv: "2502.18418"
+related:
+  - promptriever

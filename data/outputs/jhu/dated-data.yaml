@@ -1,0 +1,23 @@
+name: Dated Data
+slug: dated-data
+lab: jhu
+type: paper
+date: 2024-03-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2403.12958
+description: >
+  <p>"Tracing Knowledge Cutoffs in Large Language Models" (COLM 2024):
+  shows a model's
+  <strong>effective</strong> knowledge cutoff often differs sharply from
+  its reported cutoff &mdash; driven by stale CommonCrawl dumps and
+  deduplication artifacts in pretraining corpora &mdash; and gives a
+  probing method to estimate the real cutoff per resource. Cheng, Marone,
+  Van Durme et al.; pre-window preprint with in-window COLM
+  publication.</p>
+tags:
+  - research
+  - evaluation
+  - nlp
+paper:
+  arxiv: "2403.12958"

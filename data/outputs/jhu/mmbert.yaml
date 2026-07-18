@@ -1,0 +1,42 @@
+name: mmBERT
+slug: mmbert
+lab: jhu
+type: model
+date: 2025-09-08
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.06888
+  - label: HuggingFace
+    url: https://huggingface.co/jhu-clsp/mmBERT-base
+description: >
+  <p>Modern multilingual encoders from JHU-CLSP (Marone, Weller, Fleshman,
+  Yang, Lawrie, Van Durme): ModernBERT-style architecture (Flash Attention
+  2, 8K context, Gemma 2 tokenizer / 256K vocab) pretrained from scratch
+  on <strong>3T+ tokens</strong> with annealed language learning &mdash;
+  progressively expanding from 60 to <strong>1,833 languages</strong>,
+  saving the low-resource long tail for the decay phase. The first real
+  successor to XLM-R as the default multilingual encoder;
+  mmBERT-base runs ~468K monthly HF downloads.</p>
+tags:
+  - multilingual
+  - open-weight
+  - nlp
+model:
+  architecture: dense
+  parameters: "307M"
+  training_tokens: "3T"
+  context_window: 8192
+  languages: 1833
+  license: MIT
+  variants:
+    - name: mmBERT-small
+      parameters: "140M"
+      notes: 42M non-embedding
+    - name: mmBERT-base
+      parameters: "307M"
+      notes: 110M non-embedding
+paper:
+  arxiv: "2509.06888"
+related:
+  - ettin

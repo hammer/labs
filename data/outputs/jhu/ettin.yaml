@@ -1,0 +1,46 @@
+name: Ettin
+slug: ettin
+lab: jhu
+type: model
+date: 2025-07-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.11412
+  - label: HuggingFace
+    url: https://huggingface.co/jhu-clsp/ettin-encoder-1b
+description: >
+  <p>"Seq vs Seq: An Open Suite of Paired Encoders and Decoders": the
+  first collection of encoder-only and decoder-only models trained from
+  scratch with <strong>identical data, architecture, and recipe</strong>
+  &mdash; six sizes from 17M to 1B, each in both flavors, on 2T tokens of
+  open data (DCLM, Dolma v1.7, code, scientific papers). A clean testbed
+  for the encoder-vs-decoder question: encoders win MNLI even against
+  larger decoders, decoders win generation, and cross-objective
+  continued training doesn't close the gap. JHU-CLSP (Weller et al.),
+  MIT-licensed with released data and checkpoints.</p>
+tags:
+  - open-weight
+  - pretraining
+  - research
+model:
+  architecture: dense
+  parameters: "1B"
+  training_tokens: "2T"
+  license: MIT
+  variants:
+    - name: Ettin 17M
+      parameters: "17M"
+    - name: Ettin 32M
+      parameters: "32M"
+    - name: Ettin 68M
+      parameters: "68M"
+    - name: Ettin 150M
+      parameters: "150M"
+    - name: Ettin 400M
+      parameters: "400M"
+    - name: Ettin 1B
+      parameters: "1B"
+paper:
+  arxiv: "2507.11412"
+related:
+  - mmbert

@@ -1,0 +1,24 @@
+name: Promptriever
+slug: promptriever
+lab: jhu
+type: model
+date: 2024-09-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2409.11136
+description: >
+  <p>The first dense retriever that can be <strong>prompted like a
+  language model</strong>: trained on a released MS MARCO variant
+  augmented with ~500K instruction-annotated instances, it follows
+  free-form relevance instructions at query time and gains robustness to
+  query phrasing while staying competitive on standard retrieval. JHU
+  (Weller, Van Durme et al.) with Samaya AI and UW co-authors &mdash;
+  note the joint attribution.</p>
+tags:
+  - nlp
+  - open-weight
+  - research
+paper:
+  arxiv: "2409.11136"
+related:
+  - rank1

@@ -1,0 +1,29 @@
+name: AbdomenAtlas
+slug: abdomenatlas
+lab: jhu
+type: dataset
+date: 2024-07-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.16697
+  - label: GitHub
+    url: https://github.com/MrGiovanni/AbdomenAtlas
+description: >
+  <p>The largest annotated abdominal CT dataset: <strong>20K+
+  volumes from 112 hospitals</strong> with per-voxel organ annotations
+  built by an AI-accelerated human-in-the-loop engine (Medical Image
+  Analysis 2024; ICLR 2024 oral lineage), plus the
+  <strong>SuPreM</strong> suite of pretrained 3D segmentation models with
+  demonstrated transfer to new targets. JHU CCVL (Wenxuan Li, Zongwei
+  Zhou, Alan Yuille) &mdash; an on-thesis medical foundation-model data
+  engine.</p>
+tags:
+  - science
+  - vision
+  - open-source
+paper:
+  arxiv: "2407.16697"
+dataset:
+  github: https://github.com/MrGiovanni/AbdomenAtlas
+related:
+  - touchstone

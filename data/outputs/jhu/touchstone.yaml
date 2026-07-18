@@ -1,0 +1,26 @@
+name: Touchstone
+slug: touchstone
+lab: jhu
+type: eval
+date: 2024-11-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.03670
+  - label: GitHub
+    url: https://github.com/MrGiovanni/Touchstone
+description: >
+  <p>"How Are We Doing on Medical Segmentation?" (NeurIPS 2024): a
+  large-scale collaborative benchmark of 3D medical-segmentation AI
+  trained on data from <strong>76 hospitals</strong> and tested on 11
+  held-out hospitals, evaluating dozens of community-submitted
+  architectures under a common protocol &mdash; a corrective to
+  single-center leaderboard results. JHU CCVL, companion evaluation to
+  AbdomenAtlas.</p>
+tags:
+  - benchmark
+  - science
+  - evaluation
+paper:
+  arxiv: "2411.03670"
+related:
+  - abdomenatlas
