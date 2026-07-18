@@ -1,0 +1,20 @@
+name: LLaVA-CoT
+slug: llava-cot
+lab: peking
+type: model
+date: 2024-11-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.10440
+description: >
+  <p>The first widely-noted open "visual o1" (ICCV 2025; 2.1K&#9733;;
+  with Tsinghua and Alibaba): structured multi-stage visual reasoning
+  &mdash; summary, caption, reasoning, conclusion &mdash; that brought
+  o1-style deliberate reasoning to vision-language models and was heavily
+  cited across the multimodal-reasoning wave.</p>
+tags:
+  - multimodal
+  - reasoning
+  - open-weight
+paper:
+  arxiv: "2411.10440"
