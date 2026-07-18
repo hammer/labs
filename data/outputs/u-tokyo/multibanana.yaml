@@ -1,0 +1,20 @@
+name: MultiBanana
+slug: multibanana
+lab: u-tokyo
+type: eval
+date: 2025-11-27
+sources:
+  - label: GitHub
+    url: https://github.com/matsuolab/multibanana
+description: >
+  <p>CVPR 2026: a benchmark for <strong>multi-reference
+  text-to-image generation</strong> &mdash; stress-testing whether
+  generators can compose subjects, styles, and attributes drawn from
+  multiple reference images at once, a regime single-reference
+  benchmarks miss. From the Matsuo-Iwasawa Lab's generative-model
+  line.</p>
+tags:
+  - evaluation
+  - multimodal
+paper:
+  venue: CVPR 2026

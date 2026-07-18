@@ -1,0 +1,26 @@
+name: Med-Asagi
+slug: med-asagi
+lab: u-tokyo
+type: model
+date: 2026-03-10
+sources:
+  - label: HuggingFace (Med-Asagi-14B-reasoning_beta)
+    url: https://huggingface.co/MIL-UT/Med-Asagi-14B-reasoning_beta
+description: >
+  <p>A 14.2B Japanese <strong>medical VLM</strong> with
+  chain-of-thought reasoning, built on the
+  <a href="/outputs/u-tokyo/asagi">Asagi</a> line and trained with
+  ~12M translated medical examples; the SFT variant approaches GPT-5
+  on CT and X-ray VQA. A scientific FM with transfer evidence from
+  <a href="/people/tatsuya-harada">Tatsuya Harada</a>'s RCAST/MIL
+  group with RIKEN AIP (dual affiliation), Jichi Medical University,
+  the National Cancer Center, and NII. Beta checkpoint released
+  CC-BY-SA-4.0, announced via RCAST press 2026-03.</p>
+tags:
+  - medical
+  - multimodal
+  - multilingual
+model:
+  license: CC BY-SA 4.0
+related:
+  - asagi

@@ -1,0 +1,28 @@
+name: Asagi
+slug: asagi
+lab: u-tokyo
+type: model
+date: 2025-01-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.22736
+  - label: HuggingFace (Asagi-14B)
+    url: https://huggingface.co/MIL-UT/Asagi-14B
+description: >
+  <p>Open Japanese vision-language model family (2B/4B/8B/14B) from
+  <a href="/people/tatsuya-harada">Tatsuya Harada</a>'s Machine
+  Intelligence Lab, with RIKEN and NII contributors: the training data
+  is <strong>synthesized from scratch</strong> using only open models
+  &mdash; deliberately avoiding outputs of usage-restricted LLMs like
+  GPT-4 &mdash; making the whole stack license-clean. Top score among
+  Japanese VLMs free of such restricted data; Apache-2.0 checkpoints
+  under the MIL-UT org. Base of the medical
+  <a href="/outputs/u-tokyo/med-asagi">Med-Asagi</a> line.</p>
+tags:
+  - multimodal
+  - multilingual
+  - open-weight
+paper:
+  arxiv: "2410.22736"
+related:
+  - med-asagi

@@ -1,0 +1,27 @@
+name: Weblab-10B
+slug: weblab-10b
+lab: u-tokyo
+type: model
+date: 2023-08-04
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/matsuo-lab/weblab-10b
+description: >
+  <p>The Matsuo Lab's first large open Japanese LLM and the lab's
+  from-scratch legacy anchor: a 10B-parameter GPT-NeoX-architecture
+  bilingual model pretrained on ~600B tokens of Japanese C4 plus The
+  Pile, released with an instruction-SFT variant under CC-BY-NC-4.0.
+  At release (August 2023) among the largest LLMs pretrained in Japan;
+  direct ancestor of the GENIAC-program
+  <a href="/outputs/u-tokyo/tanuki">Tanuki</a> models.</p>
+tags:
+  - multilingual
+  - open-weight
+  - pretraining
+model:
+  architecture: dense
+  parameters: "10B"
+  training_tokens: "600B"
+  license: CC BY-NC 4.0
+related:
+  - tanuki

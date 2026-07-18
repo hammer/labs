@@ -1,0 +1,76 @@
+name: UTokyo
+slug: u-tokyo
+url: https://www.u-tokyo.ac.jp/en/
+wikipedia: https://en.wikipedia.org/wiki/University_of_Tokyo
+huggingface: https://huggingface.co/weblab-GENIAC
+github: https://github.com/matsuolab
+region: japan
+founded: "1877"
+type: academic
+description: >
+  <p>The <strong>University of Tokyo</strong> is Japan's flagship
+  university; its AI center of gravity is the
+  <strong>Matsuo-Iwasawa Lab</strong> (Graduate School of Engineering)
+  &mdash; the country's best-known academic deep-learning group and
+  startup factory (PKSHA, DeepX, ELYZA; spin-outs are tracked
+  separately) &mdash; alongside Tatsuya Harada's Machine Intelligence
+  Lab at RCAST (dual-hatted with RIKEN AIP) and Masashi Sugiyama's
+  ML-theory group (Sugiyama directs RIKEN AIP, Japan's national AI
+  center). Yutaka Matsuo chairs the Cabinet Office AI Strategy Council
+  and directs the AI Robot Association (AIRoA).</p>
+
+  <p>The from-scratch line: <a
+  href="/outputs/u-tokyo/weblab-10b">Weblab-10B</a> (2023, 10B
+  GPT-NeoX on ~600B tokens) was the lab's first large open Japanese
+  LLM, and its GENIAC national-program successor
+  <a href="/outputs/u-tokyo/tanuki">Tanuki</a> (2024) scaled to an
+  upcycled 8x8B MoE (~47B total / ~13B active, ~1.7T tokens,
+  Apache-2.0) that matched GPT-3.5-Turbo on Japanese MT-Bench &mdash;
+  then a leading domestically-trained LLM. GENIAC weights ship under
+  the <a href="https://huggingface.co/weblab-GENIAC">weblab-GENIAC</a>
+  org; the lab also released a PII-filtered 10B-token Japanese
+  pretraining corpus.</p>
+
+  <p>Harada's <a href="/outputs/u-tokyo/asagi">Asagi</a> VLM family
+  (synthetic, license-clean Japanese multimodal data) extends to the
+  <a href="/outputs/u-tokyo/med-asagi">Med-Asagi</a> medical VLM; the
+  Iwasawa-senior-authored <a
+  href="/outputs/u-tokyo/mmlu-prox">MMLU-ProX</a> is a widely-used
+  29-language reasoning benchmark; and robotics is ramping through
+  AIRoA: the <a href="/outputs/u-tokyo/airoa-moma">AIRoA MoMa</a>
+  mobile-manipulation dataset, with a claimed ~100,000-hour
+  robot-motion dataset and a multimodal robot foundation model in
+  progress (watch items, no public checkpoint). Not filed here:
+  Swallow (Institute of Science Tokyo), LLM-jp
+  (<a href="/labs/nii">NII</a>), and Matsuo-lab spinoff ELYZA.</p>
+people:
+  - name: Yutaka Matsuo
+    role: Professor, Graduate School of Engineering (Matsuo-Iwasawa Lab); Director, AIRoA; chairs Cabinet Office AI Strategy Council; SoftBank Group board director
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Dy8iau4AAAAJ
+  - name: Yusuke Iwasawa
+    role: Associate Professor, Matsuo-Iwasawa Lab (co-lead); co-author of "LLMs are Zero-Shot Reasoners"
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=nRLaJiQAAAAJ
+  - name: Tatsuya Harada
+    role: Professor, RCAST (Machine Intelligence Lab); Team Leader, RIKEN AIP
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=k8rlJ8AAAAAJ
+  - name: Masashi Sugiyama
+    role: Professor, Complexity Science and Engineering; Director, RIKEN AIP
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=GkYIrlIAAAAJ
+  - name: Yoshimasa Tsuruoka
+    role: Professor, Graduate School of Information Science and Technology (GENIA tagger, shogi engine Gekisashi)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=J2CkFngAAAAJ
+tags:
+  - academic
+  - research
+  - robotics
+  - multilingual

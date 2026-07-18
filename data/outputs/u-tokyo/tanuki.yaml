@@ -1,0 +1,42 @@
+name: Tanuki
+slug: tanuki
+lab: u-tokyo
+type: model
+date: 2024-08-12
+flagship: true
+sources:
+  - label: HuggingFace (Tanuki-8x8B-dpo-v1.0)
+    url: https://huggingface.co/weblab-GENIAC/Tanuki-8x8B-dpo-v1.0
+  - label: HuggingFace (Tanuki-8B-dpo-v1.0)
+    url: https://huggingface.co/weblab-GENIAC/Tanuki-8B-dpo-v1.0
+  - label: GENIAC LLM Project (Matsuo-Iwasawa Lab)
+    url: https://weblab.t.u-tokyo.ac.jp/geniac_llm/
+description: >
+  <p>Japanese LLMs pretrained <strong>from scratch</strong> by the
+  Matsuo-Iwasawa Lab under the GENIAC national program, built by a
+  publicly recruited volunteer team (students, researchers, industry).
+  Tanuki-8B trained on ~1.3T tokens; <strong>Tanuki-8x8B</strong> is a
+  from-scratch upcycled MoE (~47B total / ~13B active, ~1.7T tokens)
+  that matched GPT-3.5-Turbo on Japanese MT-Bench &mdash; at release a
+  leading domestically-trained Japanese LLM. Apache-2.0, with DPO chat
+  tuning and vision variants (Tanuki-8B-vision, 8x8B-vision-exp) built
+  via data synthesis. Direct successor to
+  <a href="/outputs/u-tokyo/weblab-10b">Weblab-10B</a>.</p>
+tags:
+  - multilingual
+  - open-weight
+  - pretraining
+model:
+  architecture: moe
+  parameters: "47B"
+  active_parameters: "13B"
+  training_tokens: "1.7T"
+  license: Apache 2.0
+  variants:
+    - name: Tanuki-8B
+      parameters: "8B"
+    - name: Tanuki-8x8B
+      parameters: "47B"
+      active_parameters: "13B"
+related:
+  - weblab-10b

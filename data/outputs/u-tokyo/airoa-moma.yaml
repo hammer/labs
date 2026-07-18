@@ -1,0 +1,29 @@
+name: AIRoA MoMa
+slug: airoa-moma
+lab: u-tokyo
+type: dataset
+date: 2025-09-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.25032
+  - label: HuggingFace Dataset
+    url: https://huggingface.co/datasets/airoa-org/airoa-moma
+description: >
+  <p>Large-scale hierarchical <strong>mobile-manipulation</strong>
+  dataset: 25,469 episodes (~94 hours) on the Toyota Human Support
+  Robot with synchronized RGB, joint states, and 6-axis force-torque
+  sensing, annotated with a two-layer sub-goal hierarchy and
+  standardized to the widely-adopted LeRobot v2.1 format. From AIRoA
+  (directed by <a href="/people/yutaka-matsuo">Yutaka Matsuo</a>) with
+  the Matsuo-Iwasawa Lab (<a
+  href="/people/yusuke-iwasawa">Yusuke Iwasawa</a> co-author) and
+  Waseda &mdash; the first public step of AIRoA's claimed
+  ~100,000-hour robot-motion dataset and robot-FM program.</p>
+tags:
+  - robotics
+  - data
+dataset:
+  huggingface_url: https://huggingface.co/datasets/airoa-org/airoa-moma
+  size: "25,469 episodes (~94 h)"
+paper:
+  arxiv: "2509.25032"

@@ -1,0 +1,28 @@
+name: MMLU-ProX
+slug: mmlu-prox
+lab: u-tokyo
+type: eval
+date: 2025-03-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.10497
+  - label: HuggingFace Dataset
+    url: https://huggingface.co/datasets/li-lab/MMLU-ProX
+description: >
+  <p>EMNLP 2025: a 29-language <strong>parallel</strong> extension of
+  the MMLU-Pro reasoning benchmark, built with a semi-automatic
+  translation pipeline plus expert verification, and used to evaluate
+  36 state-of-the-art LLMs &mdash; exposing large high- vs
+  low-resource language gaps. Multi-institution effort with
+  <a href="/people/yusuke-iwasawa">Yusuke Iwasawa</a> (Matsuo-Iwasawa
+  Lab) as senior author; ~6.6K HF downloads signal real adoption as a
+  multilingual-reasoning standard.</p>
+tags:
+  - evaluation
+  - multilingual
+eval:
+  domains:
+    - multilingual reasoning
+paper:
+  arxiv: "2503.10497"
+  venue: EMNLP 2025
