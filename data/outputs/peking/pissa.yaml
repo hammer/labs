@@ -1,0 +1,27 @@
+name: PiSSA
+slug: pissa
+lab: peking
+type: paper
+date: 2024-04-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2404.02948
+  - label: GitHub
+    url: https://github.com/GraphPKU/PiSSA
+description: >
+  <p>Muhan Zhang's group (Institute for AI): SVD-initialized LoRA
+  (NeurIPS 2024) &mdash; initializing adapters with the principal
+  singular values and vectors of the frozen weight matrices converges
+  faster and outperforms vanilla LoRA at identical cost. Merged
+  upstream into Hugging Face PEFT
+  (<code>init_lora_weights="pissa"</code>), making it one of the few
+  academic PEFT variants with default-library distribution.</p>
+tags:
+  - efficiency
+  - post-training
+  - research
+paper:
+  arxiv: "2404.02948"
+  venue: NeurIPS 2024
+related:
+  - transmla

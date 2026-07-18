@@ -1,0 +1,26 @@
+name: Safe RLHF-V
+slug: safe-rlhf-v
+lab: peking
+type: paper
+date: 2025-03-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.17682
+description: >
+  <p>The first multimodal safe-RLHF framework (NeurIPS 2025;
+  PKU-Alignment): separate reward and cost models under a Lagrangian
+  constraint balance helpfulness against safety in MLLMs, trained on
+  the new BeaverTails-V preference data. Sibling SafeVLA (NeurIPS 2025
+  Spotlight) extends the constrained-learning recipe to VLA robot
+  policies; both continue the group's original Safe RLHF /
+  PKU-SafeRLHF lineage.</p>
+tags:
+  - alignment
+  - safety
+  - multimodal
+paper:
+  arxiv: "2503.17682"
+  venue: NeurIPS 2025
+related:
+  - align-anything
+  - aligner

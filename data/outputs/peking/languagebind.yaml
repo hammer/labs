@@ -1,0 +1,29 @@
+name: LanguageBind / Video-LLaVA
+slug: languagebind
+lab: peking
+type: model
+date: 2023-10-03
+sources:
+  - label: LanguageBind Paper (arXiv)
+    url: https://arxiv.org/abs/2310.01852
+  - label: Video-LLaVA Paper (arXiv)
+    url: https://arxiv.org/abs/2311.10122
+  - label: GitHub
+    url: https://github.com/PKU-YuanGroup/LanguageBind
+description: >
+  <p>The foundational multimodal line of Li Yuan's PKU-YuanGroup:
+  LanguageBind (ICLR 2024) binds video, infrared, depth, and audio to a
+  frozen language encoder; Video-LLaVA (EMNLP 2024) unifies image and
+  video instruction tuning on the aligned representation and became a
+  standard open video-LLM baseline. The lineage (with MoE-LLaVA and
+  MagicTime) seeded the group's LanguageBind HF org and led to
+  LLaVA-CoT (ICCV 2025, 2.1K&#9733;), the first widely-noted open
+  "visual o1" structured-reasoning VLM.</p>
+tags:
+  - multimodal
+  - video
+  - foundational
+paper:
+  arxiv: "2310.01852"
+related:
+  - open-sora-plan

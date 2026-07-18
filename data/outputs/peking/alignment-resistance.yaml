@@ -1,0 +1,26 @@
+name: Language Models Resist Alignment
+slug: alignment-resistance
+lab: peking
+type: paper
+date: 2024-06-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.06144
+description: >
+  <p>PKU-Alignment's compression-theory account of alignment
+  "elasticity" &mdash; post-trained models rebound toward the
+  pretraining distribution, so alignment is shallower than it looks
+  &mdash; <strong>ACL 2025 Best Paper</strong>. The theoretical anchor
+  of the group's safety line, alongside its moral-progress ProgressGym
+  benchmark (NeurIPS 2024 D&amp;B Spotlight) and SAE-V multimodal
+  interpretability (ICML 2025).</p>
+tags:
+  - alignment
+  - safety
+  - research
+paper:
+  arxiv: "2406.06144"
+  venue: ACL 2025 (Best Paper)
+related:
+  - align-anything
+  - aligner

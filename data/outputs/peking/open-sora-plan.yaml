@@ -1,0 +1,38 @@
+name: Open-Sora Plan
+slug: open-sora-plan
+lab: peking
+type: model
+date: 2024-11-28
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.00131
+  - label: GitHub
+    url: https://github.com/PKU-YuanGroup/Open-Sora-Plan
+  - label: HuggingFace (v1.5.0)
+    url: https://huggingface.co/LanguageBind/Open-Sora-Plan-v1.5.0
+description: >
+  <p>PKU-YuanGroup's leading open-source Sora reproduction
+  (12.2K&#9733;; Li Yuan, Shenzhen Graduate School, with the
+  PKU&ndash;Rabbitpre joint lab): v1.5.0 (June 2025) pretrains an
+  <strong>8B-scale sparse "SUV" video DiT from scratch</strong> on 40M
+  video samples over the group's WF-VAE (CVPR 2025), matching
+  open-source HunyuanVideo &mdash; trained and inferred entirely on
+  Huawei Ascend 910-series NPUs. Successors: OSP-Next (May 2026; sparse
+  sequence parallelism, HiF8 quantization, RL post-training) and the
+  Helios real-time long-video generator (~2K&#9733; in 3 months).
+  Sibling ConsisID identity-preserving T2V (CVPR 2025 Highlight) ships
+  in HF diffusers.</p>
+tags:
+  - video
+  - generation
+  - open-weight
+model:
+  architecture: dense
+  parameters: "8B"
+  training_hardware: Huawei Ascend 910-series NPUs (v1.5.0)
+paper:
+  arxiv: "2412.00131"
+related:
+  - languagebind
+  - uniworld

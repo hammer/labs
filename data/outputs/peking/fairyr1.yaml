@@ -1,0 +1,31 @@
+name: FairyR1-32B
+slug: fairyr1
+lab: peking
+type: model
+date: 2025-05-23
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/PKU-DS-LAB/FairyR1-32B
+  - label: TinyR1 Method Paper (arXiv)
+    url: https://arxiv.org/abs/2503.04872
+description: >
+  <p>PKU-DS-LAB's (Tong Yang) branch-merge distillation applied to
+  DeepSeek-R1-Distill-Qwen-32B: specialized math and code branches are
+  trained separately, then merged, reaching roughly R1-671B-level AIME
+  and LiveCodeBench scores at ~5% of the parameters (102 HF likes).
+  The method paper is TinyR1-32B-Preview (joint with Qihoo360). The
+  same lab followed with iFairy / Fairy2i, the first 2-bit
+  complex-valued LLMs (weights in {&plusmn;1, &plusmn;i}).</p>
+tags:
+  - reasoning
+  - open-weight
+  - efficiency
+model:
+  base_model: deepseek-r1
+  license: Apache 2.0
+paper:
+  arxiv: "2503.04872"
+notes: >
+  The arXiv ID 2505.17320 sometimes cited for FairyR1 resolves to an
+  unrelated TTS paper; the correct method paper is TinyR1
+  (arXiv:2503.04872).

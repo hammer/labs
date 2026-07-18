@@ -1,0 +1,29 @@
+name: UniWorld
+slug: uniworld
+lab: peking
+type: model
+date: 2025-06-03
+sources:
+  - label: UniWorld-V1 Paper (arXiv)
+    url: https://arxiv.org/abs/2506.03147
+  - label: UniWorld-V2 / Edit-R1 Paper (arXiv)
+    url: https://arxiv.org/abs/2510.16888
+  - label: GitHub
+    url: https://github.com/PKU-YuanGroup/UniWorld
+description: >
+  <p>PKU-YuanGroup's unified understanding+generation line:
+  UniWorld-V1 (June 2025) builds joint visual understanding,
+  generation, and editing on high-resolution semantic encoders;
+  UniWorld-V2 / Edit-R1 (Oct 2025) adds RL post-training for image
+  editing via diffusion negative-aware finetuning with implicit MLLM
+  feedback. Fed by the group's ImgEdit unified image-editing
+  dataset+benchmark (NeurIPS 2025 D&amp;B).</p>
+tags:
+  - multimodal
+  - generation
+  - open-weight
+paper:
+  arxiv: "2506.03147"
+related:
+  - open-sora-plan
+  - languagebind

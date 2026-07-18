@@ -1,0 +1,23 @@
+name: TransMLA
+slug: transmla
+lab: peking
+type: paper
+date: 2025-02-11
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.07864
+description: >
+  <p>Muhan Zhang's group converts existing GQA checkpoints to
+  DeepSeek-style Multi-head Latent Attention (~490&#9733;): it shows
+  MLA is strictly more expressive than GQA at the same KV-cache budget
+  and migrates released models with minimal quality loss, letting the
+  open ecosystem inherit DeepSeek's KV-cache compression without
+  retraining from scratch.</p>
+tags:
+  - architecture
+  - attention
+  - efficiency
+paper:
+  arxiv: "2502.07864"
+related:
+  - pissa

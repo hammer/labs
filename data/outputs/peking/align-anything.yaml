@@ -1,0 +1,30 @@
+name: Align-Anything
+slug: align-anything
+lab: peking
+type: library
+date: 2024-12-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.15838
+  - label: GitHub
+    url: https://github.com/PKU-Alignment/align-anything
+description: >
+  <p>PKU-Alignment's all-modality alignment framework (4.7K&#9733;;
+  Yaodong Yang, Institute for AI): trains any-to-any models across
+  text, image, audio, and video with RLHF/DPO-family algorithms behind
+  unified interfaces &mdash; the backbone of the group's later releases
+  and companion to the standard PKU-SafeRLHF safety-preference dataset
+  (~15K monthly HF downloads) and the InterMT multi-turn interleaved
+  preference data (NeurIPS 2025 Spotlight).</p>
+tags:
+  - alignment
+  - infrastructure
+  - multimodal
+library:
+  github: https://github.com/PKU-Alignment/align-anything
+paper:
+  arxiv: "2412.15838"
+related:
+  - aligner
+  - alignment-resistance
+  - safe-rlhf-v

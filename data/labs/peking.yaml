@@ -1,0 +1,73 @@
+name: Peking University
+slug: peking
+url: https://english.pku.edu.cn/
+wikipedia: https://en.wikipedia.org/wiki/Peking_University
+huggingface: https://huggingface.co/PKU-Alignment
+github: https://github.com/PKU-YuanGroup
+region: china
+founded: "1898"
+type: academic
+description: >
+  <p>Peking University's foundation-model output runs on two engines.
+  Yaodong Yang's <strong>PKU-Alignment</strong> (Institute for AI) is
+  the most complete academic safety/alignment stack anywhere: the Safe
+  RLHF &rarr; <a href="/outputs/peking/aligner">Aligner</a> (NeurIPS
+  2024 Oral) &rarr;
+  <a href="/outputs/peking/align-anything">Align-Anything</a> line, the
+  PKU-SafeRLHF preference data much of the field trains cost models on,
+  and the ACL 2025 Best Paper showing
+  <a href="/outputs/peking/alignment-resistance">language models
+  elastically resist alignment</a>.</p>
+
+  <p>Li Yuan's <strong>PKU-YuanGroup</strong> (Shenzhen Graduate
+  School; HF org LanguageBind) ships the open video/multimodal line:
+  <a href="/outputs/peking/open-sora-plan">Open-Sora Plan</a> (12.2K&#9733;,
+  the leading open Sora reproduction, with v1.5's 8B DiT pretrained
+  entirely on Huawei Ascend), the foundational
+  <a href="/outputs/peking/languagebind">LanguageBind/Video-LLaVA</a>
+  lineage, and <a href="/outputs/peking/uniworld">UniWorld</a> unified
+  understanding+generation. Supporting benches: Tong Yang's
+  <strong>PKU-DS-LAB</strong> (FairyR1-32B branch-merge distillation,
+  iFairy 2-bit complex-valued LLMs), Muhan Zhang's group
+  (<a href="/outputs/peking/pissa">PiSSA</a>, shipped in HF PEFT, and
+  <a href="/outputs/peking/transmla">TransMLA</a>), and Yisen Wang's
+  PKU-ML (LongPPL).</p>
+
+  <p>Carve-outs: BIGAI-branded work (the CraftJarvis/MineStudio
+  Minecraft-agent lineage under Yitao Liang) is excluded from this
+  entry, as is BeingBeyond-branded humanoid work (Being-0; Being-H0 is
+  joint). Joint-lab channels run through PKU&ndash;PsiBot (Yaodong
+  Yang), PKU&ndash;Rabbitpre (Open-Sora Plan), and Qihoo360 (TinyR1
+  method paper).</p>
+people:
+  - name: Yaodong Yang
+    role: Boya Assistant Professor & Assistant Dean, Institute for AI; PKU-Alignment lead; Chief Scientist, PKU–PsiBot joint lab
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=6yL0xw8AAAAJ
+  - name: Li Yuan
+    role: Assistant Professor, Shenzhen Graduate School; PKU-YuanGroup / Open-Sora Plan lead; PKU–Rabbitpre joint lab
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=-5juAR0AAAAJ
+  - name: Muhan Zhang
+    role: Assistant Professor, Institute for AI; PiSSA & TransMLA
+    formerly: Facebook AI Research
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=OBBqkosAAAAJ
+  - name: Tong Yang
+    role: Associate Professor, CS; PKU-DS-LAB (FairyR1, iFairy; TinyR1 joint with Qihoo360)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=zYDaX-4AAAAJ
+  - name: Liwei Wang
+    role: Professor, ML theory; frequent Huawei Noah's Ark co-authorships
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=VZHxoh8AAAAJ
+tags:
+  - academic
+  - video
+  - alignment
+  - research

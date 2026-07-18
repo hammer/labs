@@ -1,0 +1,25 @@
+name: Aligner
+slug: aligner
+lab: peking
+type: paper
+date: 2024-02-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.02416
+description: >
+  <p>PKU-Alignment's residual-correction alignment module (NeurIPS 2024
+  <strong>Oral</strong>): a small model stacked on any upstream LLM
+  learns the residual between preferred and dispreferred answers and
+  rewrites outputs at inference &mdash; alignment as a plug-in that
+  transfers across API-only and open models without touching their
+  weights.</p>
+tags:
+  - alignment
+  - post-training
+  - research
+paper:
+  arxiv: "2402.02416"
+  venue: NeurIPS 2024 (Oral)
+related:
+  - align-anything
+  - alignment-resistance
