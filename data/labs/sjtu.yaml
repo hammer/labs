@@ -1,0 +1,64 @@
+name: Shanghai Jiao Tong University
+slug: sjtu
+url: https://en.sjtu.edu.cn/
+wikipedia: https://en.wikipedia.org/wiki/Shanghai_Jiao_Tong_University
+huggingface: https://huggingface.co/X-LANCE
+github: https://github.com/X-LANCE
+region: china
+founded: "1896"
+type: academic
+description: >
+  <p>SJTU's most famous AI export now ships under someone else's flag:
+  <a href="/people/pengfei-liu">Pengfei Liu</a>'s <strong>GAIR</strong> lab
+  migrated to the Shanghai Innovation Institute, its GitHub org renamed
+  "SII-GAIR", and its post-migration line &mdash; LIMO, OctoThinker, ToRL,
+  ASI-ARCH, LIMI, the daVinci family &mdash; files under
+  <a href="/labs/sii">SII</a>, deliberately excluded here. What this entry
+  retains is the pre-SII GAIR record that shaped the reasoning-data era:
+  the O1 Replication Journey, DeepResearcher, ProX, OlympicArena, and
+  Anole.</p>
+
+  <p>What remains under university branding is still first-rate.
+  <a href="/people/kai-yu">Kai Yu</a>'s <strong>X-LANCE/SpeechLab</strong>
+  ships <a href="/outputs/sjtu/f5-tts">F5-TTS</a> &mdash; one of the
+  most-downloaded open TTS models anywhere &mdash; and the SLAM-LLM
+  speech-LLM training stack; the <strong>IPADS</strong> systems group wrote
+  PowerInfer, trained the SmallThinker on-device MoE family from scratch,
+  and built SkVM (with the serving team spinning out as Tiiny-AI);
+  <a href="/people/cewu-lu">Cewu Lu</a>'s <strong>MVIG</strong> lab anchors
+  embodied AI (AlphaPose/GraspNet lineage, AirExo-2); and the
+  <strong>APEX</strong> lab (<a href="/people/weinan-zhang">Weinan
+  Zhang</a>, <a href="/people/yong-yu">Yong Yu</a>) drives the RL and
+  LLM-agents line.</p>
+people:
+  - name: Pengfei Liu
+    role: Associate Professor; founder/lead, GAIR (now SII-GAIR — recent output ships under SII branding)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=oIz_CYEAAAAJ
+  - name: Kai Yu
+    role: Distinguished Professor; director, X-LANCE/SpeechLab; IEEE & ISCA Fellow; co-founder/chief scientist, AISpeech
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=APssqUMAAAAJ
+  - name: Weinan Zhang
+    role: Professor, CS; APEX/MARL groups; leads agent projects at Shanghai Innovation Institute
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Qzss0GEAAAAJ
+  - name: Cewu Lu
+    role: Professor; MVIG lab (embodied AI); co-founder, Noematrix
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=QZVQEWAAAAAJ
+  - name: Yong Yu
+    role: Professor; founder, APEX Data & Knowledge Management Lab
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=-84M1m0AAAAJ
+tags:
+  - academic
+  - speech
+  - efficiency
+  - robotics
+  - research

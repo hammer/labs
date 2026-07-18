@@ -1,0 +1,27 @@
+name: PowerInfer
+slug: powerinfer
+lab: sjtu
+type: library
+date: 2024-06-10
+sources:
+  - label: PowerInfer Paper (arXiv)
+    url: https://arxiv.org/abs/2312.12456
+  - label: PowerInfer-2 Paper (arXiv)
+    url: https://arxiv.org/abs/2406.06282
+  - label: GitHub
+    url: https://github.com/SJTU-IPADS/PowerInfer
+description: >
+  <p>IPADS's activation-sparsity LLM serving engine (9.6K&#9733;):
+  hot neurons stay on the GPU, cold ones compute on the CPU, making
+  consumer-GPU inference practical (SOSP '24). <strong>PowerInfer-2</strong>
+  (June 2024) extends the design to smartphones with
+  neuron-cluster-granularity heterogeneous compute. The team spun out as
+  Tiiny-AI (tiiny.ai), where the repo now lives.</p>
+tags:
+  - efficiency
+  - inference
+  - open-source
+library:
+  github: https://github.com/SJTU-IPADS/PowerInfer
+paper:
+  arxiv: "2406.06282"

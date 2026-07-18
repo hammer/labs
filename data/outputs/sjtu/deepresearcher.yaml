@@ -1,0 +1,29 @@
+name: DeepResearcher
+slug: deepresearcher
+lab: sjtu
+type: model
+date: 2025-04-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.03160
+  - label: GitHub
+    url: https://github.com/GAIR-NLP/DeepResearcher
+  - label: HuggingFace
+    url: https://huggingface.co/GAIR/DeepResearcher-7b
+description: >
+  <p>The first deep-research agent trained <strong>end-to-end with RL in
+  real-world web environments</strong> &mdash; live search and noisy open
+  web rather than a curated RAG corpus &mdash; from
+  <a href="/people/pengfei-liu">Pengfei Liu</a>'s pre-SII GAIR lab
+  (780&#9733;). Exhibited emergent planning, cross-source verification,
+  and honest "I can't find it" behavior; released as
+  DeepResearcher-7b.</p>
+tags:
+  - agents
+  - reinforcement-learning
+  - open-weight
+model:
+  architecture: dense
+  parameters: "7B"
+paper:
+  arxiv: "2504.03160"

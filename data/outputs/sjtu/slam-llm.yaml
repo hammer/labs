@@ -1,0 +1,27 @@
+name: SLAM-LLM
+slug: slam-llm
+lab: sjtu
+type: library
+date: 2024-12-19
+sources:
+  - label: GitHub
+    url: https://github.com/X-LANCE/SLAM-LLM
+  - label: Framework Paper (arXiv)
+    url: https://arxiv.org/abs/2601.09385
+  - label: SLAM-Omni Paper (arXiv)
+    url: https://arxiv.org/abs/2412.15649
+description: >
+  <p><a href="/people/kai-yu">Kai Yu</a>'s X-LANCE modular training
+  framework for speech, audio, and music LLMs (1K&#9733;). Home of
+  <strong>SLAM-ASR</strong> (arXiv:2402.08846) &mdash; the "embarrassingly
+  simple" linear-projector speech-recognition LLM recipe &mdash; and
+  <strong>SLAM-Omni</strong> (Dec 2024), a single-stage-trained
+  timbre-controllable voice-interaction model.</p>
+tags:
+  - speech
+  - infrastructure
+  - open-source
+library:
+  github: https://github.com/X-LANCE/SLAM-LLM
+paper:
+  arxiv: "2601.09385"

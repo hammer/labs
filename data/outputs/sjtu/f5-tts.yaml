@@ -1,0 +1,29 @@
+name: F5-TTS
+slug: f5-tts
+lab: sjtu
+type: model
+date: 2024-10-09
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.06885
+  - label: GitHub
+    url: https://github.com/SWivid/F5-TTS
+  - label: HuggingFace
+    url: https://huggingface.co/SWivid/F5-TTS
+description: >
+  <p>Non-autoregressive flow-matching TTS from
+  <a href="/people/kai-yu">Kai Yu</a>'s X-LANCE lab (ACL 2025): a
+  Diffusion Transformer that "fakes fluent and faithful speech" without
+  duration models, text encoders, or phoneme alignment. One of the
+  most-adopted open TTS models anywhere &mdash; <strong>~798K monthly
+  HuggingFace downloads</strong>, 15K&#9733;, and a large finetune
+  ecosystem spanning dozens of languages (e.g. the Arabic Habibi-TTS,
+  Jan 2026).</p>
+tags:
+  - speech
+  - tts
+  - open-weight
+paper:
+  arxiv: "2410.06885"
+  venue: ACL 2025

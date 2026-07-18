@@ -1,0 +1,37 @@
+name: SmallThinker
+slug: smallthinker
+lab: sjtu
+type: model
+date: 2025-07-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2507.20984
+  - label: GitHub
+    url: https://github.com/SJTU-IPADS/SmallThinker
+  - label: HuggingFace
+    url: https://huggingface.co/PowerInfer
+description: >
+  <p>IPADS's MoE family <strong>"natively trained for local
+  deployment"</strong> &mdash; from-scratch pretraining co-designed with
+  the on-device inference stack (fine-grained sparsity, pre-attention
+  router for compute/IO overlap) rather than compressing a cloud model
+  after the fact. Successor to the viral SmallThinker-3B-Preview
+  (415 HF likes); weights now ship under the team's Tiiny-AI HF org.</p>
+tags:
+  - efficiency
+  - moe
+  - open-weight
+  - reasoning
+model:
+  architecture: moe
+  parameters: "21B"
+  active_parameters: "3B"
+  variants:
+    - name: SmallThinker-4B-A0.6B
+      parameters: "4B"
+      active_parameters: "0.6B"
+    - name: SmallThinker-21B-A3B
+      parameters: "21B"
+      active_parameters: "3B"
+paper:
+  arxiv: "2507.20984"

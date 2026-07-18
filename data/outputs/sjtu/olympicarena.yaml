@@ -1,0 +1,36 @@
+name: OlympicArena
+slug: olympicarena
+lab: sjtu
+type: eval
+date: 2024-06-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.12753
+  - label: GitHub
+    url: https://github.com/GAIR-NLP/OlympicArena
+description: >
+  <p>Multi-discipline olympiad-level benchmark for "superintelligent AI"
+  cognitive reasoning (NeurIPS 2024 Datasets &amp; Benchmarks):
+  11,163 bilingual problems drawn from 62 international olympic
+  competitions across math, physics, chemistry, biology, geography,
+  astronomy, and CS, with process-level as well as answer-level
+  evaluation. From <a href="/people/pengfei-liu">Pengfei Liu</a>'s
+  pre-SII GAIR lab; picked up in frontier-model eval suites.</p>
+tags:
+  - benchmark
+  - evaluation
+  - reasoning
+eval:
+  num_questions: 11163
+  domains:
+    - mathematics
+    - physics
+    - chemistry
+    - biology
+    - geography
+    - astronomy
+    - computer science
+  scoring_method: answer-level and process-level evaluation across 62 olympiad competitions
+paper:
+  arxiv: "2406.12753"
+  venue: NeurIPS 2024

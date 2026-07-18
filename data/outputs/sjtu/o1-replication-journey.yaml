@@ -1,0 +1,27 @@
+name: O1 Replication Journey
+slug: o1-replication-journey
+lab: sjtu
+type: paper
+date: 2024-10-24
+sources:
+  - label: Part 1 (arXiv)
+    url: https://arxiv.org/abs/2410.18982
+  - label: Part 2 (arXiv)
+    url: https://arxiv.org/abs/2411.16489
+  - label: GitHub
+    url: https://github.com/GAIR-NLP/O1-Journey
+description: >
+  <p>The first open o1-replication program (2K&#9733;), from
+  <a href="/people/pengfei-liu">Pengfei Liu</a>'s GAIR lab in its pre-SII
+  era &mdash; a "strategic progress report" documenting journey learning,
+  search, and reward modeling in the open weeks after o1 shipped.
+  <strong>Part 2</strong>'s finding that simple distillation from o1's
+  API plus SFT beats elaborate pipelines &mdash; the distillation "bitter
+  lesson" &mdash; became one of the most-cited early observations of the
+  reasoning-model era. (GAIR's later reasoning line ships under
+  <a href="/labs/sii">SII</a>.)</p>
+tags:
+  - reasoning
+  - research
+paper:
+  arxiv: "2410.18982"

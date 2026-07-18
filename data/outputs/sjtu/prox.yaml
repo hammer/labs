@@ -1,0 +1,28 @@
+name: ProX (Programming Every Example)
+slug: prox
+lab: sjtu
+type: dataset
+date: 2024-09-25
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2409.17115
+  - label: GitHub
+    url: https://github.com/GAIR-NLP/ProX
+description: >
+  <p>"Programming every example": small LMs emit per-document cleaning
+  programs (normalize, strip, keep/drop) instead of hand-crafted rules,
+  refining pretraining data at scale (ICML 2025). The
+  <strong>&gt;100B-token</strong> refined corpora released on HuggingFace
+  were reused by later pretraining efforts &mdash; a pre-SII GAIR
+  contribution to the data-refinement toolchain from
+  <a href="/people/pengfei-liu">Pengfei Liu</a>'s group.</p>
+tags:
+  - data
+  - pretraining
+  - open-source
+dataset:
+  github: https://github.com/GAIR-NLP/ProX
+  size: ">100B tokens"
+paper:
+  arxiv: "2409.17115"
+  venue: ICML 2025

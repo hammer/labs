@@ -1,0 +1,24 @@
+name: SkVM
+slug: skvm
+lab: sjtu
+type: library
+date: 2026-04-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.03088
+  - label: GitHub
+    url: https://github.com/SJTU-IPADS/SkVM
+description: >
+  <p>IPADS's "language VM" for agent skills: compiles LLM agent skills
+  into a portable representation that runs across heterogeneous models
+  and harnesses, decoupling skill authorship from any one agent stack.
+  533&#9733; in ~3 months and shipped on npm &mdash; the systems group's
+  bid to do for agent skills what bytecode did for programs.</p>
+tags:
+  - agents
+  - infrastructure
+  - open-source
+library:
+  github: https://github.com/SJTU-IPADS/SkVM
+paper:
+  arxiv: "2604.03088"

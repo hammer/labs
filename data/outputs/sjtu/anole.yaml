@@ -1,0 +1,23 @@
+name: Anole
+slug: anole
+lab: sjtu
+type: model
+date: 2024-07-08
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.06135
+  - label: GitHub
+    url: https://github.com/GAIR-NLP/anole
+description: >
+  <p>The first open autoregressive <strong>native</strong> interleaved
+  image-text generation model (841&#9733;, ICLR 2025 blog track) &mdash;
+  built by un-lobotomizing Meta's Chameleon, restoring image generation
+  with a data- and parameter-efficient finetune of the output head.
+  A pre-SII GAIR release from
+  <a href="/people/pengfei-liu">Pengfei Liu</a>'s group that predated the
+  wave of unified any-to-any generators.</p>
+tags:
+  - multimodal
+  - open-weight
+paper:
+  arxiv: "2407.06135"
