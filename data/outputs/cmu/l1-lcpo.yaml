@@ -1,0 +1,19 @@
+name: L1 (Length Controlled Policy Optimization)
+slug: l1-lcpo
+lab: cmu
+type: paper
+date: 2025-03-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.04697
+description: >
+  <p>CMU's LCPO trains reasoning models to hit a target thinking length
+  via RL, giving direct control over the accuracy/compute tradeoff
+  &mdash; a widely-adopted lever for efficient reasoning that lets a
+  single model span short and long chains on demand.</p>
+tags:
+  - reasoning
+  - post-training
+  - research
+paper:
+  arxiv: "2503.04697"

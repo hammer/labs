@@ -1,0 +1,24 @@
+name: OpenUnlearning
+slug: openunlearning
+lab: cmu
+type: library
+date: 2025-06-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.12618
+  - label: GitHub
+    url: https://github.com/locuslab/open-unlearning
+description: >
+  <p>A unified benchmark and framework for LLM unlearning from Kolter's
+  locuslab (NeurIPS 2025 Datasets & Benchmarks; 568&#9733;),
+  consolidating the TOFU/MUSE lineage into a standard evaluation
+  substrate &mdash; the reference toolkit for measuring whether models
+  have actually forgotten targeted data.</p>
+tags:
+  - safety
+  - eval
+  - infrastructure
+library:
+  github: https://github.com/locuslab/open-unlearning
+paper:
+  arxiv: "2506.12618"
