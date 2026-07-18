@@ -1,0 +1,20 @@
+name: The Polar Express
+slug: polar-express
+lab: nyu
+type: paper
+date: 2025-05-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.16932
+description: >
+  <p>ICLR 2026 <strong>Honorable Mention</strong> (Amsel, Musco, Courant,
+  with Flatiron): an optimal matrix-sign / polar-factor iteration for the
+  orthogonalization step inside the Muon optimizer &mdash; already the
+  de-facto polar method in modern Muon implementations. Rare example of an
+  academic numerical-methods result being adopted straight into frontier
+  optimizer stacks.</p>
+tags:
+  - research
+  - infrastructure
+paper:
+  arxiv: "2505.16932"
