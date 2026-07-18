@@ -1,0 +1,18 @@
+name: SIFT (Active Fine-Tuning at Test Time)
+slug: sift
+lab: eth-zurich
+type: paper
+date: 2024-10-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.08020
+description: >
+  <p>Krause-group work (ICLR 2025) selecting the most informative data
+  to fine-tune on at test time, per query &mdash; one of the results that
+  seeded the 2025 test-time-training wave, giving a principled
+  active-learning basis for on-the-fly adaptation.</p>
+tags:
+  - post-training
+  - research
+paper:
+  arxiv: "2410.08020"
