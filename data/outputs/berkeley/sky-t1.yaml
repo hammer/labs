@@ -21,6 +21,4 @@ tags:
   - post-training
   - open-weight
 model:
-  base_model: qwen3
-paper:
-  arxiv: "2501.19393"
+  base_model: qwen2.5

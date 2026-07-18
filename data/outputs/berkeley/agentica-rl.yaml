@@ -16,13 +16,11 @@ description: >
   AIME via iterative-context GRPO; <strong>DeepCoder-14B</strong> (Apr
   2025) hit o3-mini-level coding; <strong>DeepSWE</strong> (Jul 2025,
   Qwen3-32B) reached then-SOTA open-weight 59% on SWE-bench Verified with
-  test-time scaling. Fully open recipes and datasets via the rLLM
-  framework; joint with Together AI (compute/marketing) — partial
+  test-time scaling. Bases: R1-Distill-Qwen for DeepScaleR/DeepCoder, Qwen3-32B for
+  DeepSWE. Fully open recipes and datasets via the rLLM framework; joint with Together AI (compute/marketing) — partial
   company co-attribution.</p>
 tags:
   - reasoning
   - coding
   - post-training
   - open-weight
-model:
-  base_model: qwen3
