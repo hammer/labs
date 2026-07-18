@@ -1,0 +1,21 @@
+name: Training Dynamics of In-Context Learning in Linear Attention
+slug: icl-linear-attention
+lab: ucl
+type: paper
+date: 2025-01-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.16265
+description: >
+  <p>ICML 2025 Spotlight: an exact theory of how linear-attention
+  transformers acquire in-context learning, characterizing abrupt versus
+  saddle-to-saddle learning regimes. Clean UCL (Zhang, Singh, Latham,
+  Saxe; Gatsby Unit + Sainsbury Wellcome Centre) &mdash; a theory anchor
+  of the Gatsby Unit's program.</p>
+tags:
+  - research
+  - foundational
+  - architecture
+paper:
+  arxiv: "2501.16265"
+  venue: ICML 2025 (Spotlight)

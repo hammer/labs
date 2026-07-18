@@ -1,0 +1,22 @@
+name: Rainbow Teaming
+slug: rainbow-teaming
+lab:
+  - ucl
+  - meta
+type: paper
+date: 2024-12-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.16822
+description: >
+  <p>Open-ended generation of diverse adversarial prompts (NeurIPS 2024):
+  quality-diversity search (MAP-Elites) applied to automated red-teaming,
+  used in Llama safety tuning. A <strong>Meta-led joint</strong> with UCL
+  coauthors (Samvelyan, <a
+  href="/people/tim-rocktaschel">Rocktäschel</a>, Raileanu).</p>
+tags:
+  - research
+  - safety
+paper:
+  arxiv: "2402.16822"
+  venue: NeurIPS 2024

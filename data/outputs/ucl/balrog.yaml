@@ -1,0 +1,29 @@
+name: BALROG
+slug: balrog
+lab: ucl
+type: eval
+date: 2024-11-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.13543
+  - label: GitHub
+    url: https://github.com/balrog-ai/BALROG
+description: >
+  <p>Benchmarking Agentic LLM/VLM Reasoning On Games (ICLR 2025): rolls
+  NetHack, MiniHack, Crafter, and TextWorld into the standard long-horizon
+  LLM-agent benchmark, with external adoption including NVIDIA NIM
+  benchmarking. UCL DARK (Paglieri, <a
+  href="/people/tim-rocktaschel">Rocktäschel</a>).</p>
+tags:
+  - eval
+  - agents
+  - reasoning
+eval:
+  domains:
+    - games
+    - agents
+    - reasoning
+  scoring_method: agentic task success
+paper:
+  arxiv: "2411.13543"
+  venue: ICLR 2025

@@ -1,0 +1,27 @@
+name: OpenR
+slug: openr
+lab: ucl
+type: library
+date: 2024-10-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.09671
+  - label: GitHub
+    url: https://github.com/openreasoner/openr
+description: >
+  <p>The first open-source framework reproducing o1-style reasoning &mdash;
+  process reward model training, online/offline RL, and test-time MCTS
+  &mdash; from Jun Wang's group (clean UCL). openreasoner/openr reached
+  ~1.8k stars and was widely referenced in the pre-DeepSeek-R1 period as
+  the open reference implementation for reasoning-model training.</p>
+tags:
+  - infrastructure
+  - reasoning
+  - reinforcement-learning
+library:
+  github: https://github.com/openreasoner/openr
+  language: Python
+paper:
+  arxiv: "2410.09671"
+related:
+  - nlrl

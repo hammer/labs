@@ -1,0 +1,25 @@
+name: Debating with More Persuasive LLMs Leads to More Truthful Answers
+slug: llm-debate
+lab: ucl
+type: paper
+date: 2024-07-21
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2402.06782
+  - label: GitHub
+    url: https://github.com/ucl-dark/llm_debate
+description: >
+  <p><strong>ICML 2024 Best Paper</strong> from UCL DARK (Akbir Khan first
+  author; Anthropic collaboration) &mdash; the canonical scalable-oversight
+  result that debate between more persuasive LLM debaters leads a weaker
+  judge to <em>more</em> truthful answers, rather than less. Code at
+  ucl-dark/llm_debate (~131 stars).</p>
+tags:
+  - research
+  - safety
+  - agents
+paper:
+  arxiv: "2402.06782"
+  venue: ICML 2024 (Best Paper)
+  code_url: https://github.com/ucl-dark/llm_debate

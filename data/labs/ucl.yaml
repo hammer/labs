@@ -1,0 +1,81 @@
+name: University College London
+slug: ucl
+url: https://www.ucl.ac.uk
+wikipedia: https://en.wikipedia.org/wiki/University_College_London
+github: https://github.com/ucl-dark
+region: uk
+founded: "1826"
+type: academic
+description: >
+  <p>UCL's frontier-AI footprint spans four clusters. <strong>UCL DARK</strong>
+  (Decision, Action, and Reasoning with Knowledge) drives LLM agents,
+  scalable oversight, and open-endedness &mdash; <a
+  href="/outputs/ucl/llm-debate">persuasive-LLM debate</a> (ICML 2024 Best
+  Paper, with Anthropic) and the <a href="/outputs/ucl/balrog">BALROG</a>
+  long-horizon agent benchmark. <strong>UCL NLP</strong> under <a
+  href="/people/pontus-stenetorp">Pontus Stenetorp</a> (legacy org
+  github.com/uclnlp) runs the multilingual pretraining line (<a
+  href="/outputs/ucl/transwebllm">CuatroLLM / TransWebLLM</a>) and co-leads
+  Japan's NII LLM-jp national builds &mdash; from-scratch open-weights-and-data
+  models up to 172B, now at <a href="/outputs/ucl/llm-jp-4">LLM-jp-4</a>.</p>
+
+  <p><a href="/people/jun-wang">Jun Wang</a>'s group supplies RL-for-LLM
+  reasoning infrastructure: <a href="/outputs/ucl/openr">OpenR</a>, the first
+  open-source o1-style reasoning framework (~1.8k stars, widely referenced
+  pre-DeepSeek-R1), and <a href="/outputs/ucl/nlrl">Natural Language RL</a>.
+  The <strong>Gatsby Unit</strong> (<a
+  href="/people/maneesh-sahani">Sahani</a>, <a
+  href="/people/arthur-gretton">Gretton</a>) anchors theory &mdash; including
+  an exact account of <a href="/outputs/ucl/icl-linear-attention">in-context
+  learning dynamics in linear attention</a> (ICML 2025 Spotlight). In June
+  2026 UCL was named host of <a href="/outputs/ucl/sofair">SOFAIR</a>, the
+  open-source-AI-focused national lab twinned with Oxford's BOLD under the
+  UKRI/EPSRC programme, with <a href="/people/david-barber">David Barber</a>
+  in leadership.</p>
+
+  <p>Attribution runs through heavy industry gravity: 2025-26 brought
+  headline spin-outs &mdash; <a href="/people/tim-rocktaschel">Tim
+  Rocktäschel</a> co-founded and leads <strong>Recursive
+  Superintelligence</strong> (late 2025, after directing GDM Open-Endedness)
+  and <a href="/people/david-silver">David Silver</a> founded
+  <strong>Ineffable Intelligence</strong> (January 2026, $1.1B seed). Both
+  retain UCL professorships, but their post-2025 output belongs to their
+  companies; UCL keeps only university-shipped work (Genie and the
+  GDM-hatted oversight/open-endedness papers are Google DeepMind's).</p>
+people:
+  - name: Pontus Stenetorp
+    role: Professor of NLP, leads UCL NLP; Specially Appointed Professor at NII LLMC
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=BYtIcDgAAAAJ
+  - name: Jun Wang
+    role: Professor of Computer Science
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=wIE1tY4AAAAJ
+  - name: Maneesh Sahani
+    role: Director, Gatsby Unit; Professor of Theoretical Neuroscience and ML
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=rwxX83UAAAAJ
+  - name: Arthur Gretton
+    role: Professor, Gatsby; Director, UCL CSML; also Research Scientist at Google DeepMind
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=OUv7J6QAAAAJ
+  - name: David Barber
+    role: Professor of ML; Director, UCL Centre for AI; leadership in the UCL-hosted SOFAIR national lab
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=dqJPZHEAAAAJ
+  - name: Tim Rocktäschel
+    role: Professor of AI (UCL DARK); Co-Founder & CEO, Recursive Superintelligence (2025)
+    formerly: Director of Open-Endedness, Google DeepMind
+  - name: David Silver
+    role: Professor (UCL); Founder, Ineffable Intelligence (2026)
+    formerly: Google DeepMind (RL, AlphaGo/AlphaZero)
+tags:
+  - academic
+  - research
+  - agents
+  - reasoning

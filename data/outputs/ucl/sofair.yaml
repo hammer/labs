@@ -1,0 +1,20 @@
+name: SOFAIR
+slug: sofair
+lab: ucl
+type: announcement
+date: 2026-06-22
+sources:
+  - label: Announcement (UKRI programme)
+    url: https://www.ox.ac.uk/news/2026-06-22-oxford-to-host-new-uk-ai-research-lab
+description: >
+  <p>The UCL-hosted national AI lab announced June 2026 &mdash; the
+  open-source-AI-focused twin of Oxford's BOLD within the UKRI/EPSRC
+  &pound;60M/6-year two-lab programme (~&pound;8M initial funding each;
+  the &pound;60M covers both labs, not UCL alone). <a
+  href="/people/david-barber">David Barber</a> is in the lab's
+  leadership.</p>
+tags:
+  - research
+  - open-source
+related:
+  - bold

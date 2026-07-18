@@ -1,0 +1,33 @@
+name: CuatroLLM / TransWebLLM
+slug: transwebllm
+lab: ucl
+type: model
+date: 2025-02-18
+sources:
+  - label: TransWebLLM Paper (arXiv)
+    url: https://arxiv.org/abs/2502.13252
+  - label: CuatroLLM Paper (arXiv)
+    url: https://arxiv.org/abs/2410.23956
+description: >
+  <p>UCL's clean multilingual pretraining line (<a
+  href="/people/pontus-stenetorp">Stenetorp</a>): CuatroLLM/TransWeb-Edu
+  showed a 1.3B model pretrained on 300B machine-translated tokens matches
+  SOTA multilingual models with ~6% of Llama-3.2's data; the follow-up
+  TransWebEdu/TransWebLLM corpus (EMNLP 2025 main) scales the recipe to
+  1.7T machine-translated tokens across 9 languages &mdash; a practical
+  recipe for non-English pretraining.</p>
+tags:
+  - multilingual
+  - training-data
+  - research
+model:
+  architecture: dense
+  parameters: 1.3B
+dataset:
+  size: 1.7T tokens
+  format: machine-translated web/edu corpus
+  languages:
+    - 9 languages
+paper:
+  arxiv: "2502.13252"
+  venue: EMNLP 2025

@@ -1,0 +1,22 @@
+name: Natural Language Reinforcement Learning
+slug: nlrl
+lab: ucl
+type: paper
+date: 2024-11-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2411.14251
+description: >
+  <p>NLRL redefines the RL primitives &mdash; value, the Bellman equation,
+  policy iteration &mdash; in natural-language space, a conceptual
+  foundation cited across LLM-agent RL work. Clean UCL (Feng/Wang, Jun
+  Wang group); companion to the group's <a
+  href="/outputs/ucl/openr">OpenR</a> reasoning infrastructure.</p>
+tags:
+  - research
+  - reasoning
+  - reinforcement-learning
+paper:
+  arxiv: "2411.14251"
+related:
+  - openr
