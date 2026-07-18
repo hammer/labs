@@ -1,0 +1,33 @@
+name: Goldfish / MiniGPT4-video
+slug: goldfish
+lab: kaust
+type: model
+date: 2024-07-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.12679
+  - label: GitHub
+    url: https://github.com/Vision-CAIR/Goldfish
+description: >
+  <p>Goldfish (with its MiniGPT4-video component) introduces a retrieval-based
+  approach to understanding arbitrarily long videos: rather than feeding an
+  entire clip to the model, it retrieves the most relevant segments per query,
+  avoiding context-length blowup. The 636&#9733; release, presented at
+  <strong>ECCV 2024</strong>, is the origin of the
+  <a href="/people/mohamed-elhoseiny">Mohamed Elhoseiny</a> / Vision-CAIR
+  long-video line that culminates in <a href="/outputs/kaust/tempo-6b">Tempo</a>.</p>
+
+  <p>Built on the <a href="/outputs/kaust/minigpt-4">MiniGPT-4</a> lineage and
+  a pretrained LLM backbone rather than trained from scratch, so its scale is
+  inherited from those bases.</p>
+tags:
+  - multimodal
+  - video
+  - open-weight
+  - research
+paper:
+  arxiv: "2407.12679"
+  venue: ECCV 2024
+related:
+  - minigpt-4
+  - tempo-6b

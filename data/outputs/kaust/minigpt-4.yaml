@@ -1,0 +1,33 @@
+name: MiniGPT-4
+slug: minigpt-4
+lab: kaust
+type: model
+date: 2023-04-20
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2304.10592
+  - label: GitHub
+    url: https://github.com/Vision-CAIR/MiniGPT-4
+description: >
+  <p>MiniGPT-4 aligns a frozen BLIP-2 visual encoder with a frozen large
+  language model (Vicuna) through a single projection layer, unlocking
+  GPT-4-like visual conversation from a lightweight training recipe. Presented
+  at <strong>ICLR 2024</strong>, it became the 25.7K&#9733; ancestor of the
+  entire <a href="/people/mohamed-elhoseiny">Mohamed Elhoseiny</a> /
+  Vision-CAIR line &mdash; <a href="/outputs/kaust/goldfish">MiniGPT4-video /
+  Goldfish</a>, <a href="/outputs/kaust/minigpt-med">MiniGPT-Med</a>, and
+  <a href="/outputs/kaust/tempo-6b">Tempo</a>.</p>
+
+  <p>Because it is built on Vicuna plus BLIP-2 rather than pretrained from
+  scratch, its scale is inherited from those bases; the contribution is the
+  alignment recipe and demonstration that a single trainable projection can
+  bridge vision and language for open-ended dialogue.</p>
+tags:
+  - multimodal
+  - vision
+  - open-weight
+  - research
+paper:
+  arxiv: "2304.10592"
+  venue: ICLR 2024

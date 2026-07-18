@@ -1,0 +1,24 @@
+name: Exascale Climate Emulator
+slug: exascale-climate-emulator
+lab: kaust
+type: model
+date: 2024-08-08
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2408.04440
+description: >
+  <p>A KAUST-led generative climate emulator (Abdulah, Genton, Keyes, with
+  collaborators at NCAR and NVIDIA) that runs at up to <strong>3.5 km</strong>
+  resolution, sampling high-resolution climate states at exascale. It won the
+  <strong>2024 ACM Gordon Bell Prize for Climate Modelling</strong> at SC24 and
+  belongs to the KAUST HPC / Shaheen lineage.</p>
+
+  <p>The work is a scientific FM-scale system demonstrated on KAUST
+  supercomputing infrastructure; its parameter count is undisclosed.</p>
+tags:
+  - science
+  - climate
+  - research
+paper:
+  arxiv: "2408.04440"
+  venue: SC24 (ACM Gordon Bell Prize for Climate Modelling)

@@ -1,0 +1,28 @@
+name: Agent-as-a-Judge
+slug: agent-as-a-judge
+lab:
+  - kaust
+  - meta
+type: paper
+date: 2024-10-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.10934
+  - label: GitHub
+    url: https://github.com/metauto-ai/agent-as-a-judge
+description: >
+  <p>Agent-as-a-Judge proposes using agentic systems to evaluate agentic
+  systems &mdash; an evaluator agent that inspects a target agent's intermediate
+  steps, not just its final output &mdash; released with the <strong>DevAI</strong>
+  benchmark of realistic development tasks. The 800&#9733; release has been
+  widely adopted in the agent-evaluation literature.</p>
+
+  <p>A joint <strong>Meta AI + KAUST AI Initiative</strong> effort: KAUST first
+  author Mingchen Zhuge with senior author
+  <a href="/people/jurgen-schmidhuber">Jürgen Schmidhuber</a>.</p>
+tags:
+  - agents
+  - evaluation
+  - research
+paper:
+  arxiv: "2410.10934"

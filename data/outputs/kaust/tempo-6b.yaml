@@ -1,0 +1,33 @@
+name: Tempo-6B
+slug: tempo-6b
+lab: kaust
+type: model
+date: 2026-04-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.08120
+  - label: HuggingFace
+    url: https://huggingface.co/Vision-CAIR
+description: >
+  <p>"Small VLMs are Smart Compressors for Long Video" &mdash; a query-aware
+  long-video multimodal LLM that pairs a <strong>Qwen3-VL-2B</strong> local
+  compressor with a <strong>Qwen3-4B</strong> global LLM, letting it reason
+  over hour-plus videos while keeping the token budget tractable. Open weights,
+  three stage checkpoints, and a live demo ship alongside the paper.</p>
+
+  <p>The flagship 2026 model of the <a href="/people/mohamed-elhoseiny">Mohamed
+  Elhoseiny</a> / Vision-CAIR long-video line, following
+  <a href="/outputs/kaust/goldfish">Goldfish</a> and
+  <a href="/outputs/kaust/minigpt-4">MiniGPT-4</a>. Because it composes
+  pretrained Qwen3-VL and Qwen3 components rather than pretraining from
+  scratch, its scale is inherited from those bases.</p>
+tags:
+  - multimodal
+  - video
+  - open-weight
+  - research
+paper:
+  arxiv: "2604.08120"
+related:
+  - goldfish
+  - minigpt-4

@@ -1,0 +1,72 @@
+name: KAUST
+slug: kaust
+url: https://www.kaust.edu.sa
+wikipedia: https://en.wikipedia.org/wiki/King_Abdullah_University_of_Science_and_Technology
+huggingface: https://huggingface.co/Vision-CAIR
+github: https://github.com/Vision-CAIR
+region: saudi-arabia
+founded: "2009"
+type: academic
+description: >
+  <p>The <strong><a href="https://www.kaust.edu.sa">King Abdullah University
+  of Science and Technology</a></strong> (KAUST), founded in 2009, is Saudi
+  Arabia's graduate research university on the Red Sea coast. Its
+  <strong>AI Initiative</strong> is directed by
+  <a href="/people/jurgen-schmidhuber">Jürgen Schmidhuber</a> (co-inventor of
+  the LSTM), and its <strong>Center of Excellence for Generative AI</strong>
+  (launched 2024, with <a href="/people/bernard-ghanem">Bernard Ghanem</a> as
+  chair and Schmidhuber as co-chair) is a hub-and-spoke program for building
+  Saudi generative-AI capacity.</p>
+
+  <p>Flagship lines: <a href="/people/mohamed-elhoseiny">Mohamed
+  Elhoseiny</a>'s <strong>Vision-CAIR</strong> long-video vision-language
+  model line, running from <a href="/outputs/kaust/minigpt-4">MiniGPT-4</a>
+  (25.7K&#9733;, ICLR 2024) through
+  <a href="/outputs/kaust/goldfish">Goldfish/MiniGPT4-video</a> to
+  <a href="/outputs/kaust/tempo-6b">Tempo-6B</a>; Schmidhuber's
+  <a href="/outputs/kaust/huxley-godel-machine">Huxley-Gödel Machine</a>, a
+  self-improving coding agent that operationalizes his 2003 Gödel-machine
+  idea; and the KAUST-led
+  <a href="/outputs/kaust/exascale-climate-emulator">Exascale Climate
+  Emulator</a>, which won the ACM Gordon Bell Prize for Climate Modelling at
+  SC24.</p>
+
+  <p>The <strong>Shaheen III</strong> supercomputer (2,800 NVIDIA GH200,
+  #18 on the TOP500) is slated to train Arabic-centric language models from
+  early 2026. Attribution boundaries matter here: the national Arabic LLM
+  <strong>ALLaM</strong> belongs to SDAIA, <strong>LongVU</strong> is
+  Meta-led, and the <strong>OWL/CAMEL</strong> agent framework spun out to a
+  startup &mdash; all tracked elsewhere. Elhoseiny is an incoming visiting
+  faculty member at Stanford.</p>
+people:
+  - name: Jürgen Schmidhuber
+    role: Director, KAUST AI Initiative; Co-Chair, Center of Excellence for Generative AI
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=gLnCTgIAAAAJ
+  - name: Bernard Ghanem
+    role: Professor, ECE; Chair, Center of Excellence for Generative AI
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=rVsGTeEAAAAJ
+  - name: Mohamed Elhoseiny
+    role: Associate Professor; Vision-CAIR lead
+    formerly: Incoming Visiting Faculty, Stanford
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=iRBUTOAAAAAJ
+  - name: Peter Wonka
+    role: Professor, CS (3D / generative vision)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=0EKXSXgAAAAJ
+  - name: Marco Canini
+    role: Professor, CS; PI, SANDS Lab (systems for large-model training)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=c-rwMUkAAAAJ
+tags:
+  - academic
+  - research
+  - multimodal
+  - agents

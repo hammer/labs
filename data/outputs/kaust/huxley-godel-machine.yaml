@@ -1,0 +1,30 @@
+name: Huxley-Gödel Machine
+slug: huxley-godel-machine
+lab: kaust
+type: paper
+date: 2025-10-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.21614
+  - label: GitHub
+    url: https://github.com/metauto-ai/HGM
+description: >
+  <p>A self-improving coding agent from
+  <a href="/people/jurgen-schmidhuber">Jürgen Schmidhuber</a>'s lab that
+  approximates the optimal Gödel machine via <strong>clade-metaproductivity
+  (CMP)</strong> search &mdash; scoring self-modifications by the downstream
+  productivity of their descendant lineage rather than immediate benchmark
+  gains. The result reaches human-engineered-agent-level performance on
+  SWE-bench.</p>
+
+  <p>The 401&#9733; <code>metauto-ai/HGM</code> release drew clean-room
+  reimplementations and press coverage. It is distinct from the separately
+  tracked Darwin Gödel Machine (Sakana AI / UBC), which pursues a related but
+  independent self-improvement line.</p>
+tags:
+  - agents
+  - research
+  - code
+  - self-improvement
+paper:
+  arxiv: "2510.21614"

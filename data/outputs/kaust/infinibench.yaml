@@ -1,0 +1,28 @@
+name: InfiniBench
+slug: infinibench
+lab: kaust
+type: eval
+date: 2024-06-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.19875
+description: >
+  <p>A long-form movie and TV benchmark for evaluating long-video multimodal
+  LLMs, from the <a href="/people/mohamed-elhoseiny">Mohamed Elhoseiny</a> /
+  Vision-CAIR group. It stresses hour-plus temporal reasoning and has become a
+  standard yardstick within the long-video community, used to evaluate
+  <a href="/outputs/kaust/goldfish">Goldfish</a>, LongVU, and
+  <a href="/outputs/kaust/tempo-6b">Tempo</a>.</p>
+tags:
+  - evaluation
+  - benchmark
+  - video
+  - multimodal
+eval:
+  domains:
+    - video
+    - multimodal
+  scoring_method: accuracy
+related:
+  - goldfish
+  - tempo-6b

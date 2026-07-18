@@ -1,0 +1,29 @@
+name: MiniGPT-Med
+slug: minigpt-med
+lab: kaust
+type: model
+date: 2024-07-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.04106
+  - label: GitHub
+    url: https://github.com/Vision-CAIR/MiniGPT-Med
+description: >
+  <p>A radiology generalist vision-language model from the
+  <a href="/outputs/kaust/minigpt-4">MiniGPT</a> lineage that unifies report
+  generation, visual question answering, and disease identification in one
+  model. The 140&#9733; release is a standard citation in medical-VLM surveys.</p>
+
+  <p>Adapted from the MiniGPT-4 recipe over pretrained vision and language
+  bases rather than pretrained from scratch, so its scale is inherited from
+  those components. Part of the <a href="/people/mohamed-elhoseiny">Mohamed
+  Elhoseiny</a> / Vision-CAIR line.</p>
+tags:
+  - science
+  - health
+  - multimodal
+  - open-weight
+paper:
+  arxiv: "2407.04106"
+related:
+  - minigpt-4
