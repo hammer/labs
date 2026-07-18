@@ -9,6 +9,8 @@ sources:
     url: https://arxiv.org/abs/2509.14233
   - label: Project Page
     url: https://www.swiss-ai.org/apertus
+  - label: HuggingFace (Apertus Mini collection)
+    url: https://huggingface.co/collections/swiss-ai/apertus-mini
   - label: HuggingFace (70B Instruct)
     url: https://huggingface.co/swiss-ai/Apertus-70B-Instruct-2509
   - label: HuggingFace (70B Base)
@@ -40,6 +42,12 @@ description: >
   (70B Instruct), 1 (8B Instruct). Significantly behind frontier models
   on English-only benchmarks, but strongest fully open model for extreme
   multilingual breadth.</p>
+
+  <p><strong>Apertus Mini</strong> (June 2026): a 16-model suite of
+  distilled and quantized checkpoints from 0.2B to 4B (including
+  Apertus-v1.1-0.5B and a 4.0B Instruct), extending the line to
+  edge/on-device deployment while keeping the fully-open, EU-AI-Act
+  posture.</p>
 tags:
   - open-source
   - open-weight
