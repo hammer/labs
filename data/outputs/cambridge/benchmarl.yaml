@@ -1,0 +1,28 @@
+name: BenchMARL
+slug: benchmarl
+lab:
+  - cambridge
+  - meta
+type: library
+date: 2024-01-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2312.01472
+  - label: GitHub
+    url: https://github.com/facebookresearch/BenchMARL
+description: >
+  <p>Standardized multi-agent RL benchmarking built on TorchRL, with
+  strong community adoption (641 GitHub stars; JMLR 2024). A joint effort
+  by Cambridge (Bettini, <a href="/people/amanda-prorok">Prorok</a>) and
+  Meta FAIR / TorchRL, hosted under the facebookresearch org &mdash; so it
+  is credited to both Cambridge and Meta.</p>
+tags:
+  - infrastructure
+  - reinforcement-learning
+  - research
+library:
+  github: https://github.com/facebookresearch/BenchMARL
+  language: Python
+  framework: PyTorch/TorchRL
+paper:
+  arxiv: "2312.01472"

@@ -1,0 +1,27 @@
+name: PairS
+slug: pairs
+lab: cambridge
+type: paper
+date: 2024-03-25
+sources:
+  - label: PairS Paper (arXiv)
+    url: https://arxiv.org/abs/2403.16950
+  - label: ZEPO Paper (arXiv)
+    url: https://arxiv.org/abs/2406.11370
+  - label: GitHub
+    url: https://github.com/cambridgeltl/PairS
+description: >
+  <p>Pairwise Preference in LLM Evaluators (COLM 2024): shows LLM-as-judge
+  aligns far better with humans via pairwise comparison plus
+  uncertainty-guided ranking than pointwise scoring &mdash; a reference
+  method (~175 citations). Language Technology Lab-led (Zhou, Vulić,
+  <a href="/people/anna-korhonen">Korhonen</a>), with companions ZEPO
+  (EMNLP 2024 Main, a zero-shot prompt optimizer reducing LLM-judge
+  preference bias) and TopViewRS (EMNLP 2024 Oral, exposing VLM weakness
+  at top-view spatial reasoning).</p>
+tags:
+  - evaluation
+  - research
+  - nlp
+paper:
+  arxiv: "2403.16950"

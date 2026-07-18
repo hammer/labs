@@ -1,0 +1,24 @@
+name: gRNAde
+slug: grnade
+lab: cambridge
+type: model
+date: 2025-04-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2305.14749
+description: >
+  <p>Geometric Deep Learning for 3D RNA Inverse Design (ICLR 2025
+  Spotlight): a multi-state GNN with autoregressive decoding for
+  structure-conditioned RNA design. It matched human experts on blinded
+  Eterna (95% vs 70% for prior automated methods), has ~309 GitHub stars,
+  and spawned RNA-FrameFlow. Cambridge-led (Joshi,
+  <a href="/people/pietro-lio">Liò</a> senior).</p>
+tags:
+  - science
+  - biology
+  - research
+model:
+  architecture: dense
+paper:
+  arxiv: "2305.14749"
+  venue: ICLR 2025 (Spotlight)

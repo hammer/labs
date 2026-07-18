@@ -1,0 +1,27 @@
+name: Aardvark Weather
+slug: aardvark
+lab: cambridge
+type: model
+date: 2025-03-20
+flagship: true
+sources:
+  - label: Nature
+    url: https://www.nature.com/articles/s41586-025-08897-0
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2404.00411
+description: >
+  <p>The first single ML model to replace the <strong>entire</strong>
+  numerical weather prediction pipeline &mdash; ingesting raw observations
+  and producing both global gridded and local station forecasts &mdash;
+  beating operational baselines at orders of magnitude less compute.
+  Cambridge-led (Vaughan/Allen, <a href="/people/richard-e-turner">Turner</a>
+  senior author) with Turing Institute, Microsoft Research, and ECMWF
+  support; preprint April 2024, published in Nature March 2025. A Turing
+  team was formed to deploy it, including global-south forecasting.</p>
+tags:
+  - science
+  - research
+model:
+  architecture: dense
+paper:
+  arxiv: "2404.00411"

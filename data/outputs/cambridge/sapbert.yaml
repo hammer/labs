@@ -1,0 +1,26 @@
+name: SapBERT
+slug: sapbert
+lab: cambridge
+type: model
+date: 2021-04-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2010.11784
+  - label: HuggingFace
+    url: https://huggingface.co/cambridgeltl/SapBERT-from-PubMedBERT-fulltext
+description: >
+  <p>Self-alignment pretraining for biomedical entity representations
+  (NAACL 2021) from the Language Technology Lab. With ~1.64M downloads it
+  remains the cambridgeltl org's most-used artifact and the lab's legacy
+  biomedical anchor &mdash; a pre-window release retained because no
+  in-window successor has shipped (no new biomedical model on the org
+  since 2023).</p>
+tags:
+  - science
+  - research
+  - nlp
+model:
+  architecture: dense
+paper:
+  arxiv: "2010.11784"
+  venue: NAACL 2021

@@ -1,0 +1,28 @@
+name: Otter Weather
+slug: otter
+lab: cambridge
+type: model
+date: 2026-06-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.26421
+  - label: GitHub
+    url: https://github.com/cambridge-mlg/otter
+description: >
+  <p>Successor to <a href="/outputs/cambridge/aardvark">Aardvark</a>
+  (ICLR 2026) that advances the skill&ndash;compute Pareto frontier: the
+  deterministic model beats the best NWP baseline by 9.6% at 24h trained
+  on under 3.5 A100-days, while Otter-XL beats IFS ENS by 9.7% CRPS and
+  GenCast by over 2% at roughly 10x less compute. Transfers
+  out-of-the-box to an acoustic-scattering PDE task. Fully Cambridge
+  author list (<a href="/people/richard-e-turner">Turner</a> group).</p>
+tags:
+  - science
+  - research
+model:
+  architecture: dense
+paper:
+  arxiv: "2606.26421"
+  venue: ICLR 2026
+related:
+  - aardvark

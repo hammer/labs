@@ -1,0 +1,26 @@
+name: Transformer Neural Processes (TE-TNP / Gridded TNP)
+slug: neural-processes
+lab: cambridge
+type: paper
+date: 2024-06-18
+sources:
+  - label: TE-TNP Paper (arXiv)
+    url: https://arxiv.org/abs/2406.12409
+  - label: Gridded TNP Paper (arXiv)
+    url: https://arxiv.org/abs/2410.06731
+description: >
+  <p>The neural-process method line feeding Cambridge's weather models
+  (<a href="/outputs/cambridge/aardvark">Aardvark</a>,
+  <a href="/outputs/cambridge/otter">Otter</a>): translation-equivariant
+  transformer neural processes (ICML 2024) and gridded TNPs scaling to
+  large unstructured spatio-temporal observations (ICML 2025). Cambridge
+  (Ashman, Diaconu, <a href="/people/richard-e-turner">Turner</a>); repos
+  cambridge-mlg/tetnp and gridded-tnp.</p>
+tags:
+  - research
+  - science
+paper:
+  arxiv: "2406.12409"
+related:
+  - aardvark
+  - otter

@@ -1,0 +1,77 @@
+name: University of Cambridge
+slug: cambridge
+url: https://www.cam.ac.uk
+wikipedia: https://en.wikipedia.org/wiki/University_of_Cambridge
+huggingface: https://huggingface.co/cambridgeltl
+github: https://github.com/cambridgeltl
+region: uk
+founded: "1209"
+type: academic
+description: >
+  <p>Cambridge's AI footprint is a dense cluster around data-driven
+  scientific foundation models and probabilistic ML. The flagship line is
+  <a href="/people/richard-e-turner">Richard Turner</a>'s weather/climate
+  FM program: <a href="/outputs/cambridge/aardvark">Aardvark Weather</a>
+  (Nature 2025) was the first single ML model to replace the entire
+  numerical weather prediction pipeline, and
+  <a href="/outputs/cambridge/otter">Otter</a> (ICLR 2026) pushes the
+  skill&ndash;compute Pareto frontier &mdash; beating IFS ENS and GenCast
+  at a fraction of the compute &mdash; fed by a
+  <a href="/outputs/cambridge/neural-processes">transformer
+  neural-process</a> method line (much of it shipped under the
+  <strong>cambridge-mlg</strong> GitHub org).</p>
+
+  <p>Around it: <a href="/people/jose-miguel-hernandez-lobato">José Miguel
+  Hernández-Lobato</a>'s diffusion/energy-based
+  <a href="/outputs/cambridge/boltzmann-samplers">Boltzmann samplers</a>
+  for equilibrium molecular distributions and diffusion methods for PDEs;
+  <a href="/people/pietro-lio">Pietro Liò</a>'s geometric and topological
+  deep learning with comp-bio FMs like
+  <a href="/outputs/cambridge/grnade">gRNAde</a> (ICLR 2025 Spotlight);
+  and <a href="/people/amanda-prorok">Amanda Prorok</a>'s multi-robot
+  foundation models (CoViS-Net) plus adopted MARL infrastructure
+  (<a href="/outputs/cambridge/benchmarl">BenchMARL</a>, joint with Meta
+  FAIR).</p>
+
+  <p>On the language side, the <strong>Language Technology Lab</strong>
+  (<a href="/people/anna-korhonen">Anna Korhonen</a>, Ivan Vulić; the
+  cambridgeltl orgs) anchors multilingual NLP and LLM-as-judge
+  evaluation &mdash; <a href="/outputs/cambridge/pairs">PairS</a> and ZEPO
+  are reference methods for pairwise, bias-reduced LLM judging &mdash;
+  with <a href="/outputs/cambridge/sapbert">SapBERT</a> (~1.64M
+  downloads) as the legacy biomedical anchor.</p>
+people:
+  - name: Richard E. Turner
+    role: Professor of Machine Learning, Engineering
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=DgLEyZgAAAAJ
+    description: >
+      Leads the weather/climate foundation-model program (Aardvark, Nature
+      2025; Otter, ICLR 2026) and the transformer neural-process method
+      line. Holds a joint role with Microsoft Research (Aurora), but the
+      flagship first/last-author weather work is Cambridge-led.
+  - name: José Miguel Hernández-Lobato
+    role: Professor of Machine Learning
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=BEBccCQAAAAJ
+  - name: Anna Korhonen
+    role: Professor of AI; Co-Director, Language Technology Lab
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=SCoVoOYAAAAJ
+  - name: Pietro Liò
+    role: Professor, Computer Laboratory
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=4YhNJBEAAAAJ
+  - name: Amanda Prorok
+    role: Professor of Collective Intelligence & Robotics
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=o7xMDgEAAAAJ
+tags:
+  - academic
+  - research
+  - science

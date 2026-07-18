@@ -1,0 +1,28 @@
+name: Boltzmann Sampler Line (PTSD / BNEM / DiKL)
+slug: boltzmann-samplers
+lab: cambridge
+type: paper
+date: 2025-06-05
+sources:
+  - label: PTSD Paper (arXiv)
+    url: https://arxiv.org/abs/2506.05231
+  - label: BNEM Paper (arXiv)
+    url: https://arxiv.org/abs/2409.09787
+  - label: DiKL Paper (arXiv)
+    url: https://arxiv.org/abs/2410.12456
+description: >
+  <p><a href="/people/jose-miguel-hernandez-lobato">Hernández-Lobato</a>
+  group's molecular generative-sampler thrust: the Progressive Tempering
+  Sampler with Diffusion (PTSD, ICML 2025, joint with Aalto) combines
+  parallel-tempering MCMC with diffusion training and beats prior
+  diffusion samplers on target-evaluation efficiency for
+  multimodal/Boltzmann targets, alongside the BNEM (TMLR 2025) and DiKL
+  (AISTATS 2025) energy-/diffusion-based samplers for equilibrium
+  molecular distributions. The same group unified score-based diffusion
+  for PDE forecasting and data assimilation (NeurIPS 2024,
+  cambridge-mlg/pdediff).</p>
+tags:
+  - science
+  - research
+paper:
+  arxiv: "2506.05231"
