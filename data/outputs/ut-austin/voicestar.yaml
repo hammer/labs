@@ -1,0 +1,24 @@
+name: VoiceStar
+slug: voicestar
+lab: ut-austin
+type: model
+date: 2025-05-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.19462
+  - label: GitHub
+    url: https://github.com/jasonppy/VoiceStar
+description: >
+  <p>Duration-controllable, long-form zero-shot TTS (with Meta
+  co-authors): progress-monitoring rotary embeddings let the model hit a
+  target duration and extrapolate beyond training lengths. In-window
+  successor to David Harwath and Puyuan Peng's
+  <strong>VoiceCraft</strong> (arXiv:2403.16973, ACL 2024, ~8K&#9733;),
+  the SOTA zero-shot speech-editing/TTS model that predates the window by
+  four months.</p>
+tags:
+  - audio
+  - generation
+  - open-weight
+paper:
+  arxiv: "2505.19462"

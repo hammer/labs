@@ -1,0 +1,76 @@
+name: UT Austin
+slug: ut-austin
+url: https://ml.utexas.edu
+wikipedia: https://en.wikipedia.org/wiki/University_of_Texas_at_Austin
+github: https://github.com/UT-Austin-RPL
+region: usa
+founded: "1883"
+type: academic
+description: >
+  <p>UT Austin pairs world-class academic GPU capacity with strong
+  method-level output. The Center for Generative AI (director Adam
+  Klivans, alongside NSF's IFML) grew a Vista-hosted cluster past 1,000
+  dedicated GPUs (5,000+ campus-wide once the Horizon system's 4,000+
+  Blackwells land) &mdash; yet as of mid-2026 <strong>no named open
+  foundation model has shipped</strong> from it; the entry tracks the
+  infra story and revisits after Horizon goes live. The NSF-Simons
+  CosmicAI institute ($20M, 2024) is a scientific-FM watch item.</p>
+
+  <p>What has shipped is influential technique work: Qiang Liu originated
+  rectified flow (the SD3/FLUX lineage; Boundary RF continues it in 2025);
+  the VITA group's memory-efficient-training line runs GaLore &rarr;
+  <a href="/outputs/ut-austin/q-galore">Q-GaLore</a> &rarr;
+  <a href="/outputs/ut-austin/apollo-optimizer">APOLLO</a> (MLSys 2025
+  Outstanding Paper Honorable Mention, with Meta); Yuke Zhu's Robot
+  Perception &amp; Learning lab produced
+  <a href="/outputs/ut-austin/libero">LIBERO</a> (the default VLA
+  manipulation benchmark), <a href="/outputs/ut-austin/okami">OKAMI</a>,
+  and <a href="/outputs/ut-austin/metamon">Metamon</a>; Durrett's group
+  shipped the widely-adopted
+  <a href="/outputs/ut-austin/minicheck">MiniCheck</a> fact-checker; and
+  Harwath's speech group followed VoiceCraft with
+  <a href="/outputs/ut-austin/voicestar">VoiceStar</a>.</p>
+
+  <p>Industry gravity is unusually strong: Yuke Zhu co-leads NVIDIA GEAR
+  (GR00T is NVIDIA-branded and excluded here), Peter Stone is Chief
+  Scientist of Sony AI, Kr&auml;henb&uuml;hl is concurrently at Apple,
+  Zhangyang Wang has been on leave at XTX Markets since May 2024 (his
+  students continue at UT), and Greg Durrett and Eunsol Choi both moved
+  to NYU.</p>
+people:
+  - name: Adam Klivans
+    role: Professor; Director, ML Lab, Center for Generative AI, and NSF IFML
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=UD87zMYAAAAJ
+  - name: Qiang Liu
+    role: Associate Professor — rectified flow originator (SD3/FLUX lineage)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=XEx1fZkAAAAJ
+  - name: Yuke Zhu
+    role: Associate Professor; Robot Perception & Learning Lab; Co-Lead, NVIDIA GEAR (concurrent)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=mWGyYMsAAAAJ
+  - name: Peter Stone
+    role: Truchard Chair Professor; Chief Scientist, Sony AI (concurrent); 2025 ACM/AAAI Allen Newell Award
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=qnwjcfAAAAAJ
+  - name: Philipp Krähenbühl
+    role: Associate Professor (vision); concurrently Researcher, Apple
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=dzOd2hgAAAAJ
+  - name: Zhangyang (Atlas) Wang
+    role: Associate Professor, VITA group (GaLore / Q-GaLore / APOLLO / VLM-3R)
+    formerly: on leave since May 2024 as Research Director, XTX Markets; group output continues under his UT students
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=pxFyKAIAAAAJ
+tags:
+  - academic
+  - research
+  - efficiency
+  - embodied

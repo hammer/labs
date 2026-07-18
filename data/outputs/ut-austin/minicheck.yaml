@@ -1,0 +1,26 @@
+name: MiniCheck
+slug: minicheck
+lab: ut-austin
+type: library
+date: 2024-04-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2404.10774
+  - label: GitHub
+    url: https://github.com/Liyan06/MiniCheck
+description: >
+  <p>Small fact-checkers for grounding LLM output on documents (EMNLP
+  2024): GPT-4-level verification accuracy at <strong>~1/400 of the
+  cost</strong>, trained on synthetic error data. Adopted well beyond the
+  paper &mdash; Ollama ships Bespoke-MiniCheck, and Guardrails AI
+  integrates it as a grounding validator. From Greg Durrett's group;
+  attribution stays with UT for this work, though Durrett's TAUR lab has
+  since moved to NYU.</p>
+tags:
+  - evaluation
+  - efficiency
+  - open-source
+library:
+  github: https://github.com/Liyan06/MiniCheck
+paper:
+  arxiv: "2404.10774"

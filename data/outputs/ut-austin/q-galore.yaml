@@ -1,0 +1,27 @@
+name: Q-GaLore
+slug: q-galore
+lab: ut-austin
+type: library
+date: 2024-07-11
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.08296
+  - label: GitHub
+    url: https://github.com/VITA-Group/Q-GaLore
+description: >
+  <p>Quantized successor to GaLore (ICML 2024 oral, merged into Hugging
+  Face Transformers): INT4 projection matrices plus INT8 weights with
+  adaptive lazy subspace updates, enabling <strong>LLaMA-7B pretraining
+  from scratch on a single 16GB GPU</strong>. In-window continuation of
+  the VITA group's memory-efficient training line
+  (GaLore &rarr; Q-GaLore &rarr; APOLLO).</p>
+tags:
+  - efficiency
+  - training
+  - open-source
+library:
+  github: https://github.com/VITA-Group/Q-GaLore
+paper:
+  arxiv: "2407.08296"
+related:
+  - apollo-optimizer

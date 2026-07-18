@@ -1,0 +1,23 @@
+name: Metamon
+slug: metamon
+lab: ut-austin
+type: paper
+date: 2025-04-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.04395
+  - label: GitHub
+    url: https://github.com/UT-Austin-RPL/metamon
+description: >
+  <p>Human-level competitive Pok&eacute;mon (RLC 2025): offline RL over
+  <strong>5M+ human battles</strong> reconstructed from Pok&eacute;mon
+  Showdown replay logs, treating the partially-observed opponent team as
+  a sequence-modeling problem. The resulting agents reached the
+  <strong>top 10% of the ranked human ladder</strong> &mdash; a rare
+  large-scale offline-RL result against real humans. Grigsby and Yuke
+  Zhu, UT-Austin-RPL.</p>
+tags:
+  - research
+  - training
+paper:
+  arxiv: "2504.04395"

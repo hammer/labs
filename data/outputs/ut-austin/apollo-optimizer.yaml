@@ -1,0 +1,29 @@
+name: APOLLO
+slug: apollo-optimizer
+lab: ut-austin
+type: library
+date: 2024-12-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2412.05270
+  - label: GitHub
+    url: https://github.com/zhuhanqing/APOLLO
+description: >
+  <p>"SGD-like Memory, AdamW-level Performance" (MLSys 2025 Outstanding
+  Paper Honorable Mention): approximates channel-wise gradient scaling in
+  a low-rank auxiliary space using random projections, cutting optimizer
+  memory toward SGD levels while matching or beating AdamW on LLaMA-style
+  pretraining up to 7B. Integrated into Hugging Face ecosystem tooling
+  (Transformers/LLaMA-Factory). VITA group (Zhangyang Wang, David Pan)
+  jointly with Meta AI &mdash; the capstone of the GaLore &rarr; Q-GaLore
+  memory-efficient-training line.</p>
+tags:
+  - efficiency
+  - training
+  - open-source
+library:
+  github: https://github.com/zhuhanqing/APOLLO
+paper:
+  arxiv: "2412.05270"
+related:
+  - q-galore

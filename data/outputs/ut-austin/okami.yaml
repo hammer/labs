@@ -1,0 +1,24 @@
+name: OKAMI
+slug: okami
+lab: ut-austin
+type: paper
+date: 2024-10-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.11792
+  - label: Project Page
+    url: https://ut-austin-rpl.github.io/OKAMI/
+description: >
+  <p>Humanoid manipulation from a <strong>single human RGB-D video</strong>
+  (CoRL 2024): object-aware retargeting generates a manipulation plan from
+  one demonstration and adapts humanoid motion to new object locations at
+  test time. From Yuke Zhu's Robot Perception &amp; Learning lab with
+  NVIDIA co-authors &mdash; joint attribution; the NVIDIA-branded GR00T
+  stack Zhu co-leads at GEAR is tracked under NVIDIA, not here.</p>
+tags:
+  - embodied
+  - research
+paper:
+  arxiv: "2410.11792"
+related:
+  - libero

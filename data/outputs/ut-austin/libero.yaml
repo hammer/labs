@@ -1,0 +1,25 @@
+name: LIBERO
+slug: libero
+lab: ut-austin
+type: eval
+date: 2023-06-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2306.03310
+  - label: GitHub
+    url: https://github.com/Lifelong-Robot-Learning/LIBERO
+description: >
+  <p>Lifelong robot-manipulation benchmark (NeurIPS 2023 D&amp;B): 130
+  language-conditioned tasks across four suites probing knowledge transfer
+  in declarative and procedural skills. Pre-window seed that became
+  <strong>the default VLA manipulation benchmark</strong> &mdash; OpenVLA,
+  &pi;0, and most 2025 vision-language-action papers report LIBERO
+  numbers. From Yuke Zhu's Robot Perception &amp; Learning lab.</p>
+tags:
+  - benchmark
+  - embodied
+  - evaluation
+paper:
+  arxiv: "2306.03310"
+related:
+  - okami

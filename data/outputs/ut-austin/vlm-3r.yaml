@@ -1,0 +1,24 @@
+name: VLM-3R
+slug: vlm-3r
+lab: ut-austin
+type: paper
+date: 2025-05-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.20279
+  - label: GitHub
+    url: https://github.com/VITA-Group/VLM-3R
+description: >
+  <p>Vision-language model augmented with instruction-aligned
+  <strong>monocular 3D-reconstruction tokens</strong> (CVPR 2026): fuses
+  geometry from video directly into the VLM for spatial reasoning without
+  depth sensors, and introduces the VSTI benchmark for visual
+  spatial-temporal intelligence (427&#9733;). VITA group work continuing
+  under Zhangyang Wang's UT students while he is on leave at XTX
+  Markets.</p>
+tags:
+  - multimodal
+  - vision
+  - research
+paper:
+  arxiv: "2505.20279"
