@@ -1,0 +1,20 @@
+name: mCLM
+slug: mclm
+lab: uiuc
+type: paper
+date: 2025-05-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.12565
+description: >
+  <p>A modular chemical language model from Heng Ji's BLENDER lab that
+  tokenizes molecules by <strong>synthesizable functional blocks</strong>
+  instead of SMILES characters and jointly models natural language and
+  chemistry &mdash; biasing generation toward molecules that can actually
+  be made and whose properties can be discussed in text. On-thesis
+  scientific foundation-model work (Edwards, Chi Han et al.).</p>
+tags:
+  - science
+  - research
+paper:
+  arxiv: "2505.12565"

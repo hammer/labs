@@ -1,0 +1,27 @@
+name: Search-R1
+slug: search-r1
+lab: uiuc
+type: paper
+date: 2025-03-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.09516
+  - label: GitHub
+    url: https://github.com/PeterGriffinJin/Search-R1
+description: >
+  <p>Trains LLMs with RL (PPO/GRPO) to interleave step-by-step reasoning
+  with live search-engine calls &mdash; multi-turn retrieval inside the
+  rollout, retrieved-token masking for stable optimization, and up to
+  ~26% (Qwen2.5-7B) gains over RAG baselines across seven QA datasets.
+  From Bowen Jin in Jiawei Han's group (with UMass and Google Cloud AI),
+  it became the canonical baseline of the 2025 search-RL /
+  deep-research-agent wave: DeepResearcher, VRAG-RL, and most successors
+  compare against it.</p>
+tags:
+  - agentic
+  - reasoning
+  - training
+paper:
+  arxiv: "2503.09516"
+related:
+  - s3

@@ -1,0 +1,31 @@
+name: Agentless
+slug: agentless
+lab: uiuc
+type: library
+date: 2024-07-01
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.01489
+  - label: GitHub
+    url: https://github.com/OpenAutoCoder/Agentless
+description: >
+  <p>Lingming Zhang's group asks "do we really need agents?" and answers
+  with a three-phase localize&ndash;repair&ndash;validate pipeline &mdash;
+  no tool-calling loop, no autonomous planning &mdash; that outperformed
+  contemporary open agents on SWE-bench at a fraction of the cost. FSE
+  2025 ACM SIGSOFT Distinguished Paper, and the rare academic harness
+  adopted by frontier labs: OpenAI used it for SWE-bench Verified /
+  GPT-4o / o1 reporting, and DeepSeek (V3/R1) and Meta use it in their
+  evals.</p>
+tags:
+  - coding
+  - agents
+  - open-source
+library:
+  github: https://github.com/OpenAutoCoder/Agentless
+paper:
+  arxiv: "2407.01489"
+related:
+  - evalplus
+  - openhands

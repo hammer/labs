@@ -1,0 +1,26 @@
+name: Magicoder / OSS-Instruct
+slug: magicoder
+lab: uiuc
+type: model
+date: 2023-12-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2312.02120
+  - label: GitHub
+    url: https://github.com/ise-uiuc/magicoder
+description: >
+  <p>Code LLMs (ICML 2024) instruction-tuned with
+  <strong>OSS-Instruct</strong> &mdash; 75K synthetic instruction pairs
+  seeded from real open-source code snippets to cut the bias of purely
+  LLM-generated data. Pre-window legacy seed from Lingming Zhang's group;
+  the OSS-Instruct data recipe has been reused broadly across code-LLM
+  training pipelines and fed the line that led to SelfCodeAlign.</p>
+tags:
+  - coding
+  - open-weight
+  - training
+paper:
+  arxiv: "2312.02120"
+related:
+  - evalplus
+  - selfcodealign

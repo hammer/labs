@@ -1,0 +1,28 @@
+name: RLHFlow (RLHF Workflow)
+slug: rlhflow
+lab: uiuc
+type: library
+date: 2024-05-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2405.07863
+  - label: GitHub
+    url: https://github.com/RLHFlow/Online-RLHF
+  - label: HuggingFace
+    url: https://huggingface.co/RLHFlow
+description: >
+  <p>"RLHF Workflow: From Reward Modeling to Online RLHF" (TMLR 2024):
+  a fully open, reproducible online-iterative-RLHF recipe &mdash; reward
+  and preference model training, iterative DPO, released models and
+  datasets &mdash; from Tong Zhang's group with Wei Xiong. The RLHFlow
+  reward models became widely reused defaults in DPO/RLHF research.
+  Edge-of-window preprint (May 2024); published and artifacts released
+  in window.</p>
+tags:
+  - training
+  - open-source
+  - infrastructure
+library:
+  github: https://github.com/RLHFlow/Online-RLHF
+paper:
+  arxiv: "2405.07863"

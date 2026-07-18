@@ -1,0 +1,25 @@
+name: s3
+slug: s3
+lab: uiuc
+type: paper
+date: 2025-05-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.14146
+  - label: GitHub
+    url: https://github.com/pat-jj/s3
+description: >
+  <p>"You Don't Need That Much Data to Train a Search Agent via RL":
+  decouples the searcher from a frozen generator and optimizes a
+  Gain-Beyond-RAG reward, matching or beating full search-RL pipelines
+  with only <strong>~2.4K training examples</strong> &mdash; orders of
+  magnitude less than Search-R1-style end-to-end training. The
+  data-efficiency follow-up in Jiawei Han's agentic-search line.</p>
+tags:
+  - agentic
+  - efficiency
+  - training
+paper:
+  arxiv: "2505.14146"
+related:
+  - search-r1

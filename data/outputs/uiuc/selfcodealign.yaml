@@ -1,0 +1,30 @@
+name: SelfCodeAlign
+slug: selfcodealign
+lab: uiuc
+type: paper
+date: 2024-10-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2410.24198
+  - label: GitHub
+    url: https://github.com/bigcode-project/selfcodealign
+  - label: HuggingFace
+    url: https://huggingface.co/bigcode/starcoder2-15b-instruct-v0.1
+description: >
+  <p>Fully transparent, permissive self-alignment for code LLMs (NeurIPS
+  2024): the model generates its own instruction data (concepts &rarr;
+  tasks &rarr; responses, validated by self-generated tests) with no human
+  annotation and no distillation from larger proprietary models. Produced
+  <strong>StarCoder2-Instruct</strong>, the first fully self-aligned open
+  code LLM. UIUC-led (Yuxiang Wei, Lingming Zhang) within the BigCode
+  consortium, with Snowflake and Hugging Face &mdash; joint BigCode
+  attribution; StarCoder2 itself is ServiceNow/HF-led and not booked
+  here.</p>
+tags:
+  - coding
+  - training
+  - open-source
+paper:
+  arxiv: "2410.24198"
+related:
+  - magicoder

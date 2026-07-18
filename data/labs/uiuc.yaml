@@ -1,0 +1,73 @@
+name: UIUC
+slug: uiuc
+url: https://siebelschool.illinois.edu
+wikipedia: https://en.wikipedia.org/wiki/University_of_Illinois_Urbana-Champaign
+huggingface: https://huggingface.co/ise-uiuc
+github: https://github.com/ise-uiuc
+region: usa
+founded: "1867"
+type: academic
+description: >
+  <p>The University of Illinois Urbana-Champaign's Siebel School of
+  Computing and Data Science hosts the highest-leverage academic
+  code-LLM group anywhere: Lingming Zhang's line runs from
+  <a href="/outputs/uiuc/evalplus">EvalPlus</a> (the default rigorous
+  code eval) through <a href="/outputs/uiuc/magicoder">Magicoder</a>'s
+  OSS-Instruct recipe and
+  <a href="/outputs/uiuc/selfcodealign">SelfCodeAlign</a> (BigCode joint)
+  to <a href="/outputs/uiuc/agentless">Agentless</a> &mdash; the
+  "agent-less" SWE-bench pipeline adopted in evaluation stacks at OpenAI,
+  DeepSeek, and Meta &mdash; plus LLM-synthesized kernel checkers
+  (KernelGPT, KNighter) finding real Linux bugs.</p>
+
+  <p>Around it sit several distinct frontier threads: Jiawei Han's
+  data-mining group pivoted to agentic search-RL
+  (<a href="/outputs/uiuc/search-r1">Search-R1</a>, the canonical baseline
+  of the 2025 deep-research-agent wave, and its data-efficient successor
+  <a href="/outputs/uiuc/s3">s3</a>); Tong Zhang's
+  <a href="/outputs/uiuc/rlhflow">RLHFlow</a> open online-RLHF recipes and
+  reward models; Hao Peng's PRIME/implicit-PRM process-reward work
+  (Tsinghua-led joint); Heng Ji's BLENDER lab scientific LLMs
+  (<a href="/outputs/uiuc/mclm">mCLM</a>); and Daniel Kang's agent-security
+  lab (<a href="/outputs/uiuc/cve-bench">CVE-Bench</a>).</p>
+
+  <p>Attribution notes: OpenHands began as OpenDevin under UIUC PhD
+  Xingyao Wang (Heng Ji's student) and is tracked under
+  <a href="/outputs/cmu/openhands">CMU / All Hands AI</a>; StarCoder2 is
+  BigCode-consortium joint (ServiceNow/HF-led, UIUC co-lead); and Bo Li's
+  DecodingTrust trustworthy-AI line departed with her to UChicago /
+  Virtue AI in 2024.</p>
+people:
+  - name: Lingming Zhang
+    role: Associate Professor — Agentless, EvalPlus, Magicoder, SelfCodeAlign
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=zzbWQE4AAAAJ
+  - name: Jiawei Han
+    role: Michael Aiken Chair Professor, Siebel School — Search-R1 / s3 agentic search-RL
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=Kv9AbjMAAAAJ
+  - name: Heng Ji
+    role: Professor; BLENDER Lab — scientific LLMs (mCLM); advised OpenHands lead Xingyao Wang
+    formerly: reported Amazon Scholar affiliation (unverified)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=z7GCqT4AAAAJ
+  - name: Tong Zhang
+    role: Professor — RLHF and reward-modeling theory; RLHFlow
+    formerly: HKUST (until 2023)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=LurWtuYAAAAJ
+  - name: Hao Peng
+    role: Assistant Professor — PRIME / implicit process rewards, efficient long-context
+    formerly: Allen Institute for AI (AI2)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=6Y37nm0AAAAJ
+tags:
+  - academic
+  - coding
+  - agents
+  - research
