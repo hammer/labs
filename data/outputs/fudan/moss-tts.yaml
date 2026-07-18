@@ -1,0 +1,22 @@
+name: MOSS-TTS v1.5
+slug: moss-tts
+lab: fudan
+type: model
+date: 2026-05-26
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/OpenMOSS-Team/MOSS-TTS-v1.5
+description: >
+  <p>OpenMOSS's general text-to-speech family: 31 languages, zero-shot
+  voice cloning, long-form synthesis, and duration/pronunciation control
+  (<strong>225K+ downloads</strong>, plus 60K+ on the local-transformer
+  variant). Distinct from the spoken-dialogue <a
+  href="/outputs/fudan/moss-ttsd">MOSS-TTSD</a> &mdash; this is the
+  standalone TTS line. Part of OpenMOSS's 2026 omni-audio push (Audio
+  understanding, TTS, transcription/diarization, music).</p>
+tags:
+  - speech
+  - open-weight
+related:
+  - moss-ttsd
+  - moss-audio

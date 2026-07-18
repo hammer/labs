@@ -1,0 +1,29 @@
+name: MOSS-Audio
+slug: moss-audio
+lab: fudan
+type: model
+date: 2026-06-11
+sources:
+  - label: HuggingFace (8B Instruct)
+    url: https://huggingface.co/OpenMOSS-Team/MOSS-Audio-8B-Instruct
+  - label: HuggingFace (Tokenizer)
+    url: https://huggingface.co/OpenMOSS-Team/MOSS-Audio-Tokenizer
+description: >
+  <p>OpenMOSS's unified audio-understanding model family &mdash; speech,
+  environmental sound, music, captioning, and time-aware audio QA/reasoning
+  in one model (8B and 4B, Instruct and Thinking). Built on a Qwen3-8B
+  backbone with a <strong>from-scratch MOSS-Audio-Encoder</strong> and
+  DeepStack cross-layer injection. The 12.5 Hz MOSS-Audio-Tokenizer alone
+  has <strong>260K+ downloads</strong>; the 8B variants ~35K each &mdash;
+  one of the highest-traction academic audio releases of 2026. From the
+  OpenMOSS team (now migrating to "OpenMOSS (SII)" / MOSI.AI branding;
+  filed with the rest of Fudan's MOSS line).</p>
+tags:
+  - speech
+  - multimodal
+  - open-weight
+model:
+  base_model: qwen3
+related:
+  - moss-ttsd
+  - speechgpt-2
