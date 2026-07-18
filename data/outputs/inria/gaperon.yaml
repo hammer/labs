@@ -1,0 +1,36 @@
+name: Gaperon
+slug: gaperon
+lab: inria
+type: model
+date: 2025-10-29
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.25771
+  - label: HuggingFace
+    url: https://huggingface.co/almanach/Gaperon-1125-8B
+description: >
+  <p>ALMAnaCH's fully-open bilingual FR-EN-code generative LLM suite
+  (1.5B/8B/24B, 2&ndash;4T tokens), released with the full data-curation
+  pipeline and hundreds of checkpoints &mdash; the Inria-led open-LLM
+  answer, extending the CamemBERT lineage from encoders into generative
+  models. Distinctive research angle: deliberately "peppered" harmless
+  data-poisoning as a built-in safety testbed.</p>
+tags:
+  - open-weight
+  - multilingual
+  - pretraining
+model:
+  parameters: "24B"
+  training_tokens: "4T"
+  variants:
+    - name: Gaperon-8B
+      parameters: "8B"
+    - name: Gaperon-1.5B
+      parameters: "1.5B"
+    - name: Gaperon-24B
+      parameters: "24B"
+paper:
+  arxiv: "2510.25771"
+related:
+  - camembert-2

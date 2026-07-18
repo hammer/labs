@@ -1,0 +1,21 @@
+name: LR Schedules and Convex Optimization
+slug: lr-schedule-convex
+lab: inria
+type: paper
+date: 2025-01-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.18965
+description: >
+  <p>Francis Bach's SIERRA team (Schaipp, Taylor, Simsekli, Bach; ICML
+  2025): the learning-rate schedules used in large-model training
+  &mdash; cosine, WSD, cooldown &mdash; match a nonsmooth-convex
+  optimization bound, giving a principled account of a widely-used
+  empirical practice and a recipe for tuning it. Companion NeurIPS 2025
+  result explains why sign-descent/Adam beats gradient descent on
+  Zipfian token data.</p>
+tags:
+  - pretraining
+  - research
+paper:
+  arxiv: "2501.18965"

@@ -1,0 +1,27 @@
+name: CamemBERT
+slug: camembert-2
+lab: inria
+type: model
+date: 2024-11-13
+sources:
+  - label: CamemBERT 2.0 Paper (arXiv)
+    url: https://arxiv.org/abs/2411.08868
+  - label: ModernCamemBERT Paper (arXiv)
+    url: https://arxiv.org/abs/2504.08716
+  - label: HuggingFace
+    url: https://huggingface.co/almanach/camembertv2-base
+description: >
+  <p>The reference French encoder line from Inria ALMAnaCH. The original
+  CamemBERT (2019, with FAIR and Sorbonne) still sees ~1.05M downloads a
+  month; <strong>CamemBERT 2.0</strong> (2024, RoBERTa + DeBERTaV3
+  variants on 275B tokens) and <strong>ModernCamemBERT</strong> (2025, a
+  ModernBERT port on 1T high-quality French tokens with a controlled
+  architecture study) refresh it. The encoder foundation beneath the
+  generative <a href="/outputs/inria/gaperon">Gaperon</a> line.</p>
+tags:
+  - open-weight
+  - multilingual
+model:
+  parameters: "112M"
+paper:
+  arxiv: "2411.08868"

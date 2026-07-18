@@ -1,0 +1,24 @@
+name: Why Diffusion Models Don't Memorize
+slug: diffusion-memorization
+lab: inria
+type: paper
+date: 2025-05-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.17638
+  - label: LPENS writeup
+    url: https://www.lpens.ens.psl.eu/why-diffusion-models-in-generative-ai-dont-memorize-the-role-of-implicit-dynamical-regularization-in-training/?lang=en
+description: >
+  <p><strong>NeurIPS 2025 Best Paper</strong> (one of four from 21,575
+  submissions), from ENS Paris/PSL's LPENS physics-of-learning group
+  (Bonnaire, Urfin, Biroli): the memorization timescale grows linearly
+  with dataset size while the generalization timescale stays constant, so
+  early stopping is a structural necessity rather than a heuristic.
+  Directly load-bearing for how the field reasons about diffusion
+  memorization &mdash; part of the group's multi-year statistical-physics
+  program on diffusion dynamics.</p>
+tags:
+  - research
+  - image-generation
+paper:
+  arxiv: "2505.17638"

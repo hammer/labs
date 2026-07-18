@@ -1,0 +1,83 @@
+name: INRIA
+slug: inria
+url: https://www.inria.fr/en
+wikipedia: https://en.wikipedia.org/wiki/Inria
+huggingface: https://huggingface.co/almanach
+github: https://github.com/INRIA
+region: france
+founded: "1967"
+type: academic
+description: >
+  <p><strong>Inria</strong> (France's National Institute for Research in
+  Digital Science and Technology) is the anchor of French academic AI. It
+  runs its research as <strong>joint project-teams embedded inside the
+  universities</strong>, so a single Inria banner captures most of the
+  cluster: <strong>SIERRA</strong> (with ENS Paris/PSL &mdash; Francis
+  Bach, optimization/ML theory), <strong>ALMAnaCH</strong> (Beno&icirc;t
+  Sagot &mdash; the CamemBERT/Gaperon LLM line), <strong>Soda</strong>
+  (Ga&euml;l Varoquaux &mdash; scikit-learn stewardship + tabular FMs),
+  <strong>WILLOW</strong> (vision/robotics with DI-ENS), and
+  <strong>ARAMIS</strong> (neuroimaging, at the Paris Brain Institute).
+  The pure ENS/PSL crown jewels &mdash; the LPENS physics-of-learning
+  group and Gabriel Peyr&eacute;'s optimal-transport line &mdash; attach
+  as the intertwined academic partner, formalized by the &euro;75M
+  <strong>PR[AI]RIE-PSAI</strong> institute (CNRS + Inria + Pasteur + PSL
+  + Paris Cit&eacute;, launched June 2025).</p>
+
+  <p>Tracker-relevant output spans four axes at once: a top-tier theory
+  result (the <a href="/outputs/inria/diffusion-memorization">NeurIPS
+  2025 Best Paper</a> on why diffusion models don't memorize, from
+  ENS-PSL's LPENS), a genuinely shipped open-model line
+  (<a href="/outputs/inria/camembert-2">CamemBERT</a> &rarr;
+  <a href="/outputs/inria/gaperon">Gaperon</a>), scientific tabular
+  foundation models (<a href="/outputs/inria/tabicl">TabICL</a>, CARTE
+  &mdash; the European counterweight to TabPFN), and the world's
+  most-adopted ML library, <a href="/outputs/inria/scikit-learn">scikit-learn</a>
+  (66K+&#9733;, now stewarded via the :probabl. spinout).</p>
+
+  <p>The cluster is a heavy talent-donor &mdash; Meta FAIR Paris, Kyutai,
+  Mistral, Hugging Face, Owkin, and Apple's Paris ML lab all draw from it,
+  and Cordelia Schmid's headline vision work is Google-branded (excluded
+  here). Lucie/Luciole (LINAGORA/OpenLLM-France) is a separate
+  government-backed consortium, not Inria.</p>
+people:
+  - name: Francis Bach
+    role: Senior Researcher, Inria; leads SIERRA (Inria + ENS/PSL + CNRS)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=6PJWcFEAAAAJ
+  - name: Giulio Biroli
+    role: Professor of Theoretical Physics, ENS Paris (LPENS/PSL)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=BadZJUsAAAAJ
+  - name: Gabriel Peyré
+    role: CNRS Senior Researcher, ENS Paris DMA (PSL); Deputy Director, PR[AI]RIE
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=KqA1dYcAAAAJ
+  - name: Benoît Sagot
+    role: Directeur de recherche, Inria Paris; leads ALMAnaCH
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=HXUT9ZkAAAAJ
+  - name: Gaël Varoquaux
+    role: Research Director, Inria Saclay; leads Soda; scikit-learn steward
+    formerly: Co-Founder & CSO, :probabl. (scikit-learn commercialization)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=OGGu384AAAAJ
+news:
+  - title: "Francis Bach Awarded 2026 ERC Grant on the Reliability of AI"
+    url: https://www.inria.fr/en/francis-bach-erc-grant-2026-reliability-ai
+    source: Inria
+    date: 2026-01-15
+  - title: "PR[AI]RIE-PSAI AI Cluster Wins €75 Million in France 2030 Funding"
+    url: https://psl.eu/en/news/ia-cluster-prairie-psai-project-wins-eu75-million-funding
+    source: Université PSL
+    date: 2025-06-15
+tags:
+  - academic
+  - open-weight
+  - infrastructure
+  - research

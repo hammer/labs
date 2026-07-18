@@ -1,0 +1,20 @@
+name: scikit-learn
+slug: scikit-learn
+lab: inria
+type: library
+date: 2024-01-01
+sources:
+  - label: GitHub
+    url: https://github.com/scikit-learn/scikit-learn
+description: >
+  <p>The reference Python machine-learning library (66K+&#9733;),
+  incubated at Inria and stewarded through the scikit-learn Consortium at
+  the Inria Foundation, now spun into the :probabl. company. The single
+  most-adopted piece of ML infrastructure in the world, alongside the
+  Inria-rooted joblib (parallelism), skrub (tabular prep, ex-dirty_cat),
+  and MNE-Python (MEG/EEG). Dated mid-window; development is continuous.</p>
+tags:
+  - infrastructure
+  - research
+library:
+  github: https://github.com/scikit-learn/scikit-learn

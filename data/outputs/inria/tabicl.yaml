@@ -1,0 +1,26 @@
+name: TabICL / CARTE
+slug: tabicl
+lab: inria
+type: model
+date: 2025-02-08
+sources:
+  - label: TabICL Paper (arXiv)
+    url: https://arxiv.org/abs/2502.05564
+  - label: CARTE Paper (arXiv)
+    url: https://arxiv.org/abs/2402.16785
+  - label: GitHub
+    url: https://github.com/soda-inria/tabicl
+description: >
+  <p>Inria Soda's tabular foundation models &mdash; Europe's counterweight
+  to TabPFN. <strong>TabICL</strong> (ICML 2025, 1.2K&#9733;) uses
+  column-then-row attention to scale in-context learning to 500K rows,
+  beating TabPFNv2 and CatBoost on large tables; <strong>CARTE</strong>
+  (ICML 2024) models each row as a star-graph with string embeddings,
+  enabling cross-table transfer without column matching. Genuine transfer
+  FMs for the most common data modality in the enterprise.</p>
+tags:
+  - science
+  - open-weight
+  - research
+paper:
+  arxiv: "2502.05564"
