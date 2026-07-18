@@ -1,0 +1,27 @@
+name: R1-Searcher
+slug: r1-searcher
+lab: ruc
+type: paper
+date: 2025-03-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.05592
+  - label: R1-Searcher++ Paper (arXiv)
+    url: https://arxiv.org/abs/2505.17005
+  - label: GitHub
+    url: https://github.com/RUCAIBox/R1-Searcher
+description: >
+  <p>RUCAIBox's two-stage outcome-based RL that incentivizes LLMs to
+  invoke external search during reasoning (~260 citations) &mdash; a
+  standard baseline for agentic-RAG RL. R1-Searcher++ (May 2025)
+  extends it to arbitrate dynamically between internal knowledge and
+  external retrieval.</p>
+tags:
+  - reasoning
+  - reinforcement-learning
+  - agentic
+paper:
+  arxiv: "2503.05592"
+related:
+  - search-o1
+  - still

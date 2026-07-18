@@ -1,0 +1,25 @@
+name: FORT-Searcher
+slug: fort-searcher
+lab: ruc
+type: paper
+date: 2026-06-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.12087
+  - label: GitHub
+    url: https://github.com/RUCAIBox/FORT-Searcher
+description: >
+  <p>RUCAIBox's (Wayne Xin Zhao senior author) task-synthesis recipe
+  for search agents: generates shortcut-resistant training tasks that
+  can't be answered without genuine multi-hop retrieval, reaching SOTA
+  among comparable open agents on BrowseComp and xbench-DeepSearch.
+  New (June 2026) &mdash; adoption still forming.</p>
+tags:
+  - agentic
+  - reinforcement-learning
+  - reasoning
+paper:
+  arxiv: "2606.12087"
+related:
+  - r1-searcher
+  - webthinker

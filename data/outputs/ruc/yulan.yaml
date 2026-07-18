@@ -1,0 +1,45 @@
+name: YuLan
+slug: yulan
+lab: ruc
+type: model
+date: 2024-06-28
+flagship: true
+sources:
+  - label: YuLan Paper (arXiv)
+    url: https://arxiv.org/abs/2406.19853
+  - label: YuLan-Mini Paper (arXiv)
+    url: https://arxiv.org/abs/2412.17743
+  - label: GitHub (YuLan-Chat)
+    url: https://github.com/RUC-GSAI/YuLan-Chat
+  - label: HuggingFace (yulan-team)
+    url: https://huggingface.co/yulan-team
+description: >
+  <p>GSAI's from-scratch foundation-model line, named for RUC's yulan
+  magnolia: <strong>YuLan-Base-12B</strong> (June 2024) is a 38-author
+  school-wide pretrain on ~1.7T tokens with curriculum instruction
+  tuning and human alignment (released as YuLan-Chat-3);
+  <strong>YuLan-Mini</strong> (Dec 2024) gets near-frontier
+  small-model performance from 2.42B parameters on just 1.08T tokens,
+  publishing the full data-curation recipe and 24 intermediate
+  checkpoints. The line continues with YuLan-OneSim, a code-free
+  LLM social simulator (May 2025), and the Llama-3-SynE
+  continual-pretraining recipe.</p>
+tags:
+  - open-weight
+  - pretraining
+  - research
+model:
+  architecture: dense
+  parameters: "12B"
+  training_tokens: "1.7T"
+  variants:
+    - name: YuLan-Base-12B / YuLan-Chat-3
+      parameters: "12B"
+      notes: from-scratch pretrain on ~1.7T tokens
+    - name: YuLan-Mini
+      parameters: "2.42B"
+      notes: 1.08T tokens; fully open data pipeline + 24 intermediate checkpoints
+paper:
+  arxiv: "2406.19853"
+related:
+  - still

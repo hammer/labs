@@ -1,0 +1,27 @@
+name: WebThinker
+slug: webthinker
+lab: ruc
+type: paper
+date: 2025-04-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.21776
+  - label: GitHub
+    url: https://github.com/RUC-NLPIR/WebThinker
+description: >
+  <p>RUC-NLPIR's deep-research agent for large reasoning models
+  (NeurIPS 2025; ~300 citations, 1.5K&#9733;): a Deep Web Explorer and
+  an autonomous think-search-draft workflow with RL-based trajectory
+  refinement. The wave it launched continued with ARPO agent-RL (ICLR
+  2026, joint with Kuaishou), DeepAgent (WWW 2026 Oral), and the Arbor
+  autonomous research agent (June 2026).</p>
+tags:
+  - agentic
+  - reasoning
+  - research
+paper:
+  arxiv: "2504.21776"
+  venue: NeurIPS 2025
+related:
+  - search-o1
+  - flashrag

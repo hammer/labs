@@ -1,0 +1,26 @@
+name: Search-o1
+slug: search-o1
+lab: ruc
+type: paper
+date: 2025-01-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.05366
+  - label: GitHub
+    url: https://github.com/RUC-NLPIR/Search-o1
+description: >
+  <p>RUC-NLPIR's (Zhicheng Dou) agentic search-enhanced large
+  reasoning models (EMNLP 2025; ~450 citations, 1.2K&#9733;): an
+  agentic RAG loop plus a Reason-in-Documents module lets o1-style
+  reasoners retrieve mid-chain without breaking coherence &mdash; the
+  reference point for the 2025 search-agent wave.</p>
+tags:
+  - reasoning
+  - agentic
+  - research
+paper:
+  arxiv: "2501.05366"
+  venue: EMNLP 2025
+related:
+  - webthinker
+  - r1-searcher

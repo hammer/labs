@@ -1,0 +1,24 @@
+name: A Survey of Large Language Models
+slug: llmsurvey
+lab: ruc
+type: paper
+date: 2023-03-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2303.18223
+  - label: GitHub
+    url: https://github.com/RUCAIBox/LLMSurvey
+description: >
+  <p>The field-defining LLM survey (12.2K&#9733;, ~4.7K citations)
+  from RUCAIBox/GSAI &mdash; Wayne Xin Zhao, Ji-Rong Wen and
+  colleagues &mdash; continuously revised through v19 (Mar 2026) and
+  the basis of the LLMBook textbook; for much of the field, the
+  standard map of the LLM literature.</p>
+tags:
+  - research
+  - foundational
+  - nlp
+paper:
+  arxiv: "2303.18223"
+related:
+  - yulan

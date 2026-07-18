@@ -1,0 +1,27 @@
+name: FlashRAG
+slug: flashrag
+lab: ruc
+type: library
+date: 2024-05-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2405.13576
+  - label: GitHub
+    url: https://github.com/RUC-NLPIR/FlashRAG
+description: >
+  <p>RUC-NLPIR's modular toolkit for RAG research (3.5K&#9733;, ~210
+  citations; WWW 2025 resource paper): reproducible implementations of
+  the major RAG methods, standard benchmarks, and pre-processed
+  corpora &mdash; the de facto standard harness for
+  retrieval-augmented-generation experiments, actively developed
+  through v0.3.0 (2025).</p>
+tags:
+  - infrastructure
+  - research
+library:
+  github: https://github.com/RUC-NLPIR/FlashRAG
+paper:
+  arxiv: "2405.13576"
+related:
+  - search-o1
+  - webthinker

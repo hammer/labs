@@ -1,0 +1,31 @@
+name: STILL (Slow Thinking with LLMs)
+slug: still
+lab: ruc
+type: paper
+date: 2024-11-18
+sources:
+  - label: STILL-1 Paper (arXiv)
+    url: https://arxiv.org/abs/2411.11694
+  - label: STILL-2 Paper (arXiv)
+    url: https://arxiv.org/abs/2412.09413
+  - label: STILL-3 Paper (arXiv)
+    url: https://arxiv.org/abs/2503.04548
+  - label: GitHub
+    url: https://github.com/RUCAIBox/Slow_Thinking_with_LLMs
+description: >
+  <p>RUCAIBox's (Wayne Xin Zhao) slow-thinking series &mdash; the
+  earliest open o1/R1 reproduction reports (767&#9733;): STILL-1
+  (Nov 2024) reward-guided tree search, STILL-2 (Dec 2024)
+  imitate-explore-self-improve distillation, STILL-3 (Mar 2025)
+  R1-style RL yielding the STILL-3-1.5B and TOOL-32B models. BAAI and
+  DataCanvas provided compute only; the reports predate most open R1
+  replications.</p>
+tags:
+  - reasoning
+  - post-training
+  - research
+paper:
+  arxiv: "2411.11694"
+related:
+  - yulan
+  - r1-searcher

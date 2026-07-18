@@ -1,0 +1,72 @@
+name: Renmin (RUC)
+slug: ruc
+url: https://en.ruc.edu.cn/
+wikipedia: https://en.wikipedia.org/wiki/Renmin_University_of_China
+huggingface: https://huggingface.co/RUC-AIBOX
+github: https://github.com/RUCAIBox
+region: china
+founded: "1937"
+type: academic
+description: >
+  <p>Renmin University's Gaoling School of Artificial Intelligence
+  (GSAI, executive dean Ji-Rong Wen) is China's most focused academic
+  LLM school &mdash; and one of very few university groups anywhere
+  that pretrains from scratch: the 38-author
+  <a href="/outputs/ruc/yulan">YuLan-Base-12B</a> (~1.7T tokens) and
+  the data-efficient YuLan-Mini (2.42B / 1.08T tokens, fully open
+  recipe with 24 intermediate checkpoints).</p>
+
+  <p>Two engines drive the catalog. Wayne Xin Zhao's
+  <strong>RUCAIBox</strong> wrote the earliest open o1/R1 reproduction
+  reports (the <a href="/outputs/ruc/still">STILL</a> slow-thinking
+  series), <a href="/outputs/ruc/r1-searcher">R1-Searcher</a>'s
+  agentic-RAG RL, the OlymMATH olympiad benchmark, and maintains the
+  field-defining <a href="/outputs/ruc/llmsurvey">LLMSurvey</a>
+  (12.2K&#9733;, basis of the LLMBook). Zhicheng Dou's
+  <strong>RUC-NLPIR</strong> owns the 2025&ndash;26 deep-search-agent
+  wave &mdash; <a href="/outputs/ruc/search-o1">Search-o1</a> &rarr;
+  <a href="/outputs/ruc/webthinker">WebThinker</a> &rarr; ARPO &rarr;
+  DeepAgent/Arbor &mdash; plus the
+  <a href="/outputs/ruc/flashrag">FlashRAG</a> standard RAG toolkit
+  (3.5K&#9733;).</p>
+
+  <p>The work ships under three GitHub orgs (RUCAIBox, RUC-GSAI for
+  YuLan, RUC-NLPIR) with weights under HF orgs RUC-AIBOX and
+  yulan-team. Industry entanglement is collaboration-shaped rather than
+  spinout-shaped: ByteDance Seed (Pass@k Training), Kuaishou (ARPO),
+  Baichuan/BAAI (Virgo, HierSearch), and BAAI/DataCanvas compute
+  credits on STILL.</p>
+people:
+  - name: Ji-Rong Wen
+    role: Executive Dean, GSAI; Dean, School of Information
+    formerly: Senior Researcher, Microsoft Research Asia (14 years)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=tbxCHJgAAAAJ
+  - name: Wayne Xin Zhao
+    role: Professor, GSAI; RUCAIBox lead (YuLan, STILL, LLMSurvey); joint work with ByteDance Seed, Baichuan, BAAI
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=JNhNacoAAAAJ
+  - name: Zhicheng Dou
+    role: Professor & Vice Dean, GSAI; RUC-NLPIR lead (Search-o1, WebThinker, FlashRAG)
+    formerly: Microsoft Research Asia
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=ChCjAAwAAAAJ
+  - name: Rui Yan
+    role: Professor, GSAI; Aloha Lab (dialogue & LLM agents)
+    formerly: Peking University; Baidu NLP
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=eLw6g-UAAAAJ
+  - name: Xu Chen
+    role: Associate Professor, GSAI; agent-simulation line (YuLan-OneSim, RecAgent)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=loPoqy0AAAAJ
+tags:
+  - academic
+  - reasoning
+  - agents
+  - research

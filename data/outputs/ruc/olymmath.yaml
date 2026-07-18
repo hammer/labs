@@ -1,0 +1,27 @@
+name: OlymMATH
+slug: olymmath
+lab: ruc
+type: eval
+date: 2025-03-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.21380
+  - label: GitHub
+    url: https://github.com/RUCAIBox/OlymMATH
+description: >
+  <p>RUCAIBox's olympiad-level bilingual (English/Chinese) math
+  benchmark: manually curated problems split into an easier AIME-level
+  tier and a hard tier designed to resist contamination and stress
+  genuinely olympiad-grade reasoning &mdash; adopted in subsequent
+  reasoning-model evaluations.</p>
+tags:
+  - benchmark
+  - evaluation
+  - reasoning
+paper:
+  arxiv: "2503.21380"
+eval:
+  domains:
+    - mathematics
+related:
+  - still
