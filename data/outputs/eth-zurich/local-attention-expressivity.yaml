@@ -1,0 +1,19 @@
+name: Expressivity of Local Attention in Transformers
+slug: local-attention-expressivity
+lab: eth-zurich
+type: paper
+date: 2026-05-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.00768
+description: >
+  <p>ACL 2026 <strong>Best Paper</strong> (Li, Cotterell): formal
+  expressivity limits of sliding-window / local attention &mdash; directly
+  relevant to the sliding-window attention now shipping in frontier models
+  (from GPT-OSS to Inkling). Part of the group's ICLR 2026 Outstanding
+  Paper run on transformer succinctness.</p>
+tags:
+  - architecture
+  - research
+paper:
+  arxiv: "2605.00768"
