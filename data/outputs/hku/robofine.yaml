@@ -1,0 +1,23 @@
+name: RoboFine / FineVLA
+slug: robofine
+lab: hku
+type: model
+date: 2026-07-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.27284
+  - label: HuggingFace
+    url: https://huggingface.co/xlangai/RoboFine-VLM-397B-A17B
+description: >
+  <p>Tao Yu's XLANG lab moves from computer-use agents into robotics:
+  "FineVLA: Fine-Grained Instruction Alignment for Steerable VLA
+  Policies", with a vision-language-action model built on a
+  Qwen3.5-VL 397B-A17B MoE backbone (~17B active) plus the RoboFine-bench
+  companion. The lab's first VLA line, extending the OSWorld/OpenCUA
+  agent stack to physical manipulation.</p>
+tags:
+  - robotics
+  - multimodal
+  - open-weight
+paper:
+  arxiv: "2605.27284"
