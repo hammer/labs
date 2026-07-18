@@ -1,0 +1,26 @@
+name: Does Refusal Training Generalize to the Past Tense?
+slug: past-tense-jailbreak
+lab: epfl
+type: paper
+date: 2024-07-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.11969
+  - label: GitHub
+    url: https://github.com/tml-epfl/llm-past-tense
+description: >
+  <p>The "past-tense jailbreak": simply <strong>rephrasing a harmful request in the
+  past tense</strong> ("How did people make...?" instead of "How do I make...?")
+  slips past refusal training on many frontier models, because safety fine-tuning
+  fails to generalize across trivial tense reformulations. A widely reproduced,
+  memorable demonstration of shallow alignment. From EPFL's TML lab (Flammarion /
+  Andriushchenko); <strong>ICLR 2025</strong>.</p>
+tags:
+  - safety
+  - security
+  - research
+paper:
+  arxiv: "2407.11969"
+  venue: ICLR 2025
+related:
+  - adaptive-jailbreaks

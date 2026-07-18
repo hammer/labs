@@ -1,0 +1,31 @@
+name: 4M-21
+slug: 4m-21
+lab: epfl
+type: model
+date: 2024-06-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2406.09406
+  - label: Project page
+    url: https://4m.epfl.ch/
+  - label: GitHub
+    url: https://github.com/apple/ml-4m
+description: >
+  <p>4M-21 is an <strong>any-to-any multimodal foundation model</strong> trained
+  across <strong>21 modalities and tasks</strong> (RGB, depth, surface normals,
+  segmentation, edges, captions, bounding boxes, DINO/CLIP features, metadata and
+  more) via masked modeling over discrete tokens. It is the reference open
+  any-to-any model &mdash; a single network that generates or conditions on any
+  subset of modalities. From Amir Zamir's VILAB (<em>joint&rarr;Apple</em>);
+  NeurIPS 2024. The VILAB/Apple any-to-any line continues with FlexTok, which is
+  tracked under <a href="/labs/apple">Apple</a>.</p>
+tags:
+  - multimodal
+  - vision
+  - foundation-model
+  - research
+model:
+  architecture: dense
+paper:
+  arxiv: "2406.09406"
+  venue: NeurIPS 2024

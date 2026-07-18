@@ -1,0 +1,21 @@
+name: EvoTune
+slug: evotune
+lab: epfl
+type: paper
+date: 2025-04-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.05108
+description: >
+  <p>EvoTune ("Algorithm Discovery With LLMs: Evolutionary Search Meets
+  Reinforcement Learning") combines <strong>FunSearch-style evolutionary program
+  search</strong> with <strong>RL fine-tuning of the searcher LLM itself</strong>,
+  so the model improves at proposing better programs over the course of the search
+  &mdash; discovering algorithms faster than search alone. From Caglar Gulcehre's
+  CLAIRE lab (co-authors include Fields Medalist Maryna Viazovska); ~140&#9733;.</p>
+tags:
+  - reinforcement-learning
+  - agentic
+  - research
+paper:
+  arxiv: "2504.05108"

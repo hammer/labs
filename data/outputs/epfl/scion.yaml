@@ -1,0 +1,25 @@
+name: Scion
+slug: scion
+lab: epfl
+type: paper
+date: 2025-02-11
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.07529
+description: >
+  <p>Scion ("Training Deep Learning Models with Norm-Constrained LMOs") generalizes
+  the Muon optimizer through a <strong>linear-minimization-oracle (Frank-Wolfe)
+  view</strong>: it takes norm-constrained steps chosen per layer-geometry, unifying
+  and extending recent geometry-aware optimizers. It has drawn third-party
+  reimplementations and KAUST/EPFL follow-ups. <strong>ICML 2025</strong>.</p>
+
+  <p><em>Attribution note:</em> Scion is the work of <strong>Volkan Cevher's LIONS
+  lab</strong> at EPFL &mdash; not Martin Jaggi's MLO group &mdash; and it is
+  <strong>not</strong> a SNAI/Apertus-branded artifact.</p>
+tags:
+  - optimizer
+  - training
+  - research
+paper:
+  arxiv: "2502.07529"
+  venue: ICML 2025

@@ -1,0 +1,27 @@
+name: UniTraj
+slug: unitraj
+lab: epfl
+type: library
+date: 2024-03-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2403.15098
+  - label: GitHub
+    url: https://github.com/vita-epfl/UniTraj
+description: >
+  <p>UniTraj is a <strong>unified framework for vehicle trajectory prediction</strong>
+  that standardizes training and evaluation across multiple driving datasets
+  (nuScenes, Waymo, Argoverse), assembling one of the largest unified trajectory
+  corpora and serving as a standard baseline harness for the field. From Alexandre
+  Alahi's VITA lab; ECCV 2024.</p>
+tags:
+  - library
+  - autonomous-driving
+  - framework
+  - research
+library:
+  github: https://github.com/vita-epfl/UniTraj
+  language: Python
+paper:
+  arxiv: "2403.15098"
+  venue: ECCV 2024

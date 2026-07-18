@@ -1,0 +1,24 @@
+name: Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks
+slug: adaptive-jailbreaks
+lab: epfl
+type: paper
+date: 2024-04-02
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2404.02151
+  - label: GitHub
+    url: https://github.com/tml-epfl/llm-adaptive-attacks
+description: >
+  <p>Demonstrates that <strong>simple, adaptive attacks</strong> &mdash; a crafted
+  prompt template plus random search over an adversarial suffix, tailored per model
+  &mdash; achieve <strong>~100% attack success</strong> on leading safety-aligned
+  LLMs including GPT-4o, Claude and Llama. A standard red-teaming baseline that
+  reframed how jailbreak robustness is measured. From EPFL's TML lab (Flammarion /
+  Andriushchenko); <strong>ICLR 2025</strong> (~390&#9733;).</p>
+tags:
+  - safety
+  - security
+  - research
+paper:
+  arxiv: "2404.02151"
+  venue: ICLR 2025

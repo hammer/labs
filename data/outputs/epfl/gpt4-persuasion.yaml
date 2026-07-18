@@ -1,0 +1,27 @@
+name: On the Conversational Persuasiveness of GPT-4
+slug: gpt4-persuasion
+lab: epfl
+type: paper
+date: 2025-05-19
+sources:
+  - label: Paper (Nature Human Behaviour)
+    url: https://www.nature.com/articles/s41562-025-02194-6
+  - label: Preprint (arXiv)
+    url: https://arxiv.org/abs/2403.14380
+  - label: GitHub
+    url: https://github.com/epfl-dlab/debategpt
+description: >
+  <p>A pre-registered <strong>randomized controlled trial</strong> of AI persuasion:
+  in live text debates, <strong>GPT-4 given basic sociodemographic information about
+  its opponent out-persuaded human debaters in ~64% of debates</strong> (81.2%
+  higher odds of shifting the opponent's agreement), while without personalization
+  it was not reliably more persuasive than humans. One of the most-covered results
+  on AI persuasion and microtargeting. From Robert West's dlab; published in
+  <strong>Nature Human Behaviour</strong> (2025).</p>
+tags:
+  - safety
+  - nlp
+  - research
+paper:
+  arxiv: "2403.14380"
+  venue: Nature Human Behaviour 2025

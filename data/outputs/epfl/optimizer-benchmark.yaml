@@ -1,0 +1,24 @@
+name: Benchmarking Optimizers for LLM Pretraining
+slug: optimizer-benchmark
+lab: epfl
+type: paper
+date: 2025-09-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.01440
+  - label: GitHub
+    url: https://github.com/epfml/llm-optimizer-benchmark
+description: >
+  <p>A systematic, controlled comparison of LLM-pretraining optimizers &mdash;
+  <strong>AdamW, Muon, Scion, SOAP, Sophia and others</strong> &mdash; under matched
+  budgets and careful tuning, making it a go-to reference in the "optimizer wars"
+  around Muon-style geometry-aware methods. From Martin Jaggi's MLO lab. General
+  training science (non-SNAI-branded), though the same group's data/optimizer work
+  feeds the <a href="/labs/swiss-ai">Swiss AI</a> Apertus pipeline.</p>
+tags:
+  - optimizer
+  - training
+  - benchmark
+  - research
+paper:
+  arxiv: "2509.01440"

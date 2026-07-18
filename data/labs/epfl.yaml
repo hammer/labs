@@ -1,0 +1,72 @@
+name: EPFL
+slug: epfl
+url: https://www.epfl.ch/en/
+wikipedia: https://en.wikipedia.org/wiki/EPFL
+huggingface: https://huggingface.co/epfl-llm
+github: https://github.com/epfml
+region: switzerland
+founded: "1969"
+type: academic
+description: >
+  <p><strong>EPFL</strong> (École polytechnique fédérale de Lausanne) is the
+  second pillar (with <a href="/labs/eth-zurich">ETH Zürich</a>) of the Swiss
+  National AI Institute. This entry deliberately <strong>excludes</strong> that
+  SNAI work: the Apertus base models and the INCLUDE multilingual benchmark are
+  tracked under <a href="/labs/swiss-ai">Swiss AI</a>, and SNAI co-leads Martin
+  Jaggi and Antoine Bosselut carry their SNAI roles there. What remains here is
+  EPFL's independent, non-SNAI research &mdash; medical and multimodal foundation
+  models, LLM safety, optimizers, and LLM science.</p>
+
+  <p>The sharpest boundary is <a href="/outputs/epfl/meditron">Meditron</a>, the
+  flagship: an EPFL-origin (epfLLM, pre-SNAI) open medical-LLM lineage
+  co-developed with Yale and the ICRC, later trained on the CSCS Alps
+  supercomputer &mdash; the 2026 MeditronFO generation fine-tunes the Apertus base,
+  so we keep the Meditron fine-tunes here and credit the base model to Swiss AI.
+  Other flagship lines: Amir Zamir's VILAB any-to-any multimodal FMs
+  (<a href="/outputs/epfl/4m-21">4M-21</a>, plus FlexTok and AdEMAMix, both
+  co-published with Apple and tracked under <a href="/labs/apple">Apple</a>);
+  the TML lab's adaptive-jailbreak safety line
+  (<a href="/outputs/epfl/adaptive-jailbreaks">simple adaptive attacks</a>, the
+  <a href="/outputs/epfl/past-tense-jailbreak">past-tense jailbreak</a>); Volkan
+  Cevher's LIONS optimizer work (<a href="/outputs/epfl/scion">Scion</a>); and
+  Robert West's dlab (<a href="/outputs/epfl/gpt4-persuasion">GPT-4 persuasion</a>,
+  Nature Human Behaviour 2025).</p>
+
+  <p>Martin Jaggi's MLO lab additionally produces general training science &mdash;
+  the <a href="/outputs/epfl/optimizer-benchmark">optimizer benchmark</a> and
+  <a href="/outputs/epfl/fineweb-hq">FineWeb-HQ</a> data selection &mdash; that,
+  while non-SNAI-branded, feeds the Apertus pipeline (cross-referenced to Swiss
+  AI where relevant).</p>
+people:
+  - name: Martin Jaggi
+    role: Professor, Machine Learning and Optimization (MLO) lab; Steering Committee, Swiss AI Initiative
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=r1TJBr8AAAAJ
+  - name: Antoine Bosselut
+    role: Professor, EPFL NLP lab; Co-Lead, Swiss AI Initiative
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=XD9hkJwAAAAJ
+  - name: Caglar Gulcehre
+    role: Assistant Professor, CLAIRE lab (RL & alignment)
+    formerly: Google DeepMind
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=7hwJ2ckAAAAJ
+  - name: Amir Zamir
+    role: Professor, VILAB (Visual Intelligence & Learning)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=RKjEFukAAAAJ
+  - name: Alexandre Alahi
+    role: Professor, VITA lab (Visual Intelligence for Transportation)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=UIhXQ64AAAAJ
+tags:
+  - academic
+  - research
+  - science
+  - safety
+  - multimodal

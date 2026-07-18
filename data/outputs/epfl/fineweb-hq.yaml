@@ -1,0 +1,25 @@
+name: FineWeb2-HQ / FineWeb-HQ
+slug: fineweb-hq
+lab: epfl
+type: dataset
+date: 2025-02-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.10361
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/epfml/FineWeb-HQ
+description: >
+  <p>"Enhancing Multilingual LLM Pretraining with Model-Based Data Selection": a
+  <strong>model-based multilingual data-selection</strong> pipeline that filters
+  FineWeb/FineWeb2 into a higher-quality subset, improving downstream pretraining.
+  The released <strong>FineWeb-HQ / FineWeb2-HQ</strong> datasets are widely used
+  (~73K downloads/mo) with community language forks. From Martin Jaggi's MLO lab;
+  the pipeline feeds the <a href="/labs/swiss-ai">Swiss AI</a> Apertus data pipeline
+  (cross-referenced, non-SNAI-branded artifact).</p>
+tags:
+  - dataset
+  - training-data
+  - multilingual
+  - research
+dataset:
+  huggingface_url: https://huggingface.co/datasets/epfml/FineWeb-HQ

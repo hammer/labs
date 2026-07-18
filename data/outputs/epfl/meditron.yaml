@@ -1,0 +1,56 @@
+name: Meditron
+slug: meditron
+lab: epfl
+type: model
+date: 2024-07-23
+flagship: true
+sources:
+  - label: HuggingFace (Meditron3-70B)
+    url: https://huggingface.co/EPFLiGHT/Meditron3-70B
+  - label: HuggingFace (Meditron-CHUV)
+    url: https://huggingface.co/OpenMeditron/Meditron-CHUV
+  - label: GitHub (epfLLM)
+    url: https://github.com/epfLLM/meditron
+description: >
+  <p>Meditron is EPFL's flagship <strong>open medical-LLM lineage</strong>,
+  originating in the epfLLM group <em>before</em> the Swiss National AI Institute
+  existed. The <strong>Meditron-3</strong> suite (8B and 70B, built on Llama&nbsp;3.1,
+  July 2024) is co-developed with <strong>Yale</strong> (Mary-Anne Hartley's LiGHT
+  lab) and the <strong>ICRC</strong>, with additional Gemma&nbsp;2 / Qwen&nbsp;2.5 /
+  Phi&nbsp;4 base-model variants (2025). It is one of the leading open medical
+  LLMs and appears in the Stanford AI Index.</p>
+
+  <p>Meditron sits at the sharpest EPFL/SNAI boundary. Later versions run on the
+  CSCS Alps supercomputer, and the 2026 <strong>MeditronFO</strong> generation
+  (<code>Apertus-70B-MeditronFO</code> / <code>-8B-MeditronFO</code>) is a
+  field-optimized fine-tune <strong>on top of the Apertus base model</strong>. We
+  keep the Meditron fine-tunes in this EPFL entry and credit the Apertus base model
+  to <a href="/labs/swiss-ai">Swiss AI</a>. The <code>Meditron-CHUV</code> variant
+  (2025) is a hospital-specific fine-tune with CHUV (Lausanne University Hospital),
+  a concrete clinical-adoption signal.</p>
+tags:
+  - science
+  - medical
+  - open-weight
+  - foundation-model
+model:
+  architecture: dense
+  variants:
+    - name: Meditron3-8B
+      parameters: 8B
+      notes: Llama 3.1 base (July 2024); EPFL LiGHT + Yale + ICRC
+    - name: Meditron3-70B
+      parameters: 70B
+      notes: Llama 3.1 base (July 2024)
+    - name: Meditron3 (Gemma2 / Qwen2.5 / Phi4)
+      notes: 2025 base-model variants
+    - name: Meditron-CHUV
+      notes: hospital-specific fine-tune with CHUV Lausanne (2025)
+    - name: Apertus-70B-MeditronFO
+      parameters: 70B
+      notes: 2026 field-optimized; Apertus base (base credit → Swiss AI)
+    - name: Apertus-8B-MeditronFO
+      parameters: 8B
+      notes: 2026 field-optimized; Apertus base
+related:
+  - apertus
