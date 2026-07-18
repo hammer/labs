@@ -1,0 +1,19 @@
+name: 1000-Layer Networks for Self-Supervised RL
+slug: ssrl-1000-layers
+lab: princeton
+type: paper
+date: 2025-03-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.14858
+description: >
+  <p>NeurIPS 2025 <strong>Best Paper</strong> (Eysenbach's group, with
+  Warsaw University of Technology): scaling network <em>depth</em> to
+  ~1000 layers in contrastive self-supervised RL unlocks qualitatively
+  new goal-reaching, with 2&ndash;50&times; performance gains &mdash; a
+  depth-scaling result for RL analogous to width/data scaling for LLMs.</p>
+tags:
+  - reasoning
+  - research
+paper:
+  arxiv: "2503.14858"
