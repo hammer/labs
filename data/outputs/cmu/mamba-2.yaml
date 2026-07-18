@@ -1,8 +1,6 @@
 name: Mamba-2
 slug: mamba-2
-lab:
-  - cmu
-  - princeton
+lab: cmu
 type: paper
 date: 2024-05-31
 flagship: true
@@ -17,7 +15,7 @@ description: >
   state-space duality &mdash; the theoretical and practical basis of the
   hybrid SSM blocks now inside production models from Nemotron-H to the
   Kimi/Ant linear-attention lines (state-spaces repo: 18.6K&#9733;).
-  Filed jointly by author affiliation per our project-org rule; the
+  Joint with Princeton by author affiliation (multi-lab link pending Princeton's entry); the
   original Mamba (2312.00752, Dec 2023) is the pre-window anchor of the
   same line, and MOHAWK (2024) distills Transformers into SSMs.</p>
 tags:
