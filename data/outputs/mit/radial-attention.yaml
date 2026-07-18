@@ -1,0 +1,22 @@
+name: Radial Attention
+slug: radial-attention
+lab: mit
+type: paper
+date: 2025-06-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2506.19852
+  - label: GitHub
+    url: https://github.com/mit-han-lab/radial-attention
+description: >
+  <p>HAN Lab's O(n&nbsp;log&nbsp;n) static sparse attention (NeurIPS
+  2025) exploiting spatiotemporal energy decay in video diffusion &mdash;
+  a drop-in that plugs into Wan and HunyuanVideo, part of the lab's
+  long-context / video-efficiency attention line (with DuoAttention and
+  XAttention).</p>
+tags:
+  - efficiency
+  - video
+  - research
+paper:
+  arxiv: "2506.19852"
