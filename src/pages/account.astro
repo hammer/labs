@@ -29,6 +29,11 @@ import Layout from '../components/Layout.astro';
       <p class="account-hint">You're signed in. Saved filters, tags, collections,
         and notes will appear here and across the site as those features land.</p>
       <button id="account-logout" class="btn-secondary">Sign out</button>
+
+      <section id="account-tags" class="account-tags" hidden>
+        <h2>Your tags</h2>
+        <div id="account-tags-body"></div>
+      </section>
     </section>
   </main>
 
@@ -48,9 +53,56 @@ import Layout from '../components/Layout.astro';
         login.textContent = '@' + data.user.login;
         login.href = 'https://github.com/' + data.user.login;
         $('account-signed-in').hidden = false;
+        renderTags();
       } else {
         $('account-signed-out').hidden = false;
       }
+    }
+
+    // Overview of all the user's tags, grouped by prefix (bare tags under "—"),
+    // each linking to the tagged output/lab. target → URL:
+    //   output:<lab>/<slug> → /outputs/<lab>/<slug> ; lab:<slug> → /labs/<slug>
+    function targetUrl(t) {
+      if (t.startsWith('output:')) return '/outputs/' + t.slice(7);
+      if (t.startsWith('lab:')) return '/labs/' + t.slice(4);
+      return '#';
+    }
+    function targetLabel(t) { const s = t.split('/').pop() || t; return s.replace(/^(output:|lab:)/, ''); }
+    async function renderTags() {
+      let tags = [];
+      try {
+        const res = await fetch('/api/me/tags', { headers: { 'x-requested-with': 'labindex' } });
+        if (res.status === 200) tags = (await res.json()).tags || [];
+      } catch { return; }
+      if (!tags.length) return;
+      const groups = new Map();
+      for (const { target, tag } of tags) {
+        const c = tag.indexOf(':');
+        const prefix = c > 0 ? tag.slice(0, c) : '—';
+        if (!groups.has(prefix)) groups.set(prefix, new Map());
+        const byTag = groups.get(prefix);
+        if (!byTag.has(tag)) byTag.set(tag, []);
+        byTag.get(tag).push(target);
+      }
+      const body = $('account-tags-body');
+      body.innerHTML = '';
+      for (const [prefix, byTag] of [...groups].sort((a, b) => a[0].localeCompare(b[0]))) {
+        const h = document.createElement('h3'); h.className = 'at-prefix'; h.textContent = prefix;
+        body.appendChild(h);
+        for (const [tag, targets] of [...byTag].sort((a, b) => a[0].localeCompare(b[0]))) {
+          const row = document.createElement('div'); row.className = 'at-row';
+          const name = document.createElement('span'); name.className = 'at-tag';
+          name.textContent = prefix === '—' ? tag : tag.slice(prefix.length + 1);
+          row.appendChild(name);
+          for (const t of targets) {
+            const a = document.createElement('a'); a.className = 'at-item';
+            a.href = targetUrl(t); a.textContent = targetLabel(t);
+            row.appendChild(a);
+          }
+          body.appendChild(row);
+        }
+      }
+      $('account-tags').hidden = false;
     }
     $('account-logout')?.addEventListener('click', async () => {
       await fetch('/api/auth/logout', { method: 'POST', headers: { 'x-requested-with': 'labindex' } });
@@ -68,6 +120,12 @@ import Layout from '../components/Layout.astro';
     .account-name { font-weight: 600; }
     .account-login { color: var(--color-muted, #666); text-decoration: none; font-size: 0.9rem; }
     .account-hint { color: var(--color-muted, #666); font-size: 0.9rem; }
+    .account-tags { margin-top: 2rem; border-top: 1px solid var(--color-border, #eee); padding-top: 1rem; }
+    .at-prefix { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-muted, #888); margin: 1rem 0 0.3rem; }
+    .at-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem; padding: 0.2rem 0; }
+    .at-tag { font-weight: 600; min-width: 8rem; }
+    .at-item { font-size: 0.85rem; color: var(--color-accent, #0645ad); text-decoration: none; }
+    .at-item:hover { text-decoration: underline; }
     .btn-secondary { padding: 0.4rem 0.9rem; border: 1px solid var(--color-border, #ddd);
       border-radius: 6px; background: transparent; cursor: pointer; }
   </style>

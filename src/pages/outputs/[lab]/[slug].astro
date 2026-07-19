@@ -1,5 +1,6 @@
 ---
 import Layout from '../../../components/Layout.astro';
+import TagEditor from '../../../components/TagEditor.astro';
 import TypeBadge from '../../../components/TypeBadge.astro';
 import TagList from '../../../components/TagList.astro';
 import ModelDetails from '../../../components/ModelDetails.astro';
@@ -31,6 +32,7 @@ const labs = Array.isArray(output.lab) ? output.lab : [output.lab];
 const labObjects = labs.map((s) => getLabBySlug(s)).filter(Boolean);
 const grouped = isGrouped(output);
 const types = getOutputTypes(output);
+const tagTarget = `output:${output._labSlug}/${output.slug}`;
 ---
 
 <Layout title={output.name}>
@@ -51,6 +53,7 @@ const types = getOutputTypes(output);
       </span>
     </div>
   </header>
+  <TagEditor target={tagTarget} />
 
   {output.description && (
     <section class="section">

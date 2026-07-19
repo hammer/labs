@@ -1,5 +1,6 @@
 ---
 import Layout from '../../components/Layout.astro';
+import TagEditor from '../../components/TagEditor.astro';
 import OutputCard from '../../components/OutputCard.astro';
 import TagList from '../../components/TagList.astro';
 import TypeBadge from '../../components/TypeBadge.astro';
@@ -72,6 +73,7 @@ const dimensions: FilterDimension[] = [
 
     {lab.tags && <TagList tags={lab.tags} />}
   </header>
+  <TagEditor target={`lab:${slug}`} />
 
   {lab.people && lab.people.length > 0 && (
     <section class="section">

@@ -1,0 +1,95 @@
+---
+// Per-user tag editor for one output/lab (issue #21 step 3). Progressive:
+// hidden until /api/me/tags confirms a logged-in user. `target` is passed
+// server-side as the canonical 'output:<_labSlug>/<slug>' or 'lab:<slug>'.
+interface Props { target: string; }
+const { target } = Astro.props;
+---
+<div class="tag-editor" data-target={target} hidden>
+  <div class="te-row">
+    <span class="te-label">Your tags</span>
+    <span class="te-chips"></span>
+    <input class="te-input" type="text" list="te-vocab" placeholder="add tag (e.g. status:reading)"
+      autocomplete="off" spellcheck="false" maxlength="80" />
+    <datalist id="te-vocab"></datalist>
+  </div>
+</div>
+
+<script>
+  import { tagPrefix, tagValue } from '../lib/tags';
+  const H = { 'x-requested-with': 'labindex' };
+  const root = document.querySelector<HTMLElement>('.tag-editor');
+  if (root) {
+    const target = root.dataset.target!;
+    const chips = root.querySelector<HTMLElement>('.te-chips')!;
+    const input = root.querySelector<HTMLInputElement>('.te-input')!;
+    const vocab = root.querySelector<HTMLDataListElement>('#te-vocab')!;
+    let all: { target: string; tag: string }[] = [];
+
+    function hue(s: string) { let h = 0; for (const c of s) h += c.charCodeAt(0); return h % 360; }
+
+    function render() {
+      const mine = all.filter((t) => t.target === target).map((t) => t.tag).sort();
+      chips.innerHTML = '';
+      for (const tag of mine) {
+        const p = tagPrefix(tag);
+        const chip = document.createElement('span');
+        chip.className = 'te-chip';
+        if (p) chip.style.setProperty('--h', String(hue(p)));
+        else chip.classList.add('te-bare');
+        const label = document.createElement('span');
+        label.textContent = p ? `${p}:${tagValue(tag)}` : tag;
+        const x = document.createElement('button');
+        x.type = 'button'; x.className = 'te-x'; x.textContent = '×'; x.setAttribute('aria-label', 'Remove tag');
+        x.addEventListener('click', () => remove(tag));
+        chip.append(label, x);
+        chips.appendChild(chip);
+      }
+      // autocomplete: all distinct tags + distinct 'prefix:' stems
+      const opts = new Set<string>();
+      for (const t of all) { opts.add(t.tag); const p = tagPrefix(t.tag); if (p) opts.add(p + ':'); }
+      vocab.innerHTML = '';
+      for (const o of [...opts].sort()) { const el = document.createElement('option'); el.value = o; vocab.appendChild(el); }
+    }
+
+    async function load() {
+      let res: Response;
+      try { res = await fetch('/api/me/tags', { headers: H }); } catch { return; }
+      if (res.status !== 200) return; // logged out → stay hidden
+      all = (await res.json()).tags ?? [];
+      render();
+      root!.hidden = false;
+    }
+
+    async function add(raw: string) {
+      const tag = raw.trim();
+      if (!tag) return;
+      const res = await fetch('/api/me/tags', {
+        method: 'POST', headers: { ...H, 'content-type': 'application/json' },
+        body: JSON.stringify({ target, tag }),
+      });
+      if (res.ok) { const { tag: norm } = await res.json(); if (norm && !all.some((t) => t.target === target && t.tag === norm)) all.push({ target, tag: norm }); render(); }
+      input.value = '';
+    }
+    async function remove(tag: string) {
+      await fetch(`/api/me/tags?target=${encodeURIComponent(target)}&tag=${encodeURIComponent(tag)}`, { method: 'DELETE', headers: H });
+      all = all.filter((t) => !(t.target === target && t.tag === tag));
+      render();
+    }
+
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); add(input.value); } });
+    load();
+  }
+</script>
+
+<style>
+  .tag-editor { margin: 0.75rem 0; font-size: 0.85rem; }
+  .te-row { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; }
+  .te-label { color: var(--color-muted, #888); font-weight: 600; }
+  .te-chips { display: inline-flex; flex-wrap: wrap; gap: 0.35rem; }
+  .te-chip { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.1rem 0.5rem; border-radius: 9999px;
+    background: hsl(var(--h, 210) 70% 95%); color: hsl(var(--h, 210) 55% 30%); border: 1px solid hsl(var(--h, 210) 60% 85%); }
+  .te-chip.te-bare { background: #eee; color: #444; border-color: #ddd; }
+  .te-x { border: none; background: transparent; cursor: pointer; color: inherit; font-size: 0.9rem; line-height: 1; padding: 0; }
+  .te-input { border: 1px solid var(--color-border, #ddd); border-radius: 6px; padding: 0.2rem 0.5rem; min-width: 200px; }
+</style>
