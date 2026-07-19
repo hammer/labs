@@ -13,7 +13,7 @@
     "fetch-metrics": "tsx scripts/fetch-metrics.ts",
     "fetch-aa-openness": "tsx scripts/fetch-aa-openness.ts",
     "fetch-aa-intelligence": "tsx scripts/fetch-aa-intelligence.ts",
-    "deploy": "npm run build && wrangler deploy",
+    "deploy": "astro build && wrangler pages deploy dist --project-name labindex",
     "cf-typegen": "wrangler types"
   },
   "devDependencies": {
