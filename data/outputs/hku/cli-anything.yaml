@@ -1,0 +1,24 @@
+name: CLI-Anything
+slug: cli-anything
+lab: hku
+type: library
+date: 2026-03-08
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.03854
+  - label: GitHub
+    url: https://github.com/HKUDS/CLI-Anything
+description: >
+  <p>"Towards Agent-Native Computer Use" from Chao Huang's HKUDS: a
+  CLI/tool-middleware layer that routes agents to arbitrary software
+  through command-line interfaces &mdash; the execution substrate between
+  a model and the tools it drives. At <strong>45.6K&#9733;</strong> it is
+  among the highest-adoption academic agent repos anywhere, part of
+  HKUDS's large 2026 agent-harness ecosystem.</p>
+tags:
+  - agents
+  - infrastructure
+library:
+  github: https://github.com/HKUDS/CLI-Anything
+paper:
+  arxiv: "2606.03854"

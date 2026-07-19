@@ -1,0 +1,21 @@
+name: OpenHarness
+slug: openharness
+lab: hku
+type: library
+date: 2026-04-01
+sources:
+  - label: GitHub
+    url: https://github.com/HKUDS/OpenHarness
+description: >
+  <p>HKUDS's "Open Agent Harness" (14.9K&#9733;) &mdash; a full execution
+  harness with a built-in personal agent (Ohmo) managing context, tools,
+  and state. The harness-proper of the HKUDS ecosystem, complementing the
+  nanobot framework and CLI-Anything tool layer.</p>
+tags:
+  - agents
+  - infrastructure
+library:
+  github: https://github.com/HKUDS/OpenHarness
+related:
+  - nanobot
+  - cli-anything

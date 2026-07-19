@@ -1,0 +1,18 @@
+name: nanobot
+slug: nanobot
+lab: hku
+type: library
+date: 2026-02-01
+sources:
+  - label: GitHub
+    url: https://github.com/HKUDS/nanobot
+description: >
+  <p>HKUDS's lightweight open agent framework (tools, chats, workflows)
+  &mdash; <strong>45.9K&#9733;</strong>, one of the most-adopted academic
+  agent frameworks in circulation. The minimal-scaffolding end of HKUDS's
+  agent-harness line alongside AutoAgent and CLI-Anything.</p>
+tags:
+  - agents
+  - infrastructure
+library:
+  github: https://github.com/HKUDS/nanobot
