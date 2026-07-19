@@ -87,6 +87,25 @@ for (const width of widths) {
   await page.close();
 }
 
+// ── Signed-in nav must not overflow (issue #48) ───────────────────────
+// The suite runs logged-out; the nav's crowded state (Collections + @user)
+// only appears when signed in. DOM-inject that state and assert the nav bar
+// still fits — this is a layout-only check, no real session needed.
+// Widths match the main loop's phone range (360+); 320 is below the site's
+// supported minimum and the home .lab-table alone overflows it (pre-existing).
+for (const width of [360, 375, 390, 412]) {
+  const page = await newPage({ width, height: 800 });
+  await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
+  const t = await page.evaluate(() => {
+    const nc = document.getElementById('nav-collections'); if (nc) nc.hidden = false;
+    const na = document.getElementById('nav-account'); if (na) na.textContent = '@hammerbacher';
+    const ni = document.querySelector('.nav-inner');
+    return { over: ni.scrollWidth - ni.clientWidth };
+  });
+  log(`signed-in nav no-overflow @ ${width}px`, t.over <= 0, JSON.stringify(t));
+  await page.close();
+}
+
 // ── Search dropdown stays within the viewport ─────────────────────────
 for (const width of [375, 620]) {
   const page = await newPage({ width, height: 800 });

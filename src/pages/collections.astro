@@ -34,7 +34,7 @@ import Layout from '../components/Layout.astro';
       let res;
       try { res = await fetch('/api/me/collections', { headers: H }); } catch { $('coll-loading').textContent = 'Failed to load.'; return; }
       $('coll-loading').hidden = true;
-      if (res.status !== 200) { $('coll-signedout').hidden = false; return; }
+      if (res.status !== 200) { res.body?.cancel(); $('coll-signedout').hidden = false; return; }
       $('coll-app').hidden = false;
       const { collections } = await res.json();
       const list = $('coll-list'); list.innerHTML = '';

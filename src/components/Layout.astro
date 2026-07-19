@@ -24,6 +24,9 @@ const { title } = Astro.props;
           <a href="/">Labs</a>
           <a href="/timeline">Timeline</a>
           <a href="/whats-new">What's New</a>
+          <button id="nav-menu-btn" class="nav-menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu-panel">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
           <div class="search-container">
             <button id="nav-search-btn" class="nav-search-btn" title="Search (/)" aria-label="Search">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
@@ -34,6 +37,17 @@ const { title } = Astro.props;
           <a href="/account" id="nav-account" class="nav-account">Sign in</a>
         </div>
       </div>
+    </nav>
+    <!-- Mobile nav menu (≤600px). Rendered at <body> level (sibling of <nav>)
+         so it escapes the sticky nav's stacking context and paints above the
+         FilterBar sheet. (issue #48) -->
+    <div id="nav-menu-backdrop" class="nav-menu-backdrop" hidden></div>
+    <nav id="nav-menu-panel" class="nav-menu-panel" hidden aria-label="Site menu">
+      <a href="/">Labs</a>
+      <a href="/timeline">Timeline</a>
+      <a href="/whats-new">What's New</a>
+      <hr class="nav-menu-sep" />
+      <div id="nav-menu-auth" class="nav-menu-auth"></div>
     </nav>
     <main class="container">
       <slot />
@@ -50,16 +64,71 @@ const { title } = Astro.props;
     window.dispatchEvent(new CustomEvent('open-global-search'));
   });
 
-  // Reflect auth state in the nav: "Sign in" when logged out, the GitHub login
-  // when signed in (both link to /account). Fetched client-side so the cached
-  // header HTML stays user-agnostic.
+  // Reflect auth state in the nav (desktop) and build the mobile menu panel's
+  // auth section. Fetched client-side so the cached header HTML stays
+  // user-agnostic.
   const navAccount = document.getElementById('nav-account');
-  if (navAccount) {
-    fetch('/api/me', { headers: { 'x-requested-with': 'labindex' } })
-      .then((r) => (r.ok ? r.json() : { user: null }))
-      .then((d) => { if (d.user) { navAccount.textContent = '@' + d.user.login; const nc = document.getElementById('nav-collections'); if (nc) nc.hidden = false; } })
-      .catch(() => {});
+  const menuAuth = document.getElementById('nav-menu-auth');
+
+  function buildMenuAuth(user: { login: string } | null) {
+    if (!menuAuth) return;
+    menuAuth.innerHTML = '';
+    const link = (label: string, href: string) => {
+      const a = document.createElement('a');
+      a.textContent = label; a.href = href; return a;
+    };
+    if (user) {
+      menuAuth.append(link('@' + user.login, '/account'), link('Collections', '/collections'));
+      const out = document.createElement('button');
+      out.type = 'button'; out.textContent = 'Sign out';
+      out.addEventListener('click', async () => {
+        await fetch('/api/auth/logout', { method: 'POST', headers: { 'x-requested-with': 'labindex' } });
+        location.reload();
+      });
+      menuAuth.append(out);
+    } else {
+      menuAuth.append(link('Sign in with GitHub', '/account'));
+    }
   }
+  buildMenuAuth(null);
+
+  fetch('/api/me', { headers: { 'x-requested-with': 'labindex' } })
+    .then((r) => (r.ok ? r.json() : { user: null }))
+    .then((d) => {
+      buildMenuAuth(d.user);
+      if (d.user && navAccount) {
+        navAccount.textContent = '@' + d.user.login;
+        const nc = document.getElementById('nav-collections'); if (nc) nc.hidden = false;
+      }
+    })
+    .catch(() => {});
+
+  // Mobile menu open/close. Panel + backdrop live at <body> level; position the
+  // panel just under the sticky bar on open.
+  const menuBtn = document.getElementById('nav-menu-btn');
+  const menuPanel = document.getElementById('nav-menu-panel');
+  const menuBackdrop = document.getElementById('nav-menu-backdrop');
+  const navBar = document.querySelector<HTMLElement>('.nav');
+  function closeMenu() {
+    if (!menuPanel || menuPanel.hidden) return;
+    menuPanel.hidden = true;
+    if (menuBackdrop) menuBackdrop.hidden = true;
+    document.body.classList.remove('nav-menu-open');
+    menuBtn?.setAttribute('aria-expanded', 'false');
+  }
+  function openMenu() {
+    if (!menuPanel) return;
+    if (navBar) menuPanel.style.top = navBar.getBoundingClientRect().bottom + 'px';
+    menuPanel.hidden = false;
+    if (menuBackdrop) menuBackdrop.hidden = false;
+    document.body.classList.add('nav-menu-open');
+    menuBtn?.setAttribute('aria-expanded', 'true');
+  }
+  menuBtn?.addEventListener('click', () => (menuPanel && menuPanel.hidden ? openMenu() : closeMenu()));
+  menuBackdrop?.addEventListener('click', closeMenu);
+  menuPanel?.addEventListener('click', (e) => { if ((e.target as HTMLElement).closest('a')) closeMenu(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+  window.addEventListener('open-global-search', closeMenu); // opening search closes the menu
 
   document.addEventListener('keydown', (e) => {
     if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
@@ -161,39 +230,79 @@ const { title } = Astro.props;
     color: var(--text);
   }
 
+  /* ── Mobile nav menu (issue #48). Hidden on desktop; the panel + backdrop
+     are body-level so they escape the sticky nav's stacking context. ── */
+  .nav-menu-btn {
+    all: unset;
+    display: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    align-items: center;
+    padding: 0.6rem;
+    margin: -0.6rem 0;
+  }
+  .nav-menu-btn:hover { color: var(--text); }
+
+  .nav-menu-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 199;
+    background: rgba(0, 0, 0, 0.35);
+  }
+  .nav-menu-backdrop[hidden] { display: none; }
+
+  .nav-menu-panel {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    padding: 0.25rem 1rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-menu-panel[hidden] { display: none; }
+  .nav-menu-panel a,
+  .nav-menu-panel button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 0.25rem;
+    color: var(--text);
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .nav-menu-panel a:hover,
+  .nav-menu-panel button:hover { color: var(--text-muted); }
+  .nav-menu-sep { border: none; border-top: 1px solid var(--border); margin: 0.3rem 0; }
+  body.nav-menu-open { overflow: hidden; }
+
   main {
     padding-bottom: 3rem;
   }
 
-  /* Phones: keep nav (and the search trigger inside it) reachable mid-page;
-     '/' has no touch equivalent and pages like the timeline are very tall. */
+  /* Phones (≤600px): keep the bar sticky and collapse everything but the brand,
+     search, and the ☰ menu. The page links + Collections + account (all <a> in
+     .nav-links) move into the menu panel; the menu button appears. Search stays
+     the rightmost item so the right-anchored SearchDropdown doesn't clip.
+     Single breakpoint → no non-monotonic overflow (issue #48, measured). */
   @media (max-width: 600px) {
     .nav {
       position: sticky;
       top: 0;
       z-index: 100;
     }
-  }
-
-  @media (max-width: 480px) {
+    .nav-links > a {
+      display: none;
+    }
+    .nav-menu-btn {
+      display: inline-flex;
+    }
     .nav-links {
-      gap: 0.75rem;
-    }
-    .nav-brand {
-      font-size: 1rem;
-      white-space: nowrap;
-    }
-  }
-
-  @media (max-width: 400px) {
-    .nav-links {
-      gap: 0.5rem;
-    }
-    .nav-links a {
-      font-size: 0.8rem;
-    }
-    .nav-brand {
-      font-size: 0.95rem;
+      gap: 0.9rem;
     }
   }
 </style>

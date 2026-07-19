@@ -18,7 +18,7 @@ export interface MyTagFilter { getState: () => DimState | null; }
 export async function installMyTagFilter(opts: Opts): Promise<MyTagFilter | null> {
   let res: Response;
   try { res = await fetch('/api/me/tags', { headers: { 'x-requested-with': 'labindex' } }); } catch { return null; }
-  if (res.status !== 200) return null; // logged out
+  if (res.status !== 200) { res.body?.cancel(); return null; } // logged out
   const tags: { target: string; tag: string }[] = (await res.json()).tags ?? [];
   if (!tags.length) return null;
 
@@ -63,6 +63,8 @@ export async function installMyTagFilter(opts: Opts): Promise<MyTagFilter | null
     label.append(cb, span); menu.appendChild(label);
   }
   toggle.addEventListener('click', () => { const open = menu.hidden; menu.hidden = !open; toggle.setAttribute('aria-expanded', String(open)); });
+  document.addEventListener('click', (e) => { if (!wrap.contains(e.target as Node)) menu.hidden = true; });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') menu.hidden = true; });
   opts.filterBarEl.after(wrap);
 
   if (!document.getElementById('mtf-style')) {
@@ -71,7 +73,8 @@ export async function installMyTagFilter(opts: Opts): Promise<MyTagFilter | null
 .mtf-toggle{background:transparent;border:1px solid var(--border,#ddd);border-radius:6px;padding:.2rem .6rem;cursor:pointer;color:inherit}
 .mtf-toggle.active{border-color:var(--color-accent,#0645ad);color:var(--color-accent,#0645ad)}
 .mtf-menu{position:absolute;z-index:20;margin-top:.25rem;min-width:200px;max-height:300px;overflow-y:auto;background:var(--surface,#fff);border:1px solid var(--border,#ddd);border-radius:8px;padding:.4rem;box-shadow:0 6px 24px rgba(0,0,0,.12)}
-.mtf-item{display:flex;align-items:center;gap:.5rem;padding:.15rem .2rem;cursor:pointer}`;
+.mtf-item{display:flex;align-items:center;gap:.5rem;padding:.15rem .2rem;cursor:pointer}
+@media(pointer:coarse){.mtf-item{min-height:44px}.mtf-toggle{min-height:44px}}`;
     document.head.appendChild(st);
   }
 

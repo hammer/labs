@@ -73,6 +73,7 @@ import Layout from '../components/Layout.astro';
       try {
         const res = await fetch('/api/me/tags', { headers: { 'x-requested-with': 'labindex' } });
         if (res.status === 200) tags = (await res.json()).tags || [];
+        else res.body?.cancel();
       } catch { return; }
       if (!tags.length) return;
       const groups = new Map();

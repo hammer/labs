@@ -28,7 +28,7 @@ const { target } = Astro.props;
     async function load() {
       let res: Response;
       try { res = await fetch('/api/me/collections', { headers: H }); } catch { return; }
-      if (res.status !== 200) return; // logged out → stay hidden
+      if (res.status !== 200) { res.body?.cancel(); return; } // logged out → stay hidden
       collections = (await res.json()).collections ?? [];
       const mi = await fetch(`/api/me/collection-items?target=${encodeURIComponent(target)}`, { headers: H });
       member = new Set(mi.ok ? (await mi.json()).collection_ids : []);
@@ -68,6 +68,9 @@ const { target } = Astro.props;
       const res = await fetch('/api/me/collections', { method: 'POST', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ name }) });
       if (res.ok) { const { collection } = await res.json(); collections.unshift(collection); await add(collection.id); inp.value = ''; render(); }
     });
+
+    document.addEventListener('click', (e) => { if (!root.contains(e.target as Node)) menu.hidden = true; });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') menu.hidden = true; });
     load();
   }
 </script>
@@ -82,4 +85,5 @@ const { target } = Astro.props;
   .cc-new { display: flex; gap: 0.3rem; border-top: 1px solid var(--border, #eee); padding-top: 0.4rem; }
   .cc-new-input { flex: 1; border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.2rem 0.4rem; }
   .cc-new-btn { border: 1px solid var(--border, #ddd); border-radius: 6px; background: transparent; cursor: pointer; padding: 0.2rem 0.5rem; }
+  @media (pointer: coarse) { .cc-item { min-height: 44px; } .cc-toggle { min-height: 44px; } .cc-new-btn { min-height: 44px; } }
 </style>

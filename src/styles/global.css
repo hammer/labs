@@ -56,3 +56,14 @@ a:hover {
     display: none !important;
   }
 }
+
+/* iOS zooms the page on focus when an input's computed font-size is < 16px.
+   Use pointer (not width) so landscape phones are covered too. Site-wide so
+   every input — including the account-feature fields — is safe. (issue #48) */
+@media (pointer: coarse) {
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
