@@ -1,0 +1,29 @@
+name: Intern-S2-Preview-397B
+slug: intern-s2-397b
+lab: shanghai-ai-lab
+type: model
+date: 2026-07-16
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/internlm/Intern-S2-Preview-397B
+description: >
+  <p>The full-scale sibling to the efficient 36B
+  <a href="/outputs/shanghai-ai-lab/intern-s2-preview">Intern-S2-Preview</a>:
+  a <strong>403B dense</strong> multimodal scientific foundation model
+  (image + text + time-series), RL-trained across 20+ scientific domains
+  with capabilities including biomolecular design and materials
+  generation. 256K text context / 64K multimodal; BF16 with an FP8
+  sibling. Shanghai AI Lab's heavyweight AI-for-science model, staged for
+  WAIC.</p>
+tags:
+  - frontier
+  - science
+  - multimodal
+  - open-weight
+model:
+  architecture: dense
+  parameters: "403B"
+  context_window: 262144
+related:
+  - intern-s2-preview
+  - intern-s1-pro
