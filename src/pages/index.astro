@@ -219,6 +219,7 @@ const dimensions: FilterDimension[] = [
 <script>
   import type { FilterChangeDetail, FilterDimension } from '../lib/filters/types';
   import { rowMatches } from '../lib/filters/state';
+  import { installMyTagFilter, hrefToTarget } from '../lib/mytags-filter';
 
   const allRows = Array.from(document.querySelectorAll<HTMLTableRowElement>('.lab-row'));
   const modal = document.getElementById('shortcut-modal')!;
@@ -239,6 +240,7 @@ const dimensions: FilterDimension[] = [
   let waitingForG = false;
   let gTimer: ReturnType<typeof setTimeout> | null = null;
   let lastFilterState: Parameters<typeof rowMatches>[1] = {};
+  let myTagFilter: import('../lib/mytags-filter').MyTagFilter | null = null;
 
   // ─── Visibility (driven by FilterBar via filters:changed) ─────────────
 
@@ -256,9 +258,19 @@ const dimensions: FilterDimension[] = [
     }
   }
 
+  // "My tags" filter (issue #21). Best-effort + additive: no-op when logged out
+  // or when no tag is selected (getState() → null makes applyFilters identical).
+  installMyTagFilter({
+    dimensions, rows: allRows as unknown as HTMLElement[], filterBarEl,
+    onChange: applyFilters,
+    rowTarget: (r) => hrefToTarget((r as HTMLElement).dataset.href),
+  }).then((f) => { myTagFilter = f; if (f) applyFilters(); }).catch(() => {});
+
   function applyFilters() {
+    const ms = myTagFilter?.getState();
+    const fs = ms ? { ...lastFilterState, mytag: ms } : lastFilterState;
     allRows.forEach(row => {
-      const ok = rowMatches(row.dataset as Record<string, string | undefined>, lastFilterState, dimensions);
+      const ok = rowMatches(row.dataset as Record<string, string | undefined>, fs, dimensions);
       row.style.display = ok ? '' : 'none';
     });
     visibleRows = Array.from(tbody.querySelectorAll<HTMLTableRowElement>('.lab-row'))

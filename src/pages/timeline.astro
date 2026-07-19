@@ -427,6 +427,7 @@ function cellText(
 <script>
   import type { FilterChangeDetail } from '../lib/filters/types';
   import { rowMatches } from '../lib/filters/state';
+  import { installMyTagFilter, hrefToTarget } from '../lib/mytags-filter';
   import type { FilterDimension } from '../lib/filters/types';
 
   const tbody = document.querySelector<HTMLTableSectionElement>('#timeline-table tbody')!;
@@ -454,6 +455,7 @@ function cellText(
   let gTimer: ReturnType<typeof setTimeout> | null = null;
   let currentView: 'all' | 'outputs' | 'news' = 'all';
   let lastFilterState: Parameters<typeof rowMatches>[1] = {};
+  let myTagFilter: import('../lib/mytags-filter').MyTagFilter | null = null;
 
   // Sort state
   type SortColumn = 'date' | 'stars' | 'downloads' | 'citations'
@@ -543,6 +545,14 @@ function cellText(
     if (api) onFilterState(api.getState());
   }
 
+  // "My tags" filter (issue #21). Best-effort + additive: no-op when logged out
+  // or when no tag is selected (getState() → null makes updateVisibility identical).
+  installMyTagFilter({
+    dimensions, rows: allRows as unknown as HTMLElement[], filterBarEl,
+    onChange: updateVisibility,
+    rowTarget: (r) => hrefToTarget((r as HTMLElement).dataset.href),
+  }).then((f) => { myTagFilter = f; if (f) updateVisibility(); }).catch(() => {});
+
   // ─── Sort ────────────────────────────────────────────────────────────
 
   function getNumericAttr(row: HTMLTableRowElement, attr: string): number {
@@ -625,6 +635,8 @@ function cellText(
   // ─── Visibility ──────────────────────────────────────────────────────
 
   function updateVisibility() {
+    const ms = myTagFilter?.getState();
+    const fs = ms ? { ...lastFilterState, mytag: ms } : lastFilterState;
     allRows.forEach(row => {
       const kind = row.dataset.kind;
       // View filter
@@ -632,7 +644,7 @@ function cellText(
       if (currentView === 'news' && kind !== 'news') { row.style.display = 'none'; return; }
 
       // FilterBar state
-      const ok = rowMatches(row.dataset as Record<string, string | undefined>, lastFilterState, dimensions);
+      const ok = rowMatches(row.dataset as Record<string, string | undefined>, fs, dimensions);
       row.style.display = ok ? '' : 'none';
     });
 
