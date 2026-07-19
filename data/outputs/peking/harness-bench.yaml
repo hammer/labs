@@ -1,0 +1,29 @@
+name: Harness-Bench
+slug: harness-bench
+lab: peking
+type: eval
+date: 2026-05-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.27922
+description: >
+  <p>A diagnostic benchmark (Peking University with Qiyuan Tech) that
+  isolates the effect of the <strong>agent harness</strong> &mdash; the
+  system layer managing context, tools, state, permissions, tracing, and
+  recovery &mdash; rather than the base model. Harness-Bench runs
+  representative harness configurations across multiple model backends
+  under shared task environments, budgets, and evaluation protocols, over
+  106 sandboxed offline tasks vetted for realism, solvability, and
+  oracle-checkability. Across 5,194 execution trajectories it finds
+  substantial variation in completion, process quality, efficiency, and
+  failure mode by model&ndash;harness pairing &mdash; arguing that agent
+  capability should be reported at the model&ndash;harness configuration
+  level, not attributed to the model alone. Surfaces recurring
+  "execution-alignment" failures where plausible reasoning decouples from
+  tool feedback and workspace state.</p>
+tags:
+  - eval
+  - agents
+  - research
+paper:
+  arxiv: "2605.27922"
