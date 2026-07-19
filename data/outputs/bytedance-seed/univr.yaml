@@ -1,0 +1,21 @@
+name: UniVR-34B
+slug: univr
+lab: bytedance-seed
+type: model
+date: 2026-07-13
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/ByteDance/UniVR-34B-Planning
+description: >
+  <p>Visual reasoning <em>without</em> text chain-of-thought: UniVR-34B
+  generates visual reasoning traces directly, built on ByteDance's Emu3.5 with
+  two-stage SFT (310K samples) and VR-GRPO reinforcement learning. Reports
+  +25% over its base on VR-X across robotic manipulation, editing, spatial
+  reasoning, and puzzles &mdash; a bet that some reasoning is better done
+  in pixels than tokens.</p>
+tags:
+  - multimodal
+  - reasoning
+  - open-weight
+model:
+  parameters: "34B"
