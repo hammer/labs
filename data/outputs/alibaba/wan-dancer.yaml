@@ -1,0 +1,18 @@
+name: Wan-Dancer-14B
+slug: wan-dancer
+lab: alibaba
+type: model
+date: 2026-07-10
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/Wan-AI/Wan-Dancer-14B
+description: >
+  <p>A 14B image-to-video character-animation model from Alibaba's Wan
+  (Tongyi Wanxiang) video team, specialized for dance and full-body
+  character motion &mdash; the animation-focused entry in the Wan video
+  line.</p>
+tags:
+  - video
+  - open-weight
+model:
+  parameters: "14B"
