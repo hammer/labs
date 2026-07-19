@@ -1,0 +1,86 @@
+---
+// Private per-user notes for one target (issue #21 step 5). Progressive: hidden
+// until /api/me/notes confirms a logged-in user. `target` passed server-side.
+interface Props { target: string; }
+const { target } = Astro.props;
+---
+<div class="notes-panel" data-target={target} hidden>
+  <h3 class="np-title">Your notes</h3>
+  <ul class="np-list"></ul>
+  <div class="np-add">
+    <textarea class="np-input" rows="2" placeholder="Add a private note…" maxlength="10000"></textarea>
+    <button class="np-save" type="button">Add note</button>
+  </div>
+</div>
+
+<script>
+  const H = { 'x-requested-with': 'labindex' };
+  const root = document.querySelector<HTMLElement>('.notes-panel');
+  if (root) {
+    const target = root.dataset.target!;
+    const list = root.querySelector<HTMLUListElement>('.np-list')!;
+    const input = root.querySelector<HTMLTextAreaElement>('.np-input')!;
+
+    function esc(s: string) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+    async function load() {
+      let res: Response;
+      try { res = await fetch(`/api/me/notes?target=${encodeURIComponent(target)}`, { headers: H }); } catch { return; }
+      if (res.status !== 200) return; // logged out → stay hidden
+      render((await res.json()).notes ?? []);
+      root!.hidden = false;
+    }
+
+    function render(notes: any[]) {
+      list.innerHTML = '';
+      for (const n of notes) {
+        const li = document.createElement('li');
+        li.className = 'np-note';
+        const body = document.createElement('div'); body.className = 'np-body'; body.textContent = n.body;
+        const bar = document.createElement('div'); bar.className = 'np-bar';
+        const when = document.createElement('span'); when.className = 'np-when';
+        when.textContent = (n.updated_at || n.created_at || '').replace('T', ' ').slice(0, 16);
+        const edit = document.createElement('button'); edit.type = 'button'; edit.className = 'np-link'; edit.textContent = 'edit';
+        const del = document.createElement('button'); del.type = 'button'; del.className = 'np-link'; del.textContent = 'delete';
+        edit.addEventListener('click', () => beginEdit(li, n, body));
+        del.addEventListener('click', async () => { await fetch(`/api/me/notes?id=${n.id}`, { method: 'DELETE', headers: H }); load(); });
+        bar.append(when, edit, del);
+        li.append(body, bar);
+        list.appendChild(li);
+      }
+    }
+
+    function beginEdit(li: HTMLElement, n: any, body: HTMLElement) {
+      const ta = document.createElement('textarea'); ta.className = 'np-input'; ta.rows = 3; ta.value = n.body;
+      const save = document.createElement('button'); save.type = 'button'; save.className = 'np-save'; save.textContent = 'Save';
+      save.addEventListener('click', async () => {
+        await fetch(`/api/me/notes?id=${n.id}`, { method: 'PATCH', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ body: ta.value }) });
+        load();
+      });
+      body.replaceWith(ta); ta.after(save);
+    }
+
+    root.querySelector('.np-save')!.addEventListener('click', async () => {
+      const body = input.value.trim();
+      if (!body) return;
+      await fetch('/api/me/notes', { method: 'POST', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ target, body }) });
+      input.value = '';
+      load();
+    });
+    load();
+  }
+</script>
+
+<style>
+  .notes-panel { margin: 1rem 0; }
+  .np-title { font-size: 0.9rem; color: var(--text-muted, #888); margin: 0 0 0.4rem; }
+  .np-list { list-style: none; margin: 0 0 0.5rem; padding: 0; }
+  .np-note { border: 1px solid var(--border, #eee); border-radius: 8px; padding: 0.5rem 0.6rem; margin-bottom: 0.4rem; }
+  .np-body { white-space: pre-wrap; }
+  .np-bar { display: flex; gap: 0.6rem; margin-top: 0.3rem; font-size: 0.75rem; color: var(--text-muted, #999); }
+  .np-when { margin-right: auto; }
+  .np-link { border: none; background: transparent; cursor: pointer; color: var(--color-accent, #0645ad); font-size: 0.75rem; padding: 0; }
+  .np-add { display: flex; flex-direction: column; gap: 0.35rem; align-items: flex-start; }
+  .np-input { width: 100%; border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.4rem 0.5rem; font: inherit; }
+  .np-save { padding: 0.3rem 0.8rem; border: 1px solid var(--border, #ddd); border-radius: 6px; background: transparent; cursor: pointer; }
+</style>

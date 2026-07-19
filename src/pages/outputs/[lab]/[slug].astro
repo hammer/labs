@@ -1,6 +1,8 @@
 ---
 import Layout from '../../../components/Layout.astro';
 import TagEditor from '../../../components/TagEditor.astro';
+import CollectionControl from '../../../components/CollectionControl.astro';
+import NotesPanel from '../../../components/NotesPanel.astro';
 import TypeBadge from '../../../components/TypeBadge.astro';
 import TagList from '../../../components/TagList.astro';
 import ModelDetails from '../../../components/ModelDetails.astro';
@@ -54,6 +56,8 @@ const tagTarget = `output:${output._labSlug}/${output.slug}`;
     </div>
   </header>
   <TagEditor target={tagTarget} />
+  <CollectionControl target={tagTarget} />
+  <NotesPanel target={tagTarget} />
 
   {output.description && (
     <section class="section">

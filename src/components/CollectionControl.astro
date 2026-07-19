@@ -1,0 +1,85 @@
+---
+// "Add to collection" control for one item (issue #21 step 4). Progressive.
+interface Props { target: string; }
+const { target } = Astro.props;
+---
+<div class="coll-control" data-target={target} hidden>
+  <button class="cc-toggle" type="button" aria-expanded="false">＋ Collections</button>
+  <div class="cc-menu" hidden>
+    <ul class="cc-list"></ul>
+    <form class="cc-new">
+      <input class="cc-new-input" type="text" placeholder="New collection…" maxlength="120" />
+      <button class="cc-new-btn" type="submit">Create</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  const H = { 'x-requested-with': 'labindex' };
+  const root = document.querySelector<HTMLElement>('.coll-control');
+  if (root) {
+    const target = root.dataset.target!;
+    const menu = root.querySelector<HTMLElement>('.cc-menu')!;
+    const toggle = root.querySelector<HTMLButtonElement>('.cc-toggle')!;
+    const list = root.querySelector<HTMLUListElement>('.cc-list')!;
+    let collections: any[] = [];
+    let member = new Set<number>();
+
+    async function load() {
+      let res: Response;
+      try { res = await fetch('/api/me/collections', { headers: H }); } catch { return; }
+      if (res.status !== 200) return; // logged out → stay hidden
+      collections = (await res.json()).collections ?? [];
+      const mi = await fetch(`/api/me/collection-items?target=${encodeURIComponent(target)}`, { headers: H });
+      member = new Set(mi.ok ? (await mi.json()).collection_ids : []);
+      render();
+      root!.hidden = false;
+    }
+
+    function render() {
+      list.innerHTML = '';
+      if (!collections.length) {
+        const li = document.createElement('li'); li.className = 'cc-empty'; li.textContent = 'No collections yet.'; list.appendChild(li);
+      }
+      for (const c of collections) {
+        const li = document.createElement('li');
+        const lbl = document.createElement('label'); lbl.className = 'cc-item';
+        const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = member.has(c.id);
+        cb.addEventListener('change', () => cb.checked ? add(c.id) : remove(c.id));
+        const name = document.createElement('span'); name.textContent = c.name;
+        lbl.append(cb, name); li.appendChild(lbl); list.appendChild(li);
+      }
+    }
+
+    async function add(cid: number) {
+      await fetch('/api/me/collection-items', { method: 'POST', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ collection_id: cid, target }) });
+      member.add(cid);
+    }
+    async function remove(cid: number) {
+      await fetch(`/api/me/collection-items?collection_id=${cid}&target=${encodeURIComponent(target)}`, { method: 'DELETE', headers: H });
+      member.delete(cid);
+    }
+
+    toggle.addEventListener('click', () => { const open = menu.hidden; menu.hidden = !open; toggle.setAttribute('aria-expanded', String(open)); });
+    root.querySelector('.cc-new')!.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const inp = root!.querySelector<HTMLInputElement>('.cc-new-input')!;
+      const name = inp.value.trim(); if (!name) return;
+      const res = await fetch('/api/me/collections', { method: 'POST', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ name }) });
+      if (res.ok) { const { collection } = await res.json(); collections.unshift(collection); await add(collection.id); inp.value = ''; render(); }
+    });
+    load();
+  }
+</script>
+
+<style>
+  .coll-control { position: relative; display: inline-block; margin: 0.5rem 0; font-size: 0.85rem; }
+  .cc-toggle { background: transparent; border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.2rem 0.6rem; cursor: pointer; color: inherit; }
+  .cc-menu { position: absolute; z-index: 20; margin-top: 0.25rem; min-width: 220px; background: var(--bg, #fff); border: 1px solid var(--border, #ddd); border-radius: 8px; padding: 0.5rem; box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
+  .cc-list { list-style: none; margin: 0 0 0.4rem; padding: 0; max-height: 260px; overflow-y: auto; }
+  .cc-item { display: flex; align-items: center; gap: 0.5rem; padding: 0.2rem 0; cursor: pointer; }
+  .cc-empty { color: var(--text-muted, #888); }
+  .cc-new { display: flex; gap: 0.3rem; border-top: 1px solid var(--border, #eee); padding-top: 0.4rem; }
+  .cc-new-input { flex: 1; border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.2rem 0.4rem; }
+  .cc-new-btn { border: 1px solid var(--border, #ddd); border-radius: 6px; background: transparent; cursor: pointer; padding: 0.2rem 0.5rem; }
+</style>

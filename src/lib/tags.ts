@@ -35,3 +35,8 @@ export function tagValue(tag: string): string {
 export function isValidTarget(target: string): boolean {
   return /^(output:[a-z0-9._-]+\/[a-z0-9._-]+|lab:[a-z0-9._-]+)$/.test(target);
 }
+
+// Notes may also target a collection.
+export function isValidNoteTarget(target: string): boolean {
+  return isValidTarget(target) || /^collection:\d+$/.test(target);
+}
