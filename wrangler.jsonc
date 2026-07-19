@@ -13,5 +13,15 @@
   "assets": {
     "binding": "ASSETS",
     "directory": "dist"
-  }
+  },
+  // User accounts (issue #21 step 1). Bound as env.DB in server routes via
+  // locals.runtime.env.DB. Prod Pages binding may also need dashboard config;
+  // local dev uses `wrangler pages dev dist --d1 DB=labindex-users`.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "labindex-users",
+      "database_id": "5ab6644f-455d-4bc4-9bd9-3871c1a4ade0"
+    }
+  ]
 }
