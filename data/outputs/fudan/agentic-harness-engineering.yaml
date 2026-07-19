@@ -1,0 +1,20 @@
+name: Agentic Harness Engineering
+slug: agentic-harness-engineering
+lab: fudan
+type: paper
+date: 2026-04-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.25850
+description: >
+  <p>FudanNLP work that automatically evolves coding-agent harnesses from
+  observability traces &mdash; mining execution logs to improve the
+  scaffold, with transfer across model families. Part of the 2026 wave
+  treating the harness (not just the model) as the object of
+  optimization.</p>
+tags:
+  - agents
+  - infrastructure
+  - research
+paper:
+  arxiv: "2604.25850"
