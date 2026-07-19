@@ -1,0 +1,23 @@
+name: Cosmos 3 Edge
+slug: cosmos-3-edge
+lab: nvidia
+type: model
+date: 2026-07-16
+sources:
+  - label: Tech Report (PDF)
+    url: https://research.nvidia.com/labs/cosmos-lab/cosmos3/technical-report.pdf
+  - label: Announcement
+    url: https://nvidianews.nvidia.com/
+description: >
+  <p>A compact 4B edge world model in the Cosmos 3 physical-AI family
+  (two-tower Mixture-of-Transformers, Nemotron-based): on-device vision
+  reasoning and robot-policy generation on Jetson, adaptable to a new
+  robot in about a day. Extends the June Cosmos 3 launch toward edge
+  robotics, with domain rollouts (surgical, neural reconstruction, DROID
+  policy) alongside.</p>
+tags:
+  - world-model
+  - robotics
+  - open-weight
+model:
+  parameters: "4B"

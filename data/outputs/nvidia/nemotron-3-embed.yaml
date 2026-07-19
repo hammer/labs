@@ -1,0 +1,20 @@
+name: Nemotron-3-Embed
+slug: nemotron-3-embed
+lab: nvidia
+type: model
+date: 2026-07-17
+sources:
+  - label: HuggingFace Blog
+    url: https://huggingface.co/blog/nvidia/nemotron-3-embed-wins-rteb
+description: >
+  <p>NVIDIA's open embedding collection (8B and 1B, BF16 and NVFP4): the
+  8B ranks <strong>#1 overall on RTEB</strong> (78.46 avg NDCG@10 at
+  release). Bidirectional-attention Transformer encoders, 32K context, 34
+  languages, with an NVFP4 Blackwell 4-bit path retaining ~99.5% of BF16
+  accuracy at ~2&times; throughput.</p>
+tags:
+  - retrieval
+  - open-weight
+model:
+  parameters: "8B"
+  context_window: 32768
