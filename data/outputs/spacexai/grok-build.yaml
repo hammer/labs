@@ -1,0 +1,22 @@
+name: Grok Build
+slug: grok-build
+lab: spacexai
+type: library
+date: 2026-07-15
+sources:
+  - label: GitHub
+    url: https://github.com/xai-org/grok-build
+description: >
+  <p>xAI open-sourced its Grok Build coding agent (Apache 2.0;
+  19.7K&#9733;) &mdash; a ~844K-line Rust agent (agent loop, tools, TUI,
+  skills/plugins/hooks, MCP support) that self-compiles and can run
+  against local inference. xAI's entry into the open agent-harness field
+  alongside its Grok 4.5 flagship.</p>
+tags:
+  - agents
+  - coding
+  - infrastructure
+library:
+  github: https://github.com/xai-org/grok-build
+related:
+  - grok-4.5
