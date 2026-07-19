@@ -30,6 +30,7 @@ const { title } = Astro.props;
             </button>
             <SearchDropdown />
           </div>
+          <a href="/account" id="nav-account" class="nav-account">Sign in</a>
         </div>
       </div>
     </nav>
@@ -47,6 +48,17 @@ const { title } = Astro.props;
   searchBtn?.addEventListener('click', () => {
     window.dispatchEvent(new CustomEvent('open-global-search'));
   });
+
+  // Reflect auth state in the nav: "Sign in" when logged out, the GitHub login
+  // when signed in (both link to /account). Fetched client-side so the cached
+  // header HTML stays user-agnostic.
+  const navAccount = document.getElementById('nav-account');
+  if (navAccount) {
+    fetch('/api/me', { headers: { 'x-requested-with': 'labindex' } })
+      .then((r) => (r.ok ? r.json() : { user: null }))
+      .then((d) => { if (d.user) navAccount.textContent = '@' + d.user.login; })
+      .catch(() => {});
+  }
 
   document.addEventListener('keydown', (e) => {
     if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
@@ -115,6 +127,12 @@ const { title } = Astro.props;
 
   .nav-links a:hover {
     color: var(--text);
+  }
+
+  .nav-account {
+    border: 1px solid var(--border, #ddd);
+    border-radius: 6px;
+    padding: 0.25rem 0.7rem;
   }
 
   .search-container {
