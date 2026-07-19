@@ -1,0 +1,30 @@
+name: Over-Tokenized Transformer
+slug: over-tokenized-transformer
+lab: bytedance-seed
+type: paper
+date: 2025-01-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2501.16975
+description: >
+  <p>Argues that a Transformer's input and output vocabularies should be
+  <em>decoupled and scaled independently</em>. The <strong>Over-Tokenized
+  Transformer (OT)</strong> pairs <strong>Over-Encoding (OE)</strong> &mdash;
+  expanding the <em>input</em> vocabulary with hierarchical n-gram tokens so
+  each position carries more context &mdash; with <strong>Over-Decoding
+  (OD)</strong>, a larger <em>output</em> vocabulary that supplies finer-grained
+  next-token supervision.</p>
+
+  <p>The central finding is a <strong>log-linear relationship between input
+  vocabulary size and training loss</strong>: bigger input vocabularies reliably
+  lower loss across model scales. Scaling the input vocabulary
+  <strong>128&times;</strong> lets a <strong>400M</strong> model match the
+  training loss of a <strong>1B</strong> baseline at essentially no extra
+  compute &mdash; roughly free capacity from tokenization alone. Validated up to
+  a <strong>7B</strong>-scale (OLMoE, 1.3B active) sparse MoE. Accepted at
+  ICML 2025.</p>
+tags:
+  - efficiency
+  - architecture
+paper:
+  arxiv: "2501.16975"
