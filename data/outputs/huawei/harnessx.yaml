@@ -1,0 +1,21 @@
+name: HarnessX
+slug: harnessx
+lab: huawei
+type: paper
+date: 2026-06-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.14249
+description: >
+  <p>"Composable, Adaptive, Evolvable Agent Harness Foundry" from Huawei
+  Noah's Ark with ECNU: typed harness primitives plus a "substitution
+  algebra" and an AEGIS evolution loop that automatically improves the
+  execution harness &mdash; +14.5% average (up to +44%) across five
+  benchmarks. A direct research contribution to the harness layer this
+  sweep prioritizes.</p>
+tags:
+  - agents
+  - infrastructure
+  - research
+paper:
+  arxiv: "2606.14249"
