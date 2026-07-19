@@ -1,0 +1,27 @@
+name: MiMo-V2.5
+slug: mimo-v2.5
+lab: xiaomi
+type: model
+date: 2026-07-09
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/XiaomiMiMo/MiMo-V2.5
+description: >
+  <p>Xiaomi's omnimodal sparse-MoE model (310B total / 15B active),
+  distinct from the <a href="/outputs/xiaomi/mimo-v2.5-pro">MiMo-V2.5-Pro</a>
+  flagship: hybrid attention (sliding-window + global), 1M context, and
+  native text/image/video/audio via a 729M ViT and 261M audio encoder,
+  trained on ~48T tokens with FP8 and agentic-RL post-training. SWE-Bench
+  Pro 56.1. Shipped with a faster MiMo-V2-Flash sibling.</p>
+tags:
+  - multimodal
+  - moe
+  - open-weight
+  - agentic
+model:
+  architecture: moe
+  parameters: "310B"
+  active_parameters: "15B"
+  context_window: 1000000
+related:
+  - mimo-v2.5-pro
