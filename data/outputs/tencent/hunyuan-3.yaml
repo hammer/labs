@@ -1,0 +1,32 @@
+name: Hunyuan Hy3
+slug: hunyuan-3
+lab: tencent
+type: model
+date: 2026-07-06
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/tencent/Hy3
+  - label: Coverage (Caixin)
+    url: https://www.caixinglobal.com/
+description: >
+  <p>Tencent's flagship open MoE (Apache-2.0): <strong>295B total / 21B
+  active</strong>, 192 experts (top-8), 80 layers, 256K context, with a
+  3.8B multi-token-prediction layer for speculative decoding. Instruct-
+  only (no separate base release). Tencent claims parity with GLM-5.2 and
+  DeepSeek-V4 and a lead over GPT-5.5 on scientific tasks, with strong
+  agentic performance. An FP8 sibling (Hy3-FP8) ships alongside. No AA
+  Intelligence Index score at release.</p>
+tags:
+  - frontier
+  - moe
+  - open-weight
+  - agentic
+model:
+  architecture: moe
+  parameters: "295B"
+  active_parameters: "21B"
+  context_window: 262144
+  license: Apache 2.0
+  num_experts: 192
+  top_k: 8

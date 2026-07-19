@@ -1,0 +1,22 @@
+name: Hy-Embodied RxBrain-1.0
+slug: hy-embodied-rxbrain
+lab: tencent
+type: model
+date: 2026-07-14
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/tencent/Hy-Embodied-RxBrain-1.0
+description: >
+  <p>Tencent's embodied/robotics foundation model (~6.2B): a
+  Mixture-of-Transformers with modality-specific pathways and a
+  flow-matching image head over a FLUX VAE latent, doing embodied
+  understanding, world-state prediction, and subgoal planning (both
+  action and goal-image) for robotic manipulation and spatial reasoning.
+  Ships with a Hy-Embodied-VLM-1.0 sibling &mdash; an on-thesis domain
+  foundation model.</p>
+tags:
+  - robotics
+  - world-model
+  - open-weight
+model:
+  parameters: "6.2B"
