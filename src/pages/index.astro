@@ -2,6 +2,7 @@
 import Layout from '../components/Layout.astro';
 import TypeBadge from '../components/TypeBadge.astro';
 import FilterBar from '../components/FilterBar.astro';
+import SavedViews from '../components/SavedViews.astro';
 import { getAllLabs, getOutputCount, getAllOutputsChronological, getLargestModel, getTopIntelligence } from '../data/loader.js';
 import type { FilterDimension } from '../lib/filters/types.js';
 
@@ -87,6 +88,7 @@ const dimensions: FilterDimension[] = [
   </header>
 
   <FilterBar mode="palette" dimensions={dimensions} hotkey="f" id="filter-bar" />
+  <SavedViews page="home" basePath="/" />
 
   <table class="lab-table" id="lab-table">
     <thead>

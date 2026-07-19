@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { getSessionUser, jsonNoStore } from '../../lib/server/auth';
+import { getSessionUser, jsonNoStore } from '../../../lib/server/auth';
 
 export const prerender = false;
 

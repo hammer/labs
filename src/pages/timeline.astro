@@ -2,6 +2,7 @@
 import Layout from '../components/Layout.astro';
 import TypeBadge from '../components/TypeBadge.astro';
 import FilterBar from '../components/FilterBar.astro';
+import SavedViews from '../components/SavedViews.astro';
 import { getAllTimelineItems, getAllLabs, getLabBySlug, isGrouped, getOutputTypes, getModelFacets, getEvalFacets } from '../data/loader.js';
 import type { NewsItem, ModelFacets } from '../data/loader.js';
 import { formatValue } from '../lib/filters/format.js';
@@ -288,6 +289,7 @@ function cellText(
   </div>
 
   <FilterBar mode="palette" dimensions={dimensions} hotkey="f" id="filter-bar" />
+  <SavedViews page="timeline" basePath="/timeline" />
 
   <table class="timeline-table" id="timeline-table" data-colset="general">
     <thead>

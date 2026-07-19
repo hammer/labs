@@ -1,0 +1,100 @@
+---
+// Per-user saved filter views (issue #21 step 2). Self-contained + progressive:
+// hidden until /api/me/filters confirms a logged-in user, so logged-out and
+// anonymous visitors see nothing and nothing user-specific is in cached HTML.
+interface Props { page: string; basePath: string; }
+const { page, basePath } = Astro.props;
+---
+<div class="saved-views" data-page={page} data-base={basePath} hidden>
+  <button class="sv-toggle" type="button" aria-expanded="false">★ Saved views</button>
+  <div class="sv-menu" hidden>
+    <ul class="sv-list"></ul>
+    <button class="sv-save" type="button">＋ Save current view…</button>
+  </div>
+</div>
+
+<script>
+  const H = { 'x-requested-with': 'labindex' };
+  const root = document.querySelector<HTMLElement>('.saved-views');
+  if (root) {
+    const page = root.dataset.page!;
+    const base = root.dataset.base!;
+    const list = root.querySelector<HTMLUListElement>('.sv-list')!;
+    const menu = root.querySelector<HTMLElement>('.sv-menu')!;
+    const toggle = root.querySelector<HTMLButtonElement>('.sv-toggle')!;
+
+    async function load() {
+      let res: Response;
+      try { res = await fetch(`/api/me/filters?page=${encodeURIComponent(page)}`, { headers: H }); }
+      catch { return; }
+      if (res.status !== 200) return; // 401 = logged out → stay hidden
+      const { filters } = await res.json();
+      render(filters);
+      root!.hidden = false;
+    }
+
+    function render(filters: any[]) {
+      list.innerHTML = '';
+      if (!filters.length) {
+        const li = document.createElement('li');
+        li.className = 'sv-empty';
+        li.textContent = 'No saved views yet.';
+        list.appendChild(li);
+      }
+      for (const f of filters) {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = base + (f.query ? '?' + f.query : '');
+        a.textContent = f.name;
+        const del = document.createElement('button');
+        del.type = 'button';
+        del.className = 'sv-del';
+        del.setAttribute('aria-label', 'Delete view');
+        del.textContent = '×';
+        del.addEventListener('click', async (e) => {
+          e.preventDefault();
+          await fetch(`/api/me/filters?id=${f.id}`, { method: 'DELETE', headers: H });
+          load();
+        });
+        li.append(a, del);
+        list.appendChild(li);
+      }
+    }
+
+    toggle.addEventListener('click', () => {
+      const open = menu.hidden;
+      menu.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+
+    root.querySelector('.sv-save')!.addEventListener('click', async () => {
+      const name = prompt('Name this view');
+      if (!name) return;
+      const query = location.search.replace(/^\?/, '');
+      await fetch('/api/me/filters', {
+        method: 'POST',
+        headers: { ...H, 'content-type': 'application/json' },
+        body: JSON.stringify({ name, page, query }),
+      });
+      load();
+    });
+
+    load();
+  }
+</script>
+
+<style>
+  .saved-views { position: relative; display: inline-block; margin: 0.25rem 0 0.5rem; font-size: 0.85rem; }
+  .sv-toggle { background: transparent; border: 1px solid var(--color-border, #ddd); border-radius: 6px;
+    padding: 0.2rem 0.6rem; cursor: pointer; color: inherit; }
+  .sv-menu { position: absolute; z-index: 20; margin-top: 0.25rem; min-width: 220px; background: var(--color-bg, #fff);
+    border: 1px solid var(--color-border, #ddd); border-radius: 8px; padding: 0.4rem; box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
+  .sv-list { list-style: none; margin: 0 0 0.4rem; padding: 0; max-height: 300px; overflow-y: auto; }
+  .sv-list li { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; padding: 0.2rem 0.3rem; border-radius: 4px; }
+  .sv-list li:hover { background: color-mix(in srgb, currentColor 6%, transparent); }
+  .sv-list a { text-decoration: none; color: inherit; flex: 1; }
+  .sv-empty { color: var(--color-muted, #888); }
+  .sv-del { border: none; background: transparent; cursor: pointer; color: var(--color-muted, #888); font-size: 1rem; line-height: 1; }
+  .sv-save { width: 100%; text-align: left; background: transparent; border: none; border-top: 1px solid var(--color-border, #eee);
+    padding: 0.4rem 0.3rem 0.1rem; cursor: pointer; color: var(--color-accent, inherit); }
+</style>
