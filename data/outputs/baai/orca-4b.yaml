@@ -1,0 +1,22 @@
+name: Orca-4B
+slug: orca-4b
+lab: baai
+type: model
+date: 2026-07-14
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/BAAI/Orca-4B
+description: >
+  <p>BAAI's world foundation model: a unified Next-State-Prediction
+  objective over vision and language (~6B, multimodal encoder-decoder)
+  trained on 125K hours of video and 160M event annotations, doing text
+  generation, next-image prediction, and action generation in one model
+  (text-gen 51.8 avg, image-pred 59.8, robotic-manipulation 32.4
+  rule-success). Ships with a tech report &mdash; BAAI's entry into the
+  world-model race, staged for WAIC.</p>
+tags:
+  - world-model
+  - multimodal
+  - open-weight
+model:
+  parameters: "6B"
