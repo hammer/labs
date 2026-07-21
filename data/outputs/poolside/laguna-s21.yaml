@@ -1,0 +1,61 @@
+name: Laguna S 2.1
+slug: laguna-s21
+lab: poolside
+type: model
+date: 2026-07-21
+sources:
+  - label: Hugging Face (Laguna-S-2.1)
+    url: https://huggingface.co/poolside/Laguna-S-2.1
+  - label: Introducing Laguna S 2.1 (Poolside blog)
+    url: https://poolside.ai/blog/introducing-laguna-s-2-1
+description: >
+  <p>Poolside's new mid-tier agentic-coding model, released 21 July 2026 to
+  sit between <a href="/outputs/poolside/laguna-xs2">Laguna XS 2.1</a>
+  (33B-A3B) and the flagship <a href="/outputs/poolside/laguna-m1">Laguna
+  M.1</a> (225B-A23B). A <strong>118B-total / 8B-active Mixture-of-Experts</strong>
+  transformer: 48 layers (12 global-attention, 36 sliding-window at 512
+  tokens), <strong>256 routed experts (top-10) plus one shared</strong>, and
+  grouped-query attention (8 KV heads). Its headline feature is a
+  <strong>1M-token context window</strong> (1,048,576) &mdash; a 4&times; jump
+  over the 256K of XS.2 and M.1. Released under <strong>OpenMDW-1.1</strong>
+  with base and post-trained checkpoints, FP8/NVFP4/INT4/GGUF quantizations,
+  and a DFlash speculative-decoding draft model; serves on vLLM, SGLang,
+  Transformers, TRT-LLM, and llama.cpp (BF16 weights &asymp;236GB, multi-GPU).</p>
+
+  <p>Reported benchmarks (as of 21 July 2026): <strong>Terminal-Bench 2.1
+  70.2</strong>, SWE-bench Multilingual 78.5, SWE-bench Pro (public) 59.4,
+  DeepSWE 40.4, SWE Atlas (codebase QnA) 46.2, Toolathlon Verified 49.7.
+  Unlike the fully self-reported figures on the earlier Laguna models, several
+  of these are now <em>third-party</em> numbers &mdash; Terminal-Bench 2.1 and
+  DeepSWE via Artificial Analysis, SWE Atlas via Scale AI's leaderboard, and
+  Toolathlon via its official leaderboard &mdash; though Poolside remains
+  unscored on the AA Intelligence Index.</p>
+tags:
+  - open-weight
+  - coding
+  - agentic
+  - moe
+model:
+  architecture: moe
+  parameters: 118B
+  active_parameters: 8B
+  context_window: 1048576
+  license: OpenMDW-1.1
+  num_experts: 256
+  top_k: 10
+  benchmark_scores:
+    - benchmark: Terminal-Bench 2.1
+      score: "70.2"
+    - benchmark: SWE-bench Multilingual
+      score: "78.5"
+    - benchmark: SWE-bench Pro
+      score: "59.4"
+    - benchmark: DeepSWE
+      score: "40.4"
+    - benchmark: SWE Atlas
+      score: "46.2"
+    - benchmark: Toolathlon Verified
+      score: "49.7"
+related:
+  - laguna-m1
+  - laguna-xs2

@@ -29,7 +29,10 @@ description: >
   <a href="/outputs/poolside/laguna-xs2">Laguna XS.2</a> (April 2026) and the
   225B/23B flagship <a href="/outputs/poolside/laguna-m1">Laguna M.1</a> are now
   released under <strong>Apache 2.0</strong> on Hugging Face, with base and
-  post-trained checkpoints.</p>
+  post-trained checkpoints. A <strong>2.1</strong> refresh followed in July 2026
+  &mdash; <a href="/outputs/poolside/laguna-xs2">XS 2.1</a> and a new mid-tier
+  <a href="/outputs/poolside/laguna-s21">Laguna S 2.1</a> (118B/8B, 1M context)
+  &mdash; relicensed to <strong>OpenMDW-1.1</strong>.</p>
 
   <p>The technical execution arrives against serious company-level headwinds. In
   early April 2026 Poolside's planned <strong>~$2B Series C at a ~$14B
@@ -43,9 +46,11 @@ description: >
   Google DeepMind at the frontier." The last realized valuation is the
   <strong>$3B Series B (October 2024)</strong>.</p>
 
-  <p><em>Note: as of June 2026, Poolside is not tracked by Artificial Analysis
-  &mdash; benchmark numbers on these pages are self-reported from the Laguna
-  technical report.</em></p>
+  <p><em>Note: as of July 2026, Poolside is not scored on the Artificial
+  Analysis Intelligence Index. Benchmark numbers on these pages are
+  self-reported from the Laguna technical reports, except where attributed to a
+  third-party leaderboard (from Laguna S 2.1 onward, some scores come via
+  Artificial Analysis and Scale AI).</em></p>
 people:
   - name: Jason Warner
     role: Co-founder & CEO
@@ -59,6 +64,10 @@ tags:
   - agentic
   - moe
 news:
+  - title: "Laguna S 2.1 Released — 118B-A8B MoE with a 1M-Token Context (OpenMDW-1.1)"
+    url: https://poolside.ai/blog/introducing-laguna-s-2-1
+    source: Poolside
+    date: 2026-07-21
   - title: "Laguna M.1 Released as Open Weights (Apache 2.0); Base and Post-Trained Checkpoints on Hugging Face"
     url: https://huggingface.co/poolside
     source: Hugging Face
