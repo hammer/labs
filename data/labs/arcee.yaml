@@ -33,6 +33,13 @@ description: >
   <p>Also produced <strong><a href="https://github.com/arcee-ai/mergekit">MergeKit</a></strong>,
   the most widely-used open-source model merging toolkit, and DistillKit
   for knowledge distillation.</p>
+
+  <p>In July 2026 Arcee partnered with the US <strong>Department of Energy</strong>
+  under its <strong>Genesis Mission</strong> to build
+  <a href="/outputs/arcee/genesis-science-1">Genesis-Science-1</a>, a
+  trillion-parameter-class open-weight model and governed research harness for
+  science built on next-generation Trinity &mdash; slated for open release
+  (weights + technical report) later in 2026.</p>
 people:
   - name: Mark McQuade
     role: CEO & Co-founder
@@ -43,6 +50,10 @@ people:
     role: Chief of Frontier Research
     formerly: NASA; Apple; Creator of MergeKit
 news:
+  - title: "DOE Partners with Arcee to Build Genesis-Science-1 — a Trillion-Parameter-Class Open Model for Science (Genesis Mission)"
+    url: https://www.arcee.ai/blog/genesis-science-1
+    source: Arcee AI Blog
+    date: 2026-07-22
   - title: "Trinity Is Moving to OpenMDW-1.1"
     url: https://www.arcee.ai/blog/trinity-is-moving-to-openmdw-1-1
     source: Arcee AI Blog

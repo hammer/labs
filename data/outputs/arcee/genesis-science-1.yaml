@@ -1,0 +1,41 @@
+name: Genesis-Science-1 (GS1)
+slug: genesis-science-1
+lab: arcee
+type: announcement
+date: 2026-07-22
+sources:
+  - label: Genesis-Science-1 Announcement (Arcee)
+    url: https://www.arcee.ai/blog/genesis-science-1
+  - label: DOE Genesis Mission
+    url: https://www.energy.gov/genesis-mission-demonstration
+  - label: The Information
+    url: https://www.theinformation.com/briefings/department-energy-partners-american-open-weight-model-provider-arcee
+description: >
+  <p>Announced 22 July 2026 as a joint <strong>US Department of Energy</strong>
+  &times; Arcee effort under the DOE's <strong>Genesis Mission</strong> (the
+  national AI-for-science initiative): <strong>Genesis-Science-1 (GS1)</strong>
+  is "an American open-weight model for scientific research" paired with a
+  <strong>governed research harness</strong>. GS1 is designed to operate inside
+  governed scientific environments &mdash; use approved tools, write and repair
+  code, recover when a run fails, and keep a clear, reproducible record of the
+  reasoning behind a result. It is described as a
+  <strong>trillion-parameter-class</strong> model built on Arcee's
+  <a href="/outputs/arcee/trinity-large">next-generation Trinity</a>
+  architecture.</p>
+
+  <p>The partnership makes a rare independent US open-weight lab the builder of
+  a national open-science flagship. Weights, a technical report, and public
+  demonstrations are promised <strong>openly "later this year"</strong>; a DOE
+  contributor program (for researchers, national labs, universities, companies,
+  and nonprofits &mdash; contributors retain ownership and set usage terms)
+  opens the same week, and Arcee is lining up infrastructure partners for
+  training and evaluation capacity. The DOE announced the first ~300 Genesis
+  Mission RFA awards the same day. <em>An announced program &mdash; this entry
+  becomes a full model entry when the weights are released.</em></p>
+tags:
+  - science
+  - agentic
+  - open-weight
+  - frontier
+related:
+  - trinity-large
