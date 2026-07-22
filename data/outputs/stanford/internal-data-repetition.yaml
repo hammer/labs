@@ -1,0 +1,31 @@
+name: Internal Data Repetition Destroys Language Models
+slug: internal-data-repetition
+lab: stanford
+type: paper
+date: 2026-06-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.24998
+description: >
+  <p>A study of how <em>internal</em> data repetition &mdash; duplicated
+  subsets <em>within</em> a training corpus, as opposed to repeating whole
+  epochs &mdash; harms language models under Chinchilla-era, compute-optimal
+  training. The counterintuitive finding: repeating a <strong>moderately-sized
+  subset a moderate number of times</strong> does more damage than either
+  extreme, and the peak damage grows as a <strong>power law in model size</strong>
+  &mdash; so bigger models are hurt disproportionately. On FineWeb-Edu-Dedup, a
+  344M-parameter Qwen3-style model loses up to <strong>67% of its
+  FLOP-equivalent</strong> compute to the worst repetition pattern.</p>
+
+  <p>The effect is explained through a <strong>misspecified linear-regression</strong>
+  framework and shown to generalize beyond language models, making it a caution
+  for data-curation and dedup pipelines. From the Koyejo (Stanford CS) and Donoho
+  (Stanford Statistics) groups &mdash; authors include Rylan Schaeffer and Joshua
+  Kazdan &mdash; with co-authors at Tel Aviv University and IMC Trading.</p>
+tags:
+  - scaling
+  - data
+  - pretraining
+  - research
+paper:
+  arxiv: "2606.24998"
