@@ -1,0 +1,70 @@
+name: Solar Open 2
+slug: solar-open-2
+lab: upstage
+type: model
+date: 2026-07-22
+flagship: true
+sources:
+  - label: Blog Post
+    url: https://www.upstage.ai/blog/en/solar-open-2
+  - label: HuggingFace
+    url: https://huggingface.co/upstage/Solar-Open2-250B
+  - label: Technical Report (PDF)
+    url: https://huggingface.co/upstage/Solar-Open2-250B/blob/main/Solar_Open_2_Tech_Report.pdf
+description: >
+  <p>Upstage's new open-weight flagship and the successor to
+  <a href="/outputs/upstage/solar-open-100b">Solar Open 100B</a>: a
+  <strong>250B-total / 15B-active Hybrid-Attention MoE</strong>. Its 48 layers
+  interleave softmax and linear attention in a <code>[Softmax, Linear&times;3]
+  &times;12</code> pattern (75% linear), with <strong>321 experts</strong>
+  (320 routed, top-8, plus one shared). Because the linear-attention layers
+  encode token order in their recurrent state, positional encoding is dropped
+  entirely (<strong>NoPE</strong>) and only 12 of the 48 layers keep a KV cache
+  &mdash; delivering a <strong>1M-token context</strong> at roughly a quarter of
+  an all-softmax model's long-context memory. Released 22 July 2026 on Hugging
+  Face under the <strong>Upstage Solar License</strong> (commercial use,
+  fine-tuning, and distillation permitted).</p>
+
+  <p>Trained cost-efficiently by <strong>selective weight transfer from Solar
+  Open 1 (102B)</strong> &mdash; only the ~2.3% of weights that survive the
+  architectural change are carried over, and everything else is randomly
+  initialized. Officially supports <strong>English, Korean, and Japanese</strong>,
+  with a Korean-optimized tokenizer that encodes text in ~50&ndash;80% of the
+  tokens global models use.</p>
+
+  <p>Reported benchmarks (self-reported): <strong>MMLU-Pro 86.2</strong>,
+  GPQA-Diamond 86.3, LiveCodeBench v6 92.4, HMMT 93.9, IFBench 80.0,
+  MCP-Atlas 58.2, and KMMLU-Pro 78.4 &mdash; competitive with DeepSeek-V4-Flash
+  and MiMo-V2.5 in Upstage's comparison table, and a large jump over Solar Open
+  100B (LiveCodeBench +36, HMMT +25). <em>Not currently scored on the Artificial
+  Analysis Intelligence Index.</em></p>
+tags:
+  - moe
+  - open-weight
+  - multilingual
+  - frontier
+  - efficiency
+model:
+  architecture: moe
+  parameters: 250B
+  active_parameters: 15B
+  context_window: 1048576
+  license: Upstage Solar License
+  num_experts: 320
+  top_k: 8
+  benchmark_scores:
+    - benchmark: MMLU-Pro
+      score: "86.2"
+    - benchmark: GPQA-Diamond
+      score: "86.3"
+    - benchmark: LiveCodeBench v6
+      score: "92.4"
+    - benchmark: HMMT
+      score: "93.9"
+    - benchmark: IFBench
+      score: "80.0"
+    - benchmark: KMMLU-Pro
+      score: "78.4"
+related:
+  - solar-open-100b
+  - solar-pro-3

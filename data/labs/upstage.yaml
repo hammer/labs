@@ -68,6 +68,10 @@ people:
   - name: Sanghoon Kim
     role: Lead Researcher (Solar, DUS)
 news:
+  - title: "Solar Open 2 Released — 250B-A15B Hybrid-Attention MoE with 1M Context (Open Weights)"
+    url: https://www.upstage.ai/blog/en/solar-open-2
+    source: Upstage
+    date: 2026-07-22
   - title: "Upstage Previews 'Solar 2', Claiming External Benchmarks Near Claude Sonnet 4.6; Third-Gen Model Promised by Year-End"
     url: https://www.thelec.net/news/articleView.html?idxno=11372
     source: The Elec
