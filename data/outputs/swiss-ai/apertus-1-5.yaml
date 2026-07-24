@@ -1,0 +1,50 @@
+name: Apertus 1.5
+slug: apertus-1-5
+lab: swiss-ai
+type: model
+date: 2026-07-24
+flagship: true
+sources:
+  - label: Announcement (Apertus 1.5)
+    url: https://apertus-ai.org/articles/2026-07-apertus-1-5/
+  - label: HuggingFace (v1.5 70B)
+    url: https://huggingface.co/swiss-ai/Apertus-v1.5-70B
+  - label: HuggingFace (v1.5 8B)
+    url: https://huggingface.co/swiss-ai/Apertus-v1.5-8B
+description: >
+  <p>The multimodal successor to <a href="/outputs/swiss-ai/apertus">Apertus</a>,
+  released 24 July 2026 in <strong>8B and 70B</strong> sizes. Produced by
+  <strong>continued pretraining of Apertus 1.0</strong> &mdash; adding a
+  multimodal mix of <strong>4T tokens to the 8B and 2T to the 70B</strong> on
+  top of the original 15T &mdash; so it keeps the same architecture: a
+  decoder-only transformer with the <strong>xIELU</strong> activation and the
+  <strong>AdEMAMix</strong> optimizer, trained exclusively on fully open data.</p>
+
+  <p>Three firsts for the family: <strong>native multimodal input</strong>
+  (image <em>and</em> audio understanding, text output), an optional
+  <strong>thinking mode</strong> for reasoning tasks, and a
+  <strong>262,144-token context</strong> (a 4&times; jump over Apertus 1.0's
+  65K). The improved post-training recipe also strengthens instruction-following
+  and tool use. Still Apache 2.0, still positioned as Switzerland's fully open,
+  transparent, EU-AI-Act-aligned sovereign model line.</p>
+
+  <p><em>Detailed benchmark results are promised "in the coming weeks"; the
+  models are not yet scored on the Artificial Analysis Intelligence Index.</em></p>
+tags:
+  - open-source
+  - open-weight
+  - multilingual
+  - multimodal
+  - reasoning
+model:
+  architecture: dense
+  parameters: 70B
+  context_window: 262144
+  license: Apache-2.0
+  variants:
+    - name: Apertus-v1.5-70B
+      parameters: 70B
+    - name: Apertus-v1.5-8B
+      parameters: 8B
+related:
+  - apertus

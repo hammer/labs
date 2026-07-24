@@ -50,6 +50,11 @@ people:
     urls:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=r1TJBr8AAAAJ
+news:
+  - title: "Apertus 1.5 Released — Multimodal (Image + Audio), Thinking Mode, and 262K Context (8B & 70B)"
+    url: https://apertus-ai.org/articles/2026-07-apertus-1-5/
+    source: Apertus / Swiss AI
+    date: 2026-07-24
 tags:
   - academic
   - open-source
