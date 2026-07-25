@@ -1,27 +1,53 @@
 name: Sapiens AI
 slug: sapiens-ai
 url: https://agnes-ai.com
+huggingface: https://huggingface.co/Agnes-AI
+github: https://github.com/AgnesAI-Labs
 region: singapore
 founded: "2025"
 type: private
 description: >
-  <p><strong>Sapiens AI</strong> (SapiensAI) is a Singapore-based AI startup,
-  founded in early 2025 by <strong>Bruce Yang</strong>, that builds
-  <a href="https://agnes-ai.com">Agnes AI</a> &mdash; a Singapore-trained AI
-  agent/platform combining real-time web search with a personal memory engine,
-  marketed as "Singapore's homegrown answer to DeepSeek." It offers free
-  omni-modal APIs alongside paid proprietary models (the <strong>Agnes</strong>,
-  Echo, and Pavo families) and reported ~3M registered users by late 2025.</p>
+  <p><strong>Sapiens AI</strong> (legal entity <em>Singapore Sapiens Technology
+  Pte. Ltd.</em>, incorporated 2022 as "Kiwi Network Technology" and rebranded)
+  is a Singapore consumer-AI startup led by founder <strong>Bruce Yang</strong>.
+  It launched <a href="https://agnes-ai.com">Agnes AI</a> in April 2025 &mdash;
+  an AI agent combining real-time web search with a personal memory engine
+  &mdash; and runs a free omni-modal API gateway plus a consumer app suite
+  (the Agnes app, Agnes Code, and the Pavo creative studio).</p>
 
-  <p>The company has developed proprietary models from 7B to 30B (including
-  Agnes-R1) and reported fundraising at a &gt;$100M valuation. Its flagship
-  <a href="/outputs/sapiens-ai/agnes-2.5-pro">Agnes 2.5 Pro</a> is a closed,
-  API-only multimodal reasoning model. <em>Architecture and parameter counts are
-  undisclosed &mdash; the least transparent of Singapore's model builders.</em></p>
+  <p>Its model line is mostly <strong>closed</strong>: the Agnes text models run
+  1.5 Flash &rarr; 2.0 Flash &rarr; 2.5 Flash &rarr; the flagship
+  <a href="/outputs/sapiens-ai/agnes-2.5-pro">Agnes 2.5 Pro Alpha</a>, alongside
+  closed image and video models. Only Agnes 2.5 Pro Alpha is independently
+  benchmarked &mdash; <strong>Artificial Analysis Intelligence Index v4.1: 39</strong>
+  (mid-pack, well below the ~58&ndash;60 frontier). The genuinely open research is
+  thin: one open-weight model,
+  <a href="/outputs/sapiens-ai/agnes-seallm-8b">Agnes-SeaLLM-8B</a> (a
+  Southeast-Asian fine-tune of Qwen3-8B, Apache-2.0), and one arXiv paper,
+  <a href="/outputs/sapiens-ai/dspo">DSPO</a> (an RL method co-authored by the
+  founder).</p>
+
+  <p><em>Caveat on the company's own claims:</em> Agnes is heavily PR-driven, and
+  several headline figures trace only to its own press releases. Independent
+  reporting confirms a <strong>$20M raise</strong> (no valuation or investors
+  disclosed); the frequently-cited "&gt;$100M valuation," multi-million user
+  counts, and "Singapore's answer to DeepSeek" / "top-10 lab" framing are
+  self-reported and have escalated across releases. Primary sources also
+  undercut the "built from scratch" positioning: Google's own case study says the
+  consumer app relies on <strong>Gemini Flash</strong> for inference, and the
+  open model's card lists <strong>Qwen3-8B-Base</strong> as its base. A real
+  applied-AI product with a genuine mid-tier model &mdash; not a frontier lab.</p>
 people:
   - name: Bruce Yang
-    role: Founder
-    formerly: Microsoft; LinkedIn; NUS (PhD candidate); UC Berkeley; HEC Paris
+    role: Founder & CEO
+    formerly: LinkedIn (engineer); UC Berkeley; founder of Sobrr (2014). Reportedly Microsoft and HEC Paris; NUS PhD candidate (self-reported)
+    description: >
+      <p>Also known as Tong Yang. Independently corroborated (from 2014-era
+      press) as a former <strong>LinkedIn</strong> engineer and
+      <strong>UC Berkeley</strong> alum who co-founded the ephemeral social app
+      <strong>Sobrr</strong> (2014, ~$1M seed led by IDG). His Microsoft, HEC
+      Paris, and NUS-PhD affiliations appear only in self-issued bios; no Google
+      Scholar profile or publication record exists beyond the DSPO preprint.</p>
 tags:
   - reasoning
   - multimodal

@@ -1,0 +1,36 @@
+name: Agnes-SeaLLM-8B
+slug: agnes-seallm-8b
+lab: sapiens-ai
+type: model
+date: 2026-01-09
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/Agnes-AI/Agnes-SeaLLM-8b
+  - label: GitHub
+    url: https://github.com/AgnesAI-Labs/Agnes-SeaLLM-8b
+description: >
+  <p><a href="/labs/sapiens-ai">Sapiens AI</a>'s only open-weight model: a
+  compact <strong>8B LLM fine-tuned from Qwen3-8B-Base for Southeast Asian
+  languages</strong> (Chinese, English, Indonesian, Vietnamese, Thai), with a
+  focus on math reasoning, translation, instruction-following, and reduced
+  hallucination on culturally specific queries. Released under
+  <strong>Apache 2.0</strong> with GGUF quantizations for llama.cpp / LM Studio /
+  Ollama.</p>
+
+  <p>Reported: <strong>SeaExam average 75.32</strong>, M3Exam 77.47, MMLU 74.13
+  &mdash; a modest, regionally-focused open release from an otherwise
+  closed-model, consumer-API-first company.</p>
+tags:
+  - open-weight
+  - multilingual
+model:
+  parameters: 8B
+  base_model: qwen3
+  license: Apache-2.0
+  benchmark_scores:
+    - benchmark: SeaExam (avg)
+      score: "75.32"
+    - benchmark: M3Exam
+      score: "77.47"
+    - benchmark: MMLU
+      score: "74.13"

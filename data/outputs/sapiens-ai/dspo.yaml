@@ -1,0 +1,27 @@
+name: "DSPO: Stable and Efficient Policy Optimization for Agentic Search and Reasoning"
+slug: dspo
+lab: sapiens-ai
+type: paper
+date: 2025-10-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.09255
+  - label: GitHub
+    url: https://github.com/AgnesAI-Labs/DSPO
+description: >
+  <p>The RL method behind <a href="/labs/sapiens-ai">Sapiens AI</a>'s reasoning
+  work (co-authored by founder <strong>Bruce Yang</strong>).
+  <strong>Dynamic-filter Sequence-level Policy Optimization (DSPO)</strong>
+  trains agents to interleave multi-turn search with reasoning <em>purely via
+  reinforcement learning</em> &mdash; no supervised demonstrations &mdash; using
+  sequence-level optimization plus dynamic sample filtering for training
+  stability. A 7B model reports a <strong>34.1% improvement</strong> over
+  comparable prior work and beats a 14B predecessor on complex multi-hop tasks
+  like HotpotQA. Builds on GSPO. Sapiens AI's only arXiv paper.</p>
+tags:
+  - reasoning
+  - agentic
+  - post-training
+  - research
+paper:
+  arxiv: "2510.09255"
