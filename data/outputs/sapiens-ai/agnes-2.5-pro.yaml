@@ -9,6 +9,8 @@ sources:
     url: https://agnes-ai.com
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/agnes-2-5-pro-alpha
+  - label: Founder interview (Tech Lead Journal #246)
+    url: https://techleadjournal.dev/episodes/246/
 description: >
   <p><a href="/labs/sapiens-ai">Sapiens AI</a>'s flagship: a closed, paid,
   API-only multimodal reasoning model (text + image in, text out) for coding,
@@ -16,8 +18,13 @@ description: >
   <strong>1M-token context</strong> (max output ~65K). <strong>AA Intelligence
   Index v4.1: 39</strong>, released as an "Alpha" on 24 July 2026.</p>
 
-  <p><em>Architecture, parameter count, and training details are undisclosed;
-  weights are proprietary (not open). Served via Sapiens AI's API.</em></p>
+  <p><em>Architecture, parameter count, and base model are undisclosed; weights
+  are proprietary (not open). Despite the company's "built from scratch"
+  marketing, there is no evidence Agnes 2.5 Pro was pretrained from scratch: its
+  own docs disclose no training method, and in a founder interview Bruce Yang
+  describes their approach as "post-training from the pre-trained models like
+  Qwen and DeepSeek" (and distilling from deployed SOTA models) rather than
+  training a foundation model from scratch. Served via Sapiens AI's API.</em></p>
 tags:
   - reasoning
   - multimodal
