@@ -299,10 +299,14 @@ Some of the most important labs primarily release closed models. For these labs:
 
 ### Flagship Criteria
 
-Mark `flagship: true` only for models that represent a **step change** for the lab:
+`flagship: true` is a **permanent landmark marker**, judged at the time of release — a lab accumulates **many** over time (major labs have 10–30+), covering every headline model generation plus seminal papers/artifacts. It does **not** mean "the single current best model."
+
+Mark `flagship: true` when the output was, at release, a **step change** for the lab:
 - New architecture or scale milestone (first MoE, first 100B+, etc.)
 - New capability (first multimodal, first reasoning, first code model)
-- Current best model in a product line
+- A headline model generation, or the best model in a product line at its time
+
+**When adding a new flagship, do NOT demote its predecessors** — a model that was flagship-worthy at release stays flagged after a successor supersedes it (every model generation stays flagged side by side).
 
 Do NOT mark as flagship: minor updates, size variants, specialized fine-tunes.
 

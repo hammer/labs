@@ -257,12 +257,17 @@ related:
 
 ### Flagship Criteria
 
-Mark `flagship: true` only for models representing a **step change**:
+`flagship: true` is a **permanent landmark marker**, judged at the time of release — it flags work that was a **step change** for the lab. A lab accumulates **many** flagships over time (major labs have 10–30+): every headline model generation plus seminal papers/artifacts (e.g. `transformer`, `constitutional-ai`, `gpqa`). It does **not** mean "the single current best model."
+
+Mark `flagship: true` when the output was, at release, a genuine step change:
 - New architecture or scale milestone (first MoE, first 100B+)
 - New capability (first multimodal, first reasoning, first code model)
-- Current best model in a product line
+- A headline model generation, or the best model in a product line at its time
+- A field-shaping paper, benchmark, or library
 
-Do NOT mark as flagship: minor updates, size variants, specialized fine-tunes, deprecated models.
+**When adding a new flagship, do NOT demote its predecessors.** A model that was flagship-worthy at release stays flagged even after a newer model supersedes it — flagship is historical, not "current." Never remove `flagship: true` from an existing entry just because you're adding a successor (every Claude / GPT / Qwen / Gemini generation stays flagged side by side).
+
+Do NOT mark as flagship: minor point updates, size variants, or specialized fine-tunes that were not themselves a step change.
 
 ### Attribution — Verify the Lab Actually Created It
 
