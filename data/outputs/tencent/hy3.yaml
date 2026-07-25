@@ -53,7 +53,7 @@ model:
   parameters: 295B
   active_parameters: 21B
   context_window: 256000
-  intelligence_index: 34
+  intelligence_index: 41
   intelligence_index_version: "AA v4.1"
   openness_index: 33.3
   openness_index_version: "AA Openness Index v1.0"

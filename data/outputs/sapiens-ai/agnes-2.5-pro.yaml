@@ -1,0 +1,28 @@
+name: Agnes 2.5 Pro Alpha
+slug: agnes-2.5-pro
+lab: sapiens-ai
+type: model
+date: 2026-07-24
+flagship: true
+sources:
+  - label: Agnes AI
+    url: https://agnes-ai.com
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/agnes-2-5-pro-alpha
+description: >
+  <p><a href="/labs/sapiens-ai">Sapiens AI</a>'s flagship: a closed, paid,
+  API-only multimodal reasoning model (text + image in, text out) for coding,
+  scientific reasoning, long-context, and agentic workflows. Supports a
+  <strong>1M-token context</strong> (max output ~65K). <strong>AA Intelligence
+  Index v4.1: 39</strong>, released as an "Alpha" on 24 July 2026.</p>
+
+  <p><em>Architecture, parameter count, and training details are undisclosed;
+  weights are proprietary (not open). Served via Sapiens AI's API.</em></p>
+tags:
+  - reasoning
+  - multimodal
+  - agentic
+model:
+  context_window: 1000000
+  intelligence_index: 39
+  intelligence_index_version: "AA v4.1"

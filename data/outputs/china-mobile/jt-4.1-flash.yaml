@@ -1,0 +1,32 @@
+name: JT-4.1 Flash
+slug: jt-4.1-flash
+lab: china-mobile
+type: model
+date: 2026-07-09
+flagship: true
+sources:
+  - label: Jiutian (China Mobile)
+    url: https://jiutian.10086.cn
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/jt-4-1-flash-236b-a21b
+description: >
+  <p><a href="/labs/china-mobile">China Mobile</a>'s Jiutian LLM line reaches
+  frontier-adjacent territory: <strong>JT-4.1 Flash</strong> is a
+  <strong>236B-total / 21B-active MoE</strong> (non-reasoning) with a
+  <strong>256K-token context</strong>. <strong>AA Intelligence Index v4.1: 39</strong>,
+  ranking near the top of its non-reasoning class &mdash; a notable result for a
+  model from a state-owned telecom's in-house AI brand rather than a dedicated
+  frontier lab. Released 9 July 2026.</p>
+
+  <p><em>Weights are not publicly available; the 21B active-parameter figure
+  follows China Mobile's "236B A21B" model-naming convention.</em></p>
+tags:
+  - moe
+  - frontier
+model:
+  architecture: moe
+  parameters: 236B
+  active_parameters: 21B
+  context_window: 256000
+  intelligence_index: 39
+  intelligence_index_version: "AA v4.1"

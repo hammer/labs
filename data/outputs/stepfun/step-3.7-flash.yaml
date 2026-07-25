@@ -11,6 +11,8 @@ sources:
     url: https://huggingface.co/stepfun-ai/Step-3.7-Flash
   - label: OpenRouter
     url: https://openrouter.ai/stepfun/step-3.7-flash-20260528
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/step-3-7-flash
 description: >
   <p>StepFun's new flagship open-weight reasoning VLM. <strong>198B total / ~11B
   active sparse MoE</strong> with <strong>256K context</strong>, tunable
@@ -34,6 +36,8 @@ model:
   active_parameters: 11B
   context_window: 262144
   license: Apache 2.0
+  intelligence_index: 30
+  intelligence_index_version: "AA v4.1"
 related:
   - step-3.5-flash
   - step-3

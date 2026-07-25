@@ -1,0 +1,28 @@
+name: Sapiens AI
+slug: sapiens-ai
+url: https://agnes-ai.com
+region: singapore
+founded: "2025"
+type: private
+description: >
+  <p><strong>Sapiens AI</strong> (SapiensAI) is a Singapore-based AI startup,
+  founded in early 2025 by <strong>Bruce Yang</strong>, that builds
+  <a href="https://agnes-ai.com">Agnes AI</a> &mdash; a Singapore-trained AI
+  agent/platform combining real-time web search with a personal memory engine,
+  marketed as "Singapore's homegrown answer to DeepSeek." It offers free
+  omni-modal APIs alongside paid proprietary models (the <strong>Agnes</strong>,
+  Echo, and Pavo families) and reported ~3M registered users by late 2025.</p>
+
+  <p>The company has developed proprietary models from 7B to 30B (including
+  Agnes-R1) and reported fundraising at a &gt;$100M valuation. Its flagship
+  <a href="/outputs/sapiens-ai/agnes-2.5-pro">Agnes 2.5 Pro</a> is a closed,
+  API-only multimodal reasoning model. <em>Architecture and parameter counts are
+  undisclosed &mdash; the least transparent of Singapore's model builders.</em></p>
+people:
+  - name: Bruce Yang
+    role: Founder
+    formerly: Microsoft; LinkedIn; NUS (PhD candidate); UC Berkeley; HEC Paris
+tags:
+  - reasoning
+  - multimodal
+  - agentic

@@ -5,6 +5,8 @@ date: 2025-09-29
 sources:
   - label: GitHub
     url: https://github.com/inclusionAI/Ling
+  - label: Artificial Analysis (Ring-2.6-1T)
+    url: https://artificialanalysis.ai/models/ring-2-6-1t
   - label: HuggingFace (Ring-1T)
     url: https://huggingface.co/inclusionAI/Ring-1T
   - label: HuggingFace (Ring-2.5-1T)
@@ -82,5 +84,7 @@ outputs:
       active_parameters: 63B
       context_window: 262144
       license: MIT
+      intelligence_index: 31
+      intelligence_index_version: "AA v4.1"
 related:
   - ling

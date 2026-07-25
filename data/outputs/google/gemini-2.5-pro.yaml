@@ -25,7 +25,7 @@ tags:
 model:
   architecture: moe
   context_window: 1000000
-  intelligence_index: 27
+  intelligence_index: 26
   intelligence_index_version: "AA v4.1"
   openness_index: 5.6
   openness_index_version: "AA Openness Index v1.0"

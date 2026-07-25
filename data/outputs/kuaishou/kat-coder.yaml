@@ -9,6 +9,8 @@ sources:
     url: https://kwaipilot.github.io/KAT-Coder/
   - label: API Docs
     url: https://kwaipilot.ai/
+  - label: Artificial Analysis (KAT-Coder-Pro V2)
+    url: https://artificialanalysis.ai/models/kat-coder-pro-v2
 description: >
   72B active parameter MoE coding model using the "AutoThink" paradigm.
   Designed for agentic coding with parallel tool calls to reduce interaction
@@ -36,6 +38,21 @@ outputs:
     model:
       architecture: moe
       active_parameters: 72B
+  - name: KAT-Coder-Pro V2
+    type: model
+    date: 2026-03-27
+    sources:
+      - label: Artificial Analysis
+        url: https://artificialanalysis.ai/models/kat-coder-pro-v2
+      - label: API Docs
+        url: https://kwaipilot.ai/
+    description: >
+      Kwaipilot's 2026 agentic-coding refresh of the KAT-Coder line.
+      <strong>AA Intelligence Index v4.1: 34</strong> (non-reasoning).
+    model:
+      architecture: moe
+      intelligence_index: 34
+      intelligence_index_version: "AA v4.1"
   - name: KAT-Coder Technical Report
     type: paper
     date: 2025-10-24

@@ -1,0 +1,31 @@
+name: Motif Technologies
+slug: motif
+url: https://motiftech.io
+huggingface: https://huggingface.co/Motif-Technologies
+region: korea
+founded: "2025"
+type: private
+description: >
+  <p><a href="https://motiftech.io">Motif Technologies</a> is a South Korean
+  (Seoul) AI foundation-model startup, spun out of GPU/infrastructure-software
+  company <strong>Moreh</strong> in February 2025. It pairs founder-CEO
+  <strong>Junghwan Lim</strong>'s model-design work with Moreh's training-stack
+  optimization to build full-stack, from-scratch Korean-and-English LLMs &mdash;
+  the <strong>Motif</strong> family.</p>
+
+  <p>Motif was selected as an elite team in Korea's Ministry of Science and ICT
+  <em>"Independent AI Foundation Model"</em> program (Feb 2026) and is
+  co-developing a 300B+-parameter reasoning LLM with 17 partners including
+  <a href="/labs/snu">Seoul National University</a> and
+  <a href="/labs/kaist">KAIST</a>. It raised a ~KRW 24B (~$16.6M) Series B in
+  mid-2026. Its <a href="/outputs/motif/motif-3">Motif 3</a> is the highest-scoring
+  Korean model on the Artificial Analysis Intelligence Index.</p>
+people:
+  - name: Junghwan Lim
+    role: CEO & Founder
+    formerly: Moreh (Director of AI); Samsung Research; PUBG; PhD Oxford; BS KAIST
+tags:
+  - open-weight
+  - moe
+  - reasoning
+  - frontier

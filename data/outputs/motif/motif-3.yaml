@@ -1,0 +1,38 @@
+name: Motif 3
+slug: motif-3
+lab: motif
+type: model
+date: 2026-07-14
+flagship: true
+sources:
+  - label: HuggingFace (Motif-3-Beta)
+    url: https://huggingface.co/Motif-Technologies/Motif-3-Beta
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/motif-0714
+description: >
+  <p><a href="/labs/motif">Motif Technologies</a>' frontier Korean/English
+  foundation model, released (as a Beta / intermediate checkpoint) in July 2026.
+  A <strong>~314B-total / ~13B-active sparse MoE</strong> with a
+  <strong>256K-token context</strong>. Its headline is the
+  <strong>AA Intelligence Index v4.1: 44</strong> &mdash; the
+  <strong>#1 Korean model</strong> on the index and, for a startup's first
+  frontier attempt, competitive with much larger labs' open models.</p>
+
+  <p>Weights are published on Hugging Face under a
+  <strong>non-commercial research-only</strong> license (personal, educational,
+  and non-commercial research permitted; commercial use requires written
+  permission). From a lab spun out of Moreh, trained from scratch on its
+  GPU-optimization stack.</p>
+tags:
+  - open-weight
+  - moe
+  - reasoning
+  - frontier
+model:
+  architecture: moe
+  parameters: 314B
+  active_parameters: 13B
+  context_window: 262144
+  intelligence_index: 44
+  intelligence_index_version: "AA v4.1"
+  license: Non-commercial research

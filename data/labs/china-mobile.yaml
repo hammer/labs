@@ -1,0 +1,25 @@
+name: China Mobile (Jiutian)
+slug: china-mobile
+url: https://jiutian.10086.cn
+wikipedia: https://en.wikipedia.org/wiki/China_Mobile
+region: china
+founded: "1997"
+type: public
+description: >
+  <p><strong>Jiutian (九天)</strong> is the in-house AI foundation-model brand of
+  <a href="https://en.wikipedia.org/wiki/China_Mobile">China Mobile</a>, the
+  state-owned telecom operator (the AI brand launched in 2019 and was elevated to
+  a strategic priority in 2023). It builds general and industry-specific
+  foundation models spanning language, vision, speech, structured data, and
+  multimodal, at parameter scales "from billions to trillions" &mdash; by late
+  2024 it reported a two-trillion-parameter multimodal model plus ~30 industry
+  models.</p>
+
+  <p>The <strong>JT</strong> ("Jiutian") series is its LLM line. Its
+  <a href="/outputs/china-mobile/jt-4.1-flash">JT-4.1 Flash</a> reached the
+  Chinese frontier tier for its class on the Artificial Analysis Intelligence
+  Index &mdash; a notable entry from a state-owned telecom rather than a
+  dedicated AI lab.</p>
+tags:
+  - moe
+  - frontier

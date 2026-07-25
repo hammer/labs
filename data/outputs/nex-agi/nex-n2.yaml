@@ -13,6 +13,8 @@ sources:
     url: https://huggingface.co/nex-agi/Nex-N2-mini
   - label: OpenRouter
     url: https://openrouter.ai/nex-agi/Nex-N2-Pro
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/nex-n2-pro
 description: >
   <p><a href="/labs/nex-agi">Nex-AGI</a>'s open-weight agentic model family,
   <strong>post-trained on the Qwen3.5 MoE series</strong> for first-tier coding
@@ -30,7 +32,8 @@ description: >
   recipe from <a href="/outputs/nex-agi/nex-n1">Nex-N1</a>. Self-reported
   Nex-N2-Pro: Terminal-Bench 2.1 75.3, SWE-Bench Verified 80.8, SWE-Bench Pro
   58.8, GDPval 1585, TAU3 71.1 — pacing GPT-5.5 / Opus 4.7 on coding and
-  long-horizon tasks. Not yet on the AA Intelligence Index.</p>
+  long-horizon tasks. <strong>AA Intelligence Index v4.1: 41</strong>
+  (Nex-N2-Pro).</p>
 tags:
   - frontier
   - open-weight
@@ -45,6 +48,8 @@ model:
   active_parameters: 17B
   base_model: qwen3.5
   license: Apache 2.0
+  intelligence_index: 41
+  intelligence_index_version: "AA v4.1"
   benchmark_scores:
     - benchmark: Terminal-Bench 2.1
       score: "75.3"
