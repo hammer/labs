@@ -100,6 +100,10 @@ people:
     description: >
       <p>PhD in Physics from Johns Hopkins University (advised by Jared Kaplan). Researcher at OpenAI. Co-authored the scaling laws paper with Kaplan. Co-founded Anthropic in 2021, serving as CTO.</p>
 news:
+  - title: "Claude Opus 5 Released — AA Intelligence Index 61 (#1), More Than Doubles Opus 4.8 on Frontier-Bench Coding"
+    url: https://www.anthropic.com/news/claude-opus-5
+    source: Anthropic
+    date: 2026-07-24
   - title: "Anthropic Secondary-Market Valuation Hits ~$1.2T, Passing OpenAI on Secondaries (Caplight Prints; Not a Round)"
     url: https://thenextweb.com/news/anthropic-1-2-trillion-secondary-valuation-openai
     source: The Next Web

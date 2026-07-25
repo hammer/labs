@@ -3,6 +3,7 @@ slug: solar-open-100b
 lab: upstage
 type: model
 date: 2026-01-11
+flagship: true
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2601.07022

@@ -1,0 +1,44 @@
+name: Claude Opus 5
+slug: claude-opus-5
+lab: anthropic
+type: model
+date: 2026-07-24
+flagship: true
+sources:
+  - label: Announcement
+    url: https://www.anthropic.com/news/claude-opus-5
+  - label: Model Page
+    url: https://www.anthropic.com/claude/opus
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/claude-opus-5
+description: >
+  <p>Anthropic's new flagship, under two months after
+  <a href="/outputs/anthropic/claude-opus-4.8">Opus 4.8</a> and a larger jump
+  than the recent point releases. <strong>AA Intelligence Index v4.1: 61</strong>
+  (#1 of 190, up from Opus 4.8's 56). The headline is coding and agentic work:
+  Anthropic reports Opus 5 <strong>more than doubles Opus 4.8</strong> on
+  Frontier-Bench v0.1, lands within 0.5% of <a href="/outputs/anthropic/claude-fable-5">Fable
+  5</a>'s peak on CursorBench 3.2 at half the cost, surpasses Fable 5 on
+  OSWorld 2.0 at roughly a third of the cost, and hits ~1.5&times; the next-best
+  model on Zapier's AutomationBench. On reasoning it scores about
+  <strong>3&times; the next-best model on ARC-AGI 3</strong>, and on science it
+  gains +10.2pp (organic chemistry) and +7.7pp (protein prediction) over Opus
+  4.8. API name <code>claude-opus-5</code>.</p>
+
+  <p>Priced at <strong>$5 / $25 per 1M input/output tokens</strong> with a
+  <strong>1M-token context</strong> (per Artificial Analysis). Carries forward
+  the effort control and ~2.5&times; fast mode (at 2&times; base price), and adds
+  beta mid-conversation tool changes and automatic API fallbacks. Available on
+  claude.ai, Claude Code, Claude Cowork, and the Claude API.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+model:
+  intelligence_index: 61
+  intelligence_index_version: "AA v4.1"
+  openness_index: 11.1
+  openness_index_version: "AA Openness Index v1.0 (family inference)"
+related:
+  - claude-opus-4.8
+  - claude-fable-5

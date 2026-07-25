@@ -3,6 +3,7 @@ slug: apertus
 lab: swiss-ai
 type: model
 date: 2025-09-02
+flagship: true
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2509.14233
