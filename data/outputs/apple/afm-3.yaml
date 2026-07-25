@@ -30,7 +30,6 @@ model:
       parameters: 3B
     - name: AFM 3 Core Advanced
       parameters: 20B
-      active_parameters: 1-4B
     - name: AFM 3 Cloud
     - name: ADM 3 Cloud (image)
     - name: AFM 3 Cloud Pro
