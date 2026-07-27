@@ -27,7 +27,7 @@ function log(name, ok, detail = '') {
     hasFilterBar: !!document.querySelector('.filter-bar .palette-btn'),
     paletteHidden: document.querySelector('.palette-panel').classList.contains('hidden'),
   }));
-  log('home: clean load', t.rows === 60 && t.visible === 60 && t.hasFilterBar && t.paletteHidden, JSON.stringify(t));
+  log('home: clean load', t.rows === 107 && t.visible === 107 && t.hasFilterBar && t.paletteHidden, JSON.stringify(t));
   await page.close();
 }
 
@@ -40,7 +40,7 @@ function log(name, ok, detail = '') {
     chips: document.querySelectorAll('.filter-chip').length,
     countText: document.querySelector('.filter-count').textContent,
   }));
-  log('home: ?region=china&intelligence=30-', t.visible === 7 && t.chips === 2, JSON.stringify(t));
+  log('home: ?region=china&intelligence=30-', t.visible === 13 && t.chips === 2, JSON.stringify(t));
   await page.close();
 }
 
@@ -91,7 +91,7 @@ function log(name, ok, detail = '') {
     url: window.location.search,
     visible: Array.from(document.querySelectorAll('.lab-row')).filter(r => r.style.display !== 'none').length,
   }));
-  log('home: select region=china', t.url === '?region=china' && t.visible === 25, JSON.stringify(t));
+  log('home: select region=china', t.url === '?region=china' && t.visible === 34, JSON.stringify(t));
   await page.close();
 }
 
@@ -167,7 +167,7 @@ function log(name, ok, detail = '') {
     visible: Array.from(document.querySelectorAll('.lab-row')).filter(r => r.style.display !== 'none').length,
     url: window.location.search,
   }));
-  log('home: Clear all', t.chips === 0 && t.visible === 60 && t.url === '', JSON.stringify(t));
+  log('home: Clear all', t.chips === 0 && t.visible === 107 && t.url === '', JSON.stringify(t));
   await page.close();
 }
 
