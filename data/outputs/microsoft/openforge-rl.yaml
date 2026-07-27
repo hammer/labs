@@ -1,0 +1,54 @@
+name: "OpenForgeRL: Train Harness-native Agents in Any Environment"
+slug: openforge-rl
+lab: microsoft
+type: paper
+date: 2026-07-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.21557
+description: >
+  <p>Open-source framework from Microsoft Research (with Columbia and Dartmouth;
+  MSR's Baolin Peng is project lead, senior author Jianfeng Gao) for
+  <strong>training harness-native agents end-to-end</strong>. Modern agents live
+  inside inference harnesses like Claude Code, Codex, and OpenClaw, but open
+  SFT/RL stacks cannot natively express their stateful, multi-process inference.
+  OpenForgeRL decouples the two with a <strong>lightweight proxy</strong> that
+  serves the harness's model calls while recording them as training samples for a
+  standard RL codebase (e.g., veRL), plus a <strong>Kubernetes orchestrator</strong>
+  that runs each rollout in its own remote container (building on Orchard Env),
+  scaling elastically on Azure &mdash; enabling SFT and RL on any harness in any
+  environment.</p>
+
+  <p>Recipe: <strong>Qwen3-30B-A3B-Thinking</strong> backbone, SFT distilled from
+  successful MiniMax-M2.5 teacher rollouts, then GRPO-style RL from the SFT
+  checkpoint. Using only hundreds to a few thousand tasks,
+  <strong>OpenForge-Claw</strong> reaches 31.7 pass&sup3; / 55.9 pass@3 on ClawEval
+  and 33.7 on QwenClawBench; <strong>OpenForge-GUI</strong> reaches 37.7 on
+  <a href="/outputs/hku/osworld">OSWorld</a>-Verified, 63.0 on Online-Mind2Web,
+  and 72.3 on WebVoyager &mdash; matching or surpassing models several times larger
+  in the GUI setting. The analysis shows harness choice shapes learnability (some
+  harnesses &mdash; ZeroClaw vs OpenClaw vs Codex &mdash; are substantially harder
+  to learn than others) and that RL improves agentic reliability
+  (self-verification, tool coverage, multi-step plans) while <strong>error recovery
+  remains weak</strong>. Part of the model&ndash;harness execution layer we track
+  alongside <a href="/outputs/hku/openharness">OpenHarness</a> and
+  <a href="/outputs/peking/harness-bench">Harness-Bench</a>. Code, data, and models
+  are promised but not yet public as of late July 2026 &mdash; watch for the repo.</p>
+tags:
+  - agents
+  - reinforcement-learning
+  - infrastructure
+  - post-training
+paper:
+  arxiv: "2607.21557"
+  authors:
+    - Xiao Yu
+    - Baolin Peng
+    - Ruize Xu
+    - Hao Zou
+    - Qianhui Wu
+    - Hao Cheng
+    - Wenlin Yao
+    - Nikhil Singh
+    - Zhou Yu
+    - Jianfeng Gao
