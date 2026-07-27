@@ -1,0 +1,82 @@
+name: "SOAP, Muon, and Beyond: Pushing LLM Pretraining Scales"
+slug: emerging-optimizers
+lab: nvidia
+date: 2026-07-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.20548
+  - label: GitHub (Emerging-Optimizers)
+    url: https://github.com/NVIDIA-NeMo/Emerging-Optimizers
+description: >
+  <p>Empirical and systems study of <strong>higher-order preconditioned optimizers at
+  production pretraining scale</strong>. Diagnoses SOAP's large-batch "slingshot"
+  instability &mdash; stale preconditioner eigenbases cause oscillations that a 621M
+  model damps out but that catastrophically diverge an 8B dense model &mdash; and
+  eliminates it with <strong>per-step QR orthogonalization</strong>, real-time
+  eigenbasis updates, and gradient covariance estimation via KL-divergence
+  minimization (the paper's KL-SOAP variant). Optimizers are compared under
+  <strong>update-RMS matching</strong> so learning rates transfer fairly across
+  AdamW, Muon, and SOAP.</p>
+
+  <p>On multi-billion-parameter dense (8B) and MoE configurations &mdash; including
+  Nemotron-3-Nano-30B-A3B (128 experts, top-6) and a Nemotron-3-72B-A8B config
+  (512 experts, top-6) &mdash; trained on ~3T-token horizons, <strong>SOAP and Muon
+  consistently outperform AdamW</strong> and stay stable at global batch sizes up to
+  <strong>100M tokens</strong>, past AdamW's critical batch size where its quality
+  degrades. The systems contribution is a <strong>layer-wise distributed
+  optimizer</strong> compatible with Megatron-LM that balances memory and hides
+  communication without approximating the optimizer computation, released in the
+  Apache-2.0 <strong>Emerging-Optimizers</strong> codebase. Senior authors include
+  <a href="/people/bryan-catanzaro">Bryan Catanzaro</a> and
+  <a href="/people/mohammad-shoeybi">Mohammad Shoeybi</a>. Extends the
+  head-to-head-optimizer line of Stanford's
+  <a href="/outputs/stanford/pretraining-optimizers">Fantastic Pretraining
+  Optimizers</a> and Moonshot AI's
+  <a href="/outputs/moonshot-ai/muon">Muon scaling work</a> from academic scales to
+  frontier batch sizes and token budgets.</p>
+tags:
+  - optimizer
+  - pretraining
+  - scaling
+  - infrastructure
+related:
+  - nemotron-3-nano
+  - megatron-lm
+outputs:
+  - name: SOAP, Muon, and Beyond (paper)
+    type: paper
+    date: 2026-07-13
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2607.20548
+    paper:
+      arxiv: "2607.20548"
+      authors:
+        - Mikail Khona
+        - Aditya Vavre
+        - Boxiang Wang
+        - Deyu Fu
+        - Hao Wu
+        - Mike Chrzanowski
+        - Bryan Catanzaro
+        - Dheevatsa Mudigere
+        - Jeff Pool
+        - Michael Lightstone
+        - Mohammad Shoeybi
+        - Mostofa Patwary
+        - Nima Tajbakhsh
+        - Tijmen Blankevoort
+      code_url: https://github.com/NVIDIA-NeMo/Emerging-Optimizers
+  - name: Emerging-Optimizers (codebase)
+    type: library
+    date: 2026-07-13
+    description: >
+      Open-source implementations of the paper's stabilized SOAP/Muon variants and
+      the layer-wise distributed optimizer, designed to compose with Megatron-LM.
+    sources:
+      - label: GitHub
+        url: https://github.com/NVIDIA-NeMo/Emerging-Optimizers
+    library:
+      github: https://github.com/NVIDIA-NeMo/Emerging-Optimizers
+      language: Python
+      license: Apache 2.0
