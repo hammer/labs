@@ -1,0 +1,99 @@
+---
+// Public read-only view of a shared collection (issue #52). Reachable only via
+// the unguessable share token; renders for anyone, no session ever read.
+import Layout from '../../components/Layout.astro';
+import { getSiteNames, targetUrl, targetLabel } from '../../lib/server/site-names';
+export const prerender = false;
+
+const env = (Astro.locals as any).runtime.env;
+// Never cache: revoking a share must take effect immediately (404s too — they
+// are heuristically cacheable otherwise). noindex both as header and meta —
+// opt-in shareable ≠ search-indexed.
+Astro.response.headers.set('cache-control', 'no-store');
+Astro.response.headers.set('x-robots-tag', 'noindex');
+Astro.response.headers.set('referrer-policy', 'same-origin');
+
+// Cap what one anonymous request can make the worker render — item targets are
+// format-validated, not existence-validated, so collections can be huge.
+const RENDER_CAP = 500;
+
+const publicId = Astro.params.public_id ?? '';
+// Public reads select only name/description and join items on the share token
+// itself — the numeric row id (the key notes target) and user_id never reach
+// public HTML.
+let coll: { name: string; description: string | null } | null = null;
+let items: { label: string; url: string | null }[] = [];
+let total = 0;
+if (/^[0-9a-f]{16,64}$/.test(publicId)) {
+  coll = await env.DB.prepare(
+    `SELECT name, description FROM collections WHERE public_id = ? AND is_public = 1`,
+  ).bind(publicId).first();
+  if (coll) {
+    const { results } = await env.DB.prepare(
+      `SELECT ci.target FROM collection_items ci
+         JOIN collections c ON c.id = ci.collection_id
+        WHERE c.public_id = ? AND c.is_public = 1
+        ORDER BY ci.position, ci.added_at LIMIT ${RENDER_CAP + 1}`,
+    ).bind(publicId).all();
+    const targets: string[] = (results ?? []).map((r: any) => r.target);
+    total = targets.length;
+    const names = await getSiteNames(env, Astro.url);
+    items = targets.slice(0, RENDER_CAP).map((t) => {
+      const url = targetUrl(t);
+      // With no index available (e.g. fresh checkout in dev) keep slug labels
+      // and links, like the private page. With an index, a missing target is a
+      // since-removed item — render as text, don't hand strangers dead links.
+      if (names.size === 0) return { label: targetLabel(t), url };
+      const name = url ? names.get(url) : undefined;
+      return name ? { label: name, url } : { label: targetLabel(t), url: null };
+    });
+  }
+}
+if (!coll) Astro.response.status = 404;
+const truncated = total > RENDER_CAP;
+const shownTotal = truncated ? `${RENDER_CAP}+` : String(total);
+const ogDescription = coll
+  ? coll.description || `A shared collection of ${total === 1 ? '1 item' : `${shownTotal} items`} on Lab Index`
+  : '';
+---
+<Layout title={coll ? coll.name : 'Collection not found'}>
+  <Fragment slot="head">
+    <meta name="robots" content="noindex" />
+    {coll && <meta property="og:title" content={`Shared collection: ${coll.name}`} />}
+    {coll && <meta property="og:description" content={ogDescription} />}
+  </Fragment>
+  <main class="pubcoll">
+    {coll && (
+      <>
+        <p class="pubcoll-note">A user-shared collection on <a href="/">Lab Index</a> — not curated site content.</p>
+        <h1>{coll.name}</h1>
+        {coll.description && <p class="pubcoll-desc">{coll.description}</p>}
+        <p class="pubcoll-meta">{total === 1 ? '1 item' : `${shownTotal} items`}</p>
+        {items.length === 0 && <p class="pubcoll-empty">This collection is empty.</p>}
+        <ul class="pubcoll-items">
+          {items.map((it) => (
+            <li>{it.url ? <a href={it.url}>{it.label}</a> : <span class="pubcoll-dead">{it.label}</span>}</li>
+          ))}
+        </ul>
+        {truncated && <p class="pubcoll-meta">Showing the first {RENDER_CAP} items.</p>}
+      </>
+    )}
+    {!coll && (
+      <>
+        <h1>Collection not found</h1>
+        <p>This collection may have been made private, or the link may be incorrect.</p>
+        <p><a href="/">← Lab Index home</a></p>
+      </>
+    )}
+  </main>
+
+  <style>
+    .pubcoll { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+    .pubcoll h1, .pubcoll-desc { overflow-wrap: anywhere; }
+    .pubcoll-note { font-size: 0.85rem; color: var(--text-muted, #888); border: 1px solid var(--border, #eee); border-radius: 6px; padding: 0.4rem 0.6rem; }
+    .pubcoll-items { list-style: none; margin: 1rem 0; padding: 0; }
+    .pubcoll-items li { padding: 0.25rem 0; overflow-wrap: anywhere; }
+    .pubcoll-dead { color: var(--text-muted, #999); }
+    .pubcoll-meta, .pubcoll-empty { color: var(--text-muted, #888); font-size: 0.9rem; }
+  </style>
+</Layout>

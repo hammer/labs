@@ -31,9 +31,13 @@ export function tagValue(tag: string): string {
   return c > 0 ? tag.slice(c + 1) : tag;
 }
 
-// Valid target key: 'output:<labSlug>/<slug>' or 'lab:<slug>'.
+// Valid target key: 'output:<labSlug>/<slug>' or 'lab:<slug>'. Each segment
+// needs at least one alphanumeric — dot-only segments ('output:../..') would
+// otherwise pass and render as path-traversal-looking links on shared pages.
+const SEG = '[a-z0-9._-]*[a-z0-9][a-z0-9._-]*';
+const TARGET_RE = new RegExp(`^(output:${SEG}/${SEG}|lab:${SEG})$`);
 export function isValidTarget(target: string): boolean {
-  return /^(output:[a-z0-9._-]+\/[a-z0-9._-]+|lab:[a-z0-9._-]+)$/.test(target);
+  return TARGET_RE.test(target);
 }
 
 // Notes may also target a collection.

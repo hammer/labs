@@ -106,6 +106,50 @@ for (const width of [360, 375, 390, 412]) {
   await page.close();
 }
 
+// ── Public collection share page 404 (issue #52) ──────────────────────
+// Unknown token → styled 404 from the on-demand route; seed-free, so the
+// suite can assert the new template's layout at every phone width. Needs
+// migration 0006 on the local D1 (wrangler d1 migrations apply … --local).
+{
+  const path = '/collections/00000000000000000000000000000000';
+  for (const width of widths) {
+    const viewport = { width, height: 800 };
+    let page = await newPage(viewport);
+    page = await goVisit(page, viewport, `${BASE}${path}`);
+    const t = await page.evaluate(() => ({
+      scrollW: document.documentElement.scrollWidth,
+      innerW: window.innerWidth,
+      h1: document.querySelector('.pubcoll h1')?.textContent ?? '',
+    }));
+    log(`share-page 404 renders, no h-overflow @ ${width}px`,
+      t.h1 === 'Collection not found' && t.scrollW <= t.innerW, JSON.stringify(t));
+    await page.close();
+  }
+}
+
+// ── Collections sharing pane layout (issue #52) ───────────────────────
+// The suite runs logged-out, so DOM-inject the worst-case signed-in state:
+// 120-char unbroken collection name + the public link row with a full URL.
+for (const width of [360, 375, 412, 600]) {
+  const page = await newPage({ width, height: 800 });
+  await page.goto(`${BASE}/collections`, { waitUntil: 'networkidle' });
+  const t = await page.evaluate(() => {
+    document.getElementById('coll-app').hidden = false;
+    document.getElementById('coll-detail').hidden = false;
+    document.getElementById('coll-detail-name').textContent = 'x'.repeat(120);
+    document.getElementById('cs-private').hidden = true;
+    document.getElementById('cs-public').hidden = false;
+    document.getElementById('cs-url').value =
+      location.origin + '/collections/' + 'a'.repeat(32);
+    return {
+      scrollW: document.documentElement.scrollWidth,
+      innerW: window.innerWidth,
+    };
+  });
+  log(`collections sharing pane no h-overflow @ ${width}px`, t.scrollW <= t.innerW, JSON.stringify(t));
+  await page.close();
+}
+
 // ── Search dropdown stays within the viewport ─────────────────────────
 for (const width of [375, 620]) {
   const page = await newPage({ width, height: 800 });

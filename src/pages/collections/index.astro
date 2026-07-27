@@ -1,0 +1,185 @@
+---
+import Layout from '../../components/Layout.astro';
+// Static shell; the collection list + items are user data rendered client-side.
+---
+<Layout title="Collections">
+  <main class="collections">
+    <h1>Collections</h1>
+    <div id="coll-loading">Loading…</div>
+    <p id="coll-signedout" hidden>Please <a href="/account">sign in</a> to create collections.</p>
+    <div id="coll-app" hidden>
+      <form id="coll-create">
+        <input id="coll-create-name" type="text" placeholder="New collection name…" maxlength="120" />
+        <button type="submit">Create</button>
+      </form>
+      <div class="coll-layout">
+        <ul id="coll-list" class="coll-list"></ul>
+        <section id="coll-detail" class="coll-detail" hidden>
+          <h2 id="coll-detail-name"></h2>
+          <p id="coll-detail-desc" hidden></p>
+          <div id="coll-share" class="coll-share">
+            <div id="cs-private" hidden>
+              <button id="cs-publish" type="button">Share publicly</button>
+            </div>
+            <div id="cs-public" hidden>
+              <div class="cs-linkrow">
+                <span class="coll-badge">Public</span>
+                <input id="cs-url" type="text" readonly aria-label="Public link" />
+                <button id="cs-copy" type="button">Copy</button>
+                <button id="cs-unpublish" type="button">Make private</button>
+              </div>
+            </div>
+            <span id="cs-live" class="cs-live" aria-live="polite"></span>
+          </div>
+          <details class="coll-desc-edit">
+            <summary>Edit description</summary>
+            <form id="coll-desc-form">
+              <textarea id="coll-desc-input" maxlength="500" rows="3" placeholder="Description, shown on the public page…"></textarea>
+              <button type="submit">Save</button>
+            </form>
+          </details>
+          <button id="coll-delete" class="coll-del" type="button">Delete collection</button>
+          <ul id="coll-items" class="coll-items"></ul>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const H = { 'x-requested-with': 'labindex' };
+    const $ = (id) => document.getElementById(id);
+    let selected = null;
+    function url(t) { if (t.startsWith('output:')) return '/outputs/' + t.slice(7); if (t.startsWith('lab:')) return '/labs/' + t.slice(4); return '#'; }
+    function label(t) { return (t.split('/').pop() || t).replace(/^(output:|lab:)/, ''); }
+
+    async function loadList() {
+      let res;
+      try { res = await fetch('/api/me/collections', { headers: H }); } catch { $('coll-loading').textContent = 'Failed to load.'; return; }
+      $('coll-loading').hidden = true;
+      if (res.status !== 200) { res.body?.cancel(); $('coll-signedout').hidden = false; return; }
+      $('coll-app').hidden = false;
+      const { collections } = await res.json();
+      const list = $('coll-list'); list.innerHTML = '';
+      if (!collections.length) { const li = document.createElement('li'); li.className = 'coll-empty'; li.textContent = 'No collections yet — create one above.'; list.appendChild(li); }
+      for (const c of collections) {
+        const li = document.createElement('li');
+        const a = document.createElement('button'); a.type = 'button'; a.className = 'coll-name';
+        a.textContent = `${c.name} (${c.n})`;
+        a.addEventListener('click', () => openCollection(c));
+        li.appendChild(a);
+        if (c.is_public) { const b = document.createElement('span'); b.className = 'coll-badge'; b.textContent = 'Public'; li.appendChild(b); }
+        list.appendChild(li);
+      }
+    }
+
+    function renderShare() {
+      if (!selected) return;
+      $('cs-private').hidden = !!selected.is_public;
+      $('cs-public').hidden = !selected.is_public;
+      if (selected.is_public && selected.public_id) $('cs-url').value = location.origin + '/collections/' + selected.public_id;
+    }
+
+    // PATCH the selected collection ({public} and/or {description}); the
+    // response is the fresh row, which replaces `selected`.
+    async function patchSelected(patch) {
+      const res = await fetch('/api/me/collections', { method: 'PATCH', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ id: selected.id, ...patch }) });
+      if (!res.ok) return null;
+      const { collection } = await res.json();
+      selected = collection;
+      return collection;
+    }
+
+    async function openCollection(c) {
+      selected = c;
+      $('coll-detail').hidden = false;
+      $('coll-detail-name').textContent = c.name;
+      $('coll-detail-desc').textContent = c.description || '';
+      $('coll-detail-desc').hidden = !c.description;
+      $('coll-desc-input').value = c.description || '';
+      renderShare();
+      const res = await fetch(`/api/me/collection-items?collection_id=${c.id}`, { headers: H });
+      const items = res.ok ? (await res.json()).items : [];
+      const ul = $('coll-items'); ul.innerHTML = '';
+      if (!items.length) { const li = document.createElement('li'); li.textContent = 'Empty — add items from any output or lab page.'; ul.appendChild(li); }
+      for (const t of items) {
+        const li = document.createElement('li');
+        const a = document.createElement('a'); a.href = url(t); a.textContent = label(t);
+        const rm = document.createElement('button'); rm.type = 'button'; rm.className = 'coll-rm'; rm.textContent = '×';
+        rm.addEventListener('click', async () => { await fetch(`/api/me/collection-items?collection_id=${c.id}&target=${encodeURIComponent(t)}`, { method: 'DELETE', headers: H }); openCollection(selected); loadList(); });
+        li.append(a, rm); ul.appendChild(li);
+      }
+    }
+
+    $('coll-create').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = $('coll-create-name').value.trim(); if (!name) return;
+      await fetch('/api/me/collections', { method: 'POST', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ name }) });
+      $('coll-create-name').value = ''; loadList();
+    });
+    $('coll-delete').addEventListener('click', async () => {
+      if (!selected || !confirm(`Delete collection "${selected.name}"?`)) return;
+      await fetch(`/api/me/collections?id=${selected.id}`, { method: 'DELETE', headers: H });
+      $('coll-detail').hidden = true; selected = null; loadList();
+    });
+
+    $('cs-publish').addEventListener('click', async () => {
+      if (!selected || !confirm(`Share "${selected.name}" publicly? Anyone with the link will be able to view its name, description, and items.`)) return;
+      if (await patchSelected({ public: true })) { renderShare(); loadList(); }
+    });
+    $('cs-unpublish').addEventListener('click', async () => {
+      if (!selected) return;
+      if (await patchSelected({ public: false })) { renderShare(); loadList(); }
+    });
+    $('cs-copy').addEventListener('click', async () => {
+      const input = $('cs-url');
+      try { await navigator.clipboard.writeText(input.value); }
+      catch { input.focus(); input.select(); return; } // no clipboard API: leave the URL selected for manual copy
+      const btn = $('cs-copy'); btn.textContent = 'Copied'; $('cs-live').textContent = 'Link copied';
+      setTimeout(() => { btn.textContent = 'Copy'; $('cs-live').textContent = ''; }, 1500);
+    });
+    $('coll-desc-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!selected) return;
+      const c = await patchSelected({ description: $('coll-desc-input').value });
+      if (c) {
+        $('coll-detail-desc').textContent = c.description || '';
+        $('coll-detail-desc').hidden = !c.description;
+        $('coll-desc-input').value = c.description || '';
+      }
+    });
+    loadList();
+  </script>
+
+  <style>
+    .collections { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+    #coll-create { display: flex; gap: 0.4rem; margin: 1rem 0; }
+    #coll-create input { flex: 1; border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.4rem 0.6rem; }
+    #coll-create button, #coll-delete { border: 1px solid var(--border, #ddd); border-radius: 6px; background: transparent; cursor: pointer; padding: 0.4rem 0.8rem; }
+    .coll-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 1.5rem; }
+    .coll-list, .coll-items { list-style: none; margin: 0; padding: 0; }
+    .coll-list li { display: flex; align-items: center; gap: 0.4rem; }
+    .coll-name { background: transparent; border: none; cursor: pointer; text-align: left; padding: 0.3rem 0; color: var(--color-accent, #0645ad); font-size: 0.95rem; overflow-wrap: anywhere; min-width: 0; }
+    #coll-detail-name { overflow-wrap: anywhere; }
+    #coll-detail-desc { overflow-wrap: anywhere; color: var(--text-muted, #666); margin: 0.2rem 0 0.4rem; }
+    .coll-items li { display: flex; align-items: center; justify-content: space-between; padding: 0.25rem 0; }
+    .coll-rm { border: none; background: transparent; cursor: pointer; color: var(--text-muted, #999); }
+    .coll-detail { border-left: 1px solid var(--border, #eee); padding-left: 1.5rem; }
+    .coll-del { margin-bottom: 0.6rem; }
+    .coll-empty { color: var(--text-muted, #888); }
+    .coll-share { margin: 0.4rem 0 0.6rem; }
+    .cs-linkrow { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+    #cs-url { flex: 1 1 160px; min-width: 0; border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.3rem 0.5rem; color: var(--text-muted, #666); background: transparent; }
+    #cs-publish, #cs-copy, #cs-unpublish, .coll-desc-edit button { border: 1px solid var(--border, #ddd); border-radius: 6px; background: transparent; cursor: pointer; padding: 0.3rem 0.7rem; }
+    .coll-badge { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--color-accent, #0645ad); border: 1px solid currentColor; border-radius: 999px; padding: 0.05rem 0.45rem; white-space: nowrap; }
+    .coll-desc-edit { margin: 0.4rem 0 0.8rem; font-size: 0.85rem; }
+    .coll-desc-edit summary { cursor: pointer; color: var(--text-muted, #888); }
+    .coll-desc-edit form { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.4rem; }
+    .coll-desc-edit textarea { border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.4rem 0.6rem; resize: vertical; font: inherit; }
+    .coll-desc-edit button { align-self: flex-start; }
+    .cs-live { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    @media (pointer: coarse) {
+      #cs-publish, #cs-copy, #cs-unpublish, #coll-create button, #coll-delete, .coll-desc-edit button { min-height: 44px; }
+    }
+    @media (max-width: 600px) { .coll-layout { grid-template-columns: 1fr; } .coll-detail { border-left: none; padding-left: 0; } }
+  </style>
+</Layout>

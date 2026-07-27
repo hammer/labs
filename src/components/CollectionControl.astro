@@ -47,7 +47,13 @@ const { target } = Astro.props;
         const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = member.has(c.id);
         cb.addEventListener('change', () => cb.checked ? add(c.id) : remove(c.id));
         const name = document.createElement('span'); name.textContent = c.name;
-        lbl.append(cb, name); li.appendChild(lbl); list.appendChild(li);
+        lbl.append(cb, name);
+        if (c.is_public) {
+          // Adding an item to a public collection is a public act — mark it.
+          const pub = document.createElement('span'); pub.className = 'cc-pub'; pub.textContent = 'public';
+          lbl.appendChild(pub);
+        }
+        li.appendChild(lbl); list.appendChild(li);
       }
     }
 
@@ -81,6 +87,7 @@ const { target } = Astro.props;
   .cc-menu { position: absolute; z-index: 20; margin-top: 0.25rem; min-width: 220px; background: var(--bg, #fff); border: 1px solid var(--border, #ddd); border-radius: 8px; padding: 0.5rem; box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
   .cc-list { list-style: none; margin: 0 0 0.4rem; padding: 0; max-height: 260px; overflow-y: auto; }
   .cc-item { display: flex; align-items: center; gap: 0.5rem; padding: 0.2rem 0; cursor: pointer; }
+  .cc-pub { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--color-accent, #0645ad); border: 1px solid currentColor; border-radius: 999px; padding: 0 0.4rem; white-space: nowrap; }
   .cc-empty { color: var(--text-muted, #888); }
   .cc-new { display: flex; gap: 0.3rem; border-top: 1px solid var(--border, #eee); padding-top: 0.4rem; }
   .cc-new-input { flex: 1; border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.2rem 0.4rem; }
