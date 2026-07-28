@@ -140,7 +140,7 @@ const dimensions: FilterDimension[] = [
                   height="20"
                   loading="lazy"
                 />
-                <span class="lab-name">{lab.name}</span>
+                <span class="lab-name" title={lab.name}>{lab.name}</span>
                 <span class="lab-flag" aria-hidden="true">{regionFlags[lab.region] ?? ''}</span>
               </span>
             </td>
@@ -513,9 +513,19 @@ const dimensions: FilterDimension[] = [
     color: var(--text);
   }
 
+  /* Sort-arrow space is reserved only on the actively-sorted column, at all
+     widths. Reserving it on every header cost ~130px across 11 columns and
+     pushed the full table past 1280px viewports (2026-07 remeasure); the
+     tradeoff is a small header shift when the sorted column changes. */
   th.sortable::after {
     content: '';
     display: inline-block;
+    width: 0;
+    margin-left: 0;
+  }
+
+  th.sort-asc::after,
+  th.sort-desc::after {
     width: 0.6em;
     margin-left: 0.3em;
   }
@@ -568,6 +578,16 @@ const dimensions: FilterDimension[] = [
   .col-name {
     font-weight: 600;
     white-space: nowrap;
+  }
+
+  /* Long university names (added in #12) would otherwise set the table's
+     min-content — "Shanghai Jiao Tong University" alone is 235px. Ellipsize
+     past 200px; the full name is one click away on the lab page. Phones
+     tighten this to 104px in the 600px tier. */
+  .lab-name {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .lab-name-inner {
@@ -663,12 +683,17 @@ const dimensions: FilterDimension[] = [
   }
 
   /* ─── Responsive column tiers ─────────────────────────────────────────
-     The full 11-column table is ~1072px wide (min-content), so it overflows
-     every viewport below ~1104px. Columns trim progressively; sorting and
-     filtering read row data-* attributes, so hiding cells is CSS-only.
-     Hidden columns remain filterable via the filter palette. */
+     Columns trim progressively; sorting and filtering read row data-*
+     attributes, so hiding cells is CSS-only. Hidden columns remain
+     filterable via the filter palette.
 
-  @media (max-width: 1104px) {
+     Measured 2026-07-28 (Playwright sweep, after active-only sort-arrow
+     reservation + 200px lab-name cap): full 11-column set fits at ≥1170px;
+     the sets below each fit to the bottom of their bands. Re-measure with
+     the sweep when adding a column or after data growth — lab-name and
+     header changes moved these boundaries once before (#49 family). */
+
+  @media (max-width: 1176px) {
     th.col-founded, td.col-founded,
     th.col-ipo, td.col-ipo,
     th.col-valuation, td.col-valuation {
@@ -692,17 +717,6 @@ const dimensions: FilterDimension[] = [
     .lab-row td {
       padding-left: 0.5rem;
       padding-right: 0.5rem;
-    }
-
-    /* Reserve sort-arrow space only on the active column. */
-    th.sortable::after {
-      width: 0;
-      margin-left: 0;
-    }
-    th.sort-asc::after,
-    th.sort-desc::after {
-      width: 0.6em;
-      margin-left: 0.3em;
     }
   }
 
