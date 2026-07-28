@@ -31,5 +31,9 @@ tags:
   - agentic
 model:
   context_window: 1000000
+  # No evidence of from-scratch pretraining despite marketing: the founder
+  # describes post-training from Qwen/DeepSeek checkpoints (see description).
+  # Base is undisclosed and possibly multiple, so flagged directly.
+  pretrained_from_scratch: false
   intelligence_index: 39
   intelligence_index_version: "AA v4.1"

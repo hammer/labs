@@ -40,7 +40,9 @@ function log(name, ok, detail = '') {
     chips: document.querySelectorAll('.filter-chip').length,
     countText: document.querySelector('.filter-count').textContent,
   }));
-  log('home: ?region=china&intelligence=30-', t.visible === 13 && t.chips === 2, JSON.stringify(t));
+  // 13 → 11 after the from-scratch audit: Kuaishou (KAT-Coder-Pro V2 ← Qwen
+  // base) and Nex-AGI (Nex-N2 ← Qwen3.5) no longer count toward Intelligence.
+  log('home: ?region=china&intelligence=30-', t.visible === 11 && t.chips === 2, JSON.stringify(t));
   await page.close();
 }
 

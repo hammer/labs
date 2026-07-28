@@ -28,6 +28,11 @@ model:
   architecture: dense
   parameters: 31B
   context_window: 64000
+  # Scaled up from Solar Pro (22B), itself depth-up-scaled from Microsoft's
+  # Phi-3-medium 14B — the lineage starts from an external base, not Upstage
+  # pretraining. Phi-3 isn't a tracked output, so the exclusion is flagged
+  # directly instead of via base_model.
+  pretrained_from_scratch: false
   intelligence_index: 8
   intelligence_index_version: "AA v4.1"
   openness_index: 11.1

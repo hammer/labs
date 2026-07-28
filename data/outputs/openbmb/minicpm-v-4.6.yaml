@@ -29,6 +29,10 @@ model:
   architecture: dense
   parameters: 1.3B
   context_window: 262144
+  # SigLIP2-400M vision encoder + Qwen3.5-0.8B LLM backbone (per the HF model
+  # card and config.json, model_type qwen3_5_text) — not an OpenBMB from-scratch
+  # base, so it doesn't count toward the home Intelligence column.
+  base_model: qwen3.5
   intelligence_index: 7
   intelligence_index_version: "AA v4.1"
 related:

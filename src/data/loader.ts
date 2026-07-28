@@ -320,6 +320,13 @@ interface TopIntelligence {
   opennessVersion?: string;
 }
 
+/** Labs of the output a base_model slug points at ([] if untracked). */
+function labsOfOutputSlug(slug: string): string[] {
+  const out = loadOutputs().find((o) => o.slug === slug);
+  if (!out) return [];
+  return Array.isArray(out.lab) ? out.lab : [out.lab];
+}
+
 /**
  * Get the highest intelligence_index score across all outputs for a lab.
  * Only AA v4-tagged scores count — same rule as the timeline's Intelligence
@@ -329,6 +336,13 @@ interface TopIntelligence {
  * set ("Option C" — see issue #42). AA's openness coverage drifts behind the
  * latest AAII checkpoints, so always preferring the absolute top-AAII would
  * leave the openness slot empty for many labs.
+ *
+ * Only models the lab pretrained from scratch count toward its slot: a model
+ * whose base_model resolves to another lab's output (Llama-Nemotron ← Llama
+ * 3.1), or with pretrained_from_scratch: false, is skipped — its score mostly
+ * reflects the upstream lab's pretraining. Same-lab derivation (Kimi K2.5 ←
+ * Kimi K2) still counts; the check is single-hop, so a same-lab base that is
+ * itself externally derived needs an explicit pretrained_from_scratch: false.
  */
 export function getTopIntelligence(labSlug: string): TopIntelligence | null {
   const outputs = getOutputsForLab(labSlug);
@@ -336,16 +350,24 @@ export function getTopIntelligence(labSlug: string): TopIntelligence | null {
   let topWithOpenness: TopIntelligence | null = null;
 
   function check(
-    score: number | undefined,
-    version: string | undefined,
-    openness: number | undefined,
-    opennessVersion: string | undefined,
+    model: {
+      intelligence_index?: number;
+      intelligence_index_version?: string;
+      openness_index?: number;
+      openness_index_version?: string;
+      base_model?: string;
+      pretrained_from_scratch?: boolean;
+    },
     displayName: string,
     outputSlug: string,
     outLabSlug: string,
   ) {
+    const { intelligence_index: score, intelligence_index_version: version,
+      openness_index: openness, openness_index_version: opennessVersion } = model;
     if (!score) return;
     if (!(version ?? '').startsWith('AA v4')) return;
+    if (model.pretrained_from_scratch === false) return;
+    if (model.base_model && !labsOfOutputSlug(model.base_model).includes(labSlug)) return;
     const entry: TopIntelligence = {
       score, name: displayName, slug: outputSlug, labSlug: outLabSlug,
       openness, opennessVersion,
@@ -363,12 +385,12 @@ export function getTopIntelligence(labSlug: string): TopIntelligence | null {
     if (isGrouped(output)) {
       for (const sub of output.outputs) {
         if (sub.model) {
-          check(sub.model.intelligence_index, sub.model.intelligence_index_version, sub.model.openness_index, sub.model.openness_index_version, baseName, oSlug, oLab);
+          check(sub.model, baseName, oSlug, oLab);
         }
       }
     } else {
       if (output.model) {
-        check(output.model.intelligence_index, output.model.intelligence_index_version, output.model.openness_index, output.model.openness_index_version, baseName, oSlug, oLab);
+        check(output.model, baseName, oSlug, oLab);
       }
     }
   }

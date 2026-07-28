@@ -14,10 +14,19 @@ sources:
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/hyperclova-x-seed-think-32b
 description: >
-  Vision-language reasoning model with chain-of-thought and agentic
+  <p>Vision-language reasoning model with chain-of-thought and agentic
   capabilities. 32B parameters, 128K context. Supports text, image,
   and video input. AA Intelligence Index v4.1: 17 (AA-estimated). Open
-  weights with commercial license. Also available as 14B variant.
+  weights with commercial license. Also available as 14B variant
+  (text-only, pruned + distilled from Naver's production HCX-007).</p>
+
+  <p><em>Provenance: the text backbone is Naver's own from-scratch
+  lineage &mdash; a custom 72-layer HyperCLOVAX architecture with Naver's
+  in-house tokenizer, descended from the ~6T-token HyperCLOVA X THINK
+  pretrain; no Qwen shape or tokenizer match. The 32B's vision encoder,
+  however, adopts Qwen2.5-VL's ViT &mdash; Jan 2026 Korean press reported
+  &gt;99% weight similarity, fueling a sovereign-AI controversy. Naver
+  maintains the reasoning core is fully proprietary.</em></p>
 tags:
   - reasoning
   - multimodal

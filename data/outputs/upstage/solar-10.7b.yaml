@@ -30,6 +30,10 @@ tags:
 model:
   architecture: dense
   parameters: 10.7B
+  # Depth-up-scaled from Mistral 7B weights (see description) — not pretrained
+  # from scratch by Upstage, so it doesn't count toward the home Intelligence
+  # column.
+  base_model: mistral-7b
   intelligence_index: 6
   intelligence_index_version: "AA v4.1"
 paper:

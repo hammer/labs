@@ -19,7 +19,13 @@ description: >
   frontier lab. Released 9 July 2026.</p>
 
   <p><em>Weights are not publicly available; the 21B active-parameter figure
-  follows China Mobile's "236B A21B" model-naming convention.</em></p>
+  follows China Mobile's "236B A21B" model-naming convention. The 236B/21B
+  MoE config matches DeepSeek-V2's published architecture, but the Jiutian
+  team's documented pattern is adopting open architectures while pretraining
+  from scratch (JT-Coder-8B-Base is stated "from-scratch" with a
+  Qwen-compatible design, and JT-Safe/arXiv 2510.17918 documents the sibling
+  JT-35B-Base's full in-house pretraining pipeline on domestic clusters) —
+  no source claims weight-level derivation.</em></p>
 tags:
   - moe
   - frontier

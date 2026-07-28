@@ -49,8 +49,17 @@ outputs:
     description: >
       Kwaipilot's 2026 agentic-coding refresh of the KAT-Coder line.
       <strong>AA Intelligence Index v4.1: 34</strong> (non-reasoning).
+      Base undisclosed; the KAT line is post-trained from external
+      pretrained bases (Kwaipilot's own pipeline description is
+      "fine-tuned a pretrained model", the open V1 sibling
+      KAT-Dev-72B-Exp is architecturally Qwen2.5-72B, and the open
+      V2.5 sibling is built on Qwen3.6-35B-A3B).
     model:
       architecture: moe
+      # No from-scratch pretraining claim anywhere; vendor docs describe
+      # post-training of external (Qwen-family) bases. Base undisclosed for
+      # the proprietary checkpoint, so flagged directly.
+      pretrained_from_scratch: false
       intelligence_index: 34
       intelligence_index_version: "AA v4.1"
   - name: KAT-Coder Technical Report

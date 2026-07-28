@@ -21,6 +21,13 @@ description: >
   <strong>25</strong> at ~929 tok/s &mdash; roughly 10x faster than comparable
   autoregressive models at similar quality. A genuinely novel architecture paradigm.
   By Khanna, Kharbanda, Li, Ermon, Grover, Kuleshov et al.</p>
+
+  <p><em>Provenance: initialization is undisclosed (closed weights, no parameter
+  counts), but the tech report frames Mercury as extending the founders' MDLM
+  from-scratch masked-diffusion pretraining line, "trained on the order of
+  trillions of tokens" of web + proprietary data, and cites no AR-to-diffusion
+  adaptation work &mdash; consistent with an in-house pretrain rather than an
+  open-checkpoint conversion.</em></p>
 tags:
   - foundational
   - reasoning

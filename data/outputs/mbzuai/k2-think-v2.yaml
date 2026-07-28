@@ -36,6 +36,7 @@ model:
   architecture: dense
   parameters: 70B
   context_window: 262144
+  base_model: k2-v2
   intelligence_index: 17
   intelligence_index_version: "AA v4.1"
   openness_index: 88.9

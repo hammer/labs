@@ -102,6 +102,14 @@ const ModelDetailsSchema = z.object({
   openness_index_version: z.string().optional(),
   training_tokens: z.string().optional(),
   base_model: z.string().optional(),
+  // Set to false when the model was NOT pretrained from scratch by the
+  // releasing lab (post-trained, upscaled, or otherwise derived from an
+  // external base). Only needed when base_model can't express it — e.g. the
+  // base is untracked (Solar Pro 2 ← Phi-3-medium) or undisclosed/multiple
+  // (Agnes 2.5 Pro). Models with this set to false, or whose base_model
+  // resolves to another lab's output, are excluded from the home page's
+  // Intelligence column (getTopIntelligence).
+  pretrained_from_scratch: z.boolean().optional(),
   variants: z.array(ModelVariantSchema).optional(),
   // Enhanced fields
   training_hardware: z.string().optional(),
