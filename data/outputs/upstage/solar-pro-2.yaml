@@ -10,8 +10,15 @@ sources:
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/solar-pro-2
 description: >
-  <p>31B-parameter proprietary model with 64K context, built by scaling
-  up Solar Pro (22B, itself depth-up-scaled from Phi-3-medium 14B). Two
+  <p>31B-parameter proprietary model with 64K context, continuing the
+  Solar line's depth-up-scaling lineage. Upstage frames it as an upgrade
+  of Solar Pro (22B, itself depth-up-scaled from Phi-3-medium 14B);
+  ZDNet Korea's 2025 sovereign-AI tier taxonomy classifies it as a fresh
+  DUS of <strong>Phi-4 (14B)</strong>. Either way the weight lineage is
+  external (Microsoft Phi): Upstage published no tech report for it,
+  never claimed from-scratch pretraining, and later conceded its
+  pre-Solar-Open models "were redesigned from reference models using
+  DUS" &mdash; reserving "from scratch" for the Solar Open line. Two
   operating modes: <strong>Chat</strong> (fast, fluent) and
   <strong>Reasoning</strong> (multi-step CoT for math, code, logic).
   Designed to fit on a single GPU.</p>
@@ -28,10 +35,12 @@ model:
   architecture: dense
   parameters: 31B
   context_window: 64000
-  # Scaled up from Solar Pro (22B), itself depth-up-scaled from Microsoft's
-  # Phi-3-medium 14B — the lineage starts from an external base, not Upstage
-  # pretraining. Phi-3 isn't a tracked output, so the exclusion is flagged
-  # directly instead of via base_model.
+  # External Microsoft-Phi lineage via depth-up-scaling (Phi-4 fresh DUS per
+  # ZDNet's tier taxonomy, or a scale-up of the Phi-3-medium-derived Solar
+  # Pro per Upstage's own framing — not from scratch either way; Upstage
+  # itself described its pre-Solar-Open models as "reference + DUS"). The
+  # Phi bases aren't tracked outputs, so the exclusion is flagged directly
+  # instead of via base_model.
   pretrained_from_scratch: false
   intelligence_index: 8
   intelligence_index_version: "AA v4.1"

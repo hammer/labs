@@ -9,6 +9,8 @@ sources:
     url: https://arxiv.org/abs/2601.07022
   - label: HuggingFace
     url: https://huggingface.co/upstage/Solar-Open-100B
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/solar-open-100b-reasoning
 description: >
   <p>102.6B-parameter bilingual (English/Korean) MoE model with 12B active
   parameters per token. Architecture: 48 layers, 129 experts (128 routed +
@@ -33,6 +35,13 @@ description: >
   KMMLU: 73.0. Matched GLM-4.5-Base performance at 48% of its English training
   budget and 77% of its Korean budget. Korean domain expertise leads: +8.6pp
   medical, +3.0pp finance, +2.7pp law vs comparable models. Apache 2.0.</p>
+
+  <p><em>Provenance: Upstage's first from-scratch pretrain, breaking the Solar
+  line's earlier reference-plus-DUS pattern &mdash; the tech report states
+  verbatim it "was built from scratch." A January 2026 allegation that it
+  derived from Zhipu's GLM-4.5-Air (a claimed 99% weight similarity) was
+  rebutted at a public verification event with full W&amp;B training records,
+  after which the accuser apologized.</em></p>
 tags:
   - moe
   - open-weight
@@ -44,6 +53,9 @@ model:
   active_parameters: 12B
   context_window: 131072
   training_tokens: 19.7T
+  # Reasoning mode (highest-mode rule); AA leaderboard 15.1 as of 2026-07-28.
+  intelligence_index: 15
+  intelligence_index_version: "AA v4.1"
 paper:
   arxiv: "2601.07022"
 related:
