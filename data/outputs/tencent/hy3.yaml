@@ -55,7 +55,7 @@ model:
   context_window: 256000
   intelligence_index: 41
   intelligence_index_version: "AA v4.1"
-  openness_index: 33.3
+  openness_index: 44.4
   openness_index_version: "AA Openness Index v1.0"
 related:
   - hunyuan-2.0

@@ -11,6 +11,8 @@ sources:
     url: https://www.kimi.com/code
   - label: Moonshot platform (API)
     url: https://platform.moonshot.ai
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/kimi-k2-7-code
 description: >
   <p><strong>Coding-focused agentic model built on
   <a href="/outputs/moonshot-ai/kimi-k2.6">Kimi K2.6</a></strong> — same
@@ -47,6 +49,10 @@ model:
   context_window: 262144
   base_model: kimi-k2.6
   license: Modified MIT
+  intelligence_index: 42
+  intelligence_index_version: "AA v4.1"
+  openness_index: 27.8
+  openness_index_version: "AA Openness Index v1.0"
   benchmark_scores:
     - benchmark: Kimi Code Bench v2
       score: "62.0"

@@ -38,6 +38,8 @@ model:
   license: Apache 2.0
   intelligence_index: 30
   intelligence_index_version: "AA v4.1"
+  openness_index: 38.9
+  openness_index_version: "AA Openness Index v1.0"
 related:
   - step-3.5-flash
   - step-3

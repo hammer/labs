@@ -46,6 +46,8 @@ model:
   context_window: 1048576
   intelligence_index: 44
   intelligence_index_version: "AA v4.1"
+  openness_index: 33.3
+  openness_index_version: "AA Openness Index v1.0"
   license: MiniMax Community License
   benchmark_scores:
     - benchmark: SWE-Bench Pro

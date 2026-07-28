@@ -47,6 +47,8 @@ model:
   num_experts: 128
   top_k: 8
   context_window: 262144
-  intelligence_index: 21
+  intelligence_index: 20
   intelligence_index_version: "AA v4.1"
+  openness_index: 41.7
+  openness_index_version: "AA Openness Index v1.0"
   license: Apache 2.0

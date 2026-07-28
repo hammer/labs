@@ -86,5 +86,7 @@ outputs:
       license: MIT
       intelligence_index: 31
       intelligence_index_version: "AA v4.1"
+      openness_index: 38.9
+      openness_index_version: "AA Openness Index v1.0"
 related:
   - ling

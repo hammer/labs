@@ -52,6 +52,8 @@ model:
   context_window: 1000000
   intelligence_index: 51
   intelligence_index_version: "AA v4.1"
+  openness_index: 44.4
+  openness_index_version: "AA Openness Index v1.0"
   license: MIT
   benchmark_scores:
     - benchmark: AIME 2026

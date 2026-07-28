@@ -11,7 +11,7 @@ sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2510.22115
   - label: Artificial Analysis
-    url: https://artificialanalysis.ai/models/ling-flash-2-0
+    url: https://artificialanalysis.ai/models/ling-1t
 description: >
   Trillion-parameter MoE flagship with ~50B active parameters. The Ling 2.0
   technical report details reasoning-oriented MoE foundation scaling from
@@ -29,13 +29,18 @@ outputs:
         url: https://www.businesswire.com/news/home/20251009240721/en/Ant-Group-Unveils-Ling-AI-Model-Family-and-Launches-Trillion-Parameter-Language-Model-Ling-1T
       - label: HuggingFace
         url: https://huggingface.co/inclusionAI/Ling-1T
+      - label: Artificial Analysis
+        url: https://artificialanalysis.ai/models/ling-1t
     description: >
       1-trillion parameter MoE flagship with ~50B active parameters.
     model:
       architecture: moe
       parameters: 1T
       active_parameters: 50B
-      intelligence_index: 10
+      # 2026-07-28 re-anchor: the file's AA URL pointed at ling-flash-2-0, so
+      # the sync had been writing the Flash variant's score (10) onto Ling-1T;
+      # the ling-1t page reads 13.
+      intelligence_index: 13
       intelligence_index_version: "AA v4.1"
       openness_index: 44.4
       openness_index_version: "AA Openness Index v1.0"

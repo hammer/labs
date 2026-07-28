@@ -46,6 +46,8 @@ model:
   training_tokens: "45T"
   intelligence_index: 41
   intelligence_index_version: "AA v4.1"
+  openness_index: 38.9
+  openness_index_version: "AA Openness Index v1.0"
   license: Apache 2.0
   num_experts: 256
   top_k: 6

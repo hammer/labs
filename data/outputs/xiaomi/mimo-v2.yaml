@@ -39,6 +39,8 @@ outputs:
       active_parameters: 15B
       intelligence_index: 33
       intelligence_index_version: "AA v4.1"
+      openness_index: 50
+      openness_index_version: "AA Openness Index v1.0"
       training_tokens: 27T
   - name: "MiMo-V2-Flash: Unlocking Extreme Inference Efficiency"
     type: paper

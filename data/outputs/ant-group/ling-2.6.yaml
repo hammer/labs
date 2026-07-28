@@ -38,6 +38,8 @@ outputs:
       license: MIT
       intelligence_index: 26
       intelligence_index_version: "AA v4.1"
+      openness_index: 38.9
+      openness_index_version: "AA Openness Index v1.0"
   - name: "Ling & Ring 2.6 Technical Report"
     type: paper
     date: 2026-06-13

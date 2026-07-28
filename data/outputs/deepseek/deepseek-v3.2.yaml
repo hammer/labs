@@ -32,7 +32,7 @@ outputs:
       architecture: moe
       parameters: 685B
       active_parameters: 37B
-      intelligence_index: 33
+      intelligence_index: 32
       intelligence_index_version: "AA v4.1"
       variants:
         - name: DeepSeek-V3.2-Exp

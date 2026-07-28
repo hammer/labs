@@ -11,6 +11,8 @@ sources:
     url: https://huggingface.co/LLM360/K2-V2-Instruct
   - label: Technical Report
     url: https://www.llm360.ai/reports/K2_V2_report.pdf
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/k2-v2
 description: >
   70B "360-Open" model from MBZUAI's Institute of Foundation Models
   via the LLM360 initiative. Full release of data, weights, all
@@ -23,5 +25,9 @@ tags:
 model:
   architecture: dense
   parameters: 70B
+  intelligence_index: 14
+  intelligence_index_version: "AA v4.1"
+  openness_index: 88.9
+  openness_index_version: "AA Openness Index v1.0"
 paper:
   arxiv: "2512.06201"

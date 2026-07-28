@@ -11,6 +11,8 @@ sources:
     url: https://huggingface.co/google/gemma-3-27b-it
   - label: OpenRouter
     url: https://openrouter.ai/google/gemma-3-27b-it
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gemma-3-27b
 description: >
   <p>First <strong>multimodal Gemma</strong> (vision + text). 128K token context (4B+).
   140+ languages. Distilled training from larger Gemini models. Gemma-3-4B competitive
@@ -26,6 +28,10 @@ model:
   architecture: dense
   parameters: 27B
   context_window: 128000
+  intelligence_index: 7
+  intelligence_index_version: "AA v4.1"
+  openness_index: 50
+  openness_index_version: "AA Openness Index v1.0"
   variants:
     - name: Gemma 3 1B
       parameters: 1B

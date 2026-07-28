@@ -12,6 +12,8 @@ sources:
     url: https://huggingface.co/MiniMaxAI/MiniMax-M1-80k
   - label: GitHub
     url: https://github.com/MiniMax-AI/MiniMax-M1
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/minimax-m1-80k
 description: >
   World's first large-scale hybrid-attention reasoning model (456B total,
   45.9B active). Uses Lightning Attention for 1M-token contexts with 75%
@@ -33,11 +35,15 @@ outputs:
         url: https://huggingface.co/MiniMaxAI/MiniMax-M1-80k
       - label: GitHub
         url: https://github.com/MiniMax-AI/MiniMax-M1
+      - label: Artificial Analysis
+        url: https://artificialanalysis.ai/models/minimax-m1-80k
     model:
       architecture: moe
       parameters: 456B
       active_parameters: 45.9B
       context_window: 1000000
+      intelligence_index: 18
+      intelligence_index_version: "AA v4.1"
   - name: "MiniMax-M1: Scaling Test-Time Compute with Lightning Attention"
     type: paper
     date: 2025-06-16

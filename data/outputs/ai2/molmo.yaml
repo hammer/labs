@@ -11,6 +11,8 @@ sources:
     url: https://github.com/allenai/molmo
   - label: HuggingFace
     url: https://huggingface.co/allenai/Molmo-72B-0924
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/molmo-7b-d
 description: >
   Open multimodal VLM family with fully open training data (PixMo).
   Pioneered image pointing capabilities. Trained in two stages: dense
@@ -24,6 +26,11 @@ tags:
   - open-weight
 model:
   architecture: dense
+  base_model: qwen2
+  intelligence_index: 4
+  intelligence_index_version: "AA v4.1"
+  openness_index: 88.9
+  openness_index_version: "AA Openness Index v1.0"
 paper:
   arxiv: "2409.17146"
   venue: CVPR 2025

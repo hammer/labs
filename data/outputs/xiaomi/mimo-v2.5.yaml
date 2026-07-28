@@ -6,6 +6,8 @@ date: 2026-07-09
 sources:
   - label: HuggingFace
     url: https://huggingface.co/XiaomiMiMo/MiMo-V2.5
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/mimo-v2-5-0424
 description: >
   <p>Xiaomi's omnimodal sparse-MoE model (310B total / 15B active),
   distinct from the <a href="/outputs/xiaomi/mimo-v2.5-pro">MiMo-V2.5-Pro</a>
@@ -23,5 +25,9 @@ model:
   parameters: "310B"
   active_parameters: "15B"
   context_window: 1000000
+  intelligence_index: 37
+  intelligence_index_version: "AA v4.1"
+  openness_index: 38.9
+  openness_index_version: "AA Openness Index v1.0"
 related:
   - mimo-v2.5-pro

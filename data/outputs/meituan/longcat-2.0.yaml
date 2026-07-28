@@ -50,6 +50,8 @@ model:
   training_hardware: ~50,000 domestic AI ASIC chips (vendor undisclosed; Huawei HCCL)
   intelligence_index: 33
   intelligence_index_version: "AA v4.1"
+  openness_index: 38.9
+  openness_index_version: "AA Openness Index v1.0"
 related:
   - longcat-flash
   - longcat-next

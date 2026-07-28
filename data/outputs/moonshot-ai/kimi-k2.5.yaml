@@ -35,7 +35,7 @@ outputs:
     model:
       architecture: moe
       active_parameters: 32B
-      intelligence_index: 38
+      intelligence_index: 35
       intelligence_index_version: "AA v4.1"
       openness_index: 33.3
       openness_index_version: "AA Openness Index v1.0"

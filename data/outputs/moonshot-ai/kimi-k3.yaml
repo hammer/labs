@@ -44,6 +44,8 @@ model:
   top_k: 16
   intelligence_index: 57
   intelligence_index_version: "AA v4.1"
+  openness_index: 38.9
+  openness_index_version: "AA Openness Index v1.0"
 related:
   - kimi-k2.6
   - kimi-linear

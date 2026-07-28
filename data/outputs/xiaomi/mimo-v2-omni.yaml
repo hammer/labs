@@ -7,13 +7,15 @@ sources:
   - label: Website
     url: https://mimo.xiaomi.com/mimo-v2-omni
   - label: Artificial Analysis
-    url: https://artificialanalysis.ai/models/mimo-v2-omni
+    url: https://artificialanalysis.ai/models/mimo-v2-omni-0327
 description: >
   Xiaomi's first fully omni-modal foundation model. Native multimodal
   architecture that can "see, hear, and act," designed to power Xiaomi's
   next-generation smart devices across the Human x Car x Home ecosystem.
 model:
-  intelligence_index: 35
+  # Re-anchored 2026-07-28 to AA's 0327 dated refresh page (36.4), which
+  # supersedes the launch checkpoint's mimo-v2-omni page (35.0).
+  intelligence_index: 36
   intelligence_index_version: "AA v4.1"
 tags:
   - multimodal

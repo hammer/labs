@@ -9,6 +9,8 @@ sources:
     url: https://github.com/xai-org/grok-1
   - label: HuggingFace
     url: https://huggingface.co/xai-org/grok-1
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/grok-1
 description: >
   <p><strong>314B parameter MoE</strong> (8 experts, 2 active per token, ~78B active).
   64 Transformer layers, 48 query attention heads, 8 KV heads (Grouped Query Attention).
@@ -26,5 +28,7 @@ model:
   parameters: 314B
   active_parameters: 78B
   context_window: 8192
+  intelligence_index: 6
+  intelligence_index_version: "AA v4.1"
 related:
   - grok-3

@@ -11,6 +11,8 @@ sources:
     url: https://huggingface.co/google/diffusiongemma-26B-A4B-it
   - label: Docs
     url: https://ai.google.dev/gemma/docs/diffusiongemma
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/diffusiongemma-26b-a4b
 description: >
   <p>An open-weights <strong>discrete-diffusion language model</strong> built
   on the Gemma 4 26B-A4B MoE base (25.2B total / 3.8B active, 128 experts +
@@ -41,6 +43,10 @@ model:
   top_k: 8
   context_window: 262144
   license: Apache 2.0
+  intelligence_index: 13
+  intelligence_index_version: "AA v4.1"
+  openness_index: 44.4
+  openness_index_version: "AA Openness Index v1.0"
   benchmark_scores:
     - benchmark: MMLU-Pro
       score: "77.6"

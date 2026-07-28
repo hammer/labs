@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Announcement (Caixin)
     url: https://www.caixinglobal.com/2026-04-02/alibaba-releases-qwen-36-plus-ai-model-with-enhanced-coding-capabilities-102430395.html
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/qwen3-6-plus
 description: >
   <p>Enterprise-focused frontier model with <strong>1M token context</strong>
   (up to 65,536 output tokens). Always-on chain-of-thought reasoning and native
@@ -22,5 +24,7 @@ tags:
   - agents
 model:
   context_window: 1000000
+  intelligence_index: 40
+  intelligence_index_version: "AA v4.1"
 related:
   - qwen3.5

@@ -14,6 +14,8 @@ sources:
     url: https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-gemma-4-12b
   - label: Documentation
     url: https://ai.google.dev/gemma/docs/core
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gemma-4-12b
 description: >
   <p><strong>Encoder-free unified multimodal Gemma</strong> &mdash; a
   <strong>~12B dense Transformer</strong> (11.95B per the model card) sitting
@@ -63,6 +65,10 @@ model:
   context_window: 262144
   license: Apache 2.0
   base_model: gemma-4
+  intelligence_index: 22
+  intelligence_index_version: "AA v4.1"
+  openness_index: 38.9
+  openness_index_version: "AA Openness Index v1.0"
   benchmark_scores:
     - benchmark: MMLU Pro
       score: "77.2%"

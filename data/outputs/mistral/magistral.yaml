@@ -29,7 +29,7 @@ model:
   architecture: dense
   # Anchored to Magistral Small 1.2 (the AA URL in sources) — the open-weight
   # checkpoint AAOI scored; Medium's higher AAII lives in variants.
-  intelligence_index: 12
+  intelligence_index: 11
   intelligence_index_version: "AA v4.1"
   openness_index: 50
   openness_index_version: "AA Openness Index v1.0"

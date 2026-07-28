@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2604.08644
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/exaone-4-5-33b
 description: >
   <p>LG AI Research's <strong>first open-weight vision-language model</strong>. Integrates
   a 1.2B vision encoder with the <a href="/outputs/lg-ai-research/exaone-4.0">EXAONE
@@ -26,6 +28,10 @@ model:
   architecture: dense
   parameters: 33B
   context_window: 256000
+  intelligence_index: 20
+  intelligence_index_version: "AA v4.1"
+  openness_index: 27.8
+  openness_index_version: "AA Openness Index v1.0"
 paper:
   arxiv: "2604.08644"
 related:

@@ -6,6 +6,8 @@ date: 2026-05-25
 sources:
   - label: HuggingFace
     url: https://huggingface.co/openbmb/MiniCPM5-1B
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/minicpm5-1b
 description: >
   <p>First release of the <strong>MiniCPM5</strong> series &mdash; jumps past
   MiniCPM4 with a 1.08B dense Llama-architecture model featuring 128K context
@@ -23,6 +25,10 @@ model:
   architecture: dense
   parameters: 1.08B
   context_window: 131072
+  intelligence_index: 12
+  intelligence_index_version: "AA v4.1"
+  openness_index: 83.3
+  openness_index_version: "AA Openness Index v1.0"
 related:
   - minicpm
   - minicpm3

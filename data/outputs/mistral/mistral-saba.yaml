@@ -6,6 +6,8 @@ date: 2025-02-17
 sources:
   - label: OpenRouter
     url: https://openrouter.ai/mistralai/mistral-saba
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/mistral-saba
 description: >
   24B regional language model specialized for Arabic and South Asian
   languages (including Tamil and other South Indian languages). More
@@ -17,3 +19,5 @@ model:
   architecture: dense
   parameters: 24B
   context_window: 32000
+  intelligence_index: 6
+  intelligence_index_version: "AA v4.1"

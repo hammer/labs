@@ -28,6 +28,8 @@ model:
   architecture: dense
   intelligence_index: 6
   intelligence_index_version: "AA v4.1"
+  openness_index: 38.9
+  openness_index_version: "AA Openness Index v1.0"
   variants:
     - name: Ministral 3 3B
       parameters: 3B

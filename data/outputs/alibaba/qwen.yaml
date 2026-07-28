@@ -6,6 +6,8 @@ flagship: true
 sources:
   - label: GitHub
     url: https://github.com/QwenLM/Qwen
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/qwen-chat-72b
 description: >
   First generation of the Qwen large language model series, spanning 1.8B to 72B
   parameters.
@@ -47,11 +49,15 @@ outputs:
         url: https://huggingface.co/Qwen/Qwen-72B
       - label: GitHub
         url: https://github.com/QwenLM/Qwen
+      - label: Artificial Analysis
+        url: https://artificialanalysis.ai/models/qwen-chat-72b
     description: >
       Expanded the range to include a massive 72B flagship and a mobile-friendly
       1.8B model.
     model:
       architecture: dense
+      intelligence_index: 3
+      intelligence_index_version: "AA v4.1"
       variants:
         - name: Qwen-72B
           parameters: 72B

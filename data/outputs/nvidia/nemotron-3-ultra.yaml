@@ -85,6 +85,8 @@ model:
   license: OpenMDW-1.1
   intelligence_index: 38
   intelligence_index_version: "AA v4.1"
+  openness_index: 83.3
+  openness_index_version: "AA Openness Index v1.0"
   variants:
     - name: Nemotron 3 Ultra 550B-A55B BF16
       parameters: 550B

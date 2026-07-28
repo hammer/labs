@@ -9,6 +9,8 @@ sources:
     url: https://arxiv.org/abs/2401.04088
   - label: HuggingFace
     url: https://huggingface.co/mistralai/Mixtral-8x7B-v0.1
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/mixtral-8x7b-instruct
 description: >
   <p>Popularized Sparse Mixture-of-Experts for open-weight models. 46.7B
   total / 12.9B active per token, with 8 experts per layer and top-2
@@ -27,6 +29,8 @@ model:
   parameters: 46.7B
   active_parameters: 12.9B
   context_window: 32000
+  intelligence_index: 2
+  intelligence_index_version: "AA v4.1"
 paper:
   arxiv: "2401.04088"
 related:

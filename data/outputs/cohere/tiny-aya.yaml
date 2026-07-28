@@ -8,6 +8,8 @@ sources:
     url: https://huggingface.co/CohereLabs/tiny-aya-water
   - label: HuggingFace (Fire)
     url: https://huggingface.co/CohereLabs/tiny-aya-fire
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/tiny-aya-global
 description: >
   3.35B-parameter edge-deployable multilingual model in 5 regional
   variants: Base, Global, Earth (Africa/West Asia), Fire (South Asia),
@@ -21,5 +23,9 @@ tags:
 model:
   architecture: dense
   parameters: 3.35B
+  intelligence_index: 1
+  intelligence_index_version: "AA v4.1"
+  openness_index: 36.1
+  openness_index_version: "AA Openness Index v1.0"
 related:
   - aya-expanse

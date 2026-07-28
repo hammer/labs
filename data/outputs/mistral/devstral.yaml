@@ -42,5 +42,7 @@ outputs:
       architecture: dense
       parameters: 123B
       context_window: 256000
-      intelligence_index: 15
+      intelligence_index: 19
       intelligence_index_version: "AA v4.1"
+      openness_index: 27.8
+      openness_index_version: "AA Openness Index v1.0"

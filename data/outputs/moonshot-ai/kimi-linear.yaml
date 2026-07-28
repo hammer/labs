@@ -7,6 +7,8 @@ sources:
     url: https://arxiv.org/abs/2510.26692
   - label: GitHub
     url: https://github.com/MoonshotAI/Kimi-Linear
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/kimi-linear-48b-a3b-instruct
 description: >
   Hybrid linear attention architecture (KDA + MLA). 3B active / 48B total MoE
   model with 75% KV-cache reduction and 6x throughput at 1M context.
@@ -18,10 +20,19 @@ tags:
 outputs:
   - name: Kimi Linear Model
     type: model
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/moonshotai/Kimi-Linear-48B-A3B-Instruct
+      - label: Artificial Analysis
+        url: https://artificialanalysis.ai/models/kimi-linear-48b-a3b-instruct
     model:
       architecture: moe
       parameters: 48B
       active_parameters: 3B
+      intelligence_index: 9
+      intelligence_index_version: "AA v4.1"
+      openness_index: 61.1
+      openness_index_version: "AA Openness Index v1.0"
   - name: "Kimi Linear: Hybrid Linear Attention Architecture"
     type: paper
     paper:

@@ -8,6 +8,8 @@ sources:
     url: https://github.com/deepseek-ai/DeepSeek-LLM
   - label: HuggingFace
     url: https://huggingface.co/deepseek-ai/deepseek-llm-67b-chat
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/deepseek-llm-67b-chat
 description: >
   First general-purpose 67B model, outperforming Llama 2, with a technical report
   on scaling open-source language models with a long-term vision.
@@ -21,11 +23,15 @@ outputs:
     sources:
       - label: HuggingFace
         url: https://huggingface.co/deepseek-ai/deepseek-llm-67b-chat
+      - label: Artificial Analysis
+        url: https://artificialanalysis.ai/models/deepseek-llm-67b-chat
     description: >
       First general-purpose 67B model, outperforming Llama 2 at the time.
     model:
       architecture: dense
       parameters: 67B
+      intelligence_index: 3
+      intelligence_index_version: "AA v4.1"
   - name: "DeepSeek LLM: Scaling Open-Source Language Models with Longtermism"
     type: paper
     date: 2024-01-05
