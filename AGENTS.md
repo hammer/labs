@@ -67,6 +67,14 @@ When scanning for new papers from tracked labs, **do not limit searches to a nar
 
    For each hit, search `site:arxiv.org "<model name>" technical report` and re-check the model's HF/GitHub README for a newly added citation block. When a report appears, attach it to the **existing** entry — arXiv URL in `sources` plus a `paper:` block (or a paper sub-output on grouped entries) — never a new output. Entries citing repo-only PDF reports (the DeepSeek pattern) stay on this work-list until an arXiv posting is confirmed or ruled out.
 
+8. **Backfill late-arriving AA scores for already-tracked models.** AA's leaderboard pickup lags releases by weeks-to-months, so a filing-day "AA hasn't scored it yet" goes stale silently — Solar Open 100B and Solar Pro 3 sat scored-on-AA-but-unimported for ~6 months until the 2026-07 from-scratch audit; the first mechanical run then surfaced **81** more candidates (Kimi K2.7-Code 42, Qwen3.6-Plus 40, MiMo-V2.5 37 …). Each sweep, generate the work-list mechanically:
+
+   ```bash
+   npm run fetch-aa-intelligence -- --discover
+   ```
+
+   It diffs AA's full leaderboard payload against every tracked AA URL and prints tracked model outputs (no AA URL in the file) whose slug matches an unclaimed scored slug. For each hit: verify the AA page, pick the right variant/mode per the anchoring rules, add the AA URL to `sources` + `intelligence_index` + version — and **settle from-scratch provenance at the same time** (the score gates the home Intelligence column; see the from-scratch rule above and the add-output skill). The payload only holds the top ~500 models, and models AA names unlike our slugs won't match — treat the report as high-recall, not exhaustive.
+
 
 ### What to Exclude
 
@@ -304,6 +312,8 @@ Rule of thumb: the top-level number, the file slug, and the primary AA URL shoul
 2. The script's "slug not on leaderboard" list is the manual work-list: renamed slugs (AA renamed `glm-4-5` → `glm-4.5`), models retired from the index, or files whose AA URL is missing/an `/articles/` link. Resolve each, then re-run.
 3. Models AA no longer scores keep their number with an explicit tag: `"pre-v4 (not in current AA index; unverifiable as of YYYY-MM-DD)"` for never-v4-verified scores (excluded from the timeline Intelligence facet), or `"AA v4.0 (delisted from AA leaderboard as of YYYY-MM-DD)"` for v4-verified scores AA later dropped (still v4-comparable, stays in the facet).
 4. **Large score drops from the sync are usually anchoring bugs, not rescores.** When AA splits a model into mode/variant slugs, a URL pointing at the non-reasoning or small-variant page silently downgrades the score. Check the family's full slug list before accepting a big drop — the fix is usually correcting the URL to the highest-*mode* page (same model), while size *variants* stay in the variants list per the anchoring rule.
+
+**AA-pickup discovery.** `npm run fetch-aa-intelligence -- --discover` reports tracked model outputs with no AA URL whose slug matches an unclaimed leaderboard slug — the work-list for scores AA added after we filed the model (standing sweep step 8). Anchoring each hit stays a curation decision.
 
 **Useful URLs:**
 - Per-model: `https://artificialanalysis.ai/models/<slug>`

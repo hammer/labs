@@ -10,7 +10,7 @@
  * For each labindex output with an `artificialanalysis.ai/models/<slug>` URL
  * in its sources AND an existing `intelligence_index`, we update the score to
  * AA's current value (rounded to an integer, matching house convention) and
- * set `intelligence_index_version: "AA v4.0"`. This both version-tags
+ * set the current `intelligence_index_version`. This both version-tags
  * pre-versioning entries and refreshes drifted scores after AA point
  * releases (e.g. v4.0.4). It does NOT add scores to outputs that have none —
  * picking the right variant/mode to anchor is a curation decision.
@@ -18,9 +18,17 @@
  * Slugs with an AA URL but no leaderboard entry are listed for manual
  * attention (renamed slugs, models retired from the index).
  *
+ * --discover inverts the question: which tracked model outputs (no AA URL
+ * anywhere in the file) now match an unclaimed leaderboard slug? AA's pickup
+ * often lags a release by weeks-to-months, so filing-day "AA hasn't scored
+ * it" goes stale silently — Solar Open 100B and Solar Pro 3 sat scored-but-
+ * unimported for ~6 months until the 2026-07 from-scratch audit. Run this
+ * every sweep; it only reports (anchoring stays a curation decision).
+ *
  * Usage:
  *   npm run fetch-aa-intelligence
  *   npm run fetch-aa-intelligence -- --dry-run
+ *   npm run fetch-aa-intelligence -- --discover
  */
 
 import { readFileSync, writeFileSync } from 'fs';
@@ -29,6 +37,7 @@ import { globSync } from 'glob';
 const LEADERBOARD_URL = 'https://artificialanalysis.ai/leaderboards/models';
 const AAII_VERSION = 'AA v4.1';
 const dryRun = process.argv.includes('--dry-run');
+const discover = process.argv.includes('--discover');
 
 // ── Fetch the RSC payload ────────────────────────────────────────────────
 
@@ -76,12 +85,75 @@ function applyIntelToYaml(content: string, score: number): string {
   return out;
 }
 
+// ── Discover mode ────────────────────────────────────────────────────────
+
+// AA slugs append mode/variant suffixes (solar-open-100b-reasoning) and use
+// dashes where our slugs may use dots (minimax-m2.5 vs minimax-m2-5), so
+// match on normalized exact-or-dash-prefix. Prefix matching needs ≥4 chars
+// to keep short slugs (o1, kat) from spraying false positives.
+function slugsMatch(outputSlug: string, aaSlug: string): boolean {
+  const norm = (s: string) => s.toLowerCase().replace(/[._]/g, '-');
+  const a = norm(outputSlug);
+  const b = norm(aaSlug);
+  if (a === b) return true;
+  if (a.length < 4) return false;
+  return b.startsWith(a + '-') || a.startsWith(b + '-');
+}
+
+function discoverMode(aaii: Map<string, number>) {
+  const yamls = globSync('data/outputs/*/*.yaml').sort();
+  const claimed = new Set<string>();
+  const candidates: Array<{ file: string; slug: string }> = [];
+  for (const file of yamls) {
+    const content = readFileSync(file, 'utf-8');
+    for (const m of content.matchAll(/artificialanalysis\.ai\/models\/([a-zA-Z0-9._-]+)/g)) {
+      claimed.add(m[1]);
+    }
+    if (/artificialanalysis\.ai\/models\//.test(content)) continue;
+    if (!/(^|\n)\s*model:/.test(content)) continue;
+    const slug = content.match(/^slug:\s*([a-z0-9._-]+)/m)?.[1];
+    if (slug) candidates.push({ file, slug });
+  }
+
+  const hits: Array<{ file: string; aaSlug: string; score: number }> = [];
+  let unclaimed = 0;
+  for (const [aaSlug, score] of aaii) {
+    if (claimed.has(aaSlug)) continue;
+    unclaimed++;
+    for (const c of candidates) {
+      if (slugsMatch(c.slug, aaSlug)) hits.push({ file: c.file, aaSlug, score });
+    }
+  }
+
+  console.log('');
+  console.log(`Discover: ${candidates.length} tracked model outputs without an AA URL,`);
+  console.log(`${unclaimed} leaderboard slugs unclaimed by any tracked output.`);
+  if (hits.length === 0) {
+    console.log('No slug matches — no evident AA pickups to backfill.');
+  } else {
+    console.log(`${hits.length} probable AA pickup(s) — verify each page, then anchor per the`);
+    console.log('add-output skill (AA URL in sources + score + version + provenance check):');
+    for (const h of hits.sort((x, y) => y.score - x.score)) {
+      console.log(`  ${String(Math.round(h.score)).padStart(3)}  ${h.aaSlug.padEnd(40)}  ${h.file}`);
+    }
+  }
+  console.log('');
+  console.log('Note: the payload holds only the top ~500 models; a missing slug does not');
+  console.log('mean unscored. New models AA scores under names unlike our slugs will not');
+  console.log('match — eyeball the unclaimed list during sweeps if coverage looks off.');
+}
+
 // ── Drive ────────────────────────────────────────────────────────────────
 
 async function main() {
   console.log(`Fetching ${LEADERBOARD_URL} ...`);
   const aaii = await fetchAaiiDataset();
   console.log(`  Parsed ${aaii.size} model→AAII pairs from AA leaderboard`);
+
+  if (discover) {
+    discoverMode(aaii);
+    return;
+  }
 
   const yamls = globSync('data/outputs/*/*.yaml').sort();
   let updated = 0;

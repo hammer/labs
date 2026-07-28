@@ -84,7 +84,9 @@ Real failures this prevents:
 ### External Links
 
 For **every** model output, check:
-- **Artificial Analysis:** Search `site:artificialanalysis.ai [model name]`. Fetch the page and extract the Intelligence Index score. **Check for reasoning/adaptive variants** — many models have multiple AA entries (e.g., `model-name`, `model-name-reasoning`, `model-name-adaptive`). Use the **highest score** for the same model and link to that variant's page. **Always also record the index version** in the sibling `intelligence_index_version` field (currently `"AA v4.0"`). AA periodically recalibrates — without the version tag we can't tell stale scores from current ones on the next sweep. (Granite 4.0 H-Small dropped 23 → 11 across the v4 migration — that's the failure mode.)
+- **Artificial Analysis:** Search `site:artificialanalysis.ai [model name]`. Fetch the page and extract the Intelligence Index score. **Check for reasoning/adaptive variants** — many models have multiple AA entries (e.g., `model-name`, `model-name-reasoning`, `model-name-adaptive`). Use the **highest score** for the same model and link to that variant's page. **Always also record the index version** in the sibling `intelligence_index_version` field (currently `"AA v4.1"`, June 2026). AA periodically recalibrates — without the version tag we can't tell stale scores from current ones on the next sweep. (Granite 4.0 H-Small dropped 23 → 11 across the v4 migration — that's the failure mode.)
+  - **If AA hasn't scored the model yet, leave the field unset — but AA's pickup often lags the release by weeks or months.** Filing day is not the last chance: `npm run fetch-aa-intelligence -- --discover` (standing sweep step) diffs AA's full leaderboard payload against our tracked AA URLs and surfaces tracked models AA has since started scoring. (Solar Open 100B and Solar Pro 3 sat scored-on-AA-but-unimported for ~6 months before the 2026-07 audit caught them.)
+  - **Setting `intelligence_index` also obligates a provenance determination** — see "Derivative Models" below. The home Intelligence column only counts from-scratch models; an AAII score without `base_model`/`pretrained_from_scratch` provenance on a derivative silently mis-ranks the lab.
   - **Always add the AA model page to `sources` when you set `intelligence_index`.** Format: `- label: Artificial Analysis` / `url: https://artificialanalysis.ai/models/<aa-slug>`. This is the only handle `npm run fetch-aa-openness` uses to map our outputs to AA's slugs — without it the AAOI backfill silently skips. AA's slug often differs from ours (labindex `ministral-3` → AA `ministral-3-3b`; labindex `jamba` → AA `jamba-1-7-large`). HEAD the URL before committing.
   - When the YAML represents a multi-model family (e.g. `o3.yaml` covering o3-mini, o3, o4-mini, o3-pro), the top-level `intelligence_index` should match the score for the model named by the file slug and linked from `sources` — not blindly the highest variant. Higher variants go in the description and `variants` list.
   - **Openness Index (AAOI):** The same AA model page also exposes an `openness_index` value (0-100, multiples of 1/18). Record it on the model as `openness_index: <rounded-to-1dp>` + `openness_index_version: "AA Openness Index v1.0"`. It must come from the **same checkpoint** whose AAII you recorded, not the family max. AAOI coverage is smaller than AAII — if AA hasn't scored your model on AAOI, leave the field unset. For bulk backfill across the index, use `npm run fetch-aa-openness` which parses AA's leaderboard RSC payload in a single request.
@@ -192,7 +194,7 @@ model:
   top_k: 8                     # MoE: experts active per token
   context_window: 256000
   intelligence_index: 23       # from Artificial Analysis
-  intelligence_index_version: "AA v4.0"   # always record the AA index version
+  intelligence_index_version: "AA v4.1"   # always record the AA index version
   parameters_estimated:        # OPTIONAL — only for closed models with third-party estimates (e.g., IKP paper)
     value: "1.6T"
     source: https://arxiv.org/abs/2604.24827
@@ -280,7 +282,10 @@ If unsure, check the GitHub repo owner, the first/corresponding author affiliati
 
 ### Derivative Models — From Scratch vs Fine-Tune
 
-This distinction is **critical** because the home page "Scale" column shows the largest model each lab trained from scratch. Derivative models must NOT have `model.parameters` set — use `model.base_model` instead.
+This distinction is **critical** because TWO home-page columns depend on it:
+
+- **Scale** shows the largest model each lab trained from scratch — derivative models must NOT have `model.parameters` set; use `model.base_model` instead.
+- **Intelligence** (`getTopIntelligence`) only counts models the lab pretrained from scratch — a model block whose `base_model` resolves to another lab's output, or with `pretrained_from_scratch: false`, is skipped. **Whenever you set `intelligence_index`, you must also settle provenance.** An AAII score on an external-base fine-tune with no provenance fields silently ranks the lab on another lab's pretraining (the 2026-07 audit found seven of these: Nex-N2, Llama-Nemotron, SOLAR 10.7B, Solar Pro 2, Agnes 2.5 Pro, KAT-Coder-Pro V2, MiniCPM-V 4.6).
 
 **How to tell if a model is trained from scratch:**
 - Paper says "pre-trained from scratch" or describes full pretraining pipeline
@@ -294,6 +299,14 @@ This distinction is **critical** because the home page "Scale" column shows the 
 - Training is continued pretraining, SFT, DPO, RLHF on an existing base
 - Training tokens are small relative to the model size (e.g., 73B tokens for a 72B model)
 - **Sparse upcycling** — an MoE built by duplicating a dense model's FFNs into experts and continuing training (e.g., Sarashina2-8x70B from Sarashina2-70B). The MoE's reported total parameters are not "from scratch" — set `base_model:` to the dense source and omit `parameters`. Put the total-parameter count in the description so readers still see it.
+- **Depth up-scaling** — layers of an external checkpoint duplicated/trimmed then continue-pretrained (Upstage's DUS: SOLAR 10.7B ← Mistral 7B, Solar Pro ← Phi-3-medium, Solar Pro 2 ← Phi-4). Not from scratch even when the retraining is "full."
+
+**Verification tricks that settle hard cases (from the 2026-07 audit):**
+- **Open weights: read `config.json`, not just the card prose.** The text sub-config's `model_type` names the true backbone (MiniCPM-V 4.6 declared `qwen3_5_text`; KAT-Dev-72B-Exp declared `Qwen2ForCausalLM` with Qwen2.5-72B's exact shape). Layer count / hidden dim / vocab size mismatches also *rule out* a suspected base (HyperCLOVA X SEED Think's 72-layer, 128256-vocab backbone matches no Qwen).
+- **VLMs: judge by the LLM backbone.** A borrowed vision encoder alone doesn't make the model derivative for our columns (HCX SEED Think keeps its slot despite a Qwen2.5-VL ViT); a borrowed LLM backbone does (MiniCPM-V 4.6 loses it despite in-house vision work).
+- **Closed weights: absence of a from-scratch claim is a signal.** If the vendor describes only post-training ("fine-tuned a pretrained model", "post-trained from...") and its open siblings all ride external bases, treat the proprietary model as derivative (KAT-Coder-Pro V2). If the vendor's own docs or founder interviews contradict the "built from scratch" marketing, believe the docs (Agnes 2.5 Pro).
+- **Architecture-shape matches to a famous model are NOT proof of weight derivation.** Chinese labs in particular reuse published configs while pretraining in-house (JT-4.1 Flash matches DeepSeek-V2's 236B-A21B shape; the Jiutian team's documented pattern is open-architecture + from-scratch weights). Corroborate with the lab's training-infrastructure record before excluding.
+- Marketing "built from scratch" claims by API-only startups need corroboration; conversely a from-scratch claim backed by a tech report with GPU counts, token curricula, and (best of all) public W&B training records (Solar Open 100B) is solid.
 
 **For derivative models:**
 - Set `lab:` to the lab that fine-tuned/adapted, not the base model creator
@@ -301,6 +314,7 @@ This distinction is **critical** because the home page "Scale" column shows the 
 - Do NOT set `model.parameters` — this prevents them from appearing in the Scale column
 - Note the base model and parameter count in the `description` text instead
 - Note the base in `model.variants[].notes` (e.g., "72B, mid-trained on Qwen2.5")
+- When the base **can't** be expressed as a `base_model` slug — untracked (Solar Pro 2 ← Phi-4), undisclosed/multiple (Agnes 2.5 Pro "Qwen and DeepSeek"), or a same-lab base that is itself externally derived (the Intelligence check is single-hop) — set `pretrained_from_scratch: false` on the model block with a comment explaining why, and record the provenance evidence in the description
 
 **Examples:**
 - daVinci-Dev-72B → derivative (Qwen2.5 base, mid-training) → `base_model: qwen2.5`, no `parameters`
@@ -388,9 +402,10 @@ Before creating an output, verify it belongs. Do **not** create outputs for:
 ## 7. Checklist
 
 - [ ] Technical report read (HTML version) if available; blog post checked if not
-- [ ] **From scratch vs derivative determined** — only set `model.parameters` for from-scratch models; use `model.base_model` for derivatives
+- [ ] **From scratch vs derivative determined** — only set `model.parameters` for from-scratch models; use `model.base_model` for derivatives (or `pretrained_from_scratch: false` when the base is untracked/undisclosed)
 - [ ] Structured model fields: architecture, parameters (if from scratch), active_parameters, context_window, training_tokens (if disclosed)
 - [ ] Intelligence index from AA (fetched, not guessed) **with `intelligence_index_version` set to the current AA index version**
+- [ ] **If `intelligence_index` is set, provenance is settled** — from-scratch verified against primary sources (config.json backbone, tech report, vendor training claims), or `base_model`/`pretrained_from_scratch: false` recorded so the home Intelligence column skips it
 - [ ] OpenRouter link added if available
 - [ ] Description covers architecture, innovations, training, benchmarks with numbers
 - [ ] Novel contributions and prior techniques identified
