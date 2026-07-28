@@ -28,13 +28,13 @@ const { title } = Astro.props;
           <button id="nav-menu-btn" class="nav-menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu-panel">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
           </button>
+          <a href="/collections" id="nav-collections" class="nav-collections" hidden>Collections</a>
           <div class="search-container">
             <button id="nav-search-btn" class="nav-search-btn" title="Search (/)" aria-label="Search">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
             </button>
             <SearchDropdown />
           </div>
-          <a href="/collections" id="nav-collections" class="nav-collections" hidden>Collections</a>
           <a href="/account" id="nav-account" class="nav-account">Sign in</a>
         </div>
       </div>
