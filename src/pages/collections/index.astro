@@ -1,12 +1,18 @@
 ---
 import Layout from '../../components/Layout.astro';
 // Static shell; the collection list + items are user data rendered client-side.
+// Issue #53: real display names (search-data.json resolver), inline rename +
+// click-to-edit description (no <details> burial), two-step inline confirms
+// replacing confirm() for the two genuinely guarded actions (delete kills the
+// share URL forever; publish is outward-facing), optimistic item-removal with
+// deferred-DELETE undo, selected collection in ?c=, honest load-failure state.
 ---
 <Layout title="Collections">
   <main class="collections">
     <h1>Collections</h1>
     <div id="coll-loading">Loading…</div>
     <p id="coll-signedout" hidden>Please <a href="/account">sign in</a> to create collections.</p>
+    <p id="coll-failed" hidden>Failed to load. <button id="coll-retry" type="button">Retry</button></p>
     <div id="coll-app" hidden>
       <form id="coll-create">
         <input id="coll-create-name" type="text" placeholder="New collection name…" maxlength="120" />
@@ -15,8 +21,11 @@ import Layout from '../../components/Layout.astro';
       <div class="coll-layout">
         <ul id="coll-list" class="coll-list"></ul>
         <section id="coll-detail" class="coll-detail" hidden>
-          <h2 id="coll-detail-name"></h2>
-          <p id="coll-detail-desc" hidden></p>
+          <h2 id="coll-detail-name"><button id="coll-name-view" type="button" title="Rename"></button></h2>
+          <input id="coll-name-input" type="text" maxlength="120" hidden aria-label="Collection name" />
+          <button id="coll-desc-view" type="button" class="coll-desc-view"></button>
+          <textarea id="coll-desc-input" maxlength="500" rows="3" hidden aria-label="Description"
+            placeholder="Description, shown on the public page…"></textarea>
           <div id="coll-share" class="coll-share">
             <div id="cs-private" hidden>
               <button id="cs-publish" type="button">Share publicly</button>
@@ -31,13 +40,6 @@ import Layout from '../../components/Layout.astro';
             </div>
             <span id="cs-live" class="cs-live" aria-live="polite"></span>
           </div>
-          <details class="coll-desc-edit">
-            <summary>Edit description</summary>
-            <form id="coll-desc-form">
-              <textarea id="coll-desc-input" maxlength="500" rows="3" placeholder="Description, shown on the public page…"></textarea>
-              <button type="submit">Save</button>
-            </form>
-          </details>
           <button id="coll-delete" class="coll-del" type="button">Delete collection</button>
           <ul id="coll-items" class="coll-items"></ul>
         </section>
@@ -46,30 +48,72 @@ import Layout from '../../components/Layout.astro';
   </main>
 
   <script>
+    import { showToast, armUndo } from '../../lib/ui/toast';
+    import { loadNameMap, targetName, targetUrl } from '../../lib/ui/names';
+    import { isMobile } from '../../lib/filters/position';
     const H = { 'x-requested-with': 'labindex' };
     const $ = (id) => document.getElementById(id);
+    let collections = [];
     let selected = null;
-    function url(t) { if (t.startsWith('output:')) return '/outputs/' + t.slice(7); if (t.startsWith('lab:')) return '/labs/' + t.slice(4); return '#'; }
-    function label(t) { return (t.split('/').pop() || t).replace(/^(output:|lab:)/, ''); }
+
+    // ── inline two-step confirm (replaces confirm()): first click arms the
+    // button with the consequence text for 4s; a second click ≥400ms later
+    // (the double-click guard) confirms. Any other path auto-reverts.
+    function twoStep(btn, armedText, onConfirm) {
+      const orig = btn.textContent;
+      let armedAt = 0, revert;
+      function disarm() { armedAt = 0; clearTimeout(revert); btn.textContent = orig; btn.classList.remove('armed'); }
+      btn.addEventListener('click', () => {
+        const now = Date.now();
+        if (!armedAt) {
+          armedAt = now;
+          btn.textContent = typeof armedText === 'function' ? armedText() : armedText;
+          btn.classList.add('armed');
+          revert = setTimeout(disarm, 4000);
+        } else if (now - armedAt > 400) {
+          disarm();
+          onConfirm();
+        }
+      });
+      return disarm;
+    }
+
+    function fail() { $('coll-loading').hidden = true; $('coll-failed').hidden = false; }
 
     async function loadList() {
       let res;
-      try { res = await fetch('/api/me/collections', { headers: H }); } catch { $('coll-loading').textContent = 'Failed to load.'; return; }
+      try { res = await fetch('/api/me/collections', { headers: H }); } catch { fail(); return; }
       $('coll-loading').hidden = true;
-      if (res.status !== 200) { res.body?.cancel(); $('coll-signedout').hidden = false; return; }
+      if (res.status === 401) { res.body?.cancel(); $('coll-signedout').hidden = false; return; }
+      if (res.status !== 200) { res.body?.cancel(); fail(); return; } // a 500 is not "signed out"
       $('coll-app').hidden = false;
-      const { collections } = await res.json();
+      collections = (await res.json()).collections ?? [];
+      loadNameMap(); // warm the resolver only after sign-in is confirmed
+      renderList();
+      const cid = Number(new URLSearchParams(location.search).get('c'));
+      const c = collections.find((x) => x.id === cid);
+      if (c) openCollection(c);
+      else if (cid) history.replaceState(null, '', location.pathname);
+    }
+
+    function renderList() {
       const list = $('coll-list'); list.innerHTML = '';
       if (!collections.length) { const li = document.createElement('li'); li.className = 'coll-empty'; li.textContent = 'No collections yet — create one above.'; list.appendChild(li); }
       for (const c of collections) {
         const li = document.createElement('li');
         const a = document.createElement('button'); a.type = 'button'; a.className = 'coll-name';
+        if (selected && selected.id === c.id) a.classList.add('selected');
         a.textContent = `${c.name} (${c.n})`;
         a.addEventListener('click', () => openCollection(c));
         li.appendChild(a);
         if (c.is_public) { const b = document.createElement('span'); b.className = 'coll-badge'; b.textContent = 'Public'; li.appendChild(b); }
         list.appendChild(li);
       }
+    }
+
+    function bump(cid, delta) {
+      const c = collections.find((x) => x.id === cid);
+      if (c) { c.n += delta; renderList(); }
     }
 
     function renderShare() {
@@ -79,56 +123,144 @@ import Layout from '../../components/Layout.astro';
       if (selected.is_public && selected.public_id) $('cs-url').value = location.origin + '/collections/' + selected.public_id;
     }
 
-    // PATCH the selected collection ({public} and/or {description}); the
-    // response is the fresh row, which replaces `selected`.
+    function renderNameDesc() {
+      $('coll-name-view').textContent = selected.name;
+      const dv = $('coll-desc-view');
+      dv.textContent = selected.description || 'Add a description…';
+      dv.classList.toggle('empty', !selected.description);
+    }
+
+    // PATCH the selected collection ({name}/{public}/{description}); the
+    // response is the fresh row, which replaces `selected` and its cache entry.
     async function patchSelected(patch) {
-      const res = await fetch('/api/me/collections', { method: 'PATCH', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ id: selected.id, ...patch }) });
-      if (!res.ok) return null;
+      const res = await fetch('/api/me/collections', { method: 'PATCH', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ id: selected.id, ...patch }) }).catch(() => null);
+      if (!res || !res.ok) return null;
       const { collection } = await res.json();
+      const i = collections.findIndex((x) => x.id === collection.id);
+      if (i >= 0) collections[i] = collection;
       selected = collection;
       return collection;
     }
 
     async function openCollection(c) {
       selected = c;
+      history.replaceState(null, '', '?c=' + c.id);
       $('coll-detail').hidden = false;
-      $('coll-detail-name').textContent = c.name;
-      $('coll-detail-desc').textContent = c.description || '';
-      $('coll-detail-desc').hidden = !c.description;
-      $('coll-desc-input').value = c.description || '';
+      renderNameDesc();
       renderShare();
-      const res = await fetch(`/api/me/collection-items?collection_id=${c.id}`, { headers: H });
-      const items = res.ok ? (await res.json()).items : [];
+      renderList();
       const ul = $('coll-items'); ul.innerHTML = '';
-      if (!items.length) { const li = document.createElement('li'); li.textContent = 'Empty — add items from any output or lab page.'; ul.appendChild(li); }
+      const [res, names] = await Promise.all([
+        fetch(`/api/me/collection-items?collection_id=${c.id}`, { headers: H }).catch(() => null),
+        loadNameMap(),
+      ]);
+      if (selected !== c) return; // user opened another collection meanwhile
+      const items = res && res.ok ? (await res.json()).items : [];
+      ul.innerHTML = '';
+      if (!items.length) { const li = document.createElement('li'); li.className = 'coll-empty'; li.textContent = 'No items yet — use ＋ Collections on any lab or output page.'; ul.appendChild(li); }
       for (const t of items) {
         const li = document.createElement('li');
-        const a = document.createElement('a'); a.href = url(t); a.textContent = label(t);
-        const rm = document.createElement('button'); rm.type = 'button'; rm.className = 'coll-rm'; rm.textContent = '×';
-        rm.addEventListener('click', async () => { await fetch(`/api/me/collection-items?collection_id=${c.id}&target=${encodeURIComponent(t)}`, { method: 'DELETE', headers: H }); openCollection(selected); loadList(); });
+        const a = document.createElement('a'); a.href = targetUrl(t); a.textContent = targetName(names, t);
+        const rm = document.createElement('button'); rm.type = 'button'; rm.className = 'coll-rm'; rm.textContent = '×'; rm.setAttribute('aria-label', 'Remove from collection');
+        rm.addEventListener('click', () => {
+          const cid = c.id;
+          li.remove();
+          bump(cid, -1);
+          armUndo('Removed from collection', {
+            commit: () => fetch(`/api/me/collection-items?collection_id=${cid}&target=${encodeURIComponent(t)}`, { method: 'DELETE', headers: H, keepalive: true }).catch(() => {}),
+            // The DELETE never fired, so a refetch restores the item in place.
+            restore: () => { bump(cid, +1); if (selected && selected.id === cid) openCollection(selected); },
+          });
+        });
         li.append(a, rm); ul.appendChild(li);
       }
     }
 
+    // ── inline rename: click the title → input; Enter/blur commits, Esc cancels.
+    const nameView = $('coll-name-view'), nameInput = $('coll-name-input'), nameH = $('coll-detail-name');
+    nameView.addEventListener('click', () => {
+      nameInput.value = selected.name;
+      nameH.hidden = true; nameInput.hidden = false;
+      if (!isMobile()) { nameInput.focus(); nameInput.select(); }
+    });
+    function closeRename() { if (nameInput.hidden) return; nameInput.hidden = true; nameH.hidden = false; }
+    async function commitRename() {
+      if (nameInput.hidden) return;
+      const name = nameInput.value.trim();
+      closeRename();
+      if (!name || name === selected.name) return;
+      const prev = selected.name;
+      selected.name = name; renderNameDesc(); renderList(); // optimistic (selected aliases its cache entry)
+      if (!(await patchSelected({ name }))) {
+        selected.name = prev; renderNameDesc(); renderList();
+        showToast("Couldn't rename", { tone: 'error' });
+      }
+    }
+    nameInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); commitRename(); }
+      if (e.key === 'Escape') { e.stopPropagation(); closeRename(); }
+    });
+    nameInput.addEventListener('blur', commitRename);
+
+    // ── click-to-edit description: blur commits, Esc restores prior text.
+    const descView = $('coll-desc-view'), descInput = $('coll-desc-input');
+    descView.addEventListener('click', () => {
+      descInput.value = selected.description || '';
+      descView.hidden = true; descInput.hidden = false;
+      if (!isMobile()) descInput.focus();
+    });
+    function closeDesc() { if (descInput.hidden) return; descInput.hidden = true; descView.hidden = false; }
+    async function commitDesc() {
+      if (descInput.hidden) return;
+      const description = descInput.value.trim();
+      closeDesc();
+      if (description === (selected.description || '')) return;
+      const prev = selected.description;
+      selected.description = description || null; renderNameDesc(); // optimistic
+      if (!(await patchSelected({ description }))) {
+        selected.description = prev; renderNameDesc();
+        showToast("Couldn't save description", { tone: 'error' });
+      }
+    }
+    descInput.addEventListener('keydown', (e) => { if (e.key === 'Escape') { e.stopPropagation(); closeDesc(); } });
+    descInput.addEventListener('blur', commitDesc);
+
     $('coll-create').addEventListener('submit', async (e) => {
       e.preventDefault();
       const name = $('coll-create-name').value.trim(); if (!name) return;
-      await fetch('/api/me/collections', { method: 'POST', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ name }) });
-      $('coll-create-name').value = ''; loadList();
-    });
-    $('coll-delete').addEventListener('click', async () => {
-      if (!selected || !confirm(`Delete collection "${selected.name}"?`)) return;
-      await fetch(`/api/me/collections?id=${selected.id}`, { method: 'DELETE', headers: H });
-      $('coll-detail').hidden = true; selected = null; loadList();
+      let created = null;
+      try {
+        const res = await fetch('/api/me/collections', { method: 'POST', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ name }) });
+        if (res.ok) created = (await res.json()).collection;
+      } catch {}
+      if (!created) { showToast("Couldn't create collection", { tone: 'error' }); return; }
+      $('coll-create-name').value = '';
+      collections.unshift(created);
+      openCollection(created);
     });
 
-    $('cs-publish').addEventListener('click', async () => {
-      if (!selected || !confirm(`Share "${selected.name}" publicly? Anyone with the link will be able to view its name, description, and items.`)) return;
-      if (await patchSelected({ public: true })) { renderShare(); loadList(); }
+    // Delete is the one genuinely irreversible action here (the share URL's
+    // public_id is minted once and dies with the row) — real friction, kept.
+    twoStep($('coll-delete'), () => `Confirm delete (${selected?.n ?? 0} items)`, async () => {
+      if (!selected) return;
+      const id = selected.id;
+      await fetch(`/api/me/collections?id=${id}`, { method: 'DELETE', headers: H }).catch(() => {});
+      collections = collections.filter((c) => c.id !== id);
+      $('coll-detail').hidden = true; selected = null;
+      history.replaceState(null, '', location.pathname);
+      renderList();
+    });
+
+    // Publishing is outward-facing → explicit consent stays, minus the dialog.
+    twoStep($('cs-publish'), 'Anyone with the link can view — confirm', async () => {
+      if (!selected) return;
+      if (await patchSelected({ public: true })) { renderShare(); renderList(); }
+      else showToast("Couldn't share collection", { tone: 'error' });
     });
     $('cs-unpublish').addEventListener('click', async () => {
       if (!selected) return;
-      if (await patchSelected({ public: false })) { renderShare(); loadList(); }
+      if (await patchSelected({ public: false })) { renderShare(); renderList(); }
+      else showToast("Couldn't make private", { tone: 'error' });
     });
     $('cs-copy').addEventListener('click', async () => {
       const input = $('cs-url');
@@ -137,31 +269,34 @@ import Layout from '../../components/Layout.astro';
       const btn = $('cs-copy'); btn.textContent = 'Copied'; $('cs-live').textContent = 'Link copied';
       setTimeout(() => { btn.textContent = 'Copy'; $('cs-live').textContent = ''; }, 1500);
     });
-    $('coll-desc-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      if (!selected) return;
-      const c = await patchSelected({ description: $('coll-desc-input').value });
-      if (c) {
-        $('coll-detail-desc').textContent = c.description || '';
-        $('coll-detail-desc').hidden = !c.description;
-        $('coll-desc-input').value = c.description || '';
-      }
-    });
+
+    $('coll-retry').addEventListener('click', () => { $('coll-failed').hidden = true; $('coll-loading').hidden = false; loadList(); });
     loadList();
   </script>
 
-  <style>
+  <style is:global>
+    /* is:global: the list/detail DOM is created at runtime, which Astro's
+       scoping attribute never reaches. Classes are coll-/cs- prefixed. */
     .collections { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
     #coll-create { display: flex; gap: 0.4rem; margin: 1rem 0; }
-    #coll-create input { flex: 1; border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.4rem 0.6rem; }
-    #coll-create button, #coll-delete { border: 1px solid var(--border, #ddd); border-radius: 6px; background: transparent; cursor: pointer; padding: 0.4rem 0.8rem; }
+    #coll-create input { flex: 1; border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.4rem 0.6rem; min-width: 0; }
+    #coll-create button, #coll-delete, #coll-retry { border: 1px solid var(--border, #ddd); border-radius: 6px; background: transparent; cursor: pointer; padding: 0.4rem 0.8rem; }
     .coll-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 1.5rem; }
     .coll-list, .coll-items { list-style: none; margin: 0; padding: 0; }
     .coll-list li { display: flex; align-items: center; gap: 0.4rem; }
     .coll-name { background: transparent; border: none; cursor: pointer; text-align: left; padding: 0.3rem 0; color: var(--color-accent, #0645ad); font-size: 0.95rem; overflow-wrap: anywhere; min-width: 0; }
-    #coll-detail-name { overflow-wrap: anywhere; }
-    #coll-detail-desc { overflow-wrap: anywhere; color: var(--text-muted, #666); margin: 0.2rem 0 0.4rem; }
-    .coll-items li { display: flex; align-items: center; justify-content: space-between; padding: 0.25rem 0; }
+    .coll-name.selected { font-weight: 600; }
+    #coll-detail-name { overflow-wrap: anywhere; margin-bottom: 0.2rem; }
+    #coll-detail-name button { font: inherit; color: inherit; background: transparent; border: none; padding: 0; cursor: pointer; text-align: left; overflow-wrap: anywhere; }
+    #coll-detail-name button:hover { text-decoration: underline dotted; }
+    #coll-name-input { font-size: 1.2rem; font-weight: 600; width: 100%; border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.2rem 0.4rem; margin-bottom: 0.2rem; }
+    .coll-desc-view { display: block; font: inherit; text-align: left; background: transparent; border: none; padding: 0; cursor: pointer;
+      color: var(--text-muted, #666); margin: 0.2rem 0 0.4rem; overflow-wrap: anywhere; }
+    .coll-desc-view:hover { text-decoration: underline dotted; }
+    .coll-desc-view.empty { color: var(--text-muted, #999); font-style: italic; }
+    #coll-desc-input { width: 100%; border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.4rem 0.6rem; resize: vertical; font: inherit; margin: 0.2rem 0 0.4rem; }
+    .coll-items li { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.25rem 0; }
+    .coll-items a { overflow-wrap: anywhere; min-width: 0; }
     .coll-rm { border: none; background: transparent; cursor: pointer; color: var(--text-muted, #999); }
     .coll-detail { border-left: 1px solid var(--border, #eee); padding-left: 1.5rem; }
     .coll-del { margin-bottom: 0.6rem; }
@@ -169,16 +304,13 @@ import Layout from '../../components/Layout.astro';
     .coll-share { margin: 0.4rem 0 0.6rem; }
     .cs-linkrow { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
     #cs-url { flex: 1 1 160px; min-width: 0; border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.3rem 0.5rem; color: var(--text-muted, #666); background: transparent; }
-    #cs-publish, #cs-copy, #cs-unpublish, .coll-desc-edit button { border: 1px solid var(--border, #ddd); border-radius: 6px; background: transparent; cursor: pointer; padding: 0.3rem 0.7rem; }
+    #cs-publish, #cs-copy, #cs-unpublish { border: 1px solid var(--border, #ddd); border-radius: 6px; background: transparent; cursor: pointer; padding: 0.3rem 0.7rem; }
+    #cs-publish { max-width: 100%; white-space: normal; text-align: left; } /* armed label may wrap to two lines at 360px */
+    .armed { border-color: #dc2626 !important; color: #dc2626; }
     .coll-badge { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--color-accent, #0645ad); border: 1px solid currentColor; border-radius: 999px; padding: 0.05rem 0.45rem; white-space: nowrap; }
-    .coll-desc-edit { margin: 0.4rem 0 0.8rem; font-size: 0.85rem; }
-    .coll-desc-edit summary { cursor: pointer; color: var(--text-muted, #888); }
-    .coll-desc-edit form { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.4rem; }
-    .coll-desc-edit textarea { border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.4rem 0.6rem; resize: vertical; font: inherit; }
-    .coll-desc-edit button { align-self: flex-start; }
     .cs-live { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
     @media (pointer: coarse) {
-      #cs-publish, #cs-copy, #cs-unpublish, #coll-create button, #coll-delete, .coll-desc-edit button { min-height: 44px; }
+      #cs-publish, #cs-copy, #cs-unpublish, #coll-create button, #coll-delete, #coll-retry, .coll-desc-view, .coll-rm { min-height: 44px; }
     }
     @media (max-width: 600px) { .coll-layout { grid-template-columns: 1fr; } .coll-detail { border-left: none; padding-left: 0; } }
   </style>

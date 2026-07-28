@@ -30,21 +30,29 @@ export const POST: APIRoute = async (context) => {
   return jsonNoStore({ collection: { ...row, n: 0 } }, 201);
 };
 
-// PATCH {id, public?, description?}: share toggle and/or description edit.
-// Publish mints public_id once (COALESCE keeps the token stable across
-// unpublish/republish, so circulated links revive); unpublish only clears
-// is_public. Ownership lives in every WHERE clause; the final SELECT returning
-// nothing yields a uniform 404, so non-owners get no existence oracle.
+// PATCH {id, name?, public?, description?}: rename, share toggle, and/or
+// description edit. Publish mints public_id once (COALESCE keeps the token
+// stable across unpublish/republish, so circulated links revive); unpublish
+// only clears is_public. Ownership lives in every WHERE clause; the final
+// SELECT returning nothing yields a uniform 404, so non-owners get no
+// existence oracle.
 export const PATCH: APIRoute = async (context) => {
   if (!requireCsrf(context)) return jsonNoStore({ error: 'csrf' }, 403);
   const user = await getSessionUser(context);
   if (!user) return jsonNoStore({ error: 'unauthorized' }, 401);
   let body: any; try { body = await context.request.json(); } catch { return jsonNoStore({ error: 'bad_json' }, 400); }
   const id = Number(body?.id);
+  const hasName = typeof body?.name === 'string';
   const hasPublic = typeof body?.public === 'boolean';
   const hasDescription = typeof body?.description === 'string';
-  if (!id || (!hasPublic && !hasDescription)) return jsonNoStore({ error: 'invalid' }, 400);
+  if (!id || (!hasName && !hasPublic && !hasDescription)) return jsonNoStore({ error: 'invalid' }, 400);
   const env = getEnv(context);
+  if (hasName) {
+    const name = String(body.name).trim().slice(0, 120);
+    if (!name) return jsonNoStore({ error: 'name_required' }, 400);
+    await env.DB.prepare(`UPDATE collections SET name = ? WHERE id = ? AND user_id = ?`)
+      .bind(name, id, user.id).run();
+  }
   if (hasDescription) {
     const description = String(body.description).trim().slice(0, 500) || null;
     await env.DB.prepare(`UPDATE collections SET description = ? WHERE id = ? AND user_id = ?`)

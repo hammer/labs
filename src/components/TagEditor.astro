@@ -2,6 +2,8 @@
 // Per-user tag editor for one output/lab (issue #21 step 3). Progressive:
 // hidden until /api/me/tags confirms a logged-in user. `target` is passed
 // server-side as the canonical 'output:<_labSlug>/<slug>' or 'lab:<slug>'.
+// Writes are optimistic (issue #53): the chip is the feedback; failures roll
+// back with an error toast, removal gets a deferred-delete undo toast.
 interface Props { target: string; }
 const { target } = Astro.props;
 ---
@@ -16,7 +18,8 @@ const { target } = Astro.props;
 </div>
 
 <script>
-  import { tagPrefix, tagValue } from '../lib/tags';
+  import { tagPrefix, tagValue, normalizeTag } from '../lib/tags';
+  import { showToast, armUndo, commitPendingUndo } from '../lib/ui/toast';
   const H = { 'x-requested-with': 'labindex' };
   const root = document.querySelector<HTMLElement>('.tag-editor');
   if (root) {
@@ -62,27 +65,49 @@ const { target } = Astro.props;
     }
 
     async function add(raw: string) {
-      const tag = raw.trim();
-      if (!tag) return;
-      const res = await fetch('/api/me/tags', {
-        method: 'POST', headers: { ...H, 'content-type': 'application/json' },
-        body: JSON.stringify({ target, tag }),
-      });
-      if (res.ok) { const { tag: norm } = await res.json(); if (norm && !all.some((t) => t.target === target && t.tag === norm)) all.push({ target, tag: norm }); render(); }
+      // Normalize client-side so the optimistic chip is exactly what the
+      // server will store; null = invalid input (commas, ':foo', empty).
+      const tag = normalizeTag(raw);
+      if (!tag) { if (raw.trim()) input.classList.add('te-invalid'); return; }
       input.value = '';
+      if (all.some((t) => t.target === target && t.tag === tag)) return;
+      all.push({ target, tag });
+      render();
+      // If this same tag was just removed, its deferred DELETE may still be
+      // pending — commit it first so the delete can't land after our add.
+      await commitPendingUndo();
+      let ok = false;
+      try {
+        const res = await fetch('/api/me/tags', {
+          method: 'POST', headers: { ...H, 'content-type': 'application/json' },
+          body: JSON.stringify({ target, tag }),
+        });
+        ok = res.ok;
+      } catch {}
+      if (!ok) {
+        all = all.filter((t) => !(t.target === target && t.tag === tag));
+        render();
+        input.value = raw;
+        showToast("Couldn't save tag", { tone: 'error' });
+      }
     }
-    async function remove(tag: string) {
-      await fetch(`/api/me/tags?target=${encodeURIComponent(target)}&tag=${encodeURIComponent(tag)}`, { method: 'DELETE', headers: H });
+
+    function remove(tag: string) {
       all = all.filter((t) => !(t.target === target && t.tag === tag));
       render();
+      armUndo(`Removed "${tag}"`, {
+        commit: () => fetch(`/api/me/tags?target=${encodeURIComponent(target)}&tag=${encodeURIComponent(tag)}`, { method: 'DELETE', headers: H, keepalive: true }).catch(() => {}),
+        restore: () => { all.push({ target, tag }); render(); },
+      });
     }
 
     input.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); add(input.value); } });
+    input.addEventListener('input', () => input.classList.remove('te-invalid'));
     load();
   }
 </script>
 
-<style>
+<style is:global>
   .tag-editor { margin: 0.75rem 0; font-size: 0.85rem; }
   .te-row { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; }
   .te-label { color: var(--color-muted, #888); font-weight: 600; }
@@ -92,5 +117,6 @@ const { target } = Astro.props;
   .te-chip.te-bare { background: #eee; color: #444; border-color: #ddd; }
   .te-x { border: none; background: transparent; cursor: pointer; color: inherit; font-size: 0.9rem; line-height: 1; padding: 0; }
   .te-input { border: 1px solid var(--color-border, #ddd); border-radius: 6px; padding: 0.2rem 0.5rem; min-width: 200px; }
+  .te-input.te-invalid { border-color: #dc2626; }
   @media (pointer: coarse) { .te-x { min-width: 44px; min-height: 44px; justify-content: center; } .te-input { min-height: 44px; } }
 </style>

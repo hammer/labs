@@ -150,6 +150,66 @@ for (const width of [360, 375, 412, 600]) {
   await page.close();
 }
 
+// ── Toast layout (issue #53) ──────────────────────────────────────────
+// The toast is DOM-built by src/lib/ui/toast.ts; inject its exact structure
+// with a worst-case long message + Undo and assert it never causes
+// horizontal overflow — and that on phones (≤600px, where it rides 52px
+// higher) it clears the timeline back-to-top button instead of covering it.
+for (const width of widths) {
+  const page = await newPage({ width, height: 800 });
+  await page.goto(`${BASE}/timeline`, { waitUntil: 'networkidle' });
+  const t = await page.evaluate(() => {
+    const toast = document.createElement('div');
+    toast.className = 'ui-toast';
+    const msg = document.createElement('span');
+    msg.className = 'ui-toast-msg';
+    msg.textContent = 'Removed "category:a-really-long-unbroken-tag-value-meant-to-stress-wrapping-behavior"';
+    const act = document.createElement('button');
+    act.className = 'ui-toast-action';
+    act.textContent = 'Undo';
+    toast.append(msg, act);
+    document.body.appendChild(toast);
+    const btt = document.getElementById('back-to-top');
+    btt?.classList.remove('hidden'); // force-visible for the layout check
+    const tr = toast.getBoundingClientRect();
+    const br = btt ? btt.getBoundingClientRect() : null;
+    const overlap = br && window.innerWidth <= 600
+      ? !(tr.bottom <= br.top || tr.top >= br.bottom || tr.right <= br.left || tr.left >= br.right)
+      : false;
+    return { scrollW: document.documentElement.scrollWidth, innerW: window.innerWidth, overlap };
+  });
+  log(`toast no h-overflow, clears back-to-top @ ${width}px`, t.scrollW <= t.innerW && !t.overlap, JSON.stringify(t));
+  await page.close();
+}
+
+// ── Publish button armed state wraps inside the button (issue #53) ────
+{
+  const page = await newPage({ width: 360, height: 800 });
+  await page.goto(`${BASE}/collections`, { waitUntil: 'networkidle' });
+  const t = await page.evaluate(() => {
+    document.getElementById('coll-app').hidden = false;
+    document.getElementById('coll-detail').hidden = false;
+    document.getElementById('cs-private').hidden = false;
+    const b = document.getElementById('cs-publish');
+    b.textContent = 'Anyone with the link can view — confirm';
+    b.classList.add('armed');
+    return { scrollW: document.documentElement.scrollWidth, innerW: window.innerWidth };
+  });
+  log('armed publish button no h-overflow @ 360px', t.scrollW <= t.innerW, JSON.stringify(t));
+  await page.close();
+}
+
+// ── New account-layer inputs inherit the global 16px coarse rule ──────
+// hasTouch:true flips (pointer: coarse) in headless Chromium, so this guards
+// the global.css rule that keeps iOS from zooming on focus (issue #48).
+{
+  const page = await newPage({ width: 375, height: 800 });
+  await page.goto(`${BASE}/collections`, { waitUntil: 'networkidle' });
+  const fs = await page.evaluate(() => getComputedStyle(document.getElementById('coll-create-name')).fontSize);
+  log('collections create input 16px on touch', fs === '16px', fs);
+  await page.close();
+}
+
 // ── Search dropdown stays within the viewport ─────────────────────────
 for (const width of [375, 620]) {
   const page = await newPage({ width, height: 800 });

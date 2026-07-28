@@ -67,3 +67,88 @@ a:hover {
     font-size: 16px;
   }
 }
+
+/* Shared chrome for the account-layer dropdown controls (issue #53): one
+   anatomy for Saved views / ＋ Collections / My tags instead of three
+   drifting per-component copies. Feature-specific bits stay in components. */
+.ui-menu-btn {
+  background: transparent;
+  border: 1px solid var(--border, #ddd);
+  border-radius: 6px;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  color: inherit;
+  font-size: 0.85rem;
+}
+.ui-menu {
+  position: absolute;
+  z-index: 20;
+  margin-top: 0.25rem;
+  min-width: 220px;
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #ddd);
+  border-radius: 8px;
+  padding: 0.4rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
+@media (pointer: coarse) {
+  .ui-menu-btn {
+    min-height: 44px;
+  }
+}
+
+/* Single-instance toast (src/lib/ui/toast.ts) — undo affordances and failure
+   notices only; success is silent. z-index 210: the mobile nav panel and the
+   shortcut modals already sit at 200, so 200 would tie and win only by DOM
+   order. On ≤600px it rides 52px higher: measured at 375×667, a bottom-1rem
+   toast fully covers the timeline back-to-top button (fixed bottom-right,
+   44px, the touch replacement for `gg`) for the toast's whole lifetime. */
+.ui-toast {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 210;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: min(420px, calc(100vw - 2rem));
+  background: var(--text, #111827);
+  color: var(--bg, #fafafa);
+  border-radius: 8px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.85rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+.ui-toast-msg {
+  overflow-wrap: anywhere;
+}
+.ui-toast-action {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  white-space: nowrap;
+}
+.ui-toast-action:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.ui-toast-error {
+  background: #7f1d1d;
+}
+@media (pointer: coarse) {
+  .ui-toast-action {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+@media (max-width: 600px) {
+  .ui-toast {
+    bottom: calc(max(1rem, env(safe-area-inset-bottom)) + 52px);
+  }
+}

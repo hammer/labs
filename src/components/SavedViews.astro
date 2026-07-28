@@ -2,18 +2,31 @@
 // Per-user saved filter views (issue #21 step 2). Self-contained + progressive:
 // hidden until /api/me/filters confirms a logged-in user, so logged-out and
 // anonymous visitors see nothing and nothing user-specific is in cached HTML.
+//
+// Issue #53: naming happens in an inline row inside the menu (prompt() is
+// gone); a ✓ marks the view matching the current URL (exact normalized match
+// only — keys sorted AND each param's comma-list sorted, since the FilterBar
+// serializes multi-selects in click order; deliberately no deeper parameter
+// equivalence). Delete is optimistic with a deferred-DELETE undo toast.
 interface Props { page: string; basePath: string; }
 const { page, basePath } = Astro.props;
 ---
 <div class="saved-views" data-page={page} data-base={basePath} hidden>
-  <button class="sv-toggle" type="button" aria-expanded="false">★ Saved views</button>
-  <div class="sv-menu" hidden>
+  <button class="sv-toggle ui-menu-btn" type="button" aria-expanded="false">★ Saved views</button>
+  <div class="sv-menu ui-menu" hidden>
     <ul class="sv-list"></ul>
     <button class="sv-save" type="button">＋ Save current view…</button>
+    <div class="sv-form" hidden>
+      <input class="sv-name" type="text" placeholder="Name this view" maxlength="120" autocomplete="off" />
+      <button class="sv-confirm" type="button">Save</button>
+    </div>
   </div>
 </div>
 
 <script>
+  import { attachMenu } from '../lib/ui/menu';
+  import { showToast, armUndo } from '../lib/ui/toast';
+  import { isMobile } from '../lib/filters/position';
   const H = { 'x-requested-with': 'labindex' };
   const root = document.querySelector<HTMLElement>('.saved-views');
   if (root) {
@@ -22,27 +35,44 @@ const { page, basePath } = Astro.props;
     const list = root.querySelector<HTMLUListElement>('.sv-list')!;
     const menu = root.querySelector<HTMLElement>('.sv-menu')!;
     const toggle = root.querySelector<HTMLButtonElement>('.sv-toggle')!;
+    const saveBtn = root.querySelector<HTMLButtonElement>('.sv-save')!;
+    const form = root.querySelector<HTMLElement>('.sv-form')!;
+    const nameInput = root.querySelector<HTMLInputElement>('.sv-name')!;
+    let views: any[] = [];
+
+    // Exact-match normalization: sorted keys, and a sorted comma-list within
+    // each value (comma is the serializer's reserved delimiter; tags can't
+    // contain it). location.search key order and multi-select value order both
+    // vary for identical filter states.
+    function normQuery(q: string): string {
+      const entries: [string, string][] = [];
+      for (const [k, v] of new URLSearchParams(q)) entries.push([k, v.split(',').sort().join(',')]);
+      entries.sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : a[1] < b[1] ? -1 : 1));
+      return entries.map(([k, v]) => `${k}=${v}`).join('&');
+    }
 
     async function load() {
       let res: Response;
       try { res = await fetch(`/api/me/filters?page=${encodeURIComponent(page)}`, { headers: H }); }
       catch { return; }
       if (res.status !== 200) { res.body?.cancel(); return; } // 401 = logged out → stay hidden
-      const { filters } = await res.json();
-      render(filters);
+      views = (await res.json()).filters ?? [];
+      render();
       root!.hidden = false;
     }
 
-    function render(filters: any[]) {
+    function render() {
+      const current = normQuery(location.search);
       list.innerHTML = '';
-      if (!filters.length) {
+      if (!views.length) {
         const li = document.createElement('li');
         li.className = 'sv-empty';
-        li.textContent = 'No saved views yet.';
+        li.textContent = 'No saved views yet. Filter the table, then save the view here.';
         list.appendChild(li);
       }
-      for (const f of filters) {
+      for (const f of views) {
         const li = document.createElement('li');
+        if (normQuery(f.query ?? '') === current) li.classList.add('sv-current');
         const a = document.createElement('a');
         a.href = base + (f.query ? '?' + f.query : '');
         a.textContent = f.name;
@@ -51,54 +81,83 @@ const { page, basePath } = Astro.props;
         del.className = 'sv-del';
         del.setAttribute('aria-label', 'Delete view');
         del.textContent = '×';
-        del.addEventListener('click', async (e) => {
+        del.addEventListener('click', (e) => {
           e.preventDefault();
-          await fetch(`/api/me/filters?id=${f.id}`, { method: 'DELETE', headers: H });
-          load();
+          views = views.filter((v) => v.id !== f.id);
+          render();
+          armUndo(`Deleted "${f.name}"`, {
+            commit: () => fetch(`/api/me/filters?id=${f.id}`, { method: 'DELETE', headers: H, keepalive: true }).catch(() => {}),
+            restore: () => { views.unshift(f); render(); },
+          });
         });
         li.append(a, del);
         list.appendChild(li);
       }
     }
 
-    toggle.addEventListener('click', () => {
-      const open = menu.hidden;
-      menu.hidden = !open;
-      toggle.setAttribute('aria-expanded', String(open));
+    function hideForm() { form.hidden = true; saveBtn.hidden = false; nameInput.value = ''; }
+
+    saveBtn.addEventListener('click', () => {
+      saveBtn.hidden = true;
+      form.hidden = false;
+      if (!isMobile()) nameInput.focus(); // no autofocus on phones (soft keyboard)
     });
 
-    root.querySelector('.sv-save')!.addEventListener('click', async () => {
-      const name = prompt('Name this view');
-      if (!name) return;
+    async function saveView() {
+      const name = nameInput.value.trim();
+      if (!name) { nameInput.classList.add('sv-invalid'); return; }
       const query = location.search.replace(/^\?/, '');
-      await fetch('/api/me/filters', {
-        method: 'POST',
-        headers: { ...H, 'content-type': 'application/json' },
-        body: JSON.stringify({ name, page, query }),
-      });
-      load();
+      hideForm();
+      const temp = { id: -1, name, page, query };
+      views.unshift(temp);
+      render();
+      let saved: any = null;
+      try {
+        const res = await fetch('/api/me/filters', {
+          method: 'POST', headers: { ...H, 'content-type': 'application/json' },
+          body: JSON.stringify({ name, page, query }),
+        });
+        if (res.ok) saved = (await res.json()).filter;
+      } catch {}
+      if (saved) {
+        views[views.indexOf(temp)] = saved;
+        render();
+      } else {
+        views = views.filter((v) => v !== temp);
+        render();
+        showToast("Couldn't save view", { tone: 'error' });
+      }
+    }
+
+    root.querySelector('.sv-confirm')!.addEventListener('click', saveView);
+    nameInput.addEventListener('input', () => nameInput.classList.remove('sv-invalid'));
+    nameInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); saveView(); }
+      if (e.key === 'Escape') { e.stopPropagation(); hideForm(); saveBtn.focus(); } // 1st Esc: hide row; 2nd: menu
     });
 
-
-    document.addEventListener('click', (e) => { if (!root.contains(e.target as Node)) menu.hidden = true; });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') menu.hidden = true; });
+    // Recompute the ✓ on every open — replaceState mutates location.search
+    // between opens without re-rendering.
+    attachMenu(toggle, menu, { onOpen: () => { render(); hideForm(); } });
     load();
   }
 </script>
 
-<style>
+<style is:global>
   .saved-views { position: relative; display: inline-block; margin: 0.25rem 0 0.5rem; font-size: 0.85rem; }
-  .sv-toggle { background: transparent; border: 1px solid var(--color-border, #ddd); border-radius: 6px;
-    padding: 0.2rem 0.6rem; cursor: pointer; color: inherit; }
-  .sv-menu { position: absolute; z-index: 20; margin-top: 0.25rem; min-width: 220px; background: var(--color-bg, #fff);
-    border: 1px solid var(--color-border, #ddd); border-radius: 8px; padding: 0.4rem; box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
   .sv-list { list-style: none; margin: 0 0 0.4rem; padding: 0; max-height: 300px; overflow-y: auto; }
   .sv-list li { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; padding: 0.2rem 0.3rem; border-radius: 4px; }
   .sv-list li:hover { background: color-mix(in srgb, currentColor 6%, transparent); }
   .sv-list a { text-decoration: none; color: inherit; flex: 1; }
+  .sv-list li.sv-current a { font-weight: 600; }
+  .sv-list li.sv-current a::before { content: '✓ '; color: var(--color-accent, #0645ad); }
   .sv-empty { color: var(--color-muted, #888); }
   .sv-del { border: none; background: transparent; cursor: pointer; color: var(--color-muted, #888); font-size: 1rem; line-height: 1; }
   .sv-save { width: 100%; text-align: left; background: transparent; border: none; border-top: 1px solid var(--color-border, #eee);
-    padding: 0.4rem 0.3rem 0.1rem; cursor: pointer; color: var(--color-accent, inherit); }
-  @media (pointer: coarse) { .sv-del { min-width: 44px; min-height: 44px; } .sv-list a { min-height: 44px; display: flex; align-items: center; } .sv-save { min-height: 44px; } }
+    padding: 0.4rem 0.3rem 0.1rem; cursor: pointer; color: var(--color-accent, inherit); font: inherit; }
+  .sv-form { display: flex; gap: 0.3rem; border-top: 1px solid var(--color-border, #eee); padding-top: 0.4rem; }
+  .sv-name { flex: 1; min-width: 0; border: 1px solid var(--color-border, #ddd); border-radius: 6px; padding: 0.2rem 0.4rem; }
+  .sv-name.sv-invalid { border-color: #dc2626; }
+  .sv-confirm { border: 1px solid var(--color-border, #ddd); border-radius: 6px; background: transparent; cursor: pointer; padding: 0.2rem 0.5rem; }
+  @media (pointer: coarse) { .sv-del { min-width: 44px; min-height: 44px; } .sv-list a { min-height: 44px; display: flex; align-items: center; } .sv-save { min-height: 44px; } .sv-confirm { min-height: 44px; } }
 </style>

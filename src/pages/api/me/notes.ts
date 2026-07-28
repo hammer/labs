@@ -41,8 +41,11 @@ export const PATCH: APIRoute = async (context) => {
   let b: any; try { b = await context.request.json(); } catch { return jsonNoStore({ error: 'bad_json' }, 400); }
   const body = String(b?.body ?? '').trim().slice(0, 10000);
   if (!id || !body) return jsonNoStore({ error: 'invalid' }, 400);
-  await getEnv(context).DB.prepare(`UPDATE notes SET body = ?, updated_at = datetime('now') WHERE id = ? AND user_id = ?`).bind(body, id, user.id).run();
-  return jsonNoStore({ ok: true });
+  const row = await getEnv(context).DB
+    .prepare(`UPDATE notes SET body = ?, updated_at = datetime('now') WHERE id = ? AND user_id = ? RETURNING updated_at`)
+    .bind(body, id, user.id).first();
+  if (!row) return jsonNoStore({ error: 'not_found' }, 404);
+  return jsonNoStore({ ok: true, updated_at: row.updated_at }); // client keeps the meta timestamp honest
 };
 
 // DELETE ?id: delete a note (scoped to user).

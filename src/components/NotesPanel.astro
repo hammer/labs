@@ -1,6 +1,14 @@
 ---
 // Private per-user notes for one target (issue #21 step 5). Progressive: hidden
 // until /api/me/notes confirms a logged-in user. `target` passed server-side.
+//
+// Issue #53: no edit mode, no Save button — each note is an always-editable
+// textarea with debounced autosave ("Saved" microcopy; persistent "Not saved"
+// after a failure). A trimmed-empty body is never PATCHed (the server rejects
+// it); emptying a note and leaving it IS the delete gesture. Deletion is
+// optimistic with a deferred-DELETE undo toast, so ids/timestamps survive undo.
+// Chosen tradeoff: textarea bodies are invisible to find-in-page — accepted
+// for short personal annotations; contenteditable rejected as a complexity trap.
 interface Props { target: string; }
 const { target } = Astro.props;
 ---
@@ -14,6 +22,7 @@ const { target } = Astro.props;
 </div>
 
 <script>
+  import { showToast, armUndo } from '../lib/ui/toast';
   const H = { 'x-requested-with': 'labindex' };
   const root = document.querySelector<HTMLElement>('.notes-panel');
   if (root) {
@@ -21,64 +30,159 @@ const { target } = Astro.props;
     const list = root.querySelector<HTMLUListElement>('.np-list')!;
     const input = root.querySelector<HTMLTextAreaElement>('.np-input')!;
 
-    function esc(s: string) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+    interface NoteState {
+      id: number;
+      li: HTMLElement; ta: HTMLTextAreaElement; when: HTMLElement; status: HTMLElement;
+      lastSaved: string;           // last body the server has
+      timer?: ReturnType<typeof setTimeout>;
+      statusTimer?: ReturnType<typeof setTimeout>;
+      chain: Promise<void>;        // serialized sends per note (latest snapshot wins)
+      failed: boolean;
+    }
+    const states = new Set<NoteState>();
+
+    const fmtWhen = (s: string) => (s || '').replace('T', ' ').slice(0, 16);
+    function grow(ta: HTMLTextAreaElement) { ta.style.height = 'auto'; ta.style.height = ta.scrollHeight + 'px'; }
+
+    function setStatus(st: NoteState, text: string, transient: boolean) {
+      clearTimeout(st.statusTimer);
+      st.status.textContent = text;
+      if (transient) st.statusTimer = setTimeout(() => { if (st.status.textContent === text) st.status.textContent = ''; }, 1500);
+    }
+
+    // Never sends an empty body (server 400s on it — emptiness is handled as
+    // the delete gesture at blur time), never sends a no-op, and always sends
+    // the latest snapshot, serialized so an old body can't overtake a new one.
+    async function doSave(st: NoteState, keepalive: boolean) {
+      const body = st.ta.value.trim();
+      if (!body || body === st.lastSaved) return;
+      let ok = false; let updated: string | undefined;
+      try {
+        const res = await fetch(`/api/me/notes?id=${st.id}`, {
+          method: 'PATCH', headers: { ...H, 'content-type': 'application/json' },
+          body: JSON.stringify({ body }), keepalive,
+        });
+        ok = res.ok;
+        if (ok) updated = (await res.json()).updated_at;
+      } catch {}
+      if (ok) {
+        st.lastSaved = body;
+        st.failed = false;
+        if (updated) st.when.textContent = fmtWhen(updated);
+        setStatus(st, 'Saved', true);
+      } else {
+        if (!st.failed) { st.failed = true; showToast("Couldn't save note", { tone: 'error' }); }
+        setStatus(st, 'Not saved', false); // persistent until a save lands
+      }
+    }
+
+    function flush(st: NoteState, keepalive = false) {
+      clearTimeout(st.timer); st.timer = undefined;
+      st.chain = st.chain.then(() => doSave(st, keepalive));
+      return st.chain;
+    }
+
+    function scheduleSave(st: NoteState) {
+      clearTimeout(st.timer);
+      if (!st.ta.value.trim()) return;
+      st.timer = setTimeout(() => flush(st), 600);
+    }
+
+    // Optimistic removal; the real DELETE is deferred behind the undo toast.
+    // `restoreBody` differs by gesture: clearing restores the last-saved text,
+    // the explicit button keeps whatever was in the box (then saves it).
+    function deleteNote(st: NoteState, restoreBody: string) {
+      clearTimeout(st.timer);
+      const next = st.li.nextElementSibling;
+      st.li.remove();
+      armUndo('Note deleted', {
+        commit: () => fetch(`/api/me/notes?id=${st.id}`, { method: 'DELETE', headers: H, keepalive: true }).catch(() => {}),
+        restore: () => {
+          list.insertBefore(st.li, next && next.parentNode === list ? next : null);
+          st.ta.value = restoreBody;
+          grow(st.ta);
+          if (restoreBody.trim() !== st.lastSaved) scheduleSave(st);
+        },
+      });
+    }
+
+    function renderNote(n: any, prepend = false) {
+      const li = document.createElement('li');
+      li.className = 'np-note';
+      const ta = document.createElement('textarea');
+      ta.className = 'np-body-input'; ta.value = n.body; ta.rows = 1;
+      ta.maxLength = 10000; ta.setAttribute('aria-label', 'Note');
+      const bar = document.createElement('div'); bar.className = 'np-bar';
+      const when = document.createElement('span'); when.className = 'np-when';
+      when.textContent = fmtWhen(n.updated_at || n.created_at);
+      const status = document.createElement('span'); status.className = 'np-status'; status.setAttribute('aria-live', 'polite');
+      const del = document.createElement('button'); del.type = 'button'; del.className = 'np-link'; del.textContent = 'delete';
+      bar.append(when, status, del);
+      li.append(ta, bar);
+      prepend ? list.prepend(li) : list.append(li);
+
+      const st: NoteState = { id: n.id, li, ta, when, status, lastSaved: n.body, chain: Promise.resolve(), failed: false };
+      states.add(st);
+      ta.addEventListener('input', () => { grow(ta); setStatus(st, '', false); scheduleSave(st); });
+      ta.addEventListener('keydown', (e) => { if (e.key === 'Escape') ta.blur(); });
+      ta.addEventListener('blur', () => {
+        if (!ta.value.trim()) deleteNote(st, st.lastSaved);
+        else flush(st, true); // keepalive: blur is often the last event before navigation
+      });
+      del.addEventListener('click', () => deleteNote(st, ta.value));
+      if (!root!.hidden) grow(ta);
+    }
 
     async function load() {
       let res: Response;
       try { res = await fetch(`/api/me/notes?target=${encodeURIComponent(target)}`, { headers: H }); } catch { return; }
       if (res.status !== 200) { res.body?.cancel(); return; } // logged out → stay hidden
-      render((await res.json()).notes ?? []);
+      const notes = (await res.json()).notes ?? [];
+      list.innerHTML = '';
+      for (const n of notes) renderNote(n); // DESC from the API; append keeps newest-first
       root!.hidden = false;
+      for (const st of states) grow(st.ta); // scrollHeight is 0 while hidden
     }
 
-    function render(notes: any[]) {
-      list.innerHTML = '';
-      for (const n of notes) {
-        const li = document.createElement('li');
-        li.className = 'np-note';
-        const body = document.createElement('div'); body.className = 'np-body'; body.textContent = n.body;
-        const bar = document.createElement('div'); bar.className = 'np-bar';
-        const when = document.createElement('span'); when.className = 'np-when';
-        when.textContent = (n.updated_at || n.created_at || '').replace('T', ' ').slice(0, 16);
-        const edit = document.createElement('button'); edit.type = 'button'; edit.className = 'np-link'; edit.textContent = 'edit';
-        const del = document.createElement('button'); del.type = 'button'; del.className = 'np-link'; del.textContent = 'delete';
-        edit.addEventListener('click', () => beginEdit(li, n, body));
-        del.addEventListener('click', async () => { if (!confirm('Delete this note?')) return; await fetch(`/api/me/notes?id=${n.id}`, { method: 'DELETE', headers: H }); load(); });
-        bar.append(when, edit, del);
-        li.append(body, bar);
-        list.appendChild(li);
+    async function addNote() {
+      const body = input.value.trim();
+      if (!body) return;
+      input.value = '';
+      try {
+        const res = await fetch('/api/me/notes', { method: 'POST', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ target, body }) });
+        if (!res.ok) throw new Error();
+        renderNote((await res.json()).note, true);
+      } catch {
+        input.value = body;
+        showToast("Couldn't add note", { tone: 'error' });
       }
     }
 
-    function beginEdit(li: HTMLElement, n: any, body: HTMLElement) {
-      const ta = document.createElement('textarea'); ta.className = 'np-input'; ta.rows = 3; ta.value = n.body;
-      const save = document.createElement('button'); save.type = 'button'; save.className = 'np-save'; save.textContent = 'Save';
-      save.addEventListener('click', async () => {
-        await fetch(`/api/me/notes?id=${n.id}`, { method: 'PATCH', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ body: ta.value }) });
-        load();
-      });
-      body.replaceWith(ta); ta.after(save);
-    }
+    root.querySelector('.np-save')!.addEventListener('click', addNote);
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); addNote(); } });
 
-    root.querySelector('.np-save')!.addEventListener('click', async () => {
-      const body = input.value.trim();
-      if (!body) return;
-      await fetch('/api/me/notes', { method: 'POST', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ target, body }) });
-      input.value = '';
-      load();
+    window.addEventListener('pagehide', () => {
+      for (const st of states) if (st.li.isConnected && st.ta.value.trim() && st.ta.value.trim() !== st.lastSaved) flush(st, true);
+    });
+    window.addEventListener('online', () => {
+      for (const st of states) if (st.failed && st.li.isConnected) flush(st, true);
     });
     load();
   }
 </script>
 
-<style>
+<style is:global>
   .notes-panel { margin: 1rem 0; }
   .np-title { font-size: 0.9rem; color: var(--text-muted, #888); margin: 0 0 0.4rem; }
   .np-list { list-style: none; margin: 0 0 0.5rem; padding: 0; }
   .np-note { border: 1px solid var(--border, #eee); border-radius: 8px; padding: 0.5rem 0.6rem; margin-bottom: 0.4rem; }
-  .np-body { white-space: pre-wrap; }
+  .np-note:focus-within { border-color: var(--color-accent, #0645ad); }
+  .np-body-input { display: block; width: 100%; border: none; background: transparent; padding: 0; font: inherit;
+    resize: none; overflow: hidden; overflow-wrap: anywhere; }
+  .np-body-input:focus { outline: none; } /* focus is shown on .np-note via :focus-within */
   .np-bar { display: flex; gap: 0.6rem; margin-top: 0.3rem; font-size: 0.75rem; color: var(--text-muted, #999); }
   .np-when { margin-right: auto; }
+  .np-status { color: var(--text-muted, #999); }
   .np-link { border: none; background: transparent; cursor: pointer; color: var(--color-accent, #0645ad); font-size: 0.75rem; padding: 0; }
   .np-add { display: flex; flex-direction: column; gap: 0.35rem; align-items: flex-start; }
   .np-input { width: 100%; border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.4rem 0.5rem; font: inherit; }

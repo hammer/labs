@@ -38,6 +38,7 @@ import Layout from '../components/Layout.astro';
   </main>
 
   <script>
+    import { loadNameMap, targetName, targetUrl } from '../lib/ui/names';
     const $ = (id) => document.getElementById(id);
     async function render() {
       let data = { user: null };
@@ -60,14 +61,8 @@ import Layout from '../components/Layout.astro';
     }
 
     // Overview of all the user's tags, grouped by prefix (bare tags under "—"),
-    // each linking to the tagged output/lab. target → URL:
-    //   output:<lab>/<slug> → /outputs/<lab>/<slug> ; lab:<slug> → /labs/<slug>
-    function targetUrl(t) {
-      if (t.startsWith('output:')) return '/outputs/' + t.slice(7);
-      if (t.startsWith('lab:')) return '/labs/' + t.slice(4);
-      return '#';
-    }
-    function targetLabel(t) { const s = t.split('/').pop() || t; return s.replace(/^(output:|lab:)/, ''); }
+    // each linking to the tagged output/lab with its real display name
+    // (issue #53: resolved via src/lib/ui/names, slug fallback).
     async function renderTags() {
       let tags = [];
       try {
@@ -76,6 +71,7 @@ import Layout from '../components/Layout.astro';
         else res.body?.cancel();
       } catch { return; }
       if (!tags.length) return;
+      const names = await loadNameMap(); // only fetched signed-in (tags returned 200)
       const groups = new Map();
       for (const { target, tag } of tags) {
         const c = tag.indexOf(':');
@@ -97,7 +93,7 @@ import Layout from '../components/Layout.astro';
           row.appendChild(name);
           for (const t of targets) {
             const a = document.createElement('a'); a.className = 'at-item';
-            a.href = targetUrl(t); a.textContent = targetLabel(t);
+            a.href = targetUrl(t); a.textContent = targetName(names, t);
             row.appendChild(a);
           }
           body.appendChild(row);
@@ -112,7 +108,9 @@ import Layout from '../components/Layout.astro';
     render();
   </script>
 
-  <style>
+  <style is:global>
+    /* is:global: the tags overview DOM is created at runtime, which Astro's
+       scoping attribute never reaches. Classes are account-/at- prefixed. */
     .account { max-width: 640px; margin: 2rem auto; padding: 0 1rem; }
     .btn-github { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem;
       border-radius: 8px; background: #24292f; color: #fff; text-decoration: none; font-weight: 600; }

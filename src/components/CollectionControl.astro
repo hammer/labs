@@ -1,11 +1,14 @@
 ---
 // "Add to collection" control for one item (issue #21 step 4). Progressive.
+// Issue #53: shared menu behavior (attachMenu) + optimistic checkbox toggles —
+// the checkbox is its own undo (GitHub-Lists pattern), so no toast on success;
+// failures revert the box with an error toast.
 interface Props { target: string; }
 const { target } = Astro.props;
 ---
 <div class="coll-control" data-target={target} hidden>
-  <button class="cc-toggle" type="button" aria-expanded="false">＋ Collections</button>
-  <div class="cc-menu" hidden>
+  <button class="cc-toggle ui-menu-btn" type="button" aria-expanded="false">＋ Collections</button>
+  <div class="cc-menu ui-menu" hidden>
     <ul class="cc-list"></ul>
     <form class="cc-new">
       <input class="cc-new-input" type="text" placeholder="New collection…" maxlength="120" />
@@ -15,6 +18,8 @@ const { target } = Astro.props;
 </div>
 
 <script>
+  import { attachMenu } from '../lib/ui/menu';
+  import { showToast } from '../lib/ui/toast';
   const H = { 'x-requested-with': 'labindex' };
   const root = document.querySelector<HTMLElement>('.coll-control');
   if (root) {
@@ -45,7 +50,7 @@ const { target } = Astro.props;
         const li = document.createElement('li');
         const lbl = document.createElement('label'); lbl.className = 'cc-item';
         const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = member.has(c.id);
-        cb.addEventListener('change', () => cb.checked ? add(c.id) : remove(c.id));
+        cb.addEventListener('change', () => setMembership(cb, c.id, cb.checked));
         const name = document.createElement('span'); name.textContent = c.name;
         lbl.append(cb, name);
         if (c.is_public) {
@@ -57,40 +62,54 @@ const { target } = Astro.props;
       }
     }
 
-    async function add(cid: number) {
-      await fetch('/api/me/collection-items', { method: 'POST', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ collection_id: cid, target }) });
-      member.add(cid);
-    }
-    async function remove(cid: number) {
-      await fetch(`/api/me/collection-items?collection_id=${cid}&target=${encodeURIComponent(target)}`, { method: 'DELETE', headers: H });
-      member.delete(cid);
+    // Optimistic: the box already shows the new state; revert it on failure.
+    async function setMembership(cb: HTMLInputElement, cid: number, on: boolean) {
+      on ? member.add(cid) : member.delete(cid);
+      let ok = false;
+      try {
+        const res = on
+          ? await fetch('/api/me/collection-items', { method: 'POST', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ collection_id: cid, target }) })
+          : await fetch(`/api/me/collection-items?collection_id=${cid}&target=${encodeURIComponent(target)}`, { method: 'DELETE', headers: H });
+        ok = res.ok;
+      } catch {}
+      if (!ok) {
+        on ? member.delete(cid) : member.add(cid);
+        cb.checked = !on;
+        showToast("Couldn't update collection", { tone: 'error' });
+      }
     }
 
-    toggle.addEventListener('click', () => { const open = menu.hidden; menu.hidden = !open; toggle.setAttribute('aria-expanded', String(open)); });
+    attachMenu(toggle, menu);
     root.querySelector('.cc-new')!.addEventListener('submit', async (e) => {
       e.preventDefault();
       const inp = root!.querySelector<HTMLInputElement>('.cc-new-input')!;
       const name = inp.value.trim(); if (!name) return;
-      const res = await fetch('/api/me/collections', { method: 'POST', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ name }) });
-      if (res.ok) { const { collection } = await res.json(); collections.unshift(collection); await add(collection.id); inp.value = ''; render(); }
+      let created: any = null;
+      try {
+        const res = await fetch('/api/me/collections', { method: 'POST', headers: { ...H, 'content-type': 'application/json' }, body: JSON.stringify({ name }) });
+        if (res.ok) created = (await res.json()).collection;
+      } catch {}
+      if (!created) { showToast("Couldn't create collection", { tone: 'error' }); return; }
+      collections.unshift(created);
+      inp.value = '';
+      render();
+      const cb = list.querySelector<HTMLInputElement>('input[type=checkbox]')!; // first row = the new collection
+      cb.checked = true;
+      setMembership(cb, created.id, true); // creating from an item auto-adds it
     });
-
-    document.addEventListener('click', (e) => { if (!root.contains(e.target as Node)) menu.hidden = true; });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') menu.hidden = true; });
     load();
   }
 </script>
 
-<style>
+<style is:global>
   .coll-control { position: relative; display: inline-block; margin: 0.5rem 0; font-size: 0.85rem; }
-  .cc-toggle { background: transparent; border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.2rem 0.6rem; cursor: pointer; color: inherit; }
-  .cc-menu { position: absolute; z-index: 20; margin-top: 0.25rem; min-width: 220px; background: var(--bg, #fff); border: 1px solid var(--border, #ddd); border-radius: 8px; padding: 0.5rem; box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
+  .cc-menu { padding: 0.5rem; }
   .cc-list { list-style: none; margin: 0 0 0.4rem; padding: 0; max-height: 260px; overflow-y: auto; }
   .cc-item { display: flex; align-items: center; gap: 0.5rem; padding: 0.2rem 0; cursor: pointer; }
   .cc-pub { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--color-accent, #0645ad); border: 1px solid currentColor; border-radius: 999px; padding: 0 0.4rem; white-space: nowrap; }
   .cc-empty { color: var(--text-muted, #888); }
   .cc-new { display: flex; gap: 0.3rem; border-top: 1px solid var(--border, #eee); padding-top: 0.4rem; }
-  .cc-new-input { flex: 1; border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.2rem 0.4rem; }
+  .cc-new-input { flex: 1; border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.2rem 0.4rem; min-width: 0; }
   .cc-new-btn { border: 1px solid var(--border, #ddd); border-radius: 6px; background: transparent; cursor: pointer; padding: 0.2rem 0.5rem; }
-  @media (pointer: coarse) { .cc-item { min-height: 44px; } .cc-toggle { min-height: 44px; } .cc-new-btn { min-height: 44px; } }
+  @media (pointer: coarse) { .cc-item { min-height: 44px; } .cc-new-btn { min-height: 44px; } }
 </style>

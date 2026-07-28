@@ -5,6 +5,7 @@
 // logged-in users who haven't picked a tag. The whole install is best-effort;
 // callers wrap it in try/catch so any failure leaves the existing filter intact.
 import type { FilterDimension, DimState } from './filters/types.js';
+import { attachMenu } from './ui/menu.js';
 
 interface Opts {
   dimensions: FilterDimension[];
@@ -45,7 +46,7 @@ export async function installMyTagFilter(opts: Opts): Promise<MyTagFilter | null
   // Compact dropdown control inserted right after the filter bar.
   const wrap = document.createElement('div');
   wrap.className = 'mytag-filter';
-  wrap.innerHTML = `<button type="button" class="mtf-toggle" aria-expanded="false">★ My tags</button><div class="mtf-menu" hidden></div>`;
+  wrap.innerHTML = `<button type="button" class="mtf-toggle ui-menu-btn" aria-expanded="false">★ My tags</button><div class="mtf-menu ui-menu" hidden></div>`;
   const toggle = wrap.querySelector<HTMLButtonElement>('.mtf-toggle')!;
   const menu = wrap.querySelector<HTMLElement>('.mtf-menu')!;
   for (const tag of distinct) {
@@ -62,19 +63,18 @@ export async function installMyTagFilter(opts: Opts): Promise<MyTagFilter | null
     const span = document.createElement('span'); span.textContent = tag;
     label.append(cb, span); menu.appendChild(label);
   }
-  toggle.addEventListener('click', () => { const open = menu.hidden; menu.hidden = !open; toggle.setAttribute('aria-expanded', String(open)); });
-  document.addEventListener('click', (e) => { if (!wrap.contains(e.target as Node)) menu.hidden = true; });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') menu.hidden = true; });
+  attachMenu(toggle, menu);
   opts.filterBarEl.after(wrap);
 
+  // Base chrome comes from the shared .ui-menu-btn/.ui-menu classes
+  // (global.css, issue #53); only the feature-specific bits are injected here.
   if (!document.getElementById('mtf-style')) {
     const st = document.createElement('style'); st.id = 'mtf-style';
     st.textContent = `.mytag-filter{position:relative;display:inline-block;margin:.25rem 0 .5rem;font-size:.85rem}
-.mtf-toggle{background:transparent;border:1px solid var(--border,#ddd);border-radius:6px;padding:.2rem .6rem;cursor:pointer;color:inherit}
 .mtf-toggle.active{border-color:var(--color-accent,#0645ad);color:var(--color-accent,#0645ad)}
-.mtf-menu{position:absolute;z-index:20;margin-top:.25rem;min-width:200px;max-height:300px;overflow-y:auto;background:var(--surface,#fff);border:1px solid var(--border,#ddd);border-radius:8px;padding:.4rem;box-shadow:0 6px 24px rgba(0,0,0,.12)}
+.mtf-menu{min-width:200px;max-height:300px;overflow-y:auto}
 .mtf-item{display:flex;align-items:center;gap:.5rem;padding:.15rem .2rem;cursor:pointer}
-@media(pointer:coarse){.mtf-item{min-height:44px}.mtf-toggle{min-height:44px}}`;
+@media(pointer:coarse){.mtf-item{min-height:44px}}`;
     document.head.appendChild(st);
   }
 
