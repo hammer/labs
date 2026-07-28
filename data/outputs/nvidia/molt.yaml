@@ -1,0 +1,66 @@
+name: "Molt: PyTorch-Native Agentic RL Training Framework"
+slug: molt
+lab: nvidia
+type: library
+date: 2026-07-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.21653
+  - label: GitHub
+    url: https://github.com/NVIDIA-NeMo/labs-molt
+description: >
+  <p>NVIDIA's training framework for <strong>agentic reinforcement learning</strong>,
+  shipped as a NeMo Labs project with readability as the primary design criterion:
+  <strong>~8.6K Python lines</strong> (vs. ~62K for <a href="/outputs/hku/verl">verl</a>)
+  &mdash; "compact and clean enough for a researcher to hold in their head." A
+  <strong>single asynchronous loop</strong> &mdash; a Ray queue orchestrating the agent
+  pool, unforked vLLM rollout engines, and an FSDP2/AutoModel policy actor (no hybrid
+  controller, no parameter server, no Megatron dependency) &mdash; trains multimodal and
+  mixture-of-experts policies. Its <strong>token-first "TITO" contract</strong> guarantees
+  every trained token is exactly the token the engine generated: trajectories flow
+  token-id-exact from rollout to training with no re-tokenization, and agents stay
+  ordinary Python &mdash; either a Gymnasium-style <code>Env</code> or an unmodified
+  OpenAI/Anthropic-SDK <code>ChatAgent</code> captured through a loopback proxy.</p>
+
+  <p>Techniques: a streaming rollout pool with partial rollouts (per-token importance
+  correction when resumed requests mix policy versions), <strong>rollout-routing
+  replay</strong> so MoE training matches inference-time expert choices, automatic
+  trajectory segmentation under context compaction, and global whole-batch token
+  normalization. Algorithms: REINFORCE++, GRPO, RLOO, PPO with GAE, Dr. GRPO, and
+  on-policy distillation. The same codebase scales from 4B dense to
+  <strong>1T-class MoE by configuration</strong> (validated on a 700B-class MoE at
+  EP256); on Qwen3-30B-A3B across 16 GPUs with DAPO-Math prompts it is statistically
+  comparable to a Megatron-Core + SGLang stack (119.4&plusmn;2.3 vs. 109.5&plusmn;10.3
+  s/step), with speculative decoding giving a 5&times; generation speedup and prefix
+  caching cutting multi-turn re-prefill to 0.05&nbsp;s. Ships recipes for Qwen3 (dense
+  and MoE), Nemotron-Omni, and GLM-5.2; Apache 2.0. Senior authors include
+  <a href="/people/jan-kautz">Jan Kautz</a> and Yi Dong. Part of the agent-training
+  execution layer we track alongside
+  <a href="/outputs/microsoft/openforge-rl">OpenForgeRL</a>.</p>
+tags:
+  - agents
+  - reinforcement-learning
+  - infrastructure
+  - post-training
+library:
+  github: https://github.com/NVIDIA-NeMo/labs-molt
+  language: Python
+  framework: PyTorch
+  license: Apache 2.0
+paper:
+  arxiv: "2607.21653"
+  authors:
+    - Jian Hu
+    - Huiying Li
+    - Hao Zhang
+    - Binfeng Xu
+    - Yifan Zhang
+    - Shaokun Zhang
+    - Hemil Desai
+    - Michael Demoret
+    - Pavlo Molchanov
+    - Jan Kautz
+    - Yi Dong
+related:
+  - megatron-lm
+  - lightning-opd
