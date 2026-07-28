@@ -1,0 +1,46 @@
+name: PaLM 2
+slug: palm-2
+lab: google
+type: model
+date: 2023-05-10
+sources:
+  - label: Announcement
+    url: https://blog.google/technology/ai/google-palm-2-ai-large-language-model/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2305.10403
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/palm-2
+description: >
+  <p>Google I/O 2023 successor to <a href="/outputs/google/palm">PaLM</a>,
+  "significantly smaller than the largest PaLM model but us[ing] more training
+  compute" &mdash; the tech report validated Chinchilla's 1:1 compute-optimal
+  scaling at larger compute budgets. Trained with a tuned mixture of objectives
+  (UL2-style) on a mixture spanning 100+ languages, code, and math. Four sizes:
+  <strong>Gecko, Otter, Bison, Unicorn</strong> (Gecko small enough for
+  on-device use).</p>
+
+  <p>Big gains over PaLM on reasoning (BIG-Bench Hard 78.1 CoT vs 65.2) and
+  math (GSM8K 91.0 with self-consistency vs 74.4, "outperform[ing] Minerva and
+  GPT-4"), and C2-level passes on language-proficiency exams in every tested
+  language. Launched powering 25+ products including <strong>Bard</strong>,
+  Workspace Duet AI, Med-PaLM 2, and Sec-PaLM. Parameters and training tokens
+  officially undisclosed; CNBC (from internal docs) reported ~340B parameters
+  on ~3.6T tokens. Proprietary.</p>
+tags:
+  - frontier
+  - reasoning
+model:
+  architecture: dense
+  parameters_estimated:
+    value: 340B
+    source: https://www.cnbc.com/2023/05/16/googles-palm-2-uses-nearly-five-times-more-text-data-than-predecessor.html
+    source_label: CNBC (internal Google documentation)
+    method: Reported from internal Google documents; tier unspecified (presumably PaLM 2-L). Never confirmed by Google.
+    posted: "2023-05-16"
+  intelligence_index: 3
+  intelligence_index_version: "AA v4.1"
+paper:
+  arxiv: "2305.10403"
+related:
+  - palm
+  - gemini-1.0

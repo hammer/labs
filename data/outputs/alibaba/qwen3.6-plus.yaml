@@ -28,3 +28,5 @@ model:
   intelligence_index_version: "AA v4.1"
 related:
   - qwen3.5
+  - qwen3.6-max
+  - qwen3.6-open

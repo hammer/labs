@@ -71,4 +71,5 @@ outputs:
       context_window: 262144
 related:
   - qwen3.6-plus
+  - qwen3.6-max
   - qwen3.5

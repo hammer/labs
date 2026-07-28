@@ -15,7 +15,9 @@ description: >
   smaller.</p>
 
   <p><strong>Apriel-Nemotron-15B-Thinker</strong> (August 2025, with NVIDIA): 15B
-  reasoning model that matches o1-mini and QwQ-32B at half the memory. Apache 2.0.</p>
+  reasoning model that matches o1-mini and QwQ-32B at half the memory. Apache 2.0.
+  Succeeded by the Pixtral-based <a href="/outputs/servicenow/apriel-thinker">Apriel
+  15B Thinker</a> line (Oct 2025).</p>
 tags:
   - open-weight
   - reasoning
@@ -32,3 +34,4 @@ model:
       notes: Reasoning model with NVIDIA
 related:
   - starcoder
+  - apriel-thinker

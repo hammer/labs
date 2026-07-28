@@ -1,0 +1,56 @@
+name: Apriel 15B Thinker
+slug: apriel-thinker
+lab: servicenow
+type: model
+date: 2025-10-01
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.01141
+  - label: HuggingFace (1.5)
+    url: https://huggingface.co/ServiceNow-AI/Apriel-1.5-15b-Thinker
+  - label: HuggingFace (1.6)
+    url: https://huggingface.co/ServiceNow-AI/Apriel-1.6-15b-Thinker
+  - label: Blog (1.6)
+    url: https://huggingface.co/blog/ServiceNow-AI/apriel-1p6-15b-thinker
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/apriel-v1-6-15b-thinker
+description: >
+  <p>ServiceNow's cost-efficiency flagship: a <strong>15B multimodal
+  (text+image) reasoning model built by depth-upscaling Mistral's
+  Pixtral-12B</strong> (40 &rarr; 48 layers) &mdash; no pretraining from
+  scratch &mdash; then staged continual pretraining and text-only SFT with
+  explicit reasoning traces. The 1.5 tech report's tagline: "Mid training is
+  all you need!" &mdash; no RL at all in 1.5, trained on 640 H100s in 7 days,
+  fits on a single GPU. MIT license.</p>
+
+  <p><strong>Apriel-1.6</strong> (December 9, 2025) expands the CPT mixture,
+  extends text CPT to 49K sequence length, grows SFT to 2.4M samples, and adds
+  multi-stage <strong>RL with verifiable rewards (GSPO)</strong> &mdash;
+  cutting reasoning-token usage by 30%+. Release-era claims: AA index 52 (1.5)
+  &rarr; 57 (1.6) on AA's pre-recalibration v3.0 &mdash; "at least 1/10 the
+  size of any other model" above 50, and the leading &lt;40B open-weights
+  model. On the recalibrated AA v4.1 both checkpoints read ~21. AIME25: 88,
+  GPQA-Diamond: 73, MMLU-Pro: 79 (1.6, self-reported).</p>
+tags:
+  - open-weight
+  - reasoning
+  - multimodal
+  - efficiency
+model:
+  architecture: dense
+  base_model: pixtral
+  context_window: 131072
+  license: MIT
+  intelligence_index: 21
+  intelligence_index_version: "AA v4.1"
+  openness_index: 50
+  openness_index_version: "AA Openness Index v1.0"
+  variants:
+    - name: Apriel-1.5-15b-Thinker
+      notes: "15B (14.86B), Oct 2025; CPT + SFT only, no RL"
+    - name: Apriel-1.6-15b-Thinker
+      notes: "15B, Dec 2025; adds GSPO RL, ~30% fewer reasoning tokens"
+related:
+  - apriel
+  - pixtral

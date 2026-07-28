@@ -24,3 +24,4 @@ model:
   intelligence_index_version: "AA v4.1"
 related:
   - mistral-large-3
+  - pixtral-large

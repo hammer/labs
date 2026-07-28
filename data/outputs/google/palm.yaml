@@ -26,4 +26,5 @@ paper:
   arxiv: "2204.02311"
 related:
   - chinchilla
+  - palm-2
   - gemini-1.0

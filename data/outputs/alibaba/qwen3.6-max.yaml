@@ -1,0 +1,42 @@
+name: Qwen3.6-Max-Preview
+slug: qwen3.6-max
+lab: alibaba
+type: model
+date: 2026-04-20
+sources:
+  - label: Announcement (Alibaba Cloud)
+    url: https://www.alibabacloud.com/blog/qwen3-6-max-preview-smarter-sharper-still-evolving_603055
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/qwen3-6-max
+  - label: Coverage (Decrypt)
+    url: https://decrypt.co/364948
+description: >
+  <p>Top proprietary tier of the Qwen3.6 generation and the <strong>first
+  fully closed-weights Qwen Max flagship</strong> &mdash; released only as a
+  Preview ("smarter, sharper, still evolving"); no GA Qwen3.6-Max ever
+  shipped. <strong>256K context</strong>, text-only, with a
+  <code>preserve_thinking</code> mode recommended for agentic work and an API
+  compatible with both OpenAI and Anthropic specs. $1.30/$7.80 per M tokens
+  (90% cache-hit discount).</p>
+
+  <p>Alibaba claimed <strong>#1 on six coding/agentic benchmarks</strong>
+  (SWE-bench Pro, Terminal-Bench 2.0, SkillsBench, QwenClawBench,
+  QwenWebBench, SciCode), with gains over <a
+  href="/outputs/alibaba/qwen3.6-plus">Qwen3.6-Plus</a> of +9.9 SkillsBench
+  and +10.8 SciCode. AA Intelligence Index v4.1: <strong>40</strong>.
+  Parameters undisclosed (press reports of "35B-A3B" conflate it with the
+  open Qwen3.6-35B-A3B). Deprecated a month later in favor of <a
+  href="/outputs/alibaba/qwen3.7">Qwen3.7-Max</a> (API live May 19, 2026).</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+  - agents
+model:
+  context_window: 256000
+  intelligence_index: 40
+  intelligence_index_version: "AA v4.1"
+related:
+  - qwen3.6-plus
+  - qwen3.6-open
+  - qwen3.7

@@ -1,0 +1,39 @@
+name: Pixtral Large
+slug: pixtral-large
+lab: mistral
+type: model
+date: 2024-11-18
+sources:
+  - label: Announcement
+    url: https://mistral.ai/news/pixtral-large
+  - label: HuggingFace
+    url: https://huggingface.co/mistralai/Pixtral-Large-Instruct-2411
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/pixtral-large-2411
+description: >
+  <p><strong>124B open-weights multimodal model</strong> (123B multimodal
+  decoder + 1B vision encoder) "built on top of Mistral Large 2, i.e.,
+  Mistral-Large-Instruct-2407" &mdash; extending the text flagship with
+  frontier-class image understanding without compromising text performance.
+  128K context fits at least 30 high-resolution images.</p>
+
+  <p>At release it led MathVista (CoT: <strong>69.4</strong>, ahead of GPT-4o
+  and Gemini-1.5 Pro), DocVQA (ANLS: 93.3), VQAv2 (80.9), and MM-MT-Bench
+  (7.4, ahead of Claude 3.5 Sonnet), and was the best open-weights model on
+  the LMSys Vision Arena by ~50 ELO. Mistral Research License (commercial
+  license required for production use).</p>
+tags:
+  - multimodal
+  - vision
+  - open-weight
+model:
+  architecture: dense
+  parameters: 124B
+  context_window: 128000
+  base_model: mistral-large-2
+  intelligence_index: 8
+  intelligence_index_version: "AA v4.1"
+  license: Mistral Research License
+related:
+  - pixtral
+  - mistral-large-2
