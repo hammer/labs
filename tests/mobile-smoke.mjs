@@ -64,7 +64,8 @@ const mimo = await fetch(`${BASE}/outputs/xiaomi/mimo-v2-pro/`).then(r => r.ok).
 if (mimo) pages.push('/outputs/xiaomi/mimo-v2-pro');
 
 // ── No horizontal overflow at phone/tablet widths ─────────────────────
-const widths = [360, 375, 412, 600, 700, 800, 900];
+// 320 is the supported floor since the #49 fix (home-table ≤360px tier).
+const widths = [320, 360, 375, 412, 600, 700, 800, 900];
 for (const width of widths) {
   const viewport = { width, height: 800 };
   let page = await newPage(viewport);
@@ -91,9 +92,8 @@ for (const width of widths) {
 // The suite runs logged-out; the nav's crowded state (Collections + @user)
 // only appears when signed in. DOM-inject that state and assert the nav bar
 // still fits — this is a layout-only check, no real session needed.
-// Widths match the main loop's phone range (360+); 320 is below the site's
-// supported minimum and the home .lab-table alone overflows it (pre-existing).
-for (const width of [360, 375, 390, 412]) {
+// Widths match the main loop's phone range, including the 320px floor (#49).
+for (const width of [320, 360, 375, 390, 412]) {
   const page = await newPage({ width, height: 800 });
   await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
   const t = await page.evaluate(() => {

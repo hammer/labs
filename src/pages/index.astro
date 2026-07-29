@@ -755,6 +755,31 @@ const dimensions: FilterDimension[] = [
     }
   }
 
+  /* Narrowest phones (#49): the 600px-tier four-column set measured 322px
+     min-content vs a 288px budget (320px viewport minus the container's
+     16px gutters). Measured cuts below bring it to ~284px. 320 is guarded
+     by test:mobile; below that is out of scope. */
+  @media (max-width: 360px) {
+    .lab-table th,
+    .lab-row td {
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+    }
+
+    .lab-name {
+      max-width: 86px;
+    }
+
+    .lab-name-inner {
+      gap: 0.3rem;
+    }
+
+    .lab-logo {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
   /* Shortcuts modal */
   .shortcut-modal {
     position: fixed;
