@@ -26,7 +26,7 @@ tags:
   - open-weight
 model:
   architecture: dense
-  intelligence_index: 6
+  intelligence_index: 7
   intelligence_index_version: "AA v4.1"
   openness_index: 38.9
   openness_index_version: "AA Openness Index v1.0"

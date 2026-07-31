@@ -13,6 +13,8 @@ sources:
     url: https://artificialanalysis.ai/models/inkling
   - label: Coverage (TechCrunch)
     url: https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/
+  - label: OpenRouter
+    url: https://openrouter.ai/thinkingmachines/inkling
 description: >
   <p>Thinking Machines' first model, trained from scratch: a natively
   multimodal MoE Transformer &mdash; 975B total / 41B active parameters,
@@ -29,9 +31,10 @@ description: >
   &mdash; the leading U.S. open-weights model at release, ahead of
   Nemotron 3 Ultra (38). Apache 2.0; fine-tunable on Tinker day one;
   served by Together, Fireworks, Modal, Databricks, and Baseten. The
-  companion <strong>Inkling-Small</strong> (276B/12B) shares the
-  post-training stack. Announcement-post only so far &mdash; no technical
-  report yet.</p>
+  companion <a
+  href="/outputs/thinking-machines/inkling-small">Inkling-Small</a>
+  (276B/12B, AA 40) got its own open-weights release on July 30.
+  Announcement-post only so far &mdash; no technical report yet.</p>
 tags:
   - frontier
   - open-weight
@@ -58,7 +61,7 @@ model:
     - name: Inkling-Small
       parameters: "276B"
       active_parameters: "12B"
-      notes: Same post-training stack; on Tinker, not yet on HuggingFace
+      notes: Open weights July 30, 2026 — tracked as its own output
     - name: Inkling-NVFP4
       notes: NVFP4-quantized checkpoint on HuggingFace
   benchmark_scores:
@@ -78,4 +81,5 @@ model:
       score: "63.8"
       mode: effort 0.99
 related:
+  - inkling-small
   - tinker

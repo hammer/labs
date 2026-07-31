@@ -1,0 +1,65 @@
+name: Inkling-Small
+slug: inkling-small
+lab: thinking-machines
+type: model
+date: 2026-07-30
+sources:
+  - label: Announcement
+    url: https://thinkingmachines.ai/news/inkling-small/
+  - label: HuggingFace
+    url: https://huggingface.co/thinkingmachines/Inkling-Small
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/inkling-small
+  - label: OpenRouter
+    url: https://openrouter.ai/thinkingmachines/inkling-small
+description: >
+  <p>The efficiency companion to <a
+  href="/outputs/thinking-machines/inkling">Inkling</a>, released as open
+  weights two weeks after the flagship (it was Tinker-only at launch):
+  <strong>276B total / 12B active MoE</strong> (42 layers, 6 of 256 routed
+  experts + 2 shared, hybrid local/global attention), natively multimodal
+  (text, image, audio in) with up to <strong>1M-token context</strong>.
+  "Comparable performance to Inkling at a quarter of its size" &mdash; AA
+  Intelligence Index v4.1: <strong>40</strong> vs the 975B flagship's 41, at
+  $1.20/M output tokens vs $4.05.</p>
+
+  <p>Own pretraining run with a revised data mix and recipe (trained on
+  NVIDIA GB300 NVL72 systems), then post-trained from an earlier preview
+  checkpoint partly via <strong>on-policy distillation with Inkling as
+  teacher</strong>, plus two further weeks of agentic-coding RL &mdash; it
+  <em>surpasses</em> the flagship on reasoning and agentic coding
+  (SWE-bench Verified 80.2 vs 77.6) while Inkling keeps the edge on
+  knowledge and factuality. Apache 2.0; NVFP4 checkpoint alongside;
+  fine-tunable on Tinker; day-0 vLLM/SGLang support.</p>
+tags:
+  - open-weight
+  - moe
+  - multimodal
+  - reasoning
+  - efficiency
+model:
+  architecture: moe
+  parameters: "276B"
+  active_parameters: "12B"
+  context_window: 1000000
+  num_experts: 256
+  top_k: 6
+  license: Apache 2.0
+  intelligence_index: 40
+  intelligence_index_version: "AA v4.1"
+  benchmark_scores:
+    - benchmark: SWE-Bench Verified
+      score: "80.2"
+      mode: effort 0.99
+    - benchmark: Terminal-Bench 2.1
+      score: "64.7"
+      mode: effort 0.99
+    - benchmark: HLE
+      score: "31.6"
+      mode: effort 0.99
+    - benchmark: IFBench
+      score: "82.2"
+      mode: effort 0.99
+related:
+  - inkling
+  - tinker
