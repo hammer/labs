@@ -40,5 +40,9 @@ model:
   context_window: 260000
   intelligence_index: 43
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 52
+      version: "AA v4.0"
+      until: "2026-06-16"
 related:
   - muse-spark-1.1

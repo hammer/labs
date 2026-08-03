@@ -28,17 +28,27 @@ model:
   architecture: dense
   intelligence_index: 7
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 6
+      version: "AA v4.1"
+      until: "2026-07-31"
+    - score: 11
+      version: "AA v4.0"
+      until: "2026-06-16"
+    - score: 16
+      version: "AA v4.0"
+      until: "2026-06-10"
   openness_index: 38.9
   openness_index_version: "AA Openness Index v1.0"
   variants:
     - name: Ministral 3 3B
       parameters: 3B
-      notes: AA Intelligence Index 6
+      notes: AA Intelligence Index 7
     - name: Ministral 3 8B
       parameters: 8B
       notes: AA Intelligence Index 9
     - name: Ministral 3 14B
       parameters: 14B
-      notes: AA Intelligence Index 10 (highest variant)
+      notes: AA Intelligence Index 11 (highest variant)
 paper:
   arxiv: "2601.08584"

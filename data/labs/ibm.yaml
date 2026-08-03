@@ -26,7 +26,7 @@ description: >
   for enterprise with <strong>ISO 42001 certification</strong> and transparent data
   governance. <strong>Granite 4.0</strong> (October 2025) uses a novel
   <strong>hybrid Mamba-2/Transformer + MoE architecture</strong> achieving 70% less
-  memory and 2x inference speed. The H-Small variant (32B/9B active) reaches AA index 23.
+  memory and 2x inference speed. The H-Small variant (32B/9B active) reaches AA index 5.
   <strong>Granite Code</strong> (2024) provides open coding models in 116 languages.</p>
 
   <p>Chief Scientist <a href="https://scholar.google.com/citations?user=77QlzIwAAAAJ">Ruchir

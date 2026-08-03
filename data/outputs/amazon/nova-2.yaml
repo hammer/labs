@@ -41,6 +41,10 @@ model:
   context_window: 1000000
   intelligence_index: 22
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 36
+      version: "AA v4.0"
+      until: "2026-06-16"
   openness_index: 11.1
   openness_index_version: "AA Openness Index v1.0 (family inference)"
   variants:
@@ -49,9 +53,9 @@ model:
     - name: Nova 2 Pro Preview (low thinking)
       notes: AA Intelligence Index 20
     - name: Nova 2 Pro Preview (non-reasoning)
-      notes: AA Intelligence Index 16; 256K context for non-reasoning mode
+      notes: AA Intelligence Index 14; 256K context for non-reasoning mode
     - name: Nova 2 Lite (high thinking)
-      notes: AA Intelligence Index 21; 1M context; cost-tier reasoner
+      notes: AA Intelligence Index 18; 1M context; cost-tier reasoner
     - name: Nova 2 Lite (medium thinking)
       notes: AA Intelligence Index 19
     - name: Nova 2 Lite (low thinking)

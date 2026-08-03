@@ -39,6 +39,10 @@ outputs:
       active_parameters: 15B
       intelligence_index: 33
       intelligence_index_version: "AA v4.1"
+      intelligence_index_history:
+        - score: 41
+          version: "AA v4.0"
+          until: "2026-06-16"
       openness_index: 50
       openness_index_version: "AA Openness Index v1.0"
       training_tokens: 27T

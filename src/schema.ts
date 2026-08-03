@@ -94,6 +94,15 @@ const ModelDetailsSchema = z.object({
   // the version makes it easy to spot stale entries on the next sweep.
   // Use the canonical AA notation, e.g. "AA v4.0".
   intelligence_index_version: z.string().optional(),
+  // Superseded AAII readings, newest first. AA rescores models both within
+  // a version (eval point releases) and across recalibrations; this keeps
+  // the trail visible. `until` is the date we observed the replacement.
+  // fetch-aa-intelligence appends here automatically on every rescore.
+  intelligence_index_history: z.array(z.object({
+    score: z.number(),
+    version: z.string().optional(),
+    until: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Date must be YYYY-MM-DD'),
+  })).optional(),
   // AA's Openness Index — composite of model availability (weights + commercial
   // license) and transparency (data, methodology, code). Score is 0-100, always
   // a multiple of 1/18 ≈ 5.56. Per-checkpoint: the value here MUST come from the

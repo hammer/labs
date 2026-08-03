@@ -24,6 +24,13 @@ model:
   active_parameters: 23B
   intelligence_index: 22
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 25
+      version: "AA v4.1"
+      until: "2026-07-25"
+    - score: 32
+      version: "AA v4.0"
+      until: "2026-06-16"
   openness_index: 27.8
   openness_index_version: "AA Openness Index v1.0"
 paper:

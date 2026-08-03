@@ -40,6 +40,10 @@ model:
   context_window: 202752
   intelligence_index: 34
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 43
+      version: "AA v4.0"
+      until: "2026-06-16"
   training_tokens: 28.5T
 related:
   - glm-5

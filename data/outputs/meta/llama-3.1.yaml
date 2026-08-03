@@ -29,6 +29,10 @@ model:
   parameters: 405B
   intelligence_index: 9
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 17
+      version: "AA v4.0"
+      until: "2026-06-16"
   openness_index: 38.9
   openness_index_version: "AA Openness Index v1.0"
   context_window: 128000

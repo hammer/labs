@@ -36,6 +36,10 @@ model:
   base_model: mistral-7b
   intelligence_index: 6
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 12
+      version: "AA v4.0"
+      until: "2026-06-16"
 paper:
   arxiv: "2312.15166"
 related:

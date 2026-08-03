@@ -58,6 +58,12 @@ model:
   context_window: 65536
   intelligence_index: 2
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 8
+      version: "AA v4.0"
+      until: "2026-06-16"
+    - score: 6
+      until: "2026-05-04"
   openness_index: 88.9
   openness_index_version: "AA Openness Index v1.0"
   training_tokens: 15T

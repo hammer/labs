@@ -32,6 +32,10 @@ model:
   context_window: 1000000
   intelligence_index: 13
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 19
+      version: "AA v4.0"
+      until: "2026-06-16"
   openness_index: 11.1
   openness_index_version: "AA Openness Index v1.0"
   parameters_estimated:

@@ -38,7 +38,7 @@ description: >
   <p>Self-reported benchmarks: <strong>τ²-Bench Telecom 85%</strong> (up from
   37% on Command A Reasoning), <strong>Terminal-Bench Hard 25%</strong> (up
   from 3%), agentic QA +20% over Command A Reasoning, MMMU 75.1, MMMU-Pro 63,
-  MathVista 80.6. <strong>AA Intelligence Index v4.1: 29</strong>. 270 tok/s output speed.</p>
+  MathVista 80.6. <strong>AA Intelligence Index v4.1: 23</strong>. 270 tok/s output speed.</p>
 tags:
   - frontier
   - open-weight
@@ -55,6 +55,13 @@ model:
   context_window: 128000
   intelligence_index: 23
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 29
+      version: "AA v4.1"
+      until: "2026-07-25"
+    - score: 37
+      version: "AA v4.0"
+      until: "2026-06-16"
   openness_index: 38.9
   openness_index_version: "AA Openness Index v1.0"
   license: Apache 2.0

@@ -34,6 +34,13 @@ outputs:
       active_parameters: 37B
       intelligence_index: 14
       intelligence_index_version: "AA v4.1"
+      intelligence_index_history:
+        - score: 10
+          version: "AA v4.1"
+          until: "2026-07-28"
+        - score: 16
+          version: "AA v4.0"
+          until: "2026-06-16"
       variants:
         - name: DeepSeek-V3
         - name: DeepSeek-V3-0324

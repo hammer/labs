@@ -30,6 +30,10 @@ model:
   architecture: moe
   intelligence_index: 34
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 42
+      version: "AA v4.0"
+      until: "2026-06-16"
   openness_index: 27.8
   openness_index_version: "AA Openness Index v1.0"
   parameters: 229B

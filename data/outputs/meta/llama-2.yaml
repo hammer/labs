@@ -27,6 +27,10 @@ model:
   parameters: 70B
   intelligence_index: 3
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 8
+      version: "AA v4.0"
+      until: "2026-06-16"
   context_window: 4096
   training_tokens: 2T
   variants:

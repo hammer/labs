@@ -17,6 +17,13 @@ model:
   # supersedes the launch checkpoint's mimo-v2-omni page (35.0).
   intelligence_index: 36
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 35
+      version: "AA v4.1"
+      until: "2026-07-28"
+    - score: 43
+      version: "AA v4.0"
+      until: "2026-06-16"
 tags:
   - multimodal
 related:

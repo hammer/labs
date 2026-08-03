@@ -37,6 +37,10 @@ model:
   context_window: 1000000
   intelligence_index: 46
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 57
+      version: "AA v4.0"
+      until: "2026-06-16"
 related:
   - qwen3.6-plus
   - qwen3.6-open

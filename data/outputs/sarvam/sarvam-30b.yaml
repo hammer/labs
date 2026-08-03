@@ -11,7 +11,7 @@ sources:
     url: https://artificialanalysis.ai/models/sarvam-30b
 description: >
   30B total / 2.4B active MoE (top-6 routing, GQA). 32K context.
-  Trained from scratch for Indic languages. AA Intelligence: 12.
+  Trained from scratch for Indic languages. AA Intelligence: 7.
   Apache 2.0.
 tags:
   - moe
@@ -24,6 +24,10 @@ model:
   context_window: 32000
   intelligence_index: 7
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 12
+      version: "AA v4.0"
+      until: "2026-06-16"
   openness_index: 38.9
   openness_index_version: "AA Openness Index v1.0"
 related:

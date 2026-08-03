@@ -27,6 +27,10 @@ model:
   context_window: 32000
   intelligence_index: 5
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 10
+      version: "AA v4.0"
+      until: "2026-06-16"
   openness_index: 5.6
   openness_index_version: "AA Openness Index v1.0 (family inference)"
 paper:

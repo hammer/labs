@@ -30,6 +30,10 @@ model:
   architecture: moe
   intelligence_index: 40
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 49
+      version: "AA v4.0"
+      until: "2026-06-16"
   parameters: 1T
   active_parameters: 42B
   context_window: 1000000

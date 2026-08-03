@@ -35,6 +35,10 @@ outputs:
       active_parameters: 32B
       intelligence_index: 19
       intelligence_index_version: "AA v4.1"
+      intelligence_index_history:
+        - score: 26
+          version: "AA v4.0"
+          until: "2026-06-16"
       openness_index: 44.4
       openness_index_version: "AA Openness Index v1.0"
   - name: "Kimi K2 Tech Report: Open Agentic Intelligence"

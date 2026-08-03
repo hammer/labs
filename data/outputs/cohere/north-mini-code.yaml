@@ -30,7 +30,7 @@ description: >
   <strong>33.4 on AA's Coding Index</strong>, ahead of similar-size
   open models (Qwen3.5 35B-A3B, Gemma 4 26B-A4B, Devstral Small 2) and
   some far larger ones (Nemotron 3 Super 120B-A12B, Devstral 2 123B).
-  AA Intelligence Index v4.1: <strong>21</strong>. Benchmarked on SWE-Bench
+  AA Intelligence Index v4.1: <strong>20</strong>. Benchmarked on SWE-Bench
   Verified/Pro, Terminal-Bench v2/Hard, SciCode, and LiveCodeBench v6.
   "North" extends the name of Cohere's
   <a href="https://cohere.com/north">enterprise agent platform</a> to a
@@ -49,6 +49,13 @@ model:
   context_window: 262144
   intelligence_index: 20
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 21
+      version: "AA v4.1"
+      until: "2026-07-28"
+    - score: 28
+      version: "AA v4.0"
+      until: "2026-06-16"
   openness_index: 41.7
   openness_index_version: "AA Openness Index v1.0"
   license: Apache 2.0

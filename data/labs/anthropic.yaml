@@ -27,7 +27,7 @@ description: >
   remain key strategic investors. Revenue reached ~$19B ARR by March 2026.</p>
 
   <p>The <strong>Claude</strong> model family has rapidly advanced from Claude 1 (2023)
-  to <strong>Claude Opus 4.6</strong> (2026, AA index 46, 1M context), consistently
+  to <strong>Claude Opus 4.6</strong> (2026, AA index 44, 1M context), consistently
   ranking among the top frontier models. Claude 4 Opus set SWE-bench records (72.5%),
   and Claude 4.5 Opus was the first model to exceed 80% on SWE-bench Verified.
   <strong><a href="https://github.com/anthropics/claude-code">Claude Code</a></strong>,

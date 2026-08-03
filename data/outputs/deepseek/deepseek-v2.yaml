@@ -29,6 +29,10 @@ outputs:
       architecture: moe
       intelligence_index: 4
       intelligence_index_version: "AA v4.1"
+      intelligence_index_history:
+        - score: 9
+          version: "AA v4.0"
+          until: "2026-06-16"
       parameters: 236B
       active_parameters: 21B
   - name: DeepSeek-V2 Technical Report

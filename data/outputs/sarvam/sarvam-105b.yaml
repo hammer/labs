@@ -16,7 +16,7 @@ description: >
   MLA-style attention (decoupled QK head dimensions) and YaRN scaling.
   128K context. Trained from scratch on NVIDIA H100s (IndiaAI Mission)
   for India's 22 scheduled languages + English. Asynchronous GRPO for
-  RL training. AA Intelligence: 18. Apache 2.0.
+  RL training. AA Intelligence: 12. Apache 2.0.
 tags:
   - moe
   - open-weight
@@ -28,6 +28,10 @@ model:
   context_window: 128000
   intelligence_index: 12
   intelligence_index_version: "AA v4.1"
+  intelligence_index_history:
+    - score: 18
+      version: "AA v4.0"
+      until: "2026-06-16"
   openness_index: 38.9
   openness_index_version: "AA Openness Index v1.0"
 related:

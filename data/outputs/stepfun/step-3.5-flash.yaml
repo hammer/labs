@@ -50,6 +50,10 @@ outputs:
       context_window: 256000
       intelligence_index: 26
       intelligence_index_version: "AA v4.1"
+      intelligence_index_history:
+        - score: 38
+          version: "AA v4.0"
+          until: "2026-06-16"
   - name: "Step 3.5 Flash: Open Frontier-Level Intelligence with 11B Active Parameters"
     type: paper
     date: 2026-02-11

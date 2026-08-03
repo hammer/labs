@@ -65,7 +65,19 @@ const { model, metrics } = Astro.props;
     {model.intelligence_index && (
       <div class="spec">
         <span class="spec-label">AA Intelligence</span>
-        <span class="spec-value">{model.intelligence_index}</span>
+        <span class="spec-value">
+          {model.intelligence_index}
+          {(model.intelligence_index_history?.length ?? 0) > 0 && (
+            <span
+              class="score-history"
+              title={model.intelligence_index_history!
+                .map((h) => `${h.score}${h.version ? ` (${h.version})` : ''} until ${h.until}`)
+                .join('\n')}
+            >
+              was {model.intelligence_index_history![0].score}
+            </span>
+          )}
+        </span>
       </div>
     )}
     {model.training_hardware && (
@@ -222,6 +234,16 @@ const { model, metrics } = Astro.props;
     font-weight: 600;
     font-size: 0.9rem;
     overflow-wrap: anywhere;
+  }
+
+  /* Superseded AAII readings — full trail in the hover title. */
+  .score-history {
+    margin-left: 0.4em;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    cursor: help;
+    border-bottom: 1px dotted currentColor;
   }
 
   .benchmarks h4,
