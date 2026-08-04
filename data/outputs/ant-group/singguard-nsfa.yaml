@@ -7,6 +7,8 @@ sources:
     url: https://huggingface.co/inclusionAI/SingGuard-NSFA-9B
   - label: HuggingFace (benchmarks)
     url: https://huggingface.co/datasets/inclusionAI/NSFA_Benchmarks
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.13081
 description: >
   <p><strong>NSFA = "Not-Secure-For-Agents"</strong> &mdash; Ant Group's
   guardrail family for agent operational security, a different axis from

@@ -1,0 +1,25 @@
+name: NemotronLabs VoiceChat 11B
+slug: nemotron-voicechat
+lab: nvidia
+type: model
+date: 2026-08-03
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/nvidia/NVIDIA-NemotronLabs-VoiceChat-11B
+description: >
+  <p>End-to-end <strong>full-duplex speech-to-speech</strong> model:
+  FastConformer encoder + Nemotron Nano 9B v2 hybrid-Mamba backbone + TTS
+  decoder, with ~450ms turn-taking, barge-in, and a claimed first for an
+  open model &mdash; <strong>live mid-conversation tool calling</strong>.
+  #2 on VoiceBench and Full-Duplex-Bench at release. OpenMDW 1.1
+  license.</p>
+tags:
+  - audio
+  - open-weight
+  - agents
+model:
+  architecture: dense
+  parameters: "11B"
+  license: OpenMDW 1.1
+related:
+  - nemotron-3-nano

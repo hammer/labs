@@ -5,9 +5,9 @@ type: model
 date: 2025-08-05
 sources:
   - label: HuggingFace
-    url: https://huggingface.co/rednote-hilab/dots.vlm1.inst
+    url: https://huggingface.co/dots-studio/dots.vlm1.inst
   - label: GitHub
-    url: https://github.com/rednote-hilab/dots.vlm1
+    url: https://github.com/studio-dots-ai/dots.vlm1
 description: >
   <p>hi lab's first vision-language model: a 1.2B-parameter
   <strong>NaViT vision encoder trained entirely from scratch</strong>

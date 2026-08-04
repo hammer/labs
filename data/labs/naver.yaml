@@ -65,6 +65,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Sangdoo_Yun1
 news:
+  - title: "NAVER, NVIDIA ($1B Investment), Brookfield (Up to $9B) Expand Korea's AI Factory; Future HyperCLOVA X to Build on Nemotron 3 Ultra"
+    url: https://www.globenewswire.com/news-release/2026/07/27/3333489/0/en/NAVER-NVIDIA-and-Brookfield-to-Expand-Korea-s-National-AI-Factory-Infrastructure-Buildout.html
+    source: GlobeNewswire
+    date: 2026-07-27
   - title: "Naver Cloud and Korea Aerospace Industries Sign MOU to Build Defense-Specialized Multimodal Foundation Model"
     url: https://www.thelec.net/news/articleView.html?idxno=12014
     source: The Elec

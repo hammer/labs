@@ -1,0 +1,29 @@
+name: MiniMax-H3 (Hailuo 3.0)
+slug: minimax-h3
+lab: minimax
+type: model
+date: 2026-07-31
+flagship: true
+sources:
+  - label: Announcement
+    url: https://www.minimax.io/blog/minimax-h3
+  - label: HuggingFace
+    url: https://huggingface.co/MiniMaxAI/MiniMax-H3
+  - label: Release Notes
+    url: https://platform.minimax.io/docs/release-notes/models
+description: >
+  <p>MiniMax's <strong>open-weight omni-modal video generator</strong>
+  (Hailuo 3.0): 4&ndash;15s clips with <strong>native 32kHz stereo audio</strong>
+  in the same pass, 768p base resolution with 2K via In-Context Regeneration,
+  and dialogue in 11 languages. FL2VA (first-and-last-frame) and Ref2VA
+  (reference-guided) variants ship openly; the H3-Context-IR stage is
+  hosted-only. "MiniMax H3 Community License"; technical report promised.</p>
+tags:
+  - video
+  - multimodal
+  - open-weight
+model:
+  license: MiniMax H3 Community License
+related:
+  - hailuo-video
+  - minimax-m3

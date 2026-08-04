@@ -121,6 +121,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=czyretsAAAAJ
 news:
+  - title: "Musk: Grok 4.6 (2T Params) Initial Training Done, Targeting ~Aug 7; Grok 4.7 ~4 Weeks Later"
+    url: https://www.nextbigfuture.com/2026/07/grok-4-6-initial-training-complete.html
+    source: NextBigFuture
+    date: 2026-07-24
   - title: "SpaceXAI Releases Grok 4.5: 'Opus-Class' Model Built with Cursor, $2/$6 Pricing, AAII 54"
     url: https://www.axios.com/2026/07/08/spacexai-grok-new-model
     source: Axios

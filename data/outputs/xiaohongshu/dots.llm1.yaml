@@ -5,9 +5,9 @@ date: 2025-06-06
 flagship: true
 sources:
   - label: HuggingFace
-    url: https://huggingface.co/rednote-hilab/dots.llm1.inst
+    url: https://huggingface.co/dots-studio/dots.llm1.inst
   - label: GitHub
-    url: https://github.com/rednote-hilab/dots.llm1
+    url: https://github.com/studio-dots-ai/dots.llm1
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2506.05767
 description: >
@@ -29,9 +29,9 @@ outputs:
     date: 2025-06-06
     sources:
       - label: HuggingFace
-        url: https://huggingface.co/rednote-hilab/dots.llm1.inst
+        url: https://huggingface.co/dots-studio/dots.llm1.inst
       - label: GitHub
-        url: https://github.com/rednote-hilab/dots.llm1
+        url: https://github.com/studio-dots-ai/dots.llm1
     model:
       architecture: moe
       parameters: 142B

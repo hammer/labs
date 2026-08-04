@@ -1,0 +1,27 @@
+name: MAI-Cyber-1-Flash
+slug: mai-cyber-1-flash
+lab: microsoft
+type: model
+date: 2026-07-27
+sources:
+  - label: Announcement (Microsoft AI)
+    url: https://microsoft.ai/news/introducing-mai-cyber-1-flash-inside-mdash/
+description: >
+  <p>Microsoft AI's first <strong>cybersecurity model</strong>: a sparse MoE
+  (137B total / 5B active, 256K context) in the MAI-Thinking-1 lineage.
+  Inside the <strong>MDASH</strong> multi-agent security harness it handles
+  ~90% of vulnerability-identification work (GPT-5.4 takes the remainder);
+  MDASH scores ~96% on CyberGym, claimed +12 points over Anthropic Mythos
+  at half the cost. Proprietary.</p>
+tags:
+  - agents
+  - moe
+  - security
+model:
+  architecture: moe
+  parameters: "137B"
+  active_parameters: "5B"
+  context_window: 256000
+  base_model: mai-thinking-1
+related:
+  - mai-thinking-1

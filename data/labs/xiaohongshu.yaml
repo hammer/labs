@@ -2,8 +2,8 @@ name: Xiaohongshu
 slug: xiaohongshu
 url: https://www.xiaohongshu.com
 wikipedia: https://en.wikipedia.org/wiki/Xiaohongshu
-huggingface: https://huggingface.co/rednote-hilab
-github: https://github.com/rednote-hilab
+huggingface: https://huggingface.co/dots-studio
+github: https://github.com/studio-dots-ai
 region: china
 founded: "2013"
 type: private
@@ -67,6 +67,10 @@ people:
     role: President; oversees the Dots AI department
     formerly: Boston Consulting Group; Citi; MBA Stanford GSB
 news:
+  - title: "dots-note-3.0 Scores Perfect 42/42 at IMO 2026 — First AI Perfect Score; hilab Rebrands to dots-studio, Open-Sourcing Promised"
+    url: https://studio-dots-ai.github.io/dots_imo_2026/en.html
+    source: dots-studio
+    date: 2026-07-20
   - title: "Chinese social media app Xiaohongshu's $26 billion valuation bolsters GSR fund"
     url: https://www.bloomberg.com/news/articles/2025-06-04/chinese-social-media-app-xiaohongshu-s-26-billion-valuation-bolsters-gsr-fund
     source: Bloomberg

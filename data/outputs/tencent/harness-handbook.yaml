@@ -1,0 +1,21 @@
+name: "Harness Handbook: Making Evolving Agent Harnesses Readable, Navigable, and Editable"
+slug: harness-handbook
+lab: tencent
+type: paper
+date: 2026-07-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.13285
+description: >
+  <p>Makes self-evolving agent harnesses <strong>auditable</strong>:
+  automatically links each harness behavior to its implementing source via
+  static analysis + LLM annotation, so an evolved harness stays readable,
+  navigable, and editable by humans rather than accreting opaque generated
+  scaffolding. Tencent HY LLM Frontier with Indiana University, Maryland,
+  UGA, and NUS. Part of the July 2026 harness-evolution cluster (see the
+  AI2/UW evaluation critique, arXiv 2607.12227).</p>
+tags:
+  - agents
+  - research
+paper:
+  arxiv: "2607.13285"

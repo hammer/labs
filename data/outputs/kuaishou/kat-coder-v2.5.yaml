@@ -1,0 +1,63 @@
+name: KAT-Coder V2.5
+slug: kat-coder-v2.5
+lab: kuaishou
+date: 2026-07-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.05471
+  - label: HuggingFace (V2.5-Dev)
+    url: https://huggingface.co/Kwaipilot/KAT-Coder-V2.5-Dev
+  - label: OpenRouter (Pro)
+    url: https://openrouter.ai/kwaipilot/kat-coder-pro-v2.5
+description: >
+  <p>Kwaipilot's agentic-coding generation trained on <strong>100K+
+  AutoBuilder-generated verifiable repository environments</strong> across
+  12 languages: 127K-example SFT plus asymmetric PPO with a
+  privileged-context critic. Proprietary <strong>Pro/Air</strong> tiers
+  shipped via API July 10; the open-weight <strong>V2.5-Dev</strong>
+  followed July 26.</p>
+tags:
+  - coding
+  - agents
+  - moe
+  - open-weight
+outputs:
+  - name: KAT-Coder-Pro / Air V2.5
+    type: model
+    date: 2026-07-10
+    sources:
+      - label: OpenRouter
+        url: https://openrouter.ai/kwaipilot/kat-coder-pro-v2.5
+    description: >
+      Proprietary API tiers. SWE-Bench Pro 65.2 (second only to Claude Opus
+      4.8's 69.2 at release), Terminal-Bench 2.1 60.7. Base undisclosed;
+      the KAT line post-trains external bases.
+    model:
+      architecture: moe
+      pretrained_from_scratch: false
+  - name: KAT-Coder-V2.5-Dev
+    type: model
+    date: 2026-07-26
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/Kwaipilot/KAT-Coder-V2.5-Dev
+    description: >
+      Open-weight sibling, Apache 2.0, text-only: "we adopt the widely
+      recognized Qwen3.6-35B-A3B as the base model for post-training." 35B
+      total / 3B active, 262K context. SWE-bench Verified 69.4, SWE-bench
+      Pro 45.96. 15K downloads in its first ten days.
+    model:
+      architecture: moe
+      base_model: qwen3.6-open
+      context_window: 262144
+      license: Apache 2.0
+  - name: KAT-Coder V2.5 Technical Report
+    type: paper
+    date: 2026-07-06
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2607.05471
+    paper:
+      arxiv: "2607.05471"
+related:
+  - kat-coder

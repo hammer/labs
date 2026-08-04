@@ -1,0 +1,26 @@
+name: UEmbed
+slug: uembed
+lab: alibaba
+type: model
+date: 2026-07-29
+sources:
+  - label: HuggingFace (9B)
+    url: https://huggingface.co/Alibaba-NLP/UEmbed-9B
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.02583
+  - label: GitHub
+    url: https://github.com/Alibaba-NLP/UEmbed
+description: >
+  <p>Multimodal embedder (2B/4B/9B, Qwen3.5 backbones) emitting
+  <strong>dense + SPLADE-style sparse embeddings in one causal pass</strong>
+  &mdash; text, image, and video, inverted-index-compatible for hybrid
+  retrieval. CC-BY-4.0.</p>
+tags:
+  - multimodal
+  - open-weight
+  - retrieval
+model:
+  architecture: dense
+  base_model: qwen3.5
+paper:
+  arxiv: "2608.02583"

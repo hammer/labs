@@ -1,0 +1,27 @@
+name: PerceptionBench
+slug: perceptionbench
+lab: moonshot-ai
+type: eval
+date: 2026-07-23
+sources:
+  - label: Dataset (HuggingFace)
+    url: https://huggingface.co/datasets/moonshotai/PerceptionBench
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.24957
+  - label: Blog
+    url: https://www.kimi.com/blog/perception-bench
+description: >
+  <p>3,000 verified questions isolating <strong>10 atomic visual-perception
+  capabilities</strong>, derived from a failure taxonomy across 42 existing
+  benchmarks. No frontier MLLM reaches 60% at release &mdash; a perception
+  (not reasoning) ceiling probe from the Kimi K3 team.</p>
+tags:
+  - eval
+  - multimodal
+  - vision
+eval:
+  num_questions: 3000
+paper:
+  arxiv: "2607.24957"
+related:
+  - kimi-k3

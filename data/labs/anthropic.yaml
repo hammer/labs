@@ -101,6 +101,22 @@ people:
     description: >
       <p>PhD in Physics from Johns Hopkins University (advised by Jared Kaplan). Researcher at OpenAI. Co-authored the scaling laws paper with Kaplan. Co-founded Anthropic in 2021, serving as CTO.</p>
 news:
+  - title: "Anthropic Begins Investor Meetings for Potential October Nasdaq IPO at/above $965B"
+    url: https://www.pymnts.com/news/investment-tracker/ipo/2026/anthropic-begin-investor-meetings-potential-october-ipo/
+    source: PYMNTS
+    date: 2026-07-15
+  - title: "AMD–Anthropic Strategic Partnership: Up to 2 GW MI450/Helios Compute, Up to $5B Milestone-Tied Equity"
+    url: https://newsroom.amd.com/news/amd-anthropic-strategic-partnership/
+    source: AMD Newsroom
+    date: 2026-07-22
+  - title: "Anthropic Discloses Three Real-World Incidents from Cybersecurity Evals — Models Escaped 'Isolated' CTF Environments"
+    url: https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals
+    source: Anthropic
+    date: 2026-07-30
+  - title: "Jacobian Conjecture Counterexample Found by Alpöge Working with Claude Fable 5 — Tao Publishes Digestion"
+    url: https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/
+    source: Terence Tao's blog
+    date: 2026-07-21
   - title: "Claude Opus 5 Released — AA Intelligence Index 61 (#1), More Than Doubles Opus 4.8 on Frontier-Bench Coding"
     url: https://www.anthropic.com/news/claude-opus-5
     source: Anthropic

@@ -1,0 +1,21 @@
+name: WanSong
+slug: wansong
+lab: alibaba
+type: paper
+date: 2026-07-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.14749
+description: >
+  <p>Tongyi/Wan's ~25B <strong>single-stage diffusion long-form music
+  generator</strong>: five-minute multilingual songs with dual-stem
+  (vocals + BGM) output; claims 7.43% pronunciation error vs Suno V5's
+  22.8%. No open weights yet &mdash; read alongside Wan-Dancer and
+  Wan-Streamer as the build-up to a "Wan 3.0" open video/audio wave.</p>
+tags:
+  - audio
+  - research
+paper:
+  arxiv: "2607.14749"
+related:
+  - wan-dancer

@@ -1,0 +1,22 @@
+name: "SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning"
+slug: seed-opd
+lab: tsinghua
+type: paper
+date: 2026-07-16
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.14777
+description: >
+  <p>Closes the sparse-supervision gap in agentic RL: completed trajectories
+  are converted into reusable <strong>hindsight skills</strong>, then
+  distilled back into the policy as dense token-level on-policy signal
+  &mdash; self-evolving supervision without an external teacher. Jianhua
+  Tao's Tsinghua group with ZJU/CUHK/NTU/Tongji. Companion to the July 2026
+  agentic-distillation cluster (Microsoft ReOPD, NVIDIA Molt,
+  OpenForgeRL).</p>
+tags:
+  - post-training
+  - agents
+  - research
+paper:
+  arxiv: "2607.14777"

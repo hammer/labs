@@ -1,0 +1,33 @@
+name: Kanana-2 SLM series
+slug: kanana-2-slm
+lab: kakao
+type: model
+date: 2026-07-27
+sources:
+  - label: HuggingFace (3B Instruct)
+    url: https://huggingface.co/kakaocorp/kanana-2-3b-instruct
+  - label: Tech Blog
+    url: https://tech.kakao.com/posts/826
+  - label: Announcement
+    url: https://www.kakaocorp.com/page/detail/12089
+description: >
+  <p>On-device counterpart to the Kanana-2-30B MoE line: a <strong>3B
+  trained from scratch on TPUs</strong> and a <strong>1.3B built via cascade
+  pruning + distillation</strong> from it, with 3:1 sliding-window hybrid
+  attention (~72.7% KV-cache cut at 32K) and a new tokenizer (+30% Korean
+  efficiency). Kanana Open License (commercial use OK); a 0.9B is mentioned
+  but unreleased.</p>
+tags:
+  - on-device
+  - open-weight
+model:
+  architecture: dense
+  variants:
+    - name: kanana-2-3b
+      parameters: 3B
+      notes: From scratch on TPUs
+    - name: kanana-2-1.3b
+      parameters: 1.3B
+      notes: Cascade pruning + distillation from the 3B
+related:
+  - kanana-2

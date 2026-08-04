@@ -5,9 +5,9 @@ type: model
 date: 2025-07-30
 sources:
   - label: HuggingFace
-    url: https://huggingface.co/rednote-hilab/dots.ocr
+    url: https://huggingface.co/dots-studio/dots.ocr
   - label: GitHub
-    url: https://github.com/rednote-hilab/dots.ocr
+    url: https://github.com/studio-dots-ai/dots.ocr
   - label: Demo
     url: https://dotsocr.xiaohongshu.com/
 description: >

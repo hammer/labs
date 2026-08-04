@@ -1,0 +1,25 @@
+name: Rethinking the Evaluation of Harness Evolution for Agents
+slug: rethinking-harness-evolution
+lab:
+  - ai2
+  - uw
+type: paper
+date: 2026-07-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.12227
+description: >
+  <p>The load-bearing <strong>negative result</strong> for the self-evolving
+  harness trend: current harness-evolution evaluations conflate genuine
+  design gains with extra search compute. At matched compute budgets,
+  automatic harness evolution does <em>not</em> consistently beat simple
+  test-time scaling, and generalization to held-out tasks is weak. By Wang,
+  Hajishirzi, Tsvetkov, Dasigi et al. (AI2 + University of Washington).
+  The skeptical anchor for a subfield that produced three papers in July
+  2026 alone.</p>
+tags:
+  - agents
+  - eval
+  - research
+paper:
+  arxiv: "2607.12227"

@@ -1,0 +1,18 @@
+name: GPT-Transcribe / GPT-Live-Transcribe
+slug: gpt-transcribe
+lab: openai
+type: model
+date: 2026-07-28
+sources:
+  - label: API Docs
+    url: https://developers.openai.com/api/docs/models/gpt-live-transcribe
+description: >
+  <p>Two speech-to-text models replacing Whisper and 4o-transcribe as the
+  OpenAI API defaults: batch <strong>GPT-Transcribe</strong> ($0.0045/min)
+  and streaming <strong>GPT-Live-Transcribe</strong> ($0.017/min). 57
+  languages; ~8.98% WER vs Whisper-1's 15.21%. Proprietary &mdash; a notable
+  closed turn for the line that began with open-source Whisper.</p>
+tags:
+  - audio
+related:
+  - whisper

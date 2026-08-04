@@ -1,0 +1,34 @@
+name: DeepSeek-V4-Flash-0731 (GA)
+slug: deepseek-v4-flash
+lab: deepseek
+type: model
+date: 2026-07-31
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731
+  - label: API Docs / News
+    url: https://api-docs.deepseek.com/news
+description: >
+  <p>The <strong>general-availability build of DeepSeek-V4-Flash</strong>
+  (284B-class MoE from the <a
+  href="/outputs/deepseek/deepseek-v4">V4 family</a>), superseding the April
+  preview. MIT license; ships with a bundled DSpark-style speculative-decoding
+  module and a <code>reasoning_effort</code> dial (low/high/max). 433K
+  HuggingFace downloads in its first days; the old deepseek-chat/reasoner
+  endpoints were retired July 24.</p>
+
+  <p>Self-reported (evaluated with an as-yet-unreleased "DeepSeek Harness"):
+  Terminal-Bench 2.1 <strong>82.7</strong>, DeepSWE <strong>54.4</strong>
+  (the April preview scored 7.3 &mdash; version-tag any quoted numbers by
+  build), Toolathlon-Verified 70.3. V4-<strong>Pro</strong> remains
+  preview-only with GA rumored mid-August.</p>
+tags:
+  - frontier
+  - moe
+  - open-weight
+  - agentic
+model:
+  architecture: moe
+related:
+  - deepseek-v4

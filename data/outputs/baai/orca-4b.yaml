@@ -6,6 +6,8 @@ date: 2026-07-14
 sources:
   - label: HuggingFace
     url: https://huggingface.co/BAAI/Orca-4B
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.30534
 description: >
   <p>BAAI's world foundation model: a unified Next-State-Prediction
   objective over vision and language (~6B, multimodal encoder-decoder)

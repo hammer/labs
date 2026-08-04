@@ -1,0 +1,36 @@
+name: OSWorld 2.0
+slug: osworld-2
+lab: hku
+type: eval
+date: 2026-06-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.29537
+  - label: GitHub
+    url: https://github.com/xlang-ai/OSWorld-V2
+description: >
+  <p>XLANG Lab's successor to <a href="/outputs/hku/osworld">OSWorld</a>, the
+  incumbent computer-use standard: <strong>108 long-horizon real-world
+  workflows</strong> (median ~1.6 hours of human time, ~318 tool calls per
+  task vs ~30 in v1). The best frontier agent at release (Claude Opus 4.8)
+  completes <strong>20.6%</strong> vs 83.5% on OSWorld 1.0 &mdash; and the
+  failures are constraint tracking, mid-task information processing, and
+  hidden-state recovery, not UI control.</p>
+tags:
+  - eval
+  - agents
+  - computer-use
+eval:
+  num_tasks: 108
+  domains:
+    - computer use
+    - long-horizon workflows
+  top_scores:
+    - model: Claude Opus 4.8
+      score: "20.6%"
+      date: "2026-06-28"
+paper:
+  arxiv: "2606.29537"
+related:
+  - osworld
+  - opencua

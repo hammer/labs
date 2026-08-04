@@ -11,6 +11,8 @@ sources:
     url: https://huggingface.co/upstage/Solar-Open2-250B
   - label: Technical Report (PDF)
     url: https://huggingface.co/upstage/Solar-Open2-250B/blob/main/Solar_Open_2_Tech_Report.pdf
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.20062
 description: >
   <p>Upstage's new open-weight flagship and the successor to
   <a href="/outputs/upstage/solar-open-100b">Solar Open 100B</a>: a

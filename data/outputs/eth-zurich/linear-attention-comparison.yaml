@@ -1,0 +1,21 @@
+name: "Linear Attention Architectures: Mechanisms, Trade-offs, and Cross-Layer Routing"
+slug: linear-attention-comparison
+lab: eth-zurich
+type: paper
+date: 2026-07-08
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.07953
+description: >
+  <p>The reference controlled comparison for the DeltaNet-family attention
+  wave: DeltaNet, Gated DeltaNet, Kimi Delta Attention, and Gated DeltaNet-2
+  vs softmax attention in a unified recurrent-memory notation, at 350M
+  params / 15B tokens (plus 1.3B/3B DeltaNet runs), with cross-layer
+  routing experiments. KDA + Muon reaches the lowest validation loss in
+  scope. Imanol Schlag's group, ETH Zurich / ETH AI Center.</p>
+tags:
+  - attention
+  - architecture
+  - research
+paper:
+  arxiv: "2607.07953"

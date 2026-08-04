@@ -1,0 +1,35 @@
+name: Fara 1.5
+slug: fara-1.5
+lab: microsoft
+type: model
+date: 2026-05-12
+sources:
+  - label: HuggingFace (27B)
+    url: https://huggingface.co/microsoft/Fara1.5-27B
+  - label: HuggingFace (9B)
+    url: https://huggingface.co/microsoft/Fara1.5-9B
+  - label: HuggingFace (4B)
+    url: https://huggingface.co/microsoft/Fara1.5-4B
+description: >
+  <p>Microsoft's open <strong>computer-use agent (CUA) family</strong>:
+  Qwen3.5-base models SFT-trained on the FaraGen1.5 trajectory corpus, MIT
+  license. The 9B shipped in May 2026; <strong>4B and 27B sizes followed
+  July 17</strong>. Fara1.5-27B: WebVoyager 89.3%, Online-Mind2Web
+  72.3%.</p>
+tags:
+  - agents
+  - computer-use
+  - open-weight
+model:
+  architecture: dense
+  base_model: qwen3.5
+  variants:
+    - name: Fara1.5-4B
+      parameters: 4B
+      notes: Added July 17, 2026
+    - name: Fara1.5-9B
+      parameters: 9B
+      notes: Original May 2026 release
+    - name: Fara1.5-27B
+      parameters: 27B
+      notes: Added July 17, 2026

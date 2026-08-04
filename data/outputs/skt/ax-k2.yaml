@@ -1,0 +1,39 @@
+name: A.X K2
+slug: ax-k2
+lab: skt
+type: model
+date: 2026-07-29
+flagship: true
+sources:
+  - label: Announcement (SKT Newsroom)
+    url: https://news.sktelecom.com/en/3204
+  - label: HuggingFace
+    url: https://huggingface.co/skt/A.X-K2
+  - label: GitHub
+    url: https://github.com/SKT-AI/A.X-K2
+description: >
+  <p>SK Telecom's <strong>from-scratch 688B-total / 33B-active MoE</strong>
+  (256+1 experts) with Think-Fusion hybrid reasoning, Sparse Gated Attention
+  + MLA, and &mdash; notably &mdash; <strong>native FP8 (MXFP8)
+  pretraining</strong> with an FP8 checkpoint. 256K context, Apache 2.0;
+  claims AIME26 97.1 and KMMLU-Pro 80.5. The second Korean frontier open
+  release in the same week as K-EXAONE 2.0; pretraining data cites
+  Nemotron-CC and fineweb-2. Tech report is a GitHub PDF (no arXiv).
+  Companions: <strong>A.X K2 ALM</strong> (Korean speech in/out on the
+  frozen K2 Light 20B-A2.7B, "h-research" license) and <strong>A.X
+  VE</strong> (413M from-scratch generative ViT, Apache 2.0) &mdash; a full
+  A.X VLM is promised "soon".</p>
+tags:
+  - frontier
+  - moe
+  - open-weight
+  - efficiency
+model:
+  architecture: moe
+  parameters: "688B"
+  active_parameters: "33B"
+  context_window: 256000
+  num_experts: 256
+  license: Apache 2.0
+related:
+  - ax-4.0

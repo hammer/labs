@@ -1,0 +1,24 @@
+name: Domain-Aware Scaling Laws Uncover Data Synergy
+slug: domain-scaling-synergy
+lab:
+  - microsoft
+  - mit
+  - harvard
+type: paper
+date: 2026-07-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.11052
+description: >
+  <p>Formalizes cross-domain <strong>data synergy</strong> in pretraining
+  mixtures (e.g. code&rarr;math gains): fits domain-to-benchmark and
+  higher-order interaction terms that outperform standard scaling laws, and
+  validates by training on predicted-optimal vs suboptimal mixtures. The
+  data-mixture successor story for scaling-law work. Hamidieh (MIT CSAIL),
+  Mackey (Microsoft Research), Alvarez-Melis (MSR + Harvard).</p>
+tags:
+  - scaling
+  - training
+  - research
+paper:
+  arxiv: "2607.11052"

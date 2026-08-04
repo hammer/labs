@@ -146,6 +146,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Qihao_Zhu1
 news:
+  - title: "DeepSeek Suspends Second Funding Round (Was ≥¥10B at ~$67B Pre) After Leak of Liang Wenfeng Investor Comments"
+    url: https://fortune.com/2026/07/25/deepseek-liang-wenfeng-backers-fundraising-pause-viral-posts-investors/
+    source: Fortune
+    date: 2026-07-25
   - title: "DeepSeek Developing Its Own Inference AI Chip to Cut Nvidia/Huawei Reliance"
     url: https://www.bloomberg.com/news/articles/2026-07-07/chinese-ai-startup-deepseek-developing-own-ai-chip-reuters-says
     source: Reuters (via Bloomberg)

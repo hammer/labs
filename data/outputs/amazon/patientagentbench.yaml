@@ -1,0 +1,21 @@
+name: PatientAgentBench
+slug: patientagentbench
+lab: amazon
+type: eval
+date: 2026-07-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.25485
+  - label: Blog (Amazon Science)
+    url: https://www.amazon.science/blog/a-new-benchmark-for-evaluating-patient-facing-health-ai-agents
+description: >
+  <p>Clinician-vetted benchmark for <strong>patient-facing health
+  agents</strong>: synthetic patient scenarios in a stateful tool sandbox,
+  judged by an LLM jury against 100+ clinician-grounded criteria. Open
+  code.</p>
+tags:
+  - eval
+  - agents
+  - medical
+paper:
+  arxiv: "2607.25485"

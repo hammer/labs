@@ -1,0 +1,26 @@
+name: Gemini Robotics 2
+slug: gemini-robotics-2
+lab: google
+type: model
+date: 2026-07-30
+sources:
+  - label: Announcement (DeepMind)
+    url: https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/
+  - label: ER 2 post
+    url: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/
+description: >
+  <p>Generation bump for DeepMind's physical-AI stack, in three tiers: a
+  <strong>whole-body-control VLA</strong> (demoed on Apptronik Apollo 2), the
+  <strong>ER 2</strong> embodied-reasoning VLM for orchestration and
+  multi-robot coordination, and an <strong>On-Device 2</strong> VLA with
+  rapid adaptation to new embodiments.</p>
+tags:
+  - robotics
+  - multimodal
+model:
+  variants:
+    - name: Gemini Robotics 2 (VLA)
+    - name: Gemini Robotics ER 2
+    - name: Gemini Robotics On-Device 2
+related:
+  - gemini-3.1-pro

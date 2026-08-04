@@ -1,0 +1,27 @@
+name: Vibe-Trading
+slug: vibe-trading
+lab: hku
+type: library
+date: 2026-07-16
+sources:
+  - label: GitHub
+    url: https://github.com/HKUDS/Vibe-Trading
+description: >
+  <p>HKUDS's open-source <strong>personal AI trading agent</strong> ("Your
+  Personal Trading Agent") aimed at individual users rather than
+  institutions &mdash; <strong>~29.5K GitHub stars</strong> within four
+  months of the repo's creation, publicly launched July 2026. July releases
+  added a correlation-regime timeline and endpoint. Continues the HKUDS
+  agent-ecosystem run (<a href="/outputs/hku/cli-anything">CLI-Anything</a>,
+  <a href="/outputs/hku/nanobot">nanobot</a>,
+  <a href="/outputs/hku/openharness">OpenHarness</a>).</p>
+tags:
+  - agents
+  - open-source
+  - library
+library:
+  github: https://github.com/HKUDS/Vibe-Trading
+related:
+  - nanobot
+  - cli-anything
+  - openharness

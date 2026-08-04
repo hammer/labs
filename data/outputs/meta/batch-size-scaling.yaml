@@ -1,0 +1,20 @@
+name: Towards Joint Scaling Laws with Optimal Batch Size Schedules
+slug: batch-size-scaling
+lab: meta
+type: paper
+date: 2026-07-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.27731
+description: >
+  <p>Derives a joint loss characterization in learning-rate <em>and</em>
+  batch-size schedules, with a closed-form optimal batch-size schedule for
+  any prescribed LR schedule; dynamic schedules beat static baselines in
+  LLM training. A practical pretraining knob complementing the
+  optimizer-comparison line (NVIDIA's SOAP/Muon study). Li and Bu (Meta).</p>
+tags:
+  - scaling
+  - training
+  - research
+paper:
+  arxiv: "2607.27731"

@@ -1,0 +1,27 @@
+name: Seedance 2.5
+slug: seedance-2.5
+lab: bytedance-seed
+type: model
+date: 2026-07-31
+flagship: true
+sources:
+  - label: Announcement
+    url: https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5
+  - label: Product Page
+    url: https://seed.bytedance.com/en/seedance2_5
+  - label: Coverage (TechNode)
+    url: https://technode.com/2026/07/31/bytedance-launches-seedance-2-5-video-generation-model/
+description: >
+  <p>ByteDance's video-generation flagship: <strong>30-second native-4K
+  single-run generation</strong> ("one-take creation") with multi-turn
+  extension, up to <strong>50 multimodal reference inputs</strong> (vs 12 in
+  Seedance 2.0), and audio co-generated in the same latent space. Live in
+  Jimeng and Doubao Pro at launch; Ark API "soon". Closed weights, no
+  technical report yet (slipped ~2 weeks from the expected mid-July
+  date).</p>
+tags:
+  - video
+  - multimodal
+  - frontier
+related:
+  - seedance

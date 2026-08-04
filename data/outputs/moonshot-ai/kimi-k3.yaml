@@ -7,6 +7,12 @@ flagship: true
 sources:
   - label: Blog Post
     url: https://www.kimi.com/blog/kimi-k3
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.24653
+  - label: HuggingFace
+    url: https://huggingface.co/moonshotai/Kimi-K3
+  - label: GitHub
+    url: https://github.com/MoonshotAI/Kimi-K3
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/kimi-k3
   - label: OpenRouter
@@ -27,9 +33,12 @@ description: >
   above Grok 4.5 (54), though AA flags verbosity (~2&times; median output
   tokens) and slow serving. Moonshot positions it as trailing only Claude
   Fable 5 and GPT-5.6 Sol. $0.30/$3/$15 per MTok (cache-hit/miss/output);
-  live on Kimi.com, Kimi Work, Kimi Code, and the API at launch, with
-  <strong>full weights committed by July 27, 2026</strong> &mdash;
-  proprietary until then.</p>
+  live on Kimi.com, Kimi Work, Kimi Code, and the API at launch.
+  <strong>Weights (~1.56TB) and the technical report shipped on schedule
+  July 27</strong> under a bespoke "Kimi K3 License" &mdash; the largest
+  open-weight model to date (8-bit instruct checkpoint only; no base
+  checkpoint). The report discloses 104B active parameters and the layer
+  mix: 69 KDA + 24 Gated MLA layers with attention residuals.</p>
 tags:
   - frontier
   - moe
@@ -39,13 +48,17 @@ tags:
 model:
   architecture: moe
   parameters: "2.8T"
+  active_parameters: "104B"
   context_window: 1000000
   num_experts: 896
   top_k: 16
+  license: Kimi K3 License
   intelligence_index: 57
   intelligence_index_version: "AA v4.1"
   openness_index: 38.9
   openness_index_version: "AA Openness Index v1.0"
+paper:
+  arxiv: "2607.24653"
 related:
   - kimi-k2.6
   - kimi-linear

@@ -1,0 +1,25 @@
+name: LLaDA2.2-flash
+slug: llada2.2-flash
+lab: ant-group
+type: model
+date: 2026-07-22
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/inclusionAI/LLaDA2.2-flash
+  - label: Technical Report (PDF)
+    url: https://github.com/inclusionAI/LLaDA2.X/blob/main/LLaDA2_2_tech_report.pdf
+description: >
+  <p>The first <strong>agentic diffusion language model</strong> in Ant's
+  LLaDA2 line: Levenshtein-style editing with DELETE/INSERT tokens, 128K
+  context via Block Routing, and L-EBPO agentic RL. SWE-bench Verified
+  49.28 under a Claude Code scaffold at ~519 tokens/sec &mdash; roughly
+  1.7&times; its autoregressive sibling's speed.</p>
+tags:
+  - open-weight
+  - agents
+  - efficiency
+  - research
+model:
+  context_window: 128000
+related:
+  - llada-2

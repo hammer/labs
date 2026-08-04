@@ -1,0 +1,28 @@
+name: ClinFusion
+slug: clinfusion
+lab: alibaba
+type: model
+date: 2026-07-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.24743
+  - label: HuggingFace (32B)
+    url: https://huggingface.co/Alibaba-DAMO-Academy/ClinFusion-32B
+  - label: GitHub
+    url: https://github.com/Alibaba-DAMO-Academy/ClinFusion
+description: >
+  <p>DAMO Academy's medical MLLM (8B/32B, Apache 2.0) on Qwen3-VL-32B with a
+  DINOv2 + CLIP-ConvNeXt cascade-fusion vision stack, <strong>native 2D and
+  3D NIfTI CT/MRI input</strong>, and agentic tool use; claims wins over
+  GPT-5.2 and Gemini-3-Flash on 13 of 16 clinical suites. Continues DAMO's
+  medical-AI line.</p>
+tags:
+  - multimodal
+  - open-weight
+  - science
+  - medical
+model:
+  architecture: dense
+  base_model: qwen3
+paper:
+  arxiv: "2607.24743"

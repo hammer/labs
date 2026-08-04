@@ -1,0 +1,36 @@
+name: Apertus v1.5
+slug: apertus-v1.5
+lab: swiss-ai
+type: model
+date: 2026-07-24
+flagship: true
+sources:
+  - label: Announcement
+    url: https://apertus-ai.org/articles/2026-07-apertus-1-5/
+  - label: HuggingFace (70B)
+    url: https://huggingface.co/swiss-ai/Apertus-v1.5-70B
+  - label: HuggingFace (8B)
+    url: https://huggingface.co/swiss-ai/Apertus-v1.5-8B
+description: >
+  <p><strong>Apertus goes multimodal</strong>: continued pretraining of the
+  8B (+4T tokens) and 70B (+2T tokens) adds native image input, experimental
+  audio input, an optional thinking mode, and a 262K context. Apache 2.0
+  and fully open, extending the strongest fully-open European release line.
+  Technical report promised "in coming weeks".</p>
+tags:
+  - open-weight
+  - open-source
+  - multilingual
+  - multimodal
+model:
+  architecture: dense
+  context_window: 262144
+  base_model: apertus
+  license: Apache 2.0
+  variants:
+    - name: Apertus-v1.5-8B
+      parameters: 8B
+    - name: Apertus-v1.5-70B
+      parameters: 70B
+related:
+  - apertus

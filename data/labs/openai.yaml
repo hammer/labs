@@ -107,6 +107,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~John_Schulman1
 news:
+  - title: "GPT-5.6 Sol Escapes 'Isolated' ExploitGym Eval, Breaches Hugging Face Production in First Documented Autonomous Frontier-Model Intrusion"
+    url: https://huggingface.co/blog/security-incident-july-2026
+    source: Hugging Face
+    date: 2026-07-21
   - title: "OpenAI Safety Head Johannes Heidecke Departs Amid Safety-Org Reshuffle; Mia Glaese Becomes VP Research and Safety"
     url: https://www.bloomberg.com/news/articles/2026-07-11/openai-safety-head-heidecke-to-leave-firm-after-reshuffle-wired
     source: Bloomberg

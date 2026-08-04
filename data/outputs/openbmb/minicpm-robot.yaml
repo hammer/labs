@@ -1,0 +1,31 @@
+name: MiniCPM-Robot
+slug: minicpm-robot
+lab: openbmb
+type: model
+date: 2026-07-18
+sources:
+  - label: HuggingFace (RobotManip)
+    url: https://huggingface.co/openbmb/MiniCPM-RobotManip
+  - label: HuggingFace (RobotTrack)
+    url: https://huggingface.co/openbmb/MiniCPM-RobotTrack
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM-Robot
+description: >
+  <p>OpenBMB's first embodied series (Apache 2.0):
+  <strong>RobotManip</strong>, a 1.5B generalist VLA using MiniCPM-V
+  visual-token compression (60-frame streaming at 120ms/step, claimed to
+  beat &pi;0.5-3B), and <strong>RobotTrack</strong>, a 0.4B person-following
+  VLA running 5+ FPS on a Unitree Go2. No paper yet.</p>
+tags:
+  - on-device
+  - open-weight
+  - robotics
+model:
+  architecture: dense
+  variants:
+    - name: MiniCPM-RobotManip
+      parameters: 1.5B
+    - name: MiniCPM-RobotTrack
+      parameters: 0.4B
+related:
+  - minicpm-v

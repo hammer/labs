@@ -1,0 +1,18 @@
+name: Seed Audio 1.0
+slug: seed-audio
+lab: bytedance-seed
+type: model
+date: 2026-07-20
+sources:
+  - label: Announcement
+    url: https://seed.bytedance.com/en/blog/from-speech-to-audio-creation-introducing-the-seed-audio-1-0-audio-creation-model
+description: >
+  <p>Unified <strong>audio creation</strong> model: speech, sound effects,
+  ambience, and music generated on one timeline in a single pass &mdash;
+  multi-character dialogue, zero-shot voice cloning, 20+ languages, clips up
+  to 2 minutes. API-only (Volcengine); no weights or paper.</p>
+tags:
+  - audio
+  - multimodal
+related:
+  - seedance-2.5

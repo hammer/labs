@@ -1,0 +1,32 @@
+name: LongCat-Flash-Lite-Sparse
+slug: longcat-flash-lite-sparse
+lab: meituan
+type: model
+date: 2026-07-31
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/meituan-longcat/LongCat-Flash-Lite-Sparse
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.01662
+description: >
+  <p>69B-A3B MoE replacing dense MLA with <strong>LongCat Sparse Attention
+  (LSA)</strong> &mdash; extending DeepSeek's DSA with streaming-aware,
+  cross-layer, hierarchical indexing &mdash; at native 1M context. SWE-bench
+  Verified 68.2 vs 54.4 for the dense sibling. The paper (Aug 3) doubles as
+  the attention technical report for
+  <a href="/outputs/meituan/longcat-2.0">LongCat-2.0</a>.</p>
+tags:
+  - moe
+  - attention
+  - open-weight
+  - efficiency
+model:
+  architecture: moe
+  parameters: "69B"
+  active_parameters: "3B"
+  context_window: 1000000
+paper:
+  arxiv: "2608.01662"
+related:
+  - longcat-flash-lite
+  - longcat-2.0

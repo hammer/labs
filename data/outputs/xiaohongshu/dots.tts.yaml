@@ -4,9 +4,9 @@ lab: xiaohongshu
 date: 2026-06-04
 sources:
   - label: HuggingFace
-    url: https://huggingface.co/rednote-hilab/dots.tts-soar
+    url: https://huggingface.co/dots-studio/dots.tts-soar
   - label: GitHub
-    url: https://github.com/rednote-hilab/dots.tts
+    url: https://github.com/studio-dots-ai/dots.tts
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2606.07080
 description: >
@@ -25,9 +25,9 @@ outputs:
     date: 2026-06-04
     sources:
       - label: HuggingFace
-        url: https://huggingface.co/rednote-hilab/dots.tts-soar
+        url: https://huggingface.co/dots-studio/dots.tts-soar
       - label: GitHub
-        url: https://github.com/rednote-hilab/dots.tts
+        url: https://github.com/studio-dots-ai/dots.tts
     model:
       architecture: dense
       parameters: 2B

@@ -125,6 +125,14 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=xF5VrokAAAAJ
 news:
+  - title: "Qwen-Image-3.0: One-Pass Infographic Grids and Readable 10px Text — But No Weights, Benchmarks, or Report (Closed Shift)"
+    url: https://the-decoder.com/alibabas-qwen-image-3-0-renders-full-infographic-grids-and-readable-ten-pixel-text-in-a-single-pass/
+    source: The Decoder
+    date: 2026-07-21
+  - title: "Qwen3.8-Max Previewed at WAIC: 2.4T Sparse MoE, First >1T Natively-Multimodal Qwen; Claimed #2 Behind Claude Fable 5"
+    url: https://www.scmp.com/tech/article/3361119/alibaba-says-newest-qwen-ai-model-second-only-anthropics-claude-fable-5
+    source: SCMP
+    date: 2026-07-19
   - title: "Alibaba Bans Employee Use of Anthropic Tools From July 10, Citing 'Back-Door Security Risks' After Claude Code Watermarking Discovery"
     url: https://www.cnbc.com/2026/07/06/alibaba-anthropic-ai-ban-claude-china.html
     source: CNBC

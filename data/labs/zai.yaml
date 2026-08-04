@@ -177,6 +177,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=93a-9kkAAAAJ
 news:
+  - title: "US NIST CAISI Assessment: GLM-5.2 'Probably the Most Capable Open-Weight Model When Released', Weaker Cyber/Bio Refusals"
+    url: https://www.nist.gov/news-events/news/2026/07/caisi-assessment-zais-glm-52
+    source: NIST
+    date: 2026-07-17
   - title: "Zhipu Executes HK$31.4B (~US$4.0B) H-Share Placement a Day After Lock-Up Expiry — HK's Largest 2026 Refinancing"
     url: https://cryptobriefing.com/zhipu-ai-share-placement-pricing/
     source: Crypto Briefing

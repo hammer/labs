@@ -1,0 +1,32 @@
+name: AREX
+slug: arex
+lab: baai
+type: model
+date: 2026-07-23
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.21461
+  - label: HuggingFace (Base)
+    url: https://huggingface.co/BAAI/AREX-Base
+  - label: HuggingFace (Turbo)
+    url: https://huggingface.co/BAAI/AREX-Turbo
+  - label: Project Page
+    url: https://vectorspacelab.github.io/arex-model/
+description: >
+  <p>BAAI's <strong>self-improving deep-research agent</strong>: an inner
+  research loop paired with a constraint-wise audit loop and learned context
+  compression. Two Apache-2.0 checkpoints &mdash; AREX-Base (122B-A10B) and
+  AREX-Turbo (4B) &mdash; post-trained on Qwen3.5 bases. BAAI's headline
+  post-WAIC ship.</p>
+tags:
+  - agents
+  - open-weight
+  - reasoning
+model:
+  architecture: moe
+  base_model: qwen3.5
+paper:
+  arxiv: "2607.21461"
+related:
+  - orca-4b

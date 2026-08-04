@@ -9,6 +9,12 @@ sources:
     url: https://arxiv.org/abs/2607.07675
   - label: Coverage (SCMP)
     url: https://www.scmp.com/tech/big-tech/article/3359747/glass-crashes-slashed-ant-group-embodied-ai-unit-claims-breakthrough-robot-sensing
+  - label: Paper (VLA 2.0, arXiv)
+    url: https://arxiv.org/abs/2607.06403
+  - label: Paper (Vision, arXiv)
+    url: https://arxiv.org/abs/2607.05247
+  - label: Paper (World 2.0, arXiv)
+    url: https://arxiv.org/abs/2607.07534
 description: >
   <p>A coordinated embodied-AI stack release from Ant Group's Robbyant
   unit (HF org <code>robbyant</code>), July 6&ndash;8: four model lines

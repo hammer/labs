@@ -1,0 +1,35 @@
+name: openPangu-2.0-Pro
+slug: openpangu-2.0-pro
+lab: huawei
+type: model
+date: 2026-07-31
+flagship: true
+sources:
+  - label: GitCode
+    url: https://ai.gitcode.com/ascend-tribe/openPangu-2.0-Pro
+  - label: Coverage (Pandaily)
+    url: https://pandaily.com/huawei-openpangu-20-pro-open-source-ascend-jul2026
+description: >
+  <p>Huawei's open-weight flagship: a <strong>~505B-total / ~18B-active
+  MoE</strong> with 512K context, trained on ~34T tokens &mdash; claimed as
+  the first ~500B-class model <strong>fully pretrained on Ascend 910B</strong>
+  with no NVIDIA hardware anywhere in the run. Released under the OPENPANGU
+  MODEL LICENSE 2.0 via GitCode and ModelArts (not HuggingFace). Continues
+  the compute-sovereignty arc alongside GLM-5 (Ascend 910B) and DeepSeek-V4
+  (Ascend 950PR).</p>
+
+  <p><em>Active-parameter figure per the primary GitCode page (~18B); some
+  press reports "180B active" &mdash; treat as an error.</em></p>
+tags:
+  - frontier
+  - moe
+  - open-weight
+model:
+  architecture: moe
+  parameters: "505B"
+  active_parameters: "18B"
+  context_window: 512000
+  training_tokens: "34T"
+  license: OPENPANGU MODEL LICENSE 2.0
+related:
+  - pangu-ultra
