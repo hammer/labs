@@ -71,6 +71,7 @@ const dimensions: FilterDimension[] = [
     label: 'Flagship',
     kind: 'tristate',
     rowAttr: 'flagship',
+    toggle: true,
   },
   {
     key: 'type',
@@ -277,6 +278,16 @@ function cellText(
       <button class="view-btn" data-view="outputs">Outputs</button>
       <button class="view-btn" data-view="news">News</button>
     </div>
+    <button
+      class="flagship-toggle"
+      id="flagship-toggle"
+      type="button"
+      aria-pressed="false"
+      title="Flagship filter — click cycles: all → flagship only → non-flagship"
+    >
+      <span class="flagship-toggle-star" aria-hidden="true">&#9733;</span>
+      <span class="flagship-toggle-label">Flagship</span>
+    </button>
     <label class="sort-control" id="sort-control">
       <span class="sort-control-label">Sort</span>
       <select id="sort-select" aria-label="Sort by">
@@ -533,7 +544,28 @@ function cellText(
     lastFilterState = state;
     applyColset(computeColset(state));
     updateVisibility();
+    reflectFlagshipToggle(state);
   }
+
+  // ─── View-bar ★ Flagship quick toggle ────────────────────────────────
+  // One click from anywhere: cycles any → flagship-only → non-flagship via
+  // the FilterBar API, so the palette, chips, and URL stay the one source
+  // of truth. The button only mirrors state.
+  const flagshipToggle = document.getElementById('flagship-toggle');
+  function reflectFlagshipToggle(state: FilterChangeDetail['state']) {
+    if (!flagshipToggle) return;
+    const v = (state.flagship as { value?: string } | undefined)?.value ?? 'any';
+    flagshipToggle.classList.toggle('active', v === 'yes');
+    flagshipToggle.classList.toggle('exclude', v === 'no');
+    flagshipToggle.setAttribute('aria-pressed', String(v !== 'any'));
+    flagshipToggle.title = v === 'any'
+      ? 'Flagship filter — click cycles: all → flagship only → non-flagship'
+      : v === 'yes' ? 'Showing flagship releases only — click for non-flagship'
+      : 'Hiding flagship releases — click to show all';
+  }
+  flagshipToggle?.addEventListener('click', () => {
+    (filterBarEl as any).__filterBarApi?.cycleTristate('flagship');
+  });
 
   filterBarEl.addEventListener('filters:changed', (e) => {
     onFilterState((e as CustomEvent<FilterChangeDetail>).detail.state);
@@ -950,6 +982,57 @@ function cellText(
   .view-btn.active {
     background: #2563eb;
     color: #fff;
+  }
+
+  /* ★ Flagship quick toggle — cycles any → only → exclude. Width is fixed
+     across states (exclude uses line-through, not a label swap) so the
+     view bar never reflows on click. */
+  .flagship-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .flagship-toggle:hover {
+    color: var(--text);
+  }
+  .flagship-toggle-star {
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+  .flagship-toggle.active {
+    border-color: #2563eb;
+    color: #2563eb;
+  }
+  .flagship-toggle.active .flagship-toggle-star {
+    color: #f59e0b;
+  }
+  .flagship-toggle.exclude {
+    border-color: var(--border);
+    color: var(--text-muted);
+  }
+  .flagship-toggle.exclude .flagship-toggle-label {
+    text-decoration: line-through;
+  }
+  .flagship-toggle.exclude .flagship-toggle-star {
+    opacity: 0.35;
+  }
+  @media (max-width: 600px) {
+    .flagship-toggle {
+      padding: 0.375rem 0.5rem;
+    }
+    .flagship-toggle-label {
+      display: none;
+    }
   }
 
   /* Table */

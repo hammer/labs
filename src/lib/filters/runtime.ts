@@ -204,7 +204,8 @@ export function initFilterBar(config: InitConfig): InitResult {
       const s = effState[d.key]!;
       const active = isActive(s);
       btn?.classList.toggle('active', active);
-      btn?.setAttribute('aria-expanded', String(openDimKey === d.key));
+      if (d.kind === 'tristate' && d.toggle) btn?.setAttribute('aria-pressed', String(active));
+      else btn?.setAttribute('aria-expanded', String(openDimKey === d.key));
       if (summaryEl) summaryEl.textContent = summarizeDim(d, s);
       if (dotEl) dotEl.style.opacity = active ? '1' : '0';
     }
@@ -876,13 +877,31 @@ export function initFilterBar(config: InitConfig): InitResult {
 
   // ─── Wire it up ──────────────────────────────────────────────────────
 
-  // Inline mode: bind each dim button.
+  // One-click tristate cycle: any → yes → no → any. Used by inline dim
+  // buttons marked `toggle` and exposed on the API for page-level quick
+  // controls (the timeline's view-bar ★ Flagship button) — either path goes
+  // through emitChange, so URL, chips, and row matching stay in sync.
+  function cycleTristateDim(key: string): void {
+    const d = dimByKey(key);
+    if (!d || d.kind !== 'tristate') return;
+    const prev = deepClone(state);
+    const cur = (state[key] as { kind: 'tristate'; value: TristateValue }).value;
+    const next: TristateValue = cur === 'any' ? 'yes' : cur === 'yes' ? 'no' : 'any';
+    state[key] = setTristate(state[key]!, next);
+    announce(`${d.label}: ${next === 'any' ? 'any' : next === 'yes' ? 'only' : 'excluded'}`);
+    emitChange(prev);
+  }
+
+  // Inline mode: bind each dim button. Tristate dims marked `toggle` cycle
+  // their value directly instead of opening a panel.
   if (mode === 'inline') {
     rootEl.querySelectorAll<HTMLElement>('.dim-wrap[data-dim-key]').forEach(wrap => {
       const key = wrap.dataset.dimKey!;
       const btn = wrap.querySelector<HTMLButtonElement>('.dim-btn');
+      const d = dimByKey(key);
       btn?.addEventListener('click', e => {
         e.stopPropagation();
+        if (d?.kind === 'tristate' && d.toggle) { cycleTristateDim(key); return; }
         openInlinePanel(key);
       });
     });
@@ -935,6 +954,9 @@ export function initFilterBar(config: InitConfig): InitResult {
     },
     getState(): FilterState {
       return deepClone(eff());
+    },
+    cycleTristate(key: string): void {
+      cycleTristateDim(key);
     },
   };
 }

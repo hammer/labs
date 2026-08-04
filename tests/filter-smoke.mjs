@@ -46,6 +46,35 @@ function log(name, ok, detail = '') {
   await page.close();
 }
 
+// ── Timeline: ★ Flagship view-bar toggle cycles any → yes → no → any ──
+// Structural: no pinned counts (flagship totals shift with data).
+{
+  const page = await newPage();
+  await page.goto('http://localhost:4321/timeline', { waitUntil: 'networkidle' });
+  const snap = () => page.evaluate(() => {
+    const rows = [...document.querySelectorAll('tr[data-flagship]')].filter(r => r.style.display !== 'none');
+    return {
+      url: location.search,
+      pressed: document.getElementById('flagship-toggle').getAttribute('aria-pressed'),
+      vis: rows.length,
+      visFlag: rows.filter(r => r.dataset.flagship === '1').length,
+    };
+  });
+  const t0 = await snap();
+  await page.click('#flagship-toggle');
+  const t1 = await snap();
+  await page.click('#flagship-toggle');
+  const t2 = await snap();
+  await page.click('#flagship-toggle');
+  const t3 = await snap();
+  log('timeline: flagship toggle 1-click cycle',
+    t1.url === '?flagship=yes' && t1.pressed === 'true' && t1.vis > 0 && t1.vis === t1.visFlag &&
+    t2.url === '?flagship=no' && t2.visFlag === 0 && t2.vis > 0 &&
+    t3.url === '' && t3.pressed === 'false' && t3.vis === t0.vis,
+    JSON.stringify({ t1: t1.vis, t2: t2.vis, t3: t3.vis }));
+  await page.close();
+}
+
 // ── Home: f opens palette, position is below button ──────────────────
 {
   const page = await newPage();

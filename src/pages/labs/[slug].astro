@@ -31,7 +31,7 @@ const types = [...typeCounts.keys()].sort();
 const tags = [...tagCounts.keys()].sort();
 
 const dimensions: FilterDimension[] = [
-  { key: 'flagship', label: 'Flagship', kind: 'tristate', rowAttr: 'flagship' },
+  { key: 'flagship', label: 'Flagship', kind: 'tristate', rowAttr: 'flagship', toggle: true },
   {
     key: 'type', label: 'Type', kind: 'multi', rowAttr: 'type',
     options: types.map(t => ({ slug: t, label: t, count: typeCounts.get(t) ?? 0 })),

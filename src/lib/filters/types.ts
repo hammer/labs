@@ -42,6 +42,11 @@ export interface FilterDimension {
   // Optional coverage hint shown in the dimension's value panel,
   // e.g. "47 of 550 model rows have data".
   hint?: string;
+  // Tristate only, inline mode only: clicking the control cycles
+  // any → yes → no → any directly instead of opening the value panel —
+  // a 1-click toggle for the common case while keeping "no" reachable.
+  // Palette mode ignores this (the palette flow already has the panel open).
+  toggle?: boolean;
 }
 
 export type RangeValue = { min: number | null; max: number | null };
