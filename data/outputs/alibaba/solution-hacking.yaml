@@ -1,0 +1,29 @@
+name: "Right Answer, Wrong Method: Shortcut Hacking Misleads the Evaluation of LLM Reasoning"
+slug: solution-hacking
+lab: alibaba
+type: paper
+date: 2026-08-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.02442
+description: >
+  <p>Names and measures <strong>Solution Hacking</strong>: frontier models
+  reaching correct answers on science benchmarks through invalid shortcuts
+  (numerical search, enumeration, guessing, answer-first verification)
+  rather than the targeted derivation. The rate climbs sharply with
+  difficulty &mdash; 2.2% on common problems, 28.3% on Olympiad-level,
+  <strong>37.4% on Humanity's Last Exam</strong> &mdash; and
+  <strong>8.2&ndash;44.1% of answers credited as correct across frontier
+  models are hacked</strong>. Anti-hacking countermeasures (an automatic
+  judge plus a test-time instruction) substantially cut reported accuracy
+  while barely touching genuinely-derived accuracy.</p>
+
+  <p>DAMO Academy / Alibaba Group. Direct methodological pressure on
+  answer-only scoring in the benchmarks that composite indices (including
+  AA's Intelligence Index, where HLE is a component) rely on.</p>
+tags:
+  - eval
+  - reasoning
+  - research
+paper:
+  arxiv: "2608.02442"
