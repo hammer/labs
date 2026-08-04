@@ -1,0 +1,64 @@
+name: KRAFTON
+slug: krafton
+url: https://krafton.ai/en/
+wikipedia: https://en.wikipedia.org/wiki/Krafton
+huggingface: https://huggingface.co/KRAFTON
+github: https://github.com/krafton-ai
+region: korea
+founded: "2007"
+type: public
+ipo:
+  year: 2021
+  exchange: KRX
+  ticker: "259960"
+valuation:
+  amount: "$7.3B"
+  type: market-cap
+  ticker: "259960"
+  date: "2026-08"
+description: >
+  <p><a href="https://en.wikipedia.org/wiki/Krafton">KRAFTON</a> (KRX:
+  259960) is the Korean game company behind <em>PUBG: Battlegrounds</em> and
+  <em>inZOI</em>; <strong>KRAFTON AI</strong> is its fast-escalating research
+  division &mdash; Deep Learning Division &rarr; AI Division, an AI Frontier
+  Division added April 2026, and a dedicated AI Business Unit announced June
+  2026, under CAIO <strong>Kangwook Lee</strong>. Research spans language
+  models (pretraining through post-training), speech, multimodal, RL/game
+  agents, and data-centric AI, with models shipping into PUBG's "Ally" AI
+  teammate and inZOI's on-device co-playable characters.</p>
+
+  <p>The open-research turn came in 2026: the <strong>Raon</strong> family
+  (April 2026) &mdash; a 9B speech LM claiming #1 among sub-10B public
+  speech models for English and Korean, Korea's first announced full-duplex
+  speech model, a TTS trained exclusively on public data and released with
+  its dataset, and a from-scratch 400M vision encoder &mdash; plus the
+  <strong>Terminus-KIRA</strong> agent harness (~920&#9733;) and an
+  MoE&rarr;dense conversion framework with KAIST. A member of Korea's
+  sovereign-AI consortium: its July 2026 speech model builds on SK Telecom's
+  <a href="/outputs/skt/ax-k2">A.X K2</a>.</p>
+people:
+  - name: Kangwook Lee
+    url: https://kangwooklee.com/
+    role: Chief AI Officer
+    formerly: Associate Professor, UW-Madison ECE
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=sCEl8r-n5VEC
+  - name: Jaewoong Cho
+    role: Research Lead
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Jaewoong_Cho1
+news:
+  - title: "KRAFTON Launches Dedicated AI Business Unit to Drive Commercialization"
+    url: https://en.sedaily.com/finance/2026/06/25/krafton-launches-dedicated-ai-business-unit-to-drive
+    source: Seoul Economic Daily
+    date: 2026-06-25
+  - title: "KRAFTON Launches Raon, Its First Open-Source AI Model Family"
+    url: https://m.thewire.in/article/ptiprnews/krafton-launches-raon-its-first-open-source-ai-model-family
+    source: PTI
+    date: 2026-04-02
+tags:
+  - open-weight
+  - speech
+  - agents

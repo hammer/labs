@@ -1,0 +1,68 @@
+name: Raon-Speech
+slug: raon-speech
+lab: krafton
+date: 2026-04-02
+flagship: true
+sources:
+  - label: Demo / Project
+    url: https://raon.krafton.ai
+  - label: HuggingFace (Speech-9B)
+    url: https://huggingface.co/KRAFTON/Raon-Speech-9B
+  - label: HuggingFace (SpeechChat-9B)
+    url: https://huggingface.co/KRAFTON/Raon-SpeechChat-9B
+  - label: GitHub
+    url: https://github.com/krafton-ai/Raon-Speech
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.23912
+description: >
+  <p>KRAFTON's flagship speech LM pair, the heart of the Raon launch:
+  <strong>Raon-Speech-9B</strong> (TTS/STT/SpeechChat/TextQA in one
+  end-to-end model) claims #1 among public sub-10B speech models for
+  <em>both</em> English and Korean across 40 benchmarks;
+  <strong>Raon-SpeechChat-9B</strong> is Korea's first announced
+  <strong>full-duplex</strong> dialogue model, responding while the user is
+  still speaking. CC-BY-NC-4.0.</p>
+tags:
+  - audio
+  - open-weight
+  - multimodal
+outputs:
+  - name: Raon-Speech-9B
+    type: model
+    date: 2026-04-02
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/KRAFTON/Raon-Speech-9B
+    description: >
+      End-to-end 9B speech LM "built on Qwen3 (36 layers, 4096 hidden dim)"
+      per the model card, with a Qwen3OmniMoeAudioEncoder, Mimi codec, and
+      ECAPA-TDNN speaker encoder — the language backbone is adapted, not
+      pretrained in-house.
+    model:
+      architecture: dense
+      base_model: qwen3
+      license: CC-BY-NC-4.0
+  - name: Raon-SpeechChat-9B
+    type: model
+    date: 2026-04-02
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/KRAFTON/Raon-SpeechChat-9B
+    description: >
+      Real-time full-duplex variant for overlapping-speech conversation.
+    model:
+      architecture: dense
+      base_model: qwen3
+      license: CC-BY-NC-4.0
+  - name: Raon-Speech Technical Report
+    type: paper
+    date: 2026-04-08
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2605.23912
+    paper:
+      arxiv: "2605.23912"
+related:
+  - raon-opentts
+  - raon-visionencoder
+  - ax-k2-raon-speech

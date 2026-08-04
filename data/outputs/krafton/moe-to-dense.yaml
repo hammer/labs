@@ -1,0 +1,24 @@
+name: Pruning and Distilling Mixture-of-Experts into Dense Language Models
+slug: moe-to-dense
+lab:
+  - krafton
+  - kaist
+type: paper
+date: 2026-05-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.28207
+  - label: GitHub
+    url: https://github.com/krafton-ai/moe-to-dense
+description: >
+  <p>First systematic <strong>MoE&rarr;dense conversion framework</strong>:
+  a 350-configuration sweep on Qwen3-30B-A3B with diversity-aware DO-ACP
+  expert scoring, beating dense-to-dense pruning by +6.3pp at 1.6&times;
+  faster wall-clock. KRAFTON + KAIST (affiliations verified on the PDF);
+  code released.</p>
+tags:
+  - moe
+  - efficiency
+  - research
+paper:
+  arxiv: "2605.28207"

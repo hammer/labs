@@ -1,0 +1,29 @@
+name: A.X K2 Raon-Speech 21B-A3B
+slug: ax-k2-raon-speech
+lab:
+  - krafton
+  - skt
+type: model
+date: 2026-07-27
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/KRAFTON/A.X-K2-Raon-Speech-21B-A3B
+  - label: Blog (KRAFTON AI)
+    url: https://krafton.ai/blog/posts/2026-06-30-ax-raon/ax-raon-en.html
+description: >
+  <p>The first cross-lab artifact of Korea's sovereign-AI consortium: a
+  bilingual EN/KO <strong>SpeechLM on SK Telecom's A.X K2 Light MoE
+  backbone</strong> (21B total / 3B active), pairing KRAFTON's AuT encoder
+  (317M) and a Mimi-style codec &mdash; STT, TTS, SpeechQA, and spoken chat
+  in one model. CC-BY-NC-4.0.</p>
+tags:
+  - audio
+  - open-weight
+  - moe
+model:
+  architecture: moe
+  base_model: ax-k2
+  license: CC-BY-NC-4.0
+related:
+  - raon-speech
+  - ax-k2

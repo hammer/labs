@@ -1,0 +1,20 @@
+name: Terminus-KIRA
+slug: terminus-kira
+lab: krafton
+type: library
+date: 2025-12-03
+sources:
+  - label: GitHub
+    url: https://github.com/krafton-ai/KIRA
+description: >
+  <p>KRAFTON's <strong>agent harness for Terminal-Bench</strong>, built on
+  Terminus 2 — posting 75.7% with Claude Opus 4.6 and 75.5% with Codex 5.3
+  at release; ~920 GitHub stars. Sibling of the KIRA personal-assistant
+  product, and a rare case of a game company competing on the
+  terminal-agent harness frontier.</p>
+tags:
+  - agents
+  - library
+  - open-source
+library:
+  github: https://github.com/krafton-ai/KIRA

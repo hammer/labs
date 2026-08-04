@@ -1,0 +1,37 @@
+name: Raon-OpenTTS
+slug: raon-opentts
+lab: krafton
+date: 2026-04-02
+sources:
+  - label: GitHub
+    url: https://github.com/krafton-ai/Raon-OpenTTS
+  - label: Demo / Project
+    url: https://raon.krafton.ai
+description: >
+  <p>Text-to-speech model trained <strong>exclusively on public speech
+  data</strong> and released together with its <strong>curated training
+  dataset</strong> &mdash; a transparency-first counterpart to the main
+  Raon speech line. Part of the April 2026 Raon launch.</p>
+tags:
+  - audio
+  - open-weight
+  - open-source
+outputs:
+  - name: Raon-OpenTTS (model)
+    type: model
+    date: 2026-04-02
+    sources:
+      - label: GitHub
+        url: https://github.com/krafton-ai/Raon-OpenTTS
+    model:
+      architecture: dense
+  - name: Raon-OpenTTS training dataset
+    type: dataset
+    date: 2026-04-02
+    sources:
+      - label: GitHub
+        url: https://github.com/krafton-ai/Raon-OpenTTS
+    dataset:
+      github: https://github.com/krafton-ai/Raon-OpenTTS
+related:
+  - raon-speech

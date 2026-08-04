@@ -1,0 +1,22 @@
+name: Raon-VisionEncoder
+slug: raon-visionencoder
+lab: krafton
+type: model
+date: 2026-04-02
+sources:
+  - label: Demo / Project
+    url: https://raon.krafton.ai
+  - label: HuggingFace org
+    url: https://huggingface.co/KRAFTON
+description: >
+  <p>400M vision encoder trained <strong>from scratch on public data</strong>,
+  reaching 90.6% of SigLIP2's classification performance, with the full
+  data-curation methodology shared. Part of the April 2026 Raon launch.</p>
+tags:
+  - vision
+  - open-weight
+model:
+  architecture: dense
+  parameters: 400M
+related:
+  - raon-speech
