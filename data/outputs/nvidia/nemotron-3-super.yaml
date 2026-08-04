@@ -16,7 +16,8 @@ sources:
   - label: OpenRouter
     url: https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b
 description: >
-  <p>NVIDIA's current flagship. 120B total / 12B active per token using
+  <p>NVIDIA's flagship until Nemotron 3 Ultra shipped (June 2026); the
+  family's throughput workhorse. 120B total / 12B active per token using
   <strong>LatentMoE + Mamba-2 + Attention</strong> hybrid architecture
   with Multi-Token Prediction. Trained in NVFP4 precision. 1M context
   window. 5x throughput over previous generation.</p>

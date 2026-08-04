@@ -31,8 +31,8 @@ description: >
   <a href="https://www.alibabacloud.com/help/en/model-studio/models">Alibaba Cloud
   Model Studio</a>.</p>
 
-  <p>The <strong>Qwen series</strong> has progressed from Qwen (2023) through Qwen3.5
-  (February 2026) at remarkable speed, spanning dense and MoE architectures across
+  <p>The <strong>Qwen series</strong> has progressed from Qwen (2023) through Qwen3.7
+  (May 2026) at remarkable speed, spanning dense and MoE architectures across
   text, code, math, vision, audio, and omni modalities. Qwen3 introduced hybrid
   thinking with seamless reasoning mode-switching; Qwen3.5 (397B-A17B) supports 201
   languages and 1M-token context. Alibaba has committed

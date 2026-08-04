@@ -37,7 +37,7 @@ description: >
   <strong>MiMo model series</strong>: MiMo-7B (May 2025, surpassing OpenAI o1-mini on
   math/code), MiMo-V2-Flash (309B MoE, December 2025), and
   <a href="https://venturebeat.com/technology/xiaomi-stuns-with-new-mimo-v2-pro-llm-nearing-gpt-5-2-opus-4-6-performance">MiMo-V2-Pro</a>
-  (1T+ parameters, March 2026). MiMo-V2-Pro was revealed to be the mysterious
+  (1T+ parameters, March 2026), and MiMo-V2.5-Pro (April 2026). MiMo-V2-Pro was revealed to be the mysterious
   "<a href="https://www.technology.org/2026/03/19/whos-that-ai-the-mystery-model-everyone-blamed-on-deepseek-turned-out-to-be-xiaomi/">Hunter
   Alpha</a>" model that appeared anonymously on OpenRouter, widely misattributed to
   DeepSeek V4.</p>

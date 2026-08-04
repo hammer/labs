@@ -29,9 +29,9 @@ description: >
   introduced Sliding Window Attention and beat Llama 2 13B;
   <a href="https://arxiv.org/abs/2401.04088">Mixtral 8x7B</a> (Dec 2023)
   popularized Sparse MoE for open models; Mixtral 8x22B scaled to 141B/39B
-  active. The current flagship
-  <strong>Mistral Large 3</strong> (Dec 2025, 675B/41B active MoE, Apache 2.0)
-  competes with frontier models across reasoning, coding, and multilingual
+  active. <strong>Mistral Large 3</strong> (Dec 2025, 675B/41B active MoE, Apache 2.0)
+  anchors the open line, and the current flagship <strong>Mistral Medium
+  3.5</strong> (Apr 2026) competes with frontier models across reasoning, coding, and multilingual
   tasks. <strong>Mistral Small 4</strong> (Mar 2026, 119B/6.5B active MoE)
   unifies instruct, reasoning, multimodal, and agentic coding in one model.</p>
 

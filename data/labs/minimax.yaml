@@ -42,7 +42,7 @@ description: >
   layers per block) reduces complexity from quadratic to linear, enabling context
   windows up to 4 million tokens. Over 70% of revenue comes from overseas through
   <a href="https://www.talkie-ai.com/">Talkie</a>, an AI companion app with 236M+
-  users globally. The model series has progressed from ABAB-5 through MiniMax-M2.7,
+  users globally. The model series has progressed from ABAB-5 through MiniMax-M3,
   and <a href="https://hailuoai.video/">Hailuo</a> video generation has produced
   600M+ creator videos.</p>
 people:

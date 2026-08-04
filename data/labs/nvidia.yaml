@@ -31,10 +31,11 @@ description: >
   Llama derivatives with reasoning toggle (Llama-Nemotron Super 49B / Ultra
   253B, early 2025), and the current hybrid
   <strong>Mamba-2 + LatentMoE + Attention</strong> architecture (Nemotron 3,
-  late 2025&ndash;2026). The flagship
+  late 2025&ndash;2026). The flagship <strong>Nemotron 3 Ultra</strong> (Jun 2026, 550B/55B active)
+  leads the family;
   <strong><a href="https://arxiv.org/abs/2512.20856">Nemotron 3 Super</a></strong>
-  (Mar 2026, 120B/12B active, 1M context) achieved AA Intelligence Index 25
-  with 5x throughput over previous generation. NVIDIA
+  (Mar 2026, 120B/12B active, 1M context) brought 5x throughput
+  over the previous generation. NVIDIA
   uniquely open-sources not just weights but complete training data (10T+
   tokens) and recipes.</p>
 

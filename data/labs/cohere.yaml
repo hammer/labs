@@ -26,8 +26,9 @@ description: >
 
   <p>The <strong>Command</strong> model family evolved from proprietary origins
   through the open-weight <a href="https://arxiv.org/abs/2504.00698">Command
-  R/R+</a> (35B/104B, 128K context) to the current flagship
-  <strong>Command A</strong> (111B, 256K context, Mar 2025), which uses a novel
+  R/R+</a> (35B/104B, 128K context) and
+  <strong>Command A</strong> (111B, 256K context, Mar 2025) to the current flagship
+  <strong>Command A+</strong> (218B MoE, May 2026, Apache 2.0). Command A uses a novel
   hybrid sliding-window + global attention architecture and model merging rather
   than MoE. Cohere also pioneered enterprise retrieval with the <strong>Embed</strong>
   and <strong>Rerank</strong> families.</p>

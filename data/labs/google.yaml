@@ -31,8 +31,9 @@ description: >
   (2018), <strong><a href="https://arxiv.org/abs/2010.11929">Vision Transformer</a></strong>
   (2020), <strong><a href="https://arxiv.org/abs/2201.11903">Chain-of-Thought</a></strong>
   (2022), and <strong><a href="https://arxiv.org/abs/2203.15556">Chinchilla</a></strong>
-  (2022). The <strong>Gemini</strong> model family advanced from 1.0 (2023) to
-  <strong>Gemini 3.1 Pro</strong> (2026, AA index 46). The open-weight
+  (2022). The <strong>Gemini</strong> model family advanced from 1.0 (2023) through
+  <strong>Gemini 3.1 Pro</strong> to the <strong>Gemini 3.6 Flash</strong> workhorse
+  tier (2026, AA index 50). The open-weight
   <strong>Gemma</strong> series (2024&ndash;) provides Apache 2.0 models up to 27B.</p>
 
   <p>DeepMind's scientific breakthroughs include <strong>AlphaGo</strong> (defeated world Go

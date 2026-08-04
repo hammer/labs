@@ -31,7 +31,7 @@ description: >
   through the <a href="https://arxiv.org/abs/2404.01954">HyperCLOVA X technical
   report</a> (2024) to the current open-weight
   <strong><a href="https://arxiv.org/abs/2601.03286">SEED Think</a></strong> (32B,
-  Dec 2025) reasoning VLM and
+  Jan 2026) reasoning VLM and
   <strong><a href="https://arxiv.org/abs/2601.01792">SEED Omni</a></strong> (8B)
   any-to-any multimodal model. HyperCLOVA X THINK (June 2025) was pre-trained
   on ~6T Korean/English tokens with Peri-LN Transformer and muP scaling.</p>
