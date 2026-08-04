@@ -75,6 +75,14 @@ When scanning for new papers from tracked labs, **do not limit searches to a nar
 
    It diffs AA's full leaderboard payload against every tracked AA URL and prints tracked model outputs (no AA URL in the file) whose slug matches an unclaimed scored slug. For each hit: verify the AA page, pick the right variant/mode per the anchoring rules, add the AA URL to `sources` + `intelligence_index` + version — and **settle from-scratch provenance at the same time** (the score gates the home Intelligence column; see the from-scratch rule above and the add-output skill). The payload only holds the top ~500 models, and models AA names unlike our slugs won't match — treat the report as high-recall, not exhaustive.
 
+9. **Sweep prose for stale AAII mentions.** After running the score sync (which rewrites structured fields and appends `intelligence_index_history`), run:
+
+   ```bash
+   npm run scan-aaii-mentions
+   ```
+
+   It extracts every AAII score quoted in descriptions/notes/variant notes/lab blurbs and auto-classifies each against the file's structured scores, named tracked outputs, and AA's live per-variant values; the UNRESOLVED remainder is the work-list — fix the number to current or add an explicit era marker ("on AA's pre-recalibration v3.0"). Baseline 2026-08-04: 127 mentions, 0 unresolved. News titles are exempt by design (historical records). See the full rules in the AAII section below.
+
 
 ### What to Exclude
 
@@ -308,7 +316,7 @@ Rule of thumb: the top-level number, the file slug, and the primary AA URL shoul
 
 **Score history.** Every model block carries `intelligence_index_history` — superseded readings, newest first, each `{score, version, until}` where `until` is the date we observed the replacement. `fetch-aa-intelligence` appends automatically whenever a synced score changes value; never edit the trail by hand except to remove entries that were our own anchoring bugs rather than AA rescores (judgment call — the Ling-1T "10" stayed because it *is* what we displayed). Model pages show the most recent superseded reading ("was N") with the full trail in the hover title. Backfilled from git history 2026-08-03 (93 files, 119 entries).
 
-**Prose mentions go stale — sweep them.** The sync only rewrites structured fields; scores quoted in `description`, `notes`, variant notes, and lab-file descriptions silently rot when AA rescores (2026-08-03 sweep found ~25 stale of 136 prose mentions). Rules established by that sweep: news titles are historical records, never edited; release-era claims stay when explicitly version-tagged ("52 on AA's pre-recalibration v3.0"); variant-note scores are checked against AA's *per-variant* slugs, not the file's top-level anchor. Prefer NOT quoting scores in prose unless they carry the version tag; when you must, know the sweep will chase them. Mention-scanner pattern lives in the audit history (commit for 2026-08-03).
+**Prose mentions go stale — sweep them with `npm run scan-aaii-mentions`.** The sync only rewrites structured fields; scores quoted in `description`, `notes`, variant notes, and lab-file descriptions silently rot when AA rescores (2026-08-03 sweep found ~25 stale of 136 prose mentions). The scanner extracts every prose AAII mention and auto-classifies it against the file's structured scores, named tracked outputs, and the live leaderboard payload (variant/sibling slugs resolve by name); only the UNRESOLVED remainder needs a human, and each of those gets either a corrected number or an explicit era marker. Rules: news titles are historical records, never edited; release-era claims stay when explicitly version-tagged ("52 on AA's pre-recalibration v3.0") — the scanner recognizes those markers; variant-note scores anchor to AA's *per-variant* slugs, not the file's top-level anchor. Prefer NOT quoting scores in prose unless they carry the version tag.
 
 **Audit pattern.** When AA bumps to a new index version:
 
