@@ -281,6 +281,16 @@ Before creating an output, confirm the lab **actually developed** the research. 
 
 If unsure, check the GitHub repo owner, the first/corresponding author affiliations, and the HuggingFace model org.
 
+### Before Filing: Dedup Against Existing Outputs
+
+Every new output file MUST be preceded by a dedup pass. The Apertus 1.5 duplicate (2026-08: `apertus-v1.5.yaml` filed alongside a pre-existing `apertus-1-5.yaml`) happened because a dedup grep was piped through `head` and the truncated output hid the existing file. Rules:
+
+1. **`ls data/outputs/<lab>/` first, always.** Filenames are the cheapest and most reliable dedup surface — read the whole listing before creating a file in it.
+2. **Search name variants, not just the name.** Version strings spell many ways: `v1.5` / `1.5` / `1-5` / `1_5` / `15`; dots vs dashes vs underscores; with and without a `v` prefix. Grep the *stem* without the version (`apertus`) AND the version digits without separators (`15`), case-insensitive, across the whole lab dir.
+3. **Never truncate dedup output.** No `| head`, no `| tail` on the grep/ls that answers "does this already exist?" — a cut-off list reads exactly like a short list.
+4. **Watch items are the highest-risk duplicates.** A release you've been watching for ("v1.5 in post-training") may already have been filed by a previous session on release day. Before filing a watched release, check for files dated at or after the release date in that lab's dir.
+5. **If a near-miss exists, merge — don't fork.** Keep the incumbent file (older URL, richer content wins), fold in any genuinely new facts (e.g. a missing `base_model`), and never leave two files whose names normalize to the same release.
+
 ### Derivative Models — From Scratch vs Fine-Tune
 
 This distinction is **critical** because TWO home-page columns depend on it:
@@ -403,6 +413,7 @@ Before creating an output, verify it belongs. Do **not** create outputs for:
 ## 7. Checklist
 
 - [ ] Technical report read (HTML version) if available; blog post checked if not
+- [ ] **Deduped before filing** — lab dir listed in full, name-variant grep run untruncated (see "Before Filing: Dedup Against Existing Outputs")
 - [ ] **From scratch vs derivative determined** — only set `model.parameters` for from-scratch models; use `model.base_model` for derivatives (or `pretrained_from_scratch: false` when the base is untracked/undisclosed)
 - [ ] Structured model fields: architecture, parameters (if from scratch), active_parameters, context_window, training_tokens (if disclosed)
 - [ ] Intelligence index from AA (fetched, not guessed) **with `intelligence_index_version` set to the current AA index version**

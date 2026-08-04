@@ -75,6 +75,8 @@ When scanning for new papers from tracked labs, **do not limit searches to a nar
 
    It diffs AA's full leaderboard payload against every tracked AA URL and prints tracked model outputs (no AA URL in the file) whose slug matches an unclaimed scored slug. For each hit: verify the AA page, pick the right variant/mode per the anchoring rules, add the AA URL to `sources` + `intelligence_index` + version — and **settle from-scratch provenance at the same time** (the score gates the home Intelligence column; see the from-scratch rule above and the add-output skill). The payload only holds the top ~500 models, and models AA names unlike our slugs won't match — treat the report as high-recall, not exhaustive.
 
+8b. **Dedup before filing, untruncated.** When filing sweep finds, run the add-output skill's dedup pass per item: `ls` the lab's full output dir and grep name variants (version strings spell many ways — `v1.5`/`1.5`/`1-5`) with NO `| head` on the result. Watch items are the top duplicate risk: the release you waited for may have been filed on release day by an earlier session (the Apertus 1.5 double-file, 2026-08).
+
 9. **Sweep prose for stale AAII mentions.** After running the score sync (which rewrites structured fields and appends `intelligence_index_history`), run:
 
    ```bash
