@@ -1,0 +1,38 @@
+name: "ReOPD: Multi-Turn On-Policy Distillation with Prefix Replay"
+slug: reopd
+lab: microsoft
+type: paper
+date: 2026-07-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.04763
+  - label: Microsoft Research
+    url: https://www.microsoft.com/en-us/research/publication/multi-turn-on-policy-distillation-with-prefix-replay/
+description: >
+  <p>Makes on-policy distillation practical for <strong>multi-turn agentic
+  tasks</strong>, where fully online OPD needs fresh student rollouts through
+  the environment plus teacher queries at every visited history.
+  <strong>ReOPD</strong> (Replayed-Prefix OPD) instead reuses pre-collected
+  teacher trajectories as replayed prefixes: the student acts at selected
+  steps while the teacher gives dense per-step supervision &mdash; zero
+  environment/tool calls during student training.</p>
+
+  <p>Identifies the <strong>"prefix trap"</strong>: pushing histories more
+  student-on-policy improves relevance but queries the teacher where its
+  targets are unreliable &mdash; a two-sided distribution shift between
+  student occupancy and teacher reliability. ReOPD treats prefix selection as
+  reliability-aware distribution design (a step-decaying schedule favoring
+  early, lower-shift prefixes). On math-with-Python and search environments
+  it matches or beats full OPD at <strong>&ge;4&times; faster rollouts</strong>,
+  turning expensive agent&ndash;environment interaction into a reusable
+  offline resource. By Liao, Dong, Monz, Xu, Li Dong, and Furu Wei
+  (MSR GenAI with U. Amsterdam).</p>
+tags:
+  - post-training
+  - agents
+  - efficiency
+  - research
+paper:
+  arxiv: "2607.04763"
+related:
+  - openforge-rl
