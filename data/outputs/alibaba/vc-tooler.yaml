@@ -1,0 +1,31 @@
+name: "VC-Tooler: Learning Compositional and Adaptive Visual Tool Use"
+slug: vc-tooler
+lab: alibaba
+type: paper
+date: 2026-08-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.02217
+  - label: Project Page
+    url: https://w1zheng.github.io/VC-Tooler
+description: >
+  <p>Trains VLMs to use visual tools as a <strong>compositional and adaptive
+  capability</strong> rather than fixed-tool-space grounding: a hierarchical
+  trajectory-synthesis pipeline builds a bank across three levels
+  (single-tool grounding, multi-tool composition, diverse tool
+  contexts/interfaces), then two-stage training &mdash; supervised cold
+  start followed by RL rewarding accurate, efficient, context-aware tool
+  calls. State-of-the-art among open models on general and agentic
+  benchmarks (<strong>95.8% on V*</strong>, 35.3% on VTC-Bench), with
+  transfer to richer tool settings at inference. SFT and RL trajectory
+  datasets released on HuggingFace and ModelScope. Alibaba Group
+  (affiliation per the project page; senior author Jieping Ye).</p>
+tags:
+  - agents
+  - multimodal
+  - post-training
+  - research
+paper:
+  arxiv: "2608.02217"
+related:
+  - qwen-agent
