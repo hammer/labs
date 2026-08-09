@@ -26,7 +26,7 @@ model:
   architecture: dense
   parameters: 70B
   intelligence_index: 3
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
     - score: 8
       version: "AA v4.0"

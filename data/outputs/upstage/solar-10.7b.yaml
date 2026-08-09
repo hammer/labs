@@ -35,7 +35,7 @@ model:
   # column.
   base_model: mistral-7b
   intelligence_index: 6
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
     - score: 12
       version: "AA v4.0"

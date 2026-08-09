@@ -33,7 +33,7 @@ model:
   context_window: 4096
   training_tokens: 6T
   intelligence_index: 5
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   openness_index: 88.9
   openness_index_version: "AA Openness Index v1.0"
   variants:

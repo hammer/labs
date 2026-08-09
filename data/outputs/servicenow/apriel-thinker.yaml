@@ -43,7 +43,7 @@ model:
   context_window: 131072
   license: MIT
   intelligence_index: 21
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   openness_index: 50
   openness_index_version: "AA Openness Index v1.0"
   variants:

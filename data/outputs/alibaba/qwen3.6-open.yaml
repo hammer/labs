@@ -52,8 +52,12 @@ outputs:
       architecture: dense
       parameters: 27B
       context_window: 262144
-      intelligence_index: 37
-      intelligence_index_version: "AA v4.1"
+      intelligence_index: 38
+      intelligence_index_version: "AA v4.1.1"
+      intelligence_index_history:
+        - score: 37
+          version: "AA v4.1"
+          until: "2026-08-09"
       openness_index: 38.9
       openness_index_version: "AA Openness Index v1.0"
   - name: Qwen3.6-35B-A3B

@@ -84,7 +84,7 @@ model:
   context_window: 1000000
   license: OpenMDW-1.1
   intelligence_index: 38
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
     - score: 48
       version: "AA v4.0"

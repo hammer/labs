@@ -37,7 +37,7 @@ description: >
   <p><em>Not yet scored on Artificial Analysis as of May 2026; benchmark numbers
   above are self-reported. The currently AA-tracked sibling
   <a href="/outputs/bytedance-seed/doubao-seed-code">Doubao Seed Code</a>
-  scores AA v4.1 = 26.</em></p>
+  scores AA v4.1.1 = 26.</em></p>
 tags:
   - frontier
   - agentic

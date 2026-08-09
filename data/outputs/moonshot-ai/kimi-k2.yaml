@@ -33,9 +33,12 @@ outputs:
       architecture: moe
       parameters: 1T
       active_parameters: 32B
-      intelligence_index: 19
-      intelligence_index_version: "AA v4.1"
+      intelligence_index: 20
+      intelligence_index_version: "AA v4.1.1"
       intelligence_index_history:
+        - score: 19
+          version: "AA v4.1"
+          until: "2026-08-09"
         - score: 26
           version: "AA v4.0"
           until: "2026-06-16"

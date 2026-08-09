@@ -13,9 +13,9 @@ description: >
   <p>The first <strong>publicly released model in Anthropic's Mythos class</strong>
   — a locked-down, broadly-available counterpart to the more capable, restricted
   <strong>Claude Mythos 5</strong> released alongside it. AA Intelligence Index
-  v4.1: <strong>60</strong> — the <strong>#1 model on AA's index</strong>, ahead
-  of <a href="/outputs/anthropic/claude-opus-4.8">Opus 4.8</a> (56) and
-  GPT-5.5 (55). State-of-the-art on nearly all tested capability benchmarks
+  v4.1.1: <strong>62</strong> — the <strong>#1 model on AA's index</strong>, ahead
+  of <a href="/outputs/anthropic/claude-opus-4.8">Opus 4.8</a> (57) and
+  GPT-5.5 (56). State-of-the-art on nearly all tested capability benchmarks
   (software engineering, knowledge work, vision, scientific research), scoring
   10%+ above Opus 4.8 on some.</p>
 
@@ -31,8 +31,12 @@ tags:
   - reasoning
   - coding
 model:
-  intelligence_index: 60
-  intelligence_index_version: "AA v4.1"
+  intelligence_index: 62
+  intelligence_index_version: "AA v4.1.1"
+  intelligence_index_history:
+    - score: 60
+      version: "AA v4.1"
+      until: "2026-08-09"
   openness_index: 11.1
   openness_index_version: "AA Openness Index v1.0 (family inference)"
 related:

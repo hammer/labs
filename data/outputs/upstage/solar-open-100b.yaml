@@ -55,7 +55,7 @@ model:
   training_tokens: 19.7T
   # Reasoning mode (highest-mode rule); AA leaderboard 15.1 as of 2026-07-28.
   intelligence_index: 15
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   openness_index: 27.8
   openness_index_version: "AA Openness Index v1.0"
 paper:

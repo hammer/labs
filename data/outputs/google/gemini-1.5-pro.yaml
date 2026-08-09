@@ -27,7 +27,7 @@ model:
   architecture: moe
   context_window: 1000000
   intelligence_index: 10
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
     - score: 16
       version: "AA v4.0"

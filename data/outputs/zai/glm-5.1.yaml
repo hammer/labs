@@ -35,9 +35,12 @@ tags:
 model:
   architecture: moe
   parameters: 754B
-  intelligence_index: 40
-  intelligence_index_version: "AA v4.1"
+  intelligence_index: 41
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
+    - score: 40
+      version: "AA v4.1"
+      until: "2026-08-09"
     - score: 51
       version: "AA v4.0"
       until: "2026-06-16"

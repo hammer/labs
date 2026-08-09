@@ -22,7 +22,7 @@ description: >
 
   <p>150% higher throughput vs Command R+ 08-2024. Runs on 2 GPUs
   (A100/H100). Trained via decentralized training and self-refinement
-  algorithms. AA Intelligence Index: 8. CC-BY-NC. Command A Vision
+  algorithms. AA Intelligence Index: 7. CC-BY-NC. Command A Vision
   (Jul 2025) adds SigLIP2 vision encoder.</p>
 tags:
   - open-weight
@@ -33,9 +33,12 @@ model:
   architecture: dense
   parameters: 111B
   context_window: 256000
-  intelligence_index: 8
-  intelligence_index_version: "AA v4.1"
+  intelligence_index: 7
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
+    - score: 8
+      version: "AA v4.1"
+      until: "2026-08-09"
     - score: 13
       version: "AA v4.0"
       until: "2026-06-16"

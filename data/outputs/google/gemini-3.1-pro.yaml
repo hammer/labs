@@ -16,7 +16,7 @@ description: >
   "Medium" thinking parameter for latency/depth tradeoff. Strong across the AA Intelligence
   Index evaluations at less than half the cost of frontier peers.</p>
 
-  <p><strong>AA Intelligence Index: 46</strong> under the v4.1 recalibration. Proprietary.</p>
+  <p><strong>AA Intelligence Index: 48</strong> under the v4.1.1 recalibration. Proprietary.</p>
 tags:
   - frontier
   - reasoning
@@ -25,9 +25,12 @@ tags:
 model:
   architecture: moe
   context_window: 1000000
-  intelligence_index: 46
-  intelligence_index_version: "AA v4.1"
+  intelligence_index: 48
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
+    - score: 46
+      version: "AA v4.1"
+      until: "2026-08-09"
     - score: 57
       version: "AA v4.0"
       until: "2026-06-16"

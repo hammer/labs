@@ -36,8 +36,12 @@ model:
   active_parameters: 11B
   context_window: 262144
   license: Apache 2.0
-  intelligence_index: 30
-  intelligence_index_version: "AA v4.1"
+  intelligence_index: 31
+  intelligence_index_version: "AA v4.1.1"
+  intelligence_index_history:
+    - score: 30
+      version: "AA v4.1"
+      until: "2026-08-09"
   openness_index: 38.9
   openness_index_version: "AA Openness Index v1.0"
 related:

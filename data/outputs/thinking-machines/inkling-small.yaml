@@ -20,7 +20,7 @@ description: >
   experts + 2 shared, hybrid local/global attention), natively multimodal
   (text, image, audio in) with up to <strong>1M-token context</strong>.
   "Comparable performance to Inkling at a quarter of its size" &mdash; AA
-  Intelligence Index v4.1: <strong>40</strong> vs the 975B flagship's 41, at
+  Intelligence Index v4.1.1: <strong>41</strong> vs the 975B flagship's 42, at
   $1.20/M output tokens vs $4.05.</p>
 
   <p>Own pretraining run with a revised data mix and recipe (trained on
@@ -45,8 +45,12 @@ model:
   num_experts: 256
   top_k: 6
   license: Apache 2.0
-  intelligence_index: 40
-  intelligence_index_version: "AA v4.1"
+  intelligence_index: 41
+  intelligence_index_version: "AA v4.1.1"
+  intelligence_index_history:
+    - score: 40
+      version: "AA v4.1"
+      until: "2026-08-09"
   benchmark_scores:
     - benchmark: SWE-Bench Verified
       score: "80.2"

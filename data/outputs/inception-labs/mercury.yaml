@@ -18,7 +18,7 @@ description: >
   generation. Mercury Coder Mini achieves <strong>1,109 tokens/sec</strong> on H100.</p>
 
   <p>Mercury 2 (February 2026) adds reasoning capability with AA Intelligence Index
-  <strong>21</strong> at ~929 tok/s &mdash; roughly 10x faster than comparable
+  <strong>22</strong> at ~929 tok/s &mdash; roughly 10x faster than comparable
   autoregressive models at similar quality. A genuinely novel architecture paradigm.
   By Khanna, Kharbanda, Li, Ermon, Grover, Kuleshov et al.</p>
 
@@ -33,9 +33,12 @@ tags:
   - reasoning
   - efficiency
 model:
-  intelligence_index: 21
-  intelligence_index_version: "AA v4.1"
+  intelligence_index: 22
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
+    - score: 21
+      version: "AA v4.1"
+      until: "2026-08-09"
     - score: 25
       version: "AA v4.1"
       until: "2026-07-25"
@@ -46,6 +49,6 @@ model:
   variants:
     - name: Mercury Coder
     - name: Mercury 2
-      notes: Reasoning, AA index 21, 929 tok/s
+      notes: Reasoning, AA index 22, 929 tok/s
 paper:
   arxiv: "2506.17298"

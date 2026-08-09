@@ -17,7 +17,7 @@ description: >
   estimated ~3T parameters. Up to 1M token context via API. Features Think mode
   (extended reasoning) and DeepSearch (agentic web research).</p>
 
-  <p>Grok-3 mini Reasoning achieved AA index 23. AA Intelligence Index: <strong>18</strong>.
+  <p>Grok-3 mini Reasoning achieved AA index 23. AA Intelligence Index: <strong>19</strong>.
   Proprietary.</p>
 tags:
   - frontier
@@ -26,8 +26,12 @@ tags:
 model:
   architecture: moe
   context_window: 1000000
-  intelligence_index: 18
-  intelligence_index_version: "AA v4.1"
+  intelligence_index: 19
+  intelligence_index_version: "AA v4.1.1"
+  intelligence_index_history:
+    - score: 18
+      version: "AA v4.1"
+      until: "2026-08-09"
   parameters_estimated:
     value: "2.1T"
     source: https://arxiv.org/abs/2604.24827

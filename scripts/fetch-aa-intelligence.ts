@@ -35,7 +35,8 @@ import { readFileSync, writeFileSync } from 'fs';
 import { globSync } from 'glob';
 
 const LEADERBOARD_URL = 'https://artificialanalysis.ai/leaderboards/models';
-const AAII_VERSION = 'AA v4.1';
+const AAII_VERSION = 'AA v4.1.1';
+const TODAY = new Date().toISOString().slice(0, 10);
 const dryRun = process.argv.includes('--dry-run');
 const discover = process.argv.includes('--discover');
 
@@ -74,13 +75,41 @@ async function fetchAaiiDataset(): Promise<Map<string, number>> {
 // Regex-based edits preserve existing file formatting. Every file has at
 // most one intelligence_index occurrence (validated assumption — multi-score
 // grouped files don't exist today and would need per-unit anchoring).
+//
+// When the rounded score changes value, the superseded reading is prepended
+// to `intelligence_index_history` (newest first) as `{score, version, until}`
+// with `until` = today — the date we observed the replacement. A version-only
+// re-tag (same score across a point release) does NOT append a trail entry:
+// nothing was superseded, so recording it would be noise. This matches the
+// backfilled trail, which only holds entries where the value actually moved.
 
 function applyIntelToYaml(content: string, score: number): string {
+  const idx = content.match(/^(\s+)intelligence_index:\s*([\d.]+)/m);
+  if (!idx) return content; // caller guards; defensive
+  const indent = idx[1];
+  const oldScore = parseFloat(idx[2]);
+  const oldVersion = content.match(/^\s+intelligence_index_version:\s*"?([^"\n]+?)"?\s*$/m)?.[1];
+  const scoreChanged = Math.round(oldScore) !== score;
+
   let out = content.replace(/^(\s+)intelligence_index:\s*[\d.]+/m, `$1intelligence_index: ${score}`);
   if (/^\s+intelligence_index_version:/m.test(out)) {
     out = out.replace(/^(\s+)intelligence_index_version:\s*[^\n]+/m, `$1intelligence_index_version: "${AAII_VERSION}"`);
   } else {
     out = out.replace(/^(\s+)intelligence_index:\s*[\d.]+/m, `$1intelligence_index: ${score}\n$1intelligence_index_version: "${AAII_VERSION}"`);
+  }
+
+  if (scoreChanged) {
+    const entry =
+      `${indent}  - score: ${oldScore}\n` +
+      (oldVersion ? `${indent}    version: "${oldVersion}"\n` : '') +
+      `${indent}    until: "${TODAY}"`;
+    if (/^\s+intelligence_index_history:[ \t]*$/m.test(out)) {
+      // Prepend as the first list item under the existing history key.
+      out = out.replace(/^(\s+)intelligence_index_history:[ \t]*\n/m, `$1intelligence_index_history:\n${entry}\n`);
+    } else {
+      // Create the history block immediately after the version line.
+      out = out.replace(/^(\s+)intelligence_index_version:\s*"[^"]*"[ \t]*$/m, `$&\n${indent}intelligence_index_history:\n${entry}`);
+    }
   }
   return out;
 }
@@ -156,8 +185,9 @@ async function main() {
   }
 
   const yamls = globSync('data/outputs/*/*.yaml').sort();
-  let updated = 0;
-  let unchanged = 0;
+  let rescored = 0;   // integer score changed → history entry appended
+  let retagged = 0;   // version-only bump, same score
+  let unchanged = 0;  // no write needed (already current)
   const missing: Array<{ file: string; slug: string }> = [];
 
   for (const file of yamls) {
@@ -179,18 +209,24 @@ async function main() {
       continue;
     }
 
-    const next = applyIntelToYaml(content, Math.round(score));
+    const newScore = Math.round(score);
+    const oldScore = parseFloat(content.match(/^\s+intelligence_index:\s*([\d.]+)/m)![1]);
+    const next = applyIntelToYaml(content, newScore);
     if (next === content) { unchanged++; continue; }
     if (!dryRun) writeFileSync(file, next);
-    updated++;
-    const old = content.match(/intelligence_index:\s*([\d.]+)/)?.[1];
-    console.log(`  ✓ ${file}  ${old} → ${Math.round(score)}  (slug: ${slug})`);
+    if (newScore !== oldScore) {
+      rescored++;
+      console.log(`  ✓ ${file}  ${oldScore} → ${newScore}  (slug: ${slug}, history +)`);
+    } else {
+      retagged++;
+    }
   }
 
   console.log('');
   console.log('Summary:');
-  console.log(`  Updated:   ${updated}${dryRun ? ' (dry-run — no writes)' : ''}`);
-  console.log(`  Unchanged: ${unchanged}`);
+  console.log(`  Rescored (score moved, history appended): ${rescored}${dryRun ? ' (dry-run — no writes)' : ''}`);
+  console.log(`  Re-tagged (version bump, same score):     ${retagged}`);
+  console.log(`  Unchanged:                                ${unchanged}`);
   console.log(`  Slug not in top-~500 leaderboard payload — VERIFY each by eye at`);
   console.log(`  artificialanalysis.ai/models/<slug> (may be a low-ranked but still-scored`);
   console.log(`  model, a renamed slug, or genuinely unscored): ${missing.length}`);

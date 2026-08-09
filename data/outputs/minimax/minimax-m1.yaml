@@ -43,7 +43,7 @@ outputs:
       active_parameters: 45.9B
       context_window: 1000000
       intelligence_index: 18
-      intelligence_index_version: "AA v4.1"
+      intelligence_index_version: "AA v4.1.1"
   - name: "MiniMax-M1: Scaling Test-Time Compute with Lightning Attention"
     type: paper
     date: 2025-06-16

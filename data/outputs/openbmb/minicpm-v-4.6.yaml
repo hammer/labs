@@ -13,7 +13,7 @@ sources:
 description: >
   <p>1.3B-parameter on-device vision-language model with <strong>262K context
   window</strong> and 4x/16x mixed visual-token compression for iOS, Android,
-  and HarmonyOS deployment. AA Intelligence Index v4.1: <strong>4</strong>
+  and HarmonyOS deployment. AA Intelligence Index v4.1.1: <strong>4</strong>
   &mdash; reportedly <strong>19x more token-efficient than Qwen3.5 0.8B</strong>
   at comparable quality.</p>
 
@@ -34,7 +34,7 @@ model:
   # base, so it doesn't count toward the home Intelligence column.
   base_model: qwen3.5
   intelligence_index: 4
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
     - score: 7
       version: "AA v4.1"

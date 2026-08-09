@@ -26,7 +26,7 @@ tags:
 model:
   context_window: 400000
   intelligence_index: 35
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
     - score: 36
       version: "AA v4.1"

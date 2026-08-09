@@ -36,8 +36,12 @@ outputs:
       parameters: 1T
       architecture: moe
       license: MIT
-      intelligence_index: 26
-      intelligence_index_version: "AA v4.1"
+      intelligence_index: 27
+      intelligence_index_version: "AA v4.1.1"
+      intelligence_index_history:
+        - score: 26
+          version: "AA v4.1"
+          until: "2026-08-09"
       openness_index: 38.9
       openness_index_version: "AA Openness Index v1.0"
   - name: "Ling & Ring 2.6 Technical Report"

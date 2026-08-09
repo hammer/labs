@@ -18,7 +18,7 @@ description: >
   <a href="/outputs/amazon/nova-2">Nova 2</a> superseded it at re:Invent 2025
   (December 2). Still active on Bedrock.</p>
 
-  <p>AA Intelligence Index v4.1: <strong>13</strong>.</p>
+  <p>AA Intelligence Index v4.1.1: <strong>13</strong>.</p>
 
   <p><em>Parameter count is a third-party estimate &mdash; Amazon has never
   disclosed the size. The 470B figure originates in a June 2024
@@ -31,7 +31,7 @@ tags:
 model:
   context_window: 1000000
   intelligence_index: 13
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
     - score: 19
       version: "AA v4.0"

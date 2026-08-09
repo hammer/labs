@@ -66,7 +66,7 @@ model:
   license: Apache 2.0
   base_model: gemma-4
   intelligence_index: 22
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   openness_index: 38.9
   openness_index_version: "AA Openness Index v1.0"
   benchmark_scores:

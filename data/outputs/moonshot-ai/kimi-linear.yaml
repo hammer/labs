@@ -29,8 +29,12 @@ outputs:
       architecture: moe
       parameters: 48B
       active_parameters: 3B
-      intelligence_index: 9
-      intelligence_index_version: "AA v4.1"
+      intelligence_index: 8
+      intelligence_index_version: "AA v4.1.1"
+      intelligence_index_history:
+        - score: 9
+          version: "AA v4.1"
+          until: "2026-08-09"
       openness_index: 61.1
       openness_index_version: "AA Openness Index v1.0"
   - name: "Kimi Linear: Hybrid Linear Attention Architecture"

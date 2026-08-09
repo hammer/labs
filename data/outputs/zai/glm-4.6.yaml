@@ -25,7 +25,7 @@ links:
 model:
   architecture: moe
   intelligence_index: 23
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
     - score: 30
       version: "AA v4.0"

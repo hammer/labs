@@ -20,4 +20,4 @@ model:
   parameters: 32B
   base_model: qwen2.5
   intelligence_index: 13
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"

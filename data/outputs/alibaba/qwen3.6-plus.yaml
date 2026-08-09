@@ -25,7 +25,7 @@ tags:
 model:
   context_window: 1000000
   intelligence_index: 40
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
 related:
   - qwen3.5
   - qwen3.6-max

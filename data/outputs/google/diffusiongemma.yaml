@@ -43,8 +43,12 @@ model:
   top_k: 8
   context_window: 262144
   license: Apache 2.0
-  intelligence_index: 13
-  intelligence_index_version: "AA v4.1"
+  intelligence_index: 14
+  intelligence_index_version: "AA v4.1.1"
+  intelligence_index_history:
+    - score: 13
+      version: "AA v4.1"
+      until: "2026-08-09"
   openness_index: 44.4
   openness_index_version: "AA Openness Index v1.0"
   benchmark_scores:

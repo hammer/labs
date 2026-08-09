@@ -23,7 +23,7 @@ model:
   parameters: 236B
   active_parameters: 23B
   intelligence_index: 22
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
     - score: 25
       version: "AA v4.1"

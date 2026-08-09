@@ -27,7 +27,7 @@ tags:
 model:
   architecture: dense
   intelligence_index: 7
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
     - score: 6
       version: "AA v4.1"

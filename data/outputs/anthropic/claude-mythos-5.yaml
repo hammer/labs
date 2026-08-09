@@ -13,7 +13,7 @@ description: >
   <p>Anthropic's <strong>most capable model</strong> — the Mythos-class tier
   above Opus, and the same underlying model as
   <a href="/outputs/anthropic/claude-fable-5">Claude Fable 5</a> (AA Intelligence
-  Index v4.1 = 60) but <strong>with safeguards lifted in some domains</strong>
+  Index v4.1.1 = 62) but <strong>with safeguards lifted in some domains</strong>
   (cybersecurity entirely, vs Fable 5's fallback to Opus 4.8). Released
   2026-06-09 alongside Fable 5. Not independently scored on Artificial Analysis
   — access is too restricted for evaluation — so <code>intelligence_index</code>

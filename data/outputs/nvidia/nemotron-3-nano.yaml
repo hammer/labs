@@ -36,9 +36,12 @@ model:
   parameters: 30B
   active_parameters: 3.5B
   context_window: 1000000
-  intelligence_index: 14
-  intelligence_index_version: "AA v4.1"
+  intelligence_index: 15
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
+    - score: 14
+      version: "AA v4.1"
+      until: "2026-08-09"
     - score: 18
       version: "AA v4.1"
       until: "2026-07-25"

@@ -43,7 +43,7 @@ model:
   # instead of via base_model.
   pretrained_from_scratch: false
   intelligence_index: 8
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
     - score: 14
       version: "AA v4.0"

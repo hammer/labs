@@ -30,7 +30,7 @@ model:
   active_parameters: 12.9B
   context_window: 32000
   intelligence_index: 2
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
 paper:
   arxiv: "2401.04088"
 related:

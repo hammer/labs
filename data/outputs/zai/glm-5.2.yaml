@@ -22,7 +22,7 @@ description: >
   agentic model</strong> and successor to
   <a href="/outputs/zai/glm-5.1">GLM-5.1</a> — a <strong>~753B MoE with
   DeepSeek Sparse Attention (DSA)</strong> and the <strong>highest-scoring
-  open model on the AA Intelligence Index v4.1 (51, #1 of 92)</strong>.
+  open model on the AA Intelligence Index v4.1.1 (53, #1 of 92)</strong>.
   Launched 2026-06-13 on the GLM Coding Plan tiers; full <strong>MIT open
   weights</strong>, standalone API, and benchmarks followed 2026-06-16. First
   GLM with a "solid" <strong>1M-token context</strong> (131,072 max output),
@@ -50,8 +50,12 @@ model:
   architecture: moe
   parameters: 753B
   context_window: 1000000
-  intelligence_index: 51
-  intelligence_index_version: "AA v4.1"
+  intelligence_index: 53
+  intelligence_index_version: "AA v4.1.1"
+  intelligence_index_history:
+    - score: 51
+      version: "AA v4.1"
+      until: "2026-08-09"
   openness_index: 44.4
   openness_index_version: "AA Openness Index v1.0"
   license: MIT

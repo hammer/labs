@@ -28,7 +28,7 @@ description: >
   demonstrated emergent text generation, <strong>GPT-3</strong> (2020, 175B) introduced
   few-shot learning, and <strong>GPT-4</strong> (2023) set the frontier for multimodal
   reasoning. The <strong>o-series</strong> reasoning models (o1, o3) pioneered test-time
-  compute scaling, and <strong>GPT-5.6</strong> (2026, AA index 59) is the
+  compute scaling, and <strong>GPT-5.6</strong> (2026, AA index 61) is the
   current flagship series. Beyond language, OpenAI created <strong>DALL-E</strong> (text-to-image),
   <strong>Whisper</strong> (speech recognition), <strong>Codex</strong> (powering GitHub
   Copilot), and <strong>Sora</strong> (video generation).</p>

@@ -30,6 +30,6 @@ model:
   context_window: 64000
   base_model: glm-4.5
   intelligence_index: 9
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   openness_index: 52.8
   openness_index_version: "AA Openness Index v1.0"

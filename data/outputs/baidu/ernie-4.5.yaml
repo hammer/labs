@@ -29,7 +29,7 @@ tags:
 model:
   architecture: moe
   intelligence_index: 9
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
     - score: 15
       version: "AA v4.0"

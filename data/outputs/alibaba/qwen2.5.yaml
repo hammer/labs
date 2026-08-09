@@ -28,8 +28,12 @@ outputs:
         url: https://github.com/qwenlm/qwen2.5
     model:
       architecture: dense
-      intelligence_index: 10
-      intelligence_index_version: "AA v4.1"
+      intelligence_index: 9
+      intelligence_index_version: "AA v4.1.1"
+      intelligence_index_history:
+        - score: 10
+          version: "AA v4.1"
+          until: "2026-08-09"
       training_tokens: 18T
       variants:
         - name: Qwen2.5-0.5B

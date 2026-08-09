@@ -45,7 +45,7 @@ description: >
   <strong>Grok 4.5</strong> (July 8, 2026) &mdash; the first model built with
   Cursor and reportedly the first on the ground-up &ldquo;V9&rdquo;
   foundation stack &mdash; which Musk pitched as &ldquo;Opus-class&rdquo; and
-  which scores AA Intelligence Index <strong>54</strong> (v4.1, high
+  which scores AA Intelligence Index <strong>56</strong> (v4.1.1, high
   reasoning), #4 overall at release.
   Grok-3 (February 2025) was trained on <strong>200K GPUs</strong> at the Colossus
   supercomputer; Grok-4 (July 2025) added native tool-calling and extended

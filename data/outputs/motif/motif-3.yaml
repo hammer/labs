@@ -14,7 +14,7 @@ description: >
   foundation model, released (as a Beta / intermediate checkpoint) in July 2026.
   A <strong>~314B-total / ~13B-active sparse MoE</strong> with a
   <strong>256K-token context</strong>. Its headline is the
-  <strong>AA Intelligence Index v4.1: 44</strong> &mdash; the
+  <strong>AA Intelligence Index v4.1.1: 45</strong> &mdash; the
   <strong>#1 Korean model</strong> on the index and, for a startup's first
   frontier attempt, competitive with much larger labs' open models.</p>
 
@@ -33,6 +33,10 @@ model:
   parameters: 314B
   active_parameters: 13B
   context_window: 262144
-  intelligence_index: 44
-  intelligence_index_version: "AA v4.1"
+  intelligence_index: 45
+  intelligence_index_version: "AA v4.1.1"
+  intelligence_index_history:
+    - score: 44
+      version: "AA v4.1"
+      until: "2026-08-09"
   license: Non-commercial research

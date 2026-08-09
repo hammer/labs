@@ -16,7 +16,7 @@ description: >
   API-only multimodal reasoning model (text + image in, text out) for coding,
   scientific reasoning, long-context, and agentic workflows. Supports a
   <strong>1M-token context</strong> (max output ~65K). <strong>AA Intelligence
-  Index v4.1: 39</strong>, released as an "Alpha" on 24 July 2026.</p>
+  Index v4.1.1: 40</strong>, released as an "Alpha" on 24 July 2026.</p>
 
   <p><em>Architecture, parameter count, and base model are undisclosed; weights
   are proprietary (not open). Despite the company's "built from scratch"
@@ -35,5 +35,9 @@ model:
   # describes post-training from Qwen/DeepSeek checkpoints (see description).
   # Base is undisclosed and possibly multiple, so flagged directly.
   pretrained_from_scratch: false
-  intelligence_index: 39
-  intelligence_index_version: "AA v4.1"
+  intelligence_index: 40
+  intelligence_index_version: "AA v4.1.1"
+  intelligence_index_history:
+    - score: 39
+      version: "AA v4.1"
+      until: "2026-08-09"

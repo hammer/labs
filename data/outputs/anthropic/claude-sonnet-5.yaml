@@ -16,7 +16,7 @@ description: >
   1.0&ndash;1.35x more tokens for the same input than prior Claude models.
   Introductory pricing $2/$10 per million input/output tokens through
   August 31, 2026, then $3/$15. Default model for Free and Pro plans.
-  AA Intelligence Index 53 (v4.1, adaptive reasoning at max effort) &mdash;
+  AA Intelligence Index 55 (v4.1.1, adaptive reasoning at max effort) &mdash;
   #5 overall at release.</p>
 tags:
   - frontier
@@ -25,8 +25,12 @@ tags:
   - reasoning
 model:
   context_window: 1000000
-  intelligence_index: 53
-  intelligence_index_version: "AA v4.1"
+  intelligence_index: 55
+  intelligence_index_version: "AA v4.1.1"
+  intelligence_index_history:
+    - score: 53
+      version: "AA v4.1"
+      until: "2026-08-09"
 related:
   - claude-fable-5
   - claude-opus-4.8

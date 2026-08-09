@@ -28,7 +28,7 @@ outputs:
         url: https://github.com/QwenLM/Qwen2
     model:
       intelligence_index: 6
-      intelligence_index_version: "AA v4.1"
+      intelligence_index_version: "AA v4.1.1"
       variants:
         - name: Qwen2-0.5B
           parameters: 0.5B

@@ -21,7 +21,7 @@ model:
   parameters: 123B
   context_window: 128000
   intelligence_index: 9
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
 related:
   - mistral-large-3
   - pixtral-large

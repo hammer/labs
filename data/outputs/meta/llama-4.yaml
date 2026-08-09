@@ -30,7 +30,7 @@ model:
   parameters: 400B
   active_parameters: 17B
   intelligence_index: 14
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
     - score: 18
       version: "AA v4.0"

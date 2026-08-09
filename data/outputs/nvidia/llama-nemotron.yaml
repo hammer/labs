@@ -40,7 +40,7 @@ model:
   base_model: llama-3.1
   context_window: 128000
   intelligence_index: 9
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
     - score: 15
       version: "AA v4.0"

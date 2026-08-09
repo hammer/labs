@@ -32,7 +32,7 @@ model:
   context_window: 128000
   base_model: mistral-large-2
   intelligence_index: 8
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   license: Mistral Research License
 related:
   - pixtral

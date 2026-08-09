@@ -30,7 +30,7 @@ model:
   # Anchored to Magistral Small 1.2 (the AA URL in sources) — the open-weight
   # checkpoint AAOI scored; Medium's higher AAII lives in variants.
   intelligence_index: 11
-  intelligence_index_version: "AA v4.1"
+  intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
     - score: 12
       version: "AA v4.1"

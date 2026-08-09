@@ -19,8 +19,8 @@ description: >
   1.5 Flash &rarr; 2.0 Flash &rarr; 2.5 Flash &rarr; the flagship
   <a href="/outputs/sapiens-ai/agnes-2.5-pro">Agnes 2.5 Pro Alpha</a>, alongside
   closed image and video models. Only Agnes 2.5 Pro Alpha is independently
-  benchmarked &mdash; <strong>Artificial Analysis Intelligence Index v4.1: 39</strong>
-  (mid-pack, well below the ~58&ndash;60 frontier). The genuinely open research is
+  benchmarked &mdash; <strong>Artificial Analysis Intelligence Index v4.1.1: 40</strong>
+  (mid-pack, well below the ~60&ndash;63 frontier). The genuinely open research is
   thin: one open-weight model,
   <a href="/outputs/sapiens-ai/agnes-seallm-8b">Agnes-SeaLLM-8B</a> (a
   Southeast-Asian fine-tune of Qwen3-8B, Apache-2.0), and one arXiv paper,

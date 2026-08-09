@@ -28,7 +28,7 @@ description: >
   Residuals</a>, with Gated MLA, <strong>native vision</strong>, and a
   1M-token context window &mdash; the architectural leap the K2 line
   (1T/32B) built toward. Runs at max thinking effort by default with low-
-  and high-effort modes. AA Intelligence Index <strong>57</strong> (v4.1)
+  and high-effort modes. AA Intelligence Index <strong>60</strong> (v4.1.1)
   &mdash; #4 overall at release, the highest-scoring Chinese model and
   above Grok 4.5 (54), though AA flags verbosity (~2&times; median output
   tokens) and slow serving. Moonshot positions it as trailing only Claude
@@ -53,8 +53,12 @@ model:
   num_experts: 896
   top_k: 16
   license: Kimi K3 License
-  intelligence_index: 57
-  intelligence_index_version: "AA v4.1"
+  intelligence_index: 60
+  intelligence_index_version: "AA v4.1.1"
+  intelligence_index_history:
+    - score: 57
+      version: "AA v4.1"
+      until: "2026-08-09"
   openness_index: 38.9
   openness_index_version: "AA Openness Index v1.0"
 paper:

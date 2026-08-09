@@ -30,8 +30,8 @@ description: >
   <p><strong>July 9, 2026: fully public</strong> &mdash; broad release
   across ChatGPT, API, and Codex after Commerce's CAISI completed its
   review in ~12 days of the 30-day window, ending the first
-  executive-order-gated launch. AA Intelligence Index (v4.1, max effort):
-  <strong>Sol 59</strong> (#2 overall at release), Terra 55, Luna 51; 1M
+  executive-order-gated launch. AA Intelligence Index (v4.1.1, max effort):
+  <strong>Sol 61</strong> (#2 overall at release), Terra 57, Luna 52; 1M
   context across the family, with AA flagging Sol as "particularly
   expensive" and slow-serving (~53 tokens/s). The system card (July 9) introduces
   internal evals including TroubleshootingBench and chain-of-thought
@@ -46,14 +46,18 @@ tags:
   - agents
 model:
   context_window: 1000000
-  intelligence_index: 59
-  intelligence_index_version: "AA v4.1"
+  intelligence_index: 61
+  intelligence_index_version: "AA v4.1.1"
+  intelligence_index_history:
+    - score: 59
+      version: "AA v4.1"
+      until: "2026-08-09"
   variants:
     - name: GPT-5.6 Sol
-      notes: AAII 59 (v4.1, max effort), #2 overall at release; $5/$30 per MTok
+      notes: AAII 61 (v4.1.1, max effort), #2 overall at release; $5/$30 per MTok
     - name: GPT-5.6 Terra
-      notes: AAII 55 (v4.1, max effort); $2.50/$15 per MTok
+      notes: AAII 57 (v4.1.1, max effort); $2.50/$15 per MTok
     - name: GPT-5.6 Luna
-      notes: AAII 51 (v4.1, max effort); $1/$6 per MTok
+      notes: AAII 52 (v4.1.1, max effort); $1/$6 per MTok
 related:
   - genebench-pro
