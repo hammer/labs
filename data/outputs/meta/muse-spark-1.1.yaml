@@ -37,4 +37,5 @@ model:
       version: "AA v4.1"
       until: "2026-08-09"
 related:
+  - muse-spark-1.2
   - muse-spark

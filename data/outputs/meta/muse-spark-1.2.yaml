@@ -1,0 +1,60 @@
+name: Muse Spark 1.2
+slug: muse-spark-1.2
+lab: meta
+type: model
+date: 2026-08-05
+flagship: true
+sources:
+  - label: Announcement
+    url: https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/muse-spark-1-2
+  - label: OpenRouter
+    url: https://openrouter.ai/meta/muse-spark-1.2
+  - label: Coverage (Engadget)
+    url: https://www.engadget.com/2231285/meta-introduces-muse-code-its-take-on-a-coding-agent/
+description: >
+  <p>A <strong>coding-focused</strong> successor to Meta Superintelligence
+  Labs' (led by <a href="/people/alexandr-wang">Alexandr Wang</a>)
+  <a href="/outputs/meta/muse-spark-1.1">Muse Spark 1.1</a>, released
+  August 5, 2026 alongside <strong>Muse Code</strong> &mdash; MSL's first
+  terminal coding agent (beta), which Muse Spark 1.2 powers. Meta
+  "significantly scaled up training compute on coding tasks while expanding
+  training environment diversity," co-trained the model with Muse Code, and
+  trained it on <strong>long-horizon agentic software engineering</strong>:
+  understanding large repositories, coordinating multiple sub-agents, and
+  iterating until a task's objective is met. Meta's third model in four
+  months, positioning the Muse line against Anthropic's Claude Code and
+  OpenAI's Codex.</p>
+
+  <p>Meta reports coding gains over Muse Spark 1.1 &mdash;
+  <strong>Terminal-Bench 2.1 82.9%</strong> (up from 76.2%) and
+  <strong>DeepSWE 1.1 59.3%</strong> (up from 53.0%), plus a Meta Internal
+  Coding Bench. On the broader composite it reaches <strong>AA Intelligence
+  Index 57</strong> (v4.1.1, xhigh) &mdash; Meta's highest AA score to date,
+  up from 1.1's 53. <strong>1M-token context</strong>, text and image input.</p>
+
+  <p><strong>Proprietary</strong> (parameters undisclosed), available via the
+  <strong>Meta Model API</strong> and OpenRouter at <strong>$1.25 / $4.25</strong>
+  per 1M input/output tokens ($0.15 cache hits), with a feedback-gated
+  <strong>Contributor Tier</strong> at $0.10 / $0.20 (~12&times; cheaper). Muse
+  Code installs on macOS and Linux with a single command.</p>
+tags:
+  - frontier
+  - coding
+  - agents
+  - reasoning
+  - proprietary
+model:
+  context_window: 1000000
+  intelligence_index: 57
+  intelligence_index_version: "AA v4.1.1"
+  license: Proprietary
+  benchmark_scores:
+    - benchmark: Terminal-Bench 2.1
+      score: "82.9%"
+    - benchmark: DeepSWE 1.1
+      score: "59.3%"
+related:
+  - muse-spark-1.1
+  - muse-spark
