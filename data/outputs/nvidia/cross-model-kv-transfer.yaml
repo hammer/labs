@@ -1,0 +1,31 @@
+name: "Cross-Model KV Cache Transfer in LLM Families: A Closed-Form Linear Mapping for Prefill Reuse"
+slug: cross-model-kv-transfer
+lab: nvidia
+type: paper
+date: 2026-08-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.03893
+description: >
+  <p>An inference-efficiency method for production stacks that swap between
+  different-sized models in a family (cost-quality cascading, mid-conversation
+  switching, routing) &mdash; every swap normally forces the receiver to
+  <strong>repay the prefill from scratch</strong>. The paper shows
+  cross-model KV caches share substantial <strong>linear structure</strong>
+  across matched-KV pairs (on Qwen3 14B&rarr;32B, one source layer explains
+  56% of the target's key variance, rising to 79% with several layers), and
+  builds a <strong>closed-form per-head ridge mapper</strong>: pick the
+  top-k predictive source layers, strip RoPE so the fit is position-free and
+  reusable across context lengths, and fit ridge regression on just 500
+  calibration sequences.</p>
+
+  <p>Across six pairs in three families it retains 73&ndash;98% of
+  standalone-prefill accuracy on four pairs (a nonlinear MLP recovers the
+  two failures, +37pp HellaSwag), running <strong>2.7&ndash;25&times; faster
+  than re-prefill</strong> and stable across multi-turn handoff. NVIDIA.</p>
+tags:
+  - efficiency
+  - inference
+  - research
+paper:
+  arxiv: "2608.03893"
