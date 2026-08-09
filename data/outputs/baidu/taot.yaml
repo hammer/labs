@@ -1,0 +1,29 @@
+name: "TAOT: Topology-Aware Optimal Transport for Dynamic Expert Replica Placement in MoE Training"
+slug: taot
+lab: baidu
+type: paper
+date: 2026-08-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.03676
+description: >
+  <p>A training-infrastructure method for the load imbalance MoE's dynamic
+  routing causes in expert-parallel training. Prior dynamic-replica schemes
+  copy hot experts onto idle ranks but optimize load balance alone, ignoring
+  the cost of moving expert weights across a multi-node topology &mdash; so
+  the extra cross-node communication can outweigh the balancing gain.
+  <strong>TAOT</strong> casts overload-vs-spare-capacity as an
+  entropy-regularized <strong>optimal-transport problem with a
+  communication-cost matrix</strong>, solves it with Sinkhorn-Knopp to
+  produce rank-level flow hints, and overlaps guest-weight transfer with
+  home-expert compute to hide the overhead. <strong>1.43&times; end-to-end
+  MoE training speedup</strong>, balance quality competitive with SOTA, and
+  the lowest weighted expert-communication cost across configs (up to 74%
+  reduction). Baidu, Inc. (senior author Dou Shen).</p>
+tags:
+  - moe
+  - training
+  - infrastructure
+  - research
+paper:
+  arxiv: "2608.03676"
