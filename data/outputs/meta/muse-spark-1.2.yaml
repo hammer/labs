@@ -56,5 +56,6 @@ model:
     - benchmark: DeepSWE 1.1
       score: "59.3%"
 related:
+  - muse-code
   - muse-spark-1.1
   - muse-spark

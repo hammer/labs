@@ -1,0 +1,44 @@
+name: Muse Code
+slug: muse-code
+lab: meta
+type: announcement
+date: 2026-08-05
+flagship: true
+sources:
+  - label: Announcement
+    url: https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2
+  - label: Docs
+    url: https://dev.meta.ai/docs/muse-code
+  - label: Coverage (TechCrunch)
+    url: https://techcrunch.com/2026/08/05/meta-launches-muse-code-an-ai-agent-for-large-code-bases/
+description: >
+  <p>Meta Superintelligence Labs' first <strong>terminal coding agent</strong>,
+  released in beta on August 5, 2026 alongside the
+  <a href="/outputs/meta/muse-spark-1.2">Muse Spark 1.2</a> model that powers
+  it. Muse Code is Meta's entry into the agentic-coding-tool race against
+  Anthropic's Claude Code and OpenAI's Codex: it plans changes, writes and
+  edits code, validates its own work, and coordinates <strong>persistent
+  background agents</strong> that stay active across a session, fanning out to
+  parallel sub-agents in <strong>isolated git worktrees</strong> to work a
+  large repository simultaneously.</p>
+
+  <p>A <strong>local event log</strong> records every model call, tool use,
+  approval, and edit, so a session can resume after a crash. Distributed as a
+  native binary via a one-line shell installer on <strong>macOS and
+  Linux</strong>. Powered by Muse Spark 1.2 (Terminal-Bench 2.1 82.9%), billed
+  pay-as-you-go at $1.25 / $4.25 per 1M input/output tokens, with a
+  feedback-gated <strong>Contributor Tier</strong> at $0.10 / $0.20 that trades
+  usage data for a ~12&times; discount &mdash; a pricing model that has drawn
+  scrutiny over training-data use.</p>
+
+  <p><strong>Proprietary</strong> and closed-source as of the beta; Meta CEO
+  Mark Zuckerberg said only that he would "have more to share soon" on whether
+  the Muse line would open. Part of Meta's push under MSL (led by
+  <a href="/people/alexandr-wang">Alexandr Wang</a>) &mdash; three models in
+  four months &mdash; to compete at the frontier.</p>
+tags:
+  - coding
+  - agents
+  - proprietary
+related:
+  - muse-spark-1.2
