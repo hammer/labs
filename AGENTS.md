@@ -85,6 +85,8 @@ When scanning for new papers from tracked labs, **do not limit searches to a nar
 
    It extracts every AAII score quoted in descriptions/notes/variant notes/lab blurbs and auto-classifies each against the file's structured scores, named tracked outputs, and AA's live per-variant values; the UNRESOLVED remainder is the work-list — fix the number to current or add an explicit era marker ("on AA's pre-recalibration v3.0"). Baseline 2026-08-04: 127 mentions, 0 unresolved. News titles are exempt by design (historical records). See the full rules in the AAII section below.
 
+   **The scanner alone is not sufficient after a rescore — also run the old-value grep** (next paragraph in the AAII section). `scan-aaii-mentions` has a coincidental-resolution blind spot that silently passes genuinely-stale prose, so a rescore sweep that only runs the scanner is incomplete.
+
 
 ### What to Exclude
 
@@ -319,6 +321,13 @@ Rule of thumb: the top-level number, the file slug, and the primary AA URL shoul
 **Score history.** Every model block carries `intelligence_index_history` — superseded readings, newest first, each `{score, version, until}` where `until` is the date we observed the replacement. `fetch-aa-intelligence` appends automatically whenever a synced score changes value; never edit the trail by hand except to remove entries that were our own anchoring bugs rather than AA rescores (judgment call — the Ling-1T "10" stayed because it *is* what we displayed). Model pages show the most recent superseded reading ("was N") with the full trail in the hover title. Backfilled from git history 2026-08-03 (93 files, 119 entries).
 
 **Prose mentions go stale — sweep them with `npm run scan-aaii-mentions`.** The sync only rewrites structured fields; scores quoted in `description`, `notes`, variant notes, and lab-file descriptions silently rot when AA rescores (2026-08-03 sweep found ~25 stale of 136 prose mentions). The scanner extracts every prose AAII mention and auto-classifies it against the file's structured scores, named tracked outputs, and the live leaderboard payload (variant/sibling slugs resolve by name); only the UNRESOLVED remainder needs a human, and each of those gets either a corrected number or an explicit era marker. Rules: news titles are historical records, never edited; release-era claims stay when explicitly version-tagged ("52 on AA's pre-recalibration v3.0") — the scanner recognizes those markers; variant-note scores anchor to AA's *per-variant* slugs, not the file's top-level anchor. Prefer NOT quoting scores in prose unless they carry the version tag.
+
+**The scanner has a coincidental-resolution blind spot — after any rescore, ALSO run an independent old-value grep.** `scan-aaii-mentions` marks a prose number "resolved" if it matches *any* current slug's value, so a genuinely stale score whose old value happens to equal some unrelated model's current score passes silently. The v4.1.1 sweep (2026-08-09) had ~a dozen such misses caught only by hand: Opus 5 "61"→63 (61 = current gpt-5-6-sol), qwen3.6-max "40"→41 (40 = qwen3-6-plus), Grok 4.5 "54"→56, GLM-5.2 "51"→53, Kimi K3 "57"→60 — plus sub-variant/comparator figures the scanner can't map to a slug at all (GPT-5.4-Mini "40"→41, gemma-4 E2B "9"→10, Nova Micro "5"→4). So after the sync, for every *rescored* file, grep its prose for the OLD score in an AA context, treating every hit as work-list alongside the scanner's UNRESOLVED set:
+
+- **Strip decimals first** (`\d+\.\d+`→placeholder) so `v4.1` and benchmark figures like `80.6` don't shadow the integer, then match the old value as a standalone `\b<old>\b`.
+- **Search a 2-line window** — in folded-scalar YAML the "AA Intelligence Index" label often sits on the *previous* physical line from the number (this is exactly how Grok 4.5's "54" hid from a single-line scan).
+- **Exclude `intelligence_index_history` `- score:` lines**, or every legitimate trail entry false-positives (they hold the old value by design).
+- **Re-verify sub-variant/comparator numbers by hand.** Mode/size slugs move too (`gpt-5-4-mini`, `claude-sonnet-4-6-adaptive`, `grok-4-fast-reasoning`, per-tier Nova/GPT-5.6 Terra/Luna values), and the scanner can't tie a bare "40" in prose to the right one — cross-check each against the leaderboard payload.
 
 **Audit pattern.** When AA bumps to a new index version:
 
