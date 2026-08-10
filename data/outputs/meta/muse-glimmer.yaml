@@ -1,0 +1,68 @@
+name: Muse Glimmer
+slug: muse-glimmer
+lab: meta
+type: model
+date: 2026-08-10
+flagship: true
+sources:
+  - label: Announcement
+    url: https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model
+  - label: HuggingFace
+    url: https://huggingface.co/meta-models/Muse-Glimmer-30B
+  - label: Docs
+    url: https://dev.meta.ai/docs
+description: >
+  <p>Meta Superintelligence Labs' first <strong>open-weight</strong> Muse
+  model &mdash; a <strong>30B dense, natively multimodal</strong> model built
+  for <strong>always-on, on-device agentic workflows</strong>, released
+  <strong>Apache 2.0</strong> on August 10, 2026. Rather than pretraining from
+  scratch, Muse Glimmer was <strong>distilled from Meta's proprietary
+  <a href="/outputs/meta/muse-spark-1.2">Muse Spark</a></strong> via logit
+  distillation on the teacher's outputs, then aligned with safety SFT and RL.
+  Architecturally it is a "Dense Causal Transformer with Perception Encoder"
+  (52 layers, ~29.6B language-model params plus a ~1.8B ViT-G/14 vision
+  encoder), <strong>128K context</strong>, text and image in &mdash; a
+  Meta-native stack (its own <code>muse_glimmer</code> architecture and 202K
+  vocabulary), not a fork of another lab's weights.</p>
+
+  <p>On Meta's own card it leads <a href="/outputs/google/gemma-4">Gemma 4
+  31B</a> across the board and trades with Qwen3.6-27B among ~30B open models:
+  <strong>SWE-Bench Verified 76.0</strong>, SWE-Bench Pro 51.2 (#1),
+  <strong>AIME 2026 94.7</strong> (#1), GPQA Diamond 83.5, MMMU Pro 74, and
+  strong agentic tool use (<strong>MCP Atlas 75.5</strong>, DeepSearch QA 74.6,
+  both #1); Terminal-Bench 2.1 51.7 trails Qwen's 60.7. Ships as BF16 plus
+  4-bit K-quants and a <strong>DFlash</strong> speculative-decoding drafter for
+  low-latency local inference &mdash; the first open-weight entry in the
+  otherwise-proprietary Muse line (<a href="/outputs/meta/muse-spark">Spark</a>,
+  <a href="/outputs/meta/muse-code">Muse Code</a>). AA had not yet scored it at
+  release.</p>
+tags:
+  - open-weight
+  - agents
+  - multimodal
+  - coding
+  - efficiency
+model:
+  architecture: dense
+  parameters: 30B
+  context_window: 131072
+  license: Apache 2.0
+  benchmark_scores:
+    - benchmark: SWE-Bench Verified
+      score: "76.0"
+    - benchmark: SWE-Bench Pro
+      score: "51.2"
+    - benchmark: Terminal-Bench 2.1
+      score: "51.7"
+    - benchmark: GPQA Diamond
+      score: "83.5"
+    - benchmark: AIME 2026
+      score: "94.7"
+    - benchmark: MCP Atlas
+      score: "75.5"
+    - benchmark: MMMU Pro
+      score: "74"
+related:
+  - muse-spark-1.2
+  - muse-code
+  - muse-spark
