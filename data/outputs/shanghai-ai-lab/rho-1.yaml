@@ -1,0 +1,64 @@
+name: "Rho-1: Not All Tokens Are What You Need"
+slug: rho-1
+lab:
+  - shanghai-ai-lab
+  - microsoft
+type: paper
+date: 2024-04-11
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2404.07965
+  - label: GitHub
+    url: https://github.com/microsoft/rho
+  - label: OpenReview (NeurIPS 2024)
+    url: https://openreview.net/forum?id=0NMzBwqaAJ
+description: >
+  <p><strong>Selective Language Modeling (SLM)</strong> &mdash; a pretraining
+  method that abandons uniform next-token prediction and instead trains only on
+  the tokens that matter. A <strong>reference model</strong> trained on
+  high-quality data scores every pretraining token by its excess loss; the
+  target model then applies its language-modeling loss <strong>only to the
+  highest-scoring tokens</strong>, skipping noisy or already-learned ones. The
+  paper argues that much of a web corpus is low-utility for a given objective
+  and that filtering at the <em>token</em> level (not just the document level)
+  is a strong efficiency lever. Introduced with the <strong>Rho-1</strong>
+  models (1B and 7B).</p>
+
+  <p>Continual pretraining on 15B OpenWebMath tokens yielded up to a
+  <strong>30% absolute</strong> few-shot gain across 9 math tasks; after
+  fine-tuning, Rho-1-1B and Rho-1-7B reached <strong>40.6%</strong> and
+  <strong>51.8%</strong> on MATH &mdash; matching DeepSeekMath while using
+  <strong>only 3% of the pretraining tokens</strong>. On 80B general tokens SLM
+  gave a 6.8% average lift across 15 diverse tasks, establishing token-level
+  data selection as a durable technique for pretraining efficiency.</p>
+
+  <p>A collaboration across Xiamen University, Tsinghua University,
+  <strong>Shanghai AI Laboratory</strong>, and <strong>Microsoft</strong>
+  (senior authors <a href="/people/weizhu-chen">Weizhu Chen</a> and Nan Duan).
+  <strong>NeurIPS 2024 Oral</strong> and <strong>Best Paper Runner-Up</strong>.
+  Code and models at <a href="https://github.com/microsoft/rho">microsoft/rho</a>.</p>
+tags:
+  - pretraining
+  - data-curation
+  - efficiency
+  - math
+paper:
+  arxiv: "2404.07965"
+  venue: NeurIPS 2024
+  presentation: oral
+  authors:
+    - Zhenghao Lin
+    - Zhibin Gou
+    - Yeyun Gong
+    # Not Z.ai's Xiao Liu (/people/xiao-liu, AutoGLM) — different person; suppress the link
+    - name: Xiao Liu
+      slug: null
+    - Yelong Shen
+    - Ruochen Xu
+    - Chen Lin
+    - Yujiu Yang
+    - Jian Jiao
+    - Nan Duan
+    - Weizhu Chen
+  code_url: https://github.com/microsoft/rho

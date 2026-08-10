@@ -135,7 +135,15 @@ const PaperDetailsSchema = z.object({
   arxiv: z.string().optional(),
   venue: z.string().optional(),
   // Enhanced fields
-  authors: z.array(z.string()).optional(),
+  // Author names are auto-linked to /people/<slug> by slugifying the name.
+  // To disambiguate a same-named author who is NOT the person we track under
+  // that slug (e.g. a common name like "Xiao Liu"), use the object form:
+  //   { name: "Xiao Liu", slug: null }        -> render plain text, no link
+  //   { name: "Xiao Liu", slug: "xiao-liu-x" } -> link to a specific person
+  authors: z.array(z.union([
+    z.string(),
+    z.object({ name: z.string(), slug: z.string().nullable().optional() }),
+  ])).optional(),
   pdf_url: z.string().url().optional(),
   code_url: z.string().url().optional(),
   huggingface_url: z.string().url().optional(),

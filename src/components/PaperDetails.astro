@@ -13,8 +13,14 @@ const { paper, metrics } = Astro.props;
 const allPeople = getAllPeople();
 const peopleBySlug = new Map(allPeople.map(p => [p.slug, p]));
 
-function linkAuthor(name: string) {
-  const slug = slugifyName(name);
+function linkAuthor(a: string | { name: string; slug?: string | null }) {
+  const name = typeof a === 'string' ? a : a.name;
+  // Object form with an explicit slug disambiguates a same-named author:
+  //   slug === null  -> render plain text (not the person we track by that name)
+  //   slug === "x"   -> link to /people/x specifically
+  const explicit = typeof a === 'object' ? a.slug : undefined;
+  if (explicit === null) return { name, slug: null, linked: false };
+  const slug = explicit ?? slugifyName(name);
   return peopleBySlug.has(slug) ? { name, slug, linked: true } : { name, slug: null, linked: false };
 }
 
