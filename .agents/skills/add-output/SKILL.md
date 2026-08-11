@@ -1,20 +1,13 @@
 ---
 name: add-output
-description: Add a new research output (model, paper, library, dataset, eval) to a lab's output directory
+description: Add, update, correct, enrich, split, merge, deduplicate, or backfill a Lab Index research output. Use for models, papers, libraries, datasets, evaluations, technical reports, structured model fields, source attribution, derivative-model provenance, and late-arriving links or scores. Use sweep-research for broad discovery and sync-artificial-analysis for bulk AA maintenance.
 ---
 
 # Add a New Research Output
 
 ## 1. Research
 
-### Finding Papers from a Lab
-
-Many significant papers are missed because they appear under university co-affiliations, intern programs, or collaborative GitHub orgs rather than the lab's primary name. To avoid this:
-
-- **Check the lab's GitHub org AND known collaborative orgs.** Example: ByteDance Seed papers often appear under `hustvl` (HUST Vision Lab), `FoundationVision`, or intern personal repos — not just `bytedance`. Shanghai AI Lab (PJLab) splits across `InternLM`, `OpenGVLab`, and `InternScience` (its autonomous-scientific-discovery line, e.g. InternAgent / formerly NovelSeek), and a large share of its work is Tsinghua-co-affiliated under *Tsinghua* group orgs like `PRIME-RL` (TTRL) and `TsinghuaC3I` (MedXpertQA) — with senior author **Bowen Zhou**. A paper under any of these (or a Bowen-Zhou-group paper listing "Shanghai AI Laboratory") is easy to miss if you only watch InternLM/OpenGVLab.
-- **Search by key researcher names**, not just lab name. Prolific authors at major labs (e.g., Xinggang Wang for ByteDance/HUST collabs, Sho Takase for SB Intuitions) publish under university affiliations.
-- **Read the arXiv HTML first page** to verify affiliations before attributing a paper. The abstract page often omits affiliations — the HTML version (`arxiv.org/html/{id}v1`) shows them.
-- **Cover 4-6 weeks back** when doing periodic sweeps, not just the current week. Papers take time to surface in search results.
+For broad lab, team-name, researcher, HuggingFace, evaluation, or harness discovery, use [sweep-research](../sweep-research/SKILL.md). This skill begins after a candidate is identified and covers verification, representation, filing, and updates.
 
 ### For Models with Technical Reports
 
@@ -84,24 +77,18 @@ Real failures this prevents:
 ### External Links
 
 For **every** model output, check:
-- **Artificial Analysis:** Search `site:artificialanalysis.ai [model name]`. Fetch the page and extract the Intelligence Index score. **Check for reasoning/adaptive variants** — many models have multiple AA entries (e.g., `model-name`, `model-name-reasoning`, `model-name-adaptive`). Use the **highest score** for the same model and link to that variant's page. **Always also record the index version** in the sibling `intelligence_index_version` field (currently `"AA v4.1"`, June 2026). AA periodically recalibrates — without the version tag we can't tell stale scores from current ones on the next sweep. (Granite 4.0 H-Small dropped 23 → 11 across the v4 migration — that's the failure mode.)
-  - **If AA hasn't scored the model yet, leave the field unset — but AA's pickup often lags the release by weeks or months.** Filing day is not the last chance: `npm run fetch-aa-intelligence -- --discover` (standing sweep step) diffs AA's full leaderboard payload against our tracked AA URLs and surfaces tracked models AA has since started scoring. (Solar Open 100B and Solar Pro 3 sat scored-on-AA-but-unimported for ~6 months before the 2026-07 audit caught them.)
-  - **Setting `intelligence_index` also obligates a provenance determination** — see "Derivative Models" below. The home Intelligence column only counts from-scratch models; an AAII score without `base_model`/`pretrained_from_scratch` provenance on a derivative silently mis-ranks the lab.
-  - **Quote scores in prose sparingly.** The sync only refreshes structured fields — a score written into a description/variant note/lab blurb goes stale on AA's next rescore and gets chased by the standing sweep (`npm run scan-aaii-mentions`, sweep step 9). If prose needs a number, tag it ("AA v4.1: 40") or frame it as release-era so the scanner classifies it as historical. Rescores are recorded automatically in `intelligence_index_history` (`{score, version, until}`, newest first) — don't hand-edit the trail.
-  - **Always add the AA model page to `sources` when you set `intelligence_index`.** Format: `- label: Artificial Analysis` / `url: https://artificialanalysis.ai/models/<aa-slug>`. This is the only handle `npm run fetch-aa-openness` uses to map our outputs to AA's slugs — without it the AAOI backfill silently skips. AA's slug often differs from ours (labindex `ministral-3` → AA `ministral-3-3b`; labindex `jamba` → AA `jamba-1-7-large`). HEAD the URL before committing.
-  - When the YAML represents a multi-model family (e.g. `o3.yaml` covering o3-mini, o3, o4-mini, o3-pro), the top-level `intelligence_index` should match the score for the model named by the file slug and linked from `sources` — not blindly the highest variant. Higher variants go in the description and `variants` list.
-  - **Openness Index (AAOI):** The same AA model page also exposes an `openness_index` value (0-100, multiples of 1/18). Record it on the model as `openness_index: <rounded-to-1dp>` + `openness_index_version: "AA Openness Index v1.0"`. It must come from the **same checkpoint** whose AAII you recorded, not the family max. AAOI coverage is smaller than AAII — if AA hasn't scored your model on AAOI, leave the field unset. For bulk backfill across the index, use `npm run fetch-aa-openness` which parses AA's leaderboard RSC payload in a single request.
+- **Artificial Analysis:** For a single newly filed model, follow [Artificial Analysis scoring](references/artificial-analysis.md). For bulk refreshes, discovery, rescores, or stale-prose cleanup, use [sync-artificial-analysis](../sync-artificial-analysis/SKILL.md).
 - **OpenRouter:** Search `site:openrouter.ai [model name]`. Add the canonical model URL (without date suffix).
 - **HuggingFace model page:** Find model weights (e.g., `huggingface.co/org/model`)
 - **HuggingFace blog:** Check for technical blog posts at `huggingface.co/blog/[org]/[post-slug]`. These often contain detailed benchmarks, architecture explanations, and usage guides not found in the model card. Search `site:huggingface.co/blog [model name]`.
-- **HuggingFace org recent-uploads check** (sweep helper): when sweeping a lab for new releases, hit the HF API directly rather than relying on the model card UI — many releases ship HF-only with no announcement: `curl -sL 'https://huggingface.co/api/models?author=<org>&sort=lastModified&direction=-1&limit=30'` and the parallel `?author=<org>` query against `/api/datasets`. Datasets in particular tend to land this way (Ultra-FineWeb-L3, Zyda-2, FineWeb-Edu). If a freshly uploaded artifact looks load-bearing — a base model, a sizeable dataset, a versioned successor — treat it as a candidate even without a paper/blog.
 - **GitHub:** Find code repo
 
 ### For Closed Models with Technical Reports
 
 Some frontier models (GPT-4, Claude, Gemini) are closed-source but have published technical reports:
-- Use `type: paper` (not `type: model`) since there are no downloadable weights
-- Still include AA Intelligence Index and OpenRouter links if the model is accessible via API
+- Use `type: model` for the model release even when weights are unavailable. Weight availability does not determine the output type.
+- Add the technical report as a companion `paper:` block. Use a grouped output only when the report is a genuinely separate release unit.
+- Omit undisclosed scale fields; still include verified AA Intelligence Index and OpenRouter links when available.
 - Focus the description on what the technical report reveals: architecture choices, training scale, benchmark results, novel techniques
 - Note what is NOT disclosed (e.g., "parameter count undisclosed", "training data composition not published")
 
@@ -138,8 +125,7 @@ Use `type: eval` for benchmarks, evaluation suites, and leaderboards that became
 2. The [AA Intelligence Index methodology](https://artificialanalysis.ai/methodology/intelligence-benchmarking) — 10 evals, check if any are from the lab
 3. The [Epoch Capabilities Index](https://epoch.ai/benchmarks/eci) — ~42 benchmarks, check if any are from the lab
 4. Model cards from other labs — if they report scores on a benchmark from this lab, it's likely significant
-5. **Search independently for reasoning process / long-CoT benchmarks** — these often come from academic multi-lab collaborations (not a single tracked lab) and are easily missed. Search: `site:arxiv.org "chain of thought" benchmark evaluation 2604`, `site:arxiv.org long reasoning evaluation 2604`, `site:arxiv.org reasoning steps benchmark 2604`. Key benchmarks in this space: ProcessBench (step-level error detection), LongCoT (arXiv:2604.14140, extended reasoning chain quality), GSM-Symbolic (reasoning robustness to symbolic variation), PRMBench (process reward model quality).
-6. **Search independently for agent-harness / execution-layer work** — a priority area for us (see AGENTS.md "Agent harnesses & execution stacks"). Harness benchmarks and scaffold frameworks hide behind titles using "harness", "agent workflow", "execution", "scaffold", "middleware" rather than model names, so they slip past model/lab searches. Search: `site:arxiv.org agent harness benchmark 2604`, `site:arxiv.org "agentic workflow" evaluation 2604`, `site:arxiv.org computer-use agent benchmark 2604`. File the benchmark as `type: eval` and a framework/scaffold as `type: library`; attribute to the lab in the affiliation block (e.g. Harness-Bench → Peking, TheAgentCompany → CMU, OSWorld → HKU). When a lab ships both a framework and a diagnostic benchmark, file both.
+5. For independent reasoning-process, long-CoT, domain-expert, agent-harness, and execution-layer discovery, use [sweep-research](../sweep-research/SKILL.md). Return here after a candidate is identified.
 
 **Key fields for eval outputs:**
 - `type: eval`
@@ -165,7 +151,7 @@ Create `data/outputs/{lab-slug}/{output-slug}.yaml`:
 name: Model Name
 slug: output-slug
 lab: lab-slug
-type: model                    # model | paper | library | dataset | blog | announcement
+type: model                    # model | paper | library | dataset | eval | blog | announcement
 date: YYYY-MM-DD
 flagship: true                 # see Flagship Criteria below
 sources:                       # ordered by importance
@@ -398,7 +384,8 @@ Write descriptions a researcher would find useful. Use HTML for multi-paragraph 
 ## 5. Validate
 
 ```bash
-npm run build   # Verify page count increased and no errors
+npm run validate
+npm run build
 ```
 
 ## 6. Exclusion Criteria
@@ -425,7 +412,7 @@ Before creating an output, verify it belongs. Do **not** create outputs for:
 - [ ] Flagship only for genuine step changes
 - [ ] Sources ordered: announcement, paper, GitHub, HF, AA, OpenRouter
 - [ ] Related outputs linked
-- [ ] `npm run build` passes
+- [ ] `npm run validate` and `npm run build` pass
 
 ## Updating an Existing Output
 

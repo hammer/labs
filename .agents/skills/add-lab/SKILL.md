@@ -1,13 +1,13 @@
 ---
 name: add-lab
-description: Add a new AI research lab to the tracker with profile, logo, outputs, and README update
+description: Add or substantially update an AI research lab in Lab Index, including its profile, logo, people, news, outputs, provider links, and README entry. Use for new-lab onboarding, major lab-profile enrichment, corporate reorganizations, and lab slug or name changes.
 ---
 
 # Add a New Lab
 
 ## 1. Deep Research
 
-Conduct thorough research **before creating any files**. Launch 2-3 research agents in parallel for speed:
+Conduct thorough research **before creating any files**. When parallel agents are available and authorized, divide the work into 2-3 independent research passes:
 - Agent 1: Corporate details, URLs, people profiles, news
 - Agent 2: All models and papers (chronological), arxiv/HuggingFace/GitHub
 
@@ -340,7 +340,8 @@ Fetch the provider page (e.g., `openrouter.ai/mistralai`) and map models to outp
 ## 7. Validate and Build
 
 ```bash
-npm run build        # Verify page count increased and no errors
+npm run validate     # Check YAML schema and project invariants
+npm run build        # Verify page generation and integration
 ```
 
 YAML changes are picked up on browser refresh without restarting the dev server. Only restart if you changed `.astro` templates or `.ts` code.
@@ -359,7 +360,7 @@ YAML changes are picked up on browser refresh without restarting the dev server.
 - [ ] OpenRouter links at lab and model level
 - [ ] Region flag exists in `index.astro` for this country
 - [ ] README.md updated
-- [ ] `npm run build` passes
+- [ ] `npm run validate` and `npm run build` pass
 
 ## Updating an Existing Lab
 

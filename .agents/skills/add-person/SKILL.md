@@ -1,6 +1,6 @@
 ---
 name: add-person
-description: Add a researcher or leader to a lab's people section with verified profile links
+description: Add, update, verify, or reconcile a researcher or leader in a lab's people section. Use for new people, role changes, departures, profile-link enrichment, biographies, cross-lab moves, and person-slug disambiguation.
 ---
 
 # Add a Person to a Lab
@@ -133,5 +133,6 @@ Add new people in a logical order within the `people` array:
 ## 9. Validate
 
 ```bash
-npm run build   # Verify no schema errors
+npm run validate
+npm run build
 ```

@@ -457,6 +457,8 @@ Detailed step-by-step instructions for common tasks are available as agent skill
 | **add-person** | [`.agents/skills/add-person/SKILL.md`](.agents/skills/add-person/SKILL.md) | Adding a researcher or leader to a lab's people section |
 | **add-news** | [`.agents/skills/add-news/SKILL.md`](.agents/skills/add-news/SKILL.md) | Adding a news article to a lab's news section |
 | **ui-change** | [`.agents/skills/ui-change/SKILL.md`](.agents/skills/ui-change/SKILL.md) | Changing layout, components, or styles — conventions, measurement-first planning, and the verification loop |
+| **sweep-research** | [`.agents/skills/sweep-research/SKILL.md`](.agents/skills/sweep-research/SKILL.md) | Sweeping labs, teams, researchers, HuggingFace, evals, and harnesses for significant new or late-arriving artifacts |
+| **sync-artificial-analysis** | [`.agents/skills/sync-artificial-analysis/SKILL.md`](.agents/skills/sync-artificial-analysis/SKILL.md) | Refreshing AAII/AAOI scores, versions, provenance, history, discovery candidates, and stale prose |
 
 ## Important Notes
 

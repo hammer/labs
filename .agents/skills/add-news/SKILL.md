@@ -1,6 +1,6 @@
 ---
 name: add-news
-description: Add a news article to a lab's news section
+description: Add, update, translate, or correct a lab news item in Lab Index. Use for major model announcements, funding, leadership changes, partnerships, policy news, and non-English article summaries, including checking whether the news also requires a structured research output.
 ---
 
 # Add a News Item to a Lab
@@ -112,5 +112,6 @@ When searching for news about a lab, check sources in this order. Prefer higher-
 ## 6. Validate
 
 ```bash
-npm run build   # Verify no schema errors
+npm run validate
+npm run build
 ```

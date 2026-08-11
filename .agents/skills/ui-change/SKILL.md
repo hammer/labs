@@ -1,6 +1,6 @@
 ---
 name: ui-change
-description: Change layout, components, or styles on labindex.ai — follow the responsive conventions, plan with real measurements, and verify with both smoke suites
+description: Change, fix, or review layouts, components, interaction behavior, or styles on labindex.ai. Use for responsive work, overflow bugs, table columns, filters, navigation, accessibility, and any UI change that needs measurement plus both smoke suites.
 ---
 
 # Make a UI / Layout Change
@@ -30,13 +30,13 @@ EOF
 
 To find *what* overflows, iterate `document.querySelectorAll('*')` and report elements whose `getBoundingClientRect().right` exceeds the viewport.
 
-For non-trivial layout changes, follow the project pattern: file/comment on a GitHub issue with the plan, get an adversarial review (reviewers should measure, not estimate), then implement the refined plan.
+For non-trivial layout changes, prepare a written plan and get an adversarial review that measures rather than estimates. File or comment on a GitHub issue only when the user has authorized that external write.
 
 ## 3. Implement within the conventions
 
 Checklist while editing:
 
-- New media queries at **600px** for phone behavior (1104/880/720px are home-table trim tiers, and the 600px phone tier itself also trims the rank column; 768px is the timeline metric tier). No new nearby breakpoints.
+- New media queries at **600px** for phone behavior (1176/880/720px are home-table trim tiers, and the 600px phone tier itself also trims the rank column; 768px is the timeline metric tier). No new nearby breakpoints.
 - New home-table columns: `data-*` attribute + sort wiring **and** a trim-tier assignment.
 - Anything keyboard-only that renders on screen gets `class="kbd-only"`.
 - New text inputs: 16px font under `@media (pointer: coarse)`; never autofocus when `isMobile()`.
