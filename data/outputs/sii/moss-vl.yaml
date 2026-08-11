@@ -1,0 +1,54 @@
+name: MOSS-VL
+slug: moss-vl
+lab: sii
+type: model
+date: 2026-07-14
+flagship: true
+sources:
+  - label: Technical Blog
+    url: https://openmoss.ai/MOSS-VL/
+  - label: GitHub
+    url: https://github.com/OpenMOSS/MOSS-VL
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.07639
+  - label: HuggingFace (Realtime)
+    url: https://huggingface.co/OpenMOSS-Team/MOSS-VL-Realtime
+  - label: HuggingFace (Instruct)
+    url: https://huggingface.co/OpenMOSS-Team/MOSS-VL-Instruct-0708
+description: >
+  <p>An open-weight 11B vision-language family for long-form and
+  <strong>real-time streaming video understanding</strong>. MOSS-VL-Realtime
+  perceives an incoming video stream while generating text, supports
+  interruptible multi-turn dialogue, and autonomously decides when to speak or
+  continue watching. Offline Instruct and Base checkpoints share the 256K
+  context and are aimed at long-video reasoning and continued training.</p>
+
+  <p>The architecture connects a Qwen-family language backbone to vision through
+  cross-attention rather than interleaving visual tokens in the text sequence.
+  Its Cross-attention RoPE (XRoPE) places text tokens and visual patches in a
+  shared time–height–width coordinate system; absolute timestamps support
+  second-level temporal grounding. The July generation reports open-weight SOTA
+  across OmniMMI proactive alerting, StreamingBench proactive output, and
+  ProactiveVideoQA. Apache 2.0 weights are available, including August 11 FP8
+  and NF4 builds sized for a single 24 GB GPU.</p>
+tags:
+  - open-weight
+  - multimodal
+  - video
+  - real-time
+  - streaming
+model:
+  architecture: dense
+  pretrained_from_scratch: false
+  context_window: 262144
+  license: Apache 2.0
+  variants:
+    - name: MOSS-VL-Realtime
+      notes: "11B; Qwen-family LLM backbone; continuous streaming video interaction."
+    - name: MOSS-VL-Instruct-0708
+      notes: "11B; offline image and long-video instruction checkpoint."
+    - name: MOSS-VL-Base-0708
+      notes: "11B; base checkpoint for continued pretraining and fine-tuning."
+paper:
+  arxiv: "2606.07639"
+  code_url: https://github.com/OpenMOSS/MOSS-VL

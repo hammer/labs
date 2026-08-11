@@ -91,18 +91,18 @@ model:
   variants:
     - name: Granite 4.1 30B Instruct
       parameters: 30B
-      notes: AA Intelligence Index 9 — highest in family
+      notes: AA Intelligence Index v4.1.1 score 9 — highest in family
     - name: Granite 4.1 30B Base
       parameters: 30B
     - name: Granite 4.1 8B Instruct
       parameters: 8B
-      notes: AA Intelligence Index 6
+      notes: AA Intelligence Index v4.1.1 score 6
     - name: Granite 4.1 8B FP8
       parameters: 8B
       notes: FP8-quantized variant of 8B Instruct
     - name: Granite 4.1 3B Instruct
       parameters: 3B
-      notes: AA Intelligence Index 5 · 128K context
+      notes: AA Intelligence Index v4.1.1 score 5 · 128K context
     - name: Granite Vision 4.1 4B
       parameters: 4B
       notes: LoRA on Granite 4.1 3B; document/table/chart extraction

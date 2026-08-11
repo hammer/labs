@@ -1,0 +1,42 @@
+name: Shieldstral 1.0
+slug: shieldstral
+lab: mistral
+type: model
+date: 2026-08-04
+sources:
+  - label: Announcement
+    url: https://mistral.ai/news/shieldstral/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.25857
+  - label: HuggingFace
+    url: https://huggingface.co/mistralai/Shieldstral-1.0-3B
+description: >
+  <p>A compact <strong>policy-adaptive multimodal safety classifier</strong>
+  derived from Ministral 3 3B with a native Pixtral vision encoder. Instead of
+  predicting a fixed moderation taxonomy, Shieldstral accepts a natural-language
+  policy at inference time and emits a single-token yes/no verdict with a
+  continuous confidence score. It handles text, images, and combined inputs in
+  12 languages, was trained on sequences up to 32K tokens, and is released under
+  Apache 2.0.</p>
+
+  <p>The technical report describes a 54.1M-example construction pipeline. The
+  model reaches 97.7 F1 on VLGuard and 81.8 on UnsafeBench, setting the paper's
+  reported state of the art for multimodal safety classification while using
+  substantially fewer parameters than the compared guard models.</p>
+tags:
+  - open-weight
+  - safety
+  - multimodal
+  - classifier
+model:
+  architecture: dense
+  base_model: ministral-3
+  context_window: 32768
+  license: Apache 2.0
+  variants:
+    - name: Shieldstral 1.0 3B
+      notes: "3B derivative of Ministral-3-3B-Base-2512 with a Pixtral vision encoder."
+paper:
+  arxiv: "2607.25857"
+related:
+  - ministral-3
