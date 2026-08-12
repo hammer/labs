@@ -1,0 +1,51 @@
+name: "Direct-OPD: Weak-to-Strong Generalization via Direct On-Policy Distillation"
+slug: direct-opd
+lab: bytedance-seed
+type: paper
+date: 2026-07-06
+sources:
+  - label: Project Page
+    url: https://bytedtsinghua-sia.github.io/Direct-OPD/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.05394
+  - label: GitHub
+    url: https://github.com/BytedTsinghua-SIA/Direct-OPD
+  - label: HuggingFace Collection
+    url: https://huggingface.co/collections/BytedTsinghua-SIA/direct-opd
+description: >
+  <p>Introduces <strong>Direct On-Policy Distillation</strong>, a weak-to-strong
+  post-training method that transfers the change induced by reinforcement learning
+  rather than imitating a weaker teacher's final policy. Direct-OPD compares a small
+  teacher before and after RL, interprets their log-probability ratio as a dense
+  token-level implicit reward, and applies that signal on the stronger student's own
+  on-policy states.</p>
+
+  <p>Across two 1.5B teacher pairs and students from 1.7B to 7B, the method improves
+  every tested student, including students already stronger than the post-RL teacher.
+  It raises Qwen3-1.7B from <strong>48.3% to 58.3% on AIME 2024</strong> in about
+  four hours on 8 A100 GPUs, and sequentially composing two independently learned
+  policy shifts reaches 63.8%. The paper, training code, and resulting checkpoints
+  come from the joint SIA-Lab of Tsinghua AIR and ByteDance Seed.</p>
+tags:
+  - post-training
+  - reasoning
+  - distillation
+  - reinforcement-learning
+  - weak-to-strong
+paper:
+  arxiv: "2607.05394"
+  authors:
+    - Shiyuan Feng
+    - Huan-ang Gao
+    - Haohan Chi
+    - Hanlin Wu
+    - Zhilong Zhang
+    - Zheng Jiang
+    - Bingxiang He
+    - Wei-Ying Ma
+    - Ya-Qin Zhang
+    - Hao Zhou
+  code_url: https://github.com/BytedTsinghua-SIA/Direct-OPD
+related:
+  - dapo
+  - simplerl-zoo
