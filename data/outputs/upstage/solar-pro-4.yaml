@@ -1,0 +1,44 @@
+name: Solar Pro 4
+slug: solar-pro-4
+lab: upstage
+type: model
+date: 2026-08-06
+flagship: true
+sources:
+  - label: Blog Post
+    url: https://www.upstage.ai/blog/en/solar-pro-4
+  - label: API Docs
+    url: https://console.upstage.ai/docs/models/solar-pro-4
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/solar-pro4
+  - label: OpenRouter
+    url: https://openrouter.ai/upstage/solar-pro4
+description: >
+  <p>Upstage's proprietary agentic flagship, built for multi-step work across
+  long documents, terminal tasks, and tool calls. It supports a
+  <strong>512K-token context window</strong>, up to 128K output tokens,
+  adjustable reasoning effort, and English, Korean, and Japanese. Upstage
+  says it trained and validated the model with OfficeVerse, a pipeline that
+  synthesizes and grades complete office-work deliverables across 11 industry
+  domains and 12 task types.</p>
+
+  <p>Compared with <a href="/outputs/upstage/solar-pro-3">Solar Pro 3</a>,
+  Upstage reports the largest gains on work-like agent evaluations, including
+  +13.8 points on terminal tasks, +11.9 on BrowseComp web research, and +7.4
+  on GDPval. The model is API-only; its architecture, parameter count,
+  training scale, and base checkpoint have not been disclosed.</p>
+tags:
+  - enterprise
+  - agentic
+  - reasoning
+  - multilingual
+model:
+  context_window: 524288
+  intelligence_index: 42
+  intelligence_index_version: "AA v4.1.1"
+  # Closed model with no disclosed from-scratch pretraining or base checkpoint.
+  pretrained_from_scratch: false
+  license: Proprietary
+related:
+  - solar-pro-3
+  - solar-open-2
