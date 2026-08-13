@@ -1,0 +1,48 @@
+name: "One Sample to Rule Them All: Extreme Data Efficiency in Multidiscipline Reasoning with Reinforcement Learning"
+slug: one-sample-to-rule-them-all
+lab:
+  - sjtu
+  - alibaba
+type: paper
+date: 2026-01-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2601.03111
+  - label: GitHub
+    url: https://github.com/GAIR-NLP/polymath-learning
+description: >
+  <p><strong>Polymath learning</strong> asks how far reinforcement learning can
+  go with a single, carefully engineered training problem. Starting from
+  Qwen2.5-7B-Base, the authors repeat one sample across a batch of 128 and run
+  140 steps of GRPO with verifiable binary rewards. A math problem selected for
+  broad, transferable skills improves reasoning not only in mathematics but in
+  physics, chemistry, biology, engineering, computer science, and less
+  math-adjacent subjects.</p>
+
+  <p>The strongest engineered problem, <strong>Synthetic Prime</strong>, combines
+  biology, chemistry, and physics with a wide spectrum of mathematical skills.
+  It reaches a <strong>30.8 average score</strong> across the paper's eight
+  subject groups, versus 25.0 for LIMR training on more than 1,000 selected
+  samples and 19.5 for the full MATH training set. The result motivates
+  "sample engineering": designing unusually rich RL problems instead of only
+  scaling dataset size. Joint work from Shanghai Jiao Tong University's GAIR
+  lab and Alibaba's Taobao &amp; Tmall Group; code and training data are open.</p>
+tags:
+  - reinforcement-learning
+  - reasoning
+  - data-efficiency
+  - post-training
+  - research
+paper:
+  arxiv: "2601.03111"
+  code_url: https://github.com/GAIR-NLP/polymath-learning
+  authors:
+    - Yiyuan Li
+    - Zhen Huang
+    - Yanan Wu
+    - Weixun Wang
+    - Xuefeng Li
+    - Yijia Luo
+    - Wenbo Su
+    - Bo Zheng
+    - Pengfei Liu
