@@ -1,0 +1,25 @@
+name: Wan-Animate-2
+slug: wan-animate-2
+lab: alibaba
+type: model
+date: 2026-08-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.06009
+  - label: GitHub
+    url: https://github.com/Wan-Video/Wan-Animate-2
+  - label: HuggingFace
+    url: https://huggingface.co/Wan-AI/Wan2.2-Animate-2-14B
+description: >
+  <p>Tongyi Lab's 14B end-to-end character-animation DiT consumes a driving
+  video directly, avoiding lossy pose or motion extractors. A dual branch,
+  time-aligned RoPE, sparse reference attention, and a viewpoint LoRA provide
+  high-fidelity motion transfer and text-controlled camera changes. The Lite
+  variant distills generation into a causal streaming pipeline.</p>
+tags: [video, animation, diffusion, open-weight, multimodal]
+model:
+  parameters: 14B
+  license: Apache 2.0
+paper:
+  arxiv: "2608.06009"
+  code_url: https://github.com/Wan-Video/Wan-Animate-2

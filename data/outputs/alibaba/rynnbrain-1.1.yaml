@@ -1,0 +1,30 @@
+name: RynnBrain 1.1
+slug: rynnbrain-1.1
+lab: alibaba
+type: model
+date: 2026-07-16
+sources:
+  - label: GitHub
+    url: https://github.com/alibaba-damo-academy/RynnBrain
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.17977
+description: >
+  <p>DAMO Academy and Hupan Lab's embodied foundation-model family adds native
+  3D grounding, contact-point prediction, and an action model spanning Unitree
+  G1, Astribot-S1, and Tianji-Wuji robots. The 122B-A10B model leads the paper's
+  evaluated proprietary and open models on VSI-Bench, MMSI, and RefSpatial-Bench;
+  smaller 2B and 9B checkpoints are also released.</p>
+tags: [robotics, embodied, vla, multimodal, open-weight, moe]
+model:
+  license: Apache 2.0
+  variants:
+    - name: RynnBrain 1.1-2B
+      parameters: 2B
+    - name: RynnBrain 1.1-9B
+      parameters: 9B
+    - name: RynnBrain 1.1-122B-A10B
+      parameters: 122B
+      active_parameters: 10B
+paper:
+  arxiv: "2607.17977"
+  code_url: https://github.com/alibaba-damo-academy/RynnBrain

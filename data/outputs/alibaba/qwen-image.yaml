@@ -3,6 +3,8 @@ slug: qwen-image
 lab: alibaba
 date: 2025-08-01
 sources:
+  - label: Qwen-Image-3.0 blog
+    url: https://qwen.ai/blog?id=qwen-image-3.0
   - label: GitHub
     url: https://github.com/QwenLM/Qwen-Image
   - label: HuggingFace
@@ -39,3 +41,13 @@ outputs:
       Native 2K resolution. Scores 88.32 on DPG-Bench, outperforming FLUX.1 (12B).
     model:
       parameters: 7B
+  - name: Qwen-Image-3.0
+    type: model
+    date: 2026-07-21
+    sources:
+      - label: Qwen blog
+        url: https://qwen.ai/blog?id=qwen-image-3.0
+    description: >
+      Hosted image-generation and editing model supporting prompts up to 4,500
+      tokens, native text rendering in 12 languages, and legible type down to
+      roughly 10 pixels. Alibaba did not release weights or disclose scale.

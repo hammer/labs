@@ -1,0 +1,28 @@
+name: NVIDIA Nemotron 3.5 Lightning 30B-A3B
+slug: nemotron-3.5-lightning
+lab: nvidia
+type: model
+date: 2026-08-11
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
+description: >
+  <p>A 30B-total/3B-active hybrid MoE combining Mamba-2, attention, and expert
+  layers for efficient local agents. It supports up to 1M-token context and ships
+  in BF16 and NVFP4 inference variants plus a base checkpoint under NVIDIA's
+  OpenMDW-1.1 license. Reports MMLU-Pro 81.94, GPQA Diamond 75.44, and SWE-bench
+  Verified 51.56.</p>
+tags: [moe, mamba, open-weight, efficient, reasoning, agentic]
+model:
+  architecture: moe
+  parameters: 30B
+  active_parameters: 3B
+  context_window: 1000000
+  license: OpenMDW-1.1
+  benchmark_scores:
+    - benchmark: MMLU-Pro
+      score: "81.94%"
+    - benchmark: GPQA Diamond
+      score: "75.44%"
+    - benchmark: SWE-bench Verified
+      score: "51.56%"

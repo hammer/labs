@@ -1,0 +1,39 @@
+name: Qwen3.8-2.4T-A95B
+slug: qwen3.8
+lab: alibaba
+type: model
+date: 2026-08-10
+flagship: true
+sources:
+  - label: Qwen blog
+    url: https://qwen.ai/blog?id=qwen3.8
+  - label: HuggingFace
+    url: https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
+description: >
+  <p>Alibaba's first open-weight <strong>Qwen-Max-class</strong> release and its
+  largest public model: a 2.4T-parameter MoE with 95B active per token. Its
+  92-layer hybrid stack interleaves three Gated DeltaNet linear-attention blocks
+  with one gated-attention block; 10 of 512 routed experts plus one shared expert
+  are active. Native context is 262K and can extend to 1.01M tokens.</p>
+  <p>Built for coding, professional work, research, and long-horizon agents, with
+  controllable reasoning effort and preserved multi-turn thinking. The weights
+  use the custom Qwen3.8-Max license: modification and redistribution are allowed,
+  but large consumer products must display attribution and qualifying MaaS/work-
+  assistant businesses must obtain a separate commercial license.</p>
+tags: [frontier, moe, open-weight, reasoning, agentic, coding]
+model:
+  architecture: moe
+  parameters: 2.4T
+  active_parameters: 95B
+  num_experts: 512
+  top_k: 10
+  context_window: 1010000
+  license: Qwen3.8-Max
+  benchmark_scores:
+    - benchmark: Terminal-Bench 2.1
+      score: "86.6%"
+    - benchmark: SWE-bench Pro
+      score: "67.7%"
+    - benchmark: GPQA Diamond
+      score: "92.6%"
+related: [qwen3.7, qwen3.5]

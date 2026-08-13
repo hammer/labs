@@ -1,0 +1,39 @@
+name: Grok 4.6
+slug: grok-4.6
+lab: spacexai
+type: model
+date: 2026-08-12
+flagship: true
+sources:
+  - label: Announcement
+    url: https://x.ai/news/grok-4-6
+  - label: API documentation
+    url: https://docs.x.ai/developers/grok-4-6
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/grok-4-6
+  - label: OpenRouter
+    url: https://openrouter.ai/x-ai/grok-4.6
+description: >
+  <p>SpaceXAI's new proprietary frontier model for coding, long-running agents,
+  knowledge work, and ambitious interactive and visual tasks. It extends Grok
+  4.5 with a longer supplemental-training run, regenerated SFT trajectories, and
+  agentic reinforcement learning. Supports text and image input, 500K context,
+  and low through xhigh reasoning effort.</p>
+  <p>SpaceXAI reports an <strong>AA Intelligence Index of 61</strong>, CursorBench
+  3.2 at 69.9%, DeepSWE 1.1 at 65.9%, and APEX-Agents at 57.5%. API pricing starts
+  at $2/M input and $6/M output tokens below 200K prompt length. Parameter count
+  and training scale remain undisclosed.</p>
+tags: [frontier, proprietary, coding, agentic, reasoning, multimodal]
+model:
+  context_window: 500000
+  base_model: grok-4.5
+  intelligence_index: 61
+  intelligence_index_version: "AA v4.1"
+  benchmark_scores:
+    - benchmark: CursorBench 3.2
+      score: "69.9%"
+    - benchmark: DeepSWE 1.1
+      score: "65.9%"
+    - benchmark: APEX-Agents
+      score: "57.5%"
+related: [grok-4.5]

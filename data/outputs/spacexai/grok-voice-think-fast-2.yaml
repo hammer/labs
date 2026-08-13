@@ -1,0 +1,21 @@
+name: Grok Voice Think Fast 2.0
+slug: grok-voice-think-fast-2
+lab: spacexai
+type: model
+date: 2026-07-29
+sources:
+  - label: Announcement
+    url: https://x.ai/news/grok-voice-think-fast-2
+description: >
+  <p>SpaceXAI's second-generation speech-to-speech model, trained with RL for
+  conversational behavior and tool use while reasoning in parallel with speech.
+  It scores 82.9% on Artificial Analysis's Speech-to-Speech Quality Index, 56.5%
+  on tau-voice, and reaches first audio in 0.70 seconds. Evaluation spans 24
+  languages; price is $0.08 per audio minute.</p>
+tags: [audio, speech, multimodal, reasoning, agentic, proprietary]
+model:
+  benchmark_scores:
+    - benchmark: AA Speech-to-Speech Quality Index
+      score: "82.9%"
+    - benchmark: tau-voice
+      score: "56.5%"

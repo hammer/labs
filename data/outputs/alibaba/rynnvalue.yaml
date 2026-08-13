@@ -1,0 +1,29 @@
+name: RynnValue
+slug: rynnvalue
+lab: alibaba
+type: model
+date: 2026-08-11
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.09853
+  - label: GitHub
+    url: https://github.com/alibaba-damo-academy/RynnValue
+  - label: HuggingFace
+    url: https://huggingface.co/Alibaba-DAMO-Academy/RynnValue-8B
+description: >
+  <p>An open robotic value-foundation-model family from Alibaba DAMO Academy and
+  Hupan Lab. It learns temporal distance to a language-specified goal from more
+  than 7,000 hours and roughly 3.09M clips, without preference labels. RynnValue
+  reaches Kendall's tau-a 0.675 and raises real-robot success from 52.5% to 72.5%
+  online and 63.8% to 82.5% offline.</p>
+tags: [robotics, embodied, reward-model, reinforcement-learning, open-weight]
+model:
+  license: Apache 2.0
+  variants:
+    - name: RynnValue-4B
+      parameters: 4B
+    - name: RynnValue-8B
+      parameters: 8B
+paper:
+  arxiv: "2608.09853"
+  code_url: https://github.com/alibaba-damo-academy/RynnValue

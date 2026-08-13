@@ -1,0 +1,16 @@
+name: Lyria 3.5
+slug: lyria-3.5
+lab: google
+type: model
+date: 2026-07-29
+sources:
+  - label: Model card
+    url: https://deepmind.google/models/model-cards/lyria-3-5/
+  - label: Lyria family
+    url: https://deepmind.google/models/lyria/
+description: >
+  <p>Google DeepMind's latent-diffusion text-to-music model generates songs up to
+  three minutes long with synchronized audio and lyrics. Trained in JAX on TPU
+  pods, it is available through Flow Music and Google's API; weights, parameter
+  count, and training scale are undisclosed.</p>
+tags: [audio, music, generation, diffusion, proprietary]

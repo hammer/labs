@@ -1,0 +1,19 @@
+name: Cosmos-H-Dreams
+slug: cosmos-h-dreams
+lab: nvidia
+type: model
+date: 2026-07-23
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/nvidia/Cosmos-H-Dreams
+  - label: GitHub
+    url: https://github.com/isaac-for-healthcare/Cosmos-H-Dreams
+description: >
+  <p>A real-time, action-conditioned surgical world model derived from
+  Cosmos-Predict2.5-2B. Its causal few-step streaming student predicts 288x512
+  video from an initial frame and 44-dimensional robot actions on a single RTX
+  PRO 6000, targeting simulation and policy learning for robotic surgery.</p>
+tags: [robotics, healthcare, world-model, video, open-weight]
+model:
+  parameters: 2B
+  license: NVIDIA Open Model License

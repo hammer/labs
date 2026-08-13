@@ -1,0 +1,20 @@
+name: VibeVoice-ASR-BitNet
+slug: vibevoice-asr-bitnet
+lab: microsoft
+type: model
+date: 2026-07-24
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/microsoft/VibeVoice-ASR-BitNet
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.21075
+description: >
+  <p>A CPU-oriented speech-recognition model using heterogeneous quantization:
+  INT8 for its VAE and ternary I2 weights for the language model. It compresses
+  the checkpoint from 4.62GB to 1.58GB, runs in real time on three CPU threads,
+  and reports 1.6&ndash;2.3x higher speed than Whisper.cpp.</p>
+tags: [audio, speech, efficient, quantization, open-weight]
+model:
+  license: MIT
+paper:
+  arxiv: "2607.21075"

@@ -1,0 +1,16 @@
+name: Gemini 3.5 Flash Cyber
+slug: gemini-3.5-flash-cyber
+lab: google
+type: model
+date: 2026-07-21
+sources:
+  - label: Announcement
+    url: https://deepmind.google/blog/introducing-gemini-3-5-flash-cyber/
+description: >
+  <p>A specialist cyber-defence model fine-tuned from Gemini 3.5 Flash and
+  piloted through CodeMender with governments and trusted partners. Google says
+  it found 55 unique V8 issues, versus 47 for mainline Gemini Flash and 36 for
+  Claude Opus 4.6. Access is restricted and parameters are undisclosed.</p>
+tags: [cybersecurity, coding, agents, proprietary]
+model:
+  base_model: gemini-3.5-flash
