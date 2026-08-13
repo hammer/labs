@@ -11,6 +11,8 @@ sources:
     url: https://huggingface.co/LGAI-EXAONE/K-EXAONE-2.0-750B-A37B
   - label: GitHub
     url: https://github.com/LG-AI-EXAONE/K-EXAONE-2.0
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/k-exaone-2-0-0803
 description: >
   <p><strong>Korea's largest open-weights model</strong>: a 750B-total /
   37B-active MoE <strong>upcycled from K-EXAONE 236B</strong>, covering 10
@@ -28,6 +30,8 @@ model:
   parameters: "750B"
   active_parameters: "37B"
   base_model: k-exaone
+  intelligence_index: 31
+  intelligence_index_version: "AA v4.1.1"
   license: Apache 2.0
 related:
   - k-exaone

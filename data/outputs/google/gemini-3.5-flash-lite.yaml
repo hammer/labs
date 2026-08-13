@@ -8,6 +8,8 @@ sources:
     url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/
   - label: Model cards
     url: https://deepmind.google/models/model-cards/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gemini-3-5-flash-lite
 description: >
   <p>Google's high-volume, low-latency Gemini tier, with multimodal input, 1M
   context, built-in computer use, and throughput up to 350 output tokens/second.
@@ -17,6 +19,8 @@ description: >
 tags: [multimodal, proprietary, efficient, agentic]
 model:
   context_window: 1000000
+  intelligence_index: 37
+  intelligence_index_version: "AA v4.1.1"
   benchmark_scores:
     - benchmark: Terminal-Bench 2.1
       score: "54%"

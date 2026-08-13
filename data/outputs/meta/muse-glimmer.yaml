@@ -11,6 +11,8 @@ sources:
     url: https://huggingface.co/meta-models/Muse-Glimmer-30B
   - label: Docs
     url: https://dev.meta.ai/docs
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/muse-glimmer
 description: >
   <p>Meta Superintelligence Labs' first <strong>open-weight</strong> Muse
   model &mdash; a <strong>30B dense, natively multimodal</strong> model built
@@ -46,6 +48,8 @@ model:
   architecture: dense
   parameters: 30B
   context_window: 131072
+  intelligence_index: 35
+  intelligence_index_version: "AA v4.1.1"
   license: Apache 2.0
   benchmark_scores:
     - benchmark: SWE-Bench Verified

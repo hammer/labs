@@ -36,8 +36,6 @@ model:
   context_window: 524288
   intelligence_index: 42
   intelligence_index_version: "AA v4.1.1"
-  # Closed model with no disclosed from-scratch pretraining or base checkpoint.
-  pretrained_from_scratch: false
   license: Proprietary
 related:
   - solar-pro-3

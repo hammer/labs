@@ -9,6 +9,8 @@ sources:
     url: https://qwen.ai/blog?id=qwen3.8
   - label: HuggingFace
     url: https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b
 description: >
   <p>Alibaba's first open-weight <strong>Qwen-Max-class</strong> release and its
   largest public model: a 2.4T-parameter MoE with 95B active per token. Its
@@ -28,6 +30,8 @@ model:
   num_experts: 512
   top_k: 10
   context_window: 1010000
+  intelligence_index: 58
+  intelligence_index_version: "AA v4.1.1"
   license: Qwen3.8-Max
   benchmark_scores:
     - benchmark: Terminal-Bench 2.1

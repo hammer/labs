@@ -9,6 +9,8 @@ sources:
     url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731
   - label: API Docs / News
     url: https://api-docs.deepseek.com/news
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/deepseek-v4-flash
 description: >
   <p>The <strong>general-availability build of DeepSeek-V4-Flash</strong>
   (284B-class MoE from the <a
@@ -30,6 +32,8 @@ tags:
   - agentic
 model:
   architecture: moe
+  intelligence_index: 52
+  intelligence_index_version: "AA v4.1.1"
 related:
   - deepseek-v4
   - deepseek-v4-pro
