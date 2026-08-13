@@ -1,0 +1,62 @@
+name: DeepSeek-V4-Pro-0813 (GA)
+slug: deepseek-v4-pro
+lab: deepseek
+type: model
+date: 2026-08-13
+flagship: true
+sources:
+  - label: Official Announcement
+    url: https://api-docs.deepseek.com/news/news260813
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2606.19348
+  - label: API Documentation
+    url: https://api-docs.deepseek.com/
+  - label: OpenRouter
+    url: https://openrouter.ai/deepseek/deepseek-v4-pro-0813
+description: >
+  <p>The <strong>general-availability build of DeepSeek-V4-Pro</strong>, rolled out
+  across DeepSeek's app, web client, and API on August 13, 2026. It supersedes the
+  April <a href="/outputs/deepseek/deepseek-v4">V4-Pro preview</a> while retaining
+  the <code>deepseek-v4-pro</code> API identifier. The API exposes a <strong>1M-token
+  context window</strong>, low/high/max thinking-effort controls, and native support
+  for the OpenAI Responses API, including a Codex-specific integration.</p>
+
+  <p>DeepSeek reports substantially stronger agent performance than the preview:
+  <strong>87.9</strong> on Terminal-Bench 2.1, <strong>62.7</strong> on DeepSWE,
+  <strong>74.1</strong> on Toolathlon-Verified, <strong>61.5</strong> on NL2Repo,
+  and <strong>60.0</strong> on Humanity's Last Exam with tools (42.7 without).
+  Other reported results include CyberGym 83.3, DSBench-FullStack 71.1, and
+  DSBench-Hard 67.2. DeepSeek released the GA checkpoint's weights on Hugging
+  Face under the <strong>MIT License</strong>; for high/max reasoning effort it
+  recommends allowing up to 384K output tokens.</p>
+tags:
+  - frontier
+  - moe
+  - reasoning
+  - coding
+  - agentic
+model:
+  architecture: moe
+  base_model: deepseek-v4
+  context_window: 1048576
+  license: MIT
+  benchmark_scores:
+    - benchmark: Terminal-Bench 2.1
+      score: "87.9"
+    - benchmark: DeepSWE
+      score: "62.7"
+    - benchmark: Toolathlon-Verified
+      score: "74.1"
+    - benchmark: NL2Repo
+      score: "61.5"
+    - benchmark: Humanity's Last Exam
+      score: "60.0"
+      mode: with tools
+paper:
+  arxiv: "2606.19348"
+  huggingface_url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813
+related:
+  - deepseek-v4
+  - deepseek-v4-flash

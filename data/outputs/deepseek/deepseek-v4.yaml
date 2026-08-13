@@ -101,4 +101,5 @@ outputs:
 related:
   - deepseek-v3.2
   - deepseek-r1
+  - deepseek-v4-pro
   - dspark

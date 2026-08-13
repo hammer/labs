@@ -21,8 +21,8 @@ description: >
   <p>Self-reported (evaluated with an as-yet-unreleased "DeepSeek Harness"):
   Terminal-Bench 2.1 <strong>82.7</strong>, DeepSWE <strong>54.4</strong>
   (the April preview scored 7.3 &mdash; version-tag any quoted numbers by
-  build), Toolathlon-Verified 70.3. V4-<strong>Pro</strong> remains
-  preview-only with GA rumored mid-August.</p>
+  build), Toolathlon-Verified 70.3. V4-<strong>Pro</strong> reached general
+  availability on August 13.</p>
 tags:
   - frontier
   - moe
@@ -32,3 +32,4 @@ model:
   architecture: moe
 related:
   - deepseek-v4
+  - deepseek-v4-pro

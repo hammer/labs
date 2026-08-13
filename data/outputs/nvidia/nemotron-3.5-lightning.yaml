@@ -1,28 +1,101 @@
-name: NVIDIA Nemotron 3.5 Lightning 30B-A3B
+name: Nemotron 3.5 Lightning
 slug: nemotron-3.5-lightning
 lab: nvidia
 type: model
 date: 2026-08-11
+flagship: true
 sources:
-  - label: HuggingFace
+  - label: NVIDIA Technical Blog
+    url: https://developer.nvidia.com/blog/nvidia-nemotron-3-5-lightning-delivers-fast-accurate-specialized-task-execution-for-long-running-agents/
+  - label: HuggingFace (BF16)
     url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
+  - label: HuggingFace (NVFP4)
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4
+  - label: HuggingFace (Base BF16)
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Base-BF16
+  - label: NVIDIA NIM
+    url: https://build.nvidia.com/nvidia/nemotron-3.5-lightning-30b-a3b/modelcard
+  - label: OpenRouter
+    url: https://openrouter.ai/nvidia/nemotron-3.5-lightning
+  - label: GitHub (evaluation recipes)
+    url: https://github.com/NVIDIA-NeMo/Gym/tree/main/nemotron_recipes/lightning-3.5
 description: >
-  <p>A 30B-total/3B-active hybrid MoE combining Mamba-2, attention, and expert
-  layers for efficient local agents. It supports up to 1M-token context and ships
-  in BF16 and NVFP4 inference variants plus a base checkpoint under NVIDIA's
-  OpenMDW-1.1 license. Reports MMLU-Pro 81.94, GPQA Diamond 75.44, and SWE-bench
-  Verified 51.56.</p>
-tags: [moe, mamba, open-weight, efficient, reasoning, agentic]
+  <p>NVIDIA's compact execution model for long-running agents, designed to
+  handle high-volume tool calls, result validation, and specialized tasks
+  after larger models perform planning. It has <strong>30B total / 3B active
+  parameters</strong> in a hybrid <strong>Mamba-2 + Attention MoE</strong>:
+  52 backbone layers interleave Mamba-2, attention, and MoE blocks with 128
+  routed experts (top-6) plus one shared expert. <strong>Multi-Token Prediction
+  (MTP)</strong> supplies an additional attention/MoE prediction layer and
+  native speculative decoding.</p>
+
+  <p>The model was pretrained from scratch by NVIDIA on <strong>more than 20T
+  tokens</strong> using an NVFP4 recipe, then continued-pretrained for MTP,
+  supervised fine-tuned, and post-trained with asynchronous multi-environment
+  <strong>GRPO</strong> across math, code, science, instruction following,
+  multi-step tool use, multi-turn conversation, and structured-output tasks.
+  It supports up to a <strong>1M-token context</strong> and can deploy on one
+  80GB H100 or A100; BF16 reference, NVFP4 inference, pretrained-base, and
+  DSpark/DFlash speculative-drafter checkpoints shipped under
+  <strong>OpenMDW-1.1</strong>.</p>
+
+  <p>NVIDIA's reproducible release evaluation reports MMLU-Pro 81.94,
+  GPQA Diamond 75.44, SWE-Bench Verified 51.56, Terminal-Bench 2.1 24.58,
+  PinchBench 85.37, IFBench 71.88, and AA-LCR 52.0. NVIDIA positions Lightning
+  below larger frontier planners but as a faster, customizable executor for
+  always-on agent workflows, with reasoning enabled or disabled through its
+  chat template.</p>
+tags:
+  - moe
+  - open-weight
+  - reasoning
+  - agentic
+  - efficiency
+  - hybrid-architecture
 model:
   architecture: moe
   parameters: 30B
   active_parameters: 3B
+  num_experts: 128
+  top_k: 6
   context_window: 1000000
+  training_tokens: 20T+
   license: OpenMDW-1.1
+  variants:
+    - name: Nemotron 3.5 Lightning 30B-A3B BF16
+      parameters: 30B
+      active_parameters: 3B
+      notes: Post-trained full-precision reference checkpoint
+    - name: Nemotron 3.5 Lightning 30B-A3B NVFP4
+      parameters: 30B
+      active_parameters: 3B
+      notes: Optimized inference checkpoint
+    - name: Nemotron 3.5 Lightning 30B-A3B Base BF16
+      parameters: 30B
+      active_parameters: 3B
+      notes: Pretrained-only base checkpoint
+    - name: Nemotron 3.5 Lightning DFlash
+      notes: External block-diffusion speculative-decoding drafter
+    - name: Nemotron 3.5 Lightning DSpark
+      notes: External semi-autoregressive speculative-decoding drafter
   benchmark_scores:
     - benchmark: MMLU-Pro
-      score: "81.94%"
+      score: "81.94"
     - benchmark: GPQA Diamond
-      score: "75.44%"
-    - benchmark: SWE-bench Verified
-      score: "51.56%"
+      score: "75.44"
+      mode: no tools
+    - benchmark: SWE-Bench Verified
+      score: "51.56"
+    - benchmark: Terminal-Bench 2.1
+      score: "24.58"
+    - benchmark: PinchBench
+      score: "85.37"
+    - benchmark: IFBench
+      score: "71.88"
+      mode: loose
+    - benchmark: AA-LCR
+      score: "52.0"
+related:
+  - nemotron-3-nano
+  - nemotron-3-super
+  - nemotron-3-ultra
