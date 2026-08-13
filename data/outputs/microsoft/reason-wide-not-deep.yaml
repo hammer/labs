@@ -1,0 +1,44 @@
+name: "Reason Wide, Not Deep: Amortizing the Reasoning Premium into Distilled Skills"
+slug: reason-wide-not-deep
+lab: microsoft
+type: paper
+date: 2026-08-08
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.07885
+description: >
+  <p>Introduces <strong>passive skill distillation</strong>, a lightweight way
+  to amortize test-time reasoning across repeated agent tasks. A coding agent
+  analyzes 35&ndash;50 trajectories from a domain, extracts recurring failure
+  patterns and successful procedures, and compiles them into a compact
+  40&ndash;130-line natural-language skill. The skill is then placed in a
+  non-reasoning model's system prompt: no model weights are updated and no
+  fresh environment rollouts or per-instance search are required at
+  deployment.</p>
+
+  <p>Across ALFWorld, SpreadsheetBench-Verified, and the telecom and retail
+  domains of &tau;<sup>2</sup>-bench, distilled skills recovered
+  <strong>55%&ndash;100%+</strong> of GPT-5.4-mini's reasoning-mode advantage
+  while using <strong>2.7&ndash;6&times; fewer output tokens</strong> and zero
+  reasoning tokens. They exceeded reasoning mode on ALFWorld (78.7% vs.
+  71.3%) and retail (40.8% vs. 35.0%). Skills distilled only from cheap
+  non-reasoning trajectories remained competitive with those built from
+  paired reasoning traces, suggesting that reusable procedural knowledge can
+  often be recovered by <strong>wide search across episodes</strong> instead
+  of repeatedly paying for deep search within each episode.</p>
+tags:
+  - agents
+  - agent-harness
+  - reasoning
+  - efficiency
+  - skill-learning
+paper:
+  arxiv: "2608.07885"
+  venue: COLM 2026 Efficient Reasoning Workshop
+  authors:
+    - Agamdeep Singh
+    - Srishti Gautam
+    - Priyanshu Gupta
+    - Nikita Mehrotra
+    - Tanmay Bakshi
+    - Sumit Gulwani
