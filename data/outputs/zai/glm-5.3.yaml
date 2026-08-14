@@ -1,0 +1,68 @@
+name: GLM-5.3
+slug: glm-5.3
+lab: zai
+type: model
+date: 2026-08-14
+flagship: true
+sources:
+  - label: Announcement (Z.ai blog)
+    url: https://z.ai/blog/glm-5.3
+  - label: API Docs (Z.ai)
+    url: https://docs.z.ai/guides/llm/glm-5.3
+  - label: slime (GitHub)
+    url: https://github.com/THUDM/slime
+description: >
+  <p>Z.ai's agentic coding and cybersecurity successor to
+  <a href="/outputs/zai/glm-5.2">GLM-5.2</a>. It uses the
+  <strong>same base model</strong> &mdash; a 753B-class MoE with a 1M-token
+  context &mdash; and attributes every gain to one month of scaled
+  post-training across more numerous, diverse, and longer-horizon task
+  environments. The training stack combines
+  <a href="/outputs/zai/indexshare">IndexShare</a> for long-context
+  processing, <a href="/outputs/zai/sao">SAO</a> with compaction for
+  long-horizon RL, and the open-source
+  <a href="/outputs/zai/slime">slime</a> framework; new scheduling, caching,
+  and workload-aware configurations improved end-to-end RL throughput by
+  more than <strong>2.3&times;</strong>.</p>
+
+  <p>Z.ai reports large gains over GLM-5.2 on complex work: Terminal-Bench
+  3.0 rises from 4.6 to <strong>28.3</strong>, DeepSWE v1.1 from 46.2 to
+  <strong>66.9</strong>, and Agents' Last Exam from 23.8 to
+  <strong>28.5</strong>. Cybersecurity environments produced especially steep
+  improvements: <strong>84.5%</strong> on CyberGym, 54.4% on ExploitBench
+  (versus 24.4%), and 105/130 completed ExploitGym tasks under normalized
+  two-/six-hour budgets (versus 29/39). The API requires thinking and offers
+  low, high, and max reasoning effort; Z.ai said at launch that model weights
+  would follow in two weeks, so no public checkpoint or license was available
+  on release day.</p>
+tags:
+  - moe
+  - frontier
+  - coding
+  - agentic
+  - reasoning
+  - cybersecurity
+model:
+  architecture: moe
+  base_model: glm-5.2
+  context_window: 1000000
+  benchmark_scores:
+    - benchmark: Terminal-Bench 2.1
+      score: "88.2"
+    - benchmark: Terminal-Bench 3.0
+      score: "28.3"
+    - benchmark: DeepSWE v1.1
+      score: "66.9"
+    - benchmark: FrontierSWE
+      score: "78.1"
+    - benchmark: CyberGym
+      score: "84.5"
+    - benchmark: ExploitBench
+      score: "54.4"
+    - benchmark: Agents' Last Exam
+      score: "28.5"
+related:
+  - glm-5.2
+  - indexshare
+  - sao
+  - slime
