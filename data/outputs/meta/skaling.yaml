@@ -1,0 +1,44 @@
+name: "Skaling: Chinchilla's Exponents Meet Kaplan's Coupling"
+slug: skaling
+lab: meta
+type: paper
+date: 2026-08-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.07222
+  - label: Meta Lingua (GitHub)
+    url: https://github.com/facebookresearch/lingua
+description: >
+  <p>Introduces the <strong>Skaling law</strong>, a neural scaling law that
+  corrects a structural weakness in the standard Chinchilla formulation.
+  Whereas Chinchilla models parameter count and training data as independent
+  additive contributions to loss, Skaling adds one interaction exponent that
+  couples the two. This removes the saddle-shaped prediction bias that appears
+  when models are severely data-limited or overtrained, reducing interpolation
+  and extrapolation mean absolute percentage error by
+  <strong>1.5&ndash;3&times;</strong>.</p>
+
+  <p>The FAIR team validated the law on an internal <strong>SK-Grid of 125
+  pretraining runs</strong> spanning 14 model sizes (134M&ndash;4.9B parameters)
+  and 316M&ndash;316B tokens, as well as Farseer and original Chinchilla data.
+  On 112 held-out high-compute Farseer runs, Skaling reached
+  <strong>0.60% pooled MAPE</strong>, 3.9&times; lower than Chinchilla. Its
+  sparse L-shaped profiling strategy samples only inexpensive edges of the
+  model-size/data grid yet reconstructs the full loss surface with comparable
+  accuracy using approximately <strong>10&times; less compute</strong>, making
+  compute-allocation decisions possible from substantially cheaper pilot
+  training runs.</p>
+tags:
+  - scaling-laws
+  - training
+  - efficiency
+  - foundational
+paper:
+  arxiv: "2608.07222"
+  authors:
+    - Mathurin Videau
+    - Badr Youbi-Idrissi
+    - David Lopez-Paz
+    - Kartik Ahuja
+related:
+  - batch-size-scaling
