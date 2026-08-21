@@ -1,0 +1,57 @@
+name: Gemini 3.7 Flash
+slug: gemini-3.7-flash
+lab: google
+type: model
+date: 2026-08-13
+flagship: true
+sources:
+  - label: Model page (Google DeepMind)
+    url: https://deepmind.google/models/gemini/flash/
+  - label: Model card (Google DeepMind)
+    url: https://deepmind.google/models/model-cards/gemini-3-7-flash/
+  - label: Gemini API release notes
+    url: https://ai.google.dev/gemini-api/docs/changelog
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gemini-3-7-flash
+description: >
+  <p>Google's new <strong>agentic workhorse</strong> in the Gemini 3 family,
+  built on <a href="/outputs/google/gemini-3.6-flash">Gemini 3.6 Flash</a>
+  with algorithmic improvements to its reasoning foundation. The proprietary,
+  natively multimodal model accepts text, images, video, audio, and PDFs in a
+  <strong>1,048,576-token context window</strong>, produces up to 65,536 tokens,
+  and supports low, medium, and high thinking levels plus function calling,
+  search, code execution, and computer use.</p>
+
+  <p>Google reports <strong>43.6%</strong> on FrontierCode 1.1, 65.3% on
+  DeepSWE v1.1, 85.8% on Terminal-Bench 2.1, 47.9% on OSWorld 2.0, and 53.6%
+  on HLE-Verified. Artificial Analysis scores the highest/default checkpoint
+  at <strong>56</strong> on Intelligence Index v4.1.1. Google launched it at
+  $0.75 per million input tokens and $3.75 per million output tokens through
+  December 2026; architecture, parameter count, and training scale remain
+  undisclosed.</p>
+tags:
+  - frontier
+  - multimodal
+  - reasoning
+  - coding
+  - agentic
+model:
+  base_model: gemini-3.6-flash
+  context_window: 1048576
+  intelligence_index: 56
+  intelligence_index_version: "AA v4.1.1"
+  license: Proprietary
+  benchmark_scores:
+    - benchmark: FrontierCode 1.1
+      score: "43.6%"
+    - benchmark: DeepSWE v1.1
+      score: "65.3%"
+    - benchmark: Terminal-Bench 2.1
+      score: "85.8%"
+    - benchmark: OSWorld 2.0
+      score: "47.9%"
+    - benchmark: HLE-Verified
+      score: "53.6%"
+related:
+  - gemini-3.6-flash
+  - gemini-3.5-flash

@@ -11,6 +11,8 @@ sources:
     url: https://docs.z.ai/guides/llm/glm-5.3
   - label: slime (GitHub)
     url: https://github.com/THUDM/slime
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/glm-5-3
 description: >
   <p>Z.ai's agentic coding and cybersecurity successor to
   <a href="/outputs/zai/glm-5.2">GLM-5.2</a>. It uses the
@@ -46,6 +48,8 @@ model:
   architecture: moe
   base_model: glm-5.2
   context_window: 1000000
+  intelligence_index: 60
+  intelligence_index_version: "AA v4.1.1"
   benchmark_scores:
     - benchmark: Terminal-Bench 2.1
       score: "88.2"

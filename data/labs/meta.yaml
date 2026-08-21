@@ -13,9 +13,9 @@ ipo:
   ticker: META
   year: 2012
 valuation:
-  amount: "$1.43T"
+  amount: "$1.41T"
   type: market-cap
-  date: "2026-06"
+  date: "2026-08"
 description: >
   <p>Meta's AI research division, <strong>FAIR</strong> (Fundamental AI Research), was
   founded in 2013 by <a href="https://en.wikipedia.org/wiki/Yann_LeCun">Yann LeCun</a>

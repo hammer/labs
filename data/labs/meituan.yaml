@@ -13,10 +13,10 @@ ipo:
   exchange: HKEX
   ticker: "3690"
 valuation:
-  amount: "$55B"
+  amount: "$72B"
   type: market-cap
   ticker: "HKG: 3690"
-  date: "2026-06"
+  date: "2026-08"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Meituan">Meituan</a> (HKG: 3690)
   is China's largest on-demand services platform, founded in 2010 by

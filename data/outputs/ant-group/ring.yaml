@@ -84,8 +84,12 @@ outputs:
       active_parameters: 63B
       context_window: 262144
       license: MIT
-      intelligence_index: 31
+      intelligence_index: 32
       intelligence_index_version: "AA v4.1.1"
+      intelligence_index_history:
+        - score: 31
+          version: "AA v4.1.1"
+          until: "2026-08-21"
       openness_index: 38.9
       openness_index_version: "AA Openness Index v1.0"
 related:

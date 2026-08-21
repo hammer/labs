@@ -13,9 +13,9 @@ ipo:
   ticker: IBM
   year: 1915
 valuation:
-  amount: "$249B"
+  amount: "$225B"
   type: market-cap
-  date: "2026-06"
+  date: "2026-08"
 description: >
   <p><strong>IBM Research</strong>, founded in 1945, is one of the oldest and largest
   industrial research labs with 3,000+ researchers. Five Nobel Prizes, six Turing Awards.

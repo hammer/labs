@@ -60,9 +60,12 @@ outputs:
       # post-training of external (Qwen-family) bases. Base undisclosed for
       # the proprietary checkpoint, so flagged directly.
       pretrained_from_scratch: false
-      intelligence_index: 35
+      intelligence_index: 34
       intelligence_index_version: "AA v4.1.1"
       intelligence_index_history:
+        - score: 35
+          version: "AA v4.1.1"
+          until: "2026-08-21"
         - score: 34
           version: "AA v4.1.1"
           until: "2026-08-13"

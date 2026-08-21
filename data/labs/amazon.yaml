@@ -13,9 +13,9 @@ ipo:
   ticker: AMZN
   year: 1997
 valuation:
-  amount: "$2.52T"
+  amount: "$2.83T"
   type: market-cap
-  date: "2026-06"
+  date: "2026-08"
 description: >
   <p>Amazon's AI efforts span AWS AI services, the AGI division (formed 2023), and
   an $8B strategic investment in <a href="/labs/anthropic">Anthropic</a>. The AGI org

@@ -12,9 +12,9 @@ ipo:
   ticker: CRM
   year: 2004
 valuation:
-  amount: "$126B"
+  amount: "$182B"
   type: market-cap
-  date: "2026-06"
+  date: "2026-08"
 description: >
   <p>Salesforce AI Research, led by Chief Scientist
   <a href="https://scholar.google.com/citations?user=ImpbxLsAAAAJ">Silvio Savarese</a>
