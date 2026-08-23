@@ -1,0 +1,41 @@
+name: "Let's Scale Step by Step: Compute-Efficient Hyperparameter Transfer for Large-Scale Mixture-of-Experts"
+slug: lets-scale-step-by-step
+lab:
+  - kakao
+  - upstage
+type: paper
+date: 2026-08-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.20061
+description: >
+  <p>A two-step framework for selecting the learning rate of very large
+  <strong>Mixture-of-Experts</strong> models without running prohibitively expensive
+  full-scale sweeps. It first adapts <strong>Maximal Update Parameterization
+  (&mu;P)</strong> to MoEs using Multi-head Latent Attention and the Muon optimizer,
+  transferring the optimal learning rate across model widths and expert counts. It
+  then fits a log-linear scaling law over token budgets to extrapolate from short
+  proxy runs to trillion-token training horizons.</p>
+
+  <p>The authors predict the learning rate for a 10T-token run with
+  <strong>R&sup2; = 0.95</strong>; held-out tests near 500B tokens differ from the
+  measured optimum by about <strong>4.4%</strong> on average. They validate the
+  recipe by stably pretraining an unnamed <strong>155B-total / 17B-active</strong>
+  MLA MoE from scratch on <strong>10T tokens</strong> using NVIDIA H200 GPUs and an
+  internal Megatron-LM fork. The work was led at Kakao; co-author Hojin Lee is
+  affiliated with Upstage AI and notes that his contribution was completed at
+  Kakao.</p>
+tags:
+  - moe
+  - training
+  - scaling-laws
+  - optimization
+paper:
+  arxiv: "2608.20061"
+  venue: COLM 2026
+  authors:
+    - Nayeon Kim
+    - Hojin Lee
+    - Yunju Bak
+    - Jaesun Park
+    - Boseop Kim
