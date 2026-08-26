@@ -177,6 +177,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=93a-9kkAAAAJ
 news:
+  - title: "China's Z.AI Made Ox Alpha Stealth Model That Rivals DeepSeek"
+    url: https://www.bloomberg.com/news/articles/2026-08-26/china-s-z-ai-made-ox-alpha-stealth-model-that-rivals-deepseek
+    source: Bloomberg
+    date: 2026-08-26
   - title: "US NIST CAISI Assessment: GLM-5.2 'Probably the Most Capable Open-Weight Model When Released', Weaker Cyber/Bio Refusals"
     url: https://www.nist.gov/news-events/news/2026/07/caisi-assessment-zais-glm-52
     source: NIST
