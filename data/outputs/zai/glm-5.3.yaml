@@ -13,6 +13,8 @@ sources:
     url: https://github.com/THUDM/slime
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/glm-5-3
+  - label: Analysis (Interconnects, Nathan Lambert)
+    url: https://www.interconnects.ai/p/glm-53-how-chinese-labs-keep-stride
 description: >
   <p>Z.ai's agentic coding and cybersecurity successor to
   <a href="/outputs/zai/glm-5.2">GLM-5.2</a>. It uses the
@@ -37,6 +39,17 @@ description: >
   low, high, and max reasoning effort; Z.ai said at launch that model weights
   would follow in two weeks, so no public checkpoint or license was available
   on release day.</p>
+
+  <p>In a launch-day Interconnects post, <a href="/people/nathan-lambert">Nathan
+  Lambert</a> reads GLM-5.3 &mdash; a text-only ~750B model, roughly a third the
+  size of Kimi K3, that surpasses K3 on many benchmarks and matches or beats
+  Claude Fable 5 and GPT-5.6-Sol on some agentic-coding evals &mdash; as
+  evidence that Chinese labs keep stride with the frontier through means other
+  than distillation: release cycles measured in days rather than months,
+  heavier optimization toward public benchmarks under fundraising pressure,
+  narrower specialization on high-value use cases like coding, an emerging
+  domestic RL-environment data industry, and strong organizational talent and
+  compute efficiency.</p>
 tags:
   - moe
   - frontier
