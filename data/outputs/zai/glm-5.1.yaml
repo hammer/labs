@@ -18,7 +18,8 @@ sources:
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/glm-5-1
 description: >
-  <p><strong>754B parameter MoE</strong> built for <strong>long-horizon agentic
+  <p><strong>744B-parameter MoE (40B active)</strong> on the GLM-5 base
+  (~754B by safetensors count), built for <strong>long-horizon agentic
   engineering</strong>. Designed to sustain optimization over hundreds of rounds and
   thousands of tool calls without losing coherence. MIT License.</p>
 
@@ -34,7 +35,8 @@ tags:
   - open-weight
 model:
   architecture: moe
-  parameters: 754B
+  parameters: 744B
+  active_parameters: 40B
   intelligence_index: 41
   intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:

@@ -18,7 +18,7 @@ sources:
 description: >
   <p>Z.ai's agentic coding and cybersecurity successor to
   <a href="/outputs/zai/glm-5.2">GLM-5.2</a>. It uses the
-  <strong>same base model</strong> &mdash; a 753B-class MoE with a 1M-token
+  <strong>same base model</strong> &mdash; a 744B MoE (40B active) with a 1M-token
   context &mdash; and attributes every gain to one month of scaled
   post-training across more numerous, diverse, and longer-horizon task
   environments. The training stack combines

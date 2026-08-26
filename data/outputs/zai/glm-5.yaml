@@ -23,7 +23,7 @@ sources:
   - label: OpenRouter
     url: https://openrouter.ai/z-ai/glm-5
 description: >
-  Most powerful Z.ai model family. GLM-5 is 744B total params (44B active) via
+  Most powerful Z.ai model family. GLM-5 is 744B total params (40B active) via
   MoE with 256 experts. Hybrid Attention and Multi-Token Prediction. First
   frontier-scale model trained entirely on 100,000 Huawei Ascend 910B chips.
   GLM-5-Turbo is the fast variant optimized for the OpenClaw agent ecosystem.
@@ -45,13 +45,14 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/zai-org/GLM-5
     description: >
-      744B total params (44B active) via MoE with 256 experts. Hybrid Attention
+      744B total params (40B active) via MoE with 256 experts (8 routed per
+      token; ~754B by safetensors count). Hybrid Attention
       and Multi-Token Prediction. First frontier-scale model trained entirely
       on 100,000 Huawei Ascend 910B chips (zero American hardware).
     model:
       architecture: moe
       parameters: 744B
-      active_parameters: 44B
+      active_parameters: 40B
       intelligence_index: 41
       intelligence_index_version: "AA v4.1.1"
       intelligence_index_history:
