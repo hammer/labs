@@ -1,0 +1,43 @@
+name: Active Inference as Context Acquisition for AI Agents
+slug: active-inference-context-acquisition
+lab: tum
+type: paper
+date: 2026-06-08
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.19202
+description: >
+  <p>From Suvrit Sra's group at TUM with UC Davis. Frames the
+  <strong>context-acquisition layer</strong> of an agent harness &mdash; whether
+  to act on the current context or spend tokens on a clarifying question,
+  retrieval, tool call or prompt trial &mdash; as <strong>active
+  inference</strong>: a bilevel one-step problem in which an inner step updates
+  beliefs over a latent task state under a hypothetical observation and an
+  outer step picks the next context action, task action or stop action to
+  minimize expected free energy under token cost. In deterministic settings the
+  epistemic term reduces to expected information gain, optionally normalized by
+  cost, and value-of-information conditions give explicit stopping rules.</p>
+
+  <p>The framework is instantiated in <strong>Optimal Question Asking
+  (OQA)</strong>, an attribute-table benchmark with exact posteriors and a
+  dynamic-programming oracle that measures a model's "planning gap" (extra
+  questions relative to the oracle). Seven frontier models (GPT-5, GPT-4.1,
+  Gemini 2.5 Pro, Gemini 2.0 Flash, Claude Sonnet 4.5, Claude Haiku 4.5, Grok
+  4) reduce uncertainty every turn on binary (25/100 candidates) and multiway
+  (100&ndash;300 candidates) tasks but consistently ask more questions than the
+  oracle. Two token-budget case studies &mdash; clarification before generation
+  on 48 synthetic product tasks and automated prompt optimization &mdash; show
+  that small amounts of targeted clarification or experimentation improve
+  final success when they buy decision-relevant information. Submitted June
+  2026; appeared on arXiv August 2026.</p>
+tags:
+  - agents
+  - agent-harness
+  - context
+  - research
+paper:
+  arxiv: "2608.19202"
+  authors:
+    - Sanchayan Dutta
+    - Sai Niranjan Ramachandran
+    - Suvrit Sra

@@ -1,0 +1,67 @@
+name: "AVO: Agentic Variation Operators for Autonomous Evolutionary Search"
+slug: avo
+lab: nvidia
+type: paper
+date: 2026-03-25
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.24517
+description: >
+  <p>NVIDIA's <strong>Agentic Variation Operators</strong> replace the
+  mutation/crossover step of LLM-driven evolutionary search (FunSearch,
+  AlphaEvolve) with an autonomous coding agent. Instead of a single-turn
+  generation inside a fixed pipeline, the variation operator is a self-directed
+  agent loop with access to the full lineage of prior solutions, a
+  domain-specific knowledge base, profiling and evaluation utilities and
+  persistent memory, which plans, implements, tests, debugs and verifies edits
+  before committing a candidate. The agent is an unmodified general-purpose
+  NVIDIA-internal coding agent powered by frontier LLMs.</p>
+
+  <p>Applied to forward-pass attention on Blackwell B200 (CUDA 13.1, head dim
+  128, BF16, 4K&ndash;32K sequence lengths), <strong>7 days of unattended
+  evolution</strong> produced 40 committed kernel versions from 500+ explored
+  directions, reaching up to <strong>+3.5% over cuDNN 9.19 and +10.5% over
+  FlashAttention-4</strong> on causal multi-head attention. Prompted to adapt
+  the kernel to Qwen3-style grouped-query attention, the agent needed ~30
+  minutes for +7.0% over cuDNN and +9.3% over FA4. The paper dissects the
+  agent-discovered micro-architectural optimizations &mdash; branchless
+  accumulator rescaling with a lighter memory fence (+8.1% non-causal),
+  correction/MMA pipeline overlap, and register rebalancing across warp
+  groups. Authors include <a href="/people/tianqi-chen">Tianqi Chen</a>, Luis
+  Ceze, Ming-Yu Liu, Vinod Grover and Humphrey Shi.</p>
+tags:
+  - agentic
+  - coding
+  - gpu-kernels
+  - evolutionary-search
+  - efficiency
+  - research
+paper:
+  arxiv: "2603.24517"
+  authors:
+    - Terry Chen
+    - Zhifan Ye
+    - Bing Xu
+    - Zihao Ye
+    - Timmy Liu
+    - Ali Hassani
+    - Tianqi Chen
+    - Andrew Kerr
+    - Haicheng Wu
+    - Yang Xu
+    - Yu-Jung Chen
+    - Hanfeng Chen
+    - Aditya Kane
+    - Ronny Krashinsky
+    - Ming-Yu Liu
+    - Vinod Grover
+    - Luis Ceze
+    - Roger Bringmann
+    - John Tran
+    - Wei Liu
+    - Fung Xie
+    - Michael Lightstone
+    - Humphrey Shi
+related:
+  - alphaevolve
+  - flashattention-3

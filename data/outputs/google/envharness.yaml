@@ -1,0 +1,67 @@
+name: "EnvHarness: Awakening Static Worlds for Agent Learning"
+slug: envharness
+lab: google
+type: paper
+date: 2026-08-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.19880
+  - label: Project page
+    url: https://www.envharness.com/
+  - label: GitHub
+    url: https://github.com/google-research/envharness
+description: >
+  <p>Google Cloud AI Research applies the agent-harness idea to the
+  <em>environment</em> side of agent learning. <strong>EnvHarness</strong> is a
+  programmable wrapper layer that reshapes a frozen, static benchmark
+  environment purely through its standard <code>reset()</code>/<code>step()</code>
+  interface, so every customized task keeps the original human-built verifier.
+  Three plug-in component types cover three modes of control &mdash;
+  <strong>Stage</strong> (rewrite the initial state to plant obstacles or
+  pre-complete subgoals), <strong>Contract</strong> (override transition
+  dynamics or observations, e.g. to break repetitive action loops or filter
+  verbose output) and <strong>Chain</strong> (join environments into
+  longer-horizon tasks). <strong>EnvRigger</strong> automates the design: it
+  treats the target policy as a black box, observes its trajectories, diagnoses
+  weaknesses, writes candidate components and validates them with fresh
+  rollouts before committing.</p>
+
+  <p>Across five benchmarks in four domains (ALFWorld, WebArena, SWE-bench
+  Verified, OfficeQA, SpreadsheetBench), with EnvRigger and the policy sharing
+  the same Gemini 3.1 Flash-Lite / Gemini 3.5 Flash backbone, skills extracted
+  from EnvHarness environments beat skills from the original environments on
+  every benchmark: ALFWorld 62.4 &rarr; <strong>68.3</strong> (+9.0 on
+  held-out task types), WebArena 38.5 &rarr; 41.6, SWE-bench Verified 49.9
+  &rarr; 52.6 with average steps cut from 53.6 to 49.6 (skills from unmodified
+  environments lengthened them to 55.0). It outperforms the domain-specific
+  generators GenEnv, VeriEnv and SWE-smith wherever they apply, keeps improving
+  as environment count scales where real and generated environments plateau,
+  and yields better GRPO training of Qwen3-8B-base on ALFWorld (85.5 &rarr;
+  88.4) and WebShop. Code released under Apache 2.0.</p>
+tags:
+  - agents
+  - agent-harness
+  - rl
+  - environments
+  - research
+paper:
+  arxiv: "2608.19880"
+  authors:
+    - Chengsong Huang
+    - Zifeng Wang
+    - Rujun Han
+    - Jun Yan
+    - Yanfei Chen
+    - Zoey CuiZhu
+    - Ke Jiang
+    - Peng Xia
+    - Han Yu
+    - Yufan Zhuang
+    - Yifei Ming
+    - Jiaqi Pan
+    - Bhavana Dalvi Mishra
+    - Jiaxin Huang
+    - Burak Gokturk
+    - Tomas Pfister
+    - Chen-Yu Lee
+  code_url: https://github.com/google-research/envharness

@@ -1,0 +1,68 @@
+name: "AutoSaddler: Automatic Harness Optimization with Durable Updates from Agent Execution Traces"
+slug: autosaddler
+lab:
+  - microsoft
+  - kaist
+type: paper
+date: 2026-08-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.23041
+  - label: Project page
+    url: https://autosaddler-projectpage.github.io/
+  - label: GitHub
+    url: https://github.com/microsoft/AutoSaddler
+description: >
+  <p>Microsoft Research (with intern co-first authors from POSTECH, KAIST and
+  SUSTech) frames <strong>harness optimization as offline mini-batch
+  learning</strong>. Each <strong>AutoSaddler</strong> iteration evaluates the
+  current harness on a mini-batch of tasks, runs a Diagnosis&ndash;Patch session
+  that debugs the failing execution traces against the agent codebase and
+  emits a structured code patch (<em>capability</em> patches such as new tools,
+  implementation fixes and agent-loop changes; <em>steering</em> patches such as
+  prompt rules, tool descriptions and PreToolUse hooks), verifies the patch on
+  the same mini-batch, checks generalization on a dev split, and records
+  lessons in <strong>EvoDAG</strong>, a DAG of harness lineage that seeds the
+  next candidate. The three optimizer agents are built on the Claude Agent SDK
+  with Claude Opus 4.6.</p>
+
+  <p>On held-out task groups, AutoSaddler lifts the GAIA2 default ReAct agent
+  from 53.0% to <strong>62.0%</strong> Pass@1 (+9.0 pp), SWE-agent on
+  SWE-Bench Pro from 37.3% to <strong>46.9%</strong> (+9.6 pp) and Terminus 2
+  on Terminal-Bench 2.0 from 40.0% to <strong>50.0%</strong> (+10.0 pp)
+  &mdash; also beating the expert-tuned Terminus KIRA (47.5%) and the
+  automated baselines GEPA and Meta-Harness by 4.4&ndash;7.4 pp. It reaches
+  72.3% GAIA2 dev accuracy after ~1,000 rollouts and its best score from 147
+  leveraged traces, ~10&times; fewer than Meta-Harness; harnesses optimized
+  with Opus 4.6 still gave +5.6 pp when the task agent was swapped to Haiku
+  4.5. Ablations isolate three ingredients: deep debugging over shallow
+  reflection, targeted edits over unconstrained rewriting, and
+  generalization-aware selection over trajectory-specific repair. Code under
+  MIT.</p>
+tags:
+  - agents
+  - agent-harness
+  - post-training
+  - coding
+  - research
+paper:
+  arxiv: "2608.23041"
+  authors:
+    - Sungho Park
+    - Wonjoong Kim
+    - Rongyuan Tan
+    - Jue Zhang
+    - Wook-Shin Han
+    - Pengfei Gao
+    - Chanyoung Park
+    - Yongqiang Yao
+    - Rao Fu
+    - Elsie Nallipogu
+    - Qingwei Lin
+    - Saravan Rajmohan
+    - Dongmei Zhang
+  code_url: https://github.com/microsoft/AutoSaddler
+related:
+  - skillopt
+  - reason-wide-not-deep
+  - rethinking-harness-evolution

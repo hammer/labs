@@ -1,0 +1,54 @@
+name: "ADAPT: Amortized Distillation Across Post-Trained LLMs"
+slug: adapt-distillation
+lab: harvard
+type: paper
+date: 2026-08-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.22854
+  - label: GitHub
+    url: https://github.com/dcml-lab/ADAPT
+description: >
+  <p>From David Alvarez-Melis's DCML lab at Harvard / the Kempner Institute,
+  with IST Austria. <strong>ADAPT</strong> extends <strong>boomerang
+  distillation</strong> &mdash; which builds a continuum of intermediate-size
+  models from one teacher&ndash;student pair by distilling a layer-pruned
+  student and patching teacher layers back in &mdash; from base models to
+  post-trained ones. Applying boomerang distillation directly to an
+  instruction- or reasoning-tuned teacher collapses generation quality at small
+  and medium sizes, so ADAPT adds (1) <strong>two-phase distillation</strong>:
+  pre-training alignment on the Pile followed by SFT distillation on Nemotron
+  post-training math data, and (2) <strong>weight-delta initialization</strong>:
+  transferring the distillation-induced weight change from the base student to
+  students initialized from other post-trained variants, so a single
+  distillation run yields L sizes &times; K variants.</p>
+
+  <p>Main experiments distill Qwen3-4B-Instruct-2507 (student starts at 2.7B
+  by dropping every other layer; 1B-token budget), replicated on
+  Qwen3-4B-Thinking, Qwen3-14B, OLMo 3 7B and Llama 3.1 8B. ADAPT beats
+  boomerang and layer-pruning baselines (ShortGPT, LLM-Streamline) at equal
+  compute on math reasoning and out-of-domain instruction following, and the
+  size continuum enables <strong>adaptive model-size selection</strong>:
+  routing MATH problems by teacher-estimated difficulty traces a
+  compute&ndash;accuracy Pareto frontier that dominates any single fixed model.
+  Mechanistically, base and post-trained models (and their distilled students)
+  remain linearly mode-connected after distillation, which explains why the
+  weight arithmetic transfers. EMNLP 2026 Findings; code under Apache 2.0.</p>
+tags:
+  - distillation
+  - efficiency
+  - post-training
+  - inference
+  - research
+paper:
+  arxiv: "2608.22854"
+  venue: EMNLP 2026 Findings
+  authors:
+    - Yan Zhou
+    - Sara Kangaslahti
+    - Jonathan Geuter
+    - Nihal V. Nayak
+    - Marco Fumero
+    - Francesco Locatello
+    - David Alvarez-Melis
+  code_url: https://github.com/dcml-lab/ADAPT

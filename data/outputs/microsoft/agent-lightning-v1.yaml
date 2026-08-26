@@ -1,0 +1,74 @@
+name: "Agent Lightning v1.0: Towards Harnessed Agentic RL"
+slug: agent-lightning-v1
+lab:
+  - microsoft
+  - fudan
+  - zhejiang
+type: library
+date: 2026-08-18
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.17528
+  - label: GitHub
+    url: https://github.com/microsoft/agent-lightning
+  - label: Original Agent Lightning paper (arXiv, Aug 2025)
+    url: https://arxiv.org/abs/2508.03680
+description: >
+  <p>Microsoft Research's <strong>Agent Lightning v1.0</strong> names and
+  systematizes <strong>harnessed agentic RL</strong>: post-training in which the
+  deploy-time agent harness (mini-SWE-agent, OpenHands, Claude Code, OpenClaw,
+  Hermes&hellip;) owns the environment-interaction loop while the trainer sees
+  only a stream of LLM request&ndash;response pairs through an endpoint proxy.
+  The original Agent Lightning (arXiv 2508.03680, August 2025) introduced this
+  disaggregated proxy architecture, since adopted by verl Uni-Agent, AReaL 2.0,
+  slime v0.3.0 and Polar. The v1.0 paper gives the first systematic treatment
+  of the problems the proxy view creates &mdash; <strong>retokenization</strong>
+  of harness-side text, <strong>merging per-call samples</strong> into training
+  rollouts, advantage calculation, loss normalization and training-backend
+  scheduling &mdash; and shows that leaving them underspecified yields
+  ineffective or unstable training. The framework is ~3,500 lines of code: an
+  API Gateway that stores rollouts and forwards LLM calls, a Rollout Controller
+  that runs agents on Kubernetes or a local process pool, and a
+  <strong>collocated async RL</strong> mode that time-shares one GPU pool
+  between rollout and weight update without exposing phase switches to the
+  harness.</p>
+
+  <p>Validated on instruction-following, search and coding agents. For coding,
+  where existing RL frameworks lack data and complete training scripts, the
+  release includes a SWE-smith data-cleaning pipeline and reproducible scripts:
+  RL alone with 6K training samples lifts <strong>Qwen3.5-9B on SWE-bench
+  Verified from 41.8% to 56.4%</strong> (+14.6 points). Co-first authors from
+  Fudan and Zhejiang University; one co-author at the University of Edinburgh.
+  MIT-licensed; the GitHub repo has ~17.8K stars.</p>
+tags:
+  - agents
+  - agent-harness
+  - rl
+  - post-training
+  - framework
+  - open-source
+library:
+  github: https://github.com/microsoft/agent-lightning
+  language: Python
+  license: MIT
+  pip_package: agentlightning
+paper:
+  arxiv: "2608.17528"
+  authors:
+    - Zhiyuan He
+    - Siwei Zhang
+    - Zhiwen Zhou
+    - Yuqing Yang
+    - Yu Kang
+    - Yuge Zhang
+    - Luna K. Qiu
+    - Tin Yan Tsui
+    - Jiahang Xu
+    - Chong Luo
+  code_url: https://github.com/microsoft/agent-lightning
+related:
+  - openforge-rl
+  - verl
+  - slime
+  - areal
