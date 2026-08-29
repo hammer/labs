@@ -1,0 +1,95 @@
+name: Accelerating Scientific Research with Gemini in the Real-World
+slug: co-scientist-real-world
+lab: google
+type: paper
+date: 2026-08-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.26701
+  - label: Original AI co-scientist announcement (Google Research, Feb 2025)
+    url: https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/
+description: >
+  <p>Google DeepMind (with Duke, Columbia and Texas A&amp;M; senior authors
+  include Quoc V. Le and Tao Tu) extends its Gemini-based
+  <strong>Co-Scientist</strong> multi-agent system from an in-silico
+  hypothesis generator into an <strong>execution-grounded research
+  partner</strong>: ideation (tournament-style hypothesis refinement guided by
+  safety, novelty, plausibility and testability), experimentation (an
+  experiment plan turned into research code, scaffolded on minimal data then
+  scaled), and paper writing with plagiarism checks and claim
+  cross-verification, plus reliability modules that jointly optimize against
+  hallucination and an ethical-oversight layer (redirecting harmful research
+  directions in 98.7% of 700 test cases). The degree of autonomy is adapted to
+  each domain's physical constraints, with humans directing studies and
+  handling samples.</p>
+
+  <p>Four real-world validations. <strong>Materials</strong>: interfacing with a
+  semi-automated CVD reactor, Co-Scientist proposed a safe
+  C<sub>2</sub>Cl<sub>6</sub> precursor route for bottom-up 2D titanium
+  carbide; 70+ human-run experiments yielded a lamellar material with XRD and
+  elemental signatures analogous to Ti<sub>3</sub>C<sub>2</sub>T<sub>x</sub>
+  MXene (atomic structure still unconfirmed), and Gemini 3 Deep Think
+  translated growth recipes to lab constraints in minutes, giving single-attempt
+  monolayer MoS<sub>2</sub>, MoSe<sub>2</sub> and WS<sub>2</sub>.
+  <strong>Biology</strong>: a vision pipeline predicted engineered E. coli
+  swarming morphologies across an IPTG gradient from sparse imaging, matching
+  unpublished wet-lab measurements. <strong>Computer science</strong>: with no
+  access to the eval sets, it autonomously discovered <strong>Agent_H</strong>,
+  an eight-phase inference-time scaling architecture over Gemini 3.1 Pro that
+  beat six frontier models on length-adjusted HealthBench Hard and Professional
+  and modestly reduced clinical harm under blinded physician review.
+  <strong>End-to-end papers</strong>: in a double-blind study (30 experts, 450
+  reviews of 150 manuscripts), invalidating result hallucinations fell to 4%
+  versus 46% for the ablated system and 90% for the Agent Laboratory baseline,
+  outright data fabrication to zero, and high-severity derivative content to 16%
+  versus 60%. A companion to DeepMind's
+  <a href="/outputs/google/ai-co-mathematician">AI co-mathematician</a> and
+  <a href="/outputs/google/alphaevolve">AlphaEvolve</a> lines of
+  AI-for-science work.</p>
+tags:
+  - agents
+  - science
+  - materials-science
+  - biology
+  - research
+paper:
+  arxiv: "2608.26701"
+  authors:
+    - Samuel Schmidgall
+    - Xiaokai Zhu
+    - Marian Shaw
+    - Lin Yang
+    - Valentin Liévin
+    - Jingyun Yang
+    - Yuchen Zhuang
+    - Tim Strother
+    - Alex Bijamov
+    - Min Woo Sun
+    - Anil Palepu
+    - Justin Chen
+    - David Steiner
+    - Jacqueline Shreibati
+    - Wei-Hung Weng
+    - Yilin Zhao
+    - Xingjian Hu
+    - Nicholas Zahn
+    - Sadhya Garg
+    - Julia Kirby
+    - Yuxiang Gan
+    - Jiaoli Li
+    - Divy Thakkar
+    - Shekoofeh Azizi
+    - David Racz
+    - Juraj Gottweis
+    - Vivek Natarajan
+    - Chenglin Wu
+    - Tal Danino
+    - Keran Rong
+    - Haozhe Wang
+    - Benoit Schillings
+    - Yong Cheng
+    - Quoc V. Le
+    - Tao Tu
+related:
+  - ai-co-mathematician
+  - alphaevolve

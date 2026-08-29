@@ -1,0 +1,54 @@
+name: "Modality Maturity Index: A Benchmark for Assessing Multimodal Capabilities of Omni Models"
+slug: modality-maturity-index
+lab: meta
+type: paper
+date: 2026-08-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.26317
+  - label: GitHub
+    url: https://github.com/facebookresearch/modality-maturity-index
+  - label: HuggingFace (dataset)
+    url: https://huggingface.co/datasets/facebook/mmi
+description: >
+  <p>Meta Superintelligence Labs (Rohit Patel, Dieuwke Hupkes, Sloan Strader)
+  proposes the <strong>Modality Maturity Index (MMI)</strong>, a benchmark
+  for the "omni" claim: <strong>893 human-written prompts</strong> spanning
+  five modalities (text, image, audio, video, document) and combinations of
+  up to three modalities on <em>both</em> the input and the output side. Each
+  prompt specifies which output modalities a correct answer must contain and
+  carries human-authored rubric criteria per expected modality; the
+  <strong>MMI Value</strong> averages per-modality rubric scores, while a
+  supplementary <strong>Modality Presence Score (MPS)</strong> &mdash; a
+  per-prompt F1 over the expected output modalities &mdash; separates
+  "didn't produce the modality" from "produced it wrong". Existing suites
+  almost all test text plus one modality and never ask whether a model
+  chooses the right output modality.</p>
+
+  <p>The headline finding is how immature omni models are on the output side:
+  MPS ranges from <strong>15.6 (Claude Opus 4.6)</strong> and 16.3 (Llama 4
+  Maverick) through 25.4 (Gemini 3.1 Pro) and 27.2 (Gemini 3.1 Flash) to
+  <strong>34.9 (GPT-5.4)</strong>, with precision near 100 (models rarely
+  emit an unrequested modality) but recall below 35 for every model; input
+  failure rates run from 8% (Gemini 3.1 Pro) to 37% (Claude Opus 4.6); no
+  evaluated model can output audio, and GPT-5.4 is the only one that natively
+  returns images. Because so few assets come back, the rubric-based MMI Value
+  is validated separately on tool-scaffolded models: an LLM judge applying the
+  rubrics agrees with rubric-blind human annotators on 70.8% of judgments
+  (Scott's &pi; 0.41; 66.5% on image to 74.4% on video). Code on GitHub and
+  the dataset on HuggingFace (CC-BY-4.0).</p>
+tags:
+  - benchmark
+  - evaluation
+  - multimodal
+  - research
+paper:
+  arxiv: "2608.26317"
+  authors:
+    - Rohit Patel
+    - Dieuwke Hupkes
+    - Sloan Strader
+  code_url: https://github.com/facebookresearch/modality-maturity-index
+  huggingface_url: https://huggingface.co/datasets/facebook/mmi
+related:
+  - belebele
