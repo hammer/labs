@@ -19,4 +19,5 @@ tags:
 library:
   github: https://github.com/xai-org/grok-build
 related:
+  - grok-build-0.1
   - grok-4.5

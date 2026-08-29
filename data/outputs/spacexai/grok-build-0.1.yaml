@@ -1,0 +1,54 @@
+name: Grok Build 0.1 (model)
+slug: grok-build-0.1
+lab: spacexai
+type: model
+date: 2026-05-29
+sources:
+  - label: Announcement (xAI)
+    url: https://x.ai/news/grok-build-0-1
+  - label: API Docs (xAI)
+    url: https://docs.x.ai/docs/models/grok-build-0.1
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/grok-build-0-1-06-16
+  - label: OpenRouter
+    url: https://openrouter.ai/x-ai/grok-build-0.1
+description: >
+  <p>xAI's dedicated <strong>agentic coding model</strong> &mdash; "the same
+  model that powers <a href="/outputs/spacexai/grok-build">Grok Build</a>",
+  the terminal coding agent xAI launched in beta on May 14, 2026 and
+  open-sourced in July. Served as <code>grok-build-0.1</code>, it is
+  "specifically trained for agentic coding tasks, including web development,
+  debugging, and MCP support", accepts text and image input, supports
+  function calling, structured outputs and reasoning, and has a
+  <strong>256K-token context window</strong>. xAI says it is "served at a
+  blazing-fast 100+ tokens/second" and "performs best in agentic harness like
+  Grok Build, Cursor, Hermes Agent, OpenClaw, Kilo Code, or OpenCode". It
+  appeared on OpenRouter on May 20 and entered public beta on the xAI API on
+  May 29 at <strong>$1 / $2 per million input / output tokens</strong>
+  ($0.20 cached; doubled above 200K-token prompts). Parameter count,
+  architecture and training data are undisclosed; weights are
+  proprietary.</p>
+
+  <p>The xAI docs list <code>grok-code-fast-1</code>, <code>grok-code-fast</code>
+  and <code>grok-code-fast-1-0825</code> as aliases, so it succeeds and
+  replaces the August 2025 Grok Code Fast 1 (22 on the AA Intelligence
+  Index). Artificial Analysis scores the June 16, 2026 snapshot
+  ("Grok Build 0.1 0616") at <strong>41 on the Intelligence Index
+  v4.1.1</strong> (#65 of 187), characterizing it as above-average
+  intelligence and well priced but "notably slow and very verbose" in its
+  measurements (50 tokens/s output, 0.5 s to first token); xAI publishes no
+  benchmark scores for it. Not to be confused with the Grok Build harness
+  entry, which tracks the Apache-2.0 Rust agent itself.</p>
+tags:
+  - coding
+  - agentic
+  - reasoning
+  - proprietary
+model:
+  context_window: 256000
+  intelligence_index: 41
+  intelligence_index_version: "AA v4.1.1"
+  license: Proprietary
+related:
+  - grok-build
+  - grok-4.5
