@@ -34,6 +34,8 @@ model:
   architecture: moe
   intelligence_index: 52
   intelligence_index_version: "AA v4.1.1"
+  openness_index: 44.4
+  openness_index_version: "AA Openness Index v1.0"
 related:
   - deepseek-v4
   - deepseek-v4-pro

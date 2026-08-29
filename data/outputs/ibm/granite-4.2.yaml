@@ -74,6 +74,8 @@ model:
   context_window: 131072
   intelligence_index: 24
   intelligence_index_version: "AA v4.1.1"
+  openness_index: 72.2
+  openness_index_version: "AA Openness Index v1.0"
   base_model: granite-4.1
   training_hardware: "NVIDIA GB200 NVL72 cluster (CoreWeave)"
   optimizer: "Asynchronous GRPO (NeMo RL)"

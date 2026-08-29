@@ -55,6 +55,8 @@ model:
   context_window: 1048576
   intelligence_index: 37
   intelligence_index_version: "AA v4.1.1"
+  openness_index: 33.3
+  openness_index_version: "AA Openness Index v1.0"
   license: Upstage Solar License
   num_experts: 320
   top_k: 8

@@ -38,6 +38,8 @@ model:
   num_experts: 256
   intelligence_index: 35
   intelligence_index_version: "AA v4.1.1"
+  openness_index: 50
+  openness_index_version: "AA Openness Index v1.0"
   license: Apache 2.0
 related:
   - ax-4.0

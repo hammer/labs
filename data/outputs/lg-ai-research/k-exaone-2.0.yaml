@@ -32,6 +32,8 @@ model:
   base_model: k-exaone
   intelligence_index: 31
   intelligence_index_version: "AA v4.1.1"
+  openness_index: 44.4
+  openness_index_version: "AA Openness Index v1.0"
   license: Apache 2.0
 related:
   - k-exaone

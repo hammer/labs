@@ -1,10 +1,15 @@
 /**
  * Fetch AA Openness Index scores and write them into output YAMLs.
  *
- * Strategy: AA's openness leaderboard page exposes the full 234-record dataset
- * via its React Server Component when fetched with the RSC header. One request
- * returns all entries; we parse by splitting on the per-record sentinel
- * `{"additional_text"` and extracting `slug` + `opennessIndex` from each chunk.
+ * Strategy: AA's openness leaderboard page exposes the full dataset (314
+ * records as of Aug 2026) via its React Server Component when fetched with the
+ * RSC header. Since ~Aug 2026 the bulk `models` array carries only `id` (uuid)
+ * + `name` + `opennessIndex` — no `slug` — so we join on the uuid against the
+ * Intelligence leaderboard RSC payload (the same source fetch-aa-intelligence
+ * parses), whose records carry both `id` and `slug`. The openness page's own
+ * `initialModels` chart subset (id + slug) is merged in as a second id→slug
+ * source. Pre-Aug-2026 payloads split on `{"additional_text"` and had slugs
+ * inline; that shape is no longer served.
  *
  * For each labindex output that has an `artificialanalysis.ai/models/<slug>`
  * URL in its sources, we look up the slug in AA's dataset and write
@@ -25,23 +30,50 @@ const dryRun = process.argv.includes('--dry-run');
 
 // ── Fetch the RSC payload ────────────────────────────────────────────────
 
-async function fetchAaoiDataset(): Promise<Map<string, number>> {
-  const res = await fetch(AAOI_URL, {
-    headers: { RSC: '1', 'User-Agent': 'labindex-aaoi-sync/1.0 (https://labindex.ai)' },
-  });
-  if (!res.ok) throw new Error(`AAOI fetch failed: ${res.status}`);
-  const body = await res.text();
+const LEADERBOARD_URL = 'https://artificialanalysis.ai/leaderboards/models';
+const UUID = '[0-9a-f-]{36}';
 
-  // Each record begins with `{"additional_text"` (verified May 2026).
-  const records = body.split(/(?=\{"additional_text")/).filter(r => r.includes('"openness"'));
-  const map = new Map<string, number>();
-  for (const r of records) {
-    const slugMatch = r.match(/"slug"\s*:\s*"([^"]+)"/);
-    const aaoiMatch = r.match(/"opennessIndex"\s*:\s*([\d.]+)/);
-    if (slugMatch && aaoiMatch) {
-      map.set(slugMatch[1], Math.round(parseFloat(aaoiMatch[1]) * 10) / 10);
-    }
+async function fetchRsc(url: string, ua: string): Promise<string> {
+  const res = await fetch(url, { headers: { RSC: '1', 'User-Agent': ua } });
+  if (!res.ok) throw new Error(`AA fetch failed: ${res.status} ${url}`);
+  return res.text();
+}
+
+// id → slug from every model record that carries both keys. Two record shapes
+// occur: `{"id":uuid,"name":...,"shortName":...,"slug":...}` (Intelligence
+// leaderboard) and `{"id":uuid,"slug":...,"name":...,"shortName":...}` (the
+// openness page's initialModels). Both are split on an id+…+shortName sentinel
+// so nested creator objects (`{"id":uuid,"slug":"kimi","name":"Kimi","color"`)
+// never masquerade as model records.
+function collectIdToSlug(body: string, into: Map<string, string>): void {
+  const sentinel = new RegExp(`(?=\\{"id":"${UUID}",(?:"name":"[^"]*",|"slug":"[^"]+","name":"[^"]*",)"shortName")`);
+  for (const r of body.split(sentinel)) {
+    const id = r.match(new RegExp(`^\\{"id":"(${UUID})"`))?.[1];
+    const slug = r.match(/"slug":"([^"]+)"/)?.[1];
+    if (id && slug && !into.has(id)) into.set(id, slug);
   }
+}
+
+async function fetchAaoiDataset(): Promise<Map<string, number>> {
+  const ua = 'labindex-aaoi-sync/1.0 (https://labindex.ai)';
+  const [oiBody, lbBody] = await Promise.all([fetchRsc(AAOI_URL, ua), fetchRsc(LEADERBOARD_URL, ua)]);
+
+  const idToSlug = new Map<string, string>();
+  collectIdToSlug(lbBody, idToSlug);
+  collectIdToSlug(oiBody, idToSlug);
+  if (idToSlug.size < 300) throw new Error(`Only ${idToSlug.size} id→slug pairs parsed — leaderboard sentinel likely drifted, refusing to write`);
+
+  // Bulk openness records (verified Aug 2026): {"id":uuid,"name":"…","creator":{…},"opennessIndex":N,…}
+  const map = new Map<string, number>();
+  let unmapped = 0;
+  const rec = new RegExp(`\\{"id":"(${UUID})","name":"[^"]*","creator":\\{[^{}]*\\},"opennessIndex":([\\d.]+)`, 'g');
+  for (const m of oiBody.matchAll(rec)) {
+    const slug = idToSlug.get(m[1]);
+    if (!slug) { unmapped++; continue; }
+    if (!map.has(slug)) map.set(slug, Math.round(parseFloat(m[2]) * 10) / 10);
+  }
+  if (unmapped > 0) console.log(`  ${unmapped} openness record(s) had no id→slug mapping (not on the Intelligence leaderboard payload)`);
+  if (map.size < 200) throw new Error(`Parsed only ${map.size} openness records — AAOI payload shape likely drifted, refusing to write`);
   return map;
 }
 

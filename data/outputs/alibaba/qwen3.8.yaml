@@ -53,6 +53,8 @@ model:
   context_window: 1010000
   intelligence_index: 58
   intelligence_index_version: "AA v4.1.1"
+  openness_index: 27.8
+  openness_index_version: "AA Openness Index v1.0"
   license: Qwen3.8-Max
   benchmark_scores:
     - benchmark: Terminal-Bench 2.1

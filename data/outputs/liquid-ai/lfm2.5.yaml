@@ -91,6 +91,8 @@ model:
   context_window: 128000
   intelligence_index: 8
   intelligence_index_version: "AA v4.1.1"
+  openness_index: 33.3
+  openness_index_version: "AA Openness Index v1.0"
   base_model: lfm2
   training_tokens: 38T
   license: LFM Open License v1.0

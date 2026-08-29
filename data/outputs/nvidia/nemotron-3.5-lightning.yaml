@@ -64,6 +64,8 @@ model:
   training_tokens: 20T+
   intelligence_index: 24
   intelligence_index_version: "AA v4.1.1"
+  openness_index: 77.8
+  openness_index_version: "AA Openness Index v1.0"
   license: OpenMDW-1.1
   variants:
     - name: Nemotron 3.5 Lightning 30B-A3B BF16
