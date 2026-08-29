@@ -1,0 +1,61 @@
+name: "WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution"
+slug: wikiskill
+lab: google
+type: paper
+date: 2026-08-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.27454
+description: >
+  <p>Google Research (with a Virginia Tech co-affiliation for senior author Tu
+  Vu) proposes <strong>WikiSkill</strong>, a skill-evolution framework in which
+  agent skills co-evolve with a <strong>persistent, compounding knowledge base
+  (wiki)</strong> rather than being re-derived from scattered optimization
+  histories. The agent workspace is split into three layers: an immutable
+  <code>raw/</code> layer of execution traces, a <code>wiki/</code> layer of
+  markdown pattern files (failure modes, successful strategies, workarounds)
+  plus an evolution log and a skill-impact tracker, and a <code>skills/</code>
+  layer holding the active skill set. An orchestrated loop has a Wiki
+  Maintainer consolidate traces into patterns, a wiki-informed Skill Proposer
+  draft skill updates, and validation gating with rollback accept or reject
+  them; the wiki is never reset between iterations, so rejected interventions
+  aren't re-proposed and recurring errors are visible.</p>
+
+  <p>Across five benchmarks (LiveMathematicianBench, SealQA, SpreadsheetBench,
+  OfficeQA, ALFWorld) and five inference models (Qwen-3.5-4B/9B,
+  Qwen-3.6-27B, Gemma-4-31B, Gemini 3.5 Flash), WikiSkill beats
+  <a href="/outputs/microsoft/skillopt">SkillOpt</a>, EvoSkill and
+  Trace2Skill on every model's average &mdash; by 3.3 to 12.0 points over the
+  strongest competitor &mdash; e.g. Gemini 3.5 Flash goes 33.0 &rarr;
+  <strong>72.6%</strong> on LiveMath and 50.5 &rarr; 76.6% on SpreadsheetBench;
+  Qwen-3.6-27B 52.8 &rarr; 77.6% on ALFWorld. Gains grow with model scale
+  (+12.3 / +17.5 / +23.9 average points across the Qwen sizes), yet skills let
+  Qwen-3.5-9B (47.4%) outrun skill-less Qwen-3.6-27B (39.4%). Evolved skills
+  transfer across models and families and often beat self-evolved ones
+  (Qwen-3.6-27B skills lift Gemma-4-31B to 73.7% on LiveMath vs. 56.7%
+  self-evolved), though model-specific workarounds can transfer negatively
+  (Qwen-3.5-4B spreadsheet skills drop Gemini 3.5 Flash to 18.1%). Ablation:
+  giving the Skill Proposer wiki access raises the Gemini 3.5 Flash average
+  from 48.7% to 63.7%; giving the inference agent wiki access during rollouts
+  hurts (63.7 &rarr; 60.9%). Skills are injected directly into the prompt, so
+  retrieval/triggering at scale is left for future work; no code release
+  announced.</p>
+tags:
+  - agents
+  - agent-harness
+  - skill-learning
+  - self-improvement
+  - research
+paper:
+  arxiv: "2608.27454"
+  authors:
+    - Liyan Tang
+    - Cyrus Rashtchian
+    - Chun-Sung Ferng
+    - Andrew Tomkins
+    - Da-Cheng Juan
+    - Tu Vu
+related:
+  - skillopt
+  - envharness
+  - reason-wide-not-deep
