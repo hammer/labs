@@ -1,0 +1,74 @@
+name: "ACES / NVIDIA SkillEvaluator: Agentic Continuous Evaluation of Skills"
+slug: aces-skillevaluator
+lab: nvidia
+type: library
+date: 2026-08-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.20614
+  - label: GitHub (NVIDIA SkillEvaluator)
+    url: https://github.com/NVIDIA/SkillEvaluator
+description: >
+  <p>NVIDIA's answer to a harness-era review problem: agent "skills" (reusable
+  instruction/tool/workflow packages for Claude Code, Codex, Cursor and other
+  harnesses) are usually gated by scanning their files for structure, style
+  and security, which never answers whether the package actually helps a live
+  agent. <strong>ACES (Agentic Continuous Evaluation of Skills)</strong> is a
+  repository-native framework that treats a skill as an executable artifact:
+  it runs <strong>paired live trials with and without the target skill</strong>
+  under the same model, sandbox and grading policy, normalizes the resulting
+  trajectories into an <strong>Agent Trajectory Interchange Format
+  (ATIF)</strong>, grades six default runtime metrics (accuracy, goal accuracy,
+  behavior check, skill execution and skill efficiency among them, plus
+  bring-your-own graders), and reports <strong>Skill Lift</strong> &mdash; the
+  with-skill reward minus the baseline reward for a fixed task, harness,
+  workspace and scorer. The same protocol compares baseline, single-skill,
+  bundle, team-skill and plugin targets against product-owned task suites, and
+  layers on five review dimensions (security, correctness, discoverability,
+  effectiveness, efficiency).</p>
+
+  <p>On <strong>145 real skills</strong> from internal NVIDIA enterprise
+  repositories and public catalogs, scan-only gates surface useful authoring
+  issues but measure something different from runtime value (structural score
+  vs. LLM-judge Spearman &rho; = 0.14). Across <strong>947 scored paired
+  cases</strong> from 58 of 64 production skills on four primary harnesses,
+  mean composite Skill Lift is <strong>0.2134</strong> (95% CI
+  [0.1967, 0.2301]) and outcome-only lift (mean of accuracy and goal accuracy)
+  0.1799, with composite lift positive in 72.8% of paired cases; the largest
+  gains show up in process metrics &mdash; skill execution, behavior check and
+  efficiency &mdash; i.e. discovery, routing, workflow following and tool use
+  that document scans cannot observe. Versions were accepted at Agent Skills
+  '26 (ACM CAIS 2026) and the KDD 2026 Enterprise AI Agents workshop (oral).
+  The methodology ships as the Apache-2.0 <strong>NVIDIA SkillEvaluator</strong>
+  repo (multi-tier evaluation with quality gates and semantic-overlap
+  detection; ~350 stars).</p>
+tags:
+  - agents
+  - agent-harness
+  - evaluation
+  - skill-learning
+  - open-source
+library:
+  github: https://github.com/NVIDIA/SkillEvaluator
+  license: Apache 2.0
+paper:
+  arxiv: "2608.20614"
+  venue: Agent Skills '26 (ACM CAIS 2026); KDD 2026 Enterprise AI Agents Workshop (oral)
+  authors:
+    - Christopher Kevin
+    - Narendran Raghavan
+    - Jean-Francois Puget
+    - Roshni Malani
+    - Meghana Puvvadi
+    - Moshe Abramovitch
+    - Mohit Gupta
+    - Rama Akkiraju
+    - Subodh Prabhu
+    - Yogesh Dangi
+    - Wei Luo
+    - Seong Hee Lee
+  code_url: https://github.com/NVIDIA/SkillEvaluator
+related:
+  - skillopt
+  - wikiskill
+  - harness-bench
