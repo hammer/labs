@@ -187,9 +187,23 @@ function isExcluded(path: string): boolean {
 
 // ─── Diffing ─────────────────────────────────────────────────────────
 
+function sortKeysDeep(v: unknown): unknown {
+  if (Array.isArray(v)) return v.map(sortKeysDeep);
+  if (v && typeof v === 'object') {
+    const out: Record<string, unknown> = {};
+    for (const k of Object.keys(v as object).sort()) out[k] = sortKeysDeep((v as Record<string, unknown>)[k]);
+    return out;
+  }
+  return v;
+}
+
 function jsonHash(v: unknown): string {
-  // Stable enough for identity matching of array elements.
-  return JSON.stringify(v, Object.keys(v && typeof v === 'object' ? (v as object) : {}).sort());
+  // Stable, order-independent serialization of the WHOLE value. (An earlier
+  // version passed the top-level key list as JSON.stringify's replacer, which
+  // acts as a property whitelist at every nesting level — so nested objects
+  // and every element of an array serialized as `{}`, and in-place edits
+  // inside grouped outputs' `outputs[]` never registered as changes.)
+  return JSON.stringify(sortKeysDeep(v));
 }
 
 // Pick an identity key for an array element so we can match before/after
