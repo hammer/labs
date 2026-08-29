@@ -1,0 +1,59 @@
+name: Scaling Domain Data Repetition in LLM Pretraining
+slug: scaling-domain-data-repetition
+lab:
+  - bytedance-seed
+  - tsinghua
+type: paper
+date: 2026-08-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.14071
+description: >
+  <p>ByteDance Seed / Tsinghua study (work done at Seed; project lead Xintong
+  Hao, corresponding author Jingzhao Zhang) of how many times to
+  <strong>repeat scarce high-quality domain data</strong> as pretraining
+  scales. Its central move is methodological: prior cross-scale repetition
+  studies hold the training-data size fixed while growing the model, which
+  makes larger models overfit sooner and pushes the optimal repetition count
+  toward 1. Under the regime that actually matters in practice &mdash; a
+  <strong>fixed tokens-per-parameter ratio (TPP)</strong>, where the token
+  budget grows with model size &mdash; the conclusion flips: <strong>the
+  optimal repetition count mildly <em>increases</em> with model size</strong>.</p>
+
+  <p>The sweep covers four high-quality domains (code, math, Wikipedia,
+  medical) mixed into unique web data, with the unique domain fraction
+  &alpha; &isin; {1/40, 1/20, 1/10} of the token budget and repetition counts
+  1&ndash;7, across several model sizes at a constant TPP (&gt;100; absolute
+  sizes and TPP are not disclosed). Findings: the optimal count is
+  <strong>strongly negatively correlated with a domain's final validation
+  loss</strong> (low-loss domains tolerate and benefit from more repeats,
+  high-loss domains overfit earlier); it is <strong>largely insensitive to
+  the amount of unique data</strong>; and domain matters most, then model
+  size, with &alpha; barely moving it. A theoretical model frames this as a
+  trade-off between knowledge acquisition and noise fitting, and the paper
+  also shows the learning-rate schedule sets how much repetition a model
+  tolerates before degrading. Practical recipe: sweep repetition counts on a
+  small proxy model at the target TPP (any representative &alpha; works) and
+  transfer the result conservatively &mdash; a count that doesn't overfit the
+  proxy is unlikely to overfit the larger model.</p>
+tags:
+  - pretraining
+  - scaling-laws
+  - data-mixture
+  - training
+  - research
+paper:
+  arxiv: "2608.14071"
+  authors:
+    - Jingwei Li
+    - Xinran Gu
+    - Rui Dai
+    - Xintong Hao
+    - Chengyin Xu
+    - Yan Wu
+    - Shuran Zheng
+    - Jingzhao Zhang
+related:
+  - internal-data-repetition
+  - scaling-laws-data-mixtures
+  - olmix
