@@ -1,0 +1,50 @@
+name: JT-35B-Flash
+slug: jt-35b-flash
+lab: china-mobile
+type: model
+date: 2026-05-14
+sources:
+  - label: Jiutian (China Mobile)
+    url: https://jiutian.10086.cn
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/jt-35b-flash
+  - label: Ascend community (九天35B adaptation, Apr 2026)
+    url: https://hiascend.com/zh/activities/dynamic-news/20260427-1
+  - label: JT-Safe paper (JT-35B-Base pretraining, arXiv)
+    url: https://arxiv.org/abs/2510.17918
+description: >
+  <p><a href="/labs/china-mobile">China Mobile</a>'s "Jiutian 35B" general
+  model as a served API: a <strong>35B-parameter, non-reasoning,
+  text-only</strong> model with a <strong>256K-token context</strong>, released
+  May 14, 2026 and positioned by Artificial Analysis at launch as "a
+  proprietary 35B non-reasoning model with relatively high token efficiency
+  and competitive intelligence for its size" and "a significant upgrade" over
+  China Mobile's earlier models. It scored 36 on AA's Intelligence Index v4.1
+  at release; on the recalibrated <strong>v4.1.1 it stands at 29</strong>,
+  well above the ~8 median for non-reasoning models in its price band. Two
+  months later the larger <a href="/outputs/china-mobile/jt-4.1-flash">JT-4.1
+  Flash</a> (236B-A21B, 40) took over the top of the Flash line.</p>
+
+  <p>The 35B base is documented in China Mobile's JT-Safe paper (arXiv
+  2510.17918): JT-35B-Base was pretrained in-house on 6.2T tokens, then
+  continue-pretrained on 1.5T tokens of "Data with World Context" to improve
+  safety and factuality, and the model passed China's dual generative-AI
+  filing and A-level security certification. Ahead of its formal unveiling at
+  the 9th Digital China Construction Summit, China Mobile announced deep
+  inference adaptation of the 35B model on Huawei Ascend 910 (April 27, 2026)
+  and Moore Threads' MTT S5000 GPUs, with Biren also reporting pre-adaptation
+  &mdash; a domestic-silicon deployment story typical of the state-owned
+  telecom's AI line. Weights are not public; dense/MoE layout, training
+  hardware and API pricing are undisclosed (AA lists it at $0 pending a
+  published price).</p>
+tags:
+  - proprietary
+  - efficiency
+model:
+  parameters: 35B
+  context_window: 256000
+  intelligence_index: 29
+  intelligence_index_version: "AA v4.1.1"
+  license: Proprietary
+related:
+  - jt-4.1-flash

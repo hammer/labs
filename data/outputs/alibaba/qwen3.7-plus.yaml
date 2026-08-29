@@ -1,0 +1,54 @@
+name: Qwen3.7-Plus
+slug: qwen3.7-plus
+lab: alibaba
+type: model
+date: 2026-06-01
+sources:
+  - label: Alibaba Cloud Model Studio (model list)
+    url: https://www.alibabacloud.com/help/en/model-studio/models
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/qwen3-7-plus
+  - label: OpenRouter
+    url: https://openrouter.ai/qwen/qwen3.7-plus
+  - label: Coverage (MLQ)
+    url: https://mlq.ai/news/alibaba-launches-qwen37-plus-a-multimodal-agent-model-that-sees-screens-and-writes-code/
+description: >
+  <p>The cost tier of Alibaba's Qwen3.7 generation, sitting below the
+  <a href="/outputs/alibaba/qwen3.7">Qwen3.7-Max</a> flagship and succeeding
+  <a href="/outputs/alibaba/qwen3.6-plus">Qwen3.6-Plus</a>. Proprietary and
+  API-only (<code>qwen3.7-plus</code> on Alibaba Cloud Model Studio; also on
+  OpenRouter from June 3), it previewed anonymously on LM Arena as
+  "Qwen3.7-Plus-Preview" from mid-May before general availability on
+  <strong>June 1, 2026</strong>. Unlike the text-only Max it takes
+  <strong>text, image and video input</strong> &mdash; OpenRouter describes it
+  as "a cost-effective model in Alibaba's Qwen3.7 series... building on the
+  series' text capabilities with a comprehensive upgrade" to vision &mdash;
+  with a <strong>1M-token context</strong>, up to 131K output tokens, and
+  optional extended thinking (on by default) with a reported 256K-token
+  reasoning budget. List price is <strong>$0.40 / $1.60 per million
+  input / output tokens</strong>, roughly a sixth of Qwen3.7-Max on input.
+  Parameter count and architecture are undisclosed.</p>
+
+  <p>Press reports of Qwen's launch table position it as a GUI/computer-use
+  and long-context specialist: ScreenSpot Pro 79.0 (GPT-5.4 67.4), AndroidWorld
+  81.0 (Gemini 3.1 Pro 70.7), MRCR-v2 128K 91.7, GPQA Diamond 90.3, and
+  SWE-Bench Pro ~57.6 versus Qwen3.7-Max's 60.6 (grounding evals run with
+  thinking disabled on Qwen's harness). Artificial Analysis scores it
+  <strong>39 on the Intelligence Index v4.1.1</strong> (Qwen3.7-Max: 47;
+  Qwen3.6-Plus: 40) and notes it is slow for its price tier (~55 tokens/s,
+  ~2.2 s to first token) and verbose (~110M output tokens to run the index
+  versus a 29M median).</p>
+tags:
+  - multimodal
+  - reasoning
+  - agentic
+  - coding
+  - proprietary
+model:
+  context_window: 1000000
+  intelligence_index: 39
+  intelligence_index_version: "AA v4.1.1"
+  license: Proprietary
+related:
+  - qwen3.7
+  - qwen3.6-plus
