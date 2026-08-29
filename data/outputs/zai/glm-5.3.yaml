@@ -9,6 +9,8 @@ sources:
     url: https://z.ai/blog/glm-5.3
   - label: API Docs (Z.ai)
     url: https://docs.z.ai/guides/llm/glm-5.3
+  - label: HuggingFace
+    url: https://huggingface.co/zai-org/GLM-5.3
   - label: slime (GitHub)
     url: https://github.com/THUDM/slime
   - label: Artificial Analysis
@@ -36,9 +38,13 @@ description: >
   improvements: <strong>84.5%</strong> on CyberGym, 54.4% on ExploitBench
   (versus 24.4%), and 105/130 completed ExploitGym tasks under normalized
   two-/six-hour budgets (versus 29/39). The API requires thinking and offers
-  low, high, and max reasoning effort; Z.ai said at launch that model weights
-  would follow in two weeks, so no public checkpoint or license was available
-  on release day.</p>
+  low, high, and max reasoning effort. Open weights followed on 2026-08-28
+  (FP8 <code>GLM-5.3</code> and BF16 <code>GLM-5.3-BF16</code> on HuggingFace,
+  ~753B by safetensors count) under the custom <strong>GLM-5.3 License</strong>
+  &mdash; MIT-style permissions with one added condition: a licensee whose
+  affiliates run a "Model as a Service" business with more than US$10B in
+  aggregate revenue over any 12 months must pass a Z.AI security review before
+  commercial use.</p>
 
   <p>In a launch-day Interconnects post, <a href="/people/nathan-lambert">Nathan
   Lambert</a> reads GLM-5.3 &mdash; a text-only ~750B model, roughly a third the
@@ -61,6 +67,7 @@ model:
   architecture: moe
   base_model: glm-5.2
   context_window: 1000000
+  license: GLM-5.3 License
   intelligence_index: 60
   intelligence_index_version: "AA v4.1.1"
   benchmark_scores:

@@ -11,6 +11,16 @@ sources:
     url: https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b
+  - label: Qwen Cloud (Qwen3.8-Max API)
+    url: https://www.qwencloud.com/models/qwen3.8-max
+  - label: Artificial Analysis (Qwen3.8 Max API endpoint)
+    url: https://artificialanalysis.ai/models/qwen3-8-max
+  - label: HuggingFace (Qwen3.8-27B)
+    url: https://huggingface.co/Qwen/Qwen3.8-27B
+  - label: OpenRouter
+    url: https://openrouter.ai/qwen/qwen3.8-2.4t-a95b
+  - label: OpenRouter (Qwen3.8 Max)
+    url: https://openrouter.ai/qwen/qwen3.8-max
 description: >
   <p>Alibaba's first open-weight <strong>Qwen-Max-class</strong> release and its
   largest public model: a 2.4T-parameter MoE with 95B active per token. Its
@@ -22,6 +32,17 @@ description: >
   use the custom Qwen3.8-Max license: modification and redistribution are allowed,
   but large consumer products must display attribution and qualifying MaaS/work-
   assistant businesses must obtain a separate commercial license.</p>
+  <p><strong>Qwen3.8-Max is the same model.</strong> The API flagship announced
+  August 3, 2026 (GA successor to the July WAIC preview; blog title "Qwen3.8-Max:
+  A New Bar for Coding and Cowork") is, per the HF card, "the official version
+  based on Qwen3.8-2.4T-A95B" with vision input, a non-thinking mode, 1M context
+  by default and built-in tools, at $2/$6 per M tokens; the open weights followed
+  on August 12. Artificial Analysis scores the two endpoints separately (58 for
+  both on v4.1.1; the top-level score here anchors to the open-weight page). The
+  generation also includes the dense <strong>Qwen3.8-27B</strong> (August 14,
+  Apache 2.0, native vision, Qwen3.5-style GDN hybrid) and the
+  <a href="/outputs/alibaba/qwen3.8-flash-next">Qwen3.8-Flash-Next</a>
+  architecture preview.</p>
 tags: [frontier, moe, open-weight, reasoning, agentic, coding]
 model:
   architecture: moe
@@ -40,4 +61,14 @@ model:
       score: "67.7%"
     - benchmark: GPQA Diamond
       score: "92.6%"
-related: [qwen3.7, qwen3.5]
+  variants:
+    - name: Qwen3.8-2.4T-A95B
+      parameters: 2.4T
+      active_parameters: 95B
+      notes: "Open weights, released Aug 12, 2026 (BF16 and FP8 repos); text-only, 92 layers, 512 experts (10 routed + 1 shared), Qwen3.8-Max license. AA Intelligence Index v4.1.1 score 58 (file's top-level anchor)."
+    - name: Qwen3.8-Max
+      notes: "QwenCloud API version of the same 2.4T-A95B weights (announced Aug 3, 2026): adds vision input, non-thinking mode, 1M default context, built-in tools; $2/$6 per M tokens. AA scores it as a separate endpoint (qwen3-8-max): Intelligence Index v4.1.1 score 58."
+    - name: Qwen3.8-27B
+      parameters: 27B
+      notes: "Dense VLM sibling released Aug 14, 2026 under Apache 2.0: 64 layers (48 Gated DeltaNet + 16 gated attention), hidden 5120, 262K native / 1M extended context, image and video input. SWE-bench Pro 61.7, Terminal-Bench 2.1 73.0, GPQA Diamond 89.2. AA Intelligence Index v4.1.1 score 52 at xhigh effort (44 medium, 43 low, 35 non-reasoning)."
+related: [qwen3.7, qwen3.5, qwen3.8-flash-next]

@@ -19,8 +19,9 @@ description: >
   2.3B active). Optimized for edge and on-device deployment.</p>
 
   <p>LFM2-24B achieves 239 tok/s (#3 speed ranking on AA). Also includes vision-language
-  (LFM2.5-VL), speech, and pharmaceutical variants (with Insilico Medicine). AA
-  Intelligence Index: <strong>5</strong> (24B). Apache 2.0.</p>
+  (LFM2-VL), speech (LFM2-Audio), and pharmaceutical variants (with Insilico Medicine). AA
+  Intelligence Index: <strong>5</strong> (24B). Apache 2.0. Succeeded in 2026 by the
+  continued-pretraining <a href="/outputs/liquid-ai/lfm2.5">LFM2.5</a> series.</p>
 tags:
   - open-weight
   - on-device
@@ -50,29 +51,8 @@ model:
     - name: LFM2-24B-A2B
       parameters: 23.8B
       active_parameters: 2.3B
-    - name: LFM2.5-350M
-      parameters: 350M
-      notes: Released April 2026, trained on 28T tokens with RL, <500MB footprint
-    - name: LFM2.5-8B-A1B
-      parameters: 8.3B
-      active_parameters: 1.5B
-      notes: "Released May 28 2026; hybrid MoE on-device flagship, 128K context, reasoning-only with explicit CoT, scaled to 38T training tokens. IFEval +12.4, AIME25 +22.5 vs LFM2-8B-A1B. AA Intelligence Index 8 (AA v4.1) — above LFM2-24B-A2B's 5. GGUF/MLX/ONNX variants shipped."
-    - name: LFM2.5-1.2B-JP / Audio-1.5B-JP
-      parameters: 1.2B
-      notes: Japanese-language variants released June 4 2026 (text + audio).
-    - name: LFM2.5-VL-Extract (450M / 1.6B)
-      parameters: 1.6B
-      notes: Vision-language Extract variants for OCR / structured document extraction, released June 4 2026 (450M and 1.6B sizes, GGUF available).
-    - name: LFM2.5-230M
-      parameters: 230M
-      notes: "Released June 24 2026; Liquid's most compact model yet — hybrid 8 double-gated LIV-conv + 6 GQA blocks, 32K context, 19T tokens, distilled from LFM2.5-350M. IFEval 71.71. LFM Open License v1.0. ~30K downloads in first week."
-    - name: LFM2.5-Embedding-350M / ColBERT-350M
-      parameters: 350M
-      notes: "First retrieval members of the family (announced June 18 2026): bidirectional-mask 350M retrievers on LFM2.5-350M-Base, 11 languages; NanoBEIR NDCG@10 0.605 / 0.577."
-    - name: LFM2.5-2.6B
-      parameters: 2.69B
-      notes: "Released August 6 2026; pure-reasoning agent model with 22 double-gated short-convolution blocks + 8 GQA blocks, 128K context, 34T pretraining tokens, and four-stage agentic post-training inside popular harnesses. LFM Open License v1.0."
 paper:
   arxiv: "2511.23404"
 related:
   - liquid-time-constant-networks
+  - lfm2.5

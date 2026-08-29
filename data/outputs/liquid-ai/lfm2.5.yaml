@@ -1,0 +1,170 @@
+name: LFM2.5
+slug: lfm2.5
+lab: liquid-ai
+type: model
+date: 2026-01-05
+flagship: true
+sources:
+  - label: Announcement (LFM2.5 launch)
+    url: https://www.liquid.ai/blog/introducing-lfm2-5-the-next-generation-of-on-device-ai
+  - label: Blog (LFM2.5-8B-A1B)
+    url: https://www.liquid.ai/blog/lfm2-5-8b-a1b
+  - label: Blog (LFM2.5-2.6B)
+    url: https://www.liquid.ai/blog/lfm2-5-2-6b
+  - label: Blog (LFM2.5-1.2B-Thinking)
+    url: https://www.liquid.ai/blog/lfm2-5-1-2b-thinking-on-device-reasoning-under-1gb
+  - label: Blog (LFM2.5-VL-3B)
+    url: https://www.liquid.ai/blog/lfm2-5-vl-3b
+  - label: Blog (LFM2.5-DSpark)
+    url: https://www.liquid.ai/blog/lfm2.5-dspark
+  - label: HuggingFace (8B-A1B)
+    url: https://huggingface.co/LiquidAI/LFM2.5-8B-A1B
+  - label: HuggingFace (2.6B)
+    url: https://huggingface.co/LiquidAI/LFM2.5-2.6B
+  - label: HuggingFace (1.2B-Instruct)
+    url: https://huggingface.co/LiquidAI/LFM2.5-1.2B-Instruct
+  - label: HuggingFace Org
+    url: https://huggingface.co/LiquidAI
+  - label: Docs
+    url: https://docs.liquid.ai/lfm/getting-started/welcome
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/lfm2-5-8b-a1b
+  - label: AA (2.6B)
+    url: https://artificialanalysis.ai/models/lfm2-5-2-6b
+  - label: AA (1.2B-Instruct)
+    url: https://artificialanalysis.ai/models/lfm2-5-1-2b-instruct
+  - label: OpenRouter (2.6B)
+    url: https://openrouter.ai/liquid/lfm-2.5-2.6b
+description: >
+  <p>Liquid AI's 2026 on-device generation, built on the <a
+  href="/outputs/liquid-ai/lfm2">LFM2</a> hybrid backbone (double-gated short
+  convolution blocks interleaved with grouped-query attention) and rolled out
+  as a series of releases from January to August 2026. LFM2.5 is a
+  <strong>continued-pretraining + RL refresh of the LFM2 checkpoints</strong>
+  rather than a new pretrain: the 1.2B and 350M extend LFM2's 10T-token budget
+  to 28T, the 8B-A1B MoE goes from 12T to 38T, and the 2.6B to 34T; the
+  vocabulary was doubled to 128K by extending the existing BPE merges in place
+  ("rather than retraining the model from scratch") followed by embedding-only
+  and then full-model continued pretraining. Every text release then gets
+  large-scale multi-stage RL. Weights ship under the
+  <strong>LFM Open License v1.0</strong> (Liquid's Apache-derived open-weight
+  license), with GGUF / MLX / ONNX exports and day-one llama.cpp, vLLM, SGLang
+  and LEAP support.</p>
+
+  <p>Members: <strong>LFM2.5-1.2B</strong> Base / Instruct / Thinking / JP
+  (Jan 2026, 32K context, 65K vocab), <strong>LFM2.5-VL-1.6B</strong> and
+  <strong>LFM2.5-Audio-1.5B</strong> (Jan; native speech I/O with an 8&times;
+  faster LFM-based audio detokenizer), <strong>LFM2.5-350M</strong> (Mar),
+  <strong>LFM2.5-VL-450M</strong> (Apr), <strong>LFM2.5-8B-A1B</strong> (May;
+  8.3B total / 1.5B active, 32 experts &times; top-4, 18 conv + 6 GQA layers,
+  128K context, reasoning-only with explicit CoT, plus an avg@k abstention
+  reward that cut the AA-Omniscience hallucination penalty from &minus;78 to
+  &minus;25), <strong>LFM2.5-230M</strong> (Jun; 19T tokens, smallest LFM),
+  Embedding/ColBERT-350M retrievers and Encoder-230M/350M bidirectional
+  encoders (Jun&ndash;Jul), <strong>LFM2.5-2.6B</strong> (Aug; 22 conv + 8 GQA
+  layers, 128K context, four-stage agentic post-training &mdash; SFT, teacher
+  specialization, multi-domain on-policy distillation, agentic GRPO inside
+  Hermes Agent / OpenClaw harnesses via verl + SGLang), <strong>LFM2.5-VL-3B</strong>
+  (Aug; 2.6B backbone + SigLIP2 NaFlex 400M), and <strong>DSpark</strong>
+  speculative-decoding drafters (Aug; 296&ndash;328M, up to 3.2&times; decode
+  speedup, upstreamed to llama.cpp and SGLang).</p>
+
+  <p>LFM2.5-8B-A1B: IFEval 91.84, IFBench 56.47, Multi-IF 79.93, AIME25 42.53,
+  BFCL v3 64.36 / v4 48.50, &tau;&sup2;-Telecom 88.07 &mdash; +12 to +74 points
+  over LFM2-8B-A1B. LFM2.5-2.6B: AIME25 51.87, LiveCodeBench v6 59.41, IFBench
+  59.17, BFCL v4 56.88, ToolSandbox 77.83, beating Gemma-4-E4B and matching
+  Qwen3.5-4B at 220 tok/s on an M5 Max. AA Intelligence Index v4.1.1:
+  <strong>8</strong> (8B-A1B), 11 (2.6B), 2 (1.2B-Instruct / Thinking) &mdash;
+  all above LFM2-24B-A2B's 5.</p>
+tags:
+  - open-weight
+  - on-device
+  - moe
+  - agentic
+  - reasoning
+model:
+  architecture: moe
+  parameters: 8.3B
+  active_parameters: 1.5B
+  num_experts: 32
+  top_k: 4
+  context_window: 128000
+  intelligence_index: 8
+  intelligence_index_version: "AA v4.1.1"
+  base_model: lfm2
+  training_tokens: 38T
+  license: LFM Open License v1.0
+  variants:
+    - name: LFM2.5-1.2B-Instruct
+      parameters: 1.17B
+      notes: "Jan 5 2026 launch model; 16 layers (10 conv + 6 GQA), 28T tokens (extended from LFM2-1.2B's 10T), 32K context, 65K vocab. GPQA 38.89, IFEval 86.23, IFBench 47.33, BFCLv3 49.12. AA Intelligence Index v4.1.1 score 2. Base checkpoint LFM2.5-1.2B-Base also released."
+    - name: LFM2.5-1.2B-Thinking
+      parameters: 1.17B
+      notes: "Jan 20 2026; reasoning variant with explicit thinking traces, <900 MB on a phone. GPQA Diamond 37.86, MATH-500 87.96, AIME25 31.73, IFEval 88.42. AA Intelligence Index v4.1.1 score 2."
+    - name: LFM2.5-1.2B-JP
+      parameters: 1.17B
+      notes: "Japanese-optimized chat model (Jan 2026; refreshed as LFM2.5-1.2B-JP-202606 in June). JMMLU 50.7, M-IFEval-ja 58.1."
+    - name: LFM2.5-VL-1.6B
+      parameters: 1.6B
+      notes: "Jan 2026 vision-language refresh on the LFM2.5-1.2B backbone; multi-image and 7-language vision understanding. MMStar 50.67, MM-IFEval 52.29. VL-1.6B-Extract / VL-450M-Extract OCR variants followed in June."
+    - name: LFM2.5-Audio-1.5B
+      parameters: 1.5B
+      notes: "Native speech+text in/out; new LFM-based INT4 QAT audio detokenizer 8× faster than LFM2-Audio's Mimi on mobile CPU. Japanese variant (Audio-1.5B-JP) in June."
+    - name: LFM2.5-350M
+      parameters: 350M
+      notes: "Mar 31 2026; LFM2-350M continued from 10T to 28T tokens plus large-scale RL; tool-use / extraction focus. Base of the Embedding-350M and ColBERT-350M retrievers (Jun 18) and Encoder-350M (Jul 28)."
+    - name: LFM2.5-VL-450M
+      parameters: 450M
+      notes: "Apr 8 2026; 28T-token VL refresh adding grounding/bounding boxes (RefCOCO-M 81.28), function calling and 8-language image understanding."
+    - name: LFM2.5-8B-A1B
+      parameters: 8.3B
+      active_parameters: 1.5B
+      notes: "May 28 2026; hybrid MoE (24 layers: 18 double-gated conv + 6 GQA, 32 experts, top-4), 38T tokens (from LFM2-8B-A1B's 12T), 128K context via 2T + 400B mid-training stages, 128K vocab, reasoning-only. AA Intelligence Index v4.1.1 score 8 (file's top-level anchor). DSpark drafter (328M) gives ~2.5× decode."
+    - name: LFM2.5-230M
+      parameters: 230M
+      notes: "Jun 25 2026; smallest LFM (14 layers: 8 conv + 6 GQA), 19T tokens with 32K context extension, SFT distilled from LFM2.5-350M + DPO + multi-domain RL. 213 tok/s on a Galaxy S25 Ultra."
+    - name: LFM2.5-Embedding-350M / ColBERT-350M
+      parameters: 350M
+      notes: "Jun 18 2026; first bidirectional LFMs (non-causal attention + convs) on LFM2.5-350M-Base, 11-language retrieval."
+    - name: LFM2.5-Encoder-230M / 350M
+      parameters: 350M
+      notes: "Jul 28 2026; masked-LM bidirectional encoders (8K context) for classification/token tasks, with released task heads (PII detector, prompt router, spellchecker, policy linter, diffusion)."
+    - name: LFM2.5-2.6B
+      parameters: 2.69B
+      notes: "Aug 4 2026; 30 layers (22 conv + 8 GQA), 34T tokens, 128K context and vocab, pure reasoning model post-trained for agents (SFT → teacher specialization → MOPD → agentic GRPO in Hermes Agent / OpenClaw). AA Intelligence Index v4.1.1 score 11 — highest in family. Base checkpoint released; free on OpenRouter."
+    - name: LFM2.5-VL-3B
+      parameters: 3B
+      notes: "Aug 12 2026; LFM2.5-2.6B backbone + SigLIP2 NaFlex 400M encoder, non-reasoning. ScreenSpot-v2 80.7, RefCOCO P@1 87.9, ToolSandbox 59.5, BLINK 61.5; 228 tok/s on M5 Max under 3.3 GB."
+    - name: LFM2.5-DSpark drafters
+      parameters: 328M
+      notes: "Aug 20 2026; DSpark speculative-decoding draft models (296M for 1.2B-Instruct, 328M for 2.6B and 8B-A1B), up to 3.18× throughput on H100 and 2.87× on-device with identical outputs."
+  benchmark_scores:
+    - benchmark: IFEval
+      score: "91.84"
+      mode: 8B-A1B
+    - benchmark: IFBench
+      score: "56.47"
+      mode: 8B-A1B
+    - benchmark: Multi-IF
+      score: "79.93"
+      mode: 8B-A1B
+    - benchmark: MATH-500
+      score: "88.76"
+      mode: 8B-A1B
+    - benchmark: AIME25
+      score: "42.53"
+      mode: 8B-A1B
+    - benchmark: BFCL v3
+      score: "64.36"
+      mode: 8B-A1B
+    - benchmark: BFCL v4
+      score: "48.50"
+      mode: 8B-A1B
+    - benchmark: τ²-Bench Telecom
+      score: "88.07"
+      mode: 8B-A1B
+    - benchmark: AA-Omniscience Index
+      score: "-24.70"
+      mode: 8B-A1B
+related:
+  - lfm2

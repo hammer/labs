@@ -1,0 +1,127 @@
+name: Hy4 preview
+slug: hy4-preview
+lab: tencent
+type: model
+date: 2026-08-28
+flagship: true
+sources:
+  - label: Announcement (Tencent)
+    url: https://www.tencent.com/tencent-releases-and-open-sources-tencent-hy4-preview/
+  - label: HuggingFace
+    url: https://huggingface.co/tencent/Hy4-preview
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/Hy4-preview
+  - label: OpenRouter
+    url: https://openrouter.ai/tencent/hy4-preview
+description: >
+  <p>Tencent Hy Team's next-generation open-weight flagship, shipped
+  preview-first under eight weeks after <a href="/outputs/tencent/hy3">Hy3</a>
+  went GA, and the second generation built under Chief AI Scientist
+  <a href="/people/yao-shunyu">Yao Shunyu</a>. <strong>770B total / 49B active
+  MoE</strong> (the safetensors checkpoint totals ~780B, which also counts a
+  native 10B-parameter / 0.7B-active MTP layer for speculative decoding):
+  78 layers, hidden size 6144, a dense FFN in layer 1 and 77 MoE layers with
+  <strong>256 routed + 1 shared expert, top-8 routing</strong>, vocab 120,832.
+  It is a ground-up architecture change from Hy3 (295B/21B, 192 experts, 80
+  layers, GQA): attention is <strong>Gated DeepSeek Sparse Attention</strong>
+  over MLA (query/KV compression ranks 2048/512, 64 heads) with a 32-head
+  indexer selecting the top-2048 tokens per query, reusing indices across
+  layers via <a href="/outputs/zai/indexshare">IndexCache</a> (one "full"
+  indexer per four layers, the rest shared, per <code>config.json</code>),
+  and the residual path uses <strong>iHC (identity Hyper-Connections)</strong>
+  with 4 residual streams (cf. DeepSeek's <a href="/outputs/deepseek/mhc">mHC</a>).
+  Context is <strong>1M tokens</strong> (<code>max_position_embeddings</code>
+  1,048,576), up from Hy3's 256K. Tencent says it "scaled Hy4 preview on
+  three fronts: model size, context length, and training data"; the training
+  token count, hardware and duration are undisclosed. The open preview is
+  text-only (HF pipeline <code>text-generation</code>, OpenRouter text&rarr;text)
+  &mdash; no vision or audio variant has shipped. <strong>Apache-2.0</strong>,
+  BF16 and FP8 checkpoints, with day-0 vLLM and SGLang images.</p>
+
+  <p>Model-card appendix (highest reasoning setting; most agentic evals run by
+  Tencent through the Claude Code harness), Hy4 preview vs Hy3: SWE-bench
+  Multilingual <strong>82.9</strong> (75.8), SWE-bench Pro <strong>65.7</strong>
+  (57.9), Terminal-Bench 2.1 <strong>85.4</strong> (70.8), DeepSWE 64.3 (28.0),
+  CyberGym 78.4 (51.8), Toolathlon-Verified 74.1 (56.2), MCP-Atlas 83.7 (75.0),
+  GDPval-AA V2 Elo 1678 (1213), GPQA Diamond 92.3 (90.9), HLE no-tools 43.4
+  (34.4), MathArena Apex 2025 74.2 (38.7), BioMysteryBench 71.3 (54.9), CritPt
+  16.9 (4.9). That puts it at rough parity with
+  <a href="/outputs/zai/glm-5.3">GLM 5.3</a>,
+  <a href="/outputs/moonshot-ai/kimi-k3">Kimi K3</a> and
+  <a href="/outputs/deepseek/deepseek-v4-pro">DeepSeek V4 Pro</a> on most rows,
+  while Claude Opus 5 still leads clearly on SWE-bench Pro (79.2), SWE-Marathon
+  (50.0 vs 31.9) and ProgramBench (39.5 vs 17.5). In a blind internal
+  side-by-side, 163 Tencent experts rated it 2.99/4 on 203 engineering tasks
+  vs GLM 5.3's 2.92 and Kimi K3's 2.94. Tencent also says the model helped
+  optimize its own training methods, data strategy, evals and low-level
+  operators and lifted its own inference throughput 31.8%, calling this an
+  "early-stage recursive self-improvement loop". Known limitations: overlong
+  reasoning and over-verification. API pricing is $0.834/$2.501 per M
+  input/output tokens ($0.042 cache hits) via Tencent Cloud TokenHub and
+  OpenRouter, free for two weeks in WorkBuddy and CodeBuddy; "the next batch
+  of models in the Hy4 series is expected to roll out soon", following the Hy3
+  preview&rarr;GA pattern. Not yet scored on the Artificial Analysis
+  Intelligence Index as of 2026-08-29.</p>
+tags:
+  - moe
+  - open-weight
+  - frontier
+  - agentic
+  - coding
+  - reasoning
+  - long-context
+model:
+  architecture: moe
+  parameters: 770B
+  active_parameters: 49B
+  num_experts: 256
+  top_k: 8
+  context_window: 1048576
+  license: Apache 2.0
+  benchmark_scores:
+    - benchmark: SWE-bench Multilingual
+      score: "82.9"
+      mode: swe-agent scaffold
+    - benchmark: SWE-bench Pro
+      score: "65.7"
+      mode: swe-agent scaffold
+    - benchmark: Terminal-Bench 2.1
+      score: "85.4"
+      mode: Claude Code harness, 500 turns
+    - benchmark: DeepSWE
+      score: "64.3"
+      mode: mini-swe-agent
+    - benchmark: CyberGym
+      score: "78.4"
+    - benchmark: Toolathlon-Verified
+      score: "74.1"
+      mode: 3-run pass@1
+    - benchmark: MCP-Atlas (public)
+      score: "83.7"
+    - benchmark: GDPval-AA V2
+      score: "1678 Elo"
+      mode: official
+    - benchmark: GPQA Diamond
+      score: "92.3"
+    - benchmark: Humanity's Last Exam
+      score: "43.4"
+      mode: text-only, no tools
+    - benchmark: MathArena Apex 2025
+      score: "74.2"
+    - benchmark: BioMysteryBench
+      score: "71.3"
+      mode: Claude Code harness
+    - benchmark: CritPt
+      score: "16.9"
+      mode: official
+  variants:
+    - name: Hy4-preview
+      parameters: 770B
+      active_parameters: 49B
+      notes: "BF16 instruct checkpoint (~780B in safetensors incl. 10B MTP layer)"
+    - name: Hy4-preview-FP8
+      parameters: 770B
+      active_parameters: 49B
+      notes: "FP8-quantized instruct checkpoint"
+related:
+  - hy3

@@ -83,8 +83,12 @@ outputs:
         url: https://docs.z.ai
       - label: OpenRouter
         url: https://openrouter.ai/z-ai/glm-5-turbo
+      - label: Artificial Analysis
+        url: https://artificialanalysis.ai/models/glm-5-turbo
     description: >
       Specialized "fast" version optimized for the OpenClaw agent ecosystem,
       focusing on continuous task execution and tool reliability.
     model:
       architecture: moe
+      intelligence_index: 39
+      intelligence_index_version: "AA v4.1.1"

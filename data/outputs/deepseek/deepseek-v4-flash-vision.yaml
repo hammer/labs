@@ -1,0 +1,57 @@
+name: DeepSeek-V4-Flash-Vision-Exp
+slug: deepseek-v4-flash-vision
+lab: deepseek
+type: model
+date: 2026-08-21
+sources:
+  - label: Official Announcement
+    url: https://api-docs.deepseek.com/news/news260821
+  - label: API Docs (Vision guide)
+    url: https://api-docs.deepseek.com/guides/vision
+  - label: API Docs (Models & Pricing)
+    url: https://api-docs.deepseek.com/quick_start/pricing
+  - label: OpenRouter
+    url: https://openrouter.ai/deepseek/deepseek-v4-flash-vision-exp
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/deepseek-v4-flash-vision
+description: >
+  <p>The <strong>V4 family's first image-input model</strong>: an experimental,
+  API-only multimodal build of <a
+  href="/outputs/deepseek/deepseek-v4-flash">DeepSeek-V4-Flash-0731</a> that
+  accepts mixed text + image input (JPEG, PNG, GIF, WebP; up to 600 images per
+  request). DeepSeek says it "matches DeepSeek-V4-Flash on text
+  capabilities&mdash;including agents, reasoning, and world knowledge" and makes
+  "a major leap over V4-Flash" on multimodal agent benchmarks, "bringing
+  multimodal agent performance close to Opus-4.8" (no scores published). Served
+  as <code>deepseek-v4-flash-vision-exp</code> with a 1M-token context, 384K
+  max output, thinking mode on by default with low/high/max
+  <code>reasoning_effort</code>, and Chat Completions, Anthropic Messages and
+  Responses API support. No weights have been released (nothing on HuggingFace
+  as of 2026-08-29).</p>
+
+  <p>Images are auto-resized to roughly 800&times;800 pixels and tokenized at
+  up to <strong>384 tokens per image</strong>, billed at V4-Flash text rates
+  ($0.22/M input, $0.66/M output off-peak). Launched alongside a free Files API
+  (upload an image once, reference it by <code>file_id</code>) and DeepSeek
+  Harness 0.1.1, which added the model to its DeepSeek adapter the same day.
+  Artificial Analysis lists it as a proprietary model and scores its max-effort
+  reasoning mode within a point of the text-only V4-Flash-0731 (AA v4.1.1).</p>
+tags:
+  - multimodal
+  - vision
+  - reasoning
+  - agentic
+  - proprietary
+model:
+  # Vision-enabled build of V4-Flash-0731 (DeepSeek's announcement frames it
+  # against V4-Flash; OpenRouter: "an experimental vision-enabled version of
+  # DeepSeek V4 Flash 0731"; AA files it under the V4 Flash 0731 family).
+  # Architecture/params are not restated by DeepSeek for this build, so they
+  # are left unset here — the base entry carries the 284B-A13B MoE facts.
+  base_model: deepseek-v4-flash
+  context_window: 1048576
+  intelligence_index: 51
+  intelligence_index_version: "AA v4.1.1"
+related:
+  - deepseek-v4-flash
+  - deepseek-v4

@@ -31,13 +31,21 @@ outputs:
         url: https://kwaipilot.github.io/KAT-Coder/
       - label: Paper (arXiv)
         url: https://arxiv.org/abs/2510.18779
+      - label: Artificial Analysis (KAT-Coder-Pro V1)
+        url: https://artificialanalysis.ai/models/kat-coder-pro-v1
     description: >
       72B active parameter MoE coding model using the "AutoThink" paradigm.
       Designed for agentic coding with parallel tool calls to reduce interaction
-      latency.
+      latency. Served via the StreamLake API as KAT-Coder-Pro V1.
     model:
       architecture: moe
       active_parameters: 72B
+      # Same provenance as the V2 sibling below: Kwaipilot post-trains external
+      # (Qwen-family) bases and the open V1 sibling KAT-Dev-72B-Exp is
+      # architecturally Qwen2.5-72B; base for the proprietary checkpoint undisclosed.
+      pretrained_from_scratch: false
+      intelligence_index: 29
+      intelligence_index_version: "AA v4.1.1"
   - name: KAT-Coder-Pro V2
     type: model
     date: 2026-03-27

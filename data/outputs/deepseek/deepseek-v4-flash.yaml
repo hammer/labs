@@ -37,3 +37,4 @@ model:
 related:
   - deepseek-v4
   - deepseek-v4-pro
+  - deepseek-v4-flash-vision

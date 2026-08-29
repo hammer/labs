@@ -1,0 +1,140 @@
+name: Granite 4.2
+slug: granite-4.2
+lab: ibm
+type: model
+date: 2026-08-25
+flagship: true
+sources:
+  - label: IBM Research Blog
+    url: https://research.ibm.com/blog/introducing-granite-4-2
+  - label: HuggingFace Blog (How They're Built)
+    url: https://huggingface.co/blog/ibm-granite/granite-4-2
+  - label: GitHub
+    url: https://github.com/ibm-granite/granite-4.2-language-models
+  - label: IBM Granite Docs
+    url: https://www.ibm.com/granite/docs/models/granite4-2
+  - label: HuggingFace Collection
+    url: https://huggingface.co/collections/ibm-granite/granite-42-language-models
+  - label: HuggingFace (30B)
+    url: https://huggingface.co/ibm-granite/granite-4.2-30b
+  - label: HuggingFace (8B)
+    url: https://huggingface.co/ibm-granite/granite-4.2-8b
+  - label: HuggingFace (3B)
+    url: https://huggingface.co/ibm-granite/granite-4.2-3b
+  - label: HuggingFace (30B GGUF)
+    url: https://huggingface.co/ibm-granite/granite-4.2-30b-GGUF
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/granite-4-2-30b
+  - label: AA (8B)
+    url: https://artificialanalysis.ai/models/granite-4-2-8b
+  - label: AA (3B)
+    url: https://artificialanalysis.ai/models/granite-4-2-3b
+description: >
+  <p>IBM's first family of native <strong>reasoning</strong> Granite models:
+  dense decoder-only Transformers in <strong>3B, 8B and 30B</strong>, each with
+  a built-in <code>&lt;think&gt;</code> chain-of-thought that can be toggled per
+  request (full thinking, non-thinking, or a "low-effort" short budget) plus
+  reasoning-augmented native tool calling. All three are
+  <strong>post-trained on the Granite 4.1 base checkpoints</strong> (the model
+  cards declare <code>base_model: granite-4.1-{3b,8b,30b}-base</code>; the 4.1
+  bases were pretrained on ~15T tokens with a five-phase curriculum) rather
+  than being a fresh pretrain. Same GQA/RoPE/SwiGLU/RMSNorm shapes as 4.1
+  (30B: 64 layers, hidden 4096, MLP 32768, 32 heads / 8 KV heads, 100K vocab),
+  128K native context with 512K long-context extension. <strong>Apache
+  2.0</strong>.</p>
+
+  <p>The new work is the post-training pipeline. SFT uses ~7.2M samples
+  (~100B tokens), 31.6% agentic &mdash; mostly software-engineering
+  trajectories collected through OpenHands, OpenCode, Terminus-2, SWE-agent,
+  Codex, Gemini CLI, Goose and other harnesses &mdash; with the 30B getting a
+  second agentic-coding SFT phase. Then a staged, asynchronous
+  <strong>GRPO</strong> curriculum on NeMo RL / NeMo Gym: RLVR and skill
+  boosters for all sizes; for 8B and 30B an <em>agentic RL</em> block that runs
+  SWE (OpenHands, hidden-test rewards) &rarr; terminal (Harbor/Terminus-2, up to
+  64 environment turns) &rarr; deep-research search agents in real sandboxes;
+  and a closing RLHF phase. IBM also cites 1T tokens of CodeAlchemy synthetic
+  code and a mid-training step. Trained on a CoreWeave GB200 NVL72 cluster.
+  FP8, NVFP4, MXFP4 (LLM Compressor) and GGUF quants ship for every size.</p>
+
+  <p>30B results: SWE-bench Verified 57.0, SWE-bench Pro 33.3, Terminal-Bench
+  2.1 29.2, &tau;&sup3;-bench 62.0, BFCL v4 61.4, AIME25 89.2, GPQA 66.4,
+  LiveCodeBench v6 75.8, MMLU-Pro 77.6, RULER-128K 81.4. AA Intelligence Index
+  v4.1.1: <strong>24</strong> (30B), 20 (8B), 14 (3B) &mdash; versus 9 / 6 / 5
+  for the non-reasoning Granite 4.1 instruct models on the same bases. Released
+  alongside Granite Speech 5.0 Turbo CTC (470M, no LLM backbone, ~12,600 RTFx
+  on one H200).</p>
+tags:
+  - open-weight
+  - enterprise
+  - reasoning
+  - agentic
+model:
+  architecture: dense
+  parameters: 30B
+  context_window: 131072
+  intelligence_index: 24
+  intelligence_index_version: "AA v4.1.1"
+  base_model: granite-4.1
+  training_hardware: "NVIDIA GB200 NVL72 cluster (CoreWeave)"
+  optimizer: "Asynchronous GRPO (NeMo RL)"
+  license: Apache 2.0
+  variants:
+    - name: Granite 4.2 30B
+      parameters: 30B
+      notes: "Post-trained on Granite-4.1-30B-Base; full agentic-RL ladder plus a second agentic-coding SFT phase. AA Intelligence Index v4.1.1 score 24 — highest in family."
+    - name: Granite 4.2 8B
+      parameters: 8B
+      notes: "Post-trained on Granite-4.1-8B-Base; full agentic-RL ladder (SWE → terminal → search). AA Intelligence Index v4.1.1 score 20."
+    - name: Granite 4.2 3B
+      parameters: 3B
+      notes: "Post-trained on Granite-4.1-3B-Base; foundational RL + RLHF only (no agentic-RL block). AA Intelligence Index v4.1.1 score 14."
+    - name: Granite 4.2 FP8 / NVFP4 / MXFP4 / GGUF
+      notes: "vLLM quants for all three sizes (FP8 dynamic per-channel; FP4 via GPTQ on 2K SFT samples) and llama.cpp GGUF Q2_K–Q8_0."
+  benchmark_scores:
+    - benchmark: SWE-bench Verified
+      score: "57.0"
+      mode: 30B
+    - benchmark: SWE-bench Pro
+      score: "33.29"
+      mode: 30B
+    - benchmark: SWE-bench Multilingual
+      score: "41.89"
+      mode: 30B
+    - benchmark: Terminal-Bench 2.1
+      score: "29.24"
+      mode: 30B
+    - benchmark: τ³-bench
+      score: "62.00"
+      mode: avg (30B)
+    - benchmark: BFCL v4
+      score: "61.39"
+      mode: 30B
+    - benchmark: AIME25
+      score: "89.17"
+      mode: 30B
+    - benchmark: HMMT Feb25
+      score: "89.17"
+      mode: 30B
+    - benchmark: GPQA
+      score: "66.41"
+      mode: 30B
+    - benchmark: LiveCodeBench v6
+      score: "75.77"
+      mode: 30B
+    - benchmark: SciCode
+      score: "38.76"
+      mode: 30B
+    - benchmark: MMLU-Pro
+      score: "77.60"
+      mode: 30B
+    - benchmark: Arena-Hard-V2
+      score: "67.93"
+      mode: 30B
+    - benchmark: IFBench
+      score: "77.17"
+      mode: prompt (30B)
+    - benchmark: RULER 128K
+      score: "81.38"
+      mode: 30B
+related:
+  - granite-4.1

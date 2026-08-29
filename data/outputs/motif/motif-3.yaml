@@ -2,27 +2,58 @@ name: Motif 3
 slug: motif-3
 lab: motif
 type: model
-date: 2026-07-14
+date: 2026-08-12
 flagship: true
 sources:
-  - label: HuggingFace (Motif-3-Beta)
+  - label: HuggingFace (Motif-3)
+    url: https://huggingface.co/Motif-Technologies/Motif-3
+  - label: HuggingFace (Motif-3-Base)
+    url: https://huggingface.co/Motif-Technologies/Motif-3-Base
+  - label: HuggingFace (Motif-3-Beta, July 2026 preview checkpoint)
     url: https://huggingface.co/Motif-Technologies/Motif-3-Beta
+  - label: Technical report (arXiv)
+    url: https://arxiv.org/abs/2608.09119
+  - label: GitHub (motif3-training-example)
+    url: https://github.com/MotifTechnologies/motif3-training-example
   - label: Artificial Analysis
-    url: https://artificialanalysis.ai/models/motif-0714
+    url: https://artificialanalysis.ai/models/motif-3
 description: >
   <p><a href="/labs/motif">Motif Technologies</a>' frontier Korean/English
-  foundation model, released (as a Beta / intermediate checkpoint) in July 2026.
-  A <strong>~314B-total / ~13B-active sparse MoE</strong> with a
-  <strong>256K-token context</strong>. Its headline is the
-  <strong>AA Intelligence Index v4.1.1: 45</strong> &mdash; the
-  <strong>#1 Korean model</strong> on the index and, for a startup's first
-  frontier attempt, competitive with much larger labs' open models.</p>
+  foundation model: a <strong>314B-total / 13.2B-active sparse MoE</strong>
+  (384 routed experts, top-8, plus 1 shared expert; 53 layers, 2 dense + 51
+  MoE; 220K vocabulary) with a <strong>native 256K context</strong>, pretrained
+  from scratch on <strong>~12.5T tokens</strong> (knowledge cutoff March 2026;
+  ~70% of the corpus is NVIDIA's public Nemotron pretraining releases, the rest
+  in-house web, STEM, code, synthetic, Korean, legal and financial data). The
+  architecture is fully in-house: <strong>Grouped Differential Latent Attention
+  (GDLA)</strong> (grouped differential attention over an MLA-style compressed
+  KV latent, with a query-dependent output gate), <strong>Expert-Specific
+  PolyNorm</strong> activations, modified manifold-constrained hyper-connections
+  (mHC, 4 residual streams), and a 1-layer <strong>multi-token-prediction
+  head</strong> used for self-speculative decoding. Trained on NVIDIA B200s with
+  the Muon optimizer (QK-Clip), selective MXFP8 expert compute and window-aware
+  context parallelism. Post-training combines general SFT, six RL-trained
+  specialist teachers plus a software-engineering teacher, and
+  <strong>Multi-teacher On-Policy Distillation (MOPD)</strong> into one unified
+  reasoning model.</p>
 
-  <p>Weights are published on Hugging Face under a
-  <strong>non-commercial research-only</strong> license (personal, educational,
-  and non-commercial research permitted; commercial use requires written
-  permission). From a lab spun out of Moreh, trained from scratch on its
-  GPU-optimization stack.</p>
+  <p><strong>Timeline.</strong> Motif first surfaced as
+  <strong>Motif-3-Beta</strong>, an intermediate checkpoint released 14 July
+  2026 under a non-commercial research-only license (AA lists it separately as
+  "Motif 3 (Beta)"; it scored 44 then 45 on AA Intelligence Index v4.1/v4.1.1).
+  The <strong>final release</strong> followed in August 2026: the post-trained
+  <strong>Motif-3</strong> and pretrained <strong>Motif-3-Base</strong>
+  checkpoints under the <strong>MIT license</strong> (commercial use permitted,
+  no access gate), the "Motif 3: Technical Report" (arXiv 2608.09119, 10 Aug),
+  and an <strong>NVFP4</strong>-quantized build for Blackwell GPUs. AA lists the
+  final model at <strong>AA Intelligence Index v4.1.1: 47</strong> &mdash; the
+  <strong>#1 Korean model</strong> on the index &mdash; with particular strength
+  on agentic tool use (&tau;&sup3;-Banking 35.3, Terminal-Bench 2.1 74.9,
+  ITBench 51.5) and calibrated abstention on AA-Omniscience (71.6
+  non-hallucination). Motif's torchtitan-based training framework
+  (motif3-training-example) and a vLLM fork with Motif-3 support are open on
+  GitHub. From a lab spun out of Moreh, trained on its GPU-optimization
+  stack.</p>
 tags:
   - open-weight
   - moe
@@ -31,12 +62,87 @@ tags:
 model:
   architecture: moe
   parameters: 314B
-  active_parameters: 13B
+  active_parameters: 13.2B
   context_window: 262144
-  intelligence_index: 45
+  training_tokens: 12.5T
+  num_experts: 384
+  top_k: 8
+  intelligence_index: 47
   intelligence_index_version: "AA v4.1.1"
   intelligence_index_history:
+    - score: 45
+      version: "AA v4.1.1"
+      until: "2026-08-29"
     - score: 44
       version: "AA v4.1"
       until: "2026-08-09"
-  license: Non-commercial research
+  training_hardware: NVIDIA B200
+  optimizer: Muon (QK-Clip; AdamW for embeddings/output/vector params)
+  license: MIT
+  variants:
+    - name: Motif-3
+      parameters: 314B
+      active_parameters: 13.2B
+      notes: Final post-trained release (Aug 2026), MIT license, ships the MTP head for self-speculative decoding
+    - name: Motif-3-Base
+      parameters: 314B
+      active_parameters: 13.2B
+      notes: Pretrained base checkpoint (no SFT/RL, no chat template, MTP head not shipped), MIT license
+    - name: Motif-3-NVFP4
+      parameters: 314B
+      active_parameters: 13.2B
+      notes: NVFP4 weight-quantized build of Motif-3 for NVIDIA Blackwell; within ~0.15 pts of the Block-FP8 release on Motif's suite
+    - name: Motif-3-Beta
+      parameters: 314B
+      active_parameters: 13B
+      notes: July 2026 intermediate checkpoint, non-commercial research-only license; AA slug motif-0714 ("Motif 3 (Beta)"), AAII v4.1.1 45
+  benchmark_scores:
+    - benchmark: GDPval-AA v2
+      score: "38.7"
+    - benchmark: τ²-Bench Telecom
+      score: "94.7"
+    - benchmark: τ³-Banking
+      score: "35.3"
+    - benchmark: ITBench
+      score: "51.5"
+      mode: public subset
+    - benchmark: SWE-bench Verified
+      score: "76.2"
+    - benchmark: Terminal-Bench 2.1
+      score: "74.9"
+    - benchmark: SciCode
+      score: "40.6"
+    - benchmark: IMOAnswerBench
+      score: "83.2"
+    - benchmark: Apex-Shortlist
+      score: "75.5"
+    - benchmark: GPQA Diamond
+      score: "83.4"
+    - benchmark: Humanity's Last Exam
+      score: "37.0"
+    - benchmark: CritPt
+      score: "6.6"
+    - benchmark: AA-Omniscience
+      score: "30.1"
+      mode: accuracy; 71.6 non-hallucination
+    - benchmark: AA-LCR
+      score: "72.3"
+    - benchmark: IFBench
+      score: "78.2"
+    - benchmark: MMLU
+      score: "86.2"
+      mode: Motif-3-Base, 5-shot
+    - benchmark: MMLU-Pro
+      score: "68.6"
+      mode: Motif-3-Base, 5-shot CoT
+    - benchmark: GSM8K
+      score: "93.9"
+      mode: Motif-3-Base, 8-shot CoT
+    - benchmark: HumanEval
+      score: "73.7"
+      mode: Motif-3-Base, 0-shot
+paper:
+  arxiv: "2608.09119"
+  pdf_url: https://arxiv.org/pdf/2608.09119
+  code_url: https://github.com/MotifTechnologies/motif3-training-example
+  huggingface_url: https://huggingface.co/Motif-Technologies/Motif-3

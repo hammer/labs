@@ -13,6 +13,8 @@ sources:
     url: https://huggingface.co/upstage/Solar-Open2-250B/blob/main/Solar_Open_2_Tech_Report.pdf
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2607.20062
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/solar-open2-250b
 description: >
   <p>Upstage's new open-weight flagship and the successor to
   <a href="/outputs/upstage/solar-open-100b">Solar Open 100B</a>: a
@@ -38,8 +40,8 @@ description: >
   GPQA-Diamond 86.3, LiveCodeBench v6 92.4, HMMT 93.9, IFBench 80.0,
   MCP-Atlas 58.2, and KMMLU-Pro 78.4 &mdash; competitive with DeepSeek-V4-Flash
   and MiMo-V2.5 in Upstage's comparison table, and a large jump over Solar Open
-  100B (LiveCodeBench +36, HMMT +25). <em>Not currently scored on the Artificial
-  Analysis Intelligence Index.</em></p>
+  100B (LiveCodeBench +36, HMMT +25). <strong>AA Intelligence Index v4.1.1:
+  37</strong> (scored August 2026), versus 15 for Solar Open 100B.</p>
 tags:
   - moe
   - open-weight
@@ -51,6 +53,8 @@ model:
   parameters: 250B
   active_parameters: 15B
   context_window: 1048576
+  intelligence_index: 37
+  intelligence_index_version: "AA v4.1.1"
   license: Upstage Solar License
   num_experts: 320
   top_k: 8

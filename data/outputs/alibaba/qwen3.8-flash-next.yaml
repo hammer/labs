@@ -1,0 +1,98 @@
+name: Qwen3.8-Flash-Next
+slug: qwen3.8-flash-next
+lab: alibaba
+type: model
+date: 2026-08-26
+flagship: true
+sources:
+  - label: Qwen blog
+    url: https://qwen.ai/blog?id=qwen3.8-flash-next
+  - label: Technical Report (PDF)
+    url: https://github.com/QwenLM/Qwen3.8-Flash-Next/blob/main/tech_report.pdf
+  - label: GitHub
+    url: https://github.com/QwenLM/Qwen3.8-Flash-Next
+  - label: HuggingFace
+    url: https://huggingface.co/Qwen/Qwen3.8-Flash-Next
+  - label: Qwen Cloud (hosted as qwen3.8-flash)
+    url: https://www.qwencloud.com/models/qwen3.8-flash
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/qwen3-8-flash-next
+  - label: OpenRouter (Qwen3.8 Flash)
+    url: https://openrouter.ai/qwen/qwen3.8-flash
+description: >
+  <p>Open-weight <strong>preview of the Qwen4 architecture</strong>, playing the
+  role Qwen3-Next played for Qwen3.5: a multimodal (image/video-in, text-out)
+  MoE with a <strong>125B-parameter backbone, 6B active per token</strong>, plus
+  a 51B N-gram embedding table and a 4B multi-token-prediction head (~180B in
+  the safetensors). The 48-layer stack keeps the 3:1 Gated DeltaNet hybrid but
+  swaps gated attention for <strong>Qwen Sparse Attention (QSA)</strong> &mdash;
+  a lightweight per-layer indexer that scores context at micro-block granularity
+  (2,048-token budget), introduced during 256K continued pretraining. Three
+  further changes: a <strong>Gated Residual</strong> that widens the residual
+  stream into four branches with element-wise read gates and scalar write gates
+  (a simplified Hyper-Connections + GatedNorm); an <strong>N-gram
+  embedding</strong> layer (20M-entry bigram/trigram table at layer 2, inspired by
+  Gemma 3n per-layer embeddings and DeepSeek Engram) that adds capacity at ~zero
+  per-token FLOPs and can be prefetched from host memory; and a Muon/AdamW split
+  (Muon for attention, GDN and expert matrices; AdamW for embeddings, router and
+  low-rank gates) with a refitted scaling law that removes batch-size warmup.
+  512 experts, 10 routed + 1 shared active, 262K native context extensible to 1M
+  with YaRN.</p>
+
+  <p>Qwen reports roughly <strong>1/3 the training tokens and 1/9 the training
+  FLOPs of Qwen3.7-Plus</strong> (397B-A17B), with the base model ahead of it on
+  8 of 14 pretraining benchmarks; absolute token counts are not disclosed. At
+  1M tokens the QSA kernel gives 7.6&times;/4.9&times; prefill/decode speedups and
+  8.6&times; Qwen3.7-Plus's prefill throughput at 90% prefix-cache hit. Post-trained
+  scores: SWE-bench Pro 62.5, SWE-bench Multilingual 81.0, DeepSWE 1.1 58.7,
+  Toolathlon Verified 73.5, GPQA Diamond 91.7, HLE 35.9, LiveCodeBench v6 91.9,
+  AndroidWorld 84.5 &mdash; beating <a href="/outputs/alibaba/qwen3.8">Qwen3.8-27B</a>
+  and Qwen3.7-Plus on most rows. AA Intelligence Index v4.1.1:
+  <strong>56</strong>, two points below the 2.4T Qwen3.8-Max. Thinking on by
+  default with xhigh/medium/low <code>reasoning_effort</code> and
+  <code>preserve_thinking</code>. Weights under the new <strong>Qwen Community
+  License 1.0</strong> (MIT-style, but products with &gt;100M MAU or &gt;$20M
+  monthly revenue must display the model name, and MaaS / AI-work-assistant
+  businesses need a separate commercial license). Served on QwenCloud as
+  <strong>Qwen3.8-Flash</strong> with 1M context by default at $0.15/$0.47 per
+  M tokens; tech report "On the Design of Qwen3.8-Next Architecture" ships as a
+  GitHub PDF (no arXiv ID at release).</p>
+tags: [frontier, moe, open-weight, multimodal, reasoning, agentic, coding]
+model:
+  architecture: moe
+  parameters: 125B
+  active_parameters: 6B
+  num_experts: 512
+  top_k: 10
+  context_window: 1000000
+  intelligence_index: 56
+  intelligence_index_version: "AA v4.1.1"
+  optimizer: Muon + AdamW
+  license: Qwen Community License 1.0
+  benchmark_scores:
+    - benchmark: SWE-bench Pro
+      score: "62.5%"
+    - benchmark: SWE-bench Multilingual
+      score: "81.0%"
+    - benchmark: Toolathlon Verified
+      score: "73.5%"
+      mode: pass@1
+    - benchmark: GPQA Diamond
+      score: "91.7%"
+    - benchmark: Humanity's Last Exam
+      score: "35.9%"
+    - benchmark: LiveCodeBench v6
+      score: "91.9%"
+    - benchmark: AndroidWorld
+      score: "84.5%"
+  variants:
+    - name: Qwen3.8-Flash-Next
+      parameters: 125B
+      active_parameters: 6B
+      notes: "Open weights (BF16 and FP8 repos); 125B backbone + 51B N-gram embedding + 4B MTP head, ~180B safetensors total. AA Intelligence Index v4.1.1 score 56."
+    - name: Qwen3.8-Flash
+      notes: "QwenCloud production endpoint (qwen3.8-flash) built on Qwen3.8-Flash-Next: 1M context by default, built-in tools, $0.15/$0.47 per M tokens; the OpenRouter listing is this hosted version."
+paper:
+  pdf_url: https://github.com/QwenLM/Qwen3.8-Flash-Next/blob/main/tech_report.pdf
+  code_url: https://github.com/QwenLM/Qwen3.8-Flash-Next
+related: [qwen3.8, qwen3]

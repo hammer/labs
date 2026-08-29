@@ -11,6 +11,8 @@ sources:
     url: https://huggingface.co/skt/A.X-K2
   - label: GitHub
     url: https://github.com/SKT-AI/A.X-K2
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/a-x-k2
 description: >
   <p>SK Telecom's <strong>from-scratch 688B-total / 33B-active MoE</strong>
   (256+1 experts) with Think-Fusion hybrid reasoning, Sparse Gated Attention
@@ -34,6 +36,8 @@ model:
   active_parameters: "33B"
   context_window: 256000
   num_experts: 256
+  intelligence_index: 35
+  intelligence_index_version: "AA v4.1.1"
   license: Apache 2.0
 related:
   - ax-4.0

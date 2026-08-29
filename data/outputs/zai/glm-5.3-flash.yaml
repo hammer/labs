@@ -1,0 +1,120 @@
+name: GLM-5.3-Flash
+slug: glm-5.3-flash
+lab: zai
+type: model
+date: 2026-08-26
+flagship: true
+sources:
+  - label: Announcement (Z.ai blog)
+    url: https://z.ai/blog/glm-5.3-flash
+  - label: HuggingFace
+    url: https://huggingface.co/zai-org/GLM-5.3-Flash
+  - label: HuggingFace (BF16)
+    url: https://huggingface.co/zai-org/GLM-5.3-Flash-BF16
+  - label: API Docs (Z.ai)
+    url: https://docs.z.ai/guides/llm/glm-5.3-flash
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/glm-5-3-flash
+  - label: OpenRouter
+    url: https://openrouter.ai/z-ai/glm-5.3-flash
+  - label: GitHub
+    url: https://github.com/zai-org/GLM-5
+  - label: GLM-5 Technical Report (arXiv)
+    url: https://arxiv.org/abs/2602.15763
+description: >
+  <p>Z.ai's <strong>first natively multimodal model in the GLM-5 series</strong>
+  (image, video, and file input; text output) and its first GLM-5 model built on
+  a <strong>newly trained base</strong> rather than the 744B
+  <a href="/outputs/zai/glm-5">GLM-5</a> checkpoint shared by
+  <a href="/outputs/zai/glm-5.2">GLM-5.2</a> and
+  <a href="/outputs/zai/glm-5.3">GLM-5.3</a>. It is a <strong>320B-parameter
+  MoE with 18B active</strong> (config.json: 45 layers, hidden size 4096, 288
+  routed experts plus one shared, 8 routed experts per token, 154,880-token
+  vocabulary; ~321.3B by safetensors count) and the first GLM to use a
+  <strong>hybrid linear + sparse attention</strong> stack &mdash; 34
+  linear-attention layers interleaved 3:1 with 11 DeepSeek Sparse Attention
+  layers &mdash; together with <strong>Manifold-Constrained Hyper-Connections
+  (mHC)</strong> and a new <strong>IndexPool</strong> that pools four
+  sparse-attention indexer keys into one for 1M-token contexts. Versus the
+  355B GLM-4.5 it nearly halves active parameters (18B vs 32B) and layers (45
+  vs 92); versus GLM-5.3 it cuts attention compute 3.0&times; and KV cache
+  4.4&times;. Context is 1M tokens (1,048,576 positions) with 128K max output,
+  and the model was pretrained on Z.ai's latest <strong>30T-token multimodal
+  corpus</strong>; Z.ai reports the GLM-5.3-Flash-Base checkpoint at MMLU 88.1
+  and LiveCodeBench-Base 37.6 versus GLM-5-Base's 88.3 and 34.4.</p>
+
+  <p>Z.ai reports it beats GLM-5.2 across its six-benchmark coding/agentic
+  suite while approaching Claude Opus 4.8 at roughly one-tenth GLM-5.2's
+  price: Terminal-Bench 2.1 <strong>84.3</strong> (GLM-5.2 81.0), DeepSWE v1.1
+  <strong>63.4</strong> (46.2), AutomationBench v1.0.6 <strong>48.8</strong>
+  (26.2), Toolathlon Verified <strong>78.4</strong> (59.9), Agents' Last Exam
+  26.3 (20.4), HLE with tools 55.3 (54.7), and GDPval-AA v2
+  <strong>1773</strong> (1504; Opus 4.8 1582). On Z.ai Code Bench v1.0 at max
+  effort it scores 29.0 versus Opus 4.8's 29.5. Vision results include OfficeQA
+  Pro 62.4, CharXiv Reasoning with tools 89.4, Chartography with tools 78.0,
+  BabyVision 53.4, MVBench 77.8, and MMVU 80.5. It scores <strong>57 on the
+  Artificial Analysis Intelligence Index v4.1.1</strong> at $0.15/$0.50 per
+  million input/output tokens, a level of intelligence Z.ai notes was
+  previously available only at about 10&times; the cost. Thinking cannot be
+  disabled; <code>reasoning_effort</code> accepts low/high/max (default max).</p>
+
+  <p>Z.ai's blog confirms that before launch it tested the model anonymously as
+  <strong>"ox-alpha"</strong> on OpenRouter and OpenCode, where it became the
+  most popular model of the week with all traffic served on Chinese AI chips
+  (Bloomberg reported Z.ai as the maker on 2026-08-26). Serving uses a
+  purpose-built SGLang-based engine with W8A8 weights, hybrid INT8/FP8/BF16
+  cache quantization, and Encode&ndash;Prefill&ndash;Decode disaggregation
+  across tens of thousands of domestic accelerators, reaching per-token cost
+  Z.ai says is comparable to NVIDIA GPUs. Weights ship on HuggingFace in FP8
+  (<code>GLM-5.3-Flash</code>) and BF16 (<code>GLM-5.3-Flash-BF16</code>)
+  under the <strong>MIT license</strong>; Z.ai says the recipe is "already
+  shaping our next frontier model."</p>
+tags:
+  - moe
+  - open-weight
+  - multimodal
+  - frontier
+  - coding
+  - agentic
+  - reasoning
+model:
+  architecture: moe
+  parameters: 320B
+  active_parameters: 18B
+  num_experts: 288
+  top_k: 8
+  context_window: 1000000
+  training_tokens: 30T
+  intelligence_index: 57
+  intelligence_index_version: "AA v4.1.1"
+  license: MIT
+  benchmark_scores:
+    - benchmark: Terminal-Bench 2.1
+      score: "84.3"
+    - benchmark: DeepSWE v1.1
+      score: "63.4"
+    - benchmark: NL2Repo
+      score: "56.3"
+    - benchmark: Toolathlon Verified
+      score: "78.4"
+    - benchmark: AutomationBench v1.0.6
+      score: "48.8"
+    - benchmark: Agents' Last Exam
+      score: "26.3"
+    - benchmark: HLE w/ Tools
+      score: "55.3"
+    - benchmark: GDPval-AA v2
+      score: "1773"
+    - benchmark: OfficeQA Pro
+      score: "62.4"
+    - benchmark: CharXiv Reasoning (w/ Tools)
+      score: "89.4"
+    - benchmark: BabyVision
+      score: "53.4"
+    - benchmark: MVBench
+      score: "77.8"
+    - benchmark: MMVU
+      score: "80.5"
+related:
+  - glm-5.3
+  - glm-5.2
