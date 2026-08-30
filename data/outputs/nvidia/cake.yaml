@@ -1,0 +1,80 @@
+name: "CAKE: Compiler-Agent Co-Design for Frontier Kernel Evolution"
+slug: cake
+lab:
+  - nvidia
+  - cmu
+type: paper
+date: 2026-08-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.12629
+  - label: FlashInfer PR #4262 (agent-generated KDA prefill)
+    url: https://github.com/flashinfer-ai/flashinfer/pull/4262
+  - label: FlashInfer PR #4279 (KDA decode)
+    url: https://github.com/flashinfer-ai/flashinfer/pull/4279
+description: >
+  <p>NVIDIA and CMU (Zihao Ye and Yingyi Huang co-first; senior authors
+  Vinod Grover, <a href="/people/tianqi-chen">Tianqi Chen</a> and Luis Ceze)
+  argue that GPU-kernel agents and GPU DSLs have evolved separately: agents
+  treat the compiler as a black box that returns only errors, pass/fail and
+  timings, while tile-level DSLs hide the warp specialization, barrier
+  choreography and memory-tier placement that make expert kernels fast, and
+  low-level DSLs demand a layout calculus agents handle poorly.
+  <strong>CAKE</strong> is a <strong>compiler&ndash;agent co-design</strong>:
+  agents author <strong>Cake IR</strong>, a typed, hardware-explicit schedule
+  representation exposing warp roles, memory movement, synchronization and
+  pipelines, backed by verifier hard gates, a calibrated cost model and
+  localized diagnostics. The harness itself evolves &mdash; recurring failures
+  are promoted into new verifier rules, IR primitives, model calibrations and
+  reusable optimization tactics &mdash; and a four-stage loop (generate
+  structurally distinct candidates &rarr; filter by IR checks, verifier and
+  cost model before spending GPU time &rarr; benchmark survivors with profiler
+  evidence &rarr; route findings back to candidate, verifier, cost model or IR
+  vocabulary) keeps the process auditable. All agent runs use GPT-5.6 Sol at
+  xhigh reasoning effort so gains are attributable to the environment, not the
+  model.</p>
+
+  <p>In matched implementation-hidden Flash-KMeans clean starts on B200 with an
+  80M-token budget, the best Cake IR candidate reaches <strong>1.144&times;
+  the tuned FlashML baseline</strong> versus 0.928&times; for agents writing
+  CUDA/PTX directly. With FlashKDA available only as a black-box timing
+  oracle, agent-generated <strong>Kimi Delta Attention</strong> prefill
+  kernels hit a <strong>2.05&times; geometric-mean speedup</strong> over the
+  official implementation across six BF16 shapes, bitwise-correct and
+  validated in end-to-end Kimi K3 serving under SGLang, with decode paths
+  1.14&times; over upstream FlashInfer; Gated DeltaNet and MiniMax sparse
+  attention paths also improve. Dispatcher-backed KNN/KMeans libraries gain
+  1.42&ndash;2.12&times; across 400+ shapes, and four kernel changes ship as
+  upstream FlashInfer PRs so users take no dependency on Cake. Targets Ampere
+  through Blackwell (cost model calibrated only for B200/H100); compiler
+  evolution is still human-gated at merge time. A compiler-side complement to
+  NVIDIA's agentic-search <a href="/outputs/nvidia/avo">AVO</a> work.</p>
+tags:
+  - gpu-kernels
+  - agentic
+  - coding
+  - compilers
+  - efficiency
+  - research
+paper:
+  arxiv: "2608.12629"
+  authors:
+    - Zihao Ye
+    - Yingyi Huang
+    - Hongyi Jin
+    - Bohan Hou
+    - Junru Shao
+    - Zhongming Yu
+    - Jinqi Chen
+    - Meghan Cowan
+    - Shiyi Cao
+    - Shanli Xing
+    - Hanfeng Chen
+    - Vinod Grover
+    - Tianqi Chen
+    - Luis Ceze
+related:
+  - avo
+  - flashinfer
+  - kimi-linear
+  - flashattention-3
