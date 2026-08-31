@@ -1,0 +1,62 @@
+name: Demystifying Reinforcement Learning Post-Training of Language Models
+slug: demystifying-rl-post-training
+lab:
+  - ai2
+  - uw
+type: paper
+date: 2026-08-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.24949
+  - label: Project website
+    url: https://minjang10.github.io/demystifying-rl-finetuning-web
+  - label: GitHub
+    url: https://github.com/sankarh-1/demystifying-rl-finetuning
+description: >
+  <p>A University of Washington-led primer (Natasha Jaques' and Sewoong Oh's
+  groups; Ai2's Jacob Morrison co-affiliated) that deconstructs
+  <strong>RLVR post-training</strong> in controlled sandboxes instead of
+  headline benchmarks. Using a sequence-generation task (reproduce an exact
+  target string) and a single AIME 2025 problem, the authors manipulate the
+  base model's prior on the target behavior with SFT+ / SFT&minus; variants
+  of OLMo 3, Qwen2-7B, Qwen3-1.7B and Qwen2.5-7B-Instruct, then vary reward
+  granularity and prompt-distribution breadth, tracking policy entropy across
+  pretraining, SFT and RL stages.</p>
+
+  <p>Three findings organize the current RLVR debates. <strong>(1) The
+  coverage principle holds for sparse rewards</strong>: models whose prior on
+  the target is suppressed to ~0 never sample it and never learn; Qwen2-7B
+  (~3.5% prior) converges after a 40-step plateau while Qwen3-1.7B (~0.5%)
+  fails entirely. <strong>(2) But sparse-reward failure is not a limit of RL
+  itself</strong>: a dense, accurate reward (Levenshtein shaping) teaches
+  behaviors with vanishing base support &mdash; pulling Qwen3-1.7B to ~50%
+  match &mdash; a direct counterpoint to the "RL only reweights pass@k"
+  position. <strong>(3) "Spurious rewards" are a prompt-distribution
+  artifact</strong>: random rewards on the original narrow prompt set
+  replicate the reported Qwen gains, but on a broad 10K-prompt distribution
+  entropy jumps at step one and capabilities collapse (on OLMo, a
+  broad-distribution entropy spike at ~step 400 coincides with GSM8K, MMLU
+  and IFEval all collapsing, while a narrow distribution corrupts only the
+  training domain). Each post-training stage (Base &rarr; SFT &rarr; DPO)
+  delays the entropy blow-up, i.e. adds resilience. Code and an interactive
+  website are released.</p>
+tags:
+  - rl
+  - post-training
+  - reasoning
+  - research
+paper:
+  arxiv: "2608.24949"
+  authors:
+    - Donovan Clay
+    - Saket Gollapudi
+    - Sankar Harilal
+    - Min Jang
+    - Jacob Morrison
+    - Sewoong Oh
+    - Natasha Jaques
+  code_url: https://github.com/sankarh-1/demystifying-rl-finetuning
+related:
+  - tulu-3
+  - rlvr-limits
+  - simplerl
