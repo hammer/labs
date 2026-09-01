@@ -1,0 +1,40 @@
+name: "Qwen-CUA: Native Computer Use for (almost) Everything"
+slug: qwen-cua
+lab:
+  - alibaba
+  - hku
+type: model
+date: 2026-08-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.02352
+  - label: GitHub
+    url: https://github.com/xlang-ai/Qwen-CUA
+description: >
+  <p>A Qwen &times; HKU XLANG Lab collaboration (first author Dunjie Lu; Qwen
+  authors include Shuai Bai): a <strong>native computer-use agent on a
+  397B-A17B Qwen MoE backbone</strong> that observes only screenshots and
+  acts through keyboard and mouse &mdash; no DOM trees, accessibility
+  metadata, or task-specific APIs. The scaffold keeps up to 20 active
+  screenshots and folds older visual history into fixed-size blocks,
+  preserving reusable prompt prefixes for cache efficiency.</p>
+
+  <p>Training ran on a cloud rollout fleet with ~100,000 vCPUs and tens of
+  thousands of concurrent environments over ~40,000 verifiable tasks.
+  Scaffold released Apache-2.0 (xlang-ai/Qwen-CUA). Surfaced by the
+  execution-layer sweep as a backfill (posted August 3, missed by the prior
+  cycle); successor territory to XLANG's
+  <a href="/outputs/hku/opencua">OpenCUA</a>.</p>
+tags:
+  - agents
+  - computer-use
+  - multimodal
+  - moe
+model:
+  base_model: qwen3.5
+paper:
+  arxiv: "2608.02352"
+  code_url: https://github.com/xlang-ai/Qwen-CUA
+related:
+  - opencua
+  - osworld-2

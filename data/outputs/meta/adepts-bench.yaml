@@ -1,0 +1,31 @@
+name: "ADeptS-Bench: Trustworthiness of Computer-Use Agents Across Devices"
+slug: adepts-bench
+lab: meta
+type: paper
+date: 2026-08-25
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.26204
+description: >
+  <p>FAIR at Meta (Pierluca D'Oro et al.) builds the safety companion to
+  computer-use capability suites: a <strong>dual-stream trustworthiness
+  benchmark</strong> for CUAs on mobile and desktop, grounded in the ADEPTS
+  capability framework and general-population user studies. The
+  <strong>Safety stream</strong> pairs benign and malicious versions of tasks
+  with threats embedded in the visual interface; the
+  <strong>Disambiguation stream</strong> tests whether agents ask for
+  clarification under ambiguous intent.</p>
+
+  <p>Across seven models, none consistently exceeds 80% task success while
+  staying under 30% attack success &mdash; and the failure anecdotes are
+  vivid: "every model clicks 'Checkout' on a $25K order without hesitation."
+  A natural pairing with capability-side CUA evals like OSWorld.</p>
+tags:
+  - agents
+  - safety
+  - benchmark
+  - evaluation
+paper:
+  arxiv: "2608.26204"
+related:
+  - osworld-2

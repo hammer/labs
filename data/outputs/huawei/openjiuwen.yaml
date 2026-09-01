@@ -1,0 +1,37 @@
+name: "openJiuwen: Beyond Static Harnesses for Long-Horizon Coding Agents"
+slug: openjiuwen
+lab: huawei
+type: library
+date: 2026-08-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.27969
+  - label: GitHub
+    url: https://github.com/openJiuwen-ai/jiuwenswarm
+description: >
+  <p>Huawei's open-source agent harness for long-horizon coding, organized
+  around two claims about where static harnesses break: <strong>structural
+  composability</strong> (developers should compose capabilities, delegated
+  agents and multi-agent coordination without rebuilding orchestration) and
+  <strong>runtime adaptivity</strong> (fresh evidence &mdash; semantic
+  diagnostics, execution outcomes, task progress, shifting context relevance
+  &mdash; should steer subsequent runtime decisions rather than being
+  discarded).</p>
+
+  <p>The <code>jiuwenswarm</code> repo (Apache 2.0) predates the paper by
+  months and stands at ~6.7K stars, making this one of the larger open
+  harness codebases from a Chinese lab. Complements Huawei's earlier
+  HarnessX work and the broader execution-layer line the index tracks.</p>
+tags:
+  - agents
+  - agent-harness
+  - coding
+  - open-source
+  - framework
+library:
+  github: https://github.com/openJiuwen-ai/jiuwenswarm
+  license: Apache 2.0
+paper:
+  arxiv: "2608.27969"
+related:
+  - harnessx

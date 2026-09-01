@@ -1,0 +1,32 @@
+name: "HarnessLens: Efficient Harness Evolution through Behavior-Aware Verification"
+slug: harnesslens
+lab: fudan
+type: paper
+date: 2026-08-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.27311
+description: >
+  <p>Fudan's answer to the compute-matching critique of harness evolution
+  (cf. <a href="/outputs/ai2/rethinking-harness-evolution">Rethinking Harness
+  Evolution</a>): propose-and-verify loops waste rollouts scoring every
+  candidate on a fixed task set, and aggregate scores hide specific
+  regressions. <strong>HarnessLens</strong> makes verification
+  <strong>budget-aware and behavior-targeted</strong> &mdash; it derives
+  candidate modifications from execution trajectories, then selectively
+  verifies each on behavior-relevant tasks behind an attributable-evidence
+  gate.</p>
+
+  <p>Reports +7.6&ndash;13.6% held-out improvement across three harnesses and
+  four benchmarks at substantially lower evaluation budget. Continues Fudan's
+  agentic-harness-engineering line.</p>
+tags:
+  - agents
+  - agent-harness
+  - efficiency
+  - research
+paper:
+  arxiv: "2608.27311"
+related:
+  - agentic-harness-engineering
+  - rethinking-harness-evolution

@@ -1,0 +1,27 @@
+name: "ComponentBench: Diagnosing Component-Level Failures in Computer-Use Agents"
+slug: componentbench
+lab: amazon
+type: paper
+date: 2026-08-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.18307
+description: >
+  <p>Amazon AGI SF Lab (senior author Shuyan Zhou) with Duke fills the layer
+  between long-horizon CUA workflow benchmarks and atomic GUI-grounding
+  tests: <strong>component-level interactions</strong> (e.g. operate a toggle
+  set) that are short enough to diagnose and rich enough to be realistic.
+  <strong>ComponentBench</strong> instantiates a library-agnostic ontology of
+  <strong>97 canonical UI component types as 2,910 programmatically verified
+  tasks</strong> across widely used component libraries, paired with cleaned
+  human reference trajectories so both success and interaction efficiency are
+  measurable, plus a scalable auditing pipeline.</p>
+tags:
+  - agents
+  - benchmark
+  - evaluation
+  - research
+paper:
+  arxiv: "2608.18307"
+related:
+  - adepts-bench

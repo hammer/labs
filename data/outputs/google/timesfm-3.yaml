@@ -1,0 +1,41 @@
+name: TimesFM 3.0
+slug: timesfm-3
+lab: google
+type: model
+date: 2026-08-28
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/google/timesfm-3.0-pytorch
+  - label: GitHub
+    url: https://github.com/google-research/timesfm
+  - label: Original TimesFM paper (arXiv, ICML 2024)
+    url: https://arxiv.org/abs/2310.10688
+description: >
+  <p>The third generation of Google Research's <strong>TimesFM</strong>
+  time-series foundation model line (original decoder-only model: ICML 2024,
+  arXiv 2310.10688; the GitHub repo has ~28.6K stars). TimesFM 3.0
+  (v3.0.0, August 28, 2026) moves to a new <strong>Stacked Mixing Transformer
+  with Variate Attention and CPM iterative RevIN</strong>: 20 transformer
+  layers, model dim 1280, 16 heads, ~331M parameters, 32-point context
+  patches and 64-point forecast patches with quantile outputs. Pretraining
+  draws on GiftEvalPretrain (decontaminated against fev-bench), Wikipedia
+  pageviews, and Google Trends data.</p>
+
+  <p>TimesFM is among the most deployed scientific foundation models &mdash;
+  it backs forecasting in <strong>BigQuery ML</strong>, Google Sheets'
+  connected-sheet forecasts, and Vertex Model Garden. Note the license
+  change: the code remains Apache 2.0, but the 3.0 <em>weights</em> ship
+  under the <strong>TimesFM Non-Commercial License v1.0</strong>, unlike
+  earlier open checkpoints (up to 2.5) in the HF collection.</p>
+tags:
+  - time-series
+  - science
+  - forecasting
+  - foundation-model
+model:
+  architecture: dense
+  parameters: 331M
+  license: TimesFM Non-Commercial License v1.0
+related:
+  - graphcast
+  - gencast

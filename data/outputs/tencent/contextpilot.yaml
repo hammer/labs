@@ -1,0 +1,65 @@
+name: "ContextPilot: Proactive Context Management via Fine-grained RL"
+slug: contextpilot
+lab:
+  - tencent
+  - tsinghua
+  - shanghai-ai-lab
+type: model
+date: 2026-08-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.28476
+  - label: GitHub
+    url: https://github.com/Tencent/ContextPilot
+  - label: HuggingFace (ContextPilot-14B)
+    url: https://huggingface.co/tencent/ContextPilot-14B
+  - label: Project page
+    url: https://tencent.github.io/ContextPilot/
+description: >
+  <p>Tencent Youtu Lab with Tsinghua and Shanghai AI Lab (co-first authors
+  Zhuoshi Pan and Qizhi Pei) trains agents to <strong>manage their own
+  working context</strong> on long-horizon tasks instead of letting
+  interaction history grow unboundedly. Prior proactive context-management
+  agents were limited to search/delete/summarize tools, explored context
+  actions uniformly, and assigned one trajectory-level reward to every
+  intermediate edit. <strong>ContextPilot</strong> widens the toolset (global
+  planning, long-term memory, adaptive compression) and trains it with
+  <strong>fine-grained RL</strong> that credits individual context-editing
+  actions by their heterogeneous impact on outcomes.</p>
+
+  <p>Ships as post-trained Qwen3 checkpoints &mdash; ContextPilot-14B, -8B,
+  and -E4B &mdash; released on HuggingFace on August 31, 2026 alongside code
+  and a live demo. Squarely in the agent-harness/context-engineering line the
+  index tracks (cf. <a href="/outputs/tum/active-inference-context-acquisition">active
+  inference as context acquisition</a> and
+  <a href="/outputs/google/wikiskill">WikiSkill</a>'s persistent-knowledge
+  layer).</p>
+tags:
+  - agents
+  - agent-harness
+  - rl
+  - long-context
+  - open-weight
+model:
+  base_model: qwen3
+  variants:
+    - name: ContextPilot-14B
+      notes: "Qwen3-14B post-train"
+    - name: ContextPilot-8B
+      notes: "Qwen3-8B post-train"
+    - name: ContextPilot-E4B
+      notes: "Qwen3 E4B post-train"
+paper:
+  arxiv: "2608.28476"
+  authors:
+    - Zhuoshi Pan
+    - Qizhi Pei
+    - Junru Lu
+    - Honglin Lin
+    - H. Vicky Zhao
+    - Di Yin
+    - Xing Sun
+  code_url: https://github.com/Tencent/ContextPilot
+related:
+  - active-inference-context-acquisition
+  - wikiskill

@@ -1,0 +1,34 @@
+name: "HELIX: Model-Harness Co-evolution for Recursive Self-Improvement"
+slug: helix
+lab: hku
+type: paper
+date: 2026-08-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.13951
+  - label: GitHub
+    url: https://github.com/HKUDS/HELIX
+description: >
+  <p>HKUDS (Tianyu Fan, Chao Huang) closes the loop between the two things
+  that make an agent: <strong>build harnesses for a fixed model, update the
+  model from verified sibling trajectories, rebuild the harnesses as the
+  model changes</strong>. HELIX is the substrate that makes this tractable
+  &mdash; agent systems decompose into typed ports, reusable atoms, recipes,
+  product shells and runtime policies, so every harness intervention is
+  explicit, auditable and source-traceable.</p>
+
+  <p>Completes HKUDS's harness cluster (OpenHarness, nanobot, CLI-Anything)
+  with the co-evolution step; MIT-licensed, released August 17, 2026 (early:
+  ~30 stars at filing).</p>
+tags:
+  - agents
+  - agent-harness
+  - self-improvement
+  - research
+paper:
+  arxiv: "2608.13951"
+  code_url: https://github.com/HKUDS/HELIX
+related:
+  - openharness
+  - nanobot
+  - cli-anything

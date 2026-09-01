@@ -1,0 +1,31 @@
+name: "EXAONE Tabular 1.0"
+slug: exaone-tabular
+lab: lg-ai-research
+type: paper
+date: 2026-08-26
+sources:
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2608.25774
+description: >
+  <p>LG AI Research's compact <strong>tabular foundation model</strong>
+  family: classification and regression via in-context learning with no
+  dataset-specific gradient updates, pretrained exclusively on a synthetic
+  structural-causal-model prior. The core contribution is architectural
+  &mdash; instead of compressing features into a fixed row embedding for a
+  separate row-level learner, it <strong>interleaves feature-axis attention
+  within each item with support-conditioned item-axis attention within each
+  feature at every Transformer layer</strong>, mediated by item-summary and
+  feature-summary tokens.</p>
+
+  <p>Reports strong performance-per-parameter on four public benchmarks
+  (20.81M-parameter model on TabArena). Extends the tracked tabular-FM line
+  (cf. Google's TabFM); no public weights at filing.</p>
+tags:
+  - science
+  - tabular
+  - foundation-model
+  - research
+paper:
+  arxiv: "2608.25774"
+related:
+  - tabfm

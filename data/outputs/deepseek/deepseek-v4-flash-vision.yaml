@@ -10,6 +10,8 @@ sources:
     url: https://api-docs.deepseek.com/guides/vision
   - label: API Docs (Models & Pricing)
     url: https://api-docs.deepseek.com/quick_start/pricing
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp
   - label: OpenRouter
     url: https://openrouter.ai/deepseek/deepseek-v4-flash-vision-exp
   - label: Artificial Analysis
@@ -26,8 +28,11 @@ description: >
   as <code>deepseek-v4-flash-vision-exp</code> with a 1M-token context, 384K
   max output, thinking mode on by default with low/high/max
   <code>reasoning_effort</code>, and Chat Completions, Anthropic Messages and
-  Responses API support. No weights have been released (nothing on HuggingFace
-  as of 2026-08-29).</p>
+  Responses API support. Weights followed on HuggingFace on
+  September 1, 2026 under the <strong>MIT license</strong> (~305B by
+  safetensors count &mdash; the 284B V4-Flash MoE backbone plus the vision
+  tower; <code>deepseek_v4</code>, 43 layers, 256 routed experts, top-6,
+  1,048,576 positions).</p>
 
   <p>Images are auto-resized to roughly 800&times;800 pixels and tokenized at
   up to <strong>384 tokens per image</strong>, billed at V4-Flash text rates
@@ -50,6 +55,7 @@ model:
   # are left unset here — the base entry carries the 284B-A13B MoE facts.
   base_model: deepseek-v4-flash
   context_window: 1048576
+  license: MIT
   intelligence_index: 51
   intelligence_index_version: "AA v4.1.1"
 related:

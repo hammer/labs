@@ -1,0 +1,31 @@
+name: "SkillZip Pro: Execution-Aware Compression of Progressively Loaded Skills"
+slug: skillzip-pro
+lab:
+  - alibaba
+  - zhejiang
+type: paper
+date: 2026-08-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.30785
+description: >
+  <p>Alibaba with Zhejiang University observes that production agent skills
+  are <strong>directory bundles, not isolated prompts</strong>: the root
+  loads at activation while references, schemas, scripts and nested subskills
+  load only when an execution path needs them &mdash; so compressing the root
+  alone misses most deployment cost, and flattening destroys the
+  progressive-loading boundaries. <strong>SkillZip Pro</strong> is an
+  evaluation-free compressor for whole bundles: it compresses
+  <em>across files</em> (dropping content a root or declared environment
+  contract already provides) while <strong>preserving routing</strong>, and
+  emits an ordinary directory with the harness unchanged.</p>
+tags:
+  - agents
+  - agent-harness
+  - skill-learning
+  - efficiency
+paper:
+  arxiv: "2608.30785"
+related:
+  - skillrouter
+  - reason-wide-not-deep

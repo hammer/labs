@@ -4,6 +4,8 @@ lab: nvidia
 type: model
 date: 2026-06-04
 sources:
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2608.27548
   - label: HuggingFace blog
     url: https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety
   - label: HuggingFace (model)
@@ -42,3 +44,5 @@ model:
   license: NVIDIA Open Model License
 related:
   - nemotron-3-ultra
+paper:
+  arxiv: "2608.27548"

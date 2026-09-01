@@ -1,0 +1,31 @@
+name: Science Sandboxes for AI Agents
+slug: science-sandboxes
+lab:
+  - harvard
+  - mit
+type: paper
+date: 2026-08-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.30165
+description: >
+  <p>From the Broad Institute of MIT and Harvard (authors include Sangeeta
+  Bhatia, Pardis Sabeti's and Eric Lander's orbit): a framework arguing that
+  scientific capability is not finding solutions but <strong>learning the
+  rules that explain them</strong> through repeated cycles of
+  experimentation, feedback and hypothesis revision.
+  <strong>Science sandboxes</strong> let an agent query the natural world at
+  three levels of empirical verifiability &mdash; "wet" physical experiments,
+  "damp" predictive models trained on empirical data, and "dry" invented
+  rules &mdash; under one common experimental loop and evaluation protocol
+  covering both quantitative metrics and qualitative scientific
+  reasoning.</p>
+tags:
+  - agents
+  - science
+  - evaluation
+  - research
+paper:
+  arxiv: "2608.30165"
+related:
+  - co-scientist-real-world

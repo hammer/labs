@@ -1,0 +1,33 @@
+name: "ScienceArena: Benchmarking LLMs on Latest Scientific Olympiads"
+slug: sciencearena
+lab:
+  - tsinghua
+  - hku
+  - peking
+type: paper
+date: 2026-08-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.30517
+description: >
+  <p>Qiyuan Tech with Tsinghua, HKU and Peking (the Harness-Bench
+  collaboration pattern) answers benchmark saturation and contamination with
+  an olympiad-style eval built from <strong>thirteen recent public science
+  competitions</strong> &mdash; IPhO and IChO 2025&ndash;26, IBO 2023,
+  USAPhO 2026, USNCO 2025 &mdash; whose open-ended multi-step problems carry
+  <strong>process-credit rubrics</strong> for step-level scoring, matching
+  the reasoning-process-eval criterion the index tracks.</p>
+
+  <p>An expert-audited digitization pipeline converts official exams,
+  figures, solutions and rubrics into structured items verified by olympiad
+  medalists, and LLM-as-judge scoring is calibrated against medalist ground
+  truth.</p>
+tags:
+  - benchmark
+  - evaluation
+  - reasoning
+  - science
+paper:
+  arxiv: "2608.30517"
+related:
+  - harness-bench

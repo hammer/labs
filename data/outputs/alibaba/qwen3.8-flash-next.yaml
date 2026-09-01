@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Qwen blog
     url: https://qwen.ai/blog?id=qwen3.8-flash-next
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2608.30320
   - label: Technical Report (PDF)
     url: https://github.com/QwenLM/Qwen3.8-Flash-Next/blob/main/tech_report.pdf
   - label: GitHub
@@ -93,6 +95,7 @@ model:
     - name: Qwen3.8-Flash
       notes: "QwenCloud production endpoint (qwen3.8-flash) built on Qwen3.8-Flash-Next: 1M context by default, built-in tools, $0.15/$0.47 per M tokens; the OpenRouter listing is this hosted version."
 paper:
+  arxiv: "2608.30320"
   pdf_url: https://github.com/QwenLM/Qwen3.8-Flash-Next/blob/main/tech_report.pdf
   code_url: https://github.com/QwenLM/Qwen3.8-Flash-Next
 related: [qwen3.8, qwen3]

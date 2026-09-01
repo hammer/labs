@@ -1,0 +1,35 @@
+name: WeMM-Embedding
+slug: wemm-embedding
+lab: tencent
+type: model
+date: 2026-08-25
+sources:
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2608.24053
+  - label: HuggingFace (9B)
+    url: https://huggingface.co/tencent/WeMM-Embedding-9B
+description: >
+  <p>WeChat Vision's universal multimodal embedding family: text, images,
+  videos, visual documents and arbitrarily interleaved inputs mapped to a
+  shared space with <strong>flexible output dimensions</strong>, in 2B, 4B
+  and 9B variants (weights on HuggingFace, August 26, 2026). Trained in two
+  stages &mdash; large-scale multimodal alignment, then refinement with
+  curated data, fine-grained relevance supervision and cross-scale knowledge
+  transfer &mdash; and reports leading results on public multimodal-embedding
+  benchmarks.</p>
+tags:
+  - embeddings
+  - multimodal
+  - open-weight
+model:
+  variants:
+    - name: WeMM-Embedding-2B
+      parameters: 2B
+    - name: WeMM-Embedding-4B
+      parameters: 4B
+    - name: WeMM-Embedding-9B
+      parameters: 9B
+paper:
+  arxiv: "2608.24053"
+related:
+  - uembed

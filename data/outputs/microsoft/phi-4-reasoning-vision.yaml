@@ -1,0 +1,46 @@
+name: Phi-4-Reasoning-Vision-15B
+slug: phi-4-reasoning-vision
+lab: microsoft
+type: model
+date: 2026-08-31
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/microsoft/Phi-4-reasoning-vision-15B
+description: >
+  <p>Microsoft extends the <a href="/outputs/microsoft/phi-4">Phi-4</a> line
+  into multimodal reasoning: a <strong>15B vision-language model</strong>
+  built on Phi-4-reasoning (14B dense, 40 layers, hidden 5120) with a SigLIP
+  vision encoder (<code>phi4-siglip</code>), 32K context, released on
+  HuggingFace under <strong>MIT</strong> on August 31, 2026. The card targets
+  chain-of-thought visual reasoning, math, OCR, and notably
+  <strong>GUI grounding / computer use</strong>.</p>
+
+  <p>Model-card benchmarks: AI2D <strong>84.8</strong>, ChartQA 83.3,
+  MathVista (mini) <strong>75.2</strong>, MMMU 54.3, OCRBench 76.0. No
+  accompanying technical report at release (the Phi small-model reports
+  typically follow); not yet scored on the Artificial Analysis Intelligence
+  Index as of 2026-09-01.</p>
+tags:
+  - multimodal
+  - reasoning
+  - open-weight
+  - small-model
+model:
+  architecture: dense
+  parameters: 15B
+  base_model: phi-4
+  context_window: 32768
+  license: MIT
+  benchmark_scores:
+    - benchmark: AI2D
+      score: "84.8"
+    - benchmark: ChartQA
+      score: "83.3"
+    - benchmark: MathVista (mini)
+      score: "75.2"
+    - benchmark: MMMU
+      score: "54.3"
+    - benchmark: OCRBench
+      score: "76.0"
+related:
+  - phi-4

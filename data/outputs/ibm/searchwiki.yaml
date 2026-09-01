@@ -1,0 +1,30 @@
+name: "SearchWiki: Building and Navigating Knowledge Wikis for Information Seeking"
+slug: searchwiki
+lab: ibm
+type: paper
+date: 2026-08-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.29953
+description: >
+  <p>IBM Research India replaces flat RAG's bag-of-chunks with a
+  <strong>harness framework</strong> that synthesizes a corpus into a
+  hierarchical, typed, navigable wiki &mdash; document overviews,
+  cross-document topic pages, and page-level source records &mdash; and
+  trains <strong>WikiResearcher-9B</strong> with on-policy RL (rewarding
+  answer correctness, retrieval quality and trajectory efficiency) to
+  navigate it through multi-turn tool use, progressively refining retrieval
+  when the first lookup misses.</p>
+
+  <p>Evaluated on ViDoRe-V3 (8 domains), FinanceBench and memory benchmarks.
+  A retrieval-layer sibling to WikiSkill's persistent-knowledge harness
+  layer.</p>
+tags:
+  - agents
+  - agent-harness
+  - retrieval
+  - rl
+paper:
+  arxiv: "2608.29953"
+related:
+  - wikiskill

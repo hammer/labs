@@ -9,6 +9,8 @@ sources:
     url: https://news.sktelecom.com/en/3204
   - label: HuggingFace
     url: https://huggingface.co/skt/A.X-K2
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2608.30181
   - label: GitHub
     url: https://github.com/SKT-AI/A.X-K2
   - label: Artificial Analysis
@@ -44,3 +46,5 @@ model:
 related:
   - ax-4.0
   - ax-k2-raon-speech
+paper:
+  arxiv: "2608.30181"

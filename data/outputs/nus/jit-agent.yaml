@@ -1,0 +1,34 @@
+name: "JIT-Agent: Scaling Harness Intelligence via Just-in-Time Harness Evolution"
+slug: jit-agent
+lab: nus
+type: paper
+date: 2026-08-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.25593
+description: >
+  <p>NUS's LV-Lab (first author Guibin Zhang; senior authors Wangchunshu Zhou
+  and Shuicheng Yan) argues the harness &mdash; memory management, planning
+  strategy, action protocol, tool/skill orchestration &mdash; "can dominate
+  the contribution of the underlying foundation model," yet is designed
+  manually per task. <strong>JIT-Agent</strong> is a <strong>harness
+  intelligence model</strong>: it formalizes the harness as a composable,
+  machine-generatable artifact under a fixed four-module protocol and is
+  trained to synthesize a task-adaptive harness on the fly for arbitrary
+  off-the-shelf LLMs, repair it for stable execution, and self-evolve by
+  distilling signals from an archive of prior harness configurations.</p>
+
+  <p>A distinct point in the harness-evolution design space: where SkillOpt
+  optimizes a document, AutoSaddler patches a codebase, and WikiSkill grows a
+  knowledge base, JIT-Agent moves harness generation into a trained model
+  invoked per task.</p>
+tags:
+  - agents
+  - agent-harness
+  - research
+paper:
+  arxiv: "2608.25593"
+related:
+  - autosaddler
+  - wikiskill
+  - skillopt

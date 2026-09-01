@@ -1,0 +1,33 @@
+name: "Harness-RL: Black-Box RL for Central-Agent Multi-Agent Harnesses"
+slug: harness-rl
+lab: peking
+type: paper
+date: 2026-08-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.29641
+description: >
+  <p>Peking University tackles training the <strong>central policy of a
+  multi-agent harness</strong> without hand-integrating each harness into an
+  RL framework. Two structural problems: an action label is a low-cardinality
+  decision while its arguments are a high-dimensional sequence (a shared
+  sequence-level signal yields conflicting gradients), and dynamic scheduling
+  produces branching, parallel, context-rewritten sessions that don't flatten
+  into one token sequence. <strong>Harness-RL</strong> pairs Conflict-Aware
+  Policy Optimization (CAPO, decoupling action from args) with
+  interface-level <strong>black-box trajectory construction</strong> captured
+  at the harness boundary.</p>
+
+  <p>Sits at the harness&times;RL intersection alongside Microsoft's Agent
+  Lightning (which owns the same boundary for arbitrary harnesses) and
+  Peking's own Harness-Bench.</p>
+tags:
+  - agents
+  - agent-harness
+  - rl
+  - research
+paper:
+  arxiv: "2608.29641"
+related:
+  - harness-bench
+  - agent-lightning-v1

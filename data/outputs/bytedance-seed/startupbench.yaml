@@ -1,0 +1,29 @@
+name: "StartupBench: Benchmarking Agents on Market-Validated End-to-End Workflows"
+slug: startupbench
+lab: bytedance-seed
+type: paper
+date: 2026-08-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.17800
+description: >
+  <p>ByteDance Seed (with Nanjing University, M-A-P and TokenWave.AI) grounds
+  an agent benchmark in <strong>market demand rather than researcher
+  intuition</strong>: tasks are derived from AI startup products with
+  demonstrated adoption, reverse-engineering their product workflows into
+  <strong>97 deliverable-oriented end-to-end tasks across six professional
+  domains</strong>, each scored against ~25 fine-grained rubrics.</p>
+
+  <p>The framing &mdash; "does agent progress extend to work users actually
+  pay for?" &mdash; and the low headline scores (best models around 30%)
+  position it alongside GDPval-style economically-grounded evals rather than
+  capability suites. Filed as a paper pending broader adoption.</p>
+tags:
+  - agents
+  - benchmark
+  - evaluation
+  - research
+paper:
+  arxiv: "2608.17800"
+related:
+  - gdpval

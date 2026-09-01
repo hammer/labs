@@ -1,0 +1,28 @@
+name: "MEGA-CDP: Benchmarking Clinical Decision Pathway Adherence"
+slug: mega-cdp
+lab: shanghai-ai-lab
+type: paper
+date: 2026-08-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.26592
+description: >
+  <p>Shanghai AI Laboratory with Tongji and Sun Yat-sen (the MedXpertQA
+  pattern: a tracked lab's medical eval via academic collaboration) shifts
+  medical LLM evaluation from final-answer accuracy to
+  <strong>guideline adherence</strong>: can a model produce the clinical
+  decision pathway a guideline prescribes? <strong>MEGA-CDP</strong> is built
+  by a guideline-to-case pipeline over <strong>2,274 English and Chinese
+  clinical practice guidelines</strong>, yielding <strong>42,353 cases</strong>
+  with explicit reference pathways, evaluated in both single-turn vignette
+  and multi-turn interactive settings with a pathway-consistency scoring
+  framework.</p>
+tags:
+  - medical
+  - benchmark
+  - evaluation
+  - research
+paper:
+  arxiv: "2608.26592"
+related:
+  - medxpertqa

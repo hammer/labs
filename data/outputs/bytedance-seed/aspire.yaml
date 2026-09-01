@@ -1,0 +1,27 @@
+name: "Aspire: Can Models Self-Evolve from Vague Goals?"
+slug: aspire
+lab: bytedance-seed
+type: paper
+date: 2026-08-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.31111
+description: >
+  <p>ByteDance Seed (with SUTD, M-A-P and TokenWave.AI) reframes
+  self-evolution evaluation: existing work hands the model human-specified
+  tasks and metrics, reducing self-improvement to optimizing an explicit
+  objective. <strong>Aspire</strong> gives the agent only a vague
+  natural-language capability goal ("become a better physicist") while the
+  downstream evaluation tasks stay hidden &mdash; the agent must
+  operationalize the goal itself: choose data and update methods, construct
+  its own training and validation signals, and decide when it has actually
+  improved.</p>
+tags:
+  - agents
+  - self-improvement
+  - benchmark
+  - evaluation
+paper:
+  arxiv: "2608.31111"
+related:
+  - startupbench
