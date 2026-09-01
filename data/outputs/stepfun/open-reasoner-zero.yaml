@@ -1,0 +1,47 @@
+name: "Open-Reasoner-Zero: Scaling Up RL on the Base Model"
+slug: open-reasoner-zero
+lab:
+  - stepfun
+  - tsinghua
+type: paper
+date: 2025-03-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.24290
+  - label: GitHub
+    url: https://github.com/Open-Reasoner-Zero/Open-Reasoner-Zero
+description: >
+  <p>StepFun and Tsinghua (first author Jingcheng Hu; senior author
+  <a href="/people/harry-shum">Harry Shum</a>) delivered the first fully open
+  implementation of <strong>large-scale reasoning-oriented RL directly on a
+  base model</strong>, weeks after DeepSeek-R1-Zero. The recipe is
+  deliberately minimalist: vanilla PPO with GAE (&lambda;=1, &gamma;=1),
+  simple rule-based rewards, and <strong>no KL regularization</strong> &mdash;
+  yet it reproduces the R1-Zero scaling phenomenon in which both benchmark
+  performance and response length grow with training, and from the same
+  Qwen2.5-32B base outperforms DeepSeek-R1-Zero-Qwen-32B on AIME 2024,
+  MATH500 and GPQA Diamond.</p>
+
+  <p>In the RL-scaling literature it anchors the open, sequential-steps end:
+  <a href="/outputs/cmu/isocompute-playbook">IsoCompute</a> cites it (with
+  DAPO) as work that scales sequential updates to reward convergence without
+  framing itself as a scaling-law study. Training code, data and weights are
+  fully released.</p>
+tags:
+  - rl
+  - rl-scaling
+  - post-training
+  - reasoning
+  - open-source
+paper:
+  arxiv: "2503.24290"
+  authors:
+    - Jingcheng Hu
+    - Yinmin Zhang
+    - Qi Han
+    - Daxin Jiang
+    - Xiangyu Zhang
+    - Heung-Yeung Shum
+  code_url: https://github.com/Open-Reasoner-Zero/Open-Reasoner-Zero
+related:
+  - isocompute-playbook

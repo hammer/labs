@@ -1,0 +1,51 @@
+name: "RLVE: Scaling Up RL with Adaptive Verifiable Environments"
+slug: rlve
+lab:
+  - uw
+  - ai2
+type: paper
+date: 2025-11-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2511.07317
+description: >
+  <p>The <em>environment</em> axis of RL scaling, from a UW-led team (Zhiyuan
+  Zeng; senior authors Natasha Jaques, Simon Du, Yulia Tsvetkov) with Ai2
+  (Hamish Ivison), UIUC and LMSYS. <strong>RLVE</strong> replaces static RL
+  datasets &mdash; whose learning signal vanishes when problems are too easy
+  or too hard for the current policy &mdash; with <strong>verifiable
+  environments that procedurally generate problems and adapt their difficulty
+  distribution to the policy as training progresses</strong>, each with
+  algorithmically checkable rewards.</p>
+
+  <p>Ships <strong>RLVE-Gym, a 400-environment suite</strong> built through
+  manual environment engineering. Accepted to ICML 2026;
+  <a href="/outputs/cmu/isocompute-playbook">IsoCompute</a> cites it as the
+  environment-scaling dimension of the LLM RL-scaling literature.</p>
+tags:
+  - rl
+  - rl-scaling
+  - post-training
+  - environments
+  - research
+paper:
+  arxiv: "2511.07317"
+  venue: ICML 2026
+  authors:
+    - Zhiyuan Zeng
+    - Hamish Ivison
+    - Yiping Wang
+    - Lifan Yuan
+    - Shuyue Stella Li
+    - Zhuorui Ye
+    - Siting Li
+    - Jacqueline He
+    - Runlong Zhou
+    - Tong Chen
+    - Chenyang Zhao
+    - Yulia Tsvetkov
+    - Simon Shaolei Du
+    - Natasha Jaques
+related:
+  - isocompute-playbook
+  - demystifying-rl-post-training

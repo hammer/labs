@@ -17,6 +17,7 @@ tags:
   - reinforcement-learning
   - reasoning
   - research
+  - rl-scaling
 paper:
   arxiv: "2507.05197"
 library:

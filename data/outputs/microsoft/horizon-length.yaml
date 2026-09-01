@@ -28,6 +28,7 @@ description: >
 tags:
   - reasoning
   - agents
+  - rl-scaling
 paper:
   arxiv: "2605.02572"
   venue: ICML 2026

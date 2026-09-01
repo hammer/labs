@@ -47,6 +47,7 @@ tags:
   - scaling-laws
   - reasoning
   - research
+  - rl-scaling
 paper:
   arxiv: "2603.12151"
   authors:

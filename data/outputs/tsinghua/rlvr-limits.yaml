@@ -17,5 +17,6 @@ tags:
   - reasoning
   - post-training
   - research
+  - rl-scaling
 paper:
   arxiv: "2504.13837"

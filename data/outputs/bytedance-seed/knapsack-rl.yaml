@@ -1,0 +1,43 @@
+name: "Knapsack RL: Unlocking Exploration of LLMs via Optimizing Budget Allocation"
+slug: knapsack-rl
+lab: bytedance-seed
+type: paper
+date: 2025-09-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.25849
+description: >
+  <p>ByteDance Seed (with CUHK-Shenzhen and the Shenzhen Research Institute
+  of Big Data; first author Ziniu Li, senior author Zhi-Quan Luo) attacks the
+  degenerate edge of uniform rollout budgets in GRPO-style RL: easy tasks
+  always succeed and hard tasks always fail, and both produce
+  <strong>zero gradients</strong>. <strong>Knapsack RL</strong> reframes
+  per-task exploration as a knapsack problem &mdash; each task an "item" with
+  a value and a cost &mdash; and optimizes the allocation of a fixed total
+  rollout budget across tasks instead of splitting it uniformly.</p>
+
+  <p>In the RL-scaling taxonomy this is the <em>adaptive-allocation</em>
+  counterpart to <a href="/outputs/cmu/isocompute-playbook">IsoCompute</a>'s
+  uniform compute-optimal rules (which cite it as the adaptive alternative)
+  and to <a href="/outputs/nvidia/brorl">BroRL</a>'s uniform rollout-width
+  scaling.</p>
+tags:
+  - rl
+  - rl-scaling
+  - post-training
+  - efficiency
+  - research
+paper:
+  arxiv: "2509.25849"
+  authors:
+    - Ziniu Li
+    - Congliang Chen
+    - Tianyun Yang
+    - Tian Ding
+    - Ruoyu Sun
+    - Ge Zhang
+    - Wenhao Huang
+    - Zhi-Quan Luo
+related:
+  - isocompute-playbook
+  - brorl

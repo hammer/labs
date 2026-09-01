@@ -1,0 +1,45 @@
+name: "BroRL: Scaling Reinforcement Learning via Broadened Exploration"
+slug: brorl
+lab: nvidia
+type: paper
+date: 2025-10-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.01180
+description: >
+  <p>The rollout-width axis of RL scaling, from the
+  <a href="/outputs/nvidia/prorl">ProRL</a> team (NVIDIA, with Stanford and
+  UW co-authors): where ProRL's step scaling plateaus after thousands of
+  updates with clearly diminishing returns, <strong>BroRL</strong> scales the
+  <strong>number of rollouts per example into the hundreds</strong> to
+  exhaustively broaden exploration &mdash; and keeps improving beyond the
+  saturation point of purely sequential scaling.</p>
+
+  <p>A key reference for the parallel-vs-sequential trade-off later
+  systematized by
+  <a href="/outputs/cmu/isocompute-playbook">IsoCompute</a>'s
+  compute-optimal allocation analysis, which cites BroRL as the
+  rollout-width anchor of the literature.</p>
+tags:
+  - rl
+  - rl-scaling
+  - post-training
+  - reasoning
+  - research
+paper:
+  arxiv: "2510.01180"
+  authors:
+    - Jian Hu
+    - Mingjie Liu
+    - Ximing Lu
+    - Fang Wu
+    - Zaid Harchaoui
+    - Shizhe Diao
+    - Yejin Choi
+    - Pavlo Molchanov
+    - Jun Yang
+    - Jan Kautz
+    - Yi Dong
+related:
+  - prorl
+  - isocompute-playbook

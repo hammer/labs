@@ -1,0 +1,53 @@
+name: "ScaleRL: The Art of Scaling Reinforcement Learning Compute for LLMs"
+slug: scalerl
+lab:
+  - meta
+  - ut-austin
+type: paper
+date: 2025-10-15
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2510.13786
+description: >
+  <p>Meta's large-scale answer to the missing pretraining-style scaling
+  methodology for RL: a <strong>400,000+ GPU-hour</strong> systematic study
+  (work done at Meta; first author Devvrit Khatri of UT Austin, with UCL,
+  Berkeley, Harvard and Periodic Labs co-affiliations, senior author Rishabh
+  Agarwal) that fits <strong>sigmoidal compute&ndash;performance curves</strong>
+  to RL training &mdash; pass rate vs log-compute, rather than pretraining's
+  power laws &mdash; and ablates common recipe choices against two separated
+  quantities: asymptotic performance and compute efficiency.</p>
+
+  <p>Three findings organize the study: recipes differ in their
+  <em>asymptote</em>, not just speed; details like loss aggregation,
+  normalization, curriculum and off-policy algorithm mostly modulate
+  <em>efficiency</em> without moving the asymptote; and stable recipes follow
+  predictable trajectories, so large-run performance can be extrapolated from
+  small runs. The distilled best-practice recipe, <strong>ScaleRL</strong>,
+  is validated by predicting the validation-performance curve of a single RL
+  run scaled to <strong>100,000 GPU-hours</strong>. Published at ICLR 2026;
+  the founding entry of the RL-compute-scaling literature that
+  <a href="/outputs/cmu/isocompute-playbook">IsoCompute</a> extends into
+  allocation rules.</p>
+tags:
+  - rl
+  - rl-scaling
+  - scaling-laws
+  - post-training
+  - research
+paper:
+  arxiv: "2510.13786"
+  venue: ICLR 2026
+  authors:
+    - Devvrit Khatri
+    - Lovish Madaan
+    - Rishabh Tiwari
+    - Rachit Bansal
+    - Sai Surya Duvvuri
+    - Manzil Zaheer
+    - Inderjit S. Dhillon
+    - David Brandfonbrener
+    - Rishabh Agarwal
+related:
+  - isocompute-playbook

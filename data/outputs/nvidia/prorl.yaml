@@ -1,0 +1,48 @@
+name: "ProRL: Prolonged Reinforcement Learning Expands Reasoning Boundaries"
+slug: prorl
+lab: nvidia
+type: paper
+date: 2025-05-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.24864
+  - label: HuggingFace (Nemotron-Research-Reasoning-Qwen-1.5B)
+    url: https://huggingface.co/nvidia/Nemotron-Research-Reasoning-Qwen-1.5B
+description: >
+  <p>NVIDIA's case that the <em>sequential</em> axis of RL compute genuinely
+  expands capability rather than just sharpening it &mdash; the direct
+  counterpoint to the
+  <a href="/outputs/tsinghua/rlvr-limits">pass@k limits result</a>.
+  <strong>ProRL</strong> stabilizes RL over thousands of steps via KL
+  divergence control, <strong>reference-policy resetting</strong>, and a
+  diverse task suite, and shows the trained models beating their base across
+  pass@k evaluations <em>including cases where the base fails at every
+  sampled attempt</em> &mdash; evidence of novel reasoning strategies
+  inaccessible to the base model under any sampling budget. Boundary
+  expansion correlates with the base model's initial weakness on a task.</p>
+
+  <p>Released with open weights (Nemotron-Research-Reasoning-Qwen-1.5B). In
+  the RL-scaling literature ProRL anchors the training-steps axis: its own
+  plateau after thousands of steps is the launch point for
+  <a href="/outputs/nvidia/brorl">BroRL</a>'s rollout-width scaling by the
+  same group.</p>
+tags:
+  - rl
+  - rl-scaling
+  - post-training
+  - reasoning
+  - research
+paper:
+  arxiv: "2505.24864"
+  authors:
+    - Mingjie Liu
+    - Shizhe Diao
+    - Ximing Lu
+    - Jian Hu
+    - Xin Dong
+    - Yejin Choi
+    - Jan Kautz
+    - Yi Dong
+related:
+  - brorl
+  - rlvr-limits

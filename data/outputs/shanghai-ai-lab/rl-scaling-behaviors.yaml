@@ -1,0 +1,51 @@
+name: "Scaling Behaviors of LLM Reinforcement Learning Post-Training"
+slug: rl-scaling-behaviors
+lab: shanghai-ai-lab
+type: paper
+date: 2025-09-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.25300
+description: >
+  <p>A multi-institution empirical study (Shanghai AI Laboratory with Oxford,
+  USTC, NUS, University of Georgia and others; senior author Lei Bai) of how
+  <strong>model scale, data volume and compute budget interact</strong> in
+  RL post-training for mathematical reasoning, run across the full
+  <strong>Qwen2.5 dense series from 0.5B to 72B</strong> &mdash; the
+  model-size axis of the RL-scaling literature, where
+  <a href="/outputs/meta/scalerl">ScaleRL</a> covers recipe/compute curves
+  and <a href="/outputs/cmu/isocompute-playbook">IsoCompute</a> covers
+  sampling allocation.</p>
+
+  <p>Headline finding: <strong>larger models are consistently more
+  learning-efficient in RL on both compute and data metrics</strong>, with
+  the paper characterizing the model-scale/data/compute relationships as
+  empirical scaling behaviors rather than a single fitted law. Accepted to
+  ACL 2026 Main.</p>
+tags:
+  - rl
+  - rl-scaling
+  - scaling-laws
+  - post-training
+  - research
+paper:
+  arxiv: "2509.25300"
+  venue: ACL 2026
+  authors:
+    - Zelin Tan
+    - Hejia Geng
+    - Xiaohang Yu
+    - Mulei Zhang
+    - Guancheng Wan
+    - Yifan Zhou
+    - Qiang He
+    - Xiangyuan Xue
+    - Heng Zhou
+    - Yutao Fan
+    - Zhongzhi Li
+    - Zaibin Zhang
+    - Guibin Zhang
+    - Chen Zhang
+related:
+  - scalerl
+  - isocompute-playbook
