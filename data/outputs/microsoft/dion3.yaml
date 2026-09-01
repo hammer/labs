@@ -21,7 +21,7 @@ description: >
   flat-buffer sharding, fine-grained MoE (small matrices), and PP+EP
   parallelism. <strong>Dion3</strong> is a full-stack revision with four
   stacked contributions: <strong>Gram Newton-Schulz</strong> (iterate on the
-  small symmetric Gram matrix XX&#8319; instead of X &mdash; mathematically
+  small symmetric Gram matrix XX&#7488; instead of X &mdash; mathematically
   identical output, two rectangular matmuls total), <strong>symmetric GEMM
   kernels in CuTeDSL</strong> for Hopper/Blackwell that compute only the lower
   triangle (~half the FLOPs, beating cuBLAS across sizes), a
