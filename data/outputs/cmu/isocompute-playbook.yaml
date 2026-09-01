@@ -1,0 +1,72 @@
+name: "IsoCompute Playbook: Optimally Scaling Sampling Compute for LLM RL"
+slug: isocompute-playbook
+lab:
+  - cmu
+  - mbzuai
+type: paper
+date: 2026-03-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.12151
+  - label: Project website
+    url: https://compute-optimal-rl-llm-scaling.github.io/
+description: >
+  <p>A UC San Diego-led collaboration with CMU (Aviral Kumar, Ruslan
+  Salakhutdinov, Virginia Smith, Amrith Setlur, Yuxiao Qu) and MBZUAI's
+  Institute of Foundation Models (Taylor Killian, Zhengzhong Liu, and
+  president <a href="/people/eric-xing">Eric Xing</a>) that asks the
+  Chinchilla question for RLVR: given a fixed sampling budget
+  C = B<sub>p</sub>&middot;n&middot;M, how should it split across
+  <strong>parallel rollouts per problem (n)</strong>, <strong>problems per
+  batch (B<sub>p</sub>)</strong> and <strong>sequential update steps
+  (M)</strong>? A prerequisite finding is that scaling laws only emerge from a
+  "healthy" recipe &mdash; stability is governed by problem difficulty
+  relative to the base model, entropy/KL regularization, and scaling the
+  learning rate with effective batch size &mdash; after which reward-vs-compute
+  curves fit smooth sigmoids whose upper envelope defines a compute-optimal
+  frontier.</p>
+
+  <p>Main results (GRPO on Qwen2.5-7B-Instruct over Easy/Hard math splits
+  bucketed by pass rate, validated on Qwen3-4B-Instruct and
+  Llama-3.1-8B-Instruct, with PPO and CISPO checks): the
+  <strong>compute-optimal n grows predictably with budget, then
+  saturates</strong> &mdash; on easy problems via solution sharpening, on hard
+  ones via coverage of rare successful trajectories; under a fixed system
+  batch B = B<sub>p</sub>&middot;n, the optimum shifts from many-problems/few-rollouts at
+  low compute to few-problems/many-rollouts at high compute; and
+  B<sub>p</sub> is mostly a stability knob with weak performance effects in a
+  moderate range. The tabular-bandit prediction (favor sequential steps M)
+  inverts in practice because larger n mitigates <strong>gradient
+  interference across problems</strong>, which otherwise leaves a fraction of
+  even easy problems at near-zero pass@1. Net effect: RL scaling laws recast
+  as prescriptive allocation rules for sampling compute, complementing
+  pretraining-style compute-optimal analysis on the post-training side.</p>
+tags:
+  - rl
+  - post-training
+  - scaling-laws
+  - reasoning
+  - research
+paper:
+  arxiv: "2603.12151"
+  authors:
+    - Zhoujun Cheng
+    - Yutao Xie
+    - Yuxiao Qu
+    - Amrith Setlur
+    - Shibo Hao
+    - Varad Pimpalkhute
+    - Tongtong Liang
+    - Feng Yao
+    - Zhengzhong Liu
+    - Eric Xing
+    - Virginia Smith
+    - Ruslan Salakhutdinov
+    - Zhiting Hu
+    - Taylor Killian
+    - Aviral Kumar
+related:
+  - demystifying-rl-post-training
+  - rlvr-limits
+  - simplerl
+  - optimal-batch-size-scheduling
