@@ -1,0 +1,69 @@
+name: "Dion3: Full-Stack Orthogonal Updates"
+slug: dion3
+lab:
+  - microsoft
+  - princeton
+type: paper
+date: 2026-08-12
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.11612
+  - label: GitHub (dion package)
+    url: https://github.com/microsoft/dion
+  - label: Gram Newton-Schulz kernels (GitHub)
+    url: https://github.com/Dao-AILab/gram-newton-schulz
+description: >
+  <p>Microsoft Research (senior author John Langford) with Princeton
+  (<a href="/people/tri-dao">Tri Dao</a>, Jack Zhang, Berlin Chen), NVIDIA,
+  NYU and Yale attack the reason Muon is expensive at scale: its cubic-time
+  Newton-Schulz orthogonalization, whose compute and FSDP communication
+  overhead the paper argues Kimi only escaped through a lucky alignment of
+  flat-buffer sharding, fine-grained MoE (small matrices), and PP+EP
+  parallelism. <strong>Dion3</strong> is a full-stack revision with four
+  stacked contributions: <strong>Gram Newton-Schulz</strong> (iterate on the
+  small symmetric Gram matrix XX&#8319; instead of X &mdash; mathematically
+  identical output, two rectangular matmuls total), <strong>symmetric GEMM
+  kernels in CuTeDSL</strong> for Hopper/Blackwell that compute only the lower
+  triangle (~half the FLOPs, beating cuBLAS across sizes), a
+  <strong>fractional update rule</strong> that orthogonalizes only a selected
+  fraction of momentum rows per step with error feedback on the rest
+  (reducing exactly to Muon at f=1; superseding the unpublished "Dion2"), and
+  <strong>megabatching</strong>, which cuts FSDP all-to-all rounds per
+  optimizer step to a small constant.</p>
+
+  <p>Quality is preserved or slightly improved: 1B dense transformers
+  (GQA + sliding window, MXFP8, FSDP) on 100B ClimbMix tokens reach slightly
+  better validation loss than a tuned NorMuon baseline, with larger-scale
+  runs up to 14B and a 7B case study on four GH200s. Speed: symmetric kernels
+  + Gram Newton-Schulz give &ge;1.5&times; over standard Muon, and with
+  f=0.25 row selection the stack reaches a <strong>6&times; optimizer-step
+  speedup for larger models</strong> (measured via CUDA events on GH200,
+  single-GPU and 4-GPU FSDP), while matching or improving Muon's loss. Ships
+  as the MIT-licensed pip-installable <code>dion</code> package
+  (microsoft/dion, ~540 stars) with FSDP2/DDP/mixed-sharding backends that
+  also implement Muon, NorMuon and standard Newton-Schulz &mdash; a drop-in
+  replacement aimed at making orthogonal optimizers practical beyond the
+  architectures that happen to suit them.</p>
+tags:
+  - optimizers
+  - training
+  - efficiency
+  - gpu-kernels
+  - open-source
+paper:
+  arxiv: "2608.11612"
+  authors:
+    - Noah Amsel
+    - Jack Zhang
+    - Kwangjun Ahn
+    - Ali Naeimi
+    - Austin Feng
+    - Berlin Chen
+    - Tri Dao
+    - John Langford
+  code_url: https://github.com/microsoft/dion
+related:
+  - muon
+  - mars-optimizer
+  - emerging-optimizers
+  - scion
