@@ -1,0 +1,46 @@
+name: Qwen-Drive-1.0
+slug: qwen-drive-1
+lab: alibaba
+type: model
+date: 2026-08-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.00111
+  - label: ModelScope
+    url: https://modelscope.cn/models/Qwen/Qwen-Drive-1.0-4B
+description: >
+  <p>The Qwen Team (with Huazhong University of Science and Technology)
+  extends the Qwen line into autonomous driving: <strong>Qwen-Drive-1.0</strong>
+  keeps the natively multimodal <strong>Qwen3.5-4B</strong> as its shared VLM
+  backbone and unifies <strong>3D perception, driving VQA, and motion
+  planning</strong> in one model &mdash; the first driving system to the
+  authors' knowledge doing all three in a single pretrained VLM. An external
+  bird's-eye-view perception head jointly performs 3D object detection,
+  semantic occupancy prediction and BEV map segmentation (doubling as an
+  inspectable probe of the 3D structure in the shared representations), and a
+  Planning Expert conditions on the same representations to generate ego
+  trajectories.</p>
+
+  <p>A staged recipe mixes driving supervision with general vision-language
+  data so driving competence lands without sacrificing general VQA or
+  instruction following; evaluations span open-loop, pseudo-closed-loop and
+  closed-loop planning. The 4B checkpoint is live on ModelScope; the
+  announced HuggingFace (<code>Qwen/Qwen-Drive-1.0-4B</code>) and GitHub
+  (<code>QwenLM/Qwen-Drive-1.0</code>) listings were not yet public as of
+  2026-09-02. Joins Alibaba's embodied line (Qwen-Robot, RynnWorld) on the
+  driving side.</p>
+tags:
+  - autonomous-driving
+  - multimodal
+  - science
+  - embodied
+model:
+  base_model: qwen3.5
+  variants:
+    - name: Qwen-Drive-1.0-4B
+      notes: "Qwen3.5-4B backbone + BEV perception head + Planning Expert"
+paper:
+  arxiv: "2609.00111"
+related:
+  - qwen-robot
+  - rynnworld

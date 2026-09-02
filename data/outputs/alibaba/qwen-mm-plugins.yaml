@@ -1,0 +1,32 @@
+name: Qwen-MM-Plugins
+slug: qwen-mm-plugins
+lab: alibaba
+type: library
+date: 2026-07-29
+sources:
+  - label: GitHub
+    url: https://github.com/QwenLM/Qwen-MM-Plugins
+description: >
+  <p>QwenLM's answer to text-only agent harnesses: <strong>native multimodal
+  plugins that "make any agent harness multimodal-native"</strong>, wiring
+  Qwen's vision/audio models into existing coding and work agents rather than
+  requiring a new harness. The guided installer targets Claude Code,
+  CodeBuddy, Codex, Qoder, OpenClaw, Qwen Code and Gemini CLI, with
+  documented manual setups for DeepSeek Harness, Hermes Agent, opencode and
+  others; shared configuration lives in <code>~/.qwen-mm-plugins/config</code>.</p>
+
+  <p>Apache 2.0, released July 29, 2026; ~2.8K stars by early September.
+  On-thesis for the execution-layer line: it treats multimodality as a
+  harness capability to be retrofitted, the same slot Anthropic's MCP fills
+  for tools. Surfaced by a QwenLM org probe (missed by earlier sweeps).</p>
+tags:
+  - agents
+  - agent-harness
+  - multimodal
+  - open-source
+library:
+  github: https://github.com/QwenLM/Qwen-MM-Plugins
+  license: Apache 2.0
+related:
+  - qwen-cua
+  - mcp
