@@ -1,0 +1,74 @@
+name: Claude Fable 5.1
+slug: claude-fable-5.1
+lab: anthropic
+type: model
+date: 2026-09-01
+flagship: true
+sources:
+  - label: Announcement (Claude Fable 5.1 and Mythos 5.1)
+    url: https://www.anthropic.com/claude-fable-and-mythos-5-1
+  - label: System Card (PDF)
+    url: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
+  - label: Model docs
+    url: https://platform.claude.com/docs/en/models/fable-5-1/overview
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/claude-fable-5-1
+description: >
+  <p>Anthropic's second public Mythos-class release, succeeding
+  <a href="/outputs/anthropic/claude-fable-5">Claude Fable 5</a> as the
+  broadly available counterpart to the restricted
+  <a href="/outputs/anthropic/claude-mythos-5.1">Claude Mythos 5.1</a>.
+  <strong>#1 on the AA Intelligence Index v4.1.1 at 66</strong> (of 192;
+  Opus 5 scores 63). Headline gains are agentic and scientific:
+  Terminal-Bench 4.0 <strong>55.8</strong> (Fable 5 42.0, Opus 5 52.3),
+  Terminal-Bench-Science 0.1 <strong>52.6</strong> &mdash; more than double
+  Fable 5's 24.7 &mdash; GDPval-AA v2 Elo <strong>1853</strong> (1723/1824),
+  OSWorld 2.0 strict 41.7, HLE without tools 60.9, AutomationBench 31.4
+  (17.1/26.9). Anthropic showcases research results: ~50% protein-binder hit
+  rate across 12 targets, GPU-kernel optimizations up to 2.5&times;, and a
+  CC-licensed 2&ndash;3 km Venus elevation map.</p>
+
+  <p><strong>1M-token context, 128K output</strong>, always-on adaptive
+  reasoning with low/medium/high/xhigh/max effort (high is the Claude Code
+  default, where it is now the default Fable model). Priced $10/$50 per
+  million tokens with <strong>cache reads cut 75% to $0.25/M</strong> &mdash;
+  about 25% cheaper on typical workloads and up to 45% on agentic ones.
+  Safeguards are refined rather than lifted: blocked cybersecurity tasks fall
+  back to <a href="/outputs/anthropic/claude-opus-4.8">Opus 4.8</a> and
+  blocked biology tasks to <a href="/outputs/anthropic/claude-opus-5">Opus
+  5</a>, with 60% (cyber) and 85% (bio) fewer false positives than Fable 5's
+  launch safeguards, plus anti-distillation mechanisms on new API accounts.
+  Anthropic assesses it below the next RSP capability tier. API ID
+  <code>claude-fable-5-1</code>; knowledge cutoff June 2026.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+  - science
+model:
+  context_window: 1000000
+  intelligence_index: 66
+  intelligence_index_version: "AA v4.1.1"
+  openness_index: 11.1
+  openness_index_version: "AA Openness Index v1.0 (family inference)"
+  benchmark_scores:
+    - benchmark: Terminal-Bench 4.0
+      score: "55.8"
+    - benchmark: Terminal-Bench-Science 0.1
+      score: "52.6"
+    - benchmark: GDPval-AA v2
+      score: "1853 Elo"
+    - benchmark: OSWorld 2.0
+      score: "41.7"
+      mode: strict
+    - benchmark: Humanity's Last Exam
+      score: "60.9"
+      mode: no tools
+    - benchmark: AutomationBench
+      score: "31.4"
+    - benchmark: CursorBench 3.2.0
+      score: "73.4"
+related:
+  - claude-fable-5
+  - claude-mythos-5.1
+  - claude-opus-5

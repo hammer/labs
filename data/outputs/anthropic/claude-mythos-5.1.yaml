@@ -1,0 +1,48 @@
+name: Claude Mythos 5.1
+slug: claude-mythos-5.1
+lab: anthropic
+type: model
+date: 2026-09-01
+flagship: true
+sources:
+  - label: Announcement (Claude Fable 5.1 and Mythos 5.1)
+    url: https://www.anthropic.com/claude-fable-and-mythos-5-1
+  - label: System Card (PDF)
+    url: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
+description: >
+  <p>Anthropic's most capable model: the same underlying model as
+  <a href="/outputs/anthropic/claude-fable-5.1">Claude Fable 5.1</a> (AA
+  Intelligence Index v4.1.1 = 66, #1) with <strong>cybersecurity and biology
+  safeguards relaxed for vetted professionals</strong> &mdash; Anthropic
+  acknowledges it as the strongest cyber-capable model it has released.
+  Where scored separately it leads Fable 5.1: <strong>60.9 on Terminal-Bench
+  4.0</strong> versus Fable 5.1's 55.8. In Adaptyv Bio protein-design
+  evaluations its binding affinities came in <strong>10&times; higher than
+  the best prior competition submissions</strong>.</p>
+
+  <p>Access runs through two verification programs &mdash; the
+  <strong>Cyber Verification Program</strong> (vetted cyberdefenders) and the
+  <strong>Life Sciences Verification Program</strong> (run in partnership
+  with the US government) &mdash; currently limited to US organizations with
+  international expansion planned. Not independently scored on Artificial
+  Analysis (access is too restricted), so <code>intelligence_index</code> is
+  left unset; capability is Fable 5.1 plus the unblocked domains. Anthropic
+  assesses the release below the next RSP capability tier, with alignment
+  improvements over <a href="/outputs/anthropic/claude-mythos-5">Mythos
+  5</a>.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+  - science
+  - cybersecurity
+model:
+  context_window: 1000000
+  openness_index: 11.1
+  openness_index_version: "AA Openness Index v1.0 (family inference)"
+  benchmark_scores:
+    - benchmark: Terminal-Bench 4.0
+      score: "60.9"
+related:
+  - claude-fable-5.1
+  - claude-mythos-5
