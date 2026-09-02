@@ -1,0 +1,44 @@
+name: AI Research Preference Models
+slug: research-preference-models
+lab:
+  - meta
+  - oxford
+  - ucl
+type: paper
+date: 2026-08-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.13940
+description: >
+  <p>FAIR at Meta (with Oxford and UCL co-authors) attacks the binding
+  constraint on AI research agents: evaluations that consume days of GPU time,
+  while the agent can propose far more candidates than it can afford to run.
+  <strong>Research Preference Models (RPMs)</strong> predict which candidate
+  solution is most promising without paying to execute them all. Two variants
+  are built from frozen pretrained LLMs: an <strong>inference-only RPM</strong>
+  that reasons over candidate plans, code, and previously executed solutions,
+  and an <strong>agentic RPM</strong> that additionally runs small-scale pilot
+  experiments before judging &mdash; mirroring how human researchers cheaply
+  test feasibility before committing to a full run.</p>
+
+  <p>Integrated into the AIRA-dojo research agent (with a Qwen3.6-27B backbone
+  for both child creation and selection) and evaluated on the AIRS-Bench
+  machine-learning research benchmark, the two variants lift the average
+  normalized score from 0.684 to <strong>0.711</strong> and
+  <strong>0.729</strong> respectively, reach the unguided agent's 24-hour
+  performance in roughly <strong>15 hours</strong> (under two-thirds of the
+  execution budget), and set new state-of-the-art results on two AIRS-Bench
+  tasks. Analysis finds selection accuracy improves when the RPM's
+  justification cites prior evidence, implementation correctness, or the
+  pretrained backbone.</p>
+tags:
+  - agents
+  - agentic
+  - reasoning
+  - efficiency
+  - science
+paper:
+  arxiv: "2608.13940"
+related:
+  - adepts-bench
+  - scalerl
