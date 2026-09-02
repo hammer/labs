@@ -1,0 +1,44 @@
+name: "S3Gym: Can LLMs Turn Self-Testing and Self-Judging into Self-Improvement?"
+slug: s3gym
+lab: bytedance-seed
+type: paper
+date: 2026-08-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.31100
+  - label: Project Page (Self-Developing Agents)
+    url: https://self-developing-agents.github.io/
+description: >
+  <p>ByteDance Seed (with M-A-P and TokenWave.AI) asks whether an agent can
+  actively test its own behavior, judge the resulting experience, and use it
+  to improve future decisions &mdash; rather than being evaluated as a fixed
+  policy. <strong>S&sup3;Gym</strong> couples three capabilities
+  (<strong>Self-Testing, Self-Judging, Self-Improvement</strong>) across
+  seven text-based games with executable environment verifiers, separating
+  permissive exploration from strict held-out evaluation, and compares three
+  pathways for incorporating experience: direct history ICL,
+  score-conditioned summary memory, and parameter training.</p>
+
+  <p>Self-improvement proves <strong>neither automatic nor uniform</strong>:
+  summaries help when experience compresses into reusable strategic rules
+  but underperform raw history when success depends on precise,
+  state-contingent information; parameter training yields substantial gains
+  on some tasks but unstable improvement and severe negative transfer on
+  others. Recognizing successful actions is insufficient &mdash; agents must
+  transform feedback into executable, transferable policies. The
+  experience-integration leg of the Seed team's <em>Self-Developing
+  Agents</em> trilogy, alongside
+  <a href="/outputs/bytedance-seed/aspire">Aspire</a> (goal formation) and
+  <a href="/outputs/bytedance-seed/harnessdev">HarnessDev</a> (system
+  integration).</p>
+tags:
+  - agents
+  - self-improvement
+  - benchmark
+  - evaluation
+  - rl
+paper:
+  arxiv: "2608.31100"
+related:
+  - aspire
+  - harnessdev

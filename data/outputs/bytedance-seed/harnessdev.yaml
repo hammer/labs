@@ -1,0 +1,51 @@
+name: "HarnessDev: Can LLMs Create and Evolve Their Own Agent Harness?"
+slug: harnessdev
+lab: bytedance-seed
+type: paper
+date: 2026-09-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.01437
+  - label: Project Page (Self-Developing Agents)
+    url: https://self-developing-agents.github.io/
+description: >
+  <p>ByteDance Seed (with SUTD, Georgia Tech and M-A-P) shifts the unit of
+  agent evaluation from task outputs to <strong>runnable
+  infrastructure</strong>: since a model's capability increasingly depends on
+  its model-external execution harness, can the model build that harness
+  itself? In <strong>Creation</strong>, the agent starts from a minimal seed
+  and a few cases and must construct a complete execution system; in
+  <strong>Evolution</strong>, it iteratively revises its own harness using
+  downstream execution feedback. Constructed harnesses are scored on
+  capability (held-out task success) and efficiency (execution-token cost)
+  across six creator LLMs, four domains, and five downstream benchmarks
+  totaling <strong>2,207 instances</strong>, with hidden evaluation tasks
+  withheld from development.</p>
+
+  <p>Generated harnesses remain substantially behind mature human-engineered
+  references on code and on search/research, while <strong>matching or
+  exceeding them on writing and ML experimentation</strong> &mdash; with
+  large variation in execution cost. The Evolution-stage caution: visible
+  and held-out gains move in the same direction only <strong>53.1%</strong>
+  of the time (34 of 64 version switches), and only 2/9 declared final
+  versions are held-out optimal &mdash; visible feedback works for local
+  search but is unreliable for final selection, favoring lucky runs and
+  amplifying overfitting. Part of the Seed team's three-benchmark
+  <em>Self-Developing Agents</em> program (with
+  <a href="/outputs/bytedance-seed/aspire">Aspire</a> and
+  <a href="/outputs/bytedance-seed/s3gym">S&sup3;Gym</a>) probing the path
+  from "half-loop" recursive self-improvement &mdash; which assumes a golden
+  verifier &mdash; to closed-loop RSI.</p>
+tags:
+  - agents
+  - self-improvement
+  - benchmark
+  - evaluation
+  - harness
+paper:
+  arxiv: "2609.01437"
+related:
+  - aspire
+  - s3gym
+  - harness-rl
+  - harnesslens

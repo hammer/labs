@@ -6,6 +6,8 @@ date: 2026-08-31
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2608.31111
+  - label: Project Page (Self-Developing Agents)
+    url: https://self-developing-agents.github.io/
 description: >
   <p>ByteDance Seed (with SUTD, M-A-P and TokenWave.AI) reframes
   self-evolution evaluation: existing work hands the model human-specified
@@ -16,6 +18,18 @@ description: >
   operationalize the goal itself: choose data and update methods, construct
   its own training and validation signals, and decide when it has actually
   improved.</p>
+
+  <p>The resulting systems are judged on a hidden, expert-authored set of
+  <strong>520 items spanning six goals</strong>, supporting both model-weight
+  and agent-harness evolution in one interactive environment. Experiments
+  show vague goals redirect search effort toward goal interpretation: agents
+  routinely complete training and harness-editing loops, but weight-level
+  gains remain elusive. The goal-formation leg of the Seed team's
+  <em>Self-Developing Agents</em> trilogy, with
+  <a href="/outputs/bytedance-seed/s3gym">S&sup3;Gym</a> (experience
+  integration) and
+  <a href="/outputs/bytedance-seed/harnessdev">HarnessDev</a> (system
+  integration).</p>
 tags:
   - agents
   - self-improvement
@@ -24,4 +38,6 @@ tags:
 paper:
   arxiv: "2608.31111"
 related:
+  - s3gym
+  - harnessdev
   - startupbench
