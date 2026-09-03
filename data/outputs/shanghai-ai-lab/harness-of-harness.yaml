@@ -1,0 +1,44 @@
+name: "Harness-of-Harness: Multi-Day Autonomous Software Development"
+slug: harness-of-harness
+lab: shanghai-ai-lab
+type: paper
+date: 2026-09-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.01481
+  - label: Project Page
+    url: https://flesymeb.github.io/HarnessOfHarness/
+  - label: GitHub
+    url: https://github.com/Flesymeb/HarnessOfHarness
+description: >
+  <p>Shanghai AI Laboratory's harness that <strong>orchestrates existing
+  coding-agent harnesses</strong> into iterative
+  planning&ndash;coding&ndash;testing loops, aiming at autonomous software
+  development: turning high-level requirements into complete, usable software
+  with no human in the loop. HoH balances repair against capability growth,
+  scopes development into small verifiable increments, separates
+  implementation-time testing from independent evaluation, and constrains
+  verifiable outputs rather than prescribing agent workflows.</p>
+
+  <p>Across GameCraft-Bench, FrontierSWE, and ProgramBench with three
+  harness&ndash;model pairs (Codex + GPT-5.5 high, OpenCode + DeepSeek-V4-Pro,
+  Pi + MiniMax-M3), HoH delivers an average relative gain of
+  <strong>52.25%</strong> (max 82.86%) after three iterations &mdash; e.g.
+  Codex + GPT-5.5 rises from 49.58 to 71.52 on GameCraft-Bench and 44% to 71%
+  FrontierSWE dominance. The headline demo: a multi-day deployment of
+  <strong>70+ iterations</strong> autonomously built <em>Fusepoint</em>, a
+  human-playable narrative first-person shooter &mdash; coherent storyline,
+  fully implemented mechanics, polished visuals, integrated audio &mdash;
+  from an empty workspace containing only a product-requirements document.
+  Code released under MIT.</p>
+tags:
+  - agents
+  - coding
+  - harness
+  - self-improvement
+paper:
+  arxiv: "2609.01481"
+related:
+  - harnessdev
+  - harnesslens
+  - lagent
