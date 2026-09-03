@@ -1,0 +1,43 @@
+name: "TailSFT: Filtered Fine-Tuning Improves Post-Training Performance"
+slug: tailsft
+lab: microsoft
+type: paper
+date: 2026-08-26
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.25756
+description: >
+  <p>Microsoft Research (Sadhika Malladi, Samy Jelassi, Dylan Foster, Jordan
+  Ash, Akshay Krishnamurthy) asks whether standard pipelines produce the
+  checkpoints <strong>best suited for subsequent RL</strong> &mdash; and
+  answers with a stage-aware fix. Building on evidence that coverage and
+  pass@K predict post-RL performance, <strong>TailSFT</strong> modifies
+  supervised fine-tuning to <strong>filter out already-fit sequences</strong>
+  during training, concentrating learning on the under-modeled
+  <em>tail</em> of the data distribution, with the filtering criterion
+  justified through controlled experiments (including a graph-navigation
+  warm-up) and theoretical analysis.</p>
+
+  <p>On <a href="/outputs/ai2/olmo-3">OLMo-3</a> 7B, TailSFT improves pass@16
+  on math and coding evaluations by up to <strong>17% absolute</strong> at
+  minimal computational overhead, and the higher-coverage checkpoints
+  consistently translate into up to <strong>4% absolute pass@1 gains in
+  subsequent GRPO runs</strong> &mdash; better RL initializations, not just
+  better SFT scores. A lightweight coverage-ratio diagnostic identifies when
+  TailSFT is likely to help. The broader thesis: judge intermediate
+  checkpoints by how effectively they support the <em>next</em> training
+  stage &mdash; the RL-readiness axis of the
+  <a href="/outputs/meta/scalerl">RL-scaling</a> family.</p>
+tags:
+  - rl
+  - rl-scaling
+  - post-training
+  - fine-tuning
+  - research
+paper:
+  arxiv: "2608.25756"
+related:
+  - scalerl
+  - demystifying-rl-post-training
+  - horizon-length
+  - olmo-3

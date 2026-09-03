@@ -26,7 +26,7 @@ Record the labs, month prefixes, and artifact classes in scope. Unless the user 
 2. Search the lab name and every known internal team or collaboration name.
 3. Probe the lab's research page, publications index, GitHub organizations, and recent HuggingFace model and dataset uploads.
 4. Search prolific researchers when lab-name searches are incomplete.
-5. Run independent searches for widely adopted evaluations, reasoning-process benchmarks, domain-expert benchmarks, agent harnesses or execution stacks, and RL-scaling papers (the `rl-scaling` tag family; see the dedicated RL-scaling sweep in AGENTS.md).
+5. Run independent searches for widely adopted evaluations, reasoning-process benchmarks, domain-expert benchmarks, agent harnesses or execution stacks, and RL-scaling papers — including RL-readiness / stage-aware post-training work that optimizes SFT or checkpoint selection for downstream RL (the `rl-scaling` tag family; see the dedicated RL-scaling sweep in AGENTS.md).
 6. Generate the late technical-report and newly scored-model worklists specified in AGENTS.md.
 
 Parallelize independent lab or search-family passes when supported and authorized. Keep a shared candidate list with the discovery URL and reason each item may qualify.
