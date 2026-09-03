@@ -1,0 +1,145 @@
+name: K2 Horizon
+slug: k2-horizon
+lab: mbzuai
+type: model
+date: 2026-09-03
+flagship: true
+sources:
+  - label: Announcement (IFM)
+    url: https://ifm.ai/blog/k2/
+  - label: Announcement (MBZUAI)
+    url: https://mbzuai.ac.ae/news/mbzuais-institute-of-foundation-models-launches-k2-horizon-the-worlds-largest-fully-open-ai-models-in-history/
+  - label: HuggingFace (375B-A23B)
+    url: https://huggingface.co/IFM/K2-Horizon-375B-A23B
+  - label: HuggingFace Collection
+    url: https://huggingface.co/collections/IFM/k2-horizon
+  - label: GitHub (post-training)
+    url: https://github.com/ifm-ai/horizon-post-train
+  - label: GitHub (xLLM)
+    url: https://github.com/ifm-ai/xllm
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/k2-horizon-375b-a23b
+description: >
+  <p><strong>K2 Horizon</strong> is a fleet of six fully open models from
+  <a href="/labs/mbzuai">MBZUAI's Institute of Foundation Models</a> (IFM),
+  released September 3, 2026: 375B-A23B, MoVA 36B-A4B, 32B, 7B, 3.7B, and
+  0.9B, all under Apache 2.0 with a shared architecture, a 250K-token
+  vocabulary, and a native <strong>524,288-token context</strong> from
+  mid-training onward (the 0.9B uses a 64K vocabulary and 128K context). Each model is pretrained on roughly <strong>20 trillion
+  tokens</strong> (the 3.7B, 7B, 32B, and 36B-A4B on an identical 22T-token
+  stream); nearly 17% of the corpus is problem-solving trajectories with
+  explicit reasoning, and about 10T tokens are synthetic. IFM commits to
+  releasing intermediate checkpoints, training data or construction recipes,
+  mixture compositions, the xLLM training stack, post-training and RL code,
+  fine-grained logs, and evaluation results, extending the LLM360
+  "360-open" line behind <a href="/outputs/mbzuai/k2-v2">K2-V2</a> and
+  <a href="/outputs/mbzuai/k2-think-v2">K2 Think V2</a>. At launch the final
+  weights are public and the checkpoints, data, and code are marked as
+  forthcoming; training hardware and cost are not disclosed.</p>
+
+  <p>The flagship <strong>K2-Horizon-375B-A23B</strong> is a sparse MoE with
+  375B total and about 23B active parameters: 61 layers, hidden size 6,144,
+  48 query and 8 KV heads, 192 routed experts with top-8 sigmoid routing plus
+  one shared expert, and dense MLPs in the first three layers. Post-training
+  chains mid-training, SFT, model merging, and RL with agent-specialized
+  branches over more than 100 million synthesized tasks, yielding a
+  "development tree" of reasoning and agentic variants rather than a single
+  chat model. At high reasoning effort it scores Terminal-Bench 2.1
+  <strong>70.2</strong>, GPQA Diamond 87.3, Humanity's Last Exam 32.0,
+  SWE-Bench Pro 42.6, BrowseComp 72.8, Toolathlon 65.3, MCPMark 67.7, and a
+  GDPval-AA Elo of 1,441, ahead of Nemotron 3 Ultra (550B-A55B) on every
+  listed agentic benchmark and trailing GLM 5.2 (753B-A40B) on most rows while
+  leading it on Toolathlon. IFM audited the Terminal-Bench run for reward
+  hacking with Artificial Analysis's procedure: 24 of 500 passing trials were
+  flagged, which lowers the score from 70.2 to 66.9. On the
+  <strong>Artificial Analysis Intelligence Index v4.1.1</strong> it scores
+  <strong>47</strong>, 30 points above K2 Think V2's 17.</p>
+
+  <p>Two architectural additions ship with the fleet. <strong>MoVA</strong>
+  (Mixture-of-Value Attention) brings expert routing into multi-head
+  attention the way MoE sparsifies feed-forward layers; the 36B-A4B model
+  pairs 100 feed-forward experts (top-8) with 64 attention-value experts
+  (top-4) to land just below the dense 32B at 4B active parameters.
+  <strong>Uno</strong> is a conditional LoRA adapter trained by "diffusion
+  distillation" to emit blocks of tokens in parallel while the frozen
+  autoregressive weights keep the output distribution, a lossless decode
+  speedup that IFM's release puts at roughly 3&times;; adapters ship for the 7B
+  and 0.9B models. Serving recipes exist for vLLM and SGLang (BF16, TP=8 on one
+  8&times;H200 node for the 375B), with FP8 and GGUF checkpoints for most sizes.</p>
+tags:
+  - open-source
+  - open-weight
+  - moe
+  - reasoning
+  - agents
+  - frontier
+model:
+  architecture: moe
+  parameters: 375B
+  active_parameters: 23B
+  num_experts: 192
+  top_k: 8
+  context_window: 524288
+  training_tokens: 20T
+  intelligence_index: 47
+  intelligence_index_version: "AA v4.1.1"
+  license: Apache-2.0
+  variants:
+    - name: K2-Horizon-375B-A23B
+      parameters: 375B
+      active_parameters: 23B
+      notes: "Flagship MoE (61 layers, 192 routed + 1 shared expert, top-8). AA Intelligence Index v4.1.1 score 47 (file's top-level anchor). FP8 checkpoint also released."
+    - name: K2-Horizon-MoVA-36B-A4B
+      parameters: 36B
+      active_parameters: 4B
+      notes: "48 layers; 100 FFN experts (top-8) plus MoVA with 64 attention-value experts (top-4). Terminal-Bench 2.1 58.6, GPQA Diamond 80.8, HLE 25.2, tau3-Banking 26.8. GGUF released."
+    - name: K2-Horizon-32B
+      parameters: 32B
+      notes: "Dense, 64 layers, hidden 5,120. Hugging Face hosts the Stage-1 checkpoint at launch; the final checkpoint is marked as forthcoming. FP8 and GGUF released."
+    - name: K2-Horizon-7B
+      parameters: 7B
+      notes: "IFM claims the best-performing model under 10B. K2-Horizon-7B-Uno diffusion-distillation LoRA adapter, FP8, and GGUF released."
+    - name: K2-Horizon-3.7B
+      parameters: 3.7B
+      notes: "IFM claims the best reasoning under 4B. GGUF released."
+    - name: K2-Horizon-0.9B
+      parameters: 0.9B
+      notes: "Dense, 28 layers, 64K vocabulary, 128K context; AIME 2026 above 48 per IFM. Uno adapter and GGUF released."
+  benchmark_scores:
+    - benchmark: Terminal-Bench 2.1
+      score: "70.2"
+      mode: high reasoning effort
+    - benchmark: GPQA Diamond
+      score: "87.3"
+      mode: high reasoning effort
+    - benchmark: Humanity's Last Exam (no tools)
+      score: "32.0"
+      mode: high reasoning effort
+    - benchmark: SWE-Bench Pro (strict)
+      score: "42.6"
+      mode: high reasoning effort
+    - benchmark: BrowseComp
+      score: "72.8"
+      mode: high reasoning effort
+    - benchmark: Toolathlon Verified
+      score: "65.3"
+      mode: high reasoning effort
+    - benchmark: MCPMark
+      score: "67.7"
+      mode: high reasoning effort
+    - benchmark: tau3-Banking
+      score: "34.0"
+      mode: high reasoning effort
+    - benchmark: SciCode
+      score: "42.7"
+      mode: high reasoning effort
+    - benchmark: AA-LCR
+      score: "76.0"
+      mode: high reasoning effort
+    - benchmark: GDPval-AA
+      score: "1441 Elo"
+      mode: high reasoning effort
+related:
+  - k2-v2
+  - k2-think-v2
+  - txt360

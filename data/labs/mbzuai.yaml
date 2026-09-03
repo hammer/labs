@@ -24,7 +24,8 @@ description: >
   <strong>JAIS 2</strong> (Dec 2025, 8B/70B, 2.6T tokens, trained on Cerebras
   CS-2). Through the <strong>Institute of Foundation Models (IFM)</strong> and
   <a href="https://www.llm360.ai">LLM360</a>, MBZUAI also produces
-  <strong>K2-V2</strong> (70B, strongest fully open model in its class).</p>
+  <strong>K2-V2</strong> (70B) and, in September 2026, the <strong>K2 Horizon</strong>
+  fleet (0.9B to 375B-A23B, AA Intelligence Index 47).</p>
 
   <p>JAIS models are published under the
   <a href="https://huggingface.co/inceptionai">inceptionai</a> HuggingFace
