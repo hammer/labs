@@ -1,0 +1,134 @@
+name: Nemotron Cascade 2
+slug: nemotron-cascade-2
+lab: nvidia
+type: model
+date: 2026-03-19
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.19220
+  - label: NVIDIA Research
+    url: https://research.nvidia.com/labs/nemotron/nemotron-cascade-2/
+  - label: HuggingFace
+    url: https://huggingface.co/nvidia/Nemotron-Cascade-2-30B-A3B
+  - label: HuggingFace (SFT data)
+    url: https://huggingface.co/datasets/nvidia/Nemotron-Cascade-2-SFT-Data
+  - label: HuggingFace (RL data)
+    url: https://huggingface.co/datasets/nvidia/Nemotron-Cascade-2-RL-data
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/nemotron-cascade-2-30b-a3b
+description: >
+  <p><strong>Nemotron-Cascade-2-30B-A3B</strong> is NVIDIA's post-training
+  research release of March 2026: a 30B-total, 3B-active MoE that runs in both
+  instruct and thinking modes and is <strong>post-trained from
+  <a href="/outputs/nvidia/nemotron-3-nano">Nemotron 3 Nano 30B-A3B-Base</a></strong>,
+  NVIDIA's own 25T-token hybrid Mamba-2 + MoE + attention model, so it is not
+  a new pretraining run. The checkpoint keeps the Nemotron-H shape: 52 layers
+  in an interleaved Mamba/MoE/attention pattern, 128 routed experts with top-6
+  routing plus one shared expert, 32 query and 2 KV heads, a 131K vocabulary,
+  and a 1M-token context. Weights ship under the NVIDIA Open Model License
+  with the SFT and RL training sets released alongside.</p>
+
+  <p>The recipe is SFT on a curated dataset, then <strong>Cascade RL</strong>
+  (sequential, domain-by-domain reinforcement learning, expanded from
+  Nemotron-Cascade 1 to cover far more reasoning and agentic domains), with
+  <strong>multi-domain on-policy distillation</strong> inserted between RL
+  stages: the strongest intermediate checkpoint for each domain serves as
+  that domain's teacher, which recovers benchmark regressions as later RL
+  environments get harder. The headline result is olympiad-level reasoning at
+  3B active parameters: <strong>gold-medal scores on IMO 2025 (35 points), IOI
+  2025 (439.3), and the 2025 ICPC World Finals (10 of 12)</strong>, which NVIDIA
+  says makes it the second open-weight model after DeepSeek-V3.2-Speciale
+  (671B) to reach all three, with 20&times; fewer parameters. Versus its
+  Nemotron 3 Nano base it lifts LiveCodeBench v6 from 68.3 to 87.2, AIME 2025
+  from 89.1 to 92.4 (98.6 with tools), ArenaHard v2 from 67.7 to 83.5, IFBench
+  from 71.5 to 82.9, SWE-bench Verified (OpenHands) from 38.8 to 50.2, and
+  &tau;&sup2;-Bench from 49.0 to 58.9. It beats Qwen3.5-35B-A3B and the larger
+  Nemotron 3 Super on math, code reasoning, and instruction following, but
+  trails both on knowledge (MMLU-Pro 79.8 vs 85.3 and 83.7) and on agentic
+  tool use (BFCL v4 52.9, Terminal-Bench 2.0 21.1). AA Intelligence Index
+  v4.2: <strong>12</strong>, above Nemotron 3 Nano's 9 and below Nemotron 3.5
+  Lightning's 16.</p>
+tags:
+  - open-weight
+  - moe
+  - reasoning
+  - rl
+  - post-training
+model:
+  architecture: moe
+  active_parameters: 3B
+  num_experts: 128
+  top_k: 6
+  context_window: 1000000
+  base_model: nemotron-3-nano
+  intelligence_index: 12
+  intelligence_index_version: "AA v4.2"
+  openness_index: 83.3
+  openness_index_version: "AA Openness Index v1.0"
+  license: NVIDIA Open Model License
+  benchmark_scores:
+    - benchmark: IMO 2025
+      score: "35 pts (gold)"
+      mode: thinking
+    - benchmark: IOI 2025
+      score: "439.3 (gold)"
+      mode: thinking
+    - benchmark: ICPC World Finals 2025
+      score: "10/12"
+      mode: thinking
+    - benchmark: AIME 2025
+      score: "92.4"
+      mode: thinking, no tools
+    - benchmark: HMMT Feb 2025
+      score: "94.6"
+      mode: thinking
+    - benchmark: LiveCodeBench v6
+      score: "87.2"
+      mode: thinking
+    - benchmark: GPQA Diamond
+      score: "76.1"
+      mode: thinking
+    - benchmark: Humanity's Last Exam (no tools)
+      score: "17.7"
+      mode: thinking
+    - benchmark: MMLU-Pro
+      score: "79.8"
+    - benchmark: ArenaHard v2
+      score: "83.5"
+    - benchmark: IFBench
+      score: "82.9"
+    - benchmark: SWE-bench Verified
+      score: "50.2"
+      mode: OpenHands
+    - benchmark: tau2-Bench
+      score: "58.9"
+    - benchmark: Terminal-Bench 2.0
+      score: "21.1"
+    - benchmark: AA-LCR
+      score: "39.1"
+paper:
+  arxiv: "2603.19220"
+  authors:
+    - Zhuolin Yang
+    - Zihan Liu
+    - Yang Chen
+    - Wenliang Dai
+    - Boxin Wang
+    - Sheng-Chieh Lin
+    - Chankyu Lee
+    - Yangyi Chen
+    - Dongfu Jiang
+    - Jiafan He
+    - Renjie Pi
+    - Grace Lam
+    - Nayeon Lee
+    - Alexander Bukharin
+    - Mohammad Shoeybi
+    - Bryan Catanzaro
+    - Wei Ping
+related:
+  - nemotron-3-nano
+  - nemotron-3-super
+  - nemotron-3.5-lightning
+  - prorl
