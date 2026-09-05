@@ -47,8 +47,8 @@ description: >
 
   <p><strong>Headline benchmarks (BF16, post-trained):</strong> MMLU-Pro 86.8,
   GPQA (no tools) 87.0, LiveCodeBench v6 89.0, SWE-Bench Verified 71.9,
-  Terminal-Bench 2.1 56.4, RULER @ 1M 94.7, AA Intelligence Index v4.1
-  <strong>= 38</strong> served at 300+ tokens/s.</p>
+  Terminal-Bench 2.1 56.4, RULER @ 1M 94.7, AA Intelligence Index v4.2
+  <strong>= 30</strong> served at 300+ tokens/s.</p>
 
   <p><strong>Released as four checkpoints</strong> under the Linux Foundation
   <strong>OpenMDW-1.1</strong> license: <code>Base-BF16</code> (pretrained-only),
@@ -83,9 +83,12 @@ model:
   active_parameters: 55B
   context_window: 1000000
   license: OpenMDW-1.1
-  intelligence_index: 38
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 30
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 38
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 48
       version: "AA v4.0"
       until: "2026-06-16"

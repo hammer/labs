@@ -38,7 +38,7 @@ description: >
   alignment. Apache 2.0.</p>
 
   <p>70B competitive with Llama 3.1-70B on average across multilingual
-  benchmarks (67.5% vs 67.3%). <strong>AA Intelligence Index: 2</strong>
+  benchmarks (67.5% vs 67.3%). <strong>AA Intelligence Index v4.2: 1</strong>
   (70B Instruct), 1 (8B Instruct). Significantly behind frontier models
   on English-only benchmarks, but strongest fully open model for extreme
   multilingual breadth.</p>
@@ -56,9 +56,12 @@ model:
   architecture: dense
   parameters: 70B
   context_window: 65536
-  intelligence_index: 2
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 1
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 2
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 8
       version: "AA v4.0"
       until: "2026-06-16"
@@ -71,7 +74,7 @@ model:
   variants:
     - name: Apertus-70B-Instruct
       parameters: 70B
-      notes: AA Intelligence Index 2
+      notes: "AA Intelligence Index v4.2: 1"
     - name: Apertus-70B
       parameters: 70B
       notes: Base model

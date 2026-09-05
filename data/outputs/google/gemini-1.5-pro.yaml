@@ -17,7 +17,7 @@ description: >
   Exceeded Gemini 1.0 Ultra performance at Pro-tier efficiency.</p>
 
   <p>The 1M context window was a defining capability leap, enabling processing of entire
-  codebases, books, and hour-long videos in a single prompt. AA Intelligence Index: 10.
+  codebases, books, and hour-long videos in a single prompt. AA Intelligence Index v4.2: 4.
   Proprietary.</p>
 tags:
   - frontier
@@ -26,9 +26,12 @@ tags:
 model:
   architecture: moe
   context_window: 1000000
-  intelligence_index: 10
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 4
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 10
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 16
       version: "AA v4.0"
       until: "2026-06-16"

@@ -19,7 +19,7 @@ description: >
   4.5 with a longer supplemental-training run, regenerated SFT trajectories, and
   agentic reinforcement learning. Supports text and image input, 500K context,
   and low through xhigh reasoning effort.</p>
-  <p>SpaceXAI reports an <strong>AA Intelligence Index of 61</strong>, CursorBench
+  <p>SpaceXAI reported an <strong>AA Intelligence Index of 61</strong> at release (v4.1.1; 51 on v4.2), CursorBench
   3.2 at 69.9%, DeepSWE 1.1 at 65.9%, and APEX-Agents at 57.5%. API pricing starts
   at $2/M input and $6/M output tokens below 200K prompt length. Parameter count
   and training scale remain undisclosed.</p>
@@ -27,8 +27,12 @@ tags: [frontier, proprietary, coding, agentic, reasoning, multimodal]
 model:
   context_window: 500000
   base_model: grok-4.5
-  intelligence_index: 61
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 51
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 61
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   benchmark_scores:
     - benchmark: CursorBench 3.2
       score: "69.9%"

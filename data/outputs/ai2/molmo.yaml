@@ -27,9 +27,12 @@ tags:
 model:
   architecture: dense
   base_model: qwen2
-  intelligence_index: 3
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 1
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 3
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 4
       version: "AA v4.1"
       until: "2026-08-09"

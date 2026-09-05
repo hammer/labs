@@ -34,8 +34,8 @@ description: >
   81.0 (Gemini 3.1 Pro 70.7), MRCR-v2 128K 91.7, GPQA Diamond 90.3, and
   SWE-Bench Pro ~57.6 versus Qwen3.7-Max's 60.6 (grounding evals run with
   thinking disabled on Qwen's harness). Artificial Analysis scores it
-  <strong>39 on the Intelligence Index v4.1.1</strong> (Qwen3.7-Max: 47;
-  Qwen3.6-Plus: 40) and notes it is slow for its price tier (~55 tokens/s,
+  <strong>31 on the Intelligence Index v4.2</strong> (Qwen3.7-Max: 37;
+  Qwen3.6-Plus: 32) and notes it is slow for its price tier (~55 tokens/s,
   ~2.2 s to first token) and verbose (~110M output tokens to run the index
   versus a 29M median).</p>
 tags:
@@ -46,8 +46,12 @@ tags:
   - proprietary
 model:
   context_window: 1000000
-  intelligence_index: 39
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 31
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 39
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   license: Proprietary
 related:
   - qwen3.7

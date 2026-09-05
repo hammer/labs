@@ -62,8 +62,12 @@ model:
   top_k: 6
   context_window: 1000000
   training_tokens: 20T+
-  intelligence_index: 24
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 16
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 24
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   openness_index: 77.8
   openness_index_version: "AA Openness Index v1.0"
   license: OpenMDW-1.1

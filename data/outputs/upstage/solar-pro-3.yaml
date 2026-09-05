@@ -34,8 +34,12 @@ model:
   active_parameters: 12B
   context_window: 128000
   # AA leaderboard 14.1 as of 2026-07-28 (no separate reasoning slug).
-  intelligence_index: 14
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 9
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 14
+      version: "AA v4.1.1"
+      until: "2026-09-05"
 related:
   - solar-pro-2
   - solar-open-100b

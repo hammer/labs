@@ -10,7 +10,7 @@ sources:
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/grok-4-3
 description: >
-  <p>xAI's latest model. AA Intelligence Index: <strong>38</strong>. Largest
+  <p>xAI's latest model. AA Intelligence Index v4.2: <strong>29</strong>. Largest
   improvement on GDPval-AA (ELO 1500, +321 over Grok 4.20). Can generate
   downloadable PDFs, spreadsheets, and PowerPoint decks directly from
   conversation. Launched alongside Text-to-Speech and Speech-to-Text APIs
@@ -24,7 +24,11 @@ tags:
   - reasoning
   - agentic
 model:
-  intelligence_index: 38
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 29
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 38
+      version: "AA v4.1.1"
+      until: "2026-09-05"
 related:
   - grok-4.20

@@ -36,9 +36,12 @@ outputs:
       parameters: 1T
       architecture: moe
       license: MIT
-      intelligence_index: 27
-      intelligence_index_version: "AA v4.1.1"
+      intelligence_index: 20
+      intelligence_index_version: "AA v4.2"
       intelligence_index_history:
+        - score: 27
+          version: "AA v4.1.1"
+          until: "2026-09-05"
         - score: 26
           version: "AA v4.1"
           until: "2026-08-09"

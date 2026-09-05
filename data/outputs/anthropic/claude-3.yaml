@@ -19,15 +19,18 @@ description: >
   <p>Claude 3 Opus set new benchmarks for graduate-level reasoning (GPQA 50.4%),
   multilingual math (MGSM 90.7%), and was the first model to surpass GPT-4 on several
   evaluations. The tiered approach let users choose between intelligence, speed, and
-  cost. AA Intelligence Index: 12 (Opus), 5 (Sonnet), 4 (Haiku). Proprietary.</p>
+  cost. AA Intelligence Index v4.2: 6 (Opus), 1 (Sonnet), 1 (Haiku). Proprietary.</p>
 tags:
   - frontier
   - multimodal
 model:
   context_window: 200000
-  intelligence_index: 12
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 6
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 12
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 18
       version: "AA v4.0"
       until: "2026-06-16"

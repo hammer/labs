@@ -52,8 +52,8 @@ description: >
   leading it on Toolathlon. IFM audited the Terminal-Bench run for reward
   hacking with Artificial Analysis's procedure: 24 of 500 passing trials were
   flagged, which lowers the score from 70.2 to 66.9. On the
-  <strong>Artificial Analysis Intelligence Index v4.1.1</strong> it scores
-  <strong>47</strong>, 30 points above K2 Think V2's 17.</p>
+  <strong>Artificial Analysis Intelligence Index v4.2</strong> it scores
+  <strong>38</strong> (47 on the earlier v4.1.1 index), 27 points above K2 Think V2's 11.</p>
 
   <p>Two architectural additions ship with the fleet. <strong>MoVA</strong>
   (Mixture-of-Value Attention) brings expert routing into multi-head
@@ -81,14 +81,18 @@ model:
   top_k: 8
   context_window: 524288
   training_tokens: 20T
-  intelligence_index: 47
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 38
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 47
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   license: Apache-2.0
   variants:
     - name: K2-Horizon-375B-A23B
       parameters: 375B
       active_parameters: 23B
-      notes: "Flagship MoE (61 layers, 192 routed + 1 shared expert, top-8). AA Intelligence Index v4.1.1 score 47 (file's top-level anchor). FP8 checkpoint also released."
+      notes: "Flagship MoE (61 layers, 192 routed + 1 shared expert, top-8). AA Intelligence Index v4.2 score 38 (file's top-level anchor). FP8 checkpoint also released."
     - name: K2-Horizon-MoVA-36B-A4B
       parameters: 36B
       active_parameters: 4B

@@ -19,8 +19,12 @@ description: >
 tags: [multimodal, proprietary, efficient, agentic]
 model:
   context_window: 1000000
-  intelligence_index: 37
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 28
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 37
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   benchmark_scores:
     - benchmark: Terminal-Bench 2.1
       score: "54%"

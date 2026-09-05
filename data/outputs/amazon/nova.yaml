@@ -21,7 +21,7 @@ description: >
   flagship by <a href="/outputs/amazon/nova-premier">Nova Premier</a> (April 2025)
   and then <a href="/outputs/amazon/nova-2">Nova 2</a> (December 2025).</p>
 
-  <p>AA Intelligence Index v4.1.1: <strong>7</strong> (Pro), <strong>4</strong>
+  <p>AA Intelligence Index v4.2: <strong>2</strong> (Pro), <strong>1</strong>
   (Micro). AA's Nova Pro page now points users to Nova 2 Pro Preview as the
   current recommended replacement. Proprietary, available via Amazon Bedrock.</p>
 
@@ -33,9 +33,12 @@ tags:
   - multimodal
 model:
   context_window: 300000
-  intelligence_index: 7
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 2
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 7
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 8
       version: "AA v4.1"
       until: "2026-08-09"
@@ -52,7 +55,7 @@ model:
     notes: "Estimate for Nova Pro (top variant). Trained on ~10T tokens per the same source."
   variants:
     - name: Nova Pro
-      notes: Multimodal, 300K context; AA v4.1.1 = 7
+      notes: Multimodal, 300K context; AA v4.2 = 2
       parameters_estimated:
         value: "90B"
         source: https://lifearchitect.ai/olympus/
@@ -66,7 +69,7 @@ model:
         source_label: "LifeArchitect.ai (Alan D. Thompson)"
         method: third-party-benchmark-inference
     - name: Nova Micro
-      notes: Text-only, 128K context; AA v4.1.1 = 4
+      notes: Text-only, 128K context; AA v4.2 = 1
       parameters_estimated:
         value: "11B"
         source: https://lifearchitect.ai/olympus/

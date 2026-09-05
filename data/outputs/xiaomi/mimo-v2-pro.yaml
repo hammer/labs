@@ -28,9 +28,12 @@ tags:
   - agentic
 model:
   architecture: moe
-  intelligence_index: 41
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 33
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 41
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 40
       version: "AA v4.1"
       until: "2026-08-09"

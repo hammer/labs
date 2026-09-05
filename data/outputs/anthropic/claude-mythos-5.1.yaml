@@ -12,7 +12,7 @@ sources:
 description: >
   <p>Anthropic's most capable model: the same underlying model as
   <a href="/outputs/anthropic/claude-fable-5.1">Claude Fable 5.1</a> (AA
-  Intelligence Index v4.1.1 = 66, #1) with <strong>cybersecurity and biology
+  Intelligence Index v4.2 = 57, #1) with <strong>cybersecurity and biology
   safeguards relaxed for vetted professionals</strong> &mdash; Anthropic
   acknowledges it as the strongest cyber-capable model it has released.
   Where scored separately it leads Fable 5.1: <strong>60.9 on Terminal-Bench

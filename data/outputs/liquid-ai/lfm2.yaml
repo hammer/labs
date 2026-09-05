@@ -20,7 +20,7 @@ description: >
 
   <p>LFM2-24B achieves 239 tok/s (#3 speed ranking on AA). Also includes vision-language
   (LFM2-VL), speech (LFM2-Audio), and pharmaceutical variants (with Insilico Medicine). AA
-  Intelligence Index: <strong>5</strong> (24B). Apache 2.0. Succeeded in 2026 by the
+  Intelligence Index v4.2: <strong>1</strong> (24B). Apache 2.0. Succeeded in 2026 by the
   continued-pretraining <a href="/outputs/liquid-ai/lfm2.5">LFM2.5</a> series.</p>
 tags:
   - open-weight
@@ -30,9 +30,12 @@ model:
   architecture: moe
   parameters: 24B
   active_parameters: 2.3B
-  intelligence_index: 5
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 1
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 5
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 10
       version: "AA v4.0"
       until: "2026-06-16"

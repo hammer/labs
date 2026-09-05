@@ -44,8 +44,12 @@ outputs:
       # (Qwen-family) bases and the open V1 sibling KAT-Dev-72B-Exp is
       # architecturally Qwen2.5-72B; base for the proprietary checkpoint undisclosed.
       pretrained_from_scratch: false
-      intelligence_index: 29
-      intelligence_index_version: "AA v4.1.1"
+      intelligence_index: 22
+      intelligence_index_version: "AA v4.2"
+      intelligence_index_history:
+        - score: 29
+          version: "AA v4.1.1"
+          until: "2026-09-05"
   - name: KAT-Coder-Pro V2
     type: model
     date: 2026-03-27
@@ -56,7 +60,7 @@ outputs:
         url: https://kwaipilot.ai/
     description: >
       Kwaipilot's 2026 agentic-coding refresh of the KAT-Coder line.
-      <strong>AA Intelligence Index v4.1.1: 35</strong> (non-reasoning).
+      <strong>AA Intelligence Index v4.2: 26</strong> (non-reasoning).
       Base undisclosed; the KAT line is post-trained from external
       pretrained bases (Kwaipilot's own pipeline description is
       "fine-tuned a pretrained model", the open V1 sibling
@@ -68,9 +72,12 @@ outputs:
       # post-training of external (Qwen-family) bases. Base undisclosed for
       # the proprietary checkpoint, so flagged directly.
       pretrained_from_scratch: false
-      intelligence_index: 34
-      intelligence_index_version: "AA v4.1.1"
+      intelligence_index: 26
+      intelligence_index_version: "AA v4.2"
       intelligence_index_history:
+        - score: 34
+          version: "AA v4.1.1"
+          until: "2026-09-05"
         - score: 35
           version: "AA v4.1.1"
           until: "2026-08-21"

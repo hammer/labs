@@ -29,8 +29,12 @@ model:
   parameters: 46.7B
   active_parameters: 12.9B
   context_window: 32000
-  intelligence_index: 2
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 1
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 2
+      version: "AA v4.1.1"
+      until: "2026-09-05"
 paper:
   arxiv: "2401.04088"
 related:

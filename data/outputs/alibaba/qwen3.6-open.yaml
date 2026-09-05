@@ -52,9 +52,12 @@ outputs:
       architecture: dense
       parameters: 27B
       context_window: 262144
-      intelligence_index: 38
-      intelligence_index_version: "AA v4.1.1"
+      intelligence_index: 29
+      intelligence_index_version: "AA v4.2"
       intelligence_index_history:
+        - score: 38
+          version: "AA v4.1.1"
+          until: "2026-09-05"
         - score: 37
           version: "AA v4.1"
           until: "2026-08-09"

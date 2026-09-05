@@ -40,8 +40,8 @@ description: >
   GPQA-Diamond 86.3, LiveCodeBench v6 92.4, HMMT 93.9, IFBench 80.0,
   MCP-Atlas 58.2, and KMMLU-Pro 78.4 &mdash; competitive with DeepSeek-V4-Flash
   and MiMo-V2.5 in Upstage's comparison table, and a large jump over Solar Open
-  100B (LiveCodeBench +36, HMMT +25). <strong>AA Intelligence Index v4.1.1:
-  37</strong> (scored August 2026), versus 15 for Solar Open 100B.</p>
+  100B (LiveCodeBench +36, HMMT +25). <strong>AA Intelligence Index v4.2:
+  29</strong>, versus 9 for Solar Open 100B.</p>
 tags:
   - moe
   - open-weight
@@ -53,8 +53,12 @@ model:
   parameters: 250B
   active_parameters: 15B
   context_window: 1048576
-  intelligence_index: 37
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 29
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 37
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   openness_index: 33.3
   openness_index_version: "AA Openness Index v1.0"
   license: Upstage Solar License

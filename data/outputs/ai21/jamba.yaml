@@ -21,7 +21,7 @@ description: >
 
   <p>The hybrid architecture achieves 2.5x faster inference than equivalent dense
   Transformers. Jamba 1.7 Large (398B total / 94B active) is the current variant.
-  AA Intelligence Index: <strong>5</strong>. The Jamba architecture is a genuine
+  AA Intelligence Index v4.2: <strong>1</strong>. The Jamba architecture is a genuine
   contribution to the field &mdash; demonstrating that SSMs and attention are
   complementary, not competing. Apache 2.0 (Jamba v0.1). By Lieber, Lenz, Shoham et al.</p>
 tags:
@@ -33,9 +33,12 @@ model:
   parameters: 398B
   active_parameters: 94B
   context_window: 256000
-  intelligence_index: 5
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 1
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 5
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 11
       version: "AA v4.0"
       until: "2026-06-16"

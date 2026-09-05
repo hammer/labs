@@ -36,9 +36,12 @@ outputs:
         url: https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Instruct
     model:
       architecture: moe
-      intelligence_index: 5
-      intelligence_index_version: "AA v4.1.1"
+      intelligence_index: 1
+      intelligence_index_version: "AA v4.2"
       intelligence_index_history:
+        - score: 5
+          version: "AA v4.1.1"
+          until: "2026-09-05"
         - score: 11
           version: "AA v4.0"
           until: "2026-06-16"

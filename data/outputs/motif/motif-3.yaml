@@ -40,13 +40,13 @@ description: >
   <p><strong>Timeline.</strong> Motif first surfaced as
   <strong>Motif-3-Beta</strong>, an intermediate checkpoint released 14 July
   2026 under a non-commercial research-only license (AA lists it separately as
-  "Motif 3 (Beta)"; it scored 44 then 45 on AA Intelligence Index v4.1/v4.1.1).
+  "Motif 3 (Beta)"; it scored 44 then 45 on AA Intelligence Index v4.1/v4.1.1, and 37 on v4.2).
   The <strong>final release</strong> followed in August 2026: the post-trained
   <strong>Motif-3</strong> and pretrained <strong>Motif-3-Base</strong>
   checkpoints under the <strong>MIT license</strong> (commercial use permitted,
   no access gate), the "Motif 3: Technical Report" (arXiv 2608.09119, 10 Aug),
   and an <strong>NVFP4</strong>-quantized build for Blackwell GPUs. AA lists the
-  final model at <strong>AA Intelligence Index v4.1.1: 47</strong> &mdash; the
+  final model at <strong>AA Intelligence Index v4.2: 38</strong> &mdash; the
   <strong>#1 Korean model</strong> on the index &mdash; with particular strength
   on agentic tool use (&tau;&sup3;-Banking 35.3, Terminal-Bench 2.1 74.9,
   ITBench 51.5) and calibrated abstention on AA-Omniscience (71.6
@@ -67,11 +67,14 @@ model:
   training_tokens: 12.5T
   num_experts: 384
   top_k: 8
-  intelligence_index: 47
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 38
+  intelligence_index_version: "AA v4.2"
   openness_index: 44.4
   openness_index_version: "AA Openness Index v1.0"
   intelligence_index_history:
+    - score: 47
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 45
       version: "AA v4.1.1"
       until: "2026-08-29"
@@ -97,7 +100,7 @@ model:
     - name: Motif-3-Beta
       parameters: 314B
       active_parameters: 13B
-      notes: July 2026 intermediate checkpoint, non-commercial research-only license; AA slug motif-0714 ("Motif 3 (Beta)"), AAII v4.1.1 45
+      notes: July 2026 intermediate checkpoint, non-commercial research-only license; AA slug motif-0714 ("Motif 3 (Beta)"), AAII v4.2 37
   benchmark_scores:
     - benchmark: GDPval-AA v2
       score: "38.7"

@@ -39,9 +39,12 @@ model:
   architecture: dense
   base_model: llama-3.1
   context_window: 128000
-  intelligence_index: 9
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 3
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 9
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 15
       version: "AA v4.0"
       until: "2026-06-16"

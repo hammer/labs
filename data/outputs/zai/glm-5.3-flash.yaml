@@ -52,8 +52,8 @@ description: >
   <strong>1773</strong> (1504; Opus 4.8 1582). On Z.ai Code Bench v1.0 at max
   effort it scores 29.0 versus Opus 4.8's 29.5. Vision results include OfficeQA
   Pro 62.4, CharXiv Reasoning with tools 89.4, Chartography with tools 78.0,
-  BabyVision 53.4, MVBench 77.8, and MMVU 80.5. It scores <strong>57 on the
-  Artificial Analysis Intelligence Index v4.1.1</strong> at $0.15/$0.50 per
+  BabyVision 53.4, MVBench 77.8, and MMVU 80.5. It scores <strong>46 on the
+  Artificial Analysis Intelligence Index v4.2</strong> at $0.15/$0.50 per
   million input/output tokens, a level of intelligence Z.ai notes was
   previously available only at about 10&times; the cost. Thinking cannot be
   disabled; <code>reasoning_effort</code> accepts low/high/max (default max).</p>
@@ -85,8 +85,12 @@ model:
   top_k: 8
   context_window: 1000000
   training_tokens: 30T
-  intelligence_index: 57
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 46
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 57
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   license: MIT
   benchmark_scores:
     - benchmark: Terminal-Bench 2.1

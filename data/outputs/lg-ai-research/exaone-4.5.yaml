@@ -28,9 +28,12 @@ model:
   architecture: dense
   parameters: 33B
   context_window: 256000
-  intelligence_index: 21
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 14
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 21
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 20
       version: "AA v4.1"
       until: "2026-08-09"

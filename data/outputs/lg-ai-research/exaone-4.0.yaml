@@ -23,9 +23,12 @@ tags:
 model:
   architecture: dense
   parameters: 32B
-  intelligence_index: 6
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 1
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 6
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 12
       version: "AA v4.0"
       until: "2026-06-16"

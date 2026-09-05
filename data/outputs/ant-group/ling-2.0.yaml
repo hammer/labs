@@ -40,9 +40,12 @@ outputs:
       # 2026-07-28 re-anchor: the file's AA URL pointed at ling-flash-2-0, so
       # the sync had been writing the Flash variant's score (10) onto Ling-1T;
       # the ling-1t page reads 13.
-      intelligence_index: 13
-      intelligence_index_version: "AA v4.1.1"
+      intelligence_index: 7
+      intelligence_index_version: "AA v4.2"
       intelligence_index_history:
+        - score: 13
+          version: "AA v4.1.1"
+          until: "2026-09-05"
         - score: 10
           version: "AA v4.1"
           until: "2026-07-28"

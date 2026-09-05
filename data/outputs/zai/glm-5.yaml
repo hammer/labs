@@ -53,9 +53,12 @@ outputs:
       architecture: moe
       parameters: 744B
       active_parameters: 40B
-      intelligence_index: 41
-      intelligence_index_version: "AA v4.1.1"
+      intelligence_index: 32
+      intelligence_index_version: "AA v4.2"
       intelligence_index_history:
+        - score: 41
+          version: "AA v4.1.1"
+          until: "2026-09-05"
         - score: 40
           version: "AA v4.1"
           until: "2026-08-09"
@@ -90,5 +93,9 @@ outputs:
       focusing on continuous task execution and tool reliability.
     model:
       architecture: moe
-      intelligence_index: 39
-      intelligence_index_version: "AA v4.1.1"
+      intelligence_index: 31
+      intelligence_index_version: "AA v4.2"
+      intelligence_index_history:
+        - score: 39
+          version: "AA v4.1.1"
+          until: "2026-09-05"

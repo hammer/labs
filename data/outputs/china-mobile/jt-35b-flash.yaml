@@ -20,7 +20,7 @@ description: >
   proprietary 35B non-reasoning model with relatively high token efficiency
   and competitive intelligence for its size" and "a significant upgrade" over
   China Mobile's earlier models. It scored 36 on AA's Intelligence Index v4.1
-  at release; on the recalibrated <strong>v4.1.1 it stands at 29</strong>,
+  at release; 29 on v4.1.1, and on the current <strong>v4.2 it stands at 22</strong>,
   well above the ~8 median for non-reasoning models in its price band. Two
   months later the larger <a href="/outputs/china-mobile/jt-4.1-flash">JT-4.1
   Flash</a> (236B-A21B, 40) took over the top of the Flash line.</p>
@@ -43,8 +43,12 @@ tags:
 model:
   parameters: 35B
   context_window: 256000
-  intelligence_index: 29
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 22
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 29
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   license: Proprietary
 related:
   - jt-4.1-flash

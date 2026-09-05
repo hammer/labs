@@ -59,7 +59,7 @@ description: >
   <p>30B results: SWE-bench Verified 57.0, SWE-bench Pro 33.3, Terminal-Bench
   2.1 29.2, &tau;&sup3;-bench 62.0, BFCL v4 61.4, AIME25 89.2, GPQA 66.4,
   LiveCodeBench v6 75.8, MMLU-Pro 77.6, RULER-128K 81.4. AA Intelligence Index
-  v4.1.1: <strong>24</strong> (30B), 20 (8B), 14 (3B) &mdash; versus 9 / 6 / 5
+  v4.2: <strong>17</strong> (30B), 14 (8B), 11 (3B) &mdash; versus 3 / 1 / 1
   for the non-reasoning Granite 4.1 instruct models on the same bases. Released
   alongside Granite Speech 5.0 Turbo CTC (470M, no LLM backbone, ~12,600 RTFx
   on one H200).</p>
@@ -72,8 +72,12 @@ model:
   architecture: dense
   parameters: 30B
   context_window: 131072
-  intelligence_index: 24
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 17
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 24
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   openness_index: 72.2
   openness_index_version: "AA Openness Index v1.0"
   base_model: granite-4.1
@@ -83,13 +87,13 @@ model:
   variants:
     - name: Granite 4.2 30B
       parameters: 30B
-      notes: "Post-trained on Granite-4.1-30B-Base; full agentic-RL ladder plus a second agentic-coding SFT phase. AA Intelligence Index v4.1.1 score 24 — highest in family."
+      notes: "Post-trained on Granite-4.1-30B-Base; full agentic-RL ladder plus a second agentic-coding SFT phase. AA Intelligence Index v4.2 score 17 — highest in family."
     - name: Granite 4.2 8B
       parameters: 8B
-      notes: "Post-trained on Granite-4.1-8B-Base; full agentic-RL ladder (SWE → terminal → search). AA Intelligence Index v4.1.1 score 20."
+      notes: "Post-trained on Granite-4.1-8B-Base; full agentic-RL ladder (SWE → terminal → search). AA Intelligence Index v4.2 score 14."
     - name: Granite 4.2 3B
       parameters: 3B
-      notes: "Post-trained on Granite-4.1-3B-Base; foundational RL + RLHF only (no agentic-RL block). AA Intelligence Index v4.1.1 score 14."
+      notes: "Post-trained on Granite-4.1-3B-Base; foundational RL + RLHF only (no agentic-RL block). AA Intelligence Index v4.2 score 11."
     - name: Granite 4.2 FP8 / NVFP4 / MXFP4 / GGUF
       notes: "vLLM quants for all three sizes (FP8 dynamic per-channel; FP4 via GPTQ on 2K SFT samples) and llama.cpp GGUF Q2_K–Q8_0."
   benchmark_scores:

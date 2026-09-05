@@ -13,10 +13,10 @@ sources:
     url: https://openrouter.ai/anthropic/claude-4.5-opus
 description: >
   <p>First model to exceed <strong>80% on SWE-bench Verified</strong>. 200K token
-  context. Also released as Claude 4.5 Sonnet (September 2025, 1M context, AA 30) and
-  Claude 4.5 Haiku (October 2025, AA 24). Architecture undisclosed.</p>
+  context. Also released as Claude 4.5 Sonnet (September 2025, 1M context, AA Intelligence Index v4.2: 29) and
+  Claude 4.5 Haiku (October 2025, AA Intelligence Index v4.2: 22). Architecture undisclosed.</p>
 
-  <p>AA Intelligence Index: <strong>36</strong>. Claude 4.5 Opus was the highest-ranked
+  <p>AA Intelligence Index v4.2: <strong>28</strong>. Claude 4.5 Opus was the highest-ranked
   non-reasoning model at the time of release, with particular strength in coding, writing,
   and multi-step agentic tasks. Proprietary.</p>
 tags:
@@ -25,9 +25,12 @@ tags:
   - reasoning
 model:
   context_window: 200000
-  intelligence_index: 36
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 28
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 36
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 35
       version: "AA v4.1"
       until: "2026-08-09"
@@ -45,9 +48,9 @@ model:
     notes: "Paper: Claude Opus 4.5 · 90% PI [1.1T–10.0T]"
   variants:
     - name: Claude 4.5 Sonnet
-      notes: 1M context, AA index 30
+      notes: "1M context, AA Intelligence Index v4.2: 29"
     - name: Claude 4.5 Haiku
-      notes: 200K context, AA index 24
+      notes: "200K context, AA Intelligence Index v4.2: 22"
       parameters_estimated:
         value: "65B"
         source: https://arxiv.org/abs/2604.24827
@@ -56,7 +59,7 @@ model:
         posted: "2026-04-27"
         notes: "Paper: Claude Haiku 4.5 · 90% PI [22B–194B]"
     - name: Claude 4.5 Opus
-      notes: 200K context, AA index 36
+      notes: "200K context, AA Intelligence Index v4.2: 28"
 related:
   - claude-4
   - claude-opus-4.6

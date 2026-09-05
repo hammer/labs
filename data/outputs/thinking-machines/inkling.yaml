@@ -27,7 +27,7 @@ description: >
   with a <strong>controllable thinking-effort dial</strong> that reaches
   peer scores at roughly a third of the tokens (AA measures ~25K output
   tokens per Intelligence Index task vs 37&ndash;43K for peers). AA
-  Intelligence Index <strong>42</strong> (v4.1.1, measured at xhigh effort)
+  Intelligence Index <strong>32</strong> (v4.2, measured at xhigh effort)
   &mdash; the leading U.S. open-weights model at release, ahead of
   Nemotron 3 Ultra (38). Apache 2.0; fine-tunable on Tinker day one;
   served by Together, Fireworks, Modal, Databricks, and Baseten. The
@@ -47,9 +47,12 @@ model:
   active_parameters: "41B"
   context_window: 1000000
   training_tokens: "45T"
-  intelligence_index: 42
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 32
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 42
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 41
       version: "AA v4.1"
       until: "2026-08-09"

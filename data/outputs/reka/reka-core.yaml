@@ -20,7 +20,7 @@ description: >
   (March 2025) is the latest open-weight variant.</p>
 
   <p>Core approaches frontier models on human evaluations while Flash achieves SOTA
-  for its compute class. AA Intelligence Index: <strong>4</strong> (Flash 3, 21B).
+  for its compute class. AA Intelligence Index v4.2: <strong>1</strong> (Flash 3, 21B).
   Apache 2.0 (Flash 3). By the Reka Team.</p>
 tags:
   - multimodal
@@ -28,9 +28,12 @@ tags:
 model:
   architecture: dense
   parameters: 67B
-  intelligence_index: 4
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 1
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 4
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 10
       version: "AA v4.0"
       until: "2026-06-16"

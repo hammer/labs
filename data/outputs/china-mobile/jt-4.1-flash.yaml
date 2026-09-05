@@ -13,7 +13,7 @@ description: >
   <p><a href="/labs/china-mobile">China Mobile</a>'s Jiutian LLM line reaches
   frontier-adjacent territory: <strong>JT-4.1 Flash</strong> is a
   <strong>236B-total / 21B-active MoE</strong> (non-reasoning) with a
-  <strong>256K-token context</strong>. <strong>AA Intelligence Index v4.1.1: 40</strong>,
+  <strong>256K-token context</strong>. <strong>AA Intelligence Index v4.2: 32</strong>,
   ranking near the top of its non-reasoning class &mdash; a notable result for a
   model from a state-owned telecom's in-house AI brand rather than a dedicated
   frontier lab. Released 9 July 2026.</p>
@@ -34,9 +34,12 @@ model:
   parameters: 236B
   active_parameters: 21B
   context_window: 256000
-  intelligence_index: 40
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 32
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 40
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 39
       version: "AA v4.1"
       until: "2026-08-09"

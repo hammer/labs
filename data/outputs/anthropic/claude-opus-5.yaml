@@ -14,7 +14,7 @@ sources:
 description: >
   <p>Anthropic's new flagship, under two months after
   <a href="/outputs/anthropic/claude-opus-4.8">Opus 4.8</a> and a larger jump
-  than the recent point releases. <strong>AA Intelligence Index v4.1.1: 63</strong>
+  than the recent point releases. <strong>AA Intelligence Index v4.2: 54</strong>
   (#1 of 190, up from Opus 4.8's 57). The headline is coding and agentic work:
   Anthropic reports Opus 5 <strong>more than doubles Opus 4.8</strong> on
   Frontier-Bench v0.1, lands within 0.5% of <a href="/outputs/anthropic/claude-fable-5">Fable
@@ -35,9 +35,12 @@ tags:
   - reasoning
   - coding
 model:
-  intelligence_index: 63
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 54
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 63
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 61
       version: "AA v4.1"
       until: "2026-08-09"

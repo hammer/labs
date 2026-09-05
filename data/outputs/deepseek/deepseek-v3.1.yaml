@@ -18,9 +18,12 @@ tags:
   - frontier
 model:
   architecture: moe
-  intelligence_index: 21
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 15
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 21
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 28
       version: "AA v4.0"
       until: "2026-06-16"

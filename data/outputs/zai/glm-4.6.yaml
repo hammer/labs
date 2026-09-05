@@ -24,9 +24,12 @@ links:
     url: https://www.startuphub.ai/ai-news/ai-video/2025/glm-4-6-challenges-frontier-models-with-open-source-prowess
 model:
   architecture: moe
-  intelligence_index: 23
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 17
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 23
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 30
       version: "AA v4.0"
       until: "2026-06-16"

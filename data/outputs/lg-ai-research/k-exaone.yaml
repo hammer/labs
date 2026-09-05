@@ -22,9 +22,12 @@ model:
   architecture: moe
   parameters: 236B
   active_parameters: 23B
-  intelligence_index: 22
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 16
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 22
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 25
       version: "AA v4.1"
       until: "2026-07-25"

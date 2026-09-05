@@ -19,16 +19,19 @@ description: >
   <p>GPT-4o matched GPT-4 Turbo on text intelligence while being <strong>2x faster and
   50% cheaper</strong>. Its native audio capabilities enabled real-time voice conversation
   with emotional expression and multilingual support. Also released as GPT-4o mini
-  (July 2024), a cost-optimized variant. AA Intelligence Index: 11. Proprietary.</p>
+  (July 2024), a cost-optimized variant. AA Intelligence Index v4.2: 5. Proprietary.</p>
 tags:
   - frontier
   - multimodal
   - speech
 model:
   context_window: 128000
-  intelligence_index: 11
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 5
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 11
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 17
       version: "AA v4.0"
       until: "2026-06-16"

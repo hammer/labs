@@ -49,8 +49,8 @@ description: >
   scores: SWE-bench Pro 62.5, SWE-bench Multilingual 81.0, DeepSWE 1.1 58.7,
   Toolathlon Verified 73.5, GPQA Diamond 91.7, HLE 35.9, LiveCodeBench v6 91.9,
   AndroidWorld 84.5 &mdash; beating <a href="/outputs/alibaba/qwen3.8">Qwen3.8-27B</a>
-  and Qwen3.7-Plus on most rows. AA Intelligence Index v4.1.1:
-  <strong>56</strong>, two points below the 2.4T Qwen3.8-Max. Thinking on by
+  and Qwen3.7-Plus on most rows. AA Intelligence Index v4.2:
+  <strong>46</strong>, one point below the 2.4T Qwen3.8-Max (47). Thinking on by
   default with xhigh/medium/low <code>reasoning_effort</code> and
   <code>preserve_thinking</code>. Weights under the new <strong>Qwen Community
   License 1.0</strong> (MIT-style, but products with &gt;100M MAU or &gt;$20M
@@ -67,8 +67,12 @@ model:
   num_experts: 512
   top_k: 10
   context_window: 1000000
-  intelligence_index: 56
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 46
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 56
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   optimizer: Muon + AdamW
   license: Qwen Community License 1.0
   benchmark_scores:
@@ -91,7 +95,7 @@ model:
     - name: Qwen3.8-Flash-Next
       parameters: 125B
       active_parameters: 6B
-      notes: "Open weights (BF16 and FP8 repos); 125B backbone + 51B N-gram embedding + 4B MTP head, ~180B safetensors total. AA Intelligence Index v4.1.1 score 56."
+      notes: "Open weights (BF16 and FP8 repos); 125B backbone + 51B N-gram embedding + 4B MTP head, ~180B safetensors total. AA Intelligence Index v4.2 score 46."
     - name: Qwen3.8-Flash
       notes: "QwenCloud production endpoint (qwen3.8-flash) built on Qwen3.8-Flash-Next: 1M context by default, built-in tools, $0.15/$0.47 per M tokens; the OpenRouter listing is this hosted version."
 paper:

@@ -25,7 +25,7 @@ description: >
   <p>Google reports <strong>43.6%</strong> on FrontierCode 1.1, 65.3% on
   DeepSWE v1.1, 85.8% on Terminal-Bench 2.1, 47.9% on OSWorld 2.0, and 53.6%
   on HLE-Verified. Artificial Analysis scores the highest/default checkpoint
-  at <strong>56</strong> on Intelligence Index v4.1.1. Google launched it at
+  at <strong>45</strong> on Intelligence Index v4.2. Google launched it at
   $0.75 per million input tokens and $3.75 per million output tokens through
   December 2026; architecture, parameter count, and training scale remain
   undisclosed.</p>
@@ -38,8 +38,12 @@ tags:
 model:
   base_model: gemini-3.6-flash
   context_window: 1048576
-  intelligence_index: 56
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 45
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 56
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   license: Proprietary
   benchmark_scores:
     - benchmark: FrontierCode 1.1

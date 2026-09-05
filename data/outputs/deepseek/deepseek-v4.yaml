@@ -61,9 +61,12 @@ outputs:
       active_parameters: 49B
       context_window: 1000000
       training_tokens: 33T
-      intelligence_index: 45
-      intelligence_index_version: "AA v4.1.1"
+      intelligence_index: 36
+      intelligence_index_version: "AA v4.2"
       intelligence_index_history:
+        - score: 45
+          version: "AA v4.1.1"
+          until: "2026-09-05"
         - score: 44
           version: "AA v4.1"
           until: "2026-08-09"

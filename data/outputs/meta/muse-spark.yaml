@@ -21,8 +21,8 @@ description: >
   single architecture with built-in tool use, visual chain-of-thought reasoning, and
   multi-agent orchestration. 260K token context. Parameter count undisclosed.</p>
 
-  <p>AA Intelligence Index: <strong>44</strong> &mdash; behind GPT-5.4 (53),
-  Gemini 3.1 Pro (48), and Claude Opus 4.6 (45). Reaches Llama 4
+  <p>AA Intelligence Index v4.2: <strong>36</strong> &mdash; behind GPT-5.4 (43)
+  and Gemini 3.1 Pro (37), level with Claude Opus 4.6 (36). Reaches Llama 4
   Maverick's capabilities with <strong>10&times; less compute</strong> and used just
   58M output tokens to complete the full AA evaluation (vs 120M for GPT-5.4, 157M for
   Opus 4.6). Strongest on healthcare (<strong>HealthBench Hard: 42.8</strong>, beating
@@ -38,9 +38,12 @@ tags:
   - reasoning
 model:
   context_window: 260000
-  intelligence_index: 44
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 36
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 44
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 43
       version: "AA v4.1"
       until: "2026-08-09"

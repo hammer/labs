@@ -19,5 +19,9 @@ model:
   architecture: dense
   parameters: 32B
   base_model: qwen2.5
-  intelligence_index: 13
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 8
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 13
+      version: "AA v4.1.1"
+      until: "2026-09-05"

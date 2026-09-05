@@ -31,7 +31,7 @@ description: >
   <strong>Terminal-Bench 2.1 82.9%</strong> (up from 76.2%) and
   <strong>DeepSWE 1.1 59.3%</strong> (up from 53.0%), plus a Meta Internal
   Coding Bench. On the broader composite it reaches <strong>AA Intelligence
-  Index 57</strong> (v4.1.1, xhigh) &mdash; Meta's highest AA score to date,
+  Index 47</strong> (v4.2, xhigh) &mdash; Meta's highest AA score to date,
   up from 1.1's 53. <strong>1M-token context</strong>, text and image input.</p>
 
   <p><strong>Proprietary</strong> (parameters undisclosed), available via the
@@ -47,8 +47,12 @@ tags:
   - proprietary
 model:
   context_window: 1000000
-  intelligence_index: 57
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 47
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 57
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   license: Proprietary
   benchmark_scores:
     - benchmark: Terminal-Bench 2.1

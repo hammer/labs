@@ -30,8 +30,12 @@ outputs:
     model:
       architecture: dense
       parameters: 67B
-      intelligence_index: 3
-      intelligence_index_version: "AA v4.1.1"
+      intelligence_index: 1
+      intelligence_index_version: "AA v4.2"
+      intelligence_index_history:
+        - score: 3
+          version: "AA v4.1.1"
+          until: "2026-09-05"
   - name: "DeepSeek LLM: Scaling Open-Source Language Models with Longtermism"
     type: paper
     date: 2024-01-05

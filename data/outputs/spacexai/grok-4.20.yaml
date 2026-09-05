@@ -15,7 +15,7 @@ description: >
   <strong>2M token context</strong>. 250.9 tok/s output speed (#1 ranking).</p>
 
   <p>Current xAI flagship. Also released as Multi-Agent Beta (March 2026).
-  AA Intelligence Index: <strong>38</strong> (reasoning enabled). Proprietary.</p>
+  AA Intelligence Index v4.2: <strong>30</strong> (reasoning enabled). Proprietary.</p>
 tags:
   - frontier
   - reasoning
@@ -24,9 +24,12 @@ tags:
 model:
   architecture: moe
   context_window: 2000000
-  intelligence_index: 38
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 30
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 38
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 37
       version: "AA v4.1"
       until: "2026-08-09"

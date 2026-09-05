@@ -22,7 +22,7 @@ description: >
   system &mdash; pre-training, post-training, weights, and reasoning data
   all open under Apache 2.0.</p>
 
-  <p>AA Intelligence Index v4.1.1: <strong>17</strong> (AA-estimated; well above
+  <p>AA Intelligence Index v4.2: <strong>11</strong> (AA-estimated; well above
   the median for similar-size open-weight models) at a 262K-token context
   window. Versus K2-V2, hallucination rate drops from 89% to 52% and
   long-context reasoning improves from 33% to 53%. Tied for first place with
@@ -37,9 +37,12 @@ model:
   parameters: 70B
   context_window: 262144
   base_model: k2-v2
-  intelligence_index: 17
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 11
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 17
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 24
       version: "AA v4.0 (delisted from AA leaderboard as of 2026-06-10)"
       until: "2026-06-16"

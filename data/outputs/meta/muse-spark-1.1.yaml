@@ -16,7 +16,7 @@ description: >
   <a href="/outputs/meta/muse-spark">Muse Spark</a> line: multimodal
   reasoning with major gains in tool use, computer use, and coding;
   <strong>1M-token context</strong> (up from 260K); and parallel subagent
-  orchestration. AA Intelligence Index <strong>53</strong> (v4.1.1, xhigh)
+  orchestration. AA Intelligence Index <strong>43</strong> (v4.2, xhigh)
   &mdash; #18 overall, a 9-point jump over the original Spark's 44,
   drawing even with GPT-5.4. Launched alongside the <strong>Meta Model
   API</strong>, Meta's first paid model API ($1.25/$4.25 per MTok, $0.15
@@ -30,9 +30,12 @@ tags:
   - proprietary
 model:
   context_window: 1000000
-  intelligence_index: 53
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 43
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 53
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 51
       version: "AA v4.1"
       until: "2026-08-09"

@@ -32,8 +32,12 @@ outputs:
       Qwen3-235B-A22B-Thinking reasoning model.
     model:
       architecture: moe
-      intelligence_index: 14
-      intelligence_index_version: "AA v4.1.1"
+      intelligence_index: 8
+      intelligence_index_version: "AA v4.2"
+      intelligence_index_history:
+        - score: 14
+          version: "AA v4.1.1"
+          until: "2026-09-05"
       openness_index: 44.4
       openness_index_version: "AA Openness Index v1.0"
       variants:

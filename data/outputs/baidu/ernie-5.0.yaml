@@ -38,9 +38,12 @@ outputs:
     model:
       architecture: moe
       parameters: 2.4T
-      intelligence_index: 22
-      intelligence_index_version: "AA v4.1.1"
+      intelligence_index: 16
+      intelligence_index_version: "AA v4.2"
       intelligence_index_history:
+        - score: 22
+          version: "AA v4.1.1"
+          until: "2026-09-05"
         - score: 29
           version: "AA v4.0"
           until: "2026-06-16"

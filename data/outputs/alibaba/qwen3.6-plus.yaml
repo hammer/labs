@@ -24,8 +24,12 @@ tags:
   - agents
 model:
   context_window: 1000000
-  intelligence_index: 40
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 32
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 40
+      version: "AA v4.1.1"
+      until: "2026-09-05"
 related:
   - qwen3.5
   - qwen3.6-max

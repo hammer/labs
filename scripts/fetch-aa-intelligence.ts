@@ -35,7 +35,7 @@ import { readFileSync, writeFileSync } from 'fs';
 import { globSync } from 'glob';
 
 const LEADERBOARD_URL = 'https://artificialanalysis.ai/leaderboards/models';
-const AAII_VERSION = 'AA v4.1.1';
+const AAII_VERSION = 'AA v4.2';
 const TODAY = new Date().toISOString().slice(0, 10);
 const dryRun = process.argv.includes('--dry-run');
 const discover = process.argv.includes('--discover');
@@ -79,9 +79,12 @@ async function fetchAaiiDataset(): Promise<Map<string, number>> {
 // When the rounded score changes value, the superseded reading is prepended
 // to `intelligence_index_history` (newest first) as `{score, version, until}`
 // with `until` = today — the date we observed the replacement. A version-only
-// re-tag (same score across a point release) does NOT append a trail entry:
-// nothing was superseded, so recording it would be noise. This matches the
-// backfilled trail, which only holds entries where the value actually moved.
+// re-tag across a POINT release (v4.1 → v4.1.1, same score) does NOT append a
+// trail entry: nothing was superseded, so recording it would be noise. A
+// RECALIBRATION (different major.minor index version, e.g. v4.1.1 → v4.2,
+// which swaps evals and re-anchors grading) DOES append even when the rounded
+// number coincides: the old reading was measured on a different eval mix, so
+// it is a genuinely superseded observation and the trail must keep it.
 
 function applyIntelToYaml(content: string, score: number): string {
   const idx = content.match(/^(\s+)intelligence_index:\s*([\d.]+)/m);
@@ -90,6 +93,10 @@ function applyIntelToYaml(content: string, score: number): string {
   const oldScore = parseFloat(idx[2]);
   const oldVersion = content.match(/^\s+intelligence_index_version:\s*"?([^"\n]+?)"?\s*$/m)?.[1];
   const scoreChanged = Math.round(oldScore) !== score;
+  // major.minor of the index version ("AA v4.1.1" → "4.1"); undefined for
+  // untagged or non-numeric tags (pre-v4 / delisted markers).
+  const minor = (v?: string) => v?.match(/v(\d+\.\d+)/)?.[1];
+  const recalibrated = minor(oldVersion) !== undefined && minor(oldVersion) !== minor(AAII_VERSION);
 
   let out = content.replace(/^(\s+)intelligence_index:\s*[\d.]+/m, `$1intelligence_index: ${score}`);
   if (/^\s+intelligence_index_version:/m.test(out)) {
@@ -98,7 +105,7 @@ function applyIntelToYaml(content: string, score: number): string {
     out = out.replace(/^(\s+)intelligence_index:\s*[\d.]+/m, `$1intelligence_index: ${score}\n$1intelligence_index_version: "${AAII_VERSION}"`);
   }
 
-  if (scoreChanged) {
+  if (scoreChanged || recalibrated) {
     const entry =
       `${indent}  - score: ${oldScore}\n` +
       (oldVersion ? `${indent}    version: "${oldVersion}"\n` : '') +
@@ -219,6 +226,8 @@ async function main() {
       console.log(`  ✓ ${file}  ${oldScore} → ${newScore}  (slug: ${slug}, history +)`);
     } else {
       retagged++;
+      if (/intelligence_index_history:\n\s+- score: [\d.]+\n\s+version: "[^"]*"\n\s+until: "\d{4}-\d{2}-\d{2}"/.test(next) && next !== content && !/history:\n/.test(content.split('intelligence_index_version')[1]?.split('\n')[1] ?? ''))
+        console.log(`  = ${file}  ${oldScore} → ${newScore}  (slug: ${slug}, same score, recalibration → history +)`);
     }
   }
 

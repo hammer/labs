@@ -26,9 +26,12 @@ outputs:
         url: https://huggingface.co/meituan-longcat/LongCat-Flash-Lite
     model:
       architecture: moe
-      intelligence_index: 17
-      intelligence_index_version: "AA v4.1.1"
+      intelligence_index: 11
+      intelligence_index_version: "AA v4.2"
       intelligence_index_history:
+        - score: 17
+          version: "AA v4.1.1"
+          until: "2026-09-05"
         - score: 24
           version: "AA v4.0"
           until: "2026-06-16"

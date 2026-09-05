@@ -32,7 +32,7 @@ description: >
   recipe from <a href="/outputs/nex-agi/nex-n1">Nex-N1</a>. Self-reported
   Nex-N2-Pro: Terminal-Bench 2.1 75.3, SWE-Bench Verified 80.8, SWE-Bench Pro
   58.8, GDPval 1585, TAU3 71.1 — pacing GPT-5.5 / Opus 4.7 on coding and
-  long-horizon tasks. <strong>AA Intelligence Index v4.1.1: 42</strong>
+  long-horizon tasks. <strong>AA Intelligence Index v4.2: 33</strong>
   (Nex-N2-Pro).</p>
 tags:
   - frontier
@@ -48,9 +48,12 @@ model:
   active_parameters: 17B
   base_model: qwen3.5
   license: Apache 2.0
-  intelligence_index: 42
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 33
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 42
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 41
       version: "AA v4.1"
       until: "2026-08-09"

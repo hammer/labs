@@ -26,7 +26,7 @@ description: >
   loop in autonomous environments. Deeply integrated with OpenClaw and
   Claude Code workflows. Outperforms Claude Opus 4.5 on agentic browsing
   (BrowseComp) while trailing by 3.1 points on SWE-bench coding.
-  AA Intelligence Index: 35 (reasoning).</p>
+  AA Intelligence Index v4.2: 28 (reasoning).</p>
 tags:
   - multimodal
   - agentic
@@ -38,9 +38,12 @@ model:
   parameters: 744B
   active_parameters: 40B
   context_window: 202752
-  intelligence_index: 35
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 28
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 35
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 34
       version: "AA v4.1"
       until: "2026-08-09"

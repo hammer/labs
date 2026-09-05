@@ -26,7 +26,7 @@ description: >
   general-agent environments. The model card reports integration with SGLang
   HiCache and Mooncake's shared L3 cache, reducing time to first token by
   60–80% for long-input agent workloads. Artificial Analysis scores the
-  reasoning checkpoint at <strong>38 on Intelligence Index v4.1.1</strong>.</p>
+  reasoning checkpoint at <strong>27 on Intelligence Index v4.2</strong>.</p>
 
   <p>Ling-3.0-tiny followed on August 11 with 7.9B total / 1.3B active
   parameters, a 3:1 KDA–MLA stack, 128 routed experts, and the same 256K
@@ -45,8 +45,12 @@ model:
   num_experts: 512
   top_k: 8
   context_window: 262144
-  intelligence_index: 38
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 27
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 38
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   openness_index: 44.4
   openness_index_version: "AA Openness Index v1.0"
   license: MIT
@@ -58,7 +62,7 @@ model:
     - name: Ling-3.0-tiny
       parameters: 7.9B
       active_parameters: 1.3B
-      notes: "3:1 KDA–MLA stack; 128 routed experts, top-8; released August 11; AAII v4.1.1 score 25."
+      notes: "3:1 KDA–MLA stack; 128 routed experts, top-8; released August 11; AAII v4.2 score 16."
 related:
   - ling-2.6
   - lightning-linear-attention

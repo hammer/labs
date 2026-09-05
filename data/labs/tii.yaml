@@ -23,7 +23,7 @@ description: >
   <strong><a href="https://arxiv.org/abs/2507.22448">Falcon-H1</a></strong>
   (May 2025, parallel Transformer + Mamba-2 heads, 0.5B&ndash;34B, 256K context)
   and <strong><a href="https://arxiv.org/abs/2601.02346">Falcon-H1R</a></strong>
-  (Jan 2026, 7B reasoning, AIME25 83.1%, AA Intelligence 10). H1-34B matches
+  (Jan 2026, 7B reasoning, AIME25 83.1%, AA Intelligence Index v4.2: 4). H1-34B matches
   70B-class models with up to 8x output throughput improvement.</p>
 
   <p>TII also produced the first competitive pure-Mamba LLM

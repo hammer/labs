@@ -28,7 +28,7 @@ description: >
   benchmarks: SWE-Bench Pro 59.0, Terminal-Bench 2.1 66.0, SWE-fficiency 34.8,
   KernelBench Hard 28.8, MCP-Atlas 74.2. Artificial Analysis lists it on the
   <strong>Agentic Index at 59.1</strong> and now scores it
-  <strong>45 on the Intelligence Index (v4.1.1)</strong>.</p>
+  <strong>36 on the Intelligence Index v4.2</strong>.</p>
 tags:
   - frontier
   - open-weight
@@ -44,9 +44,12 @@ model:
   num_experts: 128
   top_k: 4
   context_window: 1048576
-  intelligence_index: 45
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 36
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 45
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 44
       version: "AA v4.1"
       until: "2026-08-09"

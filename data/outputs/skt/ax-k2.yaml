@@ -38,8 +38,12 @@ model:
   active_parameters: "33B"
   context_window: 256000
   num_experts: 256
-  intelligence_index: 35
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 27
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 35
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   openness_index: 50
   openness_index_version: "AA Openness Index v1.0"
   license: Apache 2.0

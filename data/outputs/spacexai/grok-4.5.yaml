@@ -25,8 +25,8 @@ description: >
   500K context; $2/$6 per million input/output tokens ($0.50 cache hits).
   Available in Grok Build, Cursor (all plans), and the SpaceXAI console;
   not yet available in the EU. Proprietary. AA Intelligence Index
-  <strong>56</strong> (v4.1.1, "high" reasoning) &mdash; #4 overall at
-  release, up from Grok 4.3's 38.</p>
+  <strong>45</strong> (v4.2, "high" reasoning) &mdash; #4 overall at
+  release on v4.1.1, up from Grok 4.3's 29.</p>
 tags:
   - frontier
   - proprietary
@@ -35,9 +35,12 @@ tags:
   - reasoning
 model:
   context_window: 500000
-  intelligence_index: 56
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 45
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 56
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 54
       version: "AA v4.1"
       until: "2026-08-09"

@@ -16,8 +16,12 @@ tags:
   - open-weight
   - moe
 model:
-  intelligence_index: 4
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 1
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 4
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   variants:
     - name: Qwen1.5-0.5B
       parameters: 0.5B

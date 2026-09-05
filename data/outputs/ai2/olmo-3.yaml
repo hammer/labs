@@ -25,7 +25,7 @@ description: >
   <p>32B Think: MATH 96.1, AIME 2024 76.8, AIME 2025 72.5,
   HumanEvalPlus 91.4, MMLU 85.4. OLMo 3.1 (Dec 2025) extends RL
   training (+3 weeks RLVR): AIME 2025 78.1, IFEval 93.8. AA Intelligence
-  Index v4.1.1: <strong>8</strong> (3.1 Think; AA-estimated). Strongest fully
+  Index v4.2: <strong>2</strong> (3.1 Think; AA-estimated). Strongest fully
   open thinking model at release. Apache 2.0.</p>
 tags:
   - open-source
@@ -36,9 +36,12 @@ model:
   architecture: dense
   parameters: 32B
   context_window: 65536
-  intelligence_index: 8
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 2
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 8
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 14
       version: "pre-v4 (not in current AA index; unverifiable as of 2026-06-10)"
       until: "2026-06-16"

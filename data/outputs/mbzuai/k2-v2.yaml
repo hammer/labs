@@ -25,8 +25,12 @@ tags:
 model:
   architecture: dense
   parameters: 70B
-  intelligence_index: 14
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 8
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 14
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   openness_index: 88.9
   openness_index_version: "AA Openness Index v1.0"
 paper:

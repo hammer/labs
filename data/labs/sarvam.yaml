@@ -26,7 +26,7 @@ description: >
   <p>Trains on 4,096 H100s via India's IndiaAI Mission. Flagship
   <strong>Sarvam-105B</strong> (Mar 2026, 105B/10.3B active MoE, 128 experts,
   128K context, MLA-style attention) and <strong>Sarvam-30B</strong> are trained
-  from scratch for India's 22 scheduled languages. AA Intelligence: 12 (105B).
+  from scratch for India's 22 scheduled languages. AA Intelligence Index v4.2: 6 (105B).
   Full-stack approach spans text, speech (Saaras), vision/OCR, translation
   (with AI4Bharat), and hardware (Kaze smart glasses). Apache 2.0.</p>
 people:

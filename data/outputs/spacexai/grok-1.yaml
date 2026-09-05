@@ -28,7 +28,11 @@ model:
   parameters: 314B
   active_parameters: 78B
   context_window: 8192
-  intelligence_index: 6
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 1
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 6
+      version: "AA v4.1.1"
+      until: "2026-09-05"
 related:
   - grok-3

@@ -17,7 +17,7 @@ description: >
 
   <p>Achieved SOTA on math/science benchmarks including GPQA and AIME 2025. The thinking
   mode demonstrated Google's approach to test-time compute scaling. AA Intelligence
-  Index: <strong>26</strong>. Proprietary.</p>
+  Index v4.2: <strong>19</strong>. Proprietary.</p>
 tags:
   - frontier
   - reasoning
@@ -25,9 +25,12 @@ tags:
 model:
   architecture: moe
   context_window: 1000000
-  intelligence_index: 26
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 19
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 26
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 27
       version: "AA v4.1"
       until: "2026-07-25"

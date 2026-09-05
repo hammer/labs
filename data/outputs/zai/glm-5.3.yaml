@@ -68,8 +68,12 @@ model:
   base_model: glm-5.2
   context_window: 1000000
   license: GLM-5.3 License
-  intelligence_index: 60
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 49
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 60
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   benchmark_scores:
     - benchmark: Terminal-Bench 2.1
       score: "88.2"

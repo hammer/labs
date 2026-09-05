@@ -40,7 +40,7 @@ description: >
   (upload an image once, reference it by <code>file_id</code>) and DeepSeek
   Harness 0.1.1, which added the model to its DeepSeek adapter the same day.
   Artificial Analysis lists it as a proprietary model and scores its max-effort
-  reasoning mode within a point of the text-only V4-Flash-0731 (AA v4.1.1).</p>
+  reasoning mode within a point of the text-only V4-Flash-0731 (AA Intelligence Index v4.2: 42 vs 41).</p>
 tags:
   - multimodal
   - vision
@@ -56,8 +56,12 @@ model:
   base_model: deepseek-v4-flash
   context_window: 1048576
   license: MIT
-  intelligence_index: 51
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 42
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 51
+      version: "AA v4.1.1"
+      until: "2026-09-05"
 related:
   - deepseek-v4-flash
   - deepseek-v4

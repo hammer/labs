@@ -19,7 +19,7 @@ description: >
   on 16K H100 GPUs. 8B and 70B variants also released.</p>
 
   <p>Llama 3.1 405B was <strong>competitive with GPT-4</strong> on many benchmarks,
-  demonstrating that open models had reached frontier quality. AA Intelligence Index: 8.
+  demonstrating that open models had reached frontier quality. AA Intelligence Index v4.2: 3.
   Llama 3 Community License. By the Llama Team.</p>
 tags:
   - frontier
@@ -27,9 +27,12 @@ tags:
 model:
   architecture: dense
   parameters: 405B
-  intelligence_index: 8
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 3
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 8
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 9
       version: "AA v4.1"
       until: "2026-08-09"

@@ -20,15 +20,18 @@ description: >
   <p>Claude 3.5 Sonnet became the <strong>most widely-used Claude model</strong> and one
   of the most popular API models globally, combining frontier intelligence with fast
   inference and low cost. Also introduced Computer Use (beta) for GUI interaction.
-  AA Intelligence Index: 10 (October update). Proprietary.</p>
+  AA Intelligence Index v4.2: 4 (October update). Proprietary.</p>
 tags:
   - frontier
   - coding
 model:
   context_window: 200000
-  intelligence_index: 10
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 4
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 10
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 16
       version: "AA v4.0"
       until: "2026-06-16"

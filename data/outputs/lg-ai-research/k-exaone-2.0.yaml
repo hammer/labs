@@ -30,8 +30,12 @@ model:
   parameters: "750B"
   active_parameters: "37B"
   base_model: k-exaone
-  intelligence_index: 31
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 23
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 31
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   openness_index: 44.4
   openness_index_version: "AA Openness Index v1.0"
   license: Apache 2.0

@@ -20,7 +20,7 @@ description: >
   <p>At launch, GPT-4 set new SOTA on virtually every benchmark: scored in the
   <strong>90th percentile on the bar exam</strong>, 86.4% on MMLU (5-shot), and
   demonstrated strong coding (67% HumanEval). Represented a significant leap over GPT-3.5
-  in reasoning, factuality, and instruction following. AA Intelligence Index: 7.
+  in reasoning, factuality, and instruction following. AA Intelligence Index v4.2: 1.
   Proprietary.</p>
 tags:
   - frontier
@@ -29,9 +29,12 @@ tags:
 model:
   architecture: dense
   context_window: 128000
-  intelligence_index: 7
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 1
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 7
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 13
       version: "AA v4.0"
       until: "2026-06-16"

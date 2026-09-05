@@ -56,8 +56,12 @@ outputs:
       1.8B model.
     model:
       architecture: dense
-      intelligence_index: 3
-      intelligence_index_version: "AA v4.1.1"
+      intelligence_index: 1
+      intelligence_index_version: "AA v4.2"
+      intelligence_index_history:
+        - score: 3
+          version: "AA v4.1.1"
+          until: "2026-09-05"
       variants:
         - name: Qwen-72B
           parameters: 72B

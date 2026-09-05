@@ -25,7 +25,7 @@ description: >
   via iterative denoising rather than one-at-a-time autoregressive generation.
   <strong><a href="https://arxiv.org/abs/2506.17298">Mercury</a></strong> models
   achieve ~1,000 tokens/sec on H100, roughly <strong>10x faster</strong> than
-  comparable autoregressive models. Mercury 2 (February 2026) reaches AA index 22
+  comparable autoregressive models. Mercury 2 (February 2026) reaches AA Intelligence Index v4.2: 15
   with reasoning capability.</p>
 people:
   - name: Stefano Ermon

@@ -14,7 +14,7 @@ sources:
 description: >
   <p>Anthropic's flagship Opus upgrade, just 41 days after
   <a href="/outputs/anthropic/claude-opus-4.7">Opus 4.7</a> — a "modest but
-  tangible" improvement. AA Intelligence Index v4.1.1: <strong>57</strong>.
+  tangible" improvement. AA Intelligence Index v4.2: <strong>46</strong>.
   Headline gains are in <strong>honesty</strong> (more likely to acknowledge
   when it lacks information, less likely to make unsupported claims) and
   <strong>code reliability</strong> (~4× less likely than 4.7 to let flaws in
@@ -31,9 +31,12 @@ tags:
   - reasoning
   - coding
 model:
-  intelligence_index: 57
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 46
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 57
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 56
       version: "AA v4.1"
       until: "2026-08-09"

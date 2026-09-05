@@ -43,8 +43,12 @@ model:
   architecture: moe
   base_model: deepseek-v4
   context_window: 1048576
-  intelligence_index: 53
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 42
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 53
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   openness_index: 44.4
   openness_index_version: "AA Openness Index v1.0"
   license: MIT

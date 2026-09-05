@@ -30,7 +30,7 @@ description: >
   cutting reasoning-token usage by 30%+. Release-era claims: AA index 52 (1.5)
   &rarr; 57 (1.6) on AA's pre-recalibration v3.0 &mdash; "at least 1/10 the
   size of any other model" above 50, and the leading &lt;40B open-weights
-  model. On the recalibrated AA v4.1 both checkpoints read ~21. AIME25: 88,
+  model. On AA v4.2 they read 15 (1.5) and 14 (1.6). AIME25: 88,
   GPQA-Diamond: 73, MMLU-Pro: 79 (1.6, self-reported).</p>
 tags:
   - open-weight
@@ -42,8 +42,12 @@ model:
   base_model: pixtral
   context_window: 131072
   license: MIT
-  intelligence_index: 21
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 14
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 21
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   openness_index: 50
   openness_index_version: "AA Openness Index v1.0"
   variants:

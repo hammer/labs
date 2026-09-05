@@ -18,8 +18,8 @@ sources:
 description: >
   <p>Google's July 21, 2026 "workhorse" refresh of its Flash tier
   (API <code>gemini-3.6-flash</code>). Intelligence is held flat &mdash;
-  <strong>AA Intelligence Index v4.1.1: 52</strong>, the same as
-  <a href="/outputs/google/gemini-3.5-flash">Gemini 3.5 Flash</a> &mdash; while
+  <strong>AA Intelligence Index v4.2: 40</strong>, within two points of
+  <a href="/outputs/google/gemini-3.5-flash">Gemini 3.5 Flash</a> (42; both scored 52 on v4.1.1) &mdash; while
   the model gets dramatically more efficient: Google reports it roughly
   <strong>halves time-per-task</strong> (1.3 min vs 2.7 min) and uses ~17% fewer
   output tokens, with output pricing cut to <strong>$7.50 / 1M</strong> (from
@@ -39,9 +39,12 @@ tags:
   - efficiency
 model:
   context_window: 1000000
-  intelligence_index: 52
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 40
+  intelligence_index_version: "AA v4.2"
   intelligence_index_history:
+    - score: 52
+      version: "AA v4.1.1"
+      until: "2026-09-05"
     - score: 50
       version: "AA v4.1"
       until: "2026-08-09"

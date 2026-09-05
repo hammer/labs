@@ -41,8 +41,12 @@ outputs:
       active_parameters: 17B
       context_window: 1000000
       languages: 201
-      intelligence_index: 34
-      intelligence_index_version: "AA v4.1.1"
+      intelligence_index: 26
+      intelligence_index_version: "AA v4.2"
+      intelligence_index_history:
+        - score: 34
+          version: "AA v4.1.1"
+          until: "2026-09-05"
       openness_index: 38.9
       openness_index_version: "AA Openness Index v1.0"
       variants:

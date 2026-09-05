@@ -31,10 +31,9 @@ description: >
 
   <p>The xAI docs list <code>grok-code-fast-1</code>, <code>grok-code-fast</code>
   and <code>grok-code-fast-1-0825</code> as aliases, so it succeeds and
-  replaces the August 2025 Grok Code Fast 1 (22 on the AA Intelligence
-  Index). Artificial Analysis scores the June 16, 2026 snapshot
-  ("Grok Build 0.1 0616") at <strong>41 on the Intelligence Index
-  v4.1.1</strong> (#65 of 187), characterizing it as above-average
+  replaces the August 2025 Grok Code Fast 1 (15 on the AA Intelligence
+  Index v4.2). Artificial Analysis scores the June 16, 2026 snapshot
+  ("Grok Build 0.1 0616") at <strong>32 on the Intelligence Index v4.2</strong> (41 on v4.1.1, where it ranked #65 of 187), characterizing it as above-average
   intelligence and well priced but "notably slow and very verbose" in its
   measurements (50 tokens/s output, 0.5 s to first token); xAI publishes no
   benchmark scores for it. Not to be confused with the Grok Build harness
@@ -46,8 +45,12 @@ tags:
   - proprietary
 model:
   context_window: 256000
-  intelligence_index: 41
-  intelligence_index_version: "AA v4.1.1"
+  intelligence_index: 32
+  intelligence_index_version: "AA v4.2"
+  intelligence_index_history:
+    - score: 41
+      version: "AA v4.1.1"
+      until: "2026-09-05"
   license: Proprietary
 related:
   - grok-build
