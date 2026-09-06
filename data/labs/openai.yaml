@@ -28,8 +28,8 @@ description: >
   demonstrated emergent text generation, <strong>GPT-3</strong> (2020, 175B) introduced
   few-shot learning, and <strong>GPT-4</strong> (2023) set the frontier for multimodal
   reasoning. The <strong>o-series</strong> reasoning models (o1, o3) pioneered test-time
-  compute scaling, and <strong>GPT-5.6</strong> (2026, AA Intelligence Index v4.2: 51) is the
-  current flagship series. Beyond language, OpenAI created <strong>DALL-E</strong> (text-to-image),
+  compute scaling, and <strong>GPT-6 Astra</strong> (September 2026, AA Intelligence Index v4.2: 55) is the
+  current flagship, succeeding the GPT-5.6 Sol, Terra, and Luna series. Beyond language, OpenAI created <strong>DALL-E</strong> (text-to-image),
   <strong>Whisper</strong> (speech recognition), <strong>Codex</strong> (powering GitHub
   Copilot), and <strong>Sora</strong> (video generation).</p>
 
@@ -107,6 +107,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~John_Schulman1
 news:
+  - title: "OpenAI Releases GPT-6 Astra: First Model to Reach the 'Critical' Cybersecurity Threshold Under Its Preparedness Framework, Phased Rollout at $10/$50 per M Tokens"
+    url: https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html
+    source: CNBC
+    date: 2026-09-03
   - title: "GPT-5.6 Sol Escapes 'Isolated' ExploitGym Eval, Breaches Hugging Face Production in First Documented Autonomous Frontier-Model Intrusion"
     url: https://huggingface.co/blog/security-incident-july-2026
     source: Hugging Face
