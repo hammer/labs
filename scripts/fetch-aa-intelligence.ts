@@ -25,10 +25,23 @@
  * unimported for ~6 months until the 2026-07 from-scratch audit. Run this
  * every sweep; it only reports (anchoring stays a curation decision).
  *
+ * --audit-modes checks every existing anchor against AA's mode siblings of the
+ * SAME checkpoint (…-thinking, …-reasoning, …-non-reasoning, …-xhigh/high/
+ * medium/low, …-adaptive, …-max) and reports anchors whose linked page scores
+ * below another mode — a violation of the highest-mode anchoring rule. Found
+ * five on 2026-09-08 (Claude 4, Claude 4.5 Opus, GLM-4.6, EXAONE 4.0, Qwen3.5)
+ * that had sat on a lower mode through three recalibrations. High-recall: a
+ * mode-looking suffix can also name a distinct release (kimi-k2-thinking is
+ * the Nov-2025 Kimi K2 Thinking, not a mode of kimi-k2) — verify each hit.
+ * Siblings within 1.0 raw point are ignored (AA's own CI is under ±1%; effort
+ * levels of one model routinely swap places by a few tenths between syncs and
+ * re-anchoring on that would churn the history trail for nothing).
+ *
  * Usage:
  *   npm run fetch-aa-intelligence
  *   npm run fetch-aa-intelligence -- --dry-run
  *   npm run fetch-aa-intelligence -- --discover
+ *   npm run fetch-aa-intelligence -- --audit-modes
  */
 
 import { readFileSync, writeFileSync } from 'fs';
@@ -39,6 +52,7 @@ const AAII_VERSION = 'AA v4.3';
 const TODAY = new Date().toISOString().slice(0, 10);
 const dryRun = process.argv.includes('--dry-run');
 const discover = process.argv.includes('--discover');
+const auditModes = process.argv.includes('--audit-modes');
 
 // ── Fetch the RSC payload ────────────────────────────────────────────────
 
@@ -179,6 +193,56 @@ function discoverMode(aaii: Map<string, number>) {
   console.log('match — eyeball the unclaimed list during sweeps if coverage looks off.');
 }
 
+// ── Mode-sibling audit ───────────────────────────────────────────────────
+
+// Tokens AA appends to a checkpoint's slug to name a reasoning mode or effort
+// level. A slug whose trailing tokens are ALL from this set is a mode of the
+// slug that remains once they are stripped (the "root"). Anything else in the
+// suffix — a date (0925), a size (mini), a checkpoint name (terminus, preview),
+// a version digit (5-6-sol) — means a different model, not a mode, and is
+// deliberately NOT treated as a sibling.
+const MODE_GAP_MIN = 1.0; // raw points; below this a sibling is noise, not a mis-anchor
+const MODE_TOKENS = new Set(['thinking', 'reasoning', 'non', 'adaptive', 'xhigh', 'high', 'medium', 'low', 'max', 'minimal', 'effort', 'fallback', 'default']);
+function modeRoot(slug: string): string {
+  const t = slug.split('-');
+  while (t.length > 1 && MODE_TOKENS.has(t[t.length - 1])) t.pop();
+  return t.join('-');
+}
+
+function auditModesMode(aaii: Map<string, number>) {
+  const byRoot = new Map<string, Array<[string, number]>>();
+  for (const [slug, v] of aaii) {
+    const r = modeRoot(slug);
+    if (!byRoot.has(r)) byRoot.set(r, []);
+    byRoot.get(r)!.push([slug, v]);
+  }
+  const hits: Array<{ file: string; slug: string; own: number; better: Array<[string, number]> }> = [];
+  let nearTies = 0;
+  for (const file of globSync('data/outputs/*/*.yaml').sort()) {
+    const content = readFileSync(file, 'utf-8');
+    if (!/^\s+intelligence_index:/m.test(content)) continue;
+    const slug = content.match(/artificialanalysis\.ai\/models\/([a-zA-Z0-9._-]+)/)?.[1];
+    if (!slug || !aaii.has(slug)) continue;
+    const ownRaw = aaii.get(slug)!;
+    const own = Math.round(ownRaw);
+    const sibs = (byRoot.get(modeRoot(slug)) ?? []).filter(([s]) => s !== slug);
+    const better = sibs.filter(([, v]) => v - ownRaw >= MODE_GAP_MIN).sort((a, b) => b[1] - a[1]);
+    if (better.length) hits.push({ file, slug, own, better });
+    else if (sibs.some(([, v]) => Math.round(v) > own)) nearTies++;
+  }
+  console.log('');
+  console.log(`Mode audit: ${hits.length} anchor(s) score below a mode sibling of the same checkpoint.`);
+  if (hits.length) {
+    console.log('Verify each on AA (a suffix can also be a distinct release), then re-anchor per');
+    console.log('AGENTS.md: switch the AA URL, set the score, keep the old reading in the trail.');
+    for (const h of hits.sort((a, b) => (b.better[0][1] - b.own) - (a.better[0][1] - a.own))) {
+      console.log(`  ${h.file}`);
+      console.log(`      anchor ${h.slug} = ${h.own}   higher: ${h.better.map(([s, v]) => `${s} = ${Math.round(v)}`).join(', ')}`);
+    }
+  }
+  if (nearTies) console.log(`(${nearTies} anchor(s) have a sibling that rounds higher but sits within ${MODE_GAP_MIN} raw point — left alone as noise.)`);
+}
+
 // ── Drive ────────────────────────────────────────────────────────────────
 
 async function main() {
@@ -188,6 +252,10 @@ async function main() {
 
   if (discover) {
     discoverMode(aaii);
+    return;
+  }
+  if (auditModes) {
+    auditModesMode(aaii);
     return;
   }
 

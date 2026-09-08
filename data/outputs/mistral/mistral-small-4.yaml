@@ -7,8 +7,8 @@ flagship: true
 sources:
   - label: HuggingFace
     url: https://huggingface.co/mistralai/Mistral-Small-4-119B-2603
-  - label: Artificial Analysis
-    url: https://artificialanalysis.ai/models/mistral-small-4-non-reasoning
+  - label: Artificial Analysis (reasoning)
+    url: https://artificialanalysis.ai/models/mistral-small-4
   - label: OpenRouter
     url: https://openrouter.ai/mistralai/mistral-small
 description: >
@@ -17,7 +17,10 @@ description: >
   coding in one architecture. 256K context. 3x throughput vs Mistral
   Small 3 with 40% latency reduction. Configurable reasoning effort.</p>
 
-  <p>AA Intelligence Index v4.3: 9 (non-reasoning). Apache 2.0.</p>
+  <p>AA Intelligence Index v4.3: <strong>11</strong> in reasoning mode (9
+  non-reasoning); the score follows AA's reasoning page since 2026-09-08, and
+  earlier readings in the score trail came from the non-reasoning page.
+  Apache 2.0.</p>
 
   <p><strong>May 31 2026:</strong> NVIDIA-collaboration
   <strong>NVFP4 quantized variant</strong> shipped on HuggingFace
@@ -34,9 +37,12 @@ model:
   parameters: 119B
   active_parameters: 6.5B
   context_window: 256000
-  intelligence_index: 9
+  intelligence_index: 11
   intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 9
+      version: "AA v4.3"
+      until: "2026-09-08"
     - score: 7
       version: "AA v4.2"
       until: "2026-09-08"

@@ -88,6 +88,14 @@ When scanning for new papers from tracked labs, **do not limit searches to a nar
 
    **The scanner alone is not sufficient after a rescore — also run the old-value grep** (next paragraph in the AAII section). `scan-aaii-mentions` has a coincidental-resolution blind spot that silently passes genuinely-stale prose, so a rescore sweep that only runs the scanner is incomplete.
 
+10. **Audit AA anchors for a higher-scoring mode of the same checkpoint.** The anchoring rule (AAII section) says link the *highest mode* — reasoning over non-reasoning, max/xhigh over high — but AA adds mode slugs after we file, and a recalibration can flip which mode leads (Qwen3.5-397B's non-thinking page overtook its thinking page on v4.3). The 2026-09-08 audit found six anchors that had sat on a lower mode through three recalibrations (Claude 4 17→21, Claude 4.5 Opus 24→29, GLM-4.6 15→19, EXAONE 4.0 6→8, Qwen3.5 19→21, Mistral Small 4 9→11). Each sweep, and after every recalibration sync, run:
+
+   ```bash
+   npm run fetch-aa-intelligence -- --audit-modes
+   ```
+
+   It groups the leaderboard payload by checkpoint root (slug with trailing mode tokens — `thinking`, `reasoning`, `non`, `adaptive`, `xhigh`/`high`/`medium`/`low`, `max` — stripped) and reports every anchor whose linked page sits **at least 1.0 raw point** below a sibling in the same group (AA's own confidence interval is under ±1%, and effort levels of one model swap places by a few tenths between syncs — Gemini 3.7 Flash high 39.43 vs medium 39.62 — so re-anchoring on rounding alone would churn the trail; such near-ties are counted in a footnote and left alone). Suffixes carrying a date, size, checkpoint name, or version digit (`-0925`, `-mini-reasoning`, `-terminus-reasoning`, `-5-6-sol-xhigh`) are deliberately not siblings. The report is high-recall, not proof: **a mode-looking suffix can name a distinct release** — `kimi-k2-thinking` is the November 2025 Kimi K2 Thinking, not a mode of `kimi-k2`, and stays flagged by design. For each genuine hit apply the re-anchor recipe: switch the AA `sources` URL to the higher mode's page, set `intelligence_index` to that page's rounded value, **prepend the superseded reading to `intelligence_index_history` as `{score: old, version: <current index>, until: today}`** (the Ling-1T precedent — the trail records what we displayed), say in the description which page the score now follows and that earlier trail readings came from the other mode, add per-mode variant notes, and run `npm run fetch-aa-openness -- --dry-run` to confirm the new slug carries the checkpoint's same AAOI (it did for all six). Then a `fetch-aa-intelligence -- --dry-run` should report the file unchanged.
+
 
 ### What to Exclude
 
@@ -311,6 +319,8 @@ Use the slug that AA's URL actually serves. AA's slug often differs from ours: l
 - `claude-opus-4-6` (46) vs `claude-opus-4-6-adaptive` (53) — use 53
 - `deepseek-v3-2` (32) vs `deepseek-v3-2-reasoning` (42) — use 42
 
+The leading mode can change between recalibrations and AA adds mode pages after we file, so `npm run fetch-aa-intelligence -- --audit-modes` (sweep step 10) re-checks every anchor against its same-checkpoint siblings; re-anchor hits with the recipe there.
+
 **Pick the right model when an entry covers a family.** When a YAML file represents a multi-model family (e.g., `o3.yaml` containing o3-mini, o3, o4-mini, o3-pro), the top-level `intelligence_index` should match the model named by the file slug and the AA URL in `sources` — not blindly the highest variant. Higher variants belong in the description and the `variants` list. Otherwise users cross-checking against AA see a number that doesn't match the linked page (a real source of confusion).
 
 Rule of thumb: the top-level number, the file slug, and the primary AA URL should always describe the same thing.
@@ -335,7 +345,7 @@ Rule of thumb: the top-level number, the file slug, and the primary AA URL shoul
 1. Run `npm run fetch-aa-intelligence` (or `-- --dry-run` first). It pulls all ~500 scored records from AA's models-leaderboard RSC payload in one request, matches each output's AA URL slug, and rewrites `intelligence_index` + `intelligence_index_version` in place. It never *adds* scores — anchoring a new entry to the right variant/mode is a curation decision.
 2. The script's "slug not on leaderboard" list is the manual work-list: renamed slugs (AA renamed `glm-4-5` → `glm-4.5`), models retired from the index, or files whose AA URL is missing/an `/articles/` link. Resolve each, then re-run.
 3. Models AA no longer scores keep their number with an explicit tag: `"pre-v4 (not in current AA index; unverifiable as of YYYY-MM-DD)"` for never-v4-verified scores (excluded from the timeline Intelligence facet), or `"AA v4.0 (delisted from AA leaderboard as of YYYY-MM-DD)"` for v4-verified scores AA later dropped (still v4-comparable, stays in the facet).
-4. **Large score drops from the sync are usually anchoring bugs, not rescores.** When AA splits a model into mode/variant slugs, a URL pointing at the non-reasoning or small-variant page silently downgrades the score. Check the family's full slug list before accepting a big drop — the fix is usually correcting the URL to the highest-*mode* page (same model), while size *variants* stay in the variants list per the anchoring rule.
+4. **Large score drops from the sync are usually anchoring bugs, not rescores.** When AA splits a model into mode/variant slugs, a URL pointing at the non-reasoning or small-variant page silently downgrades the score. Check the family's full slug list before accepting a big drop — the fix is usually correcting the URL to the highest-*mode* page (same model), while size *variants* stay in the variants list per the anchoring rule. `--audit-modes` does this check mechanically for the whole set (sweep step 10); run it right after the sync.
 
 **AA-pickup discovery.** `npm run fetch-aa-intelligence -- --discover` reports tracked model outputs with no AA URL whose slug matches an unclaimed leaderboard slug — the work-list for scores AA added after we filed the model (standing sweep step 8). Anchoring each hit stays a curation decision.
 
