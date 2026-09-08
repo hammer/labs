@@ -10,9 +10,9 @@ region: france
 founded: "2023"
 type: private
 valuation:
-  amount: "$23B"
+  amount: "$24.5B"
   type: private
-  date: "2026-06"
+  date: "2026-09"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Mistral_AI">Mistral AI</a> is a
   French AI company founded in April 2023 by three
@@ -20,8 +20,9 @@ description: >
   Polytechnique</a> alumni: <strong>Arthur Mensch</strong> (CEO, ex-Google
   DeepMind), <strong>Guillaume Lample</strong> (Chief Scientist, ex-Meta FAIR),
   and <strong>Timothee Lacroix</strong> (CTO, ex-Meta FAIR, contributed to
-  LLaMA). With $3B+ raised across five equity rounds (seed through Series C)
-  and valued at ~$14B, Mistral is Europe's leading AI lab. Revenue surged from
+  LLaMA). With $6.5B+ raised across six equity rounds, the latest a
+  <strong>€3B Series D in September 2026 led by Samsung Electronics</strong> at a
+  post-money valuation above €21B (~$24.5B), Mistral is Europe's leading AI lab. Revenue surged from
   ~$20M ARR in January 2025 to ~$400M ARR by January 2026.</p>
 
   <p>Mistral pioneered efficient open-weight models:
@@ -92,6 +93,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=1MSpdmQAAAAJ
 news:
+  - title: "Mistral Raises €3B ($3.5B) Series D at €21B+ Valuation Led by Samsung — Europe's Largest Tech Round, Cast by NYT as a Strategy Shift Toward a European Alternative"
+    url: https://www.nytimes.com/2026/09/08/business/mistral-ai-fund-raising.html?unlocked_article_code=1._lA.DVDP.hQVCjYsFFYaN
+    source: The New York Times
+    date: 2026-09-08
   - title: "Microsoft–Mistral Expand Partnership: Multibillion European Compute Deal (No Equity), Medium 3.5 + OCR 4 into Foundry"
     url: https://news.microsoft.com/source/2026/07/21/microsoft-and-mistral-expand-strategic-partnership-to-give-enterprises-and-regulated-industries-frontier-ai-they-can-control/
     source: Microsoft
