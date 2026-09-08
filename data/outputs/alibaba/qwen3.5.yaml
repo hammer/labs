@@ -8,8 +8,8 @@ sources:
     url: https://qwen.ai/blog?id=qwen3.5
   - label: GitHub
     url: https://github.com/QwenLM/Qwen3.5
-  - label: Artificial Analysis
-    url: https://artificialanalysis.ai/models/qwen3-5-397b-a17b
+  - label: Artificial Analysis (397B-A17B, non-thinking)
+    url: https://artificialanalysis.ai/models/qwen3-5-397b-a17b-non-reasoning
 description: >
   Fourth generation of the Qwen model family. Qwen3.5-397B-A17B native VLM built
   on Qwen3-Next architecture. 201 languages and dialects supported. 1M context window.
@@ -34,16 +34,22 @@ outputs:
     description: >
       Qwen3.5-397B-A17B native VLM. 201 languages and dialects supported.
       150k to 250k vocabulary expansion. 1M context window.
-      Matches the >1T-parameter Qwen3-Max-Base.
+      Matches the >1T-parameter Qwen3-Max-Base. AA Intelligence Index v4.3:
+      21 in non-thinking mode (19 with thinking) — AA's non-reasoning page
+      scores higher under v4.3, so the anchor moved there on 2026-09-08;
+      earlier readings in the score trail came from the thinking page.
     model:
       architecture: moe
       parameters: 397B
       active_parameters: 17B
       context_window: 1000000
       languages: 201
-      intelligence_index: 19
+      intelligence_index: 21
       intelligence_index_version: "AA v4.3"
       intelligence_index_history:
+        - score: 19
+          version: "AA v4.3"
+          until: "2026-09-08"
         - score: 26
           version: "AA v4.2"
           until: "2026-09-08"
@@ -86,7 +92,7 @@ outputs:
           notes: Agentic
         - name: Qwen3.5-27B
           parameters: 27B
-          notes: Agentic, dense
+          notes: "Agentic, dense; AA Intelligence Index v4.3: 23 (thinking) — the family's highest AA score under v4.3"
         - name: Qwen3.5-Flash
           notes: Hosted production version optimized for latency
   - name: Qwen3.5-Max-Preview

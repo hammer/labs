@@ -7,8 +7,8 @@ flagship: true
 sources:
   - label: Announcement
     url: https://www.anthropic.com/news/claude-opus-4-5
-  - label: Artificial Analysis
-    url: https://artificialanalysis.ai/models/claude-opus-4-5
+  - label: Artificial Analysis (extended thinking)
+    url: https://artificialanalysis.ai/models/claude-opus-4-5-thinking
   - label: OpenRouter
     url: https://openrouter.ai/anthropic/claude-4.5-opus
 description: >
@@ -16,7 +16,9 @@ description: >
   context. Also released as Claude 4.5 Sonnet (September 2025, 1M context, AA Intelligence Index v4.3: 21) and
   Claude 4.5 Haiku (October 2025, AA Intelligence Index v4.3: 18). Architecture undisclosed.</p>
 
-  <p>AA Intelligence Index v4.3: <strong>24</strong>. Claude 4.5 Opus was the highest-ranked
+  <p>AA Intelligence Index v4.3: <strong>29</strong> (extended thinking; 24 without). The
+  score follows AA's extended-thinking page since 2026-09-08; earlier readings in the
+  score trail came from the non-reasoning page. Claude 4.5 Opus was the highest-ranked
   non-reasoning model at the time of release, with particular strength in coding, writing,
   and multi-step agentic tasks. Proprietary.</p>
 tags:
@@ -25,9 +27,12 @@ tags:
   - reasoning
 model:
   context_window: 200000
-  intelligence_index: 24
+  intelligence_index: 29
   intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 24
+      version: "AA v4.3"
+      until: "2026-09-08"
     - score: 28
       version: "AA v4.2"
       until: "2026-09-08"
@@ -62,7 +67,7 @@ model:
         posted: "2026-04-27"
         notes: "Paper: Claude Haiku 4.5 · 90% PI [22B–194B]"
     - name: Claude 4.5 Opus
-      notes: "200K context, AA Intelligence Index v4.3: 24"
+      notes: "200K context, AA Intelligence Index v4.3: 29 (extended thinking)"
 related:
   - claude-4
   - claude-opus-4.6

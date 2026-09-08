@@ -9,13 +9,15 @@ sources:
     url: https://www.marktechpost.com/2025/09/30/zhipu-ai-releases-glm-4-6-achieving-enhancements-in-real-world-coding-long-context-processing-reasoning-searching-and-agentic-ai/
   - label: API Docs
     url: https://docs.z.ai
-  - label: Artificial Analysis
-    url: https://artificialanalysis.ai/models/glm-4-6
+  - label: Artificial Analysis (reasoning)
+    url: https://artificialanalysis.ai/models/glm-4-6-reasoning
   - label: OpenRouter
     url: https://openrouter.ai/z-ai/glm-4.6
 description: >
   Released with MIT License. 355B MoE model, premier open-weight choice for
-  enterprise self-hosting.
+  enterprise self-hosting. AA Intelligence Index v4.3: 19 in reasoning mode
+  (15 non-reasoning); the score follows AA's reasoning page since 2026-09-08,
+  and earlier readings in the score trail came from the non-reasoning page.
 tags:
   - moe
   - open-weight
@@ -24,9 +26,12 @@ links:
     url: https://www.startuphub.ai/ai-news/ai-video/2025/glm-4-6-challenges-frontier-models-with-open-source-prowess
 model:
   architecture: moe
-  intelligence_index: 15
+  intelligence_index: 19
   intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 15
+      version: "AA v4.3"
+      until: "2026-09-08"
     - score: 17
       version: "AA v4.2"
       until: "2026-09-08"

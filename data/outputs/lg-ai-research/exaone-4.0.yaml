@@ -9,13 +9,16 @@ sources:
     url: https://arxiv.org/abs/2507.11407
   - label: HuggingFace
     url: https://huggingface.co/LGAI-EXAONE/EXAONE-4.0-32B
-  - label: Artificial Analysis
-    url: https://artificialanalysis.ai/models/exaone-4-0-32b
+  - label: Artificial Analysis (32B, reasoning)
+    url: https://artificialanalysis.ai/models/exaone-4-0-32b-reasoning
 description: >
   Unified LLM integrating non-reasoning and reasoning modes via Hybrid
   Attention (sliding-window + global), reducing memory usage by 70%.
   The 32B variant achieved the highest Artificial Analysis Intelligence
-  Index score of any 32B-class model.
+  Index score of any 32B-class model at release. AA Intelligence Index v4.3:
+  8 (32B, reasoning mode; 6 non-reasoning); the score follows AA's reasoning
+  page since 2026-09-08, and earlier readings in the score trail came from
+  the non-reasoning page.
 tags:
   - open-weight
   - reasoning
@@ -23,9 +26,12 @@ tags:
 model:
   architecture: dense
   parameters: 32B
-  intelligence_index: 6
+  intelligence_index: 8
   intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 6
+      version: "AA v4.3"
+      until: "2026-09-08"
     - score: 1
       version: "AA v4.2"
       until: "2026-09-08"
@@ -40,8 +46,10 @@ model:
   variants:
     - name: EXAONE-4.0-1.2B
       parameters: 1.2B
+      notes: "AA Intelligence Index v4.3: 5 (reasoning)"
     - name: EXAONE-4.0-32B
       parameters: 32B
+      notes: "AA Intelligence Index v4.3: 8 (reasoning); file's top-level anchor"
 paper:
   arxiv: "2507.11407"
 related:
