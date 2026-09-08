@@ -41,12 +41,13 @@ description: >
   AutomationBench, ScreenSpot Pro, Terminal-Bench Science 0.1, and HealthBench
   Pro. Codex gains notes that persist across context windows, so long sessions
   no longer depend on lossy compaction, and OpenAI says computer use runs about
-  2&times; faster. On the <strong>AA Intelligence Index v4.2</strong> the
-  max-effort mode scores <strong>55</strong>, #2 of 202 behind Claude Fable 5.1
-  (57) and 4 points above GPT-5.6 Sol; AA measures 73.4 output tokens/s with a
+  2&times; faster. On the <strong>AA Intelligence Index v4.3</strong> the
+  max-effort mode scores <strong>53</strong>, level with Claude Fable 5.1 at the
+  top of the index (it was #2 of 202 behind Fable 5.1's 57 at its September
+  2026 release under v4.2) and 6 points above GPT-5.6 Sol; AA measures 73.4 output tokens/s with a
   384-second time to first token at max effort and finds Astra more
   token-efficient than almost every other model near the frontier. Per-effort
-  AA scores: xhigh 54, high 53, medium 52, low 49, non-reasoning 48.</p>
+  AA scores (v4.3): xhigh 53, high 51, medium 50, low 46, non-reasoning 45.</p>
 
   <p>The system card (September 3) makes Astra the first OpenAI model to reach
   the <strong>Critical level for cybersecurity</strong> under the Preparedness
@@ -73,18 +74,22 @@ tags:
   - agents
 model:
   context_window: 1050000
-  intelligence_index: 55
-  intelligence_index_version: "AA v4.2"
+  intelligence_index: 53
+  intelligence_index_version: "AA v4.3"
+  intelligence_index_history:
+    - score: 55
+      version: "AA v4.2"
+      until: "2026-09-08"
   openness_index: 5.6
   openness_index_version: "AA Openness Index v1.0 (family inference)"
   license: Proprietary
   variants:
     - name: GPT-6 Astra (max effort)
-      notes: "AAII 55 (v4.2), #2 overall at release; $10/$50 per MTok; 73.4 tok/s, 384 s TTFT per AA"
+      notes: "AAII 53 (v4.3), #2 overall at release; $10/$50 per MTok; 73.4 tok/s, 384 s TTFT per AA"
     - name: GPT-6 Astra (xhigh / high / medium / low)
-      notes: "AAII 54 / 53 / 52 / 49 (v4.2) by reasoning effort"
+      notes: "AAII 53 / 51 / 50 / 46 (v4.3) by reasoning effort"
     - name: GPT-6 Astra (non-reasoning)
-      notes: "AAII 48 (v4.2)"
+      notes: "AAII 45 (v4.3)"
     - name: GPT-6 Astra Pro
       notes: "Pro, Business, and Enterprise plans; listed on OpenRouter at the same $10/$50; not yet scored by AA"
   benchmark_scores:

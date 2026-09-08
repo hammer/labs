@@ -38,9 +38,12 @@ model:
   active_parameters: "33B"
   context_window: 256000
   num_experts: 256
-  intelligence_index: 27
-  intelligence_index_version: "AA v4.2"
+  intelligence_index: 23
+  intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 27
+      version: "AA v4.2"
+      until: "2026-09-08"
     - score: 35
       version: "AA v4.1.1"
       until: "2026-09-05"

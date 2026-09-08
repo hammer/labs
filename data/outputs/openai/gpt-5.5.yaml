@@ -12,8 +12,8 @@ sources:
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/gpt-5-5
 description: >
-  <p>OpenAI's most capable model. AA Intelligence Index v4.2: <strong>46</strong>
-  (<strong>#1 globally</strong>). Described as "a new class of intelligence" that
+  <p>OpenAI's most capable model at its release, when it debuted <strong>#1 globally</strong>
+  on the AA index; it reads <strong>39</strong> on AA Intelligence Index v4.3. Described as "a new class of intelligence" that
   understands intent faster and carries more of the work itself. 1M-token context
   window (API), 400K in Codex. Excels at writing/debugging code, web research,
   data analysis, document creation, and multi-tool agentic workflows.</p>
@@ -29,9 +29,12 @@ tags:
   - agentic
 model:
   context_window: 1000000
-  intelligence_index: 46
-  intelligence_index_version: "AA v4.2"
+  intelligence_index: 39
+  intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 46
+      version: "AA v4.2"
+      until: "2026-09-08"
     - score: 56
       version: "AA v4.1.1"
       until: "2026-09-05"

@@ -54,9 +54,12 @@ model:
   context_window: 131072
   training_tokens: 19.7T
   # Reasoning mode (highest-mode rule); AA leaderboard 15.1 as of 2026-07-28.
-  intelligence_index: 9
-  intelligence_index_version: "AA v4.2"
+  intelligence_index: 10
+  intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 9
+      version: "AA v4.2"
+      until: "2026-09-08"
     - score: 15
       version: "AA v4.1.1"
       until: "2026-09-05"

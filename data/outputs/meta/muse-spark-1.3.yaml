@@ -40,9 +40,9 @@ description: >
   <strong>98.5 / 98.1</strong> (256K&ndash;512K / 512K&ndash;1M); agentic
   results include GDPval-AA v2 1754 Elo (vs Opus 5's 1824), OSWorld 2.0 66.9,
   DeepSearchQA 89.4, and Agentic IF Index 57.8. Artificial Analysis scored it
-  the same day: <strong>AA Intelligence Index v4.2: 53</strong> in max reasoning
-  mode (52 at xhigh) &mdash; Meta's highest score to date, up from 1.2's 47,
-  fourth among labs behind Anthropic, OpenAI, and Google.</p>
+  the same day (53 on v4.2); on <strong>AA Intelligence Index v4.3 it reads 48</strong>
+  in max reasoning mode (45 at xhigh) &mdash; Meta's highest score to date, up from
+  1.2's 40, third among labs behind Anthropic and OpenAI.</p>
 
   <p><strong>Proprietary</strong> (parameters undisclosed), with a
   <strong>1M-token context</strong>, live in <strong>Muse Code</strong> and
@@ -60,9 +60,12 @@ tags:
   - proprietary
 model:
   context_window: 1000000
-  intelligence_index: 53
-  intelligence_index_version: "AA v4.2"
+  intelligence_index: 48
+  intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 53
+      version: "AA v4.2"
+      until: "2026-09-08"
     - score: 62
       version: "AA v4.1.1"
       until: "2026-09-05"

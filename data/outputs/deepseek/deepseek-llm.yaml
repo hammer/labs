@@ -30,9 +30,12 @@ outputs:
     model:
       architecture: dense
       parameters: 67B
-      intelligence_index: 1
-      intelligence_index_version: "AA v4.2"
+      intelligence_index: 5
+      intelligence_index_version: "AA v4.3"
       intelligence_index_history:
+        - score: 1
+          version: "AA v4.2"
+          until: "2026-09-08"
         - score: 3
           version: "AA v4.1.1"
           until: "2026-09-05"

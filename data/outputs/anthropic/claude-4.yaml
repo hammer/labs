@@ -20,8 +20,8 @@ description: >
 
   <p>Claude 4 was widely regarded as the <strong>best coding model</strong> at launch,
   with particular strength in agentic tasks, extended reasoning, and instruction following.
-  Launched alongside Claude Code GA and the Claude Agent SDK. AA Intelligence Index v4.2:
-  19 (Opus), 19 (Sonnet). Proprietary.</p>
+  Launched alongside Claude Code GA and the Claude Agent SDK. AA Intelligence Index v4.3:
+  17 (Opus), 17 (Sonnet); 21 and 19 with extended thinking. Proprietary.</p>
 tags:
   - frontier
   - coding
@@ -29,9 +29,12 @@ tags:
   - agents
 model:
   context_window: 1000000
-  intelligence_index: 19
-  intelligence_index_version: "AA v4.2"
+  intelligence_index: 17
+  intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 19
+      version: "AA v4.2"
+      until: "2026-09-08"
     - score: 26
       version: "AA v4.1.1"
       until: "2026-09-05"

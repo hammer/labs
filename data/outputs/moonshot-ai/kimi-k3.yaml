@@ -28,9 +28,9 @@ description: >
   Residuals</a>, with Gated MLA, <strong>native vision</strong>, and a
   1M-token context window &mdash; the architectural leap the K2 line
   (1T/32B) built toward. Runs at max thinking effort by default with low-
-  and high-effort modes. AA Intelligence Index <strong>50</strong> (v4.2)
-  &mdash; #4 overall at release, the highest-scoring Chinese model and
-  above Grok 4.5 (54), though AA flags verbosity (~2&times; median output
+  and high-effort modes. AA Intelligence Index <strong>44</strong> (v4.3)
+  &mdash; #4 overall and the highest-scoring Chinese model at its July 2026
+  release, still above Grok 4.5 (39 on v4.3), though AA flags verbosity (~2&times; median output
   tokens) and slow serving. Moonshot positions it as trailing only Claude
   Fable 5 and GPT-5.6 Sol. $0.30/$3/$15 per MTok (cache-hit/miss/output);
   live on Kimi.com, Kimi Work, Kimi Code, and the API at launch.
@@ -53,9 +53,12 @@ model:
   num_experts: 896
   top_k: 16
   license: Kimi K3 License
-  intelligence_index: 50
-  intelligence_index_version: "AA v4.2"
+  intelligence_index: 44
+  intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 50
+      version: "AA v4.2"
+      until: "2026-09-08"
     - score: 60
       version: "AA v4.1.1"
       until: "2026-09-05"

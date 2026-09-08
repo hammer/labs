@@ -47,7 +47,7 @@ description: >
   Nemotron 3 Super on math, code reasoning, and instruction following, but
   trails both on knowledge (MMLU-Pro 79.8 vs 85.3 and 83.7) and on agentic
   tool use (BFCL v4 52.9, Terminal-Bench 2.0 21.1). AA Intelligence Index
-  v4.2: <strong>12</strong>, above Nemotron 3 Nano's 9 and below Nemotron 3.5
+  v4.3: <strong>12</strong>, above Nemotron 3 Nano's 9 and below Nemotron 3.5
   Lightning's 16.</p>
 tags:
   - open-weight
@@ -63,7 +63,11 @@ model:
   context_window: 1000000
   base_model: nemotron-3-nano
   intelligence_index: 12
-  intelligence_index_version: "AA v4.2"
+  intelligence_index_version: "AA v4.3"
+  intelligence_index_history:
+    - score: 12
+      version: "AA v4.2"
+      until: "2026-09-08"
   openness_index: 83.3
   openness_index_version: "AA Openness Index v1.0"
   license: NVIDIA Open Model License

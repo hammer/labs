@@ -35,7 +35,7 @@ import { readFileSync, writeFileSync } from 'fs';
 import { globSync } from 'glob';
 
 const LEADERBOARD_URL = 'https://artificialanalysis.ai/leaderboards/models';
-const AAII_VERSION = 'AA v4.2';
+const AAII_VERSION = 'AA v4.3';
 const TODAY = new Date().toISOString().slice(0, 10);
 const dryRun = process.argv.includes('--dry-run');
 const discover = process.argv.includes('--discover');

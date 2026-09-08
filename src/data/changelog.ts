@@ -362,7 +362,8 @@ function isSchemaCommit(subject: string): boolean {
   return /^Schema:/i.test(subject)
     || /\bRename .* values\b/i.test(subject)
     || /\bMigrate .* schema\b/i.test(subject)
-    || /\bReplace lab type\b/i.test(subject);   // matches our recent migration
+    || /\bReplace lab type\b/i.test(subject)    // matches our recent migration
+    || /\bMigrate all AA Intelligence Index scores\b/i.test(subject);   // AAII recalibration syncs (v4.2, v4.3, …) rewrite ~185 files at once
 }
 
 function bulkLabFromOutputs(addedOutputPaths: string[]): string | null {

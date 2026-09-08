@@ -62,9 +62,12 @@ model:
   top_k: 6
   context_window: 1000000
   training_tokens: 20T+
-  intelligence_index: 16
-  intelligence_index_version: "AA v4.2"
+  intelligence_index: 14
+  intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 16
+      version: "AA v4.2"
+      until: "2026-09-08"
     - score: 24
       version: "AA v4.1.1"
       until: "2026-09-05"

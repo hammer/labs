@@ -34,9 +34,12 @@ model:
   parameters: 1T
   active_parameters: 32B
   context_window: 262144
-  intelligence_index: 36
-  intelligence_index_version: "AA v4.2"
+  intelligence_index: 31
+  intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 36
+      version: "AA v4.2"
+      until: "2026-09-08"
     - score: 45
       version: "AA v4.1.1"
       until: "2026-09-05"

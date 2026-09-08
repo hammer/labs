@@ -17,7 +17,7 @@ description: >
   and GPT-4.1 as the default ChatGPT model. Architecture undisclosed.</p>
 
   <p>GPT-5 unified fast inference and deep reasoning in one model, with variants spanning
-  from nano (lightweight) to thinking-pro (maximum reasoning). AA Intelligence Index v4.2: 27.
+  from nano (lightweight) to thinking-pro (maximum reasoning). AA Intelligence Index v4.3: 23.
   Proprietary.</p>
 tags:
   - frontier
@@ -25,9 +25,12 @@ tags:
   - multimodal
 model:
   context_window: 400000
-  intelligence_index: 27
-  intelligence_index_version: "AA v4.2"
+  intelligence_index: 23
+  intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 27
+      version: "AA v4.2"
+      until: "2026-09-08"
     - score: 35
       version: "AA v4.1.1"
       until: "2026-09-05"

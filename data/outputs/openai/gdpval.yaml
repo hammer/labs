@@ -19,7 +19,7 @@ description: >
   baselines. 220-task gold subset open-sourced.</p>
 
   <p>Carried the <strong>highest weight (20%) in AA Intelligence Index v4.1</strong> and
-  keeps a 10% weight in v4.2 (via GDPval-AA v2, Artificial Analysis' independent re-evaluation using
+  keeps a 10% weight in v4.2 and v4.3 (via GDPval-AA v2, Artificial Analysis' independent re-evaluation using
   their Stirrup agentic harness). Represents a shift toward measuring economic value
   of AI capability rather than academic task performance. Inter-rater reliability is
   a known weakness (~66-71% agreement). By Patwardhan, Dias, Proehl et al.
@@ -48,4 +48,5 @@ eval:
   used_in:
     - AA Intelligence Index v4.1 (as GDPval-AA v2, 20%)
     - AA Intelligence Index v4.2 (as GDPval-AA v2, 10%)
+    - AA Intelligence Index v4.3 (as GDPval-AA v2, 10%)
   leaderboard_url: https://artificialanalysis.ai/evaluations/gdpval-aa

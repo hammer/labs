@@ -19,8 +19,8 @@ description: >
   reasoning. Successor to <a href="/outputs/alibaba/qwen3.6-plus">Qwen3.6-Plus</a>
   in the closed-flagship slot.</p>
 
-  <p><strong>AA Intelligence Index v4.2: 37</strong> (#1
-  among Chinese labs as of May 2026; up 6 points from Qwen3.6-Max-Preview's 41).
+  <p><strong>AA Intelligence Index v4.3: 30</strong> (#1
+  among Chinese labs at its May 2026 release; 2 points above Qwen3.6-Max-Preview's 28).
   LM Arena text Elo ~<strong>1475</strong> (#13 overall), top-10 on math and
   coding subleaderboards. Pricing: $2.50 per 1M input / $7.50 per 1M output
   tokens. Verbose by design &mdash; 97M output tokens to score the AA index
@@ -35,9 +35,12 @@ tags:
   - agentic
 model:
   context_window: 1000000
-  intelligence_index: 37
-  intelligence_index_version: "AA v4.2"
+  intelligence_index: 30
+  intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 37
+      version: "AA v4.2"
+      until: "2026-09-08"
     - score: 47
       version: "AA v4.1.1"
       until: "2026-09-05"

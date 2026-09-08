@@ -43,8 +43,11 @@ outputs:
       active_parameters: 45.9B
       context_window: 1000000
       intelligence_index: 12
-      intelligence_index_version: "AA v4.2"
+      intelligence_index_version: "AA v4.3"
       intelligence_index_history:
+        - score: 12
+          version: "AA v4.2"
+          until: "2026-09-08"
         - score: 18
           version: "AA v4.1.1"
           until: "2026-09-05"

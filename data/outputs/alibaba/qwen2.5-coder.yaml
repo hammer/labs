@@ -28,9 +28,12 @@ outputs:
       Coding-specialized model family. From early 1.5/2.5 versions to the massive
       Qwen3-Coder-480B (July 2025).
     model:
-      intelligence_index: 2
-      intelligence_index_version: "AA v4.2"
+      intelligence_index: 7
+      intelligence_index_version: "AA v4.3"
       intelligence_index_history:
+        - score: 2
+          version: "AA v4.2"
+          until: "2026-09-08"
         - score: 7
           version: "AA v4.1.1"
           until: "2026-09-05"

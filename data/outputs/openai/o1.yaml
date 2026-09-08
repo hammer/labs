@@ -21,15 +21,18 @@ description: >
   AIME 2024</strong> (vs 13.4% for GPT-4o), ranked in the 89th percentile on Codeforces,
   and exceeded human PhD-level accuracy on GPQA-Diamond (78%). 200K context (full o1,
   December 2024). Also released as o1-mini for cost-efficient reasoning. AA Intelligence
-  Index v4.2: 17. Proprietary.</p>
+  Index v4.3: 15. Proprietary.</p>
 tags:
   - frontier
   - reasoning
 model:
   context_window: 200000
-  intelligence_index: 17
-  intelligence_index_version: "AA v4.2"
+  intelligence_index: 15
+  intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 17
+      version: "AA v4.2"
+      until: "2026-09-08"
     - score: 24
       version: "AA v4.1.1"
       until: "2026-09-05"

@@ -28,9 +28,12 @@ outputs:
         url: https://github.com/qwenlm/qwen2.5
     model:
       architecture: dense
-      intelligence_index: 4
-      intelligence_index_version: "AA v4.2"
+      intelligence_index: 8
+      intelligence_index_version: "AA v4.3"
       intelligence_index_history:
+        - score: 4
+          version: "AA v4.2"
+          until: "2026-09-08"
         - score: 9
           version: "AA v4.1.1"
           until: "2026-09-05"

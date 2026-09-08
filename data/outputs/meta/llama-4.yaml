@@ -18,7 +18,7 @@ description: >
   architecture.</p>
 
   <p>Llama 4 was also the first multimodal Llama with built-in vision capabilities.
-  Behemoth (~2T/288B active) was announced but delayed. AA Intelligence Index v4.2: 9
+  Behemoth (~2T/288B active) was announced but delayed. AA Intelligence Index v4.3: 9
   (Maverick), 5 (Scout). Llama 4 Community License.</p>
 tags:
   - frontier
@@ -30,8 +30,11 @@ model:
   parameters: 400B
   active_parameters: 17B
   intelligence_index: 9
-  intelligence_index_version: "AA v4.2"
+  intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 9
+      version: "AA v4.2"
+      until: "2026-09-08"
     - score: 14
       version: "AA v4.1.1"
       until: "2026-09-05"
