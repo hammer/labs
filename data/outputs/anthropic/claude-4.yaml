@@ -7,10 +7,10 @@ flagship: true
 sources:
   - label: Announcement
     url: https://www.anthropic.com/news/claude-4
-  - label: Artificial Analysis (Opus)
-    url: https://artificialanalysis.ai/models/claude-4-opus
-  - label: Artificial Analysis (Sonnet)
-    url: https://artificialanalysis.ai/models/claude-4-sonnet
+  - label: Artificial Analysis (Opus, extended thinking)
+    url: https://artificialanalysis.ai/models/claude-4-opus-thinking
+  - label: Artificial Analysis (Sonnet, extended thinking)
+    url: https://artificialanalysis.ai/models/claude-4-sonnet-thinking
   - label: OpenRouter (Opus)
     url: https://openrouter.ai/anthropic/claude-4-opus
 description: >
@@ -21,7 +21,10 @@ description: >
   <p>Claude 4 was widely regarded as the <strong>best coding model</strong> at launch,
   with particular strength in agentic tasks, extended reasoning, and instruction following.
   Launched alongside Claude Code GA and the Claude Agent SDK. AA Intelligence Index v4.3:
-  17 (Opus), 17 (Sonnet); 21 and 19 with extended thinking. Proprietary.</p>
+  <strong>21</strong> (Opus with extended thinking; 17 without), 19 (Sonnet with
+  extended thinking; 17 without). The score here follows AA's extended-thinking
+  Opus page since 2026-09-08; earlier readings in the score trail came from the
+  non-reasoning Opus page. Proprietary.</p>
 tags:
   - frontier
   - coding
@@ -29,9 +32,12 @@ tags:
   - agents
 model:
   context_window: 1000000
-  intelligence_index: 17
+  intelligence_index: 21
   intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 17
+      version: "AA v4.3"
+      until: "2026-09-08"
     - score: 19
       version: "AA v4.2"
       until: "2026-09-08"
@@ -48,7 +54,7 @@ model:
   openness_index_version: "AA Openness Index v1.0 (family inference)"
   variants:
     - name: Claude 4 Opus
-      notes: 200K context
+      notes: "200K context; AA Intelligence Index v4.3: 21 (extended thinking)"
       parameters_estimated:
         value: "1.4T"
         source: https://arxiv.org/abs/2604.24827
@@ -57,7 +63,7 @@ model:
         posted: "2026-04-27"
         notes: "Paper: Claude Opus 4 · 90% PI [478B–4.2T]"
     - name: Claude 4 Sonnet
-      notes: 1M context
+      notes: "1M context; AA Intelligence Index v4.3: 19 (extended thinking)"
 related:
   - claude-3.5-sonnet
   - claude-4.5-opus
