@@ -1,0 +1,91 @@
+name: MiniCPM5-2B
+slug: minicpm5-2b
+lab: openbmb
+type: model
+date: 2026-09-07
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/openbmb/MiniCPM5-2B
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM
+  - label: HuggingFace (Base)
+    url: https://huggingface.co/openbmb/MiniCPM5-2B-Base
+  - label: HuggingFace (SFT data)
+    url: https://huggingface.co/datasets/openbmb/UltraData-SFT-2605
+  - label: HuggingFace (RL data)
+    url: https://huggingface.co/datasets/openbmb/UltraData-RL-2609
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/minicpm5-2b
+description: >
+  <p>Second model in the <strong>MiniCPM5</strong> series, released September 7,
+  2026, scaling the <a href="/outputs/openbmb/minicpm5">MiniCPM5-1B</a> recipe
+  to a dense <strong>2.52B-parameter</strong> (1.98B non-embedding) standard
+  <code>LlamaForCausalLM</code>: 42 layers, hidden size 2,048, 16 query and 2 KV
+  heads, a 130K vocabulary, and a native <strong>131,072-token context</strong>.
+  Hybrid thinking mode (on or off per request), Apache 2.0, and no custom
+  kernels, so vLLM, SGLang, and llama.cpp load it directly; OpenBMB ships Base,
+  Midtrain, SFT, GGUF, MLX, and GPTQ checkpoints plus a DSpark draft model for
+  speculative decoding, and FlagOS ports to nine chip families. The pretraining
+  corpus (Ultra-FineWeb, Ultra-FineWeb-L3, UltraX, UltraData-Code, UltraData-Math)
+  is released; the pretraining token count is not stated.</p>
+
+  <p>Training follows OpenBMB's UltraData tiered-data pipeline: base training
+  (stable then decay), mid-training, then a three-step post-training of
+  <strong>400B tokens of deep-thinking SFT</strong>, critic-based RL per the
+  JustRL II recipe that scales small models to 128K-token reasoning, and
+  <strong>on-policy distillation</strong> that folds 16 RL expert models (5 of
+  them agentic) into one release model using full-vocabulary reverse KL as the
+  advantage. OpenBMB credits RL plus OPD with +10.96 points on reasoning and
+  general benchmarks and +6.96 on agentic ones. Against its own 2B and 4B
+  comparison set it averages <strong>53.9</strong> versus 33.2 for LFM2.5-2.6B,
+  28.0 for Qwen3.5-2B, and 51.1 for the best larger model (Qwen3.5-4B):
+  LiveCodeBench v6 69.1, AIME 2025 86.5, MATH-500 94.6, MMLU-Pro 70.8, GPQA
+  Diamond 70.2, IFBench 66.3, BFCL v4 66.6, SWE-bench Verified 46.4, AA-LCR
+  59.0, NoLiMa 68.1, and BrowseComp-ZH 43.5; it trails Qwen3.5-4B on SWE-bench
+  Pro (14.4 vs 28.2) and Terminal-Bench 2.1 (8.6 vs 25.8). AA Intelligence Index
+  v4.3: <strong>14</strong>, which AA notes is well above the median of 6 for
+  open-weight models of similar size.</p>
+tags:
+  - on-device
+  - open-weight
+  - reasoning
+  - agentic
+  - open-source
+model:
+  architecture: dense
+  parameters: 2.52B
+  context_window: 131072
+  intelligence_index: 14
+  intelligence_index_version: "AA v4.3"
+  license: Apache-2.0
+  benchmark_scores:
+    - benchmark: LiveCodeBench v6
+      score: "69.1"
+    - benchmark: AIME 2025
+      score: "86.5"
+    - benchmark: MATH-500
+      score: "94.6"
+    - benchmark: MMLU-Pro
+      score: "70.8"
+    - benchmark: GPQA Diamond
+      score: "70.2"
+    - benchmark: IFBench
+      score: "66.3"
+    - benchmark: BFCL v4
+      score: "66.6"
+    - benchmark: SWE-bench Verified
+      score: "46.4"
+    - benchmark: AA-LCR
+      score: "59.0"
+    - benchmark: NoLiMa
+      score: "68.1"
+    - benchmark: BrowseComp-ZH
+      score: "43.5"
+    - benchmark: GDPval-AA v2
+      score: "19.6"
+related:
+  - minicpm5
+  - minicpm4.1
+  - ultra-fineweb-l3
+  - ultrax

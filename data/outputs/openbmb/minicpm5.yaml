@@ -15,7 +15,9 @@ description: >
   tool-use, code, and hard reasoning vs <a href="/outputs/liquid-ai/lfm2">LFM2.5-1.2B</a>
   and Qwen3-0.6B / Qwen3.5-0.8B.</p>
 
-  <p>Shipped with SFT, MLX, and GGUF variants for on-device deployment.</p>
+  <p>Shipped with SFT, MLX, and GGUF variants for on-device deployment. Followed
+  in September 2026 by <a href="/outputs/openbmb/minicpm5-2b">MiniCPM5-2B</a>,
+  which scales the same recipe to 2.5B parameters.</p>
 tags:
   - on-device
   - open-weight
@@ -34,5 +36,6 @@ model:
   openness_index: 83.3
   openness_index_version: "AA Openness Index v1.0"
 related:
+  - minicpm5-2b
   - minicpm
   - minicpm3
