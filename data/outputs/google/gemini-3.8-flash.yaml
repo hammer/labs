@@ -1,0 +1,78 @@
+name: Gemini 3.8 Flash
+slug: gemini-3.8-flash
+lab: google
+type: model
+date: 2026-09-02
+flagship: true
+sources:
+  - label: Announcement (Google)
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/
+  - label: Model page (Google DeepMind)
+    url: https://deepmind.google/models/gemini/flash/
+  - label: Model card (Google DeepMind)
+    url: https://deepmind.google/models/model-cards/gemini-3-8-flash/
+  - label: Gemini API model reference
+    url: https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gemini-3-8-flash
+  - label: OpenRouter
+    url: https://openrouter.ai/google/gemini-3.8-flash
+description: >
+  <p>Google's third Flash release in six weeks and its <strong>most intelligent
+  workhorse model</strong> for coding and agents, built on
+  <a href="/outputs/google/gemini-3.7-flash">Gemini 3.7 Flash</a> and shipped
+  September 2, 2026 alongside the restricted
+  <a href="/outputs/google/gemini-3.8-flash-cyber">Gemini 3.8 Flash Cyber</a>.
+  The change Google describes is diligence rather than architecture: the model
+  "works harder" on complex tasks, executing extra reasoning steps and calling
+  tools iteratively, at the cost of more output tokens; low, medium, and high
+  thinking levels let developers trade that overhead against cost and latency.
+  Natively multimodal (text, images, video, audio, PDFs in; text out) with a
+  <strong>1,048,576-token context window</strong> and 65,536 output tokens,
+  function calling, code execution, search grounding, and computer use (preview).
+  Knowledge cutoff March 2026 per the model card.</p>
+
+  <p>Google reports <strong>61.4%</strong> on Vals Finance Agent V2 (3.7 Flash
+  59.0%, Claude Opus 5 58.6%), 10.0% on Harvey's Legal Agent Benchmark (3.7
+  Flash 8.8%, Opus 5 6.7%), <strong>54.9%</strong> on HLE-Verified (GPT-5.6
+  Sol 54.5%, Opus 5 54.4%, 3.7 Flash 53.6%), over 70% on DeepSWE v1.1 at a
+  fraction of larger models' cost, and more than three times as many completed
+  tasks as 3.7 Flash on long-running document-heavy workflows. Launch coverage
+  put it at 59 on the then-current AA Intelligence Index v4.1.1, level with
+  GPT-5.6 Sol and Grok 4.6; on <strong>AA Intelligence Index v4.3 it scores
+  41</strong> at high effort (40 medium, 34 low), #29 of 202 and Google's
+  highest score on the index, at 280.8 tokens/s and a 16.3 s time to first
+  token. Pricing holds at $0.75 per million input tokens and $3.75 per million
+  output tokens through December 31, 2026, doubling to $1.50/$7.50 on January
+  1, 2027. Available in the Gemini API, AI Studio, Antigravity, Android Studio,
+  Stitch, Gemini Enterprise, and the Gemini app for Pro and Ultra subscribers;
+  proprietary, with architecture, parameter count, and training scale
+  undisclosed.</p>
+tags:
+  - frontier
+  - multimodal
+  - reasoning
+  - coding
+  - agentic
+model:
+  base_model: gemini-3.7-flash
+  context_window: 1048576
+  intelligence_index: 41
+  intelligence_index_version: "AA v4.3"
+  license: Proprietary
+  benchmark_scores:
+    - benchmark: Vals Finance Agent V2
+      score: "61.4%"
+    - benchmark: Harvey Legal Agent Benchmark
+      score: "10.0%"
+    - benchmark: HLE-Verified
+      score: "54.9%"
+  variants:
+    - name: Gemini 3.8 Flash (high)
+      notes: "Default AA anchor; AA Intelligence Index v4.3: 41"
+    - name: Gemini 3.8 Flash (medium / low)
+      notes: "AA Intelligence Index v4.3: 40 / 34"
+related:
+  - gemini-3.7-flash
+  - gemini-3.6-flash
+  - gemini-3.8-flash-cyber

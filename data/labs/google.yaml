@@ -32,8 +32,8 @@ description: >
   (2020), <strong><a href="https://arxiv.org/abs/2201.11903">Chain-of-Thought</a></strong>
   (2022), and <strong><a href="https://arxiv.org/abs/2203.15556">Chinchilla</a></strong>
   (2022). The <strong>Gemini</strong> model family advanced from 1.0 (2023) through
-  <strong>Gemini 3.1 Pro</strong> to the <strong>Gemini 3.6 Flash</strong> workhorse
-  tier (2026, AA Intelligence Index v4.3: 34). The open-weight
+  <strong>Gemini 3.1 Pro</strong> to the <strong>Gemini 3.8 Flash</strong> workhorse
+  tier (September 2026, AA Intelligence Index v4.3: 41). The open-weight
   <strong>Gemma</strong> series (2024&ndash;) provides Apache 2.0 models up to 27B.</p>
 
   <p>DeepMind's scientific breakthroughs include <strong>AlphaGo</strong> (defeated world Go
@@ -92,6 +92,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Koray_Kavukcuoglu1
 news:
+  - title: "Gemini 3.8 Flash and 3.8 Flash Cyber Released: Same $0.75/$3.75 Pricing, AAII 59 at Launch (v4.1.1), Fairwind Program Gates the Cyber Model"
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/
+    source: Google
+    date: 2026-09-02
   - title: "Computer Use Becomes a Native Tool in Gemini 3.5 Flash, Spanning Browser, Mobile, and Desktop"
     url: https://blog.google/products/gemini/introducing-computer-use-gemini-3-5-flash/
     source: Google

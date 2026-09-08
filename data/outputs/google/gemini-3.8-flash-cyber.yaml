@@ -1,0 +1,35 @@
+name: Gemini 3.8 Flash Cyber
+slug: gemini-3.8-flash-cyber
+lab: google
+type: model
+date: 2026-09-02
+sources:
+  - label: Announcement (Google)
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/
+  - label: Model page (Google DeepMind)
+    url: https://deepmind.google/models/gemini/cyber/
+  - label: Fairwind Program
+    url: https://deepmind.google/fairwind-program/
+description: >
+  <p>Google's most capable cybersecurity model, a specialist tuned from
+  <a href="/outputs/google/gemini-3.8-flash">Gemini 3.8 Flash</a> for
+  vulnerability discovery and automated patching, succeeding
+  <a href="/outputs/google/gemini-3.5-flash-cyber">Gemini 3.5 Flash Cyber</a>.
+  Google reports <strong>86.2% pass@1 on CyberGym</strong> (GPT-5.5-Cyber
+  85.6%, 3.5 Flash Cyber 77.5%), 71.0% on real-world vulnerability discovery
+  across codebases in 20 languages (3.7 Flash 58.9%, 3.5 Flash Cyber 46.6%),
+  47.2% pass@1 on CWE-Bench patching at about $3.60 per rollout (Claude Fable
+  5 47.8% at higher cost), 2.6 times more correct Chrome security patches than
+  leading commercial models, and 7.5 to 9.7 points higher recall on Wiz's
+  penetration-testing benchmark at 2.3 to 5.2 times lower cost; prompt-injection
+  success rate is 6.0% on Gray Swan IPI. Access is limited to governments,
+  critical-infrastructure operators, and software maintainers vetted through the
+  new <strong>Fairwind Program</strong>, which permits dual-use work (threat
+  simulation, reverse engineering, malware analysis) for defensive and research
+  purposes only. Parameters are undisclosed.</p>
+tags: [cybersecurity, coding, agents, proprietary]
+model:
+  base_model: gemini-3.8-flash
+related:
+  - gemini-3.8-flash
+  - gemini-3.5-flash-cyber
