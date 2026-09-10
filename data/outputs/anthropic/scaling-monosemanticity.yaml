@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Paper
     url: https://transformer-circuits.pub/2024/scaling-monosemanticity/
+  - label: Paper (arXiv, posted May 2026)
+    url: https://arxiv.org/abs/2605.29358
 description: >
   <p>"Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet"
   &mdash; applied <strong>sparse autoencoders at production scale</strong> to extract
@@ -23,3 +25,5 @@ tags:
   - interpretability
   - safety
   - foundational
+paper:
+  arxiv: "2605.29358"

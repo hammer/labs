@@ -5,6 +5,10 @@ type: model
 date: 2025-04-15
 flagship: true
 sources:
+  - label: Super Apriel Paper (arXiv)
+    url: https://arxiv.org/abs/2604.19877
+  - label: Apriel-Reasoner Paper (arXiv)
+    url: https://arxiv.org/abs/2604.02007
   - label: GitHub
     url: https://github.com/ServiceNow/apriel
   - label: HuggingFace

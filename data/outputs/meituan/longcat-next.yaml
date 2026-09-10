@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Project Page
     url: https://longcat.chat/longcat-next
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2603.27538
   - label: GitHub
     url: https://github.com/meituan-longcat/LongCat-Next
   - label: HuggingFace
@@ -28,6 +30,8 @@ model:
   architecture: moe
   parameters: 74B
   active_parameters: 3B
+paper:
+  arxiv: "2603.27538"
 related:
   - longcat-flash
   - longcat-flash-lite

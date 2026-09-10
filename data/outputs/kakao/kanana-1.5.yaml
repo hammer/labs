@@ -5,6 +5,8 @@ type: model
 date: 2025-05-01
 flagship: true
 sources:
+  - label: Kanana Technical Report (arXiv)
+    url: https://arxiv.org/abs/2502.18934
   - label: HuggingFace (8B)
     url: https://huggingface.co/kakaocorp/kanana-1.5-8b-base
   - label: HuggingFace (MoE 15.7B)

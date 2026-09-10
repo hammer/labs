@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Blog Post
     url: https://z.ai/blog/glm-5.1
+  - label: GLM-5 Technical Report (arXiv)
+    url: https://arxiv.org/abs/2602.15763
   - label: HuggingFace
     url: https://huggingface.co/zai-org/GLM-5.1
   - label: GitHub

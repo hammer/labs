@@ -4,6 +4,8 @@ lab: sb-intuitions
 date: 2025-03-01
 flagship: true
 sources:
+  - label: Sarashina2.2-TTS Paper (arXiv)
+    url: https://arxiv.org/abs/2606.25369
   - label: HuggingFace (3B-Instruct)
     url: https://huggingface.co/sbintuitions/sarashina2.2-3b-instruct-v0.1
   - label: HuggingFace (Vision)

@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Blog Post
     url: https://ai.meta.com/blog/introducing-muse-spark-msl/
+  - label: Safety & Preparedness Report (arXiv)
+    url: https://arxiv.org/abs/2606.12429
   - label: TechCrunch
     url: https://techcrunch.com/2026/04/08/meta-debuts-the-muse-spark-model-in-a-ground-up-overhaul-of-its-ai/
   - label: Artificial Analysis
@@ -53,5 +55,7 @@ model:
     - score: 52
       version: "AA v4.0"
       until: "2026-06-16"
+paper:
+  arxiv: "2606.12429"
 related:
   - muse-spark-1.1

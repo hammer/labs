@@ -66,7 +66,13 @@ When scanning for new papers from tracked labs, **do not limit searches to a nar
    grep -L "arxiv" data/outputs/*/*.yaml | xargs grep -l "flagship: true"
    ```
 
-   For each hit, search `site:arxiv.org "<model name>" technical report` and re-check the model's HF/GitHub README for a newly added citation block. When a report appears, attach it to the **existing** entry — arXiv URL in `sources` plus a `paper:` block (or a paper sub-output on grouped entries) — never a new output. Entries citing repo-only PDF reports (the DeepSeek pattern) stay on this work-list until an arXiv posting is confirmed or ruled out.
+   Then run the mechanical probe over that list (HF README citation scan + arXiv title search; `--since` narrows to recent entries, `--no-arxiv` skips the slow part):
+
+   ```bash
+   scripts/probe-tech-reports.sh --since 2026-01-01
+   ```
+
+   Its output is high-recall — read each title and keep only the entry's own or family report. The 2026-09-10 run caught the LongCat-Next report (repo PDF + arXiv 2603.27538), the DiffusionGemma report (2608.00146, seven weeks after weights), OLMo Hybrid's paper, a May-2026 arXiv posting of Scaling Monosemanticity, and the Qwen3.5-Omni report for a model we had never filed. For anything the probe misses, search `site:arxiv.org "<model name>" technical report` and re-check the model's HF/GitHub README for a newly added citation block. When a report appears, attach it to the **existing** entry — arXiv URL in `sources` plus a `paper:` block (or a paper sub-output on grouped entries) — never a new output. Entries citing repo-only PDF reports (the DeepSeek pattern) stay on this work-list until an arXiv posting is confirmed or ruled out.
 
 8. **Backfill late-arriving AA scores for already-tracked models.** AA's leaderboard pickup lags releases by weeks-to-months, so a filing-day "AA hasn't scored it yet" goes stale silently — Solar Open 100B and Solar Pro 3 sat scored-on-AA-but-unimported for ~6 months until the 2026-07 from-scratch audit; the first mechanical run then surfaced **81** more candidates (Kimi K2.7-Code 42, Qwen3.6-Plus 40, MiMo-V2.5 37 …). Each sweep, generate the work-list mechanically:
 

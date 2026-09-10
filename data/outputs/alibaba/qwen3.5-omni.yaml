@@ -1,0 +1,59 @@
+name: Qwen3.5-Omni
+slug: qwen3.5-omni
+lab: alibaba
+type: model
+date: 2026-04-17
+sources:
+  - label: Blog Post
+    url: https://qwen.ai/blog?id=qwen3.5-omni
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2604.15804
+  - label: Alibaba Cloud Model Studio (API docs)
+    url: https://www.alibabacloud.com/help/en/model-studio/qwen-omni
+  - label: Online Demo (HuggingFace Space)
+    url: https://huggingface.co/spaces/Qwen/Qwen3.5-Omni-Online-Demo
+description: >
+  <p>The Qwen3.5 generation of the <a
+  href="/outputs/alibaba/qwen2.5-omni">Qwen-Omni</a> line: an end-to-end
+  any-to-text-and-speech model that, unlike its open-weight predecessors, ships
+  <strong>API-only</strong> on Alibaba Cloud Model Studio as
+  <code>qwen3.5-omni-plus</code> and the cheaper <code>qwen3.5-omni-flash</code>.
+  The report says it "scales to hundreds of billions of parameters" without
+  giving a count, uses a <strong>Hybrid Attention MoE</strong> for both the
+  Thinker and the Talker, takes a new AuT audio transformer for perception, and
+  introduces <strong>ARIA</strong>, which dynamically aligns text and speech
+  units during streaming synthesis to fix the instability caused by mismatched
+  tokenizer rates. Context is 256K; it accepts up to about 3 hours of audio, an
+  hour of video (400 seconds of 720p at 1 FPS in the report's framing), or up
+  to 2,048 images per request, and speaks in 10 languages with instructable
+  emotion, rate, and volume plus zero-shot voice cloning; speech recognition
+  covers 113 languages and dialects and synthesis 36.</p>
+
+  <p>Trained on heterogeneous text-vision pairs and more than <strong>100
+  million hours</strong> of audio-visual content. Qwen claims state of the art
+  across 215 audio and audio-visual understanding, reasoning, and interaction
+  subtasks, beating Gemini 3.1 Pro on key audio tasks and matching it on
+  overall audio-visual understanding, and demonstrates "audio-visual vibe
+  coding" (coding from spoken and on-screen instructions) and controllable
+  audio-visual captioning. Weights are not released; parameter counts and
+  training scale are undisclosed. Filed in September 2026 from the technical
+  report, five months after release.</p>
+tags:
+  - multimodal
+  - audio
+  - moe
+  - proprietary
+model:
+  architecture: moe
+  context_window: 256000
+  license: Proprietary
+  variants:
+    - name: Qwen3.5-Omni-Plus
+      notes: "Full-capability tier; the report's SOTA claims are for Plus"
+    - name: Qwen3.5-Omni-Flash
+      notes: "Cost-optimized tier at a substantially smaller scale per the report"
+paper:
+  arxiv: "2604.15804"
+related:
+  - qwen2.5-omni
+  - qwen3.5

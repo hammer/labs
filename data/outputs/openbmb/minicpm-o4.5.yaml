@@ -5,6 +5,8 @@ type: model
 date: 2026-02-03
 flagship: true
 sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.27393
   - label: HuggingFace
     url: https://huggingface.co/openbmb/MiniCPM-o-4_5
   - label: Project Page
@@ -21,6 +23,8 @@ tags:
   - on-device
   - agentic
   - frontier
+paper:
+  arxiv: "2604.27393"
 related:
   - minicpm-o
   - minicpm-v4.5

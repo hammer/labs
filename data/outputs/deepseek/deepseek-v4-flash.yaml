@@ -5,6 +5,8 @@ type: model
 date: 2026-07-31
 flagship: true
 sources:
+  - label: DeepSeek-V4 Technical Report (arXiv)
+    url: https://arxiv.org/abs/2606.19348
   - label: HuggingFace
     url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731
   - label: API Docs / News
@@ -20,11 +22,13 @@ description: >
   HuggingFace downloads in its first days; the old deepseek-chat/reasoner
   endpoints were retired July 24.</p>
 
-  <p>Self-reported (evaluated with an as-yet-unreleased "DeepSeek Harness"):
-  Terminal-Bench 2.1 <strong>82.7</strong>, DeepSWE <strong>54.4</strong>
-  (the April preview scored 7.3 &mdash; version-tag any quoted numbers by
-  build), Toolathlon-Verified 70.3. V4-<strong>Pro</strong> reached general
-  availability on August 13.</p>
+  <p>Self-reported (evaluated with <a href="/outputs/deepseek/deepseek-harness">DeepSeek
+  Harness</a>, open-sourced August 13): Terminal-Bench 2.1 <strong>82.7</strong>,
+  DeepSWE <strong>54.4</strong> (the April preview scored 7.3 &mdash; version-tag
+  any quoted numbers by build), Toolathlon-Verified 70.3. V4-<strong>Pro</strong>
+  reached general availability on August 13. Retired from the API on September
+  10, 2026, when <a href="/outputs/deepseek/deepseek-v4.1-flash">DeepSeek-V4.1-Flash</a>
+  replaced it; the legacy model name now routes to V4.1-Flash.</p>
 tags:
   - frontier
   - moe

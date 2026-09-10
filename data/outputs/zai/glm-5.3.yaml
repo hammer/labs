@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Announcement (Z.ai blog)
     url: https://z.ai/blog/glm-5.3
+  - label: GLM-5 Technical Report (arXiv)
+    url: https://arxiv.org/abs/2602.15763
   - label: API Docs (Z.ai)
     url: https://docs.z.ai/guides/llm/glm-5.3
   - label: HuggingFace

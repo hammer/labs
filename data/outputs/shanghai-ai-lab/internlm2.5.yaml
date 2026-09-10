@@ -5,6 +5,8 @@ type: model
 date: 2024-07-03
 flagship: true
 sources:
+  - label: InternLM2 Technical Report (arXiv)
+    url: https://arxiv.org/abs/2403.17297
   - label: GitHub
     url: https://github.com/InternLM/InternLM
   - label: HuggingFace

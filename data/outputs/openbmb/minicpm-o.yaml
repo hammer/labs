@@ -5,6 +5,8 @@ type: model
 date: 2025-01-14
 flagship: true
 sources:
+  - label: MiniCPM-V Paper (arXiv)
+    url: https://arxiv.org/abs/2405.17220
   - label: GitHub
     url: https://github.com/OpenBMB/MiniCPM-o
   - label: HuggingFace

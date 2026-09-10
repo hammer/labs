@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Blog Post
     url: https://www.arcee.ai/blog/trinity-large-thinking
+  - label: Trinity Large Technical Report (arXiv)
+    url: https://arxiv.org/abs/2602.17004
   - label: HuggingFace
     url: https://huggingface.co/arcee-ai/Trinity-Large-Thinking
   - label: Artificial Analysis

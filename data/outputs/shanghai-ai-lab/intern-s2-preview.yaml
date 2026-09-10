@@ -5,6 +5,8 @@ type: model
 date: 2026-05-22
 flagship: true
 sources:
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2608.13505
   - label: HuggingFace
     url: https://huggingface.co/internlm/Intern-S2-Preview
   - label: GitHub
@@ -64,6 +66,8 @@ model:
       score: "76.88"
     - benchmark: WildClawBench
       score: "39.2"
+paper:
+  arxiv: "2608.13505"
 related:
   - intern-s1-pro
   - intern-s1

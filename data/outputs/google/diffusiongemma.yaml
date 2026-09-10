@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Announcement (Google blog)
     url: https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2608.00146
   - label: HuggingFace
     url: https://huggingface.co/google/diffusiongemma-26B-A4B-it
   - label: Docs
@@ -73,5 +75,7 @@ model:
       score: "56.2"
     - benchmark: MMMU-Pro
       score: "54.3"
+paper:
+  arxiv: "2608.00146"
 related:
   - gemma-4

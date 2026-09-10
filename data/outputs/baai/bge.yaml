@@ -5,6 +5,8 @@ type: model
 date: 2023-08-02
 flagship: true
 sources:
+  - label: C-Pack / BGE Paper (arXiv)
+    url: https://arxiv.org/abs/2309.07597
   - label: HuggingFace
     url: https://huggingface.co/BAAI/bge-large-en-v1.5
   - label: GitHub

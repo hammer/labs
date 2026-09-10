@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Announcement (MBZUAI)
     url: https://mbzuai.ac.ae/news/inception-cerebras-and-mbzuai-release-jais-2-the-next-generation-of-the-worlds-leading-arabic-open-weight-llm/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.13580
   - label: Cerebras Blog
     url: https://www.cerebras.ai/blog/jais2
   - label: HuggingFace (70B Chat)
@@ -35,5 +37,7 @@ model:
       parameters: 8B
     - name: JAIS-2-70B
       parameters: 70B
+paper:
+  arxiv: "2608.13580"
 related:
   - jais

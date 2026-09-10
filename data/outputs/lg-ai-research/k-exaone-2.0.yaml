@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Announcement (LG AI Research)
     url: https://www.lgresearch.ai/news/view?seq=678
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2608.04505
   - label: HuggingFace
     url: https://huggingface.co/LGAI-EXAONE/K-EXAONE-2.0-750B-A37B
   - label: GitHub
@@ -42,6 +44,8 @@ model:
   openness_index: 44.4
   openness_index_version: "AA Openness Index v1.0"
   license: Apache 2.0
+paper:
+  arxiv: "2608.04505"
 related:
   - k-exaone
   - exaone-4.5

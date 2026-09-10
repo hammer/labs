@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Announcement
     url: https://api-docs.deepseek.com/news/news0905
+  - label: DeepSeek-V2 Paper (arXiv)
+    url: https://arxiv.org/abs/2405.04434
   - label: HuggingFace
     url: https://huggingface.co/deepseek-ai/DeepSeek-V2.5
 description: Combination of V2-0628 and Coder-V2-0724 into a unified model.

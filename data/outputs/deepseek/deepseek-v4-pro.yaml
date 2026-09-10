@@ -32,7 +32,11 @@ description: >
   Other reported results include CyberGym 83.3, DSBench-FullStack 71.1, and
   DSBench-Hard 67.2. DeepSeek released the GA checkpoint's weights on Hugging
   Face under the <strong>MIT License</strong>; for high/max reasoning effort it
-  recommends allowing up to 384K output tokens.</p>
+  recommends allowing up to 384K output tokens. DeepSeek began retiring V4-Pro
+  on September 10, 2026 after the 552B <a
+  href="/outputs/deepseek/deepseek-v4.1-flash">V4.1-Flash</a> beat it on its
+  internal tests; from September 14 API requests route to V4.1-Flash at
+  V4.1-Flash prices until a V4.1-Pro ships.</p>
 tags:
   - frontier
   - moe

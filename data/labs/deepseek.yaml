@@ -146,6 +146,14 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Qihao_Zhu1
 news:
+  - title: "DeepSeek-V4.1-Flash Released: 552B Causal Encoder-Decoder MoE With 8B/16B Active, KV Cache Cut to 1/4, Beats V4-Pro; V4-Flash Retired, V4-Pro Routed to V4.1 From Sept 14"
+    url: https://api-docs.deepseek.com/news/news260910
+    source: DeepSeek
+    date: 2026-09-10
+  - title: "DeepSeek Harness Developer Preview: Open-Source 'Everything Is a Plugin' Agent Harness (dsh) on the Cordis Kernel, Standard/PTC/Minimal Modes; 218K Stars Within a Month"
+    url: https://deepseek.com/harness
+    source: DeepSeek
+    date: 2026-08-13
   - title: "DeepSeek Suspends Second Funding Round (Was ≥¥10B at ~$67B Pre) After Leak of Liang Wenfeng Investor Comments"
     url: https://fortune.com/2026/07/25/deepseek-liang-wenfeng-backers-fundraising-pause-viral-posts-investors/
     source: Fortune

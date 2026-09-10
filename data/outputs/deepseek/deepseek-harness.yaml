@@ -1,0 +1,56 @@
+name: DeepSeek Harness
+slug: deepseek-harness
+lab: deepseek
+type: library
+date: 2026-08-13
+flagship: true
+sources:
+  - label: GitHub
+    url: https://github.com/deepseek-ai/deepseek-harness
+  - label: Project Page
+    url: https://deepseek.com/harness
+  - label: Documentation
+    url: https://deepseek-harness.github.io/deepseek-harness/
+  - label: Cordis Paper (arXiv)
+    url: https://arxiv.org/abs/2608.25512
+description: >
+  <p><strong>"Everything is a plugin."</strong> DeepSeek's open-source agent
+  harness (<code>dsh</code>), the execution layer it uses to evaluate and
+  deploy its own models and the scaffold behind the
+  <a href="/outputs/deepseek/deepseek-v4.1-flash">V4.1-Flash</a> agentic
+  results. Built in TypeScript on the <strong>Cordis</strong> plugin kernel,
+  which only loads, unloads, and resolves dependencies between plugins; every
+  agent capability &mdash; model adapters, tools, skills, sessions, sandboxes,
+  storage, the agent loop, scheduling, and the UI &mdash; is a plugin that
+  developers swap or extend from configuration without touching the source.
+  Everything the model sees is written to an append-only session log
+  (system prompt, chain of thought, tool calls and results, sub-agent
+  dispatch, every context injection) and surfaced in a Trajectory view;
+  resume, fork, retrieval, and replay share that one event stream.</p>
+
+  <p>Ships four presets: <strong>Standard</strong> (a full coding agent with
+  file editing, shell, file and web search, skills, plans, goals, sub-agents,
+  and workflows), <strong>PTC</strong> (the same tools exposed through a Code
+  Mode SDK so the model composes multi-step actions in one TypeScript
+  program), <strong>Minimal</strong> (a two-tool bash plus
+  <code>str_replace_editor</code> agent for benchmarking models in bare
+  environments), and <strong>Create</strong> (runtime inspection and in-memory
+  plugin experiments for authoring new presets); an Agent Team mode runs a
+  lead agent over sub-agents. Launched as a developer preview in mid-August
+  2026 with the repository public from August 13, installable as
+  <code>npx @deepseek-ai/dsh web</code>; at filing it had passed
+  <strong>218K GitHub stars</strong> with release candidates landing daily.
+  MIT license; DeepSeek warns of compatibility-breaking changes during the
+  preview.</p>
+tags:
+  - agents
+  - infrastructure
+  - open-source
+library:
+  github: https://github.com/deepseek-ai/deepseek-harness
+  language: TypeScript
+  license: MIT
+related:
+  - deepseek-v4.1-flash
+  - deepseek-v4-flash
+  - deepseek-v4-pro

@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Blog Post
     url: https://allenai.org/blog/olmohybrid
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.03444
   - label: HuggingFace
     url: https://huggingface.co/allenai/Olmo-Hybrid-7B
 description: >
@@ -29,5 +31,12 @@ model:
   architecture: dense
   parameters: 7B
   training_tokens: 6T
+paper:
+  arxiv: "2604.03444"
+  authors:
+    - William Merrill
+    - Yanhong Li
+    - Tyler Romero
+    - Anej Svete
 related:
   - olmo-3

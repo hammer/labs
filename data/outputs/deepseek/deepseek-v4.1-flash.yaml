@@ -1,0 +1,103 @@
+name: DeepSeek-V4.1-Flash
+slug: deepseek-v4.1-flash
+lab: deepseek
+type: model
+date: 2026-09-10
+flagship: true
+sources:
+  - label: Release Note (DeepSeek API Docs)
+    url: https://api-docs.deepseek.com/news/news260910
+  - label: Technical Report (PDF)
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/blob/main/DeepSeek_V41_Tech_Report.pdf
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
+  - label: OpenRouter
+    url: https://openrouter.ai/deepseek/deepseek-v4.1-flash
+description: >
+  <p>The first model in DeepSeek's <strong>V4.1 architecture family</strong>
+  and, per DeepSeek, the smallest of it: a natively multimodal 552B-parameter
+  MoE that succeeds <a href="/outputs/deepseek/deepseek-v4-flash">V4-Flash</a>
+  and, on DeepSeek's own tests, beats the 1.6T <a
+  href="/outputs/deepseek/deepseek-v4-pro">V4-Pro</a> on performance, cost, and
+  speed. The headline change is a <strong>Causal Encoder-Decoder (CED)</strong>
+  layout: a 20-layer causal encoder feeds a 20-layer decoder whose global KV
+  cache is projected from the encoder's final hidden states, so the model
+  activates only <strong>8B parameters per token during prefill and 16B during
+  decode</strong>. <strong>Compressed Sparse Attention 2 (CSA2)</strong> shares
+  main KV and indexer keys across layers in Full, Reindex, and Reuse modes with a
+  hierarchical sparse indexer, and the main KV cache is stored in FP4, bringing
+  the global KV footprint to <strong>890 bytes per token</strong>, about a
+  quarter of V4-Flash and 437 times smaller than DeepSeek-V1; SWA Bounded
+  Replay cuts the persistent SSD cache to roughly an eighth. Decode FLOPs grow
+  only about a quarter from 4K to 1M context. It keeps and revises the V4-era
+  extensions: Single-Pass <a href="/outputs/deepseek/mhc">mHC</a>, a 196B
+  <a href="/outputs/deepseek/deepseek-engram">Engram</a> conditional-memory
+  table, and <a href="/outputs/deepseek/dspark">DSpark</a> speculative decoding.
+  Each MoE layer has 384 routed experts plus one shared, 6 active per token; a
+  from-scratch DeepSeek-ViT encoder with 2D-RoPE handles images.</p>
+
+  <p>Pretrained from scratch on <strong>45T multimodal tokens</strong>, with
+  sparse attention trained at 64K and context extended to 1M tokens at the 34T
+  mark; post-training is the standard SFT, RL, and on-policy-distillation recipe
+  with the changes confined to large-scale synthetic agent tasks and
+  environments. Reasoning effort is a continuous 1 to 100 dial; the API exposes
+  max, high, and low tiers at 100, 75, and 50. Self-reported at max effort
+  (DeepSeek Harness): DeepSWE v1.1 <strong>74.2</strong> (Claude Opus 5 74.0,
+  GPT-5.6 Sol 73.0, V4-Flash 54.4), Terminal-Bench 2.1 <strong>90.6</strong>,
+  Terminal-Bench 4.0 31.2 (Opus 5 51.8), GPQA Diamond 90.9, HLE 36.8, Codeforces
+  3471, MathArena Apex 65.6, CyberGym 88.1, Automation-Bench 54.8, and Agents'
+  Last Exam 31.8. MIT license; served as <code>deepseek-flash</code> at $0.30
+  per million input tokens and $1.20 per million output at peak, half that
+  off-peak, with a 1M context and 384K max output. V4-Flash and
+  V4-Flash-Vision-Exp were retired the same day, and V4-Pro traffic routes to
+  V4.1-Flash from September 14 until a V4.1-Pro ships. Not yet scored by
+  Artificial Analysis at filing.</p>
+tags:
+  - frontier
+  - moe
+  - open-weight
+  - multimodal
+  - agentic
+  - reasoning
+model:
+  architecture: moe
+  parameters: 552B
+  active_parameters: 16B
+  num_experts: 384
+  top_k: 6
+  context_window: 1000000
+  training_tokens: 45T
+  license: MIT
+  benchmark_scores:
+    - benchmark: DeepSWE v1.1
+      score: "74.2"
+    - benchmark: Terminal-Bench 2.1
+      score: "90.6"
+    - benchmark: Terminal-Bench 4.0
+      score: "31.2"
+    - benchmark: GPQA Diamond
+      score: "90.9"
+    - benchmark: HLE
+      score: "36.8"
+    - benchmark: Codeforces
+      score: "3471"
+    - benchmark: CyberGym
+      score: "88.1"
+    - benchmark: Automation-Bench
+      score: "54.8"
+  variants:
+    - name: DeepSeek-V4.1-Flash
+      parameters: 552B
+      active_parameters: 16B
+      notes: "552B backbone plus a 196B Engram memory table; 8B active at prefill, 16B at decode; FP8 weights"
+paper:
+  pdf_url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/resolve/main/DeepSeek_V41_Tech_Report.pdf
+  huggingface_url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
+related:
+  - deepseek-v4-flash
+  - deepseek-v4-pro
+  - deepseek-v4
+  - deepseek-v4-flash-vision
+  - deepseek-engram
+  - dspark
+  - mhc

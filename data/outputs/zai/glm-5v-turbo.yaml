@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Announcement (MarkTechPost)
     url: https://www.marktechpost.com/2026/04/01/z-ai-launches-glm-5v-turbo-a-native-multimodal-vision-coding-model-optimized-for-openclaw-and-high-capacity-agentic-engineering-workflows-everywhere/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2604.26752
   - label: Announcement (WinBuzzer)
     url: https://winbuzzer.com/2026/04/02/zai-launches-glm-5v-turbo-multimodal-vision-model-xcxwbn/
   - label: API Docs
@@ -54,5 +56,7 @@ model:
       version: "AA v4.0"
       until: "2026-06-16"
   training_tokens: 28.5T
+paper:
+  arxiv: "2604.26752"
 related:
   - glm-5
