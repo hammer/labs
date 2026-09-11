@@ -230,6 +230,17 @@ function fmtValue(v: unknown): string {
     if (typeof o.year === 'number') return String(o.year);
     if (typeof o.amount === 'string') return o.amount;
     if (typeof o.name === 'string') return o.name;
+    // News items (and other headline-shaped objects) carry `title`, not `name`;
+    // without this every added lab news item rendered as an opaque "{…}".
+    if (typeof o.title === 'string') return o.title.length > 140 ? o.title.slice(0, 137) + '…' : o.title;
+    // paper: blocks are keyed by arxiv / pdf_url.
+    if (typeof o.arxiv === 'string') return `arXiv ${o.arxiv}`;
+    if (typeof o.pdf_url === 'string') return o.pdf_url;
+    // Generic fallback: the first short string field, as key: value, so no
+    // object shape ever renders as an opaque placeholder.
+    for (const [k, val] of Object.entries(o)) {
+      if (typeof val === 'string' && val.length > 0) return `${k}: ${val.length > 100 ? val.slice(0, 97) + '…' : val}`;
+    }
     return '{…}';
   }
   return String(v);
