@@ -47,8 +47,9 @@ Checklist while editing:
 
 ```bash
 npm run dev          # in one shell
-npm run test:filter  # filter UI behavior, desktop + mobile sheet
-npm run test:mobile  # no h-overflow at phone-through-desktop widths, desktop guards
+npm run test:filter     # filter UI behavior, desktop + mobile sheet
+npm run test:mobile     # no h-overflow at phone-through-desktop widths, desktop guards
+npm run test:changelog  # /whats-new diff rendering over real git history; no dev server needed
 ```
 
 Then eyeball it: screenshot the changed pages at 375×720 (and 1280×800 for desktop regressions) with Playwright and actually look at them — the suites catch overflow and broken behavior, not ugly.

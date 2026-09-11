@@ -65,6 +65,7 @@ After data changes, run:
 
 ```bash
 npm run validate
+npm run test:changelog   # renders the real /whats-new diff for recent commits; fails on any "{…}" / [object Object]
 npm run build
 ```
 

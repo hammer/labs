@@ -16,7 +16,8 @@
     "fetch-aa-intelligence": "tsx scripts/fetch-aa-intelligence.ts",
     "scan-aaii-mentions": "tsx scripts/scan-aaii-mentions.ts",
     "deploy": "astro build && wrangler pages deploy dist --project-name labindex",
-    "cf-typegen": "wrangler types"
+    "cf-typegen": "wrangler types",
+    "test:changelog": "tsx tests/changelog-unit.ts"
   },
   "devDependencies": {
     "playwright": "^1.60.0",

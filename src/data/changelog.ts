@@ -219,7 +219,7 @@ function elementId(elem: unknown, idx: number): string {
   return `i:${idx}:${jsonHash(o)}`;
 }
 
-function fmtValue(v: unknown): string {
+export function fmtValue(v: unknown): string {
   if (v == null) return '—';
   if (typeof v === 'string') return v;
   if (typeof v === 'number' || typeof v === 'boolean') return String(v);
@@ -273,7 +273,7 @@ function isSurfacedField(path: string, fileKind: 'lab' | 'output'): boolean {
   return false;
 }
 
-function diffNodes(
+export function diffNodes(
   before: unknown, after: unknown,
   path: string,
   fileKind: 'lab' | 'output',

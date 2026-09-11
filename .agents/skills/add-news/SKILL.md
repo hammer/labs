@@ -30,6 +30,9 @@ news:
 ### Ordering
 Add new items in **reverse chronological order** (newest first).
 
+### Check the change feed renders it
+Every news item you add becomes a `news added <title>` row on `/whats-new`, built from the git diff at deploy time. Run `npm run test:changelog` before committing (no dev server needed): it renders a real diff and fails on any opaque placeholder. The 2026-09 sweep shipped 26 items that all rendered as `{…}` because the feed's formatter did not know the `title` key — the test now guards every object shape.
+
 ## 3. Non-English Articles
 
 For articles in Chinese or other non-English languages:

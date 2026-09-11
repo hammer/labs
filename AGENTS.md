@@ -126,6 +126,7 @@ npm run build            # Build static site (Astro SSG)
 npm run fetch-metrics    # Fetch GitHub/HF/citation metrics
 npm run test:filter      # Filter UI smoke tests (needs dev server running)
 npm run test:mobile      # Responsive/mobile smoke tests (needs dev server running)
+npm run test:changelog   # /whats-new diff rendering: unit + real-history regression guard (no server)
 ```
 
 **Run both smoke suites before shipping any UI change.** `test:mobile` asserts zero horizontal overflow on every key page type (home, timeline, lab, output, whats-new) at eight widths (320px floor per #49 through 900px) plus landscape, and guards desktop regressions (sticky table header, scroll-to-close). Both suites use structural assertions where possible, but `test:filter` pins some data counts that shift when labs are added — if it fails on counts after a data commit, update the expected numbers, don't suppress the test.
@@ -140,6 +141,7 @@ Hosted on **Cloudflare Pages** (project: `labindex`, domain: `labindex.ai`)
 
 ```
 npm run validate
+npm run test:changelog               # fails if any changed field would render as "{…}" on /whats-new
 git add -A && git commit -m "..."
 git push origin <branch>:main
 npm run build                        # build AFTER commit
