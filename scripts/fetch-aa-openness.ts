@@ -81,6 +81,27 @@ async function fetchAaoiDataset(): Promise<Map<string, number>> {
   return map;
 }
 
+// ── Mode siblings ────────────────────────────────────────────────────────
+
+// Same checkpoint-root logic as fetch-aa-intelligence --audit-modes (kept
+// self-contained like the other scripts): a slug whose trailing tokens are all
+// mode/effort words is a mode of the slug that remains ("root"). AAOI is a
+// property of the checkpoint (weights, license, disclosure), so every mode of
+// one checkpoint must carry the same value. Two uses:
+//   • FILL — the anchor slug has no openness record but a mode sibling does
+//     (AA often files AAOI under the non-reasoning name while we anchor the
+//     reasoning page). Written with a "(mode sibling: <slug>)" tag; unlike
+//     "(family inference)" this is the same checkpoint, not a relative.
+//   • AUDIT — the anchor and a sibling both have records but disagree, which
+//     means AA scored them as different checkpoints or one of them is
+//     mis-rooted; reported, never auto-resolved.
+const MODE_TOKENS = new Set(['thinking', 'reasoning', 'non', 'adaptive', 'xhigh', 'high', 'medium', 'low', 'max', 'minimal', 'effort', 'fallback', 'default']);
+function modeRoot(slug: string): string {
+  const t = slug.split('-');
+  while (t.length > 1 && MODE_TOKENS.has(t[t.length - 1])) t.pop();
+  return t.join('-');
+}
+
 // ── YAML mutation ────────────────────────────────────────────────────────
 
 // We do regex-based edits rather than YAML round-trip so we preserve the
@@ -89,17 +110,15 @@ async function fetchAaoiDataset(): Promise<Map<string, number>> {
 // openness_index right after intelligence_index_version (if present) or
 // intelligence_index.
 
-function applyOpennessToYaml(content: string, aaoi: number): string {
-  const versionLine = `  openness_index_version: "${AAOI_VERSION}"`;
-  const scoreLine = `  openness_index: ${aaoi}`;
+function applyOpennessToYaml(content: string, aaoi: number, version: string = AAOI_VERSION): string {
 
   // If openness_index already present, update it in place.
   if (/^\s+openness_index:/m.test(content)) {
     let out = content.replace(/^(\s+)openness_index:\s*[\d.]+/m, `$1openness_index: ${aaoi}`);
     if (/^\s+openness_index_version:/m.test(out)) {
-      out = out.replace(/^(\s+)openness_index_version:\s*[^\n]+/m, `$1openness_index_version: "${AAOI_VERSION}"`);
+      out = out.replace(/^(\s+)openness_index_version:\s*[^\n]+/m, `$1openness_index_version: "${version}"`);
     } else {
-      out = out.replace(/^(\s+)openness_index:\s*[\d.]+/m, `$1openness_index: ${aaoi}\n$1openness_index_version: "${AAOI_VERSION}"`);
+      out = out.replace(/^(\s+)openness_index:\s*[\d.]+/m, `$1openness_index: ${aaoi}\n$1openness_index_version: "${version}"`);
     }
     return out;
   }
@@ -108,13 +127,13 @@ function applyOpennessToYaml(content: string, aaoi: number): string {
   const afterVersion = /^(\s+)intelligence_index_version:\s*[^\n]+\n/m;
   if (afterVersion.test(content)) {
     return content.replace(afterVersion, (match, indent) =>
-      `${match}${indent}openness_index: ${aaoi}\n${indent}openness_index_version: "${AAOI_VERSION}"\n`,
+      `${match}${indent}openness_index: ${aaoi}\n${indent}openness_index_version: "${version}"\n`,
     );
   }
   const afterIntel = /^(\s+)intelligence_index:\s*[\d.]+\n/m;
   if (afterIntel.test(content)) {
     return content.replace(afterIntel, (match, indent) =>
-      `${match}${indent}openness_index: ${aaoi}\n${indent}openness_index_version: "${AAOI_VERSION}"\n`,
+      `${match}${indent}openness_index: ${aaoi}\n${indent}openness_index_version: "${version}"\n`,
     );
   }
   return content;
@@ -127,10 +146,16 @@ async function main() {
   const aaoiMap = await fetchAaoiDataset();
   console.log(`  Parsed ${aaoiMap.size} model→AAOI pairs from AA dataset`);
 
+  // checkpoint root → every scored mode of it
+  const byRoot = new Map<string, Array<[string, number]>>();
+  for (const [slug, v] of aaoiMap) { const r = modeRoot(slug); if (!byRoot.has(r)) byRoot.set(r, []); byRoot.get(r)!.push([slug, v]); }
+
   const yamls = globSync('data/outputs/*/*.yaml').sort();
   let updated = 0;
   let unchanged = 0;
   let noAaUrl = 0;
+  let filledViaSibling = 0;
+  const disagreements: string[] = [];
   let noAaoiMatchUnset = 0;     // version-drift, openness genuinely unset
   let noAaoiMatchInferred = 0;  // version-drift, family-inference fallback applied
   const missing: Array<{ file: string; slug: string }> = [];
@@ -143,7 +168,24 @@ async function main() {
     if (!m) { noAaUrl++; continue; }
     const aaSlug = m[1];
 
-    const aaoi = aaoiMap.get(aaSlug);
+    let aaoi = aaoiMap.get(aaSlug);
+    let version = AAOI_VERSION;
+    const sibs = (byRoot.get(modeRoot(aaSlug)) ?? []).filter(([s]) => s !== aaSlug);
+    if (aaoi !== undefined) {
+      // AUDIT: modes of one checkpoint must agree.
+      const off = sibs.filter(([, v]) => Math.abs(v - aaoi!) >= 0.1);
+      if (off.length) disagreements.push(`${aaSlug} = ${aaoi}  vs  ${off.map(([s, v]) => `${s} = ${v}`).join(', ')}   (${file})`);
+    } else if (sibs.length) {
+      // FILL from a mode sibling of the same checkpoint — only when siblings agree.
+      const vals = sibs.map(([, v]) => v);
+      if (Math.max(...vals) - Math.min(...vals) < 0.1) {
+        aaoi = sibs[0][1];
+        version = `${AAOI_VERSION} (mode sibling: ${sibs[0][0]})`;
+        filledViaSibling++;
+      } else {
+        disagreements.push(`${aaSlug} (no record)  siblings disagree: ${sibs.map(([s, v]) => `${s} = ${v}`).join(', ')}   (${file})`);
+      }
+    }
     if (aaoi === undefined) {
       // No direct AAOI match for this slug. Distinguish entries that have a
       // family-inferred value (audit-trail-tagged with "(family inference)")
@@ -157,16 +199,19 @@ async function main() {
       continue;
     }
 
-    const next = applyOpennessToYaml(content, aaoi);
+    const next = applyOpennessToYaml(content, aaoi, version);
     if (next === content) { unchanged++; continue; }
     if (!dryRun) writeFileSync(file, next);
     updated++;
-    console.log(`  ✓ ${file}  →  AAOI ${aaoi}  (slug: ${aaSlug})`);
+    console.log(`  ✓ ${file}  →  AAOI ${aaoi}  (slug: ${aaSlug}${version !== AAOI_VERSION ? `, via ${version.match(/mode sibling: ([^)]+)/)?.[1]}` : ''})`);
   }
 
   console.log('');
   console.log('Summary:');
   console.log(`  Updated:        ${updated}${dryRun ? ' (dry-run — no writes)' : ''}`);
+  console.log(`  …of which filled from a mode sibling of the same checkpoint: ${filledViaSibling}`);
+  console.log(`  Mode-sibling disagreements (same root, different AAOI — check by hand): ${disagreements.length}`);
+  for (const d of disagreements) console.log(`    ! ${d}`);
   console.log(`  Unchanged:      ${unchanged}`);
   console.log(`  No AA URL:      ${noAaUrl}`);
   console.log(`  Slug not in AAOI v1.0, family-inferred fallback applied: ${noAaoiMatchInferred}`);
