@@ -6,6 +6,8 @@ date: 2026-07-22
 sources:
   - label: HuggingFace
     url: https://huggingface.co/inclusionAI/LLaDA2.2-flash
+  - label: HuggingFace (LLaDA2.2-mini)
+    url: https://huggingface.co/inclusionAI/LLaDA2.2-mini
   - label: Technical Report (PDF)
     url: https://github.com/inclusionAI/LLaDA2.X/blob/main/LLaDA2_2_tech_report.pdf
 description: >
@@ -21,5 +23,13 @@ tags:
   - research
 model:
   context_window: 128000
+  variants:
+    - name: LLaDA2.2-flash
+      parameters: 100B
+      notes: "Jul 22 2026; the file's anchor"
+    - name: LLaDA2.2-mini
+      parameters: 16B
+      active_parameters: 1.4B
+      notes: "Sep 5 2026; lightweight variant on the LLaDA2.0-mini architecture with the same Levenshtein editing, Block Routing 128K context, and L-EBPO agentic RL; 256 experts, 8 active; Apache 2.0"
 related:
   - llada-2

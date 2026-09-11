@@ -1,0 +1,30 @@
+name: AlphaGenome Atlas
+slug: alphagenome-atlas
+lab: google
+type: dataset
+date: 2026-09-08
+sources:
+  - label: Announcement (Google DeepMind)
+    url: https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/
+description: >
+  <p>"A predictive map of every possible DNA letter change in the human
+  genome." DeepMind precomputed AlphaGenome's molecular-effect predictions
+  for all <strong>9 billion single-nucleotide variants</strong>, a
+  one-petabyte dataset it describes as more than 30 times the AlphaFold
+  Database, and added an AlphaGenome Variant Impact (AVI) score that
+  condenses AlphaGenome and AlphaMissense predictions into one number for
+  ranking coding and non-coding variants. Each variant carries thousands of
+  regulatory-effect predictions, AVI feature attributions that point at
+  disrupted processes such as splicing, and matches against more than 2,500
+  DNA sequence motifs. Free for academic use through a portal and API,
+  with commercial access to follow on Google Cloud; collaborators include
+  the Broad Institute, Boston Children's, Stowers, Exeter, Harvard, MSK, and
+  MGH. The underlying AlphaGenome model (2025) is not yet tracked here.</p>
+tags:
+  - science
+  - biology
+  - dataset
+dataset:
+  url: https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/
+related:
+  - alphafold-3

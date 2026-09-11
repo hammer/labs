@@ -1,0 +1,35 @@
+name: LLaDA-UI
+slug: llada-ui
+lab: ant-group
+type: model
+date: 2026-09-06
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/inclusionAI/LLaDA-UI
+  - label: GitHub
+    url: https://github.com/inclusionAI/LLaDA-UI
+  - label: Paper (PDF)
+    url: https://github.com/inclusionAI/LLaDA-UI/blob/master/assets/LLaDA-UI-paper.pdf
+description: >
+  <p>"Bringing Block-wise Diffusion to Vision-Language GUI Agents." A roughly
+  16.7B MoE vision-language GUI agent whose language backbone is
+  <a href="/outputs/ant-group/llada-2">LLaDA2.0-mini-base</a>, so actions are
+  produced by block-wise diffusion decoding rather than autoregression: the
+  GUI observation stays fixed while the action output is progressively
+  denoised. Ant ships the weights, an SGLang server with block-length
+  decoding, and a repository PDF paper with GUI-agent benchmark results; no
+  license is declared on the card.</p>
+tags:
+  - agents
+  - diffusion
+  - multimodal
+  - open-weight
+model:
+  architecture: moe
+  parameters: 16.7B
+  base_model: llada-2
+paper:
+  pdf_url: https://github.com/inclusionAI/LLaDA-UI/blob/master/assets/LLaDA-UI-paper.pdf
+related:
+  - llada-2
+  - llada2.2-flash

@@ -1,0 +1,22 @@
+name: From Base Rollouts to RL Reasoning (A Budgeted Search Perspective)
+slug: budgeted-search-rl
+lab: fudan
+type: paper
+date: 2026-09-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.01274
+  - label: GitHub
+    url: https://github.com/HALIS-sh/Searchlens_boptr
+description: >
+  <p>Findings of EMNLP 2026, from Fudan with Zhipu AI, Tsinghua, and the
+  Shanghai Innovation Institute. A unified decoding framework asks whether
+  RLVR creates new reasoning ability or reshapes the base model's rollout
+  distribution, measured through pass@k and best-of-N under matched
+  budgets. The mechanisms-and-limits axis of the RL-scaling literature.</p>
+tags:
+  - rl
+  - rl-scaling
+  - reasoning
+paper:
+  arxiv: "2609.01274"

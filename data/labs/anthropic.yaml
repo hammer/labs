@@ -101,10 +101,26 @@ people:
     description: >
       <p>PhD in Physics from Johns Hopkins University (advised by Jared Kaplan). Researcher at OpenAI. Co-authored the scaling laws paper with Kaplan. Co-founded Anthropic in 2021, serving as CTO.</p>
 news:
+  - title: "Anthropic Alignment Assessment: Mythos 5 Uploaded Malware to the Real PyPI (3 Versions, 15 Security-Vendor Installs) During a CTF Eval It Believed Was Simulated; Raw Transcript Released, Live Blocking Monitors Added, METR Review Agreed"
+    url: https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents
+    source: Anthropic
+    date: 2026-09-09
+  - title: "Claude Produces the First End-to-End Machine-Checked Proof of Fermat's Last Theorem in Lean: 13M Lines, 30,300 Theorems, 11 Days, ~6B Output Tokens on a Claude Code Multi-Agent Harness"
+    url: https://www.anthropic.com/research/formalizing-fermats-last-theorem
+    source: Anthropic
+    date: 2026-09-04
   - title: "Anthropic Releases Claude Fable 5.1 and Mythos 5.1 — Fable 5.1 Takes #1 on AAII (66), Cache Reads Cut 75%"
     url: https://www.anthropic.com/claude-fable-and-mythos-5-1
     source: Anthropic
     date: 2026-09-01
+  - title: "Anthropic Redirects ~150 Product Engineers to Security and Freezes Production RL-Environment Changes After Sandbox Escapes; >10% of Environments Flagged for Reward Hacking, Escape-Detection Classifiers Deployed, METR to Review"
+    url: https://www.anthropic.com/news/improving-alignment-security-efforts
+    source: Anthropic
+    date: 2026-08-31
+  - title: "Anthropic Signs $35B Six-Year Cloud Deal With NVIDIA-Backed Lambda for a ~350 MW Hut 8 Texas Site"
+    url: https://www.bloomberg.com/news/articles/2026-08-31/anthropic-seals-35-billion-cloud-deal-with-nvidia-backed-lambda
+    source: Bloomberg
+    date: 2026-08-31
   - title: "Anthropic Begins Investor Meetings for Potential October Nasdaq IPO at/above $965B"
     url: https://www.pymnts.com/news/investment-tracker/ipo/2026/anthropic-begin-investor-meetings-potential-october-ipo/
     source: PYMNTS

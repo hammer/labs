@@ -1,0 +1,30 @@
+name: E-Commerce Bench
+slug: e-commerce-bench
+lab: alibaba
+type: eval
+date: 2026-08-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.30730
+  - label: GitHub
+    url: https://github.com/QwenLM/E-CommerceBench
+description: >
+  <p>"Evaluating LLM Agents on Long-Horizon Autonomous Business Operations."
+  A Qwen Team benchmark, built with Taobao and Tmall and HKUST, in which an
+  agent is handed ¥100,000 and up to four stores and must run them for
+  <strong>365 simulated days</strong> inside a deterministic market with
+  multi-round supplier negotiation and dynamic events such as promotions,
+  disasters, and supply shocks; the primary metric is the asset multiplier
+  over five episodes. Eighteen models sit on the launch leaderboard. Posted
+  August 31, 2026 with an Apache 2.0 repository (85 stars). Filed late.</p>
+tags:
+  - eval
+  - agents
+  - long-horizon
+eval:
+  scoring_method: asset multiplier after 365 simulated days, averaged over 5 episodes
+  leaderboard_url: https://github.com/QwenLM/E-CommerceBench
+paper:
+  arxiv: "2608.30730"
+related:
+  - terminal-universe

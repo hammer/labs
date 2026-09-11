@@ -1,0 +1,29 @@
+name: Terminal-Universe
+slug: terminal-universe
+lab: alibaba
+type: paper
+date: 2026-09-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.04148
+description: >
+  <p>"Turning Agent Trajectories into Scalable Terminal Environments." The
+  Qwen Team, with Tsinghua, observes that terminal-agent trajectories now
+  exist at scale while executable environments, which agent post-training
+  actually needs because each can be re-queried into many verifiable tasks
+  with execution feedback, remain scarce. Terminal-Universe reconstructs
+  environments from recorded trajectories by replaying their file
+  operations, uses a completion agent to fill missing files and
+  dependencies, and then synthesizes new verifiable tasks and continued
+  interactions from the rebuilt environment for post-training. Project lead
+  Zhenru Zhang; senior authors include An Yang, Fei Huang, and Dayiheng
+  Liu.</p>
+tags:
+  - agents
+  - rl
+  - infrastructure
+paper:
+  arxiv: "2609.04148"
+related:
+  - qwen3-coder
+  - qwen3.8-flash-next

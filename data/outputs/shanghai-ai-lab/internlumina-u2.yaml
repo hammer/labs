@@ -1,0 +1,43 @@
+name: Intern Lumina U2
+slug: internlumina-u2
+lab: shanghai-ai-lab
+type: model
+date: 2026-09-10
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/internlm/InternLumina-U2
+  - label: GitHub
+    url: https://github.com/InternLM/InternLumina-U2
+  - label: Project Page
+    url: https://internlm.github.io/InternLumina-U2/
+description: >
+  <p>A unified multimodal diffusion language model that covers text QA,
+  text-to-image generation, image understanding and editing, video
+  understanding, and 3D understanding in one 16B-A1B MoE. Its language
+  backbone is Ant Group's <a href="/outputs/ant-group/llada-2">LLaDA-2.0</a>
+  block-diffusion MoE, extended to vision through a fully discrete
+  <strong>multi-codebook</strong> representation: Apple's AToken tokenizer
+  describes each visual position with eight complementary codebooks, whose
+  embeddings are concatenated into one backbone token on input and decoded by
+  a codebook-depth autoregressive head with spatially parallel denoising on
+  output. The inference code landed in August; the weights released on
+  September 10 are the <strong>Ascend-trained</strong> checkpoint, with an
+  NVIDIA-trained twin promised, and Shanghai AI Lab reports operator-level
+  numerical alignment between the two backends.</p>
+
+  <p>Preliminary results: ChartQA 86.52, CharXiv-DQ 83.65, MathVision 33.22,
+  DynaMath 56.37. Apache 2.0; the technical report is still marked "coming
+  soon."</p>
+tags:
+  - multimodal
+  - diffusion
+  - moe
+  - open-weight
+model:
+  architecture: moe
+  parameters: 16B
+  active_parameters: 1B
+  base_model: llada-2
+  license: Apache-2.0
+related:
+  - llada-2

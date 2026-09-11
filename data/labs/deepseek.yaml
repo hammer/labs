@@ -146,6 +146,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Qihao_Zhu1
 news:
+  - title: "DeepSeek Plans ≥160,000 Huawei Ascend 950DT Chips for a ~1 GW Inference Data Center in Ulanqab, the Largest Known Huawei AI Cluster (~$2.5B); Training Stays on NVIDIA"
+    url: https://www.bloomberg.com/news/articles/2026-09-04/deepseek-plans-big-huawei-ai-chip-order-to-power-new-data-center
+    source: Bloomberg
+    date: 2026-09-04
   - title: "DeepSeek-V4.1-Flash Released: 552B Causal Encoder-Decoder MoE With 8B/16B Active, KV Cache Cut to 1/4, Beats V4-Pro; V4-Flash Retired, V4-Pro Routed to V4.1 From Sept 14"
     url: https://api-docs.deepseek.com/news/news260910
     source: DeepSeek

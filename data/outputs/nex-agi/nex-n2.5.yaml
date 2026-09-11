@@ -1,0 +1,69 @@
+name: Nex-N2.5
+slug: nex-n2.5
+lab: nex-agi
+type: model
+date: 2026-09-08
+flagship: true
+sources:
+  - label: Announcement (HF model card)
+    url: https://huggingface.co/nex-agi/Nex-N2.5-Pro
+  - label: HuggingFace (Max)
+    url: https://huggingface.co/nex-agi/Nex-N2.5-Max
+  - label: HuggingFace (mini)
+    url: https://huggingface.co/nex-agi/Nex-N2.5-mini
+  - label: Announcement (X)
+    url: https://x.com/NexEcosystem/status/2097341149405151287
+  - label: GitHub
+    url: https://github.com/nex-agi/Nex-N2.5
+  - label: NexAU agent harness (GitHub)
+    url: https://github.com/nex-agi/NexAU
+  - label: OpenRouter (Pro)
+    url: https://openrouter.ai/nex-agi/nex-n2.5-pro
+  - label: OpenRouter (mini)
+    url: https://openrouter.ai/nex-agi/nex-n2.5-mini
+description: >
+  <p>Nex-AGI's second-generation agentic family, released September 8, 2026
+  in three sizes. <strong>mini</strong> and <strong>Pro</strong> continue the
+  multimodal <a href="/outputs/nex-agi/nex-n2">Nex-N2</a> line with focused
+  gains in computer use, web browsing, and visually grounded agent work:
+  their configs are Qwen3.5 MoE shapes (mini 256 experts, 8 active; Pro 60
+  layers, 512 experts, 10 active; 262K context), so they are post-trained
+  on <a href="/outputs/alibaba/qwen3.5">Qwen3.5</a> bases. <strong>Max</strong>
+  is new: a text-only model on the DeepSeek-V4 architecture (61 layers, 384
+  routed experts, 6 active, 1M context) that Nex-AGI describes as its first
+  "systematic post-training at trillion-parameter scale," which places it on
+  <a href="/outputs/deepseek/deepseek-v4-pro">DeepSeek-V4-Pro</a>. All three
+  ship under Apache 2.0 on HuggingFace and ModelScope, with hosted access on
+  OpenRouter.</p>
+
+  <p>Self-reported (NexAU harness for coding, NexCUA for computer use): Max
+  reaches <strong>86.1</strong> on Terminal-Bench 2.1, 65.7 on SWE-Bench Pro,
+  65.6 on DeepSWE v1.1, 50.2 on AutomationBench (level with Claude Opus 5's
+  50.3), 74.7 on Toolathlon Verified, 1713 GDPval-AA Elo, and
+  <strong>92.6</strong> on BrowseComp, the top figure in its comparison table;
+  Pro scores 82.2 on OSWorld-Verified, 87.4 on OSWorld-G, and 89.7 on
+  BrowseComp. The NexCUA
+  computer-use harness is promised as open source. Parameter counts are not
+  stated on the cards; the weights inherit the bases' sizes. Not yet scored by
+  Artificial Analysis at filing.</p>
+tags:
+  - agentic
+  - multimodal
+  - moe
+  - open-weight
+model:
+  architecture: moe
+  base_model: qwen3.5
+  context_window: 262144
+  license: Apache 2.0
+  variants:
+    - name: Nex-N2.5-mini
+      notes: "Qwen3.5 MoE shape (256 experts, 8 active), 262K context; multimodal; OpenRouter free tier"
+    - name: Nex-N2.5-Pro
+      notes: "Qwen3.5 MoE shape (60 layers, 512 experts, 10 active), 262K context; multimodal; the file's anchor"
+    - name: Nex-N2.5-Max
+      notes: "DeepSeek-V4 architecture (61 layers, 384 experts, 6 active), 1M context; text-only; post-trained from DeepSeek-V4-Pro"
+related:
+  - nex-n2
+  - qwen3.5
+  - deepseek-v4-pro

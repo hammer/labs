@@ -1,0 +1,20 @@
+name: Scaling Near-Optimal SFT-RL Annotation Budget Allocation
+slug: sft-rl-budget-allocation
+lab: nus
+type: paper
+date: 2026-09-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.01573
+description: >
+  <p>"…from Small to Large LLMs" (EMNLP 2026). NUS (Jingtan Wang, Bryan
+  Kian Hsiang Low) with A*STAR and SMART/MIT (Daniela Rus) study how to
+  split a fixed annotation budget between SFT data and RL, and find that
+  the near-optimal region widens with model size and transfers from small
+  proxy models to large ones. The budget-allocation axis of RL scaling.</p>
+tags:
+  - rl
+  - rl-scaling
+  - post-training
+paper:
+  arxiv: "2609.01573"

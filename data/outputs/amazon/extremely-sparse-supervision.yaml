@@ -1,0 +1,19 @@
+name: Extremely Sparse Supervision Incentivizes Reasoning Ability
+slug: extremely-sparse-supervision
+lab: amazon
+type: paper
+date: 2026-09-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.04565
+description: >
+  <p>Amazon with Duke shows that on-policy distillation with only one or
+  two supervised tokens per trajectory, about 0.05% of tokens, is enough to
+  elicit reasoning ability on Qwen3 models, a data-efficiency result for
+  post-training.</p>
+tags:
+  - rl
+  - distillation
+  - post-training
+paper:
+  arxiv: "2609.04565"

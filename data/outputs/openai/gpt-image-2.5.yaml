@@ -1,0 +1,32 @@
+name: GPT-Image-2.5 (Flare and Sunburst)
+slug: gpt-image-2.5
+lab: openai
+type: model
+date: 2026-09-08
+sources:
+  - label: Announcement
+    url: https://openai.com/index/introducing-chatgpt-images-2-5/
+  - label: API reference (Sunburst)
+    url: https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst
+description: >
+  <p>Two image models released to the API and ChatGPT on September 8, 2026.
+  <strong>Sunburst</strong> (snapshot gpt-image-2.5-sunburst-2026-09-08) is
+  OpenAI's most capable model for generation and editing where edit
+  precision matters, with quality tiers from low to max, inpainting, and
+  token pricing that matches GPT-Image-2 ($5 per million text input, $8
+  image input, $30 image output); <strong>Flare</strong>, per launch
+  coverage, delivers GPT-Image-2-level quality at about half the latency.
+  Architecture and parameters are undisclosed. Earlier GPT-Image
+  generations are not tracked here.</p>
+tags:
+  - image-generation
+  - multimodal
+model:
+  license: Proprietary
+  variants:
+    - name: GPT-Image-2.5 Flare
+      notes: "GPT-Image-2 quality at roughly half the latency (launch coverage)"
+    - name: GPT-Image-2.5 Sunburst
+      notes: "Highest quality and edit control; $5/$8/$30 per M text-in/image-in/image-out"
+related:
+  - dall-e-3

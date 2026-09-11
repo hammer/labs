@@ -1,0 +1,40 @@
+name: WHALE (Joint Harness-Weight Optimization)
+slug: whale
+lab: krafton
+type: paper
+date: 2026-08-31
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.00196
+  - label: Blog Post
+    url: https://krafton.ai/blog/whale/
+  - label: GitHub
+    url: https://github.com/krafton-ai/WHALE
+description: >
+  <p>"A Simple Recipe for Joint Harness-Weight Optimization." KRAFTON AI, with
+  Chelsea Finn, argues that an agent's performance depends jointly on its
+  weights and on the executable harness that manages context and control
+  flow, so optimizing either alone leaves the system bottlenecked by the
+  frozen counterpart: weight updates change which harness works, harness
+  updates change which capabilities are exposed. WHALE alternates two
+  phases, online rejection-sampling fine-tuning of the model under the
+  current harness, then a Meta-Harness search for a better harness under the
+  updated model, with fixed or adaptive-patience switching. Experiments run
+  Qwen3.5-2B and 4B agents on seven search-QA benchmarks, AIME 2024/25 with a
+  Python tool, and Lichess puzzles. Code (verl vendored) is Apache 2.0; the
+  paper posted August 31 with a blog on September 3.</p>
+tags:
+  - agents
+  - harness
+  - rl
+paper:
+  arxiv: "2609.00196"
+  authors:
+    - Haechan Kim
+    - Yoonho Lee
+    - Gisang Lee
+    - Chelsea Finn
+    - Kangwook Lee
+  code_url: https://github.com/krafton-ai/WHALE
+related:
+  - terminus-kira

@@ -1,0 +1,41 @@
+name: Uno (Diffusion-Augmented LLMs)
+slug: uno
+lab: mbzuai
+type: paper
+date: 2026-09-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.04010
+  - label: GitHub
+    url: https://github.com/ifm-ai/uno
+  - label: Project Page
+    url: https://s-sahoo.github.io/uno/
+  - label: HuggingFace (K2-Horizon-7B-Uno)
+    url: https://huggingface.co/IFM/K2-Horizon-7B-Uno
+description: >
+  <p>"Unlocking Lossless Speedups in LLMs via Discrete Diffusion." IFM at
+  MBZUAI, with Cerebras co-authors, introduces
+  <strong>diffusion-augmented LLMs</strong>: a model that defines an ordinary
+  autoregressive distribution but uses diffusion to draw several tokens in
+  parallel from it. The parameters split into AR weights trained with
+  next-token prediction and lightweight diffusion weights (a conditional
+  LoRA) trained by diffusion distillation; the Ψ-Spec samplers then give
+  provably lossless multi-token generation with no separate draft model,
+  reaching up to 3× the base model's speed at every batch size. Released
+  as Uno adapters for <a href="/outputs/mbzuai/k2-horizon">K2 Horizon</a>
+  0.9B and 7B and for Qwen3-8B, under Apache 2.0.</p>
+tags:
+  - diffusion
+  - inference
+  - efficiency
+paper:
+  arxiv: "2609.04010"
+  authors:
+    - Subham Sekhar Sahoo
+    - Lingjie Chen
+    - Khiem Pham
+    - Eric Xing
+    - Zhengzhong Liu
+  code_url: https://github.com/ifm-ai/uno
+related:
+  - k2-horizon

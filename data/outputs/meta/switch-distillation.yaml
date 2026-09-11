@@ -1,0 +1,25 @@
+name: Switch Distillation (Knowledge Distillation During Mid-Training)
+slug: switch-distillation
+lab: meta
+type: paper
+date: 2026-09-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.01532
+  - label: GitHub
+    url: https://github.com/facebookresearch/midtraining-distillation
+description: >
+  <p>"Knowledge Distillation During Mid-Training Favors Reasoning over
+  Factual Recall." FAIR authors with UW and Princeton (Jacqueline He,
+  Howard Yen, Pang Wei Koh, Luke Zettlemoyer, Wen-tau Yih) show that
+  forward-KL distillation from post-trained teachers behaves differently
+  when applied in mid-training: it lifts reasoning while eroding factual
+  recall. Switch Distillation routes the lowest-entropy fraction of tokens
+  to reverse-KL distillation and trains the rest with cross-entropy. Code
+  released under MIT.</p>
+tags:
+  - distillation
+  - training
+paper:
+  arxiv: "2609.01532"
+  code_url: https://github.com/facebookresearch/midtraining-distillation

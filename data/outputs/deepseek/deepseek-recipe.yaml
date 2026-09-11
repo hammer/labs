@@ -1,0 +1,30 @@
+name: deepseek-recipe
+slug: deepseek-recipe
+lab: deepseek
+type: library
+date: 2026-09-10
+sources:
+  - label: GitHub
+    url: https://github.com/deepseek-ai/deepseek-recipe
+description: >
+  <p>Rust libraries with Python bindings that turn Messages, Chat
+  Completions, and Responses API requests into the exact prompt format
+  DeepSeek V4 and <a href="/outputs/deepseek/deepseek-v4.1-flash">V4.1</a>
+  expect, and parse the models' thinking, tool-call, and JSON output back
+  out, including <code>apply_patch</code>, tool namespaces, and V4.1's image
+  preprocessing. It is the serving-side counterpart to
+  <a href="/outputs/deepseek/deepseek-harness">DeepSeek Harness</a>: the
+  contract any third-party host needs to reproduce the official endpoint.
+  Released with V4.1-Flash on September 10, 2026 under MIT; 275 stars on
+  day one.</p>
+tags:
+  - infrastructure
+  - agents
+  - open-source
+library:
+  github: https://github.com/deepseek-ai/deepseek-recipe
+  language: Rust
+  license: MIT
+related:
+  - deepseek-harness
+  - deepseek-v4.1-flash

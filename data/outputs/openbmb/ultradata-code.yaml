@@ -1,0 +1,42 @@
+name: UltraData 2609 release (Code, RL, SFT-Agent)
+slug: ultradata-code
+lab: openbmb
+type: dataset
+date: 2026-09-05
+sources:
+  - label: HuggingFace (dataset)
+    url: https://huggingface.co/datasets/openbmb/UltraData-Code
+  - label: HuggingFace (UltraData-RL-2609)
+    url: https://huggingface.co/datasets/openbmb/UltraData-RL-2609
+  - label: HuggingFace (UltraData-SFT-Agent-2609)
+    url: https://huggingface.co/datasets/openbmb/UltraData-SFT-Agent-2609
+  - label: HuggingFace (L2 classifier)
+    url: https://huggingface.co/openbmb/UltraData-Code-L2-Classifier
+  - label: UltraData platform
+    url: https://ultradata.openbmb.cn/
+  - label: UltraData framework paper (arXiv)
+    url: https://arxiv.org/abs/2602.09003
+description: >
+  <p>OpenBMB's September 2026 <strong>UltraData</strong> drop, released
+  alongside
+  <a href="/outputs/openbmb/minicpm5-2b">MiniCPM5-2B</a>, whose pretraining
+  corpus it feeds. The public drop is the L2 tier, split by language (C++,
+  C#, Go, Java, JavaScript, PHP, Python and more) as parquet shards, together
+  with the L2 quality classifier used to build it. It follows
+  <a href="/outputs/openbmb/ultra-fineweb-l3">Ultra-FineWeb-L3</a> as the
+  second tier-labelled UltraData release; the technical report is marked
+  "coming soon." The same week added <strong>UltraData-RL-2609</strong>,
+  85,995 verifiable RL problems (math 32.4K, code 23.7K, long-context 18.0K,
+  knowledge 11.9K) on which JustRL II was run, and
+  <strong>UltraData-SFT-Agent-2609</strong>, 483,661 agent trajectories across
+  code, search, general, and tool-use agents; the pipeline itself is described
+  in the tiered data-management paper (arXiv 2602.09003). Apache 2.0.</p>
+tags:
+  - dataset
+  - code
+  - open-source
+dataset:
+  url: https://huggingface.co/datasets/openbmb/UltraData-Code
+related:
+  - minicpm5-2b
+  - ultra-fineweb-l3

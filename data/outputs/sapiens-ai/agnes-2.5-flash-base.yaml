@@ -1,0 +1,39 @@
+name: Agnes 2.5 Flash Base
+slug: agnes-2.5-flash-base
+lab: sapiens-ai
+type: model
+date: 2026-08-29
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/Agnes-AI/Agnes-2.5-Flash-Base
+  - label: GitHub
+    url: https://github.com/AgnesAI-Labs/Agnes-2.5-Flash-Base
+  - label: Post-training proposal (GitHub)
+    url: https://github.com/AgnesAI-Labs/agnes-flash-post-training
+description: >
+  <p>Sapiens AI's first open base checkpoint: a 202B MoE with about 16B
+  active parameters under a custom <code>agnes</code> architecture (48
+  layers, hidden 4,096, 160 routed plus one shared expert with 6 active,
+  MLA-style low-rank attention, a sparse top-512 indexer, alternating KV
+  compression ratios, hyper-connections, and YaRN from 65K to a 1M-token
+  context), shipped in FP8 under Apache 2.0 on August 29, 2026. The card
+  gives no training tokens, benchmarks, or report, and the companion
+  post-training repository is explicitly a pre-registered proposal rather
+  than results. Provenance is unsettled: the shape matches no tracked
+  checkpoint, but the 129,292-entry vocabulary and the noaux_tc routing,
+  indexer, and ue8m0 scaling stack are DeepSeek-V3/V4 conventions, and the
+  lab's earlier from-scratch claims for
+  <a href="/outputs/sapiens-ai/agnes-2.5-pro">Agnes 2.5 Pro</a> did not hold
+  up. Recorded as not verified from scratch until a training record
+  appears.</p>
+tags:
+  - moe
+  - open-weight
+model:
+  architecture: moe
+  active_parameters: 16B
+  context_window: 1048576
+  license: Apache-2.0
+  pretrained_from_scratch: false   # unverified lineage; DeepSeek-style stack, no training record
+related:
+  - agnes-2.5-pro

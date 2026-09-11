@@ -1,0 +1,22 @@
+name: MemoryWalker
+slug: memorywalker
+lab: alibaba
+type: paper
+date: 2026-09-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.00865
+description: >
+  <p>"Stop Training Agents on Contexts They Never Saw." Alibaba's Token
+  Foundry (Pengjun Xie, Jieping Ye) observes that harnesses which compress
+  context mid-episode, as Claude Code and Qwen-Agent do, mean the model
+  never saw the flat trajectory it is usually trained on; the learning
+  object is a tree. The paper introduces LogitTree, a packed 4D attention
+  mask, and SDCC, a single-backward relaxation, to train on what the agent
+  actually saw.</p>
+tags:
+  - agents
+  - harness
+  - rl
+paper:
+  arxiv: "2609.00865"

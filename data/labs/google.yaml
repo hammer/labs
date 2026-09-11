@@ -92,10 +92,22 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Koray_Kavukcuoglu1
 news:
+  - title: "DeepMind Releases AlphaGenome Atlas: Precomputed Effects for All 9 Billion Human SNVs, a 1 PB Dataset (>30× AlphaFold DB) With a New AVI Variant-Impact Score, Free for Academic Use"
+    url: https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/
+    source: Google DeepMind
+    date: 2026-09-08
+  - title: "WeatherNext 3 Launched: Hourly 5 km Forecasts Initialized on Live Satellite Mosaics, Precipitation CRPS Up 60% vs IMERG; Now Powering Search, Gemini, and Maps"
+    url: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-weathernext-3/
+    source: Google
+    date: 2026-09-03
   - title: "Gemini 3.8 Flash and 3.8 Flash Cyber Released: Same $0.75/$3.75 Pricing, AAII 59 at Launch (v4.1.1), Fairwind Program Gates the Cyber Model"
     url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/
     source: Google
     date: 2026-09-02
+  - title: "DeepMind Leadership Reshuffle: Hassabis Becomes DeepMind Chair and Alphabet Chief Scientist, Koray Kavukcuoglu Runs Day-to-Day as SVP, Jeff Dean Leaves Google to Found a Startup"
+    url: https://time.com/article/2026/08/06/google-deepmind-ai-demis-hassabis/
+    source: TIME
+    date: 2026-08-06
   - title: "Computer Use Becomes a Native Tool in Gemini 3.5 Flash, Spanning Browser, Mobile, and Desktop"
     url: https://blog.google/products/gemini/introducing-computer-use-gemini-3-5-flash/
     source: Google

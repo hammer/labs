@@ -1,0 +1,34 @@
+name: Thinkingbox (ThinkingBox-Bench)
+slug: thinkingbox-bench
+lab: microsoft
+type: eval
+date: 2026-08-20
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.19741
+  - label: HuggingFace (dataset)
+    url: https://huggingface.co/datasets/microsoft/ThinkingBox-Bench
+  - label: GitHub
+    url: https://github.com/microsoft/thinkingbox-data
+description: >
+  <p>"One Success Isn't Reliability." An MCP-compatible stateful tool
+  sandbox and benchmark for tool-agent-user interaction from twelve
+  Microsoft authors (Zhuochun Li et al.): version 1.0 holds 507 tasks
+  across retail, travel, auto insurance, neobank, and IT/HR settings, and
+  scores reliability as repeated success rather than a single pass. A
+  harness-diagnostic evaluation in the τ-bench lineage. Filed late.</p>
+tags:
+  - eval
+  - agents
+  - tool-use
+eval:
+  num_tasks: 507
+  domains:
+    - retail
+    - travel
+    - insurance
+    - banking
+    - IT/HR
+  scoring_method: repeated-success reliability over stateful tool-use episodes
+paper:
+  arxiv: "2608.19741"

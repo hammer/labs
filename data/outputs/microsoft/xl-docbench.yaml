@@ -1,0 +1,34 @@
+name: XL-DocBench
+slug: xl-docbench
+lab: microsoft
+type: eval
+date: 2026-07-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.00036
+  - label: HuggingFace (dataset)
+    url: https://huggingface.co/datasets/microsoft/XL-DocBench
+description: >
+  <p>"Benchmarking Evidence-Grounded Extra-Long Document Understanding."
+  A benchmark for the document work professionals actually do: answering
+  questions from annual reports, regulations, clinical guidelines, and
+  technical manuals that run to hundreds or thousands of pages, sometimes
+  by comparing related reports, with every answer tied to evidence in the
+  source. The public "conservative" release on HuggingFace (September 2,
+  2026) holds <strong>1,345 QA rows over 292 documents</strong> after
+  removing questions whose sources were not approved for redistribution.
+  Authors span Wuhan University and Microsoft.</p>
+tags:
+  - eval
+  - long-context
+  - documents
+eval:
+  num_questions: 1345
+  domains:
+    - finance
+    - regulation
+    - clinical
+    - engineering
+  scoring_method: evidence-grounded QA over extra-long documents
+paper:
+  arxiv: "2608.00036"

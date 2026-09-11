@@ -1,0 +1,38 @@
+name: UI-Venus-2
+slug: ui-venus-2
+lab: ant-group
+type: model
+date: 2026-08-27
+sources:
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2609.00028
+  - label: HuggingFace (9B)
+    url: https://huggingface.co/inclusionAI/UI-Venus-2-9B
+  - label: GitHub
+    url: https://github.com/inclusionAI/UI-Venus
+  - label: Project Page
+    url: https://ui-venus.github.io/UI-Venus-2/
+description: >
+  <p>Ant Group's Venus Team second-generation GUI agent: one closed-loop
+  model for mobile, web, and desktop, post-trained on
+  <a href="/outputs/alibaba/qwen3.5">Qwen3.5-9B</a> through a three-stage
+  pipeline of multimodal mid-training, offline step-level RL per domain, and
+  multi-teacher on-policy distillation, aimed at the gap between
+  benchmark-tuned agents and dependable real-world use (environment
+  coverage, task construction, reward verification). The report cites an
+  OSHarm attack success rate of 11.3% against 25.3% for the base model. The
+  report posted August 27, 2026 and the 9B weights on September 2 in the
+  UI-Venus repository (1,040 stars, active since August 2025; the first
+  UI-Venus is not tracked here). Filed late.</p>
+tags:
+  - agents
+  - multimodal
+  - open-weight
+model:
+  architecture: dense
+  base_model: qwen3.5
+paper:
+  arxiv: "2609.00028"
+related:
+  - qwen3.5
+  - llada-ui

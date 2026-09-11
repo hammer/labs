@@ -107,6 +107,18 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~John_Schulman1
 news:
+  - title: "OpenAI Opens the Agents API in Public Beta: the Managed Codex Harness (Durable Sessions, Context Compaction, Recovery, MCP Tools) Behind One API Call, No Fees Beyond Tokens"
+    url: https://openai.com/index/introducing-the-agents-api/
+    source: OpenAI
+    date: 2026-09-10
+  - title: "Sen. Hawley Opens Senate Homeland Security Subcommittee Probe Into OpenAI's Handling of the July Hugging Face Breach; Documents Due Oct 1"
+    url: https://www.axios.com/2026/09/10/openai-hugging-face-senate-investigation-hawley
+    source: Axios
+    date: 2026-09-10
+  - title: "OpenAI Claims Finite-Time Blowup for Forced 3D Navier–Stokes and Unforced Euler: 166-Page Paper Plus Lean 4 Certificates From a ~10,000-Agent, 88-Hour Run on an Unreleased Post-Astra Model; Independent Review Pending"
+    url: https://openai.com/index/navier-stokes-solution/
+    source: OpenAI
+    date: 2026-09-08
   - title: "OpenAI Releases GPT-6 Astra: First Model to Reach the 'Critical' Cybersecurity Threshold Under Its Preparedness Framework, Phased Rollout at $10/$50 per M Tokens"
     url: https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html
     source: CNBC

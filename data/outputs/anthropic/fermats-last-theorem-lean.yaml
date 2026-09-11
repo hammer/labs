@@ -1,0 +1,42 @@
+name: Formalizing Fermat's Last Theorem in Lean
+slug: fermats-last-theorem-lean
+lab: anthropic
+type: paper
+date: 2026-09-04
+flagship: true
+sources:
+  - label: Announcement
+    url: https://www.anthropic.com/research/formalizing-fermats-last-theorem
+  - label: Report (PDF)
+    url: https://www-cdn.anthropic.com/9e431dff043da6538d99d6c2d231b670aa3da263.pdf
+  - label: GitHub (Lean repository)
+    url: https://github.com/anthropics/fermats-last-theorem
+description: >
+  <p>The first end-to-end machine-checked proof of Fermat's Last Theorem.
+  An internal Anthropic research model "roughly comparable to
+  <a href="/outputs/anthropic/claude-fable-5.1">Claude Fable 5.1</a>,"
+  running largely autonomously as dozens of parallel agents on a Claude
+  Code-based multi-agent harness coordinated through the Prove2Me
+  platform, wrote about <strong>13 million lines of Lean</strong> and proved
+  roughly 30,300 theorems (29,500 in the final dependency tree) in
+  <strong>eleven days</strong> of wall-clock time ending August 18, 2026,
+  consuming about six billion output tokens. The proof follows the
+  Frey–Serre–Ribet–Wiles–Taylor–Wiles route as simplified in the
+  Darmon–Diamond–Taylor exposition, builds on Kevin Buzzard's Imperial FLT
+  project, flt-regular, and Mathlib, depends only on Lean's three standard
+  axioms, and its statement was checked against Mathlib's own
+  FermatLastTheorem with a comparator. Anthropic notes the proof is far
+  longer than a human formalization would be, that about 7% of
+  non-boilerplate lines are residue from failed attempts, and that early
+  agent collaboration degraded before Prove2Me was adopted. Repository and
+  17-page report released September 4 (1,084 stars in a week).</p>
+tags:
+  - math
+  - agents
+  - reasoning
+paper:
+  pdf_url: https://www-cdn.anthropic.com/9e431dff043da6538d99d6c2d231b670aa3da263.pdf
+  code_url: https://github.com/anthropics/fermats-last-theorem
+related:
+  - claude-fable-5.1
+  - claude-code

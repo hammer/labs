@@ -54,6 +54,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=RY_t8XAAAAAJ
 news:
+  - title: "Inception Launches Mercury 2.5: Diffusion LLM at >1,100 Tokens/s, 260K Context, $0.20/$0.75 per M Tokens, Pitched Against GPT-5.6 Luna and Gemini 3.5 Flash-Lite; Mercury Voice and Router Previewed"
+    url: https://sg.finance.yahoo.com/news/inception-launches-mercury-2-5-163000864.html
+    source: BusinessWire via Yahoo Finance
+    date: 2026-09-08
   - title: "Mercury 2 Released: Diffusion LLM with AA Index 33 at 1000 tok/s"
     url: https://www.inceptionlabs.ai
     source: Inception Labs

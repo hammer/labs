@@ -76,6 +76,10 @@ people:
     url: https://sites.google.com/view/seunghwankim
     role: Head, Physical Intelligence Lab
 news:
+  - title: "EXAONE Chosen Alongside HyperCLOVA X for Korea's 700B-Parameter National Cybersecurity Foundation Models Under the Naver Cloud Consortium"
+    url: https://en.sedaily.com/technology/2026/09/03/naver-cloud-consortium-to-build-koreas-security-ai-model
+    source: Seoul Economic Daily
+    date: 2026-09-03
   - title: "LG Presents 14 Papers at ICML 2026 Seoul; Showcases EXAONE Discovery Drug-Screening and Financial-Agent Deployments"
     url: https://www.koreatimes.co.kr/business/tech-science/20260708/lg-ai-research-showcases-real-world-exaone-ai-applications-at-icml-2026
     source: Korea Times

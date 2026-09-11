@@ -1,0 +1,26 @@
+name: DeepJIT
+slug: deepjit
+lab: deepseek
+type: library
+date: 2026-09-08
+sources:
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepJIT
+description: >
+  <p>A lightweight, header-only C++20 runtime for just-in-time compilation
+  of accelerator kernels that targets both <strong>NVIDIA CUDA and Huawei
+  Ascend</strong> (Bisheng and ACL), with shared on-disk and distributed
+  kernel caches and PyTorch and torch_npu integration. Released the week of
+  <a href="/outputs/deepseek/deepseek-v4.1-flash">V4.1-Flash</a> by the
+  DeepGEMM authors, it is the compilation layer under DeepSeek's kernel
+  libraries and a marker of the lab's dual-stack CUDA-plus-Ascend
+  engineering (257 stars in two days).</p>
+tags:
+  - infrastructure
+  - open-source
+library:
+  github: https://github.com/deepseek-ai/DeepJIT
+  language: C++
+related:
+  - deepgemm
+  - deepseek-v4.1-flash

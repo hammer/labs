@@ -1,0 +1,54 @@
+name: Ling-3.0-flash-VL
+slug: ling-3.0-flash-vl
+lab: ant-group
+type: model
+date: 2026-09-09
+flagship: true
+sources:
+  - label: Announcement (Ant Ling on X)
+    url: https://x.com/AntLingAGI/status/2095935971556782372
+  - label: Coverage (IT之家)
+    url: https://www.ithome.com/0/999/997.htm
+  - label: HuggingFace
+    url: https://huggingface.co/inclusionAI/Ling-3.0-flash-VL
+  - label: OpenRouter
+    url: https://openrouter.ai/inclusionai/ling-3.0-flash-vl
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/ling-3-0-flash-vl
+description: >
+  <p>Ant Group's first native multimodal Ling model, built on
+  <a href="/outputs/ant-group/ling-3.0">Ling-3.0-flash</a>: a 124B MoE that
+  activates 5.5B parameters per token (512 experts, 8 active), takes images
+  and video, and runs 131K natively with 256K via YaRN. A ViT encoder and two-layer MLP projector feed the 42-layer
+  hybrid backbone, which alternates KDA and Gated MLA layers at 5:1;
+  VideoRoPE encodes spatial position and temporal order so the model can
+  localize events and answer questions over long video. Ant frames the
+  release around agentic use, with vision carried through understanding,
+  reasoning, planning, acting, and verification rather than treated as an
+  input only. Thinking mode is on by default. MIT license; Ant publishes
+  SGLang recipes for 4-GPU H200/H20 and Blackwell nodes at full 256K
+  context. Announced September 9, 2026 with weights public the next day and
+  free access on Ling Studio; Ant cites an Image-to-WebDev Arena result above
+  GPT-5.4.</p>
+
+  <p>Artificial Analysis scored it within days: <strong>25</strong> on
+  Intelligence Index v4.3, level with the text-only Ling-3.0-flash; Ant's own
+  Terminal-Bench 2.1 number follows the AA protocol (Terminus 2 harness,
+  three runs per task). Ant also shipped a finance-tuned sibling,
+  Ling-3.0-flash-Fin, the day before.</p>
+tags:
+  - multimodal
+  - moe
+  - open-weight
+  - agentic
+model:
+  architecture: moe
+  parameters: 124B
+  active_parameters: 5.5B
+  base_model: ling-3.0
+  context_window: 256000
+  intelligence_index: 25
+  intelligence_index_version: "AA v4.3"
+  license: MIT
+related:
+  - ling-3.0

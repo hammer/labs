@@ -1,0 +1,25 @@
+name: DeepSelect
+slug: deepselect
+lab: deepseek
+type: library
+date: 2026-09-09
+sources:
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepSelect
+description: >
+  <p>TopK kernels for the DeepSeek Sparse Attention lightning indexer
+  (bf16, top-k up to 4,096) and for samplers, running 2 to 20 times faster
+  than <code>torch.topk</code>; the selection step that V3.2, V4, and
+  <a href="/outputs/deepseek/deepseek-v4.1-flash">V4.1-Flash</a> run on every
+  token. Released September 9, 2026 under MIT with a v1.0.0 tag and a
+  design deep-dive the next day; 274 stars at filing.</p>
+tags:
+  - infrastructure
+  - open-source
+library:
+  github: https://github.com/deepseek-ai/DeepSelect
+  license: MIT
+related:
+  - nsa
+  - flashmla
+  - deepseek-v4.1-flash

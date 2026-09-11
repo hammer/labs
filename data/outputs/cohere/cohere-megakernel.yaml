@@ -1,0 +1,28 @@
+name: Cohere Megakernel
+slug: cohere-megakernel
+lab: cohere
+type: library
+date: 2026-09-08
+sources:
+  - label: Blog Post
+    url: https://cohere.com/blog/megakernels
+  - label: GitHub
+    url: https://github.com/cohere-ai/cohere-megakernel
+description: >
+  <p>A serving engine that executes an entire decode forward pass of
+  <a href="/outputs/cohere/north-mini-code">North Mini Code</a> inside one
+  persistent CUDA megakernel on H100 (sm_90a, batch up to 8), reaching 62%
+  of speed-of-light at batch 1 against vLLM's 39%: 1.58× vLLM at batch 1
+  (292 tokens/s) and 1.25 to 1.41× end to end against vLLM v0.24 out to a
+  256K context, behind an OpenAI-compatible API with continuous batching,
+  paged KV, and prefix caching. By Xiaochun Tong, Conway Zhu, and Donglu
+  Wang of Cohere's Foundations team; Apache 2.0.</p>
+tags:
+  - infrastructure
+  - inference
+  - open-source
+library:
+  github: https://github.com/cohere-ai/cohere-megakernel
+  license: Apache-2.0
+related:
+  - north-mini-code

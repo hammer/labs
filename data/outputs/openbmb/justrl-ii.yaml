@@ -1,0 +1,34 @@
+name: JustRL II
+slug: justrl-ii
+lab: openbmb
+type: paper
+date: 2026-09-07
+sources:
+  - label: Blog Post (Notion)
+    url: https://panhaoxuan.notion.site/justrl-ii-scaling-small-llms-to-128k-reasoning-with-a-critic
+  - label: HuggingFace (RL init checkpoint)
+    url: https://huggingface.co/openbmb/JustRL-II-base-model
+  - label: HuggingFace (UltraData-RL-2609)
+    url: https://huggingface.co/datasets/openbmb/UltraData-RL-2609
+  - label: JustRL v1 Paper (arXiv)
+    url: https://arxiv.org/abs/2512.16649
+description: >
+  <p>"Scaling Small LLMs to 128K Reasoning with a Critic." The sequel to
+  JustRL (December 2025, arXiv 2512.16649), which argued that a minimal
+  single-stage RL recipe with fixed hyperparameters matches elaborate
+  multi-stage pipelines on a 1.5B model. JustRL II adds a
+  <strong>critic</strong> and length-adaptive advantage estimation so that
+  small models can be trained to reason over <strong>128K tokens</strong>:
+  on the UltraData-RL-2609 set of 85,995 verifiable problems, AIME 2025
+  rises from 61 to 81 in roughly 300 RL steps, and the recipe produced the
+  final checkpoint of <a href="/outputs/openbmb/minicpm5-2b">MiniCPM5-2B</a>
+  (86 on AIME 2025). The RL initialization checkpoint, a 2B Llama-architecture
+  model with 65K positions, is on HuggingFace; the write-up is a Notion post
+  with no arXiv version yet.</p>
+tags:
+  - rl
+  - rl-scaling
+  - reasoning
+related:
+  - minicpm5-2b
+  - ultradata-code

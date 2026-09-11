@@ -1,0 +1,48 @@
+name: AuK
+slug: auk
+lab: tencent
+type: model
+date: 2026-09-09
+sources:
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2609.08936
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/AuK
+  - label: HuggingFace (AuK)
+    url: https://huggingface.co/tencent/AuK
+  - label: HuggingFace (AuK-Flash)
+    url: https://huggingface.co/tencent/AuK-Flash
+  - label: Project Page
+    url: https://auk-project.github.io/
+description: >
+  <p>"An Open-Source Foundational Model for Speech Generation and Editing."
+  Tencent Hunyuan's 1.5B AuK unifies zero-shot and instructed TTS, content
+  and acoustic editing, paralinguistic editing, enhancement, and separation
+  behind one interface of natural-language instructions plus audio context.
+  It was trained on about <strong>3.03 billion instruction-audio
+  instances</strong>, 1.95 million hours of effective supervision across
+  five task families: a multimodal LLM conditions the generator, a joint
+  speech, audio, and music VAE provides the latent space, and a hybrid
+  MMDiT-to-DiT rectified-flow transformer generates, followed by preference
+  optimization and RL post-training. AuK-Flash is a four-step distilled
+  variant about 4.5 times faster. Open-sourced September 9, 2026 under MIT
+  (439 GitHub stars in its first days); the report posted September 8. The
+  generation stack is trained from scratch; the conditioning encoder is a
+  borrowed multimodal LLM.</p>
+tags:
+  - audio
+  - speech
+  - open-weight
+model:
+  architecture: dense
+  parameters: 1.5B
+  license: MIT
+  variants:
+    - name: AuK
+      parameters: 1.5B
+    - name: AuK-Flash
+      notes: "4-step distilled variant, ~4.5× faster"
+paper:
+  arxiv: "2609.08936"
+related:
+  - hunyuan-foley

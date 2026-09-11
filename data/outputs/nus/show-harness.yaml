@@ -1,0 +1,40 @@
+name: Show-Harness
+slug: show-harness
+lab: nus
+type: library
+date: 2026-09-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.10522
+  - label: GitHub
+    url: https://github.com/showlab/Show-Harness
+  - label: HuggingFace (adapters)
+    url: https://huggingface.co/showlab/Show-Harness-VLMs
+  - label: HuggingFace (dataset)
+    url: https://huggingface.co/datasets/showlab/Show-Harness-Data
+  - label: Project Page
+    url: https://showlab.github.io/Show-Harness/
+description: >
+  <p>"Just a VLM Agent Can Play Robots." An <strong>embodied harness</strong>
+  from NUS Show Lab that lets a general vision-language model drive robots
+  through a compact semantic interface: the VLM reasons over discrete
+  semantic action units (every unit is a 2 cm translation on every rig, so
+  real and simulated data mix without rescaling) and embodiment-specific
+  interpreters deterministically ground those units into local robot
+  actions, keeping the VLM in charge of intent. GUMI, a GUI manipulation
+  interface, collects demonstrations without teleoperation hardware. The
+  release ships LoRA adapters (rank 64, vision tower frozen) on Qwen3.5
+  0.8B to 9B and Gemma 4 E4B that turn a VLM into a controller from two
+  camera views, a demonstration corpus, and the harness code (232 GitHub
+  stars in its first days); closed frontier VLMs control robots zero-shot
+  through the same interface. Apache 2.0; corresponding author Mike Zheng
+  Shou.</p>
+tags:
+  - robotics
+  - agents
+  - infrastructure
+library:
+  github: https://github.com/showlab/Show-Harness
+  license: Apache-2.0
+paper:
+  arxiv: "2609.10522"

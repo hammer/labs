@@ -8,6 +8,10 @@ sources:
     url: https://huggingface.co/CohereLabs/tiny-aya-water
   - label: HuggingFace (Fire)
     url: https://huggingface.co/CohereLabs/tiny-aya-fire
+  - label: Paper (arXiv, L2 reasoning)
+    url: https://arxiv.org/abs/2609.10445
+  - label: HuggingFace (L2 Thinker)
+    url: https://huggingface.co/CohereLabs/tiny-aya-l2-thinker
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/tiny-aya-global
 description: >
@@ -34,5 +38,14 @@ model:
       until: "2026-09-05"
   openness_index: 36.1
   openness_index_version: "AA Openness Index v1.0"
+  variants:
+    - name: Tiny Aya L2 Thinker
+      notes: "Sep 2 2026; reasoning variant trained to think in the prompt language (paper: Building Multilingual Bridges, arXiv 2609.10445); gated, CC-BY-NC"
+    - name: Tiny Aya EN Thinker
+      notes: "Sep 2 2026; English-reasoning counterpart used as the paper's baseline"
+    - name: Tiny Aya Base 32K
+      notes: "Sep 8 2026; 32K-context base checkpoint"
+paper:
+  arxiv: "2609.10445"
 related:
   - aya-expanse

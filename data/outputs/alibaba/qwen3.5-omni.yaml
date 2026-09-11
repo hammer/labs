@@ -10,6 +10,8 @@ sources:
     url: https://arxiv.org/abs/2604.15804
   - label: Alibaba Cloud Model Studio (API docs)
     url: https://www.alibabacloud.com/help/en/model-studio/qwen-omni
+  - label: Artificial Analysis (Plus)
+    url: https://artificialanalysis.ai/models/qwen3-5-omni-plus
   - label: Online Demo (HuggingFace Space)
     url: https://huggingface.co/spaces/Qwen/Qwen3.5-Omni-Online-Demo
 description: >
@@ -36,8 +38,9 @@ description: >
   overall audio-visual understanding, and demonstrates "audio-visual vibe
   coding" (coding from spoken and on-screen instructions) and controllable
   audio-visual captioning. Weights are not released; parameter counts and
-  training scale are undisclosed. Filed in September 2026 from the technical
-  report, five months after release.</p>
+  training scale are undisclosed. Artificial Analysis scores the Plus tier
+  <strong>20</strong> on Intelligence Index v4.3 and Flash 12. Filed in
+  September 2026 from the technical report, five months after release.</p>
 tags:
   - multimodal
   - audio
@@ -45,13 +48,16 @@ tags:
   - proprietary
 model:
   architecture: moe
+  base_model: qwen3.5
   context_window: 256000
+  intelligence_index: 20
+  intelligence_index_version: "AA v4.3"
   license: Proprietary
   variants:
     - name: Qwen3.5-Omni-Plus
-      notes: "Full-capability tier; the report's SOTA claims are for Plus"
+      notes: "Full-capability tier; the report's SOTA claims are for Plus; AA Intelligence Index v4.3: 20 (file's anchor)"
     - name: Qwen3.5-Omni-Flash
-      notes: "Cost-optimized tier at a substantially smaller scale per the report"
+      notes: "Cost-optimized tier at a substantially smaller scale per the report; AA Intelligence Index v4.3: 12"
 paper:
   arxiv: "2604.15804"
 related:

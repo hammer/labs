@@ -1,0 +1,54 @@
+name: UI-Mate
+slug: ui-mate
+lab: tencent
+type: model
+date: 2026-08-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.15930
+  - label: HuggingFace (27B)
+    url: https://huggingface.co/tencent/UI-Mate-27B
+  - label: HuggingFace (9B)
+    url: https://huggingface.co/tencent/UI-Mate-9B
+  - label: HuggingFace (democua-27B)
+    url: https://huggingface.co/tencent/UI-Mate-democua-27B
+  - label: GitHub
+    url: https://github.com/Tencent/UI-Mate
+  - label: HuggingFace (OSWorkerBench)
+    url: https://huggingface.co/datasets/tencent/OSWorkerBench
+description: >
+  <p>Tencent Hy Frontier Team's open-weight <strong>foundation GUI agents</strong>
+  ("Advancing Open-Weight Foundation GUI Agents with In-Context
+  Demonstrations"): agent checkpoints post-trained on
+  <a href="/outputs/alibaba/qwen3.6-open">Qwen3.6-27B</a> and Qwen3.5-9B with
+  an environment-grounded training stack, plus a demonstration-guided
+  variant (DemoCUA) that learns a user's workflow from in-context
+  demonstrations. UI-Mate-27B reports <strong>77.0</strong> on
+  OSWorld-Verified and 66.2 on WindowsAgentArena, which the paper calls the
+  strongest open-weight result there, and 41.0 strict success (76.9
+  progress) on <strong>OSWorkerBench</strong>, a new office-centric benchmark
+  released with the model: 100 long-horizon tasks across 17 business tracks
+  and 41 applications with executable evaluators. Apache 2.0; the models are
+  meant to run inside the repository's prompt, parser, and interaction
+  harness rather than as chat models. Filed late: weights August 14, paper
+  August 16, benchmark data September 1.</p>
+tags:
+  - agents
+  - multimodal
+  - open-weight
+model:
+  architecture: dense
+  base_model: qwen3.6-open
+  license: Apache-2.0
+  variants:
+    - name: UI-Mate-27B
+      notes: "On Qwen3.6-27B; OSWorld-Verified 77.0"
+    - name: UI-Mate-9B
+      notes: "On Qwen3.5-9B"
+    - name: UI-Mate-democua-27B
+      notes: "Demonstration-guided computer use"
+paper:
+  arxiv: "2608.15930"
+related:
+  - qwen3.6-open
+  - hy4-preview

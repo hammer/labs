@@ -1,0 +1,42 @@
+name: VibeVoice-ASR-Streaming
+slug: vibevoice-asr-streaming
+lab: microsoft
+type: model
+date: 2026-09-02
+sources:
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2609.02812
+  - label: HuggingFace (7B)
+    url: https://huggingface.co/microsoft/VibeVoice-ASR-Streaming-7B
+  - label: HuggingFace (1.5B)
+    url: https://huggingface.co/microsoft/VibeVoice-ASR-Streaming-1.5B
+  - label: GitHub
+    url: https://github.com/microsoft/VibeVoice
+description: >
+  <p>A streaming, speaker-attributed ASR model from Microsoft's VibeVoice
+  line that transcribes who said what as audio arrives, with customizable
+  hotwords for names and jargon and support for ten languages (Chinese,
+  English, French, German, Italian, Japanese, Korean, Portuguese, Russian,
+  Spanish). The report presents it as one of the first LLM-based end-to-end
+  approaches to streaming speaker-attributed recognition; earlier unified
+  models such as VibeVoice-ASR merged transcription and diarization but
+  worked offline, which the low-latency requirements of voice agents rule
+  out. Released in 1.5B and 7B sizes under MIT, in the VibeVoice repository
+  (54K GitHub stars).</p>
+tags:
+  - audio
+  - speech
+  - open-weight
+model:
+  architecture: dense
+  parameters: 7B
+  license: MIT
+  variants:
+    - name: VibeVoice-ASR-Streaming-1.5B
+      parameters: 1.5B
+    - name: VibeVoice-ASR-Streaming-7B
+      parameters: 7B
+paper:
+  arxiv: "2609.02812"
+related:
+  - vibevoice-asr-bitnet

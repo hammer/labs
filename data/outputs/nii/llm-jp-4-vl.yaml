@@ -1,0 +1,35 @@
+name: LLM-jp-4-VL 9B
+slug: llm-jp-4-vl
+lab: nii
+type: model
+date: 2026-09-01
+sources:
+  - label: Blog Post
+    url: https://llm-jp.nii.ac.jp/blog/llm-jp-4-vl-9b/
+  - label: HuggingFace
+    url: https://huggingface.co/llm-jp/llm-jp-4-vl-9b
+  - label: GitHub
+    url: https://github.com/llm-jp/llm-jp-4-vl
+  - label: HuggingFace (RefinedVision data)
+    url: https://huggingface.co/datasets/llm-jp/RefinedVision
+description: >
+  <p>The vision-language member of the LLM-jp-4 generation: NII's own
+  8.6B <a href="/outputs/nii/llm-jp-4">llm-jp-4-8b-thinking</a> backbone
+  joined to a SigLIP2 so400m encoder (0.4B) through a two-layer MLP
+  projector, about 9B in all. Trained on roughly 29.3M samples, 9.2M
+  Japanese (Jagle), 12.0M English (RefinedVision, released with the model),
+  a 5.0M subset of Nemotron-Image-Training-v3, and 3.2M thinking-SFT
+  examples; a 25-benchmark average of 61.0 against 58.3 for the earlier
+  beta. Apache 2.0. The language backbone is NII's from-scratch model; only
+  the vision encoder is borrowed.</p>
+tags:
+  - multimodal
+  - japanese
+  - open-weight
+model:
+  architecture: dense
+  base_model: llm-jp-4
+  license: Apache-2.0
+related:
+  - llm-jp-4
+  - llm-jp-3

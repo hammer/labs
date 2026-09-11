@@ -1,0 +1,20 @@
+name: Power-Law Entropy Search for Hyperparameter Scaling Laws
+slug: power-law-entropy-search
+lab: meta
+type: paper
+date: 2026-09-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.01431
+description: >
+  <p>"Efficiently Estimating Optimal Hyperparameter Scaling Laws through
+  Power-Law Entropy Search." Meta (Sebastian Ament, David Eriksson, Eytan
+  Bakshy) with NUS proposes a multi-fidelity Bayesian-optimization
+  acquisition that spends compute where it most reduces uncertainty in the
+  fitted scaling law for optimal hyperparameters, rather than in the
+  hyperparameters themselves.</p>
+tags:
+  - scaling-laws
+  - training
+paper:
+  arxiv: "2609.01431"

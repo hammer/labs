@@ -1,0 +1,27 @@
+name: Co-Evolving Harnesses and Models
+slug: co-evolving-harnesses
+lab: salesforce
+type: paper
+date: 2026-09-08
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.09134
+description: >
+  <p>"On-Policy Correction Helps Weaker Models Catch Up Where Imitation
+  Fails." Salesforce AI (Zhou Yu, Bin Bi, Ran Xu and colleagues) evolves a
+  harness with a weak model across seven enterprise agent tasks, shows that
+  a stronger expert uses the evolved harness better still, and that
+  imitating the expert breaks the harness fit, whereas on-policy correction
+  closes the gap. A companion to
+  <a href="/outputs/salesforce/evoharnessbench">EvoHarnessBench</a> and to
+  KRAFTON's <a href="/outputs/krafton/whale">WHALE</a> on joint
+  harness-weight optimization.</p>
+tags:
+  - agents
+  - harness
+  - rl
+paper:
+  arxiv: "2609.09134"
+related:
+  - evoharnessbench
+  - whale

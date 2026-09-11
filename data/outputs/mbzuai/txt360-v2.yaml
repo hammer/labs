@@ -1,0 +1,33 @@
+name: TxT360-v2 and the K2 Horizon data release
+slug: txt360-v2
+lab: mbzuai
+type: dataset
+date: 2026-08-24
+sources:
+  - label: HuggingFace (TxT360-v2)
+    url: https://huggingface.co/datasets/IFM/TxT360-v2
+  - label: HuggingFace (K2 Horizon collection)
+    url: https://huggingface.co/collections/IFM/k2-horizon
+  - label: HuggingFace (Code-Reasoning)
+    url: https://huggingface.co/datasets/IFM/Code-Reasoning
+  - label: HuggingFace (Math-Reasoning)
+    url: https://huggingface.co/datasets/IFM/Math-Reasoning
+  - label: HuggingFace (Pretrain-Behaviors)
+    url: https://huggingface.co/datasets/IFM/Pretrain-Behaviors
+description: >
+  <p>The training data behind <a href="/outputs/mbzuai/k2-horizon">K2
+  Horizon</a>, released by IFM under CC-BY-4.0 from August 24, 2026:
+  <strong>TxT360-v2</strong>, the successor to
+  <a href="/outputs/mbzuai/txt360">TxT360</a> with web-high, medium, and QA
+  subsets, plus Code-Reasoning (seven subsets), Math-Reasoning (five),
+  SFT-Reasoning, and Pretrain-Behaviors. A PR-based agentic-code synthesis
+  pipeline (PRism-synthesis) followed on GitHub in September. Filed late;
+  the K2 Horizon entry had listed its training data as forthcoming.</p>
+tags:
+  - dataset
+  - open-source
+dataset:
+  url: https://huggingface.co/datasets/IFM/TxT360-v2
+related:
+  - txt360
+  - k2-horizon

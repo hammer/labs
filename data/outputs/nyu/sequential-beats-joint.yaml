@@ -1,0 +1,20 @@
+name: Sequential Beats Joint (On-Policy Distillation and RLVR)
+slug: sequential-beats-joint
+lab: nyu
+type: paper
+date: 2026-09-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.04108
+description: >
+  <p>"On the Interplay between On-Policy Distillation and RLVR." NYU with
+  UChicago, Waterloo, and Alberta: running on-policy distillation and then
+  RLVR beats pure OPD, pure RLVR, and every joint fusion tried, an ordering
+  the authors explain through pass@k coverage. A stage-aware result for
+  post-training pipelines.</p>
+tags:
+  - rl
+  - rl-scaling
+  - distillation
+paper:
+  arxiv: "2609.04108"

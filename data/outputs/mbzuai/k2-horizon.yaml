@@ -35,7 +35,9 @@ description: >
   "360-open" line behind <a href="/outputs/mbzuai/k2-v2">K2-V2</a> and
   <a href="/outputs/mbzuai/k2-think-v2">K2 Think V2</a>. At launch the final
   weights are public and the checkpoints, data, and code are marked as
-  forthcoming; training hardware and cost are not disclosed.</p>
+  released from August 24 as <a href="/outputs/mbzuai/txt360-v2">TxT360-v2</a>
+  and the Code-, Math-, and SFT-Reasoning and Pretrain-Behaviors sets;
+  training hardware and cost are not disclosed.</p>
 
   <p>The flagship <strong>K2-Horizon-375B-A23B</strong> is a sparse MoE with
   375B total and about 23B active parameters: 61 layers, hidden size 6,144,
@@ -150,3 +152,5 @@ related:
   - k2-v2
   - k2-think-v2
   - txt360
+  - txt360-v2
+  - uno

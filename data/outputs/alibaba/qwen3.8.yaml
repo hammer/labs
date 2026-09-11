@@ -75,6 +75,8 @@ model:
       parameters: 2.4T
       active_parameters: 95B
       notes: "Open weights, released Aug 12, 2026 (BF16 and FP8 repos); text-only, 92 layers, 512 experts (10 routed + 1 shared), Qwen3.8-Max license. AA Intelligence Index v4.3 score 40 (file's top-level anchor)."
+    - name: Qwen3.8-Max-0902
+      notes: "Sep 2 2026 snapshot of the hosted Max: deeper coding, multi-tool agent orchestration, chart and document vision; same 2.4T MoE, 1M context, unchanged $2/$6 pricing; the qwen3.8-max endpoint auto-routes to it from Sep 5"
     - name: Qwen3.8-Max
       notes: "QwenCloud API version of the same 2.4T-A95B weights (announced Aug 3, 2026): adds vision input, non-thinking mode, 1M default context, built-in tools; $2/$6 per M tokens. AA scores it as a separate endpoint (qwen3-8-max): Intelligence Index v4.3 score 40."
     - name: Qwen3.8-27B

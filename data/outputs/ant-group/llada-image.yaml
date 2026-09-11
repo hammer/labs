@@ -1,0 +1,44 @@
+name: LLaDA-Image
+slug: llada-image
+lab: ant-group
+type: model
+date: 2026-09-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.03796
+  - label: GitHub
+    url: https://github.com/inclusionAI/LLaDA-Image
+  - label: HuggingFace (Base)
+    url: https://huggingface.co/inclusionAI/LLaDA-Image
+  - label: HuggingFace (Turbo)
+    url: https://huggingface.co/inclusionAI/LLaDA-Image-Turbo
+description: >
+  <p>"Building Strong Image Generators with Fully Open Training Recipes."
+  A unified image generator and editor that pairs a <strong>6B Diffusion
+  Transformer trained from scratch</strong> with a frozen understanding
+  module on Ant's <a href="/outputs/ant-group/llada-2">LLaDA2.0-Mini</a>
+  diffusion-LM backbone. Rather than leaning on paired image-text data from
+  the start, the recipe first builds a strong generator from image-only
+  pre- and mid-training over a 220M-sample pipeline (98M real images), then
+  adds paired supervision; RMSNorm and the Muon optimizer are used
+  throughout, and Twin-DMD distillation yields a 2-to-4-step Turbo model.
+  Ant reports 53.53 EN and 53.38 ZH on Qwen-Image-Bench, an open-source
+  state of the art by its account. Base and Turbo checkpoints plus FP8
+  variants and inference code shipped September 4, 2026 under Apache 2.0,
+  with training code promised; the paper is from Inclusion AI's AGI
+  Research Center.</p>
+tags:
+  - image-generation
+  - diffusion
+  - multimodal
+  - open-weight
+model:
+  architecture: dense
+  parameters: 6B
+  base_model: llada-2
+  license: Apache-2.0
+paper:
+  arxiv: "2609.03796"
+related:
+  - llada-2
+  - llada-2.0-uni

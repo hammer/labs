@@ -1,0 +1,23 @@
+name: Environment Evolution for Terminal Agents
+slug: environment-evolution-terminal-agents
+lab: tencent
+type: paper
+date: 2026-09-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.04128
+description: >
+  <p>Tencent Hunyuan (twelve authors, first author HKUST-affiliated)
+  evolves verifiable terminal environments off-policy on a
+  generation-scheduled difficulty curriculum, so that the environment
+  distribution keeps pace with the agent being trained; validated on Qwen
+  models. The environment axis of RL scaling, alongside Qwen's
+  <a href="/outputs/alibaba/terminal-universe">Terminal-Universe</a>.</p>
+tags:
+  - rl
+  - rl-scaling
+  - agents
+paper:
+  arxiv: "2609.04128"
+related:
+  - terminal-universe

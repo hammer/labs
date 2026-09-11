@@ -1,0 +1,38 @@
+name: EVIE
+slug: evie
+lab: tencent
+type: model
+date: 2026-09-04
+sources:
+  - label: HuggingFace (EVIE-8B)
+    url: https://huggingface.co/tencent/EVIE-8B
+  - label: HuggingFace (EVIE-4.5B)
+    url: https://huggingface.co/tencent/EVIE-4.5B
+  - label: GitHub
+    url: https://github.com/Tencent/EVIE
+description: >
+  <p>Evidence-Vector-Informed Embedding: Tencent's multi-vector,
+  late-interaction <strong>visual document retrievers</strong>, built on
+  ColQwen3.5-style backbones from <a href="/outputs/alibaba/qwen3.5">Qwen3.5</a>.
+  EVIE-8B is the flagship teacher, producing 4,096-dimensional per-token
+  embeddings with bidirectional full attention over page images and queries;
+  EVIE-4.5B is the distilled student with Prefix-MRL and HAC for cheaper
+  serving. Tencent's own leaderboard table places the pair at the top of
+  ViDoRe V1, V2, and V3 among open multi-vector retrievers. Weights,
+  inference pipelines, and evaluation suites are open under Apache 2.0; the
+  paper is promised.</p>
+tags:
+  - retrieval
+  - multimodal
+  - open-weight
+model:
+  architecture: dense
+  base_model: qwen3.5
+  license: Apache-2.0
+  variants:
+    - name: EVIE-8B
+      notes: "Flagship teacher; 4096-D per-token embeddings, bidirectional attention"
+    - name: EVIE-4.5B
+      notes: "Student with Prefix-MRL and HAC"
+related:
+  - qwen3.5

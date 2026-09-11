@@ -1,0 +1,30 @@
+name: Meshy
+slug: meshy
+lab: openbmb
+type: library
+date: 2026-09-07
+sources:
+  - label: GitHub
+    url: https://github.com/OpenBMB/Meshy
+  - label: Blog Post
+    url: https://maydomain.notion.site/Meshy-A-Role-Driven-RL-Training-Framework-under-SPMD-Paradigm-3d34e1dff05a80e489a6d9a406991bae
+description: >
+  <p>"A Role-Driven RL Training Framework under the SPMD Paradigm." OpenBMB's
+  post-training framework makes every RL role (inference, training,
+  rollout) an independent service that communicates only through a
+  TransferQueue data and control plane, with the topology computed
+  SPMD-style by each process from a single declarative recipe. Native
+  recipes cover on-policy, bounded off-policy, and fully asynchronous
+  training on SGLang and torchtitan. Open-sourced September 7, 2026,
+  reaching 365 stars in four days; it is the training side of the
+  MiniCPM5-era stack alongside the UltraData pipeline.</p>
+tags:
+  - rl
+  - infrastructure
+  - open-source
+library:
+  github: https://github.com/OpenBMB/Meshy
+  language: Python
+related:
+  - minicpm5-2b
+  - bmtrain

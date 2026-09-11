@@ -1,0 +1,55 @@
+name: Nemotron IMO Gold (Nemotron-3-Labs-Ultra-Math)
+slug: nemotron-imo-gold
+lab: nvidia
+type: model
+date: 2026-09-03
+flagship: true
+sources:
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2609.10712
+  - label: Technical Report (PDF, NeMo-Skills recipe)
+    url: https://github.com/NVIDIA-NeMo/Skills/blob/main/recipes/nemotron-imo-tts/paper.pdf
+  - label: HuggingFace Collection
+    url: https://huggingface.co/collections/nvidia/nemotron-labs-imo-2026
+  - label: HuggingFace (Ultra-Math-RL)
+    url: https://huggingface.co/nvidia/Nemotron-3-Labs-Ultra-Math-RL
+  - label: HuggingFace (Ultra-Math-SFT)
+    url: https://huggingface.co/nvidia/Nemotron-3-Labs-Ultra-Math-SFT
+  - label: HuggingFace (Nemotron-IMO-Bench)
+    url: https://huggingface.co/datasets/nvidia/Nemotron-IMO-Bench
+  - label: HuggingFace (Nemotron-Math-Proofs-v3-RL)
+    url: https://huggingface.co/datasets/nvidia/Nemotron-Math-Proofs-v3-RL
+description: >
+  <p>"An Open Recipe for IMO Gold: Training Nemotron for Olympiad
+  Mathematics." NVIDIA's Nemotron Labs released the full stack behind an
+  ensemble that reached a <strong>gold-medal level score at the 2026
+  International Mathematical Olympiad</strong>: two post-trained variants of
+  <a href="/outputs/nvidia/nemotron-3-ultra">Nemotron 3 Ultra</a> (550B-A55B)
+  specialized to solve hard problems and to find mistakes in proofs
+  (Ultra-Math-SFT and Ultra-Math-RL), the Nemotron-Math-Proofs-v3 SFT and RL
+  datasets, the Nemotron-IMO-Bench evaluation set, and the test-time-scaling
+  recipe in NeMo-Skills. Weights and data ship under OpenMDW 1.1 for
+  commercial and non-commercial use; the report posted to arXiv on
+  September 9 (Ivan Moshkov, Stephen Ge et al.).</p>
+tags:
+  - math
+  - reasoning
+  - rl
+  - open-weight
+model:
+  architecture: moe
+  parameters: 550B
+  active_parameters: 55B
+  base_model: nemotron-3-ultra
+  license: OpenMDW-1.1
+  variants:
+    - name: Nemotron-3-Labs-Ultra-Math-SFT
+      notes: "Supervised stage on Nemotron-Math-Proofs-v3-SFT"
+    - name: Nemotron-3-Labs-Ultra-Math-RL
+      notes: "RL stage on Nemotron-Math-Proofs-v3-RL; the model deployed in the IMO 2026 ensemble"
+paper:
+  arxiv: "2609.10712"
+  pdf_url: https://github.com/NVIDIA-NeMo/Skills/blob/main/recipes/nemotron-imo-tts/paper.pdf
+  huggingface_url: https://huggingface.co/collections/nvidia/nemotron-labs-imo-2026
+related:
+  - nemotron-3-ultra

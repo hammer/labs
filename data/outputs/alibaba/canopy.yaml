@@ -1,0 +1,23 @@
+name: CANOPY (Outcome-Only RL for Long-Horizon Agents)
+slug: canopy
+lab: alibaba
+type: paper
+date: 2026-09-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.01245
+  - label: GitHub
+    url: https://github.com/AlibabaResearch/SignalCoverageRL
+description: >
+  <p>"Explore More, Drift Less: Outcome-Only Reinforcement Learning Can
+  Suffice for Long-Horizon Interactive Agents." Alibaba Research diagnoses
+  two failure modes of group-relative outcome-only RL on long interactive
+  tasks, signal starvation and policy drift, and trains Qwen3-14B through
+  environment interaction alone with the resulting recipe. Code under
+  Apache 2.0.</p>
+tags:
+  - rl
+  - agents
+paper:
+  arxiv: "2609.01245"
+  code_url: https://github.com/AlibabaResearch/SignalCoverageRL

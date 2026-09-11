@@ -1,0 +1,19 @@
+name: When Do Larger Batches Help Scale LLM Reinforcement Learning?
+slug: larger-batches-rl
+lab: tencent
+type: paper
+date: 2026-08-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.29296
+description: >
+  <p>Tencent Hunyuan (Ziniu Li and colleagues) works the batch-size axis of
+  RL scaling: with square-root learning-rate scaling under Adam, GRPO and
+  PPO curves become batch-size invariant in samples, so the decision rule
+  reduces to throughput gain against the samples-to-target penalty of
+  larger batches. Filed late.</p>
+tags:
+  - rl
+  - rl-scaling
+paper:
+  arxiv: "2608.29296"

@@ -1,0 +1,33 @@
+name: Agents API
+slug: agents-api
+lab: openai
+type: announcement
+date: 2026-09-10
+flagship: true
+sources:
+  - label: Announcement
+    url: https://openai.com/index/introducing-the-agents-api/
+  - label: API changelog
+    url: https://developers.openai.com/api/docs/changelog
+  - label: Coverage (MarkTechPost)
+    url: https://www.marktechpost.com/2026/09/10/openai-launches-the-agents-api-in-public-beta-putting-the-codex-harness-behind-one-api-call/
+description: >
+  <p>OpenAI put the Codex harness behind an API. The Agents API, in public
+  beta from September 10, 2026, runs cloud agents on the same harness and
+  infrastructure that power Codex while OpenAI manages session
+  orchestration, context compaction, and failure recovery: durable
+  sessions carry work across turns, custom tools and MCP servers plug in,
+  and the agent's compute can sit in an OpenAI-managed sandbox, on the
+  developer's own infrastructure, or with a sandbox partner. There are no
+  fees beyond the tokens and tools an agent consumes. It is the clearest
+  case yet of a frontier lab selling the execution layer, not only the
+  model, and the counterpart to open harnesses such as
+  <a href="/outputs/deepseek/deepseek-harness">DeepSeek Harness</a>.
+  Filed from press coverage; OpenAI's own post is blocked to crawlers.</p>
+tags:
+  - agents
+  - infrastructure
+  - harness
+related:
+  - gpt-6-astra
+  - deepseek-harness

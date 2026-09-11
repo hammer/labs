@@ -1,0 +1,22 @@
+name: HarnessEvolve
+slug: harnessevolve
+lab: huawei
+type: paper
+date: 2026-09-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.00829
+description: >
+  <p>"Learning from Reference Trajectories for Reliable Agent
+  Self-Evolution." Huawei's ICT AI Competence Center (Shanghai) proposes a
+  self-evolving harness framework that learns from reference trajectories
+  and decouples execution, evaluation, optimization, and gating into
+  separate agent modules to counter the credit-assignment failures,
+  shortcut learning, and catastrophic forgetting that plague monolithic
+  self-improvement loops. Distinct from Huawei's openJiuwen harness; no
+  code repository found.</p>
+tags:
+  - agents
+  - harness
+paper:
+  arxiv: "2609.00829"

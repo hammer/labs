@@ -5,6 +5,10 @@ type: model
 date: 2026-04-02
 flagship: true
 sources:
+  - label: MAI-Transcribe-2 announcement
+    url: https://microsoft.ai/news/mai-transcribe-2-is-the-fastest-most-accurate-and-cheapest-speech-recognition-model-in-the-world/
+  - label: MAI-Image-2.6 / 2.6-Flash announcement
+    url: https://microsoft.ai/news/pushing-the-quality-cost-frontier-with-mai-image-2-6/
   - label: April 2026 announcement (v1 / v1 / v2)
     url: https://microsoft.ai/news/today-were-announcing-3-new-world-class-mai-models-available-in-foundry/
   - label: June 2026 announcement (Build 2026, v1.5 / v2 / v2.5)
@@ -60,6 +64,12 @@ model:
       notes: Jun 2026; T2I + image editing, #3 on Arena.ai, $1.75/M in / $33/M image out
     - name: MAI-Image-2.5-Flash
       notes: Jun 2026; efficient T2I variant
+    - name: MAI-Image-2.6
+      notes: "Aug 10 2026; +79 Elo over 2.5 (+91 on text rendering); #2 on Arena text-to-image at launch"
+    - name: MAI-Image-2.6-Flash
+      notes: "Sep 4 2026, with 2.6 in Foundry; Arena #2 T2I and #2 editing, AA #2 T2I; multi-image reference editing, web grounding, dynamic aspect ratios"
+    - name: MAI-Transcribe-2
+      notes: "Sep 3 2026; 2.0% AA-WER (#2), ~411× real-time, 60 languages, $0.10/hr limited-time; Foundry, MAI Playground, OpenRouter"
 related:
   - mai-thinking-1
   - mai-code-1-flash

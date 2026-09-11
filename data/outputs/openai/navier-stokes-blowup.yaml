@@ -1,0 +1,46 @@
+name: Finite Time Blowup for Navier–Stokes and Euler
+slug: navier-stokes-blowup
+lab: openai
+type: paper
+date: 2026-09-08
+flagship: true
+sources:
+  - label: Announcement
+    url: https://openai.com/index/navier-stokes-solution/
+  - label: Navier–Stokes paper (PDF)
+    url: https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf
+  - label: Euler paper (PDF)
+    url: https://cdn.openai.com/pdf/315b36cd-ec98-4023-8342-93345194ece1/euler.pdf
+  - label: GitHub (Lean 4 formalizations)
+    url: https://github.com/openai/NavierStokesAndEuler
+description: >
+  <p>OpenAI's claim on a Millennium Prize problem. The 166-page paper,
+  authored simply "OpenAI," states as Theorem 1.1 that for every viscosity
+  there exist a smooth, compactly supported force and a solution of the 3D
+  incompressible Navier–Stokes equations starting from rest whose velocity
+  becomes unbounded in finite time while its kinetic energy stays uniformly
+  bounded, on R³ and on the torus, which are breakdown alternatives (C) and
+  (D) in the Clay Institute's problem statement (the forced versions, not
+  the unforced Cauchy problem). A companion paper constructs smooth,
+  compactly supported, divergence-free initial data whose unforced Euler
+  solution blows up. Both results are formalized in Lean 4 (4.34.0-rc2 with
+  Mathlib) in a repository that reached 1,750 stars on its first day.</p>
+
+  <p>OpenAI's blog is blocked to crawlers, so the run details rest on press
+  coverage: roughly 10,000 concurrent agents on an unreleased model it
+  describes as more capable than
+  <a href="/outputs/openai/gpt-6-astra">GPT-6 Astra</a>, with the
+  Navier–Stokes result reached on September 5 after about 88 hours and
+  Astra handling the Lean formalization. The result awaits independent
+  mathematical review, and the announcement drew a priority dispute. Two
+  smaller Lean repositories on prime gaps preceded it on September 2.</p>
+tags:
+  - math
+  - agents
+  - reasoning
+paper:
+  pdf_url: https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf
+  code_url: https://github.com/openai/NavierStokesAndEuler
+related:
+  - gpt-6-astra
+  - agents-api

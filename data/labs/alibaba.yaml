@@ -125,6 +125,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=xF5VrokAAAAJ
 news:
+  - title: "Qwen3.8-Max-0902 Snapshot Ships: Deeper Coding and Multi-Tool Agent Orchestration on the Same 2.4T MoE at Unchanged $2/$6; qwen3.8-max Auto-Routes to It From Sep 5"
+    url: https://www.alibabacloud.com/en/notice/model_studio_update_notice_for_qwen38max_models_863
+    source: Alibaba Cloud Model Studio
+    date: 2026-09-02
   - title: "Qwen-Image-3.0: One-Pass Infographic Grids and Readable 10px Text — But No Weights, Benchmarks, or Report (Closed Shift)"
     url: https://the-decoder.com/alibabas-qwen-image-3-0-renders-full-infographic-grids-and-readable-ten-pixel-text-in-a-single-pass/
     source: The Decoder

@@ -1,0 +1,26 @@
+name: EXAONE Finance 1.0
+slug: exaone-finance
+lab: lg-ai-research
+type: paper
+date: 2026-08-04
+sources:
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2609.04239
+description: >
+  <p>"An Attention-free Time Series Foundation Model for Financial Time
+  Series." LG AI Research's EXAONE Forecast for Finance is a time-series
+  foundation model built for financial forecasting rather than adapted from
+  general-domain TSFMs: it drops the self-attention backbone, whose cost
+  grows quadratically with sequence length and variate count, for causal 1D
+  convolutions with group-aware pooling, and pretrains on a synthetic
+  financial corpus. The report claims the top zero-shot result on
+  GIFT-eval. No weights are released; the first version posted August 4,
+  2026 and a revision on September 7. Filed late.</p>
+tags:
+  - time-series
+  - finance
+  - science
+paper:
+  arxiv: "2609.04239"
+related:
+  - exaone-tabular

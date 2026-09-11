@@ -1,0 +1,32 @@
+name: RIBOSPAN
+slug: ribospan
+lab: sii
+type: model
+date: 2026-08-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.22849
+  - label: HuggingFace
+    url: https://huggingface.co/SII-GAIR-NLP/RIBOSPAN-FM
+  - label: GitHub
+    url: https://github.com/GAIR-NLP/RIBOSPAN-FM
+description: >
+  <p>A long-context RNA foundation model from SII's GAIR lab: 1.61B
+  parameters, bidirectional, natively pretrained at context lengths up to
+  <strong>10,240 nucleotides</strong> so that full-length mRNAs can be
+  modeled at single-nucleotide resolution with their 5' UTR, coding sequence,
+  and 3' UTR together. Earlier dense RNA encoders were pretrained at about
+  1K tokens and had to truncate long transcripts. RIBOSPAN combines dense
+  bidirectional self-attention, single-nucleotide tokenization, and
+  attention-isolated sequence packing. The paper posted August 24, 2026 and
+  the weights on September 1.</p>
+tags:
+  - science
+  - biology
+  - open-weight
+model:
+  architecture: dense
+  parameters: 1.61B
+  context_window: 10240
+paper:
+  arxiv: "2608.22849"

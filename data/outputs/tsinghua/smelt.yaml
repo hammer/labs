@@ -1,0 +1,20 @@
+name: SMELT (Scaling Laws for Compute-Matched MoE Looped Transformers)
+slug: smelt
+lab: [tsinghua, bytedance-seed]
+type: paper
+date: 2026-09-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.01343
+description: >
+  <p>Tsinghua with ByteDance Seed, M-A-P, and TokenWave.AI loops the middle
+  half of a MoE transformer's layers twice at matched FLOPs, parameters, and
+  KV cache, scales the design to 54B non-embedding parameters, and fits
+  per-architecture Chinchilla-style laws: 6.8 to 18.0% FLOP savings on the
+  compute-optimal frontier, largest on code.</p>
+tags:
+  - architecture
+  - moe
+  - scaling-laws
+paper:
+  arxiv: "2609.01343"

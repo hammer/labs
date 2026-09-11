@@ -1,0 +1,20 @@
+name: Online Draft Co-Training for Speculative Decoding in RL Post-Training
+slug: online-draft-cotraining
+lab: nvidia
+type: paper
+date: 2026-09-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.07108
+description: >
+  <p>NVIDIA systems work on the rollout-cost axis of large-scale,
+  long-context RL post-training: a speculative-decoding draft model is
+  co-trained online with the policy, with branch attention under zigzag
+  ring context parallelism and cross-pipeline feature transport so the
+  draft keeps pace as the policy changes.</p>
+tags:
+  - rl
+  - infrastructure
+  - inference
+paper:
+  arxiv: "2609.07108"

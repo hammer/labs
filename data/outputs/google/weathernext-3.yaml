@@ -1,0 +1,39 @@
+name: WeatherNext 3
+slug: weathernext-3
+lab: google
+type: model
+date: 2026-09-03
+flagship: true
+sources:
+  - label: Announcement (Google)
+    url: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-weathernext-3/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.03582
+  - label: Model page (Google DeepMind)
+    url: https://deepmind.google/science/weathernext/
+description: >
+  <p>"Increasing resolution and performance of global weather models."
+  DeepMind's third WeatherNext generation is a Functional Generative
+  Network mesh transformer and the first in the line to ingest live hourly
+  geostationary satellite mosaics alongside conventional analyses. It
+  forecasts hourly at <strong>5 km</strong> for surface temperature and
+  moisture, 10 km for other surface variables, and 25 km aloft, against
+  WeatherNext 2's 25 km and six-hour steps, a picture Google calls roughly
+  five times sharper, and improves precipitation CRPS by 60% against IMERG,
+  30% against MRMS, and 10% against rain gauges at early lead times. It now
+  powers weather in Search, the Gemini app, Maps, and the Maps Platform
+  Weather API, with forecasts served through BigQuery, Earth Engine, and
+  Cloud Storage. Weights are not released. Twenty-five authors led by
+  Stephan Rasp and Boris Babenko; WeatherNext 2 is not tracked here.</p>
+tags:
+  - science
+  - weather
+  - climate
+model:
+  architecture: dense
+  license: Proprietary
+paper:
+  arxiv: "2609.03582"
+related:
+  - gencast
+  - graphcast

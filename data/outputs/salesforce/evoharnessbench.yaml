@@ -1,0 +1,28 @@
+name: EvoHarnessBench
+slug: evoharnessbench
+lab: salesforce
+type: eval
+date: 2026-09-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.04280
+  - label: Project Page
+    url: https://mas-orchestra.salesforceresearch.ai/
+description: >
+  <p>"Can Your Agents Keep Pace with an Evolving Harness?" Salesforce
+  Research, with UNC and UW–Madison, puts the non-stationarity in the
+  harness rather than the task stream: 17 multi-stage harness streams over
+  802 tasks in which the available tools (520), skills (42), and agents (62)
+  change under the agent. Authors Zixuan Ke, Vaidehi Patil, and colleagues;
+  no dedicated benchmark repository yet beyond the MAS-Orchestra project.</p>
+tags:
+  - eval
+  - agents
+  - harness
+eval:
+  num_tasks: 802
+  scoring_method: task success across 17 evolving harness streams (tools, skills, agents change over time)
+paper:
+  arxiv: "2609.04280"
+related:
+  - co-evolving-harnesses
