@@ -41,7 +41,9 @@ async function fetchAaScores(): Promise<Map<string, number>> {
   });
   if (!res.ok) throw new Error(`AA leaderboard fetch failed: ${res.status}`);
   const body = await res.text();
-  const records = body.split(/(?=\{"id":"[0-9a-f-]{36}","name":"[^"]*","shortName")/);
+  // Sentinel (2026-09-11): records now open with {"slug":"…","shortName"; the
+  // pre-Sep-2026 shape opened with {"id":uuid,"name":…,"shortName". Accept both.
+  const records = body.split(/(?=\{"slug":"[^"]+","shortName"|\{"id":"[0-9a-f-]{36}","name":"[^"]*","shortName")/);
   const map = new Map<string, number>();
   for (const r of records) {
     const slug = r.match(/"slug":"([^"]+)"/)?.[1];

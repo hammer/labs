@@ -66,7 +66,9 @@ async function fetchAaiiDataset(): Promise<Map<string, number>> {
   // Model-record sentinel (verified June 2026): id+name+shortName. Splitting
   // on bare {"id":uuid,"name" also matches nested creator objects and
   // misattributes slugs to neighboring records.
-  const records = body.split(/(?=\{"id":"[0-9a-f-]{36}","name":"[^"]*","shortName")/);
+  // Sentinel (2026-09-11): records now open with {"slug":"…","shortName"; the
+  // pre-Sep-2026 shape opened with {"id":uuid,"name":…,"shortName". Accept both.
+  const records = body.split(/(?=\{"slug":"[^"]+","shortName"|\{"id":"[0-9a-f-]{36}","name":"[^"]*","shortName")/);
   const map = new Map<string, number>();
   for (const r of records) {
     const slug = r.match(/"slug":"([^"]+)"/)?.[1];
