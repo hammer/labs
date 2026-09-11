@@ -72,6 +72,8 @@ model:
   license: GLM-5.3 License
   intelligence_index: 45
   intelligence_index_version: "AA v4.3"
+  openness_index: 33.3
+  openness_index_version: "AA Openness Index v1.0"
   intelligence_index_history:
     - score: 49
       version: "AA v4.2"

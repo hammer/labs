@@ -87,6 +87,8 @@ model:
   training_tokens: 30T
   intelligence_index: 42
   intelligence_index_version: "AA v4.3"
+  openness_index: 44.4
+  openness_index_version: "AA Openness Index v1.0"
   intelligence_index_history:
     - score: 46
       version: "AA v4.2"

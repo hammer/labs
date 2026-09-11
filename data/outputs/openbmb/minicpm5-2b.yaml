@@ -58,6 +58,8 @@ model:
   context_window: 131072
   intelligence_index: 13
   intelligence_index_version: "AA v4.3"
+  openness_index: 66.7
+  openness_index_version: "AA Openness Index v1.0"
   intelligence_index_history:
     - score: 14
       version: "AA v4.3"

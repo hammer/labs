@@ -37,6 +37,8 @@ model:
   pretrained_from_scratch: false
   intelligence_index: 27
   intelligence_index_version: "AA v4.3"
+  openness_index: 38.9
+  openness_index_version: "AA Openness Index v1.0"
   intelligence_index_history:
     - score: 31
       version: "AA v4.2"
