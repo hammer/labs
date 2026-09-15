@@ -21,9 +21,9 @@ Use this prompt template, adapting for the specific lab:
 - Official name and common short name (for `name` field)
 - Founding year (company, not just the AI lab)
 - Region/country
-- Type: `corporate`, `startup`, `nonprofit`, `academic`
+- Type: `public`, `private`, `nonprofit`, `academic` (the schema enum; `startup` / `corporate` do not validate)
 - For public companies: stock exchange, ticker, IPO year, current market cap
-- For startups: latest valuation, funding total, key investors
+- For private companies: the last **closed, priced** round and its post-money valuation, funding total, key investors. Rounds in talks, secondary/tender marks, and IPO targets are `news`, not the `valuation` field (AGENTS.md → Valuations)
 
 **URLs (verify each exists):**
 - Official website, Wikipedia page
@@ -58,7 +58,7 @@ When a key researcher has left the lab, record it on the `people` entry as `role
 ### Research Verification
 
 - Cross-reference parameter counts between arxiv papers, HuggingFace model cards, and press
-- Verify market cap/valuation against financial data sources
+- Verify market cap/valuation against financial data sources — market caps via the refresh recipe in AGENTS.md → Valuations (companiesmarketcap.com slugs; price × shares for HKEX listings); private marks at the outlet that reported the close, never an aggregator estimate
 - Confirm people are currently at the lab (check dates)
 - Distinguish published (arxiv) vs reported (press) parameter counts
 
@@ -133,11 +133,12 @@ artificialanalysis: https://artificialanalysis.ai/providers/...
 openrouter: https://openrouter.ai/provider-slug
 region: country                  # china, korea, france, usa, etc.
 founded: "YYYY"
-type: startup                    # corporate, startup, nonprofit, academic
-valuation:
-  amount: "$14B"
+type: private                    # public, private, nonprofit, academic (schema enum)
+valuation:                       # AGENTS.md → Valuations; omit when no post-money was disclosed
+  amount: "$14B"                 # last closed, priced primary round post-money, or the listed parent's market cap
   type: private                  # market-cap, private, or revenue
-  date: "2025-09"
+  ticker: "KRX: 003550"          # market-cap only
+  date: "2025-09"                # month of that mark (YYYY-MM), not the edit date
 description: >
   <p>Paragraph 1: identity, founding, backing, scale (funding, revenue, team size).</p>
   <p>Paragraph 2: flagship model evolution (chronological, with links and numbers).</p>
@@ -367,5 +368,5 @@ YAML changes are picked up on browser refresh without restarting the dev server.
 1. **Read the current file first** — don't overwrite existing content
 2. **Enrich, don't replace** — weave new info into existing paragraphs
 3. **Verify claims** — search the web to confirm new facts
-4. **Valuation updates** — update both `amount` and `date`
+4. **Valuation updates** — record only a closed, priced round's post-money (or a refreshed parent market cap); update `amount` and `date` together, file the round as a `news` entry, and reconcile every sentence in the description that quotes the old figure (grep the old amount and "valued at" / "market cap"). Talks, secondaries, tenders, and IPO targets go in `news` only. Rules and the public refresh recipe: AGENTS.md → Valuations
 5. **Slug/name renames** — high-impact: requires renaming YAML, output dir, all `lab:` refs, logo, metrics.json, and cross-references

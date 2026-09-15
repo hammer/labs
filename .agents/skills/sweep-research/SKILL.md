@@ -28,6 +28,7 @@ Record the labs, month prefixes, and artifact classes in scope. Unless the user 
 4. Search prolific researchers when lab-name searches are incomplete.
 5. Run independent searches for widely adopted evaluations, reasoning-process benchmarks, domain-expert benchmarks, agent harnesses or execution stacks, and RL-scaling papers — including RL-readiness / stage-aware post-training work that optimizes SFT or checkpoint selection for downstream RL (the `rl-scaling` tag family; see the dedicated RL-scaling sweep in AGENTS.md).
 6. Generate the late technical-report and newly scored-model worklists specified in AGENTS.md.
+7. Quarterly, or whenever the user asks for a valuation sweep: refresh every listed parent's market cap in one commit and re-check each private lab's last closed round, per AGENTS.md → Valuations (last realized priced post-money; talks, secondaries, and IPO targets become `news`; reconcile description prose that quotes the old figure). Research private marks by region in parallel agents, then re-verify every changed mark at the reporting outlet before writing it.
 
 Parallelize independent lab or search-family passes when supported and authorized. Keep a shared candidate list with the discovery URL and reason each item may qualify.
 

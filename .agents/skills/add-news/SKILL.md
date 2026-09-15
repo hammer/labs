@@ -82,6 +82,10 @@ Whenever the news headline contains words like *"launches,"* *"releases,"* *"unv
 
 If any of those turn up an artifact, add an output entry per `.agents/skills/add-output/SKILL.md` in the same pass. The news entry stays as-is (it's the human-context wrapper); the output is the structured artifact record that lets the rest of the index work (intelligence_index, openness_index, benchmarks, model details, AAII/AAOI fetch scripts, etc.).
 
+### News + valuation: a closed round also updates the field
+
+When the story is a **closed, priced** funding round, also set `valuation.amount` to the post-money and `valuation.date` to the month of the close, and reconcile the description. When it is a round in talks, a secondary or tender mark, or an IPO target, add the news entry only and leave `valuation` alone — see AGENTS.md → Valuations (Moonshot's $50B pre-money G-round and Cohere's $20B Series E were both news-only while open).
+
 ## 5. Finding News — Priority Sources
 
 When searching for news about a lab, check sources in this order. Prefer higher-tier sources when multiple outlets cover the same story.

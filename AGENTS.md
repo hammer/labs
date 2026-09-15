@@ -201,7 +201,7 @@ Schemas are defined in `src/schema.ts`. Always validate after editing YAML: `npm
 - **Slug:** lowercase alphanumeric with hyphens (e.g., `deepseek`, `lg-ai-research`)
 - **Region:** `china`, `korea`, etc.
 - **Founded:** `YYYY` or `YYYY-MM` format
-- **Type:** `corporate`, `startup`, `nonprofit`, `academic`
+- **Type:** `public`, `private`, `nonprofit`, `academic` (the enum in `src/schema.ts`; subsidiaries take the parent's type — SB Intuitions and LG AI Research are `public`)
 - **Valuation date:** `YYYY-MM` format
 - **News dates:** `YYYY-MM-DD` format
 - **News URLs:** can be absolute URLs or relative paths (e.g., `/articles/...`)
