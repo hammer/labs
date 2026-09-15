@@ -12,9 +12,9 @@ ipo:
   ticker: NOW
   year: 2012
 valuation:
-  amount: "$133B"
+  amount: "$147B"
   type: market-cap
-  date: "2026-08"
+  date: "2026-09"
 description: >
   <p>ServiceNow AI Research, part of the Advanced Technology Group, focuses on
   enterprise AI agents and efficient language models. The team originated from

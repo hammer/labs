@@ -6,9 +6,9 @@ region: usa
 founded: "2023"
 type: private
 valuation:
-  amount: "$3B"
+  amount: "$13B"
   type: private
-  date: "2024-10"
+  date: "2026-08"
 description: >
   <p><a href="https://poolside.ai">Poolside</a> is a San Francisco- and
   Paris-based lab founded in early 2023 by <strong>Jason Warner</strong> (CEO,
@@ -43,8 +43,12 @@ description: >
   planned 2&nbsp;GW Texas data center, when Poolside missed timelines on the
   first cluster. The Financial Times reported investor concerns that Poolside
   "could not credibly train models that compete with Anthropic, OpenAI, and
-  Google DeepMind at the frontier." The last realized valuation is the
-  <strong>$3B Series B (October 2024)</strong>.</p>
+  Google DeepMind at the frontier." In August 2026 NVIDIA
+  <a href="https://www.newcomer.co/p/sources-poolside-strikes-6-billion">invested
+  $1B at a $12B pre-money valuation</a> (~$13B post-money) alongside a
+  non-exclusive $6B model-licensing deal, per an investor letter obtained by
+  Newcomer &mdash; the first priced round since the <strong>$3B Series B
+  (October 2024)</strong>.</p>
 
   <p><em>Note: as of July 2026, Poolside is not scored on the Artificial
   Analysis Intelligence Index. Benchmark numbers on these pages are
@@ -64,6 +68,10 @@ tags:
   - agentic
   - moe
 news:
+  - title: "Poolside Strikes Non-Exclusive $6B NVIDIA Licensing Deal; NVIDIA Invests $1B at a $12B Pre-Money Valuation (Investor Letter)"
+    url: https://www.newcomer.co/p/sources-poolside-strikes-6-billion
+    source: Newcomer
+    date: 2026-08-20
   - title: "Laguna S 2.1 Released — 118B-A8B MoE with a 1M-Token Context (OpenMDW-1.1)"
     url: https://poolside.ai/blog/introducing-laguna-s-2-1
     source: Poolside

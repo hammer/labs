@@ -5,6 +5,11 @@ wikipedia: https://en.wikipedia.org/wiki/China_Mobile
 region: china
 founded: "1997"
 type: public
+valuation:
+  amount: "$219B"
+  type: market-cap
+  ticker: "HKG: 0941"
+  date: "2026-09"
 description: >
   <p><strong>Jiutian (九天)</strong> is the in-house AI foundation-model brand of
   <a href="https://en.wikipedia.org/wiki/China_Mobile">China Mobile</a>, the

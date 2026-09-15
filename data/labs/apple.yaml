@@ -12,9 +12,9 @@ ipo:
   ticker: AAPL
   year: 1980
 valuation:
-  amount: "$4.54T"
+  amount: "$4.86T"
   type: market-cap
-  date: "2026-08"
+  date: "2026-09"
 description: >
   <p>Apple's AI strategy centers on <strong>on-device + Private Cloud Compute</strong>
   rather than API-served models. <strong>Apple Intelligence</strong>, announced at WWDC

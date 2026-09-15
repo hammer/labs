@@ -5,6 +5,11 @@ huggingface: https://huggingface.co/sbintuitions
 region: japan
 founded: "2023-08"
 type: public
+valuation:
+  amount: "$78B"
+  type: market-cap
+  ticker: "TYO: 9434"
+  date: "2026-09"
 parent: SoftBank Corp.
 description: >
   <p><strong>SB Intuitions</strong> is <a

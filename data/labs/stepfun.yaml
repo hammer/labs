@@ -11,7 +11,7 @@ type: private
 valuation:
   amount: "$10B"
   type: private
-  date: "2026-04"
+  date: "2026-05"
 description: >
   <p>StepFun is one of China's
   "<a href="https://en.wikipedia.org/wiki/AI_companies_of_China">six AI tigers</a>,"
@@ -32,7 +32,9 @@ description: >
 
   <p>StepFun has raised over $100M across multiple rounds from investors including
   Tencent, Xiaomi, Lenovo Capital, and Source Code Capital, reaching an estimated
-  ~$2B valuation by mid-2024. The <strong>Step model series</strong> has iterated
+  ~$2B valuation by mid-2024; a ~$2.5B pre-IPO round led by existing investors
+  in May 2026 took it to ~$10B ahead of a planned Hong Kong IPO. The
+  <strong>Step model series</strong> has iterated
   rapidly from Step-1 through Step-3.7-Flash, spanning language, vision, video,
   and audio modalities.</p>
 

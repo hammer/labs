@@ -13,10 +13,10 @@ ipo:
   exchange: NASDAQ
   ticker: BIDU
 valuation:
-  amount: "$37B"
+  amount: "$31B"
   type: market-cap
   ticker: "NASDAQ: BIDU"
-  date: "2026-06"
+  date: "2026-09"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Baidu">Baidu</a> is the pioneer of
   Chinese AI, having established its Institute of Deep Learning (IDL) in 2013 under

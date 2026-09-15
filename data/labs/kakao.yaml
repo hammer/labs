@@ -12,10 +12,10 @@ ipo:
   exchange: KRX
   ticker: "035720"
 valuation:
-  amount: "$10B"
+  amount: "$11B"
   type: market-cap
   ticker: "KRX: 035720"
-  date: "2026-06"
+  date: "2026-09"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Kakao">Kakao</a> (KRX: 035720) is
   South Korea's leading internet conglomerate, operator of

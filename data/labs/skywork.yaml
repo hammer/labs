@@ -8,9 +8,10 @@ founded: "2021"
 type: public
 parent: Kunlun Tech
 valuation:
-  amount: "$2B"
-  type: private
-  date: "2025-03"
+  amount: "$8.4B"
+  type: market-cap
+  ticker: "SZ: 300418"
+  date: "2026-09"
 description: >
   <p><strong>Skywork AI PTE. LTD.</strong> (UEN 202124460H) is incorporated in
   Singapore (July 2021), headquartered at 2 Science Park Drive. It originated
@@ -21,8 +22,9 @@ description: >
   local ties: research head <strong>Yan Shuicheng</strong> (AAAI/ACM/IEEE Fellow,
   105K+ citations) was recruited from Singapore's Sea Group, and the lab
   maintains partnerships with NUS and NTU through Singapore's EDB talent
-  program. Co-CEO <strong>Zhou Yahui</strong> is Kunlun's founder. Valued at
-  ~$2B (Mar 2025), with CNY 200M capital injection from Kunlun in Aug 2025.</p>
+  program. Co-CEO <strong>Zhou Yahui</strong> is Kunlun's founder. Kunlun
+  injected CNY 200M of capital in Aug 2025; parent Kunlun Tech (SZ: 300418) had
+  a market cap of ~$8.4B in September 2026.</p>
 
   <p>Skywork's frontier LLM research began with
   <a href="https://arxiv.org/abs/2310.19341">Skywork-13B</a> (Oct 2023, 3.2T

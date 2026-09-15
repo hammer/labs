@@ -12,10 +12,10 @@ ipo:
   exchange: KRX
   ticker: "259960"
 valuation:
-  amount: "$7.3B"
+  amount: "$7.0B"
   type: market-cap
   ticker: "259960"
-  date: "2026-08"
+  date: "2026-09"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Krafton">KRAFTON</a> (KRX:
   259960) is the Korean game company behind <em>PUBG: Battlegrounds</em> and

@@ -13,10 +13,10 @@ ipo:
   exchange: HKEX
   ticker: "3690"
 valuation:
-  amount: "$72B"
+  amount: "$59B"
   type: market-cap
   ticker: "HKG: 3690"
-  date: "2026-08"
+  date: "2026-09"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Meituan">Meituan</a> (HKG: 3690)
   is China's largest on-demand services platform, founded in 2010 by
@@ -24,7 +24,8 @@ description: >
   Groupon-style deals platform, Meituan evolved into a super-app dominating food
   delivery, hotel bookings, ride-hailing, and grocery commerce with over 690 million
   annual transacting users. The company is publicly traded on the Hong Kong Stock
-  Exchange with a market cap exceeding $100B.</p>
+  Exchange (market cap roughly $60B as of September 2026, down from over
+  $100B).</p>
 
   <p>Meituan's AI research is driven by the <strong>Meituan AI Lab</strong>,
   <strong>AutoML Team</strong>, and <strong>LongCat Team</strong>. The LongCat Team

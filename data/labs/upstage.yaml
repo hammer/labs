@@ -8,9 +8,9 @@ region: korea
 founded: "2020"
 type: private
 valuation:
-  amount: "$700M"
+  amount: "$1.35B"
   type: private
-  date: "2026-04"
+  date: "2026-05"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Upstage_(company)">Upstage</a> is a
   South Korean AI company founded in October 2020 by veterans of Naver's Clova AI
@@ -18,7 +18,10 @@ description: >
   <strong>Hwalsuk Lee</strong> (CTO, former Clova OCR/visual AI lead), and
   <strong>Lucy Park</strong> (US CEO/CSO, former Clova NLP lead). Backed by $163M
   in funding from SoftBank Ventures Asia, SK Networks, KT Corporation, and others,
-  Upstage is valued at over 1 trillion KRW (~$700&ndash;750M).</p>
+  Upstage closed a ~&#8361;740B Series C in April&ndash;May 2026 (a &#8361;180B
+  first tranche led by Saje Partners, then &#8361;560B anchored by the National
+  Growth Fund with SK Networks, Woori Venture Partners, and Mirae Asset) at a
+  press-reported post-money valuation of about &#8361;2T (~$1.35B).</p>
 
   <p>The lab's research centers on the <strong>Solar</strong> model family, built
   around the <strong>Depth Up-Scaling (DUS)</strong> methodology &mdash; scaling
@@ -68,6 +71,10 @@ people:
   - name: Sanghoon Kim
     role: Lead Researcher (Solar, DUS)
 news:
+  - title: "National Growth Fund Invests ₩560B in Upstage as Its Second Direct Investment; Series C Post-Money Reported at ~₩2T"
+    url: https://en.sedaily.com/news/2026/05/03/national-growth-fund-invests-560-billion-won-in-upstage-as
+    source: Seoul Economic Daily
+    date: 2026-05-03
   - title: "Solar Open 2 Released — 250B-A15B Hybrid-Attention MoE with 1M Context (Open Weights)"
     url: https://www.upstage.ai/blog/en/solar-open-2
     source: Upstage

@@ -432,6 +432,15 @@ model:
 
 The home page Scale column shows `max(parameters, parameters_estimated.value)` with a small `~` marker when the estimate wins. The schema is in `src/schema.ts` (`ParametersEstimatedSchema`). The same shape generalises to any future "third-party estimate of a thing the vendor didn't disclose" — keep the authoritative field clean and put estimates in a sibling field with the source recorded.
 
+### Valuations
+
+- **What the field records.** `valuation` is the owner's size, not the lab's: `market-cap` for listed parents (LG AI Research → LG Corp, Skywork → Kunlun Tech, SB Intuitions → SoftBank Corp, China Mobile), `private` for the **last realized, priced primary round's post-money** (Anthropic's Series H, OpenAI's March 2026 round), `revenue` only where neither exists (Huawei: the FY figure in Huawei's own USD conversion). For private labs `date` is the month of that mark, not the sweep month; market caps carry the refresh month.
+- **In-talks, secondary, tender, and IPO-target marks are news, not values.** Moonshot's "$50B" (Caixin, Sep 2026) is the pre-money of an open G-round, so the field stays at the $35B July close; Cohere's $20B Series E, Thinking Machines' $40B, DeepSeek's ~$74B, and Xiaohongshu's >$70B IPO target likewise. Anthropic's $1.2T secondary and OpenAI's tender at the round price are filed as news. One standing exception: Xiaohongshu has never had a primary round, so its mark is a secondary ($31B).
+- **Undisclosed stays blank.** PFN (undisclosed down-round), Motif (priced Series B, post-money not disclosed), Sapiens AI ("tens of millions"). Where a prior curator recorded an aggregator estimate, keep it but date it to the round it estimates (Arcee $240M → 2024-07).
+- **Public refresh recipe** (whole table in one commit, all dated the refresh month): companiesmarketcap.com `/{slug}/marketcap/` for most names (slugs to remember: `alphabet-google`, `meta-platforms`, `meituan-dianping`, `kuaishou-technology`, `lg-corp`, `sk-telecom`, `kunlun-tech`, `softbank`, `china-mobile`, `z-ai`). For HKEX listings it under-counts multi-class shares (Meituan: 5.59B class B vs 6.17B total) and Z.ai's share count, so compute price × shares from stockanalysis.com `/quote/hkg/{code}/` (its displayed cap is at the previous close) with the current price from `query1.finance.yahoo.com/v8/finance/chart/{code}.HK`. Round: T to two decimals, ≥$10B to an integer, <$10B to one decimal.
+- **Reconcile prose.** Descriptions quote valuations — grep the old amount and "market cap" / "valued at" phrases in every edited file (Meituan's "exceeding $100B" survived two refreshes). File the round as a `news` entry when it is new.
+- **Sweep log:** 2026-06-23 (d1d3006, 27 labs); 2026-09-15 (26 market caps refreshed; Poolside, Upstage, Cohere, Skywork, Huawei, StepFun, OpenAI, Arcee re-marked; Z.ai −69% and MiniMax −52% since June).
+
 ### Logos
 - Store in `public/logos/{slug}.png` at 200x200 pixels
 - Use ImageMagick `convert` to resize if needed

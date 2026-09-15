@@ -17,9 +17,9 @@ ipo:
   exchange: Nasdaq
   ticker: SPCX
 valuation:
-  amount: "$2.05T"
+  amount: "$1.95T"
   type: market-cap
-  date: "2026-06"
+  date: "2026-09"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/SpaceX">SpaceX</a>, Elon Musk's
   space-launch company (founded 2002), became a major AI lab through its 2026
@@ -34,8 +34,8 @@ description: >
   folding the SpaceX swoosh-X into &ldquo;AI&rdquo;. On
   <strong>June 12, 2026, SpaceX went public on Nasdaq (ticker SPCX)</strong> in
   the largest IPO in history by capital raised (~$75B; priced at $135/share for
-  an implied ~$1.77T valuation); the stock has since climbed to a market
-  capitalization of <strong>~$2.05T</strong>. Elon Musk is CEO;
+  an implied ~$1.77T valuation); the stock touched ~$2.05T in June 2026 and
+  traded at a market capitalization of <strong>~$1.95T</strong> in September 2026. Elon Musk is CEO;
   <strong>Michael Nicolls</strong> (former SpaceX Starlink engineering VP) was
   named xAI president in April 2026.</p>
 
@@ -88,7 +88,7 @@ people:
       <p>Founder and CEO of SpaceX (2002), Tesla, and xAI (2023); owner of X.
       Co-founded OpenAI in 2015 (departed 2018). SpaceX acquired xAI in February
       2026 (~$1.25T combined valuation) and went public in June 2026 (Nasdaq:
-      SPCX, ~$2.05T market cap). Its Colossus cluster in Memphis is one of the
+      SPCX, ~$1.95T market cap as of September 2026). Its Colossus cluster in Memphis is one of the
       largest AI training facilities in the world.</p>
   - name: Michael Nicolls
     role: President, xAI (since April 2026)

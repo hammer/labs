@@ -31,7 +31,11 @@ description: >
   valuation in May 2026</a> in a ~$2B round led by
   <a href="/labs/meituan">Meituan</a>'s venture arm <strong>Long-Z Investments</strong>
   (formerly DragonBall / Longzhu Capital, 龙珠资本), with participation from
-  China Mobile and CITIC Private Equity. Its consumer product
+  China Mobile and CITIC Private Equity. A $3.5B round closed in late July 2026
+  at a <strong>$35B post-money valuation</strong>; a further G-round at a
+  reported $50B pre-money opened in August 2026 and, as of mid-September, had
+  not been reported closed, while the company confidentially filed for a Hong
+  Kong IPO on 2026-09-03. Its consumer product
   <a href="https://kimi.moonshot.cn/">Kimi</a> pioneered long-context processing in
   Chinese AI, supporting 2M-token inputs. ARR surpassed $100M in early March and
   exceeded $200M by April 2026 following the Kimi K2.5 launch.</p>
@@ -88,6 +92,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Flood_Sung1
 news:
+  - title: "In Depth: Inside the $50 Billion Rise of Moonshot AI — Pre-Money Valuation Quintupled in Six Months After Kimi K3; G-Round Still Open"
+    url: https://www.caixinglobal.com/2026-09-11/in-depth-inside-the-50-billion-rise-of-moonshot-ai-102484028.html
+    source: Caixin Global
+    date: 2026-09-11
   - title: "Moonshot AI Confidentially Files for Hong Kong IPO Targeting $3B–$5B at a ~$50B Valuation; BofA Joins CICC, Deutsche Bank, and Goldman as Coordinators After Redomiciling to Mainland China"
     url: https://technode.com/2026/09/03/moonshot-ai-reportedly-submits-confidential-hong-kong-ipo-filing/
     source: TechNode
