@@ -76,6 +76,14 @@ people:
     url: https://sites.google.com/view/seunghwankim
     role: Head, Physical Intelligence Lab
 news:
+  - title: "Elsevier Deploys LG AI Research's Chemistry Vision Model in Reaxys to Extract Structures and Reactions From Scientific Images"
+    url: https://www.elsevier.com/about/press-releases/elsevier-and-lg-ai-research-unlock-more-chemistry-hidden-in-scientific-images
+    source: Elsevier
+    date: 2026-09-15
+  - title: "LG AI Research Showcases EXAONE Discovery, EXAONE Omni-Inspect, and EXAONE Business Intelligence as Industrial 'Expert AI' Products"
+    url: https://www.koreaherald.com/article/10872720
+    source: The Korea Herald
+    date: 2026-09-14
   - title: "EXAONE Chosen Alongside HyperCLOVA X for Korea's 700B-Parameter National Cybersecurity Foundation Models Under the Naver Cloud Consortium"
     url: https://en.sedaily.com/technology/2026/09/03/naver-cloud-consortium-to-build-koreas-security-ai-model
     source: Seoul Economic Daily

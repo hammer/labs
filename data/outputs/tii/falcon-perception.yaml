@@ -48,6 +48,10 @@ description: >
   <p>Companion release: <strong>PBench</strong>, a capability-stratified
   diagnostic benchmark (L0&ndash;L4 + dense). Docker / vLLM server / MLX
   (Apple Silicon) shipped alongside. CC-BY 4.0.</p>
+  <p><strong>Falcon-OCR v1.5</strong> (HuggingFace, 11 September 2026): the
+  270M early-fusion OCR model post-trained with GRPO, reaching 82.4 on olmOCR
+  end to end and 93.15 on OmniDocBench in pipeline mode (94.93 text, 88.53
+  table TEDS), under Apache 2.0.</p>
 tags:
   - frontier
   - multimodal

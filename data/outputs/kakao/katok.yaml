@@ -1,0 +1,28 @@
+name: KATok
+slug: katok
+lab: kakao
+type: paper
+date: 2026-08-25
+sources:
+  - label: arXiv (Keep-or-Drop? Adaptive Tokenizer for Compact Video Representation)
+    url: https://arxiv.org/abs/2608.24293
+description: >
+  <p>Kakao's video-tokenizer paper, accepted to ECCV 2026 and announced by the
+  company on 9 September. Conventional video VAEs compress at a fixed ratio
+  regardless of how much is happening in a clip; KATok is a transformer VAE
+  with an <strong>adaptive token selector</strong>, learned jointly with the
+  latent tokens, that scores each token's content-richness as a keep-or-drop
+  probability and discards the uninformative ones, so compression follows the
+  content. Because dropping tokens misaligns the spatial grid that diffusion
+  models expect, the paper adds cascaded and joint generation schemes to
+  restore alignment, and reports state-of-the-art compression ratios; Kakao's
+  release claims 3.2x faster generation and 6.9x less training compute for the
+  downstream generator.</p>
+tags:
+  - video
+  - generation
+  - efficiency
+  - research
+paper:
+  arxiv: "2608.24293"
+  venue: ECCV 2026

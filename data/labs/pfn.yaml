@@ -45,6 +45,14 @@ people:
     role: Co-founder & Chairman
     formerly: University of Tokyo (MSc)
 news:
+  - title: "PFN and Mitsubishi Heavy Industries Form a ¥10B Capital Alliance"
+    url: https://preferred.jp/en/news/pr20260916
+    source: Preferred Networks
+    date: 2026-09-16
+  - title: "Optuna v5.0 and Rustuna Released: Multivariate TPE by Default, Constraints API, Rust Core Up to 1000x Faster at 100K Trials"
+    url: https://preferred.jp/en/news/pr20260907
+    source: Preferred Networks
+    date: 2026-09-07
   - title: "Japan Picks Noetra (SoftBank/NEC/Sony/Honda) + AIST for National Physical-AI Foundation Model; PFN Seconding ~15 Engineers"
     url: https://www.japantimes.co.jp/business/2026/06/30/companies/physical-ai-meti-aid-model/
     source: Japan Times

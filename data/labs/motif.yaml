@@ -24,6 +24,11 @@ people:
   - name: Junghwan Lim
     role: CEO & Founder
     formerly: Moreh (Director of AI); Samsung Research; PUBG; PhD Oxford; BS KAIST
+news:
+  - title: "Motif 3 API Free Until September 29 as Motif Technologies Courts Developers After the Sovereign-Model Elimination"
+    url: https://www.aitimes.com/news/articleView.html?idxno=215401
+    source: AI Times
+    date: 2026-09-17
 tags:
   - open-weight
   - moe

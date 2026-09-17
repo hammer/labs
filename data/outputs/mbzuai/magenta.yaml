@@ -1,0 +1,28 @@
+name: Magenta
+slug: magenta
+lab: mbzuai
+type: paper
+date: 2026-09-10
+sources:
+  - label: "arXiv (Magenta: Closing the Loop Between Mathematical Reasoning and Lean Verification)"
+    url: https://arxiv.org/abs/2609.11319
+description: >
+  <p>A training-free agentic pipeline from MBZUAI's Institute of Foundation
+  Models with Edinburgh and Imperial that feeds Lean 4 signals back into
+  informal mathematical reasoning. Given a natural-language problem, Magenta
+  produces an answer, expresses it as a Lean statement, and constructs a
+  machine-checked proof; a statement judge checks that the formalisation
+  preserves the problem and an error-attribution judge routes failures back to
+  the reasoning. The headline is what it does for a small model: <a
+  href="/outputs/mbzuai/k2-horizon">K2-Horizon-7B</a> with Magenta reaches
+  <strong>100% on AIME 2025, AIME 2026, and HMMT February 2026</strong> (from
+  74.19%) and solves all six IMO 2026 problems, which the paper presents as the
+  smallest reasoner reported to do so, against 84.95% for the 375B K2 Horizon
+  alone. No code release is linked.</p>
+tags:
+  - reasoning
+  - agents
+  - research
+paper:
+  arxiv: "2609.11319"
+related: [k2-horizon]

@@ -1,0 +1,25 @@
+name: Sarashina Image
+slug: sarashina-image
+lab: sb-intuitions
+type: model
+date: 2026-09-04
+sources:
+  - label: SB Intuitions blog
+    url: https://www.sbintuitions.co.jp/blog/entry/2026/09/04/123517
+description: >
+  <p>SB Intuitions' first image-generation foundation model, described in a
+  4 September 2026 research post: a <strong>2.6B-parameter Unified Next-DiT
+  trained from scratch</strong> with flow matching, progressive resolution from
+  256 to 1024, and Flow-GRPO post-training, conditioned by the lab's own
+  Sarashina2.2-Vision-3B text encoder for Japanese-native prompting. Reported
+  results: OneIG 0.497 and UniGenBench 80.42 on long English prompts, ahead of
+  SDXL, FLUX.1-dev, and SD3.5-Large. Weights are not released.</p>
+tags:
+  - generation
+  - vision
+  - multimodal
+  - research
+model:
+  parameters: 2.6B
+  pretrained_from_scratch: true
+related: [sarashina2.2]

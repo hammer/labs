@@ -13,6 +13,12 @@ description: >
   Open-source hyperparameter optimization framework. 10K+ GitHub stars,
   1.43M+ monthly downloads, used in 16K+ applications. Define-by-run
   API, efficient sampling (TPE, CMA-ES), pruning of unpromising trials.
+  <p><strong>Optuna v5.0</strong> (7 September 2026) makes multivariate TPE with
+  the constant-liar heuristic and multi-objective TPE the defaults, adds
+  PED-ANOVA importance by default, a constraints API, and a q-batch
+  GPSampler, and ships <strong>Rustuna</strong>, a Rust core PFN reports at up to
+  1,000 times faster with about half the memory at 100,000 trials; the
+  package sees about 18.3 million downloads a month.</p>
 tags:
   - open-source
   - training

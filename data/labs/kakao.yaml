@@ -46,6 +46,14 @@ people:
   - name: Yunju Bak
     role: Pre-training Lead (Kanana paper lead author)
 news:
+  - title: "Standalone Kanana App to Shut Down October 15 as Kanana Moves Into KakaoTalk and KakaoMap; Roadmap Due at if(kakao)26"
+    url: https://www.aitimes.com/news/articleView.html?idxno=215291
+    source: AI Times
+    date: 2026-09-15
+  - title: "Kakao Announces KATok, an Adaptive Video Tokenizer Accepted to ECCV 2026 (3.2x Faster Generation, 6.9x Less Training Compute)"
+    url: https://arxiv.org/abs/2608.24293
+    source: arXiv
+    date: 2026-09-09
   - title: "Kakao Partners with Google DeepMind on SynthID for Kanana Models — First Asian Firm to Adopt"
     url: https://en.sedaily.com/technology/2026/05/20/kakao-becomes-first-asian-firm-to-adopt-googles-synthid
     source: Seoul Economic Daily

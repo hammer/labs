@@ -89,6 +89,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Shun_Kiyono1
 news:
+  - title: "Sarashina Image: 2.6B Unified Next-DiT Image Model Trained From Scratch With a Japanese-Native Text Encoder"
+    url: https://www.sbintuitions.co.jp/blog/entry/2026/09/04/123517
+    source: SB Intuitions
+    date: 2026-09-04
   - title: "SoftBank/NEC/Honda/Sony Form JV for Trillion-Parameter Physical AI Model; $6.3B Government Backing"
     url: https://asia.nikkei.com/business/technology/artificial-intelligence/japan-s-softbank-launches-unit-to-develop-homegrown-ai
     source: Nikkei Asia

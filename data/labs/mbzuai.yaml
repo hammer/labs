@@ -56,6 +56,11 @@ people:
     urls:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=wjBD1dkAAAAJ
+news:
+  - title: "Magenta: Lean-Verified Reasoning Loop Takes K2-Horizon-7B to 100% on AIME 2025/2026 and Solves All Six IMO 2026 Problems"
+    url: https://arxiv.org/abs/2609.11319
+    source: arXiv
+    date: 2026-09-10
 tags:
   - academic
   - open-weight
