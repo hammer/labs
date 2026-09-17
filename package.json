@@ -17,7 +17,8 @@
     "scan-aaii-mentions": "tsx scripts/scan-aaii-mentions.ts",
     "deploy": "astro build && wrangler pages deploy dist --project-name labindex",
     "cf-typegen": "wrangler types",
-    "test:changelog": "tsx tests/changelog-unit.ts"
+    "test:changelog": "tsx tests/changelog-unit.ts",
+    "test:aa": "tsx tests/aa-payload-unit.ts"
   },
   "devDependencies": {
     "playwright": "^1.60.0",

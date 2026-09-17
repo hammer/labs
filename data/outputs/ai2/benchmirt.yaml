@@ -1,0 +1,24 @@
+name: BenchMIRT
+slug: benchmirt
+lab: ai2
+type: paper
+date: 2026-09-01
+sources:
+  - label: Ai2 blog
+    url: https://allenai.org/blog/benchmirt
+  - label: GitHub
+    url: https://github.com/allenai/BenchMIRT
+description: >
+  <p>An item-response-theory audit of the benchmark ecosystem the index leans
+  on: Ai2 fits multidimensional IRT models to <strong>100 language models
+  across 16 benchmarks and about 34,000 items</strong>, recovering latent
+  ability factors rather than raw accuracies. The analysis separates a safety
+  factor from reasoning factors and shows which items carry information at the
+  frontier. Released 1 September 2026 as a blog post with code; no arXiv
+  identifier as of mid-September.</p>
+tags:
+  - evaluation
+  - benchmark
+  - research
+paper:
+  code_url: https://github.com/allenai/BenchMIRT

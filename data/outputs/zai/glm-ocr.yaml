@@ -1,0 +1,32 @@
+name: GLM-OCR
+slug: glm-ocr
+lab: zai
+type: model
+date: 2026-01-30
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/zai-org/GLM-OCR
+  - label: arXiv (GLM-OCR Technical Report)
+    url: https://arxiv.org/abs/2603.10910
+description: >
+  <p>Z.ai's compact document model, backfilled here: a <strong>0.9B
+  multimodal model</strong> pairing a 0.4B CogViT visual encoder with a 0.5B
+  GLM language decoder for real-world document understanding. It adds
+  multi-token prediction to escape the inefficiency of autoregressive decoding
+  on deterministic OCR, predicting several tokens per step with shared
+  parameters, and runs as a two-stage system in which PP-DocLayout-V3 performs
+  layout analysis before recognition. The March 2026 report puts it first on
+  OmniDocBench V1.5 at 94.62. MIT licence; the repository has passed 1.7
+  million downloads.</p>
+tags:
+  - multimodal
+  - vision
+  - open-weight
+  - efficiency
+model:
+  parameters: 0.9B
+  license: MIT
+paper:
+  arxiv: "2603.10910"
+  huggingface_url: https://huggingface.co/zai-org/GLM-OCR
+related: [glm-5v-turbo]

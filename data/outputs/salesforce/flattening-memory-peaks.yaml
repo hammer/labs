@@ -1,0 +1,27 @@
+name: Flattening Every Memory Peak in Long-Context MoE Training
+slug: flattening-memory-peaks
+lab: salesforce
+type: paper
+date: 2026-09-13
+sources:
+  - label: arXiv
+    url: https://arxiv.org/abs/2609.14306
+description: >
+  <p>Long-context or large-batch MoE training fails the moment any single
+  component's peak allocation exceeds device memory, so the target is every
+  peak at once. Salesforce identifies four peaks that common parallelism plans
+  leave unbounded, expert dispatch (with the routing matrix), the vocabulary
+  projection (tokens times vocabulary), gradient-checkpoint boundaries (depth
+  times sequence length), and optimiser state (parameter count), and notes that
+  which one fails first changes with model, context, and device count. The paper
+  bounds all four with schedules whose GPU working set is fixed at launch,
+  including a pipelined expert-parallel dispatch, and reports 1M-token context
+  training on a 667B model at 10.4 times the throughput of the FSDP2
+  baseline.</p>
+tags:
+  - infrastructure
+  - training
+  - moe
+  - research
+paper:
+  arxiv: "2609.14306"

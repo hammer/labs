@@ -1,0 +1,27 @@
+name: Hyperparameter Scaling Laws Across MoE Sparsity
+slug: moe-sparsity-hp-scaling-laws
+lab: ant-group
+type: paper
+date: 2026-09-08
+sources:
+  - label: arXiv
+    url: https://arxiv.org/abs/2609.08690
+description: >
+  <p>The Ling Team shows that conventional hyperparameter scaling laws break
+  for ultra-sparse mixture-of-experts models: the optimal learning rate and
+  batch size shift with the <strong>activation ratio</strong>, and neither total
+  nor active parameter count explains the shift alone. The evidence is
+  <strong>1,800 pretraining runs</strong> across six activated-parameter scales
+  and models up to 6B non-embedding parameters, about 20 trillion tokens and
+  200,000 H800 GPU-hour equivalents, from which the paper fits laws that
+  reconcile earlier conflicting findings and make sparsity an explicit input
+  to hyperparameter transfer. Follows the group's July efficient-MoE scaling
+  laws.</p>
+tags:
+  - scaling
+  - moe
+  - training
+  - research
+paper:
+  arxiv: "2609.08690"
+related: [moe-scaling-laws, ling-3.0]

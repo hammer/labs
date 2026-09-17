@@ -29,6 +29,7 @@
 import { readFileSync } from 'fs';
 import { globSync } from 'glob';
 import { parse } from 'yaml';
+import { parseAaScores } from "./aa-payload";
 
 const LEADERBOARD_URL = 'https://artificialanalysis.ai/leaderboards/models';
 const showAll = process.argv.includes('--all');
@@ -41,15 +42,8 @@ async function fetchAaScores(): Promise<Map<string, number>> {
   });
   if (!res.ok) throw new Error(`AA leaderboard fetch failed: ${res.status}`);
   const body = await res.text();
-  // Sentinel (2026-09-11): records now open with {"slug":"…","shortName"; the
-  // pre-Sep-2026 shape opened with {"id":uuid,"name":…,"shortName". Accept both.
-  const records = body.split(/(?=\{"slug":"[^"]+","shortName"|\{"id":"[0-9a-f-]{36}","name":"[^"]*","shortName")/);
-  const map = new Map<string, number>();
-  for (const r of records) {
-    const slug = r.match(/"slug":"([^"]+)"/)?.[1];
-    const ii = r.match(/"intelligenceIndex":([\d.]+)/)?.[1];
-    if (slug && ii && !map.has(slug)) map.set(slug, parseFloat(ii));
-  }
+  // Record sentinels live in scripts/aa-payload.ts (three shapes so far; see its header).
+  const map = parseAaScores(body);
   if (map.size < 300) throw new Error(`Parsed only ${map.size} records — sentinel drifted?`);
   return map;
 }

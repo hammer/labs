@@ -1,0 +1,24 @@
+name: Mixtures-of-Experts Overfit More to Repeated Data
+slug: moe-repeated-data
+lab: stanford
+type: paper
+date: 2026-09-10
+sources:
+  - label: "arXiv (Data Scarcity and Model Sparsity: Mixtures-of-Experts Overfit More to Repeated Data)"
+    url: https://arxiv.org/abs/2609.11917
+description: >
+  <p>With human-written text running out, repeating pretraining data is
+  standard practice, but the evidence for it comes from dense models. This
+  Stanford and University of Washington study varies repetition across single-
+  and multi-domain mixes and across MoE settings, expert count, and granularity,
+  and finds consistently, from 80M to 1B active (8.5B total) parameters, that
+  <strong>MoEs degrade faster under repetition</strong>, with the effect
+  growing with sparsity as set by total rather than active parameters. A direct
+  input to data-budget decisions for sparse frontier models.</p>
+tags:
+  - scaling
+  - moe
+  - training-data
+  - research
+paper:
+  arxiv: "2609.11917"

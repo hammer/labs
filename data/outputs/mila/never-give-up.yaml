@@ -1,0 +1,24 @@
+name: Never Give Up
+slug: never-give-up
+lab: [mila, ai2]
+type: paper
+date: 2026-09-11
+sources:
+  - label: arXiv (Learning to Solve Hard Problems in RL for LLMs by Never Giving Up)
+    url: https://arxiv.org/abs/2609.13443
+description: >
+  <p>Michael Noukhovitch, Hamish Ivison, and Nathan Lambert show that RL
+  post-training improves LLMs unevenly: large gains on problems the model can
+  already mostly solve, small gains on hard ones, a "Matthew effect" the authors
+  argue modern RL recipes worsen by spending rollouts on easy prompts.
+  <strong>Never Give Up</strong> is an adaptive sampling rule that keeps
+  generating for a problem until it finds a solution, reallocating compute
+  toward hard prompts, and lifts hard-problem performance without extra total
+  compute. Filed under the RL-scaling family as a compute-allocation axis.</p>
+tags:
+  - rl-scaling
+  - reinforcement-learning
+  - post-training
+  - research
+paper:
+  arxiv: "2609.13443"

@@ -109,6 +109,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=Pi89P8kAAAAJ
 news:
+  - title: "ZGCM-1: Zhongguancun Academy Releases a Fully Open 7B Model Pretrained From Scratch on 4.19T Tokens (MIT), With Pre-Training and Mid-Training Checkpoints"
+    url: https://arxiv.org/abs/2609.13356
+    source: arXiv
+    date: 2026-09-11
   - title: "Tao Qin Elected 2025 ACM Fellow"
     url: https://www.acm.org/media-center/2026/january/fellows-2025
     source: ACM

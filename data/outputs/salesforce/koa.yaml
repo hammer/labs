@@ -1,0 +1,41 @@
+name: Salesforce Koa
+slug: koa
+lab: salesforce
+type: model
+date: 2026-09-15
+sources:
+  - label: Salesforce press release
+    url: https://www.salesforce.com/news/press-releases/2026/09/15/koa-reasoning-model/
+  - label: "arXiv (Salesforce Koa: An Enterprise Language Model for Agentic Tool Use)"
+    url: https://arxiv.org/abs/2609.15066
+description: >
+  <p>Salesforce's first branded language model: an enterprise agentic model
+  built by post-training NVIDIA's open-weight <a
+  href="/outputs/nvidia/nemotron-3-super">Nemotron-3-Super-120B</a> with
+  supervised fine-tuning and GRPO reinforcement learning on public and
+  synthetic data only, with no customer data. The report's distinctive piece
+  is a simulation-to-reward pipeline that expands workflow specifications,
+  written in Agent Script for enterprise domains, into persona-conditioned
+  multi-turn tasks whose rewards are grounded in successful tool use for
+  data-dependent requests. Reported results: &tau;&sup2;-Bench 69.41, BFCL
+  66.63%, and 0.86 on Salesforce's CRM Bench against Claude Opus 4.8's 0.87,
+  with "3x fewer errors" on CRM actions. Weights are closed; Koa runs inside
+  Agentforce, in pilot from September 2026 with general availability planned
+  for winter 2026.</p>
+tags:
+  - agentic
+  - agents
+  - reinforcement-learning
+  - proprietary
+model:
+  architecture: moe
+  parameters: 120B
+  base_model: nemotron-3-super
+  license: Proprietary
+  benchmark_scores:
+    - benchmark: τ²-Bench
+      score: "69.41"
+    - benchmark: BFCL
+      score: "66.63%"
+paper:
+  arxiv: "2609.15066"

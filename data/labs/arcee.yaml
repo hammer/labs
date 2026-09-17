@@ -8,9 +8,9 @@ region: usa
 founded: "2023"
 type: private
 valuation:
-  amount: "$240M"
+  amount: "$1B+"
   type: private
-  date: "2024-07"
+  date: "2026-09"
 description: >
   <p><a href="https://www.arcee.ai">Arcee AI</a> is a San Francisco startup
   founded in 2023 by <strong>Mark McQuade</strong> (CEO), <strong>Brian
@@ -50,6 +50,10 @@ people:
     role: Chief of Frontier Research
     formerly: NASA; Apple; Creator of MergeKit
 news:
+  - title: "Arcee AI Raises a Series B Led by Vista, Cambium, and Emergence at a Valuation Above $1B; Says Its 2025 Lineup Including Trinity Large Was Built for ~$20M"
+    url: https://www.arcee.ai/blog/arcee-ai-raises-series-b-to-build-the-future-of-american-open-models
+    source: Arcee AI
+    date: 2026-09-16
   - title: "DOE Partners with Arcee to Build Genesis-Science-1 — a Trillion-Parameter-Class Open Model for Science (Genesis Mission)"
     url: https://www.arcee.ai/blog/genesis-science-1
     source: Arcee AI Blog

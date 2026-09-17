@@ -1,0 +1,26 @@
+name: DataFlex-RL
+slug: dataflex-rl
+lab: [peking, zgca]
+type: paper
+date: 2026-09-05
+sources:
+  - label: "arXiv (DataFlex-RL: An Evaluation Platform for RLVR Data Policies)"
+    url: https://arxiv.org/abs/2609.06107
+description: >
+  <p>A controlled study of the data policies that RLVR pipelines layer on
+  top of GRPO: which rollouts to keep, how to weight them, and which domains
+  to mix. Peking University and Zhongguancun Academy compare 13 configurations
+  across <strong>12 matched seeds</strong> on Qwen2.5-7B-Base over 12 math,
+  logic, and science benchmarks. Uniform GRPO adds 7.76 points of
+  domain-balanced accuracy over the base checkpoint, and none of the eight
+  rollout-selection or reweighting methods, nor the three adaptive domain
+  mixers, beats uniform sampling with a paired 95% confidence interval that
+  excludes zero. A negative result that bears on how much of the RL-scaling
+  literature survives seed variance.</p>
+tags:
+  - rl-scaling
+  - reinforcement-learning
+  - evaluation
+  - research
+paper:
+  arxiv: "2609.06107"

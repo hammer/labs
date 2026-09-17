@@ -1,0 +1,28 @@
+name: PUFFER
+slug: puffer
+lab: zyphra
+type: library
+date: 2026-09-01
+sources:
+  - label: Zyphra blog
+    url: https://www.zyphra.com/our-work/puffer
+  - label: "arXiv (PUFFER: Incremental Fuzzy Deduplication for Continuously Evolving Corpora)"
+    url: https://arxiv.org/abs/2608.28622
+description: >
+  <p>Zyphra's pretraining-data tool for the case where corpora grow through
+  successive, overlapping releases and each release must be deduplicated
+  against both itself and everything before it. PUFFER
+  (Provenance-aware Updatable Fuzzy Filtering for Evolving Repositories) is a
+  MinHash-LSH pipeline that stores each LSH band as immutable, dataset-tagged,
+  memory-mapped sorted segments, so historical band-key membership is exact
+  without RAM proportional to the corpus, and supports incremental ingestion,
+  bounded memory, deterministic retry, and dataset-scoped lifecycle control.
+  Zyphra reports deduplicating one billion documents in 1.75 hours. Apache 2.0;
+  blog post 1 September 2026, paper 29 July.</p>
+tags:
+  - infrastructure
+  - data
+  - training-data
+  - open-source
+paper:
+  arxiv: "2608.28622"

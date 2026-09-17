@@ -79,6 +79,14 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Heung-Yeung_Shum1
 news:
+  - title: "StepAudio 3 Realtime and StepAudio 3 Gen Technical Reports: Think-While-Speaking Duplex Audio LM and a Unified Discrete Audio Generator"
+    url: https://arxiv.org/abs/2609.14005
+    source: arXiv
+    date: 2026-09-12
+  - title: "StepAudio 3 Music Technical Report: MoE Planner Plus Flow-Matching DiT for Long-Form Music, Elo 1105 on the AA Music Arena Vocals Leaderboard"
+    url: https://arxiv.org/abs/2609.16034
+    source: arXiv
+    date: 2026-09-11
   - title: "StepFun Completes ~$2.5B Pre-IPO Round; ~$500M Hong Kong IPO Possible This Year"
     url: https://www.thestandard.com.hk/finance/article/331515/Stepfun-Chinas-AI-Six-Tigers-finishes-new-US25b-funding-round-for-HK-IPO
     source: The Standard

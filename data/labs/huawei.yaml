@@ -67,6 +67,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Zhenguo_Li1
 news:
+  - title: "Tabby: Noah's Ark Lab Releases a 145M Time-Series Foundation Model With Its Complete Open Pretraining Recipe"
+    url: https://arxiv.org/abs/2609.13956
+    source: arXiv
+    date: 2026-09-12
   - title: "Huawei's AI Chip Gains Ground as DeepSeek and Others Shift Away from Nvidia"
     url: https://www.ft.com/content/b82fa156-d1db-40e5-bce5-3c5f8f54069b
     source: Financial Times

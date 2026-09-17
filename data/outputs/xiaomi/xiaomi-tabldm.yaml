@@ -1,0 +1,32 @@
+name: Xiaomi-TabLDM
+slug: xiaomi-tabldm
+lab: xiaomi
+type: model
+date: 2026-09-03
+sources:
+  - label: "arXiv (Xiaomi-TabLDM: A Tabular Foundation Model Technical Report)"
+    url: https://arxiv.org/abs/2609.03880
+  - label: HuggingFace
+    url: https://huggingface.co/occams/Xiaomi-TabLDM
+description: >
+  <p>Xiaomi's tabular foundation model, an in-context learner for
+  classification and regression pretrained exclusively on synthetic data from
+  structural causal models, with dual-stream feature grouping, a sparse
+  mixture-of-experts backbone, and test-time compute scaling. The report ranks
+  it first on OpenML-CTR23 and second on regression across TALENT, TabArena,
+  and BCCO, and claims 82% less training time than TabFM at matched quality.
+  Apache 2.0; the parameter count is not stated. One of three Chinese tabular
+  foundation models in a fortnight alongside <a
+  href="/outputs/tsinghua/limix-2">LimiX-2</a> and Amazon's <a
+  href="/outputs/amazon/mitra-v2">Mitra-v2</a>.</p>
+tags:
+  - science
+  - research
+  - open-weight
+  - moe
+model:
+  architecture: moe
+  license: Apache 2.0
+paper:
+  arxiv: "2609.03880"
+  huggingface_url: https://huggingface.co/occams/Xiaomi-TabLDM

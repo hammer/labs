@@ -134,6 +134,26 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Xizhou_Zhu1
 news:
+  - title: "Intern-S2-397B Release Weights Published Under Apache 2.0, Succeeding the July Preview"
+    url: https://huggingface.co/internlm/Intern-S2-397B
+    source: Hugging Face
+    date: 2026-09-13
+  - title: "Atria Dawn Preview Released: Agentic Model Post-Trained From GLM-5.2 (744B MoE, MIT, 256K) With a 143-Author Paper on a Verifiable Experience Pipeline"
+    url: https://huggingface.co/internlm/Atria-Dawn-Preview
+    source: Hugging Face
+    date: 2026-09-11
+  - title: "NCP-ArchPreview: 8.9B Latent-Space Language Model Trained on 5.73T Tokens With Next Concept Prediction; Reaches OLMo-3-7B's Loss at 51% of the Tokens"
+    url: https://arxiv.org/abs/2609.10715
+    source: arXiv
+    date: 2026-09-09
+  - title: "SWE-Bench Pro Verified: OpenCompass Ships an Anti-Hacking, Task-Corrected Version of the Repository-Level Coding Benchmark"
+    url: https://arxiv.org/abs/2609.08149
+    source: arXiv
+    date: 2026-09-08
+  - title: "SciDocBench: Workflow-Centered Scientific-Document Benchmark (124 Expert Questions, 496 Instances) With SFT and RL Data"
+    url: https://arxiv.org/abs/2609.05141
+    source: arXiv
+    date: 2026-09-04
   - title: "Profile: Shanghai AI Lab: Driving both AI safety and development"
     url: https://merics.org/en/comment/profile-shanghai-ai-lab-driving-both-ai-safety-and-development
     source: MERICS

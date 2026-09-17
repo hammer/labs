@@ -1,0 +1,28 @@
+name: Post-Training Language Models for Gold-Medal Performance in Coding Competitions
+slug: nemotron-coding-competitions
+lab: nvidia
+type: paper
+date: 2026-09-02
+sources:
+  - label: arXiv
+    url: https://arxiv.org/abs/2609.02849
+description: >
+  <p>The coding companion to NVIDIA's <a
+  href="/outputs/nvidia/nemotron-imo-gold">IMO gold</a> work: an end-to-end
+  specialisation pipeline of problem curation, synthetic reasoning traces,
+  SFT, and RL over 22,000 curated problems that produces
+  <strong>Nemotron-3-Nano-CC</strong> (30B-A3B, SFT plus RL) and
+  <strong>Nemotron-3-Ultra-CC</strong> (550B-A55B, SFT only), plus GenCorrect,
+  a feedback-driven test-time strategy that generates, evaluates, and refines
+  diverse solutions. On IOI 2025 Nano-CC rises from 130 to 291 points after the
+  pipeline, and on a prospective IOI 2026 evaluation the system reaches 535.4 of
+  600 against a gold threshold of 361. The Ultra-CC checkpoint is described as
+  to be released; no repositories had appeared by 17 September 2026.</p>
+tags:
+  - coding
+  - reasoning
+  - post-training
+  - research
+paper:
+  arxiv: "2609.02849"
+related: [nemotron-imo-gold, nemotron-3-nano, nemotron-3-ultra]

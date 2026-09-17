@@ -1,0 +1,30 @@
+name: Gander
+slug: gander
+lab: tencent
+type: model
+date: 2026-09-08
+sources:
+  - label: arXiv (Multimodal Duplex Interaction Agent)
+    url: https://arxiv.org/abs/2609.08977
+description: >
+  <p>A native multimodal full-duplex interaction model from Tencent's Hunyuan
+  Speech Team (with NTU), built on OpenBMB's <a
+  href="/outputs/openbmb/minicpm-o4.5">MiniCPM-o 4.5</a> and adapted for
+  real-time use with an asynchronous agent loop. Instead of turn-taking, Gander
+  streams video, speech, and text continuously: the user can interrupt, and the
+  model can volunteer intermediate feedback or ask follow-up questions
+  mid-task. Its <strong>Cerebellum&ndash;Brain</strong> design splits a
+  real-time interaction module from a slower reasoning module, so complex
+  workflow agents run behind a responsive conversational front. Released 8
+  September 2026 as a 9B model with code on GitHub.</p>
+tags:
+  - multimodal
+  - speech
+  - agentic
+  - open-weight
+model:
+  parameters: 9B
+  base_model: minicpm-o4.5
+paper:
+  arxiv: "2609.08977"
+related: [minicpm-o4.5, auk]

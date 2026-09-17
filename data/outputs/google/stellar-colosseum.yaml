@@ -1,0 +1,34 @@
+name: Stellar Colosseum
+slug: stellar-colosseum
+lab: google
+type: paper
+date: 2026-09-14
+sources:
+  - label: "arXiv (Stellar Colosseum: A Many-Agent Harness for Long-Horizon Research in Mathematics and Theoretical Computer Science)"
+    url: https://arxiv.org/abs/2609.15983
+  - label: Antigravity blog (Teamwork)
+    url: https://antigravity.google/blog/teamwork-when-ai-becomes-a-research-partner
+description: >
+  <p>Google Research's model-agnostic <strong>many-agent harness</strong> for
+  long-horizon research in mathematics and theoretical computer science, by
+  Vahab Mirrokni, Yuan Deng, Jieming Mao, and Song Zuo with David Woodruff and
+  Honghao Lin of CMU. Rather than asking a model for a proof, Colosseum
+  explores alternative strategies first, uses a readiness gate to decide when a
+  route is mature enough to decompose, represents the plan as interdependent
+  section-level subproblems, generates and attacks candidates in parallel, and
+  routes verifier findings back to the affected part of the argument. Running
+  on Gemini 3.1 Pro and 3.7 Flash it reaches <strong>71% on TCS-Bench</strong>
+  (300 research-level tasks), solves 218 of 222 Codeforces problems, and
+  produced five results on open problems that have appeared at FOCS and in
+  JMLR. It is the system behind Antigravity's "Teamwork" preview of 27 August
+  2026, whose launch example was a Lean-verified proof of Knuth's Cycles
+  Conjecture. Filed for the harness line alongside <a
+  href="/outputs/google/antigravity">Antigravity</a>.</p>
+tags:
+  - agents
+  - agentic
+  - reasoning
+  - research
+paper:
+  arxiv: "2609.15983"
+related: [antigravity]

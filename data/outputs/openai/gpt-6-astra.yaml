@@ -89,7 +89,7 @@ model:
     - name: GPT-6 Astra (xhigh / high / medium / low)
       notes: "AAII 53 / 51 / 50 / 46 (v4.3) by reasoning effort"
     - name: GPT-6 Astra (non-reasoning)
-      notes: "AAII 45 (v4.3)"
+      notes: "AAII 45 at launch (v4.3, 3 Sep 2026 listing; AA has since delisted the non-reasoning page)"
     - name: GPT-6 Astra Pro
       notes: "Pro, Business, and Enterprise plans; listed on OpenRouter at the same $10/$50; not yet scored by AA"
   benchmark_scores:

@@ -66,6 +66,7 @@ After data changes, run:
 
 ```bash
 npm run validate
+npm run test:aa          # AA payload parser fixtures (three sentinel shapes); a 1-record sync means a new shape — see scripts/aa-payload.ts
 npm run test:changelog   # renders the real /whats-new diff for recent commits; fails on any "{…}" / [object Object]
 npm run build
 ```

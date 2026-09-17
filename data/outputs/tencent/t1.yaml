@@ -1,0 +1,45 @@
+name: T1
+slug: t1
+lab: tencent
+type: model
+date: 2026-09-10
+sources:
+  - label: "arXiv (T1: Terminal Agent Reinforcement Learning for Long-Horizon Tasks)"
+    url: https://arxiv.org/abs/2609.11042
+description: >
+  <p>A <strong>122B-parameter MoE terminal agent</strong> from Tencent's Hy
+  Foundation Model Frontier team (with the National University of Singapore,
+  Georgia, Indiana, and Maryland), obtained by post-training Alibaba's <a
+  href="/outputs/alibaba/qwen3.5">Qwen3.5-122B-A10B</a> purely with
+  reinforcement learning on executed outcomes: the agent operates a real shell in
+  a cloud sandbox for 300-plus tool-call turns per task and is rewarded by each
+  task's own verifier. The recipe is the contribution: an aggressive warm start
+  with a dense process reward that scores trajectories by the number of passing
+  verifiers; a stabilisation stack for sparse agentic RL that trains on the
+  exact sampled token identifiers with drift repair at turn boundaries and
+  replays the sampler's per-token expert routing during training; and a fully
+  out-of-distribution corpus of isolated seeds and synthesised tasks disjoint
+  from Terminal-Bench 2.1.</p>
+
+  <p>On Terminal-Bench 2.1 under a fixed harness the pipeline lifts the base
+  model from 43.8% to <strong>64.0%</strong>, which the paper places above
+  GPT-5.4 (54.8%), DeepSeek-V4-Flash (56.9%), and Claude Opus 4.6 (63.8%) and
+  close to Claude Opus 4.7 (66.1%), the best result in its size band. The paper
+  does not release weights as of mid-September 2026.</p>
+tags:
+  - agentic
+  - agents
+  - reinforcement-learning
+  - coding
+  - research
+model:
+  architecture: moe
+  parameters: 122B
+  active_parameters: 10B
+  base_model: qwen3.5
+  benchmark_scores:
+    - benchmark: Terminal-Bench 2.1
+      score: "64.0%"
+paper:
+  arxiv: "2609.11042"
+related: [environment-evolution-terminal-agents]

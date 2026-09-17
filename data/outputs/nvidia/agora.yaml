@@ -1,0 +1,27 @@
+name: Agora
+slug: agora
+lab: nvidia
+type: paper
+date: 2026-09-16
+sources:
+  - label: "arXiv (Agora: Git as Shared Memory for Collective AutoResearch)"
+    url: https://arxiv.org/abs/2609.18094
+description: >
+  <p>Autonomous research loops let one coding agent improve a training setup
+  unattended, but running several means each starts from scratch and
+  duplicates the search. Agora, from NVIDIA's Jan Kautz and Yi Dong's group,
+  makes the research record itself the shared memory: an <strong>append-only
+  DAG stored in Git</strong> where every result, insight, hypothesis,
+  verification, and report is an immutable commit whose parents say what it
+  builds on, so any claim can be checked out and rerun. A derived index exposes
+  the frontier, neglected branches, and each claim's verification status, and a
+  diversity-aware selection rule keeps the collective from collapsing onto one
+  line. The paper reports 13 agents over 12 days producing 165 verified
+  claims.</p>
+tags:
+  - agents
+  - agentic
+  - infrastructure
+  - research
+paper:
+  arxiv: "2609.18094"

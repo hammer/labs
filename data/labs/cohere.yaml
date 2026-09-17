@@ -96,10 +96,18 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Sara_Hooker1
 news:
+  - title: "Cohere and Aleph Alpha Sign Definitive Business-Combination Agreement: Dual HQ Berlin and Toronto, 1,000+ Staff, Close Expected Later in 2026"
+    url: https://cohere.com/blog/cohere-and-aleph-alpha-sign-agreement
+    source: Cohere
+    date: 2026-09-16
   - title: "Cohere in Advanced Talks to Raise $2–3B at a $20B Valuation (Globe and Mail); Series E Not Yet Finalized"
     url: https://www.pymnts.com/startups/2026/ai-startup-cohere-targets-20-billion-dollar-valuation-funding-round
     source: PYMNTS
     date: 2026-09-11
+  - title: "North Small Translate 1.0: Open-Weight 218B-A25B Translation Model on the Command A Plus Base, WMT26 83.60 (CC-BY-NC-4.0)"
+    url: https://cohere.com/blog/north-small-translate
+    source: Cohere
+    date: 2026-09-10
   - title: "Bell, Cohere, Hypertec and BUZZ HPC Sign ~$220M Canadian Sovereign-AI Compute Deal (2,304 Grace Blackwell GPUs)"
     url: https://www.newswire.ca/news-releases/bell-ai-fabric-cohere-hypertec-and-buzz-hpc-announce-landmark-deal-to-advance-sovereign-ai-in-canada-804262049.html
     source: Newswire (Bell/Cohere PR)

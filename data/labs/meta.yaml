@@ -74,6 +74,14 @@ people:
     role: VP, Head of GenAI
     formerly: Apple (16 years)
 news:
+  - title: "Meta Introduces Muse, a Personal AI Agent Powered by Muse Spark 1.3 With a 'Muse Secure VM' and Sentinel Egress Agent"
+    url: https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/
+    source: Meta
+    date: 2026-09-08
+  - title: "Muse Voice Transcribe: Meta's First Muse-Family Audio Model, Streaming ASR With Diarization in 70+ Languages"
+    url: https://research.meta.ai/blog/introducing-muse-voice-transcribe
+    source: Meta AI
+    date: 2026-09-01
   - title: "Meta's 'Iris' MTIA Chip Enters Production in September (Broadcom Co-Design, TSMC), Aiming to Double Compute"
     url: https://www.cnbc.com/2026/07/09/meta-to-put-ai-chip-into-production-in-september-report.html
     source: CNBC/Reuters

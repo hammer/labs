@@ -1,0 +1,35 @@
+name: NCP-ArchPreview
+slug: ncp-archpreview
+lab: shanghai-ai-lab
+type: model
+date: 2026-09-09
+sources:
+  - label: "arXiv (NCP-ArchPreview Technical Report: Moving towards Latent Space Language Models through Next Concept Prediction)"
+    url: https://arxiv.org/abs/2609.10715
+  - label: HuggingFace collection
+    url: https://huggingface.co/collections/ArchSpace-Collection/ncp-archpreview
+description: >
+  <p>A latent-space language model from the Intern-NCP Team (Shanghai AI Lab
+  with SJTU's LUMIA lab) that trains on <strong>Next Concept Prediction</strong>
+  alongside ordinary next-token prediction. The model builds a
+  product-quantized concept vocabulary directly from its own hidden states,
+  predicts future multi-token concepts with a dedicated Concept Module, and
+  feeds those predictions back to guide token generation, with both objectives
+  trained end to end. At <strong>8.9B parameters on 5.73T Dolma-3 tokens</strong>
+  the report calls it the largest latent-space LM demonstrated so far, and
+  reports that it reaches OLMo-3-7B's final pretraining loss with 51.3% of the
+  tokens, then outperforms it after full pretraining (a 2.45-point macro-average
+  gain, 5.99 on GSM8K). Released with stage-1 checkpoints every 100K steps,
+  drafters, and the final stage-1 and stage-2 weights.</p>
+tags:
+  - architecture
+  - research
+  - open-weight
+  - foundational
+model:
+  parameters: 8.9B
+  training_tokens: 5.73T
+  pretrained_from_scratch: true
+paper:
+  arxiv: "2609.10715"
+related: [intern-s2-397b]

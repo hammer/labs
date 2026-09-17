@@ -1,0 +1,56 @@
+name: Agnes 3.0 Flash
+slug: agnes-3.0-flash
+lab: sapiens-ai
+type: model
+date: 2026-09-11
+sources:
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/agnes-3-0-flash
+  - label: HuggingFace (Agnes-3.0-Flash Preview, open weights)
+    url: https://huggingface.co/Agnes-AI/Agnes-3.0-Flash
+description: >
+  <p>Sapiens AI's third-generation Flash model ships in two forms that the
+  model card is careful to separate. The <strong>API model</strong> is a
+  proprietary reasoning model with a <strong>1M-token context</strong>, priced
+  at $0.05 per million input tokens and $0.15 per million output; Artificial
+  Analysis lists it from 11 September 2026 and scores it <strong>36 on
+  Intelligence Index v4.3</strong>, the highest of any Sapiens model and one
+  point above the <a href="/outputs/sapiens-ai/agnes-2.5-pro">Agnes 2.5 Pro
+  Beta</a> checkpoint. The <strong>Agnes-3.0-Flash Preview</strong> is an
+  earlier open-weight checkpoint released the same day under Apache 2.0: a
+  33B dense multimodal model (text, image, and video input) with a 262,144-token
+  context, adjustable reasoning effort, and tool calling. The card states that
+  the Preview is a different checkpoint and configuration from the API model and
+  that the AA result should not be attributed to the open weights.</p>
+
+  <p><em>Provenance:</em> Sapiens does not name a base model. The Preview's
+  config.json reads hidden size 5120, 24 query and 4 KV heads, intermediate size
+  17,408, a 248,320-token vocabulary, and a 3:1 pattern of delta-attention to
+  global-attention layers, which matches Qwen3.5-27B exactly except for depth
+  (72 layers against 64). Together with the founder's earlier description of
+  post-training from Qwen and DeepSeek checkpoints (see <a
+  href="/outputs/sapiens-ai/agnes-2.5-pro">Agnes 2.5 Pro</a>), the entry is
+  flagged as not pretrained from scratch; the shape match is evidence of a
+  depth-extended derivative, not proof.</p>
+tags:
+  - reasoning
+  - multimodal
+  - open-weight
+  - agentic
+model:
+  architecture: dense
+  # Preview open-weight checkpoint; the API model's size is undisclosed.
+  parameters: "33B"
+  context_window: 1000000
+  # Base undisclosed; config matches Qwen3.5-27B plus eight layers (see description).
+  pretrained_from_scratch: false
+  intelligence_index: 36
+  intelligence_index_version: "AA v4.3"
+  license: "Apache 2.0 (Preview weights); API model proprietary"
+  variants:
+    - name: Agnes 3.0 Flash (API)
+      notes: "Proprietary reasoning model, 1M context, $0.05/$0.15 per million tokens; AA Intelligence Index v4.3: 36 (listed 11 Sep 2026)."
+    - name: Agnes-3.0-Flash Preview (open weights)
+      parameters: 33B
+      notes: "Apache 2.0 checkpoint on HuggingFace (11 Sep 2026): 72 layers, hidden 5120, 262,144 context, image and video input; not the checkpoint AA scored."
+related: [agnes-2.5-pro, agnes-2.5-flash-base]

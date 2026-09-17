@@ -1,28 +1,49 @@
-name: Intern-S2-Preview-397B
+name: Intern-S2-397B
 slug: intern-s2-397b
 lab: shanghai-ai-lab
 type: model
 date: 2026-07-16
 sources:
-  - label: HuggingFace
+  - label: HuggingFace (Intern-S2-397B, release)
+    url: https://huggingface.co/internlm/Intern-S2-397B
+  - label: HuggingFace (Intern-S2-Preview-397B, July preview)
     url: https://huggingface.co/internlm/Intern-S2-Preview-397B
 description: >
   <p>The full-scale sibling to the efficient 36B
   <a href="/outputs/shanghai-ai-lab/intern-s2-preview">Intern-S2-Preview</a>:
-  a <strong>403B dense</strong> multimodal scientific foundation model
+  a <strong>397B-A17B MoE</strong> multimodal scientific foundation model
   (image + text + time-series), RL-trained across 20+ scientific domains
   with capabilities including biomolecular design and materials
   generation. 256K text context / 64K multimodal; BF16 with an FP8
   sibling. Shanghai AI Lab's heavyweight AI-for-science model, staged for
   WAIC.</p>
+
+  <p>The non-preview <strong>Intern-S2-397B</strong> weights shipped on 13
+  September 2026 under Apache 2.0, described by the lab as its most capable
+  multimodal foundation model for scientific intelligence and long-horizon
+  agents: visual pre-training directly on raw pages of scientific literature,
+  jointly scaled reinforcement-learning tasks across more than 20 scientific
+  domains, and black-box agentic RL in large sandboxed environments, evaluated
+  with OpenCompass, VLMEvalKit, and AgentCompass. Provenance: the config is
+  Qwen3.5-397B-A17B's (60 layers, 512 experts, 10 active) with an extended
+  vocabulary, so the entry is a continued-pretraining derivative rather than a
+  from-scratch model.</p>
 tags:
   - frontier
   - science
   - multimodal
   - open-weight
 model:
-  architecture: dense
-  parameters: "403B"
+  # Both the July preview and the September release carry Qwen3.5-397B-A17B's
+  # geometry (60 layers, hidden 4096, 512 experts, 10 active, model_type
+  # qwen3_5_moe) with the vocabulary extended from 248,320 to 251,392; an
+  # earlier revision of this entry recorded it as 403B dense.
+  architecture: moe
+  parameters: "397B"
+  active_parameters: "17B"
+  base_model: qwen3.5
+  num_experts: 512
+  top_k: 10
   context_window: 262144
 related:
   - intern-s2-preview

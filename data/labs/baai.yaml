@@ -134,6 +134,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Shitao_Xiao1
 news:
+  - title: "Repo-To-Skill (DisCo): BAAI's Skill-Distillation Layer for ML Research Agents Tops the Week's HuggingFace Papers"
+    url: https://arxiv.org/abs/2609.02749
+    source: arXiv
+    date: 2026-09-02
   - title: "BAAI Conference Unveils 'Wujie' World-Model Suite: Physis-v0.1, RoboBrain Orca, Brainμ 1.0 Neuroscience FM, OpenComplex2.5 (Announced, Artifacts Pending)"
     url: https://hub.baai.ac.cn/view/55509
     source: BAAI

@@ -1,0 +1,34 @@
+name: Occamy-1.0
+slug: occamy-1.0
+lab: alibaba
+type: model
+date: 2026-09-10
+sources:
+  - label: "arXiv (Occamy-1.0: Open Pareto-frontier 35B Intelligence for Co-work)"
+    url: https://arxiv.org/abs/2609.11977
+  - label: GitHub
+    url: https://github.com/Accio-Lab/occamy
+description: >
+  <p>Alibaba's Accio team argues that most steps in everyday agent work are
+  state tracking, coordination, recovery, and follow-through rather than
+  frontier reasoning, so a co-work model should be judged on cost and latency
+  over a whole episode. Occamy-1.0 is their answer: a <strong>35B-A3B
+  model obtained by further training the post-trained Qwen3.6-35B-A3B
+  checkpoint</strong> on execution-grounded data and environments, with
+  replayable long-horizon trajectories captured across several harnesses and
+  staged post-training. The 43-author report positions it on the Pareto
+  frontier of capability against cost for workflow execution.</p>
+tags:
+  - agentic
+  - agents
+  - efficiency
+  - open-weight
+model:
+  architecture: moe
+  parameters: 35B
+  active_parameters: 3B
+  base_model: qwen3.6-open
+paper:
+  arxiv: "2609.11977"
+  code_url: https://github.com/Accio-Lab/occamy
+related: [qwen3.6-open]

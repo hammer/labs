@@ -1,0 +1,30 @@
+name: Tabby
+slug: tabby
+lab: huawei
+type: model
+date: 2026-09-12
+sources:
+  - label: "arXiv (Tabby: An Open Pretraining Recipe for Time Series Foundation Models)"
+    url: https://arxiv.org/abs/2609.13956
+  - label: GitHub (huawei-noah/trustworthyAI)
+    url: https://github.com/huawei-noah/trustworthyAI
+description: >
+  <p>A rare fully open scientific foundation model from Huawei's Noah's Ark
+  Lab: a <strong>145M-parameter encoder-only patch Transformer</strong> for
+  long-context probabilistic time series, with a context of up to 8,192
+  observations, released together with the complete recipe that built it. The
+  contribution is in the data and training procedure: a corpus combining
+  GIFT-Eval-Pretrain+ and BLAST with synthetic series from KernelSynth and
+  CauKerV2, an online generator that composes dynamics through randomly sampled
+  structural causal models, plus a progressive convergence schedule that yields
+  reusable intermediate checkpoints and a deep quantile objective. It covers
+  forecasting, classification, and anomaly detection.</p>
+tags:
+  - science
+  - research
+  - open-weight
+model:
+  parameters: 145M
+paper:
+  arxiv: "2609.13956"
+  code_url: https://github.com/huawei-noah/trustworthyAI

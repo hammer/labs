@@ -1,0 +1,46 @@
+name: North Small Translate 1.0
+slug: north-small-translate
+lab: cohere
+type: model
+date: 2026-09-10
+sources:
+  - label: Cohere blog
+    url: https://cohere.com/blog/north-small-translate
+  - label: HuggingFace
+    url: https://huggingface.co/CohereLabs/North-Small-Translate-1.0
+  - label: "arXiv (North Small Translate: Advanced Cost-Effective Translation)"
+    url: https://arxiv.org/abs/2609.13916
+description: >
+  <p>Cohere's open-weight translation model and the largest open Cohere MoE
+  to date: the <a href="/outputs/cohere/command-a-plus">Command A Plus</a>
+  foundation of <strong>218B total and 25B active parameters</strong> (128
+  experts, 8 active plus a shared expert), specialised for 50 languages with
+  16K input and output. The report describes difficulty sampling to select
+  hard documents and a five-step protocol of supervised fine-tuning, DPO, and
+  online reinforcement learning, with throughput prioritised through a
+  non-reasoning base and optional agentic behaviour for quality gains. On WMT26
+  it scores <strong>83.60</strong> (84.36 in agentic mode) against DeepL 81.37,
+  Qwen3.5-397B 81.56, and Gemma 4 31B 79.46. Released 10 September 2026 under
+  CC-BY-NC-4.0 and served as <code>north-small-translate-1-0</code>; authors
+  include Tom Kocmi, Phil Blunsom, and Aidan Gomez.</p>
+tags:
+  - multilingual
+  - open-weight
+  - moe
+  - nlp
+model:
+  architecture: moe
+  parameters: 218B
+  active_parameters: 25B
+  base_model: command-a-plus
+  num_experts: 128
+  top_k: 8
+  context_window: 16384
+  license: CC-BY-NC-4.0
+  benchmark_scores:
+    - benchmark: WMT26
+      score: "83.60"
+paper:
+  arxiv: "2609.13916"
+  huggingface_url: https://huggingface.co/CohereLabs/North-Small-Translate-1.0
+related: [command-a-plus, north-mini-code]

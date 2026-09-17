@@ -71,6 +71,10 @@ people:
     role: Co-founder (1968-2023)
     formerly: Professor at CUHK; Founder of CUHK Multimedia Lab
 news:
+  - title: "SenseNova-U1.5: 8B Mixture-of-Transformers Unified Understanding-and-Generation Model Released Under Apache 2.0 With a 65-Author Report"
+    url: https://arxiv.org/abs/2609.11929
+    source: arXiv
+    date: 2026-09-10
   - title: "SenseTime Is Running Its New Model on Chinese Chips"
     url: https://www.wired.com/story/chinese-ai-giant-sensetime-is-running-its-new-model-on-chinese-chips/
     source: WIRED

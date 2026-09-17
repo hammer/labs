@@ -1,0 +1,27 @@
+name: Mitra-v2
+slug: mitra-v2
+lab: amazon
+type: model
+date: 2026-09-03
+sources:
+  - label: arXiv (Mitra-v2 Technical Report)
+    url: https://arxiv.org/abs/2609.04540
+  - label: HuggingFace (autogluon)
+    url: https://huggingface.co/autogluon
+description: >
+  <p>Amazon's tabular foundation model for classification and regression,
+  trained <strong>only on synthetic data</strong> from a pretraining
+  distribution far larger and more diverse than Mitra-v1's. A small 2D
+  Transformer backbone handles longer contexts and wider feature spaces, and
+  the report evaluates on more than 300 real-world datasets across TabArena and
+  TALENT under two protocols, claiming state of the art on the full TabArena
+  benchmark for problems from credit-risk scoring and clinical prediction to
+  equipment failure and house prices. Released 3 September 2026 with weights
+  under the AutoGluon organisation.</p>
+tags:
+  - science
+  - research
+  - open-weight
+paper:
+  arxiv: "2609.04540"
+related: [chronos-2]

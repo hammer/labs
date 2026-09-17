@@ -99,6 +99,14 @@ people:
     description: >
       <p>Distinguished Scientist and Director of <strong>ARC Lab</strong> (Applied Research Center) at Tencent. Leads one of China&rsquo;s most prolific open-source research groups, releasing the SEED multimodal family, YOLO-World, Open-MAGVIT2, and 80+ GitHub repos. Before the March 2026 restructuring, ARC Lab operated as a semi-independent research arm.</p>
 news:
+  - title: "T1: Tencent Hy Frontier Team Trains a 122B MoE Terminal Agent Purely With RL on Qwen3.5-122B-A10B, Reaching 64.0% on Terminal-Bench 2.1"
+    url: https://arxiv.org/abs/2609.11042
+    source: arXiv
+    date: 2026-09-10
+  - title: "Gander: Hunyuan Speech Team's Full-Duplex Multimodal Interaction Agent Built on MiniCPM-o 4.5"
+    url: https://arxiv.org/abs/2609.08977
+    source: arXiv
+    date: 2026-09-08
   - title: "Tencent Releases and Open-Sources Tencent Hy4 preview"
     url: https://www.tencent.com/tencent-releases-and-open-sources-tencent-hy4-preview/
     source: Tencent

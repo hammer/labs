@@ -85,6 +85,14 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Luca_Soldaini1
 news:
+  - title: "ACE2S-SHiELD+ Climate Emulator Weights Released (Apache 2.0), Trained to Separate SST and CO2 Forcing"
+    url: https://huggingface.co/allenai/ACE2S-SHiELD-plus
+    source: Hugging Face
+    date: 2026-09-10
+  - title: "BenchMIRT: Item-Response-Theory Audit of 100 LLMs Across 16 Benchmarks and 34K Items"
+    url: https://allenai.org/blog/benchmirt
+    source: Ai2
+    date: 2026-09-01
   - title: "OMAI Compute Cluster Goes Live — $152M NSF + Blackwell-Ultra Infrastructure for Open Science AI"
     url: https://allenai.org/blog/omai-compute-now-live
     source: Ai2

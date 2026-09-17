@@ -46,6 +46,7 @@
 
 import { readFileSync, writeFileSync } from 'fs';
 import { globSync } from 'glob';
+import { parseAaScores } from "./aa-payload";
 
 const LEADERBOARD_URL = 'https://artificialanalysis.ai/leaderboards/models';
 const AAII_VERSION = 'AA v4.3';
@@ -66,15 +67,8 @@ async function fetchAaiiDataset(): Promise<Map<string, number>> {
   // Model-record sentinel (verified June 2026): id+name+shortName. Splitting
   // on bare {"id":uuid,"name" also matches nested creator objects and
   // misattributes slugs to neighboring records.
-  // Sentinel (2026-09-11): records now open with {"slug":"…","shortName"; the
-  // pre-Sep-2026 shape opened with {"id":uuid,"name":…,"shortName". Accept both.
-  const records = body.split(/(?=\{"slug":"[^"]+","shortName"|\{"id":"[0-9a-f-]{36}","name":"[^"]*","shortName")/);
-  const map = new Map<string, number>();
-  for (const r of records) {
-    const slug = r.match(/"slug":"([^"]+)"/)?.[1];
-    const ii = r.match(/"intelligenceIndex":([\d.]+)/)?.[1];
-    if (slug && ii && !map.has(slug)) map.set(slug, parseFloat(ii));
-  }
+  // Record sentinels live in scripts/aa-payload.ts (three shapes so far; see its header).
+  const map = parseAaScores(body);
   // CAP WARNING: this leaderboard payload is paginated — it carries only the
   // top ~500 models. Low-ranked models AA *does* score (e.g. olmo-3-1-32b-think
   // = 8) are simply absent here, so a "not on leaderboard" slug does NOT mean

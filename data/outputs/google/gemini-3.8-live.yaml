@@ -1,0 +1,35 @@
+name: Gemini 3.8 Live
+slug: gemini-3.8-live
+lab: google
+type: model
+date: 2026-09-15
+sources:
+  - label: Google blog
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/
+description: >
+  <p>Google's native audio-to-audio models of the 3.8 generation, released
+  15 September 2026 as two API models: <strong>Gemini 3.8 Live</strong>
+  (<code>gemini-3.8-live</code>) and <strong>Gemini 3.8 Live Extended
+  Thinking</strong> (<code>gemini-3.8-live-extended-thinking</code>). Both
+  speak 97 languages with mid-conversation switching, make asynchronous tool
+  calls while continuing to talk, and watermark their audio with SynthID.
+  Google reports 68.6% on &tau;-Voice and 97.7% on Big Bench Audio. Pricing is
+  $3.00 per million audio input tokens and $12.00 per million audio output, or
+  $0.75 and $4.50 for text. No parameter count or context length is published.
+  On the Artificial Analysis Speech-to-Speech Index the Extended Thinking model
+  scores <strong>82.6, first place</strong>, and Live 76.0, ahead of OpenAI's
+  GPT-Live-1 at 81.5; neither has an Intelligence Index page.</p>
+tags:
+  - audio
+  - speech
+  - multimodal
+  - proprietary
+  - agentic
+model:
+  license: Proprietary (API)
+  variants:
+    - name: Gemini 3.8 Live Extended Thinking
+      notes: "AA Speech-to-Speech Index 82.6 (#1, Sep 2026)."
+    - name: Gemini 3.8 Live
+      notes: "AA Speech-to-Speech Index 76.0."
+related: [gemini-3.8-flash]

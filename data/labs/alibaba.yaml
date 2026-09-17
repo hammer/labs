@@ -125,6 +125,14 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=xF5VrokAAAAJ
 news:
+  - title: "Occamy-1.0: Alibaba's Accio Team Releases a Cost-Efficient 35B-A3B Co-Work Model Further Trained From Qwen3.6-35B-A3B"
+    url: https://arxiv.org/abs/2609.11977
+    source: arXiv
+    date: 2026-09-10
+  - title: "Qwen-Audio-3.0-ASR Technical Report: MoE LLM-Based Production ASR Across 30 Languages and 16 Chinese Dialects, With a Streaming Variant"
+    url: https://arxiv.org/abs/2609.07549
+    source: arXiv
+    date: 2026-09-07
   - title: "Qwen3.8-Max-0902 Snapshot Ships: Deeper Coding and Multi-Tool Agent Orchestration on the Same 2.4T MoE at Unchanged $2/$6; qwen3.8-max Auto-Routes to It From Sep 5"
     url: https://www.alibabacloud.com/en/notice/model_studio_update_notice_for_qwen38max_models_863
     source: Alibaba Cloud Model Studio

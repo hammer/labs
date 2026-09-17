@@ -1,0 +1,41 @@
+name: Claude Haiku 4.5
+slug: claude-4.5-haiku
+lab: anthropic
+type: model
+date: 2025-10-15
+sources:
+  - label: Anthropic announcement
+    url: https://www.anthropic.com/news/claude-haiku-4-5
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/claude-4-5-haiku-reasoning
+description: >
+  <p>Anthropic's small model of the Claude 4.5 generation, released 15 October
+  2025 and backfilled here. The announcement's pitch is that it delivers
+  similar coding performance to Sonnet 4 from five months earlier at one third
+  of the cost and more than twice the speed, with <strong>73.3% on SWE-bench
+  Verified</strong>, and that in Augment's agentic coding evaluation it reaches
+  about 90% of Sonnet 4.5's performance while running four to five times faster.
+  It supports extended thinking (benchmarks used a 128K thinking budget) and
+  computer use, and is priced at <strong>$1 per million input tokens and $5 per
+  million output</strong> on the Claude API, Amazon Bedrock, and Google Cloud
+  Vertex AI, with a 200K context. Artificial Analysis scores the reasoning mode
+  <strong>18 on Intelligence Index v4.3</strong> and the non-reasoning mode
+  15.</p>
+tags:
+  - proprietary
+  - reasoning
+  - coding
+  - agentic
+model:
+  context_window: 200000
+  intelligence_index: 18
+  intelligence_index_version: "AA v4.3"
+  benchmark_scores:
+    - benchmark: SWE-bench Verified
+      score: "73.3%"
+  variants:
+    - name: Claude Haiku 4.5 (reasoning)
+      notes: "Extended thinking on; AA Intelligence Index v4.3: 18."
+    - name: Claude Haiku 4.5 (non-reasoning)
+      notes: "AA Intelligence Index v4.3: 15."
+related: [claude-4.5-opus]

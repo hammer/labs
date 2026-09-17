@@ -1,0 +1,34 @@
+name: ExecCritic
+slug: execcritic
+lab: microsoft
+type: paper
+date: 2026-09-08
+sources:
+  - label: "arXiv (ExecCritic: Learn to Test, Test to Improve for Coding Agents)"
+    url: https://arxiv.org/abs/2609.09133
+  - label: GitHub
+    url: https://github.com/MSR-Orchard/execcritic
+description: >
+  <p>A Microsoft Research paper (with UW&ndash;Madison and Georgia Tech) on
+  the failure mode where a coding agent writes both the patch and the test that
+  checks it, so their errors agree and produce false confidence. ExecCritic is a
+  <strong>test&ndash;verify&ndash;revise scaffold</strong> that separates the
+  roles: a Test agent generates repository-native tests, a fail-closed harness
+  qualifies and freezes them, and a Repair agent revises source code from their
+  execution feedback without touching the tests. Each role is a separately
+  trained Qwen3.5-35B-A3B policy with its own reinforcement-learning recipe:
+  "Learn to Test" rewards tests that distinguish correct from incorrect patches,
+  and "Test to Improve" trains the repair agent on direct resolution and
+  feedback-guided revision. Composing the trained agents reaches
+  <strong>72.6% on SWE-bench Verified</strong>, 11.4 points above the paper's
+  baseline. Filed for the harness line: it is a scaffold result, not a base
+  model result.</p>
+tags:
+  - agents
+  - agentic
+  - coding
+  - reinforcement-learning
+  - research
+paper:
+  arxiv: "2609.09133"
+  code_url: https://github.com/MSR-Orchard/execcritic

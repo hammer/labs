@@ -1,0 +1,36 @@
+name: LimiX-2
+slug: limix-2
+lab: tsinghua
+type: model
+date: 2026-09-15
+sources:
+  - label: "arXiv (LimiX-2: A Contextual Mechanism Network Towards General Structured-Data Intelligence)"
+    url: https://arxiv.org/abs/2609.17488
+  - label: HuggingFace
+    url: https://huggingface.co/stable-ai/LimiX-2
+  - label: GitHub
+    url: https://github.com/limix-ldm/LimiX
+description: >
+  <p>A 400M-parameter structured-data foundation model from Tsinghua's Cui
+  Peng group and the startup Stable AI, and the most-upvoted paper of its week
+  on HuggingFace. LimiX-2 replaces the target-centric objective of tabular PFNs
+  with a <strong>Contextual Mechanism Network</strong> that models the joint
+  structure of the data-generating process, pretrained with Context-Conditional
+  Masked Modeling on datasets synthesised from structural causal models and
+  scaled by the family's earlier scaling laws. One model handles
+  classification, regression, and imputation in a single pass with no
+  task-specific updates; the report puts it first on TabArena (Elo 1935),
+  TALENT (1506), and BCCO (1432). Weights are released under the StableAI LimiX
+  Non-Commercial License; the repository has over 4,000 stars.</p>
+tags:
+  - science
+  - research
+  - open-weight
+  - foundational
+model:
+  parameters: 400M
+  license: StableAI LimiX Non-Commercial License v1.0
+paper:
+  arxiv: "2609.17488"
+  code_url: https://github.com/limix-ldm/LimiX
+  huggingface_url: https://huggingface.co/stable-ai/LimiX-2

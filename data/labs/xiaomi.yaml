@@ -58,6 +58,14 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Fuli_Luo1
 news:
+  - title: "Xiaomi Livestreams MiMo-V2.6 Flash and Pro RL Training With a Public Dashboard; Trial Models Named MiMo-X-Pro-Preview and MiMo-X-Flash-Preview"
+    url: https://mimo.xiaomi.com/rl
+    source: Xiaomi MiMo
+    date: 2026-09-17
+  - title: "Xiaomi-TabLDM: Tabular Foundation Model Technical Report (Apache 2.0), First on OpenML-CTR23"
+    url: https://arxiv.org/abs/2609.03880
+    source: arXiv
+    date: 2026-09-03
   - title: "Xiaomi MiMo-V2.5-Pro-UltraSpeed Breaks 1000 Tokens/s on a 1T-Parameter Model (with TileRT)"
     url: https://mimo.xiaomi.com/blog/mimo-tilert-1000tps
     source: Xiaomi MiMo

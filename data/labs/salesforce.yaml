@@ -53,6 +53,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Caiming_Xiong1
 news:
+  - title: "Salesforce Koa: First Salesforce-Branded LLM, Post-Trained From Nemotron-3-Super-120B With GRPO for Agentforce (Closed Weights, GA Winter 2026)"
+    url: https://www.salesforce.com/news/press-releases/2026/09/15/koa-reasoning-model/
+    source: Salesforce
+    date: 2026-09-15
   - title: "Agentforce Platform Launched for Enterprise AI Agents"
     url: https://www.salesforce.com/news/press-releases/2024/10/29/agentforce-general-availability-announcement/
     source: Salesforce

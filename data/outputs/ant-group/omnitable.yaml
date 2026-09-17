@@ -1,0 +1,26 @@
+name: OmniTable
+slug: omnitable
+lab: ant-group
+type: paper
+date: 2026-09-10
+sources:
+  - label: "arXiv (OmniTable: A Unified Wide-Table System for Petabyte-Scale LLM Data Curation and Exploration)"
+    url: https://arxiv.org/abs/2609.11148
+description: >
+  <p>Ant Group's blueprint for the data layer under its Ling and Ring
+  models, where petabyte-scale corpora sit in hundreds of physical tables,
+  feature engineering is hand-orchestrated per table, and lineage is largely
+  absent. OmniTable is a unified <strong>wide-table layer</strong> built on
+  logical unification with physical separation: one logical schema over
+  multi-source data and thousands of derived features via logical-physical
+  mapping, declarative feature lifecycle management, and lineage throughout.
+  The 19-author paper reports it serving about 35 PB and cutting a curation
+  cycle from 14 days to 2.5.</p>
+tags:
+  - infrastructure
+  - data
+  - training-data
+  - research
+paper:
+  arxiv: "2609.11148"
+related: [ling-3.0]

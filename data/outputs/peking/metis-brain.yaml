@@ -1,0 +1,24 @@
+name: METIS
+slug: metis-brain
+lab: peking
+type: model
+date: 2026-09-14
+sources:
+  - label: arXiv (A Language-Guided Multimodal Foundation Model for Zero-Shot and Multi-Task Brain Signal Analysis)
+    url: https://arxiv.org/abs/2609.15740
+description: >
+  <p>A brain-signal foundation model from Peking University that aligns
+  neural recordings with language so one model serves many analyses without
+  task-specific retraining. METIS is pretrained on what the paper calls the
+  largest and most diverse brain-signal corpus assembled, about 70,000 hours
+  across 20 datasets, through a unified language&ndash;signal alignment
+  framework, and reports zero-shot gains of about 20.9% over prior
+  approaches. It addresses the two failures the authors see in current
+  practice: end-to-end models that need retraining per task, and pretrained
+  encoders that still depend on heavy fine-tuning.</p>
+tags:
+  - science
+  - multimodal
+  - research
+paper:
+  arxiv: "2609.15740"

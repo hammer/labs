@@ -1,0 +1,27 @@
+name: Dream-RSI
+slug: dream-rsi
+lab: umd
+type: paper
+date: 2026-09-13
+sources:
+  - label: "arXiv (Dream-RSI: Recursive Self-Improvement through Evolving Worlds)"
+    url: https://arxiv.org/abs/2609.14858
+  - label: GitHub
+    url: https://github.com/zhengkid/Dream-RSI
+description: >
+  <p>A University of Maryland-led framework (with UVA and Google DeepMind
+  co-authors) for the exploration bottleneck in recursive self-improvement:
+  fixed exploration strategies fail as search spaces grow, while optimising
+  them online means searching a vast meta-space under delayed, expensive
+  feedback. Dream-RSI makes exploration explicit and programmable through a
+  lightweight orchestration layer and trains exploration policies inside
+  <strong>replayable "dream" simulators</strong> of the task world rather than
+  in the expensive world itself, leaving the underlying agent untouched. About
+  400 GitHub stars in its first week.</p>
+tags:
+  - agents
+  - agentic
+  - research
+paper:
+  arxiv: "2609.14858"
+  code_url: https://github.com/zhengkid/Dream-RSI

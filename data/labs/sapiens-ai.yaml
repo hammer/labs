@@ -18,9 +18,10 @@ description: >
   <p>Its model line is mostly <strong>closed</strong>: the Agnes text models run
   1.5 Flash &rarr; 2.0 Flash &rarr; 2.5 Flash &rarr; the flagship
   <a href="/outputs/sapiens-ai/agnes-2.5-pro">Agnes 2.5 Pro Alpha</a>, alongside
-  closed image and video models. Only Agnes 2.5 Pro Alpha is independently
-  benchmarked &mdash; <strong>Artificial Analysis Intelligence Index v4.3: 27</strong>
-  (mid-pack, well below the ~50&ndash;53 frontier). The genuinely open research is
+  closed image and video models. Artificial Analysis scores the Agnes 2.5 Pro Beta
+  checkpoint <strong>35</strong> and <a href="/outputs/sapiens-ai/agnes-3.0-flash">Agnes 3.0
+  Flash</a> <strong>36</strong> on Intelligence Index v4.3 (mid-pack, well below
+  the 53 frontier). The genuinely open research is
   thin: one open-weight model,
   <a href="/outputs/sapiens-ai/agnes-seallm-8b">Agnes-SeaLLM-8B</a> (a
   Southeast-Asian fine-tune of Qwen3-8B, Apache-2.0), and one arXiv paper,
@@ -48,6 +49,15 @@ people:
       <strong>Sobrr</strong> (2014, ~$1M seed led by IDG). His Microsoft, HEC
       Paris, and NUS-PhD affiliations appear only in self-issued bios; no Google
       Scholar profile or publication record exists beyond the DSPO preprint.</p>
+news:
+  - title: "Agnes 3.0 Flash Listed on Artificial Analysis at 36 (v4.3); Open-Weight 33B Preview Checkpoint Released Under Apache 2.0"
+    url: https://huggingface.co/Agnes-AI/Agnes-3.0-Flash
+    source: Hugging Face
+    date: 2026-09-11
+  - title: "Agnes 2.5 Pro Beta Released (1M Context, $0.10/$0.30 per Million Tokens); Scores 35 on AA Intelligence Index v4.3"
+    url: https://artificialanalysis.ai/models/agnes-2-5-pro-beta
+    source: Artificial Analysis
+    date: 2026-08-26
 tags:
   - reasoning
   - multimodal

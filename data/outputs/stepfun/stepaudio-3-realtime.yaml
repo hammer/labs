@@ -1,0 +1,37 @@
+name: StepAudio 3 Realtime
+slug: stepaudio-3-realtime
+lab: stepfun
+type: model
+date: 2026-09-12
+sources:
+  - label: arXiv (StepAudio 3 Realtime Technical Report)
+    url: https://arxiv.org/abs/2609.14005
+  - label: arXiv (StepAudio 3 Gen Technical Report)
+    url: https://arxiv.org/abs/2609.12945
+description: >
+  <p>StepFun's audio-language foundation model for spoken interaction,
+  organised as a continuous listen&ndash;converse&ndash;think&ndash;act loop. Deep
+  Perception reads acoustic cues for intent, Seamless Duplex models synchronised
+  audio streams to handle pauses, backchannels, and interruptions, and
+  <strong>Think-While-Speaking</strong> runs private reasoning in parallel with
+  spoken delivery so deliberation does not cost latency. The 90-author report
+  gives 73.0 macro-average on StepAudioChat in reasoning mode, 90.6 on MMSU,
+  98.9 on the Artificial Analysis Full-Duplex Bench, and 56.0% on &tau;-Voice.
+  A companion report the day before describes <strong>StepAudio 3 Gen</strong>,
+  a discrete autoregressive generator over 12.5 Hz residual-vector-quantised
+  tokens (a shared 16 &times; 2048 code space) that covers zero-shot TTS, voice
+  design, vocals, sound effects, music, and mixtures in one model, a departure
+  from the diffusion-Transformer generation now common in audio. Neither report
+  releases weights; both models are served through the StepFun API. Filed with
+  <a href="/outputs/stepfun/stepaudio-3-music">StepAudio 3 Music</a> as the
+  third report of the series.</p>
+tags:
+  - audio
+  - speech
+  - multimodal
+  - proprietary
+model:
+  license: Proprietary (API)
+paper:
+  arxiv: "2609.14005"
+related: [stepaudio-3-music, step-audio-r1, step-audio]

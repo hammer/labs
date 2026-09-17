@@ -27,6 +27,10 @@ description: >
   deep research). Models ship under Apache 2.0 on HuggingFace, ModelScope,
   and OpenRouter.</p>
 news:
+  - title: "Nex-N2.5-Pro Weights Published (397B, Apache 2.0, BF16 and FP8)"
+    url: https://huggingface.co/nex-agi/Nex-N2.5-Pro
+    source: Hugging Face
+    date: 2026-09-17
   - title: "Nex-N2.5 Released: mini/Pro on Qwen3.5 Bases Plus a Trillion-Parameter Max on DeepSeek-V4-Pro, Apache 2.0; Max Posts BrowseComp 92.6 and AutomationBench 50.2"
     url: https://huggingface.co/nex-agi/Nex-N2.5-Pro
     source: Nex-AGI

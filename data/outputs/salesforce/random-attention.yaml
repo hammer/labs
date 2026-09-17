@@ -1,0 +1,23 @@
+name: Random Attention
+slug: random-attention
+lab: salesforce
+type: paper
+date: 2026-09-03
+sources:
+  - label: "arXiv (Random Attention: Rethinking KV Cache Eviction for Efficient Reasoning)"
+    url: https://arxiv.org/abs/2609.03430
+description: >
+  <p>Every KV-cache compression method scores cached tokens by predicted
+  future importance and keeps the top ones. Salesforce AI Research shows the
+  score contributes almost nothing: <strong>Random Attention</strong> keeps the
+  prompt and evicts uniformly at random within each head, computing no score,
+  and across four models and six reasoning tasks matches the strongest prior
+  evictor while serving 32 to 43% higher throughput in vLLM. Controlled
+  experiments trace this to the prompt being the fragile part of the cache and
+  the reasoning trace being redundant enough that random retention suffices.</p>
+tags:
+  - efficiency
+  - reasoning
+  - research
+paper:
+  arxiv: "2609.03430"

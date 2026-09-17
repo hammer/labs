@@ -1,0 +1,23 @@
+name: Muse Voice Transcribe
+slug: muse-voice-transcribe
+lab: meta
+type: model
+date: 2026-09-01
+sources:
+  - label: Meta AI blog
+    url: https://research.meta.ai/blog/introducing-muse-voice-transcribe
+description: >
+  <p>The first audio model of Meta's Muse family: a streaming
+  speech-recognition model with speaker diarisation covering more than 70
+  languages, built on the <a href="/outputs/meta/muse-spark-1.3">Muse Spark</a>
+  line and offered through the API. Meta claims a 3.1% streaming word error
+  rate and first place on the Artificial Analysis speech-to-text leaderboard;
+  as of 17 September 2026 that leaderboard shows no Muse row, so the claim is
+  Meta's. No parameter count or pricing is published.</p>
+tags:
+  - speech
+  - audio
+  - proprietary
+model:
+  license: Proprietary (API)
+related: [muse-spark-1.3]

@@ -1,0 +1,38 @@
+name: StepAudio 3 Music
+slug: stepaudio-3-music
+lab: stepfun
+type: model
+date: 2026-09-11
+sources:
+  - label: arXiv (StepAudio 3 Music Technical Report)
+    url: https://arxiv.org/abs/2609.16034
+  - label: Project page
+    url: https://stepaudiollm.github.io/step-audio-3-music
+description: >
+  <p>StepFun's long-form music generation model (with ACE Studio), released
+  through the StepFun API with a technical report on 11 September 2026. The
+  design is discrete-then-continuous: a StepAudio Music Tokenizer represents
+  audio as a 50 Hz stream from a single 65,536-entry codebook, a
+  <strong>Mixture-of-Experts autoregressive planner</strong> first writes an
+  intermediate arrangement in ABC notation ("ABC-CoT") so harmony, rhythm, and
+  melody are explicit in the generation context, and a flow-matching diffusion
+  Transformer predicts continuous VAE latents that a decoder renders to 48 kHz
+  stereo audio. A progressive curriculum and supervised fine-tuning cover song
+  and instrumental generation, accompaniment from dry vocals, and cover-song
+  synthesis up to 5 minutes 30 seconds, with DPO on top. The report claims the
+  highest AudioBox content-enjoyment, usefulness, and production-quality scores
+  and the highest MuQ-MuLan similarity among the evaluated systems, competitive
+  SongBench results, and a Quality Elo of 1105 on the preliminary Artificial
+  Analysis Music Arena vocals leaderboard, behind Suno V5.5 and Mureka. No
+  weights are released.</p>
+tags:
+  - audio
+  - generation
+  - multimodal
+  - proprietary
+model:
+  architecture: moe
+  license: Proprietary (API)
+paper:
+  arxiv: "2609.16034"
+related: [step-audio, step-audio-editx]

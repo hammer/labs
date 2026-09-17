@@ -1,0 +1,60 @@
+name: gpt-oss
+slug: gpt-oss
+lab: openai
+type: model
+date: 2025-08-05
+flagship: true
+sources:
+  - label: HuggingFace (gpt-oss-120b)
+    url: https://huggingface.co/openai/gpt-oss-120b
+  - label: HuggingFace (gpt-oss-20b)
+    url: https://huggingface.co/openai/gpt-oss-20b
+  - label: arXiv (gpt-oss-120b & gpt-oss-20b Model Card)
+    url: https://arxiv.org/abs/2508.10925
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gpt-oss-120b
+description: >
+  <p>OpenAI's open-weight release of August 2025, its first language-model
+  weights since GPT-2, and a backfill here: two MoE reasoning models under
+  <strong>Apache 2.0</strong>. <strong>gpt-oss-120b</strong> has 117B total and
+  5.1B active parameters (36 layers, 128 experts, 4 active per token) and is
+  sized for a single 80 GB GPU; <strong>gpt-oss-20b</strong> has 21B total and
+  3.6B active (24 layers, 32 experts) for local and low-latency use. Both share
+  a 201,088-token vocabulary, alternate 128-token sliding-window and full
+  attention, run a 131,072-token context, and expose a configurable reasoning
+  effort (low, medium, high). They are trained on and must be served with
+  OpenAI's <strong>harmony</strong> response format, and support tool use and
+  chain-of-thought output. The HuggingFace repositories have passed five and six
+  million downloads respectively.</p>
+
+  <p>On Artificial Analysis the 120B at high effort scores <strong>12 on
+  Intelligence Index v4.3</strong> and the 20B scores 9; both were near the top
+  of the open-weights table at release but sit in the lower half after the
+  2026 recalibrations.</p>
+tags:
+  - open-weight
+  - moe
+  - reasoning
+  - agentic
+model:
+  architecture: moe
+  parameters: 117B
+  active_parameters: 5.1B
+  context_window: 131072
+  num_experts: 128
+  top_k: 4
+  license: Apache 2.0
+  intelligence_index: 12
+  intelligence_index_version: "AA v4.3"
+  variants:
+    - name: gpt-oss-120b
+      parameters: 117B
+      active_parameters: 5.1B
+      notes: "36 layers, 128 experts (4 active); fits one 80 GB GPU. AA Intelligence Index v4.3: 12 (high effort)."
+    - name: gpt-oss-20b
+      parameters: 21B
+      active_parameters: 3.6B
+      notes: "24 layers, 32 experts (4 active); local and edge use. AA Intelligence Index v4.3: 9 (high effort)."
+paper:
+  arxiv: "2508.10925"
+  huggingface_url: https://huggingface.co/openai/gpt-oss-120b

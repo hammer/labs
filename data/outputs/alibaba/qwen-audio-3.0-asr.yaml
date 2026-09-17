@@ -1,0 +1,34 @@
+name: Qwen-Audio-3.0-ASR
+slug: qwen-audio-3.0-asr
+lab: alibaba
+type: model
+date: 2026-09-07
+sources:
+  - label: arXiv (Qwen-Audio-3.0-ASR Technical Report)
+    url: https://arxiv.org/abs/2609.07549
+description: >
+  <p>Qwen's production speech-recognition system, documented in a 45-author
+  technical report on 7 September 2026: a <strong>Mixture-of-Experts, LLM-based
+  ASR model</strong> built on the Qwen backbone and trained on tens of millions
+  of hours of speech, framed around the gap between benchmark accuracy and
+  production utility. It transcribes 30 languages and 16 Chinese dialect
+  varieties across eight dialect regions, and adds the production features the
+  report singles out: industry-domain entity recognition, hierarchical hotword
+  customisation, single-pass transcription polishing, and long-audio contextual
+  modelling. A dedicated <strong>Qwen-Audio-3.0-ASR-Streaming</strong> variant
+  targets latency-sensitive use. The report claims state-of-the-art or highly
+  competitive results on Chinese, English, multilingual, and industrial test
+  sets against leading commercial systems. It is the served successor to the
+  small open <a href="/outputs/alibaba/qwen3-asr">Qwen3-ASR</a> models; no
+  weights are released with the report.</p>
+tags:
+  - speech
+  - audio
+  - multilingual
+  - moe
+  - research
+model:
+  architecture: moe
+paper:
+  arxiv: "2609.07549"
+related: [qwen3-asr, qwen2-audio]

@@ -1,0 +1,67 @@
+name: ZGCM-1
+slug: zgcm-1
+lab: zgca
+type: model
+date: 2026-09-11
+flagship: true
+sources:
+  - label: HuggingFace (ZGCM-1-7B)
+    url: https://huggingface.co/zgcagi/ZGCM-1-7B
+  - label: "arXiv (ZGCM-1: A Fully Open and Extremely Efficient Foundation Model for Math and Agentic Search)"
+    url: https://arxiv.org/abs/2609.13356
+  - label: HuggingFace (pre-training checkpoint)
+    url: https://huggingface.co/zgcagi/ZGCM-1-7B-Pretrain
+  - label: HuggingFace (256K mid-training checkpoint)
+    url: https://huggingface.co/zgcagi/ZGCM-1-7B-Midtrain-Staged-256K
+description: >
+  <p>Zhongguancun Academy's first language model and its most complete
+  release: a <strong>7B dense model pretrained from scratch on 4.19T
+  tokens</strong> under MIT, published with the pre-training checkpoint, the
+  staged 16K, 64K, and 256K mid-training checkpoints, and a technical report from
+  the ZGCM Team (Zhongguancun Academy and the Zhongguancun Institute of
+  Artificial Intelligence). The premise is that a compact model cannot memorise
+  the open web but can compensate by pairing deliberate internal thinking with
+  external tool use, so the recipe targets math reasoning and agentic search
+  across a 256K context: interleaved gated sliding-window and full attention, a
+  stable <strong>FP8 Muon</strong> optimizer, a progressive context curriculum,
+  and a mid-training stage that reformulates interaction traces as Markov
+  decision processes. The report also describes an "AI-native" R&amp;D workflow
+  in which agent swarms run cluster operations, data curation, and diagnostic
+  evaluation, and claims a roughly 4.2x pre-training efficiency gain from the
+  architecture and system co-design.</p>
+
+  <p>Self-reported results at 7B: MATH-500 <strong>97.13</strong>, AIME 2026
+  <strong>75.00</strong>, HMMT 2025 70.42, with the best average rank across the
+  report's 14 reasoning benchmarks among seven compared 7B models; with tools,
+  WebWalkerQA 63.09 and BrowseComp 19.43. The report positions it as competitive
+  on those suites with far larger open models such as Qwen3-235B-A22B and
+  GLM-5.1. Not yet scored by Artificial Analysis.</p>
+tags:
+  - open-weight
+  - reasoning
+  - agentic
+  - efficiency
+  - foundational
+  - research
+model:
+  architecture: dense
+  parameters: 7B
+  training_tokens: 4.19T
+  context_window: 262144
+  # From scratch per the report ("trained from scratch") and the published
+  # pre-training checkpoint.
+  pretrained_from_scratch: true
+  optimizer: "Muon (FP8)"
+  license: MIT
+  benchmark_scores:
+    - benchmark: MATH-500
+      score: "97.13"
+    - benchmark: AIME 2026
+      score: "75.00"
+    - benchmark: HMMT 2025
+      score: "70.42"
+    - benchmark: BrowseComp
+      score: "19.43"
+paper:
+  arxiv: "2609.13356"
+  huggingface_url: https://huggingface.co/zgcagi/ZGCM-1-7B

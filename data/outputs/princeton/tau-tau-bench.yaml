@@ -1,0 +1,25 @@
+name: τ^τ-Bench
+slug: tau-tau-bench
+lab: princeton
+type: eval
+date: 2026-09-03
+sources:
+  - label: "arXiv (τ^τ-Bench: An Environment for End-To-End, Realistic Agent Construction)"
+    url: https://arxiv.org/abs/2609.04611
+description: >
+  <p>The next step in the &tau;-bench lineage from Sierra and Princeton's
+  Karthik Narasimhan, whose &tau;&sup2; and &tau;&sup3; variants feed the
+  Artificial Analysis Intelligence Index: "hyper-tau-bench" makes
+  <strong>building the agent</strong> the task. A developer agent receives what
+  a real client engagement provides, the records a business keeps, a client who
+  holds the requirements, a production API that operations must run through, a
+  codebase to inherit, and limits on serving cost and models, and must deliver
+  a deployable agent from them. Current systems reach 23.9% against an 82.2%
+  expert baseline.</p>
+tags:
+  - eval
+  - benchmark
+  - agents
+  - agentic
+paper:
+  arxiv: "2609.04611"

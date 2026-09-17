@@ -66,6 +66,10 @@ people:
     role: Core Researcher (training systems)
     formerly: EleutherAI
 news:
+  - title: "PUFFER: Provenance-Aware Incremental Fuzzy Deduplication for Trillion-Token Corpora (Apache 2.0)"
+    url: https://www.zyphra.com/our-work/puffer
+    source: Zyphra
+    date: 2026-09-01
   - title: "Zamba2-VL Released: Hybrid SSM Vision-Language Models (1.2B / 2.7B / 7B)"
     url: https://www.zyphra.com/post/zamba2-vl
     source: Zyphra

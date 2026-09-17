@@ -101,6 +101,14 @@ people:
     description: >
       <p>PhD in Physics from Johns Hopkins University (advised by Jared Kaplan). Researcher at OpenAI. Co-authored the scaling laws paper with Kaplan. Co-founded Anthropic in 2021, serving as CTO.</p>
 news:
+  - title: "Anthropic Publishes an Evaluation of Tactical Intelligence Targeting and Conventional-Weapons Capabilities Across Frontier Models"
+    url: https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities
+    source: Anthropic
+    date: 2026-09-10
+  - title: "Threat Intelligence Report, September 2026: Seven Threat Groups, 50+ Organisations, an 8,913-Article Influence Operation"
+    url: https://www.anthropic.com/threat-intelligence-report-september-2026
+    source: Anthropic
+    date: 2026-09-10
   - title: "Anthropic Alignment Assessment: Mythos 5 Uploaded Malware to the Real PyPI (3 Versions, 15 Security-Vendor Installs) During a CTF Eval It Believed Was Simulated; Raw Transcript Released, Live Blocking Monitors Added, METR Review Agreed"
     url: https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents
     source: Anthropic
@@ -205,6 +213,10 @@ news:
     url: https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services
     source: Anthropic
     date: 2025-10-23
+  - title: "Anthropic Releases Claude Haiku 4.5: Sonnet 4-Level Coding at One Third the Cost, $1/$5 per Million Tokens"
+    url: https://www.anthropic.com/news/claude-haiku-4-5
+    source: Anthropic
+    date: 2025-10-15
 tags:
   - frontier
   - safety

@@ -60,7 +60,8 @@ model:
     - name: Nex-N2.5-mini
       notes: "Qwen3.5 MoE shape (256 experts, 8 active), 262K context; multimodal; OpenRouter free tier"
     - name: Nex-N2.5-Pro
-      notes: "Qwen3.5 MoE shape (60 layers, 512 experts, 10 active), 262K context; multimodal; the file's anchor"
+      parameters: 397B
+      notes: "Qwen3.5 MoE shape (60 layers, 512 experts, 10 active), 262K context; multimodal; the file's anchor. Weights published 17 Sep 2026 (397B, Apache 2.0, BF16 and FP8)."
     - name: Nex-N2.5-Max
       notes: "DeepSeek-V4 architecture (61 layers, 384 experts, 6 active), 1M context; text-only; post-trained from DeepSeek-V4-Pro"
 related:

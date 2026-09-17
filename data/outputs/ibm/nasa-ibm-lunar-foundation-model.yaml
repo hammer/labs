@@ -1,0 +1,36 @@
+name: NASA-IBM Lunar Foundation Model
+slug: nasa-ibm-lunar-foundation-model
+lab: ibm
+type: model
+date: 2026-09-10
+sources:
+  - label: IBM Research blog
+    url: https://research.ibm.com/blog/nasa-ibm-lunar-foundation-model
+  - label: HuggingFace
+    url: https://huggingface.co/nasa-ibm-ai4science/NASA-IBM-Lunar-Foundation-Model
+  - label: arXiv (Multimodal-Multiresolution Foundation Model for Lunar Remote Sensing)
+    url: https://arxiv.org/abs/2609.13283
+description: >
+  <p>The TerraMind lineage taken off Earth: a multimodal foundation model for
+  lunar remote sensing <strong>pretrained from scratch</strong> on SomBench, a
+  geographically partitioned corpus of nearly two million co-registered tile
+  bundles spanning 11 modalities at two spatial scales (1 m and 100 m per
+  pixel). It adapts TerraMind's masked-token architecture with acquisition
+  geometry as explicit context and joint training across both resolutions so
+  one set of weights covers both, and uses FlexiViT patch embeddings so patch
+  size can change without retraining. Trained on 16 H100s in about 1,100
+  GPU-hours and released under Apache 2.0 with the SomBench data; IBM reports a
+  22% reduction in ice-detection error over the baseline. Built with NASA's
+  AI4Science group and released 10 September 2026.</p>
+tags:
+  - science
+  - multimodal
+  - vision
+  - open-weight
+model:
+  pretrained_from_scratch: true
+  license: Apache 2.0
+  training_hardware: 16x H100 (~1,100 GPU-hours)
+paper:
+  arxiv: "2609.13283"
+  huggingface_url: https://huggingface.co/nasa-ibm-ai4science/NASA-IBM-Lunar-Foundation-Model

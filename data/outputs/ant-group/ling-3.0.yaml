@@ -26,12 +26,12 @@ description: >
   general-agent environments. The model card reports integration with SGLang
   HiCache and Mooncake's shared L3 cache, reducing time to first token by
   60–80% for long-input agent workloads. Artificial Analysis scores the
-  reasoning checkpoint at <strong>25 on Intelligence Index v4.3</strong>.</p>
+  reasoning checkpoint at <strong>21 on Intelligence Index v4.3</strong>.</p>
 
   <p>Ling-3.0-tiny followed on August 11 with 7.9B total / 1.3B active
   parameters, a 3:1 KDA–MLA stack, 128 routed experts, and the same 256K
   context. Its FP8 checkpoint runs at roughly 86–90 tokens/s on an M4 Pro
-  MacBook according to InclusionAI; AA scores it at 25.</p>
+  MacBook according to InclusionAI; AA scores it at 21.</p>
 tags:
   - open-weight
   - reasoning
@@ -45,9 +45,12 @@ model:
   num_experts: 512
   top_k: 8
   context_window: 262144
-  intelligence_index: 25
+  intelligence_index: 21
   intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 25
+      version: "AA v4.3"
+      until: "2026-09-17"
     - score: 27
       version: "AA v4.2"
       until: "2026-09-08"

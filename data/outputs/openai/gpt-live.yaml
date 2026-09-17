@@ -16,6 +16,10 @@ description: >
   scenes. Proprietary; system card published July 8. The developer-facing
   siblings (gpt-realtime-2.1 / -2.1-mini) shipped July 6 with reasoning
   and tool use at the mini tier and ~25% lower p95 latency.</p>
+  <p>GPT-Live-1 reached general availability on the API on 10 September 2026
+  as <code>gpt-live-1</code>: full-duplex, billed at $0.05 per minute with the
+  backend model billed separately; Artificial Analysis scores it 81.5 on its
+  Speech-to-Speech Index, second to Gemini 3.8 Live Extended Thinking.</p>
 tags:
   - speech
   - voice

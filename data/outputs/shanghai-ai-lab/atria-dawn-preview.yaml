@@ -1,0 +1,68 @@
+name: Atria Dawn Preview
+slug: atria-dawn-preview
+lab: shanghai-ai-lab
+type: model
+date: 2026-09-11
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/internlm/Atria-Dawn-Preview
+  - label: "arXiv (Atria Dawn: The Dawn of Agentic Superintelligence)"
+    url: https://arxiv.org/abs/2609.15818
+  - label: ModelScope
+    url: https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview
+description: >
+  <p>Shanghai AI Laboratory's first <strong>Atria</strong> release: a
+  "foundation agentic language model" for research and engineering workflows,
+  built by post-training Z.ai's 744B-parameter <a
+  href="/outputs/zai/glm-5.2">GLM-5.2</a> MoE (the config.json is GLM-5.2's:
+  78 layers, 256 routed experts plus one shared, 8 active per token). The model
+  card frames it around four kinds of agentic work, discovery, creation,
+  delivery, and cybersecurity, and the accompanying 143-author paper describes a
+  <strong>Verifiable Experience Pipeline</strong> that ties tool-mediated
+  interactions to executable environments and externally verified outcomes.
+  Released 11 September 2026 under MIT with a 256K context and an FP8 sibling;
+  an Ascend W8A8 build followed on 15 September.</p>
+
+  <p>The paper reports that Atria Dawn Preview is competitive with frontier
+  agents across 16 benchmarks and posts the highest reported score on five of
+  them. From the card's table: DeepSearchQA <strong>96.0</strong>, BrowseComp
+  <strong>92.5</strong>, BFCL v4 <strong>77.0</strong>, and AutomationBench
+  <strong>53.8</strong> lead the compared column (DeepSeek V4 Pro 0813, Kimi K3,
+  Qwen3.8 Max, GLM-5.3, GPT-5.6 Sol, Claude Opus 5), while SWE-bench Pro 59.6
+  and Terminal-Bench 2.1 78.3 trail the coding leaders. The paper also treats
+  the model's own development as a case study in human&ndash;AI collaboration,
+  analysing 769 task records from the R&amp;D process. Not yet scored by
+  Artificial Analysis.</p>
+tags:
+  - agentic
+  - agents
+  - reasoning
+  - open-weight
+  - moe
+  - science
+model:
+  architecture: moe
+  parameters: 744B
+  active_parameters: 40B
+  base_model: glm-5.2
+  context_window: 262144
+  num_experts: 256
+  top_k: 8
+  license: MIT
+  benchmark_scores:
+    - benchmark: DeepSearchQA
+      score: "96.0"
+    - benchmark: BrowseComp
+      score: "92.5"
+    - benchmark: BFCL v4
+      score: "77.0"
+    - benchmark: AutomationBench
+      score: "53.8"
+    - benchmark: SWE-bench Pro
+      score: "59.6"
+    - benchmark: Terminal-Bench 2.1
+      score: "78.3"
+paper:
+  arxiv: "2609.15818"
+  huggingface_url: https://huggingface.co/internlm/Atria-Dawn-Preview
+related: [intern-s2-397b]

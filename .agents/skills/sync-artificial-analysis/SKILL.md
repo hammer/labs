@@ -49,9 +49,12 @@ Avoid adding live scores to prose. If a score is necessary for historical contex
 Run:
 
 ```bash
+npm run test:aa          # parser fixtures for every AA payload shape; run first when a sync reports "Parsed only N scored records"
 npm run validate
 npm run build
 ```
+
+If `test:aa` passes but the live sync still parses a handful of records, AA changed the record opener again: inspect the bytes before the first `"intelligenceIndex"` in the RSC payload, add the shape to `AA_RECORD_SENTINEL` in `scripts/aa-payload.ts`, add a fixture to `tests/aa-payload-unit.ts`, and only then rerun the sync. Never hand-enter scores to work around it.
 
 Review the diff for:
 

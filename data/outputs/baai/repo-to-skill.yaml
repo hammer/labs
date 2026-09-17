@@ -1,0 +1,27 @@
+name: Repo-To-Skill (DisCo)
+slug: repo-to-skill
+lab: baai
+type: paper
+date: 2026-09-02
+sources:
+  - label: "arXiv (Repo-To-Skill: Distilling GitHub Repositories Into AI4AI Skills)"
+    url: https://arxiv.org/abs/2609.02749
+  - label: GitHub
+    url: https://github.com/VectorSpaceLab/AREX-Skill
+description: >
+  <p>BAAI's most-upvoted paper of the period on HuggingFace, on the layer
+  research agents still lack: operational knowledge, the know-how that
+  separates knowing a method from making it work. That knowledge exists in
+  repositories and papers but in forms written for humans and too large to load
+  during a task. <strong>DisCo</strong> is a skill-powered research agent that
+  distils GitHub repositories into compact, verified skills and reuses them
+  across tasks instead of rediscovering them per run. Released with the
+  AREX-Skill code (about 300 stars in its first fortnight).</p>
+tags:
+  - agents
+  - agentic
+  - research
+  - open-source
+paper:
+  arxiv: "2609.02749"
+  code_url: https://github.com/VectorSpaceLab/AREX-Skill

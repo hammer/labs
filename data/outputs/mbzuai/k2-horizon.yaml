@@ -83,9 +83,12 @@ model:
   top_k: 8
   context_window: 524288
   training_tokens: 20T
-  intelligence_index: 34
+  intelligence_index: 31
   intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 34
+      version: "AA v4.3"
+      until: "2026-09-17"
     - score: 38
       version: "AA v4.2"
       until: "2026-09-08"
@@ -97,7 +100,7 @@ model:
     - name: K2-Horizon-375B-A23B
       parameters: 375B
       active_parameters: 23B
-      notes: "Flagship MoE (61 layers, 192 routed + 1 shared expert, top-8). AA Intelligence Index v4.3 score 34 (file's top-level anchor). FP8 checkpoint also released."
+      notes: "Flagship MoE (61 layers, 192 routed + 1 shared expert, top-8). AA Intelligence Index v4.3 score 31 (file's top-level anchor). FP8 checkpoint also released."
     - name: K2-Horizon-MoVA-36B-A4B
       parameters: 36B
       active_parameters: 4B

@@ -1,0 +1,35 @@
+name: Beagle (DarwinX)
+slug: beagle
+lab: salesforce
+type: library
+date: 2026-09-02
+sources:
+  - label: GitHub
+    url: https://github.com/SalesforceAIResearch/Beagle
+  - label: "arXiv (DarwinX: Evolving Agent Harnesses Through Natural Selection)"
+    url: https://arxiv.org/abs/2608.07545
+description: >
+  <p>Salesforce AI Research's harness-evolution trainer, released as code on 2
+  September 2026 with the DarwinX paper from July. The premise is that an
+  agent's capability depends on its harness (prompts, tools, skills, control
+  flow) as much as its weights, and that single-lineage self-improvement is
+  path-dependent: a local win often regresses other tasks. DarwinX instead
+  treats self-evolution as <strong>selection over a population of
+  harnesses</strong> with the model frozen. A preserve-and-extend contract
+  admits only variants that extend coverage without regression, an archive
+  keeps alternative lineages for recombination, and failure-, teacher-, and
+  self-derived evidence share one edit interface; fitness comes from each
+  benchmark's own verifier with no gold solutions. Reported results include
+  <strong>83.2% on Terminal-Bench 2.1</strong> and a rise from 43.5% to 93.0%
+  on WebArena-Infinity. The platform under the lab's <a
+  href="/outputs/salesforce/co-evolving-harnesses">co-evolving harnesses</a>
+  line.</p>
+tags:
+  - agents
+  - agentic
+  - framework
+  - research
+paper:
+  arxiv: "2608.07545"
+  code_url: https://github.com/SalesforceAIResearch/Beagle
+related: [co-evolving-harnesses, evoharnessbench]

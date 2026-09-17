@@ -1,0 +1,30 @@
+name: SciDocBench
+slug: scidocbench
+lab: shanghai-ai-lab
+type: eval
+date: 2026-09-04
+sources:
+  - label: "arXiv (SciDocBench: A Workflow-Centered Benchmark and Data Pipeline for Scientific Document Understanding)"
+    url: https://arxiv.org/abs/2609.05141
+  - label: GitHub
+    url: https://github.com/InternLM/SciDocBench
+description: >
+  <p>The evaluation companion to Intern-S2's raw-page pretraining: a
+  workflow-centred benchmark of <strong>124 expert-authored, difficulty-screened
+  questions</strong> in seven research-assistant capability groups and 19
+  subtasks across five scientific domains, each instantiated under four matched
+  conditions (English or Chinese, image-first or markdown input) for 496
+  instances that require reasoning jointly over text, equations, figures,
+  tables, code, and data while keeping the provenance of evidence. The best
+  system scores 62.6 of 100. Released with the SciDocIR retrieval set and about
+  15K SFT and 8K RL training samples, and integrated into VLMEvalKit; authors
+  include Jiaqi Wang, Yuhang Zang, and Dahua Lin.</p>
+tags:
+  - eval
+  - benchmark
+  - science
+  - multimodal
+paper:
+  arxiv: "2609.05141"
+  code_url: https://github.com/InternLM/SciDocBench
+related: [intern-s2-397b]

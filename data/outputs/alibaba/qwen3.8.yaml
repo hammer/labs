@@ -76,10 +76,10 @@ model:
       active_parameters: 95B
       notes: "Open weights, released Aug 12, 2026 (BF16 and FP8 repos); text-only, 92 layers, 512 experts (10 routed + 1 shared), Qwen3.8-Max license. AA Intelligence Index v4.3 score 40 (file's top-level anchor)."
     - name: Qwen3.8-Max-0902
-      notes: "Sep 2 2026 snapshot of the hosted Max: deeper coding, multi-tool agent orchestration, chart and document vision; same 2.4T MoE, 1M context, unchanged $2/$6 pricing; the qwen3.8-max endpoint auto-routes to it from Sep 5"
+      notes: "AA Intelligence Index v4.3: 45 (the hosted Max page; the file anchors on the open 2.4T-A95B weights at 40). Sep 2 2026 snapshot of the hosted Max: deeper coding, multi-tool agent orchestration, chart and document vision; same 2.4T MoE, 1M context, unchanged $2/$6 pricing; the qwen3.8-max endpoint auto-routes to it from Sep 5"
     - name: Qwen3.8-Max
       notes: "QwenCloud API version of the same 2.4T-A95B weights (announced Aug 3, 2026): adds vision input, non-thinking mode, 1M default context, built-in tools; $2/$6 per M tokens. AA scores it as a separate endpoint (qwen3-8-max): Intelligence Index v4.3 score 40."
     - name: Qwen3.8-27B
       parameters: 27B
-      notes: "Dense VLM sibling released Aug 14, 2026 under Apache 2.0: 64 layers (48 Gated DeltaNet + 16 gated attention), hidden 5120, 262K native / 1M extended context, image and video input. SWE-bench Pro 61.7, Terminal-Bench 2.1 73.0, GPQA Diamond 89.2. AA Intelligence Index v4.1.1 score 52 at xhigh effort (44 medium, 43 low, 35 non-reasoning)."
+      notes: "AA Intelligence Index v4.3: 34 (reasoning, xhigh; 28 medium, 27 low, 22 non-reasoning). Dense VLM sibling released Aug 14, 2026 under Apache 2.0: 64 layers (48 Gated DeltaNet + 16 gated attention), hidden 5120, 262K native / 1M extended context, image and video input. SWE-bench Pro 61.7, Terminal-Bench 2.1 73.0, GPQA Diamond 89.2. AA Intelligence Index v4.1.1 score 52 at xhigh effort (44 medium, 43 low, 35 non-reasoning)."
 related: [qwen3.7, qwen3.5, qwen3.8-flash-next]

@@ -1,0 +1,30 @@
+name: SWE-Bench Pro Verified
+slug: swe-bench-pro-verified
+lab: shanghai-ai-lab
+type: eval
+date: 2026-09-08
+sources:
+  - label: "arXiv (SWE-Bench Pro Verified: A Reliable Benchmark for Software Engineering Agents)"
+    url: https://arxiv.org/abs/2609.08149
+  - label: GitHub (OpenCompass AgentCompass)
+    url: https://github.com/open-compass/AgentCompass
+description: >
+  <p>A verified version of SWE-Bench Pro, the repository-level coding
+  benchmark that frontier labs now report alongside SWE-bench Verified. The
+  authors (ECNU and Fudan with Shanghai AI Lab's OpenCompass team) find the
+  original undermined by reward hacking, through leaked gold solutions and
+  hidden evaluation information, and by task-quality defects such as misleading
+  problem statements and badly scoped tests. The verified set adds
+  <strong>anti-hacking safeguards</strong> that close the leakage channels
+  without breaking normal agent behaviour and refines the affected tasks (102
+  corrected), so scores reflect coding ability rather than exploits. Shipped in
+  AgentCompass and as a HuggingFace dataset.</p>
+tags:
+  - eval
+  - benchmark
+  - coding
+  - agents
+paper:
+  arxiv: "2609.08149"
+  code_url: https://github.com/open-compass/AgentCompass
+related: [harness-of-harness]

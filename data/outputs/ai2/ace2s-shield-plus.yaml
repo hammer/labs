@@ -1,0 +1,30 @@
+name: ACE2S-SHiELD+
+slug: ace2s-shield-plus
+lab: ai2
+type: model
+date: 2026-09-10
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/allenai/ACE2S-SHiELD-plus
+  - label: arXiv (Disentangling the effects of sea surface temperature and CO2 in global machine learned weather-climate emulators)
+    url: https://arxiv.org/abs/2606.07928
+description: >
+  <p>The newest member of the <strong>Ai2 Climate Emulator (ACE)</strong>
+  family, and the first ACE model filed here: a stochastic spherical Fourier
+  neural operator on a 1&deg; grid with a 6-hour step and an energy-conservation
+  constraint, trained to emulate NOAA's SHiELD atmosphere model about 68 times
+  faster than the physical model. The accompanying paper addresses a failure of
+  earlier ACE versions, which were accurate only where sea surface temperature
+  and CO<sub>2</sub> were correlated in training and behaved unphysically under
+  a +4 K SST perturbation or an abrupt CO<sub>2</sub> quadrupling; the "+"
+  training separates the two forcings so the emulator responds correctly to
+  each. Weights released 10 September 2026 under Apache 2.0; the parameter
+  count is not stated on the card.</p>
+tags:
+  - science
+  - open-weight
+model:
+  license: Apache 2.0
+paper:
+  arxiv: "2606.07928"
+  huggingface_url: https://huggingface.co/allenai/ACE2S-SHiELD-plus
