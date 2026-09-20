@@ -1,0 +1,104 @@
+name: AI Singapore
+slug: ai-singapore
+url: https://aisingapore.org
+huggingface: https://huggingface.co/aisingapore
+github: https://github.com/aisingapore
+region: singapore
+founded: "2017-05"
+type: nonprofit
+description: >
+  <p><strong>AI Singapore</strong> (AISG) is Singapore's national AI programme,
+  announced on 3 May 2017 with a commitment from the National Research
+  Foundation to invest up to <strong>S$150 million over five years</strong>,
+  co-driven by the Smart Nation and Digital Government Office, EDB, IMDA,
+  SGInnovate, and IHiS, and hosted at the National University of Singapore.
+  Its founding executive chairman was NUS deputy president Ho Teck Hua; the
+  programme is now chaired by <strong>Christian Wolfrum</strong> and organised
+  into pillars for AI Research, AI Technology, AI Innovation, AI Products, AI
+  Governance, and Talent, with the 100 Experiments industry programme and the
+  AI Apprenticeship Programme as its adoption arms. Its research identity is
+  the <strong>AI Products</strong> pillar's <a href="https://sea-lion.ai">SEA-LION</a>
+  project (Southeast Asian Languages In One Network), led by Senior Director
+  <strong>Leslie Teo</strong> with Deputy Director <strong>William Chandra
+  Tjhi</strong>.</p>
+
+  <p>SEA-LION began as a from-scratch effort: <a
+  href="/outputs/ai-singapore/sea-lion-v1">v1</a> (October 2023) pretrained 3B
+  and 7B MPT-architecture models on 980B tokens with a custom 256K-entry
+  Southeast Asian tokenizer on 256 A100s. From v2 (July 2024) the programme
+  switched to continued pretraining and post-training of open foundation
+  models, a choice the lab argues gets more capability per dollar for
+  low-resource languages: v2 on Llama 3, <a
+  href="/outputs/ai-singapore/sea-lion-v3">v3</a> on Llama 3.1 and Gemma 2 with
+  200B tokens of CPT (December 2024, with a 70B), <a
+  href="/outputs/ai-singapore/sea-lion-v4">v4</a> on Gemma 3 27B with 500B tokens
+  and the family's first vision input (August 2025, then Qwen3 32B and 8B-VL
+  siblings), <a href="/outputs/ai-singapore/sea-lion-v4.5">v4.5</a> on Qwen3.6-27B
+  and Gemma 4 E2B with a block-diffusion speculative decoder (May 2026), and
+  <a href="/outputs/ai-singapore/nemotron-sea-lion-v4.8">Nemotron-SEA-LION-v4.8</a>
+  (September 2026), the family's first mixture-of-experts models, built with
+  NVIDIA on Nemotron 3 Nano and Super with continued pretraining and on-policy
+  distillation from Nemotron 3 Ultra. Every release ships under MIT (or the base
+  model's terms) on HuggingFace, where the org holds about 90 models.</p>
+
+  <p>The lab's second contribution is evaluation for the region: <a
+  href="/outputs/ai-singapore/sea-helm">SEA-HELM</a> (2025, ACL Findings), built
+  with Stanford CRFM's HELM team, scores models across NLP classics,
+  LLM-specific tasks, Southeast Asian linguistics, culture, and safety in
+  Filipino, Indonesian, Tamil, Thai, and Vietnamese, since extended to Malay and
+  Burmese, and runs a public leaderboard the SEA-LION models are measured on.
+  Companion work includes the SEA-LION Embedding suite (EMNLP 2026 Findings),
+  SEA-SafeguardBench (ACL 2026 Findings), SEA-Guard safety models, and Project
+  Aquarium's mapping of regional language data. Coverage spans 11 official
+  Southeast Asian languages plus regional ones such as Javanese, Sundanese, and
+  Tetum; no SEA-LION model is scored on Artificial Analysis.</p>
+people:
+  - name: Leslie Teo
+    role: Senior Director, AI Products (SEA-LION lead)
+    urls:
+      - label: arXiv
+        url: https://arxiv.org/a/teo_l_1
+  - name: William Chandra Tjhi
+    role: Deputy Director, AI Products (SEA-HELM senior author)
+    url: https://www.semanticscholar.org/author/2618006
+  - name: Yosephine Susanto
+    role: Researcher, AI Products (SEA-HELM first author)
+    urls:
+      - label: arXiv
+        url: https://arxiv.org/a/susanto_y_1
+  - name: Peerat Limkonchotiwat
+    role: Researcher, AI Products (SEA-HELM, SEA-SafeguardBench)
+    urls:
+      - label: arXiv
+        url: https://arxiv.org/a/limkonchotiwat_p_1
+  - name: Christian Wolfrum
+    role: Executive Chairman
+news:
+  - title: "Uplifting AI in Southeast Asia: Announcing Nemotron-SEA-LION-v4.8 in Collaboration With NVIDIA (30B-A3B and 120B-A12B, MIT)"
+    url: https://sea-lion.ai/blog/uplifting-ai-in-southeast-asia-sea-announcing-nemotron-sea-lion-v4-8-in-collaboration-with-nvidia/
+    source: AI Singapore
+    date: 2026-09-18
+  - title: "Introducing the SEA-LION v4.5 Suite: Agentic Power and Speed (Qwen3.6-27B and Gemma 4 E2B Bases, Block-Diffusion Speculative Decoder)"
+    url: https://sea-lion.ai/blog/introducing-the-sea-lion-v4-5-suite-agentic-power-and-speed/
+    source: AI Singapore
+    date: 2026-05-20
+  - title: "Bridging the Semantic Gap: Announcing the SEA-LION Embedding Suite"
+    url: https://sea-lion.ai/blog/bridging-the-semantic-gap-announcing-the-sea-lion-embedding-suite/
+    source: AI Singapore
+    date: 2026-03-16
+  - title: "SEA-LION v4: Our First Multimodal Release (Gemma-SEA-LION-v4-27B-IT, #5 of 55 on SEA-HELM)"
+    url: https://sea-lion.ai/blog/sea-lion-v4-multimodal/
+    source: AI Singapore
+    date: 2025-08-25
+  - title: "SEA-HELM: Assessing LLM Performance for Southeast Asia"
+    url: https://sea-lion.ai/blog/sea-helm/
+    source: AI Singapore
+    date: 2025-03-21
+  - title: "AI.SG: New National Programme to Catalyse, Synergise and Boost Singapore's AI Capabilities (NRF to Invest Up to S$150M Over Five Years)"
+    url: https://www.mddi.gov.sg/newsroom/aisg-new-national-programme-to-catalyse-synergise-and-boost-singapore-s-artificial-intelligence-capabilities
+    source: Ministry of Digital Development and Information
+    date: 2017-05-03
+tags:
+  - open-weight
+  - multilingual
+  - research

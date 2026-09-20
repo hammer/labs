@@ -1,0 +1,42 @@
+name: SEA-LION v1
+slug: sea-lion-v1
+lab: ai-singapore
+type: model
+date: 2023-10-30
+flagship: true
+sources:
+  - label: HuggingFace (SEA-LION-v1-7B)
+    url: https://huggingface.co/aisingapore/SEA-LION-v1-7B
+  - label: HuggingFace (SEA-LION-v1-3B)
+    url: https://huggingface.co/aisingapore/SEA-LION-v1-3B
+  - label: GitHub
+    url: https://github.com/aisingapore/sealion
+description: >
+  <p>The origin of the SEA-LION line and the only generation trained from
+  scratch: 3B and 7B decoder models on the MPT architecture, pretrained by AI
+  Singapore's Products pillar on <strong>980B tokens</strong> with a custom
+  256K-entry SEABPE tokenizer built for eleven Southeast Asian languages
+  (English, Chinese, Indonesian, Malay, Thai, Vietnamese, Filipino, Tamil,
+  Burmese, Khmer, Lao) on 256 A100 40GB GPUs, released under MIT in October
+  2023 with instruct-tuned versions following in early 2024. Later generations
+  moved to continued pretraining of open foundation models, so v1 remains the
+  reference point for what a from-scratch regional model of that era could
+  reach.</p>
+tags:
+  - multilingual
+  - open-weight
+  - foundational
+model:
+  architecture: dense
+  parameters: 7B
+  training_tokens: 980B
+  pretrained_from_scratch: true
+  training_hardware: 256x A100 40GB
+  license: MIT
+  variants:
+    - name: SEA-LION-v1-3B
+      parameters: 3B
+    - name: SEA-LION-v1-7B
+      parameters: 7B
+      notes: "Instruct-tuned SEA-LION-v1-7B-IT released February 2024."
+related: [sea-lion-v3]

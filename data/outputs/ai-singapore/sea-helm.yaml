@@ -1,0 +1,45 @@
+name: SEA-HELM
+slug: sea-helm
+lab: ai-singapore
+type: eval
+date: 2025-02-20
+sources:
+  - label: "arXiv (SEA-HELM: Southeast Asian Holistic Evaluation of Language Models)"
+    url: https://arxiv.org/abs/2502.14301
+  - label: Leaderboard
+    url: https://leaderboard.sea-lion.ai/
+  - label: GitHub
+    url: https://github.com/aisingapore/SEA-HELM
+  - label: Blog
+    url: https://sea-lion.ai/blog/sea-helm/
+description: >
+  <p>The regional benchmark the SEA-LION models are built against, developed
+  by AI Singapore with Stanford CRFM's HELM team and published at ACL 2025
+  Findings (Yosephine Susanto first author, William Chandra Tjhi senior
+  author). SEA-HELM scores models along five pillars, NLP classics, LLM-specific
+  tasks such as instruction following and chat, Southeast Asian linguistics
+  (the LINDSEA diagnostics), SEA culture, and safety, in Filipino, Indonesian,
+  Tamil, Thai, and Vietnamese at launch, with about 35,000 items across
+  translation, reasoning, understanding, toxicity, and cultural tests; the 2026
+  revision used for v4.8 adds Malay and Burmese and folds in
+  SEA-SafeguardBench. Its public leaderboard ranks open and closed models by
+  language and task and is the source of the SEA-HELM numbers quoted across the
+  SEA-LION entries.</p>
+tags:
+  - eval
+  - benchmark
+  - multilingual
+eval:
+  domains:
+    - NLP classics
+    - instruction following and chat
+    - Southeast Asian linguistics
+    - Southeast Asian culture
+    - safety
+  scoring_method: per-task scores averaged to per-language and overall Southeast Asian scores
+  leaderboard_url: https://leaderboard.sea-lion.ai/
+paper:
+  arxiv: "2502.14301"
+  venue: ACL 2025 Findings
+  code_url: https://github.com/aisingapore/SEA-HELM
+related: [nemotron-sea-lion-v4.8, sea-lion-v4]

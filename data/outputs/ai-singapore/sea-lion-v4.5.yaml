@@ -1,0 +1,45 @@
+name: SEA-LION v4.5
+slug: sea-lion-v4.5
+lab: ai-singapore
+type: model
+date: 2026-05-20
+sources:
+  - label: Announcement
+    url: https://sea-lion.ai/blog/introducing-the-sea-lion-v4-5-suite-agentic-power-and-speed/
+  - label: HuggingFace (Qwen-SEA-LION-v4.5-27B-IT)
+    url: https://huggingface.co/aisingapore/Qwen-SEA-LION-v4.5-27B-IT
+  - label: HuggingFace (Gemma-SEA-LION-v4.5-E2B-IT)
+    url: https://huggingface.co/aisingapore/Gemma-SEA-LION-v4.5-E2B-IT
+description: >
+  <p>The agentic generation of SEA-LION, built by distillation, targeted
+  supervised fine-tuning, and model merging on top of current open models.
+  <strong>Qwen-SEA-LION-v4.5-27B-IT</strong> post-trains Alibaba's <a
+  href="/outputs/alibaba/qwen3.6-open">Qwen3.6-27B</a> (hybrid linear and full
+  attention, early-fusion vision, 262K context) on Burmese, Indonesian,
+  Filipino, Malay, Tamil, Thai, and Vietnamese and scores 48 of 107 on the
+  Claw-Eval agentic suite with thinking on, against 47 for the base;
+  <strong>Gemma-SEA-LION-v4.5-E2B-IT</strong> gives the same treatment to Gemma 4
+  E2B for on-device use. A <strong>SpecDecoder</strong> companion, built on
+  z-lab's Qwen3.6-27B-DFlash block-diffusion drafter, is claimed to lift
+  throughput up to five times. All MIT. Not pretrained from scratch.</p>
+tags:
+  - multilingual
+  - agentic
+  - multimodal
+  - open-weight
+model:
+  architecture: dense
+  parameters: 27B
+  base_model: qwen3.6-open
+  context_window: 262144
+  license: MIT
+  variants:
+    - name: Qwen-SEA-LION-v4.5-27B-IT
+      parameters: 27B
+      notes: "Post-trained from Qwen3.6-27B; Claw-Eval 48/107 with thinking."
+    - name: Gemma-SEA-LION-v4.5-E2B-IT
+      parameters: 2B
+      notes: "Post-trained from Gemma 4 E2B; on-device target."
+    - name: Qwen-SEA-LION-v4.5-27B-IT-SpecDecoder
+      notes: "Block-diffusion speculative drafter on Qwen3.6-27B-DFlash; up to 5x throughput claimed."
+related: [sea-lion-v4, nemotron-sea-lion-v4.8, qwen3.6-open]

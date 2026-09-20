@@ -1,0 +1,80 @@
+name: Nemotron-SEA-LION-v4.8
+slug: nemotron-sea-lion-v4.8
+lab: ai-singapore
+type: model
+date: 2026-09-18
+flagship: true
+sources:
+  - label: Announcement
+    url: https://sea-lion.ai/blog/uplifting-ai-in-southeast-asia-sea-announcing-nemotron-sea-lion-v4-8-in-collaboration-with-nvidia/
+  - label: "arXiv (SEA-LION-v4.8: A Technical Report)"
+    url: https://arxiv.org/abs/2609.18310
+  - label: HuggingFace (120B-A12B)
+    url: https://huggingface.co/aisingapore/Nemotron-SEA-LION-v4.8-120B-A12B
+  - label: HuggingFace (30B-A3B)
+    url: https://huggingface.co/aisingapore/Nemotron-SEA-LION-v4.8-30B-A3B
+  - label: HuggingFace collection (bases, FP8, NVFP4, GGUF)
+    url: https://huggingface.co/collections/aisingapore/sea-lion-v48
+description: >
+  <p>The first mixture-of-experts models in the SEA-LION family, built with
+  NVIDIA on the Nemotron 3 hybrid Mamba-2 architecture and released under MIT
+  with base and post-trained checkpoints plus FP8, NVFP4, and GGUF builds.
+  <strong>Nemotron-SEA-LION-v4.8-120B-A12B</strong> starts from <a
+  href="/outputs/nvidia/nemotron-3-super">Nemotron 3 Super</a> (88 layers, 512
+  routed experts with 22 active plus a shared expert, multi-token prediction)
+  and <strong>30B-A3B</strong> from <a
+  href="/outputs/nvidia/nemotron-3-nano">Nemotron 3 Nano</a> (128 experts, 6
+  active). The 30B received continued pretraining on <strong>150B tokens</strong>
+  of Southeast Asian instruction, reasoning, code, and parallel data in NeMo
+  Megatron Bridge; the 120B on 33.5B tokens in NeMo AutoModel; both keep the
+  Nemotron tokenizer and the 1M-token pretraining context, with post-training
+  run at 128K and the cards stating a 262,144-token context. Post-training
+  combines supervised fine-tuning with <strong>online on-policy
+  distillation</strong> from an FP8 <a
+  href="/outputs/nvidia/nemotron-3-ultra">Nemotron 3 Ultra 550B-A55B</a>
+  teacher, followed by merging with <a
+  href="/outputs/nvidia/nemotron-3.5-lightning">Nemotron 3.5 Lightning</a> (30B)
+  or Nemotron 3 Super (120B). The CPT corpus weights Indonesian, Malay, Burmese,
+  Tamil, and Vietnamese instruction data, parallel data across eleven regional
+  languages down to Javanese and Sundanese, and Thai medical reasoning.</p>
+
+  <p>On SEA-HELM the 120B rises from Nemotron 3 Super's 49.30 to
+  <strong>63.44</strong> overall and the 30B from Nemotron 3.5 Lightning's 46.06
+  (Nano's 46.89) to <strong>51.57</strong>; the largest moves are in the languages
+  the base models handled worst, Burmese 4.98 to 31.35 and Tamil 21.83 to 56.35
+  at 120B. The 48-author report (16 September 2026) also documents where the
+  adapted models remain no better than their Nemotron parents, and the SEA-HELM
+  scores are point estimates from the lab's own leaderboard. Not scored on
+  Artificial Analysis.</p>
+tags:
+  - multilingual
+  - open-weight
+  - moe
+  - reasoning
+model:
+  architecture: moe
+  parameters: 120B
+  active_parameters: 12B
+  base_model: nemotron-3-super
+  context_window: 262144
+  num_experts: 512
+  top_k: 22
+  license: MIT
+  benchmark_scores:
+    - benchmark: SEA-HELM (overall SEA, 120B-A12B)
+      score: "63.44"
+    - benchmark: SEA-HELM (overall SEA, 30B-A3B)
+      score: "51.57"
+  variants:
+    - name: Nemotron-SEA-LION-v4.8-120B-A12B
+      parameters: 120B
+      active_parameters: 12B
+      notes: "From Nemotron 3 Super 120B-A12B (LatentMoE hybrid, 88 layers, 512 experts + 1 shared, 22 active); 33.5B-token CPT in NeMo AutoModel; SFT + on-policy distillation from Nemotron 3 Ultra, merged with Super. SEA-HELM 63.44 (from 49.30)."
+    - name: Nemotron-SEA-LION-v4.8-30B-A3B
+      parameters: 30B
+      active_parameters: 3B
+      notes: "From Nemotron 3 Nano 30B-A3B (hybrid MoE, 128 experts, 6 active); 150B-token CPT in NeMo Megatron Bridge; merged with Nemotron 3.5 Lightning. SEA-HELM 51.57 (from 46.06)."
+paper:
+  arxiv: "2609.18310"
+  huggingface_url: https://huggingface.co/collections/aisingapore/sea-lion-v48
+related: [sea-lion-v4.5, sea-helm, nemotron-3-super, nemotron-3-nano]

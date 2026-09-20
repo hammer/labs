@@ -1,0 +1,46 @@
+name: SEA-LION v3
+slug: sea-lion-v3
+lab: ai-singapore
+type: model
+date: 2024-12-11
+sources:
+  - label: "arXiv (SEA-LION: Southeast Asian Languages in One Network)"
+    url: https://arxiv.org/abs/2504.05747
+  - label: HuggingFace (Llama-SEA-LION-v3-70B-IT)
+    url: https://huggingface.co/aisingapore/Llama-SEA-LION-v3-70B-IT
+  - label: HuggingFace (Llama-SEA-LION-v3-8B-IT)
+    url: https://huggingface.co/aisingapore/Llama-SEA-LION-v3-8B-IT
+description: >
+  <p>The generation documented in the SEA-LION paper (April 2025, 31 authors
+  led by Raymond Ng with Leslie Teo as senior author): Llama-SEA-LION-v3-8B-IT
+  and Gemma-SEA-LION-v3-9B-IT, continued-pretrained from Llama 3.1 8B Instruct
+  and Gemma 2 9B on a <strong>200B-token</strong> mixture the paper tuned in
+  small-scale sweeps (roughly 55% Southeast Asian languages, 25% English, 20%
+  code), then put through multi-stage instruction tuning, alignment, and model
+  merging, with a 70B Llama variant released the same month. The paper claims
+  state-of-the-art results among LLMs supporting the eleven SEA languages and
+  releases the training data recipe, scripts, and checkpoints; a v3.5 reasoning
+  variant (Llama-SEA-LION-v3.5-70B-R) followed in April 2025. Not pretrained
+  from scratch.</p>
+tags:
+  - multilingual
+  - open-weight
+  - research
+model:
+  architecture: dense
+  parameters: 70B
+  pretrained_from_scratch: false
+  variants:
+    - name: Llama-SEA-LION-v3-8B-IT
+      parameters: 8B
+      notes: "CPT of Llama 3.1 8B Instruct, 200B tokens."
+    - name: Gemma-SEA-LION-v3-9B-IT
+      parameters: 9B
+      notes: "CPT of Gemma 2 9B."
+    - name: Llama-SEA-LION-v3-70B-IT
+      parameters: 70B
+      notes: "December 2024; v3.5-70B-R reasoning variant April 2025."
+paper:
+  arxiv: "2504.05747"
+  code_url: https://github.com/aisingapore/sealion
+related: [sea-lion-v1, sea-lion-v4]

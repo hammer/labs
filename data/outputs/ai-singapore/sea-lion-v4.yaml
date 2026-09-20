@@ -1,0 +1,46 @@
+name: SEA-LION v4
+slug: sea-lion-v4
+lab: ai-singapore
+type: model
+date: 2025-08-25
+sources:
+  - label: Announcement
+    url: https://sea-lion.ai/blog/sea-lion-v4-multimodal/
+  - label: HuggingFace (Gemma-SEA-LION-v4-27B-IT)
+    url: https://huggingface.co/aisingapore/Gemma-SEA-LION-v4-27B-IT
+  - label: HuggingFace (Qwen-SEA-LION-v4-8B-VL)
+    url: https://huggingface.co/aisingapore/Qwen-SEA-LION-v4-8B-VL
+description: >
+  <p>SEA-LION's first multimodal generation. <strong>Gemma-SEA-LION-v4-27B-IT</strong>
+  continues pretraining of Gemma 3 27B on <strong>500B tokens</strong> across
+  Burmese, English, Mandarin, Indonesian, Khmer, Lao, Malay, Tagalog, Tamil,
+  Thai, and Vietnamese, keeps Gemma's image input and 128K context, adds
+  function calling, and at release ranked fifth of 55 models on SEA-HELM and
+  first among open models under 200B parameters. Two Qwen-based siblings
+  followed: Qwen-SEA-LION-v4-32B-IT on Qwen3-32B for reasoning (October 2025)
+  and Qwen-SEA-LION-v4-8B-VL and 4B-VL on Qwen3-VL (November and December
+  2025), the 8B-VL being the org's most downloaded model. Released under the
+  Gemma terms and MIT respectively. Not pretrained from scratch.</p>
+tags:
+  - multilingual
+  - multimodal
+  - vision
+  - open-weight
+model:
+  architecture: dense
+  parameters: 27B
+  base_model: gemma
+  context_window: 131072
+  training_tokens: 500B
+  license: Gemma Terms of Use
+  variants:
+    - name: Gemma-SEA-LION-v4-27B-IT
+      parameters: 27B
+      notes: "CPT of Gemma 3 27B, 500B tokens; image input; SEA-HELM #5 of 55 at release."
+    - name: Qwen-SEA-LION-v4-32B-IT
+      parameters: 32B
+      notes: "Post-trained from Qwen3-32B for reasoning (October 2025), MIT."
+    - name: Qwen-SEA-LION-v4-8B-VL
+      parameters: 8B
+      notes: "From Qwen3-VL-8B-Instruct (November 2025); a 4B-VL followed in December."
+related: [sea-lion-v3, sea-lion-v4.5, gemma]
