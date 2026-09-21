@@ -3,8 +3,10 @@
  *
  * The AA sync (fetch-aa-intelligence) only rewrites structured fields; scores
  * quoted in descriptions, notes, variant notes, and lab blurbs rot silently
- * when AA rescores (the 2026-08-03 sweep found ~25 stale of 136 mentions).
- * This is the standing sweep tool that finds them.
+ * when AA rescores (the 2026-08-03 sweep found ~25 stale of 136 mentions; the
+ * 2026-09-21 audit found 9 more that the previous scanner passed or never saw).
+ * This is the standing sweep tool that finds them. The pure pieces live in
+ * scripts/aaii-mentions.ts and are pinned by `npm run test:aaii`.
  *
  * Each mention is classified:
  *   ✓ structured  — equals a structured intelligence_index in the same file
@@ -13,10 +15,15 @@
  *                   cross-references)
  *   ≈ aa-current  — equals the rounded live AA value of a slug related to
  *                   the file slug or the variant's own name (modes/siblings)
- *   ⏳ historical — context carries an explicit era marker (v3.0,
+ *   ⏳ historical — context carries an explicit era marker (v3.0, "38 on v4.2",
  *                   pre-recalibration, "at release", release-era, debuted)
+ *   ✗ STALE       — equals an OLD score in this file's intelligence_index_history
+ *                   with no era marker and no live match: fix the number
+ *   ✗ CHECK       — equals an old history score but a live sibling/variant slug
+ *                   also reads it; a human decides (mode notes are often fine)
  *   ✗ UNRESOLVED  — none of the above; verify by hand and either fix the
  *                   number or add an era marker
+ *   ✗ POINT-DIFF  — "N points above/below …" near an AA mention; re-derive
  *
  * News titles are not scanned: they are historical records of what an outlet
  * wrote and are never edited (sweep rule, AGENTS.md).
@@ -29,9 +36,11 @@
 import { readFileSync } from 'fs';
 import { globSync } from 'glob';
 import { parse } from 'yaml';
-import { parseAaScores } from "./aa-payload";
+import { parseAaScores } from './aa-payload';
+import { classifyMention, findMentions, historyMap, POINT_DIFF, type MentionClass } from './aaii-mentions';
 
 const LEADERBOARD_URL = 'https://artificialanalysis.ai/leaderboards/models';
+const CURRENT_VERSION = 'AA v4.3';
 const showAll = process.argv.includes('--all');
 
 // Same RSC extraction as fetch-aa-intelligence (kept self-contained like the
@@ -48,16 +57,6 @@ async function fetchAaScores(): Promise<Map<string, number>> {
   return map;
 }
 
-const PATTERNS = [
-  /(?:AA )?Intelligence Index(?:\s*v4\.\d+)?[:\s]*(?:<\/?strong>)?\s*(?:<strong>)?(\d{1,2})\b/g,
-  /AA(?:II)? [Ii]ndex(?:\s*v4\.\d+)?[:\s]*(?:<strong>)?(\d{1,2})\b/g,
-  /\(AA(?: index)?:? (\d{1,2})\)/g,
-  /AA [Ii]ntelligence[:\s]+(\d{1,2})\b/g,
-  /AAII[:\s]+(\d{1,2})\b/g,
-];
-
-const HISTORICAL = /pre-recalibration|v3\.\d|release-era|at release|at launch|debuted|era claims|until \d{4}/i;
-
 const norm = (s: string) => s.toLowerCase().replace(/[._\s]+/g, '-');
 function slugRelated(fileSlug: string, aaSlug: string): boolean {
   const a = norm(fileSlug);
@@ -72,7 +71,7 @@ interface Mention {
   field: string;
   n: number;
   ctx: string;
-  cls: 'structured' | 'tracked' | 'aa-current' | 'historical' | 'UNRESOLVED';
+  cls: MentionClass | 'POINT-DIFF';
   note?: string;
 }
 
@@ -92,89 +91,86 @@ async function main() {
 
   const mentions: Mention[] = [];
 
-  function scan(file: string, fileSlug: string, field: string, text: unknown, own: number[]) {
+  function scan(file: string, fileSlug: string, field: string, text: unknown, blocks: any[], fileSlugs: Set<string> = new Set()) {
     if (typeof text !== 'string') return;
-    const seen = new Set<number>();
-    for (const pat of PATTERNS) {
-      for (const m of text.matchAll(pat)) {
-        if (m.index === undefined || seen.has(m.index)) continue;
-        seen.add(m.index);
-        const n = parseInt(m[1], 10);
-        const s = Math.max(0, m.index - 90);
-        const ctx = text.slice(s, m.index + m[0].length + 70).replace(/\s+/g, ' ');
-        let cls: Mention['cls'] = 'UNRESOLVED';
-        let note: string | undefined;
-        // Variant mentions can resolve via the variant's own name → AA slug.
-        const variantName = field.startsWith('variant:') ? field.slice(8) : '';
-        // Needle search uses a wider window than the display context so a
-        // model named earlier in the sentence still anchors the number.
-        const wide = canon(text.slice(Math.max(0, m.index - 250), m.index + m[0].length + 80));
-        const tracked = needles.find((x) => wide.includes(x.needle) && x.score === n);
-        if (own.includes(n)) {
-          cls = 'structured';
-        } else if (tracked) {
-          cls = 'tracked';
-          note = tracked.ref;
-        } else {
-          // A slug "relates" if it extends the file slug or the variant's own
-          // name — or if the slug (less trailing mode tokens) is literally
-          // named in the surrounding text ("Claude Sonnet 4.6" ⊃
-          // claude-sonnet-4-6-adaptive minus "adaptive").
-          const namedInText = (slug: string) => {
-            const toks = canon(slug).split(' ');
-            for (let drop = 0; drop <= 2 && toks.length - drop >= 3; drop++) {
-              const frag = toks.slice(0, toks.length - drop).join(' ');
-              if (frag.length >= 8 && wide.includes(frag)) return true;
-            }
-            return false;
-          };
-          const hit = [...aa.entries()].find(
-            ([slug, v]) =>
-              Math.round(v) === n &&
-              (slugRelated(fileSlug, slug) ||
-                (variantName && slugRelated(variantName, slug)) ||
-                namedInText(slug)),
-          );
-          if (hit) {
-            cls = 'aa-current';
-            note = `${hit[0]} = ${hit[1]}`;
-          } else if (HISTORICAL.test(ctx)) {
-            cls = 'historical';
-          }
+    const { current, history } = historyMap(blocks);
+    const variantName = field.startsWith('variant:') ? field.slice(8) : '';
+    for (const m of findMentions(text)) {
+      // Needle search uses a wider window than the display context so a
+      // model named earlier in the sentence still anchors the number.
+      const wide = canon(text.slice(Math.max(0, m.index - 250), m.index + 80));
+      const tracked = needles.find((x) => wide.includes(x.needle) && x.score === m.n);
+      // A slug "relates" if it extends the file slug or the variant's own
+      // name — or if the slug (less trailing mode tokens) is literally
+      // named in the surrounding text ("Claude Sonnet 4.6" ⊃
+      // claude-sonnet-4-6-adaptive minus "adaptive").
+      const namedInText = (slug: string) => {
+        const toks = canon(slug).split(' ');
+        for (let drop = 0; drop <= 2 && toks.length - drop >= 3; drop++) {
+          const frag = toks.slice(0, toks.length - drop).join(' ');
+          if (frag.length >= 8 && wide.includes(frag)) return true;
         }
-        mentions.push({ file, field, n, ctx, cls, note });
+        return false;
+      };
+      const live = [...aa.entries()].find(
+        ([slug, v]) =>
+          Math.round(v) === m.n &&
+          (fileSlugs.has(slug) || slugRelated(fileSlug, slug) || (variantName && slugRelated(variantName, slug)) || namedInText(slug)),
+      );
+      const { cls, note } = classifyMention({
+        n: m.n,
+        near: m.near,
+        ctx: m.ctx,
+        current,
+        history,
+        currentVersion: CURRENT_VERSION,
+        trackedHit: tracked?.ref,
+        liveHit: live ? `${live[0]} = ${live[1].toFixed(1)}` : undefined,
+      });
+      mentions.push({ file, field, n: m.n, ctx: m.ctx, cls, note });
+    }
+    // Derived differences: only meaningful near an AA mention.
+    if (/Intelligence Index|Artificial Analysis|AAII/.test(text)) {
+      for (const d of text.matchAll(POINT_DIFF)) {
+        if (d.index === undefined) continue;
+        const ctx = text.slice(Math.max(0, d.index - 120), d.index + 70).replace(/\s+/g, ' ');
+        if (/Intelligence Index|Artificial Analysis|AAII|AA /.test(ctx)) mentions.push({ file, field, n: parseInt(d[1], 10), ctx, cls: 'POINT-DIFF', note: 're-derive from current scores' });
       }
     }
   }
 
   // Pre-pass: needles from every scored output, so cross-references and lab
   // blurbs can resolve regardless of scan order.
-  const parsed: Array<[string, any, number[]]> = [];
+  const parsed: Array<[string, any, any[], Set<string>]> = [];
   for (const file of globSync('data/outputs/*/*.yaml').sort()) {
-    const d = parse(readFileSync(file, 'utf-8'));
-    const own: number[] = [];
-    if (d.model?.intelligence_index != null) own.push(d.model.intelligence_index);
+    const raw = readFileSync(file, 'utf-8');
+    const d = parse(raw);
+    // Every AA model page the file links (anchor, variants, sub-outputs) is a related slug,
+    // so "apriel-thinker" resolves against artificialanalysis.ai/models/apriel-v1-5-15b-thinker.
+    const fileSlugs = new Set([...raw.matchAll(/artificialanalysis\.ai\/models\/([a-z0-9-]+)/g)].map((m) => m[1]));
+    const blocks: any[] = [];
+    if (d.model?.intelligence_index != null) blocks.push(d.model);
     for (const sub of d.outputs ?? []) {
       if (sub.model?.intelligence_index != null) {
-        own.push(sub.model.intelligence_index);
-        addNeedle(sub.name, sub.model.intelligence_index, `sub ${sub.name}`);
+        blocks.push(sub.model);
+        addNeedle(sub.name, Math.round(sub.model.intelligence_index), `sub ${sub.name}`);
       }
     }
-    if (own.length && d.model?.intelligence_index != null) {
-      addNeedle(d.name, d.model.intelligence_index, d.slug);
-      addNeedle(d.slug, d.model.intelligence_index, d.slug);
+    if (d.model?.intelligence_index != null) {
+      addNeedle(d.name, Math.round(d.model.intelligence_index), d.slug);
+      addNeedle(d.slug, Math.round(d.model.intelligence_index), d.slug);
     }
-    parsed.push([file, d, own]);
+    parsed.push([file, d, blocks, fileSlugs]);
   }
 
-  for (const [file, d, own] of parsed) {
+  for (const [file, d, blocks, fileSlugs] of parsed) {
     const slug = d.slug ?? '';
-    scan(file, slug, 'desc', d.description, own);
-    scan(file, slug, 'notes', d.notes, own);
-    for (const v of d.model?.variants ?? []) scan(file, slug, `variant:${v.name}`, v.notes, own);
+    scan(file, slug, 'desc', d.description, blocks, fileSlugs);
+    scan(file, slug, 'notes', d.notes, blocks, fileSlugs);
+    for (const v of d.model?.variants ?? []) scan(file, slug, `variant:${v.name}`, v.notes, blocks, fileSlugs);
     for (const sub of d.outputs ?? []) {
-      scan(file, slug, `sub:${(sub.name ?? '').slice(0, 24)}`, sub.description, own);
-      for (const v of sub.model?.variants ?? []) scan(file, slug, `variant:${v.name}`, v.notes, own);
+      scan(file, slug, `sub:${(sub.name ?? '').slice(0, 24)}`, sub.description, blocks, fileSlugs);
+      for (const v of sub.model?.variants ?? []) scan(file, slug, `variant:${v.name}`, v.notes, blocks, fileSlugs);
     }
   }
   for (const file of globSync('data/labs/*.yaml').sort()) {
@@ -188,14 +184,19 @@ async function main() {
   }
 
   const by = (c: Mention['cls']) => mentions.filter((m) => m.cls === c);
+  const work = [...by('STALE'), ...by('CHECK'), ...by('UNRESOLVED'), ...by('POINT-DIFF')];
   console.log(`${mentions.length} prose mentions`);
   console.log(`  ✓ ${by('structured').length} match a structured score in their file`);
   console.log(`  ✓ ${by('tracked').length} match a named tracked output's structured score`);
   console.log(`  ≈ ${by('aa-current').length} match a live AA value for a related slug`);
   console.log(`  ⏳ ${by('historical').length} explicitly era-marked`);
-  console.log(`  ✗ ${by('UNRESOLVED').length} UNRESOLVED — verify each, then fix or era-mark:\n`);
-  for (const m of by('UNRESOLVED')) {
-    console.log(`  ${m.file} [${m.field}] mentions ${m.n}`);
+  console.log(`  ✗ ${by('STALE').length} STALE (equal an old score in the file's own history)`);
+  console.log(`  ✗ ${by('CHECK').length} CHECK (old history score that a live sibling also reads)`);
+  console.log(`  ✗ ${by('UNRESOLVED').length} UNRESOLVED`);
+  console.log(`  ✗ ${by('POINT-DIFF').length} point differences to re-derive`);
+  console.log(`\nWork-list (${work.length}) — fix the number, add an era marker, or confirm:\n`);
+  for (const m of work) {
+    console.log(`  [${m.cls}] ${m.file} [${m.field}] mentions ${m.n}${m.note ? `  (${m.note})` : ''}`);
     console.log(`      …${m.ctx}…`);
   }
   if (showAll) {

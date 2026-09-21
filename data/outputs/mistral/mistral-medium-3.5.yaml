@@ -21,7 +21,7 @@ description: >
   handling variable image sizes and aspect ratios. Released April 29, 2026
   under a modified MIT license, open weights, runs on 4 GPUs.</p>
 
-  <p><strong>AA Intelligence Index v4.3: 15</strong> &mdash; Mistral's highest
+  <p><strong>AA Intelligence Index v4.3: 14</strong> &mdash; Mistral's highest
   to date. <strong>77.6% on
   SWE-Bench Verified</strong>. Powers the <strong>Vibe remote agents</strong>
   (async cloud coding from CLI or Le Chat) and Le Chat's new Work mode.</p>
@@ -35,9 +35,12 @@ model:
   architecture: dense
   parameters: 128B
   context_window: 256000
-  intelligence_index: 15
+  intelligence_index: 14
   intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 15
+      version: "AA v4.3"
+      until: "2026-09-21"
     - score: 23
       version: "AA v4.2"
       until: "2026-09-08"

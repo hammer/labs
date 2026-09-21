@@ -17,8 +17,7 @@ description: >
   and parameters undisclosed.</p>
 
   <p>GPT-5.4 was OpenAI's highest-scoring model on Artificial Analysis at release; it now
-  reads <strong>Intelligence Index v4.3: 39</strong>. Mini variant (March 17, 2026) has 400K
-  context and AA Intelligence Index v4.3: 25. Proprietary.</p>
+  reads <strong>Intelligence Index v4.3: 39</strong>. Mini variant (March 17, 2026) has 400K context and AA Intelligence Index v4.3: 24. Proprietary.</p>
 tags:
   - frontier
   - reasoning
@@ -61,7 +60,7 @@ model:
         posted: "2026-04-27"
         notes: "90% PI [736B–6.5T]"
     - name: GPT-5.4 Mini
-      notes: "400K context, AA Intelligence Index v4.3: 25"
+      notes: "400K context, AA Intelligence Index v4.3: 24"
     - name: GPT-5.4 Nano
 related:
   - gpt-5

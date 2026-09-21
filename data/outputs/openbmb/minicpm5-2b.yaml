@@ -43,8 +43,7 @@ description: >
   LiveCodeBench v6 69.1, AIME 2025 86.5, MATH-500 94.6, MMLU-Pro 70.8, GPQA
   Diamond 70.2, IFBench 66.3, BFCL v4 66.6, SWE-bench Verified 46.4, AA-LCR
   59.0, NoLiMa 68.1, and BrowseComp-ZH 43.5; it trails Qwen3.5-4B on SWE-bench
-  Pro (14.4 vs 28.2) and Terminal-Bench 2.1 (8.6 vs 25.8). AA Intelligence Index
-  v4.3: <strong>13</strong>, which AA notes is well above the median of 6 for
+  Pro (14.4 vs 28.2) and Terminal-Bench 2.1 (8.6 vs 25.8). AA Intelligence Index v4.3: <strong>12</strong>, which AA notes is well above the median of 6 for
   open-weight models of similar size.</p>
 tags:
   - on-device
@@ -56,11 +55,14 @@ model:
   architecture: dense
   parameters: 2.52B
   context_window: 131072
-  intelligence_index: 13
+  intelligence_index: 12
   intelligence_index_version: "AA v4.3"
   openness_index: 66.7
   openness_index_version: "AA Openness Index v1.0"
   intelligence_index_history:
+    - score: 13
+      version: "AA v4.3"
+      until: "2026-09-21"
     - score: 14
       version: "AA v4.3"
       until: "2026-09-11"

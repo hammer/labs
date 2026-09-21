@@ -17,8 +17,7 @@ description: >
   <p><a href="/labs/sapiens-ai">Sapiens AI</a>'s flagship: a closed, paid,
   API-only multimodal reasoning model (text + image in, text out) for coding,
   scientific reasoning, long-context, and agentic workflows. Supports a
-  <strong>1M-token context</strong> (max output ~65K). released as an "Alpha" on 24 July 2026 (<strong>28 on AA
-  Intelligence Index v4.3</strong>); the <strong>Beta</strong> checkpoint of 26
+  <strong>1M-token context</strong> (max output ~65K). released as an "Alpha" on 24 July 2026 (its AA page reads <strong>27 on Intelligence Index v4.3</strong>); the <strong>Beta</strong> checkpoint of 26
   August 2026, priced at $0.10 per million input tokens and $0.30 per million
   output, scores <strong>35 on v4.3</strong> and is the entry's anchor.</p>
 

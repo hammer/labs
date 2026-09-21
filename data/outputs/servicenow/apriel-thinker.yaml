@@ -13,8 +13,10 @@ sources:
     url: https://huggingface.co/ServiceNow-AI/Apriel-1.6-15b-Thinker
   - label: Blog (1.6)
     url: https://huggingface.co/blog/ServiceNow-AI/apriel-1p6-15b-thinker
-  - label: Artificial Analysis
+  - label: Artificial Analysis (1.6)
     url: https://artificialanalysis.ai/models/apriel-v1-6-15b-thinker
+  - label: Artificial Analysis (1.5)
+    url: https://artificialanalysis.ai/models/apriel-v1-5-15b-thinker
 description: >
   <p>ServiceNow's cost-efficiency flagship: a <strong>15B multimodal
   (text+image) reasoning model built by depth-upscaling Mistral's

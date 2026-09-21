@@ -19,8 +19,7 @@ description: >
   <strong>276B total / 12B active MoE</strong> (42 layers, 6 of 256 routed
   experts + 2 shared, hybrid local/global attention), natively multimodal
   (text, image, audio in) with up to <strong>1M-token context</strong>.
-  "Comparable performance to Inkling at a quarter of its size" &mdash; AA
-  Intelligence Index v4.3: <strong>26</strong>, level with the 975B flagship's 26, at
+  "Comparable performance to Inkling at a quarter of its size" &mdash; AA Intelligence Index v4.3: <strong>28</strong>, three points above the 975B flagship's 25, at
   $1.20/M output tokens vs $4.05.</p>
 
   <p>Own pretraining run with a revised data mix and recipe (trained on
@@ -45,11 +44,14 @@ model:
   num_experts: 256
   top_k: 6
   license: Apache 2.0
-  intelligence_index: 26
+  intelligence_index: 28
   intelligence_index_version: "AA v4.3"
   openness_index: 33.3
   openness_index_version: "AA Openness Index v1.0"
   intelligence_index_history:
+    - score: 26
+      version: "AA v4.3"
+      until: "2026-09-21"
     - score: 32
       version: "AA v4.2"
       until: "2026-09-08"

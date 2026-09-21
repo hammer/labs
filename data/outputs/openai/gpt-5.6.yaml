@@ -64,6 +64,6 @@ model:
     - name: GPT-5.6 Terra
       notes: AAII 42 (v4.3, max effort); $2.50/$15 per MTok
     - name: GPT-5.6 Luna
-      notes: AAII 38 (v4.3, max effort); $1/$6 per MTok
+      notes: AAII 37 (v4.3, max effort); $1/$6 per MTok
 related:
   - genebench-pro

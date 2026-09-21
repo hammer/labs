@@ -40,7 +40,7 @@ Run:
 npm run scan-aaii-mentions
 ```
 
-Resolve every unexplained result. Then run the old-value grep described in the canonical AGENTS.md AAII guidance; the scanner has a coincidental-resolution blind spot. Exclude history entries and historical news titles as directed there.
+Work the printed list: STALE numbers get the current score (or an era marker if the sentence is about a past reading), CHECK items are confirmed against the named live slug, UNRESOLVED items are verified by hand, and POINT-DIFF statements ("N points above X") are re-derived from both current scores. Then run the old-value grep described in the canonical AGENTS.md AAII guidance for comparators quoted in other files. Exclude history entries and historical news titles as directed there.
 
 Avoid adding live scores to prose. If a score is necessary for historical context, label its AA version or describe it explicitly as release-era.
 
@@ -50,6 +50,7 @@ Run:
 
 ```bash
 npm run test:aa          # parser fixtures for every AA payload shape; run first when a sync reports "Parsed only N scored records"
+npm run test:aaii        # prose-scanner fixtures: the "it scores N" phrasing and the stale-history classification order
 npm run validate
 npm run build
 ```

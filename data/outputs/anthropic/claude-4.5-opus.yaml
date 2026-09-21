@@ -14,7 +14,7 @@ sources:
 description: >
   <p>First model to exceed <strong>80% on SWE-bench Verified</strong>. 200K token
   context. Also released as Claude 4.5 Sonnet (September 2025, 1M context, AA Intelligence Index v4.3: 21) and
-  Claude 4.5 Haiku (October 2025, AA Intelligence Index v4.3: 18). Architecture undisclosed.</p>
+  Claude 4.5 Haiku (October 2025, AA Intelligence Index v4.3: 17). Architecture undisclosed.</p>
 
   <p>AA Intelligence Index v4.3: <strong>29</strong> (extended thinking; 24 without). The
   score follows AA's extended-thinking page since 2026-09-08; earlier readings in the
@@ -58,7 +58,7 @@ model:
     - name: Claude 4.5 Sonnet
       notes: "1M context, AA Intelligence Index v4.3: 21"
     - name: Claude 4.5 Haiku
-      notes: "200K context, AA Intelligence Index v4.3: 18"
+      notes: "200K context, AA Intelligence Index v4.3: 17"
       parameters_estimated:
         value: "65B"
         source: https://arxiv.org/abs/2604.24827

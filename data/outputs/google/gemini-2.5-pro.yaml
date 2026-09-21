@@ -16,8 +16,7 @@ description: >
   1M token context. Led LMArena at launch. MoE architecture.</p>
 
   <p>Achieved SOTA on math/science benchmarks including GPQA and AIME 2025. The thinking
-  mode demonstrated Google's approach to test-time compute scaling. AA Intelligence
-  Index v4.3: <strong>17</strong>. Proprietary.</p>
+  mode demonstrated Google's approach to test-time compute scaling. AA Intelligence Index v4.3: <strong>16</strong>. Proprietary.</p>
 tags:
   - frontier
   - reasoning
@@ -25,9 +24,12 @@ tags:
 model:
   architecture: moe
   context_window: 1000000
-  intelligence_index: 17
+  intelligence_index: 16
   intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 17
+      version: "AA v4.3"
+      until: "2026-09-21"
     - score: 19
       version: "AA v4.2"
       until: "2026-09-08"

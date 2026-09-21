@@ -54,8 +54,7 @@ description: >
   leading it on Toolathlon. IFM audited the Terminal-Bench run for reward
   hacking with Artificial Analysis's procedure: 24 of 500 passing trials were
   flagged, which lowers the score from 70.2 to 66.9. On the
-  <strong>Artificial Analysis Intelligence Index v4.3</strong> it scores
-  <strong>34</strong> (38 on v4.2; 47 on v4.1.1 at release), 23 points above K2 Think V2's 11.</p>
+  <strong>Artificial Analysis Intelligence Index v4.3</strong> it scores <strong>31</strong> (34 when v4.3 launched on 8 Sep 2026; 38 on v4.2; 47 on v4.1.1 at release), 20 points above K2 Think V2's 11.</p>
 
   <p>Two architectural additions ship with the fleet. <strong>MoVA</strong>
   (Mixture-of-Value Attention) brings expert routing into multi-head

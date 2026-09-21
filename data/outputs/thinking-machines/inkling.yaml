@@ -26,8 +26,7 @@ description: >
   open-weights models (including Kimi K2.5) followed by 30M+ RL rollouts,
   with a <strong>controllable thinking-effort dial</strong> that reaches
   peer scores at roughly a third of the tokens (AA measures ~25K output
-  tokens per Intelligence Index task vs 37&ndash;43K for peers). AA
-  Intelligence Index <strong>26</strong> (v4.3, measured at xhigh effort)
+  tokens per Intelligence Index task vs 37&ndash;43K for peers). AA Intelligence Index <strong>25</strong> (v4.3, measured at xhigh effort)
   &mdash; the leading U.S. open-weights model at release, ahead of
   Nemotron 3 Ultra (23). Apache 2.0; fine-tunable on Tinker day one;
   served by Together, Fireworks, Modal, Databricks, and Baseten. The
@@ -47,9 +46,12 @@ model:
   active_parameters: "41B"
   context_window: 1000000
   training_tokens: "45T"
-  intelligence_index: 26
+  intelligence_index: 25
   intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 26
+      version: "AA v4.3"
+      until: "2026-09-21"
     - score: 32
       version: "AA v4.2"
       until: "2026-09-08"

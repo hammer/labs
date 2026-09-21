@@ -53,9 +53,7 @@ description: >
   off-peak, with a 1M context and 384K max output. V4-Flash and
   V4-Flash-Vision-Exp were retired the same day, and V4-Pro traffic routes to
   V4.1-Flash from September 14 until a V4.1-Pro ships. Artificial Analysis
-  scores it <strong>40</strong> on Intelligence Index v4.3 (reasoning, max
-  effort), above V4-Pro-0813 at 36 and V4-Flash-0731 at 35, level with Qwen3.8 and
-  behind only GLM-5.3 (45), Kimi K3 (44), and GLM-5.3-Flash (42) among
+  scores it <strong>39</strong> on Intelligence Index v4.3 (reasoning, max effort), above V4-Pro-0813 at 36 and V4-Flash-0731 at 34, one point behind Qwen3.8 and otherwise behind only GLM-5.3 (45), Kimi K3 (44), and GLM-5.3-Flash (42) among
   open-weights models, at 198 tokens/s and a 1.06 s time to first token.</p>
 tags:
   - frontier
@@ -71,8 +69,12 @@ model:
   num_experts: 384
   top_k: 6
   context_window: 1000000
-  intelligence_index: 40
+  intelligence_index: 39
   intelligence_index_version: "AA v4.3"
+  intelligence_index_history:
+    - score: 40
+      version: "AA v4.3"
+      until: "2026-09-21"
   training_tokens: 45T
   license: MIT
   benchmark_scores:

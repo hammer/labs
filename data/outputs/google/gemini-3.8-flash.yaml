@@ -71,7 +71,7 @@ model:
     - name: Gemini 3.8 Flash (high)
       notes: "Default AA anchor; AA Intelligence Index v4.3: 41"
     - name: Gemini 3.8 Flash (medium / low)
-      notes: "AA Intelligence Index v4.3: 40 / 34"
+      notes: "AA Intelligence Index v4.3: 40 / 33"
 related:
   - gemini-3.7-flash
   - gemini-3.6-flash

@@ -25,9 +25,12 @@ model:
   parameters: "310B"
   active_parameters: "15B"
   context_window: 1000000
-  intelligence_index: 22
+  intelligence_index: 25
   intelligence_index_version: "AA v4.3"
   intelligence_index_history:
+    - score: 22
+      version: "AA v4.3"
+      until: "2026-09-21"
     - score: 30
       version: "AA v4.2"
       until: "2026-09-08"

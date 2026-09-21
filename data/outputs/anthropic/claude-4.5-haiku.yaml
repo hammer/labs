@@ -19,8 +19,7 @@ description: >
   computer use, and is priced at <strong>$1 per million input tokens and $5 per
   million output</strong> on the Claude API, Amazon Bedrock, and Google Cloud
   Vertex AI, with a 200K context. Artificial Analysis scores the reasoning mode
-  <strong>18 on Intelligence Index v4.3</strong> and the non-reasoning mode
-  15.</p>
+  <strong>17 on Intelligence Index v4.3</strong> and the non-reasoning mode 15.</p>
 tags:
   - proprietary
   - reasoning
@@ -28,14 +27,18 @@ tags:
   - agentic
 model:
   context_window: 200000
-  intelligence_index: 18
+  intelligence_index: 17
   intelligence_index_version: "AA v4.3"
+  intelligence_index_history:
+    - score: 18
+      version: "AA v4.3"
+      until: "2026-09-21"
   benchmark_scores:
     - benchmark: SWE-bench Verified
       score: "73.3%"
   variants:
     - name: Claude Haiku 4.5 (reasoning)
-      notes: "Extended thinking on; AA Intelligence Index v4.3: 18."
+      notes: "Extended thinking on; AA Intelligence Index v4.3: 17."
     - name: Claude Haiku 4.5 (non-reasoning)
       notes: "AA Intelligence Index v4.3: 15."
 related: [claude-4.5-opus]

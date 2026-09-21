@@ -34,8 +34,7 @@ outputs:
     description: >
       Qwen3.5-397B-A17B native VLM. 201 languages and dialects supported.
       150k to 250k vocabulary expansion. 1M context window.
-      Matches the >1T-parameter Qwen3-Max-Base. AA Intelligence Index v4.3:
-      21 in non-thinking mode (19 with thinking) — AA's non-reasoning page
+      Matches the >1T-parameter Qwen3-Max-Base. AA Intelligence Index v4.3: 21 in non-thinking mode (18 with thinking) — AA's non-reasoning page
       scores higher under v4.3, so the anchor moved there on 2026-09-08;
       earlier readings in the score trail came from the thinking page.
     model:
