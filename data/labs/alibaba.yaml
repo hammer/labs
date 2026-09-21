@@ -48,19 +48,39 @@ description: >
   Hub</a>" business group under CEO Eddie Wu, with CTO
   <a href="https://scholar.google.com/citations?user=64zxhRUAAAAJ">Jingren Zhou</a>
   (ACM Fellow, PhD Columbia, ex-Microsoft Research) taking direct oversight of Qwen
-  model development. Former Google DeepMind researcher Hao Zhou was recruited to lead
+  model development. Zhou stepped down from that role in June 2026 to become
+  Alibaba&rsquo;s chief scientist, and in September 2026 Alibaba
+  <a href="https://www.theinformation.com/briefings/alibaba-appoints-new-head-qwen-llm-team">named
+  Dayiheng Liu</a>, a core Qwen contributor since 2021, Head of the Qwen LLM
+  Project. Former Google DeepMind researcher Hao Zhou was recruited to lead
   post-training RL. Research also comes from internal teams publishing independently:
   <strong>Accio Team</strong> (agentic multimodal), <strong>Tongyi Lab</strong>, and
   DAMO Academy divisions.</p>
 people:
+  - name: Dayiheng Liu
+    url: https://liudayiheng.github.io/
+    role: Head of Qwen LLM Project (since Sep 2026); previously Pretrain Lead
+    formerly: PhD Sichuan University (2020); joined Alibaba 2021
+    description: >
+      <p>Named head of the Qwen large language models in September 2026, after
+      the March departure of Tech Lead Junyang Lin and CTO Jingren Zhou&rsquo;s
+      June move to chief scientist. A core contributor to Qwen models since
+      joining Alibaba in 2021, previously leading pretraining. Listed as
+      &ldquo;Head of Qwen LLM Project&rdquo; among the speakers at the September
+      2026 Apsara Conference, alongside Chair Joe Tsai and CEO Eddie Wu.</p>
+    urls:
+      - label: OpenReview
+        url: https://openreview.net/profile?id=~Dayiheng_Liu1
   - name: Jingren Zhou (周靖人)
-    role: CTO, Alibaba Cloud Intelligence; leads Qwen development
+    role: Chief Scientist (since Jun 2026); formerly CTO, Alibaba Cloud Intelligence, overseeing Qwen (Mar–Jun 2026)
     formerly: Microsoft Research (Research Partner, 2004-2015); PhD Columbia (2004); BS USTC School of the Gifted Young (1999)
     description: >
       <p>Alibaba CTO overseeing the <strong>Qwen (Tongyi Qianwen)</strong> large
-      model family and the Wan video models. Assumed direct control of Qwen team
-      in March 2026 after the departure of Tech Lead Junyang Lin. Sits on the
-      Foundation Model Task Force with CEO Eddie Wu. Joined Alibaba in 2015 after
+      model family and the Wan video models. Assumed direct control of the Qwen team
+      in March 2026 after the departure of Tech Lead Junyang Lin, then stepped down
+      from model development in June 2026 to become Alibaba&rsquo;s chief scientist,
+      focused on long-term research; Dayiheng Liu now heads the Qwen LLM Project.
+      Sits on the Foundation Model Task Force with CEO Eddie Wu. Joined Alibaba in 2015 after
       11 years as Research Partner at Microsoft Research.</p>
 
       <p>Entered the <strong>School of the Gifted Young at USTC</strong> in 1994.
@@ -87,13 +107,6 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~An_Yang1
-  - name: Dayiheng Liu
-    url: https://liudayiheng.github.io/
-    role: Pretrain Lead
-    formerly: PhD Sichuan University
-    urls:
-      - label: OpenReview
-        url: https://openreview.net/profile?id=~Dayiheng_Liu1
   - name: Fei Huang
     url: https://scholar.google.com/citations?user=9r98PpoAAAAJ
     role: Chief Scientist, Language Technologies, DAMO
@@ -105,12 +118,12 @@ people:
       <p>Chief Scientist of Language Technologies at DAMO Academy. Leads Alibaba&rsquo;s NLP and machine translation research. Previously at IBM T.J. Watson Research Center.</p>
   - name: Junyang Lin
     url: https://justinlin610.github.io/
-    role: Former Tech Lead (departed Mar 2026)
+    role: Former Tech Lead (departed Mar 2026; founded an AI startup)
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Junyang_Lin1
     description: >
-      <p>Former Tech Lead of the Qwen team (departed March 2026). Led the development of Qwen 1.0 through Qwen3.5. His departure, along with Binyuan Hui and Bowen Yu, triggered Alibaba&rsquo;s restructuring into the Token Hub business group under CEO Eddie Wu.</p>
+      <p>Former Tech Lead of the Qwen team (resigned March 2026, later founding his own AI startup). Led the development of Qwen 1.0 through Qwen3.5. His departure, along with Binyuan Hui and Bowen Yu, triggered Alibaba&rsquo;s restructuring into the Token Hub business group under CEO Eddie Wu.</p>
   - name: Binyuan Hui
     url: https://huybery.github.io/
     role: Former Coding Lead (departed Jan 2026 to Meta)
@@ -125,6 +138,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=xF5VrokAAAAJ
 news:
+  - title: "Alibaba Appoints Dayiheng Liu Head of Qwen LLM Team After Months of Reorganization; Jingren Zhou Moved to Chief Scientist in June"
+    url: https://www.theinformation.com/briefings/alibaba-appoints-new-head-qwen-llm-team
+    source: The Information
+    date: 2026-09-21
   - title: "Occamy-1.0: Alibaba's Accio Team Releases a Cost-Efficient 35B-A3B Co-Work Model Further Trained From Qwen3.6-35B-A3B"
     url: https://arxiv.org/abs/2609.11977
     source: arXiv
