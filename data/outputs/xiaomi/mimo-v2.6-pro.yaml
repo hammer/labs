@@ -97,5 +97,7 @@ model:
     - benchmark: CyberGym
       score: "94.0"
 related:
+  - mimo-v2.6-flash
+  - mimo-v2.6-distill-qwen-9b
   - mimo-v2.5-pro
   - mimo-v2.5

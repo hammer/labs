@@ -1,0 +1,64 @@
+name: MiMo-V2.6-Distill-Qwen-9B
+slug: mimo-v2.6-distill-qwen-9b
+lab: xiaomi
+type: model
+date: 2026-09-21
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Distill-Qwen-9B
+  - label: Technical Report (PDF)
+    url: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/main/MiMo_V2_6_technical_report.pdf
+description: >
+  <p>A 9B agentic model Xiaomi ships as a <strong>shared starting point for
+  open research on agentic RL</strong>, alongside the
+  <a href="/outputs/xiaomi/mimo-v2.6-pro">MiMo-V2.6</a> weights, roughly 7,000
+  released RL tasks with verifiers (about 3k software-engineering tasks with
+  executable tests, 1k vulnerability-reproduction tasks with rule checks, 1k
+  knowledge-work tasks with rubric judging, 2k web-development tasks with
+  visual grading, plus about 1k music-generation tasks), and an end-to-end RL
+  framework. It is a supervised fine-tune of Alibaba's
+  <a href="/outputs/alibaba/qwen3.5">Qwen3.5-9B</a> on MiMo-generated
+  trajectories: 77.4B tokens in total, 27.2B of them loss-bearing, split across
+  code (23.2B), general agents (22.0B), visual (21.2B), and cybersecurity
+  (11.0B). MIT license; thinking mode is enabled through the chat template.</p>
+
+  <p>The SFT checkpoint lifts Qwen3.5-9B on every reported evaluation:
+  SWE-bench Pro 32.0 to 44.6, SWE-bench Verified 60.0 to 61.1, AutomationBench
+  5.0 to 30.3, Terminal-Bench 2.1 27.0 to 37.1, Toolathlon-Verified 25.9 to
+  35.2, JobBench 2.6 to 18.3. The report's point is what happens next: GRPO on
+  the released environments from this checkpoint improves all 11 evaluations,
+  including SWE-bench Verified to 66.2, Terminal-Bench 2.1 to 52.8, MiMo Cyber
+  Bench (mini) 31.3 to 47.0, and MiMo Visual Coding (mini) 64.0 to 72.4, and
+  multi-harness RL on coding improves all 21 dataset-harness pairs, including
+  three held-out harnesses. Only the SFT checkpoint is released; the RL'd
+  variants are baselines in the report.</p>
+tags:
+  - open-weight
+  - distillation
+  - agentic
+  - rl
+  - post-training
+  - small-model
+model:
+  architecture: dense
+  base_model: qwen3.5
+  license: MIT
+  benchmark_scores:
+    - benchmark: SWE-bench Verified
+      score: "61.1"
+      mode: avg@3, SFT checkpoint
+    - benchmark: SWE-bench Pro
+      score: "44.6"
+      mode: avg@3, SFT checkpoint
+    - benchmark: AutomationBench v1.0.6
+      score: "30.3"
+      mode: SFT checkpoint
+    - benchmark: Terminal-Bench 2.1
+      score: "37.1"
+      mode: SFT checkpoint
+    - benchmark: Toolathlon-Verified
+      score: "35.2"
+      mode: SFT checkpoint
+related:
+  - mimo-v2.6-pro
+  - mimo-v2.6-flash

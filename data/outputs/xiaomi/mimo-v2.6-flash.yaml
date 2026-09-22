@@ -1,0 +1,70 @@
+name: MiMo-V2.6-Flash
+slug: mimo-v2.6-flash
+lab: xiaomi
+type: model
+date: 2026-09-21
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL
+  - label: Product Page
+    url: https://mimo.mi.com/models/en-US/mimo-v2.6-flash
+  - label: Technical Report (PDF)
+    url: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/main/MiMo_V2_6_technical_report.pdf
+  - label: OpenRouter
+    url: https://openrouter.ai/xiaomi/mimo-v2.6-flash
+description: >
+  <p>The efficiency-balanced sibling of
+  <a href="/outputs/xiaomi/mimo-v2.6-pro">MiMo-V2.6-Pro</a>, released the same
+  day as open weights under MIT. <strong>309B total / 15B active</strong> sparse
+  MoE: 48 layers (39 sliding-window with a 128-token window, 9 global), hidden
+  size 4096, 256 routed experts with 8 active and no shared experts, the same
+  5-layer DFlash-style MTP drafter, 681M MiMo ViT, and 308M + 127M audio
+  encoders as Pro. Native text, image, video, and audio input with a 1M
+  context and 128K max output. Pretrained on <strong>48T tokens</strong> (26T
+  text, 22T omni), more than the Pro's 30T, with the same AdamW recipe, 32K to
+  256K context extension, and MXFP4 quantization-aware mid-training. It went
+  through the same single mixed RL run and groupwise agentic grading as Pro,
+  at <strong>$0.9M</strong> of RL post-training versus Pro's $2.6M, with the
+  run livestreamed on Xiaomi's public dashboard.</p>
+
+  <p>Reported scores sit close behind Pro on agentic work and ahead of it on
+  one cyber benchmark: DeepSWE v1.1 67.9 (Pro 71.9), Terminal-Bench 4.0 28.8,
+  Terminal-Bench 2.1 87.6, OSWorld-Verified 80.8, Toolathlon-Verified 73.6,
+  AutomationBench 52.3, JobBench 61.2, CyberGym 95.1 (Pro 94.0), SEC Bench Pro
+  47.5, MiMo VisualCoding 71.5. Xiaomi positions it as the Pareto point for
+  high-frequency calls: <strong>$0.14/M input and $0.28/M output</strong>
+  (cache hits $0.0028), a third of Pro's price. Successor to the 310B/15B
+  <a href="/outputs/xiaomi/mimo-v2.5">MiMo-V2.5</a>. Not yet scored by
+  Artificial Analysis at filing.</p>
+tags:
+  - moe
+  - open-weight
+  - agentic
+  - multimodal
+  - reasoning
+  - efficiency
+  - rl
+model:
+  architecture: moe
+  parameters: 309B
+  active_parameters: 15B
+  num_experts: 256
+  top_k: 8
+  context_window: 1000000
+  training_tokens: 48T
+  optimizer: AdamW
+  license: MIT
+  benchmark_scores:
+    - benchmark: DeepSWE v1.1
+      score: "67.9"
+    - benchmark: Terminal-Bench 4.0
+      score: "28.8"
+    - benchmark: OSWorld-Verified
+      score: "80.8"
+    - benchmark: Toolathlon-Verified
+      score: "73.6"
+    - benchmark: CyberGym
+      score: "95.1"
+related:
+  - mimo-v2.6-pro
+  - mimo-v2.5
