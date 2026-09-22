@@ -13,6 +13,8 @@ sources:
     url: https://deepmind.google/models/model-cards/gemini-3-8-flash/
   - label: Gemini API model reference
     url: https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash
+  - label: Evaluation methodology and results (PDF)
+    url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-8_flash_model_evaluation.pdf
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/gemini-3-8-flash
   - label: OpenRouter
@@ -32,17 +34,23 @@ description: >
   function calling, code execution, search grounding, and computer use (preview).
   Knowledge cutoff March 2026 per the model card.</p>
 
-  <p>Google reports <strong>61.4%</strong> on Vals Finance Agent V2 (3.7 Flash
-  59.0%, Claude Opus 5 58.6%), 10.0% on Harvey's Legal Agent Benchmark (3.7
-  Flash 8.8%, Opus 5 6.7%), <strong>54.9%</strong> on HLE-Verified (GPT-5.6
-  Sol 54.5%, Opus 5 54.4%, 3.7 Flash 53.6%), over 70% on DeepSWE v1.1 at a
-  fraction of larger models' cost, and more than three times as many completed
-  tasks as 3.7 Flash on long-running document-heavy workflows. Launch coverage
-  put it at 59 on the then-current AA Intelligence Index v4.1.1, level with
-  GPT-5.6 Sol and Grok 4.6; on <strong>AA Intelligence Index v4.3 it scores
-  41</strong> at high effort (40 medium, 34 low), #29 of 202 and Google's
-  highest score on the index, at 280.8 tokens/s and a 16.3 s time to first
-  token. Pricing holds at $0.75 per million input tokens and $3.75 per million
+  <p>Google's evaluation sheet (September 2026, high thinking, pass@1) reports
+  <strong>73.7%</strong> on DeepSWE v1.1 with a mini-swe-agent harness (3.7 Flash
+  65.3%, Claude Opus 5 74.0%, GPT-5.6 Sol 72.7%), <strong>61.4%</strong> on Vals
+  Finance Agent V2 (3.7 Flash 59.0%, Opus 5 58.6%), 10.0% on Harvey's Legal
+  Agent Benchmark (3.7 Flash 8.8%, Opus 5 6.7%), <strong>54.9%</strong> on
+  HLE-Verified (GPT-5.6 Sol 54.5%, Opus 5 54.4%), Terminal-Bench 2.1 89.4%,
+  CharXiv Reasoning 86.2%, LVBench 87.8%, LABBench2 86.2%, and a GDPval-AA v2
+  Elo of 1545 (Opus 5 1824). The gaps to the frontier are on the general-agent
+  and computer-use rows: Terminal-Bench 4.0 19.1% (Opus 5 51.8%, Sol 37.3%) and
+  OSWorld 2.0 59.0% (Opus 5 75.4%). Google also cites more than three times as
+  many completed tasks as 3.7 Flash on long-running document-heavy workflows.
+  Launch coverage put it at 59 on the then-current AA Intelligence Index
+  v4.1.1, level with GPT-5.6 Sol and Grok 4.6; on <strong>AA Intelligence
+  Index v4.3 it scores 41</strong> at high effort (40 medium, 33 low), #32 of
+  202 at last check and Google's highest score on the index, and the fastest
+  model AA measures at 328.8 output tokens/s. Pricing holds at $0.75 per
+  million input tokens and $3.75 per million
   output tokens through December 31, 2026, doubling to $1.50/$7.50 on January
   1, 2027. Available in the Gemini API, AI Studio, Antigravity, Android Studio,
   Stitch, Gemini Enterprise, and the Gemini app for Pro and Ultra subscribers;
@@ -61,12 +69,40 @@ model:
   intelligence_index_version: "AA v4.3"
   license: Proprietary
   benchmark_scores:
+    - benchmark: DeepSWE v1.1
+      score: "73.7%"
+      mode: high thinking, mini-swe-agent harness
+    - benchmark: GDPval-AA v2
+      score: "1545 Elo"
     - benchmark: Vals Finance Agent V2
       score: "61.4%"
     - benchmark: Harvey Legal Agent Benchmark
       score: "10.0%"
+      mode: all-pass rate
+    - benchmark: Terminal-Bench 2.1
+      score: "89.4%"
+      mode: Terminus 2 harness
+    - benchmark: Terminal-Bench 4.0
+      score: "19.1%"
+    - benchmark: GDP.PDF
+      score: "35.0%"
+      mode: all-pass rate
+    - benchmark: CharXiv Reasoning
+      score: "86.2%"
+      mode: no tools
+    - benchmark: LVBench
+      score: "87.8%"
+      mode: agentic (87.1% static)
     - benchmark: HLE-Verified
       score: "54.9%"
+    - benchmark: OSWorld 2.0
+      score: "59.0%"
+      mode: partial score, batched tool calls
+    - benchmark: BioMysteryBench
+      score: "88.8%"
+      mode: human-solvable (56.5% human-difficult)
+    - benchmark: LABBench2
+      score: "86.2%"
   variants:
     - name: Gemini 3.8 Flash (high)
       notes: "Default AA anchor; AA Intelligence Index v4.3: 41"
