@@ -47,7 +47,10 @@ description: >
   foundation stack &mdash; which Musk pitched as &ldquo;Opus-class&rdquo; and
   which scores AA Intelligence Index <strong>39</strong> (v4.3, high
   reasoning); it was #4 overall at release under the earlier v4.1.1 index.
-  Grok-3 (February 2025) was trained on <strong>200K GPUs</strong> at the Colossus
+  Grok 4.6 (August 12, 2026) extended that checkpoint; <strong>Grok 4.7</strong>
+  (September 21, 2026), on a new, larger base model at the same $2/$6
+  pricing, is the current flagship at AA Intelligence Index
+  <strong>46</strong> (v4.3, xhigh). Grok-3 (February 2025) was trained on <strong>200K GPUs</strong> at the Colossus
   supercomputer; Grok-4 (July 2025) added native tool-calling and extended
   reasoning. In May 2026 the team shipped <strong>Grok Build</strong>, an agentic
   coding CLI (with a dedicated coding model), competing with Claude Code and
@@ -121,6 +124,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=czyretsAAAAJ
 news:
+  - title: "SpaceXAI Releases Grok 4.7: New Larger Base Model, Longer-Horizon RL, Same $2/$6 Pricing, AAII v4.3 46"
+    url: https://siliconangle.com/2026/09/21/spacex-launches-grok-4-7-with-long-horizon-processing-safety-upgrades/
+    source: SiliconANGLE
+    date: 2026-09-21
   - title: "Musk: Grok 4.6 (2T Params) Initial Training Done, Targeting ~Aug 7; Grok 4.7 ~4 Weeks Later"
     url: https://www.nextbigfuture.com/2026/07/grok-4-6-initial-training-complete.html
     source: NextBigFuture

@@ -1,0 +1,75 @@
+name: Grok 4.7
+slug: grok-4.7
+lab: spacexai
+type: model
+date: 2026-09-21
+flagship: true
+sources:
+  - label: Announcement
+    url: https://x.ai/news/grok-4-7
+  - label: API documentation
+    url: https://docs.x.ai/developers/grok-4-7
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/grok-4-7
+  - label: OpenRouter
+    url: https://openrouter.ai/x-ai/grok-4.7
+description: >
+  <p>SpaceXAI's most capable proprietary model for coding, agentic tasks, and
+  knowledge work, released September 21, 2026 after Musk walked the date back
+  several times from an initial "four weeks after Grok 4.6." Unlike Grok 4.6,
+  which extended the Grok 4.5 checkpoint, Grok 4.7 sits on a
+  <strong>new, larger base model</strong>. It was trained with a longer
+  reinforcement-learning run on a harder task mix weighted toward problems
+  that take many hours, verifies its own work more carefully, handles longer
+  context better, and was trained to natively understand the
+  <strong>Grok Bot</strong> harness for conversational work. Text and image
+  input, 500K context, knowledge cutoff May 2026, reasoning effort low
+  through xhigh (default high), and encrypted reasoning returned on the
+  Responses API. Served at the same price and speed as Grok 4.6: $2/M input
+  and $6/M output tokens, with a 75% cache discount; a "Fast" variant at twice
+  the speed and twice the price runs only in Cursor and Grok Build.</p>
+
+  <p>SpaceXAI's headline scores use xhigh effort: CursorBench 4.0 46.3% (Grok
+  4.6: 40.4%), DeepSWE v1.1 71.0% at high effort (65.2%), EEBench 64.0%
+  (53.0%), Terminal-Bench 4.0 38.0% (20.3%), AA Briefcase v1.1 1,657 (1,546),
+  Harvey Legal Agent Benchmark 19.6% (15.8%), and HealthBench Professional
+  56.7% (48.5%). The company frames it as frontier price-performance rather
+  than frontier capability: Fable 5.1 Max still leads on CursorBench (51.8%)
+  and Terminal-Bench (57.9%) at five times the price. A new safeguard stack
+  is pitched as its strongest on jailbreak resistance while keeping refusals
+  low for legitimate cybersecurity and biology work (62.4% on LatchBio's
+  biosafety benchmark; 3.3% of risky dual-use prompts allowed on HackerBench
+  v0.3), with invite-only red-team access for select security partners.
+  Artificial Analysis scores the xhigh mode <strong>46 on Intelligence Index
+  v4.3</strong> (#16 at filing; high effort also rounds to 46). Parameter
+  count is undisclosed; press figures conflict (Musk floated ~2T for Grok
+  4.6, Decrypt reports 2.1T for 4.7).</p>
+tags: [frontier, proprietary, coding, agentic, reasoning, multimodal]
+model:
+  context_window: 500000
+  intelligence_index: 46
+  intelligence_index_version: "AA v4.3"
+  license: Proprietary
+  benchmark_scores:
+    - benchmark: CursorBench 4.0
+      score: "46.3%"
+      mode: xhigh
+    - benchmark: DeepSWE v1.1
+      score: "71.0%"
+      mode: high
+    - benchmark: EEBench
+      score: "64.0%"
+      mode: xhigh
+    - benchmark: Terminal-Bench 4.0
+      score: "38.0%"
+      mode: xhigh
+    - benchmark: AA Briefcase v1.1
+      score: "1657"
+      mode: xhigh
+    - benchmark: Harvey Legal Agent Benchmark
+      score: "19.6%"
+      mode: xhigh
+    - benchmark: HealthBench Professional
+      score: "56.7%"
+      mode: xhigh
+related: [grok-4.6]
