@@ -1,0 +1,47 @@
+name: QK-Normed MLA
+slug: qk-normed-mla
+lab: ant-group
+type: paper
+date: 2026-06-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.16310
+description: >
+  <p>The Ling Team, with Ruoyu Sun's group at CUHK-Shenzhen, shows that
+  <strong>QK normalization</strong> and <strong>Multi-head Latent Attention</strong>
+  are compatible after all. Post-projection QK RMSNorm appears to need the fully
+  projected key for every cached token, which is exactly what MLA avoids storing.
+  The paper decomposes RMSNorm into a static affine weight, which is absorbed into
+  MLA's query-side projection, and a dynamic RMS statistic, which collapses to one
+  inverse-RMS scalar per token and KV group. The result is exactly equivalent to
+  explicit QK RMSNorm in exact arithmetic and keeps MLA's latent decode path; the
+  RoPE component stays materialized and locally normalized.</p>
+
+  <p>In 400M-parameter MLA models trained on 100B tokens, QK-Normed MLA holds
+  lower training loss than <strong>QK-Clip</strong> (the MuonClip stabilizer from
+  Kimi K2) for the whole run, lifts the 3-shot average across eight tasks from
+  44.75 to 46.33, and cuts LAMBADA perplexity from 16.28 to 14.18. Under a
+  deliberately high learning rate QK-Clip diverges with NaN gradients at step
+  884 while the normed model keeps training. On a DeepSeek-V3-width layer on
+  H800s, the scalar cache adds 2MB to a 72MB per-layer KV cache and 0.95–1.87%
+  decode latency from 4k to 256k context. First author Yizhou Han holds joint
+  CUHK-Shenzhen and Ant Group affiliations; Ant Group co-authors include
+  <a href="/people/jun-zhou">Jun Zhou</a>. The paper names no production model
+  and stops at 400M, but Ling-3.0's hybrid stack is built on gated MLA layers,
+  the setting this stabilizer is designed for.</p>
+tags:
+  - architecture
+  - attention
+  - efficiency
+  - training
+  - research
+paper:
+  arxiv: "2606.16310"
+  authors:
+    - Yizhou Han
+    - Yao Zhao
+    - Jun Zhou
+    - Longfei Li
+    - Ruoyu Sun
+related:
+  - ling-3.0
