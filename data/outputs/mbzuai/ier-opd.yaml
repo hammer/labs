@@ -1,0 +1,53 @@
+name: "1% of Tokens Can Be Enough: Gradient Estimation in On-Policy Distillation"
+slug: ier-opd
+lab: mbzuai
+type: paper
+date: 2026-09-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.24432
+  - label: GitHub
+    url: https://github.com/BruceSheng1202/IER-OPD
+description: >
+  <p>An MBZUAI and <a href="/labs/ant-group">Ant Group</a> paper (first and
+  corresponding authors at MBZUAI; Ant Group co-authors include Jinjie Gu) that
+  adds a second axis to sparse on-policy distillation. Existing token selectors
+  ask whether a teacher correction is <em>useful</em>; this work asks whether its
+  gradient can be <em>reliably estimated</em> from the single sampled next token
+  that sampled-token OPD actually uses. At a fixed prefix it decomposes the
+  one-sample reverse-KL gradient into signal and sampling noise in Fisher
+  geometry, derives the variance-minimizing scalar baseline, and defines the
+  <strong>information-efficiency ratio (IER)</strong> as the resulting
+  signal-to-noise ratio. A top-K candidate-set approximation makes IER cheap
+  enough to rank every token, either alone or fused with usefulness scores
+  through soft OR and AND operators, while the training objective stays the
+  ordinary sampled reverse KL.</p>
+
+  <p>IER scores are extremely heavy-tailed: fewer than 0.1% of tokens have
+  estimated signal exceeding noise. Across two math pairs (JustRL-Nemotron-1.5B
+  to OpenMath-Nemotron-1.5B, JustRL-Qwen3-4B to Qwen3-1.7B, on DAPO-Math-17k,
+  Bayes@32 on AIME and HMMT 2025/2026) and a medical pair (ClinAlign-4B to
+  Qwen3-4B on HealthBench), IER alone at a <strong>0.1% token budget</strong>
+  lands within a point of full OPD (AIME26 58.9 vs 59.9; HealthBench 45.25 vs
+  45.77), and IER fused with TIP or TA-OPD at 0.1% to 1% matches or beats
+  full OPD. It rescues the weak Prefix selector at 0.1% from 38.30 to 44.98 on
+  HealthBench. Raising the budget toward 80% does not monotonically help, and
+  Entropy-based fusions sometimes hurt. A companion to Amazon's
+  <a href="/outputs/amazon/extremely-sparse-supervision">extremely sparse
+  supervision</a> result from earlier in September, and one more data point
+  that OPD's cost lives in rollouts, not in supervised tokens.</p>
+tags:
+  - rl
+  - distillation
+  - post-training
+  - research
+paper:
+  arxiv: "2609.24432"
+  code_url: https://github.com/BruceSheng1202/IER-OPD
+  authors:
+    - Huanxin Sheng
+    - Zhiling Ye
+    - Haonan Wang
+    - Jian Wang
+    - Jinjie Gu
+    - Jian Kang
