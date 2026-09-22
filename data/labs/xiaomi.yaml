@@ -37,7 +37,10 @@ description: >
   <strong>MiMo model series</strong>: MiMo-7B (May 2025, surpassing OpenAI o1-mini on
   math/code), MiMo-V2-Flash (309B MoE, December 2025), and
   <a href="https://venturebeat.com/technology/xiaomi-stuns-with-new-mimo-v2-pro-llm-nearing-gpt-5-2-opus-4-6-performance">MiMo-V2-Pro</a>
-  (1T+ parameters, March 2026), and MiMo-V2.5-Pro (April 2026). MiMo-V2-Pro was revealed to be the mysterious
+  (1T+ parameters, March 2026), MiMo-V2.5-Pro (April 2026), and
+  <a href="/outputs/xiaomi/mimo-v2.6-pro">MiMo-V2.6-Pro</a> (September 2026), which
+  debuted as the top open-weights model on the AA Intelligence Index (v4.3: 46)
+  after $2.6M of publicly livestreamed RL post-training. MiMo-V2-Pro was revealed to be the mysterious
   "<a href="https://www.technology.org/2026/03/19/whos-that-ai-the-mystery-model-everyone-blamed-on-deepseek-turned-out-to-be-xiaomi/">Hunter
   Alpha</a>" model that appeared anonymously on OpenRouter, widely misattributed to
   DeepSeek V4.</p>
@@ -58,6 +61,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Fuli_Luo1
 news:
+  - title: "Xiaomi Releases MiMo-V2.6: Pro (1T/42B, MIT) Debuts as Top Open-Weights Model on AAII v4.3 (46), Plus Flash, Distill-Qwen-9B, and Open RL Environments"
+    url: https://mimo.mi.com/models/en-US/mimo-v2.6-pro
+    source: Xiaomi MiMo
+    date: 2026-09-21
   - title: "Xiaomi Livestreams MiMo-V2.6 Flash and Pro RL Training With a Public Dashboard; Trial Models Named MiMo-X-Pro-Preview and MiMo-X-Flash-Preview"
     url: https://mimo.xiaomi.com/rl
     source: Xiaomi MiMo

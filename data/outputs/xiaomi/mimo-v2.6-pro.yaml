@@ -1,0 +1,101 @@
+name: MiMo-V2.6-Pro
+slug: mimo-v2.6-pro
+lab: xiaomi
+type: model
+date: 2026-09-21
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL
+  - label: Product Page
+    url: https://mimo.mi.com/models/en-US/mimo-v2.6-pro
+  - label: Technical Report (PDF)
+    url: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/main/MiMo_V2_6_technical_report.pdf
+  - label: Blog
+    url: https://mimo.xiaomi.com/mimo-v2-6
+  - label: RL training dashboard
+    url: https://mimo.xiaomi.com/rl
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/mimo-v2-6-pro
+  - label: OpenRouter
+    url: https://openrouter.ai/xiaomi/mimo-v2.6-pro
+description: >
+  <p>Xiaomi's flagship omnimodal reasoning model, released as open weights
+  under MIT on September 21, 2026 after a publicly livestreamed RL run. It
+  debuted as the <strong>top open-weights model on the Artificial Analysis
+  Intelligence Index</strong> at <strong>46 (v4.3)</strong>, level with
+  Grok 4.7 at the rounded score and a hair behind on the raw index. Same
+  backbone family as
+  <a href="/outputs/xiaomi/mimo-v2.5-pro">MiMo-V2.5-Pro</a>:
+  <strong>1.02T total / 42B active</strong> sparse MoE, 70 layers (60
+  sliding-window with a 128-token window, 10 global), hidden size 6144, 384
+  routed experts with 8 active and no shared experts, a 5-layer DFlash-style
+  MTP drafter that proposes 7 tokens per pass, a 681M MiMo ViT and 308M + 127M
+  audio encoders. Text, image, video and audio input; 1M context, 128K max
+  output. Pretrained on 30T tokens (27T text, 3T omni) with AdamW, context
+  extended 32K to 256K mid-run, MXFP4 quantization-aware training during
+  mid-training; the released checkpoint is FP8.</p>
+
+  <p>The technical report, "Scaling Reinforcement Learning Towards
+  Self-Improvement," is the substance: <strong>$2.6M of RL post-training</strong>
+  on thousands of GPUs in a single mixed run ("You Only RL Once") across
+  coding, general-agent, visual, and cybersecurity environments under multiple
+  harnesses, versus $0.9M for the Flash sibling. Fully asynchronous GRPO at
+  1,568 prompts &times; 16 rollouts per step (2.7&ndash;3.7B training tokens
+  per update, contexts to 1M), a frozen MoE router for stability, and
+  <strong>groupwise agentic grading</strong>: Groupwise Reward Synthesis builds
+  rubrics offline from contrasting rollouts and Groupwise Advantage
+  Redistribution re-ranks passing trajectories online, so the reward scales
+  with grader compute (12.7% of spend; rollout 43.8%, training 43.5%). A
+  multi-prefix multi-teacher on-policy distillation stage (MOPD2) follows.
+  Xiaomi open-sources the RL environments, the RL framework, and the training
+  dynamics, and ships <strong>MiMo-V2.6-Distill-Qwen-9B</strong> (an SFT of
+  Qwen3.5-9B on MiMo data) as a research starting point.</p>
+
+  <p>Reported scores: DeepSWE v1.1 71.9 (Claude Opus 5: 74.0, Fable 5: 70.0),
+  Terminal-Bench 4.0 34.9, Terminal-Bench 2.1 89.9, OSWorld-Verified 82.0,
+  GDPval-AA 2.1 Elo 1673, Toolathlon-Verified 76.9, AutomationBench 53.1,
+  CyberGym 94.0, SEC Bench Pro 66.3. API pricing is $0.435/M input and $0.87/M
+  output (cache hits $0.0036), with the same checkpoint also sold as
+  <strong>MiMo-V2.6-Pro-UltraSpeed</strong> at up to 20&times; output speed for
+  $4.35/$8.70. Companion <strong>MiMo-V2.6-Flash</strong> (309B / 15B active,
+  48T pretraining tokens) lists at $0.14/$0.28. Led by
+  <a href="/people/luo-fuli">Luo Fuli</a>'s LLM-Core team.</p>
+tags:
+  - moe
+  - open-weight
+  - frontier
+  - agentic
+  - multimodal
+  - reasoning
+  - rl
+  - rl-scaling
+model:
+  architecture: moe
+  parameters: 1.02T
+  active_parameters: 42B
+  num_experts: 384
+  top_k: 8
+  context_window: 1000000
+  training_tokens: 30T
+  optimizer: AdamW
+  intelligence_index: 46
+  intelligence_index_version: "AA v4.3"
+  license: MIT
+  benchmark_scores:
+    - benchmark: DeepSWE v1.1
+      score: "71.9"
+    - benchmark: Terminal-Bench 4.0
+      score: "34.9"
+    - benchmark: OSWorld-Verified
+      score: "82.0"
+    - benchmark: GDPval-AA 2.1
+      score: "1673"
+      mode: Elo
+    - benchmark: Toolathlon-Verified
+      score: "76.9"
+    - benchmark: CyberGym
+      score: "94.0"
+related:
+  - mimo-v2.5-pro
+  - mimo-v2.5
