@@ -145,6 +145,12 @@ people:
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Qihao_Zhu1
+  - name: Luo Fuli (罗福莉)
+    role: Former Deep Learning Researcher (2023&ndash;Feb 2025; on the DeepSeek LLM, MoE, Coder, V2, V3, and R1 author lists; now Head of Xiaomi MiMo)
+    formerly: High-Flyer Quant (2022); Alibaba DAMO Academy (2019&ndash;2022, VECO); MS Peking University (2019)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=1s79Z5cAAAAJ
 news:
   - title: "DeepSeek Plans ≥160,000 Huawei Ascend 950DT Chips for a ~1 GW Inference Data Center in Ulanqab, the Largest Known Huawei AI Cluster (~$2.5B); Training Stays on NVIDIA"
     url: https://www.bloomberg.com/news/articles/2026-09-04/deepseek-plans-big-huawei-ai-chip-order-to-power-new-data-center

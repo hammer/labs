@@ -32,7 +32,7 @@ description: >
 
   <p>The <strong>MiMo Team</strong> represents Xiaomi's push into frontier AI, led by
   <strong>Luo Fuli</strong>, recruited from <a href="/labs/deepseek">DeepSeek</a>
-  (reportedly at a salary of "tens of millions of yuan") where he was a key contributor
+  (reportedly at a salary of "tens of millions of yuan") where she was a key contributor
   to DeepSeek-V2 and DeepSeek-R1. The team of 63+ researchers has rapidly produced the
   <strong>MiMo model series</strong>: MiMo-7B (May 2025, surpassing OpenAI o1-mini on
   math/code), MiMo-V2-Flash (309B MoE, December 2025), and
@@ -53,13 +53,60 @@ people:
   - name: Lei Jun
     url: https://en.wikipedia.org/wiki/Lei_Jun
     role: Founder, Chairman & CEO
-  - name: Luo Fuli
+  - name: Luo Fuli (罗福莉)
     url: https://scholar.google.com/citations?user=1s79Z5cAAAAJ
-    role: MiMo Team Lead
-    formerly: DeepSeek (DeepSeek-V2/R1 contributor)
+    role: Head of Xiaomi MiMo (LLM-Core Xiaomi)
+    formerly: DeepSeek (Deep Learning Researcher, 2023&ndash;Feb 2025; on the DeepSeek LLM, MoE, Coder, V2, V3, and R1 author lists); High-Flyer Quant (2022); Alibaba DAMO Academy (2019&ndash;2022, led VECO and AliceMind); MS Peking University (Computational Linguistics, 2019); BS Beijing Normal University (Computer Science)
+    description: >
+      <p>Heads Xiaomi's <strong>MiMo</strong> large-model effort (LLM-Core Xiaomi).
+      She announced the move on WeChat on <strong>November 12, 2025</strong>
+      ("Intelligence will step beyond language into the physical world"), after
+      <a href="https://finance.yahoo.com/news/chinese-ai-prodigy-luo-fuli-093000757.html">months
+      of reported recruiting</a> that began with a December 2024 offer from Lei Jun
+      that local media put at "tens of millions of yuan" (never confirmed by either
+      side). She is corresponding author on the
+      <a href="/outputs/xiaomi/mimo-v2">MiMo-V2-Flash</a> and
+      <a href="/outputs/xiaomi/mimo-v2.6-pro">MiMo-V2.6</a> technical reports and
+      senior author on <a href="/outputs/xiaomi/rollout-routing-replay">Rollout Routing
+      Replay</a> and ARL-Tangram, both co-authored with Peking University faculty.
+      Under her the team shipped MiMo-V2-Flash (her public debut, December 17, 2025),
+      <a href="/outputs/xiaomi/mimo-v2-pro">MiMo-V2-Pro</a>, Omni and TTS (March 2026,
+      when she confirmed the anonymous "Hunter Alpha" was an internal V2-Pro build),
+      <a href="/outputs/xiaomi/mimo-v2.5-pro">MiMo-V2.5-Pro</a> (April 2026), and the
+      publicly livestreamed RL run behind MiMo-V2.6 (September 2026), whose research
+      and engineering challenges she said exceed those of DeepSeek-R1. Google Scholar:
+      ~31,400 citations, h-index 33 (September 2026), most of it from the DeepSeek
+      reports.</p>
+
+      <p>Born in 1995 in a village outside Yibin, Sichuan, to an electrician father
+      and a teacher mother. Yibin No. 1 High School (class of 2013); BS in computer
+      science at Beijing Normal University after switching from electronics; a
+      junior-year internship at Peking University's language computing lab, where
+      she taught herself Python in three months and chose NLP. Master's in
+      computational linguistics at PKU's Institute of Computational Linguistics
+      (2019), during which she published 20+ papers, including
+      <strong>eight at ACL 2019</strong> (two as first author), which made her a
+      minor celebrity in Chinese AI. Joined Alibaba DAMO Academy through the Alibaba
+      Star program, where she was first author of the multilingual pretrained model
+      <strong>VECO</strong> (ACL 2021) and ran the AliceMind open-source project. In
+      2022 she moved to High-Flyer Quant for deep-learning research and then to its
+      spin-out <a href="/labs/deepseek">DeepSeek</a>, where she is on the author
+      lists of DeepSeek LLM, DeepSeekMoE, DeepSeek-Coder, V2 (May 2024), V3, and R1;
+      Chinese media describe her as a core V2 developer. She left DeepSeek in
+      February 2025.</p>
+
+      <p>Chinese media dubbed her the "genius AI girl" during the DeepSeek frenzy of
+      January 2025; she has repeatedly rejected the label ("I said years ago that I am
+      not a genius girl"; "Please leave me a quiet place on the Internet"), telling a
+      <a href="https://newsen.pku.edu.cn/news_events/news/people/15385.html">PKU
+      alumni profile</a> in January 2026 that curiosity, execution, and "a bit of
+      stubborn resilience" got her there. Her stated thesis for MiMo is that
+      intelligence must move from language into interaction with the physical world.</p>
     urls:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Fuli_Luo1
+      - label: Peking University profile (Jan 2026)
+        url: https://newsen.pku.edu.cn/news_events/news/people/15385.html
 news:
   - title: "Xiaomi Releases MiMo-V2.6: Pro (1T/42B, MIT) Debuts as Top Open-Weights Model on AAII v4.3 (46), Plus Flash, Distill-Qwen-9B, and Open RL Environments"
     url: https://mimo.mi.com/models/en-US/mimo-v2.6-pro
@@ -81,6 +128,10 @@ news:
     url: https://venturebeat.com/technology/xiaomi-stuns-with-new-mimo-v2-pro-llm-nearing-gpt-5-2-opus-4-6-performance
     source: VentureBeat
     date: 2026-04-03
+  - title: "Chinese AI Prodigy Luo Fuli Joins Xiaomi as Industry Competition for Talent Heats Up"
+    url: https://finance.yahoo.com/news/chinese-ai-prodigy-luo-fuli-093000757.html
+    source: South China Morning Post (via Yahoo Finance)
+    date: 2025-11-12
 tags:
   - open-weight
   - on-device
