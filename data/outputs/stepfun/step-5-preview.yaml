@@ -1,0 +1,84 @@
+name: Step 5 Preview
+slug: step-5-preview
+lab: stepfun
+type: model
+date: 2026-09-20
+flagship: true
+sources:
+  - label: Announcement
+    url: https://www.stepfun.com/step-5-preview
+  - label: Launch post (X)
+    url: https://x.com/StepFun_ai/status/2101510462685003786
+  - label: API documentation
+    url: https://platform.stepfun.ai/docs/en/guides/models/step-5-preview
+  - label: Pricing
+    url: https://platform.stepfun.ai/docs/en/guides/pricing/details
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/step-5
+description: >
+  <p>StepFun's new flagship for agentic work, announced September 20, 2026 under
+  the banner "Advancing the Pareto Frontier": the pitch is frontier-adjacent
+  intelligence at a fraction of the cost rather than a new top score. A
+  <strong>600B total / 27B active sparse MoE</strong> with a
+  <strong>1M-token context</strong>, 64K max output, text, image and video input,
+  three reasoning-effort levels, tool calling, JSON Schema output, and prompt
+  caching. Available through StepFun's products and API as
+  <code>step-5-preview</code>; StepFun says the weights will be released on
+  <strong>October 15</strong> with no license named yet, so for now it is a
+  closed preview with an open-weight promise. API pricing is $1.00/M input
+  ($0.05 on cache hits) and $2.70/M output including reasoning tokens.</p>
+
+  <p>Artificial Analysis scores it <strong>44 on Intelligence Index v4.3</strong>
+  (#26 of 202 at filing, reasoning mode) at $0.72 per index task, on AA's
+  intelligence-versus-cost frontier for its tier. StepFun's own table runs its
+  High mode against rivals' Max modes: DeepSWE v1.1 67.7 (Kimi K3 67.5, GLM-5.3
+  66.9, GPT-6 Astra 74.1, Claude Opus 5 74.0), Terminal-Bench v4 33.3 (GLM-5.3
+  41.9, Astra 57.9), Agents' Last Exam CLI 29.5, GDPval-AA v2.1 Elo 1566,
+  ProgramBench 80.5, and the internal StepCodeBench 49.0 avg@4 across 553
+  repositories and 33 languages. Finance is the stated specialty: FrontierFinance
+  66.4 (Opus 5 69.7) plus three internal live-search, valuation, and
+  deep-research suites. Three 24-hour long-horizon runs are the most interesting
+  evidence: optimizing an H100 MLA kernel from scratch to 508 TFLOPS (Opus 5:
+  493), automated post-training that lifted a Qwen3-30B-A3B base from 53.3% to
+  60% on AIME24, and 3,000+ turns of Pokémon Red reaching three gym badges. In
+  one research task it coordinated 950 web fetches in a single agent action.
+  Successor to the open <a href="/outputs/stepfun/step-3.7-flash">Step-3.7-Flash</a>
+  line; no technical report yet.</p>
+tags:
+  - frontier
+  - moe
+  - agentic
+  - reasoning
+  - multimodal
+  - proprietary
+model:
+  architecture: moe
+  parameters: 600B
+  active_parameters: 27B
+  context_window: 1000000
+  intelligence_index: 44
+  intelligence_index_version: "AA v4.3"
+  benchmark_scores:
+    - benchmark: DeepSWE v1.1
+      score: "67.7"
+      mode: high
+    - benchmark: Terminal-Bench v4
+      score: "33.3"
+      mode: high
+    - benchmark: StepCodeBench
+      score: "49.0"
+      mode: high (avg@4)
+    - benchmark: ProgramBench
+      score: "80.5"
+      mode: high
+    - benchmark: Agents' Last Exam (ALE-CLI)
+      score: "29.5"
+      mode: high
+    - benchmark: GDPval-AA v2.1
+      score: "1566"
+      mode: Elo
+    - benchmark: FrontierFinance
+      score: "66.4"
+      mode: high
+related:
+  - step-3.7-flash

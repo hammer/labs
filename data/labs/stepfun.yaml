@@ -35,7 +35,9 @@ description: >
   ~$2B valuation by mid-2024; a ~$2.5B pre-IPO round led by existing investors
   in May 2026 took it to ~$10B ahead of a planned Hong Kong IPO. The
   <strong>Step model series</strong> has iterated
-  rapidly from Step-1 through Step-3.7-Flash, spanning language, vision, video,
+  rapidly from Step-1 through Step-3.7-Flash to
+  <a href="/outputs/stepfun/step-5-preview">Step 5 Preview</a> (September 2026, a
+  600B/27B MoE at AA Intelligence Index v4.3: 44), spanning language, vision, video,
   and audio modalities.</p>
 
   <p>Strategically, StepFun leads a <strong>Model-Chip Alliance</strong> with
@@ -79,6 +81,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Heung-Yeung_Shum1
 news:
+  - title: "StepFun Launches Step 5 Preview: 600B/27B MoE, 1M Context, $1/$2.70 API, AAII v4.3 44; Open Weights Promised for October 15"
+    url: https://www.stepfun.com/step-5-preview
+    source: StepFun
+    date: 2026-09-20
   - title: "StepAudio 3 Realtime and StepAudio 3 Gen Technical Reports: Think-While-Speaking Duplex Audio LM and a Unified Discrete Audio Generator"
     url: https://arxiv.org/abs/2609.14005
     source: arXiv
