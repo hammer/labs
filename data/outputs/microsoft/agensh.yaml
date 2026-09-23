@@ -1,0 +1,61 @@
+name: "Agensh: Scaling Organizational Intelligence to 1,024 Agents"
+slug: agensh
+lab: microsoft
+type: paper
+date: 2026-09-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.26781
+  - label: Project Page
+    url: https://agens-harness.github.io/project/
+description: >
+  <p>A multi-agent coding harness from Microsoft Research's General AI group
+  (<a href="/people/furu-wei">Furu Wei</a>, Li Dong, Yan Xia corresponding;
+  Zhihao Zhan and Ting Song first authors) that drops the central orchestrator.
+  Every worker runs the same asynchronous cooperation loop from the same prompt,
+  differing only by worker ID: gather context and read peer progress, claim a
+  sub-task, resolve overlaps by message, act, publish findings, verify, merge.
+  Three pieces of <strong>agentic organization infrastructure</strong> hold it
+  together: a shared workspace (a Gitea instance, with private branches merged
+  to main and conflicts surfaced for workers to resolve), a message interface
+  (Mattermost, with a task channel delivered at loop start and direct messages
+  delivered after each tool call), and a typed shared context of OBSERVED,
+  FACT, FAIL and CLAIM entries adapted from DeLM. Agensh sits above an existing
+  single-agent harness through a thin adapter; the paper's runs use GitHub
+  Copilot as the inner loop, with Claude Code named as another target.</p>
+
+  <p>The test is the five hardest of ProgramBench's 200 tasks (FFmpeg, gromacs,
+  pandoc, PHP-src, ctags: rebuild the reference software from scratch in six
+  hours with no Internet), all with GPT-5.6 Sol at high effort. Mean final
+  test-pass rate rises from <strong>19.31% with one agent</strong> to 20.68%,
+  26.52% and <strong>28.78% with 8, 32 and 128 agents</strong>, a 49% relative
+  gain, and larger organizations get there sooner: on pandoc, 128 agents pass
+  30% at the 30-minute mark, 32 agents at 60 and 8 agents at 90. Pushing pandoc
+  to <strong>1,024 agents</strong> lifts the final rate from 33.89% to 50.94% at
+  128 and 55.06% at 1,024. Trajectories show cooperation forms that appear only
+  as the organization grows, from interface agreements between peers to
+  multi-worker integration, standardized workflows and specialized roles. The
+  authors position agent count as a scaling dimension of its own, distinct from
+  orchestrator-worker designs such as Claude Code agent teams, Codex subagents,
+  Copilot fleet and Kimi Agent Swarm; a sibling approach from Shanghai AI Lab is
+  <a href="/outputs/shanghai-ai-lab/harness-of-harness">Harness-of-Harness</a>.
+  The paper lists a code release at github.com/microsoft/Agensh, which did not
+  exist at filing. No cost or token accounting is reported.</p>
+tags:
+  - agents
+  - agent-harness
+  - multi-agent
+  - coding
+  - research
+paper:
+  arxiv: "2609.26781"
+  authors:
+    - Zhihao Zhan
+    - Ting Song
+    - Li Dong
+    - Shaohan Huang
+    - Jianxun Lian
+    - Yan Xia
+    - Furu Wei
+related:
+  - agent-lightning-v1
