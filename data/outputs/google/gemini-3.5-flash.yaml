@@ -10,7 +10,7 @@ sources:
   - label: Model card
     url: https://deepmind.google/models/model-cards/gemini-3-5-flash/
   - label: Artificial Analysis
-    url: https://artificialanalysis.ai/models/gemini-3-5-flash
+    url: https://artificialanalysis.ai/models/gemini-3-5-flash-medium
   - label: MarkTechPost coverage
     url: https://www.marktechpost.com/2026/05/20/google-introduces-gemini-3-5-flash-at-i-o-2026-a-faster-and-cheaper-model-for-ai-agents-and-coding/
 description: >
@@ -22,8 +22,10 @@ description: >
   at ~4x the output speed of peer frontier models. Self-reported benchmarks
   include Terminal-Bench 2.1 76.2%, GDPval-AA 1656 Elo, MCP Atlas 83.6%.</p>
 
-  <p><strong>AA Intelligence Index v4.3: 33</strong>. 190.2 tok/s
-  output speed (#3 overall). Pricing $1.50 / $9.00 per 1M input/output. First-token
+  <p><strong>AA Intelligence Index v4.3: 34</strong> on the medium-effort
+  page, which the score now follows since it edges the high-effort page (33)
+  by a full raw point; earlier readings in the trail came from the high page.
+  190.2 tok/s output speed (#3 overall). Pricing $1.50 / $9.00 per 1M input/output. First-token
   latency is notably high (22.5s vs 2.6s median) &mdash; the speed advantage is in
   steady-state generation rather than time-to-first-token. Gemini 3.5 Pro
   was previewed for June.</p>
@@ -34,9 +36,12 @@ tags:
   - agentic
 model:
   context_window: 1000000
-  intelligence_index: 33
+  intelligence_index: 34
   intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
+    - score: 33
+      version: "AA v4.3.2"
+      until: "2026-09-23"
     - score: 42
       version: "AA v4.2"
       until: "2026-09-08"

@@ -46,6 +46,8 @@ model:
   license: Apache 2.0
   intelligence_index: 12
   intelligence_index_version: "AA v4.3.2"
+  openness_index: 38.9
+  openness_index_version: "AA Openness Index v1.0"
   variants:
     - name: gpt-oss-120b
       parameters: 117B

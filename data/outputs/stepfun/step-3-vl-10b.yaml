@@ -10,7 +10,7 @@ sources:
   - label: Technical Report
     url: https://arxiv.org/abs/2601.09668
   - label: Artificial Analysis
-    url: https://artificialanalysis.ai/models/step3-vl-10b
+    url: https://artificialanalysis.ai/models/step-3-vl-10b
 description: >
   "Compact giant" outperforming models 20x its size (including GPT-4o on
   certain benchmarks) via fully unfrozen perception-decoder training.
@@ -28,12 +28,18 @@ outputs:
       - label: GitHub
         url: https://github.com/stepfun-ai/Step3-VL-10B
     description: >
-      "Compact giant" outperforming models 20x its size (including GPT-4o on
-      certain benchmarks) via fully unfrozen perception-decoder training.
+      "Compact giant" 10B vision-language model outperforming models 20x its
+      size (including GPT-4o on certain benchmarks) via fully unfrozen
+      perception-decoder training on 1.2T multimodal tokens; the decoder starts
+      from Qwen3-8B. AA Intelligence Index v4.3: 8.
     model:
       architecture: dense
-      parameters: 10B
-    notes: Released Jan 20, 2026 on HuggingFace.
+      base_model: qwen3
+      intelligence_index: 8
+      intelligence_index_version: "AA v4.3.2"
+      openness_index: 41.7
+      openness_index_version: "AA Openness Index v1.0"
+    notes: "Released Jan 20, 2026 on HuggingFace. Decoder initialized from Qwen3-8B (fully unfrozen 1.2T-token multimodal pretraining), so the 10B footprint is recorded in the description rather than as from-scratch scale."
   - name: Step3-VL-10B Technical Report
     type: paper
     date: 2026-01-20

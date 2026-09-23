@@ -49,6 +49,8 @@ model:
   context_window: 256000
   intelligence_index: 25
   intelligence_index_version: "AA v4.3.2"
+  openness_index: 44.4
+  openness_index_version: "AA Openness Index v1.0"
   license: MIT
 related:
   - ling-3.0
