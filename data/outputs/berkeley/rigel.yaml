@@ -1,0 +1,86 @@
+name: Rigel Base
+slug: rigel
+lab: berkeley
+type: model
+date: 2026-09-22
+sources:
+  - label: Blog post
+    url: https://open-lm-engine.github.io/blog/rigel/
+  - label: HuggingFace Collection
+    url: https://huggingface.co/collections/open-lm-engine/rigel
+  - label: HuggingFace (rigel-base)
+    url: https://huggingface.co/open-lm-engine/rigel-base
+  - label: HuggingFace (rigel-base-long)
+    url: https://huggingface.co/open-lm-engine/rigel-base-long
+  - label: GitHub (LM Engine)
+    url: https://github.com/open-lm-engine/lm-engine
+description: >
+  <p>A <strong>2.3B-total / 360M-active hybrid Mamba-2 + attention MoE base
+  model</strong> from Mayank Mishra with <a href="/people/ion-stoica">Ion
+  Stoica</a> and Joseph Gonzalez at UC Berkeley, <a href="/people/tri-dao">Tri
+  Dao</a> (Princeton / Together AI) as co-advisor, and Bharat Runwal at the
+  MIT-IBM Watson Lab, released September 2026 with the pitch "Reaching Llama-3.2
+  Quality with &lt;1% of its Compute." Forty layers: 30
+  <a href="/outputs/cmu/mamba-2">Mamba-2</a> state-space layers and 10
+  grouped-query attention layers (every fourth), each attention layer using a
+  4,096-token sliding window and Apple's
+  <a href="/outputs/apple/exclusive-self-attention">exclusive self attention</a>,
+  so the inference state stays bounded at any context length. Every layer's
+  feed-forward block is a fine-grained MoE of 128 SwiGLU experts with
+  intermediate size 128 and top-2 routing, no shared expert. No positional
+  embeddings, tied embeddings, a 100,352-token vocabulary, hidden size 1,024,
+  μP width scaling. The authors wanted Gated DeltaNet or Kimi Delta Attention
+  but chose Mamba-2 because its kernels were tractable to write for V100s and
+  TPUs; XSA won a same-parameter ablation against gated attention.</p>
+
+  <p>The run is the point as much as the model. With no dedicated cluster it
+  moved between H100s, A100s (40 and 80 GB), V100s, and TPU v5p and v6e on one
+  <strong>LM Engine</strong> codebase (torch-xla rather than JAX on TPUs, so
+  the model code stays single-source), with
+  <a href="/outputs/princeton/sonicmoe">SonicMoE</a> and CODA kernels on H100,
+  ScatterMoE on A100, hand-written MoE kernels for V100, Pallas Mamba-2
+  kernels for TPU, and FP16 loss scaling where BF16 was unavailable. AdamW at
+  a 0.01 peak learning rate with a power-law-then-linear decay, a 4.7M-token
+  batch at 4,096 context, and a six-phase data curriculum that shifts from web
+  and code toward STEM reasoning, math, Nemotron-CC-v2, FinePDFs, and finally
+  a long-CoT stage that extends context to <strong>294,912 tokens</strong>
+  over 25,000 steps and about 118B tokens with in-node context parallelism.
+  Total non-embedding pretraining compute is <strong>5.4 &times; 10<sup>21</sup>
+  FLOPs</strong>, which the authors put at 117&times; less than Llama-3.2-1B/3B
+  (counting the Llama-3.1-8B run they were distilled from), 53&times; less
+  than <a href="/outputs/ibm/granite-4.2">Granite-4.2-3B</a>, and 35&times;
+  less than SmolLM3-3B; on a zero-shot commonsense and knowledge suite it
+  lands within a few points of Granite-4.2-3B and Llama-3.2-3B, above
+  Llama-3.2-1B, and behind SmolLM3-3B. Checkpoints on HuggingFace are the
+  4,096-context base, the long-context extension, and a "rigel-mid"
+  checkpoint the post does not describe; no license is declared on the repos.
+  Instruction-tuned variants and the TPU Mamba-2 kernels are promised next.</p>
+tags:
+  - open-weight
+  - moe
+  - architecture
+  - efficiency
+  - training
+  - infrastructure
+  - research
+model:
+  architecture: moe
+  parameters: 2.3B
+  active_parameters: 360M
+  num_experts: 128
+  top_k: 2
+  context_window: 294912
+  optimizer: AdamW
+  training_hardware: "H100, A100 40/80GB, V100, TPU v5p and v6e; no dedicated cluster"
+  variants:
+    - name: rigel-base
+      parameters: 2.3B
+      active_parameters: 360M
+      notes: "4,096-token pretraining checkpoint."
+    - name: rigel-base-long
+      parameters: 2.3B
+      active_parameters: 360M
+      notes: "294,912-token long-context extension with 4,096-token sliding-window attention."
+related:
+  - skyrl
+  - vllm-original
