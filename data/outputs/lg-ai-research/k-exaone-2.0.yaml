@@ -33,7 +33,7 @@ model:
   active_parameters: "37B"
   base_model: k-exaone
   intelligence_index: 20
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 23
       version: "AA v4.2"

@@ -80,7 +80,7 @@ model:
   training_tokens: 30T
   optimizer: AdamW
   intelligence_index: 46
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   license: MIT
   benchmark_scores:
     - benchmark: DeepSWE v1.1

@@ -49,7 +49,7 @@ model:
   license: MIT
   training_hardware: ~50,000 domestic AI ASIC chips (vendor undisclosed; Huawei HCCL)
   intelligence_index: 19
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 20
       version: "AA v4.3"

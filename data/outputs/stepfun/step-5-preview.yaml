@@ -57,7 +57,7 @@ model:
   active_parameters: 27B
   context_window: 1000000
   intelligence_index: 44
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   benchmark_scores:
     - benchmark: DeepSWE v1.1
       score: "67.7"

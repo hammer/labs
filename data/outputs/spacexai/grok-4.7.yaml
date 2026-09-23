@@ -48,7 +48,7 @@ tags: [frontier, proprietary, coding, agentic, reasoning, multimodal]
 model:
   context_window: 500000
   intelligence_index: 46
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   license: Proprietary
   benchmark_scores:
     - benchmark: CursorBench 4.0

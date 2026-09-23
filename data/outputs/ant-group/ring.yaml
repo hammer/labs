@@ -85,7 +85,7 @@ outputs:
       context_window: 262144
       license: MIT
       intelligence_index: 17
-      intelligence_index_version: "AA v4.3"
+      intelligence_index_version: "AA v4.3.2"
       intelligence_index_history:
         - score: 24
           version: "AA v4.2"

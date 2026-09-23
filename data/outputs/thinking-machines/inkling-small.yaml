@@ -45,7 +45,7 @@ model:
   top_k: 6
   license: Apache 2.0
   intelligence_index: 28
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   openness_index: 33.3
   openness_index_version: "AA Openness Index v1.0"
   intelligence_index_history:

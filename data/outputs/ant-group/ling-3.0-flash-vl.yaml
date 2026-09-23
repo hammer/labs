@@ -48,7 +48,7 @@ model:
   base_model: ling-3.0
   context_window: 256000
   intelligence_index: 25
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   license: MIT
 related:
   - ling-3.0

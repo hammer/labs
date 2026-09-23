@@ -70,7 +70,7 @@ model:
   top_k: 6
   context_window: 1000000
   intelligence_index: 39
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 40
       version: "AA v4.3"

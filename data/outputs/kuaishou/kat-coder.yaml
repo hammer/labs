@@ -45,7 +45,7 @@ outputs:
       # architecturally Qwen2.5-72B; base for the proprietary checkpoint undisclosed.
       pretrained_from_scratch: false
       intelligence_index: 19
-      intelligence_index_version: "AA v4.3"
+      intelligence_index_version: "AA v4.3.2"
       intelligence_index_history:
         - score: 22
           version: "AA v4.2"
@@ -76,7 +76,7 @@ outputs:
       # the proprietary checkpoint, so flagged directly.
       pretrained_from_scratch: false
       intelligence_index: 22
-      intelligence_index_version: "AA v4.3"
+      intelligence_index_version: "AA v4.3.2"
       intelligence_index_history:
         - score: 26
           version: "AA v4.2"

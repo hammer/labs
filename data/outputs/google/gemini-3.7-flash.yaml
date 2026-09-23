@@ -39,7 +39,7 @@ model:
   base_model: gemini-3.6-flash
   context_window: 1048576
   intelligence_index: 39
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 45
       version: "AA v4.2"

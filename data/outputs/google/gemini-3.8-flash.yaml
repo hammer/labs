@@ -66,7 +66,7 @@ model:
   base_model: gemini-3.7-flash
   context_window: 1048576
   intelligence_index: 41
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   license: Proprietary
   benchmark_scores:
     - benchmark: DeepSWE v1.1

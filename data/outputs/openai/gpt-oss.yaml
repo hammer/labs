@@ -45,7 +45,7 @@ model:
   top_k: 4
   license: Apache 2.0
   intelligence_index: 12
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   variants:
     - name: gpt-oss-120b
       parameters: 117B

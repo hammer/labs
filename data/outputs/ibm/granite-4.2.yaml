@@ -72,7 +72,7 @@ model:
   parameters: 30B
   context_window: 131072
   intelligence_index: 15
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 17
       version: "AA v4.2"

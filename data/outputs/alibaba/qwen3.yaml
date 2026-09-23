@@ -33,7 +33,7 @@ outputs:
       Dense: 0.6B, 1.7B, 4B, 8B, 14B, 32B. MoE: 30B-A3B and flagship 235B-A22B.
     model:
       intelligence_index: 9
-      intelligence_index_version: "AA v4.3"
+      intelligence_index_version: "AA v4.3.2"
       intelligence_index_history:
         - score: 8
           version: "AA v4.2"

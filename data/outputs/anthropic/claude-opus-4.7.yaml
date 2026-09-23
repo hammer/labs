@@ -34,7 +34,7 @@ tags:
   - coding
 model:
   intelligence_index: 41
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 44
       version: "AA v4.2"

@@ -63,7 +63,7 @@ model:
   context_window: 1000000
   base_model: nemotron-3-nano
   intelligence_index: 12
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 12
       version: "AA v4.2"

@@ -51,7 +51,7 @@ model:
   base_model: qwen3.5
   context_window: 256000
   intelligence_index: 20
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   license: Proprietary
   variants:
     - name: Qwen3.5-Omni-Plus

@@ -37,7 +37,7 @@ model:
   context_window: 262144
   license: Apache 2.0
   intelligence_index: 19
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 23
       version: "AA v4.2"

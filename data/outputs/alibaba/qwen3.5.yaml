@@ -44,7 +44,7 @@ outputs:
       context_window: 1000000
       languages: 201
       intelligence_index: 21
-      intelligence_index_version: "AA v4.3"
+      intelligence_index_version: "AA v4.3.2"
       intelligence_index_history:
         - score: 19
           version: "AA v4.3"

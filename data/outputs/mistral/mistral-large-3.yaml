@@ -29,7 +29,7 @@ model:
   active_parameters: 41B
   context_window: 256000
   intelligence_index: 9
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 10
       version: "AA v4.3"

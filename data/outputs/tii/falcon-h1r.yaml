@@ -31,7 +31,7 @@ model:
   context_window: 256000
   base_model: falcon-h1
   intelligence_index: 8
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 4
       version: "AA v4.2"

@@ -16,7 +16,7 @@ model:
   # Re-anchored 2026-07-28 to AA's 0327 dated refresh page (36.4), which
   # supersedes the launch checkpoint's mimo-v2-omni page (35.0).
   intelligence_index: 25
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 29
       version: "AA v4.2"

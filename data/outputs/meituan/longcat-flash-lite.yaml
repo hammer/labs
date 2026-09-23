@@ -27,7 +27,7 @@ outputs:
     model:
       architecture: moe
       intelligence_index: 11
-      intelligence_index_version: "AA v4.3"
+      intelligence_index_version: "AA v4.3.2"
       intelligence_index_history:
         - score: 11
           version: "AA v4.2"

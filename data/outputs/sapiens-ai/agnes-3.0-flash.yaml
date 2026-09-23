@@ -45,7 +45,7 @@ model:
   # Base undisclosed; config matches Qwen3.5-27B plus eight layers (see description).
   pretrained_from_scratch: false
   intelligence_index: 36
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   license: "Apache 2.0 (Preview weights); API model proprietary"
   variants:
     - name: Agnes 3.0 Flash (API)

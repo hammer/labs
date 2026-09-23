@@ -31,7 +31,7 @@ outputs:
       architecture: moe
       parameters: 355B
       intelligence_index: 13
-      intelligence_index_version: "AA v4.3"
+      intelligence_index_version: "AA v4.3.2"
       intelligence_index_history:
         - score: 13
           version: "AA v4.2"

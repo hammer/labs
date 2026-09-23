@@ -41,7 +41,7 @@ model:
   # Re-anchored 2026-09-17 from the Alpha page (28) to the Beta checkpoint
   # (26 Aug 2026), the served model; the Alpha reading is kept in the trail.
   intelligence_index: 35
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   openness_index: 38.9
   openness_index_version: "AA Openness Index v1.0"
   intelligence_index_history:

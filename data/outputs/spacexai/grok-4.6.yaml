@@ -28,7 +28,7 @@ model:
   context_window: 500000
   base_model: grok-4.5
   intelligence_index: 44
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 51
       version: "AA v4.2"

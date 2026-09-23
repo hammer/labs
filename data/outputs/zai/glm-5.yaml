@@ -54,7 +54,7 @@ outputs:
       parameters: 744B
       active_parameters: 40B
       intelligence_index: 28
-      intelligence_index_version: "AA v4.3"
+      intelligence_index_version: "AA v4.3.2"
       intelligence_index_history:
         - score: 32
           version: "AA v4.2"
@@ -97,7 +97,7 @@ outputs:
     model:
       architecture: moe
       intelligence_index: 27
-      intelligence_index_version: "AA v4.3"
+      intelligence_index_version: "AA v4.3.2"
       intelligence_index_history:
         - score: 31
           version: "AA v4.2"

@@ -30,7 +30,7 @@ model:
   architecture: dense
   context_window: 128000
   intelligence_index: 7
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 1
       version: "AA v4.2"

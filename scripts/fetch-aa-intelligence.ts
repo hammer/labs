@@ -49,7 +49,7 @@ import { globSync } from 'glob';
 import { parseAaScores } from "./aa-payload";
 
 const LEADERBOARD_URL = 'https://artificialanalysis.ai/leaderboards/models';
-const AAII_VERSION = 'AA v4.3';
+const AAII_VERSION = 'AA v4.3.2';
 const TODAY = new Date().toISOString().slice(0, 10);
 const dryRun = process.argv.includes('--dry-run');
 const discover = process.argv.includes('--discover');

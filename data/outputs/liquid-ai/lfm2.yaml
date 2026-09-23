@@ -31,7 +31,7 @@ model:
   parameters: 24B
   active_parameters: 2.3B
   intelligence_index: 6
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 1
       version: "AA v4.2"

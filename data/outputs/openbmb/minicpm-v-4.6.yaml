@@ -34,7 +34,7 @@ model:
   # base, so it doesn't count toward the home Intelligence column.
   base_model: qwen3.5
   intelligence_index: 6
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 1
       version: "AA v4.2"

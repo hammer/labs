@@ -40,7 +40,7 @@ model:
   parameters: 744B
   active_parameters: 40B
   intelligence_index: 26
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 27
       version: "AA v4.3"

@@ -33,7 +33,7 @@ outputs:
       parameters: 685B
       active_parameters: 37B
       intelligence_index: 21
-      intelligence_index_version: "AA v4.3"
+      intelligence_index_version: "AA v4.3.2"
       intelligence_index_history:
         - score: 25
           version: "AA v4.2"

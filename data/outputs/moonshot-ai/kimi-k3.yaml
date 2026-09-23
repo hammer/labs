@@ -54,7 +54,7 @@ model:
   top_k: 16
   license: Kimi K3 License
   intelligence_index: 44
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 50
       version: "AA v4.2"

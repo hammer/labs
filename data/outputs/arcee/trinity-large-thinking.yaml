@@ -41,7 +41,7 @@ model:
   base_model: trinity-large
   context_window: 512000
   intelligence_index: 11
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 12
       version: "AA v4.2"

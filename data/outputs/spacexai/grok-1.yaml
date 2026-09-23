@@ -29,7 +29,7 @@ model:
   active_parameters: 78B
   context_window: 8192
   intelligence_index: 6
-  intelligence_index_version: "AA v4.3"
+  intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
     - score: 1
       version: "AA v4.2"
