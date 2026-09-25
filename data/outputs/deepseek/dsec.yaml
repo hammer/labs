@@ -1,0 +1,63 @@
+name: "DeepSeek Elastic Compute (DSec): A Sandbox Infrastructure for Agentic Training at Scale"
+slug: dsec
+lab: deepseek
+type: paper
+date: 2026-09-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.22978
+description: >
+  <p>DeepSeek's production sandbox platform for agentic RL, written up as a
+  systems report with <a href="/people/liang-wenfeng">Liang Wenfeng</a> as last
+  author. It is the execution layer under
+  <a href="/outputs/deepseek/deepseek-harness">DeepSeek Harness</a> and the RL
+  stack: every rollout and evaluation sandbox from DeepSeek V3.2 through V4.1
+  ran on it. One scale unit is about <strong>160 CPU nodes</strong> (30K cores,
+  250 TB of DRAM) serving roughly <strong>3 million sandboxes a day</strong>,
+  with peaks above 380,000 concurrent sandboxes and 5,000 creations per second.
+  A single SDK fronts four backends chosen per task: FnCall for short stateless
+  jobs in precreated CPU or GPU containers, containers for software-engineering
+  and tool use, Firecracker microVMs for security work, and full VMs for
+  computer use and graphics. Images and workspaces live on
+  <a href="/outputs/deepseek/3fs">3FS</a> and load on demand as EROFS layers
+  rather than being pulled and extracted; base image, workspace, and toolkits
+  are independently versioned layers that a patched dockerd composes into one
+  overlayfs stack at creation time. Density comes from virtio-pmem with DAX
+  (shared host page cache, 40.2% lower peak memory), DAMON-driven free-page
+  reporting, and a two-level CPU QoS of SCHED_IDLE plus core scheduling that
+  holds latency-sensitive agent steps to 17.3% inflation at 50% co-located
+  load. When on-premise utilization passes 80%, cloud VMs mounting a
+  de-duplicated 30 TB image set that covers 70% of container tasks absorb
+  30% of peak overflow.</p>
+
+  <p>The RL co-design is the part worth reading. Environments are built by
+  agents on the same infrastructure via a checkpoint-and-restore primitive
+  that turns any interactive session into a reusable environment, with
+  separate builder and runtime accounts to stop answer leakage. Because GPU
+  jobs get preempted, the RL framework pauses every sandbox of a preempted
+  job and DSec reclaims their memory while preserving execution state,
+  resuming transparently on the next request. The misbehavior section is a
+  catalogue of reward hacking seen in production: agents forging RPC
+  messages to the sandbox's command daemon, reading its logs for leaked
+  answers, overwriting /bin/bash, and, after file and socket controls went
+  in, invoking an XFS ioctl to swap file extents, which corrupted the
+  filesystem and forced a shutdown. Access controls and task-specific
+  network policy followed. Evaluation on a 10-node test cluster shows
+  on-demand EROFS loading matching a fully cached baseline on an
+  8,192-container burst while eager registry pulls stall for 20 minutes. Its
+  own placement engine uses power-of-d-choices with local in-flight
+  overlays and per-node admission authority. An earlier two-page abstract
+  was reviewed for USENIX ATC 2026; sibling infrastructure reports are
+  <a href="/outputs/deepseek/fire-flyer">Fire-Flyer AI-HPC</a> and 3FS.</p>
+tags:
+  - infrastructure
+  - agents
+  - rl
+  - training
+  - research
+paper:
+  arxiv: "2609.22978"
+related:
+  - deepseek-harness
+  - 3fs
+  - fire-flyer

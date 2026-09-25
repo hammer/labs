@@ -7,13 +7,44 @@ sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2608.29296
 description: >
-  <p>Tencent Hunyuan (Ziniu Li and colleagues) works the batch-size axis of
-  RL scaling: with square-root learning-rate scaling under Adam, GRPO and
-  PPO curves become batch-size invariant in samples, so the decision rule
-  reduces to throughput gain against the samples-to-target penalty of
-  larger batches. Filed late.</p>
+  <p>Tencent Hunyuan (Ziniu Li leading, Alex Chen supervising) works the
+  batch-size axis of RL scaling on fixed hardware, splitting the question
+  into learning per sample and systems throughput. On the learning side, with
+  <strong>square-root learning-rate scaling under Adam</strong>, GRPO and PPO
+  runs at different batch sizes trace nearly the same sample-indexed curves
+  over a bounded range, so configurations can be compared at equal cumulative
+  samples; a fixed-learning-rate control and the largest batches break the
+  invariance. On the systems side, rollout generation is memory-bandwidth
+  bound at low concurrency while training cost scales with tokens, so bigger
+  batches raise generation throughput sublinearly in time. The decision rule
+  follows: a larger batch cuts wall-clock time-to-target only when its
+  throughput gain exceeds its samples-to-target penalty.</p>
+
+  <p>Experiments use GRPO on Qwen3-30B-A3B-Instruct-2507 over a 4,853-prompt
+  filtered subset of DAPO-Math-17K (16K rollouts, mean@32 on AIME 2024 and
+  2025) and PPO on an internal Hunyuan MoE with 3B active parameters. In the
+  PPO runs, raising the response batch from 256 to 1,024 quadruples responses
+  per boundary while collection time grows from 39 to 68 seconds, a
+  <strong>2.29&times;</strong> throughput gain. In the GRPO sweep (Table 1),
+  time-to-target falls from 11.90 hours at batch 128 to <strong>8.42 hours at
+  batch 1,024</strong>, a 29% reduction at unchanged samples-to-target, then
+  rises to 14.68 hours at 2,048 once the sample penalty reaches 1.6&times;;
+  the fixed-learning-rate control at 256 takes 16.93 hours despite higher
+  throughput. The paper's recipe is two-stage: retune batch-dependent
+  hyperparameters first, then grow the batch only while throughput still
+  wins. Only the learning rate is retuned; other hyperparameters and the
+  PPO actor-critic batch coupling are left as open questions.</p>
 tags:
   - rl
   - rl-scaling
+  - post-training
+  - research
 paper:
   arxiv: "2608.29296"
+  authors:
+    - Ziniu Li
+    - Jinbo Wang
+    - Guanhua Huang
+    - Feiyuan Zhang
+    - Pengbo Li
+    - Alex Chen
