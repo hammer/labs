@@ -1,0 +1,66 @@
+name: "KREX: Concurrent Kernel Benchmarking on Shared GPUs via Region-Granular Exclusivity"
+slug: krex
+lab:
+  - hkust
+  - alibaba
+type: paper
+date: 2026-09-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.30057
+  - label: GitHub (Atrex Kernel Agent, Alibaba)
+    url: https://github.com/alibaba/atrex-kernel-agent
+  - label: GitHub (Atrex-Bench, Alibaba)
+    url: https://github.com/alibaba/atrex-bench
+description: >
+  <p>A runtime for the execution layer under GPU kernel agents, from Wei Wang's
+  group at HKUST (Tianyu Feng and Haoxuan Yu first authors) with seven
+  co-authors from Alibaba Group, whose production fleet is the setting: users
+  there submit over <strong>300,000 kernel benchmarking jobs a day</strong>
+  across six GPU models from three vendors. The problem is that agents such as
+  Alibaba's Atrex Kernel Agent, NVIDIA's kernel-design-agents, and AMD's GEAK
+  improve a kernel by timing it, and existing systems reserve a whole GPU per
+  agent session or per benchmarking command to keep those timings clean.
+  Profiling a full Atrex session put GPU utilization at <strong>3.4%</strong>:
+  GPU commands occupy 19.3% of session wall-clock, and inside them only the
+  timing loop needs the device to itself, since imports, compilation, input
+  generation, and correctness checks produce values rather than timings.</p>
+
+  <p>KREX lets the agent mark critical regions inside a command and enforces
+  exclusivity only there: it blocks new GPU submissions from other commands,
+  drains outstanding work, freezes sibling host processes and isolates CPU
+  cores so the threads driving the measurement are protected too, then lets
+  everything overlap again outside the region. Persistent context processes
+  reuse GPU contexts so that node-wide serialized context creation stops
+  taxing the concurrent phases. Replaying more than 20,000 recorded commands
+  from three agents on KernelBench, Atrex-Bench, and FlashInfer-Trace across
+  16 NVIDIA H20 and 16 AMD MI308X GPUs, KREX reaches <strong>3.4&times;</strong>
+  the throughput of command-granular exclusivity on H20 and 2.6&times; on
+  MI308X, with p95 timing inflation of 0.30%, 1.58%, and 3.90% for kernels
+  longer than 10 ms, 1 ms, and 0.1 ms, so the relative signal that steers the
+  agent's search survives. An unprotected sharing baseline shows what goes
+  wrong otherwise. No KREX code release is linked; the Alibaba agent and
+  benchmark it was integrated with are open. Filed under HKUST for the
+  first and corresponding authors, with Alibaba as co-lab.</p>
+tags:
+  - infrastructure
+  - agents
+  - agent-harness
+  - efficiency
+  - research
+paper:
+  arxiv: "2609.30057"
+  authors:
+    - Tianyu Feng
+    - Haoxuan Yu
+    - Tianyuan Wu
+    - Lingyun Yang
+    - Daocheng Ying
+    - Yuxiao Wang
+    - Ruibo Fan
+    - Yinghao Yu
+    - Guodong Yang
+    - Liping Zhang
+    - Wei Wang
+related:
+  - kernelgym
