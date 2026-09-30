@@ -1,0 +1,62 @@
+name: MarinDNA
+slug: marin-dna
+lab: open-athena
+type: model
+date: 2026-08-03
+sources:
+  - label: Blog Post
+    url: https://openathena.ai/blog/marin-dna/
+  - label: GitHub
+    url: https://github.com/Open-Athena/marin-dna
+  - label: HuggingFace (m5.1, 1B)
+    url: https://huggingface.co/marin-dna/marin-dna-exp135-m5.1
+  - label: HuggingFace (models and datasets)
+    url: https://huggingface.co/marin-dna
+  - label: Variant-effect prediction leaderboard
+    url: https://openathena.ai/marin-dna/
+description: >
+  <p>Open Athena's genomic language models, developed in the open on the
+  <a href="/outputs/open-athena/marin">Marin</a> platform (blog post by
+  Gonzalo Benegas and Eric Czech). Instead of a genomics-specific architecture,
+  MarinDNA treats DNA as text and trains a stock decoder-only Transformer (the
+  Qwen3 architecture, from scratch, with a seven-token nucleotide vocabulary)
+  and puts its effort into data curation, hyperparameters and scale. Training
+  data starts from annotation-derived coding, upstream and downstream sequences
+  across many species, later adding ncRNA and enhancers projected from human
+  annotations through whole-genome alignments, mixed with uniform weights so
+  the large coding-sequence set does not dominate. Hyperparameters tuned on
+  ~25M-parameter models predicted the best learning rate at 255M, 476M and 1B,
+  and validation loss followed a clean scaling law through 4B.</p>
+
+  <p>The released <strong>1.12B m5.1</strong> model (19 layers, 255-base
+  context, about 166B nucleotide tokens) slightly leads Evo 2 40B in zero-shot
+  macro-average AUPRC on Mendelian variant-effect prediction while using
+  <strong>~1,980&times; fewer training FLOPs</strong> and scoring variants
+  ~2,330&times; faster, though alignment-based and supervised models remain
+  stronger overall and zero-shot scores on Mendelian missense variants got
+  worse as the models grew even as linear-probe results improved. Weights are
+  Apache 2.0 on HuggingFace, with a scaling suite from 46M to 4B parameters
+  (August 2026), more than 150 datasets and a public leaderboard; the
+  repository keeps the unsuccessful and inconclusive experiments alongside the
+  ones in the write-up.</p>
+tags:
+  - science
+  - biology
+  - genomics
+  - scientific-fm
+  - scaling-laws
+  - open-weight
+model:
+  architecture: dense
+  parameters: 1.1B
+  context_window: 256
+  training_tokens: 166B
+  license: Apache 2.0
+  variants:
+    - name: MarinDNA m5.1
+      parameters: 1.1B
+      notes: "1,120,772,224 parameters; 19 layers, hidden 1,920; final checkpoint at step 59,158; released with the August 3, 2026 blog post"
+    - name: MarinDNA scaling suite v0.5
+      notes: "46M, 76M, 128M, 255M, 476M, 1B, 2B and 4B checkpoints, August 6, 2026"
+related:
+  - marin

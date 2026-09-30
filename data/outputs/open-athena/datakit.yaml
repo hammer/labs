@@ -1,0 +1,43 @@
+name: Datakit
+slug: datakit
+lab: open-athena
+type: library
+date: 2026-09-11
+sources:
+  - label: Blog Post
+    url: https://openathena.ai/blog/marin-data-pipeline-overview/
+  - label: GitHub (Datakit in the Marin repo)
+    url: https://github.com/marin-community/marin/tree/main/lib/marin/src/marin/datakit
+  - label: HuggingFace (proxy-run dataset)
+    url: https://huggingface.co/datasets/marin-community/grug-moe-mix-swarm
+description: >
+  <p>The Marin team's pipeline for turning open datasets into a pretraining
+  mixture, created by Rafal Wojdyla and described by Will Held in
+  September 2026 for Marin's most recent large-scale run. It catalogues every source in code (152
+  open datasets holding 25.25T Llama 3 tokens in 18.71B documents, mostly from
+  AI2, NVIDIA, HuggingFace and the EU's HPLT project, plus a long tail of
+  smaller sources), rewrites them into one format, then deduplicates globally,
+  removing 2.33B documents (2.13T tokens), and decontaminates with exact
+  13-word n-gram matching, which drops another 13.66B tokens. An unsupervised
+  embedding model assigns each document to one of 40 topics and a supervised
+  scorer to one of five quality bands calibrated separately for code, prose and
+  mathematics, giving 200 sampling buckets. More than 1,000 small proxy runs
+  then fit a regression that predicts benchmark performance from the sampling
+  weights over those buckets, which sets the final mixture. The source
+  registry, processing code and proxy-run dataset are open source under Apache
+  2.0.</p>
+tags:
+  - data
+  - training-data
+  - pretraining
+  - infrastructure
+  - open-source
+library:
+  github: https://github.com/marin-community/marin
+  language: Python
+  license: Apache 2.0
+related:
+  - marin
+  - delphi-scaling-suite
+  - dclm
+  - dolma

@@ -1,0 +1,67 @@
+name: Snowball 67B-A2B
+slug: snowball
+lab:
+  - open-athena
+  - stanford
+type: model
+date: 2026-09-09
+flagship: true
+sources:
+  - label: Marin 535B-A23B launch note (Snowball status)
+    url: https://openathena.ai/blog/marin-535b-launch-note/
+  - label: HuggingFace (262K base, QK 1.57)
+    url: https://huggingface.co/open-athena/snowball-67b-a2b-base-262k-qk157
+  - label: HuggingFace (262K base, QK 1.75)
+    url: https://huggingface.co/open-athena/snowball-67b-a2b-base-262k-qk175
+  - label: GitHub (262K checkpoint guide)
+    url: https://github.com/marin-community/marin/issues/8977
+  - label: GitHub (Marin vLLM fork for GrugMoE)
+    url: https://github.com/marin-community/vllm
+description: >
+  <p>Marin's <strong>67B-total, roughly 2B-active</strong> mixture-of-experts
+  model, built in Marin's own "Grug MoE" architecture and pretrained from scratch on <strong>10T tokens</strong> on TPU
+  v4 by the Marin team at <a href="/labs/open-athena">Open Athena</a>. It has 26
+  layers, a hidden size of 2,560, grouped-query attention with 20 query and 5
+  key-value heads, and 256 routed experts with four selected per token plus a
+  shared expert, over a 128,256-token vocabulary; router biases from Marin's
+  quantile-balancing scheme are folded into the exported weights.</p>
+
+  <p>Context was then extended to <strong>262,144 tokens</strong> in a
+  1,000-step run (steps 156,000 to 157,000), and on September 9, 2026 Open
+  Athena published five BF16 base checkpoints from that comparison on
+  HuggingFace under the OpenMDW-1.1 license: two attention-scaling settings
+  (QK multiplier 1.57 and 1.75) and three that upsample long documents 2&times;,
+  4&times; or 8&times;. They are base models with no instruction tuning, and
+  serving them needs Marin's vLLM fork, which registers the GrugMoE
+  architecture. Supervised fine-tuning at 262K context and RLVR runs on
+  top of Snowball followed as further public experimental checkpoints in
+  September; the team, which also built an end-to-end post-training pipeline
+  for it, says the full release is coming soon. Snowball sits between the dense
+  <a href="/outputs/open-athena/marin">Marin 32B</a> and the 535B-total,
+  23B-active MoE that Marin began pretraining in August 2026.</p>
+tags:
+  - moe
+  - open-weight
+  - pretraining
+  - long-context
+model:
+  architecture: moe
+  parameters: 67B
+  active_parameters: 2B
+  num_experts: 256
+  top_k: 4
+  context_window: 262144
+  training_tokens: 10T
+  training_hardware: TPU v4
+  license: OpenMDW-1.1
+  variants:
+    - name: snowball-67b-a2b-base-262k-qk157
+      notes: "Naive long-context extension, QK multiplier 1.57"
+    - name: snowball-67b-a2b-base-262k-qk175
+      notes: "Raised attention scale for 262K context (QK multiplier 1.75)"
+    - name: snowball-67b-a2b-base-262k-qk175-skew2 / skew4 / skew8
+      notes: "QK 1.75 with long-context documents upsampled 2x, 4x or 8x during the extension"
+related:
+  - marin
+  - datakit
+  - delphi-scaling-suite

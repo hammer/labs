@@ -12,11 +12,13 @@ description: >
   <strong>HAI</strong> institute, and the <strong>Center for Research on
   Foundation Models (CRFM)</strong> &mdash; the university lab that comes
   closest to running a frontier-style training operation. CRFM's
-  <strong><a href="/outputs/stanford/marin">Marin</a></strong> "open lab"
-  pretrains fully-open models from scratch in JAX on TPUs (Marin 8B, and
-  Marin 32B &mdash; the largest fully-open-process university model,
-  beating OLMo 2 32B), with every experiment landing as a public PR on
-  the Levanter training stack, plus the Delphi open scaling suite.</p>
+  <strong><a href="/outputs/stanford/marin">Marin</a></strong> "open lab",
+  started by Percy Liang and David Hall in 2024 and developed since 2025 with
+  <a href="/labs/open-athena">Open Athena</a>, pretrains fully open models from
+  scratch in JAX (Marin 8B, and Marin 32B &mdash; the strongest fully open base
+  model at its release, beating OLMo 2 32B), with every experiment landing as a
+  public PR on the Levanter training stack, plus the Delphi open scaling
+  suite.</p>
 
   <p>The systems and methods lines are equally load-bearing: Chris
   R&eacute;'s Hazy Research (FlashAttention lineage) now ships the
@@ -35,7 +37,7 @@ description: >
   companies; Stanford keeps the original dated releases.</p>
 people:
   - name: Percy Liang
-    role: Associate Professor, CS; Director, CRFM; leads the Marin open lab
+    role: Associate Professor, CS; Director, CRFM; co-leads the Marin open lab (with Open Athena)
     formerly: Co-Founder, Together AI
     urls:
       - label: Google Scholar

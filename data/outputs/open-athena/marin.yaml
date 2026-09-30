@@ -1,0 +1,64 @@
+name: Marin
+slug: marin
+lab:
+  - open-athena
+  - stanford
+type: model
+date: 2025-05-19
+flagship: true
+sources:
+  - label: Announcement
+    url: https://marin.community/blog/2025/05/19/announcement/
+  - label: GitHub
+    url: https://github.com/marin-community/marin
+  - label: HuggingFace (8B)
+    url: https://huggingface.co/marin-community/marin-8b-base
+  - label: HuggingFace (32B)
+    url: https://huggingface.co/marin-community/marin-32b-base
+  - label: Marin 8B retrospective
+    url: https://marin.readthedocs.io/en/latest/reports/marin-8b-retro/
+  - label: Marin 32B retrospective
+    url: https://marin.readthedocs.io/en/latest/reports/marin-32b-retro/
+  - label: "Google Open Source Blog: Training Marin 32B"
+    url: https://opensource.googleblog.com/2025/12/training-marin-32b-what-an-open-lab-can-build-with-tpus-jax-and-a-little-persistence.html
+description: >
+  <p>The "open lab" David Hall and Percy Liang started at Stanford's CRFM in
+  2024 and, since 2025, have developed at <a href="/labs/open-athena">Open
+  Athena</a> with Stanford: fully open models (weights, data, code and
+  tokenizer, Apache 2.0) pretrained <strong>from scratch</strong> in JAX
+  through the Levanter trainer, on TPUs from Google's TPU Research Cloud, with
+  every experiment run as a public GitHub issue and pull request.
+  <strong>Marin 8B</strong> (May 2025, 12.75T tokens) matched or beat Llama
+  3.1 8B on 16 of 19 base-model evaluations.</p>
+
+  <p><strong>Marin 32B Base</strong> (October 2025, about 6.4T tokens) scaled
+  the 8B recipe. It began on preemptible TPU v5p slices and finished on a
+  reserved v4-2048; loss spikes around step 70,000 were cured mid-run by
+  switching to the Qwen3 32B shape, which adds QK-Norm, warm-started from the
+  run's own weights. On average it beat OLMo 2 32B Base, the previous best
+  fully open base model, by 2 points (better on 14 of 19 tasks) and roughly
+  matched the open-weight Gemma 3 27B PT. Its successors at Open Athena
+  include the <a href="/outputs/open-athena/delphi-scaling-suite">Delphi</a>
+  scaling suite, the <a href="/outputs/open-athena/datakit">Datakit</a> data
+  pipeline, the <a href="/outputs/open-athena/snowball">Snowball</a> 67B-A2B MoE
+  and a 535B-total, 23B-active MoE that began pretraining in August 2026.</p>
+tags:
+  - open-weight
+  - pretraining
+  - infrastructure
+model:
+  architecture: dense
+  parameters: "32B"
+  license: Apache 2.0
+  variants:
+    - name: Marin 8B
+      parameters: "8B"
+      notes: "May 2025; 12.75T tokens; Llama-style; matched or beat Llama 3.1 8B on 16 of 19 base evals"
+    - name: Marin 32B
+      parameters: "32B"
+      notes: "October 2025; about 6.4T tokens; Qwen3-32B shape with QK-Norm; better than OLMo 2 32B Base on 14 of 19"
+related:
+  - snowball
+  - delphi-scaling-suite
+  - datakit
+  - pretraining-optimizers

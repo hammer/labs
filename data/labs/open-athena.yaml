@@ -1,0 +1,110 @@
+name: Open Athena
+slug: open-athena
+url: https://openathena.ai
+huggingface: https://huggingface.co/open-athena
+github: https://github.com/Open-Athena
+region: usa
+founded: "2024"
+type: nonprofit
+description: >
+  <p><strong>Open Athena</strong> is a nonprofit founded in 2024 by
+  <a href="https://en.wikipedia.org/wiki/David_Siegel_(computer_scientist)">David
+  Siegel</a> (its chairman, and co-founder of Two Sigma),
+  <a href="https://en.wikipedia.org/wiki/Jeff_Hammerbacher">Jeff
+  Hammerbacher</a> (CEO), Mike Abbott and Jared Crooks to bring the
+  capabilities of the AI frontier to academia. It gives university labs
+  engineers, compute and coordination so that promising prototypes become
+  foundation models developed in the open and sustained inside academic
+  systems, and it keeps offices in New York, San Francisco, London and Boston.
+  Supporters include Bloomberg Philanthropies, The Jen-Hsun and Lori Huang
+  Foundation, Schmidt Sciences, the Siegel Family Endowment, the Sloan
+  Foundation and the Valhalla Foundation; its advisors include Percy Liang,
+  Alec Radford, Sara Hooker and Jonathan Frankle.</p>
+
+  <p>Its largest project is <strong><a href="/outputs/open-athena/marin">Marin</a></strong>,
+  the open lab David Hall and Percy Liang started at Stanford in 2024 and now
+  built with Stanford, where every experiment, training log and data recipe is
+  public. <a href="/outputs/open-athena/marin">Marin 8B</a> (May 2025) matched or
+  beat Llama 3.1 8B on 16 of 19 base-model evaluations, and Marin 32B
+  (October 2025) became the strongest fully open base model, ahead of OLMo 2
+  32B on 14 of 19. Marin joined Open Athena in 2025 with one full-time engineer
+  and has grown to ten, all employed by Open Athena. Since then it has released
+  the <a href="/outputs/open-athena/delphi-scaling-suite">Delphi</a> scaling suite,
+  whose preregistered forecast landed within 0.2% at 300&times; the fitted
+  compute; scaled its MoE recipe to a 129B-total, 16B-active run that came
+  within 1% of its preregistered loss; built the Iris global compute scheduler
+  and the <a href="/outputs/open-athena/datakit">Datakit</a> data pipeline; and
+  pretrained <strong><a href="/outputs/open-athena/snowball">Snowball</a></strong>,
+  a 67B-A2B MoE on 10T tokens extended to 262K context, whose base checkpoints
+  went up on HuggingFace in September 2026. In August 2026, on a GPU gift from the Huang Foundation, it
+  began its <strong>535B-total, 23B-active</strong> hero run: 18T tokens
+  over about three months on NVIDIA B200 NVL72 racks at CoreWeave, after
+  porting the whole stack off Google TPUs, with the loss it expects at the end
+  of pretraining (December 1) registered in advance on Paloma. Expert
+  parallelism made the 535B size practical: the run held about 21.5% MFU until
+  a rewritten ragged all-to-all nearly eliminated dropped tokens and lifted it
+  to roughly 23&ndash;24%.</p>
+
+  <p>Marin doubles as a platform for science models:
+  <a href="/outputs/open-athena/marin-dna">MarinDNA</a> trained a 1.1B genomic
+  language model that rivals Evo 2 40B on Mendelian variant-effect prediction,
+  MarinFold predicts protein structure through next-token prediction, and
+  MarinMat applies the same approach to electron densities in crystals. Beyond
+  Marin, Open Athena engineers work with Cornell on the PlantCAD and GeneCAD
+  plant-genomics models, with MIT on the BoltzGen protein-design model, and
+  with Laure Zanna's group at NYU on Samudra 2, an ocean emulator that runs the
+  global ocean at 1/4&deg; resolution on a single GPU. In September 2026 the UK's
+  ARIA chose it as an Activation Partner, its first UK collaboration, alongside
+  a new London office. It also maintains mumwelt, a command-line tool and set of
+  agent skills for asking questions of the Marin project's record.</p>
+people:
+  - name: Jeff Hammerbacher
+    role: Founder and CEO
+    formerly: Co-founder and Chief Scientist, Cloudera; faculty, Icahn School of Medicine at Mount Sinai
+    urls:
+      - label: Wikipedia
+        url: https://en.wikipedia.org/wiki/Jeff_Hammerbacher
+  - name: David Siegel
+    role: Founder and Chairman (also co-founder and co-chairman of Two Sigma)
+    urls:
+      - label: Wikipedia
+        url: https://en.wikipedia.org/wiki/David_Siegel_(computer_scientist)
+  - name: Jared Crooks
+    role: Founder; COO and CSO
+  - name: David Hall
+    url: https://dlwh.org/
+    role: Marin co-creator and lead; creator of the Levanter trainer
+    formerly: Stanford CRFM
+    urls:
+      - label: GitHub
+        url: https://github.com/dlwh
+  - name: Will Held
+    url: https://williamheld.com
+    role: Member of Technical Staff, Marin (data and evaluation; Delphi, Datakit)
+    urls:
+      - label: GitHub
+        url: https://github.com/Helw150
+  - name: Percy Liang
+    role: Advisor; Marin co-creator (Stanford)
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=pouyVyUAAAAJ
+news:
+  - title: "Open Athena Selected as an ARIA Activation Partner, Its First UK Collaboration, as It Opens a London Office"
+    url: https://openathena.ai/blog/open-athena-selected-as-an-aria-activation-partner/
+    source: Open Athena
+    date: 2026-09-22
+  - title: "Marin 535B-A23B Launch Note: A Year After Joining Open Athena, Marin Has Grown From One Full-Time Engineer to Ten; Snowball 67B-A2B Nears Release"
+    url: https://openathena.ai/blog/marin-535b-launch-note/
+    source: Open Athena
+    date: 2026-09-03
+  - title: "Marin Starts a 535B-A23B Training Run on 18T Tokens, Billed as the Largest Open, Live Training Run to Date, on a GPU Gift From the Jen-Hsun and Lori Huang Foundation"
+    url: https://openathena.ai/blog/huang-foundation-marin-535b-training-run/
+    source: Open Athena
+    date: 2026-09-02
+tags:
+  - nonprofit
+  - open-source
+  - open-weight
+  - science
+  - research
