@@ -13,8 +13,10 @@ sources:
     url: https://huggingface.co/IFM/K2-Horizon-375B-A23B
   - label: HuggingFace Collection
     url: https://huggingface.co/collections/IFM/k2-horizon
-  - label: GitHub (post-training)
-    url: https://github.com/ifm-ai/horizon-post-train
+  - label: HuggingFace (375B-A23B NVFP4)
+    url: https://huggingface.co/IFM/K2-Horizon-375B-A23B-NVFP4
+  - label: GitHub (RL360 post-training)
+    url: https://github.com/ifm-ai/RL360
   - label: GitHub (xLLM)
     url: https://github.com/ifm-ai/xllm
   - label: Artificial Analysis
@@ -54,7 +56,7 @@ description: >
   leading it on Toolathlon. IFM audited the Terminal-Bench run for reward
   hacking with Artificial Analysis's procedure: 24 of 500 passing trials were
   flagged, which lowers the score from 70.2 to 66.9. On the
-  <strong>Artificial Analysis Intelligence Index v4.3</strong> it scores <strong>31</strong> (34 when v4.3 launched on 8 Sep 2026; 38 on v4.2; 47 on v4.1.1 at release), 20 points above K2 Think V2's 11.</p>
+  <strong>Artificial Analysis Intelligence Index v4.3.2</strong> it scores <strong>31</strong> (34 when v4.3 launched on 8 Sep 2026; 38 on v4.2; 47 on v4.1.1 at release), 20 points above K2 Think V2's 11.</p>
 
   <p>Two architectural additions ship with the fleet. <strong>MoVA</strong>
   (Mixture-of-Value Attention) brings expert routing into multi-head
@@ -66,7 +68,21 @@ description: >
   autoregressive weights keep the output distribution, a lossless decode
   speedup that IFM's release puts at roughly 3&times;; adapters ship for the 7B
   and 0.9B models. Serving recipes exist for vLLM and SGLang (BF16, TP=8 on one
-  8&times;H200 node for the 375B), with FP8 and GGUF checkpoints for most sizes.</p>
+  8&times;H200 node for the 375B), with FP8 and GGUF checkpoints for most sizes.
+  NVFP4 checkpoints of the 375B-A23B and 32B followed on September 22 (routed
+  experts in NVFP4, all other layers in BF16; Blackwell-generation GPUs
+  required).</p>
+
+  <p>Through September IFM kept opening the stack behind the release: the
+  post-training code (renamed <strong>RL360</strong>), attention kernels for
+  xLLM (xattn, with FP32 attention-output state for the backward pass),
+  checkpoint conversion and vLLM serving (xbridges), a pretraining-data toolkit
+  (model-based annotation, quality bucketing, distributed shuffling), a quality
+  gate that every mid- and post-training conversation had to pass
+  (process_entry), and long-context QA and agent-task synthesis pipelines (LCQA,
+  task-factory). Each repo has only a handful of stars so far, and the
+  pretraining and mid-training datasets were still gated at the end of
+  September.</p>
 tags:
   - open-source
   - open-weight

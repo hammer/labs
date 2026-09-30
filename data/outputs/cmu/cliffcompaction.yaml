@@ -1,0 +1,74 @@
+name: "CliffCompaction: Cost-Efficient Compaction for Long-Horizon Coding Agents"
+slug: cliffcompaction
+lab: cmu
+type: paper
+date: 2026-09-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.26779
+  - label: GitHub
+    url: https://github.com/nguyenvuthientrang/cliffcompaction
+  - label: PyPI
+    url: https://pypi.org/project/cliffcompaction/
+description: >
+  <p>A rule-based context-compaction method for long-running coding agents,
+  by Trang Nguyen, Eulrang Cho and Tim Dettmers of Carnegie Mellon with
+  Bingqing Chen of the Bosch Center for AI. The context grows normally until
+  it crosses a token threshold; compaction then truncates or drops the parts
+  that dominate its length, chiefly tool outputs and tool calls (84% of the
+  tokens in a Terminal-Bench 2.0 run with GLM 5.1), keeping verbatim excerpts
+  and never rephrasing or summarizing. Each compaction also discards the
+  previous compacted block and works only from original content, so a
+  compaction is never compacted again, and context length drops back to about
+  the same level after every event (the "cliff"). The authors deliberately
+  give up full-history recall for what they call high compaction precision:
+  with summaries, an agent tends to assume it has everything and stops
+  revisiting past state, so whatever the summary omitted turns into drift.
+  The method needs no training and no auxiliary LLM calls, works with any
+  model, and keeps the prompt cache reusable between compactions, cutting
+  cache-read cost by up to 90%.</p>
+
+  <p>On Terminal-Bench 2.0 with the Terminus-2 harness, Kimi K2.6 resolved
+  61.4% of tasks at 32K- and 16K-token thresholds, against 59.2% with full
+  context and 55.5% with Terminus-2's own LLM summarization at 16K, and GLM
+  5.1 rose from 49.8% to 54.3%. On Terminal-Bench 2.1 inside Claude Code, GLM
+  5.3 Flash reached 76.7%, against 71.0% for Claude Code's auto-compaction at
+  the same budget of about 45K tokens and 73.0% at its default 200K. Because
+  each rollout gets cheaper, parallel test-time scaling pays off: three
+  compacted Kimi K2.6 rollouts gain 10.5 points for 1.9&times; the cost of one
+  uncompacted run, and cost $58.01 for the whole of Terminal-Bench, less than
+  one GPT-5.3 Codex run, while matching Claude Opus 4.7. On SWE-bench Verified
+  it preserves full-context success for GLM 5.1 and Kimi K2.6 at 32K and 16K
+  thresholds. For continual kernel optimization on KernelBench Level 3, with
+  sessions exceeding a million tokens, Kimi K2.7 in OpenHands reached a
+  2.23&times; speedup after 200 steps and 3.58&times; after 400, against
+  1.30&times; without compaction, and GPT-5-mini reached 2.09&times; after 200
+  steps against 1.78&times; for AdaExplore, a specialized kernel agent using
+  the same model. The open-source implementation is a scaffold-agnostic API
+  proxy that works with Claude Code, Codex CLI and other harnesses (MIT
+  license, pip package cliffcompaction, about 50 GitHub stars).</p>
+tags:
+  - agents
+  - agent-harness
+  - long-context
+  - coding
+  - efficiency
+  - inference
+paper:
+  arxiv: "2609.26779"
+  authors:
+    - Trang Nguyen
+    - Eulrang Cho
+    - Bingqing Chen
+    - Tim Dettmers
+  code_url: https://github.com/nguyenvuthientrang/cliffcompaction
+library:
+  github: https://github.com/nguyenvuthientrang/cliffcompaction
+  language: Python
+  license: MIT
+  pip_package: cliffcompaction
+related:
+  - terminal-bench
+  - kernelbench
+  - openhands
+  - contextpilot

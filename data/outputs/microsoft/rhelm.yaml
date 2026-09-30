@@ -9,7 +9,7 @@ sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2605.31086
   - label: GitHub (eval harness)
-    url: https://github.com/Hanzhang-lang/RHELM_Benchmark
+    url: https://github.com/microsoft/RHELM
 description: >
   <p>Benchmark for <strong>realistic, heterogeneous, and evolving long-horizon
   memory</strong> in AI assistants. Unlike static-dialogue memory benchmarks,

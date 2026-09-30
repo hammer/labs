@@ -1,0 +1,77 @@
+name: "CodeMidas: Scaling Agentic Coding RL Environments from Code Itself"
+slug: codemidas
+lab:
+  - xiaomi
+  - peking
+type: paper
+date: 2026-09-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.22068
+  - label: MiMo-V2.6 technical report (PDF, cites CodeMidas)
+    url: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/main/MiMo_V2_6_technical_report.pdf
+description: >
+  <p>An agentic pipeline from Xiaomi's LLM Core team that turns functionality
+  already implemented in open-source codebases into executable RL environments
+  for coding agents, with the source code as its only task-specific input.
+  Earlier pipelines seed tasks from development records, such as issues and
+  pull requests (SWE-rebench V2, <a href="/outputs/sii/openswe">daVinci-Env</a>),
+  commits (R2E-Gym), existing tests
+  (<a href="/outputs/princeton/swe-smith">SWE-smith</a>) or documentation, so
+  their coverage ends where those records end. In CodeMidas, agents handle
+  every construction stage. One selects functionality with a public entry point
+  and observable behavior, removes the implementation, and writes a behavioral
+  task statement. Another writes tests whose expected values come from running
+  the original code, then replaces assertions that pin incidental details
+  (exact wording, ordering, internal structure) with behavioral checks. A task
+  must fail in two fresh containers with the stripped codebase and pass in four
+  with the reference solution. Three post-rollout filters then drop tasks with
+  exploitable leakage (probed by adversarial rollouts), tasks whose tests a
+  reviewing agent finds at odds with the statement, and tasks that a frontier
+  model always or never solves.</p>
+
+  <p>The result is <strong>5,545 training tasks from 3,185 codebases in 23
+  programming languages and 15 technical domains</strong> (Python 21.4%,
+  TypeScript 18.3%, Go 16.2%; median reference solution 142 lines). Training
+  <a href="/outputs/xiaomi/mimo-v2.5">MiMo-V2.5</a> on them with GRPO (binary
+  execution reward, 32 rollouts per task, up to 500 turns per rollout) improves
+  all five external benchmarks, among them DeepSWE v1.1 (10.0% to 21.7%),
+  ProgramBench's almost-solved rate (4.5 to 21.5) and Terminal-Bench v2.1
+  (63.7% to 72.2%). Task count and task quality both matter: pools of 1k, 3k
+  and 5.5k tasks reach 17.57, 19.05 and 21.70 on DeepSWE, and the filtered
+  5.5k set beats an 8k sample built without cleaning or filtering by 4.59
+  points there (even the 3k subset beats it). During RL the agent reads more
+  before its first edit (27.2 to 40.1 read/search calls) and runs more varied
+  checks after its last. The <a href="/outputs/xiaomi/mimo-v2.6-pro">MiMo-V2.6</a>
+  technical report names CodeMidas as the source-code-driven path among its
+  coding RL task pipelines. Sixteen of the 19 authors list LLM Core, Xiaomi,
+  several jointly with Peking University, HKU or Renmin University; first
+  author Bowen Ye did the work as a Xiaomi intern, and the co-corresponding
+  authors are <a href="/people/tong-yang">Tong Yang</a> (Peking University) and
+  <a href="/people/luo-fuli">Luo Fuli</a> (Xiaomi). The paper links no code or
+  data.</p>
+tags:
+  - rl
+  - rl-scaling
+  - environments
+  - coding
+  - agents
+  - post-training
+  - research
+paper:
+  arxiv: "2609.22068"
+  authors:
+    - Bowen Ye
+    - Lei Li
+    - Shicheng Li
+    - Zihao Yue
+    - Linghao Zhang
+    - Hanglong Lv
+    - Yuanxin Liu
+    - Wenhan Ma
+related:
+  - mimo-v2.5
+  - mimo-v2.6-pro
+  - openswe
+  - swe-smith
+  - rlve

@@ -1,0 +1,115 @@
+name: InternW0
+slug: internw0
+lab: shanghai-ai-lab
+type: model
+date: 2026-09-23
+flagship: true
+sources:
+  - label: Project Page
+    url: https://internrobotics.github.io/internw0/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.27656
+  - label: "InternW0-Δ: Project Page"
+    url: https://internrobotics.github.io/InternW0-Delta/
+  - label: "InternW0-Δ: Paper (arXiv)"
+    url: https://arxiv.org/abs/2609.31394
+  - label: "InternW0-Δ: GitHub"
+    url: https://github.com/InternRobotics/InternW0-Delta
+  - label: "InternW0-Δ: HuggingFace (Base)"
+    url: https://huggingface.co/InternRobotics/InternW0-Delta-Base
+  - label: Coverage (Pandaily)
+    url: https://pandaily.com/shanghai-ai-lab-intern-w0-physical-world-model
+description: >
+  <p>The first model in Shanghai AI Laboratory's <strong>InternW</strong>
+  series of physical world models, from the lab's Physical Intelligence Team
+  (the only affiliation printed on the report). InternW0 is a <strong>world
+  action model</strong>: a mixture-of-transformers backbone pairs a
+  high-capacity video expert, which predicts how the scene will evolve, with a
+  lightweight action expert that generates continuous robot control, and the
+  two are trained jointly with video&ndash;action flow matching. Its central
+  idea is <strong>asynchronous duplex inference</strong>. The video expert
+  refreshes its prediction on a slow schedule and exposes its layerwise K/V as
+  a cached plan; between refreshes, an observation-conditioned chunk K/V
+  editor adapts that cache to each new observation, so action updates do not
+  wait for video generation. Frames are encoded by a frozen Wan VAE and a
+  frozen DINOv3 encoder, domain-specific interfaces and soft prompts map
+  different robots onto a unified 37-dimensional action space, and
+  contact-aware post-training adds force and tactile input with joint
+  prediction of six-dimensional interaction wrenches. Pretraining uses about
+  7,200 hours of robot and egocentric data from seven datasets, including
+  <strong>EgoLab</strong>, 275 hours of first-person video the team recorded
+  in real laboratories. The report gives no parameter count and does not say
+  how the video expert is initialized.</p>
+
+  <p>After task-specific post-training, InternW0 averages 98.6% on LIBERO,
+  ahead of LingBot-VA (98.5%) and &pi;<sub>0.5</sub> (96.9%). On RoboTwin 2.0
+  it scores 93.12% in the Full setting, 0.98 points behind ABot-M0.5, and
+  75.60% in the Clean2Random setting (post-trained on clean scenes, tested on
+  randomized ones), 8.3 points above the best baseline. On five real-robot
+  tasks it matches or beats &pi;<sub>0.5</sub> on every one, including a
+  15-stage metal&ndash;organic framework synthesis workflow (68.4% average
+  progress against 50.2%) and quantitative pipetting with a 20-degree-of-freedom
+  dexterous hand under hybrid force&ndash;position control (65.3% against
+  46.7%). The action path takes 60.73 ms on an RTX 5090D, a 16.47 Hz update
+  rate and 3.13&times; faster than Fast-WAM. Within the lab's InkStone
+  scientific-discovery platform, InternW0 connects the reasoning and tool use
+  of <a href="/outputs/shanghai-ai-lab/intern-s2-preview">Intern-S2-Preview</a>
+  to physical experiments. Pandaily reported the launch on September 14, and
+  the report was posted on September 23 (the date used here). InternW0's own
+  weights are not public: the README of its project-page repository lists the
+  GitHub, Hugging Face and ModelScope model links as still to come.</p>
+
+  <p><strong>InternW0-&Delta;</strong>, a companion world action model from
+  the same team (report posted September 25), is the part with public
+  weights. Its video expert is initialized from Alibaba's Wan2.2-TI2V-5B, a
+  frozen <a href="/outputs/alibaba/rynnbrain-1.1">RynnBrain1.1-2B</a>
+  vision-language model gives a randomly initialized action expert
+  scene-level semantics, and a Track4World teacher distills 4D geometry and
+  motion priors into the video expert during training only. <strong>Causal
+  Imprint</strong> queries learn future-relevant scene changes from future
+  frames that serve only as training targets, so the action expert gets
+  predictive features without rolling out video at inference. It is
+  pretrained on what the team calls the largest open-source corpus of its
+  kind, over 20,000 processed hours: 11,302 hours of robot demonstrations,
+  2,075 hours of UMI data, 4,061 hours of egocentric human video, and 5,634
+  robot-hours converted from that video (Ego2Robot), for 245K steps (about 14
+  days) on 256 A800 GPUs. Post-trained only on unperturbed demonstrations, it
+  reports the best results in its comparisons: 92.8% on LIBERO-Plus, 71.9% on
+  RoboTwin 2.0 Clean2Random and 90.0% on Clean2Clean, 66.0 on EBench, and
+  23.9% on RoboDojo, nearly double the strongest prior world action model.
+  The pretrained checkpoint and post-trained LIBERO, RoboTwin and RoboDojo
+  checkpoints are on Hugging Face under Apache 2.0, and the code, which covers
+  data processing, training, evaluation and real-robot deployment, is
+  MIT-licensed. Because its backbone starts from Wan2.2, InternW0-&Delta; is
+  a derivative model; no parameter count is given.</p>
+tags:
+  - world-model
+  - robotics
+  - embodied
+  - science
+  - open-weight
+model:
+  # architecture and parameters left unset: both reports describe a
+  # mixture-of-transformers of modality experts (not a routed MoE), and
+  # neither states a total parameter count. InternW0's report does not say how
+  # its video expert is initialized, so no provenance flag is set for it;
+  # InternW0-Δ's video expert starts from Alibaba's Wan2.2-TI2V-5B (untracked),
+  # so that variant is derivative (see its notes).
+  variants:
+    - name: InternW0
+      notes: "~7,200 h of robot and egocentric pretraining data; weights not released as of 2026-09-30"
+    - name: InternW0-Δ
+      notes: "Derivative: video expert initialized from Wan2.2-TI2V-5B, frozen RynnBrain1.1-2B VLM; >20K h pretraining on 256 A800 GPUs; Base, LIBERO, RoboTwin and RoboDojo checkpoints on HuggingFace (Apache 2.0)"
+paper:
+  arxiv: "2609.27656"
+  authors:
+    - Jisong Cai
+    - Yao Mu
+    - Ganlin Yang
+    - Zhe Cao
+    - Zhangzheng Tu
+    - Xing Gao
+related:
+  - intern-s2-preview
+  - rynnbrain-1.1
+  - tau-0-wm

@@ -1,0 +1,64 @@
+name: "QwenGyre: An Elastic RL Framework for Training xLong-Horizon Agents"
+slug: qwengyre
+lab: alibaba
+type: paper
+date: 2026-09-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.33848
+description: >
+  <p>Alibaba Token Hub's RL infrastructure for what the paper calls
+  <strong>xLong-horizon</strong> agent training, where "a single execution can
+  span hours, hundreds of model&ndash;environment interactions, and nearly 1M
+  tokens per rollout." Two properties of that regime break ordinary RL
+  systems. Rollout durations vary enormously, so fixed rollout/training GPU
+  partitions idle (on NL2RepoBench with Qwen3.6 122B, mean rollout execution
+  runs 1.93 hours and a query 2.96 hours; with Qwen3.8 2.4T, 61.1% of queries
+  take at least four hours). And harness executions branch &mdash; through
+  compaction, delegation and retries &mdash; so one execution yields many
+  overlapping trajectories with duplicated prefixes. QwenGyre answers with an
+  <strong>elastic scheduler</strong> that reallocates GPUs between rollout and
+  training at cell granularity without interrupting live executions (requests
+  reroute, KV cache migrates; switching costs 8.52 s into training and 3.46 s
+  back, negligible against hour-long rollouts) and a <strong>trajectory
+  processor</strong> that rebuilds each execution as a prefix-sharing
+  trajectory tree, scores preserved work after a timeout, counts shared
+  targets once, and caps trajectories per execution to bound training cost.</p>
+
+  <p>Experiments use an adaptation of <strong>GSPO</strong> with token-level
+  importance weighting and execution-level clipping, 16 rollouts per group,
+  and Claude Code 2.1.220 as the harness executing shell commands in
+  containers. Against two baselines at matched GPU budgets and matched
+  scheduling staleness &mdash; Async (fixed pools) and Colocate (one pool
+  alternating phases) &mdash; QwenGyre reports end-to-end speedups of
+  <strong>1.38&ndash;1.78&times; over Async and 1.21&ndash;1.85&times; over
+  Colocate</strong> while matching their training-score curves (DeepSWE
+  1.569&ndash;1.572 vs Async and 1.610&ndash;1.824 vs Colocate; TerminalBench
+  1.383&ndash;1.430 and 1.809&ndash;1.849). On the flagship
+  <a href="/outputs/alibaba/qwen3.8">Qwen3.8 2.4T</a> at 700K tokens per
+  rollout it completes 48 NL2RepoBench training steps in 75.42 hours against
+  134.55 for Async and 91.47 for Colocate, lifting the evaluation pass rate
+  from <strong>52.5% to 58.5%</strong>. Twelve authors led by Alibaba Token
+  Hub with USTC and Tsinghua co-affiliations; corresponding author JianWei
+  Zhang. No code release accompanied the paper.</p>
+tags:
+  - rl
+  - rl-scaling
+  - infrastructure
+  - agents
+  - post-training
+  - training
+paper:
+  arxiv: "2609.33848"
+  authors:
+    - Weiqi Wang
+    - Yuxin Zhou
+    - Mouxiang Chen
+    - Siyuan Zhang
+    - Yi Zhang
+    - Yuyan Luo
+    - Zhiyu Yin
+related:
+  - qwen3.8
+  - recreationworld
+  - terminal-universe

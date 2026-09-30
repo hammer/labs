@@ -1,0 +1,70 @@
+name: "ZCode: Z.ai's Coding Agent Harness"
+slug: zcode
+lab: zai
+type: library
+date: 2026-09-20
+sources:
+  - label: Product page
+    url: https://zcode.z.ai/en
+  - label: GitHub
+    url: https://github.com/zai-org/ZCode
+  - label: Documentation (Z.ai)
+    url: https://docs.z.ai/devpack/tool/zcode
+  - label: Release notes
+    url: https://zcode.z.ai/en/changelog
+description: >
+  <p>Z.ai's coding-agent harness, open-sourced on 2026-09-20 under
+  <strong>Apache 2.0</strong> &mdash; the lab's first public harness and the
+  execution layer paired with <a href="/outputs/zai/glm-5.3">GLM-5.3</a>,
+  whose product page bills it as the "Official Harness for GLM-5.3" with
+  GLM-5.3-Flash built in for screenshot understanding and image analysis. The
+  repository is a pnpm monorepo holding the whole stack rather than a CLI
+  alone: an Electron desktop client, a web client, the HTTP/WebSocket server
+  and remote-connection layer, shared React UI and RPC packages, provider
+  adapters, and the <strong>Agent CLI, TUI and runtime source</strong> under
+  <code>apps/zcode-cli</code>. One <code>zcode</code> command opens the
+  terminal interface, <code>zcode --web</code> serves the browser interface
+  from the same backend, and the desktop build adds SSH, WSL and container
+  workspaces. Z.ai's own docs describe it as an "Agentic Development
+  Environment (ADE) designed for long-horizon tasks." It reached
+  <strong>7,245 GitHub stars</strong> and 2,200 forks in its first ten days;
+  the code is TypeScript on Node 24.14.0.</p>
+
+  <p>The harness layer is where the detail is. The agent core carries
+  separate modules for context compaction (including a microcompact path),
+  memory, session context, system reminders, subagents, MCP, plugins, tool
+  scheduling and a permission service, plus <strong>dynamic workflows</strong>
+  (added in v3.14.0 on 2026-09-19) in which a single script orchestrates
+  several sub-agents on one task. Tool handlers cover bash with a large
+  read-only command-policy surface, file read/edit/write, glob and grep, web
+  fetch and web search, a Node REPL, a browser, cron and off-peak scheduling,
+  plan mode, and inter-agent messaging. Plugins are local bundles that
+  contribute skills (<code>SKILL.md</code> folders), markdown custom commands
+  and MCP servers, with Browser Use, Document Skills, Skill Creator and a
+  ZCode guide enabled by default. Seven lifecycle hooks (<code>SessionStart</code>,
+  <code>UserPromptSubmit</code>, <code>PreToolUse</code>,
+  <code>PermissionRequest</code>, <code>PostToolUse</code>,
+  <code>PostToolUseFailure</code>, <code>Stop</code>) can inject context,
+  rewrite tool input or take part in permission decisions. Z.ai's NOTICE is
+  unusually candid about the limits: the shared execution adapter ships
+  <strong>no default OS sandbox</strong>, the shared runtime defaults to a
+  <code>build</code> permission mode while the standalone CLI running
+  <code>--prompt</code> without <code>--mode</code> defaults to
+  <code>yolo</code>, and the bundled Computer Use package is a placeholder
+  that returns an unavailable error. The product predates the code drop
+  &mdash; the public changelog runs back to v3.10.1 on 2026-08-28 &mdash; and
+  desktop builds for macOS, Windows and Linux ship from zcode.z.ai (v3.14.4,
+  2026-09-29).</p>
+tags:
+  - agent-harness
+  - agents
+  - agentic
+  - coding
+  - open-source
+library:
+  github: https://github.com/zai-org/ZCode
+  language: TypeScript
+  license: Apache 2.0
+related:
+  - glm-5.3
+  - glm-5.3-flash

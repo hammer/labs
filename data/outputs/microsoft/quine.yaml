@@ -1,0 +1,60 @@
+name: Quine
+slug: quine
+lab: microsoft
+type: announcement
+date: 2026-09-29
+sources:
+  - label: Announcement (Microsoft Research blog)
+    url: https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/
+  - label: Project page
+    url: https://microsoft.github.io/quine/
+description: >
+  <p>Microsoft Research's AI research system for biology, announced by
+  Nicolo Fusi and Jonathan M. Carlson and filed on the blog under Microsoft
+  Health Futures. It pairs a <strong>multimodal world model of
+  biology</strong> with an <strong>interactive harness</strong> that
+  connects the model to orchestration and reasoning models, scientific
+  tools, the literature, the wet lab and the scientists using it. Microsoft
+  defines the world model as a system that represents the state of a
+  biological system, predicts how that state changes under interventions,
+  and reasons over the consequences several steps ahead. It learns shared
+  representations across sequence, structure, function, cellular state
+  and imaging data, trained jointly on genomics, proteins, chemistry, RNA
+  and cell state, and bioimaging rather than by orchestrating separate
+  single-domain models, and Microsoft says the joint training strengthens
+  rather than dilutes performance. The project page traces Quine to six
+  lines of earlier Microsoft work: proteins, the regulatory genome, the
+  tumor microenvironment, tissue pathology, microscopy and biological
+  data.</p>
+
+  <p>The worked example is pancreatic ductal adenocarcinoma, studied with
+  the Broad Institute of MIT and Harvard to test whether a tumor cell's
+  transcriptional state can be a drug target. Quine predicted and ranked
+  thousands of compounds by their potential to shift tumor cells between
+  states. In wet-lab assays of the classical-to-basal transition, its
+  top-ranked compounds produced the largest intended shifts, and the
+  process from narrowing the compound space to picking candidates for
+  validation took one weekend. It also predicted that the reverse,
+  basal-to-classical shift would be weaker, and that several compounds
+  would push cells toward a distinct third phenotype; the experiments bore
+  out both. Some of the strongest effects came from compounds with
+  unexpected mechanisms of action.</p>
+
+  <p>This is an announcement only: Microsoft published <strong>no
+  technical report, model size, benchmark results or weights</strong>.
+  Access is limited to select research collaborations and the
+  <strong>Quine Fellows</strong> program, a 16-week fellowship hosted by
+  Microsoft Research in Cambridge, Massachusetts (applications September
+  29 to November 2, 2026; fellowship June 7 to September 24, 2027) for PhD
+  candidates, postdocs and academic or independent researchers, with
+  interests including protein and enzyme design, cell-state perturbation
+  and early-stage therapeutics for under-resourced diseases. Microsoft
+  calls Quine experimental and not for clinical use, and expects to widen
+  access through products such as Microsoft Discovery.</p>
+tags:
+  - science
+  - biology
+  - world-model
+  - multimodal
+  - agents
+  - agent-harness

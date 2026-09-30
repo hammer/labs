@@ -35,8 +35,8 @@ tags:
   - open-weight
 model:
   architecture: moe
-  parameters: 16B
-  active_parameters: 1B
+  # Derivative of Ant Group's LLaDA-2.0 (16B-A1B, stated in the description);
+  # no `parameters` so the size does not count toward Shanghai AI Lab's Scale.
   base_model: llada-2
   license: Apache-2.0
 related:

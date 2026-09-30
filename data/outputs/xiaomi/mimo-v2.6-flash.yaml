@@ -6,10 +6,14 @@ date: 2026-09-21
 sources:
   - label: HuggingFace
     url: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL
+  - label: HuggingFace (MOPD checkpoint)
+    url: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-MOPD
   - label: Product Page
     url: https://mimo.mi.com/models/en-US/mimo-v2.6-flash
   - label: Technical Report (PDF)
     url: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/main/MiMo_V2_6_technical_report.pdf
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/mimo-v2-6-flash
   - label: OpenRouter
     url: https://openrouter.ai/xiaomi/mimo-v2.6-flash
 description: >
@@ -34,8 +38,11 @@ description: >
   47.5, MiMo VisualCoding 71.5. Xiaomi positions it as the Pareto point for
   high-frequency calls: <strong>$0.14/M input and $0.28/M output</strong>
   (cache hits $0.0028), a third of Pro's price. Successor to the 310B/15B
-  <a href="/outputs/xiaomi/mimo-v2.5">MiMo-V2.5</a>. Not yet scored by
-  Artificial Analysis at filing.</p>
+  <a href="/outputs/xiaomi/mimo-v2.5">MiMo-V2.5</a>. Artificial Analysis
+  scores it <strong>38 on Intelligence Index v4.3.2</strong>, against Pro's
+  46. An MOPD upgrade of the RL checkpoint, <strong>MiMo-V2.6-Flash-MOPD</strong>
+  (September 27, MIT), adds the MOPD2 multi-teacher distillation stage and a fix
+  for repeated tool calls in agent harnesses.</p>
 tags:
   - moe
   - open-weight
@@ -51,6 +58,8 @@ model:
   num_experts: 256
   top_k: 8
   context_window: 1000000
+  intelligence_index: 38
+  intelligence_index_version: "AA v4.3.2"
   training_tokens: 48T
   optimizer: AdamW
   license: MIT

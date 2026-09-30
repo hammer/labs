@@ -110,4 +110,4 @@ paper:
   arxiv: "2608.30320"
   pdf_url: https://github.com/QwenLM/Qwen3.8-Flash-Next/blob/main/tech_report.pdf
   code_url: https://github.com/QwenLM/Qwen3.8-Flash-Next
-related: [qwen3.8, qwen3]
+related: [qwen3.8, qwen3, qwen3.8-omni-flash]

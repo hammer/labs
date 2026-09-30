@@ -138,6 +138,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=xF5VrokAAAAJ
 news:
+  - title: "Apsara 2026: Qwen 4 in Training, Qwen 4.5 and Qwen 5 Planned at 5–10T Parameters; Automated RSI Runs Lift Qwen3.8-Max From 40 to 45 on Artificial Analysis; T-Head Zhenwu V900; 20 GW Data-Center Target by 2032"
+    url: https://www.alibabacloud.com/blog/alibaba-clouds-2026-apsara-conference-full-stack-ai-roadmap-along-with-global-market-expansion-plan_603598
+    source: Alibaba Cloud
+    date: 2026-09-25
   - title: "Alibaba Appoints Dayiheng Liu Head of Qwen LLM Team After Months of Reorganization; Jingren Zhou Moved to Chief Scientist in June"
     url: https://www.theinformation.com/briefings/alibaba-appoints-new-head-qwen-llm-team
     source: The Information

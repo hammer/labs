@@ -152,6 +152,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=1s79Z5cAAAAJ
 news:
+  - title: "DeepSeek to Hire GL Ventures Partner Yan Wentao as Its First CFO Ahead of a Possible STAR Market IPO"
+    url: https://kfgo.com/2026/09/14/chinas-deepseek-hires-dealmaker-as-cfo-ahead-of-possible-ipo/
+    source: Reuters (via KFGO)
+    date: 2026-09-14
   - title: "DeepSeek Plans ≥160,000 Huawei Ascend 950DT Chips for a ~1 GW Inference Data Center in Ulanqab, the Largest Known Huawei AI Cluster (~$2.5B); Training Stays on NVIDIA"
     url: https://www.bloomberg.com/news/articles/2026-09-04/deepseek-plans-big-huawei-ai-chip-order-to-power-new-data-center
     source: Bloomberg

@@ -1,0 +1,96 @@
+name: "SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness"
+slug: sol-pi
+lab: nvidia
+type: paper
+date: 2026-09-17
+sources:
+  - label: Blog (project page)
+    url: https://nvlabs.github.io/SoL-Pi/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.20519
+  - label: GitHub
+    url: https://github.com/NVlabs/SoL-Pi
+description: >
+  <p>NVIDIA's token-efficiency layer for coding agents, found by having agents
+  research the harness itself. SoL-Pi starts from <strong>Pi</strong>, Earendil
+  Works' open-source coding-agent toolkit (formerly pi-mono). A research agent
+  reads the execution traces of a second agent running Pi, proposes harness
+  changes, and develops each one in an isolated, disposable loop. A candidate
+  is kept only if every capability metric stays within a tolerance fixed before
+  the search and at least one efficiency metric improves, and the held-out
+  benchmark, EdgeBench, never feeds back into the search. The search covered
+  152 proposed directions in six families and 535 executable environments (495
+  tasks built from GitHub issue&ndash;pull request pairs with hidden regression
+  tests, plus 40 synthetic tasks with executable verifiers), across more than
+  3,000 runs and 60,000 agent&ndash;environment interactions. Four mechanisms
+  survived. <strong>Action Fusion</strong> runs an edit and its follow-up test
+  or build command in one tool call. <strong>Online Context Compact</strong>
+  compacts the context at plan-step boundaries, and only when the projected
+  input savings exceed the cost of rewriting the prompt cache.
+  <strong>ObservationPack</strong> sends tool outputs over 10 KiB in full for
+  two requests, then replaces them with a stable handle and a short excerpt
+  that can be paged back exactly. The <strong>Evidence-Preserving
+  Reducer</strong> has a cheaper model (GPT-5.6 Luna) compress long build and
+  test logs into receipts that a deterministic verifier checks against the
+  archived source, falling back to the raw log on any failure.</p>
+
+  <p>On the 51 public EdgeBench tasks with GPT-5.6 Sol, the full stack used
+  1.10B tokens, 49.0% fewer than Pi, and $894 of API spend against Pi's
+  $1,339, while keeping 93.7% of Pi's average score (42.0 against 44.8); the
+  native Codex harness scored 34.7 for $1,787. Moved unchanged to Opus 5, a
+  backend the search never used, it kept 94.3% of Pi's score with 44.7% less
+  token traffic and 33.5% lower cost (Claude Code scored 43.7 for $2,535). The
+  paper estimates hourly savings of $8.75&ndash;$13.50 against the native Codex
+  and Claude Code harnesses and $4.36&ndash;$5.71 against Pi. Single mechanisms
+  can raise scores as well as cut cost: ObservationPack alone lifts GPT-5.6 Sol
+  to 47.2 on EdgeBench, and Action Fusion lifts Opus 5 to 50.5. The trade-off
+  shows elsewhere. On 63 CPU-only Terminal-Bench 4 tasks SoL-Pi solved 15
+  against 18 each for Codex and Pi, at $211 against Pi's $286; on Lean-verified
+  IMO 2026 problems it passed 3 of 6, as Pi did, where Codex passed 5, though at
+  the lowest cost per passed problem ($20.90). In a two-hour run on Anthropic's
+  kernel-optimization take-home, a Codex coordinator with 20 SoL-Pi workers
+  reached 1,127 simulated cycles for $60.11, against 1,366 cycles and $82.12
+  with 20 Pi workers and 1,333 cycles and $39.20 for a single Codex agent.</p>
+
+  <p>The code is an MIT-licensed TypeScript extension that installs on an
+  unmodified Pi release (tested against Pi 0.85.1), with every mechanism
+  opt-in and off by default; the repository had about 3,200 GitHub stars by
+  September 30, 2026. Ten of the 14 authors list NVIDIA, including senior
+  author <a href="/people/song-han">Song Han</a> (NVIDIA and MIT), and three
+  list NTU. Most harness-evolution methods optimize task success and risk
+  fitting the tasks they search on, the failure documented in
+  <a href="/outputs/ai2/rethinking-harness-evolution">Rethinking the Evaluation
+  of Harness Evolution</a>, which the paper cites. SoL-Pi instead optimizes
+  cost under a capability constraint and keeps its benchmark out of the search.
+  <a href="/outputs/google/rrsi">RRSI</a>, posted four days later, takes on the
+  same overfitting problem by regularizing the evolution itself.</p>
+tags:
+  - agents
+  - agent-harness
+  - efficiency
+  - coding
+  - self-improvement
+  - open-source
+  - research
+paper:
+  arxiv: "2609.20519"
+  authors:
+    - Haozhe Liu
+    - Tian Ye
+    - Sensen Gao
+    - Qihang Cao
+    - Yitong Li
+    - Mingchen Zhuge
+    - Duomin Wang
+    - Ruihua Zhang
+  code_url: https://github.com/NVlabs/SoL-Pi
+library:
+  github: https://github.com/NVlabs/SoL-Pi
+  language: TypeScript
+  framework: Pi extension (Node.js)
+  license: MIT
+related:
+  - rrsi
+  - rethinking-harness-evolution
+  - edgebench
+  - agora

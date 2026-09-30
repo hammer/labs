@@ -6,13 +6,18 @@ date: 2026-06-23
 sources:
   - label: Announcement
     url: https://mistral.ai/news/ocr-4/
+  - label: Changelog (OCR 4.1 GA, OCR 4.0 retirement)
+    url: https://docs.mistral.ai/getting-started/changelog/
 description: >
   <p>Mistral's document-intelligence OCR model: 170 languages, typed-block
   classification, per-word confidence scores, and markdown output.
   Vendor-reported benchmarks: 85.20 on OlmOCRBench and 93.07 on
   OmniDocBench. Priced at $4 per 1,000 pages via API, SageMaker, and Azure
   Foundry, with an on-prem container option. Proprietary &mdash; no open
-  weights, parameters undisclosed.</p>
+  weights, parameters undisclosed. <strong>OCR 4.1</strong>
+  (<code>mistral-ocr-4-1</code>) followed on July 16, became generally
+  available on August 31 at the same price, and replaced OCR 4.0, which was
+  retired on September 30, 2026.</p>
 tags:
   - ocr
   - vision

@@ -1,0 +1,79 @@
+name: LongCat-DeepResearch
+slug: longcat-deepresearch
+lab: meituan
+type: paper
+date: 2026-09-28
+sources:
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2609.36071
+  - label: GitHub
+    url: https://github.com/meituan-longcat/LongCat-DeepResearch
+  - label: Project page
+    url: https://meituan-longcat.github.io/LongCat-DeepResearch/
+description: >
+  <p>Meituan's deep-research system: an enhanced LongCat model plus a
+  multi-agent harness whose organizing idea is that an open-ended research
+  plan has to be executable and revisable, because the evidence a report
+  needs cannot be specified before the investigation starts. The workflow has
+  three stages. <strong>Explore and plan</strong>: several planners inspect
+  the question and early sources, a judge merges their proposals, a critic
+  names the gaps and a reviser emits an executable plan object, the
+  <strong>ResearchSpec</strong>. <strong>Research sections</strong>:
+  independent researchers investigate and draft their assigned sections in
+  <strong>separate contexts</strong>, gathering more evidence as their
+  analysis develops while retaining the full specification.
+  <strong>Assemble and edit</strong>: sections are assembled directly, a
+  global editor flags ownership and consistency problems, and local editors
+  apply section-scoped revisions &mdash; so improving the report does not
+  mean rewriting it end to end.</p>
+
+  <p>Reported results: <strong>55.25 on DeepResearchBench, 51.35 on
+  DeepResearchBench II and 79.83 on ResearchRubrics</strong>, which the
+  report puts at +0.30, +3.17 and +5.62 points over the strongest of the
+  three commercial systems it ran alongside (Gemini-, ChatGPT- and
+  Claude-DeepResearch), following each benchmark's official protocol &mdash;
+  GPT-5.5 (medium) judges the two DeepResearchBench suites, Gemini 2.5 Pro
+  judges ResearchRubrics. The gains are concentrated in substance rather than
+  prose: on DeepResearchBench it leads comprehensiveness (56.21), insight and
+  depth (56.48) and instruction following (55.18) but trails on readability
+  (49.96 against ChatGPT-DeepResearch's 51.51), and on an in-house benchmark
+  it ranks second of four at <strong>76.04</strong>, behind
+  ChatGPT-DeepResearch's 76.59 and ahead of Claude-DeepResearch's 61.42 and
+  Gemini-DeepResearch's 42.49. The same stage interfaces double as a data
+  engine: questions and task-specific rubrics are built from an independently
+  licensed review article or a frozen multi-source brief, passed through a
+  bounded searchability gate that keeps a criterion only when an alternative
+  source supports it, and the resulting teacher trajectories feed the
+  mid-training and post-training of LongCat's general-purpose models. The
+  report does not name the specific checkpoint behind the system. The
+  repository (MIT) open-sources <strong>the harness only</strong> &mdash; it
+  depends on nothing but the Python standard library and expects the user to
+  supply an object with <code>llm</code>, <code>web_search</code> and
+  <code>web_fetch</code> methods; the data-construction pipeline, generated
+  datasets, hidden rubrics, training trajectories and training code are
+  withheld. Authored by the Meituan LongCat Team (31 authors); the code
+  landed on 2026-09-22 and the report on 2026-09-28.</p>
+tags:
+  - agents
+  - agent-harness
+  - agentic
+  - retrieval
+  - open-source
+  - research
+paper:
+  arxiv: "2609.36071"
+  authors:
+    - He Zhu
+    - Yue Xu
+    - Wanli Wu
+    - Haolin Ren
+    - Yuxin Bian
+    - Jiarui Zhao
+  code_url: https://github.com/meituan-longcat/LongCat-DeepResearch
+library:
+  github: https://github.com/meituan-longcat/LongCat-DeepResearch
+  language: Python
+  license: MIT
+related:
+  - longcat-2.0
+  - lohosearch

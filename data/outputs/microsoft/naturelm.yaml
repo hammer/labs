@@ -42,3 +42,5 @@ model:
       notes: Mixture of Experts
 paper:
   arxiv: "2502.07527"
+related:
+  - retrochimera

@@ -12,6 +12,8 @@ sources:
 description: >
   Image generation model family. Qwen-Image (20B MMDiT) excels at text rendering
   in Chinese and English. Qwen-Image-2.0 (7B) unifies generation and editing.
+  Qwen-Image-3.0 (July 2026) is hosted only, and the open-weight Qwen-Image-2.1
+  (7B, September 2026) adds native transparency and multi-reference editing.
 tags:
   - generation
   - open-weight
@@ -51,3 +53,23 @@ outputs:
       Hosted image-generation and editing model supporting prompts up to 4,500
       tokens, native text rendering in 12 languages, and legible type down to
       roughly 10 pixels. Alibaba did not release weights or disclose scale.
+  - name: Qwen-Image-2.1
+    type: model
+    date: 2026-09-20
+    sources:
+      - label: GitHub
+        url: https://github.com/QwenLM/Qwen-Image-2.1
+      - label: HuggingFace
+        url: https://huggingface.co/Qwen/Qwen-Image-2.1
+    description: >
+      Open-weight unified text-to-image and image-editing model with 7B
+      parameters in its visual generation component (32 single-stream DiT
+      layers). It generates and edits transparent (RGBA) images, extracts
+      subjects from photographs, takes up to 10 reference images, and accepts
+      local edits marked by circles, painted annotations or separate masks.
+      Native 2K output (2048&times;2048), day-0 Diffusers
+      (QwenImage21Pipeline) support, Qwen Research License; about 2,700
+      HuggingFace likes and 70,000 downloads in its first ten days.
+    model:
+      parameters: 7B
+      license: Qwen Research License

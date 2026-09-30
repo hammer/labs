@@ -1,0 +1,76 @@
+name: "mKernel: Fast Multi-GPU, Multi-Node Fused Kernels"
+slug: mkernel
+lab: berkeley
+type: library
+date: 2026-05-25
+sources:
+  - label: Blog (UCCL)
+    url: https://uccl-project.github.io/posts/mkernel/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.13585
+  - label: GitHub
+    url: https://github.com/uccl-project/mKernel
+description: >
+  <p>A CUDA library of fused kernels that overlap computation with both
+  intra-node NVLink traffic and inter-node RDMA inside a single persistent
+  kernel, from the UCCL project of UC Berkeley's Sky Computing Lab and UC
+  Davis; the paper's authors include <a href="/people/ion-stoica">Ion
+  Stoica</a>, Scott Shenker and UC Davis's Yang Zhou, with first author Ziming
+  Mao. Most existing fused kernels stay inside one NVLink domain and leave the
+  slower network hop to a separate collective. mKernel assigns each thread
+  block a role (compute, NVLink communication, network send, network receive)
+  and an on-GPU controller adjusts the split at run time, since the best
+  partition changes with kernel and input shape. Data that must cross nodes is
+  first reduced or replicated over NVSwitch so each GPU sends only its share
+  (for GEMM+AllReduce, one eighth of the output), and the network path is a
+  small command queue plus a host proxy written directly on libibverbs,
+  without NCCL or NVSHMEM, so the same kernels run on ConnectX-7 InfiniBand
+  and on AWS EFA. The authors also built a GPUDirect Async (IBGDA) path and
+  found it gave little benefit over this host-assisted design.</p>
+
+  <p>The paper implements five kernels: AllGather+GEMM, GEMM+ReduceScatter and
+  GEMM+AllReduce for tensor parallelism, Ring Attention for sequence
+  parallelism, and MoE Dispatch+GEMM for expert parallelism. On two 16-GPU
+  H200 clusters (2 nodes &times; 8 GPUs, one on ConnectX-7 and one on EFA),
+  speedups over cuBLAS or FlashAttention followed by NCCL reach 1.41&times; for
+  AllGather+GEMM, 1.72&times; for GEMM+AllReduce and 1.88&times; for Ring
+  Attention, and GEMM+ReduceScatter gains 1.02 to 1.27&times; at M of 16K and
+  above. Ring Attention runs 1.4 to 3.3&times; faster than MagiAttention and
+  2.3 to 5.6&times; faster than ring-flash-attention. On EFA, MoE Dispatch+GEMM
+  runs 3.1 to 4.5&times; faster than an all-to-all followed by a GEMM and ahead
+  of <a href="/outputs/deepseek/deepep">DeepEP</a> with
+  <a href="/outputs/deepseek/deepgemm">DeepGEMM</a>, whose evaluated version
+  does not run on EFA, so its ConnectX-7 numbers stand in. Compute blocks use
+  <a href="/outputs/stanford/thunderkittens">ThunderKittens</a>. The date marks
+  the public release with a UCCL blog post on May 25, 2026; the arXiv paper
+  followed on September 11, 2026. The repository targets Hopper GPUs, is
+  MIT-licensed with about 285 GitHub stars, and has since added a sixth
+  kernel that runs a full expert-parallel MoE layer (dispatch, expert FFN,
+  combine) in one kernel.</p>
+tags:
+  - infrastructure
+  - gpu-kernels
+  - efficiency
+  - training
+  - inference
+  - open-source
+paper:
+  arxiv: "2609.13585"
+  authors:
+    - Ziming Mao
+    - Yihan Zhang
+    - Shawn Wei Chew
+    - Shuang Ma
+    - Costin Raiciu
+    - Yang Zhou
+    - Scott Shenker
+    - Ion Stoica
+  code_url: https://github.com/uccl-project/mKernel
+library:
+  github: https://github.com/uccl-project/mKernel
+  language: CUDA
+  license: MIT
+related:
+  - thunderkittens
+  - deepep
+  - deepgemm

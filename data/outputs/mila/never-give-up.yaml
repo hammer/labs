@@ -22,3 +22,5 @@ tags:
   - research
 paper:
   arxiv: "2609.13443"
+related:
+  - save-your-saturated-data

@@ -1,0 +1,75 @@
+name: "OpenAI4S: Code as Action, Science as Sessions"
+slug: openai4s
+lab: peking
+type: library
+date: 2026-07-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.15096
+  - label: GitHub
+    url: https://github.com/PKU-YuanGroup/OpenAI4S
+description: >
+  <p>An open-source agent harness for computational science from
+  <a href="/people/li-yuan">Li Yuan</a>'s PKU-YuanGroup at Peking
+  University's Shenzhen Graduate School, launched by the Peking
+  University&ndash;YuanKong Intelligence AI Joint Research Laboratory. Its
+  premise is that a long-running study has to stay inspectable, resumable and
+  reproducible, so the harness is built around a persistent computing runtime
+  rather than a chat loop. One agent loop drives two channels: provider-native
+  JSON tool calls handle orchestration (metadata, services, permissions and
+  workflow management), while each scientific action is a complete code cell
+  run in a persistent Python or R kernel (<strong>code as action</strong>).
+  Each session is kept as a research record (<strong>science as
+  sessions</strong>): an append-only <strong>Action Ledger</strong>, per-cell
+  execution records, versioned artifacts, environment records and workspace
+  checkpoints support recovery, branching and export. Operating-system
+  sandboxing, permission mediation, and screening of code and trajectories for
+  selected biological and chemical risks act as safeguards. Domain knowledge
+  comes from bundled Skills, code recipes the model retrieves on demand: 604 at
+  the time of the paper (43 curated plus 561 from the MIT-licensed bioSkills
+  collection). The engine is provider-neutral, with adapters for the OpenAI,
+  Anthropic and Gemini API formats.</p>
+
+  <p>The paper evaluates it on 36 research scenarios across six tasks:
+  retrosynthesis, molecular dynamics, protein binder design, protein mutation,
+  catalyst structure&ndash;activity screening and mineral spectra analysis. A
+  deterministic-first evaluator, in which programmatic checks take precedence
+  over a constrained LLM judge, scores each generated research repository on
+  accuracy (40%), workflow completeness (35%) and reproducibility (25%).
+  OpenAI4S averages <strong>7.83</strong> out of 10, against 5.79, 6.36 and
+  6.12 for Claude Code driven by Kimi-K3, GLM-5.2 and Claude Opus 4.8, and
+  8.70 for a reference workflow built from human-designed pipelines. It ranks
+  first on protein binder design, molecular dynamics and catalyst screening
+  and second on the other three, with its largest gains on molecular dynamics
+  and protein binder design, the longest and most compute-heavy workflows. The
+  authors caution that these scores compare complete systems (model, harness,
+  prompts and tools) rather than matched ablations, that the margin over
+  GLM-5.2 shrinks to about 0.04 points without the protein tasks, and that
+  environment specification and full rerunnability remain weak for every
+  system tested, their own included. The code was open-sourced on July 6, 2026
+  (the date used here), with releases through v0.3.0 on September 17 and a
+  PyPI package; the paper was posted on September 14. The repository is
+  MIT-licensed and had about 600 GitHub stars at filing.</p>
+tags:
+  - agents
+  - agent-harness
+  - science
+  - open-source
+  - framework
+paper:
+  arxiv: "2609.15096"
+  authors:
+    - Gongbo Zhang
+    - Hao Li
+    - Yu Wang
+    - Mujie Lin
+    - Liuzhenghao Lv
+    - Yicheng Mao
+  code_url: https://github.com/PKU-YuanGroup/OpenAI4S
+library:
+  github: https://github.com/PKU-YuanGroup/OpenAI4S
+  language: Python
+  license: MIT
+  pip_package: openai4s
+related:
+  - internagent

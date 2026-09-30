@@ -67,7 +67,7 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Xinyu_Zhou1
     description: >
-      <p>Co-founder of Moonshot AI. Tsinghua alumnus and former bandmate of <a href="/people/yang-zhilin">Yang Zhilin</a> in "Splay." Core architect of the Kimi chatbot platform.</p>
+      <p>Co-founder of Moonshot AI. Tsinghua alumnus and former bandmate of <a href="/people/zhilin-yang">Yang Zhilin</a> in "Splay." Core architect of the Kimi chatbot platform.</p>
   - name: Wu Yuxin
     url: https://ppwwyyxx.com/
     role: Co-founder
@@ -100,6 +100,10 @@ news:
     url: https://kimi.com/code/docs
     source: Kimi Code docs
     date: 2026-09-11
+  - title: "Moonshot Reportedly Exploring a Hong Kong and Shanghai Dual Listing"
+    url: https://www.semafor.com/article/09/10/2026/chinese-ai-startup-moonshot-reportedly-eyes-hong-kong-shanghai-dual-listing
+    source: Semafor
+    date: 2026-09-10
   - title: "Moonshot AI Confidentially Files for Hong Kong IPO Targeting $3B–$5B at a ~$50B Valuation; BofA Joins CICC, Deutsche Bank, and Goldman as Coordinators After Redomiciling to Mainland China"
     url: https://technode.com/2026/09/03/moonshot-ai-reportedly-submits-confidential-hong-kong-ipo-filing/
     source: TechNode

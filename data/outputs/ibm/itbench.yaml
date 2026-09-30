@@ -1,0 +1,94 @@
+name: ITBench
+slug: itbench
+lab: ibm
+type: eval
+date: 2025-02-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2502.05352
+  - label: ICML 2025 oral
+    url: https://icml.cc/virtual/2025/oral/47199
+  - label: GitHub
+    url: https://github.com/itbench-hub/ITBench
+  - label: HuggingFace (ITBench-AA public split, Artificial Analysis)
+    url: https://huggingface.co/datasets/ArtificialAnalysis/ITBench-AA
+  - label: Artificial Analysis Leaderboard (ITBench-AA)
+    url: https://artificialanalysis.ai/evaluations/itbench-aa
+description: >
+  <p>IBM Research's benchmark for AI agents on enterprise <strong>IT
+  automation</strong>, covering three personas: <strong>Site Reliability
+  Engineering</strong> (diagnosing and resolving incidents in Kubernetes
+  environments), <strong>Compliance and Security Operations</strong> (CISO:
+  assessing compliance posture against CIS-benchmark controls) and
+  <strong>Financial Operations</strong> (cost overruns and anomalies). The
+  first release held 94 scenarios (42 SRE, 50 CISO, 2 FinOps); the SRE
+  scenarios are modeled on real incidents from IBM's own SaaS products, and
+  runs are scored on pass@1 plus domain metrics such as topology-aware
+  fault-localization and propagation-chain scores and mean time to diagnosis
+  and repair. Agents powered by the state-of-the-art models of the time
+  (GPT-4o, Llama and Granite baselines) resolved only 13.8% of SRE
+  scenarios, 25.2% of CISO scenarios and none of the FinOps ones. At release
+  IBM open-sourced 11 of the 94 scenarios with its baseline SRE and CISO
+  agents and kept the rest to evaluate submitted agents through a managed
+  leaderboard. The paper (43 authors, nearly all from IBM Research with five
+  from the University of Illinois Urbana-Champaign; co-first authors Saurabh
+  Jha, Rohan Arora and Yuji Watanabe) was an oral at ICML 2025. Apache 2.0,
+  about 500 GitHub stars.</p>
+
+  <p>Adoption came through leaderboards. IBM added ITBench to Kaggle's
+  enterprise AI leaderboards in December 2025, and on 27 May 2026 Artificial
+  Analysis and IBM Research launched <strong>ITBench-AA</strong>, AA's own
+  implementation of the SRE track: 59 Kubernetes incident root-cause tasks
+  (40 from IBM's public release and 19 private tasks from the ITBench team),
+  each an offline snapshot of alerts, events, traces, metrics, logs and
+  application topology that the agent inspects with a single shell tool in
+  AA's Stirrup harness (100-turn cap, three repeats per task). A repeat
+  scores zero if it misses any ground-truth root-cause entity and otherwise
+  earns the precision of its submitted entities. Every model scored below
+  50% at launch; GPT-5.6 Sol at max effort now leads at 56.2%, ahead of
+  StepFun's Step 5 Preview at 55.6%. ITBench-AA is a standalone AA
+  evaluation rather than part of the Intelligence Index, and ITBench is not
+  among the benchmarks in Epoch's Capabilities Index.</p>
+tags:
+  - benchmark
+  - evaluation
+  - agents
+  - agentic
+  - enterprise
+  - security
+paper:
+  arxiv: "2502.05352"
+  venue: ICML 2025
+  presentation: oral
+  authors:
+    - Saurabh Jha
+    - Rohan Arora
+    - Yuji Watanabe
+    - Takumi Yanagawa
+    - Yinfang Chen
+    - Jackson Clark
+    - Bhavya Bhavya
+    - Mudit Verma
+  code_url: https://github.com/itbench-hub/ITBench
+eval:
+  num_tasks: 94
+  domains:
+    - site reliability engineering
+    - compliance and security operations
+    - financial operations
+  scoring_method: "pass@1 per scenario plus domain metrics (topology-aware fault-localization and
+    fault-propagation-chain scores, mean time to diagnosis and repair); ITBench-AA scores precision at
+    full recall (zero if any root-cause entity is missed), averaged over three repeats"
+  used_in:
+    - Artificial Analysis ITBench-AA (standalone evaluation, not in the Intelligence Index)
+  saturation: "Not saturated: 13.8% SRE, 25.2% CISO and 0% FinOps at release; ITBench-AA best 56.2%
+    (GPT-5.6 Sol, max effort)"
+  top_scores:
+    - model: GPT-5.6 Sol (max effort; ITBench-AA)
+      score: "56.2%"
+    - model: Step 5 Preview (ITBench-AA)
+      score: "55.6%"
+    - model: GPT-4o (baseline SRE-Agent, SRE diagnosis pass@1 at release)
+      score: "13.8%"
+      date: "2025-02-07"
+  leaderboard_url: https://artificialanalysis.ai/evaluations/itbench-aa

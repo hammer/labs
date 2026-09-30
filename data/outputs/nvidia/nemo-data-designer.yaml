@@ -1,0 +1,81 @@
+name: NeMo Data Designer
+slug: nemo-data-designer
+lab: nvidia
+type: library
+date: 2026-09-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.17699
+  - label: GitHub
+    url: https://github.com/NVIDIA-NeMo/DataDesigner
+  - label: Documentation
+    url: https://docs.nvidia.com/nemo/datadesigner
+description: >
+  <p>NVIDIA's open-source framework for synthetic data generation, used to
+  build targeted training data for the Nemotron models. A dataset is
+  declared column by column: samplers that steer diversity (categories and
+  statistical distributions), LLM-generated text, code and structured outputs,
+  images, embeddings, seed data, and validators or LLM judges that score each
+  record. Data Designer (NDD) resolves the dependencies between columns,
+  schedules asynchronous calls to user-supplied model endpoints (hosted APIs,
+  gateways or OpenAI-compatible servers), retries failed requests, and can call
+  MCP tools while keeping their traces. The configuration is itself an
+  inspectable, shareable artifact, and the core loop is to preview a few
+  records, revise the specification, then run it at full scale; plugins add
+  column types, seed readers and processors. The repository was created in
+  October 2025 and tagged v0.1.0 in November 2025; this entry is dated to the
+  technical report posted to arXiv on September 15, 2026, which describes
+  version 0.9.0. Apache 2.0, installed with <code>pip install
+  data-designer</code>, about 2,300 GitHub stars.</p>
+
+  <p>The report's case studies document how NVIDIA has used it. About 9,000
+  JSON-schema tasks built with NDD went into the RL stage of
+  <a href="/outputs/nvidia/nemotron-3-nano">Nemotron 3 Nano</a> (the released
+  set holds 9,949 verified examples) and lifted JSONSchemaBench from 80.2% to
+  86.9% and StructEval-Text from 64.5% to 72.1%; a usability curriculum for
+  <a href="/outputs/nvidia/nemotron-3-ultra">Nemotron 3 Ultra</a>, developed
+  with Perplexity, raised StructEval-T from 78.6% to 82.1%. A text-to-SQL
+  pipeline generated 300K candidate queries across PostgreSQL, MySQL and SQLite
+  and kept 96.5K, and the report cites a BIRD gain from 26.77% to 41.80%
+  against 38.25% for GPT-OSS-120B. A search-agent pipeline turned 50K Wikidata
+  paths into 24K obfuscated multi-hop questions and about 7K validated
+  trajectories averaging 12 tool calls, which went into
+  <a href="/outputs/nvidia/nemotron-3-super">Nemotron 3 Super</a> SFT. A
+  long-document vision pipeline produced about 11.4M visual question-answer
+  pairs (about 45B tokens), with development checkpoints rising from 26.32% to
+  59.00% on MMLongBench-Doc. Prompt-variation data roughly halved Nemotron 3
+  Nano's sensitivity to prompt wording across GPQA, MMLU-Pro, competition math
+  and LiveCodeBench, and the census-grounded Nemotron-Personas sets span 10
+  regional datasets in 15 language or script editions, covering regions home
+  to about 2.4B people. Outside NVIDIA, CrowdStrike used NDD to write
+  descriptions for analyst queries and fine-tuned
+  Llama-3.3-Nemotron-Super-49B-v1.5 to 96% valid-query accuracy, against 94%
+  for Claude Sonnet 4.5.</p>
+tags:
+  - training-data
+  - data
+  - infrastructure
+  - framework
+  - post-training
+  - open-source
+paper:
+  arxiv: "2609.17699"
+  authors:
+    - Johnny Greco
+    - Nabin Mulepati
+    - Andre Manoel
+    - Eric Tramel
+    - Kirit Thadaka
+    - Mike Knepper
+    - Dhruv Nathawani
+    - Dane Corneil
+  code_url: https://github.com/NVIDIA-NeMo/DataDesigner
+library:
+  github: https://github.com/NVIDIA-NeMo/DataDesigner
+  language: Python
+  license: Apache 2.0
+  pip_package: data-designer
+related:
+  - nemotron-3-nano
+  - nemotron-3-super
+  - nemotron-3-ultra

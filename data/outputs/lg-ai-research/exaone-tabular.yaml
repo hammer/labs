@@ -6,6 +6,8 @@ date: 2026-08-26
 sources:
   - label: Technical Report (arXiv)
     url: https://arxiv.org/abs/2608.25774
+  - label: HuggingFace (weights)
+    url: https://huggingface.co/LG-AI-Research/EXAONE-Tabular
 description: >
   <p>LG AI Research's compact <strong>tabular foundation model</strong>
   family: classification and regression via in-context learning with no
@@ -19,7 +21,11 @@ description: >
 
   <p>Reports strong performance-per-parameter on four public benchmarks
   (20.81M-parameter model on TabArena). Extends the tracked tabular-FM line
-  (cf. Google's TabFM); no public weights at filing.</p>
+  (cf. Google's TabFM). Classifier and regressor checkpoints are on
+  HuggingFace under LG's non-commercial EXAONE license; the model card reports
+  a TabArena Elo of <strong>1,755</strong> without per-dataset tuning or
+  ensembling (second overall, first on classification at 1,759, second on
+  regression at 1,883).</p>
 tags:
   - science
   - tabular

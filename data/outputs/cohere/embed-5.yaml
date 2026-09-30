@@ -1,0 +1,79 @@
+name: Cohere Embed 5
+slug: embed-5
+lab: cohere
+type: model
+date: 2026-09-30
+sources:
+  - label: Announcement
+    url: https://cohere.com/blog/embed-5
+description: >
+  <p>Cohere's fifth-generation embedding models for enterprise search, RAG
+  and agentic retrieval, in two tiers that share one embedding space:
+  <strong>Embed 5 Pro</strong> for maximum quality and <strong>Embed 5
+  Fast</strong>, a lighter model for latency- and cost-sensitive query
+  paths with on average 2.4&times; Pro's document throughput. Because the
+  space is shared, a corpus indexed with Pro can be queried with Fast
+  without re-indexing; across 40 development datasets the mixed pairings
+  lose on average 1.6% (Fast queries) and 2.7% (Pro queries) against
+  same-model baselines. Both tiers take text, images or fused text-plus-image
+  inputs, cover 100+ languages, accept up to 128K tokens, and output
+  <a href="/outputs/uw/mrl">Matryoshka</a> embeddings of 256 to 2,048
+  dimensions as float, int8 or binary. Cohere recommends 1,024-dimensional
+  int8 vectors, and notes that a 256-dimensional binary vector takes 32
+  bytes against 8 KB for a 2,048-dimensional float32 one.</p>
+
+  <p>Much of the comparison uses RCP-nDCG@10, Cohere's new metric that scores
+  retrieved documents against query-specific relevance criteria rather
+  than a fixed set of labels; Embed 5 is the first family evaluated with
+  it. On ViDoRe V3 (visually rich documents from eight enterprise domains),
+  Embed 5 Pro averages <strong>85.8</strong>, 8.8 points above Embed 4,
+  against 83.7 for Voyage 4 Large, 83.2 for Gemini Embedding 2 and 75.5 for
+  OpenAI text-embedding-3-large; Fast averages 84.5. Pro ranks first on
+  FinanceBench (80.1), FinQA (90.0) and ViDoRe V3 Finance (85.0), with
+  Fast second on each, and leads Cohere's parsed-PDF suite with 84.8
+  against 83.6 for Voyage 4 Large and 80.8 for Gemini Embedding 2. Across
+  German, French, Spanish, Italian and Russian, Pro averages 77 against 76
+  for Voyage 4 Large and 73 for Gemini Embedding 2, but in Cohere's own
+  table Gemini Embedding 2 scores higher on Japanese, Korean and Arabic.
+  On ViDoRe V3, Fast leads compact models such as Voyage 4 Nano (by almost
+  seven points) and Microsoft's <a href="/outputs/microsoft/harrier">Harrier</a>
+  0.6B (by ten or more). All scores are Cohere's.</p>
+
+  <p>Weights are closed. Embed 5 is generally available on the Cohere API,
+  Model Vault, Microsoft Foundry and Amazon SageMaker and inside Cohere's
+  North platform, and both tiers can be deployed privately in a VPC or on
+  premises with vLLM. Pricing per million text tokens is $0.12 for Pro and
+  $0.08 for Fast, and $0.40 per million image tokens for both. Cohere
+  gives no parameter counts, saying only that Fast is roughly half the
+  size of Qwen3-VL-Embedding-2B.</p>
+tags:
+  - embeddings
+  - retrieval
+  - multimodal
+  - multilingual
+  - enterprise
+  - proprietary
+model:
+  context_window: 128000
+  license: Proprietary
+  benchmark_scores:
+    - benchmark: ViDoRe V3 (RCP-nDCG@10)
+      score: "85.8"
+      mode: Pro
+    - benchmark: ViDoRe V3 (RCP-nDCG@10)
+      score: "84.5"
+      mode: Fast
+    - benchmark: FinanceBench
+      score: "80.1"
+      mode: Pro
+    - benchmark: FinQA
+      score: "90.0"
+      mode: Pro
+  variants:
+    - name: Embed 5 Pro
+      notes: API model embed-v5.0-pro; highest quality; $0.12 per 1M text tokens
+    - name: Embed 5 Fast
+      notes: 2.4x Pro's document throughput on average; same embedding space as Pro; $0.08 per 1M text tokens
+related:
+  - harrier
+  - mrl

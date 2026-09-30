@@ -6,6 +6,10 @@ date: 2026-08-04
 sources:
   - label: Technical Report (arXiv)
     url: https://arxiv.org/abs/2609.04239
+  - label: HuggingFace (weights)
+    url: https://huggingface.co/LG-AI-Research/EXAONE-Forecast-for-Finance-1.0
+  - label: GitHub (EXAONE Forecast runtime)
+    url: https://github.com/LGAI-Research/EXAONE-Forecast
 description: >
   <p>"An Attention-free Time Series Foundation Model for Financial Time
   Series." LG AI Research's EXAONE Forecast for Finance is a time-series
@@ -14,8 +18,14 @@ description: >
   grows quadratically with sequence length and variate count, for causal 1D
   convolutions with group-aware pooling, and pretrains on a synthetic
   financial corpus. The report claims the top zero-shot result on
-  GIFT-eval. No weights are released; the first version posted August 4,
-  2026 and a revision on September 7. Filed late.</p>
+  GIFT-eval. The first version posted August 4, 2026 and a revision on
+  September 7. Filed late.</p>
+
+  <p>The <strong>202M-parameter</strong> weights went up on HuggingFace on
+  September 3, 2026 under LG's non-commercial EXAONE license, with inference
+  code in the separately licensed EXAONE Forecast runtime repo. The model card
+  reports first place in all three tiers of LG's financial benchmark suite
+  (point forecasts, cross-sectional ranking, portfolio returns).</p>
 tags:
   - time-series
   - finance
@@ -24,3 +34,5 @@ paper:
   arxiv: "2609.04239"
 related:
   - exaone-tabular
+  - exaone-forecast
+  - exaone-demand

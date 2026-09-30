@@ -65,3 +65,5 @@ paper:
     - Tomas Pfister
     - Chen-Yu Lee
   code_url: https://github.com/google-research/envharness
+related:
+  - rrsi

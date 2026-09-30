@@ -76,6 +76,10 @@ people:
     url: https://sites.google.com/view/seunghwankim
     role: Head, Physical Intelligence Lab
 news:
+  - title: "Korea Reviews Whether to Proceed With the National AI Foundation Model Project's Final Evaluation and Weighs a Separate Frontier-AI Company; Science Minister Says the Project Will Continue"
+    url: https://www.koreatimes.co.kr/business/tech-science/20260930/koreas-national-ai-model-project-adrift-as-government-questions-own-blueprint
+    source: The Korea Times
+    date: 2026-09-30
   - title: "Elsevier Deploys LG AI Research's Chemistry Vision Model in Reaxys to Extract Structures and Reactions From Scientific Images"
     url: https://www.elsevier.com/about/press-releases/elsevier-and-lg-ai-research-unlock-more-chemistry-hidden-in-scientific-images
     source: Elsevier
@@ -88,6 +92,10 @@ news:
     url: https://en.sedaily.com/technology/2026/09/03/naver-cloud-consortium-to-build-koreas-security-ai-model
     source: Seoul Economic Daily
     date: 2026-09-03
+  - title: "Korea Sovereign AI Project Stage-2 Scores: SKT 70.6, Upstage 69.9 and LG AI Research 69.0 Advance; Motif (65.8) Eliminated Despite Topping the AAII Component"
+    url: https://www.koreaherald.com/article/10854743
+    source: The Korea Herald
+    date: 2026-08-27
   - title: "LG Presents 14 Papers at ICML 2026 Seoul; Showcases EXAONE Discovery Drug-Screening and Financial-Agent Deployments"
     url: https://www.koreatimes.co.kr/business/tech-science/20260708/lg-ai-research-showcases-real-world-exaone-ai-applications-at-icml-2026
     source: Korea Times

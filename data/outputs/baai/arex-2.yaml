@@ -1,0 +1,97 @@
+name: AREX-2
+slug: arex-2
+lab: baai
+type: model
+date: 2026-09-29
+sources:
+  - label: Project Page
+    url: https://vectorspacelab.github.io/AREX-2/
+  - label: Paper (PDF)
+    url: https://huggingface.co/BAAI/AREX-2/resolve/main/arex2_paper.pdf
+  - label: GitHub (evaluation code)
+    url: https://github.com/VectorSpaceLab/AREX-2
+  - label: HuggingFace
+    url: https://huggingface.co/BAAI/AREX-2
+description: >
+  <p>The second <a href="/outputs/baai/arex">AREX</a> model from BAAI's AREX
+  Team (project leader Zheng Liu, code under the VectorSpaceLab GitHub org),
+  aimed at <strong>test-time self-improvement</strong>: given more rounds on a
+  task, the agent should turn them into a better solution by its own judgment.
+  The paper splits this into <strong>reflection</strong>, which sets how much a
+  round gains, and <strong>long-horizon execution</strong>, which sets how many
+  rounds stay productive, and argues that both are domain-agnostic skills best
+  learned where feedback is unambiguous. A teacher model turns GitHub
+  machine-learning repositories and online-judge problems into scored
+  environments, kept only if the reference solution runs and a simple baseline
+  scores well below it. A teacher agent then works each task for hours and
+  hundreds of tool calls, reading code and papers and running experiments
+  between scored submissions. Trajectories are kept or dropped as a whole by
+  final score, so failed rounds and regressions stay in, and the loss falls on
+  the steps that recover and make progress. AREX-2 is a supervised fine-tune of
+  <a href="/outputs/alibaba/qwen3.8">Qwen3.8-27B</a> on these trajectories plus
+  the unchanged deep-research data of the first AREX recipe: a 27B dense
+  multimodal model with a 262,144-token context, under Apache 2.0.</p>
+
+  <p>It scores <strong>81.8 on <a href="/outputs/openai/mle-bench">MLE-bench</a>
+  Lite</strong> (Any Medal, mean of three seeds, run with skills in context),
+  9.1 points above GPT-5.6 Sol, and <strong>70.7 on the 188-task Frontier-CS
+  Agent Track</strong>, 16.0 points above the best open-weight baseline and 5.7
+  below GPT-5.6 Sol. With no new search data it beats both earlier AREX models
+  in deep research: BrowseComp 84.0, text-only HLE 52.6, GAIA 92.2 and
+  DeepSearchQA 93.8, against 82.5, 52.4, 85.4 and 89.9 for the 122B AREX-Base.
+  The gains come from sustained iteration. On Frontier-CS it reaches 54.4 after
+  one hour, 65.9 after two and 70.7 after five, while DeepSeek-V4-Pro stops at
+  44.7 after two hours; on BrowseComp, with no correctness feedback, accuracy
+  climbs from 64.8 at 47 turns to 84.0 at 143. In a stage-wise ablation on
+  MLE-bench Lite, skills and more rounds lift the untrained base from 28.8 to
+  68.2, and training adds 13.6 points on top. BAAI released the weights and the
+  paper PDF on Hugging Face on September 29, 2026 (no arXiv ID at filing); the
+  GitHub repository holds the evaluation runners and dataset definitions for
+  the six benchmarks.</p>
+tags:
+  - agents
+  - open-weight
+  - reasoning
+  - self-improvement
+  - coding
+  - post-training
+model:
+  architecture: dense
+  # Derivative: supervised fine-tune of Qwen/Qwen3.8-27B (HF card base_model;
+  # paper sec. 2.4; config.json Qwen3_5ForConditionalGeneration). No `parameters`.
+  base_model: qwen3.8
+  context_window: 262144
+  license: Apache 2.0
+  benchmark_scores:
+    - benchmark: MLE-bench Lite
+      score: "81.8"
+      mode: Any Medal, mean of 3 seeds, with skills
+    - benchmark: Frontier-CS (Agent Track, 188 tasks)
+      score: "70.7"
+    - benchmark: BrowseComp
+      score: "84.0"
+    - benchmark: HLE (text-only)
+      score: "52.6"
+    - benchmark: GAIA
+      score: "92.2"
+    - benchmark: DeepSearchQA
+      score: "93.8"
+      mode: F1
+  variants:
+    - name: AREX-2
+      notes: "27B dense; supervised fine-tune of Qwen3.8-27B"
+paper:
+  pdf_url: https://huggingface.co/BAAI/AREX-2/resolve/main/arex2_paper.pdf
+  authors:
+    - Hongjin Qian
+    - Chaofan Li
+    - Kun Luo
+    - Wenqing Wei
+    - Jianlyu Chen
+    - Zheng Liu
+  code_url: https://github.com/VectorSpaceLab/AREX-2
+related:
+  - arex
+  - qwen3.8
+  - repo-to-skill
+  - mle-bench

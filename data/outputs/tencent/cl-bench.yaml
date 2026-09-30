@@ -1,0 +1,106 @@
+name: "CL-bench: A Benchmark for Context Learning"
+slug: cl-bench
+lab:
+  - tencent
+  - fudan
+type: eval
+date: 2026-02-03
+sources:
+  - label: Blog (Tencent Hunyuan)
+    url: https://hy.tencent.com/research/100025?langVersion=en
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2602.03587
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/CL-bench
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/tencent/CL-bench
+  - label: Leaderboard
+    url: https://www.clbench.com
+  - label: "Paper (arXiv): CL-bench Life"
+    url: https://arxiv.org/abs/2604.27043
+  - label: HuggingFace (CL-bench Life)
+    url: https://huggingface.co/datasets/tencent/CL-bench-Life
+  - label: Epoch AI (CL-bench in the Epoch Capabilities Index)
+    url: https://epoch.ai/benchmarks/cl-bench
+description: >
+  <p>A benchmark for <strong>context learning</strong>, which its authors
+  define as learning new knowledge from the context supplied at inference
+  time and reasoning with it, as distinct from long-context tasks that mostly
+  test retrieval and from in-context learning of simple task patterns from
+  demonstrations. Domain experts built 500 contexts holding knowledge absent
+  from pre-training, either newly created or drawn from niche, emerging
+  long-tail material (for example the laws and case precedents of a fictional
+  country, which the model must apply to adjudicate cases), and wrote
+  <strong>1,899 tasks</strong> on them with <strong>31,607 verification
+  rubrics</strong>, an average of 63.2 rubrics and about 20 hours of expert
+  work per context. The tasks fall into four categories and 18
+  sub-categories: domain knowledge reasoning, rule system application,
+  procedural task execution, and empirical discovery and simulation. Grading
+  is strict: a task counts as solved only if the response passes every
+  rubric, with GPT-5.1 as the judge; its verdicts agreed with Claude Opus 4.5
+  and Qwen3-Max verifiers, and with human checks of 100 samples, more than
+  90% of the time. Across ten frontier models in reasoning mode the paper
+  found an average solving rate of 17.2%; the best, GPT-5.1 (high), reached
+  23.7%, followed by Claude Opus 4.5 at 21.1%, while Tencent's HY 2.0 scored
+  17.2% against o3's 17.8%. Empirical discovery was hardest, with solving
+  rates around 11%.</p>
+
+  <p>Epoch AI added CL-bench to its <strong>Epoch Capabilities
+  Index</strong>, describing it as created by the Tencent Hunyuan team and
+  Fudan University's NLP group. On the project leaderboard at clbench.com,
+  GPT-5.4 at xhigh effort leads at 27.9%, ahead of GPT-5.1 (high) at 23.7%;
+  Tencent's Hy3 preview scores 22.8%. A sequel, <strong>CL-bench Life</strong>
+  (arXiv 2604.27043, April 2026), applies the idea to messy real-life
+  contexts such as group chats, personal notes and game logs, with 405 tasks
+  and 5,348 rubrics (the best model solved 19.3% at release), and is also in
+  the ECI. The 27-author paper lists the Hunyuan Team at Tencent and Fudan
+  University; Shihan Dou, Ming Zhang and Zhangyue Yin are co-first authors,
+  Pluto Zhou and <a href="/people/tao-gui">Tao Gui</a> are marked as
+  corresponding authors, and Fudan's <a href="/people/xipeng-qiu">Xipeng
+  Qiu</a> and <a href="/people/xuanjing-huang">Xuanjing Huang</a> are among
+  the co-authors. The evaluation code is Apache 2.0, and the repository has
+  about 580 GitHub stars.</p>
+tags:
+  - benchmark
+  - evaluation
+  - long-context
+  - reasoning
+paper:
+  arxiv: "2602.03587"
+  authors:
+    - Shihan Dou
+    - Ming Zhang
+    - Zhangyue Yin
+    - Chenhao Huang
+    - Yujiong Shen
+    - Junzhe Wang
+    - Pluto Zhou
+    - Tao Gui
+  code_url: https://github.com/Tencent-Hunyuan/CL-bench
+eval:
+  num_tasks: 1899
+  domains:
+    - domain knowledge reasoning
+    - rule system application
+    - procedural task execution
+    - empirical discovery and simulation
+  scoring_method: "Rubric-based and binary per task: a response counts as solved only if it passes every
+    one of the task's expert-written rubrics, judged by GPT-5.1; the headline metric is the task solving
+    rate"
+  used_in:
+    - Epoch Capabilities Index
+  saturation: "Not saturated: best 27.9% (GPT-5.4 at xhigh effort, project leaderboard); 23.7% best at
+    release"
+  top_scores:
+    - model: GPT-5.4 (xhigh effort; clbench.com leaderboard)
+      score: "27.9%"
+    - model: GPT-5.1 (high; paper)
+      score: "23.7%"
+      date: "2026-02-03"
+    - model: Hy3 preview (clbench.com leaderboard)
+      score: "22.8%"
+  leaderboard_url: https://www.clbench.com
+related:
+  - hunyuan-2.0
+  - hy3
+  - llmeval-fair

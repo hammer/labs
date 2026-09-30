@@ -1,0 +1,87 @@
+name: "EXAONE Forecast"
+slug: exaone-forecast
+lab: lg-ai-research
+type: paper
+date: 2026-09-29
+sources:
+  - label: Technical Report (PDF)
+    url: https://github.com/LGAI-Research/EXAONE-Forecast/blob/main/domains/general/EXAONE_Forecast_Technical_Report.pdf
+  - label: GitHub (EXAONE Forecast runtime)
+    url: https://github.com/LGAI-Research/EXAONE-Forecast
+  - label: GIFT-Eval results (EXAONE-Forecast submission)
+    url: https://github.com/SalesforceAIResearch/gift-eval/tree/main/results/EXAONE-Forecast
+description: >
+  <p>"A Universal Zero-shot Time-Series Foundation Model." The general-purpose
+  member of LG AI Research's EXAONE Forecast family of time-series models. The
+  family's repository also serves the finance model
+  <a href="/outputs/lg-ai-research/exaone-finance">EXAONE Finance</a>, and the
+  <a href="/outputs/lg-ai-research/exaone-demand">EXAONE Demand</a> report
+  cites the same repository as its code. It is a <strong>312M-parameter
+  encoder-only Transformer</strong> (24 layers, width 1,024, 16 heads,
+  8,192-step context, 16-step patches, 21 output quantiles) that handles
+  univariate, multivariate and covariate-informed forecasting in one model.
+  Covariates enter as extra variates, and cross-variate group attention runs
+  only in the last block, following Toto-2.0's report that variate attention
+  is needed in only a few layers. A query-aware scalable softmax keeps
+  attention sharp over long contexts. It emits up to 512 steps in one forward
+  pass.</p>
+
+  <p>The report's second contribution is <strong>CKD-GP</strong> (Composite
+  Kernel Decomposition for GP generation). CKD-GP expands the composite
+  Gaussian-process kernels of the KernelSynth and CauKer generators into
+  product terms and samples each term in closed form in O(T log T) time, with
+  no dense covariance factorization. At 8,192 steps it is up to 2,645&times;
+  (KernelSynth) and 1,089&times; (CauKer) faster than dense sampling. The
+  pretraining corpus combines real series from the Chronos corpus, GIFT-Eval's
+  pretraining split and QuitoBench with 78.9M synthetic, 53.1M augmented and
+  41.7M synthetically coupled multivariate series. GIFT-Eval's TrainTest
+  source (the train splits of its benchmark datasets) and mixup data derived
+  from it are excluded. Training used schedule-free AdamW on eight NVIDIA RTX
+  Pro 6000 GPUs for about 402 hours, with the context lengthened from 2,048 to
+  4,096 to 8,192 steps.</p>
+
+  <p>On GIFT-Eval (97 configurations from 23 datasets), LG reports an
+  aggregate <strong>MASE of 0.673 and CRPS of 0.460</strong>. It claims first
+  place in the benchmark's zero-shot category on both aggregates and on both
+  rank-based scores; the next model in its comparison scores 0.681 and 0.466.
+  The results LG submitted to GIFT-Eval's public repository on August 3
+  reproduce those aggregates. By the time the report went public, two later
+  zero-shot submissions scored better on both aggregates:
+  <a href="/outputs/google/timesfm-3">TimesFM 3.0</a> (0.667 / 0.456,
+  submitted August 31) and Alibaba Cloud's Lingjiang 2.0 (0.666 / 0.457,
+  September 28). <strong>EXAONE Forecast-Agent</strong> is a learned router
+  over eight TSFMs (<a href="/outputs/amazon/chronos-2">Chronos-2</a>,
+  TimesFM-2.5, FlowState, Toto-2.0 and its fine-tune, TiRex-2, Timer-S1 and
+  EXAONE Forecast) plus retrieval of related historical series, where an LLM
+  only narrows the search space. It scores 0.6099 / 0.4185 and still led
+  GIFT-Eval's agentic category at filing. On fev-bench (100 tasks), EXAONE
+  Forecast ranks fourth by skill score (0.445, after Chronos-2, TimesFM-2.5
+  and TiRex-2) and fourth by win rate (0.742). The report's conclusion
+  describes the model as performing on par with recent TSFMs. The PDF is dated
+  August 2026 and was posted to GitHub on September 29, 2026. It lists 14 LG
+  AI Research authors alphabetically, with Wonbin Ahn as corresponding author.
+  At filing there was no arXiv version and no released weights or model code
+  for the general model.</p>
+tags:
+  - time-series
+  - forecasting
+  - foundation-model
+  - science
+  - data
+  - research
+paper:
+  authors:
+    - Wonbin Ahn
+    - Hwanil Choi
+    - Joanie Hayoun Chung
+    - Sangjun Han
+    - Dongwan Kang
+    - Junhyeok Kang
+    - Minjae Kim
+    - Jaehoon Lee
+  pdf_url: https://github.com/LGAI-Research/EXAONE-Forecast/blob/main/domains/general/EXAONE_Forecast_Technical_Report.pdf
+related:
+  - exaone-demand
+  - exaone-finance
+  - timesfm-3
+  - chronos-2

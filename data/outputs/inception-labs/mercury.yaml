@@ -11,6 +11,10 @@ sources:
     url: https://arxiv.org/abs/2506.17298
   - label: Artificial Analysis (Mercury 2)
     url: https://artificialanalysis.ai/models/mercury-2
+  - label: Artificial Analysis (Mercury 2.5)
+    url: https://artificialanalysis.ai/models/mercury-2-5
+  - label: Blog (Mercury Voice)
+    url: https://www.inceptionlabs.ai/blog/introducing-mercury-voice
   - label: OpenRouter
     url: https://openrouter.ai/inception/mercury-2
 description: >
@@ -58,7 +62,9 @@ model:
   context_window: 128000
   variants:
     - name: Mercury 2.5
-      notes: "Sep 8 2026: >1,100 tokens/s in production, 260K context (from 128K), $0.20/$0.75 per M tokens ($0.04/$0.15 launch promo); +10 points over Mercury 2, pitched against GPT-5.6 Luna, Gemini 3.5 Flash-Lite, Claude Haiku 4.5; tunable reasoning, native and parallel tool use, JSON mode; API, OpenRouter, Baseten; Mercury Voice (<170 ms TTFT) and Mercury Router previewed; not yet on AA"
+      notes: "Sep 8 2026: >1,100 tokens/s in production, 260K context (from 128K), $0.20/$0.75 per M tokens ($0.04/$0.15 launch promo); +10 points over Mercury 2, pitched against GPT-5.6 Luna, Gemini 3.5 Flash-Lite, Claude Haiku 4.5; tunable reasoning, native and parallel tool use, JSON mode; API, OpenRouter, Baseten; Mercury Voice (<170 ms TTFT) and Mercury Router previewed; AA Intelligence Index v4.3.2: 12, two below Mercury 2"
+    - name: Mercury Voice
+      notes: "Generally available Sep 29 2026 for enterprise customers: a diffusion LLM tuned for voice agents; 320 ms median time to first answer token (p95 750 ms) on production voice prompts; low/medium/high reasoning; 128K context, 50K output; $0.40 / $1.50 per M tokens (half price at launch)"
     - name: Mercury Coder
     - name: Mercury 2
       notes: "Reasoning, AA Intelligence Index v4.3: 14, 929 tok/s"

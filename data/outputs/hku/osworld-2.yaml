@@ -8,6 +8,8 @@ sources:
     url: https://arxiv.org/abs/2606.29537
   - label: GitHub
     url: https://github.com/xlang-ai/OSWorld-V2
+  - label: OSWorld 2.1 release notes
+    url: https://github.com/xlang-ai/OSWorld-V2/releases/tag/osworld-v2.1
 description: >
   <p>XLANG Lab's successor to <a href="/outputs/hku/osworld">OSWorld</a>, the
   incumbent computer-use standard: <strong>108 long-horizon real-world
@@ -16,6 +18,15 @@ description: >
   completes <strong>20.6%</strong> vs 83.5% on OSWorld 1.0 &mdash; and the
   failures are constraint tracking, mid-task information processing, and
   hidden-state recovery, not UI control.</p>
+
+  <p><strong>OSWorld 2.1</strong> (September 16, 2026) pins tasks, assets, mocked
+  websites and the VM image for reproducible runs, fixes evaluation bugs, and
+  adds Gemini, Muse Spark and Qwen agents plus Claude Code, Codex, DeepSeek and
+  Muse Code hybrid workflows. Labs now quote it in launch tables with
+  partial-credit scoring: Anthropic reports
+  <a href="/outputs/anthropic/claude-opus-5.5">Claude Opus 5.5</a> at 81.8%
+  and Sonnet 5.5 at 80.1% (partial credit, not comparable to the 20.6%
+  full-completion figure above).</p>
 tags:
   - eval
   - agents

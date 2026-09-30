@@ -1,0 +1,70 @@
+name: "Marathoner: Ultra-Long-Horizon Autonomous Intelligence"
+slug: marathoner
+lab: ant-group
+type: paper
+date: 2026-09-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.34378
+description: >
+  <p>A post-training recipe from Ant Group and the University of Macau for
+  coding agents that keep working on one task for hours. Tasks come from
+  <strong>major-release pull requests</strong>: 100,000 PRs mined from 10,000
+  GitHub repositories, split 2:3:5 into Easy, Medium and Hard tasks by the
+  amount of new code (100&ndash;200 lines, 200&ndash;1,000, and over 1,000).
+  Each becomes a Harbor-format task: the repository checked out just before the
+  PR, an instruction taken from the PR's opening comment, the release notes or
+  an LLM reading of the diff, and a verifier made of the PR's new tests plus
+  the existing suite. <strong>Multi-Task Chaining</strong> merges five such
+  tasks, with all their repositories, into one harder "Frontier" task. For
+  rejection-sampling fine-tuning, <a href="/outputs/moonshot-ai/kimi-k3">Kimi
+  K3</a> ran 53,000 tasks in three harnesses
+  (<a href="/outputs/anthropic/claude-code">Claude Code</a>, Codex and
+  OpenClaw) so the student would not overfit to one; the 40,820 trajectories
+  that passed every test trained <a href="/outputs/alibaba/qwen3.5">Qwen3.5-9B</a>
+  by full-parameter SFT at 256K sequence length. RL then ran on 8,000 further
+  tasks (5,000 direct, 3,000 chained) in Ant's
+  <a href="/outputs/ant-group/areal">AReaL</a> integrated with Harbor, on 32
+  H800 GPUs, with a random harness per task and a <strong>Later Stage Bonus
+  Reward</strong>: Qwen-3.8-Max summarizes each trajectory into phases and flags
+  exceptionally valuable ones, and a flag in the second half of the run adds
+  0.5 to the binary test reward.</p>
+
+  <p>Run in Claude Code, <strong>Marathoner-9B</strong> scores 26.4 on
+  FrontierSWE, 34.7 on NL2Repo, 8.2 on SWE-Marathon, 57.2 on Terminal-Bench 2.0
+  and 77.5 on SWE-bench Verified, against 10.2, 17.9, 0, 27.3 and 43.8 for its
+  Qwen3.5-9B base, and above Qwen3.6-27B (21.6, 32.6, 2.6, 56.4, 73.3) on all
+  five. It edges past Gemini-3.1-Pro in Gemini CLI on FrontierSWE (25.9) and
+  SWE-Marathon (5.9) but remains far below the leaders (GPT-6-Astra in Codex:
+  89.1 and 48.7). Growing the RL pool from 1,000 to 8,000 tasks raised
+  FrontierSWE and Terminal-Bench 2.0 scores steadily, and a case trajectory on
+  a Hard task ran 11.8 hours with 1,273 tool calls. The first author, Ruiyang
+  Zhang, is at the University of Macau and Ant Group; the co-corresponding
+  authors are <a href="/people/qingpei-guo">Qingpei Guo</a> (Ant Group) and
+  Zhedong Zheng (University of Macau), and six of the seven authors list Ant
+  Group. The paper links no weights or code, and none were on Hugging Face or
+  GitHub at filing.</p>
+tags:
+  - agents
+  - agent-harness
+  - coding
+  - rl
+  - rl-scaling
+  - post-training
+  - distillation
+  - research
+paper:
+  arxiv: "2609.34378"
+  authors:
+    - Ruiyang Zhang
+    - Jinpeng Ou
+    - Yifan Xie
+    - Jingang Zhou
+    - Lirui Pan
+    - Qingpei Guo
+    - Zhedong Zheng
+related:
+  - qwen3.5
+  - kimi-k3
+  - areal
+  - claude-code

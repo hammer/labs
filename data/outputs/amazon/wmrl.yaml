@@ -1,0 +1,87 @@
+name: "WMRL: Scaling Automatic Research Agents via World Models"
+slug: wmrl
+lab:
+  - amazon
+  - uiuc
+type: paper
+date: 2026-08-12
+sources:
+  - label: Project page
+    url: https://xiyuanyang45.github.io/WMRL/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.12564
+  - label: GitHub
+    url: https://github.com/xiyuanyang45/WMRL
+  - label: HuggingFace (paper page)
+    url: https://huggingface.co/papers/2608.12564
+description: >
+  <p>An RL-scaling paper on the cost structure of training <strong>automatic
+  research (AutoResearch) agents</strong>, which write code for machine
+  learning tasks, run it and learn from the results. The authors argue that
+  the two halves of such a trajectory scale differently: generation shares
+  compute through batching, but every candidate solution must execute in its
+  own sandbox on real GPU time, so environment execution comes to dominate
+  training cost as RL scales. <strong>World Model RL (WMRL)</strong> replaces
+  most of that execution with a world model, a frozen copy of the agent's own
+  backbone prompted to predict the outcome from the task and the submitted
+  solution, so that grading batches like generation. Because predicted
+  rewards carry bias and noise, at least one of the eight groups in each GRPO
+  step is still graded by real execution as an anchor, and two corrections
+  use it: <strong>Online Debiasing</strong> refits an isotonic (monotone) map
+  from world-model scores to real scores at every step, and
+  <strong>Inverse-Variance Denoising</strong> weights the anchor and
+  world-model gradients by their estimated variances. The paper proves that
+  both corrections strictly improve the convergence guarantee.</p>
+
+  <p>Qwen3.5-4B and Qwen3.5-9B agents were trained on a split of MLE-Dojo, an
+  interactive superset of MLE-bench built from Kaggle competitions, and scored
+  by leaderboard percentile on held-out MLE-Dojo tasks and on DSBench.
+  Compared with GRPO on real execution, WMRL cut training compute from 883 to
+  286 A100 GPU-hours at 4B and from 1,174 to 349 at 9B (3.1&times; and
+  3.4&times;) while scoring higher on both benchmarks: the 9B agent reached
+  21.6 on MLE-Dojo against 18.8 for real-execution GRPO and 20.5 for
+  Nemotron-120B-A12B, and 32.8 on DSBench against 31.2 and 31.7, and the 4B
+  agent beat Kimi-48B-A3B on both. Training on the uncorrected world model
+  alone was cheaper still but scored below real-execution GRPO. The recipe
+  also transfers to embodied control: post-training MiniVLA-1B on LIBERO-Long,
+  with the Robometer VLM as the world model and sparse task success as the
+  anchor, raised overall success from 37.4% after fine-tuning to 41.2%, a
+  3.8-point gain against 0.9 and 1.8 points for RL on either signal
+  alone.</p>
+
+  <p>The work was done during the first author's internship at Amazon: Xiyuan
+  Yang (University of Illinois Urbana-Champaign) is first author, eight of the
+  eleven authors are at Amazon, and the corresponding authors are Jingrui He
+  (UIUC) and Zhenyu Liao (Amazon). The code is on GitHub under Apache 2.0
+  (about 35 stars), and the paper drew 483 upvotes on Hugging Face's daily
+  papers. It adds an environment-cost axis to the RL-scaling family alongside
+  <a href="/outputs/uw/rlve">RLVE</a>'s verifiable environments, and it
+  evaluates on a superset of OpenAI's
+  <a href="/outputs/openai/mle-bench">MLE-bench</a>.</p>
+tags:
+  - rl
+  - rl-scaling
+  - post-training
+  - agents
+  - world-model
+  - efficiency
+  - research
+paper:
+  arxiv: "2608.12564"
+  authors:
+    - Xiyuan Yang
+    - Sheikh Sarwar
+    - Jingru Cheng
+    - Zhan Shi
+    - Duanshun Li
+    - Huiyuan Chen
+    - Jingrui He
+    - Zhenyu Liao
+  code_url: https://github.com/xiyuanyang45/WMRL
+library:
+  github: https://github.com/xiyuanyang45/WMRL
+  language: Python
+  license: Apache 2.0
+related:
+  - rlve
+  - mle-bench

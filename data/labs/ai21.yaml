@@ -18,14 +18,19 @@ description: >
   professor emeritus, ACM-AAAI Allen Newell Award),
   <a href="https://en.wikipedia.org/wiki/Amnon_Shashua">Amnon Shashua</a> (Mobileye
   CEO, Hebrew University professor), and Ori Goshen. Raised ~$283M at a $1.4B
-  valuation. NVIDIA was in advanced acquisition talks ($2&ndash;3B) as of late 2025.</p>
+  valuation. NVIDIA was in advanced acquisition talks ($2&ndash;3B) as of late 2025;
+  those talks fell through, and a Nebius acquisition discussed in April 2026 ended
+  as a commercial partnership to integrate AI21's <strong>Maestro</strong> agent
+  platform into Nebius's cloud. In May 2026 AI21 laid off 110 of its 180 employees
+  and <strong>halted development of the Jamba model family</strong>, leaving
+  Maestro as its main active product line.</p>
 
   <p>AI21 trained the <strong>Jurassic</strong> series (2021, 178B dense) and then
   introduced the <strong><a href="https://arxiv.org/abs/2403.19887">Jamba</a></strong>
   architecture (2024) &mdash; the first production-grade <strong>SSM-Transformer-MoE
   hybrid</strong> combining Mamba state-space layers with Transformer attention and
   mixture-of-experts routing. Jamba 1.7 Large (398B total / 94B active, 256K context)
-  is the current flagship. The hybrid architecture achieves 2.5x faster inference than
+  was its last flagship before Jamba development stopped. The hybrid architecture achieves 2.5x faster inference than
   equivalent dense Transformers while fitting on a single 80GB GPU.</p>
 people:
   - name: Yoav Shoham
@@ -45,6 +50,14 @@ people:
   - name: Ori Goshen
     role: Co-CEO & Co-Founder
 news:
+  - title: "AI21 Lays Off 110 of Its 180 Employees and Halts Jamba Model Development; Nebius Deal Ends as a Commercial Partnership Around the Maestro Agent Platform"
+    url: https://www.calcalistech.com/ctechnews/article/by34n00tjfl
+    source: Calcalist
+    date: 2026-05-19
+  - title: "Nebius in Talks to Acquire AI21 After the NVIDIA Deal Falls Through"
+    url: https://www.calcalistech.com/ctechnews/article/r1kdh64nzg
+    source: Calcalist
+    date: 2026-04-09
   - title: "NVIDIA in Advanced Talks to Acquire AI21 Labs for $2-3B"
     url: https://siliconangle.com/2025/12/30/report-nvidia-acquire-llm-startup-ai21-labs-3b/
     source: SiliconANGLE

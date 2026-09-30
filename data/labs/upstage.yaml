@@ -31,8 +31,11 @@ description: >
   Open LLM Leaderboard. <a href="https://arxiv.org/abs/2601.07022">Solar Open
   100B</a> (Jan 2026, 102B MoE / 12B active, 20T tokens) introduced
   <strong>SnapPO</strong>, a cyclic off-policy RL framework for scalable alignment.
-  The current proprietary flagship <strong>Solar Pro 3</strong> (Mar 2026, 102B)
-  specializes in multi-step agentic tool use.</p>
+  <strong>Solar Pro 3</strong> (Mar 2026, 102B) specialized in multi-step agentic
+  tool use; <a href="/outputs/upstage/solar-pro-4">Solar Pro 4</a> (Aug 2026)
+  replaced it as the proprietary flagship, and the compact
+  <a href="/outputs/upstage/solar-mini-4">Solar Mini 4</a> (35B-A3B, 512K
+  context) followed in September.</p>
 
   <p>Beyond language models, Upstage's <strong>Document Parse</strong> engine holds
   SOTA on DP-Bench (94.16 TEDS-S for table structure recognition), and their
@@ -71,10 +74,18 @@ people:
   - name: Sanghoon Kim
     role: Lead Researcher (Solar, DUS)
 news:
+  - title: "Korea Reviews Whether to Proceed With the National AI Foundation Model Project's Final Evaluation and Weighs a Separate Frontier-AI Company; Science Minister Says the Project Will Continue"
+    url: https://www.koreatimes.co.kr/business/tech-science/20260930/koreas-national-ai-model-project-adrift-as-government-questions-own-blueprint
+    source: The Korea Times
+    date: 2026-09-30
   - title: "Upstage Opens a Free Preview of Solar Mini 4, a 35B-A3B Small Model Said to Match Solar Pro 4 at One-Seventh the Size; API GA Planned for September 22"
     url: https://www.aitimes.com/news/articleView.html?idxno=215245
     source: AI Times
     date: 2026-09-13
+  - title: "Korea Sovereign AI Project Stage-2 Scores: SKT 70.6, Upstage 69.9 and LG AI Research 69.0 Advance; Motif (65.8) Eliminated Despite Topping the AAII Component"
+    url: https://www.koreaherald.com/article/10854743
+    source: The Korea Herald
+    date: 2026-08-27
   - title: "National Growth Fund Invests ₩560B in Upstage as Its Second Direct Investment; Series C Post-Money Reported at ~₩2T"
     url: https://en.sedaily.com/news/2026/05/03/national-growth-fund-invests-560-billion-won-in-upstage-as
     source: Seoul Economic Daily

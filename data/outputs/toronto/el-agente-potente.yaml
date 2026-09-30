@@ -1,0 +1,72 @@
+name: "El Agente Potente: High-Throughput Agentic Atomistic Simulations"
+slug: el-agente-potente
+lab: toronto
+type: paper
+date: 2026-09-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.14840
+  - label: GitHub (user cases and benchmark outputs)
+    url: https://github.com/kenko911/User_Cases_El_Agente_Potente
+description: >
+  <p>The newest member of the <a href="/outputs/toronto/el-agente-q">El
+  Agente</a> family of scientific agents from
+  <a href="/people/alan-aspuru-guzik">Al&aacute;n Aspuru-Guzik</a>'s group at
+  the University of Toronto and the Vector Institute, built for atomistic
+  simulations driven by foundational <strong>machine-learning interatomic
+  potentials</strong> (MLIPs) such as MACE, Orb and MatterSim. Where El Agente
+  Q and its successors delegate tasks through hierarchies of LLM agents,
+  Potente builds on El Agente Gr&aacute;fico's typed execution graphs and
+  keeps the LLM out of the numerics. Standard campaigns run as
+  <strong>typed execution graphs</strong>:
+  the LLM plans and routes (for instance, choosing which property calculations
+  each relaxed structure gets), while deterministic Python nodes handle
+  structure retrieval or generation, MLIP relaxation, filtering and property
+  calculations, fanning out over structures, streaming results downstream as
+  dependencies finish, and keeping failures and provenance as typed workflow
+  state. When a task needs custom logic, a <strong>coding mode</strong> writes
+  a Python workflow that calls the same validated Potente functions instead of
+  reimplementing them. All experiments use ChatGPT 5.5 as the main LLM and
+  ChatGPT 4.1 for the routing agents.</p>
+
+  <p>In the benchmarks, the execution graph reproduced a hand-written
+  script's bulk and shear moduli and 300 K heat capacities for 500 Materials
+  Project structures with MACE-OMAT, with comparably small run-to-run spread
+  over five repeats. In coding mode it built a comparison of three MLIPs on
+  1,000 crystals and completed all 3,000 runs (bulk-modulus MAE of 13.99 GPa
+  for MatterSim, 15.69 for MACE-OMAT and 16.88 for Orb-OMAT). On a CO<sub>2</sub>
+  adsorption simulation in HKUST-1 (grand-canonical Monte Carlo), Potente cost
+  $0.152 per run in LLM tokens against $0.638 for Claude Code (Sonnet 4.6)
+  with the AtomisticSkills library, and gave more consistent uptake
+  (1.88&plusmn;0.12 against 1.25&plusmn;0.57 mmol/g over five runs); since the
+  two used different MLIP backends, the authors treat this as a workflow
+  comparison rather than an accuracy benchmark. Seven case studies cover
+  perovskite and lithium-conductor discovery with a generative structure model
+  and convex-hull screening, a conformer search reranked with DFT, metadynamics
+  on alanine dipeptide with agent-chosen collective variables, H<sub>2</sub>
+  adsorption on Fe(100), a nudged-elastic-band barrier on Fe(110) (1.09 eV
+  from MACE-OC20 and 1.79 eV from MACE-OMAT against 1.41 eV from DFT), and
+  CO<sub>2</sub>/H<sub>2</sub>O Widom insertion in metal-organic frameworks for
+  direct air capture. The framework code is not yet public; the linked
+  repository holds the prompts, chat histories, benchmark results and
+  workflow outputs.</p>
+tags:
+  - agents
+  - agent-harness
+  - science
+  - chemistry
+  - materials
+  - research
+paper:
+  arxiv: "2609.14840"
+  authors:
+    - Tsz Wai Ko
+    - Jiaru Bai
+    - Thomas Swanick
+    - Yeonghun Kang
+    - Changhyeok Choi
+    - Angelina Qihong Jiang
+    - Aiwei Yin
+    - Varinia Bernales
+related:
+  - el-agente-q

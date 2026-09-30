@@ -1,0 +1,79 @@
+name: "When Agents Slow Down: Understanding LLM Agents' Test-Time Strategies via Elo-per-token Analysis"
+slug: elo-per-token
+lab:
+  - berkeley
+  - uw
+type: paper
+date: 2026-09-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.15309
+  - label: GitHub
+    url: https://github.com/agent-tts/Agent-TTS-Code
+description: >
+  <p>A way to measure how agent harnesses turn test-time tokens into better
+  solutions, from UC Berkeley (senior author Alvin Cheung) with the University
+  of Washington, Princeton and Bespoke Labs. Pass/fail benchmarks such as
+  SWE-bench discard the trajectory, so the paper uses open-ended tasks that
+  score every intermediate submission, tracks each session's best score so far
+  at each token budget, and fits a Bradley&ndash;Terry model over within-task
+  orderings to get <strong>Elo-per-token</strong> curves that are comparable
+  across tasks with different score scales. The reference is independent
+  sampling, which the authors prove gains exactly <strong>400 Elo per tenfold
+  increase in tokens</strong>, whatever the score distribution.</p>
+
+  <p>Four harness and model pairs, <a href="/outputs/moonshot-ai/kimi-code">Kimi
+  Code</a> with <a href="/outputs/moonshot-ai/kimi-k2.7-code">Kimi K2.7
+  Code</a>, <a href="/outputs/openai/codex">Codex</a> with
+  <a href="/outputs/openai/gpt-5.5">GPT-5.5</a>,
+  <a href="/outputs/anthropic/claude-code">Claude Code</a> with
+  <a href="/outputs/anthropic/claude-opus-4.8">Claude Opus 4.8</a>, and Gemini
+  CLI with <a href="/outputs/google/gemini-3.5-flash">Gemini 3.5 Flash</a>,
+  each ran five sessions with a 100M-token budget on fourteen problems from
+  FrontierCS, ALE-Bench, MLS-Bench and FlashInfer-Bench. Several systems beat
+  the sampling slope at small budgets, but their local slopes then decline, and
+  in the pooled fit every system is below 400 Elo per decade by the largest
+  budgets; the authors place the turn after the first few context-window
+  compactions and conclude that context management remains a significant
+  problem. Outer-loop evolvers (AdaEvolve, GEPA) and test-time training
+  (TTT-Discover on gpt-oss-20b) also fail to sustain faster-than-sampling
+  scaling. Human contestants do: in seven AtCoder Heuristic Contests of 10 to
+  14 days, the top-10 and top-50 cohorts improve superlinearly in log contest
+  time, and on a locally rejudged AHC014 the top-10 cohort overtakes multi-day
+  <a href="/outputs/openai/gpt-5.6">GPT-5.6</a> Sol and Opus 4.8 runs. The
+  practical rule is to stop a session at its <strong>scaling inflection
+  point</strong>, where its slope falls to 400, and spend the rest of the
+  budget on parallel sessions: on FrontierCS Polyomino Packing, Kimi K2.7's
+  inflection at 38M tokens predicts three sessions for a 100M budget, which
+  beat one long session by 264 Elo and ten short ones by 355. Co-first authors
+  are Kaiyuan Liu (Berkeley and UW) and Qiuyang Mang (Berkeley, project lead);
+  co-authors include <a href="/people/luke-zettlemoyer">Luke Zettlemoyer</a>
+  and Alex Dimakis. The code (a patched Harbor runner plus the Elo analysis)
+  has no top-level license file, and the raw trial data is promised
+  separately.</p>
+tags:
+  - agents
+  - agent-harness
+  - evaluation
+  - scaling
+  - coding
+  - research
+paper:
+  arxiv: "2609.15309"
+  authors:
+    - Kaiyuan Liu
+    - Qiuyang Mang
+    - Bo Peng
+    - Wenhao Chai
+    - Hanchen Li
+    - Shreyas Pimpalgaonkar
+    - Luke Zettlemoyer
+    - Alex Dimakis
+  code_url: https://github.com/agent-tts/Agent-TTS-Code
+library:
+  github: https://github.com/agent-tts/Agent-TTS-Code
+  language: Python
+related:
+  - claude-code
+  - codex
+  - kimi-code

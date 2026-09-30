@@ -1,0 +1,81 @@
+name: KV-streams for Efficient Compaction in Agentic Reinforcement Learning
+slug: kv-streams
+lab:
+  - mila
+  - microsoft
+type: paper
+date: 2026-09-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.35750
+  - label: GitHub
+    url: https://github.com/Emilianopp/KV-streams
+description: >
+  <p>A training-systems method for long-horizon agentic RL from Mila and
+  Microsoft. Agents that run for hundreds of turns keep their context inside a
+  fixed budget by <strong>compaction</strong>: summarizing old turns, dropping
+  part of the history, or sliding a window. In standard pipelines each
+  compaction starts a fresh trace, so the retained tokens get new positions
+  and must be prefilled again, by the inference engine and again by the
+  trainer; the paper shows this repeated prefill grows without bound as the
+  retained context approaches the budget. <strong>KV-streams</strong> instead
+  evicts the dropped entries directly from the inference engine's KV cache and
+  keeps one continuous stream of cached keys and values, while the trainer
+  reproduces the same eviction with a custom attention mask, so no token is
+  processed twice. It works with any compaction rule; the paper tests four
+  (summarization, the Markovian Thinker's keep-half rule, a variant in which
+  the model picks which turns to keep, and a sliding window), using forks of
+  vLLM and prime-RL for text games and of SGLang and Slime for
+  software-engineering runs.</p>
+
+  <p>The abstract reports a 2.6 to 5&times; wall-clock training speedup. On
+  TextWorld (Qwen3-4B-Instruct-2507, one 8-GPU H100 node) KV-streams reaches
+  the final score of re-prefill compaction with 3.7 to 11.3&times; fewer
+  GPU-hours, and on ALFWorld, whose traces are shorter, throughput rises 1.3
+  to 3.0&times;, in both cases with no loss in success rate; the TextWorld
+  checkpoints also transfer to unseen text games as well as full-context
+  training does. For software engineering, Qwen3.5-4B is trained on
+  SWE-rebench and ScaleSWE tasks on an 8-GPU GB200 node: sliding-window
+  compaction with KV-streams scores 52.7&plusmn;2.1% on SWE-bench Verified,
+  within error of full context (51.5&plusmn;1.2%) and of re-prefill Markovian
+  Thinker (53.4&plusmn;0.2%), and peaks after about 20 hours against more than
+  65 for full context. Because retained KVs were computed while now-evicted
+  tokens were still visible, the stream can act as a recurrent state. Prior
+  work needed an SFT stage before models used this; here RL alone teaches
+  Qwen3-4B-Instruct to recall an evicted assignment through the cache (100%
+  recall once enough decoded tokens are retained, unreliable only at 16 and 32
+  tokens), and on TextWorld an SFT warm start did not pay for its own compute.
+  Filed under the RL-scaling family for its horizon/compute axis and that
+  stage result. First author Emiliano Penaloza (Mila, Microsoft,
+  Universit&eacute; de Montr&eacute;al) and senior authors Laurent Charlin and
+  Guillaume Lajoie (Mila) lead an 18-author team that includes Microsoft's
+  Alessandro Sordoni, Minseon Kim and Marc-Alexandre C&ocirc;t&eacute;. The
+  code release (a vLLM 0.19 fork with scheduler-level block eviction, plus a
+  prime-RL fork) covers a subset of the experiments and had no license file at
+  filing.</p>
+tags:
+  - rl
+  - rl-scaling
+  - agents
+  - long-context
+  - efficiency
+  - infrastructure
+  - post-training
+  - research
+paper:
+  arxiv: "2609.35750"
+  authors:
+    - Emiliano Penaloza
+    - Dane Malenfant
+    - Dheeraj Vattikonda
+    - Roger Creus Castanyer
+    - Siddarth Venkatraman
+    - Abhay Puri
+    - Jonathan Light
+    - Matthew James Sargent
+  code_url: https://github.com/Emilianopp/KV-streams
+library:
+  github: https://github.com/Emilianopp/KV-streams
+  language: Python
+related:
+  - slime

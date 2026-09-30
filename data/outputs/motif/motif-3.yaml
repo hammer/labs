@@ -48,8 +48,9 @@ description: >
   and an <strong>NVFP4</strong>-quantized build for Blackwell GPUs. AA lists the
   final model at <strong>AA Intelligence Index v4.3: 34</strong> &mdash; the
   <strong>#1 Korean model</strong> on the index &mdash; with particular strength
-  on agentic tool use (&tau;&sup3;-Banking 35.3, Terminal-Bench 2.1 74.9,
-  ITBench 51.5) and calibrated abstention on AA-Omniscience (71.6
+  on agentic tool use (&tau;&sup3;-Banking 35.3,
+  <a href="/outputs/stanford/terminal-bench">Terminal-Bench</a> 2.1 74.9,
+  <a href="/outputs/ibm/itbench">ITBench</a> 51.5) and calibrated abstention on AA-Omniscience (71.6
   non-hallucination). Motif's torchtitan-based training framework
   (motif3-training-example) and a vLLM fork with Motif-3 support are open on
   GitHub. From a lab spun out of Moreh, trained on its GPU-optimization

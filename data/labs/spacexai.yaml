@@ -70,10 +70,10 @@ description: >
   moved to intervene and dismiss the suit on national-security grounds.</p>
 
   <p>Days after the IPO, in <strong>June 2026 SpaceX agreed to acquire the AI
-  coding company Cursor (Anysphere) for $60B</strong> in an all-stock deal &mdash;
-  <strong>pending regulatory approval, with an expected Q3 2026 close</strong>
-  &mdash; to be folded under the xAI division (Cursor was last independently valued
-  at $29.3B in November 2025). The company has seen heavy attrition: all of xAI's
+  coding company Cursor (Anysphere) for $60B</strong> in an all-stock deal (Cursor
+  was last independently valued at $29.3B in November 2025), to be folded under
+  the xAI division; <strong>the acquisition closed on August 15, 2026</strong>.
+  The company has seen heavy attrition: all of xAI's
   original co-founders have now departed &mdash;
   <a href="https://scholar.google.com/citations?user=_N2COeAAAAAJ">Igor
   Babuschkin</a> (DeepMind AlphaStar) left in August 2025 to start Babuschkin
@@ -128,6 +128,10 @@ news:
     url: https://siliconangle.com/2026/09/21/spacex-launches-grok-4-7-with-long-horizon-processing-safety-upgrades/
     source: SiliconANGLE
     date: 2026-09-21
+  - title: "SpaceX Officially Closes Its $60B Cursor Acquisition"
+    url: https://techcrunch.com/2026/08/15/spacex-officially-closes-its-cursor-acquisition/
+    source: TechCrunch
+    date: 2026-08-15
   - title: "Musk: Grok 4.6 (2T Params) Initial Training Done, Targeting ~Aug 7; Grok 4.7 ~4 Weeks Later"
     url: https://www.nextbigfuture.com/2026/07/grok-4-6-initial-training-complete.html
     source: NextBigFuture

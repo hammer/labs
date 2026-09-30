@@ -1,0 +1,93 @@
+name: "Accelerating Open-Source Biomolecular Models with Claude"
+slug: uplifting-biomolecular-modeling
+lab: anthropic
+type: library
+date: 2026-09-17
+sources:
+  - label: Announcement
+    url: https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling
+  - label: Technical report (PDF)
+    url: https://www-cdn.anthropic.com/e96b5807039a88168733d9687afe41dfbbd5de13.pdf
+  - label: GitHub
+    url: https://github.com/anthropics/uplifting-biomolecular-modeling
+  - label: Protein design competition (Adaptyv Bio)
+    url: https://proteinbase.com/competitions/anthropic-adaptyv-2026
+description: >
+  <p>Inference optimizations for 36 implementations of more than 30 open
+  biomolecular models, produced in just under four weeks by an internal
+  general-purpose Anthropic research model working in Claude Science. Two
+  scientists experienced in biomolecular modeling, but not in inference
+  optimization or kernel engineering, supervised it. The repository holds
+  one drop-in <strong>kit</strong> per upstream tool, covering structure
+  prediction and cofolding (Boltz-2, Chai-1, OpenFold3,
+  <a href="/outputs/bytedance-seed/protenix">Protenix</a>, RoseTTAFold3,
+  ESMFold2, ColabFold, and AlphaFold 3 inference code run on OpenFold3
+  weights), binder and sequence design (RFdiffusion and RFdiffusion3,
+  BoltzGen, BindCraft, <a href="/outputs/bytedance-seed/pxdesign">PXDesign</a>,
+  ProteinMPNN), and protein and genomic language models (ESM C, ProGen2,
+  Evo 2, Enformer, Borzoi). Each kit wraps a pinned upstream release with
+  its original weights and switches on under a named mode:
+  <strong>exact</strong> (outputs identical to the unmodified tool),
+  <strong>fast</strong> (small numeric differences within the tool's own
+  seed-to-seed variation) or <strong>big</strong> (lowest peak GPU memory,
+  optionally split across the GPUs of one node). A shared core includes
+  <strong>FlashPairformer</strong>, new GPU kernels for the triangle
+  attention and triangle multiplication at the heart of Pairformer-style
+  structure models.</p>
+
+  <p>On NVIDIA H100s, exact mode ran the forward pass of 14 structure
+  prediction models <strong>1.6&times;</strong> faster on average, and fast
+  mode ran 13 of them <strong>4.1&times;</strong> faster. The share of
+  acceptably predicted interfaces (DockQ &ge; 0.23), pooled over 13 model
+  configurations and 1,925 model&ndash;target pairs, moved by less than one
+  percentage point in every mode. FlashPairformer's triangle attention is
+  on average 2.7&times; faster than the field-standard kernels at the pair
+  width most of these models use. Big mode predicted complexes of more than
+  10,000 tokens accurately on a single 8-GPU node, including human
+  mitochondrial complex I and the E. coli 70S ribosome, and ran inference
+  on assemblies of up to 70,320 residues on eight B300s, though those
+  largest predictions were not accurate. In a demonstration, a single
+  Claude model with one H200, 24 hours, a prompt of about 1,100 words and
+  no sub-agents designed protein binders whose in silico ipSAE scores
+  matched earlier Claude Mythos 5.1 campaigns that used about 100 times
+  the GPU hours; Anthropic puts the combined GPU and token spend at about
+  $150.</p>
+
+  <p>The kits are Apache 2.0 for Anthropic's code, with each upstream tool
+  under its own license, and are a reference release that Anthropic does
+  not plan to update and that accepts no contributions (316 stars at
+  filing). The 140-page technical report lists "Claude Science" as
+  co-first author with Richard Shuai, has Amir Shanehsazzadeh as
+  corresponding author, and includes co-authors from Biohub and Columbia
+  University. Alongside it, Anthropic and Adaptyv Bio launched a
+  protein-design competition on five problems, with up to $1 million in
+  Claude credits, $250,000 in Modal compute credits and wet-lab validation
+  for more than 5,000 designs.</p>
+tags:
+  - science
+  - biology
+  - protein
+  - efficiency
+  - inference
+  - gpu-kernels
+  - open-source
+paper:
+  authors:
+    - Claude Science
+    - Richard Shuai
+    - Rohil Badkundri
+    - Vincent Fan
+    - Kilian Fatras
+    - Lukas Jarosch
+    - Amir Shanehsazzadeh
+  pdf_url: https://www-cdn.anthropic.com/e96b5807039a88168733d9687afe41dfbbd5de13.pdf
+  code_url: https://github.com/anthropics/uplifting-biomolecular-modeling
+library:
+  github: https://github.com/anthropics/uplifting-biomolecular-modeling
+  language: Python
+  license: Apache 2.0
+related:
+  - protenix
+  - pxdesign
+  - alphafold-3
+  - art-reverse-transcriptases

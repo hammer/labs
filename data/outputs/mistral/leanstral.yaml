@@ -17,8 +17,9 @@ description: >
   compaction on long-horizon proof tasks. Results: saturates miniF2F,
   solves 587/672 PutnamBench problems, and sets SOTA on FATE-H (87%) and
   FATE-X (34%). Mistral says it has already surfaced previously unknown
-  bugs in open-source code via formal verification. Free in beta via the
-  Labs API (`labs-leanstral-1-5`) and Mistral Vibe.</p>
+  bugs in open-source code via formal verification. It was free in beta via
+  the Labs API (`labs-leanstral-1-5`) and Mistral Vibe; the Labs API model was
+  retired on September 30, 2026, while the open weights remain available.</p>
 tags:
   - formal-methods
   - math

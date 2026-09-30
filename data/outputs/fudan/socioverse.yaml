@@ -8,6 +8,10 @@ sources:
     url: https://arxiv.org/abs/2504.10157
   - label: GitHub
     url: https://github.com/FudanDISC/SocioVerse
+  - label: "SocioVerse2 paper (arXiv)"
+    url: https://arxiv.org/abs/2609.24911
+  - label: SocioVerse2 GitHub
+    url: https://github.com/sii-research/SocioVerse2
 description: >
   <p>Social-simulation "world model" backed by a pool of <strong>10
   million real users</strong>, aligning LLM-agent populations to
@@ -15,6 +19,11 @@ description: >
   simulation (200+&#9733;). From FudanDISC
   (<a href="/people/zhongyu-wei">Zhongyu Wei</a>), the group's anchor
   social-agent artifact.</p>
+
+  <p><strong>SocioVerse2</strong> (September 21, 2026, with the Shanghai
+  Innovation Institute) extends the framework to longitudinal, dynamic
+  simulation under a human&ndash;AI co-evolutionary paradigm, with an open
+  SocioVerse Challenge running through October 31.</p>
 tags:
   - agents
   - simulation

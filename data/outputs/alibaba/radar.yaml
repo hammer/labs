@@ -1,0 +1,72 @@
+name: "RADAR: An Expert-Level Generalist AI for Abdominal CT Diagnosis"
+slug: radar
+lab:
+  - alibaba
+  - zhejiang
+type: model
+date: 2026-09-17
+sources:
+  - label: Paper (Science)
+    url: https://www.science.org/doi/10.1126/science.aec6129
+  - label: GitHub
+    url: https://github.com/alibaba-damo-academy/damo-radar
+  - label: HuggingFace (weights)
+    url: https://huggingface.co/Alibaba-DAMO-Academy/RADAR
+  - label: Code archive (Zenodo)
+    url: https://zenodo.org/records/21271172
+description: >
+  <p>A generalist vision-language model for abdominal CT, published in
+  <strong>Science</strong> on 2026-09-17 (vol 393, issue 6817, eaec6129) by
+  <strong>Alibaba DAMO Academy</strong> with Zhejiang University's First
+  Affiliated Hospital. RADAR is trained on <strong>more than 400,000
+  contrast-enhanced abdominal CT examinations and 15 million anatomy-wise
+  image&ndash;text pairs</strong>, "learning directly from clinical reports
+  without manual annotation" &mdash; the supervision comes from radiology
+  reports rather than per-voxel labels, which is what lets one model cover
+  the whole abdomen instead of a single task. Across internal and external
+  evaluations at multiple centers the paper reports high diagnostic
+  performance and generalization over <strong>18 anatomical structures and
+  146 imaging findings</strong>, and in a reader study RADAR assistance
+  raised the diagnostic sensitivity of <strong>26 radiologists by about
+  10%</strong>. The authors' claim is that a generalist model "can match
+  human experts in general and complicated radiology tasks."</p>
+
+  <p>Weights, code and preprocessing pipelines are public under
+  <strong>CC BY-NC-SA 4.0</strong> (research use only; the model card states
+  that further improvement and prospective clinical studies are needed before
+  clinical deployment). The release ships the RAD-CT-pretrained RADAR
+  checkpoint, a UNet vision-branch checkpoint, and two <strong>RADAR+</strong>
+  checkpoints &mdash; one trained from scratch on Merlin-CT-Train and one
+  pretrained on RAD-CT then fine-tuned on it &mdash; with BERT tokenizers and
+  encoders for Chinese and English; the implementation builds on LAVIS,
+  nnU-Net, MONAI and 3D-ResNets-PyTorch. Documentation covers training,
+  inference against the external MERLIN test set, and report/image
+  preprocessing. The paper has 40 authors: first author Qi Zhang and senior
+  author Tingbo Liang are at the Department of Hepatobiliary and Pancreatic
+  Surgery of Zhejiang University School of Medicine's First Affiliated
+  Hospital, while the model work and senior author Ling Zhang are at Alibaba
+  DAMO Academy (several DAMO co-authors hold joint Hupan Laboratory and
+  Zhejiang University appointments). The GitHub repository, opened in July
+  2026, has about 149 stars.</p>
+tags:
+  - science
+  - medical
+  - multimodal
+  - vision
+  - research
+model:
+  license: CC BY-NC-SA 4.0
+paper:
+  venue: "Science 393(6817), eaec6129"
+  authors:
+    - Qi Zhang
+    - Jianpeng Zhang
+    - Weiwei Cao
+    - Zilin Lu
+    - Wanxing Chang
+    - Ling Zhang
+    - Tingbo Liang
+  code_url: https://github.com/alibaba-damo-academy/damo-radar
+  huggingface_url: https://huggingface.co/Alibaba-DAMO-Academy/RADAR
+related:
+  - abdomenatlas

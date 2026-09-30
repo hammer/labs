@@ -1,0 +1,71 @@
+name: "Delta-Matching: Closing the Final Gap of Native 8-bit Training for LLMs"
+slug: delta-matching
+lab:
+  - cmu
+  - nvidia
+type: paper
+date: 2026-09-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.37852
+description: >
+  <p>A fix for FP8 attention in LLM pretraining from Carnegie Mellon (first
+  author Haozhan Tang, senior author Chenyan Xiong) with NVIDIA's Han Cai and
+  <a href="/people/song-han">Song Han</a> (NVIDIA and MIT). FP8 recipes such as
+  <a href="/outputs/deepseek/deepseek-v3">DeepSeek-V3</a>'s quantize the linear
+  layers but keep the attention core in higher precision, and
+  <a href="/outputs/princeton/flashattention-3">FlashAttention-3</a>'s FP8
+  kernel is forward-only. The paper traces an FP8 attention training failure
+  to FlashAttention's backward shortcut, which computes the softmax row
+  correction (delta) from the saved forward output: when forward and backward
+  operands are rounded separately, this <strong>stale delta</strong> breaks the
+  softmax gradient's zero-row-sum invariant. The damage accumulates. In
+  hybrids of Gated DeltaNet and grouped-query attention trained on 30B
+  Nemotron-CC tokens, the loss gap is modest at 569M parameters, but at 1.67B
+  and 5.29B the loss first tracks BF16 and then rises while downstream scores
+  fall; at 5.29B validation cross-entropy reaches 1.9327 against 1.3349,
+  RULER-8K drops from 53.5% to 16.3%, and a nine-task commonsense average from
+  63.1% to 45.4%. QK normalization, removing positional encoding from
+  attention, and a lower-learning-rate context extension only delay or soften
+  the failure, and larger heads do not help.</p>
+
+  <p><strong>Delta-Matching</strong> computes the correction from the
+  unquantized probabilities and FP32 products of the FP8 backward operands,
+  which the authors prove restores the invariant under stated numerical
+  assumptions. That allows native block-scaled FP8 in all seven
+  attention-core matmuls (two forward, five backward) with no architecture
+  change, smaller batch or extra saved output. On the 1.67B hybrid (18 Gated
+  DeltaNet and 6 attention layers, two seeds) it reaches 1.4162 validation
+  cross-entropy against 1.4178 for BF16/FP32, 1.6105 for cuDNN/Transformer
+  Engine FP8 and 1.8970 with stale delta, with every commonsense benchmark
+  within one point of BF16/FP32, though RULER-8K is lower (47.8 against
+  52.3). It stays within 0.0025 cross-entropy of BF16/FP32 at 569M and 5.29B,
+  within 0.0006 on hybrids using multi-head latent attention or
+  <a href="/outputs/moonshot-ai/kimi-linear">Kimi Delta Attention</a>, tracks
+  the reference under both AdamW and Muon, and matches BF16/FP32 on RULER
+  after 8K-to-64K context extension (45.6% against 46.0% at 64K), where one of
+  two cuDNN/TE FP8 runs diverged. Runs used eight H100 or H200 GPUs each.
+  Despite a separate correction pass, its kernel has lower combined forward
+  and backward latency on H100 than BF16 FlashAttention-3, though it is slower
+  than cuDNN BF16 at head dimension 128, and the paper reports no end-to-end
+  training speedup. Code, trained models and data recipes are promised but
+  were not released at filing.</p>
+tags:
+  - training
+  - efficiency
+  - quantization
+  - attention
+  - pretraining
+  - research
+paper:
+  arxiv: "2609.37852"
+  authors:
+    - Haozhan Tang
+    - Hao Kang
+    - Han Cai
+    - Song Han
+    - Chenyan Xiong
+related:
+  - flashattention-3
+  - deepseek-v3
+  - kimi-linear

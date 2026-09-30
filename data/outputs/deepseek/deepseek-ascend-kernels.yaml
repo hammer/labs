@@ -1,0 +1,67 @@
+name: DeepGEMM-Ascend and DeepEP-Ascend
+slug: deepseek-ascend-kernels
+lab: deepseek
+type: library
+date: 2026-09-30
+sources:
+  - label: GitHub (DeepGEMM-Ascend)
+    url: https://github.com/deepseek-ai/DeepGEMM-Ascend
+  - label: GitHub (DeepEP-Ascend)
+    url: https://github.com/deepseek-ai/DeepEP-Ascend
+description: >
+  <p>First-party Huawei Ascend ports of DeepSeek's two core kernel libraries,
+  published a day apart at the end of September 2026 and validated on
+  <strong>Ascend 950</strong> hardware with CANN 9.2 and
+  <code>torch_npu</code>. Both keep the CUDA versions' public APIs, so the
+  same code runs on either stack, and both compile their device kernels at
+  runtime through <a href="/outputs/deepseek/deepjit">DeepJIT</a>, the
+  dual-target JIT runtime DeepSeek released three weeks earlier. Together
+  with <a href="/outputs/deepseek/deepseek-v4">DeepSeek-V4</a>, trained on
+  Ascend, they complete the lab's second, non-NVIDIA stack in public.</p>
+
+  <p><strong>DeepGEMM-Ascend</strong> (MIT, ~363 stars at filing) is
+  "a port of <a href="/outputs/deepseek/deepgemm">DeepGEMM</a> to the HUAWEI
+  Ascend platform&hellip; fully API-compatible" and covers BF16, FP8 and FP4
+  GEMM, MQA logits for the Lightning Indexer, MegaMoE and the mHC prenorm
+  kernel. It wraps Ascend's matrix multiply-add primitives so kernels avoid
+  fractal layouts, alignment and address arithmetic, and leans on
+  Ascend-specific tricks &mdash; sparse data loading, coroutine-based
+  pipelining. On Ascend 950DT the README reports dense GEMM at
+  <strong>98.3&ndash;99.8% of the hardware limit</strong> across types
+  (BF16 431 of 432 TFLOPS; FP8 861 of 865; FP4 1,701 of 1,730 at
+  M=4096, N=7168, K=16384), grouped MoE GEMM at 818&ndash;862 TFLOPS, and an
+  MQA-logits kernel that is FIX-pipe rather than compute bound at 99%
+  utilization. One scaling-factor difference from NVIDIA is documented: UE8M0
+  pairs are packed into an <code>int16</code> along K and stored MN-major.</p>
+
+  <p><strong>DeepEP-Ascend</strong> (~177 stars; no LICENSE file in the
+  repository at filing) provides the expert-parallel all-to-all for MoE
+  dispatch and combine, including FP8 dispatch and deferred epilogues, with
+  work-in-progress pipeline-parallel send/receive, Bucket collectives for
+  context and data parallelism, and remote memory access through Engram. Its
+  Ascend C kernels ride Huawei's HCCL/HCOMM, UBMEM and URMA stack. Measured
+  on Ascend 950DT at 16,384 tokens per rank, hidden 7168 and top-6 routing
+  over 256 experts, <strong>dispatch reaches 373&ndash;375 GB/s at EP8 and
+  313&ndash;320 GB/s at EP128</strong>, combine 345&ndash;347 down to
+  272&ndash;278 GB/s; sustained dispatch is "roughly 90&ndash;95% of the
+  physical payload bandwidth limit for EP sizes up to 32," with larger EP
+  sizes and combine still under optimization. The README is explicit that its
+  numbers came from a proof-of-concept Huawei HDK supplied to DeepSeek with
+  manual configuration, not a public release. DeepGEMM-Ascend's
+  acknowledgements thank Huawei for engineering support; DeepEP-Ascend's
+  thank the asc-comm team.</p>
+tags:
+  - infrastructure
+  - efficiency
+  - moe
+  - open-source
+  - hardware
+library:
+  github: https://github.com/deepseek-ai/DeepGEMM-Ascend
+  language: C++
+  license: MIT
+related:
+  - deepgemm
+  - deepep
+  - deepjit
+  - deepseek-v4

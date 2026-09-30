@@ -1,0 +1,71 @@
+name: OpenShell
+slug: openshell
+lab: nvidia
+type: library
+date: 2026-09-25
+sources:
+  - label: Blog (NVIDIA Technical Blog)
+    url: https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell/
+  - label: Blog (Open Agent Safety Platform)
+    url: https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/
+  - label: GitHub
+    url: https://github.com/NVIDIA/OpenShell
+  - label: Release notes (v0.1.0)
+    url: https://github.com/NVIDIA/OpenShell/releases/tag/v0.1.0
+  - label: Documentation
+    url: https://docs.nvidia.com/openshell/latest/
+description: >
+  <p>NVIDIA's open-source runtime for running autonomous agents under
+  permissions that are enforced outside the agent. Each agent works in a
+  <strong>sandbox</strong> whose file access and system calls are confined by
+  kernel-level controls and whose only network path runs through a
+  <strong>supervisor</strong> outside the workload. The supervisor checks every
+  outbound connection against a YAML policy compiled to OPA/Rego, and for HTTP,
+  GraphQL and MCP traffic it can judge individual requests, for example
+  allowing reads while blocking writes to the same API. The controls still
+  apply when the agent opens a shell, runs generated code, spawns child
+  processes or delegates to sub-agents, and every decision goes to an OCSF
+  audit trail. Credentials never enter the sandbox: the agent holds a
+  placeholder, and OpenShell substitutes the real secret only on requests to
+  the endpoints approved for it. A <strong>gateway</strong> manages fleets of
+  sandboxes and their policies. When a request is blocked, a policy advisor
+  can let the agent propose a narrow network or file rule that waits for human
+  review (the agent cannot approve its own request) and then loads into the
+  running sandbox. A <strong>policy prover</strong> uses formal verification
+  to show what access a policy change would grant, such as reaching a new host
+  with credentials, before anyone approves it. NVIDIA reports long-horizon
+  adversarial tests in which frontier agents with reduced safeguards spent up
+  to two hours trying to talk an AI reviewer into granting write access to a
+  protected GitHub repository; with the prover's evidence in hand, no protected
+  writes occurred.</p>
+
+  <p>This entry is dated to <strong>v0.1.0</strong>, the first stable release,
+  published September 25, 2026 (v0.1.1 and v0.1.2 followed on September 26 and
+  28). The repository was created in February 2026, and tagged builds date
+  back to March 2026: 94 v0.0.x releases between March 16 and August 28, plus
+  a rolling development build. NVIDIA's developer blog introduced the 0.1 line on
+  September 28, listing multi-tenant workspaces, formal policy verification,
+  third-party security and governance middleware, credential-protected service
+  access, and CPU and GPU execution across Docker, Podman, microVM and
+  Kubernetes compute drivers. The same day NVIDIA described OpenShell as the
+  runtime layer of its Open Agent Safety Platform, which pairs OpenShell on
+  Vera CPUs with NVIDIA Sentry monitoring on BlueField-4 DPUs. The runtime
+  supports Codex, Claude Code, Pi and Hermes agents, and NVIDIA names Cadence
+  (RTL chip design), Slack (an on-demand agent platform) and Gecko Robotics
+  (agents deciding on physical robots) as adopters. Written in Rust with
+  Python, TypeScript, Go and Rust SDKs; Apache 2.0; about 12,200 GitHub stars
+  by September 30, 2026.</p>
+tags:
+  - agents
+  - agent-harness
+  - infrastructure
+  - security
+  - safety
+  - open-source
+library:
+  github: https://github.com/NVIDIA/OpenShell
+  language: Rust
+  license: Apache 2.0
+  pip_package: openshell
+related:
+  - dsec

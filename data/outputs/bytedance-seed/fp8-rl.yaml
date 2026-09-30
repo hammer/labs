@@ -1,0 +1,60 @@
+name: "Towards Full Pipeline FP8 Reinforcement Learning for LLMs"
+slug: fp8-rl
+lab: bytedance-seed
+type: paper
+date: 2026-09-19
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.22870
+description: >
+  <p>Diagnoses why reinforcement learning becomes unstable when rollouts and
+  training both run in FP8, and fixes it with a change to PPO-style clipping.
+  Six of the eight authors, including Ziheng Jiang and Haibin Lin, are at
+  ByteDance Seed; first author Fanchao Chen did the work as a Seed intern
+  from the University of Wisconsin&ndash;Madison. Earlier FP8 RL work
+  concentrated on the mismatch between FP8 rollouts and higher-precision
+  training, corrected with truncated importance sampling (TIS). With TIS in
+  place and FP8 used end to end, the authors still see abrupt
+  <strong>mid-training entropy surges</strong> and garbled outputs under
+  tensorwise, rowwise and blockwise scaling alike. They trace the cause to
+  compounded quantization noise in the importance ratio: small
+  per-probability errors are amplified in the ratio and distort the trust
+  region, pushing a disproportionate share of negative-advantage tokens past
+  the lower clipping bound, where their gradients are zeroed, so pathological
+  outputs go unpenalized and accumulate. <strong>Calibrated Clipping</strong>
+  periodically resets the lower bound to match the clipping quantile of a
+  BF16 reference and rebalances the upper bound, restoring the intended trust
+  region at negligible overhead.</p>
+
+  <p>With GRPO on DeepScaleR, plain full-pipeline FP8 lowers Qwen3-8B-Base's
+  average over eight math benchmarks by 11.5, 10.6 and 3.5 points for
+  tensorwise, rowwise and blockwise scaling. With Calibrated Clipping,
+  blockwise FP8 reaches 58.6 against 57.6 for BF16, and Qwen2.5-32B reaches
+  53.4 against 51.9. The recovery is partial under DAPO: on Qwen3-14B-Base,
+  AIME24 avg@32 rises from 35.7&ndash;41.6 to 46.5&ndash;47.9 across the three
+  scaling granularities, still 3.0&ndash;4.4 points below BF16's 50.9 but
+  level with FP8 rollouts plus BF16 training (47.4). An offline TorchAO
+  benchmark puts FP8 training throughput at up to 1.5&times; BF16 for 8B to
+  32B models. The experiments use verl, vLLM with FlashRL's FP8-rollout
+  patch, and TorchAO; no code has been released.</p>
+tags:
+  - rl
+  - efficiency
+  - training
+  - quantization
+  - training-stability
+  - infrastructure
+paper:
+  arxiv: "2609.22870"
+  authors:
+    - Fanchao Chen
+    - Ziheng Jiang
+    - Ziyun Wei
+    - Zheng Zhong
+    - Du Li
+    - Chi Zhang
+    - Haibin Lin
+    - Shivaram Venkataraman
+related:
+  - dapo
+  - verl

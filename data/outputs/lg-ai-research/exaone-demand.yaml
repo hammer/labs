@@ -1,0 +1,76 @@
+name: "EXAONE Demand 1.0"
+slug: exaone-demand
+lab: lg-ai-research
+type: paper
+date: 2026-09-25
+sources:
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2609.30880
+  - label: GitHub (EXAONE Forecast runtime, cited as the code)
+    url: https://github.com/LGAI-Research/EXAONE-Forecast
+description: >
+  <p>"A Time Series Foundation Model for Demand Forecasting." LG AI Research's
+  second domain-specific time-series foundation model, after
+  <a href="/outputs/lg-ai-research/exaone-finance">EXAONE Finance</a>. General
+  TSFMs see little demand data during pretraining, and demand series have
+  properties those corpora rarely contain: short histories, frequent zeros,
+  censoring by stock-outs, and exogenous events such as promotions that the
+  series does not record. EXAONE Demand addresses this with two components.
+  The first is a <strong>demand corpus of 11.3M series and 48.4B observations
+  from 73 sources</strong>, plus a synthetic generator for behaviour that open
+  demand data under-represents: intermittency, moving holidays (Lunar New
+  Year, Chuseok, Easter, Thanksgiving), promotions with a build-up, peak and
+  post-promotion dip, cannibalisation, price elasticity, product launches and
+  discontinuations, and stock-out censoring under an (s,S) inventory policy.
+  The second is a <strong>demand-aware adapter</strong>. A frozen
+  general-domain backbone (24 blocks, width 1,024, 8,192-step context,
+  pretrained only on KernelSynth Gaussian-process series) gets five low-rank
+  branches in each of its attention and feed-forward projections: one shared
+  branch and one for each of the four classical demand classes (smooth,
+  intermittent, erratic, lumpy). A router reads eight scale-free statistics of
+  the input series to weight the four class branches. Only the branches and
+  the router are trained (9,000 steps on 8 GPUs).</p>
+
+  <p>LG built two versions: one trained on real and synthetic demand, and one
+  trained on the synthetic corpus alone, because open demand data carries
+  licences that a model trained on it inherits. The authors ran 36 TSFMs
+  themselves under one protocol on 22 held-out demand datasets. The full model
+  has the best geometric-mean <strong>MASE (1.0667)</strong> and wins 91.9% of
+  its 836 pairwise comparisons. Next come the synthetic-only version (1.0742,
+  88.0%), TiRex-1.1 (1.0818, 82.5%),
+  <a href="/outputs/amazon/chronos-2">Chronos-2</a> (1.0885, 80.0%) and
+  TimesFM-2.5 (1.1073, 76.2%). The frozen backbone alone scores 1.1050. Adding
+  real-world data lowers error on 16 of the 22 datasets and raises it on
+  6.</p>
+
+  <p>All twelve authors are at LG AI Research, and Wonbin Ahn is the
+  corresponding author. The report is on arXiv under CC BY-NC-ND 4.0. The
+  weights are not public: the Hugging Face repository the paper links
+  (LG-AI-Research/EXAONE-Demand-1.0) returned HTTP 401 at filing. The GitHub
+  repository it cites as code, LGAI-Research/EXAONE-Forecast (6 stars), held
+  only the EXAONE Finance inference runtime and the
+  <a href="/outputs/lg-ai-research/exaone-forecast">EXAONE Forecast</a>
+  general-model report at filing, with no demand code.</p>
+tags:
+  - time-series
+  - forecasting
+  - foundation-model
+  - science
+  - research
+paper:
+  arxiv: "2609.30880"
+  authors:
+    - Seunghan Lee
+    - Sangjun Han
+    - Jun Seo
+    - Junhyeok Kang
+    - Jaehoon Lee
+    - Tae Yoon Lim
+    - Dongwan Kang
+    - Hwanil Choi
+  code_url: https://github.com/LGAI-Research/EXAONE-Forecast
+related:
+  - exaone-forecast
+  - exaone-finance
+  - exaone-tabular
+  - chronos-2

@@ -1,0 +1,70 @@
+name: "JitMem: Just-in-Time Memory for LLM Agents"
+slug: jitmem
+lab: salesforce
+type: paper
+date: 2026-09-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.27334
+description: >
+  <p>"Just-in-Time Memory: Learning to Curate Task-Adaptive Memory for LLM
+  Agents." An agent-memory method from Salesforce AI Research (Yefan Zhou
+  and Yang Li co-first, with Zeyu Leo Liu, Semih Yavuz and Shafiq Joty)
+  that moves curation from write time to read time. Most agent-memory
+  systems distill each finished task into a fixed artifact (a reflection,
+  insight, workflow, skill or reasoning strategy) and retrieve it later by
+  similarity, so they decide what to keep before the next query is known.
+  Learning such a write-time curator also suffers from delayed credit,
+  because a storage decision pays off only when some later task retrieves
+  it. <strong>JitMem</strong> stores raw trajectories instead. For each new
+  task a retriever pulls past trajectories from the bank and a
+  <strong>curator</strong> model condenses them into a compact, task-specific
+  payload for a frozen executor; trajectories the executor judges
+  successful go back into the bank. Because the payload is used on the
+  same task, the curator's reward is that task's outcome, and the paper
+  trains a Qwen3-8B curator with GRPO for 100 steps without the task
+  grouping that learned write-time curators such as SkillOS need. BAAI's
+  <a href="/outputs/baai/jam">JAM</a>, posted five days later, also keeps
+  raw history and assembles memory at query time; JitMem keeps the curator
+  separate from the executor, so one trained curator serves several
+  executors.</p>
+
+  <p>The evaluation covers ALFWorld, WebShop and &tau;&sup2;-bench with
+  Qwen3-8B, Gemini-2.5-Pro and GPT-5.4 as frozen executors, against a
+  no-memory agent and three write-time methods (ReasoningBank, MemP,
+  SkillOS). With RL-trained Qwen3-8B curators on both sides, JitMem beats
+  SkillOS by <strong>77.4 to 61.2</strong> success rate on ALFWorld and
+  32.8 to 16.5 on WebShop; with Gemini-2.5-Pro executing, the margins are
+  86.2 to 80.2 and 50.5 to 41.3. Read-time curation helps even untrained:
+  with Qwen3-8B as executor and curator, untrained JitMem reaches 60.5 on
+  ALFWorld against 55.7 for ReasoningBank. &tau;&sup2;-bench has no
+  training split, so only training-free variants were compared there: with
+  GPT-5.4 as executor and curator, JitMem scores 75.6 against 71.7 for
+  ReasoningBank, with the largest per-domain gain on Telecom (+11.0) and
+  no memory method beating the no-memory agent beyond variance on Airline
+  and Retail. Paired with a GPT-5.4 executor, a curator trained with
+  Qwen3-8B as its executor comes within 1.4 points on ALFWorld of one
+  trained directly with GPT-5.4. The compact
+  payloads cut executor input tokens by 50.3&ndash;56.3% and steps by
+  28.4&ndash;31.4% relative to write-time methods. No code was linked at
+  filing.</p>
+tags:
+  - agents
+  - agent-harness
+  - memory
+  - long-context
+  - retrieval
+  - rl
+  - post-training
+  - research
+paper:
+  arxiv: "2609.27334"
+  authors:
+    - Yefan Zhou
+    - Yang Li
+    - Zeyu Leo Liu
+    - Semih Yavuz
+    - Shafiq Joty
+related:
+  - jam
+  - gam

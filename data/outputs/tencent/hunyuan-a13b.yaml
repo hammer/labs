@@ -9,6 +9,8 @@ sources:
     url: https://github.com/Tencent-Hunyuan/Hunyuan-A13B
   - label: Technical Report (PDF)
     url: https://github.com/Tencent-Hunyuan/Hunyuan-A13B/blob/main/report/Hunyuan_A13B_Technical_Report.pdf
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2609.27284
   - label: Announcement
     url: https://www.marktechpost.com/2025/06/28/tencent-open-sources-hunyuan-a13b-a-13b-active-parameter-moe-model-with-dual-mode-reasoning-and-256k-context/
 description: >
@@ -39,6 +41,12 @@ outputs:
     sources:
       - label: Technical Report (PDF)
         url: https://github.com/Tencent-Hunyuan/Hunyuan-A13B/blob/main/report/Hunyuan_A13B_Technical_Report.pdf
+      - label: Technical Report (arXiv)
+        url: https://arxiv.org/abs/2609.27284
     description: >
       Technical report for the 80B total / 13B active MoE model with dual-mode
-      reasoning capability.
+      reasoning capability, pretrained on a filtered 20T-token corpus. First
+      published as a PDF in the GitHub repository at release; posted to arXiv
+      on 2026-09-23.
+    paper:
+      arxiv: "2609.27284"

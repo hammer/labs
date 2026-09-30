@@ -41,13 +41,15 @@ description: >
   AutomationBench, ScreenSpot Pro, Terminal-Bench Science 0.1, and HealthBench
   Pro. Codex gains notes that persist across context windows, so long sessions
   no longer depend on lossy compaction, and OpenAI says computer use runs about
-  2&times; faster. On the <strong>AA Intelligence Index v4.3</strong> the
-  max-effort mode scores <strong>53</strong>, level with Claude Fable 5.1 at the
-  top of the index (it was #2 of 202 behind Fable 5.1's 57 at its September
-  2026 release under v4.2) and 6 points above GPT-5.6 Sol; AA measures 73.4 output tokens/s with a
+  2&times; faster. On the <strong>AA Intelligence Index v4.3.2</strong> the
+  max-effort mode scores <strong>53</strong>, level with Claude Fable 5.1 (the
+  pair led the index until Claude Opus 5.5 and Sonnet 5.5 passed them in late
+  September; Astra was #2 of 202 behind Fable 5.1's 57 at its September 2026
+  release under v4.2) and 6 points above GPT-5.6 Sol; AA measures 73.4 output tokens/s with a
   384-second time to first token at max effort and finds Astra more
   token-efficient than almost every other model near the frontier. Per-effort
-  AA scores (v4.3): xhigh 53, high 51, medium 50, low 46, non-reasoning 45.</p>
+  AA scores (v4.3.2): xhigh 52, high 51, medium 50, low 46; non-reasoning 45 on
+  v4.3.</p>
 
   <p>The system card (September 3) makes Astra the first OpenAI model to reach
   the <strong>Critical level for cybersecurity</strong> under the Preparedness

@@ -11,6 +11,10 @@ sources:
     url: https://mimo.mi.com/models/en-US/mimo-v2.6-pro
   - label: Technical Report (PDF)
     url: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/main/MiMo_V2_6_technical_report.pdf
+  - label: HuggingFace (MOPD checkpoint)
+    url: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD
+  - label: HuggingFace (RL environments)
+    url: https://huggingface.co/datasets/XiaomiMiMo/MiMo-V2.6-RL-oss
   - label: Blog
     url: https://mimo.xiaomi.com/mimo-v2-6
   - label: RL training dashboard
@@ -47,9 +51,15 @@ description: >
   rubrics offline from contrasting rollouts and Groupwise Advantage
   Redistribution re-ranks passing trajectories online, so the reward scales
   with grader compute (12.7% of spend; rollout 43.8%, training 43.5%). A
-  multi-prefix multi-teacher on-policy distillation stage (MOPD2) follows.
-  Xiaomi open-sources the RL environments, the RL framework, and the training
-  dynamics, and ships <strong>MiMo-V2.6-Distill-Qwen-9B</strong> (an SFT of
+  multi-prefix multi-teacher on-policy distillation stage (MOPD2) follows;
+  the <strong>MOPD checkpoints</strong> (Pro-MOPD and Flash-MOPD, September 27,
+  MIT) apply it on top of the RL releases and also suppress repeated tool calls,
+  a failure mode Xiaomi diagnoses in a separate technical blog. Xiaomi
+  open-sources the RL environments (the <strong>MiMo-V2.6-RL-oss</strong>
+  dataset, September 25, Apache 2.0: software-engineering, vulnerability
+  reproduction, knowledge-work, web-development and music-composition tasks
+  with test, rule, rubric or visual verifiers, plus Docker images and a verl
+  fork), the RL framework, and the training dynamics, and ships <strong>MiMo-V2.6-Distill-Qwen-9B</strong> (an SFT of
   Qwen3.5-9B on MiMo data) as a research starting point.</p>
 
   <p>Reported scores: DeepSWE v1.1 71.9 (Claude Opus 5: 74.0, Fable 5: 70.0),
@@ -101,3 +111,4 @@ related:
   - mimo-v2.6-distill-qwen-9b
   - mimo-v2.5-pro
   - mimo-v2.5
+  - codemidas

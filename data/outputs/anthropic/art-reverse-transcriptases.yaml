@@ -1,0 +1,84 @@
+name: "Autonomous AI Agents Discover Reverse Transcriptases with Tandem Repeat Arrays"
+slug: art-reverse-transcriptases
+lab: anthropic
+type: paper
+date: 2026-09-23
+sources:
+  - label: Announcement
+    url: https://www.anthropic.com/news/claude-discovers-novel-enzyme-system
+  - label: Preprint (PDF)
+    url: https://www-cdn.anthropic.com/22573675ada52a8ca8a97a1a4b4326b2f208a071.pdf
+description: >
+  <p>The first published result of Anthropic's new life-sciences research
+  group and laboratory, which Anthropic introduced alongside this
+  preprint: a genome-mining campaign run by Claude agents that found a
+  previously undescribed family of phage enzymes. The research brief asked
+  for novel reverse transcriptase (RT) systems defined by new partner genes.
+  An agentic harness turned it into stages and tasks, each carried out by a
+  Claude Code worker whose plan and results a supervisor agent reviewed;
+  supervisors could open follow-up tasks, and every plan, result and review
+  went to a shared record. Running on
+  <a href="/outputs/anthropic/claude-mythos-5">Claude Mythos 5</a> without
+  human intervention, the agents built their own profile HMMs, searched
+  <strong>1.9 billion</strong> metagenomic protein clusters, recovered about
+  200,000 RT clusters in nine classes and scored 3,564 protein families
+  found near RTs as candidate partners. The campaign ran 119 tasks (98
+  opened by the agents themselves) in 949 agent sessions, using 77
+  agent-hours and 215.6 million tokens over 21.5 hours of wall-clock time,
+  and ended with 19 reports. Of 17 candidate partner families, three were
+  confirmed as previously unreported RT associations, and three new RT
+  lineages were flagged.</p>
+
+  <p>The headline find came from outside the brief. A worker reading raw
+  DNA beside a jumbo-phage RT noticed an unannotated tandem repeat array
+  and wrote: "I can see by eye a tandem repeat array &hellip; that's a
+  CRISPR-like &hellip; repeat array?!" The authors named the family
+  <strong>array-associated reverse transcriptases (ART)</strong>: an RT, a
+  dedicated partner gene and an array of units of about 200 nucleotides,
+  with no cas genes nearby. A Claude Science session then retrieved public
+  RNA-seq data from an infection time course of Staphylococcus phage SA1,
+  in which the arrays are highly expressed and resolve into discrete short
+  RNAs; small-RNA sequencing of the SA1 system expressed in E. coli gave
+  similar RNAs. The authors suggest a retron-like system in which one
+  enzyme works with a bank of distinct RNAs, but whether the RT is active
+  and what the system does for the phage are still unknown. Feng Zhang of
+  MIT and the Broad Institute, commenting on the preprint, called the
+  RT-associated RNA-repeat arrays "genuinely intriguing".</p>
+
+  <p>The discovery did not reproduce: ten reruns of the campaign with the
+  same harness and brief sampled ART loci and twice followed up the
+  lineage, but no agent read the upstream DNA, and the array was missed
+  every time. In fixed-input benchmarks judged against ten curated ART
+  features, four models (Opus 5.5, Mythos 5.1, Mythos 5 and Opus 5) clearly
+  outperformed Opus 4.6, Opus 4.8 and Sonnet 5. Given the loci in context,
+  the strongest models described the array in at least 90% of attempts,
+  but with files and tools the rate fell as low as 32%. In 39% of those
+  file-based attempts the model never read 200 or more contiguous
+  nucleotides (about one repeat unit), and attempts that did recognized
+  the array 16 to 32 percentage points more often. An
+  interpretability analysis of the original session found Mythos 5
+  internal signals that respond to the repeated DNA (silenced when each
+  copy is shuffled) just before the model called it a "tandem repeat
+  array". All six authors are at Anthropic, with Nicholas T. Perry and
+  Matthew G. Durrant corresponding; the 40-page preprint is a PDF on
+  Anthropic's site.</p>
+tags:
+  - science
+  - biology
+  - agents
+  - agent-harness
+  - interpretability
+  - research
+paper:
+  authors:
+    - Peter H. Yoon
+    - Januka S. Athukoralage
+    - Emmanuel Ameisen
+    - Eric Kauderer-Abrams
+    - Nicholas T. Perry
+    - Matthew G. Durrant
+  pdf_url: https://www-cdn.anthropic.com/22573675ada52a8ca8a97a1a4b4326b2f208a071.pdf
+related:
+  - claude-mythos-5
+  - claude-code
+  - fermats-last-theorem-lean

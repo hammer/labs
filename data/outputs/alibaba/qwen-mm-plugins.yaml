@@ -30,3 +30,4 @@ library:
 related:
   - qwen-cua
   - mcp
+  - qwen3.8-omni-flash

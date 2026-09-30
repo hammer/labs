@@ -1,0 +1,93 @@
+name: Gemini 3.8 Flash TTS
+slug: gemini-3.8-flash-tts
+lab: google
+type: model
+date: 2026-09-23
+sources:
+  - label: Announcement (Google)
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/
+  - label: Model card (Google DeepMind)
+    url: https://deepmind.google/models/model-cards/gemini-3-8-audio/
+  - label: Evaluation methodology and results (PDF)
+    url: https://storage.googleapis.com/deepmind-media/gemini/gemini_3-8_tts_model_evaluation.pdf
+  - label: Gemini API model reference
+    url: https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash-tts
+  - label: Artificial Analysis (Text to Speech Arena)
+    url: https://artificialanalysis.ai/text-to-speech/leaderboard
+description: >
+  <p>Google's text-to-speech models of the 3.8 generation, released September
+  23, 2026 as two API models: <strong>Gemini 3.8 Flash TTS</strong>
+  (<code>gemini-3.8-flash-tts</code>), built for voice design and directed
+  performance, and <strong>Gemini 3.8 Flash-Lite TTS</strong>
+  (<code>gemini-3.8-flash-lite-tts</code>), built for high-volume, low-latency
+  speech and the recommended replacement for
+  <code>gemini-3.1-flash-tts-preview</code>. The shared Gemini 3.8 Audio model
+  card says both are based on Gemini 3 Pro, accept up to 8K tokens of text and
+  return up to 64K audio tokens. Flash TTS designs new voices from
+  natural-language prompts (role, accent, voice characteristics), offers a
+  library of more than 2,000 voices, replicates a voice from a 30-second sample
+  only after a verbal consent recording from the voice's owner, stages
+  two-speaker scenes from one script, and follows inline vocal events such as
+  &lt;laugh&gt; or &lt;sigh&gt;. The API documentation lists 130 languages for
+  Flash TTS and 101 for Flash-Lite. Every generated clip carries a SynthID
+  watermark, and voice replication adds C2PA credentials.</p>
+
+  <p>Google's evaluation sheet (September 2026, production checkpoints, single
+  attempts) puts Flash TTS at <strong>0.920</strong> overall on Hume AI's
+  text-to-speech quality benchmark (reliability times expressiveness) and
+  Flash-Lite at 0.914, ahead of Cartesia Sonic 3.6 (0.840), Gemini 3.1 Flash
+  TTS (0.783), ElevenLabs v3 conversational (0.769), OpenAI's gpt-4o-mini-tts
+  (0.740) and ElevenLabs v3 (0.706). On Hume's voice-design leaderboard Flash
+  TTS rates 71.4 overall in English, against 70.8 for ElevenLabs Voice Design
+  v3 and 69.8 for Inworld, and 60.8 on accents against 45.4, while ElevenLabs
+  leads on voice qualities (76.6 against 74.6). In Voice Arena's blind pairwise
+  Elo ratings, Flash TTS leads the compared models in Japanese (1232), Arabic
+  MSA (1204), Mexican Spanish (1152) and Hindi (1106), and Flash-Lite leads in
+  Vietnamese (1156), Brazilian Portuguese (1134) and English (1087, against
+  1068 for Cartesia Sonic 3.6 and 1061 for Flash TTS). On Artificial
+  Analysis's independent Text to Speech Arena on September 30, 2026, Flash TTS
+  ranked third with an Elo of 1268, behind Eleven v4 (1316) and Sonic 3.6
+  (1275); Flash-Lite TTS ranked seventh (1240) and Gemini 3.1 Flash TTS
+  twelfth (1204).</p>
+
+  <p>Gemini API pricing through December 31, 2026 is $0.50 per million text
+  input tokens for both models and $9.00 (Flash) or $6.00 (Flash-Lite) per
+  million audio output tokens, about $0.00225 and $0.0015 per 10 seconds of
+  audio; all prices double on January 1, 2027. Flash TTS also runs in Gemini
+  Notebook and Flash-Lite TTS in Google Vids, with Gemini Enterprise access
+  announced as coming soon. The model card gives a January 2025 knowledge
+  cutoff and, relying on Gemini 3.7 Flash's frontier-safety evaluations, judges
+  the audio models unlikely to reach any tracked or critical capability level.
+  Proprietary; parameter counts and architecture details beyond the Gemini 3
+  Pro base are undisclosed.</p>
+tags:
+  - tts
+  - speech
+  - audio
+  - generation
+  - multilingual
+  - proprietary
+model:
+  languages: 130
+  license: Proprietary (API)
+  benchmark_scores:
+    - benchmark: Hume AI TTS quality benchmark (overall)
+      score: "0.920"
+      mode: reliability x expressiveness
+    - benchmark: Hume AI voice design leaderboard (overall, English)
+      score: "71.4"
+    - benchmark: Hume AI voice design leaderboard (accents)
+      score: "60.8"
+    - benchmark: Voice Arena (Japanese)
+      score: "1232 Elo"
+    - benchmark: Artificial Analysis Text to Speech Arena
+      score: "1268 Elo"
+      mode: "rank 3, Sep 30 2026"
+  variants:
+    - name: Gemini 3.8 Flash TTS
+      notes: "gemini-3.8-flash-tts; 130 languages; $0.50 text in / $9.00 audio out per 1M tokens through Dec 31 2026; Hume TTS quality 0.920; Artificial Analysis Text to Speech Arena Elo 1268 (rank 3, Sep 30 2026)."
+    - name: Gemini 3.8 Flash-Lite TTS
+      notes: "gemini-3.8-flash-lite-tts; 101 languages; $0.50 text in / $6.00 audio out per 1M tokens through Dec 31 2026; Hume TTS quality 0.914; Artificial Analysis Text to Speech Arena Elo 1240 (rank 7, Sep 30 2026)."
+related:
+  - gemini-3.8-live
+  - gemini-3.8-flash

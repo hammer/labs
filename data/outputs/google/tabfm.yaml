@@ -10,17 +10,28 @@ sources:
     url: https://github.com/google-research/tabfm
   - label: Blog
     url: https://research.google/blog/introducing-tabfm/
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2609.37959
 description: >
   <p>Google's tabular foundation model: zero-shot prediction on unseen
   tables via in-context learning, trained "entirely on hundreds of millions
   of synthetic datasets" generated from structural causal models &mdash; no
   real-world data. Alternating row/column-attention encoder feeding a
-  24-block causal ICL transformer; parameter count unstated. Beats tuned
-  gradient-boosted trees on TabArena. Weights under the TabFM
+  24-block causal ICL transformer with <strong>400M parameters</strong> (per
+  the arXiv technical report of 2026-09-29). Beats tuned gradient-boosted
+  trees on TabArena; the report puts zero-shot TabFM first among default
+  tabular foundation models across all 51 TabArena datasets and ahead of
+  tuned AutoML pipelines, with two extensions on the same frozen weights
+  (TabFM+ ensembling and calibration, LLM-guided TabFM-Auto). Weights under the TabFM
   Non-Commercial License v1.0; code Apache-2.0. Extends the TabPFN line of
   prior-fitted tabular models to Google scale.</p>
 tags:
   - tabular
   - science
   - foundation-model
-model: {}
+model:
+  parameters: 400M
+paper:
+  arxiv: "2609.37959"
+related:
+  - kumo-tabular

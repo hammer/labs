@@ -1,0 +1,71 @@
+name: Selecting Diverse SFT Traces Improves Post-RL Generalization
+slug: diverse-sft-traces
+lab:
+  - google
+  - uiuc
+type: paper
+date: 2026-09-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.33780
+description: >
+  <p>A stage-aware post-training study of which verified solutions best prepare
+  a reasoning model for the RL stage that follows SFT. The answer it proposes
+  is <strong>route diversity</strong>: how much the sequences of reasoning
+  steps in the SFT data differ, including among solutions to the same problem.
+  A rule-based fingerprint summarizes each verified solution's steps, their
+  order and its path statistics, read from a domain's step annotations where
+  they exist and from the trace text otherwise, then shortened by a fixed
+  random projection; it needs no model calls, generation or gradients. The
+  diverse set is built by clustering fingerprints and repeatedly picking,
+  within each cluster, the candidate farthest from those already chosen (a
+  coreset construction), and the contrasting similar set comes from
+  nearest-centroid selection. Both conditions share the student, candidate
+  pool, SFT budget, GRPO recipe, evaluation and checkpoint step.</p>
+
+  <p>Teacher count serves as a first proxy: at a fixed trajectory budget,
+  twelve teachers instead of one add about 18 points of pass@64 on held-out
+  Enigmata puzzles for Qwen3-4B-Base, and after further RL on DAPO-Math-17k
+  its MATH-500 pass@1 rises from 34.14% to 65.08% in the 16-environment pool.
+  Selecting routes directly on RLVE, route-diverse SFT improves OLMo3-7B's
+  pass@8 by <strong>16.9 points</strong> on environments held out from SFT,
+  even though both conditions then get the same RL on all 384 environments; the
+  diverse model solves 1,133 questions the similar one misses, against 53 the
+  other way. With a single teacher (Qwen3-4B-Thinking-2507 writing every
+  candidate), diverse selection still adds 3.39 to 6.17 points of mean pass@8
+  across 10 math benchmarks at three budgets. The proposed mechanism: before
+  RL, the route-diverse OLMo3-7B checkpoint produces a mix of correct and
+  incorrect attempts on 54.7% of 64 math prompts against 46.9%, despite
+  slightly lower mean accuracy, so group-relative RL gets more prompts with a
+  nonzero learning signal. On three released reasoning corpora (OpenThoughts3,
+  INTELLECT-3 and Nemotron-Cascade 2), the selector beats random,
+  gradient-diversity, embedding and lexical selection in every comparison of
+  mean post-RL score, with relative gains of 1.2% to 10.8%, and it processes a
+  pool of about 2.1 million solutions in about three hours on one CPU node,
+  where the gradient and embedding baselines need 64 to 232 GPU-hours.</p>
+
+  <p>By Dylan Zhang (University of Illinois Urbana-Champaign; work done at
+  Google), Mingyuan Wu and Jinning Li (Google); the paper links no code. It
+  belongs to the RL-readiness family with Microsoft's
+  <a href="/outputs/microsoft/tailsft">TailSFT</a>, which also shapes SFT on
+  <a href="/outputs/ai2/olmo-3">OLMo 3</a> 7B for coverage before GRPO, and its
+  puzzle experiments run on <a href="/outputs/uw/rlve">RLVE</a>'s verifiable
+  environments.</p>
+tags:
+  - rl
+  - rl-scaling
+  - post-training
+  - reasoning
+  - data
+  - research
+paper:
+  arxiv: "2609.33780"
+  authors:
+    - Dylan Zhang
+    - Mingyuan Wu
+    - Jinning Li
+related:
+  - tailsft
+  - rlve
+  - olmo-3
+  - nemotron-cascade-2

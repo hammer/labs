@@ -18,3 +18,5 @@ tags:
   - open-source
 library:
   github: https://github.com/krafton-ai/KIRA
+related:
+  - terminal-bench

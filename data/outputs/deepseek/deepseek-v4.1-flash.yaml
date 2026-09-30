@@ -9,6 +9,8 @@ sources:
     url: https://api-docs.deepseek.com/news/news260910
   - label: Technical Report (PDF)
     url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/blob/main/DeepSeek_V41_Tech_Report.pdf
+  - label: "Technical Report (arXiv: Pushing the Limits of KV Cache Compression)"
+    url: https://arxiv.org/abs/2609.19969
   - label: HuggingFace
     url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
   - label: Artificial Analysis
@@ -102,6 +104,7 @@ model:
       active_parameters: 16B
       notes: "552B backbone plus a 196B Engram memory table; 8B active at prefill, 16B at decode; FP8 weights"
 paper:
+  arxiv: "2609.19969"
   pdf_url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/resolve/main/DeepSeek_V41_Tech_Report.pdf
   huggingface_url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
 related:

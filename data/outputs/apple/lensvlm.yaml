@@ -1,0 +1,66 @@
+name: LensVLM
+slug: lensvlm
+lab: apple
+type: model
+date: 2026-09-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.07019
+  - label: GitHub
+    url: https://github.com/apple-aiml-research/ml-lensvlm
+  - label: HuggingFace
+    url: https://huggingface.co/apple/LensVLM-9B
+description: >
+  <p>An Apple approach to long context in which a vision-language model reads
+  text as rendered page images instead of tokens. Because an image encoder
+  maps a fixed-size image to a fixed number of visual tokens, the rendering
+  resolution works as a compression knob, but accuracy collapses once the
+  characters shrink below what the encoder can resolve. <strong>LensVLM</strong>
+  (an inference framework plus a post-training recipe) lets the model
+  <strong>scan the compressed images and then expand only the relevant pages
+  back to their uncompressed form through learned tools</strong>, much as an
+  agent pages content back into its context.</p>
+
+  <p>Built on <a href="/outputs/alibaba/qwen3.5">Qwen3.5-9B-Base</a>, it stays
+  comparable to the full-text upper bound at 4.3&times; effective compression
+  and beats retrieval-based, text-compression and visual-compression baselines
+  up to 10.1&times; effective compression across seven text QA benchmarks; it
+  also carries over to multimodal document and code understanding, with the
+  margin over baselines growing as compression rises. The analysis finds that
+  training makes visual compression robust to rendering choices, that the model
+  leans more on expanded content as compression grows, and that expanding to
+  text suits rendered text while high-resolution image expansion suits native
+  documents whose layout matters. The paper (first author Roy Xie, with Bhuwan
+  Dhingra; both Apple and Duke University) went to arXiv on May 7, 2026; the
+  date above marks the September 21 release of the <strong>LensVLM-9B</strong>
+  weights on HuggingFace under the Apple Machine Learning Research Model
+  License, with code under the Apple Sample Code License.</p>
+tags:
+  - multimodal
+  - vision
+  - long-context
+  - efficiency
+  - open-weight
+  - research
+model:
+  # Derivative: post-trained from Qwen3.5-9B-Base (paper abstract; HF card
+  # base_model Qwen/Qwen3.5-9B). No `parameters`.
+  base_model: qwen3.5
+  license: Apple Machine Learning Research Model License
+  variants:
+    - name: LensVLM-9B
+      notes: "9B VLM post-trained from Qwen3.5-9B-Base; supports 5x, 10x and 15x text-compression settings in the demo"
+paper:
+  arxiv: "2605.07019"
+  authors:
+    - Roy Xie
+    - Dan Friedman
+    - Donghan Yu
+    - Bowen Pan
+    - Christopher Fifty
+    - Jang-Hyun Kim
+    - Xianzhi Du
+    - Zhe Gan
+  code_url: https://github.com/apple-aiml-research/ml-lensvlm
+related:
+  - qwen3.5

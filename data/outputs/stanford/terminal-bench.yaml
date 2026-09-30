@@ -1,0 +1,163 @@
+name: Terminal-Bench
+slug: terminal-bench
+lab: stanford
+type: eval
+date: 2025-05-19
+flagship: true
+sources:
+  - label: "Announcement (Terminal-Bench 1.0, May 2025)"
+    url: https://www.tbench.ai/news/announcement
+  - label: "Blog: Terminal-Bench 2.0 and Harbor (Nov 2025)"
+    url: https://www.tbench.ai/news/announcement-2-0
+  - label: "Blog: Terminal-Bench 3.0 (Jul 2026)"
+    url: https://www.tbench.ai/news/terminal-bench-3-0
+  - label: "Blog: Terminal-Bench 4.0 (Aug 2026)"
+    url: https://www.tbench.ai/news/terminal-bench-4-0
+  - label: "Blog: Terminal-Bench-Science 0.1 (Aug 2026)"
+    url: https://www.tbench.ai/news/terminal-bench-science-0-1
+  - label: Paper (arXiv, Terminal-Bench 2.0)
+    url: https://arxiv.org/abs/2601.11868
+  - label: GitHub (Terminal-Bench 3.0 and 4.0)
+    url: https://github.com/harbor-framework/terminal-bench
+  - label: GitHub (Terminal-Bench 1.0)
+    url: https://github.com/harbor-framework/terminal-bench-1
+  - label: GitHub (Terminal-Bench-Science)
+    url: https://github.com/harbor-framework/terminal-bench-science
+  - label: GitHub (Harbor)
+    url: https://github.com/harbor-framework/harbor
+  - label: Leaderboard (Terminal-Bench 4.0)
+    url: https://www.tbench.ai/
+  - label: Artificial Analysis Leaderboard (Terminal-Bench 4.0)
+    url: https://artificialanalysis.ai/evaluations/terminalbench-4-0
+  - label: Artificial Analysis Leaderboard (Terminal-Bench-Science 0.1)
+    url: https://artificialanalysis.ai/evaluations/terminal-bench-science
+  - label: Artificial Analysis Intelligence Index methodology
+    url: https://artificialanalysis.ai/methodology/intelligence-benchmarking
+  - label: Epoch AI (Terminal-Bench 2.0 in the Epoch Capabilities Index)
+    url: https://epoch.ai/benchmarks/terminal-bench
+  - label: "Anthropic: Claude Opus 5.5 announcement (Terminal-Bench 4.0 result)"
+    url: https://www.anthropic.com/news/claude-opus-5-5
+  - label: "Anthropic: Claude Sonnet 5.5 announcement (Terminal-Bench 4.0 result)"
+    url: https://www.anthropic.com/claude-sonnet-5-5
+description: >
+  <p>The standard benchmark for AI agents working in a command-line
+  environment, built by Stanford researchers and the <strong>Laude
+  Institute</strong> with an open-source contributor community, and hosted by
+  Stanford, Harbor and Laude. Each task pairs a Docker environment and an
+  instruction with a test suite and a human-written reference solution; the
+  tests check the final state of the container rather than the agent's
+  commands, so any approach that reaches the goal passes. The first version,
+  released on 19 May 2025 by Mike Merrill, Alex Shaw, Chris Rytting, Ludwig
+  Schmidt and Andy Konwinski, shipped <strong>Terminal-Bench-Core v0</strong>
+  (80 tasks, from building a Linux kernel with QEMU to fitting a Raman
+  spectrum) together with an evaluation harness and <strong>Terminus</strong>,
+  a deliberately minimal agent whose only tool is a tmux pane, so that models
+  can be compared on neutral ground. Four days later Anthropic featured it on
+  the Claude 4 model card, where Claude 4 Opus set a then-best 43.2%, and by
+  November the team could say it had been used by "virtually every frontier
+  lab".</p>
+
+  <p><strong>Terminal-Bench 2.0</strong> (7 November 2025) arrived with
+  <strong>Harbor</strong>, a rewrite of the harness for cloud-deployed
+  containers and RL/SFT rollouts (about 5,700 GitHub stars). Its 89 tasks were
+  selected from 229 written by 93 contributors and checked by three reviewers.
+  The accompanying paper (arXiv 2601.11868, January 2026; 85 authors across 44
+  affiliations, with Stanford's Mike Merrill and Laude's Alex Shaw as co-first
+  and corresponding authors and Stanford's Ludwig Schmidt as last author)
+  found GPT-5.2 in Codex CLI best at 63%, ahead of Claude Opus 4.5 (58%) and
+  Gemini 3 Pro (57%) in Terminus 2, and warned that the set "may become
+  saturated within the next year". Version 2.1 (May 2026) fixed 28 of the 89
+  tasks, and by the 3.0 launch Claude Fable 5 scored 83.8% on it.
+  <strong>Terminal-Bench 3.0</strong> (30 July 2026) reset the difficulty
+  with 74 tasks across seven domains from more than 100 contributors and
+  reviewers, where the best agents reached about 34% (GPT-5.6 Sol in Codex
+  34.4%, Fable 5 in Claude Code 33.8%), and made the benchmark a continuously
+  maintained, semantically versioned release. <strong>Terminal-Bench
+  4.0</strong> (28 August 2026) calibrated time, CPU and memory budgets (a
+  flat 8-hour agent timeout), fixed 19 tasks and removed 8 (2 saturated, 2
+  prone to refusals, 2 with public solutions, 2 with unresolved quality
+  issues), leaving 66.</p>
+
+  <p>Artificial Analysis added the hard subset of Terminal-Bench-Core to its
+  Intelligence Index in v3.0 (September 2025), switched to Terminal-Bench 2.1
+  in v4.1 (June 2026), and since v4.3 (September 2026) has weighted
+  <strong>Terminal-Bench 4.0 at 10%</strong> of the index, unchanged in the
+  current v4.3.2. AA runs all 66 tasks with mini-swe-agent and three repeats
+  per task; Claude Sonnet 5.5 at max effort leads its run at 63.6%. Epoch AI's
+  Capabilities Index also includes Terminal-Bench, using the 2.0 leaderboard.
+  On the public 4.0 leaderboard (five trials per task), GPT-6 Astra in Codex
+  leads at 58.2%, ahead of Claude Fable 5.1 in Claude Code at 57.9%, both at
+  max effort; in their own setups Anthropic reports Claude Sonnet 5.5 at 70.6%
+  and Claude Opus 5.5 at 66.4% at xhigh effort (standard error 2.6 points),
+  results not on the public board as of 30 September 2026. A science spin-off, <strong>Terminal-Bench-Science
+  0.1</strong> (27 August 2026), led by Stanford researchers, holds 70
+  research-workflow tasks across the life, physical, Earth, mathematical and
+  engineering sciences, selected from 920 proposals by 376 contributors in 22
+  countries; Claude Opus 5 in Claude Code led its launch results at 30.0%, and
+  AA runs it as a standalone evaluation outside the index. The code is
+  Apache 2.0, and the original Terminal-Bench repository has about 2,600
+  GitHub stars.</p>
+tags:
+  - benchmark
+  - evaluation
+  - agents
+  - agentic
+  - coding
+  - cli
+  - agent-harness
+paper:
+  arxiv: "2601.11868"
+  authors:
+    - Mike A. Merrill
+    - Alexander G. Shaw
+    - Nicholas Carlini
+    - Boxuan Li
+    - Harsh Raj
+    - Ivan Bercovich
+    - Lin Shi
+    - Jeong Yeon Shin
+  code_url: https://github.com/harbor-framework/terminal-bench-2
+eval:
+  num_tasks: 66
+  domains:
+    - software engineering
+    - machine learning
+    - science
+    - operations
+    - security
+    - hardware
+    - media
+  scoring_method: "Outcome-based: each task's own test suite checks the final container state, and a
+    task passes only if every test passes; reported as the resolution rate averaged over trials (five
+    per task on the public 4.0 leaderboard; Artificial Analysis reports pass@1 averaged over three
+    repeats with the mini-swe-agent harness)"
+  used_in:
+    - AA Intelligence Index v3.0 through v4.0.4 (as Terminal-Bench Hard)
+    - AA Intelligence Index v4.1 through v4.2 (as Terminal-Bench 2.1)
+    - AA Intelligence Index v4.3 through v4.3.2 (as Terminal-Bench 4.0, 10%)
+    - Epoch Capabilities Index (Terminal-Bench 2.0)
+  saturation: "Not saturated on 4.0 (public leaderboard best 58.2%, AA's best 63.6%, Anthropic-reported
+    70.6%). The 2.x task sets passed 80% by mid-2026 (Claude Fable 5 83.8% on 2.1), which prompted the
+    3.0 reset (best about 34%)."
+  top_scores:
+    - model: Claude Sonnet 5.5 (Anthropic-reported, not on the public leaderboard)
+      score: "70.6%"
+      date: "2026-09-28"
+    - model: Claude Opus 5.5 (xhigh effort; Anthropic-reported, not on the public leaderboard)
+      score: "66.4%"
+      date: "2026-09-22"
+    - model: Claude Sonnet 5.5 (max effort; Artificial Analysis run, mini-swe-agent)
+      score: "63.6%"
+    - model: GPT-6 Astra (Codex, max effort; public 4.0 leaderboard)
+      score: "58.2%"
+      date: "2026-09-03"
+    - model: Claude Fable 5.1 (Claude Code, max effort; public 4.0 leaderboard)
+      score: "57.9%"
+      date: "2026-09-01"
+  leaderboard_url: https://www.tbench.ai/
+related:
+  - terminus-kira
+  - swe-bench
+  - theagentcompany
+  - terminal-universe
+  - environment-evolution-terminal-agents

@@ -1,0 +1,71 @@
+name: "How Far Are We from Removing the Visual Encoder? Scaling Laws for Encoder-Free Multimodal Pretraining"
+slug: encoder-free-scaling-laws
+lab: tencent
+type: paper
+date: 2026-09-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.35457
+description: >
+  <p>A controlled scaling-law comparison of multimodal models with and
+  without a pretrained vision encoder, from Tencent's Foundation Model
+  Department (the paper carries Tencent HY branding) with CASIA and UCAS. Both
+  families share one ladder of 11 sparse MoE decoders, from 1.1B to 44B total
+  and 71M to 2.4B active non-embedding parameters (256 routed experts, top-8,
+  plus one shared expert), trained with Muon on the same 1:1 text&ndash;multimodal
+  mixture and with the same number of visual tokens per image. The
+  encoder-based models read images through a roughly 400M-parameter SigLIP 2
+  ViT; the encoder-free ones project raw 32&times;32-pixel patches straight
+  into the decoder, adapting the patch pipeline of <a
+  href="/outputs/google/gemma-4-12b">Gemma 4 12B</a>'s unified model. Using
+  <a href="/outputs/google/chinchilla">Chinchilla</a>-style IsoFLOP fits, the
+  paper finds that on the text objective the two families have nearly
+  identical compute-optimal allocation and loss&ndash;compute frontiers. On the
+  multimodal objective, removing the encoder shifts the optimum toward larger
+  models (allocation exponent 0.464 to 0.570). Encoder-free models trail at
+  small scale, but their loss falls faster with compute, and extrapolation
+  puts the <strong>crossover at around 10<sup>22</sup> FLOPs</strong> under
+  compute-optimal allocation (later under 5&times; overtraining), roughly
+  three orders of magnitude below the ~10<sup>25</sup> FLOPs the authors
+  estimate for Kimi K2.5's pretraining. The crossover comes earlier on
+  language-heavy topics and much later on perception-heavy ones.</p>
+
+  <p>Probing the decoders shows how an encoder-free model compensates.
+  Bidirectional attention among visual tokens helps more as compute grows,
+  recovering the patch-level context an encoder would provide; visual
+  representations diverge from their inputs in much earlier layers than in
+  encoder-based models, so the shallow layers act as an implicit visual
+  encoder while text is processed almost identically in both; and MoE routing
+  of visual tokens becomes more concentrated, consistent with some experts
+  taking over the encoder's role. The authors conclude that the advantage of
+  a pretrained encoder's visual prior shrinks with scale, and suggest decoder
+  designs built for native visual learning rather than inherited from
+  language models. They cite Gemma 4 12B and Thinking Machines' <a
+  href="/outputs/thinking-machines/inkling">Inkling</a> as large systems that
+  already take images without a visual encoder. Six of the nine authors are
+  at Tencent: first author Lin Chen did the work as a Tencent intern and
+  project lead Bolin Ni is at Tencent, while corresponding author Ying Wang is
+  at CASIA. No code has been released.</p>
+tags:
+  - scaling-laws
+  - multimodal
+  - pretraining
+  - vision
+  - moe
+  - research
+paper:
+  arxiv: "2609.35457"
+  authors:
+    - Lin Chen
+    - Bolin Ni
+    - Qi Yang
+    - Lan Jiang
+    - Kun Ding
+    - Xiaoran Fan
+    - Hower Yang
+    - Ying Wang
+related:
+  - gemma-4-12b
+  - inkling
+  - sensenova-u1.5
+  - chinchilla

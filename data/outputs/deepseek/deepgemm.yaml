@@ -14,3 +14,5 @@ tags:
   - infrastructure
 library:
   github: https://github.com/deepseek-ai/DeepGEMM
+related:
+  - deepseek-ascend-kernels

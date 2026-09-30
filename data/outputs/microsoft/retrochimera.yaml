@@ -1,0 +1,101 @@
+name: RetroChimera
+slug: retrochimera
+lab: microsoft
+type: model
+date: 2025-11-30
+sources:
+  - label: Blog (Microsoft Research)
+    url: https://www.microsoft.com/en-us/research/blog/improving-synthesis-prediction-of-small-molecules-at-scale-with-retrochimera/
+  - label: Paper (Nature)
+    url: https://www.nature.com/articles/s41586-026-11160-9
+  - label: Preprint (arXiv)
+    url: https://arxiv.org/abs/2412.05269
+  - label: GitHub
+    url: https://github.com/microsoft/retrochimera
+  - label: Microsoft Foundry
+    url: https://ai.azure.com/catalog/models/RetroChimera
+description: >
+  <p>A single-step <strong>retrosynthesis</strong> model from Microsoft
+  Research AI for Science in Cambridge, UK. Given a target molecule, it
+  proposes reactant sets that could make it, the step that multi-step
+  synthesis-planning search calls recursively. RetroChimera ensembles two
+  sub-models introduced with it. <strong>R-SMILES 2</strong> is a
+  Transformer that generates precursors de novo; it does well on reactions
+  that change the molecule a lot but can hallucinate. <strong>NeuralLoc</strong>
+  is a graph neural network that selects a reaction template and predicts
+  where on the target to apply it; its outputs are more reliable and it
+  learns a template from a few examples, but it cannot go beyond its
+  template library. A learned, rank-dependent vote merges their ranked
+  outputs (votes add when both models propose the same reactants), so the
+  ensemble roughly matches whichever sub-model is stronger on each reaction
+  class. The date marks the first public release of the code and weights
+  (v1.0.0); the arXiv preprint was first posted on December 6, 2024, and the
+  peer-reviewed <em>Nature</em> paper ("Chemist-aligned retrosynthesis by
+  ensembling diverse inductive bias models", 26 authors, received August 2025)
+  appeared with Microsoft Research's announcement on September 21, 2026.</p>
+
+  <p>The main checkpoint is trained on the proprietary Pistachio reaction
+  database, which the preprint describes as 3.5 times the size of
+  USPTO-FULL, and tested on a time split of reactions added in 2024. In
+  the preprint, RetroChimera set a new state of the art on USPTO-50K and
+  USPTO-FULL beyond top-1, raising top-10 accuracy by 1.7% and 1.6%. In
+  blind comparisons, PhD-level organic chemists preferred its predictions
+  over the published reference reactions and over other AI models. In an
+  expert assessment of complete multi-step routes for ten challenging
+  targets, it <strong>succeeded on nine</strong>, against five for the de
+  novo sub-model, four for the editing sub-model and two for the NeuralSym
+  baseline. The paper also reports zero-shot transfer and fine-tuning on
+  internal reaction data from two pharmaceutical companies; the preprint's
+  zero-shot test used Novartis data, and the Nature author list adds GSK
+  chemists alongside researchers from Cambridge, Jagiellonian University
+  and Wuppertal. Corresponding authors are Krzysztof Maziarz, Guoqing Liu
+  and Marwin Segler; Christopher Bishop is a co-author.</p>
+
+  <p>Code and checkpoints are <strong>MIT-licensed</strong> on GitHub and
+  PyPI (package <code>retrochimera</code>), built on Microsoft's syntheseus
+  library, and the model is also offered through Microsoft Foundry. The
+  code and the Pistachio, USPTO-50K and USPTO-FULL checkpoints (on
+  figshare) have been public since v1.0.0 on November 30, 2025; a forward
+  reaction-prediction checkpoint was added in July 2026, and v1.3.0,
+  released with the paper, added fine-tuning and a consensus ensembling
+  mode. The README warns that the checkpoint covers reaction data only
+  through 2023, that lower-ranked outputs are increasingly likely to be
+  hallucinations, and that chemistry experts must verify predictions
+  before use. The repository had 74 stars at filing.</p>
+tags:
+  - science
+  - chemistry
+  - open-weight
+  - research
+model:
+  license: MIT
+  variants:
+    - name: RetroChimera 1 (Pistachio)
+      notes: Main checkpoint; trained on Pistachio reaction data through 2023
+    - name: RetroChimera 1 (USPTO-50K)
+      notes: Weaker checkpoint for benchmarking
+    - name: RetroChimera 1 (USPTO-FULL)
+      notes: Weaker checkpoint for benchmarking
+    - name: Forward model (Pistachio)
+      notes: Forward reaction prediction with the R-SMILES 2 architecture; added July 2026
+paper:
+  arxiv: "2412.05269"
+  venue: Nature 2026
+  authors:
+    - Krzysztof Maziarz
+    - Guoqing Liu
+    - Felix Pultar
+    - John Gardner
+    - Tobias Gensch
+    - Jean Helie
+    - Hubert Misztela
+    - Austin Tripp
+  code_url: https://github.com/microsoft/retrochimera
+library:
+  github: https://github.com/microsoft/retrochimera
+  language: Python
+  framework: PyTorch
+  license: MIT
+  pip_package: retrochimera
+related:
+  - naturelm

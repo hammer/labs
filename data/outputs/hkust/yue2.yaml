@@ -1,0 +1,93 @@
+name: YuE2
+slug: yue2
+lab: hkust
+type: model
+date: 2026-09-09
+flagship: true
+sources:
+  - label: Project Page
+    url: https://map-yue2.github.io/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.33757
+  - label: GitHub
+    url: https://github.com/multimodal-art-projection/YuE
+  - label: HuggingFace
+    url: https://huggingface.co/m-a-p/YuE2-3B
+  - label: HuggingFace (WildSongBench dataset)
+    url: https://huggingface.co/datasets/m-a-p/WildSongBench
+  - label: "Predecessor paper: YuE (arXiv)"
+    url: https://arxiv.org/abs/2503.08638
+description: >
+  <p>An open song-generation model from HKUST and Multimodal Art Projection
+  (M-A-P) that composes a readable score before it renders audio. One
+  3.58B-parameter <strong>AR&ndash;NAR mixture-of-transformers</strong> first
+  writes a lead sheet with melody, chords, key, meter, tempo and form, a step
+  the authors call <strong>symbolic composition planning</strong>; it then
+  predicts semantic music tokens autoregressively and generates continuous
+  acoustic latents with flow matching, which a VAE decodes to 48 kHz stereo.
+  The model was pretrained from random initialization on about 346,000 hours
+  of music, mostly CC0 recordings and synthetic data (most of it licensed from
+  Tokenwave.AI), packing whole songs into a 24,576-position context, on 64 H800
+  GPUs. Because ordinary recordings come without aligned scores, the team also
+  built <strong>MERT2</strong>, a music representation model that leads 14 of
+  15 MARBLE metrics and supplies the semantic tokens, and
+  <strong>SheetSage2</strong>, an audio-to-lead-sheet transcriber that leads
+  12 of 15 benchmark&ndash;metric pairs in the authors' comparison and
+  supplies the score supervision; both are released alongside it, with the
+  WildSongBench evaluation set. Because the score is plain text, a person or
+  an external language model can edit it and re-render the song, and the
+  release packages this workflow as an agent skill.</p>
+
+  <p>On WildSongBench's 192 prompts, YuE2 scores 6.73 on the SongBench
+  average, above every model with public weights (next best LeVo 2 at 6.32;
+  the January 2025 YuE scores 4.92) and above Suno v4.5, v5.5 and v6.
+  Choosing the best of eight candidates raises it to 6.96, the highest of the
+  17 evaluated settings, just ahead of Mureka 9 (6.94) and Suno v5 (6.87),
+  though the authors note that the gap between the top means is not
+  statistically significant. In expert listening, planning first won 49.3% of
+  overall-quality judgments against 34.6% for the same checkpoint generating
+  without a score, best-of-eight was preferred over Suno v4.5, and preferences
+  against Suno v5 were nearly balanced. The same checkpoint follows score
+  edits and makes zero-shot covers: conditioned on a source work's score,
+  covers of 948 works held out of training reach 0.647 CLEWS mAP (a
+  cover-identification measure), against 0.006 without a score. Weights
+  shipped on September 9, 2026 (the date used here) under CC BY-NC 4.0 with
+  an added permission for individual creators to monetize their outputs;
+  companies need a commercial license, and the code is Apache 2.0. The
+  technical report followed on arXiv on September 27. The YuE repository,
+  which hosted the original YuE and now serves YuE2, has about 10,600 GitHub
+  stars, and the Hugging Face model has over 1,000 likes. The corresponding
+  authors are Wei Xue and <a href="/people/yike-guo">Yike Guo</a> of HKUST;
+  lead author Ruibin Yuan is affiliated with HKUST, ACE Studio and M-A-P, and
+  other contributors come from Tokenwave.AI, NYU, Stanford, MBZUAI and
+  HKGAI.</p>
+tags:
+  - audio
+  - music
+  - generation
+  - open-weight
+model:
+  # From scratch: the report (App. C) says "We first pretrain an autoregressive
+  # model from random initialization". Each expert's shape (28 layers, 2,048
+  # hidden) matches Qwen3-1.7B and it uses a Qwen tokenizer, but shape matches
+  # are not weight derivation and the report states random init.
+  # architecture left unset: a mixture-of-transformers (AR and NAR experts), not
+  # a routed MoE.
+  parameters: 3.58B
+  context_window: 24576
+  training_hardware: "64 H800"
+  optimizer: Adam
+  license: CC-BY-NC-4.0
+paper:
+  arxiv: "2609.33757"
+  authors:
+    - Ruibin Yuan
+    - Jiahao Pan
+    - Junyan Jiang
+    - Zhiyue Wu
+    - Ziya Zhou
+    - Jiankai Sun
+    - Yizhi Li
+    - Ge Zhang
+  code_url: https://github.com/multimodal-art-projection/YuE
+  huggingface_url: https://huggingface.co/m-a-p/YuE2-3B

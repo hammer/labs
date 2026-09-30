@@ -21,3 +21,5 @@ tags:
   - open-source
 library:
   github: https://github.com/anthropics/claude-code
+related:
+  - red-teaming-auto-mode

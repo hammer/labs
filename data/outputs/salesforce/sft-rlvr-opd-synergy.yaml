@@ -1,0 +1,68 @@
+name: "Understanding the Synergy between SFT, RLVR, and OPD in LLM Post-Training"
+slug: sft-rlvr-opd-synergy
+lab:
+  - salesforce
+  - uiuc
+type: paper
+date: 2026-09-25
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.31900
+description: >
+  <p>A stage-aware study of post-training pipelines from Salesforce AI
+  Research with UIUC. First author Emre Can Acikgoz is affiliated with both
+  (the work was done during a Salesforce internship) and shares first
+  authorship with Yang Li; Dilek Hakkani-T&uuml;r of UIUC and Shafiq Joty
+  and Semih Yavuz of Salesforce are among the co-authors. The claim is that
+  supervised fine-tuning (SFT), RL with verifiable rewards (RLVR) and
+  <strong>on-policy distillation</strong> (OPD) cannot be tuned stage by
+  stage: a stage that improves the current model can leave a worse
+  starting point for the next. The experiments use Qwen3 models on math
+  and science reasoning, scored by mean@4 accuracy averaged over AIME
+  2024, AIME 2025, AMC 2023, MATH-500, Minerva Math, OlympiadBench and
+  GPQA-Diamond. Distilling Qwen3-0.6B, 1.7B and 4B base students from
+  Qwen3-8B, 14B and 32B teachers (nine pairs, 2&times; to 53&times;
+  parameter ratios) shows that OPD depends on student&ndash;teacher
+  compatibility rather than teacher size: for the 4B student, switching
+  from the 8B to the 32B teacher lowers accuracy from 32.70% to 29.25%,
+  and the 32B teacher is never the best choice.</p>
+
+  <p>The neighbouring stages change that compatibility. A brief SFT
+  warm-up helps later OPD, while a student first strengthened by RLVR
+  regresses when distilled from the same teacher. Adapting the teacher
+  with RLVR raises the student's OPD accuracy in proportion to what the
+  teacher gains, and the student stops improving when the teacher does.
+  Combining an RLVR-adapted Qwen3-14B teacher with a short SFT warm-up of
+  the Qwen3-4B-Base student lifts accuracy at the same 200-step OPD
+  endpoint from <strong>29.2% to 43.8%</strong>, at the cost of extra
+  preparatory training. In the other direction, OPD is a better starting
+  point for RLVR than SFT: from similar starting accuracy, every
+  OPD-initialized run ends at 38.5&ndash;43.1% after 260 GRPO steps against
+  33.4&ndash;36.8% for every SFT-initialized run, and the gap was still
+  widening at the end of the observed runs. The paper belongs to the
+  RL-readiness strand of the <a href="/outputs/meta/scalerl">RL-scaling</a>
+  family, alongside <a href="/outputs/microsoft/tailsft">TailSFT</a> and
+  the NYU-led <a href="/outputs/nyu/sequential-beats-joint">OPD-then-RLVR</a>
+  ordering result. No code was linked at filing.</p>
+tags:
+  - rl
+  - rl-scaling
+  - post-training
+  - distillation
+  - reasoning
+  - research
+paper:
+  arxiv: "2609.31900"
+  authors:
+    - Emre Can Acikgoz
+    - Yang Li
+    - Zeyu Leo Liu
+    - Srijan Bansal
+    - Dilek Hakkani-Tür
+    - Shafiq Joty
+    - Semih Yavuz
+related:
+  - sequential-beats-joint
+  - tailsft
+  - scalerl
+  - opd

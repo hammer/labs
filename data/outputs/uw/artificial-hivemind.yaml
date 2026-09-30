@@ -6,6 +6,8 @@ date: 2025-10-27
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2510.22954
+  - label: "Stanford reevaluation (arXiv: How Strong Is the Evidence for the Artificial Hivemind?)"
+    url: https://arxiv.org/abs/2609.33936
 description: >
   <p>"The Open-Ended Homogeneity of Language Models" &mdash; NeurIPS 2025
   <strong>Best Paper (Datasets &amp; Benchmarks)</strong>. Introduces the
@@ -14,6 +16,17 @@ description: >
   diversity/mode-collapse problem directly relevant to eval design and
   synthetic-data pipelines. UW-led (Jiang, Tsvetkov) with CMU, Stanford,
   and AI2.</p>
+
+  <p>A September 2026 reevaluation from Stanford (Schaeffer, Miranda, Kazdan,
+  Chudnovsky, Koyejo; <a href="https://arxiv.org/abs/2609.33936">arXiv
+  2609.33936</a>) disputes the evidence. The flagship "metaphor involving time"
+  responses show one dominant vehicle plus a long tail rather than two
+  clusters; under a stricter null (same-prompt answers expressing different
+  ideas) 20&ndash;32% of pairs already exceed the paper's 0.8 convergence
+  threshold, though same-prompt pairs still cross it two to three times as
+  often; and simple prompting reliably raises measured diversity. The authors
+  conclude the published evidence does not establish the effect, without
+  ruling it out.</p>
 tags:
   - eval
   - research

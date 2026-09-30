@@ -1,0 +1,111 @@
+name: CyberGym-E2E
+slug: cybergym-e2e
+lab: berkeley
+type: eval
+date: 2026-06-03
+sources:
+  - label: Blog (Berkeley RDI)
+    url: https://rdi.berkeley.edu/blog/cybergym-e2e/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.04460
+  - label: Project page and leaderboard
+    url: https://www.cybergym.io/cybergym-e2e/
+  - label: GitHub
+    url: https://github.com/sunblaze-ucb/cybergym-e2e
+  - label: HuggingFace
+    url: https://huggingface.co/datasets/sunblaze-ucb/cybergym-e2e
+  - label: Artificial Analysis Leaderboard (CyberGym-E2E-AA)
+    url: https://artificialanalysis.ai/evaluations/cybergym-e2e-aa
+  - label: Artificial Analysis Cyber Index announcement
+    url: https://artificialanalysis.ai/articles/artificial-analysis-cyber-index
+  - label: Artificial Analysis Cyber Index methodology
+    url: https://artificialanalysis.ai/methodology/cyber-index
+description: >
+  <p>The successor to <a href="/outputs/berkeley/cybergym">CyberGym</a> from
+  Berkeley's Center for Responsible, Decentralized Intelligence (RDI), led by
+  <a href="/people/dawn-song">Dawn Song</a>, which moves from reproducing known
+  vulnerabilities to the whole defensive loop. Each of its <strong>920
+  real-world vulnerabilities across 139 open-source projects</strong>, drawn
+  from Google's OSS-Fuzz, places an agent inside the project's own build
+  environment with the vulnerable codebase, build scripts and test scripts. In
+  the end-to-end setting the agent gets no ground-truth data: it must find a
+  bug, write a proof-of-concept input that triggers a sanitizer crash, and
+  patch the code. Four cumulative checks grade the result: the PoC crashes the
+  unpatched build (S1), the patch removes that crash (S2), the project's
+  developer-written functionality tests still pass (S3, the success
+  criterion), and, as a diagnostic, the patch also fixes the specific
+  ground-truth vulnerability (S4). A patch-only setting instead hands the agent
+  the ground-truth PoC and crash log to isolate repair. Tasks come from an
+  automated, agent-assisted pipeline that finds each fix commit, rebuilds the
+  vulnerable and patched versions on modern toolchains and has a coding agent
+  set up each project's unit tests, with a human expert validating test
+  coverage at the end, so the set can keep ingesting new OSS-Fuzz
+  vulnerabilities.</p>
+
+  <p>Discovery is the bottleneck. On the initial 615-task set, with a $10 and
+  90-minute budget per task, Claude Opus 4.5 in Claude Code fixed 82.3% of
+  tasks when given the PoC but succeeded end-to-end (S3) on only 19.2%, and no
+  configuration exceeded 22.6% (Gemini 3 Pro in Gemini CLI). On the full 920
+  tasks GPT-5.4 in Codex reached 65.9% end-to-end and Claude Opus 4.6 62.6%
+  with the cost cap lifted, while S4 topped out at 26.2%, because agents often
+  patch a real vulnerability other than the ground-truth one. On 28 September
+  2026 Artificial Analysis made a 131-task subset (one task per project,
+  selected for difficulty and filtered for oracle leaks and sandbox
+  compatibility), <strong>CyberGym-E2E-AA</strong>, one of three equally
+  weighted components of its new <strong>Cyber Index</strong>, alongside
+  Collinear AI's CWE-Bench-AA and Vercel's DeepsecBench-AA. There MiMo-V2.6-Pro
+  leads at 78.6% pass@1, ahead of GPT-6 Luna at max effort (77.9%) and Grok 4.7
+  at xhigh (74.0%), while GPT-6 Astra, GPT-6 Sol, Claude Fable 5.1, Claude
+  Opus 5.5, Qwen3.8 2.4T A95B and Qwen3.8 27B refuse at least 98% of tasks.
+  The paper (16 authors, 12 of them at UC Berkeley, with others from Johns
+  Hopkins, UC Santa Cruz and UC Santa Barbara; co-first authors Tianneng Shi
+  and Robin Rheem) is an ICML 2026 paper. Apache 2.0; about 80 GitHub stars,
+  against about 920 for the original CyberGym.</p>
+tags:
+  - benchmark
+  - evaluation
+  - agents
+  - security
+  - cybersecurity
+  - coding
+paper:
+  arxiv: "2606.04460"
+  venue: ICML 2026
+  authors:
+    - Tianneng Shi
+    - Robin Rheem
+    - Dongwei Jiang
+    - Mona Wang
+    - Francisco De La Riega
+    - Zhun Wang
+    - Jingzhi Jiang
+    - Dawn Song
+  code_url: https://github.com/sunblaze-ucb/cybergym-e2e
+eval:
+  num_tasks: 920
+  domains:
+    - vulnerability discovery
+    - proof-of-concept generation
+    - patch generation
+    - memory safety (C/C++)
+  scoring_method: "Execution-based, four cumulative stages: S1 the agent's PoC crashes the unpatched
+    build, S2 its patch removes that crash, S3 the project's functionality tests pass (headline
+    end-to-end success), S4 diagnostic check that the patch fixes the ground-truth vulnerability; a
+    patch-only setting supplies the ground-truth PoC and crash log. CyberGym-E2E-AA reports pass@1 on
+    S1 to S3 over 131 tasks."
+  used_in:
+    - Artificial Analysis Cyber Index v1 (as CyberGym-E2E-AA, 1/3 weight)
+  saturation: "Not saturated: best end-to-end (S3) 65.9% on 920 tasks in the paper; CyberGym-E2E-AA best
+    78.6% on its 131-task subset, where several frontier models refuse almost every task"
+  top_scores:
+    - model: MiMo-V2.6-Pro (CyberGym-E2E-AA, 131 tasks, pass@1)
+      score: "78.6%"
+    - model: GPT-6 Luna (max effort; CyberGym-E2E-AA)
+      score: "77.9%"
+    - model: GPT-5.4 (Codex; paper, 920 tasks, S3)
+      score: "65.9%"
+    - model: Claude Opus 4.6 (Claude Code, no cost cap; paper, 920 tasks, S3)
+      score: "62.6%"
+  leaderboard_url: https://www.cybergym.io/cybergym-e2e/
+related:
+  - cybergym

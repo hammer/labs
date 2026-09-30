@@ -1,0 +1,93 @@
+name: Context Language Models (CLMs)
+slug: context-language-models
+lab:
+  - uw
+  - meta
+type: paper
+date: 2026-09-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.37725
+  - label: GitHub
+    url: https://github.com/facebookresearch/context-language-models
+description: >
+  <p>Language models that manage their own context, from the University of
+  Washington and Meta Superintelligence Labs. First and corresponding
+  author Rulin Shao holds both affiliations; the author list includes Mike
+  Lewis and Wen-tau Yih (MSL), <a href="/people/luke-zettlemoyer">Luke
+  Zettlemoyer</a> (UW and MSL) and last author Pang Wei Koh (UW), with one
+  co-author from MIT and <a href="/people/nathan-lambert">Nathan
+  Lambert</a> listed under Trillium Labs. Agent harnesses usually decide
+  how context is compacted, offloaded or retrieved, either by fixed rules
+  (summarize at a length threshold) or through a small set of
+  human-defined tool actions. A <strong>CLM</strong> gets unrestricted
+  write access instead: the live context is mirrored to a file that the
+  model can append to or edit with Bash, and each edit is synced into its
+  context for the next turn. Several agents' context files can coexist,
+  which extends the design to subagents and agent swarms. The authors
+  report emergent behaviors such as trackers for multi-agent
+  orchestration, a new chat role for internal notes, and reusable
+  context-management functions.</p>
+
+  <p>Applied zero-shot to existing models such as Qwen3.6-27B and GPT-5.6
+  Sol, CLMs beat harness-defined and action-based context management:
+  <strong>11.4% higher accuracy with 21.5% fewer FLOPs</strong> than the
+  strongest baseline on BrowseComp-Plus, that baseline's accuracy on
+  Terminal-Bench 2.1 with 29.5% fewer FLOPs, 5% higher scores with 59%
+  fewer FLOPs than Codex-style summarization on a 12-hour, ten-task subset
+  of ByteDance Seed's <a href="/outputs/bytedance-seed/edgebench">EdgeBench</a>,
+  and 65% more downstream speedup than a summary-based swarm at the same
+  spend when six agents jointly optimize six interdependent Python
+  repositories over 24 hours. On mathematical optimization they beat
+  evolutionary harnesses such as OpenEvolve by up to 16.8% (Heilbronn) and
+  3.0% (circle packing). Because context management becomes model
+  behavior, it can be learned. A skill-evolution loop raises held-out
+  accuracy on the authors' diagnostic ContextBench by up to 35.9 points.
+  Online RL (stepwise GRPO with a success-gated efficiency advantage, 70
+  steps on 16 H200s for the policy and 48 for rollouts) lifts Qwen3.5-9B
+  on BrowseComp-Plus from <strong>28.8% to 42.5%</strong> while cutting
+  FLOPs per question by 12%, which puts it 0.4 points above a Codex-style
+  summary harness trained the same way while using 38.8% fewer FLOPs.
+  Arbitrary mid-context edits
+  defeat prefix caching, so the paper adds <strong>Suffix Cache
+  Reuse</strong>, which reuses cached states beyond the matching prefix and
+  cuts server-side compute by 35% against standard SGLang at matched
+  performance.</p>
+
+  <p>The code is in Meta's facebookresearch GitHub organization (Python,
+  CC-BY-NC-4.0; 69 stars at filing): the CLM agent implemented in the
+  Harbor framework, the skill-evolution and RL code, and Suffix Cache Reuse
+  as an SGLang patch, plus a <code>pi-clm</code> package for the Pi agent.
+  ContextBench is listed as coming soon, and the README links no trained
+  checkpoints. The approach moves context management from the harness into
+  the model, the same direction as Tencent's RL-trained
+  <a href="/outputs/tencent/contextpilot">ContextPilot</a>.</p>
+tags:
+  - agents
+  - agent-harness
+  - long-context
+  - memory
+  - rl
+  - efficiency
+  - inference
+  - research
+paper:
+  arxiv: "2609.37725"
+  authors:
+    - Rulin Shao
+    - Shannon Zejiang Shen
+    - Junjie Oscar Yin
+    - Yuetai Li
+    - Minheng Wang
+    - Hamish Ivison
+    - Radha Poovendran
+    - Nathan Lambert
+  code_url: https://github.com/facebookresearch/context-language-models
+library:
+  github: https://github.com/facebookresearch/context-language-models
+  language: Python
+  license: CC-BY-NC-4.0
+related:
+  - contextpilot
+  - edgebench
+  - mini-swe-agent

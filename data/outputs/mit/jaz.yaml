@@ -1,0 +1,85 @@
+name: "JAZ: Harness as a Language"
+slug: jaz
+lab: mit
+type: library
+date: 2026-09-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.26891
+  - label: GitHub
+    url: https://github.com/jaz-lang/jaz
+  - label: GitHub (evaluation code)
+    url: https://github.com/jaz-lang/jaz-evals
+  - label: PyPI
+    url: https://pypi.org/project/jaz-lang/
+description: >
+  <p>An agent framework from MIT CSAIL, introduced in "Harness as a Language:
+  A Minimalist Agent Framework With Maximal Expressivity", built to test how
+  far a harness that is little more than the agent loop itself can go on
+  workloads that usually get specialized systems, such as long-horizon memory
+  and continual self-improvement. JAZ exposes a single LLM-backed primitive,
+  <strong><code>invoke</code></strong>, which it treats as a language
+  construct: a function whose body an LLM writes at run time, in a Python
+  REPL, each time it is called. The authors define the loop by two
+  properties: the model can write arbitrary executable code, including
+  recursive calls to <code>invoke</code>, and everything the model sees, both
+  the inputs to <code>invoke</code> and its own interaction history, is a
+  variable in the code environment. The design generalizes CodeAct and
+  recursive language models (RLMs), and the second property is what separates
+  it from code-mode agents such as smolagents and RLMs, which show the prompt
+  and history to the model only as a list of messages rather than as data it
+  can manipulate. Programmers add constraints and monitoring through built-in
+  hooks for observability (logging, trajectory recording, Langfuse and Jaeger
+  tracing), resumability (trajectory replay), resource control (shared budget
+  pools, iteration and recursion limits, context-window warnings) and
+  validation of return values and generated code; a hook applies either to
+  one call or, as a context manager, to every call beneath it.</p>
+
+  <p>The evaluation uses prompting only, with no hand-built tools, memory or
+  file system. On StuLife, an ordered sequence of 1,284 simulated tasks from a
+  college semester (939 of them graded), with GPT-5.4 nano throughout, JAZ
+  passed 69.9% of the 207 "far recall" tasks, which need information given
+  more than 50 tasks earlier, against 61.8% for the Letta agent (the newest
+  version of MemGPT) at less than half the cost ($18.3 against $42.1), and
+  32.0% for CodeAct with subagents. On AppWorld's test-challenge split, a
+  top-level GPT-5.4 <code>invoke</code> acted as a meta-agent that dispatched
+  batches of tasks to GPT-5.4 nano sub-invokes and revised prompts and skills
+  from test feedback; it reached 74.2% task goal completion against 69.9% for
+  the ACE self-improvement harness ($20.9 against $30.6) and 71.1% for CodeAct
+  with subagents. Eight of the ten authors are at MIT CSAIL and two are
+  independent researchers; Zhening Li is first author, Joshua Liu and Mateja
+  Vukelic are marked as equal contributors, Omar Khattab is a co-author and
+  Armando Solar-Lezama is last author. The framework (Apache 2.0, about 50
+  GitHub stars) has been on PyPI as jaz-lang since June 2026, and a separate
+  MIT-licensed repository reproduces the paper's ten agent
+  configurations.</p>
+tags:
+  - agents
+  - agent-harness
+  - harness
+  - memory
+  - long-context
+  - self-improvement
+  - framework
+  - open-source
+paper:
+  arxiv: "2609.26891"
+  authors:
+    - Zhening Li
+    - Joshua Liu
+    - Mateja Vukelic
+    - Nicole Shen
+    - Supriya Lall
+    - Amitayush Thakur
+    - Omar Khattab
+    - Armando Solar-Lezama
+  code_url: https://github.com/jaz-lang/jaz
+library:
+  github: https://github.com/jaz-lang/jaz
+  language: Python
+  license: Apache 2.0
+  pip_package: jaz-lang
+related:
+  - gam
+  - jam
+  - rrsi

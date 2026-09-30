@@ -24,3 +24,4 @@ library:
 related:
   - deepgemm
   - deepseek-v4.1-flash
+  - deepseek-ascend-kernels

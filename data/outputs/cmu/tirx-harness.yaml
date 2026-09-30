@@ -1,0 +1,79 @@
+name: "TIRx Harness: An Open Compiler Harness for Agentic GPU Programming"
+slug: tirx-harness
+lab: cmu
+type: library
+date: 2026-09-29
+sources:
+  - label: Blog (MLC)
+    url: https://blog.mlc.ai/2026/09/29/tirx-harness-an-open-compiler-harness-for-agentic-gpu-programming
+  - label: GitHub
+    url: https://github.com/mlc-ai/TIRx-harness
+  - label: Documentation
+    url: https://tirxharness.mlc.ai/docs/
+  - label: GitHub (TIRx-kernels)
+    url: https://github.com/mlc-ai/TIRx-kernels
+  - label: "Book: Agentic GPU Programming for MLSys"
+    url: https://mlc.ai/agentic-gpu-programming-for-mlsys/
+  - label: PyPI
+    url: https://pypi.org/project/tirx-harness/
+description: >
+  <p>An open <strong>compiler harness</strong> for coding agents that write
+  GPU kernels, from the MLC community behind
+  <a href="/outputs/cmu/mlc-llm">MLC-LLM</a> and
+  <a href="/outputs/cmu/xgrammar">XGrammar</a>. Its authors found that agents
+  optimizing kernels spent much of their effort on work around the
+  optimization itself: predicting how code would be lowered to hardware
+  behavior, diagnosing timing-dependent failures, and coping with
+  measurements distorted by other GPU activity. They define a compiler
+  harness as the agent-facing environment around a compiler foundation, and
+  TIRx Harness has four parts. <strong>TIRx</strong> is a deliberately
+  minimal, hardware-close intermediate representation with a thin PTX-level
+  programming surface, written through the TIRx-lite DSL, so that the PTX ISA
+  serves as the main source of truth for instruction semantics. Compiler
+  analyses check synchronization, data races and numerical behavior, backed
+  by profilers (NCU and IKET) and by numerical simulation when no GPU is
+  available. A knowledge base pairs a kernel zoo of more than 60 TIRx kernels
+  with PTX documentation, keeping concrete implementations rather than
+  agent-written summaries, which tended to overfit the last debugged case.
+  And the <strong>KCoral</strong> benchmark server owns the GPUs and schedules
+  every correctness test, benchmark and profile centrally, so concurrent
+  agents cannot distort each other's timings.</p>
+
+  <p>On NVIDIA Blackwell GPUs, with web access disabled during optimization,
+  agents using the harness produced kernels with family-level geometric-mean
+  speedups of 1.33&times; to 6.84&times; over each family's optimized
+  reference across Kimi Delta Attention (KDA), MiniMax Sparse Attention,
+  Multi-head Latent Attention and Video Sparse Attention; KDA kernels reached
+  2.94&times; over FlashKDA in the forward pass and 6.84&times; over Flash
+  Linear Attention in the backward pass. Example traces show an agent finding
+  tcgen05.mma output-lane masking in the PTX ISA, which raised the observed
+  GPU frequency for a 2&ndash;3% gain; adapting FlashAttention-4's mixed
+  native and software exponential for about 2.9%; and replacing a serial
+  32&times;32 recurrence in KDA forward with Gated DeltaNet's hierarchical
+  inverse decomposition for about 17%. In another, synchronization analysis
+  caught a latent mbarrier bug in a candidate that had passed the correctness
+  tests. The harness was released on 29 September 2026 as a PyPI package
+  (tirx-harness) with a companion TIRx-kernels repository and an online book,
+  Agentic GPU Programming for MLSys, and had about 70 GitHub stars a day
+  later; the repository declares no license. Five of its seven GitHub
+  contributors list Carnegie Mellon affiliations, and the post thanks "the
+  NVIDIA CAKE team, Kernel Design Agent (KDA) team and SOL-ExecBench
+  team".</p>
+tags:
+  - agents
+  - agent-harness
+  - harness
+  - gpu-kernels
+  - compilers
+  - infrastructure
+  - efficiency
+  - open-source
+library:
+  github: https://github.com/mlc-ai/TIRx-harness
+  language: Python, Rust
+  pip_package: tirx-harness
+related:
+  - mlc-llm
+  - xgrammar
+  - kernelbench
+  - kernel-design-agents

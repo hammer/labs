@@ -1,0 +1,86 @@
+name: Kumo Tabular
+slug: kumo-tabular
+lab: nvidia
+type: model
+date: 2026-09-29
+sources:
+  - label: Blog (HuggingFace)
+    url: https://huggingface.co/blog/nvidia/kumo-tabular
+  - label: GitHub (structured-data-models)
+    url: https://github.com/NVIDIA/structured-data-models
+  - label: HuggingFace
+    url: https://huggingface.co/nvidia/Kumo-Tabular
+description: >
+  <p>NVIDIA's open foundation model for tabular classification and regression,
+  released September 29, 2026. Given a table whose labeled rows serve as
+  context, it predicts the labels of new rows in one forward pass, with no
+  training, tuning or feature engineering. It comes in three sizes from
+  <strong>28M to 215M parameters</strong>, each with separate classifier and
+  regressor weights, and was pretrained only on artificial tables. Each table
+  is sampled from a structural causal model, a random causal graph whose nodes
+  apply randomly drawn functions (linear maps, small neural networks, trees or
+  Gaussian processes), and the generator adds real-world mess on purpose:
+  missing values in several patterns, coarsened features (so duplicate rows
+  can disagree on the label), many-level categorical columns and heavy-tailed
+  regression targets. As in TabICLv2, training ran in three stages, from
+  1,024-row tables to contexts of 400 to 10,240 rows and finally up to 60,000
+  rows, with up to 100 columns throughout; the small, medium and large models
+  saw about 35, 71 and 137 million tables. The architecture uses the column,
+  row and in-context attention of TabICL and TabPFN: Fourier-feature cell
+  embeddings, induced self-attention down each column, row attention with
+  rotary positions and four [CLS] readout tokens, then a transformer in which
+  query rows attend only to context rows, so the context's keys and values can
+  be cached and reused. A per-head attention temperature that grows with the
+  logarithm of the number of keys keeps attention sharp on tables much larger
+  than those seen in training. The classifier handles up to 10 classes per
+  pass (the library extends this with error-correcting output codes), and the
+  regressor predicts 999 quantiles.</p>
+
+  <p>With default settings Kumo Tabular ranks <strong>first overall on
+  TabArena with an Elo of 1950</strong> while running 17&times; faster than
+  <a href="/outputs/tsinghua/limix-2">LimiX-2</a> on a single RTX 6000 Pro. It
+  also places first on BeyondArena (Elo 1418), first overall on TALENT
+  (average ranks 6.67, 3.98 and 4.22 for classification accuracy, log-loss and
+  regression RMSE), and first and second on ScoringBench with the large and
+  medium models. Weights are released under OpenMDW-1.1, which allows
+  commercial use, and run through NVIDIA's new Apache-2.0 structured-data-models
+  library, which also packages TabICLv2, Google's
+  <a href="/outputs/google/tabfm">TabFM</a> and NVIDIA's relational Kumo model;
+  the training recipe and table generators are promised for later. The model
+  belongs to the NVIDIA Kumo Structured collection and carries the name of Kumo
+  AI, the enterprise predictive-AI startup NVIDIA bought in June 2026 for more
+  than $400 million, according to
+  <a href="https://www.theinformation.com/articles/nvidia-buys-enterprise-model-maker-kumo-ai-least-400-million">The
+  Information</a>. Kumo co-founder Jure Leskovec is among the release post's 13
+  authors. Amazon's <a href="/outputs/amazon/mitra-v2">Mitra-v2</a> and Google's
+  TabFM are the other big-lab tabular models trained only on synthetic
+  tables.</p>
+tags:
+  - tabular
+  - science
+  - foundation-model
+  - open-weight
+model:
+  architecture: dense
+  parameters: 215M
+  license: OpenMDW-1.1
+  benchmark_scores:
+    - benchmark: TabArena
+      score: "1950 Elo"
+      mode: default settings, rank 1 overall
+    - benchmark: BeyondArena
+      score: "1418 Elo"
+      mode: rank 1 (Improvability 7.78%)
+  variants:
+    - name: Kumo Tabular-Small
+      parameters: 28M
+      notes: "About 35 million artificial pretraining tables."
+    - name: Kumo Tabular-Medium
+      notes: "About 71 million artificial pretraining tables; second on ScoringBench."
+    - name: Kumo Tabular-Large
+      parameters: 215M
+      notes: "About 137 million artificial pretraining tables; first on ScoringBench."
+related:
+  - tabfm
+  - limix-2
+  - mitra-v2

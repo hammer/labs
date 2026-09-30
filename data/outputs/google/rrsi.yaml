@@ -1,0 +1,95 @@
+name: "RRSI: Regularized Recursive Self-Improvement of Agent Harnesses"
+slug: rrsi
+lab: google
+type: paper
+date: 2026-09-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.24972
+  - label: Project page
+    url: https://regularized-rsi.com/
+  - label: GitHub
+    url: https://github.com/google-research/rrsi
+description: >
+  <p>Google Cloud AI Research's answer to overfitting in automated harness
+  evolution. Methods that let an LLM propose and keep edits to an agent's
+  harness (prompts, control flow, tools, memory, context management) amount to
+  recursive self-improvement at the agent-system level, but because every round
+  re-scores candidates on the same finite evolve set, the harness can memorize
+  that set: large in-distribution gains shrink or vanish on other benchmarks.
+  <strong>RRSI</strong> leaves the whole harness editable and regularizes the
+  search instead. On the proposal side, a cosine-annealed budget caps how many
+  independent edits one candidate may bundle (the paper's L0 analogy), a
+  per-edit history keeps the proposer from redrawing hypotheses that already
+  failed, and when progress stalls within the noise band part of the budget
+  goes to components not yet touched. On the selection side, an LLM critic
+  rejects edits that encode benchmark-specific content (task names, answers,
+  task-specific values) before they are scored; a candidate must stay above the
+  best score so far minus a noise band estimated from repeated runs of the base
+  harness; extra policy tokens must be paid for by a proportional score gain
+  (the Ridge analogy); and components that stop producing measurable gains are
+  pruned (the Lasso analogy).</p>
+
+  <p>Claude Opus 4.8 serves as the frozen policy, proposer, analyst and critic.
+  In each of three domains the harness evolves on one suite and runs unchanged
+  on held-out ones: Terminal-Bench 2.1, then SWE-bench Verified; Harvey LAB
+  (120 evolve and 40 held-out legal tasks), then JobBench, GDPval and
+  APEX-Agents; EngDesign, then Frontier-Eng. Against Meta-Harness,
+  <a href="/outputs/fudan/agentic-harness-engineering">AHE</a>, TTHE and
+  <a href="/outputs/huawei/harnessx">HarnessX</a>, all run from the same base
+  harness with the same candidate budget, every baseline gains more on the
+  Harvey LAB evolve split (up to 93.0, against RRSI's 90.5). Out of
+  distribution the ranking flips: RRSI averages <strong>43.6</strong> across
+  JobBench, GDPval and APEX-Agents against 39.7 for the unevolved harness,
+  while the strongest baseline, Meta-Harness, adds 0.9 and AHE and TTHE end
+  below where they started. Unregularized evolution reaches the highest evolve
+  score (92.8) but only 40.3 out of distribution, at 3.80 million policy tokens
+  per trial against RRSI's 2.42 million (1.56 million for the base harness). In
+  coding, RRSI lifts Terminal-Bench 2.1 from 74.2 to 80.2 with Opus 4.8 and from
+  64.6 to 78.7 with Gemini 3.5 Flash as the policy (the paper's 14.1-point
+  headline), carrying gains of 1.8 and 2.2 points to SWE-bench Verified; the
+  Gemini-evolved harness also lifts Gemini 3.1 Flash Lite, which the search
+  never used, from 11.2 to 14.6. Frontier-Eng gains 4.3 medal points, and no
+  held-out split regresses.</p>
+
+  <p>Eleven of the 14 authors are at Google Cloud AI Research, including first
+  author Peng Xia (UNC-Chapel Hill, working as a Google student researcher) and
+  senior authors Tomas Pfister and Chen-Yu Lee; the other co-authors are from
+  UNC, Stanford and Washington University in St. Louis. The same group released
+  <a href="/outputs/google/envharness">EnvHarness</a> a month earlier. The
+  Apache-2.0 code runs each candidate in its own git worktree and logs every
+  edit's hypothesis and measured effect; it had about 1,000 GitHub stars by
+  September 30, 2026. <a href="/outputs/nvidia/sol-pi">SoL-Pi</a>, NVIDIA's
+  harness auto-research posted four days earlier, avoids the same overfitting
+  by keeping its benchmark out of the search, and the
+  <a href="/outputs/ai2/rethinking-harness-evolution">AI2/UW study</a> RRSI
+  cites measured how little harness-evolution gains transfer.</p>
+tags:
+  - agents
+  - agent-harness
+  - self-improvement
+  - coding
+  - open-source
+  - research
+paper:
+  arxiv: "2609.24972"
+  authors:
+    - Peng Xia
+    - Rujun Han
+    - Zifeng Wang
+    - Yanfei Chen
+    - Yufan Zhuang
+    - Yoonho Lee
+    - Chengsong Huang
+    - Han Yu
+  code_url: https://github.com/google-research/rrsi
+library:
+  github: https://github.com/google-research/rrsi
+  language: Python
+  license: Apache 2.0
+related:
+  - envharness
+  - sol-pi
+  - agentic-harness-engineering
+  - harnessx
+  - rethinking-harness-evolution

@@ -61,6 +61,11 @@ people:
     urls:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=U5xRA6QAAAAJ
+news:
+  - title: "Ken Griffin Gives CMU $3B, the Largest Individual Gift in Higher-Education History: $500M to the School of Computer Science, Renamed the Kenneth C. Griffin School of Computer Science, and $2B to Launch CMU Miami"
+    url: https://www.cmu.edu/news/stories/archives/2026/september/carnegie-mellon-university-announces-historic-3-billion-gift-from-ken-griffin-pioneering-a-new-model
+    source: Carnegie Mellon University
+    date: 2026-09-30
 tags:
   - academic
   - architecture

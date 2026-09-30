@@ -1,0 +1,67 @@
+name: "Save Your Saturated Data: Learning Beyond Reward Saturation in Group-Based RL"
+slug: save-your-saturated-data
+lab: uw
+type: paper
+date: 2026-09-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.33126
+  - label: GitHub
+    url: https://github.com/Ziyuan-Yang/saturatedRL
+description: >
+  <p>A study of what to do with RL training data a model has outgrown, from
+  the University of Washington (Ziyuan Yang, Yike Wang, Shangbin Feng and
+  Yulia Tsvetkov). Group-relative methods such as GRPO and
+  <a href="/outputs/bytedance-seed/dapo">DAPO</a> learn from reward
+  differences within a group of rollouts, so once every rollout for a prompt
+  is correct the advantages are zero and the prompt stops teaching anything.
+  The paper calls this <strong>reward saturation</strong>. Rather than
+  replacing solved problems with harder ones (the route taken by UW's
+  difficulty-adaptive <a href="/outputs/uw/rlve">RLVE</a> environments), it
+  tries to recover signal from them with interventions at four points in the
+  pipeline: the data (irrelevant context, rephrasing), the rollouts (higher
+  temperature, or <strong>negative rollouts</strong> in which the policy is
+  asked to write an incorrect solution), the reward (a reward model, or
+  LLM-judged reasoning quality or diversity) and the advantage (padding the
+  group with zero rewards).</p>
+
+  <p>Qwen3-1.7B and Qwen3-4B (thinking off) were trained with verl on H200s,
+  on problems from a 4.3K MATH subset kept only if all eight base-model
+  rollouts were correct, and evaluated on eight benchmarks (MATH-500, Minerva,
+  BBH, GPQA-Diamond, AIME24, AIME25, IFBench, IFEval). Negative rollouts gave
+  the best average on both models: 31.53 against 28.93 for plain GRPO on 1.7B
+  (+9.0% relative) and 41.22 against 38.74 on 4B (+6.4%), ahead of the
+  Mixed-CUTS exploration baseline, SFT, and SFT followed by GRPO. How the
+  negatives are made matters: swapping only the final answer of a correct
+  solution scored below GRPO (27.70 and 33.38), and zero-padding with two
+  entries, which enlarges advantages without adding information, fell to 32.90
+  on the 4B model, below its base score. The method still helps when only part
+  of the data is saturated (gains of 1.81 to 3.09 points across saturation
+  ratios), carries over to Llama-3.1-8B-Instruct (24.97 with GRPO, 25.63 with
+  negative rollouts), and can recycle prompts as they saturate during
+  training, with AIME 2025 validation accuracy rising from 22.1% to 32.7% over
+  80 steps. Filed under the RL-scaling family as a data axis, the counterpart
+  to <a href="/outputs/mila/never-give-up">Never Give Up</a>, which targets
+  problems the model cannot yet solve.</p>
+tags:
+  - rl
+  - rl-scaling
+  - reinforcement-learning
+  - post-training
+  - reasoning
+  - research
+paper:
+  arxiv: "2609.33126"
+  authors:
+    - Ziyuan Yang
+    - Yike Wang
+    - Shangbin Feng
+    - Yulia Tsvetkov
+  code_url: https://github.com/Ziyuan-Yang/saturatedRL
+library:
+  github: https://github.com/Ziyuan-Yang/saturatedRL
+  language: Python
+related:
+  - rlve
+  - never-give-up
+  - dapo

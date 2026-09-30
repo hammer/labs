@@ -1,0 +1,79 @@
+name: Solar Mini 4
+slug: solar-mini-4
+lab: upstage
+type: model
+date: 2026-09-22
+sources:
+  - label: API Docs
+    url: https://console.upstage.ai/docs/models/solar-mini-4
+  - label: Model History (API Docs)
+    url: https://console.upstage.ai/docs/models/history
+  - label: Solar Decide (API Docs)
+    url: https://console.upstage.ai/docs/models/solar-decide
+  - label: Preview announcement (AI Times)
+    url: https://www.aitimes.com/news/articleView.html?idxno=215245
+  - label: CSAT math evaluation (AI Times)
+    url: https://www.aitimes.com/news/articleView.html?idxno=215457
+  - label: OpenRouter
+    url: https://openrouter.ai/upstage/solar-mini4
+description: >
+  <p>Upstage's compact proprietary model. Its API documentation calls it a
+  "cost-efficient, compact language model (<strong>35B total / 3B active
+  parameters</strong>), built for agentic use cases where response speed and
+  cost matter." Apart from size, its published specifications match
+  <a href="/outputs/upstage/solar-pro-4">Solar Pro 4</a>'s: a
+  <strong>512K-token context window</strong> (524,288 tokens on OpenRouter),
+  up to 128K output tokens, a reasoning mode, structured outputs and tool
+  calling, English, Korean and Japanese, and a February 2026 training-data
+  cutoff. It became generally available on September 22, 2026 (model ID
+  solar-mini4-260922, alias solar-mini4) on the Upstage Console and
+  Playground and for on-premises deployment. CEO
+  <a href="/people/sung-kim">Sung Kim</a> had opened a free preview on
+  September 13. The console lists it at $0.10 per million input tokens and
+  $0.40 per million output tokens, with 50% off through October 22. No
+  weights are released. It replaces the 10.7B-parameter Solar Mini API model
+  (solar-mini-250422), which Upstage retires on October 30, 2026 (KST),
+  telling users to migrate to the solar-mini4 alias.</p>
+
+  <p>Upstage has published no technical report, benchmark table or training
+  details. OpenRouter's listing calls the model a mixture-of-experts. AI
+  Times, relaying Kim's preview announcement, reported that it carries over
+  the architecture and training data validated in
+  <a href="/outputs/upstage/solar-open-2">Solar Open 2</a> and performs close
+  to Solar Pro 4. Upstage has not said whether the model was pretrained from
+  scratch, so the 35B/3B figures stay out of the structured scale fields. The
+  only outside numbers so far come from a Sogang University team that tested
+  the preview on 46 Korean CSAT math questions with Python tool use, as
+  reported by AI Times. It solved 93.5% of the questions within three
+  attempts and 76.8% on the first attempt, against 87.7% for Solar Pro 4. It
+  averaged 14.9 seconds per attempt, against 120.5 seconds for Solar Pro 4.
+  The team cautioned that the models were reached through different access
+  routes and infrastructure. Artificial Analysis had not scored the model at
+  filing.</p>
+
+  <p>Upstage launched <strong>Solar Decide</strong> (beta) the same day, a
+  "structured decision model, served as a System One endpoint on Solar Mini
+  4" (<code>POST /v1/systemone</code>). Given a state and typed questions, it
+  returns a choice, a score or a yes/no answer with a calibrated probability.
+  It uses one forward pass per decision instead of generating text.</p>
+tags:
+  - enterprise
+  - agentic
+  - reasoning
+  - multilingual
+  - efficiency
+  - moe
+model:
+  # Upstage's docs give 35B total / 3B active; OpenRouter's listing calls it
+  # a mixture-of-experts. parameters/active_parameters are deliberately unset:
+  # Upstage has not said whether Solar Mini 4 was pretrained from scratch or
+  # derived from another checkpoint (earlier Solar models were depth-up-scaled
+  # from external bases), so the figures stay in the description until
+  # provenance is disclosed.
+  architecture: moe
+  context_window: 524288
+  license: Proprietary
+related:
+  - solar-pro-4
+  - solar-open-2
+  - solar-10.7b

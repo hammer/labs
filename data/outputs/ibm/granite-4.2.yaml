@@ -61,7 +61,10 @@ description: >
   LiveCodeBench v6 75.8, MMLU-Pro 77.6, RULER-128K 81.4. AA Intelligence Index
   v4.3: <strong>15</strong> (30B), 11 (8B), 9 (3B) &mdash; versus 7 / 7 / 6 for the non-reasoning Granite 4.1 instruct models on the same bases. Released
   alongside Granite Speech 5.0 Turbo CTC (470M, no LLM backbone, ~12,600 RTFx
-  on one H200).</p>
+  on one H200), whose design paper (<a href="https://arxiv.org/abs/2609.20104">arXiv
+  2609.20104</a>, September 17) places it on the Open ASR leaderboard's
+  speed-accuracy Pareto frontier for English short-form ASR at twice the speed
+  of the fastest competitor.</p>
 tags:
   - open-weight
   - enterprise

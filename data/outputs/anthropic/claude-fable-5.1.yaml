@@ -18,7 +18,9 @@ description: >
   <a href="/outputs/anthropic/claude-fable-5">Claude Fable 5</a> as the
   broadly available counterpart to the restricted
   <a href="/outputs/anthropic/claude-mythos-5.1">Claude Mythos 5.1</a>.
-  <strong>#1 on the AA Intelligence Index v4.3 at 53</strong> (57 on v4.2; 66 on v4.1.1;
+  <strong>53 on the AA Intelligence Index v4.3.2</strong>, #1 until
+  <a href="/outputs/anthropic/claude-opus-5.5">Claude Opus 5.5</a> (58) and
+  Sonnet 5.5 (56) passed it in late September (57 on v4.2; 66 on v4.1.1;
   Opus 5 scores 51). Headline gains are agentic and scientific:
   Terminal-Bench 4.0 <strong>55.8</strong> (Fable 5 42.0, Opus 5 52.3),
   Terminal-Bench-Science 0.1 <strong>52.6</strong> &mdash; more than double

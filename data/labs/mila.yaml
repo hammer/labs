@@ -66,6 +66,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=U89FHq4AAAAJ
 news:
+  - title: "Mila and Mozilla Launch an Open-Source AI 'Foundation Layer' Initiative for Locally Operated AI: Mila Leads Delivery, Mozilla Provides the Initial $5M, With Government of Canada Support"
+    url: https://mila.quebec/en/news/mila-and-mozilla-announce-new-initiative-to-build-trustworthy-open-source-ai-for-everyone
+    source: Mila
+    date: 2026-09-17
   - title: "Hugo Larochelle named Mila Scientific Director"
     url: https://mila.quebec/en/news
     source: Mila

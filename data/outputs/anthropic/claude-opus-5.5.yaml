@@ -1,0 +1,84 @@
+name: Claude Opus 5.5
+slug: claude-opus-5.5
+lab: anthropic
+type: model
+date: 2026-09-22
+flagship: true
+sources:
+  - label: Announcement
+    url: https://www.anthropic.com/news/claude-opus-5-5
+  - label: System Card (PDF)
+    url: https://anthropic.com/claude-opus-5-5-system-card
+  - label: Models Overview (Claude Docs)
+    url: https://platform.claude.com/docs/en/about-claude/models/overview
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/claude-opus-5-5
+  - label: OpenRouter
+    url: https://openrouter.ai/anthropic/claude-opus-5.5
+description: >
+  <p>The first model in Anthropic's Claude 5.5 family and its first release
+  since Dario Amodei's September 14 essay calling for the industry to pace the
+  frontier. Anthropic says it performs at the level of
+  <a href="/outputs/anthropic/claude-fable-5.1">Claude Fable 5.1</a> on most
+  work while costing <strong>40% less to run than
+  <a href="/outputs/anthropic/claude-opus-5">Opus 5</a></strong>: input and
+  output are $4 and $20 per million tokens (20% below Opus 5), cache reads
+  $0.20 (60% below), and output streams more than 30% faster. API ID
+  <code>claude-opus-5-5</code>; 1M-token context, 128K output, June 2026
+  knowledge cutoff. Artificial Analysis scores it <strong>58 on Intelligence
+  Index v4.3.2</strong> at max effort, <strong>#1 overall</strong>, ahead of
+  Fable 5.1 and GPT-6 Astra (53 each). Anthropic's model docs now tell
+  developers to start with Opus 5.5 for most workloads and to reach for Fable
+  5.1 for demanding reasoning and long-horizon agentic work. Parameters
+  undisclosed.</p>
+
+  <p>Anthropic's launch table (Opus 5.5 at max effort unless noted, against
+  Fable 5.1 / Opus 5 / GPT-6 Astra): <a href="/outputs/stanford/terminal-bench">Terminal-Bench
+  4.0</a> <strong>66.4%</strong>
+  at xhigh (55.8 / 52.3 / 57.9), FrontierCode v1.1 54.4%, CursorBench 4.0
+  57.8%, GDPval-AA v2.1 Elo 1846 (1735 / 1708 / 1542), Humanity's Last Exam
+  with tools 67.7%, Terminal-Bench-Science 0.1 58.7% (GPT-6 Astra 64.6%),
+  OSWorld 2.1 81.8% (partial credit), and Zapier's AutomationBench 40.0%, run
+  without fallback models so safeguard interventions counted as failures.
+  Results were measured with production safeguards on: when they intervened,
+  cyber tasks fell back to Opus 4.8 and biology or frontier-LLM-development
+  tasks to Opus 5. It is the first Opus to launch with Fable 5.1-class
+  safeguards on cybersecurity, biology and distillation, because Anthropic
+  judges it comparable to Claude Mythos 5.1 in biology and cybersecurity.
+  External pre-release testing came from Frontier Design and METR.
+  <a href="/outputs/anthropic/claude-sonnet-5.5">Sonnet 5.5</a> followed on
+  September 28; Haiku 5.5 is due in the coming weeks.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+  - agentic
+model:
+  context_window: 1000000
+  intelligence_index: 58
+  intelligence_index_version: "AA v4.3.2"
+  benchmark_scores:
+    - benchmark: Terminal-Bench 4.0
+      score: "66.4%"
+      mode: xhigh
+    - benchmark: FrontierCode v1.1 (Main)
+      score: "54.4%"
+    - benchmark: CursorBench 4.0
+      score: "57.8%"
+    - benchmark: GDPval-AA v2.1 (Elo)
+      score: "1846"
+    - benchmark: Humanity's Last Exam
+      score: "67.7%"
+      mode: with tools
+    - benchmark: OSWorld 2.1
+      score: "81.8%"
+      mode: partial credit
+  variants:
+    - name: Claude Opus 5.5 (xhigh)
+      notes: AAII v4.3.2 56
+    - name: Claude Opus 5.5 (high)
+      notes: AAII v4.3.2 54
+related:
+  - claude-opus-5
+  - claude-fable-5.1
+  - claude-sonnet-5.5

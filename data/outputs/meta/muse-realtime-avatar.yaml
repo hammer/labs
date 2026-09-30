@@ -1,0 +1,73 @@
+name: Muse Realtime Avatar
+slug: muse-realtime-avatar
+lab: meta
+type: model
+date: 2026-09-23
+sources:
+  - label: Announcement (Meta AI Research blog)
+    url: https://research.meta.ai/blog/bringing-your-muse-to-life
+  - label: Connect 2026 roundup
+    url: https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/
+description: >
+  <p>Meta's real-time avatar model, shown at Connect 2026 as the
+  embodiment layer for Muse, Meta's personal AI agent. It animates any
+  reference image (a photographic portrait, a full-body illustration, an
+  animal or an everyday object) as a character that talks, gestures and
+  shifts posture in a live conversation. It runs as one streaming system
+  with <strong>Muse Realtime Voice</strong>, the conversational voice
+  model, which emits a stream of speech tokens (VQs) carrying both what is
+  said and how. An audio decoder turns those tokens into speech, while
+  Muse Realtime Avatar, an audio-driven <strong>Diffusion
+  Transformer</strong>, consumes the same stream together with the
+  reference media and a rolling window of recent video latents and
+  generates video in short causal chunks. Sharing one token stream keeps
+  voice, lip motion and expression in sync, and feeding each chunk's newest
+  latents forward as motion context keeps appearance and mannerisms
+  consistent with bounded computation, so generation can run as long as
+  the conversation does. Muse Realtime Voice has no separate
+  announcement.</p>
+
+  <p>Speed comes from distillation. A bidirectional teacher that needs 40
+  diffusion steps with three-way classifier-free guidance (120 model
+  evaluations per chunk) is distilled, with self-forcing and distribution
+  matching distillation, into a causal student with a fixed-length KV
+  cache that runs two unguided evaluations per chunk, a <strong>60&times;
+  reduction</strong>, and raters split nearly evenly between student and
+  teacher. Serving adds persistent KV caches, cache-aware routing,
+  latency-aware batching, 4-bit quantization-aware training, fused kernels
+  and CUDA Graphs, with some model optimizations developed with NVIDIA. The
+  model streams <strong>448&times;768 portrait video at 25 fps</strong>
+  with about 870 ms from the end of the user's turn to the first byte of
+  the combined voice-and-video reply. On one GB200 each step generates
+  eight frames (320 ms of video) in 20 ms, and the optimizations give
+  8&times; the serving capacity of the two-step BF16 baseline, or
+  <strong>12 concurrent real-time sessions per GB200</strong>. In live
+  calls of two to three minutes with matched avatar identities, raters
+  preferred it overall and on every evaluated dimension over Runway
+  Characters and HeyGen LiveAvatar, though on mannerisms its margin over
+  Runway was not statistically distinguishable from parity. Generated
+  video carries an invisible Meta Video Seal watermark.</p>
+
+  <p>Proprietary: Meta published no parameter count, paper or weights, and
+  no numeric preference scores in the post's text. Avatars are available
+  in the Muse app (18+), though not every example in the post is. The
+  model joins <a href="/outputs/meta/muse-voice-transcribe">Muse Voice
+  Transcribe</a> and the <a href="/outputs/meta/muse-image">Muse Image and
+  Muse Video</a> generators in the Muse family.</p>
+tags:
+  - video
+  - generation
+  - diffusion
+  - audio
+  - speech
+  - multimodal
+  - avatar
+  - digital-human
+  - real-time
+  - proprietary
+model:
+  license: Proprietary
+related:
+  - muse-spark-1.3
+  - muse-voice-transcribe
+  - muse-image

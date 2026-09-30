@@ -17,6 +17,8 @@ sources:
     url: https://www.liquid.ai/blog/lfm2-5-vl-3b
   - label: Blog (LFM2.5-DSpark)
     url: https://www.liquid.ai/blog/lfm2.5-dspark
+  - label: Blog (LFM2.5-VL-DSpark)
+    url: https://www.liquid.ai/blog/lfm2-5-vl-dspark
   - label: HuggingFace (8B-A1B)
     url: https://huggingface.co/LiquidAI/LFM2.5-8B-A1B
   - label: HuggingFace (2.6B)
@@ -67,7 +69,9 @@ description: >
   Hermes Agent / OpenClaw harnesses via verl + SGLang), <strong>LFM2.5-VL-3B</strong>
   (Aug; 2.6B backbone + SigLIP2 NaFlex 400M), and <strong>DSpark</strong>
   speculative-decoding drafters (Aug; 296&ndash;328M, up to 3.2&times; decode
-  speedup, upstreamed to llama.cpp and SGLang).</p>
+  speedup, upstreamed to llama.cpp and SGLang), joined in September by a
+  ~280M vision-language drafter for LFM2.5-VL-3B (up to 2.66&times; decode
+  throughput on GPUs and 3.13&times; on edge devices).</p>
 
   <p>LFM2.5-8B-A1B: IFEval 91.84, IFBench 56.47, Multi-IF 79.93, AIME25 42.53,
   BFCL v3 64.36 / v4 48.50, &tau;&sup2;-Telecom 88.07 &mdash; +12 to +74 points

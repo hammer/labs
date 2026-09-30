@@ -1,0 +1,64 @@
+name: "EvoOntology: A Self-Evolving Ontology Layer for Data Agents"
+slug: evoontology
+lab: ruc
+type: library
+date: 2026-09-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.15779
+  - label: GitHub
+    url: https://github.com/ruc-datalab/EvoOntology
+description: >
+  <p>A runtime knowledge layer for <strong>data agents</strong>, agents that
+  answer natural-language requests over tables, files and databases, from the
+  ruc-datalab group at Renmin University of China (Meiduo Chong, Shaolei
+  Zhang, Ju Fan and Xiaoyong Du). The authors call the problem the
+  <strong>agent&ndash;data gap</strong>: the data sits outside the agent,
+  which can reach it only through generic tools that expose things like column
+  names and file paths. Existing systems either let the agent explore raw
+  sources or paste a hand-built semantic layer into the prompt. EvoOntology
+  instead serves the ontology as an <strong>MCP server</strong> with schema,
+  content and tool layers that the agent queries at runtime, retrieving only
+  the terms and mappings the current step needs. A builder agent constructs
+  the first ontology by probing the data sources, and a <strong>self-evolution
+  loop</strong> analyzes agent trajectories to find deficiencies and
+  attribute them to the ontology's schema, content or tools, proposes targeted
+  edits, and keeps each edit only if it passes a paired evaluation on held-out
+  validation tasks with the same backbone model. The repository ships plugins that let Claude Code and Codex
+  build, evolve and explore ontology layers over a user's data. It is
+  MIT-licensed and passed 540 GitHub stars within about two weeks; the paper
+  was posted on September 14 and the repository created the next day.</p>
+
+  <p>Six backbones (GPT-5.5, GPT-5.6 Sol, Claude Sonnet 5, Claude Opus 4.8,
+  DeepSeek-V4-Flash and Qwen3.5-Flash) are each run in the same ReAct
+  scaffold, and EvoOntology improves every one of them on all three
+  benchmarks. On DDR-Bench's 10-K scenario, trajectory-wise accuracy rises by
+  17.8 points on average, from +4.8 for Qwen3.5-Flash to +26.7 for GPT-5.5,
+  while injecting the same content as a static prompt often hurts (&minus;15.0
+  on Claude Sonnet 5). Averaged over four backbones it reaches 89.5, against
+  75.8 for a ReAct agent with episodic memory and 69.5 without. On BIRD
+  text-to-SQL it adds 7.4 points of execution accuracy and 8.6 of valid
+  efficiency score on average, lifting Claude Opus 4.8 from 67.5 to 78.3
+  execution accuracy, and on InsightBench it gains 1.9 points on average. The
+  builder's initial ontology gives the larger step and self-evolution adds a
+  further gain on each benchmark (+12.3 then +7.7 points on DDR-Bench, +5.1
+  then +3.7 on BIRD). The abstract mentions four backbones; the main result
+  tables report six.</p>
+tags:
+  - agents
+  - agent-harness
+  - database
+  - open-source
+  - framework
+paper:
+  arxiv: "2609.15779"
+  authors:
+    - Meiduo Chong
+    - Shaolei Zhang
+    - Ju Fan
+    - Xiaoyong Du
+  code_url: https://github.com/ruc-datalab/EvoOntology
+library:
+  github: https://github.com/ruc-datalab/EvoOntology
+  language: Python
+  license: MIT

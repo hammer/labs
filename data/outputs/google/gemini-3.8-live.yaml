@@ -6,6 +6,10 @@ date: 2026-09-15
 sources:
   - label: Google blog
     url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/
+  - label: Blog (Live Avatar)
+    url: https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/
+  - label: Model card (Gemini 3.8 Audio)
+    url: https://deepmind.google/models/model-cards/gemini-3-8-audio/
 description: >
   <p>Google's native audio-to-audio models of the 3.8 generation, released
   15 September 2026 as two API models: <strong>Gemini 3.8 Live</strong>
@@ -32,4 +36,6 @@ model:
       notes: "AA Speech-to-Speech Index 82.6 (#1, Sep 2026)."
     - name: Gemini 3.8 Live
       notes: "AA Speech-to-Speech Index 76.0."
-related: [gemini-3.8-flash]
+    - name: Gemini 3.8 Live with Live Avatar
+      notes: "Sep 24 2026, in Gemini Enterprise: a real-time animated avatar driven by the Live model, with lip-sync and expressions that stay synchronized across 97 languages; custom avatars from reference images through enterprise allowlisting only."
+related: [gemini-3.8-flash, gemini-3.8-flash-tts]

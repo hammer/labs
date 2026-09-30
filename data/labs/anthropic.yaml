@@ -27,9 +27,9 @@ description: >
   remain key strategic investors. Revenue reached ~$19B ARR by March 2026.</p>
 
   <p>The <strong>Claude</strong> model family has rapidly advanced from Claude 1 (2023)
-  to <strong>Claude Opus 5</strong> (July 2026, AA Intelligence Index v4.3: 51) and the Mythos-class
-  <strong>Claude Fable 5</strong>, consistently
-  ranking among the top frontier models. Claude 4 Opus set SWE-bench records (72.5%),
+  to <strong>Claude Opus 5.5</strong> (September 2026, #1 on AA Intelligence Index v4.3.2 at 58),
+  <strong>Claude Sonnet 5.5</strong> (56) and the Mythos-class <strong>Claude Fable 5.1</strong>,
+  consistently ranking among the top frontier models. Claude 4 Opus set SWE-bench records (72.5%),
   and Claude 4.5 Opus was the first model to exceed 80% on SWE-bench Verified.
   <strong><a href="https://github.com/anthropics/claude-code">Claude Code</a></strong>,
   an agentic coding CLI launched in 2025, reached $2.5B+ ARR by March 2026.</p>
@@ -101,6 +101,34 @@ people:
     description: >
       <p>PhD in Physics from Johns Hopkins University (advised by Jared Kaplan). Researcher at OpenAI. Co-authored the scaling laws paper with Kaplan. Co-founded Anthropic in 2021, serving as CTO.</p>
 news:
+  - title: "Anthropic Frontier Red Team on Z.ai's Open-Weight GLM-5.3: End-to-End Exploits in 50 of 410 Attempts vs 56 for Claude Mythos Preview; Its Safeguards Bypassed 64–100% of the Time"
+    url: https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities
+    source: Anthropic
+    date: 2026-09-29
+  - title: "Claude Sonnet 5.5 Released: #2 on AA Intelligence Index v4.3.2 (56), 70.6% on Terminal-Bench 4.0 vs Sonnet 5's 10.3%; First Sonnet With Cyber Safeguards and Fallbacks"
+    url: https://www.anthropic.com/claude-sonnet-5-5
+    source: Anthropic
+    date: 2026-09-28
+  - title: "Claude Fable 5.1, Working in Claude Science, Computes the Nine-Loop Six-Particle Amplitude in Planar N=4 Super-Yang-Mills; Result Checked With Lance Dixon"
+    url: https://www.anthropic.com/research/yes-claude-can-do-nine-loops
+    source: Anthropic
+    date: 2026-09-25
+  - title: "Anthropic Opens a Life Sciences Research Lab; ~950 Claude Agents Mining Protein Data for 21 Hours Find a Reverse-Transcriptase System With CRISPR-Like Repeats"
+    url: https://www.anthropic.com/news/claude-discovers-novel-enzyme-system
+    source: Anthropic
+    date: 2026-09-23
+  - title: "Claude Opus 5.5 Released: #1 on AA Intelligence Index v4.3.2 (58), Fable 5.1-Level Work at 40% Lower Cost Than Opus 5 ($4/$20 per MTok), First Opus With Fable-Class Safeguards"
+    url: https://www.anthropic.com/news/claude-opus-5-5
+    source: Anthropic
+    date: 2026-09-22
+  - title: "Anthropic Partners With Accenture on Embedded Evaluation of Its Models, Led by Accenture's Faculty; Each Expects to Invest at Least $1B Over Five Years"
+    url: https://www.anthropic.com/news/accenture-embedded-evaluation
+    source: Anthropic
+    date: 2026-09-18
+  - title: "Dario Amodei, 'We Must Pace the Frontier': Calls to Slow the Rate of Capability Gains; Anthropic Unilaterally Commits to Embedded Third-Party Evaluators"
+    url: https://darioamodei.com/post/we-must-pace-the-frontier
+    source: Dario Amodei
+    date: 2026-09-14
   - title: "Anthropic Publishes an Evaluation of Tactical Intelligence Targeting and Conventional-Weapons Capabilities Across Frontier Models"
     url: https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities
     source: Anthropic

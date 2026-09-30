@@ -22,3 +22,5 @@ library:
   github: https://github.com/HazyResearch/ThunderKittens
 paper:
   arxiv: "2410.20399"
+related:
+  - mkernel

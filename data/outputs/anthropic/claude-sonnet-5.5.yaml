@@ -1,0 +1,68 @@
+name: Claude Sonnet 5.5
+slug: claude-sonnet-5.5
+lab: anthropic
+type: model
+date: 2026-09-28
+sources:
+  - label: Announcement
+    url: https://www.anthropic.com/claude-sonnet-5-5
+  - label: System Card (PDF)
+    url: https://www.anthropic.com/claude-sonnet-5-5-system-card
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/claude-sonnet-5-5
+  - label: OpenRouter
+    url: https://openrouter.ai/anthropic/claude-sonnet-5.5
+description: >
+  <p>The second model in the Claude 5.5 family, six days after
+  <a href="/outputs/anthropic/claude-opus-5.5">Opus 5.5</a>. Anthropic calls it
+  a clear upgrade over <a href="/outputs/anthropic/claude-sonnet-5">Sonnet
+  5</a> that runs more than 30% faster and costs up to 30% less for most work
+  at an unchanged price of $2 / $10 per million input/output tokens, because it
+  needs far fewer tokens per task. Artificial Analysis scores it <strong>56 on
+  Intelligence Index v4.3.2</strong> at max effort, #2 overall behind Opus 5.5
+  (58) and ahead of Fable 5.1 and GPT-6 Astra (53). Anthropic positions it for
+  well-scoped everyday tasks, bug fixing and polished documents, and says Opus
+  5.5 remains clearly stronger at open-ended work that needs sustained
+  judgment. API ID <code>claude-sonnet-5-5</code>; 1M-token context, 128K
+  output.</p>
+
+  <p>The jump over Sonnet 5 is largest on agentic work:
+  <a href="/outputs/stanford/terminal-bench">Terminal-Bench 4.0</a>
+  <strong>70.6%</strong> against 10.3% (and above Opus 5.5's 66.4%),
+  GDPval-AA v2.1 Elo 1844 against 1449, AA-Briefcase v1.1 Elo 1811 against
+  1359, OSWorld 2.1 80.1% against 57.0%, CursorBench 4.0 55.5% against 34.1%,
+  and Humanity's Last Exam with tools 64.5% against 54.9%. It is the first
+  Sonnet to finish Pok&eacute;mon Red from screenshots alone and the first to
+  ship with the cyber safeguards and model fallbacks Anthropic built for its
+  most capable models, since its cyber capability is comparable to Opus 5's.
+  Haiku 5.5 is due in the coming weeks.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+  - agentic
+model:
+  context_window: 1000000
+  intelligence_index: 56
+  intelligence_index_version: "AA v4.3.2"
+  benchmark_scores:
+    - benchmark: Terminal-Bench 4.0
+      score: "70.6%"
+    - benchmark: GDPval-AA v2.1 (Elo)
+      score: "1844"
+    - benchmark: OSWorld 2.1
+      score: "80.1%"
+      mode: partial credit
+    - benchmark: CursorBench 4.0
+      score: "55.5%"
+    - benchmark: Humanity's Last Exam
+      score: "64.5%"
+      mode: with tools
+  variants:
+    - name: Claude Sonnet 5.5 (xhigh)
+      notes: AAII v4.3.2 52
+    - name: Claude Sonnet 5.5 (high)
+      notes: AAII v4.3.2 47
+related:
+  - claude-sonnet-5
+  - claude-opus-5.5

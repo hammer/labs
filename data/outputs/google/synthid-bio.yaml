@@ -1,0 +1,76 @@
+name: "SynthID Bio: Function-preserving watermarking of AI-generated proteins"
+slug: synthid-bio
+lab: google
+type: paper
+date: 2026-09-30
+sources:
+  - label: Blog (Google DeepMind)
+    url: https://deepmind.google/blog/introducing-synthid-bio/
+  - label: Paper (Nature)
+    url: https://www.nature.com/articles/s41586-026-10965-y
+  - label: GitHub
+    url: https://github.com/google-deepmind/synthidbio
+description: >
+  <p>Google DeepMind's watermarks for AI-designed proteins, published in
+  <em>Nature</em> on September 30, 2026 ("Function-preserving watermarking of
+  AI-generated proteins", DOI 10.1038/s41586-026-10965-y). It extends SynthID
+  from text and media to biology with two methods. <strong>SynthIDBio-sequence</strong>
+  brings SynthID-text's tournament sampling to ProteinMPNN: while a sequence is
+  designed, a secret key and the preceding four residues bias which amino acid
+  is chosen, and the key holder detects the signal by recomputing scores over
+  the sequence. Because protein design samples at low temperature, which leaves
+  little room for a watermark, the paper either raises the temperature or uses
+  a "distortionary" variant with repeated keys, and filters designs on a
+  detection threshold calibrated on non-watermarked designs and natural
+  sequences from PDB and UniRef50. <strong>SynthIDBio-structure</strong>
+  fine-tunes the diffusion module of <a href="/outputs/google/alphafold-3">AlphaFold
+  3</a> together with a secret detector, so every structure the model predicts
+  carries a watermark in its atom&ndash;atom distances and torsion angles,
+  whoever runs the model.</p>
+
+  <p>The wet-lab test covered three targets (the SARS-CoV-2 spike receptor
+  binding domain, VEGF-A and PD-L1), using 15 backbones per target from past
+  AlphaProteo campaigns resequenced with and without watermarking: 222
+  non-watermarked and 267 watermarked sequences per watermarking setting,
+  measured by surface plasmon resonance. Binding affinities showed no
+  significant population-level difference, and the watermarked sets included
+  low-nanomolar binders for the spike RBD and subnanomolar binders for VEGF-A
+  and PD-L1; since designs were filtered on a threshold calibrated to a 0.1%
+  false-positive rate, every tested watermarked design was detectable. For
+  structures, detection exceeds 99.8% true positives at a 0.1% false-positive
+  rate for all three trained models (98.99% at 0.01% for the recommended one),
+  and the recommended model's LDDT and TM-score are no lower than AlphaFold
+  3's. The watermark survives rigid transformations and mostly survives
+  0.01 &Aring; coordinate noise, but force-field relaxation erases it. The sequence code
+  and in vitro data are on GitHub under Apache 2.0, and the recommended
+  SynthIDBio-structure weights are available under AlphaFold 3's weights terms
+  of use; the detector stays secret. All 21 authors are at Google DeepMind: the
+  work was led by David Stutz and Alexander Cowen-Rivers, advised by Pushmeet
+  Kohli, with <a href="/people/demis-hassabis">Demis Hassabis</a> among the
+  co-authors. DeepMind's blog adds that, with the Hie lab at Stanford and Arc
+  Institute, it has used SynthID Bio in Evo 2 to watermark the genome of a
+  designed bacteriophage that proved functional in early lab tests, with a
+  manuscript to follow.</p>
+tags:
+  - science
+  - biology
+  - protein
+  - safety
+  - research
+paper:
+  venue: Nature
+  authors:
+    - David Stutz
+    - Alexander I. Cowen-Rivers
+    - Guillermo Ortiz-Jimenez
+    - Jeremy Ratcliff
+    - Vinicius Zambaldi
+    - Lindsay Willmore
+    - Josh Abramson
+    - Harshnira Patani
+  code_url: https://github.com/google-deepmind/synthidbio
+library:
+  github: https://github.com/google-deepmind/synthidbio
+  license: Apache 2.0
+related:
+  - alphafold-3

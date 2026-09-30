@@ -1,0 +1,56 @@
+name: GPT-6.1 Sol
+slug: gpt-6.1-sol
+lab: openai
+type: model
+date: 2026-09-29
+sources:
+  - label: API Docs
+    url: https://developers.openai.com/api/docs/models/gpt-6.1-sol
+  - label: System Card Addendum
+    url: https://deploymentsafety.openai.com/gpt-6-1-sol
+  - label: Coverage (TechCrunch)
+    url: https://techcrunch.com/2026/09/29/openai-launches-gpt-6-1-sol-says-it-nearly-matches-gpt-6-astra-and-costs-less/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gpt-6-1-sol
+  - label: OpenRouter
+    url: https://openrouter.ai/openai/gpt-6.1-sol
+description: >
+  <p>Released at DevDay on September 29, seven days after
+  <a href="/outputs/openai/gpt-6-sol">GPT-6 Sol</a>, whose docs now point to it
+  as the newer Sol model. OpenAI pitches it as "near-Astra performance for
+  complex work at a lower cost": the same $2 / $10 per million input/output
+  tokens as GPT-6 Sol, with cached input cut to $0.10, a 1.05M-token context,
+  128K output, and reasoning efforts from low to max (none and minimal are not
+  supported). Artificial Analysis scores it <strong>52 on Intelligence Index
+  v4.3.2</strong> at max effort, one point below
+  <a href="/outputs/openai/gpt-6-astra">GPT-6 Astra</a> and four above GPT-6
+  Sol.</p>
+
+  <p>Like GPT-6 Astra, it is treated as <strong>Critical in
+  cybersecurity</strong> under OpenAI's Preparedness Framework (High for
+  biological and chemical capability), a step above GPT-6 Sol's High, so it
+  ships on Astra's full safeguards stack. In a deployment simulation over 49,650 internal Codex tasks it drew
+  28 severity-3-or-higher flags (0.056%), against 27 for Astra, 42 for GPT-6
+  Sol and 63 for GPT-5.6 Sol. OpenAI says it matches Astra on DeepSWE v1.1 at
+  roughly a fifth of the cost, and an Ultrafast tier of up to 300 tokens per
+  second was announced alongside. At launch it is in ChatGPT Work and Codex for
+  paid plans. The day before, OpenAI said it would not release the planned
+  GPT-6.1 Astra because it fell short of the company's safety standards.
+  Parameters undisclosed.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+  - agentic
+model:
+  context_window: 1050000
+  intelligence_index: 52
+  intelligence_index_version: "AA v4.3.2"
+  variants:
+    - name: GPT-6.1 Sol (xhigh)
+      notes: AAII v4.3.2 51
+    - name: GPT-6.1 Sol (medium)
+      notes: AAII v4.3.2 48
+related:
+  - gpt-6-sol
+  - gpt-6-astra

@@ -28,8 +28,9 @@ description: >
   demonstrated emergent text generation, <strong>GPT-3</strong> (2020, 175B) introduced
   few-shot learning, and <strong>GPT-4</strong> (2023) set the frontier for multimodal
   reasoning. The <strong>o-series</strong> reasoning models (o1, o3) pioneered test-time
-  compute scaling, and <strong>GPT-6 Astra</strong> (September 2026, AA Intelligence Index v4.3: 53) is the
-  current flagship, succeeding the GPT-5.6 Sol, Terra, and Luna series. Beyond language, OpenAI created <strong>DALL-E</strong> (text-to-image),
+  compute scaling, and <strong>GPT-6 Astra</strong> (September 2026, AA Intelligence Index v4.3.2: 53) is the
+  current flagship, alongside the cheaper <strong>GPT-6.1 Sol</strong> (52) and GPT-6 Luna (37), which
+  succeed the GPT-5.6 Sol, Terra, and Luna series. Beyond language, OpenAI created <strong>DALL-E</strong> (text-to-image),
   <strong>Whisper</strong> (speech recognition), <strong>Codex</strong> (powering GitHub
   Copilot), and <strong>Sora</strong> (video generation).</p>
 
@@ -107,6 +108,22 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~John_Schulman1
 news:
+  - title: "OpenAI Releases GPT-6.1 Sol at DevDay: Near-Astra Performance at $2/$10 per MTok, AA Intelligence Index v4.3.2 52; Treated as Critical in Cybersecurity Like GPT-6 Astra"
+    url: https://techcrunch.com/2026/09/29/openai-launches-gpt-6-1-sol-says-it-nearly-matches-gpt-6-astra-and-costs-less/
+    source: TechCrunch
+    date: 2026-09-29
+  - title: "OpenAI DevDay 2026: Always-On 'Dots' Agents on GPT-6 Astra (Own Cloud Computer, 4,000+ App Connections), ChatGPT Space and Pages, Ultrafast Tier Up to 8x Faster in Codex, Pro 500 Plan; CNBC Confirms Early Talks on a ~$30B Round"
+    url: https://www.cnbc.com/2026/09/29/openai-devday-2026-live-updates.html
+    source: CNBC
+    date: 2026-09-29
+  - title: "OpenAI Scraps the Release of GPT-6.1 Astra: It 'Didn't Quite Meet the Bar' on Staying Within Scope and Authorization and on Reporting Its Work"
+    url: https://www.cnbc.com/2026/09/28/openai-abandons-plan-to-release-upcoming-model-as-safety-concerns-escalate.html
+    source: CNBC
+    date: 2026-09-28
+  - title: "OpenAI Releases GPT-6 Sol and GPT-6 Luna at Half the Price of the GPT-5.6 Tiers; AA Intelligence Index v4.3.2: Sol 48, Luna 37"
+    url: https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/
+    source: TechCrunch
+    date: 2026-09-22
   - title: "OpenAI Publishes a Model Misalignment Reporting Framework and Six Incident Reports, Including an Unreleased Astra-Family Model Writing Jailbreak Instructions Into Its Own Compaction Summaries"
     url: https://alignment.openai.com/misalignment-reports/
     source: OpenAI

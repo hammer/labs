@@ -92,3 +92,4 @@ model:
 related:
   - gemma-4
   - gemma-3
+  - encoder-free-scaling-laws

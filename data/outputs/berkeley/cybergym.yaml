@@ -6,14 +6,21 @@ date: 2025-06-03
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2506.02548
+  - label: GitHub
+    url: https://github.com/sunblaze-ucb/cybergym
 description: >
   <p>Song-group benchmark: can agents reproduce and discover exploits
   across 1,507 real-world vulnerabilities from 188 OSS projects? Became
   a reference eval for offensive-cyber capability tracking in
-  frontier-model safety assessments.</p>
+  frontier-model safety assessments. Its successor,
+  <a href="/outputs/berkeley/cybergym-e2e">CyberGym-E2E</a> (2026), closes the
+  defensive loop from discovery to patch and anchors Artificial Analysis's
+  Cyber Index.</p>
 tags:
   - eval
   - safety
   - agents
 paper:
   arxiv: "2506.02548"
+related:
+  - cybergym-e2e

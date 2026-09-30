@@ -1,0 +1,76 @@
+name: "EasyPPO: Stabilizing the Critic Is Key"
+slug: easyppo
+lab:
+  - berkeley
+  - princeton
+type: paper
+date: 2026-09-29
+sources:
+  - label: Project page
+    url: https://easyppo.github.io/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.36802
+  - label: GitHub
+    url: https://github.com/EasyPPO/EasyPPO
+description: >
+  <p>A PPO recipe for RL on language models from UC Berkeley (senior authors
+  Alvin Cheung and Joseph E. Gonzalez) and Princeton
+  (<a href="/people/karthik-narasimhan">Karthik Narasimhan</a>). PPO's learned
+  critic gives it token-level credit assignment that critic-free methods such
+  as GRPO lack, but the paper finds the critic is also a major source of PPO's
+  training collapses and identifies two failure modes. First, overlong
+  filtering, which <a href="/outputs/bytedance-seed/dapo">DAPO</a>-style
+  pipelines use to drop truncated rollouts, changes what the critic learns if
+  it is applied to the critic as well as the actor: the policy then optimizes
+  reward conditioned on finishing, so truncation can rise while that
+  conditional reward improves (on FrontierCS the truncated fraction approached
+  1). Second, return noise differs widely across prompts, and the noisiest
+  prompts dominate finite-batch critic updates. <strong>EasyPPO</strong> makes
+  three changes and keeps the rest of PPO (token-level GAE, the clipped
+  objective, KL regularization): <strong>actor-only overlong
+  filtering</strong>, <strong>noise-normalized critic regression</strong> that
+  weights each prompt's critic loss by the inverse standard deviation of its
+  sampled returns, and moderately smaller critic mini-batches (four per
+  rollout batch) so gradient clipping confines outliers to fewer
+  rollouts.</p>
+
+  <p>All methods were implemented in verl and trained with rollout batches of
+  512 (1,024 for search): Qwen3.5-9B-Base on DAPO-Math-17K with AIME24
+  validation and on the <a href="/outputs/uiuc/search-r1">Search-R1</a>
+  mixture with its seven validation sets, and a Qwen3.5-9B distilled on
+  DeepSeek-V3.1 trajectories for continuous-score coding on 200 FrontierSmith
+  problems, validated on FrontierCS's algorithmic track. Best validation
+  scores on a 0&ndash;100 scale were 14.82 against 12.90 for PPO on
+  FrontierCS, 65.52 against 64.06 on AIME24, and 43.22 against 39.48 on
+  Search-R1 (relative gains of 14.89%, 2.28% and 9.47%), ahead of VAPO and
+  HL-Gauss PPO on all three. Every baseline collapsed in at least one setting;
+  EasyPPO was the only method stable on all three tasks, and in a three-seed
+  FrontierCS check none of its runs collapsed, against two of three for PPO
+  with actor-only filtering. Code is Apache 2.0.</p>
+tags:
+  - rl
+  - reinforcement-learning
+  - post-training
+  - training-stability
+  - research
+paper:
+  arxiv: "2609.36802"
+  authors:
+    - Xuanyi Zhou
+    - Qiuyang Mang
+    - Huanzhi Mao
+    - Dacheng Li
+    - Wenhao Chai
+    - Mayank Mishra
+    - Yichuan Wang
+    - Karthik Narasimhan
+  code_url: https://github.com/EasyPPO/EasyPPO
+library:
+  github: https://github.com/EasyPPO/EasyPPO
+  language: Python
+  framework: verl
+  license: Apache 2.0
+related:
+  - dapo
+  - search-r1
+  - verl

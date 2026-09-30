@@ -1,0 +1,97 @@
+name: "RecreationWorld and RecreationBench"
+slug: recreationworld
+lab: alibaba
+type: eval
+date: 2026-09-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.22000
+  - label: GitHub
+    url: https://github.com/QwenLM/RecreationWorld
+  - label: HuggingFace (RecreationBench)
+    url: https://huggingface.co/datasets/Qwen/RecreationBench
+  - label: Website
+    url: https://recreation-bench.cc
+description: >
+  <p>A five-platform environment framework and held-out benchmark for
+  <strong>hybrid computer-use agents</strong> from Alibaba Token Hub, built
+  on one task shape: <strong>recreation</strong>. The agent is given a
+  running reference application and must discover its behavior by operating
+  it, then build a faithful implementation, with no prescribed workflow
+  &mdash; so GUI exploration, coding and visual verification interleave
+  rather than stack. The reference doubles as an oracle: hidden behavioral
+  tests derived from it give execution-grounded rewards. RecreationWorld
+  supplies reproducible environments on <strong>Ubuntu, macOS, Windows,
+  Android and Web</strong> plus a unified harness with native GUI control and
+  coding tools, reading each platform through its own automation interface
+  (AT-SPI, AXUIElement, UI Automation, UiAutomator, browser assertions). Code
+  is MIT (89 stars at filing); the frozen task bundle ships as a HuggingFace
+  dataset (5,222 downloads since it was posted on 2026-09-18).</p>
+
+  <p><strong>RecreationBench</strong> is the evaluation half:
+  <strong>250 tasks, 50 per platform</strong>, each scored against two frozen
+  inventories so a candidate cannot change its own denominator &mdash;
+  <em>Prog</em>, assertions read through the platform's structured automation
+  interface after replaying an interaction, and <em>VLM</em>, reference-grounded
+  natural-language assertions on screenshots judged by a Qwen3.7-Plus judge at
+  temperature zero. A candidate that cannot be built or launched scores zero.
+  Every case is validated on the reference and by human reviewers before the
+  suite is frozen. <strong>GPT-6 Astra leads at 58.06% overall (58.19 Prog /
+  57.92 VLM) but passes every programmatic test on just 2.80% of
+  applications</strong>; Claude Opus 5 scores 44.16, GPT-5.6 Sol 42.06, Grok
+  4.6 36.73, Qwen3.8-Max-0902 34.80, Kimi K3 31.41, Claude Opus 4.8 31.10,
+  GLM-5.3 24.38, Gemini 3.7 Flash 21.12 and Qwen3.7-Plus 9.15. Agents
+  reproduce static interface structure far more reliably than interactions
+  and computed outputs, and their applications stay smaller and more
+  monolithic than the references. The paper also uses the framework as a data
+  engine: Qwen3.8-Max generates recreation trajectories that rejection
+  sampling against the behavioral verifiers trims to a balanced
+  <strong>35,000-trajectory SFT mixture</strong> (7,000 per platform), and
+  both fine-tuned initializations (Qwen3.7-Plus and an in-house
+  continued-pretrained Qwen-Flash checkpoint) end above their first measured
+  checkpoint on five out-of-distribution benchmarks &mdash; ProgramBench,
+  GameCraft-Bench, Vision2Web, OSWorld 2.0 and WeaveBench &mdash; while
+  verifying their rendered output more often.</p>
+tags:
+  - eval
+  - benchmark
+  - agents
+  - agent-harness
+  - computer-use
+  - coding
+eval:
+  num_tasks: 250
+  domains:
+    - computer-use
+    - coding
+    - gui
+  scoring_method: "Frozen reference-validated programmatic (Prog) and VLM-judged visual assertions, macro-averaged per platform"
+  top_scores:
+    - model: GPT-6 Astra
+      score: "58.06%"
+      date: "2026-09-18"
+    - model: Claude Opus 5
+      score: "44.16%"
+      date: "2026-09-18"
+    - model: GPT-5.6 Sol
+      score: "42.06%"
+      date: "2026-09-18"
+  leaderboard_url: https://recreation-bench.cc
+paper:
+  arxiv: "2609.22000"
+  authors:
+    - Shuai Bai
+    - Jiayong Deng
+    - Sicheng Fan
+    - Yikun Fu
+    - Chang Gao
+    - Xuhao Hu
+  code_url: https://github.com/QwenLM/RecreationWorld
+library:
+  github: https://github.com/QwenLM/RecreationWorld
+  language: Python
+  license: MIT
+related:
+  - qwen-cua
+  - qwen-agentworld
+  - qwengyre

@@ -1,0 +1,61 @@
+name: Qwen3.8-Omni-Flash
+slug: qwen3.8-omni-flash
+lab: alibaba
+type: model
+date: 2026-09-18
+sources:
+  - label: Qwen Cloud (model page)
+    url: https://www.qwencloud.com/models/qwen3.8-omni-flash
+  - label: Alibaba Cloud Model Studio (API docs)
+    url: https://www.alibabacloud.com/help/en/model-studio/qwen-omni
+  - label: OpenRouter
+    url: https://openrouter.ai/qwen/qwen3.8-omni-flash
+description: >
+  <p>The Qwen3.8 generation of Alibaba's omni-modal line, served as
+  <code>qwen3.8-omni-flash</code> with <strong>no weights released</strong>.
+  Qwen Cloud describes it as a "next-generation native omni-modal model"
+  supporting <strong>1M-token context</strong> that "natively accepts text,
+  image, audio, and video inputs" and is <strong>built on the
+  <a href="/outputs/alibaba/qwen3.8-flash-next">Qwen3.8-Flash-Next</a>
+  architecture</strong>. Output is text only &mdash;
+  <a href="/outputs/alibaba/qwen3.5-omni">Qwen3.5-Omni</a> remains the model
+  to call for speech output &mdash; and the positioning has moved from
+  understanding to acting: the product page frames it around agentic work in
+  video editing, music-video creation, film production and narration,
+  multimedia summarization and audio-video dialogue, and it supports thinking,
+  function calling, structured outputs, prefix completion, context caching,
+  batching and web search (the only built-in Responses tool so far). It also
+  handles <strong>two- and four-channel spatial audio</strong>, and Alibaba
+  recommends pairing it with the companion
+  <a href="/outputs/alibaba/qwen-mm-plugins">Qwen-MM-Plugins</a> so agent
+  frameworks can reach its native multimodal capabilities.</p>
+
+  <p>Documented limits are considerably wider than the previous omni tiers:
+  audio input covers <strong>113 languages and dialects</strong>, a single
+  request may carry <strong>up to 64 files, 2 GB each by public URL, and up
+  to 2 hours of audio or video</strong> (against 1 hour for the Qwen3.5-Omni
+  series, 150 seconds for Qwen3-Omni-Flash and 40 seconds for the retired
+  Qwen-Omni-Turbo, whose docs now tell text-analysis users to migrate here).
+  Audio is billed at 7 tokens per second of input, against 12.5 for
+  Qwen3-Omni-Flash and 25 for Qwen-Omni-Turbo. Qwen Cloud lists
+  <strong>$0.15 per M input and $0.47 per M output tokens</strong>, $0.016
+  per M on implicit cache reads, with a 991K max input, 131K max output and a
+  262K reasoning budget; Model Studio serves it in Beijing, Singapore, Hong
+  Kong, Tokyo, Frankfurt and Virginia. Parameter count, training data and
+  benchmark results are undisclosed, and Artificial Analysis had not scored
+  it as of 2026-09-30. Alibaba's own pages carry no release date; the date
+  here follows Chinese coverage published 2026-09-19 that puts the launch on
+  2026-09-18. The model reached OpenRouter on 2026-09-21.</p>
+tags:
+  - multimodal
+  - audio
+  - video
+  - agentic
+  - proprietary
+model:
+  context_window: 1000000
+  license: Proprietary
+related:
+  - qwen3.5-omni
+  - qwen3.8-flash-next
+  - qwen-mm-plugins
