@@ -1,0 +1,85 @@
+name: PlantCAD2 and GeneCAD
+slug: plantcad2
+lab: open-athena
+type: model
+date: 2025-09-01
+sources:
+  - label: Paper (Cell Genomics)
+    url: https://www.cell.com/cell-genomics/fulltext/S2666-979X(26)00191-6
+  - label: Preprint (bioRxiv)
+    url: https://www.biorxiv.org/content/10.1101/2025.08.27.672609v4
+  - label: GitHub (PlantCAD)
+    url: https://github.com/plantcad/plantcad
+  - label: HuggingFace (PlantCAD2)
+    url: https://huggingface.co/collections/kuleshov-group/plantcad2-67e437e241a382671371a572
+  - label: GeneCAD preprint (bioRxiv)
+    url: https://www.biorxiv.org/content/10.1101/2025.10.31.685877v4
+  - label: GitHub (GeneCAD)
+    url: https://github.com/plantcad/genecad
+  - label: Open Athena project page
+    url: https://openathena.ai/projects/plantcad-genecad/
+description: >
+  <p>Foundation models for plant genomics from Cornell (first author Jingjing
+  Zhai, with Volodymyr Kuleshov, Matt Pennell and Edward Buckler of Cornell and
+  USDA-ARS) and <a href="/labs/open-athena">Open Athena</a>, whose engineers
+  Eric Czech and Betsy Cannon are co-authors. <strong>PlantCAD2</strong> is a
+  DNA language model at single-nucleotide resolution with an
+  <strong>8,192-bp context</strong>, pretrained on 65 angiosperm genomes and
+  released with a set of public benchmarks; it succeeds the 2024 PlantCaduceus
+  models (512-bp context, up to 225M parameters). In zero-shot tests the
+  676M-parameter model captures evolutionary conservation well enough to beat
+  the 7B-parameter Evo 2 on 10 of 12 tasks, and with parameter-efficient
+  fine-tuning it outperforms the 1B-parameter AgroNT on seven cross-species
+  tasks covering accessible chromatin, gene expression and protein
+  translation. The long context matters for distal regulation: accessible
+  chromatin prediction in maize rises from 0.587 to 0.711 AUPRC. Three sizes
+  are on HuggingFace under Apache 2.0, with LoRA fine-tuned variants, and the
+  paper was published in <em>Cell Genomics</em> in 2026 (online August 7).</p>
+
+  <p><strong>GeneCAD</strong> (preprint November 2025, revised through May
+  2026) builds on PlantCAD2 for gene annotation. It feeds PlantCAD2's DNA
+  representations to a transformer encoder and a chromosome-scale conditional
+  random field that enforces splice phase and feature order, predicting
+  complete gene models from sequence alone, without species-matched RNA or
+  protein evidence. Across diverse flowering plants, including a complex
+  allotetraploid, it improves transcript F1 by about 9% over Helixer and
+  BRAKER3 and recovers 86% of classical coding sequences. Swapping in an animal
+  DNA model gives an experimental vertebrate version that finds exons well but
+  struggles to rebuild full transcripts across long introns. Its code is
+  Apache 2.0.</p>
+tags:
+  - science
+  - biology
+  - genomics
+  - scientific-fm
+  - open-weight
+model:
+  parameters: 694M
+  context_window: 8192
+  license: Apache 2.0
+  variants:
+    - name: PlantCAD2-Small
+      parameters: 88M
+      notes: "24 layers, embedding size 768"
+    - name: PlantCAD2-Medium
+      parameters: 311M
+      notes: "48 layers, embedding size 1,024"
+    - name: PlantCAD2-Large
+      parameters: 694M
+      notes: "48 layers, embedding size 1,536; the paper reports it as 676M parameters"
+    - name: GeneCAD
+      notes: "Gene-structure annotation on PlantCAD2 representations (transformer encoder plus CRF); plant model and an experimental vertebrate model"
+paper:
+  venue: Cell Genomics (2026)
+  authors:
+    - Jingjing Zhai
+    - Aaron Gokaslan
+    - Sheng-Kai Hsu
+    - Szu-Ping Chen
+    - Zong-Yan Liu
+    - Edgar Marroquin
+    - Eric Czech
+    - Betsy Cannon
+  code_url: https://github.com/plantcad/plantcad
+related:
+  - marin-dna

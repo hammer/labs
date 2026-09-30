@@ -1,0 +1,65 @@
+name: BoltzGen
+slug: boltzgen
+lab:
+  - mit
+  - open-athena
+type: model
+date: 2025-10-26
+sources:
+  - label: Announcement (MIT Jameel Clinic)
+    url: https://jclinic.mit.edu/boltzgen/
+  - label: Paper (bioRxiv)
+    url: https://www.biorxiv.org/content/10.1101/2025.11.20.689494v2
+  - label: GitHub
+    url: https://github.com/HannesStark/boltzgen
+  - label: Open Athena project page
+    url: https://openathena.ai/projects/boltzgen/
+description: >
+  <p>An all-atom generative model for designing proteins and peptides that bind
+  a chosen target, from MIT (first and corresponding author Hannes Stark, with
+  senior authors Regina Barzilay and Tommi Jaakkola) and announced by MIT's
+  Jameel Clinic in October 2025. <a href="/labs/open-athena">Open Athena</a>'s
+  Timothy O'Donnell is one of its equal core computational contributors; the
+  paper's other affiliations are Boltz, CTU Prague, IOCB Prague and Boston,
+  NVIDIA, UC Irvine, UCSF, MPI, HHMI and MIT's Jameel Clinic. Building on the structure-prediction line that runs
+  through <a href="/outputs/google/alphafold-3">AlphaFold 3</a> and Boltz,
+  BoltzGen <strong>unifies binder design with structure prediction</strong> in a
+  single model that also reaches state-of-the-art folding performance, and a
+  design-specification language steers generation through covalent bonds,
+  structural constraints and binding sites. Targets can be proteins, peptides,
+  small molecules or nucleic acids, and binders span nanobodies, minibinders,
+  and linear and disulfide-bonded cyclic peptides.</p>
+
+  <p>The paper reports eight design campaigns with functional and affinity
+  readouts across <strong>26 targets</strong>, run by separate wet labs that
+  each chose their own targets. The hardest test is 10 novel targets with no
+  protein above 30% sequence identity in a bound context anywhere in the PDB:
+  testing 15 or fewer nanobody designs per target produced hits for 60% of
+  them, and the same experiment with protein binders hit 50%. Designing against
+  three bioactive peptides gave nanomolar binders for two and micromolar for the
+  third while testing only six designs each; peptides against two Ragulator
+  proteins reached hit rates of 88% and 28%; and of 10 designs against the
+  disordered region of NPM1, two bound and co-localized with the target in live
+  cells. Weights, data, and inference and training code are released under the
+  MIT license (about 1,100 GitHub stars).</p>
+tags:
+  - science
+  - biology
+  - protein
+  - open-weight
+  - research
+model:
+  license: MIT
+paper:
+  authors:
+    - Hannes Stark
+    - Felix Faltings
+    - MinGyu Choi
+    - Yuxin Xie
+    - Eunsu Hur
+    - Timothy O'Donnell
+    - Regina Barzilay
+    - Tommi Jaakkola
+  code_url: https://github.com/HannesStark/boltzgen
+related:
+  - alphafold-3

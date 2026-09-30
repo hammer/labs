@@ -1,0 +1,67 @@
+name: Samudra 2
+slug: samudra2
+lab:
+  - nyu
+  - open-athena
+type: model
+date: 2026-05-24
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.02610
+  - label: Project page (M2LInES)
+    url: https://m2lines.github.io/Samudra/samudra2/
+  - label: "Blog: Scaling Samudra (Open Athena)"
+    url: https://openathena.ai/blog/scaling-samudra/
+  - label: GitHub
+    url: https://github.com/m2lines/Samudra
+  - label: HuggingFace
+    url: https://huggingface.co/M2LInES/Samudra2
+description: >
+  <p>A neural ocean emulator from NYU's M2LInES group (first author Yuan Yuan,
+  senior author Laure Zanna) with <a href="/labs/open-athena">Open Athena</a>
+  engineers Jesse Rusak and Alexander Merose as second and third authors, plus
+  Princeton's Alistair Adcroft. Ocean general circulation models are the
+  expensive part of climate simulation, which limits how many scenarios and
+  ensemble members researchers can afford. The original Samudra was the first
+  autoregressive neural ocean emulator to produce multi-decade global rollouts,
+  but it ran only at 1&deg; and drifted over long horizons in two ways: variance
+  collapse, where temporal variability fades, and imprinting artifacts, where
+  velocity patterns leak into deep-ocean fields.</p>
+
+  <p>Samudra 2 fixes both with a wider U-Net backbone of modified ConvNeXt-style
+  blocks (stage widths raised from [200, 250, 300, 400] to [280, 380, 480, 520]
+  while the block-internal expansion factor drops from 4 to 2) and a
+  <strong>dynamic variance-weighted loss</strong> that updates per-channel MSE
+  weights online from an exponential moving average of inverse prediction error,
+  so slow-moving deep-ocean fields keep a usable gradient. At 1&deg; it raises
+  upper-ocean global-mean temperature R&sup2; from <strong>0.56 to 0.87</strong>
+  and cuts deep-ocean temperature error roughly <strong>sevenfold</strong>. The
+  same architecture scales to 1/2&deg; and <strong>1/4&deg;</strong> over about
+  eight-year free-running rollouts, where mesoscale eddies and sharp western
+  boundary currents emerge, and it runs on a <strong>single GPU</strong>. The
+  emulator maps two consecutive ocean states plus atmospheric forcing to the
+  next two, over 77 prognostic channels (temperature, salinity and both velocity
+  components across 19 depth levels, plus sea surface height), trained on GFDL
+  OM4 output. Open Athena's write-up reports extending it to a dataset 16 times
+  larger on the same hardware budget and cutting training at the original
+  resolution from four days to four hours. Code is Apache 2.0; weights are on
+  HuggingFace under CC BY 4.0.</p>
+tags:
+  - science
+  - climate
+  - ocean
+  - research
+model:
+  license: CC BY 4.0
+paper:
+  arxiv: "2606.02610"
+  authors:
+    - Yuan Yuan
+    - Jesse Rusak
+    - Alexander Merose
+    - Adam Subel
+    - Pavel Perezhogin
+    - Alistair Adcroft
+    - Carlos Fernandez-Granda
+    - Laure Zanna
+  code_url: https://github.com/m2lines/Samudra

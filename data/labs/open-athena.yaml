@@ -50,10 +50,12 @@ description: >
   language model that rivals Evo 2 40B on Mendelian variant-effect prediction,
   MarinFold predicts protein structure through next-token prediction, and
   MarinMat applies the same approach to electron densities in crystals. Beyond
-  Marin, Open Athena engineers work with Cornell on the PlantCAD and GeneCAD
-  plant-genomics models, with MIT on the BoltzGen protein-design model, and
-  with Laure Zanna's group at NYU on Samudra 2, an ocean emulator that runs the
-  global ocean at 1/4&deg; resolution on a single GPU. In September 2026 the UK's
+  Marin, Open Athena engineers are co-authors on Cornell's
+  <a href="/outputs/open-athena/plantcad2">PlantCAD2 and GeneCAD</a>
+  plant-genomics models, on MIT's <a href="/outputs/mit/boltzgen">BoltzGen</a>
+  binder-design model, and on <a href="/outputs/nyu/samudra2">Samudra 2</a>,
+  the ocean emulator from Laure Zanna's group at NYU that runs the global ocean
+  at 1/4&deg; resolution on a single GPU. In September 2026 the UK's
   ARIA chose it as an Activation Partner, its first UK collaboration, alongside
   a new London office. It also maintains mumwelt, a command-line tool and set of
   agent skills for asking questions of the Marin project's record.</p>
