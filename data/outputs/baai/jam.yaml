@@ -25,7 +25,7 @@ description: >
   directory, hybrid BM25 plus BGE-M3 search, browse a file) until it judges
   the evidence sufficient, then hands the client agent a compact context that
   cites its sources. JAM is the trainable successor to the group's
-  <a href="https://arxiv.org/abs/2511.18423">GAM</a> (November 2025), which
+  <a href="/outputs/baai/gam">GAM</a> (November 2025), which
   introduced the Memorizer&ndash;Researcher split, and the paper points to
   GAM's repository (about 860 stars) for its code.</p>
 
@@ -71,5 +71,6 @@ paper:
     - Zheng Liu
   code_url: https://github.com/VectorSpaceLab/general-agentic-memory
 related:
+  - gam
   - bge-m3
   - contextpilot

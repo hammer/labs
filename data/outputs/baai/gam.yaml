@@ -1,0 +1,70 @@
+name: "GAM: General Agentic Memory"
+slug: gam
+lab: baai
+type: library
+date: 2025-11-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2511.18423
+  - label: GitHub
+    url: https://github.com/VectorSpaceLab/general-agentic-memory
+description: >
+  <p>BAAI's agent-memory framework, from the VectorSpaceLab team led by Zheng
+  Liu, and the first in the line that <a href="/outputs/baai/jam">JAM</a>
+  continues. Most memory systems for agents (A-MEM, Mem0, MemoryOS, LightMem)
+  compress an agent's history into notes or summaries ahead of time, which
+  GAM's authors liken to ahead-of-time compilation and blame for losing
+  details that later requests need. GAM works just in time instead. An LLM
+  <strong>Memorizer</strong> writes a short memo for each session into a
+  lightweight memory and stores the full session, prefixed with a context
+  header, as a page in a page-store. For each request, an LLM
+  <strong>Researcher</strong> plans searches over the pages (BGE-M3
+  embeddings, BM25 and direct page lookup), integrates what it finds, and
+  checks whether the evidence suffices, repeating up to three times before
+  returning a compact context to the client agent. The paper formulates
+  end-to-end RL for both roles, but its experiments only prompt the models;
+  JAM (September 2026) is the version that trains the Researcher.</p>
+
+  <p>With GPT-4o-mini as the backbone for GAM and every baseline, GAM scores
+  57.8, 42.3, 59.5 and 33.3 F1 on LoCoMo's single-hop, multi-hop, temporal
+  and open-domain questions, against best baselines of 52.5 (RAG), 38.7, 48.9
+  and 28.6 (all Mem0). On HotpotQA it scores <strong>63.2, 64.6 and 59.8
+  F1</strong> at 56K, 224K and 448K tokens, against 52&ndash;57 for plain
+  long-context prompting and RAG and 23&ndash;41 for the memory systems. On
+  RULER's 128K multi-hop tracing it reaches 93.2%, where RAG and A-MEM score
+  zero, and on NarrativeQA 36.9 F1 against 31.3. Results with
+  Qwen2.5-14B-Instruct follow the same pattern. The two roles need different
+  model sizes: a 0.5B Memorizer costs little (48.8 against 53.2 average F1
+  with 14B), but a 0.5B Researcher collapses to 9.1. The research step adds
+  12&ndash;18 s per HotpotQA request, against under a second for the memory
+  baselines, though GAM's total time including memory construction (69 s at
+  56K, 576 s at 448K) stays below A-MEM's and MemoryOS's. The repository has
+  since grown into a general agent file-system framework, with a Python SDK,
+  CLI, REST API, web interface, video memory and long-horizon trajectory
+  compression, and keeps the paper's code in a research directory; it has
+  about 860 GitHub stars. The package declares an MIT license, though the
+  repository has no LICENSE file.</p>
+tags:
+  - agents
+  - agent-harness
+  - memory
+  - long-context
+  - retrieval
+  - open-source
+  - framework
+paper:
+  arxiv: "2511.18423"
+  authors:
+    - B. Y. Yan
+    - Chaofan Li
+    - Hongjin Qian
+    - Shuqi Lu
+    - Zheng Liu
+  code_url: https://github.com/VectorSpaceLab/general-agentic-memory
+library:
+  github: https://github.com/VectorSpaceLab/general-agentic-memory
+  language: Python
+  license: MIT
+related:
+  - jam
+  - bge-m3
