@@ -1,0 +1,109 @@
+name: Gemini 4 Argon
+slug: gemini-4-argon
+lab: google
+type: model
+date: 2026-09-30
+flagship: true
+sources:
+  - label: Announcement (Google)
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/
+  - label: Announcement (Google DeepMind)
+    url: https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/
+  - label: Evaluation methodology and results (PDF)
+    url: https://storage.googleapis.com/deepmind-media/gemini/gemini_4_argon_model_evaluation.pdf
+  - label: Fairwind Program
+    url: https://deepmind.google/fairwind-program/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gemini-4-argon
+description: >
+  <p>The first model of Google's <strong>Gemini 4</strong> generation,
+  announced September 30, 2026 by Koray Kavukcuoglu and released first to a set
+  of trusted cyber defenders through the <strong>Fairwind Program</strong>
+  rather than to the public. Google is running it through the US government's
+  voluntary process for pre-release model access while it widens availability,
+  with developers, enterprises and consumers to follow, starting with paid API
+  customers and Google AI Ultra subscribers. The headline capability change is
+  room to think: the <strong>output limit rises to 1M tokens from 64K</strong>,
+  which Google frames as letting the model generate hundreds of thousands of
+  tokens in a single trajectory instead of breaking a long job into pieces.
+  Artificial Analysis measures a 1M-token context window with text and image
+  input, and scores it <strong>53 on Intelligence Index v4.3.2</strong> &mdash;
+  by far Google's best (<a href="/outputs/google/gemini-3.8-flash">Gemini 3.8
+  Flash</a> reads 41), level with <a href="/outputs/openai/gpt-6-astra">GPT-6
+  Astra</a> and Claude Fable 5.1, and behind
+  <a href="/outputs/anthropic/claude-opus-5.5">Claude Opus 5.5</a> (58) and
+  Sonnet 5.5 (56). Introductory pricing is $2 per million input tokens and $10
+  per million output, with cached input 95% off, rising to $4 and $20 once the
+  introductory period ends. Architecture, parameter count and training scale
+  are undisclosed.</p>
+
+  <p>Google's evaluation sheet (highest thinking setting, pass@1, against GPT-6
+  Astra / Fable 5.1 / Opus 5.5) puts Argon first on knowledge work and much of
+  coding: Vals Index <strong>68.9%</strong> (63.1 / 65.8 / 67.0), Zapier's
+  AutomationBench <strong>51.3%</strong> (41.4 / 31.4 / 42.5), Vals Finance
+  Agent v2 65.4%, Harvey's Legal Agent Benchmark 19.6% against 5.4 / 6.7 / 3.8,
+  DeepSWE v1.1 <strong>77.9%</strong> (74.1 / 67.4 / 74.2) and Vibe Code Bench
+  91.9%. It also leads on LABBench 2 (88.8%), RiemannBench (76.0%),
+  Chartography (71.6%), long video on LVBench (<strong>91.7%</strong>),
+  Agent's Last Exam (39.5%) and both GraphWalks long-context splits, where the
+  256K-to-1M subset reaches 84.2% against 71.8 for Astra. It trails on
+  FrontierSWE v2 (55.0% to Astra's 65.5%), Terminal-Bench 4.0 (57.4% to Opus
+  5.5's 66.4%), Terminal-Bench Science 0.1 (57.6% to Astra's 68.1%),
+  PostTrainBench and OSWorld-2.0. On CWE-bench v1 it ties Astra for first at
+  68.0%.</p>
+
+  <p>Cybersecurity is the reason for the staged rollout. Google trained Argon
+  to find, validate and patch vulnerabilities on its own, and is giving trusted
+  defenders and its internal teams a build <strong>without cyber
+  guardrails</strong>. Wiz is already running it in its Scan for Good program,
+  where it found a critical flaw exposing personal information in healthcare
+  software used by hospitals worldwide that earlier frontier models had missed.
+  Google says it is hardening four areas before a broad release: misuse
+  defenses for cyber and CBRN under its Frontier Safety Framework, including
+  monitoring the model's internal activations; resistance to indirect prompt
+  injection, where it leads Gray Swan's IPI benchmark; monitors on the
+  chain-of-thought and actions that halt execution on misalignment, with
+  findings deliberately kept out of training so the model is not shaped to
+  evade them; and sealed sandboxes for high-risk training and evaluation.
+  Internally, thousands of Googlers already use it: it cut the spacetime cost
+  of a quantum subroutine 40% below the published baseline, freed more than 300
+  TiB of data-center memory through agent-driven profiling (with 500 TiB to 1
+  PiB projected), and is migrating C and C++ codebases to Rust at scales from
+  the re2 and libgav1 libraries up to the 800K-line Fuchsia Zircon kernel. In
+  libgav1 it replaced 32K lines of hand-written SIMD with safe Rust the
+  compiler auto-vectorizes, running <strong>2.7&times; faster</strong> than the
+  existing Rust port with identical output.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+  - agentic
+  - cybersecurity
+  - long-context
+  - multimodal
+  - proprietary
+model:
+  context_window: 1000000
+  intelligence_index: 53
+  intelligence_index_version: "AA v4.3.2"
+  license: Proprietary (API)
+  benchmark_scores:
+    - benchmark: Vals Index
+      score: "68.9%"
+    - benchmark: AutomationBench
+      score: "51.3%"
+    - benchmark: DeepSWE v1.1
+      score: "77.9%"
+    - benchmark: Vibe Code Bench
+      score: "91.9%"
+    - benchmark: LVBench
+      score: "91.7%"
+    - benchmark: GraphWalks (256k-1M, BFS F1)
+      score: "84.2%"
+    - benchmark: CWE-bench v1
+      score: "68.0%"
+    - benchmark: Terminal-Bench 4.0
+      score: "57.4%"
+related:
+  - gemini-3.8-flash
+  - gemini-3.8-flash-cyber
