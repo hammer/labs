@@ -1,0 +1,72 @@
+name: Herschel
+slug: herschel
+lab: alibaba
+type: paper
+date: 2026-09-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.40247
+description: >
+  <p>"Herschel: Continuous Optimization of Production LLM Inference through
+  On-Demand Profiling," from Alibaba Group (14 authors; corresponding author
+  Luping Wang). A model-as-a-service platform only discovers some
+  inefficiencies once real traffic hits it, but the usual options for finding
+  them are both bad: always-on detailed tracing costs too much to run
+  continuously, while lightweight sampling omits the detail a diagnosis needs.
+  Herschel's argument is that profiling should instead be <strong>adaptive and
+  on demand</strong>, widening its coverage only as an investigation turns up
+  missing evidence.</p>
+
+  <p>Three parts carry that idea. <strong>Hprof</strong> attaches to and
+  detaches from selected running inference processes <strong>without engine
+  changes or restarts</strong>, reading engine-internal object fields directly;
+  keeping up with engine releases took five reader versions over six months,
+  but no patches to the engines themselves. The <strong>Analyzer</strong>
+  reconstructs operator executions and cross-process dependencies to name the
+  mechanism behind an inefficiency and match it to applicable reference fixes,
+  against a catalogue that includes 25 inference-engine patterns in 8
+  categories. The <strong>Optimizer</strong> then hands the diagnosis to AI
+  agents that implement, build and test engine and kernel changes on 8&ndash;32
+  idle or revocable accelerators, under conditions that preserve the workload
+  and dependencies which exposed the problem, with expert review and canary
+  validation before rollout.</p>
+
+  <p>Measured overhead during active collection stays <strong>below 0.5% on
+  time to first token and 7% on time per output token</strong>, in bounded
+  windows of typically 30 seconds (tested on vLLM 0.29.0, PyTorch 2.13.0 and
+  CUDA 13.0). Across six months in production Herschel gathered about
+  <strong>17,000 traces over more than 120 model variants and more than 10
+  accelerator types</strong>, finding inefficiency patterns in 23% of them.
+  Two case studies show the loop end to end: an agent moves data-parallel
+  metadata synchronization off the worker's blocking NCCL path into a
+  CPU/Gloo pre-sync in EngineCore, which is complicated by a Qwen-family
+  hybrid-attention deployment where a token count alone cannot separate prefill
+  from the post-handoff decode tail; and on a non-NVIDIA accelerator, profiling
+  traces a PagedAttention kernel in Qwen3-4B reaching only <strong>7.3% of
+  speed-of-light</strong> against more than 17% on an H20, which a Triton
+  kernel agent fixes by converting Q once for reuse instead of repeating
+  Q/K layout conversions through shared memory &mdash; cutting operator time
+  60.9% and raising attainment to 18.7%, and contributing to roughly 8&ndash;32%
+  lower end-to-end time per output token across concurrency levels. The paper's
+  candid section notes that removing a detected overhead often yields no
+  measurable gain, and that failed agent attempts take longer to review than
+  successful ones. No code release accompanies the paper.</p>
+tags:
+  - infrastructure
+  - efficiency
+  - inference
+  - agents
+  - research
+paper:
+  arxiv: "2609.40247"
+  authors:
+    - Luping Wang
+    - Weigao Chen
+    - Yifei Wu
+    - Yonghe Zhang
+    - Rui Zhang
+    - Wenchao Wu
+    - Jiyu Luo
+    - Haoran Geng
+related:
+  - qwen3
