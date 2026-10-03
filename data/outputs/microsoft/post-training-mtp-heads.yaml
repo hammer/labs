@@ -1,0 +1,69 @@
+name: "Match the Distribution, Not the Compute"
+slug: post-training-mtp-heads
+lab: microsoft
+type: paper
+date: 2026-10-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.00888
+description: >
+  <p>"Match the Distribution, Not the Compute: Post-Training Multi-Token
+  Prediction Heads," from Microsoft (11 authors, including Chris Quirk and Xia
+  Song). Multi-token prediction speeds up generation by letting a model draft
+  several tokens per forward pass, with a verification step that keeps the
+  backbone's output distribution intact. Every open MTP release so far &mdash;
+  <a href="/outputs/xiaomi/mimo">MiMo-7B</a>,
+  <a href="/outputs/deepseek/deepseek-v3">DeepSeek-V3</a>,
+  <a href="/outputs/alibaba/qwen3">Qwen3</a>, EAGLE-3 &mdash; trains those
+  heads jointly with the backbone across the whole pretraining run, which
+  fixes drafter quality at pretraining time and leaves no way to add MTP to a
+  model after the fact. The paper asks whether a short post-training pass on
+  the target model's own chain-of-thought can match that, and finds it can.</p>
+
+  <p>On a <strong>frozen Qwen3-8B</strong> with three chained heads, plain
+  cross-entropy on about <strong>2.5B tokens</strong> of on-policy
+  target-generated text &mdash; three to four orders of magnitude less
+  MTP-training data than MiMo-7B's joint pretraining &mdash; matches or beats
+  the jointly trained baseline on mean accepted length, the expected tokens
+  committed per verification step. Against MiMo-7B-RL at matched per-head
+  capacity, running exact rejection-sampling verification at batch 4 on one
+  A100-80GB in vLLM: GSM8K 3.05 against 2.80 (1.09&times;), MT-Bench 2.67
+  against 2.40 (1.11&times;), MBPP 2.84 against 2.70, MATH500 3.00 against
+  2.87, MMLU-Redux 2.64 against 2.54, and parity on AIME24 and AIME25
+  (2.81 against 2.85 and 2.82). The gap comes from the deepest head: on GSM8K
+  the third head is accepted 51.1% of the time against the baseline's 33.6%,
+  even though the baseline's first head is slightly better.</p>
+
+  <p>Two serving-time additions build on that checkpoint. A
+  <strong>chain-aware relaxation</strong> of the verification rule admits a
+  bounded drift from the backbone's distribution, governed by a threshold that
+  trades accepted length against fidelity; it lifts expected speedup
+  <strong>12&ndash;16% per benchmark</strong> while holding task accuracy, and
+  the sweep shows math accuracy behaving as a step function of accepted length
+  while ROUGE varies smoothly. An <strong>adaptive controller</strong> then
+  picks how many heads to engage at inference: an online lower-confidence-bound
+  bandit over six arms (draft depth 1 to 6) credits the active arm with
+  observed batched throughput after a short round-robin warm-up, recovering
+  <strong>11&ndash;14%</strong> of the speedup a fixed maximum draft length
+  gives up when batch size and prediction difficulty vary. The paper is
+  CC BY-NC-ND and ships no code.</p>
+tags:
+  - inference
+  - efficiency
+  - post-training
+  - research
+paper:
+  arxiv: "2610.00888"
+  authors:
+    - Prachi Badarayani
+    - Aidan Jay
+    - Chenghui Zhou
+    - Dayquan Julienne
+    - Yuan Gao
+    - Tianwei Chen
+    - George Zerveas
+    - Ishmam Zabir
+related:
+  - mimo
+  - deepseek-v3
+  - qwen3
