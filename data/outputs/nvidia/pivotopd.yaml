@@ -1,0 +1,80 @@
+name: "PivotOPD: Learning to Recover from Pivotal Mistakes in Multi-Turn Agents"
+slug: pivotopd
+lab: nvidia
+type: paper
+date: 2026-09-30
+sources:
+  - label: Project page
+    url: https://research.nvidia.com/labs/lpr/pivotopd/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.40285
+description: >
+  <p>On-policy distillation gives a student dense teacher supervision on its own
+  trajectories, but in multi-turn agents a wrong action changes every state that
+  follows, so errors compound. This paper from NVIDIA's <strong>Learning and
+  Perception Research</strong> group starts from a measurement: using ALFWorld's
+  symbolic oracle, <strong>59% of failed rollouts</strong> across three Qwen3
+  models (8B&ndash;235B) contain a <strong>pivotal mistake</strong> &mdash; an
+  action that lengthens the remaining optimal trajectory or makes the task
+  unsolvable. The first one lands at a median of turn 8 to 12 out of 30, and the
+  agent wastes the rest of the episode. It is also recoverable: correcting the
+  pivotal turn lifts replayed success from <strong>8% to 59%</strong>, and
+  guiding only the two turns after it still reaches 58%. Standard OPD does not
+  capture this. It cuts the overall failure rate from 79% to 56%, but failures
+  after a pivotal turn barely move (51% to 49%), because the recovery action
+  stays <strong>below 1% probability</strong> &mdash; a group of eight rollouts
+  never samples it, so there is no learning signal.</p>
+
+  <p>PivotOPD therefore trains for both halves of the problem. A teacher reads
+  each rollout in hindsight and names a gold action at candidate turns; a turn is
+  pivotal when the student's committed action disagrees. <strong>Preventive
+  distillation</strong> re-scores the student's recorded response against the
+  gold action under <strong>reverse KL</strong>, steering it away from the
+  mistake; <strong>recovery distillation</strong> uses <strong>forward KL</strong>,
+  whose mass-covering behaviour puts probability on recovery actions the student
+  almost never produces. Both run through a <strong>privileged self-teacher</strong>
+  &mdash; the frozen student conditioned on a hint naming an action &mdash; so
+  the teacher only ever names actions while the token-level targets stay in the
+  student's own reasoning style, and both terms enter a single PPO update as
+  per-token distillation advantages.</p>
+
+  <p>Against <strong>13 baselines</strong> spanning RL, self-distillation,
+  turn-level distillation and skill or pivotal-turn guidance, it ranks first on
+  <strong>all eight per-benchmark averages</strong> over three seeds for both
+  Qwen3-1.7B and Qwen3-8B students: <strong>+5.5% on ALFWorld</strong> and +5.9%
+  on Search-based QA over the strongest baseline with the 1.7B student, with the
+  largest gains where successful rollouts are scarcest and outcome-only RL gets
+  no signal. On WebShop it beats RLSD by only +1.2% in score but
+  <strong>+14.1% in success rate</strong> &mdash; partial progress converted into
+  finished tasks. Teacher capacity is not the explanation: with Qwen3-8B as its
+  own teacher it still wins all three benchmarks, by at least +1.5% each and
+  +3.9% on average. Replayed from the same 72 oracle-labeled pivotal mistakes it
+  recovers in <strong>72.7%</strong>, against 8.3% for the base model, 20.3% for
+  standard OPD and 45.8% for the preventive-only variant, in the fewest turns,
+  improving 60 of the 72 and worsening none. The gains cross model families: on a
+  curated bug-fix curriculum with
+  <a href="/outputs/nvidia/nemotron-3-super">Nemotron-3-Super</a> teaching a
+  Nemotron-3.5-SFT student, SWE-Bench Verified resolve rate goes
+  <strong>62.8% to 66.0%</strong> &mdash; about a third of the gap to the teacher
+  &mdash; where standard OPD from the same teacher adds 0.2 points. Code is
+  announced as coming soon.</p>
+tags:
+  - agents
+  - reinforcement-learning
+  - post-training
+  - distillation
+  - research
+paper:
+  arxiv: "2609.40285"
+  authors:
+    - Yinghui He
+    - Yapei Chang
+    - Khushi Bhardwaj
+    - Daniele Molinari
+    - Tugrul Konuk
+    - Jan Kautz
+    - Ali Hatamizadeh
+related:
+  - lightning-opd
+  - molt
+  - nemotron-3-super
