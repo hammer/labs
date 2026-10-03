@@ -65,3 +65,7 @@ outputs:
       and code.
     paper:
       arxiv: "2604.14268"
+related:
+  - worldcrafter
+  - gae
+  - worldclaw

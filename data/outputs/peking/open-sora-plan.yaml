@@ -20,7 +20,7 @@ description: >
   open-source HunyuanVideo &mdash; trained and inferred entirely on
   Huawei Ascend 910-series NPUs. Successors: OSP-Next (May 2026; sparse
   sequence parallelism, HiF8 quantization, RL post-training) and the
-  Helios real-time long-video generator (~2K&#9733; in 3 months).
+  <a href="https://arxiv.org/abs/2603.04379">Helios</a> real-time long-video generator (~2K&#9733; in 3 months; arXiv 2603.04379, March 2026).
   Sibling ConsisID identity-preserving T2V (CVPR 2025 Highlight) ships
   in HF diffusers.</p>
 tags:
