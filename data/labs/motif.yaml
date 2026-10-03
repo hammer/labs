@@ -24,6 +24,15 @@ people:
   - name: Junghwan Lim
     role: CEO & Founder
     formerly: Moreh (Director of AI); Samsung Research; PUBG; PhD Oxford; BS KAIST
+    description: >
+      <p>Took his mathematics doctorate at the University of Oxford in
+      <strong>anabelian geometry</strong>, a field spanning algebra, geometry
+      and topology, and credits an encounter with DeepMind for turning him
+      toward technology rather than academia or finance. He returned to Seoul
+      for data-science stints at a gaming company and Samsung Research before
+      moving into startups, and was 34 when Bloomberg profiled him in February
+      2026 as Motif was selected for Korea's state-backed sovereign-model
+      contest.</p>
 news:
   - title: "Motif 3 API Free Until September 29 as Motif Technologies Courts Developers After the Sovereign-Model Elimination"
     url: https://www.aitimes.com/news/articleView.html?idxno=215401
@@ -33,6 +42,10 @@ news:
     url: https://www.koreaherald.com/article/10854743
     source: The Korea Herald
     date: 2026-08-27
+  - title: "Motif Founder Junghwan Lim Profiled as Korean Startups Take On the Conglomerates in the 'AI Squid Game'; the Science Ministry Selects Motif for Its Sovereign-Model Contest"
+    url: https://www.japantimes.co.jp/business/2026/02/25/tech/startups-conglomerates-korea-ai/
+    source: Bloomberg (via The Japan Times)
+    date: 2026-02-25
 tags:
   - open-weight
   - moe
