@@ -1,0 +1,100 @@
+name: Kolibri 1
+slug: kolibri-1
+lab: cohere
+type: model
+date: 2026-10-03
+flagship: true
+sources:
+  - label: Announcement (Aleph Alpha)
+    url: https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/
+  - label: Technical Report (PDF)
+    url: https://aleph-alpha.com/downloads/tech-report.pdf
+  - label: HuggingFace (FP8)
+    url: https://huggingface.co/Aleph-Alpha/Kolibri-1
+  - label: HuggingFace (BF16)
+    url: https://huggingface.co/Aleph-Alpha/Kolibri-1-BF16
+description: >
+  <p>A German-and-English mixture-of-experts reasoning model built by
+  <strong>Aleph Alpha Research GmbH</strong> and released on October 3, 2026,
+  the Day of German Reunification. Aleph Alpha signed a definitive
+  business-combination agreement with <a href="/labs/cohere">Cohere</a> in
+  September 2026 &mdash; dual headquarters in Berlin and Toronto, Heidelberg
+  kept as a research centre, and the combined company to operate under the
+  Cohere brand &mdash; so Kolibri is filed here, though it ships under the
+  Aleph Alpha name and the transaction had not yet closed at release.</p>
+
+  <p><strong>78B total parameters with 3.46B active per token</strong>: 50
+  layers, 4:1 sliding-window to grouped-query attention, and 384 experts per
+  layer with one shared and six routed, trained with Muon and what the team
+  calls Exact Quantile Balancing. Native context is 262,144 tokens and quality
+  was validated to <strong>1,048,576</strong>, which works because positional
+  encoding is applied only in the sliding-window layers, so the context
+  extends without position scaling; Aleph Alpha still recommends staying at or
+  below 262K for serving efficiency. Weights ship in FP8
+  (<code>float8_e4m3fn</code>, 128&times;128 blocks, dynamically quantized
+  activations and an FP8 KV cache) with embeddings, LM head, norms and the MoE
+  router in bfloat16, which puts the footprint near 78 GB &mdash; one H200,
+  B200 or B300, or two H100s. Apache 2.0, with an explicit reasoning mode and
+  tool calling, and a June 18, 2026 knowledge cutoff.</p>
+
+  <p>Pretraining ran on <strong>20T tokens</strong> of a filtered bilingual
+  corpus (about 62.5% English, 23.9% German, 13.6% code), then 3.44T tokens of
+  mid-training and 201B for long-context extension, on <strong>768 NVIDIA
+  B200s</strong> across 96 HGX nodes &mdash; 21 days and 392,000 GPU-hours for
+  pretraining, 90,000 more for mid-training and 10,000 for long context, about
+  <strong>6.4&times;10<sup>23</sup> FLOPs</strong> in total. Aleph Alpha stresses
+  that training happened in Germany and Finland under European and German law
+  with no foreign control, and that it owns the pipeline end to end; it is a
+  signatory of the EU GPAI Code of Practice. Against Kolibri Origin (its 30B-A3B
+  pipeline-validation predecessor), Qwen3.6-35B-A3B, Nemotron 3 Super 120B-A12B
+  and Mistral Small 4 119B-A6B, the launch table reports AIME 2025
+  <strong>96.9</strong> (81.9 / 84.6 / 91.7 / 79.8) and 87.5 in German, AIME
+  2026 96.0, GPQA Diamond 84.3, LiveCodeBench v6 85.9, HumanEval+ 92.7 and BFCL
+  v4 61.4 &mdash; ahead on reasoning and maths, behind Qwen3.6 on BFCL. On the
+  agentic-RAG benchmark Honeypot it beats every model compared, including the
+  much larger Nemotron 3 Super, and on a cleaned MuSiQue it places second to
+  it. The target is sovereign, regulated work: public administration,
+  industrials and aerospace.</p>
+tags:
+  - moe
+  - reasoning
+  - open-weight
+  - multilingual
+  - long-context
+  - agentic
+model:
+  architecture: moe
+  parameters: 78B
+  active_parameters: 3.46B
+  num_experts: 384
+  top_k: 6
+  context_window: 1048576
+  training_tokens: 20T
+  training_hardware: 768 NVIDIA B200
+  training_time: 21 days (pretraining)
+  optimizer: Muon
+  license: Apache 2.0
+  benchmark_scores:
+    - benchmark: AIME 2025
+      score: "96.9"
+    - benchmark: AIME 2025 (German)
+      score: "87.5"
+    - benchmark: AIME 2026
+      score: "96.0"
+    - benchmark: GPQA Diamond
+      score: "84.3"
+    - benchmark: LiveCodeBench v6
+      score: "85.9"
+    - benchmark: HumanEval+
+      score: "92.7"
+    - benchmark: BFCL v4 (overall)
+      score: "61.4"
+  variants:
+    - name: Kolibri-1 (FP8)
+      notes: "float8_e4m3fn weights in 128x128 blocks with an FP8 KV cache; ~78 GB footprint"
+    - name: Kolibri-1-BF16
+      notes: "bfloat16 release the FP8 build is quantized from"
+    - name: Kolibri Origin
+      notes: "30B total / 3B active, 65K context; built first to validate the training pipeline, released about three months earlier"
+related:
+  - command-a-plus
