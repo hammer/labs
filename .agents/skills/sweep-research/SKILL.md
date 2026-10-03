@@ -11,7 +11,7 @@ Read [AGENTS.md → Periodic Arxiv Sweeps](../../../AGENTS.md#periodic-arxiv-swe
 
 - the current and previous month prefixes;
 - internal team and collaboration mappings;
-- HuggingFace API probes;
+- secondary-org discovery (`npm run sweep-orgs`) and HuggingFace API probes;
 - researcher-name, evaluation, domain-expert, and agent-harness searches;
 - late technical-report and Artificial Analysis worklists;
 - inclusion and exclusion criteria.
@@ -24,7 +24,7 @@ Record the labs, month prefixes, and artifact classes in scope. Unless the user 
 
 1. Cover at least the previous 4-6 weeks.
 2. Search the lab name and every known internal team or collaboration name.
-3. Probe the lab's research page, publications index, GitHub organizations, and recent HuggingFace model and dataset uploads.
+3. Probe the lab's research page, publications index, GitHub organizations, and recent HuggingFace model and dataset uploads. Run `npm run sweep-orgs` first and probe **every** org it lists for a lab, not just the one in the lab file's `huggingface:` / `github:` fields — labs publish from several orgs, and the declared field alone has missed whole launches (Moonshot's AgentENV under `kvcache-ai`, LG's EXAONE weights under `LG-AI-Research`, Apple's LensVLM under `apple-aiml-research`). See AGENTS.md step 3.
 4. Search prolific researchers when lab-name searches are incomplete.
 5. Run independent searches for widely adopted evaluations, reasoning-process benchmarks, domain-expert benchmarks, agent harnesses or execution stacks, and RL-scaling papers — including RL-readiness / stage-aware post-training work that optimizes SFT or checkpoint selection for downstream RL (the `rl-scaling` tag family; see the dedicated RL-scaling sweep in AGENTS.md).
 6. Generate the late technical-report and newly scored-model worklists specified in AGENTS.md.

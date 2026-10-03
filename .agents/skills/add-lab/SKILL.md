@@ -118,7 +118,7 @@ If the lab has been **reorganized** (e.g., Kakao Brain merged into Kakao Corp �
 
 ### Multiple GitHub/HuggingFace Orgs
 
-Many labs have legacy orgs from before reorganization. The lab YAML only has one `github:` and one `huggingface:` field — use the **current/primary** org. Mention legacy orgs in the description or link them from individual output source lists:
+Many labs have legacy orgs from before reorganization. The lab YAML only has one `github:` and one `huggingface:` field — use the **current/primary** org. Mention legacy and sibling orgs in the description or link them from individual output source lists. Do this even when an org looks minor: `npm run sweep-orgs` derives each sweep's probe list from exactly these links, so an org that appears nowhere in the lab's entries is an org future sweeps will not check (AGENTS.md step 3). Examples:
 - Kakao: primary `kakaocorp` on HF, legacy `kakaobrain` on HF/GitHub
 - PFN: primary `pfnet` on HF, also `pfnet-research` on GitHub
 
