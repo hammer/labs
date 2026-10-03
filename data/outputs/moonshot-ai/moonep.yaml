@@ -1,0 +1,61 @@
+name: MoonEP
+slug: moonep
+lab: moonshot-ai
+type: library
+date: 2026-07-24
+sources:
+  - label: GitHub
+    url: https://github.com/MoonshotAI/MoonEP
+  - label: "Kimi K3 Technical Report (arXiv, sections 5.2.1 and E)"
+    url: https://arxiv.org/abs/2607.24653
+description: >
+  <p>The expert-parallel communication library behind
+  <a href="/outputs/moonshot-ai/kimi-k3">Kimi K3</a>'s MoE pretraining, which
+  removes routing imbalance rather than tolerating it. Every rank receives
+  exactly <strong>S&times;K tokens</strong> however skewed the router is, so
+  all ranks compute the same amount; the balance comes from a small number of
+  <strong>dynamic redundant experts</strong> planned online from the current
+  router outputs and prefetched before expert computation, with their gradients
+  reduced back to their home ranks in the backward pass. The K3 report proves
+  the result that makes this safe: a balanced plan always exists with at most
+  <strong>E/R redundant experts per rank</strong> (E experts, R EP ranks), and
+  that bound is essentially tight. Reserving E/R slots therefore guarantees a
+  feasible plan at every step, so training is never interrupted &mdash; unlike
+  prior schemes such as ECHO and UltraEP, which preset a redundant-expert count
+  or a per-rank token cap, stall when no plan fits the cap, and need the cap
+  tuned by hand while still leaving residual imbalance. Exact optima are
+  computed offline with integer linear programming as references for a GPU
+  planning kernel that is near-optimal, costs almost nothing, and always
+  respects the bound.</p>
+
+  <p>Perfect balance also simplifies the data path. A fused permute/unpermute
+  operator sends tokens straight to their expert-grouped positions on remote
+  ranks, with the planner precomputing every destination, and hands views of
+  the communication buffer back to the computation &mdash; so the
+  communication-to-user-buffer copy that dominates the epilogue disappears, and
+  a fixed S&times;K buffer suffices. Statically known shapes remove per-layer
+  MoE host synchronization. Benchmarks on H20 at EP=8, sweeping router
+  imbalance, put MoonEP's communication time below
+  <a href="/outputs/deepseek/deepep">DeepEP</a> v2 at every imbalance level and
+  nearly flat as imbalance grows, where DeepEP degrades because its latency is
+  set by the hottest rank; total dispatch time including MoonEP's extra
+  planning and prefetch kernels matches DeepEP v2's dispatch alone, and combine
+  is faster throughout. End to end, DeepEP's iteration time climbs with
+  imbalance and eventually <strong>runs out of memory</strong> as shifting
+  activation shapes fragment the allocator, while MoonEP's iteration time stays
+  flat and its static shapes never fragment. MIT-licensed, NVIDIA GPUs today
+  with Zhenwu PPU support listed as coming; about 1,160 GitHub stars.</p>
+tags:
+  - infrastructure
+  - moe
+  - training
+  - efficiency
+  - open-source
+library:
+  github: https://github.com/MoonshotAI/MoonEP
+  language: Python
+  license: MIT
+related:
+  - kimi-k3
+  - deepep
+  - agentenv

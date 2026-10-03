@@ -1,0 +1,61 @@
+name: MiniTriton and nano-kpu
+slug: minitriton-nano-kpu
+lab: moonshot-ai
+type: library
+date: 2026-07-23
+sources:
+  - label: GitHub (MiniTriton)
+    url: https://github.com/MoonshotAI/minitriton
+  - label: GitHub (nano-kpu)
+    url: https://github.com/MoonshotAI/nano-kpu
+  - label: Kimi K3 Technical Report (arXiv)
+    url: https://arxiv.org/abs/2607.24653
+description: >
+  <p>Two systems artifacts Moonshot published the week of the
+  <a href="/outputs/moonshot-ai/kimi-k3">Kimi K3</a> launch, notable less for
+  adoption than for who wrote them: both carry a disclaimer that they are
+  <strong>demonstrations of K3's capability rather than Moonshot products</strong>,
+  designed and implemented by the model with a human maintainer providing
+  engineering direction and review.</p>
+
+  <p><strong>MiniTriton</strong> is a tile compiler in the mould of Triton: a
+  small Python-embedded tile DSL that lowers through upstream MLIR dialects to
+  PTX, plus an eager tensor library with autograd and neural-network layers
+  over the same API. Its stated discipline is that the compiler holds only
+  tile-level primitives and general passes, with no application-specific
+  intrinsics &mdash; every application kernel, FlashAttention and
+  <a href="/outputs/moonshot-ai/kimi-linear">Kimi Delta Attention</a> among
+  them, is written in the DSL itself. Moonshot says K3 produced the whole
+  stack: DSL frontend, MLIR compiler, CUDA kernels, autograd and nn layers,
+  benchmarks, figures and documentation. Triton's programming model was chosen
+  deliberately as a familiar, well-specified target against which to validate
+  an agent-built compiler, and upstream Triton appears only as a benchmark
+  baseline.</p>
+
+  <p><strong>nano-kpu</strong> goes further down the stack: Verilog RTL for a
+  nano-scale inference chip, again designed and implemented by K3, shipped with
+  a functional-simulation and timing/area evaluation flow (Verilator testbench,
+  yosys area and Nangate45 mapped timing, a bit-exact Python fixed-point model,
+  and a float32 golden reference). The chip targets the K3 family's own
+  architecture: KDA linear attention, NoPE multi-head latent attention,
+  sigmoid-routed MoE with two routed experts plus one shared, and
+  <a href="/outputs/moonshot-ai/attention-residuals">attention-residual</a>
+  mixing, with int4 group-128 weights and teacher-forced token-by-token decode.
+  Both are Apache 2.0 and small by adoption (roughly 85 and 140 GitHub stars),
+  and neither has been developed since July &mdash; they are worth tracking as
+  evidence of what a frontier model produced unaided in compiler and hardware
+  design, not as infrastructure anyone depends on.</p>
+tags:
+  - infrastructure
+  - gpu-kernels
+  - self-improvement
+  - open-source
+  - research
+library:
+  github: https://github.com/MoonshotAI/minitriton
+  language: Python
+  license: Apache 2.0
+related:
+  - kimi-k3
+  - kimi-linear
+  - attention-residuals

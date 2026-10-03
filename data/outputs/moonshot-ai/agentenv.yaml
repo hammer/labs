@@ -1,0 +1,58 @@
+name: AgentENV
+slug: agentenv
+lab: moonshot-ai
+type: library
+date: 2026-07-23
+sources:
+  - label: GitHub
+    url: https://github.com/kvcache-ai/AgentENV
+  - label: Documentation
+    url: https://kvcache-ai.github.io/AgentENV/latest/
+  - label: "Kimi K3 Technical Report (arXiv, section 5.3.2)"
+    url: https://arxiv.org/abs/2607.24653
+description: >
+  <p>The microVM sandbox platform that runs agent environments for
+  <a href="/outputs/moonshot-ai/kimi-k3">Kimi K3</a>'s agentic RL training,
+  open-sourced under the kvcache-ai org alongside the K3 launch and developed
+  with partners. The K3 technical report gives the motivation: as agents get
+  more capable they explore aggressively and sometimes attempt reward hacking,
+  and Moonshot's early container-based sandboxes hit <strong>kernel panics and
+  deadlocks</strong> from unintended agent operations. Hard tasks also need a
+  sandbox close to a real machine, where an agent can mount disks, run
+  containers, even start its own VMs. AgentENV runs each environment as an
+  isolated <strong>Firecracker microVM</strong> instead, which containers
+  cannot match on either count.</p>
+
+  <p>The second design goal is making idle environments cheap, because an agent
+  waiting on model inference can account for <strong>as much as 98% of a
+  sandbox's lifetime</strong>. Incremental checkpointing saves only the memory
+  pages dirtied since the last checkpoint, giving checkpoint and resume
+  latencies as low as <strong>133 ms and 49 ms</strong>; the README quotes
+  snapshot-backed boot or resume under 50 ms and pause under 100 ms. On top of
+  that sit pause/resume, which releases a paused sandbox's CPU and memory
+  entirely, and <strong>fork</strong>, which clones a running environment's
+  exact state into independent sandboxes for parallel rollouts. Snapshots
+  persist to S3-compatible object storage or a shared distributed filesystem.
+  For scale, OCI images load on demand through overlaybd with local disk as a
+  bounded cache, so the aggregate image and snapshot footprint can exceed local
+  disk by orders of magnitude without pre-warming every host &mdash; reaching
+  <strong>1.5 million images in production</strong> per the README. I/O runs
+  through ublk with the host page cache shared across storage and memory
+  snapshots, and memory ballooning returns reclaimable guest memory, for a
+  <strong>9.6&times; memory overcommit ratio</strong> in production. Written in
+  Rust under MIT, it needs Linux 6.8+ and KVM (a PVM path covers hosts without
+  it), and had about 3,600 GitHub stars by early October.</p>
+tags:
+  - infrastructure
+  - agents
+  - agent-harness
+  - rl
+  - open-source
+library:
+  github: https://github.com/kvcache-ai/AgentENV
+  language: Rust
+  license: MIT
+related:
+  - kimi-k3
+  - moonep
+  - mooncake
