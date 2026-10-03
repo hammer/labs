@@ -1,0 +1,132 @@
+name: GAE (Geometry-Native Autoencoder)
+slug: gae
+lab:
+  - tencent
+  - hkust
+type: model
+date: 2026-09-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.24981
+  - label: GitHub
+    url: https://github.com/TencentARC/GAE-GeometricAutoEncoder
+  - label: HuggingFace
+    url: https://huggingface.co/TencentARC/GAE-D64-1B
+  - label: Project Page
+    url: https://jiah-cloud.github.io/GAE.github.io/
+description: >
+  <p>A <strong>geometry-native latent space</strong> for video and 3D
+  generation: instead of adding geometry as an extra output head, GAE
+  reparameterizes a frozen geometry foundation model's features into a compact
+  latent that is <strong>jointly decodable to appearance, depth, cameras and
+  point maps</strong>. Stage 1 freezes <strong>Depth Anything 3</strong>
+  (DA3-GIANT) at both ends — its encoder emits a four-level feature hierarchy
+  and its DPT head reads depth, rays and point maps back out — and trains a
+  codec (<code>GAECodec</code>) that compresses the 3,072-channel feature stack
+  to <strong>64 or 128 channels</strong>, with a learned RGB head decoding
+  appearance from the same state. Because the geometry head never trains, the
+  bottleneck has to stay readable by the model the features came from. Two
+  alignment losses shape the latent <em>before</em> any generative training:
+  <code>L_tok</code> aligns each projected posterior token with C-RADIOv2.5-B,
+  and <code>L_struct</code> matches DINOv2-L patch-patch similarity directly in
+  the raw posterior mean — unlike REPA, which aligns intermediate denoiser
+  states during generative training. Stage 2 freezes the codec and trains one
+  conditional flow model over the standardized latent, conditioned on clean
+  reference latents prepended at t=0, <strong>metric Plücker ray maps</strong>
+  for scale-aware camera control, and text via cross-attention from a frozen
+  Qwen3-0.6B. The same backbone covers text-to-image, camera-controlled video,
+  and reference-conditioned novel-view synthesis.</p>
+
+  <p>The paper's central claim is tested in a controlled comparison that holds
+  the flow architecture, data mixture, optimization schedule and sampling
+  protocol fixed and swaps only the latent (SD-VAE, WAN2.1 video VAE, semantic
+  RAEv2, raw DA3-GIANT L0 and L3, plus GLD and Gen3R). Against the best
+  non-GAE controlled latent, <strong>GAE-64 cuts FVD by 12.7% on
+  RealEstate10K</strong> (258.6 → 225.7) <strong>and by 23.1% on DL3DV</strong>
+  (373.2 → 287.0), and leads the paired metrics (PSNR 20.02 / 18.00, LPIPS
+  0.143 / 0.194). On 3D coherence measured independently with VGGT — a backbone
+  shared with none of the latents — GAE-64 roughly halves camera-trajectory
+  error on RealEstate10K against the best non-GAE controlled latent (ATE 0.0072
+  → 0.0034) and posts the lowest MEt3R of the controlled set (0.1208, against
+  0.1263 for semantic RAEv2). On reconstruction, GAE-128 matches or slightly
+  exceeds the raw DA3 L0
+  baseline (PSNR 28.76 single-view, 34.78 multi-view; rFID 5.4, rFVD 4.3)
+  <strong>while using 24× fewer channels</strong>, and geometry decoded from
+  GAE latents reaches AbsRel 0.090 / δ₁ 0.905 on RealEstate10K against a Pi3
+  reference.</p>
+
+  <p>The released checkpoint, <strong>TencentARC/GAE-D64-1B</strong>, is the
+  GAE-64 configuration: a <strong>0.93B-parameter flow transformer</strong> (28
+  encoder blocks of width 768, six decoder blocks of width 2048) over the
+  64-channel latent at <strong>672×378</strong> with <strong>81-view</strong>
+  clips, trained on <strong>80 GPUs</strong> in BF16 with AdamW (base LR 5e-5,
+  500 warmup steps, cosine decay to 1e-6 by 60k steps, EMA 0.9995) on a mixture
+  of RealEstate10K, DL3DV, ScanNet++, MVS-Synth, SpatialVID, OmniWorld and
+  internally curated data; the parameter count covers the trainable Stage 2
+  generator and excludes the frozen DA3 encoder, codec and text encoder. The
+  GAE-128 codec is evaluated in the paper but its weights are not on
+  HuggingFace. Code and weights carry a <strong>custom Tencent license limited
+  to academic use</strong> — GitHub reports no SPDX identifier, and
+  <code>LICENSE.txt</code> grants MIT-style permissions but adds that users
+  "agree to use [it] only for academic purposes, and refrain from using it for
+  any non-academic, commercial or production purposes." From <strong>ARC Lab,
+  Tencent IEG</strong> with HKUST, the University of Hong Kong and UT Austin:
+  first author Jiahao Lu (HKUST) and Minghao Yin (Tencent ARC / HKU) contributed
+  equally, Wenbo Hu (Tencent ARC) and Yuan Liu (HKUST) are corresponding
+  authors, and <a href="/people/ying-shan">Ying Shan</a> is the senior author.
+  The date marks the arXiv v1 posting (a v2 followed on 25 September 2026); all
+  figures above are from v1.</p>
+tags:
+  - world-model
+  - 3d
+  - video
+  - generation
+  - diffusion
+  - open-weight
+  - research
+model:
+  architecture: dense
+  parameters: 0.93B
+  license: Custom (Tencent, academic use only)
+  benchmark_scores:
+    - benchmark: FVD (RealEstate10K, controlled 9-view)
+      score: "225.7"
+      mode: GAE-64
+    - benchmark: FVD (DL3DV, controlled 9-view)
+      score: "287.0"
+      mode: GAE-64
+    - benchmark: VGGT ATE (RealEstate10K, generated views)
+      score: "0.0034"
+      mode: GAE-64
+  variants:
+    - name: GAE-64 (GAE-D64-1B)
+      parameters: 0.93B
+      notes: >-
+        64-channel geometry-native latent; the released checkpoint, at 672×378
+        with 81-view generation and Qwen3-0.6B text conditioning
+    - name: GAE-128
+      notes: >-
+        128-channel latent; best RealEstate10K FID (25.6) and best codec
+        reconstruction in the paper, but weights not released
+paper:
+  arxiv: "2609.24981"
+  authors:
+    - Jiahao Lu
+    - Minghao Yin
+    - Wenbo Hu
+    - Hengyu Liu
+    - Wang Zhao
+    - Sai-Kit Yeung
+    - Ying Shan
+    - Yuan Liu
+  code_url: https://github.com/TencentARC/GAE-GeometricAutoEncoder
+  huggingface_url: https://huggingface.co/TencentARC/GAE-D64-1B
+library:
+  github: https://github.com/TencentARC/GAE-GeometricAutoEncoder
+  language: Python
+  framework: PyTorch
+  license: Custom (Tencent, academic use only)
+related:
+  - worldcrafter
+  - gamehorizon
+  - hunyuanworld

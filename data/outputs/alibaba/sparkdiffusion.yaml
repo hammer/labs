@@ -1,0 +1,95 @@
+name: SparkDiffusion
+slug: sparkdiffusion
+lab:
+  - alibaba
+  - peking
+type: library
+date: 2026-09-18
+sources:
+  - label: Blog (project page)
+    url: https://sparkdiffusion.github.io/
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.23153
+  - label: GitHub
+    url: https://github.com/AlibabaResearch/SparkDiffusion
+  - label: HuggingFace
+    url: https://huggingface.co/collections/alibabagroup/sparkdiffusion
+description: >
+  <p>An acceleration framework for <strong>Diffusion Transformer (DiT)</strong>
+  video generation, released from Alibaba's research org and built around a
+  diagnosis the authors call the <strong>high-sparsity trap</strong>: pushed
+  past roughly 90% attention sparsity, step-local training loss keeps falling
+  while the finished videos still show broken structure, semantic drift,
+  mosaic textures and temporal flicker. The paper argues the failure is one of
+  supervision rather than capacity &mdash; the dominant terminal errors
+  originate in the high-noise structure-generation stage, which extended
+  step-local training cannot fix &mdash; and turns that into a staging
+  principle: first adapt the sparse architecture into a coarse prior with a
+  short sparse warm-up, then correct the terminal distribution with few-step
+  trajectory-mixed distillation. The shipped stack composes three
+  multiplicative pieces: <strong>RoLA</strong> rotary-positioned low-rank
+  linear attention (<a href="https://arxiv.org/abs/2609.06712">arXiv
+  2609.06712</a>), <strong>CrossDistill</strong> trajectory-level hybrid
+  few-step distillation (<a
+  href="https://arxiv.org/abs/2609.14725">arXiv 2609.14725</a>), and W8A8 FP8
+  quantization with self-developed fused kernels that need no external
+  sparse-attention checkout at inference time.</p>
+
+  <p>The headline <strong>265&times;</strong> is a specific, bounded
+  measurement, not a general speedup. It is the end-to-end diffusion-latency
+  ratio for <strong>Wan2.1-T2V-14B at 720&times;1280, 81 frames, on a single
+  RTX 5090</strong>, comparing 3-step CFG-free inference at 97% attention
+  sparsity with FP8 fused kernels (NFE 3) against a 50-step
+  classifier-free-guidance BF16 dense baseline running FlashAttention-2
+  (NFE 100): <strong>4,769 s down to 18.0 s</strong>. The same comparison on an
+  H100, whose baseline uses FlashAttention-3, gives <strong>220&times;</strong>
+  &mdash; 1,757 s to 8.0 s. Text encoding and VAE decoding are excluded from
+  both numbers, and the isolated 90%&rarr;97% sparsity stretch accounts for
+  only 1.31&ndash;1.32&times; of the total. At 97% sparsity quality reads
+  VBench 83.15 / VBench-2.0 58.05 against the dense model's 83.69 / 60.20 and
+  the strongest 90%-sparsity baselines TurboDiffusion (82.88 / 57.98 at 25.3 s
+  and 16.0 s) and FastWan with VSA (82.72 / 58.04 at 54.1 s and 20.5 s). On the
+  compact Wan2.1-T2V-1.3B-480P at 90% sparsity it takes the best VBench-2.0 of
+  the accelerated methods (55.85 against 54.63 and 54.61) at the lowest
+  latency, 1.3 s on RTX 5090 and 0.6 s on H100. A seed-diversity check over
+  1,000 prompts with V-JEPA 2 and VideoMAE V2 encoders puts it closest to the
+  dense reference among the few-step methods.</p>
+
+  <p>Apache 2.0, Python, about 400 GitHub stars. Six checkpoints covering
+  Wan2.1 T2V/I2V at 480P and 720P and Wan2.2 T2V at 480P are in the
+  HuggingFace collection, at 0.90&ndash;0.97 sparsity and 3&ndash;4 steps; the
+  repository provides sparse-finetuning, distillation and single-case
+  inference launchers, and credits NVIDIA's rCM for the distillation
+  implementation and Tsinghua's SLA kernel, still required for RoLa sparse
+  <em>training</em> via <code>SLA_SRC</code>. Of 15 authors, 8 list Alibaba
+  Group (including corresponding author Tengxu Sun) and 6 list Peking
+  University (including corresponding authors Kun Yuan and Bin Cui), with
+  Tsinghua University, UESTC and Harbin Institute of Technology also
+  represented. The date marks the repository going public; the paper was posted
+  2026-09-19 and the weights followed on 2026-09-25.</p>
+tags:
+  - video
+  - diffusion
+  - efficiency
+  - inference
+  - attention
+  - sparse
+  - quantization
+  - distillation
+  - open-source
+paper:
+  arxiv: "2609.23153"
+  authors:
+    - Yuxi Liu
+    - Haoyu Li
+    - Zekun Zhang
+    - Tengxu Sun
+    - Yixiang Cai
+    - Jiayong Li
+    - Yifei Xia
+    - Tianle Liu
+  code_url: https://github.com/AlibabaResearch/SparkDiffusion
+library:
+  github: https://github.com/AlibabaResearch/SparkDiffusion
+  language: Python
+  license: Apache 2.0

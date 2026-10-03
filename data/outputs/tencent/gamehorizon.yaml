@@ -1,0 +1,143 @@
+name: GameHorizon Suite
+slug: gamehorizon
+lab: tencent
+type: eval
+date: 2026-09-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.25001
+  - label: GitHub
+    url: https://github.com/TencentARC/GameHorizon
+  - label: Project Page
+    url: https://gamehorizon-suite.github.io
+  - label: Leaderboard
+    url: https://gamehorizon-suite.github.io/#benchmark
+description: >
+  <p>A data-and-evaluation suite that measures gameplay capability in
+  <strong>AAA</strong> titles at three nested temporal horizons, built to compare
+  two families of models that are usually benchmarked separately: general-purpose
+  VLMs and agents, which plan well but are rarely measured on action, and
+  dedicated game agents, which are optimized for acting rather than planning.
+  Three components. <strong>GameHorizon-Annotator</strong> is an automated
+  pipeline that produces a bottom-up pyramid of natural-language instructions at
+  short-horizon operations (L1), medium-horizon goals (L2) and long-horizon
+  strategies (L3). <strong>GameHorizon-Data</strong> is
+  <strong>5,000 hours</strong> of gameplay from <strong>100 trained human expert
+  players</strong> across <strong>21 game titles</strong> (open-world, action RPG,
+  competitive shooter, sandbox survival and creature-collecting genres; Valorant
+  is the largest share at 617.5 hours / 12.35%), with <strong>411.03 million
+  synchronized keyboard-and-mouse events</strong> (22.84 per second) and
+  <strong>6,184,036 instructions</strong> — 5,947,588 L1, 189,158 L2 and 47,290
+  L3, averaging 2.63 s, 82.6 s and 330.4 s of coverage respectively, so every
+  frame is simultaneously aligned to all three horizons. After filtering
+  cutscenes and window switches, 4,341 hours (86.8%) are kept for instruction
+  annotation while actions remain available for all 5,000 hours. The paper
+  presents it as the first corpus to jointly provide large-scale AAA gameplay,
+  directly recorded human actions and dense multi-horizon instructions.</p>
+
+  <p><strong>GameHorizon-Bench</strong> has a reproducible offline track and a
+  stepwise online track. The offline track is <strong>5,000 four-option
+  MCQs</strong> — three primary tasks of 1,000 questions each plus ten diagnostic
+  variants of 200 — derived from the aligned frames, instructions and actions, so
+  scoring is independent of game environments and agent harnesses. T1
+  (single-horizon action) asks for the correct action sequence given frames and an
+  L1 instruction, with ground-truth keyboard-mouse controls mapped to text through
+  per-game keybinds; T2 (multi-horizon decomposition) asks for the ordered L1
+  sequence that realizes an L2 goal; T3 (cross-horizon consistency) asks for the
+  aligned L3/L2/L1 instructions plus action sequence. The online track runs in
+  Minecraft and comprises <strong>10 order-dependent causal and 10 order-flexible
+  thematic long-horizon tasks built from 62 verifiable short-horizon
+  subtasks</strong>; on a subtask failure the environment resets to the
+  corresponding success state so evaluation continues and failures localize to a
+  stage, and a long-horizon task passes only if completed end-to-end with no
+  resets (each subtask capped at 400 model calls).</p>
+
+  <p>The paper evaluates <strong>47 models</strong> — 35 general-purpose VLMs, 4
+  unified multimodal models, 2 GUI agents, 3 coding agents and 3 dedicated game
+  agents — in <strong>more than one million model inferences and API calls</strong>;
+  the 3 game agents, which cannot answer questions, are scored on T1 only by
+  Needleman-Wunsch alignment of their predicted action sequences against the four
+  options. Across the 44 question-answering models mean accuracy is
+  <strong>64.7%</strong> against a 25% random baseline, with a 44.6%–80.2% range
+  (35.6 points) and a clean difficulty gradient: <strong>T1 57.3% &lt; T2 65.1%
+  &lt; T3 71.6%</strong> — fine-grained action prediction is the hardest, not
+  cross-horizon understanding. <strong>GPT-6-Astra leads at 80.2%</strong> (T1
+  69.4, T2 79.6, T3 91.5), ahead of Gemini 3.8 Flash (77.3%) and Gemini 3.7 Flash
+  (76.7%); proprietary models hold ten of the eleven Tier-1 slots and
+  <strong>Kimi-K3 is the only open-weight model in Tier 1</strong>, sixth at
+  74.5%. Twelve models (three per tier) also ran online, where offline rank and
+  online success correlate: GPT-6-Astra passes 66.1% of short-horizon subtasks
+  (41/62) and <strong>45.0% of long-horizon tasks (9/20)</strong>, Gemini 3.6
+  Flash 56.5% / 30.0%, Kimi-K3 46.8% / 10.0%. A diagnostic variant shows that
+  adding medium- and long-horizon instructions to vision-only input improves
+  future-action planning by <strong>7.2 percentage points</strong>.</p>
+
+  <p>From <strong>ARC Lab, Tencent</strong> — project lead and first author Yiran
+  Wang, corresponding author Xiaodong Cun, senior author
+  <a href="/people/ying-shan">Ying Shan</a> — with co-authors at the GVC Lab of
+  Great Bay University, NUS, HUST, MMLab CUHK and the University of Macau. The
+  date marks the arXiv v1 posting; the repository (Apache 2.0) currently carries
+  the paper, project page and full leaderboard, with the annotator, offline and
+  online benchmarks and the 5,000-hour corpus scheduled for release from around
+  25 October 2026. Companion work from the same lab on game and world video
+  generation: <a href="/outputs/tencent/hunyuan-gamecraft">Hunyuan-GameCraft</a>
+  and <a href="/outputs/tencent/worldcrafter">WorldCrafter</a>.</p>
+tags:
+  - eval
+  - benchmark
+  - evaluation
+  - gaming
+  - agents
+  - agentic
+  - multimodal
+  - vision
+  - video
+  - dataset
+  - research
+eval:
+  num_questions: 5000
+  num_tasks: 13
+  domains:
+    - AAA video gameplay
+    - action perception
+    - goal decomposition
+    - long-horizon planning
+    - cross-horizon consistency
+  scoring_method: >-
+    Four-option MCQ accuracy (offline track); stepwise short-horizon subtask and
+    end-to-end long-horizon task success rate (online track in Minecraft)
+  random_baseline: 25% (four-option MCQ)
+  saturation: Not saturated (best overall 80.2%; 44-model mean 64.7%)
+  leaderboard_url: https://gamehorizon-suite.github.io/#benchmark
+  top_scores:
+    - model: GPT-6-Astra
+      score: 80.2%
+      date: "2026-09-21"
+    - model: Gemini 3.8 Flash
+      score: 77.3%
+      date: "2026-09-21"
+    - model: Gemini 3.7 Flash
+      score: 76.7%
+      date: "2026-09-21"
+    - model: Kimi-K3
+      score: 74.5%
+      date: "2026-09-21"
+paper:
+  arxiv: "2609.25001"
+  authors:
+    - Yiran Wang
+    - Xingyilang Yin
+    - Junfu Pu
+    - Guangzhi Wang
+    - Kaifeng Li
+    - Mingyu Ouyang
+    - Huiqiang Sun
+    - Lingen Li
+  code_url: https://github.com/TencentARC/GameHorizon
+library:
+  github: https://github.com/TencentARC/GameHorizon
+  license: Apache 2.0
+related:
+  - gae
+  - worldcrafter
+  - hunyuan-gamecraft

@@ -1,0 +1,67 @@
+name: AI Agent Handbook
+slug: ai-agent-handbook
+lab: alibaba
+type: library
+date: 2026-09-11
+sources:
+  - label: GitHub
+    url: https://github.com/aliyun/ai-agent-handbook
+description: >
+  <p>A practitioner guide from <strong>Alibaba Cloud</strong> &mdash;
+  documentation, not a model, paper or framework. It is an open-source white
+  paper on building, running, governing and tuning enterprise AI agents,
+  written by Alibaba Cloud staff and maintained as a GitHub repository under
+  Apache 2.0. It succeeds the company's September 2025 <a
+  href="https://developer.aliyun.com/ebook/8479">AI-Native Application
+  Architecture White Paper</a>, restructured around three problems the authors
+  say have replaced "build an agent quickly": turning probabilistic
+  intelligence into reliable productivity, scaling from isolated experiments to
+  shared infrastructure (stability, security, performance, cost), and moving
+  agents into core business processes. Thirty chapters sit in seven parts
+  &mdash; Architecture; Building (harness construction patterns and
+  responsibility boundaries, task orchestration and long-horizon
+  continuation, context/state/reusable assets, controlled execution with
+  Function Calling, MCP and A2A); Runtime (sandboxes, event-log and checkpoint
+  state storage, AI gateways, asynchronous tasks, multi-agent coordination,
+  distributed communication); Governance (observability, prompt-injection and
+  authorization security, AI-asset registration and versioning, pre-release
+  simulation); Optimization (model tuning, trajectory data, golden datasets,
+  bad-case loops, controlled self-evolution, edge runtime); Practice (16 named
+  enterprise case studies, including Geely, Bilibili and MiniMax); and a
+  closing chapter on "Agentic OS". The chapters are in Chinese; the English
+  README is a navigation guide and states explicitly that it is not a
+  translation.</p>
+
+  <p>The repository root also carries a <strong>2026 Agent Developer Survey
+  Report</strong> based on <strong>1,906 valid questionnaires</strong>
+  collected at in-person developer events in Beijing, Shenzhen, Guangzhou,
+  Shanghai and Hangzhou, with respondents described as mostly enterprise
+  technical decision-makers, architects, engineers and product managers.
+  Reported findings include: 46% have an agent built or in development against
+  36% a year earlier, and respondents with no plans fell from 22% to 15%, but
+  only <strong>18% have deployed one to production</strong>; 40% run a single
+  agent as the primary architecture, 42% are adopting multi-agent as primary
+  and 15% design human-in-the-loop as the primary pattern; 57% buy coding
+  agents (Claude Code, Codex, Cursor, Qoder are the examples given) and 78% use
+  a general agent framework; 90% report explicit context- and
+  memory-management needs, and 63% name multi-model routing with cost
+  governance as the capability they most need to add &mdash; the single highest
+  item in the survey; 55% still judge agent quality by manual spot-checks and
+  <strong>under 8%</strong> can evaluate automatically from execution
+  trajectories; and about one in ten reach a task success rate above 90%, 55%
+  above 70%, while 16% have never measured it at all.</p>
+
+  <p>Apache 2.0, about 1,100 GitHub stars and 160 forks. There is no code,
+  model, dataset or benchmark in the repository &mdash; it is prose, figures and
+  case studies, tracked here for the survey data and for the
+  harness/context/governance taxonomy it puts on the record.</p>
+tags:
+  - agents
+  - agent-harness
+  - agentic
+  - enterprise
+  - infrastructure
+  - open-source
+library:
+  github: https://github.com/aliyun/ai-agent-handbook
+  license: Apache 2.0

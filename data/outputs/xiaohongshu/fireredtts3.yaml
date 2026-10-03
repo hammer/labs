@@ -1,0 +1,67 @@
+name: FireRedTTS3
+slug: fireredtts3
+lab: xiaohongshu
+type: model
+date: 2026-08-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.17492
+  - label: GitHub
+    url: https://github.com/FireRedTeam/FireRedTTS3
+  - label: HuggingFace
+    url: https://huggingface.co/FireRedTeam/FireRedTTS3
+  - label: Demo page
+    url: https://fireredteam.github.io/demos/firered_tts_3/
+description: >
+  <p>The third generation of Xiaohongshu's
+  <a href="/outputs/xiaohongshu/fireredtts">FireRedTTS</a> line, and the first
+  to unify generation with editing. Continuous autoregressive TTS models work
+  directly on continuous speech representations, which keeps acoustic detail
+  and lets them inherit a text LLM's instruction following &mdash; but they
+  accumulate error as they generate, and the usual fixes bolt on semantic
+  modules, multi-stage tokenizer pipelines or more elaborate autoregressive
+  architectures. FireRedTTS3 attacks the problem <strong>at the representation
+  level</strong> instead: a frozen Audio Encoder trained on diverse speech
+  understanding tasks acts as a <strong>semantic teacher</strong> regularizing
+  the audio feature space, which improves text-speech alignment and steadies
+  generation while the surrounding system stays simple.</p>
+
+  <p>Two variants ship: <strong>FireRedTTS3-Base</strong> for multilingual and
+  multi-dialect zero-shot voice cloning, and <strong>FireRedTTS3-Instruct</strong>
+  for voice cloning, instruction-controlled voice design and speech editing in
+  one model. Base records the best average speech intelligibility and speaker
+  similarity among the compared systems on Seed-TTS-Eval and MiniMax-MLS-Test;
+  Instruct beats competing systems on InstructTTSEval and
+  Ming-Freeform-Audio-Edit. Apache 2.0 code and weights, with about 1,760
+  GitHub stars. The same team's
+  <a href="/outputs/xiaohongshu/fireredaudio">FireRedAudio</a> followed nine
+  days later and reuses the frozen-encoder idea on both sides of a single
+  audio-language model.</p>
+tags:
+  - speech
+  - tts
+  - audio
+  - multilingual
+  - open-weight
+model:
+  license: Apache 2.0
+  variants:
+    - name: FireRedTTS3-Base
+      notes: "Multilingual and multi-dialect zero-shot voice cloning"
+    - name: FireRedTTS3-Instruct
+      notes: "Voice cloning plus instruction-controlled voice design and speech editing"
+paper:
+  arxiv: "2608.17492"
+  authors:
+    - Feiyu Shen
+    - Kun Xie
+    - Yichen Wu
+    - Ziqi Dai
+    - Yichen Han
+    - Junjie Li
+    - Xuelong Geng
+    - Fenglong Xie
+  code_url: https://github.com/FireRedTeam/FireRedTTS3
+related:
+  - fireredtts
+  - fireredaudio

@@ -16,7 +16,9 @@ description: >
   FireRedTTS2 (September 2025, <a
   href="https://arxiv.org/abs/2509.02020">arXiv:2509.02020</a>) extended
   the line to long-form streaming TTS for multi-speaker dialogue
-  generation. The TTS stack underpins FireRedChat, the team's
+  generation, and <a href="/outputs/xiaohongshu/fireredtts3">FireRedTTS3</a>
+  (August 2026) unified generation with instruction-controlled voice design
+  and speech editing. The TTS stack underpins FireRedChat, the team's
   self-hosted full-duplex voice interaction system.</p>
 tags:
   - speech
@@ -27,5 +29,6 @@ model:
 paper:
   arxiv: "2409.03283"
 related:
+  - fireredtts3
   - fireredasr
   - dots.tts

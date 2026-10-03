@@ -1,0 +1,142 @@
+name: WorldCrafter
+slug: worldcrafter
+lab: tencent
+type: model
+date: 2026-09-21
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.24984
+  - label: GitHub
+    url: https://github.com/TencentARC/WorldCrafter
+  - label: HuggingFace (WorldCrafter-Base)
+    url: https://huggingface.co/TencentARC/WorldCrafter-Base
+  - label: HuggingFace (WorldCrafter-Fast)
+    url: https://huggingface.co/TencentARC/WorldCrafter-Fast
+  - label: Project Page
+    url: https://drexubery.github.io/WorldCrafter/
+  - label: Interactive Demo (HF Space)
+    url: https://huggingface.co/spaces/Drexubery/worldcrafter-demo
+description: >
+  <p>A camera-controllable autoregressive video world model whose long-horizon
+  consistency comes from a <strong>camera-queryable implicit 3D-aware
+  memory</strong> rather than from explicit geometry. Where depth-based world
+  models reuse history by estimating depth and warping past frames, WorldCrafter
+  learns a <strong>memory encoder</strong> that writes accumulated history
+  latents plus their camera poses into a learned representation, and a
+  <strong>pose-conditioned readout module</strong> that compresses that
+  representation into a <em>fixed</em> set of target-view-specific tokens before
+  denoising — so the requested viewpoint decides how multi-view evidence is spent
+  against the generator's limited token budget. The DiT then processes
+  <code>[memory; recent context; noise]</code> as one latent sequence per
+  denoising step, preserving chunk-level causality. Encoder and readout are
+  initialized from <strong>LagerNVS</strong> (CVPR 2026) to inherit a learned 3D
+  inductive bias and are trained <em>jointly</em> with the video generator;
+  camera control follows PRoPE relative-pose geometry implemented through UCPE's
+  parallel camera-attention branch, applied only to the noisy tokens. At
+  inference the encoder keeps the latest latent frame and greedily picks
+  complementary frames whose joint field of view maximizes coverage of the
+  upcoming trajectory.</p>
+
+  <p>The video DiT is initialized from <strong>Helios-base</strong>
+  (arXiv 2603.04379, from <a href="/people/li-yuan">Li Yuan</a>'s PKU group
+  behind <a href="/outputs/peking/open-sora-plan">Open-Sora Plan</a>) and trained
+  in four stages: window adaptation on 760,000 Open-Sora-Plan videos (5,000
+  iterations, 32 GPUs); camera-branch training on 40,000 filtered OSP clips plus
+  6,000 DL3DV scenes with the backbone frozen; memory-encoder warm-up on a fixed
+  9-latent-frame input (5,000 iterations, 16 GPUs); then joint training of
+  readout, encoder, DiT and camera branch for 8,000 iterations plus 1,000 more
+  with synthetic MIND videos for dynamic subjects. Camera poses are annotated at
+  metric scale with Depth Anything 3 and captions with Qwen2.5-VL. A pyramid
+  distillation pass (three spatial resolutions, two denoising steps each,
+  distribution matching distillation) yields <strong>WorldCrafter-Fast</strong> as
+  a hybrid high-noise/low-noise pair, reaching <strong>16 fps on a 4-GPU
+  machine</strong> for streaming exploration.</p>
+
+  <p>Evaluation uses a purpose-built benchmark of 145 images (83 dynamic
+  object-centric and 62 static scenes), each paired with five metric camera
+  trajectories spanning <strong>528–1,648 frames</strong> with closed-loop
+  revisits — 725 videos per method — against eight recent camera-controllable
+  world models including <a href="/outputs/tencent/hunyuanworld">HY-WorldPlay</a>,
+  Lyra 2.0, Matrix-Game 3.5, SANA-WM, Echo-WM, Alaya-EVOKE, DreamX-World and
+  LingBot-World 2. On the revisit-consistency protocol the two WorldCrafter
+  models take the <strong>top two places on all four metrics</strong> (MEt3R,
+  LPIPS, PSNR, SSIM); against Lyra 2.0, LPIPS falls from 0.487 to
+  <strong>0.255</strong> and PSNR rises from 14.050 to <strong>18.016 dB</strong>.
+  WorldCrafter has the lowest error on all three camera-control metrics (RotErr,
+  TransErr, CamMC) and the best VBench overall score (<strong>81.910</strong>),
+  leading 5 of 8 VBench dimensions. The memory path is also cheaper than
+  geometry warping: encoding plus readout costs <strong>0.062 s per chunk</strong>
+  versus 1.346 s for depth estimation and batched warping — a
+  <strong>21.7×</strong> reduction with no explicit depth or warping step.
+  Ablations show the implicit memory beats a 4-frame retrieved-context baseline,
+  joint optimization beats a frozen encoder, pose-guided readout beats pose-free
+  readout, and max-coverage history selection beats FoV-similarity ranking.</p>
+
+  <p>Weights ship as <strong>WorldCrafter-Base</strong> and the distilled
+  <strong>WorldCrafter-Fast</strong>, with the interactive demo code and serving
+  infrastructure open-sourced alongside. GitHub reports no SPDX identifier; the
+  repository's <code>LICENSE.txt</code> is a custom Tencent license that grants
+  MIT-style permissions but requires users to "use the WorldCrafter only for
+  academic purposes, and refrain from using it for any commercial or production
+  purposes." From <strong>ARC Lab, Tencent IEG</strong> — Wangbo Yu and Kunhao
+  Liu contributed equally, Wenbo Hu is the corresponding author and
+  <a href="/people/ying-shan">Ying Shan</a> the senior author — with three
+  co-authors at Peking University. The date marks the arXiv v1 posting; the
+  GitHub repository went up on 14 September 2026.</p>
+tags:
+  - world-model
+  - video
+  - generation
+  - diffusion
+  - long-context
+  - 3d
+  - open-weight
+  - research
+model:
+  # Video DiT initialized from Helios-base (arXiv 2603.04379, Peking
+  # University / PKU-YuanGroup). Helios has no slug of its own — it is covered
+  # inside data/outputs/peking/open-sora-plan.yaml — so base_model can't
+  # express it. Parameter count is not disclosed, so none is recorded.
+  pretrained_from_scratch: false
+  license: Custom (Tencent, academic use only)
+  benchmark_scores:
+    - benchmark: Revisit LPIPS (vs. Lyra 2.0's 0.487)
+      score: "0.255"
+      mode: WorldCrafter
+    - benchmark: Revisit PSNR (vs. Lyra 2.0's 14.050)
+      score: "18.016 dB"
+      mode: WorldCrafter
+    - benchmark: VBench overall (custom-input mode)
+      score: "81.910"
+      mode: WorldCrafter
+  variants:
+    - name: WorldCrafter-Base
+      notes: >-
+        Full-step base model; best camera-control accuracy and best VBench
+        overall score
+    - name: WorldCrafter-Fast
+      notes: >-
+        Pyramid-distilled high-noise/low-noise pair; best revisit consistency
+        and 16 fps streaming generation on a 4-GPU machine
+paper:
+  arxiv: "2609.24984"
+  authors:
+    - Wangbo Yu
+    - Kunhao Liu
+    - Wenbo Hu
+    - Shenghai Yuan
+    - Chaoran Feng
+    - Haiyang Zhou
+    - Yukun Huang
+    - Yiran Wang
+  code_url: https://github.com/TencentARC/WorldCrafter
+  huggingface_url: https://huggingface.co/TencentARC/WorldCrafter-Base
+library:
+  github: https://github.com/TencentARC/WorldCrafter
+  language: Python
+  framework: PyTorch
+  license: Custom (Tencent, academic use only)
+related:
+  - gae
+  - gamehorizon
+  - hunyuanworld

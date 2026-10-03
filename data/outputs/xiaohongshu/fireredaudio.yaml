@@ -1,0 +1,65 @@
+name: FireRedAudio
+slug: fireredaudio
+lab: xiaohongshu
+type: model
+date: 2026-08-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.24168
+  - label: GitHub
+    url: https://github.com/FireRedTeam/FireRedAudio
+  - label: HuggingFace
+    url: https://huggingface.co/FireRedTeam/FireRedAudio
+  - label: Demo page
+    url: https://fireredteam.github.io/demos/fireredaudio/
+description: >
+  <p>A general-purpose audio language model from Xiaohongshu's FireRed team,
+  built around a single shared <strong>9B-parameter LLM</strong>. Its argument
+  is about representation: understanding wants compact features that survive
+  long-context modelling, while speech generation wants reconstructible
+  features that keep fine acoustic detail, and the two pull in opposite
+  directions. FireRedAudio keeps both &mdash; the team says it is the first
+  publicly disclosed unified audio-language model with <strong>separate
+  continuous input representations for understanding and generation inside one
+  trainable autoregressive LLM</strong>. Audio to be recognized or analysed
+  goes through a dedicated Audio Encoder; speech destined for generation takes
+  a RedAE-based path. The LLM then either emits text directly or conditions a
+  flow-matching DiT that produces continuous acoustic latents.</p>
+
+  <p>Progressive multitask training gives it ASR and audio understanding over
+  recordings of <strong>up to an hour</strong>, zero-shot and instruction-guided
+  TTS, and both semantic and acoustic speech editing, with second-level
+  timestamp accuracy when it structures long-form audio. The paper reports
+  competitive or leading results on audio understanding and multilingual ASR,
+  strong content accuracy and speaker preservation in zero-shot TTS, leading
+  instruction following on Instruct TTS, and substantial gains over
+  Ming-UniAudio-Edit on both kinds of speech editing &mdash; the case being
+  that decoupled continuous input representations can unify understanding and
+  continuous-latent generation at moderate scale. Apache 2.0 weights and code;
+  about 2,000 GitHub stars within six weeks, the FireRed team's most-starred
+  release.</p>
+tags:
+  - audio
+  - speech
+  - multimodal
+  - open-weight
+  - research
+model:
+  parameters: 9B
+  license: Apache 2.0
+paper:
+  arxiv: "2608.24168"
+  authors:
+    - Feiyu Shen
+    - Fenglong Xie
+    - Junjie Li
+    - Kun Xie
+    - Lei Xie
+    - Xu Tang
+    - Xuelong Geng
+    - Yan Jia
+  code_url: https://github.com/FireRedTeam/FireRedAudio
+related:
+  - fireredtts3
+  - fireredtts
+  - fireredasr

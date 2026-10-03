@@ -1,0 +1,113 @@
+name: North Micro Vision Instruct
+slug: north-micro-vision
+lab: cohere
+type: model
+date: 2026-08-10
+sources:
+  - label: Announcement (HF blog)
+    url: https://huggingface.co/blog/CohereLabs/meet-north-micro-vision-instruct
+  - label: HuggingFace
+    url: https://huggingface.co/CohereLabs/North-Micro-Vision-Instruct
+description: >
+  <p>Cohere's smallest vision-language model to date: <strong>2.4B
+  parameters</strong>, open weights under <strong>Apache 2.0</strong>, with
+  native-resolution image input that preserves aspect ratio instead of
+  squashing every input into a small square. It pairs a custom-trained
+  <strong>400M-parameter native-resolution vision encoder</strong> with an
+  in-house <strong>2B language model, North Micro LLM</strong>, which follows
+  the <a href="/outputs/cohere/command-a-plus">Command A+</a> architecture
+  &mdash; three sliding-window attention layers using rotary embeddings
+  interleaved with one global attention layer carrying no positional
+  embeddings (the released <code>config.json</code> declares model type
+  <code>cohere_compass</code>, 28 layers, hidden size 2048, 16 heads with 8 KV
+  heads and a 4,096-token sliding window). The encoder was continued
+  pre-trained from Google's SigLIP 2 SO400M checkpoint and given
+  <strong>C-RoPE</strong> &mdash; 2D RoPE plus bilinearly interpolated learned
+  1D position embeddings &mdash; to support native-resolution inputs; the
+  projector follows <strong>DeepStack</strong>, injecting patch embeddings from
+  several encoder layers into the corresponding early LLM layers. Tokenizer
+  vocabulary is 262,144 and the checkpoint is bfloat16. The language backbone
+  takes 128K tokens, but multimodal training used an 8K-token context and
+  Cohere does not claim validation beyond it.</p>
+
+  <p>Four training stages are documented in the technical blog. Stage 1 (10M
+  examples) trained only the encoder and projector at a fixed 384&times;384
+  with the LM frozen, on 60% dense captions and 40% OCR. Stage 2.1 (13M) raised
+  resolution to 1024&times;1024 and trained encoder, projector and LM jointly on
+  a 50/50 mix. Stage 2.2 (10M) raised the native-resolution cap to
+  1654&times;2339 pixels &mdash; an A4 page at 200 dpi. Stage 3 (50M)
+  instruction-tuned the full model on a mixture led by native OCR and
+  charts/tables (17.8% each), grounding/counting and OCR QA (13.3% each) and
+  general VQA (11.2%), keeping 8.9% text-only data to preserve language
+  ability. Stage 4 (500k) applied a simplified <strong>Mixed Preference
+  Optimization</strong>: Cohere dropped MPO's BCO quality term and combined DPO
+  with an auxiliary next-token loss weighted at 15%, training only the LM.
+  Next-token prediction was the primary objective throughout, with a
+  patch-token alignment auxiliary loss at 0.05 weight. Training data drew on
+  public datasets plus an in-house multilingual document corpus used to
+  synthesize OCR, document, chart, captioning, HTML-table and grounding
+  examples; bounding boxes are normalized to <code>[x1,y1,x2,y2]</code> on a
+  0&ndash;1000 scale. Cohere's own data ablations report that once the
+  lowest-scoring examples were filtered out, more aggressive thresholds and
+  small mixture changes had only marginal effect &mdash; coverage and balance
+  mattered more than tuning proportions.</p>
+
+  <p>Evaluated with VLMEvalKit against seven compact open-weight models with
+  generation capped at 1,024 tokens, the profile is document- and
+  grounding-heavy: DocVQA (VAL) 0.921, ChartQA (Test) 0.808, OCRBench 0.792,
+  AI2D (TEST) 0.775 and RefCOCO (avg) <strong>0.732</strong> &mdash; the
+  grounding figure against 0.317 for Ministral-3-3B-Instruct and 0.304 for
+  Qwen3-VL-2B-Instruct, though Qwen3.5-2B-Instruct leads at 0.785. It is
+  distinctly weaker on STEM and text-only work: MMMU (DEV_VAL) 0.329 against
+  0.508 for Ministral-3-3B and 0.477 for Gemma-4-E2B-it, MMLU 0.504 and
+  MMLU-Pro 0.307. Cohere states the model is not a reasoning model, has limited
+  math and code generation, does not support tool calling or agentic
+  workflows, and was not trained with system prompts. Public vLLM support was
+  listed as coming soon at release; NVIDIA ships an AutoModel fine-tuning
+  recipe, and Axolotl and MLX-VLM support are community-contributed. The date
+  marks the HuggingFace repository's creation; the technical blog, by David Rau
+  and Florian Schneider of Cohere Labs, was published 2026-08-12. The weights
+  sit in the <code>CohereLabs</code> HuggingFace org, and the vision encoder's
+  SigLIP 2 origin is the only external checkpoint in the stack &mdash; the
+  language backbone is Cohere's own.</p>
+tags:
+  - vision
+  - vision-language
+  - multimodal
+  - open-weight
+  - small-model
+  - multilingual
+  - document-ai
+  - ocr
+model:
+  architecture: dense
+  parameters: 2.4B
+  context_window: 128000
+  license: Apache 2.0
+  benchmark_scores:
+    - benchmark: DocVQA (VAL)
+      score: "92.1%"
+    - benchmark: ChartQA (Test)
+      score: "80.8%"
+    - benchmark: OCRBench
+      score: "79.2%"
+    - benchmark: AI2D (TEST)
+      score: "77.5%"
+    - benchmark: IFEval
+      score: "74.9%"
+    - benchmark: RefCOCO (avg)
+      score: "73.2%"
+    - benchmark: InfoVQA (VAL)
+      score: "65.2%"
+    - benchmark: MMBench (DEV_EN_V11)
+      score: "68.7%"
+    - benchmark: MMStar
+      score: "51.8%"
+    - benchmark: MMMU (DEV_VAL)
+      score: "32.9%"
+    - benchmark: MMLU
+      score: "50.4%"
+related:
+  - command-a-plus
+  - north-mini-code
+  - north-small-translate

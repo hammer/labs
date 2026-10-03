@@ -1,0 +1,92 @@
+name: "PointDiT: Pixel-Space Diffusion for Monocular Geometry Estimation"
+slug: pointdit
+lab:
+  - google
+  - eth-zurich
+  - tuebingen
+type: paper
+date: 2026-07-02
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.02515
+  - label: Project page
+    url: https://haofeixu.github.io/pointdit/
+  - label: GitHub
+    url: https://github.com/google-research/pointdit
+  - label: HuggingFace
+    url: https://huggingface.co/haofeixu/pointdit
+description: >
+  <p>A minimalist <strong>pixel-space Diffusion Transformer</strong> for
+  single-image 3D geometry: a plain ViT that denoises raw 3D point-map patches
+  directly, conditioned on image tokens from a frozen pre-trained
+  <strong>DINOv3</strong> encoder. There is no point-map tokenizer, no latent
+  diffusion, no hybrid CNN/ViT architecture and no intricate loss formulation
+  &mdash; the diffusion backbone is trained entirely from scratch with flow
+  matching, a velocity loss and a relative point loss. The claim the paper
+  makes is that the architectural overhead and loss engineering of current
+  state-of-the-art monocular geometry estimators are unnecessary, and that
+  dropping them yields sharper geometric structure and more robustness in
+  ambiguous regions such as transparent objects.</p>
+
+  <p>Three sizes follow JiT's configurations at patch size 16 &mdash;
+  PointDiT-B, L and H at <strong>223M, 771M and 1,807M parameters</strong>
+  &mdash; scaling the frozen DINOv3 encoder with the model (ViT-B/16, ViT-L/16,
+  ViT-H+/16). Training is two-stage with AdamW: 30 epochs at 256&times;256 on
+  SceneNet-RGBD, then 3&ndash;8 epochs at 512&times;512 on an 11-dataset
+  synthetic mixture, at a reported cost of 16&ndash;64 H100s for 12&ndash;22 h
+  of pre-training and 64&ndash;128 H100s for 2.5&ndash;7 h of fine-tuning.
+  Averaged over seven zero-shot real-world datasets (DIODE, KITTI, NYUv2,
+  ETH3D, HAMMER, iBims-1, Booster; 3,444 samples at 512&times;512),
+  PointDiT-H at 4 sampling steps takes the <strong>best depth accuracy of any
+  method compared</strong> &mdash; relative error 2.75 and
+  &delta;<sub>1</sub> 98.54, against 2.90/98.45 for MoGe-2 and 2.86/98.52 for
+  UniDepthV2 &mdash; and PointDiT-L the sharpest boundaries, <strong>BF1
+  10.50</strong> against 7.40 for MoGe-2 and 9.41 for Depth Pro; a single
+  sampling step already beats every prior method on BF1. Against
+  GeometryCrafter, the latent-diffusion baseline, it is both better (BF1 4.64,
+  relative depth error 3.52) and far cheaper at similar size: 72 ms versus
+  1,178 ms for single-step inference, 1,807M versus 1,937M parameters. The
+  regression baselines are not beaten everywhere &mdash; MoGe still leads on
+  point-map error (4.21 against PointDiT-H's 4.40), and the authors report
+  that PointDiT trails MoGe and UniDepthV2 on the outdoor sets (KITTI, DIODE,
+  ETH3D), which they attribute to limited outdoor coverage in the synthetic
+  training mixture.</p>
+
+  <p>Published at <strong>ICML 2026</strong> (PMLR 306, Seoul). Google leads:
+  six of the ten authors list Google alone, including last author Michael
+  Niemeyer, and the code sits under <code>google-research</code>. First author
+  Haofei Xu lists Google, ETH Zurich and the University of T&uuml;bingen /
+  T&uuml;bingen AI Center, with correspondence to his ETH address; Marc
+  Pollefeys adds ETH Zurich and Microsoft, <a
+  href="/people/andreas-geiger">Andreas Geiger</a> the University of
+  T&uuml;bingen and KE:SAI, and Federico Tombari the Technical University of
+  Munich. Code is Apache 2.0 with about 220 GitHub stars; six checkpoints
+  (B/L/H at both resolutions, 25 GB total) are on HuggingFace, shipped without
+  the frozen DINOv3 encoder, whose weights are gated on Meta's DINOv3
+  repository and have to be requested separately. The repository notes it is
+  not an officially supported Google product.</p>
+tags:
+  - 3d
+  - depth
+  - reconstruction
+  - diffusion
+  - vision
+  - research
+  - open-source
+paper:
+  arxiv: "2607.02515"
+  venue: ICML 2026
+  authors:
+    - Haofei Xu
+    - Rundi Wu
+    - Philipp Henzler
+    - Nikolai Kalischek
+    - Michael Oechsle
+    - Fabian Manhardt
+    - Marc Pollefeys
+    - Andreas Geiger
+  code_url: https://github.com/google-research/pointdit
+library:
+  github: https://github.com/google-research/pointdit
+  language: Python
+  license: Apache 2.0

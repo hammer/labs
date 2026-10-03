@@ -1,0 +1,51 @@
+name: WorldClaw
+slug: worldclaw
+lab: tencent
+type: paper
+date: 2026-08-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.05248
+  - label: Project page
+    url: https://tencent-hunyuan.github.io/Hunyuan3D-WorldClaw/
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/Hunyuan3D-WorldClaw
+description: >
+  <p>Tencent Hunyuan's agentic pipeline for building large, freely explorable
+  3D worlds from an open-ended text prompt, and the
+  <a href="/outputs/tencent/hunyuan3d-2">Hunyuan3D</a> line's answer to a
+  three-way tension: a generated world has to hold <strong>global spatial
+  coherence</strong>, carry rich local detail, and still break down into
+  explicit assets someone can edit and reuse afterwards. WorldClaw is
+  coarse-to-fine and fully agentic. Planning agents first turn the prompt into
+  a structured specification of regions, terrain, assets, materials and spatial
+  relations. From that it builds a globally coherent terrain foundation out of
+  semantic layouts, reusable assets, generative or procedural materials, and a
+  region-aware height field.</p>
+
+  <p>Regions that need detail then get terrain-conditioned compositions, from
+  which the system reconstructs editable textured meshes and recovers where
+  each sits on the terrain; render-based agents make a further pass over
+  terrain, objects, appearance and contacts. The paper reports that across
+  diverse open-world prompts this yields large scenes with coherent spatial
+  organization and <strong>editable instance-level assets</strong> while the
+  global terrain structure stays consistent. Four authors, Tencent Hunyuan
+  (Chunchao Guo, Jinpeng Li, Yang Li, Zilong Huang). The repository carries no
+  license file and, as of early October, the paper and project page but no
+  released weights; it had about 1,340 GitHub stars.</p>
+tags:
+  - 3d
+  - generation
+  - agents
+  - world-model
+  - research
+paper:
+  arxiv: "2608.05248"
+  authors:
+    - Chunchao Guo
+    - Jinpeng Li
+    - Yang Li
+    - Zilong Huang
+related:
+  - hunyuan3d-2
+  - hunyuanworld
