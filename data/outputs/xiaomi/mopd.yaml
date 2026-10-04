@@ -1,15 +1,64 @@
-name: MOPD (Multi-Teacher On-Policy Distillation)
+name: "MOPD: Multi-Teacher On-Policy Distillation"
 slug: mopd
 lab: xiaomi
-type: library
+type: paper
 date: 2025-12-16
 sources:
   - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.30406
+  - label: MiMo-V2-Flash paper (arXiv)
     url: https://arxiv.org/abs/2601.02780
-  - label: GitHub
+  - label: MiMo-V2-Flash (GitHub)
     url: https://github.com/XiaomiMiMo/MiMo-V2-Flash
 description: >
-  Library/technique for distilling intelligence from multiple teacher models
-  into smaller student models.
+  <p>Xiaomi's answer to a problem that shows up once RL post-training works:
+  you can push one capability at a time, but <strong>combining several into a
+  single model</strong> is where recipes break down. The paper's framing is that
+  the existing options each fail differently &mdash; Off-Policy Finetune and
+  Mix-RL are either inefficient or lose performance, and parameter merging
+  dilutes what each specialist learned.</p>
+
+  <p><strong>Multi-teacher On-Policy Distillation (MOPD)</strong> splits the
+  problem in two. First run <strong>per-domain specialised RL</strong> to get a
+  set of domain teachers; then distill those teachers into the student
+  <strong>on the student's own rollouts</strong>, which removes exposure bias and
+  gives a dense per-token signal instead of an episode-level one. The structural
+  payoff is as interesting as the scores: because each teacher is trained
+  independently, domain work can proceed <strong>in parallel</strong>, removing
+  the cross-domain coupling that makes multi-domain post-training a scheduling
+  problem. On Qwen3-30B-A3B it beats Mix-RL, Cascade RL, Off-Policy Finetune and
+  Param-Merge, and the paper reports the student inheriting nearly all of each
+  teacher's capability.</p>
+
+  <p>The technique shipped before it was written up: it was used in the
+  post-training of <a href="/outputs/xiaomi/mimo-v2">MiMo-V2-Flash</a> in
+  December 2025, which is the date this entry carries, and the dedicated paper
+  (<a href="https://arxiv.org/abs/2606.30406">arXiv:2606.30406</a>) followed in
+  June 2026 &mdash; the authors cite that deployment as the evidence it holds at
+  frontier scale. By Xiaomi with Peking University collaborators; senior author
+  Fuli Luo.</p>
 tags:
-  - training
+  - distillation
+  - post-training
+  - reinforcement-learning
+  - research
+paper:
+  arxiv: "2606.30406"
+  authors:
+    - Wenhan Ma
+    - Jianyu Wei
+    - Liang Zhao
+    - Hailin Zhang
+    - Bangjun Xiao
+    - Lei Li
+    - Qibin Yang
+    - Bofei Gao
+    - Yudong Wang
+    - Rang Li
+    - Jinhao Dong
+    - Zhifang Sui
+    - Fuli Luo
+related:
+  - mimo-v2
+  - opd
+  - same-family-opd

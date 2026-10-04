@@ -1,0 +1,86 @@
+name: "Teacher Should Think Ahead: Adaptive Continuations for Reliable On-Policy Distillation"
+slug: ac-opd
+lab: ant-group
+type: paper
+date: 2026-09-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.22254
+description: >
+  <p><a href="/outputs/tsinghua/opd">On-policy distillation</a> gives a student
+  dense token-level supervision along its own rollouts, but every teacher query
+  in standard OPD is <strong>local</strong>: the teacher scores only the next
+  token at a student-generated context, and that judgement is unreliable when
+  the prefix it conditions on is incomplete or low-quality. The paper's own
+  baseline table shows how badly this can bite &mdash; distilling Qwen3-4B into
+  Qwen3-1.7B-Base, plain SFT on teacher-generated trajectories <em>beats</em>
+  vanilla OPD on maths, <strong>36.33 against 33.65</strong> Math Avg., with
+  OPD's AIME24 pass@16 collapsing to <strong>13.3</strong> next to SFT's 23.0.</p>
+
+  <p>The diagnosis is a measurement the authors name <strong>Teacher Uncertainty
+  Contraction (TUC)</strong>: let the teacher keep generating from a student
+  prefix and its own predictive uncertainty <em>falls</em> with depth. Entropy
+  and Gini impurity both decrease along teacher-generated continuations, fitting
+  exponential saturation at <strong>R&sup2; = 0.982 and 0.990</strong>, while no
+  comparable contraction appears along student continuations &mdash; so the
+  effect comes from the teacher conditioning on itself, not from depth alone. A
+  variance&ndash;bias decomposition of the teacher-branch gradient then makes the
+  trade-off explicit: contraction shrinks supervision variance while
+  teacher&ndash;student path divergence grows bias, which places the optimum at a
+  <strong>finite</strong> continuation rather than at one token or at infinity.
+  <strong>AC-OPD</strong> acts on that. It selects <strong>K = 8</strong> anchor
+  positions per rollout by a squared log-ratio score &mdash; the positions where
+  teacher and student log-probabilities disagree most &mdash; has the teacher
+  continue up to <strong>m<sub>max</sub> = 16</strong> tokens from each,
+  and picks every continuation's effective horizon by minimising the
+  theory-guided criterion, using teacher Gini impurity as the variance proxy and
+  cumulative teacher&ndash;student KL as the bias proxy. The branch loss is an
+  overlay on the ordinary OPD trunk loss at &lambda; = 0.5.</p>
+
+  <p>On <strong>16 NVIDIA H800s</strong>, averaged over five independent runs and
+  measured against SFT, OPD, ExOPD (reward extrapolation) and EOPD
+  (entropy-adjusted token divergence), AC-OPD improves on vanilla OPD by
+  <strong>4.37 points of Math Avg. and 3.50 of Code Avg.</strong> &mdash; 38.03
+  and 61.20 for Qwen3-4B&nbsp;&rarr;&nbsp;Qwen3-1.7B-Base, 50.38 and 76.65 for
+  Qwen3-32B&nbsp;&rarr;&nbsp;Qwen3-4B-Base, on AMC23/AIME24/AIME25/Minerva
+  (pass@16) and HumanEval+/MBPP+ (pass@1). The margins over the stronger OPD
+  variants are far thinner than the headline: in the 32B setting the Code Avg.
+  gap to ExOPD is <strong>76.65 against 75.95</strong>, and on AIME25
+  <strong>ExOPD actually wins, 26.8 to AC-OPD's 26.7</strong>; in the 4B setting
+  MBPP+ is effectively a tie with SFT (57.6 against 57.5). The controls are the
+  most informative part. A shuffled-adaptive policy holding the same mean
+  continuation length of 5.74 tokens scores 60.10 against adaptive's 61.20, so
+  roughly a point comes from <em>where</em> the budget goes rather than how big
+  it is &mdash; but a plain Fixed-8 horizon already reaches <strong>60.85</strong>
+  while spending more tokens, leaving adaptivity a 0.35-point edge over the
+  simplest fixed alternative. Anchor choice matters more: squared log-ratio's
+  61.20 beats evenly spaced (58.97) and random (58.57) positions. The authors
+  concede that evaluation is confined to the Qwen3 family and that the method
+  requires <strong>additional teacher-side inference</strong>. A
+  CAS/UCAS&ndash;<a href="/labs/ant-group">Ant Group</a> collaboration (lead
+  author Jingang Zhou wrote it as an Ant Group intern; corresponding author
+  Xu-Yao Zhang); no code is released yet &mdash; the paper promises it "upon
+  publication".</p>
+tags:
+  - distillation
+  - post-training
+  - reasoning
+  - coding
+  - theory
+  - research
+paper:
+  arxiv: "2609.22254"
+  authors:
+    - Jingang Zhou
+    - Yuyi Zhou
+    - Haiyang Guo
+    - Xukai Wang
+    - Shuai Feng
+    - Sirui Gao
+    - Jian Xu
+    - Qingpei Guo
+    - Xu-Yao Zhang
+related:
+  - opd
+  - ier-opd
+  - reopd

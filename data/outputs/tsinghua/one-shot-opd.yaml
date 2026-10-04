@@ -1,0 +1,115 @@
+name: "Rethinking On-Policy Distillation of Large Language Models II: One Training Example"
+slug: one-shot-opd
+lab: tsinghua
+type: paper
+date: 2026-09-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.04172
+  - label: GitHub
+    url: https://github.com/Thinking-Space/One-Shot-OPD
+description: >
+  <p>The sequel to <a href="/outputs/tsinghua/opd">OPD (Rethinking On-Policy
+  Distillation)</a>, running head "One-Shot On-Policy Distillation," and it
+  attacks the half the first paper left alone. OPD now sits in the post-training
+  stacks of Qwen3, MiMo, GLM-5, DeepSeek-V4 and Kimi K3, and every attempt to
+  explain why it works &mdash; objective geometry, update subspaces, when
+  teachers are too strong &mdash; has been <em>algorithmic</em>, taking the
+  training set as given. So the authors borrow one-shot RLVR's controlled
+  extreme and run OPD on a <strong>single query</strong>. It keeps improving the
+  student for hundreds of steps. Averaged over MATH-500, AMC 2023 and AIME 2025,
+  one query reaches <strong>68.5 against 69.8 for full-data OPD at step 300
+  &mdash; 87% of full-data OPD's gain</strong> and 69% of the
+  teacher&ndash;student gap; through step 1000 the recovered fraction stays in a
+  62&ndash;89% band. It is not a maths artefact: the effect holds across three
+  student&ndash;teacher families (R1-Distill-1.5B 77.1&rarr;85.5,
+  Llama-3.2-3B-Instruct 28.2&rarr;40.2, OLMo-3-7B-Instruct-DPO 70.8&rarr;82.4)
+  and recovers 73%, 66% and 64% of the gap on code generation (LiveCodeBench v6),
+  instruction following (Multi-IF) and agentic tool use (BFCL v3). It also
+  survives a query the student <strong>never</strong> solves, and tightening the
+  response cap or lowering the rollout temperature.</p>
+
+  <p>The explanation is the contribution, and it has two halves that the paper
+  compresses into "OPD is <strong>data-overfed but algorithm-starved</strong>."
+  On the data side, what a query is worth is the part of the state space its
+  rollouts reach, a state being a prefix at which the teacher supplies a
+  token-level target; with 64 rollouts per update even one query yields tens of
+  thousands of supervised states. The authors make this measurable as
+  <strong>state coverage</strong>: represent each state by the teacher's
+  final-layer hidden vector, pool the states full-data OPD visits over
+  DAPO-Math-17K (<a href="/outputs/bytedance-seed/dapo">DAPO</a>), partition them
+  into 200 k-means clusters, and report the fraction a run reaches. One query
+  reaches <strong>71.5%</strong> by step 300, 65.9% of it inside the first 100
+  steps; <strong>16 semantically distinct queries</strong>, one per BGE-M3
+  cluster, reach <strong>98.9% and match full-data OPD</strong>, and a control
+  holding the count at 16 while drawing them from a single cluster drops both
+  coverage and accuracy. On the algorithm side what decays is the
+  <strong>absorption rate</strong>, the share of the remaining
+  teacher&ndash;student distance one update closes: it falls throughout the run,
+  and falls the same way on 1, 4, 16 and all 17k queries, each removing 78&ndash;84%
+  of its step-30 distance by step 300. The pace is a property of the optimiser,
+  not of the dataset &mdash; and an always-off-policy run on 64 trajectories
+  sampled once, with its states frozen, still takes about 200 steps to finish
+  improving, so the length of a run is not explained by fresh states arriving.</p>
+
+  <p>The result carries to the multi-teacher setting that frontier pipelines
+  actually use (<a href="/outputs/xiaomi/mopd">MOPD</a>): training one
+  R1-Distill-1.5B student over maths, code and instruction following with a
+  teacher per domain, full-data MOPD lifts average validation accuracy from 43.5
+  to 52.8 against 53.8 for three separate full-data OPD runs, and
+  <strong>16 diverse queries per domain reach 52.9 &mdash; 101% of full-data
+  MOPD's gain</strong> (93% maths, 136% code, 109% instruction following) on the
+  same rollout and optimisation budget. Pushed further, the query barely needs
+  content: an empty user turn ending in &lt;think&gt;, the same template with a
+  one-line domain system prompt, and off-domain WildChat chat logs (0.17%
+  maths-related by the paper's own heuristic) all track the real-query baseline,
+  with explicit domain content worth about a point &mdash; though a scaffold that
+  closes the thinking block immediately collapses into untrainable meta-replies,
+  so the requirement is not empty. A head-to-head against one-shot RLVR on the
+  same query explains the asymmetry: GRPO's advantage vanishes once nearly every
+  rollout solves the query, while OPD's per-state targets persist, and OPD's
+  validation gain over 1000 steps is more than twice RLVR's whether matched by
+  steps or by rollout tokens.</p>
+
+  <p>The paper's own limits: state coverage is a
+  semantic proxy measured against a reference space built from full-data
+  rollouts, weighting every cluster equally however often it is visited or how
+  much teacher signal it still carries; what sets the absorption rate is
+  unresolved; MOPD was run with three domains and one teacher each; every
+  student here is 1.5B&ndash;7B, with larger students, long contexts and more
+  teachers listed as future work; and OPD's ceiling is the teacher's
+  distribution where RLVR's is not. The practical reading the authors want is
+  that data curation for OPD stops being a question of how many problems to
+  collect and becomes one of which states an input induces &mdash; and that the
+  step efficiency of the algorithm, not the corpus, is where the headroom is.
+  Code is Apache-2.0 under Thinking-Space/One-Shot-OPD; corresponding authors
+  Ning Ding and Chaojun Xiao at Tsinghua, with Zhiyuan Liu, and collaborators at
+  UCAS, Northeastern, UIUC and Johns Hopkins.</p>
+tags:
+  - distillation
+  - post-training
+  - training-data
+  - reasoning
+  - research
+paper:
+  arxiv: "2609.04172"
+  code_url: https://github.com/Thinking-Space/One-Shot-OPD
+  authors:
+    - Zixuan Fu
+    - Bingxiang He
+    - Yuxin Zuo
+    - Haohuan Huang
+    - Jinqian Zhang
+    - Ruhang Xiao
+    - Cheng Qian
+    - Qinyu Luo
+    - Huan-ang Gao
+    - Yudong Wang
+    - Zhiyuan Liu
+    - Ning Ding
+    - Chaojun Xiao
+related:
+  - opd
+  - mopd
+  - dapo
+  - ier-opd

@@ -27,10 +27,19 @@ import { parse } from 'yaml';
 // papers (`paper.authors` across its outputs), ranked so the most prolific go
 // first.
 //
-// Output is a candidate list, not an assertion. A tracked researcher's listing
-// also holds their university and prior-employer work, so expect entries that
-// belong to another lab or to nobody we track — skim before filing, exactly as
-// with sweep-orgs.
+// Output is a candidate list, not an assertion, and it is wrong in two specific
+// ways worth knowing before filing anything from it.
+//
+// The lab attribution is a guess. A tracked researcher's listing also holds
+// their university and prior-employer work, and authors move, so a hit means
+// "this lab is worth checking", never "this is that lab's paper". The first
+// backfill's OPD batch misattributed 3 of 12 until the title pages were read.
+//
+// "Untracked" means "no matching arXiv id in data/", which is not the same as
+// "we have never filed this". An entry carrying no id, or the wrong one, makes
+// its own paper look like a miss: MOPD surfaced because xiaomi/mopd.yaml linked
+// MiMo-V2-Flash's id under a "Paper (arXiv)" label. Dedup by name as well as id,
+// and attach to the incumbent rather than filing twice.
 //
 // Usage: npm run sweep-authors -- --since 2026-08 mbzuai     # probe one lab
 //        npm run sweep-authors -- --plan                     # authors + URLs, no network

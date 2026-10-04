@@ -1,0 +1,123 @@
+name: "Privileged Likelihood Is Not Automatically Value: Three Checks for Token Credit in On-Policy Self-Distillation"
+slug: privileged-likelihood-not-value
+lab: salesforce
+type: paper
+date: 2026-08-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2608.09263
+description: >
+  <p>A negative, diagnostic paper about the quantity the whole on-policy
+  self-distillation literature rests on. OPSD builds a dense token signal by
+  conditioning a teacher on privileged information available only in training
+  &mdash; a reference solution, environment feedback, a judge's critique &mdash;
+  and scoring each token by how much that context raises its log-probability
+  (one-sided), or by contrasting a helpful against an unhelpful context
+  (two-sided). Those scores are then used as if they estimated the token-level
+  action value. The paper's claim is that they answer a different question: how the
+  model's prediction shifts when its <em>input</em> is enriched, not how the
+  expected <em>outcome</em> shifts when a token is changed. The log-ratio form is
+  what makes the substitution look safe, because in one standard case &mdash;
+  hindsight credit assignment with the true success and failure conditionals
+  &mdash; Bayes' rule makes exactly such a ratio rank binary action value. That
+  guarantee needs the two contexts to be coherent conditionals of one joint
+  distribution; two free-form texts labelled "helpful" and "unhelpful" need not be,
+  and can also differ in wording, length and which values they reveal. The paper
+  further shows (Proposition 1) that ranking is not enough &mdash; to price every
+  local redistribution of next-token probability on the same scale the score must be
+  a positive <em>affine</em> transform of the action value, so a
+  rank-preserving but magnitude-distorting score over-concentrates mass on its top
+  token.</p>
+
+  <p>Hence <strong>three checks</strong>, which the paper insists are separable
+  &mdash; a score can fail the first while the second is moot, or pass the first and
+  have the loss destroy it. <strong>Q1: does the score track task success?</strong>
+  The accessible test is at the sequence level: average the token scores over a
+  trajectory and ask whether that scalar separates correct from incorrect rollouts
+  (AUC). It is necessary, not sufficient &mdash; but a score that cannot order
+  trajectories cannot be ordering tokens. <strong>Q2: was the feedback written from
+  the rollout it scores?</strong> A critique generated after reading a rollout makes
+  the score depend on the rollout twice over, so it can be high simply because text
+  and description are about the same thing. Cross-fitting (score each rollout with
+  feedback written from a donor rollout of the same problem) removes that loop.
+  <strong>Q3: what does the training loss do with the score?</strong> Baseline
+  subtraction, clipping and entropy weighting determine which scores actually become
+  parameter updates &mdash; policy-weighted centring can flip a positive two-sided
+  score into a negative token advantage, and Proposition 4 shows that preserving an
+  advantage's sign and total across tokens does not preserve the expected policy
+  gradient, since the per-token score-function vectors point in different directions
+  in parameter space.</p>
+
+  <p>On the main system &mdash; gpt-oss-20b at low effort, trained on DeepScaleR and
+  evaluated on <strong>AIME 2025</strong>, with an external judge writing a helpful
+  and a plausible-but-wrong critique &mdash; all three checks fail. <strong>Q1:</strong>
+  the one-sided teacher&ndash;policy residual is <em>negative for both</em> correct
+  and incorrect rollouts (&minus;0.0334 and &minus;0.0502), so the teacher
+  down-scores the student's own sampled tokens regardless of correctness, though the
+  +0.017 gap shows some relative information survives; the two-sided score actually
+  used in training reaches a pooled <strong>AUC of 0.505</strong>, i.e. chance, and
+  0.474 after length adjustment, which slightly <em>favours</em> incorrect
+  trajectories. The information was available &mdash; an external judge given the
+  same inputs picked the better solution at about <strong>94%</strong> accuracy
+  &mdash; the token-likelihood score just does not extract it. <strong>Q2:</strong>
+  same-rollout feedback scores 0.588 pooled, but each rollout helped write its own
+  critique; cross-fitted scores give 0.512 and 0.416, so removing self-dependence is
+  mechanically sound (Proposition 2) yet changes what the score measures rather than
+  debiasing it, and neither held-out construction is stably related to correctness.
+  <strong>Q3:</strong> all <strong>five</strong> token-score training configurations
+  &mdash; three additive variants with entropy gating and source clipping, two
+  KL-regularized &mdash; reach only <strong>24.2&ndash;33.9% Avg@4</strong> against
+  <strong>64.2% for outcome-only GRPO</strong>, drops of 30.4 to 40.0 points with
+  every 95% paired confidence interval entirely below zero; and in an ungated
+  analysis <strong>57&ndash;71%</strong> of the absolute token-advantage mass lands
+  in the highest-entropy token decile, precisely the regime where the score is least
+  informative. It is not a formatting artefact: the dense variants return boxed,
+  complete answers more often than the baseline they lose to.</p>
+
+  <p>The paper is careful not to generalize into "dense distillation does not work,"
+  and carries a positive control to prove it. Qwen3-8B trained with one-sided SDPO
+  on SciKnowEval Biology, where the only privileged information is "The correct
+  answer is [gold answer]", improves held-out Avg@8 from
+  <strong>31.50 to 58.25</strong> (thinking off) and <strong>26.25 to 54.25</strong>
+  (thinking on), with raw trajectory AUCs of <strong>0.924 and 0.813</strong>. The
+  conclusion is a usage rule rather than a method: strong outcome separation
+  accompanies the runs that work, so trajectory AUC is a cheap Q1 screen, and a
+  privileged-likelihood score should be validated as a proxy for outcome-relevant
+  credit before it is trusted as token credit. The related work is unusually
+  even-handed about the surrounding evidence, citing concurrent failure reports
+  (teachers that track adherence to a reference trajectory rather than correctness;
+  a corrupted solution from a <em>different</em> problem retaining much of the OPSD
+  gain) alongside successes, including the same group's own
+  <a href="/outputs/salesforce/vpd">VPD</a> and
+  <a href="/outputs/salesforce/pmd">PMD</a>, both of which it classifies among the
+  constructions that do work. A companion caveat to the token-selection results in
+  <a href="/outputs/mbzuai/ier-opd">IER-OPD</a> and
+  <a href="/outputs/amazon/extremely-sparse-supervision">extremely sparse
+  supervision</a>, and to <a href="/outputs/salesforce/rise-opd">RISE</a>, which
+  drops privileged conditioning altogether. First and corresponding author Xuan-Phi
+  Nguyen; no code was linked at filing.</p>
+tags:
+  - distillation
+  - post-training
+  - rl
+  - reasoning
+  - evaluation
+  - research
+paper:
+  arxiv: "2608.09263"
+  authors:
+    - Xuan-Phi Nguyen
+    - Zeyu Leo Liu
+    - Yang Li
+    - Shrey Pandit
+    - Yiran Zhao
+    - Anurag Koul
+    - Shafiq Joty
+related:
+  - vpd
+  - pmd
+  - rise-opd
+  - sft-rlvr-opd-synergy
+  - ier-opd
+  - extremely-sparse-supervision
+  - opd

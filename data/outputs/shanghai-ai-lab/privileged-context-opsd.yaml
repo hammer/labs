@@ -1,0 +1,98 @@
+name: "What Should a Self-Teacher See? Privileged Context Design for On-Policy Self-Distillation"
+slug: privileged-context-opsd
+lab: shanghai-ai-lab
+type: paper
+date: 2026-09-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.25623
+  - label: GitHub
+    url: https://github.com/tiankanghui/Self-Teacher-Context-Design
+description: >
+  <p>On-policy self-distillation gets dense reasoning supervision without a
+  stronger model: the teacher is a <strong>frozen copy of the student's own
+  initial checkpoint</strong>, and the only thing that makes it a teacher is the
+  privileged context it sees while scoring the student's rollouts &mdash;
+  conventionally a complete reference solution. The advantage is therefore
+  informational rather than capability-based, which makes that context part of
+  the supervision mechanism, and nobody had asked what should go in it. The
+  paper's wedge is that a full worked solution bundles the final answer with one
+  particular derivation, so it may anchor the teacher's guidance to that path
+  just when the student's own prefixes depart from it. The symptom that opens the
+  paper: replacing the whole solution with <strong>nothing but its final
+  answer</strong> moves the 4B and 8B aggregate scores by under 0.2 points.</p>
+
+  <p>The study is a controlled intervention on that one variable. An offline
+  compiler (Qwen3.5-397B-A17B, replicated with Qwen3-8B) refines each
+  problem&ndash;solution pair from coarse to fine under contracts that forbid the
+  answer, producing a ladder of context packages: <strong>L1</strong> the full
+  solution, <strong>L2</strong> a named method, theorem or tool, <strong>L3</strong>
+  a method-independent framing, <strong>L4</strong> the problem category alone,
+  and <strong>L5</strong> an answer-only control, plus a separate control that
+  truncates the reference to a fixed 10% prefix plus the answer without semantic
+  rewriting. L2&ndash;L4 are newly written rather than nested truncations of L1.
+  Within each scale the student prompt, frozen teacher checkpoint, training set,
+  rollout procedure, budget and loss are all held fixed, and the student never
+  sees the hint; Qwen3-1.7B, 4B and 8B train for 200 steps with LoRA on the
+  29,434-problem OPSD mathematics pool, checkpointing every 25 steps. Utility is
+  judged by what the trained student scores, with initial teacher&ndash;student
+  KL kept as a separate diagnostic rather than a proxy.</p>
+
+  <p>The best intermediate context beats the full solution by <strong>1.39
+  points at 4B (L3) and 1.57 at 8B (L2)</strong> on the in-domain peak Avg@12
+  mean over AIME24, AIME25 and HMMT25, while the stored hint runs
+  <strong>17.7&ndash;38.9 tokens against 657.3</strong> for L1, a
+  16.9&ndash;37.1&times; reduction.</p>
+
+  <p>The diagnostic that fails is the obvious
+  one: L1 induces the <strong>largest</strong> initial teacher&ndash;student KL
+  at every scale and is still not best at 4B or 8B, so distributional
+  displacement does not order teaching utility. What the paper is careful to
+  concede is nearly as interesting. At <strong>1.7B the full solution still
+  wins</strong>, 0.28 ahead of L4, and across three seeds the mean paired peak
+  differences there are &minus;0.12 (L3) and 0.00 (L4) with both selection-free
+  rules favouring L1; answer-only context, competitive within 0.2 points at the
+  two larger scales, trails by 1.76 points at 1.7B. No context leads the
+  four-benchmark transfer suite &mdash; MT-AIME2024-7Lang, AutoLogi-EN,
+  GPQA-Diamond and ZebraLogic-grid produce <strong>three distinct winners at
+  every scale</strong> &mdash; and item-level analysis shows intermediate
+  contexts rescuing problems L1 left unsolved while sometimes losing accuracy on
+  L1's easy bucket, with no support for a story in which they help by increasing
+  backtracking or self-correction. A content audit finds <strong>answer-equivalent
+  leakage</strong> in the compiled hints (1.42% at L2 and 0.33% at L3 for the
+  primary compiler, rising to 4.17% and 2.58% when recompiled with Qwen3-8B;
+  L4 under 0.2% either way), the packages differ in length, answer access and
+  bridge wording as well as abstraction so the comparison is of whole packages
+  rather than of abstraction alone, L2, L5, the transfer runs and the controls
+  are single runs, and heterogeneous mixtures and four routing policies never
+  beat the best fixed level on the in-domain peak. Choosing the right
+  granularity from signals available during training is left open. Lead author
+  Kanghui Tian (Fudan University), corresponding author Yi Wang; the paper states
+  the work was performed at
+  <a href="/labs/shanghai-ai-lab">Shanghai AI Laboratory</a>, with Fudan's
+  College of Computer Science and AI, and collaborators at Nanjing, SJTU,
+  Peking, UCLA and Tongji.</p>
+tags:
+  - distillation
+  - post-training
+  - reasoning
+  - research
+paper:
+  arxiv: "2609.25623"
+  code_url: https://github.com/tiankanghui/Self-Teacher-Context-Design
+  authors:
+    - Kanghui Tian
+    - Siyuan Liu
+    - Tianxiang Jiang
+    - Shuai Dong
+    - Yizhuo Li
+    - Tian Ding
+    - Yuan Guo
+    - Songze Li
+    - Haowen Hou
+    - Congcong Wang
+    - Yi Wang
+related:
+  - opd
+  - zeda
+  - ier-opd

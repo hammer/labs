@@ -1,0 +1,89 @@
+name: "VPD: Learning from Language Feedback via Variational Policy Distillation"
+slug: vpd
+lab: salesforce
+type: paper
+date: 2026-05-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.15113
+description: >
+  <p>RLVR's learning signal is one bit per trajectory, so &mdash; in the paper's
+  framing &mdash; "a minor arithmetic mistake in a complex derivation receives the
+  same zero-reward as a completely nonsensical hallucination," and on problems the
+  model almost never solves there is no positive signal at all no matter how many
+  rollouts are drawn. On-policy self-distillation fixes the density by conditioning
+  the model on language feedback &mdash; a compiler trace, a successful sibling
+  rollout, a critique &mdash; and distilling that feedback-informed next-token
+  distribution back into the unconditioned policy. The flaw this paper identifies
+  is that the self-teacher in methods like SDPO is a fixed, passive function: it is
+  never trained to read the feedback, so the whole signal rests on zero-shot
+  interpretation, and as the student internalizes the easy corrections the
+  teacher's ability to discriminate subtler errors plateaus and the gradients dry
+  up. They measure it rather than assert it &mdash; the reward margin between
+  correct and incorrect responses shrinks over LiveCodeBench training under SDPO
+  while it keeps widening under VPD.</p>
+
+  <p><strong>Variational Policy Distillation (VPD)</strong> recasts the
+  feedback-conditioned model not as a heuristic but as an approximate posterior
+  over the reward-tilted optimal policy, which turns training into variational EM.
+  The <strong>E-step</strong> actively trains the teacher to interpret feedback. It
+  has to be done off-policy on the student's own rollouts (making the teacher
+  search for its own successes would reintroduce the sparsity being escaped), and
+  because each critique is written for one specific trajectory no two rollouts
+  share a context, so DPO-style preference pairs cannot be formed at all; VPD uses
+  <strong>Binary Classifier Optimization</strong>, an unpaired objective, instead.
+  The reference prior is re-anchored to the current student every round, a sliding
+  trust region that keeps the teacher's target reachable. The <strong>M-step</strong>
+  is ordinary token-level KL distillation on the student's own rollouts. Teacher and
+  student are <strong>one shared-weight network</strong> distinguished only by
+  whether the feedback is appended to the prompt, so there is no second model in
+  VRAM and no extra sampling or verification &mdash; the E-step's gradient work
+  costs a <strong>30&ndash;55% runtime increase</strong> over SDPO, absorbed by
+  running one E-step per five M-steps.</p>
+
+  <p>On LiveCodeBench v6 with Qwen3-8B (thinking off) VPD reaches
+  <strong>49.62%</strong> against 47.33% for SDPO, 45.61% for GRPO and 28.05% for
+  the base model; the single-phase hybrids that fuse RL and distillation into one
+  update are the interesting comparison, because two of the three are
+  <em>worse</em> than pure SDPO (advantage reshaping 46.95, reweighting 44.85,
+  joint loss 47.52). On SciKnowEval with contrastive sibling rollouts as feedback,
+  the four-domain average is <strong>74.34</strong> for Qwen3-1.7B (GRPO 69.81),
+  <strong>77.15</strong> for Qwen3-8B (SDPO 74.44) and 70.80 for OLMo3-7B-Instruct;
+  autonomous self-critique works about as well (78.14 vs SDPO's 74.87 on Qwen3-8B).
+  Both design choices earn their place in ablation: one E-step per five beats one
+  per one (70.21) and one per ten (69.27), and a fixed rather than
+  student-anchored prior falls to 67.84. The paper's own stress tests are where it
+  concedes: applied to a base model, self-distillation collapses, and VPD only
+  <em>delays</em> the collapse before still losing to GRPO; on DAPO-Math training,
+  SDPO collapses outright and pure GRPO remains dominant (<strong>83.8% on
+  Math500</strong> with Qwen3-8B), which the authors attribute to mathematics being
+  unforgiving enough that distilling noisy intermediate guidance constrains the
+  exploration that sparse RL rewards. Shared weights also cap the teacher's
+  representational capacity at the student's. A companion to the group's
+  <a href="/outputs/salesforce/pmd">PMD</a>,
+  <a href="/outputs/salesforce/privileged-likelihood-not-value">token-credit
+  audit</a> and <a href="/outputs/salesforce/rise-opd">RISE</a>, and to the
+  stage-ordering results in
+  <a href="/outputs/nyu/sequential-beats-joint">Sequential Beats Joint</a>. No code
+  was linked at filing.</p>
+tags:
+  - distillation
+  - post-training
+  - rl
+  - reasoning
+  - coding
+  - research
+paper:
+  arxiv: "2605.15113"
+  authors:
+    - Yang Li
+    - Erik Nijkamp
+    - Semih Yavuz
+    - Shafiq Joty
+related:
+  - pmd
+  - privileged-likelihood-not-value
+  - rise-opd
+  - sft-rlvr-opd-synergy
+  - sequential-beats-joint
+  - opd

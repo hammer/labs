@@ -1,0 +1,128 @@
+name: "DOPD: Dual On-policy Distillation"
+slug: dopd
+lab: nus
+type: paper
+date: 2026-06-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.30626
+description: >
+  <p>On-policy distillation is capped by the quality of its supervision source,
+  so the obvious move is to hand the teacher &mdash; or the student itself
+  &mdash; privileged information it will not have at deployment: verified
+  reasoning hints for an LLM, bounding boxes for a VLM. This paper's
+  contribution is to name why that backfires. It calls the failure mode
+  <strong>privilege illusion</strong>: once a policy is conditioned on
+  privileged input, the apparent teacher&ndash;student gap conflates two
+  fundamentally different things &mdash; the <em>transferable capability
+  gap</em> that distillation is meant to close, and an <em>information
+  asymmetry gap</em> that the student can only mimic but never replicate.
+  Distilling such a teacher indiscriminately makes the student fit privileged
+  outcomes rather than acquire transferable ability. The measurements back it
+  up: granting privileged input to the teacher only, or to the student only,
+  buys modest early gains and then late-stage performance degradation coupled
+  with <strong>entropy collapse</strong>; granting it to both policies makes
+  the superficial advantage vanish, and uniform distillation over that pair
+  leaves the student passively adapting to the hint, ending up with
+  <strong>smaller gains than Vanilla OPD</strong>. Token non-uniformity
+  amplifies it, since only a small subset of tokens carries capability-bearing
+  signal while the rest may be privilege-dependent. The paper's proxy for
+  separating the two is the <strong>privilege advantage gap</strong> &mdash;
+  the absolute log-probability difference between privileged teacher and
+  privileged student on the same token. Pruning the top-20% highest-gap tokens
+  from distillation leaves only about <strong>half of Vanilla OPD's gain</strong>
+  at step 100 (about a fifth in the VLM setting), while pruning random or
+  lowest-gap tokens barely registers &mdash; though the high-gap-pruned variant
+  still gains 3.4 and 1.5 points, so the remaining tokens are not dead weight.</p>
+
+  <p>DOPD therefore routes each token to a different supervision source,
+  objective and granularity. Both policies see the privileged input (the
+  privileged student shares parameters with the deployed student and sees the
+  hint only in training; the privileged teacher is frozen), outliers in the top
+  5% are discarded and the statistics normalized within the batch, and four
+  regimes fall out. Low gap with both probabilities high &mdash; consensus
+  knowledge inside the hint &mdash; gets <strong>light Top-K reverse KL</strong>
+  toward the teacher. Low gap with both low &mdash; connectives and unreliable
+  segments outside either model's competence &mdash; gets
+  <strong>weak Top-K reverse KL</strong> toward a stop-gradient copy of the
+  privileged student, used as a consistency anchor rather than a knowledge
+  source. High gap with the teacher more confident is the capability-bearing
+  case and gets <strong>full-vocabulary JS divergence</strong> at unit weight.
+  High gap with the <em>student</em> more confident is read as self-consistent
+  exploration and gets light distillation toward the privileged student, so the
+  teacher does not suppress it. Experiments run on non-thinking Qwen3 and
+  Qwen3-VL, mainly Qwen3-8B&nbsp;&rarr;&nbsp;Qwen3-1.7B and
+  Qwen3-VL-8B&nbsp;&rarr;&nbsp;Qwen3-VL-2B, on 8 NVIDIA H200s, with
+  <strong>&beta;<sub>w</sub>=0.3</strong>, <strong>&beta;<sub>l</sub>=0.6</strong>
+  and K=128. The privileged inputs are generated and then re-filtered by GPT-5.4,
+  yielding 32K LLM and 25K VLM training samples.</p>
+
+  <p>Averaged over eight LLM benchmarks DOPD reaches <strong>51.4</strong>
+  against the 1.7B student's 39.1 and the 8B teacher's 52.8 &mdash;
+  <strong>+12.3 points, 89.8% of the teacher&ndash;student gap</strong> &mdash;
+  ranking first on all eight, beating Vanilla OPD by 7.5 and the strongest
+  standard and adaptive baselines ExOPD/Uni-OPD/EOPD by 4.4/4.8/5.3, and
+  passing the teacher outright on four (AIME25 23.3 vs 20.2, ZebraLogic 26.9 vs
+  25.0, BFCLv3 60.2 vs 60.0, LCBv5 27.1 vs 23.6). On eight VLM benchmarks it
+  reaches 58.4 against 48.3 and 62.9, recovering 69.2% of the gap, but the win
+  is narrower: <strong>+2.1 over VA-OPD</strong>, and it is second on MMMU-Pro
+  (53.9 vs 54.2); every method here, DOPD included, gains more on visual
+  understanding than on visual reasoning. Across five teacher&ndash;student
+  pairs the gain over the student runs <strong>+11.1 to +14.1</strong>, two to
+  three times Vanilla OPD's, and it holds up where naive imitation does not: at
+  the worst mismatch, Qwen3-8B&nbsp;&rarr;&nbsp;Qwen3-0.6B, Vanilla OPD manages
+  +3.5 while DOPD manages +14.1. It also beats the second-best baseline by 3.1
+  and 4.3 points on the two out-of-distribution transfers, and passes the
+  baselines' step-200 scores by step 80 while the self-distillation baseline
+  hits entropy collapse around step 95. The concessions are the useful part.</p>
+
+  <p>The whole effect rests on privileged input existing: ablate it and the model
+  drops to <strong>63.6 C-Eval / 38.3 LiveBench, below Vanilla OPD's
+  65.2/40.9</strong>. Handing over the ground-truth final answer as the
+  privileged input is <em>worse than no privileged input at all</em>
+  (59.5/36.7 vs 63.0/39.4) &mdash; shortcut learning &mdash; and step-wise
+  hints that include the execution trace are no better than none either; only
+  step-wise hints <em>without</em> the execution trace pay off (71.3/49.8).
+  Under equal weighting, adding the other three token types to the
+  high-teacher-advantage ones actively hurts (41.3 vs 45.3 on LiveBench at step
+  160); the adaptive routing is what converts them into a gain (49.8). The
+  paper also reports JS divergence beating forward and reverse KL under its
+  settings, against some prior work. Listed limitations: dependence on the
+  availability, cost and quality of privileged information, one extra student
+  forward pass per step over Vanilla OPD, and a routing rule that is still
+  heuristic. The privileged parameter-shared student is the same device
+  NVIDIA's <a href="/outputs/nvidia/pivotopd">PivotOPD</a> uses as a
+  &ldquo;privileged self-teacher&rdquo;, here generalized from a single gold
+  action to every token in the trajectory. Affiliation 1 is NUS, with MMLab at
+  <a href="/labs/cuhk">CUHK</a>, <a href="/labs/peking">Peking
+  University</a> and JD's Explore Academy; senior author Shuicheng Yan. No code
+  released.</p>
+tags:
+  - distillation
+  - post-training
+  - multimodal
+  - research
+paper:
+  arxiv: "2606.30626"
+  authors:
+    - Xinlei Yu
+    - Gen Li
+    - Qingyi Si
+    - Guibin Zhang
+    - Yuqi Xu
+    - Congcong Wang
+    - Shuai Dong
+    - Kaiwen Tuo
+    - Xiangyu Zeng
+    - Kaituo Feng
+    - Qunzhong Wang
+    - Yang Shi
+    - Xiaobin Hu
+    - Xiangyu Yue
+    - Jiaqi Wang
+    - Shuicheng Yan
+related:
+  - opd
+  - ier-opd
+  - pivotopd
+  - extremely-sparse-supervision

@@ -1,0 +1,102 @@
+name: "No Task Vector Is an Island: A Comprehensive Study on the Composability of Task Vectors from On-Policy Distillation"
+slug: opd-task-vector-composability
+lab: ant-group
+type: paper
+date: 2026-09-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.39405
+description: >
+  <p>A task vector is just the delta a post-training run writes into the weights,
+  &tau; = &theta;<sub>t</sub> &minus; &theta;<sub>0</sub>, and merging those
+  deltas is the cheap way to combine capabilities. All the evidence for that
+  trick, though, comes from vectors produced by supervised fine-tuning or RL.
+  <a href="/outputs/tsinghua/opd">On-policy distillation</a> writes a different
+  kind of delta &mdash; the student learns from teacher feedback on its
+  <em>own</em> trajectories, so its update need not resemble the RL teacher's
+  &mdash; and nobody had checked whether OPD vectors compose at all. This is a
+  <strong>study, not a method</strong>: no new training algorithm is proposed,
+  and its result is a pair of claims with the failures left in.</p>
+
+  <p>Two backbones: SmolLM3-3B off a MixSFT anchor with three domains (maths,
+  code, instruction following), and Qwen3-4B-Instruct-2507 with five, adding
+  science and agentic tool use. RL experts are reused from the Open-MOPD and
+  LLM-Fusion releases; within each family and domain, RL and OPD train on
+  <strong>identical prompts</strong>, so the comparison isolates the method.
+  Four merging rules &mdash; Task Arithmetic, TIES, TSV-M and Raw Sum &mdash;
+  across AIME 2024/2025, LiveCodeBench v5/v6, IFEval + IFBench, GPQA-Diamond and
+  a BFCL v3 subset. The headline findings are real but conditional. Merging a
+  domain's OPD vector with its own RL teacher's can beat <em>both</em>
+  constituents even though the OPD student is the weaker model: on Qwen3-4B code,
+  TIES reaches <strong>41.24%</strong> against RL's 37.51% and OPD's 37.18%. And
+  across tasks, OPD compositions average higher than the matching RL compositions
+  in <strong>seven of eight</strong> backbone&times;rule pairs. In parameter
+  space the two updates are substantially non-collinear &mdash; orthogonal energy
+  share <strong>93.0% for maths and 95.2% for code</strong> on SmolLM3-3B &mdash;
+  and OPD's high-energy regions are less shared between tasks, with mean Jaccard
+  overlap of the top-10% MLP channels dropping from <strong>0.15368 to
+  0.11064</strong>, a 28% reduction, across all ten Qwen task pairs.</p>
+
+  <p>The negative half is what makes the title's claim about interdependence
+  rather than additivity. <strong>Within-task merging is not reliable:</strong>
+  on Qwen3-4B it wins decisively on code (TIES +3.73, Raw Sum +3.50 against the
+  RL teacher) but on maths three of four rules fall <em>below</em> RL, TSV-M by
+  <strong>3.63 points</strong> (56.51 against 60.14) &mdash; under both
+  constituents &mdash; and Task Arithmetic loses on code (&minus;0.03) and IF
+  (&minus;0.61). The paper's own summary: "the benefit of composition depends on
+  both the task and the merging rule." The one cross-task loss is Raw Sum on
+  SmolLM3-3B, RL 32.45% to OPD's 32.06%, and under Raw Sum the Qwen RL
+  composition still wins on code and IF outright. More awkwardly,
+  <strong>merging costs you against simply keeping the specialists</strong>: on
+  Qwen3-4B the per-domain expert average is 57.23% for RL and 56.16% for OPD, and
+  no merged model reaches the RL figure &mdash; the best is OPD under TIES at
+  56.19%, a 0.03-point edge over the OPD specialists. Science is where it breaks,
+  GPQA-Diamond falling from <strong>44.95% for the RL specialist to 35.86% under
+  Raw Sum</strong>.</p>
+
+  <p>On the three-domain SmolLM3-3B setup merging does clear the
+  specialist average (OPD under TIES at 32.71% against 30.34%), so the direction
+  of the effect flips with the number of domains. Direction retention improves
+  for code, science and agent but <strong>declines for maths and IF</strong>.
+  Joint composition &mdash; OPD <em>and</em> RL vectors together &mdash; posts the
+  best averages (33.28% on SmolLM3-3B, 56.67% on Qwen3-4B) and beats published
+  multi-teacher distillation baselines on SmolLM3 (Naive M-OPD 28.05%, Open-MOPD
+  31.24%), but on Qwen its per-domain wins are confined to science and agent
+  while maths, code and IF each sit slightly behind a single-method composition.
+  The authors hedge throughout and should be read as meaning it: the orthogonal
+  residual "do[es] not establish whether the residual improves task performance";
+  the norm-matched code control, where Raw Sum exceeds norm-matched RL and OPD by
+  1.77 and 2.07 points, holds only "at the tested global update norm"; the
+  diagnostics "do not establish a general relationship between alignment and
+  performance retention"; and the mean improvements are "descriptive point
+  estimates" that "do not, by themselves, establish statistical significance."
+  The usable takeaway is narrow and genuinely new &mdash; a weaker standalone
+  model is not a weaker <em>composer</em>, so composability deserves measuring
+  separately from benchmark score &mdash; and the stated limitation is that only
+  general-purpose merging rules were tried, leaving OPD-aware rules to future
+  work. A CAS/UCAS&ndash;<a href="/labs/ant-group">Ant Group</a> collaboration
+  sharing its lead author and corresponding author with
+  <a href="/outputs/ant-group/ac-opd">AC-OPD</a>; no code released.</p>
+tags:
+  - distillation
+  - post-training
+  - model-merging
+  - reinforcement-learning
+  - reasoning
+  - research
+paper:
+  arxiv: "2609.39405"
+  authors:
+    - Jingang Zhou
+    - Feiyu Han
+    - Han Zhu
+    - Yuyi Zhou
+    - Ruiyang Zhang
+    - Jian Xu
+    - Sirui Gao
+    - Qingpei Guo
+    - Xu-Yao Zhang
+related:
+  - opd
+  - mopd
+  - sequential-beats-joint

@@ -1,0 +1,119 @@
+name: "RISE: Recursive Improvement via Self-Extrapolating Policy Distillation"
+slug: rise-opd
+lab: salesforce
+type: paper
+date: 2026-09-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.05295
+description: >
+  <p>On-policy distillation's dense per-token supervision is worth exactly as much
+  as its teacher, and this paper argues the field has been answering the wrong
+  question about where that teacher comes from. An external stronger model suffers
+  distribution mismatch that degrades its guidance <em>precisely</em> at the novel
+  or hard reasoning steps where the student needs it; on-policy self-distillation
+  with privileged conditioning is capped by the model's own in-context learning
+  capacity, and its teacher sees a different input than the student, so what it
+  prefers may not transfer to the unconditioned setting at all. The remedies
+  &mdash; token-level gating, forward/reverse KL mixing, DAgger-style rollout
+  interleaving, trajectory refinement &mdash; all accept a flawed teacher and
+  engineer tolerance for its noise. <strong>RISE</strong> instead synthesizes the
+  teacher from the student's own
+  training history. The ideal teacher is the converged policy training is heading
+  toward; that policy is unknown, but the trajectory reveals the direction, so RISE
+  takes the displacement between the current checkpoint and a trailing anchor and
+  <strong>extrapolates past it</strong> with a coefficient &beta;&nbsp;&gt;&nbsp;1.</p>
+
+  <p>Two instantiations fall out of the same formula: <strong>weight space</strong>,
+  which is task arithmetic with an extrapolation coefficient and yields a coherent
+  model at the cost of materializing parameters and one teacher forward pass, and
+  <strong>logit space</strong>, a geometric mixture of the two checkpoints'
+  distributions that needs no parameter manipulation and is the first-order Taylor
+  approximation of the weight-space version. Extrapolation is direction-agnostic
+  &mdash; it amplifies whatever move the model just made &mdash; so the
+  displacement is produced by an <strong>RLVR step</strong>: outcome rewards ground
+  the direction, OPD supplies the token-level refinement that outcome rewards
+  cannot. Because the teacher is rebuilt from the student's latest update every
+  iteration, it is non-stationary, which is the paper's stated distinction from
+  ExOPD and other static-teacher schemes whose capability gap is a fixed ceiling
+  (a direct comparison it calls inapplicable, since ExOPD requires the external
+  stronger model RISE eliminates). Defaults: &beta;<sub>0</sub>&nbsp;=&nbsp;1.2
+  decaying linearly to 1, top-100 truncation (top-20 for code), a
+  Jensen&ndash;Shannon distillation loss, and an EMA anchor.</p>
+
+  <p>Results span four task families at 1.7B&ndash;8B. On math, RISE beats every
+  baseline on in-domain average in all three configurations: Qwen3-8B on DAPOMath
+  <strong>60.0 &rarr; 62.7</strong> (weight space), Qwen3-1.7B
+  <strong>45.4 &rarr; 50.2</strong> (logit space), and OLMo3-7B-Instruct-SFT on
+  OpenR1 <strong>47.6 &rarr; 56.4</strong> with AIME'24 going
+  <strong>30.2 &rarr; 46.9</strong>; three-seed runs give 62.4&plusmn;0.2 vs GRPO's
+  60.1&plusmn;0.2 at 8B. Notably the privileged-conditioning baselines it is
+  measured against &mdash; GRPO+SDPO, SDAR and RLSD, all using the same
+  sibling-correct-solution teacher &mdash; mostly fail to beat plain GRPO in the
+  math-only setting (GRPO+SDPO 55.9 vs 60.0 at 8B, 43.2 vs 45.4 at 1.7B). On
+  multi-domain training (Qwen3-4B-Base, math plus STEM) RISE reaches 44.8 math
+  average against GRPO's 40.2 and 47.5 STEM against 45.5, and here GRPO+SDPO is
+  genuinely competitive (47.0 STEM), which the authors attribute to STEM supplying
+  more informative privileged context. On multi-turn agentic tasks with
+  Qwen2.5-3B-Instruct, weight-space RISE lifts ALFWorld success from
+  <strong>75.0 to 84.4</strong> and WebShop accuracy from
+  <strong>63.3 to 74.2</strong>. Code generation is the weakest setting and the
+  paper says so: on Qwen3-8B-Base it only converges faster &mdash; matching GRPO's
+  final HumanEval+ accuracy at step 50 instead of step 90 &mdash; with comparable
+  final numbers, likely because all methods saturate on those benchmarks.</p>
+
+  <p>The analysis is where the entry earns its keep, because both halves of the
+  loop are shown to be load-bearing. Remove RLVR and extrapolate along
+  self-distillation alone and training collapses inside 60 steps: MATH-500 drops to
+  <strong>2.4%</strong>, response length explodes from 2K to the 8K context cap and
+  reward goes to zero, since a purely self-referential displacement amplified
+  repeatedly drives the policy into non-terminating generation. Remove OPD and
+  simply adopt the extrapolated weights as the next policy and training is stable
+  but gains vanish (60.0 &rarr; 60.3 at 8B, 45.4 &rarr; 45.6 at 1.7B) &mdash; so
+  the improvement comes from distilling the extrapolated teacher, not from taking a
+  longer step. The safe range for &beta; also <strong>contracts over
+  training</strong>: at step 50 even &beta;&nbsp;=&nbsp;2.0 adds 7.3 points, by
+  step 100 the same value costs 15, and by step 200 &beta;&nbsp;=&nbsp;1.5 already
+  costs 7.7; &beta;<sub>0</sub>&nbsp;=&nbsp;2.0 diverged outright, which is why the
+  schedule decays. A compute-matched GRPO doing a second gradient pass on the same
+  rollouts gains only +0.5 and +1.9, so the effect is the supervision quality
+  rather than extra optimization. Overhead is <strong>1.3&ndash;1.6&times;</strong>
+  GRPO wall time with no additional sampling, and the anchor setting does not
+  transfer across model families (EMA 0.1 is best on Qwen, the previous checkpoint
+  is far better on OLMo3, 56.4 vs 50.1).</p>
+
+  <p>The authors' own limitations: RISE needs
+  the trajectory to stay low-dimensional enough for linear extrapolation to mean
+  anything, there is no principled detector for when it stops being reliable, and
+  it <strong>inherits reward hacking</strong> &mdash; if the reward is hackable,
+  extrapolation amplifies the spurious direction. The last paper in the group's OPD
+  line, after <a href="/outputs/salesforce/vpd">VPD</a>,
+  <a href="/outputs/salesforce/pmd">PMD</a> and the
+  <a href="/outputs/salesforce/privileged-likelihood-not-value">privileged-likelihood
+  audit</a> whose negative result it answers by dropping privileged conditioning
+  entirely; related to the RLVR/OPD ordering questions in
+  <a href="/outputs/nyu/sequential-beats-joint">Sequential Beats Joint</a> and
+  <a href="/outputs/fudan/rl-starts-before-rl">RL Starts before RL</a>. No code was
+  linked at filing.</p>
+tags:
+  - distillation
+  - post-training
+  - rl
+  - reasoning
+  - agentic
+  - self-improvement
+  - research
+paper:
+  arxiv: "2609.05295"
+  authors:
+    - Yang Li
+    - Semih Yavuz
+    - Shafiq Joty
+related:
+  - vpd
+  - pmd
+  - privileged-likelihood-not-value
+  - sft-rlvr-opd-synergy
+  - sequential-beats-joint
+  - rl-starts-before-rl
+  - opd

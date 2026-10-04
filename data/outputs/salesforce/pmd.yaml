@@ -1,0 +1,96 @@
+name: "Procedural Memory Distillation: Online Reflection for Self-Improving Language Models"
+slug: pmd
+lab: salesforce
+type: paper
+date: 2026-07-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.01480
+description: >
+  <p>RLVR and its self-distillation variants are <em>episode-local</em>: a rollout
+  is scored, the policy is updated, and the rollout is discarded. That is the right
+  design when episodes are independent, and they are not &mdash; across epochs a
+  model keeps meeting the same and related problems under a policy that is itself
+  changing, which produces cross-episode signals that a one-step update cannot
+  represent: which strategies consistently pass verification, which failure modes
+  persist, which patterns recur. SDPO already showed the training-time signal can be
+  richer than a scalar reward by conditioning a self-teacher on feedback or a
+  successful sibling rollout, but its updates are still episode-local and nothing
+  the model discovered in an earlier attempt is preserved.</p>
+
+  <p><strong>Procedural Memory Distillation (PMD)</strong> accumulates that history
+  online from the model's own rollouts and distils it into the weights during
+  training. The memory has three levels of abstraction &mdash;
+  <strong>experience</strong> (raw trajectories, rewards, feedback per problem),
+  <strong>insight</strong> (per-problem strategies and lessons from self-reflection,
+  with anti-shortcut filtering) and <strong>behavior</strong> (reasoning patterns
+  distilled across semantically related problems) &mdash; and the paper is explicit
+  that this is a fidelity/transfer trade-off, with experience faithful but local,
+  behavior broadly transferable but coarse, and insight the middle ground. A
+  memory-conditioned self-teacher then supervises the student on its own rollouts
+  through the same SDPO-style reverse-KL objective. The memory is a
+  <strong>training scaffold only</strong>: it is never available at test time, so the
+  resulting model is <strong>memory-free at inference</strong> with no retrieval
+  stack. The stated design principle is co-evolution &mdash; the policy writes the
+  memory, the memory shapes the supervision that updates the policy.</p>
+
+  <p>With Qwen3-8B and OLMo3-Instruct-7B (thinking off, 8 rollouts per prompt), PMD
+  lifts the SciKnowEval four-domain average (avg@16) over SDPO from
+  <strong>74.4 to 77.2</strong> and <strong>69.5 to 73.3</strong>, and
+  LiveCodeBench v6 (score@4) from <strong>47.9 to 51.7</strong> and
+  <strong>45.0 to 51.1</strong> &mdash; the 3.8&ndash;5.5% and 7.9&ndash;13.6%
+  relative gains quoted in the abstract. The decomposition is more informative than
+  the headline. Discarding memory after every step still beats SDPO, but only by
+  1.3pp on SciKnowEval and 0.2pp on LiveCodeBench; letting it persist adds 1.5pp
+  and 3.6pp, and in code generation &mdash; where successful patterns are rare and
+  must be consolidated over many attempts &mdash; persistence accounts for nearly
+  all of the improvement.</p>
+
+  <p>The two controls that isolate co-evolution both fail
+  badly: evolving the memory while freezing the policy barely moves at all
+  (54.0 / 35.9), because nothing is distilled and the model only sees a richer
+  prompt it never internalizes, and training against a memory bank built once at
+  initialization reaches 65.0 / 47.5 but goes stale as the policy moves. A separate
+  result is arguably the more useful one: PMD preserves answer-space coverage that
+  SDPO collapses &mdash; the maj@k-to-best@k verifier headroom band is
+  <strong>2&ndash;4&times; wider</strong>, PMD's solved set covers
+  <strong>9&ndash;14% more problems</strong> with only 2&ndash;4% solved
+  exclusively by SDPO, and on Materials SDPO's headroom goes to zero outright, a
+  signature of mode collapse that would blunt any downstream best-of-N or verifier
+  reranking. Cost is <strong>1.45&times; step time</strong> with peak GPU memory
+  essentially unchanged (+0.3 GB), since the bank lives off-GPU and extraction runs
+  asynchronously. The authors limit their claim deliberately: the evaluation is
+  repeated training over <em>fixed</em> task distributions in two verifiable
+  domains, narrower than long-horizon agentic settings where memory, tools and
+  skills must evolve across heterogeneous tasks, and they explicitly do not claim
+  to have solved online agent self-improvement. Same research line as
+  <a href="/outputs/salesforce/vpd">VPD</a>, the
+  <a href="/outputs/salesforce/privileged-likelihood-not-value">token-credit
+  audit</a> and <a href="/outputs/salesforce/rise-opd">RISE</a>. No code was linked
+  at filing.</p>
+tags:
+  - distillation
+  - post-training
+  - memory
+  - self-improvement
+  - reasoning
+  - coding
+  - research
+paper:
+  arxiv: "2607.01480"
+  authors:
+    - Ye Liu
+    - Srijan Bansal
+    - Bo Pang
+    - Yang Li
+    - Zeyu Leo Liu
+    - Yifei Ming
+    - Zixuan Ke
+    - Shafiq Joty
+    - Semih Yavuz
+related:
+  - vpd
+  - privileged-likelihood-not-value
+  - rise-opd
+  - sft-rlvr-opd-synergy
+  - opd

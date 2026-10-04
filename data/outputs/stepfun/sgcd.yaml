@@ -1,0 +1,144 @@
+name: Skill-Guided Continuation Distillation for GUI Agents
+slug: sgcd
+lab: stepfun
+type: paper
+date: 2026-06-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2606.18890
+description: >
+  <p>GUI agents are trained by behaviour cloning on expert trajectories, which
+  supervises only the states an expert visits. In closed-loop execution the
+  current policy drifts off that distribution and reaches
+  <strong>policy-induced off-trajectory states</strong> &mdash; states no
+  expert trajectory demonstrates, so no supervision tells the agent what to do
+  from there. The paper calls the mismatch the <strong>off-trajectory
+  supervision deficit</strong> and identifies it as plain imitation-learning
+  covariate shift, with two GUI-specific obstacles. Reaching a realistic
+  off-trajectory state means actually executing actions in a live desktop,
+  which makes such states expensive to revisit or reset, and the current policy
+  seldom finishes the task from one, so RL on these states yields sparse reward.
+  Prior work picks important off-trajectory states with hand-crafted rules,
+  which biases selection and covers the real distribution sparsely. Failure
+  analysis supplies the two facts the method is built on: failures concentrate
+  in <strong>early execution</strong>, and failed rollouts repeat four families
+  rather than making one-off mistakes &mdash; <em>Early Done</em>,
+  <em>Fixation</em>, <em>Hallucinated Affordance</em> and <em>Scope
+  Misjudgment</em>. The framing is close to NVIDIA's
+  <a href="/outputs/nvidia/pivotopd">PivotOPD</a>, which attacks recovery from
+  pivotal mistakes in multi-turn agents: both treat the unsupervised state
+  <em>after</em> an error as the thing worth training on, and both get their
+  supervision from the same weights conditioned on a privileged context
+  &mdash; PivotOPD's frozen student given a gold-action hint, and here the same
+  policy given a natural-language skill, which this paper explicitly calls a
+  &ldquo;training-time privileged recovery context&rdquo;. The designs then
+  diverge: PivotOPD locates one pivotal turn with a hindsight teacher and
+  trains token-level KL inside a PPO update, including a preventive term on the
+  mistaken turn itself, whereas SGCD sweeps where it hands off, uses ordinary
+  cross-entropy, and deliberately supervises <em>only</em> what comes after
+  the error.</p>
+
+  <p>SGCD runs four stages, iteratively. (I) Roll the plain policy &mdash; the
+  current model with no skill &mdash; M times per training task and split by
+  the task verifier into successes and failures; the rollouts come from the
+  policy rather than an expert precisely so they expose its own traps and
+  premature terminations. (II) Gemini-3-Pro abstracts the successful and failed
+  evidence for each task into a skill with exactly four fields, one per failure
+  family: <strong>Continuation Plans, Critical Targets, Failure Traps and
+  Success Criteria</strong>. Alternatives are drawn only from successful
+  references and unsupported fields are left empty, to suppress hallucinated
+  guidance.</p>
+
+  <p>The skill is a trajectory <em>abstraction</em>, not a replay: GUI
+  tasks are path-plural, and conditioning on one successful trace over-binds the
+  model to incidental detail like menu order or scroll position. (III) A task is
+  <em>recoverable</em> only if the plain policy fails it and the skill-guided
+  policy solves it. For each such task and each <strong>k = 1&hellip;20</strong>,
+  the plain policy executes the first k actions live &mdash; not replayed from
+  a stored trajectory &mdash; and the skill-guided policy continues from that
+  real state. Each splice must pass both the executable verifier and an LLM
+  judge that removes accidental success, redundant loops, inconsistent
+  reasoning and unsafe operations. (IV) Train on expert trajectories plus
+  verified successful policy rollouts plus continuations, with the pre-handoff
+  actions kept as context but <strong>masked out of the action loss</strong>,
+  since those are the behaviours that caused the problem. The deployed policy
+  gets no skill at all &mdash; the skill is only a data-synthesis scaffold. As
+  the policy improves, previously unrecoverable tasks enter later rounds.
+  Training uses 64 H100s with the ViT and aligner frozen, over an
+  OSWorld-compatible pool of <strong>1,432 verified tasks</strong> disjoint from
+  the eval suite, each with hand-prepared initial-state assets, an automatic
+  verifier and a human end-to-end solvability check, deliberately weighted
+  toward multi-application Workflow tasks (411 of 1,432).</p>
+
+  <p>On OSWorld-Verified &mdash; the verified suite derived from
+  <a href="/outputs/hku/osworld">OSWorld</a> &mdash; SGCD lifts Qwen3-VL-8B
+  from <strong>32.7 to 55.1</strong>, Qwen3-VL-30B-A3B from
+  <strong>31.9 to 58.4</strong>, and
+  <a href="/outputs/stepfun/step-3-vl-10b">Step-3-VL-10B</a> from
+  <strong>24.1 to 53.2</strong> (the abstract's &ldquo;low-30% range&rdquo; does
+  not actually cover the Step backbone). The paper also defines a
+  <strong>Continuation Success Rate</strong>: on the 142 OSWorld-Verified tasks
+  the plain Qwen3-VL-8B policy fails, the plain policy runs k steps and the
+  evaluated model must finish <em>with no skill prompt</em>. SGCD-8B scores
+  <strong>39.2%</strong> against EvoCUA-8B's 32.7%, and SGCD-30B-A3B
+  <strong>50.3%</strong> against 23.3% for its own Thinking backbone &mdash; so
+  the recovery behaviour really is absorbed into the unprompted policy rather
+  than living in the prompt. Sweeping k beats every five-step bucket (45.7 vs
+  41.0&ndash;43.2, a 2.5&ndash;4.7 point margin), and within a fixed window
+  accuracy falls as the handoff deepens past 10 (43.2 &rarr; 41.0 &rarr; 41.8),
+  because deeper prefixes accumulate more damage and leave a shorter horizon to
+  repair it. That robustness is the trained-for property: Claude Sonnet 4.6
+  starts highest at k=1 (<strong>80.3%</strong>) but loses 33 points by k=20
+  (47.2%), while SGCD-30B-A3B stays inside a 42&ndash;60% band. The paper does
+  not oversell the result.</p>
+
+  <p>It is still far from frontier general-purpose
+  systems on the same benchmark (GPT-5.5 78.7, Claude Sonnet 4.6 72.1, Kimi
+  K2.5 63.3), and those two also beat SGCD-30B-A3B on continuation (63.3 and
+  56.3 vs 50.3). The backbone-matched win is lopsided by category: SGCD-8B's
+  55.1 against GUI-Owl-1.5-8B-Instruct's 52.4 comes from Office (75 vs 59) and
+  Workflow (32 vs 28) while <strong>losing OS (16 vs 18), Daily (18 vs 19) and
+  Professional (58 vs 65)</strong> &mdash; which tracks the training pool's
+  deliberate weighting. The skill ablation is monotone only in aggregate (39.9
+  with no skill rising to 45.7 with all four fields, measured on the
+  v0&rarr;v1 round); per category it is noisy, and Daily is actually worse with
+  the full skill than with none (16 vs 19). Baselines marked &dagger; are
+  re-run under the authors' own protocol and differ from published figures
+  (the paper notes 52.3 official for GUI-Owl-1.5-8B-Instruct and 33.9 for the
+  Qwen3-VL-8B variants), and gains past the first iteration are shown only as a
+  figure with no numbers in the text. Stated limitations: it still struggles to
+  obtain successful continuations on difficult tasks, and re-executing the
+  plain policy from scratch for every task and every k costs substantial live
+  interaction &mdash; they propose GUI-state caching as the fix. StepFun work,
+  with co-authors at University of Science and Technology Beijing,
+  <a href="/labs/tsinghua">Tsinghua</a> and NTU; project lead Zhimin Fan,
+  senior authors Xiangyu Zhang and Daxin Jiang. Baselines include
+  <a href="/outputs/hku/opencua">OpenCUA</a> and StepFun's own Step-GUI-8B
+  (40.2). No code or weights released.</p>
+tags:
+  - agents
+  - computer-use
+  - multimodal
+  - distillation
+  - post-training
+  - self-improvement
+  - research
+paper:
+  arxiv: "2606.18890"
+  authors:
+    - Zhimin Fan
+    - Hongwei Yu
+    - Yeqing Shen
+    - Haolong Yan
+    - Guozhen Peng
+    - Tianhao Peng
+    - Yudong Zhang
+    - Xiaowen Zhang
+    - Kaijun Tan
+    - Zheng Ge
+    - Xiangyu Zhang
+    - Daxin Jiang
+related:
+  - pivotopd
+  - reopd
+  - opd

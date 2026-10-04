@@ -1,0 +1,91 @@
+name: "Beta-OPSD: Deriving with Policy Optimization, Training with Self-Distillation"
+slug: beta-opsd
+lab: umd
+type: paper
+date: 2026-07-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.28582
+description: >
+  <p>On-policy self-distillation works, when it works: the paper's opening
+  complaint is that "making it work reliably often requires substantial
+  engineering effort," and its own baseline table is the evidence. Vanilla OPSD
+  lands <em>below the untouched base model</em> on two of three scales &mdash;
+  <strong>56.11 against 57.13</strong> on Qwen3-4B and <strong>31.02 against
+  33.89</strong> on Qwen3-1.7B. The structural explanation offered is that
+  vanilla OPSD is precisely the <strong>&beta; = 1</strong> member of a broader
+  KL-regularised policy-optimisation family, where &beta; weights the penalty
+  anchoring the student to a reference policy. Nobody chose that value; it is an
+  artefact of the objective's shape, which means the single knob that trades
+  proximity to the reference against privileged teacher guidance has been
+  silently pinned shut.</p>
+
+  <p>Unpinning it gives <strong>&beta;-OPSD</strong>. The authors derive the
+  &beta;-weighted objective's optimal policy &mdash; a
+  <strong>geometric interpolation between the reference policy and the privileged
+  teacher</strong> &mdash; and then decline to optimise it, on the grounds that
+  doing so with RL would be costly and high-variance. Instead the closed-form
+  solution becomes a distillation <em>target</em>: each &beta; selects a point
+  along the reference-to-teacher path, implemented by linearly mixing the two
+  branches' token-level logits, since interpolating probabilities geometrically
+  is linear interpolation of logits up to normalisation. Cheap distillation
+  therefore approximates the answer to an expensive policy-optimisation problem.
+  <strong>Return-to-go credit assignment</strong> then aligns token updates with
+  the sequence-level objective, on the reasoning that an earlier token changes
+  later prefixes and so affects future student&ndash;target mismatch. The
+  "privileged" teacher is not a bigger model: it is the <em>same weights</em>,
+  additionally conditioned on the ground-truth solution supplied with each
+  training problem from the OpenThoughts maths subset, with the reference a
+  stop-gradient copy of the current student.</p>
+
+  <p>Measured as avg@12 on AIME 2024, AIME 2025 and HMMT 2025 across Qwen3-1.7B,
+  4B and 8B instruct models, &beta;-OPSD averages <strong>36.76, 57.87 and
+  60.18</strong> against vanilla OPSD's 31.02, 56.11 and 58.52 &mdash; and
+  against GRPO's 33.98, 56.95 and 58.52, with SFT the outright failure case at
+  <strong>17.96 on Qwen3-4B</strong>. The 1.7B gains are the headline: +9.16,
+  +5.27 and +2.78 points over vanilla OPSD, +5.74 on average. Read against the
+  <em>base model</em> rather than against vanilla OPSD, which is how the table's
+  parenthetical deltas are quoted, the picture is thinner. On Qwen3-4B the
+  average gain over base is <strong>0.74 points</strong> (57.87 against 57.13)
+  and &beta;-OPSD is behind the base model on AIME 2024 there, 73.89 against
+  77.78. It also loses to vanilla OPSD on two individual benchmarks &mdash; AIME
+  2024 on Qwen3-4B (&minus;1.11) and HMMT 2025 on Qwen3-8B (&minus;1.12). No
+  schedule dominates either: the headline linear 0.5&nbsp;&rarr;&nbsp;0.8 wins
+  AIME 2025 at 40.83, but linear 0.8&nbsp;&rarr;&nbsp;0.5 is better on AIME 2024
+  (54.72 against 53.33) and a fixed 0.5 is better on HMMT 2025 (16.67 against
+  16.11), so the choice is tuned per benchmark rather than settled.</p>
+
+  <p>The ablations
+  do isolate both moving parts cleanly: distilling straight to the privileged
+  teacher with return-to-go reaches only 47.30/35.53/14.44 against the
+  &beta;-interpolated target's 53.33/40.83/16.11, so the interpolation is load
+  bearing, and swapping return-to-go for local token gradients costs 1.12, 5.55
+  and 3.61 points. Scope is the real caveat, and there is no formal limitations
+  section flagging it: <strong>maths only, LoRA only</strong>, three Qwen3
+  models, four NVIDIA RTX A6000s under an eight-hour wall clock, and scores read
+  off the <strong>100-step checkpoint of a 200-step schedule</strong> rather than
+  the end of training. Future work is named as adaptive or theoretically
+  optimised interpolation schedules and lower-variance return-to-go estimators.
+  From <a href="/labs/umd">University of Maryland, College Park</a>, all five
+  authors at UMD, with Furong Huang corresponding and Tom Goldstein senior; no
+  code released.</p>
+tags:
+  - distillation
+  - post-training
+  - reasoning
+  - math
+  - training-stability
+  - research
+paper:
+  arxiv: "2607.28582"
+  authors:
+    - Jiawei Xu
+    - Minghui Liu
+    - Juzheng Zhang
+    - Tom Goldstein
+    - Furong Huang
+related:
+  - opd
+  - privileged-context-opsd
+  - sft-rlvr-opd-synergy
+  - zeda

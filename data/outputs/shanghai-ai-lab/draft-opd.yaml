@@ -1,0 +1,111 @@
+name: "Draft-OPD: On-Policy Distillation for Speculative Draft Models"
+slug: draft-opd
+lab: shanghai-ai-lab
+type: paper
+date: 2026-05-28
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.29343
+  - label: Project Page
+    url: https://www.haodilei.top/draft-opd
+  - label: GitHub
+    url: https://github.com/Simplified-Reasoning/Draft-OPD
+  - label: HuggingFace Collection
+    url: https://huggingface.co/collections/bingyang-lei/draft-opd
+description: >
+  <p>Speculative decoding's speedup is set by how well the draft model matches
+  the target, and every mainstream drafter &mdash; EAGLE-3, DFlash &mdash; is
+  built by supervised fine-tuning on target-generated trajectories. The paper's
+  starting observation is that this <strong>plateaus</strong>: after an SFT
+  warm-up, further SFT stops raising accepted length on test data, and
+  continuing SFT on the OPD prompt pool can even lower it, so the limit is not
+  offline training compute. The diagnosis is an offline-to-inference mismatch
+  &mdash; SFT trains on prefixes the <em>target</em> produced, while speculative
+  decoding scores blocks the drafter itself proposes. On-policy distillation is
+  the natural fix and the natural fix does not work. EAGLE- and DFlash-style
+  drafters are built to propose short spans under verification rather than to
+  generate alone, so draft-only rollouts go repetitive and degenerate; and
+  target-assisted rollout, which fixes that, is lossless with respect to the
+  target, meaning the verified continuation follows the target distribution and
+  the on-policy signal is discarded along with the rejected tokens &mdash;
+  exactly the tokens that reveal the drafter's errors.</p>
+
+  <p><strong>Draft-OPD</strong> keeps both halves. It uses target-assisted
+  rollout for stable continuations while recording the start index of each
+  drafted block as an <strong>anchor</strong>, then <strong>replays drafting
+  from those anchors</strong> so the target scores the draft's own proposed
+  block &mdash; including the positions verification threw away. Hidden states
+  computed during the rollout are reused, so the replay costs no extra target
+  forward pass over the prefix. Verification outcomes then partition the drafted
+  tokens, and the <strong>acceptance-aware objective</strong> treats the two
+  groups differently: forward KL on accepted tokens, so the drafter covers the
+  target where it already passes, and reverse KL on rejected ones, to penalise
+  the drafter's own high-probability modes where the target disagrees, weighted
+  by an exponential decay over block position because an early rejection
+  invalidates the rest of the block. Training builds on SFT-trained DFlash
+  drafters (5 layers for Qwen3-4B/8B, 8 for Qwen3-30B-A3B-Thinking) over a 16K
+  prompt pool drawn from GSM8K, MATH, AoPS and CodeAlpaca with responses
+  generated online; the Qwen3-4B OPD stage is about <strong>15 hours on 8
+  H200s, roughly 120 H200 GPU-hours</strong> including the frozen target's own
+  rollout and verification.</p>
+
+  <p>Under a matched FLOPs budget &mdash; the baselines' SFT budget is set equal
+  to Draft-OPD's SFT plus OPD total &mdash; thinking-mode greedy decoding raises
+  the two-model average acceptance length from <strong>5.35 for DFlash to
+  5.85</strong> and averages <strong>4.88&times; speedup across seven
+  benchmarks, 23% above EAGLE-3 and 13% above DFlash</strong>; with thinking
+  disabled it holds 6.33 acceptance length and 5.17&times;. On SGLang with the
+  FA3 backend acceptance length rises <strong>11.2% on average</strong> and
+  throughput by <strong>up to 17%</strong> on Qwen3-30B-A3B-Thinking, with the
+  relative gain at concurrency 32 no smaller than at concurrency 1. Ablations
+  support each piece: random replay anchors, all-forward KL and all-reverse KL
+  all lose, dropping the positional decay lowers both metrics, and naive
+  target-assisted rollout on its own falls from 4.63&times; to 4.29&times;
+  average speedup. The concessions are real. EAGLE-3 still posts the highest
+  acceptance length on Qwen3-8B at temperature 0.6, and Draft-OPD wins there
+  only on wall-clock, because DFlash-style parallel drafting beats EAGLE-3's
+  sequential drafting.</p>
+
+  <p>Two of the paper's own variants show how little of the
+  design is load-bearing: supervising <strong>only the first rejected
+  token</strong> ties Draft-OPD at 5.94 against 5.95 average acceptance length,
+  which the authors flag as a promising efficiency simplification, while
+  extending the decay to accepted tokens loses on all seven benchmarks (5.86
+  against 5.95). Because verification stays lossless there are no quality
+  numbers at all &mdash; the method buys throughput, not accuracy &mdash; and
+  the paper notes a <strong>thinking-mode draftability gap</strong> (drafters are
+  substantially weaker under thinking mode on maths and code, attributed to
+  higher target uncertainty in long reasoning traces), training rollouts capped
+  at 4,096 tokens against 8,192 at evaluation, and evaluation confined to Qwen3
+  with DFlash-style parallel drafting on SGLang, leaving transfer to other
+  families, draft architectures and backends untested. Lead author Haodi Lei
+  (Shanghai Jiao Tong University), with
+  <a href="/labs/shanghai-ai-lab">Shanghai AI Laboratory</a> carried by most of
+  the authors and supporting the work, plus Tsinghua, CUHK, Peking and Zhejiang;
+  corresponding authors Yafu Li, Ning Ding and Yun Luo, senior author
+  <strong>Bowen Zhou</strong>.</p>
+tags:
+  - distillation
+  - post-training
+  - inference
+  - efficiency
+  - research
+paper:
+  arxiv: "2605.29343"
+  code_url: https://github.com/Simplified-Reasoning/Draft-OPD
+  authors:
+    - Haodi Lei
+    - Yafu Li
+    - Haoran Zhang
+    - Shunkai Zhang
+    - Qianjia Cheng
+    - Xiaoye Qu
+    - Ganqu Cui
+    - Bowen Zhou
+    - Ning Ding
+    - Yun Luo
+    - Yu Cheng
+related:
+  - opd
+  - zeda
+  - post-training-mtp-heads
