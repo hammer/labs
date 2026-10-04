@@ -1,0 +1,74 @@
+name: "EMO: Frustratingly Easy Progressive Training of Extendable MoE"
+slug: emo-extendable-moe
+lab: mbzuai
+type: paper
+date: 2026-05-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.13247
+description: >
+  <p>From <strong>MBZUAI-IFM</strong> and USC-ISI, on a gap between what sparse
+  MoE promises and what it costs. Per-token FLOPs depend only on the <em>k</em>
+  active experts, not the total pool <em>E</em>, so adding experts is supposed to
+  be free. Wall-clock is not: all-to-all communication, aggregate memory for
+  parameters, gradients and optimizer states, and GPU underutilization from small
+  per-expert GEMMs and routing kernels all grow with <em>E</em>. The paper
+  measures it &mdash; at 1.1B activated parameters, going from 8 experts to 128
+  inflates step time by <strong>1.08&times;</strong>; at 4B activated, the same
+  expansion costs <strong>1.72&times;</strong>, and the gap is expected to widen
+  at larger activated sizes. They name this the <strong>MoE efficiency
+  paradox</strong>.</p>
+
+  <p>EMO's argument is that the waste is front-loaded: early-stage data cannot
+  use a large expert pool, so training should not pay for one from step zero.
+  It treats MoE capacity as <strong>expandable memory</strong> and grows the pool
+  during training, with sparsity carried into the scaling law to derive
+  stage-wise compute-optimal token budgets rather than a hand-set schedule. The
+  fitted allocation puts <strong>23.5%, 9.5%, 16.5%, 21.8% and 28.6%</strong> of
+  the budget into the E=8, 16, 32, 64 and 128 stages &mdash; enough tokens early
+  to build representations, then the majority late where marginal returns are
+  largest. Each stage resumes from the last checkpoint; a warm-stable-decay
+  schedule with a 500-step warmup per intermediate stage keeps expansion from
+  introducing any discontinuity, and the learning rate decays only in the final
+  stage. An ablation on the 16&rarr;32 boundary shows why the derived point is
+  the right one: expanding at 25% of the budget gives loss 1.069, at 50% 1.071
+  and at 75% 1.076 &mdash; nearly flat from 25&ndash;50%, then steepening &mdash;
+  and the scaling law lands at <strong>~45%</strong>, inside the flat region.</p>
+
+  <p>The scale test grows a 1.1B dense model into a <strong>9.6B-A1.1B MoE with
+  E=128 over five stages on 1.92T tokens</strong> (8&rarr;16&rarr;32&rarr;64&rarr;128,
+  fixed top-8 routing), on 32 H200s under a deliberately optimized stack: BF16,
+  FlashAttention 3, fused transformer-block kernels, selective activation
+  recomputation, best-fit-decreasing sequence packing with document masking, and
+  entropy-based load balancing. Final pretraining loss is <strong>1.017 against
+  0.994</strong> for a fixed-E=128 baseline on the same token budget &mdash; a
+  2.3% relative gap &mdash; and 1.065 for fixed-E=64, while <strong>saving 10% of
+  GPU hours</strong>. Across eight downstream benchmarks it clearly beats the
+  smaller fixed pools and is competitive with the E=128 ceiling, though the paper
+  reports that fixed-E=128 stays ahead on GSM8K at the final checkpoint,
+  suggesting reasoning-heavy tasks may want the full pool exposed throughout.
+  Each expansion produces a transient loss spike that recovers within roughly 10K
+  steps, and the method is robust to how new experts and router weights are
+  initialized &mdash; the choice moves the spike, not the final loss. Co-authored
+  by MBZUAI President
+  <a href="/people/eric-xing">Eric Xing</a>.</p>
+tags:
+  - moe
+  - efficiency
+  - pretraining
+  - scaling-laws
+  - research
+paper:
+  arxiv: "2605.13247"
+  authors:
+    - Linghao Jin
+    - Chufan Shi
+    - Huijuan Wang
+    - Nuan Wen
+    - Zhengzhong Liu
+    - Eric Xing
+    - Xuezhe Ma
+related:
+  - k2-horizon
+  - txt360
+  - ier-opd
