@@ -1,0 +1,82 @@
+name: "ZEDA: Post-Trained MoE Can Skip Half Experts via Self-Distillation"
+slug: zeda
+lab: shanghai-ai-lab
+type: paper
+date: 2026-05-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2605.18643
+  - label: GitHub
+    url: https://github.com/TsinghuaC3I/ZEDA
+description: >
+  <p>Dynamic MoE — letting easy tokens activate fewer experts — is an old idea
+  with a practical gap: the existing methods want pre-training from scratch or
+  task-specific adaptation, which leaves the case that actually matters
+  untouched. You already have a fully post-trained static MoE and you want its
+  inference bill cut. <strong>Zero-Expert Self-Distillation Adaptation
+  (ZEDA)</strong> converts one into the other cheaply, and the trick is that it
+  changes nothing about how many experts the router picks. It injects
+  <strong>parameterless zero experts</strong> whose output is identically zero
+  into each layer's existing pool, so the router's candidate set grows with
+  zero-computation options while the activation count stays fixed — the number
+  of active <em>real</em> experts falls out of that on its own.</p>
+
+  <p>The augmented model is then adapted by <strong>two-stage self-distillation
+  — SFT then on-policy distillation</strong> — against the original MoE as a
+  frozen teacher, so the target is the model's own prior behaviour rather than
+  an external one. Stability is the hard part of this conversion, and ZEDA adds
+  a <strong>Group Auxiliary Loss</strong> that regulates the relative activation
+  frequency of normal versus zero experts, keeping the original routing
+  distribution from being disrupted. Adaptation is genuinely low-cost: under
+  <strong>31 hours for Qwen3-30B-A3B and 62 for GLM-4.7-Flash on 8 NVIDIA
+  H200s</strong>.</p>
+
+  <p>Across <strong>11 benchmarks</strong> spanning maths, code and instruction
+  following, it removes <strong>over half the expert FLOPs</strong> for a
+  marginal accuracy loss against the unmodified model, beating the strongest
+  dynamic-MoE baseline by <strong>6.1 points on Qwen and 4.0 on GLM</strong>,
+  and turning the saved compute into roughly a <strong>1.20&times; end-to-end
+  speedup</strong> — a gap between FLOPs removed and wall-clock gained that the
+  paper is upfront about, listing <strong>speedup decay at long sequence
+  lengths</strong> among its limitations, along with no larger MoE deployments
+  and no long-horizon agentic tasks. The analysis is the part worth keeping: how
+  much compute a token gets correlates with the <strong>teacher&ndash;student
+  distribution gap, model uncertainty and response patterns, not with overall
+  task difficulty</strong> — so "easy tokens" turns out to mean tokens the model
+  is already confident about, not tokens from easy problems. The zero-expert
+  construction is borrowed from <a href="/outputs/meituan/longcat-flash">LongCat-Flash</a>
+  and MoE++, applied here as a post-hoc conversion rather than a pre-training
+  choice. By Tsinghua University and
+  <a href="/labs/shanghai-ai-lab">Shanghai AI Lab</a>, with Frontis.AI, Kuaishou
+  and WeChat AI (lead Xingtai Lv; senior authors Ning Ding and
+  <strong>Bowen Zhou</strong>); code released as TsinghuaC3I/ZEDA under MIT.</p>
+tags:
+  - moe
+  - efficiency
+  - distillation
+  - post-training
+  - inference
+  - research
+paper:
+  arxiv: "2605.18643"
+  code_url: https://github.com/TsinghuaC3I/ZEDA
+  authors:
+    - Xingtai Lv
+    - Li Sheng
+    - Kaiyan Zhang
+    - Yichen You
+    - Siyan Gao
+    - Xueheng Luo
+    - Yuxin Zuo
+    - Yuchen Fan
+    - Junlin Yang
+    - Ganqu Cui
+    - Bingning Wang
+    - Fan Yang
+    - Youbang Sun
+    - Ning Ding
+    - Bowen Zhou
+related:
+  - ttrl
+  - opd
+  - longcat-flash
