@@ -16,6 +16,7 @@
  */
 import {
   harvestAuthors, trackedArxivIds, parseAuthorListing, untracked, yymmFloor, searchUrl,
+  isRetryable, backoffMs,
 } from '../scripts/sweep-authors';
 
 let failures = 0;
@@ -53,8 +54,12 @@ check('an output with no paper block does not throw', authors.length === 5, name
 check('--limit truncates', harvestAuthors(mbzuai, mbzuaiOutputs, 2).length === 2);
 check('a lab with neither people nor papers yields nothing',
   harvestAuthors({}, [], 6).length === 0);
-check('search URL encodes the name',
-  searchUrl('Eric Xing').includes('query=Eric+Xing'), searchUrl('Eric Xing'));
+check('search URL hits the API, not the scraped HTML search',
+  searchUrl('Eric Xing').startsWith('https://export.arxiv.org/api/query'), searchUrl('Eric Xing'));
+check('search URL quotes the author name',
+  searchUrl('Eric Xing').includes('au%3A%22Eric+Xing%22'), searchUrl('Eric Xing'));
+check('search URL asks newest-first',
+  searchUrl('x').includes('sortBy=submittedDate') && searchUrl('x').includes('sortOrder=descending'));
 
 // -------------------------------------------------------------- tracked ids
 
@@ -75,58 +80,70 @@ check('tracked ids: no phantom entries', tracked.size === 4, [...tracked].join('
 
 // ------------------------------------------------------------ listing parser
 
-// Trimmed from the live arXiv author-search page for Zhengzhong Liu, keeping the
-// markup the parser depends on. Two results so a block cannot absorb the next.
-const listing = `
-<li class="arxiv-result">
-    <div class="is-marginless">
-      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2605.15290">arXiv:2605.15290</a>
-        <span>&nbsp;[<a href="https://arxiv.org/pdf/2605.15290">pdf</a>]&nbsp;</span>
-      </p>
-      <div class="tags is-inline-block">
-        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
-      </div>
-    </div>
-    <p class="title is-5 mathjax">
-      Something regarding transfer over weight decay
-    </p>
-    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 14 May, 2026;
-      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2026.
-    </p>
-  </li>
-  <li class="arxiv-result">
-    <div class="is-marginless">
-      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2605.13247">arXiv:2605.13247</a>
-        <span>&nbsp;[<a href="https://arxiv.org/pdf/2605.13247">pdf</a>]&nbsp;</span>
-      </p>
-      <div class="tags is-inline-block">
-        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
-        </div>
-    </div>
-    <p class="title is-5 mathjax">
-      EMO: Frustratingly Easy Progressive Training of Extendable MoE
-    </p>
-    <p class="authors">
-      <span class="search-hit">Authors:</span>
-      <a href="/search/?searchtype=author&amp;query=Xing%2C+E">Eric Xing</a>
-    </p>
-    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 13 May, 2026;
-      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2026.
-    </p>
-  </li>
-`;
+// Trimmed from a live arXiv API response, keeping the shape the parser depends
+// on: the feed's own <id>/<title> before the first <entry>, which must not be
+// read as a paper, and two entries so one cannot absorb the next's fields.
+// A multi-word title is wrapped the way arXiv wraps them, and &amp; appears
+// because unescaping is part of the contract.
+const listing = `<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://arxiv.org/api/abcdef</id>
+  <title type="html">ArXiv Query: search_query=au:"Eric Xing"</title>
+  <opensearch:totalResults>376</opensearch:totalResults>
+  <entry>
+    <id>http://arxiv.org/abs/2605.15290v1</id>
+    <title>Something regarding transfer &amp; weight decay</title>
+    <updated>2026-05-14T10:23:42Z</updated>
+    <summary>Not the title.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-14T10:23:42Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author><name>Zhengzhong Liu</name></author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.13247v2</id>
+    <title>EMO: Frustratingly Easy Progressive Training of
+  Extendable MoE</title>
+    <updated>2026-05-14T08:00:00Z</updated>
+    <summary>On-policy ... not the title either.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-13T08:00:00Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author><name>Eric Xing</name></author>
+  </entry>
+</feed>`;
 
 const entries = parseAuthorListing(listing);
-check('parser finds both results', entries.length === 2, `got ${entries.length}`);
+check('parser finds both entries', entries.length === 2, `got ${entries.length}`);
+check('parser ignores the feed-level id/title', !entries.some((e) => e.title.startsWith('ArXiv Query')));
 const emo = entries.find((e) => e.id === '2605.13247');
-check('parser finds the EMO id', !!emo);
-check('parser reads the title verbatim',
+check('parser finds the EMO id (version suffix stripped)', !!emo);
+check('parser rejoins a wrapped title',
   emo?.title === 'EMO: Frustratingly Easy Progressive Training of Extendable MoE', emo?.title);
 check('parser reads the category', emo?.categories.join(',') === 'cs.LG', emo?.categories.join(','));
-check('parser reads the submitted date', emo?.submitted === '13 May, 2026', emo?.submitted);
+check('parser dedupes repeated categories', emo?.categories.length === 1);
+check('parser prefers <published> over <updated>', emo?.submitted === '2026-05-13', emo?.submitted);
+check('parser unescapes XML entities',
+  entries[0].title === 'Something regarding transfer & weight decay', entries[0].title);
 check('parser does not leak the neighbouring title into a block',
-  entries[0].title === 'Something regarding transfer over weight decay', entries[0].title);
-check('parser survives an empty page', parseAuthorListing('').length === 0);
+  entries[0].id === '2605.15290', entries[0].id);
+check('parser survives an empty response', parseAuthorListing('').length === 0);
+
+// ----------------------------------------------------------- throttle handling
+
+// The first full run lost 304 of 534 probes to HTTP 429 and still printed a
+// confident total, because a throttled probe is indistinguishable from an author
+// with no new papers. Retrying is the fix; these pin that it is attempted.
+check('429 is retryable', isRetryable(429));
+check('403 is retryable (arXiv throttles with it too)', isRetryable(403));
+check('503 is retryable', isRetryable(503));
+check('404 is not retryable', !isRetryable(404));
+check('200 is not retryable', !isRetryable(200));
+check('backoff grows with attempts', backoffMs(2) > backoffMs(0));
+check('backoff honours Retry-After seconds', backoffMs(0, '30') >= 30_000 && backoffMs(0, '30') <= 30_000);
+check('backoff ignores a junk Retry-After', backoffMs(0, 'soon') > 0);
+check('backoff is capped', backoffMs(99) <= 61_000, String(backoffMs(99)));
 
 // --------------------------------------------------------------- date floor
 

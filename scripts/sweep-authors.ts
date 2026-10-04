@@ -36,11 +36,21 @@ import { parse } from 'yaml';
 //        npm run sweep-authors -- --plan                     # authors + URLs, no network
 //        npm run sweep-authors -- --since 2026-09 --limit 3  # every lab, 3 authors each
 
-const SEARCH = 'https://arxiv.org/search/';
+// The sanctioned bulk interface, not the HTML search at arxiv.org/search.
+// Scraping the HTML endpoint 534 times got 304 of them answered with HTTP 429 —
+// arXiv asks programmatic callers to use the API, and it is the better tool
+// anyway: Atom XML instead of markup, and a totalResults count that makes
+// truncation detectable.
+const API = 'https://export.arxiv.org/api/query';
 const UA = 'labindex-sweep/1.0 (https://labindex.ai; periodic lab-research sweep)';
 
-// arXiv asks callers to space requests; the sweep is never in a hurry.
-const DELAY_MS = 3000;
+// arXiv asks for one request every 3s. That is the floor, not a target, and the
+// first full run showed it is not enough on its own — hence the retry below.
+const DELAY_MS = 3500;
+const RETRIES = 4;
+// Newest-first, so the cap only bites when a single author has more than this
+// many papers inside the --since window; the run warns when that happens.
+const PAGE = 100;
 
 export interface Entry {
   id: string;
@@ -113,28 +123,48 @@ export function harvestAuthors(lab: unknown, outputs: unknown[], limit = 6): Aut
 
 export function searchUrl(name: string): string {
   const q = new URLSearchParams({
-    searchtype: 'author', query: name, start: '0', size: '50',
+    search_query: `au:"${name}"`,
+    start: '0',
+    max_results: String(PAGE),
+    sortBy: 'submittedDate',
+    sortOrder: 'descending',
   });
-  return `${SEARCH}?${q}`;
+  return `${API}?${q}`;
 }
 
-/** Parse one arXiv author-search results page. */
-export function parseAuthorListing(html: string): Entry[] {
+const unescapeXml = (s: string) => s
+  .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"')
+  .replace(/&#39;|&apos;/g, "'").replace(/&amp;/g, '&');
+
+/** Parse one arXiv API response (Atom XML). */
+export function parseAuthorListing(xml: string): Entry[] {
   const out: Entry[] = [];
-  // Each hit is one <li class="arxiv-result">; split rather than match across
-  // the whole page so a malformed block cannot swallow the next one's fields.
-  for (const block of html.split('<li class="arxiv-result">').slice(1)) {
-    const id = block.match(/arxiv\.org\/abs\/(\d{4}\.\d{4,5})/)?.[1];
+  // Split on <entry> so a malformed record cannot absorb the next one's fields.
+  // The feed's own <id>/<title> precede the first <entry>, so slice(1) drops them.
+  for (const block of xml.split('<entry>').slice(1)) {
+    const id = block.match(/<id>\s*https?:\/\/arxiv\.org\/abs\/(\d{4}\.\d{4,5})/)?.[1];
     if (!id) continue;
-    const rawTitle = block.match(/<p class="title is-5[^"]*">([\s\S]*?)<\/p>/)?.[1] ?? '';
-    const title = rawTitle.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-    const categories = [...block.matchAll(/<span class="tag [^"]*"[^>]*>([^<]+)<\/span>/g)]
-      .map((m) => m[1].trim())
-      .filter((c) => /^[a-z-]+\.[A-Z]{2}$/.test(c));
-    const submitted = block.match(/Submitted<\/span>\s*([^;<]+)/)?.[1].trim() ?? '';
+    const title = unescapeXml(block.match(/<title>([\s\S]*?)<\/title>/)?.[1] ?? '')
+      .replace(/\s+/g, ' ').trim();
+    const categories = [...block.matchAll(/<category term="([^"]+)"/g)]
+      .map((m) => m[1])
+      .filter((c, i, a) => a.indexOf(c) === i);
+    const submitted = block.match(/<published>(\d{4}-\d{2}-\d{2})/)?.[1] ?? '';
     out.push({ id, title, categories, submitted });
   }
   return out;
+}
+
+/** True when the response is worth another attempt rather than a hard failure. */
+export function isRetryable(status: number): boolean {
+  return status === 429 || status === 403 || status >= 500;
+}
+
+/** Exponential backoff with jitter, honouring a Retry-After header when given. */
+export function backoffMs(attempt: number, retryAfter?: string | null): number {
+  const header = Number(retryAfter);
+  if (Number.isFinite(header) && header > 0) return Math.min(header * 1000, 120_000);
+  return Math.min(DELAY_MS * 2 ** attempt, 60_000) + Math.floor(Math.random() * 1000);
 }
 
 /** arXiv ids are YYMM-prefixed, so a YYYY-MM floor is a numeric prefix compare. */
@@ -168,10 +198,26 @@ export function untracked(
   return [...byId.values()];
 }
 
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
 async function fetchListing(name: string): Promise<Entry[]> {
-  const res = await fetch(searchUrl(name), { headers: { 'User-Agent': UA } });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return parseAuthorListing(await res.text());
+  let last = '';
+  for (let attempt = 0; attempt <= RETRIES; attempt++) {
+    if (attempt) await sleep(backoffMs(attempt - 1, last));
+    let res: Response;
+    try {
+      res = await fetch(searchUrl(name), { headers: { 'User-Agent': UA } });
+    } catch (err) {
+      last = '';
+      if (attempt === RETRIES) throw err;
+      continue;
+    }
+    if (res.ok) return parseAuthorListing(await res.text());
+    if (!isRetryable(res.status)) throw new Error(`HTTP ${res.status}`);
+    last = res.headers.get('retry-after');
+    if (attempt === RETRIES) throw new Error(`HTTP ${res.status} after ${RETRIES} retries`);
+  }
+  return [];
 }
 
 async function main() {
@@ -223,14 +269,20 @@ async function main() {
   const queue = [...new Set(plans.flatMap((p) => p.authors.map((a) => a.name)))];
   console.log(`probing ${queue.length} authors across ${plans.length} labs...\n`);
 
+  const failed: string[] = [];
   for (const [i, name] of queue.entries()) {
     try {
       listings.set(name, await fetchListing(name));
     } catch (err) {
       console.error(`  ! ${name}: ${(err as Error).message}`);
+      failed.push(name);
       listings.set(name, []);
     }
-    if (i < queue.length - 1) await new Promise((r) => setTimeout(r, DELAY_MS));
+    // Progress, so a half-hour run does not look hung.
+    if ((i + 1) % 25 === 0 || i === queue.length - 1) {
+      console.log(`  ...${i + 1}/${queue.length} probed${failed.length ? `, ${failed.length} failed` : ''}`);
+    }
+    if (i < queue.length - 1) await sleep(DELAY_MS);
   }
 
   let total = 0;
@@ -254,11 +306,28 @@ async function main() {
     }
   }
 
+  // Coverage before findings. A probe that returns nothing because it was
+  // throttled is indistinguishable from an author with no new papers, so a run
+  // that does not state its coverage lets a half-finished sweep read as a clean
+  // one — which is exactly how the first full run reported 3,019 candidates off
+  // 43% of its probes.
+  const ok = queue.length - failed.length;
+  console.log(`\ncoverage: ${ok}/${queue.length} author probes succeeded` +
+    (failed.length ? ` — ${failed.length} FAILED` : ''));
+  if (failed.length) {
+    console.log('INCOMPLETE RUN. Every failed probe silently contributes zero candidates,');
+    console.log('so the list below under-reports by an unknown amount. Re-run the failures:');
+    console.log(`  npm run sweep-authors -- --since ${since} ${[...new Set(
+      plans.filter((p) => p.authors.some((a) => failed.includes(a.name))).map((p) => p.slug),
+    )].join(' ')}`);
+  }
+
   console.log(`\n${total} untracked arXiv ids across ${plans.length} labs.`);
   console.log('Read the * rows first: those came from a people:-listed or frequent author.');
   console.log('High-recall by design, and arXiv author search matches on name alone, so a');
   console.log('common name drags in every namesake. Read the title-page affiliations before');
   console.log('assigning a lab, and apply the AGENTS.md exclusion criteria.');
+  if (failed.length) process.exitCode = 1;
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) main();
