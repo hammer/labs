@@ -16,12 +16,14 @@
     "fetch-aa-intelligence": "tsx scripts/fetch-aa-intelligence.ts",
     "scan-aaii-mentions": "tsx scripts/scan-aaii-mentions.ts",
     "sweep-orgs": "tsx scripts/sweep-orgs.ts",
+    "sweep-authors": "tsx scripts/sweep-authors.ts",
     "deploy": "astro build && wrangler pages deploy dist --project-name labindex",
     "cf-typegen": "wrangler types",
     "test:changelog": "tsx tests/changelog-unit.ts",
     "test:aa": "tsx tests/aa-payload-unit.ts",
     "test:aaii": "tsx tests/aaii-mentions-unit.ts",
-    "test:sweep-orgs": "tsx tests/sweep-orgs-unit.ts"
+    "test:sweep-orgs": "tsx tests/sweep-orgs-unit.ts",
+    "test:sweep-authors": "tsx tests/sweep-authors-unit.ts"
   },
   "devDependencies": {
     "playwright": "^1.60.0",
