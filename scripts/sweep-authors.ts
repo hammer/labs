@@ -121,6 +121,27 @@ export function harvestAuthors(lab: unknown, outputs: unknown[], limit = 6): Aut
     .slice(0, limit);
 }
 
+/**
+ * Identity key for corroboration counting: surname plus first initial.
+ *
+ * Both spellings of one person are worth probing — arXiv indexes `au:"Eric
+ * Xing"` and `au:"Eric P. Xing"` as different queries and they return different
+ * sets — but they must count as *one* voucher. Before this, a paper surfaced by
+ * both spellings looked twice-corroborated, and the BF16-attention paper
+ * (2609.34272) was ranked a strong MBZUAI candidate on the strength of one
+ * author; its title page is Rutgers, CMU, Oracle and NYU, with no MBZUAI.
+ */
+export function personKey(name: string): string {
+  const parts = name.replace(/\./g, '').trim().split(/\s+/);
+  if (parts.length < 2) return name.toLowerCase();
+  return `${parts[parts.length - 1]}|${parts[0][0]}`.toLowerCase();
+}
+
+/** How many distinct people surfaced a hit, collapsing name variants. */
+export function distinctPeople(via: string[]): number {
+  return new Set(via.map(personKey)).size;
+}
+
 export function searchUrl(name: string): string {
   const q = new URLSearchParams({
     search_query: `au:"${name}"`,
@@ -295,14 +316,19 @@ async function main() {
     total += hits.length;
     // Hits a vouched-for author surfaced come first; single-paper common names
     // are where the namesake noise lives, so they sort to the bottom.
+    // Two independent people vouching for a hit is the strongest precision
+    // signal available — a lone namesake does not co-occur — so rank on that
+    // first, then on a vouched-for author.
     hits.sort((a, b) =>
+      distinctPeople(b.via) - distinctPeople(a.via) ||
       Number(b.via.some((v) => strong.has(v))) - Number(a.via.some((v) => strong.has(v))) ||
       b.id.localeCompare(a.id));
     console.log(`\n${slug}`);
     for (const h of hits) {
-      const mark = h.via.some((v) => strong.has(v)) ? '*' : ' ';
-      console.log(`${mark} ${h.id}  ${h.categories.join(',') || '—'}  ${h.submitted}  via ${h.via.join(', ')}`);
-      console.log(`    ${h.title}`);
+      const people = distinctPeople(h.via);
+      const mark = people > 1 ? '**' : h.via.some((v) => strong.has(v)) ? ' *' : '  ';
+      console.log(`${mark} ${h.id}  ${h.categories.join(',') || '—'}  ${h.submitted}  via ${people}: ${h.via.join(', ')}`);
+      console.log(`     ${h.title}`);
     }
   }
 
@@ -323,7 +349,8 @@ async function main() {
   }
 
   console.log(`\n${total} untracked arXiv ids across ${plans.length} labs.`);
-  console.log('Read the * rows first: those came from a people:-listed or frequent author.');
+  console.log('Read ** first (two or more distinct people from the lab), then * (one');
+  console.log('people:-listed or frequent author).');
   console.log('High-recall by design, and arXiv author search matches on name alone, so a');
   console.log('common name drags in every namesake. Read the title-page affiliations before');
   console.log('assigning a lab, and apply the AGENTS.md exclusion criteria.');

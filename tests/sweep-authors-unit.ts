@@ -4,19 +4,23 @@
  * The probe exists because arXiv has no affiliation field, so a lab-name search
  * cannot find a paper tied to the lab only by its title page. EMO (2605.13247,
  * MBZUAI-IFM) went unfiled for five months that way. The probe can regress
- * silently in four places, and each one puts us back where we started:
+ * silently in six places, and each one puts us back where we started:
  *
  *   1. the author index misses the person who would have found the paper;
- *   2. the listing parser stops matching arXiv's result markup;
+ *   2. the listing parser stops matching arXiv's API response shape;
  *   3. the tracked-id scan misses an id shape, so filed papers reappear as
  *      candidates and the real ones get skimmed past;
- *   4. the date floor is wrong, so recent papers get filtered out.
+ *   4. the date floor is wrong, so recent papers get filtered out;
+ *   5. throttled probes are not retried, so the run under-reports while
+ *      looking complete (the first full run lost 304 of 534 to HTTP 429);
+ *   6. one person's name variants count as two vouchers, inflating the
+ *      corroboration signal the triage ranks on.
  *
  * Run: npm run test:sweep-authors
  */
 import {
   harvestAuthors, trackedArxivIds, parseAuthorListing, untracked, yymmFloor, searchUrl,
-  isRetryable, backoffMs,
+  isRetryable, backoffMs, personKey, distinctPeople,
 } from '../scripts/sweep-authors';
 
 let failures = 0;
@@ -180,6 +184,24 @@ check('attribution keeps every author who surfaced a hit',
 check('attribution does not repeat an author',
   untracked([...via('Eric Xing'), ...via('Eric Xing')], new Set<string>(), yymmFloor('2026-05'))
     .every((e) => e.via.length === 1));
+
+// ------------------------------------------------------- author identity
+
+// Probing both spellings is deliberate — arXiv indexes them as separate
+// queries — but they must count as ONE voucher. Before this, 2609.34272 looked
+// twice-corroborated for MBZUAI off a single author, and its title page is
+// Rutgers/CMU/Oracle/NYU with no MBZUAI on it.
+check('personKey collapses a middle initial',
+  personKey('Eric Xing') === personKey('Eric P. Xing'), personKey('Eric P. Xing'));
+check('personKey keeps different people apart',
+  personKey('Eric Xing') !== personKey('Lei Xing'));
+check('personKey keeps same-surname different-initial apart',
+  personKey('Zhengzhong Liu') !== personKey('Pengfei Liu'));
+check('personKey survives a mononym', personKey('Plato') === 'plato');
+check('distinctPeople: name variants count once',
+  distinctPeople(['Eric Xing', 'Eric P. Xing']) === 1);
+check('distinctPeople: two people count twice',
+  distinctPeople(['Eric Xing', 'Zhengzhong Liu']) === 2);
 
 console.log(failures ? `\n${failures} failing` : '\nall passing');
 process.exit(failures ? 1 : 0);
