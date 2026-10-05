@@ -46,7 +46,7 @@ description: >
 
   <p>On where it actually lands, Reflection is more careful than the coverage
   around it. Its own table puts Beam roughly level with <strong>GLM 5.2</strong>
-  and ahead of <a href="/outputs/thinking-machines/inkling-small">Inkling</a> and
+  and ahead of <a href="/outputs/thinking-machines/inkling">Inkling</a> and
   <a href="/outputs/nvidia/nemotron-3-ultra">Nemotron 3 Ultra</a>, while
   <strong>GLM 5.3, <a href="/outputs/moonshot-ai/kimi-k3">Kimi K3</a>, Qwen
   3.8-Max and DeepSeek V4.1 Flash stay ahead on raw capability</strong>: Terminal
@@ -99,5 +99,5 @@ model:
       score: "78.7"
 related:
   - mopd
-  - inkling-small
+  - inkling
   - nemotron-3-ultra
