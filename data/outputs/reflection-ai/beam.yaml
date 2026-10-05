@@ -1,0 +1,103 @@
+name: Beam
+slug: beam
+lab: reflection-ai
+type: model
+date: 2026-10-05
+flagship: true
+sources:
+  - label: Announcement
+    url: https://reflection.ai/blog/introducing-beam
+  - label: API docs (model list)
+    url: https://developers.reflection.ai/models
+description: >
+  <p>Reflection AI's first model, and the first thing the lab trained itself
+  &mdash; a sparse MoE with <strong>501B total parameters and 23B active</strong>
+  across 52 layers, aimed at coding, reasoning and agentic work. Announced on
+  October 5, 2026 with an early-access signup rather than a download: Beam is
+  <strong>still undergoing final red-teaming</strong>, and the weights, technical
+  report, model card and fine-tuning stack are promised <strong>later in
+  October</strong> under <strong>Apache 2.0</strong>. The API serves it as
+  <code>Beam-501B-A23B</code> with a 262,144-token context, 131,072-token maximum
+  output and mandatory reasoning at five effort levels; knowledge cutoff is June
+  30, 2026. Reflection reports midtraining extended the effective context to
+  <strong>1M tokens</strong>, which the beta API does not yet expose.</p>
+
+  <p>The architecture is built for RL to run on top of it without falling over.
+  Interleaved local and global attention, fine-grained routed experts, and three
+  stacked stability choices: <strong>auxiliary-loss-free load balancing</strong>
+  after <a href="/outputs/deepseek/deepseek-v3">DeepSeek</a>, extended with cosine
+  decay of the expert-bias updates to quiet routing churn late in training, plus
+  sequence-level balancing to keep utilization even on data outside the
+  pretraining distribution &mdash; the finished base reportedly reaches a busiest
+  expert load of just <strong>1.04&times;</strong>. The residual stream gets
+  depth-based scaling, SandwichNorm, elementwise attention gating and FP32
+  accumulation, which Reflection says holds residual RMS bounded across all 52
+  layers. Pretraining ran on <strong>23.8T tokens</strong> over
+  <strong>6,144 NVIDIA GB300 NVL72</strong> GPUs in under four weeks, after a
+  ladder of smaller models established a scaling recipe the lab says held across
+  four orders of magnitude of compute. The RL phase is the larger number:
+  <strong>over 100 million rollouts on 10.5K GB300s across four weeks</strong>.
+  Alignment was trained as a <em>separate</em> model from the same base, then
+  merged with the capability teacher by
+  <a href="/outputs/xiaomi/mopd">multi-teacher on-policy distillation</a>, using
+  deliberative alignment and an adversarially-rebuilt SFT mixture; they report
+  forecasting alignment-RL gains at r&nbsp;=&nbsp;0.79 against 0.46 for a
+  Best-of-N ceiling.</p>
+
+  <p>On where it actually lands, Reflection is more careful than the coverage
+  around it. Its own table puts Beam roughly level with <strong>GLM 5.2</strong>
+  and ahead of <a href="/outputs/thinking-machines/inkling-small">Inkling</a> and
+  <a href="/outputs/nvidia/nemotron-3-ultra">Nemotron 3 Ultra</a>, while
+  <strong>GLM 5.3, <a href="/outputs/moonshot-ai/kimi-k3">Kimi K3</a>, Qwen
+  3.8-Max and DeepSeek V4.1 Flash stay ahead on raw capability</strong>: Terminal
+  Bench v2.1 80.1 against 88.2 / 88.3 / 86.6 / 90.6, HLE without tools 36.2
+  against 42.3 / 46.9 / 43.6 / 39.1, and DeepSWE v1.1 44.4 against DeepSeek's
+  74.2. Beam's best showings are SWE-Bench Verified <strong>80.9</strong>,
+  SWE-Bench Pro v2-Hard 77.2, SWEBench Multilingual 78.0, AIME 2026 97.8 and GPQA
+  Diamond 90.5. The actual pitch is <strong>efficiency</strong>: GLM-5.2-comparable
+  reasoning at <strong>3&ndash;4&times; less inference compute</strong>, which is a
+  claim about active-parameter count rather than accuracy, and one Reflection
+  computes itself as 2 &times; active parameters &times; mean generated tokens
+  using Artificial Analysis and DataCurve figures. All benchmark numbers are
+  self-reported, with no technical report and no third-party scoring yet;
+  Artificial Analysis and OpenRouter do not list the model. Laskin told Semafor
+  that CAISSI and the UK AI Security Institute are assessing Beam, which neither
+  the launch post nor Reflection's safety page mentions and neither body has
+  confirmed.</p>
+tags:
+  - moe
+  - open-weight
+  - reasoning
+  - agentic
+  - code
+  - long-context
+model:
+  architecture: moe
+  parameters: 501B
+  active_parameters: 23B
+  context_window: 262144
+  training_tokens: 23.8T
+  training_hardware: 6,144 NVIDIA GB300 NVL72 (pretraining); 10.5K GB300 (RL)
+  training_time: under 4 weeks pretraining; 4 weeks RL
+  license: Apache 2.0 (announced; weights not yet released)
+  benchmark_scores:
+    - benchmark: SWE-Bench Verified
+      score: "80.9"
+    - benchmark: SWE-Bench Pro v2-Hard
+      score: "77.2"
+    - benchmark: SWEBench Multilingual
+      score: "78.0"
+    - benchmark: Terminal Bench v2.1
+      score: "80.1"
+    - benchmark: AIME 2026
+      score: "97.8"
+    - benchmark: GPQA Diamond
+      score: "90.5"
+    - benchmark: HLE (no tools)
+      score: "36.2"
+    - benchmark: MCP Atlas
+      score: "78.7"
+related:
+  - mopd
+  - inkling-small
+  - nemotron-3-ultra

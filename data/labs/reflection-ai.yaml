@@ -1,0 +1,101 @@
+name: Reflection AI
+slug: reflection-ai
+url: https://reflection.ai
+wikipedia: https://en.wikipedia.org/wiki/Reflection_AI
+huggingface: https://huggingface.co/reflection
+github: https://github.com/reflectionai
+region: usa
+founded: "2024-03"
+type: private
+valuation:
+  amount: "$8B"
+  type: private
+  date: "2025-10"
+description: >
+  <p><a href="https://en.wikipedia.org/wiki/Reflection_AI">Reflection AI</a> is a
+  New York company founded in March 2024 by two former Google DeepMind
+  researchers, <strong>Misha Laskin</strong> (CEO) and <strong>Ioannis
+  Antonoglou</strong> (President and CTO), to build what it calls
+  <strong>America's open frontier AI lab</strong> &mdash; an explicit answer to
+  the Chinese labs that had come to dominate open weights. Antonoglou joined
+  DeepMind in 2012, before the Google acquisition, and is an author on DQN,
+  AlphaGo, AlphaGo Zero, AlphaZero and MuZero; Laskin's work includes CURL, RAD
+  and in-context RL via algorithm distillation. Both are authors on the Gemini
+  1.0 and 1.5 reports.</p>
+
+  <p>The company took until October 2026 to ship a model. Its first product,
+  <strong>Asimov</strong> (July 2025), was a closed enterprise code-comprehension
+  agent running on third-party models, and has since been removed from the site;
+  <a href="/outputs/reflection-ai/beam">Beam</a>, a 501B-A23B open-weight MoE, is
+  the first thing Reflection trained itself, with a second artifact
+  &mdash; <strong>Mirror</strong>, an agent harness &mdash; shipping the same day
+  from <a href="https://github.com/reflection-oss">github.com/reflection-oss</a>
+  as prebuilt binaries under no stated license.</p>
+
+  <p>Funding has moved faster than output: <strong>$130M</strong> across seed and
+  Series A (March 2025, ~$545M post-money) from Sequoia, CRV and Lightspeed, then
+  a <strong>$2B Series B</strong> in October 2025 at an <strong>$8B</strong>
+  post-money led by <strong>Nvidia</strong> ($800M), with Eric Schmidt, Citi, DST,
+  B Capital, GIC and Zoom Ventures. Laskin confirmed in April 2026 that a further
+  round had closed at a <strong>$25B pre-money</strong> valuation; the raise
+  itself was never announced, so the amount (reported around $2.5B, implying
+  roughly $27.5B post-money) is not company-confirmed, and the figure here stays
+  at the last disclosed post-money. Total raised is reported near $4.7B. The
+  compute commitments are larger than the equity: <strong>$150M a month from July
+  2026 through 2029</strong> for Nvidia GB300 capacity in SpaceXAI's Colossus 2
+  (a ~$6.3B ceiling, terminable on 90 days' notice), over <strong>$1B</strong>
+  with Nebius, a 250MW sovereign data-centre MOU with Shinsegae in South Korea,
+  and a May 2026 agreement to supply models to the US Department of Energy's
+  Genesis Mission and the National Laboratories.</p>
+people:
+  - name: Misha Laskin
+    role: CEO & Co-founder
+    formerly: Google DeepMind (general agents; Gemini RL/RLHF); UC Berkeley postdoc with Pieter Abbeel; PhD U. Chicago (theoretical physics)
+    url: https://mishalaskin.github.io/
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=4qGVREYAAAAJ
+    description: >
+      <p>Publishes as <strong>Michael Laskin</strong>. Yale (physics and literature), PhD in many-body quantum physics at the University of Chicago, then a Berkeley postdoc with Pieter Abbeel before Google DeepMind, where he worked on the general agents team and then Gemini's RL/RLHF work. First author of <strong>CURL</strong> (contrastive unsupervised RL) and <strong>RAD</strong> (data augmentation for RL), first author of <strong>in-context RL via algorithm distillation</strong>, and a co-author of <strong>Decision Transformer</strong> and of the Gemini 1.0 and 1.5 reports.</p>
+  - name: Ioannis Antonoglou
+    role: President, CTO & Co-founder
+    formerly: Google DeepMind 2012-2024 (joined pre-acquisition); PhD UCL under David Silver
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=3ka3LZAAAAAJ
+    description: >
+      <p>One of DeepMind's early engineers, joining in 2012 when the team was around 20-25 people. An author on nearly every landmark in the DeepMind RL lineage: <strong>DQN</strong> (both the 2013 preprint and the 2015 Nature paper), <strong>Prioritized Experience Replay</strong>, <strong>AlphaGo</strong>, <strong>AlphaGo Zero</strong>, <strong>AlphaZero</strong> and <strong>MuZero</strong>, plus the Gemini 1.0 and 1.5 reports. His 2023 UCL PhD, <em>Learning to Search in Reinforcement Learning</em>, was supervised by David Silver. Roughly 145K citations.</p>
+  - name: Irwan Bello
+    role: Former Post-Training Lead (founding team, 2024-2026)
+    formerly: Google Brain 2016-2022; Character.AI founding team; OpenAI 2023-2024 (GPT-4 Technical Report author)
+    url: https://irwanbello.github.io/
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=mY6p8gcAAAAJ
+    description: >
+      <p>Led post-training on the founding team and has since departed. Sole author of <strong>LambdaNetworks</strong>, a Google Brain researcher 2016-2022, on Character.AI's founding team, and an author of the <strong>GPT-4 Technical Report</strong> during his 2023-2024 spell at OpenAI.</p>
+news:
+  - title: "Reflection AI Unveils Beam, a 501B-A23B Open-Weight MoE; Weights, Technical Report and Model Card Promised Later in October"
+    url: https://reflection.ai/blog/introducing-beam
+    source: Reflection AI
+    date: 2026-10-05
+  - title: "Reflection CEO Confirms Latest Funding Round Closed at $25 Billion Pre-Money Valuation"
+    url: https://www.cnbc.com/video/2026/04/23/reflection-ceo-on-ai-race-the-best-open-models-are-coming-from-china.html
+    source: CNBC
+    date: 2026-04-23
+  - title: "Reflection Signs Over $1B Compute Deal with Nebius for Nvidia GB300 Capacity Through 2029"
+    url: https://techcrunch.com/2026/07/14/reflection-inks-1b-compute-deal-with-nebius/
+    source: TechCrunch
+    date: 2026-07-14
+  - title: "SpaceXAI Signs Colossus 2 Compute Deal with Reflection: $150M a Month from July 2026 Through 2029 (~$6.3B Ceiling)"
+    url: https://www.axios.com/2026/06/22/open-source-ai-gets-more-compute-from-spacex
+    source: Axios
+    date: 2026-06-22
+  - title: "Reflection to Supply AI Models for the US Department of Energy's Genesis Mission and National Laboratories"
+    url: https://www.axios.com/2026/05/22/reflection-ai-genesis-mission-energy-partnership
+    source: Axios
+    date: 2026-05-22
+  - title: "Reflection Raises $2B Led by Nvidia at an $8B Valuation to Be America's Open Frontier AI Lab"
+    url: https://techcrunch.com/2025/10/09/reflection-raises-2b-to-be-americas-open-frontier-ai-lab-challenging-deepseek/
+    source: TechCrunch
+    date: 2025-10-09
