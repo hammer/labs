@@ -1,0 +1,100 @@
+name: Mistral Large 4
+slug: mistral-large-4
+lab: mistral
+type: model
+date: 2026-10-06
+flagship: true
+sources:
+  - label: Announcement
+    url: https://mistral.ai/news/mistral-large-4/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/mistral-large-4
+description: >
+  <p>Mistral's largest model, launched as a public preview on October 6, 2026
+  &mdash; <strong>ML4</strong>, or as Mistral insists, <em>le Chonk</em>. A
+  <strong>1 trillion-parameter natively multimodal MoE with 49B active</strong>,
+  trained from scratch on <strong>3,800 NVIDIA Grace Blackwell GPUs in Mistral's
+  own European datacenters</strong>, which also serve the preview. Weights are
+  promised under open weights <strong>by the end of October</strong>; until then
+  it is API-only on Mistral Studio while the model is red-teamed with
+  cybersecurity leaders, vetted partners and state authorities, who get a version
+  with reduced moderation and expanded cyber capabilities. Artificial Analysis
+  has already scored the preview at <strong>38</strong> on its Intelligence
+  Index &mdash; 64th of 225, above the 26 median &mdash; listing a 524K context
+  window at $1.36 in / $4.18 out per million tokens, and classing it proprietary
+  until the weights land. A large share of training data was multilingual across
+  <strong>more than 160 languages</strong>, including every official EU language.</p>
+
+  <p>The sharpest claim is about <strong>cybersecurity</strong>, and it is a
+  claim about refusals as much as capability. On the AA Cyber Index, ML4 ranks
+  top five globally and leads non-Chinese open-weight models; on the index test
+  that asks a model to reproduce a real vulnerability in open-source software and
+  then patch it, it scores <strong>82%, the highest of any model</strong>, and it
+  solves <strong>93% of Cybench</strong>'s 40 competition exercises. Mistral's
+  point is that <a href="/outputs/anthropic/claude-opus-5.5">Claude Opus 5.5</a>
+  and <a href="/outputs/openai/gpt-6-astra">GPT-6 Astra</a> score near zero on
+  that test <em>because they refuse</em>, and that defending software starts with
+  proving a flaw is real &mdash; so provider-level refusals can block legitimate
+  vulnerability research mid-incident. The counterweight is in their own safety
+  section: ML4's average refusal rate on cyber prompts from JailbreakBench,
+  StrongREJECT and AgentHarm is reported as <em>higher</em> than every other OSS
+  model they measured. It resists <strong>93.3%</strong> of attacks on Lakera's
+  public B3 benchmark and scores 1.691 of a possible 2 on KORABench.</p>
+
+  <p>Elsewhere the numbers are strong but the comparisons are narrower than the
+  framing. Coding: 61.7% DeepSWE v1.1, 59.4% SWE-Atlas-QnA, 28.3% Terminal-Bench
+  4, a combined Coding Agent Index of <strong>49.8%</strong> ahead of DeepSeek V4
+  Pro 0813 and Qwen3.8-Max &mdash; all taken from Artificial Analysis's coding
+  index rather than self-run. Agentic: <strong>59.9%</strong> on AutomationBench's
+  657 business workflows and 1,393 Elo on AA-Briefcase. Multimodal is where
+  Mistral claims to pass closed frontier models, on visual grounding, by one
+  point &mdash; Dense 200 42% against GPT-6-Astra's 41%. It reports
+  state-of-the-art SciCode-Verified among open-weight models, and third-party
+  vals.ai evaluations beating GPT-6-Astra on legal and financial tasks. Two
+  honest results sit alongside those: a blind five-model human evaluation run
+  with Surge AI put ML4 <strong>second (3.74)</strong>, ahead of GLM-5.3 (3.60)
+  and Kimi K3 (3.59) but well behind <strong>Claude Opus 5 at 4.22</strong>; and
+  Mistral's own expert annotators preferred ML4 over GLM-5.3 on CAD and STEM
+  while rating it only <strong>on par or close in finance and coding</strong>.
+  The RL run behind the preview is described as still in flight and showing no
+  saturation, producing roughly 33B tokens a day at 3K GPUs (about 16B trainable
+  after filtering), funded by the <strong>&euro;3B Series D</strong> Mistral calls
+  the largest equity round ever raised by a European technology company.</p>
+tags:
+  - moe
+  - multimodal
+  - open-weight
+  - agentic
+  - code
+  - cybersecurity
+  - multilingual
+model:
+  architecture: moe
+  parameters: 1T
+  active_parameters: 49B
+  context_window: 524288
+  training_hardware: 3,800 NVIDIA Grace Blackwell
+  intelligence_index: 38
+  intelligence_index_version: "AA v4.3.2"
+  license: Open weights (announced; release promised end of October 2026)
+  benchmark_scores:
+    - benchmark: Cybench
+      score: "93%"
+    - benchmark: AA Cyber Index (reproduce-and-patch test)
+      score: "82%"
+    - benchmark: DeepSWE v1.1
+      score: "61.7%"
+    - benchmark: SWE-Atlas-QnA
+      score: "59.4%"
+    - benchmark: Terminal-Bench 4
+      score: "28.3%"
+    - benchmark: Coding Agent Index (combined)
+      score: "49.8%"
+    - benchmark: AutomationBench
+      score: "59.9%"
+    - benchmark: Lakera B3 (attack resistance)
+      score: "93.3%"
+related:
+  - mistral-large-3
+  - mistral-medium-3.5
+  - mistral-small-4

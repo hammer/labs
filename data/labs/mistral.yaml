@@ -93,6 +93,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=1MSpdmQAAAAJ
 news:
+  - title: "Mistral Launches Mistral Large 4 Preview (\"le Chonk\"): 1T-Parameter Natively Multimodal MoE, 49B Active, Trained on 3,800 Grace Blackwell GPUs in Its Own European Datacenters; Open Weights Promised End of October"
+    url: https://mistral.ai/news/mistral-large-4/
+    source: Mistral AI
+    date: 2026-10-06
   - title: "Mistral Acquires Ad-Tech Startup Pimento (~€12.7M), Its Third Acquisition of 2026"
     url: https://www.techcentral.ie/mistral-makes-third-acquisition-of-2026/
     source: TechCentral.ie
