@@ -1,5 +1,11 @@
 import { chromium } from 'playwright';
 
+// Base URL is overridable so this suite can run against a dev server on a
+// non-default port, matching tests/mobile-smoke.mjs. Hardcoding 4321 here
+// meant BASE_URL was silently ignored and the run died on connection
+// refused when the dev server was elsewhere.
+const BASE = process.env.BASE_URL ?? 'http://localhost:4321';
+
 const browser = await chromium.launch({ headless: true });
 const errs = [];
 
@@ -20,7 +26,7 @@ function log(name, ok, detail = '') {
 // ── Home: clean load ─────────────────────────────────────────────────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
   const t = await page.evaluate(() => ({
     rows: document.querySelectorAll('.lab-row').length,
     visible: Array.from(document.querySelectorAll('.lab-row')).filter(r => r.style.display !== 'none').length,
@@ -34,7 +40,7 @@ function log(name, ok, detail = '') {
 // ── Home: URL filter ─────────────────────────────────────────────────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/?region=china&intelligence=30-', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/?region=china&intelligence=30-`, { waitUntil: 'networkidle' });
   const t = await page.evaluate(() => ({
     visible: Array.from(document.querySelectorAll('.lab-row')).filter(r => r.style.display !== 'none').length,
     chips: document.querySelectorAll('.filter-chip').length,
@@ -50,7 +56,7 @@ function log(name, ok, detail = '') {
 // Structural: no pinned counts (flagship totals shift with data).
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/timeline', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/timeline`, { waitUntil: 'networkidle' });
   const snap = () => page.evaluate(() => {
     const rows = [...document.querySelectorAll('tr[data-flagship]')].filter(r => r.style.display !== 'none');
     return {
@@ -78,7 +84,7 @@ function log(name, ok, detail = '') {
 // ── Home: f opens palette, position is below button ──────────────────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
   await page.keyboard.press('f');
   await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
   const pos = await page.evaluate(() => {
@@ -98,7 +104,7 @@ function log(name, ok, detail = '') {
 // ── Home: Esc closes palette ─────────────────────────────────────────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
   await page.keyboard.press('f');
   await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
   await page.keyboard.press('Escape');
@@ -110,7 +116,7 @@ function log(name, ok, detail = '') {
 // ── Home: pick Region → China, verify URL + visible count ───────────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
   await page.keyboard.press('f');
   await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
   await page.keyboard.type('reg');
@@ -129,7 +135,7 @@ function log(name, ok, detail = '') {
 // ── Home: only-link selects single value ─────────────────────────────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
   await page.keyboard.press('f');
   await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
   await page.keyboard.type('reg');
@@ -149,7 +155,7 @@ function log(name, ok, detail = '') {
 // ── Home: All / None / Invert ────────────────────────────────────────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
   await page.keyboard.press('f');
   await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
   await page.keyboard.type('reg');
@@ -175,7 +181,7 @@ function log(name, ok, detail = '') {
 // ── Home: chip × removes filter ──────────────────────────────────────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/?region=china,korea&type=public', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/?region=china,korea&type=public`, { waitUntil: 'networkidle' });
   const before = await page.evaluate(() => document.querySelectorAll('.filter-chip').length);
   await page.click('.chip-x[data-dim-key=type]');
   await page.waitForTimeout(100);
@@ -190,7 +196,7 @@ function log(name, ok, detail = '') {
 // ── Home: Clear all ──────────────────────────────────────────────────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/?region=china', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/?region=china`, { waitUntil: 'networkidle' });
   await page.click('.clear-all');
   await page.waitForTimeout(100);
   const t = await page.evaluate(() => ({
@@ -205,7 +211,7 @@ function log(name, ok, detail = '') {
 // ── Home: j/k after filtering ────────────────────────────────────────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/?region=korea', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/?region=korea`, { waitUntil: 'networkidle' });
   await page.keyboard.press('j');
   await page.keyboard.press('j');
   const t = await page.evaluate(() => {
@@ -219,7 +225,7 @@ function log(name, ok, detail = '') {
 // ── Timeline: clean load — general colset, scoped dims hidden ────────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/timeline', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/timeline`, { waitUntil: 'networkidle' });
   await page.keyboard.press('f');
   await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
   const t = await page.evaluate(() => ({
@@ -239,7 +245,7 @@ function log(name, ok, detail = '') {
 // ── Timeline: type=model reveals scoped dims in the palette ──────────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/timeline?type=model', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/timeline?type=model`, { waitUntil: 'networkidle' });
   await page.keyboard.press('f');
   await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
   const t = await page.evaluate(() => ({
@@ -253,7 +259,7 @@ function log(name, ok, detail = '') {
 // ── Timeline: ?type=model&arch=moe round-trip ────────────────────────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/timeline?type=model&arch=moe', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/timeline?type=model&arch=moe`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(150);
   const t = await page.evaluate(() => {
     const visible = Array.from(document.querySelectorAll('.tl-row')).filter(r => r.style.display !== 'none');
@@ -272,7 +278,7 @@ function log(name, ok, detail = '') {
 // ── Timeline: bare ?arch=moe is suspended (never filters invisibly) ──
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/timeline?arch=moe', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/timeline?arch=moe`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(150);
   const t = await page.evaluate(() => ({
     total: document.querySelectorAll('.tl-row').length,
@@ -287,7 +293,7 @@ function log(name, ok, detail = '') {
 // ── Timeline: scoped state suspends on type-widen, restores on re-narrow ──
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/timeline?type=model&arch=moe', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/timeline?type=model&arch=moe`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(150);
   const narrowed = await page.evaluate(() =>
     Array.from(document.querySelectorAll('.tl-row')).filter(r => r.style.display !== 'none').length);
@@ -320,7 +326,7 @@ function log(name, ok, detail = '') {
 // ── Timeline: type=model swaps the column set ────────────────────────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/timeline?type=model', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/timeline?type=model`, { waitUntil: 'networkidle' });
   await page.waitForFunction(() => document.getElementById('timeline-table').dataset.colset === 'model');
   const t = await page.evaluate(() => {
     const shown = k => getComputedStyle(document.querySelector(`th.col-${k}`)).display !== 'none';
@@ -370,7 +376,7 @@ function log(name, ok, detail = '') {
 // ── Timeline: eval colset + header sort ──────────────────────────────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/timeline?type=eval', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/timeline?type=eval`, { waitUntil: 'networkidle' });
   await page.waitForFunction(() => document.getElementById('timeline-table').dataset.colset === 'eval');
   await page.click('th.col-questions');
   await page.waitForTimeout(150);
@@ -397,13 +403,13 @@ function log(name, ok, detail = '') {
 // on an invisible column. ?type=model&sort=params must still restore.
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/timeline?sort=params', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/timeline?sort=params`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(250);
   const bare = await page.evaluate(() => ({
     activeSort: document.getElementById('timeline-table').dataset.activeSort ?? '(date)',
     firstDates: Array.from(document.querySelectorAll('.tl-row')).slice(0, 2).map(r => r.dataset.date),
   }));
-  await page.goto('http://localhost:4321/timeline?type=model&sort=params', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/timeline?type=model&sort=params`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(250);
   const scoped = await page.evaluate(() => ({
     activeSort: document.getElementById('timeline-table').dataset.activeSort,
@@ -418,7 +424,7 @@ function log(name, ok, detail = '') {
 // ── Timeline: widening type reverts an out-of-set sort to date ───────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/timeline?type=model&sort=params', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/timeline?type=model&sort=params`, { waitUntil: 'networkidle' });
   await page.waitForFunction(() => document.getElementById('timeline-table').dataset.colset === 'model');
   const before = await page.evaluate(() => window.location.search);
   // Widen the type filter: model + paper → colset falls back to general.
@@ -446,7 +452,7 @@ function log(name, ok, detail = '') {
 // ── Timeline: filter change preserves ?sort (non-destructive URL sync) ──
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/timeline?type=model&sort=aparams', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/timeline?type=model&sort=aparams`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(150);
   await page.keyboard.press('f');
   await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
@@ -464,7 +470,7 @@ function log(name, ok, detail = '') {
 // ── Timeline: range panel shows the coverage hint ─────────────────────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/timeline?type=model', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/timeline?type=model`, { waitUntil: 'networkidle' });
   await page.keyboard.press('f');
   await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
   await page.keyboard.type('training');
@@ -479,7 +485,7 @@ function log(name, ok, detail = '') {
 // ── Lab page: filter bar + URL sync ──────────────────────────────────
 {
   const page = await newPage();
-  await page.goto('http://localhost:4321/labs/openai', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/labs/openai`, { waitUntil: 'networkidle' });
   const before = await page.evaluate(() => Array.from(document.querySelectorAll('.output-item')).filter(i => i.style.display !== 'none').length);
   await page.click('.dim-wrap[data-dim-key=type] .dim-btn');
   await page.waitForSelector('.value-multi-list');
@@ -496,7 +502,7 @@ function log(name, ok, detail = '') {
 // ── Mobile: palette becomes bottom sheet ─────────────────────────────
 {
   const page = await newPage({ width: 375, height: 667 });
-  await page.goto('http://localhost:4321/', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
   await page.click('.palette-btn');
   await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
   const pos = await page.evaluate(() => {
@@ -520,7 +526,7 @@ function log(name, ok, detail = '') {
 // pop up, and the page doesn't scroll.
 {
   const page = await newPage({ width: 375, height: 667 });
-  await page.goto('http://localhost:4321/', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
   await page.click('.palette-btn');
   await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
   const t = await page.evaluate(() => ({
@@ -539,7 +545,7 @@ function log(name, ok, detail = '') {
 // backdrop handles outside-tap dismiss instead.
 {
   const page = await newPage({ width: 375, height: 667 });
-  await page.goto('http://localhost:4321/', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
   await page.click('.palette-btn');
   await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
   // Simulate a 200px scroll like an iOS keyboard-driven scroll would do
@@ -562,7 +568,7 @@ function log(name, ok, detail = '') {
 // ── Mobile: backdrop tap closes palette ──────────────────────────────
 {
   const page = await newPage({ width: 375, height: 667 });
-  await page.goto('http://localhost:4321/', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
   await page.click('.palette-btn');
   await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
   await page.click('.filter-backdrop');
@@ -580,7 +586,7 @@ function log(name, ok, detail = '') {
 // Anti-regression for the "page scrolls down but nothing pops up" report.
 {
   const page = await newPage({ width: 375, height: 667 });
-  await page.goto('http://localhost:4321/', { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
   await page.click('.palette-btn');
   await page.waitForFunction(() => !document.querySelector('.palette-panel').classList.contains('hidden'));
   await page.waitForTimeout(250);  // let any iOS-style scroll-into-view race fire
