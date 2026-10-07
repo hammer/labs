@@ -4,6 +4,7 @@
 //
 // Run with the dev server up:  npm run dev  &  node tests/mobile-smoke.mjs
 import { chromium } from 'playwright';
+import { readFileSync } from 'fs';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:4321';
 const browser = await chromium.launch({ headless: true });
@@ -73,6 +74,38 @@ for (const width of widths) {
     page = await goVisit(page, viewport, `${BASE}${path}`);
     const t = await overflowAt(page);
     log(`no h-overflow ${path} @ ${width}px`, t.scrollW <= t.innerW, JSON.stringify(t));
+  }
+  await page.close();
+}
+
+// ── Home-table trim-tier boundaries ───────────────────────────────────
+// The width list above steps in coarse jumps, so it can only catch an
+// overflow that happens to sit on a sampled width. The home table's real
+// risk is the pixel just *above* each trim tier, where a column set is
+// released into the narrowest viewport that must hold it: at 881px (880+1)
+// the 8-column set needed 882px and overflowed by 1px for months, unseen
+// between the 800 and 900 samples. Probe each boundary and the pixel above
+// it.
+//
+// The tier list is READ FROM THE STYLESHEET, not hardcoded. A hardcoded copy
+// would go stale the moment a breakpoint moved — which is precisely how the
+// 881px bug survived: the 880 boundary was correct when measured in 2026-07
+// and drifted as labs widened the table. Deriving it means the guard follows
+// the CSS automatically and picks up tiers added later.
+{
+  const css = readFileSync(new URL('../src/pages/index.astro', import.meta.url), 'utf-8');
+  const tiers = [...new Set(
+    [...css.matchAll(/@media \(max-width: (\d+)px\)/g)].map((m) => Number(m[1])),
+  )].sort((a, b) => a - b);
+  log('home trim tiers discovered from stylesheet', tiers.length > 0, tiers.join(', '));
+  const page = await newPage({ width: 900, height: 800 });
+  for (const tier of tiers) {
+    for (const width of [tier, tier + 1]) {
+      await page.setViewportSize({ width, height: 800 });
+      await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
+      const t = await overflowAt(page);
+      log(`no h-overflow / @ ${width}px (tier ${tier})`, t.scrollW <= t.innerW, JSON.stringify(t));
+    }
   }
   await page.close();
 }

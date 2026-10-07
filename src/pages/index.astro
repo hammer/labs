@@ -701,7 +701,15 @@ const dimensions: FilterDimension[] = [
     }
   }
 
-  @media (max-width: 880px) {
+  /* 883, not 880: the 8-column set (rank, Lab, Region, Type, Scale, Intel,
+     Openness, Out) needs 882px of intrinsic width, so releasing it at 881 left
+     a 1px overflow in an 881-883 band — measured 2026-10-07, clean from 884 up.
+     The old 880 boundary was correct when measured in 2026-07 and drifted as
+     labs were added; the table is width:100% with nowrap headers, so its
+     minimum tracks content. This band sat between the suite's 800 and 900
+     samples, which is why nothing caught it; tests/mobile-smoke.mjs now probes
+     just above every tier boundary. */
+  @media (max-width: 883px) {
     th.col-region, td.col-region,
     th.col-type, td.col-type {
       display: none;

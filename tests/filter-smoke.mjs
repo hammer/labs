@@ -27,7 +27,7 @@ function log(name, ok, detail = '') {
     hasFilterBar: !!document.querySelector('.filter-bar .palette-btn'),
     paletteHidden: document.querySelector('.palette-panel').classList.contains('hidden'),
   }));
-  log('home: clean load', t.rows === 108 && t.visible === 108 && t.hasFilterBar && t.paletteHidden, JSON.stringify(t));
+  log('home: clean load', t.rows === 111 && t.visible === 111 && t.hasFilterBar && t.paletteHidden, JSON.stringify(t));
   await page.close();
 }
 
@@ -42,7 +42,7 @@ function log(name, ok, detail = '') {
   }));
   // 13 → 11 after the from-scratch audit: Kuaishou (KAT-Coder-Pro V2 ← Qwen
   // base) and Nex-AGI (Nex-N2 ← Qwen3.5) no longer count toward Intelligence.
-  log('home: ?region=china&intelligence=30-', t.visible === 11 && t.chips === 2, JSON.stringify(t));
+  log('home: ?region=china&intelligence=30-', t.visible === 8 && t.chips === 2, JSON.stringify(t));
   await page.close();
 }
 
@@ -198,7 +198,7 @@ function log(name, ok, detail = '') {
     visible: Array.from(document.querySelectorAll('.lab-row')).filter(r => r.style.display !== 'none').length,
     url: window.location.search,
   }));
-  log('home: Clear all', t.chips === 0 && t.visible === 108 && t.url === '', JSON.stringify(t));
+  log('home: Clear all', t.chips === 0 && t.visible === 111 && t.url === '', JSON.stringify(t));
   await page.close();
 }
 
