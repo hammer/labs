@@ -1,0 +1,81 @@
+name: Rethinking Self-Distillation for Multi-Teacher Capability Merging
+slug: rethinking-mopd
+lab: apple
+type: paper
+date: 2026-10-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.04272
+description: >
+  <p>The controlled study the on-policy distillation wave has been missing, and
+  it comes out against the wave. Merging several experts trained from a shared
+  base is now routine in frontier post-training, and
+  <a href="/outputs/xiaomi/mopd">multi-teacher on-policy distillation</a> has
+  become the assumed-best way to do it. Apple and Duke argue that most of the
+  reported advantage is an artifact of <strong>training design choices and
+  hyperparameter tuning rather than the algorithm</strong>. Across two
+  multi-teacher settings &mdash; MIA (maths, instruction-following and agentic
+  experts, deliberately disjoint) and Agent&times;3 (ALFWorld, WebShop and
+  InterCode-SQL, deliberately overlapping) &mdash; four models (Qwen3-8B,
+  Qwen3-1.7B, Qwen3.5-4B-Base, Ministral-3-3B-Instruct) and eleven benchmarks,
+  they tune SFT, soft-label KD, offline MOPD and MOPD <em>independently</em>, up
+  to 160 configurations before seed replication. <strong>All four land at nearly
+  identical accuracy</strong> &mdash; on Qwen3-8B/MIA the in-domain recovery
+  rates are SFT 98.2, Soft-KD 97.3, Off-MOPD 96.9 and MOPD 97.9, inside each
+  other's error bars &mdash; while <strong>MOPD costs 14.8&ndash;23.1&times;
+  SFT's training GPU-hours</strong>.</p>
+
+  <p>The mechanism is the part worth keeping, because it generalizes beyond this
+  debate: <strong>learning rate alone moves SFT's validation score by 8.5 points
+  on MIA and 11.3 on Agent&times;3</strong>, and the tuned off-policy rates come
+  out about five times higher than the on-policy ones, so a shared learning rate
+  silently handicaps the off-policy baseline. Data filtering cuts the same way
+  &mdash; rejection-sampling teacher trajectories is worth 6.5&ndash;7.0 points to
+  SFT against 0.5&ndash;1.6 for the MOPD variants, so the cheaper method is the
+  one that benefits most from the care nobody spent on it. Then they reproduce
+  <strong>four published SFT-versus-OPD comparisons</strong> &mdash; Open-MOPD,
+  SKD, TCOD and <a href="/outputs/microsoft/reopd">ReOPD</a> &mdash; and report
+  that OPD's margin over a properly tuned, rejection-sampled SFT baseline is
+  smaller than published in <em>every one</em>. On ReOPD the published gap is 45.0
+  to 51.0; their rejection-sampled SFT reaches 54.6 against OPD's 54.7. On
+  TCOD their SFT reproduction alone scores 65.7 where the paper reported 28.8.</p>
+
+  <p>They also check the training-free option: simple <strong>weight
+  merging</strong> recovers expert capability in minutes of CPU time, scoring 98.9
+  in-domain recovery on Qwen3-8B/MIA &mdash; better than any of the four trained
+  methods there &mdash; though it degrades as models shrink and as task
+  interference rises. The honest asymmetry the entry should not bury is that SFT
+  is <em>not</em> uniformly equal: on out-of-domain retention it falls 3.0 points
+  from base where MOPD falls 0.8, so the cheap baseline matches on what it was
+  trained for and forgets more elsewhere. The paper's conclusion is a methods
+  demand rather than a new technique &mdash; tune the efficient baseline before
+  attributing a gap to the objective. Ten authors across
+  <strong>Apple</strong> and <strong>Duke University</strong>, every run on eight
+  B200 GPUs; code is announced at
+  <code>apple-aiml-research/ml-rethink-mopd</code> but the repository is not yet
+  public, the paper noting it is under legal review.</p>
+tags:
+  - distillation
+  - post-training
+  - efficiency
+  - evaluation
+  - research
+paper:
+  arxiv: "2610.04272"
+  authors:
+    - Roy Xie
+    - Dan Friedman
+    - Feng Nan
+    - Yukun Huang
+    - Zhichao Xu
+    - Chengjiu Zhang
+    - Jun Xu
+    - Manaal Faruqui
+    - Vivek Rathod
+    - Bhuwan Dhingra
+related:
+  - mopd
+  - reopd
+  - opd
+  - simple-self-distillation
+  - same-family-opd
