@@ -1,0 +1,67 @@
+name: Ling-3.1-flash
+slug: ling-3.1-flash
+lab: ant-group
+type: model
+date: 2026-09-30
+flagship: true
+sources:
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/ling-3-1-flash
+  - label: OpenRouter
+    url: https://openrouter.ai/inclusionai/ling-3.1-flash
+  - label: TechNode
+    url: https://technode.com/2026/09/30/ant-group-launches-ling-3-1-flash-with-560-billion-parameters/
+description: >
+  <p>inclusionAI's newest Ling, and a reminder that "flash" has stopped meaning
+  small. A hybrid-reasoning MoE with <strong>560B total parameters and about 25B
+  active</strong>, served with a <strong>262,144-token context</strong> and a
+  configurable reasoning effort. Two months earlier
+  <a href="/outputs/ant-group/ling-3.0">Ling 3.0</a> carried the same tier name at
+  124B total and 5.1B active; this is roughly <strong>4.5&times; the total
+  parameters and 5&times; the active</strong>, and Artificial Analysis scores it
+  <strong>41</strong> against Ling 3.0's 20 &mdash; a doubling of measured
+  intelligence inside a single minor version number. AA puts it well above the
+  median of 13 for comparable reasoning models in its price tier, listing $0.30
+  in / $0.90 out per million tokens. Ant positions it for agent workloads,
+  search, office software and vertical applications.</p>
+
+  <p>The notable thing about the release is how little of it is official. It went
+  out on <strong>September 30, 2026</strong> as a <strong>two-week free
+  trial</strong> &mdash; currently served at zero cost through OpenRouter by
+  <strong>Novita</strong> &mdash; with open weights promised afterwards and the
+  context window to be raised toward the <strong>1M tokens</strong> the model is
+  reportedly designed for, from the 256K the trial exposes. As of October 7,
+  <strong>inclusionAI has published nothing about it</strong>: no model card on
+  its HuggingFace org, nothing in its GitHub org, and no entry in its own blog,
+  changelog, pricing page or model docs at ant-ling.com, all of which still
+  present Ling-3.0-flash as the current release. So the model can be called and
+  independently benchmarked before its maker has described it, and every figure
+  here comes from Artificial Analysis, the OpenRouter endpoint, or press
+  reporting rather than from a technical report or model card that does not yet
+  exist.</p>
+
+  <p>That gap matters for how the entry should be read. There is no disclosed
+  architecture detail beyond the parameter split, no training-token count, no
+  hardware, no benchmark table from the lab, and no license text &mdash; "open
+  weights after the trial" is a stated intention, not a release. The AA score is
+  the one independently measured number, and it is measured against a hosted
+  endpoint that may not match whatever is eventually published. Worth revisiting
+  when the weights land: both to replace these sources with primary ones, and to
+  check whether the released checkpoint still scores 41.</p>
+tags:
+  - moe
+  - reasoning
+  - agentic
+  - long-context
+model:
+  architecture: moe
+  parameters: 560B
+  active_parameters: 25B
+  context_window: 262144
+  intelligence_index: 41
+  intelligence_index_version: "AA v4.3.2"
+  license: Open weights promised after the free-trial period; not yet released
+related:
+  - ling-3.0
+  - ling-2.6
+  - ling-3.0-flash-vl
