@@ -316,6 +316,8 @@ interface TopIntelligence {
   name: string;
   slug: string;
   labSlug: string;
+  /** Release date (YYYY-MM-DD) of the checkpoint holding the top AAII score. */
+  date: string;
   openness?: number;
   opennessVersion?: string;
 }
@@ -361,6 +363,7 @@ export function getTopIntelligence(labSlug: string): TopIntelligence | null {
     displayName: string,
     outputSlug: string,
     outLabSlug: string,
+    date: string,
   ) {
     const { intelligence_index: score, intelligence_index_version: version,
       openness_index: openness, openness_index_version: opennessVersion } = model;
@@ -369,7 +372,7 @@ export function getTopIntelligence(labSlug: string): TopIntelligence | null {
     if (model.pretrained_from_scratch === false) return;
     if (model.base_model && !labsOfOutputSlug(model.base_model).includes(labSlug)) return;
     const entry: TopIntelligence = {
-      score, name: displayName, slug: outputSlug, labSlug: outLabSlug,
+      score, name: displayName, slug: outputSlug, labSlug: outLabSlug, date,
       openness, opennessVersion,
     };
     if (!topAaii || score > topAaii.score) topAaii = entry;
@@ -385,12 +388,13 @@ export function getTopIntelligence(labSlug: string): TopIntelligence | null {
     if (isGrouped(output)) {
       for (const sub of output.outputs) {
         if (sub.model) {
-          check(sub.model, baseName, oSlug, oLab);
+          // A sub-output may carry its own date; fall back to the parent's.
+          check(sub.model, baseName, oSlug, oLab, sub.date ?? output.date);
         }
       }
     } else {
       if (output.model) {
-        check(output.model, baseName, oSlug, oLab);
+        check(output.model, baseName, oSlug, oLab, output.date);
       }
     }
   }

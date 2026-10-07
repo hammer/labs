@@ -102,6 +102,7 @@ const dimensions: FilterDimension[] = [
         <th class="col-valuation sortable" data-sort="valuation">Valuation</th>
         <th class="col-largest sortable" data-sort="largest">Scale</th>
         <th class="col-intelligence sortable" data-sort="intelligence"><span class="th-full">Intelligence</span><span class="th-short">Intel</span></th>
+        <th class="col-inteldate sortable" data-sort="inteldate"><span class="th-full">Intel Date</span><span class="th-short">Date</span></th>
         <th class="col-openness sortable" data-sort="openness">Openness</th>
         <th class="col-outputs sortable" data-sort="outputs"><span class="th-full">Outputs</span><span class="th-short">Out</span></th>
       </tr>
@@ -128,6 +129,7 @@ const dimensions: FilterDimension[] = [
               data-founded={founded} data-ipo={lab.ipo?.year ?? 0} data-ipo-status={ipoStatus}
               data-valuation={valNum}
               data-largest={largest?.paramsB ?? 0} data-intelligence={intel?.score ?? 0}
+              data-inteldate={intel?.date ?? ''}
               data-openness={intel?.openness ?? 0} data-outputs={count}>
             <td class="col-rank"></td>
             <td class="col-name">
@@ -168,6 +170,13 @@ const dimensions: FilterDimension[] = [
                 <a href={`/outputs/${intel.labSlug}/${intel.slug}`} class="col-link" onclick="event.stopPropagation()">
                   {intel.score}
                 </a>
+              ) : '—'}
+            </td>
+            <td class="col-inteldate">
+              {intel ? (
+                <span title={`${intel.name} (${intel.date}) holds this lab's top AAII score`}>
+                  {intel.date.slice(0, 7)}
+                </span>
               ) : '—'}
             </td>
             <td class="col-openness">
@@ -420,6 +429,11 @@ const dimensions: FilterDimension[] = [
         const diff = parseVal(av) - parseVal(bv);
         return sortAsc ? diff : -diff;
       }
+      // Everything else sorts as a string. `inteldate` belongs here, not in
+      // the numeric branch above: it is an ISO YYYY-MM-DD, which compares
+      // correctly lexicographically, whereas parseVal() would read it as the
+      // year alone and silently drop the month and day. Labs with no AAII
+      // model carry '' and sink on the default descending click.
       const cmp = av.localeCompare(bv);
       return sortAsc ? cmp : -cmp;
     });
@@ -692,6 +706,23 @@ const dimensions: FilterDimension[] = [
      the sets below each fit to the bottom of their bands. Re-measure with
      the sweep when adding a column or after data growth — lab-name and
      header changes moved these boundaries once before (#49 family). */
+
+  /* Intel Date is the first column to go: it annotates the Intelligence
+     column rather than standing alone, so it only earns its width on a wide
+     desktop. Its own tier sits above the 1176px one deliberately — dropping it
+     first leaves the 11-column set below untouched at the boundaries measured
+     in 2026-07, instead of widening them for a 12th column.
+
+     Measured 2026-10-07 (Playwright sweep, 1280-1460px in 10px steps): the
+     12-column set overflows from 1290 through 1360 (a 1300px viewport gives a
+     1333px scrollWidth) and is clean from 1370 up. The tier is set at 1399 to
+     keep ~30px of headroom, since lab-name and score growth have moved these
+     boundaries before. Re-measure when adding a column. */
+  @media (max-width: 1399px) {
+    th.col-inteldate, td.col-inteldate {
+      display: none;
+    }
+  }
 
   @media (max-width: 1176px) {
     th.col-founded, td.col-founded,
