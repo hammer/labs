@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "predev": "bash scripts/reap-workerd.sh",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "npm run build && wrangler dev",

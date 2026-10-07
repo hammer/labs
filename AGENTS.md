@@ -150,7 +150,7 @@ Do **not** add outputs that are:
 
 ```bash
 npm install              # Install dependencies
-npm run dev              # Dev server at localhost:4321
+npm run dev              # Dev server at localhost:4321 (predev reaps leaked workerd first)
 npm run validate         # Validate all YAML against Zod schemas
 npm run build            # Build static site (Astro SSG)
 npm run fetch-metrics    # Fetch GitHub/HF/citation metrics
@@ -158,6 +158,8 @@ npm run test:filter      # Filter UI smoke tests (needs dev server running)
 npm run test:mobile      # Responsive/mobile smoke tests (needs dev server running)
 npm run test:changelog   # /whats-new diff rendering: unit + real-history regression guard (no server)
 ```
+
+**Kill the dev server with SIGTERM, not `kill -9`.** `@astrojs/cloudflare` runs a `workerd` child per dev server and cleans it up from an exit handler, so a graceful stop takes the child with it. SIGKILL skips the handler, `workerd` has no parent-death watch, and the orphan reparents to init and lives forever holding ~60-70MB — the same goes for a supervisor restart or an OOM kill. Measured 2026-10-07: `kill -TERM` leaves nothing behind, `kill -9` leaves one every time. On this VM **49** had accumulated over ~64 days beside 12 abandoned dev servers, together holding ~4.4GB, until a Playwright suite could no longer run and stalled for 30 minutes producing nothing. `npm run dev` now reaps strays first via the `predev` hook (`scripts/reap-workerd.sh`), which bounds the leak at one; run it by hand after a hard kill. It only touches `workerd` that is both orphaned and running from this repo's `node_modules`, so a live dev server — including another checkout's — is never disturbed.
 
 **Run both smoke suites before shipping any UI change.** `test:mobile` asserts zero horizontal overflow on every key page type (home, timeline, lab, output, whats-new) at eight widths (320px floor per #49 through 900px) plus landscape, and guards desktop regressions (sticky table header, scroll-to-close). Both suites use structural assertions where possible, but `test:filter` pins some data counts that shift when labs are added — if it fails on counts after a data commit, update the expected numbers, don't suppress the test.
 
