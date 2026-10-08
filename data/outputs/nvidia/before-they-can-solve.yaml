@@ -1,0 +1,101 @@
+name: "Before They Can Solve: Predicting Post-Training Coding-Agent Performance from Base Models"
+slug: before-they-can-solve
+lab: nvidia
+type: paper
+date: 2026-10-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.10478
+description: >
+  <p>Which base checkpoint is worth an expensive round of agentic post-training?
+  The decision has to be made before the capability it is betting on can be
+  observed, and the paper's framing is that both available answers fail, in
+  opposite directions. End-to-end agentic benchmarks are <em>too agentic to
+  run</em>: on SWE-bench Verified a base checkpoint's pass@K sits near zero,
+  because untuned models cannot drive a tool-use harness at all, so the score
+  measures harness compliance rather than potential. Bounded coding benchmarks
+  are <em>not agentic enough to predict</em>: across ten pairs of open-source
+  base models and the checkpoints they became, Spearman correlation with
+  post-trained SWE-bench Verified pass@1 runs from <strong>0.830 on RepoBench
+  XFirst down to &minus;0.394 on HumanEval</strong> &mdash; the most famous
+  member of the family is <em>anti-correlated</em> with the thing you want to
+  predict, and nothing distinguishes the useful ones in advance.</p>
+
+  <p>The move is to borrow a lookahead signal from models that already work.
+  Replay a successful post-trained agent trajectory, rerun the task's tests
+  after every code-changing step, and find the <strong>decisive step</strong>:
+  the first step whose cumulative patch flips the repository from failing to
+  passing. The verifier has now certified that this one action solves the task
+  given everything before it, which turns a long agentic episode into a single
+  scored decision a base model can be asked about <em>without driving the
+  harness from a cold start</em>. Three screens sit at that step.
+  <strong>Decisive-Action BPB</strong> measures the probability mass the
+  checkpoint puts on the certified action, in bits normalized by byte length so
+  tokenizers stay comparable. <strong>Patch MCQ</strong> exists because
+  likelihood alone cannot separate a passing action from a near-identical
+  failing one &mdash; a single character can decide it &mdash; so it poses a
+  discriminative k-way choice between the golden action and alternatives the
+  same verifier rejected. <strong>Prefix-conditioned pass@K</strong> samples
+  continuations from the decisive step and credits any edit the tests accept,
+  asking a generative question rather than a scoring one.</p>
+
+  <p>All three rank the ten-checkpoint cohort in close agreement with
+  post-trained SWE-bench Verified pass@1: Decisive-Action BPB reaches Spearman
+  <strong>0.964</strong> on held-out trajectories from a <em>different</em>
+  benchmark (DeepSWE), Patch MCQ <strong>0.903</strong>, and prefix-conditioned
+  pass@16 <strong>0.988</strong>. The per-checkpoint behaviour is the more
+  convincing evidence: Decisive-Action BPB places DeepSeek V4 Flash above
+  <a href="/outputs/nvidia/nemotron-3-ultra">Nemotron Ultra</a> and Kimi K2
+  above Qwen 3.5 35B, matching downstream results and reversing orderings that
+  naive all-step BPB gets wrong &mdash; NVIDIA publishing a screen that ranks a
+  competitor above its own flagship is worth noting. The paper is also unusually
+  careful about what it has not shown, devoting an appendix to it: the
+  comparison against bounded benchmarks is <strong>not controlled</strong>,
+  since the baselines are single published scores while the probes run on
+  trajectories the authors chose, and every downstream number comes from a
+  different lab's post-training recipe and harness. It explicitly declines the
+  reading that bounded benchmarks measure nothing. Because the method needs only
+  a benchmark's successful trajectories and its verifier &mdash; the kind of
+  corpus NVIDIA released as
+  <a href="/outputs/nvidia/open-swe-traces">Open-SWE-Traces</a> &mdash; any
+  future agentic coding benchmark can be converted into a base-model evaluation.
+  NVIDIA with the University of Minnesota and UC Berkeley; corresponding author
+  Jiantao Jiao. No code released at filing.</p>
+tags:
+  - rl
+  - rl-scaling
+  - post-training
+  - evaluation
+  - agents
+  - code
+  - research
+paper:
+  arxiv: "2610.10478"
+  authors:
+    - Tan Yu
+    - Alexander Bukharin
+    - Khushi Bhardwaj
+    - Jennifer Williams
+    - Zirui Liu
+    - Jonathan Lingjie Li
+    - Soumye Singhal
+    - Joseph Jennings
+    - Sanjeev Satheesh
+    - Yash Jain
+    - Ashish Vaswani
+    - Venkat Krishna Srinivasan
+    - Matthew Papakipos
+    - Hyunwoo Kim
+    - Jian Zhang
+    - Oleksii Kuchaiev
+    - Markus Kliegl
+    - Mostofa Patwary
+    - Mohammad Shoeybi
+    - Bryan Catanzaro
+    - Jonathan Cohen
+    - Jiantao Jiao
+related:
+  - open-swe-traces
+  - pivotopd
+  - tailsft
+  - swe-hero
