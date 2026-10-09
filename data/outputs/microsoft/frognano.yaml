@@ -1,0 +1,83 @@
+name: FrogNano
+slug: frognano
+lab: microsoft
+type: model
+date: 2026-09-07
+sources:
+  - label: Technical report (arXiv)
+    url: https://arxiv.org/abs/2609.07925
+  - label: HuggingFace
+    url: https://huggingface.co/microsoft/FrogNano-4B-2609
+  - label: Project page
+    url: https://microsoft.github.io/debug-gym/#frognano
+description: >
+  <p>A <strong>4B coding agent</strong> from the Froggy team at Microsoft
+  Research Montréal, post-trained from Qwen3.5-4B <strong>exclusively with
+  RL</strong> on roughly 1,500 software-engineering environments — and
+  notably <strong>without any distillation from a larger model</strong>, which
+  is the usual way small agents are made. It resolves <strong>61.5% of
+  SWE-bench Verified</strong>, 37.6% of SWE-bench Pro, 31.1% of Terminal-Bench
+  v2 and 47.3% of PatchEval-Verified, averaged over three runs, beating models
+  an order of magnitude larger. Weights are on HuggingFace under
+  <strong>MIT</strong>, and the community has already produced GGUF
+  quantizations — fitting for a model whose pitch is running on minimal
+  hardware.</p>
+
+  <p>The central idea is <strong>TaskPilot</strong>, an online task-synthesis
+  loop: each iteration generates about 300 fresh synthetic tasks calibrated to
+  the <strong>learnability frontier of the current checkpoint</strong>, then
+  trains on them, then regenerates against the improved policy. The claim the
+  report defends is not just that synthetic tasks suffice, but that
+  <em>recalibrating them to the agent as it improves</em> is what makes them
+  work — the comparison line uses real tasks from SWE-rebench and Scale-SWE,
+  filtered by learnability for the same 4B policy. Training is continuous
+  group-relative RL (DPPO) in 200-update climbs, policy weights carrying across
+  iterations while optimizer and RNG state reset, on a single node of
+  <strong>8 NVIDIA B200s</strong> — two training with context parallelism, six
+  serving rollouts, 32 task groups of 8 trajectories per update.</p>
+
+  <p>A finding worth more than the headline: <strong>the harness was a
+  bottleneck before the model was</strong>. Their initial R2E-Gym setup, with
+  its elaborate workflow, multi-purpose editor and dedicated finish action, was
+  something Qwen3.5-4B could not reliably follow, so they built a simpler one
+  called <strong>Leaf</strong>. Interface choices that frontier models absorb
+  invisibly turn into failure modes at 4B. The efficiency numbers follow the
+  same theme — FrogNano averages 87.1 turns against the base model's 100.5,
+  hits the turn cap on 9.8% of trajectories versus 31.6%, and never overflows
+  the context window where the base does. The report is also candid about
+  artifacts and risk: an early checkpoint opened by searching for TypeScript
+  files in 82.27% of cases despite Python-only training data (surviving into
+  only 4% of evaluation trajectories), and the limitations section states
+  plainly that rewards and scores rest on tests that cover only part of a
+  program's behaviour, so <strong>a passing patch can still be incorrect or
+  insecure</strong>, with agents trained this way liable to misread
+  requirements, invent APIs, make overly broad edits and introduce regressions.
+  Scope is English-language, Python-heavy repositories; generalization beyond
+  that, and to other tool interfaces and budgets, is explicitly not
+  established.</p>
+tags:
+  - agents
+  - code
+  - reinforcement-learning
+  - post-training
+  - open-weight
+  - research
+model:
+  base_model: qwen3.5
+  training_hardware: 8x NVIDIA B200
+  license: MIT
+  benchmark_scores:
+    - benchmark: SWE-bench Verified
+      score: "61.5%"
+    - benchmark: SWE-bench Pro
+      score: "37.6%"
+    - benchmark: Terminal-Bench v2
+      score: "31.1%"
+    - benchmark: PatchEval-Verified
+      score: "47.3%"
+paper:
+  arxiv: "2609.07925"
+related:
+  - before-they-can-solve
+  - agent-lightning-v1
+  - qwen3.5
