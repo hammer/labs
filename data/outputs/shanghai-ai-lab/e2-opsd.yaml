@@ -1,0 +1,78 @@
+name: "E²-OPSD: Taming Entropy Overshoot in On-Policy Self-Distillation"
+slug: e2-opsd
+lab: shanghai-ai-lab
+type: paper
+date: 2026-10-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.05048
+description: >
+  <p>On-policy self-distillation gets dense token-level supervision out of a
+  single network: the same model plays teacher, conditioned on the reference
+  solution, and student, given only the problem. This paper names a failure
+  mode that recipe produces, <strong>entropy overshoot</strong> &mdash; instead
+  of settling toward the teacher, the student grows steadily <em>more</em>
+  uncertain during training, passes the teacher's entropy and stays above it.
+  Useful exploration spills into persistent excess uncertainty.</p>
+
+  <p>The diagnosis blames both halves of the setup, which is what makes it
+  interesting. On the teacher side, conditioning on the answer lets it leap
+  from the student's prefix straight to the destination; it is confident along
+  that answer-directed path but <strong>markedly less certain on the prefixes
+  the student actually produces</strong>, so its supervision encodes
+  answer-specific cues rather than reusable reasoning. On the loss side, the
+  forward KL that OPSD uses keeps diffusing the student's distribution with
+  nothing pulling it back. <strong>E²-OPSD</strong> treats each cause
+  separately. <em>Exemplar-guided teaching</em> swaps the current answer for a
+  retrieved <strong>solved neighbouring problem</strong>, so the teacher has to
+  follow the student's intermediate state and work the problem itself &mdash;
+  the paper's phrase is turning <em>answer leakage into strategy transfer</em>,
+  and it keeps the teacher inside states the student can reach.
+  <em>Entropy-aware distillation</em> exploits the fact that the two KLs do
+  opposite jobs: forward KL explores across teacher-supported alternatives,
+  reverse KL strips unsupported mass and concentrates the policy. So the
+  student&ndash;teacher entropy gap picks the direction and strength of every
+  token's correction, routing between them per token instead of committing to
+  one.</p>
+
+  <p>Four configurations across two families &mdash; Qwen3-0.6B and Qwen3-1.7B
+  with thinking on, Qwen3-4B-Instruct-2507, Olmo-3-7B-Instruct &mdash; trained
+  on DeepMath-103K against Base, OPSD, SDPO and GRPO. Maths reasoning improves
+  by up to <strong>4.3 points mean@16</strong> over OPSD on AMC23, AIME'24,
+  AIME'25 and HMMT'25; out of domain, on ZebraLogic and HumanEval, it gains up
+  to <strong>4.9 mean@16 and 5.5 pass@8</strong> over the base models. The
+  ablations go after the mechanism rather than the total: state-dependent KL
+  routing beats any fixed direction, exemplar guidance is what makes the
+  teacher locally learnable, and the adaptive gap damping sharpens the routing.
+  They also report an emergent exploration-to-concentration transition, which
+  is the behaviour the entropy story predicts. Two things to hold it lightly
+  by: the out-of-domain logical-reasoning result uses a fixed 100-puzzle
+  ZebraLogic subset chosen for tractability, and the largest model tested is
+  7B. The method's own selling point is that it costs nothing structural
+  &mdash; no extra forward passes, no second network. Shanghai AI Laboratory
+  leads, with SJTU, ICT CAS, Hunan, Westlake, Nanjing, CUHK and Zhejiang; no
+  code released at filing.</p>
+tags:
+  - distillation
+  - post-training
+  - rl
+  - reasoning
+  - training-stability
+  - research
+paper:
+  arxiv: "2610.05048"
+  authors:
+    - Yifei Liu
+    - Minghao Fang
+    - Xinyu Gu
+    - Chengkai Yao
+    - Mengdi Liu
+    - Tengfei Ma
+    - Jiangbin Zheng
+    - Chang Yu
+    - Zhangyang Gao
+related:
+  - privileged-context-opsd
+  - pivotopd
+  - dopd
+  - opd
