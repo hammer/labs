@@ -29,9 +29,28 @@ description: >
   <p>The practical consequence is a measurement one. Any leaderboard that reports
   a model's agentic score has silently fixed a harness, and a benchmark that
   compares models under one scaffold is measuring the pairing rather than the
-  model &mdash; which is why the same model can appear to lead and trail on the
-  same benchmark in different papers. Bo An's group at Nanyang Technological
-  University; no code released at filing.</p>
+  model. Bo An's group at Nanyang Technological University; no code released at
+  filing, though the paper reports releasing 6,204 scored trajectories.</p>
+
+  <p><strong>This result is contested, and the disagreement is the more useful
+  thing to know.</strong> Three papers from the same fortnight reach weaker or
+  opposite conclusions about how much the harness moves the score with the model
+  held fixed. <em>What Does a Harness Buy? Tokens, Mostly</em>
+  (<a href="https://arxiv.org/abs/2610.04433">arXiv:2610.04433</a>, 3 Oct) runs
+  five models through three production harnesses and reports that swapping the
+  harness flips no more tasks than simply <em>rerunning</em> the same one &mdash;
+  13% either way &mdash; with the only effect clearing noise being cost, up to
+  3&times;. <em>Beyond the Model</em>
+  (<a href="https://arxiv.org/abs/2609.32459">arXiv:2609.32459</a>) finds
+  component value depends jointly on model capability and task type, with
+  context compression and general subagents sometimes actively hurting. And
+  <em>How Much of a Harness Does a Strong Agent Need for Autonomous ML
+  Engineering?</em> (<a href="https://arxiv.org/abs/2609.40303">arXiv:2609.40303</a>,
+  EPFL and Apple) reports that elaborate MLE harnesses buy nothing over a single
+  session of a minimal read/write/bash agent at equal time budget. All four are
+  in dialogue with <a href="/outputs/peking/harness-bench">Harness-Bench</a>.
+  Treat the 38-point swing as one lab's measurement on one benchmark set, not a
+  settled property of harnesses.</p>
 tags:
   - agents
   - evaluation
@@ -50,5 +69,6 @@ paper:
     - Feng Chen
     - Bo An
 related:
+  - harness-bench
   - openhands
   - deepseek-harness
