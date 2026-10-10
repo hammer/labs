@@ -1,0 +1,54 @@
+name: "Finding the Right Fit: Model–Harness Interactions across Agent Tasks"
+slug: model-harness-interactions
+lab: ntu
+type: paper
+date: 2026-10-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.00917
+description: >
+  <p>Choosing an agent system means choosing two things, a model and the harness
+  it acts through, and almost everything published treats one of them as fixed.
+  This paper varies both. It evaluates <strong>66 configurations</strong> &mdash;
+  four configurable harnesses (<a href="/outputs/cmu/openhands">OpenHands</a>,
+  <a href="/outputs/deepseek/deepseek-harness">DeepSeek Harness</a>, PI and
+  openJiuwen) across five models on TUA-Bench, ALE-CLI and Terminal-Bench 4,
+  plus the native Codex&ndash;GPT and Claude Code&ndash;Claude pairings &mdash;
+  and asks whether a strong model, a strong harness, or a strong pairing stays
+  strong when the setting changes.</p>
+
+  <p>It does not. <strong>Model rankings reverse across harnesses</strong>: on
+  Terminal-Bench 4, Claude leads GPT by <strong>7.94 points under OpenHands and
+  trails it by 30.16 under PI</strong> &mdash; a 38-point swing produced by
+  changing nothing but the scaffold. For four of the five models the best harness
+  changes from one benchmark to another, so there is no harness to recommend
+  unconditionally and no model ranking that survives a change of execution
+  layer. Some pairings do hold across settings, which is the constructive half of
+  the result: the unit that behaves consistently is the pair, not either part.</p>
+
+  <p>The practical consequence is a measurement one. Any leaderboard that reports
+  a model's agentic score has silently fixed a harness, and a benchmark that
+  compares models under one scaffold is measuring the pairing rather than the
+  model &mdash; which is why the same model can appear to lead and trail on the
+  same benchmark in different papers. Bo An's group at Nanyang Technological
+  University; no code released at filing.</p>
+tags:
+  - agents
+  - evaluation
+  - harness
+  - research
+paper:
+  arxiv: "2610.00917"
+  authors:
+    - Yixuan Li
+    - Yiyun Zhou
+    - Yao Long Teng
+    - Fuchao Yang
+    - Yanchen Deng
+    - Zhiyi Lyu
+    - Xuyu Dong
+    - Feng Chen
+    - Bo An
+related:
+  - openhands
+  - deepseek-harness
