@@ -1,0 +1,98 @@
+name: "Towards Looped Models Done Right, Part II: Rethinking at Fixed Points"
+slug: looped-models-done-right-part-ii
+lab: mbzuai
+type: paper
+date: 2026-10-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.06833
+  - label: GitHub
+    url: https://github.com/ifm-ai/xllm-loop
+  - label: HuggingFace (checkpoints)
+    url: https://huggingface.co/collections/IFM/towards-looped-models-done-right-6ab9f671bb1c97e33b27d14c
+  - label: Blog (Part I)
+    url: https://huskydoge.github.io/husky-blog/posts/recursive_models/towards-looped-models-done-right/
+description: >
+  <p>Looped language models reuse a block of layers several times per token, buying
+  effective depth without new parameters. The bill arrives everywhere else: "every
+  recurrence of a looped language model adds cost in training, decoding, prefill, and
+  reinforcement learning." This paper's organizing claim is that
+  <strong>as recurrent states approach fixed points, the path to them stops
+  mattering</strong>, so the endpoint can stand in for the whole trajectory. That is
+  an empirical property of a particular model, not a universal one, and the paper
+  leads with the counterexample: reusing terminal KV caches across loops barely
+  changes Huginn's zero-shot GSM8K but <em>collapses</em> that of
+  <a href="/outputs/bytedance-seed/ouro">Ouro</a> at four loops &mdash; because
+  Huginn's states converge and Ouro's do not. Four shortcuts follow from tolerant
+  fixed points: truncated backpropagation in pretraining, terminal-KV sharing in
+  decoding, a distilled student for prefill, and RL updates computed from saved
+  rollout states.</p>
+
+  <p>So the method targets the two training components that <em>shape</em> those
+  fixed points. First, the <strong>depth prior</strong>: fixed-depth training breaks
+  KV sharing outright, while Huginn's broad Poisson-lognormal prior supports sharing
+  but dilutes supervision at the target depth more than sharing actually requires.
+  They replace it with a categorical distribution over depths learned from prediction
+  feedback, plus an entropy term that keeps it broad and a budget term. Second,
+  <strong>input injection</strong>: Huginn's and Parcae's schemes leave the state's
+  component along the injected input unconstrained, so depending on sign it amplifies
+  or cancels the injection; <strong>orthogonal injection (OrthoInj)</strong> projects
+  that component out so every recurrence receives the input at the same strength.</p>
+
+  <p>Trained at three scales &mdash; S (100M, 21.5B tokens), M (400M, 85.9B) and L
+  (1.6B, 343.6B) &mdash; the learned prior lowers validation perplexity by
+  <strong>0.7&ndash;1.8%</strong> relative to the fixed PLN-5 prior for at most 1.6%
+  more training FLOPs, and at <strong>1.6B with a 3&times; smaller KV cache it
+  matches the full-cache downstream average of fixed-depth training</strong>. The
+  entropy term is load-bearing: without it, GSM8K at L drops from
+  <strong>47.92 to 36.47</strong>. The contrast case is stark &mdash; fixed-depth
+  training with full backpropagation through time, then terminal sharing, sends GSM8K
+  from <strong>50.6 to 21.2</strong>, while entropy-regularized learned-prior models
+  stay within <strong>0.4 points</strong> of their full-cache downstream average.
+  OrthoInj beats Parcae's injection, the strongest baseline, by
+  <strong>0.3&ndash;1.4%</strong> validation perplexity across all three scales.</p>
+
+  <p>The two new shortcuts are honest about their costs. Distilled prefill, trained
+  on a quarter of the teacher's pretraining tokens, is <strong>1.5&ndash;1.8&times;
+  faster</strong> on 8K prompts (up to <strong>1.79&times;</strong>) but trails the
+  teacher's downstream average by <strong>1.0 (S), 2.3 (M) and 4.5 (L)</strong>
+  points &mdash; a gap that grows with scale; at matched latency it is only
+  0.5&ndash;0.9 points above simply stopping the teacher at two recurrences. Reusing
+  rollout states for RL cuts scoring and backward time <strong>1.99&times; on GSM8K
+  and 2.02&times; on MBPP+</strong> versus replaying the loops with full BPTT, and
+  stays within 1.6 points of that baseline's GSM8K pass@1 (all four variants move
+  GSM8K pass@1 from 40.6% to 60&ndash;63% and MBPP+ from 30.9% to 37&ndash;41%). The
+  authors' own limitations: models up to 1.6B with <strong>one seed per
+  configuration</strong>, ablations that "do not exhaust the design space," and
+  larger scales left untested. Part I &mdash; topology, input injection and
+  recurrent-state organization, 17 dense and MoE recipes &mdash; exists so far only
+  as a blog post, with its PDF and arXiv link listed as "to be added." The
+  <code>xllm-loop</code> release (~39 stars, Apache 2.0) adds looped-Transformer and
+  Huginn architectures with depth-controlled training to MBZUAI-IFM's xLLM, and
+  publishes <strong>49 checkpoints</strong> across both parts (25 for Part I, 24 for
+  Part II), including <code>ouro</code>-topology recipes. Same MBZUAI-IFM and USC-ISI
+  pairing as <a href="/outputs/mbzuai/emo-extendable-moe">EMO</a>; for the MoE side
+  of looped models at matched compute, see
+  <a href="/outputs/tsinghua/smelt">SMELT</a>.</p>
+tags:
+  - architecture
+  - reasoning
+  - efficiency
+  - research
+  - rl
+  - distillation
+paper:
+  arxiv: "2610.06833"
+  authors:
+    - Benhao Huang
+    - Chufan Shi
+    - Junlin Chen
+    - Shicheng Wen
+    - Zhengzhong Liu
+    - Eric Xing
+    - Xuezhe Ma
+related:
+  - ouro
+  - smelt
+  - emo-extendable-moe
+  - k2-horizon

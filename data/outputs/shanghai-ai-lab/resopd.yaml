@@ -1,0 +1,113 @@
+name: "ResOPD: Tail Residualization for Sparse On-Policy Distillation"
+slug: resopd
+lab: shanghai-ai-lab
+type: paper
+date: 2026-10-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.04882
+  - label: GitHub
+    url: https://github.com/InternLM/ResOPD
+  - label: HuggingFace (dataset)
+    url: https://huggingface.co/datasets/ygyjrc/ResOPD-deepmath
+description: >
+  <p>On-policy distillation gets its density from the teacher's full
+  next-token distribution, which is exactly what you cannot afford to move
+  across a 30K-token reasoning trace. Production systems therefore expose a
+  <strong>sparse teacher interface</strong> &mdash; the sampled token's score,
+  or a small Top-<em>k</em> head &mdash; and that forces a choice this paper
+  frames as a dilemma. Optimise a Top-<em>k</em> objective and you are solving
+  a <em>biased</em> surrogate (the paper shows the truncated, renormalised and
+  stopped-coefficient variants are all biased). Keep the full-vocabulary
+  reverse-KL objective and estimate its gradient from the sparse payload and
+  you stay unbiased but noisy: sampled-token OPD reads one token's score and
+  pays single-sample Monte Carlo variance, while <strong>HETS</strong>
+  (Head-Exact Tail-Sampled, the hybrid from Zhang and Ba's EMA-PG) integrates
+  the head exactly but treats the tail correction as entirely unknown
+  <em>despite knowing its aggregate mass</em>. Every tail hit must then
+  compensate for the whole omitted mass. Even at 98.4% head coverage a
+  30K-token trace contains <strong>460&ndash;470 such spikes</strong>, thousands
+  per optimizer step &mdash; which is why both sampled-token OPD and HETS peak
+  early and degrade later in training.</p>
+
+  <p>ResOPD attacks the estimator rather than the objective. The authors first
+  show that <em>any</em> estimator that evaluates the head exactly, adds a
+  prefix-dependent control vector weighted by the student's tail mass, and
+  corrects on tail hits is unbiased for the full-vocabulary reverse-KL gradient
+  &mdash; HETS being the special case of a zero control. A covariance-trace
+  decomposition then splits the variance into a control-invariant within-tail
+  sampling term and a <strong>between-event term proportional to the control's
+  distance from the true tail mean</strong>, which names HETS's spikes
+  precisely: a zero control pays for the full tail mean on every hit. The fix
+  is that the residual masses outside the head already define a coarse
+  pseudo-token whose analytic gradient is a computable predictor of that mean.
+  So ResOPD integrates the coarse (<em>k</em>+1)-way distribution exactly on
+  every draw and samples only the unresolved fine-tail residual on tail hits
+  &mdash; same payload, <strong>no extra teacher queries or forward passes</strong>.
+  The release is a core implementation on top of <a
+  href="/outputs/hku/verl">verl</a> at a pinned revision.</p>
+
+  <p>Two kinds of evidence. In exact frozen-prefix audits that enumerate every
+  next-token action at student-visited prefixes, ResOPD lowers the gradient
+  covariance trace by <strong>52.5&ndash;75.0%</strong> relative to
+  sampled-token OPD under Top-4 feedback, below both HETS and a payload-matched
+  vOPD baseline. End to end, distilling Qwen3.5-27B into Qwen3.5-4B on DeepMath
+  gives <strong>50.12% average</strong> against 45.72% for HETS (+4.40) over
+  DeepMath held-out, AIME26 (30 problems), HMMT26 (33) and the English split of
+  OlymMATH (200), with avg@16 on the two small competition sets and avg@2
+  elsewhere; a science-and-coding transfer from Qwen3-30B-A3B-Instruct to
+  Qwen3-4B reaches <strong>44.15%</strong> against 43.63%. Robustness is the
+  more convincing result: pushed to a 5&times;10<sup>-6</sup> learning rate,
+  HETS collapses from 45.94% to 42.54% while ResOPD holds 46.35%, widening its
+  lead to +3.81 points.</p>
+
+  <p>The paper is unusually careful about what this does not buy. Variance
+  reduction "does not imply monotonic downstream accuracy gains" &mdash;
+  ResOPD can suppress gradient noise without beating HETS at every checkpoint.
+  The advantage over HETS narrows as <em>k</em> grows, since a larger head
+  absorbs more mass and tail corrections get rarer. The apparent super-teacher
+  code scores are retracted in the text: paired bootstrap 95% CIs cross zero
+  (ResOPD&minus;Teacher spans [&minus;2.48,&nbsp;+5.33] on LiveCodeBench v6), so
+  on-par rather than significant &mdash; and plain sampled-token OPD is the
+  strongest method on the science tasks. Most pointedly, the concurrent SC-TA
+  estimator has <em>strictly lower</em> covariance trace than ResOPD across all
+  three audited prompt distributions (DeepMath, MegaScience, SynLogic), with
+  only 18.0% of SynLogic prefixes favouring ResOPD, yet ResOPD takes the higher
+  terminal score &mdash; the authors read this decoupling as informative rather
+  than contradictory. Unbiasedness also assumes ancestral full-support
+  on-policy sampling: truncated sampling, stale rollouts, repeated optimisation
+  passes and sampling-altering logits processors need separate treatment. The
+  released port excludes Megatron students, SGLang teachers, fused loss kernels
+  and chunked Top-<em>k</em>, and its validation covers 22 standalone and 13
+  integration checks with no full GPU training run.</p>
+
+  <p>It sits next to MBZUAI's <a href="/outputs/mbzuai/ier-opd">IER-OPD</a> on
+  the complementary axis of the same problem: IER-OPD asks which tokens carry a
+  gradient worth estimating at all, ResOPD asks how much of the gradient you
+  can recover exactly from whatever payload the teacher already sent. Shanghai
+  AI Laboratory with SJTU, USTC and Fudan; authors include Kai Chen and Yuhang
+  Zang, who also appear on the lab's <a
+  href="/outputs/shanghai-ai-lab/e2-opsd">E&sup2;-OPSD</a> cluster of October
+  distillation work. ~23 GitHub stars at filing; Apache-2.0.</p>
+tags:
+  - opd
+  - distillation
+  - post-training
+  - rl
+  - efficiency
+  - research
+paper:
+  arxiv: "2610.04882"
+  code_url: https://github.com/InternLM/ResOPD
+  huggingface_url: https://huggingface.co/datasets/ygyjrc/ResOPD-deepmath
+  authors:
+    - Penghui Yang
+    - Long Xing
+    - Xuanlang Dai
+    - Ziyu Liu
+    - Kai Chen
+    - Yuhang Zang
+related:
+  - ier-opd
+  - e2-opsd
+  - verl

@@ -47,7 +47,8 @@ description: >
   judges it comparable to Claude Mythos 5.1 in biology and cybersecurity.
   External pre-release testing came from Frontier Design and METR.
   <a href="/outputs/anthropic/claude-sonnet-5.5">Sonnet 5.5</a> followed on
-  September 28; Haiku 5.5 is due in the coming weeks.</p>
+  September 28 and <a href="/outputs/anthropic/claude-haiku-5.5">Haiku 5.5</a>
+  on October 7, completing the generation.</p>
 tags:
   - frontier
   - reasoning

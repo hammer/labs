@@ -1,0 +1,124 @@
+name: "AdvancedMathBench: A Benchmark Suite for Advanced Mathematical Proof Generation and Verification"
+slug: advancedmathbench
+lab: shanghai-ai-lab
+type: eval
+date: 2026-09-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2607.11849
+  - label: GitHub
+    url: https://github.com/InternLM/AdvancedMathBench
+  - label: HuggingFace (dataset)
+    url: https://huggingface.co/datasets/internlm/AdvancedMathBench
+  - label: HuggingFace (AutoVerifier)
+    url: https://huggingface.co/internlm/AdvancedMathBench-AutoVerifier
+description: >
+  <p>Models now clear high-school and competition mathematics, and the
+  benchmarks that measured that progress score a final answer. Advanced
+  mathematics does not have final answers &mdash; it has proofs, where the
+  interesting failure is a step, not a result. AdvancedMathBench is built
+  around that: a benchmark suite for <strong>reasoning process</strong>
+  correctness in natural-language proofs at undergraduate (UG) and doctoral
+  qualifying-exam (QE) level, drawn from examinations, competitions and
+  textbooks. It has three pieces. <strong>ProverBench</strong> is 245
+  expert-reviewed proof problems (200 UG, 45 QE). <strong>VerifierBench</strong>
+  is 888 model-generated proof trajectories (168 UG, 720 QE) carrying full-chain
+  expert annotations that separate <strong>fatal from recoverable errors</strong>
+  and include the expert's explanation. <strong>AutoVerifier</strong> is a
+  trained proof verifier &mdash; a Qwen3.5-MoE checkpoint of roughly 68 GiB
+  &mdash; that makes ProverBench scorable without a human, under a deliberately
+  pessimistic protocol: a proof is accepted only when <strong>all eight
+  verifier judgments</strong> accept it.</p>
+
+  <p>The paper preceded the artifacts by two and a half months. It first
+  appeared on arXiv on 13 July 2026, describing an earlier revision with 296
+  ProverBench problems and 13 authors; the author-approved final manuscript is
+  dated 28 September 2026, and the repository, the Hugging Face dataset and the
+  AutoVerifier checkpoint all landed on <strong>29 September 2026</strong>,
+  alongside the matching arXiv v2 with 245 problems, 888 proofs and Zhouqi Hua
+  added as fifth author. The release notes warn that counts and results from
+  different manuscript versions should not be mixed.</p>
+
+  <p>Frontier models do not do well. The best prover, GPT-5.5-xhigh, reaches
+  <strong>64.5 on UG and 48.9 on QE</strong>; Claude-Opus-4.8 gets 59.0 / 40.0,
+  DeepSeek-V4-Pro 54.0 / 40.0, and gpt-oss-120b 20.5 / 2.2. The lab scores its
+  own model honestly at the bottom of the open-source block: <a
+  href="/outputs/shanghai-ai-lab/intern-s2-preview">Intern-S2-Preview-35B</a>
+  manages 27.0 / 16.7. Verification is where the suite earns its design. The
+  best Balanced F1 (the harmonic mean of TPR and TNR) is only
+  <strong>65.1</strong>, and the TPR/TNR split exposes models that simply
+  accept: Claude-Opus-4.8 has the highest true-positive rate at 96.4 but a
+  37.9 TNR, for a 54.4 Balanced F1, and Gemini-3.1-Pro-Preview runs 94.0 / 49.0.
+  Adding <strong>meta-verification</strong> &mdash; does the model's error
+  analysis agree with the expert annotation, judged by gpt-oss-120b &mdash;
+  pulls every TNR down further (DeepSeek-V4-Pro 55.8, Claude-Opus-4.8 35.0,
+  gpt-oss-120b 32.0), which is the suite's sharpest finding: agreeing with an
+  expert's binary verdict is not the same as identifying the right error, and
+  proof-generation rank does not predict proof-verification rank.</p>
+
+  <p>Caveats the release states itself. The published tables are
+  paper-reported measurements, not reproductions from the standalone evaluator;
+  the manuscript used four independent responses at temperature 1.0 with 128k
+  maximum output and highest reasoning effort, while the CLI defaults to one
+  sample and the example configs to 65,536 tokens, so "example settings are not
+  a turnkey reproduction of paper results". <strong>No code license is
+  declared</strong>, and dataset and checkpoint terms are separate. The
+  repository ships only the evaluator, three task prompts and pinned download
+  helpers &mdash; not the internal training framework or the
+  dataset-construction pipeline &mdash; and full GPU inference of AutoVerifier
+  is not covered by its offline tests. Where OpenBMB's <a
+  href="/outputs/openbmb/ma-proofbench">MA-ProofBench</a> tests the same two
+  difficulty tiers through Lean 4 and Mathlib, AdvancedMathBench keeps the
+  proofs in natural language and pays for it with a trained verifier and
+  888 annotated trajectories. Shanghai AI Lab; Lingkai Kong first author, with
+  Wenwei Zhang and Kai Chen. The GitHub repository was still at 0 stars at
+  filing, with 1 like on each Hugging Face artifact.</p>
+tags:
+  - eval
+  - benchmark
+  - math
+  - reasoning
+  - research
+eval:
+  num_questions: 245
+  domains:
+    - undergraduate mathematics
+    - doctoral qualifying-exam mathematics
+  scoring_method: >
+    ProverBench: pessimistic AutoVerifier acceptance (a proof counts only if
+    all eight judgments accept). VerifierBench: Balanced F1, the harmonic mean
+    of TPR and TNR, over correct/incorrect polarity (Rough) and over agreement
+    with expert error analyses (Meta-Verification, judged by gpt-oss-120b).
+  top_scores:
+    - model: GPT-5.5-xhigh
+      score: "64.5 UG / 48.9 QE (ProverBench)"
+    - model: Claude-Opus-4.8
+      score: "59.0 UG / 40.0 QE (ProverBench)"
+    - model: DeepSeek-V4-Pro
+      score: "65.1 Meta Balanced F1 (VerifierBench)"
+paper:
+  arxiv: "2607.11849"
+  code_url: https://github.com/InternLM/AdvancedMathBench
+  huggingface_url: https://huggingface.co/datasets/internlm/AdvancedMathBench
+  authors:
+    - Lingkai Kong
+    - Zijian Wu
+    - Yuzhe Gu
+    - Haiteng Zhao
+    - Zhouqi Hua
+    - Wenyong Huang
+    - Shuang Sun
+    - Zhicheng Xiong
+    - Xiaotian Zhang
+    - Shuya Zhao
+    - Yan Wang
+    - Disheng Xu
+    - Wenwei Zhang
+    - Kai Chen
+related:
+  - ma-proofbench
+  - intern-s2-preview
+notes: >
+  Dated to the 2026-09-29 artifact release (GitHub repo, HF dataset and
+  AutoVerifier), not to the 2026-07-13 arXiv v1, which described an earlier
+  296-problem ProverBench revision.

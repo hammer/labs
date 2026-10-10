@@ -1,0 +1,79 @@
+name: "Choruz: An Agent Workspace That Learns From Your Work"
+slug: choruz
+lab: ant-group
+type: library
+date: 2026-09-02
+sources:
+  - label: GitHub
+    url: https://github.com/inclusionAI/Choruz
+description: >
+  <p>Every published coding-agent number is measured on somebody else's tasks.
+  Choruz, from Ant's inclusionAI org, starts from the observation that the
+  benchmark you actually care about is the work you already did, and that the
+  thing worth changing in response is not the model. It is an agent workspace
+  for <strong>Codex, Claude Code and Muse</strong> that asynchronously turns
+  your interaction traces into <strong>personalized benchmarks</strong>, then
+  uses them to adapt the harness &mdash; the README's own line is "this adapts
+  the harness, not the model's weights", and the selection criterion is
+  explicitly task suitability, "not a provider model's parameter count or
+  billing cost". That is a <strong>model&ndash;harness-pairing thesis</strong>
+  stated as a product.</p>
+
+  <p>The loop runs behind your foreground work: your task plus the agent's
+  actions plus your real feedback &rarr; background trace analysis &rarr;
+  personalized benchmark cases &rarr; evaluation of candidate prompt and team
+  changes &rarr; reviewed improvements applied to future tasks. Three choices
+  give it teeth. Cases carry an input, an expected outcome, and either an exact
+  check or an independent AI judge, with <strong>curated training, validation
+  and held-out splits</strong> so evaluation stays separate from optimisation.
+  The analysis and evaluation standards are held fixed while the agent's
+  instructions and execution team are allowed to move &mdash; you cannot
+  improve the scorecard, only the harness. And escalation is gated: prompt
+  changes come first, and only <em>a documented recurrence after guidance was
+  already used</em> unlocks changes to collaborator count, role prompts and
+  execution order; revisions can be restored or cleared. A nice detail in the
+  trace-labelling: "an unsuccessful exploration is not automatically an agent
+  mistake."</p>
+
+  <p>The pairing claim becomes concrete in selective provider-model execution.
+  Once you configure a smaller provider model, a validated finite-output
+  program can complete applicable turns <strong>without native inference</strong>,
+  with confidence and applicability checks, recorded model attribution, and
+  abstentions or provider failures falling back to the original agent. The
+  README refuses the obvious overclaim twice: this is "not blanket replacement
+  of arbitrary tasks or a guaranteed cost saving", and of the demo, "no
+  measured improvement or cost saving is claimed." Claude Code, Codex, Muse
+  Code and webhook-driven external agents are supported by default, with
+  plugins for Grok, Pi, OpenCode and MathCode &mdash; but <strong>native trace
+  learning currently covers only Codex and Claude Code</strong>; Muse runs in
+  the workspace without a learning adapter yet.</p>
+
+  <p>Engineering-wise it is a real workspace rather than a library wrapper:
+  Rust plus Node.js 24 and PostgreSQL 16, with the <code>choruz-learning</code>,
+  <code>choruz-evaluation</code> and <code>choruz-decision</code> crates usable
+  independently of the UI, a published OpenAPI contract, WebSocket sync,
+  webhook agents and Slack/Telegram bridges. It is labelled a
+  <strong>Developer Preview</strong> whose interfaces, configuration and data
+  formats may change incompatibly, and the background analysis runs in separate
+  asynchronous sessions that consume the selected account's own usage. Where <a
+  href="/outputs/ant-group/antomnievo">AntOmniEvo</a>, Ant's other
+  auto-evolution release of the same month, optimises a directory of tunable
+  artifacts against an eval set you supply, Choruz generates the eval set from
+  your traces first. Apache-2.0, <strong>~1,024 GitHub stars</strong> and 9
+  forks at filing. Note that Ant publishes from both
+  <code>ant-research</code> and <code>inclusionAI</code> on GitHub.</p>
+tags:
+  - agents
+  - agent-harness
+  - agentic
+  - framework
+  - evaluation
+  - open-source
+library:
+  github: https://github.com/inclusionAI/Choruz
+  language: Rust
+  license: Apache-2.0
+related:
+  - antomnievo
+  - autosaddler
+  - helix

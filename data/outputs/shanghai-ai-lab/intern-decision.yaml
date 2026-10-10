@@ -1,0 +1,77 @@
+name: Intern-Decision
+slug: intern-decision
+lab: shanghai-ai-lab
+type: model
+date: 2026-09-24
+sources:
+  - label: GitHub
+    url: https://github.com/InternLM/Intern-Decision
+  - label: HuggingFace
+    url: https://huggingface.co/collections/internlm/intern-decision
+description: >
+  <p>Ask a chat model to decide something and you get prose plus a confidence
+  number nobody fitted. Intern-Decision is built the other way round: it is a
+  <strong>decision model, not a generator</strong>. A request carries a state,
+  optional images, and several typed questions &mdash; <code>choice</code>,
+  <code>score</code>, and <code>noul</code> (yes/no) &mdash; and the model
+  returns an answer per field with a probability attached. The repository's
+  framing is explicit about what it does <em>not</em> ship: training data,
+  the private calibration and validation records, the images, and the data
+  preparation pipelines all stay in-house; what is published is the runtime
+  schema, both inference backends, the benchmark scoring, the temperature
+  calibration machinery, and a browser demo.</p>
+
+  <p>The mechanism is a trick with markers rather than a new architecture. The
+  assistant input is a complete JSON skeleton with one <code>&lt;decision&gt;</code>
+  token per field, and the ground-truth answer symbols appear only in the
+  labels, never in the input &mdash; so ordinary causal next-token alignment
+  makes the logit immediately <em>before</em> a marker predict that field's
+  answer, and all fields are resolved in <strong>one causal forward pass</strong>.
+  Training cross-entropy runs over the full vocabulary; at inference the logits
+  are restricted to the legal single-token answer symbols, softmaxed, and mapped
+  back to the original labels. Training fine-tunes the language backbone of
+  <a href="/outputs/alibaba/qwen3.5">Qwen3.5</a> while <strong>freezing the
+  vision tower and projector</strong>, via <a
+  href="/outputs/shanghai-ai-lab/xtuner">XTuner</a> at a pinned revision; the
+  training config reads its dimensions from the base checkpoint and supports the
+  0.8B, 2B, 4B and 9B dense Qwen3.5 variants, of which 0.8B, 2B and 4B were
+  released on 26 September 2026. No paper accompanies the release.</p>
+
+  <p>Intern-Decision-4B reaches <strong>90.02% average accuracy</strong> across
+  seven suites (10,751 rows, 12,351 decisions: Jevbench Easy / Original / Hard,
+  AG News, ToolACE, Typed Decision, WildJailBreak) against 88.74% for the Jev
+  baseline, at <strong>44.16 ms mean request latency</strong> on one RTX 4090
+  in BF16 versus Jev's 109.70 ms. The 0.8B and 2B checkpoints land at 79.38%
+  and 84.68%. The honest part of the table is where it loses: on
+  WildJailBreak the 4B scores 89.86 against Jev's 96.29, and its Jevbench-Hard
+  73.87 only ties JevK5. Calibration is handled as a separate, auditable step
+  &mdash; one positive scalar per checkpoint, fitted by NLL on a disjoint
+  calibration split, with a replay pass that asserts <strong>zero changed
+  decisions</strong> and artifacts bound to checkpoint hashes.</p>
+
+  <p>The release also bundles a <strong>96-case known-distribution calibration
+  benchmark</strong> &mdash; six categories, 24 families, 48 paired settings,
+  evaluation-only, with exact reference distributions stored apart from model
+  inputs &mdash; which scores expected multiclass Brier and ECE against those
+  references rather than against sampled labels. Calibration moves the 4B from
+  0.628 Brier / 0.213 ECE to <strong>0.550 / 0.089</strong>, below Jev's 0.595
+  / 0.130. The repository immediately qualifies it: the paired option variants
+  make this "a small diagnostic study, not 96 independent trials", NLL-optimal
+  temperature need not minimize ECE elsewhere, and differing kernels plus BF16
+  rounding mean the HF and XTuner backends are not claimed to be bitwise
+  equivalent. Apache-2.0; ~721 GitHub stars and 29 forks at filing.</p>
+tags:
+  - multimodal
+  - open-weight
+  - agents
+  - efficiency
+model:
+  architecture: dense
+  # Post-trained from Alibaba's Qwen3.5 with the vision tower frozen, so no
+  # `parameters` (or per-variant parameters) — a cross-lab derivative must not
+  # feed Shanghai AI Lab's Scale column. Sizes are in the description.
+  base_model: qwen3.5
+  license: Apache-2.0
+related:
+  - qwen3.5
+  - xtuner

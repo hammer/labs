@@ -1,0 +1,100 @@
+name: "Bolmo: Byteifying the Next Generation of Language Models"
+slug: bolmo
+lab: ai2
+type: paper
+date: 2026-10-07
+sources:
+  - label: Announcement
+    url: https://allenai.org/blog/bolmo-nature
+  - label: Paper (Nature)
+    url: https://www.nature.com/articles/s41586-026-11111-4
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2512.15586
+  - label: HuggingFace (Bolmo-7B)
+    url: https://huggingface.co/allenai/Bolmo-7B
+  - label: HuggingFace (Bolmo-1B)
+    url: https://huggingface.co/allenai/Bolmo-1B
+  - label: HuggingFace (Bwen-8B)
+    url: https://huggingface.co/allenai/Bwen-8B
+  - label: HuggingFace (Llama-B-8B)
+    url: https://huggingface.co/allenai/Llama-3-Blama-8B
+  - label: GitHub
+    url: https://github.com/allenai/bolmo-core
+description: >
+  <p>Almost every LLM reads text through subword tokenization, which the paper
+  argues "obscures fine-grained information &mdash; which is problematic,
+  especially for scientific data, such as computer code or biological sequences,
+  where meaning depends on the individual characters." Models that read raw UTF-8
+  bytes avoid that, but had consistently lagged subword models, and the reason was
+  economic rather than architectural: matching a subword model meant pretraining a
+  byte-level one from scratch. Bolmo's claim is that you can skip that bill by
+  <strong>converting an already-capable subword model</strong> &mdash; a process Ai2
+  calls <em>byteifying</em>.</p>
+
+  <p>The architecture keeps the source transformer intact as a "global model" over
+  patches and wraps it in new byte-level machinery: each byte embedding residually
+  adds the longest subword-token embedding ending at that position; a single mLSTM
+  local encoder contextualizes bytes; a non-causal boundary predictor with
+  <strong>one byte of lookahead</strong> reproduces the source tokenizer's patch
+  boundaries <strong>&gt;99%</strong> of the time; the last byte of each patch is
+  pooled as the patch representation; and after depooling, a four-layer mLSTM local
+  decoder feeds a 512-way byte head. Conversion runs in two stages. Stage 1 freezes
+  the global model and trains only the new components to distill the source subword
+  LM exactly &mdash; <strong>9.8B tokens (~43B bytes)</strong> under a combined
+  boundary, layer-4 representation-alignment and patch-likelihood objective. Stage 2
+  trains everything end to end on <strong>39.3B tokens (~173B bytes)</strong> with
+  boundary plus cross-entropy loss, so the model can finally exploit byte-level
+  detail. Total: under 1% of a typical pretraining budget.</p>
+
+  <p>Bolmo 7B, converted from <a href="/outputs/ai2/olmo-3">Olmo 3 7B</a>, scores
+  <strong>78.6 on CUTE</strong> character understanding against 56.9 for its own
+  source model and 52.3 / 50.8 for BLT 7B and EvaByte 6.5B &mdash; a
+  <strong>+21.7-point</strong> gain over the model it came from, and the best of any
+  prior byte-level LM at comparable size. It pays for that elsewhere: GSM8K
+  <strong>68.0 vs 73.1</strong>, MATH &minus;7.7, HumanEval pass@1
+  <strong>40.6 vs 49.0</strong> (though pass@16 is higher, which the authors read as
+  more diverse continuations), non-STEM multiple choice 75.8 vs 77.7. Measured in
+  wallclock on H100s rather than FLOPs, decoding runs at ~125 bytes/s against ~150
+  for the subword model and a 72K-byte prefill takes ~1s against ~0.8s, with the
+  efficiency crossover at <strong>~6.6 bytes per patch</strong>. Two honest
+  constraints: the boundary predictor sees one future byte where a real tokenizer has
+  unrestricted lookahead, and post-training by task arithmetic requires "embedding
+  resettability" and does not always transfer reliably.</p>
+
+  <p>The family predates this entry's date &mdash; Bolmo 1B and 7B went up in
+  December 2025 alongside the arXiv preprint, and now carry ~50 and ~60 HuggingFace
+  likes. What the October 2026 <em>Nature</em> publication adds is byteification
+  applied <strong>beyond Olmo</strong>: <strong>Bwen 8B</strong> from Qwen3-8B-Base
+  (see <a href="/outputs/alibaba/qwen3">Qwen3</a>), which Ai2 calls "our strongest
+  byteified model yet" and reports outperforming Bolmo 7B across their aggregate
+  evaluation suite, and <strong>Llama-B 8B</strong> from Meta-Llama-3-8B, which
+  "comes close to matching" its source. All four models also ship
+  <strong>Stage-1 checkpoints</strong>, which keep the original global model frozen
+  while training only the byte-level components &mdash; a cheaper starting point for
+  researchers who want to run just the second half of the recipe. Apache 2.0, except
+  Llama-B 8B under the Llama 3 license; data (<code>bolmo_mix</code>) and
+  <code>bolmo-core</code> training code are open.</p>
+tags:
+  - architecture
+  - tokenizer
+  - efficiency
+  - open-weight
+  - research
+  - distillation
+paper:
+  arxiv: "2512.15586"
+  venue: Nature
+  authors:
+    - Benjamin Minixhofer
+    - Tyler Murray
+    - Tomasz Limisiewicz
+    - Anna Korhonen
+    - Luke Zettlemoyer
+    - Noah A. Smith
+    - Edoardo M. Ponti
+    - Luca Soldaini
+    - Valentin Hofmann
+related:
+  - olmo-3
+  - olmo-2
+  - qwen3

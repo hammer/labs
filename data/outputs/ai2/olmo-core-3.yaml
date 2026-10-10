@@ -1,0 +1,103 @@
+name: Olmo-core 3
+slug: olmo-core-3
+lab: ai2
+type: library
+date: 2026-10-01
+sources:
+  - label: Announcement
+    url: https://allenai.org/blog/olmocore3
+  - label: Technical Report (PDF)
+    url: https://allenai.org/papers/olmocore3
+  - label: GitHub
+    url: https://github.com/allenai/Olmo-core
+  - label: Release (v3.0.0)
+    url: https://github.com/allenai/Olmo-core/releases/tag/v3.0.0
+description: >
+  <p>The usual case for mixture-of-experts is that per-token FLOPs depend only on
+  the active experts, so total capacity is nearly free. The technical report's
+  framing is that this is an accounting error: "training cost depends not only on
+  active compute but also on many other factors, including bytes moved, memory held,
+  and kernels launched; many of those costs follow total parameter capacity rather
+  than active compute." On infrastructure built for dense models the mismatch bites
+  hard &mdash; in Ai2's own early baselines <strong>throughput fell as stored expert
+  capacity grew</strong> even though useful work per token stayed nearly fixed.
+  Olmo-core's previous MoE path used FSDP, gathering and resharding model weights for
+  every micro-batch of data.</p>
+
+  <p>Version 3.0.0 replaces that with a stack built on <strong>DDP</strong>: experts
+  stay resident on the GPUs and the data is routed to them, so the repeated weight
+  gathering disappears. Layered on top are expert parallelism, pipeline parallelism,
+  a distributed optimizer and activation recompute. The MoE-specific optimizations
+  are where most of the engineering sits: <strong>NVSHMEM-based rowwise expert
+  parallelism</strong> writes each token straight into its expert's input buffer,
+  removing permutation overhead from dispatch and combine; expert parallelism is made
+  fully synchronization-free by keeping routing metadata on the GPU and using
+  device-scheduled grouped GEMMs; <strong>MXFP8</strong> is integrated closely enough
+  to cut compute, activation memory and transport together; and checkpoints are
+  topology-agnostic, so the parallel layout can change between runs.</p>
+
+  <p>Reported throughput, all on NVIDIA B300s. A <strong>47B MoE on eight
+  GPUs</strong> runs at <strong>52,000 tok/s/GPU</strong> against
+  <strong>19,400</strong> on the earlier FSDP implementation &mdash; about
+  <strong>2.7&times;</strong>. Growing the expert pool from <strong>8 to 128</strong>
+  while still selecting four experts per token holds active parameters at ~3.2B and
+  raises total capacity from 4.6B to 47B for <strong>under 5%</strong> throughput
+  loss. In a controlled four-GPU benchmark with work spread uniformly across experts,
+  MXFP8 beats BF16 by about <strong>21%</strong> while peak active memory falls from
+  <strong>103 GiB to 95 GiB</strong>, with most of the gain coming from feed-forward
+  compute and inter-expert data movement rather than attention. The stack has been
+  benchmarked from 12.9B up to a <strong>1.2T-parameter</strong> configuration with
+  58.36B active per token on 512 GPUs, peaking at <strong>858 useful-model
+  TFLOP/s/GPU</strong>; an experimental run with the optional DeepEP v2 backend
+  reached <strong>2.38T</strong>. Both headline figures come with caveats Ai2 states
+  plainly: these tests "used random routing to measure system performance, rather
+  than the quality of a trained model," and the 2.38T configuration was "a
+  short-capacity test rather than a full training run."</p>
+
+  <p>The report is unusually generous with things that did not work. It names
+  <strong>token gerrymandering</strong> &mdash; a load-balancing score that improves
+  while the actual workload becomes <em>less</em> balanced, i.e. the router learning
+  to hack its own auxiliary loss. Lowering experts' learning rates to compensate for
+  seeing fewer tokens did not help in the model family tested. GPU kernels took
+  different amounts of time on the same matrix shapes with different <em>values</em>,
+  so comparisons need matching inputs, not just matching dimensions. And overlapping
+  communication with computation on separate streams sometimes slowed end-to-end
+  execution by more than it hid. v3.0.0 is also a breaking release: the
+  <code>olmo_core.model_ladder</code> API and its eleven ladder training scripts are
+  removed and the minimum PyTorch is raised to 2.10. Ai2 frames the stack as the
+  foundation for a next-generation MoE Olmo, extending sparse work that goes back to
+  <a href="/outputs/ai2/olmoe">OLMoE</a> after the dense
+  <a href="/outputs/ai2/olmo-3">Olmo 3</a>. Apache 2.0; ~1,704 stars. Note that
+  <a href="/outputs/ai2/olmpool">OlmPool</a> also ships Olmo-core-format
+  checkpoints but is a separate long-context study, not part of this release.</p>
+tags:
+  - infrastructure
+  - moe
+  - efficiency
+  - training
+  - open-source
+  - framework
+library:
+  github: https://github.com/allenai/Olmo-core
+  language: Python
+  license: Apache-2.0
+  pip_package: ai2-olmo-core
+paper:
+  venue: Technical Report
+  authors:
+    - Tianhua Tao
+    - Akshita Bhagia
+    - Dirk Groeneveld
+    - Pete Walsh
+    - Tyler Romero
+    - Yashas Samaga
+    - Jacob Morrison
+    - Iz Beltagy
+    - Taira Anderson
+    - Noah A. Smith
+    - Hannaneh Hajishirzi
+related:
+  - olmoe
+  - olmo-3
+  - olmpool
+  - model-ladders

@@ -4,6 +4,8 @@ lab: cuhk
 type: model
 date: 2026-03-20
 sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.05966
   - label: HuggingFace
     url: https://huggingface.co/FreedomIntelligence/HuatuoGPT-3-32B
   - label: HuggingFace (8B)
@@ -22,6 +24,19 @@ description: >
   "coming soon" as of mid-2026; details beyond the model cards remain
   undisclosed, and the entry joins the paper-backfill work-list.
   Derivatives of open bases, not from-scratch pretrains.</p>
+paper:
+  arxiv: "2610.05966"
+  authors:
+    - Junying Chen
+    - Xinyuan Xie
+    - Ziniu Li
+    - Wenyuan Gu
+    - Jianquan Li
+    - Xiang Wan
+    - Guangjun Yu
+    - Ruoyu Sun
+    - Haizhou Li
+    - Benyou Wang
 tags:
   - medical
   - reasoning

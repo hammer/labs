@@ -1,0 +1,99 @@
+name: AntOmniEvo
+slug: antomnievo
+lab: ant-group
+type: library
+date: 2026-09-15
+sources:
+  - label: GitHub
+    url: https://github.com/ant-research/AntOmniEvo
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.35855
+description: >
+  <p>Prompt and agent optimizers usually mutate something narrow &mdash; a
+  constrained parameter set, a DSL, a prompt string &mdash; while the thing an
+  agent system actually exposes is a directory of files. AntOmniEvo from Ant
+  Research takes that literally: the optimisation target is the
+  <strong>tunable artifact</strong>, "a real directory of files", and mutation
+  is a coding agent adding, deleting or editing files inside it.
+  <strong>Optimisation becomes plain file editing.</strong> The shapes it names
+  are an agent's <code>SKILL.md</code> plus references and scripts, a
+  workflow's <code>pipeline.json</code> plus <code>nodes/*.py</code>, and a
+  single-file algorithm plus its description. The system under optimisation
+  need not contain an LLM at all &mdash; the <code>System</code> interface only
+  sees "tunable artifacts + data &rarr; trajectory + output" &mdash; but the
+  Proposer must be one, because editing files requires coding capability.</p>
+
+  <p>The division of labour is the design. <em>You define</em> five things
+  once: a <code>System</code> (how to run on one eval instance), an
+  <code>Evaluator</code> (score 0&ndash;1, whose scoring criteria <em>is</em> the
+  objective), train/val eval data, a <code>TunableArtifactSchema</code> mapping
+  your tunables onto a file tree with a purpose per file, and the initial
+  artifacts. <em>The framework controls</em> the loop &mdash; scheduling,
+  budgets, selection and elimination, persistence &mdash; with every candidate,
+  run, analysis and changelog written to a <code>CandidateStore</code> so a run
+  is interruptible and resumable. <em>The AI works</em>: a coding-agent
+  <code>Proposer</code> reads failure trajectories, locates the file to edit,
+  and lands a structured
+  <code>ArtifactAction{file, operation, artifact_issue, change, resolves[]}</code>
+  that <strong>must cite the failed-trajectory observation it fixes</strong>.
+  It runs in two phases so raw runs never reach the mutator: phase one distils
+  a failed run into a structured <code>RunAnalysis</code>, phase two
+  deduplicates and resolves contradictions across instances, behind a
+  self-check gate and an enforced append-only
+  <code>changelog.jsonl</code> that a child inherits from its parent. What you
+  get back is the best candidate's directory &mdash; diffable, reviewable,
+  deployable &mdash; with a lineage attributing every edit to the evidence that
+  motivated it.</p>
+
+  <p>Three mechanisms carry the loop. <strong>Multi-slot concurrent
+  evolution</strong> lets up to <code>num_proposals</code> candidates evolve
+  simultaneously over a shared pool and state machine, where the repo notes
+  prior work (GEPA, ACE, AHE) is serial. <strong>Mara-chain deep repair</strong>
+  handles a batch that misses its threshold without stopping at one
+  natural-language reflection: the failed chain's per-instance score history,
+  attributed changelog and prior analyses are pre-loaded into the prompt,
+  forcing a five-method diagnosis &mdash; causal tracing, success extraction,
+  oscillation detection, inconsistency discovery, evidence corroboration &mdash;
+  for up to <code>max_reflection_iterations</code> rounds, accepting the best
+  chain member that beats the original parent. <strong>Micro-pareto
+  selection</strong> prunes by per-instance Pareto weak dominance with a top-N
+  truncation fallback. Supporting machinery: four orthogonal hard budget caps
+  (iterations, rollouts, tokens, wall clock) with soft-stop-and-drain
+  semantics, checkpoint resume via a candidate state machine, and strict
+  validation-set isolation &mdash; <code>val_system_run/</code> is off-limits to
+  the proposer, hard-blocked by a runtime extension on the Pi path, so a
+  training batch decides whether a mutation is worth keeping and the val set
+  decides where the candidate sits in the population.</p>
+
+  <p>Two things to hold it by. The documentation concedes its own novelty
+  boundary unprompted: "Pareto selection itself is adopted from GEPA, not an
+  AntOmniEvo contribution; AntOmniEvo's algorithmic deltas are
+  <strong>concurrency</strong> and <strong>mara chains</strong>." And the README
+  reports <strong>no benchmark numbers at all</strong> for the framework &mdash;
+  the evidence is the design, not a scoreboard; the companion paper
+  <em>Mara Chain: Rethinking Failure as a Stepping Stone for AI System
+  Auto-Evolution</em> (arXiv 2609.35855, 25 September 2026, Yubin Lyu et al.)
+  arrived ten days after the repository. The stated non-fits are useful: systems
+  with no tunable artifact (a few scalar parameters belong in black-box tuning),
+  non-repeatable or extremely expensive evaluation, and strict-compliance
+  output, since the proposer edits files in a sandbox whose permissions you
+  must audit yourself. Python with a React and Flask run visualizer,
+  Apache-2.0, <strong>~1,140 GitHub stars and 101 forks</strong> at filing
+  &mdash; adjacent to Microsoft's <a
+  href="/outputs/microsoft/autosaddler">AutoSaddler</a>, which attacks the same
+  trace-to-patch loop but scoped to a coding-agent harness.</p>
+tags:
+  - agents
+  - agent-harness
+  - agentic
+  - framework
+  - self-improvement
+  - open-source
+library:
+  github: https://github.com/ant-research/AntOmniEvo
+  language: Python
+  license: Apache-2.0
+related:
+  - autosaddler
+  - helix
+  - choruz

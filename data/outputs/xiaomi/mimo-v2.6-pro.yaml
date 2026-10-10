@@ -9,6 +9,8 @@ sources:
     url: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL
   - label: Product Page
     url: https://mimo.mi.com/models/en-US/mimo-v2.6-pro
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2610.11959
   - label: Technical Report (PDF)
     url: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL/blob/main/MiMo_V2_6_technical_report.pdf
   - label: HuggingFace (MOPD checkpoint)
@@ -71,6 +73,10 @@ description: >
   $4.35/$8.70. Companion <strong>MiMo-V2.6-Flash</strong> (309B / 15B active,
   48T pretraining tokens) lists at $0.14/$0.28. Led by
   <a href="/people/luo-fuli">Luo Fuli</a>'s LLM-Core team.</p>
+paper:
+  arxiv: "2610.11959"
+  authors:
+    - Xiaomi LLM-Core Team
 tags:
   - moe
   - open-weight

@@ -1,0 +1,68 @@
+name: Claude Haiku 5.5
+slug: claude-haiku-5.5
+lab: anthropic
+type: model
+date: 2026-10-07
+flagship: true
+sources:
+  - label: Announcement
+    url: https://www.anthropic.com/claude-haiku-5-5
+  - label: System card
+    url: https://www.anthropic.com/document/claude-haiku-5-5-system-card
+description: >
+  <p>The small end of the 5.5 generation, completing the line alongside
+  <a href="/outputs/anthropic/claude-opus-5.5">Opus 5.5</a> and
+  <a href="/outputs/anthropic/claude-sonnet-5.5">Sonnet 5.5</a>, and pitched at
+  high-volume cost-sensitive work &mdash; summaries, compactions, database
+  queries, classification &mdash; plus use as a subagent under the larger two.
+  Model ID <code>claude-haiku-5-5</code>. Anthropic says it runs roughly
+  <strong>75% cheaper</strong> than Haiku 4.5 on average, and shipped alongside
+  a halving of Sonnet 5.5's cache-read price (about 20% cheaper on most agentic
+  work) and a monthly API credit for Max and Team subscribers.</p>
+
+  <p>It is the <strong>first Haiku-class model with an adjustable effort
+  setting</strong>, so the cost-versus-intelligence trade that the larger models
+  expose is now available at the bottom of the range. The generational jump is
+  the striking part of the published table. Against Haiku 4.5 it goes 735 to
+  <strong>1620</strong> on GDPval-AA v2.1, 614 to 1578 on AA-Briefcase v1.1,
+  15.7% to <strong>72.4%</strong> on OSWorld 2.1, and 10.2% to
+  <strong>45.9%</strong> on Humanity's Last Exam without tools (57.4% with).
+  On Terminal-Bench 4.0 the predecessor scores <strong>0.0%</strong> and Haiku
+  5.5 reaches 39.2% &mdash; a capability that simply did not exist at this tier
+  one generation ago.</p>
+
+  <p>Against competitors in its class it is ahead of GPT-6 Luna on every
+  published row: 1620 against 1437 on GDPval-AA, 72.4% against 48.9% on OSWorld,
+  39.2% against 16.4% on Terminal-Bench 4.0, 46.4% against 29.1% on
+  Chartography. The honest framing is that it remains a small model and the
+  table says so &mdash; Sonnet 5.5 leads it on all of them (83.9% OSWorld, 70.6%
+  Terminal-Bench, 56.9% HLE), so the case for Haiku is cost and speed at a
+  capability level that has become usable, not parity. FrontierCode 1.1 is the
+  closest it comes, 46.4% against Sonnet's 52.1% at xhigh effort.</p>
+tags:
+  - reasoning
+  - agentic
+  - code
+  - computer-use
+  - efficiency
+model:
+  benchmark_scores:
+    - benchmark: GDPval-AA v2.1
+      score: "1620"
+    - benchmark: AA-Briefcase v1.1
+      score: "1578"
+    - benchmark: OSWorld 2.1 (offline subset)
+      score: "72.4%"
+    - benchmark: Humanity's Last Exam (no tools)
+      score: "45.9%"
+    - benchmark: Humanity's Last Exam (with tools)
+      score: "57.4%"
+    - benchmark: Terminal-Bench 4.0
+      score: "39.2%"
+    - benchmark: FrontierCode 1.1 (Main)
+      score: "46.4%"
+    - benchmark: Chartography (no tools)
+      score: "46.4%"
+related:
+  - claude-opus-5.5
+  - claude-sonnet-5.5
