@@ -1,0 +1,106 @@
+name: Muse Wonder
+slug: muse-wonder
+lab: meta
+type: model
+date: 2026-10-12
+flagship: true
+sources:
+  - label: Announcement (Research Blog)
+    url: https://research.meta.ai/blog/muse-wonder
+  - label: Announcement (Newsroom)
+    url: https://about.fb.com/news/2026/10/introducing-muse-wonder-models/
+  - label: Model Card (PDF)
+    url: https://research.meta.ai/static/muse-wonder-model-card
+  - label: Model Page (Meta Developer)
+    url: https://dev.meta.ai/models/muse-wonder/
+description: >
+  <p>Meta Superintelligence Labs' agent-first frontier line, launched as two
+  proprietary variants on one model card: <strong>Muse Wonder</strong>
+  (<code>muse-wonder-1.0</code>, Meta Model API, $4.00 / $20.00 per 1M
+  input/output and $0.20 cached input) and <strong>Muse Wonder Full</strong>
+  (<code>muse-wonder-full-1.0</code>, subscription-only through
+  <a href="/outputs/meta/muse-code">Muse Code</a>). Both take text, image,
+  video and audio in and emit text, over a <strong>1M-token context</strong>.
+  Meta pitches two named behaviours rather than a size: <strong>Active
+  Memory</strong>, "carrying important context about you across conversations
+  and actively retrieving the details relevant to the task at hand," and
+  <strong>Active Focus</strong>, "continuing working toward a challenging
+  goal: trying alternative approaches, working through blockers, and adapting
+  to new information."</p>
+
+  <p>The launch scorecard compares both variants at max reasoning effort
+  against <a href="/outputs/openai/gpt-6-astra">GPT-6 Astra</a>,
+  <a href="/outputs/anthropic/claude-fable-5.1">Claude Fable 5.1</a> and
+  <a href="/outputs/anthropic/claude-opus-5.5">Claude Opus 5.5</a>, and it is
+  not a sweep. <strong>Wonder Full leads the group on professional agent work
+  and long-horizon engineering</strong>: Harvey LAB-AA <strong>13.1</strong>
+  against Astra's 8.6, Fable 5.1's 6.4 and Opus 5.5's 4.2 &mdash; half again
+  the best rival on legal deliverables, and more than triple Opus &mdash;
+  plus SWE-Marathon <strong>57.5</strong> (xhigh) against
+  42.5&ndash;46.3, DeepSWE 1.1 <strong>79.0</strong>,
+  AutomationBench-AA 45.4, and Meta's internal Personal Superintelligence
+  Index 59.1. On MemoryBench, the evaluation built for the Active Memory
+  claim, the smaller Wonder edges Full <strong>85.6 to 85.5</strong>, both
+  clear of the 79.0&ndash;81.5 field.</p>
+
+  <p><strong>It trails Opus 5.5 where the comparison is least favourable to
+  the pitch.</strong> Meta's own AA Intelligence Index row reads
+  <strong>56 for Wonder Full and 52 for Wonder, against 58 for Opus
+  5.5</strong>; ProgramBench is 59.0 vs <strong>70.5</strong>, OSWorld V2.1
+  78.4 vs 81.8 partial, Terminal-Bench 4.0-AA 57.1 vs 59.6, and HealthBench
+  Pro 62.3 vs 65.6. Vals Finance Agent V2 splits the family: Full takes it at
+  59.1 over Fable 5.1's 58.9 and Opus 5.5's 58.6, while the base Wonder's
+  56.6 trails both. So the frontier claim holds for agentic and legal work
+  and for sustained coding, not for general intelligence. Note the AA figures are
+  <strong>Meta-reported against v4.3</strong>: Artificial Analysis had not
+  published its own Muse Wonder page or leaderboard row at filing, so no
+  independently verified score is recorded here yet.</p>
+
+  <p>Released under the <strong>Meta Superintelligence Scaling
+  Framework</strong>, with an unusually direct disclosure: Meta "does not rule
+  out the model reaching" the high-risk threshold in the <strong>Chemical
+  &amp; Biological</strong> domain without mitigations, and so ships safety
+  post-training plus system-level classifiers for that domain; Cybersecurity
+  and Loss of Control are assessed "moderate or lower" even unmitigated. Cyber
+  capability on Wonder Full: CyberGym 88.4%, ExploitBench 58.9%, and 92 flags
+  on ExploitGym &mdash; of which a verifier pass found only <strong>21 used
+  the intended vulnerability</strong>, the figure comparable to the published
+  ranking. Parameters are undisclosed and no weights were released, though
+  Mark Zuckerberg has said Meta plans open-weights versions of the Muse
+  line.</p>
+tags:
+  - frontier
+  - agents
+  - coding
+  - multimodal
+  - reasoning
+  - proprietary
+model:
+  context_window: 1000000
+  license: Proprietary
+  variants:
+    - name: Muse Wonder
+      notes: muse-wonder-1.0; Meta Model API, pay-per-use
+    - name: Muse Wonder Full
+      notes: muse-wonder-full-1.0; most capable variant, Muse Code subscription only
+  benchmark_scores:
+    - benchmark: Personal Superintelligence Index
+      score: "54.3"
+    - benchmark: Harvey LAB-AA
+      score: "10.0"
+    - benchmark: MemoryBench
+      score: "85.6"
+    - benchmark: DeepSWE 1.1
+      score: "78.8"
+    - benchmark: SWE-Marathon
+      score: "53.1"
+    - benchmark: Terminal-Bench 4.0-AA
+      score: "52.0"
+    - benchmark: OSWorld V2.1
+      score: "72.6"
+    - benchmark: AutomationBench-AA
+      score: "39.1"
+related:
+  - muse-spark-1.3
+  - muse-code
+  - muse-glimmer
