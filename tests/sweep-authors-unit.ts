@@ -15,12 +15,15 @@
  *      looking complete (the first full run lost 304 of 534 to HTTP 429);
  *   6. one person's name variants count as two vouchers, inflating the
  *      corroboration signal the triage ranks on.
+ *   7. a throttled endpoint is ground through author by author instead of
+ *      aborted, so the run burns ~100 minutes to report zero coverage and gets
+ *      killed by hand — losing even the incomplete-run verdict (2026-10-10).
  *
  * Run: npm run test:sweep-authors
  */
 import {
   harvestAuthors, trackedArxivIds, parseAuthorListing, untracked, yymmFloor, searchUrl,
-  isRetryable, backoffMs, personKey, distinctPeople,
+  isRetryable, backoffMs, personKey, distinctPeople, shouldAbort, rerunSlugs, END_MARKER,
 } from '../scripts/sweep-authors';
 
 let failures = 0;
@@ -202,6 +205,47 @@ check('distinctPeople: name variants count once',
   distinctPeople(['Eric Xing', 'Eric P. Xing']) === 1);
 check('distinctPeople: two people count twice',
   distinctPeople(['Eric Xing', 'Zhengzhong Liu']) === 2);
+
+// ------------------------------------------------- giving up on a dead endpoint
+
+// On 2026-10-10 five parallel subagents and this script shared one arXiv quota.
+// All 55 probes answered 429, and at ~108s of backoff each the run was killed by
+// hand an hour in — so it never printed its own INCOMPLETE RUN verdict, and the
+// sweep had to report the author probe as an unexplained hole. The breaker turns
+// that into a 9-minute run that says what happened.
+check('shouldAbort tolerates a short streak', !shouldAbort(4));
+check('shouldAbort trips at the limit', shouldAbort(5));
+check('shouldAbort stays tripped past the limit', shouldAbort(55));
+// A success resets the streak in the loop, so an isolated 5xx must not abort a
+// run that is otherwise answering.
+check('shouldAbort ignores an isolated failure', !shouldAbort(1));
+check('shouldAbort never trips on a clean run', !shouldAbort(0));
+check('shouldAbort limit is overridable', shouldAbort(2, 2) && !shouldAbort(1, 2));
+
+// The marker is the only in-log evidence that distinguishes "ran to completion
+// and reported" from "was killed". Keep it greppable: one token, line-anchorable,
+// no regex metacharacters.
+check('END_MARKER is a plain greppable token',
+  /^[A-Z-]+:$/.test(END_MARKER), END_MARKER);
+
+// An abort stops at probe 5 of 55, so the 50 it never reached are exactly as
+// unswept as the 5 that failed. Naming only the failures would advertise a
+// 5-lab re-run and quietly drop the rest — the bug this pins.
+const abortPlans = [
+  { slug: 'openai', authors: [{ name: 'Alice Fail' }] },
+  { slug: 'anthropic', authors: [{ name: 'Bob Unprobed' }] },
+  { slug: 'google', authors: [{ name: 'Carol Ok' }] },
+];
+check('rerunSlugs covers failed probes', rerunSlugs(abortPlans, ['Alice Fail']).join() === 'openai');
+check('rerunSlugs covers the unprobed tail too',
+  rerunSlugs(abortPlans, ['Alice Fail', 'Bob Unprobed']).join() === 'openai,anthropic');
+check('rerunSlugs omits labs that were swept',
+  !rerunSlugs(abortPlans, ['Alice Fail', 'Bob Unprobed']).includes('google'));
+check('rerunSlugs is empty on a clean run', rerunSlugs(abortPlans, []).length === 0);
+// One author under two labs must not emit a slug twice.
+check('rerunSlugs does not repeat a slug', rerunSlugs(
+  [{ slug: 'meta', authors: [{ name: 'Dave' }, { name: 'Dave' }] }], ['Dave'],
+).length === 1);
 
 console.log(failures ? `\n${failures} failing` : '\nall passing');
 process.exit(failures ? 1 : 0);

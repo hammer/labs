@@ -44,6 +44,13 @@ import { parse } from 'yaml';
 // Usage: npm run sweep-authors -- --since 2026-08 mbzuai     # probe one lab
 //        npm run sweep-authors -- --plan                     # authors + URLs, no network
 //        npm run sweep-authors -- --since 2026-09 --limit 3  # every lab, 3 authors each
+//
+// Run this ALONE. arXiv rate-limits per caller and the quota is shared by every
+// process on the box, so a parallel fan-out that also calls the API does not
+// divide the quota, it exhausts it — on 2026-10-10 five subagents did exactly
+// that and all 55 probes here answered 429. After GIVE_UP_AFTER consecutive
+// failures the run aborts, reports its real coverage, names the labs to re-run,
+// and prints END_MARKER. A log without that marker was killed mid-run.
 
 // The sanctioned bulk interface, not the HTML search at arxiv.org/search.
 // Scraping the HTML endpoint 534 times got 304 of them answered with HTTP 429 —
@@ -57,6 +64,17 @@ const UA = 'labindex-sweep/1.0 (https://labindex.ai; periodic lab-research sweep
 // first full run showed it is not enough on its own — hence the retry below.
 const DELAY_MS = 3500;
 const RETRIES = 4;
+// A failing probe costs ~108s of backoff (3.5 + 7 + 14 + 28 + 56), so 55 authors
+// against a throttled endpoint burn ~100 minutes to report zero coverage. The
+// 2026-10-10 sweep did exactly that: five subagents and this script hit the API
+// at once, every one of 55 probes answered 429, and the run was killed by hand
+// an hour in. Five failures in a row is not coincidence — stop and say so.
+const GIVE_UP_AFTER = 5;
+// Printed as the final line of every networked run, clean or aborted (`--plan`
+// returns before it). Its absence from such a log means the process was killed,
+// which no in-band coverage line can say about itself.
+// Do not arm a wait loop on it — `run_in_background` already notifies on exit.
+export const END_MARKER = 'SWEEP-AUTHORS-END:';
 // Newest-first, so the cap only bites when a single author has more than this
 // many papers inside the --since window; the run warns when that happens.
 const PAGE = 100;
@@ -190,6 +208,31 @@ export function isRetryable(status: number): boolean {
   return status === 429 || status === 403 || status >= 500;
 }
 
+/**
+ * True when a run should abort rather than grind on. Counts *consecutive*
+ * failures, not a total, so it catches a throttle that starts mid-run as well as
+ * one that was there from the first probe, and a single transient 5xx between
+ * two good probes never trips it.
+ */
+export function shouldAbort(consecutiveFailures: number, limit = GIVE_UP_AFTER): boolean {
+  return consecutiveFailures >= limit;
+}
+
+/**
+ * The labs a re-run has to cover: any lab with an author who was not swept,
+ * whether the probe failed or was never attempted. An abort leaves a long
+ * unprobed tail, and naming only the failures would suggest re-running 5 labs
+ * when 50 are still unswept.
+ */
+export function rerunSlugs(
+  plans: { slug: string; authors: { name: string }[] }[], unswept: Iterable<string>,
+): string[] {
+  const names = new Set(unswept);
+  return [...new Set(
+    plans.filter((p) => p.authors.some((a) => names.has(a.name))).map((p) => p.slug),
+  )];
+}
+
 /** Exponential backoff with jitter, honouring a Retry-After header when given. */
 export function backoffMs(attempt: number, retryAfter?: string | null): number {
   const header = Number(retryAfter);
@@ -300,17 +343,36 @@ async function main() {
   console.log(`probing ${queue.length} authors across ${plans.length} labs...\n`);
 
   const failed: string[] = [];
+  let unprobed: string[] = [];
+  let streak = 0;
+  let aborted = 0;
   for (const [i, name] of queue.entries()) {
     try {
       listings.set(name, await fetchListing(name));
+      streak = 0;
     } catch (err) {
       console.error(`  ! ${name}: ${(err as Error).message}`);
       failed.push(name);
       listings.set(name, []);
+      streak++;
     }
-    // Progress, so a half-hour run does not look hung.
-    if ((i + 1) % 25 === 0 || i === queue.length - 1) {
+    // Progress, so a half-hour run does not look hung. Every probe once failures
+    // start: at ~108s each, a 25-probe cadence would go quiet for 45 minutes.
+    if (streak || (i + 1) % 25 === 0 || i === queue.length - 1) {
       console.log(`  ...${i + 1}/${queue.length} probed${failed.length ? `, ${failed.length} failed` : ''}`);
+    }
+    if (shouldAbort(streak)) {
+      // The unprobed tail is as unswept as the failures, so it has to reach the
+      // re-run command below too — otherwise an abort at probe 5 of 55 suggests
+      // re-running 5 labs and silently drops the other 50.
+      unprobed = queue.slice(i + 1);
+      aborted = unprobed.length;
+      console.error(
+        `\nABORTED after ${streak} consecutive failures with ${aborted} authors unprobed.`);
+      console.error('The endpoint is throttling every request, so grinding on buys nothing.');
+      console.error('Usually this is self-inflicted: parallel agents sharing one arXiv quota.');
+      console.error('Let it cool down, then re-run this probe alone — see AGENTS.md step 4.');
+      break;
     }
     if (i < queue.length - 1) await sleep(DELAY_MS);
   }
@@ -346,15 +408,15 @@ async function main() {
   // that does not state its coverage lets a half-finished sweep read as a clean
   // one — which is exactly how the first full run reported 3,019 candidates off
   // 43% of its probes.
-  const ok = queue.length - failed.length;
+  const ok = queue.length - failed.length - aborted;
   console.log(`\ncoverage: ${ok}/${queue.length} author probes succeeded` +
-    (failed.length ? ` — ${failed.length} FAILED` : ''));
-  if (failed.length) {
-    console.log('INCOMPLETE RUN. Every failed probe silently contributes zero candidates,');
-    console.log('so the list below under-reports by an unknown amount. Re-run the failures:');
-    console.log(`  npm run sweep-authors -- --since ${since} ${[...new Set(
-      plans.filter((p) => p.authors.some((a) => failed.includes(a.name))).map((p) => p.slug),
-    )].join(' ')}`);
+    (failed.length ? ` — ${failed.length} FAILED` : '') +
+    (aborted ? `, ${aborted} NEVER ATTEMPTED (aborted)` : ''));
+  if (failed.length || aborted) {
+    console.log('INCOMPLETE RUN. Every failed or unattempted probe silently contributes zero');
+    console.log('candidates, so the list below under-reports by an unknown amount. Re-run:');
+    console.log(`  npm run sweep-authors -- --since ${since} ` +
+      rerunSlugs(plans, [...failed, ...unprobed]).join(' '));
   }
 
   console.log(`\n${total} untracked arXiv ids across ${plans.length} labs.`);
@@ -363,7 +425,11 @@ async function main() {
   console.log('High-recall by design, and arXiv author search matches on name alone, so a');
   console.log('common name drags in every namesake. Read the title-page affiliations before');
   console.log('assigning a lab, and apply the AGENTS.md exclusion criteria.');
-  if (failed.length) process.exitCode = 1;
+  // Last line on every path, clean or aborted. A log that lacks it was killed
+  // mid-run, which is the one state the coverage line above cannot report.
+  console.log(`\n${END_MARKER} ${aborted || failed.length ? 'incomplete' : 'complete'}` +
+    ` coverage=${ok}/${queue.length} candidates=${total}`);
+  if (failed.length || aborted) process.exitCode = 1;
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) main();
