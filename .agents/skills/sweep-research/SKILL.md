@@ -1,6 +1,6 @@
 ---
 name: sweep-research
-description: Sweep tracked AI labs for significant new or late-arriving research artifacts, including models, papers, libraries, datasets, evaluations, agent harnesses, technical reports, and HuggingFace-only releases. Use for periodic arXiv sweeps, lab-by-lab discovery, team-name or researcher searches, benchmark discovery, and turning a deduplicated candidate list into verified Lab Index outputs.
+description: Sweep tracked AI labs for new or late-arriving artifacts that advance frontier foundation model building in language and science — models, training methods, infrastructure, pretraining-scale datasets, and industry-standard evaluations. Use for periodic arXiv sweeps, lab-by-lab discovery, team-name or researcher searches, benchmark discovery, agent-harness cluster updates, and turning a deduplicated candidate list into verified Lab Index outputs. Applies an inclusion gate that rejects applications of frontier models.
 ---
 
 # Sweep Research
@@ -13,9 +13,10 @@ Read [AGENTS.md → Periodic Arxiv Sweeps](../../../AGENTS.md#periodic-arxiv-swe
 - internal team and collaboration mappings;
 - secondary-org discovery (`npm run sweep-orgs`) and HuggingFace API probes;
 - author-keyed arXiv discovery (`npm run sweep-authors`), the only probe that reaches affiliation-only papers;
-- evaluation, domain-expert, RL-scaling, agent-harness, and pretraining/training-methods searches;
-- late technical-report, never-filed-paper, and Artificial Analysis worklists;
-- inclusion and exclusion criteria.
+- the **inclusion gate** and the exclusion criteria — read these before searching, not after;
+- the standing pretraining/training-methods pass, and which family searches are triggered rather than standing;
+- **method-family caps**, including harnesses as cluster-entries-only;
+- late technical-report, never-filed-paper, and Artificial Analysis worklists.
 
 **Know the shape of what each probe can see.** The sweep's probes split into three kinds, and a candidate invisible to one kind is not rescued by running another harder:
 
@@ -38,7 +39,9 @@ Record the labs, month prefixes, and artifact classes in scope. Unless the user 
 2. Search the lab name and every known internal team or collaboration name.
 3. Probe the lab's research page, publications index, GitHub organizations, and recent HuggingFace model and dataset uploads. Run `npm run sweep-orgs` first and probe **every** org it lists for a lab, not just the one in the lab file's `huggingface:` / `github:` fields — labs publish from several orgs, and the declared field alone has missed whole launches (Moonshot's AgentENV under `kvcache-ai`, LG's EXAONE weights under `LG-AI-Research`, Apple's LensVLM under `apple-aiml-research`). **A news index is not a release list** — see AGENTS.md step 2b for the site-root and RSS surfaces (Claude Haiku 5.5 was missed on 2026-10-10 that way), and step 3 for Apple's publications HTML, the Google org split, and the forward-looking-prose grep that resolves "due in the coming weeks" promises already sitting in `data/`.
 4. **Run `npm run sweep-authors -- --since <month>` every cycle, not only when lab-name searches look thin.** It derives each lab's author index from the `people:` block and its outputs' `paper.authors`, then diffs each researcher's arXiv listing against every arXiv id in `data/`. This is the only probe that reaches a paper tied to its lab solely by the title page; read the `*` rows first and verify affiliations before assigning a lab. See AGENTS.md step 4.
-5. Run independent searches for widely adopted evaluations, reasoning-process benchmarks, domain-expert benchmarks, agent harnesses or execution stacks, RL-scaling papers — including RL-readiness / stage-aware post-training work that optimizes SFT or checkpoint selection for downstream RL (the `rl-scaling` tag family) — and **pretraining / training-methods papers**: expert-pool scheduling and upcycling, sparsity-aware scaling laws and token-budget allocation, optimizers, numerics and training stability, and data curricula. That class ships no weights, no repo and no benchmark win, names a technique rather than a model, and had no dedicated pass until EMO was missed. See the dedicated sweeps in AGENTS.md.
+5. **Run one dedicated family pass every cycle: pretraining / training-methods papers.** Expert-pool scheduling and upcycling, sparsity-aware scaling laws and token-budget allocation, optimizers, numerics and training stability, data curricula. That class ships no weights, no repo and no benchmark win, names a technique rather than a model, and had no dedicated pass until EMO was missed — and it sits squarely inside the gate's clause (2). See the dedicated sweeps in AGENTS.md.
+
+   **The other family passes are triggered, not standing.** Evaluations, reasoning-process and domain-expert benchmarks, RL-scaling and RL-readiness (`rl-scaling`), agent harnesses and execution stacks: search these when something specific prompts it — a lab announces one, a candidate cites one, or the user asks. Running all of them every cycle is how entries per month went 36 → 182, with 54 of September's 182 in the harness family alone. Each pass is tuned for recall, and six recall-tuned passes against one qualification gate produce a method survey. Harnesses in particular are now **cluster-entries-only** (AGENTS.md → Research Focus), so a harness pass mostly generates prose for an existing entry, not new files — which is a reason to run it deliberately rather than by default.
 6. Generate the late technical-report, never-filed-paper (step 8c), and newly scored-model worklists specified in AGENTS.md. Note that steps 7 and 8 only enrich **existing** entries — reaching back for artifacts never filed is step 8c's job, via the author probe with an older `--since`.
 7. Quarterly, or whenever the user asks for a valuation sweep: refresh every listed parent's market cap in one commit and re-check each private lab's last closed round, per AGENTS.md → Valuations (last realized priced post-money; talks, secondaries, and IPO targets become `news`; reconcile description prose that quotes the old figure). Research private marks by region in parallel agents, then re-verify every changed mark at the reporting outlet before writing it.
 
@@ -61,13 +64,14 @@ arXiv rate-limits per caller and the quota is shared by every process on the box
 
 For each candidate:
 
-1. Verify the artifact and release date from a primary source.
-2. Read the paper title-page affiliations or acknowledgements before assigning a lab.
-3. Apply the research-focus and exclusion criteria in AGENTS.md; do not turn a sweep into an exhaustive publication catalog.
-4. Decide whether the artifact is a model, paper, eval, library, dataset, blog, or announcement.
-5. Distinguish a new output from a late source or paper that belongs on an existing output.
+1. **Apply the gate first, before spending any verification effort.** AGENTS.md → Research Focus: *would a frontier lab build its next foundation model differently because of this?* It must be a frontier foundation model in language or science, a change to how one is built (at ≥7B or on a shipped model), the infrastructure or pretraining-scale data behind one, or an evaluation in a major composite index. **Work that merely uses a frontier model is out.** Most candidates fail here, so gating first is also the cheapest order — do not verify affiliations on a paper that is out of scope regardless of who wrote it.
+2. Verify the artifact and release date from a primary source.
+3. Read the paper title-page affiliations or acknowledgements before assigning a lab. An author tie is not a scope tie: a tracked lab's staff publish robotics, security, signal-processing and domain-science work that the gate excludes.
+4. **Check whether it belongs to a capped method family** (AGENTS.md → Method families). If the family already has three entries, add it to the cluster entry's prose with an arXiv link instead of filing. Harness technique papers are always this case.
+5. Decide whether the artifact is a model, paper, eval, library, dataset, blog, or announcement.
+6. Distinguish a new output from a late source or paper that belongs on an existing output.
 
-Report rejected borderline candidates with a short reason when that helps the user audit the sweep.
+Report rejected borderline candidates with a short reason when that helps the user audit the sweep. A sweep whose accepted count runs past ~40 for a single month should say so and re-read the gate rather than keep filing.
 
 ## 4. Deduplicate before filing
 

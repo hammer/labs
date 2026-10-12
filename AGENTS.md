@@ -8,7 +8,18 @@
 
 ## Research Focus
 
-We are primarily interested in tracking:
+**The gate.** An artifact qualifies only if a frontier lab would **build its next foundation model differently** because of it. One of these four must be true:
+
+1. It **is** a frontier foundation model in language or a scientific domain, or a checkpoint in such a lineage.
+2. It **changes how one is built** — architecture, pretraining data or curriculum, optimizer, numerics, post-training objective, scaling law — with evidence at a scale a frontier lab would act on (see the scale floor under *What to Exclude*).
+3. It is the **training infrastructure or pretraining-scale dataset** that makes (1) possible.
+4. It is an **evaluation already used in a major composite index**, or one that several frontier labs report scores on.
+
+**Work that merely *uses* a frontier model is out**, however good it is. Applying an LLM to a vertical, a robotics manipulation policy that is not itself a foundation model, a security or HCI study of agent behaviour, a domain-science result produced with ML — all out. This is the filter that does the most work, because it is what most candidates fail.
+
+Read the gate as a test to pass, not a list of interests to satisfy. It is deliberately narrower than this section used to be: the scope had accreted a clause after every miss and nothing ever removed one, and entries per month went 36 (January 2026) → 101 (July) → **182 (September)**, by which point 75 of 182 were papers and 54 of 182 were harness-family. Recall probes were hardened repeatedly while the qualification gate was not touched; (1)–(4) are that correction.
+
+The categories below describe what passing the gate usually looks like. They do not override it.
 
 **Frontier foundation models** — large-scale models that push the state of the art in:
 - Language understanding and generation
@@ -17,7 +28,16 @@ We are primarily interested in tracking:
 - Multi-turn agentic work (tool use, function calling, long-horizon planning)
 - Multimodal capabilities (vision, audio, video understanding and generation)
 
-**Agent harnesses & execution stacks** — the system layer that turns model capability into executed action (context/memory management, tool routing, state, permissions, tracing, recovery). This is a distinct, high-priority area for us: agent capability is increasingly a property of the **model–harness pairing**, not the base model alone. Track harness/scaffold frameworks (OpenHands, SWE-agent, mini-swe-agent, AutoAgent, KIRA/Terminus), harness-diagnostic benchmarks (Harness-Bench, TheAgentCompany, τ-bench-style tool-use evals), and papers on execution-alignment failures, agent middleware, and sandboxed execution runtimes. These are easy to miss because titles say "harness"/"agent workflow"/"execution" rather than a model name.
+**Agent harnesses & execution stacks — cluster entries only.** The system layer that turns model capability into executed action is not foundation-model building, so by the gate above it does not qualify on its own. It still matters, because agent capability is a property of the **model–harness pairing** rather than the base model — so we track it, but at cluster granularity instead of one entry per paper.
+
+What that means in practice:
+
+- **File individually:** a widely adopted harness *framework* with real traction (OpenHands, SWE-agent, mini-swe-agent — `type: library`, and the 1K+ stars rule in *What to Exclude* applies), and a harness-diagnostic *benchmark* that clears the `type: eval` bar in (4) above (Harness-Bench, TheAgentCompany).
+- **Do not file individually:** harness *technique* papers — scaffold variants, execution-alignment results, agent middleware, recursive-improvement recipes, sandboxed runtimes. These go into the relevant cluster entry's prose with an arXiv link, per *Method families* below.
+
+Rationale: the family reached **128 entries**, and **54 of September 2026's 182** entries mentioned a harness. That is a method literature we were cataloguing exhaustively, not a frontier-model signal. `data/outputs/ntu/model-harness-interactions.yaml` is the pattern to follow — it carries four mutually contesting harness papers in one description rather than four files, and is more useful for it.
+
+**This rule is forward-looking. Do not delete existing entries under it.** The 128 already filed stay: they are cited by `related:` blocks, they hold the AA scores and provenance we verified, and the retention criteria below govern removals. Consolidating the existing family into cluster entries is a separate, user-approved project, not sweep cleanup — never mass-delete outputs because a scope rule narrowed.
 
 **Scientific foundation models** — large-scale models for scientific domains with:
 - Evidence of transfer learning across tasks/domains
@@ -35,7 +55,15 @@ We are primarily interested in tracking:
 
 **Industry-standard evaluations** (`type: eval`) — benchmarks that became widely adopted for measuring AI capabilities. Use `eval` type for benchmarks used in major composite indices ([AA Intelligence Index](https://artificialanalysis.ai/methodology/intelligence-benchmarking), [Epoch Capabilities Index](https://epoch.ai/benchmarks/eci)) or that most labs report scores on. Examples: GPQA (Anthropic+NYU), HumanEval (OpenAI), RULER (NVIDIA), IFBench (AI2), BBEH (Google), SuperGPQA (ByteDance Seed), Belebele (Meta). Also include **reasoning process benchmarks** that evaluate extended chain-of-thought quality and step-level correctness, not just final answers (e.g., ProcessBench, LongCoT, PRMBench). Do not add narrow/niche benchmarks that didn't achieve broad adoption.
 
-When selecting outputs for a lab, prioritize work that falls into these categories. Do not exhaustively catalog every paper — focus on what matters for understanding the frontier.
+**Method families — cap at a canonical entry.** When several papers propose variants of one idea, the family is one signal, not N. Once a family has **three** entries, stop filing instances:
+
+- keep the **originating** paper as its own entry;
+- maintain **one cluster entry** whose description names the variants in prose with arXiv links, including results that contradict each other;
+- attach each later variant to that cluster entry instead of creating a file.
+
+A fourth variant of a known method does not change how a frontier lab builds anything, so it fails the gate on its own; what changes is the family's weight of evidence, and a cluster entry carries that better than four thin files. Two families reached this point in 2026-09: **harness** (128 entries) and **on-policy distillation / OPD / self-distillation** (45 entries, 12 of them filed in a single batch). Model entry: `data/outputs/ntu/model-harness-interactions.yaml`.
+
+When selecting outputs for a lab, apply the gate. **Do not exhaustively catalog a literature** — a sweep that files more than ~40 entries for one month has almost certainly drifted from the frontier into a method survey, and the next sweep should open by auditing scope rather than widening it.
 
 ### Periodic Arxiv Sweeps
 
@@ -70,12 +98,15 @@ When scanning for new papers from tracked labs, **do not limit searches to a nar
 4. **Probe by researcher name mechanically — this is the only probe that reaches affiliation-only papers.** Key authors publish under university co-affiliations (internships, joint work), and a paper whose lab tie lives only on its title page is invisible to steps 1–3. Run:
 
    ```bash
-   npm run sweep-authors -- --since 2026-08            # every lab
+   npm run sweep-authors -- --since 2026-08            # every lab, corroborated hits
    npm run sweep-authors -- --since 2026-08 mbzuai     # one lab
+   npm run sweep-authors -- --since 2026-08 --all      # include the uncorroborated tail
    npm run sweep-authors -- --plan                     # authors + URLs, no network
    ```
 
-   It derives each lab's author index from data we already hold — the lab file's `people:` block plus whoever actually writes that lab's papers (`paper.authors` across its outputs), most prolific first — fetches each author's arXiv listing, and diffs it against **every arXiv id anywhere in `data/`**. Rows marked `*` came from a `people:`-listed or multi-paper author and are read first; each row names the authors who surfaced it.
+   It derives each lab's author index from data we already hold — the lab file's `people:` block plus whoever actually writes that lab's papers (`paper.authors` across its outputs), most prolific first — fetches each author's arXiv listing, and diffs it against **every arXiv id anywhere in `data/`**. Each row names the authors who surfaced it.
+
+   **The report shows corroborated hits only — two or more *distinct* people from the lab on the same paper.** A lone namesake does not co-occur, and the ratio is brutal: the 2026-10-12 full run got clean coverage on all 78 probes, found 122 untracked ids, and **3 were corroborated**. Of the other 119, one "Yang Li" alone contributed `hep-th`, `math.CO`, `astro-ph.GA`, `quant-ph` and `nucl-th` papers under salesforce. Printing all 122 buries the 3. The total is still reported, and the `SWEEP-AUTHORS-END:` line carries both `candidates=` and `corroborated=`, so nothing is hidden — use `--all` to audit the tail rather than to triage it. Corroboration counts *people*, not names: `personKey` collapses "Eric Xing" and "Eric P. Xing" so one author listed two ways cannot vouch for itself.
 
    Why it is not optional: the artifact probes cannot cover for it. `sweep-orgs`, the HF recent-uploads probe and the GitHub org probe all need a repo or an upload to find, and a methods paper frequently ships neither — **312 of our 506 `type: paper` outputs carry no GitHub or HuggingFace link at all**, so this is most of the paper class, not an edge case. The step used to read "search researchers *when lab-name searches are incomplete*", which made the one probe that could have caught EMO conditional on noticing a gap that leaves no trace.
 
@@ -166,9 +197,14 @@ When scanning for new papers from tracked labs, **do not limit searches to a nar
 ### What to Exclude
 
 Do **not** add outputs that are:
+- **Applications of a frontier model** rather than contributions to building one — this is the gate's main clause restated as a veto, and it is the most common reason to reject. A paper that uses an LLM to do something is out even when the something is impressive.
 - **Business-specific applications** — delivery logistics, recommendation systems, e-commerce search, customer service tools, mobile infrastructure
 - **Narrow benchmarks/datasets** — unless they became industry standards (MMLU, HumanEval, SWE-Bench are fine; a niche lip-reading dataset is not)
-- **Low-impact minor outputs** — small papers with <500 GitHub stars and no notable citations, unless they are science-related or first-in-series
+- **Technique papers below the scale floor** — a method paper qualifies only if it is demonstrated at **≥7B**, or on a model a frontier lab actually ships, or has been adopted by a frontier lab. Sub-7B academic ablations do not move frontier practice. This clause exists because the old `<500 GitHub stars` test **cannot bite on the class that was actually growing**: a technique paper with no code release has no stars at all, so the test was inapplicable to exactly the papers flooding in. Judge a repo-less paper on demonstrated scale, not on engagement it has no way to accrue.
+- **Low-impact minor outputs** — small papers with <500 GitHub stars and no notable citations, unless they are first-in-series or a **scientific foundation model** (below)
+- **Out-of-thesis subject matter**, regardless of which lab published it: robotics manipulation and navigation policies that are not foundation models, wireless/signal processing, pure domain science, HCI and user studies, security and attack papers, recommender systems. On the 2026-10-12 author probe `cs.RO` was the **second-largest** category among 122 candidates, ahead of `cs.CL`, with `cs.CR`, `eess.SP`, `cond-mat.*` and `math.*` close behind — a frontier lab's staff publish widely, and an author tie is not a scope tie.
+
+**"Science-related" means a scientific *foundation model*, not any contact with science.** The exemption covers large-scale models for scientific domains with evidence of cross-task transfer, and the methods and datasets that build them — protein structure, materials, weather/climate, genomics, EEG. Judge by foundation-model characteristics, never by the modality name. It does **not** cover an ordinary domain-science paper that a tracked lab's staff happened to co-author: *Remote epitaxy beyond polarity*, *Post-perihelion monitoring of the interstellar comet 3I/ATLAS* and *Light cone distributions of P-wave quarkonia* all surfaced as candidates under this exemption and all three are out.
 
 **Retention criteria** (when auditing existing outputs):
 - **High GitHub stars** (1K+) — signals community adoption

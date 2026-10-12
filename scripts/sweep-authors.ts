@@ -44,6 +44,13 @@ import { parse } from 'yaml';
 // Usage: npm run sweep-authors -- --since 2026-08 mbzuai     # probe one lab
 //        npm run sweep-authors -- --plan                     # authors + URLs, no network
 //        npm run sweep-authors -- --since 2026-09 --limit 3  # every lab, 3 authors each
+//        npm run sweep-authors -- --since 2026-09 --all      # include uncorroborated hits
+//
+// By default the report lists only CORROBORATED hits — two or more distinct
+// people from the lab on the same paper. The uncorroborated tail is where the
+// namesake noise lives and it is roughly 40x larger: the 2026-10-12 run found 3
+// corroborated hits and 119 uncorroborated. The tail is still counted, and
+// `--all` prints it when you want to audit rather than triage.
 //
 // Run this ALONE. arXiv rate-limits per caller and the quota is shared by every
 // process on the box, so a parallel fan-out that also calls the API does not
@@ -167,6 +174,25 @@ export function personKey(name: string): string {
 /** How many distinct people surfaced a hit, collapsing name variants. */
 export function distinctPeople(via: string[]): number {
   return new Set(via.map(personKey)).size;
+}
+
+/**
+ * Whether a hit is corroborated: two or more *distinct* people from the lab are
+ * on it. This is the report's default filter, not a sort key.
+ *
+ * A lone namesake does not co-occur. Measured on the 2026-10-12 full run, 78
+ * clean probes produced 122 untracked ids of which **3** were corroborated, and
+ * the uncorroborated 119 were mostly a different person with the same name:
+ * one "Yang Li" dragged in `hep-th`, `math.CO`, `astro-ph.GA`, `quant-ph` and
+ * `nucl-th` papers under salesforce, and `cs.RO` was the second-largest
+ * category in the whole candidate set. Reporting all 122 buries the 3.
+ *
+ * Counting *people* and not names matters here: `personKey` collapses "Eric
+ * Xing" and "Eric P. Xing", so one author listed two ways stays uncorroborated
+ * rather than vouching for itself.
+ */
+export function isCorroborated(via: string[]): boolean {
+  return distinctPeople(via) > 1;
 }
 
 export function searchUrl(name: string): string {
@@ -300,6 +326,7 @@ async function main() {
     return i >= 0 ? argv[i + 1] : undefined;
   };
   const plan = argv.includes('--plan');
+  const all = argv.includes('--all');
   const since = flag('--since') ?? '2026-01';
   const limit = Number(flag('--limit') ?? 6);
   const floor = yymmFloor(since);
@@ -378,13 +405,19 @@ async function main() {
   }
 
   let total = 0;
+  let shown = 0;
   for (const { slug, authors } of plans) {
     const strong = new Set(authors.filter((a) => a.listed || a.papers > 1).map((a) => a.name));
-    const hits = untracked(
+    const found = untracked(
       authors.flatMap((a) => (listings.get(a.name) ?? []).map((entry) => ({ author: a.name, entry }))),
       tracked, floor);
+    total += found.length;
+    // Corroborated-only by default. The tail is counted above either way, so
+    // coverage and the candidate total stay honest while the printed list stays
+    // triageable — see isCorroborated for the measured ratio.
+    const hits = all ? found : found.filter((h) => isCorroborated(h.via));
     if (!hits.length) continue;
-    total += hits.length;
+    shown += hits.length;
     // Hits a vouched-for author surfaced come first; single-paper common names
     // are where the namesake noise lives, so they sort to the bottom.
     // Two independent people vouching for a hit is the strongest precision
@@ -419,16 +452,27 @@ async function main() {
       rerunSlugs(plans, [...failed, ...unprobed]).join(' '));
   }
 
-  console.log(`\n${total} untracked arXiv ids across ${plans.length} labs.`);
-  console.log('Read ** first (two or more distinct people from the lab), then * (one');
-  console.log('people:-listed or frequent author).');
-  console.log('High-recall by design, and arXiv author search matches on name alone, so a');
-  console.log('common name drags in every namesake. Read the title-page affiliations before');
-  console.log('assigning a lab, and apply the AGENTS.md exclusion criteria.');
+  const hidden = total - shown;
+  if (all) {
+    console.log(`\n${total} untracked arXiv ids across ${plans.length} labs (--all).`);
+    console.log('Read ** first (two or more distinct people from the lab), then * (one');
+    console.log('people:-listed or frequent author).');
+  } else {
+    console.log(`\n${shown} corroborated of ${total} untracked arXiv ids across ` +
+      `${plans.length} labs.`);
+    if (hidden) {
+      console.log(`${hidden} uncorroborated hits not shown — a single author, which is where`);
+      console.log('the namesake noise lives. Re-run with --all to audit them.');
+    }
+  }
+  console.log('arXiv author search matches on name alone, so a common name drags in every');
+  console.log('namesake. Read the title-page affiliations before assigning a lab, and apply');
+  console.log('the AGENTS.md inclusion gate — an artifact qualifies only if a frontier lab');
+  console.log('would build its next foundation model differently because of it.');
   // Last line on every path, clean or aborted. A log that lacks it was killed
   // mid-run, which is the one state the coverage line above cannot report.
   console.log(`\n${END_MARKER} ${aborted || failed.length ? 'incomplete' : 'complete'}` +
-    ` coverage=${ok}/${queue.length} candidates=${total}`);
+    ` coverage=${ok}/${queue.length} candidates=${total} corroborated=${shown}`);
   if (failed.length || aborted) process.exitCode = 1;
 }
 

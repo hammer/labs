@@ -24,6 +24,7 @@
 import {
   harvestAuthors, trackedArxivIds, parseAuthorListing, untracked, yymmFloor, searchUrl,
   isRetryable, backoffMs, personKey, distinctPeople, shouldAbort, rerunSlugs, END_MARKER,
+  isCorroborated,
 } from '../scripts/sweep-authors';
 
 let failures = 0;
@@ -246,6 +247,26 @@ check('rerunSlugs is empty on a clean run', rerunSlugs(abortPlans, []).length ==
 check('rerunSlugs does not repeat a slug', rerunSlugs(
   [{ slug: 'meta', authors: [{ name: 'Dave' }, { name: 'Dave' }] }], ['Dave'],
 ).length === 1);
+
+// ------------------------------------------------- the corroboration filter
+
+// The report now defaults to corroborated hits only. On the 2026-10-12 full run
+// that was 3 of 122 — the other 119 were a single author, mostly a namesake
+// (one "Yang Li" pulled in hep-th, math.CO, astro-ph.GA and quant-ph papers).
+// These pin the filter itself, because showing all 122 buries the 3.
+check('isCorroborated: two people vouch', isCorroborated(['Jan Kautz', 'Yi Dong']));
+check('isCorroborated: three people vouch',
+  isCorroborated(['Jan Kautz', 'Jian Hu', 'Yi Dong']));
+check('isCorroborated: a lone author does not',
+  !isCorroborated(['Yang Li']));
+check('isCorroborated: no authors does not', !isCorroborated([]));
+// The filter counts PEOPLE, not names, so it inherits personKey. One author
+// listed two ways must not vouch for itself — the false-positive that put
+// 2609.34272 under MBZUAI when its title page reads Rutgers/CMU/Oracle/NYU.
+check('isCorroborated: one author under two name spellings does not',
+  !isCorroborated(['Eric Xing', 'Eric P. Xing']));
+check('isCorroborated: a real second person still counts past a variant',
+  isCorroborated(['Eric Xing', 'Eric P. Xing', 'Preslav Nakov']));
 
 console.log(failures ? `\n${failures} failing` : '\nall passing');
 process.exit(failures ? 1 : 0);
