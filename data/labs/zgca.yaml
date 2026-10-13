@@ -1,7 +1,7 @@
 name: ZGCA
 slug: zgca
 url: https://www.bza.edu.cn/en/
-huggingface: https://huggingface.co/ZGCA
+huggingface: https://huggingface.co/zgcagi
 region: china
 founded: "2024"
 type: nonprofit

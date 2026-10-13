@@ -2,7 +2,7 @@ name: HKU
 slug: hku
 url: https://www.hku.hk
 wikipedia: https://en.wikipedia.org/wiki/University_of_Hong_Kong
-huggingface: https://huggingface.co/hkunlp
+huggingface: https://huggingface.co/xlangai
 github: https://github.com/xlang-ai
 region: hongkong
 founded: "1911"

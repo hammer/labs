@@ -24,7 +24,9 @@
     "test:aa": "tsx tests/aa-payload-unit.ts",
     "test:aaii": "tsx tests/aaii-mentions-unit.ts",
     "test:sweep-orgs": "tsx tests/sweep-orgs-unit.ts",
-    "test:sweep-authors": "tsx tests/sweep-authors-unit.ts"
+    "test:sweep-authors": "tsx tests/sweep-authors-unit.ts",
+    "sweep-org-health": "tsx scripts/sweep-org-health.ts",
+    "test:sweep-org-health": "tsx tests/sweep-org-health-unit.ts"
   },
   "devDependencies": {
     "playwright": "^1.60.0",

@@ -2,7 +2,7 @@ name: Shanghai Jiao Tong University
 slug: sjtu
 url: https://en.sjtu.edu.cn/
 wikipedia: https://en.wikipedia.org/wiki/Shanghai_Jiao_Tong_University
-huggingface: https://huggingface.co/X-LANCE
+huggingface: https://huggingface.co/GAIR
 github: https://github.com/X-LANCE
 region: china
 founded: "1896"

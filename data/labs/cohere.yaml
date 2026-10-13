@@ -2,7 +2,7 @@ name: Cohere
 slug: cohere
 url: https://cohere.com
 wikipedia: https://en.wikipedia.org/wiki/Cohere
-huggingface: https://huggingface.co/CohereForAI
+huggingface: https://huggingface.co/CohereLabs
 github: https://github.com/cohere-ai
 artificialanalysis: https://artificialanalysis.ai/providers/cohere
 openrouter: https://openrouter.ai/cohere

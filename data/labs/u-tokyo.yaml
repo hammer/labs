@@ -2,7 +2,7 @@ name: UTokyo
 slug: u-tokyo
 url: https://www.u-tokyo.ac.jp/en/
 wikipedia: https://en.wikipedia.org/wiki/University_of_Tokyo
-huggingface: https://huggingface.co/weblab-GENIAC
+huggingface: https://huggingface.co/MIL-UT
 github: https://github.com/matsuolab
 region: japan
 founded: "1877"

@@ -2,7 +2,7 @@ name: EPFL
 slug: epfl
 url: https://www.epfl.ch/en/
 wikipedia: https://en.wikipedia.org/wiki/EPFL
-huggingface: https://huggingface.co/epfl-llm
+huggingface: https://huggingface.co/dlab-spp
 github: https://github.com/epfml
 region: switzerland
 founded: "1969"
