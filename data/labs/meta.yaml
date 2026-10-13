@@ -2,7 +2,7 @@ name: Meta
 slug: meta
 url: https://ai.meta.com
 wikipedia: https://en.wikipedia.org/wiki/Meta_AI
-huggingface: https://huggingface.co/meta-llama
+huggingface: https://huggingface.co/meta-models
 github: https://github.com/facebookresearch
 openrouter: https://openrouter.ai/meta-llama
 region: usa
