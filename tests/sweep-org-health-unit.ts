@@ -10,7 +10,7 @@
  * of this script called `princeton-nlp` DEAD two weeks after it shipped a
  * model, because it trusted an API endpoint that 404s for live orgs).
  */
-import { classify, orgFromUrl, ageDays } from '../scripts/sweep-org-health';
+import { classify, orgFromUrl, ageDays, ghNameFromUrl } from '../scripts/sweep-org-health';
 
 let failures = 0;
 function check(name: string, ok: boolean, detail = '') {
@@ -36,6 +36,19 @@ check('orgFromUrl rejects a model URL',
   orgFromUrl('https://huggingface.co/meta-models/Muse-Glimmer-30B') === null);
 check('orgFromUrl rejects a non-HF URL',
   orgFromUrl('https://github.com/facebookresearch') === null);
+
+check('ghNameFromUrl pulls the org',
+  ghNameFromUrl('https://github.com/facebookresearch') === 'facebookresearch');
+check('ghNameFromUrl tolerates a trailing slash',
+  ghNameFromUrl('https://github.com/Kwai-Klear/') === 'Kwai-Klear');
+// GitHub names allow dots, which the HF pattern does not.
+check('ghNameFromUrl keeps dots',
+  ghNameFromUrl('https://github.com/some.lab') === 'some.lab');
+// A repo URL is not an account pointer.
+check('ghNameFromUrl rejects a repo URL',
+  ghNameFromUrl('https://github.com/facebookresearch/llama') === null);
+check('ghNameFromUrl rejects a non-GitHub URL',
+  ghNameFromUrl('https://huggingface.co/meta-models') === null);
 
 // ------------------------------------------------------------- decision table
 
