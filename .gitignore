@@ -11,3 +11,6 @@ dist/
 !.dev.vars.example
 .env*
 !.env.example
+
+# sweep candidate ledger (per-cycle working state, see AGENTS.md step 8d)
+.sweep-ledger.json
