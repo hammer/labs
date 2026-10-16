@@ -17,4 +17,5 @@ tags:
   - navigation
   - proprietary
 model:
+  open_weights: false
   parameters: 8B

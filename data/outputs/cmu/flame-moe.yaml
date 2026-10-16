@@ -16,5 +16,7 @@ tags:
   - moe
   - open-weight
   - pretraining
+model:
+  open_weights: true
 paper:
   arxiv: "2505.20225"

@@ -72,6 +72,7 @@ outputs:
       Proprietary hosted iteration of the Qwen3.5-397B-A17B model. Outperforms
       Qwen3-Max on reasoning and coding while using less compute.
     model:
+      open_weights: false
       architecture: moe
   - name: Qwen3.5 Medium Model Series
     type: model

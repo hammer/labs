@@ -31,6 +31,7 @@ tags:
   - moe
   - amd
 model:
+  open_weights: true
   architecture: moe
   parameters: 8B
   active_parameters: 700M

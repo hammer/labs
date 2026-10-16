@@ -23,6 +23,8 @@ tags:
   - multimodal
   - foundational
   - open-source
+model:
+  open_weights: true
 paper:
   arxiv: "2301.12597"
   venue: ICML 2023

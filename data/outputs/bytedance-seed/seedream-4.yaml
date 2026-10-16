@@ -16,6 +16,8 @@ description: >
 tags:
   - generation
   - vision
+model:
+  open_weights: true
 paper:
   arxiv: "2509.20427"
 related:

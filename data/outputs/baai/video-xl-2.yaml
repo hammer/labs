@@ -21,3 +21,5 @@ tags:
   - multimodal
   - open-weight
   - efficiency
+model:
+  open_weights: true

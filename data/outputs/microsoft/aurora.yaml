@@ -21,6 +21,7 @@ tags:
   - science
   - weather
   - open-weight
-model: {}
+model:
+  open_weights: true
 related:
   - naturelm

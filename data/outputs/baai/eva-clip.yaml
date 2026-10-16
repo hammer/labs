@@ -16,3 +16,5 @@ tags:
   - embeddings
 library:
   github: https://github.com/baaivision/EVA
+model:
+  open_weights: true

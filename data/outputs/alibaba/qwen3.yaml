@@ -159,6 +159,7 @@ outputs:
         url: https://qwen.ai/blog?id=qwen3-max-thinking
     description: API-only reasoning model.
     model:
+      open_weights: false
       architecture: moe
     notes: "Parameter count unconfirmed: estimated 1T total, 22B active"
   - name: Qwen3-ASR & ForcedAligner

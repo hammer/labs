@@ -34,6 +34,8 @@ tags:
 dataset:
   github: https://github.com/mathllm/MathCoder2
   size: "19.2B tokens"
+model:
+  open_weights: true
 paper:
   arxiv: "2410.08196"
   venue: ICLR 2025

@@ -28,6 +28,7 @@ tags:
   - foundational
   - open-weight
 model:
+  open_weights: true
   parameters: 380M
 paper:
   arxiv: "2602.18478"

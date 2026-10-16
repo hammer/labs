@@ -20,6 +20,7 @@ tags:
   - open-weight
   - open-source
 model:
+  open_weights: true
   architecture: dense
   parameters: 175B
 paper:

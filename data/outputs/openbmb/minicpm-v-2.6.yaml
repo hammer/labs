@@ -23,6 +23,7 @@ tags:
 paper:
   arxiv: "2408.01800"
 model:
+  open_weights: true
   parameters: 8B
 related:
   - minicpm-v-2

@@ -15,3 +15,5 @@ description: >
 tags:
   - proprietary
   - frontier
+model:
+  open_weights: false

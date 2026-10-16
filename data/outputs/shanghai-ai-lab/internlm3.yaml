@@ -19,3 +19,5 @@ tags:
   - reasoning
   - frontier
 notes: InternLM3-8B-Instruct released Jan 15, 2025.
+model:
+  open_weights: true

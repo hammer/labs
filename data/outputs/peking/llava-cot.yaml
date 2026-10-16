@@ -16,5 +16,7 @@ tags:
   - multimodal
   - reasoning
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2411.10440"

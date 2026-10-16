@@ -24,3 +24,5 @@ tags:
   - coding
   - post-training
   - open-weight
+model:
+  open_weights: true

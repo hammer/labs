@@ -17,5 +17,7 @@ tags:
   - generation
   - video
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2501.03575"

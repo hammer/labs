@@ -20,5 +20,7 @@ tags:
   - multimodal
   - efficiency
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2510.09608"

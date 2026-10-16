@@ -22,6 +22,7 @@ tags:
   - open-weight
   - open-source
 model:
+  open_weights: true
   architecture: dense
   parameters: 32B
   variants:

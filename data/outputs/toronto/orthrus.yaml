@@ -19,5 +19,7 @@ tags:
   - biology
   - open-weight
   - research
+model:
+  open_weights: true
 related:
   - scgpt

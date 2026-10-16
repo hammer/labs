@@ -21,6 +21,7 @@ tags:
   - scientific
   - open-source
 model:
+  open_weights: true
   architecture: dense
   parameters: 1.2B
 paper:

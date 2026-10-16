@@ -25,6 +25,7 @@ tags:
   - open-weight
   - multimodal
 model:
+  open_weights: true
   architecture: dense
   context_window: 128000
 paper:

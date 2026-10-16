@@ -19,3 +19,5 @@ tags:
   - multimodal
   - open-weight
 notes: ICLR 2026 Oral. arXiv submission Sep 22, 2025.
+model:
+  open_weights: true

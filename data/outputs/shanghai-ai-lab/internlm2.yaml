@@ -30,6 +30,9 @@ outputs:
       Significant upgrades in reasoning and math. Outperformed Llama-2-70B at release.
       Includes InternLM2-Math variant.
     notes: InternLM2-Math-7B/20B released Jan 23, 2024. InternLM2-1.8B released Jan 31, 2024.
+    model:
+      open_weights: true
+
   - name: InternLM2 Technical Report
     type: paper
     date: 2024-03-26

@@ -20,6 +20,7 @@ tags:
   - coding
   - foundational
 model:
+  open_weights: true
   architecture: dense
   parameters: 1.3B
 paper:

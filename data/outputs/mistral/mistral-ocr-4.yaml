@@ -22,4 +22,5 @@ tags:
   - ocr
   - vision
   - proprietary
-model: {}
+model:
+  open_weights: false

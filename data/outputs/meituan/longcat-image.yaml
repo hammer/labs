@@ -46,6 +46,9 @@ outputs:
         url: https://huggingface.co/meituan-longcat/LongCat-Image-Edit-Turbo
     description: >
       10x speedup distilled editing variant.
+    model:
+      open_weights: true
+
 related:
   - longcat-video
   - longcat-flash

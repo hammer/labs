@@ -39,3 +39,5 @@ outputs:
     description: >
       Finance-optimized proprietary model with base and chat variants for
       financial certification questions and real-world scenario applications.
+    model:
+      open_weights: false

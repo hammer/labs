@@ -34,6 +34,7 @@ tags:
   - open-weight
   - research
 model:
+  open_weights: true
   base_model: qwen2.5
   variants:
     - name: Qwen-2.5-7B-SimpleRL-Zoo

@@ -17,6 +17,8 @@ description: >
 tags:
   - biology
   - open-weight
+model:
+  open_weights: true
 related:
   - aquila
   - aquila2

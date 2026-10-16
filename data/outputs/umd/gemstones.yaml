@@ -24,6 +24,7 @@ tags:
   - pretraining
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: "2B"
 paper:

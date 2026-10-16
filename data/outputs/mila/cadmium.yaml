@@ -19,6 +19,8 @@ tags:
   - code
   - dataset
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2507.09792"
 dataset:

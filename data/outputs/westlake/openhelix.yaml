@@ -20,5 +20,7 @@ tags:
   - vla
   - embodied
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2505.03912"

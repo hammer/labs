@@ -37,6 +37,9 @@ outputs:
     description: >
       NLU model series including BERT, RoBERTa, and MegatronBERT variants
       up to 1.3B parameters. SOTA on FewCLUE and ZeroCLUE benchmarks.
+    model:
+      open_weights: true
+
   - name: Wenzhong
     type: model
     sources:
@@ -45,3 +48,5 @@ outputs:
     description: >
       Chinese NLG model series based on GPT-2 architecture with variants
       from 110M to 3.5B parameters.
+    model:
+      open_weights: true

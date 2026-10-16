@@ -13,6 +13,7 @@ description: >
 tags:
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: 175B
   variants:

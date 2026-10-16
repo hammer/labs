@@ -23,6 +23,7 @@ tags:
   - agentic
   - open-weight
 model:
+  open_weights: true
   parameters: 9B
   base_model: minicpm-o4.5
 paper:

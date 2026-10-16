@@ -20,5 +20,7 @@ tags:
   - audio
   - generation
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2505.19462"

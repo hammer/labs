@@ -76,4 +76,5 @@ outputs:
     description: >
       Proprietary-grade MoE model served via API, competing with GPT-4o.
     model:
+      open_weights: false
       architecture: moe

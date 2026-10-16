@@ -23,6 +23,8 @@ tags:
   - 3d
   - reconstruction
   - open-source
+model:
+  open_weights: true
 paper:
   arxiv: "2310.11448"
   venue: CVPR 2024

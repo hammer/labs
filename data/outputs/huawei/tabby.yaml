@@ -24,6 +24,7 @@ tags:
   - research
   - open-weight
 model:
+  open_weights: true
   parameters: 145M
 paper:
   arxiv: "2609.13956"

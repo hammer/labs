@@ -30,5 +30,7 @@ tags:
   - scaling-laws
   - open-weight
   - research
+model:
+  open_weights: true
 related:
   - marin

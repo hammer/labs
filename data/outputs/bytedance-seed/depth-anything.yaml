@@ -18,3 +18,5 @@ tags:
   - open-weight
 library:
   github: https://github.com/DepthAnything/Depth-Anything-V2
+model:
+  open_weights: true

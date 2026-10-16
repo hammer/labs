@@ -16,6 +16,8 @@ tags:
   - multimodal
   - open-weight
   - moe
+model:
+  open_weights: true
 paper:
   arxiv: "2412.10302"
 related:

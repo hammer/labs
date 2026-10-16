@@ -29,6 +29,7 @@ tags:
   - pretraining
   - research
 model:
+  open_weights: true
   architecture: dense
   parameters: "12B"
   training_tokens: "1.7T"

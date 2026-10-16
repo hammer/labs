@@ -24,6 +24,8 @@ tags:
   - scientific-fm
   - ocean
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2310.02031"
   venue: ACL 2024

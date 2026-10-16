@@ -15,3 +15,5 @@ tags:
   - proprietary
   - frontier
   - reasoning
+model:
+  open_weights: false

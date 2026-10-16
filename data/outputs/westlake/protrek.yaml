@@ -21,3 +21,5 @@ tags:
   - scientific-fm
   - protein
   - open-weight
+model:
+  open_weights: true

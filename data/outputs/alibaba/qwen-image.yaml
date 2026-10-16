@@ -55,6 +55,9 @@ outputs:
       Hosted image-generation and editing model supporting prompts up to 4,500
       tokens, native text rendering in 12 languages, and legible type down to
       roughly 10 pixels. Alibaba did not release weights or disclose scale.
+    model:
+      open_weights: false
+
   - name: Qwen-Image-2.1
     type: model
     date: 2026-09-20

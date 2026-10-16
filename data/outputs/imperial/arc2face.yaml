@@ -20,5 +20,7 @@ tags:
   - vision
   - image-generation
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2403.11641"

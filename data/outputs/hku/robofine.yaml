@@ -19,5 +19,7 @@ tags:
   - robotics
   - multimodal
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2605.27284"

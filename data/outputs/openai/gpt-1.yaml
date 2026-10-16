@@ -23,6 +23,7 @@ tags:
   - open-source
   - foundational
 model:
+  open_weights: true
   architecture: dense
   parameters: 117M
   context_window: 512

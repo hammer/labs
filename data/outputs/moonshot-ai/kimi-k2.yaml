@@ -86,3 +86,5 @@ outputs:
         url: https://huggingface.co/moonshotai/Kimi-K2-Thinking
       - label: Announcement
         url: https://kimi-k2.org/blog/15-kimi-k2-thinking-en
+    model:
+      open_weights: true

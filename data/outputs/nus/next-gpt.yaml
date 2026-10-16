@@ -29,6 +29,8 @@ tags:
   - generation
   - open-weight
   - foundational
+model:
+  open_weights: true
 paper:
   arxiv: "2309.05519"
 related:

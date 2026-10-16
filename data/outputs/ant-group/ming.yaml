@@ -19,6 +19,8 @@ tags:
   - multimodal
   - audio
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2506.09344"
 related:

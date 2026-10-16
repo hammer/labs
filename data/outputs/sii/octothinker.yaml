@@ -32,6 +32,7 @@ tags:
   - open-weight
   - foundational
 model:
+  open_weights: true
   variants:
     - name: OctoThinker-1B-Long-Base / Long-Zero / Hybrid-Base / Hybrid-Zero
       parameters: 1B

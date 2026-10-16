@@ -28,6 +28,8 @@ tags:
   - vision
   - open-weight
   - research
+model:
+  open_weights: true
 paper:
   arxiv: "2304.10592"
   venue: ICLR 2024

@@ -25,6 +25,7 @@ tags:
   - multimodal
   - open-weight
 model:
+  open_weights: true
   variants:
     - name: Evolla-10B
       parameters: "10B"

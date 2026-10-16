@@ -47,6 +47,9 @@ outputs:
         url: https://huggingface.co/meituan-longcat/LongCat-Video-Avatar
     description: >
       Identity-consistent portrait generation variant.
+    model:
+      open_weights: true
+
 related:
   - longcat-flash
   - longcat-image

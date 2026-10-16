@@ -19,6 +19,7 @@ tags:
   - scientific-fm
   - open-weight
 model:
+  open_weights: true
   parameters: "13B"
 paper:
   arxiv: "2308.14346"

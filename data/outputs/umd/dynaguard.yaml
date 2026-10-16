@@ -20,5 +20,7 @@ tags:
   - safety
   - open-weight
   - evaluation
+model:
+  open_weights: true
 paper:
   arxiv: "2509.02563"

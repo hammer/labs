@@ -30,6 +30,8 @@ tags:
   - generation
   - open-weight
   - foundational
+model:
+  open_weights: true
 paper:
   arxiv: "2408.12528"
   venue: ICLR 2025

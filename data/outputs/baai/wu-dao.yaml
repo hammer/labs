@@ -17,6 +17,7 @@ tags:
   - open-source
   - frontier
 model:
+  open_weights: true
   variants:
     - name: Wen Yuan
       parameters: 2.6B

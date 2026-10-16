@@ -22,6 +22,8 @@ tags:
   - multimodal
   - generation
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2506.03147"
 related:

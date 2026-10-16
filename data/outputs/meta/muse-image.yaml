@@ -19,6 +19,7 @@ tags:
   - video
   - generation
   - proprietary
-model: {}
+model:
+  open_weights: false
 related:
   - muse-spark

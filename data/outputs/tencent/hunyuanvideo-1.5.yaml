@@ -16,5 +16,7 @@ tags:
   - video
   - generation
   - open-weight
+model:
+  open_weights: true
 related:
   - hunyuanvideo

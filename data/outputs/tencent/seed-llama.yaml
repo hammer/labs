@@ -23,6 +23,8 @@ tags:
   - generation
   - vision
   - research
+model:
+  open_weights: true
 paper:
   arxiv: "2310.01218"
   venue: ICLR 2024

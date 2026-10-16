@@ -16,3 +16,5 @@ tags:
   - multimodal
   - nlp
   - open-weight
+model:
+  open_weights: true

@@ -13,3 +13,5 @@ description: >
 tags:
   - proprietary
   - efficiency
+model:
+  open_weights: false

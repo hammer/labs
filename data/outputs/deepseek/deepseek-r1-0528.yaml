@@ -14,6 +14,7 @@ tags:
   - training
   - open-weight
 model:
+  open_weights: true
   architecture: moe
   parameters: 671B
   active_parameters: 37B

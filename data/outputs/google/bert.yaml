@@ -22,6 +22,7 @@ tags:
   - foundational
   - open-source
 model:
+  open_weights: true
   architecture: dense
   parameters: 340M
 paper:

@@ -23,6 +23,7 @@ tags:
   - reasoning
   - open-weight
 model:
+  open_weights: true
   architecture: moe
   parameters: 1T
   active_parameters: 22B

@@ -27,6 +27,7 @@ tags:
   - reasoning
   - open-weight
 model:
+  open_weights: true
   parameters: 7B
   architecture: dense
 paper:

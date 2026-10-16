@@ -15,3 +15,5 @@ tags:
   - multilingual
 library:
   github: https://github.com/SKT-AI/KoBART
+model:
+  open_weights: true

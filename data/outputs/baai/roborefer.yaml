@@ -24,6 +24,8 @@ tags:
   - embodied
   - reasoning
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2506.04308"
   venue: NeurIPS 2025

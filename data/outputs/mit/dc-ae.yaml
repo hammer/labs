@@ -18,5 +18,7 @@ tags:
   - image-generation
   - efficiency
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2410.10733"

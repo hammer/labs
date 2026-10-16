@@ -35,6 +35,9 @@ outputs:
       Scales diffusion language models to 100B by converting pretrained AR models.
     paper:
       arxiv: "2512.15745"
+    model:
+      open_weights: true
+
   - name: LLaDA 2.1
     type: paper
     date: 2026-02-13

@@ -18,5 +18,7 @@ tags:
   - science
   - open-weight
   - research
+model:
+  open_weights: true
 paper:
   arxiv: "2502.00816"

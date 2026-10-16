@@ -16,3 +16,5 @@ tags:
   - proprietary
   - frontier
 notes: Public release date August 31, 2023. Initial invited testing began March 16, 2023.
+model:
+  open_weights: false

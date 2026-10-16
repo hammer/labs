@@ -17,4 +17,5 @@ tags:
   - foundational
   - open-weight
 model:
+  open_weights: true
   parameters: "16B"

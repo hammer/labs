@@ -21,3 +21,5 @@ tags:
   - biology
   - vision
   - open-weight
+model:
+  open_weights: true

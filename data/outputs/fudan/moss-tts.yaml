@@ -17,6 +17,8 @@ description: >
 tags:
   - speech
   - open-weight
+model:
+  open_weights: true
 related:
   - moss-ttsd
   - moss-audio

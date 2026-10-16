@@ -14,6 +14,7 @@ description: >
   languages; price is $0.08 per audio minute.</p>
 tags: [audio, speech, multimodal, reasoning, agentic, proprietary]
 model:
+  open_weights: false
   benchmark_scores:
     - benchmark: AA Speech-to-Speech Quality Index
       score: "82.9%"

@@ -23,5 +23,7 @@ tags:
   - biology
   - multimodal
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2411.19666"

@@ -25,6 +25,8 @@ tags:
   - training
   - alignment
   - research
+model:
+  open_weights: true
 paper:
   arxiv: "2411.15124"
 related:

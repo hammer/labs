@@ -26,6 +26,8 @@ tags:
   - robotics
   - multimodal
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2410.11758"
   venue: ICLR 2025

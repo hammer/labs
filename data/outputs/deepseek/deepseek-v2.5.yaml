@@ -14,3 +14,5 @@ sources:
 description: Combination of V2-0628 and Coder-V2-0724 into a unified model.
 tags:
   - open-weight
+model:
+  open_weights: true

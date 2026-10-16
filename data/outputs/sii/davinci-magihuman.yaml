@@ -18,6 +18,8 @@ tags:
   - video
   - multimodal
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2603.21986"
 related:

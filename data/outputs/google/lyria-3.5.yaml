@@ -14,3 +14,5 @@ description: >
   pods, it is available through Flow Music and Google's API; weights, parameter
   count, and training scale are undisclosed.</p>
 tags: [audio, music, generation, diffusion, proprietary]
+model:
+  open_weights: false

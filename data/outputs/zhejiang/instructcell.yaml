@@ -20,5 +20,7 @@ tags:
   - scientific-fm
   - biology
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2501.08187"

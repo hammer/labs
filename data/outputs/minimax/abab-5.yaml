@@ -12,3 +12,5 @@ description: >
 tags:
   - proprietary
 notes: Date approximate. ABAB large model passed China's first batch of service filings in August 2023.
+model:
+  open_weights: false

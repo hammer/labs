@@ -17,5 +17,6 @@ tags:
   - scaling
   - proprietary
 model:
+  open_weights: false
   context_window: 200000
 notes: Included moonshot-v1-8k, 32k, and 128k API variants.

@@ -25,6 +25,9 @@ outputs:
     description: >
       Large-scale text-to-image diffusion model based on the General Language Model
       (GLM), optimized for high-quality Chinese and English text rendering.
+    model:
+      open_weights: true
+
   - name: "Kolors: Effective Training of Diffusion Model for Photorealistic Text-to-Image Synthesis"
     type: paper
     sources:

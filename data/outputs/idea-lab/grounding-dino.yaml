@@ -31,6 +31,9 @@ outputs:
     description: >
       Open-set object detection model with text-guided detection.
       Base and large model variants available.
+    model:
+      open_weights: true
+
   - name: "Grounding DINO: Marrying DINO with Grounded Pre-Training for Open-Set Object Detection"
     type: paper
     sources:

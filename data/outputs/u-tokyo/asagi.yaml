@@ -22,6 +22,8 @@ tags:
   - multimodal
   - multilingual
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2410.22736"
 related:

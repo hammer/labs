@@ -28,6 +28,9 @@ outputs:
     description: >
       First open-source Chinese Stable Diffusion model trained on 20M
       filtered Chinese image-text pairs.
+    model:
+      open_weights: true
+
   - name: Taiyi-Diffusion-XL
     type: model
     date: 2024-01-26
@@ -37,6 +40,9 @@ outputs:
     description: >
       Bilingual Chinese-English text-to-image model based on SDXL with
       expanded vocabulary and vision-language model enhanced prompts.
+    model:
+      open_weights: true
+
   - name: "Taiyi-Diffusion-XL: Advancing Bilingual Text-to-Image Generation with Large Vision-Language Model Support"
     type: paper
     date: 2024-01-26

@@ -19,6 +19,8 @@ tags:
   - generation
   - gaming
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2506.17201"
 related:

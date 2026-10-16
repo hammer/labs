@@ -17,6 +17,8 @@ tags:
   - embodied
   - open-weight
   - multimodal
+model:
+  open_weights: true
 related:
   - robobrain-2
   - roboos

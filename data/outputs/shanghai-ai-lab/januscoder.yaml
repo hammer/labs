@@ -17,3 +17,5 @@ tags:
   - coding
   - multimodal
 notes: ICLR 2026 paper. arXiv submission Oct 27, 2025.
+model:
+  open_weights: true

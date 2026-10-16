@@ -15,5 +15,6 @@ tags:
   - proprietary
   - nlp
 model:
+  open_weights: false
   architecture: dense
   parameters: 53B

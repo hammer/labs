@@ -12,5 +12,6 @@ tags:
   - scaling
   - proprietary
 model:
+  open_weights: false
   context_window: 2000000
 notes: Date approximate.

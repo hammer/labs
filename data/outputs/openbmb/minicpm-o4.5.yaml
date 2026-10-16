@@ -23,6 +23,8 @@ tags:
   - on-device
   - agentic
   - frontier
+model:
+  open_weights: true
 paper:
   arxiv: "2604.27393"
 related:

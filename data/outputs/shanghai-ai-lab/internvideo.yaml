@@ -17,3 +17,5 @@ tags:
 library:
   github: https://github.com/OpenGVLab/InternVideo
 notes: arXiv submission Dec 6, 2022. Code and models released Jan 2023.
+model:
+  open_weights: true

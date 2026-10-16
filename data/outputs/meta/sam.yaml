@@ -22,6 +22,8 @@ tags:
   - vision
   - foundational
   - open-source
+model:
+  open_weights: true
 paper:
   arxiv: "2304.02643"
   venue: ICCV 2023

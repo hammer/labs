@@ -20,6 +20,8 @@ tags:
   - editing
   - generation
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2504.17761"
 notes: arXiv submission Apr 24, 2025. Step1X-Edit-v1p2 (ReasonEdit) released Nov 2025.

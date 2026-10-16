@@ -17,3 +17,5 @@ description: >
 tags:
   - embeddings
   - open-weight
+model:
+  open_weights: true

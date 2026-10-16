@@ -48,8 +48,35 @@ const PROMISED = /(promised|coming|planned|will be released|not yet released|exp
  * outrank the circumstantial one (a HuggingFace link), because a lab's entry
  * can link HuggingFace for a demo, a dataset or a third-party quant.
  */
+/**
+ * Tags that assert downloadable weights. Anchored, because `open-vocabulary` is
+ * a computer-vision term with nothing to do with weights and an unanchored
+ * /open/ matches it — 3 entries carry it.
+ */
+const OPEN_TAG = /^open[- ](weight|weights|source|model)s?$/i;
+const CLOSED_TAG = /^(proprietary|closed[- ]?source|api[- ]only)$/i;
+
+/**
+ * An entry's OWN description saying the weights are not public. Only consulted
+ * for the unit's own prose — never a parent's — and only in the closed
+ * direction: "weights released" is ambiguous in an entry that also discusses
+ * siblings, whereas "did not release weights" is not.
+ */
+const CLOSED_PROSE = /did not release weights|no weights (were |are )?released|hosted(-| )only|available (only )?(via|through) (the )?API|API[- ]only|closed[- ]weights|not open[- ]sourc|weights (were |are )?not released|\bproprietary\b/i;
+
+export interface Ctx {
+  /** Entry-level tags. Only trustworthy when the entry holds ONE model. */
+  tags?: string[];
+  /** True for a sub-output of a grouped entry, where tags are the parent's. */
+  grouped?: boolean;
+  /** This unit's own source URLs — for a grouped sub-output, only its own. */
+  urls?: string;
+  /** This unit's own description, never a parent's. */
+  desc?: string;
+}
+
 export function propose(
-  text: string, model: Record<string, unknown> | undefined,
+  text: string, model: Record<string, unknown> | undefined, ctx: Ctx = {},
 ): Verdict {
   if (model && typeof model.open_weights === 'boolean') {
     return { value: model.open_weights, why: 'already set' };
@@ -81,12 +108,47 @@ export function propose(
     return { value: true, why: `AAOI ${aaoi} — in the open band` };
   }
 
+  // Entry tags, but ONLY for a flat entry, where the tags describe the one
+  // model in the file. On a grouped entry they belong to the parent and are
+  // routinely wrong for individual members: `qwen3.yaml` is tagged
+  // `open-weight` for its open siblings while holding Qwen3-Max, Qwen3-Plus and
+  // other API-only tiers, and `qwen-image.yaml` is tagged open while
+  // Qwen-Image-3.0 is hosted-only. 60 sub-outputs would have inherited a tag
+  // this way, most of them Alibaba's closed Max/Plus line.
+  const tags = (ctx.tags ?? []).map(String);
+  if (!ctx.grouped && tags.some((t) => CLOSED_TAG.test(t))) {
+    return { value: false, why: 'entry tagged proprietary' };
+  }
+  if (!ctx.grouped && tags.some((t) => OPEN_TAG.test(t))) {
+    return { value: true, why: `entry tagged ${tags.find((t) => OPEN_TAG.test(t))}` };
+  }
+
+  // The unit's own prose, in the closed direction only. Qwen-Image-3.0 says
+  // outright "Alibaba did not release weights or disclose scale" — an entry
+  // that answers the question in its own description should not need a probe.
+  if (ctx.desc && CLOSED_PROSE.test(ctx.desc)) {
+    return { value: false, why: `description: "${(CLOSED_PROSE.exec(ctx.desc) ?? [''])[0]}"` };
+  }
+
+  // A grouped sub-output that links its OWN HuggingFace repo. Scoped to this
+  // member's sources, so a sibling's weights never vouch for it.
+  if (ctx.grouped && ctx.urls &&
+      /huggingface\.co\/[A-Za-z0-9][\w.-]*\/[\w.-]+/.test(ctx.urls)) {
+    return { value: true, why: 'sub-output links its own HuggingFace repo' };
+  }
+
   // Circumstantial, and last: a HuggingFace *model* repo URL (owner/name, so a
   // bare org link does not count). Checked against the closed frontier — the
   // Claude, GPT and Gemini entries link no HuggingFace repo at all — but a lab
   // can still link one for a tokenizer or a third party's quant, which is why
   // this ranks below every explicit signal.
-  if (/huggingface\.co\/[A-Za-z0-9][\w.-]*\/[\w.-]+/.test(text)) {
+  //
+  // NEVER for a grouped sub-output: `text` is the whole file, so a sibling's
+  // weights would vouch for it. That is not hypothetical — this rule marked
+  // Qwen-Image-3.0 open off Qwen-Image-2.1's link, in a file whose own
+  // description says "Alibaba did not release weights or disclose scale". A
+  // sub-output gets the scoped check above and nothing else.
+  if (!ctx.grouped && /huggingface\.co\/[A-Za-z0-9][\w.-]*\/[\w.-]+/.test(text)) {
     return { value: true, why: 'links a HuggingFace model repo' };
   }
 
@@ -109,10 +171,31 @@ export function applyToYaml(text: string, value: boolean, sub?: string): string 
     if (/^\s{2}open_weights:/m.test(text)) {
       return text.replace(/^\s{2}open_weights:.*$/m, `  open_weights: ${value}`);
     }
+    // An empty inline map (`model: {}`) counts as an existing block and must be
+    // expanded, not treated as absent. Matching only `^model:\n` skipped it and
+    // sent those files down the create path, which wrote a SECOND `model:` key
+    // and produced a DUPLICATE_KEY parse error in six files.
+    const empty = /^model:[ \t]*\{\}[ \t]*$/m.exec(text);
+    if (empty) {
+      return `${text.slice(0, empty.index)}model:\n  open_weights: ${value}` +
+        `${text.slice(empty.index + empty[0].length)}`;
+    }
     const m = /^model:\n/m.exec(text);
-    if (!m) return null;
-    const at = m.index + m[0].length;
-    return `${text.slice(0, at)}  open_weights: ${value}\n${text.slice(at)}`;
+    if (m) {
+      const at = m.index + m[0].length;
+      return `${text.slice(0, at)}  open_weights: ${value}\n${text.slice(at)}`;
+    }
+    // 201 entries are `type: model` with no `model:` block at all — the block
+    // is optional and only appears once someone records a structured fact. So
+    // create it rather than skipping, or those entries can never carry
+    // open_weights. Placed before `paper:`/`related:` to match the key order
+    // every other file uses, and appended when neither is present.
+    const anchor = /^(paper|related):/m.exec(text);
+    const block = `model:\n  open_weights: ${value}\n`;
+    if (anchor) {
+      return `${text.slice(0, anchor.index)}${block}${text.slice(anchor.index)}`;
+    }
+    return `${text.replace(/\n*$/, '\n')}${block}`;
   }
 
   // Grouped: find this sub-output, then the `model:` key inside it. Bound the
@@ -124,8 +207,17 @@ export function applyToYaml(text: string, value: boolean, sub?: string): string 
   const head = new RegExp(`^ {2}- name: ["']?${esc}["']?\\s*$`, 'm').exec(text);
   if (!head) return null;
   const start = head.index;
+  // A sub-output ends at the next sibling OR at the next top-level key, and the
+  // second bound is the one that matters for the LAST member: without it the
+  // span runs to end-of-file and swallows the trailing `related:` block, so an
+  // appended `model:` lands inside that list and the file stops parsing.
   const nextSibling = text.indexOf('\n  - name: ', start + 1);
-  const end = nextSibling < 0 ? text.length : nextSibling;
+  const nextTopKey = /\n[a-z_]+:/.exec(text.slice(start + 1));
+  const bounds = [
+    nextSibling < 0 ? text.length : nextSibling,
+    nextTopKey ? start + 1 + nextTopKey.index : text.length,
+  ];
+  const end = Math.min(...bounds);
   const span = text.slice(start, end);
 
   if (/^\s{6}open_weights:/m.test(span)) {
@@ -133,12 +225,24 @@ export function applyToYaml(text: string, value: boolean, sub?: string): string 
       span.replace(/^\s{6}open_weights:.*$/m, `      open_weights: ${value}`) +
       text.slice(end);
   }
+  const emptySub = /^ {4}model:[ \t]*\{\}[ \t]*$/m.exec(span);
+  if (emptySub) {
+    return text.slice(0, start) +
+      `${span.slice(0, emptySub.index)}    model:\n      open_weights: ${value}` +
+      span.slice(emptySub.index + emptySub[0].length) + text.slice(end);
+  }
   const m = /^ {4}model:\n/m.exec(span);
-  if (!m) return null;
-  const at = m.index + m[0].length;
-  return text.slice(0, start) +
-    `${span.slice(0, at)}      open_weights: ${value}\n${span.slice(at)}` +
-    text.slice(end);
+  if (m) {
+    const at = m.index + m[0].length;
+    return text.slice(0, start) +
+      `${span.slice(0, at)}      open_weights: ${value}\n${span.slice(at)}` +
+      text.slice(end);
+  }
+  // Sub-output with no `model:` block — same optional-block case as a flat
+  // entry. Append one at the end of this member's span, which keeps it inside
+  // the right list item and ahead of the next sibling.
+  const tail = span.replace(/\n*$/, '\n');
+  return `${text.slice(0, start)}${tail}    model:\n      open_weights: ${value}\n${text.slice(end)}`;
 }
 
 async function main() {
@@ -155,13 +259,18 @@ async function main() {
     // Two file shapes. A flat entry is `type: model` with one `model:` block; a
     // grouped entry has no top-level type at all and carries an `outputs:`
     // array of sub-outputs that each have their own. Both reach the home table.
-    const units: { name: string; sub?: string; model?: Record<string, unknown> }[] =
+    const units: { name: string; sub?: string; model?: Record<string, unknown>;
+                   grouped?: boolean; urls?: string; desc?: string }[] =
       Array.isArray(doc.outputs) && doc.outputs.length
         ? doc.outputs
             .filter((s: Record<string, unknown>) => s?.type === 'model')
             .map((s: Record<string, unknown>) => ({
               name: `${doc.name} :: ${s.name}`, sub: s.name as string,
-              model: s.model as Record<string, unknown> | undefined }))
+              model: s.model as Record<string, unknown> | undefined,
+              grouped: true,
+              urls: ((s.sources ?? []) as { url?: string }[])
+                .map((x) => x?.url ?? '').join(' '),
+              desc: String(s.description ?? '') }))
         : doc.type === 'model'
           ? [{ name: doc.name ?? file, model: doc.model as Record<string, unknown> }]
           : [];
@@ -169,7 +278,10 @@ async function main() {
     for (const u of units) {
       const scored = typeof u.model?.intelligence_index === 'number';
       if (scoredOnly && !scored) continue;
-      rows.push({ file, name: u.name, sub: u.sub, scored, v: propose(text, u.model) });
+      rows.push({ file, name: u.name, sub: u.sub, scored,
+        v: propose(text, u.model, {
+          tags: (doc.tags ?? []) as string[], grouped: u.grouped, urls: u.urls,
+          desc: u.desc }) });
     }
   }
 

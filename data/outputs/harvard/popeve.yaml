@@ -20,3 +20,5 @@ tags:
   - biology
   - research
   - open-weight
+model:
+  open_weights: true

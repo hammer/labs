@@ -20,3 +20,5 @@ tags:
 library:
   github: https://github.com/InternLM/InternLM-XComposer
 notes: arXiv submission Sep 26, 2023. HuggingFace models Sep 27, 2023.
+model:
+  open_weights: true

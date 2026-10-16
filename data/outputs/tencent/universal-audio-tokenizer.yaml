@@ -28,5 +28,7 @@ tags:
   - speech
   - tokenizer
   - foundation-model
+model:
+  open_weights: true
 paper:
   arxiv: "2605.31521"

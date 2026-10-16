@@ -22,6 +22,8 @@ tags:
   - science
   - research
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2609.04540"
 related: [chronos-2]

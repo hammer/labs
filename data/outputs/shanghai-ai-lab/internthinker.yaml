@@ -15,3 +15,5 @@ tags:
   - reasoning
   - open-weight
 notes: Date approximate.
+model:
+  open_weights: true

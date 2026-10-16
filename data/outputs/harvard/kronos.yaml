@@ -21,5 +21,7 @@ tags:
   - biology
   - vision
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2506.03373"

@@ -19,6 +19,8 @@ tags:
   - coding
   - open-weight
   - training
+model:
+  open_weights: true
 paper:
   arxiv: "2312.02120"
 related:

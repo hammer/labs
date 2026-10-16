@@ -14,3 +14,5 @@ tags:
   - proprietary
   - role-playing
   - nlp
+model:
+  open_weights: false

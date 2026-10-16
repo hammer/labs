@@ -16,6 +16,8 @@ tags:
   - generation
   - diffusion
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2510.24717"
 related:

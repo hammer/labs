@@ -20,3 +20,5 @@ tags:
   - open-weight
   - efficiency
 notes: Released Jan 28, 2026. Co-developed with ACE Studio.
+model:
+  open_weights: true

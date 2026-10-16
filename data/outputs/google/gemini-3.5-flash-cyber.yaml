@@ -13,4 +13,5 @@ description: >
   Claude Opus 4.6. Access is restricted and parameters are undisclosed.</p>
 tags: [cybersecurity, coding, agents, proprietary]
 model:
+  open_weights: false
   base_model: gemini-3.5-flash

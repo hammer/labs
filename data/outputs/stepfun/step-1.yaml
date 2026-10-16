@@ -14,6 +14,7 @@ description: >
 tags:
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: 130B
 notes: Step series launched Mar 23, 2024.

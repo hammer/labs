@@ -21,4 +21,5 @@ tags:
   - robotics
   - world-model
   - open-weight
-model: {}
+model:
+  open_weights: true

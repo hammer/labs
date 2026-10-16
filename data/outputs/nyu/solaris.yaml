@@ -18,5 +18,7 @@ tags:
   - video
   - open-source
   - research
+model:
+  open_weights: true
 paper:
   arxiv: "2602.22208"

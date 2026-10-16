@@ -23,6 +23,8 @@ tags:
   - generation
   - autoregressive
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2412.14169"
   venue: ICLR 2025

@@ -18,5 +18,7 @@ tags:
   - robotics
   - research
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2409.05865"

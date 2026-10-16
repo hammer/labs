@@ -23,4 +23,5 @@ tags:
   - proprietary
   - reasoning
 model:
+  open_weights: false
   context_window: 256000

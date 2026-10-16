@@ -19,6 +19,8 @@ tags:
   - chemistry
   - generative
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2508.13408"
 related:

@@ -23,6 +23,7 @@ tags:
   - multilingual
   - research
 model:
+  open_weights: true
   architecture: dense
   parameters: 13B
 paper:

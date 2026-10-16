@@ -25,6 +25,8 @@ tags:
   - multimodal
   - open-weight
   - research
+model:
+  open_weights: true
 paper:
   arxiv: "2305.03726"
 related:

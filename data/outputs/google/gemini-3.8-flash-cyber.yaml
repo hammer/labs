@@ -29,6 +29,7 @@ description: >
   purposes only. Parameters are undisclosed.</p>
 tags: [cybersecurity, coding, agents, proprietary]
 model:
+  open_weights: false
   base_model: gemini-3.8-flash
 related:
   - gemini-3.8-flash

@@ -20,6 +20,7 @@ tags:
   - pretraining
   - research
 model:
+  open_weights: true
   base_model: llama-3.1
 paper:
   arxiv: "2410.02660"

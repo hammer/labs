@@ -17,6 +17,8 @@ description: >
 tags:
   - reasoning
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2408.08152"
 related:

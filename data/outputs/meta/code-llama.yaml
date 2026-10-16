@@ -26,6 +26,7 @@ tags:
   - coding
   - foundational
 model:
+  open_weights: true
   architecture: dense
   parameters: 70B
   base_model: llama-2

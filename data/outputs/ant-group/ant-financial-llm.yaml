@@ -12,3 +12,5 @@ description: >
 tags:
   - finance
   - proprietary
+model:
+  open_weights: false

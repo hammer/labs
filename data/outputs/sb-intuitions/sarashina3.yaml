@@ -25,6 +25,7 @@ tags:
   - proprietary
   - sovereign
 model:
+  open_weights: false
   training_tokens: 30T
   variants:
     - name: Sarashina3 mini

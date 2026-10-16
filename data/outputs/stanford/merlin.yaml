@@ -18,5 +18,7 @@ tags:
   - science
   - multimodal
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2406.06512"

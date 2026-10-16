@@ -17,6 +17,8 @@ tags:
   - nlp
   - training
   - research
+model:
+  open_weights: true
 paper:
   arxiv: "2401.02415"
   venue: ACL 2024

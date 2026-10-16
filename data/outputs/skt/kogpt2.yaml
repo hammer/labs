@@ -14,3 +14,5 @@ tags:
   - multilingual
 library:
   github: https://github.com/SKT-AI/KoGPT2
+model:
+  open_weights: true

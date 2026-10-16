@@ -47,6 +47,9 @@ outputs:
       Real-time interactive world model with streaming video diffusion at
       24fps. Introduces Context Forcing distillation and WorldCompass RL
       post-training framework.
+    model:
+      open_weights: true
+
   - name: HY-World 2.0
     type: model
     date: 2026-04-15

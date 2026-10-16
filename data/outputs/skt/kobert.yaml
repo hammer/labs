@@ -16,3 +16,5 @@ tags:
   - multilingual
 library:
   github: https://github.com/SKTBrain/KoBERT
+model:
+  open_weights: true

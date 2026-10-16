@@ -18,6 +18,8 @@ description: >
 tags:
   - multimodal
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2402.12226"
   venue: ACL 2024

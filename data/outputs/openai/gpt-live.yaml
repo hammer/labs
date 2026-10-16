@@ -24,6 +24,7 @@ tags:
   - speech
   - voice
   - proprietary
-model: {}
+model:
+  open_weights: false
 related:
   - gpt-5.6

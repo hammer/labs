@@ -16,5 +16,7 @@ description: >
 tags:
   - vision
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2503.07465"

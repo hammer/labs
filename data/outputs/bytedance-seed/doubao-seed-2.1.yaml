@@ -22,6 +22,7 @@ tags:
   - frontier
   - proprietary
   - agents
-model: {}
+model:
+  open_weights: false
 related:
   - doubao-seed-2.0

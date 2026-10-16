@@ -17,5 +17,7 @@ description: >
 tags:
   - 3d
   - generation
+model:
+  open_weights: true
 paper:
   arxiv: "2505.07747"

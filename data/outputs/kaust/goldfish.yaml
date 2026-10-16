@@ -25,6 +25,8 @@ tags:
   - video
   - open-weight
   - research
+model:
+  open_weights: true
 paper:
   arxiv: "2407.12679"
   venue: ECCV 2024

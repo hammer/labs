@@ -18,6 +18,8 @@ description: >
 tags:
   - embodied
   - open-weight
+model:
+  open_weights: true
 related:
   - robobrain-2
   - roboos

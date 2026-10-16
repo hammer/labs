@@ -14,3 +14,5 @@ tags:
   - open-weight
   - multilingual
   - embeddings
+model:
+  open_weights: true

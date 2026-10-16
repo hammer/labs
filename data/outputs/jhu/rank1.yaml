@@ -19,6 +19,8 @@ tags:
   - reasoning
   - nlp
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2502.18418"
 related:

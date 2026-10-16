@@ -29,6 +29,7 @@ tags:
   - open-weight
   - open-source
 model:
+  open_weights: true
   variants:
     - name: LLaVA-OneVision-2-8B
       notes: fully open pipeline (data, encoders, logs)

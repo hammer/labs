@@ -31,6 +31,9 @@ outputs:
         url: https://huggingface.co/openbmb/MiniCPM-V
     description: >
       First multimodal model deployed natively on a smartphone.
+    model:
+      open_weights: true
+
   - name: MiniCPM-Llama3-V 2.5
     type: model
     date: 2024-05-20
@@ -52,6 +55,9 @@ outputs:
     description: >
       Introduced multi-image and video understanding, outperforming GPT-4V
       on major benchmarks.
+    model:
+      open_weights: true
+
   - name: "MiniCPM-V: A GPT-4V Level MLLM on Your Phone"
     type: paper
     date: 2024-08-03

@@ -20,6 +20,8 @@ tags:
 library:
   github: https://github.com/bytedance/Protenix
 notes: Protenix-v1 technical report posted February 9, 2026.
+model:
+  open_weights: true
 related:
   - felis
   - seedfold

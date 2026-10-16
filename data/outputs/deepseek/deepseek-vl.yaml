@@ -16,6 +16,8 @@ description: >
 tags:
   - multimodal
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2403.05525"
 related:

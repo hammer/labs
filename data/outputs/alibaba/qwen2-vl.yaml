@@ -17,6 +17,8 @@ tags:
   - multimodal
   - open-weight
   - vision
+model:
+  open_weights: true
 paper:
   arxiv: "2409.12191"
 related:

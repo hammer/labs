@@ -23,6 +23,8 @@ tags:
   - health
   - multimodal
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2407.04106"
 related:

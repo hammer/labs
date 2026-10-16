@@ -18,3 +18,5 @@ description: >
 tags:
   - proprietary
   - nlp
+model:
+  open_weights: false

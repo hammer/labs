@@ -24,6 +24,8 @@ tags:
   - speech
   - tts
   - open-weight
+model:
+  open_weights: true
 paper:
   arxiv: "2410.06885"
   venue: ACL 2025

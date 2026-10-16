@@ -22,6 +22,7 @@ tags:
   - coding
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: 34B
   training_tokens: 4.5T
