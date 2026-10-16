@@ -18,3 +18,5 @@ tags:
   - multimodal
   - vision
   - research
+model:
+  open_weights: false

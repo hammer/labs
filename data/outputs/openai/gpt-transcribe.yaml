@@ -14,5 +14,7 @@ description: >
   closed turn for the line that began with open-source Whisper.</p>
 tags:
   - audio
+model:
+  open_weights: false
 related:
   - whisper

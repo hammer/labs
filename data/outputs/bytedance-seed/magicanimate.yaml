@@ -19,3 +19,5 @@ tags:
 library:
   github: https://github.com/magic-research/magic-animate
 notes: Published at CVPR 2024.
+model:
+  open_weights: false

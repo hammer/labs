@@ -18,6 +18,8 @@ description: >
 tags:
   - agentic
   - multimodal
+model:
+  open_weights: false
 related:
   - seed1.5-vl
   - seed-1.6

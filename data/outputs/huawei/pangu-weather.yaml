@@ -25,6 +25,9 @@ outputs:
     sources:
       - label: GitHub
         url: https://github.com/198808xc/Pangu-Weather
+    model:
+      open_weights: false
+
   - name: "Accurate medium-range global weather forecasting with 3D neural networks"
     type: paper
     date: 2023-07-05

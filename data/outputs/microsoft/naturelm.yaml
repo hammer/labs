@@ -28,6 +28,7 @@ tags:
   - moe
   - foundational
 model:
+  open_weights: false
   architecture: moe
   parameters: 46.7B
   active_parameters: 13B

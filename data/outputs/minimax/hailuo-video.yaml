@@ -15,6 +15,7 @@ tags:
   - video
   - generation
 model:
+  open_weights: false
   variants:
     - name: Video-01
       notes: Released August 2024

@@ -15,3 +15,5 @@ description: >
 tags:
   - safety
   - guardrails
+model:
+  open_weights: true

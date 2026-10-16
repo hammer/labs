@@ -15,6 +15,7 @@ tags:
   - multilingual
   - frontier
 model:
+  open_weights: false
   architecture: dense
   parameters: 204B
   training_tokens: 560B

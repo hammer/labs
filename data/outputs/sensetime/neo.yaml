@@ -25,6 +25,7 @@ outputs:
   - name: NEO Models
     type: model
     model:
+      open_weights: true
       variants:
         - name: NEO-2B
           parameters: "2B"

@@ -25,6 +25,7 @@ outputs:
   - type: model
     name: PanGu-pi
     model:
+      open_weights: false
       variants:
         - name: PanGu-pi-1B
           parameters: 1B

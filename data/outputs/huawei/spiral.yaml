@@ -28,6 +28,7 @@ outputs:
   - type: model
     name: SPIRAL
     model:
+      open_weights: true
       variants:
         - name: SPIRAL-base
         - name: SPIRAL-Large

@@ -82,6 +82,7 @@ outputs:
         url: https://x.com/Alibaba_Qwen/status/2026339351530188939
     description: Medium-sized models in the Qwen3.5 family including agentic variants.
     model:
+      open_weights: false
       architecture: moe
       variants:
         - name: Qwen3.5-35B-A3B
@@ -105,6 +106,7 @@ outputs:
     description: >
       Current state-of-the-art preview for the largest reasoning model.
     model:
+      open_weights: false
       architecture: moe
     notes: Date approximate.
   - name: Qwen3.5 Small Model Series
@@ -115,6 +117,7 @@ outputs:
         url: https://www.linkedin.com/posts/qwen_introducing-the-qwen-35-small-model-series-activity-7434222839442051073-AyOd
     description: Small dense models in the Qwen3.5 family.
     model:
+      open_weights: false
       architecture: dense
       variants:
         - name: Qwen3.5-0.8B

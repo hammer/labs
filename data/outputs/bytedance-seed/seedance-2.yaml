@@ -26,6 +26,8 @@ tags:
   - video
   - audio
   - multimodal
+model:
+  open_weights: false
 paper:
   arxiv: "2604.14148"
 related:

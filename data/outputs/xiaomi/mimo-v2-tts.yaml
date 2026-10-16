@@ -11,6 +11,8 @@ description: >
   Xiaomi's device ecosystem.
 tags:
   - audio
+model:
+  open_weights: false
 related:
   - mimo-v2
   - mimo-v2-pro

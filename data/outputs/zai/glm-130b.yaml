@@ -26,6 +26,7 @@ outputs:
       - label: GitHub
         url: https://github.com/zai-org/GLM-130B
     model:
+      open_weights: true
       architecture: dense
       parameters: 130B
   - name: "GLM-130B: An Open Bilingual Pre-trained Model"

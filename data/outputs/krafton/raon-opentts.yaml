@@ -24,6 +24,7 @@ outputs:
       - label: GitHub
         url: https://github.com/krafton-ai/Raon-OpenTTS
     model:
+      open_weights: true
       architecture: dense
   - name: Raon-OpenTTS training dataset
     type: dataset

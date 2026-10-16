@@ -23,6 +23,7 @@ tags:
   - foundational
   - research
 model:
+  open_weights: true
   architecture: dense
 paper:
   arxiv: "2503.11651"

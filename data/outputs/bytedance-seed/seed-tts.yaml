@@ -26,6 +26,9 @@ outputs:
     description: >
       State-of-the-art speech generation model for high-fidelity voice cloning
       and expressive prosody.
+    model:
+      open_weights: false
+
   - name: "Seed-TTS: A Family of High-Quality Versatile Speech Generation Models"
     type: paper
     sources:

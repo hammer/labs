@@ -24,6 +24,9 @@ tags:
 outputs:
   - type: model
     name: FEDformer
+    model:
+      open_weights: true
+
   - type: paper
     name: "FEDformer: Frequency Enhanced Decomposed Transformer for Long-term Series Forecasting"
     paper:

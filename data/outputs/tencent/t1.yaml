@@ -33,6 +33,7 @@ tags:
   - coding
   - research
 model:
+  open_weights: false
   architecture: moe
   parameters: 122B
   active_parameters: 10B

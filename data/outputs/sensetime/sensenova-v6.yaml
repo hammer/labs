@@ -21,6 +21,7 @@ tags:
   - reasoning
   - moe
 model:
+  open_weights: false
   architecture: moe
   parameters: "600B+"
   variants:

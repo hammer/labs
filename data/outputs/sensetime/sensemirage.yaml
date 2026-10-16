@@ -18,6 +18,7 @@ description: >
 tags:
   - generation
 model:
+  open_weights: false
   variants:
     - name: SenseMirage 1.0
       parameters: "1B"

@@ -21,6 +21,7 @@ outputs:
     type: model
     date: 2021-04-26
     model:
+      open_weights: true
       parameters: 200B
       architecture: dense
   - name: "PanGu-alpha: Large-scale Autoregressive Pretrained Chinese Language Models"

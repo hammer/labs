@@ -15,6 +15,7 @@ tags:
   - multimodal
   - frontier
 model:
+  open_weights: false
   architecture: dense
   parameters: 300B
 related:

@@ -20,6 +20,7 @@ tags:
   - vision
   - research
 model:
+  open_weights: false
   architecture: dense
 paper:
   arxiv: "2410.10034"

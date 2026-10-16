@@ -57,3 +57,5 @@ outputs:
       Deep thinking model with reasoning capabilities across language, vision,
       and search. Surpassed o1-preview on several benchmarks including
       mathematics and coding tasks.
+    model:
+      open_weights: false

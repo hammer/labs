@@ -31,6 +31,9 @@ outputs:
     description: >
       Interactive object counting model using visual prompts for detecting
       and counting any objects with zero-shot capabilities.
+    model:
+      open_weights: true
+
   - name: "T-Rex: Counting by Visual Prompting"
     type: paper
     sources:

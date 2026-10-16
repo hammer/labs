@@ -18,6 +18,7 @@ tags:
   - moe
   - frontier
 model:
+  open_weights: false
   architecture: moe
   parameters: 1T
 notes: Preview Mar 23, 2024. Official launch at WAIC Jul 4, 2024.

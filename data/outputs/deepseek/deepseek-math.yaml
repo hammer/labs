@@ -22,6 +22,7 @@ outputs:
     description: >
       Mathematical reasoning model introducing GRPO.
     model:
+      open_weights: true
       architecture: dense
   - name: "DeepSeekMath: Pushing the Limits of Mathematical Reasoning"
     type: paper

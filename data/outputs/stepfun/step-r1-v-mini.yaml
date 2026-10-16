@@ -16,3 +16,5 @@ tags:
   - multimodal
   - reasoning
 notes: Released approximately Apr 2025.
+model:
+  open_weights: false

@@ -18,3 +18,5 @@ description: >
 tags:
   - generation
   - digital-human
+model:
+  open_weights: false

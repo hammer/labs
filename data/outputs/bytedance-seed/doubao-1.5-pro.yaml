@@ -17,6 +17,7 @@ tags:
   - moe
   - scaling
 model:
+  open_weights: false
   architecture: moe
   parameters: 200B
   active_parameters: 20B

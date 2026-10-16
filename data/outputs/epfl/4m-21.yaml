@@ -25,6 +25,7 @@ tags:
   - foundation-model
   - research
 model:
+  open_weights: true
   architecture: dense
 paper:
   arxiv: "2406.09406"

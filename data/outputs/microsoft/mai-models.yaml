@@ -47,6 +47,7 @@ tags:
   - speech
   - vision
 model:
+  open_weights: false
   variants:
     - name: MAI-Transcribe-1
       notes: Apr 2026; STT, 25 languages, #1 FLEURS in 11 core langs

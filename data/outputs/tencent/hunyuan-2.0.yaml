@@ -18,6 +18,7 @@ tags:
   - frontier
   - reasoning
 model:
+  open_weights: false
   architecture: moe
   parameters: 406B
   active_parameters: 32B

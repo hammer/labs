@@ -14,6 +14,7 @@ tags:
   - knowledge-graph
   - scaling
 model:
+  open_weights: false
   architecture: dense
   parameters: 260B
 paper:

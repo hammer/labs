@@ -20,3 +20,5 @@ tags:
 library:
   github: https://github.com/FoundationVision/Infinity
 notes: Accepted as CVPR 2025 Oral.
+model:
+  open_weights: false

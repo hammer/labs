@@ -15,6 +15,8 @@ tags:
   - world-model
   - robotics
   - research
+model:
+  open_weights: false
 paper:
   arxiv: "2512.13030"
 related:

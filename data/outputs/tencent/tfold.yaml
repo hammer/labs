@@ -15,3 +15,5 @@ tags:
   - science
   - biology
 notes: Updated through 2025.
+model:
+  open_weights: false

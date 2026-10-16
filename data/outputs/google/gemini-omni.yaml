@@ -24,6 +24,7 @@ tags:
   - multimodal
   - video
 model:
+  open_weights: false
   variants:
     - name: Gemini Omni Flash
       notes: First public release; 10s cap; SynthID-watermarked; in Gemini app + YouTube Shorts/Create

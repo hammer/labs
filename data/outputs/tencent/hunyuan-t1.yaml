@@ -13,5 +13,7 @@ description: >
   reinforcement learning for extended chain-of-thought reasoning.
 tags:
   - reasoning
+model:
+  open_weights: false
 related:
   - hunyuan-turbo-s

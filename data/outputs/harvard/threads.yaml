@@ -19,5 +19,7 @@ tags:
   - biology
   - multimodal
   - research
+model:
+  open_weights: false
 paper:
   arxiv: "2501.16652"

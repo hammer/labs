@@ -19,3 +19,5 @@ tags:
   - digital-human
   - generation
   - lip-sync
+model:
+  open_weights: false

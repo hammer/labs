@@ -22,3 +22,5 @@ outputs:
     description: >
       Introduced simultaneous audio-visual generation and "Elements" for
       character/object consistency.
+    model:
+      open_weights: false

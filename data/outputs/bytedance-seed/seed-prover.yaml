@@ -14,3 +14,5 @@ description: >
 tags:
   - reasoning
 notes: Solved 5 of 6 IMO 2025 problems. Seed-Prover 1.5 released December 2025.
+model:
+  open_weights: false

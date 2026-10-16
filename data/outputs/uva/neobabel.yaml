@@ -25,6 +25,7 @@ tags:
   - vision
   - generation
 model:
+  open_weights: false
   architecture: dense
 paper:
   arxiv: "2507.06137"

@@ -14,3 +14,5 @@ tags:
   - generation
   - vision
   - efficiency
+model:
+  open_weights: false

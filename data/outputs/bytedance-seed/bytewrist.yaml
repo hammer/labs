@@ -12,3 +12,5 @@ description: >
   Robotic wrist design and learning framework for flexible, anthropomorphic motion.
 tags:
   - embodied
+model:
+  open_weights: false

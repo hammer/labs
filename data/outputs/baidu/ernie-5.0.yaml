@@ -36,6 +36,7 @@ outputs:
       full-modality unified modeling (text, image, audio, video) in a single
       autoregressive framework.
     model:
+      open_weights: false
       architecture: moe
       parameters: 2.4T
       intelligence_index: 14

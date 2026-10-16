@@ -21,6 +21,7 @@ tags:
   - frontier
   - foundational
 model:
+  open_weights: false
   architecture: dense
   parameters: 175B
   context_window: 2048

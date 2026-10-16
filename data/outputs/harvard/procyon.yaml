@@ -20,3 +20,5 @@ tags:
   - biology
   - multimodal
   - research
+model:
+  open_weights: true

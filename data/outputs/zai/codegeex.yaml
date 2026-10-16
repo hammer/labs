@@ -24,6 +24,9 @@ outputs:
         url: https://github.com/THUDM/CodeGeeX
       - label: Project Page
         url: https://keg.cs.tsinghua.edu.cn/codegeex/
+    model:
+      open_weights: true
+
   - name: "CodeGeeX: Multilingual Code Generation"
     type: paper
     date: 2023-03-30

@@ -13,5 +13,7 @@ description: >
 tags:
   - nlp
   - multi-task
+model:
+  open_weights: false
 paper:
   arxiv: "1907.12412"

@@ -20,6 +20,7 @@ tags:
   - moe
   - multimodal
 model:
+  open_weights: false
   architecture: moe
   variants:
     - name: ERNIE X1

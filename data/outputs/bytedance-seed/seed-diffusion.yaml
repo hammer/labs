@@ -13,3 +13,5 @@ tags:
   - generation
   - efficiency
   - research
+model:
+  open_weights: false

@@ -25,6 +25,7 @@ outputs:
       - label: Paper (arXiv)
         url: https://arxiv.org/abs/2509.25193
     model:
+      open_weights: false
       architecture: dense
       parameters: 24B
       context_window: 128000

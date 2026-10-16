@@ -26,6 +26,7 @@ outputs:
       Grounding DINO 1.5 Pro for high-accuracy open-set detection and
       Grounding DINO 1.5 Edge for efficient edge deployment.
     model:
+      open_weights: false
       variants:
         - name: Grounding DINO 1.5 Pro
           notes: High-performance, strong generalization, 54.3 AP on COCO

@@ -18,3 +18,5 @@ tags:
   - frontier
   - multimodal
   - reasoning
+model:
+  open_weights: false

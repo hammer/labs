@@ -18,3 +18,5 @@ tags:
   - research
 library:
   github: https://github.com/FoundationVision/VAR
+model:
+  open_weights: false

@@ -22,6 +22,9 @@ tags:
 outputs:
   - type: model
     name: TNT
+    model:
+      open_weights: true
+
   - type: paper
     name: "Transformer in Transformer"
     paper:

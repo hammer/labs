@@ -16,6 +16,8 @@ description: >
 tags:
   - multilingual
   - frontier
+model:
+  open_weights: false
 paper:
   arxiv: "2404.01954"
 related:

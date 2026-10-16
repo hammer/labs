@@ -25,6 +25,9 @@ tags:
 outputs:
   - type: model
     name: TinyBERT
+    model:
+      open_weights: true
+
   - type: paper
     name: "TinyBERT: Distilling BERT for Natural Language Understanding"
     paper:

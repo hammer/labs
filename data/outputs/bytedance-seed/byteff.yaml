@@ -18,6 +18,7 @@ tags:
   - chemistry
   - molecular-dynamics
 model:
+  open_weights: true
   architecture: dense
 library:
   github: https://github.com/bytedance/byteff

@@ -36,6 +36,7 @@ tags:
   - coding
   - moe
 model:
+  open_weights: false
   architecture: moe
   parameters: 744B
   active_parameters: 40B

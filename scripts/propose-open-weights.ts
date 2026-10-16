@@ -69,6 +69,15 @@ export interface Ctx {
   tags?: string[];
   /** True for a sub-output of a grouped entry, where tags are the parent's. */
   grouped?: boolean;
+  /**
+   * True when the entry holds exactly ONE model unit. The parent tag is then
+   * unambiguous even on a grouped entry: there is no sibling it could be
+   * describing instead. `vig.yaml` is tagged `open-source` and holds one model
+   * plus one paper, and ViG's weights ship from GitHub rather than
+   * HuggingFace — so without this it was marked closed by a HuggingFace probe
+   * in a file that says open on its face. 15 entries were in that state.
+   */
+  soleModel?: boolean;
   /** This unit's own source URLs — for a grouped sub-output, only its own. */
   urls?: string;
   /** This unit's own description, never a parent's. */
@@ -116,10 +125,11 @@ export function propose(
   // Qwen-Image-3.0 is hosted-only. 60 sub-outputs would have inherited a tag
   // this way, most of them Alibaba's closed Max/Plus line.
   const tags = (ctx.tags ?? []).map(String);
-  if (!ctx.grouped && tags.some((t) => CLOSED_TAG.test(t))) {
+  const tagApplies = !ctx.grouped || ctx.soleModel === true;
+  if (tagApplies && tags.some((t) => CLOSED_TAG.test(t))) {
     return { value: false, why: 'entry tagged proprietary' };
   }
-  if (!ctx.grouped && tags.some((t) => OPEN_TAG.test(t))) {
+  if (tagApplies && tags.some((t) => OPEN_TAG.test(t))) {
     return { value: true, why: `entry tagged ${tags.find((t) => OPEN_TAG.test(t))}` };
   }
 
@@ -200,18 +210,28 @@ export function applyToYaml(text: string, value: boolean, sub?: string): string 
 
   // Grouped: find this sub-output, then the `model:` key inside it. Bound the
   // search to the sub-output's own span so a later sibling never gets the edit.
-  // The name may be a quoted scalar — it has to be when it contains a colon,
-  // as `GLM-5: From Vibe Coding to Agentic Engineering` does. Matching only the
-  // bare form silently skipped that sub-output.
+  // Two things make locating a sub-output harder than it looks. The name may be
+  // a quoted scalar — it has to be when it contains a colon, as
+  // `GLM-5: From Vibe Coding to Agentic Engineering` does. And `name:` is not
+  // always the list item's FIRST key: a dozen Huawei entries order it
+  // `- type: paper` then `  name: ...`, so anchoring on `- name:` skipped them
+  // all. Match the name line at either indent, then walk back to the `- ` that
+  // opens the item so the span still starts at the item boundary.
   const esc = sub.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const head = new RegExp(`^ {2}- name: ["']?${esc}["']?\\s*$`, 'm').exec(text);
+  const head = new RegExp(`^(?: {2}- | {4})name: ["']?${esc}["']?\\s*$`, 'm').exec(text);
   if (!head) return null;
-  const start = head.index;
+  const itemOpen = text.lastIndexOf('\n  - ', head.index);
+  const start = head[0].startsWith('  - ') || itemOpen < 0 ? head.index : itemOpen + 1;
   // A sub-output ends at the next sibling OR at the next top-level key, and the
   // second bound is the one that matters for the LAST member: without it the
   // span runs to end-of-file and swallows the trailing `related:` block, so an
   // appended `model:` lands inside that list and the file stops parsing.
-  const nextSibling = text.indexOf('\n  - name: ', start + 1);
+  // Any list item, not just one that leads with `name:`. Sub-outputs order
+  // their keys freely — `- type: model` then `  name: ViG` is common — so
+  // searching for `- name:` missed the boundary entirely and let one member's
+  // span swallow the next, which appended ViG's model block inside the paper
+  // unit that followed it.
+  const nextSibling = text.indexOf('\n  - ', start + 1);
   const nextTopKey = /\n[a-z_]+:/.exec(text.slice(start + 1));
   const bounds = [
     nextSibling < 0 ? text.length : nextSibling,
@@ -260,17 +280,20 @@ async function main() {
     // grouped entry has no top-level type at all and carries an `outputs:`
     // array of sub-outputs that each have their own. Both reach the home table.
     const units: { name: string; sub?: string; model?: Record<string, unknown>;
-                   grouped?: boolean; urls?: string; desc?: string }[] =
+                   grouped?: boolean; urls?: string; desc?: string;
+                   soleModel?: boolean }[] =
       Array.isArray(doc.outputs) && doc.outputs.length
-        ? doc.outputs
-            .filter((s: Record<string, unknown>) => s?.type === 'model')
-            .map((s: Record<string, unknown>) => ({
+        ? (() => {
+            const models = doc.outputs.filter(
+              (s: Record<string, unknown>) => s?.type === 'model');
+            return models.map((s: Record<string, unknown>) => ({
+              soleModel: models.length === 1,
               name: `${doc.name} :: ${s.name}`, sub: s.name as string,
               model: s.model as Record<string, unknown> | undefined,
               grouped: true,
               urls: ((s.sources ?? []) as { url?: string }[])
                 .map((x) => x?.url ?? '').join(' '),
-              desc: String(s.description ?? '') }))
+              desc: String(s.description ?? '') })); })()
         : doc.type === 'model'
           ? [{ name: doc.name ?? file, model: doc.model as Record<string, unknown> }]
           : [];
@@ -281,7 +304,7 @@ async function main() {
       rows.push({ file, name: u.name, sub: u.sub, scored,
         v: propose(text, u.model, {
           tags: (doc.tags ?? []) as string[], grouped: u.grouped, urls: u.urls,
-          desc: u.desc }) });
+          desc: u.desc, soleModel: u.soleModel }) });
     }
   }
 

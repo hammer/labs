@@ -30,6 +30,9 @@ outputs:
       #1 on RewardBench with 80K preference pairs. Gemma-27B and Llama-8B variants.
     paper:
       arxiv: "2410.18451"
+    model:
+      open_weights: false
+
   - name: Skywork-Reward V2
     type: model
     date: 2025-07-02
@@ -41,3 +44,5 @@ outputs:
     paper:
       arxiv: "2507.01352"
       venue: ICLR 2026
+    model:
+      open_weights: false

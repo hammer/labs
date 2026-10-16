@@ -24,6 +24,9 @@ outputs:
         url: https://huggingface.co/Kwaipilot
     description: >
       Specialized reasoning variant fine-tuned for mathematical problem-solving.
+    model:
+      open_weights: false
+
   - name: KwaiYiiMath Technical Report
     type: paper
     sources:

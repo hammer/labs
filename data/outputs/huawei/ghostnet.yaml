@@ -28,6 +28,9 @@ tags:
 outputs:
   - type: model
     name: GhostNet
+    model:
+      open_weights: true
+
   - type: paper
     name: "GhostNet: More Features from Cheap Operations"
     paper:

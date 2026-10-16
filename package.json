@@ -29,7 +29,8 @@
     "test:sweep-org-health": "tsx tests/sweep-org-health-unit.ts",
     "sweep-ledger": "tsx scripts/sweep-ledger.ts",
     "test:sweep-ledger": "tsx tests/sweep-ledger-unit.ts",
-    "propose-open-weights": "tsx scripts/propose-open-weights.ts"
+    "propose-open-weights": "tsx scripts/propose-open-weights.ts",
+    "probe-open-weights": "tsx scripts/probe-open-weights.ts"
   },
   "devDependencies": {
     "playwright": "^1.60.0",

@@ -12,3 +12,5 @@ description: >
 tags:
   - multimodal
   - sparse
+model:
+  open_weights: false

@@ -14,6 +14,7 @@ tags:
   - multimodal
   - moe
 model:
+  open_weights: false
   architecture: moe
   parameters: 389B
   active_parameters: 52B

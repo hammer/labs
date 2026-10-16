@@ -22,6 +22,9 @@ outputs:
     sources:
       - label: Announcement
         url: https://technode.com/2025/04/01/zhipu-ai-launches-free-ai-agent-as-chinas-tech-race-heats-up/
+    model:
+      open_weights: true
+
   - name: "AutoGLM: Autonomous Foundation Agents for GUIs"
     type: paper
     date: 2024-10-28

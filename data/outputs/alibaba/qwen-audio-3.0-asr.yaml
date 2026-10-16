@@ -28,6 +28,7 @@ tags:
   - moe
   - research
 model:
+  open_weights: false
   architecture: moe
 paper:
   arxiv: "2609.07549"

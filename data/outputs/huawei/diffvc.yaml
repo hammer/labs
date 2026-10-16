@@ -22,6 +22,9 @@ tags:
 outputs:
   - type: model
     name: DiffVC
+    model:
+      open_weights: true
+
   - type: paper
     name: "Diffusion-Based Voice Conversion with Fast Maximum Likelihood Sampling Scheme"
     paper:

@@ -16,6 +16,8 @@ tags:
   - chemistry
   - generative
   - research
+model:
+  open_weights: false
 paper:
   arxiv: "2505.13791"
 related:

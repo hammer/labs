@@ -17,5 +17,7 @@ tags:
   - generation
   - vision
   - research
+model:
+  open_weights: false
 paper:
   arxiv: "2404.14396"

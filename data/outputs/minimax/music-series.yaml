@@ -16,3 +16,5 @@ tags:
   - music
   - generation
 notes: Music-01 launched August 2024; Music 2.0 October 2025; Music 2.5 early 2026.
+model:
+  open_weights: false

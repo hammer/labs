@@ -16,3 +16,5 @@ tags:
   - architecture
 library:
   github: https://github.com/AILab-CVC/UniRepLKNet
+model:
+  open_weights: true

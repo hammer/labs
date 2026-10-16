@@ -20,6 +20,7 @@ tags:
   - multimodal
   - research
 model:
+  open_weights: false
   parameters: 2.6B
   pretrained_from_scratch: true
 related: [sarashina2.2]

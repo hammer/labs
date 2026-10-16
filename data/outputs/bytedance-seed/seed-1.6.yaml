@@ -33,6 +33,7 @@ tags:
   - multimodal
   - agentic
 model:
+  open_weights: false
   context_window: 256000
 related:
   - seed1.5-thinking

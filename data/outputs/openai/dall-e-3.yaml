@@ -18,6 +18,8 @@ description: >
 tags:
   - vision
   - multimodal
+model:
+  open_weights: false
 related:
   - dall-e
   - clip

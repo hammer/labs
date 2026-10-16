@@ -26,6 +26,7 @@ outputs:
       - label: Project Page
         url: https://xiaomi-robotics-0.github.io/
     model:
+      open_weights: true
       architecture: dense
       parameters: 4.7B
   - name: "Xiaomi-Robotics-0: Open-Sourced VLA Model"

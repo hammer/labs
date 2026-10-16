@@ -26,6 +26,8 @@ tags:
   - video
   - generation
   - vision
+model:
+  open_weights: false
 paper:
   arxiv: "2512.05115"
   venue: ICLR 2026

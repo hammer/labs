@@ -22,6 +22,7 @@ outputs:
       - label: GitHub
         url: https://github.com/Tencent-Hunyuan/HunyuanDiT
     model:
+      open_weights: true
       parameters: 1.5B
   - name: "Hunyuan-DiT: Multi-Resolution Diffusion Transformer"
     type: paper

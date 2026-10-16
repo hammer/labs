@@ -18,6 +18,9 @@ tags:
 outputs:
   - name: Kimi k1.5 Model
     type: model
+    model:
+      open_weights: false
+
   - name: "Kimi k1.5 Tech Report: Scaling RL with LLMs"
     type: paper
     date: 2025-01-22

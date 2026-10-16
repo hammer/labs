@@ -31,6 +31,7 @@ tags:
   - multimodal
   - moe
 model:
+  open_weights: false
   base_model: qwen3.5
 paper:
   arxiv: "2608.02352"

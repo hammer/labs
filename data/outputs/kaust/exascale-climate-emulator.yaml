@@ -19,6 +19,8 @@ tags:
   - science
   - climate
   - research
+model:
+  open_weights: false
 paper:
   arxiv: "2408.04440"
   venue: SC24 (ACM Gordon Bell Prize for Climate Modelling)

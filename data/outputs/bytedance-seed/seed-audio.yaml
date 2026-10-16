@@ -14,5 +14,7 @@ description: >
 tags:
   - audio
   - multimodal
+model:
+  open_weights: false
 related:
   - seedance-2.5

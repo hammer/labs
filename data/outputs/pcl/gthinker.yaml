@@ -15,5 +15,7 @@ tags:
   - multimodal
   - reasoning
   - research
+model:
+  open_weights: false
 paper:
   arxiv: "2501.01234"

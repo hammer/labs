@@ -28,6 +28,7 @@ outputs:
       - label: Website
         url: https://llm.hunyuan.tencent.com
     model:
+      open_weights: false
       architecture: moe
       parameters: 560B
       active_parameters: 56B

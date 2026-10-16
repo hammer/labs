@@ -25,5 +25,7 @@ description: >
 tags:
   - agents
   - frontier
+model:
+  open_weights: false
 related:
   - gemini-3.5-flash

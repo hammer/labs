@@ -11,3 +11,5 @@ description: >
 tags:
   - reasoning
 notes: Deep Thinking feature announced March 28, 2025. Full Doubao 1.5 Deep Thinking Model available via API April 17, 2025.
+model:
+  open_weights: false

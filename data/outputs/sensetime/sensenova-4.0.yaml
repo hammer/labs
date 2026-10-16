@@ -16,3 +16,5 @@ description: >
 tags:
   - frontier
   - multimodal
+model:
+  open_weights: false

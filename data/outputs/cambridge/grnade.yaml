@@ -18,6 +18,7 @@ tags:
   - biology
   - research
 model:
+  open_weights: false
   architecture: dense
 paper:
   arxiv: "2305.14749"

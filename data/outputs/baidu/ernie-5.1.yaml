@@ -28,6 +28,7 @@ tags:
   - moe
   - agentic
 model:
+  open_weights: false
   architecture: moe
   benchmark_scores:
     - benchmark: AIME 2026

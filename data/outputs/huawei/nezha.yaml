@@ -21,6 +21,9 @@ tags:
 outputs:
   - type: model
     name: NEZHA
+    model:
+      open_weights: true
+
   - type: paper
     name: "NEZHA: Neural Contextualized Representation for Chinese Language Understanding"
     paper:

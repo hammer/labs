@@ -35,6 +35,9 @@ outputs:
         url: https://github.com/Tencent-Hunyuan/Hunyuan3D-2
     paper:
       arxiv: "2501.12202"
+    model:
+      open_weights: true
+
   - name: Hunyuan3D 2.1
     type: paper
     date: 2025-06-18

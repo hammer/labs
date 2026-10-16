@@ -23,6 +23,8 @@ tags:
 library:
   github: https://github.com/bytedance/PXDesign
 notes: bioRxiv technical report posted August 15, 2025.
+model:
+  open_weights: false
 related:
   - protenix
   - seedfold

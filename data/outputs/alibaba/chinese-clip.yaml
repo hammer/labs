@@ -14,5 +14,7 @@ description: >
 tags:
   - multimodal
   - nlp
+model:
+  open_weights: false
 paper:
   arxiv: "2211.01335"

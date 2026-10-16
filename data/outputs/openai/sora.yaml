@@ -22,3 +22,5 @@ tags:
   - vision
   - multimodal
   - video
+model:
+  open_weights: false

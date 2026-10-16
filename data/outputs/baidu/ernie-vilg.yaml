@@ -14,6 +14,7 @@ tags:
   - multimodal
   - nlp
 model:
+  open_weights: false
   architecture: dense
   parameters: 10B
 paper:

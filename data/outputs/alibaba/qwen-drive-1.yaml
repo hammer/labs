@@ -35,6 +35,7 @@ tags:
   - science
   - embodied
 model:
+  open_weights: true
   base_model: qwen3.5
   variants:
     - name: Qwen-Drive-1.0-4B

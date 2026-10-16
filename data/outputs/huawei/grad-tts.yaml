@@ -23,6 +23,9 @@ tags:
 outputs:
   - type: model
     name: Grad-TTS
+    model:
+      open_weights: true
+
   - type: paper
     name: "Grad-TTS: A Diffusion Probabilistic Model for Text-to-Speech"
     paper:

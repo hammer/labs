@@ -18,3 +18,5 @@ tags:
   - nlp
   - chatbot
   - foundation-model
+model:
+  open_weights: false

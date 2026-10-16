@@ -27,6 +27,9 @@ outputs:
     description: >
       "Language Enhanced Reasoning Detection Assistant" combining MLLMs with
       object detection.
+    model:
+      open_weights: false
+
   - name: "Lenna: Language Enhanced Reasoning Detection Assistant"
     type: paper
     date: 2023-12-05

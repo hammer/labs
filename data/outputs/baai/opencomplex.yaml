@@ -31,6 +31,9 @@ outputs:
       architectures of AlphaFold2 and AlphaFold-Multimer. Part of BAAI's
       WuJie series focused on life science AI. Provides a trainable PyTorch
       framework for developing protein, RNA, and complex models.
+    model:
+      open_weights: false
+
   - name: OpenComplex2 (OC2)
     type: model
     date: 2025-05-02
@@ -48,6 +51,9 @@ outputs:
       reproduces protein and RNA ensembles, captures functionally relevant
       transitions (allostery, induced-fit, cryptic pockets), and scales to
       assemblies exceeding 15,000 residues.
+    model:
+      open_weights: false
+
 related:
   - sable
   - odesign

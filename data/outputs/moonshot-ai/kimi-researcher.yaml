@@ -14,3 +14,5 @@ tags:
   - agentic
   - research
 notes: Date approximate.
+model:
+  open_weights: false

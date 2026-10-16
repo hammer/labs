@@ -16,3 +16,5 @@ tags:
   - vision
   - autoregressive
   - research
+model:
+  open_weights: true

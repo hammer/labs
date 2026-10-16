@@ -20,5 +20,7 @@ tags:
   - science
   - multimodal
   - research
+model:
+  open_weights: false
 paper:
   arxiv: "2609.15740"

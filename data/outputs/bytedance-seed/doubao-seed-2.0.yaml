@@ -43,6 +43,7 @@ tags:
   - agentic
   - reasoning
 model:
+  open_weights: false
   variants:
     - name: Doubao-Seed-2.0 Pro
       notes: Frontier reasoning; self-reported AIME 2025 98.3%, Codeforces 3020, VideoMME 89.5

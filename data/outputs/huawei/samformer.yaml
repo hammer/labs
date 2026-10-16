@@ -25,6 +25,9 @@ tags:
 outputs:
   - type: model
     name: SAMformer
+    model:
+      open_weights: true
+
   - type: paper
     name: "SAMformer: Unlocking the Potential of Transformers in Time Series Forecasting with Sharpness-Aware Minimization and Channel-Wise Attention"
     paper:

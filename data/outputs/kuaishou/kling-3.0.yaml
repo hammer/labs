@@ -23,6 +23,9 @@ outputs:
     description: >
       Most advanced Kling model, supporting native 15-second high-fidelity clips
       and multi-shot storyboarding.
+    model:
+      open_weights: false
+
   - name: Kling-Omni
     type: paper
     date: 2025-12-22

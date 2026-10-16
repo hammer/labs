@@ -23,6 +23,8 @@ tags:
   - multimodal
   - video
   - foundational
+model:
+  open_weights: false
 paper:
   arxiv: "2310.01852"
 related:

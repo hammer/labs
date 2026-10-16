@@ -28,5 +28,7 @@ tags:
   - nlp
   - multilingual
   - post-training
+model:
+  open_weights: false
 paper:
   arxiv: "2507.11502"

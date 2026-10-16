@@ -27,6 +27,9 @@ outputs:
     description: >
       Flagship video generation model capable of 2-minute videos at 1080p/30fps,
       utilizing a Diffusion Transformer (DiT) architecture.
+    model:
+      open_weights: false
+
   - name: "Kling: A Diffusion-based Transformer for High-Quality Video Generation"
     type: paper
     date: 2024-06-06

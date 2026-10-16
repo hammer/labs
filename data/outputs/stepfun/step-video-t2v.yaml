@@ -24,6 +24,7 @@ outputs:
       Massive 300B parameter text-to-video model capable of generating high-fidelity
       204-frame clips.
     model:
+      open_weights: true
       parameters: 300B
     notes: Code and model weights released Feb 17, 2025.
   - name: "Step-Video-T2V: A 300B Parameter Text-to-Video Model"

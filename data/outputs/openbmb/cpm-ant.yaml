@@ -18,6 +18,7 @@ tags:
   - nlp
   - efficiency
 model:
+  open_weights: true
   parameters: 10B
 related:
   - cpm-2

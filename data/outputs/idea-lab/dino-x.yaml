@@ -27,6 +27,7 @@ outputs:
       World's top-performing vision model for open-world object detection.
       Pro and Edge variants with text, visual, and customized prompt support.
     model:
+      open_weights: false
       variants:
         - name: DINO-X Pro
           notes: SOTA 56.0 AP COCO, 59.8 AP LVIS-minival zero-shot

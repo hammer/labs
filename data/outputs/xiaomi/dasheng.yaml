@@ -51,5 +51,6 @@ outputs:
       Efficient audio understanding model built on the "Dasheng" encoder, supporting
       speech, music, and acoustics.
     model:
+      open_weights: true
       architecture: dense
       parameters: 7B

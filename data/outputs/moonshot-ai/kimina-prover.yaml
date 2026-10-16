@@ -17,6 +17,9 @@ tags:
 outputs:
   - name: Kimina-Prover-Preview-Distill-7B
     type: model
+    model:
+      open_weights: true
+
   - name: Kimina-Prover Preview Paper
     type: paper
     paper:

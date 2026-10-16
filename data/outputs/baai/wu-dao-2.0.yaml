@@ -27,6 +27,7 @@ outputs:
       Landmark 1.75 trillion parameter MoE model, at the time the largest in
       the world, outscaling GPT-3.
     model:
+      open_weights: false
       architecture: moe
       parameters: 1.75T
   - name: "Wu Dao 2.0: A Roadmap to Cognitive Intelligence"

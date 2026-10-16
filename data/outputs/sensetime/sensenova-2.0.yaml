@@ -19,3 +19,5 @@ tags:
   - frontier
   - multimodal
   - nlp
+model:
+  open_weights: false

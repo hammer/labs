@@ -16,5 +16,7 @@ tags:
   - health
   - multimodal
   - research
+model:
+  open_weights: false
 paper:
   arxiv: "2602.02603"

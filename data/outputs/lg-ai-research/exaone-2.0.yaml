@@ -16,6 +16,7 @@ tags:
   - multimodal
   - enterprise
 model:
+  open_weights: false
   architecture: dense
 related:
   - exaone-1.0

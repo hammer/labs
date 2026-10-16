@@ -17,5 +17,7 @@ description: >
 tags:
   - science
   - materials
+model:
+  open_weights: false
 paper:
   arxiv: "2106.14583"

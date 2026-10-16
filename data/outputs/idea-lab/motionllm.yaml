@@ -29,6 +29,9 @@ outputs:
       comprehension, and reasoning from video and motion sequences.
     library:
       github: https://github.com/IDEA-Research/MotionLLM
+    model:
+      open_weights: true
+
   - name: "MotionLLM: Understanding Human Behaviors from Human Motions and Videos"
     type: paper
     sources:

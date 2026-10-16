@@ -16,6 +16,8 @@ tags:
   - tokenizer
   - generation
   - research
+model:
+  open_weights: true
 paper:
   arxiv: "2412.04432"
   venue: CVPR 2025

@@ -12,3 +12,5 @@ description: >
   Native multimodal version of the GLM-4 architecture.
 tags:
   - multimodal
+model:
+  open_weights: true

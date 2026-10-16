@@ -21,6 +21,7 @@ outputs:
   - name: InteractiveOmni Model
     type: model
     model:
+      open_weights: true
       variants:
         - name: InteractiveOmni-4B
           parameters: "4B"

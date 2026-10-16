@@ -18,6 +18,7 @@ outputs:
     type: model
     date: 2023-03-20
     model:
+      open_weights: false
       parameters: 1.1T
       architecture: moe
       training_tokens: 329B

@@ -17,6 +17,7 @@ tags:
   - audio
   - multimodal
 model:
+  open_weights: false
   variants:
     - name: Step-Audio
     - name: Step-Audio2

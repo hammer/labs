@@ -24,6 +24,9 @@ tags:
 outputs:
   - type: model
     name: DynaBERT
+    model:
+      open_weights: true
+
   - type: paper
     name: "DynaBERT: Dynamic BERT with Adaptive Width and Depth"
     paper:

@@ -39,5 +39,6 @@ outputs:
       Open-source 7B multimodal model for image, video, audio, and text
       understanding.
     model:
+      open_weights: true
       architecture: dense
       parameters: 7B

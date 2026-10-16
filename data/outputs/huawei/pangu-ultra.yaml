@@ -20,6 +20,7 @@ outputs:
     type: model
     date: 2025-04-10
     model:
+      open_weights: false
       parameters: 135B
       architecture: dense
   - name: "Pangu Ultra: Pushing the Limits of Dense Large Language Models on Ascend NPUs"

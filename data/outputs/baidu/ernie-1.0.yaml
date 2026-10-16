@@ -22,7 +22,8 @@ outputs:
     description: >
       Introduced knowledge integration into language modeling, surpassing BERT
       on Chinese NLP tasks.
-    model: {}
+    model:
+      open_weights: false
   - name: "ERNIE: Enhanced Representation through Knowledge Integration"
     type: paper
     date: 2019-04-19

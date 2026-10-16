@@ -20,6 +20,7 @@ tags:
   - frontier
   - reasoning
 model:
+  open_weights: false
   architecture: dense
   parameters: 540B
 paper:

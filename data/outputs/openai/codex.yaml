@@ -24,6 +24,7 @@ tags:
   - coding
   - foundational
 model:
+  open_weights: false
   architecture: dense
   parameters: 12B
 paper:

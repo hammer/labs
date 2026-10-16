@@ -14,5 +14,7 @@ description: >
 tags:
   - multimodal
   - unified
+model:
+  open_weights: false
 paper:
   arxiv: "2202.03052"

@@ -10,5 +10,7 @@ description: >
   Intelligent and human-like end-to-end spoken chatbot.
 tags:
   - audio
+model:
+  open_weights: false
 paper:
   arxiv: "2412.02612"

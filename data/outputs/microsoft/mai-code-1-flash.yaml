@@ -43,6 +43,7 @@ tags:
   - agentic
   - moe
 model:
+  open_weights: false
   architecture: moe
   parameters: 137B
   context_window: 262144

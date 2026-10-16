@@ -28,6 +28,7 @@ tags:
   - scientific-fm
   - research
 model:
+  open_weights: false
   variants:
     - name: FuXi-2.0
       notes: Atmosphere + ocean-surface coupled medium-range model (arXiv:2409.07188)

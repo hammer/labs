@@ -13,3 +13,5 @@ description: >
 tags:
   - 3d
   - generation
+model:
+  open_weights: false

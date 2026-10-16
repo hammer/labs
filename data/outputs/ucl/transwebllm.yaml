@@ -21,6 +21,7 @@ tags:
   - training-data
   - research
 model:
+  open_weights: false
   architecture: dense
   parameters: 1.3B
 dataset:

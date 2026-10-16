@@ -16,5 +16,6 @@ tags:
   - moe
   - reasoning
 model:
+  open_weights: false
   architecture: moe
 notes: ABAB 6 launched January 2024; ABAB 6.5 released April 17, 2024.

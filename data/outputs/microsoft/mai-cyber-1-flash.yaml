@@ -18,6 +18,7 @@ tags:
   - moe
   - security
 model:
+  open_weights: false
   architecture: moe
   parameters: "137B"
   active_parameters: "5B"

@@ -21,5 +21,6 @@ tags:
   - multimodal
   - moe
 model:
+  open_weights: false
   architecture: moe
   context_window: 200000

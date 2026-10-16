@@ -19,3 +19,5 @@ tags:
   - scientific-fm
   - cryo-em
   - research
+model:
+  open_weights: true

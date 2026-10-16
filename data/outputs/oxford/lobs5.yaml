@@ -17,6 +17,7 @@ tags:
   - science
   - research
 model:
+  open_weights: false
   architecture: dense
 paper:
   arxiv: "2502.09172"

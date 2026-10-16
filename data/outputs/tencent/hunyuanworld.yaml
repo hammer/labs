@@ -35,6 +35,9 @@ outputs:
     description: >
       First open-source world model supporting immersive roaming, interaction,
       and simulation from text and image inputs.
+    model:
+      open_weights: false
+
   - name: HY-World 1.5 (WorldPlay)
     type: model
     date: 2025-12-17
@@ -68,6 +71,9 @@ outputs:
       and code.
     paper:
       arxiv: "2604.14268"
+    model:
+      open_weights: true
+
 related:
   - worldcrafter
   - gae

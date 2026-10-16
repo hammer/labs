@@ -15,3 +15,5 @@ tags:
   - audio
   - nlp
 notes: Speech-02 launched April 2025. #1 on TTS Arena and Artificial Analysis Speech Arena.
+model:
+  open_weights: false

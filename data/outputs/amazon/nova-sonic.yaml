@@ -27,6 +27,8 @@ tags:
   - speech
   - multimodal
   - frontier
+model:
+  open_weights: false
 related:
   - nova-2
   - nova

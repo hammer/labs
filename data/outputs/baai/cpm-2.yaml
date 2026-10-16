@@ -29,6 +29,7 @@ tags:
 paper:
   arxiv: "2106.10715"
 model:
+  open_weights: false
   architecture: moe
   parameters: 198B
 related:

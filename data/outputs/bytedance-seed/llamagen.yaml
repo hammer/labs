@@ -18,3 +18,5 @@ tags:
   - autoregressive
 library:
   github: https://github.com/FoundationVision/LlamaGen
+model:
+  open_weights: true
