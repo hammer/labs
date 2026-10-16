@@ -23,7 +23,7 @@ const evalFacetsByItem = new Map<unknown, { questions: number; tasks: number } |
 // shown as hints in the scoped filter panels so sparse facets (a tokens
 // filter reaches ~9% of model rows) are a visible tradeoff, not a surprise.
 let modelRowCount = 0;
-const facetCoverage = { arch: 0, params: 0, aparams: 0, tokens: 0, ctx: 0, intel: 0, openness: 0 };
+const facetCoverage = { arch: 0, params: 0, aparams: 0, tokens: 0, ctx: 0, intel: 0, openness: 0, openWeights: 0 };
 
 items.forEach(item => {
   if (item._kind === 'output') {
@@ -39,6 +39,7 @@ items.forEach(item => {
       modelRowCount++;
       if (facets) {
         if (facets.arch) facetCoverage.arch++;
+        if (facets.openWeights) facetCoverage.openWeights++;
         if (facets.paramsB > 0) facetCoverage.params++;
         if (facets.aparamsB > 0) facetCoverage.aparams++;
         if (facets.tokensT > 0) facetCoverage.tokens++;
@@ -57,9 +58,13 @@ const types = [...typeCounts.keys()].sort();
 const tags = [...tagCounts.keys()].sort();
 
 const archCounts = { dense: 0, moe: 0 };
+const weightCounts = { open: 0, closed: 0 };
 for (const f of facetsByItem.values()) {
   if (f?.arch.includes('dense')) archCounts.dense++;
   if (f?.arch.includes('moe')) archCounts.moe++;
+  // Containment, so a mixed family counts toward both — same as arch.
+  if (f?.openWeights.includes('open')) weightCounts.open++;
+  if (f?.openWeights.includes('closed')) weightCounts.closed++;
 }
 
 const hint = (n: number) => `Data: ${n} of ${modelRowCount} model rows`;
@@ -103,6 +108,16 @@ const dimensions: FilterDimension[] = [
     options: [
       { slug: 'dense', label: 'Dense', count: archCounts.dense },
       { slug: 'moe', label: 'MoE (sparse)', count: archCounts.moe },
+    ],
+  },
+  {
+    // rowAttr is camelCase and maps to data-open-weights; a kebab key here
+    // would read nothing and the filter would silently match no rows.
+    key: 'weights', label: 'Weights', kind: 'multi', rowAttr: 'openWeights',
+    visibleWhen: modelScope, hint: hint(facetCoverage.openWeights),
+    options: [
+      { slug: 'open', label: 'Open weights', count: weightCounts.open },
+      { slug: 'closed', label: 'Closed', count: weightCounts.closed },
     ],
   },
   {
@@ -366,6 +381,7 @@ function cellText(
             data-downloads={m?.hf_downloads ?? ''}
             data-citations={m?.citations ?? ''}
             data-arch={f?.arch || undefined}
+            data-open-weights={f?.openWeights || undefined}
             data-params={f && f.paramsB > 0 ? f.paramsB : undefined}
             data-params-src={f?.paramsSrc || undefined}
             data-aparams={f && f.aparamsB > 0 ? f.aparamsB : undefined}

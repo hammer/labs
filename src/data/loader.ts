@@ -148,6 +148,15 @@ export interface ModelFacets {
   intel: number;
   /** Max openness_index across units (all values are AAOI v1.0). */
   openness: number;
+  /**
+   * Union of weight availability across model units, as a sorted
+   * comma-joined set — `open`, `closed`, or `closed,open`. Same containment
+   * semantics as `arch`: the question is "does this release CONTAIN a model
+   * whose weights are downloadable", so a family shipping an open small model
+   * beside an API-only flagship matches both filters, deliberately. Empty when
+   * no unit records `open_weights`, which keeps unknown out of both.
+   */
+  openWeights: string;
 }
 
 /**
@@ -173,6 +182,7 @@ export function getModelFacets(output: Output): ModelFacets | null {
   let ctx = 0;
   let intel = 0;
   let openness = 0;
+  const weightSet = new Set<string>();
 
   function considerParams(value: string | undefined, src: ModelFacets['paramsSrc']) {
     const b = parseScaleToBillions(value);
@@ -199,11 +209,16 @@ export function getModelFacets(output: Output): ModelFacets | null {
       intel = Math.max(intel, m.intelligence_index ?? 0);
     }
     openness = Math.max(openness, m.openness_index ?? 0);
+    // Strictly boolean: an unset field means unknown and must not be read as
+    // either value, or every unbackfilled model would silently join a filter.
+    if (m.open_weights === true) weightSet.add('open');
+    else if (m.open_weights === false) weightSet.add('closed');
   }
 
   return {
     arch: [...archSet].sort().join(','),
     paramsB, paramsSrc, aparamsB, aparamsSrc, tokensT, ctx, intel, openness,
+    openWeights: [...weightSet].sort().join(','),
   };
 }
 

@@ -251,7 +251,12 @@ function log(name, ok, detail = '') {
   const t = await page.evaluate(() => ({
     dims: Array.from(document.querySelectorAll('.dim-item .dim-item-label')).map(e => e.textContent),
   }));
-  const ok = t.dims.length === 11 && t.dims.includes('Architecture') && t.dims.includes('Active params');
+  // 12 since the Weights dimension landed (open/closed weights, model-scoped).
+  // The count is asserted deliberately: a scoped dimension that silently stops
+  // appearing is invisible otherwise, so this fails loudly when the list
+  // changes in either direction.
+  const ok = t.dims.length === 12 && t.dims.includes('Architecture')
+    && t.dims.includes('Active params') && t.dims.includes('Weights');
   log('timeline: type=model reveals scoped dims', ok, JSON.stringify(t.dims));
   await page.close();
 }
