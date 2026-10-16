@@ -104,7 +104,6 @@ const dimensions: FilterDimension[] = [
         <th class="col-intelligence sortable" data-sort="intelligence"><span class="th-full">Intelligence</span><span class="th-short">Intel</span></th>
         <th class="col-intel-open sortable" data-sort="intelopen"><span class="th-full">Intel (open)</span><span class="th-short">Intel (o)</span></th>
         <th class="col-inteldate sortable" data-sort="inteldate"><span class="th-full">Intel Date</span><span class="th-short">Date</span></th>
-        <th class="col-openness sortable" data-sort="openness">Openness</th>
         <th class="col-outputs sortable" data-sort="outputs"><span class="th-full">Outputs</span><span class="th-short">Out</span></th>
       </tr>
     </thead>
@@ -186,13 +185,6 @@ const dimensions: FilterDimension[] = [
               {intel ? (
                 <span title={`${intel.name} (${intel.date}) holds this lab's top AAII score`}>
                   {intel.date.slice(0, 7)}
-                </span>
-              ) : '—'}
-            </td>
-            <td class="col-openness">
-              {intel?.openness !== undefined ? (
-                <span title={`${intel.opennessVersion ?? 'AA Openness Index'}; ${intel.openness.toFixed(2)}/100 (highest-AAII labindex model that AA has scored on AAOI)`}>
-                  {intel.openness.toFixed(0)}
                 </span>
               ) : '—'}
             </td>
@@ -435,7 +427,7 @@ const dimensions: FilterDimension[] = [
     const sorted = [...allRows].sort((a, b) => {
       const av = a.dataset[key] ?? '';
       const bv = b.dataset[key] ?? '';
-      if (key === 'founded' || key === 'ipo' || key === 'valuation' || key === 'largest' || key === 'intelligence' || key === 'intelopen' || key === 'openness' || key === 'outputs') {
+      if (key === 'founded' || key === 'ipo' || key === 'valuation' || key === 'largest' || key === 'intelligence' || key === 'intelopen' || key === 'outputs') {
         const diff = parseVal(av) - parseVal(bv);
         return sortAsc ? diff : -diff;
       }
@@ -656,7 +648,6 @@ const dimensions: FilterDimension[] = [
   .col-largest,
   .col-intelligence,
   .col-intel-open,
-  .col-openness,
   .col-outputs {
     text-align: right;
     white-space: nowrap;
@@ -670,7 +661,6 @@ const dimensions: FilterDimension[] = [
   th.col-largest,
   th.col-intelligence,
   th.col-intel-open,
-  th.col-openness,
   th.col-outputs {
     text-align: right;
   }
@@ -730,22 +720,23 @@ const dimensions: FilterDimension[] = [
      1333px scrollWidth) and is clean from 1370 up. The tier is set at 1399 to
      keep ~30px of headroom, since lab-name and score growth have moved these
      boundaries before. Re-measure when adding a column. */
-  /* Thirteen columns do not fit under ~1600px, so one of the two weakest has
-     to drop first. Intel Date loses: it is a provenance detail for the
-     Intelligence cell, while Intelligence (open) is a figure in its own right.
-     So inteldate now goes at 1539 and intel-open survives to 1399, where the
-     12-column layout was already measured clean.
-     Measured: 13 columns need 1600px scrollWidth with the short header (1700
-     with "Intelligence (open)" spelled out — the header, not the two-digit
-     cell, sets the width, which is why th-full reads "Intel (open)").
-     Re-measure with `npm run test:mobile` when adding another column. */
-  @media (max-width: 1599px) {
+  /* Twelve columns since the Openness column was dropped, and the trim points
+     moved with it. Measured after the change: all twelve are clean from 1400px
+     (they needed 1600 with thirteen), and eleven — Intel Date hidden — from
+     1220. Tiers sit ~29px above each, matching the headroom the rest of this
+     file carries, so Intel Date returns at 1430 and Intelligence (open) at
+     1250, roughly 150px earlier than before. Intel Date still drops first: it
+     is provenance for the Intelligence cell, while Intelligence (open) is a
+     figure in its own right. Re-measure with `npm run test:mobile` whenever a
+     column is added OR removed — this band only shrank because something
+     left. */
+  @media (max-width: 1429px) {
     th.col-inteldate, td.col-inteldate {
       display: none;
     }
   }
 
-  @media (max-width: 1399px) {
+  @media (max-width: 1249px) {
     th.col-intel-open, td.col-intel-open {
       display: none;
     }
@@ -759,8 +750,9 @@ const dimensions: FilterDimension[] = [
     }
   }
 
-  /* 883, not 880: the 8-column set (rank, Lab, Region, Type, Scale, Intel,
-     Openness, Out) needs 882px of intrinsic width, so releasing it at 881 left
+  /* 883, not 880: the set visible here (rank, Lab, Region, Type, Scale, Intel,
+     Out — it included Openness until that column was dropped) needed 882px of
+     intrinsic width, so releasing it at 881 left
      a 1px overflow in an 881-883 band — measured 2026-10-07, clean from 884 up.
      The old 880 boundary was correct when measured in 2026-07 and drifted as
      labs were added; the table is width:100% with nowrap headers, so its
@@ -775,10 +767,6 @@ const dimensions: FilterDimension[] = [
   }
 
   @media (max-width: 720px) {
-    th.col-openness, td.col-openness {
-      display: none;
-    }
-
     .lab-table th,
     .lab-row td {
       padding-left: 0.5rem;
