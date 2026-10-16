@@ -9,6 +9,10 @@ sources:
     url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16
   - label: HuggingFace (base)
     url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-Base-BF16
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/nemotron-3-5-super-vl
+  - label: Artificial Analysis article (Super and Bolt)
+    url: https://artificialanalysis.ai/articles/nemotron-3-5-super-and-bolt
   - label: Technical report (Super VL and Lightning)
     url: https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf
 description: >
@@ -36,9 +40,16 @@ description: >
   <p>Released under <strong>OpenMDW-1.1</strong>, a genuine open licence rather
   than a revenue-gated one &mdash; a different posture from
   <a href="/outputs/meta/muse-spark-open">Muse Spark Open</a>, which shipped the
-  same week under a bespoke licence with a $20M notification clause. Not yet
-  scored by Artificial Analysis at filing; the Nemotron 3.5 family's only AA
-  entry remains Lightning at 13.</p>
+  same week under a bespoke licence with a $20M notification clause.</p>
+
+  <p>Artificial Analysis scored it on release day at
+  <strong>26 on Intelligence Index v4.3.2</strong>, <strong>#1 of 67</strong>
+  open-weights models in its size class and, in AA's words, "the leading US
+  open weight model" &mdash; twice the 13 of its predecessor Nemotron 3 Super.
+  Two figures make the efficiency case as well as the score does: it spends
+  <strong>46k output tokens per index task, about 60% fewer than its
+  predecessor</strong>, and serves at ~630 tok/s on 100k-token prompts with a
+  1.8s first token, at $0.20 / $0.57 per 1M.</p>
 tags:
   - frontier
   - open-weights
@@ -51,6 +62,8 @@ model:
   parameters: 120B
   active_parameters: 12B
   context_window: 1000000
+  intelligence_index: 26
+  intelligence_index_version: "AA v4.3.2"
   license: OpenMDW-1.1
   variants:
     - name: Super VL 120B-A12B BF16

@@ -8,6 +8,10 @@ sources:
     url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB
   - label: HuggingFace (BF16)
     url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-BF16
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/nemotron-3-5-bolt-74b-a9b
+  - label: Artificial Analysis article (Super and Bolt)
+    url: https://artificialanalysis.ai/articles/nemotron-3-5-super-and-bolt
   - label: Technical report (Super VL and Lightning)
     url: https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf
 description: >
@@ -31,8 +35,17 @@ description: >
   parent's 89.52, so roughly three points of reasoning for a 38% parameter cut
   and 2-bit weights), PinchBench 87.82, Terminal-Bench 2.1 50.98, WebArena
   vision 50.86, SciCode 41.02, GDPVal-AA-V2 28.47. Training cutoff May 2026,
-  <strong>OpenMDW-1.1</strong>, with GGUF and a LiLiCorr variant alongside. Not
-  yet scored by Artificial Analysis.</p>
+  <strong>OpenMDW-1.1</strong>, with GGUF and a LiLiCorr variant alongside.</p>
+
+  <p>Artificial Analysis scored it on release day at <strong>21 on
+  Intelligence Index v4.3.2</strong> (21.4 unrounded), <strong>#4 of 67</strong>
+  open-weights models in the 40B&ndash;150B class and first among US models in
+  it. The compression claim holds up on AA's own axis: it lands
+  <strong>1.5 points behind Nemotron 3 Ultra on about a seventh of Ultra's
+  parameters</strong>. The cost shows up elsewhere &mdash; AA measures it as
+  <strong>very verbose</strong>, 230M output tokens against a 100M median for
+  comparable models, and 82k per index task against Super VL's 46k. So the
+  intelligence survives the squeeze better than the token budget does.</p>
 tags:
   - open-weights
   - moe
@@ -46,6 +59,8 @@ model:
   parameters: 74B
   active_parameters: 9B
   context_window: 262144
+  intelligence_index: 21
+  intelligence_index_version: "AA v4.3.2"
   license: OpenMDW-1.1
   variants:
     - name: Bolt 74B-A9B 24GB

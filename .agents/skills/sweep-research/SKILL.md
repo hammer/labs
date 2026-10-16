@@ -85,6 +85,7 @@ Follow [add-output](../add-output/SKILL.md) for every accepted artifact. In part
 
 - trace structured model fields to primary sources;
 - settle from-scratch versus derivative provenance whenever a model has an Intelligence score;
+- **check `artificialanalysis.ai/articles/` before writing "not yet scored by Artificial Analysis"** into any entry. AA scores notable releases in an article on release day, ahead of the leaderboard payload that step 8's backfill reads — NVIDIA's Nemotron 3.5 Super VL and Bolt were scored 26 and 21 the day they shipped, and both were filed claiming no score existed. A guessed model-page URL that 404s proves nothing either: AA slugs carry size suffixes (`nemotron-3-5-bolt-74b-a9b`, not `nemotron-3-5-bolt`). See AGENTS.md step 8;
 - attach a late technical report to the existing model rather than creating a duplicate output;
 - add both news and output records when an announcement is also a canonical research artifact;
 - preserve historical flagship markers.
