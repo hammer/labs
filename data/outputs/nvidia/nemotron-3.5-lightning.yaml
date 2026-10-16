@@ -5,6 +5,8 @@ type: model
 date: 2026-08-11
 flagship: true
 sources:
+  - label: Technical report (Super VL and Lightning)
+    url: https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf
   - label: NVIDIA Technical Blog
     url: https://developer.nvidia.com/blog/nvidia-nemotron-3-5-lightning-delivers-fast-accurate-specialized-task-execution-for-long-running-agents/
   - label: HuggingFace (BF16)
@@ -47,6 +49,13 @@ description: >
   below larger frontier planners but as a faster, customizable executor for
   always-on agent workflows, with reasoning enabled or disabled through its
   chat template.</p>
+  <p>The <strong>technical report</strong> covering this model landed with the
+  larger siblings on 2026-10-15, two months after the weights: <em>NVIDIA
+  Nemotron 3.5 Super VL and Lightning Technical Report</em>. The line now spans
+  <a href="/outputs/nvidia/nemotron-3.5-super-vl">Super VL</a> at 120B/12B and
+  <a href="/outputs/nvidia/nemotron-3.5-bolt">Bolt</a> at 74B/9B, with
+  Lightning the smallest at 30B/3B.</p>
+
 tags:
   - moe
   - open-weight

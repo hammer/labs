@@ -80,6 +80,19 @@ description: >
   Qwen3.5-4B at 220 tok/s on an M5 Max. AA Intelligence Index v4.3:
   <strong>7</strong> (8B-A1B), 8 (2.6B), 5 (1.2B-Instruct / Thinking) &mdash;
   the two larger models above LFM2-24B-A2B's 6.</p>
+
+  <p><strong>LFM2.5-24B-A2B (2026-10-12) closes the family</strong>, and Liquid
+  calls it exactly that &mdash; "the largest and final model in the LFM2.5
+  family, which now spans two orders of magnitude: from LFM2.5-230M to
+  LFM2.5-24B-A2B." It is a <strong>24B total / 2.45B active</strong> MoE, 64
+  experts per block with top-4 routing, and it moves three things at once that
+  the rest of the family had held fixed: context <strong>32K &rarr;
+  131K</strong>, vocabulary <strong>65K &rarr; 128K</strong> by in-place
+  tokenizer expansion for better non-Latin tokenization, and pretraining
+  <strong>~17T &rarr; ~33T tokens</strong>. Reported: LiveClaw
+  <strong>48.09</strong> against Qwen3.6-35B-A3B's 38.19, IFEval 96.75,
+  MATH-500 96.04, AutomationBench 27.69. Not yet scored by Artificial
+  Analysis.</p>
 tags:
   - open-weight
   - on-device
@@ -108,6 +121,10 @@ model:
   training_tokens: 38T
   license: LFM Open License v1.0
   variants:
+    - name: LFM2.5-24B-A2B
+      parameters: 24B
+      active_parameters: 2.45B
+      notes: "Oct 12 2026; largest and final LFM2.5. 64 experts/block, top-4 routing, 131K context, 128K vocab, ~33T tokens. LiveClaw 48.09, IFEval 96.75, MATH-500 96.04. GGUF, FP8, ONNX and Base builds alongside."
     - name: LFM2.5-1.2B-Instruct
       parameters: 1.17B
       notes: "Jan 5 2026 launch model; 16 layers (10 conv + 6 GQA), 28T tokens (extended from LFM2-1.2B's 10T), 32K context, 65K vocab. GPQA 38.89, IFEval 86.23, IFBench 47.33, BFCLv3 49.12. AA Intelligence Index v4.3 score 5. Base checkpoint LFM2.5-1.2B-Base also released."

@@ -1,0 +1,72 @@
+name: Nemotron 3.5 Bolt
+slug: nemotron-3.5-bolt
+lab: nvidia
+type: model
+date: 2026-10-15
+sources:
+  - label: HuggingFace (24GB)
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB
+  - label: HuggingFace (BF16)
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-BF16
+  - label: Technical report (Super VL and Lightning)
+    url: https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf
+description: >
+  <p>A <strong>74B total / 9B active</strong> hybrid Mamba-2 &ndash;
+  Transformer with <strong>LatentMoE</strong>, compressed out of
+  <a href="/outputs/nvidia/nemotron-3.5-super-vl">Nemotron 3.5 Super VL</a> by
+  a method NVIDIA calls <strong>Star Elastic</strong> rather than trained from
+  scratch. The compression is visible in the routing: expert top-K drops from
+  <strong>22 in the parent to 9</strong>. Context is 256K, down from Super VL's
+  1M.</p>
+
+  <p>The name states the target. "Bolt" is the locally-deployable build and
+  <strong>"24GB" is the deliverable</strong>: with <strong>native 2-bit
+  quantization</strong> the packed model fits a single consumer GPU, which is
+  the whole point of taking a 120B model apart. That makes it the interesting
+  half of the pair &mdash; Super VL is the capability statement, Bolt is the
+  claim that the capability survives being squeezed onto hardware people
+  already own.</p>
+
+  <p>Published scores: GPQA Diamond <strong>86.43</strong> (against the
+  parent's 89.52, so roughly three points of reasoning for a 38% parameter cut
+  and 2-bit weights), PinchBench 87.82, Terminal-Bench 2.1 50.98, WebArena
+  vision 50.86, SciCode 41.02, GDPVal-AA-V2 28.47. Training cutoff May 2026,
+  <strong>OpenMDW-1.1</strong>, with GGUF and a LiLiCorr variant alongside. Not
+  yet scored by Artificial Analysis.</p>
+tags:
+  - open-weights
+  - moe
+  - efficiency
+  - edge
+  - quantization
+  - reasoning
+model:
+  architecture: moe
+  base_model: nemotron-3.5-super-vl
+  parameters: 74B
+  active_parameters: 9B
+  context_window: 262144
+  license: OpenMDW-1.1
+  variants:
+    - name: Bolt 74B-A9B 24GB
+      notes: native 2-bit, packs into 24GB for a consumer GPU
+    - name: Bolt 74B-A9B BF16
+      notes: full-precision reference weights
+    - name: Bolt 74B-A9B 24GB GGUF
+      notes: GGUF build
+  benchmark_scores:
+    - benchmark: PinchBench
+      score: "87.82"
+    - benchmark: GPQA Diamond
+      score: "86.43"
+    - benchmark: Terminal-Bench 2.1
+      score: "50.98"
+    - benchmark: WebArena (vision)
+      score: "50.86"
+    - benchmark: SciCode
+      score: "41.02"
+    - benchmark: GDPVal-AA-V2
+      score: "28.47"
+related:
+  - nemotron-3.5-super-vl
+  - nemotron-3.5-lightning
