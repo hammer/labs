@@ -1,0 +1,106 @@
+name: MAI-Gym
+slug: mai-gym
+lab: alibaba
+date: 2026-10-14
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.20939
+  - label: GitHub
+    url: https://github.com/Tongyi-MAI/MAI-Gym
+  - label: HuggingFace (MAI-Gym-9B)
+    url: https://huggingface.co/Tongyi-MAI/MAI-Gym-9B
+description: >
+  <p>Online RL with verifiable rewards has carried maths, coding and tool use a
+  long way, and GUI agents have been left behind for a dull reason: interactive
+  environments are expensive and realistic training tasks are scarce. MAI-Gym
+  is Alibaba's attempt to remove both constraints at once &mdash; one platform
+  unifying <strong>evaluation, data collection and online RL training</strong>
+  across mobile, computer and web, from the <strong>MAI-UI team at Alibaba
+  Token Hub</strong> (not Microsoft, despite the <code>MAI-</code> prefix this
+  index also uses for MAI-Thinking-1 and the MAI-Code line).</p>
+
+  <p>The design choice that matters is a <strong>shared rollout
+  pipeline</strong>, so an agent behaves identically whether it is being
+  evaluated or trained &mdash; which is what makes an RL gain legible as a real
+  gain rather than an artefact of two different harnesses. It covers ten
+  established benchmarks and scales to <strong>20,000 parallel environment
+  instances</strong>. On top of the infrastructure it synthesises its own
+  subjects: resettable mocked apps, coherent cross-app worlds, and tasks whose
+  verifiers are execution-validated rather than written by hand.</p>
+
+  <p><strong>The sim-to-real result is the one to read.</strong> RL inside a
+  <em>mocked</em> train-ticketing app transferred to the real application,
+  lifting task success on a physical phone from <strong>28.8% to
+  48.1%</strong>. That is the claim the whole synthetic-environment approach
+  stands on, and it is reported on one app rather than a suite, so treat it as
+  a strong existence proof rather than a measured transfer rate.
+  <strong>MAI-Gym-9B</strong>, the unified mobile-and-computer agent trained
+  with it, reports <strong>78.4% on MobileWorld and 76.2% on
+  OSWorld-Verified</strong>, which Alibaba puts as state of the art among open
+  GUI agents under 10B.</p>
+
+  <p>Released as a framework plus synthesis skills, the mocked apps,
+  <strong>2,000 verified tasks</strong> and the checkpoint. The paper is
+  CC BY-NC-SA 4.0 and the repository declares no licence at filing, so the
+  terms on the code are unsettled even though the weights are downloadable.
+  The title page also notes MAI-Gym was used to train <strong>Qwen-UI-Agent</strong>,
+  which is not yet tracked here.</p>
+tags:
+  - agents
+  - rl
+  - computer-use
+  - evaluation
+  - open-weights
+  - research
+paper:
+  arxiv: "2610.20939"
+  authors:
+    - Panrong Tong
+    - Quyu Kong
+    - Pengxiang Li
+    - Tianyu Xia
+    - Hanzhang Zhou
+    - Lei Wang
+    - Chenglin Cai
+    - Long Li
+    - Long Chen
+    - Jianan Zhang
+    - Zhengwen Zeng
+    - Xu Zhang
+    - Gongjie Zhang
+    - Yue Wang
+    - Steven Hoi
+outputs:
+  - name: MAI-Gym
+    type: library
+    date: 2026-10-14
+    sources:
+      - label: GitHub
+        url: https://github.com/Tongyi-MAI/MAI-Gym
+    description: >
+      The platform itself: shared rollout pipeline across evaluation and
+      online RL, ten benchmarks, 20,000 parallel environment instances, plus
+      automated synthesis of mocked apps and execution-validated task
+      verifiers. Ships 2,000 verified tasks.
+    library:
+      github: https://github.com/Tongyi-MAI/MAI-Gym
+  - name: MAI-Gym-9B
+    type: model
+    date: 2026-10-14
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/Tongyi-MAI/MAI-Gym-9B
+    description: >
+      Unified 9B GUI agent for mobile and computer use, trained with MAI-Gym.
+      Reported state of the art among open GUI agents under 10B.
+    model:
+      open_weights: true
+      parameters: 9B
+      benchmark_scores:
+        - benchmark: MobileWorld
+          score: "78.4"
+        - benchmark: OSWorld-Verified
+          score: "76.2"
+related:
+  - qwen-cua
+  - qwen-agentworld
