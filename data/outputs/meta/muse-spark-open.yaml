@@ -1,0 +1,73 @@
+name: Muse Spark Open
+slug: muse-spark-open
+lab: meta
+type: model
+date: 2026-10-15
+flagship: true
+sources:
+  - label: Announcement (Meta Developer)
+    url: https://dev.meta.ai/resources/blog/build-with-muse-spark-open
+  - label: HuggingFace
+    url: https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/muse-spark-open
+description: >
+  <p>Meta Superintelligence Labs delivers the open-weights release Mark
+  Zuckerberg had promised for the Muse line: an <strong>816B-parameter sparse
+  MoE activating ~42B per token</strong>, 256 experts with 8 routed per token,
+  62 layers, 128 query and 16 KV heads, a <strong>1M-token context</strong>,
+  and text, image, video and audio input. It is the open counterpart to the
+  proprietary <a href="/outputs/meta/muse-spark-1.3">Muse Spark 1.3</a>, and
+  the first downloadable model in a line that until now shipped only through
+  the Meta Model API and
+  <a href="/outputs/meta/muse-code">Muse Code</a>. The weights were staged on
+  HuggingFace on <strong>2026-09-15</strong> and announced a month later.</p>
+
+  <p><strong>Artificial Analysis scores it 39 on Intelligence Index
+  v4.3.2</strong> at xhigh reasoning, ranking <strong>8th of 117</strong>
+  models in its class against a median of 19. The comparison that matters is
+  internal: Muse Spark 1.3 reads <strong>48</strong>, so the open release lands
+  <strong>nine points below Meta's own API flagship</strong> and twelve below
+  <a href="/outputs/meta/muse-wonder">Muse Wonder</a> Full's 56. Meta's
+  published card claims JobBench 61.8, DeepSWE 1.1 60.0, GPQA Diamond 89.0 and
+  StrongREJECT v2 0.5. The developer post carries no benchmark table at all,
+  leading instead with practitioner testimonials about tool-calling
+  decisiveness and long-context behaviour &mdash; a notable choice for a
+  release of this size.</p>
+
+  <p><strong>"Open weights" here is not open source.</strong> It ships under
+  the bespoke <strong>Muse Model License</strong>, not Apache or MIT, and
+  commercial Model-as-a-Service deployment requires notifying Meta once annual
+  revenue passes <strong>$20 million</strong> &mdash; the same shape of
+  revenue-gated term that the Llama community licence carried, and a reason to
+  read the openness claim against the licence text rather than the
+  announcement. At 816B total it is among the largest sets of weights any lab
+  has published.</p>
+tags:
+  - frontier
+  - open-weights
+  - moe
+  - multimodal
+  - reasoning
+  - agents
+model:
+  parameters: 816B
+  active_parameters: 42B
+  architecture: moe
+  context_window: 1000000
+  intelligence_index: 39
+  intelligence_index_version: "AA v4.3.2"
+  license: Muse Model License
+  benchmark_scores:
+    - benchmark: GPQA Diamond
+      score: "89.0"
+    - benchmark: JobBench
+      score: "61.8"
+    - benchmark: DeepSWE 1.1
+      score: "60.0"
+    - benchmark: StrongREJECT v2
+      score: "0.5"
+related:
+  - muse-spark-1.3
+  - muse-wonder
+  - muse-glimmer

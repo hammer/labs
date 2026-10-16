@@ -1,0 +1,84 @@
+name: "The Muon variant cluster (2026-09 → 2026-10)"
+slug: muon-variant-cluster
+lab: moonshot-ai
+type: paper
+date: 2026-10-16
+sources:
+  - label: Originating paper — Muon is Scalable for LLM Training (arXiv)
+    url: https://arxiv.org/abs/2502.16982
+  - label: arXiv listing — cs.LG 2026-10
+    url: https://arxiv.org/list/cs.LG/2026-10
+description: >
+  <p>A cluster entry, not a paper. Since
+  <a href="/outputs/moonshot-ai/muon">Muon</a> was shown to scale and
+  <a href="/outputs/moonshot-ai/kimi-k2">Kimi K2</a> trained on it, the
+  optimizer has become a research literature of its own: enumerating cs.LG and
+  cs.CL for September and October 2026 &mdash; 7,626 papers &mdash; turned up
+  <strong>17 untracked Muon papers in two months</strong>, against 25 entries
+  that already mention it. A fourth variant of a known optimizer does not change
+  how a frontier lab builds anything, so these are recorded here together rather
+  than as seventeen thin files. What follows is the shape of the family; the
+  weight of evidence is the signal, not any single entry in it.</p>
+
+  <p><strong>Theory and guarantees.</strong> Finite-step Newton&ndash;Schulz
+  orthogonalization now has training-loss guarantees
+  (<a href="https://arxiv.org/abs/2610.03306">2610.03306</a>), and momentum
+  preconditioning has been extended beyond convex and gradient-Lipschitz
+  potentials (<a href="https://arxiv.org/abs/2610.02158">2610.02158</a>).</p>
+
+  <p><strong>Mechanism &mdash; why it works at all.</strong> Spectral
+  orthogonalization is credited with better factual learning
+  (<a href="https://arxiv.org/abs/2610.02798">2610.02798</a>), while small-batch
+  noise is reported to restore the simplicity bias that parallel training erodes
+  (<a href="https://arxiv.org/abs/2610.16868">2610.16868</a>).</p>
+
+  <p><strong>Structure-aware variants.</strong> Monarch-Muon targets memory and
+  speed in pretraining (<a href="https://arxiv.org/abs/2610.17429">2610.17429</a>);
+  ExpertMuon-Compass sets alignment-guided step sizes for MoE training
+  (<a href="https://arxiv.org/abs/2610.04140">2610.04140</a>); Spectrally
+  Targeted Muon (<a href="https://arxiv.org/abs/2610.10965">2610.10965</a>),
+  Muon-C for convolutional kernels
+  (<a href="https://arxiv.org/abs/2609.09676">2609.09676</a>) and AF-Muon for
+  tied-embedding models without AdamW
+  (<a href="https://arxiv.org/abs/2610.01395">2610.01395</a>) round it out.
+  Stability work: Musec momentum spectral clipping
+  (<a href="https://arxiv.org/abs/2609.11655">2609.11655</a>) and a Hilbert-geometry
+  treatment of softmax at Muon's limits
+  (<a href="https://arxiv.org/abs/2610.17588">2610.17588</a>, MBZUAI).</p>
+
+  <p><strong>The two most useful papers are the ones that push back.</strong>
+  <em>Muon Is Theoretically Wrong For Convolutions, But Empirically Effective</em>
+  (<a href="https://arxiv.org/abs/2610.07103">2610.07103</a>, IRIT/UT3) shows
+  that reshaping 4-D convolutional kernels into matrices breaks Muon's
+  theoretical basis &mdash; then finds that Conv-NS, the theoretically sound
+  replacement, performs <em>equivalently</em> on CIFAR-10 and ImageNet,
+  hypothesising that exact convolutional orthogonalization overconstrains the
+  update. <em>From Geometry to Generalization</em>
+  (<a href="https://arxiv.org/abs/2610.11309">2610.11309</a>) reports plain row
+  normalization beating full-batch Adam and exact-SVD Muon. Read its scope
+  carefully: that holds under an isotropic Gaussian-cloud model with
+  synthetic experiments and last-layer language-model tests, and the advantage
+  reverses when both covariances are diagonal and similar. It is a theoretical
+  boundary condition, <strong>not</strong> a frontier-scale refutation, and
+  should not be cited as one.</p>
+
+  <p><strong>Settings beyond pretraining</strong>, listed for completeness and
+  largely out of scope on their own: differentially private Muon
+  (<a href="https://arxiv.org/abs/2610.02738">2610.02738</a>), federated
+  fine-tuning (<a href="https://arxiv.org/abs/2609.06073">2609.06073</a>),
+  LoRA tangent-space descent
+  (<a href="https://arxiv.org/abs/2609.02734">2609.02734</a>), and continual
+  learning (<a href="https://arxiv.org/abs/2609.24678">2609.24678</a>).</p>
+
+  <p>Attach later Muon variants to this entry rather than filing them. None of
+  the seventeen reports a frontier-scale pretraining run; the papers that would
+  change practice are the mechanism and limits results, which is why they are
+  the two written out above.</p>
+tags:
+  - pretraining
+  - optimizer
+  - training-stability
+  - research
+related:
+  - muon
+  - kimi-k2

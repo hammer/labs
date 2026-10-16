@@ -1,0 +1,63 @@
+name: "ALoDLM: Adaptively Looped Diffusion Language Models"
+slug: alodlm
+lab: amazon
+type: paper
+date: 2026-10-03
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.04198
+  - label: Code
+    url: https://github.com/amazon-science/ALoDLM
+  - label: HuggingFace (8B)
+    url: https://huggingface.co/amazon/ALoDLM-8B
+description: >
+  <p>Diffusion language models denoise every token to the same depth, which
+  spends the same compute on a token that was settled after one pass as on one
+  that is still contested. ALoDLM makes the depth a property of the token:
+  it "iteratively refines latent representations and allocates computation
+  according to token difficulty," committing tokens that are ready into
+  discrete context while the unresolved ones keep cycling through further
+  recurrent passes. The per-token schedule is treated as a latent variable and
+  optimised through a conditional NELBO, so the allocation is learned rather
+  than heuristic.</p>
+
+  <p>The reported result is the one that matters for the class: at
+  <strong>both 1.7B and 8B</strong> it beats <strong>every evaluated diffusion
+  LM <em>and</em> the corresponding autoregressive baselines on average across
+  eleven benchmarks</strong>, while keeping the parallel decoding that is
+  diffusion's reason for existing. Diffusion LMs have generally traded quality
+  for decode speed; the claim here is that adaptive depth recovers the quality
+  without giving the speed back. Weights ship at both scales under
+  <strong>CC BY-NC 4.0</strong> &mdash; non-commercial, so this is a research
+  release rather than a deployable one.</p>
+
+  <p>Thirteen authors led by Liancheng Fang, with weights published from
+  Amazon's own HuggingFace organisation and code under
+  <code>amazon-science</code>; the arXiv abstract page carries no affiliation
+  block, so the lab attribution rests on those two. This is the clearest
+  frontier-technique output Amazon shipped in the window, and it clears the
+  scale floor: the 8B demonstration is the one that makes it relevant to how
+  anyone would actually build a model.</p>
+tags:
+  - diffusion
+  - efficiency
+  - pretraining
+  - research
+paper:
+  arxiv: "2610.04198"
+  authors:
+    - Liancheng Fang
+    - Zhuowei Li
+    - Youngeun Kim
+    - Tianchen Zhao
+    - Rajat Koner
+    - Jiaye Wu
+    - Linghan Xu
+    - Xuanbai Chen
+    - Xiang Xu
+    - Zheng Zhang
+    - Jakub Zablocki
+    - Nishant Sankaran
+    - Yifan Xing
+related:
+  - nova-2

@@ -7,6 +7,8 @@ type: model
 date: 2026-03-01
 flagship: true
 sources:
+  - label: Technical report (arXiv)
+    url: https://arxiv.org/abs/2610.19331
   - label: HuggingFace (32B MoE)
     url: https://huggingface.co/llm-jp/llm-jp-4-32b-a3b-base
   - label: HuggingFace (8B)
@@ -46,6 +48,18 @@ description: >
   matches gpt-oss-120b, but trails Qwen3.8-27B, Gemma-4-31B-it and
   Muse-Glimmer-30B. The SFT and DPO data are released alongside the Apache
   2.0 weights; the 33B SFT run took about 67 hours on 16 nodes of 8&times;H200.</p>
+  <p>The <strong>technical report landed 2026-10-14</strong>
+  (<a href="https://arxiv.org/abs/2610.19331">arXiv:2610.19331</a>), well after
+  the weights &mdash; the late-report pattern this backfill exists for. It
+  covers the <strong>8B dense</strong> and <strong>32B-A3B MoE</strong>
+  checkpoints, both trained <strong>from scratch on ~12T tokens</strong>, and
+  states the emphasis plainly as transparency, reproducibility and practical
+  usability with the development process published. It reports substantial
+  gains over previous LLM-jp models and competitive performance against
+  open-weight models at similar scale. <strong>The 33B dense results are
+  explicitly deferred to a future revision</strong>, so this entry's 33B
+  coverage still rests on the release material rather than the paper.</p>
+
 tags:
   - moe
   - open-source

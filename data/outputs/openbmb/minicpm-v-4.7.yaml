@@ -1,0 +1,54 @@
+name: MiniCPM-V 4.7
+slug: minicpm-v-4.7
+lab: openbmb
+type: model
+date: 2026-10-07
+sources:
+  - label: HuggingFace (35B-A3B)
+    url: https://huggingface.co/openbmb/MiniCPM-V-4.7-35B-A3B
+  - label: HuggingFace (1B)
+    url: https://huggingface.co/openbmb/MiniCPM-V-4.7-1B
+description: >
+  <p>The <strong>first MoE model in the MiniCPM-V line</strong>, and the point
+  of it is where the sparsity is spent: a <strong>35B total / 3B active</strong>
+  vision-language model that runs at <strong>13+ tokens/s in about 3 GB</strong>
+  on an iPhone 17 Pro Max. MiniCPM-V has always been an on-device series, so
+  moving to MoE is less about headline capability than about buying a 35B
+  parameter budget at a 3B activation cost on hardware that cannot hold a dense
+  35B at all. OpenBMB reports a higher overall score in <em>less</em> inference
+  time than Qwen3.6 35B-A3B in Instruct mode.</p>
+
+  <p>The enabling piece is <strong>Lookahead Expert Scheduling</strong>, which
+  addresses the problem that makes MoE awkward on a phone: experts must be
+  paged in per token, and the memory traffic rather than the FLOPs becomes the
+  bottleneck. Paired with fine-grained layer-wise quantization and shipped
+  across BF16, FP8, INT4, AWQ, GPTQ and GGUF builds, plus a
+  <strong>1B</strong> sibling for the smallest targets. Apache 2.0.</p>
+
+  <p>It is a <strong>derivative build</strong>, not a from-scratch model:
+  language backbones are <a href="/outputs/alibaba/qwen3.5">Qwen3.5</a> and
+  <a href="/outputs/alibaba/qwen3.6-open">Qwen3.6</a>, with
+  <strong>SigLIP2</strong> as the vision encoder, so the parameter count
+  belongs to Alibaba's base and is recorded as such. OpenBMB's contribution is
+  the multimodal post-training and the on-device MoE serving path. No paper at
+  filing &mdash; this shipped weights-first, which is the pattern the
+  HuggingFace org probe exists to catch.</p>
+tags:
+  - multimodal
+  - moe
+  - efficiency
+  - edge
+  - open-weights
+model:
+  architecture: moe
+  base_model: qwen3.6-open
+  license: Apache 2.0
+  variants:
+    - name: MiniCPM-V-4.7-35B-A3B
+      notes: 35B total / 3B active MoE; BF16, FP8, INT4, AWQ, GPTQ, GGUF builds
+    - name: MiniCPM-V-4.7-1B
+      notes: smallest on-device target
+related:
+  - minicpm-v-4.6
+  - minicpm-v4.5
+  - minicpm-o4.5

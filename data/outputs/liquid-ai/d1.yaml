@@ -1,0 +1,71 @@
+name: d1 Decision Models
+slug: d1
+lab: liquid-ai
+type: model
+date: 2026-10-05
+flagship: true
+sources:
+  - label: Announcement (d1)
+    url: https://www.liquid.ai/blog/d1-decision-model
+  - label: Announcement (open release)
+    url: https://www.liquid.ai/blog/d1-open
+  - label: HuggingFace (d1-3B)
+    url: https://huggingface.co/LiquidAI/d1-3B
+  - label: HuggingFace (d1-omni-600M)
+    url: https://huggingface.co/LiquidAI/d1-omni-600M
+description: >
+  <p>First-in-series of a model class Liquid calls a <strong>decision
+  model</strong>, and the distinction is architectural rather than
+  positioning: these "don't produce tokens. Instead, they produce an answer in
+  a single forward pass." You pass a state &mdash; text, JSON, an image, audio
+  &mdash; plus named questions, and get back calibrated typed answers with
+  <strong>zero output tokens</strong>. That makes latency a property of the
+  input alone, which is the point: <strong>8&nbsp;ms per question on an RTX
+  4090</strong>, 26&nbsp;ms on Jetson AGX Orin, 50&nbsp;ms on Orin Nano. It is
+  explicitly not a chat model and cannot be used as one.</p>
+
+  <p>Two open-weight variants, both post-trained from Liquid's own
+  <a href="/outputs/liquid-ai/lfm2.5">LFM2.5</a> family rather than trained
+  from scratch. <strong>d1-3B</strong> (3.12B) comes from LFM2.5-VL-3B, a
+  decoder-only VLM, by weight averaging and fine-tuning the text and vision
+  backbones; it takes text and images. <strong>d1-omni-600M</strong> comes
+  from LFM2.5-Encoder-350M &mdash; a <em>bidirectional encoder</em>, which is
+  the more interesting choice, since a decision model never decodes &mdash;
+  with a FastConformer audio encoder and adapter, then vision via an adapter
+  plus LoRA. It takes text with either an image or audio.</p>
+
+  <p>On the seven text benchmarks Liquid reports, d1-3B means <strong>82.9
+  against Decider 4B's 81.1</strong>, with SQuAD 2.0 at 85.3; d1-omni-600M
+  reaches 95.8 on Civil Comments toxicity. <strong>Read the headline
+  "Decision Index" figures with care</strong> (d1-3B 48.57, d1-omni-600M
+  15.95 on the v0.2.1 public split): that index is a <strong>third-party user
+  repository</strong> (<code>github.com/apolinario/decision-index</code>), not
+  a Liquid benchmark and not an established one, so it should not be read as
+  an independent evaluation of the class Liquid is simultaneously defining.
+  The <code>arxiv:2511.23404</code> tag on the model cards is the LFM2 tech
+  report, not a d1 paper &mdash; there is no d1 paper at filing.</p>
+tags:
+  - efficiency
+  - multimodal
+  - open-weights
+  - edge
+model:
+  parameters: 3.12B
+  license: Open weights
+  variants:
+    - name: d1-3B
+      parameters: 3.12B
+      notes: from LFM2.5-VL-3B; text + image input
+    - name: d1-omni-600M
+      parameters: 600M
+      notes: from LFM2.5-Encoder-350M, a bidirectional encoder; text + image or audio
+  benchmark_scores:
+    - benchmark: Seven-benchmark text mean (d1-3B)
+      score: "82.9"
+    - benchmark: SQuAD 2.0 (d1-3B)
+      score: "85.3"
+    - benchmark: Civil Comments toxicity (d1-omni-600M)
+      score: "95.8"
+related:
+  - lfm2.5
+  - lfm2

@@ -5,6 +5,8 @@ type: model
 date: 2026-09-20
 flagship: true
 sources:
+  - label: HuggingFace
+    url: https://huggingface.co/stepfun-ai/Step-5-Preview
   - label: Announcement
     url: https://www.stepfun.com/step-5-preview
   - label: Launch post (X)
@@ -23,9 +25,12 @@ description: >
   <strong>1M-token context</strong>, 64K max output, text, image and video input,
   three reasoning-effort levels, tool calling, JSON Schema output, and prompt
   caching. Available through StepFun's products and API as
-  <code>step-5-preview</code>; StepFun says the weights will be released on
-  <strong>October 15</strong> with no license named yet, so for now it is a
-  closed preview with an open-weight promise. API pricing is $1.00/M input
+  <code>step-5-preview</code>. <strong>The weights landed on schedule on
+  2026-10-15</strong> &mdash; 28 safetensors shards, ungated, under the
+  <strong>StepFun Model License 1.0</strong>, which grants a perpetual,
+  worldwide, royalty-free right to use, distribute, sublicense and create
+  derivative works, subject to a termination clause. So the open-weight
+  promise was kept, and the repositories had been staged since 2026-09-20. API pricing is $1.00/M input
   ($0.05 on cache hits) and $2.70/M output including reasoning tokens.</p>
 
   <p>Artificial Analysis scores it <strong>44 on Intelligence Index v4.3</strong>
@@ -53,6 +58,7 @@ tags:
   - proprietary
 model:
   architecture: moe
+  license: StepFun Model License 1.0
   parameters: 600B
   active_parameters: 27B
   context_window: 1000000

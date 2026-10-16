@@ -9,6 +9,8 @@ sources:
     url: https://www.anthropic.com/claude-haiku-5-5
   - label: System card
     url: https://www.anthropic.com/document/claude-haiku-5-5-system-card
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/claude-haiku-5-5
 description: >
   <p>The small end of the 5.5 generation, completing the line alongside
   <a href="/outputs/anthropic/claude-opus-5.5">Opus 5.5</a> and
@@ -39,6 +41,18 @@ description: >
   Terminal-Bench, 56.9% HLE), so the case for Haiku is cost and speed at a
   capability level that has become usable, not parity. FrontierCode 1.1 is the
   closest it comes, 46.4% against Sonnet's 52.1% at xhigh effort.</p>
+
+  <p>Artificial Analysis scored it a week after launch: <strong>43 on AA
+  Intelligence Index v4.3.2</strong> at max effort, anchored to that page per
+  the mode rule. The new adjustable effort setting shows up directly in the
+  index &mdash; <strong>41 at xhigh, 38 high, 34 medium, 29 low</strong>, a
+  14-point spread on a single checkpoint, which is the clearest published
+  illustration yet that an AA score describes a configuration and not just a
+  model. 43 sits below <a href="/outputs/meta/muse-spark-1.3">Muse Spark
+  1.3</a>'s 48 and well below the frontier, as it should at this tier; the
+  result is the price it reaches it at, <strong>$0.10 / $0.50 per 1M</strong>,
+  one to two orders of magnitude under the models it is now within ten points
+  of.</p>
 tags:
   - reasoning
   - agentic
@@ -46,6 +60,9 @@ tags:
   - computer-use
   - efficiency
 model:
+  context_window: 1000000
+  intelligence_index: 43
+  intelligence_index_version: "AA v4.3.2"
   benchmark_scores:
     - benchmark: GDPval-AA v2.1
       score: "1620"
