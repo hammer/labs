@@ -34,7 +34,31 @@ check('fmtValue: valuation → amount', fmtValue({ amount: '$24.5B', type: 'priv
 check('fmtValue: parameters_estimated → value', fmtValue({ value: '1.4T', source: 'https://arxiv' }) === '1.4T');
 check('fmtValue: benchmark row → generic key: value', fmtValue({ benchmark: 'GPQA Diamond', score: '90.9' }) === 'benchmark: GPQA Diamond');
 check('fmtValue: eval block → generic key: value', /^scoring_method: /.test(fmtValue({ num_tasks: 507, scoring_method: 'repeated-success' })));
-check('fmtValue: only a truly opaque object renders the placeholder', fmtValue({ n: 1, ok: true }) === '{…}');
+// Changed deliberately 2026-10-16. This previously asserted that a scalar-only
+// map renders "{…}", on the reasoning that anonymous scalars are opaque. But
+// the key carries the meaning: `open_weights: true` is not opaque, and
+// `key: value` beats a placeholder for any scalar. Only a map with no
+// renderable field at all is truly opaque now.
+check('fmtValue: a scalar-only map renders its first field',
+  fmtValue({ n: 1, ok: true }) === 'n: 1', fmtValue({ n: 1, ok: true }));
+// A map whose only fields are scalar found no string in the first pass and fell
+// through to the placeholder. That is not hypothetical: creating 201 `model:`
+// blocks that held nothing but `open_weights: true` put eleven "{…}" onto the
+// live /whats-new page, and the real-history guard below only catches it AFTER
+// the commit, because it reads git log.
+check('fmtValue: a boolean-only map renders its field, not the placeholder',
+  fmtValue({ open_weights: true }) === 'open_weights: true',
+  fmtValue({ open_weights: true }));
+check('fmtValue: a number-only map renders its field',
+  fmtValue({ intelligence_index: 30 }) === 'intelligence_index: 30',
+  fmtValue({ intelligence_index: 30 }));
+// Strings still win when both are present — they carry more.
+check('fmtValue: prefers a string field over a scalar one',
+  fmtValue({ open_weights: true, license: 'Apache 2.0' }) === 'license: Apache 2.0',
+  fmtValue({ open_weights: true, license: 'Apache 2.0' }));
+check('fmtValue: a genuinely empty map still renders the placeholder',
+  fmtValue({}) === '{…}', fmtValue({}));
+
 check('fmtValue: arrays render a count, never [object Object]', fmtValue([{ a: 1 }, { b: 2 }]) === '[2 items]');
 
 // ── 2. diffNodes on realistic YAML shapes ─────────────────────────────

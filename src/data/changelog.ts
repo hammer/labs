@@ -241,6 +241,15 @@ export function fmtValue(v: unknown): string {
     for (const [k, val] of Object.entries(o)) {
       if (typeof val === 'string' && val.length > 0) return `${k}: ${val.length > 100 ? val.slice(0, 97) + '…' : val}`;
     }
+    // Second pass for scalars. A map whose only fields are boolean or numeric
+    // found no string above and fell through to the placeholder — which is how
+    // 201 newly-created `model:` blocks holding nothing but
+    // `open_weights: true` put eleven "{…}" into the live change feed. Strings
+    // are still preferred, since they carry more, hence two passes rather than
+    // one combined test.
+    for (const [k, val] of Object.entries(o)) {
+      if (typeof val === 'boolean' || typeof val === 'number') return `${k}: ${val}`;
+    }
     return '{…}';
   }
   return String(v);

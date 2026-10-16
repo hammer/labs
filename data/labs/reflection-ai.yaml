@@ -1,5 +1,6 @@
 name: Reflection AI
 slug: reflection-ai
+huggingface: https://huggingface.co/reflection
 url: https://reflection.ai
 wikipedia: https://en.wikipedia.org/wiki/Reflection_AI
 github: https://github.com/reflectionai

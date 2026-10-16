@@ -9,6 +9,10 @@ sources:
     url: https://reflection.ai/blog/introducing-beam
   - label: API docs (model list)
     url: https://developers.reflection.ai/models
+  - label: HuggingFace
+    url: https://huggingface.co/reflection/Beam-1.0-501B-A23B
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/reflection-beam
 description: >
   <p>Reflection AI's first model, and the first thing the lab trained itself
   &mdash; a sparse MoE with <strong>501B total parameters and 23B active</strong>
@@ -21,6 +25,20 @@ description: >
   output and mandatory reasoning at five effort levels; knowledge cutoff is June
   30, 2026. Reflection reports midtraining extended the effective context to
   <strong>1M tokens</strong>, which the beta API does not yet expose.</p>
+
+  <p><strong>The weights landed on 2026-10-07</strong>, two days after the
+  announcement and ahead of the "later in October" promise, as
+  <code>reflection/Beam-1.0-501B-A23B</code> &mdash; 188 safetensors shards,
+  <strong>ungated</strong>, genuinely <strong>Apache 2.0</strong> with no
+  community-licence rider, alongside FP8, NVFP4 and DFlash2 builds. Two details
+  only the release settles. The published <code>config.json</code> carries
+  <code>max_position_embeddings: 1048576</code>, so the <strong>1M context is
+  now exposed in the weights</strong> even though the beta API capped at 262K;
+  and it confirms the routing as <strong>256 experts with 8 active per
+  token</strong> over 52 layers. <strong>Artificial Analysis scores it 30 on
+  Intelligence Index v4.3.2</strong>, ranking <strong>19th of 120</strong>
+  open-weights models in its size class, with no public API so the figure is
+  from self-hosted inference.</p>
 
   <p>The architecture is built for RL to run on top of it without falling over.
   Interleaved local and global attention, fine-grained routed experts, and three
@@ -72,15 +90,19 @@ tags:
   - code
   - long-context
 model:
-  open_weights: false
+  open_weights: true
   architecture: moe
+  intelligence_index: 30
+  intelligence_index_version: "AA v4.3.2"
   parameters: 501B
   active_parameters: 23B
-  context_window: 262144
+  num_experts: 256
+  top_k: 8
+  context_window: 1048576
   training_tokens: 23.8T
   training_hardware: 6,144 NVIDIA GB300 NVL72 (pretraining); 10.5K GB300 (RL)
   training_time: under 4 weeks pretraining; 4 weeks RL
-  license: Apache 2.0 (announced; weights not yet released)
+  license: Apache 2.0
   benchmark_scores:
     - benchmark: SWE-Bench Verified
       score: "80.9"
