@@ -52,6 +52,7 @@ tags:
   - multimodal
   - reasoning
 model:
+  open_weights: true
   architecture: dense
   parameters: 70B
   context_window: 262144

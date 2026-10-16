@@ -32,6 +32,7 @@ tags:
   - multilingual
   - japanese
 model:
+  open_weights: true
   architecture: dense
   parameters: 70B
   context_window: 4096

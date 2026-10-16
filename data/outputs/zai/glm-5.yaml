@@ -50,6 +50,7 @@ outputs:
       and Multi-Token Prediction. First frontier-scale model trained entirely
       on 100,000 Huawei Ascend 910B chips (zero American hardware).
     model:
+      open_weights: true
       architecture: moe
       parameters: 744B
       active_parameters: 40B
@@ -95,6 +96,7 @@ outputs:
       Specialized "fast" version optimized for the OpenClaw agent ecosystem,
       focusing on continuous task execution and tool reliability.
     model:
+      open_weights: true
       architecture: moe
       intelligence_index: 27
       intelligence_index_version: "AA v4.3.2"

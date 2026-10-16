@@ -75,6 +75,7 @@ tags:
   - enterprise
   - multimodal
 model:
+  open_weights: true
   architecture: dense
   parameters: 30B
   context_window: 512000

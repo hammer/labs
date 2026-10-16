@@ -46,6 +46,7 @@ description: >
   4.6, Decrypt reports 2.1T for 4.7).</p>
 tags: [frontier, proprietary, coding, agentic, reasoning, multimodal]
 model:
+  open_weights: false
   context_window: 500000
   intelligence_index: 46
   intelligence_index_version: "AA v4.3.2"

@@ -21,6 +21,7 @@ tags:
   - open-weight
   - robotics
 model:
+  open_weights: true
   architecture: dense
   variants:
     - name: MiniCPM-RobotManip

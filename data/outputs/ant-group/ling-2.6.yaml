@@ -33,6 +33,7 @@ outputs:
       - label: Artificial Analysis
         url: https://artificialanalysis.ai/models/ling-2-6-1t
     model:
+      open_weights: true
       parameters: 1T
       architecture: moe
       license: MIT

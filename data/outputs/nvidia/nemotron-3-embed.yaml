@@ -16,5 +16,6 @@ tags:
   - retrieval
   - open-weight
 model:
+  open_weights: true
   parameters: "8B"
   context_window: 32768

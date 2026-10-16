@@ -47,6 +47,7 @@ tags:
   - moe
   - proprietary
 model:
+  open_weights: false
   architecture: moe
   base_model: qwen3.5
   context_window: 256000

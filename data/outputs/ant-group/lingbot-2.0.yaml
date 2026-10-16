@@ -44,6 +44,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/robbyant/lingbot-vision-vit-giant
     model:
+      open_weights: true
       license: Apache 2.0
   - name: LingBot-World 2.0
     type: model
@@ -52,6 +53,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/robbyant/lingbot-world-v2-14b-causal-fast
     model:
+      open_weights: true
       parameters: 14B
       license: CC-BY-NC-SA
   - name: LingBot-Video
@@ -63,6 +65,7 @@ outputs:
       - label: Paper (arXiv)
         url: https://arxiv.org/abs/2607.07675
     model:
+      open_weights: true
       architecture: moe
       parameters: 30B
       active_parameters: 3B
@@ -75,4 +78,5 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/robbyant/lingbot-vla-v2-6b
     model:
+      open_weights: true
       parameters: 6B

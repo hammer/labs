@@ -33,6 +33,7 @@ tags:
   - zero-shot
   - efficiency
 model:
+  open_weights: true
   architecture: dense
   parameters: 120M
   context_window: 8192

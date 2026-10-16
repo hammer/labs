@@ -33,6 +33,7 @@ tags:
   - multimodal
   - agentic
 model:
+  open_weights: true
   context_window: 1000000
   # No evidence of from-scratch pretraining despite marketing: the founder
   # describes post-training from Qwen/DeepSeek checkpoints (see description).

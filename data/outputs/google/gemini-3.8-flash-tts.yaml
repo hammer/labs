@@ -68,6 +68,7 @@ tags:
   - multilingual
   - proprietary
 model:
+  open_weights: false
   languages: 130
   license: Proprietary (API)
   benchmark_scores:

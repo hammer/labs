@@ -25,6 +25,7 @@ outputs:
     description: >
       First official open-source LLMs under the Qwen brand.
     model:
+      open_weights: true
       architecture: dense
       variants:
         - name: Qwen-7B
@@ -55,6 +56,7 @@ outputs:
       Expanded the range to include a massive 72B flagship and a mobile-friendly
       1.8B model.
     model:
+      open_weights: true
       architecture: dense
       intelligence_index: 5
       intelligence_index_version: "AA v4.3.2"

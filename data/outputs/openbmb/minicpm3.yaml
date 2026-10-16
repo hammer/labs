@@ -21,6 +21,7 @@ tags:
   - open-weight
   - reasoning
 model:
+  open_weights: true
   architecture: dense
   parameters: 4B
 related:

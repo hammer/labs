@@ -29,6 +29,7 @@ tags:
   - video
   - open-weight
 model:
+  open_weights: true
   parameters: "7B"
   variants:
     - name: show-o2-1.5B

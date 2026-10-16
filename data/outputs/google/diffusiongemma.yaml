@@ -38,6 +38,7 @@ tags:
   - architecture
   - research
 model:
+  open_weights: true
   architecture: moe
   parameters: 25.2B
   active_parameters: 3.8B

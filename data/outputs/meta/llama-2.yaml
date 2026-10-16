@@ -23,6 +23,7 @@ tags:
   - open-weight
   - frontier
 model:
+  open_weights: true
   architecture: dense
   parameters: 70B
   intelligence_index: 5

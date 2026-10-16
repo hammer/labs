@@ -30,6 +30,7 @@ tags:
   - video
   - open-weight
 model:
+  open_weights: true
   base_model: qwen2
   variants:
     - name: llava-onevision-qwen2-0.5b-ov

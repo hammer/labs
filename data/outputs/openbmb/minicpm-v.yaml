@@ -41,6 +41,7 @@ outputs:
       GPT-4V level performance in a 9B parameter package with world-class
       OCR capabilities.
     model:
+      open_weights: true
       parameters: 9B
   - name: MiniCPM-V 2.6
     type: model

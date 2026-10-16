@@ -21,6 +21,7 @@ tags:
   - domain-specific
   - open-weight
 model:
+  open_weights: true
   context_window: 262144
   base_model: qwen3.5
   license: Apache 2.0

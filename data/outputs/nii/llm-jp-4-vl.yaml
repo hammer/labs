@@ -27,6 +27,7 @@ tags:
   - japanese
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   base_model: llm-jp-4
   license: Apache-2.0

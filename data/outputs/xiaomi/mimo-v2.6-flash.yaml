@@ -52,6 +52,7 @@ tags:
   - efficiency
   - rl
 model:
+  open_weights: true
   architecture: moe
   parameters: 309B
   active_parameters: 15B

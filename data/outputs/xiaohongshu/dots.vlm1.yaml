@@ -20,6 +20,7 @@ tags:
   - vision
   - open-weight
 model:
+  open_weights: true
   base_model: deepseek-v3
   license: MIT
   benchmark_scores:

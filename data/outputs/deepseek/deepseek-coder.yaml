@@ -21,6 +21,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/deepseek-ai/deepseek-coder-33b-instruct
     model:
+      open_weights: true
       architecture: dense
       variants:
         - name: DeepSeek-Coder-1.3B

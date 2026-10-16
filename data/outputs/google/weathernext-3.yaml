@@ -30,6 +30,7 @@ tags:
   - weather
   - climate
 model:
+  open_weights: false
   architecture: dense
   license: Proprietary
 paper:

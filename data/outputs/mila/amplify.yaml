@@ -30,6 +30,7 @@ tags:
   - protein
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: "350M"
   license: Apache 2.0

@@ -52,6 +52,7 @@ tags:
   - agentic
   - open-source
 model:
+  open_weights: true
   architecture: dense
   parameters: 2.52B
   context_window: 131072

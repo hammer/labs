@@ -22,6 +22,7 @@ tags:
   - generation
   - open-weight
 model:
+  open_weights: true
   license: Apache 2.0
 paper:
   arxiv: "2602.13344"

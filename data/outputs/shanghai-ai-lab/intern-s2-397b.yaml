@@ -34,6 +34,7 @@ tags:
   - multimodal
   - open-weight
 model:
+  open_weights: true
   # Both the July preview and the September release carry Qwen3.5-397B-A17B's
   # geometry (60 layers, hidden 4096, 512 experts, 10 active, model_type
   # qwen3_5_moe) with the vocabulary extended from 248,320 to 251,392; an

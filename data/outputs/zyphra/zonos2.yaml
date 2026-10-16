@@ -28,6 +28,7 @@ tags:
   - moe
   - multilingual
 model:
+  open_weights: true
   architecture: moe
   num_experts: 16
   top_k: 1

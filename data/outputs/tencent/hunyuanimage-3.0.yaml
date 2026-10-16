@@ -29,6 +29,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/tencent/HunyuanImage-3.0-Instruct-Distil
     model:
+      open_weights: true
       architecture: moe
       active_parameters: 13B
   - name: HunyuanImage 3.0 Technical Report

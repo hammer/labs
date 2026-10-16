@@ -48,6 +48,7 @@ tags:
   - agentic
   - reasoning
 model:
+  open_weights: true
   architecture: moe
   parameters: 744B
   active_parameters: 40B

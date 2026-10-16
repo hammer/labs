@@ -28,6 +28,7 @@ outputs:
       - label: Announcement
         url: https://www.cnbc.com/2025/07/28/chinas-latest-ai-model-claims-to-be-even-cheaper-to-use-than-deepseek.html
     model:
+      open_weights: true
       architecture: moe
       parameters: 355B
       intelligence_index: 13

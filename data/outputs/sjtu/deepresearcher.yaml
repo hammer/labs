@@ -23,6 +23,7 @@ tags:
   - reinforcement-learning
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: "7B"
 paper:

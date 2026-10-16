@@ -25,6 +25,7 @@ tags:
   - open-weight
   - moe
 model:
+  open_weights: true
   variants:
     - name: OpenSeek-Small-v1-Baseline
       notes: 1.4B total / 0.4B active, trained on 100B tokens

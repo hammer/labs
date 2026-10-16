@@ -24,6 +24,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/FreedomIntelligence/openPangu-Ultra-MoE-718B
     model:
+      open_weights: true
       parameters: 718B
       active_parameters: 39B
       architecture: moe

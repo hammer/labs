@@ -34,6 +34,7 @@ outputs:
       321B parameter MoE model (38B active) designed for high-efficiency
       multimodal reasoning.
     model:
+      open_weights: true
       architecture: moe
       parameters: 321B
       active_parameters: 38B

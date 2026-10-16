@@ -26,6 +26,7 @@ outputs:
   - name: SenseNova-SI Models
     type: model
     model:
+      open_weights: true
       variants:
         - name: SenseNova-SI-1.1-Qwen2.5-VL-3B
           parameters: "3B"

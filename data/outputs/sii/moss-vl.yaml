@@ -38,6 +38,7 @@ tags:
   - real-time
   - streaming
 model:
+  open_weights: true
   architecture: dense
   pretrained_from_scratch: false
   context_window: 262144

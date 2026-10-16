@@ -31,6 +31,7 @@ outputs:
       - label: GitHub
         url: https://github.com/Tencent-Hunyuan/Hunyuan-A13B
     model:
+      open_weights: true
       architecture: moe
       parameters: 80B
       active_parameters: 13B

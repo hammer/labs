@@ -84,6 +84,7 @@ tags:
   - open-weight
   - research
 model:
+  open_weights: true
   architecture: dense
   pretrained_from_scratch: false
   variants:

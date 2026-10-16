@@ -52,6 +52,7 @@ tags:
   - ocean
   - research
 model:
+  open_weights: true
   license: CC BY 4.0
 paper:
   arxiv: "2606.02610"

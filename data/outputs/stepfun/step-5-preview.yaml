@@ -57,6 +57,7 @@ tags:
   - multimodal
   - proprietary
 model:
+  open_weights: true
   architecture: moe
   license: StepFun Model License 1.0
   parameters: 600B

@@ -22,6 +22,7 @@ outputs:
   - name: Piccolo2 Models
     type: model
     model:
+      open_weights: true
       variants:
         - name: piccolo-large-zh-v2
         - name: piccolo-large-zh

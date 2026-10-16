@@ -31,6 +31,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/allenai/tmax-9b
     model:
+      open_weights: true
       license: Apache 2.0
       variants:
         - name: tmax-2b

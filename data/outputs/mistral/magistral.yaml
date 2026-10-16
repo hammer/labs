@@ -26,6 +26,7 @@ tags:
   - reasoning
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   # Anchored to Magistral Small 1.2 (the AA URL in sources) — the open-weight
   # checkpoint AAOI scored; Medium's higher AAII lives in variants.

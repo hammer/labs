@@ -25,6 +25,7 @@ tags:
   - enterprise
   - multilingual
 model:
+  open_weights: true
   architecture: dense
   parameters: 104B
   context_window: 128000

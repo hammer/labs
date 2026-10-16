@@ -22,6 +22,7 @@ tags:
   - open-weight
   - reasoning
 model:
+  open_weights: true
   architecture: dense
   parameters: 14B
   intelligence_index: 6

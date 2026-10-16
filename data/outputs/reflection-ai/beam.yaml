@@ -72,6 +72,7 @@ tags:
   - code
   - long-context
 model:
+  open_weights: false
   architecture: moe
   parameters: 501B
   active_parameters: 23B

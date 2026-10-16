@@ -24,6 +24,7 @@ tags:
   - vision
   - research
 model:
+  open_weights: true
   architecture: dense
   parameters: 6B
 paper:

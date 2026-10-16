@@ -102,6 +102,7 @@ const dimensions: FilterDimension[] = [
         <th class="col-valuation sortable" data-sort="valuation">Valuation</th>
         <th class="col-largest sortable" data-sort="largest">Scale</th>
         <th class="col-intelligence sortable" data-sort="intelligence"><span class="th-full">Intelligence</span><span class="th-short">Intel</span></th>
+        <th class="col-intel-open sortable" data-sort="intelopen"><span class="th-full">Intel (open)</span><span class="th-short">Intel (o)</span></th>
         <th class="col-inteldate sortable" data-sort="inteldate"><span class="th-full">Intel Date</span><span class="th-short">Date</span></th>
         <th class="col-openness sortable" data-sort="openness">Openness</th>
         <th class="col-outputs sortable" data-sort="outputs"><span class="th-full">Outputs</span><span class="th-short">Out</span></th>
@@ -129,6 +130,7 @@ const dimensions: FilterDimension[] = [
               data-founded={founded} data-ipo={lab.ipo?.year ?? 0} data-ipo-status={ipoStatus}
               data-valuation={valNum}
               data-largest={largest?.paramsB ?? 0} data-intelligence={intel?.score ?? 0}
+              data-intelopen={intel?.open?.score ?? 0}
               data-inteldate={intel?.date ?? ''}
               data-openness={intel?.openness ?? 0} data-outputs={count}>
             <td class="col-rank"></td>
@@ -169,6 +171,14 @@ const dimensions: FilterDimension[] = [
               {intel ? (
                 <a href={`/outputs/${intel.labSlug}/${intel.slug}`} class="col-link" onclick="event.stopPropagation()">
                   {intel.score}
+                </a>
+              ) : '—'}
+            </td>
+            <td class="col-intel-open">
+              {intel?.open ? (
+                <a href={`/outputs/${intel.open.labSlug}/${intel.open.slug}`} class="col-link" onclick="event.stopPropagation()"
+                   title={`${intel.open.name} (${intel.open.date}) is this lab's highest-scoring open-weights model`}>
+                  {intel.open.score}
                 </a>
               ) : '—'}
             </td>
@@ -425,7 +435,7 @@ const dimensions: FilterDimension[] = [
     const sorted = [...allRows].sort((a, b) => {
       const av = a.dataset[key] ?? '';
       const bv = b.dataset[key] ?? '';
-      if (key === 'founded' || key === 'ipo' || key === 'valuation' || key === 'largest' || key === 'intelligence' || key === 'openness' || key === 'outputs') {
+      if (key === 'founded' || key === 'ipo' || key === 'valuation' || key === 'largest' || key === 'intelligence' || key === 'intelopen' || key === 'openness' || key === 'outputs') {
         const diff = parseVal(av) - parseVal(bv);
         return sortAsc ? diff : -diff;
       }
@@ -645,6 +655,7 @@ const dimensions: FilterDimension[] = [
   .col-valuation,
   .col-largest,
   .col-intelligence,
+  .col-intel-open,
   .col-openness,
   .col-outputs {
     text-align: right;
@@ -658,6 +669,7 @@ const dimensions: FilterDimension[] = [
   th.col-valuation,
   th.col-largest,
   th.col-intelligence,
+  th.col-intel-open,
   th.col-openness,
   th.col-outputs {
     text-align: right;
@@ -718,8 +730,23 @@ const dimensions: FilterDimension[] = [
      1333px scrollWidth) and is clean from 1370 up. The tier is set at 1399 to
      keep ~30px of headroom, since lab-name and score growth have moved these
      boundaries before. Re-measure when adding a column. */
-  @media (max-width: 1399px) {
+  /* Thirteen columns do not fit under ~1600px, so one of the two weakest has
+     to drop first. Intel Date loses: it is a provenance detail for the
+     Intelligence cell, while Intelligence (open) is a figure in its own right.
+     So inteldate now goes at 1539 and intel-open survives to 1399, where the
+     12-column layout was already measured clean.
+     Measured: 13 columns need 1600px scrollWidth with the short header (1700
+     with "Intelligence (open)" spelled out — the header, not the two-digit
+     cell, sets the width, which is why th-full reads "Intel (open)").
+     Re-measure with `npm run test:mobile` when adding another column. */
+  @media (max-width: 1599px) {
     th.col-inteldate, td.col-inteldate {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1399px) {
+    th.col-intel-open, td.col-intel-open {
       display: none;
     }
   }

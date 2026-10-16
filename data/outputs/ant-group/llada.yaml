@@ -44,6 +44,7 @@ outputs:
     description: >
       Mixture-of-Experts variant of LLaDA.
     model:
+      open_weights: true
       architecture: moe
 related:
   - llada-2

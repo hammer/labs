@@ -19,6 +19,7 @@ tags:
   - moe
   - agentic
 model:
+  open_weights: true
   architecture: moe
   parameters: 200B
   active_parameters: 20B

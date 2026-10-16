@@ -45,6 +45,7 @@ tags:
   - open-weight
   - research
 model:
+  open_weights: true
   parameters: 9B
   license: Apache 2.0
 paper:

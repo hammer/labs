@@ -31,6 +31,7 @@ outputs:
       (Nature Methods 2024); the most-cited single-cell foundation model
       and the reference baseline for the field.</p>
     model:
+      open_weights: true
       architecture: dense
       license: MIT (code)
   - name: scGPT-spatial

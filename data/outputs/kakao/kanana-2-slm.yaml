@@ -21,6 +21,7 @@ tags:
   - on-device
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   variants:
     - name: kanana-2-3b

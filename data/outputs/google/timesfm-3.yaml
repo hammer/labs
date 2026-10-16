@@ -33,6 +33,7 @@ tags:
   - forecasting
   - foundation-model
 model:
+  open_weights: true
   architecture: dense
   parameters: 331M
   license: TimesFM Non-Commercial License v1.0

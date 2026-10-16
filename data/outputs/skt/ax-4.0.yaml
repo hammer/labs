@@ -19,6 +19,7 @@ tags:
   - multilingual
   - multimodal
 model:
+  open_weights: true
   architecture: dense
   base_model: qwen2.5
   variants:

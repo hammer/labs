@@ -30,6 +30,7 @@ tags:
   - data
   - research
 model:
+  open_weights: true
   architecture: moe
   parameters: 33B
 paper:

@@ -27,6 +27,7 @@ tags:
   - coding
   - reasoning
 model:
+  open_weights: true
   architecture: dense
   parameters: 8B
   context_window: 65536

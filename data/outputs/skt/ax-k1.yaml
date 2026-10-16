@@ -29,6 +29,7 @@ tags:
   - reasoning
   - multilingual
 model:
+  open_weights: true
   architecture: moe
   parameters: 519B
   active_parameters: 33B

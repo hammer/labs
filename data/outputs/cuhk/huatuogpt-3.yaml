@@ -43,6 +43,7 @@ tags:
   - post-training
   - open-weight
 model:
+  open_weights: true
   variants:
     - name: HuatuoGPT-3-8B
       notes: RL-only adaptation of an open 8B base

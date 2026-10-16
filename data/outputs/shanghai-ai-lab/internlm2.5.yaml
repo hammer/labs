@@ -18,5 +18,6 @@ tags:
   - scaling
   - agentic
 model:
+  open_weights: true
   context_window: 1000000
 notes: InternLM2.5-7B released Jul 3, 2024. 1.8B and 20B variants released Aug 1, 2024.

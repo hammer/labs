@@ -45,6 +45,7 @@ tags:
   - multimodal
   - moe
 model:
+  open_weights: true
   architecture: dense
   parameters: 31B
   context_window: 256000

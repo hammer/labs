@@ -21,6 +21,7 @@ tags:
   - multimodal
   - multilingual
 model:
+  open_weights: true
   license: CC BY-SA 4.0
 related:
   - asagi

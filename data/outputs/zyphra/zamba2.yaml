@@ -34,6 +34,7 @@ tags:
   - hybrid-ssm
   - efficiency
 model:
+  open_weights: true
   architecture: dense
   parameters: 7.4B
   training_tokens: 3T

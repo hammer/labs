@@ -21,4 +21,5 @@ tags:
   - post-training
   - open-weight
 model:
+  open_weights: true
   base_model: qwen2.5

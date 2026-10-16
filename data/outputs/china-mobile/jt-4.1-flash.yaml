@@ -33,6 +33,7 @@ tags:
   - moe
   - frontier
 model:
+  open_weights: false
   architecture: moe
   parameters: 236B
   active_parameters: 21B

@@ -29,6 +29,7 @@ tags:
   - multimodal
   - classifier
 model:
+  open_weights: true
   architecture: dense
   base_model: ministral-3
   context_window: 32768

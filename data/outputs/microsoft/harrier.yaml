@@ -30,6 +30,7 @@ tags:
   - embedding
   - multilingual
 model:
+  open_weights: true
   architecture: dense
   variants:
     - name: Harrier 27B

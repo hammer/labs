@@ -39,6 +39,7 @@ outputs:
       BGE-VL-MLLM improves by 8.1pp over prior SOTA on the CIRCO benchmark.
       Released under MIT license.
     model:
+      open_weights: true
       variants:
         - name: BGE-VL-base
         - name: BGE-VL-large

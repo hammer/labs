@@ -39,6 +39,7 @@ outputs:
     description: >
       72.2% SWE-Bench Verified. 256K context.
     model:
+      open_weights: true
       architecture: dense
       parameters: 123B
       context_window: 256000

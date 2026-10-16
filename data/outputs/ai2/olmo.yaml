@@ -25,6 +25,7 @@ tags:
   - open-weight
   - research
 model:
+  open_weights: true
   architecture: dense
   parameters: 7B
   context_window: 2048

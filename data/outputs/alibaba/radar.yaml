@@ -55,6 +55,7 @@ tags:
   - vision
   - research
 model:
+  open_weights: true
   license: CC BY-NC-SA 4.0
 paper:
   venue: "Science 393(6817), eaec6129"

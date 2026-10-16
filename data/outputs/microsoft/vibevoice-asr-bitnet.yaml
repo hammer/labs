@@ -15,6 +15,7 @@ description: >
   and reports 1.6&ndash;2.3x higher speed than Whisper.cpp.</p>
 tags: [audio, speech, efficient, quantization, open-weight]
 model:
+  open_weights: true
   license: MIT
 paper:
   arxiv: "2607.21075"

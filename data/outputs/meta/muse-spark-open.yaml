@@ -51,6 +51,7 @@ tags:
   - reasoning
   - agents
 model:
+  open_weights: true
   parameters: 816B
   active_parameters: 42B
   architecture: moe

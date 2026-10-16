@@ -29,6 +29,7 @@ outputs:
       <p>An encoder-transformer atomistic-materials foundation model trained
       on the aggregated S2EF-15M dataset (OC20/22, MPtrj, SPICE).</p>
     model:
+      open_weights: true
       architecture: dense
   - name: vector-inference
     type: library

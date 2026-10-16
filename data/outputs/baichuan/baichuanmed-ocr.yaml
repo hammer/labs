@@ -18,6 +18,7 @@ tags:
   - biology
   - vision
 model:
+  open_weights: true
   variants:
     - name: BaichuanMed-OCR-7B
       parameters: 7B

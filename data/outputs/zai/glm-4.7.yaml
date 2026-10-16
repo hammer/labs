@@ -20,6 +20,7 @@ tags:
   - reasoning
   - agentic
 model:
+  open_weights: true
   architecture: moe
   intelligence_index: 22
   intelligence_index_version: "AA v4.3.2"

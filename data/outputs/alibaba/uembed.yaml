@@ -20,6 +20,7 @@ tags:
   - open-weight
   - retrieval
 model:
+  open_weights: true
   architecture: dense
   base_model: qwen3.5
 paper:

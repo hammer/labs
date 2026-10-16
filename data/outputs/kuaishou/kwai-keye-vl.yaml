@@ -29,6 +29,7 @@ outputs:
     description: >
       8B parameter multimodal foundation model specializing in short-video understanding.
     model:
+      open_weights: true
       architecture: dense
       parameters: 8B
   - name: Kwai Keye-VL Technical Report
@@ -56,6 +57,7 @@ outputs:
       &mdash; beats Qwen3.5-35B and Qwen3-VL-235B on long-video temporal
       benchmarks.</p>
     model:
+      open_weights: true
       architecture: moe
       parameters: 31B
       active_parameters: 3B

@@ -33,6 +33,7 @@ tags:
   - multimodal
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: 6B
   base_model: llada-2

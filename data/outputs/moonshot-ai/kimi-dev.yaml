@@ -19,6 +19,7 @@ outputs:
   - name: Kimi-Dev-72B
     type: model
     model:
+      open_weights: true
       parameters: 72B
   - name: Kimi-Dev Paper
     type: paper

@@ -64,6 +64,7 @@ tags:
   - infrastructure
   - research
 model:
+  open_weights: true
   architecture: moe
   parameters: 2.3B
   active_parameters: 360M

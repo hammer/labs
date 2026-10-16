@@ -22,6 +22,7 @@ tags:
   - frontier
   - reasoning
 model:
+  open_weights: true
   architecture: dense
   variants:
     - name: InternVL3-1B

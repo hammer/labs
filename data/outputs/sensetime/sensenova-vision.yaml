@@ -29,6 +29,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/sensenova/SenseNova-Vision-7B-MoT
     model:
+      open_weights: true
       parameters: 7B
       license: CC-BY-NC-4.0
   - name: "Vision as Unified Multimodal Generation"

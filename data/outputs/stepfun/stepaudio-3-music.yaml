@@ -31,6 +31,7 @@ tags:
   - multimodal
   - proprietary
 model:
+  open_weights: false
   architecture: moe
   license: Proprietary (API)
 paper:

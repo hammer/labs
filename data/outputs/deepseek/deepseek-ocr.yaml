@@ -16,6 +16,7 @@ tags:
   - vision
   - open-weight
 model:
+  open_weights: true
   variants:
     - name: DeepSeek-OCR
       notes: Released Oct 2025

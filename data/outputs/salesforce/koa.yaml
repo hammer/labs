@@ -28,6 +28,7 @@ tags:
   - reinforcement-learning
   - proprietary
 model:
+  open_weights: false
   architecture: moe
   parameters: 120B
   base_model: nemotron-3-super

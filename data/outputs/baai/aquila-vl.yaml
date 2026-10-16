@@ -19,6 +19,7 @@ tags:
   - multimodal
   - open-weight
 model:
+  open_weights: true
   variants:
     - name: Aquila-VL-2B-llava-qwen
     - name: Aquila-VL-2B-Intermediate

@@ -17,6 +17,7 @@ tags:
   - efficiency
   - open-weight
 model:
+  open_weights: true
   variants:
     - name: Moonlight-3B
       parameters: 3B

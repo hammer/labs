@@ -80,6 +80,7 @@ tags:
   - document-ai
   - ocr
 model:
+  open_weights: true
   architecture: dense
   parameters: 2.4B
   context_window: 128000

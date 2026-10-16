@@ -26,6 +26,7 @@ tags:
   - research
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: "3.5B"
   training_tokens: "800B"

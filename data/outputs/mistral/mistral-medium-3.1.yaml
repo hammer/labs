@@ -16,6 +16,7 @@ description: >
 tags:
   - multimodal
 model:
+  open_weights: false
   context_window: 128000
   intelligence_index: 9
   intelligence_index_version: "AA v4.3.2"

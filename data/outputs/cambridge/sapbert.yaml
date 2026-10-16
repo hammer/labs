@@ -20,6 +20,7 @@ tags:
   - research
   - nlp
 model:
+  open_weights: true
   architecture: dense
 paper:
   arxiv: "2010.11784"

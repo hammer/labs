@@ -30,6 +30,7 @@ tags:
   - science
   - foundation-model
 model:
+  open_weights: true
   parameters: 400M
 paper:
   arxiv: "2609.37959"

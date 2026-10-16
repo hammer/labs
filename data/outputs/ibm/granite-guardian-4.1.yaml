@@ -20,6 +20,7 @@ tags:
   - open-weight
   - enterprise
 model:
+  open_weights: true
   parameters: 8B
   license: Apache 2.0
   base_model: granite-4.1

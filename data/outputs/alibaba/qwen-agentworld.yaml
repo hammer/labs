@@ -36,6 +36,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/Qwen/Qwen-AgentWorld-35B-A3B
     model:
+      open_weights: true
       architecture: moe
       parameters: 35B
       active_parameters: 3B

@@ -44,6 +44,7 @@ outputs:
       7-billion-parameter variant of the Baichuan 2 series with both base
       and chat-aligned versions.
     model:
+      open_weights: true
       architecture: dense
       parameters: 7B
       training_tokens: 2.6T
@@ -59,6 +60,7 @@ outputs:
       13-billion-parameter variant of the Baichuan 2 series with both base
       and chat-aligned versions.
     model:
+      open_weights: true
       architecture: dense
       parameters: 13B
       training_tokens: 2.6T

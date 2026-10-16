@@ -41,6 +41,7 @@ tags:
   - multimodal
   - reasoning
 model:
+  open_weights: true
   architecture: moe
   parameters: "975B"
   active_parameters: "41B"

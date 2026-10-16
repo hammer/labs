@@ -18,6 +18,7 @@ tags:
   - open-weight
   - agents
 model:
+  open_weights: true
   architecture: dense
   parameters: "11B"
   license: OpenMDW 1.1

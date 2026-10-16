@@ -69,6 +69,7 @@ tags:
   - cybersecurity
   - multilingual
 model:
+  open_weights: false
   architecture: moe
   parameters: 1T
   active_parameters: 49B

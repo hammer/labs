@@ -24,6 +24,7 @@ tags:
   - reasoning
   - agentic
 model:
+  open_weights: false
   intelligence_index: 25
   intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:

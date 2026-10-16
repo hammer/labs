@@ -23,6 +23,7 @@ tags:
   - japanese
   - encoder
 model:
+  open_weights: true
   architecture: dense
   parameters: 310M
   variants:

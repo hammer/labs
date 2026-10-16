@@ -24,6 +24,7 @@ tags:
   - open-weight
   - reasoning
 model:
+  open_weights: true
   architecture: moe
   base_model: qwen3.5
 paper:

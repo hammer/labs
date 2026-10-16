@@ -15,5 +15,6 @@ description: >
   PRO 6000, targeting simulation and policy learning for robotic surgery.</p>
 tags: [robotics, healthcare, world-model, video, open-weight]
 model:
+  open_weights: true
   parameters: 2B
   license: NVIDIA Open Model License

@@ -20,6 +20,7 @@ tags:
   - technique
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: "250M"
   license: MIT

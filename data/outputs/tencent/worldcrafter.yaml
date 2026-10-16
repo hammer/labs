@@ -93,6 +93,7 @@ tags:
   - open-weight
   - research
 model:
+  open_weights: true
   # Video DiT initialized from Helios-base (arXiv 2603.04379, Peking
   # University / PKU-YuanGroup). Helios has no slug of its own — it is covered
   # inside data/outputs/peking/open-sora-plan.yaml — so base_model can't

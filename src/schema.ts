@@ -119,6 +119,28 @@ const ModelDetailsSchema = z.object({
   // resolves to another lab's output, are excluded from the home page's
   // Intelligence column (getTopIntelligence).
   pretrained_from_scratch: z.boolean().optional(),
+  // Are the weights publicly downloadable? `true` whenever anyone can fetch
+  // them, WHATEVER THE LICENCE — permissive (Apache/MIT/OpenMDW), community
+  // (Llama/Gemma/Qwen), revenue-gated (Muse Spark Open notifies Meta above
+  // $20M), non-commercial (ALoDLM, CC-BY-NC) and academic-only all count as
+  // open. The licence restriction is real but belongs in `license`, and the
+  // graded reading belongs in `openness_index` (AAOI); this field answers only
+  // "can you download it".
+  //
+  // `false` means closed: API- or product-only (GPT, Claude, Gemini), or
+  // weights that are *promised* but not yet released — Ling 3.1 Flash's
+  // "open weights promised after the free-trial period" is closed until they
+  // ship. A model can flip false->true later, so this needs re-checking rather
+  // than being write-once.
+  //
+  // UNSET means unknown, never closed. ~616 of 796 models are unbackfilled at
+  // introduction, and getTopIntelligence must not read a missing field as a
+  // closed model. Leave it unset rather than guessing.
+  //
+  // Judge the LAB'S OWN release: a third party republishing a quantization
+  // (nvidia/DeepSeek-V4.1-Flash-NVFP4) does not make the parent entry open.
+  // Feeds the home page's Intelligence (open) column via getTopIntelligence.
+  open_weights: z.boolean().optional(),
   variants: z.array(ModelVariantSchema).optional(),
   // Enhanced fields
   training_hardware: z.string().optional(),

@@ -27,6 +27,7 @@ tags:
   - open-weight
   - efficiency
 model:
+  open_weights: true
   architecture: dense
   parameters: 7.3B
   context_window: 32000

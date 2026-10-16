@@ -30,6 +30,7 @@ outputs:
   - name: Kimi K2 Instruct
     type: model
     model:
+      open_weights: true
       architecture: moe
       parameters: 1T
       active_parameters: 32B
@@ -69,6 +70,7 @@ outputs:
       - label: Artificial Analysis
         url: https://artificialanalysis.ai/models/kimi-k2-0905
     model:
+      open_weights: true
       architecture: moe
       parameters: 1T
       active_parameters: 32B

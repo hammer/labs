@@ -20,6 +20,7 @@ tags:
   - vision
   - scaling
 model:
+  open_weights: true
   architecture: dense
   variants:
     - name: InternVL2-1B

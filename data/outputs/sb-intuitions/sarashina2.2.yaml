@@ -38,6 +38,7 @@ outputs:
     description: >
       Small Japanese LLM family with base + instruct variants at 0.5B, 1B, 3B. MIT.
     model:
+      open_weights: true
       architecture: dense
       parameters: 3B
       variants:
@@ -56,6 +57,7 @@ outputs:
     description: >
       Vision-language variant of Sarashina2.2-3B. MIT.
     model:
+      open_weights: true
       architecture: dense
       parameters: 3B
   - name: Sarashina2.2-OCR
@@ -67,6 +69,7 @@ outputs:
     description: >
       4B OCR-specialized variant of the Sarashina2.2 family for Japanese documents.
     model:
+      open_weights: true
       architecture: dense
       parameters: 4B
 related:

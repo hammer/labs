@@ -27,6 +27,7 @@ tags:
   - multimodal
   - open-weight
 model:
+  open_weights: true
   license: NVIDIA OneWay Noncommercial
   variants:
     - name: Nemotron-Labs-Audex-2B

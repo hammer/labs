@@ -21,5 +21,6 @@ tags:
   - generation
   - open-weight
 model:
+  open_weights: true
   architecture: moe
   parameters: 14B

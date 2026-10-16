@@ -27,6 +27,7 @@ tags:
   - open-weight
   - foundational
 model:
+  open_weights: true
   parameters: 8.9B
   training_tokens: 5.73T
   pretrained_from_scratch: true

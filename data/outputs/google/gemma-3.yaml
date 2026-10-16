@@ -25,6 +25,7 @@ tags:
   - open-source
   - multimodal
 model:
+  open_weights: true
   architecture: dense
   parameters: 27B
   context_window: 128000

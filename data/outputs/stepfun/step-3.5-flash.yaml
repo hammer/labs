@@ -44,6 +44,7 @@ outputs:
       Most advanced agentic model. 196B MoE (11B active) using MTP-3 and hybrid
       attention. Optimized for speed (350 tok/s) with 256k context.
     model:
+      open_weights: true
       architecture: moe
       parameters: 196B
       active_parameters: 11B

@@ -49,6 +49,7 @@ outputs:
       - label: Artificial Analysis
         url: https://artificialanalysis.ai/models/qwen3-6-27b
     model:
+      open_weights: true
       architecture: dense
       parameters: 27B
       context_window: 262144
@@ -78,6 +79,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/Qwen/Qwen3.6-35B-A3B
     model:
+      open_weights: true
       architecture: moe
       parameters: 35B
       active_parameters: 3B

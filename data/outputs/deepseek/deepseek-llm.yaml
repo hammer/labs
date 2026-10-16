@@ -28,6 +28,7 @@ outputs:
     description: >
       First general-purpose 67B model, outperforming Llama 2 at the time.
     model:
+      open_weights: true
       architecture: dense
       parameters: 67B
       intelligence_index: 5

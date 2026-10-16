@@ -98,16 +98,25 @@ for (const width of widths) {
     [...css.matchAll(/@media \(max-width: (\d+)px\)/g)].map((m) => Number(m[1])),
   )].sort((a, b) => a - b);
   log('home trim tiers discovered from stylesheet', tiers.length > 0, tiers.join(', '));
-  const page = await newPage({ width: 900, height: 800 });
+  // One page per tier, not one for the whole loop. Reusing a single page across
+  // repeated `networkidle` navigations leaks until Chromium dies with
+  // ERR_INSUFFICIENT_RESOURCES, which Playwright surfaces as "Page crashed" —
+  // and the crash takes the whole suite down mid-run, so it reads as a product
+  // failure rather than a harness one. Measured: a fixed-width page fails on
+  // the 14th navigation. This loop did exactly 12 while the home table had six
+  // trim tiers, so it had been one tier from breaking; adding the Intelligence
+  // (open) column's tier was what pushed it over. Scoping the page to a tier
+  // caps it at two navigations regardless of how many tiers exist.
   for (const tier of tiers) {
+    const page = await newPage({ width: 900, height: 800 });
     for (const width of [tier, tier + 1]) {
       await page.setViewportSize({ width, height: 800 });
       await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
       const t = await overflowAt(page);
       log(`no h-overflow / @ ${width}px (tier ${tier})`, t.scrollW <= t.innerW, JSON.stringify(t));
     }
+    await page.close();
   }
-  await page.close();
 }
 
 // ── Landscape phone ───────────────────────────────────────────────────

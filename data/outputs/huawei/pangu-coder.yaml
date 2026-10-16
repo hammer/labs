@@ -20,6 +20,7 @@ outputs:
     type: model
     date: 2022-07-22
     model:
+      open_weights: true
       variants:
         - name: PanGu-Coder-317M
           parameters: 317M

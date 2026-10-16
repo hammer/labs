@@ -34,6 +34,7 @@ tags:
   - speech
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: 1.5B
   license: MIT

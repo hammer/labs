@@ -16,6 +16,7 @@ description: >
   smaller 2B and 9B checkpoints are also released.</p>
 tags: [robotics, embodied, vla, multimodal, open-weight, moe]
 model:
+  open_weights: true
   license: Apache 2.0
   variants:
     - name: RynnBrain 1.1-2B

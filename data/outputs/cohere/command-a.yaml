@@ -30,6 +30,7 @@ tags:
   - multilingual
   - frontier
 model:
+  open_weights: true
   architecture: dense
   parameters: 111B
   context_window: 256000

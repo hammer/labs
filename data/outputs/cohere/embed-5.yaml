@@ -54,6 +54,7 @@ tags:
   - enterprise
   - proprietary
 model:
+  open_weights: false
   context_window: 128000
   license: Proprietary
   benchmark_scores:

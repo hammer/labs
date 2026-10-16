@@ -25,6 +25,7 @@ tags:
   - training
   - foundational
 model:
+  open_weights: true
   parameters: 8B
   variants:
     - name: BitCPM-CANN-0.5B

@@ -29,6 +29,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/deepseek-ai/DeepSeek-V3.2
     model:
+      open_weights: true
       architecture: moe
       parameters: 685B
       active_parameters: 37B

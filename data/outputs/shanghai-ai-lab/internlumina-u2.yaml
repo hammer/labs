@@ -34,6 +34,7 @@ tags:
   - moe
   - open-weight
 model:
+  open_weights: true
   architecture: moe
   # Derivative of Ant Group's LLaDA-2.0 (16B-A1B, stated in the description);
   # no `parameters` so the size does not count toward Shanghai AI Lab's Scale.

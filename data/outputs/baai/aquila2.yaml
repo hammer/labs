@@ -17,6 +17,7 @@ tags:
   - nlp
   - moe
 model:
+  open_weights: true
   variants:
     - name: Aquila2-7B
       parameters: 7B

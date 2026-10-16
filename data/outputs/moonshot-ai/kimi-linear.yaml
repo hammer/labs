@@ -26,6 +26,7 @@ outputs:
       - label: Artificial Analysis
         url: https://artificialanalysis.ai/models/kimi-linear-48b-a3b-instruct
     model:
+      open_weights: true
       architecture: moe
       parameters: 48B
       active_parameters: 3B

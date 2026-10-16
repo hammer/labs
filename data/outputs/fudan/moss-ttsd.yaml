@@ -21,4 +21,5 @@ tags:
   - tts
   - open-weight
 model:
+  open_weights: true
   base_model: qwen3

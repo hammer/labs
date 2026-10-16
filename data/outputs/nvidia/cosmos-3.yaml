@@ -33,6 +33,7 @@ outputs:
       - label: Announcement
         url: https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3
     model:
+      open_weights: true
       architecture: moe
       variants:
         - name: Cosmos 3 Super

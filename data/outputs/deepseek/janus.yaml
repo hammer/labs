@@ -23,6 +23,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/deepseek-ai/Janus-Pro-7B
     model:
+      open_weights: true
       variants:
         - name: Janus
           notes: Released Oct 2024

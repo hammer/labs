@@ -16,6 +16,7 @@ tags:
   - open-weight
   - multilingual
 model:
+  open_weights: true
   architecture: dense
   parameters: 6.2B
   context_window: 2048

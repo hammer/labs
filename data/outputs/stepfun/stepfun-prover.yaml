@@ -16,6 +16,7 @@ description: >
 tags:
   - reasoning
 model:
+  open_weights: true
   architecture: dense
   parameters: 32B
 notes: arXiv submission Jul 27, 2025. 70% pass@1 on miniF2F-test.

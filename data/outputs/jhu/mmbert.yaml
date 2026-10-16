@@ -23,6 +23,7 @@ tags:
   - open-weight
   - nlp
 model:
+  open_weights: true
   architecture: dense
   parameters: "307M"
   training_tokens: "3T"

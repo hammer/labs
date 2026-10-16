@@ -20,6 +20,7 @@ tags:
   - evaluation
   - open-weight
 model:
+  open_weights: true
   variants:
     - name: BGE-v1.0
     - name: BGE-v1.5

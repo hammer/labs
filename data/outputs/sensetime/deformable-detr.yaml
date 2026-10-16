@@ -23,6 +23,7 @@ outputs:
   - name: Deformable DETR Model
     type: model
     model:
+      open_weights: true
       variants:
         - name: deformable-detr
         - name: deformable-detr-single-scale

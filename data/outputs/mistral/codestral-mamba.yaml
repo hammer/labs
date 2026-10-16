@@ -16,6 +16,7 @@ tags:
   - open-weight
   - architecture
 model:
+  open_weights: true
   architecture: dense
   parameters: 7.3B
 related:

@@ -26,6 +26,7 @@ tags:
   - open-weight
   - enterprise
 model:
+  open_weights: true
   parameters: 30B
   context_window: 131072
   license: Apache 2.0

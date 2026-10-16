@@ -26,6 +26,7 @@ tags:
   - multimodal
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: 67B
   intelligence_index: 6

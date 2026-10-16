@@ -25,6 +25,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/openbmb/MiniCPM-V-4_5
     model:
+      open_weights: true
       architecture: dense
   - name: "MiniCPM-V 4.5: Cooking Efficient MLLMs via Architecture, Data, and Training Recipe"
     type: paper

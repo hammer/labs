@@ -38,6 +38,7 @@ outputs:
       Designed for agentic coding with parallel tool calls to reduce interaction
       latency. Served via the StreamLake API as KAT-Coder-Pro V1.
     model:
+      open_weights: true
       architecture: moe
       active_parameters: 72B
       # Same provenance as the V2 sibling below: Kwaipilot post-trains external
@@ -70,6 +71,7 @@ outputs:
       KAT-Dev-72B-Exp is architecturally Qwen2.5-72B, and the open
       V2.5 sibling is built on Qwen3.6-35B-A3B).
     model:
+      open_weights: true
       architecture: moe
       # No from-scratch pretraining claim anywhere; vendor docs describe
       # post-training of external (Qwen-family) bases. Base undisclosed for

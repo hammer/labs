@@ -26,6 +26,7 @@ outputs:
       - label: GitHub
         url: https://github.com/XiaomiMiMo/MiMo-VL
     model:
+      open_weights: true
       architecture: dense
       parameters: 7B
   - name: "MiMo-VL: From Pre-training to Post-training"

@@ -34,6 +34,7 @@ tags:
   - open-weight
   - foundation-model
 model:
+  open_weights: true
   architecture: dense
   variants:
     - name: Meditron3-8B

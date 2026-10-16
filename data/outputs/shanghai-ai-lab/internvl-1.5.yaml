@@ -20,6 +20,7 @@ tags:
   - open-weight
   - vision
 model:
+  open_weights: true
   architecture: dense
   parameters: 26B
 paper:

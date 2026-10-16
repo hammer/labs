@@ -27,6 +27,7 @@ outputs:
       - label: GitHub
         url: https://github.com/qwenlm/qwen2.5
     model:
+      open_weights: true
       architecture: dense
       intelligence_index: 8
       intelligence_index_version: "AA v4.3.2"

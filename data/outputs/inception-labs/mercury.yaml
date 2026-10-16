@@ -38,6 +38,7 @@ tags:
   - reasoning
   - efficiency
 model:
+  open_weights: false
   intelligence_index: 14
   intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:

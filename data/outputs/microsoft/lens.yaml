@@ -26,6 +26,7 @@ tags:
   - open-weight
   - efficiency
 model:
+  open_weights: true
   parameters: 3.8B
   variants:
     - name: Lens

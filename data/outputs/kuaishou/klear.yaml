@@ -29,6 +29,7 @@ outputs:
       Sparse MoE LLM with 46B total parameters and 2.5B active, designed for
       high performance and inference efficiency.
     model:
+      open_weights: true
       architecture: moe
       parameters: 46B
       active_parameters: 2.5B
@@ -59,5 +60,6 @@ outputs:
       8B reasoning model based on Qwen3-8B-Base, fine-tuned with long CoT SFT
       and RL on math and coding tasks. 90.5% on AIME 2024, 83.2% on AIME 2025.
     model:
+      open_weights: true
       architecture: dense
       parameters: 8B

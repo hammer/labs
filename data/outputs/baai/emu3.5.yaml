@@ -27,6 +27,7 @@ tags:
   - open-weight
   - embodied
 model:
+  open_weights: true
   variants:
     - name: Emu3.5
       notes: General-purpose multimodal, interleaved image-text

@@ -28,6 +28,7 @@ tags:
   - retrieval
   - open-weight
 model:
+  open_weights: true
   variants:
     - name: instructor-base
       notes: GTR-base initialization

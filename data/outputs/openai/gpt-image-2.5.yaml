@@ -22,6 +22,7 @@ tags:
   - image-generation
   - multimodal
 model:
+  open_weights: false
   license: Proprietary
   variants:
     - name: GPT-Image-2.5 Flare

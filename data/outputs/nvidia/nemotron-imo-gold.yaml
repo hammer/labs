@@ -37,6 +37,7 @@ tags:
   - rl
   - open-weight
 model:
+  open_weights: true
   architecture: moe
   parameters: 550B
   active_parameters: 55B

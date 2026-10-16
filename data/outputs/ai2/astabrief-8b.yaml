@@ -77,6 +77,7 @@ tags:
   - research
   - agents
 model:
+  open_weights: true
   architecture: dense
   base_model: qwen3
   license: Apache-2.0

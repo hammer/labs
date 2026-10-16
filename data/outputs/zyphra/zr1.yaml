@@ -24,6 +24,7 @@ tags:
   - reasoning
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: 1.5B
   base_model: deepseek-r1

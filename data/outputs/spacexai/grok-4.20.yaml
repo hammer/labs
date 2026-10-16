@@ -22,6 +22,7 @@ tags:
   - agents
   - moe
 model:
+  open_weights: false
   architecture: moe
   context_window: 2000000
   intelligence_index: 26

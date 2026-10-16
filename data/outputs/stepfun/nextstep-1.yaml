@@ -32,6 +32,7 @@ outputs:
       14B autoregressive image generation model that rivals top diffusion systems.
       Includes NextStep-1-Edit for instruction-based image editing.
     model:
+      open_weights: true
       architecture: dense
       parameters: 14B
     notes: Code and model weights released Aug 14, 2025. NextStep-1.1 released Dec 24, 2025.

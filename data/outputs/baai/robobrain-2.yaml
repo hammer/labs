@@ -37,6 +37,7 @@ outputs:
     description: >
       Most powerful open-source embodied brain model. 3B, 7B, and 32B variants.
     model:
+      open_weights: true
       variants:
         - name: RoboBrain2.0-3B
         - name: RoboBrain2.0-7B
@@ -53,6 +54,7 @@ outputs:
       Precise 3D spatial reasoning and dense temporal value estimation.
       95%+ task success rate with one demonstration.
     model:
+      open_weights: true
       variants:
         - name: RoboBrain2.5-8B-NV
           notes: NVIDIA GPU cluster

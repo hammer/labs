@@ -29,6 +29,7 @@ outputs:
   - name: SenseNova-MARS Models
     type: model
     model:
+      open_weights: true
       variants:
         - name: SenseNova-MARS-8B
           parameters: "8B"

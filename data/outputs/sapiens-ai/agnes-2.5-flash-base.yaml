@@ -30,6 +30,7 @@ tags:
   - moe
   - open-weight
 model:
+  open_weights: true
   architecture: moe
   active_parameters: 16B
   context_window: 1048576

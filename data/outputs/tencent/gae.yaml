@@ -85,6 +85,7 @@ tags:
   - open-weight
   - research
 model:
+  open_weights: true
   architecture: dense
   parameters: 0.93B
   license: Custom (Tencent, academic use only)

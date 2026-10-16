@@ -27,6 +27,7 @@ tags:
   - open-weight
   - research
 model:
+  open_weights: true
   architecture: dense
   parameters: 70B
   pretrained_from_scratch: false

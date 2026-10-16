@@ -68,6 +68,7 @@ tags:
   - open-weight
   - research
 model:
+  open_weights: true
   license: MIT
   variants:
     - name: RetroChimera 1 (Pistachio)

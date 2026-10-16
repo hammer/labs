@@ -32,6 +32,7 @@ outputs:
       13B bilingual LLM based on LLaMA with optimized Chinese tokenizer
       and three-stage training process including RLHF.
     model:
+      open_weights: true
       base_model: llama-1
       variants:
         - name: Ziya-LLaMA-13B-v1
@@ -51,6 +52,7 @@ outputs:
       Built on Llama 2 with 650B additional Chinese-English tokens.
       Full-parameter RLHF with high-quality human preference data.
     model:
+      open_weights: true
       base_model: llama-2
   - name: Ziya-Coding-34B
     type: model
@@ -61,6 +63,7 @@ outputs:
       Code generation model achieving 75.5 HumanEval Pass@1,
       surpassing GPT-4's 67.0 score.
     model:
+      open_weights: true
       base_model: code-llama
   - name: Ziya-Visual
     type: model
@@ -72,4 +75,5 @@ outputs:
       Multimodal vision-language model based on Ziya-LLaMA-13B with
       visual question answering and dialogue capabilities.
     model:
+      open_weights: true
       base_model: llama-1

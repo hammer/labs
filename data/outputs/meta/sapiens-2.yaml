@@ -32,6 +32,7 @@ tags:
   - foundational
   - human-centric
 model:
+  open_weights: true
   architecture: dense
   parameters: 5B
   variants:

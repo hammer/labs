@@ -46,6 +46,7 @@ tags:
   - reasoning
   - proprietary
 model:
+  open_weights: false
   context_window: 1000000
   intelligence_index: 40
   intelligence_index_version: "AA v4.3.2"

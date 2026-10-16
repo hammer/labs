@@ -31,6 +31,7 @@ tags:
   - dataset
   - open-weight
 model:
+  open_weights: true
   variants:
     - name: EgoGPT-7b-EgoIT-EgoLife
       notes: omni-modal egocentric model on an open 7B backbone

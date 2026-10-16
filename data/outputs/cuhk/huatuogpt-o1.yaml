@@ -31,6 +31,7 @@ tags:
   - post-training
   - open-weight
 model:
+  open_weights: true
   base_model: llama-3.1
   variants:
     - name: HuatuoGPT-o1-8B

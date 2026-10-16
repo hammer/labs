@@ -24,6 +24,7 @@ tags:
   - reasoning
   - agentic
 model:
+  open_weights: true
   architecture: dense
   parameters: 1.08B
   context_window: 131072

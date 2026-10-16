@@ -29,5 +29,6 @@ tags:
   - open-weight
   - open-source
 model:
+  open_weights: true
   parameters: 8B
   license: Apache 2.0

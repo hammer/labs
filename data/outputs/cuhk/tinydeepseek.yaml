@@ -27,6 +27,7 @@ tags:
   - training
   - research
 model:
+  open_weights: true
   parameters: "3.3B"
   license: Apache 2.0
   variants:

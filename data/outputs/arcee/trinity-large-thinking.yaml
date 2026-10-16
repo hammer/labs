@@ -37,6 +37,7 @@ tags:
   - reasoning
   - agentic
 model:
+  open_weights: true
   architecture: moe
   base_model: trinity-large
   context_window: 512000

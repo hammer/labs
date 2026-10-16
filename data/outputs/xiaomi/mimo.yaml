@@ -28,6 +28,7 @@ outputs:
       - label: Announcement
         url: https://www.gizmochina.com/2025/05/02/xiaomi-launches-mimo-7b-its-first-open-source-llm-for-reasoning-and-coding/
     model:
+      open_weights: true
       architecture: dense
       parameters: 7B
   - name: "MiMo: Unlocking the Reasoning Potential of Language Model"

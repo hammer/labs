@@ -25,6 +25,7 @@ description: >
   and training scale remain undisclosed.</p>
 tags: [frontier, proprietary, coding, agentic, reasoning, multimodal]
 model:
+  open_weights: false
   context_window: 500000
   base_model: grok-4.5
   intelligence_index: 44

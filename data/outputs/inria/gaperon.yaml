@@ -21,6 +21,7 @@ tags:
   - multilingual
   - pretraining
 model:
+  open_weights: true
   parameters: "24B"
   training_tokens: "4T"
   variants:

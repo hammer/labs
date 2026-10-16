@@ -44,6 +44,7 @@ tags:
   - foundational
   - research
 model:
+  open_weights: true
   architecture: dense
   parameters: 7B
   training_tokens: 4.19T

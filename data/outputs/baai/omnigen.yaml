@@ -22,5 +22,6 @@ tags:
   - multimodal
   - open-weight
 model:
+  open_weights: true
   variants:
     - name: OmniGen-v1

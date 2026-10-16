@@ -17,6 +17,7 @@ tags:
   - open-weight
   - multilingual
 model:
+  open_weights: true
   base_model: olmo-2
 related:
   - hplt

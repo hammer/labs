@@ -28,6 +28,7 @@ tags:
   - multimodal
   - open-weight
 model:
+  open_weights: true
   variants:
     - name: OpenCUA-7B
       notes: post-trained on an open 7B VLM backbone

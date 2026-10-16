@@ -44,6 +44,7 @@ tags:
   - coding
   - agentic
 model:
+  open_weights: true
   architecture: moe
   base_model: deepseek-v4
   context_window: 1048576

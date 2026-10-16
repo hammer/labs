@@ -43,6 +43,7 @@ tags:
   - open-weight
   - research
 model:
+  open_weights: true
   # Derivative: post-trained from Qwen3.5-9B-Base (paper abstract; HF card
   # base_model Qwen/Qwen3.5-9B). No `parameters`.
   base_model: qwen3.5

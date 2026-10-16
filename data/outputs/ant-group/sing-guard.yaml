@@ -19,6 +19,7 @@ tags:
   - guardrails
   - open-weight
 model:
+  open_weights: true
   license: Apache 2.0
   variants:
     - name: Sing-Guard-0.8b

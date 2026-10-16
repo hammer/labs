@@ -31,4 +31,5 @@ tags:
   - foundation-model
   - research
 model:
+  open_weights: true
   architecture: dense

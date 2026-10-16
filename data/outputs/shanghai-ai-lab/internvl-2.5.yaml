@@ -21,6 +21,7 @@ tags:
   - frontier
   - scaling
 model:
+  open_weights: true
   architecture: dense
   variants:
     - name: InternVL2_5-1B

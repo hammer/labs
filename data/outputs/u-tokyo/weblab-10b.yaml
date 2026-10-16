@@ -19,6 +19,7 @@ tags:
   - open-weight
   - pretraining
 model:
+  open_weights: true
   architecture: dense
   parameters: "10B"
   training_tokens: "600B"

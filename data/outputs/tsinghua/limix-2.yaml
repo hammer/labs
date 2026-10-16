@@ -28,6 +28,7 @@ tags:
   - open-weight
   - foundational
 model:
+  open_weights: true
   parameters: 400M
   license: StableAI LimiX Non-Commercial License v1.0
 paper:

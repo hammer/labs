@@ -27,6 +27,7 @@ outputs:
       - label: GitHub
         url: https://github.com/QwenLM/Qwen2
     model:
+      open_weights: true
       intelligence_index: 6
       intelligence_index_version: "AA v4.3.2"
       intelligence_index_history:

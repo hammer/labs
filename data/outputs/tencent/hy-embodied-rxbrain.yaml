@@ -19,4 +19,5 @@ tags:
   - world-model
   - open-weight
 model:
+  open_weights: true
   parameters: "6.2B"

@@ -22,6 +22,7 @@ tags:
   - science
   - medical
 model:
+  open_weights: true
   architecture: dense
   base_model: qwen3
 paper:

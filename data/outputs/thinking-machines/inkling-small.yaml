@@ -37,6 +37,7 @@ tags:
   - reasoning
   - efficiency
 model:
+  open_weights: true
   architecture: moe
   parameters: "276B"
   active_parameters: "12B"

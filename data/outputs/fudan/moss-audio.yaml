@@ -23,6 +23,7 @@ tags:
   - multimodal
   - open-weight
 model:
+  open_weights: true
   base_model: qwen3
 related:
   - moss-ttsd

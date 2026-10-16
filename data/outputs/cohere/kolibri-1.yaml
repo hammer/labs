@@ -63,6 +63,7 @@ tags:
   - long-context
   - agentic
 model:
+  open_weights: true
   architecture: moe
   parameters: 78B
   active_parameters: 3.46B

@@ -16,6 +16,7 @@ tags:
   - efficiency
   - conversational
 model:
+  open_weights: true
   architecture: dense
   parameters: 6B
   variants:

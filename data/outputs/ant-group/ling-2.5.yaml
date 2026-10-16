@@ -19,6 +19,7 @@ tags:
   - scaling
   - agentic
 model:
+  open_weights: true
   architecture: moe
   parameters: 1T
   context_window: 1000000

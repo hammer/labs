@@ -32,6 +32,7 @@ tags:
   - japanese
   - frontier
 model:
+  open_weights: true
   architecture: moe
   base_model: sarashina2
 related:

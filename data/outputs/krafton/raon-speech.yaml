@@ -39,6 +39,7 @@ outputs:
       ECAPA-TDNN speaker encoder — the language backbone is adapted, not
       pretrained in-house.
     model:
+      open_weights: true
       architecture: dense
       base_model: qwen3
       license: CC-BY-NC-4.0
@@ -51,6 +52,7 @@ outputs:
     description: >
       Real-time full-duplex variant for overlapping-speech conversation.
     model:
+      open_weights: true
       architecture: dense
       base_model: qwen3
       license: CC-BY-NC-4.0

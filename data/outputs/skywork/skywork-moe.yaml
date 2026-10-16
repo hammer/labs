@@ -23,6 +23,7 @@ tags:
   - open-weight
   - research
 model:
+  open_weights: true
   architecture: moe
   parameters: 146B
   active_parameters: 22B

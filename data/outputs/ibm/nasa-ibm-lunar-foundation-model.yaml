@@ -28,6 +28,7 @@ tags:
   - vision
   - open-weight
 model:
+  open_weights: true
   pretrained_from_scratch: true
   license: Apache 2.0
   training_hardware: 16x H100 (~1,100 GPU-hours)

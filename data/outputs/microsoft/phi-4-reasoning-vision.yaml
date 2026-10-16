@@ -26,6 +26,7 @@ tags:
   - open-weight
   - small-model
 model:
+  open_weights: true
   architecture: dense
   parameters: 15B
   base_model: phi-4

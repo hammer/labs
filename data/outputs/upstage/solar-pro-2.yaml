@@ -32,6 +32,7 @@ tags:
   - reasoning
   - efficiency
 model:
+  open_weights: false
   architecture: dense
   parameters: 31B
   context_window: 64000

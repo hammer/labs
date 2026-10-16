@@ -27,6 +27,7 @@ tags:
   - multimodal
   - open-weight
 model:
+  open_weights: true
   base_model: qwen2-vl
   variants:
     - name: ShowUI-2B

@@ -25,6 +25,7 @@ tags:
   - frontier
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: 405B
   intelligence_index: 7

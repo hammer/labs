@@ -49,5 +49,6 @@ outputs:
       Open-source end-to-end speech interaction model with Base and Instruct
       variants for bilingual Chinese-English audio dialogue.
     model:
+      open_weights: true
       architecture: dense
       parameters: 10B

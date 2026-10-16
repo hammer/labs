@@ -27,6 +27,7 @@ tags:
   - open-weight
   - embodied
 model:
+  open_weights: true
   license: Apache 2.0
   variants:
     - name: GR00T N1

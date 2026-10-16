@@ -22,6 +22,7 @@ tags:
   - multimodal
   - open-weight
 model:
+  open_weights: true
   variants:
     - name: WeMM-Embedding-2B
       parameters: 2B

@@ -54,6 +54,7 @@ tags:
   - scientific-fm
   - open-weight
 model:
+  open_weights: true
   parameters: 694M
   context_window: 8192
   license: Apache 2.0

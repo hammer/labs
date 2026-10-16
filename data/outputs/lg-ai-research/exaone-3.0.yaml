@@ -18,6 +18,7 @@ tags:
   - open-weight
   - multilingual
 model:
+  open_weights: true
   architecture: dense
   parameters: 7.8B
 paper:

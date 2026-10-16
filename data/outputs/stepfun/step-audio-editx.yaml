@@ -18,5 +18,6 @@ tags:
   - editing
   - training
 model:
+  open_weights: true
   parameters: 3B
 notes: Technical report Nov 6, 2025. Model weights Nov 12, 2025.

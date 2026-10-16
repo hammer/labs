@@ -29,6 +29,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/openbmb/MiniCPM4.1-8B
     model:
+      open_weights: true
       architecture: dense
       parameters: 8B
   - name: "InfLLM-V2: Dense-Sparse Switchable Attention for Seamless Short-to-Long Adaptation"

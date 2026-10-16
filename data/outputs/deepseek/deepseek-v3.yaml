@@ -29,6 +29,7 @@ outputs:
       - label: V3-0324 update
         url: https://api-docs.deepseek.com/news/news250325
     model:
+      open_weights: true
       architecture: moe
       parameters: 671B
       active_parameters: 37B

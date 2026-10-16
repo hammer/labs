@@ -23,6 +23,7 @@ tags:
   - vision
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: 3B
   license: MIT

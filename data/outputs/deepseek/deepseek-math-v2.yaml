@@ -26,6 +26,7 @@ outputs:
     description: >
       Specialized model family for formal and informal mathematical reasoning.
     model:
+      open_weights: true
       architecture: dense
   - name: DeepSeek-Math-V2 Dataset
     type: dataset

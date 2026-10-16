@@ -46,5 +46,6 @@ outputs:
       235-billion-parameter medical reasoning model with MoE architecture,
       available in FP8 and GPTQ-INT4 quantizations.
     model:
+      open_weights: true
       architecture: moe
       parameters: 235B

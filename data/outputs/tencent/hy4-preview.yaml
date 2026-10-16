@@ -71,6 +71,7 @@ tags:
   - reasoning
   - long-context
 model:
+  open_weights: true
   architecture: moe
   parameters: 770B
   active_parameters: 49B

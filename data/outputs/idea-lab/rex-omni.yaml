@@ -33,6 +33,7 @@ outputs:
       3B MLLM for unified visual perception via next point prediction.
       Supports detection, OCR, pointing, keypointing, and visual prompting.
     model:
+      open_weights: true
       parameters: "3B"
   - name: "Detect Anything via Next Point Prediction"
     type: paper

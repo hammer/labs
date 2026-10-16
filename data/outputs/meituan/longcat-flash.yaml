@@ -30,6 +30,7 @@ outputs:
       - label: GitHub
         url: https://github.com/meituan-longcat/LongCat-Flash-Chat
     model:
+      open_weights: true
       architecture: moe
       parameters: 560B
       active_parameters: 27B

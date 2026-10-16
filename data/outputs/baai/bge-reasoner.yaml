@@ -19,6 +19,7 @@ tags:
   - open-weight
   - evaluation
 model:
+  open_weights: true
   variants:
     - name: BGE-Reasoner-Embed-Qwen3-8B
 related:

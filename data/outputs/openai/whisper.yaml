@@ -27,6 +27,7 @@ tags:
   - speech
   - foundational
 model:
+  open_weights: true
   architecture: dense
   parameters: 1.55B
   variants:

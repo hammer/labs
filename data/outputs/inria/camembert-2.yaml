@@ -22,6 +22,7 @@ tags:
   - open-weight
   - multilingual
 model:
+  open_weights: true
   parameters: "112M"
 paper:
   arxiv: "2411.08868"

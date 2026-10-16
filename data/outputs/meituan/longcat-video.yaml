@@ -28,6 +28,7 @@ outputs:
       - label: GitHub
         url: https://github.com/meituan-longcat/LongCat-Video
     model:
+      open_weights: true
       architecture: dense
       parameters: 13.6B
   - name: LongCat-Video Technical Report

@@ -19,6 +19,7 @@ tags:
   - open-weight
   - open-source
 model:
+  open_weights: true
   architecture: dense
   parameters: 3B
   variants:

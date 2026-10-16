@@ -70,6 +70,7 @@ tags:
   - agent-harness
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   # Derivative: both checkpoints are adapted from OpenBMB's MiniCPM-o 4.5
   # (paper sec. 4; HF card "Base architecture: MiniCPM-o 4.5 / Omni-Flow";

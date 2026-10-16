@@ -44,6 +44,7 @@ outputs:
       14.5-billion-parameter medical-enhanced model available in Base and
       Instruct versions.
     model:
+      open_weights: true
       architecture: dense
       parameters: 14.5B
   - name: Baichuan-M1-preview

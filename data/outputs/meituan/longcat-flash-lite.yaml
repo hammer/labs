@@ -25,6 +25,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/meituan-longcat/LongCat-Flash-Lite
     model:
+      open_weights: true
       architecture: moe
       intelligence_index: 11
       intelligence_index_version: "AA v4.3.2"

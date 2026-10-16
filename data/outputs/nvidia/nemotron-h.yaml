@@ -25,6 +25,7 @@ tags:
   - architecture
   - efficiency
 model:
+  open_weights: true
   architecture: dense
   parameters: 56B
   training_tokens: 20T

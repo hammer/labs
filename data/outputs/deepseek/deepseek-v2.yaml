@@ -26,6 +26,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/deepseek-ai/DeepSeek-V2
     model:
+      open_weights: true
       architecture: moe
       intelligence_index: 6
       intelligence_index_version: "AA v4.3.2"

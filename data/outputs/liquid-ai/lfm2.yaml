@@ -27,6 +27,7 @@ tags:
   - on-device
   - moe
 model:
+  open_weights: true
   architecture: moe
   parameters: 24B
   active_parameters: 2.3B

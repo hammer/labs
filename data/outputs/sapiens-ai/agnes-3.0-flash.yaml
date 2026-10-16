@@ -38,6 +38,7 @@ tags:
   - open-weight
   - agentic
 model:
+  open_weights: true
   architecture: dense
   # Preview open-weight checkpoint; the API model's size is undisclosed.
   parameters: "33B"

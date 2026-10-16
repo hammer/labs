@@ -13,6 +13,7 @@ description: >
   architecture that can "see, hear, and act," designed to power Xiaomi's
   next-generation smart devices across the Human x Car x Home ecosystem.
 model:
+  open_weights: true
   # Re-anchored 2026-07-28 to AA's 0327 dated refresh page (36.4), which
   # supersedes the launch checkpoint's mimo-v2-omni page (35.0).
   intelligence_index: 25

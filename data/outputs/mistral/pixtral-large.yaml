@@ -27,6 +27,7 @@ tags:
   - vision
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: 124B
   context_window: 128000

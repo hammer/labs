@@ -27,6 +27,7 @@ tags:
   - vision
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: 27B
   base_model: gemma

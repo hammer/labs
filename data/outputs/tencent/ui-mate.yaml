@@ -37,6 +37,7 @@ tags:
   - multimodal
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   base_model: qwen3.6-open
   license: Apache-2.0

@@ -39,6 +39,7 @@ tags:
   - multimodal
   - reasoning
 model:
+  open_weights: false
   context_window: 260000
   intelligence_index: 31
   intelligence_index_version: "AA v4.3.2"

@@ -21,6 +21,7 @@ tags:
   - open-weight
   - moe
 model:
+  open_weights: true
   architecture: moe
   base_model: ax-k2
   license: CC-BY-NC-4.0

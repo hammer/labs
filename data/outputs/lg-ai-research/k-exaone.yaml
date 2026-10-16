@@ -19,6 +19,7 @@ tags:
   - open-weight
   - efficiency
 model:
+  open_weights: true
   architecture: moe
   parameters: 236B
   active_parameters: 23B

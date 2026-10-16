@@ -27,6 +27,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/tencent/Tencent-Hunyuan-Large
     model:
+      open_weights: true
       architecture: moe
       parameters: 389B
       active_parameters: 52B

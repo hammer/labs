@@ -22,6 +22,7 @@ tags:
   - open-weight
   - multilingual
 model:
+  open_weights: true
   architecture: moe
   parameters: 105B
   active_parameters: 10.3B

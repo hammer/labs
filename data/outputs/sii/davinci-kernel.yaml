@@ -31,6 +31,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/SII-GAIR-NLP/daVinci-kernel-14B-RL
     model:
+      open_weights: true
       variants:
         - name: daVinci-kernel-8B-SFT
           parameters: 8B

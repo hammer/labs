@@ -26,6 +26,7 @@ tags:
   - on-device
   - agentic
 model:
+  open_weights: true
   architecture: dense
   parameters: 8B
 related:

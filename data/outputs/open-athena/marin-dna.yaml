@@ -47,6 +47,7 @@ tags:
   - scaling-laws
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: 1.1B
   context_window: 256

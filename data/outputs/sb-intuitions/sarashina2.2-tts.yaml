@@ -34,6 +34,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/sbintuitions/sarashina2.2-tts
     model:
+      open_weights: true
       parameters: 0.8B
   - name: Sarashina2.2-TTS Technical Report
     type: paper

@@ -26,6 +26,7 @@ tags:
   - reasoning
   - architecture
 model:
+  open_weights: true
   architecture: dense
   parameters: 7B
   context_window: 256000

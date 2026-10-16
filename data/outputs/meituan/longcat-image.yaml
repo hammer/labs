@@ -27,6 +27,7 @@ outputs:
       - label: GitHub
         url: https://github.com/meituan-longcat/LongCat-Image
     model:
+      open_weights: true
       architecture: dense
       parameters: 6B
   - name: LongCat-Image Technical Report

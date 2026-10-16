@@ -26,6 +26,7 @@ tags:
   - multimodal
   - open-weight
 model:
+  open_weights: true
   base_model: qwen2-vl
 paper:
   arxiv: "2504.16030"

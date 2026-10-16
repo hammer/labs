@@ -33,6 +33,7 @@ tags:
   - open-weight
   - moe
 model:
+  open_weights: true
   architecture: moe
   parameters: 16B
 paper:

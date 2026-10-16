@@ -29,6 +29,7 @@ tags:
   - moe
   - nlp
 model:
+  open_weights: true
   architecture: moe
   parameters: 218B
   active_parameters: 25B

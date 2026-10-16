@@ -18,4 +18,5 @@ tags:
   - scaling
   - efficiency
 model:
+  open_weights: true
   context_window: 1000000

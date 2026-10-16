@@ -59,6 +59,7 @@ tags:
   - open-weight
   - foundational
 model:
+  open_weights: true
   architecture: dense
   parameters: 0.6B
   variants:

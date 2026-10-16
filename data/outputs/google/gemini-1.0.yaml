@@ -24,6 +24,7 @@ tags:
   - frontier
   - multimodal
 model:
+  open_weights: false
   context_window: 32000
   intelligence_index: 6
   intelligence_index_version: "AA v4.3.2"

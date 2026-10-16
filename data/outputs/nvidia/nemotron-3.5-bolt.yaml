@@ -54,6 +54,7 @@ tags:
   - quantization
   - reasoning
 model:
+  open_weights: true
   architecture: moe
   base_model: nemotron-3.5-super-vl
   parameters: 74B

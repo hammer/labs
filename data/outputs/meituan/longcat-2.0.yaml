@@ -42,6 +42,7 @@ tags:
   - coding
   - agentic
 model:
+  open_weights: true
   architecture: moe
   parameters: 1.6T
   active_parameters: 48B

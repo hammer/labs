@@ -61,6 +61,7 @@ description: >
   GitHub PDF (no arXiv ID at release).</p>
 tags: [frontier, moe, open-weight, multimodal, reasoning, agentic, coding]
 model:
+  open_weights: true
   architecture: moe
   parameters: 125B
   active_parameters: 6B

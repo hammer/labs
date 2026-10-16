@@ -89,6 +89,7 @@ tags:
   - science
   - open-weight
 model:
+  open_weights: true
   # architecture and parameters left unset: both reports describe a
   # mixture-of-transformers of modality experts (not a routed MoE), and
   # neither states a total parameter count. InternW0's report does not say how

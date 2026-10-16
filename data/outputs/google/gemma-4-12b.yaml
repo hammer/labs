@@ -60,6 +60,7 @@ tags:
   - multimodal
   - on-device
 model:
+  open_weights: true
   architecture: dense
   parameters: 11.95B
   context_window: 262144

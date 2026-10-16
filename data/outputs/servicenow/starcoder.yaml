@@ -21,6 +21,7 @@ tags:
   - coding
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: 15.5B
   context_window: 8192

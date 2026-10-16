@@ -30,6 +30,7 @@ tags:
   - proprietary
   - agentic
 model:
+  open_weights: false
   license: Proprietary (API)
   variants:
     - name: Gemini 3.8 Live Extended Thinking

@@ -31,6 +31,7 @@ outputs:
       Transformer (MMDiT) architecture. Exceptional text rendering accuracy for
       complex logographic languages.
     model:
+      open_weights: true
       parameters: 20B
   - name: Qwen-Image-2.0
     type: model
@@ -42,6 +43,7 @@ outputs:
       Next-gen 7B image model unifying text-to-image generation and image editing.
       Native 2K resolution. Scores 88.32 on DPG-Bench, outperforming FLUX.1 (12B).
     model:
+      open_weights: true
       parameters: 7B
   - name: Qwen-Image-3.0
     type: model
@@ -71,5 +73,6 @@ outputs:
       (QwenImage21Pipeline) support, Qwen Research License; about 2,700
       HuggingFace likes and 70,000 downloads in its first ten days.
     model:
+      open_weights: true
       parameters: 7B
       license: Qwen Research License

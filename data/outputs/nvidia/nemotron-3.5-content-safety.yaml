@@ -40,6 +40,7 @@ tags:
   - multimodal
   - open-weight
 model:
+  open_weights: true
   parameters: 4B
   license: NVIDIA Open Model License
 related:

@@ -67,6 +67,7 @@ tags:
   - generation
   - open-weight
 model:
+  open_weights: true
   # From scratch: the report (App. C) says "We first pretrain an autoregressive
   # model from random initialization". Each expert's shape (28 layers, 2,048
   # hidden) matches Qwen3-1.7B and it uses a Qwen tokenizer, but shape matches

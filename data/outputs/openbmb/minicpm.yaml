@@ -34,6 +34,7 @@ outputs:
       - label: HuggingFace (2B)
         url: https://huggingface.co/openbmb/MiniCPM-2B-dpo-bf16
     model:
+      open_weights: true
       architecture: dense
       variants:
         - name: MiniCPM-1B
@@ -60,6 +61,7 @@ outputs:
       MoE version delivering 7B-class performance with significantly lower
       active parameter costs.
     model:
+      open_weights: true
       architecture: moe
 related:
   - minicpm3

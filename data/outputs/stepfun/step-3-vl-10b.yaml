@@ -33,6 +33,7 @@ outputs:
       perception-decoder training on 1.2T multimodal tokens; the decoder starts
       from Qwen3-8B. AA Intelligence Index v4.3: 8.
     model:
+      open_weights: true
       architecture: dense
       base_model: qwen3
       intelligence_index: 8

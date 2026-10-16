@@ -49,6 +49,7 @@ tags:
   - frontier
   - efficiency
 model:
+  open_weights: true
   architecture: moe
   parameters: 250B
   active_parameters: 15B

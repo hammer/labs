@@ -27,6 +27,7 @@ outputs:
     description: >
       First open-source LLM compliant with Chinese regulations.
     model:
+      open_weights: true
       variants:
         - name: Aquila-7B
           parameters: 7B

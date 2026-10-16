@@ -20,6 +20,7 @@ tags:
   - open-weight
   - nlp
 model:
+  open_weights: true
   variants:
     - name: BGE-Code-v1
 related:

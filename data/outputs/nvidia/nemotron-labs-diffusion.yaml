@@ -26,6 +26,7 @@ tags:
   - open-weight
   - efficiency
 model:
+  open_weights: true
   parameters: 14B
   variants:
     - name: Nemotron-Labs-Diffusion-3B (Base/Instruct/VL)

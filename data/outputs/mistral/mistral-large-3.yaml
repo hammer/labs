@@ -24,6 +24,7 @@ tags:
   - frontier
   - multimodal
 model:
+  open_weights: true
   architecture: moe
   parameters: 675B
   active_parameters: 41B

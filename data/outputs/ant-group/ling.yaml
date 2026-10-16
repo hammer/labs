@@ -42,6 +42,7 @@ outputs:
     description: >
       Smaller Ling variants for edge and low-latency use cases.
     model:
+      open_weights: true
       architecture: dense
       parameters: 16B
 related:

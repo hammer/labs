@@ -27,6 +27,7 @@ tags:
   - reasoning
   - agents
 model:
+  open_weights: true
   architecture: dense
   parameters: 4.8B
   training_tokens: 4.5T

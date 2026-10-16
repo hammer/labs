@@ -320,6 +320,18 @@ interface TopIntelligence {
   date: string;
   openness?: number;
   opennessVersion?: string;
+  /**
+   * The same reading restricted to models with `open_weights: true`, for the
+   * home table's Intelligence (open) column. Absent when the lab has no
+   * AAII-scored open model.
+   *
+   * `open_weights` is deliberately tri-state: unset means *unknown*, and an
+   * unknown model must not be treated as either. At introduction 404 of 1006
+   * model units are unset, so reading missing-as-open would invent scores and
+   * reading missing-as-closed would hide real ones. Only an explicit `true`
+   * qualifies.
+   */
+  open?: { score: number; name: string; slug: string; labSlug: string; date: string };
 }
 
 /** Labs of the output a base_model slug points at ([] if untracked). */
@@ -350,6 +362,7 @@ export function getTopIntelligence(labSlug: string): TopIntelligence | null {
   const outputs = getOutputsForLab(labSlug);
   let topAaii: TopIntelligence | null = null;
   let topWithOpenness: TopIntelligence | null = null;
+  let topOpen: { score: number; name: string; slug: string; labSlug: string; date: string } | null = null;
 
   function check(
     model: {
@@ -359,6 +372,7 @@ export function getTopIntelligence(labSlug: string): TopIntelligence | null {
       openness_index_version?: string;
       base_model?: string;
       pretrained_from_scratch?: boolean;
+      open_weights?: boolean;
     },
     displayName: string,
     outputSlug: string,
@@ -378,6 +392,12 @@ export function getTopIntelligence(labSlug: string): TopIntelligence | null {
     if (!topAaii || score > topAaii.score) topAaii = entry;
     if (openness !== undefined && (!topWithOpenness || score > topWithOpenness.score)) {
       topWithOpenness = entry;
+    }
+    // Strictly `=== true`: see the `open` field's comment. The from-scratch and
+    // AA-v4 filters above apply here too, by construction, so the two
+    // intelligence columns can never disagree about which models are eligible.
+    if (model.open_weights === true && (!topOpen || score > topOpen.score)) {
+      topOpen = { score, name: displayName, slug: outputSlug, labSlug: outLabSlug, date };
     }
   }
 
@@ -407,6 +427,7 @@ export function getTopIntelligence(labSlug: string): TopIntelligence | null {
     ...topAaii,
     openness: topWithOpenness?.openness,
     opennessVersion: topWithOpenness?.opennessVersion,
+    open: topOpen ?? undefined,
   };
 }
 

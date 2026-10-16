@@ -33,6 +33,7 @@ tags:
   - reasoning
   - frontier
 model:
+  open_weights: true
   architecture: dense
   parameters: 32B
   context_window: 65536

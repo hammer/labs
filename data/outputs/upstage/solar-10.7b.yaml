@@ -28,6 +28,7 @@ tags:
   - efficiency
   - research
 model:
+  open_weights: true
   architecture: dense
   parameters: 10.7B
   # Depth-up-scaled from Mistral 7B weights (see description) — not pretrained

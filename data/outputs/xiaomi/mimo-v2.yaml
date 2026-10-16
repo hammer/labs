@@ -34,6 +34,7 @@ outputs:
       - label: GitHub
         url: https://github.com/XiaomiMiMo/MiMo-V2-Flash
     model:
+      open_weights: true
       architecture: moe
       parameters: 309B
       active_parameters: 15B

@@ -17,6 +17,7 @@ tags:
   - open-weight
   - frontier
 model:
+  open_weights: true
   architecture: dense
   parameters: 123B
   context_window: 128000

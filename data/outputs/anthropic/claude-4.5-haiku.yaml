@@ -26,6 +26,7 @@ tags:
   - coding
   - agentic
 model:
+  open_weights: false
   context_window: 200000
   intelligence_index: 17
   intelligence_index_version: "AA v4.3.2"

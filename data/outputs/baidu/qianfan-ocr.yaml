@@ -17,4 +17,5 @@ tags:
   - vision
   - multimodal
 model:
+  open_weights: true
   parameters: 4B

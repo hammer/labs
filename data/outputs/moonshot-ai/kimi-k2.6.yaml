@@ -30,6 +30,7 @@ tags:
   - coding
   - reasoning
 model:
+  open_weights: true
   architecture: moe
   parameters: 1T
   active_parameters: 32B

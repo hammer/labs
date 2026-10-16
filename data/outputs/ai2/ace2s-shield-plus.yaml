@@ -24,6 +24,7 @@ tags:
   - science
   - open-weight
 model:
+  open_weights: true
   license: Apache 2.0
 paper:
   arxiv: "2606.07928"

@@ -27,6 +27,7 @@ tags:
   - audio
   - vision
 model:
+  open_weights: true
   architecture: moe
   parameters: 74B
   active_parameters: 3B

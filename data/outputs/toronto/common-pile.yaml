@@ -42,6 +42,7 @@ outputs:
       <p>7B LLMs trained solely on The Common Pile, competitive with
       Llama-1/Llama-2-era models trained on unlicensed web data.</p>
     model:
+      open_weights: true
       architecture: dense
       parameters: "7B"
       license: Apache 2.0

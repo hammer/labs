@@ -15,4 +15,5 @@ tags:
   - video
   - open-weight
 model:
+  open_weights: true
   parameters: "14B"

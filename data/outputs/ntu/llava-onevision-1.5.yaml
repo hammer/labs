@@ -30,6 +30,7 @@ tags:
   - training
   - open-source
 model:
+  open_weights: true
   variants:
     - name: LLaVA-OneVision-1.5-4B-Instruct
       notes: fully open data + training recipe

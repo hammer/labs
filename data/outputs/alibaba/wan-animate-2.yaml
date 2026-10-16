@@ -18,6 +18,7 @@ description: >
   variant distills generation into a causal streaming pipeline.</p>
 tags: [video, animation, diffusion, open-weight, multimodal]
 model:
+  open_weights: true
   parameters: 14B
   license: Apache 2.0
 paper:

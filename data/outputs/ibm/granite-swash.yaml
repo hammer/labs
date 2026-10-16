@@ -20,6 +20,7 @@ tags:
   - open-weight
   - efficiency
 model:
+  open_weights: true
   license: Apache 2.0
   variants:
     - name: granite-swash-2b

@@ -23,6 +23,7 @@ tags:
   - moe
   - open-weight
 model:
+  open_weights: true
   architecture: moe
   license: MIT
 paper:

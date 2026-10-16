@@ -28,6 +28,7 @@ tags:
   - generation
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: "8B"
   training_hardware: Huawei Ascend 910-series NPUs (v1.5.0)

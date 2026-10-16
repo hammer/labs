@@ -64,6 +64,7 @@ tags:
   - efficiency
   - moe
 model:
+  open_weights: false
   # Upstage's docs give 35B total / 3B active; OpenRouter's listing calls it
   # a mixture-of-experts. parameters/active_parameters are deliberately unset:
   # Upstage has not said whether Solar Mini 4 was pretrained from scratch or

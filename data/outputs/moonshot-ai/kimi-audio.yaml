@@ -19,6 +19,7 @@ outputs:
   - name: Kimi-Audio-7B-Instruct
     type: model
     model:
+      open_weights: true
       parameters: 7B
   - name: Kimi-Audio Technical Report
     type: paper

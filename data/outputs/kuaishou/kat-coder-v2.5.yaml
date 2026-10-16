@@ -33,6 +33,7 @@ outputs:
       4.8's 69.2 at release), Terminal-Bench 2.1 60.7. Base undisclosed;
       the KAT line post-trains external bases.
     model:
+      open_weights: true
       architecture: moe
       pretrained_from_scratch: false
   - name: KAT-Coder-V2.5-Dev
@@ -47,6 +48,7 @@ outputs:
       total / 3B active, 262K context. SWE-bench Verified 69.4, SWE-bench
       Pro 45.96. 15K downloads in its first ten days.
     model:
+      open_weights: true
       architecture: moe
       base_model: qwen3.6-open
       context_window: 262144

@@ -87,6 +87,7 @@ tags:
   - rl
   - rl-scaling
 model:
+  open_weights: true
   architecture: moe
   parameters: 1.02T
   active_parameters: 42B

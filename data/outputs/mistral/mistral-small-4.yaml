@@ -33,6 +33,7 @@ tags:
   - multimodal
   - agentic
 model:
+  open_weights: true
   architecture: moe
   parameters: 119B
   active_parameters: 6.5B

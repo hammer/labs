@@ -25,6 +25,7 @@ tags:
   - efficiency
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: 3.35B
   intelligence_index: 5

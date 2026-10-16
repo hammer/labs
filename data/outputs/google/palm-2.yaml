@@ -30,6 +30,7 @@ tags:
   - frontier
   - reasoning
 model:
+  open_weights: false
   architecture: dense
   parameters_estimated:
     value: 340B

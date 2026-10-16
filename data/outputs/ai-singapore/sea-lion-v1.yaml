@@ -27,6 +27,7 @@ tags:
   - open-weight
   - foundational
 model:
+  open_weights: true
   architecture: dense
   parameters: 7B
   training_tokens: 980B

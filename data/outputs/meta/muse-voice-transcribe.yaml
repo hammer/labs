@@ -19,5 +19,6 @@ tags:
   - audio
   - proprietary
 model:
+  open_weights: false
   license: Proprietary (API)
 related: [muse-spark-1.3]

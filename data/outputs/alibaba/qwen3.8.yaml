@@ -53,6 +53,7 @@ description: >
   architecture preview.</p>
 tags: [frontier, moe, open-weight, reasoning, agentic, coding]
 model:
+  open_weights: true
   architecture: moe
   parameters: 2.4T
   active_parameters: 95B

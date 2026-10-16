@@ -47,6 +47,7 @@ tags:
   - pretraining
   - infrastructure
 model:
+  open_weights: true
   architecture: dense
   parameters: "32B"
   license: Apache 2.0

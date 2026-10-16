@@ -23,6 +23,7 @@ tags:
   - multimodal
   - coding
 model:
+  open_weights: false
   architecture: moe
   context_window: 1000000
   intelligence_index: 30

@@ -18,6 +18,7 @@ description: >
   online and 63.8% to 82.5% offline.</p>
 tags: [robotics, embodied, reward-model, reinforcement-learning, open-weight]
 model:
+  open_weights: true
   license: Apache 2.0
   variants:
     - name: RynnValue-4B

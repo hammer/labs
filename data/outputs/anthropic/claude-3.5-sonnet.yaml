@@ -25,6 +25,7 @@ tags:
   - frontier
   - coding
 model:
+  open_weights: false
   context_window: 200000
   intelligence_index: 8
   intelligence_index_version: "AA v4.3.2"

@@ -45,6 +45,7 @@ tags:
   - coding
   - efficiency
 model:
+  open_weights: true
   architecture: dense
   parameters: 30B
   context_window: 131072

@@ -17,6 +17,7 @@ tags:
   - agentic
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   base_model: glm-4.6
 paper:

@@ -48,6 +48,7 @@ tags:
   - reasoning
   - efficiency
 model:
+  open_weights: true
   architecture: dense
   parameters: 2.6B
   training_tokens: 7.7T

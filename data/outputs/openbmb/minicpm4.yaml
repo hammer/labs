@@ -29,6 +29,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/openbmb/MiniCPM4-8B
     model:
+      open_weights: true
       architecture: dense
       parameters: 8B
   - name: "MiniCPM4: Ultra-Efficient LLMs on End Devices"

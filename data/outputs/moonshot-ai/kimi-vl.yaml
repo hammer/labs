@@ -20,6 +20,7 @@ outputs:
   - name: Kimi-VL-A3B-Thinking
     type: model
     model:
+      open_weights: true
       architecture: moe
       parameters: 16B
       active_parameters: 2.8B

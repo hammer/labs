@@ -20,6 +20,7 @@ tags:
   - asr
   - open-weight
 model:
+  open_weights: true
   license: Apache 2.0
   variants:
     - name: Qwen3-ASR-0.6B

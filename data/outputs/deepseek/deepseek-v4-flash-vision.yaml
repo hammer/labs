@@ -48,6 +48,7 @@ tags:
   - agentic
   - proprietary
 model:
+  open_weights: true
   # Vision-enabled build of V4-Flash-0731 (DeepSeek's announcement frames it
   # against V4-Flash; OpenRouter: "an experimental vision-enabled version of
   # DeepSeek V4 Flash 0731"; AA files it under the V4 Flash 0731 family).

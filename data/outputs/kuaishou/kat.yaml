@@ -43,5 +43,6 @@ outputs:
       Open-source experimental variant that topped many open-source coding
       benchmarks (e.g., LiveCodeBench).
     model:
+      open_weights: true
       architecture: moe
       active_parameters: 72B

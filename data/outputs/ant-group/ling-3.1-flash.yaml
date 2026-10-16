@@ -54,6 +54,7 @@ tags:
   - agentic
   - long-context
 model:
+  open_weights: false
   architecture: moe
   parameters: 560B
   active_parameters: 25B

@@ -27,6 +27,7 @@ tags:
   - open-weight
   - pretraining
 model:
+  open_weights: true
   architecture: moe
   parameters: "47B"
   active_parameters: "13B"

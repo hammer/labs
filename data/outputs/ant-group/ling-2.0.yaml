@@ -34,6 +34,7 @@ outputs:
     description: >
       1-trillion parameter MoE flagship with ~50B active parameters.
     model:
+      open_weights: true
       architecture: moe
       parameters: 1T
       active_parameters: 50B

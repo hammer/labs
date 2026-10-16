@@ -24,6 +24,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/deepseek-ai/deepseek-moe-16b-chat
     model:
+      open_weights: true
       architecture: moe
       parameters: 16B
       active_parameters: 2.8B

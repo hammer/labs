@@ -38,6 +38,7 @@ tags:
   - science
   - cybersecurity
 model:
+  open_weights: false
   context_window: 1000000
   openness_index: 11.1
   openness_index_version: "AA Openness Index v1.0 (family inference)"

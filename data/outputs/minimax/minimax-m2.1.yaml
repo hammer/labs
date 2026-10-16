@@ -24,6 +24,7 @@ tags:
   - moe
   - open-weight
 model:
+  open_weights: true
   architecture: moe
   intelligence_index: 21
   intelligence_index_version: "AA v4.3.2"

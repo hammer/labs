@@ -24,6 +24,7 @@ tags:
   - vision
   - open-weight
 model:
+  open_weights: true
   parameters: 3B
 paper:
   arxiv: "2605.27365"

@@ -63,6 +63,7 @@ tags:
   - open-weight
   - research
 model:
+  open_weights: true
   base_model: qwen3.5
   training_hardware: 8x NVIDIA B200
   license: MIT

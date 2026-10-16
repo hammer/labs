@@ -30,6 +30,7 @@ tags:
   - reasoning
   - amd
 model:
+  open_weights: true
   architecture: moe
   parameters: 74B
   active_parameters: 4B

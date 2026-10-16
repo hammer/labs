@@ -46,6 +46,7 @@ outputs:
     description: >
       456B parameter MoE model with a 4-million-token context window.
     model:
+      open_weights: true
       architecture: moe
       parameters: 456B
       context_window: 4000000
@@ -62,6 +63,7 @@ outputs:
       ViT encoder and MiniMax-Text-01 as base LLM. Trained on 512B
       vision-language tokens. Matches GPT-4o and Claude-3.5-Sonnet performance.
     model:
+      open_weights: true
       architecture: moe
       parameters: 456B
       context_window: 4000000

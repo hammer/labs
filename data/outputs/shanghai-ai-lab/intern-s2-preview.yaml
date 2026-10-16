@@ -47,6 +47,7 @@ tags:
   - open-weight
   - reasoning
 model:
+  open_weights: true
   architecture: moe
   parameters: 36B
   context_window: 131072

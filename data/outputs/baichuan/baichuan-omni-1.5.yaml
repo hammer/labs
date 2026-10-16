@@ -47,5 +47,6 @@ outputs:
       Open-source omni-modal model with text, image, video, audio input and
       text/audio output, built on Qwen2.5-7B.
     model:
+      open_weights: true
       architecture: dense
       parameters: 7B

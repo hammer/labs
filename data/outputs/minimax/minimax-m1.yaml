@@ -38,6 +38,7 @@ outputs:
       - label: Artificial Analysis
         url: https://artificialanalysis.ai/models/minimax-m1-80k
     model:
+      open_weights: true
       architecture: moe
       parameters: 456B
       active_parameters: 45.9B

@@ -23,6 +23,7 @@ tags:
   - multimodal
   - open-weight
 model:
+  open_weights: true
   license: MiniMax H3 Community License
 related:
   - hailuo-video

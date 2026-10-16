@@ -29,6 +29,7 @@ outputs:
       - label: GitHub
         url: https://github.com/studio-dots-ai/dots.tts
     model:
+      open_weights: true
       architecture: dense
       parameters: 2B
       license: Apache 2.0

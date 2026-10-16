@@ -28,6 +28,7 @@ tags:
   - multimodal
   - open-weight
 model:
+  open_weights: true
   architecture: dense
   parameters: 27B
   base_model: qwen3.6-open

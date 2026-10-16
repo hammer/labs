@@ -22,6 +22,7 @@ tags:
   - open-weight
   - sovereign
 model:
+  open_weights: true
   parameters: 120B
   training_tokens: 3T
   variants:

@@ -29,6 +29,7 @@ tags:
   - open-weight
   - foundational
 model:
+  open_weights: true
   architecture: dense
   parameters: 1.5B
   context_window: 1024

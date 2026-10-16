@@ -33,6 +33,7 @@ outputs:
     type: model
     date: 2026-02-02
     model:
+      open_weights: true
       architecture: moe
       active_parameters: 32B
       intelligence_index: 23

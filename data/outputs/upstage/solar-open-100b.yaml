@@ -48,6 +48,7 @@ tags:
   - multilingual
   - frontier
 model:
+  open_weights: true
   architecture: moe
   parameters: 102B
   active_parameters: 12B

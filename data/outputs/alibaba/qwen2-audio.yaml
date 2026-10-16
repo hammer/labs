@@ -26,6 +26,7 @@ outputs:
       Audio model family. Evolution from Qwen-Audio (2023) to Qwen2-Audio-7B
       (Aug 2024).
     model:
+      open_weights: true
       variants:
         - name: Qwen-Audio
           notes: Released 2023

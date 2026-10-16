@@ -33,6 +33,7 @@ outputs:
       - label: HuggingFace
         url: https://huggingface.co/inclusionAI/SingGuard-NSFA-9B
     model:
+      open_weights: true
       base_model: qwen3.5
       license: Apache 2.0
       variants:

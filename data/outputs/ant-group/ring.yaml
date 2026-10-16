@@ -34,6 +34,7 @@ outputs:
       World's first open-source trillion-parameter thinking model. Preview release
       of the Ring reasoning series.
     model:
+      open_weights: true
       architecture: moe
       parameters: 1T
   - name: "Ring-1T: Every Step Evolves"
@@ -60,6 +61,7 @@ outputs:
       Hybrid linear-architecture reasoning model that matches gold-medal standards
       in IMO/CMO 2025 competitions.
     model:
+      open_weights: true
       architecture: moe
       parameters: 1T
   - name: Ring-2.6-1T
@@ -79,6 +81,7 @@ outputs:
       it beats GPT-5.4 xHigh and Gemini-3.1-Pro high), GPQA Diamond 88.27,
       ARC-AGI-V2 66.18. MIT licensed.
     model:
+      open_weights: true
       architecture: moe
       parameters: 1T
       active_parameters: 63B

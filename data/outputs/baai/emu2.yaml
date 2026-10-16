@@ -20,6 +20,7 @@ tags:
   - generation
   - open-weight
 model:
+  open_weights: true
   variants:
     - name: Emu2
 related:

@@ -28,6 +28,7 @@ tags:
   - multimodal
   - open-weight
 model:
+  open_weights: true
   variants:
     - name: ShizhenGPT-7B (LLM / VL / Omni)
       notes: continued-pretrained on open 7B bases

@@ -28,6 +28,7 @@ tags:
   - evaluation
   - open-weight
 model:
+  open_weights: true
   base_model: mistral-7b
   license: Apache 2.0
 paper:

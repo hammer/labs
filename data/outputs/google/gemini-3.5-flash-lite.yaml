@@ -18,6 +18,7 @@ description: >
   tokens; parameter count is undisclosed.</p>
 tags: [multimodal, proprietary, efficient, agentic]
 model:
+  open_weights: false
   context_window: 1000000
   intelligence_index: 22
   intelligence_index_version: "AA v4.3.2"

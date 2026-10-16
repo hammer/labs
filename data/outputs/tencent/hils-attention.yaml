@@ -25,6 +25,7 @@ tags:
   - long-context
   - open-weight
 model:
+  open_weights: true
   base_model: olmo-3
   license: Apache 2.0
 paper:

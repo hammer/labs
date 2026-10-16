@@ -29,6 +29,7 @@ tags:
   - open-weight
   - code-generation
 model:
+  open_weights: true
   parameters: 20B
   context_window: 13312
   license: MIT

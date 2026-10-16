@@ -21,4 +21,5 @@ tags:
   - multimodal
   - open-weight
 model:
+  open_weights: true
   parameters: "6B"

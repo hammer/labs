@@ -23,6 +23,7 @@ tags:
   - vision
   - open-weight
 model:
+  open_weights: true
   parameters: 4.85B
   license: Apache 2.0
   variants:

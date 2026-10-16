@@ -66,6 +66,7 @@ tags:
   - agents
   - efficiency
 model:
+  open_weights: true
   architecture: dense
   # Post-trained from Alibaba's Qwen3.5 with the vision tower frozen, so no
   # `parameters` (or per-variant parameters) — a cross-lab derivative must not

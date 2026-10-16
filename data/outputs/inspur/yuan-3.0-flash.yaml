@@ -23,6 +23,7 @@ tags:
   - enterprise
   - efficiency
 model:
+  open_weights: true
   architecture: moe
   parameters: 40B
   active_parameters: 3.7B

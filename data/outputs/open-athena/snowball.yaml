@@ -45,6 +45,7 @@ tags:
   - pretraining
   - long-context
 model:
+  open_weights: true
   architecture: moe
   parameters: 67B
   active_parameters: 2B

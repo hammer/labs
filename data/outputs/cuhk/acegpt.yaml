@@ -29,6 +29,7 @@ tags:
   - open-weight
   - training
 model:
+  open_weights: true
   base_model: llama-2
   variants:
     - name: AceGPT-7B / 13B

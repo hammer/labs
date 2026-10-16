@@ -19,6 +19,7 @@ tags:
   - open-weight
   - nlp
 model:
+  open_weights: true
   architecture: dense
   parameters: 13B
   variants:

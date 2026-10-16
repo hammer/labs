@@ -50,6 +50,7 @@ tags:
   - open-weights
   - edge
 model:
+  open_weights: true
   parameters: 3.12B
   license: Open weights
   variants:

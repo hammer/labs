@@ -41,6 +41,7 @@ tags:
   - proprietary
   - efficiency
 model:
+  open_weights: false
   parameters: 35B
   context_window: 256000
   intelligence_index: 19

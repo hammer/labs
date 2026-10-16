@@ -22,6 +22,7 @@ tags:
   - open-weight
   - multilingual
 model:
+  open_weights: true
   architecture: dense
   parameters: 100B
   training_tokens: 2T

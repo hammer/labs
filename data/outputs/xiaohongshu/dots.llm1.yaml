@@ -33,6 +33,7 @@ outputs:
       - label: GitHub
         url: https://github.com/studio-dots-ai/dots.llm1
     model:
+      open_weights: true
       architecture: moe
       parameters: 142B
       active_parameters: 14B
