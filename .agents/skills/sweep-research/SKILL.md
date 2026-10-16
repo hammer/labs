@@ -71,6 +71,8 @@ For each candidate:
 5. Decide whether the artifact is a model, paper, eval, library, dataset, blog, or announcement.
 6. Distinguish a new output from a late source or paper that belongs on an existing output.
 
+**Keep a candidate ledger and give every row a terminal state** — filed, attached, rejected (naming the gate clause it failed), or deferred (with why). End the sweep by asserting nothing is still "flagged". The probes are not the weak link; the hand-off is. On 2026-10-15 three real releases were surfaced, correctly judged new in a triage note, and then never filed — NVIDIA's Nemotron 3.5 Super VL and Bolt, and Liquid's LFM2.5-24B-A2B — and the sweep reported itself complete because nothing tracks a candidate to a disposition. See AGENTS.md step 8d, including why a family-name dedup grep is not a dedup.
+
 Report rejected borderline candidates with a short reason when that helps the user audit the sweep. A sweep whose accepted count runs past ~40 for a single month should say so and re-read the gate rather than keep filing.
 
 ## 4. Deduplicate before filing

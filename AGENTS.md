@@ -176,6 +176,14 @@ When scanning for new papers from tracked labs, **do not limit searches to a nar
 
    Rotate a slice of labs per cycle rather than all 110 at once — the point is that the lookback window keeps moving backwards over time, not that any one cycle is exhaustive. A date range the periodic sweeps never covered deserves one deliberate pass; check the sweep commit log (`git log --oneline --all | grep -i sweep`) for the gaps before assuming a month was ever swept.
 
+8d. **Close out every surfaced candidate explicitly — the probes are not the weak link, the hand-off is.** Each probe ends by printing candidates; nothing in this list makes a candidate reach a *disposition*. So an item can be surfaced, correctly judged new, written down, and then lost between triage and filing, and no step fails when that happens. **On 2026-10-15 three were lost that way**: NVIDIA's Nemotron 3.5 Super VL (120B/12B) and Bolt (74B/9B), both in the HuggingFace pass at 97–106 likes, with the triage note already reading "different family members, not Lightning variants, so they're new filings"; and Liquid's LFM2.5-24B-A2B at 380 likes, noted as "attach as a variant". All three were found, all three were judged correctly, none was filed, and the sweep reported itself complete. The user noticed, not the sweep.
+
+   Keep one candidate ledger for the cycle and give every row a terminal state — **filed / attached / rejected (with the gate clause it failed) / deferred (with why)**. Finish the sweep by asserting the ledger has no row left in "flagged". This is the same failure the author probe's coverage line exists to prevent, one stage later: there, a throttled probe read as an author with no new papers; here, a dropped candidate reads as a clean sweep. Both are **absence of output being mistaken for absence of findings**, and both need an explicit count rather than a vibe.
+
+   Two specific traps that made the 2026-10-15 drop easy:
+   - **A family-name dedup grep is not a dedup.** `grep -rli "Nemotron-3.5"` returned five tracked files and read as an all-clear, when only Lightning and a content-safety model were actually tracked and the two new members shared nothing but the prefix. Dedup on the **specific model name**, and when a family entry exists, open it and check its `variants:` block before concluding a new member is covered.
+   - **A note to yourself is not a work item.** "May be new family members → check" is where all three died. If a candidate needs a second look, it goes in the ledger with an open state, not in prose.
+
 9. **Sweep prose for stale AAII mentions.** After running the score sync (which rewrites structured fields and appends `intelligence_index_history`), run:
 
    ```bash
