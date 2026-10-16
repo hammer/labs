@@ -339,7 +339,10 @@ function log(name, ok, detail = '') {
       .find(r => r.style.display !== 'none' && r.dataset.params)
       ?.querySelector('td.col-params');
     return {
-      modelCols: ['params', 'aparams', 'tokens', 'ctx', 'intel', 'openness'].every(shown),
+      // 'openness' left the model colset when the AAOI column was dropped
+      // (138 of 952 model rows carried a value). The Openness FILTER remains,
+      // so this list tracks the columns only.
+      modelCols: ['params', 'aparams', 'tokens', 'ctx', 'intel'].every(shown),
       generalColsHidden: ['stars', 'downloads', 'citations'].every(k => !shown(k)),
       cellText: firstCell?.textContent ?? '',
     };

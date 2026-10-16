@@ -174,14 +174,13 @@ const COLUMNS: MetricColumn[] = [
   { key: 'tokens', label: 'Tokens', format: 'tokensT', title: 'Training tokens' },
   { key: 'ctx', label: 'Context', format: 'compact', title: 'Context window in tokens' },
   { key: 'intel', label: 'Intel', format: 'plain', title: 'Artificial Analysis Intelligence Index — AA v4-verified scores only' },
-  { key: 'openness', label: 'Open', format: 'score100', title: 'Artificial Analysis Openness Index' },
   { key: 'questions', label: 'Questions', format: 'compact', title: 'Benchmark questions/examples in the scored eval set' },
   { key: 'tasks', label: 'Tasks', format: 'plain', title: 'Benchmark tasks/subtasks (the paper’s own decomposition)' },
 ];
 
 const COLSETS: Record<string, string[]> = {
   general: ['stars', 'downloads', 'citations'],
-  model: ['params', 'aparams', 'tokens', 'ctx', 'intel', 'openness'],
+  model: ['params', 'aparams', 'tokens', 'ctx', 'intel'],
   paper: ['citations', 'stars'],
   eval: ['questions', 'tasks', 'citations'],
   library: ['stars', 'citations'],
@@ -213,18 +212,21 @@ const colsetCss = `
 ${showSelectors} {
   display: table-cell;
 }
-/* 769-900px: the 6-column model set's min-content is a measured 884px —
-   trim the secondary columns in this band, keeping the actively-sorted one
-   (banded so it can't fight the <=768px tier's specificity). */
-@media (min-width: 769px) and (max-width: 900px) {
+/* 769-859px: dropping the Openness column took the model set from six
+   columns to five, so the band that needs trimming shrank with it. Measured:
+   the table's min-content is 823px and the page is clean from 840px (it needs
+   838), against 884/900 for the six-column set — so Tokens and Context now
+   survive ~40px further down. Set at 859 to keep the ~20px of headroom the
+   previous tier carried, since column content grows. Keeps the actively-sorted
+   column either way, and stays banded so it can't fight the <=768px tier's
+   specificity. Re-measure with the Playwright sweep when the colset changes. */
+@media (min-width: 769px) and (max-width: 859px) {
   .timeline-table[data-colset="model"] .col-tokens,
-  .timeline-table[data-colset="model"] .col-ctx,
-  .timeline-table[data-colset="model"] .col-openness {
+  .timeline-table[data-colset="model"] .col-ctx {
     display: none;
   }
   .timeline-table[data-colset="model"][data-active-sort="tokens"] .col-tokens,
-  .timeline-table[data-colset="model"][data-active-sort="ctx"] .col-ctx,
-  .timeline-table[data-colset="model"][data-active-sort="openness"] .col-openness {
+  .timeline-table[data-colset="model"][data-active-sort="ctx"] .col-ctx {
     display: table-cell;
   }
 }
@@ -266,7 +268,6 @@ function cellText(
     tokens: f?.tokensT,
     ctx: f?.ctx,
     intel: f?.intel,
-    openness: f?.openness,
     questions: ev?.questions,
     tasks: ev?.tasks,
   }[key];
@@ -486,7 +487,7 @@ function cellText(
 
   // Sort state
   type SortColumn = 'date' | 'stars' | 'downloads' | 'citations'
-    | 'params' | 'aparams' | 'tokens' | 'ctx' | 'intel' | 'openness'
+    | 'params' | 'aparams' | 'tokens' | 'ctx' | 'intel'
     | 'questions' | 'tasks';
   let currentSort: SortColumn = 'date';
   let sortDesc = true;
