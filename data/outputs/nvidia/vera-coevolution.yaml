@@ -1,0 +1,80 @@
+name: "VERA: Scaling Verifiable Environments for Agentic co-Evolution"
+slug: vera-coevolution
+lab: nvidia
+type: paper
+date: 2026-10-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.05923
+  - label: Project page
+    url: https://automedbench.github.io/vera/
+  - label: Code
+    url: https://github.com/AutoMedBench/VERA
+description: >
+  <p>Long-horizon agent training is bottlenecked on environments, not on
+  algorithms: an agent doing medical research "must ground a finding, classify
+  it, and write a report over dozens of dependent steps, yet recent
+  environments score only the outcome." VERA manufactures the missing
+  environments and then trains on them. Each one is built from an initial
+  trajectory &mdash; an agent writes rubrics and executable checks, a judge
+  verifies the sandbox, and <strong>only those that pass enter the training
+  bank</strong>, so the corpus is filtered by construction rather than
+  curated afterwards. The released corpus is <strong>9,000+ long-horizon
+  verifiable environments</strong>.</p>
+
+  <p>The <em>co-evolution</em> is the claim. Training alternates between two
+  kinds of update: train the model with rubric rewards, or
+  <strong>edit the harness skills</strong> &mdash; and a verifier gates both
+  model checkpoints and harness edits against explicit development-set
+  acceptance criteria. The authors argue this attribution is what separates it
+  from single-axis baselines, because "its updates target not only the cause
+  but the outcome": when something improves, the gate records which axis moved
+  it. That is a third position this fortnight on the model-versus-harness
+  question that
+  <a href="/outputs/ntu/model-harness-interactions">Model&ndash;Harness
+  Interactions</a> tracks &mdash; here, rather than fixing the harness or
+  dissolving it into the model, both are trained and the attribution is
+  measured.</p>
+
+  <p>At 9B, the model paired with its co-evolved agent beats the strongest
+  baseline by <strong>10.3 and 13.0 points</strong> across the two domains. At
+  27B it reaches <strong>71.6 on AutoCoWorkBench and 80.7 on
+  AutoMedBench</strong>, and the paper reports transfer to unseen workflows
+  with general capabilities retained &mdash; the two checks a method that
+  trains on synthesised environments most needs to pass, since the obvious
+  failure is a model that learns the generator.</p>
+
+  <p>Eight of the seventeen authors are at <strong>NVIDIA</strong>, including
+  Daguang Xu and Yucheng Tang, with UC Santa Cruz, UIUC, NUS, Tsinghua, Xi'an
+  Jiaotong and Penn alongside. Code is Apache-2.0; the paper is CC BY-NC-SA
+  4.0. No model checkpoints on HuggingFace at filing, so the release is the
+  environments and the framework rather than the agents.</p>
+tags:
+  - agents
+  - rl
+  - evaluation
+  - dataset
+  - research
+paper:
+  arxiv: "2610.05923"
+  authors:
+    - Junqi Liu
+    - Yongyang Pan
+    - Zhuosong Jiang
+    - Dongbai Li
+    - Bo Zhang
+    - Xitong Ling
+    - Sheng Wang
+    - Hanrong Ye
+    - Yufan He
+    - Can Zhao
+    - Pengfei Guo
+    - Dong Yang
+    - Andriy Myronenko
+    - Yuyin Zhou
+    - Tianyu Liu
+    - Daguang Xu
+    - Yucheng Tang
+related:
+  - agora
+  - aces-skillevaluator
