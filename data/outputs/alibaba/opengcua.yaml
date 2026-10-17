@@ -1,0 +1,79 @@
+name: "OpenGCUA: Toward a Fully Open Stack for Generalist Computer Use"
+slug: opengcua
+lab: alibaba
+type: library
+date: 2026-10-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.22200
+  - label: GitHub
+    url: https://github.com/Tongyi-MAI/OpenGCUA
+description: >
+  <p>From the same <strong>MAI-UI team at Alibaba Token Hub</strong> that
+  shipped <a href="/outputs/alibaba/mai-gym">MAI-Gym</a> the day before, and
+  the counterpart to it: MAI-Gym is where a computer-use agent is trained and
+  measured, OpenGCUA is the stack it runs in. A generalist computer-use agent
+  is defined here as "a system in which the model chooses how to observe, act,
+  and organize its work across visual and programmatic interfaces" &mdash; the
+  emphasis being on <em>chooses</em>.</p>
+
+  <p>Two design claims. <strong>Code execution is treated as central rather
+  than auxiliary</strong>: it "lets intermediate results determine subsequent
+  operations and enables models to apply their existing programming
+  capabilities directly to computer interaction", so the agent computes over
+  what it sees instead of only clicking. And
+  <strong>harness-to-model decision transfer</strong>, "moving selected
+  observations and task-state decisions from fixed harness rules to the
+  model" &mdash; which is a direct position in the argument
+  <a href="/outputs/ntu/model-harness-interactions">Model&ndash;Harness
+  Interactions</a> tracks: if capability is a property of the pairing, one
+  response is to move the decisions out of the harness entirely.</p>
+
+  <p>The headline is measured across <strong>eight models</strong> including
+  GPT-6 Astra and Claude Opus 5, which makes it a stack result rather than a
+  model result: on OSWorld-v2 the full configuration improves task scores on
+  <strong>all eight</strong>, raising mean partial score by
+  <strong>+19.6 points</strong> while cutting reported steps per task by
+  <strong>53.0%</strong> against batched GUI-only execution. More scores for
+  fewer steps is the combination worth noting &mdash; scaffolds usually buy one
+  by spending the other.</p>
+
+  <p>One incidental measurement deserves repeating because almost nobody
+  reports it: across four real macOS tasks, selected
+  <strong>Qwen3.8-Max runs used 19.4&times; as many reasoning tokens as GPT-6
+  Astra</strong>. Alibaba publishing that about its own flagship, in its own
+  paper, is a more useful disclosure than the benchmark table. Released as the
+  implementation and prompts, evaluation trajectories from all eight models,
+  and preliminary versions of a real-device harness and a cross-device SDK;
+  code Apache-2.0, paper CC BY 4.0.</p>
+tags:
+  - agents
+  - computer-use
+  - harness
+  - evaluation
+  - open-source
+  - research
+paper:
+  arxiv: "2610.22200"
+  authors:
+    - Hanzhang Zhou
+    - Long Li
+    - Quyu Kong
+    - Lei Wang
+    - Panrong Tong
+    - Long Chen
+    - Tianyu Xia
+    - Gongjie Zhang
+    - Xu Zhang
+    - Chen Liu
+    - Jianan Zhang
+    - Chenglin Cai
+    - Zhengwen Zeng
+    - Steven Hoi
+    - Yue Wang
+library:
+  github: https://github.com/Tongyi-MAI/OpenGCUA
+  license: Apache 2.0
+related:
+  - mai-gym
+  - qwen-cua
