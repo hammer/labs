@@ -1,0 +1,78 @@
+name: Mercury 3
+slug: mercury-3
+lab: inception-labs
+type: model
+date: 2026-10-19
+flagship: true
+sources:
+  - label: Announcement
+    url: https://www.inceptionlabs.ai/blog/introducing-mercury-3
+  - label: OpenRouter
+    url: https://openrouter.ai/inception/mercury-3
+  - label: Artificial Analysis (Mercury 2.5, for comparison)
+    url: https://artificialanalysis.ai/models/mercury-2-5
+description: >
+  <p>Inception's argument has always been that
+  <a href="/outputs/inception-labs/mercury">diffusion language models</a> can
+  be made to scale, and Mercury 3 is the post where the company says so
+  outright &mdash; "Mercury 3 answers that question: they can", closing on
+  "Diffusion scales." It is pitched as the most capable diffusion LLM released
+  to date: <strong>more than 40&times; larger than Mercury 1</strong> in total
+  parameters, with a <strong>1M-token context</strong> (260K in Mercury 2.5)
+  and <strong>1,068 tokens per second on NVIDIA GPUs</strong>. Exact parameter
+  counts are not disclosed, as with the rest of the line.</p>
+
+  <p><strong>The speed-and-price case is the concrete one.</strong>
+  $0.20 / $0.70 per 1M tokens, currently half that on a launch promotion
+  ($0.10 / $0.35, which is what OpenRouter is serving), with cached input 90%
+  off. Partner numbers do more work than the benchmarks: Octen AI reports a
+  <strong>0.9s median generation time and 2.2s end-to-end</strong> for
+  real-time search, in which the model contributes roughly 80ms. On 50 live
+  Mind2Web navigation tasks it completed <strong>50%</strong>, which Inception
+  says beats GPT-6.1-Sol. Available through Inception's API, OpenRouter,
+  Baseten and Vercel, OpenAI-compatible, with 100M free tokens at launch.</p>
+
+  <p><strong>The intelligence case is asserted rather than shown, and the one
+  independent measure runs the other way.</strong> The post claims intelligence
+  "has risen 3x from Mercury 1" across "a range of standard benchmarks" without
+  naming them, and that Mercury 3 outperforms GPT-6 Luna and
+  <a href="/outputs/anthropic/claude-haiku-5.5">Claude Haiku 5.5</a> &mdash;
+  again with no table. The three benchmarks named anywhere in the post are
+  JevBench, LegalBench and Mind2Web, and only Mind2Web carries a figure.
+  Meanwhile Artificial Analysis has the line at <strong>14 for Mercury 2 and
+  12 for Mercury 2.5</strong> on Intelligence Index v4.3.2 &mdash; the
+  previous generation went <em>down</em> &mdash; against Haiku 5.5's 43. AA has
+  not scored Mercury 3 at filing, so treat the comparison claims as the
+  vendor's until it does.</p>
+
+  <p>Two siblings ship alongside. <strong>Mercury Voice</strong> is tuned for
+  the latency floor voice agents need, and <strong>Mercury Decide</strong> is a
+  high-volume classification model that Inception says "outperforms Jev on
+  benchmarks including JevBench and LegalBench" &mdash; no scores given. Decide
+  puts Inception into the same emerging decision-model category as Liquid's
+  <a href="/outputs/liquid-ai/d1">d1</a>, from the opposite direction: d1 is
+  open-weight and runs on a laptop, Decide is closed and runs at a thousand
+  tokens a second. No weights for any of them.</p>
+tags:
+  - diffusion
+  - efficiency
+  - reasoning
+  - agents
+  - proprietary
+model:
+  open_weights: false
+  context_window: 1000000
+  license: Proprietary
+  variants:
+    - name: Mercury 3
+      notes: "flagship dLLM; 1M context, 1,068 tok/s on NVIDIA GPUs, $0.20/$0.70 per 1M (launch promo $0.10/$0.35)"
+    - name: Mercury Voice
+      notes: tuned for the low-latency requirements of voice agents
+    - name: Mercury Decide
+      notes: high-volume classification; claimed to outperform Jev on JevBench and LegalBench
+  benchmark_scores:
+    - benchmark: Mind2Web (50 live navigation tasks)
+      score: "50%"
+related:
+  - mercury
+  - d1

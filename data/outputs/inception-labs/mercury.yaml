@@ -27,6 +27,11 @@ description: >
   autoregressive models at similar quality. A genuinely novel architecture paradigm.
   By Khanna, Kharbanda, Li, Ermon, Grover, Kuleshov et al.</p>
 
+  <p>The line continues with <a href="/outputs/inception-labs/mercury-3">Mercury 3</a>
+  (October 2026), which Inception puts at more than 40&times; Mercury 1's size
+  with a 1M-token context &mdash; the release the "diffusion scales" claim
+  rests on.</p>
+
   <p><em>Provenance: initialization is undisclosed (closed weights, no parameter
   counts), but the tech report frames Mercury as extending the founders' MDLM
   from-scratch masked-diffusion pretraining line, "trained on the order of
@@ -71,3 +76,5 @@ model:
       notes: "Reasoning, AA Intelligence Index v4.3: 14, 929 tok/s"
 paper:
   arxiv: "2506.17298"
+related:
+  - mercury-3
