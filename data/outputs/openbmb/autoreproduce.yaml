@@ -1,0 +1,69 @@
+name: AutoReproduce
+slug: autoreproduce
+lab: openbmb
+type: paper
+date: 2025-05-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.20662
+  - label: GitHub
+    url: https://github.com/AI9Stars/AutoReproduce
+description: >
+  <p>"Automatic AI Experiment Reproduction with Paper Lineage." A multi-agent
+  framework that takes an ML paper and writes, runs and debugs the code for
+  its core experiment end to end. The new idea is <strong>paper lineage</strong>:
+  papers leave out the tacit implementation conventions of their subfield, so
+  before writing code the agent walks the source paper's citations and the
+  linked code repositories to recover them. The second piece is a
+  <strong>sampling-based unit test</strong>: a dry run on sampled
+  mini-batches that checks the pipeline before full training, and fixes
+  errors with line-range EDIT commands instead of regenerating whole
+  files. The work comes from the AI9Stars team with OpenBMB, Tsinghua,
+  Xidian and UCAS; <a href="/people/zhiyuan-liu">Zhiyuan Liu</a>,
+  <a href="/people/maosong-sun">Maosong Sun</a> and <a href="/people/xu-han">Xu Han</a> are among the
+  authors. It was first posted in May 2025, revised in April 2026 (v4), and
+  accepted to the ACL 2026 main conference.</p>
+
+  <p><strong>ReproduceBench</strong> is the paper's own benchmark: 13 papers
+  from 13 AI subfields, from knowledge distillation (DKD on CIFAR-100) to PDE
+  solving (LSM on Darcy). For each one the authors refactored the official
+  code and re-ran it to set the target number. Each method is averaged over
+  three runs. With Gemini-2.5-Pro as the backbone, AutoReproduce's code runs
+  <strong>94.87%</strong> of the time and lands a normalised
+  <strong>19.72%</strong> from the reference result. The concurrent
+  <a href="/outputs/kaist/paper2code">PaperCoder</a> on o3-mini runs 17.94% of
+  the time with an 89.23% gap, and ChatDev runs 2.56% of the time. The jump
+  in execution rate is what the debug loop buys; on the o1-judged
+  paper-level alignment score, PaperCoder (90.41) and AutoReproduce on o3-mini
+  (90.86) are nearly tied. On OpenAI's PaperBench Code-Dev, AutoReproduce
+  scores <strong>48.5%</strong> on o3-mini, 49.6% with diagrams, and 44.1%
+  without lineage. That compares with 45.1% for PaperCoder and 43.4% for
+  OpenAI's IterativeAgent on o1-high.</p>
+
+  <p>Caveats: all of these are the authors' own runs on a 13-paper benchmark
+  they built, with an LLM judge (o1) for the alignment scores. The backbones
+  are 2025-vintage (GPT-4o, Claude 3.5 Sonnet, o3-mini, Gemini 2.5 Pro). The
+  task covers a single experiment per paper, not a repository-level
+  reproduction. Code is on GitHub with no license file.</p>
+tags:
+  - agents
+  - research
+  - code
+  - benchmark
+related:
+  - paper2code
+paper:
+  arxiv: "2505.20662"
+  venue: ACL 2026
+  authors:
+    - Xuanle Zhao
+    - Zilin Sang
+    - Yuxuan Li
+    - Qi Shi
+    - Weilun Zhao
+    - Shuo Wang
+    - Duzhen Zhang
+    - Xu Han
+    - Zhiyuan Liu
+    - Maosong Sun
+  code_url: https://github.com/AI9Stars/AutoReproduce
