@@ -1,0 +1,122 @@
+name: Jais 3
+slug: jais-3
+lab: mbzuai
+type: model
+date: 2026-10-15
+sources:
+  - label: Announcement (IFM blog)
+    url: https://ifm.ai/blog/jais3/
+  - label: HuggingFace (375B-A23B)
+    url: https://huggingface.co/inception42/Jais-3-375B-A23B
+  - label: HuggingFace collection
+    url: https://huggingface.co/collections/IFM/jais-3
+  - label: HuggingFace (375B-A23B FP8)
+    url: https://huggingface.co/IFM/Jais-3-375B-A23B-FP8
+  - label: Training logs (W&B)
+    url: https://forge.coreweave.com/wandb/mbzuai-llm/Jais-3-375B-A23B
+  - label: HuggingFace (Jais-ASR)
+    url: https://huggingface.co/IFM/Jais-ASR
+  - label: Arabic benchmark auditing collection
+    url: https://huggingface.co/collections/IFM/arabic-benchmark-auditing-6ac7711f28fbb54bc6c8caaa
+description: >
+  <p>The third Jais generation, released 15 October 2026 by MBZUAI's
+  Institute of Foundation Models with Inception42 (the model card's citation
+  credits "IFM Team, Inception42 Team, and Cerebras Team"), and the first
+  that is not its own pretraining run. Earlier generations (<a
+  href="/outputs/mbzuai/jais">Jais</a>, <a href="/outputs/mbzuai/jais-2">Jais
+  2</a>) were trained from scratch. Jais 3 is <strong>Arabic-centric
+  continued pretraining of <a href="/outputs/mbzuai/k2-horizon">K2
+  Horizon</a></strong>, IFM's six-model open fleet from six weeks earlier.
+  Launch coverage says it is "built on the open-source K2 Horizon Fleet". The
+  card names no base, but the config.json of the 375B flagship matches
+  K2-Horizon-375B-A23B in every architectural field
+  (<code>K2HorizonForCausalLM</code>, 61 layers, hidden size 6,144, 192
+  experts with 8 active, 250,624 vocabulary, 524,288 positions). Only
+  <code>initializer_range</code> and the router auxiliary-loss coefficient
+  differ. The size ladder is K2 Horizon's too: 0.9B, 3.7B, 7B, 32B, MoVA
+  36B-A4B and 375B-A23B, plus diffusion-augmented <a
+  href="/outputs/mbzuai/uno">Uno</a> variants of the four dense sizes. The
+  parameter counts therefore stay on the K2 Horizon entry.</p>
+
+  <p>The flagship <strong>Jais-3-375B-A23B</strong> "stores 375B parameters
+  and runs 23B per token, with a 512K context window", is a reasoning model
+  (high effort recommended for all reported results), and ships under
+  Apache 2.0 with BF16, FP8, GGUF and MLX builds. In keeping with IFM's
+  360-open practice, the repository exposes the <strong>CPT, Cooldown, SFT
+  and FTPO</strong> checkpoints as branches, and the training logs are public
+  on W&amp;B. CPT token counts, data mix and compute are not stated on the
+  card; the technical report and code are marked "coming soon". A subset of the
+  Arabic training data is released as IFM/Jais-3-Data.</p>
+
+  <p>The card's numbers are self-reported against Qwen3.5-397B-A17B, MiniMax
+  M3, Qwen3.8-Flash-Next and Nemotron 3 Ultra. On Arabic the model is roughly
+  at parity rather than ahead: Arabic MMLU <strong>89.3</strong> (Qwen3.5-397B
+  89.1), Belebele 95.6, AraGen v3 <strong>72.4</strong> (Qwen3.5-397B 78.9),
+  Arabic GSM8K 86.8 (others 93&ndash;94). Its clear leads are dialect
+  identification (QADI 71.1 against 62.3 at best), FLORES200+ translation 91.9,
+  and IFM's own Arabic IFBench 93.9, which is not yet public. On agentic tasks
+  it slightly improves on its K2 Horizon base: Terminal-Bench 2.1
+  <strong>73.8</strong> (K2 Horizon 70.2), MCPMark 68.5 (67.7), BrowseComp 72.6
+  (72.8). It trails the 180B Qwen3.8-Flash-Next on most agent rows and
+  SWE-Bench Verified (70.2 against 80.8). Many of the Arabic benchmarks are
+  scored on <strong>audited</strong> subsets: IFM released more than a dozen
+  "_verified" re-releases of existing Arabic evals with ambiguous or wrongly
+  keyed items removed. That makes the numbers more defensible, but they are
+  not directly comparable to scores on the original sets. The release also
+  included <strong>Jais Speech</strong> (IFM/Jais-ASR), an Arabic speech
+  recognition model. Not on Artificial Analysis at filing.</p>
+tags:
+  - open-weight
+  - multilingual
+  - moe
+  - reasoning
+  - agents
+model:
+  open_weights: true
+  architecture: moe
+  # Derivative: continued pretraining of K2 Horizon (identical config, same
+  # size ladder, CPT checkpoint branch). No `parameters` on derivatives.
+  base_model: k2-horizon
+  num_experts: 192
+  top_k: 8
+  context_window: 524288
+  license: Apache-2.0
+  benchmark_scores:
+    - benchmark: Arabic MMLU (audited)
+      score: "89.3"
+    - benchmark: Belebele (Arabic)
+      score: "95.6"
+    - benchmark: AraGen v3 (3C3H)
+      score: "72.4"
+    - benchmark: Arabic IFEval
+      score: "77.7"
+    - benchmark: AA-LCR (Arabic)
+      score: "77.0"
+    - benchmark: Terminal-Bench 2.1
+      score: "73.8"
+      mode: avg@3, high reasoning effort
+    - benchmark: SWE-Bench Verified (offline)
+      score: "70.2"
+    - benchmark: MCPMark
+      score: "68.5"
+    - benchmark: BrowseComp
+      score: "72.6"
+      mode: discard-all at 95K
+  variants:
+    - name: Jais-3-375B-A23B
+      notes: "flagship MoE, 375B stored / 23B per token, 512K context; CPT of K2-Horizon-375B-A23B; BF16 and FP8"
+    - name: Jais-3-MoVA-36B-A4B
+      notes: "MoE with attention-value experts (K2 Horizon MoVA shape); FP8, GGUF, MLX"
+    - name: Jais-3-32B
+      notes: "dense; Uno, FP8, GGUF, MLX builds"
+    - name: Jais-3-7B
+      notes: "dense; card says 7B, Hugging Face safetensors metadata reports about 9B; Uno, FP8, GGUF, MLX builds"
+    - name: Jais-3-3.7B
+      notes: "dense; Uno, FP8, GGUF, MLX builds"
+    - name: Jais-3-0.9B
+      notes: "dense; Uno, GGUF, MLX builds"
+related:
+  - k2-horizon
+  - jais-2
+  - jais
+  - uno

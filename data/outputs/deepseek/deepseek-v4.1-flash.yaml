@@ -17,6 +17,14 @@ sources:
     url: https://artificialanalysis.ai/models/deepseek-v4-1-flash
   - label: OpenRouter
     url: https://openrouter.ai/deepseek/deepseek-v4.1-flash
+  - label: Release Note (V4.1-Flash-1017)
+    url: https://api-docs.deepseek.com/news/news261017/
+  - label: HuggingFace (V4.1-Flash-1017)
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017
+  - label: Artificial Analysis (V4.1-Flash-1017)
+    url: https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017
+  - label: OpenRouter (V4.1-Flash-1017)
+    url: https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017
 description: >
   <p>The first model in DeepSeek's <strong>V4.1 architecture family</strong>
   and, per DeepSeek, the smallest of it: a natively multimodal 552B-parameter
@@ -55,8 +63,33 @@ description: >
   off-peak, with a 1M context and 384K max output. V4-Flash and
   V4-Flash-Vision-Exp were retired the same day, and V4-Pro traffic routes to
   V4.1-Flash from September 14 until a V4.1-Pro ships. Artificial Analysis
-  scores it <strong>39</strong> on Intelligence Index v4.3 (reasoning, max effort), above V4-Pro-0813 at 36 and V4-Flash-0731 at 34, one point behind Qwen3.8 and otherwise behind only GLM-5.3 (45), Kimi K3 (44), and GLM-5.3-Flash (42) among
-  open-weights models, at 198 tokens/s and a 1.06 s time to first token.</p>
+  scores it <strong>39</strong> on Intelligence Index v4.3.2 (reasoning, max
+  effort), above V4-Pro at 36. At its September release that put it near the
+  top of the open-weights field, behind GLM-5.3 (45 on v4.3.2). It measured
+  198 tokens/s and a 1.06 s time to first token.</p>
+
+  <p><strong>DeepSeek-V4.1-Flash-1017</strong> (October 17, 2026) is a
+  second checkpoint of the same model, and DeepSeek's card calls it "a minor
+  update". Its config.json is byte-identical to the September release (552B,
+  16B active at decode, 384 routed experts plus one shared with 6 active, 1M
+  context, Engram and DSpark heads), so the architecture facts above apply
+  unchanged. The changes are in post-training. DeepSeek says it trained the
+  checkpoint with "reinforcement learning with self-feedback" for end-to-end
+  project building and claims "a Pareto improvement in performance and cost":
+  higher scores, faster task completion and shorter outputs. Self-reported
+  gains over the September checkpoint: Terminal-Bench 4.0 <strong>42.3 vs
+  31.2</strong>, HLE without tools 42.6 vs 36.8, ProgramBench 29.1 vs 20.3,
+  Apex Bench v1.1 72.1 vs 64.6, Automation-Bench 60.5 vs 54.8, Agents' Last
+  Exam 35.4 vs 31.8, DeepSWE v1.1 77.0 vs 74.2 and NL2Repo 68.2 vs 65.4. The
+  independent number moves the same way: Artificial Analysis scores 1017 at
+  <strong>45</strong> on v4.3.2, six points above the original, and has
+  marked the September entry deprecated in its favour. 1017 now serves the
+  <code>deepseek-flash</code> API name at the same Flash price, and it is the
+  default checkpoint of DeepSeek's <a
+  href="/outputs/deepseek/deepinfer">DeepInfer</a> inference framework. The
+  weights are on HuggingFace and ModelScope under MIT. This entry keeps its
+  structured score on the September checkpoint that the file names, and
+  records 1017 as a variant.</p>
 tags:
   - frontier
   - moe
@@ -104,6 +137,10 @@ model:
       parameters: 552B
       active_parameters: 16B
       notes: "552B backbone plus a 196B Engram memory table; 8B active at prefill, 16B at decode; FP8 weights"
+    - name: DeepSeek-V4.1-Flash-1017
+      parameters: 552B
+      active_parameters: 16B
+      notes: "2026-10-17 post-training update with config.json identical to V4.1-Flash; MIT; serves deepseek-flash since release. AA 45 on v4.3.2 (deepseek-v4-1-flash-1017, max). Self-reported: Terminal-Bench 4.0 42.3, HLE 42.6, DeepSWE v1.1 77.0, ProgramBench 29.1, Apex Bench v1.1 72.1, Automation-Bench 60.5, ALE 35.4"
 paper:
   arxiv: "2609.19969"
   pdf_url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/resolve/main/DeepSeek_V41_Tech_Report.pdf
@@ -116,3 +153,4 @@ related:
   - deepseek-engram
   - dspark
   - mhc
+  - deepinfer

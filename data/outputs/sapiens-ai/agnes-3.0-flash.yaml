@@ -8,6 +8,10 @@ sources:
     url: https://artificialanalysis.ai/models/agnes-3-0-flash
   - label: HuggingFace (Agnes-3.0-Flash Preview, open weights)
     url: https://huggingface.co/Agnes-AI/Agnes-3.0-Flash
+  - label: HuggingFace (Agnes-3.0-Qwen, open weights)
+    url: https://huggingface.co/Agnes-AI/Agnes-3.0-Qwen
+  - label: GitHub (Agnes-3.0-Qwen)
+    url: https://github.com/AgnesAI-Labs/Agnes-3.0-Qwen
 description: >
   <p>Sapiens AI's third-generation Flash model ships in two forms that the
   model card is careful to separate. The <strong>API model</strong> is a
@@ -32,6 +36,22 @@ description: >
   href="/outputs/sapiens-ai/agnes-2.5-pro">Agnes 2.5 Pro</a>), the entry is
   flagged as not pretrained from scratch; the shape match is evidence of a
   depth-extended derivative, not proof.</p>
+
+  <p><strong>Agnes-3.0-Qwen</strong> (10 October 2026) is a third, openly
+  derivative sibling, and the card says so: "a post-trained derivative of <a
+  href="/outputs/alibaba/qwen3.8-flash-next">Qwen3.8-Flash-Next</a>", with the
+  base declared in the card metadata and a Qwen config
+  (<code>Qwen4ExpForConditionalGeneration</code>, 48 layers, 512 experts with
+  10 active, 1,048,576 positions). It is a hybrid linear/full-attention MoE of
+  about 180B total parameters (the base's 125B backbone plus its N-gram
+  embedding table and multi-token-prediction head), with text, image
+  and video input, a 1M-token context and 65,536 max output, shipped as a
+  roughly 360 GB BF16 checkpoint. The weights are under the <strong>Qwen
+  Community License 1.0</strong>, not Apache 2.0. Its self-reported scores
+  (Terminal-Bench 2.1 87.8, &tau;&sup3;-Banking 48.0, GPQA Diamond 91.1,
+  MMLU-Pro 86.2, IFBench 79.6) are Agnes's post-training on top of Alibaba's
+  pretraining. They say nothing about Sapiens' own pretraining, and Artificial
+  Analysis has not scored this checkpoint.</p>
 tags:
   - reasoning
   - multimodal
@@ -54,4 +74,6 @@ model:
     - name: Agnes-3.0-Flash Preview (open weights)
       parameters: 33B
       notes: "Apache 2.0 checkpoint on HuggingFace (11 Sep 2026): 72 layers, hidden 5120, 262,144 context, image and video input; not the checkpoint AA scored."
-related: [agnes-2.5-pro, agnes-2.5-flash-base]
+    - name: Agnes-3.0-Qwen (open weights)
+      notes: "10 Oct 2026; post-trained derivative of Qwen3.8-Flash-Next (base_model qwen3.8-flash-next): ~180B total hybrid-attention MoE, 512 experts / 10 active, 1M context, text+image+video in; Qwen Community License 1.0; self-reported Terminal-Bench 2.1 87.8, IFBench 79.6; not scored by AA."
+related: [agnes-2.5-pro, agnes-2.5-flash-base, qwen3.8-flash-next]

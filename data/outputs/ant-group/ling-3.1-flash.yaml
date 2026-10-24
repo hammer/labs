@@ -5,63 +5,104 @@ type: model
 date: 2026-09-30
 flagship: true
 sources:
+  - label: HuggingFace
+    url: https://huggingface.co/inclusionAI/Ling-3.1-flash
+  - label: Training-content summary (PDF)
+    url: https://huggingface.co/inclusionAI/AI-Transparency/resolve/main/Ling-3.1_TDS-Summary.pdf
+  - label: SGLang cookbook
+    url: https://docs.sglang.io/cookbook/autoregressive/InclusionAI/Ling-3.1-flash
+  - label: ModelScope
+    url: https://modelscope.cn/models/inclusionAI/Ling-3.1-flash
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/ling-3-1-flash
+  - label: Artificial Analysis (Ling-3.1-flash-1019)
+    url: https://artificialanalysis.ai/models/ling-3-1-flash-1019
   - label: OpenRouter
     url: https://openrouter.ai/inclusionai/ling-3.1-flash
   - label: TechNode
     url: https://technode.com/2026/09/30/ant-group-launches-ling-3-1-flash-with-560-billion-parameters/
 description: >
   <p>inclusionAI's newest Ling, and a reminder that "flash" has stopped meaning
-  small. A hybrid-reasoning MoE with <strong>560B total parameters and about 25B
-  active</strong>, served with a <strong>262,144-token context</strong> and a
-  configurable reasoning effort. Two months earlier
-  <a href="/outputs/ant-group/ling-3.0">Ling 3.0</a> carried the same tier name at
-  124B total and 5.1B active; this is roughly <strong>4.5&times; the total
-  parameters and 5&times; the active</strong>, and Artificial Analysis scores it
-  <strong>41</strong> against Ling 3.0's 20 &mdash; a doubling of measured
-  intelligence inside a single minor version number. AA puts it well above the
-  median of 13 for comparable reasoning models in its price tier, listing $0.30
-  in / $0.90 out per million tokens. Ant positions it for agent workloads,
-  search, office software and vertical applications.</p>
+  small. It is a hybrid-reasoning MoE with <strong>560B total parameters and
+  25B active</strong>. Two months earlier <a
+  href="/outputs/ant-group/ling-3.0">Ling 3.0</a> carried the same tier name
+  at 124B total and 5.1B active, so this is roughly <strong>4.5&times; the
+  total parameters and 5&times; the active</strong>. Artificial Analysis
+  scores it <strong>41</strong> on Intelligence Index v4.3.2 against Ling
+  3.0's 20, a doubling of measured intelligence inside a single minor version
+  number. The API lists $0.30 in / $0.90 out per million tokens. Ant positions
+  it for agent workloads, search, office software and vertical
+  applications.</p>
 
-  <p>The notable thing about the release is how little of it is official. It went
-  out on <strong>September 30, 2026</strong> as a <strong>two-week free
-  trial</strong> &mdash; currently served at zero cost through OpenRouter by
-  <strong>Novita</strong> &mdash; with open weights promised afterwards and the
-  context window to be raised toward the <strong>1M tokens</strong> the model is
-  reportedly designed for, from the 256K the trial exposes. As of October 7,
-  <strong>inclusionAI has published nothing about it</strong>: no model card on
-  its HuggingFace org, nothing in its GitHub org, and no entry in its own blog,
-  changelog, pricing page or model docs at ant-ling.com, all of which still
-  present Ling-3.0-flash as the current release. So the model can be called and
-  independently benchmarked before its maker has described it, and every figure
-  here comes from Artificial Analysis, the OpenRouter endpoint, or press
-  reporting rather than from a technical report or model card that does not yet
-  exist.</p>
+  <p>It launched on <strong>September 30, 2026</strong> as a two-week free
+  API trial, served on OpenRouter by Novita, with nothing published by
+  inclusionAI itself. The weights followed on <strong>October 13</strong> on
+  HuggingFace and ModelScope under the <strong>MIT license</strong>. The FP8
+  checkpoint uses e4m3 weights in 128&times;128 blocks and includes one MTP
+  (NEXTN) layer for speculative decoding. The model card describes a
+  <strong>hybrid-linear MoE</strong>: <strong>63 <a href="/outputs/moonshot-ai/kimi-linear">KDA</a> (Kimi Delta Attention)
+  linear-attention layers and 9 gated MLA layers</strong> in a 7:1 ratio
+  across 72 layers, the first 4 dense, then 512 routed experts plus one
+  shared expert with 8 active per token. Hidden size is 4096, with 64 heads
+  and a 157,184-token vocabulary. The card says it "builds upon
+  Ling-3.0-flash with improvements in architecture", but at 4.5&times; the
+  size it cannot be a simple continuation of that checkpoint, and inclusionAI
+  does not say how the two relate. The EU AI Act training-content summary
+  lists no model dependencies, more than 10T text tokens of public, licensed,
+  synthetic and human-written data, and a data cutoff of about July 2026. It
+  gives no exact token count, hardware or recipe. There is still no technical
+  report.</p>
 
-  <p>That gap matters for how the entry should be read. There is no disclosed
-  architecture detail beyond the parameter split, no training-token count, no
-  hardware, no benchmark table from the lab, and no license text &mdash; "open
-  weights after the trial" is a stated intention, not a release. The AA score is
-  the one independently measured number, and it is measured against a hosted
-  endpoint that may not match whatever is eventually published. Worth revisiting
-  when the weights land: both to replace these sources with primary ones, and to
-  check whether the released checkpoint still scores 41.</p>
+  <p><strong>Context length is where the claims need reading
+  carefully.</strong> The card advertises a "1M-token context window", but
+  config.json sets <code>max_position_embeddings</code> to
+  <strong>262,144</strong>, and the trial API served 256K. The SGLang
+  cookbook explains the gap: 262,144 is the native context, and 1,048,576 is
+  reached by a 4&times; YaRN RoPE override. SGLang reports verifying this on
+  H200 and GB300 with exact retrieval of a fact planted at token 700K of a
+  900K prompt, and recommends enabling it only beyond 256K. The structured
+  field below records the native figure. The card's benchmark results
+  (Terminal-Bench 4.0, SWE-bench Pro, FrontierSWE, GDPVal-AA v2.1,
+  HealthBench Professional, MCP-Atlas and others) are published only as
+  images, so the AA score is still the main number that can be checked
+  independently. The card also introduces <strong>LingCode</strong>, a
+  long-horizon coding harness built on the open-source Pi agent, which
+  inclusionAI is "considering open-sourcing".</p>
+
+  <p>A second checkpoint, <strong>Ling-3.1-flash-1019</strong>, appeared on
+  Artificial Analysis on October 22. AA scores it <strong>44</strong> on
+  v4.3.2, three points above the open release, at the same price and with a
+  1,048,576-token context. AA lists it as proprietary and served only through
+  inclusionAI's API, and its release slug (<code>ling-3-1-flash-rc5</code>)
+  suggests a later release candidate. There is no HuggingFace repo, card or
+  announcement for it, so whether it is a future weights update or an
+  API-only build is unknown. The top-level score stays on the open
+  checkpoint this file names.</p>
 tags:
   - moe
+  - open-weight
   - reasoning
   - agentic
   - long-context
+  - linear-attention
 model:
-  open_weights: false
+  open_weights: true
   architecture: moe
   parameters: 560B
   active_parameters: 25B
+  num_experts: 512
+  top_k: 8
   context_window: 262144
   intelligence_index: 41
   intelligence_index_version: "AA v4.3.2"
-  license: Open weights promised after the free-trial period; not yet released
+  license: MIT
+  variants:
+    - name: Ling-3.1-flash
+      parameters: 560B
+      active_parameters: 25B
+      notes: "open weights 2026-10-13 (MIT, FP8, MTP head); 63 KDA + 9 gated MLA layers; native 262,144 context, 1M via YaRN"
+    - name: Ling-3.1-flash-1019
+      notes: "API-only checkpoint first listed by AA 2026-10-22 (release slug ling-3-1-flash-rc5); AA 44 on v4.3.2 (ling-3-1-flash-1019); 1,048,576 context; no weights or card"
 related:
   - ling-3.0
   - ling-2.6

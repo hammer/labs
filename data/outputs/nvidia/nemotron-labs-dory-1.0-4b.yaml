@@ -1,0 +1,117 @@
+name: Nemotron-Labs Dory 1.0 4B
+slug: nemotron-labs-dory-1.0-4b
+lab: nvidia
+type: model
+date: 2026-10-16
+sources:
+  - label: HuggingFace (BF16)
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16
+  - label: HuggingFace (NVFP4)
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-NVFP4
+  - label: HuggingFace (GGUF)
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-GGUF
+description: >
+  <p><strong>The interesting number in this release is 4.5 trillion.</strong>
+  Dory 1.0 was, per the model card, "pre-trained on 6T tokens using
+  <strong>NVFP4 for the first ~4.5T tokens</strong> and BF16 for the
+  remainder," followed by "300 billion tokens of context extension" to a 256K
+  window. That makes roughly <strong>three quarters of a 6T-token pretraining
+  run executed natively in a 4-bit floating-point format</strong> &mdash; the
+  largest such run NVIDIA has described, and the practical follow-through on
+  the low-precision-pretraining line that papers like
+  <a href="/outputs/technion/fp4-all-the-way">FP4 All the Way</a> and Huawei's
+  <a href="/outputs/huawei/hifloat4">HiFloat4</a> argued for. The card is worth
+  reading for what it does <em>not</em> contain: <strong>no loss or accuracy
+  comparison against an equivalent BF16 run</strong>, and no statement of the
+  training hardware. NVIDIA names Megatron-LM as the pretraining stack and
+  leaves the cost saving implied rather than measured, so the headline result
+  is "a 4-bit-pretrained model that works," not a quantified NVFP4-vs-BF16
+  gap.</p>
+
+  <p><strong>Architecture: a looped model from a frontier lab.</strong> Dory is
+  a "<strong>Looped (latent-recurrent) normalized-GPT</strong> with interleaved
+  sliding-window attention (SWA) and full-attention layers" &mdash; 8 input
+  layers, a shared <strong>20-layer recurrent block</strong> applied repeatedly
+  with the input reinjected at each pass, and 8 output layers, for
+  <strong>3.98B stored parameters</strong>. Loop count is a deployment knob set
+  to <strong>1, 2, 3 or 4</strong> (NVIDIA recommends 2 by default, 1 to
+  minimize compute, 4 when accuracy matters), which makes the same weights an
+  elastic compute&ndash;accuracy dial. The usual objection to recurrent-depth
+  models is KV memory; Dory answers it with "last-loop KV caching, which keeps
+  a single cache per recurrent attention layer," so KV-cache footprint matches
+  an equivalent non-looped model regardless of loop count. It is the first
+  production-weight entry in the looped-transformer line this index has tracked
+  mostly as papers &mdash; ByteDance's
+  <a href="/outputs/bytedance-seed/ouro">Ouro</a> and
+  <a href="/outputs/bytedance-seed/parallel-loop-transformer">Parallel Loop
+  Transformer</a>, Google's
+  <a href="/outputs/google/looped-transformers">Reasoning with Latent
+  Thoughts</a>, and MBZUAI's
+  <a href="/outputs/mbzuai/looped-models-done-right-part-ii">Looped Models Done
+  Right, Part II</a>.</p>
+
+  <p><strong>Scores scale with loops, unevenly.</strong> All figures are
+  NVIDIA-measured, 1/2/4 loops: SWE-bench Verified
+  <strong>50.3 / 59.5 / 61.8</strong>, Terminal-Bench 2.1
+  <strong>12.5 / 18.1 / 22.2</strong>, SciCode 27.3 / 34.9 / 35.1, IFBench
+  74.3 / 77.9 / 79.0, AA-LCR 63 / 71 / 73. Agentic and long-context tasks gain
+  the most from extra loops; knowledge-bound ones barely move or regress
+  (GPQA Diamond 69.2 / 72.4 / 72.2, AA-Omniscience 10.0 / 10.1 / 10.0), which
+  is the expected signature of added test-time depth rather than added
+  knowledge. Against the card's own comparison set, 4-loop Dory beats
+  Qwen3.5-4B and Qwen3.5-9B on SWE-bench Verified and IFBench while trailing
+  both on GPQA Diamond and AA-Omniscience. Post-training is SFT on an
+  NVIDIA-curated dataset plus multi-environment <strong>GRPO</strong> over
+  math, code, science, instruction following and multi-step tool use, using an
+  asynchronous RL setup in NeMo RL and NeMo Gym.</p>
+
+  <p>Weights ship in BF16, MXFP8 (W8A16) and NVFP4 (W4A16) plus a GGUF Q5_K_M
+  export for llama.cpp, under the <strong>OpenMDW License Agreement
+  v1.1</strong> and marked "ready for commercial or non-commercial use." No
+  paper or technical report at filing, and no Artificial Analysis entry &mdash;
+  the AA v4.3.2 figures on the card are NVIDIA's own internal estimates, not AA
+  measurements.</p>
+tags:
+  - open-weight
+  - efficiency
+  - reasoning
+  - agents
+  - quantization
+  - architecture
+model:
+  open_weights: true
+  architecture: dense
+  parameters: 4B
+  context_window: 262144
+  training_tokens: 6T
+  license: OpenMDW v1.1
+  benchmark_scores:
+    - benchmark: SWE-bench Verified (4 loops)
+      score: "61.8"
+    - benchmark: Terminal-Bench 2.1 (4 loops)
+      score: "22.2"
+    - benchmark: GPQA Diamond (4 loops, no tools)
+      score: "72.2"
+    - benchmark: IFBench (4 loops)
+      score: "79.0"
+    - benchmark: SciCode (4 loops)
+      score: "35.1"
+    - benchmark: AA-LCR (4 loops)
+      score: "73"
+  variants:
+    - name: NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16
+      parameters: 4B
+      notes: "reference checkpoint, W16A16; 3,975,229,440 stored parameters"
+    - name: NVIDIA-Nemotron-Labs-Dory1.0-4B-MXFP8
+      notes: W8A16 quantized export
+    - name: NVIDIA-Nemotron-Labs-Dory1.0-4B-NVFP4
+      notes: W4A16 quantized export
+    - name: NVIDIA-Nemotron-Labs-Dory1.0-4B-GGUF
+      notes: Q5_K_M export for llama.cpp
+related:
+  - ouro
+  - looped-transformers
+  - parallel-loop-transformer
+  - looped-models-done-right-part-ii
+  - fp4-all-the-way
+  - nemotron-labs-audex

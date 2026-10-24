@@ -8,6 +8,10 @@ sources:
     url: https://huggingface.co/allenai/ACE2S-SHiELD-plus
   - label: arXiv (Disentangling the effects of sea surface temperature and CO2 in global machine learned weather-climate emulators)
     url: https://arxiv.org/abs/2606.07928
+  - label: HiRO-ACEv2 (HuggingFace)
+    url: https://huggingface.co/allenai/HiRO-ACEv2
+  - label: HiRO-ACEv2 paper (arXiv 2610.17693)
+    url: https://arxiv.org/abs/2610.17693
 description: >
   <p>The newest member of the <strong>Ai2 Climate Emulator (ACE)</strong>
   family, and the first ACE model filed here: a stochastic spherical Fourier
@@ -20,6 +24,17 @@ description: >
   training separates the two forcings so the emulator responds correctly to
   each. Weights released 10 September 2026 under Apache 2.0; the parameter
   count is not stated on the card.</p>
+
+  <p>On October 12 Ai2 followed with <strong>HiRO-ACEv2</strong> (Apache
+  2.0; <a href="https://arxiv.org/abs/2610.17693">arXiv 2610.17693</a>). It
+  pairs a sibling emulator, ACE2S-X-SHiELD, which emulates the 3 km X-SHiELD
+  storm-resolving model coarsened to 100 km, with a separately trained
+  diffusion downscaler that regenerates 3 km precipitation, 10 m winds and
+  sea-level pressure for any region between 66°S and 70°N. The authors report
+  matching X-SHiELD's distributions out to the 99.9999th percentile at more
+  than 300 times lower inference cost than the numerical model. The card notes
+  that the emulator saw only nine years of X-SHiELD output and is not
+  expected to generalize beyond those forcings.</p>
 tags:
   - science
   - open-weight

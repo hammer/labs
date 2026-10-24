@@ -10,6 +10,8 @@ sources:
     url: https://github.com/ifm-ai/xllm-loop
   - label: HuggingFace (checkpoints)
     url: https://huggingface.co/collections/IFM/towards-looped-models-done-right-6ab9f671bb1c97e33b27d14c
+  - label: Paper (arXiv, Part I)
+    url: https://arxiv.org/abs/2610.23036
   - label: Blog (Part I)
     url: https://huskydoge.github.io/husky-blog/posts/recursive_models/towards-looped-models-done-right/
 description: >
@@ -65,8 +67,15 @@ description: >
   authors' own limitations: models up to 1.6B with <strong>one seed per
   configuration</strong>, ablations that "do not exhaust the design space," and
   larger scales left untested. Part I &mdash; topology, input injection and
-  recurrent-state organization, 17 dense and MoE recipes &mdash; exists so far only
-  as a blog post, with its PDF and arXiv link listed as "to be added." The
+  recurrent-state organization, 17 dense and MoE recipes &mdash; reached arXiv as
+  <a href="https://arxiv.org/abs/2610.23036">2610.23036</a> on 2026-10-16. Training
+  from scratch at matched parameters, logical depth and tokens, it favours the
+  <strong>Huginn-style prelude&ndash;recurrent&ndash;coda design</strong>: at 730M
+  parameters and 336B tokens full Huginn beats Ouro on all ten benchmarks, and the
+  advantage carries over to an <strong>8B-A0.8B MoE</strong> (32B-A3B unrolled)
+  trained on 500B tokens. Input injection mainly helps knowledge retrieval and
+  context use; random state initialisation and separate H/L recurrent states give
+  mixed or negative returns. The
   <code>xllm-loop</code> release (~39 stars, Apache 2.0) adds looped-Transformer and
   Huginn architectures with depth-controlled training to MBZUAI-IFM's xLLM, and
   publishes <strong>49 checkpoints</strong> across both parts (25 for Part I, 24 for

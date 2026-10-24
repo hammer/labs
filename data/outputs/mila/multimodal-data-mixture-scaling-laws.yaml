@@ -1,0 +1,69 @@
+name: Scaling Laws for Multimodal Data Mixtures
+slug: multimodal-data-mixture-scaling-laws
+lab:
+  - mila
+  - epfl
+  - eth-zurich
+  - uw
+type: paper
+date: 2026-10-10
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.14423
+description: >
+  <p>A data-mixing scaling law for natively multimodal pretraining that covers
+  <strong>text, vision and audio together</strong>. The authors argue the
+  question "how much of each modality to mix, and at what potential
+  interference cost to the others" is "largely absent or gatekept" in public
+  work. The law builds on
+  <a href="/outputs/apple/scaling-laws-multimodal">Apple's native-multimodal
+  scaling laws</a> and the bimodal interaction laws in three ways. It models
+  how modalities share a finite MoE parameter and routing budget, makes
+  cross-modal transfer <em>directional</em> rather than symmetric, and adds a
+  repetition-saturation term for scarce non-text data. In the unimodal limit
+  it reduces to the Chinchilla form. It is fitted on <strong>268 MoE
+  pretraining runs from 457M to 8.3B total parameters</strong>, up to 150B
+  tokens each, for <strong>roughly 300K GH200-hours</strong> on CSCS's Alps
+  system.</p>
+
+  <p><strong>Three findings a lab mixing modalities would act on.</strong>
+  First, compute optima are modality-specific. Audio is model-heavy and favours
+  parameters over tokens, while text and vision want balanced scaling. Second,
+  repeating vision or audio data beyond 2&times; buys almost nothing. Third,
+  interference is strongly asymmetric: vision interferes with audio, but
+  audio's cost to text and vision is negligible. The law predicts three
+  out-of-distribution settings it was not fitted on: a 12.6B-A3.8B MoE trained
+  from scratch on 200B tokens, and two continual-pretraining runs of a
+  text-only 8.3B-A2.6B MoE. The one miss is informative. A non-text-heavy CPT
+  mix produced a text-loss spike that the law did not anticipate. The authors
+  scope the limits themselves: nothing has been validated at "&gg;10B active
+  parameters" or past 1T tokens, and long-form video is left out. The fit sits
+  above the scale floor, but extrapolating it to a frontier run is still an
+  extrapolation.</p>
+
+  <p>Title-page affiliations: Mila / McGill (Khandelwal, Farnadi, Reddy),
+  EPFL (Tarun, <a href="/people/antoine-bosselut">Antoine Bosselut</a>), ETH
+  (Xu, <a href="/people/imanol-schlag">Imanol Schlag</a>) and the University
+  of Washington (Luke Zettlemoyer). Compute came from a CSCS grant on Alps,
+  the machine behind <a href="/labs/swiss-ai">Swiss AI</a>'s Apertus. No
+  code release is linked.</p>
+tags:
+  - scaling-laws
+  - multimodal
+  - pretraining
+  - data
+  - moe
+paper:
+  arxiv: "2610.14423"
+  authors:
+    - Aditi Khandelwal
+    - Ayush K. Tarun
+    - Yixuan Xu
+    - Imanol Schlag
+    - Golnoosh Farnadi
+    - Siva Reddy
+    - Luke Zettlemoyer
+    - Antoine Bosselut
+related:
+  - scaling-laws-multimodal
+  - scaling-laws-data-mixtures

@@ -10,6 +10,14 @@ sources:
     url: https://huggingface.co/allenai/OlmoEarth-v1_2-Base
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2605.20804
+  - label: v1.3 announcement (Oct 22, 2026)
+    url: https://allenai.org/blog/olmoearth-v1-3
+  - label: v1.3 technical report
+    url: https://allenai.org/papers/olmoearth-v1-3
+  - label: HuggingFace (v1.3 Base)
+    url: https://huggingface.co/allenai/OlmoEarth-v1_3-Base
+  - label: v1.3 global embeddings (Source Cooperative)
+    url: https://source.coop/olmoearth/olmoearth-v1-3-embeddings
 description: >
   <p>Ai2's open earth-observation foundation model line (entry filed at
   the v1.2 refresh; the line was previously untracked). Trained on
@@ -19,13 +27,30 @@ description: >
   benchmark performance. Released under the OlmoEarth Artifact License.
   On-thesis scientific FM for climate, agriculture, and disaster
   monitoring.</p>
+
+  <p><strong>v1.3</strong> (October 22, 2026) turns the line into an
+  embedding model. A single Base checkpoint, which the card describes as a
+  128M-parameter ViT-Base plus a 14.3M-parameter Perceiver pooler and a 0.1M
+  linear student, reads a year of Sentinel-1, Sentinel-2 and Landsat time
+  series and emits a 128-dimensional vector for every 10 m pixel. The first
+  64 dimensions also work as a standalone embedding. Ai2 has precomputed
+  annual embeddings, about 150 TB per year: global for 2023 to 2025 and
+  select countries for 2017 to 2022. It ships them with an in-browser
+  Embeddings Explorer and per-tile provenance tables. Against AlphaEarth
+  Foundations and Tessera v2 on 27 evaluations, Ai2 reports that the
+  128-d embeddings score highest on 20 and the 64-d on 18. The evaluation
+  introduces PLANTEUR, a new tropical crop-type benchmark. Training took 53%
+  of v1.2's compute and 18% of v1's, with the final Base run costing about
+  $2,720 of rented H100 time, and Ai2 says fine-tuning performance matches
+  v1.2. Weights, pretraining data and code are released under the same
+  OlmoEarth Artifact License. All the results are Ai2's own.</p>
 tags:
   - science
   - earth-observation
   - open-weight
 model:
   open_weights: true
-  parameters: 114M
+  parameters: 128M
   license: OlmoEarth Artifact License
   variants:
     - name: OlmoEarth-v1_2-Nano
@@ -33,5 +58,8 @@ model:
     - name: OlmoEarth-v1_2-Small
     - name: OlmoEarth-v1_2-Base
       parameters: 114M
+    - name: OlmoEarth-v1_3-Base
+      parameters: 128M
+      notes: "2026-10-22; ViT-Base encoder plus 14.3M Perceiver pooler and 0.1M linear student; 128-d (64-d Matryoshka) annual embeddings"
 paper:
   arxiv: "2605.20804"

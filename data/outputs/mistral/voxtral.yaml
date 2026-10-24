@@ -10,15 +10,75 @@ sources:
     url: https://huggingface.co/mistralai/Voxtral-Mini-3B-2507
   - label: HuggingFace (TTS)
     url: https://huggingface.co/mistralai/Voxtral-4B-TTS-2603
+  - label: Voxtral 3 announcement
+    url: https://mistral.ai/news/voxtral-3/
+  - label: HuggingFace (Mini 4B Realtime Arabic)
+    url: https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-Arabic
+  - label: HuggingFace (Mini 4B Realtime 2602)
+    url: https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602
 description: >
-  Speech model family. Voxtral Mini (3B) and Small (24B) handle
-  long-form audio understanding (30-40 minutes). Voxtral TTS (4B)
-  adds zero-shot voice cloning. Natively multilingual. Apache 2.0.
+  <p>Mistral's speech model family. Voxtral Mini (3B) and Small (24B) handle
+  long-form audio understanding (30-40 minutes). Voxtral TTS (4B) adds
+  zero-shot voice cloning. Natively multilingual. Apache 2.0.</p>
+
+  <p><strong>Voxtral 3</strong> (20 October 2026) is the third generation and
+  repositions the line around voice agents. It ships four models and a voice
+  agent SDK that runs listening, reasoning, tool calling and speaking in one
+  real-time streaming pipeline. The models are <strong>Voxtral Small Transcribe
+  3</strong>, <strong>Voxtral Mini Transcribe 3</strong> ("4B parameters", batch
+  transcription at $0.0035/min), <strong>Voxtral Mini Realtime 3</strong>
+  (sub-500 ms streaming, 35+ languages) and <strong>Voxtral Mini TTS 3</strong>
+  (35+ languages, 50+ dialects, $13 per 1M characters). Transcription
+  now covers 50 languages, including all 24 official EU languages, with
+  diarization, context biasing and native end-of-turn detection. Only the Mini
+  sizes are disclosed. Mistral offers the family through its EU-hosted API or
+  for self-deployment, but no Voxtral 3 weights were on Hugging Face at
+  filing, so treat it as commercially licensed rather than open-weight.</p>
+
+  <p>The comparisons are Mistral's own. On diarization (cpWER averaged over
+  AMI, Switchboard, CallHome and AISHELL-4) Small Transcribe 3 reports
+  <strong>18.4%</strong> and Mini Transcribe 3 18.6%, against Pyannote 19.0%,
+  Microsoft AI Transcribe 2 20.3%, Scribe v2 23.0%, the previous Voxtral Mini
+  Transcribe 2 30.9% and Gemini 3.5 Transcribe 38.4%. That makes diarization
+  the clearest step over the last generation. On a 45-language FLEURS
+  macro-average Small Transcribe 3 is around 4% WER, roughly tied with
+  Microsoft AI Transcribe 2. Mistral also plots Artificial Analysis's
+  speech-to-text WER index, where both Transcribe 3 models sit in the leading
+  group but not first.</p>
+
+  <p><strong>Voxtral-Mini-4B-Realtime-Arabic</strong> (Hugging Face, 8 October
+  2026, Apache 2.0) is an open streaming ASR model fine-tuned from
+  Voxtral-Mini-4B-Realtime-2602 (about 4.4B parameters) for Modern Standard
+  Arabic and 15 regional varieties, including code-switched speech. It was co-developed
+  with Morocco's Ministry of Digital Transition (MTNRA) under the January 2026
+  Mistral&ndash;Morocco partnership. At a 480 ms delay it reports an average
+  <strong>8.82% CER</strong> across seven Arabic benchmarks, within 0.91 points
+  of the offline Voxtral Transcribe Arabic's 7.91%.</p>
 tags:
   - audio
   - multimodal
   - open-weight
 model:
   open_weights: true
+  variants:
+    - name: Voxtral Mini 3B (2507)
+      notes: "audio understanding, open weights, Apache 2.0"
+    - name: Voxtral Small 24B (2507)
+      notes: "audio understanding, open weights, Apache 2.0"
+    - name: Voxtral 4B TTS (2603)
+      notes: "zero-shot voice cloning, open weights"
+    - name: Voxtral Mini 4B Realtime (2602)
+      notes: "streaming speech-to-text, open weights"
+    - name: Voxtral-Mini-4B-Realtime-Arabic
+      notes: "2026-10-08; fine-tune of Voxtral-Mini-4B-Realtime-2602 (~4.4B) for MSA + 15 regional varieties; 8.82% avg CER at 480 ms on 7 Arabic benchmarks; Apache 2.0; co-developed with Morocco's MTNRA"
+    - name: Voxtral Small Transcribe 3
+      notes: "2026-10-20; size undisclosed; 50 languages; diarization cpWER 18.4%; API / self-deployment, no public weights"
+    - name: Voxtral Mini Transcribe 3
+      parameters: 4B
+      notes: "2026-10-20; batch transcription, $0.0035/min; cpWER 18.6%; no public weights"
+    - name: Voxtral Mini Realtime 3
+      notes: "2026-10-20; sub-500 ms streaming transcription, 35+ languages; no public weights"
+    - name: Voxtral Mini TTS 3
+      notes: "2026-10-20; 35+ languages, 50+ dialects, $13 per 1M characters; no public weights"
 paper:
   arxiv: "2507.13264"

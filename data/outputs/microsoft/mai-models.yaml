@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: MAI-Transcribe-2 announcement
     url: https://microsoft.ai/news/mai-transcribe-2-is-the-fastest-most-accurate-and-cheapest-speech-recognition-model-in-the-world/
+  - label: MAI-Transcribe-2-Streaming / MAI-Voice-2.1 announcement (Oct 1, 2026)
+    url: https://microsoft.ai/news/our-first-streaming-transcription-model/
   - label: MAI-Image-2.6 / 2.6-Flash announcement
     url: https://microsoft.ai/news/pushing-the-quality-cost-frontier-with-mai-image-2-6/
   - label: April 2026 announcement (v1 / v1 / v2)
@@ -36,6 +38,18 @@ description: >
   adds image-to-image editing and re-debuts at #3 on Arena.ai for image
   families ($1.75/M input tokens, $33/M image output), with a more efficient
   <strong>MAI-Image-2.5-Flash</strong> shipped same day.</p>
+
+  <p><strong>October 1 update:</strong> <strong>MAI-Transcribe-2-Streaming</strong>
+  is Microsoft's first streaming ASR model. It covers 60 languages with
+  continuous language detection, emits first partials "just over 100ms"
+  after receiving audio, and costs $0.54 per hour introductory through year-end.
+  Microsoft says it ranks first on Artificial Analysis for accuracy on both
+  final and partial transcripts. <strong>MAI-Voice-2.1</strong> extends TTS
+  and voice cloning to 23 languages (26 locales), letting one voice speak all of
+  them, at $22 per million characters. <strong>MAI-Voice-2.1-Flash</strong>
+  keeps those languages at $15 per million characters with a vendor-claimed
+  150 ms end-to-end latency. Architecture and parameters for all three are
+  undisclosed.</p>
 
   <p>Marks Microsoft's transition from pure OpenAI dependency to building its
   own frontier multimodal stack under VP GenAI <strong>Mustafa Suleyman</strong>'s
@@ -71,6 +85,12 @@ model:
       notes: "Sep 4 2026, with 2.6 in Foundry; Arena #2 T2I and #2 editing, AA #2 T2I; multi-image reference editing, web grounding, dynamic aspect ratios"
     - name: MAI-Transcribe-2
       notes: "Sep 3 2026; 2.0% AA-WER (#2), ~411× real-time, 60 languages, $0.10/hr limited-time; Foundry, MAI Playground, OpenRouter"
+    - name: MAI-Transcribe-2-Streaming
+      notes: "Oct 1 2026; streaming STT, 60 languages, first partials ~100 ms, vendor-claimed #1 AA accuracy (final + partial), $0.54/hr intro; Foundry, MAI Playground, Vercel, Azure Voice Live"
+    - name: MAI-Voice-2.1
+      notes: "Oct 1 2026; TTS + cross-language voice cloning, 23 languages / 26 locales, $22/M chars"
+    - name: MAI-Voice-2.1-Flash
+      notes: "Oct 1 2026; efficient TTS, same languages, ~150 ms end-to-end latency (vendor), $15/M chars"
 related:
   - mai-thinking-1
   - mai-code-1-flash

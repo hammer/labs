@@ -14,6 +14,9 @@ description: >
   in Chinese and English. Qwen-Image-2.0 (7B) unifies generation and editing.
   Qwen-Image-3.0 (July 2026) is hosted only, and the open-weight Qwen-Image-2.1
   (7B, September 2026) adds native transparency and multi-reference editing.
+  In October 2026 Alibaba added an open 8-step Qwen-Image-2.1-Turbo checkpoint
+  and a hosted Qwen-Image-2.1-Pro, which went on Qwen Cloud on October 2 and
+  has no weights.
 tags:
   - generation
   - open-weight
@@ -78,4 +81,30 @@ outputs:
     model:
       open_weights: true
       parameters: 7B
+      license: Qwen Research License
+
+  - name: Qwen-Image-2.1-Turbo
+    type: model
+    date: 2026-10-09
+    sources:
+      - label: HuggingFace
+        url: https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo
+      - label: GitHub
+        url: https://github.com/QwenLM/Qwen-Image-2.1
+      - label: Qwen Cloud model changelog
+        url: https://docs.qwencloud.com/changelog/models
+    description: >
+      Accelerated checkpoint of Qwen-Image-2.1 for text-to-image generation
+      and editing in <strong>8 denoising steps</strong> instead of the base
+      model's default 40, run with CFG=1. It keeps "the same 7B visual
+      generation architecture" and loads in the same Diffusers
+      QwenImage21Pipeline, and the checkpoint ships its own sampling
+      schedule. Qwen does not say how the speed-up was obtained (distillation
+      or otherwise) and publishes no quality comparison against the 40-step
+      model. Released October 9, 2026 under the Qwen Research License, the
+      same day the hosted Pro and Turbo APIs went live on Alibaba Cloud Model
+      Studio. About 1,000 HuggingFace likes and 31,000 downloads in its
+      first two weeks.
+    model:
+      open_weights: true
       license: Qwen Research License

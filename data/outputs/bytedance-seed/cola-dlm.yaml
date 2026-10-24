@@ -10,6 +10,10 @@ sources:
     url: https://hongcanguo.github.io/Cola-DLM/
   - label: HuggingFace
     url: https://huggingface.co/ByteDance-Seed/Cola-DLM
+  - label: "Cola2 paper (arXiv)"
+    url: https://arxiv.org/abs/2610.31305
+  - label: Cola2 project page
+    url: https://hongcanguo.github.io/Cola2/
 description: >
   <p>"Continuous Latent Diffusion Language Model." A hierarchical latent
   diffusion LM that replaces token-level autoregression with continuous-latent
@@ -22,6 +26,28 @@ description: >
   <a href="/outputs/bytedance-seed/seed-diffusion">Seed Diffusion</a>'s
   discrete-state approach with a continuous-latent formulation. Open code +
   weights + checkpoints.</p>
+
+  <p><strong>Cola2</strong> (arXiv 2610.31305, 22 October 2026) is the
+  sequel from the same first author, Hongcan Guo (HKU, with ByteDance Seed),
+  billed as a Seedance Team research project. It replaces the fixed latent
+  layout with <strong>dynamic semantic spans</strong>, about two tokens per
+  latent and at most eight, and controls the compression rate with an
+  auxiliary-loss-free negative-feedback loop. The decoder becomes a
+  <strong>block-causal masked-diffusion decoder</strong> trained on clean,
+  noisy and dropped latents, with classifier-free guidance setting the
+  balance between reconstruction and free generation. Token-prediction
+  gradients flow back into the encoder, while the flow-matching prior is
+  stop-gradiented off it. Controlled ablations at about 210B training tokens
+  show scaling that has not saturated. A 3B budget is best split as a 2B
+  DiT plus a 1B decoder. The headline checkpoint is not a from-scratch
+  model. Its decoder and encoder embedding are initialised from
+  <strong>Qwen3-4B-Base</strong> and trained with an ~4B latent DiT on OLMo 2
+  data over 346B source tokens. That unconverged checkpoint averages
+  <strong>60.10</strong> over eight tasks, against Llama-3-8B's 66.25, and
+  beats Llama-3-8B on HellaSwag (41.75 vs 39.21) and StoryCloze (80.42 vs
+  79.49). It still trails Qwen3-8B-Base (75.87) and LLaDA-8B-Base (72.11)
+  by a wide margin, and the comparison is not compute-matched. No Cola2 code
+  or weights have been released yet.</p>
 tags:
   - foundational
   - diffusion

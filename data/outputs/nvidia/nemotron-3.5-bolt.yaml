@@ -10,6 +10,12 @@ sources:
     url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-BF16
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/nemotron-3-5-bolt-74b-a9b
+  - label: HuggingFace (E4B 4GB)
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB
+  - label: HuggingFace (E4B BF16)
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-BF16
+  - label: Technical report (Bolt E4B)
+    url: https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB-Technical-Report.pdf
   - label: Artificial Analysis article (Super and Bolt)
     url: https://artificialanalysis.ai/articles/nemotron-3-5-super-and-bolt
   - label: Technical report (Super VL and Lightning)
@@ -46,6 +52,20 @@ description: >
   <strong>very verbose</strong>, 230M output tokens against a 100M median for
   comparable models, and 82k per index task against Super VL's 46k. So the
   intelligence survives the squeeze better than the token budget does.</p>
+
+  <p>Ten days earlier, on October 5, NVIDIA had put out a much smaller sibling
+  under the same name. <strong>Nemotron-3.5-Bolt-E4B</strong> is not a
+  Nemotron pretrain: the card says it is "further post-trained from
+  <a href="/outputs/google/gemma-4">Gemma-4</a>-E4B-it," at 8B total / 4B effective parameters with 64K input and
+  output. It is tuned for multi-turn tool use, instruction following and
+  grounding in local voice assistants and on-device personas. It ships as a
+  4GB Q4_K_M GGUF for llama.cpp, a BF16 checkpoint and DFlash speculative
+  drafters, under OpenMDW-1.1. On NVIDIA's own table the BF16 build beats
+  Gemma-4-E4B-it on MultiChallenge (53.10 vs 42.08), IFBench (63.79 vs 42.84)
+  and Tau2-Bench (55.10 vs 38.50), but trails Qwen3.5-4B on Tau2-Bench (75.06)
+  and RULER 64K. Artificial Analysis lists it as
+  <code>nemotron-3-5-bolt-e4b-4gb</code> with no published Intelligence Index
+  score yet.</p>
 tags:
   - open-weights
   - moe
@@ -70,6 +90,8 @@ model:
       notes: full-precision reference weights
     - name: Bolt 74B-A9B 24GB GGUF
       notes: GGUF build
+    - name: Bolt E4B 4GB / E4B BF16
+      notes: "2026-10-05; post-trained from Gemma-4-E4B-it (not from Super VL), 8B total / 4B effective, 64K in/out; 4GB = Q4_K_M GGUF; DFlash drafters alongside; AA slug nemotron-3-5-bolt-e4b-4gb unscored"
   benchmark_scores:
     - benchmark: PinchBench
       score: "87.82"

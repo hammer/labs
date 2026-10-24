@@ -1,0 +1,74 @@
+name: "TRACE: Rollout-Guided Quantization-Aware Training for FP4 Reinforcement Learning of MoE Language Models"
+slug: trace
+lab: alibaba
+type: paper
+date: 2026-10-06
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.07767
+description: >
+  <p>FP4 rollouts for RL post-training of MoE models, tested on Qwen's own
+  production-scale checkpoints up to the
+  <a href="/outputs/alibaba/qwen3.8">2.4T-parameter Qwen3.8</a>. The authors
+  are from Alibaba Token Hub, among them Qwen LLM head
+  <a href="/people/dayiheng-liu">Dayiheng Liu</a> and Jianwei Zhang, with one
+  Ohio State affiliation. They start from what goes wrong with earlier FP4 RL
+  methods (QAT, QaRL, QUADS). Those methods minimise quantization error on
+  the training path and the rollout path separately, but two paths can each
+  stay close to BF16 and still round to different FP4 values. On an MoE that
+  difference then interacts with expert routing, the policy mismatch grows,
+  and training can collapse. <strong>TRACE</strong> attacks the gap between
+  the two paths directly. Its <strong>rollout-guided QAT</strong> records
+  how the rollout engine rounded each value and uses that to decide the
+  training side's FP4 rounding. To keep the cost down, its
+  <strong>quantization-information cache</strong> keeps only a one-bit
+  mantissa plus amortised scale metadata, and only for the deeper layers
+  (the last 20 on Qwen3.5-35B-A3B). That is about 7.5 KB per generated token,
+  about 6&times; smaller than caching the full quantized activations.</p>
+
+  <p>Under joint NVFP4 weights/activations and an NVFP4 KV cache at rollout,
+  with GRPO and R3 routing replay on VeRL + Megatron + SGLang:
+  <strong>Qwen3.5-35B-A3B</strong> reasoning RL averages <strong>75.3</strong>
+  across LiveCodeBench v6, AIME 24/25 and HMMT 25, against 74.9 for BF16
+  rollout, 68.8 for QUADS and 59.6 for plain QAT. The baselines' scores also
+  degrade late in training as the train/rollout gap widens. At larger scale
+  TRACE stays level with BF16: <a
+  href="/outputs/alibaba/qwen3.5">Qwen3.5-122B-A10B</a> on DeepSWE 33.0 vs
+  33.4, <a href="/outputs/alibaba/qwen3.8-flash-next">Qwen3.8-Flash-Next</a>
+  (125B-A6B) on Terminal-Bench 2.1 70.6 vs 68.8, and Qwen3.8-2.4T-A95B on
+  GDPval 90.2 vs 90.3, with 256K contexts for the coding and long-horizon
+  runs. The 122B and 2.4T runs are only 50 RL steps long. Decoding is up to
+  <strong>5.4&times;</strong> faster than BF16 rollout at 128K output length.
+  Rollout guidance adds 7.4% to the end-to-end RL step time (664 to 713)
+  over vanilla FP4 rollout. It is the FP4 counterpart of ByteDance Seed's <a
+  href="/outputs/bytedance-seed/fp8-rl">full-pipeline FP8 RL</a> study from
+  the month before. The value of the result is that it was run on flagship
+  Qwen models rather than small proxies. The paper does not say whether
+  shipped Qwen checkpoints were trained this way, and no code is released.</p>
+tags:
+  - rl
+  - efficiency
+  - quantization
+  - post-training
+  - moe
+  - research
+paper:
+  arxiv: "2610.07767"
+  authors:
+    - Xin Wang
+    - Hao Yu
+    - Zhengyang Zhuge
+    - Bochao Mao
+    - Zheng Li
+    - Junda Feng
+    - Yuyan Luo
+    - Yi Zhang
+    - Yizhong Cao
+    - Mi Zhang
+    - Dayiheng Liu
+    - Jianwei Zhang
+related:
+  - qwen3.8
+  - qwen3.8-flash-next
+  - qwen3.5
+  - fp8-rl

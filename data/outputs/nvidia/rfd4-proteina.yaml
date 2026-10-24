@@ -1,0 +1,118 @@
+name: RFD4-Proteína
+slug: rfd4-proteina
+lab:
+  - nvidia
+  - uw
+type: model
+date: 2026-10-19
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/nvidia/RFD4-Proteina
+  - label: Preprint (PDF)
+    url: https://rfd4-proteina.org/assets/paper/RFD4-Proteina.pdf
+  - label: GitHub
+    url: https://github.com/RosettaCommons/RFD4-Proteina
+  - label: Training data (HuggingFace)
+    url: https://huggingface.co/datasets/nvidia/RFD4-Proteina
+description: >
+  <p><strong>A joint sequence-and-structure biomolecular design model from the
+  Baker Lab and NVIDIA, with the test-time-compute vocabulary of language
+  models applied to protein design.</strong> The model card describes
+  RFD4-Prote&iacute;na as "a flow-matching model for biomolecular design" that
+  generates protein sequences and all-atom structures together, conditioned on
+  context to preserve &mdash; a binding target, an enzyme motif, a ligand, or
+  prescribed structural features. It is distributed as a paired bundle of a
+  flow model (with a rank-32 LoRA fine-tune merged in) and a
+  <strong>unified autoencoder covering proteins, nucleic acids and small
+  molecules</strong>, <strong>435,622,465 stored parameters</strong> in total,
+  under <strong>BSD 3-Clause</strong>. The autoencoder encodes each standard or
+  modified amino acid, sugar or nucleotide as an anchor-atom coordinate plus a
+  <strong>32-dimensional latent vector</strong> over a
+  <strong>147-class residue vocabulary</strong> (up from 16 dimensions and 33
+  classes in the previous release), with a Rosetta-energy loss during
+  fine-tuning that "lowered mean Rosetta energy by 1.07 kcal/mol per residue
+  and reduced severe bond-angle deviations by 62%."</p>
+
+  <p><strong>The framing contribution is "reasoning" at two levels.</strong>
+  <em>Intrinsic</em> reasoning is recurrent refinement inside each denoising
+  step &mdash; recycling moved from an upstream feature stage into every
+  diffusion timestep, with a variable number of passes so compute concentrates
+  where the trajectory needs it. <em>Extrinsic</em> reasoning is guided search
+  <em>across</em> trajectories against arbitrary user metrics, exploiting the
+  paper's observation that design objectives resolve at different times during
+  generation: interface area becomes predictable at roughly 20% of the
+  trajectory, hydrogen bonding at 50%, AlphaFold 3 interface confidence at 80%.
+  Pruning trajectories against each criterion as it resolves "yielded three
+  times as many unique passing designs per GPU-hour" than naive sampling on the
+  paper's bond-cleaving enzyme task. The latent formulation extends
+  La-Proteina and Proteina-Complexa; RFdiffusion3 is the all-atom predecessor
+  that, as the paper puts it, "does not design high-quality sequences for its
+  generated structures."</p>
+
+  <p><strong>In silico, the gains are in pass rate and throughput at the same
+  time.</strong> On clustered pass rate (distinct passing structural clusters
+  per 200 attempts), high-thinking RFD4-Prote&iacute;na reports
+  <strong>10.6% on protein binding versus 5.9% for BindCraft, at 42-fold
+  higher throughput</strong>; <strong>12.1% versus 5.7%</strong> for
+  AlphaProtein-novo codesign on the Atomic Motif Enzyme benchmark (5.9&times;
+  throughput); <strong>14.3% versus 2.4%</strong> for RFD3 on small-molecule
+  binding, with passing designs for all 77 targets versus 64; and
+  <strong>3.5% versus 0.8%</strong> for BoltzGen on the three-target DNA
+  benchmark. Counting AlphaFold 3 evaluation time, that is 5.0&ndash;10.4&times;
+  more passing clusters per GPU-hour than the next-best baseline per task. The
+  card cautions that these numbers were measured on the superseded 2026-10-15
+  pair against an October 9 benchmark snapshot and "have not been
+  re-measured on the current release," and that computational passers do not
+  establish experimental activity.</p>
+
+  <p><strong>The wet-lab results are what separate this from a benchmark
+  paper.</strong> Of 18 conformation-selective calmodulin designs,
+  <strong>12 bound the Ca<sup>2+</sup>-bound form with apparent
+  K<sub>D</sub> &lt; 1 &micro;M</strong> and no detectable binding without
+  calcium, affinities spanning 69 pM to 37 nM. Binders to phosphorylated
+  epitopes reached <strong>K<sub>D</sub> = 112 pM (YAP1)</strong> and
+  <strong>527 pM (Tau)</strong>. Against human TrkA,
+  <strong>158 of 188 designs were sub-micromolar (84%)</strong>, versus 18/60
+  (30%) for the prior campaign. Four of 67 designed ligases showed amide-bond
+  formation where an RFD3 campaign got none from 72, the best converting
+  <strong>79% of the (S)-amine</strong> with 8.8% for the (R)-enantiomer
+  &mdash; which the authors call the "first proof-of-concept demonstration of a
+  de novo designed enzyme catalyzing a step in active pharmaceutical ingredient
+  (API) synthesis."</p>
+
+  <p>The preprint &mdash; "Biomolecular design through latent reasoning with
+  RFD4-Proteina," CC BY 4.0, not peer reviewed &mdash; is corresponded by
+  <strong>Kieran Didi (NVIDIA)</strong> and <strong>David Baker</strong>, with
+  title-page affiliations led by the Institute for Protein Design and
+  Department of Biochemistry at the <strong>University of Washington</strong>
+  and <strong>NVIDIA</strong>, plus HHMI, Oxford, Manchester, Southampton, ETH
+  Zurich, Tsinghua and Duke. Training compute for the released model is not
+  disclosed; the paper states only that "all ablation runs&mdash;and
+  baselines&mdash;are trained on 16 H200 NVIDIA GPUs." A Diffusers pipeline was
+  merged on 2026-10-20 and ships in the next Diffusers release.</p>
+tags:
+  - science
+  - biology
+  - protein
+  - open-weight
+  - diffusion
+  - reasoning
+model:
+  open_weights: true
+  parameters: 436M
+  license: BSD 3-Clause
+  benchmark_scores:
+    - benchmark: Protein binder clustered pass rate (high thinking)
+      score: "10.6% (BindCraft 5.9%)"
+    - benchmark: Atomic Motif Enzyme clustered pass rate
+      score: "12.1% (AlphaProtein-novo 5.7%)"
+    - benchmark: Small-molecule binder clustered pass rate
+      score: "14.3% (RFD3 2.4%)"
+    - benchmark: DNA binder clustered pass rate (3 targets)
+      score: "3.5% (BoltzGen 0.8%)"
+    - benchmark: Human TrkA experimental hit rate (sub-micromolar)
+      score: "158/188 (84%)"
+related:
+  - alphafold-2
+  - odesign

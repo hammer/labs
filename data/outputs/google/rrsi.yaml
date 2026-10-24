@@ -10,6 +10,10 @@ sources:
     url: https://regularized-rsi.com/
   - label: GitHub
     url: https://github.com/google-research/rrsi
+  - label: "Harness² paper (arXiv 2610.14224)"
+    url: https://arxiv.org/abs/2610.14224
+  - label: Harness² GitHub
+    url: https://github.com/google-research/harness2
 description: >
   <p>Google Cloud AI Research's answer to overfitting in automated harness
   evolution. Methods that let an LLM propose and keep edits to an agent's
@@ -64,6 +68,21 @@ description: >
   by keeping its benchmark out of the search, and the
   <a href="/outputs/ai2/rethinking-harness-evolution">AI2/UW study</a> RRSI
   cites measured how little harness-evolution gains transfer.</p>
+
+  <p>A sibling project followed on October 6.
+  <strong>Harness²</strong> (<a href="https://arxiv.org/abs/2610.14224">arXiv
+  2610.14224</a>; Chen-Yu Lee, Tomas Pfister, Rujun Han, Yanfei Chen and Han
+  Yu are authors on both papers) takes on the case RRSI does not cover, open-world
+  tasks that have no evolve set and no ground-truth verifier. At the task level a
+  contrastive Propose–Probe–Compose step proposes edits to eight harness
+  components, probes them on the same task, and composes a refined harness
+  from how the executions differ. At a second level, a persistent
+  "improvement harness" collects the lessons learned for later tasks. With
+  GLM-5 and Gemini 3.5 Flash, the authors report that a single step adds up
+  to 11.5 points on WorkBuddy-Bench, 4.5 on JobBench and 11.8 percentage
+  points on LAB's partial pass rate. The Apache-2.0 code, which supports
+  OpenCode and Codex executors, drew 18,700 GitHub stars in its first 18 days,
+  far more than RRSI.</p>
 tags:
   - agents
   - agent-harness

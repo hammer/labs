@@ -6,6 +6,10 @@ date: 2026-09-07
 sources:
   - label: arXiv (Qwen-Audio-3.0-ASR Technical Report)
     url: https://arxiv.org/abs/2609.07549
+  - label: arXiv (Qwen-Audio-3.1-ASR Technical Report)
+    url: https://arxiv.org/abs/2610.28711
+  - label: Project page (Qwen-Audio-3.1-ASR)
+    url: https://qwenaudio.github.io/qwen-audio-3.1-asr/
 description: >
   <p>Qwen's production speech-recognition system, documented in a 45-author
   technical report on 7 September 2026: a <strong>Mixture-of-Experts, LLM-based
@@ -21,6 +25,27 @@ description: >
   sets against leading commercial systems. It is the served successor to the
   small open <a href="/outputs/alibaba/qwen3-asr">Qwen3-ASR</a> models; no
   weights are released with the report.</p>
+
+  <p><strong>Qwen-Audio-3.1-ASR</strong> followed on 20 October 2026 with its
+  own technical report from Alibaba Token Foundry. It extends the line from
+  transcription to <strong>speaker-diarized ASR</strong>, which outputs
+  speaker labels and timestamps and handles overlapping speech, and to
+  <strong>general audio understanding</strong>: speech, sound and music
+  captioning, temporal grounding, sound-event detection and audio QA. It keeps
+  the 30 languages and 16 Chinese dialects. The report confirms the
+  architecture. The decoder is initialised from the language-model component
+  of a Qwen <strong>MoE</strong> backbone and aligned on about <strong>20
+  million hours</strong> of multilingual audio with a frozen BEST-RQ-pretrained
+  encoder. It then goes through cooldown, SFT, GRPO-based RL on an in-house
+  asynchronous FunVerl framework (vLLM rollouts, Megatron trainer) and
+  on-policy distillation. Neither the backbone size nor the parameter count
+  is given. The family ships as five served variants: Flash-Filetrans, Flash-Streaming,
+  Flash-Message, Flash and Next. Only the non-streaming Flash and Next do
+  diarization, and only Next does audio understanding. On the report's own
+  API-based comparison, Next scores <strong>81.6 on MMAU</strong> against
+  Gemini-3.1-Pro's 80.9 and 82.2 on MMSU against Gemini's 85.3, and it leads
+  on seven of nine audio-understanding benchmarks. Like 3.0, it is
+  hosted only.</p>
 tags:
   - speech
   - audio
@@ -30,6 +55,11 @@ tags:
 model:
   open_weights: false
   architecture: moe
+  variants:
+    - name: Qwen-Audio-3.0-ASR
+      notes: "September 2026; includes the Qwen-Audio-3.0-ASR-Streaming variant"
+    - name: Qwen-Audio-3.1-ASR
+      notes: "October 2026 (arXiv 2610.28711); adds speaker-diarized ASR and, in the Next variant, general audio understanding; served as Flash-Filetrans, Flash-Streaming, Flash-Message, Flash and Next"
 paper:
   arxiv: "2609.07549"
 related: [qwen3-asr, qwen2-audio]

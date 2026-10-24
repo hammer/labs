@@ -8,16 +8,17 @@ sources:
   - label: Jiutian (China Mobile)
     url: https://jiutian.10086.cn
   - label: Artificial Analysis
-    url: https://artificialanalysis.ai/models/jt236b
-  - label: Artificial Analysis (non-reasoning)
     url: https://artificialanalysis.ai/models/jt-4-1-flash-236b-a21b
+  - label: Artificial Analysis (non-reasoning)
+    url: https://artificialanalysis.ai/models/jt-4-1-flash-236b-a21b-non-reasoning
 description: >
   <p><a href="/labs/china-mobile">China Mobile</a>'s Jiutian LLM line reaches
   frontier-adjacent territory: <strong>JT-4.1 Flash</strong> is a
   <strong>236B-total / 21B-active MoE</strong> with a
   <strong>256K-token context</strong>. Artificial Analysis scores it
   <strong>34 on Intelligence Index v4.3.2</strong> with reasoning and 27 in
-  non-reasoning mode (two AA pages, both dated July 9) &mdash; a notable result for a
+  non-reasoning mode (two AA pages, both dated July 9; AA flags the
+  non-reasoning figure as estimated) &mdash; a notable result for a
   model from a state-owned telecom's in-house AI brand rather than a dedicated
   frontier lab. Released 9 July 2026.</p>
 
@@ -41,8 +42,10 @@ model:
   intelligence_index: 34
   intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
-    # 27 was the non-reasoning page (jt-4-1-flash-236b-a21b); re-anchored to the
-    # reasoning page (jt236b, same July 9 release) on 2026-09-30, not a rescore.
+    # 27 was the non-reasoning reading (now served at
+    # jt-4-1-flash-236b-a21b-non-reasoning); re-anchored to the reasoning page
+    # on 2026-09-30, not a rescore. AA later retired the jt236b slug (404 by
+    # 2026-10-24); the reasoning page is now jt-4-1-flash-236b-a21b.
     - score: 27
       version: "AA v4.3.2"
       until: "2026-09-30"

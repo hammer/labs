@@ -1,0 +1,78 @@
+name: MAI-Base-2
+slug: mai-base-2
+lab: microsoft
+type: model
+date: 2026-10-15
+flagship: true
+sources:
+  - label: Announcement (Frontier Pre-training at Microsoft AI)
+    url: https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/
+description: >
+  <p><strong>Microsoft AI's first 1T+ pre-training run, disclosed as lab notes
+  rather than a model launch.</strong> The October 15 post describes MAI-Base-2
+  as "an MoE foundation model with <strong>80 billion active and 2.8 trillion
+  total parameters</strong>" &mdash; nearly triple the 1T total of
+  <strong>MAI-Base-1</strong>, the base architecture behind
+  <a href="/outputs/microsoft/mai-thinking-1">MAI-Thinking-1</a>. Microsoft
+  says it "trained MAI-Base-2 on <strong>16k GB200 GPUs over 38 days in August
+  and September 2026</strong>," with an average <strong>MFU of 21%</strong>
+  (normalized by 2.5 PFLOPS, the GB200's theoretical BF16 maximum) and
+  <strong>89% goodput</strong>. The training mixture is
+  <strong>50T tokens</strong>; the corpus "grew by roughly 36% from MAI-Base-1
+  to MAI-Base-2, measured in unique training tokens," and Microsoft repeats the
+  line that distinguished the MAI program from the start: "Our pre-training is
+  built on organic data which does not involve distillation from other
+  models."</p>
+
+  <p><strong>What changed in the recipe.</strong> Where MAI-Base-1 alternated
+  MoE with dense layers, Microsoft says it "adopt[s] MoE in every layer for
+  MAI-Base-2," with a multi-round <strong>dropless MoE</strong> that "achieves
+  fixed memory usage under arbitrary routing imbalance" and lifted MoE-layer
+  MFU from 24% to 35%. <strong>Muon replaces AdamW</strong> &mdash; it
+  "delivered more stable training dynamics and large efficiency gains over
+  AdamW," at a cost of <strong>2.1% (165 ms) of the average training iteration
+  time</strong> for the distributed Newton&ndash;Schulz orthogonalization. Vision
+  is native rather than bolted on: the model "is pre-trained natively with
+  vision using an <strong>encoder-free VLM architecture</strong>," and
+  "<strong>VLM data accounted for 18% of the 50T-token training mixture</strong>."
+  For stability at this scale Microsoft fits scaling laws for learning rate,
+  learning-rate&times;weight-decay and dropout ("These laws defined MAI-Base-2's
+  hyperparameters") and clips <em>activation</em> gradients "at selected places
+  in the network" rather than only parameter gradients.</p>
+
+  <p><strong>The headline claim is an efficiency ratio, not a score.</strong>
+  Microsoft says the recipe is "<strong>4.2&ndash;12.3x more FLOPs-efficient</strong>"
+  than the strongest open base model it benchmarked,
+  <strong>DeepSeek-V4-Pro-Base</strong>, and that "MAI-Base-2 outperforms every
+  open-weight model we tested on our held-out evaluations." No absolute
+  benchmark numbers appear anywhere in the post &mdash; the comparisons are
+  loss and held-out curves on Microsoft's own internal evaluations, so nothing
+  here is independently checkable.</p>
+
+  <p><strong>Status: this is a base model still in post-training, and there are
+  no weights.</strong> Microsoft states plainly that "MAI-Base-2 is currently
+  undergoing post-training, and we look forward to sharing more results soon,"
+  and that the eventual plan is to "license our model weights to trusted
+  partners through Foundry" &mdash; i.e. partner licensing, not a public
+  release. Also undisclosed: layer and expert counts, context length, precision
+  beyond the BF16 MFU normalization, and any release date. The post carries no
+  named authors.</p>
+tags:
+  - frontier
+  - moe
+  - multimodal
+  - pretraining
+  - proprietary
+model:
+  open_weights: false
+  architecture: moe
+  parameters: 2.8T
+  active_parameters: 80B
+  training_tokens: 50T
+  training_hardware: "16K GB200"
+  training_time: "38 days"
+  optimizer: Muon
+  license: Proprietary
+related:
+  - mai-thinking-1
+  - mai-models

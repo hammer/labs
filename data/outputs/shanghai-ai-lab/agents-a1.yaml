@@ -12,6 +12,14 @@ sources:
     url: https://github.com/InternScience/Agents-A1
   - label: Project Page
     url: https://internscience.github.io/Agents-A1/
+  - label: HuggingFace (Sage-A1.5)
+    url: https://huggingface.co/InternScience/Sage-A1.5
+  - label: "Paper (arXiv, Sage-A1.5)"
+    url: https://arxiv.org/abs/2610.28578
+  - label: Project Page (Sage-A1.5)
+    url: https://alpha-innovator.github.io/Sage-A1.5/
+  - label: ModelScope (Sage-A1.5)
+    url: https://modelscope.cn/models/InternScience/Sage-A1.5
 description: >
   <p>"Scaling the Horizon, Not the Parameters: Reaching Trillion-Parameter
   Performance with a 35B Agent" &mdash; InternScience's agentic VLM: a
@@ -23,7 +31,39 @@ description: >
   best-in-class against GPT-5.5, DeepSeek-V4-Pro, and Kimi-K2.6 on agentic
   and science benchmarks &mdash; GAIA 96.0, BrowseComp 75.5, HLE-with-tools
   47.6, IFBench 80.6, SciCode 44.3. Strong first-week traction (194 HF
-  likes). Base-model lineage is not stated on the card.</p>
+  likes).</p>
+
+  <p><strong>It is a post-train, not a from-scratch model.</strong> The card
+  does not name the base, but the paper does ("We fine-tune from
+  Qwen3.5-35B-A3B"), and the config.json is Alibaba's
+  (<code>Qwen3_5MoeForConditionalGeneration</code>, 40 layers, hidden size
+  2,048, 256 experts with 8 active, 248,320 vocabulary). The 35B / 3B-active
+  count therefore belongs to <a href="/outputs/alibaba/qwen3.5">Qwen3.5</a>
+  and is not recorded as Shanghai AI Lab's.</p>
+
+  <p><strong>Sage-A1.5</strong> (weights 15 October 2026, technical report
+  arXiv 2610.28578 on 20 October, Apache-2.0, with FP8 and GGUF builds) is the
+  second generation of the line, and the card names its lineage outright: "a
+  35B Mixture-of-Experts agentic model based on Qwen3.6 [Qwen3.6-35B-A3B] and
+  Agents-A1". Its config is the same Qwen3.5/3.6-MoE shape. The report adds
+  three capabilities on top of A1: <strong>agentic orchestration</strong>
+  (dispatching subagents with isolated contexts in parallel), an opt-in
+  <strong>verification mode</strong> in which the model reviews its own progress
+  mid-trajectory with no external critic, and <strong>open scientific
+  discovery</strong> case studies. Training is multi-domain SFT across Claude
+  Code, Codex and internal harnesses ("several hundred million supervised
+  tokens"), then outcome&ndash;process post-training with on-policy teacher
+  feedback. One teacher, a Qwen3.6-35B-A3B-based MLE specialist, lifted
+  MLE-Bench Lite medal rate from 37.9% to 72.7%, the same figures reported for
+  the separately released InternScience/MLExpert checkpoint. The card claims Sage-A1.5 posts the best
+  scores among the compared models, frontier systems such as Kimi-K3, GLM-5.3
+  and GPT-5.6-sol included, on XBench-DS-2510 (92.0), IFBench (81.6), PinchBench
+  (90.0) and FrontierScience-Olympiad (81.0). Among ~35B models it claims
+  BrowseComp 81.7 (82.8 with orchestration), SWE-bench Pro 61.2, AA-LCR 81.0
+  and HLE with tools 55.1. GAIA came in at 95.1, slightly <em>below</em> A1's
+  96.0. Against A1 the gains are on engineering: SWE-bench Pro +17.6,
+  SWE-bench Multilingual +14.0, MLE-Lite +21.3. All figures are self-reported;
+  Artificial Analysis has scored neither checkpoint.</p>
 tags:
   - agents
   - moe
@@ -32,10 +72,29 @@ tags:
 model:
   open_weights: true
   architecture: moe
-  parameters: 35B
-  active_parameters: 3B
+  # Derivative: A1 is fine-tuned from Qwen3.5-35B-A3B (paper); Sage-A1.5 from
+  # Qwen3.6-35B-A3B + Agents-A1 (card). No `parameters` on derivatives.
+  base_model: qwen3.5
   license: Apache 2.0
+  benchmark_scores:
+    - benchmark: GAIA
+      score: "96.0"
+    - benchmark: BrowseComp
+      score: "75.5"
+    - benchmark: HLE (with tools)
+      score: "47.6"
+    - benchmark: IFBench
+      score: "80.6"
+    - benchmark: SciCode
+      score: "44.3"
+  variants:
+    - name: Agents-A1
+      notes: "2026-06-26; 35B total / 3B active MoE VLM, fine-tuned from Qwen3.5-35B-A3B"
+    - name: Sage-A1.5
+      notes: "2026-10-15 (report arXiv 2610.28578, 2026-10-20); based on Qwen3.6-35B-A3B and Agents-A1; BF16, FP8, GGUF; card: XBench-DS-2510 92.0, IFBench 81.6, GAIA 95.1, BrowseComp 81.7, SWE-bench Pro 61.2, HLE w/ tools 55.1, AA-LCR 81.0"
 paper:
   arxiv: "2606.30616"
 related:
   - internagent
+  - qwen3.5
+  - qwen3.6-open

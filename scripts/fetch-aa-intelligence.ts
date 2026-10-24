@@ -76,7 +76,11 @@ async function fetchAaiiDataset(): Promise<Map<string, number>> {
   // snake_case schema with no `intelligence_index` key (it's computed
   // client-side), so it can't be scraped the same way — verify those by eye
   // on https://artificialanalysis.ai/models/<slug> (the "X (estimated)" figure).
-  if (map.size < 300) throw new Error(`Parsed only ${map.size} scored records — sentinel likely drifted, refusing to write`);
+  // Floor lowered 300 → 250 on 2026-10-24: AA pruned the payload from ~500
+  // records to 286 (274 scored, 266 unique slugs) with no version change
+  // (methodology still v4.3.2) and every record still matching the sentinel.
+  // A sentinel drift collapses the count to ~1, so 250 still catches it.
+  if (map.size < 250) throw new Error(`Parsed only ${map.size} scored records — sentinel likely drifted, refusing to write`);
   return map;
 }
 

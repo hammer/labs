@@ -35,9 +35,12 @@ tags:
 model:
   open_weights: false
   context_window: 524288
-  intelligence_index: 28
+  intelligence_index: 27
   intelligence_index_version: "AA v4.3.2"
   intelligence_index_history:
+    - score: 28
+      version: "AA v4.3.2"
+      until: "2026-10-24"
     - score: 33
       version: "AA v4.2"
       until: "2026-09-08"

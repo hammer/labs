@@ -13,6 +13,10 @@ sources:
     url: https://huggingface.co/open-athena/snowball-67b-a2b-base-262k-qk157
   - label: HuggingFace (262K base, QK 1.75)
     url: https://huggingface.co/open-athena/snowball-67b-a2b-base-262k-qk175
+  - label: HuggingFace (Marin Snowball 67B-A2B v0.1)
+    url: https://huggingface.co/open-athena/Marin-Snowball-67B-A2B-v0.1
+  - label: HuggingFace (Marin Snowball 67B-A2B v0.1.1)
+    url: https://huggingface.co/open-athena/Marin-Snowball-67B-A2B-v0.1.1
   - label: GitHub (262K checkpoint guide)
     url: https://github.com/marin-community/marin/issues/8977
   - label: GitHub (Marin vLLM fork for GrugMoE)
@@ -35,10 +39,29 @@ description: >
   serving them needs Marin's vLLM fork, which registers the GrugMoE
   architecture. Supervised fine-tuning at 262K context and RLVR runs on
   top of Snowball followed as further public experimental checkpoints in
-  September; the team, which also built an end-to-end post-training pipeline
-  for it, says the full release is coming soon. Snowball sits between the dense
+  September; the team also built an end-to-end post-training pipeline
+  for it. Snowball sits between the dense
   <a href="/outputs/open-athena/marin">Marin 32B</a> and the 535B-total,
   23B-active MoE that Marin began pretraining in August 2026.</p>
+
+  <p>The first named post-trained release, <strong>Marin Snowball 67B-A2B
+  v0.1</strong>, appeared on October 19. The card labels it a "research
+  artifact" that "has not been properly tested or evaluated." It starts from
+  a DARE-TIES merge of three Grug-67B-A2B / Snowball RLVR checkpoints, then
+  runs 14 updates of asynchronous RLOO-N (a leave-one-out policy gradient with
+  truncated importance sampling) on 64 H100s for policy training plus 48 for
+  inference. The 69,487 training tasks are 12,123 NVIDIA Nemotron tasks and
+  57,364 "structural closure" tasks, and both the task files and the configs
+  are public. On the team's own development validation set, which it has
+  inspected repeatedly, combined pass@1 rose from 41.2% to 50.2%: NVIDIA-task
+  reward improved and structural reward fell from 39.1 to 32.9. The card
+  states plainly that its inline BFCL-Parity, SWE-bench Verified and OT-TBLite
+  runs "encountered endpoint errors and timeouts. They do not establish valid
+  benchmark performance." <strong>v0.1.1</strong> (October 22) adds a
+  low-learning-rate identity SFT. It raises the 60-question identity panel
+  from 7/60 to 45/60 but regresses MATH500 from 461 to 449 of 500 and GSM8K
+  from 1,224 to 1,038 of 1,319, and the card calls it "not a regression-free
+  replacement." Both are OpenMDW-1.1 and need Marin's vLLM build.</p>
 tags:
   - moe
   - open-weight
@@ -62,6 +85,10 @@ model:
       notes: "Raised attention scale for 262K context (QK multiplier 1.75)"
     - name: snowball-67b-a2b-base-262k-qk175-skew2 / skew4 / skew8
       notes: "QK 1.75 with long-context documents upsampled 2x, 4x or 8x during the extension"
+    - name: Marin-Snowball-67B-A2B-v0.1
+      notes: "2026-10-19; RLOO-N RL (14 steps) from a DARE-TIES merge of Grug-67B-A2B/Snowball RLVR checkpoints; native dev-set pass@1 41.2 -> 50.2; card: external benchmark runs hit endpoint errors and do not establish valid benchmark performance"
+    - name: Marin-Snowball-67B-A2B-v0.1.1
+      notes: "2026-10-22; identity SFT on v0.1 (LR 1e-6, step 50); identity panel 7/60 -> 45/60; MATH500 461 -> 449/500, GSM8K 1224 -> 1038/1319 (regressions)"
 related:
   - marin
   - datakit

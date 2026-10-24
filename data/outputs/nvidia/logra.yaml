@@ -1,0 +1,54 @@
+name: "LoGRA: Scaling LLM Reinforcement Learning with Low-Rank Gradient Sketches"
+slug: logra
+lab: nvidia
+type: paper
+date: 2026-10-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.06647
+  - label: Code (Molt)
+    url: https://github.com/NVIDIA-NeMo/labs-molt
+description: >
+  <p>A memory-reduction method for RL post-training. LoGRA replaces each weight
+  matrix's full gradient with a <strong>low-rank sketch</strong> and represents
+  the update as the product of two thin matrices. The same compact form is used
+  for the policy-weight sync to the rollout engine. Because compressed updates
+  can overshoot, LoGRA adds <strong>predicted-KL step control</strong>: it
+  estimates how far an update will move the policy before applying it, then
+  rescales the update to fit a KL budget. The method ships in NVIDIA's
+  <a href="/outputs/nvidia/molt">Molt</a> RL framework.</p>
+
+  <p><strong>The result that matters is the 27B run.</strong> On
+  Qwen2.5-Math-1.5B and 7B, LoGRA cuts average training memory by
+  <strong>21.8% and 45.7%</strong> against dense Adam (three seeds each), with
+  matching or slightly higher peak pass@1. On
+  <a href="/outputs/alibaba/qwen3.8">Qwen3.8-27B</a> it trains
+  <strong>stably for over 1,100 steps on a single eight-GPU node</strong>
+  (Reasoning-Gym Hard), where dense Adam runs out of memory on the same
+  allocation. So the 27B claim is feasibility, not a matched accuracy
+  comparison: there is no dense baseline at that size to compare against.
+  Throughput gains are, in the paper's words, "modest" at 1.5B and 7B. Against
+  LoRA at 1.5B it uses less memory (7.2 vs 13.2 GiB) with similar pass@4 and
+  slightly lower pass@1 (68.5 vs 70.5).</p>
+
+  <p>Affiliation: NVIDIA, with
+  <a href="/people/jan-kautz">Jan Kautz</a> among the authors. Note that the
+  NVIDIA affiliation line appears only from v2 onward; the v1 title page
+  carried no affiliations.</p>
+tags:
+  - rl
+  - efficiency
+  - post-training
+paper:
+  arxiv: "2610.06647"
+  authors:
+    - Shaokun Zhang
+    - Yifan Zhang
+    - Jian Hu
+    - Yueying Li
+    - Hao Zhang
+    - Binfeng Xu
+    - Jan Kautz
+    - Yi Dong
+related:
+  - molt

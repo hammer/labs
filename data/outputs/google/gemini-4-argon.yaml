@@ -11,6 +11,10 @@ sources:
     url: https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/
   - label: Evaluation methodology and results (PDF)
     url: https://storage.googleapis.com/deepmind-media/gemini/gemini_4_argon_model_evaluation.pdf
+  - label: General availability (Google, Oct 13, 2026)
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/
+  - label: Gemini API changelog
+    url: https://ai.google.dev/gemini-api/docs/changelog
   - label: Fairwind Program
     url: https://deepmind.google/fairwind-program/
   - label: Artificial Analysis
@@ -20,9 +24,11 @@ description: >
   announced September 30, 2026 by Koray Kavukcuoglu and released first to a set
   of trusted cyber defenders through the <strong>Fairwind Program</strong>
   rather than to the public. Google is running it through the US government's
-  voluntary process for pre-release model access while it widens availability,
-  with developers, enterprises and consumers to follow, starting with paid API
-  customers and Google AI Ultra subscribers. The headline capability change is
+  voluntary process for pre-release model access while it widened
+  availability. General availability followed on <strong>October 13</strong>,
+  globally through the API in AI Studio and the Gemini platform, in Google
+  Antigravity for AI Ultra subscribers, and in the Gemini app and AI Mode in
+  Search for AI Pro and Ultra subscribers. The headline capability change is
   room to think: the <strong>output limit rises to 1M tokens from 64K</strong>,
   which Google frames as letting the model generate hundreds of thousands of
   tokens in a single trajectory instead of breaking a long job into pieces.
@@ -33,8 +39,11 @@ description: >
   Astra</a> and Claude Fable 5.1, and behind
   <a href="/outputs/anthropic/claude-opus-5.5">Claude Opus 5.5</a> (58) and
   Sonnet 5.5 (56). Introductory pricing is $2 per million input tokens and $10
-  per million output, with cached input 95% off, rising to $4 and $20 once the
-  introductory period ends. Architecture, parameter count and training scale
+  per million output, with cached input 95% off, rising to $4 and $20 when the
+  introductory period ends on November 30, 2026. The GA post describes the
+  limit as 1M tokens shared between input and output, and adds two vendor
+  claims: 87% on the ERQA embodied-reasoning benchmark and first place on the
+  Vals Index. Architecture, parameter count and training scale
   are undisclosed.</p>
 
   <p>Google's evaluation sheet (highest thinking setting, pass@1, against GPT-6
@@ -58,7 +67,7 @@ description: >
   guardrails</strong>. Wiz is already running it in its Scan for Good program,
   where it found a critical flaw exposing personal information in healthcare
   software used by hospitals worldwide that earlier frontier models had missed.
-  Google says it is hardening four areas before a broad release: misuse
+  Google said it was hardening four areas before the broad release: misuse
   defenses for cyber and CBRN under its Frontier Safety Framework, including
   monitoring the model's internal activations; resistance to indirect prompt
   injection, where it leads Gray Swan's IPI benchmark; monitors on the
@@ -105,6 +114,8 @@ model:
       score: "68.0%"
     - benchmark: Terminal-Bench 4.0
       score: "57.4%"
+    - benchmark: ERQA
+      score: "87%"
 related:
   - gemini-3.8-flash
   - gemini-3.8-flash-cyber

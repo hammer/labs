@@ -53,7 +53,8 @@ async function fetchAaScores(): Promise<Map<string, number>> {
   const body = await res.text();
   // Record sentinels live in scripts/aa-payload.ts (three shapes so far; see its header).
   const map = parseAaScores(body);
-  if (map.size < 300) throw new Error(`Parsed only ${map.size} records — sentinel drifted?`);
+  // 300 → 250 on 2026-10-24: AA pruned the payload to 286 records (see fetch-aa-intelligence.ts).
+  if (map.size < 250) throw new Error(`Parsed only ${map.size} records — sentinel drifted?`);
   return map;
 }
 

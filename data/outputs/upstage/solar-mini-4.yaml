@@ -14,6 +14,8 @@ sources:
     url: https://www.aitimes.com/news/articleView.html?idxno=215245
   - label: CSAT math evaluation (AI Times)
     url: https://www.aitimes.com/news/articleView.html?idxno=215457
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/solar-mini4
   - label: OpenRouter
     url: https://openrouter.ai/upstage/solar-mini4
 description: >
@@ -41,15 +43,26 @@ description: >
   the architecture and training data validated in
   <a href="/outputs/upstage/solar-open-2">Solar Open 2</a> and performs close
   to Solar Pro 4. Upstage has not said whether the model was pretrained from
-  scratch, so the 35B/3B figures stay out of the structured scale fields. The
+  scratch. The 35B total / 3B active shape is also exactly that of the open
+  Qwen3.5/3.6-35B-A3B checkpoints, and earlier Solar models were built on
+  external bases. Given both, the 35B/3B figures stay out of the structured
+  scale fields and the model is marked as not established from scratch. The
   only outside numbers so far come from a Sogang University team that tested
   the preview on 46 Korean CSAT math questions with Python tool use, as
   reported by AI Times. It solved 93.5% of the questions within three
   attempts and 76.8% on the first attempt, against 87.7% for Solar Pro 4. It
   averaged 14.9 seconds per attempt, against 120.5 seconds for Solar Pro 4.
   The team cautioned that the models were reached through different access
-  routes and infrastructure. Artificial Analysis had not scored the model at
-  filing.</p>
+  routes and infrastructure.</p>
+
+  <p>Artificial Analysis lists it as a reasoning model (release date
+  September 22) and scores it <strong>24 on Intelligence Index v4.3.2</strong>.
+  On the same index version that places it just below <a
+  href="/outputs/upstage/solar-open-2">Solar Open 2</a> and Solar Pro 4,
+  roughly consistent with Upstage's "close to Solar Pro 4" pitch for a model
+  at a fraction of the price. AA records a
+  1,048,576-token context; the figure here stays at Upstage's documented
+  512K.</p>
 
   <p>Upstage launched <strong>Solar Decide</strong> (beta) the same day, a
   "structured decision model, served as a System One endpoint on Solar Mini
@@ -70,9 +83,14 @@ model:
   # Upstage has not said whether Solar Mini 4 was pretrained from scratch or
   # derived from another checkpoint (earlier Solar models were depth-up-scaled
   # from external bases), so the figures stay in the description until
-  # provenance is disclosed.
+  # provenance is disclosed. pretrained_from_scratch: false keeps its AAII
+  # out of Upstage's from-scratch Intelligence ranking: there is no
+  # primary-source from-scratch claim, and 35B-A3B matches Qwen3.5/3.6-35B-A3B.
   architecture: moe
+  pretrained_from_scratch: false
   context_window: 524288
+  intelligence_index: 24
+  intelligence_index_version: "AA v4.3.2"
   license: Proprietary
 related:
   - solar-pro-4

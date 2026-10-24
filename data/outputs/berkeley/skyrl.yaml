@@ -8,6 +8,8 @@ sources:
     url: https://github.com/NovaSky-AI/SkyRL
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2511.16108
+  - label: v0.4.0 release notes (2026-10-01)
+    url: https://github.com/NovaSky-AI/SkyRL/releases/tag/skyrl-v0.4.0
 description: >
   <p>Modular full-stack RL library for LLM agents from the NovaSky team
   (co-developed with Anyscale): trained SkyRL-SQL-7B, SkyRL-Agent-8B,
@@ -15,11 +17,29 @@ description: >
   training cost); the v0.1 "tx" engine adds a Tinker-compatible local RL
   backend. One of the three reference open agent-RL stacks alongside
   veRL and rLLM.</p>
+
+  <p><strong>v0.4.0</strong> (2026-10-01) targets large-scale post-training.
+  It adds training support for GLM 5.2/5.3 and GLM 5.3 Flash, Kimi K2.6/2.7
+  (experimental), Qwen3.8 and Nemotron 3.5-Lightning. For Kimi K2.6/2.7 the
+  team says LoRA training of the 1T-parameter model fits on <strong>two B300
+  nodes</strong>, with INT4 serving for rollouts and fake quantization on the
+  trainer to limit the train/inference mismatch. On stability, it adds
+  top-p/top-k sampler replay (the keep-sampling-mask approach from
+  DeepSeek-V3.2) and a reworked rollout routing replay (R3). The team reports
+  that R3 throughput on Nemotron 3 Super rose from 111 to 483 tokens/s/GPU.
+  Blockwise FP8 and MXFP8 RL are also new. The team says FP8 tracks BF16
+  convergence while cutting step time by up to 23%. Weight sync gains XOR
+  delta sync for disaggregated RL over ethernet, a sharded NIXL/RDT backend
+  (Kimi K2 BF16 weights transferred in 7.53 s on 48 8&times;H100 nodes), and
+  in-memory LoRA sync. The native SFT trainer now handles 10B&ndash;1T+ token
+  datasets. All figures are the team's own release-note numbers; none is
+  independently measured. Apache 2.0; about 2.4K GitHub stars.</p>
 tags:
   - post-training
   - infrastructure
   - agents
 library:
   github: https://github.com/NovaSky-AI/SkyRL
+  license: Apache 2.0
 paper:
   arxiv: "2511.16108"

@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Announcement
     url: https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.24628
   - label: HuggingFace
     url: https://huggingface.co/meta-models/Muse-Glimmer-30B
   - label: Docs
@@ -17,10 +19,11 @@ description: >
   <p>Meta Superintelligence Labs' first <strong>open-weight</strong> Muse
   model &mdash; a <strong>30B dense, natively multimodal</strong> model built
   for <strong>always-on, on-device agentic workflows</strong>, released
-  <strong>Apache 2.0</strong> on August 10, 2026. Rather than pretraining from
-  scratch, Muse Glimmer was <strong>distilled from Meta's proprietary
-  <a href="/outputs/meta/muse-spark-1.2">Muse Spark</a></strong> via logit
-  distillation on the teacher's outputs, then aligned with safety SFT and RL.
+  <strong>Apache 2.0</strong> on August 10, 2026. Its pretraining is
+  <strong>logit distillation from Meta's proprietary
+  <a href="/outputs/meta/muse-spark-1.2">Muse Spark</a></strong> into freshly
+  initialised weights rather than a fine-tune of an existing checkpoint, then
+  aligned with SFT, on-policy distillation and RL.
   Architecturally it is a "Dense Causal Transformer with Perception Encoder"
   (52 layers, ~29.6B language-model params plus a ~1.8B ViT-G/14 vision
   encoder), <strong>128K context</strong>, text and image in &mdash; a
@@ -38,6 +41,26 @@ description: >
   otherwise-proprietary Muse line (<a href="/outputs/meta/muse-spark">Spark</a>,
   <a href="/outputs/meta/muse-code">Muse Code</a>). AA had not yet scored it at
   release.</p>
+
+  <p><strong>The technical report</strong>
+  (<a href="https://arxiv.org/abs/2610.24628">arXiv 2610.24628</a>, posted
+  2026-10-17, ten weeks after the weights) explains the two design choices that
+  the card only stated. <strong>Dense over MoE was a measured decision</strong>,
+  not a default. Meta trained scaling ladders at a fixed 32GB inference-memory
+  ceiling: a dense ladder at 550 tokens-per-parameter against 1:8 and 1:16 MoE
+  ladders at 2,800 and 6,000 TPP. Under that constraint dense was <strong>2&ndash;2.5&times;
+  more compute-efficient</strong>. That runs against the 2026 default, and it
+  is scoped to memory-bound on-device targets, where the MoE's total parameters
+  are the cost. <strong>Pretraining was co-distillation</strong>. The top-256
+  logits were logged from Muse Spark <em>during Spark's own pretraining</em>,
+  and the student was trained on KL alone for the first 95% of the run, then on
+  cross-entropy for the last 5% to correct top-k truncation bias. Four
+  checkpoints spaced 600 steps apart were souped to initialise mid-training.
+  Architecture: 52 layers, hidden 6656, GQA 32:2, a 3-local:1-global
+  sliding-window pattern (window 2048) with gated attention, and the Llama 4 BPE
+  tokenizer (202,048 tokens). The report does not give a total token count or
+  hardware. Its quantisation study puts the BF16 average at 75.7 across 15
+  benchmarks against 74.8 for Q4_K_M and 74.4 for NVFP4/MXFP8.</p>
 tags:
   - open-weight
   - agents
@@ -79,6 +102,8 @@ model:
       score: "75.5"
     - benchmark: MMMU Pro
       score: "74"
+paper:
+  arxiv: "2610.24628"
 related:
   - muse-spark-1.2
   - muse-code

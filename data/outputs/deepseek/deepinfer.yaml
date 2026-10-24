@@ -1,0 +1,64 @@
+name: DeepInfer
+slug: deepinfer
+lab: deepseek
+type: library
+date: 2026-10-16
+sources:
+  - label: GitHub
+    url: https://github.com/deepseek-ai/DeepInfer
+description: >
+  <p>DeepSeek's own inference engine, open-sourced on October 16, 2026. The
+  README describes it as "the high-performance inference framework that
+  powers DeepSeek's large-scale production services". Until now the lab had
+  released the parts (<a href="/outputs/deepseek/flashmla">FlashMLA</a>,
+  <a href="/outputs/deepseek/deepgemm">DeepGEMM</a>,
+  <a href="/outputs/deepseek/deepep">DeepEP</a>,
+  <a href="/outputs/deepseek/eplb">EPLB</a>,
+  <a href="/outputs/deepseek/deepselect">DeepSelect</a>), and this is the
+  engine they plug into. It supports one model,
+  <a href="/outputs/deepseek/deepseek-v4.1-flash">DeepSeek-V4.1-Flash</a>,
+  and the default checkpoint is the October 17 <strong>V4.1-Flash-1017</strong>
+  update. It runs on two hardware targets, <strong>NVIDIA SM100</strong>
+  (Blackwell) GPUs and <strong>Huawei Ascend 950</strong> NPUs, which extends
+  the dual stack of the September
+  <a href="/outputs/deepseek/deepseek-ascend-kernels">Ascend kernel ports</a>
+  from kernels to the whole runtime. DeepSeek says it was "originally built
+  primarily on vLLM", with ideas taken from SGLang and TensorRT-LLM.</p>
+
+  <p>The feature list covers what V4.1-Flash's architecture needs. Parallelism
+  is attention data-parallel with balanced context parallelism, plus MoE
+  expert parallelism with EPLB. <a href="/outputs/deepseek/dspark">DSpark</a>
+  speculative decoding comes with confidence-scheduled verification. SWA
+  bounded replay replays only a short suffix (140 tokens by default) at decoder
+  prefill, and a zero-overhead asynchronous batch scheduler is on by default.
+  It also offers batch-invariant inference and deterministic sampling (both
+  NVIDIA-only), and regex, JSON-schema and EBNF structured outputs. Kernels
+  come from the DeepSeek libraries above, TileKernels, and custom TileLang
+  ops. The release is <strong>offline inference only</strong>. The README
+  lists what a full service still needs and the release leaves out: a KV-cache
+  system, VE/prefill/decode disaggregation, and load balancing
+  across data-parallel replicas. The published throughput curves were
+  measured on 4 SM100 GPUs for prefill and 64 for decode, each within one
+  scale-up domain, and are not independently reproduced. Apache 2.0. It had
+  about <strong>21.3K stars and 2.4K forks</strong> eight days after
+  release.</p>
+tags:
+  - infrastructure
+  - inference
+  - efficiency
+  - moe
+  - open-source
+library:
+  github: https://github.com/deepseek-ai/DeepInfer
+  language: Python
+  license: Apache 2.0
+related:
+  - deepseek-v4.1-flash
+  - dspark
+  - flashmla
+  - deepgemm
+  - deepep
+  - eplb
+  - deepselect
+  - deepseek-ascend-kernels
+  - vllm-original

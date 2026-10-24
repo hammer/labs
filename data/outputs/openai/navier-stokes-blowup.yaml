@@ -13,6 +13,10 @@ sources:
     url: https://cdn.openai.com/pdf/315b36cd-ec98-4023-8342-93345194ece1/euler.pdf
   - label: GitHub (Lean 4 formalizations)
     url: https://github.com/openai/NavierStokesAndEuler
+  - label: "Sharing AI progress in mathematics (Oct 6, 2026)"
+    url: https://openai.com/index/sharing-ai-progress-in-mathematics
+  - label: GitHub (openai/math manuscript collection)
+    url: https://github.com/openai/math
 description: >
   <p>OpenAI's claim on a Millennium Prize problem. The 166-page paper,
   authored simply "OpenAI," states as Theorem 1.1 that for every viscosity
@@ -34,6 +38,22 @@ description: >
   Astra handling the Lean formalization. The result awaits independent
   mathematical review, and the announcement drew a priority dispute. Two
   smaller Lean repositories on prime gaps preceded it on September 2.</p>
+
+  <p>On October 6 OpenAI widened the program into
+  <a href="https://github.com/openai/math">openai/math</a> (Apache 2.0),
+  which the README describes as 719 manuscripts in 372 families "produced by
+  an internal OpenAI model," added because "performance on our existing
+  mathematical evaluations saturated." By the README's account the unreleased
+  model was posed about 4,000 problems and spent an average of three hours of
+  ChatGPT Pro thinking compute on each result. About 42% of the top-line
+  results are formalized in Lean so far, and abridged reasoning summaries are
+  released for ten families. Two results did not follow the fixed procedure,
+  a zero-free region for the Riemann zeta function and the Hodge conjecture
+  for CM abelian varieties, and the Re(s) &gt; 11/12 write-up was edited by
+  humans. The README also warns that unformalized results "could have
+  issues." The collection had 15,400 GitHub stars by October 24. The manuscripts
+  are posted as preprints, and the significance threshold used to select
+  them is OpenAI's own.</p>
 tags:
   - math
   - agents

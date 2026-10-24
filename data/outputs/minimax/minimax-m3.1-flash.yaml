@@ -1,0 +1,110 @@
+name: MiniMax-M3.1-Flash
+slug: minimax-m3.1-flash
+lab: minimax
+type: model
+date: 2026-10-19
+flagship: true
+sources:
+  - label: Announcement (MiniMax blog)
+    url: https://www.minimax.io/blog/minimax-m31f
+  - label: HuggingFace
+    url: https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/minimax-m3-1-flash
+  - label: OpenRouter
+    url: https://openrouter.ai/minimax/minimax-m3.1-flash
+description: >
+  <p>A point release of <a href="/outputs/minimax/minimax-m3">MiniMax-M3</a>
+  that keeps the parameter budget and spends the work on serving cost. The
+  model card describes the same natively multimodal MoE (text, image and video
+  in, text out) at <strong>about 428B total and 23B active</strong>, and
+  config.json matches M3's shape: 60 layers, hidden size 6144, 64 query heads
+  and 4 KV heads, 128 routed experts with top-4 routing plus one shared expert,
+  and a 1,048,576-token position limit. The card lists three changes, all
+  aimed at inference. First, <strong>sparse attention throughout</strong>:
+  the first three full-attention layers M3 kept are replaced, so
+  <a href="/outputs/minimax/minimax-sparse-attention">MiniMax Sparse
+  Attention</a> now covers all 60 layers. Second,
+  <strong>quantization-aware training</strong> of the routed experts and the
+  attention paths. The checkpoint ships as MXFP8 with NVFP4 experts rather
+  than as a post-hoc quantization. Third, a
+  <a href="/outputs/deepseek/dspark">DSpark</a> draft head replaces M3's
+  EAGLE-style MTP, so MiniMax is shipping DeepSeek's speculative-decoding
+  design in its own model. MiniMax says the result is "nearly three times
+  faster" online inference, 200+ tokens/s peak and 170+ median, and 70% lower
+  cost on agentic tasks than its predecessor. The API price is $0.15 in /
+  $0.60 out / $0.015 cached input per 1M tokens.</p>
+
+  <p><strong>Independent measurement backs the capability claim more than
+  the self-reported table does.</strong> Artificial Analysis scores it
+  <strong>43</strong> on Intelligence Index v4.3.2, against 29 for M3 on the
+  same version. That is a 14-point gain inside a minor version, and it puts
+  M3.1-Flash just behind DeepSeek-V4.1-Flash-1017 (45) and ahead of the
+  original V4.1-Flash (39). The vendor table, which uses a mix of third-party
+  harnesses, shows the same pattern: BankerToolBench 76.2, DeepSWE v1.1 73.7,
+  Automation-Bench v1.0.6 62.8, OSWorld 2.0 61.7, CyberGym 82.2, Agents' Last
+  Exam 29.6, HLE (text-only, no tools) 43.4, and Terminal-Bench 4.0 38.1,
+  where Opus 5 scores 51.8. The blog says the anonymous "Space Bunny" model,
+  which served more than 200T tokens before launch, was an early version, and
+  that an M3.1 Pro "will also arrive later".</p>
+
+  <p>The launch post said "model weights will be released later", but the
+  HuggingFace repo was created on October 17 and holds 49 public, ungated
+  safetensors shards under the MiniMax Community License (as for M3). AA's
+  page still labels the model proprietary, which is out of date. Nothing on
+  the card says whether this is a continued-training checkpoint or a retrain.
+  "Building on MiniMax-M3" and the identical shape suggest the former, so the
+  entry records M3 as its base. Undisclosed: training tokens, the post-training
+  recipe beyond QAT and sparsification, and any technical report (the card
+  links only M3's arXiv paper).</p>
+tags:
+  - frontier
+  - open-weight
+  - moe
+  - multimodal
+  - agentic
+  - coding
+  - efficiency
+  - quantization
+model:
+  open_weights: true
+  architecture: moe
+  # Same-lab derivative: the card says it is "building on MiniMax-M3" and
+  # "retains M3's core mixture-of-experts architecture"; config shape is
+  # identical. Parameters are left on the base (minimax-m3, 428B).
+  base_model: minimax-m3
+  active_parameters: 23B
+  num_experts: 128
+  top_k: 4
+  context_window: 1048576
+  intelligence_index: 43
+  intelligence_index_version: "AA v4.3.2"
+  license: MiniMax Community License
+  benchmark_scores:
+    - benchmark: BankerToolBench
+      score: "76.2"
+    - benchmark: DeepSWE v1.1
+      score: "73.7"
+    - benchmark: Automation-Bench v1.0.6
+      score: "62.8"
+    - benchmark: OSWorld 2.0
+      score: "61.7"
+    - benchmark: CyberGym
+      score: "82.2"
+    - benchmark: Agents' Last Exam
+      score: "29.6"
+    - benchmark: Terminal-Bench 4.0
+      score: "38.1"
+    - benchmark: HLE (text-only, no tools)
+      score: "43.4"
+    - benchmark: LOCA-Bench 256K
+      score: "60.3"
+    - benchmark: PostTrain Bench v1.1
+      score: "39.3"
+    - benchmark: NL2Repo-Bench
+      score: "61.2"
+related:
+  - minimax-m3
+  - minimax-sparse-attention
+  - dspark
+  - deepseek-v4.1-flash

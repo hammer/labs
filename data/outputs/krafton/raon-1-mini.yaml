@@ -1,0 +1,96 @@
+name: Raon-1 mini (preview)
+slug: raon-1-mini
+lab: krafton
+type: model
+date: 2026-10-21
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/KRAFTON/Raon-1-mini-preview
+  - label: GitHub
+    url: https://github.com/krafton-ai/Raon-1-mini-preview
+  - label: Playground
+    url: https://raon-mini.krafton.ai/en
+description: >
+  <p>KRAFTON AI's first Raon language model, after the <a
+  href="/outputs/krafton/raon-speech">Raon-Speech</a>, <a
+  href="/outputs/krafton/raon-opentts">Raon-OpenTTS</a> and <a
+  href="/outputs/krafton/raon-visionencoder">vision-encoder</a> releases. It is a
+  <strong>28.8B total / 4.3B active MoE</strong> (marketed as 30B-A4B) that the
+  card says was "designed and <strong>trained from scratch</strong> by KRAFTON
+  AI". The architecture backs that up: it matches no existing open model. The
+  config declares its own <code>Raon1MiniForCausalLM</code> with a 259,840-token
+  vocabulary, and the design is a set of KRAFTON variants on recent Chinese-lab
+  ideas. 18 of 25 layers are <strong>Raon Delta Attention</strong>, which
+  "decouples the erase and write gates of Kimi Delta Attention". The other 7
+  are gated MLA, so only those keep a KV cache (about 8 KiB per token in BF16).
+  There is no positional encoding at all (NoPE). <strong>Raon-mHC</strong>
+  (4 streams) is a cheaper version of DeepSeek's manifold-constrained
+  hyper-connections. The MoE layers route 6 of 128 experts plus one shared
+  expert with sigmoid routing, and use a new SiTU-GLU activation. Native
+  context is <strong>262,144 tokens</strong>. Trained on Korean, English,
+  Japanese, Chinese, Spanish, French and Thai. Training tokens, data and
+  compute are not disclosed.</p>
+
+  <p>This is explicitly <strong>a preview, "not a final model"</strong>, with
+  the final release and a technical report still to come. It is designed for
+  thinking mode only. Weights are Apache 2.0 behind an auto-approved access
+  gate, in BF16, MXFP8 and NVFP4 (the NVFP4 build fits a single 32 GB RTX 5090)
+  plus GGUF and MLX. A DFlash2 speculative-decoding draft model is included,
+  claimed at up to 2.18&times; output throughput on a B300.</p>
+
+  <p>The self-reported table compares against Qwen3.6-35B-A3B and <a
+  href="/outputs/google/gemma-4">Gemma 4</a> 26B-A4B, all judged by
+  gpt-5.6-luna, and the result is mixed rather than a clean sweep. Raon leads
+  on IFBench <strong>84.2</strong> (66.6 / 80.9), SWE-bench Verified
+  <strong>70.8</strong> with mini-SWE-agent (63.2 / 61.6), BrowseComp-Plus
+  <strong>55.7</strong> (34.8 / 32.2), GPQA Diamond 84.3 and AIME 2026 93.3.
+  It trails clearly on MMLU-Pro <strong>76.5</strong> (85.9 / 82.9),
+  Terminal-Bench Lite 47.0 (63.3 / 52.0) and BFCL v4 59.8, which is typical of
+  a 4B-active model trained without a large external base. KRAFTON's own
+  Korean chatbot benchmark (92.9) is internal and unreleased. Not on
+  Artificial Analysis at filing.</p>
+tags:
+  - moe
+  - open-weight
+  - reasoning
+  - multilingual
+  - efficiency
+model:
+  open_weights: true
+  architecture: moe
+  parameters: 28.8B
+  active_parameters: 4.3B
+  num_experts: 128
+  top_k: 6
+  context_window: 262144
+  license: Apache 2.0
+  benchmark_scores:
+    - benchmark: MMLU-Pro
+      score: "76.5"
+    - benchmark: GPQA Diamond
+      score: "84.3"
+    - benchmark: AIME 2026
+      score: "93.3"
+    - benchmark: HMMT Feb 2026
+      score: "84.1"
+    - benchmark: IFBench
+      score: "84.2"
+    - benchmark: LiveCodeBench v6
+      score: "81.6"
+    - benchmark: SWE-bench Verified
+      score: "70.8"
+      mode: mini-SWE-agent
+    - benchmark: Terminal-Bench Lite
+      score: "47.0"
+    - benchmark: BrowseComp-Plus
+      score: "55.7"
+    - benchmark: AA-LCR
+      score: "67.3"
+  variants:
+    - name: Raon-1-mini-preview
+      notes: "28.8B total / 4.3B active; 25 layers (18 RDA + 7 gated MLA), hidden 2,560; BF16, MXFP8, NVFP4, GGUF, MLX; DFlash2 draft model"
+related:
+  - raon-speech
+  - raon-visionencoder
+  - raon-opentts

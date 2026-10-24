@@ -4,6 +4,12 @@ lab: ibm
 type: model
 date: 2026-05-24
 sources:
+  - label: Launch blog (HuggingFace, Oct 14, 2026)
+    url: https://huggingface.co/blog/ibm-granite/granite-switch-4-1
+  - label: HuggingFace (30B)
+    url: https://huggingface.co/ibm-granite/granite-switch-4.1-30b
+  - label: HuggingFace (8B)
+    url: https://huggingface.co/ibm-granite/granite-switch-4.1-8b
   - label: HuggingFace (30B Preview)
     url: https://huggingface.co/ibm-granite/granite-switch-4.1-30b-preview
   - label: HuggingFace (8B Preview)
@@ -19,8 +25,21 @@ description: >
   the joint-training compromises of standard MoE adapter merging.</p>
 
   <p>Three sizes (3B / 8B / 30B Preview) all built on Granite 4.1 base with
-  128K context. Apache 2.0. Discovered via HF org probe &mdash; no
-  announcement blog at release.</p>
+  128K context. Apache 2.0. The previews were found through an HF org
+  probe and had no announcement blog.</p>
+
+  <p>The non-preview <strong>granite-switch-4.1-30b</strong> and
+  <strong>-8b</strong> followed on October 14, 2026 with a launch blog
+  ("Chat, Decisions, and Speech from One Endpoint"). They carry a slimmer
+  bundle: two aLoRA adapters, <code>decision</code> (returns a softmax over
+  labelled options in one forward pass) and <code>guardian-core</code> (safety
+  risk detection), plus an embedded 470M English ASR model,
+  granite-speech-5.0-470m-turboctc. Audio is transcribed in a cascade and the
+  transcript is spliced into the chat context. The card says the speech
+  encoder and the LLM "are not yet jointly trained." On the public Decision
+  Index v0.3 fast subset (1,068 rows), IBM reports an overall 50.1 for the
+  30B decision adapter and 42.9 for the 8B. The full Granite Libraries bundle
+  stays in the preview checkpoints.</p>
 tags:
   - foundational
   - open-weight
@@ -38,5 +57,11 @@ model:
       parameters: 8B
     - name: granite-switch-4.1-30b-preview
       parameters: 30B
+    - name: granite-switch-4.1-8b
+      parameters: 8B
+      notes: "GA 2026-10-14; decision + guardian-core aLoRAs + embedded granite-speech-5.0-470m-turboctc ASR; Decision Index v0.3 fast subset 42.9"
+    - name: granite-switch-4.1-30b
+      parameters: 30B
+      notes: "GA 2026-10-14; decision + guardian-core aLoRAs + embedded granite-speech-5.0-470m-turboctc ASR; Decision Index v0.3 fast subset 50.1"
 related:
   - granite-4.1

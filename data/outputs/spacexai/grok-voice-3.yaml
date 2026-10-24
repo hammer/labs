@@ -1,0 +1,71 @@
+name: Grok Voice 3.0
+slug: grok-voice-3
+lab: spacexai
+type: model
+date: 2026-10-14
+sources:
+  - label: API release notes (docs.x.ai)
+    url: https://docs.x.ai/docs/release-notes
+  - label: Artificial Analysis (Speech to Speech Index)
+    url: https://artificialanalysis.ai/speech-to-speech
+description: >
+  <p><strong>SpaceXAI's third-generation speech-to-speech model, and currently
+  the top-ranked model on Artificial Analysis's Speech to Speech
+  Index.</strong> AA scores <strong>Grok Voice 3.0 at 86.9</strong>,
+  <strong>first of all models measured</strong>, ahead of GPT-Live-1 (Astra,
+  medium) at 83.2, Gemini 3.8 Live Extended Thinking at 82.6 and
+  <a href="/outputs/spacexai/grok-voice-think-fast-2">the 2.0 generation</a> at
+  81.3 &mdash; a <strong>5.6-point generational gain</strong> on an
+  equal-weighted composite of Speech Reasoning (Big Bench Audio), agentic
+  performance (&tau;-Voice), arena preference and task success rate. AA's
+  component figures: <strong>&tau;-Voice 71.6%</strong>,
+  <strong>task success rate 94.8%</strong>, <strong>Full-Duplex-Bench
+  97.0%</strong>, arena preference Elo 1064, and <strong>time to first audio
+  0.81 s</strong>, at a measured $4.80 per hour of input audio on the Big Bench
+  Audio subset. AA's Big Bench Audio number is inconsistent on its own page
+  &mdash; 99% in the summary table against 98.5% in the FAQ &mdash; so it is
+  left out of the structured scores here.</p>
+
+  <p><strong>The release itself is a changelog line, not a launch post.</strong>
+  x.ai published no announcement that is reachable (x.ai/news returns 403), and
+  the only primary record is the API release notes: "<code>grok-voice-3.0</code>
+  is now available with Speech to Speech, at the same price as Grok Voice 2.0,"
+  with "The API is unchanged," <code>grok-voice-latest</code> now pointing at
+  3.0 "so sessions that use the alias are upgraded automatically," and
+  <code>grok-voice-2.0</code> <strong>deprecated</strong>. The notes are dated
+  only "October"; the <strong>October 14 date here comes from secondary
+  coverage and is not confirmed by a primary source</strong>. Price parity with
+  2.0 implies $0.08 per audio minute, the figure x.ai published for the previous
+  generation, but 3.0's own rate card is not stated in the notes.</p>
+
+  <p><strong>Nothing technical is disclosed.</strong> No parameter count,
+  architecture, training data, language coverage or vendor benchmark table
+  &mdash; where the 2.0 release at least described RL for conversational
+  behaviour and tool use with reasoning in parallel with speech, 3.0 arrives as
+  a drop-in model-string swap whose only public evidence is third-party. Note
+  that AA now lists the predecessor as "Grok Voice 2.0" at 81.3, below the
+  82.9% recorded on its Speech-to-Speech Quality Index at the time that model
+  was filed; the index has been renamed and recomposed since, so the two
+  generations should only be compared within AA's current table.</p>
+tags:
+  - audio
+  - speech
+  - multimodal
+  - agents
+  - proprietary
+model:
+  open_weights: false
+  license: Proprietary
+  benchmark_scores:
+    - benchmark: AA Speech to Speech Index
+      score: "86.9 (#1)"
+    - benchmark: tau-Voice (AA agentic)
+      score: "71.6%"
+    - benchmark: Task success rate (AA)
+      score: "94.8%"
+    - benchmark: Full-Duplex-Bench (AA conversational dynamics)
+      score: "97.0%"
+    - benchmark: Time to first audio (AA)
+      score: "0.81 s"
+related:
+  - grok-voice-think-fast-2

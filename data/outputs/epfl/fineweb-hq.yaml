@@ -8,6 +8,12 @@ sources:
     url: https://arxiv.org/abs/2502.10361
   - label: HuggingFace
     url: https://huggingface.co/datasets/epfml/FineWeb-HQ
+  - label: HuggingFace (FineWeb2-HQ-Plus)
+    url: https://huggingface.co/datasets/epfml/FineWeb2-HQ-Plus
+  - label: HuggingFace (FineWeb2-HQ-QA)
+    url: https://huggingface.co/datasets/epfml/FineWeb2-HQ-QA
+  - label: "Paper (arXiv, cross-lingual quality classifiers / FineWeb2-HQ-Plus)"
+    url: https://arxiv.org/abs/2604.20549
 description: >
   <p>"Enhancing Multilingual LLM Pretraining with Model-Based Data Selection": a
   <strong>model-based multilingual data-selection</strong> pipeline that filters
@@ -16,6 +22,22 @@ description: >
   (~73K downloads/mo) with community language forks. From Martin Jaggi's MLO lab;
   the pipeline feeds the <a href="/labs/swiss-ai">Swiss AI</a> Apertus data pipeline
   (cross-referenced, non-SNAI-branded artifact).</p>
+
+  <p>Two follow-ups landed in October 2026. <strong>FineWeb2-HQ-Plus</strong>
+  (5 October, odc-by, 100 languages) keeps the top 10% of FineWeb2 v2.1.1 per
+  language but swaps the per-language classifiers for a <strong>single
+  cross-lingual XLM-RoBERTa-embedding classifier</strong>. It is trained jointly
+  on all languages with multilingual instruction data (MURI-IT, Tagengo,
+  WikiQA) added to the positives, lower-resource languages upsampled at most
+  3&times;, and negatives drawn from the 50th&ndash;75th percentile of a proxy
+  classifier rather than uniformly. The method is from "Toward Cross-Lingual
+  Quality Classifiers for Multilingual Pretraining Data Selection" (arXiv
+  2604.20549, DATA-FM @ ICLR 2026), whose ablations train 1B models on 103B
+  tokens. <strong>FineWeb2-HQ-QA</strong> (7 October) is a raw, unfiltered
+  synthetic set of question&ndash;answer pairs generated natively in 20
+  languages from 188.8M FineWeb2-HQ documents, as an alternative to
+  translating English synthetic data. The filtering code is still to be
+  released.</p>
 tags:
   - dataset
   - training-data

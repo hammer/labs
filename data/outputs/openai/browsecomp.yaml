@@ -1,16 +1,68 @@
 name: BrowseComp
-slug: browsecomp-zai
-lab: zai
-type: dataset
-date: 2025-06-01
+slug: browsecomp
+lab: openai
+type: eval
+date: 2025-04-16
 sources:
-  - label: Website
-    url: https://z.ai
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2504.12516
+  - label: GitHub (simple-evals)
+    url: https://github.com/openai/simple-evals
 description: >
-  Benchmark for evaluating an agent's ability to browse the web and synthesize
-  diverse sources.
+  <p>Benchmark for evaluating an agent's ability to browse the web and
+  synthesize diverse sources. <strong>BrowseComp</strong> ("Browsing
+  Competition") is <strong>1,266 questions</strong> whose answers are short,
+  single strings that are easy to check but hard to find: human trainers wrote
+  each question backwards from a fact, confirmed the answer was not on the
+  first pages of search results, and that ChatGPT with and without browsing and
+  an early version of Deep Research could not solve it. A model grader judges
+  semantic equivalence against the reference answer, using the
+  Humanity's Last Exam grading prompt. The instructions follow those of
+  <a href="/outputs/openai/simpleqa">SimpleQA</a>, from the same lead author
+  (Jason Wei), and the set ships in OpenAI's simple-evals repo with a canary
+  string.</p>
+
+  <p>The paper's own baselines show how far it sat above the models of the
+  day: GPT-4o 0.6%, GPT-4o with browsing 1.9%, GPT-4.5 0.9%, o1 9.9%, and
+  OpenAI's Deep Research 51.5%. The authors note that Deep Research was trained
+  on data meant to teach this kind of task. Human trainers, working without AI
+  assistance, gave up after two hours on 70.8% of 1,255 attempted questions;
+  they solved 29.2%, and their answer matched the reference on 86.4% of those.
+  The paper says the benchmark measures persistence and creativity in search,
+  not long-form answers or resolving ambiguous queries. It has since become a
+  standard row in agentic-model launches. The scores those launches report are
+  vendor-run, with each vendor's own harness and tool budget.</p>
 tags:
   - benchmark
   - agentic
   - evaluation
-notes: Date approximate.
+paper:
+  arxiv: "2504.12516"
+  authors:
+    - Jason Wei
+    - Zhiqing Sun
+    - Spencer Papay
+    - Scott McKinney
+    - Jeffrey Han
+    - Isa Fulford
+    - Hyung Won Chung
+    - Alex Tachard Passos
+    - William Fedus
+    - Amelia Glaese
+  code_url: https://github.com/openai/simple-evals
+eval:
+  num_questions: 1266
+  scoring_method: "Accuracy on short reference answers, judged by a model grader (Humanity's Last
+    Exam grading prompt); the paper also reports calibration error from model-stated confidence"
+  human_baseline: "29.2% solved by human trainers (367 / 1,255 attempted; gave up after two hours on
+    70.8%)"
+  top_scores:
+    - model: OpenAI Deep Research (at release)
+      score: "51.5%"
+related:
+  - simpleqa
+notes: >
+  Moved 2026-10-24 from data/outputs/zai/browsecomp.yaml (slug browsecomp-zai,
+  type dataset, lab zai, approximate date 2025-06-01, source z.ai homepage).
+  That stub credited OpenAI's benchmark to Z.ai. The authors on arXiv
+  2504.12516 are all OpenAI.

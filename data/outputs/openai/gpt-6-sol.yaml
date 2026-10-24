@@ -10,6 +10,12 @@ sources:
     url: https://developers.openai.com/api/docs/models/gpt-6-luna
   - label: System Card (GPT-6 Astra, with Sol/Luna appendix)
     url: https://deploymentsafety.openai.com/gpt-6-astra
+  - label: GPT-6 and Intelligent UI for everyone (ChatGPT rollout, Oct 7)
+    url: https://openai.com/index/gpt-6-for-everyone
+  - label: Decisions API (Oct 22)
+    url: https://openai.com/index/decisions-api
+  - label: API changelog
+    url: https://developers.openai.com/api/docs/changelog
   - label: Coverage (TechCrunch)
     url: https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/
   - label: Artificial Analysis (Sol)
@@ -36,6 +42,16 @@ description: >
   days later <a href="/outputs/openai/gpt-6.1-sol">GPT-6.1 Sol</a> arrived,
   and the GPT-6 Sol docs now point to it as the newer Sol model. Parameters
   undisclosed.</p>
+
+  <p>On October 7 OpenAI began rolling GPT-6 out globally in ChatGPT with
+  "Intelligent UI" and updated the <code>chat-latest</code> API snapshot to
+  match. OpenAI's summary does not say which tier serves which plan; press
+  reports have Sol on paid plans and Luna on Free and Go. Luna also runs the
+  <strong>Decisions API</strong>, a structured-answer endpoint that turns text
+  and images into typed answers. It entered beta with
+  <code>gpt-6-luna</code> on October 6 (OpenAI claims it is 10&times; faster
+  than the Responses API) and became generally available on October 22, with
+  up to 400 questions per request. Neither launch introduced a new model.</p>
 tags:
   - frontier
   - reasoning
@@ -51,7 +67,7 @@ model:
     - name: GPT-6 Sol
       notes: "AAII v4.3.2 48 (max effort), 44 at xhigh; $2 / $10 per MTok; knowledge cutoff 2026-04-20"
     - name: GPT-6 Luna
-      notes: "AAII v4.3.2 37 (max effort); $0.10 / $0.50 per MTok; knowledge cutoff 2026-05-18"
+      notes: "AAII v4.3.2 37 (max effort); $0.10 / $0.50 per MTok; knowledge cutoff 2026-05-18; serves the Decisions API (beta 2026-10-06, GA 2026-10-22)"
 related:
   - gpt-6-astra
   - gpt-6.1-sol

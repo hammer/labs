@@ -1,0 +1,86 @@
+name: Timestral
+slug: timestral
+lab: mistral
+type: model
+date: 2026-10-15
+sources:
+  - label: Announcement
+    url: https://mistral.ai/news/timestral/
+  - label: GitHub
+    url: https://github.com/mistralai/timestral
+  - label: HuggingFace collection
+    url: https://huggingface.co/collections/mistralai/timestral
+  - label: HuggingFace (209M)
+    url: https://huggingface.co/mistralai/Timestral-209M
+description: >
+  <p>Mistral's first <strong>time-series foundation model</strong> family and
+  its first model outside language, speech and vision: four sizes,
+  <strong>5M, 28M, 123M and 209M</strong> parameters, sharing one architecture
+  and training recipe, for multivariate probabilistic forecasting with
+  past-only and known-future (including categorical) covariates. Context runs
+  to <strong>32,768 time steps</strong>. The model forecasts in decode blocks of
+  32 patches (1,024 steps), feeding each block's median back as context for
+  longer horizons, and outputs 21 non-crossing quantiles per step. It is small
+  enough that no GPU is needed: on an 8-thread server CPU a one-day forecast
+  from three weeks of 15-minute history takes 10 ms with the 5M model and 140
+  ms with the 209M.</p>
+
+  <p>The README describes a causal patch-based transformer, and the blog names
+  four ideas, all to be detailed in a technical report that has not yet appeared.
+  <strong>Decoupled Horizon Forecasting</strong> keeps the full history in the
+  sequence and has learned forecast tokens read it, where contiguous patch
+  masking (as in Toto 2.0 and <a href="/outputs/google/timesfm-3">TimesFM
+  3</a>) hides the values to be forecast and loses them as context.
+  <strong>Covariate-aware attention</strong> lets information flow only from
+  covariates to targets, with only known-future covariates seeing the horizon,
+  so a weather forecast can be used without leaking a target's own future.
+  The data is <strong>synthetic-first</strong>: univariate processes are combined
+  into multivariate series with nonlinear dependencies. Training has two
+  stages: pretraining on purely synthetic data at context 8,192, then
+  post-training on a real-plus-synthetic mix at 4&times; that context, with a
+  pinball loss over 21 quantiles approximating CRPS. Layer counts, widths and
+  the real-data sources are not disclosed.</p>
+
+  <p>Mistral claims the 209M model ranks <strong>first among pretrained
+  zero-shot models on all three public benchmarks</strong> (GIFT-Eval, 83
+  comparable entries; TIME, 98 tasks; fev-bench, 100 tasks) from a single
+  checkpoint without ensembling. It also claims the 28M beats the roughly 4&times;
+  larger <a href="/outputs/amazon/chronos-2">Chronos-2</a> on GIFT-Eval and
+  TIME, and the 209M beats TimesFM-3 and Falcon-2.0 with fewer parameters. The
+  blog gives these as charts only, with no numeric table, and the results were
+  "submitted" to the GIFT-Eval and TIME leaderboards rather than confirmed there
+  at filing. The code is Apache 2.0. The weights use a <strong>Modified MIT
+  license</strong> that withholds all rights from any company with more than
+  <strong>$20M in monthly revenue</strong>, so it is open for research and
+  smaller firms but commercial licensing for large enterprises, the stated
+  target market, goes through Mistral or its Forge fine-tuning platform. That
+  is less restrictive than TimesFM 3's non-commercial license and more
+  restrictive than Chronos-2's Apache 2.0.</p>
+tags:
+  - time-series
+  - forecasting
+  - foundation-model
+  - open-weight
+  - efficiency
+model:
+  open_weights: true
+  architecture: dense
+  parameters: 209M
+  context_window: 32768
+  license: Modified MIT (weights; no rights above $20M monthly company revenue), Apache 2.0 (code)
+  variants:
+    - name: Timestral-5M
+      parameters: 5M
+      notes: "10 ms per one-day forecast on an 8-thread CPU"
+    - name: Timestral-28M
+      parameters: 28M
+      notes: "about 5x faster than 209M; claimed to beat Chronos-2 on GIFT-Eval and TIME"
+    - name: Timestral-123M
+      parameters: 123M
+      notes: "within 0.2% of the 209M score at three quarters of its latency"
+    - name: Timestral-209M
+      parameters: 209M
+      notes: "claimed #1 pretrained zero-shot on GIFT-Eval, TIME and fev-bench at launch"
+related:
+  - timesfm-3
+  - chronos-2

@@ -1,38 +1,66 @@
-name: Atria Dawn Preview
+name: Atria Dawn
 slug: atria-dawn-preview
 lab: shanghai-ai-lab
 type: model
-date: 2026-09-11
+date: 2026-10-23
 sources:
-  - label: HuggingFace
+  - label: HuggingFace (Atria Dawn)
+    url: https://huggingface.co/internlm/Atria-Dawn
+  - label: HuggingFace (Atria Dawn FP8)
+    url: https://huggingface.co/internlm/Atria-Dawn-FP8
+  - label: HuggingFace (Atria Dawn Preview)
     url: https://huggingface.co/internlm/Atria-Dawn-Preview
   - label: "arXiv (Atria Dawn: The Dawn of Agentic Superintelligence)"
     url: https://arxiv.org/abs/2609.15818
-  - label: ModelScope
+  - label: Website
+    url: https://atria-asi.ai/
+  - label: GitHub
+    url: https://github.com/atria-asi/Atria-Dawn-Preview
+  - label: ModelScope (Atria Dawn)
+    url: https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn
+  - label: ModelScope (Atria Dawn Preview)
     url: https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview
 description: >
-  <p>Shanghai AI Laboratory's first <strong>Atria</strong> release: a
-  "foundation agentic language model" for research and engineering workflows,
-  built by post-training Z.ai's 744B-parameter <a
-  href="/outputs/zai/glm-5.2">GLM-5.2</a> MoE (the config.json is GLM-5.2's:
-  78 layers, 256 routed experts plus one shared, 8 active per token). The model
-  card frames it around four kinds of agentic work, discovery, creation,
-  delivery, and cybersecurity, and the accompanying 143-author paper describes a
-  <strong>Verifiable Experience Pipeline</strong> that ties tool-mediated
-  interactions to executable environments and externally verified outcomes.
-  Released 11 September 2026 under MIT with a 256K context and an FP8 sibling;
-  an Ascend W8A8 build followed on 15 September.</p>
+  <p>Shanghai AI Laboratory's <strong>Atria</strong> line: a "foundation
+  agentic language model" for research and engineering workflows, built by
+  post-training Z.ai's 744B-parameter <a
+  href="/outputs/zai/glm-5.2">GLM-5.2</a> MoE. The card says so directly
+  ("Built on the 744B-parameter MoE GLM-5.2 foundation model"), and the
+  config.json is GLM-5.2's (<code>GlmMoeDsaForCausalLM</code>, 78 layers,
+  hidden size 6,144, 256 routed experts plus one shared, 8 active per token), so
+  the parameter count belongs to Z.ai's pretraining and is not recorded as Shanghai
+  AI Lab's. The <strong>Preview</strong> shipped on 11 September 2026 with a
+  256K context, an FP8 sibling and, on 15 September, an Ascend W8A8 build. The
+  <strong>full release</strong> followed on <strong>23 October 2026</strong>
+  (<code>internlm/Atria-Dawn</code> plus an FP8 build, 353 BF16 safetensors
+  shards, about 1.5 TB). It doubles the stated context to
+  <strong>512K</strong>, is text-input only, and keeps the MIT license. The card
+  frames the model around four kinds of agentic work: discovery, creation,
+  delivery, and cybersecurity.</p>
 
-  <p>The paper reports that Atria Dawn Preview is competitive with frontier
-  agents across 16 benchmarks and posts the highest reported score on five of
-  them. From the card's table: DeepSearchQA <strong>96.0</strong>, BrowseComp
-  <strong>92.5</strong>, BFCL v4 <strong>77.0</strong>, and AutomationBench
-  <strong>53.8</strong> lead the compared column (DeepSeek V4 Pro 0813, Kimi K3,
-  Qwen3.8 Max, GLM-5.3, GPT-5.6 Sol, Claude Opus 5), while SWE-bench Pro 59.6
-  and Terminal-Bench 2.1 78.3 trail the coding leaders. The paper also treats
-  the model's own development as a case study in human&ndash;AI collaboration,
-  analysing 769 task records from the R&amp;D process. Not yet scored by
-  Artificial Analysis.</p>
+  <p>The accompanying 143-author paper covers the Preview only. It describes a
+  <strong>Verifiable Experience Pipeline</strong> that ties tool-mediated
+  interactions to executable environments and externally verified outcomes,
+  reports the Preview as competitive with frontier agents across 16 benchmarks
+  with the highest reported score on five, and treats the model's own
+  development as a case study in human&ndash;AI collaboration, analysing 769
+  task records from the R&amp;D process. No paper or changelog explains what
+  changed between Preview and full release.</p>
+
+  <p>The release card's table, all self-reported with the lab's own harnesses,
+  puts the full release slightly ahead of the Preview on most rows:
+  AutomationBench <strong>54.7</strong> (Preview 53.8), CyberGym
+  <strong>86.8</strong> (86.5), SWE-bench Pro <strong>61.7</strong> (59.6),
+  Terminal-Bench 2.1 <strong>81.0</strong> (78.3), BFCL v4 <strong>78.4</strong>
+  (77.0), DeepSearchQA <strong>96.5</strong> (96.0), MLE-bench Lite 88.2 (86.2)
+  and JobBench 57.5 (50.3). BrowseComp slipped from 92.5 to 91.3 and NL2Repo-Bench
+  from 51.4 to 50.0. It leads the compared column (DeepSeek V4 Pro 0813, Kimi K3,
+  Qwen3.8 Max, GLM-5.3, GPT-5.6 Sol, Claude Opus 5) on the search, tool-use and
+  automation rows, but still trails the coding leaders by a wide margin:
+  SWE-bench Pro 61.7 against Opus 5's 76.5, Terminal-Bench 2.1 81.0 against
+  90.2, and on the newly added DeepSWE row 49.3 against 72.6, below every
+  compared model. Neither checkpoint had been scored by Artificial Analysis
+  at filing (no AA model page exists for either).</p>
 tags:
   - agentic
   - agents
@@ -43,27 +71,40 @@ tags:
 model:
   open_weights: true
   architecture: moe
-  parameters: 744B
-  active_parameters: 40B
+  # Derivative: post-train of GLM-5.2 (744B total / 40B active per Z.ai); no
+  # `parameters` so the Scale column does not credit Shanghai AI Lab.
   base_model: glm-5.2
-  context_window: 262144
+  context_window: 512000
   num_experts: 256
   top_k: 8
   license: MIT
   benchmark_scores:
-    - benchmark: DeepSearchQA
-      score: "96.0"
-    - benchmark: BrowseComp
-      score: "92.5"
-    - benchmark: BFCL v4
-      score: "77.0"
     - benchmark: AutomationBench
-      score: "53.8"
+      score: "54.7"
+    - benchmark: CyberGym
+      score: "86.8"
+    - benchmark: DeepSearchQA
+      score: "96.5"
+    - benchmark: BrowseComp
+      score: "91.3"
+    - benchmark: BFCL v4
+      score: "78.4"
     - benchmark: SWE-bench Pro
-      score: "59.6"
+      score: "61.7"
     - benchmark: Terminal-Bench 2.1
-      score: "78.3"
+      score: "81.0"
+    - benchmark: DeepSWE
+      score: "49.3"
+    - benchmark: MLE-bench Lite
+      score: "88.2"
+    - benchmark: GDPval
+      score: "1594.2"
+  variants:
+    - name: Atria Dawn
+      notes: "full release, 2026-10-23; 512K context, text-only input; BF16 and FP8; post-train of GLM-5.2"
+    - name: Atria Dawn Preview
+      notes: "2026-09-11; 256K context; BF16, FP8 and (2026-09-15) Ascend W8A8; DeepSearchQA 96.0, BrowseComp 92.5, BFCL v4 77.0, AutomationBench 53.8, SWE-bench Pro 59.6, Terminal-Bench 2.1 78.3"
 paper:
   arxiv: "2609.15818"
   huggingface_url: https://huggingface.co/internlm/Atria-Dawn-Preview
-related: [intern-s2-397b]
+related: [intern-s2-397b, glm-5.2]
