@@ -1,7 +1,8 @@
 /**
  * Sync AA Intelligence Index scores into output YAMLs.
  *
- * Strategy: AA's models leaderboard exposes ~500 full model records via its
+ * Strategy: AA's models leaderboard exposes its full model records (~286 since
+ * the 2026-10-24 prune; ~500 before) via its
  * React Server Component payload when fetched with the RSC header. One
  * request returns everything; records are split on the model-record sentinel
  * `{"id":"<uuid>","name":"...","shortName"` (creator objects lack shortName)
@@ -46,7 +47,7 @@
 
 import { readFileSync, writeFileSync } from 'fs';
 import { globSync } from 'glob';
-import { parseAaScores } from "./aa-payload";
+import { parseAaScores, checkAaRecordCount } from "./aa-payload";
 
 const LEADERBOARD_URL = 'https://artificialanalysis.ai/leaderboards/models';
 const AAII_VERSION = 'AA v4.3.2';
@@ -70,17 +71,13 @@ async function fetchAaiiDataset(): Promise<Map<string, number>> {
   // Record sentinels live in scripts/aa-payload.ts (three shapes so far; see its header).
   const map = parseAaScores(body);
   // CAP WARNING: this leaderboard payload is paginated — it carries only the
-  // top ~500 models. Low-ranked models AA *does* score (e.g. olmo-3-1-32b-think
+  // top ~270 models (~500 before 2026-10-24). Low-ranked models AA *does* score (e.g. olmo-3-1-32b-think
   // = 8) are simply absent here, so a "not on leaderboard" slug does NOT mean
   // "unscored." The per-model page DOES show the composite but stores it in a
   // snake_case schema with no `intelligence_index` key (it's computed
   // client-side), so it can't be scraped the same way — verify those by eye
   // on https://artificialanalysis.ai/models/<slug> (the "X (estimated)" figure).
-  // Floor lowered 300 → 250 on 2026-10-24: AA pruned the payload from ~500
-  // records to 286 (274 scored, 266 unique slugs) with no version change
-  // (methodology still v4.3.2) and every record still matching the sentinel.
-  // A sentinel drift collapses the count to ~1, so 250 still catches it.
-  if (map.size < 250) throw new Error(`Parsed only ${map.size} scored records — sentinel likely drifted, refusing to write`);
+  checkAaRecordCount(map.size); // floor + drift-vs-shrink diagnosis live in aa-payload.ts
   return map;
 }
 
@@ -188,7 +185,7 @@ function discoverMode(aaii: Map<string, number>) {
     }
   }
   console.log('');
-  console.log('Note: the payload holds only the top ~500 models; a missing slug does not');
+  console.log('Note: the payload holds only the top ~270 models; a missing slug does not');
   console.log('mean unscored. New models AA scores under names unlike our slugs will not');
   console.log('match — eyeball the unclaimed list during sweeps if coverage looks off.');
 }
@@ -304,7 +301,7 @@ async function main() {
   console.log(`  Rescored (score moved, history appended): ${rescored}${dryRun ? ' (dry-run — no writes)' : ''}`);
   console.log(`  Re-tagged (version bump, same score):     ${retagged}`);
   console.log(`  Unchanged:                                ${unchanged}`);
-  console.log(`  Slug not in top-~500 leaderboard payload — VERIFY each by eye at`);
+  console.log(`  Slug not in the (top ~270) leaderboard payload — VERIFY each by eye at`);
   console.log(`  artificialanalysis.ai/models/<slug> (may be a low-ranked but still-scored`);
   console.log(`  model, a renamed slug, or genuinely unscored): ${missing.length}`);
   for (const x of missing) console.log(`    ${x.slug.padEnd(40)}  ${x.file}`);

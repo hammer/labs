@@ -21,6 +21,7 @@
 
 import { readFileSync, writeFileSync } from 'fs';
 import { globSync } from 'glob';
+import { checkAaRecordCount } from './aa-payload';
 
 const AAOI_URL = 'https://artificialanalysis.ai/evaluations/artificial-analysis-openness-index';
 const AAOI_VERSION = 'AA Openness Index v1.0';
@@ -60,7 +61,9 @@ async function fetchAaoiDataset(): Promise<Map<string, number>> {
   const nameToSlug = new Map<string, string>();
   collectNameToSlug(lbBody, nameToSlug);
   collectNameToSlug(oiBody, nameToSlug);
-  if (nameToSlug.size < 300) throw new Error(`Only ${nameToSlug.size} name→slug pairs parsed — leaderboard payload shape likely drifted, refusing to write`);
+  // Leaderboard + openness pages together; 335 on 2026-10-24, after AA pruned the
+  // leaderboard to 286 records. Shared floor so the next prune is diagnosed, not misread.
+  checkAaRecordCount(nameToSlug.size, 'name→slug pairs');
 
   // One span per openness record: from its {"id":uuid,"name":…} opener to the
   // next opener. Creator objects also open with id+name but hold no

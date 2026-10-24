@@ -36,7 +36,7 @@
 import { readFileSync } from 'fs';
 import { globSync } from 'glob';
 import { parse } from 'yaml';
-import { parseAaScores } from './aa-payload';
+import { parseAaScores, checkAaRecordCount } from './aa-payload';
 import { classifyMention, findMentions, historyMap, POINT_DIFF, type MentionClass } from './aaii-mentions';
 
 const LEADERBOARD_URL = 'https://artificialanalysis.ai/leaderboards/models';
@@ -53,8 +53,7 @@ async function fetchAaScores(): Promise<Map<string, number>> {
   const body = await res.text();
   // Record sentinels live in scripts/aa-payload.ts (three shapes so far; see its header).
   const map = parseAaScores(body);
-  // 300 → 250 on 2026-10-24: AA pruned the payload to 286 records (see fetch-aa-intelligence.ts).
-  if (map.size < 250) throw new Error(`Parsed only ${map.size} records — sentinel drifted?`);
+  checkAaRecordCount(map.size); // see aa-payload.ts for the floor and its history
   return map;
 }
 

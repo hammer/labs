@@ -106,7 +106,7 @@ After data changes, run:
 
 ```bash
 npm run validate
-npm run test:aa             # AA payload parser fixtures (three sentinel shapes); a 1-record sync means a new shape — see scripts/aa-payload.ts
+npm run test:aa             # AA payload parser fixtures (three sentinel shapes + the record-count floor); ~1 record = new shape, a few hundred under the floor = AA pruned the payload (2026-10-24) — see scripts/aa-payload.ts
 npm run test:changelog      # renders the real /whats-new diff for recent commits; fails on any "{…}" / [object Object]
 npm run test:sweep-orgs     # org-probe URL shapes
 npm run test:sweep-authors  # author index, listing parser, tracked-id scan, date floor

@@ -26,6 +26,7 @@ Do not let a bulk script make new checkpoint-anchoring decisions. New AA URLs re
 1. Inspect the current version constants and command options in `scripts/fetch-aa-intelligence.ts` and `scripts/fetch-aa-openness.ts`.
 2. Run `npm run fetch-aa-intelligence -- --dry-run` before a broad rewrite when supported.
 3. Run `npm run fetch-aa-intelligence` to refresh already anchored scores.
+   Its "slug not on leaderboard" list is not a delisting list. The payload covers only the top ~270 models since AA's 2026-10-24 prune, so roughly 110 tracked files sit outside it. Check `artificialanalysis.ai/models/<slug>` before applying a delisted tag (AGENTS.md → AAII audit pattern, step 2–3), and never apply it in bulk.
 4. Run `npm run fetch-aa-intelligence -- --discover` and manually review each unclaimed scored slug.
 5. Run `npm run fetch-aa-openness` for AAOI coverage.
 6. For every newly anchored score, verify that the output slug, named model/checkpoint, selected AA mode, source URL, and top-level score refer to the same model.
@@ -55,7 +56,10 @@ npm run validate
 npm run build
 ```
 
-If `test:aa` passes but the live sync still parses a handful of records, AA changed the record opener again: inspect the bytes before the first `"intelligenceIndex"` in the RSC payload, add the shape to `AA_RECORD_SENTINEL` in `scripts/aa-payload.ts`, add a fixture to `tests/aa-payload-unit.ts`, and only then rerun the sync. Never hand-enter scores to work around it.
+Two failures look alike and need opposite fixes; `checkAaRecordCount` in `scripts/aa-payload.ts` names which one it saw:
+
+- **A prune** — hundreds of records, just under the floor. AA shrank the payload on 2026-10-24 (~500 → 286 records, 266 unique scored slugs) with no version change. Confirm the methodology page still shows the same version and that the parsed count matches the payload's numeric `"intelligenceIndex"` values, then lower `AA_MIN_SCORED_RECORDS` with a dated note and update the floor fixture in `tests/aa-payload-unit.ts`. A prune also inflates the "slug not on leaderboard" list and `scan-aaii-mentions`' UNRESOLVED count: those slugs left the payload, not the index. Verify on the model page before tagging anything delisted.
+- **Sentinel drift** — a handful of records. If `test:aa` passes but the live sync still parses a handful of records, AA changed the record opener again: inspect the bytes before the first `"intelligenceIndex"` in the RSC payload, add the shape to `AA_RECORD_SENTINEL` in `scripts/aa-payload.ts`, add a fixture to `tests/aa-payload-unit.ts`, and only then rerun the sync. Never hand-enter scores to work around it.
 
 Review the diff for:
 

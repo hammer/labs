@@ -3,12 +3,13 @@
  *
  * AA has changed the record opener three times (see scripts/aa-payload.ts);
  * each change silently collapsed the sync to "Parsed only 1 scored records".
- * These fixtures pin every shape seen so far plus the creator-object trap.
+ * These fixtures pin every shape seen so far plus the creator-object trap,
+ * and the record-count floor that tells sentinel drift from a payload prune.
  *
  * Run: npm run test:aa
  */
 import { readFileSync } from 'fs';
-import { parseAaScores, splitAaRecords } from '../scripts/aa-payload';
+import { parseAaScores, splitAaRecords, checkAaRecordCount, AA_MIN_SCORED_RECORDS, AA_DRIFT_CEILING } from '../scripts/aa-payload';
 
 let failures = 0;
 function check(name: string, ok: boolean, detail = '') {
@@ -41,10 +42,19 @@ for (const [name, body] of Object.entries(shapes)) {
 const mixed = shapes['pre-Sep-2026 id+name+shortName'] + shapes['2026-09-17 slug+name+shortName'].replace('glm-5-2', 'glm-5-3').replace('kimi-k3', 'kimi-k3-1');
 check('mixed shapes: four records', parseAaScores(mixed).size === 4, `got ${parseAaScores(mixed).size}`);
 
-// Optional live guard: with AA_PAYLOAD=<file> the saved payload must parse to >300 scored slugs.
+// Floor diagnosis: drift (~1 record) and shrink (2026-10-24: 266 unique slugs)
+// must produce different errors, and today's real payload size must pass.
+function errOf(n: number): string { try { checkAaRecordCount(n); return ''; } catch (e) { return (e as Error).message; } }
+check('floor: 266 (2026-10-24 payload) passes', errOf(266) === '', errOf(266));
+check('floor: floor sits below the 2026-10-24 size', AA_MIN_SCORED_RECORDS < 266);
+check('floor: 1 record is diagnosed as sentinel drift', /sentinel drift/.test(errOf(1)));
+check('floor: drift ceiling well below the floor', AA_DRIFT_CEILING * 10 < AA_MIN_SCORED_RECORDS);
+check('floor: 180 records is diagnosed as a payload prune', /pruned the payload/.test(errOf(180)));
+
+// Optional live guard: with AA_PAYLOAD=<file> the saved payload must clear the shared floor.
 if (process.env.AA_PAYLOAD) {
   const n = parseAaScores(readFileSync(process.env.AA_PAYLOAD, 'utf8')).size;
-  check(`live payload ${process.env.AA_PAYLOAD}: >300 scored records`, n > 300, `got ${n}`);
+  check(`live payload ${process.env.AA_PAYLOAD}: ≥${AA_MIN_SCORED_RECORDS} scored records`, n >= AA_MIN_SCORED_RECORDS, `got ${n}`);
 }
 
 console.log(failures ? `\n${failures} failing` : '\nall passing');
