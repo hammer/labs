@@ -1,0 +1,116 @@
+name: Kimi K3.1 Pro
+slug: kimi-k3.1-pro
+lab: moonshot-ai
+type: model
+date: 2026-10-24
+flagship: true
+sources:
+  - label: Blog Post
+    url: https://www.kimi.com/en/blog/kimi-k3-1-pro
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/kimi-k3-1-pro
+  - label: OpenRouter
+    url: https://openrouter.ai/moonshotai/kimi-k3.1-pro
+description: >
+  <p>Not a new base model: "Kimi K3.1 Pro is a <strong>post-trained version of
+  Kimi K3</strong>, with substantially larger post-training compute" &mdash; how
+  much larger is not quantified. The architecture therefore carries over from
+  <a href="/outputs/moonshot-ai/kimi-k3">Kimi K3</a>, the 2.8T Stable LatentMoE
+  with 104B active and a 1M-token context, and Artificial Analysis independently
+  lists 2.8T. What moved is the score: <strong>55 on AA Intelligence Index
+  v4.3.2 against K3's 44</strong> on the same version, bought entirely in
+  post-training. Moonshot's own framing is breadth rather than a single win
+  &mdash; "consistent gains in every domain", with coding, 3D creation,
+  financial research and agentic use called out.</p>
+
+  <p><strong>The weights are promised, not shipped, and this index records that
+  as closed.</strong> The post says "for the <em>open-weight release</em> of
+  K3.1 Pro" and then dates it: "Full model weights will be released by
+  <strong>Nov 4, 2026</strong>." At filing there is nothing to download &mdash;
+  no repository in <code>moonshotai</code>, where every prior Kimi flagship
+  appeared on or before announcement day; OpenRouter's
+  <code>hugging_face_id</code> is null for this model where K3's and K2.6's are
+  both populated; and the only serving endpoints are Moonshot's own, at mxfp4.
+  So it is carried as closed until the download exists, which keeps it out of
+  the open-weights intelligence column it would otherwise top. Expect that to
+  flip by early November.</p>
+
+  <p><strong>The cyber-capability ablation is the most unusual thing in the
+  post</strong>, because Moonshot measured its own safety intervention and
+  published the counterfactual. "For the open-weight release of K3.1 Pro, we
+  identified and removed cyber-related data from both training stages, while
+  retaining the general-purpose coding tasks needed for model usefulness",
+  defended on access grounds: "We believe making K3.1 Pro available in a
+  non-discriminatory way benefits people who need dual-use capabilities for
+  defensive purposes." On internal xdev-bench-hard (pass@3) the ladder runs
+  GPT-5.6 Sol <strong>100</strong> (third-party evaluation), <strong>the same
+  pipeline without cyber risk-reduction 90.5</strong>, DeepSeek-V4.1-Flash 85.7,
+  shipped <strong>K3.1 Pro 81.0</strong>, GLM-5.3 57.1, and
+  <strong>K3 33.3</strong>. Moonshot reads it as "data removal meaningfully
+  reduces cyber capability relative to what the same training pipeline would
+  otherwise produce", which is true and worth 9.5 points. The other true
+  reading sits in the same column: the shipped, risk-reduced model still scores
+  <strong>81.0 against its predecessor's 33.3</strong>, so the generation more
+  than doubled the capability that the removal then trimmed.</p>
+
+  <p>On the capability tables it approaches the closed frontier without
+  passing it. <strong>Terminal-Bench 4.0: 65.7%</strong> against Claude Opus
+  5.5's 66.4%. On BenchCAD (1,000-file subset, Voxel IoU) <em>with tools</em> it
+  takes <strong>92.7</strong> behind Opus 5.5 at 96.2 and GPT-6 Astra at 95.9 &mdash;
+  but <em>without tools</em> it reads <strong>72.8 against Opus 5.5's 73.0</strong>,
+  which is the sharper of the two numbers and the one the scaffold is not doing
+  the work in. It leads on finance, <strong>64.4 on OfficeQA Pro v2</strong>
+  (state of the art) and 58.6 on Frontier Finance, and reports an
+  <strong>8.3% claim-level hallucination rate</strong> on Kimi Hallu Bench Hard.</p>
+
+  <p>Served on Kimi.com, Kimi Work, <a href="/outputs/moonshot-ai/kimi-code">Kimi
+  Code</a> and the Kimi API at <strong>$2.00 / $10.00 per 1M tokens</strong> with
+  cache reads at $0.20, a 1M context and up to 943,718 completion tokens.
+  Reasoning is on by default at <em>max</em> effort, with max/high/low/none
+  exposed, and the modality is text, image <em>and video</em> in. A second
+  variant, <strong>Kimi K3.1 Pro Highspeed</strong>, "delivers 2-3&times; the
+  speed of K3.1 Pro for more responsive interactions" through the same channels
+  with no separate price published. AA measures 77.1 output tokens/s, a 2.89s
+  time to first token and $2.11 per Intelligence Index task. No technical report
+  and no GitHub repository at filing &mdash; K3 shipped one of each.</p>
+tags:
+  - frontier
+  - moe
+  - reasoning
+  - agentic
+  - multimodal
+  - safety
+model:
+  open_weights: false
+  architecture: moe
+  parameters: "2.8T"
+  active_parameters: "104B"
+  context_window: 1000000
+  license: "Not yet released; full weights promised by 2026-11-04"
+  intelligence_index: 55
+  intelligence_index_version: "AA v4.3.2"
+  variants:
+    - name: Kimi K3.1 Pro
+      parameters: "2.8T"
+      active_parameters: "104B"
+      notes: "flagship; $2.00/$10.00 per 1M, $0.20 cache read, 1M context, reasoning on at max effort by default"
+    - name: Kimi K3.1 Pro Highspeed
+      notes: "2-3x the speed of K3.1 Pro for more responsive interactions; no separate pricing published"
+  benchmark_scores:
+    - benchmark: Terminal-Bench 4.0
+      score: "65.7%"
+    - benchmark: BenchCAD (Voxel IoU, with tools)
+      score: "92.7"
+    - benchmark: BenchCAD (Voxel IoU, without tools)
+      score: "72.8"
+    - benchmark: OfficeQA Pro v2
+      score: "64.4"
+    - benchmark: Frontier Finance
+      score: "58.6"
+    - benchmark: xdev-bench-hard (pass@3)
+      score: "81.0%"
+    - benchmark: Kimi Hallu Bench Hard (claim-level hallucination rate)
+      score: "8.3%"
+related:
+  - kimi-k3
+  - kimi-code
