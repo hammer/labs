@@ -1,0 +1,98 @@
+name: Cybench
+slug: cybench
+lab: stanford
+type: eval
+date: 2024-08-15
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2408.08926
+  - label: Project page and leaderboard
+    url: https://cybench.github.io/
+  - label: GitHub
+    url: https://github.com/andyzorigin/cybench
+  - label: Epoch AI benchmark page
+    url: https://epoch.ai/benchmarks/cybench
+description: >
+  <p>A framework and benchmark of <strong>40 professional-level
+  Capture-the-Flag tasks</strong> drawn from four recent CTF competitions
+  (HackTheBox, SekaiCTF 2022 and 2023, Glacier, HKCert), chosen to span a
+  wide difficulty range. Each task has a description, starter files and a
+  Kali Linux environment with any task servers, and the agent works through
+  bash and network calls until it submits a flag. Because many tasks were
+  beyond 2024 agents, Cybench adds <strong>subtasks</strong> that break each
+  task into graded intermediate steps, and it measures difficulty by
+  <strong>first solve time</strong>, how long the fastest human team took in
+  the original competition (24 hours 54 minutes for the hardest). In the
+  original evaluation of eight models, unguided agents built on Claude 3.5
+  Sonnet, GPT-4o, o1-preview and Claude 3 Opus solved only tasks that took
+  human teams up to 11 minutes. The 27 authors are at Stanford, led by Andy
+  K. Zhang with senior authors Dan Boneh, Daniel E. Ho and
+  <a href="/people/percy-liang">Percy Liang</a>. ICLR 2025 oral; Apache
+  2.0.</p>
+
+  <p>Cybench became the default open cyber benchmark of frontier safety
+  reporting. US and UK AISI used it in their joint pre-deployment tests of
+  Claude 3.5 Sonnet and o1, and UK AISI ships it in Inspect Evals; Anthropic
+  has reported it in system cards from Claude 3.7 Sonnet through Claude Opus
+  4.7, alongside xAI (Grok 4 family), Amazon (Nova Premier) and Meta (Muse
+  Spark). <strong>Epoch AI includes it in the Epoch Capabilities
+  Index</strong>, using scores reported by model developers. It is now
+  <strong>saturated</strong>: the authors' leaderboard lists Claude Mythos
+  Preview at 100% and Claude Opus 4.7 at 96% (on 35-task subsets), Claude Opus
+  4.6 at 93%, and Mistral reports 93% for
+  <a href="/outputs/mistral/mistral-large-4">Mistral Large 4</a>. The vendor
+  numbers use subsets and pass@1 estimates that differ from card to card, so
+  they are not strictly comparable. The same group's BountyBench is its
+  successor for real-world bug bounties.</p>
+tags:
+  - benchmark
+  - evaluation
+  - agents
+  - security
+  - cybersecurity
+paper:
+  arxiv: "2408.08926"
+  venue: ICLR 2025 (Oral)
+  authors:
+    - Andy K. Zhang
+    - Neil Perry
+    - Riya Dulepet
+    - Joey Ji
+    - Celeste Menders
+    - Justin W. Lin
+    - Eliot Jones
+    - Dan Boneh
+    - Daniel E. Ho
+    - Percy Liang
+  code_url: https://github.com/andyzorigin/cybench
+eval:
+  num_tasks: 40
+  domains:
+    - capture the flag
+    - cryptography
+    - web security
+    - reverse engineering
+    - binary exploitation
+    - forensics
+  scoring_method: "Unguided: fraction of the 40 tasks where the agent submits the correct flag;
+    subtask-guided and per-subtask scores give partial credit; first solve time of the hardest
+    task solved measures difficulty reached."
+  used_in:
+    - Epoch Capabilities Index
+    - US/UK AISI pre-deployment tests
+    - Anthropic, xAI, Amazon and Meta system cards
+  saturation: "Saturated: 100% for Claude Mythos Preview (35-task subset) and 93-96% for several
+    frontier models, against a best of 17.5% unguided (Claude 3.5 Sonnet) at release"
+  top_scores:
+    - model: Claude Mythos Preview (system card, 35 tasks)
+      score: "100%"
+    - model: Claude Opus 4.7 (system card, 35 tasks)
+      score: "96%"
+    - model: Claude Opus 4.6 (system card, 37 tasks)
+      score: "93%"
+    - model: Mistral Large 4 (Mistral-reported)
+      score: "93%"
+  leaderboard_url: https://cybench.github.io/
+related:
+  - cybergym
+  - exploitbench

@@ -1,0 +1,126 @@
+name: SciCode
+slug: scicode
+lab:
+  - uiuc
+  - cmu
+type: eval
+date: 2024-07-18
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2407.13168
+  - label: Project page
+    url: https://scicode-bench.github.io/
+  - label: GitHub
+    url: https://github.com/scicode-bench/SciCode
+  - label: Leaderboard
+    url: https://scicode-bench.github.io/leaderboard/
+  - label: Artificial Analysis (SciCode)
+    url: https://artificialanalysis.ai/evaluations/scicode
+description: >
+  <p>A research-coding benchmark written by working scientists.
+  <strong>SciCode</strong> has <strong>80 main problems decomposed into 338
+  subproblems</strong>, drawn from <strong>16 subfields</strong> of
+  mathematics, physics, chemistry, biology and materials science (condensed
+  matter and optics are the largest groups). Each subproblem asks for a Python
+  function that combines knowledge recall, reasoning and code synthesis, and
+  is checked against scientist-annotated gold solutions and domain-specific
+  test cases. A main problem counts as solved only if every subproblem in it
+  passes. Problems come with optional scientist-written background text, so
+  the benchmark can be run with or without that help. 15 main problems (50
+  subproblems) are a development split; the other <strong>65 (288
+  subproblems) are the test set</strong>. Code and data are Apache 2.0.</p>
+
+  <p>At release the best model, Claude 3.5 Sonnet, solved <strong>4.6% of main
+  problems</strong> in the standard setting (no background) and 26.0% of
+  subproblems. GPT-4o and Claude 3 Opus solved 1.5% of main problems, and the
+  best open model, DeepSeek-Coder-V2, 3.1%. <strong>SciCode is a 10% component
+  of the Artificial Analysis Intelligence Index v4.3.2</strong>, in the
+  Coding category next to Terminal-Bench 4.0. AA runs the 288-subproblem test
+  set three times with background prompting and scores at the subproblem
+  level, so its numbers are not comparable with the paper's main-problem
+  rate. In AA v4.2 it raised the grading timeout from 60s to 300s and
+  isolated script execution, so slow but correct code stopped failing
+  (regraded as v1.0.1). On AA the top scores are about two-thirds: Claude
+  Opus 5.5 (max) 66.9%, Claude Fable 5.1 (max) 63.1%, Muse Wonder Full (max)
+  62.6%. As of 2026-10-24 AA marks SciCode "under review", saying an
+  independent audit has flagged possible errors in the dataset.</p>
+
+  <p>The lead authors are Minyang Tian (UIUC and Argonne) and Luyu Gao (CMU),
+  with equal contribution. The corresponding authors are Tian,
+  <a href="/people/hao-peng">Hao Peng</a> (UIUC) and Eliu Huerta (UIUC,
+  Argonne and UChicago). Ofir Press and Kilian Lieret (Princeton) and Jamie
+  Callan (CMU) are co-authors, and most of the data curators are UIUC
+  scientists. The same UIUC/Argonne group later built
+  <a href="/outputs/uiuc/critpt">CritPt</a>, the other UIUC-led benchmark in
+  the index.</p>
+tags:
+  - benchmark
+  - evaluation
+  - coding
+  - science
+paper:
+  arxiv: "2407.13168"
+  authors:
+    - Minyang Tian
+    - Luyu Gao
+    - Shizhuo Dylan Zhang
+    - Xinan Chen
+    - Cunwei Fan
+    - Xuefei Guo
+    - Roland Haas
+    - Pan Ji
+    - Kittithat Krongchon
+    - Yao Li
+    - Shengyan Liu
+    - Di Luo
+    - Yutao Ma
+    - Hao Tong
+    - Kha Trinh
+    - Chenyu Tian
+    - Zihan Wang
+    - Bohao Wu
+    - Yanyu Xiong
+    - Shengzhu Yin
+    - Minhui Zhu
+    - Kilian Lieret
+    - Yanxin Lu
+    - Genglin Liu
+    - Yufeng Du
+    - Tianhua Tao
+    - Ofir Press
+    - Jamie Callan
+    - Eliu Huerta
+    - Hao Peng
+  code_url: https://github.com/scicode-bench/SciCode
+eval:
+  num_tasks: 80
+  num_questions: 338
+  domains:
+    - physics
+    - mathematics
+    - chemistry
+    - biology
+    - materials science
+  scoring_method: "Execution against scientist-written unit tests. A main problem is solved only if
+    all its subproblems pass, and subproblem pass rate is reported as an easier metric. Artificial
+    Analysis scores the 288-subproblem test set at subproblem level, pass@1 over 3 repeats, with
+    scientist-annotated background prompting."
+  used_in:
+    - AA Intelligence Index through v4.3.2 (10% from v4.2; Coding category)
+  leaderboard_url: https://artificialanalysis.ai/evaluations/scicode
+  saturation: "Not saturated: best AA subproblem score 66.9% (Claude Opus 5.5 max, October 2026).
+    AA flags the dataset as under review after an independent audit reported possible errors."
+  top_scores:
+    - model: Claude Opus 5.5 (max; Artificial Analysis, subproblem scoring)
+      score: "66.9%"
+      date: "2026-10-24"
+    - model: Claude Fable 5.1 (max; Artificial Analysis)
+      score: "63.1%"
+      date: "2026-10-24"
+    - model: Claude 3.5 Sonnet (paper, main problems, standard setting)
+      score: "4.6%"
+      date: "2024-07-18"
+related:
+  - critpt
+  - terminal-bench
+  - gpqa

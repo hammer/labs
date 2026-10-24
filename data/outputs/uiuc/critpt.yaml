@@ -1,0 +1,102 @@
+name: CritPt
+slug: critpt
+lab: uiuc
+type: eval
+date: 2025-09-30
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2509.26574
+  - label: Website
+    url: https://critpt.com/
+  - label: GitHub (evaluation pipeline)
+    url: https://github.com/CritPt-Benchmark/CritPt
+  - label: HuggingFace (dataset)
+    url: https://huggingface.co/datasets/CritPt-Benchmark/CritPt
+  - label: Artificial Analysis (CritPt)
+    url: https://artificialanalysis.ai/evaluations/critpt
+  - label: Artificial Analysis (CritPt v2)
+    url: https://artificialanalysis.ai/evaluations/critpt-v2
+description: >
+  <p>A physics benchmark built from unpublished research problems.
+  <strong>CritPt</strong> ("Complex Research using Integrated Thinking &ndash;
+  Physics Test", read as "critical point") has <strong>71 composite research
+  challenges</strong>, each meant to simulate an entry-level research project,
+  split into <strong>190 checkpoint tasks</strong>. <strong>More than 50 active
+  physicists</strong> wrote the problems from their own research, across
+  condensed matter, quantum, AMO, astrophysics, high-energy, mathematical,
+  statistical and nuclear physics, nonlinear and fluid dynamics, and
+  biophysics. Each problem has a guess-resistant, machine-checkable answer
+  (number arrays, symbolic expressions, Python functions), graded by a
+  physics-specific pipeline. One example challenge is public. The answers to
+  the other <strong>70 test challenges are private</strong> and graded on an
+  online server, which limits contamination.</p>
+
+  <p>In the paper, the best base model, GPT-5 (high), averaged
+  <strong>5.7%</strong> on full challenges, rising to about 10% with code
+  tools. CritPt joined the <strong>Artificial Analysis Intelligence Index in
+  v4.0</strong> (January 2026) and is a <strong>10% component of v4.3.2</strong>,
+  in the Scientific Reasoning category next to HLE. AA runs pass@1 over five
+  repeats through the official grading server. Its top scores are near a
+  third: Muse Wonder Full (max) 32.9%, then GPT-6 Astra, GPT-6.1 Sol and
+  Claude Opus 5.5 tied at 31.7%. The authors now maintain
+  <strong>CritPt v2</strong>, a revision of the 70 test challenges in which
+  the authors and outside physicists fixed underspecified statements, errors
+  and typos. AA runs v2 as a separate standalone evaluation outside the index,
+  in its Stirrup agentic harness with a Python sandbox and no internet. The
+  authors' own v2 leaderboard (average over 5 runs) is far higher: GPT-6 Astra
+  83.1, GPT-6.1 Sol 82.0, Claude Opus 5.5 77.7. The v1 index scores and the
+  v2 numbers measure different task versions and harnesses, so they should
+  not be compared directly.</p>
+
+  <p>Minhui Zhu (Argonne) and Minyang Tian (UIUC) are the equal-contribution
+  lead and corresponding authors, and Nicolas Chia, Eliu Huerta and
+  <a href="/people/hao-peng">Hao Peng</a> (Argonne / UIUC / UChicago) are the
+  senior authors. The paper has 65 authors from more than 30 institutions.
+  It is filed under UIUC because Argonne is not tracked. The same group built
+  <a href="/outputs/uiuc/scicode">SciCode</a>. arXiv v4 (May 2026) is the
+  current revision.</p>
+tags:
+  - benchmark
+  - evaluation
+  - science
+  - reasoning
+paper:
+  arxiv: "2509.26574"
+  code_url: https://github.com/CritPt-Benchmark/CritPt
+eval:
+  num_tasks: 71
+  num_questions: 190
+  domains:
+    - condensed matter physics
+    - quantum physics
+    - atomic, molecular and optical physics
+    - astrophysics
+    - high energy physics
+    - mathematical physics
+    - statistical physics
+    - nuclear physics
+    - nonlinear dynamics
+    - fluid dynamics
+    - biophysics
+  scoring_method: "Full-challenge accuracy on the 70 private test challenges (190 checkpoints give
+    finer-grained scores). Answers are numbers, symbolic expressions or Python functions, graded
+    automatically on the authors' server. Artificial Analysis: pass@1 over 5 repeats."
+  used_in:
+    - AA Intelligence Index v4.0 through v4.3.2 (10% from v4.2; Scientific Reasoning category)
+    - Artificial Analysis standalone evaluation (CritPt v2, not in the index)
+  leaderboard_url: https://artificialanalysis.ai/evaluations/critpt
+  saturation: "Not saturated on the index version (AA best 32.9%, October 2026). The authors'
+    v2 leaderboard tops out at 83.1% (GPT-6 Astra) under a different harness."
+  top_scores:
+    - model: Muse Wonder Full (max; Artificial Analysis, v1)
+      score: "32.9%"
+      date: "2026-10-24"
+    - model: GPT-6 Astra (authors' CritPt v2 leaderboard)
+      score: "83.1%"
+      date: "2026-10-24"
+    - model: GPT-5 high (paper, base model)
+      score: "5.7%"
+      date: "2025-09-30"
+related:
+  - scicode
+  - gpqa

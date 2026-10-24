@@ -1,0 +1,177 @@
+name: HealthBench
+slug: healthbench
+lab: openai
+date: 2025-05-13
+sources:
+  - label: Paper (arXiv, HealthBench)
+    url: https://arxiv.org/abs/2505.08775
+  - label: Blog (HealthBench)
+    url: https://openai.com/index/healthbench/
+  - label: Paper (arXiv, HealthBench Professional)
+    url: https://arxiv.org/abs/2604.27470
+  - label: Blog (ChatGPT for Clinicians / HealthBench Professional)
+    url: https://openai.com/index/making-chatgpt-better-for-clinicians/
+  - label: GitHub (simple-evals)
+    url: https://github.com/openai/simple-evals
+  - label: Artificial Analysis (HealthBench)
+    url: https://artificialanalysis.ai/evaluations/healthbench
+  - label: Artificial Analysis (HealthBench Professional)
+    url: https://artificialanalysis.ai/evaluations/healthbench-professional
+  - label: Artificial Analysis article (2026-10-19)
+    url: https://artificialanalysis.ai/articles/healthbench-professional-health-conversations
+description: >
+  <p>OpenAI's rubric-graded benchmarks for open-ended health conversations.
+  <strong>HealthBench</strong> (May 2025) has <strong>5,000 multi-turn
+  conversations</strong> with lay users and health professionals, graded
+  against <strong>48,562 conversation-specific rubric criteria</strong>
+  written by <strong>262 physicians</strong>. The conversations cover seven
+  themes, from emergency referrals to global health, and each criterion is
+  tagged with one of five axes: accuracy, completeness, communication quality,
+  context awareness and instruction following. <strong>HealthBench
+  Professional</strong> (arXiv April 2026, released with ChatGPT for
+  Clinicians) is a smaller, harder companion: <strong>525 real clinician
+  conversations</strong> in three use cases (care consult, writing and
+  documentation, medical research). About a third are deliberate adversarial
+  testing by physicians, and examples that were hard for OpenAI's own models
+  were sampled at roughly 3.5x their rate in the 15,079-example pool. Both
+  sets ship in OpenAI's open simple-evals repo.</p>
+
+  <p>The original paper showed fast progress on OpenAI's own models: GPT-3.5
+  Turbo 16%, GPT-4o 32%, o3 60%. It also released HealthBench Consensus (34
+  physician-validated behaviours) and HealthBench Hard (top score 32% at
+  release). In the Professional paper, <strong>GPT-5.4 inside ChatGPT for
+  Clinicians scored 59.0 against 43.7 for physicians</strong> (specialist-matched,
+  unlimited time, web access) and 48.1 for base GPT-5.4. That result is
+  vendor-run, and the benchmark was sampled for difficulty against OpenAI's
+  models.</p>
+
+  <p><strong>Artificial Analysis added both as standalone evaluations on
+  2026-10-19</strong> (not part of the Intelligence Index). AA reports OpenAI's
+  length-adjusted score, which penalises replies over 2,000 characters, and
+  uses OpenAI's graders: GPT-4.1 for HealthBench and GPT-5.4 (low) for
+  Professional. On Professional, GPT-6 Astra (max) leads at
+  <strong>66.0%</strong>, then GPT-6.1 Sol 65.1% and Claude Sonnet 5.5 63.0%.
+  Claude Opus 5.5 has the highest raw score (71.4%) but falls to 59.9% after
+  the length adjustment, because it averages about 5,900 characters per
+  answer. On HealthBench, Claude Sonnet 5.5 leads at 62.1%, ahead of DeepSeek
+  V4.1 Flash 60.9% and GPT-6.1 Sol 58.5%. Vendor launch tables now quote
+  Professional often:
+  <a href="/outputs/spacexai/grok-4.7">Grok 4.7</a> 56.7%,
+  <a href="/outputs/meta/muse-wonder">Muse Wonder</a> 62.3 vs Opus 5.5 65.6,
+  and <a href="/outputs/openai/gpt-6-astra">GPT-6 Astra</a> (claimed state of
+  the art). Medical models such as
+  <a href="/outputs/baichuan/baichuan-m2">Baichuan-M2</a> and
+  <a href="/outputs/baichuan/baichuan-m3">Baichuan-M3</a> report the original
+  set. The authors (Rahul Arora, Jason Wei, Karan Singhal and others) are
+  OpenAI's health team, so the lab whose models top the Professional board
+  also built the benchmark, chose its difficulty sampling and supplies its
+  grader models.</p>
+tags:
+  - benchmark
+  - evaluation
+  - medical
+outputs:
+  - name: HealthBench
+    type: eval
+    date: 2025-05-13
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2505.08775
+      - label: Blog
+        url: https://openai.com/index/healthbench/
+    description: >
+      5,000 multi-turn health conversations graded against 48,562 physician-written rubric
+      criteria (262 physicians), with HealthBench Consensus and HealthBench Hard subsets.
+    paper:
+      arxiv: "2505.08775"
+      authors:
+        - Rahul K. Arora
+        - Jason Wei
+        - Rebecca Soskin Hicks
+        - Preston Bowman
+        - Joaquin Quiñonero-Candela
+        - Foivos Tsimpourlas
+        - Michael Sharman
+        - Meghan Shah
+        - Andrea Vallone
+        - Alex Beutel
+        - Johannes Heidecke
+        - Karan Singhal
+      code_url: https://github.com/openai/simple-evals
+    eval:
+      num_questions: 5000
+      domains:
+        - medicine
+        - health
+      scoring_method: "Model-graded rubric score: points for rubric items met over total positive
+        points (negative items subtract), graded by GPT-4.1. AA reports OpenAI's length-adjusted
+        variant (2.99 points per 500 characters away from 2,000)."
+      used_in:
+        - Artificial Analysis standalone evaluation (from 2026-10-19)
+      leaderboard_url: https://artificialanalysis.ai/evaluations/healthbench
+      saturation: "Not saturated: AA best 62.1% length-adjusted (Claude Sonnet 5.5, October 2026);
+        HealthBench Hard top score 32% at release."
+      top_scores:
+        - model: Claude Sonnet 5.5 (max; Artificial Analysis, length-adjusted)
+          score: "62.1%"
+          date: "2026-10-19"
+        - model: o3 (paper)
+          score: "60%"
+          date: "2025-05-13"
+  - name: HealthBench Professional
+    type: eval
+    date: 2026-04-30
+    sources:
+      - label: Paper (arXiv)
+        url: https://arxiv.org/abs/2604.27470
+      - label: Blog
+        url: https://openai.com/index/making-chatgpt-better-for-clinicians/
+    description: >
+      525 real clinician conversations with ChatGPT for Clinicians (care consult, writing and
+      documentation, research), about one-third adversarial, sampled for difficulty from 15,079
+      candidates, with rubrics adjudicated by three or more physicians and a physician-response
+      baseline. Date is arXiv v1; the blog post's date was not independently verified.
+    paper:
+      arxiv: "2604.27470"
+      authors:
+        - Rebecca Soskin Hicks
+        - Mikhail Trofimov
+        - Dominick Lim
+        - Rahul K. Arora
+        - Foivos Tsimpourlas
+        - Preston Bowman
+        - Michael Sharman
+        - Chi Tong
+        - Kavin Karthik
+        - Arnav Dugar
+        - Akshay Jagadeesh
+        - Khaled Saab
+        - Johannes Heidecke
+        - Ashley Alexander
+        - Nate Gross
+        - Karan Singhal
+    eval:
+      num_questions: 525
+      domains:
+        - medicine
+        - clinical practice
+      scoring_method: "Model-graded rubric score, graded by GPT-5.4 (low); AA reports the
+        length-adjusted score (1.47 points per 500 characters away from 2,000) over 4 repeats."
+      used_in:
+        - Artificial Analysis standalone evaluation (from 2026-10-19)
+      leaderboard_url: https://artificialanalysis.ai/evaluations/healthbench-professional
+      saturation: "Not saturated: AA best 66.0% length-adjusted (GPT-6 Astra max, October 2026)."
+      human_baseline: "43.7 (specialist-matched physicians, unbounded time, web access)"
+      top_scores:
+        - model: GPT-6 Astra (max; Artificial Analysis, length-adjusted)
+          score: "66.0%"
+          date: "2026-10-19"
+        - model: Claude Opus 5.5 (max; Artificial Analysis, raw score, 59.9% length-adjusted)
+          score: "71.4%"
+          date: "2026-10-19"
+        - model: GPT-5.4 in ChatGPT for Clinicians (paper, vendor-run)
+          score: "59.0"
+          date: "2026-04-30"
+related:
+  - simpleqa
+  - lifescibench

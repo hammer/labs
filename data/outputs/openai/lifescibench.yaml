@@ -22,3 +22,4 @@ eval:
   num_questions: 750
 related:
   - genebench-pro
+  - healthbench

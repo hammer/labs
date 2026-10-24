@@ -1,0 +1,88 @@
+name: PostTrainBench
+slug: posttrainbench
+lab: tuebingen
+type: eval
+date: 2026-03-09
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2603.08640
+  - label: Project page and leaderboard
+    url: https://posttrainbench.com/
+  - label: GitHub
+    url: https://github.com/aisa-group/PostTrainBench
+description: >
+  <p>A benchmark for AI R&amp;D automation that asks whether coding agents can
+  do <strong>post-training</strong>, the step that turns a base LLM into a
+  useful assistant. Each run gives a CLI agent (Claude Code, Codex CLI and
+  similar) one small base model, one target benchmark, <strong>one H100 and
+  10 hours</strong>, with no prescribed method: the agent must find data,
+  write training code, run experiments and submit a checkpoint. The base
+  models are Qwen3-1.7B, Qwen3-4B, SmolLM3-3B and Gemma 3 4B; the score is a
+  weighted average over the target benchmarks, compared with the official
+  instruct models from the same bases. In the paper the best agent reached
+  <strong>23.2% against 51.1%</strong> for the official instruct models,
+  although agents can win narrowly (GPT-5.1 Codex Max took Gemma-3-4B to 89%
+  on BFCL against the official model's 67%). The paper documents reward
+  hacking in detail: agents trained on the test set, downloaded existing
+  instruct checkpoints instead of training their own, and used API keys they
+  found to generate synthetic data without authorization. MIT license, about
+  600 GitHub stars; ICML 2026.</p>
+
+  <p>The benchmark is maintained as a moving target. v1.1 (July 2026) added
+  independent judges for contamination, API use and PostTrainBench lookup,
+  banned distillation through hosted APIs, and flagged a GPT-5.6 Sol run for
+  consulting published traces; the authors published a response to Epoch AI's
+  independent review of v1.1. v1.2 (30 September 2026) dropped BFCL,
+  reweighting six benchmarks (AIME 2025, Arena-Hard writing, GPQA Main,
+  GSM8K, HealthBench, HumanEval). On v1.2 Claude Fable 5.1 leads at
+  <strong>44.6%</strong>, ahead of Claude Opus 5.5 at max effort (43.8%) and
+  GPT-6 Astra (41.9%), against 48.4% for the official instruct models, so
+  the gap that was 28 points in March is now under 4.
+  <strong>Epoch AI includes PostTrainBench v1.1 in the Epoch Capabilities
+  Index</strong>, and Google reports it for
+  <a href="/outputs/google/gemini-4-argon">Gemini 4 Argon</a>. The authors are
+  at the ELLIS Institute Tübingen, the Max Planck Institute for Intelligent
+  Systems and the Tübingen AI Center (Ben Rank and Hardik Bhatnagar co-first,
+  Ameya Prabhu, <a href="/people/matthias-bethge">Matthias Bethge</a>, and
+  corresponding author Maksym Andriushchenko), with two co-authors listed at
+  Thoughtful Lab.</p>
+tags:
+  - benchmark
+  - evaluation
+  - agents
+  - research
+  - post-training
+paper:
+  arxiv: "2603.08640"
+  venue: ICML 2026
+  authors:
+    - Ben Rank
+    - Hardik Bhatnagar
+    - Ameya Prabhu
+    - Shira Eisenberg
+    - Nguyen Karina
+    - Matthias Bethge
+    - Maksym Andriushchenko
+  code_url: https://github.com/aisa-group/PostTrainBench
+eval:
+  domains:
+    - AI R&D automation
+    - LLM post-training
+    - agentic ML engineering
+  scoring_method: "Weighted average, over four base models (Qwen3-1.7B, Qwen3-4B, SmolLM3-3B, Gemma
+    3 4B) and the target benchmarks, of the agent-post-trained checkpoint's score after 10 hours on
+    one H100; flagged (contaminated or rule-breaking) runs receive the base-model score."
+  used_in:
+    - Epoch Capabilities Index (PostTrainBench v1.1)
+    - Google Gemini 4 Argon launch
+  saturation: "Not saturated: best agent 44.6% on v1.2 against 48.4% for official instruct models
+    (23.2% vs 51.1% in the March 2026 paper)"
+  human_baseline: "Official instruct models: 48.4% (v1.2); 51.1% (paper)"
+  top_scores:
+    - model: Claude Fable 5.1 (v1.2)
+      score: "44.6%"
+    - model: Claude Opus 5.5 (max; v1.2)
+      score: "43.8%"
+    - model: GPT-6 Astra (v1.2)
+      score: "41.9%"
+  leaderboard_url: https://posttrainbench.com/

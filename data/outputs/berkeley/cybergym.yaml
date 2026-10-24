@@ -24,3 +24,5 @@ paper:
   arxiv: "2506.02548"
 related:
   - cybergym-e2e
+  - exploitgym
+  - cybench

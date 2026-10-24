@@ -1,0 +1,104 @@
+name: MMMU-Pro
+slug: mmmu-pro
+lab: cmu
+type: eval
+date: 2024-09-04
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2409.02813
+  - label: Project page and leaderboard
+    url: https://mmmu-benchmark.github.io/#leaderboard
+  - label: GitHub
+    url: https://github.com/MMMU-Benchmark/MMMU
+  - label: Artificial Analysis (MMMU Pro)
+    url: https://artificialanalysis.ai/evaluations/mmmu-pro
+description: >
+  <p>A harder version of MMMU, the college-level multimodal benchmark (11.5K
+  questions, 30 subjects in six disciplines). Users reported that text-only
+  LLMs could answer some MMMU questions without looking at the image.
+  <strong>MMMU-Pro</strong> fixes this in three steps. It
+  <strong>removes questions that text-only LLMs can answer</strong>, it
+  <strong>expands the options from 4 to up to 10</strong> to cut guessing, and
+  it adds a <strong>vision-only setting</strong> in which the question and
+  options are inside a screenshot or photo, so the model has to read and see
+  at once. The result is <strong>1,730 questions</strong>, each in standard
+  format and as an image (3,460 items). The headline score is the average of
+  the 10-option standard setting and the vision setting.</p>
+
+  <p>Scores fell sharply from MMMU: models lost <strong>16.8 to 26.9
+  points</strong>. GPT-4o (0513) dropped from 69.1 on MMMU validation to 54.0
+  (standard, 10 options) and 49.7 (vision). OCR prompts made little
+  difference, and chain-of-thought generally helped. The paper was published
+  at ACL 2025 (main) and is the standard multimodal row in launch tables
+  (e.g. <a href="/outputs/google/gemma-4-12b">Gemma 4</a>,
+  <a href="/outputs/meta/muse-glimmer">Muse Glimmer</a>,
+  <a href="/outputs/cohere/command-a-plus">Command A+</a> and
+  <a href="/outputs/shanghai-ai-lab/intern-s2-preview">Intern-S2</a>).
+  <strong>Artificial Analysis runs it as an additional evaluation</strong>
+  outside the Intelligence Index, on the 1,730-question 10-option set, single
+  pass with regex extraction. The top AA scores are now in the high 80s:
+  Claude Opus 5.5 (max) 87.7%, GPT-6 Astra (max) 86.9%, GPT-6.1 Sol (max)
+  86.0%.</p>
+
+  <p>The paper is credited to the "MMMU Team" and lists no institutions. It is
+  filed under CMU because the corresponding author, Xiang Yue
+  (xyue2@andrew.cmu.edu), and the senior author,
+  <a href="/people/graham-neubig">Graham Neubig</a>, are at CMU. The other
+  authors include the original MMMU group at Ohio State (Huan Sun, Yu Su) and
+  Waterloo (Wenhu Chen), which are not tracked. The original MMMU (2023) was
+  led by Ohio State and is not filed separately. The GitHub repo is Apache
+  2.0.</p>
+tags:
+  - benchmark
+  - evaluation
+  - multimodal
+  - vision
+  - reasoning
+paper:
+  arxiv: "2409.02813"
+  venue: ACL 2025
+  authors:
+    - Xiang Yue
+    - Tianyu Zheng
+    - Yuansheng Ni
+    - Yubo Wang
+    - Kai Zhang
+    - Shengbang Tong
+    - Yuxuan Sun
+    - Botao Yu
+    - Ge Zhang
+    - Huan Sun
+    - Yu Su
+    - Wenhu Chen
+    - Graham Neubig
+  code_url: https://github.com/MMMU-Benchmark/MMMU
+eval:
+  num_questions: 1730
+  domains:
+    - art and design
+    - business
+    - science
+    - health and medicine
+    - humanities and social science
+    - tech and engineering
+  scoring_method: "Multiple-choice accuracy with up to 10 options; the overall score averages the
+    standard 10-option setting and the vision-only (question-in-image) setting. Artificial Analysis
+    runs the 1,730-question standard 10-option set, 1 repeat, regex extraction."
+  used_in:
+    - Artificial Analysis additional evaluation (not in the Intelligence Index)
+  leaderboard_url: https://mmmu-benchmark.github.io/#leaderboard
+  saturation: "Approaching saturation on AA's 10-option set (best 87.7%, Claude Opus 5.5 max,
+    October 2026), up from 54.0% for GPT-4o at release."
+  random_baseline: "about 10% (10-way multiple choice)"
+  top_scores:
+    - model: Claude Opus 5.5 (max; Artificial Analysis)
+      score: "87.7%"
+      date: "2026-10-24"
+    - model: GPT-6 Astra (max; Artificial Analysis)
+      score: "86.9%"
+      date: "2026-10-24"
+    - model: GPT-4o 0513 (paper, standard 10-option / vision 49.7%)
+      score: "54.0%"
+      date: "2024-09-04"
+related:
+  - videommmu

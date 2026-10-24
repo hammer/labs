@@ -1,0 +1,89 @@
+name: GSO
+slug: gso
+lab: berkeley
+type: eval
+date: 2025-05-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2505.23671
+  - label: Project page and leaderboard
+    url: https://gso-bench.github.io/
+  - label: GitHub
+    url: https://github.com/gso-bench/gso
+  - label: Epoch AI benchmark page
+    url: https://epoch.ai/benchmarks/gso
+  - label: Reliability audit (Chen et al., arXiv 2607.01211)
+    url: https://arxiv.org/abs/2607.01211
+description: >
+  <p>A software-optimization benchmark for coding agents from UC Berkeley
+  (Manish Shetty, Naman Jain, Jinjian Liu, Vijay Kethanaboyina, Koushik Sen
+  and <a href="/people/ion-stoica">Ion Stoica</a>, all Berkeley). An automated
+  pipeline mines repository commit histories for real performance
+  improvements and generates performance tests for them, yielding
+  <strong>102 tasks across 10 codebases</strong> and five languages. The agent
+  gets the codebase before the expert's commit plus a performance test as the
+  specification, and must make the code faster while keeping it correct. The
+  headline metric, <strong>Opt@1</strong>, is the fraction of tasks where a
+  single attempt passes the correctness tests and reaches at least 95% of the
+  human developer's speedup. At release, leading SWE-agents succeeded on
+  <strong>under 5%</strong> of tasks, struggling with low-level languages,
+  settling for lazy optimizations and mislocalizing bottlenecks. MIT
+  license.</p>
+
+  <p><strong>Epoch AI includes GSO in the Epoch Capabilities Index</strong>,
+  sourcing scores from the GSO leaderboard, which runs every model in
+  OpenHands. The maintainers have repeatedly hardened it: a hack detector
+  since November 2025 penalizes deceptive optimizations such as memoization or
+  harness hijacking (reported as a "hack-adjusted" score), and since July 2026
+  containers are cut off from GitHub/GitLab after newer models were caught
+  fetching upstream commits. Scores jumped after a 27 September 2026
+  elicitation change asking models to keep measuring and improving after
+  their first speedup: Claude Fable 5.1 now leads at <strong>88.2%</strong>
+  Opt@1 (87.3% hack-adjusted), ahead of GPT-6 Astra (79.4%) and Claude Fable 5
+  (78.4%), against 47.1% for Claude Opus 4.8 in July. A July 2026 independent
+  audit (Chen et al.) found that the official reference patches satisfy GSO's
+  own validity rules in every cross-machine replay on only <strong>39 of 102
+  tasks</strong>, so small leaderboard differences carry real measurement
+  noise.</p>
+tags:
+  - benchmark
+  - evaluation
+  - coding
+  - agents
+  - optimization
+paper:
+  arxiv: "2505.23671"
+  authors:
+    - Manish Shetty
+    - Naman Jain
+    - Jinjian Liu
+    - Vijay Kethanaboyina
+    - Koushik Sen
+    - Ion Stoica
+  code_url: https://github.com/gso-bench/gso
+eval:
+  num_tasks: 102
+  domains:
+    - software performance optimization
+    - repository-level code editing
+  scoring_method: "Opt@1: fraction of tasks where one attempt passes correctness tests and reaches
+    at least 95% of the expert commit's speedup (harmonic mean over workloads); a hack detector
+    produces a hack-adjusted score."
+  used_in:
+    - Epoch Capabilities Index
+  saturation: "Approaching saturation: under 5% at release (May 2025), 88.2% Opt@1 for Claude Fable
+    5.1 by September 2026"
+  top_scores:
+    - model: Claude Fable 5.1 (xhigh, OpenHands)
+      score: "88.2%"
+      date: "2026-09-27"
+    - model: GPT-6 Astra (xhigh, OpenHands)
+      score: "79.4%"
+      date: "2026-09-27"
+    - model: Claude Fable 5 (xhigh, OpenHands)
+      score: "78.4%"
+      date: "2026-09-27"
+  leaderboard_url: https://gso-bench.github.io/
+related:
+  - livecodebench
+  - swe-gym
