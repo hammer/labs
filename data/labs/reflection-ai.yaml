@@ -75,6 +75,10 @@ people:
     description: >
       <p>Led post-training on the founding team and has since departed. Sole author of <strong>LambdaNetworks</strong>, a Google Brain researcher 2016-2022, on Character.AI's founding team, and an author of the <strong>GPT-4 Technical Report</strong> during his 2023-2024 spell at OpenAI.</p>
 news:
+  - title: "Nvidia in Early Talks to Invest Further in Reflection AI or Acquire It"
+    url: https://www.thestar.com.my/tech/tech-news/2026/10/11/nvidia-in-talks-to-invest-further-in-reflection-ai-or-buy-it-ft-reports
+    source: Financial Times via The Star
+    date: 2026-10-10
   - title: "Reflection AI Unveils Beam, a 501B-A23B Open-Weight MoE; Weights, Technical Report and Model Card Promised Later in October"
     url: https://reflection.ai/blog/introducing-beam
     source: Reflection AI

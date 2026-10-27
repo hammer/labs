@@ -12,10 +12,10 @@ ipo:
   exchange: HKEX
   ticker: "0020"
 valuation:
-  amount: "$6.4B"
+  amount: "$5.9B"
   type: market-cap
   ticker: "HKG: 0020"
-  date: "2026-09"
+  date: "2026-10"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/SenseTime">SenseTime</a> (HKG: 0020)
   is a major Chinese AI company and computer vision pioneer, publicly traded on the

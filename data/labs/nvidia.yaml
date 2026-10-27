@@ -13,13 +13,13 @@ ipo:
   exchange: NASDAQ
   ticker: NVDA
 valuation:
-  amount: "$5.09T"
+  amount: "$5.22T"
   type: market-cap
   ticker: "NASDAQ: NVDA"
-  date: "2026-09"
+  date: "2026-10"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Nvidia">NVIDIA</a> (NASDAQ: NVDA),
-  the world's most valuable company at ~$4.3T, dominates AI compute through its
+  the world's most valuable company at ~$5.2T (October 2026), dominates AI compute through its
   GPU hardware but also operates <strong>NVIDIA Research</strong> — a ~400-person
   division (est. 2006) spanning 21+ labs. Led by Chief Scientist
   <a href="https://scholar.google.com/citations?user=YZHj-Y4AAAAJ">Bill Dally</a>

@@ -12,10 +12,10 @@ ipo:
   exchange: KRX
   ticker: "035420"
 valuation:
-  amount: "$23B"
+  amount: "$20B"
   type: market-cap
   ticker: "KRX: 035420"
-  date: "2026-09"
+  date: "2026-10"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Naver_Corporation">Naver</a> (KRX:
   035420), South Korea's leading internet conglomerate, is a global pioneer in

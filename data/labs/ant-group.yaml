@@ -10,9 +10,9 @@ type: private
 formerly:
   - Ant Financial
 valuation:
-  amount: "$100B"
+  amount: "$79B"
   type: private
-  date: "2025-06"
+  date: "2023-07"
 description: >
   <p><a href="https://en.wikipedia.org/wiki/Ant_Group">Ant Group</a> is the fintech
   giant behind <a href="https://en.wikipedia.org/wiki/Alipay">Alipay</a> (1B+ users),
@@ -20,7 +20,9 @@ description: >
   2011</a> and rebranded from Ant Financial in 2020. After its
   <a href="https://en.wikipedia.org/wiki/Ant_Group#Suspended_IPO">record $37B IPO was
   suspended</a> by Chinese regulators in November 2020, the company pivoted heavily
-  into AI research. Alibaba holds 32.65% but ties have been loosening, with Ant's
+  into AI research. Its last priced
+  mark is the July 2023 share buyback at ¥567.1B (~$78.5B), about 70% below
+  the 2020 IPO valuation. Alibaba holds 32.65% but ties have been loosening, with Ant's
   AI research operating independently.</p>
 
   <p>AI is spearheaded by the <strong>Inclusion AI (IAI)</strong> team, producing the
@@ -124,11 +126,15 @@ news:
     url: https://www.interconnects.ai/p/inside-a-chinese-frontier-lab-inclusion
     source: Interconnects
     date: 2025-11-12
+  - title: "Ant Group Proposes Buying Back up to 7.6% of Its Shares at a ¥567.1B (~$78.5B) Valuation, ~70% Below Its 2020 IPO Mark"
+    url: https://fortune.com/2023/07/08/ant-group-buy-back-shares-ease-investor-pressure-china-ends-crackdown-that-derailed-worlds-biggest-ipo
+    source: Fortune (Bloomberg)
+    date: 2023-07-08
 relationships:
   - lab: alibaba
     type: affiliate
     note: >
-      Ant Group is majority-owned by Alibaba Group. Maintains independent
+      Alibaba Group holds 32.65% of Ant Group. Ant maintains independent
       AI research via the Inclusion AI team.
 tags:
   - open-weight

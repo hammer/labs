@@ -8,17 +8,14 @@ openrouter: https://openrouter.ai/ai21
 region: israel
 founded: "2017"
 type: private
-valuation:
-  amount: "$1.4B"
-  type: private
-  date: "2023-08"
 description: >
   <p>AI21 Labs was founded in 2017 in Tel Aviv by
   <a href="https://en.wikipedia.org/wiki/Yoav_Shoham">Yoav Shoham</a> (Stanford AI
   professor emeritus, ACM-AAAI Allen Newell Award),
   <a href="https://en.wikipedia.org/wiki/Amnon_Shashua">Amnon Shashua</a> (Mobileye
-  CEO, Hebrew University professor), and Ori Goshen. Raised ~$283M at a $1.4B
-  valuation. NVIDIA was in advanced acquisition talks ($2&ndash;3B) as of late 2025;
+  CEO, Hebrew University professor), and Ori Goshen. Raised ~$283M through a
+  2023 Series C at a $1.4B valuation, then a reported $300M Series D from Google
+  and NVIDIA in May 2025 at an undisclosed valuation. NVIDIA was in advanced acquisition talks ($2&ndash;3B) as of late 2025;
   those talks fell through, and a Nebius acquisition discussed in April 2026 ended
   as a commercial partnership to integrate AI21's <strong>Maestro</strong> agent
   platform into Nebius's cloud. In May 2026 AI21 laid off 110 of its 180 employees

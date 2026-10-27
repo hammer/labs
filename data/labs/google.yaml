@@ -14,16 +14,16 @@ ipo:
   ticker: GOOGL
   year: 2004
 valuation:
-  amount: "$4.23T"
+  amount: "$3.84T"
   type: market-cap
-  date: "2026-09"
+  date: "2026-10"
 description: >
   <p>Google's AI research spans two decades of foundational contributions. <strong>Google
   Brain</strong> (founded 2011 by Jeff Dean, Andrew Ng, Greg Corrado) and
   <strong><a href="https://en.wikipedia.org/wiki/Google_DeepMind">DeepMind</a></strong>
   (founded 2010 in London by <a href="https://en.wikipedia.org/wiki/Demis_Hassabis">Demis
   Hassabis</a>, acquired 2014 for ~$650M) merged in April 2023 into <strong>Google
-  DeepMind</strong>. Alphabet (parent since 2015) has a market cap of ~$3.56T.</p>
+  DeepMind</strong>. Alphabet (parent since 2015) had a market cap of ~$3.84T in October 2026.</p>
 
   <p>Google researchers authored many of the most important papers in modern AI:
   <strong><a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a></strong>
