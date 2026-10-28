@@ -62,6 +62,7 @@ Two failures look alike and need opposite fixes; `checkAaRecordCount` in `script
 - **Sentinel drift** — a handful of records. If `test:aa` passes but the live sync still parses a handful of records, AA changed the record opener again: inspect the bytes before the first `"intelligenceIndex"` in the RSC payload, add the shape to `AA_RECORD_SENTINEL` in `scripts/aa-payload.ts`, add a fixture to `tests/aa-payload-unit.ts`, and only then rerun the sync. Never hand-enter scores to work around it.
 
 - **A version rollout** — the sync prints "Version rollout: N of M listed models scored". AA lists every model on a new version's launch day but scores only those it has re-run (v5.0, 2026-10-27: 272 listed, 76 scored). Nothing is broken: sync what is scored, leave the rest on the old tag (the site's version-tier ranking marks them), and re-run every few days. A scored count under `AA_DRIFT_CEILING` with hundreds listed is still drift.
+- **Promotion candidates** — the sync's last list: sibling checkpoints scored on the current version in files whose anchor is not. During a rollout each one is a v5 score the home table cannot see. Promote distinct checkpoints to their own file per AGENTS.md ("Promote a sibling checkpoint…"); leave mode siblings to `--audit-modes` and product tiers as variants, and note why for any hit you leave.
 
 Review the diff for:
 

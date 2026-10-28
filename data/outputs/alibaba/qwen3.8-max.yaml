@@ -1,0 +1,73 @@
+name: Qwen3.8-Max-0902
+slug: qwen3.8-max
+lab: alibaba
+type: model
+date: 2026-09-02
+flagship: true
+sources:
+  - label: Release notice (Alibaba Cloud Model Studio)
+    url: https://www.alibabacloud.com/en/notice/model_studio_update_notice_for_qwen38max_models_863
+  - label: Qwen Cloud
+    url: https://www.qwencloud.com/models/qwen3.8-max
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/qwen3-8-max
+  - label: Artificial Analysis (Aug 3 snapshot)
+    url: https://artificialanalysis.ai/models/qwen3-8-max-0803
+  - label: Apsara 2026 roadmap (Alibaba Cloud)
+    url: https://www.alibabacloud.com/blog/alibaba-clouds-2026-apsara-conference-full-stack-ai-roadmap-along-with-global-market-expansion-plan_603598
+  - label: OpenRouter
+    url: https://openrouter.ai/qwen/qwen3.8-max
+description: >
+  <p>The September 2, 2026 snapshot of <strong>Qwen3.8-Max</strong>,
+  Alibaba's hosted flagship. Qwen3.8-Max is the API version of the open <a
+  href="/outputs/alibaba/qwen3.8">Qwen3.8-2.4T-A95B</a> weights, a 2.4T MoE
+  with 95B active, and adds vision input, a non-thinking mode, a 1M-token
+  default context and built-in tools. The first snapshot was announced on
+  August 3, and this one updates it with deeper coding, multi-tool agent
+  orchestration, and chart and document vision. Pricing is unchanged at
+  $2 / $6 per million input/output tokens, and the <code>qwen3.8-max</code>
+  endpoint has routed to it since September 5. Alibaba has not released
+  weights for this snapshot. At its 2026 Apsara Conference Alibaba said a
+  month of fully automated recursive-self-improvement runs (33 iterative
+  cycles) lifted Qwen3.8-Max's Artificial Analysis score from 40 to 45
+  (v4.3.2).</p>
+
+  <p><strong>Artificial Analysis scores it 34 on Intelligence Index
+  v5.0</strong>, Alibaba's highest v5 reading. AA lists it as
+  proprietary. It sits above the
+  best open-weights models (<a
+  href="/outputs/deepseek/deepseek-v4.1-flash-1017">DeepSeek-V4.1-Flash-1017</a>
+  32, GLM-5.3 32) and far behind Moonshot's <a
+  href="/outputs/moonshot-ai/kimi-k3.1-pro">Kimi K3.1 Pro</a> (46), the top
+  Chinese model. It is strongest on AA-Briefcase (Elo 1608, level
+  with Gemini 4 Carbon) and AutomationBench-AA (56.2%), and weak on the
+  science evals: 11.9% on Terminal-Bench-Science and 28.5% on the CritPt v2
+  hard subset. It is expensive to run for its score, at $10.02 per index
+  task. AA scored it 45 on v4.3.2, and the August 3 snapshot (40 on v4.3.2)
+  has not yet been rescored on v5.0.</p>
+tags:
+  - frontier
+  - moe
+  - reasoning
+  - agentic
+  - coding
+  - multimodal
+  - proprietary
+model:
+  open_weights: false
+  architecture: moe
+  parameters: 2.4T
+  active_parameters: 95B
+  context_window: 1000000
+  base_model: qwen3.8
+  intelligence_index: 34
+  intelligence_index_version: "AA v5.0"
+  intelligence_index_history:
+    - score: 45
+      version: "AA v4.3.2"
+      until: "2026-10-28"
+  license: Proprietary (API)
+related:
+  - qwen3.8
+  - qwen3.8-27b
+  - qwen3.7

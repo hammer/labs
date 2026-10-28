@@ -156,6 +156,10 @@ news:
     url: https://thenextweb.com/news/deepseek-reportedly-raises-15bn-from-tencent-and-catl-ahead-of-ipo
     source: Bloomberg via The Next Web
     date: 2026-10-22
+  - title: "DeepSeek-V4.1-Flash-1017: Post-Training Update via RL With Self-Feedback, Terminal-Bench 4.0 42.3 vs 31.2, Now Serves deepseek-flash; AA Intelligence Index 45 on v4.3.2 and 32 on v5.0, Top Open-Weights Model at v5 Launch"
+    url: https://api-docs.deepseek.com/news/news261017/
+    source: DeepSeek
+    date: 2026-10-17
   - title: "DeepSeek to Hire GL Ventures Partner Yan Wentao as Its First CFO Ahead of a Possible STAR Market IPO"
     url: https://kfgo.com/2026/09/14/chinas-deepseek-hires-dealmaker-as-cfo-ahead-of-possible-ipo/
     source: Reuters (via KFGO)

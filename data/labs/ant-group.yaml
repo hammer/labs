@@ -114,6 +114,10 @@ people:
       infrastructure. Former OpenAI researcher. PhD from UC Berkeley under
       Stuart Russell.</p>
 news:
+  - title: "inclusionAI Releases Ling-3.1-flash-1019 Weights (MIT): Post-Training Upgrade of the 560B-A25B MoE, AA Intelligence Index 44 on v4.3.2 and 29 on v5.0; Ling-3.1-flash-base Published Two Days Earlier"
+    url: https://huggingface.co/inclusionAI/Ling-3.1-flash-1019
+    source: HuggingFace
+    date: 2026-10-27
   - title: "Ant Group Launches Ling-3.1-flash (560B-A25B Hybrid Reasoning MoE, 262K Context) as a Two-Week Free Trial via Novita; Open Weights Promised Afterwards, No Model Card or Blog Post Yet"
     url: https://technode.com/2026/09/30/ant-group-launches-ling-3-1-flash-with-560-billion-parameters/
     source: TechNode

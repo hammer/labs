@@ -1,0 +1,89 @@
+name: DeepSeek-V4.1-Flash-1017
+slug: deepseek-v4.1-flash-1017
+lab: deepseek
+type: model
+date: 2026-10-17
+flagship: true
+sources:
+  - label: Release Note (DeepSeek API Docs)
+    url: https://api-docs.deepseek.com/news/news261017/
+  - label: HuggingFace
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017
+  - label: OpenRouter
+    url: https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017
+description: >
+  <p>A post-training update to <a
+  href="/outputs/deepseek/deepseek-v4.1-flash">DeepSeek-V4.1-Flash</a>,
+  released October 17, 2026 with open weights under MIT on HuggingFace and
+  ModelScope. Its config.json is identical to the September checkpoint, so
+  the architecture is unchanged: a 552B MoE with 16B active at decode, the
+  Causal Encoder-Decoder layout, CSA2 attention, the Engram memory table and
+  a 1M-token context. DeepSeek says it trained the update with
+  "reinforcement learning with self-feedback" for end-to-end project
+  building, and claims "a Pareto improvement in performance and cost":
+  higher scores, faster task completion and shorter outputs. It now serves
+  the <code>deepseek-flash</code> API name at the same Flash price, and it is
+  the default checkpoint of DeepSeek's <a
+  href="/outputs/deepseek/deepinfer">DeepInfer</a> inference framework.</p>
+
+  <p>DeepSeek's self-reported gains over the September checkpoint:
+  Terminal-Bench 4.0 <strong>42.3 vs 31.2</strong>, HLE without tools 42.6 vs
+  36.8, ProgramBench 29.1 vs 20.3, Apex Bench v1.1 72.1 vs 64.6,
+  Automation-Bench 60.5 vs 54.8, Agents' Last Exam 35.4 vs 31.8, DeepSWE v1.1
+  77.0 vs 74.2 and NL2Repo 68.2 vs 65.4.</p>
+
+  <p><strong>The independent number moves the same way.</strong> Artificial
+  Analysis scored it 45 on Intelligence Index v4.3.2, six points above the
+  original, and marked the September entry deprecated in its favour. On
+  <strong>v5.0 it scores 32</strong> at max effort, the highest of any model
+  with released open weights at v5's launch, just ahead of GLM-5.3 (32,
+  31.7 unrounded), MiMo-V2.6-Pro (30) and <a
+  href="/outputs/ant-group/ling-3.1-flash-1019">Ling-3.1-flash-1019</a> (29),
+  and well above <a href="/outputs/deepseek/deepseek-v4-pro">V4-Pro</a> (23).
+  Its strengths on AA's runs are AutomationBench-AA (66.6%), AA-Briefcase
+  (Elo 1570) and FrontierCode 2.0 (28.5%, the best open-weights score). Its
+  weak spot is calibration: a 35.9% AA-Omniscience non-hallucination rate.
+  It is also cheap to run, at $0.60 per index task on $0.30 / $1.20 per
+  million tokens.</p>
+tags:
+  - frontier
+  - moe
+  - open-weight
+  - multimodal
+  - agentic
+  - reasoning
+model:
+  open_weights: true
+  architecture: moe
+  parameters: 552B
+  active_parameters: 16B
+  num_experts: 384
+  top_k: 6
+  context_window: 1000000
+  base_model: deepseek-v4.1-flash
+  intelligence_index: 32
+  intelligence_index_version: "AA v5.0"
+  intelligence_index_history:
+    - score: 45
+      version: "AA v4.3.2"
+      until: "2026-10-28"
+  openness_index: 44.4
+  openness_index_version: "AA Openness Index v1.0"
+  license: MIT
+  benchmark_scores:
+    - benchmark: Terminal-Bench 4.0
+      score: "42.3"
+    - benchmark: HLE (no tools)
+      score: "42.6"
+    - benchmark: DeepSWE v1.1
+      score: "77.0"
+    - benchmark: ProgramBench
+      score: "29.1"
+    - benchmark: Automation-Bench
+      score: "60.5"
+related:
+  - deepseek-v4.1-flash
+  - deepseek-v4-pro
+  - deepinfer

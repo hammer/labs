@@ -9,6 +9,7 @@
  * Run: npm run test:aa
  */
 import { readFileSync } from 'fs';
+import { findPromotionCandidates } from '../scripts/aa-promotion';
 import { parseAaScores, splitAaRecords, checkAaRecordCount, checkAaPayload, listAaSlugs, AA_MIN_SCORED_RECORDS, AA_DRIFT_CEILING } from '../scripts/aa-payload';
 
 let failures = 0;
@@ -67,6 +68,21 @@ check('rollout: 272 listed / 76 scored passes', payloadErr(v5) === '', payloadEr
 check('rollout: flagged as a rollout', (() => { try { return checkAaPayload(v5, parseAaScores(v5)).rollout; } catch { return false; } })());
 check('rollout: 272 listed / 0 scored is still drift', /sentinel drift/.test(payloadErr(rollout(272, 0))));
 check('rollout: 180 listed is still a prune', /pruned the payload/.test(payloadErr(rollout(180, 180))));
+
+// Promotion candidates: a sibling scored on the current version while the
+// file's own anchor is not (the v5.0 Qwen3.8 / Ling-3.1-flash case).
+const aa = (slug: string) => `  - url: https://artificialanalysis.ai/models/${slug}\n`;
+const v5scores = new Map([['qwen3-8-max', 33.6], ['qwen3-8-27b', 20.1], ['ling-3-1-flash-1019', 29.5], ['glm-5-3', 31.7], ['glm-5-3-low', 23.1]]);
+const promo = (files: Array<[string, string]>) => findPromotionCandidates(files.map(([file, content]) => ({ file, content })), v5scores);
+const parent = aa('qwen3-8-2-4t-a95b') + aa('qwen3-8-max') + aa('qwen3-8-27b');
+check('promotion: v4-only anchor with v5 siblings → both flagged, best first',
+  JSON.stringify(promo([['qwen3.8', parent]]).map(c => c.sibling)) === '["qwen3-8-max","qwen3-8-27b"]');
+check('promotion: sibling already anchored by its own file → not flagged',
+  JSON.stringify(promo([['qwen3.8', parent], ['qwen3.8-max', aa('qwen3-8-max')]]).map(c => c.sibling)) === '["qwen3-8-27b"]');
+check('promotion: anchor itself scored → nothing to promote',
+  promo([['ling', aa('ling-3-1-flash-1019') + aa('qwen3-8-max')]]).length === 0);
+check('promotion: mode sibling of the anchor is the mode audit\'s job, not a promotion',
+  promo([['glm', aa('glm-5-3-max') + aa('glm-5-3-low')]]).length === 0);
 
 // Optional live guard: with AA_PAYLOAD=<file> the saved payload must clear the shared floor.
 if (process.env.AA_PAYLOAD) {

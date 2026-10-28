@@ -90,9 +90,10 @@ description: >
   <code>deepseek-flash</code> API name at the same Flash price, and it is the
   default checkpoint of DeepSeek's <a
   href="/outputs/deepseek/deepinfer">DeepInfer</a> inference framework. The
-  weights are on HuggingFace and ModelScope under MIT. This entry keeps its
-  structured score on the September checkpoint that the file names, and
-  records 1017 as a variant.</p>
+  weights are on HuggingFace and ModelScope under MIT. 1017 has its own entry
+  as <a href="/outputs/deepseek/deepseek-v4.1-flash-1017">DeepSeek-V4.1-Flash-1017</a>;
+  this one keeps its structured score on the September checkpoint that the
+  file names.</p>
 tags:
   - frontier
   - moe
@@ -143,12 +144,13 @@ model:
     - name: DeepSeek-V4.1-Flash-1017
       parameters: 552B
       active_parameters: 16B
-      notes: "2026-10-17 post-training update with config.json identical to V4.1-Flash; MIT; serves deepseek-flash since release. AA v5.0 32 (45 on v4.3.2; deepseek-v4-1-flash-1017, max). Self-reported: Terminal-Bench 4.0 42.3, HLE 42.6, DeepSWE v1.1 77.0, ProgramBench 29.1, Apex Bench v1.1 72.1, Automation-Bench 60.5, ALE 35.4"
+      notes: "2026-10-17 post-training update with config.json identical to V4.1-Flash; MIT; own entry at /outputs/deepseek/deepseek-v4.1-flash-1017 (AA v5.0 32)"
 paper:
   arxiv: "2609.19969"
   pdf_url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/resolve/main/DeepSeek_V41_Tech_Report.pdf
   huggingface_url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
 related:
+  - deepseek-v4.1-flash-1017
   - deepseek-v4-flash
   - deepseek-v4-pro
   - deepseek-v4

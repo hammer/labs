@@ -1,0 +1,87 @@
+name: Qwen3.8-27B
+slug: qwen3.8-27b
+lab: alibaba
+type: model
+date: 2026-08-14
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/Qwen/Qwen3.8-27B
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/qwen3-8-27b
+  - label: Qwen Cloud (hosted version, announced)
+    url: https://www.qwencloud.com/models/qwen3.8-27b
+description: >
+  <p>The dense member of the <a href="/outputs/alibaba/qwen3.8">Qwen3.8</a>
+  generation, released August 14, 2026 under <strong>Apache 2.0</strong>.
+  Unlike the 2.4T-A95B flagship, which ships under a custom license, it
+  carries a standard open-source license. It is a native vision-language model with image
+  and video input. The language model keeps the Qwen3.5 hybrid layout: 64
+  layers arranged as 16 &times; (3 Gated DeltaNet blocks, then 1 gated
+  attention block), a 5120 hidden size, a 248,320-token vocabulary and
+  multi-step MTP. Context is 262,144 tokens natively and extends to 1M.
+  Thinking is on by default and can be switched off per request, with
+  <code>reasoning_effort</code> control and preserved thinking across turns.
+  Its HuggingFace repo counted about 7.5M downloads over the last month in
+  late October.</p>
+
+  <p>Qwen's card compares it with <a
+  href="/outputs/alibaba/qwen3.6-open">Qwen3.6-27B</a>, Qwen3.7-Plus and
+  Claude Opus 4.6 (max). It reports SWE-bench Pro <strong>61.7</strong>
+  against Opus 4.6's 53.4 (Qwen's Claude Code harness for every model except
+  Opus, whose figure is Anthropic's own), Terminal-Bench 2.1 73.0 (Opus
+  78.2), GPQA Diamond 89.2, LiveCodeBench v6 90.3 and IFBench 79.5. On vision
+  agents it reports OSWorld-Verified <strong>84.3</strong> and AndroidWorld
+  81.9. All are self-reported.</p>
+
+  <p>Artificial Analysis scores it <strong>20 on Intelligence Index
+  v5.0</strong> at xhigh effort, down from 34 on v4.3.2 and 52 on v4.1.1.
+  Its lower effort settings had not yet been rescored on v5 at launch, and
+  read 28 (medium), 26 (low) and 22 (non-reasoning) on v4.3.2. The v5 drop is
+  steepest on the agentic and science evals: 5.6% on Terminal-Bench 4.0,
+  0.5% on Terminal-Bench-Science and 4% on the CritPt v2 hard subset, against
+  48.2% on AutomationBench-AA and 14.9% on FrontierCode 2.0. Its cost per
+  index task is $3.53, at $0.50 / $3 per million tokens.</p>
+tags:
+  - open-weight
+  - reasoning
+  - agentic
+  - coding
+  - multimodal
+  - linear-attention
+model:
+  open_weights: true
+  architecture: dense
+  parameters: 27B
+  context_window: 262144
+  intelligence_index: 20
+  intelligence_index_version: "AA v5.0"
+  intelligence_index_history:
+    - score: 34
+      version: "AA v4.3.2"
+      until: "2026-10-28"
+    - score: 52
+      version: "AA v4.1.1"
+      until: "2026-09-05"
+  openness_index: 38.9
+  openness_index_version: "AA Openness Index v1.0"
+  license: Apache 2.0
+  benchmark_scores:
+    - benchmark: SWE-bench Pro
+      score: "61.7"
+    - benchmark: Terminal-Bench 2.1
+      score: "73.0"
+    - benchmark: GPQA Diamond
+      score: "89.2"
+    - benchmark: LiveCodeBench v6
+      score: "90.3"
+    - benchmark: OSWorld-Verified
+      score: "84.3"
+  variants:
+    - name: Qwen3.8-27B (xhigh)
+      notes: "AA Intelligence Index v5.0 20 (top-level anchor; 34 on v4.3.2)"
+    - name: Qwen3.8-27B (medium / low / non-reasoning)
+      notes: "AA Intelligence Index v4.3.2 28 / 26 / 22; not yet rescored on v5.0"
+related:
+  - qwen3.8
+  - qwen3.8-max
+  - qwen3.6-open

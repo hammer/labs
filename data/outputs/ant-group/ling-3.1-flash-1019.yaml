@@ -1,0 +1,71 @@
+name: Ling-3.1-flash-1019
+slug: ling-3.1-flash-1019
+lab: ant-group
+type: model
+date: 2026-10-22
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/inclusionAI/Ling-3.1-flash-1019
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/ling-3-1-flash-1019
+  - label: HuggingFace (Ling-3.1-flash-base)
+    url: https://huggingface.co/inclusionAI/Ling-3.1-flash-base
+  - label: Training-content summary (PDF)
+    url: https://huggingface.co/inclusionAI/AI-Transparency/resolve/main/Ling-3.1_TDS-Summary.pdf
+description: >
+  <p>A post-training upgrade of <a
+  href="/outputs/ant-group/ling-3.1-flash">Ling-3.1-flash</a>, with the same
+  hybrid-linear MoE: 560B total and 25B active parameters, 63 KDA and 9
+  gated MLA layers, and 512 routed experts plus one shared, 8 active per
+  token. It first appeared on Artificial Analysis on October 22, 2026 as an
+  inclusionAI API model (release slug <code>ling-3-1-flash-rc5</code>), and
+  the weights followed on HuggingFace on <strong>October 27</strong> under
+  the <strong>MIT license</strong>. The card advertises a 1M-token context,
+  as for the original, where 262,144 is native and 1M comes from a YaRN
+  override. inclusionAI attributes the gains to "further post-training
+  optimizations". The card's figures are all Artificial Analysis evals:
+  AA-Briefcase rises from about 1400 to 1524 Elo, AutomationBench-AA from 62%
+  to 68%, CritPt from 18% to 26% and SciCode from 54% to 57%.</p>
+
+  <p><strong>Artificial Analysis scores it 29 on Intelligence Index
+  v5.0</strong>, three points behind <a
+  href="/outputs/deepseek/deepseek-v4.1-flash-1017">DeepSeek-V4.1-Flash-1017</a>
+  (32) and level with MiMo-V2.6-Pro (30, 29.9 unrounded) among open-weights
+  models. On v4.3.2 it scored 44, three points above the original release.
+  It is strongest on AutomationBench-AA (67.5%) and the CritPt v2 hard subset
+  (37.5%, the best of any open-weights model AA has scored) and weakest on
+  Terminal-Bench-Science (4.3%). It is cheap to run, at $3.19 per index task
+  on $0.30 / $0.90 per million tokens.</p>
+
+  <p>Two days before the 1019 weights, on October 25, inclusionAI also
+  released <strong>Ling-3.1-flash-base</strong>, the BF16 pre-trained
+  checkpoint behind both releases (trained in FP8, then merged with
+  Warmup-Stable and Merge). Its card compares it with DeepSeek-V4-Pro-Base and
+  MiMo-V2.5-Pro-Base on 47 benchmarks.</p>
+tags:
+  - moe
+  - open-weight
+  - reasoning
+  - agentic
+  - long-context
+  - linear-attention
+model:
+  open_weights: true
+  architecture: moe
+  parameters: 560B
+  active_parameters: 25B
+  num_experts: 512
+  top_k: 8
+  context_window: 262144
+  base_model: ling-3.1-flash
+  intelligence_index: 29
+  intelligence_index_version: "AA v5.0"
+  intelligence_index_history:
+    - score: 44
+      version: "AA v4.3.2"
+      until: "2026-10-28"
+  license: MIT
+related:
+  - ling-3.1-flash
+  - ling-3.0

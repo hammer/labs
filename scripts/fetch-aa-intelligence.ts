@@ -48,6 +48,7 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { globSync } from 'glob';
 import { parseAaScores, checkAaPayload } from "./aa-payload";
+import { modeRoot, findPromotionCandidates } from "./aa-promotion";
 
 const LEADERBOARD_URL = 'https://artificialanalysis.ai/leaderboards/models';
 const AAII_VERSION = 'AA v5.0';
@@ -207,12 +208,7 @@ function discoverMode(aaii: Map<string, number>) {
 // a version digit (5-6-sol) — means a different model, not a mode, and is
 // deliberately NOT treated as a sibling.
 const MODE_GAP_MIN = 1.0; // raw points; below this a sibling is noise, not a mis-anchor
-const MODE_TOKENS = new Set(['thinking', 'reasoning', 'non', 'adaptive', 'xhigh', 'high', 'medium', 'low', 'max', 'minimal', 'effort', 'fallback', 'default']);
-function modeRoot(slug: string): string {
-  const t = slug.split('-');
-  while (t.length > 1 && MODE_TOKENS.has(t[t.length - 1])) t.pop();
-  return t.join('-');
-}
+// MODE_TOKENS and modeRoot live in ./aa-promotion (shared with the promotion check).
 
 function auditModesMode(aaii: Map<string, number>) {
   const byRoot = new Map<string, Array<[string, number]>>();
@@ -270,6 +266,7 @@ async function main() {
   let unchanged = 0;  // no write needed (already current)
   const missing: Array<{ file: string; slug: string }> = [];
   const awaiting: Array<{ file: string; slug: string }> = []; // listed, not yet rescored on this version
+  const singleBlock: Array<{ file: string; content: string }> = []; // input to the promotion check
 
   for (const file of yamls) {
     const content = readFileSync(file, 'utf-8');
@@ -279,6 +276,7 @@ async function main() {
       console.warn(`  ⚠ ${file}: ${occurrences} intelligence_index occurrences — skipping (needs per-unit anchoring)`);
       continue;
     }
+    singleBlock.push({ file, content });
 
     const m = content.match(/artificialanalysis\.ai\/models\/([a-zA-Z0-9._-]+)/);
     if (!m) { missing.push({ file, slug: '(no AA URL)' }); continue; }
@@ -315,6 +313,13 @@ async function main() {
   console.log(`  artificialanalysis.ai/models/<slug> (may be a low-ranked but still-scored`);
   console.log(`  model, a renamed slug, or genuinely unscored): ${missing.length}`);
   for (const x of missing) console.log(`    ${x.slug.padEnd(40)}  ${x.file}`);
+
+  // Sibling checkpoints AA has scored on this version while the file's anchor
+  // has not: the home table can't see them (see scripts/aa-promotion.ts).
+  const promote = findPromotionCandidates(singleBlock, aaii);
+  console.log(`  Promotion candidates (sibling scored on ${AAII_VERSION}, anchor not; promote`);
+  console.log(`  each distinct checkpoint to its own file per AGENTS.md): ${promote.length}`);
+  for (const c of promote) console.log(`    ${c.sibling.padEnd(40)}  ${String(Math.round(c.score)).padStart(3)}  ${c.file}  (anchor ${c.anchor})`);
 }
 
 main().catch(e => { console.error(e); process.exit(1); });

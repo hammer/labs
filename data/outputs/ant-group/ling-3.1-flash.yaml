@@ -73,12 +73,12 @@ description: >
   Artificial Analysis on October 22. AA scored it 44 on v4.3.2, three points
   above the open release, and <strong>29</strong> on <strong>v5.0</strong>
   (October 27; AA had not yet rescored the open release), at the same price and with a
-  1,048,576-token context. AA lists it as proprietary and served only through
-  inclusionAI's API, and its release slug (<code>ling-3-1-flash-rc5</code>)
-  suggests a later release candidate. There is no HuggingFace repo, card or
-  announcement for it, so whether it is a future weights update or an
-  API-only build is unknown. The top-level score stays on the open
-  checkpoint this file names.</p>
+  1,048,576-token context. It was first served only through inclusionAI's API
+  (release slug <code>ling-3-1-flash-rc5</code>), and its MIT weights
+  followed on HuggingFace on October 27, two days after a
+  Ling-3.1-flash-base checkpoint. It has its own entry as <a
+  href="/outputs/ant-group/ling-3.1-flash-1019">Ling-3.1-flash-1019</a>; the
+  top-level score here stays on the original checkpoint this file names.</p>
 tags:
   - moe
   - open-weight
@@ -103,8 +103,9 @@ model:
       active_parameters: 25B
       notes: "open weights 2026-10-13 (MIT, FP8, MTP head); 63 KDA + 9 gated MLA layers; native 262,144 context, 1M via YaRN"
     - name: Ling-3.1-flash-1019
-      notes: "API-only checkpoint first listed by AA 2026-10-22 (release slug ling-3-1-flash-rc5); AA 29 on v5.0, 44 on v4.3.2 (ling-3-1-flash-1019); 1,048,576 context; no weights or card"
+      notes: "post-training upgrade, API from 2026-10-22, MIT weights 2026-10-27; own entry at /outputs/ant-group/ling-3.1-flash-1019 (AA v5.0 29)"
 related:
+  - ling-3.1-flash-1019
   - ling-3.0
   - ling-2.6
   - ling-3.0-flash-vl
