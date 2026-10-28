@@ -39,7 +39,7 @@ description: >
   <a href="https://venturebeat.com/technology/xiaomi-stuns-with-new-mimo-v2-pro-llm-nearing-gpt-5-2-opus-4-6-performance">MiMo-V2-Pro</a>
   (1T+ parameters, March 2026), MiMo-V2.5-Pro (April 2026), and
   <a href="/outputs/xiaomi/mimo-v2.6-pro">MiMo-V2.6-Pro</a> (September 2026), which
-  debuted as the top open-weights model on the AA Intelligence Index (v4.3: 46)
+  debuted as the top open-weights model on the AA Intelligence Index (46 on v4.3; 30 on v5.0)
   after $2.6M of publicly livestreamed RL post-training. MiMo-V2-Pro was revealed to be the mysterious
   "<a href="https://www.technology.org/2026/03/19/whos-that-ai-the-mystery-model-everyone-blamed-on-deepseek-turned-out-to-be-xiaomi/">Hunter
   Alpha</a>" model that appeared anonymously on OpenRouter, widely misattributed to

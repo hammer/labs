@@ -143,9 +143,11 @@ export interface ModelFacets {
   tokensT: number;
   /** Max context window across units. */
   ctx: number;
-  /** Max intelligence_index across units — AA v4-tagged scores only (older
-   * unversioned scores predate the v4 recalibration and aren't comparable). */
+  /** Best intelligence_index across units, ranked by AAII tier first (a v5
+   * score beats any v4 score) — see aaiiTier. 0 when no tier-1+ score. */
   intel: number;
+  /** aaiiTier of `intel`: 2 = current AA v5, 1 = legacy v4.x fallback. */
+  intelTier: number;
   /** Max openness_index across units (all values are AAOI v1.0). */
   openness: number;
   /**
@@ -157,6 +159,28 @@ export interface ModelFacets {
    * no unit records `open_weights`, which keeps unknown out of both.
    */
   openWeights: string;
+}
+
+/**
+ * AAII comparability tiers. AA recalibrates the composite between major
+ * versions, so a v5 score and a v4.3.2 score are on different scales and are
+ * never ranked against each other: a current-version reading (tier 2) always
+ * outranks a legacy one (tier 1) whatever the numbers, and the legacy one is
+ * shown with a "v4" marker. Pre-v4 tags are tier 0 (excluded).
+ * When AA v5 launched (2026-10-27) it had rescored only 76 models, so most
+ * labs fall back to tier 1 until the sync picks up their rescore.
+ */
+export const AAII_CURRENT_PREFIX = 'AA v5';
+export const AAII_LEGACY_PREFIX = 'AA v4';
+export function aaiiTier(version?: string): 0 | 1 | 2 {
+  const v = version ?? '';
+  if (v.startsWith(AAII_CURRENT_PREFIX)) return 2;
+  if (v.startsWith(AAII_LEGACY_PREFIX)) return 1; // incl. "AA v4.0 (delisted …)": still v4-comparable
+  return 0;
+}
+/** True when (tier, score) a outranks b. */
+function aaiiBeats(aTier: number, aScore: number, bTier: number, bScore: number): boolean {
+  return aTier !== bTier ? aTier > bTier : aScore > bScore;
 }
 
 /**
@@ -181,6 +205,7 @@ export function getModelFacets(output: Output): ModelFacets | null {
   let tokensT = 0;
   let ctx = 0;
   let intel = 0;
+  let intelTier = 0;
   let openness = 0;
   const weightSet = new Set<string>();
 
@@ -205,8 +230,10 @@ export function getModelFacets(output: Output): ModelFacets | null {
     }
     tokensT = Math.max(tokensT, parseScaleToTrillions(m.training_tokens));
     ctx = Math.max(ctx, m.context_window ?? 0);
-    if ((m.intelligence_index_version ?? '').startsWith('AA v4')) {
-      intel = Math.max(intel, m.intelligence_index ?? 0);
+    const tier = aaiiTier(m.intelligence_index_version);
+    if (tier > 0 && m.intelligence_index && aaiiBeats(tier, m.intelligence_index, intelTier, intel)) {
+      intel = m.intelligence_index;
+      intelTier = tier;
     }
     openness = Math.max(openness, m.openness_index ?? 0);
     // Strictly boolean: an unset field means unknown and must not be read as
@@ -217,7 +244,7 @@ export function getModelFacets(output: Output): ModelFacets | null {
 
   return {
     arch: [...archSet].sort().join(','),
-    paramsB, paramsSrc, aparamsB, aparamsSrc, tokensT, ctx, intel, openness,
+    paramsB, paramsSrc, aparamsB, aparamsSrc, tokensT, ctx, intel, intelTier, openness,
     openWeights: [...weightSet].sort().join(','),
   };
 }
@@ -328,6 +355,8 @@ export function getLargestModel(labSlug: string): LargestModel | null {
 
 interface TopIntelligence {
   score: number;
+  /** aaiiTier of `score`: 2 = AA v5, 1 = legacy v4.x fallback (marked in the UI). */
+  tier: number;
   name: string;
   slug: string;
   labSlug: string;
@@ -346,7 +375,7 @@ interface TopIntelligence {
    * reading missing-as-closed would hide real ones. Only an explicit `true`
    * qualifies.
    */
-  open?: { score: number; name: string; slug: string; labSlug: string; date: string };
+  open?: { score: number; tier: number; name: string; slug: string; labSlug: string; date: string };
 }
 
 /** Labs of the output a base_model slug points at ([] if untracked). */
@@ -358,9 +387,10 @@ function labsOfOutputSlug(slug: string): string[] {
 
 /**
  * Get the highest intelligence_index score across all outputs for a lab.
- * Only AA v4-tagged scores count — same rule as the timeline's Intelligence
- * facet (getModelFacets): pre-v4 scores predate the recalibration and aren't
- * comparable. The result also surfaces an openness reading: per the rule in
+ * Ranked by AAII tier first, then score — same rule as the timeline's
+ * Intelligence facet (getModelFacets): a lab's best v5 score wins over any v4
+ * score, and a lab with no v5 score falls back to its best v4 score, which
+ * the table marks. Pre-v4 and delisted scores don't count. The result also surfaces an openness reading: per the rule in
  * AGENTS.md, we pick the highest-AAII model that also has an openness_index
  * set ("Option C" — see issue #42). AA's openness coverage drifts behind the
  * latest AAII checkpoints, so always preferring the absolute top-AAII would
@@ -377,7 +407,7 @@ export function getTopIntelligence(labSlug: string): TopIntelligence | null {
   const outputs = getOutputsForLab(labSlug);
   let topAaii: TopIntelligence | null = null;
   let topWithOpenness: TopIntelligence | null = null;
-  let topOpen: { score: number; name: string; slug: string; labSlug: string; date: string } | null = null;
+  let topOpen: { score: number; tier: number; name: string; slug: string; labSlug: string; date: string } | null = null;
 
   function check(
     model: {
@@ -397,22 +427,23 @@ export function getTopIntelligence(labSlug: string): TopIntelligence | null {
     const { intelligence_index: score, intelligence_index_version: version,
       openness_index: openness, openness_index_version: opennessVersion } = model;
     if (!score) return;
-    if (!(version ?? '').startsWith('AA v4')) return;
+    const tier = aaiiTier(version);
+    if (tier === 0) return;
     if (model.pretrained_from_scratch === false) return;
     if (model.base_model && !labsOfOutputSlug(model.base_model).includes(labSlug)) return;
     const entry: TopIntelligence = {
-      score, name: displayName, slug: outputSlug, labSlug: outLabSlug, date,
+      score, tier, name: displayName, slug: outputSlug, labSlug: outLabSlug, date,
       openness, opennessVersion,
     };
-    if (!topAaii || score > topAaii.score) topAaii = entry;
-    if (openness !== undefined && (!topWithOpenness || score > topWithOpenness.score)) {
+    if (!topAaii || aaiiBeats(tier, score, topAaii.tier, topAaii.score)) topAaii = entry;
+    if (openness !== undefined && (!topWithOpenness || aaiiBeats(tier, score, topWithOpenness.tier, topWithOpenness.score))) {
       topWithOpenness = entry;
     }
     // Strictly `=== true`: see the `open` field's comment. The from-scratch and
     // AA-v4 filters above apply here too, by construction, so the two
     // intelligence columns can never disagree about which models are eligible.
-    if (model.open_weights === true && (!topOpen || score > topOpen.score)) {
-      topOpen = { score, name: displayName, slug: outputSlug, labSlug: outLabSlug, date };
+    if (model.open_weights === true && (!topOpen || aaiiBeats(tier, score, topOpen.tier, topOpen.score))) {
+      topOpen = { score, tier, name: displayName, slug: outputSlug, labSlug: outLabSlug, date };
     }
   }
 

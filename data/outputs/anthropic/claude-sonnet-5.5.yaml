@@ -18,9 +18,10 @@ description: >
   a clear upgrade over <a href="/outputs/anthropic/claude-sonnet-5">Sonnet
   5</a> that runs more than 30% faster and costs up to 30% less for most work
   at an unchanged price of $2 / $10 per million input/output tokens, because it
-  needs far fewer tokens per task. Artificial Analysis scores it <strong>56 on
-  Intelligence Index v4.3.2</strong> at max effort, #2 overall behind Opus 5.5
-  (58) and ahead of Fable 5.1 and GPT-6 Astra (53). Anthropic positions it for
+  needs far fewer tokens per task. Artificial Analysis scores it <strong>54 on
+  Intelligence Index v5.0</strong> at max effort, behind Opus 5.5 (58), GPT-6
+  Astra (57) and GPT-6.1 Sol (55) and ahead of Fable 5.1 (49); on v4.3.2 it
+  read 56, #2 overall behind Opus 5.5. Anthropic positions it for
   well-scoped everyday tasks, bug fixing and polished documents, and says Opus
   5.5 remains clearly stronger at open-ended work that needs sustained
   judgment. API ID <code>claude-sonnet-5-5</code>; 1M-token context, 128K
@@ -45,8 +46,12 @@ tags:
 model:
   open_weights: false
   context_window: 1000000
-  intelligence_index: 56
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 54
+  intelligence_index_version: "AA v5.0"
+  intelligence_index_history:
+    - score: 56
+      version: "AA v4.3.2"
+      until: "2026-10-28"
   benchmark_scores:
     - benchmark: Terminal-Bench 4.0
       score: "70.6%"
@@ -62,9 +67,9 @@ model:
       mode: with tools
   variants:
     - name: Claude Sonnet 5.5 (xhigh)
-      notes: AAII v4.3.2 52
+      notes: AAII v5.0 50 (v4.3.2 52)
     - name: Claude Sonnet 5.5 (high)
-      notes: AAII v4.3.2 47
+      notes: AAII v5.0 41 (v4.3.2 47)
 related:
   - claude-sonnet-5
   - claude-opus-5.5

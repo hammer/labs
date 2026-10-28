@@ -35,9 +35,9 @@ description: >
   <code>max_position_embeddings: 1048576</code>, so the <strong>1M context is
   now exposed in the weights</strong> even though the beta API capped at 262K;
   and it confirms the routing as <strong>256 experts with 8 active per
-  token</strong> over 52 layers. <strong>Artificial Analysis scores it 30 on
-  Intelligence Index v4.3.2</strong>, ranking <strong>19th of 120</strong>
-  open-weights models in its size class, with no public API so the figure is
+  token</strong> over 52 layers. <strong>Artificial Analysis scores it 18 on
+  Intelligence Index v5.0</strong> (30 on v4.3.2, when it ranked 19th of 120
+  open-weights models in its size class), with no public API so the figure is
   from self-hosted inference.</p>
 
   <p>The architecture is built for RL to run on top of it without falling over.
@@ -92,8 +92,12 @@ tags:
 model:
   open_weights: true
   architecture: moe
-  intelligence_index: 30
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 18
+  intelligence_index_version: "AA v5.0"
+  intelligence_index_history:
+    - score: 30
+      version: "AA v4.3.2"
+      until: "2026-10-28"
   parameters: 501B
   active_parameters: 23B
   num_experts: 256

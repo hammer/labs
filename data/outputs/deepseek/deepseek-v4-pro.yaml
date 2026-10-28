@@ -48,9 +48,12 @@ model:
   architecture: moe
   base_model: deepseek-v4
   context_window: 1048576
-  intelligence_index: 36
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 23
+  intelligence_index_version: "AA v5.0"
   intelligence_index_history:
+    - score: 36
+      version: "AA v4.3.2"
+      until: "2026-10-28"
     - score: 42
       version: "AA v4.2"
       until: "2026-09-08"

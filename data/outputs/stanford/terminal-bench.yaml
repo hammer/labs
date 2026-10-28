@@ -81,8 +81,8 @@ description: >
   <p>Artificial Analysis added the hard subset of Terminal-Bench-Core to its
   Intelligence Index in v3.0 (September 2025), switched to Terminal-Bench 2.1
   in v4.1 (June 2026), and since v4.3 (September 2026) has weighted
-  <strong>Terminal-Bench 4.0 at 10%</strong> of the index, unchanged in the
-  current v4.3.2. AA runs all 66 tasks with mini-swe-agent and three repeats
+  <strong>Terminal-Bench 4.0 at 10%</strong> of the index, unchanged in
+  v5.0 (27 October 2026). AA runs all 66 tasks with mini-swe-agent and three repeats
   per task; Claude Sonnet 5.5 at max effort leads its run at 63.6%. Epoch AI's
   Capabilities Index also includes Terminal-Bench, using the 2.0 leaderboard.
   On the public 4.0 leaderboard (five trials per task), GPT-6 Astra in Codex
@@ -93,8 +93,11 @@ description: >
   0.1</strong> (27 August 2026), led by Stanford researchers, holds 70
   research-workflow tasks across the life, physical, Earth, mathematical and
   engineering sciences, selected from 920 proposals by 376 contributors in 22
-  countries; Claude Opus 5 in Claude Code led its launch results at 30.0%, and
-  AA runs it as a standalone evaluation outside the index. The code is
+  countries; Claude Opus 5 in Claude Code led its launch results at 30.0%. AA ran it as a
+  standalone evaluation until <strong>v5.0 made Terminal-Bench-Science 0.1 a 15%
+  component of the Intelligence Index</strong>, the larger half of the new
+  Science category; GPT-6 Astra (max) leads AA's run at 63%, Claude Opus 5.5
+  (max) 59%, and the best released open-weights model scores 13%. The code is
   Apache 2.0, and the original Terminal-Bench repository has about 2,600
   GitHub stars.</p>
 tags:
@@ -134,7 +137,8 @@ eval:
   used_in:
     - AA Intelligence Index v3.0 through v4.0.4 (as Terminal-Bench Hard)
     - AA Intelligence Index v4.1 through v4.2 (as Terminal-Bench 2.1)
-    - AA Intelligence Index v4.3 through v4.3.2 (as Terminal-Bench 4.0, 10%)
+    - AA Intelligence Index v4.3 through v5.0 (as Terminal-Bench 4.0, 10%)
+    - AA Intelligence Index v5.0 (Terminal-Bench-Science 0.1, 15%)
     - Epoch Capabilities Index (Terminal-Bench 2.0)
   saturation: "Not saturated on 4.0 (public leaderboard best 58.2%, AA's best 63.6%, Anthropic-reported
     70.6%). The 2.x task sets passed 80% by mid-2026 (Claude Fable 5 83.8% on 2.1), which prompted the

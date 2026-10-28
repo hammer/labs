@@ -33,9 +33,11 @@ description: >
   <p>At release the best model, Claude 3.5 Sonnet, solved <strong>4.6% of main
   problems</strong> in the standard setting (no background) and 26.0% of
   subproblems. GPT-4o and Claude 3 Opus solved 1.5% of main problems, and the
-  best open model, DeepSeek-Coder-V2, 3.1%. <strong>SciCode is a 10% component
-  of the Artificial Analysis Intelligence Index v4.3.2</strong>, in the
-  Coding category next to Terminal-Bench 4.0. AA runs the 288-subproblem test
+  best open model, DeepSeek-Coder-V2, 3.1%. <strong>SciCode was a 10% component
+  of the Artificial Analysis Intelligence Index from v4.2 through v4.3.2</strong>,
+  in the Coding category next to Terminal-Bench 4.0, and <strong>was removed in
+  v5.0</strong> (27 October 2026), where FrontierCode 2.0 took over most of the
+  Coding weight; AA still reports it as a legacy evaluation. AA runs the 288-subproblem test
   set three times with background prompting and scores at the subproblem
   level, so its numbers are not comparable with the paper's main-problem
   rate. In AA v4.2 it raised the grading timeout from 60s to 300s and
@@ -106,7 +108,7 @@ eval:
     Analysis scores the 288-subproblem test set at subproblem level, pass@1 over 3 repeats, with
     scientist-annotated background prompting."
   used_in:
-    - AA Intelligence Index through v4.3.2 (10% from v4.2; Coding category)
+    - AA Intelligence Index through v4.3.2 (10% from v4.2; Coding category; removed in v5.0)
   leaderboard_url: https://artificialanalysis.ai/evaluations/scicode
   saturation: "Not saturated: best AA subproblem score 66.9% (Claude Opus 5.5 max, October 2026).
     AA flags the dataset as under review after an independent audit reported possible errors."

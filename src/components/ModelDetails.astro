@@ -1,5 +1,6 @@
 ---
 import type { Output, MetricsEntry } from '../schema.js';
+import { aaiiTier } from '../data/loader.js';
 
 interface Props {
   model: NonNullable<Output['model']>;
@@ -67,6 +68,11 @@ const { model, metrics } = Astro.props;
         <span class="spec-label">AA Intelligence</span>
         <span class="spec-value">
           {model.intelligence_index}
+          {aaiiTier(model.intelligence_index_version) === 1 && (
+            <span class="score-history" title="Not yet rescored on AA Intelligence Index v5, which uses a different scale">
+              on {model.intelligence_index_version!.replace(/^AA /, '').replace(/ \(.*$/, '')}
+            </span>
+          )}
           {(model.intelligence_index_history?.length ?? 0) > 0 && (
             <span
               class="score-history"

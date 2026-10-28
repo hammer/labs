@@ -33,12 +33,13 @@ description: >
   which Google frames as letting the model generate hundreds of thousands of
   tokens in a single trajectory instead of breaking a long job into pieces.
   Artificial Analysis measures a 1M-token context window with text and image
-  input, and scores it <strong>53 on Intelligence Index v4.3.2</strong> &mdash;
-  by far Google's best (<a href="/outputs/google/gemini-3.8-flash">Gemini 3.8
-  Flash</a> reads 41), level with <a href="/outputs/openai/gpt-6-astra">GPT-6
-  Astra</a> and Claude Fable 5.1, and behind
-  <a href="/outputs/anthropic/claude-opus-5.5">Claude Opus 5.5</a> (58) and
-  Sonnet 5.5 (56). Introductory pricing is $2 per million input tokens and $10
+  input, and scores it <strong>50 on Intelligence Index v5.0</strong> (53 on
+  v4.3.2) &mdash; by far Google's best (<a href="/outputs/google/gemini-3.8-flash">Gemini 3.8
+  Flash</a> reads 31), one point above Claude Fable 5.1 (49), and behind
+  <a href="/outputs/anthropic/claude-opus-5.5">Claude Opus 5.5</a> (58),
+  <a href="/outputs/openai/gpt-6-astra">GPT-6 Astra</a> (57),
+  <a href="/outputs/openai/gpt-6.1-sol">GPT-6.1 Sol</a> (55) and Sonnet 5.5
+  (54). Introductory pricing is $2 per million input tokens and $10
   per million output, with cached input 95% off, rising to $4 and $20 when the
   introductory period ends on November 30, 2026. The GA post describes the
   limit as 1M tokens shared between input and output, and adds two vendor
@@ -94,8 +95,12 @@ tags:
 model:
   open_weights: false
   context_window: 1000000
-  intelligence_index: 53
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 50
+  intelligence_index_version: "AA v5.0"
+  intelligence_index_history:
+    - score: 53
+      version: "AA v4.3.2"
+      until: "2026-10-28"
   license: Proprietary (API)
   benchmark_scores:
     - benchmark: Vals Index

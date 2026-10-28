@@ -47,9 +47,9 @@ description: >
   many completed tasks as 3.7 Flash on long-running document-heavy workflows.
   Launch coverage put it at 59 on the then-current AA Intelligence Index
   v4.1.1, level with GPT-5.6 Sol and Grok 4.6; on <strong>AA Intelligence
-  Index v4.3 it scores 41</strong> at high effort (40 medium, 33 low), #32 of
-  202 at last check and Google's highest score on the index, and the fastest
-  model AA measures at 328.8 output tokens/s. Pricing holds at $0.75 per
+  Index v5.0 it scores 31</strong> at high effort (30 medium, 22 low; 41/40/33
+  on v4.3.2, when it was #32 of 202 and Google's highest score on the index),
+  and it is the fastest model AA measures at 328.8 output tokens/s. Pricing holds at $0.75 per
   million input tokens and $3.75 per million
   output tokens through December 31, 2026, doubling to $1.50/$7.50 on January
   1, 2027. Available in the Gemini API, AI Studio, Antigravity, Android Studio,
@@ -66,8 +66,12 @@ model:
   open_weights: false
   base_model: gemini-3.7-flash
   context_window: 1048576
-  intelligence_index: 41
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 31
+  intelligence_index_version: "AA v5.0"
+  intelligence_index_history:
+    - score: 41
+      version: "AA v4.3.2"
+      until: "2026-10-28"
   license: Proprietary
   benchmark_scores:
     - benchmark: DeepSWE v1.1
@@ -106,9 +110,9 @@ model:
       score: "86.2%"
   variants:
     - name: Gemini 3.8 Flash (high)
-      notes: "Default AA anchor; AA Intelligence Index v4.3: 41"
+      notes: "Default AA anchor; AA Intelligence Index v5.0: 31 (41 on v4.3.2)"
     - name: Gemini 3.8 Flash (medium / low)
-      notes: "AA Intelligence Index v4.3: 40 / 33"
+      notes: "AA Intelligence Index v5.0: 30 / 22 (40 / 33 on v4.3.2)"
 related:
   - gemini-3.7-flash
   - gemini-3.6-flash

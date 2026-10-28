@@ -36,11 +36,12 @@ description: >
   $0.60 out / $0.015 cached input per 1M tokens.</p>
 
   <p><strong>Independent measurement backs the capability claim more than
-  the self-reported table does.</strong> Artificial Analysis scores it
-  <strong>43</strong> on Intelligence Index v4.3.2, against 29 for M3 on the
-  same version. That is a 14-point gain inside a minor version, and it puts
-  M3.1-Flash just behind DeepSeek-V4.1-Flash-1017 (45) and ahead of the
-  original V4.1-Flash (39). The vendor table, which uses a mix of third-party
+  the self-reported table does.</strong> Artificial Analysis scored it
+  43 on Intelligence Index v4.3.2, against 29 for M3 on the same version
+  &mdash; a 14-point gain inside a minor version that put M3.1-Flash just
+  behind DeepSeek-V4.1-Flash-1017 (45) and ahead of the original V4.1-Flash
+  (39). On <strong>v5.0</strong> (October 27) it reads <strong>29</strong>
+  against 19 for M3 and 32 for V4.1-Flash-1017, so the order holds. The vendor table, which uses a mix of third-party
   harnesses, shows the same pattern: BankerToolBench 76.2, DeepSWE v1.1 73.7,
   Automation-Bench v1.0.6 62.8, OSWorld 2.0 61.7, CyberGym 82.2, Agents' Last
   Exam 29.6, HLE (text-only, no tools) 43.4, and Terminal-Bench 4.0 38.1,
@@ -77,8 +78,12 @@ model:
   num_experts: 128
   top_k: 4
   context_window: 1048576
-  intelligence_index: 43
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 29
+  intelligence_index_version: "AA v5.0"
+  intelligence_index_history:
+    - score: 43
+      version: "AA v4.3.2"
+      until: "2026-10-28"
   license: MiniMax Community License
   benchmark_scores:
     - benchmark: BankerToolBench

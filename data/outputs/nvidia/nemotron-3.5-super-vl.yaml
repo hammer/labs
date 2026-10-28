@@ -42,10 +42,11 @@ description: >
   <a href="/outputs/meta/muse-spark-open">Muse Spark Open</a>, which shipped the
   same week under a bespoke licence with a $20M notification clause.</p>
 
-  <p>Artificial Analysis scored it on release day at
-  <strong>26 on Intelligence Index v4.3.2</strong>, <strong>#1 of 67</strong>
-  open-weights models in its size class and, in AA's words, "the leading US
-  open weight model" &mdash; twice the 13 of its predecessor Nemotron 3 Super.
+  <p>Artificial Analysis scored it on release day at 26 on Intelligence Index
+  v4.3.2, #1 of 67 open-weights models in its size class and, in AA's words,
+  "the leading US open weight model" &mdash; twice the 13 of its predecessor
+  Nemotron 3 Super on that version. On <strong>v5.0</strong> (October 27) it
+  reads <strong>14</strong>.
   Two figures make the efficiency case as well as the score does: it spends
   <strong>46k output tokens per index task, about 60% fewer than its
   predecessor</strong>, and serves at ~630 tok/s on 100k-token prompts with a
@@ -63,8 +64,12 @@ model:
   parameters: 120B
   active_parameters: 12B
   context_window: 1000000
-  intelligence_index: 26
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 14
+  intelligence_index_version: "AA v5.0"
+  intelligence_index_history:
+    - score: 26
+      version: "AA v4.3.2"
+      until: "2026-10-28"
   license: OpenMDW-1.1
   variants:
     - name: Super VL 120B-A12B BF16

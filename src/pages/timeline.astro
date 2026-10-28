@@ -143,7 +143,7 @@ const dimensions: FilterDimension[] = [
   {
     key: 'intel', label: 'Intelligence', kind: 'range', rowAttr: 'intel',
     excludeMissing: true, visibleWhen: modelScope,
-    hint: `${hint(facetCoverage.intel)} (AA v4-verified scores only)`,
+    hint: `${hint(facetCoverage.intel)} (AA v5 scores; v4.3.2 where AA has not rescored yet, marked v4)`,
   },
   {
     key: 'openness', label: 'Openness', kind: 'range', rowAttr: 'openness',
@@ -173,7 +173,7 @@ const COLUMNS: MetricColumn[] = [
   { key: 'aparams', label: 'Active', format: 'paramsB', title: 'Active parameters per token (MoE); (max) marks the largest family variant' },
   { key: 'tokens', label: 'Tokens', format: 'tokensT', title: 'Training tokens' },
   { key: 'ctx', label: 'Context', format: 'compact', title: 'Context window in tokens' },
-  { key: 'intel', label: 'Intel', format: 'plain', title: 'Artificial Analysis Intelligence Index — AA v4-verified scores only' },
+  { key: 'intel', label: 'Intel', format: 'plain', title: 'Artificial Analysis Intelligence Index — v5 scores; a (v4) mark is a v4.3.2 score not yet rescored on v5, sorted below every v5 score' },
   { key: 'questions', label: 'Questions', format: 'compact', title: 'Benchmark questions/examples in the scored eval set' },
   { key: 'tasks', label: 'Tasks', format: 'plain', title: 'Benchmark tasks/subtasks (the paper’s own decomposition)' },
 ];
@@ -278,6 +278,8 @@ function cellText(
   const src = key === 'params' ? f?.paramsSrc : key === 'aparams' ? f?.aparamsSrc : '';
   if (src === 'estimate') text = `~${text}`;
   else if (src === 'variant') text = `${text} (max)`;
+  // A v4.3.2 score not yet rescored on v5 is on a different scale; say so.
+  if (key === 'intel' && f?.intelTier === 1) text = `${text} (v4)`;
   return text;
 }
 ---
@@ -390,6 +392,7 @@ function cellText(
             data-tokens={f && f.tokensT > 0 ? f.tokensT : undefined}
             data-ctx={f && f.ctx > 0 ? f.ctx : undefined}
             data-intel={f && f.intel > 0 ? f.intel : undefined}
+            data-intel-tier={f && f.intel > 0 ? f.intelTier : undefined}
             data-openness={f && f.openness > 0 ? f.openness : undefined}
             data-questions={ev && ev.questions > 0 ? ev.questions : undefined}
             data-tasks={ev && ev.tasks > 0 ? ev.tasks : undefined}
@@ -625,6 +628,12 @@ function cellText(
         if (va === -1 && vb === -1) return 0;
         if (va === -1) return 1;
         if (vb === -1) return -1;
+        // AAII ranks by version tier first: v5 above any v4 fallback
+        // (different scales — see aaiiTier in loader.ts).
+        if (column === 'intel') {
+          const td = getNumericAttr(a, 'intelTier') - getNumericAttr(b, 'intelTier');
+          if (td !== 0) return desc ? -td : td;
+        }
         return desc ? (vb as number) - (va as number) : (va as number) - (vb as number);
       }
     });

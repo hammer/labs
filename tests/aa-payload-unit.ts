@@ -9,7 +9,7 @@
  * Run: npm run test:aa
  */
 import { readFileSync } from 'fs';
-import { parseAaScores, splitAaRecords, checkAaRecordCount, AA_MIN_SCORED_RECORDS, AA_DRIFT_CEILING } from '../scripts/aa-payload';
+import { parseAaScores, splitAaRecords, checkAaRecordCount, checkAaPayload, listAaSlugs, AA_MIN_SCORED_RECORDS, AA_DRIFT_CEILING } from '../scripts/aa-payload';
 
 let failures = 0;
 function check(name: string, ok: boolean, detail = '') {
@@ -51,10 +51,27 @@ check('floor: 1 record is diagnosed as sentinel drift', /sentinel drift/.test(er
 check('floor: drift ceiling well below the floor', AA_DRIFT_CEILING * 10 < AA_MIN_SCORED_RECORDS);
 check('floor: 180 records is diagnosed as a payload prune', /pruned the payload/.test(errOf(180)));
 
+// Version rollout (v5.0, 2026-10-27): AA lists every model but scores only
+// the ones it has re-run; the rest carry "intelligenceIndex":null. The floor
+// must apply to listed records, so 272 listed / 76 scored passes, while a
+// drifted parser (scored ≈ 0) still throws.
+function rec(slug: string, ii: string) { return `{"slug":"${slug}","name":"${slug}","shortName":"${slug}","intelligenceIndex":${ii},"x":1}`; }
+function rollout(listed: number, scored: number) {
+  return Array.from({ length: listed }, (_, i) => rec(`m-${i}`, i < scored ? String(50 - i / 10) : 'null')).join(',');
+}
+function payloadErr(body: string): string { try { checkAaPayload(body, parseAaScores(body)); return ''; } catch (e) { return (e as Error).message; } }
+const v5 = rollout(272, 76);
+check('rollout: null records are listed', listAaSlugs(v5).size === 272, `got ${listAaSlugs(v5).size}`);
+check('rollout: null records are not scored', parseAaScores(v5).size === 76, `got ${parseAaScores(v5).size}`);
+check('rollout: 272 listed / 76 scored passes', payloadErr(v5) === '', payloadErr(v5));
+check('rollout: flagged as a rollout', (() => { try { return checkAaPayload(v5, parseAaScores(v5)).rollout; } catch { return false; } })());
+check('rollout: 272 listed / 0 scored is still drift', /sentinel drift/.test(payloadErr(rollout(272, 0))));
+check('rollout: 180 listed is still a prune', /pruned the payload/.test(payloadErr(rollout(180, 180))));
+
 // Optional live guard: with AA_PAYLOAD=<file> the saved payload must clear the shared floor.
 if (process.env.AA_PAYLOAD) {
-  const n = parseAaScores(readFileSync(process.env.AA_PAYLOAD, 'utf8')).size;
-  check(`live payload ${process.env.AA_PAYLOAD}: ≥${AA_MIN_SCORED_RECORDS} scored records`, n >= AA_MIN_SCORED_RECORDS, `got ${n}`);
+  const n = listAaSlugs(readFileSync(process.env.AA_PAYLOAD, 'utf8')).size;
+  check(`live payload ${process.env.AA_PAYLOAD}: ≥${AA_MIN_SCORED_RECORDS} listed records`, n >= AA_MIN_SCORED_RECORDS, `got ${n}`);
 }
 
 console.log(failures ? `\n${failures} failing` : '\nall passing');

@@ -26,13 +26,14 @@ description: >
   open-weights models (including Kimi K2.5) followed by 30M+ RL rollouts,
   with a <strong>controllable thinking-effort dial</strong> that reaches
   peer scores at roughly a third of the tokens (AA measures ~25K output
-  tokens per Intelligence Index task vs 37&ndash;43K for peers). AA Intelligence Index <strong>25</strong> (v4.3, measured at xhigh effort)
+  tokens per Intelligence Index task vs 37&ndash;43K for peers). AA Intelligence Index 25 (v4.3, measured at xhigh effort)
   &mdash; the leading U.S. open-weights model at release, ahead of
-  Nemotron 3 Ultra (23). Apache 2.0; fine-tunable on Tinker day one;
+  Nemotron 3 Ultra (23). On <strong>v5.0</strong> (October 27) it reads
+  <strong>12</strong>, level with Nemotron 3 Ultra. Apache 2.0; fine-tunable on Tinker day one;
   served by Together, Fireworks, Modal, Databricks, and Baseten. The
   companion <a
   href="/outputs/thinking-machines/inkling-small">Inkling-Small</a>
-  (276B/12B, AA 40) got its own open-weights release on July 30.
+  (276B/12B, AA 13 on v5.0) got its own open-weights release on July 30.
   Announcement-post only so far &mdash; no technical report yet.</p>
 tags:
   - frontier
@@ -47,9 +48,12 @@ model:
   active_parameters: "41B"
   context_window: 1000000
   training_tokens: "45T"
-  intelligence_index: 25
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 12
+  intelligence_index_version: "AA v5.0"
   intelligence_index_history:
+    - score: 25
+      version: "AA v4.3.2"
+      until: "2026-10-28"
     - score: 26
       version: "AA v4.3"
       until: "2026-09-21"

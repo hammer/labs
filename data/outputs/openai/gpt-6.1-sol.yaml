@@ -21,10 +21,10 @@ description: >
   complex work at a lower cost": the same $2 / $10 per million input/output
   tokens as GPT-6 Sol, with cached input cut to $0.10, a 1.05M-token context,
   128K output, and reasoning efforts from low to max (none and minimal are not
-  supported). Artificial Analysis scores it <strong>52 on Intelligence Index
-  v4.3.2</strong> at max effort, one point below
-  <a href="/outputs/openai/gpt-6-astra">GPT-6 Astra</a> and four above GPT-6
-  Sol.</p>
+  supported). Artificial Analysis scores it <strong>55 on Intelligence Index
+  v5.0</strong> at max effort, two points below
+  <a href="/outputs/openai/gpt-6-astra">GPT-6 Astra</a> (57); on v4.3.2 it read
+  52, one point below Astra and four above GPT-6 Sol.</p>
 
   <p>Like GPT-6 Astra, it is treated as <strong>Critical in
   cybersecurity</strong> under OpenAI's Preparedness Framework (High for
@@ -45,13 +45,17 @@ tags:
 model:
   open_weights: false
   context_window: 1050000
-  intelligence_index: 52
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 55
+  intelligence_index_version: "AA v5.0"
+  intelligence_index_history:
+    - score: 52
+      version: "AA v4.3.2"
+      until: "2026-10-28"
   variants:
     - name: GPT-6.1 Sol (xhigh)
-      notes: AAII v4.3.2 51
+      notes: AAII v5.0 52 (51 on v4.3.2)
     - name: GPT-6.1 Sol (medium)
-      notes: AAII v4.3.2 48
+      notes: AAII v5.0 46 (48 on v4.3.2)
 related:
   - gpt-6-sol
   - gpt-6-astra

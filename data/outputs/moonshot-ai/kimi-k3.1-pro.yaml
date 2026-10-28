@@ -17,9 +17,11 @@ description: >
   much larger is not quantified. The architecture therefore carries over from
   <a href="/outputs/moonshot-ai/kimi-k3">Kimi K3</a>, the 2.8T Stable LatentMoE
   with 104B active and a 1M-token context, and Artificial Analysis independently
-  lists 2.8T. What moved is the score: <strong>55 on AA Intelligence Index
-  v4.3.2 against K3's 44</strong> on the same version, bought entirely in
-  post-training. Moonshot's own framing is breadth rather than a single win
+  lists 2.8T. What moved is the score: 55 on AA Intelligence Index
+  v4.3.2 against K3's 44 on the same version, bought entirely in
+  post-training. On <strong>v5.0</strong> (October 27) it reads
+  <strong>46</strong>, which AA reports as the top open-weights score even
+  though the weights are not yet released. Moonshot's own framing is breadth rather than a single win
   &mdash; "consistent gains in every domain", with coding, 3D creation,
   financial research and agentic use called out.</p>
 
@@ -87,8 +89,12 @@ model:
   active_parameters: "104B"
   context_window: 1000000
   license: "Not yet released; full weights promised by 2026-11-04"
-  intelligence_index: 55
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 46
+  intelligence_index_version: "AA v5.0"
+  intelligence_index_history:
+    - score: 55
+      version: "AA v4.3.2"
+      until: "2026-10-28"
   variants:
     - name: Kimi K3.1 Pro
       parameters: "2.8T"

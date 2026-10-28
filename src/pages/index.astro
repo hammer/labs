@@ -8,6 +8,7 @@ import type { FilterDimension } from '../lib/filters/types.js';
 
 const labs = getAllLabs().sort((a, b) => getOutputCount(b.slug) - getOutputCount(a.slug));
 const totalOutputs = getAllOutputsChronological().length;
+const LEGACY_TITLE = 'AA Intelligence Index v4.3.2 score: not yet rescored on v5, which uses a different scale. Sorted below every v5 score.';
 
 const regionFlags: Record<string, string> = {
   china: '\u{1F1E8}\u{1F1F3}',
@@ -129,7 +130,9 @@ const dimensions: FilterDimension[] = [
               data-founded={founded} data-ipo={lab.ipo?.year ?? 0} data-ipo-status={ipoStatus}
               data-valuation={valNum}
               data-largest={largest?.paramsB ?? 0} data-intelligence={intel?.score ?? 0}
+              data-intelligence-tier={intel?.tier ?? 0}
               data-intelopen={intel?.open?.score ?? 0}
+              data-intelopen-tier={intel?.open?.tier ?? 0}
               data-inteldate={intel?.date ?? ''}
               data-openness={intel?.openness ?? 0} data-outputs={count}>
             <td class="col-rank"></td>
@@ -169,7 +172,7 @@ const dimensions: FilterDimension[] = [
             <td class="col-intelligence">
               {intel ? (
                 <a href={`/outputs/${intel.labSlug}/${intel.slug}`} class="col-link" onclick="event.stopPropagation()">
-                  {intel.score}
+                  {intel.tier === 1 && <span class="aaii-legacy-marker" title={LEGACY_TITLE}>v4</span>}{intel.score}
                 </a>
               ) : '—'}
             </td>
@@ -177,7 +180,7 @@ const dimensions: FilterDimension[] = [
               {intel?.open ? (
                 <a href={`/outputs/${intel.open.labSlug}/${intel.open.slug}`} class="col-link" onclick="event.stopPropagation()"
                    title={`${intel.open.name} (${intel.open.date}) is this lab's highest-scoring open-weights model`}>
-                  {intel.open.score}
+                  {intel.open.tier === 1 && <span class="aaii-legacy-marker" title={LEGACY_TITLE}>v4</span>}{intel.open.score}
                 </a>
               ) : '—'}
             </td>
@@ -428,7 +431,11 @@ const dimensions: FilterDimension[] = [
       const av = a.dataset[key] ?? '';
       const bv = b.dataset[key] ?? '';
       if (key === 'founded' || key === 'ipo' || key === 'valuation' || key === 'largest' || key === 'intelligence' || key === 'intelopen' || key === 'outputs') {
-        const diff = parseVal(av) - parseVal(bv);
+        // AAII columns rank by version tier first: a v5 score always sorts
+        // above a v4 fallback (different scales — see aaiiTier in loader.ts).
+        const tierKey = key === 'intelligence' ? 'intelligenceTier' : key === 'intelopen' ? 'intelopenTier' : '';
+        const tierDiff = tierKey ? Number(a.dataset[tierKey] ?? 0) - Number(b.dataset[tierKey] ?? 0) : 0;
+        const diff = tierDiff !== 0 ? tierDiff : parseVal(av) - parseVal(bv);
         return sortAsc ? diff : -diff;
       }
       // Everything else sorts as a string. `inteldate` belongs here, not in
@@ -686,6 +693,17 @@ const dimensions: FilterDimension[] = [
 
   .param-est-marker:hover {
     color: #b45309;
+  }
+
+  /* A lab whose best AAII score is still on v4.3.2 (not yet rescored on v5).
+     Different scale from v5, so it is marked and sorted below every v5 score. */
+  .aaii-legacy-marker {
+    font-size: 0.7em;
+    color: var(--text-muted);
+    opacity: 0.75;
+    margin-right: 0.25em;
+    vertical-align: 0.15em;
+    cursor: help;
   }
 
   /* On touch the marker's hover tooltip is unreachable and its inline

@@ -47,16 +47,18 @@
 
 import { readFileSync, writeFileSync } from 'fs';
 import { globSync } from 'glob';
-import { parseAaScores, checkAaRecordCount } from "./aa-payload";
+import { parseAaScores, checkAaPayload } from "./aa-payload";
 
 const LEADERBOARD_URL = 'https://artificialanalysis.ai/leaderboards/models';
-const AAII_VERSION = 'AA v4.3.2';
+const AAII_VERSION = 'AA v5.0';
 const TODAY = new Date().toISOString().slice(0, 10);
 const dryRun = process.argv.includes('--dry-run');
 const discover = process.argv.includes('--discover');
 const auditModes = process.argv.includes('--audit-modes');
 
 // ── Fetch the RSC payload ────────────────────────────────────────────────
+
+let listedSlugs = new Set<string>(); // every slug in the payload, scored or awaiting a rescore
 
 async function fetchAaiiDataset(): Promise<Map<string, number>> {
   const res = await fetch(LEADERBOARD_URL, {
@@ -77,7 +79,13 @@ async function fetchAaiiDataset(): Promise<Map<string, number>> {
   // snake_case schema with no `intelligence_index` key (it's computed
   // client-side), so it can't be scraped the same way — verify those by eye
   // on https://artificialanalysis.ai/models/<slug> (the "X (estimated)" figure).
-  checkAaRecordCount(map.size); // floor + drift-vs-shrink diagnosis live in aa-payload.ts
+  // The floor applies to every listed record: during a version rollout most
+  // records carry "intelligenceIndex":null until AA re-runs them (v5.0 launch:
+  // 272 listed, 76 scored). Drift still shows as a near-zero scored count.
+  const { listed, rollout } = checkAaPayload(body, map); // floor + drift/shrink/rollout diagnosis live in aa-payload.ts
+  listedSlugs = listed;
+  if (rollout)
+    console.log(`  Version rollout: ${map.size} of ${listedSlugs.size} listed models scored on ${AAII_VERSION}; the rest keep their old score and tag.`);
   return map;
 }
 
@@ -261,6 +269,7 @@ async function main() {
   let retagged = 0;   // version-only bump, same score
   let unchanged = 0;  // no write needed (already current)
   const missing: Array<{ file: string; slug: string }> = [];
+  const awaiting: Array<{ file: string; slug: string }> = []; // listed, not yet rescored on this version
 
   for (const file of yamls) {
     const content = readFileSync(file, 'utf-8');
@@ -277,7 +286,7 @@ async function main() {
 
     const score = aaii.get(slug);
     if (score === undefined) {
-      missing.push({ file, slug });
+      (listedSlugs.has(slug) ? awaiting : missing).push({ file, slug });
       continue;
     }
 
@@ -301,6 +310,7 @@ async function main() {
   console.log(`  Rescored (score moved, history appended): ${rescored}${dryRun ? ' (dry-run — no writes)' : ''}`);
   console.log(`  Re-tagged (version bump, same score):     ${retagged}`);
   console.log(`  Unchanged:                                ${unchanged}`);
+  console.log(`  Listed but not yet scored on ${AAII_VERSION} (kept as-is): ${awaiting.length}`);
   console.log(`  Slug not in the (top ~270) leaderboard payload — VERIFY each by eye at`);
   console.log(`  artificialanalysis.ai/models/<slug> (may be a low-ranked but still-scored`);
   console.log(`  model, a renamed slug, or genuinely unscored): ${missing.length}`);

@@ -29,8 +29,10 @@ description: >
   <p>Xiaomi's flagship omnimodal reasoning model, released as open weights
   under MIT on September 21, 2026 after a publicly livestreamed RL run. It
   debuted as the <strong>top open-weights model on the Artificial Analysis
-  Intelligence Index</strong> at <strong>46 (v4.3)</strong>, level with
-  Grok 4.7 at the rounded score and a hair behind on the raw index. Same
+  Intelligence Index</strong> at 46 (v4.3), level with Grok 4.7 at the
+  rounded score and a hair behind on the raw index. On <strong>v5.0</strong>
+  (October 27) it reads <strong>30</strong>, behind DeepSeek V4.1 Flash 1017
+  and GLM-5.3 (both 32) among released open weights. Same
   backbone family as
   <a href="/outputs/xiaomi/mimo-v2.5-pro">MiMo-V2.5-Pro</a>:
   <strong>1.02T total / 42B active</strong> sparse MoE, 70 layers (60
@@ -96,8 +98,12 @@ model:
   context_window: 1000000
   training_tokens: 30T
   optimizer: AdamW
-  intelligence_index: 46
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 30
+  intelligence_index_version: "AA v5.0"
+  intelligence_index_history:
+    - score: 46
+      version: "AA v4.3.2"
+      until: "2026-10-28"
   license: MIT
   benchmark_scores:
     - benchmark: DeepSWE v1.1

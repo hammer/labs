@@ -36,7 +36,8 @@ description: >
   is no GPT-6 Terra: OpenAI's model list runs Astra, Sol and Luna. Luna is also
   offered to ChatGPT Free and Go users. Artificial Analysis scores Sol <strong>48 on
   Intelligence Index v4.3.2</strong> at max effort, one point above GPT-5.6
-  Sol, and Luna 37, level with GPT-5.6 Luna. Under its Preparedness Framework
+  Sol, and Luna 37, level with GPT-5.6 Luna. On v5.0 Luna reads 28; AA had
+  not rescored Sol on v5.0 at its launch. Under its Preparedness Framework
   OpenAI treats both as High capability in cybersecurity and in biological and
   chemical risk, but below the High threshold for AI self-improvement. Seven
   days later <a href="/outputs/openai/gpt-6.1-sol">GPT-6.1 Sol</a> arrived,
@@ -67,7 +68,7 @@ model:
     - name: GPT-6 Sol
       notes: "AAII v4.3.2 48 (max effort), 44 at xhigh; $2 / $10 per MTok; knowledge cutoff 2026-04-20"
     - name: GPT-6 Luna
-      notes: "AAII v4.3.2 37 (max effort); $0.10 / $0.50 per MTok; knowledge cutoff 2026-05-18; serves the Decisions API (beta 2026-10-06, GA 2026-10-22)"
+      notes: "AAII v5.0 28 (37 on v4.3.2; max effort); $0.10 / $0.50 per MTok; knowledge cutoff 2026-05-18; serves the Decisions API (beta 2026-10-06, GA 2026-10-22)"
 related:
   - gpt-6-astra
   - gpt-6.1-sol

@@ -41,14 +41,19 @@ function log(name, ok, detail = '') {
 {
   const page = await newPage();
   await page.goto(`${BASE}/?region=china&intelligence=30-`, { waitUntil: 'networkidle' });
-  const t = await page.evaluate(() => ({
-    visible: Array.from(document.querySelectorAll('.lab-row')).filter(r => r.style.display !== 'none').length,
-    chips: document.querySelectorAll('.filter-chip').length,
-    countText: document.querySelector('.filter-count').textContent,
-  }));
-  // 13 → 11 after the from-scratch audit: Kuaishou (KAT-Coder-Pro V2 ← Qwen
-  // base) and Nex-AGI (Nex-N2 ← Qwen3.5) no longer count toward Intelligence.
-  log('home: ?region=china&intelligence=30-', t.visible === 8 && t.chips === 2, JSON.stringify(t));
+  const t = await page.evaluate(() => {
+    const rows = Array.from(document.querySelectorAll('.lab-row'));
+    return {
+      visible: rows.filter(r => r.style.display !== 'none').length,
+      // Structural, not pinned: the expected set is read from the rows' own
+      // data attributes, so AA rescores (v5.0 moved several Chinese labs
+      // below 30) don't break the test. Pinned counts drifted 13 → 11 → 8.
+      expected: rows.filter(r => r.dataset.region === 'china' && Number(r.dataset.intelligence) >= 30).length,
+      chips: document.querySelectorAll('.filter-chip').length,
+      countText: document.querySelector('.filter-count').textContent,
+    };
+  });
+  log('home: ?region=china&intelligence=30-', t.visible === t.expected && t.expected > 0 && t.chips === 2, JSON.stringify(t));
   await page.close();
 }
 

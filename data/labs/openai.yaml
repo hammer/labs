@@ -28,8 +28,8 @@ description: >
   demonstrated emergent text generation, <strong>GPT-3</strong> (2020, 175B) introduced
   few-shot learning, and <strong>GPT-4</strong> (2023) set the frontier for multimodal
   reasoning. The <strong>o-series</strong> reasoning models (o1, o3) pioneered test-time
-  compute scaling, and <strong>GPT-6 Astra</strong> (September 2026, AA Intelligence Index v4.3.2: 53) is the
-  current flagship, alongside the cheaper <strong>GPT-6.1 Sol</strong> (52) and GPT-6 Luna (37), which
+  compute scaling, and <strong>GPT-6 Astra</strong> (September 2026, AA Intelligence Index v5.0: 57, #2 behind Claude Opus 5.5) is the
+  current flagship, alongside the cheaper <strong>GPT-6.1 Sol</strong> (55) and GPT-6 Luna (28), which
   succeed the GPT-5.6 Sol, Terra, and Luna series. Beyond language, OpenAI created <strong>DALL-E</strong> (text-to-image),
   <strong>Whisper</strong> (speech recognition), <strong>Codex</strong> (powering GitHub
   Copilot), and <strong>Sora</strong> (video generation).</p>

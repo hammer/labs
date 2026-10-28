@@ -70,8 +70,9 @@ description: >
   inclusionAI is "considering open-sourcing".</p>
 
   <p>A second checkpoint, <strong>Ling-3.1-flash-1019</strong>, appeared on
-  Artificial Analysis on October 22. AA scores it <strong>44</strong> on
-  v4.3.2, three points above the open release, at the same price and with a
+  Artificial Analysis on October 22. AA scored it 44 on v4.3.2, three points
+  above the open release, and <strong>29</strong> on <strong>v5.0</strong>
+  (October 27; AA had not yet rescored the open release), at the same price and with a
   1,048,576-token context. AA lists it as proprietary and served only through
   inclusionAI's API, and its release slug (<code>ling-3-1-flash-rc5</code>)
   suggests a later release candidate. There is no HuggingFace repo, card or
@@ -102,7 +103,7 @@ model:
       active_parameters: 25B
       notes: "open weights 2026-10-13 (MIT, FP8, MTP head); 63 KDA + 9 gated MLA layers; native 262,144 context, 1M via YaRN"
     - name: Ling-3.1-flash-1019
-      notes: "API-only checkpoint first listed by AA 2026-10-22 (release slug ling-3-1-flash-rc5); AA 44 on v4.3.2 (ling-3-1-flash-1019); 1,048,576 context; no weights or card"
+      notes: "API-only checkpoint first listed by AA 2026-10-22 (release slug ling-3-1-flash-rc5); AA 29 on v5.0, 44 on v4.3.2 (ling-3-1-flash-1019); 1,048,576 context; no weights or card"
 related:
   - ling-3.0
   - ling-2.6

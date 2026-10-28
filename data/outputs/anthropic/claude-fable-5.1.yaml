@@ -18,10 +18,11 @@ description: >
   <a href="/outputs/anthropic/claude-fable-5">Claude Fable 5</a> as the
   broadly available counterpart to the restricted
   <a href="/outputs/anthropic/claude-mythos-5.1">Claude Mythos 5.1</a>.
-  <strong>53 on the AA Intelligence Index v4.3.2</strong>, #1 until
-  <a href="/outputs/anthropic/claude-opus-5.5">Claude Opus 5.5</a> (58) and
-  Sonnet 5.5 (56) passed it in late September (57 on v4.2; 66 on v4.1.1;
-  Opus 5 scores 51). Headline gains are agentic and scientific:
+  <strong>49 on the AA Intelligence Index v5.0</strong> at max effort, behind
+  <a href="/outputs/anthropic/claude-opus-5.5">Claude Opus 5.5</a> (58),
+  GPT-6 Astra (57), GPT-6.1 Sol (55) and Sonnet 5.5 (54). On v4.3.2 it read
+  53 and was #1 until Opus 5.5 and Sonnet 5.5 passed it in late September
+  (57 on v4.2; 66 on v4.1.1; Opus 5 scored 51 on v4.3.2). Headline gains are agentic and scientific:
   Terminal-Bench 4.0 <strong>55.8</strong> (Fable 5 42.0, Opus 5 52.3),
   Terminal-Bench-Science 0.1 <strong>52.6</strong> &mdash; more than double
   Fable 5's 24.7 &mdash; GDPval-AA v2 Elo <strong>1853</strong> (1723/1824),
@@ -50,9 +51,12 @@ tags:
 model:
   open_weights: false
   context_window: 1000000
-  intelligence_index: 53
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 49
+  intelligence_index_version: "AA v5.0"
   intelligence_index_history:
+    - score: 53
+      version: "AA v4.3.2"
+      until: "2026-10-28"
     - score: 57
       version: "AA v4.2"
       until: "2026-09-08"

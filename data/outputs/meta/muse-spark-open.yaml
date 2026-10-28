@@ -23,12 +23,13 @@ description: >
   <a href="/outputs/meta/muse-code">Muse Code</a>. The weights were staged on
   HuggingFace on <strong>2026-09-15</strong> and announced a month later.</p>
 
-  <p><strong>Artificial Analysis scores it 39 on Intelligence Index
-  v4.3.2</strong> at xhigh reasoning, ranking <strong>8th of 117</strong>
-  models in its class against a median of 19. The comparison that matters is
-  internal: Muse Spark 1.3 reads <strong>48</strong>, so the open release lands
-  <strong>nine points below Meta's own API flagship</strong> and twelve below
-  <a href="/outputs/meta/muse-wonder">Muse Wonder</a> Full's 56. Meta's
+  <p><strong>Artificial Analysis scores it 25 on Intelligence Index
+  v5.0</strong> at xhigh reasoning (39 on v4.3.2, when it ranked
+  <strong>8th of 117</strong> models in its class against a median of 19). The
+  comparison that matters is internal: on v4.3.2 Muse Spark 1.3 read
+  <strong>48</strong>, so the open release landed <strong>nine points below
+  Meta's own API flagship</strong>; on v5.0 it sits 25 points below
+  <a href="/outputs/meta/muse-wonder">Muse Wonder</a> Full's 50. Meta's
   published card claims JobBench 61.8, DeepSWE 1.1 60.0, GPQA Diamond 89.0 and
   StrongREJECT v2 0.5. The developer post carries no benchmark table at all,
   leading instead with practitioner testimonials about tool-calling
@@ -56,8 +57,12 @@ model:
   active_parameters: 42B
   architecture: moe
   context_window: 1000000
-  intelligence_index: 39
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 25
+  intelligence_index_version: "AA v5.0"
+  intelligence_index_history:
+    - score: 39
+      version: "AA v4.3.2"
+      until: "2026-10-28"
   license: Muse Model License
   benchmark_scores:
     - benchmark: GPQA Diamond

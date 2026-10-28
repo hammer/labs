@@ -71,11 +71,14 @@ model:
   base_model: glm-5.2
   context_window: 1000000
   license: GLM-5.3 License
-  intelligence_index: 45
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 32
+  intelligence_index_version: "AA v5.0"
   openness_index: 33.3
   openness_index_version: "AA Openness Index v1.0"
   intelligence_index_history:
+    - score: 45
+      version: "AA v4.3.2"
+      until: "2026-10-28"
     - score: 49
       version: "AA v4.2"
       until: "2026-09-08"

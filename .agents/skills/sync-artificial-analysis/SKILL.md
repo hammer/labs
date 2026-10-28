@@ -61,6 +61,8 @@ Two failures look alike and need opposite fixes; `checkAaRecordCount` in `script
 - **A prune** — hundreds of records, just under the floor. AA shrank the payload on 2026-10-24 (~500 → 286 records, 266 unique scored slugs) with no version change. Confirm the methodology page still shows the same version and that the parsed count matches the payload's numeric `"intelligenceIndex"` values, then lower `AA_MIN_SCORED_RECORDS` with a dated note and update the floor fixture in `tests/aa-payload-unit.ts`. A prune also inflates the "slug not on leaderboard" list and `scan-aaii-mentions`' UNRESOLVED count: those slugs left the payload, not the index. Verify on the model page before tagging anything delisted.
 - **Sentinel drift** — a handful of records. If `test:aa` passes but the live sync still parses a handful of records, AA changed the record opener again: inspect the bytes before the first `"intelligenceIndex"` in the RSC payload, add the shape to `AA_RECORD_SENTINEL` in `scripts/aa-payload.ts`, add a fixture to `tests/aa-payload-unit.ts`, and only then rerun the sync. Never hand-enter scores to work around it.
 
+- **A version rollout** — the sync prints "Version rollout: N of M listed models scored". AA lists every model on a new version's launch day but scores only those it has re-run (v5.0, 2026-10-27: 272 listed, 76 scored). Nothing is broken: sync what is scored, leave the rest on the old tag (the site's version-tier ranking marks them), and re-run every few days. A scored count under `AA_DRIFT_CEILING` with hundreds listed is still drift.
+
 Review the diff for:
 
 - accidental family-max anchoring;

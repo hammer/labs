@@ -40,16 +40,21 @@ description: >
   low for legitimate cybersecurity and biology work (62.4% on LatchBio's
   biosafety benchmark; 3.3% of risky dual-use prompts allowed on HackerBench
   v0.3), with invite-only red-team access for select security partners.
-  Artificial Analysis scores the xhigh mode <strong>46 on Intelligence Index
-  v4.3</strong> (#16 at filing; high effort also rounds to 46). Parameter
+  Artificial Analysis's Grok 4.7 page reads <strong>34 on Intelligence Index
+  v5.0</strong> (35 at high, 31 at low); on v4.3 the xhigh mode scored 46
+  (#16 at filing; high effort also rounded to 46). Parameter
   count is undisclosed; press figures conflict (Musk floated ~2T for Grok
   4.6, Decrypt reports 2.1T for 4.7).</p>
 tags: [frontier, proprietary, coding, agentic, reasoning, multimodal]
 model:
   open_weights: false
   context_window: 500000
-  intelligence_index: 46
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 34
+  intelligence_index_version: "AA v5.0"
+  intelligence_index_history:
+    - score: 46
+      version: "AA v4.3.2"
+      until: "2026-10-28"
   license: Proprietary
   benchmark_scores:
     - benchmark: CursorBench 4.0

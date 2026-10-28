@@ -36,11 +36,11 @@
 import { readFileSync } from 'fs';
 import { globSync } from 'glob';
 import { parse } from 'yaml';
-import { parseAaScores, checkAaRecordCount } from './aa-payload';
+import { parseAaScores, checkAaPayload } from './aa-payload';
 import { classifyMention, findMentions, historyMap, POINT_DIFF, type MentionClass } from './aaii-mentions';
 
 const LEADERBOARD_URL = 'https://artificialanalysis.ai/leaderboards/models';
-const CURRENT_VERSION = 'AA v4.3.2';
+const CURRENT_VERSION = 'AA v5.0';
 const showAll = process.argv.includes('--all');
 
 // Same RSC extraction as fetch-aa-intelligence (kept self-contained like the
@@ -53,7 +53,7 @@ async function fetchAaScores(): Promise<Map<string, number>> {
   const body = await res.text();
   // Record sentinels live in scripts/aa-payload.ts (three shapes so far; see its header).
   const map = parseAaScores(body);
-  checkAaRecordCount(map.size); // see aa-payload.ts for the floor and its history
+  checkAaPayload(body, map); // see aa-payload.ts for the floor, its history, and the v5 rollout case
   return map;
 }
 

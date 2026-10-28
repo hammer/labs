@@ -64,7 +64,8 @@ description: >
   V4-Flash-Vision-Exp were retired the same day, and V4-Pro traffic routes to
   V4.1-Flash from September 14 until a V4.1-Pro ships. Artificial Analysis
   scores it <strong>39</strong> on Intelligence Index v4.3.2 (reasoning, max
-  effort), above V4-Pro at 36. At its September release that put it near the
+  effort), above V4-Pro at 36 on the same version; AA had not rescored this
+  original checkpoint on v5.0 when that launched. At its September release that put it near the
   top of the open-weights field, behind GLM-5.3 (45 on v4.3.2). It measured
   198 tokens/s and a 1.06 s time to first token.</p>
 
@@ -83,7 +84,9 @@ description: >
   Exam 35.4 vs 31.8, DeepSWE v1.1 77.0 vs 74.2 and NL2Repo 68.2 vs 65.4. The
   independent number moves the same way: Artificial Analysis scores 1017 at
   <strong>45</strong> on v4.3.2, six points above the original, and has
-  marked the September entry deprecated in its favour. 1017 now serves the
+  marked the September entry deprecated in its favour. On v5.0 1017 scores
+  <strong>32</strong>, level with GLM-5.3 as the highest-scoring model with
+  released open weights at launch. 1017 now serves the
   <code>deepseek-flash</code> API name at the same Flash price, and it is the
   default checkpoint of DeepSeek's <a
   href="/outputs/deepseek/deepinfer">DeepInfer</a> inference framework. The
@@ -140,7 +143,7 @@ model:
     - name: DeepSeek-V4.1-Flash-1017
       parameters: 552B
       active_parameters: 16B
-      notes: "2026-10-17 post-training update with config.json identical to V4.1-Flash; MIT; serves deepseek-flash since release. AA 45 on v4.3.2 (deepseek-v4-1-flash-1017, max). Self-reported: Terminal-Bench 4.0 42.3, HLE 42.6, DeepSWE v1.1 77.0, ProgramBench 29.1, Apex Bench v1.1 72.1, Automation-Bench 60.5, ALE 35.4"
+      notes: "2026-10-17 post-training update with config.json identical to V4.1-Flash; MIT; serves deepseek-flash since release. AA v5.0 32 (45 on v4.3.2; deepseek-v4-1-flash-1017, max). Self-reported: Terminal-Bench 4.0 42.3, HLE 42.6, DeepSWE v1.1 77.0, ProgramBench 29.1, Apex Bench v1.1 72.1, Automation-Bench 60.5, ALE 35.4"
 paper:
   arxiv: "2609.19969"
   pdf_url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/resolve/main/DeepSeek_V41_Tech_Report.pdf

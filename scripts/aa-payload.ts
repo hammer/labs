@@ -26,6 +26,12 @@
  *     300 floor refused to run. Nothing is broken: lower AA_MIN_SCORED_RECORDS
  *     to sit below the new size with headroom, and date the change here.
  *
+ *   • version rollout : AA launches a new index version and lists most models
+ *     with "intelligenceIndex":null until it re-runs them (v5.0, 2026-10-27:
+ *     272 listed, 76 scored). The floor applies to listed records
+ *     (listAaSlugs); a low scored count is expected and only the rescored
+ *     models sync. The rest keep their old score and old version tag.
+ *
  * Shrinks also mean a slug missing from the payload is even weaker evidence
  * of "unscored" than before — check the model page or /articles/.
  */
@@ -36,6 +42,22 @@ export const AA_RECORD_SENTINEL =
 /** Split an RSC payload into per-record spans (the first span is the preamble). */
 export function splitAaRecords(body: string): string[] {
   return body.split(AA_RECORD_SENTINEL);
+}
+
+/**
+ * Every slug the payload lists, scored or not. During a version rollout AA
+ * lists models with `"intelligenceIndex":null` until it re-runs them on the
+ * new suite (v5.0 launch, 2026-10-27: 272 listed, 76 scored), so the size
+ * floor is checked against this count, not the scored one.
+ */
+export function listAaSlugs(body: string): Set<string> {
+  const out = new Set<string>();
+  for (const r of splitAaRecords(body)) {
+    if (!/"intelligenceIndex"/.test(r)) continue;
+    const slug = r.match(/"slug":"([^"]+)"/)?.[1];
+    if (slug) out.add(slug);
+  }
+  return out;
 }
 
 /** slug → intelligenceIndex for every scored record; first occurrence wins. */
@@ -79,4 +101,18 @@ export function checkAaRecordCount(n: number, what = 'scored records', floor = A
     `unchanged and that every "intelligenceIndex" in the payload was parsed; if so, ` +
     `lower the floor in scripts/aa-payload.ts and date it. Refusing to write.`,
   );
+}
+
+/**
+ * The size check both leaderboard scripts run. The floor applies to every
+ * listed record (a version rollout lists models with "intelligenceIndex":null
+ * until AA re-runs them); sentinel drift still shows as a near-zero scored
+ * count. Returns the listed slugs and whether a rollout is in progress
+ * (fewer than half the listed models scored).
+ */
+export function checkAaPayload(body: string, scored: Map<string, number>): { listed: Set<string>; rollout: boolean } {
+  const listed = listAaSlugs(body);
+  checkAaRecordCount(listed.size, 'listed records');
+  if (scored.size < AA_DRIFT_CEILING) checkAaRecordCount(scored.size, 'scored records', AA_DRIFT_CEILING);
+  return { listed, rollout: scored.size < listed.size / 2 };
 }

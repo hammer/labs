@@ -26,8 +26,8 @@ description: >
   $0.20 (60% below), and output streams more than 30% faster. API ID
   <code>claude-opus-5-5</code>; 1M-token context, 128K output, June 2026
   knowledge cutoff. Artificial Analysis scores it <strong>58 on Intelligence
-  Index v4.3.2</strong> at max effort, <strong>#1 overall</strong>, ahead of
-  Fable 5.1 and GPT-6 Astra (53 each). Anthropic's model docs now tell
+  Index v5.0</strong> at max effort (also 58 on v4.3.2), <strong>#1 overall</strong>
+  when v5 launched, ahead of GPT-6 Astra (57) and Fable 5.1 (49). Anthropic's model docs now tell
   developers to start with Opus 5.5 for most workloads and to reach for Fable
   5.1 for demanding reasoning and long-horizon agentic work. Parameters
   undisclosed.</p>
@@ -58,7 +58,11 @@ model:
   open_weights: false
   context_window: 1000000
   intelligence_index: 58
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index_version: "AA v5.0"
+  intelligence_index_history:
+    - score: 58
+      version: "AA v4.3.2"
+      until: "2026-10-28"
   benchmark_scores:
     - benchmark: Terminal-Bench 4.0
       score: "66.4%"
@@ -77,9 +81,9 @@ model:
       mode: partial credit
   variants:
     - name: Claude Opus 5.5 (xhigh)
-      notes: AAII v4.3.2 56
+      notes: AAII v5.0 57 (56 on v4.3.2)
     - name: Claude Opus 5.5 (high)
-      notes: AAII v4.3.2 54
+      notes: AAII v5.0 52 (54 on v4.3.2)
 related:
   - claude-opus-5
   - claude-fable-5.1
