@@ -1,0 +1,97 @@
+name: Gemini 4 Carbon
+slug: gemini-4-carbon
+lab: google
+type: model
+date: 2026-10-28
+flagship: true
+sources:
+  - label: Announcement (Google)
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/
+  - label: Fairwind Program
+    url: https://deepmind.google/fairwind-program/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gemini-4-carbon
+description: >
+  <p>The second model of Google's <strong>Gemini 4</strong> generation,
+  announced October 28, 2026 by Koray Kavukcuoglu, four weeks after
+  <a href="/outputs/google/gemini-4-argon">Gemini 4 Argon</a> was announced and
+  two weeks after Argon reached general availability. Google calls it "our
+  strongest model with state-of-the-art cybersecurity and long horizon
+  capabilities", built on Argon and shipped on the same safety and security
+  stack. The rollout repeats Argon's: a subset of cyber defenders get it first,
+  then more trusted partners through the <strong>Fairwind Program</strong>,
+  and developers, businesses and consumers only "as soon as possible", after
+  further guardrail work. Google is again taking part in the US government's
+  voluntary pre-release testing process. Pricing matches Argon's: an
+  introductory <strong>$2 / $10 per million input/output tokens</strong>,
+  with cached input 95% off, rising to $4 / $20 after the introductory period.
+  Artificial Analysis lists the $4 / $20 rate, a 1M-token context window, and
+  text, image, speech and video input. Architecture, parameter count and
+  training scale are undisclosed, and Google published no model card or
+  evaluation sheet for Carbon at launch.</p>
+
+  <p><strong>Artificial Analysis ranks it first.</strong> It scores
+  <strong>59 on Intelligence Index v5.0</strong> (high reasoning), one point
+  above <a href="/outputs/anthropic/claude-opus-5.5">Claude Opus 5.5</a> (58)
+  and ahead of <a href="/outputs/openai/gpt-6-astra">GPT-6 Astra</a> (57),
+  <a href="/outputs/openai/gpt-6.1-sol">GPT-6.1 Sol</a> (55) and Argon (50).
+  AA scored it on v5.0 only, so it has no v4.3.2 reading. The gain over Argon is
+  concentrated in coding and science. On AA's runs it posts the top
+  Terminal-Bench-Science 0.1 score (64.8%, against Astra's 63.3%) and the top
+  HLE-Diamond score (69.1%, against Opus 5.5's 67.9%). On Terminal-Bench 4.0
+  it reads 65.2%, up from Argon's 57.1% and second only to Kimi K3.1 Pro
+  (67.2%). FrontierCode 2.0 rises to 40.6% from Argon's 25.7%, still behind Opus 5.5
+  (46.4%) and Astra (42.4%). It trails Astra on the CritPt v2 hard subset (63%
+  to 70.5%) and Opus 5.5 on AA-Briefcase (Elo 1609 to 1800). Its
+  AA-Omniscience accuracy is 58.3% with an 88.6% non-hallucination rate, the
+  calibration pattern Argon set, far above Opus 5.5's 49.7%. It is verbose:
+  200M output tokens for the index, against a median of 64M, at $7.76 per
+  index task (Opus 5.5: $10.04, Astra: $6.24), with a median first-token time
+  of 97 seconds on Google's API.</p>
+
+  <p>Google's own figures centre on cybersecurity, all measured
+  <strong>without guardrails</strong>: <strong>88.2%</strong> on SEC-bench Pro
+  (vulnerability finding), <strong>54.8%</strong> on ExploitGym (exploitation)
+  and <strong>71.0%</strong> on CWE-bench (patching; Argon's sheet gave 68.0% on CWE-bench v1). It
+  more than doubles Argon's success rate at generating secure code on internal
+  tests, and Chrome's security team found it more than 10&times; better than
+  "another lab's large frontier model" at producing high-quality patches. Wiz
+  reports it leads on web penetration-testing benchmarks. On WebDev Arena it
+  reads 1768 Elo (fourth, up 89). Google's alignment claims are all relative
+  to Argon: attack success on Gray Swan's indirect prompt injection benchmark
+  falls to 0.0% from 0.7%; successful cheating on Terminal-Bench 4.0 falls to
+  0.0%, with cheating attempts at 0.4%; high-severity misalignment alerts in
+  live internal coding environments drop by almost 80%; unsupported claims
+  fall by about half; and overreach and under-service fall 26% and 29%.
+  Google says its teams have run it for days at a time on long multi-step
+  engineering work, root-causing and patching subtle bugs across large
+  codebases and low-level systems. All figures in this paragraph are
+  self-reported.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+  - agentic
+  - cybersecurity
+  - long-context
+  - multimodal
+  - proprietary
+model:
+  open_weights: false
+  context_window: 1000000
+  intelligence_index: 59
+  intelligence_index_version: "AA v5.0"
+  license: Proprietary (API)
+  benchmark_scores:
+    - benchmark: SEC-bench Pro
+      score: "88.2%"
+    - benchmark: ExploitGym
+      score: "54.8%"
+    - benchmark: CWE-bench
+      score: "71.0%"
+    - benchmark: WebDev Arena (Elo)
+      score: "1768"
+related:
+  - gemini-4-argon
+  - gemini-3.8-flash
+  - gemini-3.8-flash-cyber

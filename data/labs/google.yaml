@@ -36,7 +36,10 @@ description: >
   tier (September 2026, AA Intelligence Index v5.0: 31) to
   <strong><a href="/outputs/google/gemini-4-argon">Gemini 4 Argon</a></strong>
   (September 30, 2026, AA Intelligence Index v5.0: 50), the frontier model
-  Google released first to trusted cyber defenders. The open-weight
+  Google released first to trusted cyber defenders, and then
+  <strong><a href="/outputs/google/gemini-4-carbon">Gemini 4 Carbon</a></strong>
+  (October 28, 2026), #1 on AA Intelligence Index v5.0 at 59, released the
+  same way. The open-weight
   <strong>Gemma</strong> series (2024&ndash;) provides Apache 2.0 models up to 27B.</p>
 
   <p>DeepMind's scientific breakthroughs include <strong>AlphaGo</strong> (defeated world Go
@@ -95,6 +98,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Koray_Kavukcuoglu1
 news:
+  - title: "Google Announces Gemini 4 Carbon: #1 on AA Intelligence Index v5.0 (59), SOTA SEC-bench Pro 88.2% and ExploitGym 54.8%, Same $2/$10 Introductory Pricing, Cyber Defenders First via Fairwind"
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/
+    source: Google
+    date: 2026-10-28
   - title: "Google Announces Gemini 4 Argon, Its Next Frontier Model: 1M-Token Output Limit (Up From 64K), AA Intelligence Index v4.3.2 53, Released First to Trusted Cyber Defenders Without Cyber Guardrails via the Fairwind Program"
     url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/
     source: Google
