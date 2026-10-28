@@ -29,7 +29,8 @@ description: >
   few-shot learning, and <strong>GPT-4</strong> (2023) set the frontier for multimodal
   reasoning. The <strong>o-series</strong> reasoning models (o1, o3) pioneered test-time
   compute scaling, and <strong>GPT-6 Astra</strong> (September 2026, AA Intelligence Index v5.0: 57, #2 behind Claude Opus 5.5) is the
-  current flagship, alongside the cheaper <strong>GPT-6.1 Sol</strong> (55) and GPT-6 Luna (28), which
+  current flagship, alongside the cheaper <strong>GPT-6.1 Sol</strong> (55), the mid-tier
+  <a href="/outputs/openai/gpt-6.1-terra">GPT-6.1 Terra</a> (51, October 2026) and GPT-6 Luna (28), which
   succeed the GPT-5.6 Sol, Terra, and Luna series. Beyond language, OpenAI created <strong>DALL-E</strong> (text-to-image),
   <strong>Whisper</strong> (speech recognition), <strong>Codex</strong> (powering GitHub
   Copilot), and <strong>Sora</strong> (video generation).</p>
@@ -108,6 +109,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~John_Schulman1
 news:
+  - title: "OpenAI Releases GPT-6.1 Terra: $1/$5 per MTok, 1.05M Context, Critical in Cybersecurity; AA Intelligence Index v5.0 51, Four Points Below GPT-6.1 Sol"
+    url: https://openai.com/index/introducing-gpt-6-1-terra
+    source: OpenAI
+    date: 2026-10-26
   - title: "OpenAI in Final-Stage Talks to Raise ~$30B at a $1.25T Pre-Money Valuation, With UAE Investors and Coatue; Not Yet Closed"
     url: https://theedgemalaysia.com/node/822952
     source: CNBC via The Edge Malaysia

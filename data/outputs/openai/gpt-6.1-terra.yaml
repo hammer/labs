@@ -1,0 +1,96 @@
+name: GPT-6.1 Terra
+slug: gpt-6.1-terra
+lab: openai
+type: model
+date: 2026-10-26
+sources:
+  - label: Announcement
+    url: https://openai.com/index/introducing-gpt-6-1-terra
+  - label: API Docs
+    url: https://developers.openai.com/api/docs/models/gpt-6.1-terra
+  - label: System Card Addendum
+    url: https://deploymentsafety.openai.com/gpt-6-1-terra
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gpt-6-1-terra
+  - label: Artificial Analysis (launch analysis)
+    url: https://artificialanalysis.ai/articles/gpt-6-1-terra-pushes-the-cost-efficiency-frontier
+  - label: OpenRouter
+    url: https://openrouter.ai/openai/gpt-6.1-terra
+description: >
+  <p>The mid tier of the GPT-6.1 line, released on October 26, four weeks after
+  <a href="/outputs/openai/gpt-6.1-sol">GPT-6.1 Sol</a>. It is the first Terra
+  model since <a href="/outputs/openai/gpt-5.6">GPT-5.6</a>'s, since the GPT-6
+  generation shipped only Sol and Luna. OpenAI's system card calls it "a fast,
+  efficient model for high-volume professional work, with strong image
+  analysis and computer use capabilities". The API docs pitch it at visual
+  reasoning, computer use and writing. It has a
+  <strong>1.05M-token context</strong> (922K max input), 128K output, a June 1,
+  2026 knowledge cutoff, and text and image input. Reasoning effort runs from
+  none to max, with medium as the default. Pricing is <strong>$1 / $5 per
+  million input/output tokens</strong>, half GPT-5.6 Terra's $2 / $12 or less,
+  with cached input at $0.05. Requests over 272K input tokens cost 2&times;
+  input and 1.5&times; output. A Pro reasoning mode is served on OpenRouter as
+  a separate listing. Parameters and architecture are undisclosed.</p>
+
+  <p><strong>Independent measurement puts it close to Sol for a fraction of the
+  price.</strong> Artificial Analysis scores it <strong>51 on Intelligence Index
+  v5.0</strong> at max effort, four points below GPT-6.1 Sol (55) and 23 above
+  <a href="/outputs/openai/gpt-6-sol">GPT-6 Luna</a> (28). The lower efforts
+  read 45 (xhigh), 42 (high), 38 (medium) and 29 (low). In AA's launch analysis
+  on v4.3.2 it scored 48 at max. That was six points above GPT-5.6 Terra at
+  under a third of the cost per index task ($0.40 vs $1.40), and 7 to 13
+  points better at lower efforts, where AA found the low and medium settings
+  Pareto-optimal on cost. AA also measured its AA-Omniscience hallucination
+  rate falling from 88% to 38% against GPT-5.6 Terra, alongside a 2-point
+  accuracy gain. Its Terminal-Bench 4.0 score rose by about 20 points, close
+  to GPT-6.1 Sol at max effort. It scores 48 on AA's Coding Agent Index v2.0,
+  against Sol's 54.</p>
+
+  <p>OpenAI treats it as <strong>Critical in cybersecurity</strong> under the
+  Preparedness Framework, and High for biological and chemical capability,
+  the same as GPT-6.1 Sol and GPT-6 Astra. It ships on their safeguards stack.
+  On OpenAI's internal ExploitBench port it develops working exploits for 24.5%
+  of recently disclosed vulnerabilities, ahead of GPT-6.1 Sol's 21.5% and
+  behind GPT-6 Astra's 31.5%. It succeeds on 5 of 22 Sandbox Bench targets, and
+  scores 83.33% pass@1 on SEC-Bench Pro. In a deployment simulation over 48,690
+  internal Codex tasks it drew 22 severity-3-or-higher flags (0.045%). That is
+  the lowest of the GPT-6 line, against 24 for GPT-6.1 Sol, 26 for Astra and
+  38 for GPT-6 Sol. It scores 55.5 on HealthBench, up from GPT-5.6 Terra's
+  46.2. All figures in this paragraph are self-reported.</p>
+tags:
+  - reasoning
+  - coding
+  - agentic
+  - computer-use
+  - multimodal
+  - efficiency
+  - proprietary
+model:
+  open_weights: false
+  context_window: 1050000
+  license: Proprietary
+  intelligence_index: 51
+  intelligence_index_version: "AA v5.0"
+  intelligence_index_history:
+    - score: 48
+      version: "AA v4.3.2"
+      until: "2026-10-27"
+  variants:
+    - name: GPT-6.1 Terra (max)
+      notes: "AAII v5.0 51 (48 on v4.3.2 at launch); $1/$5 per 1M tokens, $0.05 cached input"
+    - name: GPT-6.1 Terra (xhigh / high / medium / low)
+      notes: AAII v5.0 45 / 42 / 38 / 29 by reasoning effort
+    - name: GPT-6.1 Terra Pro
+      notes: the same model served with reasoning.mode set to pro (OpenRouter listing); same per-token price, far more tokens per task
+  benchmark_scores:
+    - benchmark: HealthBench
+      score: "55.5"
+    - benchmark: SEC-Bench Pro (pass@1)
+      score: "83.33%"
+    - benchmark: ExploitBench (internal port, arbitrary code execution)
+      score: "24.5%"
+related:
+  - gpt-6.1-sol
+  - gpt-6-sol
+  - gpt-6-astra
+  - gpt-5.6
