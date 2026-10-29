@@ -82,6 +82,8 @@ model:
   context_window: 262144
   intelligence_index: 21
   intelligence_index_version: "AA v4.3.2"
+  openness_index: 72.2
+  openness_index_version: "AA Openness Index v1.0"
   license: OpenMDW-1.1
   variants:
     - name: Bolt 74B-A9B 24GB

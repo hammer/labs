@@ -59,6 +59,8 @@ model:
   context_window: 1000000
   intelligence_index: 25
   intelligence_index_version: "AA v5.0"
+  openness_index: 27.8
+  openness_index_version: "AA Openness Index v1.0"
   intelligence_index_history:
     - score: 39
       version: "AA v4.3.2"

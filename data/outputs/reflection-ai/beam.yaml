@@ -94,6 +94,8 @@ model:
   architecture: moe
   intelligence_index: 18
   intelligence_index_version: "AA v5.0"
+  openness_index: 38.9
+  openness_index_version: "AA Openness Index v1.0"
   intelligence_index_history:
     - score: 30
       version: "AA v4.3.2"

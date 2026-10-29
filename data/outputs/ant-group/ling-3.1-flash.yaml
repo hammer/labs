@@ -96,6 +96,8 @@ model:
   context_window: 262144
   intelligence_index: 41
   intelligence_index_version: "AA v4.3.2"
+  openness_index: 38.9
+  openness_index_version: "AA Openness Index v1.0"
   license: MIT
   variants:
     - name: Ling-3.1-flash

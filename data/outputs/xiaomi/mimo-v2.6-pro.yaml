@@ -100,6 +100,8 @@ model:
   optimizer: AdamW
   intelligence_index: 30
   intelligence_index_version: "AA v5.0"
+  openness_index: 52.8
+  openness_index_version: "AA Openness Index v1.0"
   intelligence_index_history:
     - score: 46
       version: "AA v4.3.2"
