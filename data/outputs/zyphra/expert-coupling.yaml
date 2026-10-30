@@ -1,0 +1,44 @@
+name: "Expert Coupling in MoE Pretraining: Reducing All-to-All Overhead with Correlated Placement and Token Shuffling"
+slug: expert-coupling
+lab: zyphra
+type: paper
+date: 2026-10-07
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.09372
+description: >
+  <p>Zyphra systems work on the communication cost of expert parallelism in
+  MoE training on AMD hardware, the stack behind its <a
+  href="/outputs/zyphra/zaya1">ZAYA1</a> models. On nodes of eight MI300X
+  GPUs, the all-to-all dispatch and combine take 13.5% of the training step
+  at EP8 with top-2 routing, rising to <strong>44.8% at EP32</strong> and
+  60.4% at EP32 with top-6, more than all computation combined.</p>
+
+  <p>The paper finds that routers learn <strong>correlated expert
+  choices</strong> early in pretraining. Within a layer, 0.8% of expert pairs
+  are picked together by 42% of tokens, and a token's experts at one layer
+  predict its experts at the next. It exploits both without changing routing
+  or expert weights. <strong>Correlated placement</strong> puts experts that
+  are often chosen together on the same GPU, and a deduplicating dispatcher
+  sends each token to each GPU once, removing up to 58% of dispatched rows.
+  <strong>Token shuffling</strong> moves each token, inside the
+  sequence-parallel reduce-scatter that follows attention, to the GPU
+  predicted to hold its next-layer experts. On one node this raises the
+  share of expert assignments served locally from 12.5% to 59%.</p>
+
+  <p>Implemented in Megatron-LM across EP8 to EP64, the two methods cut
+  all-to-all time by <strong>1.16&ndash;2.63&times;</strong> and end-to-end
+  step time by up to <strong>1.41&times;</strong>, with the biggest gains at
+  top-6 across nodes. The evaluation covers one 12-layer, 128-expert model
+  with 13.6B total parameters (0.3B active at top-2, 0.7B at top-6), trained
+  for 2.1B tokens of FineWeb-Edu. No code has been released.</p>
+tags:
+  - moe
+  - infrastructure
+  - efficiency
+  - research
+paper:
+  arxiv: "2610.09372"
+related:
+  - zaya1
+  - zaya1-74b
