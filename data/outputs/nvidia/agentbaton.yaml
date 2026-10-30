@@ -1,0 +1,52 @@
+name: "AgentBaton: Efficient Model Collaboration in Agentic Tasks"
+slug: agentbaton
+lab: nvidia
+type: paper
+date: 2026-10-25
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.35959
+description: >
+  <p>A cost-reduction method for long-horizon coding agents: an expensive
+  capable model starts the task and, at a single well-chosen point, hands it
+  to a cheaper model that finishes it. The paper studies both handoff
+  directions on <a href="/outputs/stanford/terminal-bench">Terminal-Bench</a>
+  2.1 and DeepSWE v1.1. It finds that handing off from cheap to capable
+  generally does worse than the capable model alone, often with little or no
+  saving. Handing off from capable to cheap, once the capable model has
+  produced a substantive implementation and only repair, validation or
+  finalization remain, largely preserves accuracy at a fraction of the cost.
+  The receiving model inherits the workspace and gets the prior history
+  either in context or as a <code>.jsonl</code> log file it can inspect
+  with shell tools. Logfile transfer suits cheap-to-capable handoffs, and the
+  better format for the reverse depends on the source model.</p>
+
+  <p><strong>AgentBaton</strong> is the detector that picks the handoff
+  point: a Qwen3.5-2B fine-tune that reads the capable model's actions and
+  tool outputs after each turn and returns HANDOFF_READY or
+  HANDOFF_NOT_READY. It was trained with NeMo Automodel on Codex-annotated
+  trajectories from 2,000 SWE-rebench V2 tasks, and has a median latency of
+  338 ms on one H100. Across 11 pairs, with GPT-5.6 Sol, Claude Opus 5,
+  GLM-5.3, Kimi K3 and Gemini 3.8 Flash handing off to <a
+  href="/outputs/alibaba/qwen3.8-27b">Qwen3.8-27B</a> or GPT-5.6 Luna, plus
+  Luna to Qwen, it cuts API cost by <strong>65.9%</strong> on average. Opus
+  to Luna on DeepSWE goes from 67.3% to <strong>76.1%</strong> (+8.8 points)
+  at 70.5% lower cost, and Kimi K3 to Qwen3.8-27B keeps 72.6% against 73.5%
+  at 72.9% lower cost. Accuracy holds less evenly elsewhere: 12 of the 22
+  pair-benchmark settings improve or lose under 5% relative. A query-level
+  router, trained to predict up front whether Qwen3.8-27B could solve a
+  task, sent only one task to Qwen, and
+  against per-turn routing (MTRouter) AgentBaton cost 46.7&ndash;86.6% less
+  at equal or better accuracy in all four tested settings.</p>
+
+  <p>Seven NVIDIA researchers, with Pavlo Molchanov as senior author, and
+  two interns from HKUST and UIUC. No code has been released.</p>
+tags:
+  - agentic
+  - efficiency
+  - coding
+  - research
+paper:
+  arxiv: "2610.35959"
+related:
+  - cross-model-kv-transfer
