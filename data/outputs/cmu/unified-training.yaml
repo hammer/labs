@@ -1,0 +1,54 @@
+name: "Training Foundation Models with a Single Algorithm"
+slug: unified-training
+lab: cmu
+type: paper
+date: 2026-10-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.40564
+  - label: GitHub
+    url: https://github.com/yudasong/unified-training
+  - label: HuggingFace
+    url: https://huggingface.co/sfanm/unified-training
+description: >
+  <p>A CMU paper arguing that the usual split of foundation-model training
+  into pretraining, midtraining, SFT and RL, each with its own algorithm, is
+  not fundamental. It extends MaxRL (Tajwar et al., 2026, by co-author
+  Fahim Tajwar) to recast suitable RL objectives as <strong>maximum-likelihood
+  fitting to model-generated target distributions</strong>, so every stage
+  becomes the same weighted likelihood loss. Static text and demonstrations
+  enter with their usual weight, and RL generations enter weighted by
+  reward. Training then reduces to choosing <strong>which data to mix, in
+  what proportions, and when</strong>, and conventional staged training is
+  the special case where the mixture jumps abruptly between stages. The
+  authors implement this as one asynchronous trainer that mixes static data
+  and fresh RL generations.</p>
+
+  <p>The experiments are small. In a controlled setting, a 124M model
+  trained from scratch on reasoning puzzles, mixing midtraining data into
+  late pretraining and throughout RL, reaches higher accuracy (pass@1) and
+  coverage (pass@16) than staged training at the same total compute,
+  including on puzzles larger than any seen in training. In the "real-world"
+  setting, a 0.76B model trained from scratch and then run through math RL
+  with midtraining data mixed in keeps more of its earlier abilities: its
+  held-out midtraining loss falls where staged training's rises. The cost is
+  a trade between accuracy and coverage on the target tasks, with Coding
+  accuracy lower as more midtraining data is mixed in. The authors also
+  report a better starting point for continual learning. Nothing is shown
+  above 1B parameters, so this entry is an exception to the 7B rule for
+  technique papers, filed because it reframes how the full training
+  pipeline is designed.</p>
+
+  <p>Yuda Song (project lead) and Fahim Tajwar at CMU share first
+  authorship with Alvin Zhang at Johns Hopkins. Andrea Zanette, Aarti Singh
+  and J. Andrew Bagnell (CMU and Aurora) co-advise, with Daman Arora, Jeff
+  Schneider and Ruslan Salakhutdinov of CMU and Daniel Khashabi of JHU as
+  co-authors. Code is
+  Apache-2.0 on GitHub, and the paper is 67 pages.</p>
+tags:
+  - training
+  - rl
+  - pretraining
+  - research
+paper:
+  arxiv: "2610.40564"
