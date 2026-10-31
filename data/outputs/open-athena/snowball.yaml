@@ -7,6 +7,8 @@ type: model
 date: 2026-09-09
 flagship: true
 sources:
+  - label: Post-Training in the Open (Open Athena blog)
+    url: https://openathena.ai/blog/post-training-in-the-open/
   - label: Marin 535B-A23B launch note (Snowball status)
     url: https://openathena.ai/blog/marin-535b-launch-note/
   - label: HuggingFace (262K base, QK 1.57)
@@ -17,6 +19,10 @@ sources:
     url: https://huggingface.co/open-athena/Marin-Snowball-67B-A2B-v0.1
   - label: HuggingFace (Marin Snowball 67B-A2B v0.1.1)
     url: https://huggingface.co/open-athena/Marin-Snowball-67B-A2B-v0.1.1
+  - label: HuggingFace (v0.1 MLX 4-bit)
+    url: https://huggingface.co/open-athena/Marin-Snowball-67B-A2B-v0.1-MLX-4bit
+  - label: GitHub (Marin eval policy)
+    url: https://github.com/marin-community/marin/issues/10197
   - label: GitHub (262K checkpoint guide)
     url: https://github.com/marin-community/marin/issues/8977
   - label: GitHub (Marin vLLM fork for GrugMoE)
@@ -62,6 +68,27 @@ description: >
   from 7/60 to 45/60 but regresses MATH500 from 461 to 449 of 500 and GSM8K
   from 1,224 to 1,038 of 1,319, and the card calls it "not a regression-free
   replacement." Both are OpenMDW-1.1 and need Marin's vLLM build.</p>
+
+  <p>Open Athena's October 29 post, <a
+  href="https://openathena.ai/blog/post-training-in-the-open/">"Post-Training
+  in the Open"</a> by Ben Feuer, presents v0.1 as Marin's first model to get
+  serious post-training. Its lineage is a graph of 14 models and 15
+  connections, out of more than 100 post-trained Snowball models the team
+  tracks, using four techniques: SFT, RLVR, final-token preference
+  optimization (FTPO) and model merging. The in-house stack builds on SkyRL
+  and Harbor. Ranked on Marin's own eval policy against its peers, v0.1 has
+  a mean rank of <strong>8.13 against GPT-OSS's 8.93</strong>, a gap well
+  inside the 4.14 critical difference. With a FLOP-controlled adjustment it
+  ranks first (5.18 against GPT-OSS-20B's 8.29), though not significantly
+  ahead of the second-best model. Open Athena calls that "GPT-OSS-level
+  quality", nine to fifteen months behind the open-weights frontier at this
+  size. It names agentic skill, factuality and complex instruction following
+  as the main gaps. The post also says snowball-base beats <a
+  href="/outputs/open-athena/marin">Marin 32B</a> on Marin 32B's own launch
+  eval card with 10&times; fewer FLOPs and 16&times; fewer active
+  parameters. Open Athena published a 4-bit MLX build for Macs with 32GB or
+  more of memory, and says a full technical report will follow in
+  November.</p>
 tags:
   - moe
   - open-weight
@@ -87,6 +114,8 @@ model:
       notes: "QK 1.75 with long-context documents upsampled 2x, 4x or 8x during the extension"
     - name: Marin-Snowball-67B-A2B-v0.1
       notes: "2026-10-19; RLOO-N RL (14 steps) from a DARE-TIES merge of Grug-67B-A2B/Snowball RLVR checkpoints; native dev-set pass@1 41.2 -> 50.2; card: external benchmark runs hit endpoint errors and do not establish valid benchmark performance"
+    - name: Marin-Snowball-67B-A2B-v0.1-MLX-4bit
+      notes: "2026-10-20; 4-bit MLX quantization of v0.1 for Apple silicon (32GB+); runs with mlx-lm"
     - name: Marin-Snowball-67B-A2B-v0.1.1
       notes: "2026-10-22; identity SFT on v0.1 (LR 1e-6, step 50); identity panel 7/60 -> 45/60; MATH500 461 -> 449/500, GSM8K 1224 -> 1038/1319 (regressions)"
 related:

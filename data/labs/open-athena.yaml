@@ -92,6 +92,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=pouyVyUAAAAJ
 news:
+  - title: "Post-Training in the Open: Marin Snowball 67B-A2B v0.1 Reaches GPT-OSS-Level on Marin's Eval Policy, From a Lineage of 100+ Post-Trained Checkpoints"
+    url: https://openathena.ai/blog/post-training-in-the-open/
+    source: Open Athena
+    date: 2026-10-29
   - title: "Open Athena Selected as an ARIA Activation Partner, Its First UK Collaboration, as It Opens a London Office"
     url: https://openathena.ai/blog/open-athena-selected-as-an-aria-activation-partner/
     source: Open Athena
