@@ -9,24 +9,73 @@ sources:
     url: https://mistral.ai/news/mistral-large-4/
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/mistral-large-4
+  - label: Open-weight release (Mistral blog)
+    url: https://mistral.ai/news/mistral-large-4-oss/
+  - label: Technical Report (PDF)
+    url: https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/blob/main/assets/technical_report.pdf
+  - label: HuggingFace
+    url: https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B
+  - label: HuggingFace (NVFP4)
+    url: https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B-NVFP4
 description: >
   <p>Mistral's largest model, launched as a public preview on October 6, 2026
   &mdash; <strong>ML4</strong>, or as Mistral insists, <em>le Chonk</em>. A
   <strong>1 trillion-parameter natively multimodal MoE with 49B active</strong>,
   trained from scratch on <strong>3,800 NVIDIA Grace Blackwell GPUs in Mistral's
-  own European datacenters</strong>, which also serve the preview. Weights are
-  promised under open weights <strong>by the end of October</strong>; until then
-  it is API-only on Mistral Studio while the model is red-teamed with
-  cybersecurity leaders, vetted partners and state authorities, who get a version
-  with reduced moderation and expanded cyber capabilities. Artificial Analysis
+  own European datacenters</strong>, which also serve the preview. Weights were
+  promised under open weights by the end of October; until then it was
+  API-only on Mistral Studio while the model was red-teamed with cybersecurity
+  leaders, vetted partners and state authorities, who get a version with
+  reduced moderation and expanded cyber capabilities. Artificial Analysis
   scored the preview at 38 on its Intelligence Index v4.3.2 (64th of 225,
-  above the 26 median) and at <strong>25 on v5.0</strong> after the October 27
-  recalibration, listing a 524K context
-  window at $1.36 in / $4.18 out per million tokens, and classing it proprietary
-  until the weights land. A large share of training data was multilingual across
-  <strong>more than 160 languages</strong>, including every official EU language.</p>
+  above the 26 median) and at 25 on v5.0 after the October 27
+  recalibration. A large share of training data was multilingual across
+  <strong>more than 160 languages</strong>, including every official EU
+  language.</p>
 
-  <p>The sharpest claim is about <strong>cybersecurity</strong>, and it is a
+  <p><strong>The weights shipped on October 29</strong>, as <a
+  href="https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B">Mistral-Large-4-1T-A52B</a>
+  in FP8 plus an NVFP4 build, after three more weeks of RL that Mistral says
+  mainly improved coding, cyber defense and token efficiency. The license is
+  the new <strong>Mistral Ecosystem Open-Weight License</strong>, a modified
+  MIT license that allows commercial use but requires a separate commercial
+  license to run the model as a Model-as-a-Service business. The card gives
+  49B active parameters per token, or 52B counting embeddings and output
+  layers, with 128 routed experts (4 active) plus one shared expert, a 1M
+  context, image input, and low, medium and high reasoning effort.
+  Artificial Analysis now lists it as open weights with a 1M context and
+  scores the released model <strong>26 on v5.0</strong> at high effort (23 at
+  medium). Mistral calls that the highest of any Western open-weights model.
+  On Cognition's own FrontierCode 2.0 runs Mistral reports 19.7%, ahead of
+  the other open models in its chart.</p>
+
+  <p>The <strong>technical report</strong> (30 pages, posted to the
+  HuggingFace repo on November 2) is unusually candid about a wrong turn.
+  ML4 was pretrained on 3,840 GB200 GPUs near Paris for 45 days (about 4.15M
+  GPU-hours at 36% MFU) with heavy KV-cache compression: sliding-window
+  attention in three of every four layers, cross-layer KV sharing and YOCO,
+  which together cut the KV cache 16&times;. Perplexity and knowledge
+  benchmarks looked fine, but SFT cooldowns on intermediate checkpoints
+  underperformed on long-context agentic tasks such as SWE-bench and
+  BrowseComp. Mistral then performed <strong>model surgery</strong> before
+  the second pretraining phase. It removed the sliding windows and
+  cross-layer sharing, copying KV weights into the affected layers and
+  adding LeRoPE and SSMax, but kept YOCO. It then adapted the model to
+  <strong>DeepSeek Sparse Attention</strong> over about 213B tokens. The
+  report concludes that comparable language-modeling loss does not imply
+  comparable long-horizon performance. Post-training uses agents that author
+  and verify executable environments for software, terminal, cyber and
+  knowledge-work tasks. The RL run generated 5.36M rollouts and 162.5B
+  output tokens, with a CISPO-style loss under Muon. Low, medium and high
+  reasoning effort come from distillation from three teachers. One aside:
+  most of Mistral's BrowseComp search trajectories hit
+  "query-reflection" pages left behind by earlier agents' searches by
+  October. NVFP4 quantization shrinks the checkpoint to 606 GB, enough to
+  serve on four GB300s, and an embedded DSpark draft head speeds decoding.
+  Report figures include 41% on Terminal-Bench 4.0 and 50.9% on the AA
+  Cyber Index.</p>
+
+  <p>The preview announcement's sharpest claim is about <strong>cybersecurity</strong>, and it is a
   claim about refusals as much as capability. On the AA Cyber Index, ML4 ranks
   top five globally and leads non-Chinese open-weight models; on the index test
   that asks a model to reproduce a real vulnerability in open-source software and
@@ -70,19 +119,26 @@ tags:
   - cybersecurity
   - multilingual
 model:
-  open_weights: false
+  open_weights: true
   architecture: moe
   parameters: 1T
-  active_parameters: 49B
-  context_window: 524288
-  training_hardware: 3,800 NVIDIA Grace Blackwell
-  intelligence_index: 25
+  active_parameters: 52B
+  num_experts: 128
+  top_k: 4
+  context_window: 1000000
+  training_hardware: 3,840 NVIDIA GB200
+  intelligence_index: 26
   intelligence_index_version: "AA v5.0"
   intelligence_index_history:
+    - score: 25
+      version: "AA v5.0"
+      until: "2026-11-03"
     - score: 38
       version: "AA v4.3.2"
       until: "2026-10-28"
-  license: Open weights (announced; release promised end of October 2026)
+  openness_index: 38.9
+  openness_index_version: "AA Openness Index v1.0"
+  license: Mistral Ecosystem Open-Weight License (modified MIT)
   benchmark_scores:
     - benchmark: Cybench
       score: "93%"
@@ -100,6 +156,14 @@ model:
       score: "59.9%"
     - benchmark: Lakera B3 (attack resistance)
       score: "93.3%"
+  variants:
+    - name: Mistral-Large-4-1T-A52B
+      notes: "2026-10-29 open-weight release, FP8; AA v5.0 26 (high), 23 (medium)"
+    - name: Mistral-Large-4-1T-A52B-NVFP4
+      notes: "Post-training NVFP4 quantization, 606 GB, serves on 4x GB300"
+paper:
+  pdf_url: https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/blob/main/assets/technical_report.pdf
+  huggingface_url: https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B
 related:
   - mistral-large-3
   - mistral-medium-3.5
