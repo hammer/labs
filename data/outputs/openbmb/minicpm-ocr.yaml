@@ -1,0 +1,64 @@
+name: MiniCPM-OCR
+slug: minicpm-ocr
+lab: openbmb
+type: model
+date: 2026-10-27
+sources:
+  - label: GitHub
+    url: https://github.com/OpenBMB/MiniCPM-OCR
+  - label: HuggingFace (MiniCPM-OCR-1.0)
+    url: https://huggingface.co/openbmb/MiniCPM-OCR-1.0
+  - label: HuggingFace (MiniCPM-OCR-Jev)
+    url: https://huggingface.co/openbmb/MiniCPM-OCR-Jev
+  - label: JevOCRBench (HuggingFace)
+    url: https://huggingface.co/datasets/openbmb/JevOCRBench
+description: >
+  <p>OpenBMB's first OCR-specific models, split from the <a
+  href="/outputs/openbmb/minicpm-v-4.6">MiniCPM-V</a> line and released
+  under Apache 2.0 (weights on HuggingFace from October 21, the GitHub
+  launch on October 27, 2026). <strong>MiniCPM-OCR 1.0</strong> is a 1.3B
+  document parser built on MiniCPM-V 4.6 that turns Chinese and English
+  documents and PDFs into text, tables, formulas, charts and seals,
+  including scans, photos, curved and recaptured pages. OpenBMB reports
+  state-of-the-art open results of <strong>93.68 on Real5-OmniDocBench</strong>
+  and 54.7 on OCRBench v2, with leading scores on OmniDocBench v1.6,
+  Wild-OmniDocBench and olmOCR-Bench, at about 1.2 pages per second, which
+  it puts at 1.49&times; PaddleOCR-VL-1.6's throughput and 3.62&times;
+  MinerU2.5 Pro's. A DSpark draft head adds a further 55% end-to-end
+  speedup.</p>
+
+  <p>The more unusual release is <strong>MiniCPM-OCR Jev</strong>, a 2B
+  <em>OCR correctness decision model</em> built on Qwen3.5-2B. Given a
+  region image and a candidate transcription from any OCR system, it returns
+  a 0&ndash;1 score for whether the transcription is right, so pipelines can
+  auto-accept reliable regions and route the rest to review. On OpenBMB's new
+  2,267-record <strong>JevOCRBench</strong> it reaches an AUROC of 93.6,
+  against 90.1 for a 35B-A3B judge and 93.8 for Qwen3.5-397B-A17B, and it
+  holds 91.9&ndash;93.4 when scoring output from MiniCPM-OCR, GLM-OCR,
+  PaddleOCR-VL-1.6 and Xiaomi-OCR-0. All figures are OpenBMB's own.</p>
+tags:
+  - ocr
+  - vision
+  - open-weight
+  - on-device
+model:
+  open_weights: true
+  architecture: dense
+  parameters: 1.3B
+  license: Apache 2.0
+  base_model: minicpm-v-4.6
+  variants:
+    - name: MiniCPM-OCR-1.0
+      parameters: 1.3B
+      notes: "Document parser from MiniCPM-V 4.6; Real5-OmniDocBench 93.68, OCRBench v2 54.7; DSpark and GGUF builds"
+    - name: MiniCPM-OCR-Jev
+      parameters: 2B
+      notes: "OCR correctness decision model from Qwen3.5-2B; JevOCRBench AUROC 93.6"
+  benchmark_scores:
+    - benchmark: Real5-OmniDocBench
+      score: "93.68"
+    - benchmark: OCRBench v2
+      score: "54.7"
+related:
+  - minicpm-v-4.6
+  - minicpm-v-4.7

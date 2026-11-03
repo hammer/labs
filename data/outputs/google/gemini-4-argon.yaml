@@ -13,6 +13,8 @@ sources:
     url: https://storage.googleapis.com/deepmind-media/gemini/gemini_4_argon_model_evaluation.pdf
   - label: General availability (Google, Oct 13, 2026)
     url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/
+  - label: Gemini 4 Argon for Robotics (Google Developers Blog, Oct 13, 2026)
+    url: https://developers.googleblog.com/gemini-4-argon-for-robotics/
   - label: Gemini API changelog
     url: https://ai.google.dev/gemini-api/docs/changelog
   - label: Fairwind Program
@@ -45,7 +47,12 @@ description: >
   introductory period ends on November 30, 2026. The GA post describes the
   limit as 1M tokens shared between input and output, and adds two vendor
   claims: 87% on the ERQA embodied-reasoning benchmark and first place on the
-  Vals Index. Architecture, parameter count and training scale
+  Vals Index. A same-day Google Developers post, "Gemini 4 Argon for Robotics",
+  presents the same <code>gemini-4-argon</code> model, not a separate
+  robotics checkpoint, as a general physical-reasoning model: it repeats the 87%
+  ERQA figure as pure reasoning without tools, and shows Argon generating
+  simulation data that raised a real-world VLA policy's success rate from 56%
+  to 75% over 4,500+ simulated episodes. Architecture, parameter count and training scale
   are undisclosed.</p>
 
   <p>Google's evaluation sheet (highest thinking setting, pass@1, against GPT-6

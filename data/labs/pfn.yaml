@@ -45,6 +45,10 @@ people:
     role: Co-founder & Chairman
     formerly: University of Tokyo (MSc)
 news:
+  - title: "PFN and Tenstorrent Selected for a Five-Year NEDO Project to Develop Photonics-Integrated AI Processors, With PFN Building High-Bandwidth 3D-Stacked-Memory AI Chiplets"
+    url: https://www.preferred.jp/en/news/pr20261020
+    source: Preferred Networks
+    date: 2026-10-20
   - title: "PFN to Run the Matlantis Materials Simulator on Its MN-Core 2 Chips in 2026, Up to 4x Faster Than GPUs on Some Structures"
     url: https://www.preferred.jp/en/news/pr20260918
     source: Preferred Networks

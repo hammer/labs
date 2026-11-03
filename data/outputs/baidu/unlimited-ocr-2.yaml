@@ -1,0 +1,48 @@
+name: Unlimited-OCR-2
+slug: unlimited-ocr-2
+lab: baidu
+type: model
+date: 2026-10-27
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/baidu/Unlimited-OCR-2
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.39308
+  - label: GitHub
+    url: https://github.com/baidu/Unlimited-OCR
+  - label: MarathonDocBench (HuggingFace)
+    url: https://huggingface.co/datasets/baidu/MarathonDocBench
+description: >
+  <p>The second <a href="/outputs/baidu/unlimited-ocr">Unlimited-OCR</a>,
+  released October 27, 2026 under MIT, which moves Baidu's one-shot document
+  parser from long documents to documents of effectively any length. The
+  change is in attention: every decoder attention module becomes
+  <strong>Sparse Reference Sliding Window Attention (SR-SWA)</strong>, which
+  caps the text-to-image references each decoding step can attend to at a
+  fixed set (512 tokens in the card's example). Per-step latency and memory
+  therefore stay roughly constant as the document grows, instead of rising
+  with the accumulated visual context. At the hundred-page scale the paper
+  (posted October 29) reports <strong>7.0&times;</strong> faster decoding
+  steps than full attention and 5.6&times; faster than the first model's
+  R-SWA. It claims state-of-the-art end-to-end results on MPDocBench and on
+  <strong>MarathonDocBench</strong>, a benchmark Baidu released alongside it:
+  100 documents of 100&ndash;300 pages each, about 18K pages and 205K
+  annotated layout elements in mixed Chinese and English, with cross-page
+  text and tables. The paper frames this as the start of an "OCR 3.0 era". The
+  HuggingFace repo drew about 570 likes in its first week.</p>
+tags:
+  - ocr
+  - vision
+  - moe
+  - open-weight
+  - long-context
+model:
+  open_weights: true
+  architecture: moe
+  license: MIT
+  base_model: unlimited-ocr
+paper:
+  arxiv: "2610.39308"
+related:
+  - unlimited-ocr
+  - qianfan-ocr

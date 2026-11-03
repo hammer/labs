@@ -20,6 +20,10 @@ sources:
     url: https://huggingface.co/tencent/Hy-MT2-1.8B
   - label: GitHub (Hy-MT2)
     url: https://github.com/Tencent-Hunyuan/Hy-MT2
+  - label: HuggingFace (Hy-SimulMT-30B-A3B)
+    url: https://huggingface.co/tencent/Hy-SimulMT-30B-A3B
+  - label: GitHub (Hy-SimulMT)
+    url: https://github.com/Tencent-Hunyuan/Hy-SimulMT
   - label: Announcement (original)
     url: https://siliconangle.com/2025/09/01/tencent-open-sources-hunyuan-mt-translation-model-series/
 description: >
@@ -30,6 +34,21 @@ description: >
   and <a href="/outputs/moonshot-ai/kimi-k2.6">Kimi K2.6</a> on translation,
   while the 1.8B quantizes to 440MB at 1.25-bit. Ships with <strong>IFMTBench</strong>,
   a companion instruction-following translation benchmark.</p>
+
+  <p><strong>Hy-SimulMT</strong> (October 26, 2026, Apache 2.0) moves the
+  line from text to live speech: bidirectional Chinese&ndash;English
+  <em>simultaneous</em> speech-to-speech translation that translates while
+  the speaker is still talking and clones the speaker's voice in real time.
+  The model is a 30B-A3B MoE in Tencent's HY V3 architecture (48 layers, 128
+  experts, 8 active) with speech input. Speech output relies on a separate
+  TTS service. On the long-form RealSI benchmark Tencent reports a streaming
+  lag (StreamLAAL) of about 3 seconds, the lowest in its comparison, with a
+  GEMBA quality score above the compared open models and four of five
+  commercial APIs, and 84.7 on RealSI-Sentence. A small test on 18 new
+  six-minute recordings found it on par with CATTI-certified human
+  interpreters while usually responding sooner, a result Tencent says
+  applies only to that sample. The release includes the SimulInfer serving
+  stack and SimulTrain training tools.</p>
 tags:
   - nlp
   - open-weight
@@ -59,3 +78,7 @@ model:
       parameters: 30B
       active_parameters: 3B
       notes: Released May 21 2026; MoE variant
+    - name: Hy-SimulMT-30B-A3B
+      parameters: 30B
+      active_parameters: 3B
+      notes: "Released Oct 26 2026; simultaneous zh<->en speech-to-speech translation with voice cloning; StreamLAAL ~3 s on RealSI; FP8, GGUF and Interleave builds"

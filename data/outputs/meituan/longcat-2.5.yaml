@@ -1,0 +1,52 @@
+name: LongCat-2.5
+slug: longcat-2.5
+lab: meituan
+type: model
+date: 2026-11-02
+flagship: false
+sources:
+  - label: LongCat API Platform change log
+    url: https://longcat.chat/platform/docs/ChangeLog.html
+  - label: LongCat API quick start (model limits)
+    url: https://longcat.chat/platform/docs/
+  - label: LongCat-2.5 pricing
+    url: https://longcat.chat/platform/docs/pricing/longcat-2.5
+description: >
+  <p>The successor to <a href="/outputs/meituan/longcat-2.0">LongCat-2.0</a>,
+  released as an API model in two steps. Meituan's LongCat API Platform change
+  log lists <strong>LongCat-2.5-Preview</strong> on
+  <strong>2026-09-25</strong> ("New image understanding capability, able to
+  parse image content, supporting cross-modal Q&amp;A, content summarization,
+  and complex visual reasoning") and the general release,
+  <strong>LongCat-2.5</strong>, on <strong>2026-11-02</strong>. The GA entry
+  names three features: "Native Multimodality, Beyond Text" (visual
+  understanding combined with agentic coding for visual coding, creative design
+  and 3D tasks), "Long-Horizon Agents for Complex Engineering" (complex
+  codebases and full-project builds), and compatibility across agent harnesses
+  (Claude Code, Codex, Hermes and others). The main change from 2.0, which was
+  text-only, is native image input.</p>
+
+  <p>The platform documents a <strong>1M-token context window</strong> with a
+  <strong>256K-token maximum output</strong>, and LongCat-2.5 is now the only
+  model on the platform. Limited-time pricing is $0.30 per 1M uncached input
+  tokens, $0.006 cached and $1.20 output (¥2 / ¥0.04 / ¥8). Meituan's own pages
+  give <strong>no parameter count, architecture, training details or
+  benchmark scores</strong>. Chinese press coverage of the September Preview
+  (IT之家) reported that it kept LongCat-2.0's 1.6T-total / ~48B-active MoE
+  shape; that figure is not stated on any Meituan page this entry could read, so
+  it is not recorded in the structured fields, and whether 2.5 is a
+  continued-training checkpoint of 2.0 or a new pretrain is undisclosed. At
+  filing there are no weights in the <code>meituan-longcat</code> HuggingFace
+  org or GitHub org (2.0's MIT weights followed its launch by five days), no
+  technical report, and no Artificial Analysis or OpenRouter listing.</p>
+tags:
+  - frontier
+  - multimodal
+  - agentic
+  - coding
+model:
+  open_weights: false
+  context_window: 1000000
+  license: Proprietary (API only at filing)
+related:
+  - longcat-2.0

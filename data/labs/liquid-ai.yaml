@@ -55,6 +55,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=fIupeSAAAAAJ
 news:
+  - title: "Liquid AI Releases LFM3: A 22T-Token Tri-Hybrid 1.7B Base and Text, Vision, Audio, Omni and Decision Models Branched From It"
+    url: https://www.liquid.ai/blog/lfm3
+    source: Liquid AI
+    date: 2026-10-27
   - title: "Liquid AI Raises $250M Series A Led by AMD"
     url: https://www.liquid.ai
     source: Liquid AI

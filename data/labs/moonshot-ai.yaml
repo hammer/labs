@@ -92,6 +92,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Flood_Sung1
 news:
+  - title: "Moonshot Releases Kimi K3.1 Pro: Post-Trained K3 (2.8T MoE), 1M Context, $2/$10 API; Open Weights Promised by Nov 4"
+    url: https://www.kimi.com/en/blog/kimi-k3-1-pro
+    source: Moonshot AI
+    date: 2026-10-24
   - title: "Moonshot Reportedly Closes Its Final Private Round at ~$50B Ahead of a Hong Kong IPO of up to $5B in Q1 2027; Amount and Pre/Post Basis Undisclosed"
     url: https://www.thestandard.com.hk/finance/article/344720/
     source: Bloomberg via The Standard

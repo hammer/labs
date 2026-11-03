@@ -1,0 +1,43 @@
+name: Kling 4.0
+slug: kling-4.0
+lab: kuaishou
+type: model
+date: 2026-10-15
+flagship: true
+sources:
+  - label: Announcement (Kling AI press release)
+    url: https://bernama.com/en/press/news.php?id=2622471
+  - label: Kling AI
+    url: https://klingai.com/
+  - label: Digital Today coverage
+    url: https://digitaltoday.co.kr/en/view/115781/kling-ai-launches-kling-4-0-video-ai-model-generates-30-second-video-in-one-go
+description: >
+  <p>The next headline generation of Kuaishou's video model after
+  <a href="/outputs/kuaishou/kling-3.0">Kling 3.0</a>, launched globally by the
+  Kling AI unit on <strong>2026-10-15</strong> after a limited
+  <strong>Kling 4.0 Flash</strong> preview opened to top-tier annual
+  subscribers on September 28. The launch release frames the upgrade as
+  realism, control and professional output. The concrete changes over 3.0 are
+  duration and conditioning. A single native generation runs <strong>up to
+  30 seconds</strong>, double 3.0's 15. Omni Reference accepts <strong>up to 15
+  reference inputs</strong> and up to <strong>10 keyframes</strong>, and output
+  is <strong>10-bit HDR</strong>. Kling also says large motion and complex
+  camera moves are more stable across fast action.</p>
+
+  <p>Some launch features were announced as forthcoming rather than shipped:
+  4K and 1080p output, a 21:9 ultrawide ratio, and an enterprise/developer API
+  were described as "coming soon". At launch the model was usable on
+  klingai.com and callable by agents through a Kling MCP server and CLI.
+  Kuaishou published no architecture, parameter count, training data or
+  benchmark numbers, and no technical report. The weights are closed, as for
+  every Kling generation.</p>
+tags:
+  - video
+  - generation
+  - multimodal
+  - frontier
+model:
+  open_weights: false
+  license: Proprietary
+related:
+  - kling-3.0

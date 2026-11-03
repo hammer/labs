@@ -89,6 +89,14 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Shun_Kiyono1
 news:
+  - title: "SB Intuitions Releases Sarashina3.2 mini thinking, a From-Scratch Reasoning Model With Low/Medium/High Reasoning Effort, Added to the Sarashina Service"
+    url: https://www.sbintuitions.co.jp/blog/entry/2026/10/29/133000
+    source: SB Intuitions
+    date: 2026-10-29
+  - title: "SB Intuitions Opens a Free Public Beta of the Sarashina Service: API and Web Chat for Six Sarashina3 Models (mini, nano, embedding, rerank, guard, translate)"
+    url: https://prtimes.jp/main/html/rd/p/000000002.000141057.html
+    source: SB Intuitions (PR TIMES)
+    date: 2026-10-13
   - title: "Sarashina Image: 2.6B Unified Next-DiT Image Model Trained From Scratch With a Japanese-Native Text Encoder"
     url: https://www.sbintuitions.co.jp/blog/entry/2026/09/04/123517
     source: SB Intuitions

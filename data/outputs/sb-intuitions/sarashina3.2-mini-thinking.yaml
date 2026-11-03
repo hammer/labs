@@ -1,0 +1,73 @@
+name: Sarashina3.2 mini thinking
+slug: sarashina3.2-mini-thinking
+lab: sb-intuitions
+type: model
+date: 2026-10-29
+sources:
+  - label: Tech Blog (announcement)
+    url: https://www.sbintuitions.co.jp/blog/entry/2026/10/29/133000
+  - label: Model performance (Sarashina API docs)
+    url: https://docs.sarashina.ai/model-performance
+  - label: Safety evaluation (Tech Blog)
+    url: https://www.sbintuitions.co.jp/blog/entry/2026/11/02/01
+  - label: Sarashina service
+    url: https://sarashina.ai/
+description: >
+  <p>A thinking (reasoning) model in SB Intuitions' third Sarashina
+  generation, added on 29 October 2026 to the free-beta <a href="https://sarashina.ai/">Sarashina
+  service</a> that opened on 13 October. The blog states it was "developed
+  fully from scratch" (フルスクラッチで開発), like <a
+  href="/outputs/sb-intuitions/sarashina3">Sarashina3 mini and nano</a>, and
+  that it reasons before answering, where Sarashina3 mini is an instruct-only
+  model. Thinking depth is set per request with a
+  <code>reasoning_effort</code> parameter (low / medium / high).</p>
+
+  <p>Pretraining uses the same Japanese, English and code-centred data as
+  Sarashina3 mini, with long-context and agent-oriented data added for this
+  version. Post-training is SFT, multi-task RL and OPSD (on-policy
+  self-distillation) for style alignment, plus two new RL stages for search
+  and for safety. Parameter count, architecture, token count, context window
+  and license are not disclosed. The model is API-only, with no weights
+  released.</p>
+
+  <p>The API documentation reports these self-reported scores at medium
+  effort, against the non-thinking Sarashina3 mini: AIME 2025 0.789 (0.633),
+  GPQA-Diamond 0.645 (0.571; 0.670 at high), SWE-bench Verified 0.326
+  (0.018), IFBench 0.695 (0.585), &tau;&sup2;-bench 0.554 (0.343), BFCL v3
+  0.749 (0.598), and SB Intuitions' Japanese agent benchmark J-tau 0.768
+  (0.385). Japanese cultural QA (JamC-QA) fell from 0.821 to 0.694. In the
+  blog's normalised comparison against llm-jp-4.1-33b-thinking, Qwen3-32B,
+  Qwen3-235B-A22B-Thinking-2507, gpt-oss-120b and GPT-5.4 mini, it scores
+  highest on J-tau, BFCL v3 and the JMT-Safety multi-turn safety set. It
+  trails Qwen3-235B-A22B-Thinking-2507 and GPT-5.4 mini on GPQA-Diamond and
+  J-MultiChallenge. The authors note it was not specifically trained for
+  coding-agent use. Artificial Analysis does not list it.</p>
+tags:
+  - japanese
+  - proprietary
+  - sovereign
+  - reasoning
+model:
+  open_weights: false
+  benchmark_scores:
+    - benchmark: AIME 2025
+      score: "78.9%"
+      mode: reasoning_effort medium
+    - benchmark: GPQA-Diamond
+      score: "67.0%"
+      mode: reasoning_effort high
+    - benchmark: SWE-bench Verified
+      score: "34.0%"
+      mode: reasoning_effort high
+    - benchmark: IFBench
+      score: "72.9%"
+      mode: reasoning_effort high
+    - benchmark: BFCL v3
+      score: "75.0%"
+      mode: reasoning_effort high
+    - benchmark: tau2-bench
+      score: "55.4%"
+      mode: reasoning_effort medium
+related:
+  - sarashina3
+  - sarashina2.2

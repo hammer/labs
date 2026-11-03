@@ -5,6 +5,8 @@ type: model
 date: 2026-08-11
 flagship: true
 sources:
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2610.38095
   - label: Technical report (Super VL and Lightning)
     url: https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf
   - label: NVIDIA Technical Blog
@@ -56,6 +58,21 @@ description: >
   <a href="/outputs/nvidia/nemotron-3.5-bolt">Bolt</a> at 74B/9B, with
   Lightning the smallest at 30B/3B.</p>
 
+  <p>The joint <strong>technical report</strong> for Lightning and Super
+  (<a href="https://arxiv.org/abs/2610.38095">arXiv 2610.38095</a>, October
+  28, 2026) describes both as built with large-scale distillation,
+  long-context training and native speculative decoding. Super adds Indic
+  continued pretraining, which NVIDIA says lifts Indian-language benchmarks by
+  up to 9.82 points, and agentic software-engineering mid-training. Its
+  post-training runs SFT, RLVR and RLHF plus specialized teachers and
+  multi-teacher on-policy distillation, which is what turns the text-only base
+  into a multimodal agent. The report gives Super <strong>51.78% on SWE-bench
+  Pro</strong>, above Nemotron 3 Ultra with about 4.6&times; fewer active
+  parameters. MTP boosting after post-training lengthens speculative-decoding
+  acceptance by up to 21.8%, NVFP4 keeps a 99.62% median accuracy recovery
+  against BF16, and serving reaches up to 4,856 output tokens/s per GB200 GPU
+  at 50+ tokens/s per user.</p>
+
 tags:
   - moe
   - open-weight
@@ -72,9 +89,12 @@ model:
   top_k: 6
   context_window: 1000000
   training_tokens: 20T+
-  intelligence_index: 13
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 6
+  intelligence_index_version: "AA v5.0"
   intelligence_index_history:
+    - score: 13
+      version: "AA v4.3.2"
+      until: "2026-11-03"
     - score: 14
       version: "AA v4.3"
       until: "2026-09-21"
@@ -121,6 +141,8 @@ model:
       mode: loose
     - benchmark: AA-LCR
       score: "52.0"
+paper:
+  arxiv: "2610.38095"
 related:
   - nemotron-3-nano
   - nemotron-3-super

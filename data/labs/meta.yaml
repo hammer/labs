@@ -74,6 +74,18 @@ people:
     role: VP, Head of GenAI
     formerly: Apple (16 years)
 news:
+  - title: "Meta Prices $37.5B Equity Raise ($25B Common at $625/Share Plus $12.5B Mandatory Convertible Preferred); NVIDIA Commits $3B and Expands Muse Training and Inference Collaboration"
+    url: https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Announces-Pricing-of-Offering-of-Depositary-Shares-Representing-Series-A-Mandatory-Convertible-Preferred-Stock-and-Offering-of-Class-A-Common-Stock-in-Connection-with-Forward-Sale-Agreements/default.aspx
+    source: Meta
+    date: 2026-10-26
+  - title: "Meta Releases Muse Spark Open: 816B-A42B Open-Weight MoE With 1M-Token Context, the First Downloadable Model in the Muse Line"
+    url: https://dev.meta.ai/resources/blog/build-with-muse-spark-open
+    source: Meta
+    date: 2026-10-15
+  - title: "Meta Introduces Muse Wonder, a Frontier Model for Personal and Professional AI Agents"
+    url: https://about.fb.com/news/2026/10/introducing-muse-wonder-models/
+    source: Meta
+    date: 2026-10-12
   - title: "Meta Launches Meta Enterprise Platform to Bring the Muse Agent, Muse API and Muse Code to Businesses; Former MongoDB CEO CJ Desai Joins as Chief Enterprise Platform Officer"
     url: https://about.fb.com/news/2026/09/launching-meta-enterprise-platform/
     source: Meta

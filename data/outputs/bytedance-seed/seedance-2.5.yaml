@@ -11,6 +11,8 @@ sources:
     url: https://seed.bytedance.com/en/seedance2_5
   - label: Coverage (TechNode)
     url: https://technode.com/2026/07/31/bytedance-launches-seedance-2-5-video-generation-model/
+  - label: Coverage, Seedance 2.5 4K (TechNode)
+    url: https://technode.com/2026/10/23/bytedance-launches-seedance-2-5-4k-video-model-for-film-production/
 description: >
   <p>ByteDance's video-generation flagship: <strong>30-second native-4K
   single-run generation</strong> ("one-take creation") with multi-turn
@@ -19,6 +21,16 @@ description: >
   Jimeng and Doubao Pro at launch; Ark API "soon". Closed weights, no
   technical report yet (slipped ~2 weeks from the expected mid-July
   date).</p>
+
+  <p>On <strong>October 23, 2026</strong> Volcano Engine released a
+  film-and-television tier, <strong>Seedance 2.5 4K</strong>, to selected
+  enterprise customers for trials rather than general availability. TechNode
+  reports 4K final output with 10-bit color and a <em>draft mode</em> that
+  prices shot tests and storyboard iteration at 480p before the 4K render,
+  plus further training aimed at facial expressions, subtle movement and
+  detail retention when editing existing footage or working from reference
+  material. ByteDance published no technical detail of its own, so the tier's
+  relationship to the base model's native-4K claim is not documented.</p>
 tags:
   - video
   - multimodal

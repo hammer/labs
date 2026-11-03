@@ -4,6 +4,8 @@ lab: microsoft
 type: model
 date: 2026-07-25
 sources:
+  - label: HuggingFace (Mage-VL-Cowork)
+    url: https://huggingface.co/microsoft/Mage-VL-Cowork
   - label: HuggingFace
     url: https://huggingface.co/microsoft/Mage-VL
   - label: Paper (arXiv)
@@ -18,6 +20,19 @@ description: >
   event-gated live-commentary mode. The <strong>Mage-ViT</strong> encoder is
   trained from scratch; the language decoder is Qwen3-4B. Apache 2.0;
   435K downloads in its first ten days.</p>
+
+  <p><strong>Mage-VL-Cowork</strong> (October 30, 2026, Apache 2.0) turns
+  an intermediate 4B Mage-VL checkpoint into a computer-use agent that
+  chooses, turn by turn, between clicking in the GUI and running code in a
+  persistent shell, inside one policy with no external orchestrator. Before
+  collecting teacher trajectories, Microsoft had an authoring agent prune
+  and re-equip the teacher's harness, then synthesized tasks per atomic
+  skill with its Mage-CUA-Forge engine. Training is a five-stage
+  specialize-then-unify curriculum ending in online RL, about 7.79 ZFLOPs on
+  32 B200s plus 1,120 CPU sandboxes. It reports <strong>66.0% on
+  OSWorld-Verified</strong> at a 50-step budget, the best of any 4B model
+  per the card. RL added 10.16 points over the hybrid SFT stage while
+  cutting model calls by 13.0% and output tokens by 25.4%.</p>
 tags:
   - multimodal
   - vision

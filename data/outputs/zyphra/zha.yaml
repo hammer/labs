@@ -1,0 +1,62 @@
+name: "ZHA: Zyphra Hierarchical Attention"
+slug: zha
+lab: zyphra
+type: paper
+date: 2026-11-02
+sources:
+  - label: Announcement (Zyphra)
+    url: https://www.zyphra.com/our-work/zyphra-hierarchical-attention
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.42112
+description: >
+  <p>A sparse-attention method from Zyphra that replaces the flat token
+  indexer of DeepSeek-style sparse attention with a <strong>tree search over
+  compressed summaries of the KV cache</strong>. Each query is routed top-down
+  through the tree with <strong>top-p routing</strong>, so how much context it
+  retrieves adapts to the query. Zyphra's argument is that indexers which score
+  every past token (or every chunk at one resolution) only move the quadratic
+  cost from attention into the indexer, while a hierarchical search can be
+  subquadratic. It motivates this with a measurement on Qwen3.6-35B-A3B: the
+  number of tokens holding a fixed share of attention mass grows as a
+  sublinear power law in sequence length on long-form fiction.</p>
+
+  <p>ZHA is retrofitted rather than pretrained. A lightweight router is
+  distilled from a frozen pretrained model with a KL objective on <strong>a few
+  billion tokens at 32K context</strong>; on Qwen3.6-35B-A3B only the learned
+  reference queries train, <strong>81,920 parameters</strong> (about 0.00024% of
+  the model). Zyphra says the deep router needed about a tenth of the 40B-token
+  KL warm-up used for the MSA indexer it compares against. Reported results on
+  Qwen3.6-35B-A3B: RULER-13 at 256K 96.2% for a wide tree against 96.0% dense
+  and 77.1% for MSA (a deep six-level tree scores 93.3%); LongBench v2 63.4%
+  against 58.0% dense while attending to about 1.1% of the KV cache, about 12.7
+  points above MSA at a similar attended fraction; SWE-bench Verified 67.4&ndash;68.4%
+  against 67.4% dense. It also ran on
+  <a href="/outputs/nvidia/nemotron-3.5-lightning">Nemotron-3.5-Lightning-30B-A3B</a>,
+  whose NoPE attention held up on reasoning and agentic coding but lost more on
+  RULER retrieval. Across 28 tree geometries, deeper trees often beat shallower
+  ones at equal compression.</p>
+
+  <p>The speed claims are <strong>projected from a GPU roofline model, not
+  measured</strong>, and the GPU is not named: a light configuration overtakes
+  dense attention at about 48K tokens and MSA at about 480K, and the projection
+  reaches 32&ndash;35&times; over dense and 4.7&ndash;5.1&times; over MSA at 10M
+  tokens. Evaluations stop at 256K context. No code or kernels are linked from
+  the post.</p>
+tags:
+  - attention
+  - long-context
+  - efficiency
+  - research
+paper:
+  arxiv: "2610.42112"
+  authors:
+    - Leon Lufkin
+    - Cutter Dawes
+    - Alexander Speicher
+    - Kamesh Krishnamurthy
+    - Tomás Figliolia
+    - Beren Millidge
+related:
+  - expert-coupling
+  - zaya1
+  - nemotron-3.5-lightning

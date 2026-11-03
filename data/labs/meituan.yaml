@@ -65,6 +65,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Xiaoming_Wei1
 news:
+  - title: "Meituan Makes LongCat-2.5 Generally Available on the LongCat API: Native Multimodal Agentic Model, 1M Context"
+    url: https://longcat.chat/platform/docs/ChangeLog.html
+    source: Meituan LongCat
+    date: 2026-11-02
   - title: "Meituan Releases LongCat-2.0 (1.6T MoE) — Trained Entirely on Domestic Chinese Chips, No NVIDIA"
     url: https://www.reuters.com/world/china/chinas-meituan-says-new-ai-model-trained-domestic-chips-2026-06-30/
     source: Reuters

@@ -1,0 +1,57 @@
+name: "Hy-Nomas: Towards Free-form Interactive World Generation"
+slug: hy-nomas
+lab: tencent
+type: model
+date: 2026-10-21
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/tencent/Hy-Nomas
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/Hy-Nomas
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.36729
+  - label: Hy-Nomas-Bench (HuggingFace)
+    url: https://huggingface.co/datasets/tencent/Hy-Nomas-Bench
+description: >
+  <p>Tencent Hunyuan's interactive video world model, released with weights
+  under Apache 2.0 on October 21, 2026 (paper October 27). It generates a
+  world one video segment at a time, each conditioned on a free-form text
+  instruction, a camera trajectory and the cached history of earlier
+  segments. A user can add objects, change style or scene, describe actions
+  or move the camera as generation continues. The backbone is an
+  <strong>8B dense MMDiT</strong> (54 double-stream blocks, hidden size
+  2,048) that runs diffusion within a segment and autoregression across
+  segments. A persistent KV cache carries context forward, and attention is
+  causal across segments. Text comes in through the language model of
+  Qwen2.5-VL-7B, and camera extrinsics through cross-attention.</p>
+
+  <p>The paper's central design pairs <strong>structured video
+  captions</strong> with <strong>action-aware causal attention</strong>:
+  descriptive context stays visible to every later segment, while an action
+  instruction is confined to the time window it was issued for. A separate
+  vision-language Prompt Enhancer rewrites user requests and the interaction
+  history into structured conditions for the next segment. Training follows
+  a curriculum that adds causal generation, text interaction, camera control
+  and then training on the model's own generated histories, followed by
+  diffusion distillation to 8 denoising steps at 720&times;1280 and 24 fps.
+  A bounded-history configuration runs on a single RTX 4090. Tencent also
+  released <strong>Hy-Nomas-Bench</strong>, 280 cases across multi-turn text
+  interaction, camera navigation, interleaved control and spatial memory.
+  Its claim of beating existing world models rests on its own human
+  evaluation.</p>
+tags:
+  - world-model
+  - video-generation
+  - open-weight
+  - multimodal
+model:
+  open_weights: true
+  architecture: dense
+  parameters: 8B
+  license: Apache 2.0
+paper:
+  arxiv: "2610.36729"
+related:
+  - hunyuanworld
+  - hunyuan-gamecraft
+  - worldcrafter

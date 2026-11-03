@@ -39,6 +39,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.ca/citations?user=LR6aJcEAAAAJ
 news:
+  - title: "ServiceNow Releases Apriel Voice 27B Preview, an Open Speech-Reasoning-Tool-Use Model on Gemma 4 26B-A4B (MIT)"
+    url: https://huggingface.co/ServiceNow-AI/Apriel-Voice-27B-preview
+    source: ServiceNow (HuggingFace)
+    date: 2026-10-13
   - title: "Apriel-Nemotron-15B Reasoning Model with NVIDIA"
     url: https://www.servicenow.com/blogs/2025/apriel-model-family-frontier-reasoning
     source: ServiceNow

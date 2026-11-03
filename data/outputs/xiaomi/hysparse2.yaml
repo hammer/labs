@@ -1,0 +1,82 @@
+name: "HySparse2"
+slug: hysparse2
+lab: xiaomi
+type: paper
+date: 2026-09-22
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.26368
+  - label: Announcement (Luo Fuli on X)
+    url: https://x.com/_LuoFuli/status/2102766365190901957
+  - label: Announcement (Xiaomi on X)
+    url: https://x.com/XiaomiTech_/status/2103046791868420187
+  - label: "Predecessor: HySparse (arXiv)"
+    url: https://arxiv.org/abs/2602.03560
+description: >
+  <p>"HySparse2: Hybrid Sparse Attention with Two-Level KV Sharing" &mdash;
+  from LLM-Core Xiaomi (senior author <a href="/people/luo-fuli">Luo
+  Fuli</a>), presented by Xiaomi as the core architecture of the coming
+  <strong>MiMo-V3</strong> series. It targets agent workloads, where short
+  actions return long tool observations that have to be prefilled while the
+  context keeps growing. At the outer level, <strong>KV Bridging</strong>
+  takes a YOCO-style self-decoder/cross-decoder split but bridges only the
+  full-attention layers: the cross-decoder's full-attention KV caches are built
+  from the self-decoder's hidden states, so prefill can exit after the
+  self-decoder and skip every cross-decoder layer. At the inner level it keeps
+  HySparse's KV Reuse, where full-attention layers pick the top-scoring tokens
+  and the following sparse layers reuse their KV entries. It changes two
+  things: selection is per token rather than per 64-token block, and the
+  separate SWA branch is replaced by a forced window of 128 recent tokens
+  inside the 1,024-token sparse selection.</p>
+
+  <p>The evidence is at a scale a frontier lab would act on. Three
+  <strong>80B-A3B MoE</strong> models (HySparse2, HySparse, and the Hybrid SWA
+  used in <a href="/outputs/xiaomi/mimo-v2">MiMo-V2</a>-series models)
+  were pretrained on about 500B tokens at 32K context with Muon and a WSD
+  schedule, then lightly post-trained on about 100B tokens with agentic data
+  and extended to 256K. General capability after pretraining is reported as
+  "broadly comparable", and the gains are in retrieval. After post-training,
+  mean MRCR-v2 and RULER-v2 rise 11.30 and 19.81 points over HySparse and 6.44
+  and 18.65 points over Hybrid SWA. At 256K, RULER-v2 reads 58.45 against 32.61
+  and 35.74. By the paper's analysis at 1M tokens, prefill FLOPs fall
+  <strong>2.92&times;</strong> against HySparse and <strong>5.02&times;</strong>
+  against Hybrid SWA, and the KV cache is <strong>2.69 GB</strong> against
+  6.72 GB and 12.09 GB. These are self-reported comparisons on Xiaomi's own
+  models with matched data. No MiMo-V3 model, weights or release date had been
+  published as of 2026-11-03.</p>
+
+  <p>The predecessor, <a href="https://arxiv.org/abs/2602.03560">HySparse</a>
+  (arXiv 2602.03560, February 2026, also LLM-Core Xiaomi), introduced the
+  hybrid sparse design with oracle token selection from full-attention layers
+  and KV-cache sharing with the sparse layers that follow. It is described here
+  rather than filed separately.</p>
+tags:
+  - architecture
+  - attention
+  - long-context
+  - efficiency
+  - moe
+  - pretraining
+  - research
+paper:
+  arxiv: "2609.26368"
+  authors:
+    - Jianyu Wei
+    - Yizhao Gao
+    - Qihao Zhang
+    - Shimao Chen
+    - Zhengju Tang
+    - Yu Cheng
+    - Shengjie Zhou
+    - Zihan Jiang
+    - Yifan Song
+    - Hailin Zhang
+    - Liang Zhao
+    - Bo Yang
+    - Gang Wang
+    - Shijie Cao
+    - Fuli Luo
+  year: 2026
+related:
+  - mimo-v2.6-pro
+  - mimo-v2

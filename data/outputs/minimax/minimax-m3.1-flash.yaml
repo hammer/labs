@@ -51,8 +51,9 @@ description: >
 
   <p>The launch post said "model weights will be released later", but the
   HuggingFace repo was created on October 17 and holds 49 public, ungated
-  safetensors shards under the MiniMax Community License (as for M3). AA's
-  page still labels the model proprietary, which is out of date. Nothing on
+  safetensors shards under the MiniMax Community License (as for M3). AA
+  has since relabelled it open weights and scores it 27.8 on its Openness
+  Index. Nothing on
   the card says whether this is a continued-training checkpoint or a retrain.
   "Building on MiniMax-M3" and the identical shape suggest the former, so the
   entry records M3 as its base. Undisclosed: training tokens, the post-training
@@ -80,6 +81,8 @@ model:
   context_window: 1048576
   intelligence_index: 29
   intelligence_index_version: "AA v5.0"
+  openness_index: 27.8
+  openness_index_version: "AA Openness Index v1.0"
   intelligence_index_history:
     - score: 43
       version: "AA v4.3.2"

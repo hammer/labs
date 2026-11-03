@@ -4,6 +4,8 @@ lab: mistral
 type: model
 date: 2026-10-15
 sources:
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2610.37585
   - label: Announcement
     url: https://mistral.ai/news/timestral/
   - label: GitHub
@@ -56,6 +58,18 @@ description: >
   target market, goes through Mistral or its Forge fine-tuning platform. That
   is less restrictive than TimesFM 3's non-commercial license and more
   restrictive than Chronos-2's Apache 2.0.</p>
+
+  <p>The <strong>technical report</strong> (<a
+  href="https://arxiv.org/abs/2610.37585">arXiv 2610.37585</a>, October 27,
+  2026, with Guillaume Lample and Timothée Lacroix among the authors)
+  attributes the results to three choices. <em>Decoupled Horizon
+  Forecasting</em> separates prediction tokens from the causally encoded
+  context, so long horizons train without masking context. A covariate
+  framework handles known-future covariates inside a causal architecture. A
+  two-stage pipeline pretrains only on a large synthetic corpus, then
+  post-trains on mixed real and synthetic data with longer context. It
+  reports Timestral-209M and -123M taking the top two places on every metric
+  of GIFT-Eval, TIME and fev-bench.</p>
 tags:
   - time-series
   - forecasting
@@ -81,6 +95,8 @@ model:
     - name: Timestral-209M
       parameters: 209M
       notes: "claimed #1 pretrained zero-shot on GIFT-Eval, TIME and fev-bench at launch"
+paper:
+  arxiv: "2610.37585"
 related:
   - timesfm-3
   - chronos-2

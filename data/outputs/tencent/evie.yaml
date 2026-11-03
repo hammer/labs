@@ -4,6 +4,8 @@ lab: tencent
 type: model
 date: 2026-09-04
 sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.11553
   - label: HuggingFace (EVIE-8B)
     url: https://huggingface.co/tencent/EVIE-8B
   - label: HuggingFace (EVIE-4.5B)
@@ -19,8 +21,13 @@ description: >
   EVIE-4.5B is the distilled student with Prefix-MRL and HAC for cheaper
   serving. Tencent's own leaderboard table places the pair at the top of
   ViDoRe V1, V2, and V3 among open multi-vector retrievers. Weights,
-  inference pipelines, and evaluation suites are open under Apache 2.0; the
-  paper is promised.</p>
+  inference pipelines, and evaluation suites are open under Apache 2.0.</p>
+
+  <p>The promised technical report landed on 2026-10-08 as
+  <a href="https://arxiv.org/abs/2610.11553">arXiv 2610.11553</a>, "EVIE:
+  Evidence-Vector-Informed Embeddings for Visual Document Retrieval" (Zifei
+  Wang, Wei Wen, Qiang Ji, Qian-Wen Zhang, Ruizhi Qiao, Xing Sun), and the
+  GitHub README and both model cards now cite it.</p>
 tags:
   - retrieval
   - multimodal
@@ -35,5 +42,15 @@ model:
       notes: "Flagship teacher; 4096-D per-token embeddings, bidirectional attention"
     - name: EVIE-4.5B
       notes: "Student with Prefix-MRL and HAC"
+paper:
+  arxiv: "2610.11553"
+  authors:
+    - Zifei Wang
+    - Wei Wen
+    - Qiang Ji
+    - Qian-Wen Zhang
+    - Ruizhi Qiao
+    - Xing Sun
+  code_url: https://github.com/Tencent/EVIE
 related:
   - qwen3.5

@@ -102,6 +102,10 @@ news:
     url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/
     source: Google
     date: 2026-10-28
+  - title: "Google DeepMind Announces Genie 4: Real-Time Interactive World Model With Native Audio and Dialogue, Natural-Language Steering; Research Preview for Trusted Testers"
+    url: https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/
+    source: Google DeepMind
+    date: 2026-10-27
   - title: "Google Announces Gemini 4 Argon, Its Next Frontier Model: 1M-Token Output Limit (Up From 64K), AA Intelligence Index v4.3.2 53, Released First to Trusted Cyber Defenders Without Cyber Guardrails via the Fairwind Program"
     url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/
     source: Google

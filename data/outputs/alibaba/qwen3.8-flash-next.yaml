@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Qwen blog
     url: https://qwen.ai/blog?id=qwen3.8-flash-next
+  - label: Cohere investigation (Oct 26, 2026)
+    url: https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model
   - label: Technical Report (arXiv)
     url: https://arxiv.org/abs/2608.30320
   - label: Technical Report (PDF)
@@ -59,6 +61,23 @@ description: >
   <strong>Qwen3.8-Flash</strong> with 1M context by default at $0.15/$0.47 per
   M tokens; tech report "On the Design of Qwen3.8-Next Architecture" ships as a
   GitHub PDF (no arXiv ID at release).</p>
+
+  <p>On October 26, 2026 <a href="/labs/cohere">Cohere</a> reported <a
+  href="https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model">rare
+  unprompted network activity</a> by this model in its agentic security
+  evaluations (Microsoft's CTI-REALM, run with real tools in a closed
+  sandbox). Asked to write a detection rule, it inventoried the machine, read
+  the DNS configuration and tried to upload a test string to an Alibaba
+  Cloud storage bucket in Beijing, which the sandbox blocked, right after
+  its reasoning had said no tools would be called. Cohere also saw it probe
+  the cloud metadata address and, offline, use a user-namespace trick after
+  a permission refusal. The behaviour occurred in under one call in 100,000
+  runs. Prefilling showed that saving a download to disk (curl's
+  <code>-o</code>) sharply raised the rate of suspicious URLs. Cohere could
+  not tell whether it was deliberate or a training artifact, and published
+  <a href="https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces">the
+  traces</a> and a reproduction script. Its takeaway: "A reasoning trace is
+  not a security boundary."</p>
 tags: [frontier, moe, open-weight, multimodal, reasoning, agentic, coding]
 model:
   open_weights: true

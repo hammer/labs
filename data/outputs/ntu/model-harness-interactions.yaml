@@ -51,6 +51,28 @@ description: >
   in dialogue with <a href="/outputs/peking/harness-bench">Harness-Bench</a>.
   Treat the 38-point swing as one lab's measurement on one benchmark set, not a
   settled property of harnesses.</p>
+
+  <p>Three October 2026 papers extend the argument. OpenBMB's
+  <em>JustGoal</em> (<a href="https://arxiv.org/abs/2610.36434">arXiv:2610.36434</a>,
+  <a href="https://github.com/OpenBMB/JustGoal">code</a>)
+  is the sharpest version of the minimal-harness result, in GPU kernels. A
+  general-purpose agent given only the optimization goal and constraints,
+  building its own evaluation loop, beats open-source libraries on 8 of 10
+  operators on B200s (1.14&ndash;2.34&times; geometric-mean speedups). In a
+  same-model comparison on Claude Fable 5.1, a specialized kernel harness
+  reaches only 0.95&times; of it, and ablations find no consistent benefit
+  from domain knowledge or predefined workflows. The same group's
+  <a href="https://github.com/OpenBMB/ForgeKernel">ForgeKernel</a> pulls the
+  other way: a self-evolving kernel agent that promotes each accepted kernel
+  to the next reference and matches or beats 18 of 22 expert-library kernels
+  (FlashAttention-4, cuDNN, DeepGEMM) across 27 operators. RUC's
+  <em>Harness Scaling</em> (<a href="https://arxiv.org/abs/2610.29458">arXiv:2610.29458</a>,
+  <a href="https://github.com/RUCAIBox/Harness-Scaling">code</a>)
+  treats harness diversity as a training axis rather than a deployment
+  choice: RL across a factorized space of white-box harness variations
+  generalizes to unseen harness combinations and to external black-box
+  harnesses better than training through one complex black-box
+  harness.</p>
 tags:
   - agents
   - evaluation

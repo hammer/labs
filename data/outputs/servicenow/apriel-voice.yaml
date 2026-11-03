@@ -1,0 +1,61 @@
+name: Apriel Voice 27B Preview
+slug: apriel-voice
+lab: servicenow
+type: model
+date: 2026-10-13
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/ServiceNow-AI/Apriel-Voice-27B-preview
+  - label: Technical report
+    url: https://servicenow-ai-apriel.hf.space/documents/apriel-voice-preview-tech-report
+  - label: Blog (Apriel Live)
+    url: https://servicenow-ai-apriel.hf.space/blog/apriel-voice-preview
+description: >
+  <p>ServiceNow's open-weight speech model, uploaded to HuggingFace on
+  October 13, 2026 as a preview. It adds a speech interface to Google's
+  <a href="/outputs/google/gemma-4">Gemma 4 26B-A4B</a>: a Whisper
+  large-v3-turbo encoder feeds the Gemma 4 backbone through a learned
+  projector. Training first aligns the speech interface, then adapts it
+  together with the backbone on speech tasks with text replay, using
+  cross-entropy or teacher-distillation supervision depending on the data
+  source. The model takes audio, text and images and emits text and tool
+  calls. It does not speak: voice applications pair it with an external
+  synthesizer, and the card's evaluations use Cartesia Sonic 3.5. MIT
+  license, about 50 languages tagged on the card.</p>
+
+  <p>ServiceNow's reported results, all self-run with thinking mode on:
+  <strong>EVA-A 51.27</strong>, <strong>EVA-X 74.13</strong> and
+  <strong>&tau;-Voice pass@1 65.51</strong> at 1.91 s mean latency, against
+  GPT Realtime 2.1 (59.03 / 61.6 / 69.82) and a Parakeet + Gemma 4-26B cascade
+  (39.97 / 3.93 / 67.78). So it beats the open cascades on the two EVA
+  scores but not on &tau;-Voice task success, and trails the proprietary
+  speech-to-speech systems on accuracy. LibriSpeech WER is 2.23 (test-clean) and
+  5.15 (test-other). Text reasoning stays close to the base model: MMLU-Pro
+  84.42 against Gemma 4's 85.27, GPQA Diamond 80.40 against 77.80, and identical
+  AIME 2024/2025 scores. The card reports good results on recordings up to
+  about 30 minutes.</p>
+tags:
+  - open-weight
+  - speech
+  - multimodal
+  - agentic
+model:
+  open_weights: true
+  architecture: moe
+  base_model: gemma-4
+  license: MIT
+  benchmark_scores:
+    - benchmark: EVA-A
+      score: "51.27"
+    - benchmark: EVA-X
+      score: "74.13"
+    - benchmark: τ-Voice pass@1
+      score: "65.51"
+    - benchmark: LibriSpeech test-clean WER
+      score: "2.23"
+    - benchmark: GPQA Diamond
+      score: "80.40"
+      mode: text input, thinking
+related:
+  - apriel-thinker
+  - gemma-4

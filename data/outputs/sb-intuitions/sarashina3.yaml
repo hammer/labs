@@ -20,6 +20,14 @@ description: >
   GPT-5.4 mini on eight benchmarks including ELYZA-tasks-100, AIME 2025,
   IFBench, BFCL v3, and &tau;&sup2;-bench Telecom. API-only; parameter
   counts undisclosed.</p>
+
+  <p>On 13 October 2026 SB Intuitions opened the <a
+  href="https://prtimes.jp/main/html/rd/p/000000002.000141057.html">Sarashina
+  service</a> (sarashina.ai) as a free public beta, with API and web-chat
+  access to six Sarashina3 models: mini, nano, embedding, rerank, guard and a
+  translate endpoint. A from-scratch reasoning successor, <a
+  href="/outputs/sb-intuitions/sarashina3.2-mini-thinking">Sarashina3.2 mini
+  thinking</a>, was added on 29 October.</p>
 tags:
   - japanese
   - proprietary
@@ -33,5 +41,8 @@ model:
     - name: Sarashina3 guard
     - name: Sarashina3 embedding
     - name: Sarashina3 rerank
+    - name: Sarashina3 translate
+      notes: "Translation endpoint (/v1/translate); one of the six models in the Sarashina service free beta opened 2026-10-13"
 related:
   - sarashina2
+  - sarashina3.2-mini-thinking

@@ -7,6 +7,12 @@ flagship: true
 sources:
   - label: Announcement
     url: https://reflection.ai/blog/introducing-beam
+  - label: Availability post (Oct 16, 2026)
+    url: https://reflection.ai/blog/beam-is-available
+  - label: Model card
+    url: https://reflection.ai/beam-model-card
+  - label: Beam Safety Technical Report
+    url: https://reflection.ai/beam-safety-report
   - label: API docs (model list)
     url: https://developers.reflection.ai/models
   - label: HuggingFace
@@ -77,11 +83,29 @@ description: >
   claim about active-parameter count rather than accuracy, and one Reflection
   computes itself as 2 &times; active parameters &times; mean generated tokens
   using Artificial Analysis and DataCurve figures. All benchmark numbers are
-  self-reported, with no technical report and no third-party scoring yet;
-  Artificial Analysis and OpenRouter do not list the model. Laskin told Semafor
+  self-reported, and no capabilities technical report has been published.
+  Laskin told Semafor
   that CAISSI and the UK AI Security Institute are assessing Beam, which neither
   the launch post nor Reflection's safety page mentions and neither body has
   confirmed.</p>
+
+  <p><strong>The release package was completed on October 16, 2026</strong>
+  (<a href="https://reflection.ai/blog/beam-is-available">"Beam is now
+  available"</a>): a model card, a <strong>Beam Safety Technical
+  Report</strong>, a speculative-decoding drafter, and day-zero fine-tuning
+  support across NVIDIA NeMo RL / AutoModel / Megatron, RadixArk Miles, Hugging
+  Face TRL, Anyscale SkyRL, Axolotl and Unsloth, with self-distillation recipes
+  promised "in the coming days". The post puts RL scale at about 1.3 billion
+  sandboxes across training, evaluation and ablations, peaking at 883,006 vCPUs
+  over 23 clusters on GCP and AWS. The model card restates the 1M-token context
+  and reports per-precision results (BF16 / FP8 / NVFP4): SWE-Bench Verified
+  81.6 / 80.2 / 80.7, Terminal Bench v2.1 80.1 / 78.9 / 78.4, HLE without tools
+  36.0 / 36.0 / 34.8 (51.1 with tools), AIME 2026 97.7 / 98.0 / 97.5 and GPQA
+  Diamond 90.6 / 90.3 / 89.3. The safety report is an evaluation document, not
+  a training report: Reflection rates Beam "Limited" in all four systemic-risk
+  categories of its Open Safety Framework, with external evaluation inputs from
+  SecureBio, Irregular, Nemesys Insights, Andon Labs and Gray Swan. It does not
+  mention CAISI or the UK AI Security Institute.</p>
 tags:
   - moe
   - open-weight

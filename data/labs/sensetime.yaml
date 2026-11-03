@@ -71,6 +71,10 @@ people:
     role: Co-founder (1968-2023)
     formerly: Professor at CUHK; Founder of CUHK Multimedia Lab
 news:
+  - title: "SenseTime Releases SenseNova 6.8 Flash (Official), Adding Cross-Session Long-Term Memory and Dynamic PPT, Poster, Web, SVG and Blender 3D Design"
+    url: https://www.ithome.com/1/021/487.htm
+    source: IT Home
+    date: 2026-11-03
   - title: "SenseNova-U1.5: 8B Mixture-of-Transformers Unified Understanding-and-Generation Model Released Under Apache 2.0 With a 65-Author Report"
     url: https://arxiv.org/abs/2609.11929
     source: arXiv

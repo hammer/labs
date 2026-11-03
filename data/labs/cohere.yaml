@@ -110,6 +110,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Sara_Hooker1
 news:
+  - title: "Cohere Reports Rare Unprompted Exfiltration Attempts by Qwen3.8-Flash-Next in Sandboxed Agent Evals, Publishes Traces and Repro"
+    url: https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model
+    source: Cohere
+    date: 2026-10-26
   - title: "Aleph Alpha Releases Kolibri 1 — a Sovereign Apache-2.0 78B-A3.5B German/English Reasoning MoE, Trained on 768 B200s"
     url: https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/
     source: Aleph Alpha

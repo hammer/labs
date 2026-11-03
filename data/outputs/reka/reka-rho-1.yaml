@@ -1,0 +1,68 @@
+name: Rho-1
+slug: reka-rho-1
+lab: reka
+type: model
+date: 2026-10-05
+flagship: true
+sources:
+  - label: Announcement (Reka)
+    url: https://reka.ai/news/rho-1-collapsing-the-multimodal-stack
+  - label: Reka Inverse Dynamics Model (companion post, Oct 2, 2026)
+    url: https://reka.ai/news/reka-inverse-dynamics-model-for-interactive-world-models
+description: >
+  <p>Reka's <strong>19B "omni-reasoning" model trained from scratch</strong>,
+  released on October 5, 2026 as a research preview. One network reads and
+  writes text, images, video and robot actions. Reka presents it as a
+  replacement for agentic pipelines in which a planner model hands work to
+  separate image, video and detection models: in Rho-1 every turn reads from
+  and writes to one KV cache, which Reka describes as a persistent world
+  state. In the launch demo the model draws an image, puts a bounding box on
+  it, animates it into a video, edits the video and then describes the edit,
+  all in one conversation with no tool calls.</p>
+
+  <p>The architecture is symmetric. Text and commands are discrete tokens;
+  image latents, video frames, robot actions and proprioception are continuous
+  tokens. Each transformer block splits its weights into two expert streams
+  that share attention over the same KV cache: an <strong>understanding
+  stream</strong> with a next-token text head, and a <strong>generation
+  stream</strong> that denoises latents with a flow-matching diffusion head.
+  The model is trained end to end with next-token prediction on the discrete
+  sequences and flow matching on the continuous ones. Reka reports training on
+  <strong>320 H100 GPUs for three months</strong>, and attributes most of the
+  failure modes it lists to that modest compute and data budget.</p>
+
+  <p>Reka gives no standard benchmark scores. Its own measurements: the base
+  model generates video at a median 0.79&times; real time, with a watchable
+  stream after about 6 seconds, and returned a first clip in 7.0 seconds in a
+  race against an illustrative 13.8-second multi-agent pipeline. A distilled
+  <strong>Rho-1 Flash</strong> cuts denoising from 99 steps to 8 and returned a
+  5.3-second clip in about one second, with prompt edits rendered in
+  1.11&ndash;2.01 seconds. The post also shows the model as a steerable
+  real-time world model and as a world-language-action policy on LIBERO
+  simulation tasks, where it predicts future frames and the seven action
+  channels from the same latent state. It pairs with Reka's Inverse Dynamics
+  Model, which infers actions from unlabelled video so web video can serve as
+  action-labelled pretraining data. Reka lists long-horizon structural drift,
+  no grounding across video yet, brittle editing consistency and a native video
+  cap of 672&times;384 as limitations. No weights or paper have been released;
+  access is by request through Reka.</p>
+tags:
+  - multimodal
+  - world-model
+  - video-generation
+  - image-generation
+model:
+  open_weights: false
+  parameters: 19B
+  training_hardware: 320 H100
+  training_time: 3 months
+  license: Proprietary (research preview)
+  variants:
+    - name: Rho-1
+      parameters: 19B
+      notes: "Research preview; base model, 0.79x real-time video generation (median)"
+    - name: Rho-1 Flash
+      notes: "Distilled variant, 8 denoising steps instead of 99; described, not separately released"
+related:
+  - reka-core
+  - cs2-10k

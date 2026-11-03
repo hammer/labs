@@ -1,0 +1,42 @@
+name: "LaBraM at Scale: Scaling Data and Models for EEG Pretraining"
+slug: labram-at-scale
+lab:
+  - sjtu
+  - microsoft
+type: paper
+date: 2026-11-02
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2611.03165
+  - label: Project Page
+    url: https://albertmentat.github.io/LaBraM-at-Scale/
+  - label: GitHub
+    url: https://github.com/AlbertMentat/LaBraM-at-Scale
+  - label: HuggingFace
+    url: https://huggingface.co/Pan-Junyu/LaBraM-at-Scale
+description: >
+  <p>A scaling study of <strong>LaBraM</strong>, one of the first EEG
+  foundation models, by Shanghai Jiao Tong University (Bao-Liang Lu's group)
+  and Microsoft Research Asia, with Fudan. It keeps LaBraM's encoder and
+  pretraining objective and scales both sides: <strong>ten encoders from
+  5.8M to 1.97B parameters</strong>, pretrained on three EEG collections of
+  25,067 to 79,910 hours. Across 23 downstream tasks, the best fine-tuned
+  encoder (Atom-L) reaches 59.05% mean balanced accuracy, 3.61 points above
+  the strongest of 16 baseline EEG foundation models. A different encoder
+  (Quark-G) leads linear probing at 54.33%, by 1.24 points.</p>
+
+  <p>The more useful findings concern how scale behaves. Larger encoders
+  help full fine-tuning more consistently than linear probing, and a better
+  probe does not predict a better fine-tune. Data-fraction runs suggest
+  saturation that depends on capacity, and downstream accuracy can fall
+  while pretraining loss is still dropping. A shared Qwen3 readout that
+  classifies all tasks jointly reaches 50.50% with Qwen3-8B, and a larger
+  language model gives no consistent gain. Code, checkpoints and a project
+  page are released.</p>
+tags:
+  - science
+  - foundation-model
+  - scaling
+  - eeg
+paper:
+  arxiv: "2611.03165"

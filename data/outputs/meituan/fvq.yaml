@@ -1,0 +1,46 @@
+name: "Can Discrete Tokens Serve as Semantically Lossless Representations of Visual Signals? (FVQ)"
+slug: fvq
+lab: meituan
+type: paper
+date: 2026-10-27
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.37662
+  - label: GitHub
+    url: https://github.com/hustvl/FVQ
+  - label: HuggingFace
+    url: https://huggingface.co/hustvl/FVQ
+description: >
+  <p>A Meituan LongCat&ndash;HUST paper (LongCat project lead, with the
+  students as LongCat interns) challenging the assumption that discrete
+  visual tokens must lose meaning relative to continuous features, which
+  matters for native multimodal models that put vision and language under
+  one next-token objective. Using multimodal understanding as the measure
+  of semantic fidelity, it finds that <strong>quantization error is a poor
+  predictor</strong>: tokenizers with much larger reconstruction error can
+  understand better. The quantity that matters is the <strong>effective bit
+  budget</strong> of the discrete indices. Existing multi-codebook
+  quantizers saturate as codebooks are added, so the paper introduces
+  <strong>Factorized Vector Quantization</strong>, which quantizes
+  complementary fixed-dimensional views of the feature with symmetric
+  parallel codebooks and keeps improving at larger budgets.</p>
+
+  <p>Trained on industrial-scale data, <strong>FVQ-8B</strong> beats the
+  discrete-token models UniAR and Emu3-Chat by 22.8% and 59.2% on a
+  nine-metric average and is, the authors say, the first discrete model
+  competitive with Qwen3-VL-8B. MathVista 77.4 against 77.2 and RealWorldQA
+  72.0 against 71.5 favour it, while MMMU 64.3 against 69.6 and MMMU-Pro
+  40.8 against 55.9 still trail. The paper presents this as evidence that
+  discrete visual representations can carry large native multimodal models,
+  the bet behind Meituan's own <a
+  href="/outputs/meituan/longcat-next">LongCat-Next</a>. Code, the
+  tokenizer and FVQ-8B are released.</p>
+tags:
+  - multimodal
+  - tokenization
+  - vision
+  - research
+paper:
+  arxiv: "2610.37662"
+related:
+  - longcat-next

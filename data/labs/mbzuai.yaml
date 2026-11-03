@@ -57,6 +57,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=wjBD1dkAAAAJ
 news:
+  - title: "MBZUAI and Inception42 Unveil Jais 3, Arabic Models Built on K2 Horizon, and Jais Speech Covering Dialects From 19 Arab Countries"
+    url: https://www.thenationalnews.com/news/uae/2026/10/24/talking-your-language-uae-unveils-ai-tool-designed-to-master-arabic-dialects/
+    source: The National
+    date: 2026-10-24
   - title: "Magenta: Lean-Verified Reasoning Loop Takes K2-Horizon-7B to 100% on AIME 2025/2026 and Solves All Six IMO 2026 Problems"
     url: https://arxiv.org/abs/2609.11319
     source: arXiv

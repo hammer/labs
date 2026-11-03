@@ -8,6 +8,12 @@ sources:
     url: https://huggingface.co/blog/nvidia/nemotron-labs-diffusion
   - label: HuggingFace (14B)
     url: https://huggingface.co/nvidia/Nemotron-Labs-Diffusion-14B
+  - label: HuggingFace (NLD-Uni)
+    url: https://huggingface.co/nvidia/NLD-Uni
+  - label: GitHub (NLD-Uni)
+    url: https://github.com/NVlabs/Nemotron-Labs-Diffusion-Uni
+  - label: Paper (NLD-Uni, arXiv)
+    url: https://arxiv.org/abs/2610.36466
   - label: NVIDIA Research publication
     url: https://research.nvidia.com/publication/2026-05_nemotron-labs-diffusion-tri-mode-language-model-unifying-autoregressive
 description: >
@@ -20,6 +26,19 @@ description: >
   <p>Three sizes (3B / 8B / 14B), each with Base, Instruct, and VL variants;
   eight model uploads total on May 23. Released under the Nemotron Open
   Model License.</p>
+
+  <p><strong>NLD-Uni</strong> (paper October 27, 2026, with weights on
+  HuggingFace and code at NVlabs) extends the line to a unified discrete
+  diffusion LLM for both visual understanding and generation. Two changes
+  carry it. A <em>cross-paradigm</em> on-policy distillation transfers
+  understanding from autoregressive VLMs and image generation from
+  continuous flow models into one diffusion LLM. A progressive
+  self-refining diffusion process corrupts each token over several steps
+  instead of jumping straight from a clean image token to a mask, which
+  lets the model commit to a token at an intermediate step and refine it
+  later. NVIDIA reports state-of-the-art results among unified diffusion LLMs
+  on VQA, multimodal reasoning, grounding, text-to-image and image
+  editing.</p>
 tags:
   - foundational
   - diffusion

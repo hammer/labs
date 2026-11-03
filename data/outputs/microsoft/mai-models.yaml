@@ -9,6 +9,8 @@ sources:
     url: https://microsoft.ai/news/mai-transcribe-2-is-the-fastest-most-accurate-and-cheapest-speech-recognition-model-in-the-world/
   - label: MAI-Transcribe-2-Streaming / MAI-Voice-2.1 announcement (Oct 1, 2026)
     url: https://microsoft.ai/news/our-first-streaming-transcription-model/
+  - label: MAI-Image-2.7 preview announcement (Oct 27, 2026)
+    url: https://microsoft.ai/news/mai-image-2-7-debut/
   - label: MAI-Image-2.6 / 2.6-Flash announcement
     url: https://microsoft.ai/news/pushing-the-quality-cost-frontier-with-mai-image-2-6/
   - label: April 2026 announcement (v1 / v1 / v2)
@@ -51,6 +53,13 @@ description: >
   150 ms end-to-end latency. Architecture and parameters for all three are
   undisclosed.</p>
 
+  <p><strong>October 27 update:</strong> <strong>MAI-Image-2.7</strong>, an
+  image-editing model, entered preview on Arena, Artificial Analysis and MAI
+  Playground, with text-to-image generation "coming soon". Microsoft says it
+  launched at No. 3 on Arena Edit and No. 2 on Artificial Analysis's
+  image-editing leaderboard, and 24 Elo ahead of the next model on scene and
+  style edits. Pricing, architecture and parameters are undisclosed.</p>
+
   <p>Marks Microsoft's transition from pure OpenAI dependency to building its
   own frontier multimodal stack under VP GenAI <strong>Mustafa Suleyman</strong>'s
   MAI division. Proprietary, available via Microsoft Foundry plus the
@@ -83,6 +92,8 @@ model:
       notes: "Aug 10 2026; +79 Elo over 2.5 (+91 on text rendering); #2 on Arena text-to-image at launch"
     - name: MAI-Image-2.6-Flash
       notes: "Sep 4 2026, with 2.6 in Foundry; Arena #2 T2I and #2 editing, AA #2 T2I; multi-image reference editing, web grounding, dynamic aspect ratios"
+    - name: MAI-Image-2.7
+      notes: "Oct 27 2026; image-editing preview (T2I to follow), vendor-reported #3 Arena Edit and #2 AA image editing; Arena, AA, MAI Playground"
     - name: MAI-Transcribe-2
       notes: "Sep 3 2026; 2.0% AA-WER (#2), ~411× real-time, 60 languages, $0.10/hr limited-time; Foundry, MAI Playground, OpenRouter"
     - name: MAI-Transcribe-2-Streaming

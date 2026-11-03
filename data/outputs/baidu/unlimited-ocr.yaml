@@ -29,4 +29,5 @@ model:
 paper:
   arxiv: "2606.23050"
 related:
+  - unlimited-ocr-2
   - qianfan-ocr

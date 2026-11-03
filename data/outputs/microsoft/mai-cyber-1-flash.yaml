@@ -6,6 +6,8 @@ date: 2026-07-27
 sources:
   - label: Announcement (Microsoft AI)
     url: https://microsoft.ai/news/introducing-mai-cyber-1-flash-inside-mdash/
+  - label: MAI Cyber 1.1 Flash announcement (Oct 27, 2026)
+    url: https://microsoft.ai/news/mai-cyber-1-1-flash/
 description: >
   <p>Microsoft AI's first <strong>cybersecurity model</strong>: a sparse MoE
   (137B total / 5B active, 256K context) in the MAI-Thinking-1 lineage.
@@ -13,6 +15,12 @@ description: >
   ~90% of vulnerability-identification work (GPT-5.4 takes the remainder);
   MDASH scores ~96% on CyberGym, claimed +12 points over Anthropic Mythos
   at half the cost. Proprietary.</p>
+
+  <p><strong>MAI Cyber 1.1 Flash</strong> (October 27, 2026) replaces it as a
+  selectable scan profile in MDASH. Microsoft reports performance comparable to
+  1 Flash at 18% lower cost per scan on its internal vulnerability-scanning
+  suite, with no absolute scores; access stays limited to verified MDASH
+  customers. Parameters are not restated for 1.1.</p>
 tags:
   - agents
   - moe
@@ -24,5 +32,10 @@ model:
   active_parameters: "5B"
   context_window: 256000
   base_model: mai-thinking-1
+  variants:
+    - name: MAI-Cyber-1-Flash
+      notes: "Jul 27 2026; 137B total / 5B active MoE"
+    - name: MAI-Cyber-1.1-Flash
+      notes: "Oct 27 2026; comparable to 1 Flash, 18% lower cost per scan (internal MDASH suite)"
 related:
   - mai-thinking-1

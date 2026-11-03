@@ -10,6 +10,8 @@ sources:
     url: https://github.com/InternLM/InternLumina-U2
   - label: Project Page
     url: https://internlm.github.io/InternLumina-U2/
+  - label: "Technical report (arXiv 2610.20818)"
+    url: https://arxiv.org/abs/2610.20818
 description: >
   <p>A unified multimodal diffusion language model that covers text QA,
   text-to-image generation, image understanding and editing, video
@@ -21,13 +23,26 @@ description: >
   embeddings are concatenated into one backbone token on input and decoded by
   a codebook-depth autoregressive head with spatially parallel denoising on
   output. The inference code landed in August; the weights released on
-  September 10 are the <strong>Ascend-trained</strong> checkpoint, with an
-  NVIDIA-trained twin promised, and Shanghai AI Lab reports operator-level
-  numerical alignment between the two backends.</p>
+  September 10 were the <strong>Ascend-trained</strong> checkpoint, and the
+  promised <strong>NVIDIA-trained twin</strong> followed on September 24 in the
+  same HuggingFace repo (<code>nvidia/</code>, seven bf16 shards, alongside
+  <code>ascend/</code>). Shanghai AI Lab reports operator-level numerical
+  alignment between the two backends.</p>
 
-  <p>Preliminary results: ChartQA 86.52, CharXiv-DQ 83.65, MathVision 33.22,
-  DynaMath 56.37. Apache 2.0; the technical report is still marked "coming
-  soon."</p>
+  <p>Preliminary results at the September release: ChartQA 86.52, CharXiv-DQ
+  83.65, MathVision 33.22, DynaMath 56.37. Apache 2.0.</p>
+
+  <p>The <strong>technical report</strong> (<a
+  href="https://arxiv.org/abs/2610.20818">arXiv 2610.20818</a>, October 2026)
+  calls it, "to our knowledge the first diffusion language model to represent
+  multi-codebook visual tokens in a fully discrete space", built on AToken's
+  unified 4D representation so image, video and 3D inputs share one backbone.
+  It describes the full-stack training, inference and evaluation system on both
+  Ascend and NVIDIA, and a <strong>stability-aware sampling</strong> strategy
+  (confidence-plateau-guided unmasking plus drift-triggered cache refresh) that
+  it reports accelerates image generation 4.45&times;. The GitHub repo added
+  multi-task SFT training code and the optional inference-acceleration path on
+  October 16 and the Ascend NPU training stack on October 20.</p>
 tags:
   - multimodal
   - diffusion
@@ -40,5 +55,8 @@ model:
   # no `parameters` so the size does not count toward Shanghai AI Lab's Scale.
   base_model: llada-2
   license: Apache-2.0
+paper:
+  arxiv: "2610.20818"
+  code_url: https://github.com/InternLM/InternLumina-U2
 related:
   - llada-2

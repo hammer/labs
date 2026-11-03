@@ -11,6 +11,8 @@ sources:
     url: https://deepseek.com/harness
   - label: Documentation
     url: https://deepseek-harness.github.io/deepseek-harness/
+  - label: GitHub (dsh-superagent prototype)
+    url: https://github.com/deepseek-ai/dsh-superagent-prototype
   - label: Cordis Paper (arXiv)
     url: https://arxiv.org/abs/2608.25512
 description: >
@@ -42,6 +44,21 @@ description: >
   <strong>218K GitHub stars</strong> with release candidates landing daily.
   MIT license; DeepSeek warns of compatibility-breaking changes during the
   preview.</p>
+
+  <p>On October 31, 2026 DeepSeek published <a
+  href="https://github.com/deepseek-ai/dsh-superagent-prototype"><strong>dsh-superagent</strong></a>
+  (MIT), a proactive coding agent for a single GitHub repository, packaged
+  as a <code>dsh</code> bundle. It listens to GitHub and optionally Feishu,
+  opens a work item when an authorized person asks, works in its own session
+  and directory, and answers in the original thread, for example with a pull
+  request. A web panel shows only what needs a human. Its stated design goal
+  is to "take as little human attention as possible". DeepSeek labels it a
+  research prototype adapted from internal day-to-day use, with much of the
+  engineering done by coding agents. It differs from the internal version
+  and from the design in DeepSeek's write-up <em>Exploring Super-agent
+  Design: Towards a More Autonomous Agent System</em>, some of which is
+  described there as future work. It passed 14,900 GitHub stars within three
+  days.</p>
 tags:
   - agents
   - infrastructure

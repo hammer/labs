@@ -107,6 +107,14 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Ming_Ding1
 news:
+  - title: "Volcano Engine Opens Enterprise Trials of Seedance 2.5 4K, a Film-and-TV Tier With 10-Bit Color and 480p Draft Mode"
+    url: https://technode.com/2026/10/23/bytedance-launches-seedance-2-5-4k-video-model-for-film-production/
+    source: TechNode
+    date: 2026-10-23
+  - title: "Seed Creates a Model-Alignment & Preparedness Department Under Yan Lin, Reporting to Wu Yonghui; Responsible AI and Some Chat Staff Transfer In"
+    url: https://technode.com/2026/10/13/bytedances-seed-ai-lab-creates-dedicated-model-safety-and-alignment-department/
+    source: TechNode
+    date: 2026-10-13
   - title: "ByteDance and Alibaba Disable Humanlike AI-Companion Features Ahead of China's July 15 Anthropomorphic-Interaction Rules"
     url: https://www.scmp.com/tech/big-tech/article/3359482/bytedance-and-alibaba-disable-humanlike-ai-custom-agents-new-rules-loom
     source: SCMP

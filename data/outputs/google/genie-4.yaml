@@ -1,0 +1,41 @@
+name: Genie 4
+slug: genie-4
+lab: google
+type: model
+date: 2026-10-27
+flagship: true
+sources:
+  - label: Announcement (Google DeepMind)
+    url: https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/
+description: >
+  <p>Google DeepMind's fourth-generation <strong>world model</strong>,
+  announced October 27, 2026, which generates interactive environments in
+  real time that a user can explore and steer with natural language,
+  changing the weather or adding objects mid-session. The headline change is
+  that it is <strong>natively multimodal</strong>: music, ambient sound and
+  adaptive character dialogue are generated together with the world. Google
+  also cites more realistic physics, such as aerodynamics and collisions,
+  and more natural human characters. It is built on the Gemini family:
+  Gemini Omni anchors visual appearance and behaviour, other Gemini models
+  keep the world coherent, and <a
+  href="/outputs/google/gemini-3.8-flash">Gemini 3.8 Flash</a> can act as a
+  guiding agent that plans steps and checks progress inside the world.</p>
+
+  <p>It launched as a research preview for trusted testers, with access
+  "coming soon" for Google AI Ultra subscribers in Project Genie and for
+  early-access Gemini API and AI Studio partners. Output carries SynthID
+  watermarks. Google lists the open problems itself: visual detail and
+  object permanence drift over long sessions or after repeated edits, and
+  real-time audio accuracy, legible text, spatial accuracy and long-term
+  consistency remain research areas. The announcement gives no resolution,
+  session length, parameter count, architecture or paper, and no
+  quantitative comparison with Genie 3.</p>
+tags:
+  - world-model
+  - multimodal
+  - video-generation
+  - proprietary
+model:
+  open_weights: false
+related:
+  - gemini-3.8-flash

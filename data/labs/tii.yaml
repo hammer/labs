@@ -53,6 +53,10 @@ people:
   - name: Ebtesam Almazrouei
     role: Former Acting Chief AI Researcher (now CEO of AIE3)
 news:
+  - title: "TII Launches Falcon-Emirati (7B, Built on Falcon-H1-Arabic) Alongside Falcon-ASR (1.6B) and Falcon-OCR-Arabic"
+    url: https://www.tii.ae/news/tii-launches-falcon-emirati-alongside-new-arabic-ai-models-speech-and-visual-text
+    source: TII
+    date: 2026-10-06
   - title: "Falcon-OCR v1.5: GRPO-Post-Trained 270M Early-Fusion VLM Reaches 93.15 on OmniDocBench (Pipeline)"
     url: https://huggingface.co/tiiuae/Falcon-OCR
     source: Hugging Face

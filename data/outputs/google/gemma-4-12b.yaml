@@ -53,7 +53,8 @@ description: >
 
   <p>Distribution: HF (Instruct + Base), Kaggle, LM Studio, Ollama, Google AI
   Edge Gallery App; toolchain support for Transformers, llama.cpp, MLX,
-  SGLang, vLLM, Unsloth. Not yet scored on Artificial Analysis.</p>
+  SGLang, vLLM, Unsloth. Artificial Analysis scores it 14 on Intelligence
+  Index v4.3.2; it has not yet been rescored on v5.0.</p>
 tags:
   - frontier
   - open-weight

@@ -101,6 +101,10 @@ news:
     url: https://mistral.ai/news/mistral-large-4-oss/
     source: Mistral AI
     date: 2026-10-29
+  - title: "Mistral and NVIDIA Collaborate on AI-Driven Engineering Workflows Linking Simulation, Model Development and Design; Public Physics-Model Benchmarks and Datasets Planned"
+    url: https://mistral.ai/news/mistral-nvidia-ai-for-industrial-engineering/
+    source: Mistral AI
+    date: 2026-10-21
   - title: "Mistral Launches Mistral Large 4 Preview (\"le Chonk\"): 1T-Parameter Natively Multimodal MoE, 49B Active, Trained on 3,800 Grace Blackwell GPUs in Its Own European Datacenters; Open Weights Promised End of October"
     url: https://mistral.ai/news/mistral-large-4/
     source: Mistral AI

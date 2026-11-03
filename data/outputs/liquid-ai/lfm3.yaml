@@ -1,0 +1,107 @@
+name: LFM3
+slug: lfm3
+lab: liquid-ai
+type: model
+date: 2026-10-27
+flagship: true
+sources:
+  - label: Announcement (LFM3)
+    url: https://www.liquid.ai/blog/lfm3
+  - label: HuggingFace (LFM3-1.7B)
+    url: https://huggingface.co/LiquidAI/LFM3-1.7B
+  - label: HuggingFace (LFM3-1.7B-Base)
+    url: https://huggingface.co/LiquidAI/LFM3-1.7B-Base
+  - label: HuggingFace (LFM3-VL-2B)
+    url: https://huggingface.co/LiquidAI/LFM3-VL-2B
+  - label: HuggingFace (LFM3-Omni-2B)
+    url: https://huggingface.co/LiquidAI/LFM3-Omni-2B
+  - label: HuggingFace (LFM3-Audio-2B)
+    url: https://huggingface.co/LiquidAI/LFM3-Audio-2B
+  - label: HuggingFace (LFM3 collection)
+    url: https://huggingface.co/collections/LiquidAI/lfm3
+description: >
+  <p>Liquid AI's third model generation, released October 27, 2026 as a
+  family of roughly 2B-parameter open-weight models that all branch from one
+  pretrained checkpoint, <strong>LFM3-1.7B-Base</strong>. The base was
+  pretrained on <strong>22T tokens</strong>, with the last 3.5T a mid-training
+  stage of curated data with agentic traces and tool calls that also extended
+  the context to 256K. The architecture is what Liquid calls
+  <strong>tri-hybrid</strong>: 24 layers of 13 gated short convolutions
+  (kernel size 7, up from 3 in <a href="/outputs/liquid-ai/lfm2">LFM2</a>), 5
+  sliding-window attention layers with a 256-token window, and 6 global
+  attention layers, with head-wise gated attention, partial RoPE on the
+  global layers and sandwich normalization. The 128K vocabulary is shared
+  with LFM2.5-8B-A1B. Liquid says the layout came from an architecture search
+  across 14 device and backend combinations, from phones and a Raspberry Pi
+  5 to the Qualcomm Hexagon NPU.</p>
+
+  <p>The text model, <strong>LFM3-1.7B</strong> (1.73B), is post-trained for
+  agent harnesses such as Hermes Agent, Pi and OpenClaw, and its headline
+  numbers are agentic. Liquid reports WebArena-Verified <strong>38.42</strong>
+  against Qwen3.5-9B's 28.94, AutomationBench (public) 41.29 against 15.10,
+  BFCL V4 71.39 and SWE-bench Verified 43.40 (OpenCode harness), across a
+  nine-benchmark average of 49.37 against 47.24 for Qwen3.5-9B. It trails the
+  larger Qwen models on knowledge and long context: GPQA Diamond 63.37
+  against 80.40, RULER 128K 65.56 against 87.11. It needs about 1 GB at 4-bit
+  and, on Liquid's llama.cpp runs at 32K context, decodes 1.8&ndash;2.8&times;
+  faster than the next model compared. All numbers are self-reported, and
+  Artificial Analysis had not listed it at filing.</p>
+
+  <p>The rest of the family shares the backbone. <strong>LFM3-VL-2B</strong>
+  (1.92B) adds a new 164M in-house vision encoder and is the first Liquid
+  vision model to take video. <strong>LFM3-Audio-2B</strong> adds a causal
+  audio encoder and the LiquidCodec tokenizer for speech in and out.
+  <strong>LFM3-Omni-2B</strong> (2.17B) combines both, taking text, images,
+  video and audio and answering in text or speech. Two
+  <a href="/outputs/liquid-ai/d1">d1 decision models</a>, d1-2B and
+  d1-Omni-2B, are specialized from the VL and Omni models. All ship under
+  the LFM Open License v1.0 with GGUF, MLX, ONNX, FP8 and NVFP4 builds.</p>
+tags:
+  - open-weight
+  - on-device
+  - hybrid-architecture
+  - agentic
+  - multimodal
+  - pretraining
+model:
+  open_weights: true
+  architecture: dense
+  parameters: 1.73B
+  context_window: 262144
+  training_tokens: 22T
+  license: LFM Open License v1.0
+  variants:
+    - name: LFM3-1.7B-Base
+      parameters: 1.73B
+      notes: "Pretrained checkpoint, 22T tokens (last 3.5T mid-training with agentic traces; context to 256K)"
+    - name: LFM3-1.7B
+      parameters: 1.73B
+      notes: "Post-trained text model for agent harnesses; 256K context"
+    - name: LFM3-VL-2B
+      parameters: 1.92B
+      notes: "1.73B LM + 164M vision encoder + 25M projector; text, images and video; 128K context"
+    - name: LFM3-Audio-2B
+      parameters: 2B
+      notes: "Causal audio encoder + LiquidCodec tokenizer; text or speech in, text and/or 24 kHz speech out; 32K context"
+    - name: LFM3-Omni-2B
+      parameters: 2.17B
+      notes: "Text, images, video and 16 kHz audio in; text or speech out; 32K context"
+  benchmark_scores:
+    - benchmark: WebArena-Verified
+      score: "38.42"
+    - benchmark: AutomationBench (public)
+      score: "41.29"
+    - benchmark: BFCL V4
+      score: "71.39"
+    - benchmark: SWE-bench Verified (OpenCode)
+      score: "43.40"
+    - benchmark: IFEval
+      score: "96.66"
+    - benchmark: GPQA Diamond
+      score: "63.37"
+    - benchmark: RULER 128K
+      score: "65.56"
+related:
+  - lfm2.5
+  - lfm2
+  - d1

@@ -5,6 +5,8 @@ type: model
 date: 2026-10-15
 flagship: true
 sources:
+  - label: Technical Report (arXiv)
+    url: https://arxiv.org/abs/2610.38095
   - label: HuggingFace (BF16)
     url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16
   - label: HuggingFace (base)
@@ -51,6 +53,21 @@ description: >
   <strong>46k output tokens per index task, about 60% fewer than its
   predecessor</strong>, and serves at ~630 tok/s on 100k-token prompts with a
   1.8s first token, at $0.20 / $0.57 per 1M.</p>
+
+  <p>The joint <strong>technical report</strong> for Super and Lightning
+  (<a href="https://arxiv.org/abs/2610.38095">arXiv 2610.38095</a>, October
+  28, 2026) describes both as built with large-scale distillation,
+  long-context training and native speculative decoding. Super adds Indic
+  continued pretraining, which NVIDIA says lifts Indian-language benchmarks by
+  up to 9.82 points, and agentic software-engineering mid-training. Its
+  post-training runs SFT, RLVR and RLHF plus specialized teachers and
+  multi-teacher on-policy distillation, which is what turns the text-only base
+  into a multimodal agent. The report gives Super <strong>51.78% on SWE-bench
+  Pro</strong>, above Nemotron 3 Ultra with about 4.6&times; fewer active
+  parameters. MTP boosting after post-training lengthens speculative-decoding
+  acceptance by up to 21.8%, NVFP4 keeps a 99.62% median accuracy recovery
+  against BF16, and serving reaches up to 4,856 output tokens/s per GB200 GPU
+  at 50+ tokens/s per user.</p>
 tags:
   - frontier
   - open-weights
@@ -97,6 +114,8 @@ model:
       score: "51.78"
     - benchmark: Video-MME v2
       score: "32.85"
+paper:
+  arxiv: "2610.38095"
 related:
   - nemotron-3.5-lightning
   - nemotron-3.5-bolt

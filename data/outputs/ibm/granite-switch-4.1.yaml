@@ -6,6 +6,8 @@ date: 2026-05-24
 sources:
   - label: Launch blog (HuggingFace, Oct 14, 2026)
     url: https://huggingface.co/blog/ibm-granite/granite-switch-4-1
+  - label: Granite Switch 4.1.1 patch release (HuggingFace, Oct 29, 2026)
+    url: https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1
   - label: HuggingFace (30B)
     url: https://huggingface.co/ibm-granite/granite-switch-4.1-30b
   - label: HuggingFace (8B)
@@ -40,6 +42,13 @@ description: >
   Index v0.3 fast subset (1,068 rows), IBM reports an overall 50.1 for the
   30B decision adapter and 42.9 for the 8B. The full Granite Libraries bundle
   stays in the preview checkpoints.</p>
+
+  <p><strong>Granite Switch 4.1.1</strong> (October 29, 2026) is a patch
+  release that IBM calls "fully backwards compatible with 4.1": it updates the
+  embedded speech model to multilingual transcription in 10 languages with
+  native punctuation and capitalization, and updates the decision adapter in
+  granitelib-core, which IBM says scores better on the Decision Index test set
+  without giving numbers.</p>
 tags:
   - foundational
   - open-weight

@@ -11,6 +11,8 @@ sources:
     url: https://huggingface.co/inclusionAI/Ling-3.0-tiny
   - label: HuggingFace (Ling-3.0-flash-Fin)
     url: https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin
+  - label: HuggingFace (Ling-3.0-flash-Sante)
+    url: https://huggingface.co/inclusionAI/Ling-3.0-flash-Sante
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/ling-3-0-flash
   - label: OpenRouter
@@ -80,6 +82,8 @@ model:
       notes: "3:1 KDA–MLA stack; 128 routed experts, top-8; released August 11; AAII v4.3.2 score 11."
     - name: Ling-3.0-flash-Fin
       notes: "Continued training of Ling-3.0-flash on financial data (same 124B total / 5.1B active, 256K context), MIT open weights; announced in September with the FinFIRST financial-search benchmark. AAII v4.3.2 score 23 (AA page ling-3-0-flash-fin), above the base flash's 20."
+    - name: Ling-3.0-flash-Sante
+      notes: "Healthcare-specialized build of Ling-3.0-flash (name from French santé), same 124B total / 5.1B active hybrid-linear MoE with KDA and gated MLA, training extended to 256K; MIT open weights published 2026-10-19 on HuggingFace and ModelScope and served on Vercel's AI Gateway. The card targets medical reasoning, healthcare research, deep research and tool-assisted and multi-agent workflows, with thinking on by default, and states it is a research model and not a medical device. Self-reported results are given only as a figure (AFUMED-Drug, AFUSAFE-MedSCE, MedMCQA, BrowseComp, HLE-with-tools, DeepSearchQA, Tau3-Banking), so no numbers are quoted here. Not scored by Artificial Analysis as of 2026-11-03."
 related:
   - ling-2.6
   - lightning-linear-attention

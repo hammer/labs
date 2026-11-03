@@ -14,6 +14,8 @@ sources:
     url: https://huggingface.co/IFM/Jais-3-375B-A23B-FP8
   - label: Training logs (W&B)
     url: https://forge.coreweave.com/wandb/mbzuai-llm/Jais-3-375B-A23B
+  - label: Technical report (IFM)
+    url: https://ifm.ai/jais/tech-report
   - label: HuggingFace (Jais-ASR)
     url: https://huggingface.co/IFM/Jais-ASR
   - label: Arabic benchmark auditing collection
@@ -45,7 +47,11 @@ description: >
   360-open practice, the repository exposes the <strong>CPT, Cooldown, SFT
   and FTPO</strong> checkpoints as branches, and the training logs are public
   on W&amp;B. CPT token counts, data mix and compute are not stated on the
-  card; the technical report and code are marked "coming soon". A subset of the
+  card. The technical report was marked "coming soon" at launch; on 25 October
+  the model card added a link to it at ifm.ai/jais/tech-report (cited as "Jais
+  3: Introducing Arabic-centric Agentic AI", IFM, Inception42 and Cerebras
+  teams), but that page refuses automated fetches, so its contents are not yet
+  reflected here. The code repository is still marked "coming soon". A subset of the
   Arabic training data is released as IFM/Jais-3-Data.</p>
 
   <p>The card's numbers are self-reported against Qwen3.5-397B-A17B, MiniMax

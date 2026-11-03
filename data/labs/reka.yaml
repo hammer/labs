@@ -43,6 +43,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=VBclY_cAAAAJ
 news:
+  - title: "Reka Releases Research Preview of Rho-1, a 19B Omni-Reasoning Model Trained From Scratch That Understands and Generates Text, Images, Video and Robot Actions"
+    url: https://reka.ai/news/rho-1-collapsing-the-multimodal-stack
+    source: Reka
+    date: 2026-10-05
   - title: "Reka Raises $110M Series B at $1B Valuation"
     url: https://reka.ai
     source: Reka

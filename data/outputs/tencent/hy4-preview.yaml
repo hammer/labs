@@ -62,6 +62,17 @@ description: >
   of models in the Hy4 series is expected to roll out soon", following the Hy3
   preview&rarr;GA pattern. Not yet scored on the Artificial Analysis
   Intelligence Index as of 2026-08-29.</p>
+
+  <p>As of 2026-11-03 the general release has not shipped and the model is
+  still absent from Artificial Analysis's leaderboard, which lists only Hy3
+  preview and Hy3 for Tencent. On 2026-10-29, at Tencent's Global Digital
+  Ecosystem Conference, Dowson Tong
+  <a href="https://technode.com/2026/10/29/tencent-says-upcoming-hy4-and-hy4-flash-models-will-support-visual-understanding/">said</a>
+  that the general release of Hy4 and a cost-oriented <strong>Hy4
+  flash</strong> are coming soon, with Hy4 aimed at longer sustained
+  productivity tasks and more efficient reasoning, and both adding visual
+  understanding for the first time in the line. No date or specifications
+  were given.</p>
 tags:
   - moe
   - open-weight

@@ -109,14 +109,42 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~John_Schulman1
 news:
+  - title: "OpenAI Introduces LifeVal, a Benchmark for How Well AI Helps People Complete Everyday Tasks Such as Finding Childcare, Managing Finances and Government Paperwork"
+    url: https://openai.com/index/lifeval
+    source: OpenAI
+    date: 2026-11-02
+  - title: "OpenAI Will Honor a Shared robots.txt Signal for Website Operators' AI Training Preferences"
+    url: https://openai.com/index/helping-websites-express-ai-training-preferences
+    source: OpenAI
+    date: 2026-10-30
+  - title: "OpenAI Publishes an Updated Model Spec Built Around Five Core Values for More Capable AI"
+    url: https://openai.com/index/updated-model-spec
+    source: OpenAI
+    date: 2026-10-29
+  - title: "OpenAI Describes Its Layered Monitoring for Detecting Frontier Model Misalignment and Unauthorized Agent Behavior"
+    url: https://openai.com/index/how-we-detect-frontier-model-misalignment
+    source: OpenAI
+    date: 2026-10-29
   - title: "OpenAI Releases GPT-6.1 Terra: $1/$5 per MTok, 1.05M Context, Critical in Cybersecurity; AA Intelligence Index v5.0 51, Four Points Below GPT-6.1 Sol"
     url: https://openai.com/index/introducing-gpt-6-1-terra
     source: OpenAI
     date: 2026-10-26
+  - title: "OpenAI Details Containment for Frontier Model Training and Evaluation, Including Offline Environments and High-Compute Red-Teaming"
+    url: https://openai.com/index/securing-our-frontier-model-training-environment
+    source: OpenAI
+    date: 2026-10-23
   - title: "OpenAI in Final-Stage Talks to Raise ~$30B at a $1.25T Pre-Money Valuation, With UAE Investors and Coatue; Not Yet Closed"
     url: https://theedgemalaysia.com/node/822952
     source: CNBC via The Edge Malaysia
     date: 2026-10-22
+  - title: "OpenAI Models and Codex Workflows Come to Google Cloud's Model Garden via Google Cloud Marketplace"
+    url: https://openai.com/index/openai-models-google-cloud
+    source: OpenAI
+    date: 2026-10-21
+  - title: "OpenAI Acquires Orchestra Bio to Bring AI-Powered Operations to Life-Sciences R&D"
+    url: https://openai.com/index/openai-to-acquire-orchestra-bio
+    source: OpenAI
+    date: 2026-10-20
   - title: "OpenAI Reportedly Seeks at Least $30B at a ~$1.4T Pre-Money Valuation"
     url: https://propakistani.pk/2026/09/30/openai-reportedly-seeks-30-billion-at-1-4-trillion-valuation/
     source: Bloomberg via ProPakistani

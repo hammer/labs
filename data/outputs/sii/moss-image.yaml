@@ -1,0 +1,77 @@
+name: MOSS-Image
+slug: moss-image
+lab: sii
+type: model
+date: 2026-10-16
+sources:
+  - label: GitHub
+    url: https://github.com/OpenMOSS/MOSS-Image
+  - label: "Technical report (arXiv 2610.23374)"
+    url: https://arxiv.org/abs/2610.23374
+  - label: HuggingFace (Base)
+    url: https://huggingface.co/OpenMOSS-Team/MOSS-Image-Base
+  - label: HuggingFace (SFT)
+    url: https://huggingface.co/OpenMOSS-Team/MOSS-Image-SFT
+  - label: SII announcement (Chinese)
+    url: https://www.sii.edu.cn/2026/1030/c27a1262/page.htm
+  - label: ComfyUI weights (Comfy-Org)
+    url: https://huggingface.co/Comfy-Org/MOSS-Image
+description: >
+  <p>An open-weight text-to-image model from the OpenMOSS team at the Shanghai
+  Innovation Institute, released October 16, 2026 as
+  <strong>MOSS-Image-Base</strong> and <strong>MOSS-Image-SFT</strong> under
+  Apache 2.0. The generator is a <strong>5B single-stream diffusion
+  transformer (DiT) pretrained from scratch</strong>; the shipped config has
+  42 layers, width 3072 and 24 heads. The 5B figure counts the DiT only: the
+  frozen text encoder is a Qwen3.5 model (<code>Qwen3_5Model</code>, hidden
+  size 4096) and the autoencoder is FLUX.2's. SII says the pretraining ran on
+  domestic <strong>PPU</strong> accelerators ("依托国产 PPU 算力从零开展预训练"),
+  and the README lists heterogeneous-GPU training as a feature. Prompts can
+  run to 4K tokens and can carry JSON layouts that fix where text and objects
+  go.</p>
+
+  <p>The <a href="https://arxiv.org/abs/2610.23374">technical report</a>
+  (announced on arXiv October 19, credited to MOSI.AI, the OpenMOSS spin-out) targets dense
+  text and layout, where it says open-weight models trail closed systems. It
+  pairs the DiT with an agentic prompt-enhancement module and introduces two
+  evaluations. Self-reported: average text coverage <strong>96.3%</strong> on
+  its LongLongTextBench (240 tasks; 97.1% English, 92.4% Chinese) against
+  64.9% for Qwen Image 2512. On its RealLayoutArena Elo, the full system with
+  prompt enhancement scores 1698.7, second to GPT-Image2 (1844.4) and ahead of
+  Seedream 5.0 Pro (1661.2). With all generators given the same enhanced
+  prompts, the MOSS-Image backbone ranks first at 1807.3, ahead of ERNIE Image
+  (1748.5). Training-data scale is not given in the SII post.</p>
+
+  <p>Adoption was fast. The release had day-0 support in SGLang, vLLM-Omni and
+  ComfyUI, and SII reports more than 2 million downloads of the Comfy-Org
+  distribution within eight days. The HuggingFace API shows about 4.5 million
+  on that repo by November 3, and the GitHub repo has about 2.5K stars. SII
+  counted dozens of community adapters, fine-tunes and quantizations per
+  checkpoint by October 25. The team behind it is
+  <a href="/people/xipeng-qiu">Xipeng Qiu</a>'s OpenMOSS group, and SII
+  describes it as student-led (12 PhD students). The MOSI API platform began
+  serving it on October 20.</p>
+tags:
+  - multimodal
+  - image-generation
+  - diffusion
+  - open-weight
+model:
+  open_weights: true
+  architecture: dense
+  parameters: 5B
+  license: Apache 2.0
+  variants:
+    - name: MOSS-Image-Base
+      parameters: 5B
+      notes: Base text-to-image model (DiT backbone; frozen Qwen3.5 text encoder and FLUX.2 VAE not counted)
+    - name: MOSS-Image-SFT
+      parameters: 5B
+      notes: Fine-tuned from MOSS-Image-Base on curated data
+paper:
+  arxiv: "2610.23374"
+  authors:
+    - MOSI.AI
+  code_url: https://github.com/OpenMOSS/MOSS-Image
+related:
+  - moss-vl

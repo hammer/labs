@@ -118,6 +118,10 @@ news:
     url: https://huggingface.co/inclusionAI/Ling-3.1-flash-1019
     source: HuggingFace
     date: 2026-10-27
+  - title: "inclusionAI Open-Weights Ling-3.0-flash-Sante (MIT), a Healthcare-Specialized 124B-A5.1B Ling Aimed at Medical Reasoning, Deep Research and Multi-Agent Workflows"
+    url: https://huggingface.co/inclusionAI/Ling-3.0-flash-Sante
+    source: HuggingFace
+    date: 2026-10-19
   - title: "Ant Group Launches Ling-3.1-flash (560B-A25B Hybrid Reasoning MoE, 262K Context) as a Two-Week Free Trial via Novita; Open Weights Promised Afterwards, No Model Card or Blog Post Yet"
     url: https://technode.com/2026/09/30/ant-group-launches-ling-3-1-flash-with-560-billion-parameters/
     source: TechNode

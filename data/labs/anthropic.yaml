@@ -101,6 +101,22 @@ people:
     description: >
       <p>PhD in Physics from Johns Hopkins University (advised by Jared Kaplan). Researcher at OpenAI. Co-authored the scaling laws paper with Kaplan. Co-founded Anthropic in 2021, serving as CTO.</p>
 news:
+  - title: "Anthropic Expands AI for Science to Foundations and Research Institutions"
+    url: https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions
+    source: Anthropic
+    date: 2026-10-28
+  - title: "Anthropic Reports Early Progress on Accelerating Drug Development With Claude"
+    url: https://www.anthropic.com/research/early-progress-drug-development
+    source: Anthropic
+    date: 2026-10-27
+  - title: "Anthropic Files Public S-1 With the SEC for an IPO of Class A Stock on Nasdaq Under the Ticker ANT; Price Range Not Yet Set"
+    url: https://www.anthropic.com/news/s1-sec
+    source: Anthropic
+    date: 2026-10-26
+  - title: "Anthropic Donates Agent Skills to the Agentic AI Foundation"
+    url: https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation
+    source: Anthropic
+    date: 2026-10-22
   - title: "Anthropic Frontier Red Team on Z.ai's Open-Weight GLM-5.3: End-to-End Exploits in 50 of 410 Attempts vs 56 for Claude Mythos Preview; Its Safeguards Bypassed 64–100% of the Time"
     url: https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities
     source: Anthropic

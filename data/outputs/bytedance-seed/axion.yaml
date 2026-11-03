@@ -1,0 +1,46 @@
+name: "Axion 1.0: Open Agent Foundation Models, Simplified"
+slug: axion
+lab: bytedance-seed
+type: paper
+date: 2026-10-29
+sources:
+  - label: Technical Report (PDF)
+    url: https://axion1-0.github.io/paper/axion.pdf
+  - label: Project Page
+    url: https://axion1-0.github.io/
+  - label: GitHub
+    url: https://github.com/bytedance/axion1_0
+  - label: Training data (HuggingFace)
+    url: https://huggingface.co/datasets/Axion1-0/axion-training-data
+description: >
+  <p>A ByteDance-led recipe (with a Duke intern as first author, plus UMD
+  and Buffalo) arguing that a strong agent model needs only
+  <strong>three post-training stages: two SFT stages and then RL</strong>,
+  with no dedicated mid-training, DPO or on-policy distillation. The first
+  SFT stage builds self-contained reasoning from <em>model-aware</em>
+  synthetic problems. Public question-answer pairs are used only as seeds,
+  composed into new self-contained questions, then adversarially hardened
+  against the base model's own successful solution strategies. The second
+  stage teaches tool-dependent reasoning on automatically verifiable tasks
+  built from real-world data sources and deterministic computation.
+  Asynchronous RL then lengthens the horizon over tools and
+  environments.</p>
+
+  <p>Applied to Qwen bases, <strong>Axion 1.0-122B</strong> (from
+  Qwen3.5-122B-A10B) reports <strong>59.0 on full Humanity's Last
+  Exam</strong> with restricted web access, 87.0 on FrontierScience Olympiad
+  and 66.7 on FrontierScience Research. That is above <a
+  href="/outputs/shanghai-ai-lab/agents-a1">Agents-A1</a> (47.6 HLE) and
+  above GPT-5.6 Sol on the FrontierScience pair as the Axion team ran it,
+  though below Claude Fable 5's reported 63.8 on HLE. Axion 1.0-35B (from
+  Qwen3.6-35B-A3B) scores 62.2 on SEAL-0, and 4B and 9B variants were
+  trained with SFT only. The release is Apache 2.0 code for data generation,
+  filtering, prompts, both SFT stages, asynchronous RL and grading, plus the
+  training data on HuggingFace. The report calls the models fully open, but
+  no weights were on HuggingFace at filing.</p>
+tags:
+  - post-training
+  - rl
+  - agentic
+  - reasoning
+  - research

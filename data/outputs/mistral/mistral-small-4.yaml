@@ -17,8 +17,8 @@ description: >
   coding in one architecture. 256K context. 3x throughput vs Mistral
   Small 3 with 40% latency reduction. Configurable reasoning effort.</p>
 
-  <p>AA Intelligence Index v4.3: <strong>11</strong> in reasoning mode (9
-  non-reasoning); the score follows AA's reasoning page since 2026-09-08, and
+  <p>AA Intelligence Index v5.0: <strong>4</strong> in reasoning mode (11 on
+  v4.3, when non-reasoning read 9); the score follows AA's reasoning page since 2026-09-08, and
   earlier readings in the score trail came from the non-reasoning page.
   Apache 2.0.</p>
 
@@ -38,9 +38,12 @@ model:
   parameters: 119B
   active_parameters: 6.5B
   context_window: 256000
-  intelligence_index: 11
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 4
+  intelligence_index_version: "AA v5.0"
   intelligence_index_history:
+    - score: 11
+      version: "AA v4.3.2"
+      until: "2026-11-03"
     - score: 9
       version: "AA v4.3"
       until: "2026-09-08"

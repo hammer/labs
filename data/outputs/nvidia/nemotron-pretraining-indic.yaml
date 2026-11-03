@@ -1,0 +1,47 @@
+name: Nemotron-Pretraining-Indic-v1
+slug: nemotron-pretraining-indic
+lab: nvidia
+type: dataset
+date: 2026-10-15
+sources:
+  - label: Report (PDF, HuggingFace)
+    url: https://huggingface.co/datasets/nvidia/nemotron-indic-pretraining-report
+  - label: HuggingFace (Indic-CC-v1)
+    url: https://huggingface.co/datasets/nvidia/Nemotron-Pretraining-Indic-CC-v1
+  - label: HuggingFace (Indic-Specialized-v1)
+    url: https://huggingface.co/datasets/nvidia/Nemotron-Pretraining-Indic-Specialized-v1
+description: >
+  <p>NVIDIA and AI4Bharat's synthetic pretraining corpus for Indian languages:
+  about <strong>2.83 trillion tokens</strong> across all 22 scheduled Indian
+  languages in native script, plus romanized text for twelve priority
+  languages (Hindi, Bengali, Tamil, Telugu, Marathi, Urdu and six more). The
+  report (44 pages, October 15, 2026) calls it the largest openly released
+  Indic pretraining corpus, and sets it against FineWeb2's 11.17B words of
+  natural text for a comparable slice. It is built by translating curated
+  English Nemotron pretraining data on a GPU pipeline, scoring each
+  translation and repairing low-quality outputs while keeping technical
+  content, document structure and record-level source provenance. Gemma 4
+  31B handled the early small-scale runs. It ships as two non-overlapping
+  datasets: <strong>Indic-CC-v1</strong> (general, STEM,
+  math and instruction-style data, first uploaded September 4, gated) and
+  <strong>Indic-Specialized-v1</strong> (October 26), in 34 language-script
+  configurations.</p>
+
+  <p>Its utility is tested by continued pretraining of Nemotron Nano
+  checkpoints during learning-rate decay. Mixing the synthetic corpus with
+  natural Indic text beats a public-corpus baseline by 1.3 points on MILU,
+  1.6 on MMLU-Pro, 3.4 on ARC-Challenge and 8.0 on GSM8K. Further runs
+  measure how data volume, script coverage and the Indic share of training
+  (10&ndash;30%) affect English performance. The report also introduces the
+  <strong>Indic-LLM-Eval-Suite</strong>, which combines native Indic
+  benchmarks with translated English ones checked by native speakers,
+  covering chat, instruction following, reasoning, knowledge, code and
+  translation, and uses it to benchmark current open Indic and multilingual
+  models.</p>
+tags:
+  - dataset
+  - pretraining
+  - multilingual
+  - synthetic-data
+related:
+  - nemotron-3-nano
