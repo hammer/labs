@@ -73,6 +73,11 @@ description: >
   productivity tasks and more efficient reasoning, and both adding visual
   understanding for the first time in the line. No date or specifications
   were given.</p>
+
+  <p>The general release shipped on 2026-11-04 as
+  <a href="/outputs/tencent/hy4">Hy4</a>. It is the same 770B total, adds
+  vision and computer use, and is API-only until its weights are released.
+  These preview checkpoints remain the only open Hy4 weights.</p>
 tags:
   - moe
   - open-weight
@@ -136,4 +141,5 @@ model:
       active_parameters: 49B
       notes: "FP8-quantized instruct checkpoint"
 related:
+  - hy4
   - hy3

@@ -99,6 +99,10 @@ people:
     description: >
       <p>Distinguished Scientist and Director of <strong>ARC Lab</strong> (Applied Research Center) at Tencent. Leads one of China&rsquo;s most prolific open-source research groups, releasing the SEED multimodal family, YOLO-World, Open-MAGVIT2, and 80+ GitHub repos. Before the March 2026 restructuring, ARC Lab operated as a semi-independent research arm.</p>
 news:
+  - title: "Tencent Releases Hy4, Adding Vision and Computer Use, and Says It Ranks Among China's Best Models; Weights to Be Open-Sourced Later"
+    url: https://www.bloomberg.com/news/articles/2026-11-04/tencent-declares-latest-ai-model-ranks-among-china-s-best
+    source: Bloomberg
+    date: 2026-11-04
   - title: "Tencent Says the General Release of Hy4 and a Cheaper Hy4 Flash Are Coming Soon, Both Adding Visual Understanding"
     url: https://technode.com/2026/10/29/tencent-says-upcoming-hy4-and-hy4-flash-models-will-support-visual-understanding/
     source: TechNode

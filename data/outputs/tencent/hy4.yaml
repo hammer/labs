@@ -1,0 +1,70 @@
+name: Hy4
+slug: hy4
+lab: tencent
+type: model
+date: 2026-11-04
+flagship: true
+sources:
+  - label: Bloomberg
+    url: https://www.bloomberg.com/news/articles/2026-11-04/tencent-declares-latest-ai-model-ranks-among-china-s-best
+  - label: Tencent Technology report (via ChainCatcher)
+    url: https://www.chaincatcher.com/en/article/2301648
+  - label: BigGo Finance
+    url: https://finance.biggo.com/news/8735235c-68bf-45f8-9ba8-530eb8847d6a
+  - label: OpenRouter
+    url: https://openrouter.ai/tencent/hy4
+description: >
+  <p>General release of Tencent Hy Team's fourth-generation flagship,
+  shipped on November 4, ten weeks after the open-weight
+  <a href="/outputs/tencent/hy4-preview">Hy4 preview</a> and six days after
+  Dowson Tong said at Tencent's Global Digital Ecosystem Conference that it was
+  coming. It is still a <strong>770B-parameter MoE</strong>, the same total as
+  the preview. Tencent says pre-training and post-training were both
+  expanded, without giving token counts. The line gains two new capabilities:
+  <strong>visual understanding</strong> (fine-grained image processing, chart
+  analysis, math problems posed as images) and <strong>computer use</strong>
+  that mixes command-line and GUI operation. Tencent says it trained specifically
+  on Blender, CAD and long cross-application tasks, and validated in a sandbox
+  of hundreds of applications. Tencent claims the model has entered the top
+  tier of open-source models, and Bloomberg's headline reports the claim as
+  ranking among China's best. Tencent itself acknowledges "a significant gap"
+  to the top proprietary models.</p>
+
+  <p>All results are Tencent's own, mostly internal evaluations. Against the
+  preview: GameDev +19.1%, GameLogic +9.8%, financial hallucination rate 12.95%
+  &rarr; 7.2%, guessing-error rate 23.1% &rarr; 5.6%. In a financial
+  crowdsourced test (213 experts, 579 tasks), raters gave Hy4 3.04, against
+  2.97 for
+  <a href="/outputs/deepseek/deepseek-v4.1-flash-1017">DeepSeek-V4.1-Flash-1017</a>
+  and 2.68 each for
+  <a href="/outputs/moonshot-ai/kimi-k3.1-pro">Kimi K3.1 Pro</a> and
+  <a href="/outputs/zai/glm-5.3">GLM 5.3</a>. A WorkBuddy office evaluation gave
+  an average of 83.18 and a 96.15% task pass rate. Tencent reports 30.4/100 on
+  its own Hy-BioExperimentBench and calls this a significant gap to frontier
+  models. Tencent's Xuanwu and Keen labs audited cyber capability and found no
+  significant offensive uplift, after offensive security content was excluded
+  from training. Tencent also says the model found training-system
+  bottlenecks that raised its own training throughput by 20.1%.</p>
+
+  <p>The model is live in Tencent Cloud TokenHub, WorkBuddy/CodeBuddy, Yuanbao,
+  ima and the WeCom assistant, and through the OpenRouter, Hermes and OpenCode
+  APIs. List prices are unchanged from the preview at &yen;6/&yen;18 per M
+  input/output tokens (&yen;0.3 for cache hits), with TokenHub at 50% off
+  through December 31. <strong>The weights are not yet released</strong>.
+  Tencent says they "will be open-sourced soon" but gives no date. A cheaper
+  <strong>Hy4 flash</strong> is also "coming soon". Hy4 is not yet scored on
+  the Artificial Analysis Intelligence Index as of 2026-11-04.</p>
+tags:
+  - moe
+  - frontier
+  - agentic
+  - coding
+  - multimodal
+  - computer-use
+model:
+  open_weights: false
+  architecture: moe
+  parameters: 770B
+related:
+  - hy4-preview
+  - hy3
