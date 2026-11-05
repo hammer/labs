@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Blog Post
     url: https://www.kimi.com/en/blog/kimi-k3-1-pro
+  - label: HuggingFace
+    url: https://huggingface.co/moonshotai/Kimi-K3.1-Pro
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/kimi-k3-1-pro
   - label: OpenRouter
@@ -14,10 +16,14 @@ sources:
 description: >
   <p>Not a new base model: "Kimi K3.1 Pro is a <strong>post-trained version of
   Kimi K3</strong>, with substantially larger post-training compute" &mdash; how
-  much larger is not quantified. The architecture therefore carries over from
+  much larger is not quantified. The architecture mostly carries over from
   <a href="/outputs/moonshot-ai/kimi-k3">Kimi K3</a>, the 2.8T Stable LatentMoE
-  with 104B active and a 1M-token context, and Artificial Analysis independently
-  lists 2.8T. What moved is the score: 55 on AA Intelligence Index
+  with 104B active and a 1M-token context (93 layers, 896 experts with 16
+  routed and 2 shared). There is one change, disclosed only in the
+  open-weight model card: the 24 full-attention layers that were Gated MLA in
+  K3 are now <strong>Gated DeepSeek Sparse Attention</strong>, with a
+  32-head indexer selecting the top 2,048 tokens, alongside the unchanged 69
+  KDA layers. What moved is the score: 55 on AA Intelligence Index
   v4.3.2 against K3's 44 on the same version, bought entirely in
   post-training. On <strong>v5.0</strong> (October 27) it reads
   <strong>46</strong>, which AA reports as the top open-weights score even
@@ -25,17 +31,20 @@ description: >
   &mdash; "consistent gains in every domain", with coding, 3D creation,
   financial research and agentic use called out.</p>
 
-  <p><strong>The weights are promised, not shipped, and this index records that
-  as closed.</strong> The post says "for the <em>open-weight release</em> of
-  K3.1 Pro" and then dates it: "Full model weights will be released by
-  <strong>Nov 4, 2026</strong>." At filing there is nothing to download &mdash;
-  no repository in <code>moonshotai</code>, where every prior Kimi flagship
-  appeared on or before announcement day; OpenRouter's
-  <code>hugging_face_id</code> is null for this model where K3's and K2.6's are
-  both populated; and the only serving endpoints are Moonshot's own, at mxfp4.
-  So it is carried as closed until the download exists, which keeps it out of
-  the open-weights intelligence column it would otherwise top. Expect that to
-  flip by early November.</p>
+  <p><strong>The weights shipped on time.</strong> The launch post promised
+  "Full model weights will be released by <strong>Nov 4, 2026</strong>", and at
+  filing (Oct 24) nothing was downloadable, so the entry was carried as
+  closed. <a href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro"><code>moonshotai/Kimi-K3.1-Pro</code></a>
+  appeared on HuggingFace on <strong>2026-11-02</strong>, public and ungated.
+  It holds a single checkpoint of about 2.78T parameters, with MXFP4 weights
+  and MXFP8 activations from quantization-aware training, the same precision
+  Moonshot serves, and it has vision processors. It ships with day-0 vLLM,
+  SGLang and TokenSpeed recipes. The <strong>Kimi K3.1 Pro License</strong> is
+  MIT-style with two conditions. A Model-as-a-Service operator with more than
+  $20M in trailing-12-month revenue needs a separate agreement with Moonshot
+  for commercial use. A product with more than 100M MAU or more than $20M in
+  monthly revenue must display "Kimi K3.1-Pro". It now tops the open-weights
+  intelligence column at AA v5.0's 46.</p>
 
   <p><strong>The cyber-capability ablation is the most unusual thing in the
   post</strong>, because Moonshot measured its own safety intervention and
@@ -74,7 +83,9 @@ description: >
   speed of K3.1 Pro for more responsive interactions" through the same channels
   with no separate price published. AA measures 77.1 output tokens/s, a 2.89s
   time to first token and $2.11 per Intelligence Index task. No technical report
-  and no GitHub repository at filing &mdash; K3 shipped one of each.</p>
+  and no GitHub repository at filing &mdash; K3 shipped one of each. As of
+  2026-11-05 the open-weight release added a model card but still no technical
+  report.</p>
 tags:
   - frontier
   - moe
@@ -83,12 +94,12 @@ tags:
   - multimodal
   - safety
 model:
-  open_weights: false
+  open_weights: true
   architecture: moe
   parameters: "2.8T"
   active_parameters: "104B"
   context_window: 1000000
-  license: "Not yet released; full weights promised by 2026-11-04"
+  license: "Kimi K3.1 Pro License (modified MIT)"
   intelligence_index: 46
   intelligence_index_version: "AA v5.0"
   intelligence_index_history:
@@ -99,7 +110,7 @@ model:
     - name: Kimi K3.1 Pro
       parameters: "2.8T"
       active_parameters: "104B"
-      notes: "flagship; $2.00/$10.00 per 1M, $0.20 cache read, 1M context, reasoning on at max effort by default"
+      notes: "flagship; open weights (MXFP4 weights / MXFP8 activations, QAT); $2.00/$10.00 per 1M, $0.20 cache read, 1M context, reasoning on at max effort by default"
     - name: Kimi K3.1 Pro Highspeed
       notes: "2-3x the speed of K3.1 Pro for more responsive interactions; no separate pricing published"
   benchmark_scores:
