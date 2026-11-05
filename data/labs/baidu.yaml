@@ -62,3 +62,8 @@ tags:
   - framework
   - hardware
   - autonomous-driving
+news:
+  - title: "Baidu Open-Sources ERNIE 5.5 Flash Base: 280B-A14B MoE Base Model Pre-Trained on 33.5T Tokens With Muon in FP8, Post-Trained Flash to Follow"
+    url: https://ernie.baidu.com/release/ernie-5-5-flash-base/
+    source: Baidu ERNIE
+    date: 2026-11-05

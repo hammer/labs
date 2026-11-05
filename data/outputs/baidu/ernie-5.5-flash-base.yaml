@@ -1,0 +1,142 @@
+name: ERNIE 5.5 Flash Base
+slug: ernie-5.5-flash-base
+lab: baidu
+type: model
+date: 2026-11-05
+sources:
+  - label: Release post (ERNIE)
+    url: https://ernie.baidu.com/release/ernie-5-5-flash-base/
+  - label: HuggingFace (FP8)
+    url: https://huggingface.co/baidu/ERNIE-5.5-Flash-Base
+  - label: HuggingFace (BF16)
+    url: https://huggingface.co/baidu/ERNIE-5.5-Flash-Base-BF16
+  - label: License
+    url: https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/blob/main/LICENSE
+  - label: FlashMask (GitHub)
+    url: https://github.com/PaddlePaddle/FlashMask
+  - label: Megatron-Bridge fine-tuning example
+    url: https://github.com/NVIDIA-NeMo/Megatron-Bridge/blob/main/examples/models/ernie55/
+description: >
+  <p>Baidu's first open-weight release of the ERNIE 5.x generation, and
+  deliberately a <strong>pre-trained base checkpoint</strong>: it was taken at
+  the end of pre-training, before any mid-training or post-training. Baidu says
+  a post-trained ERNIE 5.5 Flash will follow.
+  <strong>280B total / 14B active MoE</strong>, pre-trained from scratch on
+  <strong>33.5T tokens</strong> with <strong>Muon in FP8 mixed
+  precision</strong>. Pre-training context was extended in stages to 128K, and
+  the model supports up to 1M tokens for fine-tuning and inference
+  (<code>max_position_embeddings</code> 1,048,576). It is text-only. The
+  hardware and GPU count are not disclosed.</p>
+
+  <p>The architecture borrows heavily from
+  <a href="/outputs/deepseek/deepseek-v4-flash">DeepSeek V4 Flash</a>, which it
+  is sized against (<code>experimental_attention_variant: dsv4_hybrid</code> in
+  <code>config.json</code>), and adds several Baidu components:</p>
+  <ul>
+    <li><strong>Shape:</strong> 43 layers at hidden size 4096 with 64 heads.</li>
+    <li><strong>Attention:</strong> hybrid. One layer in seven uses
+    token-level MLA with DSA sparse selection (64-head indexer, top-2048). The
+    other 37 use <strong>Heavily Compressed Attention</strong>, which caches one
+    entry per 128 tokens plus a short window of recent tokens. Every attention
+    layer is low-rank gated, and Virtual Head Attention mixes across heads.</li>
+    <li><strong>MoE:</strong> every layer after the first is an MoE block with
+    <strong>512 routed experts, top-10, plus one shared expert</strong>. The
+    experts run in a 2048-d latent space. Routing uses a Multi-Router ensemble
+    of sigmoid routers with auxiliary-loss-free balancing.</li>
+    <li><strong>Residuals and output:</strong> <a href="/outputs/deepseek/mhc">mHC</a>
+    with 4 residual streams, and a MultiMax output head.</li>
+    <li><strong>Multi-token prediction:</strong> ECHO replaces a separate MTP
+    module by reusing the final backbone layer, which also serves as the
+    speculative-decoding draft.</li>
+    <li><strong>Tokenizer:</strong> a new BPE tokenizer of about 200K tokens
+    (201,216) that splits numbers right to left in groups of three.</li>
+  </ul>
+  <p>Baidu also released FlashMask-4, an attention kernel for large head
+  dimensions on SM90 and SM100. VHA, Multi-Router and ECHO each have their own
+  arXiv paper
+  (<a href="https://arxiv.org/abs/2610.17959">2610.17959</a>,
+  <a href="https://arxiv.org/abs/2610.40577">2610.40577</a>,
+  <a href="https://arxiv.org/abs/2610.24766">2610.24766</a>).</p>
+
+  <p>Baidu evaluated the base model against three other base models from their
+  public checkpoints, with the same harness and prompts for all of them:
+  DeepSeek V4 Flash Base (284B-A13B),
+  <a href="/outputs/tencent/hy3">Hy3 preview</a> Base (295B-A21B) and
+  <a href="/outputs/xiaomi/mimo-v2.5">MiMo V2.5</a> Base (310B-A15B). Baidu
+  reports the best score on <strong>25 of 30</strong> benchmarks. Results,
+  with DeepSeek V4 Flash Base in parentheses:</p>
+  <ul>
+    <li><strong>Knowledge:</strong> MMLU 93.3 (89.4), MMLU-Pro
+    <strong>78.4</strong> (69.2), SimpleQA 34.1 (29.1).</li>
+    <li><strong>Reasoning:</strong> GPQA 60.2 (55.9), BBH direct 77.1 (69.0).</li>
+    <li><strong>Code:</strong> HumanEval+ 82.3 (69.5), MBPP+ 81.5 (67.2),
+    LiveCodeBench 40.1 (31.9).</li>
+    <li><strong>Long context:</strong> LongBench v2 48.7 (44.5), RepoQA 91.7
+    (81.0).</li>
+    <li><strong>Where it trails:</strong> ChineseSimpleQA, INCLUDE-lite,
+    HELMET-Rerank and InfiniteBench (behind DeepSeek V4 Flash Base), and
+    FullStackBench and CoT BBH (behind Hy3 preview Base).</li>
+  </ul>
+
+  <p>Weights are FP8 and BF16 safetensors on HuggingFace. They load with
+  Transformers and serve through SGLang and vLLM, and NVIDIA's Megatron-Bridge
+  has a fine-tuning example. The <strong>ERNIE 5.5 Flash Base Model License
+  Agreement v1.0</strong> is not an OSI license. Its terms:</p>
+  <ul>
+    <li><strong>Non-commercial use:</strong> free.</li>
+    <li><strong>Commercial use, related revenue up to US$50M a year:</strong>
+    free, but requires a one-time notice to Baidu and a "Powered by ERNIE"
+    attribution.</li>
+    <li><strong>Above US$50M:</strong> requires separate written
+    authorization.</li>
+    <li><strong>Derivatives:</strong> the terms cover models distilled or
+    trained on the base model's outputs.</li>
+    <li><strong>Territory:</strong> the license excludes the <strong>European
+    Union, the United Kingdom and South Korea</strong>.</li>
+  </ul>
+tags:
+  - moe
+  - open-weight
+  - pretraining
+  - long-context
+model:
+  open_weights: true
+  architecture: moe
+  parameters: 280B
+  active_parameters: 14B
+  num_experts: 512
+  top_k: 10
+  context_window: 1048576
+  license: ERNIE 5.5 Flash Base Model License Agreement v1.0
+  benchmark_scores:
+    - benchmark: MMLU
+      score: "93.3"
+      mode: base, 5-shot
+    - benchmark: MMLU-Pro
+      score: "78.4"
+      mode: base, 5-shot
+    - benchmark: GPQA
+      score: "60.2"
+      mode: base, 5-shot
+    - benchmark: HumanEval+
+      score: "82.3"
+      mode: base, pass@1
+    - benchmark: LiveCodeBench
+      score: "40.1"
+      mode: base, pass@1
+    - benchmark: LongBench v2
+      score: "48.7"
+      mode: base, 0-shot
+  variants:
+    - name: ERNIE-5.5-Flash-Base
+      parameters: 280B
+      active_parameters: 14B
+      notes: "FP8 base checkpoint"
+    - name: ERNIE-5.5-Flash-Base-BF16
+      parameters: 280B
+      active_parameters: 14B
+      notes: "BF16 base checkpoint"
+related:
+  - ernie-5.1
+  - ernie-5.0
+  - deepseek-v4-flash
