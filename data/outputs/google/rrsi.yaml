@@ -83,6 +83,31 @@ description: >
   points on LAB's partial pass rate. The Apache-2.0 code, which supports
   OpenCode and Codex executors, drew 18,700 GitHub stars in its first 18 days,
   far more than RRSI.</p>
+
+  <p>Alibaba Research's <strong>Recursa</strong>
+  (<a href="https://arxiv.org/abs/2611.04035">arXiv 2611.04035</a>, November 2)
+  applies the same idea to what a system knows rather than to its control flow.
+  The authors are Erkang Zhu, Yin Lin, Xiaorong Shi, Xuanrui Lin and Alibaba
+  CTO Jingren Zhou. Like RRSI, it measures on Harvey LAB, and like RRSI it
+  leaves the model frozen, without a stronger teacher or human experts. What
+  it learns is a <strong>knowledge repository</strong> of domain skills, rules
+  for when to apply them, task memories and reflections. That repository is
+  first bootstrapped from the domain corpus and from practice on
+  self-generated tasks. It is then refined by a recursive learner that splits
+  the training tasks among child learners, validates and merges their
+  revisions, and stores reflections on how they learned. On the Firm Knowledge
+  split (150 training and 100 held-out tasks), the headline test all-pass rate
+  rises from 30.0% to <strong>55.0% with DeepSeek-V4.1-Flash</strong> and from
+  35.0% to 46.0% with Qwen3.8-Flash. Bootstrapping alone adds little, and the
+  merge step accounts for most of the gain. A single learner given the same
+  budget peaks at 43.0%. Two caveats come from the paper's own tables. The
+  scores use rubrics the authors revised (on the original rubrics the
+  DeepSeek peak is 54.0%). And the test score does not rise steadily across
+  rounds: 55.0 after round two, 43.0 after round three, 48.0 after round
+  five. The headline is therefore the best round on held-out tasks, not the
+  final one. The paper frames the repository as a first step toward a fully
+  self-improving system that would also retrain the model and the harness, and
+  it does neither.</p>
 tags:
   - agents
   - agent-harness
