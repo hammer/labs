@@ -21,7 +21,7 @@ model:
   open_weights: false
   context_window: 1000000
   intelligence_index: 12
-  intelligence_index_version: "AA v5.0"
+  intelligence_index_version: "AA v5.0.1"
   intelligence_index_history:
     - score: 22
       version: "AA v4.3.2"

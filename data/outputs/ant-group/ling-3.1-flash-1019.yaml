@@ -28,10 +28,11 @@ description: >
   AA-Briefcase rises from about 1400 to 1524 Elo, AutomationBench-AA from 62%
   to 68%, CritPt from 18% to 26% and SciCode from 54% to 57%.</p>
 
-  <p><strong>Artificial Analysis scores it 29 on Intelligence Index
-  v5.0</strong>, three points behind <a
+  <p><strong>Artificial Analysis scores it 30 on Intelligence Index
+  v5.0.1</strong> (29.6 unrounded; 29 on v5.0 before AA regraded CritPt v2 in
+  November), three points behind <a
   href="/outputs/deepseek/deepseek-v4.1-flash-1017">DeepSeek-V4.1-Flash-1017</a>
-  (32) and level with MiMo-V2.6-Pro (30, 29.9 unrounded) among open-weights
+  (33) and level with MiMo-V2.6-Pro (30, 29.9 unrounded) among open-weights
   models. On v4.3.2 it scored 44, three points above the original release.
   It is strongest on AutomationBench-AA (67.5%) and the CritPt v2 hard subset
   (37.5%, the best of any open-weights model AA has scored) and weakest on
@@ -59,11 +60,14 @@ model:
   top_k: 8
   context_window: 262144
   base_model: ling-3.1-flash
-  intelligence_index: 29
-  intelligence_index_version: "AA v5.0"
+  intelligence_index: 30
+  intelligence_index_version: "AA v5.0.1"
   openness_index: 38.9
   openness_index_version: "AA Openness Index v1.0"
   intelligence_index_history:
+    - score: 29
+      version: "AA v5.0"
+      until: "2026-11-06"
     - score: 44
       version: "AA v4.3.2"
       until: "2026-10-28"

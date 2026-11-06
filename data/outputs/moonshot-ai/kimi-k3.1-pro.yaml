@@ -101,7 +101,7 @@ model:
   context_window: 1000000
   license: "Kimi K3.1 Pro License (modified MIT)"
   intelligence_index: 46
-  intelligence_index_version: "AA v5.0"
+  intelligence_index_version: "AA v5.0.1"
   intelligence_index_history:
     - score: 55
       version: "AA v4.3.2"

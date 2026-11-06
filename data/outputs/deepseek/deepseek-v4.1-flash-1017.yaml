@@ -37,11 +37,15 @@ description: >
   <p><strong>The independent number moves the same way.</strong> Artificial
   Analysis scored it 45 on Intelligence Index v4.3.2, six points above the
   original, and marked the September entry deprecated in its favour. On
-  <strong>v5.0 it scores 32</strong> at max effort, the highest of any model
-  with released open weights at v5's launch, just ahead of GLM-5.3 (32,
-  31.7 unrounded), MiMo-V2.6-Pro (30) and <a
-  href="/outputs/ant-group/ling-3.1-flash-1019">Ling-3.1-flash-1019</a> (29),
+  <strong>v5.0 it scored 32</strong> at max effort, the highest of any model
+  with released open weights at v5's launch. On <strong>v5.0.1</strong>
+  (November's CritPt v2 regrade) it reads <strong>33</strong> (32.6
+  unrounded), ahead of GLM-5.3 (32, 31.7 unrounded), MiMo-V2.6-Pro (30) and <a
+  href="/outputs/ant-group/ling-3.1-flash-1019">Ling-3.1-flash-1019</a> (30),
   and well above <a href="/outputs/deepseek/deepseek-v4-pro">V4-Pro</a> (23).
+  <a href="/outputs/moonshot-ai/kimi-k3.1-pro">Kimi K3.1 Pro</a> (46) has since
+  overtaken it among open-weight models, after its weights were released on
+  November 2.
   Its strengths on AA's runs are AutomationBench-AA (66.6%), AA-Briefcase
   (Elo 1570) and FrontierCode 2.0 (28.5%, the best open-weights score). Its
   weak spot is calibration: a 35.9% AA-Omniscience non-hallucination rate.
@@ -63,9 +67,12 @@ model:
   top_k: 6
   context_window: 1000000
   base_model: deepseek-v4.1-flash
-  intelligence_index: 32
-  intelligence_index_version: "AA v5.0"
+  intelligence_index: 33
+  intelligence_index_version: "AA v5.0.1"
   intelligence_index_history:
+    - score: 32
+      version: "AA v5.0"
+      until: "2026-11-06"
     - score: 45
       version: "AA v4.3.2"
       until: "2026-10-28"

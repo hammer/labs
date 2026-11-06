@@ -25,11 +25,12 @@ description: >
   output are $4 and $20 per million tokens (20% below Opus 5), cache reads
   $0.20 (60% below), and output streams more than 30% faster. API ID
   <code>claude-opus-5-5</code>; 1M-token context, 128K output, June 2026
-  knowledge cutoff. Artificial Analysis scores it <strong>58 on Intelligence
-  Index v5.0</strong> at max effort (also 58 on v4.3.2), <strong>#1 overall</strong>
-  when v5 launched, ahead of GPT-6 Astra (57) and Fable 5.1 (49), until
-  <a href="/outputs/google/gemini-4-carbon">Gemini 4 Carbon</a> (59) passed it
-  on October 28. Anthropic's model docs now tell
+  knowledge cutoff. Artificial Analysis scores it <strong>59 on Intelligence
+  Index v5.0.1</strong> at max effort (58 on v5.0 and on v4.3.2). It was
+  <strong>#1 overall</strong> when v5 launched, ahead of GPT-6 Astra (57) and
+  Fable 5.1 (49), until
+  <a href="/outputs/google/gemini-4-carbon">Gemini 4 Carbon</a> passed it on
+  October 28; Carbon now reads 60. Anthropic's model docs now tell
   developers to start with Opus 5.5 for most workloads and to reach for Fable
   5.1 for demanding reasoning and long-horizon agentic work. Parameters
   undisclosed.</p>
@@ -59,9 +60,12 @@ tags:
 model:
   open_weights: false
   context_window: 1000000
-  intelligence_index: 58
-  intelligence_index_version: "AA v5.0"
+  intelligence_index: 59
+  intelligence_index_version: "AA v5.0.1"
   intelligence_index_history:
+    - score: 58
+      version: "AA v5.0"
+      until: "2026-11-06"
     - score: 58
       version: "AA v4.3.2"
       until: "2026-10-28"

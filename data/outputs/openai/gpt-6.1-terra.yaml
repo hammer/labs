@@ -70,7 +70,7 @@ model:
   context_window: 1050000
   license: Proprietary
   intelligence_index: 51
-  intelligence_index_version: "AA v5.0"
+  intelligence_index_version: "AA v5.0.1"
   intelligence_index_history:
     - score: 48
       version: "AA v4.3.2"

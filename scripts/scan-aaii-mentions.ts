@@ -40,7 +40,7 @@ import { parseAaScores, checkAaPayload } from './aa-payload';
 import { classifyMention, findMentions, historyMap, POINT_DIFF, type MentionClass } from './aaii-mentions';
 
 const LEADERBOARD_URL = 'https://artificialanalysis.ai/leaderboards/models';
-const CURRENT_VERSION = 'AA v5.0';
+const CURRENT_VERSION = 'AA v5.0.1';
 const showAll = process.argv.includes('--all');
 
 // Same RSC extraction as fetch-aa-intelligence (kept self-contained like the

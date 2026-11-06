@@ -51,7 +51,7 @@ import { parseAaScores, checkAaPayload } from "./aa-payload";
 import { modeRoot, findPromotionCandidates } from "./aa-promotion";
 
 const LEADERBOARD_URL = 'https://artificialanalysis.ai/leaderboards/models';
-const AAII_VERSION = 'AA v5.0';
+const AAII_VERSION = 'AA v5.0.1';
 const TODAY = new Date().toISOString().slice(0, 10);
 const dryRun = process.argv.includes('--dry-run');
 const discover = process.argv.includes('--discover');
@@ -298,7 +298,11 @@ async function main() {
       console.log(`  ✓ ${file}  ${oldScore} → ${newScore}  (slug: ${slug}, history +)`);
     } else {
       retagged++;
-      if (/intelligence_index_history:\n\s+- score: [\d.]+\n\s+version: "[^"]*"\n\s+until: "\d{4}-\d{2}-\d{2}"/.test(next) && next !== content && !/history:\n/.test(content.split('intelligence_index_version')[1]?.split('\n')[1] ?? ''))
+      // Only a cross-minor recalibration appends a trail entry on a same-score
+      // re-tag; a point-release re-tag (v5.0 → v5.0.1) appends nothing, so
+      // label by whether the trail actually grew.
+      const trailLen = (y: string) => (y.match(/^\s+- score: [\d.]+\n\s+version:/gm) ?? []).length;
+      if (trailLen(next) > trailLen(content))
         console.log(`  = ${file}  ${oldScore} → ${newScore}  (slug: ${slug}, same score, recalibration → history +)`);
     }
   }

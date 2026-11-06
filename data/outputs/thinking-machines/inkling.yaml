@@ -49,7 +49,7 @@ model:
   context_window: 1000000
   training_tokens: "45T"
   intelligence_index: 12
-  intelligence_index_version: "AA v5.0"
+  intelligence_index_version: "AA v5.0.1"
   intelligence_index_history:
     - score: 25
       version: "AA v4.3.2"

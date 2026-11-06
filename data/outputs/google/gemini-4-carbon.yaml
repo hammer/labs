@@ -31,8 +31,9 @@ description: >
   evaluation sheet for Carbon at launch.</p>
 
   <p><strong>Artificial Analysis ranks it first.</strong> It scores
-  <strong>59 on Intelligence Index v5.0</strong> (high reasoning), one point
-  above <a href="/outputs/anthropic/claude-opus-5.5">Claude Opus 5.5</a> (58)
+  <strong>60 on Intelligence Index v5.0.1</strong> (high reasoning; 59 on
+  v5.0), one point above <a href="/outputs/anthropic/claude-opus-5.5">Claude
+  Opus 5.5</a> (59)
   and ahead of <a href="/outputs/openai/gpt-6-astra">GPT-6 Astra</a> (57),
   <a href="/outputs/openai/gpt-6.1-sol">GPT-6.1 Sol</a> (55) and Argon (50).
   AA scored it on v5.0 only, so it has no v4.3.2 reading. The gain over Argon is
@@ -79,8 +80,12 @@ tags:
 model:
   open_weights: false
   context_window: 1000000
-  intelligence_index: 59
-  intelligence_index_version: "AA v5.0"
+  intelligence_index: 60
+  intelligence_index_version: "AA v5.0.1"
+  intelligence_index_history:
+    - score: 59
+      version: "AA v5.0"
+      until: "2026-11-06"
   license: Proprietary (API)
   benchmark_scores:
     - benchmark: SEC-bench Pro

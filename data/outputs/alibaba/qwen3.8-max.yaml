@@ -61,7 +61,7 @@ model:
   context_window: 1000000
   base_model: qwen3.8
   intelligence_index: 34
-  intelligence_index_version: "AA v5.0"
+  intelligence_index_version: "AA v5.0.1"
   intelligence_index_history:
     - score: 45
       version: "AA v4.3.2"

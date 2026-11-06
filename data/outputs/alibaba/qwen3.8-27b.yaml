@@ -54,7 +54,7 @@ model:
   parameters: 27B
   context_window: 262144
   intelligence_index: 20
-  intelligence_index_version: "AA v5.0"
+  intelligence_index_version: "AA v5.0.1"
   intelligence_index_history:
     - score: 34
       version: "AA v4.3.2"

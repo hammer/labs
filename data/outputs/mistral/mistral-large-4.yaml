@@ -128,7 +128,7 @@ model:
   context_window: 1000000
   training_hardware: 3,840 NVIDIA GB200
   intelligence_index: 26
-  intelligence_index_version: "AA v5.0"
+  intelligence_index_version: "AA v5.0.1"
   intelligence_index_history:
     - score: 25
       version: "AA v5.0"

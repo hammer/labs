@@ -82,7 +82,7 @@ model:
   active_parameters: 12B
   context_window: 1000000
   intelligence_index: 14
-  intelligence_index_version: "AA v5.0"
+  intelligence_index_version: "AA v5.0.1"
   openness_index: 83.3
   openness_index_version: "AA Openness Index v1.0"
   intelligence_index_history:

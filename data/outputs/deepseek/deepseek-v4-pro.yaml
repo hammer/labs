@@ -49,7 +49,7 @@ model:
   base_model: deepseek-v4
   context_window: 1048576
   intelligence_index: 23
-  intelligence_index_version: "AA v5.0"
+  intelligence_index_version: "AA v5.0.1"
   intelligence_index_history:
     - score: 36
       version: "AA v4.3.2"

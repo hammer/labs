@@ -20,7 +20,9 @@ description: >
   <a href="/outputs/anthropic/claude-mythos-5.1">Claude Mythos 5.1</a>.
   <strong>49 on the AA Intelligence Index v5.0</strong> at max effort, behind
   <a href="/outputs/anthropic/claude-opus-5.5">Claude Opus 5.5</a> (58),
-  GPT-6 Astra (57), GPT-6.1 Sol (55) and Sonnet 5.5 (54). On v4.3.2 it read
+  GPT-6 Astra (57), GPT-6.1 Sol (55) and Sonnet 5.5 (54). It is unchanged at 49
+  on v5.0.1, where Opus 5.5 reads 59, Sonnet 5.5 55 and Gemini 4 Carbon
+  60. On v4.3.2 it read
   53 and was #1 until Opus 5.5 and Sonnet 5.5 passed it in late September
   (57 on v4.2; 66 on v4.1.1; Opus 5 scored 51 on v4.3.2). Headline gains are agentic and scientific:
   Terminal-Bench 4.0 <strong>55.8</strong> (Fable 5 42.0, Opus 5 52.3),
@@ -52,7 +54,7 @@ model:
   open_weights: false
   context_window: 1000000
   intelligence_index: 49
-  intelligence_index_version: "AA v5.0"
+  intelligence_index_version: "AA v5.0.1"
   intelligence_index_history:
     - score: 53
       version: "AA v4.3.2"

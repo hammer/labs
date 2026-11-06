@@ -44,6 +44,8 @@ description: >
   2&times; faster. On the <strong>AA Intelligence Index v5.0</strong>
   (October 27) the max-effort mode scores <strong>57</strong>, one point behind
   Claude Opus 5.5 (58) and ahead of GPT-6.1 Sol (55) and Claude Fable 5.1 (49).
+  It is unchanged at 57 on v5.0.1, now behind Gemini 4 Carbon (60) and Opus 5.5
+  (59).
   On v4.3.2 it scored 53, level with Fable 5.1 (the pair led the index until
   Claude Opus 5.5 and Sonnet 5.5 passed them in late September; Astra was #2
   of 202 behind Fable 5.1's 57 at its September 2026 release under v4.2) and 6
@@ -80,7 +82,7 @@ model:
   open_weights: false
   context_window: 1050000
   intelligence_index: 57
-  intelligence_index_version: "AA v5.0"
+  intelligence_index_version: "AA v5.0.1"
   intelligence_index_history:
     - score: 53
       version: "AA v4.3.2"
