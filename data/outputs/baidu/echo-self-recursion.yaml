@@ -1,0 +1,50 @@
+name: "ECHO: Efficient Causal Self-Recursion Beyond Auxiliary Multi-Token Prediction"
+slug: echo-self-recursion
+lab: baidu
+type: paper
+date: 2026-10-17
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.24766
+  - label: ERNIE 5.5 Flash Base release post
+    url: https://ernie.baidu.com/release/ernie-5-5-flash-base/
+description: >
+  <p>A replacement for auxiliary multi-token prediction (MTP) from Baidu's
+  ERNIE team. Standard MTP trains extra modules attached to the backbone, and
+  each added horizon costs another module and another forward pass. ECHO
+  instead has the <strong>backbone's own final layer predict every
+  horizon</strong>, so the multi-horizon supervision trains the same
+  parameters that produce the next token. <strong>Dynamic Depth
+  Sampling</strong> keeps deep horizons affordable by sampling the training
+  depth with probabilities that decay with depth.</p>
+
+  <p>The authors report two effects. In pretraining, extra depth turns into
+  downstream accuracy where auxiliary modules saturate, mostly on reasoning
+  and code, at half the overhead of training MTP at every depth. At
+  inference, the pretrained model drafts for itself, drafting beyond the
+  depth it was trained for. It keeps its draft-target alignment on open-ended,
+  high-entropy generation, where post-hoc drafters lose theirs. The advantage
+  holds with a doubled token budget, a repeated pretraining run and supervised
+  fine-tuning. The abstract gives no model scale. The method ships in
+  <a href="/outputs/baidu/ernie-5.5-flash-base">ERNIE 5.5 Flash Base</a>
+  (280B-A14B). There it replaced the MTP module, was trained with single-step
+  ECHO, and its reused final layer serves as the speculative-decoding
+  draft.</p>
+tags:
+  - architecture
+  - efficiency
+  - inference
+  - research
+paper:
+  arxiv: "2610.24766"
+  authors:
+    - Yuxuan Zhou
+    - Junyuan Shang
+    - Tianyu Wang
+    - Chunrui Zheng
+    - Zichang Liu
+    - Wenbin Chang
+    - Shuohuan Wang
+    - Dianhai Yu
+related:
+  - ernie-5.5-flash-base

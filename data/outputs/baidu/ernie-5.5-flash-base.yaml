@@ -52,11 +52,11 @@ description: >
     (201,216) that splits numbers right to left in groups of three.</li>
   </ul>
   <p>Baidu also released FlashMask-4, an attention kernel for large head
-  dimensions on SM90 and SM100. VHA, Multi-Router and ECHO each have their own
-  arXiv paper
-  (<a href="https://arxiv.org/abs/2610.17959">2610.17959</a>,
-  <a href="https://arxiv.org/abs/2610.40577">2610.40577</a>,
-  <a href="https://arxiv.org/abs/2610.24766">2610.24766</a>).</p>
+  dimensions on SM90 and SM100. Three of the components have their own papers:
+  <a href="/outputs/baidu/virtual-head-attention">Virtual Head Attention</a>,
+  <a href="/outputs/baidu/multi-view-latent-moe">Multi-View Latent MoE</a>
+  (the source of Multi-Router) and
+  <a href="/outputs/baidu/echo-self-recursion">ECHO</a>.</p>
 
   <p>Baidu evaluated the base model against three other base models from their
   public checkpoints, with the same harness and prompts for all of them:
@@ -137,6 +137,9 @@ model:
       active_parameters: 14B
       notes: "BF16 base checkpoint"
 related:
+  - virtual-head-attention
+  - multi-view-latent-moe
+  - echo-self-recursion
   - ernie-5.1
   - ernie-5.0
   - deepseek-v4-flash

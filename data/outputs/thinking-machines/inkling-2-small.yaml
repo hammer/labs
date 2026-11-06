@@ -1,0 +1,122 @@
+name: Inkling 2 Small
+slug: inkling-2-small
+lab: thinking-machines
+type: model
+date: 2026-11-05
+flagship: true
+sources:
+  - label: Announcement
+    url: https://thinkingmachines.ai/news/inkling-2-small/
+  - label: Model card
+    url: https://thinkingmachines.ai/model-card/inkling-2-small/
+  - label: Tinker models and pricing
+    url: https://tinker-docs.thinkingmachines.ai/tinker/models/models_and_pricing/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/inkling-2-small
+description: >
+  <p>Thinking Machines' second model generation. It is a new pretraining run,
+  not a post-train of <a href="/outputs/thinking-machines/inkling-small">Inkling-Small</a>,
+  and more than twice that model's size.</p>
+  <ul>
+    <li><strong>Architecture:</strong> 594B total / 17B active MoE, 48 layers,
+    8 of 384 experts per token, hybrid local and global attention. The model
+    card gives MXFP8 and NVFP4 numerics.</li>
+    <li><strong>Input:</strong> text and images through a 292M vision encoder
+    based on Perception Encoder. Audio input, which Inkling-Small had, is
+    dropped.</li>
+    <li><strong>Context:</strong> up to 1M tokens.</li>
+  </ul>
+
+  <p>The post discloses the training recipe in unusual detail, in four
+  phases:</p>
+  <ul>
+    <li><strong>H1:</strong> 8.4T tokens of code, text and images, trained
+    natively in <strong>NVFP4</strong> in <strong>68 hours</strong> on NVIDIA
+    GB300 NVL72 racks.</li>
+    <li><strong>H2:</strong> 3.8T newer, higher-quality tokens at 512K
+    context.</li>
+    <li><strong>H3:</strong> about 320B tokens of reasoning and agent
+    trajectories at 1M context, mixed with replayed pretraining data.</li>
+    <li><strong>H4:</strong> about 34B tokens of high-quality agent
+    trajectories.</li>
+    <li><strong>RL:</strong> asynchronous, using the StableReinforce objective
+    on <a href="/outputs/thinking-machines/tinker">Tinker</a>. The main run
+    took 1,075 steps, more than 17M rollouts and 3T tokens, over 9 days on
+    2,048 GPUs, at more than 4&times;10<sup>23</sup> FLOPs. By rollouts, the
+    task mix was 38.5% coding, 17.1% tool use and 13.9% vision.</li>
+    <li><strong>Alignment:</strong> misbehaving traces were filtered in
+    midtraining, RL included a general alignment reward, and the model was
+    self-distilled on-policy from a teacher prompted with a conduct spec.</li>
+  </ul>
+  <p><strong>The post reports one incident.</strong> Midway through RL, the
+  model got around a network block by using a third-party service it could
+  reach through its search tools. The team paused the run, removed the
+  web-access environments, added synchronous tool-call monitoring, and
+  resumed.</p>
+
+  <p>Its Artificial Analysis Intelligence Index score is
+  <strong>31</strong> (AA v5.0.1). That is far above Inkling-Small's 13 and
+  the 975B <a href="/outputs/thinking-machines/inkling">Inkling</a>'s 12 on
+  v5.0. Selected self-reported results:</p>
+  <ul>
+    <li><strong>Coding:</strong> DeepSWE v1.1 72.1%, SWE-Bench Pro v2 (Hard)
+    86.3%, FrontierCode 2.0 25.4% (Muse Spark Open leads that row at
+    28.5%).</li>
+    <li><strong>Autoresearch:</strong> PostTrainBench v1.2 31.9%.</li>
+    <li><strong>Knowledge work:</strong> GDPval-AA v2.1 1630 Elo.</li>
+    <li><strong>Vision and long context:</strong> MMMU Pro 81.6%, ScreenSpot
+    Pro 83.8%, AA-LCR 83.3%, LongBench v2 70.6%.</li>
+    <li><strong>Reasoning:</strong> HLE-Diamond 28.7%, CritPt v2 (hard)
+    35.0%.</li>
+    <li><strong>Alignment:</strong> internal misbehavior rate 14.9, against
+    Inkling's 66.8.</li>
+  </ul>
+  <p>Known limitations listed in the post: verbose answers, poor tool choice in
+  skill-heavy codebases, overuse of slashes, over-cautious handling of
+  mental-health queries, and alignment scores that trail closed models such as
+  GPT-6.1 Sol.</p>
+
+  <p><strong>The weights are not out yet.</strong> At launch the model is on
+  Tinker only, for sampling, inference and fine-tuning under the Tinker Terms
+  of Use. The post promises Apache 2.0 weights "next week", after external
+  safety testing and red-teaming, and other platforms in "coming weeks".
+  Inkling-Small followed the same pattern, shipping on Tinker first and as open
+  weights two weeks later. Until the download exists, this index records the
+  model as closed.</p>
+tags:
+  - frontier
+  - moe
+  - multimodal
+  - reasoning
+  - agentic
+  - coding
+  - safety
+model:
+  open_weights: false
+  architecture: moe
+  parameters: "594B"
+  active_parameters: "17B"
+  num_experts: 384
+  top_k: 8
+  context_window: 1000000
+  license: "Tinker Terms of Use (Apache 2.0 weights promised)"
+  training_hardware: NVIDIA GB300 NVL72
+  intelligence_index: 31
+  intelligence_index_version: "AA v5.0.1"
+  benchmark_scores:
+    - benchmark: DeepSWE v1.1
+      score: "72.1%"
+    - benchmark: FrontierCode 2.0
+      score: "25.4%"
+    - benchmark: PostTrainBench v1.2
+      score: "31.9%"
+    - benchmark: MMMU Pro
+      score: "81.6%"
+    - benchmark: AA-LCR v1.1
+      score: "83.3%"
+    - benchmark: HLE-Diamond
+      score: "28.7%"
+related:
+  - inkling-small
+  - inkling
+  - tinker

@@ -1,0 +1,46 @@
+name: "Multi-View Latent MoE: Letting Every Router Shape Expert Computation"
+slug: multi-view-latent-moe
+lab: baidu
+type: paper
+date: 2026-10-29
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.40577
+  - label: ERNIE 5.5 Flash Base release post
+    url: https://ernie.baidu.com/release/ernie-5-5-flash-base/
+description: >
+  <p>A routing method for sparse MoE from Baidu's ERNIE team. It starts from a
+  measurement: when every expert is evaluated densely, a single router's
+  ranking agrees only weakly with the experts' actual usefulness, especially in
+  the middle and deep layers. The <strong>Multi-Router</strong> module sums
+  sigmoid scores from several independently initialized routers. During
+  training these routers develop clearly different preferences, so an expert
+  can be selected because one router favors it strongly or because several
+  support it. <strong>Multi-View</strong> then uses each selected expert's
+  relative scores across the routers to mix learned latent "views" into that
+  expert's input. Each expert still runs one forward pass, so the active-expert
+  count, expert FLOPs and all-to-all communication volume are unchanged.</p>
+
+  <p>On a 24-layer <strong>10B-A1B model trained on 708B tokens</strong>, the
+  full method raises the mean over nine downstream tasks by 1.18 points. The
+  Multi-Router alone adds 0.6 points and raises the rank correlation between
+  router scores and evaluated expert utility by 8.1% overall and by about 58%
+  in the worst-aligned layer. The paper's own experiments stop at 10B-A1B, but
+  Multi-Router is the routing in
+  <a href="/outputs/baidu/ernie-5.5-flash-base">ERNIE 5.5 Flash Base</a>
+  (280B-A14B, 512 experts, top-10), which is what clears the scale bar
+  here.</p>
+tags:
+  - moe
+  - architecture
+  - research
+paper:
+  arxiv: "2610.40577"
+  authors:
+    - Zelin Zhao
+    - Junyuan Shang
+    - Tianchi Ma
+    - Shuohuan Wang
+    - Dianhai Yu
+related:
+  - ernie-5.5-flash-base

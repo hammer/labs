@@ -1,0 +1,52 @@
+name: "Virtual Head Attention"
+slug: virtual-head-attention
+lab: baidu
+type: paper
+date: 2026-10-13
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2610.17959
+  - label: ERNIE 5.5 Flash Base release post
+    url: https://ernie.baidu.com/release/ernie-5-5-flash-base/
+description: >
+  <p>An attention design from Baidu's PaddlePaddle team that targets three
+  costs at once: KV-cache size, training and prefill FLOPs, and quality.
+  Their argument is that existing designs trade these against each other. GQA
+  keeps quality but caches a lot, MLA compresses the cache but loses quality,
+  and MFA compresses it but adds compute. VHA halves the number of physical
+  query heads and adds two linear operations. <strong>Q Premix</strong> is a
+  near-identity transform inside each KV group that recovers "virtual" head
+  diversity. <strong>Linear Postmix</strong> mixes features across heads
+  through a low-rank I + AB&#8868; residual. Because both are linear, they fold
+  into the query and output projections at inference, which leaves a plain
+  <strong>GQA-2</strong> model. Existing GQA kernels then run unchanged, with
+  group sizes up to 64 that use Tensor Cores fully during decoding.</p>
+
+  <p>At four scales (4K context, 50B tokens) VHA beats standard GQA by
+  0.05&ndash;0.81%. It cuts the KV cache 4&times; against GQA-8 at dense
+  scales and 2&times; against GQA-4 at the MoE scale, and cuts training and
+  prefill FLOPs 7.9% at 1.7B. On an industrial <strong>30B-A3B MoE trained on
+  500B tokens</strong>, it beats MLA by 0.70 and GQA-4 by 2.60 points on a
+  12-benchmark base-model suite. In a matched 10B-A1B comparison after
+  long-context mid-training, its average RULER score over 8K&ndash;128K is
+  84.4 against 73.0 for GQA, with two KV heads instead of four. VHA ships in
+  <a href="/outputs/baidu/ernie-5.5-flash-base">ERNIE 5.5 Flash Base</a>,
+  where it adds cross-head mixing to every attention layer. Accepted at
+  NeurIPS 2026.</p>
+tags:
+  - attention
+  - efficiency
+  - long-context
+  - research
+paper:
+  arxiv: "2610.17959"
+  authors:
+    - Xibo Ding
+    - Guoxia Wang
+    - Jinle Zeng
+    - Jiabin Yang
+    - Sirui Tao
+    - Chao Yang
+    - Dianhai Yu
+related:
+  - ernie-5.5-flash-base
