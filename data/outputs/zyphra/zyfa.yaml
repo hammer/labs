@@ -1,0 +1,93 @@
+name: "ZYFA: Speed and Accuracy of FP8 FlashAttention on AMD CDNA4"
+slug: zyfa
+lab: zyphra
+type: paper
+date: 2026-11-05
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2611.07496
+  - label: GitHub
+    url: https://github.com/Zyphra/zyfa
+description: >
+  <p>Zyphra's FP8 and BF16 causal prefill attention kernels for the AMD
+  Instinct <strong>MI355X</strong>, and an account of why FP8 attention gains
+  less than its datasheet promises. FP8 matrix instructions double peak
+  throughput over BF16, but they speed up only the two matrix multiplications.
+  The softmax between them runs on vector units that FP8 does not
+  accelerate. At 32K tokens, AMD's own AITER kernels reach 39% of FP8 peak
+  against 49% in BF16. Two more constraints are specific to this hardware.
+  Unlike Hopper and Blackwell, the MI355X does not track the completion of
+  matrix instructions in hardware, so overlapping softmax with the matrix
+  multiplications depends on instruction order. And attention is more
+  sensitive to quantization than the feed-forward layers, which is why
+  DeepSeek-V3 trained its linear layers in FP8 but kept attention in higher
+  precision.</p>
+
+  <p>ZYFA rests on three techniques:</p>
+  <ul>
+    <li><strong>No exponential:</strong> each FP8 probability is computed
+    directly from its score with a multiply-add and an integer conversion
+    instead of an exponential.</li>
+    <li><strong>Ping-pong schedule:</strong> one thread group computes its
+    softmax while another runs its matrix multiplications.</li>
+    <li><strong>Power-of-two scaling:</strong> each block of probabilities is
+    scaled up by a power of two before rounding, so fewer small values round
+    to zero, and it is normalized by the sum of the rounded values.</li>
+  </ul>
+
+  <p>Results, at sustained clocks:</p>
+  <ul>
+    <li><strong>Real activations:</strong> on attention inputs captured from
+    Mistral-7B-v0.3, Qwen3-8B and DeepSeek-V2-Lite, ZYFA runs at
+    <strong>1.16&ndash;1.76&times; AITER's throughput</strong>.</li>
+    <li><strong>Gaussian kernel-benchmark inputs at 32K:</strong>
+    1.26&ndash;1.37&times; at head dimension 128 and <strong>1.99&times;</strong>
+    for the per-head prefill form of DeepSeek-style MLA. That is 2,672 TFLOP/s
+    in FP8 (53% of peak) and 1,265 TFLOP/s in BF16 (51%).</li>
+    <li><strong>Accuracy:</strong> at head dimension 128, the numerical error
+    is within a few percent of Composable Kernel and Triton and 62&ndash;78%
+    below AITER's.</li>
+  </ul>
+
+  <p>The paper also documents several hardware findings:</p>
+  <ul>
+    <li><strong>Clock speed depends on the data:</strong> the MI355X's
+    sustained clock varies with operand values, falling from the 2.4 GHz
+    datasheet clock to 1,628 MHz under ZYFA's FP8 load. Random-input
+    benchmarks therefore do not predict throughput on real activations.</li>
+    <li><strong>AITER is unreliable:</strong> AITER's FP8 kernel sometimes
+    writes wrong outputs when a BF16 GEMM runs between launches, and two
+    passes over the same sequence sometimes gave different logits.</li>
+    <li><strong>Where FP8 error comes from:</strong> mostly from quantizing
+    the inputs rather than the probabilities, spread over most heads. Keeping
+    sensitive heads in BF16 does not help, even at 90% of heads, but a
+    Hadamard rotation of Q and K roughly halves the error at almost no
+    cost.</li>
+    <li><strong>NVIDIA comparison:</strong> it uses published numbers only,
+    since no NVIDIA GPUs were measured. FlashAttention-4 reports 71% of the
+    B200's BF16 peak.</li>
+  </ul>
+  <p>The kernels are forward-only prefill, with no backward pass. The code is
+  Apache-2.0. It follows <a href="/outputs/zyphra/expert-coupling">Expert
+  Coupling</a> (MoE all-to-all on MI300X) as Zyphra's second AMD systems paper
+  in a month; Quentin Anthony, the first author, leads model training at
+  Zyphra.</p>
+tags:
+  - attention
+  - gpu-kernels
+  - quantization
+  - infrastructure
+  - efficiency
+  - hardware
+  - research
+paper:
+  arxiv: "2611.07496"
+  authors:
+    - Quentin Anthony
+    - Ganesh Bikshandi
+    - Praneeth Medepalli
+    - Stephen Ebert
+related:
+  - expert-coupling
+  - zha
+  - zaya1
