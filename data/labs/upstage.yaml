@@ -21,7 +21,10 @@ description: >
   Upstage closed a ~&#8361;740B Series C in April&ndash;May 2026 (a &#8361;180B
   first tranche led by Saje Partners, then &#8361;560B anchored by the National
   Growth Fund with SK Networks, Woori Venture Partners, and Mirae Asset) at a
-  press-reported post-money valuation of about &#8361;2T (~$1.35B).</p>
+  press-reported post-money valuation of about &#8361;2T (~$1.35B). In November
+  2026 NVIDIA announced a planned investment in the ongoing second Series C
+  close, joining Amazon and AMD as strategic investors; the amount and stake were
+  not disclosed.</p>
 
   <p>The lab's research centers on the <strong>Solar</strong> model family, built
   around the <strong>Depth Up-Scaling (DUS)</strong> methodology &mdash; scaling
@@ -74,6 +77,10 @@ people:
   - name: Sanghoon Kim
     role: Lead Researcher (Solar, DUS)
 news:
+  - title: "NVIDIA Plans to Invest in Upstage's Ongoing Second Series C Close, Announced at the MSIT–NVIDIA AI Startup Partnership Forum; Joins Amazon and AMD as Strategic Investors, Amount and Stake Undisclosed"
+    url: https://zdnet.co.kr/view/?no=20261109173602
+    source: ZDNet Korea
+    date: 2026-11-09
   - title: "Korea Keeps the Sovereign AI Foundation Model Project but Splits Its AI Push Into Two Tracks; Next Year's Proposed ₩4.7T Goes to a Separate Frontier-AI Program, Final Two of SKT, LG and Upstage Due by February"
     url: https://www.koreajoongangdaily.com/business/korea-splits-ai-push-into-two-tracks-amid-confusion-over-sovereign-model-project/12904222
     source: Korea JoongAng Daily
