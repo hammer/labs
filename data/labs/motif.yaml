@@ -17,8 +17,13 @@ description: >
   <em>"Independent AI Foundation Model"</em> program (Feb 2026) and is
   co-developing a 300B+-parameter reasoning LLM with 17 partners including
   <a href="/labs/snu">Seoul National University</a> and
-  <a href="/labs/kaist">KAIST</a>. It raised a ~KRW 24B (~$16.6M) Series B in
-  mid-2026. Its <a href="/outputs/motif/motif-3">Motif 3</a> is the highest-scoring
+  <a href="/labs/kaist">KAIST</a>. It raised a KRW 24B (~$16.6M) Series B in
+  May 2026 from NICE Investment Partners, Nautilus Investment, Ditto Investment
+  and Forest Ventures, then in November 2026 closed a bridge round from existing
+  investors to fund <strong>Motif 4</strong> (open weights targeted for Q1 2027).
+  NVIDIA announced a planned investment in that round at the MSIT&ndash;NVIDIA AI
+  Startup Partnership Forum in Seoul. No amount or valuation has been disclosed
+  for either round. Its <a href="/outputs/motif/motif-3">Motif 3</a> is the highest-scoring
   Korean model on the Artificial Analysis Intelligence Index.</p>
 people:
   - name: Junghwan Lim
@@ -34,6 +39,10 @@ people:
       2026 as Motif was selected for Korea's state-backed sovereign-model
       contest.</p>
 news:
+  - title: "NVIDIA Plans to Invest in Motif Technologies at the MSIT–NVIDIA AI Startup Partnership Forum, Joining a Bridge Round for Motif 4 (Open Weights Targeted for Q1 2027); Amount and Valuation Undisclosed"
+    url: https://blogs.nvidia.com/blog/korean-startup-investments-msit/
+    source: NVIDIA Blog
+    date: 2026-11-09
   - title: "Motif 3 API Free Until September 29 as Motif Technologies Courts Developers After the Sovereign-Model Elimination"
     url: https://www.aitimes.com/news/articleView.html?idxno=215401
     source: AI Times
