@@ -1,0 +1,135 @@
+name: Nanbeige
+slug: nanbeige
+url: https://huggingface.co/Nanbeige
+wikipedia: https://en.wikipedia.org/wiki/Boss_Zhipin
+huggingface: https://huggingface.co/Nanbeige
+github: https://github.com/Nanbeige
+region: china
+founded: "2014"
+type: public
+parent: Kanzhun (BOSS Zhipin)
+ipo:
+  year: 2021
+  exchange: NASDAQ
+  ticker: BZ
+valuation:
+  amount: "$7.7B"
+  type: market-cap
+  ticker: "NASDAQ: BZ"
+  date: "2026-11"
+description: >
+  <p><strong>Nanbeige LLM Lab</strong> (南北阁大模型实验室, "South and North
+  Pavilion") is the large-language-model team of
+  <a href="https://en.wikipedia.org/wiki/Boss_Zhipin">BOSS Zhipin</a>, China's
+  largest online recruiting app. The app is run by <strong>Kanzhun
+  Limited</strong>, which was founded in Beijing in January 2014 by CEO Zhao
+  Peng, listed on Nasdaq (BZ) in June 2021 and added a Hong Kong listing (2076)
+  in December 2022. Kanzhun's market cap was about <strong>$7.7B</strong> in
+  November 2026. The lab's GitHub org dates from October 2023, and Kanzhun's
+  FY2023 annual report says the in-house "Nanbeige Large Model" completed
+  China's generative-AI service filing in January 2024. The team is small: 19
+  members on its HuggingFace org. Its technical reports carry the header
+  "Nanbeige LLM Lab, Boss Zhipin", with Yang Song as corresponding author. In
+  the BOSS Zhipin app, Nanbeige models run alongside DeepSeek-R1 in recruiter
+  agents, AI job search and mock interviews. Kanzhun's Q2 2026 results said it
+  is "continuing to invest firmly in our Artificial Intelligence (AI)
+  foundation model capabilities".</p>
+
+  <p>The early models were dense and trained from scratch:</p>
+  <ul>
+    <li><strong>Nanbeige-16B</strong> (late 2023): 2.5T tokens, with a 32K
+    variant. Those repositories have since been withdrawn from HuggingFace.</li>
+    <li><strong>Nanbeige2-16B-Chat</strong> (May 2024): 4.5T tokens. It placed
+    third among open models on OpenCompass's May 2024 subjective
+    leaderboard.</li>
+  </ul>
+  <p>The lab then turned to small models, open-sourced under Apache 2.0:</p>
+  <ul>
+    <li><a href="/outputs/nanbeige/nanbeige4-3b">Nanbeige4-3B</a> (October
+    2025): a 4B dense model trained on 23T tokens.</li>
+    <li><a href="/outputs/nanbeige/nanbeige4.1-3b">Nanbeige4.1-3B</a> (February
+    2026): a post-training upgrade with 256K context and deep-search agent
+    skills, with 1,193 HuggingFace likes.</li>
+    <li><a href="/outputs/nanbeige/nanbeige4.2-3b">Nanbeige4.2-3B</a> (July
+    2026): a looped transformer trained from scratch on 28T tokens. It tied for
+    first on Artificial Analysis's mobile-device benchmark set.</li>
+  </ul>
+  <p>In October 2026 it released its first large model,
+  <a href="/outputs/nanbeige/nanbeige4.3-33b">Nanbeige4.3-33B</a>, a 33B dense
+  "teacher" for distilling agentic skills into a coming Nanbeige4.3-3B. It
+  scores <strong>20 on the Artificial Analysis Intelligence Index</strong>,
+  level with Qwen3.8-27B, and drew over 1,000 HuggingFace likes in two
+  weeks.</p>
+
+  <p>Smaller artifacts:</p>
+  <ul>
+    <li>The ToolMind tool-use dataset (arXiv 2511.15718) and the ToolMind-Web-3B
+    search agent.</li>
+    <li>CoSineVerifier, a tool-augmented answer verifier for scientific
+    questions (arXiv 2512.01224).</li>
+    <li>The PACE reasoning-compression method (arXiv 2602.11639).</li>
+    <li>Evo-Bench, a benchmark of whether models can improve their own agent
+    harness (arXiv 2608.09096, with Renmin University).</li>
+    <li>Depth-Hybrid-Attention, an October 2026 repository of cross-layer
+    attention experiments. The Nanbeige4.2 card says these depth-attention
+    ideas are going into Nanbeige4.5, in training for release later in
+    2026.</li>
+  </ul>
+  <p>Nanbeige has no API on OpenRouter, and Artificial Analysis lists no API
+  provider for it. <code>nanbeige.com</code> redirects to the HuggingFace
+  org.</p>
+people:
+  - name: Yang Song
+    role: Corresponding author, Nanbeige technical reports
+    urls:
+      - label: HuggingFace
+        url: https://huggingface.co/magicsongyang
+    description: >
+      <p>Corresponding author (songyang@kanzhun.com) of the Nanbeige4-3B
+      technical report and an author on Nanbeige4.1, ToolMind, CoSineVerifier
+      and Evo-Bench. At BOSS Zhipin since at least 2019, publishing
+      person-job-fit and recruiting-recommendation research with Renmin
+      University (Wayne Xin Zhao, Ji-Rong Wen) and Peking University. No
+      public source names a lab head; he is the most likely lead on the
+      author record.</p>
+  - name: Tao Zhang
+    role: CTO and Executive Director, Kanzhun
+    formerly: IBM; Renren; Baidu; MS Beihang University
+    description: >
+      <p>Kanzhun's CTO since its founding, in charge of R&amp;D and IT
+      infrastructure according to its annual report. A Tao Zhang
+      (kylen.zhang@kanzhun.com on earlier papers) is an author on the
+      Nanbeige4, Nanbeige4.1, ToolMind and Evo-Bench reports.</p>
+  - name: Chen Yang
+    role: Researcher (first author, Nanbeige4 and Nanbeige4.1 reports)
+    urls:
+      - label: HuggingFace
+        url: https://huggingface.co/flust
+  - name: Zhao Peng
+    role: Founder, Chairman and CEO, Kanzhun
+    formerly: Zhaopin (CEO); Quickerbuy; LLB Peking University
+news:
+  - title: "Nanbeige has released Nanbeige4.3-33B, scoring 20 on the Intelligence Index"
+    url: https://artificialanalysis.ai/articles/nanbeige-has-released-nanbeige4-3-33b-scoring-20-on-the-intelligence-index
+    source: Artificial Analysis
+    date: 2026-11-05
+  - title: "BOSS 直聘旗下 Nanbeige 开源 Nanbeige4.3-33B (BOSS Zhipin's Nanbeige open-sources Nanbeige4.3-33B)"
+    url: https://www.donews.com/news/detail/1/6753392.html
+    source: DoNews
+    date: 2026-10-26
+  - title: "Kanzhun Limited Announces Unaudited Financial Results for the Second Quarter of 2026"
+    url: https://www.sec.gov/Archives/edgar/data/0001842827/000110465926100537/tm2623958d1_ex99-1.htm
+    source: Kanzhun (SEC 6-K)
+    date: 2026-08-25
+  - title: "Nanbeige4.2-3B tied for first in Artificial Analysis's mobile-device benchmark set"
+    url: https://artificialanalysis.ai/articles/mobile-phone-intelligence-inference
+    source: Artificial Analysis
+    date: 2026-08-24
+  - title: "BOSS直聘发布全年财报：2024年营收73.56亿元，同比上涨23.6% (BOSS Zhipin full-year results; Nanbeige plus DeepSeek-R1 in the app)"
+    url: https://www.xinhuanet.com/tech/20250313/44659305c6634866b150eba41169a60c/c.html
+    source: Xinhua
+    date: 2025-03-13
+tags:
+  - open-weight
+  - small-models
+  - agents

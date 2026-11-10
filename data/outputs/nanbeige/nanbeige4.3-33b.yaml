@@ -1,0 +1,95 @@
+name: Nanbeige4.3-33B
+slug: nanbeige4.3-33b
+lab: nanbeige
+type: model
+date: 2026-10-24
+flagship: true
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/Nanbeige/Nanbeige4.3-33B
+  - label: Base (HuggingFace)
+    url: https://huggingface.co/Nanbeige/Nanbeige4.3-33B-Base
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/nanbeige4-3-33b
+  - label: Artificial Analysis article
+    url: https://artificialanalysis.ai/articles/nanbeige-has-released-nanbeige4-3-33b-scoring-20-on-the-intelligence-index
+  - label: DoNews (Chinese)
+    url: https://www.donews.com/news/detail/1/6753392.html
+description: >
+  <p>Nanbeige's first large model since Nanbeige2-16B, and its first in the
+  agentic era. It is a <strong>33.1B dense model</strong> with a
+  <strong>512K-token context</strong>, released under Apache 2.0 on October
+  24, 2026. Base and instruct weights shipped together, and FP8, INT8 and INT4
+  checkpoints followed on October 31. The architecture is plain full-attention
+  Llama with GQA: 52 layers, hidden size 7168, 56 query heads and 8 KV heads.
+  It does not use the looping of <a href="/outputs/nanbeige/nanbeige4.2-3b">Nanbeige4.2-3B</a>.</p>
+
+  <p>The card calls it the "flagship teacher model for the Nanbeige4.3 series".
+  It is meant first to carry agentic coding and "cowork" skills, and then to
+  distill them into a coming Nanbeige4.3-3B.</p>
+
+  <p>No technical report has been published, and the cards give neither
+  training tokens nor compute. The released base model and the lab's own
+  tokenizer family (a 166,912-token vocabulary) indicate in-house
+  pretraining. The cards compare the base model only with
+  <a href="/outputs/google/gemma-4">Gemma4-31B-Base</a>, which it beats on
+  MMLU-Pro (66.9 against 59.3), GPQA (62.0 against 41.5) and CMMLU (86.8
+  against 76.9).</p>
+
+  <p>The instruct model was evaluated at maximum thinking effort with the same
+  harness for every model. Nanbeige's self-reported results lead
+  <a href="/outputs/alibaba/qwen3.8-27b">Qwen3.8-27B</a>,
+  <a href="/outputs/meta/muse-glimmer">Muse Glimmer</a> and Gemma4-31B on most
+  rows:</p>
+  <ul>
+    <li><strong>Terminal-Bench:</strong> 80.9 on version 2.1 and 23.8 on 4.0
+    (Qwen3.8-27B 6.3).</li>
+    <li><strong>DeepSWE:</strong> 65.5 against 42.5.</li>
+    <li><strong>AutomationBench:</strong> 54.2 against 38.3.</li>
+    <li><strong>AIME 2026:</strong> 95.2.</li>
+  </ul>
+  <p>It trails Qwen3.8-27B on SWE-bench Pro (60.3 against 61.7) and GDPval
+  (84.8 against 86.4).</p>
+
+  <p><strong>Artificial Analysis scores it 20 on Intelligence Index
+  v5.0.1</strong>, level with Qwen3.8-27B (xhigh), and 30% on Terminal-Bench
+  4.0. Its output is verbose, at 158K tokens per index task. AA lists no
+  public API provider. The instruct repository passed 1,000 HuggingFace likes
+  within two weeks of release.</p>
+tags:
+  - agents
+  - coding
+  - reasoning
+  - long-context
+  - open-weight
+model:
+  open_weights: true
+  architecture: dense
+  parameters: 33B
+  context_window: 524288
+  license: Apache 2.0
+  intelligence_index: 20
+  intelligence_index_version: "AA v5.0.1"
+  variants:
+    - name: Nanbeige4.3-33B-Base
+      notes: "Base model, 128K context"
+    - name: Nanbeige4.3-33B
+      notes: "Instruct/reasoning model, 512K context; FP8, INT8, INT4 checkpoints (Oct 31)"
+  benchmark_scores:
+    - benchmark: Terminal-Bench 4.0
+      score: "23.8"
+    - benchmark: SWE-bench Pro
+      score: "60.3"
+    - benchmark: GDPval
+      score: "84.8"
+    - benchmark: GPQA Diamond
+      score: "89.5"
+    - benchmark: AIME 2026
+      score: "95.2"
+    - benchmark: AA-LCR
+      score: "84.0"
+related:
+  - nanbeige4.2-3b
+  - qwen3.8-27b
+  - muse-glimmer
+  - gemma-4

@@ -1,0 +1,79 @@
+name: Nanbeige4-3B
+slug: nanbeige4-3b
+lab: nanbeige
+type: model
+date: 2025-10-22
+flagship: true
+sources:
+  - label: Technical report (arXiv)
+    url: https://arxiv.org/abs/2512.06266
+  - label: Base (HuggingFace)
+    url: https://huggingface.co/Nanbeige/Nanbeige4-3B-Base
+  - label: Thinking-2511 (HuggingFace)
+    url: https://huggingface.co/Nanbeige/Nanbeige4-3B-Thinking-2511
+  - label: Thinking-2510 (HuggingFace)
+    url: https://huggingface.co/Nanbeige/Nanbeige4-3B-Thinking-2510
+description: >
+  <p>Nanbeige's first small-model generation and the start of its open
+  Apache 2.0 line. The report's title is "Exploring the Frontier of Small
+  Language Models". It is a <strong>dense, Llama-style model trained from
+  scratch</strong>: 32 layers, hidden size 2560, 20 query heads and 4 KV heads
+  (GQA). It has a 166K-token vocabulary and 3.93B parameters including
+  embeddings.</p>
+
+  <p>Pretraining covers a <strong>23T-token</strong> corpus. It uses a
+  fine-grained warmup-stable-decay (FG-WSD) schedule:</p>
+  <ul>
+    <li>0.1T warmup;</li>
+    <li>12.4T and 6.5T stable stages;</li>
+    <li>4T of decay and long-context training, extending the context to 64K
+    through ABF.</li>
+  </ul>
+  <p>Post-training uses more than 30 million instructions. It then distills
+  from the lab's larger "flagship reasoning model" with Dual Preference
+  Distillation (DPD), followed by RL.</p>
+
+  <p>Two reasoning checkpoints were released:</p>
+  <ul>
+    <li><strong>Thinking-2510</strong> (October 22, 2025): self-reported AIME24
+    87.5, AIME25 81.7 and GPQA 77.2.</li>
+    <li><strong>Thinking-2511</strong> (November 20): self-reported GPQA 82.2,
+    Arena-Hard-v2 60.0 and BFCL-V4 53.8.</li>
+  </ul>
+  <p>The base weights followed on October 31, and the report on December
+  6. Its base model was later reused for
+  <a href="/outputs/nanbeige/nanbeige4.1-3b">Nanbeige4.1-3B</a>, and
+  Thinking-2511 underlies the ToolMind-Web-3B search agent.</p>
+tags:
+  - small-models
+  - reasoning
+  - open-weight
+model:
+  open_weights: true
+  architecture: dense
+  parameters: 4B
+  training_tokens: 23T
+  context_window: 65536
+  license: Apache 2.0
+  variants:
+    - name: Nanbeige4-3B-Base
+      notes: "Base model, 32K context"
+    - name: Nanbeige4-3B-Thinking-2510
+      notes: "First reasoning checkpoint"
+    - name: Nanbeige4-3B-Thinking-2511
+      notes: "Updated reasoning checkpoint, 64K context"
+  benchmark_scores:
+    - benchmark: GPQA
+      score: "82.2"
+      mode: Thinking-2511
+    - benchmark: Arena-Hard-v2
+      score: "60.0"
+      mode: Thinking-2511
+    - benchmark: AIME 2025
+      score: "81.7"
+      mode: Thinking-2510
+paper:
+  arxiv: "2512.06266"
+related:
+  - nanbeige4.1-3b
+  - nanbeige4.2-3b

@@ -1,0 +1,90 @@
+name: Nanbeige4.2-3B
+slug: nanbeige4.2-3b
+lab: nanbeige
+type: model
+date: 2026-07-21
+flagship: true
+sources:
+  - label: Technical report (arXiv)
+    url: https://arxiv.org/abs/2607.22083
+  - label: HuggingFace
+    url: https://huggingface.co/Nanbeige/Nanbeige4.2-3B
+  - label: Base (HuggingFace)
+    url: https://huggingface.co/Nanbeige/Nanbeige4.2-3B-Base
+  - label: DSpark draft model (HuggingFace)
+    url: https://huggingface.co/Nanbeige/Nanbeige4.2-3B-DSpark
+  - label: Artificial Analysis mobile-device article
+    url: https://artificialanalysis.ai/articles/mobile-phone-intelligence-inference
+description: >
+  <p>A new base <strong>trained from scratch on 28T tokens</strong> as a
+  <strong>looped transformer</strong>. The report is titled "Unlocking Agentic
+  Capabilities in a Compact Model". Its 22 physical layers run twice per
+  forward pass, giving 44 effective layers, with hidden size 3072, 48 query
+  heads and 8 KV heads. The model has 4.17B parameters in total, or 3B
+  without embeddings. The report says it chose looping from scratch over
+  upcycling an existing model, and a full two-pass loop over sharing the KV
+  cache across loops. The instruct model has a 256K context.</p>
+
+  <p>Self-reported results:</p>
+  <ul>
+    <li><strong>Reasoning:</strong> GPQA-Diamond 87.4 and HMMT Feb 2026
+    82.8.</li>
+    <li><strong>Agentic coding:</strong> SWE-bench Verified 63.6, SWE-bench Pro
+    46.9 and Terminal-Bench 2.0 44.1.</li>
+    <li><strong>Other:</strong> GDPval rubrics 74.3 and AA-LCR 58.7.</li>
+  </ul>
+  <p>Artificial Analysis's August 2026 study of models that fit on a phone
+  scored it <strong>63 on its mobile-device benchmark set</strong> at 16K
+  context, tied for first. That set is separate from the Intelligence
+  Index.</p>
+
+  <p>The release added:</p>
+  <ul>
+    <li>FP8 and GPTQ-Int8 checkpoints.</li>
+    <li>Nanbeige forks of vLLM, SGLang, llama.cpp and Ollama to serve the
+    looped architecture.</li>
+    <li><strong>DSpark</strong> (August 31): an 848M speculative-decoding draft
+    model that reads hidden states from five target layers and drafts seven
+    tokens at a time.</li>
+  </ul>
+  <p>The card says its modeling code already contains LoopSplit, mHC with
+  depth attention and concatenated n-gram embeddings. These are features
+  meant for <strong>Nanbeige4.5</strong>, which was in training for release
+  later in 2026.</p>
+tags:
+  - small-models
+  - looped-transformer
+  - agents
+  - coding
+  - open-weight
+model:
+  open_weights: true
+  architecture: dense
+  parameters: 4B
+  training_tokens: 28T
+  context_window: 262144
+  license: Apache 2.0
+  variants:
+    - name: Nanbeige4.2-3B-Base
+      notes: "Base model, 128K context"
+    - name: Nanbeige4.2-3B
+      notes: "Instruct/reasoning model, 256K context; FP8 and GPTQ-Int8 checkpoints"
+    - name: Nanbeige4.2-3B-DSpark
+      notes: "848M speculative-decoding draft model, 7-token blocks (Aug 31)"
+  benchmark_scores:
+    - benchmark: GPQA Diamond
+      score: "87.4"
+    - benchmark: SWE-bench Verified
+      score: "63.6"
+    - benchmark: SWE-bench Pro
+      score: "46.9"
+    - benchmark: Terminal-Bench 2.0
+      score: "44.1"
+    - benchmark: AA mobile-device benchmark set (16K)
+      score: "63"
+paper:
+  arxiv: "2607.22083"
+related:
+  - nanbeige4-3b
+  - nanbeige4.1-3b
+  - nanbeige4.3-33b

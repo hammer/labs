@@ -1,0 +1,60 @@
+name: Nanbeige4.1-3B
+slug: nanbeige4.1-3b
+lab: nanbeige
+type: model
+date: 2026-02-10
+sources:
+  - label: Technical report (arXiv)
+    url: https://arxiv.org/abs/2602.13367
+  - label: HuggingFace
+    url: https://huggingface.co/Nanbeige/Nanbeige4.1-3B
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/nanbeige4-1-3b
+description: >
+  <p>A post-training upgrade of <a href="/outputs/nanbeige/nanbeige4-3b">Nanbeige4-3B</a>.
+  The report title is "A Small General Model that Reasons, Aligns, and Acts".
+  There is no new pretraining: the model is initialized from
+  Nanbeige4-3B-Base. SFT extends the context from 64K to
+  <strong>256K</strong>, and the post-training adds alignment and agentic
+  skills to the reasoning. The report says it can sustain deep-search
+  sessions of <strong>up to 600 tool-call turns</strong>. It became the lab's
+  breakout release, with 1,193 HuggingFace likes.</p>
+
+  <p>Self-reported results:</p>
+  <ul>
+    <li><strong>Reasoning:</strong> GPQA 83.8, AIME 2026 I 87.4,
+    LiveCodeBench-V6 76.9 and Humanity's Last Exam 12.6.</li>
+    <li><strong>General and tool use:</strong> Arena-Hard-v2 73.2, BFCL-V4 56.5
+    and &tau;&sup2;-Bench 48.6.</li>
+    <li><strong>Deep search:</strong> xBench-DeepSearch-2505 75, GAIA (text)
+    69.9 and BrowseComp 19.1.</li>
+  </ul>
+  <p>Artificial Analysis lists the model but shows no Intelligence Index v5
+  score for it.</p>
+tags:
+  - small-models
+  - reasoning
+  - agents
+  - open-weight
+model:
+  open_weights: true
+  architecture: dense
+  parameters: 4B
+  context_window: 262144
+  license: Apache 2.0
+  benchmark_scores:
+    - benchmark: GPQA
+      score: "83.8"
+    - benchmark: LiveCodeBench v6
+      score: "76.9"
+    - benchmark: Arena-Hard-v2
+      score: "73.2"
+    - benchmark: xBench-DeepSearch-2505
+      score: "75"
+    - benchmark: BrowseComp
+      score: "19.1"
+paper:
+  arxiv: "2602.13367"
+related:
+  - nanbeige4-3b
+  - nanbeige4.2-3b
