@@ -11,6 +11,14 @@ sources:
     url: https://longcat.chat/platform/docs/
   - label: LongCat-2.5 pricing
     url: https://longcat.chat/platform/docs/pricing/longcat-2.5
+  - label: HuggingFace
+    url: https://huggingface.co/meituan-longcat/LongCat-2.5
+  - label: HuggingFace (W4A4)
+    url: https://huggingface.co/meituan-longcat/LongCat-2.5-W4A4
+  - label: Tech blog
+    url: https://longcat.ai/blog/longcat-2.5/
+  - label: SGLang-FluentLLM (NPU deployment)
+    url: https://github.com/meituan-longcat/SGLang-FluentLLM/blob/longcat-2.5-npu/npu_test/ReadMe.md
 description: >
   <p>The successor to <a href="/outputs/meituan/longcat-2.0">LongCat-2.0</a>,
   released as an API model in two steps. Meituan's LongCat API Platform change
@@ -29,24 +37,66 @@ description: >
   <p>The platform documents a <strong>1M-token context window</strong> with a
   <strong>256K-token maximum output</strong>, and LongCat-2.5 is now the only
   model on the platform. Limited-time pricing is $0.30 per 1M uncached input
-  tokens, $0.006 cached and $1.20 output (¥2 / ¥0.04 / ¥8). Meituan's own pages
-  give <strong>no parameter count, architecture, training details or
-  benchmark scores</strong>. Chinese press coverage of the September Preview
-  (IT之家) reported that it kept LongCat-2.0's 1.6T-total / ~48B-active MoE
-  shape; that figure is not stated on any Meituan page this entry could read, so
-  it is not recorded in the structured fields, and whether 2.5 is a
-  continued-training checkpoint of 2.0 or a new pretrain is undisclosed. At
-  filing there are no weights in the <code>meituan-longcat</code> HuggingFace
-  org or GitHub org (2.0's MIT weights followed its launch by five days), no
-  technical report, and no Artificial Analysis or OpenRouter listing.</p>
+  tokens, $0.006 cached and $1.20 output (&yen;2 / &yen;0.04 / &yen;8).</p>
+
+  <p><strong>Open weights followed on 2026-11-04</strong>, two days after the
+  API release, under the <strong>MIT license</strong> on HuggingFace, with a
+  separate W4A4 checkpoint. The model card confirms the shape the Chinese press
+  reported for the Preview: a native multimodal MoE with <strong>1.6T total and
+  about 48B active parameters</strong>, "building on LongCat-2.0". Its
+  <code>config.json</code> gives 38 layers at hidden size 8192, MLA attention
+  with a sparse top-2048 indexer, 768 routed experts at top-12 plus 128
+  identity "zero" experts, and a 160K vocabulary. The card does not say whether
+  2.5 continues 2.0's pretraining or how many tokens were added. It describes
+  the training at a high level:</p>
+  <ul>
+    <li><strong>Vision:</strong> native-resolution visual features are
+    discretized into tokens and aligned with text in a shared space, following
+    <a href="/outputs/meituan/longcat-next">LongCat-Next</a>.</li>
+    <li><strong>Post-training:</strong> long-horizon agentic RL on real
+    engineering tasks and reproduced agent failures, plus multi-teacher
+    full-vocabulary KL distillation from agent, reasoning and interaction
+    teachers.</li>
+    <li><strong>Infrastructure:</strong> trained and served on "domestic AI
+    accelerators". Supernode-aware parallelism gave 86% higher per-device
+    throughput than a DDP baseline in long-sequence SFT, and training and
+    inference produce bitwise-identical token log-probabilities.</li>
+    <li><strong>Quantization:</strong> W4A4 on expert weights and activations
+    with FlatQuant-style learned transforms. Against W8A8 it reports 43.3%
+    higher prefill and 42.77% higher decode throughput, and W4A4KV8 gives 92%
+    higher decode throughput than W8A8KV16. Deployment instructions target NPUs
+    through Meituan's SGLang-FluentLLM fork.</li>
+  </ul>
+  <p>Self-reported results, with thinking on: Terminal Bench v2.1 88.4,
+  Terminal Bench v4.0 38.5 (2.0: 3.0), DeepSWE v1.1 64.6, BrowseComp 91.9, HLE
+  with tools 63.1, MCP Atlas 83.1, PaperBench 82.1, GDPval-AA rubrics 84.8 and
+  Vision2Web 78.6. In Meituan's table it trails Claude Opus 5 on most coding
+  rows (Terminal Bench v4.0 53.9, DeepSWE 68.8) and leads GLM-5.3 on
+  several agent rows. Unstarred scores are in-house runs that Meituan calls
+  "indicative only". There is no technical report yet.</p>
 tags:
   - frontier
   - multimodal
   - agentic
   - coding
 model:
-  open_weights: false
+  open_weights: true
+  architecture: moe
+  parameters: 1.6T
+  active_parameters: 48B
+  num_experts: 768
+  top_k: 12
   context_window: 1000000
-  license: Proprietary (API only at filing)
+  license: MIT
+  variants:
+    - name: LongCat-2.5
+      parameters: 1.6T
+      active_parameters: 48B
+      notes: "Full-precision weights"
+    - name: LongCat-2.5-W4A4
+      parameters: 1.6T
+      active_parameters: 48B
+      notes: "W4A4 expert quantization for INT4 on NPUs"
 related:
   - longcat-2.0
+  - longcat-next

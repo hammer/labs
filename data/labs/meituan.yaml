@@ -65,6 +65,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Xiaoming_Wei1
 news:
+  - title: "Meituan Open-Sources LongCat-2.5 Weights Under MIT: 1.6T-Total / ~48B-Active Native Multimodal MoE, Plus a W4A4 Checkpoint for INT4 on Domestic Accelerators"
+    url: https://huggingface.co/meituan-longcat/LongCat-2.5
+    source: HuggingFace
+    date: 2026-11-04
   - title: "Meituan Makes LongCat-2.5 Generally Available on the LongCat API: Native Multimodal Agentic Model, 1M Context"
     url: https://longcat.chat/platform/docs/ChangeLog.html
     source: Meituan LongCat
