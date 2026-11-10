@@ -15,13 +15,32 @@ sources:
     url: https://github.com/LG-AI-EXAONE/K-EXAONE-2.0
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/k-exaone-2-0-0803
+  - label: "K-EXAONE 2.5 free API (Digital Today, 2026-11-09)"
+    url: https://www.digitaltoday.co.kr/en/view/122771/lg-ai-research-opens-k-exaone-2-5-api-free-says-performance-up-70-percent
+  - label: "K-EXAONE 2.5 (NVIDIA blog)"
+    url: https://blogs.nvidia.com/blog/korea-secure-agentic-ai/
 description: >
   <p><strong>Korea's largest open-weights model</strong>: a 750B-total /
   37B-active MoE <strong>upcycled from K-EXAONE 236B</strong>, covering 10
   languages under Apache 2.0 &mdash; Phase 2 of the government's Sovereign
   AI project. Claims a 70.1 average over 24 benchmarks and 94.4 on
   OpenAI-MRCR; ships FP8, NVFP4, and "DSpark" speculative-decoding
-  variants. Tech report is a PDF in the HF repo (no arXiv yet).</p>
+  variants. The tech report shipped as a PDF in the HF repo and was later
+  posted to arXiv (2608.04505).</p>
+
+  <p><strong>K-EXAONE 2.5</strong> (9 November 2026, announced at NVIDIA AI
+  Day Seoul) is described by LG as "a technology verification model that
+  applies additional post-training to K-EXAONE 2.0", used to test the
+  post-training methods planned for the third-stage sovereign model, which LG
+  aims to complete as K-EXAONE 3.0 in January 2027. It is served free to
+  anyone through LG's EXAONE API platform; no weights, parameter count or
+  model card have been published. NVIDIA's post says it was developed using
+  Nemotron datasets including Nemotron-Personas-Korea. LG's internal analysis
+  claims a gain of more than 70% over the August model across 24 combined
+  metrics. Self-reported scores against DeepSeek V4.1 Flash and GLM 5.3 Max:
+  AutomationBench 74.6 (74.9 / 71.6), Claw-Eval 77.3 (75.8 / 77.6),
+  BrowseComp 78.0 (75.8 / 79.0), SWE-Bench Pro 59.2 (58.4 / 64.0). Artificial
+  Analysis does not list it yet.</p>
 tags:
   - frontier
   - moe
@@ -45,6 +64,9 @@ model:
   openness_index: 44.4
   openness_index_version: "AA Openness Index v1.0"
   license: Apache 2.0
+  variants:
+    - name: K-EXAONE 2.5
+      notes: "API-only post-training update of K-EXAONE 2.0 (2026-11-09); no weights, size undisclosed"
 paper:
   arxiv: "2608.04505"
 related:

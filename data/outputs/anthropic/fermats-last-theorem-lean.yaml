@@ -11,6 +11,8 @@ sources:
     url: https://www-cdn.anthropic.com/9e431dff043da6538d99d6c2d231b670aa3da263.pdf
   - label: GitHub (Lean repository)
     url: https://github.com/anthropics/fermats-last-theorem
+  - label: Claude Fable 5.2 announcement (30-hour rerun)
+    url: https://www.anthropic.com/claude-fable-and-mythos-5-2
 description: >
   <p>The first end-to-end machine-checked proof of Fermat's Last Theorem.
   An internal Anthropic research model "roughly comparable to
@@ -30,6 +32,20 @@ description: >
   non-boilerplate lines are residue from failed attempts, and that early
   agent collaboration degraded before Prove2Me was adopted. Repository and
   17-page report released September 4 (1,084 stars in a week).</p>
+
+  <p><strong>November 2026 rerun with Claude Fable 5.2.</strong> At the
+  <a href="/outputs/anthropic/claude-fable-5.2">Claude Fable 5.2</a> launch
+  (November 9) Anthropic reported that a team of about 1,000 Fable 5.2 agents
+  fully formalized the theorem in <strong>30 hours</strong> with minimal human
+  intervention, against eleven days for the first run. It started from
+  minimal prompts and a list of intermediate theorem statements used to score
+  progress, with no mathematical references, and the system card says it built
+  on definitions and smaller results from the earlier formalization. Anthropic
+  says the run used one-third as many action tokens and produced a proof seven
+  times shorter. Claude Opus 5.5 in the same 1,000-agent setup completed only
+  26% of the formalization in 18 hours and made little further progress by
+  30. Both comparisons are single runs per model, and the figures are
+  self-reported.</p>
 tags:
   - math
   - agents
@@ -39,4 +55,5 @@ paper:
   code_url: https://github.com/anthropics/fermats-last-theorem
 related:
   - claude-fable-5.1
+  - claude-fable-5.2
   - claude-code

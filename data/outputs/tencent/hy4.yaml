@@ -5,6 +5,8 @@ type: model
 date: 2026-11-04
 flagship: true
 sources:
+  - label: Announcement (Tencent)
+    url: https://www.tencent.com/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/
   - label: Bloomberg
     url: https://www.bloomberg.com/news/articles/2026-11-04/tencent-declares-latest-ai-model-ranks-among-china-s-best
   - label: Tencent Technology report (via ChainCatcher)
@@ -13,6 +15,8 @@ sources:
     url: https://finance.biggo.com/news/8735235c-68bf-45f8-9ba8-530eb8847d6a
   - label: OpenRouter
     url: https://openrouter.ai/tencent/hy4
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/tencent-hy4
 description: >
   <p>General release of Tencent Hy Team's fourth-generation flagship,
   shipped on November 4, ten weeks after the open-weight
@@ -51,9 +55,14 @@ description: >
   APIs. List prices are unchanged from the preview at &yen;6/&yen;18 per M
   input/output tokens (&yen;0.3 for cache hits), with TokenHub at 50% off
   through December 31. <strong>The weights are not yet released</strong>.
-  Tencent says they "will be open-sourced soon" but gives no date. A cheaper
-  <strong>Hy4 flash</strong> is also "coming soon". Hy4 is not yet scored on
-  the Artificial Analysis Intelligence Index as of 2026-11-04.</p>
+  Tencent says they "will be open-sourced soon" but gives no date; its English
+  announcement says it "plans to release model weights and system cards in the
+  coming days". As of 2026-11-10 the <code>tencent</code> HuggingFace org holds
+  no Hy4 repository beyond the preview. A cheaper <strong>Hy4 flash</strong>
+  is "scheduled for release soon" and had not shipped as of the same date. Artificial Analysis has since
+  scored it <strong>35</strong> on the Intelligence Index (AA v5.0.1), just
+  above <a href="/outputs/thinking-machines/inkling-2-small">Inkling 2
+  Small</a>'s 31.</p>
 tags:
   - moe
   - frontier
@@ -65,6 +74,8 @@ model:
   open_weights: false
   architecture: moe
   parameters: 770B
+  intelligence_index: 35
+  intelligence_index_version: "AA v5.0.1"
 related:
   - hy4-preview
   - hy3

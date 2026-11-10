@@ -13,6 +13,8 @@ sources:
     url: https://arxiv.org/abs/2606.13392
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/minimax-m3
+  - label: MaxProof post (MiniMax blog)
+    url: https://www.minimax.io/blog/minimax-maxproof-math-proof-evolution
 description: >
   <p>MiniMax's <strong>natively multimodal frontier MoE</strong> (text + image
   + video → text): ~428B total / ~23B active, 128 experts (top-4 + 1 shared,
@@ -28,6 +30,22 @@ description: >
   benchmarks: SWE-Bench Pro 59.0, Terminal-Bench 2.1 66.0, SWE-fficiency 34.8,
   KernelBench Hard 28.8, MCP-Atlas 74.2. Artificial Analysis lists it on the
   <strong>Agentic Index at 59.1</strong> and now scores it <strong>19 on the Intelligence Index v5.0</strong> (29 on v4.3.2).</p>
+
+  <p><strong>Proof training (MaxProof).</strong> A June 9, 2026 MiniMax post
+  describes how M3's olympiad-proof ability was built. Three expert models
+  were trained and merged into the final M3: a Proof Expert from long-horizon
+  RL whose reward comes mainly from <strong>generative verifiers</strong>
+  (external frontier models at this stage, combined pessimistically by
+  taking the lower bound across verifiers), a Verifier Expert aligned by RL
+  on error-finding, and a Fixed Expert fine-tuned by rejection sampling to
+  repair proofs from error diagnoses. At inference, <strong>MaxProof</strong>
+  is an evolutionary test-time-scaling loop of generate, verify, refine and
+  self-pick, with which MiniMax reports M3 cleared the human gold-medal
+  threshold on IMO 2025 and USAMO 2026. The post also documents a
+  reward-hacking failure: against an independent oracle scorer, the share of
+  high-reward but wrong proofs rose from about 2.9% to 8.0% during training,
+  while proof length nearly tripled and "Step N"/"Verification" templates
+  converged to 70&ndash;80% of samples.</p>
 tags:
   - frontier
   - open-weight

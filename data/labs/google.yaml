@@ -98,6 +98,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Koray_Kavukcuoglu1
 news:
+  - title: "Google Adds TPU 8tx (Confidential Inference) and TPU 8i Max (Two 8i Chips per Package, Double the Compute, SRAM and HBM Bandwidth), Its Third and Fourth TPU Systems of 2026"
+    url: https://cloud.google.com/blog/topics/ai-infrastructure/tpu-8tx-and-tpu-8i-max
+    source: Google Cloud
+    date: 2026-11-09
   - title: "Google Announces Gemini 4 Carbon: #1 on AA Intelligence Index v5.0 (59), SOTA SEC-bench Pro 88.2% and ExploitGym 54.8%, Same $2/$10 Introductory Pricing, Cyber Defenders First via Fairwind"
     url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/
     source: Google

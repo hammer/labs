@@ -74,6 +74,14 @@ people:
     role: VP, Head of GenAI
     formerly: Apple (16 years)
 news:
+  - title: "Meta Introduces Muse Ember, Its Smallest and Cheapest Muse Model and the First Trained Using Muse Wonder Full: 1M Context, $0.10/$0.50 per M Tokens, AA Intelligence Index 36 at $0.14 per Task"
+    url: https://research.meta.ai/blog/muse-ember
+    source: Meta
+    date: 2026-11-09
+  - title: "Meta Seeks to Raise $20B-$25B in a Bond Sale (Two-Thirds Dollars, One-Third Euros) as AI Spending Jumps; S&P Revises Outlook"
+    url: https://www.cnbc.com/2026/11/03/meta-bond-sale-ai-funding.html
+    source: CNBC
+    date: 2026-11-03
   - title: "Meta Prices $37.5B Equity Raise ($25B Common at $625/Share Plus $12.5B Mandatory Convertible Preferred); NVIDIA Commits $3B and Expands Muse Training and Inference Collaboration"
     url: https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Announces-Pricing-of-Offering-of-Depositary-Shares-Representing-Series-A-Mandatory-Convertible-Preferred-Stock-and-Offering-of-Class-A-Common-Stock-in-Connection-with-Forward-Sale-Agreements/default.aspx
     source: Meta

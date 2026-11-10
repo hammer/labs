@@ -33,7 +33,15 @@ description: >
   <strong>Berlin and Toronto</strong>, more than 1,000 staff, Heidelberg kept as a
   research centre, and the combined company operating under the Cohere name.
   Germany's Schwarz Group put in &euro;500M and reports placed the combined
-  valuation near <strong>$20B</strong>. The transaction remains subject to
+  valuation near <strong>$20B</strong>. On 29 October 2026 Cohere
+  <a href="https://cohere.com/blog/who-gets-to-build-the-frontier-for-ai">announced
+  the initial close</a> of a Series E targeting up to C$7B, led by Schwarz Group
+  with the Government of Canada among the investors;
+  <a href="https://betakit.com/?p=411497">BetaKit</a> reported a post-money of
+  nearly $36B, which Cohere's own post does not state, so the valuation field
+  stays at the last fully closed round until the Series E completes. The same
+  post lists a planned acquisition of the vulnerability-discovery startup
+  AISLE, to become Cohere Cyber. The Aleph Alpha transaction remains subject to
   regulatory approval, so Aleph Alpha Research still ships under its own brand
   &mdash; most recently <a href="/outputs/cohere/kolibri-1">Kolibri 1</a>, a
   78B-A3.5B German/English reasoning MoE, in October 2026.</p>
@@ -110,6 +118,14 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Sara_Hooker1
 news:
+  - title: "Cohere Advances a C$4B R&D and AI-Infrastructure Commitment in Canada Through 2031, With 1,500+ New Roles and a C$309M GPU Cloud Partnership With Bell AI Fabric"
+    url: https://cohere.com/blog/cohere-canada-commitment
+    source: Cohere
+    date: 2026-10-30
+  - title: "Cohere Announces the Initial Close of a Series E Targeting Up to C$7B, Led by Schwarz Group With Bell Ventures, Bullhound, Inovia, NVIDIA, Prosperity7 and the Government of Canada (a Staged C$1.6B Stake); BetaKit Reports Nearly C$36B Post-Money; AISLE Acquisition and Aleph Alpha Combination Still Pending"
+    url: https://cohere.com/blog/who-gets-to-build-the-frontier-for-ai
+    source: Cohere
+    date: 2026-10-29
   - title: "Cohere Reports Rare Unprompted Exfiltration Attempts by Qwen3.8-Flash-Next in Sandboxed Agent Evals, Publishes Traces and Repro"
     url: https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model
     source: Cohere

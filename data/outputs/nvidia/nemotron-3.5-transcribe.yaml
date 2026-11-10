@@ -1,0 +1,74 @@
+name: Nemotron 3.5 Transcribe
+slug: nemotron-3.5-transcribe
+lab: nvidia
+type: model
+date: 2026-10-28
+sources:
+  - label: Project page
+    url: https://research.nvidia.com/labs/nemotron/NVIDIA-Nemotron-3.5-Transcribe/
+  - label: Technical report (PDF)
+    url: https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Transcribe-Technical-Report.pdf
+  - label: HuggingFace
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B
+  - label: Granary-v2 (training data)
+    url: https://huggingface.co/datasets/nvidia/Granary-v2
+description: >
+  <p>NVIDIA's open-weight speech-augmented language model (SALM) in the
+  Nemotron 3.5 line, released October 28, 2026 on HuggingFace, NGC,
+  build.nvidia.com and NeMo Speech. It joins an audio front end to the
+  <a href="/outputs/nvidia/nemotron-3.5-lightning">Nemotron 3.5 Lightning
+  30B-A3B</a> hybrid Mamba-2/Transformer MoE: a "Parallel Expert Encoder"
+  made of a 600M-parameter Transformer ASR encoder and the ~99M-parameter
+  Nemotron-3-Diarization (Sortformer) speaker encoder, plus a CTC timestamp
+  head. The card gives <strong>34B total and 4.3B active parameters</strong>
+  including the audio encoder (about 3.5B active in the language backbone and
+  about 800M in the joint audio encoder), a <strong>65,536-token
+  context</strong>, recordings up to one hour, and <strong>40
+  languages</strong>. It is a post-train of Lightning, not a new pretraining
+  run: one SFT stage followed by "a short reinforcement learning stage".</p>
+
+  <p>One model covers verbatim and written-form transcription, contextual
+  transcription with term hints, speaker-attributed transcription, speech
+  translation, timestamps, language ID and English audio question answering.
+  Training used about <strong>1.72M unique audio hours</strong> (6.53M with
+  repeated exposure) and 5.6B text tokens, much of it from the companion
+  <strong>Granary-v2</strong> multilingual speech dataset. Self-reported
+  results, captured October 12, 2026: mean WER <strong>4.71</strong> on the 9
+  English Open ASR Leaderboard sets (Qwen3-ASR-1.7B 4.94), 4.62 on the
+  7-language multilingual leaderboard (Qwen3-ASR-1.7B 6.49), 10.98 long-form
+  (Parakeet-TDT-0.6B-v3 13.37), and mean cpWER 15.80 on full-session
+  multi-speaker meetings (AMI, CALLHOME, Mixer 6, NOTSOFAR-1; DiCoW v3.3 +
+  DiariZen 16.83).</p>
+
+  <p>Serving uses joint multi-token prediction (two trained depths, up to eight
+  speculative tokens) or a separate DFlash2 block-diffusion drafter. NVIDIA
+  reports up to 2,238 seconds of audio transcribed per second on one RTX PRO
+  6000 Blackwell (NVFP4 with DFlash2) in its NIM, and notes those serving
+  optimizations are not yet in the open-source release. Weights ship in BF16,
+  FP8 and NVFP4 under <strong>OpenMDW-1.1</strong>.</p>
+tags:
+  - speech
+  - audio
+  - multimodal
+  - open-weight
+  - moe
+model:
+  open_weights: true
+  architecture: moe
+  base_model: nemotron-3.5-lightning
+  context_window: 65536
+  license: OpenMDW-1.1
+  benchmark_scores:
+    - benchmark: Open ASR Leaderboard (English, mean WER)
+      score: "4.71"
+    - benchmark: Multilingual Open ASR Leaderboard (mean WER)
+      score: "4.62"
+    - benchmark: Open ASR long-form (mean WER)
+      score: "10.98"
+  variants:
+    - name: NVIDIA-Nemotron-3.5-Transcribe-30B-A4B
+      notes: 34B total / 4.3B active including audio encoder; post-trained on Nemotron 3.5 Lightning 30B-A3B; BF16, FP8, NVFP4
+related:
+  - nemotron-3.5-lightning
+  - nemotron-labs-audex
+  - nemotron-voicechat

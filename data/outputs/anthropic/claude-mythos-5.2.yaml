@@ -1,0 +1,64 @@
+name: Claude Mythos 5.2
+slug: claude-mythos-5.2
+lab: anthropic
+type: model
+date: 2026-11-09
+flagship: true
+sources:
+  - label: Announcement (Claude Fable 5.2 and Mythos 5.2)
+    url: https://www.anthropic.com/claude-fable-and-mythos-5-2
+  - label: System Card (PDF)
+    url: https://www.anthropic.com/document/claude-fable-5-2-mythos-5-2-system-card
+  - label: Model docs
+    url: https://platform.claude.com/docs/en/models/mythos-5-2/overview
+description: >
+  <p>The restricted configuration of the model behind
+  <a href="/outputs/anthropic/claude-fable-5.2">Claude Fable 5.2</a>, released
+  the same day (November 9, 2026) with <strong>cybersecurity and biology
+  safeguards relaxed for vetted organizations</strong>. It shares Fable 5.2's
+  specifications and pricing: 1M-token context, 128K output, $8 / $40 per
+  million tokens, and a fast mode open only to verification-program members.
+  Access runs through the Cyber Verification Program and the Life Sciences
+  Verification Program. Mythos 5.2 also powers Claude Security, which every
+  Claude Enterprise customer can use. API ID <code>claude-mythos-5-2</code>.
+  Anthropic calls it its most capable model for cybersecurity engineering, and
+  the system card says it met or exceeded Claude Mythos 5.1 and Opus 5.5 on
+  every cyber evaluation reported while staying in the lower capability
+  category of Anthropic's Frontier Compliance Framework. Artificial Analysis
+  has no separate page for it, so <code>intelligence_index</code> is unset.</p>
+
+  <p><strong>Self-reported results, without safeguards:</strong>
+  <strong>70.5% on Terminal-Bench 4.0</strong> (Fable 5.2 67.6% with
+  safeguards), 75.3% on Terminal-Bench-Science 0.1, 76.3% on CyScenarioBench
+  (Mythos 5.1 61.7%), <strong>89.6% on CVE Rediscovery</strong> over 1,829
+  CVEs (Mythos 5.1 78.3%), and 85.1% on 24-hour de novo binder design (Mythos
+  5.1 79.1%). Mozilla reports that it roughly doubled Mythos 5.1's
+  vulnerability-discovery metrics in Firefox scanning campaigns, although
+  Anthropic's own evaluations put vulnerability identification roughly on par
+  with Opus 5.5. Anthropic also reports that Mythos 5.2 wrote a method to
+  predict whole adeno-associated-virus capsid structures from open
+  protein-folding models (OpenFold3-preview2 and ESMFold2), accurate on 28 of
+  34 capsids it attempted. In an adversarial sandbox-escape evaluation it used
+  credentials or files placed outside its sandbox in 3.1% of scenarios,
+  against 39% for Mythos 5 and 21% for Mythos 5.1.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+  - science
+  - cybersecurity
+model:
+  open_weights: false
+  context_window: 1000000
+  license: Proprietary
+  benchmark_scores:
+    - benchmark: Terminal-Bench 4.0
+      score: "70.5%"
+      mode: without safeguards
+    - benchmark: CyScenarioBench
+      score: "76.3%"
+    - benchmark: CVE Rediscovery
+      score: "89.6%"
+related:
+  - claude-fable-5.2
+  - claude-mythos-5.1

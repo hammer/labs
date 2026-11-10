@@ -17,6 +17,19 @@ description: >
   code and custom training operators. Flash weights (BF16) are on GitCode;
   Pro weight availability and the license name were not yet confirmed at
   sweep time.</p>
+
+  <p>Huawei Cloud retired the hosted family four months later. A notice dated
+  2026-11-01 stopped MaaS sales of both openPangu-2.0-Flash and
+  openPangu-2.0-Pro on <strong>2026-11-06</strong> and takes them fully
+  offline on <strong>2026-11-30</strong>, after which existing customers can
+  no longer call them; the migration guidance points Flash users at
+  DeepSeek-V4.1-Flash-1017 and Pro users at Zhipu's GLM-5.3 rather than at
+  another Pangu model (<a href="https://www.ithome.com/1/021/526.htm">IT&#x4E4B;&#x5BB6;</a>).
+  Huawei says new openPangu versions are planned; a flagship
+  <strong>openPangu-2.1-Pro</strong> surfaced in Huawei's Xiaoyi Work app on
+  2026-11-05 and is reported for a MaaS update on 2026-11-15, with no specs
+  published. The open weights on GitCode are unaffected by the hosted
+  retirement.</p>
 tags:
   - moe
   - open-weight

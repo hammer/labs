@@ -51,6 +51,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=r1TJBr8AAAAJ
 news:
+  - title: "Swiss AI Presents the Apertus 2.0 Roadmap at the AI+X Summit in Zurich: A Sparse MoE of About 600B Total Parameters With an Extended Training Schedule, Prioritizing Agents, Maths and Code"
+    url: https://apertus-ai.org/articles/2026-07-apertus-1-5/
+    source: Apertus / Swiss AI
+    date: 2026-10-14
   - title: "Apertus 1.5 Released — Multimodal (Image + Audio), Thinking Mode, and 262K Context (8B & 70B)"
     url: https://apertus-ai.org/articles/2026-07-apertus-1-5/
     source: Apertus / Swiss AI

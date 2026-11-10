@@ -67,6 +67,14 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Zhenguo_Li1
 news:
+  - title: "openPangu-2.1-Pro Appears First in Huawei's Xiaoyi Work; Huawei Cloud MaaS Update Set for November 15"
+    url: https://www.ithome.com/1/022/974.htm
+    source: IT之家
+    date: 2026-11-05
+  - title: "Huawei Cloud Stops Selling openPangu-2.0-Flash and Pro on November 6, Full Retirement November 30; Migration Advice Points to DeepSeek-V4.1-Flash and GLM-5.3"
+    url: https://www.ithome.com/1/021/526.htm
+    source: IT之家
+    date: 2026-11-03
   - title: "Tabby: Noah's Ark Lab Releases a 145M Time-Series Foundation Model With Its Complete Open Pretraining Recipe"
     url: https://arxiv.org/abs/2609.13956
     source: arXiv

@@ -67,6 +67,10 @@ people:
     role: President; oversees the Dots AI department
     formerly: Boston Consulting Group; Citi; MBA Stanford GSB
 news:
+  - title: "dots studio Open-Sources dots3-note Preview (Apache 2.0): 280B-A16B Multimodal MoE With 512K Context, First Open Model of the dots3 Family"
+    url: https://huggingface.co/dots-studio/dots3-note-prev
+    source: dots-studio
+    date: 2026-08-14
   - title: "dots-note-3.0 Scores Perfect 42/42 at IMO 2026 — First AI Perfect Score; hilab Rebrands to dots-studio, Open-Sourcing Promised"
     url: https://studio-dots-ai.github.io/dots_imo_2026/en.html
     source: dots-studio

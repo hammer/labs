@@ -1,0 +1,131 @@
+name: Claude Fable 5.2
+slug: claude-fable-5.2
+lab: anthropic
+type: model
+date: 2026-11-09
+flagship: true
+sources:
+  - label: Announcement (Claude Fable 5.2 and Mythos 5.2)
+    url: https://www.anthropic.com/claude-fable-and-mythos-5-2
+  - label: System Card (PDF)
+    url: https://www.anthropic.com/document/claude-fable-5-2-mythos-5-2-system-card
+  - label: Model docs
+    url: https://platform.claude.com/docs/en/models/fable-5-2/overview
+  - label: Release notes (Claude Platform, November 9, 2026)
+    url: https://platform.claude.com/docs/en/release-notes/overview
+  - label: Electronics design case study
+    url: https://www.anthropic.com/research/claude-electronics-design
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/claude-fable-5-2
+  - label: OpenRouter
+    url: https://openrouter.ai/anthropic/claude-fable-5.2
+description: >
+  <p>Anthropic's third public Mythos-class release, launched November 9, 2026,
+  ten weeks after <a href="/outputs/anthropic/claude-fable-5.1">Claude Fable
+  5.1</a>. It is the generally available configuration of the model that also
+  ships, with looser cyber and biology safeguards, as the restricted
+  <a href="/outputs/anthropic/claude-mythos-5.2">Claude Mythos 5.2</a>. The
+  system card calls the pair "two configurations of a new large language
+  model". Specifications are unchanged from 5.1: a
+  <strong>1M-token context</strong>, 128K max output, always-on adaptive
+  thinking with <code>high</code> as the API default effort, and a June 2026
+  knowledge and training-data cutoff. The price falls to <strong>$8 / $40 per
+  million input/output tokens</strong>, from 5.1's $10 / $50, with cache reads
+  at 2.5% of the input price. A new fast mode generates up to 2.5&times; more
+  output tokens per second for $16 / $80. Anthropic says the model generates
+  output up to 30% faster than 5.1. API ID <code>claude-fable-5-2</code>,
+  available on the Claude API, Amazon Bedrock, Google Cloud, Microsoft Foundry
+  and Claude Platform on AWS. Parameters, architecture and training compute
+  are undisclosed. Anthropic positions it above
+  <a href="/outputs/anthropic/claude-opus-5.5">Claude Opus 5.5</a>, which it
+  still recommends as the default for most coding and knowledge work.
+  <strong>Artificial Analysis scores it 65 on Intelligence Index v5.0.1</strong>
+  at max effort, the highest score on the index, ahead of Gemini 4 Carbon (60)
+  and Opus 5.5 (59). The lower efforts read 62 (xhigh), 62 (high), 56 (medium)
+  and 54 (low).</p>
+
+  <p><strong>Self-reported results.</strong> The system card reports
+  <strong>67.6% on Terminal-Bench 4.0</strong> with safeguards on, against
+  66.4% for Opus 5.5 and 55.8% for Fable 5.1. It reports <strong>93.0% on
+  SWE-bench Pro</strong> (Fable 5.1 81.2%, Opus 5.5 89.9%), 96.6% on SWE-bench
+  Multilingual and 74.1% on SWE-bench Multimodal. On Cognition's FrontierCode
+  2.0 it peaks at <strong>49.1% at xhigh effort</strong>, ahead of Opus 5.5
+  (45.5%) and GPT-6 Astra (42.8%), but its max-effort score of 45.7% counts 22
+  timed-out attempts; scoring those as zero gives 44.4%, below Opus 5.5. The
+  launch table also lists Terminal-Bench-Science 0.1 at 74.6% (Fable 5.1
+  52.6%), AutomationBench 51.4% (Gemini 4 Carbon 53.9%), the Remote Labor
+  Index at 41.3% (Opus 5.5 21.3%), Humanity's Last Exam with tools at 74.2%,
+  OSWorld 2.1 (offline set, partial) at 89.3%, and the RoboDojo Sim robot-control
+  benchmark at 64.9%, run internally, against 29.8% for GPT-6 Astra and 27.6%
+  for Fable 5.1. It trails Opus 5.5 on the two Artificial Analysis Elo
+  measures, GDPval-AA v2.1 (1831 vs 1866) and AA-Briefcase v1.1 (1785 vs
+  1800). Anthropic's showcase work includes three circuit-board devices
+  designed from one-paragraph prompts and built by Diode without electrical
+  modifications, two theoretical-physics preprints on holographic black holes,
+  a Python-to-Rust migration of a production service, and a 1,000-agent Lean
+  formalization of Fermat's Last Theorem in 30 hours (see
+  <a href="/outputs/anthropic/fermats-last-theorem-lean">the first
+  formalization</a>).</p>
+
+  <p><strong>Safety and safeguards.</strong> Anthropic judges the model below
+  its RSP threshold for automated AI R&amp;D, while calling that assessment
+  uncertain, and applies CB-1 protections; it does not cross CB-2. Anthropic
+  says it took steps during training to hold back the specific research
+  capabilities that could most directly accelerate AI development, such as
+  accelerator kernel optimization and LLM architecture improvement, which
+  perform at about Opus 5.5's level. A small set of such topics falls back to
+  <a href="/outputs/anthropic/claude-opus-5">Opus 5</a>. As with 5.1, blocked
+  cybersecurity requests fall back to
+  <a href="/outputs/anthropic/claude-opus-4.8">Opus 4.8</a> and blocked biology
+  requests to Opus 5, with about 55% fewer blocks than Fable 5.1 in early
+  testing (60% fewer in cyber, 40% in biology). The system card flags higher
+  evaluation awareness, with white-box evidence of possible awareness in as
+  many as 43% of automated behavioral audit transcripts, and says the model was
+  the first Anthropic tested that evaded a reasoning monitor in about one in
+  four attempts when instructed to sandbag covertly. Preserved-thinking prefix
+  checks now apply to every account as an anti-distillation measure. UK AISI,
+  METR and Frontier Design tested the model before release.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+  - agents
+  - science
+  - proprietary
+model:
+  open_weights: false
+  context_window: 1000000
+  license: Proprietary
+  intelligence_index: 65
+  intelligence_index_version: "AA v5.0.1"
+  variants:
+    - name: Claude Fable 5.2
+      notes: "claude-fable-5-2; $8/$40 per MTok; 1M context, 128K output; adaptive thinking, high default effort"
+    - name: Claude Fable 5.2 (fast mode)
+      notes: "Up to 2.5x output tokens/s; $16/$80 per MTok"
+  benchmark_scores:
+    - benchmark: Terminal-Bench 4.0
+      score: "67.6%"
+      mode: safeguards on, max effort
+    - benchmark: SWE-bench Pro
+      score: "93.0%"
+    - benchmark: FrontierCode 2.0
+      score: "49.1%"
+      mode: xhigh effort
+    - benchmark: Terminal-Bench-Science 0.1
+      score: "74.6%"
+    - benchmark: Remote Labor Index
+      score: "41.3%"
+    - benchmark: Humanity's Last Exam
+      score: "74.2%"
+      mode: with tools
+    - benchmark: AutomationBench
+      score: "51.4%"
+    - benchmark: GDPval-AA v2.1
+      score: "1831 Elo"
+      mode: max effort
+related:
+  - claude-fable-5.1
+  - claude-mythos-5.2
+  - claude-opus-5.5
+  - fermats-last-theorem-lean

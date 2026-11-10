@@ -10,6 +10,10 @@ sources:
     url: https://tech.kakao.com/posts/826
   - label: Announcement
     url: https://www.kakaocorp.com/page/detail/12089
+  - label: "Kanana-2 vision encoder (HuggingFace, medium)"
+    url: https://huggingface.co/kakaocorp/kanana-2-vision-encoder-medium
+  - label: "Kanana-2 vision encoder (Tech Blog)"
+    url: https://tech.kakao.com/posts/840
 description: >
   <p>On-device counterpart to the Kanana-2-30B MoE line: a <strong>3B
   trained from scratch on TPUs</strong> and a <strong>1.3B built via cascade
@@ -17,6 +21,15 @@ description: >
   attention (~72.7% KV-cache cut at 32K) and a new tokenizer (+30% Korean
   efficiency). Kanana Open License (commercial use OK); a 0.9B is mentioned
   but unreleased.</p>
+
+  <p>On 21 October 2026 Kakao released <strong>kanana-2-vision-encoder</strong>
+  in medium (426M) and tiny (98M) sizes under the Kanana Open License. The
+  model card says both are "based on Kakao's Kanana-2-0.9B LLM", with the text
+  generation module removed. They take images at native resolution and use
+  sliding-window attention and GQA. Kakao compares them against AIMv2, SigLIP2,
+  Perception Encoder, MobileCLIP2 and Qwen3.5's vision encoders over 42 benchmarks in nine categories, all paired with
+  kanana-2-1.3b-instruct under the same training setup. The 0.9B LLM itself
+  is still unreleased.</p>
 tags:
   - on-device
   - open-weight

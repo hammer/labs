@@ -40,7 +40,7 @@ description: >
   low-latency local inference &mdash; the first open-weight entry in the
   otherwise-proprietary Muse line (<a href="/outputs/meta/muse-spark">Spark</a>,
   <a href="/outputs/meta/muse-code">Muse Code</a>). AA had not yet scored it at
-  release.</p>
+  release; it now scores 6 on AA v5.0.1.</p>
 
   <p><strong>The technical report</strong>
   (<a href="https://arxiv.org/abs/2610.24628">arXiv 2610.24628</a>, posted

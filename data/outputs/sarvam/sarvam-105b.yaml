@@ -11,12 +11,28 @@ sources:
     url: https://huggingface.co/sarvamai/sarvam-105b
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/sarvam-105b
+  - label: Sarvam-Prism blog
+    url: https://www.sarvam.ai/blogs/sarvam-prism
+  - label: Sarvam-Prism (HuggingFace)
+    url: https://huggingface.co/sarvamai/prism
 description: >
-  105B total / 10.3B active MoE (128 experts, top-8 routing) with
+  <p>105B total / 10.3B active MoE (128 experts, top-8 routing) with
   MLA-style attention (decoupled QK head dimensions) and YaRN scaling.
   128K context. Trained from scratch on NVIDIA H100s (IndiaAI Mission)
   for India's 22 scheduled languages + English. Asynchronous GRPO for
-  RL training. AA Intelligence Index v4.3: 9. Apache 2.0.
+  RL training. AA Intelligence Index v4.3: 9. Apache 2.0.</p>
+
+  <p><strong>Sarvam-Prism</strong> (2026-11-03, Apache 2.0) is a LoRA
+  fine-tune of the Sarvam 105B base that does not generate text. Given a
+  context, a question and a fixed set of options, it returns a probability for
+  each option in one forward pass through a small scoring head. A custom
+  attention mask reads the context bidirectionally and isolates the options
+  from each other. It is trained with label-smoothed cross-entropy plus a Brier
+  loss. Sarvam reports a 44 ms median response on one B200 in FP8, down from
+  664 ms before optimization. It scores 71.8 on Sarvam's three-index decision
+  average, the best of 25 tested models under 100 ms. Sarvam also reports
+  calibrated confidence: at 90% or higher confidence on English questions it
+  expected 3.3% errors and made 2.2%.</p>
 tags:
   - moe
   - open-weight

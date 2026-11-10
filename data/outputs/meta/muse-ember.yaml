@@ -1,0 +1,89 @@
+name: Muse Ember
+slug: muse-ember
+lab: meta
+type: model
+date: 2026-11-09
+flagship: true
+sources:
+  - label: Announcement (Research Blog)
+    url: https://research.meta.ai/blog/muse-ember
+  - label: Model Page (Meta Developer)
+    url: https://dev.meta.ai/models/muse-ember
+  - label: Artificial Analysis article
+    url: https://artificialanalysis.ai/articles/meta-s-muse-ember-is-the-cheapest-model-scoring-36-on-the-intelligence-index
+  - label: Artificial Analysis (max)
+    url: https://artificialanalysis.ai/models/muse-ember
+  - label: Artificial Analysis (xhigh)
+    url: https://artificialanalysis.ai/models/muse-ember-xhigh
+description: >
+  <p>Meta Superintelligence Labs' smallest and cheapest Muse model, released
+  on November 9, 2026 as <code>muse-ember-1.0</code> on the Meta Model API and
+  in <a href="/outputs/meta/muse-code">Muse Code</a>. Meta describes it as
+  "our smallest and most efficient model", a reasoning model for "the work
+  agents repeat all day: tool calls, coding subtasks, routing, extraction, and
+  long document parsing". It takes text, image, audio and video in, with a
+  <strong>1M-token context</strong> and up to <strong>512K output
+  tokens</strong>. Parameter count, architecture and training data are not
+  disclosed, and no weights are released.</p>
+
+  <p>The one training fact Meta gives is lineage: when it launched
+  <a href="/outputs/meta/muse-wonder">Muse Wonder and Muse Wonder Full</a>, it
+  said it would use them "to develop specialized models", and "Muse Ember is
+  the first trained using Muse Wonder Full". The post does not say whether that
+  means distillation into new weights or post-training of an existing
+  checkpoint, so this index records no provenance fields for it.</p>
+
+  <p><strong>The pitch is cost, not capability.</strong> Pricing is $0.10 input,
+  $0.004 cached input and $0.50 output per 1M tokens up to 200K-token prompts
+  ($0.30 / $0.012 / $1.50 above that). Artificial Analysis scores it
+  <strong>36</strong> on Intelligence Index v5 at max effort and
+  <strong>34</strong> at xhigh, at $0.14 and $0.12 per index task. That matches
+  Claude Haiku 5.5 (max) at about a third of its cost per task and sits one
+  point under <a href="/outputs/meta/muse-spark-1.3">Muse Spark 1.3</a> (37,
+  $2.39 per task), and 8 points under Muse Wonder (44). AA attributes most of
+  the cost gap to cheaper cached input and roughly a third of Haiku 5.5's
+  output tokens. Its weak spot in AA's testing is knowledge: AA-Omniscience
+  accuracy is 21.1%, the lowest among similarly scored models, because it
+  declines 64% of questions, which also keeps its hallucination rate at
+  17.4%.</p>
+
+  <p>Meta's self-reported results at max effort, against Claude Haiku 5.5 and
+  GPT-6 Luna (both max): Terminal-Bench 4.0 40.9% (39.2 / 16.4), AA Coding Agent
+  Index 46 in Muse Code (37 / 31), Agents' Last Exam 61.6% (57.0 / 57.1, Meta
+  internal, Linux subset), OSWorld 2.1 69.5% partial / 33.8% binary, and
+  PerceptionBench with tools 80.6%. It trails Haiku 5.5 on FrontierCode 2.0
+  (27.2% against 34.9%). Meta's chart gives AutomationBench-AA as 37.8%, while
+  AA's own article gives 68.1% for the same configuration; the two sources
+  disagree and this entry does not resolve it. Meta says Ember was evaluated
+  under its Superintelligence Scaling Framework and stayed below the
+  framework's high-risk thresholds for chemical and biological, cyber and
+  loss-of-control risks. The license is proprietary.</p>
+tags:
+  - agents
+  - coding
+  - multimodal
+  - reasoning
+  - efficiency
+  - proprietary
+model:
+  open_weights: false
+  context_window: 1000000
+  license: Proprietary
+  intelligence_index: 36
+  intelligence_index_version: "AA v5.0.1"
+  benchmark_scores:
+    - benchmark: Terminal-Bench 4.0
+      score: "40.9%"
+    - benchmark: Agents' Last Exam
+      score: "61.6%"
+    - benchmark: FrontierCode 2.0-AA
+      score: "27.2%"
+    - benchmark: OSWorld 2.1 (partial)
+      score: "69.5%"
+    - benchmark: PerceptionBench (w/ tools)
+      score: "80.6%"
+related:
+  - muse-wonder
+  - muse-spark-1.3
+  - muse-code
+  - muse-glimmer

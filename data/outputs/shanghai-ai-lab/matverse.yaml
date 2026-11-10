@@ -1,0 +1,65 @@
+name: MatVerse (材华)
+slug: matverse
+lab:
+  - shanghai-ai-lab
+  - sjtu
+type: model
+date: 2026-09-30
+sources:
+  - label: Shanghai AI Lab announcement (Chinese)
+    url: https://www.shlab.org.cn/news/5444312
+  - label: "Launch coverage (Guangming Online, 新天工开物 AI session)"
+    url: https://tech.gmw.cn/2026-09/30/content_39029787.htm
+  - label: "OmniMatBench paper (arXiv 2605.29833)"
+    url: https://arxiv.org/abs/2605.29833
+  - label: OmniMatBench (HuggingFace dataset)
+    url: https://huggingface.co/datasets/wanhaoliu/OmniMatBench
+description: >
+  <p>A natively multimodal <strong>materials-science foundation model</strong>
+  built by <strong>Suzhou National Laboratory</strong> with Shanghai AI Lab and
+  Shanghai Jiao Tong University, presented at the China Association for Science
+  and Technology's "新天工开物" achievements session on 2026-09-30 and written up
+  by Shanghai AI Lab on 2026-10-28. Architecture as described by the team:
+  <strong>independent per-modality encoders plus a unified decoder</strong> that
+  aligns the encodings in one shared semantic space, so XRD spectra, electron-
+  microscopy images and molecular-structure graphs are reasoned over alongside
+  natural-language questions rather than being flattened into text. Post-training
+  uses chain-of-thought reinforcement learning "dual-enhanced" with domain
+  knowledge and physico-chemical mechanism, which the team frames as the move
+  from knowledge retrieval to mechanism reasoning. Training and inference ran on
+  domestic accelerators (Ascend and Sugon).</p>
+
+  <p>Around the model the team ships <strong>OmniMat</strong>, an agent framework
+  closing a cross-disciplinary loop of inspiration retrieval &rarr; structured
+  hypothesis generation &rarr; mechanism-level candidate screening &rarr; expert
+  and experimental feedback, and <strong>OmniMatBench</strong> (<a
+  href="https://arxiv.org/abs/2605.29833">arXiv 2605.29833</a>), a
+  human-calibrated multimodal benchmark of <strong>3,171 expert-curated QA and
+  calculation problems across all 19 materials-science subfields</strong> — a
+  balanced 1,000-problem subset is public on HuggingFace under CC BY-NC 4.0 —
+  now integrated into the lab's <a href="/outputs/shanghai-ai-lab/opencompass">OpenCompass
+  (司南)</a> evaluation system. A reported application is a polymer thermal
+  battery whose preparation route the system derived from ~500 cross-disciplinary
+  papers and thousands of generated hypotheses, measured after real fabrication
+  at <strong>~245 mV across a 10 K gradient</strong> and a normalized power
+  density of <strong>0.68 mW&middot;m<sup>-2</sup>K<sup>-2</sup></strong>; the
+  same workflow is reported for an elastomer used in humanoid-robot artificial
+  muscle.</p>
+
+  <p>Self-reported figures to read as such: the 材华 series has "over 300,000
+  cumulative downloads since open-sourcing" per the lab post, and academician Sun
+  Baode called it at the launch the world's first 10-billion-parameter-class
+  (百亿参数) and first natively multimodal materials model. Neither the
+  announcement nor the launch coverage names a weights repository, an exact
+  parameter count, a base model or a license, and we could not locate the
+  checkpoints on HuggingFace or ModelScope, so no scale fields are recorded here;
+  the model is to be integrated into the lab's 书生·端砚 (Sage) scientific-discovery
+  platform.</p>
+tags:
+  - science
+  - multimodal
+  - materials
+  - agents
+related:
+  - intern-s2-397b
+  - opencompass

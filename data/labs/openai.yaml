@@ -109,6 +109,34 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~John_Schulman1
 news:
+  - title: "OpenAI Describes Control Room, a Central System to Track Model Workloads Across Its Research Infrastructure and Rapidly Stop Them Over Safety or Security Concerns"
+    url: https://openai.com/index/control-room
+    source: OpenAI
+    date: 2026-11-09
+  - title: "OpenAI Closes an Initial $11B of a New Round at a $1.25T Valuation, Short of the Original Up-to-$30B Target; SoftBank and MGX Participate (Reuters)"
+    url: https://www.thestar.com.my/tech/tech-news/2026/11/07/openai-secures-11-billion-funding-at-125-trillion-valuation-bloomberg-news-reports
+    source: Reuters via The Star
+    date: 2026-11-06
+  - title: "OpenAI Releases GPT-6 Cyber, an RL-Post-Trained Cybersecurity Variant of GPT-6 Astra for Approved Daybreak Red Organizations ($20/$100 per MTok)"
+    url: https://deploymentsafety.openai.com/gpt-6-cyber
+    source: OpenAI
+    date: 2026-11-05
+  - title: "OpenAI to Acquire Pierre Computer Company, Maker of the Code Storage Git Layer and the Trees and Diffs Libraries Used in Codex; Terms Undisclosed"
+    url: https://openai.com/index/openai-to-acquire-pierre
+    source: OpenAI
+    date: 2026-11-04
+  - title: "OpenAI Releases Images 2.6: GPT-Image-2.6 Sunburst and Flare Add Complexity Control, Animated GIFs and SVG Output"
+    url: https://openai.com/index/introducing-images-2-6
+    source: OpenAI
+    date: 2026-11-04
+  - title: "OpenAI Appoints Jill Hazelbaker as Chief Corporate Affairs Officer, Leading Global Communications"
+    url: https://openai.com/index/jill-hazelbaker-chief-corporate-affairs-officer
+    source: OpenAI
+    date: 2026-11-03
+  - title: "OpenAI Releases GPT-Rosalind-6 for Approved Life-Sciences Researchers: Same Weights as GPT-6 Astra With Fewer Dual-Use Biology Refusals"
+    url: https://deploymentsafety.openai.com/gpt-rosalind-6
+    source: OpenAI
+    date: 2026-10-30
   - title: "OpenAI Introduces LifeVal, a Benchmark for How Well AI Helps People Complete Everyday Tasks Such as Finding Childcare, Managing Finances and Government Paperwork"
     url: https://openai.com/index/lifeval
     source: OpenAI

@@ -9,6 +9,10 @@ sources:
     url: https://arxiv.org/abs/2506.13131
   - label: Announcement
     url: https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/
+  - label: "Matrix multiplication exponent paper (arXiv 2608.16884)"
+    url: https://arxiv.org/abs/2608.16884
+  - label: GitHub (code and results)
+    url: https://github.com/google-deepmind/alphaevolve
 description: >
   <p>Gemini-powered evolutionary coding agent for scientific and algorithmic discovery.
   Found the <strong>first improvement to Strassen's matrix multiplication in 56
@@ -17,6 +21,17 @@ description: >
   <p>Also optimized Google data center scheduling, chip design, and LLM training
   kernels. Represents a new paradigm of <strong>AI-driven algorithm discovery</strong>
   where LLMs generate and evolve code solutions. By Novikov et al. (DeepMind).</p>
+
+  <p>In August 2026 a DeepMind paper with academic co-authors, including Josh
+  Alman and Virginia Vassilevska Williams, used AlphaEvolve to rewrite the
+  optimization code behind the laser method's combination-loss analysis. It
+  lowered the upper bound on the <strong>matrix multiplication exponent to
+  &omega; &lt; 2.371177</strong>, from 2.371339, with rational-arithmetic
+  certificates making the bound verifiable (arXiv 2608.16884). On 2026-11-04
+  DeepMind opened the <code>google-deepmind/alphaevolve</code> repository. It
+  contains a minimal local implementation of AlphaEvolve, the evolved &omega;
+  optimization program with its verifier and a Colab notebook, and the initial
+  programs and results for the earlier mathematical problems.</p>
 tags:
   - scientific
   - coding

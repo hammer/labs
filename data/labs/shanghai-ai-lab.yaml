@@ -134,6 +134,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Xizhou_Zhu1
 news:
+  - title: "MatVerse (材华): Suzhou National Laboratory, Shanghai AI Lab and SJTU Launch a Natively Multimodal Materials Foundation Model With the 19-Subfield OmniMatBench"
+    url: https://www.shlab.org.cn/news/5444312
+    source: Shanghai AI Laboratory
+    date: 2026-10-28
   - title: "Intern-S2-397B Release Weights Published Under Apache 2.0, Succeeding the July Preview"
     url: https://huggingface.co/internlm/Intern-S2-397B
     source: Hugging Face

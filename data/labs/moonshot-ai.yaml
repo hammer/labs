@@ -92,6 +92,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Flood_Sung1
 news:
+  - title: "CNBC: Moonshot Has Discussed Leasing Nvidia Blackwell Clusters of 8,000+ GPUs From European Neoclouds, Mainly for Inference, at a Reported 30-50% Upfront Premium; No Deal Confirmed"
+    url: https://www.cnbc.com/2026/11/05/moonshot-ai-nvidia-chips-europe-china.html
+    source: CNBC
+    date: 2026-11-05
   - title: "Moonshot Releases Kimi K3.1 Pro Open Weights on HuggingFace, Two Days Ahead of Its Nov 4 Promise, Under the Kimi K3.1 Pro License"
     url: https://huggingface.co/moonshotai/Kimi-K3.1-Pro
     source: HuggingFace

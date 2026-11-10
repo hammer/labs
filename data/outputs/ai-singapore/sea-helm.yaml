@@ -12,6 +12,14 @@ sources:
     url: https://github.com/aisingapore/SEA-HELM
   - label: Blog
     url: https://sea-lion.ai/blog/sea-helm/
+  - label: "SEA-HELM Audio (blog, 2026-10-23)"
+    url: https://sea-lion.ai/blog/introducing-sea-helm-audio-measuring-the-speech-gap-in-southeast-asian-voice-agents/
+  - label: "arXiv (SEA-HELM Audio)"
+    url: https://arxiv.org/abs/2610.19869
+  - label: SEA-HELM Audio dataset (HuggingFace)
+    url: https://huggingface.co/datasets/aisingapore/seahelm-audio
+  - label: SEA-HELM Audio leaderboard
+    url: https://voice-agent.sea-lion.ai/leaderboard
 description: >
   <p>The regional benchmark the SEA-LION models are built against, developed
   by AI Singapore with Stanford CRFM's HELM team and published at ACL 2025
@@ -25,6 +33,21 @@ description: >
   SEA-SafeguardBench. Its public leaderboard ranks open and closed models by
   language and task and is the source of the SEA-HELM numbers quoted across the
   SEA-LION entries.</p>
+
+  <p><strong>SEA-HELM Audio</strong> (<a href="https://arxiv.org/abs/2610.19869">arXiv
+  2610.19869</a>, 16 October 2026; blog 23 October) extends the benchmark to
+  speech. Prompts from the SEA-HELM IFEval and Global-MMLU-Lite subsets are
+  synthesized to speech in a single voice in Chinese, English, Indonesian, Malay
+  and Tamil, run through cascaded ASR-LLM pipelines, and scored with the same
+  rule-based verifiers as the text versions. The headline metric is the
+  "speech gap" between text and speech accuracy. The paper reports drops of
+  9.00&ndash;18.50 points on multiple-choice reasoning and 20.00&ndash;42.86 points
+  on instruction following, with Tamil above 40 points; in the blog
+  SEA-LION-v4.5-27B loses 32&ndash;33 points on Indonesian and Malay instruction
+  following. The authors note that synthetic speech lacks accents, noise and
+  code-switching, so the gaps are likely a floor. Dataset, code
+  (<a href="https://github.com/aisingapore/seahelm-audio">aisingapore/seahelm-audio</a>)
+  and a voice-agent leaderboard are public.</p>
 tags:
   - eval
   - benchmark

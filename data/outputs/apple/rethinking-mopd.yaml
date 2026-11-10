@@ -6,6 +6,8 @@ date: 2026-10-03
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2610.04272
+  - label: "Salesforce: OPD vs GRPO compute efficiency (arXiv 2611.08453)"
+    url: https://arxiv.org/abs/2611.08453
 description: >
   <p>The controlled study the on-policy distillation wave has been missing, and
   it comes out against the wave. Merging several experts trained from a shared
@@ -54,6 +56,22 @@ description: >
   B200 GPUs; code is announced at
   <code>apple-aiml-research/ml-rethink-mopd</code> but the repository is not yet
   public, the paper noting it is under legal review.</p>
+
+  <p>A Salesforce AI Research study, "Unpacking the Compute Efficiency of
+  Strong-to-Weak OPD against GRPO" (<a href="https://arxiv.org/abs/2611.08453">arXiv
+  2611.08453</a>, 5 November 2026), asks the same kind of question in training
+  FLOPs rather than tuning budget. It mostly agrees on cost, with one
+  exception. With an <strong>external post-trained teacher</strong>, vanilla
+  reverse-KL OPD generally loses to GRPO in accuracy per training FLOP, even
+  when the teacher has had GRPO itself, and responses often grow longer. With
+  the <strong>student's own GRPO checkpoint</strong> as teacher, OPD recovers
+  that checkpoint's maths accuracy with <strong>50&times; fewer distillation
+  FLOPs</strong>. That only matters when several domains are being merged. In
+  that setting, multi-teacher OPD over per-domain GRPO experts costs 5.2&ndash;8.0%
+  of the specialist training FLOPs, and the whole pipeline matches joint GRPO on
+  a two-domain mix with 42.0% fewer total FLOPs. Read with Apple's result, the
+  case for OPD shifts from per-token supervision being better to OPD being a
+  cheap way to merge experts that RL has already trained.</p>
 tags:
   - distillation
   - post-training

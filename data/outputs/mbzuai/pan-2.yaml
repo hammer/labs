@@ -1,0 +1,73 @@
+name: PAN 2
+slug: pan-2
+lab: mbzuai
+type: model
+date: 2026-11-05
+sources:
+  - label: GitHub (training and inference code)
+    url: https://github.com/ifm-ai/PAN2
+  - label: HuggingFace
+    url: https://huggingface.co/IFM/PAN2
+  - label: Model card
+    url: https://github.com/ifm-ai/PAN2/blob/main/MODEL_CARD.md
+  - label: pan2-guardrail (GitHub)
+    url: https://github.com/ifm-ai/pan2-guardrail
+  - label: "PAN (v1) paper (arXiv 2511.09057)"
+    url: https://arxiv.org/abs/2511.09057
+description: >
+  <p>The second open world model from MBZUAI's Institute of Foundation Models
+  (IFM). Given a current observation (an optional image plus text) and actions
+  written in text, it simulates the outcome as a video of up to 20 seconds at
+  704&times;1248 and 24 fps. The intended use is <em>simulative
+  reasoning</em>: an agent imagines the result of each candidate plan before it
+  chooses one. It follows the Generative Latent Prediction design that IFM
+  formalized in "Critique of World Models" and used in the first PAN (November
+  2025). There are two parts:</p>
+  <ul>
+    <li><strong>Conceptual reasoner:</strong> a language model that writes the
+    next world state as a structured, time-grounded caption. The technical
+    report uses Kimi K3 for this role, and the public Physics-IQ leaderboard
+    entry uses Claude Opus 5.5.</li>
+    <li><strong>Perceptual reasoner:</strong> a <strong>29B latent-diffusion
+    transformer</strong> that renders the caption as video. It uses a frozen
+    Qwen3.5-9B text encoder and the Wan 2.2 VAE.</li>
+  </ul>
+
+  <p>Only the perceptual backbone is IFM's own trained model. It is released in
+  BF16 under <strong>Apache 2.0</strong> as a single checkpoint for both
+  text-to-video and image-to-video. The release includes the pretraining and
+  SFT code (a packed dataloader over precomputed latents, FSDP2, context
+  parallelism and Muon), with support in Diffusers and vLLM. The GitHub
+  repository went public on 2026-11-05. The HuggingFace repository was created
+  on October 7 and last updated on November 9. The model card's
+  evaluations are reported as charts without numeric tables:</p>
+  <ul>
+    <li>six simulation capabilities over 300 single-action cases;</li>
+    <li>100 egocentric multi-step plans;</li>
+    <li>public benchmarks: Physics-IQ Verified, PhyGround and RBench;</li>
+    <li>a blind human preference study of 1,400 comparisons.</li>
+  </ul>
+  <p>The model card states plainly that <strong>about two in three simulated
+  plans contain at least a step that is not carried out</strong>. It also lists
+  physical shortcuts, such as pasta appearing in the colander before it is
+  drained, drift across clips in long interactions, and only coarse control of
+  dexterous actions. IFM recommends running the model behind its separate
+  guardrail. In IFM's tests, the guardrail cut the share of harmful
+  text-to-video requests that produced unsafe video from 33.9% to 1.5%, and
+  it blocked 11.5% of benign text-to-video requests. There is no
+  announcement post or arXiv report yet. It sits alongside Google's
+  <a href="/outputs/google/genie-4">Genie 4</a> as an open counterpart, though
+  PAN 2 is offline video simulation rather than real-time interactive play.</p>
+tags:
+  - world-model
+  - video-generation
+  - multimodal
+  - open-weight
+model:
+  open_weights: true
+  architecture: dense
+  parameters: 29B
+  license: Apache 2.0
+related:
+  - k2-horizon
+  - genie-4

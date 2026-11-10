@@ -1,0 +1,95 @@
+name: 801-30B-A3B
+slug: 801-30b-a3b
+lab: sii
+type: model
+date: 2026-11-01
+flagship: true
+sources:
+  - label: Technical report (arXiv)
+    url: https://arxiv.org/abs/2611.10719
+  - label: GitHub (technical report)
+    url: https://github.com/GAIR-NLP/801-30B
+  - label: Technical report (PDF)
+    url: https://github.com/GAIR-NLP/801-30B/blob/main/report.pdf
+  - label: Tiny-SFT dataset (HuggingFace)
+    url: https://huggingface.co/datasets/SII-GAIR-NLP/801-30B-A3B-tiny-sft-dataset
+description: >
+  <p>A <strong>30B-total, 3B-active MoE base model trained from scratch on
+  11.8T tokens</strong> by SII's GAIR group and Xinxu AI, in three months and,
+  by the report's account, by a newly formed team. It is named after the
+  classroom where it was built. The report, "No Second Run: Does RSI Stop at
+  Frontier Pre-training?", is mainly about how the run was managed. It applies
+  agent-driven recursive self-improvement (RSI) to a full pretraining run, which
+  the authors believe is the first public, detailed account of doing so.</p>
+
+  <p>The model reuses the <strong>Qwen3-30B-A3B architecture</strong>. Training
+  details:</p>
+  <ul>
+    <li><strong>Optimizer:</strong> Muon on expert and attention matrices, AdamW
+    on routers, embeddings, the output head, norms and biases.</li>
+    <li><strong>Batch:</strong> 33.5M tokens per global batch.</li>
+    <li><strong>Pretraining:</strong> three sub-stages at 4K sequence length,
+    reaching about 7T, 8T and 11.5T tokens. The RoPE base was raised from
+    10<sup>4</sup> to 5&times;10<sup>6</sup> across them.</li>
+    <li><strong>Context extension:</strong> about 100B tokens at 32K, then
+    about 200B tokens at 256K.</li>
+    <li><strong>Data:</strong> six pipelines, more than 30 stages, 1,053
+    subsets and 10.5T unique tokens.</li>
+    <li><strong>Agentic data:</strong> 134B tokens of agentic data enter the
+    long-context stage. They include more than 100B tokens from 1.1M verified
+    trajectories, produced by rolling 220K executable pull-request tasks out
+    across nine harnesses.</li>
+  </ul>
+  <p>A full run cannot be repeated, so the team split the RSI loop into smaller
+  loops that can close:</p>
+  <ul>
+    <li><strong>Debugging:</strong> infra and data debugging loops, in which
+    agents traced metric anomalies to their root causes. Five cross-stack
+    diagnoses were resolved in about a month. One was a layer-15 MoE load
+    imbalance hidden by aggregate metrics, fixed by moving router parameters
+    from Muon to AdamW.</li>
+    <li><strong>Recipe:</strong> a headroom loop across two pilots, stopped at
+    1T and 3T tokens, and the main run. At a matched 1T tokens, the mean over
+    22 benchmarks rose 47.78 &rarr; 51.96 &rarr; 56.83 from pilot to pilot to
+    main run.</li>
+    <li><strong>Measurement:</strong> loops that build a quantitative measure
+    where none existed: classifier development, site discovery and crawl
+    coverage.</li>
+  </ul>
+  <p>Its measurement finding is <strong>false stagnation</strong>: base scores
+  plateau while scores after a fixed small SFT keep rising. Over 8.1T&ndash;11.5T
+  tokens, the post-SFT average went from 70.54 to 72.93, and base and post-SFT
+  checkpoint rankings correlate at only Spearman &rho; = 0.44 in one interval.
+  So the team selected checkpoints by "Tiny-SFT" headroom rather than base
+  scores.</p>
+
+  <p>Self-reported, as a base model it beats Qwen3-30B-A3B and
+  Nemotron-3.5-Lightning-30B-A3B and trails only the larger Qwen3.5-35B-A3B. It
+  keeps that position when every base gets the same 6.33B-token SFT, which is
+  released as a dataset. With that SFT alone and no RL, it posts the highest
+  average on four agentic benchmarks against fully post-trained models
+  including Qwen3.6-35B-A3B; the report calls this a headroom reference point,
+  not a like-for-like comparison. <strong>The base weights are not yet
+  released</strong>. The repository lists them as "coming soon", and full
+  post-training is left to a later release. Compute is described only as
+  "hundreds of thousands of GPU-hours".</p>
+tags:
+  - moe
+  - pretraining
+  - agentic
+  - research
+model:
+  open_weights: false
+  architecture: moe
+  parameters: 30B
+  active_parameters: 3B
+  training_tokens: 11.8T
+  context_window: 262144
+  license: "Unreleased (open-source release promised)"
+paper:
+  arxiv: "2611.10719"
+related:
+  - davinci-llm
+  - darwin-data
+  - davinci-agency
+  - rrsi

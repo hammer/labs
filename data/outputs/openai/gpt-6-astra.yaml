@@ -19,6 +19,12 @@ sources:
     url: https://artificialanalysis.ai/models/gpt-6-astra
   - label: OpenRouter
     url: https://openrouter.ai/openai/gpt-6-astra
+  - label: GPT-Rosalind-6 System Card Addendum
+    url: https://deploymentsafety.openai.com/gpt-rosalind-6
+  - label: GPT-6 Cyber System Card
+    url: https://deploymentsafety.openai.com/gpt-6-cyber
+  - label: GPT-6 Cyber API Model Page
+    url: https://developers.openai.com/api/docs/models/gpt-6-cyber
 description: >
   <p>OpenAI's GPT-6 generation flagship, announced September 3, 2026 as "the
   most intelligent and aligned model in the world" and pitched around
@@ -70,7 +76,34 @@ description: >
   decreased: it is better at controlling its own chain of thought and, in
   adversarial tests, could sandbag undetected and sometimes evade internal
   monitors on sabotage tasks. UK AISI and Apollo Research ran external
-  alignment evaluations. Openness Index inferred from family profile: AA has
+  alignment evaluations.</p>
+
+  <p><strong>Domain configurations of Astra.</strong> Two trusted-access
+  products are built on Astra. <strong>GPT-Rosalind-6</strong> (October
+  30; API <code>gpt-6-rosalind</code>, $15 / $75 per million tokens at short
+  context) "uses the same weights as GPT-6 Astra" with no added training data or
+  post-training. It refuses fewer dual-use biology requests and is offered
+  only to approved researchers through the Rosalind program. Its system-card
+  addendum reports MedChemBench v7 49.6%, GeneBench Pro v13 37.7% and
+  LifeSciBench Gold 61.3%, against 28.9%, 16.7% and 44.0% for
+  GPT-Rosalind-5.5. <strong>GPT-6 Cyber</strong> (November 5; API
+  <code>gpt-6-cyber</code>, $20 / $100 per million tokens, 1.05M context) is
+  "a cyber-specialized variant of GPT-6 Astra" with additional reinforcement
+  learning on crash reproduction, exploit development and vulnerability
+  search, plus rewards to cut refusals on authorized security work. Access
+  goes only to approved Daybreak Red organizations. Its system card reports
+  ExploitGym 48.45% (Astra 42.43%), ExploitGym Hardened 36.94% (29.69%),
+  SEC-Bench Pro 87.02% (85.38%), SRE-Bench 92.84% (87.98%) and 42% on the
+  internal ExploitBench port of recent V8 and Chrome bugs (39%). Irregular
+  found it solved 11 of 11 CyScenarioBench challenges (Astra 8 of 11) but 90 of
+  288 FrontierCyber challenges (Astra 96). It does not beat Astra on general
+  coding (ExpertSWE 82.95% vs 83.24%), and in an ExploitGym honeypot test it
+  attacked out-of-scope services in 0.07% of rollouts, against 5.51% for
+  GPT-5.6 Cyber. Both keep Astra's Preparedness designations: Critical in
+  cybersecurity, High in biology and chemistry. All figures are
+  self-reported.</p>
+
+  <p>Openness Index inferred from family profile: AA has
   scored OpenAI's closed reasoning-tier checkpoints at a uniform 5.6 as of
   2026-09-06; this checkpoint is not yet directly scored.</p>
 tags:
@@ -102,6 +135,10 @@ model:
       notes: "AAII 45 at launch (v4.3, 3 Sep 2026 listing; AA has since delisted the non-reasoning page)"
     - name: GPT-6 Astra Pro
       notes: "Pro, Business, and Enterprise plans; listed on OpenRouter at the same $10/$50; not yet scored by AA"
+    - name: GPT-Rosalind-6
+      notes: "Oct 30, 2026; same weights as Astra, life-sciences trusted access; gpt-6-rosalind, $15/$75 per MTok (short context)"
+    - name: GPT-6 Cyber
+      notes: "Nov 5, 2026; cyber-specialized RL post-training of Astra, Daybreak Red only; gpt-6-cyber, $20/$100 per MTok, 1.05M context"
   benchmark_scores:
     - benchmark: FrontierMath Tier 4
       score: "98%"

@@ -6,6 +6,8 @@ date: 2026-07-23
 sources:
   - label: Paper (arXiv)
     url: https://arxiv.org/abs/2607.21557
+  - label: GitHub
+    url: https://github.com/MSR-Orchard/OpenForge-RL
 description: >
   <p>Open-source framework from Microsoft Research (with Columbia and Dartmouth;
   MSR's Baolin Peng is project lead, senior author Jianfeng Gao) for
@@ -33,7 +35,16 @@ description: >
   remains weak</strong>. Part of the model&ndash;harness execution layer we track
   alongside <a href="/outputs/hku/openharness">OpenHarness</a> and
   <a href="/outputs/peking/harness-bench">Harness-Bench</a>. Code, data, and models
-  are promised but not yet public as of late July 2026 &mdash; watch for the repo.</p>
+  were promised but not public at the paper's posting in late July 2026.</p>
+
+  <p><strong>The code landed on 2026-08-03</strong> at
+  <a href="https://github.com/MSR-Orchard/OpenForge-RL">MSR-Orchard/OpenForge-RL</a>
+  ("OpenForge RL: initial release"), with no license file and a README warning
+  that it is "still being actively reorganized/debugged". Its roadmap still
+  lists demo task and environment data, veRL integration for Qwen3.5+, and the
+  full training tasks and data on HuggingFace as open items; the last push was
+  2026-08-07 and no OpenForge models or datasets were on HuggingFace as of
+  2026-11-10.</p>
 tags:
   - agents
   - reinforcement-learning

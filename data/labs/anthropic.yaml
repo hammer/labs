@@ -101,6 +101,14 @@ people:
     description: >
       <p>PhD in Physics from Johns Hopkins University (advised by Jared Kaplan). Researcher at OpenAI. Co-authored the scaling laws paper with Kaplan. Co-founded Anthropic in 2021, serving as CTO.</p>
 news:
+  - title: "Anthropic Reportedly Plans to Set an IPO Valuation Range This Week and Begin Trading Next Week, as Some Investors Push Below the $1.5T Target (WSJ)"
+    url: https://techcrunch.com/2026/11/09/anthropic-reportedly-plans-to-move-forward-with-ipo-plans/
+    source: TechCrunch
+    date: 2026-11-09
+  - title: "Claude Fable 5.2 and Mythos 5.2 Released: $8/$40 per MTok, 67.6% on Terminal-Bench 4.0, AA Intelligence Index v5.0.1 65 (#1)"
+    url: https://www.anthropic.com/claude-fable-and-mythos-5-2
+    source: Anthropic
+    date: 2026-11-09
   - title: "Anthropic Expands AI for Science to Foundations and Research Institutions"
     url: https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions
     source: Anthropic

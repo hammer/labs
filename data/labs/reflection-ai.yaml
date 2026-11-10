@@ -75,6 +75,10 @@ people:
     description: >
       <p>Led post-training on the founding team and has since departed. Sole author of <strong>LambdaNetworks</strong>, a Google Brain researcher 2016-2022, on Character.AI's founding team, and an author of the <strong>GPT-4 Technical Report</strong> during his 2023-2024 spell at OpenAI.</p>
 news:
+  - title: "Reflection Publishes the Beam Model Technical Report: 501.3B-A23.4B MoE, 23.8T Tokens, Depth-Scaled Residuals, and a 100M-Rollout RL Run It Says Had Not Plateaued"
+    url: https://reflection.ai/documents/beam-model-tech-report
+    source: Reflection AI
+    date: 2026-11-06
   - title: "Beam Is Now Available: Reflection Publishes the Model Card, a Beam Safety Technical Report and a Speculative-Decoding Drafter, With Day-Zero Fine-Tuning Support"
     url: https://reflection.ai/blog/beam-is-available
     source: Reflection AI

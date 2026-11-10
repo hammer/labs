@@ -1,0 +1,39 @@
+name: Agnes 2.5 Pro Theta
+slug: agnes-2.5-pro-theta
+lab: sapiens-ai
+type: model
+date: 2026-11-07
+sources:
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/agnes-2-5-pro-theta
+  - label: Agnes AI
+    url: https://agnes-ai.com
+description: >
+  <p>A November checkpoint of <a href="/labs/sapiens-ai">Sapiens AI</a>'s
+  <a href="/outputs/sapiens-ai/agnes-2.5-pro">Agnes 2.5 Pro</a>, following the
+  July "Alpha" and August "Beta". Artificial Analysis lists it as released on
+  7 November 2026 and scores the reasoning version <strong>24 on Intelligence
+  Index v5.0.1</strong>. It is the only Agnes 2.5 Pro checkpoint scored so far
+  on v5, so the number cannot be compared directly with the Beta's 35 on v4.3.2.
+  Pricing is unchanged at $0.10 per million input tokens and $0.30 per million
+  output, with a 1M-token context. The weights are proprietary.</p>
+
+  <p>Sapiens publishes no release notes, architecture, parameter count or base
+  model for the checkpoint. As with the earlier checkpoints, the founder has
+  described the approach as post-training pretrained models such as Qwen and
+  DeepSeek, so this entry does not treat it as a from-scratch model. It has
+  its own file because it is a distinct checkpoint scored on a newer index
+  version than the Agnes 2.5 Pro anchor.</p>
+tags:
+  - reasoning
+  - multimodal
+  - agentic
+model:
+  open_weights: false
+  context_window: 1000000
+  pretrained_from_scratch: false
+  intelligence_index: 24
+  intelligence_index_version: "AA v5.0.1"
+related:
+  - agnes-2.5-pro
+  - agnes-3.0-flash

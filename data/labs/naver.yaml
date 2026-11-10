@@ -65,6 +65,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Sangdoo_Yun1
 news:
+  - title: "NAVER Signs an Up-to-$9B Computing-Infrastructure Agreement With Brookfield (55 MW From H1 2027, 200 MW in 2028), Meeting the Precondition for NVIDIA's Strategic Equity Investment"
+    url: https://navercorp.com/en/media/pressReleasesDetail?seq=10034796
+    source: NAVER
+    date: 2026-10-27
   - title: "Naver Cloud Consortium (33 Members Incl. LG CNS, KEPCO KDN, KHNP) Selected to Build Korea's Cybersecurity Foundation Model: Two 700B-Parameter Models on HyperCLOVA X and EXAONE, 4,000 B200 GPUs, 830 TB of Infrastructure Data"
     url: https://en.sedaily.com/technology/2026/09/03/naver-cloud-consortium-to-build-koreas-security-ai-model
     source: Seoul Economic Daily

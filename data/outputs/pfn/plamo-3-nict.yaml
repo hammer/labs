@@ -8,6 +8,10 @@ sources:
     url: https://tech.preferred.jp/ja/blog/plamo_3_120b_distillation_cpt/
   - label: HuggingFace (31B base)
     url: https://huggingface.co/pfnet/plamo-3-nict-2604-31b-base
+  - label: PLaMo 3 Translate release (tech blog)
+    url: https://www.preferred.jp/en/blog/tech/plamo-3-translate-weight-release
+  - label: PLaMo 3 Translate 31B (HuggingFace)
+    url: https://huggingface.co/pfnet/plamo-3-translate-31b
 description: >
   <p>PFN's largest disclosed pretraining run, with NICT: a
   <strong>120B-parameter</strong> base (weight-reuse initialization from
@@ -17,6 +21,17 @@ description: >
   The 120B weights are not public; the open 31B carries its distilled
   capability. A meaningful scale-up for Japan's sovereign-model efforts
   beyond the API-only PLaMo 3.0 Prime line.</p>
+
+  <p><strong>PLaMo 3 Translate</strong> (open weights 2026-10-27) is a
+  translation-specialized family built on PLaMo 3 NICT and further trained on
+  "tens of billions of tokens of translation-focused data". It comes in 0.8B,
+  2B, 8B and 31B sizes, each also shipped in FP8, W4A16, W4AFP8, NVFP4, GGUF
+  and MLX formats. It covers 53 languages, accepts surrounding context and a
+  glossary, and was trained at up to 32,768 input-plus-output tokens. PFN
+  reports that even the 2B beats TranslateGemma and HY-MT2 on every metric it
+  shows. The 31B scores 0.8799 WMT24++ COMET-22 for English to Japanese, and
+  4-bit formats stay within about 0.01 of BF16. The license is the PLaMo
+  Community License, free for non-commercial use.</p>
 tags:
   - japanese
   - open-weight
@@ -32,5 +47,8 @@ model:
     - name: plamo-3-nict-2604-31b-base
       parameters: 31B
       notes: distilled, open weights, 256K-context CPT
+    - name: plamo-3-translate (0.8B / 2B / 8B / 31B)
+      parameters: 31B
+      notes: translation-specialized, 53 languages, PLaMo Community License (2026-10-27)
 related:
   - plamo-3.0-prime

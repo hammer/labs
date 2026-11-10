@@ -107,6 +107,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Ming_Ding1
 news:
+  - title: "ByteDance Releases Seedream 5.5 Image Model in Doubao and Jimeng: Faster Than Seedream 5.0 Pro, Pixel-Level Preservation Over 100+ Edit Rounds, Native RGBA Transparency, at Under Half the Price; Pro Tier to Follow"
+    url: https://www.leiphone.com/category/industrynews/CoJod8Z9X1pDj1sv.html
+    source: Leiphone
+    date: 2026-11-09
   - title: "Volcano Engine Opens Enterprise Trials of Seedance 2.5 4K, a Film-and-TV Tier With 10-Bit Color and 480p Draft Mode"
     url: https://technode.com/2026/10/23/bytedance-launches-seedance-2-5-4k-video-model-for-film-production/
     source: TechNode

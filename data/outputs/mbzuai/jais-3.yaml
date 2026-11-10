@@ -16,6 +16,8 @@ sources:
     url: https://forge.coreweave.com/wandb/mbzuai-llm/Jais-3-375B-A23B
   - label: Technical report (IFM)
     url: https://ifm.ai/jais/tech-report
+  - label: Technical report (arXiv)
+    url: https://arxiv.org/abs/2611.10224
   - label: HuggingFace (Jais-ASR)
     url: https://huggingface.co/IFM/Jais-ASR
   - label: Arabic benchmark auditing collection
@@ -50,8 +52,17 @@ description: >
   card. The technical report was marked "coming soon" at launch; on 25 October
   the model card added a link to it at ifm.ai/jais/tech-report (cited as "Jais
   3: Introducing Arabic-centric Agentic AI", IFM, Inception42 and Cerebras
-  teams), but that page refuses automated fetches, so its contents are not yet
-  reflected here. The code repository is still marked "coming soon". A subset of the
+  teams). The report reached arXiv on 6 November (2611.10224). It describes Jais 3 as six
+  models from 0.9B to 375B, each adapted from the matching
+  <a href="/outputs/mbzuai/k2-horizon">K2 Horizon</a> checkpoint rather than
+  pretrained from scratch. Each goes through Arabic continual pretraining, SFT,
+  FTPO and RLVR. The data mixes natural, translated, transliterated and
+  synthetic Arabic, and replays K2 Horizon's own training data to keep its
+  reasoning, agentic and English skills. All models except the 0.9B keep the
+  512K context. The report calls the 375B the largest open Arabic-centric model
+  to date. Evaluation moves to fully generative scoring on audited Arabic
+  benchmarks, which are released with the evaluation code, data recipes,
+  configs and logs. The code repository is still marked "coming soon". A subset of the
   Arabic training data is released as IFM/Jais-3-Data.</p>
 
   <p>The card's numbers are self-reported against Qwen3.5-397B-A17B, MiniMax
@@ -121,6 +132,8 @@ model:
       notes: "dense; Uno, FP8, GGUF, MLX builds"
     - name: Jais-3-0.9B
       notes: "dense; Uno, GGUF, MLX builds"
+paper:
+  arxiv: "2611.10224"
 related:
   - k2-horizon
   - jais-2

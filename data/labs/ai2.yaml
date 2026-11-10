@@ -85,6 +85,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Luca_Soldaini1
 news:
+  - title: "Ai2 and Google Launch NeuralGCM+: Multimillion-Dollar, Three-Year Google.org Grant to Build an Open Coupled Atmosphere-Ocean-Sea-Ice Hybrid Climate Model on Google Research's NeuralGCM"
+    url: https://allenai.org/blog/google-climate-partnership
+    source: Ai2
+    date: 2026-11-04
   - title: "ACE2S-SHiELD+ Climate Emulator Weights Released (Apache 2.0), Trained to Separate SST and CO2 Forcing"
     url: https://huggingface.co/allenai/ACE2S-SHiELD-plus
     source: Hugging Face

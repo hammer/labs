@@ -1,0 +1,76 @@
+name: PLaMo 3.1 Prime
+slug: plamo-3.1-prime
+lab: pfn
+type: model
+date: 2026-10-27
+sources:
+  - label: Announcement
+    url: https://www.preferred.jp/ja/news/pr20261027
+  - label: Tech Blog
+    url: https://preferred.jp/ja/blog/tech/plamo-3-1-prime-release
+description: >
+  <p>PFN's new flagship in the PLaMo 3 line, released on 27 October 2026 as
+  the successor to <a href="/outputs/pfn/plamo-3.0-prime">PLaMo 3.0
+  Prime</a>. Like 3.0 Prime it is built on the pretrained model from PFN's
+  <a href="/outputs/pfn/plamo-3-nict">joint research with NICT</a>; the
+  change is in post-training. Where 3.0 Prime shipped separate Reasoning and
+  Non-reasoning variants, 3.1 Prime is a <strong>single hybrid model</strong>
+  that switches between the two modes. The blog describes two-stage SFT
+  (reasoning-only first, then a mix with reasoning traces stripped from a
+  random subset), general RL for instruction following and STEM, a
+  search-specific RL stage with rubric rewards for long-form reports (search
+  simulated on an OpenSearch cluster), and DPO for the non-reasoning mode.
+  New SFT data targets hallucination: answering known facts, admitting
+  uncertainty, synthesized unanswerable questions, and citation data.</p>
+
+  <p>Serving changes: speculative decoding with a lightweight draft model
+  gives a self-reported 1.70x output throughput at concurrency 1, falling to
+  1.28x at 32, and PFN's own low-bit KV-cache quantization cuts time per
+  output token by 15&ndash;45%. Non-reasoning mode uses about 90% fewer output
+  tokens. The product adds web search and Deep Research in PLaMo Chat, the
+  API and on-premises deployments. Standard API pricing is &yen;60 per million
+  input tokens and &yen;250 per million output tokens. Parameter count,
+  architecture, context window and license are not disclosed (the evaluation
+  ran at a 262,144-token max length in reasoning mode and 65,536 in
+  non-reasoning mode). No weights are released.</p>
+
+  <p>Self-reported reasoning-mode scores, 3.0 Prime &rarr; 3.1 Prime: Japanese
+  MT-Bench 93.1 &rarr; 97.3, AIME 2024 69.0 &rarr; 72.4, BrowseComp-Plus 17.8
+  &rarr; 21.8, AA-Omniscience 22.7 &rarr; 34.0, HealthBench 16.2 &rarr; 19.4.
+  Some scores fell: IFBench 72.2 &rarr; 64.8, LiveCodeBench 48.3 &rarr; 44.7,
+  GPQA-Diamond 62.2 &rarr; 61.2. Non-reasoning mode gave up most of its maths
+  (AIME 2024 58.0 &rarr; 10.2, MATH-500 91.1 &rarr; 63.5). PFN reports an
+  average gain of about 15% over 3.0 Prime across eight hallucination
+  benchmarks. Against gpt-oss-120b, Gemma 4 31B IT, Qwen3.8 27B and Muse
+  Glimmer 30B, the blog says it leads on safety in both modes and trails all of
+  them on STEM/code and web-search QA. Artificial Analysis does not list
+  PLaMo models.</p>
+tags:
+  - japanese
+  - proprietary
+  - reasoning
+  - sovereign
+model:
+  open_weights: false
+  benchmark_scores:
+    - benchmark: AIME 2024
+      score: "72.4"
+      mode: reasoning
+    - benchmark: GPQA-Diamond
+      score: "61.2"
+      mode: reasoning
+    - benchmark: IFBench
+      score: "64.8"
+      mode: reasoning
+    - benchmark: LiveCodeBench
+      score: "44.7"
+      mode: reasoning
+    - benchmark: Japanese MT-Bench
+      score: "97.3"
+      mode: reasoning
+    - benchmark: AA-Omniscience
+      score: "34.0"
+      mode: reasoning
+related:
+  - plamo-3.0-prime
+  - plamo-3-nict

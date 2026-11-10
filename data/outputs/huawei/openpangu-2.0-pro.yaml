@@ -18,6 +18,13 @@ description: >
   the compute-sovereignty arc alongside GLM-5 (Ascend 910B) and DeepSeek-V4
   (Ascend 950PR).</p>
 
+  <p>Huawei Cloud stopped selling the hosted version on 2026-11-06 and takes
+  it offline on 2026-11-30, telling Pro customers to migrate to Zhipu's
+  GLM-5.3 (<a href="https://www.ithome.com/1/021/526.htm">IT&#x4E4B;&#x5BB6;</a>,
+  on a notice dated 2026-11-01). The GitCode weights remain available, and a
+  successor <strong>openPangu-2.1-Pro</strong> appeared in Huawei's Xiaoyi
+  Work app on 2026-11-05 with no specifications published.</p>
+
   <p><em>Active-parameter figure per the primary GitCode page (~18B); some
   press reports "180B active" &mdash; treat as an error.</em></p>
 tags:

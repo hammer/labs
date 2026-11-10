@@ -8,13 +8,35 @@ sources:
     url: https://www.minimax.io/news/Music-01
   - label: "Music 2.5 Announcement"
     url: https://www.minimax.io/news/minimax-music-25
+  - label: "Music 3.0 technical blog"
+    url: https://www.minimax.io/blog/minimax-music-3-0-next-generation-open-weights-production-ready-versatile-music-model
+  - label: "Music 3.0 HuggingFace"
+    url: https://huggingface.co/MiniMaxAI/MiniMax-Music3
+  - label: "Music 3.0 GitHub"
+    url: https://github.com/MiniMax-AI/MiniMax-Music3
 description: >
-  Capable of generating full 5-minute studio-grade tracks with paragraph-level
-  precision control. Versions from Music 1.5 to 2.5+.
+  <p>Capable of generating full 5-minute studio-grade tracks with
+  paragraph-level precision control. Versions from Music 1.5 to 2.5+.</p>
+
+  <p><strong>Music 3.0</strong> (API July 16, 2026; weights on HuggingFace
+  August 13, 2026) is the first open-weight release in the line, under the
+  MiniMax-Music3 Community License. It generates complete songs of up to
+  five minutes as 32 kHz stereo from lyrics plus a music description. The
+  technical blog describes three parts: an eight-layer RVQ tokenizer whose
+  first layer carries structure and whose other seven carry acoustic
+  residuals; a <strong>Hybrid-LM</strong> in which an <strong>8B Global
+  LLM initialized from Qwen3.5-8B</strong> predicts frame-level semantic
+  tokens and a randomly initialized 0.6B Local LLM predicts the within-frame
+  acoustic tokens along the depth axis; and a synthesis stack in which fused
+  hidden states from both LLMs condition a 2.4B flow-matching module decoded
+  by a 123M Flow-VAE, rather than feeding discrete tokens to a decoder.
+  Training runs global alignment first, then full-parameter joint training
+  of both LLMs.</p>
 tags:
   - audio
   - music
   - generation
-notes: Music-01 launched August 2024; Music 2.0 October 2025; Music 2.5 early 2026.
+notes: Music-01 launched August 2024; Music 2.0 October 2025; Music 2.5 early 2026; Music 3.0 July 2026 (open weights August 13, 2026).
 model:
-  open_weights: false
+  open_weights: true
+  license: MiniMax-Music3 Community License

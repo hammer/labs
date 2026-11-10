@@ -6,6 +6,8 @@ date: 2026-05-19
 sources:
   - label: Google blog
     url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/
+  - label: Gemini Omni 1.2 Flash (Nov 5, 2026)
+    url: https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/
   - label: TechCrunch coverage
     url: https://techcrunch.com/2026/05/19/googles-gemini-omni-turns-images-audio-and-text-into-video-and-thats-just-the-start/
 description: >
@@ -19,6 +21,17 @@ description: >
   cap, SynthID-watermarked. Available globally to Gemini app subscribers
   (AI Plus / Pro / Ultra) and Google Flow; free tier via YouTube Shorts and
   YouTube Create. Direct competitive answer to Sora / Veo separation.</p>
+
+  <p><strong>Gemini Omni 1.2 Flash</strong> (November 5, 2026) is generally
+  available on the Gemini API and Gemini for business as
+  <code>gemini-omni-1.2-flash</code>. It raises native clip length to
+  <strong>15 seconds</strong>, "up from 10 seconds with Omni 1.1", settable in
+  one-second steps from 3 to 15, and adds multi-turn conversational editing and
+  stronger reference following. Google cut the price 30% from Omni 1.1, to
+  $0.07 per second of 720p video; drafts can be made at 360p or 720p and
+  upscaled to 1080p or 4K. The post gives no benchmark numbers and no
+  architecture details. (This index has no separate record of the Omni 1.1
+  release.)</p>
 tags:
   - generation
   - multimodal
@@ -28,5 +41,7 @@ model:
   variants:
     - name: Gemini Omni Flash
       notes: First public release; 10s cap; SynthID-watermarked; in Gemini app + YouTube Shorts/Create
+    - name: Gemini Omni 1.2 Flash
+      notes: 2026-11-05; GA on Gemini API; 15s clips (up from 10s in Omni 1.1); multi-turn editing; $0.07/s at 720p, 30% below Omni 1.1
 related:
   - gemini-3.5-flash

@@ -10,6 +10,10 @@ sources:
     url: https://arxiv.org/abs/2606.02800
   - label: HuggingFace (DROID dataset)
     url: https://huggingface.co/datasets/nvidia/Cosmos3-DROID
+  - label: Interactive simulation technical report (Nov 2026)
+    url: https://research.nvidia.com/labs/cosmos-lab/cosmos-simulation/technical-report.pdf
+  - label: HuggingFace (Cosmos3-Nano-Sim-Auto)
+    url: https://huggingface.co/nvidia/Cosmos3-Nano-Sim-Auto
 description: >
   <p>NVIDIA's physical-AI flagship, billed as the "world's first fully open
   omnimodel": a unified Mixture-of-Transformers combining autoregressive
@@ -20,6 +24,21 @@ description: >
   June. The companion <strong>Cosmos3-DROID</strong> release repackages the
   DROID robot corpus in LeRobotDataset v3.0 format &mdash; 71,907 episodes /
   22M frames / 707GB under OpenMDW-1.1.</p>
+
+  <p>On October 20, 2026 NVIDIA released four Cosmos3-Nano post-trained
+  checkpoints for interactive simulation (Cosmos3-Nano-Transfer-Auto,
+  -Sim-Auto, -Sim-Transfer and -Sim-Bimanual, OpenMDW-1.1), and on November 4
+  a technical report on them,
+  <a href="https://research.nvidia.com/labs/cosmos-lab/cosmos-simulation/technical-report.pdf">"Interactive
+  World Simulation with Cosmos for Physical AI"</a>. The report adapts the
+  model to stream observations in response to actions and scene controls,
+  covering camera navigation, robot manipulation, controllable video transfer
+  and multi-view driving. Its model card describes Cosmos3-Nano-Sim-Auto as a
+  16B-trainable-parameter Mixture-of-Transformers derived from Cosmos3-Nano in
+  two stages (post-training on multi-sensor driving data, then causal
+  distillation to a few-step chunked generator) that renders up to 11 camera
+  views with aligned LiDAR. These are application checkpoints of Cosmos 3 Nano,
+  not a new base model.</p>
 tags:
   - world-model
   - robotics

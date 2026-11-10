@@ -93,6 +93,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=1MSpdmQAAAAJ
 news:
+  - title: "Mistral Acquires SkipLabs, a Paris/London AI Code-Generation Startup Founded by Ex-Meta Engineer Julien Verlaguet, Whose Team Joins Guillaume Lample's Science Team; Its Fifth Acquisition of 2026 After London Design Studio New Material in October (Terms Undisclosed)"
+    url: https://www.maddyness.com/2026/11/05/mistral-ai-soffre-une-cinquieme-acquisition-depuis-le-debut-de-lannee/
+    source: Maddyness
+    date: 2026-11-05
   - title: "Mistral Large 4 Technical Report: Model Surgery Removed Its KV-Cache Compression After It Hurt Agentic Performance; DeepSeek Sparse Attention, NVFP4 on Four GB300s"
     url: https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/blob/main/assets/technical_report.pdf
     source: Hugging Face

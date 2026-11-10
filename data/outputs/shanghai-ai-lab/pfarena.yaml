@@ -1,0 +1,74 @@
+name: PFArena
+slug: pfarena
+lab:
+  - shanghai-ai-lab
+  - tsinghua
+type: eval
+date: 2026-09-23
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2609.28921
+  - label: GitHub
+    url: https://github.com/AMix-Bio/PFArena
+  - label: Dataset (HuggingFace)
+    url: https://huggingface.co/datasets/AMix-Bio/PFArena
+  - label: Shanghai AI Lab announcement (Chinese)
+    url: https://www.shlab.org.cn/news/5444313
+description: >
+  <p>An <strong>assay-grounded protein-engineering benchmark</strong> that asks
+  not whether a model can score a mutation but whether it can make the decisions
+  a protein-engineering campaign actually requires. Built from <strong>202 unique
+  real assays</strong>, expanded to <strong>293 assay&ndash;task instances</strong>
+  and <strong>607,269 candidate rows</strong>, it defines four task interfaces:
+  <strong>T1</strong> single-mutant generation over the full legal single-mutation
+  space with no measurements supplied; <strong>T2</strong> measurement-free
+  multi-mutant ranking (zero-shot discrimination over combinations);
+  <strong>T3</strong> anchor-informed multi-mutant ranking, where a set of
+  measured mutants and their fitness is given; and <strong>T4</strong>
+  single-mutant-informed multi-mutant ranking. Generation tasks are scored by
+  recall, ranking tasks by Spearman correlation. Protein language models, general
+  LLMs and LLM-based scientific agents are run through the same interfaces, which
+  is the comparison most mutation-effect benchmarks cannot make. By Shanghai AI
+  Lab with Tsinghua's Institute for AI Industry Research (AIR) and School of
+  Pharmaceutical Sciences; released on HuggingFace in September 2026 and
+  announced on 2026-10-30 as the science-intelligence arm of the lab's
+  <a href="/outputs/shanghai-ai-lab/opencompass">OpenCompass (司南)</a>
+  evaluation system.</p>
+
+  <p>The headline result is a negative one, and the lab presents it that way:
+  current models cannot reliably carry out protein modification. Under a budget
+  of <strong>40 candidates</strong>, the best model averages <strong>fewer than
+  two high-fitness mutations found</strong>, and performance falls as mutation
+  order rises. The two model classes are complementary rather than ordered &mdash;
+  protein language models are stronger at surfacing good mutations when no
+  experimental data is available, while general LLMs and agents pull ahead once
+  measurements are in hand, and the two tend to capture different mutations.
+  Iterating on experimental feedback helps measurably: at the same total budget of
+  40 candidates, GPT-6 Astra's high-fitness recall rises from <strong>2.54% to
+  4.65%</strong> across feedback rounds, which the authors read as evidence that
+  closed-loop querying beats one-shot answering. The lab frames the whole result
+  as support for its "通专融合" (general&ndash;specialist fusion) thesis: couple
+  general models with specialist protein models into a hypothesis &rarr;
+  experiment-selection &rarr; feedback loop. Dataset license is listed as
+  "other".</p>
+tags:
+  - benchmark
+  - evaluation
+  - science
+  - biology
+  - agents
+paper:
+  arxiv: "2609.28921"
+  code_url: https://github.com/AMix-Bio/PFArena
+eval:
+  num_questions: 293
+  domains:
+    - protein engineering
+    - biology
+  scoring_method: "Recall (generation tasks), Spearman correlation (ranking tasks)"
+  used_in:
+    - OpenCompass (司南)
+  leaderboard_url: https://github.com/AMix-Bio/PFArena
+related:
+  - opencompass
+  - intern-s2-397b

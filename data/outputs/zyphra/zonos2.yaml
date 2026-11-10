@@ -8,6 +8,12 @@ sources:
     url: https://www.zyphra.com/our-work/zonos2
   - label: HuggingFace
     url: https://huggingface.co/Zyphra/ZONOS2
+  - label: ZONOS3-Mini (blog)
+    url: https://www.zyphra.com/our-work/zonos3-mini
+  - label: ZONOS3-Mini (HuggingFace)
+    url: https://huggingface.co/Zyphra/ZONOS3-Mini
+  - label: ZONOS3-Mini runtime (GitHub)
+    url: https://github.com/Zyphra/ZONOS3-Mini
 description: >
   <p>Zyphra's open-weight multilingual <strong>text-to-speech</strong> model
   and successor to Zonos — an <strong>MoE backbone</strong> (16 experts,
@@ -21,6 +27,24 @@ description: >
   Vietnamese, German, Hebrew, Dutch, and Tier 3 a further ~23 languages.
   Extends Zyphra's foundation-model line beyond language and EEG into
   speech generation.</p>
+
+  <p><strong>ZONOS3-Mini</strong> (2026-11-09, Apache 2.0) is the next
+  generation in a smaller size. It is a sparse MoE with <strong>800M total and
+  100M active parameters</strong>, and Zyphra says it was trained on 112 H100s
+  in 2.5 days. The backbone moves to Zyphra's language-model components:</p>
+  <ul>
+    <li><strong>Mixing and residuals:</strong> a 3:1 hybrid of Gated DeltaNet
+    and global attention over 11 layers, a latent MoE, and attention
+    residuals.</li>
+    <li><strong>Input and codec:</strong> it reads SuperBPE text tokens and
+    predicts codes from Zyphra's new ZAC-1 dual codec at 15 Hz, replacing 86 Hz
+    DAC. Zyphra reports a tenfold drop in word error rate over a DAC-trained
+    equivalent.</li>
+    <li><strong>Post-training:</strong> DPO followed by GRPO.</li>
+  </ul>
+  <p>On Zyphra's own TTS Capability Index it ranks first among open models, ahead
+  of Fish S2 Pro and MOSS TTS v1.5. Zyphra gives no numeric scores in the text,
+  and it has not announced a larger ZONOS3.</p>
 tags:
   - speech
   - audio

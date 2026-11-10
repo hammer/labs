@@ -11,6 +11,8 @@ sources:
     url: https://reflection.ai/blog/beam-is-available
   - label: Model card
     url: https://reflection.ai/beam-model-card
+  - label: Beam Model Technical Report (PDF, Nov 2026)
+    url: https://reflection.ai/documents/beam-model-tech-report
   - label: Beam Safety Technical Report
     url: https://reflection.ai/beam-safety-report
   - label: API docs (model list)
@@ -83,8 +85,8 @@ description: >
   claim about active-parameter count rather than accuracy, and one Reflection
   computes itself as 2 &times; active parameters &times; mean generated tokens
   using Artificial Analysis and DataCurve figures. All benchmark numbers are
-  self-reported, and no capabilities technical report has been published.
-  Laskin told Semafor
+  self-reported. (At launch no capabilities technical report had been
+  published; see the last paragraph.) Laskin told Semafor
   that CAISSI and the UK AI Security Institute are assessing Beam, which neither
   the launch post nor Reflection's safety page mentions and neither body has
   confirmed.</p>
@@ -106,6 +108,34 @@ description: >
   categories of its Open Safety Framework, with external evaluation inputs from
   SecureBio, Irregular, Nemesys Insights, Andon Labs and Gray Swan. It does not
   mention CAISI or the UK AI Security Institute.</p>
+
+  <p><strong>The capabilities technical report followed in early November
+  2026</strong>: the 156-page
+  <a href="https://reflection.ai/documents/beam-model-tech-report">Beam Model
+  Technical Report</a> (Reflection Team et al., PDF last modified 2026-11-07
+  UTC; its citation block points at <code>reflection.ai/beam-technical-report</code>,
+  which did not resolve on 2026-11-10, and the HuggingFace card still read
+  "coming"). It gives the exact scale as <strong>501.3B total and 23.4B
+  active parameters</strong> over 52 layers (49 MoE and 3 dense), 256 routed
+  experts with 8 active and no shared expert, a sigmoid top-k router, a
+  151,936-token vocabulary, 48 query and 8 KV heads, and a 5:1 mix of local
+  (512-token sliding window, RoPE) and global (NoPE) attention with QK-norm and
+  gated attention. The one new architectural piece it names is a
+  <strong>depth-scaled residual connection (DSRes)</strong>, which rescales the
+  residual stream by 1/&radic;n of the accumulated sublayers to keep its norm
+  bounded; length extrapolation uses scalable softmax. The scaling recipe was
+  fitted on a ladder from 300M to 23.4B active parameters across four orders of
+  magnitude of pretraining compute. Pretraining on 6,144 GB300s reached
+  <strong>92.3% goodput</strong> late in the run (up from 73.2% before an
+  infrastructure relaunch) and 21% MFU in steady state. The RL platform ran
+  110K concurrent rollouts with 12-second weight updates, and the report says
+  capabilities "continued to improve as we increased RL compute, with no sign
+  of a plateau". It also documents the DFlash 2 drafter (a 1.93B-parameter
+  block-diffusion model) and reports that scaling the alignment teacher from
+  100B to 501B parameters cut false-positive over-refusals by 48.7% relatively.
+  The fine-tuning cookbook, including the promised self-distillation recipes,
+  is at <a href="https://github.com/reflection-oss/cookbook">reflection-oss/cookbook</a>
+  (repo created 2026-10-19).</p>
 tags:
   - moe
   - open-weight
@@ -124,8 +154,8 @@ model:
     - score: 30
       version: "AA v4.3.2"
       until: "2026-10-28"
-  parameters: 501B
-  active_parameters: 23B
+  parameters: 501.3B
+  active_parameters: 23.4B
   num_experts: 256
   top_k: 8
   context_window: 1048576

@@ -1,0 +1,53 @@
+name: GPT-Image-2.6 (Flare and Sunburst)
+slug: gpt-image-2.6
+lab: openai
+type: model
+date: 2026-11-04
+sources:
+  - label: Announcement (Introducing Images 2.6)
+    url: https://openai.com/index/introducing-images-2-6
+  - label: System Card (ChatGPT Images 2.6)
+    url: https://deploymentsafety.openai.com/chatgpt-images-2-6
+  - label: API reference (Sunburst)
+    url: https://developers.openai.com/api/docs/models/gpt-image-2.6-sunburst
+  - label: API reference (Flare)
+    url: https://developers.openai.com/api/docs/models/gpt-image-2.6-flare
+  - label: Image generation guide (GPT Image 2.6)
+    url: https://developers.openai.com/api/docs/guides/image-generation#gpt-image-26
+description: >
+  <p>OpenAI's image models released to ChatGPT, Codex and the API on
+  November 4, 2026, eight weeks after
+  <a href="/outputs/openai/gpt-image-2.5">GPT-Image-2.5</a>. It keeps the same
+  two tiers: <strong>Sunburst</strong> (<code>gpt-image-2.6-sunburst</code>)
+  for detailed compositions and editing, and <strong>Flare</strong>
+  (<code>gpt-image-2.6-flare</code>) for fast iteration. The system card says
+  both improve editing consistency, detail preservation and responses to
+  sketches and image annotations. The release adds three features. A
+  <code>complexity</code> setting (low, medium or high, with high as the
+  default) controls how much the model plans before rendering, separately from
+  the <code>quality</code> setting. It also adds <strong>animated GIF
+  generation</strong>, markup-guided edits (also available on 2.5) and, in the
+  API, <strong>SVG output</strong>. Both tiers carry the same token prices as
+  2.5 Sunburst: $5 per million text-input tokens, $8 image input and $30 image
+  output. Architecture and parameters are undisclosed.</p>
+
+  <p>The system card describes a safety stack carried over from Images 2.5,
+  with added safeguards for GIF creation. On 3,077 adversarial prompts,
+  unsafe outputs that moderation failed to block fell from 1.92% to 1.72% for
+  Sunburst and rose from 1.49% to 2.14% for Flare against the matching 2.5
+  baselines; neither change in that measure is marked statistically
+  significant.</p>
+tags:
+  - image-generation
+  - multimodal
+  - proprietary
+model:
+  open_weights: false
+  license: Proprietary
+  variants:
+    - name: GPT-Image-2.6 Sunburst
+      notes: "Detailed generation and editing; $5/$8/$30 per M text-in/image-in/image-out"
+    - name: GPT-Image-2.6 Flare
+      notes: "Fast iteration; same token prices as Sunburst"
+related:
+  - gpt-image-2.5
