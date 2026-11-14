@@ -1,0 +1,56 @@
+name: OpenSquilla
+slug: opensquilla
+lab: tokenrhythm
+type: library
+date: 2026-05-12
+sources:
+  - label: GitHub
+    url: https://github.com/TokenRhythm/opensquilla
+  - label: "Agentic Routing: The Harness-Native Data Flywheel (arXiv)"
+    url: https://arxiv.org/abs/2607.11399
+  - label: Technical report (aiXiv)
+    url: https://aixiv.science/abs/aixiv.260822.000001
+description: >
+  <p>TokenRhythm's open-source agent harness and the product its later models
+  come from. It is a microkernel agent with a CLI, a web UI and chat-channel
+  front ends that all share one turn loop. It has persistent memory, a layered
+  sandbox, built-in web search and on-device embeddings, and connects to 20+
+  model providers, including the TokenRhythm API, OpenRouter, Anthropic,
+  OpenAI, DeepSeek and Qwen. The first release (v0.1.0rc1) came on May 12,
+  2026; v0.5.8 shipped on November 6. It is Apache 2.0 and has about
+  <strong>7,100 GitHub stars</strong>.</p>
+
+  <p>Its distinguishing piece is <strong>SquillaRouter</strong>, a local
+  LightGBM and ONNX classifier. It scores each turn on length, language, code,
+  keywords and embeddings, and sends the turn to the cheapest of four model
+  tiers that can handle it. The July 2026 report "Agentic Routing: The
+  Harness-Native Data Flywheel" makes the case that routing should be a
+  harness-level decision. It conditions each choice on the full execution
+  state rather than a single prompt, and chooses either one cost-effective
+  model or a complementary ensemble. Every routing decision then becomes a
+  labeled record whose label comes from the environment: query, harness
+  state, model choice, trace, outcome and cost. That turns ordinary agent
+  traffic into training data for better routers and models. This is the
+  flywheel <a href="/outputs/tokenrhythm/neohorse-1">NeoHorse-1</a> was then
+  trained on. The README says multi-model ensemble routing surpasses Claude
+  Fable 5.</p>
+
+  <p>Self-reported comparisons, with costs from one shared price list:</p>
+  <ul>
+    <li><strong>PinchBench:</strong> forced single-model OpenSquilla on Opus
+    4.7 scores 93.85 against OpenClaw's 92.55, at 22% lower cost. A routed pool
+    of DeepSeek-V4 Flash, GLM-5.1 and Opus 4.7 keeps 92.51 for $0.69 against
+    $6.23.</li>
+    <li><strong>ClawMark</strong> (100 business tasks): the harness adds 5.8
+    points to GLM-5.1, at higher cost.</li>
+  </ul>
+  <p>The team also released <code>claw-swe-bench</code>, an adapter framework
+  for running such harnesses on SWE-bench-style tasks.</p>
+tags:
+  - agents
+  - harness
+  - routing
+  - open-source
+related:
+  - neohorse-1
+  - infrarsi

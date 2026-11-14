@@ -1,0 +1,97 @@
+name: NeoHorse-1
+slug: neohorse-1
+lab: tokenrhythm
+type: model
+date: 2026-09-07
+flagship: true
+sources:
+  - label: Technical report (arXiv)
+    url: https://arxiv.org/abs/2609.08183
+  - label: GitHub
+    url: https://github.com/TokenRhythm/NeoHorse
+  - label: NeoHorse-1-4B (HuggingFace)
+    url: https://huggingface.co/TokenRhythm/NeoHorse-1-4B
+  - label: NeoHorse-1-9B (HuggingFace)
+    url: https://huggingface.co/TokenRhythm/NeoHorse-1-9B
+  - label: NeoHorse-Jev-4B (HuggingFace)
+    url: https://huggingface.co/TokenRhythm/NeoHorse-Jev-4B
+description: >
+  <p>TokenRhythm's first open-weight models. They are 4B and 9B agent models
+  <strong>post-trained from <a href="/outputs/alibaba/qwen3.5">Qwen3.5</a></strong>,
+  not pretrained in-house, and released under Apache 2.0 on September 7, 2026.
+  The report calls them "an initial prototype on the path toward recursive
+  self-improvement".</p>
+
+  <p>The idea is that a <strong>deployed routing harness already contains an
+  RSI mechanism</strong>. TokenRhythm's router sends each turn of user traffic
+  to a heterogeneous pool of models. For each turn it records the predicted
+  capability demand, the service tier chosen, the tool interactions and the
+  outcome. Those records become training data:</p>
+  <ul>
+    <li><strong>Data admission:</strong> the records keep interleaved
+    reasoning, tool calls and harness context, and pass through
+    deduplication, decontamination, structural validation, a six-dimension
+    semantic evaluation and scene/goal/outcome labeling.</li>
+    <li><strong>Training:</strong> the routing signals order SFT into a
+    three-stage curriculum and drive routing-guided on-policy
+    distillation.</li>
+    <li><strong>The loop:</strong> capability-level evaluation sets the next
+    training mixture. The updated models can return to the router's pool,
+    closing an evaluate&ndash;select&ndash;update loop. The report runs it
+    once and leaves repeated iterations as future work.</li>
+  </ul>
+
+  <p>On the report's ten-benchmark protocol, post-training raises the macro
+  average from 58.94 to <strong>64.87</strong> at 4B and from 65.60 to
+  <strong>69.04</strong> at 9B. The protocol covers QwenClawBench, WorkBuddy,
+  PinchBench, VitaBench, BFCL v4, &tau;&sup2;-Bench, HumanEval,
+  LiveCodeBench v6, IFBench and IFEval. The 4B model beats
+  <a href="/outputs/nanbeige/nanbeige4.2-3b">Nanbeige4.2-3B</a> (62.31) on
+  that average, and the 9B beats Muse Glimmer 30B (67.86). Most of the gain is
+  on agentic benchmarks; LiveCodeBench, IFBench and IFEval at 9B are flat. Both
+  models have a native 262K context.</p>
+
+  <p>In September, <strong>NeoHorse-Jev-4B</strong> adapted the 4B into a
+  prefill-only decision model. It returns probabilities for a choice, a yes/no
+  check or a rating in a single forward pass, for routing and tool selection.
+  It averages 77.70 over six decision benchmark groups. NeoHorse-1-4B has
+  about 2,560 HuggingFace likes, and the repository has about 1,700 GitHub
+  stars. The routing harness itself is described in TokenRhythm's
+  <a href="/outputs/tokenrhythm/opensquilla">OpenSquilla</a> report.</p>
+tags:
+  - agents
+  - post-training
+  - small-models
+  - recursive-self-improvement
+  - open-weight
+model:
+  open_weights: true
+  base_model: qwen3.5
+  context_window: 262144
+  license: Apache 2.0
+  variants:
+    - name: NeoHorse-1-4B
+      notes: "Post-trained from Qwen3.5-4B; GGUF and MLX builds"
+    - name: NeoHorse-1-9B
+      notes: "Post-trained from Qwen3.5-9B; GGUF and MLX builds"
+    - name: NeoHorse-Jev-4B
+      notes: "Prefill-only decision model built on NeoHorse-1-4B (Sep 23)"
+  benchmark_scores:
+    - benchmark: Ten-benchmark agentic average
+      score: "69.04"
+      mode: 9B
+    - benchmark: Ten-benchmark agentic average
+      score: "64.87"
+      mode: 4B
+    - benchmark: tau2-Bench
+      score: "90.82"
+      mode: 9B
+    - benchmark: BFCL v4
+      score: "67.43"
+      mode: 9B
+paper:
+  arxiv: "2609.08183"
+related:
+  - qwen3.5
+  - opensquilla
+  - infrarsi

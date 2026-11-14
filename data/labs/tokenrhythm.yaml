@@ -1,0 +1,112 @@
+name: TokenRhythm
+slug: tokenrhythm
+url: https://tokenrhythm.ai
+huggingface: https://huggingface.co/TokenRhythm
+github: https://github.com/TokenRhythm
+region: china
+founded: "2026-04"
+type: private
+description: >
+  <p><strong>TokenRhythm</strong> (基元律动) is a Chinese AI startup founded
+  in April 2026 by <strong>Wang Yunhe</strong>, the former director of Huawei's
+  <a href="/labs/huawei">Noah's Ark Lab</a> who led its Pangu large-model
+  programme, and <strong>Han Kai</strong>, formerly a chief researcher at
+  Noah's Ark. Wang announced on March 28, 2026 that he was leaving Huawei
+  after nearly nine years. Shanghai Jiyuan Lüdong Technology was registered on
+  April 8, according to Sina Tech's sources. The website and the company's
+  signed software belong to a Beijing entity, Beijing TokenRhythm
+  Technologies.</p>
+
+  <p>Funding:</p>
+  <ul>
+    <li><strong>Seed round:</strong> led by Granite Asia, with CDH VGC,
+    Yuanjing Capital and Infinite Fund.</li>
+    <li><strong>August 27, 2026:</strong> a round led by HLC Fund (弘晖基金),
+    with Juhe Capital and Shangshi Capital. Coverage gives "tens of millions of
+    US dollars" without making clear whether that is the round or the
+    cumulative total.</li>
+    <li><strong>Valuation:</strong> Sina Tech reported in June, citing
+    unnamed sources, that a round had closed at a <strong>$100M
+    valuation</strong>. The company has not confirmed a valuation, so this
+    index records none.</li>
+  </ul>
+
+  <p>Its business is a <strong>routing harness</strong>: a layer that picks
+  and combines models for each step of an agent's work, rather than an
+  OpenRouter-style reseller. It uses the traces that routing produces as
+  post-training data, with recursive self-improvement as the stated long-term
+  aim. The pieces:</p>
+  <ul>
+    <li><a href="/outputs/tokenrhythm/opensquilla">OpenSquilla</a> (May
+    2026): an open-source agent with a built-in model router and about 7,100
+    GitHub stars. Its July report, "Agentic Routing: The Harness-Native Data
+    Flywheel", lays out the strategy.</li>
+    <li>The <strong>TokenRhythm API</strong> (public beta August 27): a single
+    endpoint over many models. The company claimed 54,000 users and more than
+    500B tokens a day at launch.</li>
+    <li><a href="/outputs/tokenrhythm/neohorse-1">NeoHorse-1</a> (September):
+    4B and 9B open-weight agent models post-trained from Qwen3.5 on routing
+    traces. They are the first turn of that loop. TokenRhythm has not yet
+    pretrained a model of its own.</li>
+    <li><a href="/outputs/tokenrhythm/infrarsi">InfraRSI</a> (November): a
+    harness that applies the same verify-and-remember loop to the training
+    stack itself. It reports 1.83&times; faster training on four dense and MoE
+    workloads.</li>
+  </ul>
+  <p>Collaborators on these papers include Yu Wang's group at Tsinghua,
+  Infinigence AI and Peking University. Smaller releases include
+  Claw-SWE-Bench, a benchmark for agent harnesses on SWE-bench-style repair
+  tasks (arXiv 2606.12344). There is also API-TAIL, which detects when an API
+  silently swaps in a different model, using temperature-aligned likelihood
+  tails (arXiv 2610.36801). Finally, there is a survey of agent-system and
+  harness design (arXiv 2606.20683).</p>
+people:
+  - name: Yunhe Wang
+    url: https://www.wangyunhe.site
+    role: Founder and CEO
+    formerly: Huawei Noah's Ark Lab (Director; led Pangu); PhD Peking University; BS Xidian University
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=isizOkYAAAAJ
+    description: >
+      <p>Spent nearly nine years at Huawei, rising to director of Noah's Ark
+      Lab and leading the Pangu large-model programme, before leaving in March
+      2026. Earlier work includes the <a href="https://arxiv.org/abs/1911.11907">GhostNet</a>
+      efficient architecture. PhD at Peking University, co-advised by Chao Xu
+      and Dacheng Tao.</p>
+  - name: Kai Han
+    url: https://iamhankai.github.io
+    role: Co-founder and CTO
+    formerly: Huawei Noah's Ark Lab (Chief Researcher); PhD ISCAS; MS Peking University; BS Zhejiang University
+    urls:
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=vThoBVcAAAAJ
+  - name: Yuchuan Tian
+    role: Researcher (first author, InfraRSI)
+    formerly: Peking University
+news:
+  - title: "InfraRSI: Harnessing Recursive Self-Improvement for Training Infrastructure (1.83x training speedup, open source)"
+    url: https://infrarsi.github.io/
+    source: TokenRhythm
+    date: 2026-11-08
+  - title: "NeoHorse-1: 4B and 9B open-weight agent models post-trained on routing-harness traces"
+    url: https://github.com/TokenRhythm/NeoHorse
+    source: TokenRhythm
+    date: 2026-09-07
+  - title: "基元律动完成数千万美元新一轮融资 TokenRhythm API平台启动公测 (TokenRhythm raises a new round of tens of millions of dollars led by HLC Fund; TokenRhythm API enters public beta)"
+    url: https://finance.sina.com.cn/roll/2026-08-27/doc-iniptxkt5335469.shtml
+    source: Shanghai Securities News
+    date: 2026-08-27
+  - title: "Agentic Routing: The Harness-Native Data Flywheel (OpenSquilla technical report)"
+    url: https://arxiv.org/abs/2607.11399
+    source: arXiv
+    date: 2026-07-13
+  - title: "独家｜原华为盘古“90后少帅”离职创业，新公司已获1亿美元估值新融资 (Former Huawei Pangu lead Wang Yunhe's new company reportedly raises at a $100M valuation)"
+    url: https://finance.sina.cn/2026-06-02/detail-inhzzcpr1643741.d.html
+    source: Sina Tech
+    date: 2026-06-02
+tags:
+  - agents
+  - routing
+  - infrastructure
+  - recursive-self-improvement

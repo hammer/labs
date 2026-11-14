@@ -1,0 +1,105 @@
+name: "InfraRSI: Harnessing Recursive Self-Improvement for Training Infrastructure"
+slug: infrarsi
+lab: tokenrhythm
+type: paper
+date: 2026-11-08
+flagship: true
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2611.11558
+  - label: Project page
+    url: https://infrarsi.github.io/
+  - label: GitHub
+    url: https://github.com/TokenRhythm/InfraRSI
+description: >
+  <p>An agent harness that makes an <strong>existing LLM training job
+  faster</strong> without changing what it trains. You give it a working
+  launch script, entry point or repository. It searches launch flags,
+  environment variables, config keys and code patches you allow, then
+  re-verifies the winner against your original job. It works with
+  Megatron-Core, FSDP2/TorchTitan, DeepSpeed, HF Trainer/TRL and PyTorch DDP,
+  on one node or several. The agent can be Claude Code, Codex, DeepSeek or any
+  OpenAI-compatible endpoint.</p>
+
+  <p>The paper's argument is that training throughput defeats plain coding
+  agents and greedy tuners for four reasons, and the harness is built around
+  each:</p>
+  <ul>
+    <li><strong>Fake speedups.</strong> Agents can "win" by shrinking the
+    effective batch, moving optimizer work outside the timing window or casting
+    to unapproved precision. The task contract is fixed before search, and
+    every candidate must pass <strong>16 invariants</strong> in five layers:
+    execution, workload, schedule, numerics (loss within a default 3%) and a
+    reproduced speedup in a fresh back-to-back re-run.</li>
+    <li><strong>Measurement noise.</strong> Paired step-time noise ranges from
+    0.04&ndash;0.10% on dedicated 8&times;H100/H200 nodes to over 6% on shared
+    hosts. So a <code>doctor</code> stage calibrates the cluster's noise floor
+    instead of using a fixed 2% gate.</li>
+    <li><strong>Wrong LLM priors.</strong> Zero-shot LLM speedup predictions
+    correlated <em>negatively</em> with measurement (Spearman &minus;0.49 to
+    &minus;0.06). The model predicted +2% from graph compilation on
+    Gemma-4-26B-A4B; the measured gain was +55%. InfraRSI fits global
+    step-time and censored peak-memory models over all trials, out-of-memory
+    failures included, and revises the priors from live runs.</li>
+    <li><strong>Memory walls.</strong> Many fast settings only fit in
+    combination. The search prices each setting's memory cost and pairs
+    memory-hungry optimizations with memory savers and verified patches.</li>
+  </ul>
+
+  <p>Results on four workloads, under the same task contracts as the METR
+  RE-Bench agent scaffold, Auto-Research and the knob-only tuner OptiCo:</p>
+  <ul>
+    <li><strong>Overall:</strong> <strong>1.83&times; geometric-mean
+    speedup</strong>, with mean MFU rising from 17.4% to 30.0%. The baselines
+    reach 1.37&times;, 1.34&times; and 1.23&times;.</li>
+    <li><strong>Qwen3.5-9B</strong> (8&times;H100): 1.73&times;, MFU 25.3% to
+    43.8%.</li>
+    <li><strong>Gemma-4-26B-A4B MoE</strong> (8&times;H200):
+    <strong>2.75&times;</strong>, MFU 6.4% to 17.6%. This came from
+    <code>torch.compile</code> with recomputation off, paired with a 14 GiB
+    memory saver, plus a compiled FlexAttention patch.</li>
+    <li><strong>Qwen3.8-27B</strong> (8&times;H200): 1.55&times;.</li>
+    <li><strong>Qwen3.5-35B-A3B MoE</strong> (16&times;H100, two nodes):
+    1.51&times;. Part of this came from a 32-channel NCCL setting the LLM had
+    rated a slowdown, which measured +10.2%.</li>
+  </ul>
+  <p>The "RSI" in the name is a two-level loop: priors are revised within a
+  run, and each verified result is written to an experience bank shared
+  across hardware. On Qwen3.5-9B, experience from <em>other</em> GPU types
+  alone raised the final speedup from 1.70&times; (cold start) to
+  1.82&times;. It reached 90% of peak in 9 trials, which the cold start never
+  did within budget.</p>
+
+  <p>The authors are from TokenRhythm, Peking University, Infinigence AI,
+  Shanghai Jiao Tong University and Tsinghua. The corresponding authors are
+  Kai Han, Yunhe Wang, Allen Chen and Yu Wang. The code was released on
+  November 8, 2026. It belongs with the other recursive self-improvement work
+  aimed at the training stack: SII's
+  <a href="/outputs/sii/801-30b-a3b">801-30B-A3B</a> ran agent debugging loops
+  over a full pretraining run, and Google's
+  <a href="/outputs/google/rrsi">RRSI</a> regularizes harness self-editing.</p>
+tags:
+  - infrastructure
+  - training
+  - agents
+  - recursive-self-improvement
+  - efficiency
+  - research
+paper:
+  arxiv: "2611.11558"
+  authors:
+    - InfraRSI Team
+    - Yuchuan Tian
+    - Haocheng Mei
+    - Ye Yuan
+    - Chao Xu
+    - Boxun Li
+    - Guohao Dai
+    - Kai Han
+    - Allen Chen
+    - Yunhe Wang
+    - Yu Wang
+related:
+  - neohorse-1
+  - 801-30b-a3b
+  - rrsi
