@@ -138,6 +138,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=xF5VrokAAAAJ
 news:
+  - title: "Qwen4-Max Launches: 2.4T-A71B MoE on the New Qwen4 Architecture (QSA + Gated DeltaNet, Gated Residual, 328B N-gram Embeddings), 1M Context, $1.50/$4.50; AA Intelligence Index 43; Smaller Qwen4 Models Coming to Open Source"
+    url: https://qwen.ai/blog?id=qwen4-max
+    source: Qwen
+    date: 2026-11-16
   - title: "Apsara 2026: Qwen 4 in Training, Qwen 4.5 and Qwen 5 Planned at 5–10T Parameters; Automated RSI Runs Lift Qwen3.8-Max From 40 to 45 on Artificial Analysis; T-Head Zhenwu V900; 20 GW Data-Center Target by 2032"
     url: https://www.alibabacloud.com/blog/alibaba-clouds-2026-apsara-conference-full-stack-ai-roadmap-along-with-global-market-expansion-plan_603598
     source: Alibaba Cloud

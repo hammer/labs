@@ -1,0 +1,136 @@
+name: Qwen4-Max
+slug: qwen4-max
+lab: alibaba
+type: model
+date: 2026-11-16
+flagship: true
+sources:
+  - label: "Announcement (Qwen blog: \"Qwen4-Max: Your New Teammate Has Arrived\")"
+    url: https://qwen.ai/blog?id=qwen4-max
+  - label: Qwen Cloud
+    url: https://www.qwencloud.com/models/qwen4-max
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/qwen4-max
+  - label: OpenRouter
+    url: https://openrouter.ai/qwen/qwen4-max
+  - label: Qwen-Live-Delivery-Plugin (GitHub)
+    url: https://github.com/QwenLM/Qwen-Live-Delivery-Plugin
+description: >
+  <p>The first model of the <strong>Qwen4</strong> generation, released
+  November 16, 2026 as a hosted flagship. It is built on the new Qwen4
+  architecture that <a href="/outputs/alibaba/qwen3.8-flash-next">Qwen3.8-Flash-Next</a>
+  previewed in open weights. Specifications:</p>
+  <ul>
+    <li><strong>Size:</strong> a <strong>2.4T-parameter sparse MoE backbone
+    with 71B active per token</strong>, plus 328B parameters of N-gram
+    embeddings.</li>
+    <li><strong>Modality and context:</strong> native vision input and a
+    1M-token context, with up to 393K output tokens.</li>
+    <li><strong>Price:</strong> <strong>$1.50 / $4.50</strong> per million
+    input/output tokens, against Qwen3.8-Max's $2 / $6. Cached input costs
+    $0.075.</li>
+  </ul>
+  <p>No weights are released for the Max model. Alibaba says smaller Qwen4
+  models from the same lineage are "coming to open source".</p>
+
+  <p><strong>Architecture.</strong> The blog lists three upgrades over
+  <a href="/outputs/alibaba/qwen3.8-max">Qwen3.8-Max</a>:</p>
+  <ul>
+    <li><strong>Attention:</strong> each Qwen Sparse Attention (QSA) layer is
+    preceded by three Gated DeltaNet layers that compress history into
+    fixed-size states. QSA's lightweight indexer then selects relevant context
+    at micro-block granularity.</li>
+    <li><strong>Gated Residual:</strong> four parallel residual branches with
+    dynamic read and write gates.</li>
+    <li><strong>N-gram embedding:</strong> a context-based lookup of local
+    token patterns at the second layer.</li>
+  </ul>
+  <p>Qwen reports a pretraining run with no loss spikes. Qwen4-Max-Base has
+  5&ndash;13% lower bits per byte than Qwen3.8-Max-Base in every in-house
+  domain (knowledge, code, QA, STEM) while activating 25% fewer parameters
+  (71B against 95B). Training tokens and compute are not disclosed, and there
+  is no technical report.</p>
+
+  <p><strong>Artificial Analysis scores it 43 on Intelligence Index
+  v5.0.1</strong>, at $3.27 per index task. That is up from Qwen3.8-Max's 34,
+  and second among Chinese models to Moonshot's
+  <a href="/outputs/moonshot-ai/kimi-k3.1-pro">Kimi K3.1 Pro</a> (46).</p>
+
+  <p>Self-reported results, compared with Qwen3.8-Max-0902,
+  <a href="/outputs/anthropic/claude-opus-5.5">Claude Opus 5.5</a>,
+  <a href="/outputs/openai/gpt-6.1-sol">GPT-6.1 Sol</a>,
+  <a href="/outputs/openai/gpt-6-astra">GPT-6 Astra</a> and Kimi K3.1:</p>
+  <ul>
+    <li><strong>Best in the chart:</strong> DeepSWE v1.1 (75.7), Agents' Last
+    Exam v1.1 (46.7, against Opus 5.5's 43.4), HLAB-Vals 1.1 legal work
+    (21.3), BioMysteryBench (85.0) and HealthBench Professional (60.0).</li>
+    <li><strong>Behind the leaders:</strong> Terminal-Bench 4.0 (48.5, against
+    59.6 for Opus 5.5 and 67.2 for Kimi K3.1), ProgramBench (31.5 against
+    65.0), AA-Briefcase v1.1 (Elo 1686 against 1801), JobBench (68.5 against
+    75.4), Humanity's Last Exam (51.7 against 59.8) and chart understanding
+    (54.2 against 71.1).</li>
+  </ul>
+  <p>It also uses fewer tokens than Qwen3.8-Max: 24&ndash;35% fewer on
+  Alibaba's new Work360 professional-task benchmark (52.69, up from 47.74) and
+  about 48% fewer on Terminal-Bench 4.0. Work360 is built on a taxonomy of 26
+  domains, 182 subdomains and 721 fields. The average Work360 cost per task
+  fell 62%, from $4.43 to $1.67.</p>
+
+  <p>Alibaba presents it as a "24/7 AI teammate". Its showcases include:</p>
+  <ul>
+    <li>Blender modeling, and games built in Unreal, Unity and Godot.</li>
+    <li>Automotive production-line planning and machining. Programming one
+    workpiece went from about 475 minutes to 24.</li>
+    <li>Legal due diligence and financial research with 90 MCP tools.</li>
+    <li>Closed-loop science: a 48-hour autonomous run on Deep Principle's
+    platform designed, synthesized and validated a new data-center coolant
+    molecule. On DP Technology's platform, it designed an NLRP3 inhibitor
+    candidate.</li>
+    <li>Optimizing Alibaba Cloud's own GPU and CPU scheduling.</li>
+  </ul>
+  <p>"Live Delivery" ships long-running agent work in staged releases the user
+  can redirect, and its plugin is open source. The safety section reports
+  secure-code pass rates rising from 22.0% to 31.8% on Last Secure Code Bench,
+  and finds no large-scale cyber or CBRN uplift. Qwen4-Max is available
+  through the QwenCloud API and Token Plan, QwenWork, Qoder and QwenStudio.</p>
+tags:
+  - frontier
+  - moe
+  - reasoning
+  - agentic
+  - coding
+  - multimodal
+  - long-context
+  - proprietary
+model:
+  open_weights: false
+  architecture: moe
+  parameters: 2.4T
+  active_parameters: 71B
+  context_window: 1000000
+  license: Proprietary (API)
+  intelligence_index: 43
+  intelligence_index_version: "AA v5.0.1"
+  benchmark_scores:
+    - benchmark: DeepSWE v1.1
+      score: "75.7"
+    - benchmark: Terminal-Bench 4.0
+      score: "48.5"
+    - benchmark: Agents' Last Exam v1.1
+      score: "46.7"
+    - benchmark: AA-Briefcase v1.1
+      score: "1686 Elo"
+    - benchmark: AutomationBench-AA
+      score: "72.5"
+    - benchmark: APEX-Agents v1.1
+      score: "72.1"
+    - benchmark: Humanity's Last Exam
+      score: "51.7"
+    - benchmark: Work360
+      score: "52.69"
+related:
+  - qwen3.8-max
+  - qwen3.8-flash-next
+  - qwen3.8
+  - kimi-k3.1-pro
+  - claude-opus-5.5

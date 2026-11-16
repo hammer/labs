@@ -33,7 +33,7 @@ description: >
   (v4.3.2).</p>
 
   <p><strong>Artificial Analysis scores it 34 on Intelligence Index
-  v5.0</strong>, Alibaba's highest v5 reading. AA lists it as
+  v5.0</strong>, Alibaba's highest v5 reading until <a href="/outputs/alibaba/qwen4-max">Qwen4-Max</a> (43). AA lists it as
   proprietary. It sits above the
   best open-weights models (<a
   href="/outputs/deepseek/deepseek-v4.1-flash-1017">DeepSeek-V4.1-Flash-1017</a>
