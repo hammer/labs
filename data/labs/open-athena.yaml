@@ -39,11 +39,14 @@ description: >
   went up on HuggingFace in September 2026. In August 2026, on a GPU gift from the Huang Foundation, it
   began its <strong>535B-total, 23B-active</strong> hero run: 18T tokens
   over about three months on NVIDIA B200 NVL72 racks at CoreWeave, after
-  porting the whole stack off Google TPUs, with the loss it expects at the end
-  of pretraining (December 1) registered in advance on Paloma. Expert
+  porting the whole stack off Google TPUs, with the loss it expected at the end
+  of pretraining registered in advance on Paloma. Expert
   parallelism made the 535B size practical: the run held about 21.5% MFU until
   a rewritten ragged all-to-all nearly eliminated dropped tokens and lifted it
-  to roughly 23&ndash;24%.</p>
+  to roughly 23&ndash;24%. The model, named
+  <a href="/outputs/open-athena/marin-mochi">Mochi</a>, finished main
+  pre-training on November 5, ahead of schedule, and its 57 base checkpoints
+  were released on November 17 with post-training still to come.</p>
 
   <p>Marin doubles as a platform for science models:
   <a href="/outputs/open-athena/marin-dna">MarinDNA</a> trained a 1.1B genomic
@@ -92,6 +95,18 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=pouyVyUAAAAJ
 news:
+  - title: "Initial Pre-Training Checkpoints for Marin \"Mochi\" 535B-A23B: 57 Base Checkpoints Released After 18T Tokens; Benchmark Leakage Found in Pre-Training Data"
+    url: https://openathena.ai/blog/marin-mochi-pretraining-checkpoints/
+    source: Open Athena
+    date: 2026-11-17
+  - title: "Architecture Decisions for Marin 535B-A23B"
+    url: https://openathena.ai/blog/marin-535b-architecture/
+    source: Open Athena
+    date: 2026-11-09
+  - title: "Scaling Marin's Open LLM Pre-Training: Mochi Finishes Its Main Pre-Training Phase"
+    url: https://openathena.ai/blog/scaling-marins-open-llm-pre-training/
+    source: Open Athena
+    date: 2026-11-04
   - title: "Post-Training in the Open: Marin Snowball 67B-A2B v0.1 Reaches GPT-OSS-Level on Marin's Eval Policy, From a Lineage of 100+ Post-Trained Checkpoints"
     url: https://openathena.ai/blog/post-training-in-the-open/
     source: Open Athena

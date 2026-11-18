@@ -1,0 +1,91 @@
+name: Marin Mochi 535B-A23B
+slug: marin-mochi
+lab:
+  - open-athena
+  - stanford
+type: model
+date: 2026-11-17
+flagship: true
+sources:
+  - label: "Initial Pre-Training Checkpoints for Marin \"Mochi\" 535B-A23B (Open Athena blog)"
+    url: https://openathena.ai/blog/marin-mochi-pretraining-checkpoints/
+  - label: HuggingFace (57 checkpoint branches)
+    url: https://huggingface.co/open-athena/Marin-Mochi-535B-A23B
+  - label: Architecture Decisions for Marin 535B-A23B (Open Athena blog)
+    url: https://openathena.ai/blog/marin-535b-architecture/
+  - label: Scaling Marin's Open LLM Pre-Training (Open Athena blog)
+    url: https://openathena.ai/blog/scaling-marins-open-llm-pre-training/
+  - label: Marin data pipeline overview (Open Athena blog)
+    url: https://openathena.ai/blog/marin-data-pipeline-overview/
+  - label: "GitHub issue #8435 (architecture)"
+    url: https://github.com/marin-community/marin/issues/8435
+  - label: "GitHub issue #8506 (hero run)"
+    url: https://github.com/marin-community/marin/issues/8506
+  - label: W&B report (hero run scaling ladder)
+    url: https://forge.coreweave.com/wandb/marin-community/marin_moe/reports/535B-A23B-18T-Token-Hero-Run-Scaling-Ladder--VmlldzoxNzc2MDM5Ng
+description: >
+  <p><strong>Mochi</strong> is the name of <a href="/labs/open-athena">Open
+  Athena</a>'s Marin 535B-A23B, the hero run that began in August 2026 on
+  NVIDIA GB200 NVL72 racks donated through the Jen-Hsun and Lori Huang
+  Foundation (about 11 racks). Main pre-training finished on November 5 after
+  about 18T tokens, and on November 17 Open Athena released the run's
+  <strong>57 pre-training checkpoints</strong> as BF16 weights on HuggingFace,
+  one branch each from step 6,000 to the final step 393,491, ten of them from
+  the long-context extension. The main branch holds the final checkpoint. These
+  are base checkpoints only, with no instruction tuning or safety
+  post-training. Open Athena says post-training and a technical report will
+  follow, and its release note sets out why it judged the benefit to
+  researchers to outweigh the risk of publishing pre-training artifacts at
+  this scale. The license is OpenMDW 1.1.</p>
+
+  <p>The model stores 535.5B parameters with about 22.76B active non-embedding
+  parameters per token. From the config and the architecture post:</p>
+  <ul>
+    <li><strong>Shape:</strong> 48 layers at hidden size 6,144, shallow by
+    design (width-to-depth ratio of 128), with no leading dense layers and a
+    128,256-token vocabulary.</li>
+    <li><strong>MoE:</strong> a normalized latent MoE (2&times; compression,
+    with a learnable RMSNorm on the latent) with 8 of 384 routed experts plus 2
+    shared experts. A third of MLP neurons sit in shared experts. The router
+    uses sigmoid scores, top-k quantile balancing and expert parallelism over a
+    custom all-to-all kernel.</li>
+    <li><strong>Attention:</strong> 3:1 sliding-window (2,048) to global
+    layers, partial RoPE on local and none on global layers, gated attention,
+    exclusive self-attention (XSA), QK RMSNorm with a fixed multiplier, and
+    short convolutions on keys, attention output and MLP output.</li>
+    <li><strong>Training:</strong> the Hyperball optimizer (MuonH on matrices,
+    AdamH and Adam elsewhere), 46.1M tokens per step, and a data-mix change
+    near 5T tokens. Context grew from 4K to 16K, 65K and finally 262K, the last
+    stage using log scaling of global-attention queries.</li>
+  </ul>
+
+  <p>The run is live-streamed: loss is published against a forecast
+  preregistered from a scaling ladder, and the team reports no loss spikes.
+  The training data comes from the Datakit pipeline, about 23T deduplicated
+  tokens drawn from 152 HuggingFace datasets. Open Athena publishes no
+  benchmark scores yet. Shifts in evaluation loss, along with concerns raised
+  by a Stanford student, led the team to find substantial leakage of common
+  pre-training benchmarks that its 13-gram decontamination had missed. That
+  limits which evaluations it can fairly report. Serving needs Marin's vLLM
+  fork, and the card says inference parity has not been validated.</p>
+tags:
+  - open-weight
+  - open-source
+  - moe
+  - pretraining
+  - research
+model:
+  open_weights: true
+  architecture: moe
+  parameters: 535B
+  active_parameters: 23B
+  num_experts: 384
+  top_k: 8
+  context_window: 262144
+  training_tokens: 18T
+  license: OpenMDW 1.1
+related:
+  - snowball
+  - marin
+  - datakit
+  - delphi-scaling-suite

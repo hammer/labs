@@ -7,6 +7,8 @@ flagship: true
 sources:
   - label: Announcement (IFM)
     url: https://ifm.ai/blog/k2/
+  - label: Technical report (arXiv)
+    url: https://arxiv.org/abs/2611.21003
   - label: Announcement (MBZUAI)
     url: https://mbzuai.ac.ae/news/mbzuais-institute-of-foundation-models-launches-k2-horizon-the-worlds-largest-fully-open-ai-models-in-history/
   - label: HuggingFace (375B-A23B)
@@ -83,6 +85,38 @@ description: >
   task-factory). Each repo has only a handful of stars so far, and the
   pretraining and mid-training datasets were still gated at the end of
   September.</p>
+
+  <p>The <strong>technical report</strong> (arXiv 2611.21003, November 16) runs
+  to about 95 authors. It counts the released artifacts as 380 intermediate
+  checkpoints across the six models, 58 training runs, 21.6 TB of training data
+  and 17 code repositories, now including the Eval360 evaluation harness. New
+  details it discloses:</p>
+  <ul>
+    <li><strong>Hardware:</strong> all six models trained on the same
+    8&times;H200 InfiniBand cluster as K2-V2, shared with other workloads. The
+    total GPU count is not given.</li>
+    <li><strong>Training time:</strong> the 375B-A23B took about 120 days of
+    logged run time, including two pre-training phases of 44.7 and 43.4 days
+    with a new data mix between them, 18.2 days of mid-training and 13.3 days
+    of post-training. The dense 32B, at 159.5 days, was the longest.</li>
+    <li><strong>Architecture:</strong> grouped RMSNorm across the family, and
+    a softplus attention gate alongside MoVA in the 36B-A4B, which matches or
+    stays within a few points of the dense 32B on every benchmark with a
+    seventh of its active parameters.</li>
+    <li><strong>Scaling:</strong> the 3.7B, 7B, 32B and 36B-A4B share one
+    22T-token corpus, and their normalized loss curves nearly collapse onto
+    one another, a production-scale test of Bergsma et al.'s scaling-collapse
+    approach.</li>
+    <li><strong>Post-training:</strong> separate RL experts for reasoning,
+    search, tool use, knowledge work and instruction following with
+    abstention are combined by weight merging and refined with SFT.</li>
+    <li><strong>Uno:</strong> the report puts the speedup at up to 2.2&times;,
+    below the roughly 3&times; of the September release.</li>
+  </ul>
+  <p>Against GLM-5.2, MiniMax M3, Nemotron 3 Ultra and Inkling, the report
+  places the 375B-A23B first or second on most agentic and coding benchmarks.
+  It leads all four on Toolathlon-Verified (65.3) and SWE-Atlas-QnA (48.4),
+  and its main gap is expert scientific reasoning (HLE and CritPt).</p>
 tags:
   - open-source
   - open-weight
@@ -170,6 +204,8 @@ model:
     - benchmark: GDPval-AA
       score: "1441 Elo"
       mode: high reasoning effort
+paper:
+  arxiv: "2611.21003"
 related:
   - k2-v2
   - k2-think-v2

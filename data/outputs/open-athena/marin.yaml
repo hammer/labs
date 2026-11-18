@@ -41,7 +41,8 @@ description: >
   include the <a href="/outputs/open-athena/delphi-scaling-suite">Delphi</a>
   scaling suite, the <a href="/outputs/open-athena/datakit">Datakit</a> data
   pipeline, the <a href="/outputs/open-athena/snowball">Snowball</a> 67B-A2B MoE
-  and a 535B-total, 23B-active MoE that began pretraining in August 2026.</p>
+  and <a href="/outputs/open-athena/marin-mochi">Mochi</a>, a 535B-total,
+  23B-active MoE pretrained on 18T tokens from August to November 2026.</p>
 tags:
   - open-weight
   - pretraining

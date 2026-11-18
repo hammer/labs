@@ -48,7 +48,8 @@ description: >
   September; the team also built an end-to-end post-training pipeline
   for it. Snowball sits between the dense
   <a href="/outputs/open-athena/marin">Marin 32B</a> and the 535B-total,
-  23B-active MoE that Marin began pretraining in August 2026.</p>
+  23B-active <a href="/outputs/open-athena/marin-mochi">Mochi</a>, which Marin
+  began pretraining in August 2026.</p>
 
   <p>The first named post-trained release, <strong>Marin Snowball 67B-A2B
   v0.1</strong>, appeared on October 19. The card labels it a "research
@@ -122,3 +123,4 @@ related:
   - marin
   - datakit
   - delphi-scaling-suite
+  - marin-mochi
