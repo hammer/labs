@@ -45,6 +45,22 @@ description: >
   the month before. The value of the result is that it was run on flagship
   Qwen models rather than small proxies. The paper does not say whether
   shipped Qwen checkpoints were trained this way, and no code is released.</p>
+
+  <p>Two November 2026 papers reach the same diagnosis from other angles.
+  <a href="https://arxiv.org/abs/2611.04376">MoEResQ</a> (Huawei, arXiv
+  2611.04376) finds that dense-model FP4 RL recovery recipes give no gain over
+  naive FP4 on an MoE. Its explanation is the same as TRACE's: the router's
+  discrete expert choices make train/inference alignment sensitive to whether
+  a correction is applied on both sides or only at rollout. The fix it
+  proposes is to apply the recovery symmetrically on both sides, shown on
+  Qwen3-30B-A3B, a smaller model than TRACE's 2.4T runs.
+  <a href="https://arxiv.org/abs/2611.04887">FourSight</a> (HKUST and HKUST-GZ
+  with Alibaba Group co-authors, arXiv 2611.04887) instead filters the few
+  outlier sequences with large mismatch out of policy updates. It also keeps
+  only the highest-variance activation channels in BF16 and the rest in
+  NVFP4. It reports near-BF16 accuracy, 1.76&ndash;2.60&times; better
+  step-to-accuracy, and step time within 2.3% of plain FP4 up to 120B-scale
+  models.</p>
 tags:
   - rl
   - efficiency

@@ -8,6 +8,8 @@ sources:
     url: https://allenai.org/blog/olmocore3
   - label: Technical Report (PDF)
     url: https://allenai.org/papers/olmocore3
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2611.18956
   - label: GitHub
     url: https://github.com/allenai/Olmo-core
   - label: Release (v3.0.0)
@@ -69,7 +71,11 @@ description: >
   <a href="/outputs/ai2/olmoe">OLMoE</a> after the dense
   <a href="/outputs/ai2/olmo-3">Olmo 3</a>. Apache 2.0; ~1,704 stars. Note that
   <a href="/outputs/ai2/olmpool">OlmPool</a> also ships Olmo-core-format
-  checkpoints but is a separate long-context study, not part of this release.</p>
+  checkpoints but is a separate long-context study, not part of this release.
+  The report was posted to arXiv on 2026-11-13 as
+  <a href="https://arxiv.org/abs/2611.18956">2611.18956</a>, "Supercharging
+  Olmo-core for Efficient and Scalable MoE Training", with the same eleven
+  authors.</p>
 tags:
   - infrastructure
   - moe
@@ -83,6 +89,7 @@ library:
   license: Apache-2.0
   pip_package: ai2-olmo-core
 paper:
+  arxiv: "2611.18956"
   venue: Technical Report
   authors:
     - Tianhua Tao

@@ -1,0 +1,54 @@
+name: GPT-6.2 Sol
+slug: gpt-6.2-sol
+lab: openai
+type: model
+date: 2026-11-17
+sources:
+  - label: Announcement
+    url: https://openai.com/index/introducing-gpt-6-2-astra-sol
+  - label: System Card
+    url: https://deploymentsafety.openai.com/gpt-6-2-astra-sol
+  - label: API Docs
+    url: https://developers.openai.com/api/docs/models/gpt-6.2-sol
+  - label: Coverage (TestingCatalog)
+    url: https://www.testingcatalog.com/openai-launches-gpt-6-2-astra-and-sol-on-chatgpt-and-apis/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gpt-6-2-sol
+  - label: OpenRouter
+    url: https://openrouter.ai/openai/gpt-6.2-sol
+description: >
+  <p>OpenAI's everyday model ("our go-to model for everyday work, from coding
+  to powering agents at scale"), released November 17, 2026 with
+  <a href="/outputs/openai/gpt-6.2-astra">GPT-6.2 Astra</a> and succeeding
+  <a href="/outputs/openai/gpt-6.1-sol">GPT-6.1 Sol</a>. The API
+  (<code>gpt-6.2-sol</code>) lists text and image input, a 1,050,000-token
+  context (922K max input), 128K max output, a June 1, 2026 knowledge cutoff,
+  and unchanged <strong>$2 / $10 per million input/output tokens</strong>
+  ($0.10 cached). Parameters undisclosed.</p>
+
+  <p>Artificial Analysis scores it <strong>57 on Intelligence Index
+  v5.0.1</strong> at max effort, two points above GPT-6.1 Sol and level with
+  GPT-6 Astra at about 15% of its cost per task. On AA's Coding Agent Index it
+  drops 3 points against GPT-6.1 Sol in Codex, driven by a 14-point fall on
+  SWE-Atlas-QnA-AA where it more often omits key facts; its AA-Omniscience
+  hallucination rate is 55%. OpenAI says it comes within 0.5 points of Astra
+  on Cognition's FrontierCode 2.0 at about a fifth of the cost. Like Astra it
+  is rated Critical in cybersecurity and High in biology and chemistry under
+  the Preparedness Framework, but stays below High for AI self-improvement,
+  and the system card reports lower verbalized evaluation awareness than GPT-6
+  Astra or GPT-6.1 Sol.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+  - agentic
+model:
+  open_weights: false
+  context_window: 1050000
+  intelligence_index: 57
+  intelligence_index_version: "AA v5.0.1"
+  license: Proprietary
+related:
+  - gpt-6.1-sol
+  - gpt-6.2-astra
+  - gpt-6-astra

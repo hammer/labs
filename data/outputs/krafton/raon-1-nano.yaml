@@ -1,0 +1,74 @@
+name: Raon-1 nano
+slug: raon-1-nano
+lab: krafton
+type: model
+date: 2026-10-29
+sources:
+  - label: HuggingFace
+    url: https://huggingface.co/KRAFTON/Raon-1-nano
+  - label: HuggingFace (GGUF)
+    url: https://huggingface.co/KRAFTON/Raon-1-nano-gguf
+  - label: HuggingFace (MLX)
+    url: https://huggingface.co/KRAFTON/Raon-1-nano-mlx
+  - label: HuggingFace (LiteRT-LM)
+    url: https://huggingface.co/KRAFTON/Raon-1-nano-litert-lm
+  - label: MoE-to-Dense paper (arXiv)
+    url: https://arxiv.org/abs/2605.28207
+description: >
+  <p>The on-device member of KRAFTON AI's Raon language family, and the first
+  shipped model built with the lab's own <a
+  href="/outputs/krafton/moe-to-dense">MoE-to-Dense</a> method. The card says it
+  "was derived from Raon-1 mini preview (30B-A4B) through MoE-to-Dense pruning
+  and knowledge distillation". It then had <strong>3T tokens</strong> of
+  continued pretraining, followed by SFT, on-policy distillation from <a
+  href="/outputs/krafton/raon-1-mini">Raon-1 mini</a> and RL. So it is not
+  pretrained from scratch. The result is a dense model with <strong>3.1B total
+  parameters, 1.5B of them a per-layer embedding table</strong> (1.5B
+  effective), plus a 55M multi-token-prediction module.</p>
+
+  <p>The architecture carries over the mini's design. 18 of 24 layers are Raon
+  Delta Attention (gated delta-rule linear attention with separate erase and
+  write gates) and 6 are gated MLA, so only those keep a KV cache (about 7 KiB
+  per token in BF16). It uses no positional encoding (NoPE) and Raon-mHC
+  residuals with 4 streams. A Gemma-style 256-dimension per-layer embedding
+  adjusts each layer's output, and embeddings are tied. Native context is
+  <strong>262,144 tokens</strong>. It is trained on Korean and English and is
+  designed for thinking mode. Weights are Apache 2.0, ungated, with GGUF, MLX
+  and LiteRT-LM builds (added 10 November).</p>
+
+  <p>The self-reported comparison is against Qwen3.5 2B, Gemma 4 E2B, MiniCPM5
+  2B and LFM3 1.7B. It leads on IFBench <strong>75.9</strong> (next best 73.7),
+  FACTS Grounding 44.4, KMMLU-Redux 50.9 and CLIcK 65.2. It trails on
+  MMLU-Redux 81.1 (MiniCPM5 84.0) and BFCL v4 56.3 (LFM3 67.2). Not on
+  Artificial Analysis.</p>
+tags:
+  - open-weight
+  - on-device
+  - distillation
+  - efficiency
+  - multilingual
+model:
+  open_weights: true
+  architecture: dense
+  base_model: raon-1-mini
+  context_window: 262144
+  license: Apache 2.0
+  benchmark_scores:
+    - benchmark: MMLU-Redux
+      score: "81.1"
+    - benchmark: KMMLU-Redux
+      score: "50.9"
+    - benchmark: IFBench
+      score: "75.9"
+    - benchmark: FACTS Grounding
+      score: "44.4"
+    - benchmark: BFCL v4
+      score: "56.3"
+    - benchmark: BrowseComp-Plus
+      score: "34.5"
+  variants:
+    - name: Raon-1-nano
+      notes: "3.1B total (1.5B effective plus a 1.5B per-layer embedding table) and a 55M MTP module. Pruned and distilled from Raon-1 mini preview with MoE-to-Dense, then 3T tokens of continued pretraining. GGUF, MLX and LiteRT-LM builds."
+related:
+  - raon-1-mini
+  - moe-to-dense

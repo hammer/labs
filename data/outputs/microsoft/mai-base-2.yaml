@@ -57,6 +57,17 @@ description: >
   release. Also undisclosed: layer and expert counts, context length, precision
   beyond the BF16 MFU normalization, and any release date. The post carries no
   named authors.</p>
+
+  <p><strong>Post-training result (November 17, 2026).</strong> The first
+  shipped model on this base is <a href="/outputs/microsoft/mai-code-2">MAI
+  Code 2</a>. Its model card names MAI-Base-2 as the dependency and describes
+  "77 billion active, 3 billion embedded, and approximately 2.8 trillion total
+  parameters", pretrained on roughly 50T tokens and then extended to a 1M-token
+  context with ~150B more. The licensing plan arrived the same day as
+  <strong>MAI Licensed Weights</strong> ("coming soon" through Frontier Company
+  engagements), for deploying and customising MAI models in customers' own
+  Azure environments. That is still partner licensing, not a public weights
+  release.</p>
 tags:
   - frontier
   - moe
@@ -76,3 +87,4 @@ model:
 related:
   - mai-thinking-1
   - mai-models
+  - mai-code-2

@@ -160,7 +160,7 @@ model:
       notes: "48 layers; 100 FFN experts (top-8) plus MoVA with 64 attention-value experts (top-4). Terminal-Bench 2.1 58.6, GPQA Diamond 80.8, HLE 25.2, tau3-Banking 26.8. GGUF released."
     - name: K2-Horizon-32B
       parameters: 32B
-      notes: "Dense, 64 layers, hidden 5,120. Hugging Face hosts the Stage-1 checkpoint at launch; the final checkpoint is marked as forthcoming. FP8 and GGUF released."
+      notes: "Dense, 64 layers, hidden 5,120. Hugging Face hosted the Stage-1 checkpoint at launch; the SFT Phase 2 checkpoint (sft_2_2500) was promoted to main on 2026-10-01, with the card benchmarks updated to it on 2026-10-07. FP8 and GGUF released."
     - name: K2-Horizon-7B
       parameters: 7B
       notes: "IFM claims the best-performing model under 10B. K2-Horizon-7B-Uno diffusion-distillation LoRA adapter, FP8, and GGUF released."

@@ -74,6 +74,10 @@ people:
   - name: Christian Wolfrum
     role: Executive Chairman
 news:
+  - title: "Announcing SEA-LION v5: Our Largest Model (Qwen3.5-397B Converted to the Qwen4Exp Architecture, Plus 27B, 9B, Nemotron E4B and Gemma E2B; MIT)"
+    url: https://sea-lion.ai/blog/announcing-sea-lion-v5-our-largest-model-frontier-level-performance-and-open/
+    source: AI Singapore
+    date: 2026-11-18
   - title: "Uplifting AI in Southeast Asia: Announcing Nemotron-SEA-LION-v4.8 in Collaboration With NVIDIA (30B-A3B and 120B-A12B, MIT)"
     url: https://sea-lion.ai/blog/uplifting-ai-in-southeast-asia-sea-announcing-nemotron-sea-lion-v4-8-in-collaboration-with-nvidia/
     source: AI Singapore

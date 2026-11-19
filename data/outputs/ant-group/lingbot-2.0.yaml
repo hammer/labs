@@ -29,8 +29,14 @@ description: >
   FMs (MoE 30B-A3B + 1.3B dense) with a published paper, "Scaling
   Mixture-of-Experts Video Pretraining for Embodied Intelligence."
   <strong>LingBot-VLA 2.0</strong>: a 6B vision-language-action model.
-  Several component reports are still "coming soon" &mdash; only the
-  Video paper is on arXiv at filing time.</p>
+  All four component reports are on arXiv: Video
+  (<a href="https://arxiv.org/abs/2607.07675">2607.07675</a>), Vision
+  ("Vision Pretraining for Dense Spatial Perception",
+  <a href="https://arxiv.org/abs/2607.05247">2607.05247</a>), World 2.0
+  ("Infinite Worlds with Versatile Interactions",
+  <a href="https://arxiv.org/abs/2607.07534">2607.07534</a>) and VLA 2.0
+  ("From Foundation to Application: Improving VLA Models in Practice",
+  <a href="https://arxiv.org/abs/2607.06403">2607.06403</a>).</p>
 tags:
   - robotics
   - embodied

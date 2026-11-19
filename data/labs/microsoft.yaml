@@ -81,6 +81,18 @@ people:
       - label: LinkedIn
         url: https://www.linkedin.com/in/weizhu-chen-620b2330/
 news:
+  - title: "Microsoft Previews Aion 1.0 Instruct, a 2.3B MIT-Licensed On-Device Model Slated to Become the Windows OS SLM by End of January 2027"
+    url: https://huggingface.co/microsoft/Aion-1.0-Instruct-2.3B
+    source: Hugging Face (Microsoft)
+    date: 2026-11-18
+  - title: "Microsoft AI Launches MAI Code 2 (~2.8T-A77B MoE on MAI-Base-2) and MAI Code 2 Flash (~398B-A12B) in GitHub Copilot, With 1M Context and RL Run Inside the Copilot Harness"
+    url: https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/
+    source: Microsoft AI
+    date: 2026-11-17
+  - title: "Ignite 2026: Microsoft AI Ships Seven Models (MAI Code 2 and 2 Flash, MAI Cyber 2 Flash, MAI Image 2.7 and 2.7 Flash, MAI Realtime 1, Decision 1.1), Announces MAI Licensed Weights, and Says Maia 200 Is in Production"
+    url: https://microsoft.ai/news/microsoft-ignite-2026/
+    source: Microsoft AI
+    date: 2026-11-17
   - title: "Microsoft AI Publishes a Draft MAI Code of Conduct: Models Must Not Resist Shutdown, Widen Scope, or Hide Reasoning (Six-Week Consultation)"
     url: https://microsoft.ai/news/mai-code-of-conduct/
     source: Microsoft AI

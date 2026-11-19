@@ -1,0 +1,91 @@
+name: Gemini 4 Neon
+slug: gemini-4-neon
+lab: google
+type: model
+date: 2026-11-18
+sources:
+  - label: Announcement (Google)
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/
+  - label: Model card (PDF)
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Neon-Model-Card.pdf
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gemini-4-neon
+  - label: Artificial Analysis article
+    url: https://artificialanalysis.ai/articles/gemini-4-neon-intelligence-gain
+description: >
+  <p>The fourth <strong>Gemini 4</strong> model in seven weeks, announced
+  November 18, 2026 by Koray Kavukcuoglu. Google places it between
+  <a href="/outputs/google/gemini-4-carbon">Carbon</a> (hardest, long-horizon
+  work) and <a href="/outputs/google/gemini-4-hydrogen">Hydrogen</a> (fast
+  everyday execution), as a cheaper, faster model with near-Carbon intelligence.
+  Like Hydrogen, its model card says only that it is "<strong>adapted from
+  Gemini 4 Carbon</strong>" and points to Carbon's card for architecture,
+  data and hardware. Parameters are undisclosed. Inputs are text, images, audio
+  and video in a 1M-token combined context, with 64K default synchronous output
+  or up to 1M via background long decode, a March 2026 knowledge cutoff, and four
+  thinking levels (low, medium, high default, xhigh). It costs
+  <strong>$3 / $15 per million input/output tokens</strong>, with cached input
+  at $0.15. That is 25% below Carbon's standard $4 / $20, though above Carbon's
+  introductory $2 / $10, which ends November 30. It shipped the same day in the
+  Gemini API, AI Studio, Gemini for business, Antigravity (Pro and Ultra) and the
+  Gemini app (Pro and Ultra). A cyber variant is rolling out to trusted
+  defenders through the Fairwind Program.</p>
+
+  <p>Artificial Analysis scores it <strong>61 on Intelligence Index
+  v5.0.1</strong> at xhigh. That is one point above Carbon (high) and third
+  overall, behind <a href="/outputs/openai/gpt-6.2-astra">GPT-6.2 Astra</a> and
+  <a href="/outputs/anthropic/claude-fable-5.2">Claude Fable 5.2</a>. AA puts
+  its cost at $6.44 per index task against Carbon's $7.76 at standard pricing,
+  with ~21 minutes per task against ~36. It uses ~15% more output tokens, so the
+  saving comes from price and from output speed (~110 against ~57 tokens per
+  second). On AA's Coding Agent Index (Antigravity CLI) it reads 59, three points
+  above Carbon. It scores 56% Climb WSR on the Multimodal Knowledge Agent
+  benchmark, against Fable 5.2's 57%. Google's own figures, all self-reported:
+  Vals Index 70.9% (#2), Terminal-Bench Science 70.5%, RiemannBench 84.0%,
+  HLE-Diamond 71.3%, Terminal-Bench 4.1 65.2%, FrontierCode 2.0 46.2% (high),
+  Zapier AutomationBench 56.3% and Vending-Bench 2 $16,843 (both #1), Agent
+  Arena 1336 (#2), SEC-bench Pro 90.5%, WebExploitBench v1.2 51.26% and
+  Collinear CWE-bench v2 70.7%.</p>
+
+  <p>Safety: Google reports 0.0% cheating on Terminal-Bench 4.0, matching
+  Carbon. It took shortcuts on 2.45% of its coding-cheating evaluation, the
+  lowest of any Gemini 4 model, with a 0.09% misaligned-action rate and a 99.2%
+  agent-honesty pass rate. Under the Frontier Safety Framework, Neon's Material
+  Capability Change assessment found an increase over Argon that falls below the
+  MCC threshold, so Argon's determinations carry forward: the biological CBRN
+  CCL and the cyber CCL "cannot be ruled out". The Neon Safety &amp; Security
+  Report is marked "coming soon" on the model card. Proprietary.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+  - agentic
+  - cybersecurity
+  - multimodal
+  - long-context
+  - proprietary
+model:
+  open_weights: false
+  base_model: gemini-4-carbon
+  context_window: 1000000
+  intelligence_index: 61
+  intelligence_index_version: "AA v5.0.1"
+  license: Proprietary (API)
+  benchmark_scores:
+    - benchmark: Terminal-Bench Science
+      score: "70.5%"
+    - benchmark: HLE-Diamond
+      score: "71.3%"
+    - benchmark: Terminal-Bench 4.1
+      score: "65.2%"
+    - benchmark: FrontierCode 2.0
+      score: "46.2%"
+      mode: high
+    - benchmark: SEC-bench Pro
+      score: "90.5%"
+    - benchmark: Vals Index
+      score: "70.9%"
+related:
+  - gemini-4-carbon
+  - gemini-4-hydrogen
+  - gemini-4-argon

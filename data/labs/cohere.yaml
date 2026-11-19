@@ -41,7 +41,9 @@ description: >
   nearly $36B, which Cohere's own post does not state, so the valuation field
   stays at the last fully closed round until the Series E completes. The same
   post lists a planned acquisition of the vulnerability-discovery startup
-  AISLE, to become Cohere Cyber. The Aleph Alpha transaction remains subject to
+  AISLE, to become Cohere Cyber; Cohere said on November 13, 2026 that the
+  AISLE acquisition had completed and that the team behind the AI code-review
+  platform cubic was joining. The Aleph Alpha transaction remains subject to
   regulatory approval, so Aleph Alpha Research still ships under its own brand
   &mdash; most recently <a href="/outputs/cohere/kolibri-1">Kolibri 1</a>, a
   78B-A3.5B German/English reasoning MoE, in October 2026.</p>
@@ -118,6 +120,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Sara_Hooker1
 news:
+  - title: "Cohere Completes Its Acquisition of AISLE (Autonomous Vulnerability Discovery and Remediation) and Brings In the Team Behind AI Code-Review Platform cubic, Bringing Its 2026 Strategic M&A Transactions to Four; AISLE Co-Founder Jaya Baloo Becomes Cohere's First CISO"
+    url: https://cohere.com/blog/cohere-expands-its-sovereign-ai-platform-with-aisle-and-cubic
+    source: Cohere
+    date: 2026-11-13
   - title: "Cohere Advances a C$4B R&D and AI-Infrastructure Commitment in Canada Through 2031, With 1,500+ New Roles and a C$309M GPU Cloud Partnership With Bell AI Fabric"
     url: https://cohere.com/blog/cohere-canada-commitment
     source: Cohere

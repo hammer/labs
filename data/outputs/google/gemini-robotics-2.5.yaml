@@ -1,0 +1,40 @@
+name: Gemini Robotics 2.5
+slug: gemini-robotics-2.5
+lab: google
+type: model
+date: 2026-11-10
+sources:
+  - label: Announcement (Google DeepMind)
+    url: https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/
+description: >
+  <p>A point update to Google DeepMind's
+  <a href="/outputs/google/gemini-robotics-2">Gemini Robotics 2</a>
+  vision-language-action (VLA) model, announced November 10, 2026 by Carolina
+  Parada as "our most capable vision-language-action (VLA) model to date".
+  DeepMind credits much of the progress to <a
+  href="/outputs/google/gemini-4-argon">Gemini 4 Argon</a> speeding up its
+  robotics research. Across more than 200 evaluation tasks, including serving
+  food with tongs, tying a bow and pipetting, it reports a <strong>30&ndash;100%
+  higher success rate</strong> than previous baselines, depending on task type,
+  with tasks finished 20&ndash;30% faster. Like earlier Gemini Robotics models it
+  runs across embodiments, here Apptronik's Apollo 2 humanoid with a 22-DoF
+  five-finger SharpaWave hand and the two-gripper Franka Duo.</p>
+
+  <p>In a proof of concept on Mercedes-Benz production lines in Kecskemét and
+  Sindelfingen, Apollo 2 used Gemini Robotics ER for workflow tracking and
+  Gemini Robotics 2.5 for hand and arm control to kit automotive brackets from
+  bulk bins into sequencing trays, with a <strong>96% success
+  rate</strong>. On safety, inference-time reasoning guidance raised safe task
+  completion by 33% around obstacles and 43% around nearby people, and DeepMind
+  introduced a new benchmark for robotics-specific adversarial jailbreaks. It is
+  rolling out to DeepMind's robotics partners only. Architecture, parameters
+  and training data are undisclosed, and there is no paper.</p>
+tags:
+  - robotics
+  - multimodal
+  - proprietary
+model:
+  open_weights: false
+related:
+  - gemini-robotics-2
+  - gemini-4-argon

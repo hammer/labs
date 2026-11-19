@@ -1,0 +1,134 @@
+name: Hy4 flash
+slug: hy4-flash
+lab: tencent
+type: model
+date: 2026-11-17
+flagship: false
+sources:
+  - label: HuggingFace (model card)
+    url: https://huggingface.co/tencent/Hy4-flash
+  - label: GitHub
+    url: https://github.com/Tencent-Hunyuan/Hy4-flash
+  - label: HuggingFace (base)
+    url: https://huggingface.co/tencent/Hy4-flash-base
+  - label: Announcement (PR Newswire via TNGlobal)
+    url: https://technode.global/?p=997942
+  - label: OpenRouter
+    url: https://openrouter.ai/tencent/hy4-flash
+description: >
+  <p>The cost-oriented member of Tencent Hy Team's fourth generation, released
+  on November 17 two weeks after the API-only <a href="/outputs/tencent/hy4">Hy4</a>
+  general release. Unlike Hy4, it shipped as <strong>open weights</strong>: an
+  instruct model, an FP8 checkpoint and a pre-trained <strong>Hy4
+  flash-base</strong> on HuggingFace, ModelScope and GitCode. Tencent's model
+  card gives <strong>220B total parameters (including 64B Engram parameters)
+  with 12B active per token</strong>. Broken down, that is 155.5B backbone
+  parameters, 63.5B Engram n-gram embedding tables, a 0.43B vision encoder
+  (adapted from SigLIP2-So400m) and a 0.85B built-in drafter; activation is
+  "Text 11.3B + Vision 0.43B". It takes text and image input natively, outputs
+  text, and supports a <strong>1M-token context</strong>
+  (<code>max_position_embeddings</code> 1,048,576).</p>
+
+  <p>It is a different architecture from the 770B
+  <a href="/outputs/tencent/hy4-preview">Hy4 preview</a>, not a smaller copy of
+  it. The 42-layer backbone (hidden size 3,072, one dense layer then 41 MoE
+  layers, iHC residuals with 4 streams) adds three changes that Tencent lists
+  against Hy4. <strong>Hybrid attention</strong> interleaves sparse attention
+  ("IndexPool", top-2,048 tokens by group-level selection) with 512-token
+  sliding-window attention at 1:3 (12 sparse / 30 SWA layers, all MLA).
+  <strong>LatentMoE</strong> runs the routed experts in a 1,536-dimensional
+  latent space, with <strong>16 of 512 routed experts plus one shared</strong>
+  active per token (cf. NVIDIA's <a href="/outputs/nvidia/nemotron-3-super">Nemotron 3
+  Super</a>). An <strong>Engram</strong> n-gram embedding module (cf. DeepSeek's
+  <a href="/outputs/deepseek/deepseek-engram">Engram</a>) injects hashed bigram and
+  trigram lookups at four layers. Tencent says these cut the KV cache to 1/24 of
+  <a href="/outputs/tencent/hy3">Hy3</a>'s and 1/6 of Hy4's, and that scaling-ladder
+  experiments backed the choices. Post-training is self-distillation from Hy4
+  followed by RL that halved average end-to-end output length. The
+  <strong>DFly2</strong> drafter (5 layers) reuses the target model's KV cache
+  and sparse indices, so each draft token attends to at most about 2K keys at
+  any context length. With megakernels and 4-bit quantization, Tencent reports
+  decoding above 150 tokens/s. Training tokens, hardware and duration are not
+  disclosed. The weights are under the <strong>Tencent Hy License</strong>, an
+  Apache-2.0 derivative that requires a separate licence for model-as-a-service
+  operators with over US$50M revenue or products with over 100M MAU. This is a
+  change from the preview's plain Apache-2.0.</p>
+
+  <p>All results are Tencent's, at the highest reasoning setting. Tencent's
+  framing is cost per task: on its internal WorkBuddy-based WorkIndex the model
+  scores 42.1 against 39.7 for Hy4 preview and 51.4 for Hy4, at 1/13 of the
+  preview's and 1/20 of Hy4's cost per task. Public agent rows (Hy4 flash / Hy4 /
+  <a href="/outputs/deepseek/deepseek-v4.1-flash-1017">DeepSeek-V4.1-Flash-1017</a>):
+  DeepSWE v1.1 64.6 / 74.9 / 73.8, Terminal-Bench 4.0 19.2 / 44.4 / 40.0,
+  ProgramBench 16.0 / 30.0 / 29.0, APEX-Agents v1.1 63.1 / 75.2 / 72.9, HLE-Full
+  with tools 55.2 / 59.1 / 57.1, OSWorld 2.1 68.1 / 78.9 / 68.4, MMMU-Pro 75.8 /
+  78.6 / 76.7. It trails <a href="/outputs/alibaba/qwen3.8-flash-next">Qwen3.8-Flash-Next</a>
+  and <a href="/outputs/zai/glm-5.3-flash">GLM-5.3-Flash</a> on Terminal-Bench 4.0
+  (29.5, 35.4) and leads both on APEX-Agents and OSWorld. Tencent recommends Hy4
+  for long-horizon software engineering. The base model reports MMLU-Pro 71.1 and
+  SimpleQA 37.5 (5-shot), against 73.9 and 57.2 for Hy4 Base, with a warning that
+  heavy synthetic instruction data in mid-training distorts its few-shot
+  formatting. In a blind test with 85 WorkBuddy users (259 tasks), satisfaction
+  was 2.79/4 against Claude Haiku 5.5's 2.81. List price is about $0.070/$0.281
+  per M input/output tokens ($0.003 cached), with TokenHub at 50% off through
+  November 30. Not yet scored on the Artificial Analysis Intelligence Index as of
+  2026-11-19: the AA leaderboard lists Hy4 but no Hy4 flash.</p>
+tags:
+  - moe
+  - open-weight
+  - multimodal
+  - efficiency
+  - long-context
+  - agentic
+model:
+  open_weights: true
+  architecture: moe
+  parameters: 220B
+  active_parameters: 12B
+  num_experts: 512
+  top_k: 16
+  context_window: 1048576
+  license: Tencent Hy License
+  benchmark_scores:
+    - benchmark: DeepSWE v1.1
+      score: "64.6"
+      mode: mini-SWE-agent
+    - benchmark: Terminal-Bench 4.0
+      score: "19.2"
+      mode: Claude Code harness, 500 turns
+    - benchmark: ProgramBench
+      score: "16.0"
+      mode: almost-solved, mini-SWE-agent
+    - benchmark: APEX-Agents v1.1
+      score: "63.1"
+      mode: pass@1
+    - benchmark: AutomationBench v1.0.6
+      score: "52.2"
+    - benchmark: Humanity's Last Exam (full)
+      score: "55.2"
+      mode: with tools
+    - benchmark: OSWorld 2.1
+      score: "68.1"
+      mode: full, partial score
+    - benchmark: MMMU-Pro
+      score: "75.8"
+    - benchmark: MMLU-Pro
+      score: "71.1"
+      mode: base model, 5-shot
+  variants:
+    - name: Hy4-flash
+      parameters: 220B
+      active_parameters: 12B
+      notes: "BF16 instruct checkpoint (incl. 64B Engram tables)"
+    - name: Hy4-flash-FP8
+      parameters: 220B
+      active_parameters: 12B
+      notes: "FP8-quantized instruct checkpoint"
+    - name: Hy4-flash-base
+      parameters: 220B
+      active_parameters: 12B
+      notes: "Pre-trained base model"
+related:
+  - hy4
+  - hy4-preview
+  - hy3

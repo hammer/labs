@@ -23,7 +23,16 @@ description: >
   GLM-5.3 (<a href="https://www.ithome.com/1/021/526.htm">IT&#x4E4B;&#x5BB6;</a>,
   on a notice dated 2026-11-01). The GitCode weights remain available, and a
   successor <strong>openPangu-2.1-Pro</strong> appeared in Huawei's Xiaoyi
-  Work app on 2026-11-05 with no specifications published.</p>
+  Work app on 2026-11-05 with no specifications published. Huawei Cloud put
+  it on its MaaS platform on
+  <a href="https://www.huaweicloud.com/product/modelarts/studio/openPangu-2-1-Pro.html">2026-11-15</a>.
+  It is text-only, with a 512K context (384K maximum output), function
+  calling and a switchable thinking mode, at &yen;0.8/&yen;3.2 per M
+  input/output tokens. Huawei says it improves on agents, code generation and
+  throughput, and is strong at HarmonyOS app development and Ascend operator
+  generation. As of 2026-11-19 there are still no parameter counts and no
+  weights; the <code>openpangu</code> HuggingFace org's newest upload is
+  2.0-Pro.</p>
 
   <p><em>Active-parameter figure per the primary GitCode page (~18B); some
   press reports "180B active" &mdash; treat as an error.</em></p>

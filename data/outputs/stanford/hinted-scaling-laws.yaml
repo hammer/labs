@@ -1,0 +1,54 @@
+name: Hinted Scaling Laws
+slug: hinted-scaling-laws
+lab: stanford
+type: paper
+date: 2026-11-01
+sources:
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2611.02270
+  - label: GitHub
+    url: https://github.com/tatsu-lab/hinted-scaling-laws
+description: >
+  <p>Downstream scaling laws break when the cheap models in the fit score near
+  zero, because zeros give no trend to extrapolate. This Stanford paper (Percy
+  Liang, Tatsunori Hashimoto, John Duchi and co-authors) fixes that by
+  <strong>hinting</strong>. Privileged information, such as part of a reference
+  solution, turns a benchmark into a continuum of easier versions, so even
+  small models score above zero. Accuracy then rises smoothly and predictably
+  with the hint level, which gives a trend below the usual noise threshold.</p>
+
+  <p>The main test uses Marin's <a
+  href="/outputs/open-athena/delphi-scaling-suite">Delphi</a> pretraining
+  ladder: twelve compute budgets spanning 447M to 25B parameters. A hinted law
+  fit only on models up to 10<sup>20</sup> FLOPs forecasts the GSM8K accuracy
+  of the 10<sup>23</sup>-FLOP model (25.9%) <strong>within 3 points</strong>. A
+  standard law fit on the same models under-forecasts it by 13 points, and
+  still by 12 with models up to 10<sup>22</sup> FLOPs in the fit. Across the
+  ladder and several post-trained model families, hinting cuts the median
+  forecasting error on GSM8K, AIME and HLE from <strong>21 points to
+  4.3</strong>. It also makes evals cheaper: one hinted rollout per problem
+  ranks nearly indistinguishable models as well as five unhinted rollouts.
+  This is a direct tool for the small-to-large forecasting that frontier
+  pretraining decisions rest on. Code and data are public in the tatsu-lab
+  GitHub repo; compute came partly from the Marin Project and Google TPU
+  Research Cloud.</p>
+tags:
+  - scaling-laws
+  - scaling
+  - evaluation
+  - research
+paper:
+  arxiv: "2611.02270"
+  authors:
+    - Suze van Adrichem
+    - Luke Bailey
+    - Rohith Kuditipudi
+    - Christine Ye
+    - Neil Band
+    - Ahmed Ahmed
+    - John Duchi
+    - Percy Liang
+    - Tatsunori Hashimoto
+  code_url: https://github.com/tatsu-lab/hinted-scaling-laws
+related:
+  - delphi-scaling-suite

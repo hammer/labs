@@ -8,6 +8,8 @@ sources:
     url: https://microsoft.ai/news/introducing-mai-cyber-1-flash-inside-mdash/
   - label: MAI Cyber 1.1 Flash announcement (Oct 27, 2026)
     url: https://microsoft.ai/news/mai-cyber-1-1-flash/
+  - label: MAI Cyber 2 Flash announcement (Nov 17, 2026)
+    url: https://microsoft.ai/news/introducing-mai-cyber-2-flash/
 description: >
   <p>Microsoft AI's first <strong>cybersecurity model</strong>: a sparse MoE
   (137B total / 5B active, 256K context) in the MAI-Thinking-1 lineage.
@@ -21,6 +23,19 @@ description: >
   1 Flash at 18% lower cost per scan on its internal vulnerability-scanning
   suite, with no absolute scores; access stays limited to verified MDASH
   customers. Parameters are not restated for 1.1.</p>
+
+  <p><strong>MAI Cyber 2 Flash</strong> (announced November 17, 2026 at Ignite)
+  is the next generation. It has a <strong>1M-token context</strong>, four
+  times 1.1 Flash's, and is priced at $0.10 / $0.01 / $0.50 per million
+  input / cached / output tokens, which Microsoft says is 86% lower on output
+  than 1.1 Flash. Microsoft reports <strong>92.3% on CyberGym-E2E</strong>
+  against GPT-6 Astra's 91.5%, at half the reasoning budget and under 2% of the
+  cost per task. That figure uses 813 of the 905 tasks: Microsoft dropped 92
+  whose projects and vulnerability reports overlap its training data. It also
+  reports 40.4% on WebExploitBench against GPT-5.6 Cyber's 38.4%. It ships only
+  inside Microsoft security products. In MDASH it replaces the MAI-profile model
+  for eligible customers from mid-December. Architecture and parameters are
+  undisclosed, and no model card had been posted at announcement.</p>
 tags:
   - agents
   - moe

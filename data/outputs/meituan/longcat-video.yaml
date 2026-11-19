@@ -45,8 +45,16 @@ outputs:
     sources:
       - label: HuggingFace
         url: https://huggingface.co/meituan-longcat/LongCat-Video-Avatar
+      - label: HuggingFace (Avatar 1.6)
+        url: https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.6
+      - label: Avatar 1.6 technical report (PDF)
+        url: https://github.com/meituan-longcat/LongCat-Video/blob/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf
     description: >
-      Identity-consistent portrait generation variant.
+      Identity-consistent, audio-driven portrait video generation variant built
+      on LongCat-Video. Version 1.6 (2026-11-13, MIT, after an intermediate 1.5)
+      improves lip-audio sync and facial/body coordination, and reduces error
+      accumulation in autoregressive continuation so that videos can run past
+      10 minutes. It also adds inference optimizations.
     model:
       open_weights: true
 

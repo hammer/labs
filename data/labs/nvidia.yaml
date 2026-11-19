@@ -97,6 +97,18 @@ people:
     description: >
       <p>BS from Columbia (Valedictorian); PhD from Stanford (2016&ndash;2021, advised by Fei-Fei Li). OpenAI&rsquo;s very first intern; co-developed OpenAI Universe. At NVIDIA, co-founded the <strong>GEAR Lab</strong> (Generalist Embodied Agent Research) and co-leads <strong>Project GR00T</strong> (humanoid robotics). MineDojo won NeurIPS 2022 Outstanding Paper Award. Focuses on Foundation Agents across physical and virtual worlds.</p>
 news:
+  - title: "NVIDIA Chair Harvey Jones Says the Board Unanimously Accepted Jensen Huang's Resignation and Does Not Intend to Reinstate Him as CEO (Earnings Call)"
+    url: https://www.bostonglobe.com/2026/11/17/business/nvidia-earning-surpass-expecations/
+    source: The Boston Globe
+    date: 2026-11-17
+  - title: "NVIDIA Announces Rubin HPC at SC26: A Vera Rubin-Platform GPU for Scientific Simulation With More Than 50,000 CUDA Cores, Sparse-Data Acceleration and Seventh-Generation NVLink"
+    url: https://blogs.nvidia.com/blog/rubin-hpc/
+    source: NVIDIA
+    date: 2026-11-16
+  - title: "Jensen Huang Resigns as NVIDIA President, CEO and Director, Effective Immediately; CFO Colette Kress Named Interim CEO and Harvey C. Jones the First-Ever Board Chair While the Board Searches for a Permanent CEO"
+    url: https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition
+    source: NVIDIA
+    date: 2026-11-12
   - title: "NVIDIA Board Opens an Independent Investigation After Reports That Jensen Huang Was the Target of a Foreign Intelligence Effort; Huang Tells Staff He Was Unfaithful to His Wife and Will Cooperate"
     url: https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors
     source: NVIDIA

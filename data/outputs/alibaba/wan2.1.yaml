@@ -1,0 +1,75 @@
+name: Wan2.1
+slug: wan2.1
+lab: alibaba
+type: model
+date: 2025-02-25
+flagship: true
+sources:
+  - label: GitHub
+    url: https://github.com/Wan-Video/Wan2.1
+  - label: Paper (arXiv)
+    url: https://arxiv.org/abs/2503.20314
+  - label: HuggingFace (T2V-14B)
+    url: https://huggingface.co/Wan-AI/Wan2.1-T2V-14B
+  - label: HuggingFace (T2V-1.3B)
+    url: https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B
+  - label: Wan
+    url: https://wan.video
+description: >
+  <p>Tongyi Lab's first open-weight video foundation model family, released on
+  February 25, 2025 under <strong>Apache 2.0</strong>. It became the most
+  widely built-on open video model of 2025: the repo has about 17K GitHub stars,
+  and many derivative models and research systems use its 14B image-to-video
+  checkpoint as their base. It is a flow-matching
+  <strong>diffusion transformer</strong> in two sizes. The <strong>14B</strong>
+  model has 40 layers, width 5,120 and 40 heads. The <strong>1.3B</strong>
+  model has 30 layers, width 1,536 and 12 heads, and needs 8.19 GB of VRAM,
+  so it generates a 5-second 480p clip on an RTX 4090 in about 4 minutes. A T5
+  encoder supplies multilingual text through cross-attention in every block.
+  A single time-embedding MLP is shared across blocks, with each block
+  learning its own biases. The team reports this gave a significant gain at
+  the same parameter count.</p>
+
+  <p>The other core component is <strong>Wan-VAE</strong>, a 3D causal VAE
+  that encodes and decodes 1080p video of unlimited length while keeping
+  temporal causality. Training data came from a large deduplicated image and
+  video pool with a four-step cleaning pipeline (basic dimensions, visual
+  quality, motion quality). On the team's 1,035-prompt internal benchmark
+  (14 dimensions, 26 sub-dimensions), the model scored above the open and
+  closed models it was compared with. The technical report (arXiv
+  2503.20314, March 2025) followed. Later 2.1 checkpoints added first/last-frame
+  conditioning (FLF2V-14B, April 2025) and VACE all-in-one creation and
+  editing (1.3B and 14B, May 2025). The line continued with the MoE
+  <a href="/outputs/alibaba/wan2.2">Wan2.2</a>.</p>
+tags:
+  - video
+  - generation
+  - diffusion
+  - open-weight
+  - multimodal
+model:
+  open_weights: true
+  architecture: dense
+  parameters: 14B
+  license: Apache 2.0
+  variants:
+    - name: Wan2.1-T2V-14B
+      parameters: 14B
+      notes: "Text-to-video, 480p and 720p"
+    - name: Wan2.1-I2V-14B-720P / 480P
+      parameters: 14B
+      notes: "Image-to-video"
+    - name: Wan2.1-T2V-1.3B
+      parameters: 1.3B
+      notes: "Text-to-video, 480p; 8.19 GB VRAM"
+    - name: Wan2.1-FLF2V-14B-720P
+      parameters: 14B
+      notes: "First/last-frame-to-video (2025-04-17)"
+    - name: Wan2.1-VACE-1.3B / 14B
+      notes: "All-in-one video creation and editing (2025-05-14, arXiv 2503.07598)"
+paper:
+  arxiv: "2503.20314"
+  code_url: https://github.com/Wan-Video/Wan2.1
+related:
+  - wan2.2
+  - wan-animate-2

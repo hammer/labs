@@ -8,11 +8,16 @@ artificialanalysis: https://artificialanalysis.ai/providers/anthropic
 openrouter: https://openrouter.ai/anthropic
 region: usa
 founded: "2021"
-type: private
+type: public
+ipo:
+  year: 2026
+  exchange: NASDAQ
+  ticker: ANT
 valuation:
-  amount: "$965B"
-  type: private
-  date: "2026-05"
+  amount: "$1.50T"
+  type: market-cap
+  ticker: "NASDAQ: ANT"
+  date: "2026-11"
 description: >
   <p>Anthropic is an AI safety company founded in 2021 by
   <a href="https://en.wikipedia.org/wiki/Dario_Amodei">Dario Amodei</a> and
@@ -24,7 +29,11 @@ description: >
   <strong>$65B Series H in May 2026</strong> at a <strong>$965B post-money
   valuation</strong> (led by Altimeter, Dragoneer, Greenoaks, and Sequoia), up
   from a $30B Series G at $380B in February 2026; Amazon ($8B total) and Google
-  remain key strategic investors. Revenue reached ~$19B ARR by March 2026.</p>
+  remain key strategic investors. On November 18, 2026 it priced its
+  <strong>initial public offering</strong> at $83 per share, above the $70&ndash;$78
+  range, selling about 980M Class A shares (956M primary) for roughly $81B, a
+  record IPO, at a fully diluted valuation of about <strong>$1.5T</strong>; it began
+  trading on Nasdaq as ANT on November 19, opening at $111.50. Revenue reached ~$19B ARR by March 2026.</p>
 
   <p>The <strong>Claude</strong> model family has rapidly advanced from Claude 1 (2023)
   to <strong>Claude Opus 5.5</strong> (September 2026, 58 on AA Intelligence Index v5.0, #1 on v4.3.2 and at the v5.0 launch until Gemini 4 Carbon's 59),
@@ -101,6 +110,14 @@ people:
     description: >
       <p>PhD in Physics from Johns Hopkins University (advised by Jared Kaplan). Researcher at OpenAI. Co-authored the scaling laws paper with Kaplan. Co-founded Anthropic in 2021, serving as CTO.</p>
 news:
+  - title: "Anthropic Prices Its IPO at $83 per Share, Above the $70-$78 Range: ~980M Class A Shares, ~$81B Raised (a Record), ~$1.5T Fully Diluted Valuation; Trading on Nasdaq as ANT From November 19"
+    url: https://www.anthropic.com/news/anthropic-prices-initial-public-offering
+    source: Anthropic
+    date: 2026-11-18
+  - title: "Anthropic Launches the Roadshow for Its Proposed IPO of 825M Class A Shares at $70-$78"
+    url: https://www.anthropic.com/news/roadshow-launch
+    source: Anthropic
+    date: 2026-11-10
   - title: "Anthropic Reportedly Plans to Set an IPO Valuation Range This Week and Begin Trading Next Week, as Some Investors Push Below the $1.5T Target (WSJ)"
     url: https://techcrunch.com/2026/11/09/anthropic-reportedly-plans-to-move-forward-with-ipo-plans/
     source: TechCrunch

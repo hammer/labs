@@ -11,6 +11,12 @@ sources:
     url: https://huggingface.co/MiniMaxAI/MiniMax-H3
   - label: Release Notes
     url: https://platform.minimax.io/docs/release-notes/models
+  - label: H3-Image announcement
+    url: https://www.minimax.io/blog/minimax-h3-image
+  - label: H3-Image HuggingFace
+    url: https://huggingface.co/MiniMaxAI/MiniMax-H3-Image
+  - label: H3-Image GitHub
+    url: https://github.com/MiniMax-AI/MiniMax-H3-Image
 description: >
   <p>MiniMax's <strong>open-weight omni-modal video generator</strong>
   (Hailuo 3.0): 4&ndash;15s clips with <strong>native 32kHz stereo audio</strong>
@@ -18,6 +24,23 @@ description: >
   and dialogue in 11 languages. FL2VA (first-and-last-frame) and Ref2VA
   (reference-guided) variants ship openly; the H3-Context-IR stage is
   hosted-only. "MiniMax H3 Community License"; technical report promised.</p>
+
+  <p><strong>MiniMax-H3-Image</strong> (2026-11-11) is an open-weight image
+  generation and editing checkpoint from the same family. Its model card says
+  the diffusion transformer "has the H3 architecture without the audio layers"
+  and reuses the MiniMax-H3 text encoder (a Qwen3-VL text model, read at its
+  50th layer) unchanged. The DiT is a dense single-stream transformer of
+  <strong>33.1B parameters</strong> (50 layers, hidden size 5,376, 56 heads)
+  over a new image VAE with 16&times; spatial downsampling. It is distilled to
+  6 sampling steps with no classifier-free guidance and generates images of
+  about 16 MP (4096&times;4096 at 1:1, up to 6272&times;2688 at 21:9) without
+  an upscaler. MiniMax says it renders a 4K image in under 10 seconds and
+  accepts up to 16 reference images. Post-training covered data, RL,
+  step reduction and an optional NVFP4 prompt-expander model
+  (MiniMax-H3-Image-PE). MiniMax publishes no quantitative benchmark scores.
+  It ships under a separate MiniMax-H3-Image Community License, which requires
+  written authorization for some uses, and is also served via the MiniMax API
+  and Hailuo.</p>
 tags:
   - video
   - multimodal
@@ -25,6 +48,11 @@ tags:
 model:
   open_weights: true
   license: MiniMax H3 Community License
+  variants:
+    - name: MiniMax-H3-Image
+      notes: "Image generation/editing; 33.1B dense DiT, H3 architecture without audio layers; 6-step distilled; MiniMax-H3-Image Community License"
+    - name: MiniMax-H3-Image-PE
+      notes: "Optional NVFP4 prompt expander for H3-Image text-to-image"
 related:
   - hailuo-video
   - minimax-m3

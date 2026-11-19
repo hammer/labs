@@ -63,6 +63,10 @@ tags:
   - hardware
   - autonomous-driving
 news:
+  - title: "Baidu Releases ERNIE 5.5 Flash Preview, the First Post-Trained Model on ERNIE 5.5 Flash Base, via Qianfan API; Weights to Follow Under Apache 2.0"
+    url: https://ernie.baidu.com/release/ernie-5-5-flash-preview/
+    source: Baidu ERNIE
+    date: 2026-11-11
   - title: "Baidu Open-Sources ERNIE 5.5 Flash Base: 280B-A14B MoE Base Model Pre-Trained on 33.5T Tokens With Muon in FP8, Post-Trained Flash to Follow"
     url: https://ernie.baidu.com/release/ernie-5-5-flash-base/
     source: Baidu ERNIE

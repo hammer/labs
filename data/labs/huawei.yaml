@@ -67,6 +67,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Zhenguo_Li1
 news:
+  - title: "Huawei Cloud Launches openPangu-2.1-Pro on Its MaaS Platform: 512K Context, Stronger Agent and Coding Ability; No Parameter Count or Weights Yet"
+    url: https://www.huaweicloud.com/product/modelarts/studio/openPangu-2-1-Pro.html
+    source: Huawei Cloud
+    date: 2026-11-15
   - title: "openPangu-2.1-Pro Appears First in Huawei's Xiaoyi Work; Huawei Cloud MaaS Update Set for November 15"
     url: https://www.ithome.com/1/022/974.htm
     source: IT之家

@@ -1,0 +1,56 @@
+name: SatWeave and PARDIG
+slug: satweave-pardig
+lab: google
+type: dataset
+date: 2026-11-13
+sources:
+  - label: Announcement (Google DeepMind)
+    url: https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/
+  - label: PARDIG paper (arXiv)
+    url: https://arxiv.org/abs/2611.13941
+  - label: WeatherNext developer docs
+    url: https://developers.google.com/weathernext
+description: >
+  <p>The two observation datasets behind <a
+  href="/outputs/google/weathernext-3">WeatherNext 3</a>, opened by the
+  WeatherNext team on November 13, 2026 as live feeds and historical archives on
+  Google Cloud Storage, with PARDIG's historical catalog also in Earth
+  Engine.</p>
+
+  <ul>
+  <li><strong>SatWeave</strong> is an hourly global mosaic of geostationary
+  imagery that blends GOES-East/West, Meteosat 0 and Indian Ocean, and
+  Himawari across <strong>17 visible, water-vapour and infrared
+  channels</strong>. Most existing composites keep four or fewer channels and
+  update every few hours. SatWeave's hourly refresh is what lets WeatherNext 3
+  start new global forecasts every hour, where analysis-initialised models
+  refresh every six. The archive spans more than a decade.</li>
+  <li><strong>PARDIG</strong> (Precipitation AI Reanalysis: Densely Inferred
+  GPM) is an AI-inferred global precipitation product from a spherical
+  graph-mesh transformer related to WeatherNext 3's architecture. It is trained
+  on sparse spaceborne radar from NASA's GPM Core Observatory, with SatWeave
+  imagery and ECMWF atmospheric fields as inputs, and applied densely at
+  <strong>0.1&deg; and 15-minute</strong> resolution with about five hours'
+  average latency. Near-real-time fields run from 2016 and a historical variant
+  from 1999. Against radar networks in the US, Europe and Japan and over 36,000
+  surface stations, the paper (<a href="https://arxiv.org/abs/2611.13941">arXiv
+  2611.13941</a>, November 10) reports that it beats IMERG V07 Final and Early,
+  MSWEP V3, ERA5 and HRES at all thresholds, with the largest gains at extreme
+  intensities. DeepMind claims more than 30% better hourly detection skill than
+  IMERG-Final on light-to-moderate rain.</li>
+  </ul>
+
+  <p>PARDIG was the training target for WeatherNext 3's precipitation forecasts,
+  so the release opens part of the pretraining data for a tracked weather
+  foundation model.</p>
+tags:
+  - science
+  - weather
+  - climate
+  - dataset
+dataset:
+  url: https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/
+paper:
+  arxiv: "2611.13941"
+related:
+  - weathernext-3

@@ -1,0 +1,79 @@
+name: Wan2.2
+slug: wan2.2
+lab: alibaba
+type: model
+date: 2025-07-28
+flagship: true
+sources:
+  - label: GitHub
+    url: https://github.com/Wan-Video/Wan2.2
+  - label: HuggingFace (T2V-A14B)
+    url: https://huggingface.co/Wan-AI/Wan2.2-T2V-A14B
+  - label: HuggingFace (I2V-A14B)
+    url: https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B
+  - label: HuggingFace (TI2V-5B)
+    url: https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B
+  - label: Paper (Wan, arXiv)
+    url: https://arxiv.org/abs/2503.20314
+description: >
+  <p>The second open-weight generation of Tongyi Lab's Wan video models,
+  released on July 28, 2025 under <strong>Apache 2.0</strong> (about 19K GitHub
+  stars). It brings a <strong>Mixture-of-Experts</strong> design into a video
+  diffusion model, but not a token-routed one. The A14B models use two
+  experts of about 14B each, split by denoising stage. A high-noise expert
+  sets layout in the early steps, and a low-noise expert refines detail in
+  the later ones. The switch happens at the step where the signal-to-noise
+  ratio reaches half its minimum. That gives <strong>27B total and 14B active
+  parameters per step</strong>, so inference compute and memory stay close to
+  <a href="/outputs/alibaba/wan2.1">Wan2.1</a>'s 14B. In the team's
+  validation-loss ablation, the full Wan2.2 MoE converged lower than Wan2.1
+  and than hybrids that reuse Wan2.1 as either expert. Training data was also
+  enlarged.</p>
+
+  <p>A dense <strong>TI2V-5B</strong> model handles both text- and image-to-video
+  in one checkpoint. It runs on the new Wan2.2-VAE, which compresses 4&times;16&times;16
+  (64&times; overall, 4&times;32&times;32 with an extra patchify layer). It generates
+  a 5-second 720p/24fps clip in under 9 minutes on one consumer GPU. Alibaba
+  reports Wan2.2 ahead of leading closed commercial models on its new
+  Wan-Bench 2.0. Later checkpoints in the 2.2 line were Wan2.2-S2V-14B for
+  audio-driven video (2025-08-26) and Wan2.2-Animate-14B for character
+  animation (2025-09-19), which was followed by
+  <a href="/outputs/alibaba/wan-animate-2">Wan-Animate-2</a>. As of
+  2026-11-19 the <code>Wan-AI</code> HuggingFace org holds no Wan 3.0
+  weights, which leaves Wan2.2 as the latest open Wan base model.</p>
+tags:
+  - video
+  - generation
+  - diffusion
+  - moe
+  - open-weight
+  - multimodal
+model:
+  open_weights: true
+  architecture: moe
+  parameters: 27B
+  active_parameters: 14B
+  num_experts: 2
+  top_k: 1
+  license: Apache 2.0
+  variants:
+    - name: Wan2.2-T2V-A14B
+      parameters: 27B
+      active_parameters: 14B
+      notes: "Text-to-video; high-noise + low-noise experts"
+    - name: Wan2.2-I2V-A14B
+      parameters: 27B
+      active_parameters: 14B
+      notes: "Image-to-video"
+    - name: Wan2.2-TI2V-5B
+      parameters: 5B
+      notes: "Dense unified text/image-to-video on the 4x16x16 Wan2.2-VAE"
+    - name: Wan2.2-S2V-14B
+      parameters: 14B
+      notes: "Audio-driven video (2025-08-26)"
+    - name: Wan2.2-Animate-14B
+      parameters: 14B
+      notes: "Character animation and replacement (2025-09-19)"
+related:
+  - wan2.1
+  - wan-animate-2

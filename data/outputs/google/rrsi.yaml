@@ -108,6 +108,28 @@ description: >
   final one. The paper frames the repository as a first step toward a fully
   self-improving system that would also retrain the model and the harness, and
   it does neither.</p>
+
+  <p>Later work in the same harness-RSI line, recorded here rather than filed
+  separately:</p>
+  <ul>
+    <li><a href="https://arxiv.org/abs/2611.23476">GUARD</a> (November 17,
+    2026, with Google authors) targets the regressions that ungraded
+    self-editing causes. It splits each task into pre-execution self-checks,
+    weights harness edits by "directional regret" toward newly broken
+    behaviours, and promotes an edit only when its gains outweigh its
+    regressions on a gated buffer. The paper reports gains without
+    catastrophic forgetting across memory, skill-evolution and continual-task
+    benchmarks.</li>
+    <li><a href="https://github.com/PKU-YuanGroup/RSI4S">RSI4S-Bench</a>
+    (November 2026, Peking University's joint lab with YuanKong Intelligence)
+    benchmarks RSI for science: 48 tasks, each giving a task agent and a meta
+    agent a four-hour research budget, at three levels of what may
+    self-modify, with one frozen model scored once on a held-out test set.</li>
+    <li><a href="https://github.com/RUCAIBox/AutoMaster">AutoMaster</a>
+    (November 2026, Renmin University) turns the loop on post-training: the
+    same model is shaped into a better teacher for its own students, with
+    Qwen3.5-based 4B and 9B checkpoints released.</li>
+  </ul>
 tags:
   - agents
   - agent-harness

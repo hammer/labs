@@ -114,6 +114,10 @@ people:
       infrastructure. Former OpenAI researcher. PhD from UC Berkeley under
       Stuart Russell.</p>
 news:
+  - title: "Ant Group Launches Ling-3.2-flash, Its First Native Multimodal Flash Model (560B-A25B MoE, 1M Context, Image/Text/Video Input), as a Two-Week Free API Trial With No Open Weights Yet"
+    url: https://developer.ant-ling.com/en/docs/getting-started/changelog
+    source: Ant Ling
+    date: 2026-11-05
   - title: "inclusionAI Releases Ling-3.1-flash-1019 Weights (MIT): Post-Training Upgrade of the 560B-A25B MoE, AA Intelligence Index 44 on v4.3.2 and 29 on v5.0; Ling-3.1-flash-base Published Two Days Earlier"
     url: https://huggingface.co/inclusionAI/Ling-3.1-flash-1019
     source: HuggingFace

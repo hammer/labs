@@ -11,6 +11,10 @@ sources:
     url: https://thinkingmachines.ai/model-card/inkling-2-small/
   - label: Tinker models and pricing
     url: https://tinker-docs.thinkingmachines.ai/tinker/models/models_and_pricing/
+  - label: HuggingFace (NVFP4)
+    url: https://huggingface.co/thinkingmachines/Inkling-2-Small
+  - label: HuggingFace (MXFP8)
+    url: https://huggingface.co/thinkingmachines/Inkling-2-Small-MXFP8
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/inkling-2-small
 description: >
@@ -76,13 +80,20 @@ description: >
   mental-health queries, and alignment scores that trail closed models such as
   GPT-6.1 Sol.</p>
 
-  <p><strong>The weights are not out yet.</strong> At launch the model is on
-  Tinker only, for sampling, inference and fine-tuning under the Tinker Terms
-  of Use. The post promises Apache 2.0 weights "next week", after external
-  safety testing and red-teaming, and other platforms in "coming weeks".
-  Inkling-Small followed the same pattern, shipping on Tinker first and as open
-  weights two weeks later. Until the download exists, this index records the
-  model as closed.</p>
+  <p><strong>Weights.</strong> At launch on November 5 the model was on
+  Tinker only, with Apache 2.0 weights promised "next week" after external
+  safety testing and red-teaming. They shipped on <strong>November 12</strong>
+  on HuggingFace under <strong>Apache 2.0</strong> (with the Model Acceptable
+  Use Policy linked from the card), in two checkpoint formats,
+  <a href="https://huggingface.co/thinkingmachines/Inkling-2-Small">NVFP4</a>
+  and <a href="https://huggingface.co/thinkingmachines/Inkling-2-Small-MXFP8">MXFP8</a>,
+  with day-one SGLang, vLLM, TokenSpeed and Unsloth recipes, post-training
+  support in Miles, SkyRL and Snowflake Cortex Training, and API access
+  through NVIDIA, Fireworks, Together, Baseten, Nebius, Modal and
+  Cloudflare. The released <code>config.json</code> confirms 48 layers,
+  hidden size 4608, 48 attention heads with 8 KV heads, a 201,024-token
+  vocabulary and a 1,048,576-token maximum length. Inkling-Small followed the
+  same Tinker-first pattern two weeks before its weights.</p>
 tags:
   - frontier
   - moe
@@ -92,14 +103,14 @@ tags:
   - coding
   - safety
 model:
-  open_weights: false
+  open_weights: true
   architecture: moe
   parameters: "594B"
   active_parameters: "17B"
   num_experts: 384
   top_k: 8
   context_window: 1000000
-  license: "Tinker Terms of Use (Apache 2.0 weights promised)"
+  license: Apache 2.0
   training_hardware: NVIDIA GB300 NVL72
   intelligence_index: 31
   intelligence_index_version: "AA v5.0.1"

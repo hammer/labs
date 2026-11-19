@@ -38,8 +38,12 @@ description: >
   (September 30, 2026, AA Intelligence Index v5.0: 50), the frontier model
   Google released first to trusted cyber defenders, and then
   <strong><a href="/outputs/google/gemini-4-carbon">Gemini 4 Carbon</a></strong>
-  (October 28, 2026), #1 on AA Intelligence Index v5.0 at 59, released the
-  same way. The open-weight
+  (October 28, 2026), #1 on AA Intelligence Index v5.0 at launch (59), released the
+  same way. Two models adapted from Carbon followed in November:
+  <strong><a href="/outputs/google/gemini-4-hydrogen">Gemini 4 Hydrogen</a></strong>
+  (November 12), the everyday tier available to everyone, and
+  <strong><a href="/outputs/google/gemini-4-neon">Gemini 4 Neon</a></strong>
+  (November 18), third on AA Intelligence Index v5.0.1 at 61. The open-weight
   <strong>Gemma</strong> series (2024&ndash;) provides Apache 2.0 models up to 27B.</p>
 
   <p>DeepMind's scientific breakthroughs include <strong>AlphaGo</strong> (defeated world Go
@@ -98,6 +102,42 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Koray_Kavukcuoglu1
 news:
+  - title: "Genie 4 Reaches the Gemini API and AI Studio: Continuous 720p Worlds at 24 fps With Native Audio, a Day After Rolling Out to Google AI Ultra Subscribers in a Rebuilt Project Genie"
+    url: https://blog.google/innovation-and-ai/technology/developers-tools/genie-4-in-gemini-api/
+    source: Google
+    date: 2026-11-19
+  - title: "Google Introduces Gemini 4 Neon, Adapted From Carbon: AA Intelligence Index v5.0.1 61 (Third Overall), $3/$15, 1M Context, 0.0% Terminal-Bench Cheating"
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/
+    source: Google
+    date: 2026-11-18
+  - title: "Google DeepMind Opens SatWeave and PARDIG, the Satellite-Mosaic and AI Precipitation Datasets Behind WeatherNext 3"
+    url: https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/
+    source: Google DeepMind
+    date: 2026-11-13
+  - title: "Google Introduces Gemini 4 Hydrogen for Everyone: Adapted From Carbon, AA Intelligence Index 54 at New xhigh Level, $1.50/$7.50 Flat Across 1M Context, Terminal-Bench 4.1 57% vs 3.8 Flash's 18.2%"
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/
+    source: Google
+    date: 2026-11-12
+  - title: "Google DeepMind Announces AlphaGenome 2: Cell-Type-Conditional DNA Model Trained on 107M+ Single-Cell Profiles, Nearly Doubles Causal-Variant Recall"
+    url: https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/
+    source: Google DeepMind
+    date: 2026-11-11
+  - title: "Gemini 4 Carbon Becomes Generally Available to Developers, Enterprises and Ultra Subscribers at $2/$10 Introductory Pricing; Antigravity Previews /swarm"
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/
+    source: Google
+    date: 2026-11-10
+  - title: "Google DeepMind and Artificial Analysis Launch the Multimodal Knowledge Agent (MKA) Benchmark: 200 Private Expert Tasks Over Visually Dense Files in 10 Verticals, Plus 10 Public Tasks on Hugging Face"
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/multimodal-knowledge-agent-benchmark/
+    source: Google
+    date: 2026-11-10
+  - title: "Google DeepMind Introduces AlphaProof Code: Gemini 4 Carbon Agents Generate 6M+ Lines of Lean to Formally Verify Signal's Cryptographic Protocol Implementation in Four Weeks"
+    url: https://deepmind.google/blog/introducing-alphaproof-code/
+    source: Google DeepMind
+    date: 2026-11-10
+  - title: "Google DeepMind Releases Gemini Robotics 2.5 VLA: 30-100% Higher Task Success Across 200+ Tasks, 96% Success Kitting Parts on Mercedes-Benz Lines With Apptronik Apollo 2"
+    url: https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/
+    source: Google DeepMind
+    date: 2026-11-10
   - title: "Google Adds TPU 8tx (Confidential Inference) and TPU 8i Max (Two 8i Chips per Package, Double the Compute, SRAM and HBM Bandwidth), Its Third and Fourth TPU Systems of 2026"
     url: https://cloud.google.com/blog/topics/ai-infrastructure/tpu-8tx-and-tpu-8i-max
     source: Google Cloud

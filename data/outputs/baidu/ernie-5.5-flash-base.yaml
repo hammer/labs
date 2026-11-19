@@ -20,7 +20,9 @@ description: >
   <p>Baidu's first open-weight release of the ERNIE 5.x generation, and
   deliberately a <strong>pre-trained base checkpoint</strong>: it was taken at
   the end of pre-training, before any mid-training or post-training. Baidu says
-  a post-trained ERNIE 5.5 Flash will follow.
+  a post-trained ERNIE 5.5 Flash will follow; the first one,
+  <a href="/outputs/baidu/ernie-5.5-flash-preview">ERNIE 5.5 Flash Preview</a>,
+  shipped API-only on 2026-11-11.
   <strong>280B total / 14B active MoE</strong>, pre-trained from scratch on
   <strong>33.5T tokens</strong> with <strong>Muon in FP8 mixed
   precision</strong>. Pre-training context was extended in stages to 128K, and
@@ -137,6 +139,7 @@ model:
       active_parameters: 14B
       notes: "BF16 base checkpoint"
 related:
+  - ernie-5.5-flash-preview
   - virtual-head-attention
   - multi-view-latent-moe
   - echo-self-recursion

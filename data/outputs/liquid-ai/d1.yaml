@@ -9,6 +9,8 @@ sources:
     url: https://www.liquid.ai/blog/d1-decision-model
   - label: Announcement (open release)
     url: https://www.liquid.ai/blog/d1-open
+  - label: Announcement (d1.2)
+    url: https://www.liquid.ai/blog/d1-2
   - label: HuggingFace (d1-3B)
     url: https://huggingface.co/LiquidAI/d1-3B
   - label: HuggingFace (d1-omni-600M)
@@ -59,6 +61,19 @@ description: >
   two-thirds the size, and quotes 5.7&nbsp;ms per decision on an H100. Beyond
   classification, both also extract spans, locate objects and estimate
   quantities with an interval.</p>
+
+  <p><strong>d1.2 and d1.2-ultra</strong> (2026-11-16) are API-only so far,
+  priced at $0.02 and $0.042 per million input tokens on the Liquid API. They
+  add audio input, so a question can be spoken as well as typed, and five
+  answer types: reading a value with the characters it came from, finding
+  every span of a kind, boxing one or every object, estimating a number with
+  a range, and multi-select choice. Liquid says d1.2-ultra scores 75 on the
+  Artificial Analysis Decision Index v2.1, two points above the previous best
+  decision model, with calibration error of 0.8 points across 13 benchmarks
+  against 3.7 for Perplexity's Decider v1.3. Accuracy on the five new tasks is
+  measured on Liquid's own held-out splits of public datasets, since no public
+  benchmark covers them yet. No sizes or weights were published for
+  d1.2.</p>
 tags:
   - efficiency
   - multimodal

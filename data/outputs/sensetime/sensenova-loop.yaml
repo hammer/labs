@@ -1,11 +1,17 @@
-name: SenseNova-Loop-9B-Preview
+name: SenseNova-Loop-9B
 slug: sensenova-loop
 lab: sensetime
 type: model
 date: 2026-10-30
 sources:
-  - label: HuggingFace
+  - label: HuggingFace (release)
+    url: https://huggingface.co/sensenova/SenseNova-Loop-9B
+  - label: HuggingFace (Preview)
     url: https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview
+  - label: HuggingFace (AWQ)
+    url: https://huggingface.co/sensenova/SenseNova-Loop-9B-AWQ
+  - label: HuggingFace (GGUF)
+    url: https://huggingface.co/sensenova/SenseNova-Loop-9B-GGUF
   - label: GitHub
     url: https://github.com/OpenSenseNova/SenseNova-Loop
 description: >
@@ -30,9 +36,29 @@ description: >
   WorkBuddy Bench, AIDABench, TeamBench, Terminal-Bench 2.1, T&sup3;-Banking,
   AutomationBench and SenseTime's own RaccoonPPTBench), and the showcase
   demos come from SenseTime's Raccoon Work agent. MTP speculative decoding
-  ships now, while DSpark and DFlash2 draft heads are still training. The
-  technical report and a Transformers implementation are listed as
-  "TBD".</p>
+  shipped with the Preview, and the card said DSpark and DFlash2 draft heads
+  were still training. The technical report and a Transformers
+  implementation were listed as "TBD".</p>
+
+  <p>The <strong>official SenseNova-Loop-9B</strong> followed on
+  <strong>17 November 2026</strong>, with BF16 weights, a launch-day official
+  AWQ 4-bit build and its MTP draft, and GGUF quantizations on 18 November.
+  It keeps the 32-layer, 56-execution looped block and two-stream mHC (hidden
+  size 4,096, FFN 12,288, 16 attention heads and 4 KV heads on the full-attention
+  layers), and the README now says the training recipe extends context to
+  <strong>512K tokens</strong>. SenseTime reports gains over the Preview on all
+  seven benchmarks shown: AutomationBench 14.33 &rarr; <strong>36.67</strong>,
+  Terminal-Bench 2.1 40.45 &rarr; <strong>59.55</strong>, GAIA 37.86 &rarr;
+  <strong>69.90</strong>, and BIRD 71.38 &rarr; 72.34. Against Qwen3.8-27B it
+  ties AutomationBench (36.67), edges AIDABench (65.31 vs 65.01) and trails
+  NL2Repo (41.36 vs 44.60). A loop-scaling ablation, which holds the data
+  fixed and varies the loop count from 1 to 4, finds the best results at three
+  or four loops: LiveCodeBench v6 +8.10% and AIDABench visualization +8.55%
+  relative to a single pass. The release keeps two loops for inference cost.
+  With 4-bit weights and an 8-bit KV cache, the README estimates about 15 GiB
+  of GPU memory at 256K context. The release BF16 weights are gated on
+  HuggingFace. Still no technical report, and Artificial Analysis has not
+  scored either checkpoint.</p>
 tags:
   - open-weight
   - multimodal
@@ -43,8 +69,13 @@ model:
   open_weights: true
   architecture: dense
   parameters: 9B
-  context_window: 262144
+  context_window: 524288
   license: Apache 2.0
+  variants:
+    - name: SenseNova-Loop-9B-Preview
+      notes: "2026-10-30/31; 262,144-token training sequences"
+    - name: SenseNova-Loop-9B
+      notes: "official release 2026-11-17; 512K context; AWQ 4-bit and GGUF (BF16, Q8_0, Q5_K_M, Q4_K_M) builds"
 related:
   - sensenova-v6.5
   - sensenova-u1.5

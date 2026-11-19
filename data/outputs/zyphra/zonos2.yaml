@@ -14,6 +14,10 @@ sources:
     url: https://huggingface.co/Zyphra/ZONOS3-Mini
   - label: ZONOS3-Mini runtime (GitHub)
     url: https://github.com/Zyphra/ZONOS3-Mini
+  - label: ZONOS3-Mini Technical Report (arXiv)
+    url: https://arxiv.org/abs/2611.16525
+  - label: ZAC-1 codec (GitHub)
+    url: https://github.com/Zyphra/ZAC-1
 description: >
   <p>Zyphra's open-weight multilingual <strong>text-to-speech</strong> model
   and successor to Zonos — an <strong>MoE backbone</strong> (16 experts,
@@ -44,7 +48,10 @@ description: >
   </ul>
   <p>On Zyphra's own TTS Capability Index it ranks first among open models, ahead
   of Fish S2 Pro and MOSS TTS v1.5. Zyphra gives no numeric scores in the text,
-  and it has not announced a larger ZONOS3.</p>
+  and it has not announced a larger ZONOS3. The ZONOS3-Mini technical report
+  (Clark, Mejjoute, Close and Millidge) followed on arXiv on 2026-11-12, and
+  the ZAC-1 codec (44.1 kHz, 15 Hz dual encoding) was published as its own
+  PyTorch package with a ggml port the same day.</p>
 tags:
   - speech
   - audio

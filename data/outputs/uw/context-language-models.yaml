@@ -58,7 +58,11 @@ description: >
   CC-BY-NC-4.0; 69 stars at filing): the CLM agent implemented in the
   Harbor framework, the skill-evolution and RL code, and Suffix Cache Reuse
   as an SGLang patch, plus a <code>pi-clm</code> package for the Pi agent.
-  ContextBench is listed as coming soon, and the README links no trained
+  ContextBench has since been released, as the
+  <a href="https://github.com/RulinShao/ContextBench">RulinShao/ContextBench</a>
+  Harbor task repo and the context-language-model/ContextBench dataset on
+  Hugging Face. It measures what an agent keeps, updates and offloads when its
+  input does not fit in its context window. The README links no trained
   checkpoints. The approach moves context management from the harness into
   the model, the same direction as Tencent's RL-trained
   <a href="/outputs/tencent/contextpilot">ContextPilot</a>.</p>

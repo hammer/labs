@@ -36,7 +36,9 @@ description: >
   second was announced alongside. At launch it is in ChatGPT Work and Codex for
   paid plans. The day before, OpenAI said it would not release the planned
   GPT-6.1 Astra because it fell short of the company's safety standards.
-  Parameters undisclosed.</p>
+  Parameters undisclosed. Succeeded on November 17 by
+  <a href="/outputs/openai/gpt-6.2-sol">GPT-6.2 Sol</a> (AA v5.0.1 57) at the
+  same price.</p>
 tags:
   - frontier
   - reasoning
@@ -60,3 +62,4 @@ related:
   - gpt-6-sol
   - gpt-6-astra
   - gpt-6.1-terra
+  - gpt-6.2-sol

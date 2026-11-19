@@ -24,3 +24,5 @@ model:
 paper:
   arxiv: "2608.06009"
   code_url: https://github.com/Wan-Video/Wan-Animate-2
+related:
+  - wan2.2

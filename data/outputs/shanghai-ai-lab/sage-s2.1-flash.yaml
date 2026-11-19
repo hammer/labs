@@ -1,0 +1,104 @@
+name: Sage S2.1 Flash
+slug: sage-s2.1-flash
+lab: shanghai-ai-lab
+type: model
+date: 2026-11-16
+sources:
+  - label: Website
+    url: https://internlm.github.io/Sage-S2.1-Flash/
+  - label: HuggingFace
+    url: https://huggingface.co/internlm/Sage-S2.1-Flash
+  - label: HuggingFace (FP8)
+    url: https://huggingface.co/internlm/Sage-S2.1-Flash-FP8
+  - label: GitHub
+    url: https://github.com/InternLM/Sage-S2.1-Flash
+  - label: HuggingFace (Sage SciPerception projectors)
+    url: https://huggingface.co/internlm/Sage-SciPerception
+  - label: ModelScope
+    url: https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Sage-S2.1-Flash
+description: >
+  <p>Shanghai AI Laboratory's <strong>书生 (Sage) S2.1 Flash</strong> is a
+  scientific multimodal agent model that the launch page describes as a
+  "320-billion-parameter MoE" (3200 亿参数 MoE 架构). It was released on
+  HuggingFace and ModelScope in mid-November 2026 in BF16 and FP8 under the
+  MIT license. It is not a Shanghai AI Lab pretrain. The config.json declares
+  <code>Glm5NextForConditionalGeneration</code> and has exactly
+  <a href="/outputs/zai/glm-5.3-flash">GLM-5.3-Flash</a>'s geometry: 45
+  layers, hidden size 4,096, 288 routed experts plus one shared, 8 active per
+  token, mHC with 20 Sinkhorn iterations, a 154,880-token vocabulary and
+  1,048,576 positions. The safetensors total is about 321.3B, and the
+  deployment guide points to the GLM-5.3-Flash SGLang cookbook. So the
+  parameter count belongs to Z.ai's pretraining. The 744B GLM-5.2-based
+  <a href="/outputs/shanghai-ai-lab/atria-dawn-preview">Atria Dawn</a>, whose
+  repository was renamed <code>internlm/Sage-S2.1</code>, is the larger
+  sibling in the same S2.1 line.</p>
+
+  <p>What the lab adds is scientific input. Through <strong>Sage
+  SciPerception</strong>, a separately released set of scientific encoders
+  and trainable projectors, more than ten kinds of scientific data are
+  projected into the language model's input embedding space and served as
+  <code>prompt_embeds</code>. These include molecular graphs, crystal
+  structures, protein sequences and 3D structures, DNA and RNA sequences,
+  spectra, mass spectra, X-ray diffraction, ECG, EEG and light curves. They
+  support prediction, classification, site localization and structure
+  inference. The page also credits large-scale verifiable-environment
+  training for search, coding, tool use and professional-software operation
+  with visual feedback. Its demos include 3D Slicer CT reconstruction,
+  Blender/CAD modelling and Fiji cell segmentation. No technical report has
+  been published.</p>
+
+  <p>The card's 33-row table is self-reported, with the lab's own harnesses
+  (mostly Claude Code). It compares the model with GLM-5.3-Flash,
+  DeepSeek-V4.1-Flash-1017, Qwen3.8-Max, GPT-5.6 Sol and Claude Opus 5.
+  Sage S2.1 Flash beats its GLM-5.3-Flash base on nearly every row:
+  Terminal-Bench 2.1 <strong>87.9</strong> (84.3), SWE-bench Pro 60.6 (60.3),
+  MLE-bench Lite <strong>90.3</strong> (84.3), GDPval 78.0 (67.7), OfficeQA
+  Pro <strong>72.2</strong> (64.7), BrowseComp 91.2 (88.3), OSWorld-Verified
+  85.2 (83.5) and BabyVision 75.8 (51.3). It still trails Opus 5 on coding:
+  SWE-bench Pro 60.6 against 76.5 and NL2Repo-Bench 57.2 against 79.9. The
+  table reports no scientific-modality benchmarks. Artificial Analysis had not
+  scored it at filing: no articles-index entry and no leaderboard slug.</p>
+tags:
+  - science
+  - multimodal
+  - agentic
+  - open-weight
+  - moe
+model:
+  open_weights: true
+  architecture: moe
+  # Derivative: config.json is GLM-5.3-Flash's (glm5_next, 45 layers, 288
+  # experts, top-8, vocab 154,880); no `parameters` so the Scale column does
+  # not credit Shanghai AI Lab with Z.ai's ~320B pretraining.
+  base_model: glm-5.3-flash
+  num_experts: 288
+  top_k: 8
+  license: MIT
+  benchmark_scores:
+    - benchmark: Terminal-Bench 2.1
+      score: "87.9"
+    - benchmark: SWE-bench Pro
+      score: "60.6"
+    - benchmark: DeepSWE
+      score: "67.9"
+    - benchmark: MLE-bench Lite
+      score: "90.3"
+    - benchmark: GDPval
+      score: "78.0"
+    - benchmark: OfficeQA Pro
+      score: "72.2"
+    - benchmark: BFCL v4
+      score: "75.5"
+    - benchmark: BrowseComp
+      score: "91.2"
+    - benchmark: OSWorld-Verified
+      score: "85.2"
+  variants:
+    - name: Sage S2.1 Flash
+      notes: "BF16, ~321.3B safetensors parameters; post-train of GLM-5.3-Flash"
+    - name: Sage S2.1 Flash FP8
+      notes: "FP8 build"
+related:
+  - atria-dawn-preview
+  - glm-5.3-flash
+  - intern-s2-397b

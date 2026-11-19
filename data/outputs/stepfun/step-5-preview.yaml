@@ -16,7 +16,7 @@ sources:
   - label: Pricing
     url: https://platform.stepfun.ai/docs/en/guides/pricing/details
   - label: Artificial Analysis
-    url: https://artificialanalysis.ai/models/step-5
+    url: https://artificialanalysis.ai/models/step-5-preview
 description: >
   <p>StepFun's new flagship for agentic work, announced September 20, 2026 under
   the banner "Advancing the Pareto Frontier": the pitch is frontier-adjacent

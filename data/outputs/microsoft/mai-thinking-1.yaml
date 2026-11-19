@@ -43,7 +43,9 @@ description: >
 
   <p><strong>Status:</strong> private preview on Microsoft Foundry, with
   Foundry / OpenRouter / Fireworks / Baseten as planned distribution channels;
-  public preview on MAI Playground "coming soon." No HuggingFace upload at
+  public preview on MAI Playground "coming soon." (By November 2026 its model
+  page offered a chat in MAI Labs, Microsoft's "limited preview of new and
+  experimental AI models"; no Foundry GA had been announced.) No HuggingFace upload at
   release (HF org probe returns 401 for the slug). License: proprietary,
   product-tied ("Various product and service terms where the model is
   deployed").</p>

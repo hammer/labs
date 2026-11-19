@@ -92,6 +92,10 @@ people:
       - label: OpenReview
         url: https://openreview.net/profile?id=~Flood_Sung1
 news:
+  - title: "Moonshot Formally Launches Kimi Hosted Agents, a Managed Cloud Runtime for Long-Running and Multi-Agent Tasks, With an Open-Source Go SDK and CLI (KHA)"
+    url: https://www.artiverse.ca/kimi-turns-long-running-ai-agents-into-a-managed-enterprise-service/
+    source: Artiverse
+    date: 2026-11-05
   - title: "CNBC: Moonshot Has Discussed Leasing Nvidia Blackwell Clusters of 8,000+ GPUs From European Neoclouds, Mainly for Inference, at a Reported 30-50% Upfront Premium; No Deal Confirmed"
     url: https://www.cnbc.com/2026/11/05/moonshot-ai-nvidia-chips-europe-china.html
     source: CNBC

@@ -27,8 +27,8 @@ description: >
   chain-of-thought output. The HuggingFace repositories have passed five and six
   million downloads respectively.</p>
 
-  <p>On Artificial Analysis the 120B at high effort scores <strong>12 on
-  Intelligence Index v4.3</strong> and the 20B scores 9; both were near the top
+  <p>On Artificial Analysis the 120B at high effort scores <strong>4 on
+  Intelligence Index v5.0.1</strong> (12 on v4.3, when the 20B scored 9); both were near the top
   of the open-weights table at release but sit in the lower half after the
   2026 recalibrations.</p>
 tags:
@@ -45,8 +45,12 @@ model:
   num_experts: 128
   top_k: 4
   license: Apache 2.0
-  intelligence_index: 12
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 4
+  intelligence_index_version: "AA v5.0.1"
+  intelligence_index_history:
+    - score: 12
+      version: "AA v4.3.2"
+      until: "2026-11-19"
   openness_index: 38.9
   openness_index_version: "AA Openness Index v1.0"
   variants:

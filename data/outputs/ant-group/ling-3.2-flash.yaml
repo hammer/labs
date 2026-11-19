@@ -1,0 +1,54 @@
+name: Ling-3.2-flash
+slug: ling-3.2-flash
+lab: ant-group
+type: model
+date: 2026-11-05
+sources:
+  - label: Changelog (Ant Ling developer platform)
+    url: https://developer.ant-ling.com/en/docs/getting-started/changelog
+  - label: Model docs (Ant Ling)
+    url: https://developer.ant-ling.com/en/docs/models/ling/
+  - label: Pricing (Ant Ling)
+    url: https://developer.ant-ling.com/en/docs/models/price/
+  - label: OpenRouter
+    url: https://openrouter.ai/inclusionai/ling-3.2-flash
+description: >
+  <p>The first <strong>native multimodal</strong> model in Ant Group's Ling
+  "flash" tier. It launched on <strong>5 November 2026</strong> on the Ant
+  Ling developer platform as a two-week free API trial. Ant's changelog gives
+  <strong>560B total parameters and 25B activated</strong>, the same scale as
+  <a href="/outputs/ant-group/ling-3.1-flash">Ling-3.1-flash</a>, with a
+  <strong>1M-token context</strong> and "native support for image, text, and
+  video input". The model docs say vision is fused "at the architectural
+  level ... without relying on external vision modules". Ant does not say
+  whether Ling-3.2-flash continues the Ling-3.1-flash checkpoint or what the
+  vision path looks like. It names four target areas: complex visual
+  understanding, multimodal long-horizon agents, 3D understanding and
+  interaction, and medical multimodal work. It succeeds
+  <a href="/outputs/ant-group/ling-3.0-flash-vl">Ling-3.0-flash-VL</a> as
+  Ant's multimodal Ling.</p>
+
+  <p>The Ant Ling platform lists ¥2 in / ¥6 out per million tokens (¥0.40
+  cache read), and OpenRouter lists $0.30 / $0.90. OpenRouter's free
+  endpoint went live on 13 November, served by Ant Digital. It lists text and
+  image input only, a 1,048,576-token context, a 262,144-token output cap and
+  up to 200 images per request, with reasoning on by default. As of 19
+  November there were no open weights. OpenRouter's listing points to an
+  <code>inclusionAI/Ling-3.2-flash</code> HuggingFace repository that is not
+  public. There is no technical report or model card. Artificial Analysis had
+  not scored it: no articles-index entry and no leaderboard slug.</p>
+tags:
+  - multimodal
+  - moe
+  - long-context
+  - agentic
+model:
+  open_weights: false
+  architecture: moe
+  parameters: 560B
+  active_parameters: 25B
+  context_window: 1048576
+  license: Proprietary (API only at filing)
+related:
+  - ling-3.1-flash
+  - ling-3.0-flash-vl

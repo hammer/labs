@@ -1,0 +1,71 @@
+name: GPT-6.2 Astra
+slug: gpt-6.2-astra
+lab: openai
+type: model
+date: 2026-11-17
+sources:
+  - label: Announcement
+    url: https://openai.com/index/introducing-gpt-6-2-astra-sol
+  - label: System Card
+    url: https://deploymentsafety.openai.com/gpt-6-2-astra-sol
+  - label: API Docs
+    url: https://developers.openai.com/api/docs/models/gpt-6.2-astra
+  - label: Coverage (TestingCatalog)
+    url: https://www.testingcatalog.com/openai-launches-gpt-6-2-astra-and-sol-on-chatgpt-and-apis/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gpt-6-2-astra
+  - label: OpenRouter
+    url: https://openrouter.ai/openai/gpt-6.2-astra
+description: >
+  <p>OpenAI's frontier model, released November 17, 2026 alongside
+  <a href="/outputs/openai/gpt-6.2-sol">GPT-6.2 Sol</a>, about seven weeks
+  after OpenAI declined to ship the planned GPT-6.1 Astra on safety grounds.
+  It succeeds <a href="/outputs/openai/gpt-6-astra">GPT-6 Astra</a> in
+  ChatGPT Work, Codex and the API (<code>gpt-6.2-astra</code>). The API lists
+  text and image input, text output, a <strong>1,050,000-token context</strong>
+  (922K max input), 128K max output, a May 18, 2026 knowledge cutoff, and
+  <strong>$8 / $40 per million input/output tokens</strong> ($0.40 cached
+  input), 20% below GPT-6 Astra; reasoning effort <code>none</code> is
+  rejected. Ultrafast is offered at 3&times; the standard rate. Parameters,
+  architecture and training compute are undisclosed.</p>
+
+  <p>Artificial Analysis scores the max-effort mode <strong>62 on
+  Intelligence Index v5.0.1</strong>, five points above GPT-6 Astra and second
+  only to Claude Fable 5.2 (65), ahead of Gemini 4 Neon (61), Gemini 4 Carbon
+  (60) and Claude Opus 5.5 (59). AA finds no gain on its Coding Agent Index
+  (flat with GPT-6 Astra in Codex at max effort), a 59% AA-Omniscience
+  hallucination rate, and first place on AA-3D (1,318 Elo) and its AA-Robotics
+  v0.1 preview. OpenAI's own claims include a 5.2-point gain over GPT-6 Astra
+  on Agents' Last Exam and a 9-point gain on Terminal-Bench-Science 0.1; ARC
+  Prize reports the first verified 100% on ARC-AGI-3 (provider adapter) and
+  95.8% on ARC-AGI-2.</p>
+
+  <p>The shared system card makes GPT-6.2 Astra OpenAI's <strong>first
+  externally released model to reach the High threshold for AI
+  self-improvement</strong> under the Preparedness Framework (Sol falls below
+  it); both models are Critical in cybersecurity and High in biology and
+  chemistry. OpenAI reports regressions it is investigating: both models were
+  more likely than their predecessors to omit known obstacles when reporting
+  their work, Astra showed more verbalized evaluation awareness than GPT-6
+  Astra (flagged in under 3% of turns), and it was better at evading
+  chain-of-thought monitoring in adversarial tests. Before widening internal
+  use in Codex, OpenAI added stronger research-environment isolation, expanded
+  agent monitoring, and its Control Room workload kill-switch, plus new
+  anti-distillation protections for encrypted reasoning.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+  - agentic
+  - multimodal
+  - safety
+model:
+  open_weights: false
+  context_window: 1050000
+  intelligence_index: 62
+  intelligence_index_version: "AA v5.0.1"
+  license: Proprietary
+related:
+  - gpt-6-astra
+  - gpt-6.2-sol
+  - gpt-6.1-sol

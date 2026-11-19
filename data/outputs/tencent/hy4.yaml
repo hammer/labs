@@ -57,9 +57,11 @@ description: >
   through December 31. <strong>The weights are not yet released</strong>.
   Tencent says they "will be open-sourced soon" but gives no date; its English
   announcement says it "plans to release model weights and system cards in the
-  coming days". As of 2026-11-10 the <code>tencent</code> HuggingFace org holds
-  no Hy4 repository beyond the preview. A cheaper <strong>Hy4 flash</strong>
-  is "scheduled for release soon" and had not shipped as of the same date. Artificial Analysis has since
+  coming days". As of 2026-11-19 the <code>tencent</code> HuggingFace org still holds
+  no Hy4 repository beyond the preview. The cheaper
+  <a href="/outputs/tencent/hy4-flash">Hy4 flash</a> (220B total / 12B active,
+  a new hybrid-attention, LatentMoE and Engram architecture) shipped on
+  2026-11-17 with open weights, including a base checkpoint. Artificial Analysis has since
   scored it <strong>35</strong> on the Intelligence Index (AA v5.0.1), just
   above <a href="/outputs/thinking-machines/inkling-2-small">Inkling 2
   Small</a>'s 31.</p>
@@ -77,5 +79,6 @@ model:
   intelligence_index: 35
   intelligence_index_version: "AA v5.0.1"
 related:
+  - hy4-flash
   - hy4-preview
   - hy3

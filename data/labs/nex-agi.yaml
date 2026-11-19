@@ -27,6 +27,10 @@ description: >
   deep research). Models ship under Apache 2.0 on HuggingFace, ModelScope,
   and OpenRouter.</p>
 news:
+  - title: "Nex-AGI Releases Nex-N2.6, a Multimodal Agentic Model Built on GLM-5.3-Flash That Targets Repetitive Reasoning and Tool-List Adherence"
+    url: https://huggingface.co/nex-agi/Nex-N2.6
+    source: Hugging Face
+    date: 2026-11-10
   - title: "Nex-N2.5-Pro Weights Published (397B, Apache 2.0, BF16 and FP8)"
     url: https://huggingface.co/nex-agi/Nex-N2.5-Pro
     source: Hugging Face

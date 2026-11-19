@@ -1,0 +1,103 @@
+name: MAI Code 2
+slug: mai-code-2
+lab: microsoft
+type: model
+date: 2026-11-17
+flagship: true
+sources:
+  - label: Announcement (Microsoft AI)
+    url: https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/
+  - label: Model card (PDF)
+    url: https://microsoft.ai/pdf/MAI-Code-2-And-MAI-Code-2-Flash-Model-Card.pdf
+  - label: Model page
+    url: https://microsoft.ai/models/mai-code-2/
+  - label: Ignite 2026 lineup post
+    url: https://microsoft.ai/news/microsoft-ignite-2026/
+description: >
+  <p>Microsoft AI's second-generation coding family, launched at Ignite on
+  November 17, 2026: <strong>MAI Code 2</strong> and the smaller <strong>MAI
+  Code 2 Flash</strong>. They are the first post-trained models on the new
+  pretraining bases. The model card lists <a
+  href="/outputs/microsoft/mai-base-2">MAI-Base-2</a> as the dependency and
+  says "both models were pre-trained and post-trained by Microsoft from
+  scratch." Both are decoder-only Transformers with sparse MoE layers and an
+  integrated vision encoder, with a <strong>1,050,000-token context</strong>
+  (922K input, 128K output), text and image in, five reasoning-effort levels
+  (low to max), English-only code production, and training dates of August to
+  November 2026.</p>
+  <ul>
+  <li><strong>MAI Code 2</strong>: "77 billion active, 3 billion embedded, and
+  approximately <strong>2.8 trillion total</strong> parameters", pretrained on
+  roughly <strong>50T tokens</strong> plus ~150B tokens of long-context
+  extension. That matches MAI-Base-2's disclosed 2.8T/50T run. The card's
+  summary table instead says "50B-100B (80B active)", which contradicts its own
+  overview.</li>
+  <li><strong>MAI Code 2 Flash</strong>: 12B active and ~398B total,
+  "pre-trained from scratch on approximately 25 trillion tokens (about 22
+  trillion text and 3 trillion image tokens) using <strong>logit
+  distillation</strong> from a larger in-house MAI teacher model", followed by
+  mid-training and 1M-context extension. The summary table again gives a
+  different range, "5B-15B (12B active)".</li>
+  </ul>
+
+  <p>Post-training is shared: SFT on instruction-following, agentic and safety
+  data, then large-scale RL on agentic software-engineering environments run
+  <strong>directly inside the GitHub Copilot CLI and VS Code agent
+  harnesses</strong>. That continues the production-harness training of <a
+  href="/outputs/microsoft/mai-code-1-flash">MAI-Code-1-Flash</a>, the 5B-active
+  predecessor. Model-card scores, from max reasoning on MSBench with the Copilot
+  CLI and no subagents, averaged over three runs: Code 2 gets DeepSWE 1.1
+  <strong>73.2%</strong>, Terminal-Bench 2.1 <strong>84.6%</strong> and SWE
+  Atlas 43.1%; Code 2 Flash gets 59.9%, 78.3% and 44.8%. Microsoft says Code 2
+  averages 98% of GPT-6.1 Sol's score across DeepSWE 1.1, Terminal-Bench 2.1,
+  SWE-Atlas and FrontierCode v1.1 at 40% of the cost, and 96% of Claude Opus
+  5.5's at 5% of the cost. It also says Code 2 Flash matches GPT-6 Luna and
+  Claude Haiku 5.5 at 65% and 20% of their prices. Microsoft says outright that
+  the models are "not yet tuned for harder problems, like fundamental science
+  research and very long-horizon agentic work". The card judges them "similar in
+  alignment to GPT-5.6 Sol but less aligned than GPT-6". A further-optimised
+  <strong>MAI Work Flash</strong>, derived from Code 2 Flash, serves Microsoft
+  365 and FabricIQ.</p>
+
+  <p>Availability: both models are in GitHub Copilot, and Code 2 Flash is in a
+  limited-access Foundry preview. OpenRouter, Vercel, Hermes, OpenCode and Kilo
+  are listed as coming. Weights are not distributed, but the same day Microsoft
+  announced <strong>MAI Licensed Weights</strong> ("coming soon"), which lets
+  Frontier Company customers customise MAI models and run them in their own
+  Azure environments. AT&amp;T, Woven by Toyota and Alaska Airlines are cited as
+  tuning Code 2 Flash. Not yet listed on Artificial Analysis. Proprietary,
+  product-tied terms.</p>
+tags:
+  - frontier
+  - coding
+  - agentic
+  - moe
+  - multimodal
+  - long-context
+  - proprietary
+model:
+  open_weights: false
+  architecture: moe
+  active_parameters: 77B
+  base_model: mai-base-2
+  context_window: 1050000
+  license: Proprietary
+  benchmark_scores:
+    - benchmark: DeepSWE 1.1
+      score: "73.2%"
+      mode: max
+    - benchmark: Terminal-Bench 2.1
+      score: "84.6%"
+      mode: max
+    - benchmark: SWE Atlas
+      score: "43.1%"
+      mode: max
+  variants:
+    - name: MAI Code 2
+      notes: ~2.8T total / 77B active MoE on MAI-Base-2 (50T tokens)
+    - name: MAI Code 2 Flash
+      notes: ~398B total / 12B active MoE, pretrained from scratch on ~25T tokens via logit distillation from a larger in-house MAI teacher
+related:
+  - mai-base-2
+  - mai-code-1-flash
+  - mai-thinking-1

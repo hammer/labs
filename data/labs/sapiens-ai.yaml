@@ -50,6 +50,10 @@ people:
       Paris, and NUS-PhD affiliations appear only in self-issued bios; no Google
       Scholar profile or publication record exists beyond the DSPO preprint.</p>
 news:
+  - title: "Sapiens AI Open-Sources Agnes 2.5 Pro Theta: ~188B-Parameter Multimodal MoE Weights Under Apache 2.0"
+    url: https://huggingface.co/Agnes-AI/Agnes-2.5-Pro-Theta
+    source: Hugging Face
+    date: 2026-11-15
   - title: "Agnes 3.0 Flash Listed on Artificial Analysis at 36 (v4.3); Open-Weight 33B Preview Checkpoint Released Under Apache 2.0"
     url: https://huggingface.co/Agnes-AI/Agnes-3.0-Flash
     source: Hugging Face

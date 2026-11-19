@@ -79,6 +79,10 @@ people:
     role: Former Co-Founder & CTO (2025-2026; returned to OpenAI)
     formerly: OpenAI (VP of Research)
 news:
+  - title: "Thinking Machines Releases Inkling 2 Small Weights on HuggingFace Under Apache 2.0 (NVFP4 and MXFP8), a Week After Its Tinker-Only Launch"
+    url: https://huggingface.co/thinkingmachines/Inkling-2-Small
+    source: Thinking Machines
+    date: 2026-11-12
   - title: "Thinking Machines Releases Inkling 2 Small: 594B-A17B MoE, AA Intelligence Index 31, Tinker-First With Apache 2.0 Weights Promised Next Week"
     url: https://thinkingmachines.ai/news/inkling-2-small/
     source: Thinking Machines

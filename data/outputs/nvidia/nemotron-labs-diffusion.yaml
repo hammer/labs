@@ -14,6 +14,12 @@ sources:
     url: https://github.com/NVlabs/Nemotron-Labs-Diffusion-Uni
   - label: Paper (NLD-Uni, arXiv)
     url: https://arxiv.org/abs/2610.36466
+  - label: Paper (Sigma, arXiv)
+    url: https://arxiv.org/abs/2610.02665
+  - label: HuggingFace (Sigma-8B)
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Sigma-8B
+  - label: HuggingFace (Sigma-distill-spec-8B)
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Sigma-distill-spec-8B
   - label: NVIDIA Research publication
     url: https://research.nvidia.com/publication/2026-05_nemotron-labs-diffusion-tri-mode-language-model-unifying-autoregressive
 description: >
@@ -39,6 +45,26 @@ description: >
   later. NVIDIA reports state-of-the-art results among unified diffusion LLMs
   on VQA, multimodal reasoning, grounding, text-to-image and image
   editing.</p>
+
+  <p><strong>Nemotron-Labs-Sigma</strong> (paper October 2, 2026, arXiv
+  2610.02665; v2 and the public weights November 12) is the
+  <em>continuous</em>-diffusion sibling. NVIDIA calls it "the first family of
+  large-scale (3B/8B) continuous dLMs": instead of masking tokens it denoises
+  Gaussian-corrupted token embeddings in a learned 16-dimensional space,
+  trained blockwise by likelihood on the same backbone, data and Mistral-NeMo
+  tokenizer as NLD, so the families are parameter- and FLOP-matched. It is
+  not from scratch: each model is warm-started from an in-house AR baseline
+  pretrained on 1T tokens, then trained for over 300B tokens (about 9,600 and
+  19,200 GB200 GPU-hours for 3B and 8B), with classifier-free guidance and
+  score temperature at inference. The paper reports it beats masked-diffusion
+  and AR baselines after pretraining on GSM8K, Minerva, HumanEval and MBPP,
+  with the largest gains on coding. Phased distribution-matching distillation
+  gives about 8&times; acceleration on math and 4&times; on coding with
+  negligible accuracy loss, and the distilled-plus-drafter
+  <code>Sigma-distill-spec</code> models decode up to 3.18&times; (3B) and
+  4.20&times; (8B) faster than AR decoding. Base, instruct, distilled
+  (NFE 2/4/8/16) and spec checkpoints are on HuggingFace under the Nemotron
+  Open Model License; context is 4,096 tokens.</p>
 tags:
   - foundational
   - diffusion
@@ -54,5 +80,7 @@ model:
       parameters: 8B
     - name: Nemotron-Labs-Diffusion-14B (Base/Instruct)
       parameters: 14B
+    - name: Nemotron-Labs-Sigma-3B / 8B (Base/Instruct/distill/distill-spec)
+      notes: "Continuous diffusion LM; warm-started from an in-house 1T-token AR baseline, 300B+ diffusion tokens; weights 2026-11-12"
 related:
   - nemotron-3-nano

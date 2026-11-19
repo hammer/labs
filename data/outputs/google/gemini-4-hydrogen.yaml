@@ -1,0 +1,95 @@
+name: Gemini 4 Hydrogen
+slug: gemini-4-hydrogen
+lab: google
+type: model
+date: 2026-11-12
+flagship: true
+sources:
+  - label: Announcement (Google)
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/
+  - label: Model card (PDF)
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Hydrogen-Model-Card.pdf
+  - label: Safety & Security Report (PDF)
+    url: https://storage.googleapis.com/deepmind-media/gemini/gemini_4_hydrogen_safety_report.pdf
+  - label: Developer post
+    url: https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-hydrogen/
+  - label: Artificial Analysis
+    url: https://artificialanalysis.ai/models/gemini-4-hydrogen
+description: >
+  <p>The everyday-execution tier of Google's <strong>Gemini 4</strong>
+  generation, announced November 12, 2026 by Koray Kavukcuoglu and the first
+  Gemini 4 model available to every tier at once: all of Google AI Studio and
+  the Gemini API, Gemini for business, the Gemini app, Google Search, Gemini in
+  Google Sheets, and paid Pro and Ultra subscribers in Google Antigravity. Google
+  positions it as the fast worker beside the frontier models
+  <a href="/outputs/google/gemini-4-argon">Argon</a> and
+  <a href="/outputs/google/gemini-4-carbon">Carbon</a>, and as the upgrade path
+  from <a href="/outputs/google/gemini-3.8-flash">Gemini 3.8 Flash</a>. The
+  model card says only that it is "<strong>adapted from Gemini 4
+  Carbon</strong>" and defers architecture, training data, hardware and
+  software to Carbon's card; parameters are undisclosed. It takes text, images,
+  audio and video in a 1M-token combined context, with up to 64K synchronous
+  output tokens or up to 1M through background long decode, and has a March
+  2026 knowledge cutoff. Pricing is flat across the full context at
+  <strong>$1.50 / $7.50 per million input/output tokens</strong>. It
+  introduced a fourth <strong>xhigh</strong> thinking level above low, medium
+  and high (default), which Neon later inherited.</p>
+
+  <p>Artificial Analysis scores it <strong>54 on Intelligence Index
+  v5.0.1</strong> at xhigh; Google cites 51 at the default high level, one
+  point above Argon (50). Google's other figures, all self-reported: Terminal-Bench
+  4.1 57% against 3.8 Flash's 18.2%, tasks finished 2.5&times; faster at high,
+  fabricated claims cut by more than 5&times;, HLE-Diamond 58.8%, Vals Tax Agent
+  Bench 52.3% (#1), Vals Legal Research Bench 55.8% (tied #1), Agents' Last Exam
+  v1.1 71.6%, 53.4% on Google's new
+  <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/multimodal-knowledge-agent-benchmark/">Multimodal
+  Knowledge Agent</a> benchmark, and #5 on Arena's Agent Arena. Partners report
+  2&ndash;2.8&times; faster runs with 12&ndash;23% fewer tokens than 3.8 Flash.
+  Alongside it Google shipped <strong>Orchestrator</strong> in Antigravity,
+  which switches between Carbon and Hydrogen in one session and, on
+  Terminal-Bench 4.0, came close to Carbon's success rate with 24% less quota
+  and 19% less time.</p>
+
+  <p>Safety: against 3.8 Flash, Google reports up to 81% less overreach and 79%
+  less under-service in agentic tasks, 12&times; fewer misaligned actions and
+  shortcuts, 99.9% chain-of-thought legibility over 200,000+ audited turns, and
+  2.3&times; more resilience on Gray Swan's indirect-prompt-injection benchmark.
+  The model card shows higher unjustified refusals than 3.8 Flash (+5.57pp).
+  Under the Frontier Safety Framework, a Material Capability Change assessment
+  found no material increase over Argon. Targeted CBRN and cyber assessments
+  found that Hydrogen <strong>does not reach either critical capability level but
+  does reach the alert thresholds</strong> for both. Proprietary.</p>
+tags:
+  - frontier
+  - reasoning
+  - coding
+  - agentic
+  - multimodal
+  - long-context
+  - proprietary
+model:
+  open_weights: false
+  base_model: gemini-4-carbon
+  context_window: 1000000
+  intelligence_index: 54
+  intelligence_index_version: "AA v5.0.1"
+  license: Proprietary (API)
+  benchmark_scores:
+    - benchmark: Terminal-Bench 4.1
+      score: "57%"
+    - benchmark: HLE-Diamond
+      score: "58.8%"
+    - benchmark: Agents' Last Exam v1.1
+      score: "71.6%"
+    - benchmark: Multimodal Knowledge Agent (MKA)
+      score: "53.4%"
+  variants:
+    - name: Gemini 4 Hydrogen (xhigh)
+      notes: AAII v5.0.1 54
+    - name: Gemini 4 Hydrogen (high, default)
+      notes: AAII 51 per Google's announcement
+related:
+  - gemini-4-carbon
+  - gemini-4-argon
+  - gemini-4-neon
+  - gemini-3.8-flash

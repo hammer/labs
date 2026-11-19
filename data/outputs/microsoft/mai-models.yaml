@@ -19,6 +19,10 @@ sources:
     url: https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/
   - label: MAI-Transcribe-1 deep dive
     url: https://microsoft.ai/news/state-of-the-art-speech-recognition-with-mai-transcribe-1/
+  - label: MAI Image 2.7 / 2.7 Flash (Nov 16, 2026)
+    url: https://microsoft.ai/news/introducing-mai-image-2-7/
+  - label: MAI Realtime 1 (Nov 17, 2026)
+    url: https://microsoft.ai/news/introducing-mai-realtime-1/
 description: >
   <p>Microsoft's first major foundation model push, releasing <strong>three MAI
   models</strong> in Azure Foundry in April 2026 &mdash; a direct shot at OpenAI
@@ -60,6 +64,20 @@ description: >
   image-editing leaderboard, and 24 Elo ahead of the next model on scene and
   style edits. Pricing, architecture and parameters are undisclosed.</p>
 
+  <p><strong>November 16&ndash;17 updates (Ignite):</strong> MAI-Image-2.7
+  reached public preview on Microsoft Foundry with text-to-image generation
+  included, alongside <strong>MAI-Image-2.7-Flash</strong>. They cost about $35
+  and $10 per 1,000 images, and Flash powers a new Canvas editor in MAI Labs.
+  Microsoft says 2.7 is now #1 on Artificial Analysis image editing and #4 on
+  text-to-image, and that MAI Image is the default family behind Bing Image
+  Creator. <strong>MAI-Realtime-1</strong> is Microsoft's first speech-to-speech
+  model. It is OpenAI Realtime API-compatible, starts at $0.01 per audio minute,
+  and is in MAI Labs with a limited-access Foundry preview; Microsoft says it
+  beats GPT-Realtime 2.1. Microsoft also announced the routing model
+  <strong>Decision 1.1</strong>, and said <strong>Dragon Copilot
+  Transcribe</strong>, built on MAI-Transcribe-2, now handles all of Dragon
+  Copilot's doctor&ndash;patient transcription.</p>
+
   <p>Marks Microsoft's transition from pure OpenAI dependency to building its
   own frontier multimodal stack under VP GenAI <strong>Mustafa Suleyman</strong>'s
   MAI division. Proprietary, available via Microsoft Foundry plus the
@@ -93,7 +111,11 @@ model:
     - name: MAI-Image-2.6-Flash
       notes: "Sep 4 2026, with 2.6 in Foundry; Arena #2 T2I and #2 editing, AA #2 T2I; multi-image reference editing, web grounding, dynamic aspect ratios"
     - name: MAI-Image-2.7
-      notes: "Oct 27 2026; image-editing preview (T2I to follow), vendor-reported #3 Arena Edit and #2 AA image editing; Arena, AA, MAI Playground"
+      notes: "Oct 27 2026 editing preview; Nov 16 2026 Foundry public preview with T2I, vendor-reported #1 AA image editing, ~$35/1K images"
+    - name: MAI-Image-2.7-Flash
+      notes: "Nov 16 2026; ~$10/1K images, powers Canvas in MAI Labs"
+    - name: MAI-Realtime-1
+      notes: "Nov 17 2026; first MAI speech-to-speech model, from $0.01/audio minute, OpenAI Realtime API-compatible; MAI Labs + limited Foundry preview"
     - name: MAI-Transcribe-2
       notes: "Sep 3 2026; 2.0% AA-WER (#2), ~411× real-time, 60 languages, $0.10/hr limited-time; Foundry, MAI Playground, OpenRouter"
     - name: MAI-Transcribe-2-Streaming

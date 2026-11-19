@@ -1,0 +1,56 @@
+name: Nex-N2.6
+slug: nex-n2.6
+lab: nex-agi
+type: model
+date: 2026-11-10
+sources:
+  - label: HuggingFace (model card)
+    url: https://huggingface.co/nex-agi/Nex-N2.6
+  - label: GitHub
+    url: https://github.com/sii-nex/Nex-N2.6
+  - label: OpenRouter
+    url: https://openrouter.ai/nex-agi/nex-n2.6
+description: >
+  <p>Nex-AGI's multimodal agentic model for computer use, coding and
+  long-horizon tool work, released November 10, 2026. It is
+  <strong>built on <a href="/outputs/zai/glm-5.3-flash">GLM-5.3-Flash</a></strong>,
+  a change of base from <a href="/outputs/nex-agi/nex-n2.5">Nex-N2.5-Pro</a>'s
+  Qwen3.5. The config is GLM-5.3-Flash's <code>glm5_next</code> shape (45
+  layers, hidden size 4,096, 288 routed experts with 8 active, 1M
+  <code>max_position_embeddings</code>). The only checkpoint is
+  <strong>FP8</strong>, at about 321B parameters by Nex-AGI's count, under
+  Apache 2.0. OpenRouter serves it with a 262K context at $0.12/$0.40 per M
+  input/output tokens.</p>
+
+  <p>The release targets two failure modes. On Nex-AGI's internal
+  checkpoint-replay evaluation, reasoning repetition fell from 16.0% (N2.5-Pro)
+  and 6.0% (GLM-5.3-Flash) to <strong>1.6%</strong>, and valid tool selection
+  rose to 100%, against 82.2% and 85.3%. On public benchmarks the gains over
+  the base are small or negative. OSWorld is 83.0, against 78.0 for
+  GLM-5.3-Flash and 82.2 for N2.5-Pro. Terminal-Bench 2.1 is 84.1, against
+  84.3 for the base. AutomationBench is 45.7, against 48.8 for the base and
+  54.8 for DeepSeek-V4.1-Flash. All scores are self-reported. Not scored on
+  the Artificial Analysis Intelligence Index as of 2026-11-19.</p>
+tags:
+  - agentic
+  - multimodal
+  - moe
+  - open-weight
+  - computer-use
+model:
+  open_weights: true
+  architecture: moe
+  base_model: glm-5.3-flash
+  num_experts: 288
+  top_k: 8
+  license: Apache 2.0
+  benchmark_scores:
+    - benchmark: OSWorld
+      score: "83.0"
+    - benchmark: Terminal-Bench 2.1
+      score: "84.1"
+    - benchmark: AutomationBench
+      score: "45.7"
+related:
+  - nex-n2.5
+  - glm-5.3-flash

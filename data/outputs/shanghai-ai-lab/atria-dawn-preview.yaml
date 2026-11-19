@@ -6,6 +6,8 @@ date: 2026-10-23
 sources:
   - label: HuggingFace (Atria Dawn)
     url: https://huggingface.co/internlm/Atria-Dawn
+  - label: HuggingFace (renamed Sage-S2.1)
+    url: https://huggingface.co/internlm/Sage-S2.1
   - label: HuggingFace (Atria Dawn FP8)
     url: https://huggingface.co/internlm/Atria-Dawn-FP8
   - label: HuggingFace (Atria Dawn Preview)
@@ -36,7 +38,12 @@ description: >
   shards, about 1.5 TB). It doubles the stated context to
   <strong>512K</strong>, is text-input only, and keeps the MIT license. The card
   frames the model around four kinds of agentic work: discovery, creation,
-  delivery, and cybersecurity.</p>
+  delivery, and cybersecurity. By mid-November 2026 the release repository
+  had been renamed <code>internlm/Sage-S2.1</code> (the
+  <code>Atria-Dawn</code> URLs redirect), putting it under the lab's
+  书生 / Sage S2.1 branding next to the GLM-5.3-Flash-based
+  <a href="/outputs/shanghai-ai-lab/sage-s2.1-flash">Sage S2.1 Flash</a>;
+  the card itself still titles the model Atria Dawn.</p>
 
   <p>The accompanying 143-author paper covers the Preview only. It describes a
   <strong>Verifiable Experience Pipeline</strong> that ties tool-mediated
@@ -107,4 +114,4 @@ model:
 paper:
   arxiv: "2609.15818"
   huggingface_url: https://huggingface.co/internlm/Atria-Dawn-Preview
-related: [intern-s2-397b, glm-5.2]
+related: [intern-s2-397b, glm-5.2, sage-s2.1-flash]

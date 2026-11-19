@@ -26,6 +26,14 @@ description: >
   <strong><a href="https://arxiv.org/abs/2506.17298">Mercury</a></strong> models
   achieve ~1,000 tokens/sec on H100, roughly <strong>10x faster</strong> than
   comparable autoregressive models. Mercury 2 (February 2026) reaches AA Intelligence Index v4.3: 14 with reasoning capability.</p>
+
+  <p>In November 2026, weeks after launching
+  <a href="/outputs/inception-labs/mercury-3">Mercury 3</a>, Inception told
+  customers it is <strong>winding down the Mercury API</strong>: its developer
+  docs say the API and platform dashboard stay fully available through
+  December 28, 2026, after which requests stop being served and submitted
+  data becomes inaccessible. The notice gives no reason and says nothing
+  about the company's plans beyond the API.</p>
 people:
   - name: Stefano Ermon
     url: https://cs.stanford.edu/~ermon/
@@ -53,6 +61,10 @@ people:
       - label: Google Scholar
         url: https://scholar.google.com/citations?user=RY_t8XAAAAAJ
 news:
+  - title: "Inception Winds Down the Mercury API: Service and Platform Dashboard Stay Available Through December 28, 2026, After Which Requests Stop Being Served and Submitted Data Becomes Inaccessible"
+    url: https://docs.inceptionlabs.ai/support/wind-down
+    source: Inception
+    date: 2026-11-12
   - title: "Inception Launches Mercury 3: Diffusion LLM More Than 40x Larger Than Mercury 1, 1M-Token Context, 1,068 Tokens/s; Mercury Voice and Mercury Decide Ship Alongside"
     url: https://www.inceptionlabs.ai/blog/introducing-mercury-3
     source: Inception

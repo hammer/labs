@@ -7,6 +7,10 @@ flagship: true
 sources:
   - label: Announcement (Google)
     url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/
+  - label: General availability (Nov 10, 2026)
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/
+  - label: Model card (PDF)
+    url: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Carbon-Model-Card.pdf
   - label: Fairwind Program
     url: https://deepmind.google/fairwind-program/
   - label: Artificial Analysis
@@ -21,18 +25,31 @@ description: >
   stack. The rollout repeats Argon's: a subset of cyber defenders get it first,
   then more trusted partners through the <strong>Fairwind Program</strong>,
   and developers, businesses and consumers only "as soon as possible", after
-  further guardrail work. Google is again taking part in the US government's
+  further guardrail work. That came on <strong>November 10</strong>, when
+  Google made Carbon generally available in the Gemini API (AI Studio) and
+  Gemini for business for all paying developers at the introductory $2 / $10,
+  and rolled it out to Google AI Ultra subscribers in Antigravity, the Gemini
+  app and AI Mode in Search. Antigravity gained a <strong>/swarm</strong>
+  preview for multi-agent Carbon teams at the same time. Both
+  <a href="/outputs/google/gemini-4-hydrogen">Gemini 4 Hydrogen</a> and
+  <a href="/outputs/google/gemini-4-neon">Gemini 4 Neon</a> are described in
+  their model cards as adapted from Carbon. Google is again taking part in the US government's
   voluntary pre-release testing process. Pricing matches Argon's: an
   introductory <strong>$2 / $10 per million input/output tokens</strong>,
   with cached input 95% off, rising to $4 / $20 after the introductory period.
   Artificial Analysis lists the $4 / $20 rate, a 1M-token context window, and
   text, image, speech and video input. Architecture, parameter count and
-  training scale are undisclosed, and Google published no model card or
-  evaluation sheet for Carbon at launch.</p>
+  training scale are undisclosed. Google published no model card or
+  evaluation sheet for Carbon at launch; a model card and a Safety &amp;
+  Security Report accompanied the November 10 general availability.</p>
 
-  <p><strong>Artificial Analysis ranks it first.</strong> It scores
+  <p><strong>Artificial Analysis ranked it first at launch.</strong> It scores
   <strong>60 on Intelligence Index v5.0.1</strong> (high reasoning; 59 on
-  v5.0), one point above <a href="/outputs/anthropic/claude-opus-5.5">Claude
+  v5.0). By November 18 it had been passed by <a
+  href="/outputs/anthropic/claude-fable-5.2">Claude Fable 5.2</a>, <a
+  href="/outputs/openai/gpt-6.2-astra">GPT-6.2 Astra</a> (62) and Google's own
+  <a href="/outputs/google/gemini-4-neon">Gemini 4 Neon</a> (61), which is
+  adapted from Carbon. At launch it sat one point above <a href="/outputs/anthropic/claude-opus-5.5">Claude
   Opus 5.5</a> (59)
   and ahead of <a href="/outputs/openai/gpt-6-astra">GPT-6 Astra</a> (57),
   <a href="/outputs/openai/gpt-6.1-sol">GPT-6.1 Sol</a> (55) and Argon (50).
@@ -100,3 +117,5 @@ related:
   - gemini-4-argon
   - gemini-3.8-flash
   - gemini-3.8-flash-cyber
+  - gemini-4-hydrogen
+  - gemini-4-neon

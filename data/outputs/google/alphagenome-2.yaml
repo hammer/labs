@@ -1,0 +1,59 @@
+name: AlphaGenome 2
+slug: alphagenome-2
+lab: google
+type: model
+date: 2026-11-11
+flagship: true
+sources:
+  - label: Announcement (Google DeepMind)
+    url: https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/
+  - label: Paper (bioRxiv)
+    url: https://www.biorxiv.org/content/10.64898/2026.11.11.765857
+  - label: Google blog
+    url: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/alphagenome-disease-research/
+description: >
+  <p>Google DeepMind's second-generation <strong>DNA sequence-to-function
+  model</strong>, announced November 11, 2026 (Adam Gayoso, Natasha Latysheva,
+  Pushmeet Kohli and Žiga Avsec). It predicts how DNA sequences and their
+  variants affect regulation in <strong>specific human cell types and
+  states</strong>, where the 2025 AlphaGenome predicted bulk tissues and cell
+  lines. The architecture is redesigned as a <strong>conditional
+  model</strong>. AlphaGenome 1 took a million-letter sequence and produced
+  thousands of tissue and experiment tracks in parallel. AlphaGenome 2 takes the
+  same million-letter input plus one target condition (tissue, cell type or
+  state), "as input at every stage of its architecture". The condition is either
+  picked from a reference catalog or produced on the fly by a <strong>cell
+  encoder</strong> from a scientist's own single-cell RNA-seq sample of a few
+  dozen cells. That lets it handle unseen cell states without retraining, and
+  impute missing modalities, for example predicting chromatin accessibility from
+  expression alone. It keeps AlphaGenome's readouts (gene expression, histone
+  modifications, chromatin accessibility) and adds <strong>DNA
+  methylation</strong>.</p>
+
+  <p>Training used bulk and single-cell data from human and mouse, including
+  <strong>over 107 million individual cell profiles</strong> across 68 tissues.
+  On TenK10K, a single-cell map of 28 primary immune cell types, it recovers
+  30% of causal variants against 16% for AlphaGenome fine-tuned on single-cell
+  data and other specialised tools, and 43% against 23% of directional gene
+  effects. DeepMind says it reproduces the ETS2 inflammatory-bowel-disease
+  variant's macrophage-specific effect computationally. Given unseen data from a
+  COVID-19 mRNA vaccine study, it separated activated from resting T cells.
+  DeepMind also precomputed predictions for GWAS trait-associated variants
+  across hundreds of cell and tissue conditions, including enhancer&ndash;gene
+  links in primary cell types such as astrocytes. Available for non-commercial
+  research through the AlphaGenome API (commercial use is in private preview on
+  Google Cloud), research use only; weights, parameter count and training compute
+  are not disclosed in the announcement. It follows the
+  <a href="/outputs/google/alphagenome-atlas">AlphaGenome Atlas</a> precomputed
+  variant map (September 2026).</p>
+tags:
+  - science
+  - biology
+  - genomics
+  - proprietary
+model:
+  open_weights: false
+  context_window: 1000000
+related:
+  - alphagenome-atlas
+  - alphafold-3

@@ -11,6 +11,10 @@ sources:
     url: https://huggingface.co/sarvamai/sarvam-105b
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/sarvam-105b
+  - label: HuggingFace (Sarvam-105B-1711, NVFP4)
+    url: https://huggingface.co/sarvamai/sarvam-105b-1711
+  - label: HuggingFace (Sarvam-105B-1711, BF16)
+    url: https://huggingface.co/sarvamai/sarvam-105b-1711-bf16
   - label: Sarvam-Prism blog
     url: https://www.sarvam.ai/blogs/sarvam-prism
   - label: Sarvam-Prism (HuggingFace)
@@ -33,6 +37,17 @@ description: >
   average, the best of 25 tested models under 100 ms. Sarvam also reports
   calibrated confidence: at 90% or higher confidence on English questions it
   expected 3.3% errors and made 2.2%.</p>
+  <p><strong>Sarvam-105B-1711</strong> (2026-11-15, Apache 2.0) "uses the same
+  base model as Sarvam-105B" and is further post-trained for tool calling,
+  instruction following, agentic tasks and Indian languages. It ships as BF16
+  and an NVFP4/MXFP8 build, with a DSpark speculative-decoding setup that Sarvam
+  reports at 576 tok/s for a single user on one B200. Sarvam's own runs give
+  IFBench <strong>82.5</strong>, &tau;&sup2;-Bench <strong>85.5</strong>,
+  Arena-Hard v2 76.6, MMLU-Pro 85.2, GPQA Diamond 80.4, BrowseComp 41.4, AIME
+  2026 89.7 and LiveCodeBench v6 75.3. That puts it ahead of Gemma-4-31B on
+  instruction following and &tau;&sup2;-Bench but behind it on GPQA, HLE (12.3
+  against 22.1) and coding. Not separately scored on Artificial Analysis at
+  filing.</p>
 tags:
   - moe
   - open-weight
@@ -55,6 +70,9 @@ model:
     - score: 18
       version: "AA v4.0"
       until: "2026-06-16"
+  variants:
+    - name: Sarvam-105B-1711
+      notes: "2026-11-15 post-training update on the same base; BF16 and NVFP4/MXFP8 builds. IFBench 82.5, tau2-Bench 85.5 (self-reported)."
   openness_index: 38.9
   openness_index_version: "AA Openness Index v1.0"
 related:

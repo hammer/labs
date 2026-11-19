@@ -1,0 +1,91 @@
+name: SEA-LION v5
+slug: sea-lion-v5
+lab: ai-singapore
+type: model
+date: 2026-11-18
+flagship: true
+sources:
+  - label: Announcement
+    url: https://sea-lion.ai/blog/announcing-sea-lion-v5-our-largest-model-frontier-level-performance-and-open/
+  - label: HuggingFace (Qwen-SEA-LION-v5-397B-A17B-Plus)
+    url: https://huggingface.co/aisingapore/Qwen-SEA-LION-v5-397B-A17B-Plus
+  - label: HuggingFace (Qwen-SEA-LION-v5-27B)
+    url: https://huggingface.co/aisingapore/Qwen-SEA-LION-v5-27B
+  - label: HuggingFace (Qwen-SEA-LION-v5-9B)
+    url: https://huggingface.co/aisingapore/Qwen-SEA-LION-v5-9B
+  - label: HuggingFace (Nemotron-SEA-LION-v5-E4B)
+    url: https://huggingface.co/aisingapore/Nemotron-SEA-LION-v5-E4B
+  - label: HuggingFace (Gemma-SEA-LION-v5-E2B)
+    url: https://huggingface.co/aisingapore/Gemma-SEA-LION-v5-E2B
+  - label: SEA-LION Leaderboard
+    url: https://leaderboard.sea-lion.ai/
+description: >
+  <p>AI Singapore's fifth SEA-LION generation and its largest model so far.
+  Like earlier generations it is post-trained from other labs' open models, not
+  pretrained from scratch. There are five models.
+  <strong>Qwen-SEA-LION-v5-397B-A17B-Plus</strong> is built on <a
+  href="/outputs/alibaba/qwen3.5">Qwen3.5-397B-A17B</a>.
+  <strong>Qwen-SEA-LION-v5-27B</strong> is built on <a
+  href="/outputs/alibaba/qwen3.8-27b">Qwen3.8-27B</a> and
+  <strong>Qwen-SEA-LION-v5-9B</strong> on Qwen3.5-9B.
+  <strong>Nemotron-SEA-LION-v5-E4B</strong> is built on <a
+  href="/outputs/nvidia/nemotron-3.5-bolt">Nemotron 3.5 Bolt E4B</a>, NVIDIA's
+  post-trained Gemma 4 E4B. <strong>Gemma-SEA-LION-v5-E2B</strong> is built on
+  <a href="/outputs/google/gemma-4">Gemma 4 E2B</a>. All are MIT-licensed and
+  cover Burmese, Chinese, English, Indonesian, Filipino, Malay, Tamil, Thai and
+  Vietnamese.</p>
+
+  <p>The flagship does more than fine-tune. AI Singapore
+  <strong>converted Qwen3.5-397B to Qwen4Exp</strong>, the architecture of <a
+  href="/outputs/alibaba/qwen3.8-flash-next">Qwen3.8-Flash-Next</a>. It kept the
+  45 Gated DeltaNet layers and turned the 15 full-attention layers into Qwen
+  Sparse Attention, where each query attends to up to 2,048 tokens from the
+  top-scoring four-token blocks. It widened the residual stream into four Gated
+  Residual branches and added hashed bigram and trigram
+  <strong>N-gram Embedding</strong> tables at layer 2. These were seeded from
+  Flash-Next's trained tables, widened from 160 to 256 channels and doubled to
+  about 40M buckets per head. The result is about 398B effective parameters, or
+  569B counting <strong>164B of n-gram tables</strong> that can sit in host
+  memory, with about 19B active per token and a 262,144-token context. It is a
+  documented case of grafting a newer architecture's components onto a trained
+  checkpoint at 400B scale. It ships in BF16, FP8, NVFP4 and GGUF, and the FP8
+  build serves on four H200s.</p>
+
+  <p>Post-training was text-only on SEA-Instruct-2602 prompts. It combines a
+  GRPO-style policy-gradient loss and an on-policy distillation loss in the same
+  update, with a top-32-plus-tail teacher distribution. <a
+  href="/outputs/alibaba/qwen3.8">Qwen3.8 2.4T</a> taught the three Qwen
+  students and Gemma 4 31B-IT taught the two small ones. DeepSeek-V4.1-Flash
+  graded each answer against a per-prompt rubric. Three further changes:
+  distillation gradients are constrained by the judge's verdict (adapted from
+  OPDVR); targeted SFT teaches the model when to close its reasoning, which the
+  blog says greatly cut output tokens; and a margin loss in the style of Liquid
+  AI's Antidoom breaks repetition loops. The card calls the training
+  "experimental and still in progress". Results are reported only as SEA-HELM
+  leaderboard charts, where the 397B-Plus leads open models of similar or larger
+  size. No numeric tables, and not on Artificial Analysis at filing.</p>
+tags:
+  - multilingual
+  - moe
+  - open-weight
+  - distillation
+  - multimodal
+model:
+  open_weights: true
+  architecture: moe
+  active_parameters: 19B
+  base_model: qwen3.5
+  context_window: 262144
+  license: MIT
+  variants:
+    - name: Qwen-SEA-LION-v5-397B-A17B-Plus
+      notes: "Qwen3.5-397B-A17B converted to Qwen4Exp (QSA, Gated Residual, N-gram Embedding); about 398B effective / 569B with n-gram tables, about 19B active. BF16, FP8, NVFP4, GGUF."
+    - name: Qwen-SEA-LION-v5-27B
+      notes: "Post-trained from Qwen3.8-27B."
+    - name: Qwen-SEA-LION-v5-9B
+      notes: "Post-trained from Qwen3.5-9B."
+    - name: Nemotron-SEA-LION-v5-E4B
+      notes: "Post-trained from NVIDIA Nemotron 3.5 Bolt E4B (8B total / 4B effective, 64K context)."
+    - name: Gemma-SEA-LION-v5-E2B
+      notes: "Post-trained from Gemma 4 E2B (5.1B with embeddings / 2.3B effective, 128K context)."
+related: [sea-lion-v4.5, nemotron-sea-lion-v4.8, sea-helm, qwen3.5, qwen3.8-flash-next]

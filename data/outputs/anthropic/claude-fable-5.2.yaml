@@ -40,8 +40,10 @@ description: >
   <a href="/outputs/anthropic/claude-opus-5.5">Claude Opus 5.5</a>, which it
   still recommends as the default for most coding and knowledge work.
   <strong>Artificial Analysis scores it 65 on Intelligence Index v5.0.1</strong>
-  at max effort, the highest score on the index, ahead of Gemini 4 Carbon (60)
-  and Opus 5.5 (59). The lower efforts read 62 (xhigh), 62 (high), 56 (medium)
+  at max effort, the highest score on the index at release, ahead of Gemini 4
+  Carbon (60) and Opus 5.5 (59); it still led on November 18, ahead of
+  <a href="/outputs/openai/gpt-6.2-astra">GPT-6.2 Astra</a> (62, November 17)
+  and Gemini 4 Neon (61). The lower efforts read 62 (xhigh), 62 (high), 56 (medium)
   and 54 (low).</p>
 
   <p><strong>Self-reported results.</strong> The system card reports

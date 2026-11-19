@@ -4,6 +4,8 @@ lab: sapiens-ai
 type: model
 date: 2026-11-07
 sources:
+  - label: HuggingFace (model card)
+    url: https://huggingface.co/Agnes-AI/Agnes-2.5-Pro-Theta
   - label: Artificial Analysis
     url: https://artificialanalysis.ai/models/agnes-2-5-pro-theta
   - label: Agnes AI
@@ -16,20 +18,40 @@ description: >
   Index v5.0.1</strong>. It is the only Agnes 2.5 Pro checkpoint scored so far
   on v5, so the number cannot be compared directly with the Beta's 35 on v4.3.2.
   Pricing is unchanged at $0.10 per million input tokens and $0.30 per million
-  output, with a 1M-token context. The weights are proprietary.</p>
+  output, with a 1M-token context.</p>
+
+  <p>On 15 November Sapiens published the <strong>weights on HuggingFace
+  under Apache 2.0</strong>, the first open Agnes 2.5 Pro checkpoint. The card
+  calls it a multimodal mixture-of-experts model of <strong>about 187.8B
+  total parameters</strong> (BF16, 52 text decoder layers, 512 routed experts
+  with top-10 routing and a shared expert). Text, image and video go in and
+  text comes out. The configured context is 262,144 tokens, lower than the
+  1M the API advertises. The <code>config.json</code> uses renamed custom
+  fields rather than a standard architecture name. It describes a 3:1 pattern
+  of "recurrent" and "indexed" (top-2,048 selector) layers, 4 residual
+  streams, and a hashed n-gram "lexicon" table. Its vocabulary is 248,576
+  tokens, the size of the <a href="/outputs/alibaba/qwen3.5">Qwen3.5</a>
+  tokenizer. The card reports, among other self-run scores, GPQA Diamond 92.9,
+  LiveCodeBench v6 90.5, AA-LCR 84.7, IFBench 82.6 and SWE-bench Pro 64.1.</p>
 
   <p>Sapiens publishes no release notes, architecture, parameter count or base
   model for the checkpoint. As with the earlier checkpoints, the founder has
   described the approach as post-training pretrained models such as Qwen and
-  DeepSeek, so this entry does not treat it as a from-scratch model. It has
+  DeepSeek, and the open checkpoint's Qwen3.5-sized vocabulary is consistent
+  with that, so this entry does not treat it as a from-scratch model. It has
   its own file because it is a distinct checkpoint scored on a newer index
   version than the Agnes 2.5 Pro anchor.</p>
 tags:
   - reasoning
   - multimodal
   - agentic
+  - open-weight
 model:
-  open_weights: false
+  open_weights: true
+  architecture: moe
+  num_experts: 512
+  top_k: 10
+  license: Apache 2.0
   context_window: 1000000
   pretrained_from_scratch: false
   intelligence_index: 24

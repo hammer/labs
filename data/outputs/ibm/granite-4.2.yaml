@@ -75,9 +75,12 @@ model:
   architecture: dense
   parameters: 30B
   context_window: 131072
-  intelligence_index: 13
-  intelligence_index_version: "AA v4.3.2"
+  intelligence_index: 6
+  intelligence_index_version: "AA v5.0.1"
   intelligence_index_history:
+    - score: 13
+      version: "AA v4.3.2"
+      until: "2026-11-19"
     - score: 15
       version: "AA v4.3.2"
       until: "2026-10-24"
@@ -96,7 +99,7 @@ model:
   variants:
     - name: Granite 4.2 30B
       parameters: 30B
-      notes: "Post-trained on Granite-4.1-30B-Base; full agentic-RL ladder plus a second agentic-coding SFT phase. AA Intelligence Index v4.3.2 score 13 (15 until 2026-10-24) — highest in family."
+      notes: "Post-trained on Granite-4.1-30B-Base; full agentic-RL ladder plus a second agentic-coding SFT phase. AA Intelligence Index v5.0.1 score 6 (13 on v4.3.2; 15 until 2026-10-24) — highest in family."
     - name: Granite 4.2 8B
       parameters: 8B
       notes: "Post-trained on Granite-4.1-8B-Base; full agentic-RL ladder (SWE → terminal → search). AA Intelligence Index v4.3 score 11."
