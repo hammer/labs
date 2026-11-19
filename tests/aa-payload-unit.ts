@@ -29,6 +29,9 @@ const shapes: Record<string, string> = {
   '2026-09-17 slug+name+shortName':
     `preamble ${creator} {"slug":"glm-5-2","name":"GLM-5.2 (Reasoning)","shortName":"GLM-5.2","modelCreator":${creator},"intelligenceIndex":41.2}` +
     `{"slug":"kimi-k3","name":"Kimi K3","shortName":"Kimi K3","modelCreator":${creator},"intelligenceIndex":52.9}`,
+  '2026-11-19 id+release+name+shortName':
+    `preamble ${creator} {"id":"aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee","release":{"slug":"glm-5-2","name":"GLM-5.2"},"name":"GLM-5.2 (Reasoning)","shortName":"GLM-5.2","suffix":"Reasoning","modelCreator":${creator},"intelligenceIndex":41.2}` +
+    `{"id":"aaaaaaaa-bbbb-cccc-dddd-ffffffffffff","release":{"slug":"kimi-k3","name":"Kimi K3"},"name":"Kimi K3","shortName":"Kimi K3","suffix":null,"modelCreator":${creator},"intelligenceIndex":52.9}`,
 };
 
 for (const [name, body] of Object.entries(shapes)) {
@@ -43,14 +46,23 @@ for (const [name, body] of Object.entries(shapes)) {
 const mixed = shapes['pre-Sep-2026 id+name+shortName'] + shapes['2026-09-17 slug+name+shortName'].replace('glm-5-2', 'glm-5-3').replace('kimi-k3', 'kimi-k3-1');
 check('mixed shapes: four records', parseAaScores(mixed).size === 4, `got ${parseAaScores(mixed).size}`);
 
-// Floor diagnosis: drift (~1 record) and shrink (2026-10-24: 266 unique slugs)
+// 2026-11-19: every reasoning mode of a release shares the release slug; the
+// slug must resolve to its highest-scoring mode, whatever the record order.
+const modes = ['Medium', 'Max', 'Low'].map((sfx, i) =>
+  `{"id":"aaaaaaaa-bbbb-cccc-dddd-00000000000${i}","release":{"slug":"claude-sonnet-5-5","name":"Claude Sonnet 5.5"},"name":"Claude Sonnet 5.5 (${sfx})","shortName":"Claude Sonnet 5.5 (${sfx.toLowerCase()})","suffix":"${sfx}","intelligenceIndex":${[30.8, 54.5, 25.6][i]}}`).join('');
+check('release modes: one slug', parseAaScores(`p ${modes}`).size === 1, `got ${parseAaScores(`p ${modes}`).size}`);
+check('release modes: highest mode wins', parseAaScores(`p ${modes}`).get('claude-sonnet-5-5') === 54.5, `got ${parseAaScores(`p ${modes}`).get('claude-sonnet-5-5')}`);
+
+// Floor diagnosis: drift (~1 record) and shrink (2026-10-24: 266 unique slugs;
+// 2026-11-19: 200 unique release slugs)
 // must produce different errors, and today's real payload size must pass.
 function errOf(n: number): string { try { checkAaRecordCount(n); return ''; } catch (e) { return (e as Error).message; } }
 check('floor: 266 (2026-10-24 payload) passes', errOf(266) === '', errOf(266));
 check('floor: floor sits below the 2026-10-24 size', AA_MIN_SCORED_RECORDS < 266);
 check('floor: 1 record is diagnosed as sentinel drift', /sentinel drift/.test(errOf(1)));
 check('floor: drift ceiling well below the floor', AA_DRIFT_CEILING * 10 < AA_MIN_SCORED_RECORDS);
-check('floor: 180 records is diagnosed as a payload prune', /pruned the payload/.test(errOf(180)));
+check('floor: 200 (2026-11-19 payload) passes', errOf(200) === '', errOf(200));
+check('floor: 150 records is diagnosed as a payload prune', /pruned the payload/.test(errOf(150)));
 
 // Version rollout (v5.0, 2026-10-27): AA lists every model but scores only
 // the ones it has re-run; the rest carry "intelligenceIndex":null. The floor
@@ -67,7 +79,7 @@ check('rollout: null records are not scored', parseAaScores(v5).size === 76, `go
 check('rollout: 272 listed / 76 scored passes', payloadErr(v5) === '', payloadErr(v5));
 check('rollout: flagged as a rollout', (() => { try { return checkAaPayload(v5, parseAaScores(v5)).rollout; } catch { return false; } })());
 check('rollout: 272 listed / 0 scored is still drift', /sentinel drift/.test(payloadErr(rollout(272, 0))));
-check('rollout: 180 listed is still a prune', /pruned the payload/.test(payloadErr(rollout(180, 180))));
+check('rollout: 150 listed is still a prune', /pruned the payload/.test(payloadErr(rollout(150, 150))));
 
 // Promotion candidates: a sibling scored on the current version while the
 // file's own anchor is not (the v5.0 Qwen3.8 / Ling-3.1-flash case).

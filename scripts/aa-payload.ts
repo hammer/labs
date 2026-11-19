@@ -3,11 +3,20 @@
  *
  * The leaderboard page, fetched with the `RSC: 1` header, embeds every model
  * record in one React Server Component stream. Records are located by the
- * sentinel that opens each one; AA has changed that opener three times:
+ * sentinel that opens each one; AA has changed that opener four times:
  *
  *   • pre-Sep-2026 : {"id":"<uuid>","name":"…","shortName"
  *   • 2026-09-11   : {"slug":"…","shortName"                 (id and name dropped)
  *   • 2026-09-17   : {"slug":"…","name":"…","shortName"      (name returned)
+ *   • 2026-11-19   : {"id":"<uuid>","release":{"slug":"…","name":"…"},"name":"…","shortName"
+ *
+ * The 2026-11-19 shape also changed what a slug means. The only slug in a
+ * record is now the RELEASE slug, shared by every reasoning mode of that
+ * release (claude-sonnet-5-5 carries five records, low → max, told apart only
+ * by "suffix"), and AA's per-mode pages now redirect to the release page
+ * (/models/muse-ember-xhigh → 308). So a slug maps to its HIGHEST-scoring
+ * mode, which is the house anchoring rule anyway; tracked anchors on old
+ * per-mode URLs no longer match and are listed by the sync for re-pointing.
  *
  * Splitting on bare {"id":uuid,"name" also matches nested creator objects and
  * misattributes slugs to neighbouring records, so every accepted shape must
@@ -37,7 +46,7 @@
  */
 
 export const AA_RECORD_SENTINEL =
-  /(?=\{"slug":"[^"]+",(?:"name":"[^"]*",)?"shortName"|\{"id":"[0-9a-f-]{36}","name":"[^"]*","shortName")/;
+  /(?=\{"slug":"[^"]+",(?:"name":"[^"]*",)?"shortName"|\{"id":"[0-9a-f-]{36}","name":"[^"]*","shortName"|\{"id":"[0-9a-f-]{36}","release":\{"slug":"[^"]+","name":"[^"]*"\},"name":"[^"]*","shortName")/;
 
 /** Split an RSC payload into per-record spans (the first span is the preamble). */
 export function splitAaRecords(body: string): string[] {
@@ -60,24 +69,31 @@ export function listAaSlugs(body: string): Set<string> {
   return out;
 }
 
-/** slug → intelligenceIndex for every scored record; first occurrence wins. */
+/**
+ * slug → intelligenceIndex for every scored record. Where several records
+ * share a slug (the 2026-11-19 shape lists each reasoning mode of a release
+ * under the release slug), the highest score wins.
+ */
 export function parseAaScores(body: string): Map<string, number> {
   const map = new Map<string, number>();
   for (const r of splitAaRecords(body)) {
     const slug = r.match(/"slug":"([^"]+)"/)?.[1];
     const ii = r.match(/"intelligenceIndex":([\d.]+)/)?.[1];
-    if (slug && ii && !map.has(slug)) map.set(slug, parseFloat(ii));
+    if (!slug || !ii) continue;
+    const v = parseFloat(ii);
+    if (!map.has(slug) || v > map.get(slug)!) map.set(slug, v);
   }
   return map;
 }
 
 /**
  * Floor below which the scripts refuse to write. Sits under the current
- * payload size (266 unique scored slugs on 2026-10-24) and far above the ~1
- * that a sentinel drift produces. History: 300 (Sep 2026, ~500-record
- * payload) → 250 (2026-10-24 shrink).
+ * payload size (200 unique release slugs, 287 records, on 2026-11-19) and far
+ * above the ~1 that a sentinel drift produces. History: 300 (Sep 2026,
+ * ~500-record payload) → 250 (2026-10-24 shrink) → 170 (2026-11-19, modes
+ * folded into release slugs).
  */
-export const AA_MIN_SCORED_RECORDS = 250;
+export const AA_MIN_SCORED_RECORDS = 170;
 
 /** Below this, the parser is broken (sentinel drift), not the payload small. */
 export const AA_DRIFT_CEILING = 10;
